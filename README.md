@@ -23,6 +23,8 @@ Current files:
 - `docs/phase-0-audit.md` — evidence-based audit of the starting repository.
 - `docs/accounts-and-secrets.md` — account boundaries, credential inventory,
   model routing, and MCP setup.
+- `docs/session-handoff.md` — exact last checkpoint, known gaps, and ordered
+  restart instructions for the next working session.
 - `.codex/config.toml` — project-scoped MCP configuration with no embedded keys.
 - `.env.example` — credential inventory with safe placeholders only.
 
