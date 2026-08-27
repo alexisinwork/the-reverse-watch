@@ -3,7 +3,10 @@
 ## Delivery boundaries
 
 - Work from `docs/implementation-roadmap.md` one phase at a time.
-- Do not begin the next phase until the owner explicitly approves it.
+- Continue automatically from one completed phase into the next. Phase statuses
+  are sequencing and evidence checkpoints, not owner-approval gates.
+- Commit and push verified work directly to `main`; this repository and its
+  connected deployment are an owner-designated test project.
 - Keep the application and research pipeline in TypeScript/JavaScript.
 - Never commit `.env`, credentials, raw authentication caches, or access tokens.
 - Do not print secret values in commands, logs, tests, or responses.
@@ -31,9 +34,14 @@
 ## External systems
 
 - Use `github` and `vercel` MCP tools for inspection when connected.
-- Require owner confirmation before production deployments, domain changes,
-  credential changes, destructive actions, or external writes outside the
-  already approved phase.
+- Roadmap-scoped external writes, additive database migrations, direct `main`
+  pushes, deployments, and configuration changes are authorized without an
+  additional approval prompt.
+- Never perform risky Supabase removals or other critical destructive actions.
+  Prohibited operations include dropping or truncating tables, bulk destructive
+  deletes, resetting production data, deleting/resetting Supabase branches or
+  projects, destructive migrations, and removing critical domains, credentials,
+  repositories, or deployment history. Prefer additive, reversible changes.
 - Use least-privilege tokens and project/service accounts rather than personal
   keys wherever the provider supports them.
 

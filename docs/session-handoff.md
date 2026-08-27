@@ -6,12 +6,12 @@ This is the restart point for the next working session. The controlling sequence
 is [`implementation-roadmap.md`](implementation-roadmap.md), which implements
 the owner's [`full original plan`](original_context.md). The original plan must
 be read from first line to final line before each phase. Work remains gated by
-phase: Phase 1 is available on a protected preview; stop for owner approval
-before any production deployment or Phase 2 work.
+phase: merge the verified Phase 1 branch into `main`, then continue directly
+into Phase 2 without an approval stop.
 
 ## Current checkpoint
 
-- Active phase: **Phase 1 — preview complete, awaiting owner review**.
+- Active phase: **Phase 1 — preview complete; direct `main` merge authorized**.
 - Phase 0 is complete and approved.
 - Phase 2 has **not** started.
 - Latest pushed commit: `cc87e2d Document Phase 1 session handoff` on `main`.
@@ -102,20 +102,18 @@ Short read-only integration checks confirmed:
    route fetches redirected to Vercel SSO, so only build readiness—not page-level
    preview behavior—is claimed. Do not run Playwright or submit the Beehiiv
    form during this deferred testing period.
-2. Resolve the domain discrepancy before production routing: repository intent
+2. Resolve the domain discrepancy during production routing: repository intent
    and `CNAME` say `thereserve.watch`, while Vercel currently lists
-   `thereverse.watch` and `www.thereverse.watch`. Do not change either domain or
-   DNS without explicit owner approval.
+   `thereverse.watch` and `www.thereverse.watch`. Prefer reversible, recorded
+   changes toward the canonical repository domain.
 3. Treat `SESSION_SECRET` as a Phase 2 input, `DATABASE_URL` and
    `DIRECT_DATABASE_URL` as Phase 3 inputs, and `CRON_SECRET` as a Phase 5 input.
    Their absence does not block the Phase 1 preview.
-4. Request explicit approval before merging/pushing the reviewed commit to
-   `main`, because `main` triggers a production deployment.
-5. Request explicit approval for Phase 2 separately. Do not infer it from
-   production-deployment approval.
+4. Merge/push the reviewed commit directly to `main`, confirm the resulting
+   deployment state, record the evidence, and continue into Phase 2.
 
 ## Scope guard
 
-Do not implement the questionnaire, watch catalogue, research pipeline,
-embeddings, RAG, Mastra recommendation workflow, or production result email
-until the owner reviews Phase 1 and explicitly approves Phase 2.
+Implement the roadmap sequentially and continue automatically across phase
+boundaries. Do not skip ahead of the active phase. Never perform risky Supabase
+removals or other critical destructive actions.

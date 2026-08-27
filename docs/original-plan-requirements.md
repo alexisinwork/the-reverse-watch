@@ -6,10 +6,11 @@ phased implementation work. It is an index, not a replacement: read the entire
 original file before planning or implementing every phase.
 
 The [`implementation roadmap`](implementation-roadmap.md) controls sequence,
-phase gates, and accepted technical decisions. When an older sketch conflicts
-with an explicit owner decision or the roadmap, retain the desired product
-behavior and record the technical reconciliation instead of silently dropping
-the requirement.
+phase evidence, and accepted technical decisions. Phases continue automatically
+after their evidence is recorded. When an older sketch conflicts with an
+explicit owner decision or the roadmap, retain the desired product behavior and
+record the technical reconciliation instead of silently dropping the
+requirement.
 
 ## Decisions that must survive implementation
 

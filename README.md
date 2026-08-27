@@ -43,9 +43,9 @@ or expose credential values in output.
 
 ## Delivery phases
 
-Work is governed by `docs/implementation-roadmap.md`. Complete and obtain owner
-approval for each phase before beginning the next one. Production routing and
-rollback are documented in `docs/deployment-and-rollback.md`. The owner's full
-original plan is preserved in `docs/original_context.md`; it must be read in
-full before every phase, with decisions tracked in
-`docs/original-plan-requirements.md`.
+Work is governed by `docs/implementation-roadmap.md`. Complete and record
+evidence for each phase, then continue automatically into the next one.
+Verified work is pushed directly to `main`. Production routing and rollback are
+documented in `docs/deployment-and-rollback.md`. The owner's full original plan
+is preserved in `docs/original_context.md`; it must be read in full before every
+phase, with decisions tracked in `docs/original-plan-requirements.md`.
