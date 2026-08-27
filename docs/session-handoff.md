@@ -5,23 +5,24 @@ Last updated: 2026-08-27
 This is the restart point for the next working session. The controlling sequence
 is [`implementation-roadmap.md`](implementation-roadmap.md), which implements
 the owner's [`full original plan`](original_context.md). The original plan must
-be read from first line to final line before each phase. Work remains gated by
-phase: merge the verified Phase 1 branch into `main`, then continue directly
-into Phase 2 without an approval stop.
+be read from first line to final line before each phase. Phase 1 is complete on
+`main`; the next session continues directly into Phase 2 without an approval
+stop.
 
 ## Current checkpoint
 
-- Active phase: **Phase 1 — preview complete; direct `main` merge authorized**.
+- Active phase: **Phase 2 — diagnostic questionnaire, not yet implemented**.
 - Phase 0 is complete and approved.
-- Phase 2 has **not** started.
-- Latest pushed commit: `cc87e2d Document Phase 1 session handoff` on `main`.
-- The React Router migration is implemented locally. The original static
+- Phase 1 is complete, merged, pushed, and deployed from `main`.
+- Latest delivered application commit: `a86e148 Enable continuous autonomous
+  delivery` on `main`.
+- The React Router migration is deployed. The original static
   `index.html` remains unchanged as the parity and rollback reference.
-- Preview branch: `phase-1-app-foundation`; application commit `b882439`.
-- Vercel preview deployment: `dpl_E1Vh1xjtoVMkY5vjWKFtC3S5dJ9m`, state
-  `READY`, with no production target.
-- No production deployment, domain, DNS, database, or subscriber state was
-  changed.
+- Vercel production deployment: `dpl_HWjYWXTCUX9PuphVsYPFKRD782p9`, state
+  `READY`, commit `a86e148`.
+- Existing Vercel aliases still use `thereverse.watch`; the repository's
+  canonical intent remains `thereserve.watch`.
+- No database, DNS, Supabase, credential, or subscriber state was changed.
 
 ## Completed work
 
@@ -55,6 +56,9 @@ into Phase 2 without an approval stop.
 2. `24073da` — Configure project accounts, secrets, and MCP.
 3. `a916446` — Add Supabase agent skills.
 4. `cc87e2d` — Document Phase 1 session handoff.
+5. `b882439` — Build Phase 1 application foundation.
+6. `83a9f0e` — Record Phase 1 preview checkpoint.
+7. `a86e148` — Enable continuous autonomous delivery.
 
 ### Phase 1 application foundation
 
@@ -95,22 +99,25 @@ Short read-only integration checks confirmed:
 - Supabase project `osfqexnzgkksfvaocjvl`; its public schema is currently empty.
 - Vercel team/project linkage to the GitHub repository and ready historical
   static deployments.
+- Production deployment `dpl_HWjYWXTCUX9PuphVsYPFKRD782p9` reached `READY` for
+  `main` commit `a86e148`. Follow-up route fetches through the Vercel MCP failed,
+  so no page-level remote smoke result is claimed.
 
 ## Open items and exact continuation
 
-1. Review the protected Vercel preview for visual parity. Automated read-only
-   route fetches redirected to Vercel SSO, so only build readiness—not page-level
-   preview behavior—is claimed. Do not run Playwright or submit the Beehiiv
-   form during this deferred testing period.
-2. Resolve the domain discrepancy during production routing: repository intent
-   and `CNAME` say `thereserve.watch`, while Vercel currently lists
+1. Begin Phase 2 by implementing the canonical eight-question schema, route UI,
+   server validation, recoverable state, accessibility behavior, and temporary
+   deterministic profile summary. Read all of `original_context.md` first.
+2. Preserve the deferred testing cadence: run fast focused checks, but do not
+   run Playwright/E2E or long background suites before Phase 5.
+3. Resolve the domain discrepancy during later production routing: repository
+   intent and `CNAME` say `thereserve.watch`, while Vercel currently lists
    `thereverse.watch` and `www.thereverse.watch`. Prefer reversible, recorded
    changes toward the canonical repository domain.
-3. Treat `SESSION_SECRET` as a Phase 2 input, `DATABASE_URL` and
+4. Treat `SESSION_SECRET` as a Phase 2 input, `DATABASE_URL` and
    `DIRECT_DATABASE_URL` as Phase 3 inputs, and `CRON_SECRET` as a Phase 5 input.
-   Their absence does not block the Phase 1 preview.
-4. Merge/push the reviewed commit directly to `main`, confirm the resulting
-   deployment state, record the evidence, and continue into Phase 2.
+5. Commit verified Phase 2 work directly to `main`, confirm deployment state,
+   record the phase evidence, and continue automatically into Phase 3.
 
 ## Scope guard
 
