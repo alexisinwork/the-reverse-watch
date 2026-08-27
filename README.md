@@ -7,10 +7,11 @@ subscription form.
 
 ## Current status
 
-**Phase 0 — repository baseline is complete and awaiting approval.**
+**Phase 1 — configuration and application foundation are in progress.**
 
-The repository is intentionally still a static site at this checkpoint. No
-framework migration or production behavior was changed during the audit.
+The owner approved eight diagnostic questions and confirmed Vercel as the
+production host. The repository remains a static site while Phase 1 account,
+secret, and MCP configuration is established before the framework migration.
 
 Current files:
 
@@ -20,6 +21,9 @@ Current files:
   context, not as an implementation specification.
 - `docs/implementation-roadmap.md` — phased delivery plan and approval gates.
 - `docs/phase-0-audit.md` — evidence-based audit of the starting repository.
+- `docs/accounts-and-secrets.md` — account boundaries, credential inventory,
+  model routing, and MCP setup.
+- `.codex/config.toml` — project-scoped MCP configuration with no embedded keys.
 - `.env.example` — credential inventory with safe placeholders only.
 
 ## Working rules
@@ -51,3 +55,9 @@ exact deliverables and verification gates.
 Copy `.env.example` to `.env` when a development phase needs credentials. The
 example documents every planned integration, but most variables are optional
 until their corresponding phase begins.
+
+Check configuration without printing secrets:
+
+```bash
+node scripts/check-env.mjs
+```

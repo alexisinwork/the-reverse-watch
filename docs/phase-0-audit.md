@@ -87,5 +87,5 @@ RunPod inference after its output quality passes the same evaluation set.
 - [x] Secret-safe `.env.example` added.
 - [x] `.env` files excluded from git.
 - [x] No production behavior changed.
-- [ ] Owner approves Phase 1 and confirms eight versus seven questions.
-- [ ] Owner confirms whether Vercel is the active production deployment.
+- [x] Owner approved Phase 1 and confirmed eight questions on 2026-08-27.
+- [x] Owner confirmed Vercel as the active production host on 2026-08-27.

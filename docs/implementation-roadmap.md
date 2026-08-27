@@ -28,7 +28,7 @@ truth. Exact filters run before semantic retrieval.
 
 ## Phase 0 — Baseline and decisions
 
-Status: **implemented; awaiting owner approval**
+Status: **complete and approved**
 
 Deliverables:
 
@@ -40,11 +40,13 @@ Deliverables:
 
 Exit gate:
 
-- Owner approves the framework migration.
-- Owner chooses eight questions (recommended) or requests a seven-question merge.
-- Owner confirms the live hosting provider.
+- [x] Owner approved the framework migration.
+- [x] Owner selected eight questions.
+- [x] Owner confirmed Vercel as the live hosting provider.
 
 ## Phase 1 — Application foundation and landing-page parity
+
+Status: **in progress — account, secret, and MCP configuration**
 
 Goal: establish a maintainable TypeScript application without breaking the live
 subscription funnel.
@@ -55,6 +57,8 @@ Deliverables:
 - Recreate the current landing page using reusable design tokens and components.
 - Preserve the Beehiiv embedded form first; add server-side API subscription only
   when the result-email flow needs it.
+- Establish project-scoped MCP configuration, credential ownership, and a
+  secret-safe local environment before installing runtime dependencies.
 - Add formatting, linting, type checking, unit tests, and a production build.
 - Configure Vercel and document domain migration/rollback.
 - Add a health route and basic error boundary.
@@ -175,13 +179,15 @@ Verification:
 | `BEEHIIV_API_KEY` | Phase 5 | Server-side subscription request. |
 | `BEEHIIV_PUBLICATION_ID` | Phase 5 | Beehiiv publication destination. |
 | `PERPLEXITY_API_KEY` | Phase 3 | Research acquisition jobs. |
-| `PERPLEXITY_RESEARCH_MODEL` | Phase 3 | Explicit research model selection. |
+| `PERPLEXITY_STANDARD_PRESET` | Phase 3 | Normal Perplexity Agent API research preset. |
+| `PERPLEXITY_DEEP_RESEARCH_PRESET` | Phase 3 | Selective deep-research preset. |
 | `DATABASE_URL` | Phase 3 | Pooled application database connection. |
 | `DIRECT_DATABASE_URL` | Phase 3 | Migrations and maintenance connection. |
 | `AI_PROVIDER` | Phase 4 | Selects the model adapter. |
 | `OPENAI_API_KEY` | Phase 3/4 | Normalization, embeddings, and/or synthesis. |
 | `OPENAI_INGESTION_MODEL` | Phase 3 | High-volume normalization model. |
 | `OPENAI_RECOMMENDATION_MODEL` | Phase 4 | Reranking and grounded dossier model. |
+| `OPENAI_AUDIT_MODEL` | Phase 4 | Selective quality-audit model. |
 | `OPENAI_EMBEDDING_MODEL` | Phase 4 | Reference embedding model. |
 | `OLLAMA_BASE_URL` | Phase 4 | Local or RunPod Ollama endpoint. |
 | `OLLAMA_CHAT_MODEL` | Phase 4 | Ollama generation model installed at the endpoint. |

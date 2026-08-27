@@ -1,0 +1,46 @@
+# Project-scoped Codex configuration. Credentials are read from environment
+# variables and must never be hardcoded in this file.
+
+[mcp_servers.openai_docs]
+url = "https://developers.openai.com/mcp"
+enabled = true
+required = false
+default_tools_approval_mode = "auto"
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
+enabled = true
+required = false
+default_tools_approval_mode = "auto"
+
+[mcp_servers.perplexity]
+url = "https://api.perplexity.ai/mcp"
+bearer_token_env_var = "PERPLEXITY_API_KEY"
+enabled = true
+required = false
+default_tools_approval_mode = "auto"
+
+[mcp_servers.vercel]
+url = "https://mcp.vercel.com"
+auth = "oauth"
+enabled = true
+required = false
+default_tools_approval_mode = "writes"
+
+[mcp_servers.github]
+url = "https://api.githubcopilot.com/mcp/"
+bearer_token_env_var = "GITHUB_PAT_TOKEN"
+enabled = true
+required = false
+default_tools_approval_mode = "writes"
+
+# Browser automation is configured now but remains disabled until the React
+# application exists. Enable it during Phase 1 browser verification.
+[mcp_servers.playwright]
+command = "npx"
+args = ["-y", "@playwright/mcp@latest"]
+enabled = false
+required = false
+startup_timeout_sec = 30
+tool_timeout_sec = 60
+default_tools_approval_mode = "prompt"
