@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Reserve · Documentary & Horological Forensics</title>
+  <meta name="description" content="How watch companies live, die, and get resurrected. And who actually owns the name on the dial.">
+
+  <!-- Inter Display / Grotesque -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-base: #08090B;
+      --color-base-raised: #0D0F13;
+      --color-ink: #EDEDE8;
+      --color-brass: #C8892F;
+      --color-steel: #5B6B78;
+      --color-steel-dim: #3A424B;
+      --color-line: #1A1E24;
+      --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-base);
+      color: var(--color-ink);
+      font-family: var(--font-stack);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.5rem 1.5rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Container */
+    main {
+      max-width: 580px;
+      width: 100%;
+      margin: auto 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    /* Mark: Power Reserve Indicator */
+    .mark-container {
+      margin-bottom: 2.5rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .gauge-mark {
+      width: 42px;
+      height: 42px;
+    }
+
+    /* Typography */
+    h1 {
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    p.manifesto {
+      font-weight: 500;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--color-ink);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.02em;
+    }
+
+    p.subtext {
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 1.5;
+      color: var(--color-steel);
+      margin-bottom: 2.5rem;
+    }
+
+    /* Form & CTA */
+    form.subscribe-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    @media (min-width: 500px) {
+      form.subscribe-box {
+        flex-direction: row;
+      }
+    }
+
+    input[type="email"] {
+      flex: 1;
+      background: var(--color-base-raised);
+      border: 1px solid var(--color-line);
+      color: var(--color-ink);
+      padding: 0.875rem 1.125rem;
+      font-size: 0.9375rem;
+      font-family: var(--font-stack);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    input[type="email"]:focus {
+      border-color: var(--color-steel);
+    }
+
+    input[type="email"]::placeholder {
+      color: var(--color-steel-dim);
+    }
+
+    /* Single Brass Accent Rule */
+    button.cta-btn {
+      background-color: var(--color-brass);
+      color: var(--color-base);
+      font-family: var(--font-stack);
+      font-weight: 800;
+      font-size: 0.8125rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.875rem 1.5rem;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.15s ease;
+    }
+
+    button.cta-btn:hover {
+      opacity: 0.9;
+    }
+
+    /* Footer / Metadata */
+    footer {
+      width: 100%;
+      max-width: 580px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--color-line);
+      padding-top: 1.5rem;
+      font-size: 0.75rem;
+      color: var(--color-steel-dim);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <!-- Visual Mark: The Power Reserve Gauge (Brass spent/remaining) -->
+    <div class="mark-container" aria-hidden="true">
+      <svg class="gauge-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Spent Scale (Steel) -->
+        <path d="M 20 80 A 42 42 0 0 1 50 8" stroke="#5B6B78" stroke-width="6" stroke-linecap="butt"/>
+        <!-- Remaining Scale (Brass Accent) -->
+        <path d="M 50 8 A 42 42 0 0 1 80 80" stroke="#C8892F" stroke-width="6" stroke-linecap="butt"/>
+        <!-- Center Pivot -->
+        <circle cx="50" cy="50" r="4" fill="#EDEDE8"/>
+        <!-- Hand pointing to Reserve -->
+        <line x1="50" y1="50" x2="68" y2="28" stroke="#EDEDE8" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <h1>THE RESERVE</h1>
+    
+    <p class="manifesto">
+      The brand tells you a story about heritage. We investigate the filings, the balance sheets, and who actually owns the name on the dial.
+    </p>
+
+    <p class="subtext">
+      Dossiers, corporate histories, and classification briefings. No sponsored reviews.
+    </p>
+
+    <!-- Beehiiv Subscription Endpoint -->
+    <!-- Replace 'YOUR_BEEHIIV_PUBLICATION_ID' with your publication handle/ID -->
+    <form class="subscribe-box" action="https://embeds.beehiiv.com/subscribe" method="POST" target="_blank">
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Enter your email" 
+        required 
+        autocomplete="email"
+      >
+      <!-- Hidden configuration fields for Beehiiv -->
+      <input type="hidden" name="utm_source" value="landing_page">
+      <input type="hidden" name="utm_medium" value="direct">
+      <input type="hidden" name="publication_id" value="YOUR_BEEHIIV_PUBLICATION_ID">
+      
+      <button type="submit" class="cta-btn">Subscribe</button>
+    </form>
+  </main>
+
+  <footer>
+    <span>thereserve.watch</span>
+    <span>Archival Documentary</span>
+  </footer>
+
+</body>
+</html>
