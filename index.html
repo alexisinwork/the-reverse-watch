@@ -6,7 +6,7 @@
   <title>The Reserve · Documentary & Horological Forensics</title>
   <meta name="description" content="How watch companies live, die, and get resurrected. And who actually owns the name on the dial.">
 
-  <!-- Inter Display / Grotesque -->
+  <!-- Inter Grotesque -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -43,7 +43,6 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Container */
     main {
       max-width: 580px;
       width: 100%;
@@ -53,7 +52,6 @@
       align-items: flex-start;
     }
 
-    /* Mark: Power Reserve Indicator */
     .mark-container {
       margin-bottom: 2.5rem;
       display: flex;
@@ -65,7 +63,6 @@
       height: 42px;
     }
 
-    /* Typography */
     h1 {
       font-weight: 800;
       font-size: clamp(2rem, 5vw, 2.75rem);
@@ -92,7 +89,6 @@
       margin-bottom: 2.5rem;
     }
 
-    /* Form & CTA */
     form.subscribe-box {
       width: 100%;
       display: flex;
@@ -115,6 +111,7 @@
       font-size: 0.9375rem;
       font-family: var(--font-stack);
       outline: none;
+      border-radius: 0;
       transition: border-color 0.15s ease;
     }
 
@@ -126,7 +123,6 @@
       color: var(--color-steel-dim);
     }
 
-    /* Single Brass Accent Rule */
     button.cta-btn {
       background-color: var(--color-brass);
       color: var(--color-base);
@@ -137,6 +133,7 @@
       text-transform: uppercase;
       padding: 0.875rem 1.5rem;
       border: none;
+      border-radius: 0;
       cursor: pointer;
       white-space: nowrap;
       transition: opacity 0.15s ease;
@@ -146,7 +143,6 @@
       opacity: 0.9;
     }
 
-    /* Footer / Metadata */
     footer {
       width: 100%;
       max-width: 580px;
@@ -165,16 +161,11 @@
 <body>
 
   <main>
-    <!-- Visual Mark: The Power Reserve Gauge (Brass spent/remaining) -->
     <div class="mark-container" aria-hidden="true">
       <svg class="gauge-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Spent Scale (Steel) -->
         <path d="M 20 80 A 42 42 0 0 1 50 8" stroke="#5B6B78" stroke-width="6" stroke-linecap="butt"/>
-        <!-- Remaining Scale (Brass Accent) -->
         <path d="M 50 8 A 42 42 0 0 1 80 80" stroke="#C8892F" stroke-width="6" stroke-linecap="butt"/>
-        <!-- Center Pivot -->
         <circle cx="50" cy="50" r="4" fill="#EDEDE8"/>
-        <!-- Hand pointing to Reserve -->
         <line x1="50" y1="50" x2="68" y2="28" stroke="#EDEDE8" stroke-width="2.5" stroke-linecap="round"/>
       </svg>
     </div>
@@ -189,9 +180,12 @@
       Dossiers, corporate histories, and classification briefings. No sponsored reviews.
     </p>
 
-    <!-- Beehiiv Subscription Endpoint -->
-    <!-- Replace 'YOUR_BEEHIIV_PUBLICATION_ID' with your publication handle/ID -->
-    <form class="subscribe-box" action="https://embeds.beehiiv.com/subscribe" method="POST" target="_blank">
+    <form 
+      class="subscribe-box" 
+      action="https://embeds.beehiiv.com/subscribe" 
+      method="POST" 
+      target="_blank"
+    >
       <input 
         type="email" 
         name="email" 
@@ -199,10 +193,10 @@
         required 
         autocomplete="email"
       >
-      <!-- Hidden configuration fields for Beehiiv -->
+      <!-- Replace YOUR_BEEHIIV_PUBLICATION_ID with your ID from Beehiiv Settings > Publication -->
+      <input type="hidden" name="publication_id" value="pub_701241fe-8e18-481c-9371-3acd74e1dff0">
       <input type="hidden" name="utm_source" value="landing_page">
       <input type="hidden" name="utm_medium" value="direct">
-      <input type="hidden" name="publication_id" value="YOUR_BEEHIIV_PUBLICATION_ID">
       
       <button type="submit" class="cta-btn">Subscribe</button>
     </form>
