@@ -1,7 +1,19 @@
 # The Reserve implementation roadmap
 
-This is the controlling delivery plan. Work stops after each phase so the owner
-can inspect the repository and approve the next phase.
+This is the controlling delivery sequence. It implements the owner's
+[`full original plan`](original_context.md), with requirement traceability in
+[`original-plan-requirements.md`](original-plan-requirements.md). Before
+planning or implementing any phase, read `original_context.md` from its first
+line through its final line; never use only the top, bottom, first 200, last 200,
+search matches, or this roadmap as a substitute. Work stops after each phase so
+the owner can inspect the repository and approve the next phase.
+
+The original file deliberately preserves duplicates, the evolution from seven
+to eight questions, and superseded architecture sketches. The final eight
+questions and the pure TypeScript/JavaScript direction are binding. This
+roadmap may refine implementation details, but it must retain the original
+product intent for complete brand coverage, detailed history, psychology,
+perception, factual mechanics, the dossier, and the audience funnel.
 
 ## System shape
 
@@ -25,6 +37,22 @@ Research jobs
 
 The model is never the catalogue and the vector index is never the source of
 truth. Exact filters run before semantic retrieval.
+
+## Verification cadence
+
+Development through Phase 4 uses the fast deterministic gate:
+
+```bash
+npm run check
+```
+
+That gate covers formatting, linting, strict types, unit tests, and the
+production build. Playwright/E2E execution, browser-binary installation, and
+long-running background validation suites are deferred until Phase 5, after the
+core catalogue, retrieval, and recommendation engine is complete. Deferred
+specs should still be written and kept current during earlier phases. Focused
+unit tests and short, read-only smoke checks remain appropriate when needed to
+develop the active phase.
 
 ## Phase 0 — Baseline and decisions
 
@@ -51,6 +79,8 @@ Status: **in progress — tooling checkpoint complete; application scaffold next
 Restart details and unresolved configuration are recorded in
 [`session-handoff.md`](session-handoff.md).
 
+Original-plan traceability: [landing identity, design, Vercel, and Beehiiv](original-plan-requirements.md#phase-mapping).
+
 Goal: establish a maintainable TypeScript application without breaking the live
 subscription funnel.
 
@@ -70,12 +100,16 @@ Verification:
 
 - Landing page matches the current desktop and mobile presentation.
 - Beehiiv form renders and can be exercised without exposing credentials.
-- Type check, tests, and production build pass.
-- Preview deployment works before production routing changes.
+- The fast development gate passes.
+- Preview deployment builds successfully before production routing changes.
+- Phase 1 browser/E2E specs are retained but their execution is deferred under
+  the verification cadence above.
 
 No watch AI or catalogue work belongs in this phase.
 
 ## Phase 2 — Diagnostic questionnaire
+
+Original-plan traceability: [canonical eight-question diagnostic](original-plan-requirements.md#canonical-eight-question-diagnostic).
 
 Goal: collect a complete, validated buyer profile with an accessible user
 experience.
@@ -94,10 +128,13 @@ Verification:
 
 - All answer combinations validate against the server schema.
 - Directly forged or incomplete submissions fail safely.
-- Mobile, keyboard, and screen-reader flows are tested.
-- Unit and browser-level tests cover navigation and submission.
+- Focused unit tests cover navigation, validation, and submission behavior.
+- Mobile, keyboard, screen-reader, and browser-level E2E specs are prepared for
+  the deferred Phase 5 integration run.
 
 ## Phase 3 — Canonical catalogue and research pipeline
+
+Original-plan traceability: [complete brand and reference knowledge](original-plan-requirements.md#complete-brand-and-reference-knowledge).
 
 Goal: create trustworthy structured watch data before adding RAG.
 
@@ -112,6 +149,11 @@ Deliverables:
   editorial artifacts, not the parsing source of truth.
 - Source-quality rules and a human review queue.
 - Seed set of approximately 10 brands across budgets for end-to-end validation.
+- A complete manifest for the planned approximately 200-brand universe, with
+  every brand assigned coverage and review status.
+- Detailed dossier fields for each brand's verified history and ownership,
+  psychology and buyer archetypes, public/collector perception, social signal,
+  design DNA, mechanical/service reality, and representative references.
 
 Verification:
 
@@ -119,10 +161,20 @@ Verification:
 - Invalid enums, units, and unsupported claims are quarantined.
 - Every accepted fact links to at least one source and retrieval date.
 - Missing values remain `null` and never receive silent defaults.
+- Every in-scope manifest brand reaches an accepted detailed dossier or an
+  explicit owner-approved exclusion; the phase cannot exit after only the seed
+  set.
+- Coverage audits scan the complete manifest and complete dossier contents, not
+  arbitrary first/last excerpts or capped record windows.
 
-Expansion from 10 to 200 brands happens only after the seed-set accuracy review.
+Expansion from the 10-brand calibration set to every entry in the planned
+approximately 200-brand manifest happens only after the seed-set accuracy
+review, but remains required catalogue work. The seed examples never redefine
+or truncate the full brand scope.
 
 ## Phase 4 — Retrieval, scoring, and recommendation engine
+
+Original-plan traceability: [AI decisions and recommendation dossier contract](original-plan-requirements.md#recommendation-dossier-contract).
 
 Goal: return relevant recommendations reproducibly and explainably.
 
@@ -147,10 +199,15 @@ Verification:
 - OpenAI and Ollama are evaluated against the same fixtures before switching the
   production provider.
 
+Completion of these focused AI evaluations ends the deferral period. The full
+browser and long-running integration suite begins in Phase 5.
+
 OpenAI implementation will use the Responses API and structured output rather
 than copying the provisional chat-completions snippets in the legacy notes.
 
 ## Phase 5 — Product integration, email, deployment, and evaluation
+
+Original-plan traceability: [dossier, email, media, and funnel requirements](original-plan-requirements.md#media-funnel-and-release-workstream).
 
 Goal: turn the engine into a production funnel with measurable quality.
 
@@ -178,7 +235,7 @@ Verification:
 | Variable | Required in | Purpose |
 | --- | --- | --- |
 | `APP_URL` | Phase 1 | Canonical application origin. |
-| `SESSION_SECRET` | Phase 1/2 | Signed server-side questionnaire/session state. |
+| `SESSION_SECRET` | Phase 2 | Signed server-side questionnaire/session state. |
 | `BEEHIIV_API_KEY` | Phase 5 | Server-side subscription request. |
 | `BEEHIIV_PUBLICATION_ID` | Phase 5 | Beehiiv publication destination. |
 | `PERPLEXITY_API_KEY` | Phase 3 | Research acquisition jobs. |

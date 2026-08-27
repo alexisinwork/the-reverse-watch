@@ -3,8 +3,16 @@ import path from 'node:path';
 
 const groups = {
   foundation: {
-    required: ['APP_URL', 'SESSION_SECRET'],
-    optional: ['BEEHIIV_API_KEY', 'BEEHIIV_PUBLICATION_ID'],
+    required: ['APP_URL'],
+    optional: [
+      'SESSION_SECRET',
+      'BEEHIIV_API_KEY',
+      'BEEHIIV_PUBLICATION_ID',
+    ],
+  },
+  questionnaire: {
+    required: ['SESSION_SECRET'],
+    optional: [],
   },
   research: {
     required: ['PERPLEXITY_API_KEY'],

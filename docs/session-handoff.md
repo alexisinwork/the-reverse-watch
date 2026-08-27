@@ -2,21 +2,22 @@
 
 Last updated: 2026-08-27
 
-This is the restart point for the next working session. The controlling plan is
-[`implementation-roadmap.md`](implementation-roadmap.md). Work remains gated by
-phase: finish, verify, commit, and push Phase 1, then stop for owner approval
-before beginning Phase 2.
+This is the restart point for the next working session. The controlling sequence
+is [`implementation-roadmap.md`](implementation-roadmap.md), which implements
+the owner's [`full original plan`](original_context.md). The original plan must
+be read from first line to final line before each phase. Work remains gated by
+phase: complete the Phase 1 preview, then stop for owner approval before Phase 2.
 
 ## Current checkpoint
 
-- Active phase: **Phase 1 — application foundation and landing-page parity**.
+- Active phase: **Phase 1 — application foundation and landing-page parity,
+  local implementation complete; preview pending**.
 - Phase 0 is complete and approved.
 - Phase 2 has **not** started.
-- Latest pushed commit: `a916446 Add Supabase agent skills` on `main`.
-- Repository was clean and synchronized with `origin/main` when this handoff was
-  written.
-- The production landing page remains the original static `index.html`; the
-  React Router migration has not started, so no live funnel behavior has been
+- Latest pushed commit: `cc87e2d Document Phase 1 session handoff` on `main`.
+- The React Router migration is implemented locally. The original static
+  `index.html` remains unchanged as the parity and rollback reference.
+- No production deployment, domain, DNS, database, or subscriber state was
   changed.
 
 ## Completed work
@@ -50,99 +51,68 @@ before beginning Phase 2.
 1. `1fde160` — Document phased implementation baseline.
 2. `24073da` — Configure project accounts, secrets, and MCP.
 3. `a916446` — Add Supabase agent skills.
+4. `cc87e2d` — Document Phase 1 session handoff.
 
-## Known incomplete configuration
+### Phase 1 application foundation
 
-The environment checker currently reports:
+- Added React Router v7 Framework Mode, Vite, strict TypeScript, and the Vercel
+  preset.
+- Recreated the documentary landing page with reusable tokens and components,
+  preserving the existing Beehiiv public form ID without exposing a credential.
+- Added `/health`, a branded root error boundary, metadata and cache headers.
+- Added Prettier, ESLint, strict type generation/checking, Vitest unit tests, a
+  production build, and deferred Playwright specifications.
+- Added deployment/rollback documentation and retained `index.html` as the
+  migration reference.
 
-- `SESSION_SECRET` missing or still set to a placeholder.
-- `DATABASE_URL` missing.
-- `CRON_SECRET` missing or still set to a placeholder.
-- `DIRECT_DATABASE_URL` is not configured.
+### Original-plan preservation and testing cadence
 
-These values must be placed in local `.env` and, with independent production
-secret values, in Vercel's encrypted environment settings. Supabase OAuth does
-not replace the application's Postgres connection strings.
+- Added `docs/original-plan-requirements.md` as a traceability ledger for the
+  full original plan.
+- Repository instructions require reading all of `docs/original_context.md`,
+  never just top/bottom or first/last excerpts, before every phase.
+- The approved final eight questionnaire dimensions and the full approximately
+  200-brand objective are explicitly carried into Phases 2 and 3.
+- Every in-scope brand requires detailed sourced history, ownership, psychology,
+  perception, design, mechanical/service reality, and references before Phase 3
+  can exit.
+- Playwright/E2E and long-running background validation remain deferred until
+  Phase 5, after the core AI work through Phase 4. Earlier phases use
+  `npm run check` and focused short smoke checks only.
 
-Credential presence is not the same as successful authentication. Live,
-read-only validation of the OpenAI, Perplexity, Beehiiv, and GitHub credentials
-was started but interrupted before completion. Do not claim these APIs work
-until the checks below pass.
+## Verification evidence
 
-Additional configuration debt:
+On 2026-08-27, `npm run check` passed formatting, linting, strict route type
+generation and TypeScript checking, 4 unit tests in 2 files, and the React Router
+production build. The deferred E2E suite was not run.
 
-- The committed `.codex/config.toml` does not yet contain the new project-scoped
-  Supabase MCP entry; only the global Codex configuration does.
-- `.env.example` and the account documentation still describe Neon as the
-  suggested provider. Update them to record the owner's Supabase selection.
-- GitHub CLI previously reported an invalid cached token for `alexisinwork`.
-  `GITHUB_PAT_TOKEN` is present for MCP, but normal `gh` CLI authentication must
-  be verified separately.
-- The Vercel OAuth login succeeded, but the repository's Vercel project link,
-  environment-variable parity, and preview deployment have not been verified.
+Short read-only integration checks confirmed:
 
-## Exact next-session sequence
+- GitHub identity and read access to `alexisinwork/the-reverse-watch`.
+- Supabase project `osfqexnzgkksfvaocjvl`; its public schema is currently empty.
+- Vercel team/project linkage to the GitHub repository and ready historical
+  static deployments.
 
-### 1. Re-establish configuration safely
+## Open items and exact continuation
 
-Run from the repository root:
-
-```bash
-node scripts/check-env.mjs
-codex mcp list
-git status --short --branch
-```
-
-Resolve the missing `SESSION_SECRET`, `DATABASE_URL`, `DIRECT_DATABASE_URL`, and
-`CRON_SECRET` values without printing them. Use Supabase's transaction-pooler
-connection string for Vercel application traffic and a direct or session-pooler
-connection for migrations.
-
-### 2. Validate integrations with minimal read-only requests
-
-Verify and report only status, identity/project names, and HTTP/error codes—never
-secret values:
-
-1. OpenAI: retrieve one configured model or list accessible models.
-2. Perplexity: run one minimal `pro-search` request and record cost metadata.
-3. Beehiiv: retrieve the configured publication; do not create a subscriber.
-4. GitHub: verify identity and read access to
-   `alexisinwork/the-reverse-watch`; do not write through MCP.
-5. Supabase: confirm project `osfqexnzgkksfvaocjvl` and inspect schema metadata
-   only; do not change the database.
-6. Vercel: confirm the intended account/team/project and domain without changing
-   deployment or DNS state.
-
-### 3. Reconcile the committed configuration
-
-- Add the project-scoped Supabase MCP URL to `.codex/config.toml` with write
-  actions requiring confirmation.
-- Replace Neon-specific guidance with Supabase Postgres/Supavisor guidance while
-  retaining provider-neutral `DATABASE_URL` and `DIRECT_DATABASE_URL` names.
-- Extend the non-secret checker if Supabase-specific public configuration is
-  adopted later. Do not add `SUPABASE_SECRET_KEY` unless a concrete server-side
-  API requirement exists.
-
-### 4. Complete Phase 1 application work
-
-1. Scaffold React Router v7 framework mode with Vite and strict TypeScript in
-   this repository.
-2. Preserve the current static landing page as the visual/behavioral reference.
-3. Rebuild it with reusable design tokens and components while keeping the
-   existing Beehiiv embed working.
-4. Add a health route and root error boundary.
-5. Configure formatting, linting, type checking, unit tests, and production
-   build commands.
-6. Verify desktop/mobile layout and the Beehiiv form without submitting a real
-   test subscriber unless the owner explicitly authorizes it.
-7. Link and deploy a Vercel preview; document migration and rollback. Do not
-   change production DNS/domain routing without explicit approval.
-8. Run every Phase 1 check, commit and push the completed phase, summarize the
-   evidence, and stop for approval before Phase 2.
+1. Commit the reviewed Phase 1 work on a non-production branch and push that
+   branch to create a Vercel preview. Do not push `main`: it is connected to
+   production deployments and requires explicit owner confirmation.
+2. Confirm the preview build reaches `READY`. Use only short read-only checks of
+   `/`, `/health`, and the error boundary; do not run Playwright or submit the
+   Beehiiv form.
+3. Resolve the domain discrepancy before production routing: repository intent
+   and `CNAME` say `thereserve.watch`, while Vercel currently lists
+   `thereverse.watch` and `www.thereverse.watch`. Do not change either domain or
+   DNS without explicit owner approval.
+4. Treat `SESSION_SECRET` as a Phase 2 input, `DATABASE_URL` and
+   `DIRECT_DATABASE_URL` as Phase 3 inputs, and `CRON_SECRET` as a Phase 5 input.
+   Their absence does not block the Phase 1 preview.
+5. After preview evidence is recorded, stop and request approval for the
+   production deployment and then for Phase 2. These are separate approvals.
 
 ## Scope guard
 
 Do not implement the questionnaire, watch catalogue, research pipeline,
-embeddings, RAG, Mastra recommendation workflow, or production result email in
-the next session unless Phase 1 has first been completed and the owner has
-explicitly approved Phase 2.
+embeddings, RAG, Mastra recommendation workflow, or production result email
+until the Phase 1 preview is complete and the owner explicitly approves Phase 2.

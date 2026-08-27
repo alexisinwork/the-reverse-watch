@@ -1,0 +1,13 @@
+.react-router
+.vercel
+.agents
+build
+coverage
+docs
+node_modules
+playwright-report
+test-results
+architecture-todo.md
+index.html
+questionnaire.js
+scripts/check-env.mjs

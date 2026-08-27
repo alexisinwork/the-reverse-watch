@@ -1,0 +1,103 @@
+.site-shell {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem var(--page-gutter);
+}
+
+.landing {
+  display: flex;
+  width: 100%;
+  max-width: var(--content-width);
+  flex-direction: column;
+  align-items: flex-start;
+  margin: auto 0;
+}
+
+.mark-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.gauge-mark {
+  width: 2.625rem;
+  height: 2.625rem;
+}
+
+.landing h1 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.manifesto {
+  margin: 0 0 1.5rem;
+  color: var(--color-ink);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+}
+
+.signup {
+  width: 100%;
+}
+
+.signup-embed {
+  width: 100%;
+  min-height: 3.25rem;
+}
+
+.noscript-note {
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--color-line);
+  margin: 0;
+  color: var(--color-steel-text);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.site-footer {
+  display: flex;
+  width: 100%;
+  max-width: var(--content-width);
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-steel-text);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 31.25rem) {
+  .site-shell {
+    padding-block: 1.5rem;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .site-footer span:last-child {
+    text-align: right;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

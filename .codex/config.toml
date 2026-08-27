@@ -34,8 +34,15 @@ enabled = true
 required = false
 default_tools_approval_mode = "writes"
 
-# Browser automation is configured now but remains disabled until the React
-# application exists. Enable it during Phase 1 browser verification.
+[mcp_servers.supabase]
+url = "https://mcp.supabase.com/mcp?project_ref=osfqexnzgkksfvaocjvl&features=docs%2Caccount%2Cdatabase%2Cdebugging%2Cdevelopment%2Cfunctions%2Cbranching"
+auth = "oauth"
+enabled = true
+required = false
+default_tools_approval_mode = "writes"
+
+# Browser automation remains disabled until Phase 5 integration verification,
+# after the core AI work through Phase 4 is complete.
 [mcp_servers.playwright]
 command = "npx"
 args = ["-y", "@playwright/mcp@latest"]

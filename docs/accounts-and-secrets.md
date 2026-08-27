@@ -52,7 +52,7 @@ API project and project service-account key for The Reserve.
 | OpenAI Platform | `OPENAI_PROJECT_ID`, `OPENAI_ORG_ID` | Optional | Record the dedicated project's IDs when the account belongs to multiple organizations/projects. |
 | Perplexity | `PERPLEXITY_API_KEY` | Phase 3 and research MCP | Dedicated project/key for catalogue research so spend is isolated. |
 | Beehiiv | `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 5 | Existing The Reserve publication; use only server-side. |
-| PostgreSQL provider | `DATABASE_URL`, `DIRECT_DATABASE_URL` | Phase 3/4 | Dedicated production database with `pgvector`; separate preview and production credentials. |
+| Supabase Postgres | `DATABASE_URL`, `DIRECT_DATABASE_URL` | Phase 3/4 | Project `osfqexnzgkksfvaocjvl` with `pgvector`; use separate preview and production credentials. |
 | GitHub | `GITHUB_PAT_TOKEN` | MCP only | Fine-grained PAT restricted to `alexisinwork/the-reverse-watch`; add write permissions only when needed. |
 | Vercel | OAuth for MCP | Phase 1 | Sign in to the account/team that will own `thereserve.watch`. |
 | Vercel | `VERCEL_TOKEN` and IDs | Optional automation | Use only for non-interactive CI; OAuth is preferred for interactive MCP work. |
@@ -113,7 +113,8 @@ The committed `.codex/config.toml` configures:
 | `perplexity` | `PERPLEXITY_API_KEY` | Read/research automatically | Search, reasoning, and deep research. |
 | `vercel` | OAuth | Confirm writes | Projects, deployments, domains, and logs. |
 | `github` | `GITHUB_PAT_TOKEN` | Confirm writes | Repository, issues, pull requests, and Actions. |
-| `playwright` | Local process | Prompt | Browser verification; disabled until needed in Phase 1. |
+| `supabase` | OAuth, project-scoped | Confirm writes | Database schema, migrations, logs, and project documentation. |
+| `playwright` | Local process | Prompt | Deferred Phase 5 browser verification; disabled during Phases 1–4. |
 
 Project MCP configuration is loaded on a new Codex session from this trusted
 repository. API-key-backed servers read variables from the process environment;
@@ -138,6 +139,12 @@ codex mcp login vercel
 Do not authenticate Vercel until the browser shows the intended new account and
 team. GitHub and Perplexity use the environment-variable tokens and do not need
 an OAuth login in this configuration.
+
+Supabase MCP is restricted to project `osfqexnzgkksfvaocjvl`. The application
+does not need a Supabase management key. In Phase 3, use Supavisor's transaction
+pooler connection for Vercel application traffic and a direct or session-pooler
+connection for migrations. Keep `DATABASE_URL` and `DIRECT_DATABASE_URL`
+provider-neutral so the application is not coupled to the management API.
 
 ## Local validation
 

@@ -9,6 +9,9 @@ build/
 dist/
 .react-router/
 .vite/
+coverage/
+playwright-report/
+test-results/
 
 # Hosting and tooling
 .vercel/

@@ -1,0 +1,15 @@
+:root {
+  --color-base: #08090b;
+  --color-base-raised: #0d0f13;
+  --color-ink: #edede8;
+  --color-brass: #c8892f;
+  --color-steel: #5b6b78;
+  --color-steel-dim: #3a424b;
+  --color-steel-text: #71808c;
+  --color-line: #1a1e24;
+  --font-sans:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --content-width: 36.25rem;
+  --page-gutter: 1.5rem;
+  --transition-fast: 150ms ease;
+}
