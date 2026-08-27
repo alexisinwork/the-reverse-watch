@@ -6,17 +6,20 @@ This is the restart point for the next working session. The controlling sequence
 is [`implementation-roadmap.md`](implementation-roadmap.md), which implements
 the owner's [`full original plan`](original_context.md). The original plan must
 be read from first line to final line before each phase. Work remains gated by
-phase: complete the Phase 1 preview, then stop for owner approval before Phase 2.
+phase: Phase 1 is available on a protected preview; stop for owner approval
+before any production deployment or Phase 2 work.
 
 ## Current checkpoint
 
-- Active phase: **Phase 1 — application foundation and landing-page parity,
-  local implementation complete; preview pending**.
+- Active phase: **Phase 1 — preview complete, awaiting owner review**.
 - Phase 0 is complete and approved.
 - Phase 2 has **not** started.
 - Latest pushed commit: `cc87e2d Document Phase 1 session handoff` on `main`.
 - The React Router migration is implemented locally. The original static
   `index.html` remains unchanged as the parity and rollback reference.
+- Preview branch: `phase-1-app-foundation`; application commit `b882439`.
+- Vercel preview deployment: `dpl_E1Vh1xjtoVMkY5vjWKFtC3S5dJ9m`, state
+  `READY`, with no production target.
 - No production deployment, domain, DNS, database, or subscriber state was
   changed.
 
@@ -95,24 +98,24 @@ Short read-only integration checks confirmed:
 
 ## Open items and exact continuation
 
-1. Commit the reviewed Phase 1 work on a non-production branch and push that
-   branch to create a Vercel preview. Do not push `main`: it is connected to
-   production deployments and requires explicit owner confirmation.
-2. Confirm the preview build reaches `READY`. Use only short read-only checks of
-   `/`, `/health`, and the error boundary; do not run Playwright or submit the
-   Beehiiv form.
-3. Resolve the domain discrepancy before production routing: repository intent
+1. Review the protected Vercel preview for visual parity. Automated read-only
+   route fetches redirected to Vercel SSO, so only build readiness—not page-level
+   preview behavior—is claimed. Do not run Playwright or submit the Beehiiv
+   form during this deferred testing period.
+2. Resolve the domain discrepancy before production routing: repository intent
    and `CNAME` say `thereserve.watch`, while Vercel currently lists
    `thereverse.watch` and `www.thereverse.watch`. Do not change either domain or
    DNS without explicit owner approval.
-4. Treat `SESSION_SECRET` as a Phase 2 input, `DATABASE_URL` and
+3. Treat `SESSION_SECRET` as a Phase 2 input, `DATABASE_URL` and
    `DIRECT_DATABASE_URL` as Phase 3 inputs, and `CRON_SECRET` as a Phase 5 input.
    Their absence does not block the Phase 1 preview.
-5. After preview evidence is recorded, stop and request approval for the
-   production deployment and then for Phase 2. These are separate approvals.
+4. Request explicit approval before merging/pushing the reviewed commit to
+   `main`, because `main` triggers a production deployment.
+5. Request explicit approval for Phase 2 separately. Do not infer it from
+   production-deployment approval.
 
 ## Scope guard
 
 Do not implement the questionnaire, watch catalogue, research pipeline,
 embeddings, RAG, Mastra recommendation workflow, or production result email
-until the Phase 1 preview is complete and the owner explicitly approves Phase 2.
+until the owner reviews Phase 1 and explicitly approves Phase 2.

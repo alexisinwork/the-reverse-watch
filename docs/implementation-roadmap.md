@@ -74,7 +74,7 @@ Exit gate:
 
 ## Phase 1 — Application foundation and landing-page parity
 
-Status: **in progress — tooling checkpoint complete; application scaffold next**
+Status: **preview complete — awaiting owner review; Phase 2 not approved**
 
 Restart details and unresolved configuration are recorded in
 [`session-handoff.md`](session-handoff.md).
