@@ -1,0 +1,16 @@
+# Local secrets
+.env
+.env.local
+.env.*.local
+
+# Dependencies and build output (used after the application scaffold phase)
+node_modules/
+build/
+dist/
+.react-router/
+.vite/
+
+# Hosting and tooling
+.vercel/
+*.log
+.DS_Store
