@@ -351,7 +351,7 @@ values (
   'stainless steel', 'stainless steel', null, 'HNBR rubber',
   null, 38, 11, null,
   null, 18, null, false,
-  67.893, 'quartz', null, null,
+  67.89, 'quartz', null, null,
   null, null, null,
   200, 'screw_down', '3', 'sapphire', 'strong',
   'quick_release', null, 'current', 'accepted'
@@ -1595,7 +1595,7 @@ insert into public.field_evidence (
   observed_at, retrieved_at, verified_at, tier, reviewer
 )
 values (
-  'reference_variant', (select rv.id from public.reference_variants rv join public.reference_models rm on rm.id = rv.reference_model_id join public.collections c on c.id = rm.collection_id join public.brands b on b.id = c.brand_id where b.slug = 'timex' and rv.variant_key = 'timex-tw2y40300'), 'weightFullG', '0da1a7c5ce1b1299f2787c34575c914da8fba2273d5e8b9f9bf96f731e2f2a91', (select id from public.sources where url = 'https://timex.com/products/deepwater-meridian-200-38mm-hnbr-rubber-strap-watch-tw2y40300' and retrieved_at = '2026-08-28T18:30:00Z'::timestamptz),
+  'reference_variant', (select rv.id from public.reference_variants rv join public.reference_models rm on rm.id = rv.reference_model_id join public.collections c on c.id = rm.collection_id join public.brands b on b.id = c.brand_id where b.slug = 'timex' and rv.variant_key = 'timex-tw2y40300'), 'weightFullG', '897b0a332ae2fb7b583c2dbae42f89fc63a755cabe69241c7566ba08d6fd0dfa', (select id from public.sources where url = 'https://timex.com/products/deepwater-meridian-200-38mm-hnbr-rubber-strap-watch-tw2y40300' and retrieved_at = '2026-08-28T18:30:00Z'::timestamptz),
   '2026-08-28T18:30:00Z'::timestamptz, '2026-08-28T18:30:00Z'::timestamptz,
   '2026-08-28T18:30:00Z'::timestamptz, 'verified', 'seed-v1'
 )

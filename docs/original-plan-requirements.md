@@ -215,6 +215,10 @@ These items are not complete merely because the web application advances.
   candidate-specific premium eligibility, speculative suppression, transparent
   score factors, diversity, verification-required, why-not, and relaxation
   output.
+- The production server now reads strictly validated accepted facts and the
+  authoritative hard-filter partition from versioned PostgreSQL RPCs. Exact
+  seed/database fact parity and SQL/TypeScript predicate parity are audited;
+  the reviewed local bundle remains a visible all-or-nothing fallback.
 - The first 12 reviewed variants are split by material/configuration and loaded
   into PostgreSQL with field evidence. This includes separate Rolex Explorer
   `124270` and `124273` rows.

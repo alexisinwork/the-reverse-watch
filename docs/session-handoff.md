@@ -12,14 +12,15 @@ phase.
 
 ## Current checkpoint
 
-- Active phase: **Phase 4 — deterministic recommendation MVP, in progress**.
-- Phases 0–3 are complete and verified.
+- Active phase: **Phase 5 — coverage-first catalogue expansion, in progress**.
+- Phases 0–4 are complete and verified.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Six additive migrations are applied to Supabase. The catalogue remains
-  server-only; no subscriber, credential, DNS, or destructive database change
-  was made.
+- Nine additive migrations are applied to Supabase. Tables remain server-only;
+  the application uses two narrow read-only RPCs for accepted facts and SQL
+  hard-filter codes. No subscriber, DNS, or destructive database change was
+  made.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
@@ -61,7 +62,7 @@ phase.
   PostgreSQL types and tables for brands, ownership periods, service regions,
   collections, models, variants, complications, price/market snapshots, traits,
   editorial claims, sources, per-field evidence, completeness, and review.
-- Migrations `0001` through `0006` are applied to Supabase project
+- Migrations `0001` through `0009` are applied to Supabase project
   `osfqexnzgkksfvaocjvl`; none enables `pgvector`.
 - `docs/catalogue-schema.md` maps questionnaire requirements to fields and
   records refresh/null/completeness policy.
@@ -73,7 +74,10 @@ phase.
   and 12 ownership-friction profiles.
 - The current audit reports 180 of 28,800 cells covered (0.63%), all
   single-candidate and under-diversified; 116 are under-evidenced.
-- Security advisor findings are empty, and browser roles have no table grants.
+- Browser roles have no table grants. The security advisor's only current
+  findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
+  both functions have an empty `search_path`, fixed read-only SQL, and no
+  dynamic statements. Performance findings remain unused-index information.
 
 ## Phase 4 checkpoint delivered
 
@@ -90,30 +94,42 @@ phase.
   artifacts.
 - Provenance and cosmetic preferences are visibly disclosed as unscored until
   reviewed brand/surface data exists.
+- `recommendation_catalogue_v1()` returns the accepted relational catalogue in
+  the strict Zod runtime shape. `recommendation_hard_filter_v1(profile, as_of)`
+  returns the authoritative hard-reject and missing-fact partition.
+- The server validates both RPC responses, requires exact variant coverage,
+  caches valid catalogue facts for 60 seconds, and visibly falls back as one
+  unit to the reviewed bundle plus local predicates.
+- `npm run audit:catalogue-parity` proves fact and predicate parity for all 12
+  variants across six golden profiles. PostgreSQL owns the live hard-filter
+  partition; TypeScript owns scoring, explanations, diversity, and fallback.
+- Vercel Production and Preview have the public Supabase URL and publishable
+  key. Neither role has table access, and the web request path uses no database
+  password.
 
 ## Verification evidence
 
 On 2026-08-28:
 
-- `npm run check` passes formatting, lint, strict type/route generation, all 32
-  tests across seven files, and the production build.
+- `npm run check` passes formatting, lint, strict type/route generation, all 41
+  tests across nine files, and the production build.
 - `npm run audit:coverage` validates all 28,800 cells without capped windows.
 - The deferred Playwright suite was updated with the core diagnostic flow but
   was not executed, per the Phase 7 cadence.
-- Supabase applied all six migrations. Live row counts, server-only privileges,
-  and both advisors were checked after the final migration.
+- Supabase applied all nine migrations. Live RPC parity, row counts, zero table
+  grants for browser roles, and both advisors were checked after the final
+  migration.
 
 ## Exact continuation
 
-1. Configure usable pooled/direct Supabase connection values in Vercel without
-   copying credentials into logs, then make the server read the canonical
-   catalogue and retain the reviewed bundle only as an explicit fallback.
-2. Move the exact active hard predicates into the PostgreSQL candidate query and
-   prove parity with engine v2 golden profiles.
-3. Finish the full Phase 4 gate and production smoke check.
-4. Start Phase 5 with coverage-first variants for the empty and
-   under-diversified cells; do not optimize for a vanity brand count.
-5. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
+1. Build the Phase 5 brand/reference manifest from the empty,
+   single-candidate, under-diversified, and under-evidenced coverage cells; do
+   not optimize for a vanity brand count.
+2. Define the resumable TypeScript ingestion/review contract before doing bulk
+   research, including raw-response retention and idempotent accepted facts.
+3. Add variants in small source-backed batches and rerun coverage, strict
+   catalogue validation, SQL parity, and the fast gate after every batch.
+4. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.
 

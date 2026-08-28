@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { data, Form, Link, useActionData, useNavigation } from "react-router";
 
 import type { Route } from "./+types/quiz";
+import { loadRecommendationData } from "../domain/catalogue.server";
+import type { CatalogueOrigin } from "../domain/catalogue.server";
 import {
   ACCURACY_TOLERANCES,
   ACQUISITION_CHANNELS,
@@ -41,7 +43,6 @@ import type {
   RecommendationResult,
 } from "../domain/recommendation";
 import { recommendWatches } from "../domain/recommendation";
-import { seedCatalogue } from "../domain/seed-catalogue";
 import "../styles/quiz.css";
 
 const CORE_STEP_COUNT = 6;
@@ -54,6 +55,8 @@ type ActionResult =
       intent: "core" | "refine";
       profile: ReturnType<typeof normalizeProfile>;
       recommendation: RecommendationResult;
+      catalogueOrigin: CatalogueOrigin;
+      catalogueNotice: string;
     }
   | { ok: false; errors: string[] };
 
@@ -379,11 +382,18 @@ export async function action({ request }: Route.ActionArgs) {
   }
 
   const profile = normalizeProfile(parsed.data);
+  const evaluatedAt = new Date().toISOString();
+  const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
   return data<ActionResult>({
     ok: true,
     intent,
     profile,
-    recommendation: recommendWatches(parsed.data, seedCatalogue),
+    recommendation: recommendWatches(parsed.data, catalogueLoad.catalogue, {
+      asOf: evaluatedAt,
+      hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
+    }),
+    catalogueOrigin: catalogueLoad.origin,
+    catalogueNotice: catalogueLoad.notice,
   });
 }
 
@@ -515,11 +525,15 @@ function OptionalSelect<T extends string>({
 function ProfileSummary({
   profile,
   recommendation,
+  catalogueOrigin,
+  catalogueNotice,
   onEdit,
   onRefine,
 }: {
   profile: ReturnType<typeof normalizeProfile>;
   recommendation: RecommendationResult;
+  catalogueOrigin: CatalogueOrigin;
+  catalogueNotice: string;
   onEdit: () => void;
   onRefine: () => void;
 }) {
@@ -598,7 +612,11 @@ function ProfileSummary({
           </div>
         ) : null}
       </dl>
-      <RecommendationSummary recommendation={recommendation} />
+      <RecommendationSummary
+        catalogueNotice={catalogueNotice}
+        catalogueOrigin={catalogueOrigin}
+        recommendation={recommendation}
+      />
       <div className="summary-actions">
         <button
           className="button button--primary"
@@ -725,8 +743,12 @@ function CandidateCard({
 
 function RecommendationSummary({
   recommendation,
+  catalogueOrigin,
+  catalogueNotice,
 }: {
   recommendation: RecommendationResult;
+  catalogueOrigin: CatalogueOrigin;
+  catalogueNotice: string;
 }) {
   return (
     <div className="recommendation-summary">
@@ -753,7 +775,7 @@ function RecommendationSummary({
           </div>
         ) : (
           <p className="empty-result">
-            No seed-catalogue variant passes every active hard constraint with
+            No catalogue variant passes every active hard constraint with
             complete evidence. Nothing was silently relaxed.
           </p>
         )}
@@ -838,6 +860,9 @@ function RecommendationSummary({
 
       <section className="source-register" aria-labelledby="sources-heading">
         <h2 id="sources-heading">Sources used in this result</h2>
+        <p className={`catalogue-origin catalogue-origin--${catalogueOrigin}`}>
+          {catalogueNotice}
+        </p>
         <ol>
           {recommendation.sources.map((source) => (
             <li key={source.id}>
@@ -968,6 +993,8 @@ export default function Quiz() {
         <ProfileSummary
           onEdit={() => setStep(0)}
           onRefine={() => setStep(CORE_STEP_COUNT)}
+          catalogueNotice={actionData.catalogueNotice}
+          catalogueOrigin={actionData.catalogueOrigin}
           profile={actionData.profile}
           recommendation={actionData.recommendation}
         />

@@ -7,8 +7,8 @@ Last verified: 2026-08-28
 - Vercel project: `the-reverse-watch` in the `alexisinworks-projects` team.
 - Git source: `alexisinwork/the-reverse-watch`, with `main` connected to
   production deployments.
-- Production deployment `dpl_HfvJDBdvDC7Ue1nt2qjJf1Ep72Ee` is the verified
-  rollback target before the Phase 3/4 recommendation release. The repository
+- Production deployment `dpl_8ZLYQ66fc9VYcVmb6rZjWsG3kEor` is the verified
+  rollback target before the live-Supabase Phase 4 release. The repository
   pins `framework: react-router` in `vercel.json`; `/`, `/quiz`, and `/health`
   returned 200 on `https://the-reverse-watch.vercel.app/` on 2026-08-28. This
   resolves the earlier framework-null `NOT_FOUND` incident.
@@ -17,15 +17,16 @@ Last verified: 2026-08-28
   `www.thereverse.watch` instead. Treat this mismatch as an unresolved
   production-routing issue and reconcile it toward the canonical repository
   domain with reversible, recorded changes.
-- Encrypted variables named `DATABASE_URL` and `DIRECT_DATABASE_URL` exist in
-  the Vercel project, but the production environment does not currently inject
-  usable values. The recommendation route therefore uses the reviewed bundled
-  seed until the Supabase server connection is configured and parity-tested.
+- `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` are configured for Production
+  and Preview. The web runtime uses the narrow accepted-facts and hard-filter
+  RPCs; it does not need a PostgreSQL password or management key. Invalid,
+  incomplete, timed-out, or unavailable RPC responses trigger the visible
+  reviewed-bundle fallback.
 
 ## Preview procedure
 
 1. Run `npm run check` locally. Do not run the deferred Playwright/E2E suite
-   during Phases 1–4.
+   before Phase 7.
 2. Push the reviewed commit to a non-production branch so the existing Git
    integration creates a preview deployment.
 3. Confirm that the Vercel build reaches `READY`, then perform only short

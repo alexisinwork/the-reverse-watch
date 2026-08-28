@@ -55,6 +55,9 @@ describe("progressive diagnostic", () => {
       screen.getByRole("heading", { name: "Promising, but verify first" }),
     ).toBeInTheDocument();
     expect(screen.getByText(/Longines Spirit Zulu Time/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/using the reviewed bundled snapshot/i),
+    ).toBeInTheDocument();
   });
 
   it("does not advance from a missing budget", () => {

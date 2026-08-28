@@ -158,7 +158,7 @@ and controls Phase 5 priorities.
 
 ## Phase 4 — Deterministic recommendation MVP
 
-Status: **in progress — server-seed baseline verified 2026-08-28**
+Status: **complete — live SQL path verified 2026-08-28**
 
 Goal: produce reproducible and explainable recommendations without AI
 infrastructure.
@@ -188,7 +188,7 @@ Verification:
 
 Completion of Phase 4 proves the core product decision loop.
 
-Checkpoint 2026-08-28: recommendation engine v2 implements fail-closed budget,
+Completion evidence 2026-08-28: recommendation engine v2 implements fail-closed budget,
 FX, fit, deployment, ownership friction, accuracy, weight, function, date,
 geometry, attachment, acquisition, availability, condition, resale, lume,
 crown, geography, allergy, and speculative gates over the reviewed server seed.
@@ -197,16 +197,24 @@ returns verification-required and why-not sections, proposes relaxations, and
 discloses selected soft preferences that the seed cannot yet score. `/quiz`
 renders this evidence and its sources.
 
-The remaining Phase 4 item is the production PostgreSQL read/query path. The
-canonical Supabase catalogue is populated and query-ready, but the Vercel
-`DATABASE_URL`/`DIRECT_DATABASE_URL` entries do not currently inject usable
-connection values. Production therefore uses the versioned, Zod-validated seed
-snapshot generated from the same reviewed input. This fallback is explicit and
-does not make a live-database claim.
+Migrations `0007` and `0008` expose narrow, versioned read-only RPC contracts
+for accepted catalogue facts and the complete hard-filter partition.
+`anon`/`authenticated` still have no table grants; migration `0009` also removes
+the unnecessary authenticated RPC grant. The server uses only the Supabase URL
+and publishable key, strictly validates both responses, caches valid catalogue
+facts for 60 seconds, and falls back as one visible unit to the reviewed bundle
+and local deterministic predicates. It never mixes an unvalidated SQL partition
+with live facts.
+
+The parity audit compares every decision fact and every hard-reject/missing-fact
+code across all 12 variants and six golden profiles. The live SQL partition,
+the bundled TypeScript partition, and final result ordering match. Production
+Vercel has the public Supabase runtime values and the source register states
+whether each response used the live SQL path or the explicit fallback.
 
 ## Phase 5 — Research pipeline and catalogue expansion
 
-Status: **pending**
+Status: **in progress — coverage-first expansion started 2026-08-28**
 
 Goal: expand from the validated seed to the planned approximately 200 brands
 without sacrificing field evidence or coverage.
@@ -293,8 +301,10 @@ Verification:
 | --- | --- | --- |
 | `APP_URL` | Phase 1 | Canonical application origin. |
 | `SESSION_SECRET` | Phase 2 if server sessions are used | Signed server-side state; not required for browser `sessionStorage`. |
-| `DATABASE_URL` | Phase 3 | Pooled application database connection. |
-| `DIRECT_DATABASE_URL` | Phase 3 | Additive migrations and maintenance. |
+| `SUPABASE_URL` | Phase 4 | Public project endpoint for the narrow accepted-facts RPCs. |
+| `SUPABASE_PUBLISHABLE_KEY` | Phase 4 | Public API key; it has RPC execute only and no table grants. |
+| `DATABASE_URL` | Optional Phase 5/7 | Direct SQL workers only if a later job needs them; not required by the web runtime. |
+| `DIRECT_DATABASE_URL` | Phase 3/5 maintenance | Additive migrations and maintenance outside the web runtime. |
 | `PERPLEXITY_API_KEY` | Phase 5 | Research source discovery. |
 | `OPENAI_API_KEY` | Optional Phase 5/6 | Structured normalization audit or semantic experiment. |
 | `AI_PROVIDER` | Optional Phase 6 | Experimental provider selection. |

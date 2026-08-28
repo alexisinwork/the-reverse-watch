@@ -16,6 +16,7 @@
     "test:e2e": "playwright test",
     "project:seed-coverage": "tsx scripts/project-seed-coverage.ts",
     "render:seed-migration": "tsx scripts/render-seed-migration.ts",
+    "audit:catalogue-parity": "tsx scripts/audit-catalogue-parity.ts",
     "audit:coverage": "tsx scripts/audit-coverage.ts",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:run && npm run build"
   },

@@ -5,7 +5,9 @@ Router v7 Framework Mode, Vite, and strict TypeScript. The application preserves
 the documentary landing page and Beehiiv signup and now includes the progressive
 reference diagnostic at `/quiz`. The diagnostic returns deterministic,
 source-cited candidates, verification gaps, and rejection reasons from a
-reviewed reference-variant seed.
+reviewed PostgreSQL reference-variant catalogue. The server validates the
+accepted-facts RPC response and visibly falls back to the reviewed bundled
+snapshot if the live catalogue or SQL filter contract fails.
 
 ## Local development
 
@@ -37,6 +39,14 @@ deferred suite is kept in the repository for that integration phase:
 ```bash
 npx playwright install chromium
 npm run test:e2e
+```
+
+With the two public Supabase runtime variables loaded, verify that the bundled
+facts, live facts, TypeScript predicates, and PostgreSQL hard-filter partition
+remain identical:
+
+```bash
+npm run audit:catalogue-parity
 ```
 
 Real credentials belong in the ignored `.env` file. See

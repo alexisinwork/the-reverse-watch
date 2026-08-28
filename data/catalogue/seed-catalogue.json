@@ -167,8 +167,8 @@
         "observedAt": "2026-08-28T18:30:00Z",
         "staleAfter": "2027-02-24T18:30:00Z",
         "availability": "unknown",
-        "availabilityObservedAt": "2026-08-28T18:30:00Z",
-        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
         "channels": ["authorized_dealer"],
         "conditions": ["new"]
       },
@@ -184,7 +184,7 @@
         "caseThicknessMm": 11,
         "lugToLugMm": null,
         "lugWidthMm": 18,
-        "weightFullG": 67.893,
+        "weightFullG": 67.89,
         "lugCurvature": null,
         "integratedBracelet": false
       },
@@ -563,8 +563,8 @@
         "observedAt": "2026-08-28T18:30:00Z",
         "staleAfter": "2027-02-24T18:30:00Z",
         "availability": "unknown",
-        "availabilityObservedAt": "2026-08-28T18:30:00Z",
-        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
         "channels": ["authorized_dealer"],
         "conditions": ["new"]
       },
@@ -877,8 +877,8 @@
         "observedAt": "2026-08-28T18:30:00Z",
         "staleAfter": "2027-02-24T18:30:00Z",
         "availability": "unknown",
-        "availabilityObservedAt": "2026-08-28T18:30:00Z",
-        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
         "channels": ["authorized_dealer"],
         "conditions": ["new"]
       },
@@ -1080,8 +1080,8 @@
         "observedAt": "2026-08-28T18:30:00Z",
         "staleAfter": "2027-02-24T18:30:00Z",
         "availability": "unknown",
-        "availabilityObservedAt": "2026-08-28T18:30:00Z",
-        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
         "channels": ["authorized_dealer"],
         "conditions": ["new"]
       },
@@ -1178,8 +1178,8 @@
         "observedAt": "2026-08-28T18:30:00Z",
         "staleAfter": "2027-02-24T18:30:00Z",
         "availability": "unknown",
-        "availabilityObservedAt": "2026-08-28T18:30:00Z",
-        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
         "channels": ["authorized_dealer"],
         "conditions": ["new"]
       },

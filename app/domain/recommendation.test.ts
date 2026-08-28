@@ -1,6 +1,7 @@
 import type { QuestionnaireProfile } from "./questionnaire";
 import { QUESTIONNAIRE_VERSION } from "./questionnaire";
 import {
+  evaluateHardFilterPartition,
   MAX_LUG_TO_LUG_TO_WRIST_RATIO,
   recommendWatches,
 } from "./recommendation";
@@ -147,6 +148,49 @@ describe("deterministic recommendation engine", () => {
     expect(() =>
       recommendWatches(baseProfile, seedCatalogue, { asOf: "not-a-date" }),
     ).toThrow(RangeError);
+  });
+
+  it("accepts an exact external hard-filter partition as authoritative", () => {
+    const hardFilterEvaluation = evaluateHardFilterPartition(
+      baseProfile,
+      seedCatalogue,
+      { asOf: TEST_AS_OF },
+    );
+    hardFilterEvaluation["grand-seiko-sbgn029"] = {
+      hardReasons: ["over_budget"],
+      missingFacts: [],
+    };
+
+    const result = recommendWatches(baseProfile, seedCatalogue, {
+      asOf: TEST_AS_OF,
+      hardFilterEvaluation,
+    });
+
+    expect(result.recommendations).toHaveLength(0);
+    expect(result.whyNot).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          id: "grand-seiko-sbgn029",
+          hardReasons: [expect.objectContaining({ code: "over_budget" })],
+        }),
+      ]),
+    );
+  });
+
+  it("rejects a hard-filter partition that omits a catalogue variant", () => {
+    const hardFilterEvaluation = evaluateHardFilterPartition(
+      baseProfile,
+      seedCatalogue,
+      { asOf: TEST_AS_OF },
+    );
+    delete hardFilterEvaluation["grand-seiko-sbgn029"];
+
+    expect(() =>
+      recommendWatches(baseProfile, seedCatalogue, {
+        asOf: TEST_AS_OF,
+        hardFilterEvaluation,
+      }),
+    ).toThrow(/does not match the catalogue/i);
   });
 
   it("applies premium headroom only to an eligible candidate price channel", () => {

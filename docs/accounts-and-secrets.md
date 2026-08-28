@@ -18,7 +18,8 @@ Checked on 2026-08-27:
   this public repository.
 - GitHub CLI targets the repository owner's account, but its cached token is
   currently invalid.
-- Vercel CLI account: not verified yet.
+- Vercel CLI account: `alexisinwork`; project ownership is the
+  `alexisinworks-projects` team.
 
 Do not infer repository ownership or API billing ownership from the git commit
 email. They are separate credentials.
@@ -52,7 +53,8 @@ API project and project service-account key for The Reserve.
 | OpenAI Platform | `OPENAI_PROJECT_ID`, `OPENAI_ORG_ID` | Optional | Record the dedicated project's IDs when the account belongs to multiple organizations/projects. |
 | Perplexity | `PERPLEXITY_API_KEY` | Phase 5 and research MCP | Dedicated project/key for catalogue research so spend is isolated. |
 | Beehiiv | `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 7 | Existing The Reserve publication; use only server-side. |
-| Supabase Postgres | `DATABASE_URL`, `DIRECT_DATABASE_URL` | Phase 3/4 | Project `osfqexnzgkksfvaocjvl`; use separate preview and production credentials. `pgvector` is optional and is not needed for the deterministic baseline. |
+| Supabase API | `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` | Phase 4 web runtime | Project `osfqexnzgkksfvaocjvl`; the public key can execute only the narrow read-only RPC boundary and has no table grants. |
+| Supabase Postgres | `DIRECT_DATABASE_URL` | Migration/research maintenance only | Use a direct/session-pooler credential only for jobs that require SQL. It is not needed by the production recommendation route. `pgvector` is not enabled. |
 | GitHub | `GITHUB_PAT_TOKEN` | MCP only | Fine-grained PAT restricted to `alexisinwork/the-reverse-watch`; add write permissions only when needed. |
 | Vercel | OAuth for MCP | Phase 1 | Sign in to the account/team that will own `thereserve.watch`. |
 | Vercel | `VERCEL_TOKEN` and IDs | Optional automation | Use only for non-interactive CI; OAuth is preferred for interactive MCP work. |
@@ -147,18 +149,16 @@ team. GitHub and Perplexity use the environment-variable tokens and do not need
 an OAuth login in this configuration.
 
 Supabase MCP is restricted to project `osfqexnzgkksfvaocjvl`. The application
-does not need a Supabase management key. In Phase 3, use Supavisor's transaction
-pooler connection for Vercel application traffic and a direct or session-pooler
-connection for migrations. Keep `DATABASE_URL` and `DIRECT_DATABASE_URL`
-provider-neutral so the application is not coupled to the management API. Do
-not enable `pgvector` unless the optional Phase 6 experiment reaches its entry
-gate.
+does not need a Supabase management key or database password at web-request
+time. Vercel calls the versioned accepted-facts and hard-filter RPCs with the
+project URL and publishable key. A direct or session-pooler connection remains
+appropriate for migrations or future bulk research workers. Do not enable
+`pgvector` unless the optional Phase 6 experiment reaches its entry gate.
 
-As of 2026-08-28, migrations and seed loading were completed through the
-project-scoped Supabase MCP. Vercel lists encrypted placeholders for
-`DATABASE_URL` and `DIRECT_DATABASE_URL`, but they do not currently provide a
-usable runtime connection. Do not claim live database reads until those values
-are configured and the SQL/seed parity fixtures pass.
+As of 2026-08-28, nine migrations and seed loading were completed through the
+project-scoped Supabase MCP. Vercel Production and Preview have the two public
+Supabase runtime values. The live catalogue and SQL hard-filter RPCs pass strict
+shape, fact, and six-profile predicate parity against the bundled fallback.
 
 ## Local validation
 

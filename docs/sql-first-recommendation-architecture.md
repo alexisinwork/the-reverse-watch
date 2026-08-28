@@ -293,7 +293,11 @@ applied to Supabase, and deterministic recommendation engine v2 was connected to
 confirms that structured catalogue expansion—not semantic retrieval—is the
 current bottleneck.
 
-Production temporarily reads the Zod-validated, versioned seed bundle because
-its Vercel database placeholders are not usable connection values yet. Supabase
-remains canonical; the next Phase 4 checkpoint is SQL-query parity and switching
-the server read path, not adding embeddings.
+Phase 4 completed the production path with two narrow Supabase RPCs: one emits
+accepted facts in the strict Zod catalogue shape and one computes the complete
+hard-filter/missing-fact partition in PostgreSQL. Vercel calls them with the
+public project URL and publishable key; browser roles still have no table
+grants. Six golden profiles prove SQL/TypeScript predicate parity. A failed or
+invalid live response visibly falls back as one unit to the reviewed seed and
+local predicates. The remaining bottleneck is still structured catalogue
+coverage, not semantic retrieval.

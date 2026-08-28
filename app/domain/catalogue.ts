@@ -4,6 +4,7 @@ import type { ACCURACY_TOLERANCES } from "./questionnaire";
 import {
   ACQUISITION_CHANNELS,
   AESTHETIC_DNA,
+  CONDITIONS,
   CURRENCIES,
   DEPLOYMENT_ENVIRONMENTS,
   EMOTIONAL_OBJECTIVES,
@@ -59,10 +60,10 @@ export const seedReferenceVariantSchema = z
           "unavailable",
           "unknown",
         ]),
-        availabilityObservedAt: z.iso.datetime(),
-        availabilityStaleAfter: z.iso.datetime(),
+        availabilityObservedAt: z.iso.datetime().nullable(),
+        availabilityStaleAfter: z.iso.datetime().nullable(),
         channels: z.array(z.enum(ACQUISITION_CHANNELS)).min(1),
-        conditions: z.array(z.literal("new")).length(1),
+        conditions: z.array(z.enum(CONDITIONS)).min(1),
       })
       .strict(),
     materials: z

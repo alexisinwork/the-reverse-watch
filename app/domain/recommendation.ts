@@ -18,46 +18,59 @@ import {
 export const RECOMMENDATION_ENGINE_VERSION = 2 as const;
 export const MAX_LUG_TO_LUG_TO_WRIST_RATIO = 0.31;
 
-export type HardReasonCode =
-  | "over_budget"
-  | "fit_exceeds_wrist"
-  | "deployment_mismatch"
-  | "ownership_mismatch"
-  | "accuracy_mismatch"
-  | "weight_exceeds_limit"
-  | "missing_complication"
-  | "date_required"
-  | "date_forbidden"
-  | "lug_curvature_mismatch"
-  | "attachment_mismatch"
-  | "lug_width_mismatch"
-  | "quick_release_required"
-  | "channel_mismatch"
-  | "availability_mismatch"
-  | "liquidity_mismatch"
-  | "lume_mismatch"
-  | "crown_mismatch"
-  | "condition_mismatch"
-  | "service_country_mismatch"
-  | "allergy_risk"
-  | "speculative_suppressed";
+export const HARD_REASON_CODES = [
+  "over_budget",
+  "fit_exceeds_wrist",
+  "deployment_mismatch",
+  "ownership_mismatch",
+  "accuracy_mismatch",
+  "weight_exceeds_limit",
+  "missing_complication",
+  "date_required",
+  "date_forbidden",
+  "lug_curvature_mismatch",
+  "attachment_mismatch",
+  "lug_width_mismatch",
+  "quick_release_required",
+  "channel_mismatch",
+  "availability_mismatch",
+  "liquidity_mismatch",
+  "lume_mismatch",
+  "crown_mismatch",
+  "condition_mismatch",
+  "service_country_mismatch",
+  "allergy_risk",
+  "speculative_suppressed",
+] as const;
 
-export type MissingFactCode =
-  | "fx_rate"
-  | "price"
-  | "purchase_country"
-  | "service_country"
-  | "lug_to_lug"
-  | "accuracy"
-  | "weight"
-  | "lug_curvature"
-  | "attachment"
-  | "lug_width"
-  | "availability"
-  | "liquidity"
-  | "lume"
-  | "crown_position"
-  | "nickel_contact_risk";
+export const MISSING_FACT_CODES = [
+  "fx_rate",
+  "price",
+  "purchase_country",
+  "service_country",
+  "lug_to_lug",
+  "accuracy",
+  "weight",
+  "lug_curvature",
+  "attachment",
+  "lug_width",
+  "availability",
+  "liquidity",
+  "lume",
+  "crown_position",
+  "nickel_contact_risk",
+] as const;
+
+export type HardReasonCode = (typeof HARD_REASON_CODES)[number];
+export type MissingFactCode = (typeof MISSING_FACT_CODES)[number];
+
+export type HardFilterEvaluation = Record<
+  string,
+  {
+    hardReasons: HardReasonCode[];
+    missingFacts: MissingFactCode[];
+  }
+>;
 
 export type ScoreFactor = {
   factor: string;
@@ -116,6 +129,68 @@ type EvaluationContext = {
   profile: QuestionnaireProfile;
   catalogue: SeedCatalogue;
   asOfMs: number;
+  hardFilterEvaluation?: HardFilterEvaluation;
+};
+
+const HARD_REASON_EXPLANATIONS: Record<HardReasonCode, string> = {
+  over_budget:
+    "The verified converted price exceeds the explicit budget ceiling.",
+  fit_exceeds_wrist:
+    "The verified case span exceeds the conservative wrist-width boundary.",
+  deployment_mismatch:
+    "The reviewed deployment profile does not cover the selected environment.",
+  ownership_mismatch:
+    "The movement/service profile conflicts with the selected ownership tolerance.",
+  accuracy_mismatch:
+    "The published accuracy range is outside the selected tolerance.",
+  weight_exceeds_limit:
+    "The verified full-watch weight is not under the selected limit.",
+  missing_complication: "A required function is absent.",
+  date_required: "A date display is required.",
+  date_forbidden: "A no-date watch is required.",
+  lug_curvature_mismatch: "Lug curvature differs from the required geometry.",
+  attachment_mismatch: "The attachment system is not the requested type.",
+  lug_width_mismatch: "Verified lug width does not match the requested width.",
+  quick_release_required:
+    "The supplied strap or bracelet is not quick release.",
+  channel_mismatch:
+    "No verified price exists in an accepted acquisition channel.",
+  availability_mismatch:
+    "Current availability is outside the selected wait tolerance.",
+  liquidity_mismatch:
+    "The verified secondary-value floor is below the requested threshold.",
+  lume_mismatch: "Verified lume does not meet the selected requirement.",
+  crown_mismatch: "Crown position differs from the requested position.",
+  condition_mismatch: "No verified price exists in an accepted condition.",
+  service_country_mismatch:
+    "The verified manufacturer service network does not cover the selected country.",
+  allergy_risk:
+    "The documented material profile cannot satisfy the contact-allergy constraint.",
+  speculative_suppressed:
+    "Speculative candidates require both an eligible secondary channel and explicit risk acceptance.",
+};
+
+const MISSING_FACT_EXPLANATIONS: Record<MissingFactCode, string> = {
+  fx_rate:
+    "The exchange-rate snapshot needed for this budget conversion has expired or is unavailable.",
+  price: "The current price lacks verified, unexpired evidence.",
+  purchase_country:
+    "The accepted price snapshot is not for the selected purchase country.",
+  service_country:
+    "Manufacturer service coverage is not verified for the selected country.",
+  lug_to_lug:
+    "Lug-to-lug is not manufacturer-verified, so wrist fit cannot pass silently.",
+  accuracy: "No numerical manufacturer accuracy specification is available.",
+  weight: "Full-watch weight is missing or not manufacturer-verified.",
+  lug_curvature: "Lug curvature is not verified.",
+  attachment: "The attachment system is not verified.",
+  lug_width: "Lug width is not verified.",
+  availability: "Current availability is unknown or stale.",
+  liquidity: "No current verified secondary-value floor is available.",
+  lume: "Lume performance is not verified.",
+  crown_position: "Crown position is not verified.",
+  nickel_contact_risk:
+    "Nickel/contact safety is not verified for all skin-contact components.",
 };
 
 function addReason(
@@ -131,6 +206,7 @@ function addMissing(
   code: MissingFactCode,
   explanation: string,
 ) {
+  if (candidate.missingFacts.some((fact) => fact.code === code)) return;
   candidate.missingFacts.push({ code, explanation });
 }
 
@@ -489,6 +565,7 @@ function evaluateRefinementHardFilters(
     if (
       !hasVerifiedField(variant, "availability") ||
       variant.price.availability === "unknown" ||
+      variant.price.availabilityStaleAfter === null ||
       context.asOfMs > Date.parse(variant.price.availabilityStaleAfter)
     ) {
       addMissing(
@@ -744,8 +821,25 @@ function evaluateVariant(
   context: EvaluationContext,
 ) {
   const candidate = initialCandidate(variant, context);
-  evaluateCoreHardFilters(variant, candidate, context);
-  evaluateRefinementHardFilters(variant, candidate, context);
+  if (context.hardFilterEvaluation) {
+    const evaluation = context.hardFilterEvaluation[variant.id];
+    if (!evaluation) {
+      throw new RangeError(
+        `Hard-filter evaluation is missing catalogue variant ${variant.id}.`,
+      );
+    }
+    candidate.hardReasons = evaluation.hardReasons.map((code) => ({
+      code,
+      explanation: HARD_REASON_EXPLANATIONS[code],
+    }));
+    candidate.missingFacts = evaluation.missingFacts.map((code) => ({
+      code,
+      explanation: MISSING_FACT_EXPLANATIONS[code],
+    }));
+  } else {
+    evaluateCoreHardFilters(variant, candidate, context);
+    evaluateRefinementHardFilters(variant, candidate, context);
+  }
   scoreCandidate(variant, candidate, context);
   candidate.sourceIds = [
     ...new Set(variant.evidence.map((evidence) => evidence.sourceId)),
@@ -851,19 +945,72 @@ function buildUnscoredPreferences(
   return unscored;
 }
 
-export function recommendWatches(
-  profile: QuestionnaireProfile,
-  catalogue: SeedCatalogue,
-  { asOf = new Date().toISOString() }: { asOf?: string } = {},
-): RecommendationResult {
+function evaluationTimestamp(asOf: string) {
   const asOfMs = Date.parse(asOf);
   if (!Number.isFinite(asOfMs)) {
     throw new RangeError("Recommendation evaluation time must be ISO-8601.");
+  }
+  return asOfMs;
+}
+
+function assertHardFilterCoverage(
+  catalogue: SeedCatalogue,
+  evaluation: HardFilterEvaluation,
+) {
+  const expected = new Set(catalogue.variants.map((variant) => variant.id));
+  const actual = new Set(Object.keys(evaluation));
+  const missing = [...expected].filter((id) => !actual.has(id));
+  const unexpected = [...actual].filter((id) => !expected.has(id));
+  if (missing.length > 0 || unexpected.length > 0) {
+    throw new RangeError(
+      `Hard-filter evaluation does not match the catalogue (missing: ${missing.join(", ") || "none"}; unexpected: ${unexpected.join(", ") || "none"}).`,
+    );
+  }
+}
+
+export function evaluateHardFilterPartition(
+  profile: QuestionnaireProfile,
+  catalogue: SeedCatalogue,
+  { asOf = new Date().toISOString() }: { asOf?: string } = {},
+): HardFilterEvaluation {
+  const context: EvaluationContext = {
+    profile,
+    catalogue,
+    asOfMs: evaluationTimestamp(asOf),
+  };
+  return Object.fromEntries(
+    catalogue.variants.map((variant) => {
+      const candidate = initialCandidate(variant, context);
+      evaluateCoreHardFilters(variant, candidate, context);
+      evaluateRefinementHardFilters(variant, candidate, context);
+      return [
+        variant.id,
+        {
+          hardReasons: candidate.hardReasons.map((reason) => reason.code),
+          missingFacts: candidate.missingFacts.map((fact) => fact.code),
+        },
+      ];
+    }),
+  );
+}
+
+export function recommendWatches(
+  profile: QuestionnaireProfile,
+  catalogue: SeedCatalogue,
+  {
+    asOf = new Date().toISOString(),
+    hardFilterEvaluation,
+  }: { asOf?: string; hardFilterEvaluation?: HardFilterEvaluation } = {},
+): RecommendationResult {
+  const asOfMs = evaluationTimestamp(asOf);
+  if (hardFilterEvaluation) {
+    assertHardFilterCoverage(catalogue, hardFilterEvaluation);
   }
   const context: EvaluationContext = {
     profile,
     catalogue,
     asOfMs,
+    hardFilterEvaluation,
   };
   const evaluated = catalogue.variants.map((variant) =>
     evaluateVariant(variant, context),

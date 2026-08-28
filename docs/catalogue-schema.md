@@ -9,8 +9,9 @@ enabling `pgvector`.
 The second migration,
 [`0002_server_only_catalogue_access.sql`](../db/migrations/0002_server_only_catalogue_access.sql),
 revokes all table access from Supabase browser roles and fixes the two missing
-foreign-key indexes reported by the database advisor. The catalogue is
-server-only until an explicit public read contract and RLS policies exist.
+foreign-key indexes reported by the database advisor. The tables remain
+server-only; Phase 4 later adds two deliberately narrow read-only RPC contracts
+without granting table access.
 
 The remaining Phase 3 migrations add dated FX snapshots, load the reviewed seed,
 index its source relationship, and expose reviewed deployment/service-tolerance
@@ -20,6 +21,20 @@ classifications as typed filter tables:
 - [`0004_seed_reference_catalogue.sql`](../db/migrations/0004_seed_reference_catalogue.sql)
 - [`0005_fx_source_index.sql`](../db/migrations/0005_fx_source_index.sql)
 - [`0006_reference_filter_profiles.sql`](../db/migrations/0006_reference_filter_profiles.sql)
+
+The Phase 4 read path and grant hardening are additive as well:
+
+- [`0007_recommendation_catalogue_rpc.sql`](../db/migrations/0007_recommendation_catalogue_rpc.sql)
+  adds product URLs and returns only accepted, evidence-backed facts in the
+  strict runtime catalogue shape;
+- [`0008_recommendation_hard_filter_rpc.sql`](../db/migrations/0008_recommendation_hard_filter_rpc.sql)
+  returns hard-reject and missing-fact codes for every accepted variant;
+- [`0009_harden_recommendation_rpc_grants.sql`](../db/migrations/0009_harden_recommendation_rpc_grants.sql)
+  removes the unnecessary signed-in-user execution path.
+
+Both RPCs are fixed `SECURITY DEFINER` SQL with an empty `search_path`, no
+dynamic SQL, and no mutation. Only `anon` and the administrative service role
+can execute them. `anon` and `authenticated` retain zero direct table grants.
 
 ## Entity boundary
 
@@ -146,15 +161,24 @@ permutations.
 
 ## Applied database evidence
 
-All six migrations were applied additively to Supabase project
+All nine migrations were applied additively to Supabase project
 `osfqexnzgkksfvaocjvl` on 2026-08-28. The live catalogue contains 11 brands, 12
 homogeneous variants, 12 retail-price snapshots, 7 availability snapshots, 236
 field-evidence rows, 5 FX rows, 25 deployment profiles, and 12
 ownership-friction profiles. The two Rolex Explorer materials remain distinct
 rows (`124270` steel and `124273` steel/yellow gold).
 
-The Supabase security advisor reports no findings. `anon` and `authenticated`
-have no table access. Performance findings are only unused-index informational
-notices expected on a newly loaded 12-row catalogue; the indexes are retained
-for the expansion phase. See the advisor's
+`npm run audit:catalogue-parity` validates the strict RPC response against the
+bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes
+for every variant across six golden profiles.
+
+The Supabase security advisor reports two intentional warnings because the
+anonymous role can execute the two `SECURITY DEFINER` RPCs. This is the intended
+public catalogue boundary; the functions expose only accepted catalogue facts
+and fixed filter codes, while `anon` and `authenticated` have no table access.
+The broader authenticated execution grants were revoked. See the advisor's
+[security-definer guidance](https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable).
+Performance findings are only unused-index informational notices expected on a
+newly loaded 12-row catalogue; the indexes are retained for the expansion phase.
+See the advisor's
 [unused-index guidance](https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index).
