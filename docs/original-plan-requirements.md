@@ -2,116 +2,180 @@
 
 This ledger prevents product intent from being lost while the duplicated and
 partly superseded [`original_context.md`](original_context.md) is converted into
-phased implementation work. It is an index, not a replacement: read the entire
-original file before planning or implementing every phase.
+delivery work. It is an index, not a replacement: read the entire original file
+before planning or implementing every phase.
 
-The [`implementation roadmap`](implementation-roadmap.md) controls sequence,
-phase evidence, and accepted technical decisions. Phases continue automatically
-after their evidence is recorded. When an older sketch conflicts with an
-explicit owner decision or the roadmap, retain the desired product behavior and
-record the technical reconciliation instead of silently dropping the
-requirement.
+The [`implementation roadmap`](implementation-roadmap.md) controls sequence and
+accepted technical decisions. The catalogue audit accepted on 2026-08-28 is
+recorded in
+[`sql-first-recommendation-architecture.md`](sql-first-recommendation-architecture.md).
+Where it conflicts with a provisional vector-first sketch, preserve the product
+behavior and use the SQL-first decision.
 
 ## Decisions that must survive implementation
 
-- Build the application, research pipeline, and AI workflow entirely in
-  TypeScript/JavaScript. Do not introduce the older proposed Python/FastAPI
-  service.
-- Use React Router v7 Framework Mode and Vite for the web application.
-- Use Mastra where it adds useful workflow orchestration, Zod at external-data
-  and model boundaries, PostgreSQL as the canonical catalogue, and `pgvector`
-  for semantic retrieval.
-- Keep an OpenAI provider adapter and an optional Ollama/RunPod path. The older
-  Qdrant/Chroma-only sketches are historical alternatives, not permission to
-  replace PostgreSQL as the factual source of truth.
+- Build the application and research pipeline in TypeScript/JavaScript. Do not
+  introduce the older Python/FastAPI service.
+- Use React Router v7 Framework Mode and Vite for the web application, Zod at
+  input boundaries, and PostgreSQL as the canonical catalogue.
+- Launch with SQL hard filters and a transparent, versioned weighted score.
+  Chunking, embeddings, `pgvector`, a separate vector database, Mastra, an LLM,
+  Ollama, and RunPod are not baseline dependencies.
+- Treat a materially and dimensionally homogeneous reference variant—not a
+  brand or broad model family—as the filtering and ranking unit.
+- Keep brand history, ownership, perception, psychology, and service reality as
+  sourced context. Never apply a brand-level rollup as a reference-level fact.
+- Store exact price, wrist, dimension, performance, and market facts as numeric
+  values. Derive UI bands from a single constants module.
 - Preserve the documentary voice: precise, dry, skeptical of marketing myth,
   and respectful of real engineering. Avoid empty labels such as “timeless,”
   “iconic,” “grail,” and “legendary” in generated dossiers.
-- Treat exact financial, physical, mechanical, ownership, and availability
-  constraints deterministically. Use semantic retrieval for psychology,
-  perception, provenance themes, design language, and emotional fit.
 - Keep the dossier visible without requiring email. Beehiiv delivery and
-  subscription require an explicit opt-in.
+  subscription require explicit opt-in.
 
-## Canonical eight-question diagnostic
+## Progressive questionnaire
 
-The final eight-input version in the original plan supersedes its earlier
-seven-question draft. Phase 2 must preserve the intent and option granularity of
-all eight dimensions:
+The original eight questions are retained as product intent, not as a mandatory
+eight-step conversion wall. The 2026-08-28 audit adds missing hard constraints
+and changes Phase 2 to a progressive flow.
 
-1. Acquisition constraint: eight price ceilings from under `$300` through
-   `$15,000+`.
-2. Wrist circumference and sizing: five measured wrist bands with case and
-   lug-to-lug guidance.
-3. Mechanical/operational friction: zero-maintenance, workhorse mechanical, or
-   in-house/specialist tolerance.
-4. Operational deployment: field/water/abuse, studio/desk/daily, or
+### Core six-screen flow
+
+1. Exact acquisition ceiling and currency. Price ranges remain UI shortcuts;
+   the normalized payload contains a numeric maximum.
+2. Measured wrist circumference. It is normalized to millimetres; the canonical
+   display bands are derived from one constants module.
+3. Operational deployment: field/water/abuse, studio/desk/daily, or
    formal/architectural.
-5. Social signal: discreet competence, quiet continuity, unapologetic
-   benchmark, or anti-luxury counter-signal.
-6. Aesthetic DNA: structural tool, mid-century industrial, integrated geometry,
-   extravagant/creative, or high art and fine finishing.
-7. Provenance/corporate architecture: sovereign independent, industrial
-   reality, or transparent modern rebirth.
-8. Emotional objective: dependable armor, generational custody, creative
-   differentiation, or milestone marker.
+4. Movement/service tolerance and required accuracy. Seconds-per-month accuracy
+   can exclude mechanical movements; it is not inferred from a vague
+   “mechanical acceptable” answer.
+5. Maximum comfortable weight.
+6. Required complications and date preference, including GMT, chronograph,
+   moon phase, power reserve, alarm, world time, perpetual calendar, date, and
+   no-date.
+
+The user receives a deterministic profile summary after the core flow and may
+continue into refinement without losing state.
+
+### Optional refinement dimensions
+
+- social signal: discreet competence, quiet continuity, unapologetic benchmark,
+  or anti-luxury counter-signal;
+- aesthetic DNA: structural tool, mid-century industrial, integrated geometry,
+  extravagant/creative, or high art and fine finishing;
+- provenance/corporate architecture: sovereign independent, industrial reality,
+  or transparent modern rebirth;
+- emotional objective: dependable armor, generational custody, creative
+  differentiation, or milestone marker;
+- hype/market stance, including explicit speculative-risk tolerance;
+- lug curvature, fit sensitivity, integrated-bracelet tolerance, attachment
+  type, quick release, and lug-width requirements;
+- purchase channel, availability/wait-list tolerance, and a bounded explicit
+  premium allowance;
+- liquidity/resale preference;
+- lume and crown-position preferences;
+- purchase and service geography;
+- cosmetic wear/patina tolerance;
+- new, certified pre-owned, other pre-owned, or vintage condition;
+- nickel/contact-allergy constraint.
+
+Colour, cyclops, and similar visual details belong after the first result. Every
+active hard requirement must map to a structured catalogue fact; when it does
+not, the UI must label the result as requiring verification rather than pretend
+the filter ran.
 
 The UI must retain progress, Back/Next behavior, disabled incomplete
-transitions, measured-wrist guidance, server validation, recoverable state, and
-an optional email field that is separate from recommendation access.
+transitions, measurement guidance, server validation, recoverable state, and an
+optional email field that is separate from recommendation access.
 
 ## Complete brand and reference knowledge
 
 The initial seed is a calibration step, not the final scope. Maintain a complete
-brand manifest for the planned catalogue—approximately 200 brands unless the
-owner later changes the target—and process every manifest entry. Do not stop at
-an arbitrary first 200 or last 200 records, and do not let seed-set examples
-become the whole catalogue.
+manifest for approximately 200 brands unless the owner changes the target.
+However, run the combinatorial coverage audit before bulk acquisition. Seed
+selection must cover hard-filter cells rather than merely prestigious brands.
 
 The original plan explicitly names or groups Rolex, Cartier, Patek Philippe,
 Seiko, Grand Seiko, Omega, Casio/G-Shock, Nomos, Jaeger-LeCoultre, Blancpain,
 Audemars Piguet, Marathon, Sinn, Swatch, Vostok, Hamilton, transparent
-microbrands, and resurrected or “zombie” marks. Those are required coverage
-examples, not an exhaustive allowlist. It also requires correct treatment of
-Swatch Group, Richemont, LVMH, Citizen, foundation-backed, family-owned,
-independent, and revival ownership structures.
+microbrands, and resurrected or “zombie” marks. These are required examples,
+not an exhaustive allowlist.
 
-Every brand dossier must cover, with claim-level sources and retrieval dates:
+### Brand records
 
-- detailed founding, lineage, discontinuities, acquisitions, relaunches, and
-  current corporate ownership;
-- the difference between verified history and invented or overstated heritage;
-- brand psychology, buyer archetypes, emotional promise, and counter-signaling;
-- public and collector perception, status legibility, liquidity/recognition,
-  cultural associations, and likely social context;
-- design DNA, form origins, recurring visual codes, finishing philosophy, and
-  representative collections;
-- movement sourcing and manufacture reality, serviceability, maintenance
-  friction, accuracy, durability, and parts constraints;
-- reference-level prices, dimensions, lug-to-lug fit, thickness, water
-  resistance, use environment, availability, and trade-offs;
-- provenance quality, conflicting claims, missing facts as `null`, and review
-  status.
+Brand data covers sourced founding and discontinuities, ownership, movement
+sourcing policy, service network and parts access, public and collector
+perception, buyer archetypes, narrative risks, and editorial context. Derived
+catalogue ranges may be shown for explanation but never enter scoring.
 
-Embeddings may represent editorial passages about history, psychology,
-perception, provenance, design, and emotional fit. Exact facts and filters must
-remain in structured PostgreSQL columns linked to sources.
+### Reference-variant records
+
+Every filterable record represents one commercially and mechanically coherent
+variant. Different size, material, bracelet, movement, or price behavior means a
+separate row. Required fact families include:
+
+- exact identity, material, production state, and availability;
+- diameter, thickness, lug-to-lug, lug width, lug curvature, integrated-bracelet
+  status, and weight;
+- movement type, calibre, power reserve, accuracy, antimagnetic specification,
+  and normalized complications;
+- water resistance, crown type/position, crystal, lume, attachment type, and
+  clasp adjustment;
+- retail and market price snapshots, secondary ratios, hype, liquidity, and
+  market momentum as distinct concepts;
+- active-field completeness and source evidence.
+
+Every accepted value retains field-level source provenance, observed/retrieved/
+verified times, verification status, and a staleness policy appropriate to the
+fact. Missing facts remain `null`.
+
+### Completeness levels
+
+- M0 admits a brand/reference set to catalogue discovery.
+- M1 provides the active hard-filter facts required for ranked recommendations.
+- M2 adds history, psychology, perception, buyer's-remorse, patent, and other
+  editorial enrichment.
+
+A record missing an active hard-filter fact cannot rank in the top three. It may
+appear only as “verification required.”
 
 ## Recommendation dossier contract
 
 The original output concepts—The Watch, The Mechanism, The Historical Reality,
-and The Psychological Fit—remain required. The production response expands
-them into three to five cited candidates, each containing:
+and The Psychological Fit—remain required. The default response contains three
+cited candidates, no more than one per brand, with distinct primary archetypes.
+Each candidate includes:
 
-- exact brand, model, and reference identity;
+- exact brand, model, reference, and material/configuration identity;
 - corporate status and verified historical context;
 - mechanical verdict, dimensional fit, maintenance reality, and hard-filter
   compliance;
 - psychological alignment, social signal, aesthetic rationale, and perception;
-- confidence, rejection/trade-off reasoning, and citations for factual claims.
+- deterministic score contributions, confidence/completeness, trade-offs, and
+  citations.
 
-The model must not invent a reference or specification, and marketing language
-must not override contradictory corporate or mechanical evidence.
+It also contains two or three “why not” near-matches and the exact filter or
+trade-off that removed each one. Empty results use the published relaxation
+ladder and never weaken budget, fit, safety, allergy, accuracy, or functional
+requirements silently.
+
+References marked `speculative_bubble` are suppressed unless the user accepts
+both premium/secondary acquisition and speculative risk. When shown, they carry
+an explicit volatility disclaimer.
+
+## Optional AI and semantic work
+
+LLM or semantic functionality is limited initially to:
+
+- extracting questionnaire fields from free text; and
+- matching curated subjective descriptions when an evaluation proves that the
+  explicit tag score loses material nuance.
+
+Arbitrary dossier chunking is not required. If embeddings are tested, they
+index curated reference- or claim-level passages and never replace structured
+facts. The experiment must outperform the deterministic baseline without hard
+constraint violations before it can enter the production path.
 
 ## Media, funnel, and release workstream
 
@@ -127,17 +191,17 @@ roadmap cannot perform the owner's physical and editorial tasks:
 - review the specified conversion, CTR, and retention analytics on the planned
   Day 18 checkpoint.
 
-These items are not complete merely because the web application advances. Any
-future media plan should link back to the full original context rather than
-reconstructing it from memory.
+These items are not complete merely because the web application advances.
 
 ## Phase mapping
 
-| Original requirement | Current delivery phase |
+| Original or audited requirement | Current delivery phase |
 | --- | --- |
 | Landing identity, design tokens, Vercel, Beehiiv embed | Phase 1 |
-| Final eight-question diagnostic and state behavior | Phase 2 |
-| Complete brand manifest, detailed sourced dossiers, canonical facts | Phase 3 |
-| Embeddings, hard filters, scoring, Mastra, provider evaluation | Phase 4 |
-| Cited dossier UI, explicit email opt-in, analytics, production funnel | Phase 5 |
-| Physical production, episodes, thumbnails, and YouTube release cadence | Owner/media workstream, retained above |
+| Progressive questionnaire, shared numeric/band contracts | Phase 2 |
+| Reference-variant schema, field evidence, coverage audit | Phase 3 |
+| SQL filtering, scoring, diversity, relaxation, “why not” | Phase 4 |
+| Full manifest research and approximately 200-brand expansion | Phase 5 |
+| Optional free-text/semantic experiment | Phase 6 |
+| Cited dossier UI, explicit email opt-in, analytics, production funnel | Phase 7 |
+| Physical production, episodes, thumbnails, and YouTube cadence | Owner/media workstream |

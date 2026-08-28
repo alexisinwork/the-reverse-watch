@@ -89,3 +89,15 @@ RunPod inference after its output quality passes the same evaluation set.
 - [x] No production behavior changed.
 - [x] Owner approved Phase 1 and confirmed eight questions on 2026-08-27.
 - [x] Owner confirmed Vercel as the active production host on 2026-08-27.
+
+## Superseding decision recorded after Phase 1
+
+On 2026-08-28 the owner supplied a deeper questionnaire and catalogue audit.
+The audit keeps the historical eight dimensions but replaces the fixed
+eight-step funnel with a six-screen core plus optional refinement. It also
+replaces the provisional semantic-retrieval baseline with SQL hard filters and
+an explicit weighted score over reference variants. See
+[`sql-first-recommendation-architecture.md`](sql-first-recommendation-architecture.md).
+
+This section is an addendum. It does not rewrite the Phase 0 evidence or imply
+that the later decision existed on 2026-08-27.

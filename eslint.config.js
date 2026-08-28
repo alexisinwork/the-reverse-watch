@@ -16,7 +16,6 @@ export default tseslint.config(
       "build/**",
       "coverage/**",
       "node_modules/**",
-      "questionnaire.js",
     ],
   },
   {

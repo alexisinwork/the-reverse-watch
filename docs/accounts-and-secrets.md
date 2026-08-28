@@ -48,19 +48,19 @@ API project and project service-account key for The Reserve.
 
 | Service | Credential | Required | Account recommendation |
 | --- | --- | --- | --- |
-| OpenAI Platform | `OPENAI_API_KEY` | Phase 3/4 | Dedicated project service account named `the-reserve-app`; apply project budgets and limits. |
+| OpenAI Platform | `OPENAI_API_KEY` | Optional Phase 5/6 | Dedicated project service account named `the-reserve-app`; apply project budgets and limits. The SQL-first recommendation baseline does not require it. |
 | OpenAI Platform | `OPENAI_PROJECT_ID`, `OPENAI_ORG_ID` | Optional | Record the dedicated project's IDs when the account belongs to multiple organizations/projects. |
-| Perplexity | `PERPLEXITY_API_KEY` | Phase 3 and research MCP | Dedicated project/key for catalogue research so spend is isolated. |
-| Beehiiv | `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 5 | Existing The Reserve publication; use only server-side. |
-| Supabase Postgres | `DATABASE_URL`, `DIRECT_DATABASE_URL` | Phase 3/4 | Project `osfqexnzgkksfvaocjvl` with `pgvector`; use separate preview and production credentials. |
+| Perplexity | `PERPLEXITY_API_KEY` | Phase 5 and research MCP | Dedicated project/key for catalogue research so spend is isolated. |
+| Beehiiv | `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 7 | Existing The Reserve publication; use only server-side. |
+| Supabase Postgres | `DATABASE_URL`, `DIRECT_DATABASE_URL` | Phase 3/4 | Project `osfqexnzgkksfvaocjvl`; use separate preview and production credentials. `pgvector` is optional and is not needed for the deterministic baseline. |
 | GitHub | `GITHUB_PAT_TOKEN` | MCP only | Fine-grained PAT restricted to `alexisinwork/the-reverse-watch`; add write permissions only when needed. |
 | Vercel | OAuth for MCP | Phase 1 | Sign in to the account/team that will own `thereserve.watch`. |
 | Vercel | `VERCEL_TOKEN` and IDs | Optional automation | Use only for non-interactive CI; OAuth is preferred for interactive MCP work. |
-| RunPod | `RUNPOD_API_KEY`, `RUNPOD_ENDPOINT_ID` | Optional Phase 4 | Needed only if Ollama wins the evaluation and is hosted on RunPod. |
+| RunPod | `RUNPOD_API_KEY`, `RUNPOD_ENDPOINT_ID` | Optional Phase 6 | Needed only if the later semantic experiment includes hosted Ollama. |
 | Context7 | `CONTEXT7_API_KEY` | Optional | Higher documentation limits; unauthenticated MCP works for basic use. |
-| Upstash | Redis REST URL/token | Phase 5 | Rate limiting and request deduplication. |
-| Resend | API key and sender | Optional Phase 5 | Transactional dossier delivery; Beehiiv remains the newsletter opt-in system. |
-| Sentry | DSN | Optional Phase 5 | Production error reporting. |
+| Upstash | Redis REST URL/token | Phase 7 | Rate limiting and request deduplication. |
+| Resend | API key and sender | Optional Phase 7 | Transactional dossier delivery; Beehiiv remains the newsletter opt-in system. |
+| Sentry | DSN | Optional Phase 7 | Production error reporting. |
 
 Real credentials go into the ignored `.env` file locally and encrypted Vercel
 environment settings in production. Never add secrets to `.env.example`,
@@ -74,7 +74,12 @@ Official setup pages:
 - [GitHub fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 - [Vercel MCP and OAuth setup](https://vercel.com/docs/agent-resources/vercel-mcp)
 
-## Model and research routing
+## Research and optional model routing
+
+The Phase 3/4 catalogue and recommendation baseline uses PostgreSQL, SQL hard
+filters, and explicit weighted scoring. It has no model or embedding runtime
+dependency. The services below support catalogue research or a later evaluated
+semantic experiment.
 
 ### Perplexity
 
@@ -93,14 +98,15 @@ models. Raw request metadata and preset name must be retained for reproducibilit
 
 ### OpenAI
 
-- `gpt-5.6-luna` — high-volume extraction, normalization, and classification.
-- `gpt-5.6-terra` — consumer recommendation reranking and cited explanations.
+- `gpt-5.6-luna` — optional high-volume extraction and normalization.
+- `gpt-5.6-terra` — optional free-text/semantic experiment.
 - `gpt-5.6-sol` — selective quality audits and difficult edge cases, not every
   request.
-- `text-embedding-3-large` — production semantic retrieval baseline.
+- `text-embedding-3-large` — optional Phase 6 semantic experiment.
 
-All generation uses the Responses API with Zod-validated structured output.
-Model choices remain configurable and must pass the project's evaluation set.
+Any generation uses the Responses API with Zod-validated structured output.
+Model choices remain configurable and must pass the project's deterministic
+evaluation baseline. Arbitrary fixed-size dossier chunking is not planned.
 
 ## Project MCP servers
 
@@ -109,12 +115,12 @@ The committed `.codex/config.toml` configures:
 | Server | Authentication | Default policy | Purpose |
 | --- | --- | --- | --- |
 | `openai_docs` | None | Read automatically | Current official OpenAI documentation. |
-| `context7` | None initially | Read automatically | Current React Router, Mastra, Zod, and package docs. |
+| `context7` | None initially | Read automatically | Current React Router, Zod, database, and package docs. |
 | `perplexity` | `PERPLEXITY_API_KEY` | Read/research automatically | Search, reasoning, and deep research. |
 | `vercel` | OAuth | Confirm writes | Projects, deployments, domains, and logs. |
 | `github` | `GITHUB_PAT_TOKEN` | Confirm writes | Repository, issues, pull requests, and Actions. |
 | `supabase` | OAuth, project-scoped | Confirm writes | Database schema, migrations, logs, and project documentation. |
-| `playwright` | Local process | Prompt | Deferred Phase 5 browser verification; disabled during Phases 1–4. |
+| `playwright` | Local process | Prompt | Deferred Phase 7 browser verification; disabled during Phases 1–6. |
 
 Project MCP configuration is loaded on a new Codex session from this trusted
 repository. API-key-backed servers read variables from the process environment;
@@ -144,7 +150,9 @@ Supabase MCP is restricted to project `osfqexnzgkksfvaocjvl`. The application
 does not need a Supabase management key. In Phase 3, use Supavisor's transaction
 pooler connection for Vercel application traffic and a direct or session-pooler
 connection for migrations. Keep `DATABASE_URL` and `DIRECT_DATABASE_URL`
-provider-neutral so the application is not coupled to the management API.
+provider-neutral so the application is not coupled to the management API. Do
+not enable `pgvector` unless the optional Phase 6 experiment reaches its entry
+gate.
 
 ## Local validation
 

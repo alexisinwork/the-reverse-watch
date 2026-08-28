@@ -11,16 +11,25 @@ const groups = {
     ],
   },
   questionnaire: {
-    required: ['SESSION_SECRET'],
-    optional: [],
+    required: [],
+    optional: ['SESSION_SECRET'],
   },
   research: {
     required: ['PERPLEXITY_API_KEY'],
     optional: ['OPENAI_API_KEY', 'OPENAI_PROJECT_ID'],
   },
   recommendation: {
-    required: ['DATABASE_URL', 'OPENAI_API_KEY'],
-    optional: ['DIRECT_DATABASE_URL', 'OPENAI_PROJECT_ID'],
+    required: ['DATABASE_URL'],
+    optional: ['DIRECT_DATABASE_URL'],
+  },
+  semantic: {
+    required: [],
+    optional: [
+      'OPENAI_API_KEY',
+      'OPENAI_PROJECT_ID',
+      'OLLAMA_BASE_URL',
+      'RUNPOD_ENDPOINT_ID',
+    ],
   },
   deployment: {
     required: [],

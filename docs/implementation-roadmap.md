@@ -1,44 +1,42 @@
 # The Reserve implementation roadmap
 
 This is the controlling delivery sequence. It implements the owner's
-[`full original plan`](original_context.md), with requirement traceability in
-[`original-plan-requirements.md`](original-plan-requirements.md). Before
+[`full original plan`](original_context.md), the
+[`requirements ledger`](original-plan-requirements.md), and the accepted
+[`SQL-first architecture`](sql-first-recommendation-architecture.md). Before
 planning or implementing any phase, read `original_context.md` from its first
-line through its final line; never use only the top, bottom, first 200, last 200,
-search matches, or this roadmap as a substitute. At each phase boundary, record
-the evidence and then continue automatically into the next phase.
-Verified work is committed and pushed directly to `main`; phase boundaries do
-not require an additional owner-approval prompt.
+line through its final line. Record evidence at phase boundaries and continue
+automatically. Verified work is committed and pushed directly to `main`.
 
-The original file deliberately preserves duplicates, the evolution from seven
-to eight questions, and superseded architecture sketches. The final eight
-questions and the pure TypeScript/JavaScript direction are binding. This
-roadmap may refine implementation details, but it must retain the original
-product intent for complete brand coverage, detailed history, psychology,
-perception, factual mechanics, the dossier, and the audience funnel.
+The original file preserves the evolution from seven to eight questions and a
+vector-first technical sketch. The 2026-08-28 audit supersedes the fixed
+eight-step funnel and removes embeddings/vector infrastructure from the launch
+critical path without discarding history, psychology, perception, or dossier
+requirements.
 
 ## System shape
 
 ```text
 Browser
   -> React Router action/API boundary
-      -> questionnaire validation
-      -> deterministic SQL constraints
-      -> pgvector semantic candidate retrieval
-      -> deterministic weighted score
-      -> model reranking and grounded explanation
-  -> 3–5 cited recommendations
+      -> Zod validation and numeric normalization
+      -> PostgreSQL hard filters over reference variants
+      -> versioned explicit soft score
+      -> deterministic brand/archetype diversity
+      -> cited result plus rejection reasons
+  -> three recommendations and two or three “why not” candidates
 
 Research jobs
-  -> Perplexity source discovery
-  -> Zod validation and normalization
-  -> human review queue
-  -> PostgreSQL canonical records
-  -> reference-level embeddings
+  -> source discovery
+  -> structured TypeScript/Zod normalization
+  -> field-level evidence and human review
+  -> PostgreSQL brands + reference variants + snapshots
+  -> coverage and staleness audits
 ```
 
-The model is never the catalogue and the vector index is never the source of
-truth. Exact filters run before semantic retrieval.
+The model is never the catalogue. No LLM, embedding model, vector extension,
+vector database, Mastra workflow, Ollama endpoint, or RunPod deployment is
+required for the baseline.
 
 ## Verification cadence
 
@@ -49,212 +47,245 @@ npm run check
 ```
 
 That gate covers formatting, linting, strict types, unit tests, and the
-production build. Playwright/E2E execution, browser-binary installation, and
-long-running background validation suites are deferred until Phase 5, after the
-core catalogue, retrieval, and recommendation engine is complete. Deferred
-specs should still be written and kept current during earlier phases. Focused
-unit tests and short, read-only smoke checks remain appropriate when needed to
-develop the active phase.
+production build. Playwright/E2E execution and browser installation remain
+deferred until Phase 7, after the deterministic recommendation flow works.
+Deferred specs must remain current.
 
 ## Phase 0 — Baseline and decisions
 
-Status: **complete and approved**
+Status: **complete**
 
-Deliverables:
+- Repository audit, roadmap, secret exclusions, and environment inventory.
+- Owner selected React Router/TypeScript and Vercel.
+- Historical choice of eight independent questions recorded.
 
-- Repository audit.
-- Controlling roadmap.
-- Environment-variable inventory.
-- Secret exclusions.
-- Explicit decision list for Phase 1.
-
-Exit gate:
-
-- [x] Owner approved the framework migration.
-- [x] Owner selected eight questions.
-- [x] Owner confirmed Vercel as the live hosting provider.
+The later questionnaire/catalogue audit is an additive decision, not a rewrite
+of this historical checkpoint.
 
 ## Phase 1 — Application foundation and landing-page parity
 
-Status: **complete — merged delivery proceeds directly to Phase 2**
+Status: **complete**
 
-Restart details and unresolved configuration are recorded in
-[`session-handoff.md`](session-handoff.md).
+- React Router v7 Framework Mode, Vite, and strict TypeScript.
+- Landing-page parity, reusable design tokens, and preserved Beehiiv embed.
+- Health route, error boundary, fast quality gate, deployment and rollback docs.
 
-Original-plan traceability: [landing identity, design, Vercel, and Beehiiv](original-plan-requirements.md#phase-mapping).
+Restart details are recorded in [`session-handoff.md`](session-handoff.md).
 
-Goal: establish a maintainable TypeScript application without breaking the live
-subscription funnel.
+## Phase 2 — Progressive diagnostic questionnaire
+
+Status: **complete — verified 2026-08-28**
+
+Original-plan traceability: [progressive questionnaire](original-plan-requirements.md#progressive-questionnaire).
+
+Goal: collect the smallest trustworthy profile first, then offer optional
+refinement without making semantic infrastructure a prerequisite.
 
 Deliverables:
 
-- Scaffold React Router v7 framework mode with Vite and strict TypeScript.
-- Recreate the current landing page using reusable design tokens and components.
-- Preserve the Beehiiv embedded form first; add server-side API subscription only
-  when the result-email flow needs it.
-- Establish project-scoped MCP configuration, credential ownership, and a
-  secret-safe local environment before installing runtime dependencies.
-- Add formatting, linting, type checking, unit tests, and a production build.
-- Configure Vercel and document domain migration/rollback.
-- Add a health route and basic error boundary.
+- One shared TypeScript constants module for price bands, wrist display bands,
+  units, and answer enums. Exact budget and wrist values are canonical.
+- Zod schemas and inferred types for the core profile and refinement fields.
+- Six-screen accessible core flow: budget, wrist, deployment,
+  movement/service+accuracy, weight, and complications/date.
+- Early deterministic profile summary with an optional “refine” path.
+- Refine contract for social signal, aesthetic, provenance, emotional objective,
+  market stance, geometry/attachment, acquisition/premium, resale, lume/crown,
+  geography, cosmetic tolerance, condition, and allergy.
+- Recoverable browser state, Back/Next controls, keyboard behavior, and server
+  rejection of forged or incomplete submissions.
+- Privacy-preserving analytics contract; actual analytics provider integration
+  may wait until Phase 7.
 
 Verification:
 
-- Landing page matches the current desktop and mobile presentation.
-- Beehiiv form renders and can be exercised without exposing credentials.
-- The fast development gate passes.
-- Preview deployment builds successfully before production routing changes.
-- Phase 1 browser/E2E specs are retained but their execution is deferred under
-  the verification cadence above.
+- Boundary tests prove every price and wrist value derives exactly one band.
+- Premium allowance is explicit, bounded to `0..100`, and applied by one shared
+  function.
+- Required complication combinations and no-date conflicts fail safely.
+- Focused tests cover navigation, persistence, validation, and core completion.
+- The result is a profile summary, not a fabricated watch recommendation.
 
-No watch AI or catalogue work belongs in this phase.
+Evidence: `/quiz` implements the six required screens and four optional refine
+groups; server and browser use the same Zod/domain contract; session recovery,
+boundary rules, premium/speculative rules, and the complete core flow are
+covered by the fast gate (13 tests at the phase checkpoint).
 
-## Phase 2 — Diagnostic questionnaire
+## Phase 3 — Reference-variant schema and coverage feasibility
 
-Original-plan traceability: [canonical eight-question diagnostic](original-plan-requirements.md#canonical-eight-question-diagnostic).
+Status: **in progress**
 
-Goal: collect a complete, validated buyer profile with an accessible user
-experience.
+Goal: prove the data model and combinatorial coverage before collecting 200
+brands.
 
 Deliverables:
 
-- Canonical Zod schema and inferred TypeScript types.
-- Route-based questionnaire UI with progress, Back/Next controls, keyboard
-  support, validation, and completion summary.
-- URL/session-safe state recovery so refresh does not silently lose answers.
-- Privacy-preserving analytics events for start, step completion, abandonment,
-  and completion.
-- A temporary deterministic profile result; no fabricated watch recommendation.
+- Additive PostgreSQL migrations separating `brands`, `collections`,
+  `reference_models`, and materially homogeneous `reference_variants`.
+- Structured geometry, movement, operation, material, attachment, production,
+  and commercial fields required by the questionnaire.
+- Price and market snapshots instead of one stored price tier.
+- Source registry and field-level evidence ledger with verification and
+  staleness policy.
+- Explicit definitions for hype, liquidity, momentum, and
+  `speculative_bubble`.
+- M0/M1/M2 completeness calculation against active filter requirements.
+- Seed manifest selected across budget, movement, size, deployment, weight, and
+  complication cells.
+- Coverage-audit script that reports empty, single-result, and under-evidenced
+  cells before bulk research.
 
 Verification:
 
-- All answer combinations validate against the server schema.
-- Directly forged or incomplete submissions fail safely.
-- Focused unit tests cover navigation, validation, and submission behavior.
-- Mobile, keyboard, screen-reader, and browser-level E2E specs are prepared for
-  the deferred Phase 5 integration run.
+- A family with multiple sizes/materials cannot enter as one filterable row.
+- Missing facts remain `null` and cannot satisfy an active hard requirement.
+- Mutable facts have expiry policies; stable facts are not invalidated by a
+  document-level date.
+- Schema constraints reject invalid units, ratios, enum values, and evidence
+  links.
+- Coverage report runs over the complete defined axis set without capped
+  first/last windows.
 
-## Phase 3 — Canonical catalogue and research pipeline
+Checkpoint 2026-08-28: the additive migration, schema contract, and coverage
+auditor are implemented locally. The honest empty projection reports 28,800
+empty cells. Phase 3 remains open until the migration is validated/applied and
+the coverage-selected seed projection exists; an empty matrix is evidence, not
+completion.
 
-Original-plan traceability: [complete brand and reference knowledge](original-plan-requirements.md#complete-brand-and-reference-knowledge).
+## Phase 4 — Deterministic recommendation MVP
 
-Goal: create trustworthy structured watch data before adding RAG.
+Status: **pending**
+
+Goal: produce reproducible and explainable recommendations without AI
+infrastructure.
 
 Deliverables:
 
-- PostgreSQL schema for brands, collections, references, prices, measurements,
-  movements, traits, sources, claims, and review status.
-- Brand manifest with tier and target reference counts.
-- TypeScript Perplexity research worker with concurrency limits, retries,
-  resumability, raw-response retention, and cost logging.
-- Structured JSON output validated with Zod; Markdown dossiers become generated
-  editorial artifacts, not the parsing source of truth.
-- Source-quality rules and a human review queue.
-- Seed set of approximately 10 brands across budgets for end-to-end validation.
-- A complete manifest for the planned approximately 200-brand universe, with
-  every brand assigned coverage and review status.
-- Detailed dossier fields for each brand's verified history and ownership,
-  psychology and buyer archetypes, public/collector perception, social signal,
-  design DNA, mechanical/service reality, and representative references.
+- SQL hard filters for budget, fit, deployment, movement/accuracy,
+  complications, weight, allergy, condition/channel, and active hard refinements.
+- Versioned weighted scorer over reviewed reference and brand-context tags.
+- Per-factor score trace and deterministic tie-breakers.
+- `speculative_bubble` suppression rule and disclaimer path.
+- Top-three diversity: at most one reference per brand and distinct primary
+  archetypes.
+- Two or three rejection explanations (“why not”).
+- Explicit empty-result relaxation proposals in the accepted order; no silent
+  hard-filter relaxation.
+- Golden profiles, boundary fixtures, and deterministic fallback response.
 
 Verification:
 
-- A failed or partial job can resume without duplicating records.
-- Invalid enums, units, and unsupported claims are quarantined.
-- Every accepted fact links to at least one source and retrieval date.
-- Missing values remain `null` and never receive silent defaults.
-- Every in-scope manifest brand reaches an accepted detailed dossier or a
-  documented evidence-backed exclusion; the phase cannot exit after only the
-  seed set.
-- Coverage audits scan the complete manifest and complete dossier contents, not
-  arbitrary first/last excerpts or capped record windows.
+- No result violates an active hard constraint.
+- Unknown hard-filter facts move a variant to “verification required.”
+- Golden profiles have expected inclusions, exclusions, and relaxation prompts.
+- Re-running the same catalogue/profile/scorer version yields the same order and
+  explanation trace.
+- The seed catalogue exercises non-empty, rare, and empty coverage cells.
 
-Expansion from the 10-brand calibration set to every entry in the planned
-approximately 200-brand manifest happens only after the seed-set accuracy
-review, but remains required catalogue work. The seed examples never redefine
-or truncate the full brand scope.
+Completion of Phase 4 proves the core product decision loop.
 
-## Phase 4 — Retrieval, scoring, and recommendation engine
+## Phase 5 — Research pipeline and catalogue expansion
 
-Original-plan traceability: [AI decisions and recommendation dossier contract](original-plan-requirements.md#recommendation-dossier-contract).
+Status: **pending**
 
-Goal: return relevant recommendations reproducibly and explainably.
+Goal: expand from the validated seed to the planned approximately 200 brands
+without sacrificing field evidence or coverage.
 
 Deliverables:
 
-- Reference-level embeddings for subjective/editorial fields.
-- SQL hard filters for budget, wrist geometry, environment, movement, maintenance,
-  and availability.
-- Semantic retrieval for aesthetic, psychological, provenance, and social traits.
-- Versioned weighted scoring with diversity rules and rejection reasons.
-- Mastra workflow for retrieval, reranking, and structured dossier generation.
-- Provider adapter for OpenAI and optional Ollama/RunPod inference.
-- Recommendation response with 3–5 candidates, confidence, trade-offs, and source
-  citations.
+- Complete brand manifest with tier, target variants, coverage purpose, and
+  review state.
+- TypeScript research worker with concurrency limits, retries, resumability,
+  raw-response retention, and cost logging.
+- Zod-validated structured output; Markdown dossiers are generated editorial
+  artifacts, not parsing sources of truth.
+- Primary-source validation and a human review queue.
+- Field-specific refresh schedule for price, availability, market behavior,
+  production state, ownership, dimensions, and stable mechanics.
+- Detailed M2 brand context: history, ownership, psychology, buyer archetypes,
+  perception, social signal, design DNA, service reality, risks, and sourced
+  narrative.
+- Repeated coverage audits during expansion.
 
 Verification:
 
-- Golden questionnaire profiles have expected inclusions and exclusions.
-- No result violates a hard budget or geometry constraint.
-- Explanations contain no unsupported specifications.
-- Provider failures produce a safe fallback based on deterministic ranking.
-- OpenAI and Ollama are evaluated against the same fixtures before switching the
-  production provider.
+- Failed jobs resume without duplicating variants, facts, or evidence.
+- Every accepted fact retains source and review metadata.
+- Every manifest brand reaches an accepted dossier/reference state or an
+  evidence-backed exclusion.
+- M1 coverage, not raw brand count, controls recommendation eligibility.
 
-Completion of these focused AI evaluations ends the deferral period. The full
-browser and long-running integration suite begins in Phase 5.
+## Phase 6 — Optional free-text and semantic evaluation
 
-OpenAI implementation will use the Responses API and structured output rather
-than copying the provisional chat-completions snippets in the legacy notes.
+Status: **optional, pending deterministic baseline evidence**
 
-## Phase 5 — Product integration, email, deployment, and evaluation
+Goal: determine whether AI improves free-text intake or aesthetic nuance enough
+to justify operational complexity.
 
-Original-plan traceability: [dossier, email, media, and funnel requirements](original-plan-requirements.md#media-funnel-and-release-workstream).
+Experiments:
 
-Goal: turn the engine into a production funnel with measurable quality.
+- Structured profile extraction from free text with Zod validation.
+- Semantic comparison of curated reference/claim passages for aesthetic and
+  psychological fit.
+- Optional PostgreSQL `pgvector`; no separate vector database at current scale.
+- Provider adapters may include OpenAI and Ollama/RunPod. Mastra is added only
+  if orchestration complexity justifies it.
+
+Entry gate:
+
+- Phase 4 deterministic fixtures and quality/latency/cost baseline exist.
+
+Exit decision:
+
+- Adopt only functionality that measurably improves held-out fixtures without
+  hard-filter violations or unsupported facts. Otherwise retain the SQL-first
+  engine and close the experiment.
+
+Arbitrary fixed-size dossier chunking is explicitly out of scope.
+
+## Phase 7 — Product integration, email, deployment, and evaluation
+
+Status: **pending**
+
+Goal: turn the recommendation engine into a production funnel.
 
 Deliverables:
 
-- Results experience with comparison, trade-offs, citations, and restart/edit
-  controls.
-- Explicit Beehiiv opt-in for emailing the dossier; results remain visible without
-  subscribing.
+- Results UI with comparison, score factors, trade-offs, citations, “why not,”
+  verification gaps, and edit/restart controls.
+- Explicit Beehiiv opt-in; results remain visible without subscribing.
 - Rate limiting, abuse controls, caching, timeouts, and observability.
-- Evaluation dashboard for recommendation validity, retrieval quality, latency,
-  cost, completion rate, and subscription conversion.
-- Data-refresh schedule for prices, availability, and ownership facts.
-- Production deployment and documented rollback.
+- Evaluation dashboard for hard-filter validity, ranking quality, latency, cost,
+  completion, refinement use, and subscription conversion.
+- Full deferred browser/integration suite and production deployment/rollback.
 
 Verification:
 
-- Full browser flow works from landing page through results and optional email.
-- Consent and error states are tested.
-- Monitoring detects provider, database, and subscription failures.
-- Production smoke checks pass on `thereserve.watch`.
+- Full flow works from landing through core result, refinement, cited
+  recommendations, and optional email.
+- Consent, empty results, incomplete data, provider-free operation, and external
+  failures are tested.
+- Production smoke checks pass on the canonical domain.
 
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |
 | --- | --- | --- |
 | `APP_URL` | Phase 1 | Canonical application origin. |
-| `SESSION_SECRET` | Phase 2 | Signed server-side questionnaire/session state. |
-| `BEEHIIV_API_KEY` | Phase 5 | Server-side subscription request. |
-| `BEEHIIV_PUBLICATION_ID` | Phase 5 | Beehiiv publication destination. |
-| `PERPLEXITY_API_KEY` | Phase 3 | Research acquisition jobs. |
-| `PERPLEXITY_STANDARD_PRESET` | Phase 3 | Normal Perplexity Agent API research preset. |
-| `PERPLEXITY_DEEP_RESEARCH_PRESET` | Phase 3 | Selective deep-research preset. |
+| `SESSION_SECRET` | Phase 2 if server sessions are used | Signed server-side state; not required for browser `sessionStorage`. |
 | `DATABASE_URL` | Phase 3 | Pooled application database connection. |
-| `DIRECT_DATABASE_URL` | Phase 3 | Migrations and maintenance connection. |
-| `AI_PROVIDER` | Phase 4 | Selects the model adapter. |
-| `OPENAI_API_KEY` | Phase 3/4 | Normalization, embeddings, and/or synthesis. |
-| `OPENAI_INGESTION_MODEL` | Phase 3 | High-volume normalization model. |
-| `OPENAI_RECOMMENDATION_MODEL` | Phase 4 | Reranking and grounded dossier model. |
-| `OPENAI_AUDIT_MODEL` | Phase 4 | Selective quality-audit model. |
-| `OPENAI_EMBEDDING_MODEL` | Phase 4 | Reference embedding model. |
-| `OLLAMA_BASE_URL` | Phase 4 | Local or RunPod Ollama endpoint. |
-| `OLLAMA_CHAT_MODEL` | Phase 4 | Ollama generation model installed at the endpoint. |
-| `OLLAMA_EMBEDDING_MODEL` | Phase 4 | Optional Ollama embedding model. |
-| `SENTRY_DSN` | Phase 5 | Optional production error reporting. |
+| `DIRECT_DATABASE_URL` | Phase 3 | Additive migrations and maintenance. |
+| `PERPLEXITY_API_KEY` | Phase 5 | Research source discovery. |
+| `OPENAI_API_KEY` | Optional Phase 5/6 | Structured normalization audit or semantic experiment. |
+| `AI_PROVIDER` | Optional Phase 6 | Experimental provider selection. |
+| `OPENAI_INGESTION_MODEL` | Optional Phase 5 | Structured normalization model. |
+| `OPENAI_RECOMMENDATION_MODEL` | Optional Phase 6 | Free-text/semantic experiment. |
+| `OPENAI_AUDIT_MODEL` | Optional Phase 5/6 | Selective quality audit. |
+| `OPENAI_EMBEDDING_MODEL` | Optional Phase 6 | Semantic experiment only. |
+| `OLLAMA_BASE_URL`, `OLLAMA_CHAT_MODEL` | Optional Phase 6 | Ollama experiment. |
+| `RUNPOD_API_KEY`, `RUNPOD_ENDPOINT_ID` | Optional Phase 6 | Hosted Ollama experiment. |
+| `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 7 | Explicit subscription opt-in. |
+| `SENTRY_DSN` | Optional Phase 7 | Production error reporting. |
 
-Only `.env.example` is committed. Real values belong in `.env` locally and in
-encrypted Vercel environment settings for deployments.
+Only `.env.example` is committed. Real values belong in ignored local files and
+encrypted deployment settings.

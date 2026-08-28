@@ -41,3 +41,29 @@ test("uses the branded error boundary for unknown routes", async ({ page }) => {
     page.getByRole("heading", { level: 1, name: "Record not found" }),
   ).toBeVisible();
 });
+
+test("completes the six-screen core diagnostic without a model provider", async ({
+  page,
+}) => {
+  await page.goto("/quiz");
+
+  await page.getByLabel("Maximum amount").fill("10000");
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Wrist circumference (mm)").fill("170");
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Studio, desk, or daily wear").check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Workhorse mechanical").check();
+  await page.getByLabel("Within ±15 seconds per day").check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Under 160 g").check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("GMT").check();
+  await page.getByLabel("Either is acceptable").check();
+  await page.getByRole("button", { name: "View profile" }).click();
+
+  await expect(
+    page.getByRole("heading", { name: "Your search boundary" }),
+  ).toBeVisible();
+  await expect(page.getByText("USD 10,000")).toBeVisible();
+});

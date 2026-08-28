@@ -47,14 +47,24 @@
 
 ## Quality invariants
 
-- Exact watch constraints belong in PostgreSQL; subjective matching belongs in
-  semantic retrieval.
+- Exact watch constraints belong in PostgreSQL. The first subjective matcher is
+  an explicit, versioned weighted score over reviewed tags; semantic retrieval
+  is optional and must beat that baseline in evaluation before production use.
+- Brands provide context, while materially and dimensionally homogeneous
+  reference variants are the units of filtering and ranking. Do not score
+  brand-level rollups as if they were reference facts.
+- Price and wrist circumference are canonical numeric values. UI/analytics
+  bands must be derived from the shared domain constants rather than duplicated
+  string tags in catalogue records.
+- Missing data cannot satisfy an active hard filter. Preserve field-level
+  evidence, verification state, and staleness instead of document-level
+  confidence dates.
 - Missing facts remain `null`; never supply plausible-looking defaults.
 - Every accepted mutable or factual claim retains source provenance.
-- Until the core catalogue, retrieval, and recommendation work through Phase 4
-  is complete, run only the fast development gate (`npm run check`). Do not run
-  Playwright/E2E suites, install browser binaries, or start long-running
-  background validation jobs unless the owner explicitly asks for them.
+- Until Phase 7 begins its documented integration verification, run only the
+  fast development gate (`npm run check`). Do not run Playwright/E2E suites,
+  install browser binaries, or start long-running background validation jobs
+  unless the owner explicitly asks for them.
 - Keep deferred browser and integration specs current as the application grows;
   execute the full suite in Phase 5 after the main AI work is complete.
 - Run the phase's non-deferred documented checks before committing and pushing

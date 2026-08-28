@@ -14,6 +14,9 @@ describe("landing page", () => {
       screen.getByText(/we investigate the filings, the balance sheets/i),
     ).toBeInTheDocument();
     expect(screen.getByText("Archival Documentary")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Start the reference diagnostic" }),
+    ).toHaveAttribute("href", "/quiz");
   });
 
   it("loads the existing Beehiiv form without embedding a credential", () => {

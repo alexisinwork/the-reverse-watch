@@ -64,6 +64,22 @@
   line-height: 1.5;
 }
 
+.diagnostic-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--color-steel-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-underline-offset: 0.3rem;
+  transition: color var(--transition-fast);
+}
+
+.diagnostic-link:hover {
+  color: var(--color-brass);
+}
+
 .site-footer {
   display: flex;
   width: 100%;

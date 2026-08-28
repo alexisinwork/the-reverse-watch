@@ -35,6 +35,9 @@ export default function Home() {
           dial.
         </p>
         <BeehiivSignup />
+        <a className="diagnostic-link" href="/quiz">
+          Start the reference diagnostic
+        </a>
       </main>
 
       <footer className="site-footer">
