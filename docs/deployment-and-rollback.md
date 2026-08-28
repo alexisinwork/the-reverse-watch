@@ -1,14 +1,17 @@
 # Vercel deployment and rollback
 
-Last verified: 2026-08-27
+Last verified: 2026-08-28
 
 ## Current state
 
 - Vercel project: `the-reverse-watch` in the `alexisinworks-projects` team.
 - Git source: `alexisinwork/the-reverse-watch`, with `main` connected to
   production deployments.
-- The latest remote deployment is ready but still contains the pre-migration
-  static site.
+- Git deployment `dpl_5FVdEWskqQJcB6dxanenBQEyHU6a` built commit `e886411`,
+  but its project framework was still `null` and all public aliases returned
+  Vercel `NOT_FOUND`. The repository now pins `framework: react-router` in
+  `vercel.json`; the replacement deployment must be smoke-tested before this
+  incident is considered resolved.
 - The repository's canonical domain is `thereserve.watch` (`CNAME` and landing
   copy). The Vercel project currently lists `thereverse.watch` and
   `www.thereverse.watch` instead. Treat this mismatch as an unresolved
