@@ -7,8 +7,9 @@ Last verified: 2026-08-28
 - Vercel project: `the-reverse-watch` in the `alexisinworks-projects` team.
 - Git source: `alexisinwork/the-reverse-watch`, with `main` connected to
   production deployments.
-- Production deployment `dpl_8ZLYQ66fc9VYcVmb6rZjWsG3kEor` is the verified
-  rollback target before the live-Supabase Phase 4 release. The repository
+- Production deployment `dpl_FvEFUWbHRQrkGmDFAziEP6F5xP1o` is the verified
+  live-Supabase Phase 4 release; `dpl_8ZLYQ66fc9VYcVmb6rZjWsG3kEor` is its
+  recorded rollback target. The repository
   pins `framework: react-router` in `vercel.json`; `/`, `/quiz`, and `/health`
   returned 200 on `https://the-reverse-watch.vercel.app/` on 2026-08-28. This
   resolves the earlier framework-null `NOT_FOUND` incident.
@@ -22,6 +23,10 @@ Last verified: 2026-08-28
   RPCs; it does not need a PostgreSQL password or management key. Invalid,
   incomplete, timed-out, or unavailable RPC responses trigger the visible
   reviewed-bundle fallback.
+- On the verified live release, `/`, `/quiz`, and `/health` returned 200. A
+  valid core POST returned Grand Seiko and the explicit “accepted catalogue
+  facts and hard-filter decisions loaded from Supabase” notice. Recent Vercel
+  runtime error logs were empty.
 
 ## Preview procedure
 

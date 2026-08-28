@@ -119,6 +119,10 @@ On 2026-08-28:
 - Supabase applied all nine migrations. Live RPC parity, row counts, zero table
   grants for browser roles, and both advisors were checked after the final
   migration.
+- Vercel deployment `dpl_FvEFUWbHRQrkGmDFAziEP6F5xP1o` reached `READY`; `/`,
+  `/quiz`, `/health`, and a core recommendation POST returned 200. The response
+  identified the Supabase facts/SQL-filter path and returned Grand Seiko; no
+  recent runtime errors were present.
 
 ## Exact continuation
 
