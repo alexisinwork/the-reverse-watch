@@ -3,7 +3,9 @@
 The Reserve is a server-rendered Remix-style application built with React
 Router v7 Framework Mode, Vite, and strict TypeScript. The application preserves
 the documentary landing page and Beehiiv signup and now includes the progressive
-reference diagnostic at `/quiz`.
+reference diagnostic at `/quiz`. The diagnostic returns deterministic,
+source-cited candidates, verification gaps, and rejection reasons from a
+reviewed reference-variant seed.
 
 ## Local development
 
@@ -50,3 +52,7 @@ Verified work is pushed directly to `main`. Production routing and rollback are
 documented in `docs/deployment-and-rollback.md`. The owner's full original plan
 is preserved in `docs/original_context.md`; it must be read in full before every
 phase, with decisions tracked in `docs/original-plan-requirements.md`.
+
+The canonical catalogue is PostgreSQL/Supabase. Chunking, embeddings, a vector
+database, Mastra, Ollama, and RunPod are not required by the baseline; optional
+semantic work must first beat the deterministic engine on held-out fixtures.

@@ -7,16 +7,20 @@ Last verified: 2026-08-28
 - Vercel project: `the-reverse-watch` in the `alexisinworks-projects` team.
 - Git source: `alexisinwork/the-reverse-watch`, with `main` connected to
   production deployments.
-- Git deployment `dpl_5FVdEWskqQJcB6dxanenBQEyHU6a` built commit `e886411`,
-  but its project framework was still `null` and all public aliases returned
-  Vercel `NOT_FOUND`. The repository now pins `framework: react-router` in
-  `vercel.json`; the replacement deployment must be smoke-tested before this
-  incident is considered resolved.
+- Production deployment `dpl_HfvJDBdvDC7Ue1nt2qjJf1Ep72Ee` is the verified
+  rollback target before the Phase 3/4 recommendation release. The repository
+  pins `framework: react-router` in `vercel.json`; `/`, `/quiz`, and `/health`
+  returned 200 on `https://the-reverse-watch.vercel.app/` on 2026-08-28. This
+  resolves the earlier framework-null `NOT_FOUND` incident.
 - The repository's canonical domain is `thereserve.watch` (`CNAME` and landing
   copy). The Vercel project currently lists `thereverse.watch` and
   `www.thereverse.watch` instead. Treat this mismatch as an unresolved
   production-routing issue and reconcile it toward the canonical repository
   domain with reversible, recorded changes.
+- Encrypted variables named `DATABASE_URL` and `DIRECT_DATABASE_URL` exist in
+  the Vercel project, but the production environment does not currently inject
+  usable values. The recommendation route therefore uses the reviewed bundled
+  seed until the Supabase server connection is configured and parity-tested.
 
 ## Preview procedure
 

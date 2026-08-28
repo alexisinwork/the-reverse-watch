@@ -51,6 +51,10 @@ describe("progressive diagnostic", () => {
     expect(
       screen.getByRole("button", { name: "Refine the ranking profile" }),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Promising, but verify first" }),
+    ).toBeInTheDocument();
+    expect(screen.getByText(/Longines Spirit Zulu Time/)).toBeInTheDocument();
   });
 
   it("does not advance from a missing budget", () => {

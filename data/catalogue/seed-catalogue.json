@@ -1,0 +1,1367 @@
+{
+  "catalogueVersion": 1,
+  "sources": [
+    {
+      "id": "ecb-fx-2026-08-28",
+      "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+      "title": "Euro foreign exchange reference rates — 28 August 2026",
+      "publisher": "European Central Bank",
+      "sourceType": "central_bank",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "timex-tw2y40300",
+      "url": "https://timex.com/products/deepwater-meridian-200-38mm-hnbr-rubber-strap-watch-tw2y40300",
+      "title": "Deepwater Meridian 200 38mm HNBR Rubber Strap Watch — TW2Y40300",
+      "publisher": "Timex",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "citizen-bn0150-us",
+      "url": "https://www.citizenwatch.com/us/en/product/BN0150-28E",
+      "title": "Promaster Dive — BN0150-28E",
+      "publisher": "Citizen",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "citizen-bn0150-ca",
+      "url": "https://www.citizenwatch.com/ca/en/product/BN0150-28E.html",
+      "title": "Promaster Diver — BN0150-28E specifications",
+      "publisher": "Citizen",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "citizen-e168-manual",
+      "url": "https://www.citizenwatch-global.com/support/pdf/e168/diver200_e.pdf",
+      "title": "Calibre B872 / E068 / E168 instruction manual",
+      "publisher": "Citizen Watch Global",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "hamilton-h69439131",
+      "url": "https://www.hamiltonwatch.com/en-us/h69439131-khaki-field-mechanical.html",
+      "title": "Khaki Field Mechanical 38mm — H69439131",
+      "publisher": "Hamilton",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "tissot-t1372071104100",
+      "url": "https://www.tissotwatches.com/en-us/T1372071104100.html",
+      "title": "Tissot PRX Powermatic 80 35mm — T137.207.11.041.00",
+      "publisher": "Tissot",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "seiko-ssc813",
+      "url": "https://www.seikowatches.com/us-en/products/prospex/ssc813",
+      "title": "Prospex Speedtimer SSC813",
+      "publisher": "Seiko Watch Corporation",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "mido-m0495261104100",
+      "url": "https://www.midowatches.com/us/multifort-tv-big-date-m0495261104100.html",
+      "title": "Multifort TV Big Date — M049.526.11.041.00",
+      "publisher": "Mido",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "nomos-746",
+      "url": "https://nomos-glashuette.com/en-us/club/club-sport-neomatik-petrol-746?strap=5840.M",
+      "title": "Club Sport neomatik petrol — reference 746",
+      "publisher": "NOMOS Glashütte",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "nomos-746-data-sheet",
+      "url": "https://nomos-glashuette.com/en/mediadb/download/id/fact-sheet-club-sport-neomatik-petrol-ref-746-2897",
+      "title": "Data sheet: Club Sport neomatik petrol reference 746",
+      "publisher": "NOMOS Glashütte",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "grand-seiko-sbgn029",
+      "url": "https://www.grand-seiko.com/jp-ja/collections/sbgn029",
+      "title": "Grand Seiko SBGN029 specifications",
+      "publisher": "Grand Seiko",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "grand-seiko-9f86",
+      "url": "https://www.grand-seiko.com/us-en/collections/movement/quartz/9f86",
+      "title": "Caliber 9F86 — Ultra Precision Quartz GMT",
+      "publisher": "Grand Seiko",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "longines-l38024636",
+      "url": "https://www.longines.com/en-us/p/watch-longines-spirit-zulu-time-l3-802-4-63-6",
+      "title": "Longines Spirit Zulu Time — L3.802.4.63.6",
+      "publisher": "Longines",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "rolex-124270",
+      "url": "https://www.rolex.com/en-us/watches/explorer/m124270-0001",
+      "title": "Rolex Explorer 36 Oystersteel — reference 124270",
+      "publisher": "Rolex",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "rolex-124273",
+      "url": "https://www.rolex.com/en-us/watches/explorer/m124273-0001",
+      "title": "Rolex Explorer 36 Oystersteel and yellow gold — reference 124273",
+      "publisher": "Rolex",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "jlc-q3988481",
+      "url": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-tribute/reverso-tribute-duoface-small-seconds-q3988481",
+      "title": "Reverso Tribute Duoface Small Seconds — Q3988481",
+      "publisher": "Jaeger-LeCoultre",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-28T18:30:00Z"
+    }
+  ],
+  "fx": {
+    "baseCurrency": "EUR",
+    "observedAt": "2026-08-28T14:10:00Z",
+    "staleAfter": "2026-09-04T14:10:00Z",
+    "sourceId": "ecb-fx-2026-08-28",
+    "rates": {
+      "EUR": 1,
+      "USD": 1.1643,
+      "GBP": 0.8572,
+      "CHF": 0.9364,
+      "PLN": 4.3365
+    }
+  },
+  "variants": [
+    {
+      "id": "timex-tw2y40300",
+      "brand": { "slug": "timex", "name": "Timex", "serviceCountries": null },
+      "collection": "Deepwater",
+      "model": "Meridian 200 38mm",
+      "referenceCode": "TW2Y40300",
+      "variantName": "Blue dial · HNBR rubber strap",
+      "productUrl": "https://timex.com/products/deepwater-meridian-200-38mm-hnbr-rubber-strap-watch-tw2y40300",
+      "price": {
+        "amountMinor": 26900,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "unknown",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": "stainless steel",
+        "bracelet": null,
+        "strap": "HNBR rubber"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 38,
+        "caseThicknessMm": 11,
+        "lugToLugMm": null,
+        "lugWidthMm": 18,
+        "weightFullG": 67.893,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "quartz",
+        "caliber": null,
+        "powerReserveHours": null,
+        "accuracyLowerSeconds": null,
+        "accuracyUpperSeconds": null,
+        "accuracyPeriodDays": null
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "quick_release",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "compact_value_diver",
+        "socialSignals": ["anti_luxury"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "timex-tw2y40300",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "citizen-bn0150-28e",
+      "brand": {
+        "slug": "citizen",
+        "name": "Citizen",
+        "serviceCountries": null
+      },
+      "collection": "Promaster Dive",
+      "model": "Eco-Drive Diver 200m",
+      "referenceCode": "BN0150-28E",
+      "variantName": "Black dial · polyurethane strap",
+      "productUrl": "https://www.citizenwatch.com/us/en/product/BN0150-28E",
+      "price": {
+        "amountMinor": 36000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": "stainless steel",
+        "bracelet": null,
+        "strap": "polyurethane"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 44,
+        "caseThicknessMm": null,
+        "lugToLugMm": null,
+        "lugWidthMm": 20,
+        "weightFullG": 93.55,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "solar",
+        "caliber": "E168",
+        "powerReserveHours": 4380,
+        "accuracyLowerSeconds": -15,
+        "accuracyUpperSeconds": 15,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": "screw_down",
+        "crownPosition": "4",
+        "crystal": "mineral",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "solar_professional_diver",
+        "socialSignals": ["anti_luxury"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "citizen-bn0150-us",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "availability",
+            "caseDiameterMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crystal",
+            "lumeGrade",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "citizen-bn0150-ca",
+          "fields": ["weightFullG", "crownType"]
+        },
+        { "sourceId": "citizen-e168-manual", "fields": ["accuracy"] }
+      ]
+    },
+    {
+      "id": "hamilton-h69439131",
+      "brand": {
+        "slug": "hamilton",
+        "name": "Hamilton",
+        "serviceCountries": null
+      },
+      "collection": "Khaki Field",
+      "model": "Mechanical 38mm",
+      "referenceCode": "H69439131",
+      "variantName": "Black dial · steel bracelet",
+      "productUrl": "https://www.hamiltonwatch.com/en-us/h69439131-khaki-field-mechanical.html",
+      "price": {
+        "amountMinor": 74500,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "short_wait",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": "stainless steel",
+        "bracelet": "stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 38,
+        "caseThicknessMm": 9.5,
+        "lugToLugMm": 47,
+        "lugWidthMm": 20,
+        "weightFullG": null,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "manual",
+        "caliber": "H-50",
+        "powerReserveHours": 80,
+        "accuracyLowerSeconds": null,
+        "accuracyUpperSeconds": null,
+        "accuracyPeriodDays": null
+      },
+      "operation": {
+        "waterResistanceM": 50,
+        "crownType": "push_pull",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "moderate",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["studio_desk_daily"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "hand_wound_field_watch",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["mid_century_industrial"],
+        "emotionalObjectives": ["dependability", "custody"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "hamilton-h69439131",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "availability",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tissot-t1372071104100",
+      "brand": { "slug": "tissot", "name": "Tissot", "serviceCountries": null },
+      "collection": "PRX",
+      "model": "Powermatic 80 35mm",
+      "referenceCode": "T137.207.11.041.00",
+      "variantName": "Blue dial · steel bracelet",
+      "productUrl": "https://www.tissotwatches.com/en-us/T1372071104100.html",
+      "price": {
+        "amountMinor": 79500,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "316L stainless steel",
+        "caseback": "stainless steel and sapphire",
+        "bracelet": "stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 35,
+        "caseThicknessMm": 10.93,
+        "lugToLugMm": 35,
+        "lugWidthMm": 11,
+        "weightFullG": 104,
+        "lugCurvature": null,
+        "integratedBracelet": true
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "Powermatic 80",
+        "powerReserveHours": 80,
+        "accuracyLowerSeconds": null,
+        "accuracyUpperSeconds": null,
+        "accuracyPeriodDays": null
+      },
+      "operation": {
+        "waterResistanceM": 100,
+        "crownType": "push_pull",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "weak",
+        "attachmentType": "integrated",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["studio_desk_daily", "formal_architectural"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "integrated_sport",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["integrated_geometry"],
+        "emotionalObjectives": ["milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "tissot-t1372071104100",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "availability",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seiko-ssc813",
+      "brand": { "slug": "seiko", "name": "Seiko", "serviceCountries": null },
+      "collection": "Prospex Speedtimer",
+      "model": "Solar Chronograph",
+      "referenceCode": "SSC813",
+      "variantName": "White dial · steel bracelet",
+      "productUrl": "https://www.seikowatches.com/us-en/products/prospex/ssc813",
+      "price": {
+        "amountMinor": 68000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "unknown",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": "stainless steel",
+        "bracelet": "stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 39,
+        "caseThicknessMm": 13.3,
+        "lugToLugMm": 45.5,
+        "lugWidthMm": 20,
+        "weightFullG": 161,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "solar",
+        "caliber": "V192",
+        "powerReserveHours": 4380,
+        "accuracyLowerSeconds": -15,
+        "accuracyUpperSeconds": 15,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 100,
+        "crownType": "push_pull",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": ["chronograph", "power_reserve"],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "solar_motorsport_chronograph",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["mid_century_industrial"],
+        "emotionalObjectives": ["dependability", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "seiko-ssc813",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mido-m0495261104100",
+      "brand": { "slug": "mido", "name": "Mido", "serviceCountries": null },
+      "collection": "Multifort",
+      "model": "TV Big Date",
+      "referenceCode": "M049.526.11.041.00",
+      "variantName": "Blue dial · steel bracelet",
+      "productUrl": "https://www.midowatches.com/us/multifort-tv-big-date-m0495261104100.html",
+      "price": {
+        "amountMinor": 144000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "316L stainless steel",
+        "caseback": "stainless steel and sapphire",
+        "bracelet": "stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 40,
+        "caseThicknessMm": 11.5,
+        "lugToLugMm": 39.2,
+        "lugWidthMm": 22,
+        "weightFullG": 155,
+        "lugCurvature": null,
+        "integratedBracelet": true
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "Caliber 80",
+        "powerReserveHours": 80,
+        "accuracyLowerSeconds": null,
+        "accuracyUpperSeconds": null,
+        "accuracyPeriodDays": null
+      },
+      "operation": {
+        "waterResistanceM": 100,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "weak",
+        "attachmentType": "integrated",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["studio_desk_daily", "formal_architectural"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "retro_architectural_sport",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["integrated_geometry", "mid_century_industrial"],
+        "emotionalObjectives": ["differentiation", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "mido-m0495261104100",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "availability",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nomos-746",
+      "brand": {
+        "slug": "nomos-glashuette",
+        "name": "NOMOS Glashütte",
+        "serviceCountries": null
+      },
+      "collection": "Club",
+      "model": "Club Sport neomatik petrol",
+      "referenceCode": "746",
+      "variantName": "Petrol dial · sapphire back · Sport bracelet",
+      "productUrl": "https://nomos-glashuette.com/en-us/club/club-sport-neomatik-petrol-746?strap=5840.M",
+      "price": {
+        "amountMinor": 391000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "short_wait",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "316L stainless steel",
+        "caseback": "stainless steel and sapphire",
+        "bracelet": "316L stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 37,
+        "caseThicknessMm": 8.4,
+        "lugToLugMm": 47.7,
+        "lugWidthMm": 18,
+        "weightFullG": null,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "DUW 3001",
+        "powerReserveHours": 43,
+        "accuracyLowerSeconds": null,
+        "accuracyUpperSeconds": null,
+        "accuracyPeriodDays": null
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "quick_release",
+        "shockResistant": null,
+        "nickelContactRisk": "possible"
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["studio_desk_daily", "formal_architectural"],
+      "ownershipFrictionLevels": ["specialist_mechanical"],
+      "traits": {
+        "primaryArchetype": "independent_modernist_sport",
+        "socialSignals": ["quiet_continuity"],
+        "aestheticDna": ["mid_century_industrial"],
+        "emotionalObjectives": ["differentiation", "custody"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "nomos-746",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "availability",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "nickelContactRisk",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "nomos-746-data-sheet",
+          "fields": [
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "attachmentType",
+            "dateStatus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grand-seiko-sbgn029",
+      "brand": {
+        "slug": "grand-seiko",
+        "name": "Grand Seiko",
+        "serviceCountries": null
+      },
+      "collection": "Sport Collection",
+      "model": "9F Quartz GMT",
+      "referenceCode": "SBGN029",
+      "variantName": "Blue dial · steel bracelet",
+      "productUrl": "https://www.grand-seiko.com/us-en/collections/sbgn029g",
+      "price": {
+        "amountMinor": 370000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "unknown",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": "stainless steel",
+        "bracelet": "stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 39,
+        "caseThicknessMm": 12.3,
+        "lugToLugMm": 45.9,
+        "lugWidthMm": 19,
+        "weightFullG": 151,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "quartz",
+        "caliber": "9F86",
+        "powerReserveHours": 26280,
+        "accuracyLowerSeconds": -10,
+        "accuracyUpperSeconds": 10,
+        "accuracyPeriodDays": 365
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": ["gmt"],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "high_precision_travel_tool",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "grand-seiko-sbgn029",
+          "fields": [
+            "identity",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "grand-seiko-9f86",
+          "fields": ["price", "accuracy", "complications", "dateStatus"]
+        }
+      ]
+    },
+    {
+      "id": "longines-l38024636",
+      "brand": {
+        "slug": "longines",
+        "name": "Longines",
+        "serviceCountries": null
+      },
+      "collection": "Spirit",
+      "model": "Zulu Time 39",
+      "referenceCode": "L3.802.4.63.6",
+      "variantName": "Anthracite dial · steel bracelet",
+      "productUrl": "https://www.longines.com/en-us/p/watch-longines-spirit-zulu-time-l3-802-4-63-6",
+      "price": {
+        "amountMinor": 355000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel with ceramic bezel",
+        "caseback": "stainless steel",
+        "bracelet": "stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 39,
+        "caseThicknessMm": 13.5,
+        "lugToLugMm": 46.8,
+        "lugWidthMm": 21,
+        "weightFullG": 147,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "L844.4",
+        "powerReserveHours": 72,
+        "accuracyLowerSeconds": null,
+        "accuracyUpperSeconds": null,
+        "accuracyPeriodDays": null
+      },
+      "operation": {
+        "waterResistanceM": 100,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "quick_release",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": ["gmt"],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "heritage_travel_tool",
+        "socialSignals": ["quiet_continuity"],
+        "aestheticDna": ["mid_century_industrial", "structural_tool"],
+        "emotionalObjectives": ["custody", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "longines-l38024636",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "availability",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rolex-124270",
+      "brand": { "slug": "rolex", "name": "Rolex", "serviceCountries": null },
+      "collection": "Explorer",
+      "model": "Explorer 36",
+      "referenceCode": "124270",
+      "variantName": "Oystersteel · black dial",
+      "productUrl": "https://www.rolex.com/en-us/watches/explorer/m124270-0001",
+      "price": {
+        "amountMinor": 790000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "unknown",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "Oystersteel",
+        "caseback": "Oystersteel",
+        "bracelet": "Oystersteel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 36,
+        "caseThicknessMm": null,
+        "lugToLugMm": null,
+        "lugWidthMm": null,
+        "weightFullG": null,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "3230",
+        "powerReserveHours": 70,
+        "accuracyLowerSeconds": -2,
+        "accuracyUpperSeconds": 2,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 100,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "proprietary",
+        "shockResistant": true,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": [
+        "field_water_abuse",
+        "studio_desk_daily",
+        "formal_architectural"
+      ],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "benchmark_explorer",
+        "socialSignals": ["unapologetic_benchmark"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["custody", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "rolex-124270",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rolex-124273",
+      "brand": { "slug": "rolex", "name": "Rolex", "serviceCountries": null },
+      "collection": "Explorer",
+      "model": "Explorer 36",
+      "referenceCode": "124273",
+      "variantName": "Oystersteel and yellow gold · black dial",
+      "productUrl": "https://www.rolex.com/en-us/watches/explorer/m124273-0001",
+      "price": {
+        "amountMinor": 1460000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "unknown",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "Oystersteel and 18 kt yellow gold",
+        "caseback": "Oystersteel",
+        "bracelet": "Oystersteel and 18 kt yellow gold",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 36,
+        "caseThicknessMm": null,
+        "lugToLugMm": null,
+        "lugWidthMm": null,
+        "weightFullG": null,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "3230",
+        "powerReserveHours": 70,
+        "accuracyLowerSeconds": -2,
+        "accuracyUpperSeconds": 2,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 100,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "proprietary",
+        "shockResistant": true,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": [
+        "field_water_abuse",
+        "studio_desk_daily",
+        "formal_architectural"
+      ],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "precious_benchmark_explorer",
+        "socialSignals": ["unapologetic_benchmark"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["custody", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "rolex-124273",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "jlc-q3988481",
+      "brand": {
+        "slug": "jaeger-lecoultre",
+        "name": "Jaeger-LeCoultre",
+        "serviceCountries": null
+      },
+      "collection": "Reverso Tribute",
+      "model": "Duoface Small Seconds",
+      "referenceCode": "Q3988481",
+      "variantName": "Blue/silver Duoface · steel · leather",
+      "productUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-tribute/reverso-tribute-duoface-small-seconds-q3988481",
+      "price": {
+        "amountMinor": 1520000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-28T18:30:00Z",
+        "staleAfter": "2027-02-24T18:30:00Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-28T18:30:00Z",
+        "availabilityStaleAfter": "2026-09-27T18:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": "stainless steel",
+        "bracelet": null,
+        "strap": "calfskin leather and canvas"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 28.3,
+        "caseThicknessMm": 10.34,
+        "lugToLugMm": 47,
+        "lugWidthMm": 20,
+        "weightFullG": null,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "manual",
+        "caliber": "854",
+        "powerReserveHours": 42,
+        "accuracyLowerSeconds": null,
+        "accuracyUpperSeconds": null,
+        "accuracyPeriodDays": null
+      },
+      "operation": {
+        "waterResistanceM": 30,
+        "crownType": "push_pull",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "none",
+        "attachmentType": "quick_release",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": ["gmt"],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["studio_desk_daily", "formal_architectural"],
+      "ownershipFrictionLevels": ["specialist_mechanical"],
+      "traits": {
+        "primaryArchetype": "high_horology_dual_time",
+        "socialSignals": ["quiet_continuity"],
+        "aestheticDna": ["high_art"],
+        "emotionalObjectives": ["custody", "differentiation"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "jlc-q3988481",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "availability",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -205,3 +205,20 @@ These items are not complete merely because the web application advances.
 | Optional free-text/semantic experiment | Phase 6 |
 | Cited dossier UI, explicit email opt-in, analytics, production funnel | Phase 7 |
 | Physical production, episodes, thumbnails, and YouTube cadence | Owner/media workstream |
+
+## 2026-08-28 implementation trace
+
+- The core questionnaire, Q17-style complications, explicit accuracy,
+  geography, cosmetic tolerance, condition/vintage, and allergy inputs are in
+  the progressive `/quiz` contract.
+- Recommendation engine v2 implements field-level missing/expiry behavior,
+  candidate-specific premium eligibility, speculative suppression, transparent
+  score factors, diversity, verification-required, why-not, and relaxation
+  output.
+- The first 12 reviewed variants are split by material/configuration and loaded
+  into PostgreSQL with field evidence. This includes separate Rolex Explorer
+  `124270` and `124273` rows.
+- Provenance and cosmetic selections are disclosed as unscored where the seed
+  lacks reviewed supporting fields. They are not silently treated as matches.
+- Semantic infrastructure remains deferred. No chunks, embeddings, vector
+  database, Mastra, Ollama, or RunPod dependency was introduced.

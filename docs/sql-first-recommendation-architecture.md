@@ -284,3 +284,16 @@ chunking. It must be evaluated against golden profiles for precision, hard-rule
 violations, explanation quality, latency, and cost. PostgreSQL remains the
 source of truth even if `pgvector` is later enabled. A separate vector database
 is not planned at the current catalogue scale.
+
+## Implementation checkpoint
+
+On 2026-08-28, the normalized schema and 12-variant calibration seed were
+applied to Supabase, and deterministic recommendation engine v2 was connected to
+`/quiz`. The seed covers only 180 of 28,800 projected core cells (0.63%), which
+confirms that structured catalogue expansion—not semantic retrieval—is the
+current bottleneck.
+
+Production temporarily reads the Zod-validated, versioned seed bundle because
+its Vercel database placeholders are not usable connection values yet. Supabase
+remains canonical; the next Phase 4 checkpoint is SQL-query parity and switching
+the server read path, not adding embeddings.

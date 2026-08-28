@@ -113,7 +113,7 @@ covered by the fast gate (13 tests at the phase checkpoint).
 
 ## Phase 3 — Reference-variant schema and coverage feasibility
 
-Status: **in progress**
+Status: **complete — verified 2026-08-28**
 
 Goal: prove the data model and combinatorial coverage before collecting 200
 brands.
@@ -146,15 +146,19 @@ Verification:
 - Coverage report runs over the complete defined axis set without capped
   first/last windows.
 
-Checkpoint 2026-08-28: the additive migration, schema contract, and coverage
-auditor are implemented locally. The honest empty projection reports 28,800
-empty cells. Phase 3 remains open until the migration is validated/applied and
-the coverage-selected seed projection exists; an empty matrix is evidence, not
-completion.
+Evidence 2026-08-28: six additive migrations are applied to the selected
+Supabase project. The server-only catalogue contains 11 brands and 12 sourced,
+homogeneous variants, including separate steel and two-tone Rolex Explorer
+rows. Field evidence, retail/availability/FX expiry, M0/M1/M2 evaluations, and
+typed deployment/friction profiles are loaded. Browser roles have no grants and
+the security advisor is clean. The regenerated full-matrix audit reports 180 of
+28,800 cells covered (0.63%), all single-candidate and under-diversified, with
+116 under-evidenced cells. That low number is the required feasibility result
+and controls Phase 5 priorities.
 
 ## Phase 4 — Deterministic recommendation MVP
 
-Status: **pending**
+Status: **in progress — server-seed baseline verified 2026-08-28**
 
 Goal: produce reproducible and explainable recommendations without AI
 infrastructure.
@@ -183,6 +187,22 @@ Verification:
 - The seed catalogue exercises non-empty, rare, and empty coverage cells.
 
 Completion of Phase 4 proves the core product decision loop.
+
+Checkpoint 2026-08-28: recommendation engine v2 implements fail-closed budget,
+FX, fit, deployment, ownership friction, accuracy, weight, function, date,
+geometry, attachment, acquisition, availability, condition, resale, lume,
+crown, geography, allergy, and speculative gates over the reviewed server seed.
+It logs score factors, enforces one brand and one archetype in the top three,
+returns verification-required and why-not sections, proposes relaxations, and
+discloses selected soft preferences that the seed cannot yet score. `/quiz`
+renders this evidence and its sources.
+
+The remaining Phase 4 item is the production PostgreSQL read/query path. The
+canonical Supabase catalogue is populated and query-ready, but the Vercel
+`DATABASE_URL`/`DIRECT_DATABASE_URL` entries do not currently inject usable
+connection values. Production therefore uses the versioned, Zod-validated seed
+snapshot generated from the same reviewed input. This fallback is explicit and
+does not make a live-database claim.
 
 ## Phase 5 — Research pipeline and catalogue expansion
 

@@ -6,6 +6,21 @@ It implements the accepted
 [`SQL-first architecture`](sql-first-recommendation-architecture.md) without
 enabling `pgvector`.
 
+The second migration,
+[`0002_server_only_catalogue_access.sql`](../db/migrations/0002_server_only_catalogue_access.sql),
+revokes all table access from Supabase browser roles and fixes the two missing
+foreign-key indexes reported by the database advisor. The catalogue is
+server-only until an explicit public read contract and RLS policies exist.
+
+The remaining Phase 3 migrations add dated FX snapshots, load the reviewed seed,
+index its source relationship, and expose reviewed deployment/service-tolerance
+classifications as typed filter tables:
+
+- [`0003_fx_rate_snapshots.sql`](../db/migrations/0003_fx_rate_snapshots.sql)
+- [`0004_seed_reference_catalogue.sql`](../db/migrations/0004_seed_reference_catalogue.sql)
+- [`0005_fx_source_index.sql`](../db/migrations/0005_fx_source_index.sql)
+- [`0006_reference_filter_profiles.sql`](../db/migrations/0006_reference_filter_profiles.sql)
+
 ## Entity boundary
 
 ```text
@@ -51,6 +66,11 @@ Questionnaire bands are never stored on a variant. Price-band and wrist-band
 coverage projections are derived from numeric facts and the shared Phase 2
 constants.
 
+`reference_deployment_profiles` and
+`reference_ownership_friction_profiles` are reviewed reference-level query
+surfaces. The classifications retain field evidence, but are not hidden inside
+an evidence hash or promoted to brand-level rollups.
+
 ## Accuracy normalization
 
 Published accuracy is stored as a lower/upper seconds range plus
@@ -76,7 +96,7 @@ Suggested initial refresh windows are policy defaults, not invented fact values:
 
 | Fact family | Review window |
 | --- | --- |
-| Availability and market price | 30 days |
+| Availability | 30 days |
 | Hype, liquidity, ratio, momentum | 90 days |
 | Retail price and production status | 180 days |
 | Current ownership and service region | 365 days |
@@ -97,7 +117,7 @@ a separate verification-required set and list the missing fields.
 
 ## Coverage projection
 
-`npm run audit:coverage` validates
+`npm run project:seed-coverage` regenerates and `npm run audit:coverage` validates
 [`data/coverage/reference-variants.json`](../data/coverage/reference-variants.json)
 and enumerates 28,800 meaningful core-axis cells:
 
@@ -106,10 +126,11 @@ and enumerates 28,800 meaningful core-axis cells:
 × 4 accuracy tolerances × 4 weight limits × 5 representative function profiles
 ```
 
-The input file is deliberately empty before seed research, so the initial audit
-reports 28,800 empty cells instead of manufacturing coverage. The future
-database projection may assign one variant to multiple compatible cells. The
-audit separately reports:
+The reviewed 12-variant seed currently projects into 180 of 28,800 cells
+(0.63%). Every covered cell has one candidate, every covered cell has fewer than
+three brands, and 116 covered cells contain at least one under-evidenced
+candidate. This is a coverage baseline, not a market-coverage claim. The audit
+separately reports:
 
 - empty cells;
 - cells with one candidate;
@@ -122,3 +143,18 @@ to satisfy the agreed coverage gate. The five function profiles are a stable
 basis set; exhaustive arbitrary multi-complication combinations are generated
 as targeted fixtures rather than inflating the global matrix with impossible
 permutations.
+
+## Applied database evidence
+
+All six migrations were applied additively to Supabase project
+`osfqexnzgkksfvaocjvl` on 2026-08-28. The live catalogue contains 11 brands, 12
+homogeneous variants, 12 retail-price snapshots, 7 availability snapshots, 236
+field-evidence rows, 5 FX rows, 25 deployment profiles, and 12
+ownership-friction profiles. The two Rolex Explorer materials remain distinct
+rows (`124270` steel and `124273` steel/yellow gold).
+
+The Supabase security advisor reports no findings. `anon` and `authenticated`
+have no table access. Performance findings are only unused-index informational
+notices expected on a newly loaded 12-row catalogue; the indexes are retained
+for the expansion phase. See the advisor's
+[unused-index guidance](https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index).

@@ -3,11 +3,16 @@ import { z } from "zod";
 import {
   ACCURACY_TOLERANCES,
   DEPLOYMENT_ENVIRONMENTS,
+  derivePriceBand,
   OWNERSHIP_FRICTION_LEVELS,
   PRICE_BANDS,
+  WEIGHT_LIMIT_GRAMS,
   WEIGHT_LIMITS,
   WRIST_BANDS,
 } from "./questionnaire";
+import type { SeedCatalogue, SeedReferenceVariant } from "./catalogue";
+import { hasVerifiedField, supportedAccuracyTolerances } from "./catalogue";
+import { MAX_LUG_TO_LUG_TO_WRIST_RATIO } from "./recommendation";
 
 export const FUNCTION_PROFILES = [
   "time_only_no_date",
@@ -25,7 +30,7 @@ export const coverageCandidateSchema = z
     referenceVariantId: z.string().min(1),
     brandId: z.string().min(1),
     priceBands: z.array(z.enum(PRICE_BAND_IDS)).min(1),
-    wristBands: z.array(z.enum(WRIST_BAND_IDS)).min(1),
+    wristBands: z.array(z.enum(WRIST_BAND_IDS)),
     deploymentEnvironments: z.array(z.enum(DEPLOYMENT_ENVIRONMENTS)).min(1),
     ownershipFrictionLevels: z.array(z.enum(OWNERSHIP_FRICTION_LEVELS)).min(1),
     accuracyTolerances: z.array(z.enum(ACCURACY_TOLERANCES)).min(1),
@@ -39,6 +44,87 @@ export const coverageCandidateListSchema = z.array(coverageCandidateSchema);
 
 export type CoverageCandidate = z.infer<typeof coverageCandidateSchema>;
 export type FunctionProfile = (typeof FUNCTION_PROFILES)[number];
+
+const WRIST_BAND_REPRESENTATIVES_MM = {
+  under_5_75: 140,
+  "5_75_6_25": 153,
+  "6_25_6_75": 165,
+  "6_75_7_5": 180,
+  "7_5_plus": 203,
+} as const satisfies Record<(typeof WRIST_BAND_IDS)[number], number>;
+
+function functionProfileForVariant(
+  variant: SeedReferenceVariant,
+): FunctionProfile {
+  if (
+    variant.complications.some((complication) =>
+      ["moonphase", "alarm", "world_time", "perpetual_calendar"].includes(
+        complication,
+      ),
+    )
+  ) {
+    return "high_complication";
+  }
+  if (variant.complications.includes("chronograph")) return "chronograph";
+  if (variant.complications.includes("gmt")) return "gmt";
+  return variant.dateStatus === "present" ? "simple_date" : "time_only_no_date";
+}
+
+function compatibleWristBands(variant: SeedReferenceVariant) {
+  if (
+    variant.geometry.lugToLugMm === null ||
+    !hasVerifiedField(variant, "lugToLugMm")
+  ) {
+    return [];
+  }
+  return WRIST_BAND_IDS.filter(
+    (band) =>
+      variant.geometry.lugToLugMm! <=
+      WRIST_BAND_REPRESENTATIVES_MM[band] * MAX_LUG_TO_LUG_TO_WRIST_RATIO,
+  );
+}
+
+function compatibleWeightLimits(variant: SeedReferenceVariant) {
+  if (
+    variant.geometry.weightFullG === null ||
+    !hasVerifiedField(variant, "weightFullG")
+  ) {
+    return ["no_limit"] satisfies (typeof WEIGHT_LIMITS)[number][];
+  }
+  return WEIGHT_LIMITS.filter((limit) => {
+    const maximum = WEIGHT_LIMIT_GRAMS[limit];
+    return maximum === null || variant.geometry.weightFullG! < maximum;
+  });
+}
+
+export function projectSeedCoverage(
+  catalogue: SeedCatalogue,
+): CoverageCandidate[] {
+  return catalogue.variants.map((variant) => {
+    const accuracyTolerances = supportedAccuracyTolerances(variant.movement);
+    const wristBands = compatibleWristBands(variant);
+    const weightLimits = compatibleWeightLimits(variant);
+    return {
+      referenceVariantId: variant.id,
+      brandId: variant.brand.slug,
+      priceBands: [derivePriceBand(variant.price.amountMinor / 100)],
+      wristBands,
+      deploymentEnvironments: variant.eligibleEnvironments,
+      ownershipFrictionLevels: variant.ownershipFrictionLevels,
+      accuracyTolerances,
+      weightLimits,
+      functionProfiles: [functionProfileForVariant(variant)],
+      activeHardFactsComplete:
+        wristBands.length > 0 &&
+        weightLimits.length > 1 &&
+        accuracyTolerances.length > 1 &&
+        hasVerifiedField(variant, "price") &&
+        hasVerifiedField(variant, "dateStatus") &&
+        hasVerifiedField(variant, "eligibleEnvironments") &&
+        hasVerifiedField(variant, "ownershipFrictionLevels"),
+    };
+  });
+}
 
 export type CoverageCell = {
   priceBand: (typeof PRICE_BAND_IDS)[number];

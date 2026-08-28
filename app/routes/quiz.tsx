@@ -36,6 +36,12 @@ import {
   WRIST_BANDS,
 } from "../domain/questionnaire";
 import type { CoreProfile, RefinementProfile } from "../domain/questionnaire";
+import type {
+  EvaluatedCandidate,
+  RecommendationResult,
+} from "../domain/recommendation";
+import { recommendWatches } from "../domain/recommendation";
+import { seedCatalogue } from "../domain/seed-catalogue";
 import "../styles/quiz.css";
 
 const CORE_STEP_COUNT = 6;
@@ -47,6 +53,7 @@ type ActionResult =
       ok: true;
       intent: "core" | "refine";
       profile: ReturnType<typeof normalizeProfile>;
+      recommendation: RecommendationResult;
     }
   | { ok: false; errors: string[] };
 
@@ -371,10 +378,12 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
 
+  const profile = normalizeProfile(parsed.data);
   return data<ActionResult>({
     ok: true,
     intent,
-    profile: normalizeProfile(parsed.data),
+    profile,
+    recommendation: recommendWatches(parsed.data, seedCatalogue),
   });
 }
 
@@ -505,10 +514,12 @@ function OptionalSelect<T extends string>({
 
 function ProfileSummary({
   profile,
+  recommendation,
   onEdit,
   onRefine,
 }: {
   profile: ReturnType<typeof normalizeProfile>;
+  recommendation: RecommendationResult;
   onEdit: () => void;
   onRefine: () => void;
 }) {
@@ -522,9 +533,9 @@ function ProfileSummary({
       <span className="eyebrow">Constraint profile complete</span>
       <h1 id="profile-heading">Your search boundary</h1>
       <p>
-        This is a validated profile, not a watch recommendation. Catalogue
-        matching will only use facts that can be verified at reference-variant
-        level.
+        The engine evaluated homogeneous reference variants only. Confirmed
+        matches pass every active hard constraint; incomplete facts are kept in
+        a separate verification queue.
       </p>
       <dl className="profile-grid">
         <div>
@@ -587,6 +598,7 @@ function ProfileSummary({
           </div>
         ) : null}
       </dl>
+      <RecommendationSummary recommendation={recommendation} />
       <div className="summary-actions">
         <button
           className="button button--primary"
@@ -600,6 +612,250 @@ function ProfileSummary({
         </button>
       </div>
     </section>
+  );
+}
+
+function formatCandidatePrice(
+  price: RecommendationResult["recommendations"][number]["price"],
+) {
+  return new Intl.NumberFormat("en", {
+    style: "currency",
+    currency: price.currency,
+    maximumFractionDigits: 0,
+  }).format(price.amountMinor / 100);
+}
+
+function CandidateCard({
+  candidate,
+  status,
+}: {
+  candidate: EvaluatedCandidate;
+  status: "confirmed" | "verification";
+}) {
+  return (
+    <article className="candidate-card">
+      <div className="candidate-card__heading">
+        <div>
+          <span className="eyebrow">
+            {status === "confirmed" ? "Confirmed fit" : "Verify before buying"}
+          </span>
+          <h3>
+            {candidate.brand} {candidate.model}
+          </h3>
+          <p>
+            Ref. {candidate.referenceCode} · {candidate.variantName}
+          </p>
+        </div>
+        <div className="candidate-price">
+          <strong>{formatCandidatePrice(candidate.price)}</strong>
+          <span>
+            {candidate.price.marketCountry} price · FX dated{" "}
+            {candidate.price.fxObservedAt.slice(0, 10)}
+          </span>
+        </div>
+      </div>
+
+      <dl className="candidate-specs">
+        <div>
+          <dt>Case</dt>
+          <dd>
+            {candidate.geometry.caseDiameterMm ?? "?"} mm · L2L{" "}
+            {candidate.geometry.lugToLugMm ?? "?"} mm
+          </dd>
+        </div>
+        <div>
+          <dt>Movement</dt>
+          <dd>
+            {labelFor(candidate.movement.type)}
+            {candidate.movement.caliber
+              ? ` · ${candidate.movement.caliber}`
+              : ""}
+          </dd>
+        </div>
+        <div>
+          <dt>Weight</dt>
+          <dd>
+            {candidate.geometry.weightFullG === null
+              ? "Not published"
+              : `${candidate.geometry.weightFullG} g`}
+          </dd>
+        </div>
+        <div>
+          <dt>Score</dt>
+          <dd>{candidate.score.toFixed(1)}</dd>
+        </div>
+      </dl>
+
+      {candidate.scoreTrace.length > 0 ? (
+        <ul className="factor-list" aria-label="Score factors">
+          {candidate.scoreTrace.slice(0, 4).map((factor) => (
+            <li key={factor.factor}>
+              <strong>
+                {factor.points > 0 ? "+" : ""}
+                {factor.points}
+              </strong>{" "}
+              {factor.explanation}
+            </li>
+          ))}
+        </ul>
+      ) : null}
+
+      {candidate.missingFacts.length > 0 ? (
+        <ul
+          className="verification-list"
+          aria-label="Facts requiring verification"
+        >
+          {candidate.missingFacts.map((fact) => (
+            <li key={fact.code}>{fact.explanation}</li>
+          ))}
+        </ul>
+      ) : null}
+
+      <a
+        className="candidate-link"
+        href={candidate.productUrl}
+        rel="noreferrer"
+        target="_blank"
+      >
+        Inspect manufacturer source
+      </a>
+    </article>
+  );
+}
+
+function RecommendationSummary({
+  recommendation,
+}: {
+  recommendation: RecommendationResult;
+}) {
+  return (
+    <div className="recommendation-summary">
+      <section aria-labelledby="confirmed-heading">
+        <div className="result-section-heading">
+          <div>
+            <span className="eyebrow">Deterministic result</span>
+            <h2 id="confirmed-heading">Confirmed matches</h2>
+          </div>
+          <span>
+            {recommendation.recommendations.length} /{" "}
+            {recommendation.diagnostics.evaluated}
+          </span>
+        </div>
+        {recommendation.recommendations.length > 0 ? (
+          <div className="candidate-list">
+            {recommendation.recommendations.map((candidate) => (
+              <CandidateCard
+                candidate={candidate}
+                key={candidate.id}
+                status="confirmed"
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="empty-result">
+            No seed-catalogue variant passes every active hard constraint with
+            complete evidence. Nothing was silently relaxed.
+          </p>
+        )}
+      </section>
+
+      {recommendation.verificationRequired.length > 0 ? (
+        <section aria-labelledby="verification-heading">
+          <div className="result-section-heading">
+            <div>
+              <span className="eyebrow">Evidence boundary</span>
+              <h2 id="verification-heading">Promising, but verify first</h2>
+            </div>
+          </div>
+          <div className="candidate-list">
+            {recommendation.verificationRequired.map((candidate) => (
+              <CandidateCard
+                candidate={candidate}
+                key={candidate.id}
+                status="verification"
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {recommendation.relaxations.length > 0 ? (
+        <section aria-labelledby="relaxation-heading">
+          <div className="result-section-heading">
+            <div>
+              <span className="eyebrow">No silent compromise</span>
+              <h2 id="relaxation-heading">Optional next relaxations</h2>
+            </div>
+          </div>
+          <ol className="explanation-list">
+            {recommendation.relaxations.map((relaxation) => (
+              <li key={relaxation.code}>{relaxation.explanation}</li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
+
+      {recommendation.whyNot.length > 0 ? (
+        <section aria-labelledby="why-not-heading">
+          <div className="result-section-heading">
+            <div>
+              <span className="eyebrow">Exclusion trace</span>
+              <h2 id="why-not-heading">Why not these</h2>
+            </div>
+          </div>
+          <div className="why-not-list">
+            {recommendation.whyNot.map((candidate) => (
+              <article key={candidate.id}>
+                <h3>
+                  {candidate.brand} {candidate.model}
+                </h3>
+                <ul>
+                  {candidate.hardReasons.map((reason) => (
+                    <li key={reason.code}>{reason.explanation}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {recommendation.unscoredPreferences.length > 0 ? (
+        <section aria-labelledby="unscored-heading">
+          <div className="result-section-heading">
+            <div>
+              <span className="eyebrow">Evidence boundary</span>
+              <h2 id="unscored-heading">Preferences not scored yet</h2>
+            </div>
+          </div>
+          <ul className="explanation-list">
+            {recommendation.unscoredPreferences.map((preference) => (
+              <li key={preference.field}>{preference.explanation}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <section className="source-register" aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Sources used in this result</h2>
+        <ol>
+          {recommendation.sources.map((source) => (
+            <li key={source.id}>
+              <a href={source.url} rel="noreferrer" target="_blank">
+                {source.publisher}: {source.title}
+              </a>{" "}
+              <span>retrieved {source.retrievedAt.slice(0, 10)}</span>
+            </li>
+          ))}
+        </ol>
+        <p>
+          Engine v{recommendation.engineVersion} · catalogue v
+          {recommendation.catalogueVersion} · evaluated{" "}
+          {recommendation.evaluatedAt.slice(0, 10)}. Current seed coverage is
+          limited; absence is not evidence that a watch does not exist.
+        </p>
+      </section>
+    </div>
   );
 }
 
@@ -713,6 +969,7 @@ export default function Quiz() {
           onEdit={() => setStep(0)}
           onRefine={() => setStep(CORE_STEP_COUNT)}
           profile={actionData.profile}
+          recommendation={actionData.recommendation}
         />
       </main>
     );

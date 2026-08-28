@@ -2,7 +2,9 @@ import {
   auditCoverage,
   coverageCandidateListSchema,
   coverageCellCount,
+  projectSeedCoverage,
 } from "./coverage";
+import { seedCatalogue } from "./seed-catalogue";
 
 const CANDIDATE = {
   referenceVariantId: "variant-1",
@@ -50,5 +52,25 @@ describe("pre-collection coverage audit", () => {
         { ...CANDIDATE, priceBands: ["not_a_band"] },
       ]).success,
     ).toBe(false);
+  });
+
+  it("projects every seed variant and spans every defined price band", () => {
+    const projection = projectSeedCoverage(seedCatalogue);
+    expect(projection).toHaveLength(seedCatalogue.variants.length);
+    expect(
+      new Set(projection.flatMap((candidate) => candidate.priceBands)),
+    ).toEqual(
+      new Set([
+        "under_300",
+        "300_500",
+        "500_1000",
+        "1000_2000",
+        "2000_5000",
+        "5000_10000",
+        "10000_15000",
+        "15000_plus",
+      ]),
+    );
+    expect(auditCoverage(projection).coveredCells).toBeGreaterThan(0);
   });
 });

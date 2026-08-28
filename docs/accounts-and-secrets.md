@@ -154,6 +154,12 @@ provider-neutral so the application is not coupled to the management API. Do
 not enable `pgvector` unless the optional Phase 6 experiment reaches its entry
 gate.
 
+As of 2026-08-28, migrations and seed loading were completed through the
+project-scoped Supabase MCP. Vercel lists encrypted placeholders for
+`DATABASE_URL` and `DIRECT_DATABASE_URL`, but they do not currently provide a
+usable runtime connection. Do not claim live database reads until those values
+are configured and the SQL/seed parity fixtures pass.
+
 ## Local validation
 
 Run the checker without exposing values:

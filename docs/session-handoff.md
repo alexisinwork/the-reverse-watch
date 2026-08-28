@@ -12,14 +12,14 @@ phase.
 
 ## Current checkpoint
 
-- Active phase: **Phase 3 — reference-variant schema and coverage feasibility,
-  in progress**.
-- Phase 0 and Phase 1 remain complete.
-- Phase 2 is complete and verified locally.
-- The application now exposes `/quiz` with six required screens, an early
-  validated profile summary, and four optional refinement groups.
-- No database migration has been applied to Supabase yet. No catalogue,
-  subscriber, credential, DNS, or production data was changed.
+- Active phase: **Phase 4 — deterministic recommendation MVP, in progress**.
+- Phases 0–3 are complete and verified.
+- `/quiz` now returns confirmed, verification-required, relaxation, why-not,
+  score-trace, and source sections after the six core screens or optional
+  refinement groups.
+- Six additive migrations are applied to Supabase. The catalogue remains
+  server-only; no subscriber, credential, DNS, or destructive database change
+  was made.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
@@ -46,57 +46,76 @@ phase.
 - `/quiz` collects exact budget and wrist values, deployment,
   service/accuracy, weight, complications/date, then optional identity, fit,
   market, operation, geography, condition, cosmetic, and allergy preferences.
-- Core and refine submissions are validated on the server. The result remains a
-  constraint profile and does not fabricate a watch recommendation.
+- Core and refine submissions are validated on the server. The result is built
+  by deterministic recommendation engine v2 from accepted seed facts; missing
+  or expired hard facts cannot become confirmed recommendations.
 - Draft state recovers from browser `sessionStorage`; access does not require
   email.
 - The obsolete root `questionnaire.js` prototype was removed. Its history and
   code sketch remain in git and `original_context.md`.
 - The landing page links to the diagnostic without changing the Beehiiv embed.
 
-## Phase 3 checkpoint delivered
+## Phase 3 delivered
 
 - `db/migrations/0001_reference_variant_catalogue.sql` defines additive
   PostgreSQL types and tables for brands, ownership periods, service regions,
   collections, models, variants, complications, price/market snapshots, traits,
   editorial claims, sources, per-field evidence, completeness, and review.
-- The migration deliberately does not enable `pgvector`.
+- Migrations `0001` through `0006` are applied to Supabase project
+  `osfqexnzgkksfvaocjvl`; none enables `pgvector`.
 - `docs/catalogue-schema.md` maps questionnaire requirements to fields and
   records refresh/null/completeness policy.
 - `app/domain/coverage.ts` and `scripts/audit-coverage.ts` enumerate the defined
   pre-collection core matrix and report empty, single-candidate,
   under-diversified, and under-evidenced cells.
-- The input projection is intentionally empty. The current audit reports 0 of
-  28,800 cells covered; this prevents a seed or prestigious-brand list from being
-  mistaken for market coverage.
+- The reviewed seed has 11 brands, 12 variants, 17 sources, 12 prices, 7
+  availability snapshots, 236 evidence rows, 5 FX rows, 25 deployment profiles,
+  and 12 ownership-friction profiles.
+- The current audit reports 180 of 28,800 cells covered (0.63%), all
+  single-candidate and under-diversified; 116 are under-evidenced.
+- Security advisor findings are empty, and browser roles have no table grants.
+
+## Phase 4 checkpoint delivered
+
+- `app/domain/recommendation.ts` contains the versioned explicit hard-filter,
+  score, tie-break, diversity, verification, why-not, and relaxation policy.
+- Candidate-specific premium handling prevents a grey/secondary allowance from
+  expanding an authorized-dealer price.
+- Price, availability, and cross-currency FX snapshots fail closed after their
+  own expiry. Purchase/service geography is not inferred from an unrelated
+  market.
+- `data/catalogue/seed-catalogue.json` is a strict source-backed runtime
+  snapshot. `scripts/render-seed-migration.ts` and
+  `scripts/project-seed-coverage.ts` regenerate its database and coverage
+  artifacts.
+- Provenance and cosmetic preferences are visibly disclosed as unscored until
+  reviewed brand/surface data exists.
 
 ## Verification evidence
 
 On 2026-08-28:
 
-- `npm run check` passed formatting, linting, strict route/type generation, 17
-  tests across five files, and the React Router production build.
-- After the coverage checkpoint was added, focused type checking passed and
-  `npm run audit:coverage` validated the empty projection and reported 28,800
-  empty cells after treating ownership/service tolerance as its own axis.
+- `npm run check` passes formatting, lint, strict type/route generation, all 32
+  tests across seven files, and the production build.
+- `npm run audit:coverage` validates all 28,800 cells without capped windows.
 - The deferred Playwright suite was updated with the core diagnostic flow but
   was not executed, per the Phase 7 cadence.
-- PostgreSQL syntax and application against Supabase are not claimed because no
-  local PostgreSQL client is installed and no external migration was applied.
+- Supabase applied all six migrations. Live row counts, server-only privileges,
+  and both advisors were checked after the final migration.
 
 ## Exact continuation
 
-1. Validate the additive migration against the selected PostgreSQL/Supabase
-   project, preserving a reversible migration path and without destructive
-   operations.
-2. Define the coverage-selected seed manifest and a database-to-coverage
-   projection. Do not start bulk 200-brand research yet.
-3. Add completeness evaluation for active hard-filter fields and fixtures that
-   prove family/material/size rows cannot be collapsed.
-4. Populate a small sourced seed across deliberately different coverage cells,
-   then rerun the audit and distinguish market rarity from data gaps.
-5. Keep Phase 3 open until the schema and seed projection work end to end. Do
-   not add embeddings or model providers to solve missing structured data.
+1. Configure usable pooled/direct Supabase connection values in Vercel without
+   copying credentials into logs, then make the server read the canonical
+   catalogue and retain the reviewed bundle only as an explicit fallback.
+2. Move the exact active hard predicates into the PostgreSQL candidate query and
+   prove parity with engine v2 golden profiles.
+3. Finish the full Phase 4 gate and production smoke check.
+4. Start Phase 5 with coverage-first variants for the empty and
+   under-diversified cells; do not optimize for a vanity brand count.
+5. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
+   path until the optional held-out evaluation has a deterministic baseline to
+   beat.
 
 ## Existing operational notes
 
