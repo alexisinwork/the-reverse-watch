@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T07:42:36.560Z",
+  "updatedAt": "2026-08-29T08:35:05Z",
   "brands": [
     {
       "slug": "rolex",
@@ -812,28 +812,10 @@
         },
         {
           "id": "seiko-compact-mechanical-no-date",
-          "referenceLabel": "Select a current compact mechanical no-date reference",
-          "state": "needs_review",
-          "coverageIntent": {
-            "priceBands": [
-              "300_500",
-              "500_1000"
-            ],
-            "wristBands": [
-              "under_5_75",
-              "5_75_6_25"
-            ],
-            "ownershipFrictionLevels": [
-              "workhorse_mechanical"
-            ],
-            "accuracyTolerances": [
-              "within_15_seconds_per_day"
-            ],
-            "functionProfiles": [
-              "time_only_no_date"
-            ]
-          },
-          "coverageRationale": "Fill small-wrist, affordable mechanical, and no-date cells with a second archetype."
+          "referenceLabel": "Presage Classic Series HCC004J1",
+          "state": "accepted",
+          "coverageRationale": "Accepted compact mechanical no-date row after resolving the contradictory regional lume evidence and retaining the conflict trail.",
+          "catalogueVariantId": "seiko-hcc004j1"
         }
       ]
     },

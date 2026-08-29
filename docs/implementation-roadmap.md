@@ -399,12 +399,12 @@ snapshot, while an exact 16 mm configured listing and the genuine Casio
 band/spring-rod component chain establish `spring_bar`. Migration rendering now
 records `shockResistant` evidence and derives SQL price kind from acquisition
 channel, correctly writing the offer as `secondary_ask`. Generated migration
-`0013` adds only Casio after `0012`. The local seed now has 16 variants and
-projects to 408/28,800 cells (1.42%), while live Supabase remains at 12 rows.
-The current strict checkpoint is 16 accepted targets, 15 active targets, and 21
+`0013` adds only Casio after `0012`. At that checkpoint the local seed had 16
+variants and projected to 408/28,800 cells (1.42%), while live Supabase remained
+at 12 rows. That strict checkpoint had 16 accepted targets, 15 active targets,
+and 21
 reviews: four migration-ready, 15 needing more evidence, and two excluded.
-Migrations `0010` through `0013` must be applied in order and 16-row parity
-proved before the bundled seed or commits are pushed.
+Migrations `0010` through `0013` were pending at that checkpoint.
 
 An exact-reference Omega follow-up then resolved the Speedmaster
 310.30.42.50.01.001 accuracy gap. Omega's official certification page includes
@@ -414,6 +414,20 @@ per day in two positions. The row remains research-only because luminous
 material is not a graded performance result, specialist strap fitment lacks
 manufacturer corroboration of the factory bracelet mechanism, and omitted
 complications do not prove explicit no-date status.
+
+Seiko Presage HCC004J1 then became the fifth migration-ready candidate. An
+exact official Singapore boutique specification explicitly says
+`Lumibrite: N/A`; Seiko's corporate directory identifies the boutique operator
+as its Singapore distributor, and an independent exact-reference hands-on
+review corroborates the absence of luminous paint. The contradictory
+Netherlands lume rows are rejected because their page visibly continues into
+unrelated Astron 5X53 GPS Solar and titanium product copy. Migration `0014`
+adds only this reviewed row after `0013`. The local seed now has 15 brands and
+17 variants and projects to 448/28,800 cells (1.56%), while live Supabase
+remains at 12 rows. The current strict checkpoint is 17 accepted targets, 14
+active targets, and 21 reviews: five migration-ready, 14 needing more evidence,
+and two excluded. Migrations `0010` through `0014` must be applied in order and
+17-row parity proved before the bundled seed or commits are pushed.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

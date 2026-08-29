@@ -288,6 +288,54 @@
       "publisher": "Jamtangan.com",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-29T08:21:08Z"
+    },
+    {
+      "id": "seiko-hcc004j1-us",
+      "url": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
+      "title": "Presage Classic Series Seiko 145th Anniversary Limited Edition — HCC004J1",
+      "publisher": "Seiko Watch Corporation",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T08:35:05Z"
+    },
+    {
+      "id": "seiko-hcc004j-japan",
+      "url": "https://store.seikowatches.com/products/hcc004j",
+      "title": "Presage Classic Series Seiko 145th Anniversary Limited Edition — HCC004J",
+      "publisher": "Seiko Watch Corporation",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T08:35:05Z"
+    },
+    {
+      "id": "seiko-6r51-manual",
+      "url": "https://www.seikowatches.com/-/media/HtmlUploader/Common/Seiko/Home/instructions/html/SEIKO_6R51_6R55_6R5H_6R5J_EN/assets/pdf/6R5C_2311_EN.pdf",
+      "title": "Calibres 6R51, 6R55, 6R5H and 6R5J instructions",
+      "publisher": "Seiko Watch Corporation",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-29T08:35:05Z"
+    },
+    {
+      "id": "seiko-boutique-sg-hcc004j1",
+      "url": "https://seikoboutique.com.sg/product/seiko-145th-anniversary-limited-edition-presage-classic-automatic-hcc004j1/",
+      "title": "Seiko 145th Anniversary Limited Edition Presage Classic Automatic — HCC004J1",
+      "publisher": "Thong Sia Co. (S) Pte. Ltd. — Seiko official Singapore distributor",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:35:05Z"
+    },
+    {
+      "id": "webchronos-seiko-hcc004j-no-lume",
+      "url": "https://en.webchronos.net/features/161585/",
+      "title": "A deep dive into the Seiko Presage Classic Series 145th Anniversary model",
+      "publisher": "Chronos Japan / webChronos",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:35:05Z"
+    },
+    {
+      "id": "louis-pion-seiko-hcc004j1",
+      "url": "https://www.louispion.fr/presage-hcc004j1.html",
+      "title": "Seiko Presage — HCC004J1",
+      "publisher": "Louis Pion",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:35:05Z"
     }
   ],
   "fx": {
@@ -1994,6 +2042,124 @@
         },
         {
           "sourceId": "american-perfit-casio-band-10512401",
+          "fields": ["attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "seiko-hcc004j1",
+      "brand": {
+        "slug": "seiko",
+        "name": "Seiko",
+        "serviceCountries": null
+      },
+      "collection": "Presage Classic Series",
+      "model": "HCC004",
+      "referenceCode": "HCC004J1",
+      "variantName": "Seiko 145th Anniversary Limited Edition · deep navy cow-leather strap",
+      "productUrl": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
+      "price": {
+        "amountMinor": 100000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-29T08:35:05Z",
+        "staleAfter": "2027-02-25T08:35:05Z",
+        "availability": "unknown",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel with super-hard coating",
+        "caseback": "stainless steel see-through screw caseback",
+        "bracelet": null,
+        "strap": "deep navy cow leather"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 36,
+        "caseThicknessMm": 12.5,
+        "lugToLugMm": 41.4,
+        "lugWidthMm": 18,
+        "weightFullG": 66,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "Seiko 6R51",
+        "powerReserveHours": 72,
+        "accuracyLowerSeconds": -15,
+        "accuracyUpperSeconds": 25,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 100,
+        "crownType": "push_pull",
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "none",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["studio_desk_daily", "formal_architectural"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "compact_classic_no_date",
+        "socialSignals": ["quiet_continuity"],
+        "aestheticDna": ["mid_century_industrial"],
+        "emotionalObjectives": ["milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "seiko-hcc004j1-us",
+          "fields": [
+            "identity",
+            "price",
+            "availability",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crystal",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "seiko-hcc004j-japan",
+          "fields": ["weightFullG"]
+        },
+        {
+          "sourceId": "seiko-6r51-manual",
+          "fields": ["dateStatus"]
+        },
+        {
+          "sourceId": "seiko-boutique-sg-hcc004j1",
+          "fields": ["crownType", "lumeGrade", "dateStatus"]
+        },
+        {
+          "sourceId": "webchronos-seiko-hcc004j-no-lume",
+          "fields": ["lumeGrade", "eligibleEnvironments", "traits"]
+        },
+        {
+          "sourceId": "louis-pion-seiko-hcc004j1",
           "fields": ["attachmentType"]
         }
       ]

@@ -59,8 +59,8 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 16 accepted catalogue targets linked to all current reviewed variants;
-- 15 active coverage-intent targets, with all default discovery jobs reviewed;
+- 17 accepted catalogue targets linked to all current reviewed variants;
+- 14 active coverage-intent targets, with all default discovery jobs reviewed;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
   mechanicals.
@@ -318,13 +318,13 @@ The migration renderer now includes `shockResistant` in field evidence and
 derives `retail`, `grey_market_ask`, or `secondary_ask` from the accepted price
 channel instead of labeling every snapshot retail. Generated migration
 `0013_expand_catalogue_casio.sql` is replay-safe and adds only Casio after
-`0012`. The local seed now has 16 variants and covers 408/28,800 cells (1.42%):
+`0012`. At that checkpoint the local seed had 16 variants and covered
+408/28,800 cells (1.42%):
 404 are single-candidate, all 408 are under-diversified, and 184 contain an
-under-evidenced candidate. Strict research reports 16 accepted targets, 15
+under-evidenced candidate. Strict research reported 16 accepted targets, 15
 active targets, and 21 reviews: four `ready_for_migration`, 15
-`needs_more_evidence`, and two `excluded`. Live Supabase remains at 12 rows, so
-migrations `0010` through `0013` and the bundled seed remain unpushed until they
-are applied in order and 16-row SQL parity passes.
+`needs_more_evidence`, and two `excluded`. Live Supabase remained at 12 rows;
+at that checkpoint migrations `0010` through `0013` were pending.
 
 A follow-up exact-reference Omega pass resolved only the accuracy gap for
 Speedmaster 310.30.42.50.01.001. Omega's certification page explicitly includes
@@ -334,6 +334,25 @@ seconds per day in two measured positions. The row remains research-only:
 luminescent material alone is not a performance grade, specialist strap fitment
 does not manufacturer-corroborate the factory bracelet mechanism, and omission
 from a complication list is not explicit no-date evidence.
+
+Seiko Presage HCC004J1 then became the fifth `ready_for_migration` review. The
+exact official Singapore boutique page explicitly reports `Lumibrite: N/A`,
+Seiko's corporate directory authenticates the page operator as its Singapore
+distributor, and an independent exact-reference hands-on review reports that
+the watch lacks luminous paint. The conflicting Netherlands rows are rejected
+for this fact because that same page visibly switches to unrelated Astron 5X53
+GPS Solar, titanium-case, and titanium-bracelet copy. This resolves
+`lumeGrade: none` without hiding the conflict.
+
+Generated migration `0014_expand_catalogue_seiko.sql` is replay-safe and adds
+only HCC004J1 after `0013`. The reviewed local seed now has 15 brands and 17
+variants and covers 448/28,800 cells (1.56%): 444 are single-candidate, all 448
+are under-diversified, and 224 contain an under-evidenced candidate. Strict
+research reports 17 accepted targets, 14 active targets, and 21 reviews: five
+`ready_for_migration`, 14 `needs_more_evidence`, and two `excluded`. Live
+Supabase remains at 12 rows, so migrations `0010` through `0014` and the bundled
+seed remain unpushed until they are applied in order and 17-row SQL parity
+passes.
 
 ## Job idempotency and retention
 
