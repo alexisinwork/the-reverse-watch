@@ -470,6 +470,13 @@ row remains research-only with three M1 gaps. Full-weight records span 274 g,
 disagree on nighttime usability; and the original bracelet's dealer-described
 spring-pin mount lacks manufacturer corroboration of the factory interface.
 
+Blancpain Fifty Fathoms Tech 5019A 12B30 94A now has a reviewed 47 mm
+lug-to-lug span. Blancpain's exact technical dossier establishes the 47 mm
+diameter and central-lug construction, while an exact-reference hands-on
+specification explicitly reports that the lack of projecting conventional lugs
+makes lug-to-lug equal to diameter. The row remains research-only for
+conventional lug width, full configured weight, and numerical accuracy.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

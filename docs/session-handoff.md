@@ -23,11 +23,20 @@ phase.
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
+- Local `main` is 21 commits ahead of `origin/main`. The evidence checkpoints
+  through Blancpain are committed locally, and the branch remains intentionally
+  unpushed until migrations `0010` through `0014` are applied and 17-row live
+  SQL parity is proven.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
 ## Accepted 2026-08-28 audit decisions
 
+- The owner's Claude questionnaire/database audit remains a controlling
+  checklist, not background commentary. Its full text is preserved in
+  [`original_context.md`](original_context.md), and
+  [`original-plan-requirements.md`](original-plan-requirements.md) indexes the
+  implementation evidence so later catalogue work does not drift from it.
 - Brand is sourced context; a homogeneous reference variant is the filtering
   and ranking unit.
 - Price and wrist circumference are canonical numeric values. Display bands are
@@ -40,6 +49,19 @@ phase.
   scoring, diversity quotas, rejection reasons, and visible relaxation prompts.
 - Semantic retrieval is an optional later experiment for free text or
   demonstrably nuanced aesthetics only.
+- The implemented audit surface includes exact numeric budget and wrist values
+  with shared display bands; progressive core/refinement questions for
+  accuracy, complications, geography, purchase condition/vintage, cosmetic
+  tolerance, and nickel allergy; bounded market-premium handling; field-level
+  evidence; fail-closed SQL hard filters; speculative-candidate suppression;
+  deterministic score traces, diversity, why-not explanations, and visible
+  relaxations; and the complete 28,800-cell coverage audit.
+- The audit is not complete at the data layer: only 17 homogeneous variants are
+  accepted locally, 448 of 28,800 cells are covered, every covered cell is
+  under-diversified, and 224 are under-evidenced. Phase 5 must close that
+  breadth and evidence gap before the 200-brand knowledge pack can be treated as
+  a recommendation catalogue. Phase 7 dossier, funnel, and owner-media work
+  also remains pending; none of this reopens vectors as a launch dependency.
 
 ## Phase 2 delivered
 
@@ -418,6 +440,16 @@ For the post-batch evidence-gap pass on the same date:
   resolving lug-to-lug at 54.5 mm. Weight records at 274 g, 276 g, and
   approximately 270 g after bracelet sizing remain explicit rather than being
   forced into one value.
+- Blancpain Fifty Fathoms Tech 5019A 12B30 94A now needs conventional lug-width
+  handling, full configured weight, and numerical accuracy. Blancpain's exact
+  dossier establishes its 47 mm diameter and central-lug construction; an
+  exact-reference hands-on specification explicitly reports 47 mm lug-to-lug
+  because no conventional lugs project beyond the case.
+- The latest evidence sequence is committed as `db77f92` (Swatch), `760979c`
+  (Omega), and `a6fb895` (Bulova), followed by the Blancpain geometry
+  checkpoint. `npm run check` passes formatting, lint, type generation,
+  TypeScript, all 55 tests across 13 files, and the production build; the
+  research manifest audit also passes.
 
 On 2026-08-28 for Phases 1–4:
 

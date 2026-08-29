@@ -402,6 +402,13 @@ sizing to 274 g and 276 g; exact hands-on lume accounts disagree on nighttime
 usability; and the original bracelet's dealer-described spring-pin mount still
 lacks manufacturer corroboration.
 
+A Blancpain Fifty Fathoms Tech 5019A 12B30 94A geometry follow-up resolved
+lug-to-lug at 47 mm. Blancpain's exact dossier establishes its 47 mm diameter
+and central-lug construction, and an exact-reference hands-on specification
+explicitly reports that this architecture makes the across-wrist span equal to
+the diameter. The row remains research-only for conventional lug width, full
+configured weight, and numerical rate tolerance.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
