@@ -460,8 +460,10 @@ For the post-batch evidence-gap pass on the same date:
   original strap plus Swatch's connector-pin guide resolve a 17 mm proprietary
   interface; and two exact-reference specifications explicitly report no date.
   The conflicting 18 g and 22 g records are retained rather than normalized.
-- Bulova 98B316 now needs full configured weight, a repeatable lume grade, and
-  manufacturer-corroborated factory attachment evidence. Two exact-reference
+- Bulova 98B316 now needs only full configured weight and a repeatable lume
+  grade. Citizen Watch Group's exact-model service lookup identifies Icon
+  98B316 and lists its band and a dedicated spring-bar replacement separately,
+  resolving the factory interface as `spring_bar`. Two exact-reference
   dimensional sets report 54.5 mm case length and a third reports 54.6 mm,
   resolving lug-to-lug at 54.5 mm. Weight records at 274 g, 276 g, and
   approximately 270 g after bracelet sizing remain explicit rather than being

@@ -402,6 +402,13 @@ sizing to 274 g and 276 g; exact hands-on lume accounts disagree on nighttime
 usability; and the original bracelet's dealer-described spring-pin mount still
 lacks manufacturer corroboration.
 
+A subsequent factory-parts pass resolved Bulova 98B316's attachment as
+`spring_bar`. Citizen Watch Group's exact-model service lookup identifies Icon
+98B316 and lists `Band` and `Spring Bar` as separate replacement entries. This
+is direct factory-interface evidence rather than an inference from bracelet
+material or a generic strap guide. The row remains research-only for two M1
+fields: full configured weight and repeatable lume performance.
+
 A Blancpain Fifty Fathoms Tech 5019A 12B30 94A geometry follow-up resolved
 lug-to-lug at 47 mm. Blancpain's exact dossier establishes its 47 mm diameter
 and central-lug construction, and an exact-reference hands-on specification

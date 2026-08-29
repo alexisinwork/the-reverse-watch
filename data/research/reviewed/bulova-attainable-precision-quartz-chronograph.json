@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "bulova-attainable-precision-quartz-chronograph",
   "jobId": "cb07bdfc-e4a2-4c93-93b1-a842212b07e2",
-  "reviewedAt": "2026-08-29T09:20:31Z",
+  "reviewedAt": "2026-08-29T14:27:40Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -21,6 +21,11 @@
       "url": "https://www.bulova.com/ca/en/product/98B316.html?redirect=false",
       "status": "validated_primary",
       "note": "Bulova's exact Canadian page independently corroborates the identity and NN50 high-performance Precisionist quartz movement while publishing the more precise 46.5 mm case width, 24 mm lug width, luminous hands and markers, and 300 m rating. Its separate sold-out Canadian offer is not mixed into the reviewed UK price snapshot."
+    },
+    {
+      "url": "https://register.citizenwatchgroup.com/service/parts-lookup/?m=98B316&i=9771044-4984&n=Icon",
+      "status": "validated_primary",
+      "note": "Citizen Watch Group's exact-model service lookup identifies Icon 98B316 and lists its Band and Spring Bar as separate available replacement parts. This directly establishes the factory bracelet-to-case interface as spring_bar."
     },
     {
       "url": "https://au.bulova.com/collections/precisionist",
@@ -160,6 +165,12 @@
       "note": "The exact Canadian specification identifies a screw-down crown."
     },
     {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://register.citizenwatchgroup.com/service/parts-lookup/?m=98B316&i=9771044-4984&n=Icon",
+      "note": "The manufacturer's exact-model parts lookup lists a dedicated Spring Bar entry separately from the 98B316 band."
+    },
+    {
       "fieldName": "complications",
       "value": ["chronograph"],
       "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
@@ -193,13 +204,13 @@
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Bracelet identifies the fitted component rather than the bracelet-to-case interface."
+      "reason": "Bracelet identifies the fitted component rather than the bracelet-to-case interface; the corrected spring_bar value comes from Citizen Watch Group's exact-model service parts lookup."
     },
     {
       "fieldName": "complications",
       "reason": "Date is represented separately by dateStatus and is removed from the supported complication array."
     }
   ],
-  "missingM1Fields": ["weightFullG", "lumeGrade", "attachmentType"],
-  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band, and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, and annual accuracy. Independent exact-reference dimensional sets converge on 54.5-54.6 mm case length, resolving lug-to-lug at 54.5 mm. Full weight remains open across 274 g, 276 g, and approximately 270 g sized-bracelet records; exact lume accounts disagree on nighttime usability; and the exact original bracelet's dealer-described spring-pin mount still lacks manufacturer corroboration of the factory interface."
+  "missingM1Fields": ["weightFullG", "lumeGrade"],
+  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band, and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, annual accuracy, and factory spring-bar interface. Independent exact-reference dimensional sets converge on 54.5-54.6 mm case length, resolving lug-to-lug at 54.5 mm. Full weight remains open across 274 g, 276 g, and approximately 270 g sized-bracelet records, while exact lume accounts disagree on nighttime usability."
 }

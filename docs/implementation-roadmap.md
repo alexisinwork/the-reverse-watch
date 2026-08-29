@@ -471,6 +471,10 @@ row remains research-only with three M1 gaps. Full-weight records span 274 g,
 276 g, and approximately 270 g after bracelet sizing; exact lume accounts
 disagree on nighttime usability; and the original bracelet's dealer-described
 spring-pin mount lacks manufacturer corroboration of the factory interface.
+Citizen Watch Group's later exact-model service lookup supplies that missing
+corroboration by listing a dedicated `Spring Bar` entry separately from the
+98B316 band. The row now has two M1 gaps: full configured weight and repeatable
+lume grade.
 
 Blancpain Fifty Fathoms Tech 5019A 12B30 94A now has a reviewed 47 mm
 lug-to-lug span. Blancpain's exact technical dossier establishes the 47 mm
