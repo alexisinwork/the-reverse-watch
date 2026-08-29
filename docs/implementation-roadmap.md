@@ -487,6 +487,10 @@ supports the performance class rather than merely inferring it from luminous
 material. The row remains research-only for factory attachment: the available
 pins discussion is ambiguous between bracelet links and the case interface, and
 replacement-case spring bars still lack manufacturer-service corroboration.
+The exact factory product page now upgrades the core evidence to primary,
+corrects the retailer-rounded diameter from 39 to 39.6 mm, and directly reports
+the 128 g steel-bracelet weight, but it names only bracelet material and width
+rather than the case attachment mechanism.
 
 Cartier Tank Must WSTA0107 now has an honest non-round geometry path instead of
 a synthetic diameter. The runtime contract accepts a complete 29.5 x 22 mm

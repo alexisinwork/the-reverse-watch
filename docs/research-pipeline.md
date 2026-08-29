@@ -417,6 +417,16 @@ open because the retailer's pins answer is ambiguous between bracelet links and
 case attachment, and replacement 420-case spring bars do not satisfy the
 manufacturer-service corroboration rule.
 
+A later primary-source pass recovered Vostok's exact factory page for
+2416/420059. It publishes 39.6 x 46 x 15 mm dimensions, 128 g full configured
+weight, 18 mm bracelet width, calibre 2416B, -20/+60 seconds per day, at least
+31 hours of reserve, 200 m water resistance, organic crystal, date, and the
+lume application locations. The review now uses the official page as
+`productUrl`, replaces the retailer-rounded 39 mm diameter with 39.6 mm, and
+promotes the 128 g evidence from corroborated secondary to primary. It still
+does not identify the bracelet-to-case mechanism, so the row remains
+research-only with `attachmentType` as its sole M1 gap.
+
 A Cartier Tank Must WSTA0107 follow-up resolved the earlier blocked-source and
 geometry failures. The exact official page is independently retrievable in
 Malaysia and supplies 29.5 x 22 x 6.6 mm rectangular geometry, High Autonomy

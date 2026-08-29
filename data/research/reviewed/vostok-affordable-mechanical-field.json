@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "vostok-affordable-mechanical-field",
   "jobId": "b4a10faa-fde5-4e14-ae0e-6acb189c2260",
-  "reviewedAt": "2026-08-29T10:39:59Z",
+  "reviewedAt": "2026-08-29T14:25:00Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -13,9 +13,14 @@
   },
   "sourceChecks": [
     {
+      "url": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "status": "validated_primary",
+      "note": "The factory's exact 2416/420059 page validates the current homogeneous steel-bracelet reference, 39.6 x 46 x 15 mm dimensions, 128 g full weight, 18 mm bracelet width, steel case and bracelet, calibre 2416B, -20/+60 seconds per day, at least 31 hours of reserve, 200 m water resistance, organic crystal, date, and luminous paint on the hands and hour markers. It does not identify the bracelet-to-case mechanism."
+    },
+    {
       "url": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
       "status": "validated_secondary",
-      "note": "The exact retailer page independently validates reference 420059, current $164 sale price, add-to-cart status, 39 x 15 x 46 mm geometry, 18 mm bracelet width, stainless-steel case and bracelet, 2416 automatic/manual-winding movement, -20/+60 seconds per day, at least 31 hours of reserve, screw-down crown, 200 m water resistance, plastic crystal, and a date display."
+      "note": "The exact retailer page supplies the current $164 sale price and add-to-cart status and independently corroborates reference identity, configuration, 15 x 46 mm thickness/length, 18 mm bracelet width, movement, rate, reserve, screw-down crown, 200 m water resistance, organic crystal, and date. Its rounded 39 mm diameter is superseded by the factory's 39.6 mm dimension."
     },
     {
       "url": "https://meranom.com/en/why_buy_from_us.html",
@@ -64,11 +69,9 @@
     "model",
     "referenceCode",
     "variantName",
-    "productUrl",
     "materials.case",
     "materials.bracelet",
     "price.currency",
-    "geometry.caseDiameterMm",
     "geometry.caseThicknessMm",
     "geometry.lugToLugMm",
     "movement.type",
@@ -84,10 +87,16 @@
   ],
   "additionalVerifiedFacts": [
     {
+      "fieldName": "productUrl",
+      "value": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "sourceUrl": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "note": "The accepted product URL is the manufacturer's exact 2416/420059 catalogue page rather than the provider's retailer URL."
+    },
+    {
       "fieldName": "productionStatus",
       "value": "current",
-      "sourceUrl": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
-      "note": "The exact reference is currently offered with an active add-to-cart control."
+      "sourceUrl": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "note": "The factory currently retains exact model 2416/420059 in its product catalogue and links it to the online shop."
     },
     {
       "fieldName": "price.amountMinor",
@@ -120,16 +129,22 @@
       "note": "Meranom explicitly states that it sells new watches."
     },
     {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 39.6,
+      "sourceUrl": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "note": "The factory publishes 39.6 x 46 x 15 mm dimensions; the first value is the case diameter and supersedes the retailer's rounded 39 mm value."
+    },
+    {
       "fieldName": "geometry.lugWidthMm",
       "value": 18,
-      "sourceUrl": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
-      "note": "The exact product specification lists an 18 mm strap width."
+      "sourceUrl": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "note": "The factory exact product specification lists the supplied steel bracelet at 18 mm, independently corroborated by the retailer's strap-width specification."
     },
     {
       "fieldName": "geometry.weightFullG",
       "value": 128,
-      "sourceUrl": "https://www.bestwatch.ru/watch/Vostok/2416.00-420059/",
-      "note": "The exact-reference specialist reports approximately 128 g for the steel-bracelet configuration, independently corroborated by a separate exact-reference Vostok dealer."
+      "sourceUrl": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "note": "The factory exact page reports 128 g for the steel-bracelet configuration, independently corroborated by two exact-reference dealer records."
     },
     {
       "fieldName": "operation.lumeGrade",
@@ -139,6 +154,10 @@
     }
   ],
   "rejectedProvisionalFields": [
+    {
+      "fieldName": "productUrl",
+      "reason": "The provider used a retailer page as productUrl; the reviewed replacement is Vostok's exact manufacturer catalogue page."
+    },
     {
       "fieldName": "price.amountMinor",
       "reason": "The provider captured $172, while independent retrieval at review time shows a $164 sale price and $173 struck-through comparison price."
@@ -156,6 +175,10 @@
       "reason": "Displayed sale price is price context, not a normalized item condition; the retailer separately establishes that the watch is new."
     },
     {
+      "fieldName": "geometry.caseDiameterMm",
+      "reason": "The provider and retailer rounded the diameter to 39 mm; the factory exact page publishes the more precise 39.6 mm value."
+    },
+    {
       "fieldName": "operation.lumeGrade",
       "reason": "The provider's hands-and-dots description establishes application locations only. It is replaced by a separately reviewed weak mapping based on multiple independent exact-reference performance assessments."
     },
@@ -169,5 +192,5 @@
     }
   ],
   "missingM1Fields": ["attachmentType"],
-  "note": "Keep as research-only. Two exact-reference dealer records resolve the steel-bracelet configuration at approximately 128 g. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. The bracelet interface remains open: the available pins discussion is ambiguous between removable links and case attachment, while dealer-supplied 420-case spring-bar evidence still lacks manufacturer service corroboration for the factory bracelet."
+  "note": "Keep as research-only. Vostok's exact factory page now provides primary evidence for the homogeneous 2416/420059 steel-bracelet configuration, including 39.6 x 46 x 15 mm dimensions and 128 g full weight. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. The bracelet interface remains open: the factory page names only the bracelet material and width, the available pins discussion is ambiguous between removable links and case attachment, and dealer-supplied 420-case spring-bar evidence still lacks manufacturer service corroboration for the factory bracelet."
 }

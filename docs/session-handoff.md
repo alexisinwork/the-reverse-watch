@@ -472,10 +472,15 @@ For the post-batch evidence-gap pass on the same date:
   exact-reference hands-on specification explicitly reports 47 mm lug-to-lug
   because no conventional lugs project beyond the case.
 - Vostok Amphibia 420059 now needs only manufacturer-corroborated factory
-  attachment evidence. Two independent exact-reference reviews report sparse,
-  difficult-to-read, fast-fading lume, corroborated by exact-reference owners;
-  this convergence maps to `weak`. The available pins answer remains ambiguous
-  between bracelet links and the case interface and is not normalized.
+  attachment evidence. Its exact factory page now supplies primary 39.6 x 46 x
+  15 mm geometry, 128 g full configured weight, 18 mm bracelet width, calibre,
+  rate, reserve, WR, crystal, date, and lume-location evidence; it supersedes
+  the retailer-rounded 39 mm diameter and retailer product URL. Two independent
+  exact-reference reviews report sparse, difficult-to-read, fast-fading lume,
+  corroborated by exact-reference owners, so the performance maps to `weak`.
+  The factory still names only bracelet material and width, while the available
+  pins answer remains ambiguous between bracelet links and the case interface;
+  `attachmentType` is therefore still null.
 - Cartier Tank Must WSTA0107 now needs only a numerical exact-applicable
   accuracy bound and a repeatable lume grade. The additive geometry contract and
   migration `0015` preserve the official 29.5 x 22 mm rectangular case without
@@ -531,7 +536,9 @@ On 2026-08-28 for Phases 1–4:
    grade; its rectangular geometry is supported but remains research-only.
    Swatch SO28N100 needs resolved full-watch weight, a numerical
    exact-applicable quartz rate bound, and a repeatable lume grade. Do not
-   accept a row merely to make the batch non-empty.
+   accept a row merely to make the batch non-empty. Vostok 420059 has stronger
+   exact factory evidence but still requires manufacturer-corroborated
+   attachment semantics before acceptance.
 3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy and no-date status are now resolved;
