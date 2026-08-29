@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "omega-mechanical-chronograph",
   "jobId": "7944f21d-58b3-452d-8e5e-292ba99697f9",
-  "reviewedAt": "2026-08-29T07:01:45Z",
+  "reviewedAt": "2026-08-29T08:30:50Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -21,16 +21,45 @@
       "url": "https://www.omegawatches.com/media/pdf/watches/product-sheet/us/en-us/31030425001001-en-us.pdf",
       "status": "fetch_blocked",
       "note": "The exact official product sheet was also blocked during independent retrieval, and exact-reference searches did not surface a separately retrievable official or regulator record."
+    },
+    {
+      "url": "https://www.omegawatches.com.hk/en-hk/world-of-omega/watchmaking/the-master-chronometer-certification/",
+      "status": "validated_primary",
+      "note": "Omega's official Master Chronometer certification page states a 0/+5 seconds-per-day permitted daily-average range and explicitly includes Speedmaster Moonwatch Professional reference 31030425001001 among the certified watches. This is exact-reference applicability, not a neighboring-calibre substitution."
+    },
+    {
+      "url": "https://www.fratellowatches.com/long-term-review-omega-speedmaster-professional-310-30-42-50-01-001/",
+      "status": "validated_secondary",
+      "note": "The exact-reference five-year owner review independently identifies the 0/+5 seconds-per-day Master Chronometer range and reports +4 and +2 seconds-per-day measurements in two positions, corroborating applicability without replacing the official bound."
     }
   ],
   "verifiedProvisionalFields": [],
-  "additionalVerifiedFacts": [],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": 0,
+      "sourceUrl": "https://www.omegawatches.com.hk/en-hk/world-of-omega/watchmaking/the-master-chronometer-certification/",
+      "note": "Omega's official certification page applies the 0/+5 seconds-per-day Master Chronometer daily-average standard to exact reference 31030425001001."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 5,
+      "sourceUrl": "https://www.omegawatches.com.hk/en-hk/world-of-omega/watchmaking/the-master-chronometer-certification/",
+      "note": "Omega's official certification page applies the 0/+5 seconds-per-day Master Chronometer daily-average standard to exact reference 31030425001001."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 1,
+      "sourceUrl": "https://www.omegawatches.com.hk/en-hk/world-of-omega/watchmaking/the-master-chronometer-certification/",
+      "note": "The permitted deviation is stated as a daily average and normalized to one day."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "operation.attachmentType",
       "reason": "Steel bracelet describes the supplied material, not whether the bracelet-to-case interface is spring-bar, quick-release, proprietary, or integrated."
     }
   ],
-  "missingM1Fields": ["accuracy", "lumeGrade", "attachmentType", "dateStatus"],
-  "note": "Keep as research-only. The exact-reference provider result is detailed but remains provisional because both cited primary sources are independently inaccessible. Generic calibre or neighboring Moonwatch claims must not fill exact-variant gaps, and the extraction still lacks accuracy, categorical lume, attachment-interface, and explicit date-status evidence."
+  "missingM1Fields": ["lumeGrade", "attachmentType", "dateStatus"],
+  "note": "Keep as research-only. Exact official certification evidence now resolves the 0/+5 seconds-per-day bound, corroborated by an exact-reference long-term test. The detailed provider result otherwise remains provisional because both cited product sources are independently inaccessible; luminescent material does not establish a categorical performance grade, specialist strap fitment is not manufacturer corroboration of the factory bracelet mechanism, and complication-list omission does not prove explicit no-date status."
 }

@@ -326,6 +326,15 @@ active targets, and 21 reviews: four `ready_for_migration`, 15
 migrations `0010` through `0013` and the bundled seed remain unpushed until they
 are applied in order and 16-row SQL parity passes.
 
+A follow-up exact-reference Omega pass resolved only the accuracy gap for
+Speedmaster 310.30.42.50.01.001. Omega's certification page explicitly includes
+that reference and states the Master Chronometer daily-average limit of 0/+5
+seconds; a five-year exact-reference review independently reports +4 and +2
+seconds per day in two measured positions. The row remains research-only:
+luminescent material alone is not a performance grade, specialist strap fitment
+does not manufacturer-corroborate the factory bracelet mechanism, and omission
+from a complication list is not explicit no-date evidence.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

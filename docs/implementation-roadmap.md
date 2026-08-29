@@ -406,6 +406,15 @@ reviews: four migration-ready, 15 needing more evidence, and two excluded.
 Migrations `0010` through `0013` must be applied in order and 16-row parity
 proved before the bundled seed or commits are pushed.
 
+An exact-reference Omega follow-up then resolved the Speedmaster
+310.30.42.50.01.001 accuracy gap. Omega's official certification page includes
+the exact reference under its 0/+5 seconds-per-day Master Chronometer standard,
+and a five-year exact-reference test independently measured +4 and +2 seconds
+per day in two positions. The row remains research-only because luminous
+material is not a graded performance result, specialist strap fitment lacks
+manufacturer corroboration of the factory bracelet mechanism, and omitted
+complications do not prove explicit no-date status.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
