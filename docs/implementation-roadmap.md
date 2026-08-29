@@ -321,6 +321,24 @@ Patek retained two more strict extraction failures. The strict checkpoint has
 next queue is Patek, replacement Bulova, replacement Audemars Piguet, and
 A. Lange & Söhne.
 
+The eighth live batch exhausted that replacement queue and independently
+reviewed four exact references without promoting an incomplete row. Patek
+6301P-001 resolved on its sixth attempt and now has exact specifications plus
+the applicable -1/+2 seconds-per-day Patek Philippe Seal standard, but its
+displayed USD price has no complete market/availability context and fit, weight,
+lume, and attachment gaps remain. Bulova 98B316 satisfies the replacement
+target's attainable price intent with a current £679 UK offer and official
+-10/+10 seconds-per-year Precisionist evidence; lug-to-lug, full weight, graded
+lume, and attachment semantics remain unresolved. Audemars Piguet
+16202ST.OO.1240ST.02 fixes the previous lifecycle mismatch and is documented as
+a current integrated Royal Oak, while price and five M1 specification classes
+remain missing. A. Lange & Söhne 720.035FE is an exact live limited reference
+with display-wide Lumen evidence, but price-on-request and five physical or
+ownership gaps prevent migration. The strict checkpoint has 21 reviews (one
+migration-ready, 18 needing more evidence, two excluded), and the ranked
+research queue is empty. Further provider work requires a new explicit
+coverage target or a source-led attempt to close an existing review gap.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

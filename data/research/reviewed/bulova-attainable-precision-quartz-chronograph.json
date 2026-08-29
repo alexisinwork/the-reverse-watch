@@ -1,0 +1,179 @@
+{
+  "reviewVersion": 1,
+  "targetId": "bulova-attainable-precision-quartz-chronograph",
+  "jobId": "cb07bdfc-e4a2-4c93-93b1-a842212b07e2",
+  "reviewedAt": "2026-08-29T07:45:53Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Bulova",
+    "model": "Icon Precisionist Chronograph",
+    "referenceCode": "98B316",
+    "variantName": "Silver-tone stainless steel bracelet, grey dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "status": "validated_primary",
+      "note": "The exact official UK page independently validates reference 98B316, its current £679 Add to Bag offer, stainless-steel case and bracelet, fold-over clasp with safety and extender, rounded 46 mm case measurement, proprietary Precisionist movement, curved mineral crystal, chronograph, date, and 300 m water resistance. It does not publish thickness, lug-to-lug, full weight, numerical accuracy, graded lume, or the bracelet-to-case interface."
+    },
+    {
+      "url": "https://www.bulova.com/ca/en/product/98B316.html?redirect=false",
+      "status": "validated_primary",
+      "note": "Bulova's exact Canadian page independently corroborates the identity and NN50 high-performance Precisionist quartz movement while publishing the more precise 46.5 mm case width, 24 mm lug width, luminous hands and markers, and 300 m rating. Its separate sold-out Canadian offer is not mixed into the reviewed UK price snapshot."
+    },
+    {
+      "url": "https://au.bulova.com/collections/precisionist",
+      "status": "validated_primary",
+      "note": "Bulova's official Precisionist collection states that the proprietary 262 kHz movement is accurate to plus or minus 10 seconds per year. The exact Canadian page identifies 98B316's NN50 as that Precisionist high-performance quartz mechanism."
+    },
+    {
+      "url": "https://www.costco.ca/p/-/bulova-icon-black-dial-mens-watch/4000234434",
+      "status": "validated_secondary",
+      "note": "Costco's exact-model listing supplies a 17.5 mm case thickness. It is used only for the missing dimension, not for price, availability, or any unsupported fit estimate."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "note": "The exact reference is a current orderable product on Bulova's UK store."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 67900,
+      "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "note": "The exact UK product page displays £679."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "GBP",
+      "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "note": "The reviewed exact offer is denominated in pounds sterling."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "GB",
+      "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "note": "The reviewed offer is Bulova's United Kingdom store page."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "note": "The exact page exposes an Add to Bag control."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "note": "Bulova's direct online store is represented by the catalogue's authorized channel class."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "note": "The manufacturer offer is for a new watch."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 46.5,
+      "sourceUrl": "https://www.bulova.com/ca/en/product/98B316.html?redirect=false",
+      "note": "Bulova Canada publishes the precise 46.5 mm case width; the UK page rounds it to 46 mm."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 17.5,
+      "sourceUrl": "https://www.costco.ca/p/-/bulova-icon-black-dial-mens-watch/4000234434",
+      "note": "Costco's exact-reference specification supplies the otherwise unpublished case thickness."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -10,
+      "sourceUrl": "https://au.bulova.com/collections/precisionist",
+      "note": "Bulova's official Precisionist standard is plus or minus 10 seconds per year."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 10,
+      "sourceUrl": "https://au.bulova.com/collections/precisionist",
+      "note": "Bulova's official Precisionist standard is plus or minus 10 seconds per year."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 365.2425,
+      "sourceUrl": "https://au.bulova.com/collections/precisionist",
+      "note": "The published Precisionist tolerance is annual and is represented by the catalogue's mean Gregorian year period."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://www.bulova.com/ca/en/product/98B316.html?redirect=false",
+      "note": "The exact Canadian specification identifies a screw-down crown."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["chronograph"],
+      "sourceUrl": "https://uk.bulova.com/icon-silver-tone-stainless-steel-watch-98b316.html",
+      "note": "The exact product is a chronograph; date is represented separately by dateStatus."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "The country name is normalized to the catalogue's GB code."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "The provider's singular manufacturer-store label is replaced by the catalogue's normalized authorized_dealer array."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "The provider's singular condition string is replaced by the catalogue's normalized new-condition array."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "reason": "The UK page's rounded 46 mm value is replaced by Bulova Canada's exact-reference 46.5 mm specification."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "The manufacturer prose is replaced by the normalized screw_down enum value."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Luminous hands and markers establish presence but not the catalogue's weak, moderate, or strong performance class."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Bracelet identifies the fitted component rather than the bracelet-to-case interface."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is represented separately by dateStatus and is removed from the supported complication array."
+    }
+  ],
+  "missingM1Fields": [
+    "lugToLugMm",
+    "weightFullG",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, and annual accuracy. Lug-to-lug length, full configured weight, graded lume, and the bracelet interface remain unsupported; approximate and conflicting enthusiast measurements were not promoted."
+}

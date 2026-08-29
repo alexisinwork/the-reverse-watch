@@ -1,0 +1,108 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-current-integrated-specialist",
+  "jobId": "5213024a-f1d9-4019-91e1-4c34af000c52",
+  "reviewedAt": "2026-08-29T07:45:53Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Royal Oak Jumbo Extra-Thin",
+    "referenceCode": "16202ST.OO.1240ST.02",
+    "variantName": "39 mm stainless steel, Bleu Nuit Nuage 50 dial and bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02",
+      "status": "validated_primary",
+      "note": "The exact current official page independently validates reference 16202ST.OO.1240ST.02, its Royal Oak Jumbo Extra-Thin identity, stainless-steel case and bracelet, blue Petite Tapisserie dial, 39 x 8.1 mm geometry, sapphire front and back, automatic caliber 7121, 52-hour reserve, 50 m water resistance, luminescent hands, and date. The rendered page exposes no usable price and omits lug-to-lug, lug width, full weight, numerical accuracy, and graded lume."
+    },
+    {
+      "url": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
+      "status": "validated_primary",
+      "note": "Audemars Piguet's official Royal Oak design documentation explicitly describes the integrated bracelet and its redesigned first links, supporting both integrated geometry and attachment classification for the 2022 design generation that includes reference 16202."
+    },
+    {
+      "url": "https://www.audemarspiguet.com/com/en/about/history/heritage/chronicles/royal-oak-jumbo-extra-thin-16202.html",
+      "status": "validated_primary",
+      "note": "AP's historical article independently links model 16202 to caliber 7121. Its narrative states a 55-hour reserve, while the exact current product specification publishes 52 hours; the exact technical page is retained for the catalogue fact and the editorial discrepancy is not blended."
+    },
+    {
+      "url": "https://watchcharts.com/watch_model/33697-audemars-piguet-royal-oak-jumbo-extra-thin-16202-stainless-steel-16202st/overview",
+      "status": "validated_secondary",
+      "note": "The current-production model record corroborates lifecycle status only. Its gated or market-derived pricing is not substituted for a homogeneous exact-variant manufacturer offer."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.bracelet",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02",
+      "note": "Unlike the excluded anniversary reference, 16202ST.OO.1240ST.02 remains an exact current collection entry."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": true,
+      "sourceUrl": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
+      "note": "AP explicitly describes the Royal Oak design generation's integrated bracelet and first links."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "integrated",
+      "sourceUrl": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
+      "note": "The documented Royal Oak bracelet construction maps to the catalogue's integrated attachment class."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02",
+      "note": "Hours, minutes, and centre seconds are basic functions; date is represented separately by dateStatus."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The exact official page does not render a usable price or availability snapshot, and secondary market or sibling-reference values cannot be promoted."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Luminescent hand coating establishes presence but not the catalogue's weak, moderate, or strong performance class."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "AP folding clasp describes the clasp rather than the bracelet-to-case interface; AP's integrated-bracelet documentation supplies the corrected class."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is represented separately by dateStatus and is removed from the supported complication array."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference, but price, fit dimensions, full weight, numerical rate tolerance, and graded lume remain unresolved."
+}

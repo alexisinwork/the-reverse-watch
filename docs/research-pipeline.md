@@ -178,7 +178,7 @@ The strict manifest now contains 15 reviews: one `ready_for_migration` and 14
 complication, Bulova precision quartz chronograph, Audemars Piguet integrated
 specialist, and A. Lange & Söhne formal high art.
 
-The seventh ranked batch retained four additional Patek failures and produced
+The seventh ranked batch brought Patek to four retained failures and produced
 schema-valid Bulova and Audemars Piguet artifacts, but independent review
 excluded both selected candidates from their coverage targets:
 
@@ -199,6 +199,45 @@ The strict manifest now contains 17 reviews: one `ready_for_migration`, 14
 `needs_more_evidence`, and two `excluded`. The next queue begins with Patek,
 the replacement attainable Bulova and current Audemars Piguet targets, and
 A. Lange & Söhne.
+
+The eighth ranked batch completed those four targets. One further Patek failure
+was retained before a sixth-attempt success; Audemars Piguet also retained one
+strict failure before its replacement succeeded. Bulova and A. Lange & Söhne
+produced valid artifacts on their first replacement-batch attempts. Independent
+review kept every result provisional:
+
+- Patek Philippe Grande Sonnerie 6301P-001 is an exact current platinum
+  reference. Its product page resolves 44.8 x 12.03 mm geometry, caliber
+  GS 36-750 PS IRM, 72-hour reserve, non-water-resistant status, and a displayed
+  $1,649,923 figure; the Patek Philippe Seal independently supplies -1/+2
+  seconds per day. The dollar display does not identify a complete market or
+  availability snapshot, and lug-to-lug, lug width, full weight, graded lume,
+  and attachment semantics remain missing.
+- Bulova Icon Precisionist Chronograph 98B316 is current and within the intended
+  band at £679 on the exact UK page. Exact Canadian specifications resolve
+  46.5 mm diameter, 24 mm lug width, and NN50 Precisionist identity; Bulova's
+  official collection standard resolves -10/+10 seconds per year, and an
+  exact-reference Costco listing supplies 17.5 mm thickness. Lug-to-lug, full
+  weight, graded lume, and attachment semantics remain unresolved; conflicting
+  approximate enthusiast weights were rejected.
+- Audemars Piguet Royal Oak Jumbo Extra-Thin 16202ST.OO.1240ST.02 is the requested
+  current reference, with exact 39 x 8.1 mm geometry, caliber 7121, 52-hour
+  reserve, 50 m rating, date, and an officially documented integrated bracelet.
+  The exact page exposes no usable price, and lug-to-lug, lug width, full weight,
+  numerical accuracy, and graded lume remain missing.
+- A. Lange & Söhne 720.035FE is an exact live, limited-to-50 platinum reference
+  with 41.9 x 13 mm geometry, automatic caliber L225.1, 50-hour reserve, 3-bar
+  rating, perpetual calendar, moon phase, and display-wide Lumen treatment
+  mapped to strong. Its price is upon request, while fit dimensions, full
+  weight, numerical accuracy, and attachment semantics remain incomplete.
+
+The ignored ledger now retains 37 attempts: 21 succeeded and 16 failed,
+spanning 21 target IDs, with USD 0.27503 recorded provider cost. The strict
+manifest contains 21 reviews: one `ready_for_migration`, 18
+`needs_more_evidence`, and two `excluded`. `npm run plan:research` now emits no
+queued targets. New jobs must either close a named review gap from independently
+identified exact-reference evidence or begin from a new explicit coverage
+intent; empty-queue status is not permission for broad prestige collection.
 
 ## Job idempotency and retention
 

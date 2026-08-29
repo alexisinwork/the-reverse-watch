@@ -1,0 +1,124 @@
+{
+  "reviewVersion": 1,
+  "targetId": "patek-formal-high-complication",
+  "jobId": "0ae665bf-887e-416e-bf4a-722bcb732efa",
+  "reviewedAt": "2026-08-29T07:45:53Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Patek Philippe",
+    "model": "Grande Sonnerie",
+    "referenceCode": "6301P-001",
+    "variantName": "Platinum case, black grand feu enamel dial, black alligator strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.patek.com/en/collection/grand-complications/6301P-001",
+      "status": "validated_primary",
+      "note": "The exact official product page independently validates reference 6301P-001, its current Grand Complications listing and displayed $1,649,923 price, 44.8 x 12.03 mm platinum case, black enamel dial, alligator strap, interchangeable sapphire and solid backs, manual caliber GS 36-750 PS IRM, 72-hour movement reserve, non-water-resistant construction, luminescent hand coating, and the grande sonnerie, petite sonnerie, minute repeater, jumping-seconds, and power-reserve functions. It does not identify a price market, availability, channel, or condition and omits lug-to-lug, lug width, full weight, and an attachment-interface classification."
+    },
+    {
+      "url": "https://www.patek.com/en/manufacture/a-story-of-independence/the-patek-philippe-seal",
+      "status": "validated_primary",
+      "note": "Patek Philippe states that every completed mechanical watch bearing its Seal, regardless of complexity, is regulated to -1/+2 seconds per 24 hours. The exact product page identifies this watch as Patek Philippe Seal, so the finished-watch standard applies without relying on a family-level estimate."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.integratedBracelet",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.patek.com/en/collection/grand-complications/6301P-001",
+      "note": "The exact reference remains in Patek Philippe's current Grand Complications collection and exposes a current manufacturer price."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 164992300,
+      "sourceUrl": "https://www.patek.com/en/collection/grand-complications/6301P-001",
+      "note": "The exact official page displays $1,649,923; this verifies the numeric display but not a complete homogeneous market offer."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.patek.com/en/collection/grand-complications/6301P-001",
+      "note": "The exact official page labels the displayed price in U.S. dollars, while leaving market country and offer context unstated."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -1,
+      "sourceUrl": "https://www.patek.com/en/manufacture/a-story-of-independence/the-patek-philippe-seal",
+      "note": "The Patek Philippe Seal finished-watch standard is -1/+2 seconds per 24 hours for every mechanical watch regardless of complexity."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 2,
+      "sourceUrl": "https://www.patek.com/en/manufacture/a-story-of-independence/the-patek-philippe-seal",
+      "note": "The Patek Philippe Seal finished-watch standard is -1/+2 seconds per 24 hours for every mechanical watch regardless of complexity."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 1,
+      "sourceUrl": "https://www.patek.com/en/manufacture/a-story-of-independence/the-patek-philippe-seal",
+      "note": "Patek states its Seal rate standard per 24-hour period."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["power_reserve"],
+      "sourceUrl": "https://www.patek.com/en/collection/grand-complications/6301P-001",
+      "note": "The exact watch has separate strike-work and movement power-reserve indicators; power_reserve is the only corresponding supported catalogue complication value."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "A dollar-denominated manufacturer display does not establish a market country, and the exact page does not state availability, channel, or condition for a homogeneous retail snapshot."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "The exact page specifies interchangeable sapphire-crystal and solid case backs but does not explicitly identify the front crystal material."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Water-resistant crown is source prose and does not establish one of the catalogue's normalized crown-construction values."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Luminescent hand coating establishes presence but not the catalogue's weak, moderate, or strong performance class."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Strap identifies the fitted component rather than the strap-to-case interface."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Grande and petite sonnerie, minute repeater, and jumping seconds are not supported catalogue enum values; the two reserve indications are normalized to power_reserve."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "Keep as research-only. Exact primary sources establish a current high-complication identity, core specifications, and the applicable Patek Philippe Seal accuracy standard, but the displayed USD figure lacks a complete market and availability snapshot and five physical or ownership fields remain unresolved."
+}

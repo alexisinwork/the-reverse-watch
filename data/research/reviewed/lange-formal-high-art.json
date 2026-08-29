@@ -1,0 +1,100 @@
+{
+  "reviewVersion": 1,
+  "targetId": "lange-formal-high-art",
+  "jobId": "c6ab745b-6310-49c1-be71-41bb762e5d12",
+  "reviewedAt": "2026-08-29T07:45:53Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "A. Lange & Söhne",
+    "model": "Lange 1 Tourbillon Perpetual Calendar Handwerkskunst Lumen",
+    "referenceCode": "720.035FE",
+    "variantName": "950 platinum, semi-transparent sapphire-crystal dial, black alligator strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1-tourbillon-perpetual-calendar-lumen/lange-1-tourbillon-perpetual-calendar-lumen-in-950-platinum-720-035",
+      "status": "validated_primary",
+      "note": "The exact official product page independently validates reference 720.035FE, its live limited-to-50 listing and price-upon-request treatment, 41.9 x 13 mm 950-platinum case, sapphire case back, black alligator strap and platinum deployant buckle, automatic caliber L225.1, 50-hour reserve, 3-bar water resistance, outsize date, day/night indication, moon phase, tourbillon, weekday, perpetual calendar, and the Lumen concept in which all indications glow in the dark. It omits a numeric price, availability, lug-to-lug, lug width, full weight, numerical accuracy, front-crystal specification, and case attachment interface."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.integratedBracelet",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1-tourbillon-perpetual-calendar-lumen/lange-1-tourbillon-perpetual-calendar-lumen-in-950-platinum-720-035",
+      "note": "The exact limited reference remains a live manufacturer catalogue entry with boutique-contact controls; this does not establish current stock availability."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1-tourbillon-perpetual-calendar-lumen/lange-1-tourbillon-perpetual-calendar-lumen-in-950-platinum-720-035",
+      "note": "The official 3-bar rating is normalized to the catalogue's 30 m pressure-equivalent value."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1-tourbillon-perpetual-calendar-lumen/lange-1-tourbillon-perpetual-calendar-lumen-in-950-platinum-720-035",
+      "note": "The exact Lumen model is explicitly engineered so all indications glow in the dark; the catalogue maps this display-wide luminous concept to strong."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["moonphase", "perpetual_calendar"],
+      "sourceUrl": "https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1-tourbillon-perpetual-calendar-lumen/lange-1-tourbillon-perpetual-calendar-lumen-in-950-platinum-720-035",
+      "note": "Moon phase and perpetual calendar are supported catalogue values; date is represented separately and tourbillon, weekday, and day/night are outside the current enum."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productionStatus",
+      "reason": "Limited to 50 describes edition size rather than lifecycle status; the live exact manufacturer listing supports current while stock availability remains unknown."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "Price upon request is not a numeric homogeneous offer and cannot satisfy the catalogue's price gate."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "The exact page identifies a sapphire case back and a sapphire-crystal dial component but does not explicitly specify the front crystal material."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The provider's prose is replaced by a reviewed strong mapping based on the exact model's display-wide Lumen implementation."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Alligator strap and deployant buckle identify fitted components rather than the strap-to-case interface."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "The provider's free-form function list is normalized to supported moonphase and perpetual_calendar values; date is modeled separately and tourbillon, weekday, and day/night are unsupported enums."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "attachmentType"
+  ],
+  "note": "Keep as research-only. The exact primary source resolves the high-art identity, core geometry, movement, water rating, complications, and display-wide lume mapping, but price-on-request and five remaining physical or ownership gaps prevent migration."
+}

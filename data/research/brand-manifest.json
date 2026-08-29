@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T07:36:03Z",
+  "updatedAt": "2026-08-29T07:42:36.560Z",
   "brands": [
     {
       "slug": "rolex",
@@ -55,7 +55,7 @@
         {
           "id": "patek-formal-high-complication",
           "referenceLabel": "Select a current source-complete formal complication",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -103,7 +103,7 @@
         {
           "id": "audemars-piguet-current-integrated-specialist",
           "referenceLabel": "Select one homogeneous current integrated-bracelet variant, excluding archived anniversary references",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -281,7 +281,7 @@
         {
           "id": "lange-formal-high-art",
           "referenceLabel": "Select a current homogeneous formal high-art variant",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -1663,7 +1663,7 @@
         {
           "id": "bulova-attainable-precision-quartz-chronograph",
           "referenceLabel": "Select a current homogeneous precision quartz chronograph priced within the supported 300-1000 bands",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "300_500",
