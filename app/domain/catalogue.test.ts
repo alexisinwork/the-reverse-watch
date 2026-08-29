@@ -3,6 +3,7 @@ import {
   evidenceFields,
   seedCatalogueSchema,
   supportedAccuracyTolerances,
+  verifiedCaseWearingSpanMm,
 } from "./catalogue";
 import { seedCatalogue } from "./seed-catalogue";
 
@@ -47,5 +48,31 @@ describe("source-backed seed catalogue", () => {
     expect(supportedAccuracyTolerances(grandSeiko!.movement)).toContain(
       "within_5_seconds_per_day",
     );
+  });
+
+  it("supports evidenced rectangular dimensions without inventing a diameter", () => {
+    const rectangular = structuredClone(seedCatalogue);
+    const variant = rectangular.variants[0]!;
+    variant.geometry.caseDiameterMm = null;
+    variant.geometry.caseWidthMm = 22;
+    variant.geometry.caseLengthMm = 29.5;
+    variant.geometry.lugToLugMm = null;
+    variant.evidence = variant.evidence.map((entry) => ({
+      ...entry,
+      fields: entry.fields.filter((field) => field !== "lugToLugMm"),
+    }));
+    variant.evidence[0]!.fields.push("caseWidthMm", "caseLengthMm");
+
+    const parsed = seedCatalogueSchema.parse(rectangular);
+    expect(verifiedCaseWearingSpanMm(parsed.variants[0]!)).toBe(29.5);
+  });
+
+  it("rejects a partial non-round dimension pair", () => {
+    const rectangular = structuredClone(seedCatalogue);
+    rectangular.variants[0]!.geometry.caseDiameterMm = null;
+    rectangular.variants[0]!.geometry.caseWidthMm = 22;
+    rectangular.variants[0]!.geometry.caseLengthMm = null;
+
+    expect(seedCatalogueSchema.safeParse(rectangular).success).toBe(false);
   });
 });

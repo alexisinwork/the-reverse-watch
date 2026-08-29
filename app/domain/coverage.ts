@@ -11,7 +11,11 @@ import {
   WRIST_BANDS,
 } from "./questionnaire";
 import type { SeedCatalogue, SeedReferenceVariant } from "./catalogue";
-import { hasVerifiedField, supportedAccuracyTolerances } from "./catalogue";
+import {
+  hasVerifiedField,
+  supportedAccuracyTolerances,
+  verifiedCaseWearingSpanMm,
+} from "./catalogue";
 import { MAX_LUG_TO_LUG_TO_WRIST_RATIO } from "./recommendation";
 
 export const FUNCTION_PROFILES = [
@@ -71,15 +75,11 @@ function functionProfileForVariant(
 }
 
 function compatibleWristBands(variant: SeedReferenceVariant) {
-  if (
-    variant.geometry.lugToLugMm === null ||
-    !hasVerifiedField(variant, "lugToLugMm")
-  ) {
-    return [];
-  }
+  const wearingSpanMm = verifiedCaseWearingSpanMm(variant);
+  if (wearingSpanMm === null) return [];
   return WRIST_BAND_IDS.filter(
     (band) =>
-      variant.geometry.lugToLugMm! <=
+      wearingSpanMm <=
       WRIST_BAND_REPRESENTATIVES_MM[band] * MAX_LUG_TO_LUG_TO_WRIST_RATIO,
   );
 }

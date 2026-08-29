@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "cartier-small-formal-quartz",
   "jobId": "cdf7a018-8bf8-4db2-96e5-770d233fc082",
-  "reviewedAt": "2026-08-29T06:32:35Z",
+  "reviewedAt": "2026-08-29T10:47:27Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -21,25 +21,152 @@
       "url": "https://www.cartier.com/en-pt/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107",
       "status": "fetch_blocked",
       "note": "Regional official URL also returned HTTP 403 during independent review."
+    },
+    {
+      "url": "https://www.cartier.com/en-my/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html",
+      "status": "validated_primary",
+      "note": "The independently retrievable exact official page validates WSTA0107, its small steel case and interchangeable steel bracelet, 29.5 x 22 x 6.6 mm rectangular geometry, High Autonomy quartz movement, 30 m rating, and hours/minutes-only functions. Its MYR 15,800 offer is not used because MYR is outside the supported launch currencies."
+    },
+    {
+      "url": "https://www.tourneau.com/watches/cartier/tank-must-small-model-wsta0107-CAR0220293.html",
+      "status": "validated_secondary",
+      "note": "The exact-reference authorized-retailer page shows a current $4,100 Add to Bag offer for a new 29.5 x 22 mm steel-bracelet configuration and independently corroborates the High Autonomy quartz identity and sapphire crystal."
+    },
+    {
+      "url": "https://www.tourneau.com/about-us/about-us.html",
+      "status": "validated_secondary",
+      "note": "Tourneau/Bucherer's corporate page identifies its new-watch business as an authorized retailer, supporting the normalized authorized_dealer channel rather than a grey or secondary classification."
+    },
+    {
+      "url": "https://www.wabyno.com/shop/p/cartier-tank-must-wsta0107-complete-set",
+      "status": "validated_secondary",
+      "note": "The exact-reference complete-set specialist record reports a 16 mm lug width and identifies the original interchangeable steel bracelet as Cartier QuickSwitch. Cartier's exact page independently corroborates that the supplied bracelet is interchangeable."
+    },
+    {
+      "url": "https://everywatch.com/cartier/tank/watch-33273996",
+      "status": "validated_secondary",
+      "note": "The exact 2026 like-new/unworn full-set record reports 79.3 g with a 170 mm bracelet, the maximum wrist size Cartier exposes for the exact product configuration. Separate exact records report 79 g and 80 g, supporting normal rounding rather than a sized-bracelet conflict."
+    },
+    {
+      "url": "https://www.ebay.co.uk/itm/147177269929",
+      "status": "validated_secondary",
+      "note": "An exact-reference business-seller record independently reports 79 g for WSTA0107, corroborating the 79.3 g full-configuration record."
+    },
+    {
+      "url": "https://mall.elady.com/item/title/CARTIER-Tank-Must-de-Cartier-Steel-Quartz-Ladies-Watch-WSTA0107-Never-Used-BF586200",
+      "status": "validated_secondary",
+      "note": "A separate exact-reference never-used record reports 80 g and a 17 cm wrist size, independently corroborating the approximately 79.3 g maximum-bracelet configuration."
     }
   ],
-  "verifiedProvisionalFields": [],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "materials.case",
+    "materials.bracelet",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "complications",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productUrl",
+      "value": "https://www.cartier.com/en-my/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html",
+      "sourceUrl": "https://www.cartier.com/en-my/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html",
+      "note": "This exact official regional page is independently retrievable and replaces the blocked U.S. URL as the reviewed product route."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.cartier.com/en-my/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html",
+      "note": "Cartier currently exposes an Add to Bag offer for the exact reference."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 410000,
+      "sourceUrl": "https://www.tourneau.com/watches/cartier/tank-must-small-model-wsta0107-CAR0220293.html",
+      "note": "The exact new-watch authorized-retailer offer is $4,100."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.tourneau.com/watches/cartier/tank-must-small-model-wsta0107-CAR0220293.html",
+      "note": "The supported-currency offer is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.tourneau.com/watches/cartier/tank-must-small-model-wsta0107-CAR0220293.html",
+      "note": "Tourneau/Bucherer presents this as its U.S. new-watch offer."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.tourneau.com/watches/cartier/tank-must-small-model-wsta0107-CAR0220293.html",
+      "note": "The exact page exposes an active Add to Bag control."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.tourneau.com/about-us/about-us.html",
+      "note": "Tourneau/Bucherer identifies its new-watch offering as authorized retail."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.tourneau.com/watches/cartier/tank-must-small-model-wsta0107-CAR0220293.html",
+      "note": "The page is the retailer's new Cartier product route rather than a certified pre-owned listing."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 22,
+      "sourceUrl": "https://www.cartier.com/en-my/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html",
+      "note": "Cartier publishes the rectangular case as 29.5 x 22 mm; 22 mm is stored as width, not as a synthetic diameter."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 29.5,
+      "sourceUrl": "https://www.cartier.com/en-my/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html",
+      "note": "Cartier publishes 29.5 mm as the overall top-to-bottom case length. Under the additive non-round geometry policy it supplies verified wearing span when conventional lug-to-lug is unavailable."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 16,
+      "sourceUrl": "https://www.wabyno.com/shop/p/cartier-tank-must-wsta0107-complete-set",
+      "note": "The exact-reference complete-set specialist reports a 16 mm interface width."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 79.3,
+      "sourceUrl": "https://everywatch.com/cartier/tank/watch-33273996",
+      "note": "The exact 2026 like-new/unworn full set weighs 79.3 g with the 170 mm bracelet configuration; separate exact records report 79 g and 80 g."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "quick_release",
+      "sourceUrl": "https://www.wabyno.com/shop/p/cartier-tank-must-wsta0107-complete-set",
+      "note": "The exact-reference specialist identifies Cartier QuickSwitch, corroborated by the manufacturer's exact description of the original bracelet as interchangeable."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "geometry.caseDiameterMm",
-      "reason": "A rectangular 29.5 x 22 mm case cannot be represented honestly as one circular case-diameter fact; the catalogue needs rectangular geometry support or an explicit reviewed mapping."
+      "reason": "A rectangular 29.5 x 22 mm case cannot be represented honestly as one circular diameter. The additive geometry contract stores the official values as caseLengthMm and caseWidthMm instead."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Beaded steel crown with spinel describes construction, not the normalized screw_down versus push_pull mechanism."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Bracelet is a supplied component, not an interface type. It is replaced by a separately reviewed quick_release mapping from exact QuickSwitch evidence corroborated by Cartier's interchangeable-bracelet description."
     }
   ],
-  "missingM1Fields": [
-    "price",
-    "caseDiameterMm",
-    "lugToLugMm",
-    "lugWidthMm",
-    "weightFullG",
-    "accuracy",
-    "lumeGrade",
-    "attachmentType"
-  ],
-  "note": "Keep as research-only. Do not create an accepted Cartier row until the exact regional price and M1 geometry/weight/accuracy facts are independently supported and rectangular dimensions have an explicit catalogue representation."
+  "missingM1Fields": ["accuracy", "lumeGrade"],
+  "note": "Keep as research-only. The additive non-round geometry contract now preserves Cartier's exact 29.5 x 22 mm dimensions without inventing a diameter and uses the evidenced overall length as wearing span. Exact current price, 16 mm width, approximately 79.3 g maximum-bracelet weight, and QuickSwitch attachment are independently reviewed. Cartier publishes no numerical exact-applicable rate tolerance, and plain blued-steel hands plus omitted lume prose do not establish lumeGrade none, leaving those two M1 gaps open."
 }

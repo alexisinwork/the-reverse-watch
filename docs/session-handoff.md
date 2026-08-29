@@ -18,15 +18,15 @@ phase.
   score-trace, and source sections after the six core screens or optional
   refinement groups.
 - Nine additive migrations are applied to Supabase; additive migrations `0010`
-  through `0014` are prepared and locally verified but not yet applied
+  through `0015` are prepared and locally verified but not yet applied
   because the Supabase MCP OAuth refresh expired. Tables remain server-only;
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
-- Local `main` is 22 commits ahead of `origin/main`. The evidence checkpoints
-  through Vostok are committed locally, and the branch remains intentionally
-  unpushed until migrations `0010` through `0014` are applied and 17-row live
-  SQL parity is proven.
+- Local `main` is 23 commits ahead of `origin/main`. The evidence and geometry
+  checkpoints through Cartier are committed locally, and the branch remains
+  intentionally unpushed until migrations `0010` through `0015` are applied and
+  17-row live SQL parity is proven.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
@@ -45,6 +45,9 @@ phase.
   behavior splits a variant row.
 - Missing facts never satisfy an active hard filter.
 - Evidence, verification tier, and staleness attach to each field value.
+- Non-round cases retain sourced width and overall length; they are never forced
+  into a circular diameter. Verified overall length can supply wrist span only
+  when verified conventional lug-to-lug is unavailable.
 - The baseline engine is PostgreSQL hard filtering plus explicit versioned
   scoring, diversity quotas, rejection reasons, and visible relaxation prompts.
 - Semantic retrieval is an optional later experiment for free text or
@@ -99,10 +102,13 @@ phase.
   G-5600UE-1, and Seiko HCC004J1. Migrations `0010` through `0014` each carry
   only their additive row and its sources, price, availability, evidence,
   deployment, friction, traits, and product URL.
+- Migration `0015` adds only nullable rectangular case width/length columns; it
+  does not add an accepted variant. The first accepted non-round row must update
+  both RPCs and prove SQL/TypeScript fit parity in the same additive change.
 - The current local audit reports 448 of 28,800 cells covered (1.56%): 444 are
   single-candidate, all 448 are under-diversified, and 224 are under-evidenced.
   The applied live baseline remains 180 cells until migrations `0010` through
-  `0014` are applied in order.
+  `0015` are applied in order.
 - Browser roles have no table grants. The security advisor's only current
   findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
   both functions have an empty `search_path`, fixed read-only SQL, and no
@@ -131,7 +137,7 @@ phase.
   unit to the reviewed bundle plus local predicates.
 - `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
   applied baseline variants across six golden profiles. It must be rerun for
-  all 17 variants immediately after migrations `0010` through `0014` are
+  all 17 variants immediately after migrations `0010` through `0015` are
   applied in order. PostgreSQL
   owns the live hard-filter partition; TypeScript owns scoring, explanations,
   diversity, and fallback.
@@ -415,7 +421,7 @@ For the post-batch evidence-gap pass on the same date:
   reviews: five `ready_for_migration`, 14 `needs_more_evidence`, and two
   `excluded`.
 - Live Supabase remains 11 brands/12 variants. Apply migrations `0010` through
-  `0014`, prove 17-row catalogue and six-profile SQL parity, and only then push
+  `0015`, prove 17-row catalogue and six-profile SQL parity, and only then push
   the local commits.
 - Citizen BM8180-03E now needs only a repeatable lume grade. Citizen Watch
   Group's exact-model parts lookup lists dedicated spring-bar part 509-2074
@@ -450,10 +456,17 @@ For the post-batch evidence-gap pass on the same date:
   difficult-to-read, fast-fading lume, corroborated by exact-reference owners;
   this convergence maps to `weak`. The available pins answer remains ambiguous
   between bracelet links and the case interface and is not normalized.
+- Cartier Tank Must WSTA0107 now needs only a numerical exact-applicable
+  accuracy bound and a repeatable lume grade. The additive geometry contract and
+  migration `0015` preserve the official 29.5 x 22 mm rectangular case without
+  inventing a diameter; exact reviewed sources also resolve the $4,100 U.S.
+  authorized-retailer offer, 16 mm interface, approximately 79.3 g maximum
+  bracelet weight, and Cartier QuickSwitch attachment. No Cartier row was added.
 - The latest evidence sequence is committed as `db77f92` (Swatch), `760979c`
-  (Omega), `a6fb895` (Bulova), and `e17a2db` (Blancpain), followed by the Vostok
-  lume checkpoint. `npm run check` passes formatting, lint, type generation,
-  TypeScript, all 55 tests across 13 files, and the production build; the
+  (Omega), `a6fb895` (Bulova), `e17a2db` (Blancpain), and `abf958d` (Vostok),
+  followed by the Cartier geometry/evidence checkpoint. `npm run check` passes
+  formatting, lint, type generation, TypeScript, all 58 tests across 13 files,
+  and the production build; the
   research manifest audit also passes.
 
 On 2026-08-28 for Phases 1–4:
@@ -478,15 +491,18 @@ On 2026-08-28 for Phases 1–4:
    `0011_expand_catalogue_orient.sql`, followed by
    `0012_expand_catalogue_marathon.sql`, and then
    `0013_expand_catalogue_casio.sql`, followed by
-   `0014_expand_catalogue_seiko.sql`. Run live 17-row catalogue and six-profile
-   SQL parity. Only push after that succeeds so production never sees divergent
-   bundled and relational catalogues.
+   `0014_expand_catalogue_seiko.sql`, followed by
+   `0015_add_rectangular_case_geometry.sql`. Run live 17-row catalogue and
+   six-profile SQL parity. Only push after that succeeds so production never
+   sees divergent bundled and relational catalogues.
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
    needs an authoritative repeatable lume grade. TUDOR M79000N-0001 now needs
-   only manufacturer-corroborated attachment evidence. Cartier WSTA0107 needs
-   rectangular geometry support plus M1 sources; Swatch SO28N100 needs resolved
-   full-watch weight, a numerical exact-applicable quartz rate bound, and a
-   repeatable lume grade. Do not accept a row merely to make the batch non-empty.
+   only manufacturer-corroborated attachment evidence. Cartier WSTA0107 now
+   needs only numerical exact-applicable quartz accuracy and a repeatable lume
+   grade; its rectangular geometry is supported but remains research-only.
+   Swatch SO28N100 needs resolved full-watch weight, a numerical
+   exact-applicable quartz rate bound, and a repeatable lume grade. Do not
+   accept a row merely to make the batch non-empty.
 3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy and no-date status are now resolved;

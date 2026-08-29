@@ -486,6 +486,16 @@ material. The row remains research-only for factory attachment: the available
 pins discussion is ambiguous between bracelet links and the case interface, and
 replacement-case spring bars still lack manufacturer-service corroboration.
 
+Cartier Tank Must WSTA0107 now has an honest non-round geometry path instead of
+a synthetic diameter. The runtime contract accepts a complete 29.5 x 22 mm
+length/width pair, fit uses evidenced overall length only when conventional
+lug-to-lug is unavailable, the UI labels it as wrist span, and focused tests
+cover the fail-closed behavior. Additive migration `0015` prepares the two
+PostgreSQL columns without changing an accepted row. The exact official product,
+a current $4,100 authorized-retailer offer, an exact QuickSwitch specialist
+record, and three convergent 79-80 g records reduce Cartier to numerical
+accuracy and repeatable lume as its only M1 gaps. It remains research-only.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

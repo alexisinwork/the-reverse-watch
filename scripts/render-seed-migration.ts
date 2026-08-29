@@ -89,6 +89,8 @@ function valueForEvidence(variant: SeedReferenceVariant, field: string) {
     materials: variant.materials,
     productionStatus: variant.productionStatus,
     caseDiameterMm: variant.geometry.caseDiameterMm,
+    caseWidthMm: variant.geometry.caseWidthMm,
+    caseLengthMm: variant.geometry.caseLengthMm,
     caseThicknessMm: variant.geometry.caseThicknessMm,
     lugToLugMm: variant.geometry.lugToLugMm,
     lugWidthMm: variant.geometry.lugWidthMm,

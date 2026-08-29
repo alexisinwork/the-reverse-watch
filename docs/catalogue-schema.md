@@ -32,6 +32,13 @@ The Phase 4 read path and grant hardening are additive as well:
 - [`0009_harden_recommendation_rpc_grants.sql`](../db/migrations/0009_harden_recommendation_rpc_grants.sql)
   removes the unnecessary signed-in-user execution path.
 
+Phase 5 adds
+[`0015_add_rectangular_case_geometry.sql`](../db/migrations/0015_add_rectangular_case_geometry.sql),
+which prepares nullable case-width and overall-case-length columns for honest
+non-round geometry. Existing round rows and RPC output remain backward
+compatible. The first accepted non-round expansion must expose those columns in
+both read RPCs and prove SQL/TypeScript fit parity in the same additive change.
+
 Both RPCs are fixed `SECURITY DEFINER` SQL with an empty `search_path`, no
 dynamic SQL, and no mutation. Only `anon` and the administrative service role
 can execute them. `anon` and `authenticated` retain zero direct table grants.
@@ -64,7 +71,7 @@ read-only view later.
 | Requirement | Canonical facts |
 | --- | --- |
 | Budget | `price_snapshots.amount_*_minor`, `currency`, kind, condition, market, observed/stale times |
-| Wrist/fit | diameter, thickness, lug-to-lug, measured/estimated flag, lug width, curvature, integrated bracelet |
+| Wrist/fit | diameter for round cases or width plus overall length for non-round cases, thickness, lug-to-lug, measured/estimated flag, lug width, curvature, integrated bracelet |
 | Deployment | water resistance, crown type, shock facts, thickness, materials |
 | Service/accuracy | movement type/source, calibre, normalized accuracy range/period, service region |
 | Weight | head and full-watch grams |
@@ -80,6 +87,11 @@ read-only view later.
 Questionnaire bands are never stored on a variant. Price-band and wrist-band
 coverage projections are derived from numeric facts and the shared Phase 2
 constants.
+
+`case_diameter_mm` is never a generic “size” slot. Rectangular dimensions use
+`case_width_mm` and `case_length_mm`. Fit uses verified `lug_to_lug_mm` when it
+exists, otherwise verified overall case length; an unevidenced fallback cannot
+satisfy the wrist hard filter.
 
 `reference_deployment_profiles` and
 `reference_ownership_friction_profiles` are reviewed reference-level query
@@ -182,6 +194,10 @@ live catalogue to 15 brands and 17 variants. All five remain unapplied while
 the Supabase MCP OAuth connection is expired; the bundled seed must not be
 pushed until the migrations are applied in order and the 17-row parity audit
 succeeds.
+
+Migration `0015_add_rectangular_case_geometry.sql` then adds only the nullable
+non-round geometry columns; it adds no reference row. It is also unapplied and
+must follow `0014` before the current local branch is pushed.
 
 `npm run audit:catalogue-parity` validates the strict RPC response against the
 bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes

@@ -417,6 +417,16 @@ open because the retailer's pins answer is ambiguous between bracelet links and
 case attachment, and replacement 420-case spring bars do not satisfy the
 manufacturer-service corroboration rule.
 
+A Cartier Tank Must WSTA0107 follow-up resolved the earlier blocked-source and
+geometry failures. The exact official page is independently retrievable in
+Malaysia and supplies 29.5 x 22 x 6.6 mm rectangular geometry, High Autonomy
+quartz, an interchangeable steel bracelet, 30 m resistance, and hours/minutes
+only. A current exact Tourneau/Bucherer offer supplies the supported $4,100 U.S.
+new-watch path; exact secondary records resolve 16 mm width, Cartier QuickSwitch,
+and approximately 79.3 g at the maximum 170 mm bracelet configuration.
+Migration `0015` prepares `case_width_mm` and `case_length_mm`; no Cartier row is
+accepted. Numerical exact-applicable accuracy and repeatable lume remain open.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

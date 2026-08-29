@@ -79,6 +79,8 @@ export const seedReferenceVariantSchema = z
     geometry: z
       .object({
         caseDiameterMm: nullablePositiveNumber,
+        caseWidthMm: nullablePositiveNumber.default(null),
+        caseLengthMm: nullablePositiveNumber.default(null),
         caseThicknessMm: nullablePositiveNumber,
         lugToLugMm: nullablePositiveNumber,
         lugWidthMm: nullablePositiveNumber,
@@ -86,7 +88,30 @@ export const seedReferenceVariantSchema = z
         lugCurvature: z.enum(["flat", "moderate", "steep"]).nullable(),
         integratedBracelet: z.boolean().nullable(),
       })
-      .strict(),
+      .strict()
+      .superRefine((geometry, context) => {
+        const rectangularDimensions = [
+          geometry.caseWidthMm,
+          geometry.caseLengthMm,
+        ];
+        const rectangularParts = rectangularDimensions.filter(
+          (dimension) => dimension !== null,
+        ).length;
+        if (rectangularParts === 1) {
+          context.addIssue({
+            code: "custom",
+            message:
+              "Case width and length must be supplied together for non-round geometry.",
+          });
+        }
+        if (geometry.caseDiameterMm === null && rectangularParts !== 2) {
+          context.addIssue({
+            code: "custom",
+            message:
+              "Geometry needs either a case diameter or a complete width/length pair.",
+          });
+        }
+      }),
     movement: z
       .object({
         type: z.enum([
@@ -256,6 +281,8 @@ export type EvidenceField =
   | "materials"
   | "productionStatus"
   | "caseDiameterMm"
+  | "caseWidthMm"
+  | "caseLengthMm"
   | "caseThicknessMm"
   | "lugToLugMm"
   | "lugWidthMm"
@@ -288,6 +315,22 @@ export function hasVerifiedField(
   field: EvidenceField,
 ) {
   return evidenceFields(variant).has(field);
+}
+
+export function verifiedCaseWearingSpanMm(variant: SeedReferenceVariant) {
+  if (
+    variant.geometry.lugToLugMm !== null &&
+    hasVerifiedField(variant, "lugToLugMm")
+  ) {
+    return variant.geometry.lugToLugMm;
+  }
+  if (
+    variant.geometry.caseLengthMm !== null &&
+    hasVerifiedField(variant, "caseLengthMm")
+  ) {
+    return variant.geometry.caseLengthMm;
+  }
+  return null;
 }
 
 export function sourceIdsForField(

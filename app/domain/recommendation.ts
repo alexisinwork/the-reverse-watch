@@ -7,6 +7,7 @@ import {
   convertMinorCurrency,
   hasVerifiedField,
   supportedAccuracyTolerances,
+  verifiedCaseWearingSpanMm,
 } from "./catalogue";
 import type { QuestionnaireProfile } from "./questionnaire";
 import {
@@ -318,18 +319,16 @@ function evaluateCoreHardFilters(
     );
   }
 
-  if (
-    requireFact(
-      variant,
+  const wearingSpanMm = verifiedCaseWearingSpanMm(variant);
+  if (wearingSpanMm === null) {
+    addMissing(
       candidate,
-      "lugToLugMm",
       "lug_to_lug",
-      "Lug-to-lug is not manufacturer-verified, so wrist fit cannot pass silently.",
-      variant.geometry.lugToLugMm,
-    ) &&
-    variant.geometry.lugToLugMm !== null &&
-    variant.geometry.lugToLugMm >
-      core.wristCircumferenceMm * MAX_LUG_TO_LUG_TO_WRIST_RATIO
+      "The across-wrist case span lacks verified evidence, so wrist fit cannot pass silently.",
+    );
+  } else if (
+    wearingSpanMm >
+    core.wristCircumferenceMm * MAX_LUG_TO_LUG_TO_WRIST_RATIO
   ) {
     addReason(
       candidate,
@@ -739,9 +738,9 @@ function scoreCandidate(
     "Leaves room below the explicit purchase ceiling.",
   );
 
-  if (variant.geometry.lugToLugMm !== null) {
-    const fitRatio =
-      variant.geometry.lugToLugMm / context.profile.core.wristCircumferenceMm;
+  const wearingSpanMm = verifiedCaseWearingSpanMm(variant);
+  if (wearingSpanMm !== null) {
+    const fitRatio = wearingSpanMm / context.profile.core.wristCircumferenceMm;
     const fitPoints = Math.max(0, 12 - Math.abs(fitRatio - 0.27) * 120);
     addScore(
       candidate,

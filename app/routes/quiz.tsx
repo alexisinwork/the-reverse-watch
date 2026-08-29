@@ -677,8 +677,17 @@ function CandidateCard({
         <div>
           <dt>Case</dt>
           <dd>
-            {candidate.geometry.caseDiameterMm ?? "?"} mm · L2L{" "}
-            {candidate.geometry.lugToLugMm ?? "?"} mm
+            {candidate.geometry.caseDiameterMm !== null
+              ? `${candidate.geometry.caseDiameterMm} mm diameter`
+              : candidate.geometry.caseLengthMm !== null &&
+                  candidate.geometry.caseWidthMm !== null
+                ? `${candidate.geometry.caseLengthMm} × ${candidate.geometry.caseWidthMm} mm`
+                : "Unknown size"}
+            {" · "}Wrist span{" "}
+            {candidate.geometry.lugToLugMm ??
+              candidate.geometry.caseLengthMm ??
+              "?"}{" "}
+            mm
           </dd>
         </div>
         <div>

@@ -82,6 +82,31 @@ describe("deterministic recommendation engine", () => {
     expect(result.recommendations[0]?.id).toBe("seiko-ssc813");
   });
 
+  it("uses verified overall case length for rectangular-watch fit", () => {
+    const rectangularCatalogue = structuredClone(seedCatalogue);
+    const grandSeiko = rectangularCatalogue.variants.find(
+      (variant) => variant.id === "grand-seiko-sbgn029",
+    )!;
+    grandSeiko.geometry.caseDiameterMm = null;
+    grandSeiko.geometry.caseWidthMm = 22;
+    grandSeiko.geometry.caseLengthMm = 60;
+    grandSeiko.geometry.lugToLugMm = null;
+    grandSeiko.evidence = grandSeiko.evidence.map((entry) => ({
+      ...entry,
+      fields: entry.fields.filter((field) => field !== "lugToLugMm"),
+    }));
+    grandSeiko.evidence[0]!.fields.push("caseWidthMm", "caseLengthMm");
+
+    const result = evaluateHardFilterPartition(
+      baseProfile,
+      rectangularCatalogue,
+      { asOf: TEST_AS_OF },
+    );
+    expect(result["grand-seiko-sbgn029"]?.hardReasons).toContain(
+      "fit_exceeds_wrist",
+    );
+  });
+
   it("suppresses speculative rows unless both explicit gates are present", () => {
     const speculativeCatalogue = structuredClone(seedCatalogue);
     const grandSeiko = speculativeCatalogue.variants.find(
