@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "tudor-compact-mechanical-tool",
   "jobId": "e4e99573-be10-4fed-8321-1dca06a63d10",
-  "reviewedAt": "2026-08-29T07:28:07Z",
+  "reviewedAt": "2026-08-29T08:04:22Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -26,6 +26,31 @@
       "url": "https://media.tudorwatch.com/image/upload/fl_attachment/v1/tudorwatch/pressroom/products/black-bay-54/pdf/t23rp-blackbay54-en.pdf",
       "status": "validated_primary",
       "note": "The official Black Bay 54 press dossier independently corroborates the exact black-dial steel-bracelet configuration, MT5400 rate bounds and daily-rate context, 70-hour reserve, Grade A Swiss Super-LumiNova, T-fit clasp, and absence of a date display."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=EgNpVn2_dUM",
+      "status": "validated_secondary",
+      "note": "The 1916 Company's exact-reference specialist review measures M79000N-0001 at 45.8 mm lug-to-lug. Its independently measured 11.2 mm thickness matches TUDOR's primary specification, and a separate hands-on source rounds the same span to 46 mm."
+    },
+    {
+      "url": "https://www.fratellowatches.com/hands-on-spending-time-with-the-tudor-black-bay-54/",
+      "status": "validated_secondary",
+      "note": "This separate hands-on Black Bay 54 review reports a 46 mm lug-to-lug span, corroborating the specialist's more precise 45.8 mm measurement after normal rounding."
+    },
+    {
+      "url": "https://en.www.rasin.co.jp/SHOP/N-79000N0001-3.html",
+      "status": "validated_secondary",
+      "note": "The exact-reference new-watch listing reports 139 g with a 21 cm bracelet, but separate owner measurements report 135 g on a sized bracelet. Because link count changes configured weight, no normalized full-weight value is accepted from these snapshots."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Vve3vvNGIZw",
+      "status": "validated_secondary",
+      "note": "This six-month exact-model owner review reports 135 g on its bracelet, conflicting with the exact-reference new-watch listing's 139 g at 21 cm. The difference is consistent with bracelet sizing, but the catalogue cannot normalize a full configured weight from differently sized examples."
+    },
+    {
+      "url": "https://delugs.com/blogs/best-straps/best-straps-for-tudor-black-bay-54",
+      "status": "rejected",
+      "note": "The exact-reference fitment guide uses spring bars when fitting replacement straps, but TUDOR's exact product and service material does not independently document the factory bracelet mechanism. The project's physical-interface policy therefore keeps attachmentType open."
     }
   ],
   "verifiedProvisionalFields": [
@@ -127,6 +152,12 @@
       "value": [],
       "sourceUrl": "https://www.tudorwatch.com/en/watch-family/black-bay-54",
       "note": "TUDOR explicitly describes the MT5400 Black Bay 54 as time-only; hours, minutes, seconds, and stop-seconds are not catalogue complications."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 45.8,
+      "sourceUrl": "https://www.youtube.com/watch?v=EgNpVn2_dUM",
+      "note": "The exact-reference specialist measurement is 45.8 mm; an independent hands-on review reports 46 mm, consistent after rounding."
     }
   ],
   "rejectedProvisionalFields": [
@@ -167,6 +198,6 @@
       "reason": "Hours, minutes, seconds, and stop-seconds are basic functions rather than supported catalogue complication values."
     }
   ],
-  "missingM1Fields": ["lugToLugMm", "weightFullG", "attachmentType"],
-  "note": "Keep as research-only. Exact primary evidence resolves price, thickness, lug width, accuracy, lume, and date status, but TUDOR does not publish lug-to-lug length, full configured weight, or the bracelet-to-case attachment interface for M79000N-0001. Secondary seller measurements and visual inference are insufficient for migration."
+  "missingM1Fields": ["weightFullG", "attachmentType"],
+  "note": "Keep as research-only. Two independent exact-reference measurements resolve lug-to-lug at 45.8 mm, rounded elsewhere to 46 mm. Complete-bracelet weight reports vary with sizing, and the exact spring-bar fitment guide lacks the manufacturer corroboration required for a factory-interface fact, so those two M1 fields remain open."
 }

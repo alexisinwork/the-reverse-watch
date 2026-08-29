@@ -329,6 +329,11 @@ For the post-batch evidence-gap pass on the same date:
   luminous paint. Citizen BM8180-03E retained both gaps: exact-reference owner
   reports disagree on lume performance, and aftermarket fitment evidence does
   not establish the factory attachment. Neither review entered the seed.
+- TUDOR Black Bay 54 M79000N-0001 now has a reviewed 45.8 mm lug-to-lug value,
+  corroborated by a separate 46 mm rounded measurement. It remains
+  research-only because bracelet-size-dependent weight reports conflict and
+  exact replacement-strap fitment is not manufacturer corroboration of the
+  factory bracelet attachment.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -355,7 +360,8 @@ On 2026-08-28 for Phases 1–4:
 2. Resolve or explicitly retain the first review gaps. Seiko HCC004J1 now needs
    only a source-backed resolution of its conflicting lume evidence, while
    Citizen BM8180-03E still needs authoritative lume-grade and factory-interface
-   evidence. Casio G-5600UE-1 needs a
+   evidence. TUDOR M79000N-0001 now needs only normalized full configured weight
+   and manufacturer-corroborated attachment evidence. Casio G-5600UE-1 needs a
    supported price/FX path, band-interface width, attachment classification,
    and illumination mapping; Cartier WSTA0107 needs rectangular geometry
    support plus M1 sources; Swatch SO28N100 needs exact-reference primary M1

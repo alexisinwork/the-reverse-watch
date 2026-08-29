@@ -365,6 +365,13 @@ research-only because exact-reference lume observations conflict and an
 aftermarket compatibility listing is not factory-interface evidence. The
 review and accepted-catalogue counts therefore remain unchanged.
 
+The same pass resolved TUDOR M79000N-0001's lug-to-lug span at 45.8 mm from an
+exact-reference specialist measurement corroborated by a separate rounded
+46 mm hands-on measurement. Its weight remains open because bracelet sizing
+produces conflicting 135 g and 139 g reports; its replacement-strap spring-bar
+fitment also lacks the manufacturer-side corroboration required to establish
+the factory attachment. TUDOR therefore remains research-only with two gaps.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

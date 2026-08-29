@@ -270,6 +270,14 @@ open. Citizen remains unchanged: exact-reference owner accounts conflict on
 lume performance, and an aftermarket band-compatibility listing does not prove
 the factory attachment interface. Neither candidate advances to migration.
 
+The same pass reduced TUDOR Black Bay 54 M79000N-0001 from three gaps to two.
+An exact-reference specialist measured 45.8 mm lug-to-lug and a separate
+hands-on review reports 46 mm, consistent after rounding. Weight remains open
+because complete-bracelet reports vary between 135 g and 139 g with bracelet
+sizing, while the exact spring-bar fitment guide lacks manufacturer-side
+corroboration of the factory bracelet mechanism. TUDOR therefore remains
+research-only for weight and attachment.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
