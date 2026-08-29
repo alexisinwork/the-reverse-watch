@@ -323,6 +323,12 @@ For the post-batch evidence-gap pass on the same date:
 - Live Supabase remains 11 brands/12 variants. Apply `0010`, then `0011`, prove
   14-row catalogue and six-profile SQL parity, and only then push the local
   commits.
+- A follow-up exact-reference pass resolved Seiko HCC004J1's attachment as
+  `spring_bar`, but retained its lume gap because an official regional Lumibrite
+  specification conflicts with an independent exact-reference report of no
+  luminous paint. Citizen BM8180-03E retained both gaps: exact-reference owner
+  reports disagree on lume performance, and aftermarket fitment evidence does
+  not establish the factory attachment. Neither review entered the seed.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -346,7 +352,10 @@ On 2026-08-28 for Phases 1–4:
    `0011_expand_catalogue_orient.sql`, then run live 14-row catalogue and
    six-profile SQL parity. Only push after that succeeds so production never
    sees divergent bundled and relational catalogues.
-2. Resolve or explicitly retain the first review gaps. Casio G-5600UE-1 needs a
+2. Resolve or explicitly retain the first review gaps. Seiko HCC004J1 now needs
+   only a source-backed resolution of its conflicting lume evidence, while
+   Citizen BM8180-03E still needs authoritative lume-grade and factory-interface
+   evidence. Casio G-5600UE-1 needs a
    supported price/FX path, band-interface width, attachment classification,
    and illumination mapping; Cartier WSTA0107 needs rectangular geometry
    support plus M1 sources; Swatch SO28N100 needs exact-reference primary M1

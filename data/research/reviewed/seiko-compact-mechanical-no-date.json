@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "seiko-compact-mechanical-no-date",
   "jobId": "3797593a-5bcf-486d-bb59-7831910010fd",
-  "reviewedAt": "2026-08-29T07:10:12Z",
+  "reviewedAt": "2026-08-29T08:01:09Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -26,6 +26,21 @@
       "url": "https://www.seikowatches.com/-/media/HtmlUploader/Common/Seiko/Home/instructions/html/SEIKO_6R51_6R55_6R5H_6R5J_EN/assets/pdf/6R5C_2311_EN.pdf",
       "status": "validated_primary",
       "note": "Seiko's official calibre manual distinguishes 6R51 as a three-hand time-only movement and specifies time setting without a calendar, independently supporting absent date status for the exact product's documented calibre."
+    },
+    {
+      "url": "https://www.seiko.nl/collectie/detail?item=HCC004J1",
+      "status": "validated_primary",
+      "note": "Seiko's exact official Netherlands specification reports luminous hands, luminous indexes, and Lumibrite. Other official regional pages omit lume, and the exact-reference independent inspection below directly contradicts this regional specification, so no categorical lume value is accepted."
+    },
+    {
+      "url": "https://en.webchronos.net/features/161585/",
+      "status": "validated_secondary",
+      "note": "The exact-reference independent inspection reports that HCC004 lacks luminous paint and is consequently less visible in the dark. This conflicts with Seiko Netherlands' exact official Lumibrite rows, so the conflict is retained rather than resolved by source hierarchy alone."
+    },
+    {
+      "url": "https://www.louispion.fr/presage-hcc004j1.html",
+      "status": "validated_secondary",
+      "note": "The exact HCC004J1 retailer page identifies a standard attachment system and explicitly defines that system as spring-loaded metal bars housed between the lugs. This directly establishes the strap-to-case interface as spring_bar."
     }
   ],
   "verifiedProvisionalFields": [
@@ -91,6 +106,12 @@
       "value": ["new"],
       "sourceUrl": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
       "note": "The official recommended retail price is for the new limited-edition product."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://www.louispion.fr/presage-hcc004j1.html",
+      "note": "The exact-reference retailer describes a standard attachment and explicitly defines it as sprung metal bars seated between the lugs."
     }
   ],
   "rejectedProvisionalFields": [
@@ -108,13 +129,13 @@
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Leather strap describes supplied material, not whether the strap-to-case interface is spring-bar, quick-release, proprietary, or integrated."
+      "reason": "The provider's leather-strap label remains insufficient by itself; the corrected spring_bar value comes from an exact-reference retailer's explicit description of the standard sprung-bar interface."
     },
     {
       "fieldName": "operation.claspMicroadjustment",
       "reason": "A three-fold push-button clasp does not by itself establish that no microadjustment mechanism exists."
     }
   ],
-  "missingM1Fields": ["lumeGrade", "attachmentType"],
-  "note": "Keep as research-only. Primary sources now make the exact fixed configuration M1-complete except for the categorical lume grade and strap-to-case attachment interface; neither can be inferred from omitted feature text or from the supplied leather strap and clasp."
+  "missingM1Fields": ["lumeGrade"],
+  "note": "Keep as research-only. The exact-reference standard attachment description resolves spring_bar, but Seiko Netherlands reports Lumibrite while an exact-reference independent inspection reports no luminous paint. That material conflict must be resolved before assigning the catalogue's categorical lume grade."
 }

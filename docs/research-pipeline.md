@@ -261,6 +261,15 @@ active targets, and 21 reviews: two `ready_for_migration`, 17
 so neither migration nor the bundled seed may be pushed until `0010` and `0011`
 are applied in order and 14-row SQL parity passes.
 
+The next source-led pass checked the two-field Seiko HCC004J1 and Citizen
+BM8180-03E reviews. An exact-reference retailer explicitly defines HCC004J1's
+standard attachment as spring-loaded bars between the lugs, resolving
+`spring_bar`; however, Seiko Netherlands reports Lumibrite while an independent
+exact-reference inspection reports no luminous paint, so its lume grade remains
+open. Citizen remains unchanged: exact-reference owner accounts conflict on
+lume performance, and an aftermarket band-compatibility listing does not prove
+the factory attachment interface. Neither candidate advances to migration.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

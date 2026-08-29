@@ -357,6 +357,14 @@ strict checkpoint is 14 accepted targets, 17 needing review, and two excluded;
 the review outcomes are two migration-ready, 17 needing more evidence, and two
 excluded.
 
+A subsequent near-complete review pass resolved Seiko HCC004J1's attachment as
+`spring_bar` from an exact-reference standard-attachment description. It did
+not infer lume: Seiko Netherlands' Lumibrite rows conflict with an independent
+exact-reference report of no luminous paint. Citizen BM8180-03E also remains
+research-only because exact-reference lume observations conflict and an
+aftermarket compatibility listing is not factory-interface evidence. The
+review and accepted-catalogue counts therefore remain unchanged.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
