@@ -180,7 +180,7 @@ const MISSING_FACT_EXPLANATIONS: Record<MissingFactCode, string> = {
   service_country:
     "Manufacturer service coverage is not verified for the selected country.",
   lug_to_lug:
-    "Lug-to-lug is not manufacturer-verified, so wrist fit cannot pass silently.",
+    "The across-wrist case span is not verified, so wrist fit cannot pass silently.",
   accuracy: "No numerical manufacturer accuracy specification is available.",
   weight: "Full-watch weight is missing or not manufacturer-verified.",
   lug_curvature: "Lug curvature is not verified.",

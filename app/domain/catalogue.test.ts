@@ -67,6 +67,24 @@ describe("source-backed seed catalogue", () => {
     expect(verifiedCaseWearingSpanMm(parsed.variants[0]!)).toBe(29.5);
   });
 
+  it("stores the Reverso's manufacturer dimensions as length and width", () => {
+    const reverso = seedCatalogue.variants.find(
+      (variant) => variant.id === "jlc-q3988481",
+    );
+
+    expect(reverso).toBeDefined();
+    expect(reverso!.geometry).toMatchObject({
+      caseDiameterMm: null,
+      caseWidthMm: 28.3,
+      caseLengthMm: 47,
+      lugToLugMm: 47,
+    });
+    expect(evidenceFields(reverso!).has("caseDiameterMm")).toBe(false);
+    expect(evidenceFields(reverso!).has("caseWidthMm")).toBe(true);
+    expect(evidenceFields(reverso!).has("caseLengthMm")).toBe(true);
+    expect(verifiedCaseWearingSpanMm(reverso!)).toBe(47);
+  });
+
   it("rejects a partial non-round dimension pair", () => {
     const rectangular = structuredClone(seedCatalogue);
     rectangular.variants[0]!.geometry.caseDiameterMm = null;

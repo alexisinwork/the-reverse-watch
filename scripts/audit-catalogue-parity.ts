@@ -1,5 +1,9 @@
 import { seedCatalogueSchema } from "../app/domain/catalogue";
-import { hardFilterEvaluationSchema } from "../app/domain/catalogue.server";
+import {
+  hardFilterEvaluationSchema,
+  SUPABASE_CATALOGUE_RPC,
+  SUPABASE_HARD_FILTER_RPC,
+} from "../app/domain/catalogue.server";
 import { catalogueParityMismatches } from "../app/domain/catalogue-parity";
 import type { QuestionnaireProfile } from "../app/domain/questionnaire";
 import { QUESTIONNAIRE_VERSION } from "../app/domain/questionnaire";
@@ -21,7 +25,7 @@ const configuredSupabaseUrl = supabaseUrl;
 const configuredPublishableKey = publishableKey;
 
 const response = await fetch(
-  new URL("/rest/v1/rpc/recommendation_catalogue_v1", configuredSupabaseUrl),
+  new URL(`/rest/v1/rpc/${SUPABASE_CATALOGUE_RPC}`, configuredSupabaseUrl),
   {
     method: "POST",
     headers: {
@@ -169,10 +173,7 @@ const evaluationTime = "2026-08-28T20:00:00Z";
 
 async function fetchSqlHardFilter(profile: QuestionnaireProfile) {
   const hardFilterResponse = await fetch(
-    new URL(
-      "/rest/v1/rpc/recommendation_hard_filter_v1",
-      configuredSupabaseUrl,
-    ),
+    new URL(`/rest/v1/rpc/${SUPABASE_HARD_FILTER_RPC}`, configuredSupabaseUrl),
     {
       method: "POST",
       headers: {

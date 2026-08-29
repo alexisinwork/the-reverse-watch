@@ -18,14 +18,17 @@ phase.
   score-trace, and source sections after the six core screens or optional
   refinement groups.
 - Nine additive migrations are applied to Supabase; additive migrations `0010`
-  through `0015` are prepared and locally verified but not yet applied
-  because the Supabase MCP OAuth refresh expired. Tables remain server-only;
+  through `0016` are prepared and locally verified but not yet applied
+  because the Supabase MCP OAuth refresh expired. This continuation also
+  confirmed that no Supabase tool/CLI session or configured Vercel credential
+  is available locally. Tables remain server-only;
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
-- Local `main` is 23 commits ahead of `origin/main`. The evidence and geometry
+- Local `main` is 24 commits ahead of `origin/main` after the current checkpoint
+  is committed. The evidence and geometry
   checkpoints through Cartier are committed locally, and the branch remains
-  intentionally unpushed until migrations `0010` through `0015` are applied and
+  intentionally unpushed until migrations `0010` through `0016` are applied and
   17-row live SQL parity is proven.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
@@ -102,13 +105,15 @@ phase.
   G-5600UE-1, and Seiko HCC004J1. Migrations `0010` through `0014` each carry
   only their additive row and its sources, price, availability, evidence,
   deployment, friction, traits, and product URL.
-- Migration `0015` adds only nullable rectangular case width/length columns; it
-  does not add an accepted variant. The first accepted non-round row must update
-  both RPCs and prove SQL/TypeScript fit parity in the same additive change.
+- Migration `0015` adds only nullable rectangular case width/length columns.
+  Migration `0016` corrects the already accepted Reverso Q3988481 from a
+  synthetic 28.3 mm diameter to manufacturer-labelled 47 x 28.3 mm length and
+  width, preserves its explicit 47 mm lug-to-lug, and introduces v2 catalogue
+  and hard-filter RPCs with SQL/TypeScript non-round fit parity.
 - The current local audit reports 448 of 28,800 cells covered (1.56%): 444 are
   single-candidate, all 448 are under-diversified, and 224 are under-evidenced.
   The applied live baseline remains 180 cells until migrations `0010` through
-  `0015` are applied in order.
+  `0016` are applied in order.
 - Browser roles have no table grants. The security advisor's only current
   findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
   both functions have an empty `search_path`, fixed read-only SQL, and no
@@ -129,15 +134,15 @@ phase.
   artifacts.
 - Provenance and cosmetic preferences are visibly disclosed as unscored until
   reviewed brand/surface data exists.
-- `recommendation_catalogue_v1()` returns the accepted relational catalogue in
-  the strict Zod runtime shape. `recommendation_hard_filter_v1(profile, as_of)`
+- `recommendation_catalogue_v2()` returns the accepted relational catalogue in
+  the strict Zod runtime shape. `recommendation_hard_filter_v2(profile, as_of)`
   returns the authoritative hard-reject and missing-fact partition.
 - The server validates both RPC responses, requires exact variant coverage,
   caches valid catalogue facts for 60 seconds, and visibly falls back as one
   unit to the reviewed bundle plus local predicates.
 - `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
   applied baseline variants across six golden profiles. It must be rerun for
-  all 17 variants immediately after migrations `0010` through `0015` are
+  all 17 variants immediately after migrations `0010` through `0016` are
   applied in order. PostgreSQL
   owns the live hard-filter partition; TypeScript owns scoring, explanations,
   diversity, and fallback.
@@ -421,7 +426,7 @@ For the post-batch evidence-gap pass on the same date:
   reviews: five `ready_for_migration`, 14 `needs_more_evidence`, and two
   `excluded`.
 - Live Supabase remains 11 brands/12 variants. Apply migrations `0010` through
-  `0015`, prove 17-row catalogue and six-profile SQL parity, and only then push
+  `0016`, prove 17-row catalogue and six-profile SQL parity, and only then push
   the local commits.
 - Citizen BM8180-03E now needs only a repeatable lume grade. Citizen Watch
   Group's exact-model parts lookup lists dedicated spring-bar part 509-2074
@@ -462,12 +467,19 @@ For the post-batch evidence-gap pass on the same date:
   inventing a diameter; exact reviewed sources also resolve the $4,100 U.S.
   authorized-retailer offer, 16 mm interface, approximately 79.3 g maximum
   bracelet weight, and Cartier QuickSwitch attachment. No Cartier row was added.
+- The accepted Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481
+  now uses the manufacturer's explicit `L x W` semantics: `caseLengthMm: 47`,
+  `caseWidthMm: 28.3`, `caseDiameterMm: null`, with the separately labelled
+  47 mm lug-to-lug retained for fit. Migration `0016` updates field evidence,
+  rectangular-aware completeness, and both public read contracts without
+  weakening any hard filter.
 - The latest evidence sequence is committed as `db77f92` (Swatch), `760979c`
   (Omega), `a6fb895` (Bulova), `e17a2db` (Blancpain), and `abf958d` (Vostok),
-  followed by the Cartier geometry/evidence checkpoint. `npm run check` passes
-  formatting, lint, type generation, TypeScript, all 58 tests across 13 files,
-  and the production build; the
-  research manifest audit also passes.
+  followed by the Cartier geometry/evidence and Reverso correction checkpoint.
+  `npm run check` passes formatting, lint, type generation, TypeScript, all 59
+  tests across 13 files, and the production build. The strict research,
+  coverage, and knowledge audits pass, and a PostgreSQL parser accepts all 15
+  statements in migration `0016`.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -492,7 +504,8 @@ On 2026-08-28 for Phases 1–4:
    `0012_expand_catalogue_marathon.sql`, and then
    `0013_expand_catalogue_casio.sql`, followed by
    `0014_expand_catalogue_seiko.sql`, followed by
-   `0015_add_rectangular_case_geometry.sql`. Run live 17-row catalogue and
+   `0015_add_rectangular_case_geometry.sql`, followed by
+   `0016_correct_reverso_rectangular_geometry.sql`. Run live 17-row catalogue and
    six-profile SQL parity. Only push after that succeeds so production never
    sees divergent bundled and relational catalogues.
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still

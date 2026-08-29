@@ -217,7 +217,8 @@ function renderVariant(variant: SeedReferenceVariant) {
   return `insert into public.reference_variants (
   reference_model_id, variant_key, reference_code, variant_name,
   case_material, caseback_material, bracelet_material, strap_material,
-  nickel_contact_risk, case_diameter_mm, case_thickness_mm, lug_to_lug_mm,
+  nickel_contact_risk, case_diameter_mm, case_width_mm, case_length_mm,
+  case_thickness_mm, lug_to_lug_mm,
   lug_to_lug_measured, lug_width_mm, lug_curvature, integrated_bracelet,
   weight_full_g, movement_type, caliber_ref, power_reserve_h,
   accuracy_lower_seconds, accuracy_upper_seconds, accuracy_period_days,
@@ -227,7 +228,8 @@ function renderVariant(variant: SeedReferenceVariant) {
 values (
   ${modelIdSql(variant)}, ${q(variant.id)}, ${q(variant.referenceCode)}, ${q(variant.variantName)},
   ${q(variant.materials.case)}, ${q(variant.materials.caseback)}, ${q(variant.materials.bracelet)}, ${q(variant.materials.strap)},
-  ${q(variant.operation.nickelContactRisk)}, ${n(variant.geometry.caseDiameterMm)}, ${n(variant.geometry.caseThicknessMm)}, ${n(variant.geometry.lugToLugMm)},
+  ${q(variant.operation.nickelContactRisk)}, ${n(variant.geometry.caseDiameterMm)}, ${n(variant.geometry.caseWidthMm)}, ${n(variant.geometry.caseLengthMm)},
+  ${n(variant.geometry.caseThicknessMm)}, ${n(variant.geometry.lugToLugMm)},
   ${variant.geometry.lugToLugMm === null ? "null" : "false"}, ${n(variant.geometry.lugWidthMm)}, ${q(variant.geometry.lugCurvature)}, ${b(variant.geometry.integratedBracelet)},
   ${n(variant.geometry.weightFullG)}, ${q(variant.movement.type)}, ${q(variant.movement.caliber)}, ${n(variant.movement.powerReserveHours)},
   ${n(variant.movement.accuracyLowerSeconds)}, ${n(variant.movement.accuracyUpperSeconds)}, ${n(variant.movement.accuracyPeriodDays)},
@@ -243,6 +245,8 @@ on conflict (reference_model_id, variant_key) do update set
   strap_material = excluded.strap_material,
   nickel_contact_risk = excluded.nickel_contact_risk,
   case_diameter_mm = excluded.case_diameter_mm,
+  case_width_mm = excluded.case_width_mm,
+  case_length_mm = excluded.case_length_mm,
   case_thickness_mm = excluded.case_thickness_mm,
   lug_to_lug_mm = excluded.lug_to_lug_mm,
   lug_to_lug_measured = excluded.lug_to_lug_measured,
@@ -459,13 +463,17 @@ on conflict (subject_type, subject_id, field_name, value_hash, source_id) do upd
 
 function renderCompleteness(variant: SeedReferenceVariant) {
   const verified = evidenceFields(variant);
+  const caseGeometryFields: EvidenceField[] =
+    variant.geometry.caseDiameterMm !== null
+      ? ["caseDiameterMm"]
+      : ["caseWidthMm", "caseLengthMm"];
   const levels: ["m0" | "m1" | "m2", EvidenceField[]][] = [
     [
       "m0",
       [
         "identity",
         "price",
-        "caseDiameterMm",
+        ...caseGeometryFields,
         "lugToLugMm",
         "movement",
         "waterResistanceM",
@@ -476,7 +484,7 @@ function renderCompleteness(variant: SeedReferenceVariant) {
       [
         "identity",
         "price",
-        "caseDiameterMm",
+        ...caseGeometryFields,
         "caseThicknessMm",
         "lugToLugMm",
         "lugWidthMm",

@@ -7,8 +7,8 @@ import type { QuestionnaireProfile } from "./questionnaire";
 import { HARD_REASON_CODES, MISSING_FACT_CODES } from "./recommendation";
 import type { HardFilterEvaluation } from "./recommendation";
 
-export const SUPABASE_CATALOGUE_RPC = "recommendation_catalogue_v1";
-export const SUPABASE_HARD_FILTER_RPC = "recommendation_hard_filter_v1";
+export const SUPABASE_CATALOGUE_RPC = "recommendation_catalogue_v2";
+export const SUPABASE_HARD_FILTER_RPC = "recommendation_hard_filter_v2";
 export const CATALOGUE_CACHE_TTL_MS = 60_000;
 export const CATALOGUE_REQUEST_TIMEOUT_MS = 3_500;
 

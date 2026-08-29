@@ -23,6 +23,10 @@ Last verified: 2026-08-28
   RPCs; it does not need a PostgreSQL password or management key. Invalid,
   incomplete, timed-out, or unavailable RPC responses trigger the visible
   reviewed-bundle fallback.
+- Production currently exposes the verified v1 RPC pair. The local application
+  now targets the rectangular-aware v2 pair created by migration `0016`; do not
+  deploy or push that application commit until migrations `0010` through `0016`
+  are applied in order and the 17-row parity audit succeeds.
 - On the verified live release, `/`, `/quiz`, and `/health` returned 200. A
   valid core POST returned Grand Seiko and the explicit “accepted catalogue
   facts and hard-filter decisions loaded from Supabase” notice. Recent Vercel

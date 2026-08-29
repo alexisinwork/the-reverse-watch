@@ -1,6 +1,8 @@
 import {
   createCatalogueLoader,
   createRecommendationDataLoader,
+  SUPABASE_CATALOGUE_RPC,
+  SUPABASE_HARD_FILTER_RPC,
 } from "./catalogue.server";
 import type { QuestionnaireProfile } from "./questionnaire";
 import { QUESTIONNAIRE_VERSION } from "./questionnaire";
@@ -47,6 +49,11 @@ describe("server catalogue loader", () => {
     expect(first.catalogue.variants).toHaveLength(17);
     expect(second.origin).toBe("supabase");
     expect(fetchImpl).toHaveBeenCalledTimes(1);
+    const catalogueRequest = fetchImpl.mock.calls[0]?.[0];
+    expect(catalogueRequest).toBeInstanceOf(URL);
+    expect((catalogueRequest as URL).pathname).toBe(
+      `/rest/v1/rpc/${SUPABASE_CATALOGUE_RPC}`,
+    );
   });
 
   it("falls back visibly when configuration is absent", async () => {
@@ -101,6 +108,11 @@ describe("server catalogue loader", () => {
     expect(result.hardFilterEvaluation).toEqual(hardFilterEvaluation);
     expect(result.notice).toMatch(/hard-filter decisions/i);
     expect(fetchImpl).toHaveBeenCalledTimes(2);
+    const hardFilterRequest = fetchImpl.mock.calls[1]?.[0];
+    expect(hardFilterRequest).toBeInstanceOf(URL);
+    expect((hardFilterRequest as URL).pathname).toBe(
+      `/rest/v1/rpc/${SUPABASE_HARD_FILTER_RPC}`,
+    );
     expect(fetchImpl.mock.calls[1]?.[1]?.body).toContain("p_profile");
   });
 

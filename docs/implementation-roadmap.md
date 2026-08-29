@@ -496,6 +496,15 @@ a current $4,100 authorized-retailer offer, an exact QuickSwitch specialist
 record, and three convergent 79-80 g records reduce Cartier to numerical
 accuracy and repeatable lume as its only M1 gaps. It remains research-only.
 
+The same geometry policy was then applied to the already accepted
+Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481. Its exact
+manufacturer page labels the case 47 x 28.3 mm as length x width and explicitly
+identifies length as lug-to-lug. The seed now stores `caseDiameterMm: null`,
+`caseWidthMm: 28.3`, `caseLengthMm: 47`, and `lugToLugMm: 47`. Additive
+migration `0016` corrects the relational row and evidence, recalculates
+rectangular-aware completeness, and introduces v2 catalogue/hard-filter RPCs
+with the same verified case-span fallback as TypeScript.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

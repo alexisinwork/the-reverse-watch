@@ -427,6 +427,15 @@ and approximately 79.3 g at the maximum 170 mm bracelet configuration.
 Migration `0015` prepares `case_width_mm` and `case_length_mm`; no Cartier row is
 accepted. Numerical exact-applicable accuracy and repeatable lume remain open.
 
+The accepted Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481
+was then audited against its exact manufacturer page. Jaeger-LeCoultre labels
+the case `Dimensions (L x W): 47 x 28.3 mm` and explicitly defines L as
+lug-to-lug. The local seed therefore stores 47 mm length, 28.3 mm width, no
+synthetic diameter, and the separately evidenced 47 mm lug-to-lug. Migration
+`0016` applies that correction after `0015`, replaces the field evidence, and
+versions both read RPCs so SQL and TypeScript share the same verified
+non-round wearing-span fallback.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

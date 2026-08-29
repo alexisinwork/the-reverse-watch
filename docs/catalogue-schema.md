@@ -36,8 +36,11 @@ Phase 5 adds
 [`0015_add_rectangular_case_geometry.sql`](../db/migrations/0015_add_rectangular_case_geometry.sql),
 which prepares nullable case-width and overall-case-length columns for honest
 non-round geometry. Existing round rows and RPC output remain backward
-compatible. The first accepted non-round expansion must expose those columns in
-both read RPCs and prove SQL/TypeScript fit parity in the same additive change.
+compatible. It is followed by
+[`0016_correct_reverso_rectangular_geometry.sql`](../db/migrations/0016_correct_reverso_rectangular_geometry.sql),
+which maps the accepted Reverso Q3988481 to its manufacturer-labelled 47 x
+28.3 mm length/width pair, retains the separately explicit 47 mm lug-to-lug,
+and exposes non-round facts and fit behavior through v2 read RPCs.
 
 Both RPCs are fixed `SECURITY DEFINER` SQL with an empty `search_path`, no
 dynamic SQL, and no mutation. Only `anon` and the administrative service role
@@ -91,7 +94,9 @@ constants.
 `case_diameter_mm` is never a generic “size” slot. Rectangular dimensions use
 `case_width_mm` and `case_length_mm`. Fit uses verified `lug_to_lug_mm` when it
 exists, otherwise verified overall case length; an unevidenced fallback cannot
-satisfy the wrist hard filter.
+satisfy the wrist hard filter. The database permits both rectangular columns to
+be null during research, but migration `0016` rejects a partial width/length
+pair so a half-specified non-round case cannot enter the typed surface.
 
 `reference_deployment_profiles` and
 `reference_ownership_friction_profiles` are reviewed reference-level query
@@ -197,7 +202,14 @@ succeeds.
 
 Migration `0015_add_rectangular_case_geometry.sql` then adds only the nullable
 non-round geometry columns; it adds no reference row. It is also unapplied and
-must follow `0014` before the current local branch is pushed.
+must follow `0014`. Migration
+`0016_correct_reverso_rectangular_geometry.sql` then corrects the accepted JLC
+row, replaces its diameter evidence with width/length evidence, recalculates
+its geometry-aware M0/M1 completeness, and makes
+`recommendation_catalogue_v2()` and `recommendation_hard_filter_v2()` the
+public contracts. Both v1 contracts become internal implementation details.
+It is unapplied and must follow `0015` before the current local branch is
+pushed.
 
 `npm run audit:catalogue-parity` validates the strict RPC response against the
 bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes
