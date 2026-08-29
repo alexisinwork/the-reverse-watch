@@ -174,6 +174,28 @@ For the third Phase 5 research batch on the same date:
   mechanical field, then Baltic compact mechanical. Migration `0010` and its
   Supabase parity gate still take precedence over pushing either local commit.
 
+For the fourth Phase 5 research batch on the same date:
+
+- Seiko HCC004J1, Vostok 420059, and Baltic MR Classic Blue all produced valid
+  provisional artifacts and completed independent review. All remain
+  `needs_more_evidence`; no catalogue or migration row was added.
+- Seiko's official U.S. page, Japanese store, and 6R51 manual resolve the exact
+  configuration through 66 g full weight and no-date status, leaving graded
+  lume and attachment interface as the two M1 gaps. Vostok still lacks full
+  weight, categorical lume, and attachment type, and its source is a retailer
+  that explicitly says it is near—but not part of—the factory. Baltic's page is
+  a strap/bracelet configuration family with only a starting price and no exact
+  manufacturer reference.
+- Independent retrieval caught Vostok's provider price drifting from $172 to a
+  current $164 sale price. The stale value is rejected and the observed value
+  retained only in the reviewed artifact.
+- The ignored local ledger now retains 18 attempts: 11 succeeded and seven
+  failed, spanning 11 targets, with USD 0.15448 recorded provider cost.
+- Strict research now reports 201 brands, 13 accepted links, 18 active targets,
+  and 11 reviews: one `ready_for_migration` and ten `needs_more_evidence`.
+  Coverage remains 212/28,800 cells (0.74%). The next queue is Orient, Certina,
+  and Tudor.
+
 On 2026-08-28 for Phases 1–4:
 
 - `npm run check` passes formatting, lint, strict type/route generation, all 41
@@ -212,8 +234,9 @@ On 2026-08-28 for Phases 1–4:
 6. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
 7. If database access remains unavailable, continue the ranked planned queue
-   with Seiko, Vostok, and Baltic while keeping every result provisional until
-   source review is complete.
+   with Orient, Certina, and Tudor while keeping every result provisional until
+   source review is complete. Retain the fourth-batch gaps exactly as recorded
+   instead of inferring attachment or lume categories.
 8. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.

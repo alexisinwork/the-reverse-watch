@@ -1,0 +1,126 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vostok-affordable-mechanical-field",
+  "jobId": "b4a10faa-fde5-4e14-ae0e-6acb189c2260",
+  "reviewedAt": "2026-08-29T07:10:12Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Vostok",
+    "model": "Amphibian Classic",
+    "referenceCode": "420059",
+    "variantName": "Amphibian Classic 420059"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
+      "status": "validated_secondary",
+      "note": "The exact retailer page independently validates reference 420059, current $164 sale price, add-to-cart status, 39 x 15 x 46 mm geometry, 18 mm bracelet width, stainless-steel case and bracelet, 2416 automatic/manual-winding movement, -20/+60 seconds per day, at least 31 hours of reserve, screw-down crown, 200 m water resistance, plastic crystal, and a date display."
+    },
+    {
+      "url": "https://meranom.com/en/why_buy_from_us.html",
+      "status": "validated_secondary",
+      "note": "Meranom explicitly identifies itself as a Chistopol retailer close to—not part of—the factory, states that factory warranty is supported, and says that it sells new watches. Its product facts remain reviewed secondary evidence rather than manufacturer-primary evidence."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crownType",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
+      "note": "The exact reference is currently offered with an active add-to-cart control."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 16400,
+      "sourceUrl": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
+      "note": "The independently retrieved exact page currently shows a $164 sale price, replacing the provider's stale $172 value."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "RU",
+      "sourceUrl": "https://meranom.com/en/about_meranom.html",
+      "note": "Meranom identifies its business location and shipping origin as Chistopol, Russia."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
+      "note": "The exact reference was available to add to cart during review."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://meranom.com/en/why_buy_from_us.html",
+      "note": "The retailer documents factory warranty support and direct factory relationships, represented by the catalogue's authorized-dealer channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://meranom.com/en/why_buy_from_us.html",
+      "note": "Meranom explicitly states that it sells new watches."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 18,
+      "sourceUrl": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
+      "note": "The exact product specification lists an 18 mm strap width."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider captured $172, while independent retrieval at review time shows a $164 sale price and $173 struck-through comparison price."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "The raw word available is replaced by the catalogue's normalized in_stock value."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Online retail is not a normalized acquisition-channel value; factory-warranty retailer evidence supports the authorized-dealer class."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "Displayed sale price is price context, not a normalized item condition; the retailer separately establishes that the watch is new."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Hands and dots only describes application locations and was not exposed in the independently retrieved specification; it does not establish weak/moderate/strong performance."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Stainless-steel bracelet describes the supplied material, not the bracelet-to-case interface."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is represented by dateStatus in the catalogue and is not one of the complication enum values."
+    }
+  ],
+  "missingM1Fields": ["weightFullG", "lumeGrade", "attachmentType"],
+  "note": "Keep as research-only. Exact secondary evidence is unusually complete but does not supply full-watch weight, a reviewed categorical lume grade, or the bracelet attachment interface, and the manufacturer itself has not yet been independently sourced."
+}

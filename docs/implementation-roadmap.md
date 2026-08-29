@@ -281,6 +281,16 @@ bracelet material did not satisfy attachment semantics. The strict manifest now
 has eight reviews (one migration-ready, seven needing more evidence), and the
 next ranked queue starts with Seiko, Vostok, and Baltic coverage targets.
 
+The fourth live batch independently reviewed Seiko HCC004J1, Vostok 420059,
+and Baltic MR Classic Blue without promoting any row. Seiko is M1-complete
+except for graded lume and attachment semantics after official sources resolved
+66 g full weight and no-date status. Vostok still lacks full weight, graded
+lume, and attachment type and relies on a factory-adjacent retailer rather than
+a manufacturer source. Baltic remains a multi-attachment configuration family
+with only a starting price and no exact manufacturer reference. The strict
+checkpoint has 11 reviews (one migration-ready, ten needing more evidence); the
+next queue is Orient, Certina, and Tudor.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

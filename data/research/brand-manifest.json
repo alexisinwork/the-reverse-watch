@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T06:59:12.554Z",
+  "updatedAt": "2026-08-29T07:07:36.618Z",
   "brands": [
     {
       "slug": "rolex",
@@ -805,7 +805,7 @@
         {
           "id": "seiko-compact-mechanical-no-date",
           "referenceLabel": "Select a current compact mechanical no-date reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "300_500",
@@ -1780,7 +1780,7 @@
         {
           "id": "vostok-affordable-mechanical-field",
           "referenceLabel": "Select a current source-verifiable mechanical field/water reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "under_300"
@@ -1916,7 +1916,7 @@
         {
           "id": "baltic-compact-mechanical",
           "referenceLabel": "Select a current compact mechanical reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "300_500",

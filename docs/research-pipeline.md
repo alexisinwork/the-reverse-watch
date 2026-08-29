@@ -114,6 +114,27 @@ The strict checkpoint now contains eight committed reviews: one
 queue begins with Seiko compact mechanical no-date, Vostok affordable mechanical
 field, and Baltic compact mechanical.
 
+That fourth ranked batch also produced three valid provisional artifacts, but
+no accepted row:
+
+- Seiko HCC004J1 is now supported by exact official product, store, and calibre
+  sources through full weight and no-date status. It remains research-only
+  because neither omitted feature text nor a supplied leather strap establishes
+  the catalogue's categorical lume grade or attachment interface.
+- Vostok 420059 has detailed exact-reference evidence from Meranom, which
+  explicitly identifies itself as a retailer near the factory rather than the
+  manufacturer. Its independently observed sale price changed from the
+  extraction's $172 to $164, and full weight, graded lume, and attachment type
+  remain missing.
+- Baltic MR Classic Blue is a configuration family: the official page requires
+  a strap or bracelet selection and displays only a configuration-dependent
+  starting price. It lacks an exact manufacturer reference, full weight,
+  accuracy, graded lume, attachment type, and explicit date status.
+
+The strict manifest now contains 11 reviews: one `ready_for_migration` and ten
+`needs_more_evidence`. The next queue begins with Orient affordable mechanical
+date, Certina midprice mechanical tool, and Tudor compact mechanical tool.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

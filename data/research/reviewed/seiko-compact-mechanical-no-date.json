@@ -1,0 +1,120 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-compact-mechanical-no-date",
+  "jobId": "3797593a-5bcf-486d-bb59-7831910010fd",
+  "reviewedAt": "2026-08-29T07:10:12Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "Presage Classic Series HCC004",
+    "referenceCode": "HCC004J1",
+    "variantName": "Seiko 145th Anniversary Limited Edition"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
+      "status": "validated_primary",
+      "note": "The exact official U.S. page independently validates identity, the $1,000 USD recommended retail price, limited current production, fixed cow-leather configuration, 36 x 12.5 x 41.4 mm geometry, 18 mm lug width, calibre 6R51, -15/+25 seconds per day, 72-hour reserve, 10 bar water resistance, sapphire crystal, and a three-fold clasp."
+    },
+    {
+      "url": "https://store.seikowatches.com/products/hcc004j",
+      "status": "validated_primary",
+      "note": "Seiko's official Japanese store page for the same HCC004J regional product code independently reports a 66.0 g full weight and corroborates the same case, leather configuration, movement, accuracy, reserve, and water-resistance specifications."
+    },
+    {
+      "url": "https://www.seikowatches.com/-/media/HtmlUploader/Common/Seiko/Home/instructions/html/SEIKO_6R51_6R55_6R5H_6R5J_EN/assets/pdf/6R5C_2311_EN.pdf",
+      "status": "validated_primary",
+      "note": "Seiko's official calibre manual distinguishes 6R51 as a three-hand time-only movement and specifies time setting without a calendar, independently supporting absent date status for the exact product's documented calibre."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "price.marketCountry",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "complications",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.caseback",
+      "value": "See-through screw caseback",
+      "sourceUrl": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
+      "note": "The exact official product page lists a see-through and screw caseback."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
+      "note": "The official U.S. page labels the 2026 limited edition as new and routes buyers to current retailers."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 66,
+      "sourceUrl": "https://store.seikowatches.com/products/hcc004j",
+      "note": "Seiko's official Japanese store reports 66.0 g for the same HCC004J regional product configuration."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unknown",
+      "sourceUrl": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
+      "note": "The manufacturer supplies a store locator rather than exact current dealer inventory, so availability is retained as unknown."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
+      "note": "The manufacturer directs the reviewed U.S. offer to its retailer network."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.seikowatches.com/us-en/products/presage/hcc004j1",
+      "note": "The official recommended retail price is for the new limited-edition product."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productionStatus",
+      "reason": "Limited edition describes production quantity, not the catalogue's announced/current/discontinued status; a normalized current fact is retained separately."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Listed by manufacturer is not one of the catalogue's inventory states and does not establish exact dealer stock."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Official Seiko website is a cited page, not a normalized acquisition-channel value; the page routes to authorized retailers."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Leather strap describes supplied material, not whether the strap-to-case interface is spring-bar, quick-release, proprietary, or integrated."
+    },
+    {
+      "fieldName": "operation.claspMicroadjustment",
+      "reason": "A three-fold push-button clasp does not by itself establish that no microadjustment mechanism exists."
+    }
+  ],
+  "missingM1Fields": ["lumeGrade", "attachmentType"],
+  "note": "Keep as research-only. Primary sources now make the exact fixed configuration M1-complete except for the categorical lume grade and strap-to-case attachment interface; neither can be inferred from omitted feature text or from the supplied leather strap and clasp."
+}

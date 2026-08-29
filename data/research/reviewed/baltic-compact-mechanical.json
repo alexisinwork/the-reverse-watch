@@ -1,0 +1,81 @@
+{
+  "reviewVersion": 1,
+  "targetId": "baltic-compact-mechanical",
+  "jobId": "c08a4511-2617-459e-9914-17c49bfa34cf",
+  "reviewedAt": "2026-08-29T07:10:12Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Baltic",
+    "model": "MR Classic",
+    "referenceCode": "MR Classic Blue",
+    "variantName": "MR Classic - Blue"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://baltic-watches.com/en/products/mr-classic-blue",
+      "status": "validated_primary",
+      "note": "The official product page independently validates the blue MR Classic model, 36 x 9.9 x 44 mm geometry, 20 mm lug width, 316L steel case, transparent caseback, high-domed hesalite, CAL5000a automatic micro-rotor movement, 42-hour reserve, and 30 m water resistance. It requires an attachment selection and offers Italian calf straps or a steel beads-of-rice bracelet, so it does not identify one homogeneous supplied configuration."
+    },
+    {
+      "url": "https://baltic-watches.com/en/collections/mr?location=BG",
+      "status": "validated_primary",
+      "note": "Baltic's official regional collection page displays MR Classic Blue from EUR 545, confirming that the product-level offer is a configuration-dependent starting price rather than an exact selected-variant price."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "collection",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "materials.strap",
+      "reason": "The page offers multiple Italian calf straps and a steel bracelet; no exact selected attachment is encoded in the candidate identity."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "End-of-August delivery is shown only after a default attachment selection and cannot establish availability for the unresolved configuration family."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Official website and Baltic store are raw labels rather than normalized acquisition-channel values, and the exact priced configuration is unresolved."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "reason": "Compatibility with multiple straps supports a conventional lug layout but does not by itself encode the catalogue's exact attachment-interface classification."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Leather strap describes one offered material, not the spring-bar, quick-release, proprietary, or integrated attachment interface."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Small seconds is a display layout and is not one of the catalogue's supported complication enum values."
+    }
+  ],
+  "missingM1Fields": [
+    "identity",
+    "price",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Keep as research-only. MR Classic Blue is a model/configuration family without a manufacturer reference code or selected attachment, while the official price is only a configuration-dependent starting value. One exact strap or bracelet SKU must be identified before weight, price, availability, and attachment evidence can describe a homogeneous row."
+}
