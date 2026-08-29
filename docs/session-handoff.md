@@ -530,8 +530,10 @@ For the post-batch evidence-gap pass on the same date:
   states that the case extensions themselves constitute both the lugs and the
   first bracelet link. This resolves conventional between-horns width from
   affirmative physical evidence rather than from the product page's omission.
-  Price, lug-to-lug, full configured weight, numerical accuracy, and graded
-  lume remain open; no AP row was added.
+  The public endpoint called by AP's exact U.S. product page also resolves a
+  USD 40,100 amount/currency/market fragment, but it supplies no purchase
+  availability or channel. The complete price gate, lug-to-lug, full configured
+  weight, numerical accuracy, and graded lume remain open; no AP row was added.
 - The accepted Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481
   now uses the manufacturer's explicit `L x W` semantics: `caseLengthMm: 47`,
   `caseWidthMm: 28.3`, `caseDiameterMm: null`, with the separately labelled

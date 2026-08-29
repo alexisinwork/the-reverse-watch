@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "audemars-piguet-current-integrated-specialist",
   "jobId": "5213024a-f1d9-4019-91e1-4c34af000c52",
-  "reviewedAt": "2026-08-29T19:31:52Z",
+  "reviewedAt": "2026-08-29T19:36:07Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -15,7 +15,12 @@
     {
       "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02",
       "status": "validated_primary",
-      "note": "The exact current official page independently validates reference 16202ST.OO.1240ST.02, its Royal Oak Jumbo Extra-Thin identity, stainless-steel case and bracelet, blue Petite Tapisserie dial, 39 x 8.1 mm geometry, sapphire front and back, automatic caliber 7121, 52-hour reserve, 50 m water resistance, luminescent hands, and date. The rendered page exposes no usable price and omits lug-to-lug, lug width, full weight, numerical accuracy, and graded lume."
+      "note": "The exact current official page independently validates reference 16202ST.OO.1240ST.02, its Royal Oak Jumbo Extra-Thin identity, stainless-steel case and bracelet, blue Petite Tapisserie dial, 39 x 8.1 mm geometry, sapphire front and back, automatic caliber 7121, 52-hour reserve, 50 m water resistance, luminescent hands, and date. Its rendered HTML exposes only a price template and omits lug-to-lug, full weight, numerical accuracy, and graded lume; the page's public exact-product price endpoint is reviewed separately."
+    },
+    {
+      "url": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
+      "status": "validated_primary",
+      "note": "The public price endpoint called by AP's exact U.S. product page returns USD 40,100 for 16202ST.OO.1240ST.02. It supplies no purchase availability or channel context, so only the amount, currency, and market are reviewed; the complete price gate remains open."
     },
     {
       "url": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
@@ -58,6 +63,24 @@
     "dateStatus"
   ],
   "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 4010000,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
+      "note": "AP's exact-product U.S. endpoint returns an amount of 40,100 USD."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
+      "note": "The recovered exact-product price is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
+      "note": "The endpoint identifies the price country as US."
+    },
     {
       "fieldName": "productionStatus",
       "value": "current",
@@ -114,5 +137,5 @@
     "accuracy",
     "lumeGrade"
   ],
-  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference. AP's Heritage documentation explicitly makes conventional between-horns lug width not applicable to model 16202's case-and-first-link architecture. Price, lug-to-lug fit, full weight, numerical rate tolerance, and graded lume remain unresolved."
+  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference. AP's Heritage documentation explicitly makes conventional between-horns lug width not applicable to model 16202's case-and-first-link architecture. AP's exact-product endpoint now resolves a USD 40,100 U.S. price fragment, but purchase availability and channel remain unresolved; lug-to-lug fit, full weight, numerical rate tolerance, and graded lume also remain open."
 }

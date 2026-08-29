@@ -504,6 +504,13 @@ interface, not an inference from the exact product page's missing width. Price,
 lug-to-lug, full configured weight, numerical accuracy, and graded lume remain
 open, so the reference stays research-only.
 
+The same AP pass recovered the public endpoint used by the exact U.S. product
+page. It returns USD 40,100 and identifies the U.S. market, so those three price
+fragments are reviewed as primary exact-reference facts. The response contains
+no purchase availability or sales-channel context. The complete commercial
+price gate therefore remains open rather than treating a displayed manufacturer
+amount as an orderable offer.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
