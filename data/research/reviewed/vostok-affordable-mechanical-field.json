@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "vostok-affordable-mechanical-field",
   "jobId": "b4a10faa-fde5-4e14-ae0e-6acb189c2260",
-  "reviewedAt": "2026-08-29T08:07:24Z",
+  "reviewedAt": "2026-08-29T10:39:59Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -34,8 +34,23 @@
     },
     {
       "url": "https://www.ebay.co.uk/urw/Vostok-Amphibia-Stainless-Steel-Russian-Military-Diver-Watch-420059/product-reviews/19034189571",
-      "status": "rejected",
-      "note": "A verified-purchase exact-reference owner calls the lume underwhelming, but supplies no controlled duration or intensity measurement and does not identify the production batch. A lone qualitative account does not establish a current repeatable lume grade."
+      "status": "validated_secondary",
+      "note": "A verified-purchase exact-reference owner calls the lume underwhelming. This qualitative report is insufficient alone, but it corroborates two independent exact-reference reviews and a separate long-term owner's assessment of poor nighttime performance."
+    },
+    {
+      "url": "https://www.thewatchcompany.com/blog/recommended/vostok-amphibian-scuba-dude-review/",
+      "status": "validated_secondary",
+      "note": "The exact-reference review identifies sparse lume on the hands and small dot indices and explicitly warns that reference 420059 can be difficult to read in poor lighting. This supports the catalogue's weak performance class when combined with the independent fade and owner reports."
+    },
+    {
+      "url": "https://ticknsip.blogspot.com/2021/09/vostok-amphibia-scuba-dude-review.html",
+      "status": "validated_secondary",
+      "note": "This second exact-reference review identifies model 420059 and reports that its luminous compound fades quickly. The review's speculative explanation of the design intent is not adopted; only the observed performance direction is used."
+    },
+    {
+      "url": "https://www.reddit.com/r/Watches/comments/sbqkkt",
+      "status": "validated_secondary",
+      "note": "A separate exact-reference long-term daily owner describes the factory lume as poor. This is retained only as corroboration for the two editorial exact-reference assessments and the verified-purchase report."
     },
     {
       "url": "https://vostok-world24.com/en/collections/frontpage/products/vostok-gehause-420-edelstahl",
@@ -115,6 +130,12 @@
       "value": 128,
       "sourceUrl": "https://www.bestwatch.ru/watch/Vostok/2416.00-420059/",
       "note": "The exact-reference specialist reports approximately 128 g for the steel-bracelet configuration, independently corroborated by a separate exact-reference Vostok dealer."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "weak",
+      "sourceUrl": "https://www.thewatchcompany.com/blog/recommended/vostok-amphibian-scuba-dude-review/",
+      "note": "The exact-reference review reports sparse application and difficult low-light reading. A second exact-reference review reports fast fade, while independent exact-reference owners call the lume poor or underwhelming; that convergence maps to weak rather than merely establishing luminous-material presence."
     }
   ],
   "rejectedProvisionalFields": [
@@ -136,7 +157,7 @@
     },
     {
       "fieldName": "operation.lumeGrade",
-      "reason": "Hands and dots only describes application locations and was not exposed in the independently retrieved specification; it does not establish weak/moderate/strong performance."
+      "reason": "The provider's hands-and-dots description establishes application locations only. It is replaced by a separately reviewed weak mapping based on multiple independent exact-reference performance assessments."
     },
     {
       "fieldName": "operation.attachmentType",
@@ -147,6 +168,6 @@
       "reason": "Date is represented by dateStatus in the catalogue and is not one of the complication enum values."
     }
   ],
-  "missingM1Fields": ["lumeGrade", "attachmentType"],
-  "note": "Keep as research-only. Two exact-reference dealer records resolve the steel-bracelet configuration at approximately 128 g. The only exact-reference lume-performance account is uncontrolled and production-undated, while dealer-supplied 420-case spring-bar evidence lacks manufacturer service corroboration for the factory bracelet, so those two categorical M1 fields remain open."
+  "missingM1Fields": ["attachmentType"],
+  "note": "Keep as research-only. Two exact-reference dealer records resolve the steel-bracelet configuration at approximately 128 g. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. The bracelet interface remains open: the available pins discussion is ambiguous between removable links and case attachment, while dealer-supplied 420-case spring-bar evidence still lacks manufacturer service corroboration for the factory bracelet."
 }

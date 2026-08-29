@@ -409,6 +409,14 @@ explicitly reports that this architecture makes the across-wrist span equal to
 the diameter. The row remains research-only for conventional lug width, full
 configured weight, and numerical rate tolerance.
 
+A Vostok Amphibia 420059 follow-up resolved `lumeGrade: weak`. Two independent
+exact-reference reviews report sparse application, difficult low-light reading,
+and fast fade; independent verified-purchase and long-term exact-reference owner
+accounts corroborate poor performance. The supplied-bracelet attachment remains
+open because the retailer's pins answer is ambiguous between bracelet links and
+case attachment, and replacement 420-case spring bars do not satisfy the
+manufacturer-service corroboration rule.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

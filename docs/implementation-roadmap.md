@@ -477,6 +477,15 @@ specification explicitly reports that the lack of projecting conventional lugs
 makes lug-to-lug equal to diameter. The row remains research-only for
 conventional lug width, full configured weight, and numerical accuracy.
 
+Vostok Amphibia 420059 now has a reviewed `weak` lume grade. Two independent
+exact-reference reviews report sparse application, difficult low-light reading,
+and fast fade; a verified-purchase report and a separate long-term exact-model
+owner independently describe the lume as underwhelming or poor. The convergence
+supports the performance class rather than merely inferring it from luminous
+material. The row remains research-only for factory attachment: the available
+pins discussion is ambiguous between bracelet links and the case interface, and
+replacement-case spring bars still lack manufacturer-service corroboration.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

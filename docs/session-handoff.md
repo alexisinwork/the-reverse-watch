@@ -23,8 +23,8 @@ phase.
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
-- Local `main` is 21 commits ahead of `origin/main`. The evidence checkpoints
-  through Blancpain are committed locally, and the branch remains intentionally
+- Local `main` is 22 commits ahead of `origin/main`. The evidence checkpoints
+  through Vostok are committed locally, and the branch remains intentionally
   unpushed until migrations `0010` through `0014` are applied and 17-row live
   SQL parity is proven.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
@@ -445,9 +445,14 @@ For the post-batch evidence-gap pass on the same date:
   dossier establishes its 47 mm diameter and central-lug construction; an
   exact-reference hands-on specification explicitly reports 47 mm lug-to-lug
   because no conventional lugs project beyond the case.
+- Vostok Amphibia 420059 now needs only manufacturer-corroborated factory
+  attachment evidence. Two independent exact-reference reviews report sparse,
+  difficult-to-read, fast-fading lume, corroborated by exact-reference owners;
+  this convergence maps to `weak`. The available pins answer remains ambiguous
+  between bracelet links and the case interface and is not normalized.
 - The latest evidence sequence is committed as `db77f92` (Swatch), `760979c`
-  (Omega), and `a6fb895` (Bulova), followed by the Blancpain geometry
-  checkpoint. `npm run check` passes formatting, lint, type generation,
+  (Omega), `a6fb895` (Bulova), and `e17a2db` (Blancpain), followed by the Vostok
+  lume checkpoint. `npm run check` passes formatting, lint, type generation,
   TypeScript, all 55 tests across 13 files, and the production build; the
   research manifest audit also passes.
 
