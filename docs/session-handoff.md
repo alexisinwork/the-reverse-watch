@@ -244,6 +244,32 @@ For the sixth Phase 5 research batch on the same date:
 - Supabase OAuth token refresh still fails. Migration `0010`, live 13-row
   catalogue parity, and all pushing remain intentionally held.
 
+For the seventh Phase 5 research batch on the same date:
+
+- Patek retained two more failures with the same null and
+  resolved/unresolved-field contract violations, bringing that target to four
+  failed attempts without a reviewable artifact.
+- Bulova Series X Precisionist 98B429 and Audemars Piguet Royal Oak
+  15510ST.OO.1320ST.01 produced valid provisional artifacts, but independent
+  review excluded both selections from their targets rather than weakening the
+  requested coverage.
+- The exact Bulova U.S. page shows a $1,220 sale price, above the target's
+  $300-$1,000 bands. Review replaced the provider's unsupported zero accuracy
+  lower bound with official -10/+10 seconds-per-year collection evidence and
+  retained thickness, lug-to-lug, full-weight, graded-lume, and attachment gaps.
+- The exact AP reference is the discontinued 2022 50th Anniversary model, not
+  a current homogeneous offer. Review rejected AP folding clasp as an
+  attachment interface and used AP's official design documentation to map the
+  bracelet as integrated.
+- Both exclusions have replacement planned targets with the original coverage
+  intents and explicit instructions not to repeat the disqualifying choice.
+- The ignored local ledger now retains 31 attempts: 17 succeeded and 14 failed,
+  spanning 18 targets, with USD 0.22373 recorded provider cost.
+- Strict research now reports 17 reviews: one `ready_for_migration`, 14
+  `needs_more_evidence`, and two `excluded`. Active-target count remains 18;
+  coverage remains 212/28,800 cells (0.74%). The next queue is Patek,
+  replacement Bulova, replacement Audemars Piguet, and A. Lange & Söhne.
+
 On 2026-08-28 for Phases 1–4:
 
 - `npm run check` passes formatting, lint, strict type/route generation, all 41
@@ -282,12 +308,14 @@ On 2026-08-28 for Phases 1–4:
 6. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
 7. If database access remains unavailable, continue the strict worker with
-   Patek, Bulova, Audemars Piguet, and A. Lange & Söhne while keeping every
-   result provisional until source review is complete. Do not substitute
-   generic calibre performance for Certina's or Blancpain's missing published
-   accuracy bounds, infer Orient's or TUDOR's attachment interface from the
-   supplied strap or bracelet, or treat Blancpain's blank conventional lug
-   width as a reviewed non-applicable policy.
+   Patek, `bulova-attainable-precision-quartz-chronograph`,
+   `audemars-piguet-current-integrated-specialist`, and A. Lange & Söhne while
+   keeping every result provisional until source review is complete. Do not
+   repeat Bulova 98B429 or AP 15510ST.OO.1320ST.01, substitute generic calibre
+   performance for Certina's or Blancpain's missing published accuracy bounds,
+   infer Orient's or TUDOR's attachment interface from the supplied strap or
+   bracelet, or treat Blancpain's blank conventional lug width as a reviewed
+   non-applicable policy.
 8. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.

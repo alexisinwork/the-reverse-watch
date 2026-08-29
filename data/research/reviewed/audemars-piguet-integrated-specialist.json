@@ -1,0 +1,100 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-integrated-specialist",
+  "jobId": "f9e04d3a-928f-41f4-b814-ca04adf73103",
+  "reviewedAt": "2026-08-29T07:36:03Z",
+  "reviewer": "codex-source-review",
+  "outcome": "excluded",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Royal Oak Selfwinding 50th Anniversary",
+    "referenceCode": "15510ST.OO.1320ST.01",
+    "variantName": "41 mm stainless steel, Bleu Nuit Nuage 50 Grande Tapisserie dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/en/watch-collection/royal-oak/15510ST.OO.1320ST.01",
+      "status": "validated_primary",
+      "note": "The exact official archive page independently validates reference 15510ST.OO.1320ST.01, its 50th Anniversary identity, 41 x 10.5 mm stainless-steel case and bracelet configuration, sapphire front and back, caliber 4302 automatic movement, 70-hour reserve, 50 m water resistance, screw-locked crown, luminescent hand coating, and date. It exposes no current rendered price or availability and does not publish lug-to-lug, lug width, full weight, accuracy, or graded lume."
+    },
+    {
+      "url": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
+      "status": "validated_primary",
+      "note": "Audemars Piguet identifies this design and dedicated 50-years rotor as its 2022 anniversary offering and explicitly describes the first links of the integrated bracelet. This supports integrated attachment semantics but also confirms that the selected identity is the anniversary generation rather than a current-reference selection."
+    },
+    {
+      "url": "https://watchcharts.com/watch_variation/1241-audemars-piguet-royal-oak-self-15510st-oo-1320st-01/overview",
+      "status": "validated_secondary",
+      "note": "The exact-reference market record identifies 15510ST.OO.1320ST.01 as discontinued. It is used only to corroborate lifecycle status, not to promote a current retail price or availability snapshot."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.bracelet",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crownType",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "discontinued",
+      "sourceUrl": "https://watchcharts.com/watch_variation/1241-audemars-piguet-royal-oak-self-15510st-oo-1320st-01/overview",
+      "note": "The exact-reference market record classifies the 50th Anniversary variant as discontinued, consistent with AP's own 2022 anniversary framing."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": true,
+      "sourceUrl": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
+      "note": "AP's official 2022 Royal Oak design page explicitly describes the first links of the integrated bracelet."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "integrated",
+      "sourceUrl": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
+      "note": "The exact anniversary-generation Royal Oak bracelet construction maps to the catalogue's integrated attachment class."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.audemarspiguet.com/en/watch-collection/royal-oak/15510ST.OO.1320ST.01",
+      "note": "Hours, minutes, and centre seconds are basic functions; date is represented separately by dateStatus."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Luminescent coating establishes presence but not the catalogue's weak, moderate, or strong performance class."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "AP folding clasp describes the clasp rather than the bracelet-to-case interface; AP's integrated-bracelet documentation supplies the corrected class."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Hours, minutes, and centre seconds are basic functions and date is modeled separately, leaving no supported catalogue complication value."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exclude this candidate from the current integrated-variant target. The exact identity is AP's discontinued 2022 50th Anniversary reference, not a current homogeneous offer, and six M1 gates remain unresolved. A replacement planned target preserves the current Royal Oak coverage intent while explicitly excluding archived anniversary references."
+}

@@ -310,6 +310,17 @@ numerical accuracy unresolved. The strict checkpoint has 15 reviews (one
 migration-ready, 14 needing more evidence); the next queue is Patek, Bulova,
 Audemars Piguet, and A. Lange & Söhne.
 
+The seventh live batch excluded two exact but out-of-contract selections rather
+than weakening their coverage intents. Bulova Series X 98B429 is current but
+its reviewed $1,220 U.S. sale price exceeds the intended $300-$1,000 bands.
+Audemars Piguet 15510ST.OO.1320ST.01 is the discontinued 2022 50th Anniversary
+Royal Oak rather than a current variant. Replacement planned targets preserve
+both original coverage intents and explicitly rule out the disqualifying choice.
+Patek retained two more strict extraction failures. The strict checkpoint has
+17 reviews (one migration-ready, 14 needing more evidence, two excluded); the
+next queue is Patek, replacement Bulova, replacement Audemars Piguet, and
+A. Lange & Söhne.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

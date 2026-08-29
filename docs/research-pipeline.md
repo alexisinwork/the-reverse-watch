@@ -178,6 +178,28 @@ The strict manifest now contains 15 reviews: one `ready_for_migration` and 14
 complication, Bulova precision quartz chronograph, Audemars Piguet integrated
 specialist, and A. Lange & Söhne formal high art.
 
+The seventh ranked batch retained four additional Patek failures and produced
+schema-valid Bulova and Audemars Piguet artifacts, but independent review
+excluded both selected candidates from their coverage targets:
+
+- Bulova Series X 98B429 is a current exact Precisionist chronograph, but its
+  independently observed U.S. sale price is $1,220, above the target's
+  $300-$1,000 bands. Review also corrected an invented zero accuracy lower
+  bound to the official Precisionist -10/+10 seconds per year and retained five
+  unresolved M1 fields.
+- Audemars Piguet 15510ST.OO.1320ST.01 is an exact 41 mm steel Royal Oak, but it
+  is the discontinued 2022 50th Anniversary reference rather than the requested
+  current variant. Review rejected AP folding clasp as an attachment interface
+  and independently mapped AP's documented bracelet construction to integrated.
+- Each exclusion has a replacement planned target carrying the original
+  coverage intent, with the disqualifying price or archived-anniversary choice
+  stated explicitly in its selection prompt.
+
+The strict manifest now contains 17 reviews: one `ready_for_migration`, 14
+`needs_more_evidence`, and two `excluded`. The next queue begins with Patek,
+the replacement attainable Bulova and current Audemars Piguet targets, and
+A. Lange & Söhne.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

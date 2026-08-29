@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T07:23:09.256Z",
+  "updatedAt": "2026-08-29T07:36:03Z",
   "brands": [
     {
       "slug": "rolex",
@@ -96,6 +96,13 @@
         {
           "id": "audemars-piguet-integrated-specialist",
           "referenceLabel": "Select one homogeneous current integrated-bracelet variant",
+          "state": "excluded",
+          "coverageRationale": "Add one material-specific row for archetype diversity, not a family-wide rollup.",
+          "exclusionReason": "The worker selected archived 2022 50th Anniversary reference 15510ST.OO.1320ST.01, which does not satisfy the current-variant target."
+        },
+        {
+          "id": "audemars-piguet-current-integrated-specialist",
+          "referenceLabel": "Select one homogeneous current integrated-bracelet variant, excluding archived anniversary references",
           "state": "planned",
           "coverageIntent": {
             "priceBands": [
@@ -1649,6 +1656,13 @@
         {
           "id": "bulova-precision-quartz-chronograph",
           "referenceLabel": "Select a current source-complete precision quartz chronograph",
+          "state": "excluded",
+          "coverageRationale": "Diversify affordable chronograph cells beyond one solar Seiko row.",
+          "exclusionReason": "The worker selected current Series X 98B429, whose independently reviewed $1,220 USD sale price is above the target's $300-$1,000 coverage bands."
+        },
+        {
+          "id": "bulova-attainable-precision-quartz-chronograph",
+          "referenceLabel": "Select a current homogeneous precision quartz chronograph priced within the supported 300-1000 bands",
           "state": "planned",
           "coverageIntent": {
             "priceBands": [

@@ -1,0 +1,155 @@
+{
+  "reviewVersion": 1,
+  "targetId": "bulova-precision-quartz-chronograph",
+  "jobId": "b18a241e-9f9f-472b-9950-946212f8c4db",
+  "reviewedAt": "2026-08-29T07:36:03Z",
+  "reviewer": "codex-source-review",
+  "outcome": "excluded",
+  "candidateIdentity": {
+    "brand": "Bulova",
+    "model": "Series X Precisionist",
+    "referenceCode": "98B429",
+    "variantName": "Series X Precisionist Special Edition, gold-tone stainless steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.bulova.com/us/en/product/98B429",
+      "status": "validated_primary",
+      "note": "The exact official U.S. page independently validates reference 98B429, Special Edition and current sale status, the gold-tone steel case and bracelet configuration, $1,220 USD Add to Bag offer, 44.5 mm case width, 24 mm lug width, proprietary eight-jewel Precisionist high-precision quartz mechanism, 50 m water resistance, curved sapphire crystal, chronograph, luminous marker fill, and date. The current price is above the target's highest $1,000 coverage band, and the page omits thickness, lug-to-lug, full weight, a numerical exact-SKU accuracy statement, graded lume, and the bracelet-to-case interface."
+    },
+    {
+      "url": "https://au.bulova.com/collections/precisionist",
+      "status": "validated_primary",
+      "note": "Bulova Australia's official Precisionist collection explicitly lists exact reference 98B429 and states the collection's 262 kHz Precisionist accuracy as plus or minus 10 seconds per year. This corrects the provider's unsupported zero lower bound but does not bring the candidate into the intended price bands."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "geometry.caseDiameterMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.bulova.com/us/en/product/98B429",
+      "note": "The exact reference remains directly orderable from Bulova's current U.S. store."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 122000,
+      "sourceUrl": "https://www.bulova.com/us/en/product/98B429",
+      "note": "The independently retrieved exact U.S. product page displayed a $1,220 sale price."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.bulova.com/us/en/product/98B429",
+      "note": "The reviewed exact offer is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.bulova.com/us/en/product/98B429",
+      "note": "The reviewed offer is Bulova's United States market page."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.bulova.com/us/en/product/98B429",
+      "note": "The exact page exposes Add to Bag, shipping, and delivery controls."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.bulova.com/us/en/product/98B429",
+      "note": "Bulova's direct online store is represented by the catalogue's authorized channel class."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.bulova.com/us/en/product/98B429",
+      "note": "The manufacturer offer is for a new watch."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -10,
+      "sourceUrl": "https://au.bulova.com/collections/precisionist",
+      "note": "Bulova's official Precisionist collection, which explicitly lists 98B429, states plus or minus 10 seconds per year."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 10,
+      "sourceUrl": "https://au.bulova.com/collections/precisionist",
+      "note": "Bulova's official Precisionist collection, which explicitly lists 98B429, states plus or minus 10 seconds per year."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["chronograph"],
+      "sourceUrl": "https://www.bulova.com/us/en/product/98B429",
+      "note": "The exact page documents a 1/1000-second chronograph; date is represented separately by dateStatus."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productionStatus",
+      "reason": "Special Edition describes the edition, not lifecycle status; direct current ordering supports the normalized current value."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider supplied an AUD offer outside the runtime's supported currencies; it is replaced by the exact current U.S. SKU offer."
+    },
+    {
+      "fieldName": "price.currency",
+      "reason": "AUD is not a supported catalogue currency and is replaced alongside the price by the exact current U.S. offer."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "The country name Australia is replaced alongside the price by the exact U.S. offer and normalized US code."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "New describes condition rather than availability and is replaced by in_stock from the exact U.S. checkout controls."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "The page label is replaced by the catalogue's normalized authorized_dealer class."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "reason": "Eight-jewel Precisionist quartz is a mechanism description, not a published caliber identifier for exact reference 98B429."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "reason": "The provider invented a zero lower bound from the phrase accurate to seconds per year; official Precisionist collection evidence establishes a symmetric -10/+10 range instead."
+    },
+    {
+      "fieldName": "operation.claspMicroadjustment",
+      "reason": "A push-button deployant clasp does not establish the presence or absence of microadjustment."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is modeled separately by dateStatus and is removed from the supported complication array."
+    }
+  ],
+  "missingM1Fields": [
+    "caseThicknessMm",
+    "lugToLugMm",
+    "weightFullG",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "Exclude this candidate from the target. Its independently reviewed $1,220 U.S. sale price is above both intended $300-$500 and $500-$1,000 coverage bands, and five M1 evidence gaps remain. A replacement planned target preserves the same affordable precision-quartz chronograph intent without reusing 98B429."
+}
