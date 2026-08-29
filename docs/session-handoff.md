@@ -25,11 +25,16 @@ phase.
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
-- Local `main` is 25 commits ahead of `origin/main` after the current checkpoint
-  is committed. The evidence, geometry, and TUDOR expansion checkpoints are
-  committed locally, and the branch remains
-  intentionally unpushed until migrations `0010` through `0017` are applied and
-  18-row live SQL parity is proven.
+- On 2026-08-29 the owner explicitly requested that the complete accumulated
+  branch be pushed. The 28 existing local commits plus this handoff checkpoint
+  are therefore being delivered to `origin/main`, superseding the earlier
+  temporary no-push instruction. This does not pretend the database is current:
+  live Supabase still lacks migrations `0010` through `0017`. The deployed
+  server requests the v2 RPC pair, strictly validates the response and exact
+  variant coverage, and falls back as one unit to the reviewed 18-row bundle
+  plus deterministic local predicates when those RPCs are unavailable. Live
+  18-row SQL parity remains mandatory before Supabase can become the active
+  recommendation source again.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
@@ -537,8 +542,10 @@ On 2026-08-28 for Phases 1–4:
    `0015_add_rectangular_case_geometry.sql`, followed by
    `0016_correct_reverso_rectangular_geometry.sql`, followed by
    `0017_expand_catalogue_tudor.sql`. Run live 18-row catalogue and
-   six-profile SQL parity. Only push after that succeeds so production never
-   sees divergent bundled and relational catalogues.
+   six-profile SQL parity. The accumulated application checkpoint has already
+   been pushed under the owner's explicit instruction; until parity succeeds,
+   production must visibly use the reviewed bundled catalogue and local hard
+   filters rather than a divergent relational result.
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
    needs an authoritative repeatable lume grade. Cartier WSTA0107 now
    needs only numerical exact-applicable quartz accuracy and a repeatable lume

@@ -528,6 +528,15 @@ than comparing raw PLN, USD, GBP, or CHF numbers to the same thresholds. Live
 Supabase remains at 11 brands and 12 variants until migrations `0010` through
 `0017` are applied and 18-row fact and six-profile predicate parity passes.
 
+On 2026-08-29 the owner explicitly requested delivery of the complete
+accumulated branch despite the unavailable Supabase maintenance session. The
+push is safe at the application boundary because the v2 RPC loader validates
+the entire response and exact variant set and otherwise visibly falls back to
+the reviewed 18-row bundle and deterministic local filters. This delivery
+decision does not complete the relational checkpoint: migrations `0010`
+through `0017`, live 18-row fact parity, and six-profile SQL predicate parity
+remain the first database continuation task.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
