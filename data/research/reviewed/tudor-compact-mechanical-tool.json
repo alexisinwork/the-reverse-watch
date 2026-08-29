@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "tudor-compact-mechanical-tool",
   "jobId": "e4e99573-be10-4fed-8321-1dca06a63d10",
-  "reviewedAt": "2026-08-29T08:04:22Z",
+  "reviewedAt": "2026-08-29T08:47:00Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -40,17 +40,27 @@
     {
       "url": "https://en.www.rasin.co.jp/SHOP/N-79000N0001-3.html",
       "status": "validated_secondary",
-      "note": "The exact-reference new-watch listing reports 139 g with a 21 cm bracelet, but separate owner measurements report 135 g on a sized bracelet. Because link count changes configured weight, no normalized full-weight value is accepted from these snapshots."
+      "note": "The exact-reference new-watch listing reports 139 g with a maximum 21 cm bracelet. Independent exact-reference unworn/full-set listings also report 139 g with 19.5-20 cm of bracelet, resolving the normalized full-length configuration; the lower owner measurement is explicitly from a sized bracelet."
+    },
+    {
+      "url": "https://archive.watch.de/archive_germany/tudor-heritage-black-bay-54-ref-m79000n-0001-80276.html",
+      "status": "validated_secondary",
+      "note": "This exact-reference unworn full-set listing reports 139 g including the bracelet and a combined bracelet-and-case length of 200 mm. It independently corroborates the Rasin new-watch listing's 139 g measurement at a maximum 21 cm bracelet length."
     },
     {
       "url": "https://www.youtube.com/watch?v=Vve3vvNGIZw",
       "status": "validated_secondary",
-      "note": "This six-month exact-model owner review reports 135 g on its bracelet, conflicting with the exact-reference new-watch listing's 139 g at 21 cm. The difference is consistent with bracelet sizing, but the catalogue cannot normalize a full configured weight from differently sized examples."
+      "note": "This six-month exact-model owner review reports 135 g on a sized bracelet. That configuration-specific measurement is retained but rejected for the normalized full-length bracelet value; it does not conflict with the independently corroborated 139 g new/unworn measurements at 19.5-21 cm."
     },
     {
-      "url": "https://delugs.com/blogs/best-straps/best-straps-for-tudor-black-bay-54",
+      "url": "https://www.tudorwatch.com/en/tudor-care/tudor-servicing-procedures",
+      "status": "validated_primary",
+      "note": "TUDOR's official service procedure says the bracelet is detached from the case during service, but does not identify the attachment mechanism. It therefore cannot corroborate a spring-bar classification."
+    },
+    {
+      "url": "https://delugs.com/pages/straps-tudor-black-bay-54-m79000n-0001",
       "status": "rejected",
-      "note": "The exact-reference fitment guide uses spring bars when fitting replacement straps, but TUDOR's exact product and service material does not independently document the factory bracelet mechanism. The project's physical-interface policy therefore keeps attachmentType open."
+      "note": "The exact-reference fitment guide explicitly describes standard drilled lugs and spring bars, but TUDOR's exact product and service material does not independently identify the factory bracelet mechanism. The project's physical-interface policy therefore keeps attachmentType open."
     }
   ],
   "verifiedProvisionalFields": [
@@ -158,6 +168,12 @@
       "value": 45.8,
       "sourceUrl": "https://www.youtube.com/watch?v=EgNpVn2_dUM",
       "note": "The exact-reference specialist measurement is 45.8 mm; an independent hands-on review reports 46 mm, consistent after rounding."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 139,
+      "sourceUrl": "https://archive.watch.de/archive_germany/tudor-heritage-black-bay-54-ref-m79000n-0001-80276.html",
+      "note": "The exact-reference unworn/full-set listing reports 139 g including the bracelet at 200 mm combined length; Rasin independently reports the same weight for a new example with a maximum 21 cm bracelet."
     }
   ],
   "rejectedProvisionalFields": [
@@ -198,6 +214,6 @@
       "reason": "Hours, minutes, seconds, and stop-seconds are basic functions rather than supported catalogue complication values."
     }
   ],
-  "missingM1Fields": ["weightFullG", "attachmentType"],
-  "note": "Keep as research-only. Two independent exact-reference measurements resolve lug-to-lug at 45.8 mm, rounded elsewhere to 46 mm. Complete-bracelet weight reports vary with sizing, and the exact spring-bar fitment guide lacks the manufacturer corroboration required for a factory-interface fact, so those two M1 fields remain open."
+  "missingM1Fields": ["attachmentType"],
+  "note": "Keep as research-only. Two independent exact-reference measurements resolve lug-to-lug at 45.8 mm, rounded elsewhere to 46 mm. Independent exact-reference new/unworn records resolve full-length bracelet weight at 139 g; the 135 g sized-bracelet observation is retained but not used for that normalization. The exact spring-bar fitment guide still lacks the manufacturer corroboration required for a factory-interface fact, so attachmentType remains open."
 }

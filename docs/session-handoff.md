@@ -396,6 +396,11 @@ For the post-batch evidence-gap pass on the same date:
   alongside the watch's band, resolving the factory interface as `spring_bar`.
   The conflicting exact-reference lume observations remain insufficient for a
   categorical grade.
+- TUDOR M79000N-0001 now needs only manufacturer-corroborated factory attachment
+  evidence. Independent exact-reference new and unworn/full-set records resolve
+  normalized full-length bracelet weight at 139 g with approximately 19.5-21 cm
+  of bracelet; the lower 135 g owner report is explicitly a sized-bracelet
+  observation and is not used for the full configuration.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -424,8 +429,7 @@ On 2026-08-28 for Phases 1–4:
    bundled and relational catalogues.
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
    needs an authoritative repeatable lume grade. TUDOR M79000N-0001 now needs
-   only normalized full configured weight and manufacturer-corroborated
-   attachment evidence. Cartier WSTA0107 needs
+   only manufacturer-corroborated attachment evidence. Cartier WSTA0107 needs
    rectangular geometry support plus M1 sources; Swatch SO28N100 needs
    exact-reference primary M1 sources. Do not accept a row merely to make the
    batch non-empty.

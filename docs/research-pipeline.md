@@ -361,6 +361,15 @@ row remains research-only with one M1 gap because its exact-reference lume
 accounts still conflict and no controlled repeatable performance grade has
 been found.
 
+An exact-reference follow-up resolved TUDOR M79000N-0001's normalized
+full-length bracelet weight at 139 g. Independent new and unworn/full-set dealer
+records converge on that value with approximately 19.5-21 cm of bracelet; the
+lower 135 g owner measurement is explicitly from a sized bracelet and is not
+used for the full configuration. TUDOR remains research-only with
+`attachmentType` as its only M1 gap: the exact specialist fitment guide names
+spring bars, but TUDOR's product and service material does not identify the
+factory mechanism.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

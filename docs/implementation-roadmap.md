@@ -435,6 +435,14 @@ spring-bar replacement part 509-2074 for that exact Garrison reference. The row
 remains research-only because its exact-reference lume accounts conflict and no
 controlled repeatable grade was found; lume is now its only M1 gap.
 
+A subsequent exact-reference pass resolved TUDOR M79000N-0001's normalized
+full-length bracelet weight at 139 g. Independent new and unworn/full-set dealer
+records report the same value with approximately 19.5-21 cm of bracelet; the
+135 g owner measurement is retained as a sized-bracelet observation rather than
+used for the full configuration. TUDOR remains research-only because the exact
+specialist fitment guide's spring-bar description still lacks manufacturer
+corroboration of the factory attachment mechanism.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
