@@ -59,8 +59,8 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 14 accepted catalogue targets linked to all current reviewed variants;
-- 17 active coverage-intent targets, with all default discovery jobs reviewed;
+- 15 accepted catalogue targets linked to all current reviewed variants;
+- 16 active coverage-intent targets, with all default discovery jobs reviewed;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
   mechanicals.
@@ -253,13 +253,14 @@ day, which is neither universal nor a guaranteed bound for the selected
 reference.
 
 Generated migration `0011_expand_catalogue_orient.sql` is replay-safe and adds
-only the reviewed Orient row after migration `0010`. The local seed now has 14
-variants and covers 244/28,800 cells (0.85%); 148 covered cells contain an
-under-evidenced candidate. Strict research reports 14 accepted targets, 17
-active targets, and 21 reviews: two `ready_for_migration`, 17
-`needs_more_evidence`, and two `excluded`. The live database remains at 12 rows,
-so neither migration nor the bundled seed may be pushed until `0010` and `0011`
-are applied in order and 14-row SQL parity passes.
+only the reviewed Orient row after migration `0010`. At that checkpoint the
+local seed had 14 variants and covered 244/28,800 cells (0.85%); 148 covered
+cells contained an under-evidenced candidate. Strict research reported 14
+accepted targets, 17 active targets, and 21 reviews: two
+`ready_for_migration`, 17 `needs_more_evidence`, and two `excluded`. The live
+database remained at 12 rows, so neither migration nor the bundled seed could
+be pushed until `0010` and `0011` were applied in order and 14-row SQL parity
+passed.
 
 The next source-led pass checked the two-field Seiko HCC004J1 and Citizen
 BM8180-03E reviews. An exact-reference retailer explicitly defines HCC004J1's
@@ -284,6 +285,27 @@ configuration. Its only exact-reference lume-performance account is
 uncontrolled and production-undated, and dealer evidence that replacement 420
 cases use spring bars does not satisfy the manufacturer-service corroboration
 rule for the factory bracelet. Lume and attachment remain open.
+
+Marathon WW194003BK-0108 then became the third `ready_for_migration` review.
+The exact current product and specification sheet establish the configured
+offer and physical facts; TMI's NH35A technical guide supplies the exact
+movement's published -20/+40 seconds-per-day static bound; and an
+exact-configuration dealer record supplies 45 g full weight. Marathon's
+full-night tritium description supports `strong` lume under the catalogue's
+self-powered-light policy. Its one-piece DEFSTAN strap, fixed-bar owner record,
+and manufacturer spring-bar service path map the non-user-removable interface
+to the existing `proprietary` attachment class rather than ordinary
+`spring_bar`.
+
+Generated migration `0012_expand_catalogue_marathon.sql` is replay-safe and
+adds only that reviewed row after migrations `0010` and `0011`. The local seed
+now has 15 variants and covers 280/28,800 cells (0.97%): 276 are
+single-candidate, all 280 are under-diversified, and 184 contain an
+under-evidenced candidate. Strict research reports 15 accepted targets, 16
+active targets, and 21 reviews: three `ready_for_migration`, 16
+`needs_more_evidence`, and two `excluded`. The live database remains at 12
+rows, so the three migrations and bundled seed must remain unpushed until they
+are applied in order and 15-row SQL parity passes.
 
 ## Job idempotency and retention
 

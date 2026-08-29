@@ -2,9 +2,9 @@
   "reviewVersion": 1,
   "targetId": "marathon-compact-field-tool",
   "jobId": "a3c6d0fd-94b9-47c0-88e3-91b1422d4651",
-  "reviewedAt": "2026-08-29T07:01:45Z",
+  "reviewedAt": "2026-08-29T08:11:44Z",
   "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "outcome": "ready_for_migration",
   "candidateIdentity": {
     "brand": "Marathon",
     "model": "General Purpose Mechanical",
@@ -31,6 +31,31 @@
       "url": "https://manuals.plus/m/899d1891ce19c7c5ac795e76329ff08119d80d5cff505beb7e0bfeb6c0c83178",
       "status": "rejected",
       "note": "This third-party manual copy is unnecessary because Marathon's own exact-reference specification sheet supports the relevant values directly."
+    },
+    {
+      "url": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/NH35_TG.pdf",
+      "status": "validated_primary",
+      "note": "Time Module's current official NH3-series technical guide explicitly covers NH35A and specifies static accuracy of -20/+40 seconds per day under defined full-wind and positional test conditions. Marathon's exact product and sheet identify NH35A, so this is an exact-applicable movement-manufacturer bound rather than a generic family estimate."
+    },
+    {
+      "url": "https://item.rakuten.co.jp/chronoworld/1024-0000804/",
+      "status": "validated_secondary",
+      "note": "The exact-reference specialist listing covers WW194003BK-0108 with its supplied MIL-S-46383B Type II nylon strap and reports a 45 g full configured weight. A separate exact-family configured dealer listing independently reports the same 45 g value, while Marathon's own catalogue reports 38 g without the strap."
+    },
+    {
+      "url": "https://www.marathonwatch.com/pages/product-database",
+      "status": "validated_primary",
+      "note": "Marathon's official product database links the current WW194003 manual and specification sheet and identifies the family in its service system. Together with the exact page's one-piece DEFSTAN configuration and Marathon's service replacement of damaged spring bars, this corroborates a fixed serviceable-bar mechanism rather than a standard user-removable interface."
+    },
+    {
+      "url": "https://uk.marathonwatch.com/pages/watch-maintenance-repair-services",
+      "status": "validated_primary",
+      "note": "Marathon's official maintenance description includes assessment and replacement of damaged or unusable spring bars. For the one-piece-strap 34 mm GPM, exact-product owner inspection documents those bars as fixed, supporting a service-only fixed-bar interface mapped to proprietary."
+    },
+    {
+      "url": "https://www.opticsplanet.com/reviews/reviews-marathon-watch-general-purpose-mechanical-wristwatch-w-tritium-gpm/1e74fcd8-4ebb-11eb-afb3-061da0ae1a82.html",
+      "status": "validated_secondary",
+      "note": "An exact-product owner review explicitly identifies the 34 mm GPM's strap bars as fixed. This independently inspected physical fact is consistent with Marathon's exact one-piece DEFSTAN strap and manufacturer service path, and is normalized as proprietary rather than standard spring_bar."
     }
   ],
   "verifiedProvisionalFields": [
@@ -116,6 +141,48 @@
       "value": ["new"],
       "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
       "note": "The manufacturer offer is for a new watch."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 45,
+      "sourceUrl": "https://item.rakuten.co.jp/chronoworld/1024-0000804/",
+      "note": "The exact-reference listing reports 45 g with the supplied nylon strap; this agrees with a separate configured dealer record and Marathon's 38 g head-only specification plus the lightweight one-piece strap."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -20,
+      "sourceUrl": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/NH35_TG.pdf",
+      "note": "The NH35A movement manufacturer's current technical guide specifies -20/+40 seconds per day under stated static test conditions."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 40,
+      "sourceUrl": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/NH35_TG.pdf",
+      "note": "The NH35A movement manufacturer's current technical guide specifies -20/+40 seconds per day under stated static test conditions."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 1,
+      "sourceUrl": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/NH35_TG.pdf",
+      "note": "Time Module expresses the exact-applicable NH35A static accuracy bound per day."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "Marathon documents full nighttime visibility from tritium tubes across the hour markers and hour/minute hands; its product catalogue further describes constant self-powered glow for maximum low-light visibility without charge or fade. This is mapped to strong."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "proprietary",
+      "sourceUrl": "https://www.opticsplanet.com/reviews/reviews-marathon-watch-general-purpose-mechanical-wristwatch-w-tritium-gpm/1e74fcd8-4ebb-11eb-afb3-061da0ae1a82.html",
+      "note": "Exact-product inspection identifies fixed strap bars; Marathon's one-piece strap specification and manufacturer service replacement path corroborate the service-only mechanism. Fixed bars are normalized to the catalogue's proprietary class, not spring_bar."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194003_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact specification is a central hours/minutes/seconds watch with no supported catalogue complication."
     }
   ],
   "rejectedProvisionalFields": [
@@ -137,9 +204,9 @@
     },
     {
       "fieldName": "operation.lumeGrade",
-      "reason": "Tritium gas tubes identify the illumination technology but do not establish the catalogue's weak/moderate/strong performance class."
+      "reason": "The provider's bare tritium label is insufficient by itself; the corrected strong mapping comes from Marathon's explicit full-night, constant, maximum-low-light visibility claims for the exact product family."
     }
   ],
-  "missingM1Fields": ["weightFullG", "accuracy", "lumeGrade", "attachmentType"],
-  "note": "Keep as research-only. The exact variant is otherwise strongly documented by Marathon, but qualitative 'lightweight' wording is not a full-weight measurement, the sources do not state a rate tolerance or strap-to-case interface, and tritium technology cannot be inserted directly into the categorical lume field."
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. Exact Marathon sources establish the fixed WW194003BK-0108 configuration; TMI supplies the exact-applicable NH35A rate bound, two configured dealer records resolve 45 g, explicit full-night tritium language maps to strong, and exact physical inspection plus Marathon product/service material resolves the fixed-bar interface as proprietary."
 }

@@ -2459,7 +2459,7 @@
         {
           "id": "marathon-compact-field-tool",
           "referenceLabel": "Select a current compact field/tool reference",
-          "state": "needs_review",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "500_1000",
@@ -2480,7 +2480,8 @@
               "time_only_no_date"
             ]
           },
-          "coverageRationale": "Add a distinct compact tool archetype where current field rows are incomplete or too large."
+          "coverageRationale": "Add a distinct compact tool archetype where current field rows are incomplete or too large.",
+          "catalogueVariantId": "marathon-ww194003bk-0108"
         }
       ]
     },

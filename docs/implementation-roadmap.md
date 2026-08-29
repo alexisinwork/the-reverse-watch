@@ -245,8 +245,8 @@ Verification:
 
 Checkpoint 2026-08-29: the complete 200-dossier owner knowledge pack is
 schema-validated and linked as research-only M0/M2 context. Together with one
-existing roadmap brand, the strict manifest now contains 201 brands, links 14
-reviewed seed variants, and retains 17 active coverage targets. The coverage-ranked,
+existing roadmap brand, the strict manifest now contains 201 brands, links 15
+reviewed seed variants, and retains 16 active coverage targets. The coverage-ranked,
 resumable Perplexity worker uses native JSON Schema plus Zod validation,
 immutable artifacts, fingerprint reuse, globally increasing attempts, bounded
 concurrency, rate-limit handling, and explicit review artifacts. Provider
@@ -348,13 +348,13 @@ recommendations were tested on the watch, documents the standard 20 mm
 spring-bar interface and is corroborated by Orient's own spring-bar service
 instructions. The seed source contract now represents this evidence honestly
 as `secondary_editorial`; it is not mislabeled as manufacturer evidence.
-Generated migration `0011` adds only this reviewed row after `0010`. The local
-seed now has 14 variants and projects to 244/28,800 cells (0.85%), while the
-live database remains at 12 rows. Certina's product-linked manual was also
-checked, but its approximate range for “most” non-chronometers is not an
-exact-reference guarantee, so Certina remains research-only. The current
-strict checkpoint is 14 accepted targets, 17 needing review, and two excluded;
-the review outcomes are two migration-ready, 17 needing more evidence, and two
+Generated migration `0011` adds only this reviewed row after `0010`. At that
+checkpoint the local seed had 14 variants and projected to 244/28,800 cells
+(0.85%), while the live database remained at 12 rows. Certina's product-linked
+manual was also checked, but its approximate range for “most”
+non-chronometers is not an exact-reference guarantee, so Certina remains
+research-only. That checkpoint had 14 accepted targets and 17 active targets;
+the review outcomes were two migration-ready, 17 needing more evidence, and two
 excluded.
 
 A subsequent near-complete review pass resolved Seiko HCC004J1's attachment as
@@ -377,6 +377,19 @@ records independently agree on an approximately 128 g steel-bracelet weight.
 Its production-undated qualitative lume report is not a repeatable grade, and
 dealer-supplied 420-case spring-bar parts do not meet the manufacturer-service
 corroboration rule for the factory bracelet. It remains research-only.
+
+Marathon WW194003BK-0108 subsequently became the third migration-ready Phase 5
+candidate. Exact current manufacturer pages, TMI's exact NH35A technical guide,
+and an exact configured dealer record resolve its full M1 row, including 45 g
+full weight and a -20/+40 seconds-per-day bound. Its self-powered full-night
+tritium maps to `strong`; the one-piece strap, fixed-bar evidence, and
+manufacturer service path map the fixed interface to `proprietary`. Generated
+migration `0012` adds only Marathon after `0010` and `0011`. The local seed now
+has 15 variants and projects to 280/28,800 cells (0.97%), while live Supabase
+remains at 12 rows. The current strict checkpoint is 15 accepted targets, 16
+active targets, and 21 reviews: three migration-ready, 16 needing more
+evidence, and two excluded. All three migrations must be applied in order and
+15-row parity proved before the bundled seed or commits are pushed.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

@@ -184,6 +184,54 @@
       "publisher": "Delugs",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-29T07:53:23Z"
+    },
+    {
+      "id": "marathon-ww194003bk-0108",
+      "url": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "title": "34mm Black General Purpose Mechanical — WW194003BK-0108",
+      "publisher": "Marathon Watch",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T08:11:44Z"
+    },
+    {
+      "id": "marathon-ww194003-spec-sheet",
+      "url": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194003_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "title": "34mm GPM specification sheet — WW194003BK-0108",
+      "publisher": "Marathon Watch",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-29T08:11:44Z"
+    },
+    {
+      "id": "tmi-nh35-technical-guide",
+      "url": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/NH35_TG.pdf",
+      "title": "NH3 Series technical guide — NH35A",
+      "publisher": "Time Module Inc.",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-29T08:11:44Z"
+    },
+    {
+      "id": "chronoworld-marathon-ww194003bk-0108",
+      "url": "https://item.rakuten.co.jp/chronoworld/1024-0000804/",
+      "title": "Marathon General Purpose Field Watch Mechanical — WW194003BK-0108",
+      "publisher": "Chronoworld Japan",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:11:44Z"
+    },
+    {
+      "id": "marathon-maintenance-services",
+      "url": "https://uk.marathonwatch.com/pages/watch-maintenance-repair-services",
+      "title": "Watch maintenance and repair services",
+      "publisher": "Marathon Watch",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-29T08:11:44Z"
+    },
+    {
+      "id": "opticsplanet-marathon-gpm-fixed-bars",
+      "url": "https://www.opticsplanet.com/reviews/reviews-marathon-watch-general-purpose-mechanical-wristwatch-w-tritium-gpm/1e74fcd8-4ebb-11eb-afb3-061da0ae1a82.html",
+      "title": "Marathon General Purpose Mechanical owner review — fixed bars",
+      "publisher": "OpticsPlanet",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:11:44Z"
     }
   ],
   "fx": {
@@ -1626,6 +1674,140 @@
         },
         {
           "sourceId": "delugs-orient-ra-ac0m03s-fitment",
+          "fields": ["attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "marathon-ww194003bk-0108",
+      "brand": {
+        "slug": "marathon",
+        "name": "Marathon",
+        "serviceCountries": null
+      },
+      "collection": "General Purpose",
+      "model": "General Purpose Mechanical",
+      "referenceCode": "WW194003BK-0108",
+      "variantName": "34mm black Standard-Issue · black Nylon DEFSTAN strap",
+      "productUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "price": {
+        "amountMinor": 57500,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-29T08:11:44Z",
+        "staleAfter": "2027-02-25T08:11:44Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-29T08:11:44Z",
+        "availabilityStaleAfter": "2026-09-28T08:11:44Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "high-impact composite fibreshell",
+        "caseback": null,
+        "bracelet": null,
+        "strap": "black 16 mm Nylon DEFSTAN with parkerized steel hardware"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 34,
+        "caseThicknessMm": 12.5,
+        "lugToLugMm": 41,
+        "lugWidthMm": 16,
+        "weightFullG": 45,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "Seiko NH35A",
+        "powerReserveHours": 41,
+        "accuracyLowerSeconds": -20,
+        "accuracyUpperSeconds": 40,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 30,
+        "crownType": "push_pull",
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "proprietary",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "compact_military_field",
+        "socialSignals": ["anti_luxury"],
+        "aestheticDna": ["structural_tool", "mid_century_industrial"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "marathon-ww194003bk-0108",
+          "fields": [
+            "identity",
+            "price",
+            "availability",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "marathon-ww194003-spec-sheet",
+          "fields": [
+            "identity",
+            "materials",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "tmi-nh35-technical-guide",
+          "fields": ["accuracy"]
+        },
+        {
+          "sourceId": "chronoworld-marathon-ww194003bk-0108",
+          "fields": ["weightFullG"]
+        },
+        {
+          "sourceId": "marathon-maintenance-services",
+          "fields": ["attachmentType"]
+        },
+        {
+          "sourceId": "opticsplanet-marathon-gpm-fixed-bars",
           "fields": ["attachmentType"]
         }
       ]

@@ -17,9 +17,9 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Nine additive migrations are applied to Supabase; additive migrations `0010`
-  and `0011` are prepared and locally verified but not yet applied because the
-  Supabase MCP OAuth refresh expired. Tables remain server-only;
+- Nine additive migrations are applied to Supabase; additive migrations `0010`,
+  `0011`, and `0012` are prepared and locally verified but not yet applied
+  because the Supabase MCP OAuth refresh expired. Tables remain server-only;
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
@@ -72,14 +72,15 @@ phase.
   pre-collection core matrix and report empty, single-candidate,
   under-diversified, and under-evidenced cells.
 - The applied baseline has 11 brands and 12 variants. The reviewed local seed
-  now has 13 brands and 14 variants after adding Christopher Ward
-  C63-39AGM4-S00W0-B0 and Orient RA-AC0M03S. Migrations `0010` and `0011` each
-  carry only their additive row and its sources, price, availability, evidence,
-  deployment, friction, traits, and product URL.
-- The current local audit reports 244 of 28,800 cells covered (0.85%), all
-  single-candidate and under-diversified; 148 are under-evidenced. The applied
-  live baseline remains 180 cells until migrations `0010` and `0011` are
-  applied in order.
+  now has 14 brands and 15 variants after adding Christopher Ward
+  C63-39AGM4-S00W0-B0, Orient RA-AC0M03S, and Marathon WW194003BK-0108.
+  Migrations `0010`, `0011`, and `0012` each carry only their additive row and
+  its sources, price, availability, evidence, deployment, friction, traits, and
+  product URL.
+- The current local audit reports 280 of 28,800 cells covered (0.97%): 276 are
+  single-candidate, all 280 are under-diversified, and 184 are under-evidenced.
+  The applied live baseline remains 180 cells until migrations `0010`, `0011`,
+  and `0012` are applied in order.
 - Browser roles have no table grants. The security advisor's only current
   findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
   both functions have an empty `search_path`, fixed read-only SQL, and no
@@ -108,8 +109,8 @@ phase.
   unit to the reviewed bundle plus local predicates.
 - `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
   applied baseline variants across six golden profiles. It must be rerun for
-  all 14 variants immediately after migrations `0010` and `0011` are applied
-  in order. PostgreSQL
+  all 15 variants immediately after migrations `0010`, `0011`, and `0012` are
+  applied in order. PostgreSQL
   owns the live hard-filter partition; TypeScript owns scoring, explanations,
   diversity, and fallback.
 - Vercel Production and Preview have the public Supabase URL and publishable
@@ -314,15 +315,14 @@ For the post-batch evidence-gap pass on the same date:
   for most non-chronometers, not a guaranteed numerical tolerance for this
   reference.
 - Generated migration `0011_expand_catalogue_orient.sql` is an additive,
-  replay-safe one-row expansion intended to run after `0010`. The local seed is
-  now 13 brands/14 variants and coverage is 244/28,800 cells (0.85%), with 148
-  under-evidenced cells.
-- Strict research now reports 14 accepted targets, 17 active targets, and 21
-  reviews: two `ready_for_migration`, 17 `needs_more_evidence`, and two
-  `excluded`. The worker queue remains empty.
-- Live Supabase remains 11 brands/12 variants. Apply `0010`, then `0011`, prove
-  14-row catalogue and six-profile SQL parity, and only then push the local
-  commits.
+  replay-safe one-row expansion intended to run after `0010`. At that checkpoint
+  the local seed had 13 brands/14 variants and coverage was 244/28,800 cells
+  (0.85%), with 148 under-evidenced cells.
+- Strict research at that checkpoint reported 14 accepted targets, 17 active
+  targets, and 21 reviews: two `ready_for_migration`, 17
+  `needs_more_evidence`, and two `excluded`. The worker queue remained empty.
+- Live Supabase remained 11 brands/12 variants, with `0010` and `0011` awaiting
+  application and a 14-row catalogue/six-profile SQL parity proof.
 - A follow-up exact-reference pass resolved Seiko HCC004J1's attachment as
   `spring_bar`, but retained its lume gap because an official regional Lumibrite
   specification conflicts with an independent exact-reference report of no
@@ -338,6 +338,22 @@ For the post-batch evidence-gap pass on the same date:
   two exact-reference dealer records. It remains research-only for lume and
   attachment because the lume report is uncontrolled and 420-case replacement
   parts do not establish the factory bracelet mechanism under the source policy.
+- Marathon WW194003BK-0108 is now the third migration-ready review. Its exact
+  current product and specification sheet, the exact NH35A movement guide, and
+  an exact configured dealer record resolve the $575 offer, 45 g full weight,
+  and -20/+40 seconds-per-day bound. Marathon's full-night tritium claim maps to
+  `strong`; the one-piece DEFSTAN strap, fixed-bar owner evidence, and
+  manufacturer spring-bar service path map the fixed service interface to the
+  existing `proprietary` class. Generated migration `0012` adds only this row
+  after `0010` and `0011`.
+- The local seed is now 14 brands/15 variants and covers 280/28,800 cells
+  (0.97%): 276 single-candidate, 280 under-diversified, and 184 under-evidenced.
+  Strict research reports 15 accepted targets, 16 active targets, and 21
+  reviews: three `ready_for_migration`, 16 `needs_more_evidence`, and two
+  `excluded`.
+- Live Supabase remains 11 brands/12 variants. Apply `0010`, then `0011`, then
+  `0012`, prove 15-row catalogue and six-profile SQL parity, and only then push
+  the local commits.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -358,7 +374,8 @@ On 2026-08-28 for Phases 1–4:
 
 1. Reconnect the Supabase MCP for project `osfqexnzgkksfvaocjvl`, apply
    `0010_expand_catalogue_christopher_ward.sql` and then
-   `0011_expand_catalogue_orient.sql`, then run live 14-row catalogue and
+   `0011_expand_catalogue_orient.sql`, followed by
+   `0012_expand_catalogue_marathon.sql`, then run live 15-row catalogue and
    six-profile SQL parity. Only push after that succeeds so production never
    sees divergent bundled and relational catalogues.
 2. Resolve or explicitly retain the first review gaps. Seiko HCC004J1 now needs
@@ -370,7 +387,7 @@ On 2026-08-28 for Phases 1–4:
    and illumination mapping; Cartier WSTA0107 needs rectangular geometry
    support plus M1 sources; Swatch SO28N100 needs exact-reference primary M1
    sources. Do not accept a row merely to make the batch non-empty.
-3. Retain Citizen BM8180-03E, Sinn 856 UTC, Marathon WW194003BK-0108, and Omega
+3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Do not salvage contradictory or blocked provider
    claims manually.
@@ -399,7 +416,7 @@ On 2026-08-28 for Phases 1–4:
   intake: 200 dossiers, 951 family rows, 248 required variant splits, 169
   dossiers mapped through Q1-Q16, and 1,748 unique cited URLs.
 - The manifest now contains 201 brands (the pack plus one existing roadmap
-  brand), all 14 reviewed seed links, and 17 active coverage-led targets.
+  brand), all 15 reviewed seed links, and 16 active coverage-led targets.
   Knowledge hash/count drift and missing review artifacts fail the strict audit.
 - The default worker queue is the same coverage-ranked queue shown by
   `npm run plan:research`; successful fingerprints are reusable, attempts remain

@@ -141,11 +141,10 @@ and enumerates 28,800 meaningful core-axis cells:
 × 4 accuracy tolerances × 4 weight limits × 5 representative function profiles
 ```
 
-The reviewed 14-variant local seed currently projects into 244 of 28,800 cells
-(0.85%). Every covered cell has one candidate, every covered cell has fewer than
-three brands, and 148 covered cells contain at least one under-evidenced
-candidate. This is a coverage baseline, not a market-coverage claim. The audit
-separately reports:
+The reviewed 15-variant local seed currently projects into 280 of 28,800 cells
+(0.97%). Of those, 276 have one candidate, all 280 have fewer than three brands,
+and 184 contain at least one under-evidenced candidate. This is a coverage
+baseline, not a market-coverage claim. The audit separately reports:
 
 - empty cells;
 - cells with one candidate;
@@ -172,10 +171,12 @@ Migration `0010_expand_catalogue_christopher_ward.sql` adds the independently
 reviewed C63 Sealander GMT exact SKU. Migration
 `0011_expand_catalogue_orient.sql` then adds Orient RA-AC0M03S and its exact
 manufacturer evidence plus the reviewed exact-reference attachment source.
-Together they bring the intended live catalogue to 13 brands and 14 variants.
-Both remain unapplied while the Supabase MCP OAuth connection is expired; the
-bundled seed must not be pushed until the migrations are applied in order and
-the 14-row parity audit succeeds.
+Migration `0012_expand_catalogue_marathon.sql` then adds Marathon
+WW194003BK-0108 with its reviewed exact-reference movement, weight, lume, and
+fixed-interface evidence. Together they bring the intended live catalogue to
+14 brands and 15 variants. All three remain unapplied while the Supabase MCP
+OAuth connection is expired; the bundled seed must not be pushed until the
+migrations are applied in order and the 15-row parity audit succeeds.
 
 `npm run audit:catalogue-parity` validates the strict RPC response against the
 bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes
