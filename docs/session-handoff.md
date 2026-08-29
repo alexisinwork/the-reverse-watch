@@ -373,8 +373,12 @@ For the post-batch evidence-gap pass on the same date:
   seconds-per-day accuracy bound. Omega's official Master Chronometer page
   explicitly includes the exact reference, and a five-year exact-reference
   review corroborates it with +4 and +2 seconds-per-day measurements. Omega
-  remains research-only for categorical lume, manufacturer-corroborated factory
-  attachment, and explicit date status.
+  now also has independently retrieved exact official product and product-sheet
+  support for its configuration, current $7,800 U.S. in-stock offer, geometry,
+  approximately 134 g total weight, movement, and operation. Two independent
+  exact-reference specifications explicitly resolve no-date status. Omega
+  remains research-only for categorical lume and manufacturer-corroborated
+  factory attachment.
 - Seiko Presage HCC004J1 is now the fifth migration-ready review. Thong Sia's
   exact official Seiko Boutique page reports `Lumibrite: N/A`; Seiko's
   corporate directory identifies Thong Sia as its Singapore distributor, and
@@ -442,9 +446,9 @@ On 2026-08-28 for Phases 1–4:
    repeatable lume grade. Do not accept a row merely to make the batch non-empty.
 3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
-   independently resolved. Omega's accuracy is now resolved; its lume,
-   attachment, and date-status gaps remain. Do not salvage contradictory or
-   blocked provider claims manually.
+   independently resolved. Omega's accuracy and no-date status are now resolved;
+   its lume and attachment gaps remain. Do not salvage contradictory or blocked
+   provider claims manually.
 4. Convert only M1-complete reviewed candidates into small additive catalogue
    migrations. Keep every knowledge-pack family research-only until it is split
    into homogeneous variants and independently sourced.

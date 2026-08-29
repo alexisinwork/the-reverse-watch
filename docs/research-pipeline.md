@@ -382,6 +382,17 @@ research-only for three fields: conflicting 18 g and 22 g full-watch records,
 no published exact-applicable numerical quartz tolerance, and no explicit
 repeatable lume grade.
 
+An Omega 310.30.42.50.01.001 follow-up recovered both exact official sources
+that had previously been inaccessible. The current product page now exposes a
+$7,800 U.S. InStock offer, while the exact product sheet validates 42 x 13.54 x
+47.5 mm geometry, 20 mm lug width, approximately 134 g total weight, manual
+calibre 3861, 50-hour reserve, 50 m water resistance, Hesalite crystal, comfort
+setting, and chronograph function. Two independent exact-reference
+specifications explicitly report no date display. Omega remains research-only
+for `lumeGrade` and `attachmentType`: presence of luminous material is not a
+repeatable performance grade, and third-party fitment does not establish the
+factory bracelet interface without manufacturer corroboration.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

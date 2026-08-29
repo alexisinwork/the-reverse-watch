@@ -453,6 +453,15 @@ full-watch sources conflict at 18 g versus 22 g, Swatch publishes no numerical
 quartz rate bound applicable to SO28N100, and black hands or omitted feature
 prose cannot establish a repeatable lume grade.
 
+Omega's exact 310.30.42.50.01.001 product page and downloadable product sheet
+became independently retrievable on follow-up, validating the steel-on-steel
+configuration, current $7,800 U.S. in-stock offer, 42 x 13.54 x 47.5 mm
+geometry, 20 mm lug width, approximately 134 g total weight, calibre 3861, and
+the remaining primary technical fields. Two independent exact-reference
+specifications explicitly report no date display, reducing Omega's M1 gaps from
+three to two. It remains research-only because the exact sources do not support
+a repeatable lume grade or manufacturer-corroborated factory attachment type.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

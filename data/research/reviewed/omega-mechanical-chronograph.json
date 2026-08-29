@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "omega-mechanical-chronograph",
   "jobId": "7944f21d-58b3-452d-8e5e-292ba99697f9",
-  "reviewedAt": "2026-08-29T08:30:50Z",
+  "reviewedAt": "2026-08-29T09:10:49Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -14,13 +14,13 @@
   "sourceChecks": [
     {
       "url": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001",
-      "status": "fetch_blocked",
-      "note": "The exact official product page was blocked by robots during independent review. Provider extraction is retained as provisional but cannot be promoted on its own."
+      "status": "validated_primary",
+      "note": "The exact official U.S. product page was independently retrieved on follow-up. It validates the current reference and steel-on-steel configuration, a $7,800 USD manufacturer offer, and structured InStock status; its detailed dimensions and technical facts agree with the exact downloadable product sheet."
     },
     {
       "url": "https://www.omegawatches.com/media/pdf/watches/product-sheet/us/en-us/31030425001001-en-us.pdf",
-      "status": "fetch_blocked",
-      "note": "The exact official product sheet was also blocked during independent retrieval, and exact-reference searches did not surface a separately retrievable official or regulator record."
+      "status": "validated_primary",
+      "note": "The exact official product sheet was independently retrieved on follow-up. It validates identity, steel case and bracelet, 42 x 13.54 x 47.5 mm geometry, 20 mm between-lugs width, approximately 134 g total weight, manual-winding calibre 3861, 50-hour reserve, 50 m water resistance, Hesalite crystal, comfort-setting clasp, and chronograph function."
     },
     {
       "url": "https://www.omegawatches.com.hk/en-hk/world-of-omega/watchmaking/the-master-chronometer-certification/",
@@ -31,10 +31,87 @@
       "url": "https://www.fratellowatches.com/long-term-review-omega-speedmaster-professional-310-30-42-50-01-001/",
       "status": "validated_secondary",
       "note": "The exact-reference five-year owner review independently identifies the 0/+5 seconds-per-day Master Chronometer range and reports +4 and +2 seconds-per-day measurements in two positions, corroborating applicability without replacing the official bound."
+    },
+    {
+      "url": "https://watch-site.nl/en/horloges/omega-speedmaster-31030425001001/",
+      "status": "validated_secondary",
+      "note": "The exact-reference specification explicitly reports Date: No. A separate exact-reference pre-owned specification independently reports Date display: No."
+    },
+    {
+      "url": "https://www.careofcarl.co.uk/en/omega-pre-owned-speedmaster-31030425001001-steel-black",
+      "status": "validated_secondary",
+      "note": "The exact-reference specification explicitly reports no date display, independently corroborating Watch-Site's categorical no-date field."
+    },
+    {
+      "url": "https://everywatch.com/omega/31030425001001/watch-31827704",
+      "status": "rejected",
+      "note": "This aggregated seller record marks Date as a function, but the same row also misclassifies the exact manual-winding watch as automatic and describes its removable bracelet as fixed. Its visibly unreliable normalized metadata is rejected in favor of two independent exact-reference no-date specifications and Omega's exact product sheet."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.claspMicroadjustment"
+  ],
   "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001",
+      "note": "The exact reference remains an active configurable product on Omega's official U.S. store."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 780000,
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001",
+      "note": "The independently retrieved exact official U.S. page displays $7,800."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001",
+      "note": "The reviewed exact-reference offer is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001",
+      "note": "The reviewed snapshot is Omega's U.S. market page."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001",
+      "note": "The exact page's structured offer marks the reference InStock."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001",
+      "note": "The snapshot is Omega's direct official retail channel, represented by the catalogue's authorized channel class."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001",
+      "note": "The manufacturer offer is for a new watch."
+    },
     {
       "fieldName": "movement.accuracyLowerSeconds",
       "value": 0,
@@ -52,14 +129,58 @@
       "value": 1,
       "sourceUrl": "https://www.omegawatches.com.hk/en-hk/world-of-omega/watchmaking/the-master-chronometer-certification/",
       "note": "The permitted deviation is stated as a daily average and normalized to one day."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["chronograph"],
+      "sourceUrl": "https://www.omegawatches.com/media/pdf/watches/product-sheet/us/en-us/31030425001001-en-us.pdf",
+      "note": "The exact official sheet explicitly identifies a chronograph. Small seconds and a tachymeter are features but are not separate supported catalogue complications."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://watch-site.nl/en/horloges/omega-speedmaster-31030425001001/",
+      "note": "Two independent exact-reference specifications explicitly report no date or no date display."
     }
   ],
   "rejectedProvisionalFields": [
     {
+      "fieldName": "productionStatus",
+      "reason": "Current manufacturer product listing is source prose rather than the catalogue enum and is replaced by current."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider's $9,100 observation is no longer current; independent review retrieved a $7,800 exact-reference official U.S. offer."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "United States is replaced by the catalogue's normalized US country code."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Listed for sale is not a catalogue availability enum; the independently retrieved structured offer explicitly reports InStock."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Omega official online store is replaced by the catalogue's normalized authorized_dealer channel."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "reason": "Steel on steel identifies the supplied configuration but does not by itself establish the catalogue's integrated-bracelet construction flag."
+    },
+    {
       "fieldName": "operation.attachmentType",
       "reason": "Steel bracelet describes the supplied material, not whether the bracelet-to-case interface is spring-bar, quick-release, proprietary, or integrated."
+    },
+    {
+      "fieldName": "operation.shockResistant",
+      "reason": "The independently retrieved exact official page and sheet do not explicitly classify the watch as shock resistant."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "The provider merges chronograph with small seconds, tachymeter, certification, and anti-magnetism; only chronograph is a supported catalogue complication and is supplied as a reviewed replacement."
     }
   ],
-  "missingM1Fields": ["lumeGrade", "attachmentType", "dateStatus"],
-  "note": "Keep as research-only. Exact official certification evidence now resolves the 0/+5 seconds-per-day bound, corroborated by an exact-reference long-term test. The detailed provider result otherwise remains provisional because both cited product sources are independently inaccessible; luminescent material does not establish a categorical performance grade, specialist strap fitment is not manufacturer corroboration of the factory bracelet mechanism, and complication-list omission does not prove explicit no-date status."
+  "missingM1Fields": ["lumeGrade", "attachmentType"],
+  "note": "Keep as research-only. Omega's exact product page and product sheet are now independently retrievable and validate the core exact configuration, current $7,800 U.S. in-stock offer, geometry, approximately 134 g total weight, movement, operation, and chronograph function. Two independent exact-reference specifications explicitly resolve no-date status. The 0/+5 seconds-per-day official bound remains corroborated by an exact-reference long-term test. Luminescent material does not establish a categorical performance grade, and specialist strap fitment still lacks manufacturer corroboration of the factory bracelet mechanism."
 }
