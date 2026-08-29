@@ -453,7 +453,11 @@ establish a proprietary pinned attachment. Two exact-reference specifications
 explicitly establish no-date status. The row remains research-only because
 full-watch sources conflict at 18 g versus 22 g, Swatch publishes no numerical
 quartz rate bound applicable to SO28N100, and black hands or omitted feature
-prose cannot establish a repeatable lume grade.
+prose cannot establish a repeatable lume grade. A subsequent trace of Swatch's
+public exact-reference Shopper Products response found `c_weight = 64`, but the
+first-party field has no unit or watch-only configuration. It is retained as
+reviewed evidence rather than misclassified as wearable mass, so the weight gap
+remains open.
 
 Omega's exact 310.30.42.50.01.001 product page and downloadable product sheet
 became independently retrievable on follow-up, validating the steel-on-steel

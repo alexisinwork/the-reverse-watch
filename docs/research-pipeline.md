@@ -380,7 +380,11 @@ the catalogue therefore maps the interface to `proprietary`, not `spring_bar`.
 Two exact-reference specifications explicitly report no date. SO28N100 remains
 research-only for three fields: conflicting 18 g and 22 g full-watch records,
 no published exact-applicable numerical quartz tolerance, and no explicit
-repeatable lume grade.
+repeatable lume grade. Swatch's public exact-reference Shopper Products response
+also exposes `c_weight = 64`, but gives neither a unit nor a watch-only
+configuration. The review records that primary value without mapping it to
+`weightFullG`; it cannot resolve explicit full-watch evidence that already
+conflicts.
 
 An Omega 310.30.42.50.01.001 follow-up recovered both exact official sources
 that had previously been inaccessible. The current product page now exposes a

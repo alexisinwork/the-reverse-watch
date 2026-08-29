@@ -484,6 +484,10 @@ For the post-batch evidence-gap pass on the same date:
   original strap plus Swatch's connector-pin guide resolve a 17 mm proprietary
   interface; and two exact-reference specifications explicitly report no date.
   The conflicting 18 g and 22 g records are retained rather than normalized.
+  Swatch's public exact-reference Shopper Products response additionally exposes
+  `c_weight = 64`, but supplies no unit or watch-only configuration. The value is
+  recorded as primary evidence and explicitly rejected for `weightFullG` rather
+  than being mistaken for wearable mass.
 - Bulova 98B316 now needs only full configured weight and a repeatable lume
   grade. Citizen Watch Group's exact-model service lookup identifies Icon
   98B316 and lists its band and a dedicated spring-bar replacement separately,
@@ -594,7 +598,8 @@ On 2026-08-28 for Phases 1–4:
    and explicit no-lume evidence are supported, but it remains research-only.
    Swatch SO28N100 needs resolved full-watch weight, a numerical
    exact-applicable quartz rate bound, and a repeatable lume grade. Do not
-   accept a row merely to make the batch non-empty. Vostok 420059 has stronger
+   accept its unqualified official `c_weight = 64` as full-watch mass merely to
+   make the batch non-empty. Vostok 420059 has stronger
    exact factory evidence but still requires manufacturer-corroborated
    attachment semantics before acceptance. AP 16202ST's conventional lug width
    is now verified non-applicable, but its five remaining gaps keep it
