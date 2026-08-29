@@ -334,6 +334,10 @@ For the post-batch evidence-gap pass on the same date:
   research-only because bracelet-size-dependent weight reports conflict and
   exact replacement-strap fitment is not manufacturer corroboration of the
   factory bracelet attachment.
+- Vostok 420059 now has a reviewed 128 g steel-bracelet weight corroborated by
+  two exact-reference dealer records. It remains research-only for lume and
+  attachment because the lume report is uncontrolled and 420-case replacement
+  parts do not establish the factory bracelet mechanism under the source policy.
 
 On 2026-08-28 for Phases 1–4:
 

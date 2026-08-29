@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "vostok-affordable-mechanical-field",
   "jobId": "b4a10faa-fde5-4e14-ae0e-6acb189c2260",
-  "reviewedAt": "2026-08-29T07:10:12Z",
+  "reviewedAt": "2026-08-29T08:07:24Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -21,6 +21,26 @@
       "url": "https://meranom.com/en/why_buy_from_us.html",
       "status": "validated_secondary",
       "note": "Meranom explicitly identifies itself as a Chistopol retailer close to—not part of—the factory, states that factory warranty is supported, and says that it sells new watches. Its product facts remain reviewed secondary evidence rather than manufacturer-primary evidence."
+    },
+    {
+      "url": "https://www.bestwatch.ru/watch/Vostok/2416.00-420059/",
+      "status": "validated_secondary",
+      "note": "The exact-reference specialist listing reports an approximately 128 g full weight for the steel-bracelet configuration and independently corroborates the geometry, movement, rate, reserve, crystal, water resistance, and luminous-paint presence."
+    },
+    {
+      "url": "https://scubadudestore.com/products/vostok-amphibia-420059",
+      "status": "validated_secondary",
+      "note": "A separate exact-reference Vostok dealer also reports 128 g for the stainless-steel bracelet configuration, corroborating the full-weight value."
+    },
+    {
+      "url": "https://www.ebay.co.uk/urw/Vostok-Amphibia-Stainless-Steel-Russian-Military-Diver-Watch-420059/product-reviews/19034189571",
+      "status": "rejected",
+      "note": "A verified-purchase exact-reference owner calls the lume underwhelming, but supplies no controlled duration or intensity measurement and does not identify the production batch. A lone qualitative account does not establish a current repeatable lume grade."
+    },
+    {
+      "url": "https://vostok-world24.com/en/collections/frontpage/products/vostok-gehause-420-edelstahl",
+      "status": "rejected",
+      "note": "The specialist's replacement 420 case includes spring bars for the band connection, but it is a dealer-supplied component rather than manufacturer service evidence for the factory bracelet on exact reference 420059. It does not meet the catalogue's physical-interface corroboration policy."
     }
   ],
   "verifiedProvisionalFields": [
@@ -89,6 +109,12 @@
       "value": 18,
       "sourceUrl": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
       "note": "The exact product specification lists an 18 mm strap width."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 128,
+      "sourceUrl": "https://www.bestwatch.ru/watch/Vostok/2416.00-420059/",
+      "note": "The exact-reference specialist reports approximately 128 g for the steel-bracelet configuration, independently corroborated by a separate exact-reference Vostok dealer."
     }
   ],
   "rejectedProvisionalFields": [
@@ -121,6 +147,6 @@
       "reason": "Date is represented by dateStatus in the catalogue and is not one of the complication enum values."
     }
   ],
-  "missingM1Fields": ["weightFullG", "lumeGrade", "attachmentType"],
-  "note": "Keep as research-only. Exact secondary evidence is unusually complete but does not supply full-watch weight, a reviewed categorical lume grade, or the bracelet attachment interface, and the manufacturer itself has not yet been independently sourced."
+  "missingM1Fields": ["lumeGrade", "attachmentType"],
+  "note": "Keep as research-only. Two exact-reference dealer records resolve the steel-bracelet configuration at approximately 128 g. The only exact-reference lume-performance account is uncontrolled and production-undated, while dealer-supplied 420-case spring-bar evidence lacks manufacturer service corroboration for the factory bracelet, so those two categorical M1 fields remain open."
 }

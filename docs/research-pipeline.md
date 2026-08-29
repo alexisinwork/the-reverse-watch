@@ -278,6 +278,13 @@ sizing, while the exact spring-bar fitment guide lacks manufacturer-side
 corroboration of the factory bracelet mechanism. TUDOR therefore remains
 research-only for weight and attachment.
 
+Vostok 420059 likewise moved from three gaps to two after independent
+exact-reference dealer records agreed on an approximately 128 g steel-bracelet
+configuration. Its only exact-reference lume-performance account is
+uncontrolled and production-undated, and dealer evidence that replacement 420
+cases use spring bars does not satisfy the manufacturer-service corroboration
+rule for the factory bracelet. Lume and attachment remain open.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

@@ -372,6 +372,12 @@ produces conflicting 135 g and 139 g reports; its replacement-strap spring-bar
 fitment also lacks the manufacturer-side corroboration required to establish
 the factory attachment. TUDOR therefore remains research-only with two gaps.
 
+Vostok 420059 also moved from three gaps to two: two exact-reference dealer
+records independently agree on an approximately 128 g steel-bracelet weight.
+Its production-undated qualitative lume report is not a repeatable grade, and
+dealer-supplied 420-case spring-bar parts do not meet the manufacturer-service
+corroboration rule for the factory bracelet. It remains research-only.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
