@@ -18,7 +18,7 @@ phase.
   score-trace, and source sections after the six core screens or optional
   refinement groups.
 - Nine additive migrations are applied to Supabase; additive migrations `0010`
-  through `0017` are prepared and locally verified but not yet applied
+  through `0018` are prepared and locally verified but not yet applied
   because the Supabase MCP OAuth refresh expired. This continuation also
   confirmed that no Supabase tool/CLI session or configured Vercel credential
   is available locally. Tables remain server-only;
@@ -26,22 +26,22 @@ phase.
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
 - On 2026-08-29 the owner explicitly requested that the complete accumulated
-  branch be pushed. The 28 existing local commits plus this handoff checkpoint
-  are therefore being delivered to `origin/main`, superseding the earlier
+  branch be pushed. The 28 existing local commits plus the handoff checkpoint
+  were therefore delivered to `origin/main`, superseding the earlier
   temporary no-push instruction. This does not pretend the database is current:
-  live Supabase still lacks migrations `0010` through `0017`. The deployed
-  server requests the v2 RPC pair, strictly validates the response and exact
+  live Supabase still lacks migrations `0010` through `0018`. The deployed
+  server requests the v3 RPC pair, strictly validates the response and exact
   variant coverage, and falls back as one unit to the reviewed 18-row bundle
   plus deterministic local predicates when those RPCs are unavailable. Live
   18-row SQL parity remains mandatory before Supabase can become the active
   recommendation source again.
-- The owner-requested push advanced `origin/main` through `6a43255`. The Git
+- The owner-requested push advanced `origin/main` through `f505270`. The Git
   remote SHA matched local HEAD immediately afterward. The resulting Vercel
   deployment served the same `quiz-D6lju-YI.js` asset as the reviewed local
   build; `/`, `/quiz`, and `/health` returned 200. A valid core recommendation
   POST returned `catalogueOrigin: bundled_seed` and the visible notice `Live
   catalogue validation failed; using the reviewed bundled snapshot.` This is
-  the expected safe state while live Supabase lacks the v2 RPC pair.
+  the expected safe state while live Supabase lacks the v3 RPC pair.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
@@ -126,13 +126,17 @@ phase.
 - Migration `0017` adds only the homogeneous Black Bay 54 M79000N-0001 after
   exact manufacturer spring-bar-hole evidence resolved its final attachment
   gap.
+- Migration `0018` adds the explicit field-evidence applicability state and v3
+  RPC pair. Existing evidence remains `observed`; no historical null is
+  reclassified. Verified non-applicable conventional lug width is a hard
+  incompatibility, while unknown null remains verification-required.
 - The current local audit reports 496 of 28,800 cells covered (1.72%): 492 are
   single-candidate, all 496 are under-diversified, and 224 are under-evidenced.
   Coverage price bands now use the dated EUR base instead of raw source-currency
   numbers; this honestly exposes the current `15000_plus` band as empty rather
   than misclassifying the PLN-priced TUDOR row.
   The applied live baseline remains 180 cells until migrations `0010` through
-  `0017` are applied in order.
+  `0018` are applied in order.
 - Browser roles have no table grants. The security advisor's only current
   findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
   both functions have an empty `search_path`, fixed read-only SQL, and no
@@ -153,15 +157,16 @@ phase.
   artifacts.
 - Provenance and cosmetic preferences are visibly disclosed as unscored until
   reviewed brand/surface data exists.
-- `recommendation_catalogue_v2()` returns the accepted relational catalogue in
-  the strict Zod runtime shape. `recommendation_hard_filter_v2(profile, as_of)`
-  returns the authoritative hard-reject and missing-fact partition.
+- `recommendation_catalogue_v3()` returns the accepted relational catalogue in
+  the strict catalogue-version-2 Zod runtime shape, including sparse reviewed
+  applicability states. `recommendation_hard_filter_v3(profile, as_of)` returns
+  the authoritative hard-reject and missing-fact partition.
 - The server validates both RPC responses, requires exact variant coverage,
   caches valid catalogue facts for 60 seconds, and visibly falls back as one
   unit to the reviewed bundle plus local predicates.
 - `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
   applied baseline variants across six golden profiles. It must be rerun for
-  all 18 variants immediately after migrations `0010` through `0017` are
+  all 18 variants immediately after migrations `0010` through `0018` are
   applied in order. PostgreSQL
   owns the live hard-filter partition; TypeScript owns scoring, explanations,
   diversity, and fallback.
@@ -445,8 +450,9 @@ For the post-batch evidence-gap pass on the same date:
   reviews: six `ready_for_migration`, 13 `needs_more_evidence`, and two
   `excluded`.
 - Live Supabase remains 11 brands/12 variants. Apply migrations `0010` through
-  `0017`, prove 18-row catalogue and six-profile SQL parity, and only then push
-  the local commits.
+  `0018` and prove 18-row catalogue and six-profile SQL parity before treating
+  Supabase as active. The owner-authorized application push now operates on the
+  visible bundled fallback in the meantime.
 - Citizen BM8180-03E now needs only a repeatable lume grade. Citizen Watch
   Group's exact-model parts lookup lists dedicated spring-bar part 509-2074
   alongside the watch's band, resolving the factory interface as `spring_bar`.
@@ -480,18 +486,17 @@ For the post-batch evidence-gap pass on the same date:
   resolving lug-to-lug at 54.5 mm. Weight records at 274 g, 276 g, and
   approximately 270 g after bracelet sizing remain explicit rather than being
   forced into one value.
-- Blancpain Fifty Fathoms Tech 5019A 12B30 94A now needs conventional lug-width
-  handling, full configured weight, and numerical accuracy. Blancpain's exact
-  dossier establishes its 47 mm diameter and central-lug construction; an
-  exact-reference hands-on specification explicitly reports 47 mm lug-to-lug
-  because no conventional lugs project beyond the case.
-- The Blancpain width dash exposed a cross-layer applicability gap related to
-  Claude's Q11 audit. Evidence on a null `lugWidthMm` can currently satisfy the
-  generated completeness list while TypeScript and SQL classify an active
-  width request as unverified. Do not exploit that mismatch. Add an explicit
-  reviewed `not_applicable` value state and matching SQL/TypeScript
-  `lug_width_not_applicable` rejection before using a central-lug dash to close
-  M1; unknown null must remain verification-required.
+- Blancpain Fifty Fathoms Tech 5019A 12B30 94A now needs only full configured
+  weight and numerical accuracy. Blancpain's exact dossier establishes its 47
+  mm diameter and central-lug construction; an exact-reference hands-on
+  specification reports 47 mm lug-to-lug, and the exact manufacturer width
+  dash is reviewed as a physical `not_applicable` conventional lug width.
+- The Blancpain width dash exposed and now closes a cross-layer applicability
+  gap related to Claude's Q11 audit. Catalogue version 2, the strict seed
+  parser, the TypeScript hard filter, migration `0018`, and the v3 RPC pair all
+  distinguish reviewed `not_applicable` from unknown null. The former produces
+  `lug_width_not_applicable` for an active conventional-width request; the
+  latter remains verification-required. No historical null was reclassified.
 - Vostok Amphibia 420059 now needs only manufacturer-corroborated factory
   attachment evidence. Its exact factory page now supplies primary 39.6 x 46 x
   15 mm geometry, 128 g full configured weight, 18 mm bracelet width, calibre,
@@ -517,11 +522,12 @@ For the post-batch evidence-gap pass on the same date:
 - The latest evidence sequence is committed as `db77f92` (Swatch), `760979c`
   (Omega), `a6fb895` (Bulova), `e17a2db` (Blancpain), and `abf958d` (Vostok),
   followed by the Cartier geometry/evidence, Reverso correction, and TUDOR
-  expansion checkpoints. `npm run check` passes formatting, lint, type
-  generation, TypeScript, all 61
+  expansion and applicability checkpoints. `npm run check` passes formatting,
+  lint, type generation, TypeScript, all 66
   tests across 13 files, and the production build. The strict research,
   coverage, and knowledge audits pass, and a PostgreSQL parser accepts all 15
-  statements in migration `0016` and all 61 statements in migration `0017`.
+  statements in migration `0016`, all 61 statements in migration `0017`, and
+  all 14 statements in migration `0018`.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -548,7 +554,8 @@ On 2026-08-28 for Phases 1–4:
    `0014_expand_catalogue_seiko.sql`, followed by
    `0015_add_rectangular_case_geometry.sql`, followed by
    `0016_correct_reverso_rectangular_geometry.sql`, followed by
-   `0017_expand_catalogue_tudor.sql`. Run live 18-row catalogue and
+   `0017_expand_catalogue_tudor.sql`, and then
+   `0018_add_field_applicability.sql`. Run live 18-row catalogue and
    six-profile SQL parity. The accumulated application checkpoint has already
    been pushed under the owner's explicit instruction; until parity succeeds,
    production must visibly use the reviewed bundled catalogue and local hard
@@ -562,31 +569,27 @@ On 2026-08-28 for Phases 1–4:
    accept a row merely to make the batch non-empty. Vostok 420059 has stronger
    exact factory evidence but still requires manufacturer-corroborated
    attachment semantics before acceptance.
-3. Add explicit per-field applicability semantics before treating Blancpain's
-   manufacturer-published conventional-lug-width dash as M1-complete. Preserve
-   SQL/TypeScript parity: verified `not_applicable` is an incompatibility when a
-   conventional width is requested, while unknown null is missing evidence.
-4. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
+3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy and no-date status are now resolved;
    its lume and attachment gaps remain. Do not salvage contradictory or blocked
    provider claims manually.
-5. Convert only M1-complete reviewed candidates into small additive catalogue
+4. Convert only M1-complete reviewed candidates into small additive catalogue
    migrations. Keep every knowledge-pack family research-only until it is split
    into homogeneous variants and independently sourced.
-6. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
+5. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
    after every accepted batch.
-7. Continue prioritizing coverage and original-plan purpose over raw brand
+6. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
-8. If database access remains unavailable, do not rerun the now-empty default
+7. If database access remains unavailable, do not rerun the now-empty default
    queue. Close a named existing review gap only from independently identified
    exact-reference evidence, or add a new target with an explicit coverage or
    original-plan purpose before invoking the worker. Do not repeat excluded
    Bulova 98B429 or AP 15510ST.OO.1320ST.01, substitute generic calibre
    performance for a missing published exact-applicable bound, infer an
    attachment interface from the supplied strap or bracelet, or treat a blank
-   conventional lug width as a reviewed non-applicable policy.
-9. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
+   conventional lug width as non-applicable without exact reviewed evidence.
+8. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.
 

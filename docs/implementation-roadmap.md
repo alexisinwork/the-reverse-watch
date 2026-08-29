@@ -480,13 +480,12 @@ Blancpain Fifty Fathoms Tech 5019A 12B30 94A now has a reviewed 47 mm
 lug-to-lug span. Blancpain's exact technical dossier establishes the 47 mm
 diameter and central-lug construction, while an exact-reference hands-on
 specification explicitly reports that the lack of projecting conventional lugs
-makes lug-to-lug equal to diameter. The row remains research-only for
-conventional lug width, full configured weight, and numerical accuracy.
-The manufacturer's explicit dash for width between horns exposes a required
-schema distinction rather than a fact to coerce: verified `not_applicable` must
-be represented separately from unknown null and produce the same deterministic
-lug-width incompatibility in TypeScript and SQL. Until that value-state contract
-exists, the dash cannot satisfy M1 completeness.
+makes lug-to-lug equal to diameter. The manufacturer-published dash for width
+between horns is now captured as a reviewed physical `not_applicable` value
+under the explicit applicability contract. Unknown null remains missing
+evidence, while an active conventional-width request deterministically rejects
+this architecture in both TypeScript and SQL. The row remains research-only for
+full configured weight and numerical accuracy.
 
 Vostok Amphibia 420059 now has a reviewed `weak` lume grade. Two independent
 exact-reference reviews report sparse application, difficult low-light reading,
@@ -526,21 +525,33 @@ the finite matrix now converts every source price through the dated catalogue
 FX snapshot into the canonical EUR base before deriving a display band, rather
 than comparing raw PLN, USD, GBP, or CHF numbers to the same thresholds. Live
 Supabase remains at 11 brands and 12 variants until migrations `0010` through
-`0017` are applied and 18-row fact and six-profile predicate parity passes.
+`0018` are applied and 18-row fact and six-profile predicate parity passes.
+Migration `0018` adds the field-evidence value state and v3 RPC pair; the
+application targets v3 and otherwise falls back as one unit.
 
 On 2026-08-29 the owner explicitly requested delivery of the complete
 accumulated branch despite the unavailable Supabase maintenance session. The
-push is safe at the application boundary because the v2 RPC loader validates
+push is safe at the application boundary because the versioned RPC loader validates
 the entire response and exact variant set and otherwise visibly falls back to
 the reviewed 18-row bundle and deterministic local filters. This delivery
 decision does not complete the relational checkpoint: migrations `0010`
-through `0017`, live 18-row fact parity, and six-profile SQL predicate parity
+through `0018`, live 18-row fact parity, and six-profile SQL predicate parity
 remain the first database continuation task.
 The push through `6a43255` subsequently reached the connected Vercel production
 project. The deployed asset matched the local reviewed build, all three short
 read-only endpoints returned 200, and a valid core recommendation request
-selected `bundled_seed` with the expected visible v2-validation fallback. This
+selected `bundled_seed` with the expected visible RPC-validation fallback. This
 confirms the intended temporary operating mode rather than relational parity.
+
+The applicability checkpoint implements the Phase 5 distinction
+raised by the Claude Q11 audit. Catalogue version 2 carries a sparse
+`fieldApplicability` object, verified null values require an explicit
+`not_applicable` state, and conventional-width requests receive
+`lug_width_not_applicable` instead of a missing-fact code. Migration `0018`
+persists the state in field evidence and exposes the v3 catalogue/hard-filter
+pair without reclassifying any historical null. The reviewed Blancpain record
+therefore closes only its conventional-width gap and remains research-only for
+weight and accuracy.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

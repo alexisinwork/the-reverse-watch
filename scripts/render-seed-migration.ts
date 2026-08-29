@@ -415,6 +415,21 @@ on conflict (subject_type, subject_id, field_name, value_hash, source_id) do upd
     .join("\n\n");
 }
 
+function renderFieldApplicability(variant: SeedReferenceVariant) {
+  return Object.entries(variant.fieldApplicability)
+    .filter(([, state]) => state === "not_applicable")
+    .map(
+      ([field]) => `update public.field_evidence
+set value_state = 'not_applicable'
+where subject_type = 'reference_variant'
+  and subject_id = ${variantIdSql(variant)}
+  and field_name = ${q(field)}
+  and tier = 'verified'
+  and value_state is distinct from 'not_applicable';`,
+    )
+    .join("\n\n");
+}
+
 function renderPriceEvidence(variant: SeedReferenceVariant) {
   const entry = variant.evidence.find((candidate) =>
     candidate.fields.includes("price"),
@@ -574,6 +589,8 @@ ${expansionMode ? selectedVariants.map(renderOwnershipFrictionProfiles).join("\n
 ${selectedVariants.map(renderTraits).join("\n\n")}
 
 ${selectedVariants.map(renderVariantEvidence).join("\n\n")}
+
+${selectedVariants.map(renderFieldApplicability).filter(Boolean).join("\n\n")}
 
 ${selectedVariants.map(renderPriceEvidence).join("\n\n")}
 

@@ -20,4 +20,17 @@ describe("catalogue parity projection", () => {
       `variant:${changed.variants[0]!.id}:facts`,
     ]);
   });
+
+  it("treats field applicability as a parity-critical decision fact", () => {
+    const changed = structuredClone(seedCatalogue);
+    const variant = changed.variants.find(
+      (candidate) => candidate.id === "grand-seiko-sbgn029",
+    )!;
+    variant.geometry.lugWidthMm = null;
+    variant.fieldApplicability.lugWidthMm = "not_applicable";
+
+    expect(catalogueParityMismatches(seedCatalogue, changed)).toEqual([
+      `variant:${variant.id}:facts`,
+    ]);
+  });
 });

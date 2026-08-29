@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "blancpain-specialist-dive",
   "jobId": "e23cb473-20bc-4f5c-a443-f9909164cc8a",
-  "reviewedAt": "2026-08-29T10:34:48Z",
+  "reviewedAt": "2026-08-29T19:07:01Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -113,6 +113,12 @@
       "note": "The exact-reference hands-on specification reports a 47 mm lug-to-lug span; Blancpain's exact dossier corroborates the 47 mm case diameter and central-lug construction that makes those dimensions equal."
     },
     {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "value": "not_applicable",
+      "sourceUrl": "https://www.blancpain.com/en/fifty-fathoms/fifty-fathoms-tech-5019a-12b30-94a",
+      "note": "Blancpain's exact product specification publishes a dash for width between horns, while its exact dossier documents a proprietary central-lug system. Under applicability contract v1 this is a reviewed physical non-applicability, not an unknown measurement."
+    },
+    {
       "fieldName": "operation.lumeGrade",
       "value": "strong",
       "sourceUrl": "https://www.blancpain.com/sites/default/files/document/2026-06/blancpain_fifty_fathoms_tech_en.pdf",
@@ -161,6 +167,6 @@
       "reason": "Date is modeled separately and the dive hand, bezel, and helium valve are not supported catalogue complication enum values."
     }
   ],
-  "missingM1Fields": ["lugWidthMm", "weightFullG", "accuracy"],
-  "note": "Keep as research-only. Exact primary sources resolve the current homogeneous retail offer, proprietary strap interface, and lume mapping. The exact central-lug construction plus an exact-reference hands-on specification resolve lug-to-lug at 47 mm, equal to the case diameter because no conventional lugs project beyond it. Blancpain still publishes neither full configured weight nor a numerical rate tolerance. Its explicit dash for width between horns is not yet equivalent to a reviewed non-applicable M1 policy, so lug width remains gated as well."
+  "missingM1Fields": ["weightFullG", "accuracy"],
+  "note": "Keep as research-only. Exact primary sources resolve the current homogeneous retail offer, proprietary strap interface, lume mapping, and conventional lug-width non-applicability. The exact central-lug construction plus an exact-reference hands-on specification resolve lug-to-lug at 47 mm, equal to the case diameter because no conventional lugs project beyond it. Blancpain still publishes neither full configured weight nor a numerical rate tolerance, leaving those two M1 gaps open."
 }

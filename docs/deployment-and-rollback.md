@@ -24,14 +24,15 @@ Last verified: 2026-08-29
   incomplete, timed-out, or unavailable RPC responses trigger the visible
   reviewed-bundle fallback.
 - Production currently exposes the verified v1 RPC pair. The application now
-  targets the rectangular-aware v2 pair created by migration `0016`. On
+  targets the applicability-aware v3 pair created by migration `0018`; v3
+  wraps the rectangular-aware v2 contracts from migration `0016`. On
   2026-08-29 the owner explicitly authorized pushing the complete branch before
-  migrations `0010` through `0017` could be applied. This is operationally safe
-  because an unavailable or invalid v2 catalogue prevents the SQL call and
+  migrations `0010` through `0018` could be applied. This is operationally safe
+  because an unavailable or invalid v3 catalogue prevents the SQL call and
   visibly selects the reviewed 18-row bundle; an incomplete hard-filter
   partition likewise falls back as one unit. The push does not waive the
   migration or 18-row parity requirement before Supabase is treated as active.
-- The explicit push through repository commit `6a43255` was observed in
+- The explicit push through repository commit `f505270` was observed in
   production on 2026-08-29. The deployed quiz asset matched the reviewed local
   build, `/`, `/quiz`, and `/health` returned 200, and a valid core POST
   reported `catalogueOrigin: bundled_seed` with the expected visible live

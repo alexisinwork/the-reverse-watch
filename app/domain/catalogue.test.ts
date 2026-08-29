@@ -1,6 +1,7 @@
 import {
   convertMinorCurrency,
   evidenceFields,
+  isFieldNotApplicable,
   seedCatalogueSchema,
   supportedAccuracyTolerances,
   verifiedCaseWearingSpanMm,
@@ -9,6 +10,7 @@ import { seedCatalogue } from "./seed-catalogue";
 
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
+    expect(seedCatalogue.catalogueVersion).toBe(2);
     expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(18);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
@@ -116,5 +118,36 @@ describe("source-backed seed catalogue", () => {
     rectangular.variants[0]!.geometry.caseLengthMm = null;
 
     expect(seedCatalogueSchema.safeParse(rectangular).success).toBe(false);
+  });
+
+  it("distinguishes an evidenced non-applicable lug width from missing data", () => {
+    const catalogue = structuredClone(seedCatalogue);
+    const variant = catalogue.variants.find(
+      (candidate) => candidate.id === "grand-seiko-sbgn029",
+    )!;
+    variant.geometry.lugWidthMm = null;
+    variant.fieldApplicability.lugWidthMm = "not_applicable";
+
+    const parsed = seedCatalogueSchema.parse(catalogue);
+    const parsedVariant = parsed.variants.find(
+      (candidate) => candidate.id === variant.id,
+    )!;
+    expect(isFieldNotApplicable(parsedVariant, "lugWidthMm")).toBe(true);
+  });
+
+  it("rejects ambiguous or contradictory lug-width applicability", () => {
+    const evidencedNull = structuredClone(seedCatalogue);
+    const missingState = evidencedNull.variants.find(
+      (candidate) => candidate.id === "grand-seiko-sbgn029",
+    )!;
+    missingState.geometry.lugWidthMm = null;
+    expect(seedCatalogueSchema.safeParse(evidencedNull).success).toBe(false);
+
+    const contradictory = structuredClone(seedCatalogue);
+    const numericNotApplicable = contradictory.variants.find(
+      (candidate) => candidate.id === "grand-seiko-sbgn029",
+    )!;
+    numericNotApplicable.fieldApplicability.lugWidthMm = "not_applicable";
+    expect(seedCatalogueSchema.safeParse(contradictory).success).toBe(false);
   });
 });

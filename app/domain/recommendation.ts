@@ -6,6 +6,7 @@ import type {
 import {
   convertMinorCurrency,
   hasVerifiedField,
+  isFieldNotApplicable,
   supportedAccuracyTolerances,
   verifiedCaseWearingSpanMm,
 } from "./catalogue";
@@ -32,6 +33,7 @@ export const HARD_REASON_CODES = [
   "lug_curvature_mismatch",
   "attachment_mismatch",
   "lug_width_mismatch",
+  "lug_width_not_applicable",
   "quick_release_required",
   "channel_mismatch",
   "availability_mismatch",
@@ -152,6 +154,8 @@ const HARD_REASON_EXPLANATIONS: Record<HardReasonCode, string> = {
   lug_curvature_mismatch: "Lug curvature differs from the required geometry.",
   attachment_mismatch: "The attachment system is not the requested type.",
   lug_width_mismatch: "Verified lug width does not match the requested width.",
+  lug_width_not_applicable:
+    "The verified case architecture has no conventional lug width.",
   quick_release_required:
     "The supplied strap or bracelet is not quick release.",
   channel_mismatch:
@@ -508,7 +512,13 @@ function evaluateRefinementHardFilters(
   }
 
   if (refinement.requiredLugWidthMm !== undefined) {
-    if (
+    if (isFieldNotApplicable(variant, "lugWidthMm")) {
+      addReason(
+        candidate,
+        "lug_width_not_applicable",
+        "The verified case architecture has no conventional lug width.",
+      );
+    } else if (
       requireFact(
         variant,
         candidate,

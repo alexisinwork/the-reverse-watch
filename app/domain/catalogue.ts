@@ -15,6 +15,8 @@ import {
 const nullablePositiveNumber = z.number().positive().nullable();
 const nullableNonNegativeNumber = z.number().nonnegative().nullable();
 
+export const FIELD_APPLICABILITY_VALUES = ["not_applicable"] as const;
+
 export const catalogueSourceSchema = z
   .object({
     id: z.string().min(1),
@@ -112,6 +114,12 @@ export const seedReferenceVariantSchema = z
           });
         }
       }),
+    fieldApplicability: z
+      .object({
+        lugWidthMm: z.enum(FIELD_APPLICABILITY_VALUES).optional(),
+      })
+      .strict()
+      .default({}),
     movement: z
       .object({
         type: z.enum([
@@ -210,7 +218,42 @@ export const seedReferenceVariantSchema = z
       )
       .min(1),
   })
-  .strict();
+  .strict()
+  .superRefine((variant, context) => {
+    const lugWidthNotApplicable =
+      variant.fieldApplicability.lugWidthMm === "not_applicable";
+    const lugWidthEvidenced = variant.evidence.some((entry) =>
+      entry.fields.includes("lugWidthMm"),
+    );
+
+    if (lugWidthNotApplicable && variant.geometry.lugWidthMm !== null) {
+      context.addIssue({
+        code: "custom",
+        path: ["fieldApplicability", "lugWidthMm"],
+        message:
+          "A not-applicable lug width cannot also carry a numeric value.",
+      });
+    }
+    if (lugWidthNotApplicable && !lugWidthEvidenced) {
+      context.addIssue({
+        code: "custom",
+        path: ["fieldApplicability", "lugWidthMm"],
+        message: "A not-applicable lug width requires exact field evidence.",
+      });
+    }
+    if (
+      variant.geometry.lugWidthMm === null &&
+      lugWidthEvidenced &&
+      !lugWidthNotApplicable
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["fieldApplicability", "lugWidthMm"],
+        message:
+          "An evidenced null lug width requires an explicit not-applicable state.",
+      });
+    }
+  });
 
 export const seedCatalogueSchema = z
   .object({
@@ -315,6 +358,13 @@ export function hasVerifiedField(
   field: EvidenceField,
 ) {
   return evidenceFields(variant).has(field);
+}
+
+export function isFieldNotApplicable(
+  variant: SeedReferenceVariant,
+  field: keyof SeedReferenceVariant["fieldApplicability"],
+) {
+  return variant.fieldApplicability[field] === "not_applicable";
 }
 
 export function verifiedCaseWearingSpanMm(variant: SeedReferenceVariant) {

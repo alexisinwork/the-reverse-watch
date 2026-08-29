@@ -29,6 +29,11 @@ const profile: QuestionnaireProfile = {
 };
 
 describe("server catalogue loader", () => {
+  it("targets the applicability-aware v3 RPC pair", () => {
+    expect(SUPABASE_CATALOGUE_RPC).toBe("recommendation_catalogue_v3");
+    expect(SUPABASE_HARD_FILTER_RPC).toBe("recommendation_hard_filter_v3");
+  });
+
   it("uses and caches a strictly validated Supabase catalogue", async () => {
     const fetchImpl = vi.fn<typeof fetch>().mockResolvedValue(
       new Response(JSON.stringify(seedCatalogue), {

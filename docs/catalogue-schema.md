@@ -40,7 +40,10 @@ compatible. It is followed by
 [`0016_correct_reverso_rectangular_geometry.sql`](../db/migrations/0016_correct_reverso_rectangular_geometry.sql),
 which maps the accepted Reverso Q3988481 to its manufacturer-labelled 47 x
 28.3 mm length/width pair, retains the separately explicit 47 mm lug-to-lug,
-and exposes non-round facts and fit behavior through v2 read RPCs.
+and exposes non-round facts and fit behavior through v2 read RPCs. Migration
+[`0018_add_field_applicability.sql`](../db/migrations/0018_add_field_applicability.sql)
+then adds a reviewed evidence value state and v3 read RPCs that distinguish an
+unknown null from a physical `not_applicable` exception.
 
 Both RPCs are fixed `SECURITY DEFINER` SQL with an empty `search_path`, no
 dynamic SQL, and no mutation. Only `anon` and the administrative service role
@@ -150,16 +153,17 @@ partial ingestion without fake defaults. Eligibility is enforced by
 `null` never passes an active hard predicate. The query may place the variant in
 a separate verification-required set and list the missing fields.
 
-`null` also does not yet mean “not applicable.” This matters for exact
-proprietary or central-lug constructions whose manufacturer sheet publishes no
-conventional between-lugs width. A field-evidence row attached to a null value
-would currently make completeness look satisfied while TypeScript and SQL still
-classify an active lug-width request as missing. Do not use that loophole.
-Before accepting such a row, add an explicit field applicability/value state
-shared by the seed, evidence ledger, RPC, and TypeScript filter. A reviewed
-`not_applicable` value must reject an active conventional-lug-width request with
-a deterministic mismatch code; only an unknown or unverified value belongs in
-the verification-required set.
+`null` does not itself mean “not applicable.” Migration `0018` and catalogue
+contract version 2 add a sparse `fieldApplicability` sidecar backed by
+`field_evidence.value_state`. The first supported exception is
+`lugWidthMm: not_applicable` for an evidenced proprietary or central-lug case
+with no conventional between-lugs width. A numeric width is applicable; an
+unevidenced null remains unknown; an evidenced null without the explicit state
+is rejected as ambiguous. When a user requires a conventional width, verified
+non-applicability is a deterministic `lug_width_not_applicable` hard mismatch,
+whereas an unknown null remains the `lug_width` verification-required fact.
+No historical null is reclassified automatically, and new applicability fields
+must be added deliberately to the typed seed, RPC, and filter contracts.
 
 ## Coverage projection
 
@@ -212,9 +216,10 @@ current secondary-market evidence. Migration
 `0014_expand_catalogue_seiko.sql` then adds Presage HCC004J1 with its reviewed
 exact-reference no-lume conflict resolution. Together they form the intermediate
 15-brand/17-variant state. All five remain unapplied while the Supabase MCP OAuth
-connection is expired; migrations `0015` through `0017` are also pending, and
-the bundled seed must not be pushed until the complete ordered sequence is
-applied and the 18-row parity audit succeeds.
+connection is expired; migrations `0015` through `0018` are also pending. The
+owner-authorized bundled-seed push is already live, but Supabase must not become
+the active source until the complete ordered sequence is applied and the 18-row
+parity audit succeeds.
 
 Migration `0015_add_rectangular_case_geometry.sql` then adds only the nullable
 non-round geometry columns; it adds no reference row. It is also unapplied and
@@ -223,9 +228,8 @@ must follow `0014`. Migration
 row, replaces its diameter evidence with width/length evidence, recalculates
 its geometry-aware M0/M1 completeness, and makes
 `recommendation_catalogue_v2()` and `recommendation_hard_filter_v2()` the
-public contracts. Both v1 contracts become internal implementation details.
-It is unapplied and must follow `0015` before the current local branch is
-pushed.
+rectangular-aware contracts. Both v1 contracts become internal implementation
+details. It is unapplied and must follow `0015`.
 
 Migration `0017_expand_catalogue_tudor.sql` then adds the homogeneous Black Bay
 54 M79000N-0001. TUDOR's exact dossier explicitly identifies the through-lug
@@ -233,8 +237,17 @@ spring-bar holes, and the retained exact-reference fitment guide identifies the
 corresponding bars. The row is M1-complete with a 139 g normalized full-length
 bracelet configuration and a measured 45.8 mm lug-to-lug. It is unapplied and
 must follow `0016`; together the pending migrations bring the intended live
-catalogue to 16 brands and 18 variants. The bundled seed must not be pushed
-until 18-row parity succeeds.
+catalogue to 16 brands and 18 variants.
+
+Migration `0018_add_field_applicability.sql` must follow `0017`. It adds
+`field_evidence.value_state` with existing rows defaulted to `observed`, a
+partial verified-applicability index, and the v3 catalogue and hard-filter
+contracts. V3 emits sparse per-field applicability, maps verified
+non-applicable conventional lug width to `lug_width_not_applicable`, and leaves
+unknown null as missing evidence. Anonymous execution moves from v2 to v3. The
+current 18 accepted rows have no non-applicable field, so their facts and
+predicates remain unchanged; the migration prepares future reviewed rows such
+as the still research-only Blancpain.
 
 `npm run audit:catalogue-parity` validates the strict RPC response against the
 bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes

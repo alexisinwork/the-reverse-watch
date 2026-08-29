@@ -265,6 +265,7 @@ export const RESEARCH_FACT_FIELDS = [
   "geometry.caseThicknessMm",
   "geometry.lugToLugMm",
   "geometry.lugWidthMm",
+  "fieldApplicability.lugWidthMm",
   "geometry.weightFullG",
   "geometry.lugCurvature",
   "geometry.integratedBracelet",

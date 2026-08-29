@@ -107,6 +107,28 @@ describe("deterministic recommendation engine", () => {
     );
   });
 
+  it("rejects a conventional lug-width request as verified non-applicable", () => {
+    const catalogue = structuredClone(seedCatalogue);
+    const grandSeiko = catalogue.variants.find(
+      (variant) => variant.id === "grand-seiko-sbgn029",
+    )!;
+    grandSeiko.geometry.lugWidthMm = null;
+    grandSeiko.fieldApplicability.lugWidthMm = "not_applicable";
+
+    const result = evaluateHardFilterPartition(
+      {
+        ...baseProfile,
+        refinement: { requiredLugWidthMm: 20 },
+      },
+      catalogue,
+      { asOf: TEST_AS_OF },
+    );
+    expect(result[grandSeiko.id]?.hardReasons).toContain(
+      "lug_width_not_applicable",
+    );
+    expect(result[grandSeiko.id]?.missingFacts).not.toContain("lug_width");
+  });
+
   it("suppresses speculative rows unless both explicit gates are present", () => {
     const speculativeCatalogue = structuredClone(seedCatalogue);
     const grandSeiko = speculativeCatalogue.variants.find(

@@ -413,8 +413,13 @@ A Blancpain Fifty Fathoms Tech 5019A 12B30 94A geometry follow-up resolved
 lug-to-lug at 47 mm. Blancpain's exact dossier establishes its 47 mm diameter
 and central-lug construction, and an exact-reference hands-on specification
 explicitly reports that this architecture makes the across-wrist span equal to
-the diameter. The row remains research-only for conventional lug width, full
-configured weight, and numerical rate tolerance.
+the diameter. The exact manufacturer product page also publishes a dash for
+width between horns, and the dossier documents the proprietary central-lug
+construction. Under the explicit applicability contract this is reviewed
+`fieldApplicability.lugWidthMm: not_applicable`, not a coerced measurement or an
+unknown null. An active conventional-width request now returns the same hard
+incompatibility in TypeScript and SQL. The row remains research-only for full
+configured weight and numerical rate tolerance.
 
 A Vostok Amphibia 420059 follow-up resolved `lumeGrade: weak`. Two independent
 exact-reference reviews report sparse application, difficult low-light reading,
@@ -465,6 +470,14 @@ under-evidenced cells. Its PLN snapshot also exposed a coverage bug: source
 prices are now converted through the dated EUR base before band derivation, so
 the watch maps to `2000_5000` and the currently empty `15000_plus` band is no
 longer falsely populated by a unit mismatch.
+
+Migration `0018_add_field_applicability.sql` follows `0017`. It adds an
+`observed|not_applicable` value state to field evidence and v3 read contracts;
+existing evidence defaults to `observed`, so no historical null is silently
+reclassified. The seed renderer updates only exact verified evidence rows for
+future accepted non-applicable facts. Blancpain remains outside the seed until
+its two remaining M1 gaps—full configured weight and numerical accuracy—are
+resolved.
 
 ## Job idempotency and retention
 
