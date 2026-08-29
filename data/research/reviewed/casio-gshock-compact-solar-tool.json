@@ -2,9 +2,9 @@
   "reviewVersion": 1,
   "targetId": "casio-gshock-compact-solar-tool",
   "jobId": "d3d6eece-00f9-4539-a452-2a3ed2a0a776",
-  "reviewedAt": "2026-08-29T06:32:35Z",
+  "reviewedAt": "2026-08-29T08:21:08Z",
   "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "outcome": "ready_for_migration",
   "candidateIdentity": {
     "brand": "G-SHOCK",
     "model": "G-5600",
@@ -21,6 +21,36 @@
       "url": "https://shopcasio.jebsen.com/en/g-5600ue-1.html",
       "status": "rejected",
       "note": "The regional commerce source was not independently validated as a manufacturer product source, and its HKD price cannot enter the current runtime currency contract without reviewed FX support."
+    },
+    {
+      "url": "https://support.casio.com/global/en/wat/manual/3496_en/VPCVSYermzphxt.html",
+      "status": "validated_primary",
+      "note": "Casio's exact module 3496 specification independently confirms Tough Solar power, +/-15 seconds per month, world time, five alarms, full calendar, and a full-auto LED light. The exact product page identifies that light as Super Illuminator and explicitly calls the watch easy to see in darkness, supporting the catalogue's strong nighttime-illumination grade without claiming luminous paint."
+    },
+    {
+      "url": "https://stockx.com/casio-g-shock-g-5600ue-1-digital",
+      "status": "validated_secondary",
+      "note": "The current exact-reference U.S. marketplace offer is buy-now at $117, or $124 including the mandatory marketplace fee, for a StockX-verified new watch. The reviewed snapshot records the $124 buyer price, U.S. market, in-stock availability, secondary-market channel, and new condition."
+    },
+    {
+      "url": "https://www.casiopart.com/model-number/g5600ue-1/",
+      "status": "validated_secondary",
+      "note": "The exact G5600UE-1 module 3496 parts record maps the watch to genuine Casio resin band 10512401. This preserves exact-reference identity in the component evidence chain."
+    },
+    {
+      "url": "https://casiosupport.zendesk.com/hc/en-us/articles/4403416388889-Replacement-Parts-Power-Cord-Adapters-Replacement-Watch-Band",
+      "status": "validated_primary",
+      "note": "Casio America identifies American Perfit as its official replacement-parts distributor, providing manufacturer-side provenance for the genuine band component record."
+    },
+    {
+      "url": "https://americanperfit.com/genuine-casio-replacement-watch-band-10512401/",
+      "status": "validated_secondary",
+      "note": "Casio's official distributor identifies genuine band 10512401 and explicitly states that spring rod 74286516 is sold separately. Combined with the exact-model parts mapping, this establishes a conventional spring-bar attachment rather than the buckle clasp rejected by the original extraction."
+    },
+    {
+      "url": "https://www.jamtangan.com/p/casio-gshock-g5600ue1dr-square-tough-solar-digital-dial-black-resin-strap-439161",
+      "status": "validated_secondary",
+      "note": "The exact G-5600UE-1DR specialist listing reports a 16 mm lug width and independently repeats the 46.7 x 43.2 x 12.7 mm, 51 g configuration. The regional suffix does not change the physical black-resin variant."
     }
   ],
   "verifiedProvisionalFields": [
@@ -50,6 +80,60 @@
       "value": 46.7,
       "sourceUrl": "https://www.casio.com/intl/watches/gshock/product.G-5600UE-1/",
       "note": "The official L x W x H case size establishes a 46.7 mm top-to-bottom case span for fit filtering."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 12400,
+      "sourceUrl": "https://stockx.com/casio-g-shock-g-5600ue-1-digital",
+      "note": "The reviewed U.S. exact-reference snapshot is $117 buy-now and $124 including the mandatory marketplace fee; the catalogue records the $124 buyer price."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://stockx.com/casio-g-shock-g-5600ue-1-digital",
+      "note": "The exact U.S. marketplace offer is denominated in USD."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://stockx.com/casio-g-shock-g-5600ue-1-digital",
+      "note": "The reviewed offer is the U.S. StockX market view."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://stockx.com/casio-g-shock-g-5600ue-1-digital",
+      "note": "The exact reference exposes an immediate buy-now offer."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["secondary_market"],
+      "sourceUrl": "https://stockx.com/casio-g-shock-g-5600ue-1-digital",
+      "note": "StockX is normalized as a secondary marketplace rather than an authorized dealer."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://stockx.com/casio-g-shock-g-5600ue-1-digital",
+      "note": "StockX identifies the exact offered watch as new and verified."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 16,
+      "sourceUrl": "https://www.jamtangan.com/p/casio-gshock-g5600ue1dr-square-tough-solar-digital-dial-black-resin-strap-439161",
+      "note": "The exact configured G-5600UE-1DR listing reports a 16 mm case interface."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.casio.com/intl/watches/gshock/product.G-5600UE-1/",
+      "note": "Casio labels the exact model easy to see in darkness and specifies a full-auto white LED Super Illuminator with selectable duration and afterglow. The grade represents nighttime illumination, not photoluminescent paint."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://americanperfit.com/genuine-casio-replacement-watch-band-10512401/",
+      "note": "The exact-model parts record maps G5600UE-1 to genuine band 10512401; Casio's official distributor states that this band uses separately supplied spring rod 74286516."
     }
   ],
   "rejectedProvisionalFields": [
@@ -82,6 +166,6 @@
       "reason": "Channel classification was not independently validated during this review."
     }
   ],
-  "missingM1Fields": ["price", "lugWidthMm", "lumeGrade", "attachmentType"],
-  "note": "This is the strongest candidate in the batch, but it remains research-only. Do not migrate until a supported price/FX path, exact band-interface width, reviewed attachment classification, and the catalogue's illumination/lume mapping are resolved."
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. The exact official product and module guide establish the physical and functional row; a current exact U.S. secondary-market offer resolves supported price semantics; exact configured evidence resolves 16 mm lug width; and the genuine Casio component chain establishes a spring-bar interface. Full-auto Super Illuminator is mapped to strong nighttime illumination without claiming luminous paint."
 }

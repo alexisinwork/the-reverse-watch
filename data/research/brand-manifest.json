@@ -754,7 +754,7 @@
         {
           "id": "casio-gshock-compact-solar-tool",
           "referenceLabel": "Select a current compact solar G-Shock",
-          "state": "needs_review",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "under_300",
@@ -782,7 +782,8 @@
               "high_complication"
             ]
           },
-          "coverageRationale": "Target low-cost, lightweight, high-function precision cells that the seed does not cover."
+          "coverageRationale": "Target low-cost, lightweight, high-function precision cells that the seed does not cover.",
+          "catalogueVariantId": "casio-g5600ue-1"
         }
       ]
     },

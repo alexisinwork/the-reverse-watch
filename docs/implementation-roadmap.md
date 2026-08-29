@@ -245,8 +245,8 @@ Verification:
 
 Checkpoint 2026-08-29: the complete 200-dossier owner knowledge pack is
 schema-validated and linked as research-only M0/M2 context. Together with one
-existing roadmap brand, the strict manifest now contains 201 brands, links 15
-reviewed seed variants, and retains 16 active coverage targets. The coverage-ranked,
+existing roadmap brand, the strict manifest now contains 201 brands, links 16
+reviewed seed variants, and retains 15 active coverage targets. The coverage-ranked,
 resumable Perplexity worker uses native JSON Schema plus Zod validation,
 immutable artifacts, fingerprint reuse, globally increasing attempts, bounded
 concurrency, rate-limit handling, and explicit review artifacts. Provider
@@ -385,11 +385,26 @@ full weight and a -20/+40 seconds-per-day bound. Its self-powered full-night
 tritium maps to `strong`; the one-piece strap, fixed-bar evidence, and
 manufacturer service path map the fixed interface to `proprietary`. Generated
 migration `0012` adds only Marathon after `0010` and `0011`. The local seed now
-has 15 variants and projects to 280/28,800 cells (0.97%), while live Supabase
-remains at 12 rows. The current strict checkpoint is 15 accepted targets, 16
-active targets, and 21 reviews: three migration-ready, 16 needing more
-evidence, and two excluded. All three migrations must be applied in order and
-15-row parity proved before the bundled seed or commits are pushed.
+at that checkpoint had 15 variants and projected to 280/28,800 cells (0.97%),
+while live Supabase remained at 12 rows. That strict checkpoint had 15 accepted
+targets, 16 active targets, and 21 reviews: three migration-ready, 16 needing
+more evidence, and two excluded.
+
+Casio G-SHOCK G-5600UE-1 then became the fourth migration-ready candidate. Its
+exact official product and module 3496 guide resolve the solar movement, fit,
+51 g weight, 200 m rating, functions, rate, and full-auto Super Illuminator,
+mapped to `strong` nighttime illumination without claiming luminous paint. A
+current exact U.S. StockX buy-now offer supplies a supported secondary-market
+snapshot, while an exact 16 mm configured listing and the genuine Casio
+band/spring-rod component chain establish `spring_bar`. Migration rendering now
+records `shockResistant` evidence and derives SQL price kind from acquisition
+channel, correctly writing the offer as `secondary_ask`. Generated migration
+`0013` adds only Casio after `0012`. The local seed now has 16 variants and
+projects to 408/28,800 cells (1.42%), while live Supabase remains at 12 rows.
+The current strict checkpoint is 16 accepted targets, 15 active targets, and 21
+reviews: four migration-ready, 15 needing more evidence, and two excluded.
+Migrations `0010` through `0013` must be applied in order and 16-row parity
+proved before the bundled seed or commits are pushed.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

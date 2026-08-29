@@ -269,6 +269,7 @@ export type EvidenceField =
   | "crystal"
   | "lumeGrade"
   | "attachmentType"
+  | "shockResistant"
   | "nickelContactRisk"
   | "complications"
   | "dateStatus"

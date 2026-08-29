@@ -8,10 +8,10 @@ import { seedCatalogue } from "./seed-catalogue";
 
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(15);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(16);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(15);
+    ).toBe(16);
   });
 
   it("retains evidence for every seed identity and price", () => {

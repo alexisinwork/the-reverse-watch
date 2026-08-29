@@ -17,8 +17,8 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Nine additive migrations are applied to Supabase; additive migrations `0010`,
-  `0011`, and `0012` are prepared and locally verified but not yet applied
+- Nine additive migrations are applied to Supabase; additive migrations `0010`
+  through `0013` are prepared and locally verified but not yet applied
   because the Supabase MCP OAuth refresh expired. Tables remain server-only;
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
@@ -72,15 +72,15 @@ phase.
   pre-collection core matrix and report empty, single-candidate,
   under-diversified, and under-evidenced cells.
 - The applied baseline has 11 brands and 12 variants. The reviewed local seed
-  now has 14 brands and 15 variants after adding Christopher Ward
-  C63-39AGM4-S00W0-B0, Orient RA-AC0M03S, and Marathon WW194003BK-0108.
-  Migrations `0010`, `0011`, and `0012` each carry only their additive row and
-  its sources, price, availability, evidence, deployment, friction, traits, and
-  product URL.
-- The current local audit reports 280 of 28,800 cells covered (0.97%): 276 are
-  single-candidate, all 280 are under-diversified, and 184 are under-evidenced.
-  The applied live baseline remains 180 cells until migrations `0010`, `0011`,
-  and `0012` are applied in order.
+  now has 15 brands and 16 variants after adding Christopher Ward
+  C63-39AGM4-S00W0-B0, Orient RA-AC0M03S, Marathon WW194003BK-0108, and Casio
+  G-5600UE-1. Migrations `0010` through `0013` each carry only their additive
+  row and its sources, price, availability, evidence, deployment, friction,
+  traits, and product URL.
+- The current local audit reports 408 of 28,800 cells covered (1.42%): 404 are
+  single-candidate, all 408 are under-diversified, and 184 are under-evidenced.
+  The applied live baseline remains 180 cells until migrations `0010` through
+  `0013` are applied in order.
 - Browser roles have no table grants. The security advisor's only current
   findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
   both functions have an empty `search_path`, fixed read-only SQL, and no
@@ -109,7 +109,7 @@ phase.
   unit to the reviewed bundle plus local predicates.
 - `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
   applied baseline variants across six golden profiles. It must be rerun for
-  all 15 variants immediately after migrations `0010`, `0011`, and `0012` are
+  all 16 variants immediately after migrations `0010` through `0013` are
   applied in order. PostgreSQL
   owns the live hard-filter partition; TypeScript owns scoring, explanations,
   diversity, and fallback.
@@ -346,13 +346,28 @@ For the post-batch evidence-gap pass on the same date:
   manufacturer spring-bar service path map the fixed service interface to the
   existing `proprietary` class. Generated migration `0012` adds only this row
   after `0010` and `0011`.
-- The local seed is now 14 brands/15 variants and covers 280/28,800 cells
-  (0.97%): 276 single-candidate, 280 under-diversified, and 184 under-evidenced.
-  Strict research reports 15 accepted targets, 16 active targets, and 21
-  reviews: three `ready_for_migration`, 16 `needs_more_evidence`, and two
+- At that checkpoint the local seed had 14 brands/15 variants and covered
+  280/28,800 cells (0.97%): 276 single-candidate, 280 under-diversified, and 184
+  under-evidenced. Strict research reported 15 accepted targets, 16 active
+  targets, and 21 reviews: three `ready_for_migration`, 16
+  `needs_more_evidence`, and two `excluded`.
+- Casio G-5600UE-1 is now the fourth migration-ready review. Its exact product
+  and module 3496 guide resolve solar operation, fit, 51 g weight, 200 m rating,
+  functions, rate, and full-auto Super Illuminator, mapped to `strong`
+  nighttime illumination without claiming luminous paint. A current exact U.S.
+  StockX buy-now offer supplies the supported secondary-market snapshot; an
+  exact 16 mm listing and the genuine band/spring-rod component chain establish
+  `spring_bar`.
+- The renderer now records `shockResistant` evidence and derives SQL price kind
+  from the accepted acquisition channel, so the Casio snapshot is correctly
+  `secondary_ask`. Generated migration `0013` adds only this row after `0012`.
+- The local seed is now 15 brands/16 variants and covers 408/28,800 cells
+  (1.42%): 404 single-candidate, 408 under-diversified, and 184 under-evidenced.
+  Strict research reports 16 accepted targets, 15 active targets, and 21
+  reviews: four `ready_for_migration`, 15 `needs_more_evidence`, and two
   `excluded`.
-- Live Supabase remains 11 brands/12 variants. Apply `0010`, then `0011`, then
-  `0012`, prove 15-row catalogue and six-profile SQL parity, and only then push
+- Live Supabase remains 11 brands/12 variants. Apply migrations `0010` through
+  `0013`, prove 16-row catalogue and six-profile SQL parity, and only then push
   the local commits.
 
 On 2026-08-28 for Phases 1–4:
@@ -375,18 +390,18 @@ On 2026-08-28 for Phases 1–4:
 1. Reconnect the Supabase MCP for project `osfqexnzgkksfvaocjvl`, apply
    `0010_expand_catalogue_christopher_ward.sql` and then
    `0011_expand_catalogue_orient.sql`, followed by
-   `0012_expand_catalogue_marathon.sql`, then run live 15-row catalogue and
-   six-profile SQL parity. Only push after that succeeds so production never
-   sees divergent bundled and relational catalogues.
+   `0012_expand_catalogue_marathon.sql`, and then
+   `0013_expand_catalogue_casio.sql`. Run live 16-row catalogue and six-profile
+   SQL parity. Only push after that succeeds so production never sees divergent
+   bundled and relational catalogues.
 2. Resolve or explicitly retain the first review gaps. Seiko HCC004J1 now needs
    only a source-backed resolution of its conflicting lume evidence, while
    Citizen BM8180-03E still needs authoritative lume-grade and factory-interface
    evidence. TUDOR M79000N-0001 now needs only normalized full configured weight
-   and manufacturer-corroborated attachment evidence. Casio G-5600UE-1 needs a
-   supported price/FX path, band-interface width, attachment classification,
-   and illumination mapping; Cartier WSTA0107 needs rectangular geometry
-   support plus M1 sources; Swatch SO28N100 needs exact-reference primary M1
-   sources. Do not accept a row merely to make the batch non-empty.
+   and manufacturer-corroborated attachment evidence. Cartier WSTA0107 needs
+   rectangular geometry support plus M1 sources; Swatch SO28N100 needs
+   exact-reference primary M1 sources. Do not accept a row merely to make the
+   batch non-empty.
 3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Do not salvage contradictory or blocked provider
@@ -416,7 +431,7 @@ On 2026-08-28 for Phases 1–4:
   intake: 200 dossiers, 951 family rows, 248 required variant splits, 169
   dossiers mapped through Q1-Q16, and 1,748 unique cited URLs.
 - The manifest now contains 201 brands (the pack plus one existing roadmap
-  brand), all 15 reviewed seed links, and 16 active coverage-led targets.
+  brand), all 16 reviewed seed links, and 15 active coverage-led targets.
   Knowledge hash/count drift and missing review artifacts fail the strict audit.
 - The default worker queue is the same coverage-ranked queue shown by
   `npm run plan:research`; successful fingerprints are reusable, attempts remain

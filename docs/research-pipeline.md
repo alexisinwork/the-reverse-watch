@@ -59,8 +59,8 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 15 accepted catalogue targets linked to all current reviewed variants;
-- 16 active coverage-intent targets, with all default discovery jobs reviewed;
+- 16 accepted catalogue targets linked to all current reviewed variants;
+- 15 active coverage-intent targets, with all default discovery jobs reviewed;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
   mechanicals.
@@ -299,13 +299,32 @@ to the existing `proprietary` attachment class rather than ordinary
 
 Generated migration `0012_expand_catalogue_marathon.sql` is replay-safe and
 adds only that reviewed row after migrations `0010` and `0011`. The local seed
-now has 15 variants and covers 280/28,800 cells (0.97%): 276 are
-single-candidate, all 280 are under-diversified, and 184 contain an
-under-evidenced candidate. Strict research reports 15 accepted targets, 16
+at that checkpoint had 15 variants and covered 280/28,800 cells (0.97%): 276
+were single-candidate, all 280 were under-diversified, and 184 contained an
+under-evidenced candidate. Strict research reported 15 accepted targets, 16
 active targets, and 21 reviews: three `ready_for_migration`, 16
-`needs_more_evidence`, and two `excluded`. The live database remains at 12
-rows, so the three migrations and bundled seed must remain unpushed until they
-are applied in order and 15-row SQL parity passes.
+`needs_more_evidence`, and two `excluded`.
+
+Casio G-SHOCK G-5600UE-1 then became the fourth `ready_for_migration` review.
+The exact official product and module 3496 guide establish its solar movement,
+fit, 51 g weight, 200 m rating, functions, rate, and full-auto white LED Super
+Illuminator. The latter maps to `strong` nighttime illumination without claiming
+photoluminescent paint. A current exact U.S. StockX buy-now offer supplies a
+supported secondary-market snapshot, while the exact configured 16 mm listing
+and genuine Casio band/spring-rod component chain establish a standard
+`spring_bar` interface.
+
+The migration renderer now includes `shockResistant` in field evidence and
+derives `retail`, `grey_market_ask`, or `secondary_ask` from the accepted price
+channel instead of labeling every snapshot retail. Generated migration
+`0013_expand_catalogue_casio.sql` is replay-safe and adds only Casio after
+`0012`. The local seed now has 16 variants and covers 408/28,800 cells (1.42%):
+404 are single-candidate, all 408 are under-diversified, and 184 contain an
+under-evidenced candidate. Strict research reports 16 accepted targets, 15
+active targets, and 21 reviews: four `ready_for_migration`, 15
+`needs_more_evidence`, and two `excluded`. Live Supabase remains at 12 rows, so
+migrations `0010` through `0013` and the bundled seed remain unpushed until they
+are applied in order and 16-row SQL parity passes.
 
 ## Job idempotency and retention
 

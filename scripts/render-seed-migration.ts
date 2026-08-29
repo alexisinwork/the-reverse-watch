@@ -110,6 +110,7 @@ function valueForEvidence(variant: SeedReferenceVariant, field: string) {
     crystal: variant.operation.crystal,
     lumeGrade: variant.operation.lumeGrade,
     attachmentType: variant.operation.attachmentType,
+    shockResistant: variant.operation.shockResistant,
     nickelContactRisk: variant.operation.nickelContactRisk,
     complications: variant.complications,
     dateStatus: variant.dateStatus,
@@ -317,16 +318,23 @@ on conflict (reference_variant_id, complication) do nothing;`,
 }
 
 function renderPrice(variant: SeedReferenceVariant) {
+  const priceKind = variant.price.channels.includes("secondary_market")
+    ? "secondary_ask"
+    : variant.price.channels.includes("grey_market")
+      ? "grey_market_ask"
+      : "retail";
+  const condition = variant.price.conditions[0];
+  if (!condition) throw new Error(`Missing price condition: ${variant.id}`);
   return `insert into public.price_snapshots (
   reference_variant_id, kind, condition, currency, amount_low_minor,
   market_country_code, observed_at, stale_after, review_status
 )
-select ${variantIdSql(variant)}, 'retail', 'new', ${q(variant.price.currency)}, ${variant.price.amountMinor},
+select ${variantIdSql(variant)}, ${q(priceKind)}, ${q(condition)}, ${q(variant.price.currency)}, ${variant.price.amountMinor},
   ${q(variant.price.marketCountry)}, ${q(variant.price.observedAt)}::timestamptz, ${q(variant.price.staleAfter)}::timestamptz, 'accepted'
 where not exists (
   select 1 from public.price_snapshots ps
   where ps.reference_variant_id = ${variantIdSql(variant)}
-    and ps.kind = 'retail' and ps.condition = 'new'
+    and ps.kind = ${q(priceKind)} and ps.condition = ${q(condition)}
     and ps.currency = ${q(variant.price.currency)}
     and ps.observed_at = ${q(variant.price.observedAt)}::timestamptz
 );`;

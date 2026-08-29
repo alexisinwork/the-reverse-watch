@@ -44,7 +44,7 @@ describe("server catalogue loader", () => {
     const second = await load();
 
     expect(first.origin).toBe("supabase");
-    expect(first.catalogue.variants).toHaveLength(15);
+    expect(first.catalogue.variants).toHaveLength(16);
     expect(second.origin).toBe("supabase");
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });

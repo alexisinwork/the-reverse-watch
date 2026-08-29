@@ -232,6 +232,62 @@
       "publisher": "OpticsPlanet",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-29T08:11:44Z"
+    },
+    {
+      "id": "casio-g5600ue-1",
+      "url": "https://www.casio.com/intl/watches/gshock/product.G-5600UE-1/",
+      "title": "G-5600UE-1",
+      "publisher": "Casio Computer Co., Ltd.",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T08:21:08Z"
+    },
+    {
+      "id": "casio-module-3496-specifications",
+      "url": "https://support.casio.com/global/en/wat/manual/3496_en/VPCVSYermzphxt.html",
+      "title": "Module 3496 specifications",
+      "publisher": "Casio Computer Co., Ltd.",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-29T08:21:08Z"
+    },
+    {
+      "id": "stockx-casio-g5600ue-1",
+      "url": "https://stockx.com/casio-g-shock-g-5600ue-1-digital",
+      "title": "Casio G-Shock G-5600UE-1 — U.S. buy-now offer",
+      "publisher": "StockX",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:21:08Z"
+    },
+    {
+      "id": "casiopart-g5600ue-1-parts",
+      "url": "https://www.casiopart.com/model-number/g5600ue-1/",
+      "title": "G5600UE-1 genuine replacement parts",
+      "publisher": "CasioPart",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:21:08Z"
+    },
+    {
+      "id": "casio-america-official-parts-distributor",
+      "url": "https://casiosupport.zendesk.com/hc/en-us/articles/4403416388889-Replacement-Parts-Power-Cord-Adapters-Replacement-Watch-Band",
+      "title": "Official replacement-parts distributor listing",
+      "publisher": "Casio America, Inc.",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-29T08:21:08Z"
+    },
+    {
+      "id": "american-perfit-casio-band-10512401",
+      "url": "https://americanperfit.com/genuine-casio-replacement-watch-band-10512401/",
+      "title": "Genuine Casio replacement watch band 10512401",
+      "publisher": "American Perfit",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:21:08Z"
+    },
+    {
+      "id": "jamtangan-casio-g5600ue-1dr",
+      "url": "https://www.jamtangan.com/p/casio-gshock-g5600ue1dr-square-tough-solar-digital-dial-black-resin-strap-439161",
+      "title": "G-SHOCK G-5600UE-1DR black resin configuration",
+      "publisher": "Jamtangan.com",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:21:08Z"
     }
   ],
   "fx": {
@@ -1808,6 +1864,136 @@
         },
         {
           "sourceId": "opticsplanet-marathon-gpm-fixed-bars",
+          "fields": ["attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "casio-g5600ue-1",
+      "brand": {
+        "slug": "casio-g-shock",
+        "name": "G-SHOCK",
+        "serviceCountries": null
+      },
+      "collection": "5600 Series",
+      "model": "G-5600",
+      "referenceCode": "G-5600UE-1",
+      "variantName": "Black resin case and band",
+      "productUrl": "https://www.casio.com/intl/watches/gshock/product.G-5600UE-1/",
+      "price": {
+        "amountMinor": 12400,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-29T08:21:08Z",
+        "staleAfter": "2026-09-28T08:21:08Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-29T08:21:08Z",
+        "availabilityStaleAfter": "2026-09-28T08:21:08Z",
+        "channels": ["secondary_market"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "black resin",
+        "caseback": null,
+        "bracelet": null,
+        "strap": "black resin"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 43.2,
+        "caseThicknessMm": 12.7,
+        "lugToLugMm": 46.7,
+        "lugWidthMm": 16,
+        "weightFullG": 51,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "solar",
+        "caliber": "Casio module 3496",
+        "powerReserveHours": null,
+        "accuracyLowerSeconds": -15,
+        "accuracyUpperSeconds": 15,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": null,
+        "crownPosition": null,
+        "crystal": "mineral",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": true,
+        "nickelContactRisk": null
+      },
+      "complications": ["alarm", "world_time"],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "compact_solar_digital_tool",
+        "socialSignals": ["anti_luxury"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "casio-g5600ue-1",
+          "fields": [
+            "identity",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "weightFullG",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crystal",
+            "lumeGrade",
+            "shockResistant",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "casio-module-3496-specifications",
+          "fields": [
+            "movement",
+            "accuracy",
+            "lumeGrade",
+            "complications",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "stockx-casio-g5600ue-1",
+          "fields": ["price", "availability"]
+        },
+        {
+          "sourceId": "jamtangan-casio-g5600ue-1dr",
+          "fields": ["lugWidthMm"]
+        },
+        {
+          "sourceId": "casiopart-g5600ue-1-parts",
+          "fields": ["attachmentType"]
+        },
+        {
+          "sourceId": "casio-america-official-parts-distributor",
+          "fields": ["attachmentType"]
+        },
+        {
+          "sourceId": "american-perfit-casio-band-10512401",
           "fields": ["attachmentType"]
         }
       ]

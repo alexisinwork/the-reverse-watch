@@ -141,8 +141,8 @@ and enumerates 28,800 meaningful core-axis cells:
 × 4 accuracy tolerances × 4 weight limits × 5 representative function profiles
 ```
 
-The reviewed 15-variant local seed currently projects into 280 of 28,800 cells
-(0.97%). Of those, 276 have one candidate, all 280 have fewer than three brands,
+The reviewed 16-variant local seed currently projects into 408 of 28,800 cells
+(1.42%). Of those, 404 have one candidate, all 408 have fewer than three brands,
 and 184 contain at least one under-evidenced candidate. This is a coverage
 baseline, not a market-coverage claim. The audit separately reports:
 
@@ -173,10 +173,12 @@ reviewed C63 Sealander GMT exact SKU. Migration
 manufacturer evidence plus the reviewed exact-reference attachment source.
 Migration `0012_expand_catalogue_marathon.sql` then adds Marathon
 WW194003BK-0108 with its reviewed exact-reference movement, weight, lume, and
-fixed-interface evidence. Together they bring the intended live catalogue to
-14 brands and 15 variants. All three remain unapplied while the Supabase MCP
-OAuth connection is expired; the bundled seed must not be pushed until the
-migrations are applied in order and the 15-row parity audit succeeds.
+fixed-interface evidence. Migration `0013_expand_catalogue_casio.sql` then adds
+G-SHOCK G-5600UE-1 with exact illumination, 16 mm spring-bar interface, and
+current secondary-market evidence. Together they bring the intended live
+catalogue to 15 brands and 16 variants. All four remain unapplied while the
+Supabase MCP OAuth connection is expired; the bundled seed must not be pushed
+until the migrations are applied in order and the 16-row parity audit succeeds.
 
 `npm run audit:catalogue-parity` validates the strict RPC response against the
 bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes

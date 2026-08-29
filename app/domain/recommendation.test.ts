@@ -48,7 +48,11 @@ describe("deterministic recommendation engine", () => {
         datePreference: "either",
       },
     });
-    expect(result.recommendations).toHaveLength(0);
+    expect(
+      result.recommendations.some(
+        (candidate) => candidate.id === "citizen-bn0150-28e",
+      ),
+    ).toBe(false);
     expect(
       result.verificationRequired.some(
         (candidate) =>
@@ -92,7 +96,11 @@ describe("deterministic recommendation engine", () => {
 
     const suppressed = recommend(baseProfile, speculativeCatalogue);
     expect(suppressed.recommendations).toHaveLength(0);
-    expect(suppressed.whyNot[0]?.hardReasons).toEqual(
+    expect(
+      suppressed.whyNot.find(
+        (candidate) => candidate.id === "grand-seiko-sbgn029",
+      )?.hardReasons,
+    ).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ code: "speculative_suppressed" }),
       ]),
