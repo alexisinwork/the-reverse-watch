@@ -479,6 +479,22 @@ future accepted non-applicable facts. Blancpain remains outside the seed until
 its two remaining M1 gaps—full configured weight and numerical accuracy—are
 resolved.
 
+A later exact-reference Cartier WSTA0107 pass resolved `lumeGrade: none`.
+MAIER's exact technical sheet explicitly says the hands have no Super-LumiNova,
+and the independent exact-reference Chronospex record classifies overall
+luminescence as none. Cartier's exact page independently identifies plain
+blued-steel hands and a silvered printed dial. The review therefore does not
+infer absence merely from omitted manufacturer feature prose. Numerical
+exact-applicable quartz accuracy remains the sole M1 gap, so Cartier stays
+research-only and no seed or migration row is added.
+
+The same narrow pass explicitly retained several other gaps instead of forcing
+closure: Certina's exact-linked general mechanical manual describes only what
+“most” non-chronometers average, Vostok's factory pages do not identify the
+bracelet-to-case fastener, conflicting Citizen BM8180-03E observations do not
+establish repeatable lume performance, and Omega's exact manual does not name
+the factory bracelet interface. These records remain fail-closed.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

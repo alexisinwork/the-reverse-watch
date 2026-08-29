@@ -507,8 +507,12 @@ lug-to-lug is unavailable, the UI labels it as wrist span, and focused tests
 cover the fail-closed behavior. Additive migration `0015` prepares the two
 PostgreSQL columns without changing an accepted row. The exact official product,
 a current $4,100 authorized-retailer offer, an exact QuickSwitch specialist
-record, and three convergent 79-80 g records reduce Cartier to numerical
-accuracy and repeatable lume as its only M1 gaps. It remains research-only.
+record, and three convergent 79-80 g records initially reduced Cartier to two
+M1 gaps. A subsequent exact-reference pass resolved `lumeGrade: none` from
+MAIER's explicit no-Super-LumiNova specification plus Chronospex's independent
+no-luminescence classification; Cartier's own description corroborates the
+plain blued-steel-hand configuration. Numerical exact-applicable accuracy is
+now the sole M1 gap. It remains research-only.
 
 The same geometry policy was then applied to the already accepted
 Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481. Its exact

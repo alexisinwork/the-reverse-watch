@@ -514,11 +514,16 @@ For the post-batch evidence-gap pass on the same date:
   pins answer remains ambiguous between bracelet links and the case interface;
   `attachmentType` is therefore still null.
 - Cartier Tank Must WSTA0107 now needs only a numerical exact-applicable
-  accuracy bound and a repeatable lume grade. The additive geometry contract and
-  migration `0015` preserve the official 29.5 x 22 mm rectangular case without
-  inventing a diameter; exact reviewed sources also resolve the $4,100 U.S.
-  authorized-retailer offer, 16 mm interface, approximately 79.3 g maximum
-  bracelet weight, and Cartier QuickSwitch attachment. No Cartier row was added.
+  accuracy bound. MAIER's exact-reference technical sheet explicitly reports
+  no Super-LumiNova on the hands, and the independent exact-reference
+  Chronospex record classifies overall luminescence as none; Cartier's exact
+  page independently identifies plain blued-steel hands and a silvered printed
+  dial. This resolves `lumeGrade: none` without inferring absence from omitted
+  marketing copy. The additive geometry contract and migration `0015` preserve
+  the official 29.5 x 22 mm rectangular case without inventing a diameter;
+  exact reviewed sources also resolve the $4,100 U.S. authorized-retailer
+  offer, 16 mm interface, approximately 79.3 g maximum bracelet weight, and
+  Cartier QuickSwitch attachment. No Cartier row was added.
 - The accepted Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481
   now uses the manufacturer's explicit `L x W` semantics: `caseLengthMm: 47`,
   `caseWidthMm: 28.3`, `caseDiameterMm: null`, with the separately labelled
@@ -527,9 +532,10 @@ For the post-batch evidence-gap pass on the same date:
   weakening any hard filter.
 - The latest evidence sequence is committed as `db77f92` (Swatch), `760979c`
   (Omega), `a6fb895` (Bulova), `e17a2db` (Blancpain), and `abf958d` (Vostok),
-  followed by the Cartier geometry/evidence, Reverso correction, and TUDOR
-  expansion and applicability checkpoint `c0ebca7`. `npm run check` passes formatting,
-  lint, type generation, TypeScript, all 66
+  followed by the Cartier geometry/evidence, Reverso correction, TUDOR
+  expansion, applicability checkpoint `c0ebca7`, and production fallback smoke
+  `4bc4de8`. `npm run check` passes formatting, lint, type generation,
+  TypeScript, all 66
   tests across 13 files, and the production build. The strict research,
   coverage, and knowledge audits pass, and a PostgreSQL parser accepts all 15
   statements in migration `0016`, all 61 statements in migration `0017`, and
@@ -567,9 +573,9 @@ On 2026-08-28 for Phases 1–4:
    production must visibly use the reviewed bundled catalogue and local hard
    filters rather than a divergent relational result.
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
-   needs an authoritative repeatable lume grade. Cartier WSTA0107 now
-   needs only numerical exact-applicable quartz accuracy and a repeatable lume
-   grade; its rectangular geometry is supported but remains research-only.
+   needs an authoritative repeatable lume grade. Cartier WSTA0107 now needs
+   only numerical exact-applicable quartz accuracy; its rectangular geometry
+   and explicit no-lume evidence are supported, but it remains research-only.
    Swatch SO28N100 needs resolved full-watch weight, a numerical
    exact-applicable quartz rate bound, and a repeatable lume grade. Do not
    accept a row merely to make the batch non-empty. Vostok 420059 has stronger

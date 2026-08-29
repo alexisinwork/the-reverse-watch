@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "cartier-small-formal-quartz",
   "jobId": "cdf7a018-8bf8-4db2-96e5-770d233fc082",
-  "reviewedAt": "2026-08-29T10:47:27Z",
+  "reviewedAt": "2026-08-29T19:28:23Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -26,6 +26,16 @@
       "url": "https://www.cartier.com/en-my/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html",
       "status": "validated_primary",
       "note": "The independently retrievable exact official page validates WSTA0107, its small steel case and interchangeable steel bracelet, 29.5 x 22 x 6.6 mm rectangular geometry, High Autonomy quartz movement, 30 m rating, and hours/minutes-only functions. Its MYR 15,800 offer is not used because MYR is outside the supported launch currencies."
+    },
+    {
+      "url": "https://en.maier.fr/watchmaking-jewelry-brands/cartier/watches/tank/montre-tank-must-de-cartier_wsta0107",
+      "status": "validated_secondary",
+      "note": "MAIER's exact-reference WSTA0107 technical sheet explicitly states that the hands have no Super-LumiNova. This is retained as exact specialist-retailer evidence without treating MAIER as a primary manufacturer source."
+    },
+    {
+      "url": "https://chronospex.com/cartier/tank-must/wsta0107/",
+      "status": "validated_secondary",
+      "note": "The independent exact-reference specialist record classifies WSTA0107 luminescence as none, independently corroborating MAIER's explicit no-Super-LumiNova specification."
     },
     {
       "url": "https://www.tourneau.com/watches/cartier/tank-must-small-model-wsta0107-CAR0220293.html",
@@ -151,6 +161,12 @@
       "value": "quick_release",
       "sourceUrl": "https://www.wabyno.com/shop/p/cartier-tank-must-wsta0107-complete-set",
       "note": "The exact-reference specialist identifies Cartier QuickSwitch, corroborated by the manufacturer's exact description of the original bracelet as interchangeable."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "none",
+      "sourceUrl": "https://en.maier.fr/watchmaking-jewelry-brands/cartier/watches/tank/montre-tank-must-de-cartier_wsta0107",
+      "note": "MAIER's exact-reference technical sheet explicitly says the hands have no Super-LumiNova, while an independent exact-reference specialist classifies overall luminescence as none; Cartier's exact description independently identifies plain blued-steel hands and a silvered printed dial."
     }
   ],
   "rejectedProvisionalFields": [
@@ -167,6 +183,6 @@
       "reason": "Bracelet is a supplied component, not an interface type. It is replaced by a separately reviewed quick_release mapping from exact QuickSwitch evidence corroborated by Cartier's interchangeable-bracelet description."
     }
   ],
-  "missingM1Fields": ["accuracy", "lumeGrade"],
-  "note": "Keep as research-only. The additive non-round geometry contract now preserves Cartier's exact 29.5 x 22 mm dimensions without inventing a diameter and uses the evidenced overall length as wearing span. Exact current price, 16 mm width, approximately 79.3 g maximum-bracelet weight, and QuickSwitch attachment are independently reviewed. Cartier publishes no numerical exact-applicable rate tolerance, and plain blued-steel hands plus omitted lume prose do not establish lumeGrade none, leaving those two M1 gaps open."
+  "missingM1Fields": ["accuracy"],
+  "note": "Keep as research-only. The additive non-round geometry contract now preserves Cartier's exact 29.5 x 22 mm dimensions without inventing a diameter and uses the evidenced overall length as wearing span. Exact current price, 16 mm width, approximately 79.3 g maximum-bracelet weight, QuickSwitch attachment, and the absence of lume are independently reviewed. Cartier still publishes no numerical exact-applicable rate tolerance, leaving accuracy as the sole M1 gap."
 }
