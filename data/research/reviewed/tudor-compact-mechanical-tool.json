@@ -2,9 +2,9 @@
   "reviewVersion": 1,
   "targetId": "tudor-compact-mechanical-tool",
   "jobId": "e4e99573-be10-4fed-8321-1dca06a63d10",
-  "reviewedAt": "2026-08-29T08:47:00Z",
+  "reviewedAt": "2026-08-29T14:10:54Z",
   "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "outcome": "ready_for_migration",
   "candidateIdentity": {
     "brand": "TUDOR",
     "model": "Black Bay 54",
@@ -25,7 +25,7 @@
     {
       "url": "https://media.tudorwatch.com/image/upload/fl_attachment/v1/tudorwatch/pressroom/products/black-bay-54/pdf/t23rp-blackbay54-en.pdf",
       "status": "validated_primary",
-      "note": "The official Black Bay 54 press dossier independently corroborates the exact black-dial steel-bracelet configuration, MT5400 rate bounds and daily-rate context, 70-hour reserve, Grade A Swiss Super-LumiNova, T-fit clasp, and absence of a date display."
+      "note": "The official exact Black Bay 54 press dossier independently corroborates the black-dial steel-bracelet configuration, MT5400 rate bounds and daily-rate context, 70-hour reserve, Grade A Swiss Super-LumiNova, T-fit clasp, and absence of a date display. Its case-design section explicitly identifies spring-bar holes passing through the lugs, providing manufacturer corroboration for the factory attachment interface."
     },
     {
       "url": "https://www.youtube.com/watch?v=EgNpVn2_dUM",
@@ -59,8 +59,8 @@
     },
     {
       "url": "https://delugs.com/pages/straps-tudor-black-bay-54-m79000n-0001",
-      "status": "rejected",
-      "note": "The exact-reference fitment guide explicitly describes standard drilled lugs and spring bars, but TUDOR's exact product and service material does not independently identify the factory bracelet mechanism. The project's physical-interface policy therefore keeps attachmentType open."
+      "status": "validated_secondary",
+      "note": "The exact-reference fitment guide explicitly describes standard drilled lugs and spring bars. TUDOR's exact press dossier now independently corroborates the spring-bar holes through the lugs, so this direct fitment evidence can support the normalized spring_bar interface."
     }
   ],
   "verifiedProvisionalFields": [
@@ -158,6 +158,12 @@
       "note": "The catalogue maps documented Grade A Swiss Super-LumiNova across the dive watch's hands and markers to strong."
     },
     {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://media.tudorwatch.com/image/upload/fl_attachment/v1/tudorwatch/pressroom/products/black-bay-54/pdf/t23rp-blackbay54-en.pdf",
+      "note": "The exact official press dossier explicitly identifies spring-bar holes passing through the lugs; an exact-reference fitment guide independently identifies the corresponding standard drilled-lug spring bars."
+    },
+    {
       "fieldName": "complications",
       "value": [],
       "sourceUrl": "https://www.tudorwatch.com/en/watch-family/black-bay-54",
@@ -207,13 +213,13 @@
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Bracelet identifies the supplied material, not the bracelet-to-case attachment interface; spring bars must not be inferred from appearance."
+      "reason": "The provider's bracelet label remains insufficient by itself; the corrected spring_bar value comes from the exact official dossier's explicit through-lug spring-bar holes plus an exact-reference fitment guide."
     },
     {
       "fieldName": "complications",
       "reason": "Hours, minutes, seconds, and stop-seconds are basic functions rather than supported catalogue complication values."
     }
   ],
-  "missingM1Fields": ["attachmentType"],
-  "note": "Keep as research-only. Two independent exact-reference measurements resolve lug-to-lug at 45.8 mm, rounded elsewhere to 46 mm. Independent exact-reference new/unworn records resolve full-length bracelet weight at 139 g; the 135 g sized-bracelet observation is retained but not used for that normalization. The exact spring-bar fitment guide still lacks the manufacturer corroboration required for a factory-interface fact, so attachmentType remains open."
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. TUDOR's exact press dossier explicitly identifies spring-bar holes passing through the Black Bay 54 lugs, and an exact-reference fitment guide independently identifies the corresponding spring bars. This resolves the final attachment gap without inferring the interface from bracelet appearance. The 45.8 mm lug-to-lug and 139 g full-length bracelet normalization retain their independent exact-reference corroboration."
 }

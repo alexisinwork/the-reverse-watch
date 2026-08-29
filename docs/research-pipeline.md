@@ -59,8 +59,8 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 17 accepted catalogue targets linked to all current reviewed variants;
-- 14 active coverage-intent targets, with all default discovery jobs reviewed;
+- 18 accepted catalogue targets linked to all current reviewed variants;
+- 13 active coverage-intent targets, with all default discovery jobs reviewed;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
   mechanicals.
@@ -435,6 +435,19 @@ synthetic diameter, and the separately evidenced 47 mm lug-to-lug. Migration
 `0016` applies that correction after `0015`, replaces the field evidence, and
 versions both read RPCs so SQL and TypeScript share the same verified
 non-round wearing-span fallback.
+
+TUDOR Black Bay 54 M79000N-0001 then became the sixth migration-ready review.
+Page 6 of TUDOR's exact ten-page press dossier explicitly identifies the
+spring-bar holes passing through the lugs, while the exact-reference fitment
+guide independently identifies the corresponding standard spring bars. This
+resolves the last M1 gap without inferring an interface from bracelet material.
+Migration `0017` adds only that steel-bracelet reference after `0016`; the
+reviewed local seed now has 16 brands and 18 variants and covers 496/28,800
+cells (1.72%), with 492 single-candidate, 496 under-diversified, and 224
+under-evidenced cells. Its PLN snapshot also exposed a coverage bug: source
+prices are now converted through the dated EUR base before band derivation, so
+the watch maps to `2000_5000` and the currently empty `15000_plus` band is no
+longer falsely populated by a unit mismatch.
 
 ## Job idempotency and retention
 

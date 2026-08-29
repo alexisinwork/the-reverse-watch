@@ -89,7 +89,10 @@ read-only view later.
 
 Questionnaire bands are never stored on a variant. Price-band and wrist-band
 coverage projections are derived from numeric facts and the shared Phase 2
-constants.
+constants. Because the finite coverage matrix does not add a currency axis,
+its price bands are derived only after converting each sourced price through
+the catalogue's dated FX snapshot into the canonical EUR base; raw PLN, USD,
+GBP, or CHF numbers are never compared directly with one band boundary.
 
 `case_diameter_mm` is never a generic “size” slot. Rectangular dimensions use
 `case_width_mm` and `case_length_mm`. Fit uses verified `lug_to_lug_mm` when it
@@ -158,10 +161,12 @@ and enumerates 28,800 meaningful core-axis cells:
 × 4 accuracy tolerances × 4 weight limits × 5 representative function profiles
 ```
 
-The reviewed 17-variant local seed currently projects into 448 of 28,800 cells
-(1.56%). Of those, 444 have one candidate, all 448 have fewer than three brands,
+The reviewed 18-variant local seed currently projects into 496 of 28,800 cells
+(1.72%). Of those, 492 have one candidate, all 496 have fewer than three brands,
 and 224 contain at least one under-evidenced candidate. This is a coverage
-baseline, not a market-coverage claim. The audit separately reports:
+baseline, not a market-coverage claim. After canonical EUR conversion, no
+accepted local row currently occupies `15000_plus`; that empty band is retained
+as an explicit gap. The audit separately reports:
 
 - empty cells;
 - cells with one candidate;
@@ -194,11 +199,11 @@ fixed-interface evidence. Migration `0013_expand_catalogue_casio.sql` then adds
 G-SHOCK G-5600UE-1 with exact illumination, 16 mm spring-bar interface, and
 current secondary-market evidence. Migration
 `0014_expand_catalogue_seiko.sql` then adds Presage HCC004J1 with its reviewed
-exact-reference no-lume conflict resolution. Together they bring the intended
-live catalogue to 15 brands and 17 variants. All five remain unapplied while
-the Supabase MCP OAuth connection is expired; the bundled seed must not be
-pushed until the migrations are applied in order and the 17-row parity audit
-succeeds.
+exact-reference no-lume conflict resolution. Together they form the intermediate
+15-brand/17-variant state. All five remain unapplied while the Supabase MCP OAuth
+connection is expired; migrations `0015` through `0017` are also pending, and
+the bundled seed must not be pushed until the complete ordered sequence is
+applied and the 18-row parity audit succeeds.
 
 Migration `0015_add_rectangular_case_geometry.sql` then adds only the nullable
 non-round geometry columns; it adds no reference row. It is also unapplied and
@@ -210,6 +215,15 @@ its geometry-aware M0/M1 completeness, and makes
 public contracts. Both v1 contracts become internal implementation details.
 It is unapplied and must follow `0015` before the current local branch is
 pushed.
+
+Migration `0017_expand_catalogue_tudor.sql` then adds the homogeneous Black Bay
+54 M79000N-0001. TUDOR's exact dossier explicitly identifies the through-lug
+spring-bar holes, and the retained exact-reference fitment guide identifies the
+corresponding bars. The row is M1-complete with a 139 g normalized full-length
+bracelet configuration and a measured 45.8 mm lug-to-lug. It is unapplied and
+must follow `0016`; together the pending migrations bring the intended live
+catalogue to 16 brands and 18 variants. The bundled seed must not be pushed
+until 18-row parity succeeds.
 
 `npm run audit:catalogue-parity` validates the strict RPC response against the
 bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes

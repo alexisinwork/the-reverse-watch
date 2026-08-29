@@ -18,18 +18,18 @@ phase.
   score-trace, and source sections after the six core screens or optional
   refinement groups.
 - Nine additive migrations are applied to Supabase; additive migrations `0010`
-  through `0016` are prepared and locally verified but not yet applied
+  through `0017` are prepared and locally verified but not yet applied
   because the Supabase MCP OAuth refresh expired. This continuation also
   confirmed that no Supabase tool/CLI session or configured Vercel credential
   is available locally. Tables remain server-only;
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
-- Local `main` is 24 commits ahead of `origin/main` after the current checkpoint
-  is committed. The evidence and geometry
-  checkpoints through Cartier are committed locally, and the branch remains
-  intentionally unpushed until migrations `0010` through `0016` are applied and
-  17-row live SQL parity is proven.
+- Local `main` is 25 commits ahead of `origin/main` after the current checkpoint
+  is committed. The evidence, geometry, and TUDOR expansion checkpoints are
+  committed locally, and the branch remains
+  intentionally unpushed until migrations `0010` through `0017` are applied and
+  18-row live SQL parity is proven.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
@@ -62,8 +62,8 @@ phase.
   evidence; fail-closed SQL hard filters; speculative-candidate suppression;
   deterministic score traces, diversity, why-not explanations, and visible
   relaxations; and the complete 28,800-cell coverage audit.
-- The audit is not complete at the data layer: only 17 homogeneous variants are
-  accepted locally, 448 of 28,800 cells are covered, every covered cell is
+- The audit is not complete at the data layer: only 18 homogeneous variants are
+  accepted locally, 496 of 28,800 cells are covered, every covered cell is
   under-diversified, and 224 are under-evidenced. Phase 5 must close that
   breadth and evidence gap before the 200-brand knowledge pack can be treated as
   a recommendation catalogue. Phase 7 dossier, funnel, and owner-media work
@@ -100,9 +100,10 @@ phase.
   pre-collection core matrix and report empty, single-candidate,
   under-diversified, and under-evidenced cells.
 - The applied baseline has 11 brands and 12 variants. The reviewed local seed
-  now has 15 brands and 17 variants after adding Christopher Ward
+  now has 16 brands and 18 variants after adding Christopher Ward
   C63-39AGM4-S00W0-B0, Orient RA-AC0M03S, Marathon WW194003BK-0108, Casio
-  G-5600UE-1, and Seiko HCC004J1. Migrations `0010` through `0014` each carry
+  G-5600UE-1, Seiko HCC004J1, and TUDOR M79000N-0001. Migrations `0010`
+  through `0014` and `0017` each carry
   only their additive row and its sources, price, availability, evidence,
   deployment, friction, traits, and product URL.
 - Migration `0015` adds only nullable rectangular case width/length columns.
@@ -110,10 +111,16 @@ phase.
   synthetic 28.3 mm diameter to manufacturer-labelled 47 x 28.3 mm length and
   width, preserves its explicit 47 mm lug-to-lug, and introduces v2 catalogue
   and hard-filter RPCs with SQL/TypeScript non-round fit parity.
-- The current local audit reports 448 of 28,800 cells covered (1.56%): 444 are
-  single-candidate, all 448 are under-diversified, and 224 are under-evidenced.
+- Migration `0017` adds only the homogeneous Black Bay 54 M79000N-0001 after
+  exact manufacturer spring-bar-hole evidence resolved its final attachment
+  gap.
+- The current local audit reports 496 of 28,800 cells covered (1.72%): 492 are
+  single-candidate, all 496 are under-diversified, and 224 are under-evidenced.
+  Coverage price bands now use the dated EUR base instead of raw source-currency
+  numbers; this honestly exposes the current `15000_plus` band as empty rather
+  than misclassifying the PLN-priced TUDOR row.
   The applied live baseline remains 180 cells until migrations `0010` through
-  `0016` are applied in order.
+  `0017` are applied in order.
 - Browser roles have no table grants. The security advisor's only current
   findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
   both functions have an empty `search_path`, fixed read-only SQL, and no
@@ -142,7 +149,7 @@ phase.
   unit to the reviewed bundle plus local predicates.
 - `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
   applied baseline variants across six golden profiles. It must be rerun for
-  all 17 variants immediately after migrations `0010` through `0016` are
+  all 18 variants immediately after migrations `0010` through `0017` are
   applied in order. PostgreSQL
   owns the live hard-filter partition; TypeScript owns scoring, explanations,
   diversity, and fallback.
@@ -420,24 +427,32 @@ For the post-batch evidence-gap pass on the same date:
   because that same page visibly mixes in unrelated Astron 5X53 GPS Solar and
   titanium product copy. Generated migration `0014` adds only this row after
   `0013`.
-- The local seed is now 15 brands/17 variants and covers 448/28,800 cells
-  (1.56%): 444 single-candidate, 448 under-diversified, and 224 under-evidenced.
-  Strict research reports 17 accepted targets, 14 active targets, and 21
-  reviews: five `ready_for_migration`, 14 `needs_more_evidence`, and two
+- The local seed is now 16 brands/18 variants and covers 496/28,800 cells
+  (1.72%): 492 single-candidate, 496 under-diversified, and 224 under-evidenced.
+  Strict research reports 18 accepted targets, 13 active targets, and 21
+  reviews: six `ready_for_migration`, 13 `needs_more_evidence`, and two
   `excluded`.
 - Live Supabase remains 11 brands/12 variants. Apply migrations `0010` through
-  `0016`, prove 17-row catalogue and six-profile SQL parity, and only then push
+  `0017`, prove 18-row catalogue and six-profile SQL parity, and only then push
   the local commits.
 - Citizen BM8180-03E now needs only a repeatable lume grade. Citizen Watch
   Group's exact-model parts lookup lists dedicated spring-bar part 509-2074
   alongside the watch's band, resolving the factory interface as `spring_bar`.
   The conflicting exact-reference lume observations remain insufficient for a
   categorical grade.
-- TUDOR M79000N-0001 now needs only manufacturer-corroborated factory attachment
-  evidence. Independent exact-reference new and unworn/full-set records resolve
-  normalized full-length bracelet weight at 139 g with approximately 19.5-21 cm
-  of bracelet; the lower 135 g owner report is explicitly a sized-bracelet
-  observation and is not used for the full configuration.
+- TUDOR M79000N-0001 is now migration-ready and accepted in the local seed.
+  TUDOR's exact Black Bay 54 dossier explicitly identifies spring-bar holes
+  passing through the lugs, while the exact-reference fitment guide identifies
+  the corresponding spring bars. This resolves the final interface gap without
+  inferring it from the bracelet. The separately corroborated normalized
+  full-length weight remains 139 g, and the 45.8 mm hands-on lug-to-lug is
+  retained as a measured value.
+- The PLN-priced TUDOR row exposed a pre-existing coverage-projection defect:
+  raw currency amounts were passed directly to shared price-band thresholds.
+  Coverage now converts every source price through the dated EUR FX snapshot
+  first. TUDOR correctly projects into `2000_5000`, and the current
+  `15000_plus` coverage gap remains visible instead of being filled by a unit
+  mismatch.
 - Swatch SO28N100 now needs only resolved full-watch weight, a numerical
   exact-applicable quartz rate bound, and a repeatable lume grade. Swatch's
   embedded exact product payload resolves 34 x 8.75 x 39.2 mm geometry; a
@@ -475,11 +490,12 @@ For the post-batch evidence-gap pass on the same date:
   weakening any hard filter.
 - The latest evidence sequence is committed as `db77f92` (Swatch), `760979c`
   (Omega), `a6fb895` (Bulova), `e17a2db` (Blancpain), and `abf958d` (Vostok),
-  followed by the Cartier geometry/evidence and Reverso correction checkpoint.
-  `npm run check` passes formatting, lint, type generation, TypeScript, all 59
+  followed by the Cartier geometry/evidence, Reverso correction, and TUDOR
+  expansion checkpoints. `npm run check` passes formatting, lint, type
+  generation, TypeScript, all 61
   tests across 13 files, and the production build. The strict research,
   coverage, and knowledge audits pass, and a PostgreSQL parser accepts all 15
-  statements in migration `0016`.
+  statements in migration `0016` and all 61 statements in migration `0017`.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -505,12 +521,12 @@ On 2026-08-28 for Phases 1–4:
    `0013_expand_catalogue_casio.sql`, followed by
    `0014_expand_catalogue_seiko.sql`, followed by
    `0015_add_rectangular_case_geometry.sql`, followed by
-   `0016_correct_reverso_rectangular_geometry.sql`. Run live 17-row catalogue and
+   `0016_correct_reverso_rectangular_geometry.sql`, followed by
+   `0017_expand_catalogue_tudor.sql`. Run live 18-row catalogue and
    six-profile SQL parity. Only push after that succeeds so production never
    sees divergent bundled and relational catalogues.
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
-   needs an authoritative repeatable lume grade. TUDOR M79000N-0001 now needs
-   only manufacturer-corroborated attachment evidence. Cartier WSTA0107 now
+   needs an authoritative repeatable lume grade. Cartier WSTA0107 now
    needs only numerical exact-applicable quartz accuracy and a repeatable lume
    grade; its rectangular geometry is supported but remains research-only.
    Swatch SO28N100 needs resolved full-watch weight, a numerical

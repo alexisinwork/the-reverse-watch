@@ -9,10 +9,10 @@ import { seedCatalogue } from "./seed-catalogue";
 
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(17);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(18);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(17);
+    ).toBe(18);
   });
 
   it("retains evidence for every seed identity and price", () => {
@@ -83,6 +83,30 @@ describe("source-backed seed catalogue", () => {
     expect(evidenceFields(reverso!).has("caseWidthMm")).toBe(true);
     expect(evidenceFields(reverso!).has("caseLengthMm")).toBe(true);
     expect(verifiedCaseWearingSpanMm(reverso!)).toBe(47);
+  });
+
+  it("retains the reviewed Black Bay 54 bracelet configuration", () => {
+    const tudor = seedCatalogue.variants.find(
+      (variant) => variant.id === "tudor-m79000n-0001",
+    );
+
+    expect(tudor).toBeDefined();
+    expect(tudor!.referenceCode).toBe("M79000N-0001");
+    expect(tudor!.geometry).toMatchObject({
+      caseDiameterMm: 37,
+      caseThicknessMm: 11.2,
+      lugToLugMm: 45.8,
+      lugWidthMm: 20,
+      weightFullG: 139,
+    });
+    expect(tudor!.movement).toMatchObject({
+      accuracyLowerSeconds: -2,
+      accuracyUpperSeconds: 4,
+      accuracyPeriodDays: 1,
+    });
+    expect(tudor!.operation.attachmentType).toBe("spring_bar");
+    expect(evidenceFields(tudor!).has("attachmentType")).toBe(true);
+    expect(evidenceFields(tudor!).has("weightFullG")).toBe(true);
   });
 
   it("rejects a partial non-round dimension pair", () => {

@@ -474,8 +474,8 @@
       "targets": [
         {
           "id": "tudor-compact-mechanical-tool",
-          "referenceLabel": "Select a current compact mechanical tool reference",
-          "state": "needs_review",
+          "referenceLabel": "Black Bay 54 M79000N-0001",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "2000_5000",
@@ -499,7 +499,8 @@
               "gmt"
             ]
           },
-          "coverageRationale": "Add a source-complete compact premium tool row without borrowing Rolex brand-level facts."
+          "coverageRationale": "Add a source-complete compact premium tool row without borrowing Rolex brand-level facts.",
+          "catalogueVariantId": "tudor-m79000n-0001"
         }
       ]
     },

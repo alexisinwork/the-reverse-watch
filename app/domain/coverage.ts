@@ -12,6 +12,7 @@ import {
 } from "./questionnaire";
 import type { SeedCatalogue, SeedReferenceVariant } from "./catalogue";
 import {
+  convertMinorCurrency,
   hasVerifiedField,
   supportedAccuracyTolerances,
   verifiedCaseWearingSpanMm,
@@ -104,10 +105,16 @@ export function projectSeedCoverage(
     const accuracyTolerances = supportedAccuracyTolerances(variant.movement);
     const wristBands = compatibleWristBands(variant);
     const weightLimits = compatibleWeightLimits(variant);
+    const basePriceMinor = convertMinorCurrency(
+      variant.price.amountMinor,
+      variant.price.currency,
+      catalogue.fx.baseCurrency,
+      catalogue.fx,
+    );
     return {
       referenceVariantId: variant.id,
       brandId: variant.brand.slug,
-      priceBands: [derivePriceBand(variant.price.amountMinor / 100)],
+      priceBands: [derivePriceBand(basePriceMinor / 100)],
       wristBands,
       deploymentEnvironments: variant.eligibleEnvironments,
       ownershipFrictionLevels: variant.ownershipFrictionLevels,

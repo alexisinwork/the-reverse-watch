@@ -336,6 +336,70 @@
       "publisher": "Louis Pion",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-29T08:35:05Z"
+    },
+    {
+      "id": "tudor-m79000n-0001",
+      "url": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "title": "Black Bay 54 — M79000N-0001",
+      "publisher": "TUDOR",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T08:47:00Z"
+    },
+    {
+      "id": "tudor-black-bay-54-family",
+      "url": "https://www.tudorwatch.com/en/watch-family/black-bay-54",
+      "title": "Black Bay 54 family",
+      "publisher": "TUDOR",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T08:47:00Z"
+    },
+    {
+      "id": "tudor-black-bay-54-dossier",
+      "url": "https://media.tudorwatch.com/image/upload/fl_attachment/v1/tudorwatch/pressroom/products/black-bay-54/pdf/t23rp-blackbay54-en.pdf",
+      "title": "Black Bay 54 press dossier",
+      "publisher": "TUDOR",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-29T07:22:35Z"
+    },
+    {
+      "id": "1916-company-tudor-black-bay-54",
+      "url": "https://www.youtube.com/watch?v=EgNpVn2_dUM",
+      "title": "TUDOR Black Bay 54 exact-reference review",
+      "publisher": "The 1916 Company",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:47:00Z"
+    },
+    {
+      "id": "fratello-tudor-black-bay-54",
+      "url": "https://www.fratellowatches.com/hands-on-spending-time-with-the-tudor-black-bay-54/",
+      "title": "Hands-on with the TUDOR Black Bay 54",
+      "publisher": "Fratello Watches",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:47:00Z"
+    },
+    {
+      "id": "watchde-tudor-m79000n-0001",
+      "url": "https://archive.watch.de/archive_germany/tudor-heritage-black-bay-54-ref-m79000n-0001-80276.html",
+      "title": "TUDOR Black Bay 54 M79000N-0001 unworn full set",
+      "publisher": "Watch.de",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:47:00Z"
+    },
+    {
+      "id": "rasin-tudor-m79000n-0001",
+      "url": "https://en.www.rasin.co.jp/SHOP/N-79000N0001-3.html",
+      "title": "TUDOR Black Bay 54 M79000N-0001 new-watch listing",
+      "publisher": "GINZA RASIN",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T08:47:00Z"
+    },
+    {
+      "id": "delugs-tudor-m79000n-0001",
+      "url": "https://delugs.com/pages/straps-tudor-black-bay-54-m79000n-0001",
+      "title": "Straps for TUDOR Black Bay 54 M79000N-0001",
+      "publisher": "Delugs",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T14:10:54Z"
     }
   ],
   "fx": {
@@ -2163,6 +2227,148 @@
         },
         {
           "sourceId": "louis-pion-seiko-hcc004j1",
+          "fields": ["attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "tudor-m79000n-0001",
+      "brand": {
+        "slug": "tudor",
+        "name": "TUDOR",
+        "serviceCountries": null
+      },
+      "collection": "Black Bay 54",
+      "model": "Black Bay 54",
+      "referenceCode": "M79000N-0001",
+      "variantName": "37 mm steel case · black dial · three-link steel bracelet",
+      "productUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "price": {
+        "amountMinor": 1945000,
+        "currency": "PLN",
+        "marketCountry": "PL",
+        "observedAt": "2026-08-29T08:47:00Z",
+        "staleAfter": "2027-02-25T08:47:00Z",
+        "availability": "unknown",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": null,
+        "bracelet": "three-link stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 37,
+        "caseThicknessMm": 11.2,
+        "lugToLugMm": 45.8,
+        "lugWidthMm": 20,
+        "weightFullG": 139,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "TUDOR MT5400",
+        "powerReserveHours": 70,
+        "accuracyLowerSeconds": -2,
+        "accuracyUpperSeconds": 4,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": "screw_down",
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "compact_heritage_diver",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["structural_tool", "mid_century_industrial"],
+        "emotionalObjectives": ["dependability", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "tudor-m79000n-0001",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "tudor-black-bay-54-family",
+          "fields": [
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "complications",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "tudor-black-bay-54-dossier",
+          "fields": [
+            "materials",
+            "caseDiameterMm",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "complications",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "1916-company-tudor-black-bay-54",
+          "fields": ["lugToLugMm"]
+        },
+        {
+          "sourceId": "fratello-tudor-black-bay-54",
+          "fields": ["lugToLugMm"]
+        },
+        {
+          "sourceId": "watchde-tudor-m79000n-0001",
+          "fields": ["weightFullG"]
+        },
+        {
+          "sourceId": "rasin-tudor-m79000n-0001",
+          "fields": ["weightFullG"]
+        },
+        {
+          "sourceId": "delugs-tudor-m79000n-0001",
           "fields": ["attachmentType"]
         }
       ]

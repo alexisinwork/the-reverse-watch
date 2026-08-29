@@ -54,23 +54,21 @@ describe("pre-collection coverage audit", () => {
     ).toBe(false);
   });
 
-  it("projects every seed variant and spans every defined price band", () => {
+  it("projects every seed variant without requiring fake band coverage", () => {
     const projection = projectSeedCoverage(seedCatalogue);
     expect(projection).toHaveLength(seedCatalogue.variants.length);
     expect(
-      new Set(projection.flatMap((candidate) => candidate.priceBands)),
-    ).toEqual(
-      new Set([
-        "under_300",
-        "300_500",
-        "500_1000",
-        "1000_2000",
-        "2000_5000",
-        "5000_10000",
-        "10000_15000",
-        "15000_plus",
-      ]),
-    );
+      projection.every((candidate) => candidate.priceBands.length === 1),
+    ).toBe(true);
     expect(auditCoverage(projection).coveredCells).toBeGreaterThan(0);
+  });
+
+  it("derives coverage price bands in the dated EUR base currency", () => {
+    const projection = projectSeedCoverage(seedCatalogue);
+    const tudor = projection.find(
+      (candidate) => candidate.referenceVariantId === "tudor-m79000n-0001",
+    );
+
+    expect(tudor?.priceBands).toEqual(["2000_5000"]);
   });
 });

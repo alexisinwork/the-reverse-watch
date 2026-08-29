@@ -439,9 +439,11 @@ A subsequent exact-reference pass resolved TUDOR M79000N-0001's normalized
 full-length bracelet weight at 139 g. Independent new and unworn/full-set dealer
 records report the same value with approximately 19.5-21 cm of bracelet; the
 135 g owner measurement is retained as a sized-bracelet observation rather than
-used for the full configuration. TUDOR remains research-only because the exact
-specialist fitment guide's spring-bar description still lacks manufacturer
-corroboration of the factory attachment mechanism.
+used for the full configuration. The last attachment gap was then resolved by
+TUDOR's exact Black Bay 54 press dossier, which explicitly identifies
+spring-bar holes passing through the lugs, corroborating the exact-reference
+fitment guide's spring-bar description. Migration `0017` adds only this
+homogeneous steel-bracelet row after `0016`.
 
 An exact-reference Swatch SO28N100 follow-up reduced its M1 gaps from ten to
 three. Swatch's embedded product payload resolves 34 x 8.75 x 39.2 mm geometry;
@@ -504,6 +506,14 @@ identifies length as lug-to-lug. The seed now stores `caseDiameterMm: null`,
 migration `0016` corrects the relational row and evidence, recalculates
 rectangular-aware completeness, and introduces v2 catalogue/hard-filter RPCs
 with the same verified case-span fallback as TypeScript.
+
+With the TUDOR addition, the reviewed local seed contains 16 brands and 18
+variants. Adding its PLN price exposed and fixed a coverage-audit currency bug:
+the finite matrix now converts every source price through the dated catalogue
+FX snapshot into the canonical EUR base before deriving a display band, rather
+than comparing raw PLN, USD, GBP, or CHF numbers to the same thresholds. Live
+Supabase remains at 11 brands and 12 variants until migrations `0010` through
+`0017` are applied and 18-row fact and six-profile predicate parity passes.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 
