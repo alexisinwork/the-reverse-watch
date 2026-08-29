@@ -31,6 +31,12 @@ Last verified: 2026-08-29
   visibly selects the reviewed 18-row bundle; an incomplete hard-filter
   partition likewise falls back as one unit. The push does not waive the
   migration or 18-row parity requirement before Supabase is treated as active.
+- The explicit push through repository commit `6a43255` was observed in
+  production on 2026-08-29. The deployed quiz asset matched the reviewed local
+  build, `/`, `/quiz`, and `/health` returned 200, and a valid core POST
+  reported `catalogueOrigin: bundled_seed` with the expected visible live
+  catalogue validation-fallback notice. No domain, subscriber, or database
+  mutation was performed during this smoke check.
 - On the verified live release, `/`, `/quiz`, and `/health` returned 200. A
   valid core POST returned Grand Seiko and the explicit “accepted catalogue
   facts and hard-filter decisions loaded from Supabase” notice. Recent Vercel

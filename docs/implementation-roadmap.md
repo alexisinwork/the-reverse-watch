@@ -536,6 +536,11 @@ the reviewed 18-row bundle and deterministic local filters. This delivery
 decision does not complete the relational checkpoint: migrations `0010`
 through `0017`, live 18-row fact parity, and six-profile SQL predicate parity
 remain the first database continuation task.
+The push through `6a43255` subsequently reached the connected Vercel production
+project. The deployed asset matched the local reviewed build, all three short
+read-only endpoints returned 200, and a valid core recommendation request
+selected `bundled_seed` with the expected visible v2-validation fallback. This
+confirms the intended temporary operating mode rather than relational parity.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

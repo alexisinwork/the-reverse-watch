@@ -35,6 +35,13 @@ phase.
   plus deterministic local predicates when those RPCs are unavailable. Live
   18-row SQL parity remains mandatory before Supabase can become the active
   recommendation source again.
+- The owner-requested push advanced `origin/main` through `6a43255`. The Git
+  remote SHA matched local HEAD immediately afterward. The resulting Vercel
+  deployment served the same `quiz-D6lju-YI.js` asset as the reviewed local
+  build; `/`, `/quiz`, and `/health` returned 200. A valid core recommendation
+  POST returned `catalogueOrigin: bundled_seed` and the visible notice `Live
+  catalogue validation failed; using the reviewed bundled snapshot.` This is
+  the expected safe state while live Supabase lacks the v2 RPC pair.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
