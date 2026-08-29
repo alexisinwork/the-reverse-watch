@@ -1,0 +1,87 @@
+{
+  "reviewVersion": 1,
+  "targetId": "casio-gshock-compact-solar-tool",
+  "jobId": "d3d6eece-00f9-4539-a452-2a3ed2a0a776",
+  "reviewedAt": "2026-08-29T06:32:35Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "G-SHOCK",
+    "model": "G-5600",
+    "referenceCode": "G-5600UE-1",
+    "variantName": "Black resin case and band"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.casio.com/intl/watches/gshock/product.G-5600UE-1/",
+      "status": "validated_primary",
+      "note": "Exact official page independently validates identity, 46.7 x 43.2 x 12.7 mm case size, 51 g weight, resin construction, Tough Solar, 200 m water resistance, mineral glass, functions, and +/-15 seconds per month accuracy."
+    },
+    {
+      "url": "https://shopcasio.jebsen.com/en/g-5600ue-1.html",
+      "status": "rejected",
+      "note": "The regional commerce source was not independently validated as a manufacturer product source, and its HKD price cannot enter the current runtime currency contract without reviewed FX support."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "materials.strap",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.shockResistant",
+    "complications",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 46.7,
+      "sourceUrl": "https://www.casio.com/intl/watches/gshock/product.G-5600UE-1/",
+      "note": "The official L x W x H case size establishes a 46.7 mm top-to-bottom case span for fit filtering."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "materials.bracelet",
+      "reason": "The extraction marked a null value as observed; null remains missing and is not an accepted negative fact."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "reason": "The source reports 12 or 22 months under defined solar-storage conditions, not a directly stated number of hours."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The HKD commerce price requires an independently classified price source and a supported current FX path."
+    },
+    {
+      "fieldName": "price.currency",
+      "reason": "HKD is outside the current shared runtime currency contract."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "The linked commerce source was not independently validated during this review."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Mutable availability was not independently validated during this review."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Channel classification was not independently validated during this review."
+    }
+  ],
+  "missingM1Fields": ["price", "lugWidthMm", "lumeGrade", "attachmentType"],
+  "note": "This is the strongest candidate in the batch, but it remains research-only. Do not migrate until a supported price/FX path, exact band-interface width, reviewed attachment classification, and the catalogue's illumination/lume mapping are resolved."
+}

@@ -1,0 +1,4049 @@
+{
+  "manifestVersion": 1,
+  "strategy": "coverage_first",
+  "targetBrandCount": 201,
+  "updatedAt": "2026-08-29T06:40:23.322Z",
+  "brands": [
+    {
+      "slug": "rolex",
+      "name": "Rolex",
+      "priority": "P2",
+      "manifestRationale": "Keep material variants separate and avoid expanding benchmark rows before thin coverage gaps.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/rolex.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "10f700122156a90c74fe87bc1fd56ad0a708817dc63595b9b95d658860964704",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 14,
+        "sourceUrlCount": 5
+      },
+      "targets": [
+        {
+          "id": "rolex-124270",
+          "referenceLabel": "Explorer 124270 steel",
+          "state": "accepted",
+          "coverageRationale": "Accepted steel benchmark row with honest missing fit/weight facts.",
+          "catalogueVariantId": "rolex-124270"
+        },
+        {
+          "id": "rolex-124273",
+          "referenceLabel": "Explorer 124273 steel and yellow gold",
+          "state": "accepted",
+          "coverageRationale": "Accepted two-tone commercial/material split from the steel row.",
+          "catalogueVariantId": "rolex-124273"
+        }
+      ]
+    },
+    {
+      "slug": "patek-philippe",
+      "name": "Patek Philippe",
+      "priority": "P1",
+      "manifestRationale": "Original-plan sovereign high-horology context and high-complication coverage.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/patek-philippe.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9ce3b2e282fc3a625ef2570a4509c923f22a8864120edc722d9821b9da5b175d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 9,
+        "sourceUrlCount": 5
+      },
+      "targets": [
+        {
+          "id": "patek-formal-high-complication",
+          "referenceLabel": "Select a current source-complete formal complication",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "specialist_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Fill high-horology complication cells only when M1 decision facts are sourceable."
+        }
+      ]
+    },
+    {
+      "slug": "audemars-piguet",
+      "name": "Audemars Piguet",
+      "priority": "P2",
+      "manifestRationale": "Original-plan sovereign integrated-geometry context; lower priority than empty functional cells.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/audemars-piguet.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "80f9e736309db588be8c81fdf8f32aeae6c3e8bd863eb5c507d34719a698cce7",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 8,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "audemars-piguet-integrated-specialist",
+          "referenceLabel": "Select one homogeneous current integrated-bracelet variant",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "specialist_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add one material-specific row for archetype diversity, not a family-wide rollup."
+        }
+      ]
+    },
+    {
+      "slug": "vacheron-constantin",
+      "name": "Vacheron Constantin",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 4; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/vacheron-constantin.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "1c01cd239d1b86e3c2b27e822c44d37026610fe1fccc8c6c0cfa8caafce4ca5d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "cartier",
+      "name": "Cartier",
+      "priority": "P0",
+      "manifestRationale": "Original-plan formal archetype needed for small-wrist quartz and mechanical diversity.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/cartier.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "47a6724413c9fc594da15c26a14466e6e5a31aa8e91c881730542e290fa3d05c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 9,
+        "sourceUrlCount": 8
+      },
+      "targets": [
+        {
+          "id": "cartier-small-formal-quartz",
+          "referenceLabel": "Select a current small formal quartz reference",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000",
+              "5000_10000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Fill the sparse small-wrist formal precision cells with a non-round archetype."
+        }
+      ]
+    },
+    {
+      "slug": "omega",
+      "name": "Omega",
+      "priority": "P0",
+      "manifestRationale": "Original-plan benchmark brand needed for chronograph and high-accuracy mechanical diversity.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/omega.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "c901e2915174b8fd1c83113e631988d59963ef54ad0557e8f09713b29c11889b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 5
+      },
+      "targets": [
+        {
+          "id": "omega-mechanical-chronograph",
+          "referenceLabel": "Select a current source-complete mechanical chronograph",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical",
+              "specialist_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_5_seconds_per_day"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Diversify premium chronograph cells beyond the seed's single solar row."
+        }
+      ]
+    },
+    {
+      "slug": "jaeger-lecoultre",
+      "name": "Jaeger-LeCoultre",
+      "priority": "P1",
+      "manifestRationale": "Retain formal dual-time high-horology coverage and seek complete weight/accuracy evidence.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/jaeger-lecoultre.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "83e40b919429762ebf7a83d0aea59b0fc4f1420d6d4284daf5d66382af3b972b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 8,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "jlc-q3988481",
+          "referenceLabel": "Reverso Tribute Duoface Small Seconds Q3988481",
+          "state": "accepted",
+          "coverageRationale": "Accepted formal dual-time calibration variant.",
+          "catalogueVariantId": "jlc-q3988481"
+        }
+      ]
+    },
+    {
+      "slug": "a-lange-soehne",
+      "name": "A. Lange & Söhne",
+      "priority": "P2",
+      "manifestRationale": "High-art formal specialist coverage and original aesthetic/provenance intent.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/a-lange-sohne.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "dad9b45199bbff3e6b1c1ec40eacc9122d28bc9cf4cdb63aa04a4efb76bdcf34",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 5
+      },
+      "targets": [
+        {
+          "id": "lange-formal-high-art",
+          "referenceLabel": "Select a current homogeneous formal high-art variant",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "specialist_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "time_only_no_date",
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add high-art context only after a complete M1 variant can be verified."
+        }
+      ]
+    },
+    {
+      "slug": "grand-seiko",
+      "name": "Grand Seiko",
+      "priority": "P1",
+      "manifestRationale": "Retain the complete precision-GMT golden-profile row and later add Spring Drive diversity.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/grand-seiko.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "96ec1ce8c9736498de2226dcdbacd457328af714808ece70eb149e5d18b729dc",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 11,
+        "sourceUrlCount": 8
+      },
+      "targets": [
+        {
+          "id": "grand-seiko-sbgn029",
+          "referenceLabel": "Sport Collection SBGN029",
+          "state": "accepted",
+          "coverageRationale": "Accepted complete high-accuracy GMT calibration variant.",
+          "catalogueVariantId": "grand-seiko-sbgn029"
+        }
+      ]
+    },
+    {
+      "slug": "iwc-schaffhausen",
+      "name": "IWC Schaffhausen",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 10; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/iwc-schaffhausen.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "4a4752652247d9b42016d524c7988a49ddaf9f197feee61ae7e7e56ba3277698",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 9,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "breguet",
+      "name": "Breguet",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 11; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/breguet.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "e83413ae4fc575e60bc2e1e2732e8e0c900948c43f3678ea42c1d1825097bea1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 7,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "blancpain",
+      "name": "Blancpain",
+      "priority": "P1",
+      "manifestRationale": "Original-plan high-price specialist tool reference for a sparse market zone.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/blancpain.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "61204d96365dbb48a575619e853f67d63e56930210917c30e8120ed2fae351dc",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 8,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "blancpain-specialist-dive",
+          "referenceLabel": "Select a current source-complete specialist dive reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "specialist_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "simple_date",
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Test high-price specialist field coverage rather than adding another formal-only row."
+        }
+      ]
+    },
+    {
+      "slug": "breitling",
+      "name": "Breitling",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 13; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/breitling.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "bdd040707b8b66191f0a8d7a1136f58e126a7f7350415c89eb1c5a6ab5d73b2d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "zenith",
+      "name": "Zenith",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 14; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/zenith.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "c42d423913b116c060fe7544d03dcc0db6109fc280e56d5032410e74c8f081e6",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 9,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "chopard",
+      "name": "Chopard",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 15; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/chopard.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "720bef8f877b300bd5f81061f0a9ffc08cfc1c0ce1b9f34108d07b69312b317d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 9,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "tudor",
+      "name": "Tudor",
+      "priority": "P1",
+      "manifestRationale": "Mechanical tool benchmark for premium small-wrist and GMT/no-date diversity.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/tudor.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "34d80c62958f26939c3a0048b0a4c441abbc8d3abed1c22bf6d25fe420725000",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 6
+      },
+      "targets": [
+        {
+          "id": "tudor-compact-mechanical-tool",
+          "referenceLabel": "Select a current compact mechanical tool reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000",
+              "5000_10000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_5_seconds_per_day"
+            ],
+            "functionProfiles": [
+              "time_only_no_date",
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add a source-complete compact premium tool row without borrowing Rolex brand-level facts."
+        }
+      ]
+    },
+    {
+      "slug": "tag-heuer",
+      "name": "TAG Heuer",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 17; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/tag-heuer.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "51ab97ceb14d778e8fb521902bdf612513e4efed5311e37efc93ee4dd027384b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "panerai",
+      "name": "Panerai",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 18; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/panerai.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "329dd582d12fcfc021ab301cf42db3834628d0319667b614e5a1071007cc87fe",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "hublot",
+      "name": "Hublot",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 19; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/hublot.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "4a17d729f6aa20a6082f9738666ed5c1b9e79b8438dbafa47358df19b30ed579",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "girard-perregaux",
+      "name": "Girard-Perregaux",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 20; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/girard-perregaux.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f3773af5747386e49058c6e9df16911460c42d6bba97b5c630232765ed9fe2f1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "ulysse-nardin",
+      "name": "Ulysse Nardin",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 21; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/ulysse-nardin.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "70615be7e1d9b3aeec2d79f19b376d0ced7e6fabf4b0819ade8803e877980be1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 9
+      },
+      "targets": []
+    },
+    {
+      "slug": "glashutte-original",
+      "name": "Glashütte Original",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 22; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/glashutte-original.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "e1f203973127cf388ec29bd4dd9c56656fd7c32fc5041a8f79a74e417cb3f2ee",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "piaget",
+      "name": "Piaget",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 23; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/piaget.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "92592e8e33ef9b830dd5201025c8dc4a67d2d7af987d6791f90973fd4d0a0814",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 9
+      },
+      "targets": []
+    },
+    {
+      "slug": "bulgari",
+      "name": "Bulgari",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 24; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/bulgari.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "fd697c99dba70ebecf24b917036bc8ac5d49ec2769cf7fa7c2fc64fbdb9600a9",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "longines",
+      "name": "Longines",
+      "priority": "P1",
+      "manifestRationale": "Retain mechanical GMT coverage and research an independent competing archetype before adding more rows.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/longines.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "ae3acb403feb22f0a318fc8fd04a2dfe04585bda0bce2530275613dbf0f46456",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 8
+      },
+      "targets": [
+        {
+          "id": "longines-l38024636",
+          "referenceLabel": "Spirit Zulu Time L3.802.4.63.6",
+          "state": "accepted",
+          "coverageRationale": "Accepted workhorse mechanical GMT calibration variant.",
+          "catalogueVariantId": "longines-l38024636"
+        }
+      ]
+    },
+    {
+      "slug": "nomos-glashuette",
+      "name": "Nomos Glashütte",
+      "priority": "P1",
+      "manifestRationale": "Retain thin independent mechanical coverage and close missing weight/accuracy evidence.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/nomos-glashutte.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9172fb288ce9be09d189ae2d8cb4e267226040087404ada59a44b9bb792776d6",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "nomos-746",
+          "referenceLabel": "Club Sport neomatik petrol 746",
+          "state": "accepted",
+          "coverageRationale": "Accepted independent thin-sports calibration variant.",
+          "catalogueVariantId": "nomos-746"
+        }
+      ]
+    },
+    {
+      "slug": "sinn",
+      "name": "Sinn",
+      "priority": "P0",
+      "manifestRationale": "Original-plan engineering brand for diversified mechanical tool and GMT coverage.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/sinn.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "3027d36e0b8c0e37bda651698d17b312d43d1f2279146a49903587a9c3786d1a",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "sinn-compact-mechanical-gmt",
+          "referenceLabel": "Select a current compact mechanical GMT/tool reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Diversify the mechanical GMT cells now represented by only one brand at a time."
+        }
+      ]
+    },
+    {
+      "slug": "casio-g-shock",
+      "name": "Casio / G-Shock",
+      "priority": "P0",
+      "manifestRationale": "Original-plan requirement and the clearest low-price precision field/high-function gap.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/casio-g-shock.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "850d0ebc38c4f35485f24b7bb7a84262eb5e38669ef54a5fbcb846d9dadbc3e1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "casio-gshock-compact-solar-tool",
+          "referenceLabel": "Select a current compact solar G-Shock",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300",
+              "300_500"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25",
+              "6_25_6_75"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Target low-cost, lightweight, high-function precision cells that the seed does not cover."
+        }
+      ]
+    },
+    {
+      "slug": "seiko",
+      "name": "Seiko",
+      "priority": "P0",
+      "manifestRationale": "Add missing affordable mechanical and small-wrist rows around the accepted solar chronograph.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/seiko.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "3b53557d5914d0307323a4ad8ea11bed461cbddb9478bc634f8ce492694b23ad",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 8
+      },
+      "targets": [
+        {
+          "id": "seiko-ssc813",
+          "referenceLabel": "Prospex Speedtimer SSC813",
+          "state": "accepted",
+          "coverageRationale": "Accepted solar chronograph calibration variant.",
+          "catalogueVariantId": "seiko-ssc813"
+        },
+        {
+          "id": "seiko-compact-mechanical-no-date",
+          "referenceLabel": "Select a current compact mechanical no-date reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Fill small-wrist, affordable mechanical, and no-date cells with a second archetype."
+        }
+      ]
+    },
+    {
+      "slug": "citizen",
+      "name": "Citizen",
+      "priority": "P0",
+      "manifestRationale": "Expand solar precision and lightweight field coverage.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/citizen.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "1268838c70bd2b78e42508494df1330519749fd8fc763a043096dfee881b85bd",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 8
+      },
+      "targets": [
+        {
+          "id": "citizen-bn0150-28e",
+          "referenceLabel": "Promaster Dive BN0150-28E",
+          "state": "accepted",
+          "coverageRationale": "Accepted solar dive calibration variant.",
+          "catalogueVariantId": "citizen-bn0150-28e"
+        },
+        {
+          "id": "citizen-compact-lightweight-solar",
+          "referenceLabel": "Select a current compact lightweight solar reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g"
+            ]
+          },
+          "coverageRationale": "The accepted diver lacks verified lug-to-lug; research a compact, fully measured precision row."
+        }
+      ]
+    },
+    {
+      "slug": "hamilton",
+      "name": "Hamilton",
+      "priority": "P1",
+      "manifestRationale": "Retain accessible mechanical field coverage and seek missing weight/accuracy facts.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/hamilton.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "dce599a688b76f8410b12a86da7f10ac6dc6f1cdf92abc82408e4d5a2f17dbb0",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 8
+      },
+      "targets": [
+        {
+          "id": "hamilton-h69439131",
+          "referenceLabel": "Khaki Field Mechanical H69439131",
+          "state": "accepted",
+          "coverageRationale": "Accepted hand-wound field calibration variant.",
+          "catalogueVariantId": "hamilton-h69439131"
+        }
+      ]
+    },
+    {
+      "slug": "tissot",
+      "name": "Tissot",
+      "priority": "P1",
+      "manifestRationale": "Retain integrated-geometry value coverage and improve hard-fact completeness.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/tissot.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "5469fb5253a1eb7e0381350ba587e1565cc6b4fa6a7b6351213cc8954b1072f5",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "tissot-t1372071104100",
+          "referenceLabel": "PRX Powermatic 80 35 mm T137.207.11.041.00",
+          "state": "accepted",
+          "coverageRationale": "Accepted compact integrated-bracelet calibration variant.",
+          "catalogueVariantId": "tissot-t1372071104100"
+        }
+      ]
+    },
+    {
+      "slug": "oris",
+      "name": "Oris",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 33; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/oris.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "b15c3a197c3e4ef3c6732d52745be47b2c70baf666a94f7f23fb2cc813793dfa",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 28
+      },
+      "targets": []
+    },
+    {
+      "slug": "rado",
+      "name": "Rado",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 34; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/rado.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "73c28f760f9b2b00e391cc4a70f53675c76dffc4645157a900c73115bb705ffd",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 40
+      },
+      "targets": []
+    },
+    {
+      "slug": "bell-ross",
+      "name": "Bell & Ross",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 35; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/bell-ross.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9450ec778c9433569cabd929a77f372d1818f1f097a6525442044f1ab9c91c46",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 33
+      },
+      "targets": []
+    },
+    {
+      "slug": "h-moser",
+      "name": "H. Moser & Cie.",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 36; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/h-moser.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "0e35184eac11dfe4a6574b899d89e30192aa8605df62587e63d36d3bdb9fbedc",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 48
+      },
+      "targets": []
+    },
+    {
+      "slug": "fp-journe",
+      "name": "F.P. Journe",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 37; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/fp-journe.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "a22e807127b8f4ac77f2021786e3d2a431289fa6c21a0a7e3f1736fae530f5a2",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 45
+      },
+      "targets": []
+    },
+    {
+      "slug": "richard-mille",
+      "name": "Richard Mille",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 38; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/richard-mille.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6e5a988b4230415c4b812357d0f32d279c7fed1f4b21ab3116987a7bb4039388",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 46
+      },
+      "targets": []
+    },
+    {
+      "slug": "parmigiani-fleurier",
+      "name": "Parmigiani Fleurier",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 39; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/parmigiani-fleurier.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9ffe5bf370017aef4a5b926a5ec13b8700f40574d3b5bc336a7d4b234c3ca6eb",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 32
+      },
+      "targets": []
+    },
+    {
+      "slug": "mb-and-f",
+      "name": "MB&F",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 40; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/mb-and-f.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "54478226ff807fa40ef57fbdf93faf12c743a3f55ae9e1e3dbd99f1aa53fa2ab",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 10,
+        "sourceUrlCount": 37
+      },
+      "targets": []
+    },
+    {
+      "slug": "laurent-ferrier",
+      "name": "Laurent Ferrier",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 41; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/laurent-ferrier.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "4c0e0dcd50f3dbe1d4a66bba50e44bf8b62c25bab07e28f26c091ea77c55acfd",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 4
+      },
+      "targets": []
+    },
+    {
+      "slug": "kari-voutilainen",
+      "name": "Kari Voutilainen",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 42; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/kari-voutilainen.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "73860f5c9ac52d3f266fcd9532a5456310bdd8a31694c6765a767f7c3b2f261a",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "urwerk",
+      "name": "Urwerk",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 43; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/urwerk.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f310cea70dd4da6668301ee887f7f0e9c265b68eb73ccec7ab798bbacd49c26d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "de-bethune",
+      "name": "De Bethune",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 44; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/de-bethune.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "e0bb1593886ea7e9fcc72fdc478b1abce2efd81efec811c9e7cb6adee3e24a5b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "czapek",
+      "name": "Czapek & Cie.",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 45; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/czapek.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f297b998082c22618f17024207e4bdad20401df6dda8bf6da15a08fa5d6edf26",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "arnold-son",
+      "name": "Arnold & Son",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 46; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/arnold-son.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "dd2be54e6629d8e3dcf9e06bce2e028037a0fc2597f5bdd5c907139d7716820e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "angelus",
+      "name": "Angelus",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 47; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/angelus.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "ce1f3ee70134d8148c0f897a47658aedc35bb197fca17da31888d8b17db5b1d1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "bovet",
+      "name": "Bovet 1822",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 48; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/bovet.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f1b71cfba0f44b9d66850e4eaafe8a1c718304e1cf1791520ce427e3829f38a7",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "speake-marin",
+      "name": "Speake-Marin",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 49; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/speake-marin.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "e8847b30ff99937f2fff18cfead9ab4e8f5bb3b99e8e917e5d529fedf69c3d42",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "chronoswiss",
+      "name": "Chronoswiss",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 50; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/chronoswiss.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "3e351d5c3dde83ced06b4085d5baec106084af49b36cf3bcd4ca718fae0158e9",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "doxa",
+      "name": "Doxa",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 51; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/doxa.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "e5a28d91c954e9824637c9caa1dce897ad5b1b06b3d098cd2374249724f6a1d1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "squale",
+      "name": "Squale",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 52; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/squale.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "390fbb1358442f3c4fc9a5265fa7cdcbafebce211eb30dcc09e92bf7338616c9",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "nivada-grenchen",
+      "name": "Nivada Grenchen",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 53; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/nivada-grenchen.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "80cca7f1c3aa0fe23438dc989f205255b76bca8e32cc56553633e4c02f49ed1c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "vulcain",
+      "name": "Vulcain",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 54; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/vulcain.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "7b4e7a989ccf1aa16a7138c0d8c2918d05a485c499921d3fb74a8111c308b2a5",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "yema",
+      "name": "Yema",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 55; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/yema.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "97fd1e615d226c84b6214235b50c30397f38eecae64ae87e0a5052387d765adb",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "fortis",
+      "name": "Fortis",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 56; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/fortis.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "c1548f477c39bc318b23b6e9ad47999f5f4a2b7632d33efc6a73624457f403df",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "junghans",
+      "name": "Junghans",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 57; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/junghans.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "29643bd0117104944d95a04c57955730dbf2f06b7e6c360fb2a10cfca628e0e1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "stowa",
+      "name": "Stowa",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 58; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/stowa.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "51aa550db963dcd940a9b607e4e64aa0c44a578a0a2825b19ce228212f4e21cf",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "laco",
+      "name": "Laco",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 59; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/laco.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "11d995b4267ebbde822585c832482baefc6d970b2d01693a17cd6878c94c18eb",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "hanhart",
+      "name": "Hanhart",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 60; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/hanhart.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "8b7d1b2e46d34eba373aebe148194d28cb41c7567181d0ac10631e6384067a6b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "tutima",
+      "name": "Tutima Glashütte",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 61; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/tutima.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f266c8ee4e57cc7f0358d7bf534d2a1f5754a1341bb62bf92111263d4183927c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "muhle-glashutte",
+      "name": "Mühle-Glashütte",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 62; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/muhle-glashutte.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6ce583d2849a766d68c4d6ecd585369cd3b05ba487cfaa03b627aa870f5e134d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "certina",
+      "name": "Certina",
+      "priority": "P1",
+      "manifestRationale": "Mid-price field candidate for sourceable dimensions and workhorse mechanical diversity.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/certina.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "33425d0845565d14aa260273078bed0604b0efbd2b5989274596a8ba8dd7ff26",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 6
+      },
+      "targets": [
+        {
+          "id": "certina-midprice-mechanical-tool",
+          "referenceLabel": "Select a current compact mechanical tool reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000",
+              "1000_2000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Fill mid-price mechanical field cells currently dependent on incomplete rows."
+        }
+      ]
+    },
+    {
+      "slug": "mido",
+      "name": "Mido",
+      "priority": "P2",
+      "manifestRationale": "Retain accepted mid-tier integrated geometry as a diversity calibration row.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/mido.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "d897b88999331ca9a256eb32836e313ea5ed50b17b36202eee8a90fd3bf54ff5",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 6
+      },
+      "targets": [
+        {
+          "id": "mido-m0495261104100",
+          "referenceLabel": "Multifort TV Big Date M049.526.11.041.00",
+          "state": "accepted",
+          "coverageRationale": "Accepted big-date integrated-geometry calibration variant.",
+          "catalogueVariantId": "mido-m0495261104100"
+        }
+      ]
+    },
+    {
+      "slug": "alpina",
+      "name": "Alpina",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 65; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/alpina.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "d93765485649e3b5e418a77c3ab30cce391898f88b5af1b92d2c73aa8a385962",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "frederique-constant",
+      "name": "Frederique Constant",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 66; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/frederique-constant.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "5d629875bc537235640046e42d3cc966c3d2eb2831bb3e53d3ab5e2abe3ce805",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 9
+      },
+      "targets": []
+    },
+    {
+      "slug": "maurice-lacroix",
+      "name": "Maurice Lacroix",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 67; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/maurice-lacroix.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "b8d71a68f85243ab78ff0ed27b1de588de21e1a3d24fea7343ce2402ac121de7",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "baume-mercier",
+      "name": "Baume & Mercier",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 68; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/baume-mercier.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "27791739718747f9d9d0407c6210d5ba12dbf3f6f9c6a0afa0d65950e13dcaec",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 9
+      },
+      "targets": []
+    },
+    {
+      "slug": "ebel",
+      "name": "Ebel",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 69; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/ebel.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "01d2c422fb69e225ff1f8bf45bfad24b02be65705caebd40eaf629de7b2c707c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 10
+      },
+      "targets": []
+    },
+    {
+      "slug": "eberhard",
+      "name": "Eberhard & Co.",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 70; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/eberhard.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f402c1ba029b5fb0200b5db524a722bdc0fde54e6120cdfcd9d21167a8fdf23d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "zodiac",
+      "name": "Zodiac",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 71; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/zodiac.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "afd33e34ec594b24f8c840bb459c39bcbcca653634c3a340e900717c41586247",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "bulova",
+      "name": "Bulova",
+      "priority": "P1",
+      "manifestRationale": "Precision quartz alternative for affordable studio and chronograph coverage.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/bulova.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "c4aa1ba1b44066aa83c2b12c57625841dfdf5aff5d89c38ce3c6222ee7cab4dc",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 9
+      },
+      "targets": [
+        {
+          "id": "bulova-precision-quartz-chronograph",
+          "referenceLabel": "Select a current source-complete precision quartz chronograph",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Diversify affordable chronograph cells beyond one solar Seiko row."
+        }
+      ]
+    },
+    {
+      "slug": "timex",
+      "name": "Timex",
+      "priority": "P1",
+      "manifestRationale": "Retain the accepted lightweight value-tool calibration row.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/timex.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9c86cb55caa71f71a53b8172b837cff3c4517a533b39ee619f26fd7a06c0e1ab",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 10
+      },
+      "targets": [
+        {
+          "id": "timex-tw2y40300",
+          "referenceLabel": "Deepwater Meridian 200 38 mm TW2Y40300",
+          "state": "accepted",
+          "coverageRationale": "Accepted low-cost quartz field/water calibration variant.",
+          "catalogueVariantId": "timex-tw2y40300"
+        }
+      ]
+    },
+    {
+      "slug": "orient",
+      "name": "Orient",
+      "priority": "P0",
+      "manifestRationale": "Affordable mechanical row for the large gap between sub-$500 quartz and higher-price workhorses.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/orient.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "908d70863ccfbd661544dee60233ad2c6540ddc3162a953d8343ad8a16c59196",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "orient-affordable-mechanical-date",
+          "referenceLabel": "Select a current compact mechanical date reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Diversify affordable mechanical date cells with a second industrial archetype."
+        }
+      ]
+    },
+    {
+      "slug": "raketa",
+      "name": "Ракета (Raketa)",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 75; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/raketa.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "3adef43478aec3e5fcc6ee35e79db5a57dd6b7fcea13a695d8a9241a67afb315",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "vostok",
+      "name": "Vostok",
+      "priority": "P0",
+      "manifestRationale": "Original-plan mechanical counter-signal for the near-empty sub-$300 workhorse field zone.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/vostok.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "b483c742395d8c41799eee6a688640c369e8cf4ee486dca850c0384460e899f9",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "vostok-affordable-mechanical-field",
+          "referenceLabel": "Select a current source-verifiable mechanical field/water reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "simple_date",
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Test whether a source-complete mechanical option can populate the acknowledged low-budget provenance gap."
+        }
+      ]
+    },
+    {
+      "slug": "konstantin-chaykin",
+      "name": "Konstantin Chaykin",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 77; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/konstantin-chaykin.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "ce1a12968549998644a7d2acdeab788af8625e9e6d83076f65eab367382d8033",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "poljot-sturmanskie",
+      "name": "Полет / Штурманские",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 78; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/poljot-sturmanskie.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "34aa1a350a7cdde285c84436cf62ba6894afc95d8241417b862e6069542b8fa6",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 9
+      },
+      "targets": []
+    },
+    {
+      "slug": "pequignet",
+      "name": "Pequignet",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 79; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/pequignet.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "5b83c8a65f3fbb3b85ab85c5891f7a699debd1e9d078c12c8d59d34c7e5f7d87",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "cuervo-y-sobrinos",
+      "name": "Cuervo y Sobrinos",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 80; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/cuervo-y-sobrinos.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "bae97e9ffb55ef344d0c001e2dbc947d28f6a93434a39987a5bc6193bb8874e3",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 5,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "christopher-ward",
+      "name": "Christopher Ward",
+      "priority": "P0",
+      "manifestRationale": "Transparent modern brand for mechanical GMT and tool diversity below established-luxury pricing.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/christopher-ward.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "274040c528b6de20eb3b5b1b67c038e07795b2b5afc91d90d1e9df09129598be",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": [
+        {
+          "id": "christopher-ward-mechanical-gmt",
+          "referenceLabel": "Select a current source-complete mechanical GMT",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000",
+              "2000_5000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add a lower-priced GMT brand to reduce top-three brand collapse."
+        }
+      ]
+    },
+    {
+      "slug": "baltic",
+      "name": "Baltic",
+      "priority": "P0",
+      "manifestRationale": "Transparent microbrand candidate for affordable small-wrist mechanical and modern-rebirth coverage.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/baltic.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "90501037e2a80cd7f0d7f951271b862dc53a400300505861662554cd5b7923d9",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": [
+        {
+          "id": "baltic-compact-mechanical",
+          "referenceLabel": "Select a current compact mechanical reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_120_g"
+            ],
+            "functionProfiles": [
+              "time_only_no_date",
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Target the audit's near-empty affordable independent/small-wrist combination."
+        }
+      ]
+    },
+    {
+      "slug": "ming",
+      "name": "MING",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 83; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/ming.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "0e6ec1e9e9d25b3ef67a08d543c736371a671ea6f5e49036f089a3eac8f53d37",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "kurono-tokyo",
+      "name": "Kurono Tokyo",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 84; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/kurono-tokyo.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6299e9ddbb5075b14fb837cf8479bedbee78c5eb2285116209e17e6b8fa95832",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "farer",
+      "name": "Farer",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 85; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/farer.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "ea4bc0571af0c6e9bff16ee2f8353b45d21bbb73adae84edb48f8fbed6e8bb3b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "serica",
+      "name": "Serica",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 86; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/serica.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "70f9fa911d4ba13e7dc4df5fd4fac6047f425b2917c860352709ed46bc1dcb7e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "studio-underd0g",
+      "name": "Studio Underd0g",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 87; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/studio-underd0g.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "480594825edfe2b6584627dd511192e07c963851e15792c56dd3729947a5dda3",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 11
+      },
+      "targets": []
+    },
+    {
+      "slug": "anordain",
+      "name": "anOrdain",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 88; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/anordain.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "4e75f1414f5d699c503f24b207971c769c1729095f32c7cd8ba801cc1bef89e7",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "fears",
+      "name": "Fears",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 89; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/fears.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "09a3694207f1239806242da6642841100521d7a539548f99d1245b278c9d4998",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "vertex",
+      "name": "Vertex",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 90; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/vertex.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "acd015dfff1dcaec4667b80be5eb6482213f049ad8a825dc5bdd2742be7d5f82",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "bremont",
+      "name": "Bremont",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 91; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/bremont.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "97bfd8ec4d8adf2f2713a0a921f2ac2ba90b503f15116fe3e7c0ad0ebebed7fc",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 21
+      },
+      "targets": []
+    },
+    {
+      "slug": "unimatic",
+      "name": "Unimatic",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 92; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/unimatic.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "c56488561f792a72ac51a35077fd4e18dfca9ae7619bdf7169a263b0fbd605bf",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 19
+      },
+      "targets": []
+    },
+    {
+      "slug": "brew",
+      "name": "Brew",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 93; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/brew.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "b3e7e12b312578502d15e8f8dc20f49bbe664204028a82f00dcfff7150ab2943",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 20
+      },
+      "targets": []
+    },
+    {
+      "slug": "autodromo",
+      "name": "Autodromo",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 94; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/autodromo.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "ac7852c6d1a9a7d5b20f9a47b689af89bb528e0a50bc0d2aeb395dd9edd4bfcc",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 13
+      },
+      "targets": []
+    },
+    {
+      "slug": "halios",
+      "name": "Halios",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 95; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/halios.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "64ae13764864f876de1672e1bd8ece4a2467976580f9d587e02d5ccdc67ab0a7",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 20
+      },
+      "targets": []
+    },
+    {
+      "slug": "zelos",
+      "name": "Zelos",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 96; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/zelos.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "08bb886b9bee5e9ef9a0d85bc7275c2e4227ba85ae08065165c9683a8664c22a",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 16
+      },
+      "targets": []
+    },
+    {
+      "slug": "formex",
+      "name": "Formex",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 97; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/formex.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "21955b6eac288edcf8cd76832206d91e5b2a8f54f45e2677f2fffcfda125bb94",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 17
+      },
+      "targets": []
+    },
+    {
+      "slug": "traska",
+      "name": "Traska",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 98; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/traska.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "49be44a46fdb78619da20b3fd4a9f2889d7e90b477010487dba91f44a9bce8d2",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 20
+      },
+      "targets": []
+    },
+    {
+      "slug": "lorier",
+      "name": "Lorier",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 99; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/lorier.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "08d77ada7b4fb97faacf9a79bb1a8969413232a1a451391285bdb9f6155cc8ab",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 18
+      },
+      "targets": []
+    },
+    {
+      "slug": "nodus",
+      "name": "Nodus",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 100; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/nodus.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "ac788e8343c979d8aef14612be9e2ca17ffb5c7ef29af6d82b9c17de736d2eb1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 20
+      },
+      "targets": []
+    },
+    {
+      "slug": "oak-and-oscar",
+      "name": "Oak & Oscar",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 101; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/oak-and-oscar.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "cf121d7cf412937671d64d3e0d99165231ad6d6b4f9fab941f876fd8bdd815a8",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "furlan-marri",
+      "name": "Furlan Marri",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 102; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/furlan-marri.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "28f5b4e65bde99f0af001410ba0f37d5b164e559b11b5ee60ebd82781c370115",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "maen",
+      "name": "MAEN",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 103; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/maen.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "14a7e33ea1772935b8cda56eecd11e8faecf1f0bbedf9aaa6ccbeb918c4863e2",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "reservoir",
+      "name": "Reservoir",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 104; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/reservoir.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f3ad0c4d9a5c5d16eaa09a836cfff86b53e741b4c827ba61465fd8d517221ce3",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "march-lab",
+      "name": "March LA.B",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 105; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/march-lab.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "5d97e4a886a5a6251a5842312aeb5133dd35fadcae4c9155431d8618135b6f50",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "lip",
+      "name": "LIP",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 106; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/lip.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "51e87bd0ff55cada88183458ea7c9e212d1316f3d79e1f38b083a0288c181d85",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "duckworth-prestex",
+      "name": "Duckworth Prestex",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 107; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/duckworth-prestex.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "1265365bce3a6e966eeb9f64b61c368f1ac817feeadd9bed692b3f261f2bb0bd",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "garrick",
+      "name": "Garrick",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 108; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/garrick.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "964b91f253e71c6d5aa8aa9a56d2e3f3773dbb9ff4a56f37a4a1ef65aceef95b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "rgm",
+      "name": "RGM Watch Co.",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 109; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/rgm.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "5e6eb98140a6ac3244018417ed571a4bcd2d863ff6100b0cf6cddf74e6b3a1c3",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "damasko",
+      "name": "Damasko",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 110; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/damasko.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "7d2f3577ea6d1749a4cd6f22a0d5ff88d8ba2c323a7e70f955b3f437dea56fec",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "marathon",
+      "name": "Marathon",
+      "priority": "P0",
+      "manifestRationale": "Original-plan independent tool brand suited to compact field and service-tolerance gaps.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/marathon.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "2b37c1245e189bcc141b43511d46f334935904c1444bb75bee918719aaaa8572",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": [
+        {
+          "id": "marathon-compact-field-tool",
+          "referenceLabel": "Select a current compact field/tool reference",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000",
+              "1000_2000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ],
+            "weightLimits": [
+              "under_120_g"
+            ],
+            "functionProfiles": [
+              "simple_date",
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add a distinct compact tool archetype where current field rows are incomplete or too large."
+        }
+      ]
+    },
+    {
+      "slug": "tornek-rayville",
+      "name": "Tornek-Rayville",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 112; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/tornek-rayville.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f699b69d70411ca31da823112fa717f9722bc1eab7f2e443c299bb1c8d12648a",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "wolbrook",
+      "name": "Wolbrook / Douglas",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 113; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/wolbrook.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "74b9e1ecfe9a3200557d7e78f0743601778f1770a6ee0c2a6df5f31ea4a59d14",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "benrus",
+      "name": "Benrus",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 114; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/benrus.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f8c59008164afd45de4493680682fb8626a9a8cb4e84390e35cf6ff70b0f462e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "cwc",
+      "name": "CWC (Cabot Watch Company)",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 115; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/cwc.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "1966ff627e953ccaa121f9ca7044e7773e9a4214f3840557665d5a450176d86b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "precista",
+      "name": "Precista",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 116; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/precista.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "ead5af429e68f6922dca1208662ab88f5b13fe1cbc3b81ac1c54bbc756ce4608",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "ollech-wajs",
+      "name": "Ollech & Wajs (O&W)",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 117; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/ollech-wajs.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "0284f1db8c92cfff72ad532569a04d0557089e473c07745b36ffeebab6ec4322",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "excelsior-park",
+      "name": "Excelsior Park",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 118; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/excelsior-park.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "7c2369eecf3c247e693b5d4aaa2d88581490e1c93a58bc8f297ef9ae17e4ec50",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "gallet",
+      "name": "Gallet",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 119; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/gallet.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "626cc66156c499e7aeda0e5fdabf1e3caaa75a05d7d492d0da02e9921fd5eb71",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 9
+      },
+      "targets": []
+    },
+    {
+      "slug": "favre-leuba",
+      "name": "Favre-Leuba",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 120; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/favre-leuba.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "904eb3157168c75caee3939f3ddd2159cdd8e0837822fe4e9fa1ec1d84addbca",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "universal-geneve",
+      "name": "Universal Genève",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 121; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/universal-geneve.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "ce9e0d4726d908207aba6f2af415825373c038eb50480675633a68ab15a15fb6",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 4
+      },
+      "targets": []
+    },
+    {
+      "slug": "lemania",
+      "name": "Lemania",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 122; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/lemania.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f1681bdc2dbd6266749a2b435f4a00b69868dd087c60067a1c56141a60dae08e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 4
+      },
+      "targets": []
+    },
+    {
+      "slug": "minerva",
+      "name": "Minerva",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 123; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/minerva.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "133862d91d193536e877b5e1278fd87a327bb917803e9bbaf74e69b562e4911a",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "montblanc",
+      "name": "Montblanc",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 124; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/montblanc.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "bf831156347a8efe9fb682bd696a12ad66299e74ddddb861a95030c4ad9b1e65",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "eterna",
+      "name": "Eterna",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 125; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/eterna.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "49901d6ddc6079f3166925b199bb19b94a4663e6a6a51756bd0c1dfe697eedf9",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "movado",
+      "name": "Movado",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 126; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/movado.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "5c2c9e8b4aa3bc5d3fa5433d12c069fc42e232a124b312d3a176e96c235834ac",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "cyma",
+      "name": "Cyma",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 127; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/cyma.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "00bb3aa02b54e3092b44b9139e0b8951fa2ccbfb9f559b6f16b085d32a18b601",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "roamer",
+      "name": "Roamer",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 128; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/roamer.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "0e2dca05ad6764a38e385fdf52565f895502f19b43caf10ae9d2a7dc65a5114a",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "rotary",
+      "name": "Rotary",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 129; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/rotary.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "69c79b5da651857f4d843fd3c2c7185cb64d55e46853dc90794ff02a125b0178",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "record",
+      "name": "Record Watch Co.",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 130; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/record.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "64084f55374b1b30ae71954f81795d53c167b64f23e63e86a8099c5b7d0cb8b0",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "cortebert",
+      "name": "Cortébert",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 131; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/cortebert.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "8147412b2e8e459b30ffe832739b3c719b82e72ef89f1dc645cb2ed4c57c1cdd",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 18
+      },
+      "targets": []
+    },
+    {
+      "slug": "enicar",
+      "name": "Enicar",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 132; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/enicar.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "da9efd8fb66c6e5d706fc7495f81644fd2e857276852e29315d7e99129fe444b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 24
+      },
+      "targets": []
+    },
+    {
+      "slug": "solvil-et-titus",
+      "name": "Solvil et Titus",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 133; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/solvil-et-titus.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "c41e524670f4a61b5943ff2cf9f457e4d84a6d101cea26cdcc09d3e37228093a",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 25
+      },
+      "targets": []
+    },
+    {
+      "slug": "smiths",
+      "name": "Smiths",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 134; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/smiths.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "61ec9dca72458bcb1366ec8571b64c5200669f8dec41813d1c6a0f142308074f",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 20
+      },
+      "targets": []
+    },
+    {
+      "slug": "sea-gull",
+      "name": "Sea-Gull",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 135; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/sea-gull.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "cb4d661c3bdaabc87e71e690549c2916ce710a8e8f6c913442cc323f6f78edf5",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 16
+      },
+      "targets": []
+    },
+    {
+      "slug": "shanghai-watch",
+      "name": "Shanghai Watch",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 136; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/shanghai-watch.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6ecbaca30e93fce617e2374093045305f5fb06a76532ea0afadbcd11e272ddfd",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 18
+      },
+      "targets": []
+    },
+    {
+      "slug": "beijing-watch",
+      "name": "Beijing Watch Factory",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 137; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/beijing-watch.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "5e85d169fafab67e5f3ad32f91caa5ea72c39a07f898ba77b4e0ce529fe2d3ed",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 14
+      },
+      "targets": []
+    },
+    {
+      "slug": "hmt",
+      "name": "HMT",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 138; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/hmt.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "4190b9a27837c8133f9fd629a4656215aabbdcb7867c1626f9888d1aa5e23aa2",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 21
+      },
+      "targets": []
+    },
+    {
+      "slug": "luch",
+      "name": "Luch",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 139; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/luch.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "3c14a893deddfac47608b346d06f53aa53650fcdac43d48a369cf5240d8329d7",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 16
+      },
+      "targets": []
+    },
+    {
+      "slug": "slava",
+      "name": "Slava",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 140; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/slava.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9761182de27860b9e3b51d66e70d07ed201e1bd6e8b3e0d3c74231c580bf45ec",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 11
+      },
+      "targets": []
+    },
+    {
+      "slug": "molnija",
+      "name": "Молния (Molnija)",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 141; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/molnija.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "326ddd5b89515b2f368c26d691153e9f482165787bb4992734fabe35194519e5",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "agat-zlatoust",
+      "name": "Златоустовский часовой завод / Агат",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 142; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/agat-zlatoust.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "826a40a6ae0bcf166ec505e0f633cd46f8ca3dbb8c1d3ff1698f40e0f0d1f209",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "vostok-europe",
+      "name": "Vostok Europe",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 143; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/vostok-europe.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f40594222f50de9cdbd2c83f48abec77593c49fe7e70737f3398650ee81a1a66",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "wempe-chronometerwerke",
+      "name": "Wempe Chronometerwerke",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 144; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/wempe-chronometerwerke.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9fd5ce182c675ae85eb0edd2fa2e1787e08dbabc03d124695495caa8314df0d4",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "union-glashutte",
+      "name": "Union Glashütte",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 145; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/union-glashutte.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "0f21f30801b58494b9940d6a00bbe61fcbaebfe241c4da4cc153a473d04d4235",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "bruno-sohnle",
+      "name": "Bruno Söhnle",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 146; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/bruno-sohnle.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "579edbc18b00b5ee5a205bd3ef7a96ef53597fc7f3792a429541636b4ecfcb1e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "meistersinger",
+      "name": "MeisterSinger",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 147; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/meistersinger.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "fd6b86b7c9f88daa7b4f1ea3eb5a28df8a20604e492652eae4bf0ab85f83d8c2",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "schaumburg-watch",
+      "name": "Schaumburg Watch",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 148; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/schaumburg-watch.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "58c030e212c9f413f3d24011362adf36cc4d363d617da2b76a2508c02bc44481",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 4
+      },
+      "targets": []
+    },
+    {
+      "slug": "kudoke",
+      "name": "Kudoke",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 149; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/kudoke.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "482e2bb96366766aad573cb32c9812d95c9aacb42bbe7ccbb5d9149833c8c1c8",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "lang-heyne",
+      "name": "Lang & Heyne",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 150; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/lang-heyne.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f116f2151b64c60437217fa2bd3bb028905de72ac13a2f8777083df14074397b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "moritz-grossmann",
+      "name": "Moritz Grossmann",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 151; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/moritz-grossmann.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "62b1e50ecbd7a1fa119a422f5311c137eb3b3b0e7951577c3c6b6b43507dafdb",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "sarpaneva",
+      "name": "Sarpaneva / S.U.F Helsinki",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 152; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/sarpaneva.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6f8ea736962ee81be0b98f29563adca1e0551f02337abb8bee0cf0a07a24b304",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "habring",
+      "name": "Habring²",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 153; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/habring.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "d8a71a54e5634f5550d942d06429c281f45fa04ddc72e1d512d448ce9fcda20d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "dornbluth",
+      "name": "D. Dornblüth & Sohn",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 154; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/dornbluth.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "8ff0efcb0d52ab486edda00bb55e1765a499f932ef7c5aeb6e1ff8a9e9fe4fdb",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "greubel-forsey",
+      "name": "Greubel Forsey",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 155; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/greubel-forsey.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "884e8f91fd3c285e7a5716b60b704235056b7b57751b4ff65e14254d5844e0d9",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 9
+      },
+      "targets": []
+    },
+    {
+      "slug": "philippe-dufour",
+      "name": "Philippe Dufour",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 156; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/philippe-dufour.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6570d650a4bc2d3a4fb08851fafd801be558fefcda1cf64fe73d2bd37668b01c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "roger-w-smith",
+      "name": "Roger W. Smith",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 157; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/roger-w-smith.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "bb49d41ff1116b05b6f5337caa52d2d1ffe7a6bc5f250371b9f923fb8ac8b0ac",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "romain-gauthier",
+      "name": "Romain Gauthier",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 158; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/romain-gauthier.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "20284fab9c3cd1e377063ad291a5a25539218cd10e966739b75c29caf4adaba7",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "gronefeld",
+      "name": "Grönefeld",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 159; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/gronefeld.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6e286b33a8bd69f3a596c7e6e0f0d35c0cc1df2ee0a4bf5881bd816f933f721c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 9
+      },
+      "targets": []
+    },
+    {
+      "slug": "ressence",
+      "name": "Ressence",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 160; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/ressence.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "d27a3012860c81333ce5997050b27fe889dca398bec0251d1933995a9f02efc3",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "trilobe",
+      "name": "Trilobe",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 161; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/trilobe.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "fc6ce28190515816dfa2188173d8d8ee7e97e9a1e90fbd2b1e275f3738c0a00e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "singer-reimagined",
+      "name": "Singer Reimagined",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 162; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/singer-reimagined.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "29eaa5993fc1751e1efc22b9adc6ec0cd5f430a6028f25cc106957bd7c902d0d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "byrne-watch",
+      "name": "Byrne Watch",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 163; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/byrne-watch.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "bc651f6d7b8e36af3d0101e5e8a7fe54d3e9c7540f0139a548b0fc94138682ff",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 4
+      },
+      "targets": []
+    },
+    {
+      "slug": "hyt",
+      "name": "HYT",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 164; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/hyt.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "a5fa3a81346d7f72dfcc82563c9f69cd96ddf120884cfb3e7bbc7862d8f3fc17",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "hautlence",
+      "name": "Hautlence",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 165; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/hautlence.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "dd73b17d9d96a995e8fbf727851856a47aee6d81f1bafcb66cc93a6b06d2f2fc",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "jacob-and-co",
+      "name": "Jacob & Co.",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 166; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/jacob-and-co.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "65abf0d996af2a0f000f169b3c54264216b093fbb8798801f54bd8f13af4e844",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 4
+      },
+      "targets": []
+    },
+    {
+      "slug": "franck-muller",
+      "name": "Franck Muller",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 167; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/franck-muller.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "003d5d9b4f354e1532ab08ac6f78636955030ac08fd23b1aa842f5b260a5d0cb",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 4
+      },
+      "targets": []
+    },
+    {
+      "slug": "roger-dubuis",
+      "name": "Roger Dubuis",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 168; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/roger-dubuis.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "84cc286ea28156b27371c95d22841ebbb880edb3d132b11996a6280ffc10108d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "gerald-charles",
+      "name": "Gerald Charles",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 169; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/gerald-charles.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "cdea163af600a3cb38e200f7b2854dd6b78a76c5879a0b91a3192f9d76c64efd",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 4
+      },
+      "targets": []
+    },
+    {
+      "slug": "daniel-roth",
+      "name": "Daniel Roth",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 170; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/daniel-roth.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "20f35bd32efc3dd61dc354b15619b9c8d77aaecba68656a3c81776ebc82c515e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "gerald-genta-brand",
+      "name": "Gérald Genta",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 171; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/gerald-genta-brand.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "19e319b61fec73ff328793d52b438b7d569db929c276a37daf7698c7638c701e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "artya",
+      "name": "ArtyA",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 172; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/artya.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "1a1b95ce12df7023680a76c8440843783fcb3350ee5ece2eccd33d424c26671d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "louis-moinet",
+      "name": "Louis Moinet",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 173; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/louis-moinet.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "0bb14a7fe409654115c72285f3636b4da6faacb8b9a1bac6066f4e61ae8ec0c1",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "lepee-1839",
+      "name": "L'Epée 1839",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 174; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/lepee-1839.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "1cdaa1f350a0f3f9185a3bd2821bda0b210067c91390cc67b50cc501eca4041a",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "alain-silberstein",
+      "name": "Alain Silberstein",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 175; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/alain-silberstein.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "7a9fd2148a1a5de7b9c0d36f1d3d8c450f62c7857b0095cca5adeb1013d78d0b",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "ikepod",
+      "name": "Ikepod",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 176; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/ikepod.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "10b5fb285cbfa2c61fd986837862167452b06f2b77cc5298f7242deca209b2d8",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 10
+      },
+      "targets": []
+    },
+    {
+      "slug": "dewitt",
+      "name": "DeWitt",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 177; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/dewitt.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "3912462a47a19dbd9360cfd1aba55ce10b71daf995b066870bc3c31cc10b7dcf",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "claude-meylan",
+      "name": "Claude Meylan",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 178; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/claude-meylan.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "0fb765fd7f656af0784baebb4badb70440c7e7c620801f5670f4c68b071346c6",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "armand-nicolet",
+      "name": "Armand Nicolet",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 179; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/armand-nicolet.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "e7d650dd372d7eff1c98428e61cba6cffd874633cd7ecce5d71c48a8b83dc1de",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "mathey-tissot",
+      "name": "Mathey-Tissot",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 180; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/mathey-tissot.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "c6748d694f17bcfb1253e44a36ea83c0a358c453957869e2e9ddd7adc91de9e4",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "delma",
+      "name": "Delma",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 181; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/delma.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6315033304ccbdaa3d0ed52dc875ed11002f4a039bcb1da7f59bfda8bd708d76",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "davosa",
+      "name": "Davosa",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 182; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/davosa.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9e3dfa119cc7a1754e477fe905144f7b88016590f56603fb36046e18c69a3819",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 5
+      },
+      "targets": []
+    },
+    {
+      "slug": "steinhart",
+      "name": "Steinhart",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 183; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/steinhart.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "60740b98cd9c04b9359059ebebc14fd9bf28532595b6ac012178b2891c14d111",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "archimede",
+      "name": "Archimede",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 184; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/archimede.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "10b3705c9490672503418590a668752ccf85036a48cc1eeaac5da2db5044b50c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "guinand",
+      "name": "Guinand",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 185; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/guinand.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9c2e6c61bdca0763700e9ae5ad37781a339f7292b0659ab8f1cacd8226eb90da",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "limes",
+      "name": "Limes",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 186; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/limes.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "1ab7b2b4ba58aa8f3ac4d46b275e1e63ecea962ae6f24377a014301e0418a19d",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "nivrel",
+      "name": "Nivrel",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 187; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/nivrel.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "9ff6e206f1f241781160252e1675a6f1d92473e8389765720e41fb724b41884f",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "alexander-shorokhoff",
+      "name": "Alexander Shorokhoff",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 188; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/alexander-shorokhoff.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "c04d875ccd95cdd7884eac815d505a4d9b41d0dcf63ee5fbad7a25472c2f378c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "poljot-international",
+      "name": "Poljot International",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 189; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/poljot-international.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "15f7999bdff2e4c2cad0d9626136da53f764c490481d57685ba4f76bf9a57923",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 8
+      },
+      "targets": []
+    },
+    {
+      "slug": "chaika-zarya-elektronika",
+      "name": "Чайка / Заря / Электроника",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 190; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/chaika-zarya-elektronika.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "f9e933b7ee1e82065b5fc6356d1ccda8c3b590d8c3b63151b5008e187ee300da",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 10
+      },
+      "targets": []
+    },
+    {
+      "slug": "venezianico",
+      "name": "Venezianico",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 191; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/venezianico.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "96ecd743cc2c711a701da3b20744c85b77ef188c1d6532eb585ada36804be053",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "meccaniche-veloci",
+      "name": "Meccaniche Veloci",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 192; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/meccaniche-veloci.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "cce03d453cbc91d0c95f2836a44404832fd6701932a75c4bd0716a4ce16642ba",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "gorilla-watches",
+      "name": "Gorilla Watches",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 193; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/gorilla-watches.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "8637c091250dbb9a15bf35af665318344e3497e6ab22dc49e202e7969a269523",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "dietrich",
+      "name": "Dietrich",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 194; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/dietrich.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "237f03b184bd0c5d5e6060d174e5cdbc1a5d1e582fddd473ab5f5922e7d525c4",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "sevenfriday",
+      "name": "SevenFriday",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 195; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/sevenfriday.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "6725e3a5b8c7f0729bf989334c1d9d2e09625c6a0989019cfdd8f854baa32d1e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "rec-watches",
+      "name": "REC Watches",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 196; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/rec-watches.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "4b8f9e3885b7a0dcbd04bd78bf5e529b7c6032f0bcecf52c4f0cb962a5f2faf9",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "shinola",
+      "name": "Shinola Detroit",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 197; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/shinola.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "45e9d47c45e4f4e4ba97419349bd7b02d6ea47618c0bdb8a70d689187a90cf7c",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "vaer",
+      "name": "Vaer",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 198; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/vaer.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "7654dd40ba465a25de63f1a2625fc1694a49757af98261c36b4ef43faee9fc62",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "boldr",
+      "name": "BOLDR Supply Co.",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 199; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/boldr.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "3347a3fe96ac993d277721fbfd4a0030e7962080deafa60dc19cf36c1f4de4f5",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 6
+      },
+      "targets": []
+    },
+    {
+      "slug": "fiyta",
+      "name": "FIYTA",
+      "priority": "P3",
+      "manifestRationale": "Owner-reviewed knowledge-pack dossier at position 200; retained for M0/M2 review and future coverage selection.",
+      "dossierState": "needs_review",
+      "knowledgeDossier": {
+        "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/fiyta.md",
+        "sourceSnapshotDate": "2026-08-28",
+        "sha256": "269984519f0d85c9ef6168ddeb24bfbd7ccd9470cf2d27490a5be6e7f739d15e",
+        "intakeState": "owner_reviewed_input",
+        "recommendationEligibility": "research_only",
+        "referenceFamilyCount": 3,
+        "sourceUrlCount": 7
+      },
+      "targets": []
+    },
+    {
+      "slug": "swatch",
+      "name": "Swatch",
+      "priority": "P0",
+      "manifestRationale": "Original-plan counter-signal brand for ultralight low-cost studio/formal gaps.",
+      "dossierState": "not_started",
+      "targets": [
+        {
+          "id": "swatch-lightweight-time-only",
+          "referenceLabel": "Select a current lightweight time-only reference",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Fill ultralight and small-wrist low-price cells with a non-tool archetype."
+        }
+      ]
+    }
+  ]
+}

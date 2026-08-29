@@ -243,6 +243,24 @@ Verification:
   evidence-backed exclusion.
 - M1 coverage, not raw brand count, controls recommendation eligibility.
 
+Checkpoint 2026-08-29: the complete 200-dossier owner knowledge pack is
+schema-validated and linked as research-only M0/M2 context. Together with one
+existing roadmap brand, the strict manifest now contains 201 brands, links all
+12 accepted variants, and retains 19 coverage targets. The coverage-ranked,
+resumable Perplexity worker uses native JSON Schema plus Zod validation,
+immutable artifacts, fingerprint reuse, globally increasing attempts, bounded
+concurrency, rate-limit handling, and explicit review artifacts. Provider
+extraction still cannot mark a fact accepted.
+
+The first live P0 discovery batch reviewed exact Cartier WSTA0107, Casio
+G-5600UE-1, and Swatch SO28N100 candidates. All three remain
+`needs_more_evidence`: no row entered the recommendation catalogue because the
+M1 source gate was not complete. The review caught a different-reference Swatch
+lug-width citation, null/contradictory extraction fields, unsupported HKD price
+normalization, and the need to represent rectangular case geometry without
+calling one dimension a diameter. Details and the next queue are in
+[`research-pipeline.md`](research-pipeline.md).
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

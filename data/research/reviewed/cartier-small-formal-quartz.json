@@ -1,0 +1,45 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-small-formal-quartz",
+  "jobId": "cdf7a018-8bf8-4db2-96e5-770d233fc082",
+  "reviewedAt": "2026-08-29T06:32:35Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Tank Must de Cartier",
+    "referenceCode": "WSTA0107",
+    "variantName": "Small steel case and interchangeable steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-us/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html",
+      "status": "fetch_blocked",
+      "note": "Exact official URL returned HTTP 403 during independent review; provider extraction alone is not sufficient for acceptance."
+    },
+    {
+      "url": "https://www.cartier.com/en-pt/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107",
+      "status": "fetch_blocked",
+      "note": "Regional official URL also returned HTTP 403 during independent review."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "reason": "A rectangular 29.5 x 22 mm case cannot be represented honestly as one circular case-diameter fact; the catalogue needs rectangular geometry support or an explicit reviewed mapping."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "Keep as research-only. Do not create an accepted Cartier row until the exact regional price and M1 geometry/weight/accuracy facts are independently supported and rectangular dimensions have an explicit catalogue representation."
+}

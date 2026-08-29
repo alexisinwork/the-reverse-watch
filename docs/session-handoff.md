@@ -1,6 +1,6 @@
 # Session handoff
 
-Last updated: 2026-08-28
+Last updated: 2026-08-29
 
 This is the restart point for the next working session. The controlling
 sequence is [`implementation-roadmap.md`](implementation-roadmap.md), which
@@ -109,7 +109,24 @@ phase.
 
 ## Verification evidence
 
-On 2026-08-28:
+On 2026-08-29 for the Phase 5 continuation:
+
+- `npm run check` passes formatting, lint, strict type/route generation, all 55
+  tests across 13 files, and the production build.
+- `npm run audit:knowledge` validates 200 dossiers and 951 family rows against
+  their source files; `npm run audit:research -- --strict` validates all 201
+  manifest brands, 200 knowledge links, 12 accepted seed links, and three review
+  artifacts.
+- `npm run audit:coverage` still validates all 28,800 cells and the unchanged 12
+  accepted variants. No provisional Phase 5 fact entered the catalogue, so the
+  last verified live SQL parity remains authoritative for that unchanged set.
+- Eight local worker attempts were retained: three succeeded, five failed with
+  raw artifact pointers, and the successful provider cost recorded by the job
+  ledger totals USD 0.04055. Raw, normalized, and job files remain ignored.
+- Commit-candidate data contains only Markdown, CSV, and reviewed JSON/contract
+  artifacts; a secret-pattern scan found no credential-like strings.
+
+On 2026-08-28 for Phases 1–4:
 
 - `npm run check` passes formatting, lint, strict type/route generation, all 41
   tests across nine files, and the production build.
@@ -126,16 +143,55 @@ On 2026-08-28:
 
 ## Exact continuation
 
-1. Build the Phase 5 brand/reference manifest from the empty,
-   single-candidate, under-diversified, and under-evidenced coverage cells; do
-   not optimize for a vanity brand count.
-2. Define the resumable TypeScript ingestion/review contract before doing bulk
-   research, including raw-response retention and idempotent accepted facts.
-3. Add variants in small source-backed batches and rerun coverage, strict
-   catalogue validation, SQL parity, and the fast gate after every batch.
-4. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
+1. Resolve or explicitly retain the first review gaps. Casio G-5600UE-1 needs a
+   supported price/FX path, band-interface width, attachment classification,
+   and illumination mapping; Cartier WSTA0107 needs rectangular geometry
+   support plus M1 sources; Swatch SO28N100 needs exact-reference primary M1
+   sources. Do not accept a row merely to make the batch non-empty.
+2. Research the next coverage-ranked batch: Christopher Ward mechanical GMT,
+   Sinn compact mechanical GMT, and Citizen compact lightweight solar. Keep the
+   worker at its safe default concurrency unless the provider limit changes.
+3. Convert only M1-complete reviewed candidates into a small additive catalogue
+   migration. Keep every knowledge-pack family research-only until it is split
+   into homogeneous variants and independently sourced.
+4. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
+   after every accepted batch.
+5. Continue prioritizing coverage and original-plan purpose over raw brand
+   count even though the 200-dossier pack is now fully represented.
+6. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.
+
+## Phase 5 continuation delivered 2026-08-29
+
+- The complete 200-dossier knowledge pack is parsed into a strict research-only
+  intake: 200 dossiers, 951 family rows, 248 required variant splits, 169
+  dossiers mapped through Q1-Q16, and 1,748 unique cited URLs.
+- The manifest now contains 201 brands (the pack plus one existing roadmap
+  brand), all 12 accepted catalogue links, and the 19 coverage-led targets.
+  Knowledge hash/count drift and missing review artifacts fail the strict audit.
+- The default worker queue is the same coverage-ranked queue shown by
+  `npm run plan:research`; successful fingerprints are reusable, attempts remain
+  monotonic across runs, raw failures retain pointers, and rate limiting is
+  handled at safe default concurrency one.
+- Perplexity Agent requests use the current `POST /v1/agent` preset contract and
+  native JSON Schema, followed by strict Zod validation. Extraction remains
+  provisional and a successful job moves only to `needs_review`.
+- The first live Cartier/Casio/Swatch batch produced three committed review
+  decisions, all `needs_more_evidence`. No incomplete variant entered the
+  catalogue or PostgreSQL.
+
+## Earlier Phase 5 start
+
+- `app/domain/research.ts` defines strict manifest, coverage-intent, job,
+  provisional-fact, knowledge-link, and review contracts. Accepted facts cannot
+  be emitted by extraction.
+- `npm run audit:research` checks manifest, knowledge-intake, accepted-catalogue,
+  and review integrity. `npm run plan:research` ranks target hypotheses against
+  all core coverage cells.
+- `docs/research-pipeline.md` records idempotency, raw artifact retention,
+  provisional review, source hierarchy, acceptance gates, and the small-batch
+  policy. No semantic infrastructure was added.
 
 ## Existing operational notes
 

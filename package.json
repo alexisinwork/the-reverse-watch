@@ -18,6 +18,12 @@
     "render:seed-migration": "tsx scripts/render-seed-migration.ts",
     "audit:catalogue-parity": "tsx scripts/audit-catalogue-parity.ts",
     "audit:coverage": "tsx scripts/audit-coverage.ts",
+    "audit:research": "tsx scripts/audit-research-manifest.ts",
+    "plan:research": "tsx scripts/plan-coverage-research.ts",
+    "import:knowledge": "tsx scripts/import-knowledge-base.ts --write",
+    "audit:knowledge": "tsx scripts/import-knowledge-base.ts --check",
+    "sync:knowledge-manifest": "tsx scripts/sync-knowledge-manifest.ts",
+    "research": "node --env-file=.env --import tsx scripts/run-research-worker.ts",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:run && npm run build"
   },
   "dependencies": {

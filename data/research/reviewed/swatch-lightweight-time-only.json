@@ -1,0 +1,59 @@
+{
+  "reviewVersion": 1,
+  "targetId": "swatch-lightweight-time-only",
+  "jobId": "f00da342-d09e-48ed-85c2-e17997ac15d0",
+  "reviewedAt": "2026-08-29T06:32:35Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Swatch",
+    "model": "SILVERWAKATI",
+    "referenceCode": "SO28N100",
+    "variantName": "SILVERWAKATI"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.swatch.com/en-en/silverwakati-so28n100/SO28N100.html",
+      "status": "validated_primary",
+      "note": "Exact official page independently validates the reference identity, quartz movement, and 3 bar water resistance, but does not expose the full M1 geometry, weight, price, or accuracy set."
+    },
+    {
+      "url": "https://www.uhr.com/swatch-la-night-blue-ganz-blaue-uhr-so28n110.htm",
+      "status": "rejected",
+      "note": "This source is for SO28N110, not the target SO28N100, and cannot support the target's lug-width fact."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "movement.type",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "reason": "The cited page is for a different Swatch reference."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "A null observed value is not an accepted availability fact."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Keep as research-only. Secondary product specifications can guide follow-up discovery but do not meet the current primary-source M1 acceptance gate."
+}

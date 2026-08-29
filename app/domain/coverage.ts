@@ -198,7 +198,7 @@ export function* coverageCells(): Generator<CoverageCell> {
   }
 }
 
-function candidateMatchesCell(
+export function candidateMatchesCell(
   candidate: CoverageCandidate,
   cell: CoverageCell,
 ) {
@@ -210,6 +210,16 @@ function candidateMatchesCell(
     candidate.accuracyTolerances.includes(cell.accuracyTolerance) &&
     candidate.weightLimits.includes(cell.weightLimit) &&
     candidate.functionProfiles.includes(cell.functionProfile)
+  );
+}
+
+export function evaluateCoverageCell(
+  candidates: CoverageCandidate[],
+  cell: CoverageCell,
+) {
+  return toGap(
+    cell,
+    candidates.filter((candidate) => candidateMatchesCell(candidate, cell)),
   );
 }
 
