@@ -154,6 +154,30 @@ The strict manifest now contains 13 reviews: one `ready_for_migration` and 12
 `needs_more_evidence`. The next queue begins with a fresh strict Tudor retry,
 Blancpain specialist dive, and Patek formal high complication.
 
+The sixth ranked batch produced reviewable Tudor and Blancpain artifacts while
+Patek exhausted two strict retries:
+
+- Tudor M79000N-0001 is independently supported by exact official product,
+  family, and press sources through a Poland-localized PLN 19,450 offer,
+  37 x 11.2 mm case, 20 mm lug width, MT5400 -2/+4 daily rate, 200 m rating,
+  Grade A lume mapped to strong, and no-date status. TUDOR does not publish its
+  lug-to-lug length, full configured weight, or bracelet-to-case interface, so
+  the row remains research-only.
+- Blancpain 5019A 12B30 94A is independently supported by its exact current
+  product page and June 2026 technical dossier, including the $27,200 U.S.
+  direct offer, 47 x 14.81 mm Grade 23 titanium case, 120-hour caliber 13P5A,
+  300 m rating, proprietary central-lug system, strong dual-color lume, and
+  date. Lug-to-lug, conventional lug width, full configured weight, and
+  numerical accuracy remain unresolved.
+- Patek's two responses failed the strict null and resolved/unresolved
+  consistency guards. The target remains planned; neither payload is
+  reviewable.
+
+The strict manifest now contains 15 reviews: one `ready_for_migration` and 14
+`needs_more_evidence`. The next queue begins with Patek formal high
+complication, Bulova precision quartz chronograph, Audemars Piguet integrated
+specialist, and A. Lange & Söhne formal high art.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

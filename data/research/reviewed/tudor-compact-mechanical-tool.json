@@ -1,0 +1,172 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tudor-compact-mechanical-tool",
+  "jobId": "e4e99573-be10-4fed-8321-1dca06a63d10",
+  "reviewedAt": "2026-08-29T07:28:07Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "TUDOR",
+    "model": "Black Bay 54",
+    "referenceCode": "M79000N-0001",
+    "variantName": "Black Bay 54 37mm steel case, steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "status": "validated_primary",
+      "note": "The exact official page independently validates reference M79000N-0001, the 37 mm steel case and three-link steel-bracelet configuration, a current PLN 19,450 Poland-localized offer, 11.2 mm thickness, 20 mm lug width, MT5400 automatic movement, approximately 70 hours of reserve, 200 m water resistance, screw-down crown, domed sapphire crystal, and T-fit clasp. TUDOR sends buyers to its official-retailer network, but does not publish exact inventory, lug-to-lug length, full weight, or the bracelet-to-case interface."
+    },
+    {
+      "url": "https://www.tudorwatch.com/en/watch-family/black-bay-54",
+      "status": "validated_primary",
+      "note": "TUDOR's current Black Bay 54 family page corroborates the time-only MT5400, 70-hour reserve, 200 m rating, steel bracelet, rapid-adjust T-fit clasp, and a -2/+4-second fully assembled-watch tolerance. The family page also identifies TUDOR Official Retailers as the sales channel."
+    },
+    {
+      "url": "https://media.tudorwatch.com/image/upload/fl_attachment/v1/tudorwatch/pressroom/products/black-bay-54/pdf/t23rp-blackbay54-en.pdf",
+      "status": "validated_primary",
+      "note": "The official Black Bay 54 press dossier independently corroborates the exact black-dial steel-bracelet configuration, MT5400 rate bounds and daily-rate context, 70-hour reserve, Grade A Swiss Super-LumiNova, T-fit clasp, and absence of a date display."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "geometry.caseDiameterMm",
+    "geometry.integratedBracelet",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "operation.waterResistanceM",
+    "operation.crownType",
+    "operation.crystal",
+    "operation.claspMicroadjustment",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "variantName",
+      "value": "Black Bay 54 37mm steel case, steel bracelet",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The exact official page identifies the 37 mm black-dial steel-bracelet configuration without merging the separate rubber-strap variant."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The exact reference remains a configurable current product on TUDOR's site."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1945000,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The independently retrieved exact page displayed 19,450 zł for the current Poland-localized market."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "PLN",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The independently retrieved exact page displayed a Polish-zloty price."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "PL",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The reviewed snapshot is the Poland-localized official offer."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unknown",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The manufacturer exposes a retailer finder but no exact-reference retailer inventory."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "TUDOR states that its watches are sold only by TUDOR Official Retailers."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The current manufacturer offer is for a new watch."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 11.2,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The exact official specification reports an 11.2 mm case thickness."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 20,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay-54/m79000n-0001",
+      "note": "The exact official specification reports a 20 mm lug width."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 1,
+      "sourceUrl": "https://media.tudorwatch.com/image/upload/fl_attachment/v1/tudorwatch/pressroom/products/black-bay-54/pdf/t23rp-blackbay54-en.pdf",
+      "note": "The official MT5400 rate specification expresses the -2/+4 tolerance as a daily rate for the fully assembled watch."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://media.tudorwatch.com/image/upload/fl_attachment/v1/tudorwatch/pressroom/products/black-bay-54/pdf/t23rp-blackbay54-en.pdf",
+      "note": "The catalogue maps documented Grade A Swiss Super-LumiNova across the dive watch's hands and markers to strong."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.tudorwatch.com/en/watch-family/black-bay-54",
+      "note": "TUDOR explicitly describes the MT5400 Black Bay 54 as time-only; hours, minutes, seconds, and stop-seconds are not catalogue complications."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "variantName",
+      "reason": "The provider's unpunctuated page title is replaced by a normalized exact-configuration name from the same official SKU page."
+    },
+    {
+      "fieldName": "productionStatus",
+      "reason": "Current product page; marked New is page prose rather than the catalogue enum and is replaced by current."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider observed a geographically inferred $4,725 snapshot; independent review retrieved the same exact page localized to Poland at 19,450 zł, so the current PL snapshot replaces it."
+    },
+    {
+      "fieldName": "price.currency",
+      "reason": "The provider inferred USD from a dollar sign without an explicit market locale; the independently observed Poland-localized PLN snapshot replaces it."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Displayed for sale does not establish inventory and is replaced by the normalized unknown value."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Manufacturer page labels are replaced by the catalogue's normalized authorized_dealer channel."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Grade A Swiss Super-LumiNova is source terminology rather than a catalogue enum and is replaced by the reviewed strong mapping."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Bracelet identifies the supplied material, not the bracelet-to-case attachment interface; spring bars must not be inferred from appearance."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Hours, minutes, seconds, and stop-seconds are basic functions rather than supported catalogue complication values."
+    }
+  ],
+  "missingM1Fields": ["lugToLugMm", "weightFullG", "attachmentType"],
+  "note": "Keep as research-only. Exact primary evidence resolves price, thickness, lug width, accuracy, lume, and date status, but TUDOR does not publish lug-to-lug length, full configured weight, or the bracelet-to-case attachment interface for M79000N-0001. Secondary seller measurements and visual inference are insufficient for migration."
+}

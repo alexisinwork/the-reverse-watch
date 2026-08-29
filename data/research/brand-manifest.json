@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T07:15:03.896Z",
+  "updatedAt": "2026-08-29T07:23:09.256Z",
   "brands": [
     {
       "slug": "rolex",
@@ -375,7 +375,7 @@
         {
           "id": "blancpain-specialist-dive",
           "referenceLabel": "Select a current source-complete specialist dive reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -468,7 +468,7 @@
         {
           "id": "tudor-compact-mechanical-tool",
           "referenceLabel": "Select a current compact mechanical tool reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000",

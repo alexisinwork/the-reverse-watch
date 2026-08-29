@@ -217,6 +217,33 @@ For the fifth Phase 5 research batch on the same date:
   `needs_more_evidence`. Coverage remains 212/28,800 cells (0.74%). The next
   queue is Tudor, Blancpain, and Patek.
 
+For the sixth Phase 5 research batch on the same date:
+
+- Tudor M79000N-0001 and Blancpain 5019A 12B30 94A produced schema-valid
+  provisional artifacts and completed independent review. Both remain
+  `needs_more_evidence`; Patek produced two retained failures and remains
+  planned without a review artifact.
+- TUDOR's exact product page replaced the provider's inferred USD snapshot
+  with the independently observed Poland-localized PLN 19,450 offer and
+  resolves thickness, lug width, accuracy, Grade A lume mapped to strong, and
+  no-date status. Lug-to-lug, full configured weight, and the bracelet-to-case
+  interface remain M1 gaps.
+- Blancpain's exact U.S. page supports the $27,200 Add to Cart offer for the
+  orange-rubber and pin-buckle SKU. Its exact technical dossier resolves the
+  47 x 14.81 mm Grade 23 titanium case, 120-hour caliber 13P5A, 300 m rating,
+  proprietary central-lug interface, strong dual-color lume, and date.
+  Lug-to-lug, conventional lug width, full configured weight, and numerical
+  accuracy remain M1 gaps.
+- Patek's two responses failed the strict null and resolved/unresolved
+  consistency guards; neither payload is reviewable.
+- The ignored local ledger now retains 27 attempts: 15 succeeded and 12
+  failed, spanning 16 targets, with USD 0.20003 recorded provider cost.
+- Strict research now reports 15 reviews: one `ready_for_migration` and 14
+  `needs_more_evidence`. Coverage remains 212/28,800 cells (0.74%). The next
+  queue is Patek, Bulova, Audemars Piguet, and A. Lange & Söhne.
+- Supabase OAuth token refresh still fails. Migration `0010`, live 13-row
+  catalogue parity, and all pushing remain intentionally held.
+
 On 2026-08-28 for Phases 1–4:
 
 - `npm run check` passes formatting, lint, strict type/route generation, all 41
@@ -254,11 +281,13 @@ On 2026-08-28 for Phases 1–4:
    after every accepted batch.
 6. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
-7. If database access remains unavailable, retry Tudor only through the strict
-   worker, then continue with Blancpain and Patek while keeping every result
-   provisional until source review is complete. Do not substitute generic
-   calibre performance for Certina's missing published accuracy bounds or infer
-   Orient's attachment interface from its pin buckle.
+7. If database access remains unavailable, continue the strict worker with
+   Patek, Bulova, Audemars Piguet, and A. Lange & Söhne while keeping every
+   result provisional until source review is complete. Do not substitute
+   generic calibre performance for Certina's or Blancpain's missing published
+   accuracy bounds, infer Orient's or TUDOR's attachment interface from the
+   supplied strap or bracelet, or treat Blancpain's blank conventional lug
+   width as a reviewed non-applicable policy.
 8. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.

@@ -299,6 +299,17 @@ only numerical movement accuracy unresolved. The strict checkpoint has 13
 reviews (one migration-ready, 12 needing more evidence); Tudor remains planned,
 followed by Blancpain and Patek in the ranked queue.
 
+The sixth live batch independently reviewed Tudor M79000N-0001 and Blancpain
+5019A 12B30 94A without promoting either row; Patek exhausted two strict
+extraction retries. Exact TUDOR evidence resolves its localized price,
+thickness, lug width, accuracy, lume, and no-date status but leaves lug-to-lug,
+full weight, and the bracelet attachment interface unresolved. Exact Blancpain
+evidence resolves its current U.S. offer, proprietary central-lug system, lume,
+and date but leaves lug-to-lug, conventional lug width, full weight, and
+numerical accuracy unresolved. The strict checkpoint has 15 reviews (one
+migration-ready, 14 needing more evidence); the next queue is Patek, Bulova,
+Audemars Piguet, and A. Lange & Söhne.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
