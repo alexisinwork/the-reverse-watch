@@ -370,6 +370,18 @@ used for the full configuration. TUDOR remains research-only with
 spring bars, but TUDOR's product and service material does not identify the
 factory mechanism.
 
+A Swatch SO28N100 source-led pass resolved seven of its ten original M1 gaps.
+The exact official embedded payload supplies 34 mm diameter, 8.75 mm thickness,
+and 39.2 mm lug-to-lug. A current exact Swiss official-retailer offer supplies a
+CHF 70 new-watch price with two-to-four-week delivery. The exact original
+ASO28N100 replacement strap supplies a 17 mm, non-straight steel-pin mount, and
+Swatch's official strap guide corroborates its push-out connector-pin mechanism;
+the catalogue therefore maps the interface to `proprietary`, not `spring_bar`.
+Two exact-reference specifications explicitly report no date. SO28N100 remains
+research-only for three fields: conflicting 18 g and 22 g full-watch records,
+no published exact-applicable numerical quartz tolerance, and no explicit
+repeatable lume grade.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

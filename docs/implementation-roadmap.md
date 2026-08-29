@@ -443,6 +443,16 @@ used for the full configuration. TUDOR remains research-only because the exact
 specialist fitment guide's spring-bar description still lacks manufacturer
 corroboration of the factory attachment mechanism.
 
+An exact-reference Swatch SO28N100 follow-up reduced its M1 gaps from ten to
+three. Swatch's embedded product payload resolves 34 x 8.75 x 39.2 mm geometry;
+a current CHF 70 official-retailer offer resolves price and short-wait channel
+semantics; and the exact original 17 mm strap plus Swatch's connector-pin guide
+establish a proprietary pinned attachment. Two exact-reference specifications
+explicitly establish no-date status. The row remains research-only because
+full-watch sources conflict at 18 g versus 22 g, Swatch publishes no numerical
+quartz rate bound applicable to SO28N100, and black hands or omitted feature
+prose cannot establish a repeatable lume grade.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

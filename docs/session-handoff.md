@@ -401,6 +401,13 @@ For the post-batch evidence-gap pass on the same date:
   normalized full-length bracelet weight at 139 g with approximately 19.5-21 cm
   of bracelet; the lower 135 g owner report is explicitly a sized-bracelet
   observation and is not used for the full configuration.
+- Swatch SO28N100 now needs only resolved full-watch weight, a numerical
+  exact-applicable quartz rate bound, and a repeatable lume grade. Swatch's
+  embedded exact product payload resolves 34 x 8.75 x 39.2 mm geometry; a
+  current supported-currency official-retailer offer resolves price; the exact
+  original strap plus Swatch's connector-pin guide resolve a 17 mm proprietary
+  interface; and two exact-reference specifications explicitly report no date.
+  The conflicting 18 g and 22 g records are retained rather than normalized.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -430,9 +437,9 @@ On 2026-08-28 for Phases 1–4:
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
    needs an authoritative repeatable lume grade. TUDOR M79000N-0001 now needs
    only manufacturer-corroborated attachment evidence. Cartier WSTA0107 needs
-   rectangular geometry support plus M1 sources; Swatch SO28N100 needs
-   exact-reference primary M1 sources. Do not accept a row merely to make the
-   batch non-empty.
+   rectangular geometry support plus M1 sources; Swatch SO28N100 needs resolved
+   full-watch weight, a numerical exact-applicable quartz rate bound, and a
+   repeatable lume grade. Do not accept a row merely to make the batch non-empty.
 3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy is now resolved; its lume,

@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "swatch-lightweight-time-only",
   "jobId": "f00da342-d09e-48ed-85c2-e17997ac15d0",
-  "reviewedAt": "2026-08-29T06:32:35Z",
+  "reviewedAt": "2026-08-29T09:04:41Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -15,12 +15,52 @@
     {
       "url": "https://www.swatch.com/en-en/silverwakati-so28n100/SO28N100.html",
       "status": "validated_primary",
-      "note": "Exact official page independently validates the reference identity, quartz movement, and 3 bar water resistance, but does not expose the full M1 geometry, weight, price, or accuracy set."
+      "note": "The exact official page and its embedded Swatch product payload independently validate SO28N100 identity, the 1983 Originals family, bio-sourced case and strap, 34 x 8.75 x 39.2 mm geometry, quartz movement, 3 bar water resistance, and buckle clasp. The payload marks the item online but currently unavailable without a price; it does not publish lug width, full weight, a numerical rate bound, an explicit lume grade, or date status."
     },
     {
       "url": "https://www.uhr.com/swatch-la-night-blue-ganz-blaue-uhr-so28n110.htm",
       "status": "rejected",
       "note": "This source is for SO28N110, not the target SO28N100, and cannot support the target's lug-width fact."
+    },
+    {
+      "url": "https://www.uhrenschmuck24.ch/en/swatch-original-silverwakati-so28n100.html",
+      "status": "validated_secondary",
+      "note": "The exact-reference Swiss official-retailer page was independently retrieved with a CHF 70 new-watch offer, add-to-cart path, and stated delivery in two to four weeks. The reviewed snapshot is normalized as a Switzerland authorized-dealer short wait rather than manufacturer inventory."
+    },
+    {
+      "url": "https://www.watch.co.uk/swatch-so28n100-1983-silver-wakati-blue-bio-sourced-plastic-strap-aso28n100.htm",
+      "status": "validated_secondary",
+      "note": "The official-dealer exact replacement strap ASO28N100 explicitly identifies SO28N100 compatibility, a 17 mm lug width, steel-pin mount, and non-straight attachment. Swatch's official strap guide independently documents its push-out connector-pin replacement mechanism."
+    },
+    {
+      "url": "https://www.swatch.com/en-in/accessories/watch-straps/straps-finder.html",
+      "status": "validated_primary",
+      "note": "Swatch's official strap guide instructs owners to push the connector pin completely out and slide it back through the replacement strap. Combined with the exact ASO28N100 component record, this corroborates a proprietary pinned Swatch interface rather than a conventional spring bar."
+    },
+    {
+      "url": "https://www.zegarki.zgora.pl/zegarek/40518_Swatch_Gent_1983_Silverwakati_SO28N100",
+      "status": "validated_secondary",
+      "note": "The authorized retailer's exact SO28N100 specification reports 22 g without packaging, but a separate exact-reference retailer reports 18 g. Neither value is accepted while the full-watch conflict remains unresolved."
+    },
+    {
+      "url": "https://www.valmano.de/product/88125479/swatch-unisexuhr-so28n100/index.html",
+      "status": "validated_secondary",
+      "note": "The exact SO28N100 product record reports 18 g, conflicting with the authorized Polish retailer's 22 g full-watch value. The discrepancy is retained instead of selecting the more coverage-favorable number."
+    },
+    {
+      "url": "https://timer.bg/swatch-so28n100",
+      "status": "validated_secondary",
+      "note": "The exact SO28N100 authorized-retailer specification explicitly reports no date. A separate exact-reference product record independently reports no date indication."
+    },
+    {
+      "url": "https://www.bol.com/nl/nl/p/silverwakati-so28n100/9300000010710938/",
+      "status": "validated_secondary",
+      "note": "The exact-reference specification explicitly states that SO28N100 has no date indication, corroborating the separate retailer's categorical no-date field."
+    },
+    {
+      "url": "https://www.swatch.com/en-ae/technical-information.html",
+      "status": "validated_primary",
+      "note": "Swatch's official technical information explains quartz precision qualitatively but publishes no numerical quartz tolerance applicable to SO28N100. It therefore cannot satisfy the catalogue's accuracy bound."
     }
   ],
   "verifiedProvisionalFields": [
@@ -29,10 +69,85 @@
     "referenceCode",
     "variantName",
     "productUrl",
+    "collection",
     "movement.type",
-    "operation.waterResistanceM"
+    "operation.waterResistanceM",
+    "complications"
   ],
-  "additionalVerifiedFacts": [],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 34,
+      "sourceUrl": "https://www.swatch.com/en-en/silverwakati-so28n100/SO28N100.html",
+      "note": "Swatch's exact-reference embedded product feature labels the 34.00 mm width as Diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 8.75,
+      "sourceUrl": "https://www.swatch.com/en-en/silverwakati-so28n100/SO28N100.html",
+      "note": "Swatch's exact-reference embedded product feature reports an 8.75 mm thickness."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 39.2,
+      "sourceUrl": "https://www.swatch.com/en-en/silverwakati-so28n100/SO28N100.html",
+      "note": "Swatch's exact-reference embedded product feature explicitly labels the 39.20 mm height as Lug-to-lug."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 7000,
+      "sourceUrl": "https://www.uhrenschmuck24.ch/en/swatch-original-silverwakati-so28n100.html",
+      "note": "The independently retrieved exact-reference Swiss offer is CHF 70 including tax."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "CHF",
+      "sourceUrl": "https://www.uhrenschmuck24.ch/en/swatch-original-silverwakati-so28n100.html",
+      "note": "The reviewed exact-reference offer is denominated in Swiss francs."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "CH",
+      "sourceUrl": "https://www.uhrenschmuck24.ch/en/swatch-original-silverwakati-so28n100.html",
+      "note": "The offer is the retailer's Switzerland market view and ships within Switzerland and Liechtenstein."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "short_wait",
+      "sourceUrl": "https://www.uhrenschmuck24.ch/en/swatch-original-silverwakati-so28n100.html",
+      "note": "The exact reference can be added to cart with stated delivery in two to four weeks."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.uhrenschmuck24.ch/en/swatch-original-silverwakati-so28n100.html",
+      "note": "The retailer identifies itself as an official Swatch retailer and supplies the international manufacturer warranty."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.uhrenschmuck24.ch/en/swatch-original-silverwakati-so28n100.html",
+      "note": "The exact offer is for a new watch with original box, manual, and official warranty."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 17,
+      "sourceUrl": "https://www.watch.co.uk/swatch-so28n100-1983-silver-wakati-blue-bio-sourced-plastic-strap-aso28n100.htm",
+      "note": "The exact original ASO28N100 replacement strap for SO28N100 reports a 17 mm lug width."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "proprietary",
+      "sourceUrl": "https://www.watch.co.uk/swatch-so28n100-1983-silver-wakati-blue-bio-sourced-plastic-strap-aso28n100.htm",
+      "note": "The exact original strap uses a steel-pin, non-straight Swatch mount; Swatch's official replacement guide corroborates its push-out connector-pin mechanism. This maps to proprietary rather than spring_bar."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://timer.bg/swatch-so28n100",
+      "note": "Two independent exact-reference product specifications explicitly report no date or no date indication."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "geometry.lugWidthMm",
@@ -41,19 +156,12 @@
     {
       "fieldName": "price.availability",
       "reason": "A null observed value is not an accepted availability fact."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Buckle describes the strap clasp, not the strap-to-case interface; the reviewed proprietary value comes from the exact original strap and Swatch's connector-pin instructions."
     }
   ],
-  "missingM1Fields": [
-    "price",
-    "caseDiameterMm",
-    "caseThicknessMm",
-    "lugToLugMm",
-    "lugWidthMm",
-    "weightFullG",
-    "accuracy",
-    "lumeGrade",
-    "attachmentType",
-    "dateStatus"
-  ],
-  "note": "Keep as research-only. Secondary product specifications can guide follow-up discovery but do not meet the current primary-source M1 acceptance gate."
+  "missingM1Fields": ["weightFullG", "accuracy", "lumeGrade"],
+  "note": "Keep as research-only. Swatch's exact embedded payload resolves 34 x 8.75 x 39.2 mm geometry; a current supported-currency retailer offer resolves price; and the exact original strap plus Swatch's connector-pin guide resolve 17 mm proprietary attachment. Explicit exact-reference records resolve no-date status. Full-watch weight remains contradictory at 18 g versus 22 g, Swatch publishes no numerical rate bound applicable to SO28N100, and black hands or omitted feature prose cannot establish a repeatable lume grade."
 }
