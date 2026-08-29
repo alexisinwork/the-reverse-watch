@@ -534,6 +534,10 @@ For the post-batch evidence-gap pass on the same date:
   USD 40,100 amount/currency/market fragment, but it supplies no purchase
   availability or channel. The complete price gate, lug-to-lug, full configured
   weight, numerical accuracy, and graded lume remain open; no AP row was added.
+  A detailed 16202 hands-on video was not used for its measured 48.6 mm case
+  span, 57.4 mm fixed-bracelet span, or short-lived lume: its own movement
+  segment explicitly identifies the 50th-anniversary rotor, making that watch
+  the sibling `.01` variant rather than exact `.02` evidence.
 - The accepted Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481
   now uses the manufacturer's explicit `L x W` semantics: `caseLengthMm: 47`,
   `caseWidthMm: 28.3`, `caseDiameterMm: null`, with the separately labelled
@@ -544,8 +548,10 @@ For the post-batch evidence-gap pass on the same date:
   (Omega), `a6fb895` (Bulova), `e17a2db` (Blancpain), and `abf958d` (Vostok),
   followed by the Cartier geometry/evidence, Reverso correction, TUDOR
   expansion, applicability checkpoint `c0ebca7`, and production fallback smoke
-  `4bc4de8`. `npm run check` passes formatting, lint, type generation,
-  TypeScript, all 66
+  `4bc4de8`. The latest pushed research checkpoints are `26bcd6a` for Cartier
+  no-lume evidence, `e79d6bf` for AP lug-width applicability, and `ad393f2` for
+  AP's primary price fragment. `npm run check` passes formatting, lint, type
+  generation, TypeScript, all 66
   tests across 13 files, and the production build. The strict research,
   coverage, and knowledge audits pass, and a PostgreSQL parser accepts all 15
   statements in migration `0016`, all 61 statements in migration `0017`, and
