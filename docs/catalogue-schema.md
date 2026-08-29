@@ -150,6 +150,17 @@ partial ingestion without fake defaults. Eligibility is enforced by
 `null` never passes an active hard predicate. The query may place the variant in
 a separate verification-required set and list the missing fields.
 
+`null` also does not yet mean “not applicable.” This matters for exact
+proprietary or central-lug constructions whose manufacturer sheet publishes no
+conventional between-lugs width. A field-evidence row attached to a null value
+would currently make completeness look satisfied while TypeScript and SQL still
+classify an active lug-width request as missing. Do not use that loophole.
+Before accepting such a row, add an explicit field applicability/value state
+shared by the seed, evidence ledger, RPC, and TypeScript filter. A reviewed
+`not_applicable` value must reject an active conventional-lug-width request with
+a deterministic mismatch code; only an unknown or unverified value belongs in
+the verification-required set.
+
 ## Coverage projection
 
 `npm run project:seed-coverage` regenerates and `npm run audit:coverage` validates

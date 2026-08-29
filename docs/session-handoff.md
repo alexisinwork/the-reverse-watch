@@ -473,6 +473,13 @@ For the post-batch evidence-gap pass on the same date:
   dossier establishes its 47 mm diameter and central-lug construction; an
   exact-reference hands-on specification explicitly reports 47 mm lug-to-lug
   because no conventional lugs project beyond the case.
+- The Blancpain width dash exposed a cross-layer applicability gap related to
+  Claude's Q11 audit. Evidence on a null `lugWidthMm` can currently satisfy the
+  generated completeness list while TypeScript and SQL classify an active
+  width request as unverified. Do not exploit that mismatch. Add an explicit
+  reviewed `not_applicable` value state and matching SQL/TypeScript
+  `lug_width_not_applicable` rejection before using a central-lug dash to close
+  M1; unknown null must remain verification-required.
 - Vostok Amphibia 420059 now needs only manufacturer-corroborated factory
   attachment evidence. Its exact factory page now supplies primary 39.6 x 46 x
   15 mm geometry, 128 g full configured weight, 18 mm bracelet width, calibre,
@@ -541,19 +548,23 @@ On 2026-08-28 for Phases 1–4:
    accept a row merely to make the batch non-empty. Vostok 420059 has stronger
    exact factory evidence but still requires manufacturer-corroborated
    attachment semantics before acceptance.
-3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
+3. Add explicit per-field applicability semantics before treating Blancpain's
+   manufacturer-published conventional-lug-width dash as M1-complete. Preserve
+   SQL/TypeScript parity: verified `not_applicable` is an incompatibility when a
+   conventional width is requested, while unknown null is missing evidence.
+4. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy and no-date status are now resolved;
    its lume and attachment gaps remain. Do not salvage contradictory or blocked
    provider claims manually.
-4. Convert only M1-complete reviewed candidates into small additive catalogue
+5. Convert only M1-complete reviewed candidates into small additive catalogue
    migrations. Keep every knowledge-pack family research-only until it is split
    into homogeneous variants and independently sourced.
-5. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
+6. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
    after every accepted batch.
-6. Continue prioritizing coverage and original-plan purpose over raw brand
+7. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
-7. If database access remains unavailable, do not rerun the now-empty default
+8. If database access remains unavailable, do not rerun the now-empty default
    queue. Close a named existing review gap only from independently identified
    exact-reference evidence, or add a new target with an explicit coverage or
    original-plan purpose before invoking the worker. Do not repeat excluded
@@ -561,7 +572,7 @@ On 2026-08-28 for Phases 1–4:
    performance for a missing published exact-applicable bound, infer an
    attachment interface from the supplied strap or bracelet, or treat a blank
    conventional lug width as a reviewed non-applicable policy.
-8. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
+9. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.
 

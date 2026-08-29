@@ -482,6 +482,11 @@ diameter and central-lug construction, while an exact-reference hands-on
 specification explicitly reports that the lack of projecting conventional lugs
 makes lug-to-lug equal to diameter. The row remains research-only for
 conventional lug width, full configured weight, and numerical accuracy.
+The manufacturer's explicit dash for width between horns exposes a required
+schema distinction rather than a fact to coerce: verified `not_applicable` must
+be represented separately from unknown null and produce the same deterministic
+lug-width incompatibility in TypeScript and SQL. Until that value-state contract
+exists, the dash cannot satisfy M1 completeness.
 
 Vostok Amphibia 420059 now has a reviewed `weak` lume grade. Two independent
 exact-reference reviews report sparse application, difficult low-light reading,
