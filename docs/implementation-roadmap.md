@@ -551,7 +551,9 @@ raised by the Claude Q11 audit. Catalogue version 2 carries a sparse
 persists the state in field evidence and exposes the v3 catalogue/hard-filter
 pair without reclassifying any historical null. The reviewed Blancpain record
 therefore closes only its conventional-width gap and remains research-only for
-weight and accuracy.
+weight and accuracy. Commit `c0ebca7` is pushed and production smoke checks
+confirmed catalogue-version-2 bundled fallback while the live v3 RPC pair is
+unavailable.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

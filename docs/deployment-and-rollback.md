@@ -38,6 +38,11 @@ Last verified: 2026-08-29
   reported `catalogueOrigin: bundled_seed` with the expected visible live
   catalogue validation-fallback notice. No domain, subscriber, or database
   mutation was performed during this smoke check.
+- Applicability commit `c0ebca7` was then observed in production. `/`, `/quiz`,
+  and `/health` again returned 200; a valid core POST evaluated catalogue
+  version 2 across 18 variants and selected `bundled_seed` with the same visible
+  notice. This is positive evidence that an unavailable v3 contract triggers
+  the intended whole-unit fallback while live Supabase remains on v1.
 - On the verified live release, `/`, `/quiz`, and `/health` returned 200. A
   valid core POST returned Grand Seiko and the explicit “accepted catalogue
   facts and hard-filter decisions loaded from Supabase” notice. Recent Vercel

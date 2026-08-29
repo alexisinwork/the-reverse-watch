@@ -42,6 +42,12 @@ phase.
   POST returned `catalogueOrigin: bundled_seed` and the visible notice `Live
   catalogue validation failed; using the reviewed bundled snapshot.` This is
   the expected safe state while live Supabase lacks the v3 RPC pair.
+- Applicability commit `c0ebca7` then advanced `origin/main`, and the remote SHA
+  again matched local. Production `/`, `/quiz`, and `/health` returned 200. A
+  valid core recommendation evaluated catalogue version 2 across all 18 bundled
+  variants, returned `catalogueOrigin: bundled_seed`, and retained the expected
+  live-catalogue validation notice. This proves the v3 application target fails
+  safely as one unit while production Supabase still exposes only v1.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
@@ -522,7 +528,7 @@ For the post-batch evidence-gap pass on the same date:
 - The latest evidence sequence is committed as `db77f92` (Swatch), `760979c`
   (Omega), `a6fb895` (Bulova), `e17a2db` (Blancpain), and `abf958d` (Vostok),
   followed by the Cartier geometry/evidence, Reverso correction, and TUDOR
-  expansion and applicability checkpoints. `npm run check` passes formatting,
+  expansion and applicability checkpoint `c0ebca7`. `npm run check` passes formatting,
   lint, type generation, TypeScript, all 66
   tests across 13 files, and the production build. The strict research,
   coverage, and knowledge audits pass, and a PostgreSQL parser accepts all 15
