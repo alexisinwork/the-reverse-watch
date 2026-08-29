@@ -90,8 +90,29 @@ additive seed row raises exact core coverage from 180 to 212 cells. Citizen
 BM8180-03E remains `needs_more_evidence` after its official E101 manual resolved
 accuracy and its official regional page resolved a weight conflict; generic
 luminous wording does not establish a graded lume class, and buckle is a clasp,
-not the strap attachment. Both Sinn responses failed strict extraction
+not the strap attachment. The first two Sinn responses failed strict extraction
 consistency and remain immutable failed attempts rather than reviewable facts.
+
+A third ranked batch subsequently produced valid provisional artifacts for Sinn
+856 UTC, Marathon WW194003BK-0108, and Omega 310.30.42.50.01.001. Independent
+review held all three at `needs_more_evidence`:
+
+- Sinn's current official sheet describes several separately priced attachment
+  configurations and reports 70 g without a strap, so it does not establish one
+  homogeneous full-watch row; lug-to-lug, accuracy, attachment type, and graded
+  lume also remain unresolved.
+- Marathon's exact product page and specification sheet establish its identity,
+  $575 USD offer, dimensions, movement, 3 ATM rating, and no-date status, but
+  provide no numeric full weight, accuracy tolerance, attachment-interface
+  classification, or categorical lume grade.
+- Omega's exact official product page and sheet were blocked during independent
+  retrieval. The detailed provider result remains provisional, and `Steel
+  bracelet` was rejected as an attachment-interface value.
+
+The strict checkpoint now contains eight committed reviews: one
+`ready_for_migration` and seven `needs_more_evidence`. The next coverage-ranked
+queue begins with Seiko compact mechanical no-date, Vostok affordable mechanical
+field, and Baltic compact mechanical.
 
 ## Job idempotency and retention
 

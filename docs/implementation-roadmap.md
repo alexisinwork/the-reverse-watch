@@ -271,6 +271,16 @@ resolution of E101 accuracy and a weight-source conflict. Migration `0010`
 must be applied and live parity proved before this checkpoint is pushed because
 the Supabase MCP OAuth refresh expired during verification.
 
+The third live batch produced valid provisional results for Sinn 856 UTC,
+Marathon WW194003BK-0108, and Omega 310.30.42.50.01.001. Source review retained
+all three as research-only. Sinn lacks a homogeneous priced attachment variant,
+full-watch weight, lug-to-lug, accuracy, and graded lume; Marathon lacks numeric
+full weight, accuracy, attachment-interface, and categorical lume evidence; and
+Omega's exact official pages were independently blocked while its extracted
+bracelet material did not satisfy attachment semantics. The strict manifest now
+has eight reviews (one migration-ready, seven needing more evidence), and the
+next ranked queue starts with Seiko, Vostok, and Baltic coverage targets.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

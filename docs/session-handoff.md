@@ -152,6 +152,28 @@ For the second Phase 5 research batch on the same date:
   until Supabase is reconnected, `0010` is applied, and catalogue/SQL parity
   passes.
 
+For the third Phase 5 research batch on the same date:
+
+- Sinn 856 UTC, Marathon WW194003BK-0108, and Omega
+  310.30.42.50.01.001 all produced schema-valid provisional artifacts and were
+  independently reviewed. All three remain `needs_more_evidence`; no seed or
+  migration row was added.
+- Sinn's official current sheet reports 70 g without a strap and presents
+  several separately priced attachment configurations. Marathon's exact
+  official page and sheet still omit numeric full weight, rate tolerance, and
+  attachment-interface semantics. Omega's exact official sources were blocked
+  during independent retrieval, and its extracted `Steel bracelet` value is a
+  material rather than an attachment type.
+- The local ledger now retains 15 attempts: eight succeeded and seven failed,
+  spanning eight targets, with USD 0.11923 recorded provider cost. Paid raw,
+  normalized, and job artifacts remain ignored.
+- `npm run audit:research -- --strict` passes with 201 brands, 13 accepted
+  links, 18 active targets, and eight reviews: one `ready_for_migration` and
+  seven `needs_more_evidence`. Coverage remains 212/28,800 cells (0.74%).
+- The next ranked queue is Seiko compact mechanical no-date, Vostok affordable
+  mechanical field, then Baltic compact mechanical. Migration `0010` and its
+  Supabase parity gate still take precedence over pushing either local commit.
+
 On 2026-08-28 for Phases 1–4:
 
 - `npm run check` passes formatting, lint, strict type/route generation, all 41
@@ -178,9 +200,10 @@ On 2026-08-28 for Phases 1–4:
    and illumination mapping; Cartier WSTA0107 needs rectangular geometry
    support plus M1 sources; Swatch SO28N100 needs exact-reference primary M1
    sources. Do not accept a row merely to make the batch non-empty.
-3. Retain Citizen BM8180-03E as research-only until a supported graded lume
-   classification and strap attachment are available. Retry Sinn only through
-   the strict worker; do not salvage its contradictory raw payloads manually.
+3. Retain Citizen BM8180-03E, Sinn 856 UTC, Marathon WW194003BK-0108, and Omega
+   310.30.42.50.01.001 as research-only until their recorded review gaps are
+   independently resolved. Do not salvage contradictory or blocked provider
+   claims manually.
 4. Convert only M1-complete reviewed candidates into small additive catalogue
    migrations. Keep every knowledge-pack family research-only until it is split
    into homogeneous variants and independently sourced.
@@ -188,7 +211,10 @@ On 2026-08-28 for Phases 1–4:
    after every accepted batch.
 6. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
-7. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
+7. If database access remains unavailable, continue the ranked planned queue
+   with Seiko, Vostok, and Baltic while keeping every result provisional until
+   source review is complete.
+8. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.
 

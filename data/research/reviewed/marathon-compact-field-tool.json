@@ -1,0 +1,145 @@
+{
+  "reviewVersion": 1,
+  "targetId": "marathon-compact-field-tool",
+  "jobId": "a3c6d0fd-94b9-47c0-88e3-91b1422d4651",
+  "reviewedAt": "2026-08-29T07:01:45Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Marathon",
+    "model": "General Purpose Mechanical",
+    "referenceCode": "WW194003BK-0108",
+    "variantName": "34mm Black General Purpose Mechanical (GPM), Standard-Issue"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "status": "validated_primary",
+      "note": "The exact official product page independently validates SKU WW194003BK-0108 with the selected black 16 mm Nylon DEFSTAN strap, $575 USD price, current availability, 34 x 12.5 x 41 mm geometry, 16 mm lug width, fibreshell case, Seiko NH35A movement, no calendar, tritium tubes, sapphire crystal, pressure crown, and 3 ATM water resistance."
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194003_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "status": "validated_primary",
+      "note": "Marathon's exact-reference current specification sheet independently corroborates the SKU and strap, automatic/manual winding NH35A calibre, up-to-41-hour reserve, tritium illumination, dimensions, pressure crown, sapphire crystal, and water resistance."
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194003XX_171103.pdf?v=1692630182",
+      "status": "validated_primary",
+      "note": "Marathon's official WW194003 family instruction sheet corroborates the winding and operating characteristics without supplying the missing exact-variant full weight, accuracy, or attachment interface."
+    },
+    {
+      "url": "https://manuals.plus/m/899d1891ce19c7c5ac795e76329ff08119d80d5cff505beb7e0bfeb6c0c83178",
+      "status": "rejected",
+      "note": "This third-party manual copy is unnecessary because Marathon's own exact-reference specification sheet supports the relevant values directly."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.caliber",
+    "operation.waterResistanceM",
+    "operation.crownType",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "referenceCode",
+      "value": "WW194003BK-0108",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "The official product page identifies the selected exact variant by this SKU."
+    },
+    {
+      "fieldName": "materials.strap",
+      "value": "Black 16 mm Nylon DEFSTAN strap",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194003_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact official specification sheet identifies the supplied strap without relying on the third-party manual copy."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "Automatic mechanical with manual winding",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194003_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact official specification sheet describes both self-winding and manual winding."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 41,
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194003_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact official specification sheet states a power reserve of up to 41 hours."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "The exact SKU is currently offered by the manufacturer."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 57500,
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "The exact selected SKU is displayed at $575.00 on the official U.S.-dollar product page."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "The manufacturer page displays the exact variant price in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "The reviewed storefront snapshot is the U.S.-dollar market offer."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "The exact selected SKU was available to add to cart at review time."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "The manufacturer direct store is represented by the catalogue's authorized channel class."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-mechanical-with-tritium-gpm",
+      "note": "The manufacturer offer is for a new watch."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The provider cited a third-party manual copy; the same value is retained only as an additional fact from Marathon's official exact-SKU page."
+    },
+    {
+      "fieldName": "materials.strap",
+      "reason": "The provider cited a third-party manual copy; the exact official specification sheet independently replaces it."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "The provider cited a third-party manual copy; the exact official specification sheet independently replaces it."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "reason": "The provider cited a third-party manual copy; the exact official specification sheet independently replaces it."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Tritium gas tubes identify the illumination technology but do not establish the catalogue's weak/moderate/strong performance class."
+    }
+  ],
+  "missingM1Fields": ["weightFullG", "accuracy", "lumeGrade", "attachmentType"],
+  "note": "Keep as research-only. The exact variant is otherwise strongly documented by Marathon, but qualitative 'lightweight' wording is not a full-weight measurement, the sources do not state a rate tolerance or strap-to-case interface, and tritium technology cannot be inserted directly into the categorical lume field."
+}

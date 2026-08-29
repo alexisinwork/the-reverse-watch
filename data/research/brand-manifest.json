@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T06:48:10Z",
+  "updatedAt": "2026-08-29T06:59:12.554Z",
   "brands": [
     {
       "slug": "rolex",
@@ -205,7 +205,7 @@
         {
           "id": "omega-mechanical-chronograph",
           "referenceLabel": "Select a current source-complete mechanical chronograph",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000",
@@ -701,7 +701,7 @@
         {
           "id": "sinn-compact-mechanical-gmt",
           "referenceLabel": "Select a current compact mechanical GMT/tool reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"
@@ -2444,7 +2444,7 @@
         {
           "id": "marathon-compact-field-tool",
           "referenceLabel": "Select a current compact field/tool reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "500_1000",

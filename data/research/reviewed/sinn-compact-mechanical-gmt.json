@@ -1,0 +1,75 @@
+{
+  "reviewVersion": 1,
+  "targetId": "sinn-compact-mechanical-gmt",
+  "jobId": "6e21d896-2d28-46ec-89f8-2780063c99b5",
+  "reviewedAt": "2026-08-29T07:01:45Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Sinn",
+    "model": "856 UTC",
+    "referenceCode": "856 UTC",
+    "variantName": "856 UTC stainless-steel GMT watch"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.sinn.de/en/watches/856-utc.html",
+      "status": "fetch_blocked",
+      "note": "The exact official product page returned HTTP 403 during independent retrieval. Its current official search result identifies several separately priced leather, solid-bracelet, and silicone configurations rather than one homogeneous attachment variant."
+    },
+    {
+      "url": "https://www.sinn.de/out/media/productpdf/SINN_856-UTC_EN_P.pdf",
+      "status": "validated_primary",
+      "note": "Sinn's current official product sheet independently validates the 856 UTC identity, 40 x 11 mm case, 20 mm band width, 70 g head-only weight, automatic movement, 200 m water resistance, screw-down crown, sapphire crystal, luminous coating, GMT, and date. It also confirms that prices differ by attachment configuration."
+    },
+    {
+      "url": "https://www.sinn.de/out/media/SINN_856_857_EN(7).pdf",
+      "status": "fetch_blocked",
+      "note": "The older official document cited by the extraction also returned HTTP 403, so it does not independently resolve the remaining M1 gaps."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "productionStatus",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "operation.waterResistanceM",
+    "operation.crownType",
+    "operation.crystal",
+    "complications",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The official 70 g specification explicitly excludes the strap, so it cannot satisfy the catalogue's full-watch weight field."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The official source establishes luminous coating but does not establish the catalogue's weak/moderate/strong performance class."
+    },
+    {
+      "fieldName": "operation.shockResistant",
+      "reason": "Absence of a shock-resistance claim is not evidence that the watch is not shock resistant."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "lugToLugMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "Keep as research-only. The source material describes the watch head across multiple leather, bracelet, and silicone offers; an accepted row needs one exact configuration with its own price, full weight, attachment interface, and the remaining M1 facts."
+}
