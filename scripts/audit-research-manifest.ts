@@ -159,13 +159,31 @@ for (const file of reviewFiles) {
   const target = targetsById.get(review.targetId);
   if (!target) {
     integrityErrors.push(`${file}: review target is missing from the manifest`);
-  } else if (review.outcome !== "excluded" && target.state !== "needs_review") {
+  } else if (
+    review.outcome === "needs_more_evidence" &&
+    target.state !== "needs_review"
+  ) {
     integrityErrors.push(
-      `${review.targetId}: ${review.outcome} review requires needs_review manifest state`,
+      `${review.targetId}: needs_more_evidence review requires needs_review manifest state`,
+    );
+  } else if (
+    review.outcome === "ready_for_migration" &&
+    target.state !== "needs_review" &&
+    target.state !== "accepted"
+  ) {
+    integrityErrors.push(
+      `${review.targetId}: ready_for_migration review requires needs_review or accepted manifest state`,
     );
   } else if (review.outcome === "excluded" && target.state !== "excluded") {
     integrityErrors.push(
       `${review.targetId}: excluded review requires excluded manifest state`,
+    );
+  } else if (
+    target.state === "accepted" &&
+    review.outcome !== "ready_for_migration"
+  ) {
+    integrityErrors.push(
+      `${review.targetId}: accepted reviewed target requires ready_for_migration outcome`,
     );
   }
 }

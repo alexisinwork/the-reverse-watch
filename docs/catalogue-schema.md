@@ -141,8 +141,8 @@ and enumerates 28,800 meaningful core-axis cells:
 × 4 accuracy tolerances × 4 weight limits × 5 representative function profiles
 ```
 
-The reviewed 12-variant seed currently projects into 180 of 28,800 cells
-(0.63%). Every covered cell has one candidate, every covered cell has fewer than
+The reviewed 13-variant local seed currently projects into 212 of 28,800 cells
+(0.74%). Every covered cell has one candidate, every covered cell has fewer than
 three brands, and 116 covered cells contain at least one under-evidenced
 candidate. This is a coverage baseline, not a market-coverage claim. The audit
 separately reports:
@@ -161,12 +161,18 @@ permutations.
 
 ## Applied database evidence
 
-All nine migrations were applied additively to Supabase project
+The first nine migrations were applied additively to Supabase project
 `osfqexnzgkksfvaocjvl` on 2026-08-28. The live catalogue contains 11 brands, 12
 homogeneous variants, 12 retail-price snapshots, 7 availability snapshots, 236
 field-evidence rows, 5 FX rows, 25 deployment profiles, and 12
 ownership-friction profiles. The two Rolex Explorer materials remain distinct
 rows (`124270` steel and `124273` steel/yellow gold).
+
+Migration `0010_expand_catalogue_christopher_ward.sql` adds the independently
+reviewed C63 Sealander GMT exact SKU and brings the intended live catalogue to
+12 brands and 13 variants. It remains unapplied while the Supabase MCP OAuth
+connection is expired; the bundled seed must not be pushed until this migration
+and the 13-row parity audit succeed.
 
 `npm run audit:catalogue-parity` validates the strict RPC response against the
 bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes

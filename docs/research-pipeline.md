@@ -59,8 +59,8 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 12 accepted catalogue targets linked to all current variants;
-- 19 active coverage-intent targets;
+- 13 accepted catalogue targets linked to all current reviewed variants;
+- 18 active coverage-intent targets;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
   mechanicals.
@@ -79,9 +79,19 @@ did not promote any of them:
   lug-width source was for a different reference and was rejected.
 
 Committed artifacts under `data/research/reviewed/` retain those decisions and
-M1 gaps. Paid raw/normalized/job artifacts remain ignored. The next automatic
-coverage queue begins with Christopher Ward mechanical GMT, Sinn compact
-mechanical GMT, and Citizen compact lightweight solar.
+M1 gaps. Paid raw/normalized/job artifacts remain ignored.
+
+The next ranked batch researched Christopher Ward mechanical GMT, Sinn compact
+mechanical GMT, and Citizen compact lightweight solar. Exact primary-source
+review made Christopher Ward C63-39AGM4-S00W0-B0 the first Phase 5
+`ready_for_migration` candidate: its official page supplies every M1 field,
+including the independently retrieved U.S. price and 20 mm interface. The
+additive seed row raises exact core coverage from 180 to 212 cells. Citizen
+BM8180-03E remains `needs_more_evidence` after its official E101 manual resolved
+accuracy and its official regional page resolved a weight conflict; generic
+luminous wording does not establish a graded lume class, and buckle is a clasp,
+not the strap attachment. Both Sinn responses failed strict extraction
+consistency and remain immutable failed attempts rather than reviewable facts.
 
 ## Job idempotency and retention
 
@@ -139,7 +149,7 @@ Acceptance is an additive migration followed by:
 
 ```bash
 npm run project:seed-coverage
-npm run render:seed-migration
+npm run render:seed-migration -- db/migrations/00NN_expand_catalogue.sql --only=<variant-id>
 npm run audit:research
 npm run audit:coverage
 npm run audit:catalogue-parity

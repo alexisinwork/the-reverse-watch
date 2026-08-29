@@ -9,10 +9,46 @@ import type {
 import { evidenceFields } from "../app/domain/catalogue";
 import { seedCatalogue } from "../app/domain/seed-catalogue";
 
+const args = process.argv.slice(2);
+const outputArgument = args.find((argument) => !argument.startsWith("--"));
+const onlyArgument = args.find((argument) => argument.startsWith("--only="));
+const requestedVariantIds = onlyArgument
+  ?.slice("--only=".length)
+  .split(",")
+  .filter(Boolean);
+const expansionMode = requestedVariantIds !== undefined;
 const outputPath = path.resolve(
   process.cwd(),
-  process.argv[2] ?? "db/migrations/0004_seed_reference_catalogue.sql",
+  outputArgument ?? "db/migrations/0004_seed_reference_catalogue.sql",
 );
+const selectedVariants = expansionMode
+  ? requestedVariantIds.map((variantId) => {
+      const variant = seedCatalogue.variants.find(
+        (candidate) => candidate.id === variantId,
+      );
+      if (!variant) throw new Error(`Unknown seed variant: ${variantId}`);
+      return variant;
+    })
+  : seedCatalogue.variants;
+const selectedSourceIds = new Set(
+  selectedVariants.flatMap((variant) =>
+    variant.evidence.map((entry) => entry.sourceId),
+  ),
+);
+const selectedSources = expansionMode
+  ? seedCatalogue.sources.filter((source) => selectedSourceIds.has(source.id))
+  : seedCatalogue.sources;
+const reviewer = expansionMode ? "catalogue-expansion-v1" : "seed-v1";
+
+if (expansionMode && selectedVariants.length === 0) {
+  throw new Error("--only requires at least one seed variant ID.");
+}
+if (
+  expansionMode &&
+  new Set(requestedVariantIds).size !== requestedVariantIds.length
+) {
+  throw new Error("--only variant IDs must be unique.");
+}
 
 function q(value: string | null) {
   return value === null ? "null" : `'${value.replaceAll("'", "''")}'`;
@@ -107,7 +143,7 @@ function modelIdSql(variant: SeedReferenceVariant) {
 }
 
 function renderSources() {
-  return seedCatalogue.sources
+  return selectedSources
     .map(
       (source) => `insert into public.sources
   (url, canonical_url, title, publisher, source_type, retrieved_at)
@@ -124,10 +160,7 @@ on conflict (url, retrieved_at) do update set
 
 function renderBrands() {
   const brands = new Map(
-    seedCatalogue.variants.map((variant) => [
-      variant.brand.slug,
-      variant.brand,
-    ]),
+    selectedVariants.map((variant) => [variant.brand.slug, variant.brand]),
   );
   return [...brands.values()]
     .map(
@@ -140,7 +173,7 @@ on conflict (slug) do update set name = excluded.name, review_status = 'accepted
 
 function renderCollections() {
   const collections = new Map(
-    seedCatalogue.variants.map((variant) => [
+    selectedVariants.map((variant) => [
       `${variant.brand.slug}:${variant.collection}`,
       variant,
     ]),
@@ -159,7 +192,7 @@ on conflict (brand_id, slug) do update set name = excluded.name, review_status =
 
 function renderModels() {
   const models = new Map(
-    seedCatalogue.variants.map((variant) => [
+    selectedVariants.map((variant) => [
       `${variant.brand.slug}:${variant.collection}:${variant.model}`,
       variant,
     ]),
@@ -230,6 +263,41 @@ on conflict (reference_model_id, variant_key) do update set
   production_status = excluded.production_status,
   review_status = 'accepted',
   updated_at = now();`;
+}
+
+function renderProductUrl(variant: SeedReferenceVariant) {
+  return `update public.reference_variants
+set product_url = ${q(variant.productUrl)}, updated_at = now()
+where id = ${variantIdSql(variant)}
+  and product_url is distinct from ${q(variant.productUrl)};`;
+}
+
+function renderDeploymentProfiles(variant: SeedReferenceVariant) {
+  return variant.eligibleEnvironments
+    .map(
+      (environment) => `insert into public.reference_deployment_profiles (
+  reference_variant_id, environment, review_status
+)
+values (${variantIdSql(variant)}, ${q(environment)}, 'accepted')
+on conflict (reference_variant_id, environment) do update set
+  review_status = 'accepted';`,
+    )
+    .join("\n\n");
+}
+
+function renderOwnershipFrictionProfiles(variant: SeedReferenceVariant) {
+  return variant.ownershipFrictionLevels
+    .map(
+      (
+        frictionLevel,
+      ) => `insert into public.reference_ownership_friction_profiles (
+  reference_variant_id, friction_level, review_status
+)
+values (${variantIdSql(variant)}, ${q(frictionLevel)}, 'accepted')
+on conflict (reference_variant_id, friction_level) do update set
+  review_status = 'accepted';`,
+    )
+    .join("\n\n");
 }
 
 function renderComplications(variant: SeedReferenceVariant) {
@@ -324,10 +392,10 @@ function renderVariantEvidence(variant: SeedReferenceVariant) {
 values (
   'reference_variant', ${variantIdSql(variant)}, ${q(field)}, ${q(valueHash)}, ${sourceIdSql(entry.sourceId)},
   ${q(variant.price.observedAt)}::timestamptz, ${q(seedCatalogue.sources.find((source) => source.id === entry.sourceId)!.retrievedAt)}::timestamptz,
-  ${q(seedCatalogue.sources.find((source) => source.id === entry.sourceId)!.retrievedAt)}::timestamptz, 'verified', 'seed-v1'
+  ${q(seedCatalogue.sources.find((source) => source.id === entry.sourceId)!.retrievedAt)}::timestamptz, 'verified', ${q(reviewer)}
 )
 on conflict (subject_type, subject_id, field_name, value_hash, source_id) do update set
-  verified_at = excluded.verified_at, tier = 'verified', reviewer = 'seed-v1';`;
+  verified_at = excluded.verified_at, tier = 'verified', reviewer = ${q(reviewer)};`;
         }),
     )
     .join("\n\n");
@@ -345,7 +413,7 @@ function renderPriceEvidence(variant: SeedReferenceVariant) {
 select 'price_snapshot', ps.id, 'amount_low_minor', ${q(hashValue(variant.price.amountMinor))}, ${sourceIdSql(entry.sourceId)},
   ps.observed_at, ${q(seedCatalogue.sources.find((source) => source.id === entry.sourceId)!.retrievedAt)}::timestamptz,
   ${q(seedCatalogue.sources.find((source) => source.id === entry.sourceId)!.retrievedAt)}::timestamptz,
-  ps.stale_after, 'verified', 'seed-v1'
+  ps.stale_after, 'verified', ${q(reviewer)}
 from public.price_snapshots ps
 where ps.reference_variant_id = ${variantIdSql(variant)}
   and ps.kind = 'retail' and ps.condition = 'new'
@@ -353,7 +421,7 @@ where ps.reference_variant_id = ${variantIdSql(variant)}
   and ps.observed_at = ${q(variant.price.observedAt)}::timestamptz
 on conflict (subject_type, subject_id, field_name, value_hash, source_id) do update set
   verified_at = excluded.verified_at, stale_after = excluded.stale_after,
-  tier = 'verified', reviewer = 'seed-v1';`;
+  tier = 'verified', reviewer = ${q(reviewer)};`;
 }
 
 function renderAvailabilityEvidence(variant: SeedReferenceVariant) {
@@ -369,14 +437,14 @@ function renderAvailabilityEvidence(variant: SeedReferenceVariant) {
 select 'market_snapshot', ms.id, 'availability', ${q(hashValue(variant.price.availability))}, ${sourceIdSql(entry.sourceId)},
   ms.observed_at, ${q(seedCatalogue.sources.find((source) => source.id === entry.sourceId)!.retrievedAt)}::timestamptz,
   ${q(seedCatalogue.sources.find((source) => source.id === entry.sourceId)!.retrievedAt)}::timestamptz,
-  ms.stale_after, 'verified', 'seed-v1'
+  ms.stale_after, 'verified', ${q(reviewer)}
 from public.market_snapshots ms
 where ms.reference_variant_id = ${variantIdSql(variant)}
   and ms.market_country_code = ${q(variant.price.marketCountry)}
   and ms.observed_at = ${q(variant.price.availabilityObservedAt)}::timestamptz
 on conflict (subject_type, subject_id, field_name, value_hash, source_id) do update set
   verified_at = excluded.verified_at, stale_after = excluded.stale_after,
-  tier = 'verified', reviewer = 'seed-v1';`;
+  tier = 'verified', reviewer = ${q(reviewer)};`;
 }
 
 function renderCompleteness(variant: SeedReferenceVariant) {
@@ -428,7 +496,7 @@ function renderCompleteness(variant: SeedReferenceVariant) {
 values (
   'reference_variant', ${variantIdSql(variant)}, ${q(level)}, 1,
   ${missing.length === 0 ? "true" : "false"}, ${score.toFixed(4)}, ${missingSql},
-  ${q("2026-08-28T18:30:00Z")}::timestamptz
+  ${q(expansionMode ? variant.price.observedAt : "2026-08-28T18:30:00Z")}::timestamptz
 )
 on conflict (subject_type, subject_id, level, filter_contract_version) do update set
   complete = excluded.complete,
@@ -461,7 +529,7 @@ on conflict (base_currency, quote_currency, observed_at) do update set
 }
 
 const sql = `-- Generated by scripts/render-seed-migration.ts from the reviewed seed bundle.
--- Re-render after changing data/catalogue/seed-catalogue.json.
+-- ${expansionMode ? `Additive expansion for: ${selectedVariants.map((variant) => variant.id).join(", ")}.` : "Re-render after changing data/catalogue/seed-catalogue.json."}
 
 ${renderSources()}
 
@@ -471,28 +539,34 @@ ${renderCollections()}
 
 ${renderModels()}
 
-${seedCatalogue.variants.map(renderVariant).join("\n\n")}
+${selectedVariants.map(renderVariant).join("\n\n")}
 
-${seedCatalogue.variants.map(renderComplications).filter(Boolean).join("\n\n")}
+${expansionMode ? selectedVariants.map(renderProductUrl).join("\n\n") : ""}
 
-${seedCatalogue.variants.map(renderPrice).join("\n\n")}
+${selectedVariants.map(renderComplications).filter(Boolean).join("\n\n")}
 
-${seedCatalogue.variants.map(renderAvailability).filter(Boolean).join("\n\n")}
+${selectedVariants.map(renderPrice).join("\n\n")}
 
-${seedCatalogue.variants.map(renderTraits).join("\n\n")}
+${selectedVariants.map(renderAvailability).filter(Boolean).join("\n\n")}
 
-${seedCatalogue.variants.map(renderVariantEvidence).join("\n\n")}
+${expansionMode ? selectedVariants.map(renderDeploymentProfiles).join("\n\n") : ""}
 
-${seedCatalogue.variants.map(renderPriceEvidence).join("\n\n")}
+${expansionMode ? selectedVariants.map(renderOwnershipFrictionProfiles).join("\n\n") : ""}
 
-${seedCatalogue.variants.map(renderAvailabilityEvidence).filter(Boolean).join("\n\n")}
+${selectedVariants.map(renderTraits).join("\n\n")}
 
-${seedCatalogue.variants.map(renderCompleteness).join("\n\n")}
+${selectedVariants.map(renderVariantEvidence).join("\n\n")}
 
-${renderFx()}
+${selectedVariants.map(renderPriceEvidence).join("\n\n")}
+
+${selectedVariants.map(renderAvailabilityEvidence).filter(Boolean).join("\n\n")}
+
+${selectedVariants.map(renderCompleteness).join("\n\n")}
+
+${expansionMode ? "" : renderFx()}
 `;
 
-fs.writeFileSync(outputPath, sql);
+fs.writeFileSync(outputPath, `${sql.trimEnd()}\n`);
 console.log(
-  `Rendered catalogue v${seedCatalogue.catalogueVersion} (${seedCatalogue.variants.length} variants) to ${path.relative(process.cwd(), outputPath)}.`,
+  `Rendered catalogue v${seedCatalogue.catalogueVersion} (${selectedVariants.length} variants) to ${path.relative(process.cwd(), outputPath)}.`,
 );

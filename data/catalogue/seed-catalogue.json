@@ -136,6 +136,14 @@
       "publisher": "Jaeger-LeCoultre",
       "sourceType": "manufacturer_product",
       "retrievedAt": "2026-08-28T18:30:00Z"
+    },
+    {
+      "id": "christopher-ward-c63-39agm4-s00w0-b0",
+      "url": "https://www.christopherward.com/c63-sealander-gmt/C63-39AGM4-S00W0-B0.html",
+      "title": "C63 Sealander GMT 39mm White Bader Bracelet — C63-39AGM4-S00W0-B0",
+      "publisher": "Christopher Ward",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T06:48:10Z"
     }
   ],
   "fx": {
@@ -1349,6 +1357,110 @@
             "lugToLugMm",
             "lugWidthMm",
             "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "attachmentType",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "christopher-ward-c63-39agm4-s00w0-b0",
+      "brand": {
+        "slug": "christopher-ward",
+        "name": "Christopher Ward",
+        "serviceCountries": null
+      },
+      "collection": "Sealander",
+      "model": "C63 Sealander GMT",
+      "referenceCode": "C63-39AGM4-S00W0-B0",
+      "variantName": "39mm white dial · Bader bracelet",
+      "productUrl": "https://www.christopherward.com/c63-sealander-gmt/C63-39AGM4-S00W0-B0.html",
+      "price": {
+        "amountMinor": 162000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-29T06:48:10Z",
+        "staleAfter": "2027-02-25T06:48:10Z",
+        "availability": "short_wait",
+        "availabilityObservedAt": "2026-08-29T06:48:10Z",
+        "availabilityStaleAfter": "2026-09-28T06:48:10Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "marine-grade stainless steel",
+        "caseback": "stainless steel with sapphire display crystal",
+        "bracelet": "marine-grade stainless steel Bader bracelet",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 39,
+        "caseThicknessMm": 11.3,
+        "lugToLugMm": 45,
+        "lugWidthMm": 20,
+        "weightFullG": 151,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "Sellita SW330-2",
+        "powerReserveHours": 56,
+        "accuracyLowerSeconds": -5,
+        "accuracyUpperSeconds": 12,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 150,
+        "crownType": "screw_down",
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "quick_release",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": ["gmt"],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "compact_independent_travel_tool",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability", "differentiation"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "christopher-ward-c63-39agm4-s00w0-b0",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "availability",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "accuracy",
             "waterResistanceM",
             "crownType",
             "crystal",

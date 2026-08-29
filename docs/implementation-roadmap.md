@@ -245,8 +245,8 @@ Verification:
 
 Checkpoint 2026-08-29: the complete 200-dossier owner knowledge pack is
 schema-validated and linked as research-only M0/M2 context. Together with one
-existing roadmap brand, the strict manifest now contains 201 brands, links all
-12 accepted variants, and retains 19 coverage targets. The coverage-ranked,
+existing roadmap brand, the strict manifest now contains 201 brands, links 13
+reviewed seed variants, and retains 18 coverage targets. The coverage-ranked,
 resumable Perplexity worker uses native JSON Schema plus Zod validation,
 immutable artifacts, fingerprint reuse, globally increasing attempts, bounded
 concurrency, rate-limit handling, and explicit review artifacts. Provider
@@ -260,6 +260,16 @@ lug-width citation, null/contradictory extraction fields, unsupported HKD price
 normalization, and the need to represent rectangular case geometry without
 calling one dimension a diameter. Details and the next queue are in
 [`research-pipeline.md`](research-pipeline.md).
+
+The second live batch produced valid provisional results for Christopher Ward
+C63-39AGM4-S00W0-B0 and Citizen BM8180-03E; two Sinn attempts failed the strict
+null/contradiction guards. Independent review completed every M1 field for the
+Christopher Ward exact SKU and generated additive migration `0010`, increasing
+the local projection from 180 to 212 covered cells. Citizen remains
+`needs_more_evidence` for graded lume and attachment semantics despite official
+resolution of E101 accuracy and a weight-source conflict. Migration `0010`
+must be applied and live parity proved before this checkpoint is pushed because
+the Supabase MCP OAuth refresh expired during verification.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

@@ -17,7 +17,9 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Nine additive migrations are applied to Supabase. Tables remain server-only;
+- Nine additive migrations are applied to Supabase; additive migration `0010`
+  is prepared and locally verified but not yet applied because the Supabase MCP
+  OAuth refresh expired. Tables remain server-only;
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
@@ -69,11 +71,14 @@ phase.
 - `app/domain/coverage.ts` and `scripts/audit-coverage.ts` enumerate the defined
   pre-collection core matrix and report empty, single-candidate,
   under-diversified, and under-evidenced cells.
-- The reviewed seed has 11 brands, 12 variants, 17 sources, 12 prices, 7
-  availability snapshots, 236 evidence rows, 5 FX rows, 25 deployment profiles,
-  and 12 ownership-friction profiles.
-- The current audit reports 180 of 28,800 cells covered (0.63%), all
-  single-candidate and under-diversified; 116 are under-evidenced.
+- The applied baseline has 11 brands and 12 variants. The reviewed local seed
+  now has 12 brands and 13 variants after adding Christopher Ward
+  C63-39AGM4-S00W0-B0; migration `0010` carries only that additive row and its
+  source, price, availability, evidence, deployment, friction, trait, and
+  product-URL records.
+- The current local audit reports 212 of 28,800 cells covered (0.74%), all
+  single-candidate and under-diversified; 116 are under-evidenced. The applied
+  live baseline remains 180 cells until migration `0010` is applied.
 - Browser roles have no table grants. The security advisor's only current
   findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
   both functions have an empty `search_path`, fixed read-only SQL, and no
@@ -100,9 +105,11 @@ phase.
 - The server validates both RPC responses, requires exact variant coverage,
   caches valid catalogue facts for 60 seconds, and visibly falls back as one
   unit to the reviewed bundle plus local predicates.
-- `npm run audit:catalogue-parity` proves fact and predicate parity for all 12
-  variants across six golden profiles. PostgreSQL owns the live hard-filter
-  partition; TypeScript owns scoring, explanations, diversity, and fallback.
+- `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
+  applied baseline variants across six golden profiles. It must be rerun for
+  all 13 variants immediately after migration `0010` is applied. PostgreSQL
+  owns the live hard-filter partition; TypeScript owns scoring, explanations,
+  diversity, and fallback.
 - Vercel Production and Preview have the public Supabase URL and publishable
   key. Neither role has table access, and the web request path uses no database
   password.
@@ -126,6 +133,25 @@ On 2026-08-29 for the Phase 5 continuation:
 - Commit-candidate data contains only Markdown, CSV, and reviewed JSON/contract
   artifacts; a secret-pattern scan found no credential-like strings.
 
+For the second Phase 5 research batch on the same date:
+
+- Christopher Ward C63-39AGM4-S00W0-B0 passed independent primary-source review
+  with complete M1 decision facts and is present in the 13-row local seed.
+- Citizen BM8180-03E remains `needs_more_evidence` for graded lume and the
+  strap-to-case attachment interface. Official sources resolved E101 accuracy,
+  power duration, and a 54 g versus 48 g conflict in favor of the manufacturer.
+- Two Sinn attempts failed strict extraction validation and did not advance the
+  target. Across the batch, two jobs succeeded and one target exhausted two
+  retained failures.
+- `npm run audit:research -- --strict` passes with 201 brands, 13 accepted
+  links, 18 active targets, and five committed reviews. `npm run audit:coverage`
+  reports 212 covered cells (0.74%). The fast gate is locally passing after the
+  count fixtures were updated.
+- `db/migrations/0010_expand_catalogue_christopher_ward.sql` is a generated,
+  replay-safe one-row expansion. A local commit is safe, but do not push it
+  until Supabase is reconnected, `0010` is applied, and catalogue/SQL parity
+  passes.
+
 On 2026-08-28 for Phases 1–4:
 
 - `npm run check` passes formatting, lint, strict type/route generation, all 41
@@ -143,22 +169,26 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Resolve or explicitly retain the first review gaps. Casio G-5600UE-1 needs a
+1. Reconnect the Supabase MCP for project `osfqexnzgkksfvaocjvl`, apply
+   `0010_expand_catalogue_christopher_ward.sql`, then run live catalogue and
+   six-profile SQL parity. Only push after that succeeds so production never
+   sees divergent bundled and relational catalogues.
+2. Resolve or explicitly retain the first review gaps. Casio G-5600UE-1 needs a
    supported price/FX path, band-interface width, attachment classification,
    and illumination mapping; Cartier WSTA0107 needs rectangular geometry
    support plus M1 sources; Swatch SO28N100 needs exact-reference primary M1
    sources. Do not accept a row merely to make the batch non-empty.
-2. Research the next coverage-ranked batch: Christopher Ward mechanical GMT,
-   Sinn compact mechanical GMT, and Citizen compact lightweight solar. Keep the
-   worker at its safe default concurrency unless the provider limit changes.
-3. Convert only M1-complete reviewed candidates into a small additive catalogue
-   migration. Keep every knowledge-pack family research-only until it is split
+3. Retain Citizen BM8180-03E as research-only until a supported graded lume
+   classification and strap attachment are available. Retry Sinn only through
+   the strict worker; do not salvage its contradictory raw payloads manually.
+4. Convert only M1-complete reviewed candidates into small additive catalogue
+   migrations. Keep every knowledge-pack family research-only until it is split
    into homogeneous variants and independently sourced.
-4. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
+5. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
    after every accepted batch.
-5. Continue prioritizing coverage and original-plan purpose over raw brand
+6. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
-6. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
+7. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.
 
@@ -168,7 +198,7 @@ On 2026-08-28 for Phases 1–4:
   intake: 200 dossiers, 951 family rows, 248 required variant splits, 169
   dossiers mapped through Q1-Q16, and 1,748 unique cited URLs.
 - The manifest now contains 201 brands (the pack plus one existing roadmap
-  brand), all 12 accepted catalogue links, and the 19 coverage-led targets.
+  brand), all 13 reviewed seed links, and 18 active coverage-led targets.
   Knowledge hash/count drift and missing review artifacts fail the strict audit.
 - The default worker queue is the same coverage-ranked queue shown by
   `npm run plan:research`; successful fingerprints are reusable, attempts remain
@@ -180,6 +210,10 @@ On 2026-08-28 for Phases 1–4:
 - The first live Cartier/Casio/Swatch batch produced three committed review
   decisions, all `needs_more_evidence`. No incomplete variant entered the
   catalogue or PostgreSQL.
+- The second batch accepted Christopher Ward C63-39AGM4-S00W0-B0 into the local
+  reviewed seed, kept Citizen BM8180-03E research-only, and rejected both Sinn
+  responses at the strict extraction boundary. The additive database migration
+  is prepared but deliberately unpushed until live parity can be verified.
 
 ## Earlier Phase 5 start
 

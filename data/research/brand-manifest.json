@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T06:40:23.322Z",
+  "updatedAt": "2026-08-29T06:48:10Z",
   "brands": [
     {
       "slug": "rolex",
@@ -855,7 +855,7 @@
         {
           "id": "citizen-compact-lightweight-solar",
           "referenceLabel": "Select a current compact lightweight solar reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "300_500",
@@ -1891,32 +1891,9 @@
         {
           "id": "christopher-ward-mechanical-gmt",
           "referenceLabel": "Select a current source-complete mechanical GMT",
-          "state": "planned",
-          "coverageIntent": {
-            "priceBands": [
-              "1000_2000",
-              "2000_5000"
-            ],
-            "wristBands": [
-              "5_75_6_25",
-              "6_25_6_75"
-            ],
-            "deploymentEnvironments": [
-              "field_water_abuse",
-              "studio_desk_daily"
-            ],
-            "ownershipFrictionLevels": [
-              "workhorse_mechanical"
-            ],
-            "accuracyTolerances": [
-              "within_5_seconds_per_day",
-              "within_15_seconds_per_day"
-            ],
-            "functionProfiles": [
-              "gmt"
-            ]
-          },
-          "coverageRationale": "Add a lower-priced GMT brand to reduce top-three brand collapse."
+          "state": "accepted",
+          "coverageRationale": "Add a lower-priced GMT brand to reduce top-three brand collapse.",
+          "catalogueVariantId": "christopher-ward-c63-39agm4-s00w0-b0"
         }
       ]
     },
