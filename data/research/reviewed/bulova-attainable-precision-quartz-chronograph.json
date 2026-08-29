@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "bulova-attainable-precision-quartz-chronograph",
   "jobId": "cb07bdfc-e4a2-4c93-93b1-a842212b07e2",
-  "reviewedAt": "2026-08-29T07:45:53Z",
+  "reviewedAt": "2026-08-29T09:20:31Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -31,6 +31,31 @@
       "url": "https://www.costco.ca/p/-/bulova-icon-black-dial-mens-watch/4000234434",
       "status": "validated_secondary",
       "note": "Costco's exact-model listing supplies a 17.5 mm case thickness. It is used only for the missing dimension, not for price, availability, or any unsupported fit estimate."
+    },
+    {
+      "url": "https://www.skywingworld.com/products/bulova-precisionist-chronograph-watch-stainless-steel-98b316",
+      "status": "validated_secondary",
+      "note": "The exact-reference specification identifies a 54.5 mm case length, 46.5 mm case width, 17.5 mm thickness, and 24 mm lug space. The latter three values match Bulova and Costco, supporting case length as the otherwise unpublished lug-to-lug dimension."
+    },
+    {
+      "url": "https://www.johnlewis.com/bulova-98b316-mens-chronograph-bracelet-strap-watch-black/p115341885",
+      "status": "validated_secondary",
+      "note": "The exact-reference retailer independently lists the same 17.5 x 46.5 x 54.5 dimensional set. A separate exact-reference specialist reports 54.6 mm case length, consistent after normal rounding."
+    },
+    {
+      "url": "https://bulova.timecenter.hu/bulova%2Borak/precisionist%2Bkarorak/98B316.ora",
+      "status": "validated_secondary",
+      "note": "The exact-reference specialist reports a 54.6 mm case length, corroborating the independent 54.5 mm records after rounding. Its 276 g weight does not resolve the separate 274 g full-watch records or the approximately 270 g sized-bracelet report."
+    },
+    {
+      "url": "https://ormoda.com/eu/bulova-precisionist-champlain-98b316.html",
+      "status": "validated_secondary",
+      "note": "The exact SKU and EAN specification reports 274 g, but another exact specialist reports 276 g and an owner review reports approximately 270 g depending on bracelet sizing. Full configured weight remains open rather than selecting the most common value."
+    },
+    {
+      "url": "https://demcrumbliesreviews.com/bulova-precisionist-chronograph-98b316-review/",
+      "status": "validated_secondary",
+      "note": "The exact-reference owner review reports approximately 270 g depending on links removed and calls ambient-light lume unusably weak. The configuration-specific weight cannot establish full-length weight, and a separate exact hands-on account describes the lume as usable, so neither gap is normalized."
     }
   ],
   "verifiedProvisionalFields": [
@@ -105,6 +130,12 @@
       "note": "Costco's exact-reference specification supplies the otherwise unpublished case thickness."
     },
     {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 54.5,
+      "sourceUrl": "https://www.skywingworld.com/products/bulova-precisionist-chronograph-watch-stainless-steel-98b316",
+      "note": "Two exact-reference specifications report a 54.5 mm case length alongside the independently validated 46.5 mm width and 17.5 mm thickness; a separate specialist reports 54.6 mm, consistent after rounding."
+    },
+    {
       "fieldName": "movement.accuracyLowerSeconds",
       "value": -10,
       "sourceUrl": "https://au.bulova.com/collections/precisionist",
@@ -169,11 +200,6 @@
       "reason": "Date is represented separately by dateStatus and is removed from the supported complication array."
     }
   ],
-  "missingM1Fields": [
-    "lugToLugMm",
-    "weightFullG",
-    "lumeGrade",
-    "attachmentType"
-  ],
-  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, and annual accuracy. Lug-to-lug length, full configured weight, graded lume, and the bracelet interface remain unsupported; approximate and conflicting enthusiast measurements were not promoted."
+  "missingM1Fields": ["weightFullG", "lumeGrade", "attachmentType"],
+  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band, and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, and annual accuracy. Independent exact-reference dimensional sets converge on 54.5-54.6 mm case length, resolving lug-to-lug at 54.5 mm. Full weight remains open across 274 g, 276 g, and approximately 270 g sized-bracelet records; exact lume accounts disagree on nighttime usability; and the exact original bracelet's dealer-described spring-pin mount still lacks manufacturer corroboration of the factory interface."
 }

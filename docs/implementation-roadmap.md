@@ -462,6 +462,14 @@ specifications explicitly report no date display, reducing Omega's M1 gaps from
 three to two. It remains research-only because the exact sources do not support
 a repeatable lume grade or manufacturer-corroborated factory attachment type.
 
+An exact-reference Bulova 98B316 dimensional follow-up resolves its previously
+missing lug-to-lug at 54.5 mm: two specifications publish the same 17.5 x 46.5
+x 54.5 mm set, with a separate specialist reporting 54.6 mm case length. The
+row remains research-only with three M1 gaps. Full-weight records span 274 g,
+276 g, and approximately 270 g after bracelet sizing; exact lume accounts
+disagree on nighttime usability; and the original bracelet's dealer-described
+spring-pin mount lacks manufacturer corroboration of the factory interface.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

@@ -393,6 +393,15 @@ for `lumeGrade` and `attachmentType`: presence of luminous material is not a
 repeatable performance grade, and third-party fitment does not establish the
 factory bracelet interface without manufacturer corroboration.
 
+A Bulova 98B316 exact-reference dimensional pass resolved lug-to-lug at 54.5
+mm. Two independent records publish a 17.5 x 46.5 x 54.5 mm dimensional set,
+and a separate specialist reports 54.6 mm case length, consistent after normal
+rounding. The row remains research-only for full weight, lume grade, and
+attachment type. Weight records vary from approximately 270 g after bracelet
+sizing to 274 g and 276 g; exact hands-on lume accounts disagree on nighttime
+usability; and the original bracelet's dealer-described spring-pin mount still
+lacks manufacturer corroboration.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
