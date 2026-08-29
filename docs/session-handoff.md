@@ -391,6 +391,11 @@ For the post-batch evidence-gap pass on the same date:
 - Live Supabase remains 11 brands/12 variants. Apply migrations `0010` through
   `0014`, prove 17-row catalogue and six-profile SQL parity, and only then push
   the local commits.
+- Citizen BM8180-03E now needs only a repeatable lume grade. Citizen Watch
+  Group's exact-model parts lookup lists dedicated spring-bar part 509-2074
+  alongside the watch's band, resolving the factory interface as `spring_bar`.
+  The conflicting exact-reference lume observations remain insufficient for a
+  categorical grade.
 
 On 2026-08-28 for Phases 1–4:
 
@@ -418,9 +423,9 @@ On 2026-08-28 for Phases 1–4:
    SQL parity. Only push after that succeeds so production never sees divergent
    bundled and relational catalogues.
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
-   needs authoritative lume-grade and factory-interface
-   evidence. TUDOR M79000N-0001 now needs only normalized full configured weight
-   and manufacturer-corroborated attachment evidence. Cartier WSTA0107 needs
+   needs an authoritative repeatable lume grade. TUDOR M79000N-0001 now needs
+   only normalized full configured weight and manufacturer-corroborated
+   attachment evidence. Cartier WSTA0107 needs
    rectangular geometry support plus M1 sources; Swatch SO28N100 needs
    exact-reference primary M1 sources. Do not accept a row merely to make the
    batch non-empty.

@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "citizen-compact-lightweight-solar",
   "jobId": "edaa380a-7c11-4db4-851a-f6423f1149eb",
-  "reviewedAt": "2026-08-29T08:01:09Z",
+  "reviewedAt": "2026-08-29T08:42:34Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -26,6 +26,11 @@
       "url": "https://www.citizenwatch-global.com/support/pdf/ecodrive01/e.pdf",
       "status": "validated_primary",
       "note": "Citizen's official E0xx/E1xx manual explicitly covers E101 and specifies average monthly accuracy of +/-15 seconds plus approximately six months of duration after a full charge."
+    },
+    {
+      "url": "https://register.citizenwatchgroup.com/service/parts-lookup/?m=BM8180-03E&i=gzoliud0hm&n=Garrison",
+      "status": "validated_primary",
+      "note": "Citizen Watch Group's official parts lookup for the exact Garrison BM8180-03E lists both its Band and a dedicated Spring Bar replacement part, number 509-2074. This directly establishes the factory strap-to-case interface as spring_bar."
     },
     {
       "url": "https://longislandwatch.com/citizen-eco-drive-garrison-watch-with-black-dial-and-green-strap-bm8180-03e/",
@@ -107,6 +112,12 @@
       "value": 30,
       "sourceUrl": "https://www.citizenwatch-global.com/support/pdf/ecodrive01/e.pdf",
       "note": "The manual's monthly specification is normalized to the catalogue's 30-day accuracy period."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://register.citizenwatchgroup.com/service/parts-lookup/?m=BM8180-03E&i=gzoliud0hm&n=Garrison",
+      "note": "The manufacturer's exact-model parts lookup explicitly assigns spring-bar replacement part 509-2074 to Garrison BM8180-03E."
     }
   ],
   "rejectedProvisionalFields": [
@@ -124,9 +135,9 @@
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Buckle describes the clasp, not the strap-to-case attachment interface required by the catalogue contract."
+      "reason": "Buckle describes the clasp, not the strap-to-case attachment interface required by the catalogue contract; the corrected spring_bar value comes from Citizen's exact-model parts lookup."
     }
   ],
-  "missingM1Fields": ["lumeGrade", "attachmentType"],
-  "note": "The candidate is otherwise M1-complete after primary-source conflict resolution. Exact-reference owner accounts materially disagree on lume performance, and an aftermarket compatibility listing does not prove the factory attachment interface, so both categorical fields remain open."
+  "missingM1Fields": ["lumeGrade"],
+  "note": "Keep as research-only. Citizen's exact-model parts lookup resolves the factory interface as spring_bar, but exact-reference owner accounts still materially disagree on lume performance and no controlled repeatable grade was found. Lume remains the only M1 gap."
 }

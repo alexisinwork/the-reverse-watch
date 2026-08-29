@@ -354,6 +354,13 @@ Supabase remains at 12 rows, so migrations `0010` through `0014` and the bundled
 seed remain unpushed until they are applied in order and 17-row SQL parity
 passes.
 
+A subsequent exact-model Citizen service lookup resolved BM8180-03E's factory
+attachment: Citizen Watch Group's official parts system lists a dedicated
+`Spring Bar` replacement, part 509-2074, alongside the exact watch's band. The
+row remains research-only with one M1 gap because its exact-reference lume
+accounts still conflict and no controlled repeatable performance grade has
+been found.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

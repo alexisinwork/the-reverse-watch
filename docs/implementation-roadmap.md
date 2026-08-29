@@ -429,6 +429,12 @@ active targets, and 21 reviews: five migration-ready, 14 needing more evidence,
 and two excluded. Migrations `0010` through `0014` must be applied in order and
 17-row parity proved before the bundled seed or commits are pushed.
 
+A subsequent exact-model Citizen service lookup resolved BM8180-03E's
+attachment as `spring_bar`: Citizen Watch Group's official parts system lists
+spring-bar replacement part 509-2074 for that exact Garrison reference. The row
+remains research-only because its exact-reference lume accounts conflict and no
+controlled repeatable grade was found; lume is now its only M1 gap.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
