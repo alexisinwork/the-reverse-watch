@@ -245,8 +245,8 @@ Verification:
 
 Checkpoint 2026-08-29: the complete 200-dossier owner knowledge pack is
 schema-validated and linked as research-only M0/M2 context. Together with one
-existing roadmap brand, the strict manifest now contains 201 brands, links 13
-reviewed seed variants, and retains 18 coverage targets. The coverage-ranked,
+existing roadmap brand, the strict manifest now contains 201 brands, links 14
+reviewed seed variants, and retains 17 active coverage targets. The coverage-ranked,
 resumable Perplexity worker uses native JSON Schema plus Zod validation,
 immutable artifacts, fingerprint reuse, globally increasing attempts, bounded
 concurrency, rate-limit handling, and explicit review artifacts. Provider
@@ -338,6 +338,24 @@ ownership gaps prevent migration. The strict checkpoint has 21 reviews (one
 migration-ready, 18 needing more evidence, two excluded), and the ranked
 research queue is empty. Further provider work requires a new explicit
 coverage target or a source-led attempt to close an existing review gap.
+
+A source-led gap pass subsequently made Orient RA-AC0M03S the second
+migration-ready Phase 5 candidate. Orient's exact pages already supplied the
+£294.99 UK offer, fixed 38.4 x 12.5 x 44 mm black-leather configuration, 54 g
+weight, F6724 -15/+25 seconds-per-day specification, 30 m rating, date, and
+explicit no-lume state. An exact-reference specialist fitment guide, whose
+recommendations were tested on the watch, documents the standard 20 mm
+spring-bar interface and is corroborated by Orient's own spring-bar service
+instructions. The seed source contract now represents this evidence honestly
+as `secondary_editorial`; it is not mislabeled as manufacturer evidence.
+Generated migration `0011` adds only this reviewed row after `0010`. The local
+seed now has 14 variants and projects to 244/28,800 cells (0.85%), while the
+live database remains at 12 rows. Certina's product-linked manual was also
+checked, but its approximate range for “most” non-chronometers is not an
+exact-reference guarantee, so Certina remains research-only. The current
+strict checkpoint is 14 accepted targets, 17 needing review, and two excluded;
+the review outcomes are two migration-ready, 17 needing more evidence, and two
+excluded.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

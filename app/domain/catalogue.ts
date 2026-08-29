@@ -26,6 +26,7 @@ export const catalogueSourceSchema = z
       "manufacturer_manual",
       "manufacturer_data_sheet",
       "central_bank",
+      "secondary_editorial",
     ]),
     retrievedAt: z.iso.datetime(),
   })

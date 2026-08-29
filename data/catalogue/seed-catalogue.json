@@ -144,6 +144,46 @@
       "publisher": "Christopher Ward",
       "sourceType": "manufacturer_product",
       "retrievedAt": "2026-08-29T06:48:10Z"
+    },
+    {
+      "id": "orient-ra-ac0m03s-global",
+      "url": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "title": "Classic & Simple Style 38 — RA-AC0M03S",
+      "publisher": "Orient",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T07:18:12Z"
+    },
+    {
+      "id": "orient-ra-ac0m03s-uk",
+      "url": "https://www.orientwatch.co.uk/or/en_GB/brands/orient/orient-bambino-38mm/p/RA-AC0M03S",
+      "title": "Orient Bambino 38mm — RA-AC0M03S",
+      "publisher": "Orient UK",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T07:18:12Z"
+    },
+    {
+      "id": "orient-ra-ac0m03s-us",
+      "url": "https://www.orientwatchusa.com/products/ra-ac0m03s30b",
+      "title": "Orient Bambino Version 7 — RA-AC0M03S30B",
+      "publisher": "Orient Watch USA",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-29T07:18:12Z"
+    },
+    {
+      "id": "orient-spring-bar-guide",
+      "url": "https://www.orientwatchusa.com/blogs/orient-blog/how-to-remove-a-spring-bar",
+      "title": "How to Remove a Spring Bar",
+      "publisher": "Orient Watch USA",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-29T07:53:23Z"
+    },
+    {
+      "id": "delugs-orient-ra-ac0m03s-fitment",
+      "url": "https://delugs.com/blogs/best-straps/best-straps-for-orient-bambino-38mm",
+      "title": "Best Straps for the Orient Bambino 38mm — RA-AC0M03S",
+      "publisher": "Delugs",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-29T07:53:23Z"
     }
   ],
   "fx": {
@@ -1472,6 +1512,121 @@
             "ownershipFrictionLevels",
             "traits"
           ]
+        }
+      ]
+    },
+    {
+      "id": "orient-ra-ac0m03s",
+      "brand": {
+        "slug": "orient",
+        "name": "Orient",
+        "serviceCountries": null
+      },
+      "collection": "Classic & Simple Style 38",
+      "model": "Bambino 38mm",
+      "referenceCode": "RA-AC0M03S",
+      "variantName": "White dial · black leather strap",
+      "productUrl": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "price": {
+        "amountMinor": 29499,
+        "currency": "GBP",
+        "marketCountry": "GB",
+        "observedAt": "2026-08-29T07:18:12Z",
+        "staleAfter": "2027-02-25T07:18:12Z",
+        "availability": "unavailable",
+        "availabilityObservedAt": "2026-08-29T07:18:12Z",
+        "availabilityStaleAfter": "2026-09-28T07:18:12Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": "stainless steel with flat crystal display back",
+        "bracelet": null,
+        "strap": "black leather"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 38.4,
+        "caseThicknessMm": 12.5,
+        "lugToLugMm": 44,
+        "lugWidthMm": 20,
+        "weightFullG": 54,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "F6724",
+        "powerReserveHours": 40,
+        "accuracyLowerSeconds": -15,
+        "accuracyUpperSeconds": 25,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 30,
+        "crownType": "push_pull",
+        "crownPosition": null,
+        "crystal": "mineral",
+        "lumeGrade": "none",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["studio_desk_daily", "formal_architectural"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "accessible_classic_date",
+        "socialSignals": ["quiet_continuity"],
+        "aestheticDna": ["mid_century_industrial"],
+        "emotionalObjectives": ["dependability", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "orient-ra-ac0m03s-global",
+          "fields": [
+            "identity",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crystal",
+            "lumeGrade",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "orient-ra-ac0m03s-uk",
+          "fields": ["price", "availability"]
+        },
+        {
+          "sourceId": "orient-ra-ac0m03s-us",
+          "fields": ["crownType"]
+        },
+        {
+          "sourceId": "orient-spring-bar-guide",
+          "fields": ["attachmentType"]
+        },
+        {
+          "sourceId": "delugs-orient-ra-ac0m03s-fitment",
+          "fields": ["attachmentType"]
         }
       ]
     }

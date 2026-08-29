@@ -17,9 +17,9 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Nine additive migrations are applied to Supabase; additive migration `0010`
-  is prepared and locally verified but not yet applied because the Supabase MCP
-  OAuth refresh expired. Tables remain server-only;
+- Nine additive migrations are applied to Supabase; additive migrations `0010`
+  and `0011` are prepared and locally verified but not yet applied because the
+  Supabase MCP OAuth refresh expired. Tables remain server-only;
   the application uses two narrow read-only RPCs for accepted facts and SQL
   hard-filter codes. No subscriber, DNS, or destructive database change was
   made.
@@ -72,13 +72,14 @@ phase.
   pre-collection core matrix and report empty, single-candidate,
   under-diversified, and under-evidenced cells.
 - The applied baseline has 11 brands and 12 variants. The reviewed local seed
-  now has 12 brands and 13 variants after adding Christopher Ward
-  C63-39AGM4-S00W0-B0; migration `0010` carries only that additive row and its
-  source, price, availability, evidence, deployment, friction, trait, and
-  product-URL records.
-- The current local audit reports 212 of 28,800 cells covered (0.74%), all
-  single-candidate and under-diversified; 116 are under-evidenced. The applied
-  live baseline remains 180 cells until migration `0010` is applied.
+  now has 13 brands and 14 variants after adding Christopher Ward
+  C63-39AGM4-S00W0-B0 and Orient RA-AC0M03S. Migrations `0010` and `0011` each
+  carry only their additive row and its sources, price, availability, evidence,
+  deployment, friction, traits, and product URL.
+- The current local audit reports 244 of 28,800 cells covered (0.85%), all
+  single-candidate and under-diversified; 148 are under-evidenced. The applied
+  live baseline remains 180 cells until migrations `0010` and `0011` are
+  applied in order.
 - Browser roles have no table grants. The security advisor's only current
   findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
   both functions have an empty `search_path`, fixed read-only SQL, and no
@@ -107,7 +108,8 @@ phase.
   unit to the reviewed bundle plus local predicates.
 - `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
   applied baseline variants across six golden profiles. It must be rerun for
-  all 13 variants immediately after migration `0010` is applied. PostgreSQL
+  all 14 variants immediately after migrations `0010` and `0011` are applied
+  in order. PostgreSQL
   owns the live hard-filter partition; TypeScript owns scoring, explanations,
   diversity, and fallback.
 - Vercel Production and Preview have the public Supabase URL and publishable
@@ -299,6 +301,29 @@ For the eighth Phase 5 research batch on the same date:
   parity, and every push remain held; no incomplete eighth-batch candidate was
   added to the catalogue.
 
+For the post-batch evidence-gap pass on the same date:
+
+- Orient RA-AC0M03S is now the second migration-ready review. Its exact primary
+  pages already resolved every M1 fact except attachment; an exact-reference
+  specialist guide documents the standard 20 mm spring-bar interface, says its
+  strap recommendations were tested on that watch, and is corroborated by
+  Orient's own spring-bar service instructions. The accepted source registry
+  records the specialist page as `secondary_editorial` rather than primary.
+- Certina C048.807.44.051.01 remains research-only. The official mechanical
+  manual linked from its exact product page states an approximate range only
+  for most non-chronometers, not a guaranteed numerical tolerance for this
+  reference.
+- Generated migration `0011_expand_catalogue_orient.sql` is an additive,
+  replay-safe one-row expansion intended to run after `0010`. The local seed is
+  now 13 brands/14 variants and coverage is 244/28,800 cells (0.85%), with 148
+  under-evidenced cells.
+- Strict research now reports 14 accepted targets, 17 active targets, and 21
+  reviews: two `ready_for_migration`, 17 `needs_more_evidence`, and two
+  `excluded`. The worker queue remains empty.
+- Live Supabase remains 11 brands/12 variants. Apply `0010`, then `0011`, prove
+  14-row catalogue and six-profile SQL parity, and only then push the local
+  commits.
+
 On 2026-08-28 for Phases 1–4:
 
 - `npm run check` passes formatting, lint, strict type/route generation, all 41
@@ -317,7 +342,8 @@ On 2026-08-28 for Phases 1–4:
 ## Exact continuation
 
 1. Reconnect the Supabase MCP for project `osfqexnzgkksfvaocjvl`, apply
-   `0010_expand_catalogue_christopher_ward.sql`, then run live catalogue and
+   `0010_expand_catalogue_christopher_ward.sql` and then
+   `0011_expand_catalogue_orient.sql`, then run live 14-row catalogue and
    six-profile SQL parity. Only push after that succeeds so production never
    sees divergent bundled and relational catalogues.
 2. Resolve or explicitly retain the first review gaps. Casio G-5600UE-1 needs a
@@ -354,7 +380,7 @@ On 2026-08-28 for Phases 1–4:
   intake: 200 dossiers, 951 family rows, 248 required variant splits, 169
   dossiers mapped through Q1-Q16, and 1,748 unique cited URLs.
 - The manifest now contains 201 brands (the pack plus one existing roadmap
-  brand), all 13 reviewed seed links, and 18 active coverage-led targets.
+  brand), all 14 reviewed seed links, and 17 active coverage-led targets.
   Knowledge hash/count drift and missing review artifacts fail the strict audit.
 - The default worker queue is the same coverage-ranked queue shown by
   `npm run plan:research`; successful fingerprints are reusable, attempts remain

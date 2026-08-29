@@ -2,9 +2,9 @@
   "reviewVersion": 1,
   "targetId": "orient-affordable-mechanical-date",
   "jobId": "beadf0ca-721f-45c6-9b48-8c2bcdeca836",
-  "reviewedAt": "2026-08-29T07:18:12Z",
+  "reviewedAt": "2026-08-29T07:53:23Z",
   "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "outcome": "ready_for_migration",
   "candidateIdentity": {
     "brand": "Orient",
     "model": "Bambino 38mm",
@@ -26,6 +26,16 @@
       "url": "https://www.orientwatchusa.com/products/ra-ac0m03s30b",
       "status": "validated_primary",
       "note": "Orient's official U.S. page for the same base reference corroborates the physical configuration, movement, geometry, water resistance, date, push-pull crown, leather strap, and traditional pin buckle. Pin buckle describes the clasp and does not resolve the strap-to-case interface."
+    },
+    {
+      "url": "https://www.orientwatchusa.com/blogs/orient-blog/how-to-remove-a-spring-bar",
+      "status": "validated_primary",
+      "note": "Orient's official service guidance documents the standard spring-bar construction used to secure conventional leather straps between the lugs. This establishes the manufacturer's interface terminology but is not used alone as exact-reference evidence."
+    },
+    {
+      "url": "https://delugs.com/blogs/best-straps/best-straps-for-orient-bambino-38mm",
+      "status": "validated_secondary",
+      "note": "The specialist strap maker's exact-reference RA-AC0M03S fitment guide states that every recommended strap was tested on the watch, documents the standard 20 mm lug interface, gives spring-bar removal and installation steps, and distinguishes the factory standard spring bars from replacement quick-release spring bars. Together with Orient's exact product dimensions and manufacturer service terminology, this resolves the attachment as spring_bar without inferring it from leather material or buckle type."
     }
   ],
   "verifiedProvisionalFields": [
@@ -112,6 +122,12 @@
       "value": "none",
       "sourceUrl": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
       "note": "The exact manufacturer's structured specification explicitly leaves Luminous Light empty, mapped to the catalogue's none class."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://delugs.com/blogs/best-straps/best-straps-for-orient-bambino-38mm",
+      "note": "The exact-reference fitment guide documents standard 20 mm spring bars on RA-AC0M03S and says its recommendations were tested on the watch; Orient's own service guidance corroborates the interface terminology."
     }
   ],
   "rejectedProvisionalFields": [
@@ -125,13 +141,13 @@
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Leather strap describes supplied material, and pin buckle describes the clasp; neither establishes the strap-to-case attachment interface."
+      "reason": "The provider's leather-strap and pin-buckle labels remain insufficient by themselves; the corrected spring_bar value comes from an exact-reference tested fitment guide corroborated by Orient's manufacturer service guidance."
     },
     {
       "fieldName": "complications",
       "reason": "Date is represented by dateStatus in the catalogue and is not one of the complication enum values."
     }
   ],
-  "missingM1Fields": ["attachmentType"],
-  "note": "Keep as research-only. The exact candidate is otherwise M1-complete after global primary evidence resolved weight, accuracy, and explicit no-lume status, but the strap-to-case interface must not be inferred from the leather material or pin buckle."
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. Exact manufacturer sources resolve the homogeneous variant and every other M1 field; a tested exact-reference fitment guide, corroborated by Orient's own spring-bar service instructions, resolves the standard spring-bar interface without relying on strap material or clasp inference."
 }

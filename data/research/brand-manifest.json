@@ -1730,7 +1730,7 @@
         {
           "id": "orient-affordable-mechanical-date",
           "referenceLabel": "Select a current compact mechanical date reference",
-          "state": "needs_review",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "300_500",
@@ -1754,7 +1754,8 @@
               "simple_date"
             ]
           },
-          "coverageRationale": "Diversify affordable mechanical date cells with a second industrial archetype."
+          "coverageRationale": "Diversify affordable mechanical date cells with a second industrial archetype.",
+          "catalogueVariantId": "orient-ra-ac0m03s"
         }
       ]
     },

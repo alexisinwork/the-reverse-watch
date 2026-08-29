@@ -59,8 +59,8 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 13 accepted catalogue targets linked to all current reviewed variants;
-- 18 active coverage-intent targets;
+- 14 accepted catalogue targets linked to all current reviewed variants;
+- 17 active coverage-intent targets, with all default discovery jobs reviewed;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
   mechanicals.
@@ -239,6 +239,28 @@ queued targets. New jobs must either close a named review gap from independently
 identified exact-reference evidence or begin from a new explicit coverage
 intent; empty-queue status is not permission for broad prestige collection.
 
+A source-led gap-resolution pass then revisited the two candidates that each
+had one M1 gap. Orient RA-AC0M03S advanced to `ready_for_migration`: an
+independent exact-reference strap-fitment guide explicitly documents its
+standard 20 mm spring bars, says the recommended straps were tested on that
+watch, and distinguishes the factory interface from replacement quick-release
+bars. Orient's own spring-bar service instructions corroborate the mechanism.
+The accepted catalogue source enum now includes `secondary_editorial` so this
+field-level evidence retains its real provenance. Certina
+C048.807.44.051.01 did not advance: the manual linked from its exact product
+page says only that most non-chronometers average around -10/+30 seconds per
+day, which is neither universal nor a guaranteed bound for the selected
+reference.
+
+Generated migration `0011_expand_catalogue_orient.sql` is replay-safe and adds
+only the reviewed Orient row after migration `0010`. The local seed now has 14
+variants and covers 244/28,800 cells (0.85%); 148 covered cells contain an
+under-evidenced candidate. Strict research reports 14 accepted targets, 17
+active targets, and 21 reviews: two `ready_for_migration`, 17
+`needs_more_evidence`, and two `excluded`. The live database remains at 12 rows,
+so neither migration nor the bundled seed may be pushed until `0010` and `0011`
+are applied in order and 14-row SQL parity passes.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
@@ -276,7 +298,12 @@ Research order for a reference variant:
 1. official product page, technical sheet, and manual;
 2. official service/ownership material for brand-level claims;
 3. central bank for FX;
-4. reviewed market source only for facts the manufacturer cannot establish.
+4. reviewed market source only for market facts the manufacturer cannot
+   establish;
+5. independently tested, exact-reference specialist evidence for a physical
+   interface fact only when manufacturer product and service material
+   corroborate the mechanism and the source is retained as secondary rather
+   than relabeled as primary.
 
 Manufacturer absence is not evidence of a negative. Missing weight,
 lug-to-lug, service geography, availability, or market ratios remains `null`.

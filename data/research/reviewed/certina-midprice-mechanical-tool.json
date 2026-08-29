@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "certina-midprice-mechanical-tool",
   "jobId": "6d55cbf7-1ebd-49c9-bf97-0cafec37f181",
-  "reviewedAt": "2026-08-29T07:18:12Z",
+  "reviewedAt": "2026-08-29T07:53:23Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -21,6 +21,11 @@
       "url": "https://www.certina.com/en/watch-sheet/138286",
       "status": "validated_primary",
       "note": "Certina's exact one-page product sheet independently corroborates the reference, materials, movement, reserve, quick-release bracelet, lume, crystal, and dimensions."
+    },
+    {
+      "url": "https://www.certina.com/sites/default/files/maps-user-manuals/357-en.pdf",
+      "status": "validated_primary",
+      "note": "The exact product page links this official manual, which says it applies to all Certina mechanical watches. It describes most non-chronometer watches as having an average accuracy tolerance of around -10/+30 seconds per day, but 'most' and 'around' do not establish an exact-reference guaranteed lower and upper bound for C048.807.44.051.01, so the accuracy gate remains open."
     },
     {
       "url": "https://www.certina.com/dk/certina/eretailers/138286",
@@ -181,5 +186,5 @@
     }
   ],
   "missingM1Fields": ["accuracy"],
-  "note": "Keep as research-only. Correcting the provider's two mixed Certina URLs resolves every other M1 field, but Certina describes exceptional precision without publishing numerical lower and upper rate bounds for Powermatic 80.611; anecdotal or generic calibre performance cannot satisfy the accuracy gate."
+  "note": "Keep as research-only. Correcting the provider's two mixed Certina URLs resolves every other M1 field. The exact page's own mechanical-watch manual gives only an approximate range for most non-chronometers, not a guaranteed bound for this reference, so anecdotal, generic-calibre, or non-universal performance cannot satisfy the accuracy gate."
 }
