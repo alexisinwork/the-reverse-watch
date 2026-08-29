@@ -524,6 +524,14 @@ For the post-batch evidence-gap pass on the same date:
   exact reviewed sources also resolve the $4,100 U.S. authorized-retailer
   offer, 16 mm interface, approximately 79.3 g maximum bracelet weight, and
   Cartier QuickSwitch attachment. No Cartier row was added.
+- Audemars Piguet Royal Oak 16202ST.OO.1240ST.02 now has a reviewed
+  `fieldApplicability.lugWidthMm: not_applicable` fact. AP's own Heritage
+  record explicitly includes model 16202 in the documented case lineage and
+  states that the case extensions themselves constitute both the lugs and the
+  first bracelet link. This resolves conventional between-horns width from
+  affirmative physical evidence rather than from the product page's omission.
+  Price, lug-to-lug, full configured weight, numerical accuracy, and graded
+  lume remain open; no AP row was added.
 - The accepted Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481
   now uses the manufacturer's explicit `L x W` semantics: `caseLengthMm: 47`,
   `caseWidthMm: 28.3`, `caseDiameterMm: null`, with the separately labelled
@@ -580,7 +588,9 @@ On 2026-08-28 for Phases 1–4:
    exact-applicable quartz rate bound, and a repeatable lume grade. Do not
    accept a row merely to make the batch non-empty. Vostok 420059 has stronger
    exact factory evidence but still requires manufacturer-corroborated
-   attachment semantics before acceptance.
+   attachment semantics before acceptance. AP 16202ST's conventional lug width
+   is now verified non-applicable, but its five remaining gaps keep it
+   research-only.
 3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy and no-date status are now resolved;

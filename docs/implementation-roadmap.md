@@ -514,6 +514,14 @@ no-luminescence classification; Cartier's own description corroborates the
 plain blued-steel-hand configuration. Numerical exact-applicable accuracy is
 now the sole M1 gap. It remains research-only.
 
+The applicability contract then resolved one Audemars Piguet Royal Oak
+16202ST.OO.1240ST.02 gap without inventing a width. AP's own Heritage record
+explicitly includes model 16202 and states that its case extensions constitute
+both the lugs and first bracelet link. Conventional between-horns
+`lugWidthMm` is therefore reviewed `not_applicable`, while price, lug-to-lug,
+full weight, numerical accuracy, and graded lume remain fail-closed. The AP
+reference remains research-only.
+
 The same geometry policy was then applied to the already accepted
 Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481. Its exact
 manufacturer page labels the case 47 x 28.3 mm as length x width and explicitly

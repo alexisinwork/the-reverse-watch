@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "audemars-piguet-current-integrated-specialist",
   "jobId": "5213024a-f1d9-4019-91e1-4c34af000c52",
-  "reviewedAt": "2026-08-29T07:45:53Z",
+  "reviewedAt": "2026-08-29T19:31:52Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -21,6 +21,11 @@
       "url": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
       "status": "validated_primary",
       "note": "Audemars Piguet's official Royal Oak design documentation explicitly describes the integrated bracelet and its redesigned first links, supporting both integrated geometry and attachment classification for the 2022 design generation that includes reference 16202."
+    },
+    {
+      "url": "https://apchronicles.audemarspiguet.com/en/article/the-first-royal-oak-cases",
+      "status": "validated_primary",
+      "note": "Audemars Piguet's Heritage record explicitly includes the Royal Oak 16202 in the documented case lineage and explains that the case extensions themselves constitute both the lugs and the first bracelet link. This establishes that a conventional between-horns lug-width measurement is physically inapplicable rather than merely unpublished."
     },
     {
       "url": "https://www.audemarspiguet.com/com/en/about/history/heritage/chronicles/royal-oak-jumbo-extra-thin-16202.html",
@@ -72,6 +77,12 @@
       "note": "The documented Royal Oak bracelet construction maps to the catalogue's integrated attachment class."
     },
     {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "value": "not_applicable",
+      "sourceUrl": "https://apchronicles.audemarspiguet.com/en/article/the-first-royal-oak-cases",
+      "note": "AP's own Heritage documentation explicitly includes model 16202 and describes its case extensions as the lugs and first bracelet link. Under applicability contract v1, conventional between-horns width is therefore a reviewed physical non-applicability, not an unknown null."
+    },
+    {
       "fieldName": "complications",
       "value": [],
       "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02",
@@ -99,10 +110,9 @@
   "missingM1Fields": [
     "price",
     "lugToLugMm",
-    "lugWidthMm",
     "weightFullG",
     "accuracy",
     "lumeGrade"
   ],
-  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference, but price, fit dimensions, full weight, numerical rate tolerance, and graded lume remain unresolved."
+  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference. AP's Heritage documentation explicitly makes conventional between-horns lug width not applicable to model 16202's case-and-first-link architecture. Price, lug-to-lug fit, full weight, numerical rate tolerance, and graded lume remain unresolved."
 }

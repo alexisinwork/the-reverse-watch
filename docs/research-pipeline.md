@@ -495,6 +495,15 @@ bracelet-to-case fastener, conflicting Citizen BM8180-03E observations do not
 establish repeatable lume performance, and Omega's exact manual does not name
 the factory bracelet interface. These records remain fail-closed.
 
+An Audemars Piguet 16202ST.OO.1240ST.02 applicability pass then resolved
+conventional `lugWidthMm` as physically `not_applicable`. AP's own Heritage
+record explicitly includes the Royal Oak 16202 in the documented case lineage
+and explains that its case extensions constitute both the lugs and the first
+bracelet link. This is affirmative manufacturer evidence for the integrated
+interface, not an inference from the exact product page's missing width. Price,
+lug-to-lug, full configured weight, numerical accuracy, and graded lume remain
+open, so the reference stays research-only.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
