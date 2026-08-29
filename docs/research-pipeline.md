@@ -135,6 +135,25 @@ The strict manifest now contains 11 reviews: one `ready_for_migration` and ten
 `needs_more_evidence`. The next queue begins with Orient affordable mechanical
 date, Certina midprice mechanical tool, and Tudor compact mechanical tool.
 
+The fifth ranked batch produced reviewable Orient and Certina artifacts while
+Tudor exhausted two strict retries:
+
+- Orient RA-AC0M03S is now supported by exact global and regional official
+  sources through 54 g full weight, -15/+25 seconds per day accuracy, date, and
+  an explicit empty luminous-light specification mapped to no lume. Only the
+  strap-to-case attachment interface remains an M1 gap.
+- Certina C048.807.44.051.01 initially mixed product URLs for `.051.00` and
+  `.081.00`. Independent review replaced them with the exact `.051.01` page,
+  resolving price, 300 m ISO diver status, full weight, quick release, strong
+  lume, and date. Certina still publishes no numerical Powermatic 80.611 rate
+  tolerance, so the row remains research-only.
+- Tudor's two responses failed strict null and resolved/unresolved consistency
+  guards. The target remains planned; neither failed payload is reviewable.
+
+The strict manifest now contains 13 reviews: one `ready_for_migration` and 12
+`needs_more_evidence`. The next queue begins with a fresh strict Tudor retry,
+Blancpain specialist dive, and Patek formal high complication.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

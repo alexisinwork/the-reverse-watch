@@ -1,0 +1,185 @@
+{
+  "reviewVersion": 1,
+  "targetId": "certina-midprice-mechanical-tool",
+  "jobId": "6d55cbf7-1ebd-49c9-bf97-0cafec37f181",
+  "reviewedAt": "2026-08-29T07:18:12Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Certina",
+    "model": "DS Action Diver 38mm Titanium",
+    "referenceCode": "C048.807.44.051.01",
+    "variantName": "DS Action Diver 38mm Titanium, black dial and titanium bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "status": "validated_primary",
+      "note": "The corrected exact official page independently validates C048.807.44.051.01, the CHF 925 Swiss offer, new/current status, 104 g full weight, titanium case and bracelet, 38 x 13.22 x 45.01 mm geometry, 19 mm lug width, Powermatic 80.611 automatic movement, 80-hour reserve, 300 m ISO 6425:2018 diver rating, BG W9 Super-LumiNova on hands, indices, and bezel, sapphire crystal, quick release, and extreme shock resistance. It does not publish a numerical rate tolerance."
+    },
+    {
+      "url": "https://www.certina.com/en/watch-sheet/138286",
+      "status": "validated_primary",
+      "note": "Certina's exact one-page product sheet independently corroborates the reference, materials, movement, reserve, quick-release bracelet, lume, crystal, and dimensions."
+    },
+    {
+      "url": "https://www.certina.com/dk/certina/eretailers/138286",
+      "status": "validated_primary",
+      "note": "Certina's exact-reference eRetailer page identifies Ditur as an authorized online retailer for this watch."
+    },
+    {
+      "url": "https://www.ditur.com/certina-ds-action-diver-38mm-titanium-c0488074405101",
+      "status": "validated_secondary",
+      "note": "The Certina-listed authorized retailer independently matches SKU C0488074405101, MPN C048.807.44.051.01, and EAN 7612307157689, and explicitly validates the date display."
+    },
+    {
+      "url": "https://www.certina.com/en/watch/ds-action-diver-38mm-titanium/c0488074405100",
+      "status": "rejected",
+      "note": "This provider-cited URL resolves to older reference C048.807.44.051.00, not the selected C048.807.44.051.01."
+    },
+    {
+      "url": "https://www.certina.com/en/watch/ds-action-diver-38mm-titanium/c0488074408100",
+      "status": "rejected",
+      "note": "This provider-cited price URL is reference C048.807.44.081.00, not the selected black-dial C048.807.44.051.01."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "materials.case",
+    "materials.bracelet",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.crystal"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "variantName",
+      "value": "DS Action Diver 38mm Titanium, black dial and titanium bracelet",
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The corrected exact official page identifies the black-dial titanium-bracelet configuration."
+    },
+    {
+      "fieldName": "productUrl",
+      "value": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "This is the corrected official URL for reference suffix .051.01."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "Certina labels the exact reference as new on its current Swiss product page."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 92500,
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The corrected exact official Swiss page displays CHF 925.00."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "CHF",
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The corrected exact official Swiss page prices the watch in CHF."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "CH",
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The reviewed price is Certina's Switzerland-market offer."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unknown",
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The manufacturer supplies a store finder rather than exact retailer inventory, so availability is retained as unknown."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The manufacturer directs buyers to its authorized retail network."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The official current-product price is for a new watch."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 300,
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The exact official page specifies 300 m and ISO 6425:2018 diver compliance."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The catalogue maps documented BG W9 Super-LumiNova across hands, indices, and bezel plus ISO 6425 darkness-legibility compliance to strong."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "quick_release",
+      "sourceUrl": "https://www.certina.com/en/watch-sheet/138286",
+      "note": "The exact official product sheet explicitly specifies a quick-release system."
+    },
+    {
+      "fieldName": "operation.shockResistant",
+      "value": true,
+      "sourceUrl": "https://www.certina.com/ch-en/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "note": "The exact official page explicitly lists Extreme Shock Resistance and ISO 6425 diver compliance."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.ditur.com/certina-ds-action-diver-38mm-titanium-c0488074405101",
+      "note": "Certina's listed authorized retailer explicitly identifies a date display for the exact MPN and EAN."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "variantName",
+      "reason": "The provider cited the older .051.00 product URL; the same description is retained only from the corrected exact .051.01 page."
+    },
+    {
+      "fieldName": "productUrl",
+      "reason": "The provider URL ends in 05100 and resolves to reference C048.807.44.051.00 rather than the selected .051.01."
+    },
+    {
+      "fieldName": "productionStatus",
+      "reason": "The provider cited the older .051.00 page; current status is retained from the corrected exact URL."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider's CHF 925 value came from different reference C048.807.44.081.00, so it is rejected and independently re-established on the exact .051.01 page."
+    },
+    {
+      "fieldName": "price.currency",
+      "reason": "The provider cited a different reference; the exact-reference Swiss page independently re-establishes CHF."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "The provider cited a different reference; the exact-reference Swiss page independently re-establishes the CH market."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Super-LumiNova is a material name, not the catalogue enum; exact ISO 6425 and application evidence supports a separately reviewed strong mapping."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The raw bracelet description is replaced by the catalogue's normalized quick_release value from the exact product sheet."
+    }
+  ],
+  "missingM1Fields": ["accuracy"],
+  "note": "Keep as research-only. Correcting the provider's two mixed Certina URLs resolves every other M1 field, but Certina describes exceptional precision without publishing numerical lower and upper rate bounds for Powermatic 80.611; anecdotal or generic calibre performance cannot satisfy the accuracy gate."
+}

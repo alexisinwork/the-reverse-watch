@@ -291,6 +291,14 @@ with only a starting price and no exact manufacturer reference. The strict
 checkpoint has 11 reviews (one migration-ready, ten needing more evidence); the
 next queue is Orient, Certina, and Tudor.
 
+The fifth live batch reviewed Orient RA-AC0M03S and Certina
+C048.807.44.051.01 without promoting either row; Tudor exhausted two strict
+extraction retries. Exact global Orient evidence leaves only attachment type
+unresolved. Certina source review corrected two mixed reference URLs and leaves
+only numerical movement accuracy unresolved. The strict checkpoint has 13
+reviews (one migration-ready, 12 needing more evidence); Tudor remains planned,
+followed by Blancpain and Patek in the ranked queue.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

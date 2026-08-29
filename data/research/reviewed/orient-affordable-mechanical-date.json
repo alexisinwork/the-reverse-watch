@@ -1,0 +1,137 @@
+{
+  "reviewVersion": 1,
+  "targetId": "orient-affordable-mechanical-date",
+  "jobId": "beadf0ca-721f-45c6-9b48-8c2bcdeca836",
+  "reviewedAt": "2026-08-29T07:18:12Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Orient",
+    "model": "Bambino 38mm",
+    "referenceCode": "RA-AC0M03S",
+    "variantName": "Orient Bambino 38mm, white dial, black leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "status": "validated_primary",
+      "note": "Orient's exact global product page independently validates identity, fixed black-leather configuration, 38.4 x 12.5 x 44 mm geometry, 20 mm lug width, 54 g full weight, F6724 automatic/manual-winding movement, -15/+25 seconds per day, more than 40 hours of reserve, 30 m water resistance, mineral crystal, pin buckle, and date. Its explicit Luminous Light row is blank, supporting no lume rather than an inferred performance grade."
+    },
+    {
+      "url": "https://www.orientwatch.co.uk/or/en_GB/brands/orient/orient-bambino-38mm/p/RA-AC0M03S",
+      "status": "validated_primary",
+      "note": "Orient's exact official U.K. page independently validates the £294.99 GBP new-product offer, current out-of-stock state, identity, geometry, movement, materials, 30 m rating, and date at 3 o'clock."
+    },
+    {
+      "url": "https://www.orientwatchusa.com/products/ra-ac0m03s30b",
+      "status": "validated_primary",
+      "note": "Orient's official U.S. page for the same base reference corroborates the physical configuration, movement, geometry, water resistance, date, push-pull crown, leather strap, and traditional pin buckle. Pin buckle describes the clasp and does not resolve the strap-to-case interface."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "price.marketCountry",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "note": "The exact reference remains in Orient's current global collection."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unavailable",
+      "sourceUrl": "https://www.orientwatch.co.uk/or/en_GB/brands/orient/orient-bambino-38mm/p/RA-AC0M03S",
+      "note": "The exact official U.K. offer was marked not in stock at review time."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.orientwatch.co.uk/or/en_GB/brands/orient/orient-bambino-38mm/p/RA-AC0M03S",
+      "note": "The official regional store is represented by the catalogue's authorized channel class."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.orientwatch.co.uk/or/en_GB/brands/orient/orient-bambino-38mm/p/RA-AC0M03S",
+      "note": "The official product offer is for a new watch."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 54,
+      "sourceUrl": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "note": "Orient's exact global specification reports 54 g."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -15,
+      "sourceUrl": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "note": "The exact global specification states -15/+25 seconds per day."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 25,
+      "sourceUrl": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "note": "The exact global specification states -15/+25 seconds per day."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 1,
+      "sourceUrl": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "note": "The exact global specification expresses the tolerance per day."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "push_pull",
+      "sourceUrl": "https://www.orientwatchusa.com/products/ra-ac0m03s30b",
+      "note": "Orient's official U.S. page identifies a push/pull crown for the same base reference."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "none",
+      "sourceUrl": "https://orient-watch.com/en/orient/collection/classic/classic-and-simple-style-38/RA-AC0M03S/",
+      "note": "The exact manufacturer's structured specification explicitly leaves Luminous Light empty, mapped to the catalogue's none class."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.availability",
+      "reason": "Not in stock is replaced by the catalogue's normalized unavailable value."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Official Orient online store is a page label rather than a normalized acquisition-channel value."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Leather strap describes supplied material, and pin buckle describes the clasp; neither establishes the strap-to-case attachment interface."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is represented by dateStatus in the catalogue and is not one of the complication enum values."
+    }
+  ],
+  "missingM1Fields": ["attachmentType"],
+  "note": "Keep as research-only. The exact candidate is otherwise M1-complete after global primary evidence resolved weight, accuracy, and explicit no-lume status, but the strap-to-case interface must not be inferred from the leather material or pin buckle."
+}

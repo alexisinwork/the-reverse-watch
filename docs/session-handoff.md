@@ -196,6 +196,27 @@ For the fourth Phase 5 research batch on the same date:
   Coverage remains 212/28,800 cells (0.74%). The next queue is Orient, Certina,
   and Tudor.
 
+For the fifth Phase 5 research batch on the same date:
+
+- Orient RA-AC0M03S and Certina C048.807.44.051.01 produced schema-valid
+  provisional artifacts and completed independent review. Both remain
+  `needs_more_evidence`; Tudor produced two retained failures and remains
+  planned without a review artifact.
+- Orient's exact global product page supplies 54 g full weight, -15/+25 seconds
+  per day, date, and an explicit blank luminous-light field mapped to no lume.
+  Its only remaining M1 gap is the strap-to-case attachment interface.
+- Certina extraction mixed `.051.00` for the product and `.081.00` for price
+  into candidate `.051.01`. Review rejected both URLs, independently resolved
+  the exact CHF 925 `.051.01` product, and validated 300 m ISO dive status,
+  104 g, quick release, strong lume, and date. No manufacturer numerical rate
+  tolerance is published for Powermatic 80.611, leaving accuracy as its sole M1
+  gap.
+- The ignored local ledger now retains 23 attempts: 13 succeeded and ten
+  failed, spanning 14 targets, with USD 0.17898 recorded provider cost.
+- Strict research now reports 13 reviews: one `ready_for_migration` and 12
+  `needs_more_evidence`. Coverage remains 212/28,800 cells (0.74%). The next
+  queue is Tudor, Blancpain, and Patek.
+
 On 2026-08-28 for Phases 1–4:
 
 - `npm run check` passes formatting, lint, strict type/route generation, all 41
@@ -233,10 +254,11 @@ On 2026-08-28 for Phases 1–4:
    after every accepted batch.
 6. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
-7. If database access remains unavailable, continue the ranked planned queue
-   with Orient, Certina, and Tudor while keeping every result provisional until
-   source review is complete. Retain the fourth-batch gaps exactly as recorded
-   instead of inferring attachment or lume categories.
+7. If database access remains unavailable, retry Tudor only through the strict
+   worker, then continue with Blancpain and Patek while keeping every result
+   provisional until source review is complete. Do not substitute generic
+   calibre performance for Certina's missing published accuracy bounds or infer
+   Orient's attachment interface from its pin buckle.
 8. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.

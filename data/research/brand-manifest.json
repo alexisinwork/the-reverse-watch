@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T07:07:36.618Z",
+  "updatedAt": "2026-08-29T07:15:03.896Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1459,7 +1459,7 @@
         {
           "id": "certina-midprice-mechanical-tool",
           "referenceLabel": "Select a current compact mechanical tool reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "500_1000",
@@ -1716,7 +1716,7 @@
         {
           "id": "orient-affordable-mechanical-date",
           "referenceLabel": "Select a current compact mechanical date reference",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "300_500",
