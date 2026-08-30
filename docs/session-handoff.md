@@ -17,8 +17,8 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Migrations `0001` through `0022` are applied to the connected Supabase
-  project. The live v3 catalogue contains all 16 brands and 20 accepted
+- Migrations `0001` through `0023` are applied to the connected Supabase
+  project. The live v3 catalogue contains all 17 brands and 21 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
   result parity passes. All 20 public catalogue tables have RLS enabled with no
   direct browser grants or policies; the application uses only two narrow,
@@ -28,8 +28,8 @@ phase.
   were therefore delivered to `origin/main`, superseding the earlier
   temporary no-push instruction. The deployed server requests the v3 RPC pair,
   strictly validates the response and exact variant coverage, and falls back as
-  one unit to the reviewed 20-row bundle plus deterministic local predicates
-  if those RPCs become unavailable or divergent. The 20-row live SQL parity
+  one unit to the reviewed 21-row bundle plus deterministic local predicates
+  if those RPCs become unavailable or divergent. The 21-row live SQL parity
   requirement is now satisfied.
 - The owner-requested push advanced `origin/main` through `f505270`. The Git
   remote SHA matched local HEAD immediately afterward. The resulting Vercel
@@ -60,12 +60,17 @@ phase.
   strong LumiBrite plus spring-bar attachment without treating the clasp as the
   interface. Migration `0022` is live; 20-row catalogue/SQL parity passes, and
   coverage is now 624/28,800 cells (2.17%).
-- The next active session-plan item is one bounded research job for Brew Metric
-  Titanium Chronograph `MTRC-TITAN` on its supplied titanium bracelet. The
-  2026-08-30 primary pre-screen covers every M1 class and projects 60 currently
-  empty `300_500`, zero-maintenance, studio chronograph cells. The manifest
-  target is `planned`; none of the pre-screened facts is accepted until the
-  provider result receives independent exact-reference review.
+- Brew Metric Titanium Chronograph `MTRC-TITAN` is accepted on its exact
+  titanium bracelet. Review rejects circular-diameter duplication and visual
+  integrated-bracelet inference, then validates the non-round 36 x 41.5 mm
+  case, 89 g mass, TMI VK68 -20/+20-seconds-per-month rate, quick-release
+  interface, no-date configuration, and convergent exact-owner no-lume status.
+  Migration `0023` is live with M1 complete and 31 verified reference-level
+  evidence rows; 21-row parity passes and coverage is 684/28,800 (2.38%).
+- The next active session-plan item is source-led pre-screening of another
+  exact homogeneous variant. The default queue is empty; do not spend another
+  provider attempt until primary and exact-reference evidence covers every M1
+  class and the proposed row has explicit coverage or original-plan purpose.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -96,8 +101,8 @@ phase.
   evidence; fail-closed SQL hard filters; speculative-candidate suppression;
   deterministic score traces, diversity, why-not explanations, and visible
   relaxations; and the complete 28,800-cell coverage audit.
-- The audit is not complete at the data layer: only 20 homogeneous variants are
-  accepted locally, 624 of 28,800 cells are covered, every covered cell is
+- The audit is not complete at the data layer: only 21 homogeneous variants are
+  accepted locally, 684 of 28,800 cells are covered, every covered cell is
   under-diversified, and 224 are under-evidenced. Phase 5 must close that
   breadth and evidence gap before the 200-brand knowledge pack can be treated as
   a recommendation catalogue. Phase 7 dossier, funnel, and owner-media work
@@ -626,13 +631,11 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Run exactly one bounded Perplexity attempt for
-   `brew-metric-titanium-chronograph`, then independently review its exact
-   `MTRC-TITAN` bracelet configuration. Reject steel Metric, Super Metric,
-   other-dial, replacement-strap, and movement-capability facts that are not
-   exposed by the configured watch. If and only if all M1 gates remain complete,
-   render additive migration `0023`, apply it remotely, and prove live parity.
-2. Treat the live 20-row v3 catalogue and six-profile parity as the relational
+1. Because the default queue is empty, select the next source-led exact
+   homogeneous reference only after primary and exact-reference pre-screening
+   covers every M1 class. Record a coverage or original-plan purpose in the
+   manifest and commit that checkpoint before invoking another provider job.
+2. Treat the live 21-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.

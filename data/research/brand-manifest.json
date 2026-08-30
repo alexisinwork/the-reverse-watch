@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T21:14:41.000Z",
+  "updatedAt": "2026-08-30T21:23:15.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2247,7 +2247,7 @@
         {
           "id": "brew-metric-titanium-chronograph",
           "referenceLabel": "Brew Metric Titanium Chronograph MTRC-TITAN on its supplied titanium bracelet; validate one exact homogeneous current row and reject steel Metric, Super Metric, other dial, and replacement-strap facts",
-          "state": "planned",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "300_500"
@@ -2280,7 +2280,8 @@
               "chronograph"
             ]
           },
-          "coverageRationale": "Source-led exact-reference hypothesis for a new brand and an 89 g titanium meca-quartz chronograph at USD 495. Its 41.5 mm overall case length should fit every representative wrist band, while the published monthly rate supports all four accuracy profiles. The homogeneous bracelet row would open 60 currently empty 300_500 zero-maintenance studio chronograph cells if one bounded provider job and independent review confirm every pre-screened M1 fact."
+          "coverageRationale": "Source-led exact-reference hypothesis for a new brand and an 89 g titanium meca-quartz chronograph at USD 495. Independent review validates the 41.5 mm overall case length for every representative wrist band, the exact monthly rate for all four accuracy profiles, quick-release bracelet interface, explicit no-date configuration, and convergent exact-owner no-lume evidence. The homogeneous row opens 60 previously empty 300_500 zero-maintenance studio chronograph cells.",
+          "catalogueVariantId": "brew-metric-titanium-mtrc-titan"
         }
       ]
     },

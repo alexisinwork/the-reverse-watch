@@ -330,6 +330,7 @@ export type EvidenceField =
   | "lugToLugMm"
   | "lugWidthMm"
   | "lugCurvature"
+  | "integratedBracelet"
   | "weightFullG"
   | "movement"
   | "accuracy"

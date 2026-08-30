@@ -1008,6 +1008,26 @@ facts. If all M1 gates survive review, the row opens 60 currently empty
 `300_500`, zero-maintenance, studio chronograph cells across every wrist and
 supported accuracy band.
 
+The single bounded Brew job succeeded with 49 provisional facts and 19
+unresolved fields. Independent review replaces the provider's retailer-sourced
+reference code with Brew's own live product-payload SKU, normalizes the TV case
+to 36 mm width by 41.5 mm overall length rather than inventing a circular
+diameter, and rejects the visual `integrated` inference because Brew's current
+instructions prove quick-release spring bars. TMI's exact VK68A guide closes
+the -20/+20-seconds-per-month rate, exact-colorway reporting closes no-date,
+and two independent exact-owner observations converge on no lume. No M1 gap
+remains.
+
+Additive migration `0023_expand_catalogue_brew_metric_titanium.sql` accepts
+`brew-metric-titanium-mtrc-titan`. The renderer now treats verified overall
+case length as the non-round wearing-span alternative in completeness scoring
+and retains field-level provenance for `integratedBracelet`. Remote verification
+reports the exact MTRC-TITAN row, M1 complete with no missing fields, 31 verified
+reference-level evidence rows, and 21 total accepted variants. Publishable-key
+catalogue and SQL hard-filter parity passes for all 21 variants and six golden
+profiles. Deterministic coverage rises by 60 cells to 684/28,800 (2.38%). The
+default research queue is empty again.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

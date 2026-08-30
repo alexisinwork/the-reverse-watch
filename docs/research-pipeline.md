@@ -59,9 +59,9 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 20 accepted catalogue targets linked to all current reviewed variants;
+- 21 accepted catalogue targets linked to all current reviewed variants;
 - 20 active coverage-intent targets, with the default research queue empty;
-- live Supabase parity for 16 brands and all 20 accepted variants across the
+- live Supabase parity for 17 brands and all 21 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
@@ -967,6 +967,33 @@ cells: all five representative wrist bands, all four supported accuracy
 tolerances, and the three weight choices satisfied by 89 g. The manifest now
 has one planned target; the ignored provider ledger is unchanged at 59 attempts
 (36 succeeded, 23 failed) across 30 target IDs and USD 0.48496 recorded cost.
+
+The bounded Brew extraction succeeded on its sole attempt with 49 provisional
+facts and 19 unresolved fields. Independent review uses Brew's own live product
+payload for SKU `MTRC-TITAN` and exact availability, rejecting the provider's
+retailer dependency. It also rejects circular-diameter duplication for the
+non-round TV case, visual integrated-bracelet inference, material-as-fastener
+prose, and unnormalized commerce and complication values. The accepted geometry
+is 36 mm width by 41.5 mm overall case length with no conventional lug-to-lug
+claim; Brew's current instructions establish quick-release spring bars at the
+published 19.85 mm interval. TMI's exact VK68A guide supplies
+-20/+20 seconds per 30 days, exact-colorway reporting establishes no date, and
+a manufacturer-hosted verified buyer plus a separate exact owner independently
+report no lume. Review leaves no M1 gap.
+
+Additive migration `0023_expand_catalogue_brew_metric_titanium.sql` accepts
+`brew-metric-titanium-mtrc-titan`. A renderer correction makes database
+completeness use verified overall case length when a non-round row has no
+conventional lug-to-lug, matching the existing TypeScript and v3 SQL hard-filter
+contract; `integratedBracelet` now also retains its own field evidence. The live
+database reports M1 complete, no missing fields, 31 verified reference-level
+evidence rows, and 21 accepted variants. Publishable-key catalogue and
+hard-filter parity passes for all 21 variants and six golden profiles. Coverage
+rises by exactly 60 previously empty cells to 684/28,800 (2.38%). Strict
+research reports 21 accepted, 20 `needs_review`, and two excluded targets; 31
+reviews include nine migration-ready decisions. The ignored provider ledger
+contains 60 attempts (37 succeeded, 23 failed) across 31 target IDs and USD
+0.49518 recorded cost. The default queue is empty again.
 
 ## Job idempotency and retention
 

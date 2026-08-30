@@ -1,0 +1,243 @@
+{
+  "reviewVersion": 1,
+  "targetId": "brew-metric-titanium-chronograph",
+  "jobId": "50651f14-c855-4896-9cee-460c37f57024",
+  "reviewedAt": "2026-08-30T21:19:27Z",
+  "reviewer": "codex-source-review",
+  "outcome": "ready_for_migration",
+  "candidateIdentity": {
+    "brand": "Brew",
+    "model": "Metric Titanium Chronograph",
+    "referenceCode": "MTRC-TITAN",
+    "variantName": "Black dial in titanium case on supplied titanium bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.brew-watches.com/products/metric-titanium",
+      "status": "validated_primary",
+      "note": "Brew's exact current product route identifies Metric - Titanium and publishes USD 495, 36 x 41.5 x 10.75 mm non-round geometry, 19.85 mm lugs, 89 g configured weight, titanium case, caseback, and bracelet, sapphire, 50 m resistance, VK68 meca-quartz chronograph operation, folding clasp with micro-adjustment, and an active Add to Cart control. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.brew-watches.com/products/metric-titanium.js",
+      "status": "validated_primary",
+      "note": "Brew's live Shopify product payload maps the exact handle and Titanium variant to manufacturer SKU MTRC-TITAN, USD 495.00, and available=true at both product and variant level. This directly resolves the reference code and current in-stock state without relying on a retailer mapping. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/VK68_TG.pdf",
+      "status": "validated_primary",
+      "note": "TMI's exact VK68A manufacturer guide specifies an accuracy rate of less than +/-20 seconds per month at normal temperature and approximately three years of battery life with the stated chronograph use. The installed Brew movement is explicitly VK68. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.brew-watches.com/blogs/design-timing-and-everyday-ritual/how-to-change-a-watch-strap-step-by-step-guide",
+      "status": "validated_primary",
+      "note": "Brew's current manufacturer instructions explicitly include every Metric metal bracelet in the quick-release spring-bar rule and distinguish the case interface from bracelet resizing and clasp adjustment. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://wornandwound.com/brews-metric-chronograph-is-now-available-in-titanium/",
+      "status": "validated_secondary",
+      "note": "The exact launch report independently identifies the titanium Metric, USD 495 price, full titanium bracelet, VK68, 36 mm case, 50 m resistance, and 89 g watch weight. It corroborates that the manufacturer weight describes the configured watch rather than a case head. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.hodinkee.com/articles/brew-watch-co-doubles-down-on-retro-with-the-super-metric-chronographs",
+      "status": "validated_secondary",
+      "note": "The exact-colorway editorial explicitly identifies Titanium among the Metric variants that omit the date window, resolving the configured watch's no-date status rather than inheriting the VK68 movement's available calendar capability. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.brew-watches.com/en-jp/collections/watches/products/metric-titanium",
+      "status": "validated_secondary",
+      "note": "Brew's exact-product page hosts a recent verified-buyer review that explicitly reports the absence of lume on the Metric Titanium. This is treated as exact owner evidence hosted by the manufacturer, not as manufacturer specification copy. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.reddit.com/r/MicrobrandWatches/comments/1pfonbk/a_new_fix_for_my_watch_addiction/",
+      "status": "validated_secondary",
+      "note": "A separate exact-watch owner discussion identifies the pictured watch as the Brew Metric Titanium and independently answers that this model has no lume. It corroborates the manufacturer-hosted verified buyer rather than serving as a performance grade by itself. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.jrkagoshimacity.com/shopblog/detail/?cd=029221&scd=000095",
+      "status": "validated_secondary",
+      "note": "The provider used this exact-product retailer page for MTRC-TITAN. The code is independently established by Brew's own live product payload, so the retailer mapping is corroborative only. Retrieved 2026-08-30."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.bracelet",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.caliber",
+    "operation.waterResistanceM",
+    "operation.claspMicroadjustment"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "referenceCode",
+      "value": "MTRC-TITAN",
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium.js",
+      "note": "Brew's own live product payload supplies the exact SKU; the retailer code is not required for acceptance."
+    },
+    {
+      "fieldName": "variantName",
+      "value": "Black dial in titanium case on supplied titanium bracelet",
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "note": "The accepted name makes the exact black-dial titanium-bracelet configuration explicit."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium.js",
+      "note": "The manufacturer still exposes the exact SKU as an available product with a live purchase route."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "note": "The selected storefront context is United States in USD and separately publishes U.S.-order shipping terms."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium.js",
+      "note": "The exact manufacturer product and Titanium SKU both report available=true."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "note": "Brew's manufacturer-direct storefront maps to the catalogue's authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "note": "The active manufacturer offer is for a new watch with Brew's warranty and return terms."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "value": "observed",
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "note": "Brew explicitly publishes a conventional 19.85 mm lug interval, so this field is observed rather than not applicable."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://www.brew-watches.com/blogs/design-timing-and-everyday-ritual/how-to-change-a-watch-strap-step-by-step-guide",
+      "note": "Despite its integrated-style appearance, the exact Metric bracelet is removable through quick-release spring bars at a published conventional lug interval."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "hybrid",
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "note": "Brew explicitly describes quartz-regulated timekeeping paired with a mechanical chronograph module, which normalizes to the catalogue's hybrid movement class."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -20,
+      "sourceUrl": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/VK68_TG.pdf",
+      "note": "TMI's exact VK68A monthly tolerance supplies the conservative lower bound."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 20,
+      "sourceUrl": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/VK68_TG.pdf",
+      "note": "TMI's exact VK68A monthly tolerance supplies the conservative upper bound."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 30,
+      "sourceUrl": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/VK68_TG.pdf",
+      "note": "The manufacturer's monthly rate normalizes to the catalogue's established 30-day period."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "note": "Sapphire glass normalizes to the sapphire crystal enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "none",
+      "sourceUrl": "https://www.brew-watches.com/en-jp/collections/watches/products/metric-titanium",
+      "note": "A manufacturer-hosted verified buyer explicitly reports no lume, independently corroborated by a separate exact Metric Titanium owner discussion."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "quick_release",
+      "sourceUrl": "https://www.brew-watches.com/blogs/design-timing-and-everyday-ritual/how-to-change-a-watch-strap-step-by-step-guide",
+      "note": "Brew explicitly states that all Metric metal bracelets use quick-release spring bars at the case."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["chronograph"],
+      "sourceUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "note": "The 60-minute counter is part of the chronograph rather than a second supported complication."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.hodinkee.com/articles/brew-watch-co-doubles-down-on-retro-with-the-super-metric-chronographs",
+      "note": "The exact-colorway report explicitly identifies the Titanium Metric among variants that omit the date window; VK68's available calendar is not exposed by this watch."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The provider sourced MTRC-TITAN from a retailer even though Brew's own live product payload exposes the exact SKU. The primary value replaces it."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "United States is provider prose and is normalized to the US country code after direct storefront validation."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "In stock; low inventory is not an availability enum. Brew's exact live payload reports available=true and is normalized to in_stock."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Manufacturer-store and shipping prose is not a channel enum; the direct offer normalizes to authorized_dealer."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "Warranty and return prose is not a condition enum; the manufacturer-direct offer normalizes to new."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "reason": "The Metric has a non-round TV-shaped case. The manufacturer's 36 x 41.5 mm pair is represented as width and overall length, not duplicated into a circular diameter field."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "Boolean true is not the applicability enum; the explicitly published interval normalizes to observed."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "reason": "Integrated was inferred from appearance. Brew's instructions establish a removable quick-release bracelet and conventional published lug interval, so the accepted value is false."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Hybrid meca-quartz chronograph is descriptive prose and normalizes to the hybrid movement enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Sapphire glass is descriptive prose and normalizes to sapphire."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Supplied titanium bracelet names the material and not the case fastener. Brew's exact Metric instructions separately establish quick_release."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Chronograph and its 60-minute counter are not two complications. The configured watch normalizes to the single chronograph enum."
+    }
+  ],
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. Brew's exact product page and live product payload establish current SKU MTRC-TITAN, an in-stock USD 495 manufacturer offer, titanium bracelet configuration, complete 36 x 41.5 x 10.75 mm non-round geometry, 19.85 mm lugs, 89 g configured mass, VK68, 50 m resistance, and sapphire. TMI supplies the exact -20/+20-seconds-per-month movement bound; Brew's own current guide supplies quick-release attachment; independent exact-colorway evidence establishes no date; and convergent exact-owner evidence establishes no lume. The review rejects circular-diameter duplication, integrated-bracelet inference, material-as-fastener prose, invalid enums, and the provider's unresolved M1 nulls rather than accepting them silently."
+}

@@ -95,6 +95,7 @@ function valueForEvidence(variant: SeedReferenceVariant, field: string) {
     lugToLugMm: variant.geometry.lugToLugMm,
     lugWidthMm: variant.geometry.lugWidthMm,
     lugCurvature: variant.geometry.lugCurvature,
+    integratedBracelet: variant.geometry.integratedBracelet,
     weightFullG: variant.geometry.weightFullG,
     movement: {
       type: variant.movement.type,
@@ -481,14 +482,22 @@ function renderCompleteness(variant: SeedReferenceVariant) {
     variant.geometry.caseDiameterMm !== null
       ? ["caseDiameterMm"]
       : ["caseWidthMm", "caseLengthMm"];
+  const wearingSpanField: EvidenceField =
+    variant.geometry.lugToLugMm !== null
+      ? "lugToLugMm"
+      : variant.geometry.caseLengthMm !== null
+        ? "caseLengthMm"
+        : "lugToLugMm";
+  const geometryAndFitFields = [
+    ...new Set([...caseGeometryFields, wearingSpanField]),
+  ];
   const levels: ["m0" | "m1" | "m2", EvidenceField[]][] = [
     [
       "m0",
       [
         "identity",
         "price",
-        ...caseGeometryFields,
-        "lugToLugMm",
+        ...geometryAndFitFields,
         "movement",
         "waterResistanceM",
       ],
@@ -498,9 +507,8 @@ function renderCompleteness(variant: SeedReferenceVariant) {
       [
         "identity",
         "price",
-        ...caseGeometryFields,
+        ...geometryAndFitFields,
         "caseThicknessMm",
-        "lugToLugMm",
         "lugWidthMm",
         "weightFullG",
         "movement",

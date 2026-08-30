@@ -456,6 +456,70 @@
       "publisher": "Watchstraponline.com",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-30T21:06:00Z"
+    },
+    {
+      "id": "brew-metric-titanium-product",
+      "url": "https://www.brew-watches.com/products/metric-titanium",
+      "title": "Metric — Titanium Chronograph Watch",
+      "publisher": "Brew Watches",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T21:18:14Z"
+    },
+    {
+      "id": "brew-metric-titanium-product-payload",
+      "url": "https://www.brew-watches.com/products/metric-titanium.js",
+      "title": "Metric Titanium live product payload",
+      "publisher": "Brew Watches",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T21:19:27Z"
+    },
+    {
+      "id": "tmi-vk68-technical-guide",
+      "url": "https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/VK68_TG.pdf",
+      "title": "Cal. VK68A technical guide",
+      "publisher": "TMI Time Module",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T21:19:27Z"
+    },
+    {
+      "id": "brew-metric-bracelet-guide",
+      "url": "https://www.brew-watches.com/blogs/design-timing-and-everyday-ritual/how-to-change-a-watch-strap-step-by-step-guide",
+      "title": "How to change a Brew watch strap or Metric bracelet",
+      "publisher": "Brew Watches",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-30T21:19:27Z"
+    },
+    {
+      "id": "wornandwound-brew-metric-titanium",
+      "url": "https://wornandwound.com/brews-metric-chronograph-is-now-available-in-titanium/",
+      "title": "Brew's Metric Chronograph is now available in titanium",
+      "publisher": "Worn & Wound",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:19:27Z"
+    },
+    {
+      "id": "hodinkee-brew-metric-titanium-no-date",
+      "url": "https://www.hodinkee.com/articles/brew-watch-co-doubles-down-on-retro-with-the-super-metric-chronographs",
+      "title": "Brew Metric colorway date-window comparison",
+      "publisher": "Hodinkee",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:19:27Z"
+    },
+    {
+      "id": "brew-metric-titanium-verified-review",
+      "url": "https://www.brew-watches.com/en-jp/collections/watches/products/metric-titanium",
+      "title": "Metric Titanium verified-owner reviews",
+      "publisher": "Brew Watches / Okendo",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:19:27Z"
+    },
+    {
+      "id": "reddit-brew-metric-titanium-owner",
+      "url": "https://www.reddit.com/r/MicrobrandWatches/comments/1pfonbk/a_new_fix_for_my_watch_addiction/",
+      "title": "Brew Metric Titanium owner lume discussion",
+      "publisher": "Reddit / r/MicrobrandWatches",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:19:27Z"
     }
   ],
   "fx": {
@@ -2670,6 +2734,134 @@
         {
           "sourceId": "watchstraponline-seiko-sne599p1-bracelet",
           "fields": ["materials", "attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "brew-metric-titanium-mtrc-titan",
+      "brand": {
+        "slug": "brew",
+        "name": "Brew",
+        "serviceCountries": null
+      },
+      "collection": "Metric",
+      "model": "Titanium Chronograph",
+      "referenceCode": "MTRC-TITAN",
+      "variantName": "Black dial · titanium bracelet",
+      "productUrl": "https://www.brew-watches.com/products/metric-titanium",
+      "price": {
+        "amountMinor": 49500,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-30T21:18:14Z",
+        "staleAfter": "2027-02-26T21:18:14Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-30T21:18:14Z",
+        "availabilityStaleAfter": "2026-09-29T21:18:14Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "titanium",
+        "caseback": "sandblasted titanium",
+        "bracelet": "brushed and polished titanium",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": null,
+        "caseWidthMm": 36,
+        "caseLengthMm": 41.5,
+        "caseThicknessMm": 10.75,
+        "lugToLugMm": null,
+        "lugWidthMm": 19.85,
+        "weightFullG": 89,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "hybrid",
+        "caliber": "TMI VK68",
+        "powerReserveHours": null,
+        "accuracyLowerSeconds": -20,
+        "accuracyUpperSeconds": 20,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 50,
+        "crownType": null,
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "none",
+        "attachmentType": "quick_release",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": ["chronograph"],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "lightweight_titanium_design_chronograph",
+        "socialSignals": ["anti_luxury"],
+        "aestheticDna": ["mid_century_industrial"],
+        "emotionalObjectives": ["differentiation"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "brew-metric-titanium-product",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseWidthMm",
+            "caseLengthMm",
+            "caseThicknessMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crystal",
+            "complications",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "brew-metric-titanium-product-payload",
+          "fields": ["identity", "price", "availability", "productionStatus"]
+        },
+        {
+          "sourceId": "tmi-vk68-technical-guide",
+          "fields": ["movement", "accuracy"]
+        },
+        {
+          "sourceId": "brew-metric-bracelet-guide",
+          "fields": ["integratedBracelet", "attachmentType"]
+        },
+        {
+          "sourceId": "wornandwound-brew-metric-titanium",
+          "fields": ["identity", "materials", "weightFullG", "movement"]
+        },
+        {
+          "sourceId": "hodinkee-brew-metric-titanium-no-date",
+          "fields": ["identity", "dateStatus"]
+        },
+        {
+          "sourceId": "brew-metric-titanium-verified-review",
+          "fields": ["identity", "lumeGrade"]
+        },
+        {
+          "sourceId": "reddit-brew-metric-titanium-owner",
+          "fields": ["identity", "lumeGrade"]
         }
       ]
     }
