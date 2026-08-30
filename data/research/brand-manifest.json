@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-29T08:35:05Z",
+  "updatedAt": "2026-08-30T18:43:00Z",
   "brands": [
     {
       "slug": "rolex",
@@ -3946,7 +3946,26 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "vaer-compact-precision-field",
+          "referenceLabel": "Select one current source-complete homogeneous Vaer quartz or solar field reference in 36-40 mm with an exact supplied strap configuration",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": ["under_300", "300_500"],
+            "wristBands": ["5_75_6_25", "6_25_6_75", "6_75_7_5"],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": ["zero_maintenance"],
+            "accuracyTolerances": ["seconds_per_month"],
+            "weightLimits": ["under_80_g", "under_120_g"],
+            "functionProfiles": ["time_only_no_date", "simple_date"]
+          },
+          "coverageRationale": "Add a transparent modern-microbrand field reference to sparse affordable precision, lightweight, and small-to-medium-wrist cells without duplicating Casio's digital tool archetype."
+        }
+      ]
     },
     {
       "slug": "boldr",
