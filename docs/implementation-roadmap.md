@@ -854,6 +854,22 @@ therefore remain fail-closed. A final exact-reference fastener pass is queued
 for a retrievable manufacturer/service record or corroborated physical
 inspection, explicitly excluding decorative rivets and buckle hardware.
 
+The final attachment pass surfaced Laco's current leather-watch-strap manual,
+which is retrievable as a valid manufacturer PDF and explicitly requires a
+spring-bar tool plus proper spring-bar installation. Together with exact article
+`861988`'s Laco calf-leather configuration, this resolves `attachmentType` as
+`spring_bar` without treating decorative strap rivets as case fasteners. The
+first job's 404 LACO 2S PDF remains rejected; Miyota's live 82S0 function list
+independently supplies the no-calendar basis. Review validates the current EUR
+390 German offer, 81.5 g full weight, exact geometry, Laco-regulated 0/+25
+seconds-per-day movement, sapphire, 50 m resistance, time-only function, and
+attachment, but does not promote the row. `lumeGrade` remains the sole M1 gap
+after the narrow exact-reference pass found no controlled or convergent
+performance evidence. The strict checkpoint now contains 27 reviews (six
+migration-ready, 19 needing more evidence, and two excluded), with 18 accepted
+and 19 active targets; the ignored ledger contains 52 attempts (31 succeeded,
+21 failed) across 27 target IDs and USD 0.40434 recorded provider cost.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

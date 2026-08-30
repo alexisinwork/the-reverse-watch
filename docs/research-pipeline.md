@@ -794,6 +794,23 @@ final fastener-only pass is queued for a retrievable exact manufacturer/service
 record or exact physical inspection corroborated by Laco material; strap rivets
 and buckle hardware remain out of scope.
 
+The final attachment pass found Laco's current leather-watch-strap instructions,
+which return a valid manufacturer PDF and explicitly require a spring-bar tool
+and proper spring-bar installation. Combined with the exact article `861988`
+page's identification of the configured strap as Laco calf leather, that closes
+`attachmentType` as `spring_bar`; the decorative rivets remain strap construction,
+not case fasteners. The first job's alleged LACO 2S PDF remains rejected because
+its URL returns 404, while Miyota's live 82S0 function specification independently
+supports no-calendar operation. Review retains exact identity, EUR 390 current
+German availability, 81.5 g full weight, complete geometry, Laco's installed
+0/+25 seconds-per-day regulation, sapphire, 50 m resistance, time-only operation,
+and the corrected attachment. No exact controlled or convergent lume-performance
+evidence was found, so `lumeGrade` is the sole M1 gap and Laco remains
+research-only. The ignored ledger now retains 52 attempts (31 succeeded, 21
+failed) across 27 target IDs with USD 0.40434 recorded provider cost. The strict
+manifest has 27 reviews: six migration-ready, 19 needing more evidence, and two
+excluded; 18 targets are accepted and 19 remain active.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

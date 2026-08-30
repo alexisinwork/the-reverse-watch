@@ -1,0 +1,183 @@
+{
+  "reviewVersion": 1,
+  "targetId": "laco-compact-mechanical-pilot",
+  "jobId": "79c325e7-aa67-4015-9cf0-a74afb1a368f",
+  "reviewedAt": "2026-08-30T20:06:35Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Laco",
+    "model": "Augsburg 39",
+    "referenceCode": "861988",
+    "variantName": "Augsburg 39 on brown riveted calf-leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "status": "validated_primary",
+      "note": "Laco's exact active product route identifies Augsburg 39 article 861988 and its brown calf-leather strap with rivets. It publishes EUR 390, available status with two-to-three-day delivery, 39 x 11.55 x 46.5 mm geometry, 18 mm lugs, 81.5 g including the strap, LACO 2S based on Miyota 82S0, 50 m resistance, sapphire front and caseback crystals, and Super-LumiNova C3 on hands and dial. C3 identifies material, not repeatable performance. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.laco.de/en/faq",
+      "status": "validated_primary",
+      "note": "Laco's current FAQ maps LACO 2S to Miyota 82S0 and states that every installed LACO 2S is regulated by its watchmakers to 0/+25 seconds per day with a 42-hour power reserve. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://miyotamovement.com/product/82S0/",
+      "status": "validated_primary",
+      "note": "Miyota's current 82S0 technical page publishes its base -20/+40 seconds-per-day specification, 42-hour reserve, automatic and hand-winding operation, stop seconds, three-hand open-heart display, and no calendar function. The exact Laco product and FAQ identify this as the base caliber, while Laco's tighter installed-watch regulation controls the reviewed accuracy values. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.laco.de/media/85/ed/8d/1755689521/11_3_Gebrauchsanweisung_Laco_Lederbaender.pdf?ts=1755689521",
+      "status": "validated_primary",
+      "note": "Laco's currently retrievable leather-watch-strap instructions return a valid manufacturer PDF. The English instructions require a spring-bar tool for preparation and require the strap and spring bars to be properly installed. Combined with the exact product page's identification of the configured strap as Laco calf leather, this supports spring-bar case attachment; the visible rivets remain decorative strap construction. Retrieved and text-validated 2026-08-30."
+    },
+    {
+      "url": "https://www.laco.de/media/products-pdf/1_1_Laco%202S_31.pdf",
+      "status": "rejected",
+      "note": "The first provider result attributed attachment and time-only statements to this purported LACO 2S manual, but direct retrieval returns HTTP 404. None of its extracted statements are admitted. Attachment is instead supported by Laco's live leather-strap manual, and time-only status by Miyota's live 82S0 specification. Checked 2026-08-30."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "identity",
+      "value": {
+        "brand": "Laco",
+        "model": "Augsburg 39",
+        "referenceCode": "861988",
+        "variantName": "Augsburg 39 on brown riveted calf-leather strap"
+      },
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "The manufacturer identifies exact article 861988 and the selected brown calf-leather strap configuration."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "The active exact manufacturer offer is available with a stated delivery window; current status is normalized independently of the availability snapshot."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "DE",
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "The EUR 390 snapshot comes from Laco's German manufacturer storefront and is normalized to its DE market context."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "The exact route states Available and gives a two-to-three-day delivery time."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "Laco's own direct storefront maps to the catalogue's authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "The manufacturer-direct offer is for a new watch."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "value": "observed",
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "Laco explicitly publishes the exact watch's 18 mm lug width."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "Laco identifies the LACO 2S as an automatic caliber; automatic is the normalized catalogue enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "note": "Laco specifies sapphire crystal with internal anti-reflective coating; sapphire is the normalized catalogue class."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://www.laco.de/media/85/ed/8d/1755689521/11_3_Gebrauchsanweisung_Laco_Lederbaender.pdf?ts=1755689521",
+      "note": "Laco's live leather-strap instructions require a spring-bar tool and proper spring-bar installation. The exact product establishes that the selected configuration uses a Laco calf-leather strap; its visible rivets do not connect the strap to the case."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://miyotamovement.com/product/82S0/",
+      "note": "Miyota's exhaustive 82S0 function list contains only the open-heart three-hand display and no catalogue complication; date is represented separately."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://miyotamovement.com/product/82S0/",
+      "note": "The exact Laco product identifies Miyota 82S0 as its base, and Miyota's technical function list specifies no calendar function."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "identity",
+      "reason": "The provider omitted the configured strap from its nested identity object; the reviewed homogeneous identity includes the exact brown riveted calf-leather configuration."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "The provider returned a boolean rather than the catalogue applicability enum; the explicit 18 mm value is normalized to observed."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Automatic mechanical is provider prose and is normalized to automatic."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Sapphire crystal is provider prose and is normalized to sapphire."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The provider's spring-bar value cited a purported LACO 2S PDF that currently returns 404. The same normalized value is admitted only from Laco's independently retrieved live leather-strap instructions tied to the exact product's configured Laco leather strap."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "The provider cited the unretrievable LACO 2S PDF. The empty normalized list is admitted instead from Miyota's live exhaustive 82S0 function specification tied to the installed base caliber."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "No date is provider prose sourced to the unretrievable PDF; absent is the catalogue enum and is supported by Miyota's live no-calendar 82S0 specification."
+    },
+    {
+      "fieldName": "productionStatus",
+      "reason": "The provider returned null. Current is a reviewed normalization from the active exact manufacturer offer, available state, and stated delivery window."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Super-LumiNova C3 identifies luminous material and application location, not repeatable brightness or duration. A narrow exact-reference Perplexity pass found no controlled charge protocol, timed observation, or convergent independent Augsburg 39 assessments, so no grade is assigned."
+    }
+  ],
+  "missingM1Fields": ["lumeGrade"],
+  "note": "Keep as research-only. The exact manufacturer route and primary caliber sources validate Laco Augsburg 39 article 861988 on its 81.5 g brown calf-leather configuration, the current EUR 390 German offer, 39 x 11.55 x 46.5 mm geometry, 18 mm lugs, installed LACO 2S regulation of 0/+25 seconds per day, 42-hour reserve, 50 m resistance, sapphire, and no-date operation. The first provider's alleged LACO 2S PDF returns 404 and is rejected. A final attachment pass surfaced Laco's live leather-strap instructions, whose required spring-bar tool and installation check resolve attachmentType as spring_bar without confusing decorative strap rivets with case fasteners. The first job plus a narrow exact-reference lume pass found C3 material only, not repeatable performance; operation.lumeGrade remains null as the sole M1 gap."
+}
