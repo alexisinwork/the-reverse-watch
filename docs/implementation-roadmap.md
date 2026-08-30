@@ -302,6 +302,17 @@ with only a starting price and no exact manufacturer reference. The strict
 checkpoint has 11 reviews (one migration-ready, ten needing more evidence); the
 next queue is Orient, Certina, and Tudor.
 
+A 2026-08-30 Baltic follow-up then reduced that review from seven gaps to four.
+Perplexity did not expose a stable selected configuration, but direct retrieval
+of Baltic's public Storefront payload identified MR Classic Blue product
+6584366596167 and Stitched Lion variant 39484285321287. That exact primary
+variant is available for sale at EUR 545 with 2026-08-31 fulfillment; Baltic's
+authorized Turkish representative maps the same configuration to MR01BLUS35.
+Baltic's exact Stitched Lion page explicitly specifies a tool-free quick-release
+spring bar, resolving the case interface without inferring from leather. Full
+configured weight, exact-applicable accuracy, lume/no-lume status, and explicit
+date status remain fail-closed.
+
 The fifth live batch reviewed Orient RA-AC0M03S and Certina
 C048.807.44.051.01 without promoting either row; Tudor exhausted two strict
 extraction retries. Exact global Orient evidence leaves only attachment type

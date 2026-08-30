@@ -2,25 +2,35 @@
   "reviewVersion": 1,
   "targetId": "baltic-compact-mechanical",
   "jobId": "c08a4511-2617-459e-9914-17c49bfa34cf",
-  "reviewedAt": "2026-08-29T07:10:12Z",
+  "reviewedAt": "2026-08-30T13:58:51Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
     "brand": "Baltic",
     "model": "MR Classic",
-    "referenceCode": "MR Classic Blue",
-    "variantName": "MR Classic - Blue"
+    "referenceCode": "MR01BLUS35",
+    "variantName": "MR Classic Blue with Stitched Lion calf-leather strap"
   },
   "sourceChecks": [
     {
       "url": "https://baltic-watches.com/en/products/mr-classic-blue",
       "status": "validated_primary",
-      "note": "The official product page independently validates the blue MR Classic model, 36 x 9.9 x 44 mm geometry, 20 mm lug width, 316L steel case, transparent caseback, high-domed hesalite, CAL5000a automatic micro-rotor movement, 42-hour reserve, and 30 m water resistance. It requires an attachment selection and offers Italian calf straps or a steel beads-of-rice bracelet, so it does not identify one homogeneous supplied configuration."
+      "note": "The official product page independently validates the blue MR Classic model, 36 x 9.9 x 44 mm geometry, 20 mm lug width, 316L steel case, transparent caseback, high-domed hesalite, CAL5000a automatic micro-rotor movement, 42-hour reserve, and 30 m water resistance. A 2026-08-30 recheck of its embedded public Storefront payload resolves product 6584366596167 and exact Stitched Lion variant 39484285321287 as available for sale at EUR 545 with a 2026-08-31 fulfillment date."
     },
     {
       "url": "https://baltic-watches.com/en/collections/mr?location=BG",
       "status": "validated_primary",
-      "note": "Baltic's official regional collection page displays MR Classic Blue from EUR 545, confirming that the product-level offer is a configuration-dependent starting price rather than an exact selected-variant price."
+      "note": "Baltic's official regional collection page displays MR Classic Blue from EUR 545. The product's embedded variant payload now independently establishes that EUR 545 is also the exact Stitched Lion variant price rather than relying on the family starting label alone."
+    },
+    {
+      "url": "https://baltic-watches.com/en/products/stitched-strap-lion",
+      "status": "validated_primary",
+      "note": "Baltic's exact Stitched Lion accessory page identifies a 20 mm calf-leather strap with stainless-steel pin buckle, universal Baltic compatibility, and a quick-release spring-bar fastening system interchangeable without tools. The watch's primary variant payload explicitly selects this named strap."
+    },
+    {
+      "url": "https://www.abtsaat.com/baltic-mr01-blue-stitched-lion-mr01blus35-otomatik-erkek-kol-saati",
+      "status": "validated_secondary",
+      "note": "Baltic's Turkish representative and authorized dealer independently maps MR Classic Blue with Stitched Lion to product code MR01BLUS35 and describes the included 20 mm quick-release leather strap. Its sold-out Turkish offer is not mixed into the reviewed manufacturer-direct EUR snapshot."
     }
   ],
   "verifiedProvisionalFields": [
@@ -41,41 +51,146 @@
     "operation.waterResistanceM",
     "operation.crystal"
   ],
-  "additionalVerifiedFacts": [],
-  "rejectedProvisionalFields": [
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "referenceCode",
+      "value": "MR01BLUS35",
+      "sourceUrl": "https://www.abtsaat.com/baltic-mr01-blue-stitched-lion-mr01blus35-otomatik-erkek-kol-saati",
+      "note": "Baltic's authorized representative identifies the exact Blue and Stitched Lion configuration with product code MR01BLUS35; multiple independent retailers use the same code."
+    },
+    {
+      "fieldName": "variantName",
+      "value": "MR Classic Blue with Stitched Lion calf-leather strap",
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "Baltic's public Storefront variant 39484285321287 explicitly selects Stitched Lion for MR Classic Blue."
+    },
+    {
+      "fieldName": "productUrl",
+      "value": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "The query pins the reviewed manufacturer-direct product to the exact Stitched Lion variant and Germany market."
+    },
     {
       "fieldName": "materials.strap",
-      "reason": "The page offers multiple Italian calf straps and a steel bracelet; no exact selected attachment is encoded in the candidate identity."
+      "value": "Italian calf leather",
+      "sourceUrl": "https://baltic-watches.com/en/products/stitched-strap-lion",
+      "note": "Baltic specifies calf leather for the exact named Stitched Lion attachment selected by the watch variant."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "The exact variant remains available for sale in Baltic's current public product payload."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 54500,
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "Baltic's exact Stitched Lion variant payload publishes EUR 545."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "EUR",
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "The Germany-market exact variant is priced in euros."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "DE",
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "The reviewed manufacturer-direct snapshot explicitly pins Baltic's Germany market route."
     },
     {
       "fieldName": "price.availability",
-      "reason": "End-of-August delivery is shown only after a default attachment selection and cannot establish availability for the unresolved configuration family."
+      "value": "short_wait",
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "The variant is available for sale and Add to Cart with a 2026-08-31 fulfillment date, shown as delivery at the end of August on 2026-08-30."
     },
     {
       "fieldName": "price.channels",
-      "reason": "Official website and Baltic store are raw labels rather than normalized acquisition-channel values, and the exact priced configuration is unresolved."
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "Baltic's manufacturer-direct online store maps to the catalogue's authorized channel class."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue?variant=39484285321287&location=DE",
+      "note": "The current manufacturer-direct offer is for a new watch."
     },
     {
       "fieldName": "geometry.integratedBracelet",
-      "reason": "Compatibility with multiple straps supports a conventional lug layout but does not by itself encode the catalogue's exact attachment-interface classification."
+      "value": false,
+      "sourceUrl": "https://baltic-watches.com/en/products/stitched-strap-lion",
+      "note": "The exact selected strap uses a removable quick-release spring-bar interface on conventional 20 mm lugs."
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Leather strap describes one offered material, not the spring-bar, quick-release, proprietary, or integrated attachment interface."
+      "value": "quick_release",
+      "sourceUrl": "https://baltic-watches.com/en/products/stitched-strap-lion",
+      "note": "Baltic explicitly specifies a tool-free quick-release spring bar for the exact Stitched Lion strap selected by primary product variant 39484285321287."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://baltic-watches.com/en/products/mr-classic-blue",
+      "note": "The seconds sub-dial is a display layout and not a supported catalogue complication. Date status remains separately unresolved."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "materials.strap",
+      "reason": "The family page offers multiple attachments. The embedded primary variant now locks the reviewed row to Stitched Lion, whose exact official page specifies calf leather."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The collection-level EUR 545 starting price was configuration-ambiguous. Baltic's public exact-variant payload now independently publishes the same amount for Stitched Lion variant 39484285321287."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "The original family-level availability was unresolved. The exact Stitched Lion variant is now available for sale with a 2026-08-31 fulfillment date, normalized to short_wait."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "The raw provider labels are replaced by the normalized authorized_dealer class for Baltic's exact manufacturer-direct offer."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "A 48 g leather-strap measurement surfaced only for MR01 Salmon and does not identify the exact current Blue Stitched Lion variant or a packaging-free protocol. No exact configured weight is normalized."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "reason": "The family-level compatibility statement was insufficient alone. The exact selected Stitched Lion strap now documents a removable quick-release interface, supporting false."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "reason": "Secondary sources publish generic CAL5000/Hangzhou expectations or rates for other MR01 colors, not a Baltic guarantee or documented exact Blue Stitched Lion measurement."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "reason": "No exact-variant upper rate bound or controlled measured rate was located; generic +/-20 seconds-per-day claims are not transferred to this watch."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "reason": "A daily period cannot be accepted independently because no exact-applicable lower or upper accuracy value qualifies."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The exact official page describes applied markers and silver leaf hands but publishes no luminous or explicit no-lume statement. Related MR Roulette evidence and omission or imagery are not transferred to MR Classic Blue."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Leather material alone was insufficient. Baltic's exact Stitched Lion page now explicitly identifies a quick-release spring-bar fastening system, supporting the corrected quick_release class."
     },
     {
       "fieldName": "complications",
       "reason": "Small seconds is a display layout and is not one of the catalogue's supported complication enum values."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "The exact page describes the dial, seconds sub-dial, hands, and movement but does not explicitly state date present or absent. Omission and product images cannot satisfy the fail-closed date contract."
     }
   ],
-  "missingM1Fields": [
-    "identity",
-    "price",
-    "weightFullG",
-    "accuracy",
-    "lumeGrade",
-    "attachmentType",
-    "dateStatus"
-  ],
-  "note": "Keep as research-only. MR Classic Blue is a model/configuration family without a manufacturer reference code or selected attachment, while the official price is only a configuration-dependent starting value. One exact strap or bracelet SKU must be identified before weight, price, availability, and attachment evidence can describe a homogeneous row."
+  "missingM1Fields": ["weightFullG", "accuracy", "lumeGrade", "dateStatus"],
+  "note": "Keep as research-only. A 2026-08-30 Perplexity-assisted pass initially failed to expose a stable configuration, but direct retrieval of Baltic's public Storefront payload resolves MR Classic Blue product 6584366596167 and Stitched Lion variant 39484285321287 at EUR 545 with a 2026-08-31 short wait. Baltic's Turkish representative maps that homogeneous configuration to MR01BLUS35, and Baltic's exact strap page resolves quick_release. No exact Blue Stitched Lion configured weight or rate evidence surfaced; the official product publishes neither a lume/no-lume statement nor explicit date absence. Those four facts remain null."
 }

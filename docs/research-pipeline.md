@@ -144,6 +144,16 @@ no accepted row:
   starting price. It lacks an exact manufacturer reference, full weight,
   accuracy, graded lume, attachment type, and explicit date status.
 
+A narrow 2026-08-30 Baltic follow-up subsequently locked the row to MR Classic
+Blue product 6584366596167 and Stitched Lion variant 39484285321287 from
+Baltic's public Storefront payload. The exact variant publishes EUR 545,
+available-for-sale state, and 2026-08-31 fulfillment; an authorized Baltic
+representative independently maps it to MR01BLUS35. Baltic's exact Stitched Lion
+page explicitly documents a tool-free quick-release spring bar. Identity,
+price, and attachment are therefore resolved without mixing the alternative
+bracelet or straps. Exact configured weight, exact-applicable rate, lume/no-lume
+evidence, and explicit date status remain null.
+
 The strict manifest now contains 11 reviews: one `ready_for_migration` and ten
 `needs_more_evidence`. The next queue begins with Orient affordable mechanical
 date, Certina midprice mechanical tool, and Tudor compact mechanical tool.
