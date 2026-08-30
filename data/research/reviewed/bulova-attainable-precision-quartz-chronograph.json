@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "bulova-attainable-precision-quartz-chronograph",
   "jobId": "cb07bdfc-e4a2-4c93-93b1-a842212b07e2",
-  "reviewedAt": "2026-08-29T14:27:40Z",
+  "reviewedAt": "2026-08-30T08:22:13Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -20,7 +20,7 @@
     {
       "url": "https://www.bulova.com/ca/en/product/98B316.html?redirect=false",
       "status": "validated_primary",
-      "note": "Bulova's exact Canadian page independently corroborates the identity and NN50 high-performance Precisionist quartz movement while publishing the more precise 46.5 mm case width, 24 mm lug width, luminous hands and markers, and 300 m rating. Its separate sold-out Canadian offer is not mixed into the reviewed UK price snapshot."
+      "note": "Bulova's exact Canadian page independently corroborates the identity and NN50 high-performance Precisionist quartz movement while publishing the more precise 46.5 mm case width, 24 mm lug width, luminous hands and markers, and 300 m rating. Its separate sold-out Canadian offer is not mixed into the reviewed UK price snapshot. A verified buyer says the glow could last longer, but supplies no charge protocol, elapsed time, or legibility standard."
     },
     {
       "url": "https://register.citizenwatchgroup.com/service/parts-lookup/?m=98B316&i=9771044-4984&n=Icon",
@@ -61,6 +61,21 @@
       "url": "https://demcrumbliesreviews.com/bulova-precisionist-chronograph-98b316-review/",
       "status": "validated_secondary",
       "note": "The exact-reference owner review reports approximately 270 g depending on links removed and calls ambient-light lume unusably weak. The configuration-specific weight cannot establish full-length weight, and a separate exact hands-on account describes the lume as usable, so neither gap is normalized."
+    },
+    {
+      "url": "https://www.relojoariajj.com.br/relogio-bulova-precisionist-98b316-cronografo",
+      "status": "fetch_blocked",
+      "note": "Retrieved 2026-08-30 through a narrow Perplexity source-discovery pass as an exact-reference retailer record publishing 170 g. Independent retrieval did not expose a reviewable methodology or bracelet configuration, and the value sharply conflicts with the existing 270-276 g measurements."
+    },
+    {
+      "url": "https://www.amazon.com/Bulova-Precisionist-Chronograph-Carbon-Bracelet/dp/B07FDQDX2P",
+      "status": "rejected",
+      "note": "The exact product listing exposes a 14.11 oz item-weight field, approximately 400 g, but does not establish bare-watch weighing or exclude packaging and listing-level shipping data. It conflicts with every hands-on watch measurement and cannot support weightFullG."
+    },
+    {
+      "url": "https://www.jurawatches.co.uk/blogs/watch-news/introducing-the-bulova-precisionist-98b316",
+      "status": "validated_secondary",
+      "note": "The exact-reference specialist article identifies lume-tipped hour and minute hands but supplies no charging method, brightness comparison, decay interval, or nighttime legibility result. It proves application location only."
     }
   ],
   "verifiedProvisionalFields": [
@@ -195,12 +210,16 @@
       "reason": "The UK page's rounded 46 mm value is replaced by Bulova Canada's exact-reference 46.5 mm specification."
     },
     {
+      "fieldName": "geometry.weightFullG",
+      "reason": "Exact-reference values now span 170 g, approximately 270 g after bracelet sizing, 274 g, 276 g, and an approximately 400 g item-weight field. None documents a complete factory-length bracelet and bare-watch weighing protocol, so no value is normalized."
+    },
+    {
       "fieldName": "operation.crownType",
       "reason": "The manufacturer prose is replaced by the normalized screw_down enum value."
     },
     {
       "fieldName": "operation.lumeGrade",
-      "reason": "Luminous hands and markers establish presence but not the catalogue's weak, moderate, or strong performance class."
+      "reason": "Luminous hands and markers establish presence but not performance. A verified-buyer complaint and exact owner review suggest weak duration, while another exact account calls the lume usable; none provides a controlled charge or elapsed-time series."
     },
     {
       "fieldName": "operation.attachmentType",
@@ -212,5 +231,5 @@
     }
   ],
   "missingM1Fields": ["weightFullG", "lumeGrade"],
-  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band, and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, annual accuracy, and factory spring-bar interface. Independent exact-reference dimensional sets converge on 54.5-54.6 mm case length, resolving lug-to-lug at 54.5 mm. Full weight remains open across 274 g, 276 g, and approximately 270 g sized-bracelet records, while exact lume accounts disagree on nighttime usability."
+  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band, and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, annual accuracy, and factory spring-bar interface. Independent dimensional sets converge on 54.5-54.6 mm lug-to-lug. A 2026-08-30 Perplexity-assisted pass widened the weight conflict to 170 g, approximately 270 g after bracelet sizing, 274 g, 276 g, and an approximately 400 g item-weight field, none with a complete factory-length bare-watch protocol. Exact lume evidence still ranges from short-lived or unusably weak to usable without controlled charge or elapsed-time observations. Weight and lume remain null."
 }

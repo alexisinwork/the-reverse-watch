@@ -506,7 +506,10 @@ For the post-batch evidence-gap pass on the same date:
   dimensional sets report 54.5 mm case length and a third reports 54.6 mm,
   resolving lug-to-lug at 54.5 mm. Weight records at 274 g, 276 g, and
   approximately 270 g after bracelet sizing remain explicit rather than being
-  forced into one value.
+  forced into one value. A 2026-08-30 Perplexity-assisted pass added conflicting
+  170 g and approximately 400 g listing fields without a full-bracelet
+  bare-watch protocol. The official verified-buyer lume complaint also lacks a
+  controlled charge or elapsed-time result, so both M1 gaps remain null.
 - Blancpain Fifty Fathoms Tech 5019A 12B30 94A now needs only full configured
   weight and numerical accuracy. Blancpain's exact dossier establishes its 47
   mm diameter and central-lug construction; an exact-reference hands-on

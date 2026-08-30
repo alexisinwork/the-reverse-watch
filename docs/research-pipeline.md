@@ -441,6 +441,13 @@ is direct factory-interface evidence rather than an inference from bracelet
 material or a generic strap guide. The row remains research-only for two M1
 fields: full configured weight and repeatable lume performance.
 
+A 2026-08-30 Perplexity-assisted follow-up found additional exact-reference
+weight fields at 170 g and approximately 400 g, widening the existing 270-276 g
+range. None documents a full factory-length bracelet and bare-watch weighing
+method. Bulova's exact official page also contains a verified-buyer complaint
+about short glow duration, but no controlled charge or elapsed-time observation;
+another exact account still describes usable lume. Both fields remain null.
+
 A Blancpain Fifty Fathoms Tech 5019A 12B30 94A geometry follow-up resolved
 lug-to-lug at 47 mm. Blancpain's exact dossier establishes its 47 mm diameter
 and central-lug construction, and an exact-reference hands-on specification

@@ -516,6 +516,15 @@ corroboration by listing a dedicated `Spring Bar` entry separately from the
 98B316 band. The row now has two M1 gaps: full configured weight and repeatable
 lume grade.
 
+A 2026-08-30 Perplexity-assisted Bulova pass widened rather than resolved those
+gaps. Additional exact-reference listings publish 170 g and an approximately
+400 g item-weight field, conflicting with 270-276 g hands-on records; none
+documents a full-length factory bracelet and bare-watch weighing protocol. The
+official exact page carries a verified-buyer complaint that the glow could last
+longer, but it supplies no controlled charge or elapsed-time result and remains
+in tension with another exact account calling the lume usable. Weight and lume
+therefore remain fail-closed.
+
 Blancpain Fifty Fathoms Tech 5019A 12B30 94A now has a reviewed 47 mm
 lug-to-lug span. Blancpain's exact technical dossier establishes the 47 mm
 diameter and central-lug construction, while an exact-reference hands-on
