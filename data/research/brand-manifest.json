@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:48:18.948Z",
+  "updatedAt": "2026-08-30T19:55:51.789Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1416,7 +1416,42 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "laco-compact-mechanical-pilot",
+          "referenceLabel": "Validate current Laco Augsburg 39 reference 861988 as the fixed brown riveted calf-leather configuration with exact 81.5 g full mass, Miyota 82S0 accuracy and no-date applicability, repeatable Super-LumiNova C3 performance, and explicit strap-to-case fastener evidence",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add a new-brand compact pilot watch to 12 sparse 300-500 studio, workhorse-mechanical, time-only cells. Retain the exact 81.5 g factory leather configuration and reject lume-material or riveted-strap labels as substitutes for performance and case-interface evidence."
+        }
+      ]
     },
     {
       "slug": "hanhart",

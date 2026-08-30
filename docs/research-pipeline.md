@@ -765,6 +765,17 @@ with USD 0.35916 recorded provider cost. The strict manifest has 26 reviews:
 six migration-ready, 18 needing more evidence, and two excluded; 18 targets are
 accepted and 18 remain active.
 
+The next source-led hypothesis is Laco Augsburg 39 reference `861988` on its
+fixed brown riveted calf-leather strap. Laco's live exact product route exposes
+EUR 390 and two-to-three-day delivery plus 39 x 11.55 x 46.5 mm geometry,
+18 mm lugs, 81.5 g including the strap, Miyota 82S0, 50 m resistance, and
+sapphire. Miyota independently publishes the exact caliber's -20/+40
+seconds-per-day contract, 42-hour reserve, and three-hand open-heart function
+set without a calendar. The conservative hypothesis adds a new brand to 12
+`300_500`, studio, workhorse-mechanical, time-only cells. Provider review must
+still establish a repeatable C3 lume grade and the strap-to-case fastener;
+luminous material and a riveted wrist closure alone prove neither.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

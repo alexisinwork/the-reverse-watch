@@ -828,6 +828,16 @@ but does not promote the row. `lumeGrade` remains its sole M1 gap. The strict
 checkpoint now contains 26 reviews (six migration-ready, 18 needing more
 evidence, and two excluded), with 18 accepted and 18 active targets.
 
+The next explicit target is Laco Augsburg 39 reference `861988` in its brown
+riveted calf-leather configuration. The current manufacturer page publishes
+EUR 390 with two-to-three-day delivery, 39 x 11.55 x 46.5 mm geometry, 18 mm
+lugs, 81.5 g including the strap, Miyota 82S0, 50 m resistance, and sapphire;
+Miyota publishes the exact caliber's -20/+40 seconds-per-day rate, 42-hour
+reserve, and no-calendar function set. The source-led row spans 12 `300_500`,
+studio, workhorse-mechanical, time-only cells and adds a new brand. Lume
+performance and the strap-to-case fastener remain explicit review gates rather
+than being inferred from C3 material or strap rivets.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
