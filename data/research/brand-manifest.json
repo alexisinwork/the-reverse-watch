@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T20:32:46.000Z",
+  "updatedAt": "2026-08-30T20:54:24.290Z",
   "brands": [
     {
       "slug": "rolex",
@@ -821,7 +821,7 @@
         {
           "id": "seiko-sne599p1-solar-diver",
           "referenceLabel": "Prospex Solar Diver SNE599P1 in all-black hard-coated steel on its exact M13K113N0 bracelet",
-          "state": "planned",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "500_1000"
@@ -852,7 +852,8 @@
               "simple_date"
             ]
           },
-          "coverageRationale": "Source-led current solar diver fixed to one homogeneous exact bracelet SKU. Primary pre-screen exposes every M1 fact, including an orderable supported-currency manufacturer offer, full configured mass, numerical V157 accuracy, professional-diving strong LumiBrite language, and exact spring-bar fitment; if independent review confirms those claims, the row diversifies 500_1000 zero-maintenance field and studio cells rather than inheriting facts from another Seiko variant."
+          "coverageRationale": "Source-led current solar diver fixed to one homogeneous exact bracelet SKU. Independent review validates an orderable supported-currency manufacturer offer, full configured mass, the conservative exact V157 rate bound after retaining a conflicting narrower regional claim, professional-diving strong LumiBrite language, and exact original-bracelet spring-bar fitment.",
+          "catalogueVariantId": "seiko-sne599p1"
         }
       ]
     },

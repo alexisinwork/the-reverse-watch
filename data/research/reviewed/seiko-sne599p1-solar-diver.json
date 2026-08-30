@@ -1,0 +1,255 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-sne599p1-solar-diver",
+  "jobId": "163ebee6-8787-4ecf-b272-608299b67312",
+  "reviewedAt": "2026-08-30T21:06:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "ready_for_migration",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "Prospex Solar Diver's 200m",
+    "referenceCode": "SNE599P1",
+    "variantName": "Prospex Solar Diver SNE599P1, black hard-coated stainless steel on M13K113N0 bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "status": "validated_primary",
+      "note": "Seiko UK's exact official store identifies SNE599P1, offers it new at GBP 530 with an active Add to bag control, and specifies black hard-coated steel case and bracelet, 41 x 11.3 x 48.8 mm geometry, 20 mm lugs, 157 g full configured weight, V157 solar movement, approximately ten months of reserve, +/-15 seconds per month, 200 m, sapphire, screw-down crown, date, and strong LumiBrite with hands and indices designed to meet professional diving standards. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "status": "validated_primary",
+      "note": "Seiko's exact UK manufacturer page independently corroborates SNE599P1's GBP 530 current offer, 41 x 11.3 x 48.8 mm geometry, 20 mm lugs, 157 g weight, V157 solar movement, approximately ten-month reserve, +/-15 seconds per month, 200 m diver rating, sapphire, screw-down crown, date, and LumiBrite on hands, indices, and bezel. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.seikoboutique.eu/at/en/prospex/10703-watch-diver-s-watch-solar-dial-black-sne599p1.html",
+      "status": "validated_primary",
+      "note": "The exact Austrian official boutique confirms current online availability, EUR 620, stainless-steel bracelet, 157 g, V157, and the same physical specification. Its rate copy is internally inconsistent: it says both +/-0.5 seconds per day and +/-10 seconds per month, which cannot both describe a 30-day period. The catalogue therefore retains the wider, internally coherent exact UK manufacturer bound of +/-15 seconds per month and records this narrower conflict without using it. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.watchstraponline.com/Seiko-watch-strap-SNE599P1-HB-SK-M13K113N0/",
+      "status": "validated_secondary",
+      "note": "This exact original-part listing identifies black steel bracelet M13K113N0 for SNE599P1 and case V157-00A0, explicitly stating that the factory bracelet attaches to the watch with spring bars. Seiko's own exact pages independently corroborate the 20 mm conventional interval and hard-coated steel bracelet. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://performanceequinevs.com/listing/86947134046",
+      "status": "rejected",
+      "note": "The provider treated an unrelated or hijacked listing as bracelet evidence. No fact is retained from it."
+    },
+    {
+      "url": "https://www.mcmaster.com/products/cut-to-length-die-springs/",
+      "status": "rejected",
+      "note": "This industrial spring catalogue is unrelated to the watch and cannot establish its attachment interface."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "materials.case",
+    "materials.caseback",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "variantName",
+      "value": "Prospex Solar Diver SNE599P1, black hard-coated stainless steel on M13K113N0 bracelet",
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "The official UK store fixes the all-black steel configuration; the original-part listing fixes bracelet M13K113N0 to SNE599P1."
+    },
+    {
+      "fieldName": "productUrl",
+      "value": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "The accepted product URL is Seiko's exact UK manufacturer specification page."
+    },
+    {
+      "fieldName": "materials.bracelet",
+      "value": "Black hard-coated stainless steel bracelet M13K113N0",
+      "sourceUrl": "https://www.watchstraponline.com/Seiko-watch-strap-SNE599P1-HB-SK-M13K113N0/",
+      "note": "The UK store establishes black hard-coated steel; the exact original-part listing supplies the bracelet part number."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "The exact official store currently offers the watch with an active Add to bag control."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 53000,
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "The selected coherent UK offer is GBP 530.00."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "GBP",
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "The reviewed manufacturer store prices the exact SKU in pounds sterling."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "GB",
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "The selected offer is the official UK store context."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "The exact current page exposes an active Add to bag purchase control."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "Manufacturer direct maps to the authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "The official store offer is for a new watch."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 48.8,
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "Seiko explicitly labels 48.8 mm as lug-to-lug; it is not rectangular case length."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://www.watchstraponline.com/Seiko-watch-strap-SNE599P1-HB-SK-M13K113N0/",
+      "note": "The exact original bracelet has a straight starter and removable spring-bar interface at a conventional 20 mm interval."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 7300,
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "Seiko states approximately ten months when fully charged; the catalogue's hours field uses the established 730-hours-per-month normalization."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -15,
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "The exact UK manufacturer page supplies the wider coherent lower bound. The Austrian page's narrower monthly copy conflicts with its own per-day figure and is not used."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 15,
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "The exact UK manufacturer page supplies the wider coherent upper bound."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 30,
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "The manufacturer's per-month statement normalizes to the catalogue's established 30-day period."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "Screw-down crown normalizes to the catalogue enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "Sapphire crystal normalizes to the catalogue enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "note": "Seiko UK's exact store explicitly calls the applied LumiBrite strong and says the highly visible hands and indices meet professional diving standards."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://www.watchstraponline.com/Seiko-watch-strap-SNE599P1-HB-SK-M13K113N0/",
+      "note": "The exact original M13K113N0 bracelet listing explicitly states spring-bar attachment for SNE599P1."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "Overcharge prevention and quick-start are movement functions, not supported catalogue complications; date is modeled separately."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "note": "The exact manufacturer page explicitly lists a date display."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "variantName",
+      "reason": "The provider tied the bracelet part number to an unrelated or hijacked listing. The exact official configuration and original-bracelet source replace it."
+    },
+    {
+      "fieldName": "materials.bracelet",
+      "reason": "The provider's suspicious listing is rejected; the official UK store and exact original-part source establish the accepted material and part number."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider mixed an Italian EUR 600 amount, an Austrian availability page, and a non-normalized country name. One exact UK GBP 530 manufacturer-store offer replaces the mixed-market record."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "reason": "Seiko labels 48.8 mm as lug-to-lug. It is normalized to geometry.lugToLugMm rather than treated as rectangular case length."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "Provider prose 'Applicable' is not an applicability enum. The conventional 20 mm interval is accepted directly."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "reason": "The provider converted ten months to 730 hours, which is one month. The established conversion is approximately 7,300 hours."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "reason": "The Austrian boutique's narrower monthly copy conflicts with its own +/-0.5-seconds-per-day figure. The wider exact UK -15-second monthly bound is retained."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "reason": "The Austrian boutique's narrower monthly copy conflicts with its own per-day figure. The wider exact UK +15-second monthly bound is retained."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Screw-down crown prose is normalized to screw_down."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Sapphire crystal prose is normalized to sapphire."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "LumiBrite placement is not an enum. Strong is retained only from the exact official store's explicit strong and professional-diving-performance language."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The provider conflated the wrist clasp with the case attachment. The exact original-bracelet source separately establishes spring_bar."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date, overcharge prevention, and quick-start are not supported complication enums; the normalized list is empty and date is modeled separately."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "Date-display prose normalizes to present."
+    }
+  ],
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. Exact Seiko UK pages establish an orderable GBP 530 SNE599P1 with complete geometry, 157 g configured mass, V157 solar movement, the conservative exact +/-15-seconds-per-month bound, 200 m diver rating, sapphire, screw-down crown, explicit strong professional-diving LumiBrite, and date. The exact original M13K113N0 bracelet listing resolves spring-bar attachment. The provider's mixed-market price, unrelated bracelet URL, clasp/interface conflation, 730-hour conversion error, and the Austrian page's internally inconsistent narrower accuracy copy are rejected or retained as conflicts rather than silently normalized."
+}

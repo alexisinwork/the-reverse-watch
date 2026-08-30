@@ -971,6 +971,27 @@ under-evidenced. The manifest now contains 19 accepted, 20 `needs_review`, two
 excluded, and one planned target; the provider ledger remains 58 attempts (35
 succeeded, 23 failed) across 29 target IDs at USD 0.46936.
 
+The bounded Seiko extraction succeeded with 33 provisional facts and 14
+unresolved non-blocking fields. Independent review rejects an unrelated
+bracelet URL and the provider's clasp/interface conflation, corrects ten months
+from 730 to approximately 7,300 hours, and retains an exact Austrian boutique
+rate conflict. That regional page says both +/-0.5 seconds per day and +/-10
+seconds per month, so the accepted row uses Seiko UK's wider coherent
+-15/+15-seconds-per-30-days exact bound. The exact UK store explicitly calls
+the applied LumiBrite strong and suitable for professional diving standards;
+the exact original M13K113N0 listing explicitly documents spring bars. No M1
+gap remains.
+
+Additive migration `0022_expand_catalogue_seiko_sne599p1.sql` now accepts
+`seiko-sne599p1`. The live database reports the exact GBP 530 in-stock row,
+date, complete physical and movement facts, and 35 reference-level evidence
+records. Catalogue and SQL hard-filter parity passes for 20 variants across all
+six golden profiles. The row contributes all 48 planned cells, raising coverage
+from 576 to 624/28,800 (2.17%). Strict research now reports 20 accepted, 20
+`needs_review`, and two excluded targets, with 30 review artifacts. The ignored
+ledger contains 59 attempts (36 succeeded, 23 failed) across 30 target IDs and
+USD 0.48496 recorded provider cost.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

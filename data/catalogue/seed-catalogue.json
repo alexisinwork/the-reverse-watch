@@ -432,6 +432,30 @@
       "publisher": "Delugs",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-29T14:10:54Z"
+    },
+    {
+      "id": "seiko-sne599p1-uk-store",
+      "url": "https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/",
+      "title": "Seiko Prospex Solar Diver's in All Black — SNE599P1",
+      "publisher": "Seiko UK Limited",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T20:54:24Z"
+    },
+    {
+      "id": "seiko-sne599p1-uk-specification",
+      "url": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "title": "Prospex SNE599 specifications",
+      "publisher": "Seiko Watch Corporation",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T20:54:24Z"
+    },
+    {
+      "id": "watchstraponline-seiko-sne599p1-bracelet",
+      "url": "https://www.watchstraponline.com/Seiko-watch-strap-SNE599P1-HB-SK-M13K113N0/",
+      "title": "Original Seiko M13K113N0 bracelet for SNE599P1",
+      "publisher": "Watchstraponline.com",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:06:00Z"
     }
   ],
   "fx": {
@@ -2520,6 +2544,132 @@
         {
           "sourceId": "delugs-tudor-m79000n-0001",
           "fields": ["attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "seiko-sne599p1",
+      "brand": {
+        "slug": "seiko",
+        "name": "Seiko",
+        "serviceCountries": null
+      },
+      "collection": "Prospex",
+      "model": "Solar Diver's 200m",
+      "referenceCode": "SNE599P1",
+      "variantName": "All-black hard-coated steel · M13K113N0 bracelet",
+      "productUrl": "https://www.seikowatches.com/uk-en/products/prospex/sne599",
+      "price": {
+        "amountMinor": 53000,
+        "currency": "GBP",
+        "marketCountry": "GB",
+        "observedAt": "2026-08-30T20:54:24Z",
+        "staleAfter": "2027-02-26T20:54:24Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-30T20:54:24Z",
+        "availabilityStaleAfter": "2026-09-29T20:54:24Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "black hard-coated stainless steel",
+        "caseback": "stainless steel screw case back",
+        "bracelet": "black hard-coated stainless steel M13K113N0",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 41,
+        "caseThicknessMm": 11.3,
+        "lugToLugMm": 48.8,
+        "lugWidthMm": 20,
+        "weightFullG": 157,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "solar",
+        "caliber": "Seiko V157",
+        "powerReserveHours": 7300,
+        "accuracyLowerSeconds": -15,
+        "accuracyUpperSeconds": 15,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": "screw_down",
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "solar_tool_diver",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "seiko-sne599p1-uk-store",
+          "fields": [
+            "identity",
+            "price",
+            "availability",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "seiko-sne599p1-uk-specification",
+          "fields": [
+            "identity",
+            "materials",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "watchstraponline-seiko-sne599p1-bracelet",
+          "fields": ["materials", "attachmentType"]
         }
       ]
     }

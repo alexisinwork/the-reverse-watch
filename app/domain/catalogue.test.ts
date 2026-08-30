@@ -12,10 +12,10 @@ import { seedCatalogue } from "./seed-catalogue";
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
     expect(seedCatalogue.catalogueVersion).toBe(2);
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(19);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(20);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(19);
+    ).toBe(20);
   });
 
   it("retains evidence for every seed identity and price", () => {
@@ -126,6 +126,35 @@ describe("source-backed seed catalogue", () => {
     expect(tudor!.operation.attachmentType).toBe("spring_bar");
     expect(evidenceFields(tudor!).has("attachmentType")).toBe(true);
     expect(evidenceFields(tudor!).has("weightFullG")).toBe(true);
+  });
+
+  it("retains the reviewed Seiko solar-diver accuracy and attachment", () => {
+    const seiko = seedCatalogue.variants.find(
+      (variant) => variant.id === "seiko-sne599p1",
+    );
+
+    expect(seiko).toBeDefined();
+    expect(seiko!.geometry).toMatchObject({
+      caseDiameterMm: 41,
+      caseThicknessMm: 11.3,
+      lugToLugMm: 48.8,
+      lugWidthMm: 20,
+      weightFullG: 157,
+    });
+    expect(seiko!.movement).toMatchObject({
+      type: "solar",
+      caliber: "Seiko V157",
+      powerReserveHours: 7300,
+      accuracyLowerSeconds: -15,
+      accuracyUpperSeconds: 15,
+      accuracyPeriodDays: 30,
+    });
+    expect(seiko!.operation).toMatchObject({
+      waterResistanceM: 200,
+      lumeGrade: "strong",
+      attachmentType: "spring_bar",
+    });
+    expect(evidenceFields(seiko!).has("attachmentType")).toBe(true);
   });
 
   it("rejects a partial non-round dimension pair", () => {

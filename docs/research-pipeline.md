@@ -59,10 +59,9 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 19 accepted catalogue targets linked to all current reviewed variants;
-- 21 active coverage-intent targets, including one newly planned source-led
-  Seiko solar-diver target;
-- live Supabase parity for 16 brands and all 19 accepted variants across the
+- 20 accepted catalogue targets linked to all current reviewed variants;
+- 20 active coverage-intent targets, with the default research queue empty;
+- live Supabase parity for 16 brands and all 20 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
@@ -920,6 +919,29 @@ zero-maintenance field/studio cells as 48 empty, 48 under-diversified, and 48
 under-evidenced. The manifest now has 19 accepted, 20 `needs_review`, two
 excluded, and one planned target; the ignored provider ledger is unchanged at
 58 attempts (35 succeeded, 23 failed) across 29 target IDs and USD 0.46936.
+
+The bounded Seiko job succeeded on its first attempt with 33 provisional facts
+and 14 unresolved non-blocking fields. Review corrects four material extraction
+problems instead of laundering them into the seed: an unrelated or hijacked
+bracelet URL is rejected, clasp semantics are not used as the case interface,
+ten months normalizes to approximately 7,300 rather than 730 hours, and the
+exact Austrian boutique's internally inconsistent `+/-0.5 seconds per day
+(+/-10 seconds per month)` copy is retained as a conflict. The accepted rate is
+the wider coherent exact UK manufacturer bound of -15/+15 seconds per 30 days.
+Seiko UK's official store explicitly calls the LumiBrite strong and suitable
+for professional diving standards; the exact original M13K113N0 listing
+explicitly identifies spring-bar attachment. Review therefore closes every M1
+gate.
+
+Additive migration `0022_expand_catalogue_seiko_sne599p1.sql` accepts
+`seiko-sne599p1`. Remote verification confirms GBP 530 in-stock commerce, the
+complete reviewed physical and movement row, date, and 35 reference-level
+evidence records. Catalogue and SQL hard-filter parity passes for all 20
+variants and six golden profiles. Deterministic coverage rises by the planned
+48 cells, from 576 to 624 of 28,800 (2.17%). The manifest now has 20 accepted,
+20 `needs_review`, and two excluded targets; 30 reviews include eight
+migration-ready decisions. The ignored provider ledger contains 59 attempts
+(36 succeeded, 23 failed) across 30 target IDs and USD 0.48496 recorded cost.
 
 ## Job idempotency and retention
 
