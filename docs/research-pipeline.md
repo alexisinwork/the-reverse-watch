@@ -708,6 +708,29 @@ research must still reconcile availability wording, verify the configured mass,
 and tie the coin/screwdriver change procedure to the exact proprietary
 strap-to-case fastener before the row can become migration-ready.
 
+The target was initially patched into Vacheron Constantin's empty target array;
+source-review setup caught the ownership mismatch and moved it to Vostok Europe
+before artifact admission. The first provider response then failed contract v5
+by asserting an exact match without candidate identity. Its corrected retry
+returned 43 facts but declined exact identity because the package includes two
+straps. Direct review fixes the wearable row to black silicone while disclosing
+the leather accessory. It rejects the provider's stale Helveti in-stock claim:
+that exact page says the sale ended. A current Czech official-distribution page
+instead supports EUR 793, Add to cart, and stock within three working days while
+also saying momentarily unavailable, normalized conservatively to `short_wait`.
+Primary evidence resolves 45.7 x 15.6 x 56.2 mm geometry, 22 mm lugs, 300 m,
+chronograph, date, strong continuous tritium, and the manufacturer's wider
+-20/+20 seconds-per-month VK61 contract. Exact screwdriver-or-coin replacement
+plus Vostok Europe's current custom screw-fixed guide maps the interface to
+`proprietary`; a narrow Perplexity follow-up's unverified two-TORX detail is
+discarded. The same follow-up found no configuration-explicit mass: 100 g lacks
+an installed-strap scope, another exact listing labels approximately 100 g as
+main-body weight, and unmeasured retailer values span 134-136 g. `weightFullG`
+remains the sole M1 gap. The ignored ledger retains 47 attempts (26 succeeded,
+21 failed) across 25 target IDs with USD 0.33487 recorded provider cost. The
+strict manifest now has 25 reviews: six migration-ready, 17 needing more
+evidence, and two excluded; 18 targets are accepted and 17 remain active.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

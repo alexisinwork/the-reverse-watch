@@ -1,0 +1,277 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vostok-europe-titanium-precision-chronograph",
+  "jobId": "4b0c285f-3cd1-4f5a-b97e-bbd8a0d18080",
+  "reviewedAt": "2026-08-30T19:32:02Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Vostok Europe",
+    "model": "Nuclear Submarine SSN 571",
+    "referenceCode": "VK61-571H614",
+    "variantName": "Titanium case on black silicone strap; black leather accessory strap included"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://vostok-europe.com/product/vk61-571h614",
+      "status": "validated_primary",
+      "note": "Vostok Europe's exact sold-out product route independently identifies VK61-571H614 and both factory-supplied black strap configurations. It publishes titanium, 45.7 x 15.6 x 56.2 mm geometry, 22 mm lugs, K1 crystal, 300 m resistance, VK61 meca-quartz, chronograph, date, 15 tritium tubes with continuous luminosity for at least ten years, and strap replacement with the included screwdriver or a coin. It publishes no configured mass. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.vostok-europe.com/public/vendor/laravel-files/files/manuals-catalogues/ve-catalog-2024.pdf",
+      "status": "validated_primary",
+      "note": "Vostok Europe's 2024 catalogue explicitly includes the titanium VK61-571H614 in the SSN 571 family and specifies VK61A accuracy of +/-20 seconds per month, three-year battery life, date, and chronograph. Its SSN 571 pages corroborate the geometry, lug width, tritium, two supplied straps, and replacement tool. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://vostok-europe.com/vendor/laravel-files/files/manuals-catalogues/new-2026/ve-users-guide-auto-en.pdf",
+      "status": "validated_primary",
+      "note": "Vostok Europe's current general user guide distinguishes quick-release, regular spring-bar, and screw-fixed systems. It says screw-fixed straps require a screwdriver and use custom-made parts unavailable as standard aftermarket straps. Combined with the exact reference's screwdriver-or-coin procedure, this supports a screw-fixed proprietary mapping. A narrow Perplexity follow-up also asserted two TORX screws, but that exact hardware detail was not tied to VK61-571H614 and is not retained. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.zlatnictvinoemi.cz/hodinky-vostok-europe-ssn571-nuclear-submarine-chrono-line-titanium-vk61-571h614-darek-zdarma",
+      "status": "validated_secondary",
+      "note": "The exact official-Czech-distribution page exposes EUR 793 including VAT, an Add to cart control, official-distribution warranty language, and stock within three working days while simultaneously saying the product is momentarily unavailable. The homogeneous snapshot is normalized to a new authorized-dealer short_wait offer in the Czech Republic, never in_stock. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.helveti.eu/vostok-europe-nuclear-submarine-vk61-571h614",
+      "status": "rejected",
+      "note": "Direct review shows 'The sale has ended' and no current exact-product price or purchase control. The provider's EUR 774.33 in-stock claim came from stale indexed content and is rejected. Helveti's +/-15 seconds-per-month row is also weaker than the manufacturer's current +/-20 catalogue contract. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://vostok-europe.jp/products/vk61-571h614",
+      "status": "validated_primary",
+      "note": "Vostok Europe's official Japanese route exposes the exact reference, both supplied straps, a screwdriver, JPY 137,500, and a 100 g field. It does not identify which installed strap the 100 g covers, and the unsupported JPY offer does not replace the reviewed EUR market snapshot. The ambiguous mass is not promoted. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.syohbido.co.jp/item/00006vk61-571h614.html",
+      "status": "rejected",
+      "note": "The exact authorized Japanese listing labels approximately 100 g as main-body weight while separately listing both straps. This helps explain why 100 g cannot satisfy the full configured-mass field but does not establish the black-silicone total. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.tutuora.hu/vostok/571h614.html",
+      "status": "rejected",
+      "note": "The exact-reference retailer lists black silicone and 134 g, but supplies no scale image, protocol, or explicit statement that the value is the complete watch on that strap. It conflicts with the ambiguous 100 g regional-manufacturer field and nearby 135-136 g catalogue records. A narrow Perplexity follow-up found no configuration-explicit measurement, so no mass is selected or averaged. Retrieved 2026-08-30."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "collection",
+    "model",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.caliber",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "identity",
+      "value": {
+        "brand": "Vostok Europe",
+        "model": "Nuclear Submarine SSN 571",
+        "referenceCode": "VK61-571H614",
+        "variantName": "Titanium case on black silicone strap; black leather accessory strap included"
+      },
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "The exact manufacturer route and configuration-specific images establish one reference with two supplied factory straps; the reviewed wearable row fixes black silicone and records leather only as an included accessory."
+    },
+    {
+      "fieldName": "variantName",
+      "value": "Titanium case on black silicone strap; black leather accessory strap included",
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "The normalized name fixes the scored wearable configuration without hiding the second factory-supplied strap."
+    },
+    {
+      "fieldName": "materials.strap",
+      "value": "black silicone",
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "The exact manufacturer page separately depicts and describes the black expandable silicone strap selected for this wearable row."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "discontinued",
+      "sourceUrl": "https://vostok-europe.com/archive",
+      "note": "The global manufacturer site places the exact reference in its sold-out legacy archive even though regional old-stock ordering routes remain."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 79300,
+      "sourceUrl": "https://www.zlatnictvinoemi.cz/hodinky-vostok-europe-ssn571-nuclear-submarine-chrono-line-titanium-vk61-571h614-darek-zdarma",
+      "note": "The exact official-distribution listing publishes EUR 793 including VAT."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "EUR",
+      "sourceUrl": "https://www.zlatnictvinoemi.cz/hodinky-vostok-europe-ssn571-nuclear-submarine-chrono-line-titanium-vk61-571h614-darek-zdarma",
+      "note": "The reviewed supported-currency price shown beside CZK is EUR 793."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "CZ",
+      "sourceUrl": "https://www.zlatnictvinoemi.cz/hodinky-vostok-europe-ssn571-nuclear-submarine-chrono-line-titanium-vk61-571h614-darek-zdarma",
+      "note": "The retailer identifies official Czech distribution and operates the reviewed Czech storefront."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "short_wait",
+      "sourceUrl": "https://www.zlatnictvinoemi.cz/hodinky-vostok-europe-ssn571-nuclear-submarine-chrono-line-titanium-vk61-571h614-darek-zdarma",
+      "note": "Add to cart plus stock within three working days maps to short_wait; the simultaneous momentarily-unavailable message precludes in_stock."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.zlatnictvinoemi.cz/hodinky-vostok-europe-ssn571-nuclear-submarine-chrono-line-titanium-vk61-571h614-darek-zdarma",
+      "note": "The page states that its Vostok Europe watches come through official Czech distribution with authorized warranty support."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.zlatnictvinoemi.cz/hodinky-vostok-europe-ssn571-nuclear-submarine-chrono-line-titanium-vk61-571h614-darek-zdarma",
+      "note": "The official-distribution retail offer is for a new watch rather than a secondary-market listing."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "hybrid",
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "Vostok Europe identifies the battery-powered TMI VK61 as meca-quartz; the mechanical chronograph actuation plus quartz time base maps to the catalogue's hybrid enum."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -20,
+      "sourceUrl": "https://www.vostok-europe.com/public/vendor/laravel-files/files/manuals-catalogues/ve-catalog-2024.pdf",
+      "note": "The manufacturer catalogue specifies VK61A accuracy of +/-20 seconds per month."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 20,
+      "sourceUrl": "https://www.vostok-europe.com/public/vendor/laravel-files/files/manuals-catalogues/ve-catalog-2024.pdf",
+      "note": "The manufacturer catalogue specifies VK61A accuracy of +/-20 seconds per month."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 30,
+      "sourceUrl": "https://www.vostok-europe.com/public/vendor/laravel-files/files/manuals-catalogues/ve-catalog-2024.pdf",
+      "note": "The published monthly contract is normalized to the catalogue's 30-day period."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "The exact manufacturer route specifies a screw-in crown."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "mineral",
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "Vostok Europe's hardened K1 crystal is normalized to the catalogue's mineral class."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "Fifteen self-powered tritium tubes cover the hour markers and hour/minute hands, require no charging, and are guaranteed for continuous luminosity for at least ten years. The explicit sustained full-time display maps to strong."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "proprietary",
+      "sourceUrl": "https://vostok-europe.com/vendor/laravel-files/files/manuals-catalogues/new-2026/ve-users-guide-auto-en.pdf",
+      "note": "The exact route's screwdriver-or-coin replacement procedure identifies the screw-fixed branch of Vostok Europe's primary guide; that guide says screw-fixed straps use custom, nonstandard parts. This primary-source inference maps to proprietary without asserting unverified TORX hardware."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["chronograph"],
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "The exact VK61 functions include a central-seconds 60-minute chronograph; date is represented separately and the rotating bezel is not a supported complication enum."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "note": "Vostok Europe explicitly lists a date display for the exact reference."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "variantName",
+      "reason": "Titanium alone omits the wearable material. The reviewed name fixes the black silicone configuration and discloses the included black leather accessory strap."
+    },
+    {
+      "fieldName": "materials.strap",
+      "reason": "A combined silicone-plus-leather value is not one wearable configuration. The row selects the manufacturer-documented black silicone strap and records leather only as an included accessory."
+    },
+    {
+      "fieldName": "productionStatus",
+      "reason": "Discontinued / sold-out legacy model is provider prose. The manufacturer archive supports the normalized discontinued enum."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "Direct retrieval shows the provider's Helveti offer has ended. The amount is replaced by the exact official-Czech-distribution EUR 793 short-wait listing."
+    },
+    {
+      "fieldName": "price.currency",
+      "reason": "Helveti's stale EUR record cannot be retained; the reviewed EUR value comes from the current Noemi page."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "European Union is not a two-letter market country and was inferred from a stale .eu page. The reviewed storefront is Czech Republic, normalized to CZ."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Helveti says the exact sale ended. Noemi's Add to cart plus three-working-day stock wording is normalized conservatively to short_wait, not in_stock."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Provider prose is replaced by the authorized_dealer enum from Noemi's official Czech distribution and warranty statement."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The regional manufacturer field says 100 g without an installed-strap scope, an exact authorized listing labels approximately 100 g as main-body weight, and retailer/catalogue values range from 134 to 136 g without a scale protocol. A narrow Perplexity follow-up found no configuration-explicit black-silicone measurement. No value is selected or averaged."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Meca-quartz chronograph is descriptive prose and is normalized to the catalogue's hybrid enum."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "reason": "Helveti's +/-15 seconds per month conflicts with the manufacturer catalogue's +/-20 contract and the independent exact TUTU listing. The primary manufacturer bound controls."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "reason": "Helveti's tighter retailer claim is replaced by the manufacturer's +/-20 seconds-per-month upper bound."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "reason": "The 30-day normalization is retained only with the corrected manufacturer-backed -20/+20 monthly bounds."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Screw-down crown is normalized from exact manufacturer prose to screw_down."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "The K1 description is normalized to the mineral enum while its hardening and coating remain in evidence notes."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The provider returned material and duration prose rather than an enum. The same exact primary evidence supports the normalized strong mapping."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Tool-assisted replaceability is not an enum. Exact screwdriver-or-coin operation combined with the primary guide's custom screw-fixed system supports proprietary; an unverified two-TORX detail is discarded."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date and rotating bezel are not supported complication enums. The normalized list retains chronograph only."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "Date display is provider prose and is normalized to present."
+    }
+  ],
+  "missingM1Fields": ["weightFullG"],
+  "note": "Keep as research-only. Direct review overrules the provider's stale Helveti offer and exact-variant refusal: primary sources establish VK61-571H614 as the titanium SSN 571 on a selected black silicone strap, with 45.7 x 15.6 x 56.2 mm geometry, 22 mm lugs, VK61 -20/+20 seconds per month, 300 m resistance, strong continuous tritium, proprietary screw-fixed straps, chronograph, and date. A Czech official-distribution page supplies a new EUR 793 short-wait snapshot. Vostok Europe Japan reports 100 g without configuration scope, an authorized Japanese listing labels approximately 100 g as main-body weight, and unmeasured retailer records range from 134 to 136 g. A narrow Perplexity follow-up found no configuration-explicit full mass, so weightFullG remains null as the sole M1 gap."
+}

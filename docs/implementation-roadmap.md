@@ -782,6 +782,23 @@ row would enter 48 supported `500_1000`, zero-maintenance chronograph cells,
 including 24 currently empty cells. No archived, retailer, or sibling fact is
 accepted merely by appearing in this pre-screen.
 
+Review corrected an initial manifest-placement error that had attached the
+target to Vacheron Constantin; the target and its artifact now belong to Vostok
+Europe. Contract v5 rejected the first provider response for missing exact
+candidate identity, and the retry treated the two supplied straps as an identity
+block. Direct review defines one black-silicone wearable row while preserving
+the leather strap as an accessory. It also rejects the stale Helveti offer, which
+now says sale ended, and normalizes a Czech official-distribution EUR 793 Add to
+cart plus three-working-day fulfillment record to `short_wait`, never in-stock.
+The manufacturer controls at -20/+20 seconds per month, not Helveti's tighter
+retailer-only figure. Exact screwdriver-or-coin replacement combined with the
+current manufacturer guide's custom screw-fixed branch supports `proprietary`,
+and ten-year continuous fifteen-tube illumination supports `strong`. Configured
+mass does not pass: 100 g has no installed-strap scope, one source labels it
+main-body weight, and 134-136 g retailer records lack a scale protocol. A narrow
+Perplexity follow-up confirmed the mass gap, so `weightFullG` remains null and
+the otherwise complete row is not promoted.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
