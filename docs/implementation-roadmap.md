@@ -769,6 +769,19 @@ conflicting 41 x 12.2 mm, 89.6 g, 100 m specification set, so they cannot be
 merged into the current row. Lug-to-lug, lug width, lume grade, and attachment
 type remain fail-closed; the row is not promoted.
 
+The next explicit target is Vostok Europe Nuclear Submarine
+`VK61-571H614`, constrained to the titanium case on its supplied black silicone
+strap. Archived manufacturer evidence already publishes 45.7 x 15.6 x 56.2 mm
+geometry, 22 mm lugs, 300 m resistance, continuous tritium illumination, date,
+chronograph, and VK61 accuracy of +/-20 seconds per month. A current
+official-distribution listing exposes EUR 793 and fulfillment within three
+working days, while an exact-reference retailer measurement reports 134 g on
+silicone. If independent review reconciles the offer's contradictory
+availability labels and proves the exact screw-fixed interface, the homogeneous
+row would enter 48 supported `500_1000`, zero-maintenance chronograph cells,
+including 24 currently empty cells. No archived, retailer, or sibling fact is
+accepted merely by appearing in this pre-screen.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

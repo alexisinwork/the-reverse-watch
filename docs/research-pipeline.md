@@ -694,6 +694,20 @@ failed) across 24 target IDs with USD 0.31920 recorded provider cost. The
 strict manifest has 24 reviews: six migration-ready, 16 needing more evidence,
 and two excluded; 18 targets are accepted and 16 remain active.
 
+The next explicit coverage hypothesis is Vostok Europe Nuclear Submarine
+`VK61-571H614`, fixed to its titanium case and black silicone strap. The
+manufacturer's archived exact-reference page and 2024 catalogue jointly expose
+45.7 x 15.6 x 56.2 mm geometry, 22 mm lugs, VK61 accuracy of +/-20 seconds per
+month, 300 m resistance, chronograph, date, and continuous tritium illumination.
+An exact-reference retailer measurement reports 134 g on silicone, while a live
+official-distribution listing exposes EUR 793 and fulfillment within three
+working days despite the manufacturer's sold-out archive state. The conservative
+silicone row projects into 48 `500_1000`, zero-maintenance chronograph cells,
+including 24 currently empty cells, and adds a new brand throughout. Provider
+research must still reconcile availability wording, verify the configured mass,
+and tie the coin/screwdriver change procedure to the exact proprietary
+strap-to-case fastener before the row can become migration-ready.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

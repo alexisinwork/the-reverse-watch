@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:16:38.529Z",
+  "updatedAt": "2026-08-30T19:23:55Z",
   "brands": [
     {
       "slug": "rolex",
@@ -141,7 +141,44 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "vostok-europe-titanium-precision-chronograph",
+          "referenceLabel": "Validate discontinued-but-offered Vostok Europe Nuclear Submarine VK61-571H614 as one homogeneous titanium and silicone configuration with exact configured mass, numerical VK61 accuracy, continuous tritium readability, and screw-fixed proprietary attachment evidence",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "wristBands": [
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month",
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add a new-brand titanium meca-quartz chronograph to 48 supported 500-1000 cells, including 24 currently empty precision/tool cells; require a live short-wait offer and homogeneous silicone-configured mass before ranking discontinued stock."
+        }
+      ]
     },
     {
       "slug": "cartier",
