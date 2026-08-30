@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:55:51.789Z",
+  "updatedAt": "2026-08-30T19:59:05.696Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1419,7 +1419,7 @@
       "targets": [
         {
           "id": "laco-compact-mechanical-pilot",
-          "referenceLabel": "Validate current Laco Augsburg 39 reference 861988 as the fixed brown riveted calf-leather configuration with exact 81.5 g full mass, Miyota 82S0 accuracy and no-date applicability, repeatable Super-LumiNova C3 performance, and explicit strap-to-case fastener evidence",
+          "referenceLabel": "Find exact Laco Augsburg 39 reference 861988 lume-performance evidence only: require a controlled charge and elapsed observation, a timed decay series, or multiple independent exact-reference assessments converging on weak, moderate, or strong; exclude Augsburg 42, Augsburg color editions, other Laco pilot watches, material-only C3 labels, and lume photographs without a performance result",
           "state": "planned",
           "coverageIntent": {
             "priceBands": [

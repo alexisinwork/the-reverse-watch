@@ -838,6 +838,14 @@ studio, workhorse-mechanical, time-only cells and adds a new brand. Lume
 performance and the strap-to-case fastener remain explicit review gates rather
 than being inferred from C3 material or strap rivets.
 
+The first Laco result contains 30 valid provisional facts. Direct FAQ retrieval
+confirms that Laco regulates the installed LACO 2S to 0/+25 seconds per day;
+the product-linked LACO 2S manual identifies the strap connector pins as spring
+bars and documents only time-setting functions. The active exact product route
+supports a reviewed current-production normalization. Lume is therefore the
+sole remaining M1 uncertainty, and one exact-reference performance-only pass is
+queued without admitting sibling Augsburg or generic Laco claims.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

@@ -776,6 +776,15 @@ set without a calendar. The conservative hypothesis adds a new brand to 12
 still establish a repeatable C3 lume grade and the strap-to-case fastener;
 luminous material and a riveted wrist closure alone prove neither.
 
+The first Laco extraction returned 30 schema-valid provisional facts and only
+two non-M1 or M1 unresolved fields. Laco's FAQ directly improves the installed
+LACO 2S contract to its watchmaker-regulated 0/+25 seconds per day, while the
+official LACO 2S manual identifies the leather-strap connector pins as spring
+bars and documents a time-only function set. An active exact route with EUR 390,
+available status, and two-to-three-day delivery supports current production as
+a reviewed normalization. `lumeGrade` is now the only M1 uncertainty, so the
+target is reset for one exact-reference performance-only pass.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
