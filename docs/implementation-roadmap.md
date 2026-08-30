@@ -957,6 +957,20 @@ six golden profiles. The accepted eligibility remains
 `studio_desk_daily` only; the 30 m GPQ does not inherit the mechanical
 sibling's field/water deployment tag.
 
+The next coverage checkpoint selects Seiko Prospex Solar Diver `SNE599P1` on
+the exact all-black `M13K113N0` bracelet. Manufacturer pages retrieved
+2026-08-30 expose an orderable GBP 530 offer, complete 41 x 11.3 x 48.8 mm
+geometry, 20 mm lugs, 157 g configured mass, V157 solar operation at +/-15
+seconds per month, 200 m diver resistance, sapphire, screw-down crown, strong
+LumiBrite, and date. An exact original-bracelet source separately identifies
+spring-bar mounting. No value is accepted from the pre-screen: one planned
+bounded research job must validate the exact homogeneous configuration and
+retain any conflicts. The planner reports all 48 targeted `500_1000`,
+zero-maintenance field/studio cells as empty, under-diversified, and
+under-evidenced. The manifest now contains 19 accepted, 20 `needs_review`, two
+excluded, and one planned target; the provider ledger remains 58 attempts (35
+succeeded, 23 failed) across 29 target IDs at USD 0.46936.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

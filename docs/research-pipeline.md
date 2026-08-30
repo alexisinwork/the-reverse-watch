@@ -59,9 +59,10 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context, alongside one existing roadmap brand;
-- 18 accepted catalogue targets linked to all current reviewed variants;
-- 13 active coverage-intent targets, with all default discovery jobs reviewed;
-- live Supabase parity for 16 brands and all 18 accepted variants across the
+- 19 accepted catalogue targets linked to all current reviewed variants;
+- 21 active coverage-intent targets, including one newly planned source-led
+  Seiko solar-diver target;
+- live Supabase parity for 16 brands and all 19 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
@@ -903,6 +904,22 @@ rows, and complete M1 evaluation. Catalogue and SQL hard-filter parity passes
 for all 19 accepted variants across the six golden profiles. The 30 m GPQ is
 eligible only for `studio_desk_daily`; migration does not inherit the
 mechanical sibling's field/water deployment tag.
+
+The next source-led target is exact Seiko Prospex Solar Diver `SNE599P1` on
+its all-black hard-coated `M13K113N0` bracelet. Primary pre-screen retrieved
+2026-08-30 from the [official Seiko UK product page](https://www.seikoboutique.co.uk/product/seiko-prospex-solar-divers-in-all-black-sne599/)
+and [manufacturer specification page](https://www.seikowatches.com/uk-en/products/prospex/sne599):
+the exact SKU is orderable at GBP 530 and exposes 41 x 11.3 x 48.8 mm geometry,
+20 mm lugs, 157 g configured mass, solar V157 at +/-15 seconds per month,
+200 m diver resistance, sapphire, screw-down crown, explicit strong LumiBrite,
+and a date display. An [exact original-bracelet listing](https://www.watchstraponline.com/Seiko-watch-strap-SNE599P1-HB-SK-M13K113N0/)
+ties that factory part to spring bars. These are routing inputs, not accepted
+facts: one bounded Perplexity job and independent source review must still
+validate the homogeneous row. The planner ranks its 48 targeted `500_1000`
+zero-maintenance field/studio cells as 48 empty, 48 under-diversified, and 48
+under-evidenced. The manifest now has 19 accepted, 20 `needs_review`, two
+excluded, and one planned target; the ignored provider ledger is unchanged at
+58 attempts (35 succeeded, 23 failed) across 29 target IDs and USD 0.46936.
 
 ## Job idempotency and retention
 

@@ -817,6 +817,42 @@
           "state": "accepted",
           "coverageRationale": "Accepted compact mechanical no-date row after resolving the contradictory regional lume evidence and retaining the conflict trail.",
           "catalogueVariantId": "seiko-hcc004j1"
+        },
+        {
+          "id": "seiko-sne599p1-solar-diver",
+          "referenceLabel": "Prospex Solar Diver SNE599P1 in all-black hard-coated steel on its exact M13K113N0 bracelet",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "wristBands": [
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month",
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Source-led current solar diver fixed to one homogeneous exact bracelet SKU. Primary pre-screen exposes every M1 fact, including an orderable supported-currency manufacturer offer, full configured mass, numerical V157 accuracy, professional-diving strong LumiBrite language, and exact spring-bar fitment; if independent review confirms those claims, the row diversifies 500_1000 zero-maintenance field and studio cells rather than inheriting facts from another Seiko variant."
         }
       ]
     },

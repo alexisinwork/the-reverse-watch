@@ -17,8 +17,8 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Migrations `0001` through `0020` are applied to the connected Supabase
-  project. The live v3 catalogue contains all 16 brands and 18 accepted
+- Migrations `0001` through `0021` are applied to the connected Supabase
+  project. The live v3 catalogue contains all 16 brands and 19 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
   result parity passes. All 20 public catalogue tables have RLS enabled with no
   direct browser grants or policies; the application uses only two narrow,
@@ -28,8 +28,8 @@ phase.
   were therefore delivered to `origin/main`, superseding the earlier
   temporary no-push instruction. The deployed server requests the v3 RPC pair,
   strictly validates the response and exact variant coverage, and falls back as
-  one unit to the reviewed 18-row bundle plus deterministic local predicates
-  if those RPCs become unavailable or divergent. The 18-row live SQL parity
+  one unit to the reviewed 19-row bundle plus deterministic local predicates
+  if those RPCs become unavailable or divergent. The 19-row live SQL parity
   requirement is now satisfied.
 - The owner-requested push advanced `origin/main` through `f505270`. The Git
   remote SHA matched local HEAD immediately afterward. The resulting Vercel
@@ -53,6 +53,13 @@ phase.
   notice; and the surrounding 30-minute runtime-error window was empty.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
+- The next planned Phase 5 target is exact Seiko Prospex Solar Diver
+  `SNE599P1` on its all-black `M13K113N0` bracelet. A 2026-08-30 primary
+  pre-screen found a complete M1 evidence path and the planner ranks all 48 of
+  its `500_1000`, zero-maintenance field/studio cells as empty,
+  under-diversified, and under-evidenced. Run one bounded Perplexity job, review
+  the exact configuration independently, and migrate only if every M1 fact
+  survives review.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -83,8 +90,8 @@ phase.
   evidence; fail-closed SQL hard filters; speculative-candidate suppression;
   deterministic score traces, diversity, why-not explanations, and visible
   relaxations; and the complete 28,800-cell coverage audit.
-- The audit is not complete at the data layer: only 18 homogeneous variants are
-  accepted locally, 496 of 28,800 cells are covered, every covered cell is
+- The audit is not complete at the data layer: only 19 homogeneous variants are
+  accepted locally, 576 of 28,800 cells are covered, every covered cell is
   under-diversified, and 224 are under-evidenced. Phase 5 must close that
   breadth and evidence gap before the 200-brand knowledge pack can be treated as
   a recommendation catalogue. Phase 7 dossier, funnel, and owner-media work
@@ -613,7 +620,7 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Treat the live 18-row v3 catalogue and six-profile parity as the relational
+1. Treat the live 19-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.
