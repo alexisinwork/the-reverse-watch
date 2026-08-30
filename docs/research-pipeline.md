@@ -624,6 +624,22 @@ a full-link scale method. The exact `.02` page establishes lume presence only,
 not a controlled performance grade. No field is promoted from sibling or
 generic 16202/caliber 7121 evidence.
 
+With the ranked queue empty, a new Vaer target was explicitly added for 48
+empty affordable-precision cells before provider work began. The first
+Perplexity job selected exact S3 Calendar Field variant 41255028424838; direct
+review corrected its reference to SKU `S3-CF-SIL20BLK-NY20KHA` and recovered
+the live page's USD 189 in-stock offer, 36 x 8.4 x 43 mm geometry, 20 mm lugs,
+GM12 -10/+20 seconds-per-month tolerance, 100 m rating, screw-down crown,
+sapphire, quick-release straps, date, and 6/10 lume-performance rating. The
+6/10 exact performance statement maps to `moderate`. Vaer's 46 g figure is
+explicitly case-only, while Shopify's unexplained product/accessory weight
+fields and an exactness-uncertain head-only report cannot establish the black
+silicone configured mass. The row remains research-only with `weightFullG` as
+its sole M1 gap. The ignored ledger now retains 38 attempts (22 succeeded, 16
+failed) across 22 target IDs with USD 0.29610 recorded provider cost. The
+strict manifest has 22 reviews: six migration-ready, 14 needing more evidence,
+and two excluded; 18 targets are accepted and 14 remain active.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

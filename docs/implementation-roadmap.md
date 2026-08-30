@@ -713,6 +713,19 @@ valid core submission selected the live Supabase facts and SQL hard-filter path
 without the bundled-fallback notice, and the surrounding Vercel runtime-error
 window was empty.
 
+The empty ranked queue then received a new explicit Vaer target covering 48
+empty affordable-precision cells. Its first Perplexity job selected S3 Calendar
+Field variant 41255028424838; direct primary-source review resolved exact SKU
+`S3-CF-SIL20BLK-NY20KHA`, the current USD 189 in-stock two-strap bundle, 36 x
+8.4 x 43 mm geometry, GM12 -10/+20 seconds-per-month tolerance, 100 m rating,
+screw-down crown, sapphire, quick-release straps, date, and Vaer's exact 6/10
+lume-performance score mapped to `moderate`. The page's 46 g value is explicitly
+case-only. Neither unexplained Shopify shipping fields nor an uncertain
+head-only report establishes full watch-plus-silicone mass, so `weightFullG`
+remains the sole M1 gap and the row is not promoted. The current strict
+checkpoint has 22 reviews (six migration-ready, 14 needing more evidence, and
+two excluded), 18 accepted targets, and 14 active targets.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

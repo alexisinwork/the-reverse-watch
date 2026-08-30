@@ -1,0 +1,244 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vaer-compact-precision-field",
+  "jobId": "014c4a11-e52c-40d3-85aa-fc44e4513f94",
+  "reviewedAt": "2026-08-30T18:51:23Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Vaer",
+    "model": "S3 Calendar Field",
+    "referenceCode": "S3-CF-SIL20BLK-NY20KHA",
+    "variantName": "Black dial on black Silicone Ocean strap with khaki quick-release nylon accessory strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "status": "validated_primary",
+      "note": "Vaer's exact live product route publishes the black 36 mm S3 Calendar Field with the selected black Silicone Ocean and khaki nylon strap bundle. Its technical panel independently supplies 316L steel, 36 x 8.4 x 43 mm geometry, 20 mm lug width, GM12 quartz, -10/+20 seconds per month, 100 m resistance, screw-down crown, sapphire, a date window, quick-release straps, and an exact-reference 6/10 lume-performance rating. It identifies 46 g specifically as case weight, not full worn weight."
+    },
+    {
+      "url": "https://www.vaerwatches.com/products/s3-calendar-field-watch.js",
+      "status": "validated_primary",
+      "note": "Vaer's public Shopify product payload resolves exact variant 41255028424838, SKU S3-CF-SIL20BLK-NY20KHA, USD 189 pricing, available-for-sale state, and the selected Silicone Ocean Black plus Nylon Khaki options. Its raw weight value 369 has no published unit or wearable-versus-shipping scope and is not accepted as watch mass."
+    },
+    {
+      "url": "https://www.vaerwatches.com/products/silicone-watch-strap?variant=31400952955014",
+      "status": "validated_primary",
+      "note": "Vaer's exact black Silicone Ocean strap route identifies a waterproof, quick-release 20 mm strap. Its public product payload reports an unexplained weight value of 88 shared by every color and is not treated as a measured strap mass."
+    },
+    {
+      "url": "https://www.vaerwatches.com/products/quick-release-nylon-watch-strap?variant=31401041232006",
+      "status": "validated_primary",
+      "note": "Vaer's exact khaki nylon accessory route identifies dense waterproof nylon, 20 mm width, and quick-release spring bars. The accessory is included in the purchased SKU but is not the selected worn configuration used for a future full-weight fact."
+    },
+    {
+      "url": "https://www.watchcrunch.com/KristianG/reviews/vaer-s3-calendar-review-374155",
+      "status": "fetch_blocked",
+      "note": "Perplexity surfaced an exact-model subjective report describing the lume as serviceable rather than impressive while remaining readable overnight. Direct retrieval returned HTTP 403, and the report provides no controlled charge or measured brightness protocol; the accepted moderate mapping instead comes from Vaer's exact 6/10 performance rating."
+    },
+    {
+      "url": "https://www.reddit.com/r/MicrobrandWatches/comments/1rz0rlq/vaer_s3_field_watch/",
+      "status": "rejected",
+      "note": "A narrow Perplexity follow-up surfaced a 35 g without-strap claim for an S3 field watch, but exact Calendar Field SKU identity and a weighing protocol are not established. It also conflicts with Vaer's exact page calling 46 g the case weight. Neither head-only value can satisfy the full configured weight contract."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "productUrl",
+    "geometry.caseDiameterMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "operation.crystal"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "referenceCode",
+      "value": "S3-CF-SIL20BLK-NY20KHA",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch.js",
+      "note": "Vaer's public exact-variant payload publishes the manufacturer SKU rather than using the product title as a reference code."
+    },
+    {
+      "fieldName": "variantName",
+      "value": "Black dial on black Silicone Ocean strap with khaki quick-release nylon accessory strap",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Exact variant 41255028424838 fixes both supplied strap selections; the black silicone strap is the selected wearable configuration and the khaki nylon strap remains a separately evidenced included accessory."
+    },
+    {
+      "fieldName": "productUrl",
+      "value": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "The variant query pins the reviewed row to SKU S3-CF-SIL20BLK-NY20KHA rather than the alternate steel-bracelet bundle."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "316L stainless steel",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer's exact technical panel specifies 316L stainless steel."
+    },
+    {
+      "fieldName": "materials.strap",
+      "value": "black silicone",
+      "sourceUrl": "https://www.vaerwatches.com/products/silicone-watch-strap?variant=31400952955014",
+      "note": "The reviewed wearable configuration selects Vaer's exact black Silicone Ocean quick-release strap; the separate included nylon strap is not mixed into one material value."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch.js",
+      "note": "Exact variant 41255028424838 remains published and available for sale."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 18900,
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch.js",
+      "note": "Vaer's public exact-variant payload publishes USD 189 for the selected two-strap SKU."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch.js",
+      "note": "The reviewed direct offer is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer's U.S. direct storefront and USD offer define the reviewed acquisition market."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch.js",
+      "note": "The exact variant exposes available true, inventory, and an InStock offer."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer's manufacturer-direct storefront maps to the catalogue's authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "The exact live manufacturer product route is a new-watch offer."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 8.4,
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer's exact case specification publishes 8.4 mm thickness."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 43,
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer's exact case specification publishes a 43 mm lug-to-lug span."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "The conventional 20 mm lugs accept interchangeable quick-release straps."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "GM12",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer's exact movement panel identifies the Japan-made GM12 quartz movement."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -10,
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "The exact technical panel specifies -10/+20 seconds per month."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 20,
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "The exact technical panel specifies -10/+20 seconds per month."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 30,
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "The published monthly tolerance is normalized to the catalogue's 30-day period."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer explicitly publishes 10 ATM as 100 m, replacing the extraction's unnecessary feet conversion."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer's exact case specification says locking screwdown crown."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "moderate",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer assigns the exact reference a 6/10 lume-performance rating and documents seven layers of C1 Super-LumiNova on the dial plus luminous hour, minute, and seconds hands. A mid-scale 6/10 performance claim maps to moderate rather than weak or strong."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "quick_release",
+      "sourceUrl": "https://www.vaerwatches.com/products/silicone-watch-strap?variant=31400952955014",
+      "note": "Vaer identifies the exact selected black Silicone Ocean strap as quick release, and the watch's exact page describes its supplied straps as interchangeable."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "The watch is time-and-date only; date is represented separately and no supported complication is present."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
+      "note": "Vaer's exact dial specification explicitly says the watch has a date window."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The extraction repeated the product title as a reference code. Vaer's exact variant payload instead publishes SKU S3-CF-SIL20BLK-NY20KHA."
+    },
+    {
+      "fieldName": "variantName",
+      "reason": "Black alone omits the material configuration. The reviewed name locks the wearable row to the black silicone strap and discloses the included nylon accessory."
+    },
+    {
+      "fieldName": "materials.strap",
+      "reason": "An array of two supplied materials does not define one wearable configuration. The row selects the exact black silicone strap; khaki nylon remains a separately sourced included accessory."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "Vaer's exact page publishes 46 g specifically as case weight. The Shopify product and accessory payloads expose unexplained 369 and 88 values without a wearable weighing scope, while a 35 g third-party claim is head-only and exact-SKU uncertain. No full watch-plus-black-silicone measurement qualifies."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "reason": "The extraction converted 330 feet to 100.584 m even though Vaer's exact technical panel explicitly normalizes the rating as 10 ATM / 100 m."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Locking crown is raw prose rather than a catalogue enum. Vaer's fuller exact specification explicitly says screwdown, supporting screw_down."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Quick-release interchangeable strap is normalized to the exact quick_release enum after confirming the selected strap page."
+    },
+    {
+      "fieldName": "serviceCountries",
+      "reason": "Shipping to 83 countries describes commerce, not reviewed service geography."
+    }
+  ],
+  "missingM1Fields": ["weightFullG"],
+  "note": "Keep as research-only. Direct review substantially improves the provider result: exact variant 41255028424838 and SKU S3-CF-SIL20BLK-NY20KHA are current and in stock at USD 189; Vaer's live technical panel resolves 36 x 8.4 x 43 mm geometry, 20 mm lugs, GM12 -10/+20 seconds per month, 100 m resistance, screw-down crown, sapphire, quick-release straps, date, and a 6/10 lume-performance rating mapped to moderate. Vaer publishes only 46 g case weight, and a narrow Perplexity pass found no exact full watch-plus-selected-strap measurement. Full configured weight remains null as the sole M1 gap."
+}
