@@ -1,0 +1,212 @@
+{
+  "reviewVersion": 1,
+  "targetId": "lip-lightweight-rectangular-quartz",
+  "jobId": "e1e0660c-f35a-4ae0-85c1-7b91a9261be8",
+  "reviewedAt": "2026-08-30T20:20:11Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "LIP",
+    "model": "Churchill T18",
+    "referenceCode": "671937",
+    "variantName": "Ivory Roman-numeral dial on dark-blue crocodile-pattern leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "status": "validated_primary",
+      "note": "LIP's current exact manufacturer route identifies Churchill T18 reference 671937 and its ivory-white matte Roman-numeral dial, blue sword hands, and dark-blue crocodile-pattern leather strap. The page and embedded product data publish an in-stock EUR 249 French offer, 38.5 x 21.2 mm rectangular case, 18 mm between the lugs, 27 g configured weight, Ronda 1064 at -10/+20 seconds per month, 30 m resistance, push crown, anti-reflective sapphire, and hours/minutes plus small seconds without a date. Its component specification does not explicitly state lume absence and publishes no case thickness. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.mastersintime.com/lip-churchill-t18-rectangular-1930s-designed-quartz-watch-with-small-second-671937.htm",
+      "status": "validated_secondary",
+      "note": "The live exact-reference specialist page identifies 671937 with the current blue leather strap, Ronda movement, sapphire crystal, 18 mm lug and strap widths, and product imagery. Its attachment specification separately says Quick release pushpins and Straight strap mount, while its clasp specification separately says Buckle. This supports quick-release case attachment without confusing the wrist closure. Its 8.5 mm thickness is retained as an uncorroborated secondary claim rather than accepted, because no current primary or convergent exact-reference measurement was found. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.maier.fr/marques-horlogerie-bijouterie/lip/montres/churchill/churchill-t18_671937",
+      "status": "rejected",
+      "note": "Maier's exact-reference sheet says the hands have no Super-LumiNova, but the same sheet conflicts with LIP's current product by specifying mineral instead of sapphire crystal and does not explicitly cover dial luminescence. It cannot close whole-watch no-lume status for the current configuration. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://horel.com/en/churchill-t18/10010868-lip-churchill-t18-montre-lip-churchill-t18-671937-2900100108683.html",
+      "status": "rejected",
+      "note": "Horel reports 8 mm and an interchangeable strap, but its page describes a conflicting older 21 x 38 mm mineral-crystal watch with Arabic numerals rather than LIP's current 38.5 x 21.2 mm sapphire Roman-numeral configuration. Interchangeable also does not specify the fastener. Neither claim is merged into the reviewed row. Retrieved 2026-08-30."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseWidthMm",
+    "geometry.weightFullG",
+    "movement.caliber",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "The exact route is a live manufacturer product with an active in-stock purchase offer; availability is recorded separately."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "FR",
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "The store context identifies France, and the offer's tax and standard-shipping terms explicitly address mainland France."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "The exact embedded offer reports InStock, the page permits purchase, and standard delivery is stated as 48 to 72 business hours."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "LIP's own direct storefront maps to the catalogue's authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "The manufacturer-direct offer is for a new watch."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 38.5,
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "LIP publishes the non-round case as 21.2 x 38.5 mm; 38.5 mm is stored as overall case length and supplies the wearing span under the rectangular geometry policy."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 18,
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "LIP explicitly publishes 18 mm as Width between lug for the exact watch."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "value": "observed",
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "The conventional 18 mm lug interval is explicitly observed rather than not applicable."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "The exact page publishes a removable leather strap and conventional 18 mm lugs, not an integrated bracelet."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "quartz",
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "LIP identifies a battery-powered quartz movement; quartz is the normalized catalogue enum."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "push_pull",
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "LIP's exact technical block calls the crown pushed; this is normalized to the push_pull enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "LIP specifies anti-reflective sapphire; sapphire is the normalized catalogue class."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "quick_release",
+      "sourceUrl": "https://www.mastersintime.com/lip-churchill-t18-rectangular-1930s-designed-quartz-watch-with-small-second-671937.htm",
+      "note": "The exact-reference specialist explicitly distinguishes Quick release pushpins at the straight strap mount from the buckle clasp; quick_release is the most specific supported interface enum."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "Small seconds is part of the basic time display and is not one of the catalogue's complication enums; no supported complication is present."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://lip.fr/en/churchill/390-lip-churchill-t18-671937",
+      "note": "LIP's exhaustive exact function list contains hours, minutes, and small seconds only, with no date function."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productionStatus",
+      "reason": "Currently offered by manufacturer is provider prose and also mixes production with origin; current is normalized from the active exact offer."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "France is normalized to FR after direct validation of the exact storefront context and France-specific shipping terms."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Live manufacturer offer is provider prose and understates the exact embedded InStock state and delivery terms; it is normalized to in_stock."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "LIP direct online store is provider prose and is normalized to the authorized_dealer acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "Tax, shipping, and payment prose is not a condition enum; the manufacturer-direct offer is normalized to new."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "reason": "The provider emitted both the correct observed 38.5 mm value and a duplicate missing null claiming it was not a claim. Review rejects the contradictory duplicate and admits 38.5 mm directly from LIP."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "The first result incorrectly placed numeric 18 in the applicability field. The narrow pass correctly supplies geometry.lugWidthMm, while applicability is normalized to observed."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Quartz provider prose is normalized to the lowercase catalogue enum."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Push/pushed crown is normalized to the push_pull enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Sapphire, anti-reflective is normalized to the sapphire enum."
+    },
+    {
+      "fieldName": "operation.claspMicroadjustment",
+      "reason": "A pin buckle does not prove the absence of all adjustment behavior, and the field is not needed for the M1 gate. No value is assigned."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The first result's interchangeable-strap prose explicitly left the fastener unspecified. It is replaced by the narrow pass's exact quick-release pushpin specification."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The first result relied on Maier's no-Super-LumiNova-hands field, but that sheet conflicts with LIP's current crystal specification and does not cover the dial. The narrow pass found no qualifying whole-watch or hands-and-dial absence statement, so no grade is assigned."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Small seconds is not a supported complication enum and is normalized to an empty complication list while remaining documented in the display/function evidence."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "No date is provider prose and is normalized to absent from LIP's exhaustive exact function list."
+    }
+  ],
+  "missingM1Fields": ["caseThicknessMm", "lumeGrade"],
+  "note": "Keep as research-only. Direct primary review validates current LIP Churchill T18 reference 671937 on its homogeneous dark-blue leather configuration, including the in-stock EUR 249 French offer, 21.2 x 38.5 mm rectangular geometry, 18 mm lugs, 27 g full weight, Ronda 1064 at -10/+20 seconds per month, 30 m resistance, push/pull crown, sapphire, and no-date small-seconds display. A narrow Perplexity pass found an exact-reference specialist specification that distinguishes quick-release pushpins at the case from the buckle at the wrist, closing attachmentType. Thickness remains unresolved because 8.0 mm belongs to a conflicting older mineral/Arabic configuration and 8.5 mm is a lone secondary value without current primary or convergent corroboration. No configuration-consistent source explicitly establishes lume absence across both hands and dial. caseThicknessMm and operation.lumeGrade remain null as the two M1 gaps."
+}

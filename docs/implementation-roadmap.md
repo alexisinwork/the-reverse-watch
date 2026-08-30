@@ -895,6 +895,23 @@ evidence therefore remain fail-closed, and one narrow current-configuration
 pass is queued. The ignored ledger contains 54 attempts (32 succeeded, 22
 failed) across 28 target IDs and USD 0.42046 recorded provider cost.
 
+The narrow LIP retry rejected another resolved/unresolved contradiction before
+finding live exact-reference attachment evidence. Masters in Time identifies
+the blue leather, Ronda, sapphire, 18 mm row and separately specifies quick-
+release pushpins at the straight strap mount and a buckle clasp, resolving
+`attachmentType: quick_release` without conflating the wrist closure. Its 8.5 mm
+thickness remains one uncorroborated secondary value; the other 8 mm source is
+the conflicting older mineral/Arabic configuration. No current-configuration
+source explicitly covers lume absence across both dial and hands. Review retains
+the current EUR 249 French offer, 21.2 x 38.5 mm rectangular geometry, 18 mm
+lugs, 27 g full weight, -10/+20 seconds per month, 30 m resistance, sapphire,
+quick release, and no-date small seconds, but does not promote the row.
+`caseThicknessMm` and `lumeGrade` remain the two M1 gaps. The strict checkpoint
+now contains 28 reviews (six migration-ready, 20 needing more evidence, and two
+excluded), with 18 accepted and 20 active targets; the ignored ledger contains
+56 attempts (33 succeeded, 23 failed) across 28 target IDs and USD 0.43617
+recorded provider cost.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

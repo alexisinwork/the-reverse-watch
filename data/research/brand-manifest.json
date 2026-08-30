@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T20:15:57.000Z",
+  "updatedAt": "2026-08-30T20:19:09.677Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2468,7 +2468,7 @@
         {
           "id": "lip-lightweight-rectangular-quartz",
           "referenceLabel": "Find exact current LIP Churchill T18 reference 671937 evidence for case thickness, strap-to-case attachment, and no-lume status only: require sources whose 38.5 x 21.2 mm, sapphire, ivory Roman-numeral dial, blue sword hands, and dark-blue crocodile-pattern leather strap agree with LIP's current exact configuration; for thickness prefer LIP or convergent exact-reference measurements and reject older 21 x 38 mm mineral-crystal/Arabic-dial configurations; for attachment require an exact-reference or LIP replacement/service record that distinguishes spring bars or quick release from the pin-buckle wrist closure; for lume require an explicit whole-watch or hands-and-dial absence statement, not silence or a source whose crystal/dial configuration conflicts with LIP",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "under_300"

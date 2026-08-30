@@ -838,6 +838,23 @@ configuration thickness, attachment, and explicit hands-and-dial lume absence.
 The ignored ledger now retains 54 attempts (32 succeeded, 22 failed) across 28
 target IDs with USD 0.42046 recorded provider cost.
 
+The narrow LIP pass rejected one more contradictory response, then resolved the
+case attachment from a live exact-reference Masters in Time specification. That
+source identifies the current blue leather, Ronda, sapphire, 18 mm configuration
+and explicitly separates `Quick release pushpins` at the straight strap mount
+from the buckle clasp, supporting `attachmentType: quick_release`. It does not
+close the remaining gates: 8.5 mm is still a lone secondary thickness value,
+while the conflicting Horel configuration reports 8 mm, and no source consistent
+with LIP's current sapphire/ivory Roman-numeral row explicitly covers lume
+absence across both hands and dial. Review validates the current EUR 249 French
+offer, 21.2 x 38.5 mm non-round geometry, 18 mm lugs, 27 g configured weight,
+Ronda 1064 at -10/+20 seconds per month, 30 m resistance, sapphire, quick release,
+and no-date small seconds. `caseThicknessMm` and `lumeGrade` are the two M1 gaps,
+so LIP remains research-only. The ignored ledger now retains 56 attempts (33
+succeeded, 23 failed) across 28 target IDs with USD 0.43617 recorded provider
+cost. The strict manifest has 28 reviews: six migration-ready, 20 needing more
+evidence, and two excluded; 18 targets are accepted and 20 remain active.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
