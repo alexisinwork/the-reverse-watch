@@ -460,6 +460,15 @@ unknown null. An active conventional-width request now returns the same hard
 incompatibility in TypeScript and SQL. The row remains research-only for full
 configured weight and numerical rate tolerance.
 
+A narrow 2026-08-30 Perplexity-assisted recheck found no qualifying evidence
+for either Blancpain gap. The exact orange-rubber and pin-buckle product page
+and June 2026 dossier contain no full assembled-watch mass, and no
+exact-reference packaging-free scale protocol was located. They also contain no
+numerical 13P5A rate bound, service tolerance, certification result, or
+documented exact-reference rate test. The published 4 Hz frequency is not
+accuracy, so both fields remain null without importing generic COSC or related
+calibre performance.
+
 A Vostok Amphibia 420059 follow-up resolved `lumeGrade: weak`. Two independent
 exact-reference reviews report sparse application, difficult low-light reading,
 and fast fade; independent verified-purchase and long-term exact-reference owner

@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "blancpain-specialist-dive",
   "jobId": "e23cb473-20bc-4f5c-a443-f9909164cc8a",
-  "reviewedAt": "2026-08-29T19:07:01Z",
+  "reviewedAt": "2026-08-30T08:26:33Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -15,7 +15,7 @@
     {
       "url": "https://www.blancpain.com/en/fifty-fathoms/fifty-fathoms-tech-5019a-12b30-94a",
       "status": "validated_primary",
-      "note": "The exact official product page independently validates reference 5019A 12B30 94A, current status, 47 x 14.80 mm titanium case, sapphire back, rubber strap with pin buckle, automatic caliber 13P5A, 120-hour reserve, 300 m water resistance, date, secured movement, and an explicit dash rather than a conventional width-between-horns figure. It does not publish lug-to-lug length, full weight, or numerical accuracy."
+      "note": "The exact official product page independently validates reference 5019A 12B30 94A, current status, 47 x 14.80 mm titanium case, sapphire back, rubber strap with pin buckle, automatic caliber 13P5A, 120-hour reserve, 300 m water resistance, date, secured movement, and an explicit dash rather than a conventional width-between-horns figure. A narrow 2026-08-30 source-discovery recheck confirmed that its 4 Hz frequency is not a rate tolerance and that it publishes neither full configured weight nor numerical accuracy."
     },
     {
       "url": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-tech-5019a-12b30-94a",
@@ -25,7 +25,7 @@
     {
       "url": "https://www.blancpain.com/sites/default/files/document/2026-06/blancpain_fifty_fathoms_tech_en.pdf",
       "status": "validated_primary",
-      "note": "Blancpain's June 2026 technical dossier independently corroborates the exact reference, Grade 23 titanium case, sapphire front and back, 47 x 14.81 mm geometry, central-lug interchangeable strap system, dual-color Super-LumiNova on hands and block indexes, orange rubber strap with pin buckle, 13P5A movement, 120-hour reserve, 300 m rating, date, and non-limited edition."
+      "note": "Blancpain's June 2026 technical dossier independently corroborates the exact reference, Grade 23 titanium case, sapphire front and back, 47 x 14.81 mm geometry, central-lug interchangeable strap system, dual-color Super-LumiNova on hands and block indexes, orange rubber strap with pin buckle, 13P5A movement, 120-hour reserve, 300 m rating, date, and non-limited edition. Rechecked on 2026-08-30, it supplies neither an assembled bare-watch mass nor a numerical 13P5A rate bound."
     },
     {
       "url": "https://www.blancpain.com/en/fifty-fathoms/fifty-fathoms-tech",
@@ -165,8 +165,24 @@
     {
       "fieldName": "complications",
       "reason": "Date is modeled separately and the dive hand, bezel, and helium valve are not supported catalogue complication enum values."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The exact orange-rubber and pin-buckle product page and technical dossier publish dimensions and materials but no assembled bare-watch mass. No exact-reference scale measurement with an explicit packaging-free configuration was located, so no gram value is inferred."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "reason": "No Blancpain product, movement, service, certification, or documented exact-reference test source located on 2026-08-30 publishes a lower numerical rate bound for caliber 13P5A."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "reason": "No exact-applicable source publishes an upper numerical rate bound for caliber 13P5A; generic COSC values and other Blancpain calibers are not transferred to this reference."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "reason": "A rate period cannot be accepted independently because no exact-applicable lower or upper accuracy value exists. The published 4 Hz frequency is an operating specification, not timekeeping accuracy."
     }
   ],
   "missingM1Fields": ["weightFullG", "accuracy"],
-  "note": "Keep as research-only. Exact primary sources resolve the current homogeneous retail offer, proprietary strap interface, lume mapping, and conventional lug-width non-applicability. The exact central-lug construction plus an exact-reference hands-on specification resolve lug-to-lug at 47 mm, equal to the case diameter because no conventional lugs project beyond it. Blancpain still publishes neither full configured weight nor a numerical rate tolerance, leaving those two M1 gaps open."
+  "note": "Keep as research-only. Exact primary sources resolve the current homogeneous retail offer, proprietary strap interface, lume mapping, and conventional lug-width non-applicability. The exact central-lug construction plus an exact-reference hands-on specification resolve lug-to-lug at 47 mm, equal to the case diameter because no conventional lugs project beyond it. A 2026-08-30 Perplexity-assisted pass and independent official-source recheck found no packaging-free full configured weight and no numerical rate tolerance or documented exact-reference rate test for caliber 13P5A. Both values remain null."
 }

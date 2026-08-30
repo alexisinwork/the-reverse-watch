@@ -536,6 +536,15 @@ evidence, while an active conventional-width request deterministically rejects
 this architecture in both TypeScript and SQL. The row remains research-only for
 full configured weight and numerical accuracy.
 
+A 2026-08-30 Perplexity-assisted Blancpain follow-up retained both remaining
+gaps. The exact orange-rubber and pin-buckle product page and June 2026 dossier
+publish dimensions, materials, calibre, 4 Hz frequency, and reserve but no
+assembled bare-watch mass. No exact-reference packaging-free scale measurement
+was located. The same primary sources publish no numerical 13P5A rate bound,
+service tolerance, certification result, or documented exact-reference rate
+test; 4 Hz is an operating frequency, not accuracy. Weight and accuracy remain
+fail-closed rather than inheriting generic COSC or sibling-calibre values.
+
 Vostok Amphibia 420059 now has a reviewed `weak` lume grade. Two independent
 exact-reference reviews report sparse application, difficult low-light reading,
 and fast fade; a verified-purchase report and a separate long-term exact-model

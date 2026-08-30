@@ -514,7 +514,11 @@ For the post-batch evidence-gap pass on the same date:
   weight and numerical accuracy. Blancpain's exact dossier establishes its 47
   mm diameter and central-lug construction; an exact-reference hands-on
   specification reports 47 mm lug-to-lug, and the exact manufacturer width
-  dash is reviewed as a physical `not_applicable` conventional lug width.
+  dash is reviewed as a physical `not_applicable` conventional lug width. A
+  2026-08-30 Perplexity-assisted pass and independent official-source recheck
+  found no packaging-free full-watch scale measurement and no numerical 13P5A
+  rate bound, service tolerance, certification result, or documented exact-watch
+  test. The published 4 Hz frequency is not accuracy, so both gaps remain null.
 - The Blancpain width dash exposed and now closes a cross-layer applicability
   gap related to Claude's Q11 audit. Catalogue version 2, the strict seed
   parser, the TypeScript hard filter, migration `0018`, and the v3 RPC pair all
