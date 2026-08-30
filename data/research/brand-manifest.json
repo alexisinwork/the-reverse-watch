@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T20:54:24.290Z",
+  "updatedAt": "2026-08-30T21:14:41.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2243,7 +2243,46 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 20
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "brew-metric-titanium-chronograph",
+          "referenceLabel": "Brew Metric Titanium Chronograph MTRC-TITAN on its supplied titanium bracelet; validate one exact homogeneous current row and reject steel Metric, Super Metric, other dial, and replacement-strap facts",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month",
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Source-led exact-reference hypothesis for a new brand and an 89 g titanium meca-quartz chronograph at USD 495. Its 41.5 mm overall case length should fit every representative wrist band, while the published monthly rate supports all four accuracy profiles. The homogeneous bracelet row would open 60 currently empty 300_500 zero-maintenance studio chronograph cells if one bounded provider job and independent review confirm every pre-screened M1 fact."
+        }
+      ]
     },
     {
       "slug": "autodromo",

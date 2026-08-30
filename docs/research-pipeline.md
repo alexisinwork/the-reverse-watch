@@ -943,6 +943,31 @@ variants and six golden profiles. Deterministic coverage rises by the planned
 migration-ready decisions. The ignored provider ledger contains 59 attempts
 (36 succeeded, 23 failed) across 30 target IDs and USD 0.48496 recorded cost.
 
+The next source-led target is exact Brew Metric Titanium Chronograph
+`MTRC-TITAN` on its supplied titanium bracelet. Primary pre-screen retrieved
+2026-08-30 from the [official product page](https://www.brew-watches.com/products/metric-titanium):
+the live route exposes USD 495 and Add to Cart, 36 x 41.5 x 10.75 mm geometry,
+19.85 mm nominal lug width, 89 g full configured weight, titanium case and
+bracelet, sapphire, 50 m resistance, and a VK68 meca-quartz chronograph. The
+[manufacturer movement guide](https://www.timemodule.com/uploads/attachments/download/Technical%20Guide/VK68_TG.pdf)
+specifies less than +/-20 seconds per month for VK68A. Brew's
+[current bracelet instructions](https://www.brew-watches.com/blogs/design-timing-and-everyday-ritual/how-to-change-a-watch-strap-step-by-step-guide)
+explicitly state that all Metric metal bracelets use quick-release spring bars.
+An [exact-colorway report](https://www.hodinkee.com/articles/brew-watch-co-doubles-down-on-retro-with-the-super-metric-chronographs)
+identifies Titanium among the Metric variants that omit a date window, while a
+manufacturer-hosted exact-product verified-buyer review explicitly reports no
+lume. A [current Japanese retailer record](https://www.neuve-a.net/shop/g/g4895239407708/)
+maps that product identity to reference `MTRC-TITAN`.
+
+No pre-screened value is accepted. One bounded Perplexity job must independently
+validate the exact homogeneous row and retain conflicts without blending steel
+Metric, Super Metric, other dial, or replacement-strap facts. The planned row
+would open 60 currently empty `300_500`, zero-maintenance, studio chronograph
+cells: all five representative wrist bands, all four supported accuracy
+tolerances, and the three weight choices satisfied by 89 g. The manifest now
+has one planned target; the ignored provider ledger is unchanged at 59 attempts
+(36 succeeded, 23 failed) across 30 target IDs and USD 0.48496 recorded cost.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

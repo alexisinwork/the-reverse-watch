@@ -992,6 +992,22 @@ from 576 to 624/28,800 (2.17%). Strict research now reports 20 accepted, 20
 ledger contains 59 attempts (36 succeeded, 23 failed) across 30 target IDs and
 USD 0.48496 recorded provider cost.
 
+The next source-led checkpoint selects Brew Metric Titanium Chronograph
+`MTRC-TITAN` on its supplied titanium bracelet. Primary pre-screening retrieved
+2026-08-30 exposes a current USD 495 order path, 36 x 41.5 x 10.75 mm case,
+19.85 mm nominal lug width, 89 g configured mass, titanium case and bracelet,
+sapphire, 50 m resistance, and VK68 meca-quartz chronograph operation. TMI's
+exact VK68A guide publishes a less-than +/-20-seconds-per-month rate; Brew's
+own current bracelet guide explicitly includes every Metric bracelet in its
+quick-release spring-bar statement. Exact-reference evidence also identifies
+the Titanium colorway as no-date and a manufacturer-hosted verified buyer
+explicitly reports no lume. These remain routing inputs, not accepted facts:
+one bounded Perplexity job and independent source review must keep the row
+separate from steel Metric, Super Metric, other dial, and replacement-strap
+facts. If all M1 gates survive review, the row opens 60 currently empty
+`300_500`, zero-maintenance, studio chronograph cells across every wrist and
+supported accuracy band.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

@@ -60,6 +60,12 @@ phase.
   strong LumiBrite plus spring-bar attachment without treating the clasp as the
   interface. Migration `0022` is live; 20-row catalogue/SQL parity passes, and
   coverage is now 624/28,800 cells (2.17%).
+- The next active session-plan item is one bounded research job for Brew Metric
+  Titanium Chronograph `MTRC-TITAN` on its supplied titanium bracelet. The
+  2026-08-30 primary pre-screen covers every M1 class and projects 60 currently
+  empty `300_500`, zero-maintenance, studio chronograph cells. The manifest
+  target is `planned`; none of the pre-screened facts is accepted until the
+  provider result receives independent exact-reference review.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -620,11 +626,17 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Treat the live 20-row v3 catalogue and six-profile parity as the relational
+1. Run exactly one bounded Perplexity attempt for
+   `brew-metric-titanium-chronograph`, then independently review its exact
+   `MTRC-TITAN` bracelet configuration. Reject steel Metric, Super Metric,
+   other-dial, replacement-strap, and movement-capability facts that are not
+   exposed by the configured watch. If and only if all M1 gates remain complete,
+   render additive migration `0023`, apply it remotely, and prove live parity.
+2. Treat the live 20-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.
-2. Resolve or explicitly retain the first review gaps. A 2026-08-30
+3. Resolve or explicitly retain the first review gaps. A 2026-08-30
    Perplexity-assisted source pass explicitly retained Citizen BM8180-03E's sole
    lume gap: exact-reference reports separate hands from numerals but still span
    all-night visibility to near-impossible dark reading without a controlled
@@ -643,20 +655,20 @@ On 2026-08-28 for Phases 1–4:
    still omitted any connector or exploded-interface specification. AP
    16202ST's conventional lug width is now verified non-applicable, but its five
    remaining gaps keep it research-only.
-3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
+4. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy and no-date status are now resolved;
    its lume and attachment gaps remain after the 2026-08-30 secondary spring-bar
    pass found no public Omega corroboration and no repeatable lume test. Do not
    salvage contradictory or blocked provider claims manually.
-4. Convert only M1-complete reviewed candidates into small additive catalogue
+5. Convert only M1-complete reviewed candidates into small additive catalogue
    migrations. Keep every knowledge-pack family research-only until it is split
    into homogeneous variants and independently sourced.
-5. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
+6. Rerun coverage, strict catalogue validation, SQL parity, and the fast gate
    after every accepted batch.
-6. Continue prioritizing coverage and original-plan purpose over raw brand
+7. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
-7. If database access remains unavailable, do not rerun the now-empty default
+8. If database access remains unavailable, do not rerun the now-empty default
    queue. Close a named existing review gap only from independently identified
    exact-reference evidence, or add a new target with an explicit coverage or
    original-plan purpose before invoking the worker. Do not repeat excluded
@@ -664,7 +676,7 @@ On 2026-08-28 for Phases 1–4:
    performance for a missing published exact-applicable bound, infer an
    attachment interface from the supplied strap or bracelet, or treat a blank
    conventional lug width as non-applicable without exact reviewed evidence.
-8. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
+9. Keep embeddings, chunking, Mastra, Ollama, and RunPod out of the production
    path until the optional held-out evaluation has a deterministic baseline to
    beat.
 
