@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:04:16.118Z",
+  "updatedAt": "2026-08-30T19:14:21Z",
   "brands": [
     {
       "slug": "rolex",
@@ -953,7 +953,45 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 40
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "rado-high-accuracy-ceramic-daily",
+          "referenceLabel": "Validate current Rado HyperChrome Quartz R32280109 as one homogeneous black-rubber configuration with exact wearing span, full configured mass, numerical PreciDrive accuracy, graded night readability, and factory attachment evidence",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "wristBands": [
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month",
+              "no_requirement",
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day"
+            ],
+            "weightLimits": [
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add a new-brand, sub-120 g, high-accuracy quartz daily watch to 72 currently empty 1000-2000 precision/simple-date cells; require exact configuration and interface proof before ranking."
+        }
+      ]
     },
     {
       "slug": "bell-ross",

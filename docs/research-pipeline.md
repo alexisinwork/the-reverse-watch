@@ -665,6 +665,18 @@ no-date NH38 configuration. Both describe fast initial lume charging, but
 neither supplies controlled charge, timed decay, or a repeatable comparison
 grade; `lumeGrade` remains the sole M1 gap and no seed row is added.
 
+The next coverage hypothesis is exact Rado HyperChrome Quartz `R32280109` on
+black rubber. Rado's current regional product pages already expose 87 g full
+weight, 41.5 x 11.7 mm case geometry, calibre R292 PreciDrive/HeavyDrive at
+no more than +/-10 seconds per year, 150 m resistance, sapphire, date, and
+explicit dual-colour nighttime readability. A current exact-reference record
+reports a conservative 47.7 mm wearing span. If independent review also proves
+that span and the factory strap-to-case interface without merging an older
+specification, the row projects into 72 currently empty `1000_2000`,
+zero-maintenance, simple-date cells and adds a new brand to every one. The
+target remains only a research hypothesis until provider and direct source
+review pass all M1 gates.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

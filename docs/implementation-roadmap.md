@@ -748,6 +748,15 @@ narrow Perplexity follow-up found only fast initial-charge descriptions for
 the BGW9 Grade A lume, not controlled or timed performance evidence.
 `lumeGrade` therefore remains the sole M1 gap and the row stays research-only.
 
+The next explicit coverage target is Rado HyperChrome Quartz `R32280109` on
+black rubber. Primary pre-screening exposes 87 g full weight, R292
+PreciDrive/HeavyDrive at +/-10 seconds per year, 150 m resistance, sapphire,
+date, and explicit nighttime readability. With a conservatively pre-screened
+47.7 mm wearing span, the homogeneous configuration would add a new brand to
+72 currently empty `1000_2000`, zero-maintenance, simple-date cells. The target
+still requires independent exact-reference span and factory attachment
+evidence before any review can become migration-ready.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
