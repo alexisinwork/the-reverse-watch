@@ -590,9 +590,12 @@ On 2026-08-28 for Phases 1–4:
    Perplexity-assisted source pass explicitly retained Citizen BM8180-03E's sole
    lume gap: exact-reference reports separate hands from numerals but still span
    all-night visibility to near-impossible dark reading without a controlled
-   charge or timed decay method. Cartier WSTA0107 now needs only numerical
-   exact-applicable quartz accuracy; its rectangular geometry and explicit
-   no-lume evidence are supported, but it remains research-only.
+   charge or timed decay method. A separate 2026-08-30 Cartier pass surfaced a
+   blocked exact regional route reported to name calibre 157 and validated the
+   official high-efficiency-quartz overview, but found only battery-autonomy
+   claims, not a numerical rate bound and period. WSTA0107's accuracy gap is
+   therefore explicitly retained; its rectangular geometry and explicit
+   no-lume evidence remain supported.
    Swatch SO28N100 needs resolved full-watch weight, a numerical
    exact-applicable quartz rate bound, and a repeatable lume grade. Do not
    accept its unqualified official `c_weight = 64` as full-watch mass merely to

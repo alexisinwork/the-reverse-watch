@@ -495,6 +495,15 @@ infer absence merely from omitted manufacturer feature prose. Numerical
 exact-applicable quartz accuracy remains the sole M1 gap, so Cartier stays
 research-only and no seed or migration row is added.
 
+A 2026-08-30 Perplexity-assisted follow-up searched specifically for an exact
+numerical Cartier tolerance. It surfaced a blocked exact regional product route
+reported to identify the High Autonomy quartz configuration and calibre 157;
+Cartier's independently retrievable movement overview documents approximately
+eight years of autonomy. Neither supplies a lower/upper rate bound with a
+defined period. A third-party calibre record also lacks a numerical tolerance
+and cannot prove exact WSTA0107 applicability. The accuracy gap is therefore
+explicitly retained rather than filled with a generic quartz assumption.
+
 The same narrow pass explicitly retained several other gaps instead of forcing
 closure: Certina's exact-linked general mechanical manual describes only what
 “most” non-chronometers average, Vostok's factory pages do not identify the

@@ -528,6 +528,16 @@ no-luminescence classification; Cartier's own description corroborates the
 plain blued-steel-hand configuration. Numerical exact-applicable accuracy is
 now the sole M1 gap. It remains research-only.
 
+A 2026-08-30 Perplexity-assisted Cartier accuracy pass explicitly retained that
+gap. It surfaced a blocked exact regional product route reported to identify
+the High Autonomy quartz configuration and calibre 157, while Cartier's
+independently retrievable movement overview describes approximately eight years
+of autonomy and reduced energy consumption. Neither supplies a numerical
+lower/upper rate tolerance with a defined period. A third-party calibre
+database also supplies no numerical bound and does not establish exact WSTA0107
+applicability. Generic quartz performance therefore remains prohibited, and
+Cartier stays `needs_more_evidence`.
+
 The applicability contract then resolved one Audemars Piguet Royal Oak
 16202ST.OO.1240ST.02 gap without inventing a width. AP's own Heritage record
 explicitly includes model 16202 and states that its case extensions constitute
