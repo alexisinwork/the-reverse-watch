@@ -677,6 +677,23 @@ zero-maintenance, simple-date cells and adds a new brand to every one. The
 target remains only a research hypothesis until provider and direct source
 review pass all M1 gates.
 
+The first Rado job returned a valid 29-fact exact-reference extraction. Direct
+review selected Rado's localized U.S. page rather than the provider's transient
+Swiss locale: exact `R32280109` is a USD 1,400 Add to Cart offer with 41.5 x
+11.7 mm geometry, 87 g configured weight, R292 PreciDrive/HeavyDrive at
+-10/+10 seconds per year, 150 m resistance, sapphire, and date. The page's
+dual-colour Super-LumiNova description establishes material and immediate
+night readability, not a timed performance grade; its pin buckle identifies
+the wrist closure, not the strap-to-case fastener. A narrow Perplexity pass
+found no exact Rado service record for that interface. The only 47.7 mm span
+and 20/21 mm width records share an older conflicting 41 x 12.2 mm, 89.6 g,
+100 m specification set, so they are rejected rather than blended into the
+current row. Lug-to-lug, lug width, lume grade, and attachment type remain the
+four M1 gaps. The ignored ledger now retains 45 attempts (25 succeeded, 20
+failed) across 24 target IDs with USD 0.31920 recorded provider cost. The
+strict manifest has 24 reviews: six migration-ready, 16 needing more evidence,
+and two excluded; 18 targets are accepted and 16 remain active.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

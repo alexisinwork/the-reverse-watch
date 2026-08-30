@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:14:21Z",
+  "updatedAt": "2026-08-30T19:16:38.529Z",
   "brands": [
     {
       "slug": "rolex",
@@ -957,7 +957,7 @@
         {
           "id": "rado-high-accuracy-ceramic-daily",
           "referenceLabel": "Validate current Rado HyperChrome Quartz R32280109 as one homogeneous black-rubber configuration with exact wearing span, full configured mass, numerical PreciDrive accuracy, graded night readability, and factory attachment evidence",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "1000_2000"

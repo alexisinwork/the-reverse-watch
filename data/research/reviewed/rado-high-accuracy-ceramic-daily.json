@@ -1,0 +1,192 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rado-high-accuracy-ceramic-daily",
+  "jobId": "cfc4e254-2f7e-4489-a638-812da3382aa1",
+  "reviewedAt": "2026-08-30T19:18:07Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rado",
+    "model": "HyperChrome Quartz",
+    "referenceCode": "R32280109",
+    "variantName": "Rhodium dial on black rubber strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "status": "validated_primary",
+      "note": "Rado's exact live U.S. e-commerce route identifies R32280109 and EAN 7612819066196 as a new USD 1,400 Add to Cart offer. It independently publishes the rhodium-dial and black-rubber configuration, stainless-steel case and back, 41.5 x 11.7 mm geometry, 87 g configured weight, R292 quartz PreciDrive/HeavyDrive accuracy of -10/+10 seconds per year, 150 m resistance, sapphire, date, Super-LumiNova material and dual-colour nighttime emission, and a pin buckle. It does not publish lug-to-lug, lug width, a timed lume-performance result, or the strap-to-case mechanism. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.zegarki.zgora.pl/zegarek/60470_Rado_HyperChrome_Gent_Quartz_XL_R32280109",
+      "status": "rejected",
+      "note": "The exact-reference retailer publishes 47.7 mm lug-to-lug and a 20/21 mm strap-width record, but the same page carries an older conflicting 41 x 12.2 mm, 89.6 g, and 100 m specification set instead of Rado's current 41.5 x 11.7 mm, 87 g, and 150 m row. With no measurement date or protocol tying 47.7 mm to the current revised specification, neither dimension is promoted. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.thbaker.co.uk/rado-mens-hyperchrome-black-rubber-strap-watch-r32280109",
+      "status": "rejected",
+      "note": "This exact-reference retailer publishes 20 mm lug width but also retains the older 41 mm case description and supplies no Rado service-part or strap-fastener evidence. It cannot resolve the current geometry or factory attachment contract. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.rado.com/media/sgecom_contentsystem/PDF/User_manuals/Manual_en_2020.pdf",
+      "status": "validated_primary",
+      "note": "Rado's general manual independently states that its average quartz deviation should not exceed 15 seconds per month, but the exact product page's stronger -10/+10 seconds-per-year R292 claim controls this row. The manual does not identify the R32280109 strap fastener or exact case span. Retrieved 2026-08-30."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.weightFullG",
+    "movement.caliber",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "variantName",
+      "value": "Rhodium dial on black rubber strap",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "The normalized name fixes the exact current dial, case, and black caoutchouc configuration rather than describing only its diameter."
+    },
+    {
+      "fieldName": "productUrl",
+      "value": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "The U.S.-localized canonical route pins the reviewed commercial snapshot to one explicit market."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "Rado lists the exact reference in its current HyperChrome collection with a live Add to Cart offer."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 140000,
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "Rado's exact U.S. route and embedded product payload publish USD 1,400."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "The reviewed localized manufacturer offer is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "The en_us e-commerce route and USD product payload define the reviewed U.S. market."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "The exact U.S. page exposes Add to Cart for R32280109 at retrieval time."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "Rado's manufacturer e-shop maps to the catalogue's authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "The exact manufacturer Add to Cart route is a new-watch offer."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "quartz",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "Rado explicitly identifies R292 as quartz; the value is normalized to the catalogue enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "Rado publishes a curved sapphire crystal with inner anti-reflective coating; sapphire is the normalized catalogue enum."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "The exact watch supplies time and date only; date is represented separately and no supported catalogue complication is present."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
+      "note": "Rado explicitly publishes a date window at three o'clock."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The extraction's locale-neutral route resolved a CHF 1,200 snapshot. Direct review selects the explicit current U.S. e-commerce route and its USD 1,400 product payload so amount, currency, and country remain one homogeneous market record."
+    },
+    {
+      "fieldName": "price.currency",
+      "reason": "The extraction's transient Swiss locale is replaced by the independently retrieved U.S.-localized offer."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "CHF alone would not establish country. The reviewed U.S. record derives market from the localized route and embedded store payload."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Listed by manufacturer does not encode purchase availability. The current exact U.S. Add to Cart control supports in_stock."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Manufacturer e-commerce is provider prose, not a catalogue enum, and is normalized to authorized_dealer."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "Recommended retail price; VAT included is offer prose rather than a condition enum and is normalized from the manufacturer storefront to new."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Quartz is normalized to the lowercase catalogue enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "The full crystal description is normalized to the sapphire catalogue enum while coating details remain in source review."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The extracted value describes material placement and glow colors, not the required none, weak, moderate, or strong performance class. Rado publishes no controlled charge, timed decay, or repeatable comparison result."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "A rubber strap and pin buckle identify the wearable material and wrist closure, not the strap-to-case fastener. No exact Rado service or parts record establishes spring_bar, quick_release, proprietary, or integrated."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is not a supported complication enum and is represented separately; the normalized supported-complication list is empty."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "Present; date window at three o'clock is provider prose and is normalized to present."
+    }
+  ],
+  "missingM1Fields": [
+    "lugToLugMm",
+    "lugWidthMm",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "Keep as research-only. Direct primary review validates current Rado HyperChrome Quartz R32280109 on black rubber as a new, in-stock USD 1,400 U.S. offer with 41.5 x 11.7 mm geometry, 87 g configured mass, R292 PreciDrive/HeavyDrive accuracy of -10/+10 seconds per year, 150 m resistance, sapphire, and date. Rado describes Super-LumiNova colors and low-light legibility but supplies no repeatable performance grade; its pin buckle does not identify the case fastener. A narrow Perplexity pass found no exact service/parts interface record and rejected a 47.7 mm span plus 20/21 mm width because their retailer pages retain an older conflicting 41 x 12.2 mm, 89.6 g, 100 m specification set. Lug-to-lug, lug width, lume grade, and attachment type therefore remain null."
+}

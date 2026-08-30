@@ -757,6 +757,18 @@ date, and explicit nighttime readability. With a conservatively pre-screened
 still requires independent exact-reference span and factory attachment
 evidence before any review can become migration-ready.
 
+The first Rado extraction resolved cleanly, but direct review retained four
+gaps. Rado's exact U.S. route validates a current USD 1,400 Add to Cart offer,
+41.5 x 11.7 mm geometry, 87 g configured mass, R292 PreciDrive/HeavyDrive at
+-10/+10 seconds per year, 150 m resistance, sapphire, and date. Its
+dual-colour Super-LumiNova prose is not a repeatable performance grade, and the
+pin buckle is the wrist closure rather than the case fastener. A narrow
+Perplexity pass found no exact Rado service/parts interface record. The only
+47.7 mm lug-to-lug and 20/21 mm width records are bundled with an older
+conflicting 41 x 12.2 mm, 89.6 g, 100 m specification set, so they cannot be
+merged into the current row. Lug-to-lug, lug width, lume grade, and attachment
+type remain fail-closed; the row is not promoted.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
