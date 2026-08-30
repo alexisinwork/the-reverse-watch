@@ -588,6 +588,15 @@ interface specification. Replacement-case spring bars and ambiguous bracelet
 pin discussions therefore remain insufficient. `attachmentType` stays null,
 and Vostok remains `needs_more_evidence` with one M1 gap.
 
+A second narrow attachment pass found a directly retrievable Meranom listing
+for Vostok-branded 18 mm by 2 mm spring bars whose retailer answer explicitly
+says they fit Amphibia case 420. That proves a compatible removable case part,
+not the connector installed on exact factory bracelet configuration 420059. A
+separate replacement-bracelet page offers case-420 end links and new spring
+bars while distinguishing the replacement from the factory bracelet. The row
+therefore remains fail-closed rather than upgrading compatibility evidence into
+an exact configured attachment fact.
+
 Cartier Tank Must WSTA0107 now has an honest non-round geometry path instead of
 a synthetic diameter. The runtime contract accepts a complete 29.5 x 22 mm
 length/width pair, fit uses evidenced overall length only when conventional

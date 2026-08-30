@@ -515,6 +515,16 @@ or quick-release specification. The stronger primary sources therefore retain
 the gap rather than convert dealer replacement-case evidence into a factory
 interface fact.
 
+A second narrow attachment pass found Meranom's Vostok-branded 18 mm by 2 mm
+spring-bar listing and its explicit answer that the part fits Amphibia case
+420. Direct retrieval validates that statement, but the factory-adjacent
+retailer still does not identify the factory-installed bracelet on exact
+420059. A separate universal-bracelet page offers case-420 end links, shows the
+replacement on 420059, and supplies new spring bars while explicitly
+distinguishing that bracelet from the factory item. The evidence proves case
+compatibility, not the original configured connector; `attachmentType` remains
+null.
+
 A Cartier Tank Must WSTA0107 follow-up resolved the earlier blocked-source and
 geometry failures. The exact official page is independently retrievable in
 Malaysia and supplies 29.5 x 22 x 6.6 mm rectangular geometry, High Autonomy

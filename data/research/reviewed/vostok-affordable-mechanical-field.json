@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "vostok-affordable-mechanical-field",
   "jobId": "b4a10faa-fde5-4e14-ae0e-6acb189c2260",
-  "reviewedAt": "2026-08-30T08:07:53Z",
+  "reviewedAt": "2026-08-30T18:40:51Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -71,6 +71,16 @@
       "url": "https://vostok-world24.com/en/collections/frontpage/products/vostok-gehause-420-edelstahl",
       "status": "rejected",
       "note": "The specialist's replacement 420 case includes spring bars for the band connection, but it is a dealer-supplied component rather than manufacturer service evidence for the factory bracelet on exact reference 420059. It does not meet the catalogue's physical-interface corroboration policy."
+    },
+    {
+      "url": "https://meranom.com/en/komandirskie-classic/komandirskie-classic-watch-parts/vostok-watch-springbars-18mm.html",
+      "status": "validated_secondary",
+      "note": "Retrieved directly after a second narrow 2026-08-30 Perplexity pass. Meranom lists Vostok-branded 18 mm by 2 mm spring bars and answers that they fit the Amphibia 420 case. This establishes a compatible removable case part, but Meranom is a factory-adjacent retailer and the listing does not identify the factory-installed bracelet on exact reference 420059."
+    },
+    {
+      "url": "https://meranom.com/en/amphibian-classic/bracelets/universal-metal-bracelet-for-vostok-amphibia-20mm.html",
+      "status": "rejected",
+      "note": "The replacement universal bracelet explicitly offers a separate 18 mm end link for case 42/420, shows it fitted to 420059, and an exact-reference owner says the replacement arrived with new spring bars. The page also distinguishes it from the factory bracelet and says the factory does not make this bracelet, so it cannot establish the original supplied interface."
     }
   ],
   "verifiedProvisionalFields": [
@@ -194,7 +204,7 @@
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Stainless-steel bracelet describes the supplied material, not the bracelet-to-case interface. A 2026-08-30 review of Vostok's exact official shop route and case-420 category still found no manufacturer statement or diagram establishing spring_bar, fixed_bar, screw_bar, proprietary, integrated, or quick_release."
+      "reason": "Stainless-steel bracelet describes the supplied material, not the bracelet-to-case interface. Vostok's exact official shop route and case-420 category still provide no connector statement or diagram. A second Perplexity-assisted pass located Vostok-branded 18 mm spring bars that Meranom says fit case 420, but neither that retailer parts listing nor a separate replacement-bracelet page identifies the factory-installed 420059 bracelet interface."
     },
     {
       "fieldName": "complications",
@@ -202,5 +212,5 @@
     }
   ],
   "missingM1Fields": ["attachmentType"],
-  "note": "Keep as research-only. Vostok's exact factory page now provides primary evidence for the homogeneous 2416/420059 steel-bracelet configuration, including 39.6 x 46 x 15 mm dimensions and 128 g full weight. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. A 2026-08-30 Perplexity-assisted pass added the exact official factory-shop page and case-420 category, but both still name only the bracelet or case family without documenting the bracelet-to-case connector. The available pins discussion remains ambiguous between removable links and case attachment, and dealer-supplied replacement-case spring bars still lack manufacturer service corroboration. Attachment remains the sole M1 gap."
+  "note": "Keep as research-only. Vostok's exact factory page now provides primary evidence for the homogeneous 2416/420059 steel-bracelet configuration, including 39.6 x 46 x 15 mm dimensions and 128 g full weight. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. Two 2026-08-30 Perplexity-assisted passes found the exact official factory-shop route, case-420 category, and a retailer listing for Vostok-branded 18 mm spring bars compatible with case 420. None identifies how the factory-installed bracelet on exact 420059 is secured, while the located spring-bar bracelet is explicitly a separate replacement. Attachment remains the sole M1 gap."
 }
