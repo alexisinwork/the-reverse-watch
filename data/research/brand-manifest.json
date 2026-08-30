@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
   "strategy": "coverage_first",
-  "targetBrandCount": 202,
-  "updatedAt": "2026-08-30T21:42:16.000Z",
+  "targetBrandCount": 203,
+  "updatedAt": "2026-08-30T21:59:13.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4443,6 +4443,55 @@
           },
           "coverageRationale": "Independent exact-reference review validates the current EUR 239 official EU order path deliverable to Poland, 36 mm diameter, 43 mm overall length, 7.5-8 mm thickness, 18 mm interface, 37 g configured weight, Ronda 513 RL -10/+20-seconds-per-month rate, 30 m resistance, mineral crystal, no-date state, no luminescence, and manufacturer quick-change system. Generic retailer Stop2go/backlight boilerplate is rejected because its structured row also conflicts with Mondaine's exact weight. The homogeneous formal/studio row opens 160 previously empty under_300, zero-maintenance, time-only cells.",
           "catalogueVariantId": "mondaine-classic-a660-30314-11sbbv"
+        }
+      ]
+    },
+    {
+      "slug": "bertucci",
+      "name": "Bertucci",
+      "priority": "P0",
+      "manifestRationale": "Source-led ultralight titanium field-quartz candidate outside the owner knowledge pack; retained at exact reference level to open affordable simple-date coverage without inheriting adjacent A-2T variants.",
+      "dossierState": "not_started",
+      "targets": [
+        {
+          "id": "bertucci-a2t-original-classic-12022",
+          "referenceLabel": "Bertucci A-2T Original Classic 12022, black dial on the supplied black B-TYPE nylon band; keep the exact current 40 mm titanium, three-year-battery configuration separate from A-2T Super Classic 12723/12724, A-2TS solar, other dial and band SKUs, and stale 100 m or 54 g retailer rows",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "no_requirement",
+              "within_15_seconds_per_day",
+              "within_5_seconds_per_day",
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Primary and exact-reference pre-screening retrieved 2026-08-30 covers the current USD 185 exact 12022 offer, 40 mm diameter, 49.5 mm overall length, 11 mm thickness, 22 mm fixed titanium band-retention bars, 62 g configured mass, matte titanium case, all-metal Japanese quartz movement, shared -20/+20-seconds-per-month rate for the exact distributor-listed Miyota GM10 or 2S60 alternatives, 200 m resistance, screw-down crown and back, hardened mineral crystal, date, and Swiss luminous hands and markers with reported all-night hand legibility. Independent review must reconcile the exact retailer's stale 100 m and 53.9 g fields, grade lume without inheriting Super Classic performance, and preserve the alternative-calibre state instead of selecting one without evidence. If every M1 class survives one bounded provider job, the exact field/studio row opens 160 currently empty under_300, zero-maintenance, simple-date cells."
         }
       ]
     }

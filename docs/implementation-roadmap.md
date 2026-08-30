@@ -1060,6 +1060,27 @@ contains 62 attempts (37 succeeded, 25 failed) across 32 target IDs and USD
 with a source-led exact-reference pre-screen and does not invoke the provider
 until a named homogeneous candidate has complete projected M1 evidence.
 
+That source-led pre-screen selects Bertucci A-2T Original Classic `12022`,
+fixed to the black dial and supplied black B-TYPE nylon band. The [current exact
+manufacturer page](https://bertucciwatches.com/Bertucci/A2TOC.html) and its
+feature/dimension records retrieved 2026-08-30 expose USD 185, a 40 mm matte
+titanium case, 49.5 mm overall length, 11 mm thickness, 22 mm fixed titanium
+retention bars, 62 g configured weight, Japanese all-metal quartz operation,
+200 m resistance, screw-down crown and back, hardened mineral crystal, date,
+and Swiss luminous hands and markers. The current Japanese distributor names
+Miyota GM10 or 2S60; both official Miyota records specify -20/+20 seconds per
+month. A [current exact retailer](https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon)
+shows the black/black `12022` in stock at USD 185.
+
+These are routing inputs only. One bounded provider attempt and independent
+review must preserve the alternative-calibre state, reconcile stale exact
+retailer rows that say 100 m or 53.9 g against Bertucci's current 200 m/62 g
+feature record, and grade only exact Original Classic lume without inheriting
+A-2T Super Classic `12723`/`12724`, A-2TS solar, other dial, or other band facts.
+The projected homogeneous row would open all 160 targeted `under_300`,
+zero-maintenance, simple-date cells across field/studio use, every wrist band,
+every accuracy tolerance, and every weight limit.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

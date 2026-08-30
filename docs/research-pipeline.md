@@ -58,10 +58,10 @@ will pass those cells; source research must prove every dimension first.
 Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
-  research-only M0/M2 context alongside source-led additions through Mondaine;
+  research-only M0/M2 context alongside source-led additions through Bertucci;
 - 22 accepted catalogue targets linked to all current reviewed variants;
-- 28 coverage-intent targets, with no planned target in the default research
-  queue;
+- 29 coverage-intent targets, with exact Bertucci `12022` as the sole planned
+  target in the default research queue;
 - live Supabase parity for 18 brands and all 22 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
@@ -1029,6 +1029,26 @@ migration-ready decisions. The ignored provider ledger contains 62 attempts (37
 succeeded, 25 failed) across 32 target IDs and USD 0.51546 recorded cost. The
 default queue is empty; the next target must first pass a source-led exact M1
 pre-screen before any provider request.
+
+The next source-led checkpoint plans Bertucci A-2T Original Classic `12022`,
+fixed to its black dial and supplied black B-TYPE nylon band. The [exact current
+manufacturer page](https://bertucciwatches.com/Bertucci/A2TOC.html) and its
+feature/dimension records retrieved 2026-08-30 provide USD 185, a 40 mm matte
+titanium case, 49.5 mm overall length, 11 mm thickness, 22 mm integrated fixed
+titanium bars, 62 g configured weight, Japanese all-metal quartz operation,
+200 m resistance, screw-down crown and back, hardened mineral crystal, date,
+and Swiss luminous hands and markers. A [current exact retailer](https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon)
+shows `12022` in stock at the same USD 185. Bertucci's Japanese distributor
+names Miyota GM10 or 2S60 as exact alternatives, and both official Miyota
+records specify -20/+20 seconds per month.
+
+No pre-screened fact is accepted. One bounded Perplexity attempt must keep the
+alternative-calibre state explicit, reconcile stale 100 m and 53.9 g retailer
+rows against Bertucci's current 200 m/62 g record, and prevent A-2T Super
+Classic `12723`/`12724`, A-2TS solar, other dial, and other band inheritance.
+Independent review must also grade exact Original Classic lume from performance
+evidence rather than material presence alone. The row projects to 160/160
+currently empty `under_300`, zero-maintenance, simple-date field/studio cells.
 
 ## Job idempotency and retention
 

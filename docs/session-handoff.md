@@ -82,10 +82,14 @@ phase.
   record retains null response/usage rather than a fabricated cost. The full
   ignored ledger is 62 attempts (37 succeeded, 25 failed) across 32 target IDs
   with USD 0.51546 recorded cost.
-- The default provider queue is empty. The next active session-plan item is a
-  source-led exact-reference pre-screen for one homogeneous candidate with
-  meaningful uncovered-cell value. Do not invoke the provider until the named
-  candidate has complete projected M1 evidence and explicit variant boundaries.
+- The next active session-plan item is exactly one bounded provider attempt for
+  Bertucci A-2T Original Classic `12022`, fixed to the black dial and supplied
+  black B-TYPE nylon band. Primary and exact pre-screening retrieved 2026-08-30
+  covers every projected M1 class and 160/160 currently empty `under_300`,
+  zero-maintenance, simple-date field/studio cells. Review must preserve the
+  exact GM10-or-2S60 alternative-calibre state, reconcile stale 100 m/53.9 g
+  retailer rows against Bertucci's current 200 m/62 g record, grade exact lume,
+  and reject Super Classic, solar, other-dial, and other-band inheritance.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -646,11 +650,14 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Begin with a source-led exact-reference pre-screen for one homogeneous
-   candidate that materially improves uncovered cells. Establish exact identity,
-   commercial state, physical facts, movement and operation, complications,
-   applicability, and field-level sources before adding it as `planned`; invoke
-   no provider job until all projected M1 classes are represented.
+1. Run exactly one bounded Perplexity attempt for
+   `bertucci-a2t-original-classic-12022`, then independently review the exact
+   black-dial/black-band configuration. Preserve the documented GM10-or-2S60
+   alternative instead of selecting one, prefer Bertucci's current 200 m and
+   62 g records over stale conflicting retailer fields only if source review
+   supports that precedence, and keep Super Classic, solar, other-dial, and
+   other-band facts out. If and only if every M1 class survives, render the next
+   additive migration and prove live parity.
 2. Treat the live 22-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
