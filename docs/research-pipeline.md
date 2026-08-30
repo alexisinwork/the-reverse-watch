@@ -869,6 +869,21 @@ tritium performance. If complete, the row would diversify 80 currently empty
 `300_500`, zero-maintenance studio cells across all wrist and accuracy bands;
 30 m resistance deliberately excludes field/water-abuse eligibility.
 
+The first Marathon GPQ extraction returned 40 valid provisional facts but left
+mutable commerce and four review gates unresolved. Direct primary retrieval
+corrects that under-extraction. The selected variant payload identifies in-stock
+SKU `WW194004BK-0808`, black Nylon DEFSTAN, USD 470, and positive inventory.
+Marathon's current exact specification sheet independently names the same SKU
+and strap plus ETA F06.105 HeavyDrive, 34 x 11.5 x 41 mm geometry, 16 mm lugs,
+sapphire, pressure crown, 30 m resistance, no calendar, and tritium tubes on the
+hour markers and hour/minute hands. None of those observations substitutes for
+the remaining evidence: 133 g in Shopify is a shipping field, no full installed
+weight has been validated, F06.105 still needs an authoritative numerical rate,
+the GPQ bar mechanism must be tied to this family, and a bare tritium label does
+not establish constant performance. One exact four-field pass is queued. The
+ignored ledger now retains 57 attempts (34 succeeded, 23 failed) across 29
+target IDs with USD 0.45449 recorded provider cost.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

@@ -925,6 +925,19 @@ and constant tritium performance. A complete result would diversify 80 empty
 accuracy profiles, and weight limits; 30 m resistance excludes field/water
 deployment.
 
+The first Marathon GPQ job returned 40 schema-valid provisional facts but did
+not expose the selected commerce payload or exact specification sheet fully.
+Direct primary review does: the live variant identifies in-stock USD 470 SKU
+`WW194004BK-0808` on black Nylon DEFSTAN with positive inventory, while
+Marathon's current exact sheet supplies ETA F06.105 HeavyDrive, 34 x 11.5 x
+41 mm geometry, 16 mm lugs, sapphire, pressure crown, 30 m resistance, no
+calendar, and tritium placement. Review still fails closed on full installed
+weight because Shopify's 133 g is a shipping field, numerical F06.105 accuracy,
+an exact GPQ fixed-bar source, and performance language beyond bare tritium
+material. One narrow four-field pass is queued. The ignored ledger contains 57
+attempts (34 succeeded, 23 failed) across 29 target IDs and USD 0.45449 recorded
+provider cost.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
