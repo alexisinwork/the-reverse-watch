@@ -881,6 +881,20 @@ Perplexity-assisted review must still prove exact thickness, case-to-strap
 attachment, and no-lume status; a pin buckle is not a case fastener, and an
 omitted lume claim is not evidence of absence.
 
+The first LIP run rejected a resolved/unresolved contradiction and then
+returned 37 valid provisional facts. Independent retrieval preserves the live
+primary specification set but rejects the result's duplicate null case-length
+fact and its misfiled numeric lug applicability. The only 8 mm source describes
+an older conflicting 21 x 38 mm mineral-crystal/Arabic-dial configuration,
+while another secondary record reports 8.5 mm. Interchangeable strap remains
+insufficient to distinguish spring bars from quick release. Maier explicitly
+states that the hands lack Super-LumiNova, but its exact-reference sheet also
+conflicts with LIP by listing mineral rather than sapphire crystal and does not
+establish the dial's status. Thickness, attachment, and whole-watch no-lume
+evidence therefore remain fail-closed, and one narrow current-configuration
+pass is queued. The ignored ledger contains 54 attempts (32 succeeded, 22
+failed) across 28 target IDs and USD 0.42046 recorded provider cost.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

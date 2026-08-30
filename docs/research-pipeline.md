@@ -822,6 +822,22 @@ field/water use. Exact-reference thickness, case-to-strap attachment, and
 explicit no-lume evidence remain mandatory review gates; neither the pin buckle
 nor silence about luminous material can satisfy them.
 
+The first LIP worker run rejected one contradictory response, then returned 37
+schema-valid provisional facts on attempt two. Direct retrieval confirms the
+primary offer and specification set, but the result does not close the three
+pre-screened gates. Its duplicate null `caseLengthMm` and numeric value placed
+inside `fieldApplicability.lugWidthMm` require review correction. Horel's 8 mm
+record describes an older conflicting 21 x 38 mm mineral-crystal/Arabic-dial
+configuration, while another secondary record reports 8.5 mm; neither can be
+merged into the current sapphire Roman-numeral row. Horel's interchangeable
+strap language still omits the case fastener. Maier explicitly says the hands
+have no Super-LumiNova, but the same record conflicts with LIP by specifying
+mineral rather than sapphire crystal, so it does not independently close the
+whole-watch no-lume gate. The target is reset for one narrow pass over current-
+configuration thickness, attachment, and explicit hands-and-dial lume absence.
+The ignored ledger now retains 54 attempts (32 succeeded, 22 failed) across 28
+target IDs with USD 0.42046 recorded provider cost.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
