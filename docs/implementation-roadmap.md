@@ -514,6 +514,14 @@ corrects the retailer-rounded diameter from 39 to 39.6 mm, and directly reports
 the 128 g steel-bracelet weight, but it names only bracelet material and width
 rather than the case attachment mechanism.
 
+A 2026-08-30 Perplexity-assisted attachment pass found Vostok's exact official
+factory-shop route and the official case-420 category. Both independently
+confirm 2416.00/420059, the 420 case family, and the supplied stainless-steel
+bracelet, but neither supplies a lug, bar, pin, screw, connector, or exploded
+interface specification. Replacement-case spring bars and ambiguous bracelet
+pin discussions therefore remain insufficient. `attachmentType` stays null,
+and Vostok remains `needs_more_evidence` with one M1 gap.
+
 Cartier Tank Must WSTA0107 now has an honest non-round geometry path instead of
 a synthetic diameter. The runtime contract accepts a complete 29.5 x 22 mm
 length/width pair, fit uses evidenced overall length only when conventional

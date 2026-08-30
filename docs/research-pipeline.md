@@ -446,6 +446,14 @@ promotes the 128 g evidence from corroborated secondary to primary. It still
 does not identify the bracelet-to-case mechanism, so the row remains
 research-only with `attachmentType` as its sole M1 gap.
 
+A 2026-08-30 Perplexity-assisted attachment follow-up found the exact official
+factory-shop page and the official case-420 category. They confirm the exact
+2416.00/420059 identity, case family, and supplied stainless-steel bracelet but
+publish no lug, bar, pin, screw, proprietary connector, integrated interface,
+or quick-release specification. The stronger primary sources therefore retain
+the gap rather than convert dealer replacement-case evidence into a factory
+interface fact.
+
 A Cartier Tank Must WSTA0107 follow-up resolved the earlier blocked-source and
 geometry failures. The exact official page is independently retrievable in
 Malaysia and supplies 29.5 x 22 x 6.6 mm rectangular geometry, High Autonomy

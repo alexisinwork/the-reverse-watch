@@ -520,7 +520,9 @@ For the post-batch evidence-gap pass on the same date:
   corroborated by exact-reference owners, so the performance maps to `weak`.
   The factory still names only bracelet material and width, while the available
   pins answer remains ambiguous between bracelet links and the case interface;
-  `attachmentType` is therefore still null.
+  `attachmentType` is therefore still null. A 2026-08-30 Perplexity-assisted
+  pass added Vostok's exact official shop route and case-420 category, but both
+  still omit any connector or exploded-interface specification.
 - Cartier Tank Must WSTA0107 now needs only a numerical exact-applicable
   accuracy bound. MAIER's exact-reference technical sheet explicitly reports
   no Super-LumiNova on the hands, and the independent exact-reference
@@ -599,11 +601,11 @@ On 2026-08-28 for Phases 1–4:
    Swatch SO28N100 needs resolved full-watch weight, a numerical
    exact-applicable quartz rate bound, and a repeatable lume grade. Do not
    accept its unqualified official `c_weight = 64` as full-watch mass merely to
-   make the batch non-empty. Vostok 420059 has stronger
-   exact factory evidence but still requires manufacturer-corroborated
-   attachment semantics before acceptance. AP 16202ST's conventional lug width
-   is now verified non-applicable, but its five remaining gaps keep it
-   research-only.
+   make the batch non-empty. A 2026-08-30 Vostok pass explicitly retained the
+   sole attachment gap after the exact factory-shop route and case-420 category
+   still omitted any connector or exploded-interface specification. AP
+   16202ST's conventional lug width is now verified non-applicable, but its five
+   remaining gaps keep it research-only.
 3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy and no-date status are now resolved;

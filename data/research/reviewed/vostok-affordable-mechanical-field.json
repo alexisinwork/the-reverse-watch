@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "vostok-affordable-mechanical-field",
   "jobId": "b4a10faa-fde5-4e14-ae0e-6acb189c2260",
-  "reviewedAt": "2026-08-29T14:25:00Z",
+  "reviewedAt": "2026-08-30T08:07:53Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -16,6 +16,16 @@
       "url": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
       "status": "validated_primary",
       "note": "The factory's exact 2416/420059 page validates the current homogeneous steel-bracelet reference, 39.6 x 46 x 15 mm dimensions, 128 g full weight, 18 mm bracelet width, steel case and bracelet, calibre 2416B, -20/+60 seconds per day, at least 31 hours of reserve, 200 m water resistance, organic crystal, date, and luminous paint on the hands and hour markers. It does not identify the bracelet-to-case mechanism."
+    },
+    {
+      "url": "https://online.vostokinc.ru/katalog-tovarov/amfibiya-420059",
+      "status": "validated_primary",
+      "note": "Retrieved 2026-08-30 after a narrow Perplexity source-discovery pass. Vostok's official factory shop validates exact product code 420059 and the supplied stainless-steel bracelet, but its characteristics and warranty sections still do not identify a spring bar, fixed bar, screw bar, proprietary connector, integrated interface, or quick release."
+    },
+    {
+      "url": "https://online.vostokinc.ru/amfibija-muzhskaja/42-korpus/",
+      "status": "validated_primary",
+      "note": "The official factory-shop case-420 category independently links 2416.00/420059 to the 420 case family and lists the stainless-steel-bracelet configuration. It provides no lug, bar, pin, screw, or attachment specification, so case-family identity does not establish the connector."
     },
     {
       "url": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
@@ -184,7 +194,7 @@
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Stainless-steel bracelet describes the supplied material, not the bracelet-to-case interface."
+      "reason": "Stainless-steel bracelet describes the supplied material, not the bracelet-to-case interface. A 2026-08-30 review of Vostok's exact official shop route and case-420 category still found no manufacturer statement or diagram establishing spring_bar, fixed_bar, screw_bar, proprietary, integrated, or quick_release."
     },
     {
       "fieldName": "complications",
@@ -192,5 +202,5 @@
     }
   ],
   "missingM1Fields": ["attachmentType"],
-  "note": "Keep as research-only. Vostok's exact factory page now provides primary evidence for the homogeneous 2416/420059 steel-bracelet configuration, including 39.6 x 46 x 15 mm dimensions and 128 g full weight. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. The bracelet interface remains open: the factory page names only the bracelet material and width, the available pins discussion is ambiguous between removable links and case attachment, and dealer-supplied 420-case spring-bar evidence still lacks manufacturer service corroboration for the factory bracelet."
+  "note": "Keep as research-only. Vostok's exact factory page now provides primary evidence for the homogeneous 2416/420059 steel-bracelet configuration, including 39.6 x 46 x 15 mm dimensions and 128 g full weight. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. A 2026-08-30 Perplexity-assisted pass added the exact official factory-shop page and case-420 category, but both still name only the bracelet or case family without documenting the bracelet-to-case connector. The available pins discussion remains ambiguous between removable links and case attachment, and dealer-supplied replacement-case spring bars still lack manufacturer service corroboration. Attachment remains the sole M1 gap."
 }
