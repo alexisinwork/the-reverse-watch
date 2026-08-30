@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
   "strategy": "coverage_first",
-  "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T21:23:15.000Z",
+  "targetBrandCount": 202,
+  "updatedAt": "2026-08-30T21:35:30.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4393,6 +4393,55 @@
             ]
           },
           "coverageRationale": "Fill ultralight and small-wrist low-price cells with a non-tool archetype."
+        }
+      ]
+    },
+    {
+      "slug": "mondaine",
+      "name": "Mondaine",
+      "priority": "P0",
+      "manifestRationale": "Source-led compact formal-quartz candidate outside the owner knowledge pack; retained as a reference-level coverage target rather than inherited brand context.",
+      "dossierState": "not_started",
+      "targets": [
+        {
+          "id": "mondaine-classic-a660-30314-11sbbv",
+          "referenceLabel": "Mondaine Classic A660.30314.11SBBV, white no-date dial on the supplied black vegan grape-leather quick-change strap; keep this exact 36 mm Ronda 513 RL configuration separate from day-date A667, 40 mm, colored-dial, bracelet, and replacement-strap variants",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "no_requirement",
+              "within_15_seconds_per_day",
+              "within_5_seconds_per_day",
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Primary and exact-reference pre-screening retrieved 2026-08-30 covers a current EUR 239 official EU order path deliverable to Poland, 36 mm diameter, 43 mm overall length, 7.5-8 mm thickness, 18 mm interface, 37 g configured weight, Ronda 513 RL -10/+20-seconds-per-month rate, 30 m resistance, mineral crystal, explicit no-date and non-luminous-hand specification, and manufacturer quick-change system. Independent review must establish that the negative lume evidence applies to the whole exact dial and hands rather than infer absence from marketing copy. If every M1 class survives one bounded provider job, the exact formal/studio row opens 160 currently empty under_300, zero-maintenance, time-only cells."
         }
       ]
     }

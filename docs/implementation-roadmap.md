@@ -1028,6 +1028,25 @@ catalogue and SQL hard-filter parity passes for all 21 variants and six golden
 profiles. Deterministic coverage rises by 60 cells to 684/28,800 (2.38%). The
 default research queue is empty again.
 
+The next source-led checkpoint selects Mondaine Classic
+`A660.30314.11SBBV`, fixed to its white no-date dial and supplied black vegan
+grape-leather strap. The [exact manufacturer page](https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv)
+retrieved 2026-08-30 exposes a current EUR 239 EU order path deliverable to
+Poland, 36 mm diameter, 7.5 mm thickness, 18 mm lugs, 37 g configured weight,
+Ronda 513 RL quartz movement, 30 m resistance, mineral crystal, time-only dial,
+and quick-change system. The [exact secondary dimensional record](https://nanaple.com/en/products/a660-30314-11sbbv-quartz)
+reports 43 x 36 x 8 mm and independently repeats the 37 g whole-watch mass;
+the [official Ronda calibre record](https://www.ronda.ch/en/watch-movement-finder/caliber/513)
+publishes -10/+20 seconds per month. The [Swiss Federal Railways exact-product
+listing](https://commerce.sbb.ch/en/mondaine-sbb-wristwatch-classic-36-mm-polished-a660-30314-11sbbv.html)
+explicitly reports no date and no luminous hands. All are routing inputs, not
+accepted facts: one bounded provider job and independent review must confirm
+that negative lume evidence covers the complete exact dial and hands, and must
+not inherit the A667 day-date, 40 mm, other-dial, bracelet, or replacement-strap
+variants. If all M1 gates survive, this row opens 160 currently empty
+`under_300`, zero-maintenance, time-only cells: 80 studio and 80 formal cells
+across every representative wrist, accuracy tolerance, and weight limit.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

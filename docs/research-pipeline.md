@@ -58,9 +58,11 @@ will pass those cells; source research must prove every dimension first.
 Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
-  research-only M0/M2 context, alongside one existing roadmap brand;
+  research-only M0/M2 context, alongside Swatch and one source-led Mondaine
+  coverage target;
 - 21 accepted catalogue targets linked to all current reviewed variants;
-- 20 active coverage-intent targets, with the default research queue empty;
+- 21 active coverage-intent targets, with one source-screened target in the
+  default research queue;
 - live Supabase parity for 17 brands and all 21 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
@@ -993,7 +995,25 @@ rises by exactly 60 previously empty cells to 684/28,800 (2.38%). Strict
 research reports 21 accepted, 20 `needs_review`, and two excluded targets; 31
 reviews include nine migration-ready decisions. The ignored provider ledger
 contains 60 attempts (37 succeeded, 23 failed) across 31 target IDs and USD
-0.49518 recorded cost. The default queue is empty again.
+0.49518 recorded cost. The default queue was empty again at acceptance.
+
+The next source-led checkpoint adds Mondaine Classic
+`A660.30314.11SBBV` as one exact planned target outside the owner knowledge
+pack. The [current manufacturer page](https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv)
+retrieved 2026-08-30 supplies its EUR 239 EU offer, exact identity, 36 mm
+diameter, 7.5 mm thickness, 18 mm lugs, 37 g configured weight, Ronda 513 RL,
+30 m resistance, mineral crystal, time-only layout, and quick-change system.
+An [exact secondary dimensional record](https://nanaple.com/en/products/a660-30314-11sbbv-quartz)
+reports the full 43 x 36 x 8 mm envelope and repeats 37 g; the [official Ronda
+record](https://www.ronda.ch/en/watch-movement-finder/caliber/513) gives
+-10/+20 seconds per month; and the [Swiss Federal Railways exact listing](https://commerce.sbb.ch/en/mondaine-sbb-wristwatch-classic-36-mm-polished-a660-30314-11sbbv.html)
+reports no date and no luminous hands. These pre-screened facts remain
+provisional routing constraints. Independent review must prove whole-watch
+no-lume status and keep the row separate from the A667 day-date, 40 mm,
+colored-dial, bracelet, and replacement-strap variants. The projected row opens
+160 currently empty `under_300`, zero-maintenance, time-only cells across every
+wrist, accuracy, and weight band in studio and formal use. The ignored provider
+ledger remains unchanged; no paid attempt was made before this checkpoint.
 
 ## Job idempotency and retention
 

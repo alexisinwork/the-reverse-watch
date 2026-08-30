@@ -67,10 +67,15 @@ phase.
   interface, no-date configuration, and convergent exact-owner no-lume status.
   Migration `0023` is live with M1 complete and 31 verified reference-level
   evidence rows; 21-row parity passes and coverage is 684/28,800 (2.38%).
-- The next active session-plan item is source-led pre-screening of another
-  exact homogeneous variant. The default queue is empty; do not spend another
-  provider attempt until primary and exact-reference evidence covers every M1
-  class and the proposed row has explicit coverage or original-plan purpose.
+- The next active session-plan item is exactly one bounded provider attempt for
+  Mondaine Classic `A660.30314.11SBBV`, fixed to the white no-date dial and
+  supplied black vegan grape-leather quick-change strap. Primary and exact
+  pre-screening retrieved 2026-08-30 covers every M1 class and projects 160
+  currently empty `under_300`, zero-maintenance, time-only cells across studio
+  and formal use. The manifest target is `planned`; none of those routing facts
+  is accepted until exact-reference independent review resolves whole-watch
+  no-lume status and rejects A667 day-date, 40 mm, other-dial, bracelet, and
+  replacement-strap inheritance.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -631,10 +636,13 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Because the default queue is empty, select the next source-led exact
-   homogeneous reference only after primary and exact-reference pre-screening
-   covers every M1 class. Record a coverage or original-plan purpose in the
-   manifest and commit that checkpoint before invoking another provider job.
+1. Run exactly one bounded Perplexity attempt for
+   `mondaine-classic-a660-30314-11sbbv`, then independently review the exact
+   white no-date 36 mm watch on its supplied black vegan grape-leather strap.
+   Require whole-watch no-lume evidence rather than treating no luminous hands
+   as sufficient by itself, and reject A667 day-date, 40 mm, other-dial,
+   bracelet, and replacement-strap inheritance. If and only if every M1 class
+   survives review, render the next additive migration and prove live parity.
 2. Treat the live 21-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
