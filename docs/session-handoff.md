@@ -561,7 +561,13 @@ For the post-batch evidence-gap pass on the same date:
   A detailed 16202 hands-on video was not used for its measured 48.6 mm case
   span, 57.4 mm fixed-bracelet span, or short-lived lume: its own movement
   segment explicitly identifies the 50th-anniversary rotor, making that watch
-  the sibling `.01` variant rather than exact `.02` evidence.
+  the sibling `.01` variant rather than exact `.02` evidence. A 2026-08-30
+  Perplexity-assisted pass likewise found only `.01` values for numerical case
+  span, approximately 130 g weight, and a +2.5 seconds-per-day observation. An
+  exact-reference February 2026 tariff record corroborates the USD 40,100
+  suggested retail figure but not stock, allocation, orderability, or an AP or
+  authorized sales channel. No controlled exact `.02` lume result surfaced, so
+  all five gaps remain null.
 - The accepted Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481
   now uses the manufacturer's explicit `L x W` semantics: `caseLengthMm: 47`,
   `caseWidthMm: 28.3`, `caseDiameterMm: null`, with the separately labelled

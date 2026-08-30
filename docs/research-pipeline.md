@@ -584,6 +584,16 @@ no purchase availability or sales-channel context. The complete commercial
 price gate therefore remains open rather than treating a displayed manufacturer
 amount as an orderable offer.
 
+A narrow 2026-08-30 Perplexity-assisted pass then tested all five AP gaps under
+strict suffix control. A February 2026 exact-reference tariff record
+corroborates the USD 40,100 suggested U.S. retail figure but supplies no AP or
+authorized-dealer availability, allocation, or transaction channel. The only
+numerical case span, approximately 130 g weight, and +2.5 seconds-per-day
+observation found belong to anniversary reference `.01`; the weight also lacks
+a full-link scale method. The exact `.02` page establishes lume presence only,
+not a controlled performance grade. No field is promoted from sibling or
+generic 16202/caliber 7121 evidence.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

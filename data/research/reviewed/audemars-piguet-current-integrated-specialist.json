@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "audemars-piguet-current-integrated-specialist",
   "jobId": "5213024a-f1d9-4019-91e1-4c34af000c52",
-  "reviewedAt": "2026-08-29T19:36:07Z",
+  "reviewedAt": "2026-08-30T08:52:28Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -15,12 +15,17 @@
     {
       "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02",
       "status": "validated_primary",
-      "note": "The exact current official page independently validates reference 16202ST.OO.1240ST.02, its Royal Oak Jumbo Extra-Thin identity, stainless-steel case and bracelet, blue Petite Tapisserie dial, 39 x 8.1 mm geometry, sapphire front and back, automatic caliber 7121, 52-hour reserve, 50 m water resistance, luminescent hands, and date. Its rendered HTML exposes only a price template and omits lug-to-lug, full weight, numerical accuracy, and graded lume; the page's public exact-product price endpoint is reviewed separately."
+      "note": "The exact current official page independently validates reference 16202ST.OO.1240ST.02, its Royal Oak Jumbo Extra-Thin identity, stainless-steel case and bracelet, blue Petite Tapisserie dial, 39 x 8.1 mm geometry, sapphire front and back, automatic caliber 7121, 52-hour reserve, 50 m water resistance, luminescent hands, and date. Rechecked on 2026-08-30, its rendered HTML still exposes only price templates plus Find a Boutique and omits purchase availability, lug-to-lug, full weight, numerical accuracy, and graded lume; the page's public exact-product price endpoint is reviewed separately."
     },
     {
       "url": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
       "status": "validated_primary",
       "note": "The public price endpoint called by AP's exact U.S. product page returns USD 40,100 for 16202ST.OO.1240ST.02. It supplies no purchase availability or channel context, so only the amount, currency, and market are reviewed; the complete price gate remains open."
+    },
+    {
+      "url": "https://lacotedesmontres.com/en/Audemars-Piguet-Royal-Oak-Jumbo-Extra-Thin-39-mm-Stainless-steel-Ref-16202ST-OO-1240ST-02-newPdN.htm",
+      "status": "validated_secondary",
+      "note": "The independently retrieved exact-reference tariff record corroborates USD 40,100 as the February 2026 suggested U.S. retail price excluding VAT. It is not an AP boutique or authorized-dealer offer and provides no contemporaneous stock, allocation, or orderability state, so it cannot complete the commercial price gate."
     },
     {
       "url": "https://www.audemarspiguet.com/hk/en/watch/royal-oak-new-design-evolution",
@@ -118,8 +123,36 @@
       "reason": "The exact official page does not render a usable price or availability snapshot, and secondary market or sibling-reference values cannot be promoted."
     },
     {
+      "fieldName": "price.availability",
+      "reason": "AP's exact page supplies Find a Boutique rather than a stock, allocation, orderability, preorder, or sold-out state. The exact price endpoint and secondary suggested-retail record also omit purchase availability."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "The exact-product endpoint identifies amount, currency, and market but no transaction channel. A boutique finder and an independent suggested-retail record do not establish a homogeneous current AP or authorized-dealer offer."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "reason": "The numerical 48.5-48.6 mm case spans surfaced in exacting follow-ups belong to anniversary reference 16202ST.OO.1240ST.01. A reported 57.4 mm fixed-bracelet span is a different fit measure, and no exact .02 source distinguishes a case-only lug-to-lug value."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The only newly surfaced numerical weight is approximately 130 g for anniversary reference .01 without a scale method or full factory bracelet-link count. No packaging-free full configured .02 measurement qualifies."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "reason": "No AP product, caliber 7121, service, or exact .02 test source publishes a lower numerical rate bound. Generic caliber expectations and the sibling .01's measured rate are not transferred."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "reason": "No exact .02 source publishes an upper numerical rate bound. A +2.5 seconds-per-day observation surfaced only for anniversary reference .01 and cannot define a tolerance for .02."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "reason": "No rate period can be accepted without exact-applicable lower and upper values. The sibling .01 observation period and generic 4 Hz frequency are not .02 accuracy evidence."
+    },
+    {
       "fieldName": "operation.lumeGrade",
-      "reason": "Luminescent hand coating establishes presence but not the catalogue's weak, moderate, or strong performance class."
+      "reason": "Luminescent hand and marker coating establishes presence but not the catalogue's weak, moderate, or strong performance class. No exact .02 source documents charge conditions, elapsed observations, repeatability, or an explicit no-lume state."
     },
     {
       "fieldName": "operation.attachmentType",
@@ -137,5 +170,5 @@
     "accuracy",
     "lumeGrade"
   ],
-  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference. AP's Heritage documentation explicitly makes conventional between-horns lug width not applicable to model 16202's case-and-first-link architecture. AP's exact-product endpoint now resolves a USD 40,100 U.S. price fragment, but purchase availability and channel remain unresolved; lug-to-lug fit, full weight, numerical rate tolerance, and graded lume also remain open."
+  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference. AP's Heritage documentation explicitly makes conventional between-horns lug width not applicable to model 16202's case-and-first-link architecture. AP's exact-product endpoint resolves a USD 40,100 U.S. price fragment, corroborated by a February 2026 suggested-retail record, but purchase availability and channel remain unresolved. A 2026-08-30 Perplexity-assisted pass found numerical fit, weight, and measured-rate data only for anniversary reference .01 or generic 16202/7121 records; no controlled exact .02 lume evidence surfaced. All five gaps remain null."
 }

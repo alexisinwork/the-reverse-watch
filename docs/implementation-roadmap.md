@@ -603,6 +603,17 @@ U.S. amount. It does not expose purchase availability or channel context, so
 the amount, currency, and market are retained as reviewed fragments while the
 complete commercial price gate remains open.
 
+A 2026-08-30 Perplexity-assisted AP follow-up retained all five gaps. An
+independently retrieved exact-reference tariff record corroborates USD 40,100
+as a February 2026 suggested U.S. retail price, but neither it nor AP's exact
+page and endpoint establishes stock, allocation, orderability, or a homogeneous
+sales channel. Numerical case span, approximately 130 g weight, and a +2.5
+seconds-per-day observation surfaced only for anniversary reference `.01`, not
+the required non-anniversary `.02`; the weight also lacks a full-link scale
+protocol. AP publishes lume presence but no controlled charge or timed
+performance result. Price, fit span, weight, accuracy, and lume therefore remain
+fail-closed.
+
 The same geometry policy was then applied to the already accepted
 Jaeger-LeCoultre Reverso Tribute Duoface Small Seconds Q3988481. Its exact
 manufacturer page labels the case 47 x 28.3 mm as length x width and explicitly
