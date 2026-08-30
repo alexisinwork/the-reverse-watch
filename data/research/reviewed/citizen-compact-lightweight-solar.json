@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "citizen-compact-lightweight-solar",
   "jobId": "edaa380a-7c11-4db4-851a-f6423f1149eb",
-  "reviewedAt": "2026-08-29T08:42:34Z",
+  "reviewedAt": "2026-08-30T07:39:54Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -46,6 +46,16 @@
       "url": "https://forums.timezone.com/index.php?rid=0&t=tree&th=750667",
       "status": "validated_secondary",
       "note": "This separate exact-reference owner review describes the hands' lume as very weak. It conflicts with the other exact-reference observation, so neither subjective account is normalized into a lume grade."
+    },
+    {
+      "url": "https://www.watchcrunch.com/coolusernamepal/posts/citizen-bm8180-03e-thoughts-708991",
+      "status": "validated_secondary",
+      "note": "Retrieved 2026-08-30 after a narrow Perplexity source-discovery pass. This exact-reference owner separates components: the numerals fade very quickly, while the hands are dim but reportedly remain visible overnight. No charging protocol, elapsed series, or comparison standard is supplied, so the report clarifies the conflict without establishing a repeatable grade."
+    },
+    {
+      "url": "https://www.zappos.com/product/review/7518632",
+      "status": "validated_secondary",
+      "note": "Retrieved 2026-08-30 after Perplexity discovery. The exact-SKU review corpus contains materially incompatible observations ranging from all-night dial visibility to near-impossible dark reading and weak numerals after charging. None includes a controlled charge or timed decay method, so the corpus confirms condition or production variability rather than a stable performance class."
     },
     {
       "url": "https://www.ubuy.com.jm/product/2M7CJ2U-20mm-hemsut-watch-bands-compatible-with-citizen-bm8180-03e-bm8475-00f-bn0151-09l-bl8000-03a-bn0118-04e-bm8180-03e-bn0150-28e-bj8050-08e-bn0150-28e-and-more",
@@ -131,7 +141,7 @@
     },
     {
       "fieldName": "operation.lumeGrade",
-      "reason": "The manufacturer establishes luminous hands and markers but does not establish the catalogue's weak/moderate/strong performance class."
+      "reason": "The manufacturer establishes luminous hands and markers but not performance. A 2026-08-30 source-led pass found a useful hands-versus-numerals distinction, yet exact-reference reports still conflict from all-night readability to near-impossible dark reading and provide no controlled charge or timed decay method."
     },
     {
       "fieldName": "operation.attachmentType",
@@ -139,5 +149,5 @@
     }
   ],
   "missingM1Fields": ["lumeGrade"],
-  "note": "Keep as research-only. Citizen's exact-model parts lookup resolves the factory interface as spring_bar, but exact-reference owner accounts still materially disagree on lume performance and no controlled repeatable grade was found. Lume remains the only M1 gap."
+  "note": "Keep as research-only. Citizen's exact-model parts lookup resolves the factory interface as spring_bar. The 2026-08-30 Perplexity-assisted source pass found an exact-reference report that dim hands can persist overnight while numerals fade quickly, but independent exact-SKU accounts still range from all-night readability to near-impossible dark reading without a controlled charge or timed decay series. Lume remains the only M1 gap."
 }

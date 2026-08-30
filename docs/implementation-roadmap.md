@@ -435,6 +435,16 @@ spring-bar replacement part 509-2074 for that exact Garrison reference. The row
 remains research-only because its exact-reference lume accounts conflict and no
 controlled repeatable grade was found; lume is now its only M1 gap.
 
+A 2026-08-30 narrow Perplexity-assisted source-discovery pass explicitly
+retained that last gap. One exact-reference owner report distinguishes dim hands
+that remain visible overnight from numerals that fade quickly, while the
+exact-SKU Zappos review corpus spans all-night dial visibility, near-impossible
+dark reading, and weak numerals after charging. None supplies a controlled
+charge protocol, timed decay series, or comparison standard. The additional
+evidence therefore documents component, condition, or production variability;
+it does not support a stable `weak`, `moderate`, or `strong` grade. Citizen
+remains `needs_more_evidence`, and the accepted-catalogue counts are unchanged.
+
 A subsequent exact-reference pass resolved TUDOR M79000N-0001's normalized
 full-length bracelet weight at 139 g. Independent new and unworn/full-set dealer
 records report the same value with approximately 19.5-21 cm of bracelet; the

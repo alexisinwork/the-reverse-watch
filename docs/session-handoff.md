@@ -586,10 +586,13 @@ On 2026-08-28 for Phases 1–4:
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.
-2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
-   needs an authoritative repeatable lume grade. Cartier WSTA0107 now needs
-   only numerical exact-applicable quartz accuracy; its rectangular geometry
-   and explicit no-lume evidence are supported, but it remains research-only.
+2. Resolve or explicitly retain the first review gaps. A 2026-08-30
+   Perplexity-assisted source pass explicitly retained Citizen BM8180-03E's sole
+   lume gap: exact-reference reports separate hands from numerals but still span
+   all-night visibility to near-impossible dark reading without a controlled
+   charge or timed decay method. Cartier WSTA0107 now needs only numerical
+   exact-applicable quartz accuracy; its rectangular geometry and explicit
+   no-lume evidence are supported, but it remains research-only.
    Swatch SO28N100 needs resolved full-watch weight, a numerical
    exact-applicable quartz rate bound, and a repeatable lume grade. Do not
    accept its unqualified official `c_weight = 64` as full-watch mass merely to

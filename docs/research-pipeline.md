@@ -502,6 +502,14 @@ bracelet-to-case fastener, conflicting Citizen BM8180-03E observations do not
 establish repeatable lume performance, and Omega's exact manual does not name
 the factory bracelet interface. These records remain fail-closed.
 
+A 2026-08-30 Perplexity-assisted source-discovery pass revisited Citizen's sole
+remaining gap without changing that decision. An exact-reference owner report
+separates the hands from the numerals, but the exact-SKU Zappos review corpus
+still ranges from all-night visibility to near-impossible dark reading. The
+reports provide no controlled charge protocol, timed decay series, or shared
+comparison standard, so they are retained as conflict evidence rather than
+normalized into a categorical lume grade. Citizen remains research-only.
+
 An Audemars Piguet 16202ST.OO.1240ST.02 applicability pass then resolved
 conventional `lugWidthMm` as physically `not_applicable`. AP's own Heritage
 record explicitly includes the Royal Oak 16202 in the documented case lineage
