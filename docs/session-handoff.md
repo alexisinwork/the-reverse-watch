@@ -598,10 +598,11 @@ On 2026-08-28 for Phases 1–4:
    claims, not a numerical rate bound and period. WSTA0107's accuracy gap is
    therefore explicitly retained; its rectangular geometry and explicit
    no-lume evidence remain supported.
-   Swatch SO28N100 needs resolved full-watch weight, a numerical
-   exact-applicable quartz rate bound, and a repeatable lume grade. Do not
-   accept its unqualified official `c_weight = 64` as full-watch mass merely to
-   make the batch non-empty. A 2026-08-30 Vostok pass explicitly retained the
+   A 2026-08-30 Swatch pass explicitly retained full-watch weight, numerical
+   exact-applicable quartz rate, and lume as gaps: `c_weight = 64` remains
+   undefined, explicit 18 g and 22 g records conflict, the official standard
+   manual provides no exact rate bound, and no source establishes repeatable
+   lume or an explicit no-lume state. A 2026-08-30 Vostok pass retained the
    sole attachment gap after the exact factory-shop route and case-420 category
    still omitted any connector or exploded-interface specification. AP
    16202ST's conventional lug width is now verified non-applicable, but its five

@@ -389,6 +389,13 @@ configuration. The review records that primary value without mapping it to
 `weightFullG`; it cannot resolve explicit full-watch evidence that already
 conflicts.
 
+A 2026-08-30 Perplexity-assisted pass revisited only those three gaps. The
+official standard manual covers operation and time setting without publishing
+an SO28N100 rate tolerance; an exact retailer route offers only qualitative
+precision language. No discovered source defines the unit or configuration of
+`c_weight = 64`, resolves 18 g versus 22 g, or states a repeatable lume grade or
+explicit absence. The review therefore preserves all three nulls.
+
 An Omega 310.30.42.50.01.001 follow-up recovered both exact official sources
 that had previously been inaccessible. The current product page now exposes a
 $7,800 U.S. InStock offer, while the exact product sheet validates 42 x 13.54 x

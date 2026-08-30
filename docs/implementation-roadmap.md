@@ -469,6 +469,14 @@ first-party field has no unit or watch-only configuration. It is retained as
 reviewed evidence rather than misclassified as wearable mass, so the weight gap
 remains open.
 
+A 2026-08-30 Perplexity-assisted three-field pass explicitly retained all
+remaining Swatch gaps. Swatch's standard manual documents time setting but no
+SO28N100 numerical rate bound; an exact retailer route uses only qualitative
+precision wording. No new source defines `c_weight = 64`, reconciles the 18 g
+and 22 g records, or establishes either repeatable lume performance or an
+explicit no-lume state. Weight, accuracy, and lume therefore remain null rather
+than being filled from generic quartz behavior or visual inference.
+
 Omega's exact 310.30.42.50.01.001 product page and downloadable product sheet
 became independently retrievable on follow-up, validating the steel-on-steel
 configuration, current $7,800 U.S. in-stock offer, 42 x 13.54 x 47.5 mm

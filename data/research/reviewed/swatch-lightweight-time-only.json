@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "swatch-lightweight-time-only",
   "jobId": "f00da342-d09e-48ed-85c2-e17997ac15d0",
-  "reviewedAt": "2026-08-29T19:46:54Z",
+  "reviewedAt": "2026-08-30T08:11:08Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -66,6 +66,16 @@
       "url": "https://www.swatch.com/en-ae/technical-information.html",
       "status": "validated_primary",
       "note": "Swatch's official technical information explains quartz precision qualitatively but publishes no numerical quartz tolerance applicable to SO28N100. It therefore cannot satisfy the catalogue's accuracy bound."
+    },
+    {
+      "url": "https://static.swatch.com/files/user-manuals/standard-manual-en.pdf",
+      "status": "validated_primary",
+      "note": "Retrieved 2026-08-30 after a narrow Perplexity source-discovery pass. Swatch's standard manual documents time setting and functions across several product types but supplies no SO28N100-specific numerical accuracy tolerance, watch-only weight definition, or lume specification."
+    },
+    {
+      "url": "https://uhr24.de/swatch/silverwakati-so28n100",
+      "status": "fetch_blocked",
+      "note": "Perplexity discovered this exact-reference retailer route using only qualitative precise-quartz wording. Independent retrieval did not expose a reviewable exact page, and the discovered copy supplies no numerical lower/upper rate bound or defined period; it cannot close accuracy."
     }
   ],
   "verifiedProvisionalFields": [
@@ -172,5 +182,5 @@
     }
   ],
   "missingM1Fields": ["weightFullG", "accuracy", "lumeGrade"],
-  "note": "Keep as research-only. Swatch's exact embedded payload resolves 34 x 8.75 x 39.2 mm geometry; a current supported-currency retailer offer resolves price; and the exact original strap plus Swatch's connector-pin guide resolve 17 mm proprietary attachment. Explicit exact-reference records resolve no-date status. Swatch's public exact-reference commerce response adds an unqualified c_weight value of 64, but it supplies no unit or watch-only configuration and cannot displace the conflicting explicit 18 g and 22 g full-watch records. Swatch publishes no numerical rate bound applicable to SO28N100, and black hands or omitted feature prose cannot establish a repeatable lume grade."
+  "note": "Keep as research-only. Swatch's exact embedded payload resolves 34 x 8.75 x 39.2 mm geometry; a current supported-currency retailer offer resolves price; and the exact original strap plus Swatch's connector-pin guide resolve 17 mm proprietary attachment. Explicit exact-reference records resolve no-date status. A 2026-08-30 Perplexity-assisted pass retained all three remaining gaps: the public c_weight value of 64 still has no unit or watch-only configuration and cannot displace conflicting explicit 18 g and 22 g records; the official standard manual and exact retailer copy provide no numerical SO28N100 rate bound and period; and no source explicitly establishes either a repeatable lume grade or no-lume state."
 }
