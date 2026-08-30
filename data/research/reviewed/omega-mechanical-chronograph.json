@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "omega-mechanical-chronograph",
   "jobId": "7944f21d-58b3-452d-8e5e-292ba99697f9",
-  "reviewedAt": "2026-08-29T09:10:49Z",
+  "reviewedAt": "2026-08-30T08:19:18Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -30,7 +30,22 @@
     {
       "url": "https://www.fratellowatches.com/long-term-review-omega-speedmaster-professional-310-30-42-50-01-001/",
       "status": "validated_secondary",
-      "note": "The exact-reference five-year owner review independently identifies the 0/+5 seconds-per-day Master Chronometer range and reports +4 and +2 seconds-per-day measurements in two positions, corroborating applicability without replacing the official bound."
+      "note": "The exact-reference five-year owner review independently identifies the 0/+5 seconds-per-day Master Chronometer range and reports +4 and +2 seconds-per-day measurements in two positions, corroborating applicability without replacing the official bound. It supplies no controlled lume charge, elapsed-time series, or performance comparison."
+    },
+    {
+      "url": "https://omegaforums.net/threads/omega-speedmaster-3861-hesalite-310-30-42-50-01-001-full-set-2022.162247/",
+      "status": "validated_secondary",
+      "note": "Retrieved 2026-08-30 after a narrow Perplexity source-discovery pass. The exact-reference owner identifies marks caused by spring bars while installing the factory bracelet, which is direct configuration-specific secondary evidence but not manufacturer product or service corroboration."
+    },
+    {
+      "url": "https://omegaforums.net/threads/clasp-micro-adjust-spring-bar-on-3861-bracelet.149906/",
+      "status": "validated_secondary",
+      "note": "An Omega-certified watchmaker posting in a third-party forum identifies bracelet-to-case part 068ST2207 as a 1.80 mm spring bar for the 3861 bracelet. The technical statement corroborates the exact-reference owner evidence, but the forum is not public Omega service material and does not satisfy the catalogue's manufacturer-corroboration rule."
+    },
+    {
+      "url": "https://www.fratellowatches.com/why-i-bought-the-new-omega-speedmaster-moonwatch-hesalite/",
+      "status": "validated_secondary",
+      "note": "The exact-reference article establishes Super-LumiNova hour-marker presence but provides no controlled charge duration, darkness interval, brightness comparison, or repeatable grade. Material presence alone cannot resolve lumeGrade."
     },
     {
       "url": "https://watch-site.nl/en/horloges/omega-speedmaster-31030425001001/",
@@ -170,7 +185,11 @@
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "Steel bracelet describes the supplied material, not whether the bracelet-to-case interface is spring-bar, quick-release, proprietary, or integrated."
+      "reason": "Steel bracelet describes the supplied material, not whether the bracelet-to-case interface is spring-bar, quick-release, proprietary, or integrated. Exact-reference owner evidence and a forum post by an Omega-certified watchmaker indicate a spring bar, but no public Omega product or service source corroborates the factory mechanism as required by the acceptance policy."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Exact-reference sources establish Super-LumiNova presence but provide no controlled charge duration, elapsed-time series, brightness comparison, or convergent performance result supporting weak, moderate, or strong."
     },
     {
       "fieldName": "operation.shockResistant",
@@ -182,5 +201,5 @@
     }
   ],
   "missingM1Fields": ["lumeGrade", "attachmentType"],
-  "note": "Keep as research-only. Omega's exact product page and product sheet are now independently retrievable and validate the core exact configuration, current $7,800 U.S. in-stock offer, geometry, approximately 134 g total weight, movement, operation, and chronograph function. Two independent exact-reference specifications explicitly resolve no-date status. The 0/+5 seconds-per-day official bound remains corroborated by an exact-reference long-term test. Luminescent material does not establish a categorical performance grade, and specialist strap fitment still lacks manufacturer corroboration of the factory bracelet mechanism."
+  "note": "Keep as research-only. Omega's exact product page and product sheet validate the core exact configuration, current $7,800 U.S. in-stock offer, geometry, approximately 134 g total weight, movement, operation, chronograph, and no-date status; the official 0/+5 seconds-per-day bound is independently corroborated. A 2026-08-30 Perplexity-assisted pass found exact-reference owner and Omega-certified-watchmaker forum evidence for a spring-bar bracelet interface, but no public Omega product or service source corroborates the mechanism as required. Exact-reference lume sources establish material presence without a controlled or convergent performance grade. Lume and attachment remain the two M1 gaps."
 }

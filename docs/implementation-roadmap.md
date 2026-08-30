@@ -495,6 +495,15 @@ specifications explicitly report no date display, reducing Omega's M1 gaps from
 three to two. It remains research-only because the exact sources do not support
 a repeatable lume grade or manufacturer-corroborated factory attachment type.
 
+A 2026-08-30 Perplexity-assisted Omega gap pass found direct exact-reference
+owner evidence that the factory bracelet uses spring bars and a third-party
+forum statement from an Omega-certified watchmaker identifying bracelet-to-case
+part 068ST2207 as a 1.80 mm spring bar for the 3861 bracelet. Neither is public
+Omega product or service material, so the manufacturer-corroboration rule still
+prevents acceptance. Exact-reference lume material likewise establishes only
+Super-LumiNova presence, with no controlled charge, elapsed-time series, or
+convergent performance grade. Both M1 gaps remain null.
+
 An exact-reference Bulova 98B316 dimensional follow-up resolves its previously
 missing lug-to-lug at 54.5 mm: two specifications publish the same 17.5 x 46.5
 x 54.5 mm set, with a separate specialist reporting 54.6 mm case length. The

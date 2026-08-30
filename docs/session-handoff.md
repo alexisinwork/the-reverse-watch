@@ -449,7 +449,10 @@ For the post-batch evidence-gap pass on the same date:
   approximately 134 g total weight, movement, and operation. Two independent
   exact-reference specifications explicitly resolve no-date status. Omega
   remains research-only for categorical lume and manufacturer-corroborated
-  factory attachment.
+  factory attachment. A 2026-08-30 Perplexity-assisted pass found convergent
+  exact-reference owner and Omega-certified-watchmaker forum evidence for
+  spring bars, but no public Omega product or service corroboration. Lume
+  sources still establish material presence without repeatable performance.
 - Seiko Presage HCC004J1 is now the fifth migration-ready review. Thong Sia's
   exact official Seiko Boutique page reports `Lumibrite: N/A`; Seiko's
   corporate directory identifies Thong Sia as its Singapore distributor, and
@@ -614,8 +617,9 @@ On 2026-08-28 for Phases 1–4:
 3. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega
    310.30.42.50.01.001 as research-only until their recorded review gaps are
    independently resolved. Omega's accuracy and no-date status are now resolved;
-   its lume and attachment gaps remain. Do not salvage contradictory or blocked
-   provider claims manually.
+   its lume and attachment gaps remain after the 2026-08-30 secondary spring-bar
+   pass found no public Omega corroboration and no repeatable lume test. Do not
+   salvage contradictory or blocked provider claims manually.
 4. Convert only M1-complete reviewed candidates into small additive catalogue
    migrations. Keep every knowledge-pack family research-only until it is split
    into homogeneous variants and independently sourced.

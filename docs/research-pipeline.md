@@ -416,6 +416,15 @@ for `lumeGrade` and `attachmentType`: presence of luminous material is not a
 repeatable performance grade, and third-party fitment does not establish the
 factory bracelet interface without manufacturer corroboration.
 
+A 2026-08-30 Perplexity-assisted follow-up found exact-reference owner evidence
+that the factory bracelet was installed with spring bars and a third-party forum
+statement from an Omega-certified watchmaker identifying 068ST2207 as the 3861
+bracelet-to-case spring bar. Those sources converge but remain secondary; no
+public Omega product or service document corroborates the mechanism. Separate
+exact-reference material confirms Super-LumiNova presence without a controlled
+charge or elapsed-time performance result. Attachment and lume therefore remain
+fail-closed.
+
 A Bulova 98B316 exact-reference dimensional pass resolved lug-to-lug at 54.5
 mm. Two independent records publish a 17.5 x 46.5 x 54.5 mm dimensional set,
 and a separate specialist reports 54.6 mm case length, consistent after normal
