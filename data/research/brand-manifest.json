@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:26:33.048Z",
+  "updatedAt": "2026-08-30T19:41:52.412Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4111,7 +4111,42 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "boldr-odyssey-horizon-druber-gmt",
+          "referenceLabel": "Validate current BOLDR Odyssey Horizon ODY-TI-40-H-BL as one homogeneous titanium GMT worn on its supplied integrated Druber strap; retain the supplied titanium bracelet only as an accessory and require exact lume performance, date status, Miyota 9075 accuracy applicability, and USD purchase-market evidence",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "wristBands": [
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add a new-brand, current titanium flyer GMT to 18 sparse 500-1000 workhorse-mechanical cells. The row must stay fixed to the manufacturer-published 91 g integrated Druber configuration even though the same SKU also includes a 125 g titanium bracelet."
+        }
+      ]
     },
     {
       "slug": "fiyta",

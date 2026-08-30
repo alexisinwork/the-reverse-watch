@@ -799,6 +799,17 @@ main-body weight, and 134-136 g retailer records lack a scale protocol. A narrow
 Perplexity follow-up confirmed the mass gap, so `weightFullG` remains null and
 the otherwise complete row is not promoted.
 
+The next explicit target is BOLDR Odyssey Horizon `ODY-TI-40-H-BL`, constrained
+to the supplied integrated Druber strap while the bundled titanium bracelet is
+recorded only as an accessory. BOLDR's live exact-SKU record exposes USD 799 and
+Add to cart; the manufacturer page publishes 40 x 13 x 48 mm geometry, 20 mm
+nominal lug size, 91 g full configured weight, Miyota 9075 flyer GMT, 300 m
+resistance, sapphire, and an integrated strap. That source-led hypothesis spans
+18 `500_1000`, workhorse-mechanical GMT cells and adds a new brand throughout.
+Independent review must still establish the USD purchase market, date status,
+exact-applicable 9075 tolerance, and repeatable lume performance rather than
+mapping Super-LumiNova material to a grade.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

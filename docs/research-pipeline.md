@@ -731,6 +731,19 @@ remains the sole M1 gap. The ignored ledger retains 47 attempts (26 succeeded,
 strict manifest now has 25 reviews: six migration-ready, 17 needing more
 evidence, and two excluded; 18 targets are accepted and 17 remain active.
 
+The next explicit coverage hypothesis is BOLDR Odyssey Horizon
+`ODY-TI-40-H-BL`, fixed to its supplied integrated Druber strap while retaining
+the bundled titanium bracelet only as an accessory. BOLDR's exact live Storefront
+record exposes a USD 799 Add to cart offer and the manufacturer page publishes
+40 x 13 x 48 mm geometry, a 20 mm nominal lug size, 91 g full Druber-strap
+weight, Miyota 9075 flyer GMT, 300 m resistance, a screw-down crown, sapphire,
+and an integrated strap. The selected configuration projects into 18
+`500_1000`, workhorse-mechanical GMT cells and adds a new brand throughout.
+Provider research must still prove the USD purchase market, exact date status,
+9075 accuracy applicability, and a repeatable lume grade; Swiss Super-LumiNova
+material alone does not satisfy the last field. No pre-screened fact is accepted
+before source review.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
