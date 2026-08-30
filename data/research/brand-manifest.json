@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 202,
-  "updatedAt": "2026-08-30T21:35:30.000Z",
+  "updatedAt": "2026-08-30T21:42:16.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4406,7 +4406,7 @@
         {
           "id": "mondaine-classic-a660-30314-11sbbv",
           "referenceLabel": "Mondaine Classic A660.30314.11SBBV, white no-date dial on the supplied black vegan grape-leather quick-change strap; keep this exact 36 mm Ronda 513 RL configuration separate from day-date A667, 40 mm, colored-dial, bracelet, and replacement-strap variants",
-          "state": "planned",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "under_300"
@@ -4441,7 +4441,8 @@
               "time_only_no_date"
             ]
           },
-          "coverageRationale": "Primary and exact-reference pre-screening retrieved 2026-08-30 covers a current EUR 239 official EU order path deliverable to Poland, 36 mm diameter, 43 mm overall length, 7.5-8 mm thickness, 18 mm interface, 37 g configured weight, Ronda 513 RL -10/+20-seconds-per-month rate, 30 m resistance, mineral crystal, explicit no-date and non-luminous-hand specification, and manufacturer quick-change system. Independent review must establish that the negative lume evidence applies to the whole exact dial and hands rather than infer absence from marketing copy. If every M1 class survives one bounded provider job, the exact formal/studio row opens 160 currently empty under_300, zero-maintenance, time-only cells."
+          "coverageRationale": "Independent exact-reference review validates the current EUR 239 official EU order path deliverable to Poland, 36 mm diameter, 43 mm overall length, 7.5-8 mm thickness, 18 mm interface, 37 g configured weight, Ronda 513 RL -10/+20-seconds-per-month rate, 30 m resistance, mineral crystal, no-date state, no luminescence, and manufacturer quick-change system. Generic retailer Stop2go/backlight boilerplate is rejected because its structured row also conflicts with Mondaine's exact weight. The homogeneous formal/studio row opens 160 previously empty under_300, zero-maintenance, time-only cells.",
+          "catalogueVariantId": "mondaine-classic-a660-30314-11sbbv"
         }
       ]
     }

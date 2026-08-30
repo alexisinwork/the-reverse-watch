@@ -17,8 +17,8 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Migrations `0001` through `0023` are applied to the connected Supabase
-  project. The live v3 catalogue contains all 17 brands and 21 accepted
+- Migrations `0001` through `0024` are applied to the connected Supabase
+  project. The live v3 catalogue contains all 18 brands and 22 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
   result parity passes. All 20 public catalogue tables have RLS enabled with no
   direct browser grants or policies; the application uses only two narrow,
@@ -67,15 +67,25 @@ phase.
   interface, no-date configuration, and convergent exact-owner no-lume status.
   Migration `0023` is live with M1 complete and 31 verified reference-level
   evidence rows; 21-row parity passes and coverage is 684/28,800 (2.38%).
-- The next active session-plan item is exactly one bounded provider attempt for
-  Mondaine Classic `A660.30314.11SBBV`, fixed to the white no-date dial and
-  supplied black vegan grape-leather quick-change strap. Primary and exact
-  pre-screening retrieved 2026-08-30 covers every M1 class and projects 160
-  currently empty `under_300`, zero-maintenance, time-only cells across studio
-  and formal use. The manifest target is `planned`; none of those routing facts
-  is accepted until exact-reference independent review resolves whole-watch
-  no-lume status and rejects A667 day-date, 40 mm, other-dial, bracelet, and
-  replacement-strap inheritance.
+- Mondaine Classic `A660.30314.11SBBV` is accepted on the exact white no-date
+  dial and supplied black vegan grape-leather quick-change strap. Independent
+  review revalidated all accepted fields after the paid response failed strict
+  normalization, and exact SBB plus Helveti records establish whole-watch no
+  luminescence. Migration `0024` is live with M0/M1 complete and 40 verified
+  reference-level evidence rows from six sources; 22-row public parity passes
+  and coverage is 844/28,800 (2.93%).
+- The Mondaine provider ledger preserves two failed attempts: the first
+  returned useful raw research at USD 0.02028 but failed strict normalization;
+  the second was interrupted before a response was persisted after an
+  equals-style CLI parsing defect caused `--attempts=1` to fall back to three.
+  The worker now accepts spaced and equals-style options, and the interrupted
+  record retains null response/usage rather than a fabricated cost. The full
+  ignored ledger is 62 attempts (37 succeeded, 25 failed) across 32 target IDs
+  with USD 0.51546 recorded cost.
+- The default provider queue is empty. The next active session-plan item is a
+  source-led exact-reference pre-screen for one homogeneous candidate with
+  meaningful uncovered-cell value. Do not invoke the provider until the named
+  candidate has complete projected M1 evidence and explicit variant boundaries.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -106,8 +116,8 @@ phase.
   evidence; fail-closed SQL hard filters; speculative-candidate suppression;
   deterministic score traces, diversity, why-not explanations, and visible
   relaxations; and the complete 28,800-cell coverage audit.
-- The audit is not complete at the data layer: only 21 homogeneous variants are
-  accepted locally, 684 of 28,800 cells are covered, every covered cell is
+- The audit is not complete at the data layer: only 22 homogeneous variants are
+  accepted locally, 844 of 28,800 cells are covered, every covered cell is
   under-diversified, and 224 are under-evidenced. Phase 5 must close that
   breadth and evidence gap before the 200-brand knowledge pack can be treated as
   a recommendation catalogue. Phase 7 dossier, funnel, and owner-media work
@@ -636,14 +646,12 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Run exactly one bounded Perplexity attempt for
-   `mondaine-classic-a660-30314-11sbbv`, then independently review the exact
-   white no-date 36 mm watch on its supplied black vegan grape-leather strap.
-   Require whole-watch no-lume evidence rather than treating no luminous hands
-   as sufficient by itself, and reject A667 day-date, 40 mm, other-dial,
-   bracelet, and replacement-strap inheritance. If and only if every M1 class
-   survives review, render the next additive migration and prove live parity.
-2. Treat the live 21-row v3 catalogue and six-profile parity as the relational
+1. Begin with a source-led exact-reference pre-screen for one homogeneous
+   candidate that materially improves uncovered cells. Establish exact identity,
+   commercial state, physical facts, movement and operation, complications,
+   applicability, and field-level sources before adding it as `planned`; invoke
+   no provider job until all projected M1 classes are represented.
+2. Treat the live 22-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.
@@ -679,10 +687,10 @@ On 2026-08-28 for Phases 1–4:
    after every accepted batch.
 7. Continue prioritizing coverage and original-plan purpose over raw brand
    count even though the 200-dossier pack is now fully represented.
-8. If database access remains unavailable, do not rerun the now-empty default
-   queue. Close a named existing review gap only from independently identified
-   exact-reference evidence, or add a new target with an explicit coverage or
-   original-plan purpose before invoking the worker. Do not repeat excluded
+8. Do not rerun the now-empty default queue. Close a named existing review gap
+   only from independently identified exact-reference evidence, or add a new
+   target with an explicit coverage or original-plan purpose before invoking
+   the worker. Do not repeat excluded
    Bulova 98B429 or AP 15510ST.OO.1320ST.01, substitute generic calibre
    performance for a missing published exact-applicable bound, infer an
    attachment interface from the supplied strap or bracelet, or treat a blank

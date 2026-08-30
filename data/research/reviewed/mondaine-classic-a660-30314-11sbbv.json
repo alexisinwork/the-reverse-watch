@@ -1,0 +1,207 @@
+{
+  "reviewVersion": 1,
+  "targetId": "mondaine-classic-a660-30314-11sbbv",
+  "jobId": "6dc7ac43-6249-444c-934f-053dd21e50c2",
+  "reviewedAt": "2026-08-30T21:42:16Z",
+  "reviewer": "codex-source-review",
+  "outcome": "ready_for_migration",
+  "candidateIdentity": {
+    "brand": "Mondaine",
+    "model": "Classic",
+    "referenceCode": "A660.30314.11SBBV",
+    "variantName": "White no-date dial on supplied black vegan grape-leather quick-change strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "status": "validated_primary",
+      "note": "Mondaine's exact current EU route identifies A660.30314.11SBBV and exposes EUR 239, Add to Bag, delivery to Poland, the white time-only dial on supplied black vegan grape leather, 36 mm diameter, 7.5 mm thickness, 18 mm lugs, 37 g configured weight, Ronda 513 RL quartz, 30 m resistance, mineral crystal, and a quick-change system. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://mondaine.com/products/classic-36mm-stainless-steel-polished-case-material-and-black-vegan-grape-leather-strap-a660-30314-11sbbv",
+      "status": "validated_primary",
+      "note": "Mondaine's exact U.S. product route independently repeats SKU, current Add to Bag state, configured material, 37 g mass, Ronda 513 RL, and physical specification set. Its USD 340 locale is retained as corroboration rather than merged into the selected EUR/Poland market snapshot. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://commerce.sbb.ch/en/mondaine-sbb-wristwatch-classic-36-mm-polished-a660-30314-11sbbv.html",
+      "status": "validated_secondary",
+      "note": "The Swiss Federal Railways exact-SKU store reports no date display and no luminous hands for A660.30314.11SBBV, while independently repeating the 36 mm polished case, 7.65 mm thickness, 18 mm strap, mineral glass, quartz operation, and current order state. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.helveti.eu/mondaine-classic-a660-30314-11sbbv",
+      "status": "validated_secondary",
+      "note": "The exact-reference authorized Mondaine specialist independently publishes 37 g, 36 x 7.5 mm, Ronda 513, -10/+20 seconds per month, 30 m, 18 mm quick-release strap, no date, and Luminescence: No. Together with SBB's no-luminous-hands field, this closes whole-watch no-lume rather than inferring absence from manufacturer marketing omission. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://nanaple.com/en/products/a660-30314-11sbbv-quartz",
+      "status": "validated_secondary",
+      "note": "The exact-reference product record reports the complete 43 x 36 x 8 mm envelope and 37 g weight. It supplies the overall case length needed for conservative wrist fit without inventing a separate lug-to-lug measurement. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.ronda.ch/en/watch-movement-finder/caliber/515",
+      "status": "validated_primary",
+      "note": "Ronda's powertech technical record publishes -10/+20 seconds per month and explicitly links the shared TA_512/513/515 technical instruction. Mondaine and the exact specialist both identify the installed calibre as the same-family Ronda 513 RL. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.mastersintime.com/mondaine-classic-shiny-swiss-railway-watch-with-vegan-leather-strap-a660-30314-11sbbv.htm",
+      "status": "validated_secondary",
+      "note": "The exact-reference specialist independently identifies case code 30314, Ronda 513, 8 mm thickness, 18 mm lugs, original FG3118.21Q strap, and quick-release spring pins. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.koscom.eu/de/mondaine-classic-a660-30314-11sbbv",
+      "status": "rejected",
+      "note": "The exact-SKU page's generic collection footer discusses Stop2go and underside Super-LumiNova, neither of which appears in its structured product specification. The same page incorrectly reports 80 g against Mondaine's exact 37 g. Its collection boilerplate is rejected for this row; it does not override exact SBB and Helveti no-lume fields. Retrieved 2026-08-30."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "productionStatus",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "fieldApplicability.lugWidthMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.caliber",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crownType"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "variantName",
+      "value": "White no-date dial on supplied black vegan grape-leather quick-change strap",
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "The normalized name fixes dial, date, and supplied strap configuration rather than collapsing other Classic variants into this row."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "PL",
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "The EU manufacturer route explicitly includes Poland among its delivery markets; the country is normalized to ISO alpha-2."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "The exact current EUR product route exposes Add to Bag at retrieval time."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "Mondaine's manufacturer storefront maps to the catalogue's authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "The manufacturer Add to Bag route is a new-watch offer."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 43,
+      "sourceUrl": "https://nanaple.com/en/products/a660-30314-11sbbv-quartz",
+      "note": "The exact record publishes 43 mm overall length; lug-to-lug remains null because it is not separately stated."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "quartz",
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "Mondaine explicitly identifies the installed Ronda 513 RL as quartz; the value is normalized to the catalogue enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "mineral",
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "Mondaine's hardened mineral description normalizes to the catalogue's mineral enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "none",
+      "sourceUrl": "https://www.helveti.eu/mondaine-classic-a660-30314-11sbbv",
+      "note": "The exact authorized-specialist row states Luminescence: No, independently corroborated by the exact SBB listing's no-luminous-hands field."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "quick_release",
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "Mondaine explicitly publishes a quick-change system; exact specialist records identify the case interface as quick-release spring pins."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "note": "The exact product exposes hours, minutes, and seconds only; there is no supported catalogue complication."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://commerce.sbb.ch/en/mondaine-sbb-wristwatch-classic-36-mm-polished-a660-30314-11sbbv.html",
+      "note": "The exact SBB listing explicitly states no date display, corroborated by the exact authorized specialist."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "The provider emitted Poland as prose; direct review normalizes the exact EU delivery market to PL."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Available to order is provider prose rather than the catalogue enum; the exact active Add to Bag route normalizes to in_stock."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Official Mondaine EU webshop is provider prose and is normalized to authorized_dealer."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "reason": "The provider attributed 43 mm to the manufacturer route even though that page exposes diameter and thickness only. Direct review replaces it with the exact independent 43 x 36 x 8 mm record."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Quartz is normalized to the lowercase catalogue enum."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "reason": "The provider marked null power reserve as observed and conflated a 24-month warranty with battery endurance. Quartz power reserve remains null and not applicable; no plausible default is supplied."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Hardened mineral crystal is normalized to the mineral catalogue enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The provider relied on a different A660.30314.16OMV strap/reference page. Direct review instead uses exact A660.30314.11SBBV SBB and Helveti records and rejects Koscom's demonstrably generic collection footer."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Quick-change system is normalized to quick_release after exact specialist evidence identifies quick-release spring pins at the case."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Hours, Minutes, Seconds are ordinary time display rather than supported complication enums; the normalized list is empty."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "The provider used a different A660.30314.16OMV page. The absent value is re-established from the exact SBB and Helveti A660.30314.11SBBV records."
+    },
+    {
+      "fieldName": "serviceCountries",
+      "reason": "The provider marked serviceCountries both resolved and unresolved, and delivery countries do not establish service coverage. The field remains null."
+    }
+  ],
+  "missingM1Fields": [],
+  "note": "Ready for migration on the exact current A660.30314.11SBBV white no-date dial and supplied black vegan grape-leather quick-change strap. The sole Perplexity response is retained as a failed strict-normalization job because it marked a null value observed and duplicated serviceCountries across resolved and unresolved sets; no failed raw claim is accepted without direct review. Primary and exact secondary checks independently close every M1 field. Koscom's generic Stop2go/backlight footer is rejected because its structured exact-product row also conflicts with Mondaine's 37 g mass by reporting 80 g and never marks backlight as an exact feature. Exact SBB and authorized-specialist records instead converge on no luminescence."
+}

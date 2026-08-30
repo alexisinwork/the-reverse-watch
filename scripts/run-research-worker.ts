@@ -54,8 +54,15 @@ type WorkerOptions = {
 
 function integerArgument(name: string, fallback: number | null) {
   const index = process.argv.indexOf(name);
-  if (index === -1) return fallback;
-  const value = Number(process.argv[index + 1]);
+  const inline = process.argv.find((argument) =>
+    argument.startsWith(`${name}=`),
+  );
+  if (index === -1 && inline === undefined) return fallback;
+  const rawValue =
+    inline !== undefined
+      ? inline.slice(name.length + 1)
+      : process.argv[index + 1];
+  const value = Number(rawValue);
   if (!Number.isInteger(value) || value < 1) {
     throw new RangeError(`${name} must be a positive integer.`);
   }
@@ -67,6 +74,10 @@ function stringArguments(name: string) {
   process.argv.forEach((argument, index) => {
     const value = process.argv[index + 1];
     if (argument === name && value) values.push(value);
+    if (argument.startsWith(`${name}=`)) {
+      const inline = argument.slice(name.length + 1);
+      if (inline) values.push(inline);
+    }
   });
   return values;
 }

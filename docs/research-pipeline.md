@@ -58,12 +58,11 @@ will pass those cells; source research must prove every dimension first.
 Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
-  research-only M0/M2 context, alongside Swatch and one source-led Mondaine
-  coverage target;
-- 21 accepted catalogue targets linked to all current reviewed variants;
-- 21 active coverage-intent targets, with one source-screened target in the
-  default research queue;
-- live Supabase parity for 17 brands and all 21 accepted variants across the
+  research-only M0/M2 context alongside source-led additions through Mondaine;
+- 22 accepted catalogue targets linked to all current reviewed variants;
+- 28 coverage-intent targets, with no planned target in the default research
+  queue;
+- live Supabase parity for 18 brands and all 22 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
@@ -997,23 +996,39 @@ reviews include nine migration-ready decisions. The ignored provider ledger
 contains 60 attempts (37 succeeded, 23 failed) across 31 target IDs and USD
 0.49518 recorded cost. The default queue was empty again at acceptance.
 
-The next source-led checkpoint adds Mondaine Classic
-`A660.30314.11SBBV` as one exact planned target outside the owner knowledge
-pack. The [current manufacturer page](https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv)
-retrieved 2026-08-30 supplies its EUR 239 EU offer, exact identity, 36 mm
-diameter, 7.5 mm thickness, 18 mm lugs, 37 g configured weight, Ronda 513 RL,
-30 m resistance, mineral crystal, time-only layout, and quick-change system.
-An [exact secondary dimensional record](https://nanaple.com/en/products/a660-30314-11sbbv-quartz)
-reports the full 43 x 36 x 8 mm envelope and repeats 37 g; the [official Ronda
-record](https://www.ronda.ch/en/watch-movement-finder/caliber/513) gives
--10/+20 seconds per month; and the [Swiss Federal Railways exact listing](https://commerce.sbb.ch/en/mondaine-sbb-wristwatch-classic-36-mm-polished-a660-30314-11sbbv.html)
-reports no date and no luminous hands. These pre-screened facts remain
-provisional routing constraints. Independent review must prove whole-watch
-no-lume status and keep the row separate from the A667 day-date, 40 mm,
-colored-dial, bracelet, and replacement-strap variants. The projected row opens
-160 currently empty `under_300`, zero-maintenance, time-only cells across every
-wrist, accuracy, and weight band in studio and formal use. The ignored provider
-ledger remains unchanged; no paid attempt was made before this checkpoint.
+The Mondaine checkpoint accepts exact Classic `A660.30314.11SBBV`, fixed to its
+white no-date dial and supplied black vegan grape-leather strap. The first paid
+response contains useful source discovery but fails strict normalization: one
+null claim is not marked missing and `serviceCountries` appears in both resolved
+and unresolved sets. The equals-style worker invocation also exposed that the
+CLI understood only spaced options, so `--attempts=1` fell back to the default
+three and a second request began before interruption. Its job record remains a
+failure with no response or usage invented. The parser now supports both option
+forms, and an exact dry run proves the one-attempt target selection without a
+provider call.
+
+Independent review revalidates every accepted field from exact sources rather
+than accepting the malformed extraction. The [current manufacturer page](https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv)
+supplies EUR 239 availability, 36 mm diameter, 7.5 mm thickness, 18 mm lugs,
+37 g configured weight, Ronda 513 RL, 30 m resistance, mineral crystal, and the
+quick-change system. The [exact dimensional record](https://nanaple.com/en/products/a660-30314-11sbbv-quartz)
+adds 43 mm overall length. The [official Ronda family record](https://www.ronda.ch/en/watch-movement-finder/caliber/515)
+supports -10/+20 seconds per month; the exact SBB listing and [Helveti](https://www.helveti.eu/mondaine-classic-a660-30314-11sbbv)
+independently establish no date and no luminescence. Review rejects generic
+retailer Stop2go/backlight boilerplate because the same structured row conflicts
+with Mondaine's exact 37 g mass. No M1 gap remains.
+
+Additive migration `0024_expand_catalogue_mondaine_classic.sql` accepts
+`mondaine-classic-a660-30314-11sbbv`. Remote verification reports M0 and M1
+complete, 40 verified reference-level evidence rows from six sources, and 22
+accepted variants across 18 brands. Publishable-key catalogue and SQL
+hard-filter parity passes for all 22 variants and six golden profiles. Coverage
+rises by the projected 160 cells to 844/28,800 (2.93%). Strict research reports
+22 accepted, 20 `needs_review`, and two excluded targets; 32 reviews include ten
+migration-ready decisions. The ignored provider ledger contains 62 attempts (37
+succeeded, 25 failed) across 32 target IDs and USD 0.51546 recorded cost. The
+default queue is empty; the next target must first pass a source-led exact M1
+pre-screen before any provider request.
 
 ## Job idempotency and retention
 

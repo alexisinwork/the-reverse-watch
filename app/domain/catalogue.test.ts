@@ -12,10 +12,10 @@ import { seedCatalogue } from "./seed-catalogue";
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
     expect(seedCatalogue.catalogueVersion).toBe(2);
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(21);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(22);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(21);
+    ).toBe(22);
   });
 
   it("retains evidence for every seed identity and price", () => {
@@ -155,6 +155,39 @@ describe("source-backed seed catalogue", () => {
       attachmentType: "spring_bar",
     });
     expect(evidenceFields(seiko!).has("attachmentType")).toBe(true);
+  });
+
+  it("retains the reviewed Mondaine no-date and no-lume configuration", () => {
+    const mondaine = seedCatalogue.variants.find(
+      (variant) => variant.id === "mondaine-classic-a660-30314-11sbbv",
+    );
+
+    expect(mondaine).toBeDefined();
+    expect(mondaine!.referenceCode).toBe("A660.30314.11SBBV");
+    expect(mondaine!.geometry).toMatchObject({
+      caseDiameterMm: 36,
+      caseWidthMm: 36,
+      caseLengthMm: 43,
+      caseThicknessMm: 7.5,
+      lugWidthMm: 18,
+      weightFullG: 37,
+    });
+    expect(mondaine!.movement).toMatchObject({
+      type: "quartz",
+      caliber: "Ronda 513 RL",
+      accuracyLowerSeconds: -10,
+      accuracyUpperSeconds: 20,
+      accuracyPeriodDays: 30,
+    });
+    expect(mondaine!.operation).toMatchObject({
+      waterResistanceM: 30,
+      lumeGrade: "none",
+      attachmentType: "quick_release",
+    });
+    expect(mondaine!.complications).toEqual([]);
+    expect(mondaine!.dateStatus).toBe("absent");
+    expect(evidenceFields(mondaine!).has("lumeGrade")).toBe(true);
+    expect(evidenceFields(mondaine!).has("attachmentType")).toBe(true);
   });
 
   it("rejects a partial non-round dimension pair", () => {

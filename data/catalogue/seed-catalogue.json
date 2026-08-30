@@ -520,6 +520,54 @@
       "publisher": "Reddit / r/MicrobrandWatches",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-30T21:19:27Z"
+    },
+    {
+      "id": "mondaine-classic-a660-eu-product",
+      "url": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "title": "Classic black vegan grape leather 36 mm — A660.30314.11SBBV",
+      "publisher": "Mondaine Europe",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T21:35:30Z"
+    },
+    {
+      "id": "sbb-mondaine-classic-a660",
+      "url": "https://commerce.sbb.ch/en/mondaine-sbb-wristwatch-classic-36-mm-polished-a660-30314-11sbbv.html",
+      "title": "Mondaine SBB wristwatch Classic 36 mm polished",
+      "publisher": "Swiss Federal Railways",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:42:16Z"
+    },
+    {
+      "id": "helveti-mondaine-classic-a660",
+      "url": "https://www.helveti.eu/mondaine-classic-a660-30314-11sbbv",
+      "title": "Mondaine Classic A660.30314.11SBBV specifications",
+      "publisher": "Helveti",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:42:16Z"
+    },
+    {
+      "id": "nanaple-mondaine-classic-a660",
+      "url": "https://nanaple.com/en/products/a660-30314-11sbbv-quartz",
+      "title": "A660.30314.11SBBV exact dimensions and configured weight",
+      "publisher": "Nanaple",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:42:16Z"
+    },
+    {
+      "id": "ronda-powertech-512-513-515",
+      "url": "https://www.ronda.ch/en/watch-movement-finder/caliber/515",
+      "title": "Ronda powertech shared 512/513/515 technical record",
+      "publisher": "Ronda AG",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T21:42:16Z"
+    },
+    {
+      "id": "mastersintime-mondaine-classic-a660",
+      "url": "https://www.mastersintime.com/mondaine-classic-shiny-swiss-railway-watch-with-vegan-leather-strap-a660-30314-11sbbv.htm",
+      "title": "Mondaine Classic A660.30314.11SBBV case and quick-release interface",
+      "publisher": "Masters In Time",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T21:42:16Z"
     }
   ],
   "fx": {
@@ -2862,6 +2910,149 @@
         {
           "sourceId": "reddit-brew-metric-titanium-owner",
           "fields": ["identity", "lumeGrade"]
+        }
+      ]
+    },
+    {
+      "id": "mondaine-classic-a660-30314-11sbbv",
+      "brand": {
+        "slug": "mondaine",
+        "name": "Mondaine",
+        "serviceCountries": null
+      },
+      "collection": "Classic",
+      "model": "Classic 36mm",
+      "referenceCode": "A660.30314.11SBBV",
+      "variantName": "White no-date dial · black vegan grape-leather strap",
+      "productUrl": "https://eu.mondaine.com/products/classic-36mm-edelstahl-poliert-gehausematerial-and-schwarz-vegan-trauben-leder-armband-a660-30314-11sbbv",
+      "price": {
+        "amountMinor": 23900,
+        "currency": "EUR",
+        "marketCountry": "PL",
+        "observedAt": "2026-08-30T21:35:30Z",
+        "staleAfter": "2027-02-26T21:35:30Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-30T21:35:30Z",
+        "availabilityStaleAfter": "2026-09-29T21:35:30Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "polished 316L stainless steel",
+        "caseback": "pressed 316L stainless steel",
+        "bracelet": null,
+        "strap": "black vegan grape leather with red lining"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 36,
+        "caseWidthMm": 36,
+        "caseLengthMm": 43,
+        "caseThicknessMm": 7.5,
+        "lugToLugMm": null,
+        "lugWidthMm": 18,
+        "weightFullG": 37,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "quartz",
+        "caliber": "Ronda 513 RL",
+        "powerReserveHours": null,
+        "accuracyLowerSeconds": -10,
+        "accuracyUpperSeconds": 20,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 30,
+        "crownType": "push_pull",
+        "crownPosition": null,
+        "crystal": "mineral",
+        "lumeGrade": "none",
+        "attachmentType": "quick_release",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["studio_desk_daily", "formal_architectural"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "swiss_railway_design_classic",
+        "socialSignals": ["quiet_continuity"],
+        "aestheticDna": ["mid_century_industrial"],
+        "emotionalObjectives": ["dependability", "differentiation"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "mondaine-classic-a660-eu-product",
+          "fields": [
+            "identity",
+            "price",
+            "availability",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseWidthMm",
+            "caseThicknessMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crystal",
+            "integratedBracelet",
+            "attachmentType",
+            "complications",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "sbb-mondaine-classic-a660",
+          "fields": ["identity", "caseThicknessMm", "lumeGrade", "dateStatus"]
+        },
+        {
+          "sourceId": "helveti-mondaine-classic-a660",
+          "fields": [
+            "identity",
+            "weightFullG",
+            "movement",
+            "accuracy",
+            "lumeGrade",
+            "attachmentType",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "nanaple-mondaine-classic-a660",
+          "fields": [
+            "identity",
+            "caseWidthMm",
+            "caseLengthMm",
+            "caseThicknessMm",
+            "weightFullG"
+          ]
+        },
+        {
+          "sourceId": "ronda-powertech-512-513-515",
+          "fields": ["movement", "accuracy"]
+        },
+        {
+          "sourceId": "mastersintime-mondaine-classic-a660",
+          "fields": [
+            "identity",
+            "caseThicknessMm",
+            "lugWidthMm",
+            "crownType",
+            "attachmentType"
+          ]
         }
       ]
     }
