@@ -785,6 +785,15 @@ available status, and two-to-three-day delivery supports current production as
 a reviewed normalization. `lumeGrade` is now the only M1 uncertainty, so the
 target is reset for one exact-reference performance-only pass.
 
+The lume-only pass returned a second valid exact identity but explicitly left
+the performance grade null after finding no qualifying source. Independent
+retrieval also shows that the first job's purported product-linked LACO 2S
+manual URL currently returns 404; its extracted spring-bar statement therefore
+cannot pass source review. `lumeGrade` and `attachmentType` remain open. One
+final fastener-only pass is queued for a retrievable exact manufacturer/service
+record or exact physical inspection corroborated by Laco material; strap rivets
+and buckle hardware remain out of scope.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

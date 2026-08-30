@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:59:05.696Z",
+  "updatedAt": "2026-08-30T20:02:29.386Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1419,7 +1419,7 @@
       "targets": [
         {
           "id": "laco-compact-mechanical-pilot",
-          "referenceLabel": "Find exact Laco Augsburg 39 reference 861988 lume-performance evidence only: require a controlled charge and elapsed observation, a timed decay series, or multiple independent exact-reference assessments converging on weak, moderate, or strong; exclude Augsburg 42, Augsburg color editions, other Laco pilot watches, material-only C3 labels, and lume photographs without a performance result",
+          "referenceLabel": "Find exact Laco Augsburg 39 reference 861988 strap-to-case fastener evidence only: require a currently retrievable manufacturer product, manual, service, parts, or replacement-strap record tied to 861988, or an exact-reference physical inspection corroborated by Laco service material; distinguish decorative strap rivets and buckle hardware from spring bars, quick release, proprietary, or integrated case attachment",
           "state": "planned",
           "coverageIntent": {
             "priceBands": [

@@ -846,6 +846,14 @@ supports a reviewed current-production normalization. Lume is therefore the
 sole remaining M1 uncertainty, and one exact-reference performance-only pass is
 queued without admitting sibling Augsburg or generic Laco claims.
 
+The lume-only retry found no qualifying exact-reference performance result and
+left the grade null. Direct retrieval also rejects the first result's alleged
+LACO 2S manual source because its URL currently returns 404, preventing review
+of the extracted spring-bar sentence. Both `lumeGrade` and `attachmentType`
+therefore remain fail-closed. A final exact-reference fastener pass is queued
+for a retrievable manufacturer/service record or corroborated physical
+inspection, explicitly excluding decorative rivets and buckle hardware.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
