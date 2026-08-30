@@ -380,7 +380,11 @@ For the post-batch evidence-gap pass on the same date:
 - Certina C048.807.44.051.01 remains research-only. The official mechanical
   manual linked from its exact product page states an approximate range only
   for most non-chronometers, not a guaranteed numerical tolerance for this
-  reference.
+  reference. A 2026-08-30 Perplexity-assisted follow-up found an exact
+  specialist-retailer -10/+25 seconds-per-day claim, but it is unattributed,
+  untested, and differs from Certina's approximate +30 upper guidance. The
+  official FAQ refers only to undisclosed internal tolerances, so accuracy
+  remains null.
 - Generated migration `0011_expand_catalogue_orient.sql` is an additive,
   replay-safe one-row expansion intended to run after `0010`. At that checkpoint
   the local seed had 13 brands/14 variants and coverage was 244/28,800 cells

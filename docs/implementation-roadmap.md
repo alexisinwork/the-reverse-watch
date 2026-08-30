@@ -357,6 +357,15 @@ research-only. That checkpoint had 14 accepted targets and 17 active targets;
 the review outcomes were two migration-ready, 17 needing more evidence, and two
 excluded.
 
+A 2026-08-30 Perplexity-assisted Certina accuracy pass explicitly retained that
+last gap. An exact-reference specialist retailer publishes -10/+25 seconds per
+day but gives no test method, source attribution, serial-specific result, or
+manufacturer guarantee; the upper bound also differs from Certina's approximate
+-10/+30 guidance for most non-chronometers. Certina's official FAQ confirms
+that mechanical accuracy varies and refers only to undisclosed internal
+tolerances. No authoritative exact-reference or Powermatic 80.611 numerical
+guarantee was found, so the row remains `needs_more_evidence`.
+
 A subsequent near-complete review pass resolved Seiko HCC004J1's attachment as
 `spring_bar` from an exact-reference standard-attachment description. It did
 not infer lume: Seiko Netherlands' Lumibrite rows conflict with an independent

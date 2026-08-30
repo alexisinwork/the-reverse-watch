@@ -255,6 +255,15 @@ page says only that most non-chronometers average around -10/+30 seconds per
 day, which is neither universal nor a guaranteed bound for the selected
 reference.
 
+A 2026-08-30 Perplexity-assisted follow-up found an exact-reference specialist
+retailer publishing -10/+25 seconds per day. The page gives no measurement
+method, source attribution, serial-specific result, or manufacturer guarantee,
+and its upper bound differs from Certina's approximate +30 guidance for most
+non-chronometers. Certina's official FAQ states that mechanical accuracy varies
+and mentions only undisclosed internal tolerances. The three numerical accuracy
+fields therefore remain null rather than accepting an unattributed retailer
+specification.
+
 Generated migration `0011_expand_catalogue_orient.sql` is replay-safe and adds
 only the reviewed Orient row after migration `0010`. At that checkpoint the
 local seed had 14 variants and covered 244/28,800 cells (0.85%); 148 covered
