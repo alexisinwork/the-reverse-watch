@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T18:59:00Z",
+  "updatedAt": "2026-08-30T19:04:16.118Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2256,7 +2256,7 @@
         {
           "id": "nodus-regulated-mechanical-tool",
           "referenceLabel": "Select one current homogeneous Nodus mechanical tool-watch variant with exact configured weight evidence, regulated numerical accuracy, and a fully identified bracelet or strap interface",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "300_500",

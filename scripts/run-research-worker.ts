@@ -239,7 +239,11 @@ function newJob({
   });
 }
 
-async function callPerplexity(target: ResearchTarget, preset: string) {
+async function callPerplexity(
+  target: ResearchTarget,
+  preset: string,
+  correction: string | null,
+) {
   const apiKey = process.env.PERPLEXITY_API_KEY;
   if (!apiKey) {
     throw new Error("PERPLEXITY_API_KEY is not configured.");
@@ -252,7 +256,7 @@ async function callPerplexity(target: ResearchTarget, preset: string) {
     },
     body: JSON.stringify({
       preset,
-      input: buildResearchPrompt(target),
+      input: buildResearchPrompt(target, correction),
       language_preference: "en",
       max_output_tokens: 12_000,
       response_format: perplexityResearchResponseFormat,
@@ -346,6 +350,7 @@ async function researchTarget(
   }
 
   const firstAttempt = (maximumAttemptByFingerprint.get(fingerprint) ?? 0) + 1;
+  let correction: string | null = null;
   for (let offset = 0; offset < options.attempts; offset += 1) {
     const attempt = firstAttempt + offset;
     let retryDelayMs: number | null = null;
@@ -361,7 +366,11 @@ async function researchTarget(
     writeJob(job);
 
     try {
-      const providerResponse = await callPerplexity(target, options.preset);
+      const providerResponse = await callPerplexity(
+        target,
+        options.preset,
+        correction,
+      );
       const { raw } = providerResponse;
       const rawPath = path.join(RAW_DIR, `${job.jobId}.json`);
       writeJsonExclusive(rawPath, raw);
@@ -432,6 +441,7 @@ async function researchTarget(
       job.status = "failed";
       job.completedAt = new Date().toISOString();
       job.error = errorMessage(error);
+      correction = job.error;
       writeJob(job);
       maximumAttemptByFingerprint.set(fingerprint, attempt);
       console.error(

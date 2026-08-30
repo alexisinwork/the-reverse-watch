@@ -1,0 +1,192 @@
+{
+  "reviewVersion": 1,
+  "targetId": "nodus-regulated-mechanical-tool",
+  "jobId": "330c79e8-1b5b-4eb4-893f-d64b910caf5f",
+  "reviewedAt": "2026-08-30T19:06:45Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Nodus",
+    "model": "Sector II Field Titanium",
+    "referenceCode": "SEC-F-SHA",
+    "variantName": "Shale on full titanium bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "status": "validated_primary",
+      "note": "Nodus's exact live product route and embedded Squarespace product payload identify Shale SKU SEC-F-SHA at USD 625. The page publishes the Grade 2 titanium case and bracelet, 38 x 11.7 x 47 mm geometry, 20 mm lugs, 100 g on the full unsized bracelet, TMI NH38, 41-hour reserve, Nodus-regulated -10/+10 seconds per day, 100 m resistance, screw-down crown, sapphire, BGW9 Grade A lume material, NEM clasp, and quick-release spring bars. Stock is zero and the route offers restock notification, so availability is unavailable rather than in stock; the page does not publish a repeatable lume-performance grade. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://twobrokewatchsnobs.com/hands-on-affordable-field-watch-showdown-nodus-sector-ii-vs-hamilton-khaki-field/",
+      "status": "validated_secondary",
+      "note": "The exact-model hands-on comparison independently confirms a dedicated no-date NH38 with no phantom crown position. It reports fast initial lume charging, brightness, and immediate dark contrast but explicitly disclaims a stopwatch-style lume test; it provides no controlled charge, elapsed-time series, or repeatable grade. Retrieved 2026-08-30 after a narrow Perplexity source-discovery pass."
+    },
+    {
+      "url": "https://twobrokewatchsnobs.com/nodus-sector-ii-field-titanium-review/",
+      "status": "validated_secondary",
+      "note": "A second exact-model hands-on review independently identifies the NH38 as a dedicated no-date caliber and reports only that the lume charges quickly. It does not supply a timed decay observation or shared comparison standard, so it corroborates no-date status but cannot close the lume-grade gate. Retrieved 2026-08-30 after a narrow Perplexity source-discovery pass."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "fieldApplicability.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crystal"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "referenceCode",
+      "value": "SEC-F-SHA",
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "Nodus's embedded exact product payload publishes SKU SEC-F-SHA; the provider incorrectly used the product URL as a candidate reference code and separately called the field missing."
+    },
+    {
+      "fieldName": "variantName",
+      "value": "Shale on full titanium bracelet",
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "The reviewed variant name fixes both the Shale color and the exact full Grade 2 titanium bracelet configuration whose unsized mass is published."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "The exact route remains in Nodus's current Sector Field Titanium collection with active restock notification and no discontinued label; temporary zero stock is represented separately as unavailable."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "The exact page's embedded live store context identifies country code US and a USD-denominated direct offer."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unavailable",
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "The embedded exact SKU has quantity zero and the page displays Sold Out plus restock notification."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "Nodus's own direct storefront maps to the catalogue's authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "The manufacturer storefront offer is for a new watch even though the exact SKU is currently unavailable."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 38,
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "Nodus publishes 38 mm case width for the round Sector II case; the normalized round-case dimension is its diameter rather than a partial rectangular width."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "The exact page publishes conventional 20 mm lugs and removable quick-release spring bars, establishing a non-integrated bracelet interface."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "The exact page identifies an automatic field watch powered by TMI NH38; automatic is the normalized catalogue enum."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "Nodus explicitly publishes a screw-down crown; the value is normalized to the catalogue enum."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "quick_release",
+      "sourceUrl": "https://www.noduswatches.com/sector-field-titanium/p/sector-field-titanium-shale",
+      "note": "Nodus explicitly publishes quick-release spring bars on the exact titanium bracelet; quick_release is the most specific supported interface enum."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://twobrokewatchsnobs.com/hands-on-affordable-field-watch-showdown-nodus-sector-ii-vs-hamilton-khaki-field/",
+      "note": "The exact-model hands-on review describes the dedicated no-date three-hand NH38 configuration; no supported catalogue complication is present."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://twobrokewatchsnobs.com/hands-on-affordable-field-watch-showdown-nodus-sector-ii-vs-hamilton-khaki-field/",
+      "note": "The exact-model hands-on review explicitly identifies a dedicated no-date movement with no phantom date crown position, independently corroborated by a second exact-model review."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The extraction marked the field missing while its candidate identity used the product URL as a code. Nodus's embedded exact-SKU payload instead publishes SEC-F-SHA."
+    },
+    {
+      "fieldName": "productionStatus",
+      "reason": "Sold out is an availability observation, not a production-status enum; the current product route and zero-stock SKU are represented separately."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "USD alone would not establish a market country. The reviewed US mapping instead uses the exact page's embedded store country code."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Sold out is raw storefront prose and is normalized to the supported unavailable state from exact-SKU quantity zero plus restock notification."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "reason": "A lone case-width value is invalid for the catalogue's rectangular geometry path. The published 38 mm width of this round case is normalized as caseDiameterMm."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Automatic mechanical is provider prose and is normalized to the automatic catalogue enum."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Screw-down crown is provider prose and is normalized to the screw_down catalogue enum."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Bracelet with quick-release spring bars is normalized to quick_release after direct exact-page validation."
+    },
+    {
+      "fieldName": "operation.claspMicroadjustment",
+      "reason": "The page names the NEM clasp, but the extraction correctly notes that it does not explicitly define the mechanism as microadjustment; the raw name is retained only in source review."
+    },
+    {
+      "fieldName": "operation.shockResistant",
+      "reason": "The extracted antimagnetic rating does not establish shock resistance and must not occupy the shockResistant field."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "The provider left the field missing even though exact-model no-date three-hand evidence supports an empty supported-complication set."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "The provider left date status missing; exact-model hands-on evidence explicitly identifies the dedicated no-date configuration."
+    }
+  ],
+  "missingM1Fields": ["lumeGrade"],
+  "note": "Keep as research-only. Direct review corrects the candidate identity to manufacturer SKU SEC-F-SHA and validates the homogeneous Shale titanium-bracelet configuration, including USD 625 US direct pricing, current but unavailable state, 38 x 11.7 x 47 mm geometry, 20 mm conventional lugs, 100 g full-unsized-bracelet mass, Nodus-regulated -10/+10 seconds per day, 100 m resistance, screw-down crown, sapphire, quick release, and explicit no-date status. A narrow Perplexity follow-up found two exact-model reports of rapid initial lume charging and immediate contrast, but neither supplies a controlled charge protocol, elapsed-time series, or repeatable comparison grade. BGW9 Grade A is a material specification rather than performance evidence, so lumeGrade remains null as the sole M1 gap."
+}

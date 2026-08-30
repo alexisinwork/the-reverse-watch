@@ -24,10 +24,23 @@ describe("Perplexity research normalization", () => {
     expect(prompt).toContain("materially homogeneous");
     expect(prompt).toContain("official manufacturer");
     expect(prompt).toContain("Never return a date-only value");
+    expect(prompt).toContain(`targetId is exactly "${target.id}"`);
     expect(perplexityResearchResponseFormat).toMatchObject({
       type: "json_schema",
       json_schema: { name: "WatchReferenceResearchV5" },
     });
+  });
+
+  it("adds validation feedback to a retry prompt", () => {
+    const prompt = buildResearchPrompt(
+      target,
+      "movement.type cannot be both resolved and unresolved.",
+    );
+
+    expect(prompt).toContain("previous extraction was rejected");
+    expect(prompt).toContain(
+      "movement.type cannot be both resolved and unresolved.",
+    );
   });
 
   it("rejects empty or malformed exact-variant extractions", () => {

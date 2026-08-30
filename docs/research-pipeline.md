@@ -650,6 +650,21 @@ claims. The invalid v4 artifact remains in the ignored immutable ledger, the
 target returned to `planned`, and its new fingerprint must pass v5 before it can
 move to review.
 
+The v5 rerun initially exhausted three retries on independently rejected
+target-ID and resolved/unresolved-field contradictions. Retry prompts now carry
+the prior validation error and require a final exact-ID and field-partition
+check, so a retry corrects the observed defect instead of repeating an
+identical request. The next fingerprint produced a valid 40-fact extraction
+for Nodus Sector II Field Titanium Shale. Direct retrieval corrected identity
+to embedded manufacturer SKU `SEC-F-SHA` and validated USD 625 US pricing,
+current but unavailable state, 38 x 11.7 x 47 mm geometry, 20 mm lugs, 100 g on
+the full unsized titanium bracelet, Nodus-regulated -10/+10 seconds per day,
+100 m resistance, sapphire, and quick-release spring bars. A narrow Perplexity
+follow-up found two exact-model reports explicitly establishing the dedicated
+no-date NH38 configuration. Both describe fast initial lume charging, but
+neither supplies controlled charge, timed decay, or a repeatable comparison
+grade; `lumeGrade` remains the sole M1 gap and no seed row is added.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

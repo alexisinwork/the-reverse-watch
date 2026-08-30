@@ -170,9 +170,12 @@ export type PerplexityAgentResponse = z.infer<
   typeof perplexityAgentResponseSchema
 >;
 
-export function buildResearchPrompt(target: ResearchTarget) {
-  return [
-    `Research target: ${target.id}`,
+export function buildResearchPrompt(
+  target: ResearchTarget,
+  correction: string | null = null,
+) {
+  const prompt = [
+    `Research target ID (copy exactly): ${target.id}`,
     `Candidate brief: ${target.referenceLabel}`,
     `Coverage purpose: ${target.coverageRationale}`,
     "Find one exact, currently identifiable and materially homogeneous reference variant.",
@@ -187,7 +190,15 @@ export function buildResearchPrompt(target: ResearchTarget) {
     "A null value must use evidenceKind missing and its field must appear in unresolvedFields. A non-null observed or estimated field must not appear in unresolvedFields.",
     "When exactVariantFound is true, claims must include non-null identity and productUrl claims sourced to the selected exact variant.",
     "Omit observedAt unless the source establishes a full UTC ISO 8601 date-time such as 2026-08-29T00:00:00Z. Never return a date-only value; the worker supplies retrieval time when it is omitted.",
-  ].join("\n");
+    `Before returning JSON, verify that targetId is exactly "${target.id}" with no added suffix, and remove every non-null claimed field from unresolvedFields.`,
+  ];
+  if (correction) {
+    prompt.push(
+      `The previous extraction was rejected for this validation error: ${correction}`,
+      "Correct that error in the replacement object; do not repeat it.",
+    );
+  }
+  return prompt.join("\n");
 }
 
 export function extractPerplexityOutputText(response: PerplexityAgentResponse) {

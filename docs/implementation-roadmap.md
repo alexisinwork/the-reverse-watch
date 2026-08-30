@@ -735,6 +735,19 @@ and requires resolved `identity` and `productUrl` claims whenever an exact
 variant is asserted. The invalid v4 artifact remains immutable and ignored; the
 Nodus target is reset to `planned` under a new fingerprint.
 
+Contract v5 then rejected three further Nodus responses for target-ID and
+resolved/unresolved contradictions. The worker now includes each validation
+error in the next retry prompt and requires an exact target-ID and final field
+partition check. A clean fingerprint subsequently selected Sector II Field
+Titanium Shale; direct review corrected the identity to embedded manufacturer
+SKU `SEC-F-SHA` and validated its USD 625 US offer, current but unavailable
+state, 38 x 11.7 x 47 mm geometry, 20 mm lugs, 100 g full unsized titanium
+bracelet, Nodus-regulated -10/+10 seconds-per-day tolerance, 100 m resistance,
+sapphire, quick-release spring bars, and explicit no-date configuration. A
+narrow Perplexity follow-up found only fast initial-charge descriptions for
+the BGW9 Grade A lume, not controlled or timed performance evidence.
+`lumeGrade` therefore remains the sole M1 gap and the row stays research-only.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
