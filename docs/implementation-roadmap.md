@@ -593,6 +593,11 @@ expected informational no-policy notices for the server-only RLS tables and
 the explicit warnings for the two intentionally public, fixed-SQL,
 empty-`search_path` `SECURITY DEFINER` RPCs; unused-index findings remain
 informational during expansion.
+Commit `70ef32d` then reached Vercel production as
+`dpl_AVbxq6wNLVRYemwwoiXXfyVcHXDG`. All three short endpoints returned 200, a
+valid core submission selected the live Supabase facts and SQL hard-filter path
+without the bundled-fallback notice, and the surrounding Vercel runtime-error
+window was empty.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

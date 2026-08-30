@@ -7,11 +7,11 @@ Last verified: 2026-08-30
 - Vercel project: `the-reverse-watch` in the `alexisinworks-projects` team.
 - Git source: `alexisinwork/the-reverse-watch`, with `main` connected to
   production deployments.
-- Production deployment `dpl_FvEFUWbHRQrkGmDFAziEP6F5xP1o` is the verified
-  live-Supabase Phase 4 release; `dpl_8ZLYQ66fc9VYcVmb6rZjWsG3kEor` is its
-  recorded rollback target. The repository
+- Production deployment `dpl_AVbxq6wNLVRYemwwoiXXfyVcHXDG` is the verified
+  live-Supabase Phase 5 relational-parity release;
+  `dpl_A2Qwi9ipFj7CaMSSSmPG5Jwut5CQ` is its recorded rollback target. The repository
   pins `framework: react-router` in `vercel.json`; `/`, `/quiz`, and `/health`
-  returned 200 on `https://the-reverse-watch.vercel.app/` on 2026-08-28. This
+  returned 200 on `https://the-reverse-watch.vercel.app/` on 2026-08-30. This
   resolves the earlier framework-null `NOT_FOUND` incident.
 - The repository's canonical domain is `thereserve.watch` (`CNAME` and landing
   copy). The Vercel project currently lists `thereverse.watch` and
@@ -45,6 +45,12 @@ Last verified: 2026-08-30
   valid core POST returned Grand Seiko and the explicit “accepted catalogue
   facts and hard-filter decisions loaded from Supabase” notice. Recent Vercel
   runtime error logs were empty.
+- Commit `70ef32d` deployed as `dpl_AVbxq6wNLVRYemwwoiXXfyVcHXDG` on
+  2026-08-30. The deployment reached `READY`; `/`, `/quiz`, and `/health`
+  returned 200; and a valid questionnaire-version-2 core POST succeeded with
+  the exact live Supabase facts-and-hard-filter notice and no bundled-fallback
+  notice. Vercel reported no runtime errors in the surrounding 30-minute
+  window.
 
 ## Preview procedure
 

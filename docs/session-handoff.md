@@ -44,6 +44,13 @@ phase.
   variants, returned `catalogueOrigin: bundled_seed`, and retained the expected
   live-catalogue validation notice. This proves the v3 application target fails
   safely as one unit while production Supabase still exposes only v1.
+- Relational checkpoint commit `70ef32d` advanced `origin/main` after the live
+  migrations, 18-row parity, RLS, strict research/knowledge/coverage audits,
+  and the 68-test fast gate passed. Vercel deployment
+  `dpl_AVbxq6wNLVRYemwwoiXXfyVcHXDG` reached `READY`; `/`, `/quiz`, and
+  `/health` returned 200; a valid questionnaire-version-2 core POST selected
+  the live Supabase facts and SQL hard-filter path without a bundled-fallback
+  notice; and the surrounding 30-minute runtime-error window was empty.
 - Chunking, embeddings, `pgvector`, a separate vector database, Mastra, Ollama,
   and RunPod are outside the launch critical path.
 
