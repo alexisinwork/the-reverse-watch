@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:41:52.412Z",
+  "updatedAt": "2026-08-30T19:46:33.125Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4114,7 +4114,7 @@
       "targets": [
         {
           "id": "boldr-odyssey-horizon-druber-gmt",
-          "referenceLabel": "Validate current BOLDR Odyssey Horizon ODY-TI-40-H-BL as one homogeneous titanium GMT worn on its supplied integrated Druber strap; retain the supplied titanium bracelet only as an accessory and require exact lume performance, date status, Miyota 9075 accuracy applicability, and USD purchase-market evidence",
+          "referenceLabel": "Find exact BOLDR Odyssey Horizon ODY-TI-40-H-BL lume-performance evidence only: require a controlled charge and elapsed observation, a timed decay series, or multiple independent exact-reference assessments that converge on weak, moderate, or strong; do not infer performance from Swiss Super-LumiNova material, a lume photograph, or generic Odyssey-family marketing",
           "state": "planned",
           "coverageIntent": {
             "priceBands": [

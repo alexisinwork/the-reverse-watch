@@ -810,6 +810,15 @@ Independent review must still establish the USD purchase market, date status,
 exact-applicable 9075 tolerance, and repeatable lume performance rather than
 mapping Super-LumiNova material to a grade.
 
+The first BOLDR provider result is schema-valid with 38 provisional facts.
+Direct review corrects body-only 12.5 mm to 13 mm complete thickness and uses
+BOLDR's Odyssey launch release to resolve the explicit 4 o'clock date window;
+Miyota's exact 9075 page supplies -10/+30 seconds per day. Lume remains open:
+the first search found material labels, a lume photograph, and generic
+collection-level strength prose but no controlled or convergent exact-reference
+performance evidence. A narrow exact-reference pass is queued instead of
+forcing a grade.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

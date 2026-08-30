@@ -744,6 +744,15 @@ Provider research must still prove the USD purchase market, exact date status,
 material alone does not satisfy the last field. No pre-screened fact is accepted
 before source review.
 
+The first BOLDR extraction returned 38 schema-valid provisional facts. Direct
+review confirms the exact manufacturer SKU and Druber configuration but corrects
+case thickness from the 12.5 mm body-only figure to 13 mm including the crystal.
+BOLDR's own Odyssey launch release explicitly resolves the 4 o'clock date
+window, and Miyota publishes the installed 9075's -10/+30 seconds-per-day
+tolerance. The initial provider search found only luminous-material labels and
+a generic collection-level strength claim, so the target is reset for one
+narrow exact-reference performance pass rather than assigning a grade.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
