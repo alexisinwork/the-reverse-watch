@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T19:46:33.125Z",
+  "updatedAt": "2026-08-30T19:48:18.948Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4115,7 +4115,7 @@
         {
           "id": "boldr-odyssey-horizon-druber-gmt",
           "referenceLabel": "Find exact BOLDR Odyssey Horizon ODY-TI-40-H-BL lume-performance evidence only: require a controlled charge and elapsed observation, a timed decay series, or multiple independent exact-reference assessments that converge on weak, moderate, or strong; do not infer performance from Swiss Super-LumiNova material, a lume photograph, or generic Odyssey-family marketing",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "500_1000"

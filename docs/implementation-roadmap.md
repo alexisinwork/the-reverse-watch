@@ -819,6 +819,15 @@ collection-level strength prose but no controlled or convergent exact-reference
 performance evidence. A narrow exact-reference pass is queued instead of
 forcing a grade.
 
+The narrow pass found no qualifying Horizon performance evidence and explicitly
+returned `operation.lumeGrade: null`. Direct review therefore keeps the exact
+current USD 799 offer, homogeneous 91 g Druber configuration, 40 x 13 x 48 mm
+geometry, 20 mm nominal lug size, Miyota 9075 -10/+30 seconds per day, 300 m
+rating, sapphire, integrated attachment, GMT, and primary-source date window,
+but does not promote the row. `lumeGrade` remains its sole M1 gap. The strict
+checkpoint now contains 26 reviews (six migration-ready, 18 needing more
+evidence, and two excluded), with 18 accepted and 18 active targets.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

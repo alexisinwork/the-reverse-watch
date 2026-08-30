@@ -1,0 +1,248 @@
+{
+  "reviewVersion": 1,
+  "targetId": "boldr-odyssey-horizon-druber-gmt",
+  "jobId": "622f8b31-acd6-4e89-8dc5-97b9d4f5d8cf",
+  "reviewedAt": "2026-08-30T19:50:24Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "BOLDR Supply Co.",
+    "model": "Odyssey Horizon",
+    "referenceCode": "ODY-TI-40-H-BL",
+    "variantName": "Horizon on integrated Druber strap; titanium bracelet included"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "status": "validated_primary",
+      "note": "BOLDR's country-contextualized exact product route and embedded Storefront payload identify Odyssey Horizon SKU ODY-TI-40-H-BL as available with inventory, USD 799, and Add to cart. The page publishes the 40 mm Titanium+ case, 13 mm complete thickness including glass, 48 mm lug-to-lug, 20 mm nominal lug size, 91 g full weight on the integrated Druber strap, 125 g on the separately supplied integrated titanium bracelet, Miyota 9075, 42-hour reserve, 300 m resistance, screw-down crown, sapphire, Swiss Super-LumiNova application, and both attachment configurations. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.boldrsupply.co/blogs/press-releases/dive-boldly-live-colorfully-the-odyssey-reimagined",
+      "status": "validated_primary",
+      "note": "BOLDR's December 2024 launch release identifies Horizon as one of the reimagined Odyssey Titanium colors, specifies Miyota 9075 GMT with an independently adjustable local hour, and explicitly documents the 4 o'clock date window. This resolves date presence from primary family-launch evidence tied to Horizon rather than from an assumed movement function or product photograph. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://miyotamovement.com/product/9075/",
+      "status": "validated_primary",
+      "note": "Miyota's current caliber 9075 technical page publishes -10/+30 seconds per day, approximately 42 hours of running time, 28,800 vibrations per hour, automatic and hand winding, stop seconds, central GMT, and independent local-hour adjustment. BOLDR explicitly identifies 9075 in the exact watch, so the caliber contract is exact-applicable. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.watchgecko.com/products/boldr-odyssey-titanium-dive-watch-40mm-horizon",
+      "status": "rejected",
+      "note": "The exact Horizon dealer page corroborates the configuration and displays a lume photograph, but its categorical 'strong lume' prose describes the Odyssey platform generally. It provides no charge protocol, elapsed observation, timed decay, or independent exact-Horizon comparison, so it cannot establish weak, moderate, or strong performance. Retrieved 2026-08-30 after the narrow Perplexity pass."
+    },
+    {
+      "url": "https://www.seriouswatches.com/collections/new/products/boldr-odyssey-horizon",
+      "status": "rejected",
+      "note": "The exact Horizon retailer route corroborates the physical watch but states only Swiss Super-LumiNova material. It supplies no performance method or result and therefore cannot close the lume-grade gate. Retrieved 2026-08-30."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "collection",
+    "model",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "identity",
+      "value": {
+        "brand": "BOLDR Supply Co.",
+        "model": "Odyssey Horizon",
+        "referenceCode": "ODY-TI-40-H-BL",
+        "variantName": "Horizon on integrated Druber strap; titanium bracelet included"
+      },
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "The manufacturer payload supplies the exact SKU and model; the reviewed identity fixes the scored wearable configuration to the 91 g Druber strap and discloses the bundled bracelet only as an accessory."
+    },
+    {
+      "fieldName": "referenceCode",
+      "value": "ODY-TI-40-H-BL",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "BOLDR's embedded exact product variant publishes SKU ODY-TI-40-H-BL, replacing the provider's secondary identity citation."
+    },
+    {
+      "fieldName": "variantName",
+      "value": "Horizon on integrated Druber strap; titanium bracelet included",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "The normalized name keeps one 91 g wearable configuration without hiding the 125 g bundled bracelet option."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "The exact active manufacturer route, available variant payload, inventory, and purchase control support current status; availability is recorded separately."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "The reviewed Shopify country context is explicitly US and returns the USD 799 offer used by this snapshot."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "The exact variant payload is available with positive inventory and the page exposes Add to cart."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "BOLDR's own direct storefront maps to the catalogue's authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "The manufacturer-direct offer is for a new watch."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 13,
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "BOLDR distinguishes 12.5 mm without glass from 13 mm including glass; the complete-watch thickness is 13 mm."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "value": "observed",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "The manufacturer explicitly publishes a 20 mm lug size for this integrated configuration, so the numeric field is observed rather than not applicable."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "BOLDR identifies a Japan-made Miyota 9075 automatic; automatic is the normalized catalogue enum."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "The exact product page explicitly specifies a screw-down crown."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "BOLDR specifies a double-dome sapphire crystal with anti-reflective coating; sapphire is the normalized catalogue class."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "integrated",
+      "sourceUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "note": "BOLDR explicitly calls the selected Druber strap integrated; the same page separately calls the bundled titanium bracelet integrated."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["gmt"],
+      "sourceUrl": "https://www.boldrsupply.co/blogs/press-releases/dive-boldly-live-colorfully-the-odyssey-reimagined",
+      "note": "The independently adjustable local hour establishes the supported GMT complication; date is represented separately."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.boldrsupply.co/blogs/press-releases/dive-boldly-live-colorfully-the-odyssey-reimagined",
+      "note": "BOLDR's launch release explicitly identifies the reimagined Odyssey's 4 o'clock date window while naming Horizon in that release."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "identity",
+      "reason": "The provider cited a secondary catalogue for identity even though BOLDR's own embedded product payload publishes the exact SKU; the reviewed primary identity also fixes the worn strap."
+    },
+    {
+      "fieldName": "referenceCode",
+      "reason": "The secondary-sourced code is replaced by the same exact SKU from BOLDR's embedded product variant."
+    },
+    {
+      "fieldName": "variantName",
+      "reason": "Horizon alone does not identify one of the two supplied wearable configurations; the reviewed name fixes Druber and discloses the bracelet accessory."
+    },
+    {
+      "fieldName": "materials.bracelet",
+      "reason": "The titanium bracelet is included in the package but is not worn in the homogeneous 91 g target row; it remains accessory context rather than a selected material fact."
+    },
+    {
+      "fieldName": "productionStatus",
+      "reason": "Current manufacturer listing is provider prose and is normalized to current from the active exact variant and purchase controls."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "United States is normalized to US only after direct validation of the explicit country-contextualized Storefront response."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Available for purchase is normalized to in_stock from exact-variant available state, positive inventory, and Add to cart."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Manufacturer online storefront is provider prose and is normalized to the supported authorized_dealer channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "Return and warranty prose is not a condition enum; the manufacturer-direct offer is normalized to new."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "reason": "The provider selected the 12.5 mm body-only value. BOLDR separately publishes 13 mm including the glass, which is the complete-watch thickness."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "Provider prose is replaced by the observed applicability value because BOLDR explicitly publishes the 20 mm lug size."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "reason": "True describes the bundled accessory bracelet, not the selected Druber-strap wearable row; integration is represented by attachmentType without blending configurations."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Automatic flyer GMT is normalized to automatic; GMT is represented separately as a complication."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Screw-down is normalized to the screw_down enum."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Double-dome sapphire with AR coating is normalized to the sapphire enum while construction and coating remain in evidence."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Swiss Super-LumiNova identifies material and application locations, not repeatable performance. A narrow exact-reference Perplexity pass found no controlled charge, timed decay, or convergent independent Horizon assessments, so no grade is assigned."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Integrated strap and integrated bracelet mixes two configurations and is provider prose; the selected Druber interface is normalized to integrated from the exact primary page."
+    },
+    {
+      "fieldName": "operation.claspMicroadjustment",
+      "reason": "The quick-adjust buckle belongs to the bundled bracelet accessory, not the selected Druber-strap configuration."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is represented separately by dateStatus; the normalized supported complication list contains GMT only."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "The provider used secondary evidence and a movement inference; BOLDR's own Horizon launch release supplies the corrected explicit primary date-window evidence."
+    }
+  ],
+  "missingM1Fields": ["lumeGrade"],
+  "note": "Keep as research-only. Direct review fixes exact manufacturer SKU ODY-TI-40-H-BL to the 91 g integrated Druber configuration while disclosing the separately supplied 125 g titanium bracelet. Primary sources validate the current USD 799 US-context offer, 40 x 13 x 48 mm geometry, 20 mm nominal lug size, Miyota 9075 -10/+30 seconds per day, 300 m resistance, screw-down crown, sapphire, integrated attachment, GMT, and explicit 4 o'clock date. The first provider job and a narrow exact-reference Perplexity follow-up found only Super-LumiNova material, a lume photograph, and generic family claims—not a controlled or convergent Horizon performance grade. operation.lumeGrade remains null as the sole M1 gap."
+}

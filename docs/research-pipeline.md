@@ -753,6 +753,18 @@ tolerance. The initial provider search found only luminous-material labels and
 a generic collection-level strength claim, so the target is reset for one
 narrow exact-reference performance pass rather than assigning a grade.
 
+That narrow pass also returned schema-valid exact-identity output but explicitly
+left `operation.lumeGrade` null: no controlled charge, timed decay, or convergent
+independent Horizon assessment was found. Direct review retains the USD 799
+US-context in-stock offer, 40 x 13 x 48 mm geometry, 20 mm nominal lug size,
+91 g Druber configuration, Miyota 9075 -10/+30 seconds per day, 300 m rating,
+sapphire, integrated attachment, GMT, and primary-source date window.
+`lumeGrade` is the sole M1 gap, so BOLDR remains research-only. The ignored
+ledger now retains 49 attempts (28 succeeded, 21 failed) across 26 target IDs
+with USD 0.35916 recorded provider cost. The strict manifest has 26 reviews:
+six migration-ready, 18 needing more evidence, and two excluded; 18 targets are
+accepted and 18 remain active.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
