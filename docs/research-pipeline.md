@@ -884,6 +884,26 @@ not establish constant performance. One exact four-field pass is queued. The
 ignored ledger now retains 57 attempts (34 succeeded, 23 failed) across 29
 target IDs with USD 0.45449 recorded provider cost.
 
+The four-field Marathon follow-up closes every M1 gate without using shipment
+or sibling-reference data. ETA's current F06.105 sheet establishes a
+-0.30/+0.50-second-per-day minimum/maximum range; the exact WW194004 GPQ
+hands-on source reports approximately 44 g including its one-piece military
+nylon strap and explicitly identifies fixed bars; Marathon's product-family
+copy establishes full nighttime visibility and its service material supports a
+serviceable fixed-bar mechanism. Those fixed bars normalize to `proprietary`
+and the tritium performance to `strong`. The review is migration-ready. The
+ignored ledger now retains 58 attempts (35 succeeded, 23 failed) across 29
+target IDs with USD 0.46936 recorded provider cost.
+
+The reviewed row is now accepted as catalogue variant
+`marathon-ww194004bk-0808` through additive migration
+`0021_expand_catalogue_marathon_gpq.sql`. Remote verification confirms the
+exact variant, USD 470 price, in-stock snapshot, 23 reference-level evidence
+rows, and complete M1 evaluation. Catalogue and SQL hard-filter parity passes
+for all 19 accepted variants across the six golden profiles. The 30 m GPQ is
+eligible only for `studio_desk_daily`; migration does not inherit the
+mechanical sibling's field/water deployment tag.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

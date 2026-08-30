@@ -938,6 +938,25 @@ material. One narrow four-field pass is queued. The ignored ledger contains 57
 attempts (34 succeeded, 23 failed) across 29 target IDs and USD 0.45449 recorded
 provider cost.
 
+The exact four-field Marathon follow-up resolves the row without inheritance.
+ETA's current F06.105 specification supplies the -0.30/+0.50-second-per-day
+minimum/maximum range. An exact WW194004 GPQ hands-on source reports
+approximately 44 g including the installed one-piece military nylon strap and
+explicit fixed bars; Marathon's official full-night product language and
+service path corroborate strong constant illumination and a serviceable fixed
+mechanism. Package/shipping weights, head-only mass, F06.412, and a dealer's
+conflicting F06.115 remain rejected. The review is ready for additive migration
+with no M1 gaps. The ignored ledger contains 58 attempts (35 succeeded, 23
+failed) across 29 target IDs and USD 0.46936 recorded provider cost.
+
+Additive migration `0021_expand_catalogue_marathon_gpq.sql` accepts the row as
+`marathon-ww194004bk-0808`. The remote database reports the exact variant,
+in-stock USD 470 snapshots, 23 reference-level evidence rows, and complete M1.
+Catalogue and SQL hard-filter parity passes for all 19 accepted variants and
+six golden profiles. The accepted eligibility remains
+`studio_desk_daily` only; the 30 m GPQ does not inherit the mechanical
+sibling's field/water deployment tag.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

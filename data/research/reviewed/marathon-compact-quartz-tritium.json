@@ -1,0 +1,259 @@
+{
+  "reviewVersion": 1,
+  "targetId": "marathon-compact-quartz-tritium",
+  "jobId": "f107a76c-40bb-434f-9e6e-dba970a2d73c",
+  "reviewedAt": "2026-08-30T20:32:46Z",
+  "reviewer": "codex-source-review",
+  "outcome": "ready_for_migration",
+  "candidateIdentity": {
+    "brand": "Marathon",
+    "model": "General Purpose Quartz",
+    "referenceCode": "WW194004BK-0808",
+    "variantName": "34mm Black GPQ, Standard-Issue, on black 16 mm Nylon DEFSTAN strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "status": "validated_primary",
+      "note": "Marathon's current exact selected-variant page identifies in-stock SKU WW194004BK-0808 on black Nylon DEFSTAN at USD 470 with positive inventory. It also establishes General Purpose Field Series identity, 34 x 11.5 x 41 mm geometry, 16 mm lugs, fibreshell, high-torque quartz, sapphire, pressure crown, 3 ATM, no calendar, tritium, and full nighttime visibility. Shopify's separate 133 g property is a shipment field and is not watch mass. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "status": "validated_primary",
+      "note": "Marathon's current exact WW194004BK-0808 sheet independently identifies the black 16 mm Nylon DEFSTAN strap and ETA F06.105 HeavyDrive, plus three jewels, EOL, tritium placement, sapphire, pressure crown, 34 x 11.5 x 41 mm geometry, 16 mm lugs, fibreshell, and 3 ATM. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://portal.eta.ch/fr/technicaldocuments/index/pdf/id/2896/",
+      "status": "validated_primary",
+      "note": "ETA's F06.105 technical specification, revision dated 2026-02-10, gives instantaneous rate at 25 degrees Celsius as minimum -0.30, typical +0.10, and maximum +0.50 seconds per day. Marathon's exact sheet identifies F06.105, making these exact-applicable bounds. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://toyweapon.com/marathon-gpq",
+      "status": "validated_secondary",
+      "note": "This exact WW194004 GPQ hands-on article reports approximately 44 g including its installed MIL-S-46383B Type II nylon strap, explicitly describes fixed bars with a one-piece strap, and documents continuous self-illumination. Primary Marathon material separately fixes the selected black DEFSTAN configuration and full-night behavior. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.watchmann.com/proddetail.php?prod=Marathon-WW194004",
+      "status": "validated_secondary",
+      "note": "This current authorized-dealer exact-WW194004 page independently corroborates -0.3/+0.5 seconds per day, the 16 mm nylon configuration, and constant low-light tritium visibility. ETA and Marathon primary documents remain controlling. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.marathonwatch.com/pages/product-database",
+      "status": "validated_primary",
+      "note": "Marathon's official database links current WW194004 documentation and identifies the family in its service system. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://uk.marathonwatch.com/pages/watch-maintenance-repair-services",
+      "status": "validated_primary",
+      "note": "Marathon's maintenance material includes replacement of damaged or unusable bars. Combined with exact-GPQ fixed-bar inspection and the one-piece strap, this supports a fixed but manufacturer-serviceable interface. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://chronofactum.de/product/marathon-34mm-black-general-purpose-quartz-gpq-ww194004bk/",
+      "status": "rejected",
+      "note": "The dealer names F06.115, conflicting with Marathon's exact WW194004 sheet and describing a date-capable suffix for this no-date watch. No movement fact is retained. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.amazon.com/MARATHON-Black-General-Purpose-Quartz/dp/B0781WGT3P",
+      "status": "rejected",
+      "note": "Amazon's 3.53-ounce value is package weight, not full installed watch mass. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://calibercorner.com/eta-caliber-f06-412/",
+      "status": "rejected",
+      "note": "F06.412 is a different suffix and cannot establish facts for Marathon's F06.105 installation."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "variantName",
+      "value": "34mm Black GPQ, Standard-Issue, on black 16 mm Nylon DEFSTAN strap",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "The selected variant payload and exact sheet fix SKU WW194004BK-0808 to this configuration."
+    },
+    {
+      "fieldName": "materials.strap",
+      "value": "Black 16 mm Nylon DEFSTAN one-piece strap with Parkerized steel hardware",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact current sheet names the installed strap and hardware."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "The exact SKU is actively offered with positive inventory."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 47000,
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "The exact selected variant is USD 470.00."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "The reviewed manufacturer storefront displays U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "The reviewed offer is the U.S.-dollar storefront context."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "The selected SKU permits purchase and reports positive inventory."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "Manufacturer direct maps to the authorized acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "The manufacturer offer is for a new watch."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "value": "observed",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact sheet explicitly specifies the conventional 16 mm strap interval."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 44,
+      "sourceUrl": "https://toyweapon.com/marathon-gpq",
+      "note": "The exact-WW194004 hands-on article reports approximately 44 g including its installed military nylon strap; this is neither shipment nor head-only mass."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact sheet specifies a separate one-piece strap at 16 mm, not an integrated bracelet."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "quartz",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "Quartz is the normalized catalogue enum."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "ETA F06.105 HeavyDrive",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact sheet supplies the installed suffix and HeavyDrive designation."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -0.3,
+      "sourceUrl": "https://portal.eta.ch/fr/technicaldocuments/index/pdf/id/2896/",
+      "note": "ETA specifies -0.30 seconds per day as the minimum instantaneous rate at 25 degrees Celsius."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 0.5,
+      "sourceUrl": "https://portal.eta.ch/fr/technicaldocuments/index/pdf/id/2896/",
+      "note": "ETA specifies +0.50 seconds per day as maximum; +0.10 is typical, not the upper bound."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 1,
+      "sourceUrl": "https://portal.eta.ch/fr/technicaldocuments/index/pdf/id/2896/",
+      "note": "ETA expresses the rate range in seconds per day."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "push_pull",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "Pressure crown normalizes to push_pull."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "Scratch-resistant sapphire normalizes to sapphire."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "note": "Marathon describes full nighttime visibility for the exact GP Field product; exact-WW194004 sources independently describe continuous self-illumination without charging. This maps to strong."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "proprietary",
+      "sourceUrl": "https://toyweapon.com/marathon-gpq",
+      "note": "Exact-GPQ inspection identifies fixed bars with a one-piece strap, and Marathon service covers damaged-bar replacement. This service-only fixed interface maps to proprietary."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "EOL is a battery signal, not a supported catalogue complication; no supported complication is present."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "note": "The exact sheet has no calendar and the product reports Calendar Type: N/A."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "variantName",
+      "reason": "The first extraction omitted the selected strap; the corrected exact configuration is retained separately."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "Boolean true is replaced by the normalized observed value."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Swiss-made quartz prose is normalized to quartz."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "reason": "ETA High-Torque F06 omits the installed suffix; the exact sheet replaces it with ETA F06.105 HeavyDrive."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Pressure is normalized to push_pull."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Sapphire is normalized to the lowercase enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "A bare tritium label is insufficient; strong is retained only after full-night and constant-performance evidence."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "End-of-life indicator is not a supported complication and normalizes to an empty list."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "No date prose is normalized to absent from explicit Calendar Type: N/A."
+    }
+  ],
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. Current Marathon selected-variant evidence and the exact sheet establish WW194004BK-0808 on black Nylon DEFSTAN at in-stock USD 470, with complete geometry, F06.105 HeavyDrive, sapphire, pressure crown, 30 m, no date, and full-night tritium. ETA supplies -0.30/+0.50 seconds per day. Exact-WW194004 inspection resolves approximately 44 g including strap and fixed bars, with Marathon service corroborating serviceability. Shipment/head-only weights, F06.412, and conflicting F06.115 are rejected."
+}

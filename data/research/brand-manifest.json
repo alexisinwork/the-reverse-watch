@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T20:27:19.000Z",
+  "updatedAt": "2026-08-30T20:32:46.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2619,7 +2619,7 @@
         {
           "id": "marathon-compact-quartz-tritium",
           "referenceLabel": "Find exact Marathon GPQ SKU WW194004BK-0808 evidence for four fields only: full watch-plus-black-16mm-Nylon-DEFSTAN installed weight with explicit scope, ETA F06.105 HeavyDrive numerical accuracy and period from ETA or an authoritative technical sheet, fixed serviceable strap-bar attachment tied to WW194004/GPQ rather than inherited from mechanical WW194003, and constant tritium nighttime-performance duration tied to Marathon's exact GPQ illumination; reject 133 g Shopify shipping weight, head-only mass, other strap SKUs, generic F06 family estimates, and bare tritium material labels",
-          "state": "planned",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "300_500"
@@ -2653,7 +2653,8 @@
               "time_only_no_date"
             ]
           },
-          "coverageRationale": "Source-led quartz counterpart to the accepted mechanical GPM, fixed to one exact DEFSTAN SKU. The compact no-date tritium row would diversify eighty 300_500 zero-maintenance studio cells across all representative wrist and accuracy bands if independent review proves the complete homogeneous M1 contract; its 30 m rating deliberately excludes field/water-abuse eligibility."
+          "coverageRationale": "Source-led quartz counterpart to the accepted mechanical GPM, fixed to one exact DEFSTAN SKU. The compact no-date tritium row would diversify eighty 300_500 zero-maintenance studio cells across all representative wrist and accuracy bands if independent review proves the complete homogeneous M1 contract; its 30 m rating deliberately excludes field/water-abuse eligibility.",
+          "catalogueVariantId": "marathon-ww194004bk-0808"
         }
       ]
     },

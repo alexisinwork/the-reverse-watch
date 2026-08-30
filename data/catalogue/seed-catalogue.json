@@ -234,6 +234,38 @@
       "retrievedAt": "2026-08-29T08:11:44Z"
     },
     {
+      "id": "marathon-ww194004bk-0808",
+      "url": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "title": "34mm Black General Purpose Quartz — WW194004BK-0808",
+      "publisher": "Marathon Watch",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T20:32:46Z"
+    },
+    {
+      "id": "marathon-ww194004-spec-sheet",
+      "url": "https://cdn.shopify.com/s/files/1/2581/7358/files/WW194004_-_Spec_Sheet_01292026.pdf?v=1770046305",
+      "title": "34mm GPQ specification sheet — WW194004BK-0808",
+      "publisher": "Marathon Watch",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T20:32:46Z"
+    },
+    {
+      "id": "eta-f06105-technical-specification",
+      "url": "https://portal.eta.ch/fr/technicaldocuments/index/pdf/id/2896/",
+      "title": "ETA F06.105 manufacturing information and technical specification",
+      "publisher": "ETA SA Manufacture Horlogère Suisse",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T20:32:46Z"
+    },
+    {
+      "id": "toyweapon-marathon-ww194004-gpq",
+      "url": "https://toyweapon.com/marathon-gpq",
+      "title": "Marathon GPQ WW194004 hands-on review",
+      "publisher": "ToyWeapon",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T20:32:46Z"
+    },
+    {
       "id": "casio-g5600ue-1",
       "url": "https://www.casio.com/intl/watches/gshock/product.G-5600UE-1/",
       "title": "G-5600UE-1",
@@ -1979,6 +2011,125 @@
         },
         {
           "sourceId": "opticsplanet-marathon-gpm-fixed-bars",
+          "fields": ["attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "marathon-ww194004bk-0808",
+      "brand": {
+        "slug": "marathon",
+        "name": "Marathon",
+        "serviceCountries": null
+      },
+      "collection": "General Purpose",
+      "model": "General Purpose Quartz",
+      "referenceCode": "WW194004BK-0808",
+      "variantName": "34mm black Standard-Issue · black Nylon DEFSTAN strap",
+      "productUrl": "https://www.marathonwatch.com/products/general-purpose-quartz-with-tritium-gpq?variant=39633318608938",
+      "price": {
+        "amountMinor": 47000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-30T20:32:46Z",
+        "staleAfter": "2027-02-26T20:32:46Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-30T20:32:46Z",
+        "availabilityStaleAfter": "2026-09-29T20:32:46Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "high-impact composite fibreshell",
+        "caseback": null,
+        "bracelet": null,
+        "strap": "black 16 mm Nylon DEFSTAN with parkerized steel hardware"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 34,
+        "caseThicknessMm": 11.5,
+        "lugToLugMm": 41,
+        "lugWidthMm": 16,
+        "weightFullG": 44,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "quartz",
+        "caliber": "ETA F06.105 HeavyDrive",
+        "powerReserveHours": null,
+        "accuracyLowerSeconds": -0.3,
+        "accuracyUpperSeconds": 0.5,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 30,
+        "crownType": "push_pull",
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "proprietary",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "compact_military_field",
+        "socialSignals": ["anti_luxury"],
+        "aestheticDna": ["structural_tool", "mid_century_industrial"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "marathon-ww194004bk-0808",
+          "fields": [
+            "identity",
+            "price",
+            "availability",
+            "productionStatus",
+            "lumeGrade",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "marathon-ww194004-spec-sheet",
+          "fields": [
+            "identity",
+            "materials",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "complications",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "eta-f06105-technical-specification",
+          "fields": ["accuracy"]
+        },
+        {
+          "sourceId": "toyweapon-marathon-ww194004-gpq",
+          "fields": ["weightFullG", "lumeGrade", "attachmentType"]
+        },
+        {
+          "sourceId": "marathon-maintenance-services",
           "fields": ["attachmentType"]
         }
       ]
