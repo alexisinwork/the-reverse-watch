@@ -912,6 +912,19 @@ excluded), with 18 accepted and 20 active targets; the ignored ledger contains
 56 attempts (33 succeeded, 23 failed) across 28 target IDs and USD 0.43617
 recorded provider cost.
 
+The next source-led target is Marathon 34 mm Black General Purpose Quartz GPQ
+SKU `WW194004BK-0808`, constrained to its selected black 16 mm Nylon DEFSTAN
+strap. The current exact variant is available with inventory at USD 470 and
+identifies the fibreshell, Swiss high-torque quartz, tritium, no-date row. The
+accepted mechanical GPM provides a successful source-routing pattern but no
+facts are inherited: review must independently establish GPQ geometry, full
+strap-installed weight rather than shipping or head-only mass, installed
+caliber and numerical accuracy, sapphire, pressure crown, fixed service bars,
+and constant tritium performance. A complete result would diversify 80 empty
+`300_500`, zero-maintenance studio cells across all representative wrists,
+accuracy profiles, and weight limits; 30 m resistance excludes field/water
+deployment.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

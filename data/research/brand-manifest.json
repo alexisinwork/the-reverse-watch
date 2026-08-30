@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T20:19:09.677Z",
+  "updatedAt": "2026-08-30T20:24:10.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2615,6 +2615,45 @@
           },
           "coverageRationale": "Add a distinct compact tool archetype where current field rows are incomplete or too large.",
           "catalogueVariantId": "marathon-ww194003bk-0108"
+        },
+        {
+          "id": "marathon-compact-quartz-tritium",
+          "referenceLabel": "Research exact current Marathon 34 mm Black General Purpose Quartz GPQ SKU WW194004BK-0808 on the selected black 16 mm Nylon DEFSTAN one-piece strap only: validate the live selected-variant USD offer, exact case dimensions, full strap-installed weight rather than Shopify shipping weight or head-only mass, exact installed Swiss quartz caliber and numerical rate period, 30 m resistance, pressure crown, sapphire, no-date function set, fixed serviceable bars, and constant tritium performance; do not inherit facts from mechanical WW194003 or mix the ballistic-nylon SKUs",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month",
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Source-led quartz counterpart to the accepted mechanical GPM, fixed to one exact DEFSTAN SKU. The compact no-date tritium row would diversify eighty 300_500 zero-maintenance studio cells across all representative wrist and accuracy bands if independent review proves the complete homogeneous M1 contract; its 30 m rating deliberately excludes field/water-abuse eligibility."
         }
       ]
     },

@@ -855,6 +855,20 @@ succeeded, 23 failed) across 28 target IDs with USD 0.43617 recorded provider
 cost. The strict manifest has 28 reviews: six migration-ready, 20 needing more
 evidence, and two excluded; 18 targets are accepted and 20 remain active.
 
+The next explicit target is Marathon 34 mm Black General Purpose Quartz GPQ
+SKU `WW194004BK-0808`, fixed to the selected black 16 mm Nylon DEFSTAN strap.
+The live exact variant is available with inventory at USD 470 and identifies a
+compact fibreshell, Swiss high-torque quartz, tritium, no-date configuration.
+The source pattern is promising because the accepted mechanical GPM already
+demonstrated retrievable Marathon specifications, movement-manufacturer rate
+data, configured-mass corroboration, and fixed-bar service evidence. No value is
+inherited: research must independently prove the GPQ's exact dimensions, full
+strap-installed weight rather than Shopify shipping or head-only mass, installed
+caliber and numerical rate, sapphire, pressure crown, fixed bars, and constant
+tritium performance. If complete, the row would diversify 80 currently empty
+`300_500`, zero-maintenance studio cells across all wrist and accuracy bands;
+30 m resistance deliberately excludes field/water-abuse eligibility.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
