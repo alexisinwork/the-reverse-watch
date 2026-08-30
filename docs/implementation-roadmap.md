@@ -726,6 +726,15 @@ remains the sole M1 gap and the row is not promoted. The current strict
 checkpoint has 22 reviews (six migration-ready, 14 needing more evidence, and
 two excluded), 18 accepted targets, and 14 active targets.
 
+A subsequent explicit Nodus target exposed a strict-extraction hole rather than
+producing reviewable evidence. The first response failed target-ID equality;
+the second claimed an exact Sector Deep while returning no claims or unresolved
+fields and placing placeholder reasoning inside the reference code. Research
+contract v5 now limits identity components to 160 plain single-line characters
+and requires resolved `identity` and `productUrl` claims whenever an exact
+variant is asserted. The invalid v4 artifact remains immutable and ignored; the
+Nodus target is reset to `planned` under a new fingerprint.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

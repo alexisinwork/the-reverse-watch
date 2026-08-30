@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T18:56:00Z",
+  "updatedAt": "2026-08-30T18:59:00Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2258,19 +2258,34 @@
           "referenceLabel": "Select one current homogeneous Nodus mechanical tool-watch variant with exact configured weight evidence, regulated numerical accuracy, and a fully identified bracelet or strap interface",
           "state": "planned",
           "coverageIntent": {
-            "priceBands": ["300_500", "500_1000"],
-            "wristBands": ["5_75_6_25", "6_25_6_75", "6_75_7_5"],
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
             "deploymentEnvironments": [
               "field_water_abuse",
               "studio_desk_daily"
             ],
-            "ownershipFrictionLevels": ["workhorse_mechanical"],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
             "accuracyTolerances": [
               "within_15_seconds_per_day",
               "no_requirement"
             ],
-            "weightLimits": ["under_160_g", "no_limit"],
-            "functionProfiles": ["time_only_no_date", "simple_date"]
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date",
+              "simple_date"
+            ]
           },
           "coverageRationale": "Add a regulated, serviceable independent-brand mechanical tool watch to empty sub-1000 cells, with source-complete mass and interface evidence required before ranking."
         }

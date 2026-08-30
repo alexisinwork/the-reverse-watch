@@ -7,7 +7,16 @@ import {
 } from "./research";
 import type { ProposedFact, ResearchTarget } from "./research";
 
-export const PERPLEXITY_RESEARCH_CONTRACT_VERSION = 4 as const;
+export const PERPLEXITY_RESEARCH_CONTRACT_VERSION = 5 as const;
+
+const candidateIdentityValueSchema = z
+  .string()
+  .min(1)
+  .max(160)
+  .refine(
+    (value) => !/[\r\n{}]/.test(value),
+    "Candidate identity values must be plain single-line text.",
+  );
 
 const researchExtractionClaimSchema = z
   .object({
@@ -51,10 +60,10 @@ export const researchExtractionSchema = z
     exactVariantFound: z.boolean(),
     candidateIdentity: z
       .object({
-        brand: z.string().min(1),
-        model: z.string().min(1),
-        referenceCode: z.string().min(1),
-        variantName: z.string().min(1),
+        brand: candidateIdentityValueSchema,
+        model: candidateIdentityValueSchema,
+        referenceCode: candidateIdentityValueSchema,
+        variantName: candidateIdentityValueSchema,
       })
       .strict()
       .nullable(),
@@ -74,6 +83,24 @@ export const researchExtractionSchema = z
         message:
           "Candidate identity must exist exactly when an exact variant was found.",
       });
+    }
+    if (extraction.exactVariantFound) {
+      const resolvedIdentityFields = new Set(
+        extraction.claims
+          .filter(
+            (claim) => claim.value !== null && claim.evidenceKind !== "missing",
+          )
+          .map((claim) => claim.fieldName),
+      );
+      for (const fieldName of ["identity", "productUrl"] as const) {
+        if (!resolvedIdentityFields.has(fieldName)) {
+          context.addIssue({
+            code: "custom",
+            path: ["claims"],
+            message: `An exact variant requires a resolved ${fieldName} claim.`,
+          });
+        }
+      }
     }
     const resolvedFields = new Set(
       extraction.claims
@@ -96,7 +123,7 @@ export const researchExtractionSchema = z
 export const perplexityResearchResponseFormat = {
   type: "json_schema",
   json_schema: {
-    name: "WatchReferenceResearchV4",
+    name: "WatchReferenceResearchV5",
     schema: z.toJSONSchema(researchExtractionSchema, { target: "draft-7" }),
   },
 } as const;
@@ -158,6 +185,7 @@ export function buildResearchPrompt(target: ResearchTarget) {
     "sourceType must be one of manufacturer_product, manufacturer_manual, manufacturer_data_sheet, manufacturer_corporate, regulator_or_registry, central_bank, reviewed_market, secondary_editorial.",
     "evidenceKind must be observed, estimated_class, or missing. Do not turn a family estimate into an observed variant fact.",
     "A null value must use evidenceKind missing and its field must appear in unresolvedFields. A non-null observed or estimated field must not appear in unresolvedFields.",
+    "When exactVariantFound is true, claims must include non-null identity and productUrl claims sourced to the selected exact variant.",
     "Omit observedAt unless the source establishes a full UTC ISO 8601 date-time such as 2026-08-29T00:00:00Z. Never return a date-only value; the worker supplies retrieval time when it is omitted.",
   ].join("\n");
 }

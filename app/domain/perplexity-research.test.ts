@@ -26,8 +26,36 @@ describe("Perplexity research normalization", () => {
     expect(prompt).toContain("Never return a date-only value");
     expect(perplexityResearchResponseFormat).toMatchObject({
       type: "json_schema",
-      json_schema: { name: "WatchReferenceResearchV4" },
+      json_schema: { name: "WatchReferenceResearchV5" },
     });
+  });
+
+  it("rejects empty or malformed exact-variant extractions", () => {
+    const candidateIdentity = {
+      brand: "Nodus",
+      model: "Sector Deep",
+      referenceCode: "SEC-D-BLU",
+      variantName: "Blue Orthodox",
+    };
+    const empty = {
+      targetId: "nodus-regulated-mechanical-tool",
+      exactVariantFound: true,
+      candidateIdentity,
+      claims: [],
+      unresolvedFields: [],
+      sourceAssessment: "No usable claims returned.",
+    };
+
+    expect(researchExtractionSchema.safeParse(empty).success).toBe(false);
+    expect(
+      researchExtractionSchema.safeParse({
+        ...empty,
+        candidateIdentity: {
+          ...candidateIdentity,
+          referenceCode: `missing ${"placeholder ".repeat(20)}`,
+        },
+      }).success,
+    ).toBe(false);
   });
 
   it("rejects null observed facts and resolved/unresolved contradictions", () => {
@@ -41,6 +69,28 @@ describe("Perplexity research normalization", () => {
         variantName: "Small steel bracelet",
       },
       claims: [
+        {
+          subjectType: "reference_variant",
+          subjectKey: "cartier-wsta0107",
+          fieldName: "identity",
+          value: "Cartier Tank Must WSTA0107",
+          sourceUrl: "https://example.com/product",
+          sourceType: "manufacturer_product",
+          evidenceKind: "observed",
+          observedAt: null,
+          note: null,
+        },
+        {
+          subjectType: "reference_variant",
+          subjectKey: "cartier-wsta0107",
+          fieldName: "productUrl",
+          value: "https://example.com/product",
+          sourceUrl: "https://example.com/product",
+          sourceType: "manufacturer_product",
+          evidenceKind: "observed",
+          observedAt: null,
+          note: null,
+        },
         {
           subjectType: "reference_variant",
           subjectKey: "cartier-wsta0107",
@@ -109,6 +159,26 @@ describe("Perplexity research normalization", () => {
         "claims": [{
           "subjectType": "reference_variant",
           "subjectKey": "cartier-wsta0042",
+          "fieldName": "identity",
+          "value": "Cartier Tank Must WSTA0042",
+          "sourceUrl": "https://example.com/product",
+          "sourceType": "manufacturer_product",
+          "evidenceKind": "observed",
+          "observedAt": null,
+          "note": null
+        }, {
+          "subjectType": "reference_variant",
+          "subjectKey": "cartier-wsta0042",
+          "fieldName": "productUrl",
+          "value": "https://example.com/product",
+          "sourceUrl": "https://example.com/product",
+          "sourceType": "manufacturer_product",
+          "evidenceKind": "observed",
+          "observedAt": null,
+          "note": null
+        }, {
+          "subjectType": "reference_variant",
+          "subjectKey": "cartier-wsta0042",
           "fieldName": "geometry.caseDiameterMm",
           "value": 22,
           "sourceUrl": "https://example.com/product",
@@ -128,7 +198,7 @@ describe("Perplexity research normalization", () => {
       jobId: "5fa1e3f0-7713-4a90-bbb8-c073c25b7139",
       retrievedAt: "2026-08-28T20:01:00Z",
     });
-    expect(facts[0]).toMatchObject({
+    expect(facts[2]).toMatchObject({
       reviewStatus: "provisional",
       fieldName: "geometry.caseDiameterMm",
       observedAt: "2026-08-28T20:01:00Z",

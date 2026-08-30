@@ -640,6 +640,16 @@ failed) across 22 target IDs with USD 0.29610 recorded provider cost. The
 strict manifest has 22 reviews: six migration-ready, 14 needing more evidence,
 and two excluded; 18 targets are accepted and 14 remain active.
 
+The next explicit Nodus target exposed a contract defect before source review:
+one provider response failed the target-ID guard, while its retry claimed an
+exact Sector Deep yet returned zero claims and zero unresolved fields with
+placeholder reasoning embedded in `referenceCode`. Contract v5 now caps
+candidate-identity components at 160 single-line characters and requires every
+`exactVariantFound: true` result to carry resolved `identity` and `productUrl`
+claims. The invalid v4 artifact remains in the ignored immutable ledger, the
+target returned to `planned`, and its new fingerprint must pass v5 before it can
+move to review.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
