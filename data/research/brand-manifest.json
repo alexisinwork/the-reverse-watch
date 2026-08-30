@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 201,
-  "updatedAt": "2026-08-30T20:03:52.919Z",
+  "updatedAt": "2026-08-30T20:11:33.164Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2464,7 +2464,46 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "lip-lightweight-rectangular-quartz",
+          "referenceLabel": "Research exact current LIP Churchill T18 reference 671937 only, fixed to its dark-blue crocodile-pattern leather strap: retain the live French manufacturer offer and exact rectangular 38.5 x 21.2 mm, 18 mm interface, 27 g configured weight, Ronda 1064 -10/+20 seconds per month, 30 m, sapphire, two-hand plus small-seconds no-date facts; require exact-reference case thickness, case-to-strap fastener evidence, and explicit no-lume evidence from LIP or convergent exact-reference sources; do not treat the pin buckle as the case attachment or silence about lume as proof of none",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Source-led exact-reference hypothesis for a new brand and a 27 g rectangular quartz formal/studio row below EUR 300. Its 38.5 mm overall case length should fit all representative wrist bands, while the published monthly rate supports both strict quartz and no-requirement profiles. Eighty intended cells remain hypotheses until source review completes every M1 gate; 30 m excludes field/water use."
+        }
+      ]
     },
     {
       "slug": "duckworth-prestex",

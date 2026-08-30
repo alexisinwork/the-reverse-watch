@@ -811,6 +811,17 @@ failed) across 27 target IDs with USD 0.40434 recorded provider cost. The strict
 manifest has 27 reviews: six migration-ready, 19 needing more evidence, and two
 excluded; 18 targets are accepted and 19 remain active.
 
+The next explicit source-led target is LIP Churchill T18 reference `671937` on
+its dark-blue crocodile-pattern leather strap. LIP's live exact product route
+publishes an in-stock EUR 249 French offer, a 38.5 x 21.2 mm rectangular case,
+18 mm interface, 27 g configured weight, Ronda 1064 at -10/+20 seconds per
+month, 30 m resistance, sapphire, and hours/minutes plus small seconds without
+a date. The conservative formal/studio, zero-maintenance hypothesis would add a
+new brand across 80 currently empty `under_300` cells and deliberately excludes
+field/water use. Exact-reference thickness, case-to-strap attachment, and
+explicit no-lume evidence remain mandatory review gates; neither the pin buckle
+nor silence about luminous material can satisfy them.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

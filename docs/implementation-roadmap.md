@@ -870,6 +870,17 @@ migration-ready, 19 needing more evidence, and two excluded), with 18 accepted
 and 19 active targets; the ignored ledger contains 52 attempts (31 succeeded,
 21 failed) across 27 target IDs and USD 0.40434 recorded provider cost.
 
+The next explicit target is LIP Churchill T18 reference `671937`, fixed to its
+dark-blue crocodile-pattern leather strap. Its live manufacturer page publishes
+an in-stock EUR 249 French offer, exact 38.5 x 21.2 mm rectangular geometry,
+18 mm interface, 27 g full configured weight, Ronda 1064 at -10/+20 seconds per
+month, 30 m resistance, sapphire, and a no-date hours/minutes/small-seconds
+layout. The source-led row adds a new brand to 80 currently empty `under_300`,
+zero-maintenance formal/studio cells while excluding field/water deployment.
+Perplexity-assisted review must still prove exact thickness, case-to-strap
+attachment, and no-lume status; a pin buckle is not a case fastener, and an
+omitted lume claim is not evidence of absence.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
