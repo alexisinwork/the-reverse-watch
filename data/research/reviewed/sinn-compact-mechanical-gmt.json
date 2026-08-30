@@ -2,14 +2,14 @@
   "reviewVersion": 1,
   "targetId": "sinn-compact-mechanical-gmt",
   "jobId": "6e21d896-2d28-46ec-89f8-2780063c99b5",
-  "reviewedAt": "2026-08-29T07:01:45Z",
+  "reviewedAt": "2026-08-30T09:00:54Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
     "brand": "Sinn",
     "model": "856 UTC",
     "referenceCode": "856 UTC",
-    "variantName": "856 UTC stainless-steel GMT watch"
+    "variantName": "856 UTC fully tegimented on black calf leather strap, WatchBuys SKU SI-084"
   },
   "sourceChecks": [
     {
@@ -21,6 +21,16 @@
       "url": "https://www.sinn.de/out/media/productpdf/SINN_856-UTC_EN_P.pdf",
       "status": "validated_primary",
       "note": "Sinn's current official product sheet independently validates the 856 UTC identity, 40 x 11 mm case, 20 mm band width, 70 g head-only weight, automatic movement, 200 m water resistance, screw-down crown, sapphire crystal, luminous coating, GMT, and date. It also confirms that prices differ by attachment configuration."
+    },
+    {
+      "url": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "status": "validated_secondary",
+      "note": "Sinn's official North American importer and distributor independently identifies the homogeneous SI-084 configuration as a new, unworn 856 UTC with black Sinn calf-leather strap, SW330-2, 47.5 mm lug-to-lug, USD 2,680 direct price, in-stock immediate shipment, Add to Cart, and manufacturer warranty. Its 70 g weight is explicitly head-only. Verified-owner reports on this exact SKU range across individual rates and subjective lume impressions; one reports eight-hour lume after a one-minute fluorescent charge, but no independent timed protocol corroborates it."
+    },
+    {
+      "url": "https://www.sinn.de/out/media/Sinn_B_856_857_EN%284%29.pdf",
+      "status": "validated_primary",
+      "note": "Sinn's official Series 856/857 manual explicitly includes models 856 UTC and 856 S UTC. Its case-level strap instructions direct the user to pass a textile strap through the spring bars on the left and right, independently establishing a spring-bar interface for this exact case family rather than inferring it from the selected leather strap. The accuracy section supplies observation guidance but no numerical factory rate tolerance."
     },
     {
       "url": "https://www.sinn.de/out/media/SINN_856_857_EN(7).pdf",
@@ -48,28 +58,118 @@
     "complications",
     "dateStatus"
   ],
-  "additionalVerifiedFacts": [],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "variantName",
+      "value": "856 UTC fully tegimented on black calf leather strap, WatchBuys SKU SI-084",
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "The exact authorized-distributor page locks the previously multi-attachment family to one homogeneous leather-strap configuration."
+    },
+    {
+      "fieldName": "productUrl",
+      "value": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "This is the exact current product page for the reviewed SI-084 North American configuration."
+    },
+    {
+      "fieldName": "materials.strap",
+      "value": "black calf leather",
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "The exact configuration explicitly includes a black Sinn calf-leather strap."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 268000,
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "The exact SI-084 page displayed a USD 2,680 direct price on 2026-08-30."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "The reviewed North American offer is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "WatchBuys ships the reviewed authorized-distributor offer from North Carolina to the United States market."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "The exact page displayed In Stock - Ships Immediately and Add to Cart on 2026-08-30."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "WatchBuys identifies itself as Sinn's official authorized North American importer and distributor."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "The exact offer explicitly states new and unworn."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 47.5,
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "Sinn's official North American distributor publishes 47.5 mm for the exact SI-084 configuration, consistent with multiple independent exact 856 UTC records."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "SW330-2",
+      "sourceUrl": "https://www.watchbuys.com/store/pc/Sinn-856-UTC-Fully-Tegimented-on-Strap-p351.htm",
+      "note": "The current exact authorized-distributor configuration identifies caliber SW330-2."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://www.sinn.de/out/media/Sinn_B_856_857_EN%284%29.pdf",
+      "note": "Sinn's exact-series manual explicitly documents spring bars on the left and right of the 856/857 case; the exact SI-084 page independently locks the selected factory attachment to its black calf-leather strap."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "geometry.weightFullG",
       "reason": "The official 70 g specification explicitly excludes the strap, so it cannot satisfy the catalogue's full-watch weight field."
     },
     {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider's multi-attachment family did not identify one homogeneous amount. It is replaced by the exact in-stock SI-084 authorized-distributor offer."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "reason": "The extraction left this null; the exact SI-084 authorized-distributor specification and multiple exact 856 UTC records converge on 47.5 mm."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "reason": "Sinn's exact-series manual supplies no numerical factory tolerance. Exact-SKU verified owners report individual observations from approximately five seconds over a week to +/-2, +4.5, +5.7, and -3 to -4 seconds per day without a shared protocol, so no lower bound is normalized."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "reason": "Individual exact-SKU owner rates are watch-specific observations rather than a guaranteed range and do not converge under one method; generic SW330-2 tolerances are not substituted."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "reason": "No common accuracy period can be accepted because the associated exact-SKU observations use different or incompletely described intervals and do not establish a lower/upper tolerance."
+    },
+    {
       "fieldName": "operation.lumeGrade",
-      "reason": "The official source establishes luminous coating but does not establish the catalogue's weak/moderate/strong performance class."
+      "reason": "The official source establishes luminous coating. Exact-SKU owners variously call it good or not great; one reports eight-hour visibility after a one-minute fluorescent charge, but no independent timed observation corroborates that result, so no repeatable weak/moderate/strong grade is assigned."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The original extraction supplied no interface value. Sinn's official exact-series manual now directly documents case spring bars, supporting the corrected spring_bar classification without inferring it from leather material or buckle type."
     },
     {
       "fieldName": "operation.shockResistant",
       "reason": "Absence of a shock-resistance claim is not evidence that the watch is not shock resistant."
     }
   ],
-  "missingM1Fields": [
-    "price",
-    "lugToLugMm",
-    "weightFullG",
-    "accuracy",
-    "lumeGrade",
-    "attachmentType"
-  ],
-  "note": "Keep as research-only. The source material describes the watch head across multiple leather, bracelet, and silicone offers; an accepted row needs one exact configuration with its own price, full weight, attachment interface, and the remaining M1 facts."
+  "missingM1Fields": ["weightFullG", "accuracy", "lumeGrade"],
+  "note": "Keep as research-only. A 2026-08-30 Perplexity-assisted pass and independent retrieval now lock the candidate to WatchBuys SKU SI-084: a new, in-stock USD 2,680 black-calf-leather configuration from Sinn's official North American distributor. That exact page resolves 47.5 mm lug-to-lug and SW330-2, while Sinn's exact-series manual directly establishes the case spring bars. The only weight remains 70 g head-only; individual owner rates lack a shared protocol or guarantee; and exact-SKU lume reports include one eight-hour observation but no independent timed corroboration. Full configured weight, accuracy, and lume remain null."
 }

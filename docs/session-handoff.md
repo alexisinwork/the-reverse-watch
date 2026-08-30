@@ -234,6 +234,15 @@ For the third Phase 5 research batch on the same date:
   attachment-interface semantics. Omega's exact official sources were blocked
   during independent retrieval, and its extracted `Steel bracelet` value is a
   material rather than an attachment type.
+- A 2026-08-30 Sinn follow-up now locks the 856 UTC review to WatchBuys SI-084,
+  the black-calf-leather configuration sold by Sinn's official North American
+  distributor. Its current page supplies a new, in-stock USD 2,680 Add to Cart
+  offer and 47.5 mm lug-to-lug. Sinn's exact-series manual directly documents
+  case spring bars, resolving the factory interface without inferring from
+  leather or buckle type. Full configured weight remains unresolved because 70
+  g is head-only; exact-SKU rate reports lack a common protocol; and a single
+  timed eight-hour lume observation lacks independent timed corroboration.
+  Sinn now has three rather than six M1 gaps.
 - The local ledger now retains 15 attempts: eight succeeded and seven failed,
   spanning eight targets, with USD 0.11923 recorded provider cost. Paid raw,
   normalized, and job artifacts remain ignored.

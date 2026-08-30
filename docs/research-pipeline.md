@@ -112,6 +112,16 @@ review held all three at `needs_more_evidence`:
   retrieval. The detailed provider result remains provisional, and `Steel
   bracelet` was rejected as an attachment-interface value.
 
+A narrow 2026-08-30 Sinn pass subsequently locked 856 UTC to the homogeneous
+WatchBuys SI-084 black-calf-leather configuration. The official North American
+distributor publishes a new, in-stock USD 2,680 Add to Cart offer and 47.5 mm
+lug-to-lug. Sinn's official exact-series manual explicitly identifies case
+spring bars, so `attachmentType: spring_bar` is accepted without inferring from
+the selected strap. Full configured weight remains unresolved because 70 g is
+head-only. Exact-SKU owner rates lack a common protocol or factory guarantee,
+and one timed eight-hour lume report lacks independent timed corroboration.
+Those three fields remain null.
+
 The strict checkpoint now contains eight committed reviews: one
 `ready_for_migration` and seven `needs_more_evidence`. The next coverage-ranked
 queue begins with Seiko compact mechanical no-date, Vostok affordable mechanical

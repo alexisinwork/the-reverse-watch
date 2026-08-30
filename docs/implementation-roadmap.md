@@ -281,6 +281,17 @@ bracelet material did not satisfy attachment semantics. The strict manifest now
 has eight reviews (one migration-ready, seven needing more evidence), and the
 next ranked queue starts with Seiko, Vostok, and Baltic coverage targets.
 
+A 2026-08-30 Perplexity-assisted Sinn follow-up reduced the 856 UTC review from
+six gaps to three without blending attachment options. Sinn's official North
+American distributor exposes homogeneous SKU SI-084 with black calf-leather
+strap as a new, in-stock USD 2,680 Add to Cart offer and publishes a 47.5 mm
+lug-to-lug span. Sinn's exact-series manual explicitly documents spring bars on
+the case, resolving `attachmentType: spring_bar` from manufacturer instructions
+rather than strap material. The only weight remains 70 g head-only; exact-SKU
+owner rate reports use incompatible methods; and lume reports include one
+eight-hour observation after a one-minute charge without independent timed
+corroboration. Weight, accuracy, and lume remain fail-closed.
+
 The fourth live batch independently reviewed Seiko HCC004J1, Vostok 420059,
 and Baltic MR Classic Blue without promoting any row. Seiko is M1-complete
 except for graded lume and attachment semantics after official sources resolved
