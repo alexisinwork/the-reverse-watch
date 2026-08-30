@@ -6,7 +6,7 @@ import type {
   EvidenceField,
   SeedReferenceVariant,
 } from "../app/domain/catalogue";
-import { evidenceFields } from "../app/domain/catalogue";
+import { evidenceFields, priceSnapshotKind } from "../app/domain/catalogue";
 import { seedCatalogue } from "../app/domain/seed-catalogue";
 
 const args = process.argv.slice(2);
@@ -324,11 +324,7 @@ on conflict (reference_variant_id, complication) do nothing;`,
 }
 
 function renderPrice(variant: SeedReferenceVariant) {
-  const priceKind = variant.price.channels.includes("secondary_market")
-    ? "secondary_ask"
-    : variant.price.channels.includes("grey_market")
-      ? "grey_market_ask"
-      : "retail";
+  const priceKind = priceSnapshotKind(variant.price.channels);
   const condition = variant.price.conditions[0];
   if (!condition) throw new Error(`Missing price condition: ${variant.id}`);
   return `insert into public.price_snapshots (
@@ -435,6 +431,9 @@ function renderPriceEvidence(variant: SeedReferenceVariant) {
     candidate.fields.includes("price"),
   );
   if (!entry) return "";
+  const priceKind = priceSnapshotKind(variant.price.channels);
+  const condition = variant.price.conditions[0];
+  if (!condition) throw new Error(`Missing price condition: ${variant.id}`);
   return `insert into public.field_evidence (
   subject_type, subject_id, field_name, value_hash, source_id,
   observed_at, retrieved_at, verified_at, stale_after, tier, reviewer
@@ -445,7 +444,7 @@ select 'price_snapshot', ps.id, 'amount_low_minor', ${q(hashValue(variant.price.
   ps.stale_after, 'verified', ${q(reviewer)}
 from public.price_snapshots ps
 where ps.reference_variant_id = ${variantIdSql(variant)}
-  and ps.kind = 'retail' and ps.condition = 'new'
+  and ps.kind = ${q(priceKind)} and ps.condition = ${q(condition)}
   and ps.currency = ${q(variant.price.currency)}
   and ps.observed_at = ${q(variant.price.observedAt)}::timestamptz
 on conflict (subject_type, subject_id, field_name, value_hash, source_id) do update set

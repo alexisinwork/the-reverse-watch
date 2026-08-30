@@ -2,6 +2,7 @@ import {
   convertMinorCurrency,
   evidenceFields,
   isFieldNotApplicable,
+  priceSnapshotKind,
   seedCatalogueSchema,
   supportedAccuracyTolerances,
   verifiedCaseWearingSpanMm,
@@ -24,6 +25,22 @@ describe("source-backed seed catalogue", () => {
       expect(variant.price.marketCountry).toMatch(/^[A-Z]{2}$/);
       expect(variant.brand.serviceCountries).toBeNull();
     }
+  });
+
+  it("maps acquisition channels to the relational price snapshot kind", () => {
+    expect(priceSnapshotKind(["authorized_dealer"])).toBe("retail");
+    expect(priceSnapshotKind(["grey_market"])).toBe("grey_market_ask");
+    expect(priceSnapshotKind(["secondary_market"])).toBe("secondary_ask");
+  });
+
+  it("does not claim evidence for an unknown availability state", () => {
+    const seiko = seedCatalogue.variants.find(
+      (variant) => variant.id === "seiko-hcc004j1",
+    );
+
+    expect(seiko).toBeDefined();
+    expect(seiko!.price.availability).toBe("unknown");
+    expect(evidenceFields(seiko!).has("availability")).toBe(false);
   });
 
   it("converts prices through the dated EUR reference-rate cross", () => {

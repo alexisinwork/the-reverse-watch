@@ -169,7 +169,32 @@ const profiles: QuestionnaireProfile[] = [
   },
 ];
 
-const evaluationTime = "2026-08-28T20:00:00Z";
+const observedTimes = [
+  seedCatalogue.fx.observedAt,
+  ...seedCatalogue.variants.flatMap((variant) => [
+    variant.price.observedAt,
+    variant.price.availabilityObservedAt,
+  ]),
+].filter((value): value is string => value !== null);
+const staleTimes = [
+  seedCatalogue.fx.staleAfter,
+  ...seedCatalogue.variants.flatMap((variant) => [
+    variant.price.staleAfter,
+    variant.price.availabilityStaleAfter,
+  ]),
+].filter((value): value is string => value !== null);
+const latestObservation = Math.max(
+  ...observedTimes.map((value) => new Date(value).getTime()),
+);
+const earliestExpiry = Math.min(
+  ...staleTimes.map((value) => new Date(value).getTime()),
+);
+if (latestObservation >= earliestExpiry) {
+  throw new Error(
+    "Catalogue facts do not share an overlapping mutable-fact freshness window.",
+  );
+}
+const evaluationTime = new Date(latestObservation).toISOString();
 
 async function fetchSqlHardFilter(profile: QuestionnaireProfile) {
   const hardFilterResponse = await fetch(

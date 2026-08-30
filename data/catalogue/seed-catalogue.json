@@ -2193,7 +2193,6 @@
           "fields": [
             "identity",
             "price",
-            "availability",
             "materials",
             "productionStatus",
             "caseDiameterMm",

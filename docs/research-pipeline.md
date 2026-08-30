@@ -1,7 +1,7 @@
 # Coverage-first research pipeline
 
 Status: **Phase 5 contract active**
-Last verified: **2026-08-29**
+Last verified: **2026-08-30**
 
 This pipeline expands the relational catalogue without turning provider output,
 Markdown, or a brand name into an accepted fact. PostgreSQL remains canonical;
@@ -61,6 +61,9 @@ Current checkpoint:
   research-only M0/M2 context, alongside one existing roadmap brand;
 - 18 accepted catalogue targets linked to all current reviewed variants;
 - 13 active coverage-intent targets, with all default discovery jobs reviewed;
+- live Supabase parity for 16 brands and all 18 accepted variants across the
+  six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
+  tables have RLS enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
   mechanicals.

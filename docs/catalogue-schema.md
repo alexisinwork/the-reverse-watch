@@ -46,8 +46,10 @@ then adds a reviewed evidence value state and v3 read RPCs that distinguish an
 unknown null from a physical `not_applicable` exception.
 
 Both RPCs are fixed `SECURITY DEFINER` SQL with an empty `search_path`, no
-dynamic SQL, and no mutation. Only `anon` and the administrative service role
-can execute them. `anon` and `authenticated` retain zero direct table grants.
+dynamic SQL, and no mutation. The anonymous client role can execute them;
+Supabase role inheritance also makes the same read-only surface available to
+signed-in clients. `anon` and `authenticated` retain zero direct table grants,
+and all public catalogue tables have RLS enabled without direct-table policies.
 
 ## Entity boundary
 
@@ -197,12 +199,12 @@ permutations.
 
 ## Applied database evidence
 
-The first nine migrations were applied additively to Supabase project
-`osfqexnzgkksfvaocjvl` on 2026-08-28. The live catalogue contains 11 brands, 12
-homogeneous variants, 12 retail-price snapshots, 7 availability snapshots, 236
-field-evidence rows, 5 FX rows, 25 deployment profiles, and 12
-ownership-friction profiles. The two Rolex Explorer materials remain distinct
-rows (`124270` steel and `124273` steel/yellow gold).
+Migrations `0001` through `0020` are applied additively to Supabase project
+`osfqexnzgkksfvaocjvl`. As verified on 2026-08-30, the live catalogue contains
+16 brands, 18 homogeneous variants, 18 price snapshots, 11 availability
+snapshots, 404 verified field-evidence rows, 5 FX rows, 37 deployment profiles,
+and 18 ownership-friction profiles. The two Rolex Explorer materials remain
+distinct rows (`124270` steel and `124273` steel/yellow gold).
 
 Migration `0010_expand_catalogue_christopher_ward.sql` adds the independently
 reviewed C63 Sealander GMT exact SKU. Migration
@@ -215,29 +217,24 @@ G-SHOCK G-5600UE-1 with exact illumination, 16 mm spring-bar interface, and
 current secondary-market evidence. Migration
 `0014_expand_catalogue_seiko.sql` then adds Presage HCC004J1 with its reviewed
 exact-reference no-lume conflict resolution. Together they form the intermediate
-15-brand/17-variant state. All five remain unapplied while the Supabase MCP OAuth
-connection is expired; migrations `0015` through `0018` are also pending. The
-owner-authorized bundled-seed push is already live, but Supabase must not become
-the active source until the complete ordered sequence is applied and the 18-row
-parity audit succeeds.
+15-brand/17-variant state. All five are applied in sequence and retain their
+reviewed field-level evidence.
 
 Migration `0015_add_rectangular_case_geometry.sql` then adds only the nullable
-non-round geometry columns; it adds no reference row. It is also unapplied and
-must follow `0014`. Migration
+non-round geometry columns; it adds no reference row. Migration
 `0016_correct_reverso_rectangular_geometry.sql` then corrects the accepted JLC
 row, replaces its diameter evidence with width/length evidence, recalculates
 its geometry-aware M0/M1 completeness, and makes
 `recommendation_catalogue_v2()` and `recommendation_hard_filter_v2()` the
 rectangular-aware contracts. Both v1 contracts become internal implementation
-details. It is unapplied and must follow `0015`.
+details.
 
 Migration `0017_expand_catalogue_tudor.sql` then adds the homogeneous Black Bay
 54 M79000N-0001. TUDOR's exact dossier explicitly identifies the through-lug
 spring-bar holes, and the retained exact-reference fitment guide identifies the
 corresponding bars. The row is M1-complete with a 139 g normalized full-length
-bracelet configuration and a measured 45.8 mm lug-to-lug. It is unapplied and
-must follow `0016`; together the pending migrations bring the intended live
-catalogue to 16 brands and 18 variants.
+bracelet configuration and a measured 45.8 mm lug-to-lug. Together the applied
+expansion migrations bring the live catalogue to 16 brands and 18 variants.
 
 Migration `0018_add_field_applicability.sql` must follow `0017`. It adds
 `field_evidence.value_state` with existing rows defaulted to `observed`, a
@@ -249,17 +246,29 @@ current 18 accepted rows have no non-applicable field, so their facts and
 predicates remain unchanged; the migration prepares future reviewed rows such
 as the still research-only Blancpain.
 
+Migration `0019_repair_casio_price_evidence.sql` restores the verified source
+link omitted when the first `secondary_ask` snapshot was rendered; the snapshot
+and price fact are unchanged. The generator now derives the snapshot and its
+evidence lookup from one acquisition-channel mapping. Migration
+`0020_enable_catalogue_rls.sql` enables RLS on all 20 public catalogue tables.
+No direct-table policies were added, so the versioned RPC pair remains the sole
+browser read path.
+
 `npm run audit:catalogue-parity` validates the strict RPC response against the
 bundled snapshot and compares the PostgreSQL and TypeScript hard-filter codes
-for every variant across six golden profiles.
+and result partitions for every variant across six golden profiles. Its
+evaluation time is the latest observation inside the catalogue's common
+mutable-fact freshness window. The live 18-row audit passes after RLS.
 
-The Supabase security advisor reports two intentional warnings because the
-anonymous role can execute the two `SECURITY DEFINER` RPCs. This is the intended
-public catalogue boundary; the functions expose only accepted catalogue facts
-and fixed filter codes, while `anon` and `authenticated` have no table access.
-The broader authenticated execution grants were revoked. See the advisor's
+The Supabase security advisor reports expected informational no-policy notices
+for the server-only RLS tables plus intentional anonymous and inherited
+signed-in execution warnings for the two `SECURITY DEFINER` RPCs. This is the
+intended public catalogue boundary; the functions expose only accepted
+catalogue facts and fixed filter codes, while `anon` and `authenticated` have
+no table access and RLS is enabled. Broader direct-table access remains revoked.
+See the advisor's
 [security-definer guidance](https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable).
 Performance findings are only unused-index informational notices expected on a
-newly loaded 12-row catalogue; the indexes are retained for the expansion phase.
+newly loaded 18-row catalogue; the indexes are retained for the expansion phase.
 See the advisor's
 [unused-index guidance](https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index).

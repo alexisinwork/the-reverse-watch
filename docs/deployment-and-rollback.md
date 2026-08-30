@@ -1,6 +1,6 @@
 # Vercel deployment and rollback
 
-Last verified: 2026-08-29
+Last verified: 2026-08-30
 
 ## Current state
 
@@ -23,15 +23,13 @@ Last verified: 2026-08-29
   RPCs; it does not need a PostgreSQL password or management key. Invalid,
   incomplete, timed-out, or unavailable RPC responses trigger the visible
   reviewed-bundle fallback.
-- Production currently exposes the verified v1 RPC pair. The application now
-  targets the applicability-aware v3 pair created by migration `0018`; v3
-  wraps the rectangular-aware v2 contracts from migration `0016`. On
-  2026-08-29 the owner explicitly authorized pushing the complete branch before
-  migrations `0010` through `0018` could be applied. This is operationally safe
-  because an unavailable or invalid v3 catalogue prevents the SQL call and
-  visibly selects the reviewed 18-row bundle; an incomplete hard-filter
-  partition likewise falls back as one unit. The push does not waive the
-  migration or 18-row parity requirement before Supabase is treated as active.
+- Production targets the applicability-aware v3 pair created by migration
+  `0018`; v3 wraps the rectangular-aware v2 contracts from migration `0016`.
+  Migrations `0010` through `0020` are now live, and the publishable-key audit
+  proves exact 18-row catalogue plus six-profile SQL/TypeScript parity after
+  RLS. An unavailable or invalid v3 catalogue still visibly selects the
+  reviewed 18-row bundle; an incomplete hard-filter partition likewise falls
+  back as one unit.
 - The explicit push through repository commit `f505270` was observed in
   production on 2026-08-29. The deployed quiz asset matched the reviewed local
   build, `/`, `/quiz`, and `/health` returned 200, and a valid core POST

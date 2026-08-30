@@ -1,6 +1,6 @@
 # Session handoff
 
-Last updated: 2026-08-29
+Last updated: 2026-08-30
 
 This is the restart point for the next working session. The controlling
 sequence is [`implementation-roadmap.md`](implementation-roadmap.md), which
@@ -17,24 +17,20 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Nine additive migrations are applied to Supabase; additive migrations `0010`
-  through `0018` are prepared and locally verified but not yet applied
-  because the Supabase MCP OAuth refresh expired. This continuation also
-  confirmed that no Supabase tool/CLI session or configured Vercel credential
-  is available locally. Tables remain server-only;
-  the application uses two narrow read-only RPCs for accepted facts and SQL
-  hard-filter codes. No subscriber, DNS, or destructive database change was
-  made.
+- Migrations `0001` through `0020` are applied to the connected Supabase
+  project. The live v3 catalogue contains all 16 brands and 18 accepted
+  variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
+  result parity passes. All 20 public catalogue tables have RLS enabled with no
+  direct browser grants or policies; the application uses only two narrow,
+  read-only v3 RPCs for accepted facts and SQL hard-filter codes.
 - On 2026-08-29 the owner explicitly requested that the complete accumulated
   branch be pushed. The 28 existing local commits plus the handoff checkpoint
   were therefore delivered to `origin/main`, superseding the earlier
-  temporary no-push instruction. This does not pretend the database is current:
-  live Supabase still lacks migrations `0010` through `0018`. The deployed
-  server requests the v3 RPC pair, strictly validates the response and exact
-  variant coverage, and falls back as one unit to the reviewed 18-row bundle
-  plus deterministic local predicates when those RPCs are unavailable. Live
-  18-row SQL parity remains mandatory before Supabase can become the active
-  recommendation source again.
+  temporary no-push instruction. The deployed server requests the v3 RPC pair,
+  strictly validates the response and exact variant coverage, and falls back as
+  one unit to the reviewed 18-row bundle plus deterministic local predicates
+  if those RPCs become unavailable or divergent. The 18-row live SQL parity
+  requirement is now satisfied.
 - The owner-requested push advanced `origin/main` through `f505270`. The Git
   remote SHA matched local HEAD immediately afterward. The resulting Vercel
   deployment served the same `quiz-D6lju-YI.js` asset as the reviewed local
@@ -110,15 +106,15 @@ phase.
   PostgreSQL types and tables for brands, ownership periods, service regions,
   collections, models, variants, complications, price/market snapshots, traits,
   editorial claims, sources, per-field evidence, completeness, and review.
-- Migrations `0001` through `0009` are applied to Supabase project
+- Migrations `0001` through `0020` are applied to Supabase project
   `osfqexnzgkksfvaocjvl`; none enables `pgvector`.
 - `docs/catalogue-schema.md` maps questionnaire requirements to fields and
   records refresh/null/completeness policy.
 - `app/domain/coverage.ts` and `scripts/audit-coverage.ts` enumerate the defined
   pre-collection core matrix and report empty, single-candidate,
   under-diversified, and under-evidenced cells.
-- The applied baseline has 11 brands and 12 variants. The reviewed local seed
-  now has 16 brands and 18 variants after adding Christopher Ward
+- The applied live catalogue and reviewed local seed both have 16 brands and 18
+  variants after adding Christopher Ward
   C63-39AGM4-S00W0-B0, Orient RA-AC0M03S, Marathon WW194003BK-0108, Casio
   G-5600UE-1, Seiko HCC004J1, and TUDOR M79000N-0001. Migrations `0010`
   through `0014` and `0017` each carry
@@ -141,12 +137,15 @@ phase.
   Coverage price bands now use the dated EUR base instead of raw source-currency
   numbers; this honestly exposes the current `15000_plus` band as empty rather
   than misclassifying the PLN-priced TUDOR row.
-  The applied live baseline remains 180 cells until migrations `0010` through
-  `0018` are applied in order.
-- Browser roles have no table grants. The security advisor's only current
-  findings are the two intentional anonymous `SECURITY DEFINER` RPC warnings;
-  both functions have an empty `search_path`, fixed read-only SQL, and no
-  dynamic statements. Performance findings remain unused-index information.
+- Migration `0019` restores the verified evidence link for Casio's existing
+  `secondary_ask` price snapshot; migration `0020` enables RLS on every public
+  catalogue table without adding browser table policies or grants.
+- Browser roles have no table grants. The security advisor's current findings
+  are expected informational no-policy notices for the server-only RLS tables
+  plus intentional anonymous and inherited signed-in execution warnings for
+  the two public v3 `SECURITY DEFINER` RPCs; both functions have an empty
+  `search_path`, fixed read-only SQL, and no dynamic statements. Performance
+  findings remain unused-index information.
 
 ## Phase 4 checkpoint delivered
 
@@ -170,10 +169,8 @@ phase.
 - The server validates both RPC responses, requires exact variant coverage,
   caches valid catalogue facts for 60 seconds, and visibly falls back as one
   unit to the reviewed bundle plus local predicates.
-- `npm run audit:catalogue-parity` proved fact and predicate parity for all 12
-  applied baseline variants across six golden profiles. It must be rerun for
-  all 18 variants immediately after migrations `0010` through `0018` are
-  applied in order. PostgreSQL
+- `npm run audit:catalogue-parity` proves fact, predicate, and result parity for
+  all 18 applied variants across six golden profiles. PostgreSQL
   owns the live hard-filter partition; TypeScript owns scoring, explanations,
   diversity, and fallback.
 - Vercel Production and Preview have the public Supabase URL and publishable
@@ -578,20 +575,10 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Reconnect the Supabase MCP for project `osfqexnzgkksfvaocjvl`, apply
-   `0010_expand_catalogue_christopher_ward.sql` and then
-   `0011_expand_catalogue_orient.sql`, followed by
-   `0012_expand_catalogue_marathon.sql`, and then
-   `0013_expand_catalogue_casio.sql`, followed by
-   `0014_expand_catalogue_seiko.sql`, followed by
-   `0015_add_rectangular_case_geometry.sql`, followed by
-   `0016_correct_reverso_rectangular_geometry.sql`, followed by
-   `0017_expand_catalogue_tudor.sql`, and then
-   `0018_add_field_applicability.sql`. Run live 18-row catalogue and
-   six-profile SQL parity. The accumulated application checkpoint has already
-   been pushed under the owner's explicit instruction; until parity succeeds,
-   production must visibly use the reviewed bundled catalogue and local hard
-   filters rather than a divergent relational result.
+1. Treat the live 18-row v3 catalogue and six-profile parity as the relational
+   baseline. After every new accepted variant, add one forward migration,
+   rerun exact live parity through the publishable-key RPC path, and retain the
+   all-or-nothing bundled fallback for any divergence.
 2. Resolve or explicitly retain the first review gaps. Citizen BM8180-03E still
    needs an authoritative repeatable lume grade. Cartier WSTA0107 now needs
    only numerical exact-applicable quartz accuracy; its rectangular geometry

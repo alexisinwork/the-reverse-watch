@@ -576,6 +576,24 @@ weight and accuracy. Commit `c0ebca7` is pushed and production smoke checks
 confirmed catalogue-version-2 bundled fallback while the live v3 RPC pair is
 unavailable.
 
+On 2026-08-30 the connected Supabase project received migrations `0010`
+through `0018` in order. The first 18-row parity run exposed two audit defects
+rather than accepting a divergent database: Casio's secondary-market snapshot
+had no linked verified price evidence because the renderer queried only
+`retail/new`, and Seiko's bundled record claimed availability evidence despite
+an explicit unknown state. Migration `0019` repairs only the Casio evidence
+link, the renderer now derives both snapshot and evidence kinds from the same
+channel mapping, unsupported Seiko availability evidence is removed, and the
+parity time is derived from the shared mutable-fact freshness window. Migration
+`0020` enables RLS on all 20 public catalogue tables without adding direct-table
+policies or browser grants. The live database now has 16 brands, 18 accepted
+variants, and 404 verified evidence rows; public v3 fact parity and all six
+SQL/TypeScript predicate/result profiles pass after RLS. The advisor retains
+expected informational no-policy notices for the server-only RLS tables and
+the explicit warnings for the two intentionally public, fixed-SQL,
+empty-`search_path` `SECURITY DEFINER` RPCs; unused-index findings remain
+informational during expansion.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

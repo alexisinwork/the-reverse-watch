@@ -353,6 +353,14 @@ export function evidenceFields(variant: SeedReferenceVariant) {
   return new Set(variant.evidence.flatMap((entry) => entry.fields));
 }
 
+export function priceSnapshotKind(
+  channels: SeedReferenceVariant["price"]["channels"],
+) {
+  if (channels.includes("secondary_market")) return "secondary_ask" as const;
+  if (channels.includes("grey_market")) return "grey_market_ask" as const;
+  return "retail" as const;
+}
+
 export function hasVerifiedField(
   variant: SeedReferenceVariant,
   field: EvidenceField,
