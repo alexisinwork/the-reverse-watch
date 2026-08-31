@@ -1485,6 +1485,15 @@ existing exact 6/10 lume performance, dimensions, accuracy, and quick-release
 evidence remain valid; no full configured mass is promoted and no provider
 request is authorized.
 
+The next Swatch Skin White Classiness `SS08K102-S14` pre-screen leaves its two
+M1 gaps, `accuracy` and `lumeGrade`, open. Search discovery found an exact
+authorized-retailer specification labelling luminescence absent and repeating
+the current dimensions, but direct retrieval is blocked by the retailer's
+anti-bot page, so the indexed snippet cannot close the field. No exact
+numerical rate bound for the installed SW-SF quartz movement surfaced. The
+existing 12 g full-watch mass, 38 mm wearing span, and proprietary Swatch mount
+remain unchanged; no facts are promoted and no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
