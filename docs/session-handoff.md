@@ -914,6 +914,11 @@ assembled full-watch mass or numerical rate tolerance. The exact primary
 dossier and this secondary review therefore leave `weightFullG` and `accuracy`
 null; no provider request was made.
 
+The 2026-08-31 exact authorized-dealer recheck adds no closure: Teddy
+Baldassarre repeats the 47 mm/14.81 mm titanium configuration and 13P5A movement
+but publishes neither configured full-watch weight nor a numerical rate
+tolerance. Both M1 fields remain null; no provider request was made.
+
 The next Patek Philippe Grande Sonnerie `6301P-001` pre-screen partially
 resolves the review without provider spend. An exact independent U.S. dealer
 lists the platinum reference at USD 1,963,500, unworn, with Add to Cart and

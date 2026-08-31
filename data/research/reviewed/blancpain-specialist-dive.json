@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "blancpain-specialist-dive",
   "jobId": "e23cb473-20bc-4f5c-a443-f9909164cc8a",
-  "reviewedAt": "2026-08-30T08:26:33Z",
+  "reviewedAt": "2026-08-31T10:47:56Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -41,6 +41,11 @@
       "url": "https://www.fratellowatches.com/new-blancpain-fifty-fathoms-tech/",
       "status": "validated_secondary",
       "note": "The exact-reference hands-on review independently corroborates the 47 mm x 14.81 mm case, calibre 13P5A, 120-hour reserve, orange rubber with tool-less exchange, date, and dual-color Super-LumiNova. It reports no assembled full-watch mass or numerical rate tolerance, so neither remaining M1 gap is closed."
+    },
+    {
+      "url": "https://teddybaldassarre.com/products/fifty-fathoms-tech-titanium-47mm-black-on-rubber-strap",
+      "status": "validated_secondary",
+      "note": "The exact authorized-dealer page identifies reference 5019A 12B30 94A, Grade 23 titanium, 47 x 14.81 mm geometry, 300 m resistance, caliber 13P5A, orange rubber, pin buckle, and dual-color Super-LumiNova. It publishes no configured full-watch weight or numerical accuracy tolerance, so neither remaining M1 gap closes. Rechecked 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
