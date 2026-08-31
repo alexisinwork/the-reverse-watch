@@ -1391,6 +1391,14 @@ different case and dial cannot be transferred. No exact configured weight or
 rate bound surfaced, so no facts are promoted and no provider request is
 authorized.
 
+The next Blancpain Fifty Fathoms Tech `5019A 12B30 94A` pre-screen found an
+additional exact-reference hands-on review. It corroborates the current
+47 mm/14.81 mm case, calibre 13P5A, 120-hour reserve, orange rubber and
+tool-less strap exchange, date, and dual-color Super-LumiNova, but publishes no
+assembled full-watch mass or numerical rate tolerance. The exact primary
+dossier and this secondary review therefore leave `weightFullG` and `accuracy`
+null; no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

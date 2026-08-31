@@ -36,6 +36,11 @@
       "url": "https://hodinkee.com.au/articles/introducing-blancpain-fifty-fathoms-tech",
       "status": "validated_secondary",
       "note": "The exact-reference hands-on specification reports 47 mm lug-to-lug and explains that the central lug removes the projection of conventional lugs, making the across-wrist span equal to the 47 mm case diameter. Blancpain's exact dossier independently establishes that central-lug architecture and diameter."
+    },
+    {
+      "url": "https://www.fratellowatches.com/new-blancpain-fifty-fathoms-tech/",
+      "status": "validated_secondary",
+      "note": "The exact-reference hands-on review independently corroborates the 47 mm x 14.81 mm case, calibre 13P5A, 120-hour reserve, orange rubber with tool-less exchange, date, and dual-color Super-LumiNova. It reports no assembled full-watch mass or numerical rate tolerance, so neither remaining M1 gap is closed."
     }
   ],
   "verifiedProvisionalFields": [
@@ -184,5 +189,5 @@
     }
   ],
   "missingM1Fields": ["weightFullG", "accuracy"],
-  "note": "Keep as research-only. Exact primary sources resolve the current homogeneous retail offer, proprietary strap interface, lume mapping, and conventional lug-width non-applicability. The exact central-lug construction plus an exact-reference hands-on specification resolve lug-to-lug at 47 mm, equal to the case diameter because no conventional lugs project beyond it. A 2026-08-30 Perplexity-assisted pass and independent official-source recheck found no packaging-free full configured weight and no numerical rate tolerance or documented exact-reference rate test for caliber 13P5A. Both values remain null."
+  "note": "Keep as research-only. Exact primary sources resolve the current homogeneous retail offer, proprietary strap interface, lume mapping, and conventional lug-width non-applicability. The exact central-lug construction plus exact-reference hands-on specifications resolve lug-to-lug at 47 mm, equal to the case diameter because no conventional lugs project beyond it. A 2026-08-30 Perplexity-assisted pass and a 2026-08-31 exact-reference hands-on recheck found no packaging-free full configured weight and no numerical rate tolerance or documented exact-reference rate test for caliber 13P5A. Both values remain null."
 }
