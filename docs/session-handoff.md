@@ -58,11 +58,13 @@ phase.
   `Server-Timing`, and security headers with a vendor-scoped CSP. The full
   desktop/mobile browser matrix remains green after allowing React Router's
   required inline hydration bootstrap and Beehiiv's Cloudflare challenge host.
-- Deployment `dpl_FF9rQZN15xNecBnpeXCBb3bh9bX6` is `READY` from commit
-  `321db02`; the prior protected production response confirmed the middleware
-  headers, unique request ID, and measured server timing remotely, and this
-  deployment includes the explicit quiz policy, optional distributed adapter,
-  Beehiiv opt-in, and privacy-safe funnel events below.
+- Behavior deployment `dpl_HN246x47BgfVSSurrHX6XaoEuZSR` is `READY` from commit
+  `1b42d05`; it includes the explicit quiz policy, optional distributed adapter,
+  Beehiiv opt-in, privacy-safe funnel events, and source-backed Resend dossier
+  delivery below. Protected production smoke checks on that deployment return
+  200 for `/`, `/quiz`, and `/health`; a valid core POST returns the visible
+  no-email result, and the deployment-scoped error-level runtime-log query is
+  empty.
 - The quiz action now has an explicit rate-limit policy parser and a tested
   process-local fallback: both `QUIZ_RATE_LIMIT_MAX_REQUESTS` and
   `QUIZ_RATE_LIMIT_WINDOW_SECONDS` must be positive integers, partial or invalid

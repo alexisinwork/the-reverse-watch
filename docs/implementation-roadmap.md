@@ -1341,6 +1341,10 @@ Verification:
   recommendations, and optional email.
 - Consent, empty results, incomplete data, provider-free operation, and external
   failures are tested.
+- Beehiiv and Resend adapters are tested independently, including paired-config
+  parsing, request contracts, provider failures, and visible partial delivery;
+  production smoke currently exercises the provider-free path because no email
+  credentials are configured.
 - Production smoke checks pass on the canonical domain.
 
 ## Phase 8 — Celebrity & cinema watch discovery
