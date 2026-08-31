@@ -1309,10 +1309,11 @@ when both measured values are present. When both Upstash REST credentials are
 configured, the same contract uses the official distributed sliding-window
 adapter; Redis timeouts and failures become a visible 503 rather than an
 allowed request. Both policy variables remain unset: the production log sample
-contained only five quiz/page requests in seven days, so no quota is defensible
-yet. Deduplication and a traffic-derived quota remain open Phase 7 work; the
-local bucket is defense in depth and is not presented as a production-wide
-control.
+contained only five requests in seven days (four `/` and one `/quiz`), and the
+Vercel Web Analytics query for 2026-08-24 through 2026-08-31 reported zero
+visitors and pageviews. No quota is defensible yet. Deduplication and a
+traffic-derived quota remain open Phase 7 work; the local bucket is defense in
+depth and is not presented as a production-wide control.
 
 The result screen now keeps recommendations visible without an email and offers
 a separate, checked opt-in field. The server validates the address and consent

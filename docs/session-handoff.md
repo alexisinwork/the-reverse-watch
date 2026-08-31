@@ -68,8 +68,10 @@ phase.
   `QUIZ_RATE_LIMIT_WINDOW_SECONDS` must be positive integers, partial or invalid
   configuration returns a visible 503, and a configured window returns 429 plus
   reset metadata after exhaustion. The variables remain unset because the
-  available production sample contains only five quiz/page requests in seven
-  days; no quota was guessed. The official Upstash sliding-window adapter now
+  available production sample contains only five requests in seven days (four
+  `/` and one `/quiz`); the Vercel Web Analytics query for 2026-08-24 through
+  2026-08-31 reported zero visitors and pageviews, so no quota was guessed. The
+  official Upstash sliding-window adapter now
   takes over automatically when both Redis REST credentials and policy values
   are configured; partial credentials or Redis timeouts fail visibly with 503.
   The policy remains unset, and deduplication plus a traffic-derived quota are
