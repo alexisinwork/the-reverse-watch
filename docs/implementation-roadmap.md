@@ -1304,12 +1304,15 @@ Deliverables:
 The first operational control is now explicit but deliberately staged. The
 quiz action parses `QUIZ_RATE_LIMIT_MAX_REQUESTS` and
 `QUIZ_RATE_LIMIT_WINDOW_SECONDS`, rejects partial or invalid configuration with
-HTTP 503, and can enforce a process-local window with standard limit/reset
-headers when both measured values are present. Both variables remain unset:
-the production log sample contained only five quiz/page requests in seven
-days, so no quota is defensible yet. A distributed Upstash-backed limiter,
-deduplication, and a traffic-derived quota remain open Phase 7 work; the local
-bucket is defense in depth and is not presented as a production-wide control.
+HTTP 503, and enforces a process-local window with standard limit/reset headers
+when both measured values are present. When both Upstash REST credentials are
+configured, the same contract uses the official distributed sliding-window
+adapter; Redis timeouts and failures become a visible 503 rather than an
+allowed request. Both policy variables remain unset: the production log sample
+contained only five quiz/page requests in seven days, so no quota is defensible
+yet. Deduplication and a traffic-derived quota remain open Phase 7 work; the
+local bucket is defense in depth and is not presented as a production-wide
+control.
 
 Verification:
 

@@ -47,6 +47,12 @@ import {
   consumeRateLimit,
   parseRateLimitPolicy,
 } from "../domain/rate-limit.server";
+import type { RateLimitDecision } from "../domain/rate-limit.server";
+import {
+  consumeUpstashRateLimit,
+  createUpstashRateLimitClient,
+  parseUpstashRateLimitConfiguration,
+} from "../domain/rate-limit-upstash.server";
 import "../styles/quiz.css";
 
 const CORE_STEP_COUNT = 6;
@@ -369,6 +375,7 @@ function rateLimitHeaders(decision: ReturnType<typeof consumeRateLimit>) {
 
 export async function action({ request }: Route.ActionArgs) {
   const rateLimitPolicy = parseRateLimitPolicy();
+  const upstashConfiguration = parseUpstashRateLimitConfiguration();
   if (!rateLimitPolicy.configured && rateLimitPolicy.reason === "invalid") {
     return data<ActionResult>(
       {
@@ -380,10 +387,49 @@ export async function action({ request }: Route.ActionArgs) {
       { status: 503 },
     );
   }
-  const rateLimitDecision = consumeRateLimit(
-    rateLimitKey(request),
-    rateLimitPolicy,
-  );
+  if (
+    !upstashConfiguration.configured &&
+    upstashConfiguration.reason === "invalid"
+  ) {
+    return data<ActionResult>(
+      {
+        ok: false,
+        errors: [
+          "Quiz rate limiting storage is misconfigured; the diagnostic is temporarily unavailable.",
+        ],
+      },
+      { status: 503 },
+    );
+  }
+
+  const key = rateLimitKey(request);
+  let rateLimitDecision: RateLimitDecision;
+  if (rateLimitPolicy.configured && upstashConfiguration.configured) {
+    try {
+      rateLimitDecision = await consumeUpstashRateLimit(
+        createUpstashRateLimitClient(rateLimitPolicy, upstashConfiguration),
+        key,
+      );
+    } catch (error) {
+      console.error(
+        JSON.stringify({
+          event: "rate_limit_error",
+          message: error instanceof Error ? error.message : "unknown error",
+        }),
+      );
+      return data<ActionResult>(
+        {
+          ok: false,
+          errors: [
+            "Quiz rate limiting is temporarily unavailable; please try again shortly.",
+          ],
+        },
+        { status: 503 },
+      );
+    }
+  } else {
+    rateLimitDecision = consumeRateLimit(key, rateLimitPolicy);
+  }
   if (!rateLimitDecision.allowed) {
     return data<ActionResult>(
       {

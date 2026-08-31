@@ -68,8 +68,11 @@ phase.
   configuration returns a visible 503, and a configured window returns 429 plus
   reset metadata after exhaustion. The variables remain unset because the
   available production sample contains only five quiz/page requests in seven
-  days; no quota was guessed. A distributed Upstash limiter and measured quota
-  are still pending, so the local bucket is not claimed as global enforcement.
+  days; no quota was guessed. The official Upstash sliding-window adapter now
+  takes over automatically when both Redis REST credentials and policy values
+  are configured; partial credentials or Redis timeouts fail visibly with 503.
+  The policy remains unset, and deduplication plus a traffic-derived quota are
+  still pending, so the local bucket is not claimed as global enforcement.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

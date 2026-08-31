@@ -72,10 +72,12 @@ The quiz quota is configured separately with `QUIZ_RATE_LIMIT_MAX_REQUESTS`
 and `QUIZ_RATE_LIMIT_WINDOW_SECONDS`. Both values must be positive integers.
 They are intentionally blank in `.env.example`: the production log sample
 captured only five quiz/page requests over seven days, which is insufficient
-evidence for a numeric quota. Until a measured quota is set and a distributed
-store is connected, the action does not pretend that a process-local bucket is
-a production-wide control. A partial or invalid policy is a visible 503, not a
-silently guessed default.
+evidence for a numeric quota. Until a measured quota is set, the action does
+not pretend that a process-local bucket is a production-wide control. When both
+Upstash values are present, the official distributed sliding-window adapter is
+selected; a partial credential pair or Redis failure is a visible 503. A
+partial or invalid policy is also a visible 503, never a silently guessed
+default.
 
 Official setup pages:
 
