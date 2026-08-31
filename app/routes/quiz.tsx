@@ -947,8 +947,9 @@ function DossierDelivery({
           <label className="delivery-opt-in">
             <input name="emailOptIn" type="checkbox" value="yes" />
             <span>
-              I explicitly opt in to receive the diagnostic follow-up through
-              The Reserve&apos;s Beehiiv publication.
+              I explicitly opt in to receive this diagnostic dossier by email
+              and, where enabled, subscribe to The Reserve&apos;s Beehiiv
+              publication.
             </span>
           </label>
           <button className="button button--primary" type="submit">
