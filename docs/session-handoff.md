@@ -1072,6 +1072,12 @@ cannot be normalized. It joins the earlier exact-retailer -10/+25 claim and
 Certina's approximate -10/+30 guidance for most non-chronometers; neither is a
 variant-specific guaranteed bound. No provider request was made.
 
+The 2026-08-31 exact-reference check of an additional Certina-authorized Finnish
+retailer confirms the titanium bracelet and Powermatic 80.611 configuration but
+publishes no numerical rate tolerance. Accuracy remains null; the unattributed
+`-10/+25` reseller claim and Certina's approximate family guidance remain
+unpromoted.
+
 The next Baltic MR Classic Blue `MR01BLUS35` pre-screen remains negative for
 `weightFullG`, `accuracy`, `lumeGrade`, and `dateStatus`. A newly retrieved
 exact retailer record independently identifies the Blue Stitched Lion reference

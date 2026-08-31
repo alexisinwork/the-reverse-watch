@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "certina-midprice-mechanical-tool",
   "jobId": "6d55cbf7-1ebd-49c9-bf97-0cafec37f181",
-  "reviewedAt": "2026-08-31T09:52:14Z",
+  "reviewedAt": "2026-08-31T10:34:27Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -56,6 +56,11 @@
       "url": "https://www.inhodinky.sk/certina-hodinky/hodinky-certina-c048-807-44-051-01-ds-action-diver-38mm-powermatic-80-titanium/",
       "status": "validated_secondary",
       "note": "The exact Slovak authorized-retailer page identifies C048.807.44.051.01 and repeats the titanium configuration and Powermatic 80.611. Its accuracy field is rendered as the ambiguous '+ - 6-4 sec./deň' with no test method or tolerance definition; the malformed range cannot be normalized into a canonical lower/upper bound and does not close the accuracy gate."
+    },
+    {
+      "url": "https://hovisepat.fi/products/certina-ds-action-diver-38-powermatic-80-ceramic-titanium-c0488074405101",
+      "status": "validated_secondary",
+      "note": "The exact Finnish authorized-retailer page identifies C048.807.44.051.01, Powermatic 80.611, titanium case/bracelet, 38 x 13.22 mm geometry, 300 m ISO 6425 rating, and Super-LumiNova hands/indices. Its exact specification has no numerical accuracy tolerance, so it corroborates the configuration but cannot close accuracy. Rechecked 2026-08-31."
     },
     {
       "url": "https://www.certina.com/en/watch/ds-action-diver-38mm-titanium/c0488074405100",
