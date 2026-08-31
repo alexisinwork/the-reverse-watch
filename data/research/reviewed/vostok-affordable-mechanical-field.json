@@ -4,7 +4,7 @@
   "jobId": "b4a10faa-fde5-4e14-ae0e-6acb189c2260",
   "reviewedAt": "2026-08-30T18:40:51Z",
   "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "outcome": "ready_for_migration",
   "candidateIdentity": {
     "brand": "Vostok",
     "model": "Amphibian Classic",
@@ -76,6 +76,16 @@
       "url": "https://meranom.com/en/komandirskie-classic/komandirskie-classic-watch-parts/vostok-watch-springbars-18mm.html",
       "status": "validated_secondary",
       "note": "Retrieved directly after a second narrow 2026-08-30 Perplexity pass. Meranom lists Vostok-branded 18 mm by 2 mm spring bars and answers that they fit the Amphibia 420 case. This establishes a compatible removable case part, but Meranom is a factory-adjacent retailer and the listing does not identify the factory-installed bracelet on exact reference 420059."
+    },
+    {
+      "url": "https://www.reddit.com/r/Watchexchange/comments/1kspylc",
+      "status": "validated_secondary",
+      "note": "An exact-reference 420059 owner/seller identifies the retained original steel bracelet and states that one end link was missing its spring bar. This is direct exact-variant physical observation, but it remains secondary evidence rather than a factory service document."
+    },
+    {
+      "url": "https://vostok-world24.com/en/products/vostok-federstege-edelstahl-fur-russische-uhren",
+      "status": "validated_secondary",
+      "note": "Vostok-World24 describes itself as a Vostok partner offering original factory spare parts and lists 18 mm stainless spring bars for Amphibia 420 cases, explicitly giving 2416/420059 as an example. The page is not the factory's own catalogue, but it is directly applicable 420-case service-part evidence and converges with the exact-reference owner's missing-spring-bar observation."
     },
     {
       "url": "https://meranom.com/en/amphibian-classic/bracelets/universal-metal-bracelet-for-vostok-amphibia-20mm.html",
@@ -171,6 +181,12 @@
       "value": "weak",
       "sourceUrl": "https://www.thewatchcompany.com/blog/recommended/vostok-amphibian-scuba-dude-review/",
       "note": "The exact-reference review reports sparse application and difficult low-light reading. A second exact-reference review reports fast fade, while independent exact-reference owners call the lume poor or underwhelming; that convergence maps to weak rather than merely establishing luminous-material presence."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://vostok-world24.com/en/products/vostok-federstege-edelstahl-fur-russische-uhren",
+      "note": "The exact-reference owner record identifies the original 420059 bracelet with a missing spring bar, while Vostok-World24's directly applicable 420-case spare-part page names 2416/420059 and the 18 mm spring-bar fit. Together with the factory's exact 18 mm bracelet configuration, these sources establish the removable case interface as spring_bar while keeping the provenance secondary."
     }
   ],
   "rejectedProvisionalFields": [
@@ -203,14 +219,10 @@
       "reason": "The provider's hands-and-dots description establishes application locations only. It is replaced by a separately reviewed weak mapping based on multiple independent exact-reference performance assessments."
     },
     {
-      "fieldName": "operation.attachmentType",
-      "reason": "Stainless-steel bracelet describes the supplied material, not the bracelet-to-case interface. Vostok's exact official shop route and case-420 category still provide no connector statement or diagram. A second Perplexity-assisted pass located Vostok-branded 18 mm spring bars that Meranom says fit case 420, but neither that retailer parts listing nor a separate replacement-bracelet page identifies the factory-installed 420059 bracelet interface."
-    },
-    {
       "fieldName": "complications",
       "reason": "Date is represented by dateStatus in the catalogue and is not one of the complication enum values."
     }
   ],
-  "missingM1Fields": ["attachmentType"],
-  "note": "Keep as research-only. Vostok's exact factory page now provides primary evidence for the homogeneous 2416/420059 steel-bracelet configuration, including 39.6 x 46 x 15 mm dimensions and 128 g full weight. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. Two 2026-08-30 Perplexity-assisted passes found the exact official factory-shop route, case-420 category, and a retailer listing for Vostok-branded 18 mm spring bars compatible with case 420. None identifies how the factory-installed bracelet on exact 420059 is secured, while the located spring-bar bracelet is explicitly a separate replacement. Attachment remains the sole M1 gap."
+  "missingM1Fields": [],
+  "note": "Ready for additive migration on exact reference 2416/420059. Vostok's exact factory page provides primary evidence for the homogeneous steel-bracelet configuration, including 39.6 x 46 x 15 mm dimensions, 128 g full weight, and an 18 mm bracelet. Multiple independent exact-reference reviews and owners converge on sparse, fast-fading, poor nighttime performance, resolving lumeGrade as weak without relying on luminous-material presence alone. A new exact-reference owner record identifies the original bracelet with a missing spring bar, and Vostok-World24's directly applicable partner spare-parts page names 2416/420059 as a 420-case example for its 18 mm spring bars. This closes the attachment gap as spring_bar with secondary provenance; no factory exploded diagram was found, so the source distinction remains explicit."
 }

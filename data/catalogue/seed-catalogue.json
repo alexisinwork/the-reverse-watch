@@ -744,6 +744,102 @@
       "publisher": "OTTO",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-31T06:19:09Z"
+    },
+    {
+      "id": "vostok-420059-factory",
+      "url": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "title": "Amphibia 420059 — 2416/420059",
+      "publisher": "Chistopol Watch Factory Vostok",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-shop",
+      "url": "https://online.vostokinc.ru/katalog-tovarov/amfibiya-420059",
+      "title": "Amphibia 420059 factory shop",
+      "publisher": "Chistopol Watch Factory Vostok",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-meranom",
+      "url": "https://meranom.com/en/amphibian-classic/420/vostok-watch-amphibian-classic-420059.html",
+      "title": "Vostok Amphibian Classic 420059",
+      "publisher": "Meranom",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-meranom-about",
+      "url": "https://meranom.com/en/about_meranom.html",
+      "title": "About Meranom and factory relationships",
+      "publisher": "Meranom",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-bestwatch",
+      "url": "https://www.bestwatch.ru/watch/Vostok/2416.00-420059/",
+      "title": "Vostok 2416.00-420059 exact-reference listing",
+      "publisher": "Bestwatch.ru",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-scubadude",
+      "url": "https://scubadudestore.com/products/vostok-amphibia-420059",
+      "title": "Vostok Amphibia 420059",
+      "publisher": "Scuba Dude Store",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-watchcompany",
+      "url": "https://www.thewatchcompany.com/blog/recommended/vostok-amphibian-scuba-dude-review/",
+      "title": "Vostok Amphibian Scuba Dude review",
+      "publisher": "The Watch Company",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-ticknsip",
+      "url": "https://ticknsip.blogspot.com/2021/09/vostok-amphibia-scuba-dude-review.html",
+      "title": "Vostok Amphibia Scuba Dude review",
+      "publisher": "Tick & Sip",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-ebay-lume",
+      "url": "https://www.ebay.co.uk/urw/Vostok-Amphibia-Stainless-Steel-Russian-Military-Diver-Watch-420059/product-reviews/19034189571",
+      "title": "Vostok 420059 verified-purchase reviews",
+      "publisher": "eBay",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-reddit-owner",
+      "url": "https://www.reddit.com/r/Watches/comments/sbqkkt",
+      "title": "Vostok 420059 long-term owner report",
+      "publisher": "Reddit",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T18:40:51Z"
+    },
+    {
+      "id": "vostok-420059-reddit-bracelet",
+      "url": "https://www.reddit.com/r/Watchexchange/comments/1kspylc",
+      "title": "Vostok Amphibia 420059 original bracelet listing",
+      "publisher": "Reddit",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T08:47:55Z"
+    },
+    {
+      "id": "vostok-420059-world24-springbars",
+      "url": "https://vostok-world24.com/en/products/vostok-federstege-edelstahl-fur-russische-uhren",
+      "title": "Vostok stainless steel spring bars for Russian watches",
+      "publisher": "Vostok-World24",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T08:47:55Z"
     }
   ],
   "fx": {
@@ -3738,6 +3834,171 @@
         {
           "sourceId": "otto-vostok-europe-vk61-571h614-leather",
           "fields": ["identity", "materials", "weightFullG"]
+        }
+      ]
+    },
+    {
+      "id": "vostok-amphibia-420059",
+      "brand": { "slug": "vostok", "name": "Vostok", "serviceCountries": null },
+      "collection": "Amphibia Classic",
+      "model": "Amphibia",
+      "referenceCode": "420059",
+      "variantName": "Scuba Dude blue dial on supplied stainless-steel bracelet",
+      "productUrl": "https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/",
+      "price": {
+        "amountMinor": 16400,
+        "currency": "USD",
+        "marketCountry": "RU",
+        "observedAt": "2026-08-30T18:40:51Z",
+        "staleAfter": "2027-02-26T18:40:51Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-30T18:40:51Z",
+        "availabilityStaleAfter": "2026-09-29T18:40:51Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "stainless steel",
+        "caseback": null,
+        "bracelet": "stainless steel",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 39.6,
+        "caseWidthMm": null,
+        "caseLengthMm": null,
+        "caseThicknessMm": 15,
+        "lugToLugMm": 46,
+        "lugWidthMm": 18,
+        "weightFullG": 128,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "Vostok 2416B",
+        "powerReserveHours": 31,
+        "accuracyLowerSeconds": -20,
+        "accuracyUpperSeconds": 60,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": "screw_down",
+        "crownPosition": null,
+        "crystal": "acrylic",
+        "lumeGrade": "weak",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "accessible_dive_mechanical",
+        "socialSignals": ["anti_luxury"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability", "differentiation"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "vostok-420059-factory",
+          "fields": [
+            "identity",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "integratedBracelet",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "vostok-420059-shop",
+          "fields": ["identity", "materials", "productionStatus"]
+        },
+        {
+          "sourceId": "vostok-420059-meranom",
+          "fields": [
+            "identity",
+            "price",
+            "availability",
+            "materials",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "vostok-420059-meranom-about",
+          "fields": ["price", "availability"]
+        },
+        {
+          "sourceId": "vostok-420059-bestwatch",
+          "fields": [
+            "identity",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crystal",
+            "lumeGrade"
+          ]
+        },
+        {
+          "sourceId": "vostok-420059-scubadude",
+          "fields": ["identity", "weightFullG"]
+        },
+        {
+          "sourceId": "vostok-420059-watchcompany",
+          "fields": ["identity", "lumeGrade"]
+        },
+        {
+          "sourceId": "vostok-420059-ticknsip",
+          "fields": ["identity", "lumeGrade"]
+        },
+        {
+          "sourceId": "vostok-420059-ebay-lume",
+          "fields": ["identity", "lumeGrade"]
+        },
+        {
+          "sourceId": "vostok-420059-reddit-owner",
+          "fields": ["identity", "lumeGrade"]
+        },
+        {
+          "sourceId": "vostok-420059-reddit-bracelet",
+          "fields": ["identity", "attachmentType"]
+        },
+        {
+          "sourceId": "vostok-420059-world24-springbars",
+          "fields": ["attachmentType"]
         }
       ]
     }

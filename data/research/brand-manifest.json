@@ -1956,7 +1956,8 @@
         {
           "id": "vostok-affordable-mechanical-field",
           "referenceLabel": "Select a current source-verifiable mechanical field/water reference",
-          "state": "needs_review",
+          "state": "accepted",
+          "catalogueVariantId": "vostok-amphibia-420059",
           "coverageIntent": {
             "priceBands": [
               "under_300"
@@ -1976,7 +1977,7 @@
               "time_only_no_date"
             ]
           },
-          "coverageRationale": "Test whether a source-complete mechanical option can populate the acknowledged low-budget provenance gap."
+          "coverageRationale": "Exact factory, retailer, and directly applicable partner spare-part evidence now supports a homogeneous current 420059 steel-bracelet row and tests the acknowledged low-budget provenance gap."
         }
       ]
     },

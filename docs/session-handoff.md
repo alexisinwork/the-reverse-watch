@@ -23,6 +23,9 @@ phase.
   result parity passes. All 20 public catalogue tables have RLS enabled with no
   direct browser grants or policies; the application uses only two narrow,
   read-only v3 RPCs for accepted facts and SQL hard-filter codes.
+- Local migration `0031_expand_catalogue_vostok.sql` adds the reviewed Vostok
+  420059 row; connected Supabase parity must be rerun when credentials are
+  available before that migration is applied remotely.
 - On 2026-08-29 the owner explicitly requested that the complete accumulated
   branch be pushed. The 28 existing local commits plus the handoff checkpoint
   were therefore delivered to `origin/main`, superseding the earlier
@@ -131,6 +134,19 @@ phase.
   `7_5_plus` wrist band: the row supports 16 cells, opens eight, and adds a
   second candidate to eight others. Coverage is now 1,076/28,800 (3.74%),
   single-candidate cells remain 1,052, and under-evidenced cells fall to 216.
+- Vostok Amphibia Classic `420059` is now accepted on the exact blue Scuba
+  Dude dial and supplied stainless-steel bracelet. The factory page controls
+  the current homogeneous row at 39.6 x 46 x 15 mm, 128 g, 18 mm bracelet,
+  Vostok 2416B automatic movement, -20/+60 seconds per day, 200 m, acrylic
+  crystal, weak lume, and date. An exact-reference owner listing identifies
+  the original bracelet with a missing spring bar, and Vostok-World24's
+  partner spare-parts page names 2416/420059 as a 420-case example for its
+  18 mm spring bars; the interface is accepted as `spring_bar` with secondary
+  provenance. Migration `0031` is rendered and the review is M0/M1 complete.
+  The row opens eight `under_300`, `field_water_abuse`,
+  `workhorse_mechanical`, `simple_date` cells across four wrist bands and two
+  weight bands. Coverage is 1,084/28,800 (3.76%), single-candidate cells are
+  1,060, and under-evidenced cells are 224. No provider request was made.
 - The Mondaine provider ledger preserves two failed attempts: the first
   returned useful raw research at USD 0.02028 but failed strict normalization;
   the second was interrupted before a response was persisted after an
@@ -176,16 +192,16 @@ phase.
   provider ledger is now 69 attempts (41 succeeded, 28 failed) across 37 target
   IDs and USD 0.59193 recorded cost. The default queue is empty.
 
-  The next source-led pre-screen is the exact Rado HyperChrome Quartz
-  `R32280109`, selected for its projected 72 empty `1000_2000`,
-  zero-maintenance, simple-date cells. Current Rado evidence remains complete
-  except for lug-to-lug, lug width, case attachment, and a controlled lume
-  grade; newly checked exact retailer pages either repeat the current 87 g row
-  without those fields or carry an older conflicting geometry set. Rado's
-  official manual lookup requires a serial number and exposes no exact
-  R32280109 strap-service record, so its generic EasyClip guides are not
-  applicable. No provider request is queued until those four M1 gaps have an
-  exact-source path.
+  Vostok Amphibia Classic `420059` is now accepted in migration `0031` after
+  exact-owner and Vostok-World24 partner spare-part evidence closes its sole
+  attachment gap as `spring_bar`; the row opens eight cells and raises
+  coverage to 1,084/28,800 (3.76%). The next source-led pre-screen remains the
+  exact Rado HyperChrome Quartz `R32280109`, selected for its projected 72 empty
+  `1000_2000`, zero-maintenance, simple-date cells. Current Rado evidence is
+  complete except for lug-to-lug, lug width, case attachment, and a controlled
+  lume grade; its official manual lookup exposes no exact strap-service record.
+  No provider request is queued until those four M1 gaps have an exact-source
+  path.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -751,7 +767,7 @@ On 2026-08-28 for Phases 1–4:
    exact or directly applicable sources before invoking the provider. The
    default queue is empty; do not spend on a generic brand sweep or accept a
    brand-level rollup as a reference fact.
-2. Treat the live 26-row v3 catalogue and six-profile parity as the relational
+2. Treat the live 27-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.
@@ -771,7 +787,9 @@ On 2026-08-28 for Phases 1–4:
    manual provides no exact rate bound, and no source establishes repeatable
    lume or an explicit no-lume state. A 2026-08-30 Vostok pass retained the
    sole attachment gap after the exact factory-shop route and case-420 category
-   still omitted any connector or exploded-interface specification. AP
+   still omitted any connector or exploded-interface specification; the later
+   exact-owner and Vostok-World24 partner records now close that gap as
+   `spring_bar` with secondary provenance. AP
    16202ST's conventional lug width is now verified non-applicable, but its five
    remaining gaps keep it research-only.
 4. Retain Citizen BM8180-03E, Sinn 856 UTC, and Omega

@@ -59,12 +59,15 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context alongside source-led additions through Bertucci;
-- 26 accepted catalogue targets linked to all current reviewed variants;
-- 30 coverage-intent targets, with no planned target in the default research
-  queue after the source-led Vostok Europe gap resolution;
-- live Supabase parity for 22 brands and all 26 accepted variants across the
-  six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
-  tables have RLS enabled and browser roles have no direct table grants;
+- 27 accepted catalogue targets linked to all current reviewed variants in the
+  local seed, including the newly rendered Vostok 420059 migration;
+- 33 coverage-intent targets, with no planned target in the default research
+  queue after the source-led Vostok 420059 acceptance;
+- live Supabase parity for 22 brands and all 26 remotely applied variants
+  across the six golden SQL/TypeScript hard-filter profiles; local migration
+  `0031` adds the 23rd brand and 27th variant but awaits a credentialed parity
+  run before remote application; all 20 public catalogue tables have RLS
+  enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
   mechanicals.
@@ -1283,6 +1286,25 @@ reference. No exact service/parts source or controlled charge/decay observation
 establishes the case fastener, wearing span, or lume grade. No fact is promoted
 and no provider request is made; the next evidence attempt must remain narrowly
 scoped to those four M1 gaps.
+
+A 2026-08-31 source-led follow-up resolved the sole Vostok Amphibia 420059
+`attachmentType` gap. The exact [factory reference](https://www.vostokinc.ru/catalog/amfibiya_muzhskaya/15/amfibiya_420059/)
+continues to control the homogeneous 2416/420059 steel-bracelet row and its
+18 mm interface width. An exact-reference [owner listing](https://www.reddit.com/r/Watchexchange/comments/1kspylc)
+identifies the original bracelet with a missing spring bar, while the
+Vostok-World24 [partner spare-parts record](https://vostok-world24.com/en/products/vostok-federstege-edelstahl-fur-russische-uhren)
+names 2416/420059 as an applicable 420-case example for its 18 mm spring bars.
+The two secondary records are retained as secondary provenance and converge
+with the factory's exact bracelet configuration; no generic replacement
+bracelet is substituted. `lumeGrade: weak` remains based on the earlier
+independent exact-reference performance reports. Migration
+`0031_expand_catalogue_vostok.sql` accepts the row with M0/M1 complete. The
+row opens eight `under_300`, `field_water_abuse`, `workhorse_mechanical`,
+`simple_date` cells across the four wrist bands and both `under_160_g` and
+`no_limit` weight bands; coverage is now 1,084/28,800 (3.76%), with 1,060
+single-candidate cells and 224 under-evidenced cells. No provider request was
+made. The next source-led selection should target the highest-impact remaining
+review gap only after an exact or directly applicable M1 path is identified.
 
 ## Job idempotency and retention
 
