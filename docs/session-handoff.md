@@ -957,6 +957,17 @@ service page is not an exact-reference parts record. The older 47.7 mm span and
 20/21 mm width remain rejected against the current specification set. Those
 four gaps remain null and no provider request was made.
 
+The next Bulova Icon Precisionist Chronograph `98B316` pre-screen also leaves
+its two review gaps open. A newly found exact-reference hands-on article reports
+274 g and says the luminous hands and markers are readable after light exposure,
+but gives no bracelet-length or weighing protocol, charge intensity,
+elapsed-decay series, or repeatable brightness comparison. That observation is
+consistent with the existing 170/270-276 g conflict and subjective lume reports,
+not a basis for selecting a canonical weight or performance class. The existing
+exact primary and service-part records still control the resolved dimensions,
+annual accuracy, and spring-bar interface. `weightFullG` and `lumeGrade` remain
+null and no provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,

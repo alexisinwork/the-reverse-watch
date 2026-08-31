@@ -76,6 +76,11 @@
       "url": "https://www.jurawatches.co.uk/blogs/watch-news/introducing-the-bulova-precisionist-98b316",
       "status": "validated_secondary",
       "note": "The exact-reference specialist article identifies lume-tipped hour and minute hands but supplies no charging method, brightness comparison, decay interval, or nighttime legibility result. It proves application location only."
+    },
+    {
+      "url": "https://www.luxury-time-piece.com/test-mens-watch-98b316",
+      "status": "validated_secondary",
+      "note": "This exact-reference hands-on article reports 274 g and describes the luminous hands and markers as readable after light exposure but not especially bright. It does not document bracelet length, weighing equipment or protocol, charge intensity, elapsed decay, or a repeatable legibility comparison, so neither weightFullG nor lumeGrade is promoted. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -231,5 +236,5 @@
     }
   ],
   "missingM1Fields": ["weightFullG", "lumeGrade"],
-  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band, and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, annual accuracy, and factory spring-bar interface. Independent dimensional sets converge on 54.5-54.6 mm lug-to-lug. A 2026-08-30 Perplexity-assisted pass widened the weight conflict to 170 g, approximately 270 g after bracelet sizing, 274 g, 276 g, and an approximately 400 g item-weight field, none with a complete factory-length bare-watch protocol. Exact lume evidence still ranges from short-lived or unusably weak to usable without controlled charge or elapsed-time observations. Weight and lume remain null."
+  "note": "Keep as research-only. This exact replacement satisfies the intended attainable price band, and primary sources resolve its homogeneous UK offer, precise diameter, lug width, movement identity, annual accuracy, and factory spring-bar interface. Independent dimensional sets converge on 54.5-54.6 mm lug-to-lug. A source-led pass widened the weight conflict to 170 g, approximately 270 g after bracelet sizing, 274 g, 276 g, and an approximately 400 g item-weight field; the new 274 g hands-on report still lacks a complete factory-length bare-watch protocol. Exact lume evidence ranges from short-lived or unusably weak to usable or merely readable after light exposure, without controlled charge or elapsed-time observations. Weight and lume remain null."
 }
