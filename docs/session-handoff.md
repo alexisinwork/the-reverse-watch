@@ -152,6 +152,19 @@ phase.
   recorded cost. The default queue is empty; the next session must begin with a
   fresh source-led exact-reference coverage pre-screen before any provider call.
 
+- Swatch Skin White Classiness `SS08K102-S14` is reviewed
+  `needs_more_evidence`. Its one provider attempt produced 40 provisional facts
+  at USD 0.01776. Current Swatch US/Spain pages and exact MATY, Watch.co.uk, and
+  Zegarki.zgora.pl records establish the white configuration, $125/€120 offers,
+  34 mm diameter, 38 mm wearing span, 12 g mass, quartz, 3 bar, biosourced
+  materials, no-date display, and proprietary Swatch steel-pin attachment. The
+  3.9 mm secondary thickness remains a conflict with the primary 4.3 mm value.
+  No numerical accuracy bound or qualifying lume grade was found, so no row is
+  promoted. The provider ledger now has 67 attempts (41 succeeded, 26 failed)
+  across 36 target IDs and USD 0.59193 recorded cost. The default queue is
+  empty; the next session must begin with a fresh source-led exact-reference
+  coverage pre-screen before any provider call.
+
 ## Accepted 2026-08-28 audit decisions
 
 - The owner's Claude questionnaire/database audit remains a controlling

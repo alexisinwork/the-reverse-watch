@@ -1190,6 +1190,31 @@ technical field, or catalogue row is admitted. The ignored provider ledger is
 now 66 attempts (40 succeeded, 26 failed) across 35 target IDs and USD 0.57417
 recorded cost; the default queue is empty.
 
+A 2026-08-31 source-led pre-screen adds one planned Swatch reference:
+Skin White Classiness `SS08K102-S14`, fixed to its transparent biosourced case,
+white silicone strap and transparent buckle. Swatch's current exact US and
+Spain product routes identify $125/€120 offers and publish 34 mm, 4.3 mm,
+quartz, 3 bar, biosourced case/glass and the supplied strap/buckle. The exact
+MATY EAN listing reports 12 g configured mass; the exact Watch.co.uk record
+reports 33.7 x 3.9 mm, SW-SF/ETA quartz, a 16.5 mm Swatch-style steel-pin
+mount, and hours/minutes only. These sources target four empty under-$300,
+under-6.25-inch, zero-maintenance, studio/formal, time-only cells. The planned
+provider request must reconcile the dimensional discrepancy and validate
+numerical accuracy, lume status, and the custom case-to-band interface; no
+pre-screened fact is accepted by this planning record.
+
+The one-attempt Swatch `SS08K102-S14` review is `needs_more_evidence`. The
+provider produced 40 provisional facts at USD 0.01776. Current Swatch US and
+Spain pages validate the exact white configuration and $125/€120 offers; exact
+MATY, Watch.co.uk, and Zegarki.zgora.pl records corroborate 34 mm diameter,
+38 mm wearing span, 12 g configured mass, quartz operation, 3 bar resistance,
+biosourced materials, no-date hours/minutes display, and the custom Swatch
+steel-pin attachment. The 3.9 mm secondary thickness is retained as a conflict
+with Swatch's primary 4.3 mm value. No numerical rate bound or qualifying lume
+grade was found, so no catalogue row is admitted. The ignored provider ledger
+is now 67 attempts (41 succeeded, 26 failed) across 36 target IDs and USD
+0.59193 recorded cost; the default queue is empty again.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

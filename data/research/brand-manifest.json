@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-08-31T08:01:33.734Z",
+  "updatedAt": "2026-08-31T08:08:53.570Z",
   "brands": [
     {
       "slug": "rolex",
@@ -3318,7 +3318,6 @@
           "id": "vostok-europe-titanium-precision-chronograph",
           "referenceLabel": "Accepted discontinued-but-offered Vostok Europe Nuclear Submarine VK61-571H614 as one homogeneous titanium and black-leather configuration with exact 135 g configured mass, numerical VK61 accuracy, continuous tritium readability, and screw-fixed proprietary attachment evidence",
           "state": "accepted",
-          "catalogueVariantId": "vostok-europe-vk61-571h614",
           "coverageIntent": {
             "priceBands": [
               "500_1000"
@@ -3347,7 +3346,8 @@
               "chronograph"
             ]
           },
-          "coverageRationale": "Adds a new-brand titanium meca-quartz chronograph to 16 supported 500-1000 cells for the 7.5-plus wrist band, including eight previously empty precision/tool cells. The measured 56.2 mm wearing span excludes the two smaller pre-screened wrist bands. The accepted row retains a live short-wait offer and fixes the homogeneous scored configuration to the exact black-leather listing with approximately 135 g full mass; the supplied silicone strap remains an accessory rather than a blended wearable fact."
+          "coverageRationale": "Adds a new-brand titanium meca-quartz chronograph to 16 supported 500-1000 cells for the 7.5-plus wrist band, including eight previously empty precision/tool cells. The measured 56.2 mm wearing span excludes the two smaller pre-screened wrist bands. The accepted row retains a live short-wait offer and fixes the homogeneous scored configuration to the exact black-leather listing with approximately 135 g full mass; the supplied silicone strap remains an accessory rather than a blended wearable fact.",
+          "catalogueVariantId": "vostok-europe-vk61-571h614"
         }
       ]
     },
@@ -4428,6 +4428,37 @@
             ]
           },
           "coverageRationale": "Fill ultralight and small-wrist low-price cells with a non-tool archetype."
+        },
+        {
+          "id": "swatch-skin-white-classiness-ss08k102",
+          "referenceLabel": "Swatch Skin White Classiness SS08K102-S14 transparent biosourced case on supplied white silicone strap",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_80_g"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Source-led 2026-08-31 pre-screen selects the current exact White Classiness SS08K102-S14 configuration to fill four empty ultralight small-wrist studio/formal cells without duplicating a tool watch. Swatch's exact US/Spain product routes identify the reference, current $125/€120 offers, 34 mm round case, 4.3 mm thickness, quartz movement, 3 bar resistance, biosourced case/glass, white silicone strap, and transparent polymer buckle. MATY's exact EAN listing supplies 12 g configured mass, while the exact Watch.co.uk record supplies 33.7 mm/3.9 mm alternate precision and steel-pin non-straight strap mounting. The bounded job must reconcile the small dimensional discrepancy, establish the exact case-to-band interface and any numerical accuracy/lume evidence, and preserve the exact white configuration before promotion."
         }
       ]
     },

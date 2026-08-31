@@ -1,0 +1,176 @@
+{
+  "reviewVersion": 1,
+  "targetId": "swatch-skin-white-classiness-ss08k102",
+  "jobId": "f1d2e5cb-8515-42b6-8e5f-487e2869ec16",
+  "reviewedAt": "2026-08-31T08:14:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Swatch",
+    "model": "Skin White Classiness",
+    "referenceCode": "SS08K102-S14",
+    "variantName": "White Classiness"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.swatch.com/en-us/white-classiness-ss08k102-s14/SS08K102-S14.html",
+      "status": "validated_primary",
+      "note": "Swatch's current exact US product route identifies White Classiness SS08K102-S14, shows a $125 offer with an add-to-cart path, and describes the transparent biosourced case/glass and supplied white strap with transparent buckle. Its rendered product specification supplies 34 mm, 4.3 mm, quartz and 3 bar values. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.swatch.com/es-es/white-classiness-ss08k102-s14/SS08K102-S14.html",
+      "status": "validated_primary",
+      "note": "Swatch's current exact Spain product route independently identifies SS08K102-S14 and shows a €120 offer with quartz, 3 bar and polymer buckle specifications. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.maty.com/en/Bijoux/7214103/montre-swatch-skin-classic-biosourced-white-classiness-homme-bracelet-silicone-blanc.html",
+      "status": "validated_secondary",
+      "note": "The exact EAN-linked MATY listing identifies the white Skin Classic configuration, €120 price, 34 mm case, 4 mm thickness, 12 g product weight, biosourced case and silicone bracelet. The 12 g watch mass is retained as an exact secondary snapshot; its 4 mm thickness is not merged with Swatch's 4.3 mm primary value. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.watch.co.uk/swatch-white-classiness-white-biosourced-ladies-skin-swatch-ss08k102-s14.htm",
+      "status": "validated_secondary",
+      "note": "The exact-reference authorized-dealer page identifies SS08K102-S14 and its 33.7 mm/3.9 mm secondary dimensions, biosourced-resin caseback, SW-SF/ETA quartz movement, pull crown, 16.5 mm custom strap/lug field, steel-pin non-straight mount, buckle and analogue hours/minutes display. Its 3.9 mm measurement is retained as a conflict rather than merged with the primary 4.3 mm value. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.zegarki.zgora.pl/zegarek/9108_Swatch_Skins_White_Classiness_SFK360",
+      "status": "validated_secondary",
+      "note": "The current authorized Polish retailer's exact EAN-linked record reports 34 mm width, 38 mm case height/lug-to-lug, 3.9 mm thickness, 12 g mass, 16.5 mm strap width, quartz, 3 bar, new condition, official distribution, and hours/minutes-only display. It corroborates the wearing span and mass while the 3.9 mm conflict remains rejected. Retrieved 2026-08-31."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.strap",
+    "productionStatus",
+    "price.amountMinor",
+    "price.currency",
+    "price.marketCountry",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "operation.waterResistanceM",
+    "operation.crystal"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.caseback",
+      "value": "Biosourced resin",
+      "sourceUrl": "https://www.watch.co.uk/swatch-white-classiness-white-biosourced-ladies-skin-swatch-ss08k102-s14.htm",
+      "note": "The exact secondary specification identifies a biosourced-resin caseback with battery hatch."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.swatch.com/en-us/white-classiness-ss08k102-s14/SS08K102-S14.html",
+      "note": "The current exact manufacturer page shows an add-to-cart purchase path for the $125 US offer."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.swatch.com/en-us/white-classiness-ss08k102-s14/SS08K102-S14.html",
+      "note": "Swatch's own storefront is normalized to the authorized-dealer acquisition channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.swatch.com/en-us/white-classiness-ss08k102-s14/SS08K102-S14.html",
+      "note": "The manufacturer-direct product offer is a new watch."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 34,
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/9108_Swatch_Skins_White_Classiness_SFK360",
+      "note": "The exact retailer reports 34.0 mm case width for the round configuration."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 38,
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/9108_Swatch_Skins_White_Classiness_SFK360",
+      "note": "The exact retailer labels the 38.0 mm overall case height as lug-to-lug/wearing length."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 38,
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/9108_Swatch_Skins_White_Classiness_SFK360",
+      "note": "The exact retailer explicitly reports 38.0 mm lug-to-lug."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 12,
+      "sourceUrl": "https://www.maty.com/en/Bijoux/7214103/montre-swatch-skin-classic-biosourced-white-classiness-homme-bracelet-silicone-blanc.html",
+      "note": "The exact EAN-linked MATY page reports 12 g product weight; the same value is corroborated by the current authorized Polish exact-reference record."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "value": "not_applicable",
+      "sourceUrl": "https://www.watch.co.uk/swatch-white-classiness-white-biosourced-ladies-skin-swatch-ss08k102-s14.htm",
+      "note": "The exact record describes a steel-pin, non-straight Swatch mount. Conventional between-lug width is therefore a reviewed physical non-applicability, not an unknown standard lug value."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://www.swatch.com/en-us/white-classiness-ss08k102-s14/SS08K102-S14.html",
+      "note": "The exact manufacturer configuration supplies a silicone strap and buckle rather than an integrated bracelet."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "SW-SF",
+      "sourceUrl": "https://www.watch.co.uk/swatch-white-classiness-white-biosourced-ladies-skin-swatch-ss08k102-s14.htm",
+      "note": "The exact secondary specification identifies the installed movement part as SW-SF and its movement brand as ETA."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "push_pull",
+      "sourceUrl": "https://www.watch.co.uk/swatch-white-classiness-white-biosourced-ladies-skin-swatch-ss08k102-s14.htm",
+      "note": "The exact secondary record calls the crown pull; this is normalized to the push_pull catalogue enum."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "proprietary",
+      "sourceUrl": "https://www.watch.co.uk/swatch-white-classiness-white-biosourced-ladies-skin-swatch-ss08k102-s14.htm",
+      "note": "The exact Swatch-style steel-pin, non-straight mount is normalized to proprietary rather than spring_bar."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.watch.co.uk/swatch-white-classiness-white-biosourced-ladies-skin-swatch-ss08k102-s14.htm",
+      "note": "The exact display is analogue hours and minutes only; no supported catalogue complication is present."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.watch.co.uk/swatch-white-classiness-white-biosourced-ladies-skin-swatch-ss08k102-s14.htm",
+      "note": "The exact display specification lists hours and minutes only, with no date indication."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The provider cited MATY's homepage rather than the exact EAN product route. The same 12 g value is admitted only from the exact MATY listing and independent exact authorized Polish record."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The provider's descriptive steel-pin string is not a catalogue enum. Review normalizes the exact non-straight Swatch mount to proprietary."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "The custom non-straight interface cannot be represented as an ordinary numeric lug-width applicability claim; it is explicitly recorded as not_applicable."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "reason": "The exact secondary's 16.5 mm label describes the custom strap fitting, not a conventional between-lug measurement; it is withheld as numeric geometry."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "No source establishes a repeatable lume grade or an explicit whole-watch no-lume statement."
+    }
+  ],
+  "missingM1Fields": ["accuracy", "lumeGrade"],
+  "note": "Needs more evidence. The exact current Swatch US/Spain pages and EAN-linked authorized/secondary records establish a homogeneous White Classiness SS08K102-S14 configuration, current under-$300 pricing, 34 mm round case, 38 mm wearing span, 4.3 mm primary thickness, 12 g full mass, quartz operation, 3 bar resistance, biosourced materials, proprietary Swatch pin attachment, and no-date display. The 3.9 mm secondary thickness is retained only as a conflict. No numerical rate bound is published for the exact SW-SF installation, and no qualifying lume/no-lume evidence is available. The row therefore remains research-only and cannot enter the catalogue until those two M1 gaps are closed."
+}
