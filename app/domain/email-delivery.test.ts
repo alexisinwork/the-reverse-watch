@@ -11,6 +11,8 @@ describe("email delivery aggregation", () => {
     ["failed", "unavailable", "failed"],
     ["misconfigured", "unavailable", "failed"],
     ["sent", "misconfigured", "partial"],
+    ["already_requested", "unavailable", "already_requested"],
+    ["already_requested", "failed", "partial"],
     ["unavailable", "unavailable", "unavailable"],
   ] as const)(
     "summarizes %s newsletter and %s dossier as %s",

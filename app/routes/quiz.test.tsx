@@ -3,6 +3,18 @@ import userEvent from "@testing-library/user-event";
 import { createRoutesStub } from "react-router";
 import { vi } from "vitest";
 
+const redisMock = vi.hoisted(() => ({
+  del: vi.fn(),
+  set: vi.fn(),
+}));
+
+vi.mock("@upstash/redis", () => ({
+  Redis: class MockRedis {
+    del = redisMock.del;
+    set = redisMock.set;
+  },
+}));
+
 import {
   QUESTIONNAIRE_STORAGE_KEY,
   QUESTIONNAIRE_VERSION,
@@ -35,6 +47,8 @@ function actionRequest(entries: Record<string, string>) {
 describe("progressive diagnostic", () => {
   beforeEach(() => {
     window.sessionStorage.clear();
+    redisMock.del.mockReset();
+    redisMock.set.mockReset();
   });
 
   it("keeps the recommendation visible when email channels are unavailable", async () => {
@@ -133,6 +147,59 @@ describe("progressive diagnostic", () => {
     expect(payload.recommendation).toBeDefined();
     expect(fetchImplementation).toHaveBeenCalledTimes(2);
     error.mockRestore();
+  });
+
+  it("deduplicates a repeated configured email request per channel", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    vi.stubEnv("RESEND_API_KEY", "resend-key");
+    vi.stubEnv("EMAIL_FROM", "The Reserve <hello@example.com>");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://redis.example");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "redis-token");
+    redisMock.set
+      .mockResolvedValueOnce("OK")
+      .mockResolvedValueOnce("OK")
+      .mockResolvedValue(null);
+    const fetchImplementation = vi
+      .fn<typeof fetch>()
+      .mockResolvedValue(new Response(null, { status: 200 }));
+    vi.stubGlobal("fetch", fetchImplementation);
+
+    const first = await action({
+      request: actionRequest({
+        intent: "core",
+        profile: JSON.stringify(coreProfile),
+        email: "reader@example.com",
+        emailOptIn: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+    const second = await action({
+      request: actionRequest({
+        intent: "core",
+        profile: JSON.stringify(coreProfile),
+        email: "reader@example.com",
+        emailOptIn: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(first.data.ok).toBe(true);
+    expect(second.data.ok).toBe(true);
+    if (!first.data.ok || !second.data.ok) {
+      throw new Error("Expected recommendation results");
+    }
+    expect(first.data.subscription).toMatchObject({
+      status: "sent",
+      newsletterStatus: "sent",
+      dossierStatus: "sent",
+    });
+    expect(second.data.subscription).toMatchObject({
+      status: "already_requested",
+      newsletterStatus: "already_requested",
+      dossierStatus: "already_requested",
+    });
+    expect(fetchImplementation).toHaveBeenCalledTimes(2);
+    expect(redisMock.set).toHaveBeenCalledTimes(4);
+    expect(redisMock.del).not.toHaveBeenCalled();
   });
 
   afterEach(() => {

@@ -1,8 +1,8 @@
 export type DeliveryChannelStatus =
-  "sent" | "unavailable" | "misconfigured" | "failed";
+  "sent" | "unavailable" | "misconfigured" | "failed" | "already_requested";
 
 export type EmailDeliverySummary = {
-  status: "sent" | "partial" | "unavailable" | "failed";
+  status: "sent" | "partial" | "unavailable" | "failed" | "already_requested";
   message: string;
   newsletterStatus: DeliveryChannelStatus;
   dossierStatus: DeliveryChannelStatus;
@@ -18,14 +18,19 @@ export function summarizeEmailDelivery(
   const failedChannels = [newsletterStatus, dossierStatus].filter(
     (status) => status === "failed" || status === "misconfigured",
   ).length;
+  const alreadyRequestedChannels = [newsletterStatus, dossierStatus].filter(
+    (status) => status === "already_requested",
+  ).length;
   const status =
-    successfulChannels > 0
-      ? failedChannels > 0
+    failedChannels > 0
+      ? successfulChannels > 0 || alreadyRequestedChannels > 0
         ? "partial"
-        : "sent"
-      : failedChannels > 0
-        ? "failed"
-        : "unavailable";
+        : "failed"
+      : successfulChannels > 0
+        ? "sent"
+        : alreadyRequestedChannels > 0
+          ? "already_requested"
+          : "unavailable";
   const channelMessages = [
     newsletterStatus === "sent"
       ? "newsletter opt-in recorded"
@@ -33,14 +38,18 @@ export function summarizeEmailDelivery(
         ? "newsletter opt-in failed"
         : newsletterStatus === "misconfigured"
           ? "newsletter delivery misconfigured"
-          : "newsletter delivery unavailable",
+          : newsletterStatus === "already_requested"
+            ? "newsletter delivery already requested"
+            : "newsletter delivery unavailable",
     dossierStatus === "sent"
       ? "custom dossier sent"
       : dossierStatus === "failed"
         ? "custom dossier delivery failed"
         : dossierStatus === "misconfigured"
           ? "custom dossier delivery misconfigured"
-          : "custom dossier delivery unavailable",
+          : dossierStatus === "already_requested"
+            ? "custom dossier delivery already requested"
+            : "custom dossier delivery unavailable",
   ];
   return {
     status,

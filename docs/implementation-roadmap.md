@@ -1311,9 +1311,16 @@ adapter; Redis timeouts and failures become a visible 503 rather than an
 allowed request. Both policy variables remain unset: the production log sample
 contained only five requests in seven days (four `/` and one `/quiz`), and the
 Vercel Web Analytics query for 2026-08-24 through 2026-08-31 reported zero
-visitors and pageviews. No quota is defensible yet. Deduplication and a
-traffic-derived quota remain open Phase 7 work; the local bucket is defense in
-depth and is not presented as a production-wide control.
+visitors and pageviews. No quota is defensible yet. The local bucket is
+defense in depth and is not presented as a production-wide control.
+
+Configured Upstash Redis now also provides atomic per-channel email-delivery
+deduplication. Each validated email request uses an opaque hash of its channel,
+intent, profile, and address with a 15-minute expiry; a repeated successful
+request is reported as already requested without calling Beehiiv or Resend.
+Provider failures release their claim for retry, and claim failures prevent the
+provider call while keeping the recommendation response visible. The traffic-
+derived quota remains pending until production observations justify a value.
 
 The result screen now keeps recommendations visible without an email and offers
 a separate, checked opt-in field. The server validates the address and consent

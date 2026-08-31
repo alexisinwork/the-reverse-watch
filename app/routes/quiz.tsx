@@ -7,6 +7,10 @@ import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { loadRecommendationData } from "../domain/catalogue.server";
 import type { CatalogueOrigin } from "../domain/catalogue.server";
 import {
+  createEmailDeliveryDeduplicationClient,
+  emailDeliveryDeduplicationKey,
+} from "../domain/email-deduplication.server";
+import {
   ACCURACY_TOLERANCES,
   ACQUISITION_CHANNELS,
   AESTHETIC_DNA,
@@ -94,7 +98,8 @@ type SubscriptionResult =
       dossierStatus: "not_requested";
     }
   | {
-      status: "sent" | "partial" | "unavailable" | "failed";
+      status:
+        "sent" | "partial" | "unavailable" | "failed" | "already_requested";
       message: string;
       newsletterStatus: DeliveryChannelStatus;
       dossierStatus: DeliveryChannelStatus;
@@ -570,6 +575,66 @@ export async function action({ request }: Route.ActionArgs) {
       catalogueOrigin: catalogueLoad.origin,
       intent,
     });
+    const deduplicationClient =
+      upstashConfiguration.configured &&
+      (beehiivConfiguration.configured || resendConfiguration.configured)
+        ? createEmailDeliveryDeduplicationClient(upstashConfiguration)
+        : null;
+    const deliver = async (
+      channel: "newsletter" | "dossier",
+      send: () => Promise<void>,
+    ): Promise<DeliveryChannelStatus> => {
+      const key = deduplicationClient
+        ? emailDeliveryDeduplicationKey({
+            channel,
+            email: emailOptIn.email,
+            intent,
+            profile,
+          })
+        : null;
+      if (!deduplicationClient || !key) {
+        await send();
+        return "sent";
+      }
+
+      let claimed: boolean;
+      try {
+        claimed = await deduplicationClient.claim(key);
+      } catch (error) {
+        console.error(
+          JSON.stringify({
+            event: "email_deduplication_error",
+            channel,
+            operation: "claim",
+            message: error instanceof Error ? error.message : "unknown error",
+          }),
+        );
+        return "failed";
+      }
+      if (!claimed) return "already_requested";
+
+      try {
+        await send();
+        return "sent";
+      } catch (error) {
+        try {
+          await deduplicationClient.release(key);
+        } catch (releaseError) {
+          console.error(
+            JSON.stringify({
+              event: "email_deduplication_error",
+              channel,
+              operation: "release",
+              message:
+                releaseError instanceof Error
+                  ? releaseError.message
+                  : "unknown error",
+            }),
+          );
+        }
+        throw error;
+      }
+    };
     let newsletterStatus: DeliveryChannelStatus =
       beehiivConfiguration.configured
         ? "failed"
@@ -583,8 +648,9 @@ export async function action({ request }: Route.ActionArgs) {
         : "unavailable";
     if (beehiivConfiguration.configured) {
       try {
-        await subscribeToBeehiiv(emailOptIn.email, beehiivConfiguration);
-        newsletterStatus = "sent";
+        newsletterStatus = await deliver("newsletter", () =>
+          subscribeToBeehiiv(emailOptIn.email, beehiivConfiguration),
+        );
       } catch (error) {
         console.error(
           JSON.stringify({
@@ -596,12 +662,9 @@ export async function action({ request }: Route.ActionArgs) {
     }
     if (resendConfiguration.configured) {
       try {
-        await sendDossierWithResend(
-          emailOptIn.email,
-          dossier,
-          resendConfiguration,
+        dossierStatus = await deliver("dossier", () =>
+          sendDossierWithResend(emailOptIn.email, dossier, resendConfiguration),
         );
-        dossierStatus = "sent";
       } catch (error) {
         console.error(
           JSON.stringify({
@@ -913,8 +976,8 @@ function DossierDelivery({
         source-backed custom dossier, enter an address and check the opt-in;
         email is not required to use the diagnostic.
       </p>
-      {subscription.status !== "sent" ||
-      subscription.dossierStatus !== "sent" ? (
+      {subscription.status !== "sent" &&
+      subscription.status !== "already_requested" ? (
         <Form className="delivery-form" method="post">
           <input name="intent" type="hidden" value={intent} />
           <input name="profile" type="hidden" value={profilePayload} />

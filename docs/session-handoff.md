@@ -81,8 +81,12 @@ phase.
   official Upstash sliding-window adapter now
   takes over automatically when both Redis REST credentials and policy values
   are configured; partial credentials or Redis timeouts fail visibly with 503.
-  The policy remains unset, and deduplication plus a traffic-derived quota are
-  still pending, so the local bucket is not claimed as global enforcement.
+  The policy remains unset, so the local bucket is not claimed as global
+  enforcement. When Upstash is configured, email delivery also uses atomic,
+  per-channel 15-minute deduplication claims keyed by an opaque request hash;
+  provider failures release their claim so a retry can proceed, while repeated
+  successful requests are reported without repeating provider side effects.
+  A traffic-derived quota remains pending.
 - The result screen now preserves access without email and exposes a separate,
   checked email opt-in. Server-side validation rejects malformed addresses or
   an address without consent; valid requests call the configured channels while
