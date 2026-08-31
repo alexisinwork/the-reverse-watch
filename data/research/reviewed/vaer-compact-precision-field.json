@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "vaer-compact-precision-field",
   "jobId": "014c4a11-e52c-40d3-85aa-fc44e4513f94",
-  "reviewedAt": "2026-08-31T10:13:42Z",
+  "reviewedAt": "2026-08-31T10:36:25Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -46,6 +46,11 @@
       "url": "https://watchpolice.com/brands/vaer/s3-calendar-field-black-36mm-quartz",
       "status": "rejected",
       "note": "The exact SKU is present, but the aggregator record describes an orange-dial/beige-strap variant and an implausible 54.2 bar rating rather than the reviewed black bundle. It supplies no full-watch mass or weighing protocol, so it cannot resolve weightFullG. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.ubuy.co.in/product/7CC258AAS-standard-issue-calendar-field-quartz",
+      "status": "rejected",
+      "note": "This marketplace record labels an S3 Calendar Field listing with an item weight of 0.5 lb (230 g), but it does not identify the reviewed S3-CF-SIL20BLK-NY20KHA bundle, the worn strap selection, or a bare-watch weighing protocol. The item-weight field is unscoped and cannot replace Vaer's exact 46 g case-only value or establish full configured mass. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [

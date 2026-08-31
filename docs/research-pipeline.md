@@ -1547,6 +1547,11 @@ page still identifies 46 g as case-only weight, while the unexplained payload
 weight values have no unit or wearable scope. `weightFullG` remains null and
 the candidate stays research-only.
 
+A further 2026-08-31 exact-model search found a marketplace item-weight field of
+230 g, but it does not identify the reviewed two-strap SKU, worn strap selection,
+or a bare-watch weighing protocol. The unscoped item value is rejected; the sole
+`weightFullG` gap remains null.
+
 The next Swatch Skin White Classiness `SS08K102-S14` pre-screen leaves its two
 M1 gaps, `accuracy` and `lumeGrade`, open. Search discovery found an exact
 authorized-retailer specification labelling luminescence absent and repeating
