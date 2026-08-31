@@ -1,0 +1,104 @@
+{
+  "reviewVersion": 1,
+  "targetId": "casio-babyg-ultracompact-solar-tool",
+  "jobId": "7a94e4de-0586-4ee9-a638-179b688e026c",
+  "reviewedAt": "2026-08-31T08:05:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Casio",
+    "model": "BABY-G BGD-5650",
+    "referenceCode": "BGD-5650-1JF",
+    "variantName": "Black resin configuration"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
+      "status": "fetch_blocked",
+      "note": "The provider retrieved Casio's exact Japanese BGD-5650-1 product record for identity and manufacturer claims, but direct 2026-08-31 retrieval was blocked with HTTP 403. It is therefore not independently admitted as a primary-source validation in this review."
+    },
+    {
+      "url": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "status": "fetch_blocked",
+      "note": "The provider identified Casio's European BGD-5650-1 route for solar/radio, resistance, and shock claims, but direct 2026-08-31 retrieval was blocked with HTTP 403. Its manufacturer claims remain provisional pending a retrievable primary record."
+    },
+    {
+      "url": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
+      "status": "validated_secondary",
+      "note": "The live exact-reference retailer route was directly retrievable on 2026-08-31. Its title and metadata identify BGD-5650-1JF and describe official packaging, warranty, and Japan delivery. The accessible HTML did not independently expose the provider's structured dimensions, price, stock quantity, or attachment claims, so those facts are not promoted from this source."
+    },
+    {
+      "url": "https://support.casio.com/global/en/wat/manual/3493_en/",
+      "status": "rejected",
+      "note": "The provider correctly leaves the conventional lug geometry and case-to-band attachment unresolved. The retrievable manual route did not establish an exact BGD-5650-1JF attachment construction, so a resin band must not be normalized as spring-bar, proprietary, or integrated attachment."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "materials.case",
+      "reason": "The provider cites an exact retailer, but the directly retrievable page metadata establishes identity only; no independently visible construction specification was admitted."
+    },
+    {
+      "fieldName": "materials.bracelet",
+      "reason": "A named resin band does not establish the catalogue bracelet material or the case attachment semantics without a retrievable exact technical source."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider's USD 95 figure was not independently visible on the current exact retailer page and cannot become a canonical price snapshot."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "reason": "The provider's 42.1 mm wearing span remains a useful pre-screen hypothesis but is not independently validated from a retrievable primary or complete exact secondary specification."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The provider's 31 g configured mass is not promoted without a retrievable exact specification that establishes whether the band is included."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Solar radio-controlled operation is a manufacturer claim whose exact product route is currently fetch-blocked, so it remains provisional."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "reason": "The asserted 100 m resistance is not independently accepted while the cited exact Casio route is fetch-blocked."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Super Illuminator identifies an illumination feature, not a verified repeatable performance grade."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The extraction expressly marks the exact case-to-band interface unresolved; no attachment enum may be inferred from product imagery or a resin-band label."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "The provider's calendar/date prose is not independently admitted while the exhaustive exact manufacturer feature list is fetch-blocked."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Needs more evidence. The one allowed retry produced a syntactically valid provisional extraction after the first attempt was retained as a strict-normalization failure. Exact identity is corroborated by the live retailer route, but Casio's cited product pages are direct-fetch blocked and the exact retailer HTML did not expose the proposed technical and commercial facts for independent admission. Most importantly, the provider explicitly leaves the BGD-5650-1JF case-to-band interface unresolved. No homogeneous catalogue variant, price snapshot, or coverage claim is promoted; a future review needs a retrievable exact Casio technical record or equivalent exact-source evidence for the full M1 field set."
+}

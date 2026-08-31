@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-08-31T06:19:09.000Z",
+  "updatedAt": "2026-08-31T08:01:33.734Z",
   "brands": [
     {
       "slug": "rolex",
@@ -785,6 +785,41 @@
           },
           "coverageRationale": "Target low-cost, lightweight, high-function precision cells that the seed does not cover.",
           "catalogueVariantId": "casio-g5600ue-1"
+        },
+        {
+          "id": "casio-babyg-ultracompact-solar-tool",
+          "referenceLabel": "BABY-G BGD-5650-1JF black resin configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Source-led 2026-08-31 pre-screen: the exact black BGD-5650-1JF has a 42.1 mm source-labelled wearing span and 31 g configured mass, so unlike the accepted 46.7 mm G-5600UE-1 it can reach the empty under-5.75-inch field/high-function cells. Casio's exact primary record also supplies solar/radio operation, 100 m resistance, mineral glass, Super Illuminator, calendar, and +/-15-seconds-per-month fallback accuracy; current new USD buy-now evidence is retained for review. The bounded job must still prove the exact case-to-band interface and preserve every commercial-source qualification before a row can enter the catalogue."
         }
       ]
     },

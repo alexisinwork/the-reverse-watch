@@ -1163,6 +1163,33 @@ fourteen migration-ready reviews. No provider request was made, so the ledger
 remains 64 attempts (39 succeeded, 25 failed) across 34 target IDs and USD
 0.55435 recorded cost. The default queue is empty again.
 
+A 2026-08-31 source-led pre-screen adds one bounded planned target before any
+new provider request: BABY-G `BGD-5650-1JF` in its black resin configuration.
+Casio's exact primary record reports a 42.1 x 37.9 x 11.3 mm case, 31 g full
+mass, Tough Solar/Multi Band 6 operation, 100 m resistance, mineral glass,
+Super Illuminator, calendar and +/-15-seconds-per-month fallback accuracy. A
+current new USD buy-now offer identifies the exact JF configuration. The 42.1
+mm wearing span is below the 43.4 mm representative limit for the `under_5_75`
+wrist band, so this targets currently empty affordable, zero-maintenance,
+field/studio high-function cells rather than duplicating the accepted 46.7 mm
+G-5600UE-1. The provider may run once only after the exact case-to-band
+interface and commercial-source qualification are included in its bounded
+evidence request; no pre-screened fact is accepted by this planning record.
+
+The one-attempt BABY-G `BGD-5650-1JF` review is `needs_more_evidence`. Its
+first provider attempt is retained as a strict-normalization failure, and the
+one permitted retry produced a syntactically valid 40-fact provisional
+extraction. Direct retrieval of both cited Casio product routes was blocked by
+HTTP 403; the live exact Sakurawatches route corroborates reference identity
+and official packaging/warranty metadata but did not expose the claimed price,
+stock, dimensions, mass, or attachment specification in its retrievable HTML.
+Most importantly, the extraction itself leaves the exact case-to-band interface
+unresolved. A resin-band label cannot become an attachment enum, and Super
+Illuminator is a feature label rather than a performance grade. No price,
+technical field, or catalogue row is admitted. The ignored provider ledger is
+now 66 attempts (40 succeeded, 26 failed) across 35 target IDs and USD 0.57417
+recorded cost; the default queue is empty.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
