@@ -1523,6 +1523,12 @@ continue to establish the 100 g unsized-bracelet mass, regulated ±10 seconds
 per day, 47 mm span, quick-release interface, and no-date configuration; no
 fact is promoted and no provider request is authorized.
 
+A 2026-08-31 exact-SKU recheck found no new admissible lume evidence for Nodus
+SEC-F-SHA. The manufacturer and exact reseller still provide only BGW9 Grade A
+material language or uncontrolled rapid-charging impressions, with no timed
+charge/decay series or repeatable comparison grade. `lumeGrade` remains null and
+the candidate stays research-only.
+
 The next Citizen FORMA `FRA36-2432` pre-screen leaves its sole M1 gap,
 `lumeGrade`, open. A Japanese authorized-retailer recheck independently
 repeats the exact B023, 57 g, 18 x 6 mm, ±15-seconds-per-month, and stainless
