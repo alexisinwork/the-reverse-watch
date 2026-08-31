@@ -1148,6 +1148,32 @@ now emits every reviewed price and availability source, and additive migration
 payload and Bertucci retailer price evidence. Publishable-key parity passes
 again for all 24 variants and six profiles under the stronger contract.
 
+A source-led gap-resolution pass then returns to Laco Augsburg 39 article
+`861988`, fixed to the black dial and brown riveted calf-leather strap. The
+existing exact manufacturer, Laco FAQ, Miyota 82S0, and live Laco leather-strap
+manual evidence already established the EUR 390 German offer, 39 x 11.55 x
+46.5 mm geometry, 18 mm spring-bar interface, 81.5 g configured weight, LACO
+2S regulation of 0/+25 seconds per day, 42-hour reserve, 50 m resistance,
+sapphire, and no-date operation. A [July 2026 verified-purchase
+report](https://www.trustedshops.de/bewertung/info_XA22FF9B21733A0EAC7FC18702C984C3E.html)
+newly retrieved 2026-08-31 identifies the current black Augsburg 39/Miyota 82
+configuration and reports excellent nighttime legibility through morning;
+Laco's dated public response explicitly concurs with the brightness and
+legibility observation. That exact full-night evidence maps to `strong` while
+the provider's C3-material-only inference remains rejected.
+
+Additive migration `0029_expand_catalogue_laco_augsburg.sql` is live. Remote
+verification reports M0/M1 complete, 23 verified reference-level evidence rows
+from five sources, 25 accepted variants across 21 brands, and exact
+publishable-key catalogue plus six-profile SQL hard-filter parity. The row adds
+a second candidate to exactly twelve `300_500`, studio, workhorse-mechanical,
+time-only cells: total coverage remains 1,068/28,800 (3.71%), while
+single-candidate cells fall from 1,064 to 1,052. Strict research reports 25
+accepted, 19 `needs_review`, and two excluded targets; 34 reviews include
+thirteen migration-ready decisions. No provider request was made, so the
+ignored ledger remains 64 attempts (39 succeeded, 25 failed) across 34 target
+IDs and USD 0.55435 recorded cost.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

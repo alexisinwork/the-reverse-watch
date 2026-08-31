@@ -656,6 +656,46 @@
       "publisher": "Ronda AG",
       "sourceType": "manufacturer_data_sheet",
       "retrievedAt": "2026-08-31T05:40:25Z"
+    },
+    {
+      "id": "laco-augsburg-861988-product",
+      "url": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "title": "Pilot Watch Augsburg 39 — article 861988",
+      "publisher": "Laco Uhrenmanufaktur",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T19:57:59Z"
+    },
+    {
+      "id": "laco-laco2s-faq",
+      "url": "https://www.laco.de/en/faq",
+      "title": "LACO 2S regulation and power-reserve specification",
+      "publisher": "Laco Uhrenmanufaktur",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T19:57:59Z"
+    },
+    {
+      "id": "miyota-82s0-specification",
+      "url": "https://miyotamovement.com/product/82S0/",
+      "title": "Miyota calibre 82S0 specification",
+      "publisher": "Citizen Watch Co. / Miyota",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T19:57:59Z"
+    },
+    {
+      "id": "laco-leather-strap-instructions",
+      "url": "https://www.laco.de/media/85/ed/8d/1755689521/11_3_Gebrauchsanweisung_Laco_Lederbaender.pdf?ts=1755689521",
+      "title": "Laco leather watch strap instructions",
+      "publisher": "Laco Uhrenmanufaktur",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-30T19:57:59Z"
+    },
+    {
+      "id": "trustedshops-laco-augsburg-39-review",
+      "url": "https://www.trustedshops.de/bewertung/info_XA22FF9B21733A0EAC7FC18702C984C3E.html",
+      "title": "Verified Augsburg 39 owner review and Laco response",
+      "publisher": "Trusted Shops / Laco Uhrenmanufaktur",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T06:08:07Z"
     }
   ],
   "fx": {
@@ -3408,6 +3448,122 @@
         {
           "sourceId": "ronda-515-luminox-review",
           "fields": ["movement", "accuracy", "dateStatus"]
+        }
+      ]
+    },
+    {
+      "id": "laco-augsburg-39-861988",
+      "brand": {
+        "slug": "laco",
+        "name": "Laco",
+        "serviceCountries": null
+      },
+      "collection": "Pilot Watches Basic",
+      "model": "Augsburg 39",
+      "referenceCode": "861988",
+      "variantName": "Black dial · brown riveted calf-leather strap",
+      "productUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-39/861988",
+      "price": {
+        "amountMinor": 39000,
+        "currency": "EUR",
+        "marketCountry": "DE",
+        "observedAt": "2026-08-30T19:57:59Z",
+        "staleAfter": "2027-02-26T19:57:59Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-30T19:57:59Z",
+        "availabilityStaleAfter": "2026-09-29T19:57:59Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "sandblasted stainless steel",
+        "caseback": "stainless steel with sapphire crystal display back",
+        "bracelet": null,
+        "strap": "brown riveted calf leather"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 39,
+        "caseWidthMm": null,
+        "caseLengthMm": null,
+        "caseThicknessMm": 11.55,
+        "lugToLugMm": 46.5,
+        "lugWidthMm": 18,
+        "weightFullG": 81.5,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "LACO 2S (Miyota 82S0 base)",
+        "powerReserveHours": 42,
+        "accuracyLowerSeconds": 0,
+        "accuracyUpperSeconds": 25,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 50,
+        "crownType": null,
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["studio_desk_daily"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "compact_pilot_instrument",
+        "socialSignals": ["quiet_continuity"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "laco-augsburg-861988-product",
+          "fields": [
+            "identity",
+            "price",
+            "availability",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crystal",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "laco-laco2s-faq",
+          "fields": ["movement", "accuracy"]
+        },
+        {
+          "sourceId": "miyota-82s0-specification",
+          "fields": ["movement", "complications", "dateStatus"]
+        },
+        {
+          "sourceId": "laco-leather-strap-instructions",
+          "fields": ["integratedBracelet", "attachmentType"]
+        },
+        {
+          "sourceId": "trustedshops-laco-augsburg-39-review",
+          "fields": ["identity", "lumeGrade"]
         }
       ]
     }

@@ -12,10 +12,10 @@ import { seedCatalogue } from "./seed-catalogue";
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
     expect(seedCatalogue.catalogueVersion).toBe(2);
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(24);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(25);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(24);
+    ).toBe(25);
   });
 
   it("retains evidence for every seed identity and price", () => {
@@ -259,6 +259,37 @@ describe("source-backed seed catalogue", () => {
     expect(luminox!.dateStatus).toBe("present");
     expect(evidenceFields(luminox!).has("lumeGrade")).toBe(true);
     expect(evidenceFields(luminox!).has("attachmentType")).toBe(true);
+  });
+
+  it("retains the reviewed Laco compact pilot configuration", () => {
+    const laco = seedCatalogue.variants.find(
+      (variant) => variant.id === "laco-augsburg-39-861988",
+    );
+
+    expect(laco).toBeDefined();
+    expect(laco!.referenceCode).toBe("861988");
+    expect(laco!.geometry).toMatchObject({
+      caseDiameterMm: 39,
+      caseThicknessMm: 11.55,
+      lugToLugMm: 46.5,
+      lugWidthMm: 18,
+      weightFullG: 81.5,
+      integratedBracelet: false,
+    });
+    expect(laco!.movement).toMatchObject({
+      type: "automatic",
+      accuracyLowerSeconds: 0,
+      accuracyUpperSeconds: 25,
+      accuracyPeriodDays: 1,
+    });
+    expect(laco!.operation).toMatchObject({
+      waterResistanceM: 50,
+      crystal: "sapphire",
+      lumeGrade: "strong",
+      attachmentType: "spring_bar",
+    });
+    expect(laco!.dateStatus).toBe("absent");
+    expect(evidenceFields(laco!).has("lumeGrade")).toBe(true);
   });
 
   it("rejects a partial non-round dimension pair", () => {

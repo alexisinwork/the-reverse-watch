@@ -59,10 +59,10 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context alongside source-led additions through Bertucci;
-- 23 accepted catalogue targets linked to all current reviewed variants;
-- 30 coverage-intent targets, with exact Luminox `XS.0307.WO` as the sole
-  planned target in the default research queue after source-led pre-screening;
-- live Supabase parity for 19 brands and all 23 accepted variants across the
+- 25 accepted catalogue targets linked to all current reviewed variants;
+- 30 coverage-intent targets, with no planned target in the default research
+  queue after the source-led Laco gap resolution;
+- live Supabase parity for 21 brands and all 25 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
@@ -1113,6 +1113,31 @@ iterates every price and availability evidence group, and migration
 `0028_repair_multi_source_price_evidence.sql` additively restores the omitted
 Brew live-product-payload and Bertucci exact-retailer price evidence. The
 stronger publishable-key audit passes for all 24 variants and six profiles.
+
+A later source-led pass resolves Laco Augsburg 39 article `861988`'s sole
+remaining M1 gap without invoking the provider. The existing exact product,
+Laco FAQ, Miyota 82S0, and Laco strap-manual evidence already supplied the EUR
+390 German offer, 39 x 11.55 x 46.5 mm geometry, 18 mm spring-bar interface,
+81.5 g full configured weight, installed 0/+25-seconds-per-day regulation,
+42-hour reserve, 50 m resistance, sapphire, and no-date operation. A [verified
+July 2026 purchaser report](https://www.trustedshops.de/bewertung/info_XA22FF9B21733A0EAC7FC18702C984C3E.html)
+retrieved 2026-08-31 identifies the current black Augsburg 39 with its simple
+Miyota 82 movement and reports excellent legibility through morning. Laco's
+dated public reply expressly concurs with the brightness and legibility
+observation, supporting `strong` performance while leaving the original
+C3-material-only normalization rejected.
+
+Migration `0029_expand_catalogue_laco_augsburg.sql` accepts
+`laco-augsburg-39-861988`. Remote verification reports M0/M1 complete, 23
+verified reference-level evidence rows from five sources, 25 variants across
+21 brands, and exact source-group plus six-profile hard-filter parity. The row
+adds a second candidate to twelve `300_500`, studio, workhorse-mechanical,
+time-only cells. Coverage therefore remains 1,068/28,800 (3.71%), while the
+single-candidate count improves from 1,064 to 1,052. Strict research reports 25
+accepted, 19 `needs_review`, two excluded, and thirteen migration-ready reviews.
+No provider request was made, so the ledger remains 64 attempts (39 succeeded,
+25 failed) across 34 target IDs and USD 0.55435 recorded cost. The default queue
+is empty again.
 
 ## Job idempotency and retention
 

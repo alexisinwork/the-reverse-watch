@@ -2,9 +2,9 @@
   "reviewVersion": 1,
   "targetId": "laco-compact-mechanical-pilot",
   "jobId": "79c325e7-aa67-4015-9cf0-a74afb1a368f",
-  "reviewedAt": "2026-08-30T20:06:35Z",
+  "reviewedAt": "2026-08-31T06:08:07Z",
   "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "outcome": "ready_for_migration",
   "candidateIdentity": {
     "brand": "Laco",
     "model": "Augsburg 39",
@@ -31,6 +31,11 @@
       "url": "https://www.laco.de/media/85/ed/8d/1755689521/11_3_Gebrauchsanweisung_Laco_Lederbaender.pdf?ts=1755689521",
       "status": "validated_primary",
       "note": "Laco's currently retrievable leather-watch-strap instructions return a valid manufacturer PDF. The English instructions require a spring-bar tool for preparation and require the strap and spring bars to be properly installed. Combined with the exact product page's identification of the configured strap as Laco calf leather, this supports spring-bar case attachment; the visible rivets remain decorative strap construction. Retrieved and text-validated 2026-08-30."
+    },
+    {
+      "url": "https://www.trustedshops.de/bewertung/info_XA22FF9B21733A0EAC7FC18702C984C3E.html",
+      "status": "validated_secondary",
+      "note": "A Trusted Shops verified purchaser identifies a July 2026 Laco Augsburg 39 with the simple Miyota 82 movement, black dial, brown strap, and 18 mm interface, then reports excellent nighttime legibility from strong luminous material through morning. Laco's dated public response explicitly says it shares the purchaser's observations about brightness and legibility. The exact current model/configuration identifiers, explicit full-night duration, verified-purchase status, and manufacturer concurrence support strong performance without generalizing from C3 material alone. Retrieved 2026-08-31."
     },
     {
       "url": "https://www.laco.de/media/products-pdf/1_1_Laco%202S_31.pdf",
@@ -138,6 +143,12 @@
       "value": "absent",
       "sourceUrl": "https://miyotamovement.com/product/82S0/",
       "note": "The exact Laco product identifies Miyota 82S0 as its base, and Miyota's technical function list specifies no calendar function."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.trustedshops.de/bewertung/info_XA22FF9B21733A0EAC7FC18702C984C3E.html",
+      "note": "The verified current Augsburg 39 purchaser reports excellent legibility through morning, and Laco's public reply expressly concurs with the brightness and legibility observation. Explicit full-night persistence maps to strong."
     }
   ],
   "rejectedProvisionalFields": [
@@ -175,9 +186,9 @@
     },
     {
       "fieldName": "operation.lumeGrade",
-      "reason": "Super-LumiNova C3 identifies luminous material and application location, not repeatable brightness or duration. A narrow exact-reference Perplexity pass found no controlled charge protocol, timed observation, or convergent independent Augsburg 39 assessments, so no grade is assigned."
+      "reason": "The provider's Super-LumiNova C3 label identifies material and placement, not performance, so that provisional normalization remains rejected. Strong is independently re-established from a later verified exact-model full-night observation with Laco's explicit public concurrence."
     }
   ],
-  "missingM1Fields": ["lumeGrade"],
-  "note": "Keep as research-only. The exact manufacturer route and primary caliber sources validate Laco Augsburg 39 article 861988 on its 81.5 g brown calf-leather configuration, the current EUR 390 German offer, 39 x 11.55 x 46.5 mm geometry, 18 mm lugs, installed LACO 2S regulation of 0/+25 seconds per day, 42-hour reserve, 50 m resistance, sapphire, and no-date operation. The first provider's alleged LACO 2S PDF returns 404 and is rejected. A final attachment pass surfaced Laco's live leather-strap instructions, whose required spring-bar tool and installation check resolve attachmentType as spring_bar without confusing decorative strap rivets with case fasteners. The first job plus a narrow exact-reference lume pass found C3 material only, not repeatable performance; operation.lumeGrade remains null as the sole M1 gap."
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. The exact manufacturer route and primary caliber sources validate Laco Augsburg 39 article 861988 on its 81.5 g brown calf-leather configuration, current EUR 390 German offer, 39 x 11.55 x 46.5 mm geometry, 18 mm lugs, installed LACO 2S regulation of 0/+25 seconds per day, 42-hour reserve, 50 m resistance, sapphire, spring-bar attachment, and no-date operation. The first provider's alleged LACO 2S PDF remains rejected because it returns 404. A newly surfaced July 2026 verified-purchase report identifies the current black Augsburg 39 configuration and observes excellent legibility through morning; Laco publicly concurs with that brightness and legibility observation. This closes the sole remaining M1 gap as strong lume without treating C3 material alone as performance evidence."
 }

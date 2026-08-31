@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-08-31T05:43:13.064Z",
+  "updatedAt": "2026-08-31T06:08:07.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1457,7 +1457,7 @@
         {
           "id": "laco-compact-mechanical-pilot",
           "referenceLabel": "Find exact Laco Augsburg 39 reference 861988 strap-to-case fastener evidence only: require a currently retrievable manufacturer product, manual, service, parts, or replacement-strap record tied to 861988, or an exact-reference physical inspection corroborated by Laco service material; distinguish decorative strap rivets and buckle hardware from spring bars, quick release, proprietary, or integrated case attachment",
-          "state": "needs_review",
+          "state": "accepted",
           "coverageIntent": {
             "priceBands": [
               "300_500"
@@ -1486,7 +1486,8 @@
               "time_only_no_date"
             ]
           },
-          "coverageRationale": "Add a new-brand compact pilot watch to 12 sparse 300-500 studio, workhorse-mechanical, time-only cells. Retain the exact 81.5 g factory leather configuration and reject lume-material or riveted-strap labels as substitutes for performance and case-interface evidence."
+          "coverageRationale": "Independent exact-reference review validates the current EUR 390 Augsburg 39 article 861988 on its 81.5 g brown riveted calf-leather configuration, 39 x 11.55 x 46.5 mm geometry, 18 mm spring-bar interface, LACO 2S regulation of 0/+25 seconds per day, 42-hour reserve, 50 m resistance, sapphire, and no-date operation. A July 2026 verified purchaser identifies the current black Augsburg 39 configuration and reports excellent legibility through morning, with Laco publicly concurring; this establishes strong lume without treating C3 material alone as a performance grade. The compact pilot row adds a second candidate to 12 sparse 300_500, studio, workhorse-mechanical, time-only cells.",
+          "catalogueVariantId": "laco-augsburg-39-861988"
         }
       ]
     },
