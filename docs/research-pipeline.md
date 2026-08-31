@@ -1331,6 +1331,12 @@ across 28 variants. Migration `0032_expand_catalogue_boldr.sql` is rendered but
 not remotely applied because Supabase credentials are unavailable in this
 workspace. No provider request was needed.
 
+With BOLDR removed from the review queue, the coverage planner's next named
+hypothesis is Cartier Tank Must Small `WSTA0107` at eight empty,
+under-evidenced formal/small-wrist precision cells. Its exact-region source-led
+pass still lacks a numerical quartz accuracy bound and period, so it remains
+research-only and no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

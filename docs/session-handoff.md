@@ -34,6 +34,11 @@ phase.
   `strong`. Local seed coverage is now 1,102/28,800 cells across 28 variants.
   Connected Supabase parity must be rerun when credentials are available before
   migrations `0031` and `0032` are applied remotely.
+- After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
+  Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
+  precision cells. Its exact Spain-region product page confirms the
+  configuration and dimensions but still supplies no numerical quartz rate
+  bound or period; keep it research-only and do not invoke the provider.
 - On 2026-08-29 the owner explicitly requested that the complete accumulated
   branch be pushed. The 28 existing local commits plus the handoff checkpoint
   were therefore delivered to `origin/main`, superseding the earlier
