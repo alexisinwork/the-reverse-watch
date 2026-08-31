@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "swatch-skin-white-classiness-ss08k102",
   "jobId": "f1d2e5cb-8515-42b6-8e5f-487e2869ec16",
-  "reviewedAt": "2026-08-31T08:14:00Z",
+  "reviewedAt": "2026-08-31T09:52:14Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -41,6 +41,11 @@
       "url": "https://www.hodinky-365.cz/swatch-white-classiness-ss08k102-s14-x1271760",
       "status": "fetch_blocked",
       "note": "Search discovery exposed an exact SS08K102-S14 authorized-retailer specification that labels luminescence as absent and repeats 34 mm/4.3 mm/3 bar values, but direct retrieval is blocked by the retailer's anti-bot page. The indexed snippet is retained as a lead, not as independent evidence for lumeGrade or accuracy. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.louispion.fr/skin-ss08k102-s14.html",
+      "status": "validated_secondary",
+      "note": "The exact Louis Pion retailer page identifies SS08K102-S14 and EAN 7610522872653, reports 11.9 g net product weight, 34 mm case width/height, quartz, and a two-hand display. It publishes no numerical rate bound or lume statement; the rounded 12 g mass already has independent exact-source support and no additional M1 field closes. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -177,5 +182,5 @@
     }
   ],
   "missingM1Fields": ["accuracy", "lumeGrade"],
-  "note": "Needs more evidence. The exact current Swatch US/Spain pages and EAN-linked authorized/secondary records establish a homogeneous White Classiness SS08K102-S14 configuration, current under-$300 pricing, 34 mm round case, 38 mm wearing span, 4.3 mm primary thickness, 12 g full mass, quartz operation, 3 bar resistance, biosourced materials, proprietary Swatch pin attachment, and no-date display. The 3.9 mm secondary thickness is retained only as a conflict. A source-led search found an exact authorized-retailer snippet labelling luminescence absent, but direct retrieval is anti-bot blocked, so it cannot close lumeGrade. No numerical rate bound is published for the exact SW-SF installation; accuracy and lume therefore remain open and the row stays research-only."
+  "note": "Needs more evidence. The exact current Swatch US/Spain pages and EAN-linked authorized/secondary records establish a homogeneous White Classiness SS08K102-S14 configuration, current under-$300 pricing, 34 mm round case, 38 mm wearing span, 4.3 mm primary thickness, 12 g full mass, quartz operation, 3 bar resistance, biosourced materials, proprietary Swatch pin attachment, and no-date display. The newly retrieved exact Louis Pion page corroborates the EAN, 34 mm dimensions, two-hand quartz display, and approximately 12 g mass but publishes no rate or lume evidence. The 3.9 mm secondary thickness is retained only as a conflict. A source-led search found an exact authorized-retailer snippet labelling luminescence absent, but direct retrieval is anti-bot blocked, so it cannot close lumeGrade. No numerical rate bound is published for the exact SW-SF installation; accuracy and lume therefore remain open and the row stays research-only."
 }

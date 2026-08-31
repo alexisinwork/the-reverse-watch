@@ -1541,6 +1541,15 @@ configured mass, numerical rate bound, or explicit date status; family reviews
 and sibling variants remain non-transferable. No fact is promoted and no
 provider request is authorized.
 
+The next Swatch Skin White Classiness `SS08K102-S14` pre-screen remains open
+only for `accuracy` and `lumeGrade`. An exact Louis Pion retailer record
+corroborates the EAN, 34 mm case, two-hand quartz display, and approximately
+12 g mass, but publishes no numerical rate bound or lume statement. The exact
+Swatch pages and other EAN-linked records continue to establish the homogeneous
+configuration; an indexed exact-retailer `luminescence absent` claim remains
+unusable because direct retrieval is anti-bot blocked. No fact is promoted and
+no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
