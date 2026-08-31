@@ -1252,6 +1252,18 @@ Verification:
   failures are tested.
 - Production smoke checks pass on the canonical domain.
 
+## Phase 8 — Celebrity & cinema watch discovery
+
+Status: **planned — after Phase 7 production verification**
+
+Goal: use sourced public-figure and screen-watch research plus a lightweight
+archetype quiz as a discovery funnel into the existing deterministic diagnostic.
+
+The detailed plan, evidence model, delivery packets, and editorial guardrails
+are in [`phase-8-celebrity-cinema-watches.md`](phase-8-celebrity-cinema-watches.md).
+Subsequent commercial expansion is sequenced in
+[`future-expansion-strategy.md`](future-expansion-strategy.md).
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

@@ -204,6 +204,8 @@ These items are not complete merely because the web application advances.
 | Full manifest research and approximately 200-brand expansion | Phase 5 |
 | Optional free-text/semantic experiment | Phase 6 |
 | Cited dossier UI, explicit email opt-in, analytics, production funnel | Phase 7 |
+| Celebrity/cinema watch discovery and archetype-quiz funnel | Phase 8 |
+| Affiliate validation, paid dossiers, concierge, sponsorship, and B2B assessment | Future expansion |
 | Physical production, episodes, thumbnails, and YouTube cadence | Owner/media workstream |
 
 ## 2026-08-28 implementation trace
