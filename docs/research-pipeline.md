@@ -1457,6 +1457,15 @@ resolved diameter, lug width, annual Precisionist accuracy, and spring-bar
 interface. `weightFullG` and `lumeGrade` remain null; no provider request is
 authorized.
 
+The next Cartier Tank Must Small `WSTA0107` pre-screen leaves its sole M1 gap,
+`accuracy`, open. An exact-reference Watchfinder listing confirms that a
+Cartier-certified service centre inspected accuracy and functionality, but it
+publishes no measured rate, tolerance bound, observation period, or test
+method. Cartier's exact regional pages and movement overview likewise describe
+High Autonomy quartz and battery life without a numerical timekeeping bound;
+generic quartz expectations and third-party calibre summaries remain rejected.
+No fact is promoted and no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

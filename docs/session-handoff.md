@@ -968,6 +968,15 @@ exact primary and service-part records still control the resolved dimensions,
 annual accuracy, and spring-bar interface. `weightFullG` and `lumeGrade` remain
 null and no provider request was made.
 
+The next Cartier Tank Must Small `WSTA0107` pre-screen leaves its sole M1 gap,
+`accuracy`, open. An exact-reference Watchfinder listing confirms that a
+Cartier-certified service centre inspected accuracy and functionality, but it
+publishes no measured rate, tolerance bound, observation period, or test
+method. Cartier's exact regional pages and movement overview likewise describe
+High Autonomy quartz and battery life without a numerical timekeeping bound;
+generic quartz expectations and third-party calibre summaries remain rejected.
+No fact was promoted and no provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
