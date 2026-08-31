@@ -428,14 +428,16 @@ where subject_type = 'reference_variant'
 }
 
 function renderPriceEvidence(variant: SeedReferenceVariant) {
-  const entry = variant.evidence.find((candidate) =>
+  const entries = variant.evidence.filter((candidate) =>
     candidate.fields.includes("price"),
   );
-  if (!entry) return "";
+  if (entries.length === 0) return "";
   const priceKind = priceSnapshotKind(variant.price.channels);
   const condition = variant.price.conditions[0];
   if (!condition) throw new Error(`Missing price condition: ${variant.id}`);
-  return `insert into public.field_evidence (
+  return entries
+    .map(
+      (entry) => `insert into public.field_evidence (
   subject_type, subject_id, field_name, value_hash, source_id,
   observed_at, retrieved_at, verified_at, stale_after, tier, reviewer
 )
@@ -450,16 +452,20 @@ where ps.reference_variant_id = ${variantIdSql(variant)}
   and ps.observed_at = ${q(variant.price.observedAt)}::timestamptz
 on conflict (subject_type, subject_id, field_name, value_hash, source_id) do update set
   verified_at = excluded.verified_at, stale_after = excluded.stale_after,
-  tier = 'verified', reviewer = ${q(reviewer)};`;
+  tier = 'verified', reviewer = ${q(reviewer)};`,
+    )
+    .join("\n\n");
 }
 
 function renderAvailabilityEvidence(variant: SeedReferenceVariant) {
   if (variant.price.availability === "unknown") return "";
-  const entry = variant.evidence.find((candidate) =>
+  const entries = variant.evidence.filter((candidate) =>
     candidate.fields.includes("availability"),
   );
-  if (!entry) return "";
-  return `insert into public.field_evidence (
+  if (entries.length === 0) return "";
+  return entries
+    .map(
+      (entry) => `insert into public.field_evidence (
   subject_type, subject_id, field_name, value_hash, source_id,
   observed_at, retrieved_at, verified_at, stale_after, tier, reviewer
 )
@@ -473,7 +479,9 @@ where ms.reference_variant_id = ${variantIdSql(variant)}
   and ms.observed_at = ${q(variant.price.availabilityObservedAt)}::timestamptz
 on conflict (subject_type, subject_id, field_name, value_hash, source_id) do update set
   verified_at = excluded.verified_at, stale_after = excluded.stale_after,
-  tier = 'verified', reviewer = ${q(reviewer)};`;
+  tier = 'verified', reviewer = ${q(reviewer)};`,
+    )
+    .join("\n\n");
 }
 
 function renderCompleteness(variant: SeedReferenceVariant) {

@@ -3129,7 +3129,7 @@
           ]
         },
         {
-          "sourceId": "ronda-515-luminox-review",
+          "sourceId": "ronda-powertech-512-513-515",
           "fields": ["movement", "accuracy"]
         },
         {
@@ -3406,7 +3406,7 @@
           ]
         },
         {
-          "sourceId": "ronda-powertech-512-513-515",
+          "sourceId": "ronda-515-luminox-review",
           "fields": ["movement", "accuracy", "dateStatus"]
         }
       ]

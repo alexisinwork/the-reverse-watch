@@ -17,7 +17,7 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Migrations `0001` through `0027` are applied to the connected Supabase
+- Migrations `0001` through `0028` are applied to the connected Supabase
   project. The live v3 catalogue contains all 20 brands and 24 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
   result parity passes. All 20 public catalogue tables have RLS enabled with no
@@ -95,6 +95,13 @@ phase.
   rows from four sources. Forward migration `0027` preserves both Ronda source
   snapshots and attaches the Luminox evidence to its independently reviewed
   snapshot. 24-row public parity passes, and coverage is 1,068/28,800 (3.71%).
+- Catalogue parity now compares each evidence field group through its complete
+  source-retrieval signature instead of flattening provenance to field names.
+  The stronger audit exposed omitted corroborating price evidence for Brew and
+  Bertucci: the renderer previously selected only the first source carrying a
+  price fact. It now emits every price and availability source, and additive
+  migration `0028` restores both omitted rows. Public-key parity passes for all
+  24 variants and six profiles under the stronger contract.
 - The Mondaine provider ledger preserves two failed attempts: the first
   returned useful raw research at USD 0.02028 but failed strict normalization;
   the second was interrupted before a response was persisted after an

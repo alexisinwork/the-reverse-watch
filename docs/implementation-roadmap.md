@@ -1138,6 +1138,16 @@ IDs and USD 0.55435 recorded cost. The default queue is empty; the next Phase 5
 checkpoint must again begin with source-led exact-reference and coverage
 pre-screening before any provider request.
 
+The post-acceptance provenance audit strengthens catalogue parity from a flat
+set of evidenced fields to each field group's complete source-retrieval
+signature. That stricter comparison exposed two older corroborating price
+sources that were present in the seed but omitted from SQL because the
+migration renderer selected only the first `price` evidence group. The renderer
+now emits every reviewed price and availability source, and additive migration
+`0028_repair_multi_source_price_evidence.sql` restores the exact Brew product
+payload and Bertucci retailer price evidence. Publishable-key parity passes
+again for all 24 variants and six profiles under the stronger contract.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

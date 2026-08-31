@@ -1,5 +1,4 @@
 import type { SeedCatalogue, SeedReferenceVariant } from "./catalogue";
-import { evidenceFields } from "./catalogue";
 
 function normalizeDate(value: string | null) {
   return value === null ? null : new Date(value).toISOString();
@@ -9,7 +8,10 @@ function sorted(values: readonly string[]) {
   return [...values].sort((left, right) => left.localeCompare(right));
 }
 
-function projectVariant(variant: SeedReferenceVariant) {
+function projectVariant(
+  variant: SeedReferenceVariant,
+  sourceKeyById: ReadonlyMap<string, string>,
+) {
   return {
     ...variant,
     brand: {
@@ -41,36 +43,46 @@ function projectVariant(variant: SeedReferenceVariant) {
       aestheticDna: sorted(variant.traits.aestheticDna),
       emotionalObjectives: sorted(variant.traits.emotionalObjectives),
     },
-    evidence: sorted([...evidenceFields(variant)]),
-  };
-}
-
-function projectCatalogue(catalogue: SeedCatalogue) {
-  const sourceUrlById = new Map(
-    catalogue.sources.map((source) => [source.id, source.url]),
-  );
-  return {
-    catalogueVersion: catalogue.catalogueVersion,
-    sources: catalogue.sources
-      .map((source) => ({
-        url: source.url,
-        title: source.title,
-        publisher: source.publisher,
-        sourceType: source.sourceType,
-        retrievedAt: normalizeDate(source.retrievedAt),
+    evidence: variant.evidence
+      .map((entry) => ({
+        source:
+          sourceKeyById.get(entry.sourceId) ?? `missing:${entry.sourceId}`,
+        fields: sorted(entry.fields),
       }))
       .sort((left, right) =>
         JSON.stringify(left).localeCompare(JSON.stringify(right)),
       ),
+  };
+}
+
+function projectCatalogue(catalogue: SeedCatalogue) {
+  const projectedSources = catalogue.sources.map((source) => ({
+    url: source.url,
+    title: source.title,
+    publisher: source.publisher,
+    sourceType: source.sourceType,
+    retrievedAt: normalizeDate(source.retrievedAt),
+  }));
+  const sourceKeyById = new Map(
+    catalogue.sources.map((source, index) => [
+      source.id,
+      JSON.stringify(projectedSources[index]),
+    ]),
+  );
+  return {
+    catalogueVersion: catalogue.catalogueVersion,
+    sources: projectedSources.sort((left, right) =>
+      JSON.stringify(left).localeCompare(JSON.stringify(right)),
+    ),
     fx: {
       ...catalogue.fx,
-      sourceUrl: sourceUrlById.get(catalogue.fx.sourceId) ?? null,
+      source: sourceKeyById.get(catalogue.fx.sourceId) ?? null,
       sourceId: undefined,
       observedAt: normalizeDate(catalogue.fx.observedAt),
       staleAfter: normalizeDate(catalogue.fx.staleAfter),
     },
     variants: catalogue.variants
-      .map(projectVariant)
+      .map((variant) => projectVariant(variant, sourceKeyById))
       .sort((left, right) => left.id.localeCompare(right.id)),
   };
 }

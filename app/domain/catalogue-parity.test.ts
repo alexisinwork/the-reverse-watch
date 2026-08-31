@@ -8,6 +8,19 @@ describe("catalogue parity projection", () => {
     equivalent.variants.reverse();
     equivalent.variants[0]!.eligibleEnvironments.reverse();
     equivalent.fx.observedAt = new Date(equivalent.fx.observedAt).toISOString();
+    const renamedSource = equivalent.sources[0]!;
+    const originalSourceId = renamedSource.id;
+    renamedSource.id = `database-${originalSourceId}`;
+    if (equivalent.fx.sourceId === originalSourceId) {
+      equivalent.fx.sourceId = renamedSource.id;
+    }
+    for (const variant of equivalent.variants) {
+      for (const evidence of variant.evidence) {
+        if (evidence.sourceId === originalSourceId) {
+          evidence.sourceId = renamedSource.id;
+        }
+      }
+    }
 
     expect(catalogueParityMismatches(seedCatalogue, equivalent)).toEqual([]);
   });
@@ -28,6 +41,21 @@ describe("catalogue parity projection", () => {
     )!;
     variant.geometry.lugWidthMm = null;
     variant.fieldApplicability.lugWidthMm = "not_applicable";
+
+    expect(catalogueParityMismatches(seedCatalogue, changed)).toEqual([
+      `variant:${variant.id}:facts`,
+    ]);
+  });
+
+  it("treats the evidence source snapshot as parity-critical", () => {
+    const changed = structuredClone(seedCatalogue);
+    const variant = changed.variants.find(
+      (candidate) => candidate.id === "luminox-leatherback-xs-0307-wo",
+    )!;
+    const movementEvidence = variant.evidence.find((entry) =>
+      entry.fields.includes("accuracy"),
+    )!;
+    movementEvidence.sourceId = "ronda-powertech-512-513-515";
 
     expect(catalogueParityMismatches(seedCatalogue, changed)).toEqual([
       `variant:${variant.id}:facts`,

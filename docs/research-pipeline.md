@@ -1105,6 +1105,15 @@ recorded cost. The default queue is empty again; another provider call requires
 a named homogeneous candidate that first passes exact source-led M1 and
 coverage pre-screening.
 
+The subsequent provenance checkpoint makes source retrieval snapshots and
+their exact field groupings parity-critical instead of comparing only a flat
+field-name set. It found that the migration renderer had emitted only the first
+source when two reviewed records corroborated one price. The renderer now
+iterates every price and availability evidence group, and migration
+`0028_repair_multi_source_price_evidence.sql` additively restores the omitted
+Brew live-product-payload and Bertucci exact-retailer price evidence. The
+stronger publishable-key audit passes for all 24 variants and six profiles.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
