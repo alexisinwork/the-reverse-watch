@@ -1275,11 +1275,14 @@ repeats the exact reference and 87 g but carries a stale 41 mm case row and no
 interface measurement. The exact [T.H. Baker record](https://www.thbaker.co.uk/rado-mens-hyperchrome-black-rubber-strap-watch-r32280109)
 exposes 20 mm lug width and authorized-retailer context, but its 41 mm and
 older specification set cannot be merged with the current Rado row. Rado's
-current page still names only the pin buckle (a wrist closure), and no exact
-service/parts source or controlled charge/decay observation establishes the
-case fastener, wearing span, or lume grade. No fact is promoted and no
-provider request is made; the next evidence attempt must remain narrowly scoped
-to those four M1 gaps.
+current page still names only the pin buckle (a wrist closure). Rado's official
+[manual lookup](https://service.rado.com/manuals-and-catalogue) requires a serial
+number to select a calibre manual and provides no exact R32280109 strap-service
+record; its generic EasyClip guides therefore cannot be applied to this
+reference. No exact service/parts source or controlled charge/decay observation
+establishes the case fastener, wearing span, or lume grade. No fact is promoted
+and no provider request is made; the next evidence attempt must remain narrowly
+scoped to those four M1 gaps.
 
 ## Job idempotency and retention
 

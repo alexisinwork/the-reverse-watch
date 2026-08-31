@@ -181,8 +181,11 @@ phase.
   zero-maintenance, simple-date cells. Current Rado evidence remains complete
   except for lug-to-lug, lug width, case attachment, and a controlled lume
   grade; newly checked exact retailer pages either repeat the current 87 g row
-  without those fields or carry an older conflicting geometry set. No provider
-  request is queued until those four M1 gaps have an exact-source path.
+  without those fields or carry an older conflicting geometry set. Rado's
+  official manual lookup requires a serial number and exposes no exact
+  R32280109 strap-service record, so its generic EasyClip guides are not
+  applicable. No provider request is queued until those four M1 gaps have an
+  exact-source path.
 
 ## Accepted 2026-08-28 audit decisions
 
