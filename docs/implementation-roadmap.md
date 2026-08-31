@@ -1217,7 +1217,7 @@ outside the page's control.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 
-Status: **optional, deterministic baseline recorded 2026-08-31**
+Status: **closed — SQL-first retained after 2026-08-31 pilot**
 
 Goal: determine whether AI improves free-text intake or aesthetic nuance enough
 to justify operational complexity.
@@ -1271,7 +1271,7 @@ variants.
 
 ## Phase 7 — Product integration, email, deployment, and evaluation
 
-Status: **pending**
+Status: **in progress — integration verification started 2026-08-31**
 
 Goal: turn the recommendation engine into a production funnel.
 

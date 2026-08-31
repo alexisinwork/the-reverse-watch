@@ -12,7 +12,7 @@ phase.
 
 ## Current checkpoint
 
-- Active phase: **Phase 5 — coverage-first catalogue expansion, in progress**.
+- Active phase: **Phase 7 — product integration and production verification, in progress**.
 - Phases 0–4 are complete and verified.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
@@ -46,6 +46,9 @@ phase.
   missed categorical hard constraints, so it was not adopted; the 651-token
   usage record is retained in the evaluation artifact and no model output
   entered the recommendation path.
+- Phase 6 is closed on that evidence; the SQL-first deterministic engine remains
+  the production baseline. Phase 7 integration verification is now the active
+  sequence.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the
