@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { data, Form, Link, useActionData, useNavigation } from "react-router";
-import { track } from "@vercel/analytics";
 import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
@@ -739,25 +738,19 @@ export async function action({ request }: Route.ActionArgs) {
   };
 
   if (subscription.status === "not_requested") {
-    await recordQuizAnalyticsEvent(
-      {
-        name: "evaluation",
-        intent,
-        catalogueOrigin: catalogueLoad.origin,
-        ...evaluation,
-      },
-      request,
-    );
+    await recordQuizAnalyticsEvent({
+      name: "evaluation",
+      intent,
+      catalogueOrigin: catalogueLoad.origin,
+      ...evaluation,
+    });
   } else {
-    await recordQuizAnalyticsEvent(
-      {
-        name: "subscription",
-        intent,
-        catalogueOrigin: catalogueLoad.origin,
-        status: subscription.status,
-      },
-      request,
-    );
+    await recordQuizAnalyticsEvent({
+      name: "subscription",
+      intent,
+      catalogueOrigin: catalogueLoad.origin,
+      status: subscription.status,
+    });
   }
 
   return data<ActionResult>(
@@ -1466,7 +1459,12 @@ export default function Quiz() {
   const recordStart = () => {
     if (startTracked.current) return;
     startTracked.current = true;
-    track("quiz_started", { questionnaireVersion: QUESTIONNAIRE_VERSION });
+    if (import.meta.env.PROD) {
+      void fetch("/analytics/quiz-started", {
+        method: "POST",
+        keepalive: true,
+      }).catch(() => undefined);
+    }
   };
 
   const restartQuiz = () => {
@@ -1475,7 +1473,6 @@ export default function Quiz() {
     setRefinement(INITIAL_REFINEMENT);
     setStep(0);
     startTracked.current = false;
-    track("quiz_restarted", { questionnaireVersion: QUESTIONNAIRE_VERSION });
   };
 
   if (step === SUMMARY_STEP && resultData) {

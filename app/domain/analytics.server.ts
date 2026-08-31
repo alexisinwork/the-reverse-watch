@@ -1,5 +1,6 @@
 import { z } from "zod";
-import { track } from "@vercel/analytics/server";
+
+import { persistFunnelEvent } from "./funnel-store.server";
 
 const quizAnalyticsEventSchema = z
   .object({
@@ -34,15 +35,17 @@ export type QuizAnalyticsEvent = z.infer<typeof quizAnalyticsEventSchema>;
  * email addresses never enter this payload; only funnel dimensions and counts
  * needed for the Phase 7 evaluation are retained.
  */
-export async function recordQuizAnalyticsEvent(
-  event: QuizAnalyticsEvent,
-  request?: Request,
-) {
+export async function recordQuizAnalyticsEvent(event: QuizAnalyticsEvent) {
   const parsed = quizAnalyticsEventSchema.parse(event);
   console.info(JSON.stringify({ event: "quiz_funnel", ...parsed }));
-
-  if (!request) return;
-
-  const { name, ...properties } = parsed;
-  await track(`quiz_${name}`, properties, { request });
+  try {
+    await persistFunnelEvent(parsed);
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        event: "quiz_funnel_persistence_error",
+        message: error instanceof Error ? error.message : "unknown error",
+      }),
+    );
+  }
 }

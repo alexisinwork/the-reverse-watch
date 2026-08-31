@@ -120,14 +120,16 @@ phase.
 - Quiz actions now emit privacy-safe `quiz_funnel` runtime events containing
   only intent, catalogue origin, result counts, returned hard-filter
   violations, evaluation duration, deterministic provider cost, ranking-score
-  summaries, and subscription status. The same validated aggregate contract
-  feeds Vercel Web Analytics custom events; the first meaningful quiz advance
-  records `quiz_started`, and pageview URLs are stripped of query parameters
-  and fragments. The dashboard contract and denominator rules are in
-  `docs/phase-7-evaluation-dashboard.md`. No profile answers or addresses are
-  logged as custom properties, and conversion conclusions remain pending until
-  production traffic provides enough observations. The result UI also has a
-  true restart control that clears the stored draft.
+  summaries, and subscription status. Vercel custom events require a paid plan,
+  so the validated aggregates persist through narrow Supabase RPCs into an
+  RLS-enabled table with no browser table grants. `/evaluation` reads only a
+  bounded aggregate summary, while the first meaningful quiz advance records a
+  timestamp-only start. Pageview URLs are stripped of query parameters and
+  fragments. The dashboard contract and denominator rules are in
+  `docs/phase-7-evaluation-dashboard.md`. No profile answers, addresses, IPs,
+  or request identifiers are stored, and conversion conclusions remain pending
+  until production traffic provides enough observations. The result UI also
+  has a true restart control that clears the stored draft.
 - On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
   tests covering landing, health, error boundary, the six-screen quiz flow,
   optional refinement submission, and cited-result rendering. Chromium's

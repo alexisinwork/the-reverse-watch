@@ -1,12 +1,15 @@
 import { vi } from "vitest";
 
-const { track } = vi.hoisted(() => ({ track: vi.fn() }));
+const { persistFunnelEvent } = vi.hoisted(() => ({
+  persistFunnelEvent: vi.fn(),
+}));
 
-vi.mock("@vercel/analytics/server", () => ({ track }));
+vi.mock("./funnel-store.server", () => ({ persistFunnelEvent }));
 
 import { recordQuizAnalyticsEvent } from "./analytics.server";
 
 describe("quiz analytics contract", () => {
+  beforeEach(() => persistFunnelEvent.mockReset());
   it("emits only aggregate funnel fields", async () => {
     const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
 
@@ -70,35 +73,20 @@ describe("quiz analytics contract", () => {
     info.mockRestore();
   });
 
-  it("forwards only validated aggregates to the Vercel event dashboard", async () => {
+  it("forwards only validated aggregates to the durable event store", async () => {
     const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
-    const request = new Request("https://thereserve.watch/quiz", {
-      headers: { "user-agent": "test" },
-    });
 
-    await recordQuizAnalyticsEvent(
-      {
-        name: "evaluation",
-        intent: "refine",
-        catalogueOrigin: "supabase",
-        recommendationCount: 2,
-        hardFilterViolationCount: 0,
-        topRecommendationScore: 8.5,
-      },
-      request,
-    );
+    const event = {
+      name: "evaluation" as const,
+      intent: "refine" as const,
+      catalogueOrigin: "supabase" as const,
+      recommendationCount: 2,
+      hardFilterViolationCount: 0,
+      topRecommendationScore: 8.5,
+    };
+    await recordQuizAnalyticsEvent(event);
 
-    expect(track).toHaveBeenCalledWith(
-      "quiz_evaluation",
-      {
-        intent: "refine",
-        catalogueOrigin: "supabase",
-        recommendationCount: 2,
-        hardFilterViolationCount: 0,
-        topRecommendationScore: 8.5,
-      },
-      { request },
-    );
+    expect(persistFunnelEvent).toHaveBeenCalledWith(event);
     info.mockRestore();
   });
 });

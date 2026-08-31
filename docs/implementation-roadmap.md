@@ -1363,19 +1363,22 @@ only the traffic-derived quota remains open.
 Each accepted quiz action also emits a privacy-safe `quiz_funnel` runtime event
 with intent, catalogue origin, result counts, returned hard-filter violations,
 evaluation duration, deterministic provider cost, ranking-score summaries, and
-subscription status. The same validated aggregates now feed Vercel Web
-Analytics custom events, while the first meaningful forward action records a
-`quiz_started` event. Pageview analytics remove query parameters and fragments
-before collection. The resulting dashboard covers completion, refinement use,
-hard-filter validity, operational score distributions, latency, cost, and
-subscription outcomes; its event contract and denominator rules are recorded
-in `docs/phase-7-evaluation-dashboard.md`. No profile answers or email
-addresses enter custom properties. Traffic-derived conclusions remain pending
-until the deployment has enough observations.
+subscription status. Vercel custom-event access requires a paid plan, so the
+same validated aggregates now persist through narrow Supabase RPCs rather than
+introducing an unapproved upgrade. The RLS-enabled raw table has no browser
+table grants; `/evaluation` reads only a bounded aggregate summary. The first
+meaningful forward action records a timestamp-only start. Pageview analytics
+still remove query parameters and fragments before collection. The dashboard
+covers completion, refinement use, hard-filter validity, operational score
+distributions, latency, cost, and subscription outcomes; its event contract
+and denominator rules are recorded in
+`docs/phase-7-evaluation-dashboard.md`. No profile answers, email addresses,
+IP addresses, or request identifiers enter the store. Traffic-derived
+conclusions remain pending until the deployment has enough observations.
 
 The result screen now also exposes a true restart control. Restart clears the
-stored core and refinement draft, returns to the first screen, and records only
-the questionnaire version as a restart event.
+stored core and refinement draft and returns to the first screen; a new start
+is recorded only if the visitor advances again.
 
 Sentry error reporting now covers the React Router client, server render,
 loaders, actions, middleware, and the branded root boundary without enabling

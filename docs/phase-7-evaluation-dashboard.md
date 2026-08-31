@@ -1,33 +1,35 @@
 # Phase 7 evaluation dashboard
 
-Vercel Web Analytics is the production dashboard for the quiz funnel. It is
-fed by the privacy-redacted pageview component and by the following custom
-events. Query parameters and fragments are removed from pageview URLs before
-collection. Profile answers and email addresses are never custom-event
-properties.
+The production dashboard is available at `/evaluation`. Vercel Web Analytics
+continues to supply privacy-redacted pageviews, but its custom-event API is not
+available on this project's current plan. Durable funnel aggregates therefore
+use the existing Supabase project instead of requiring a paid upgrade.
+
+The raw `quiz_funnel_events` table has RLS enabled and no direct grants for
+browser roles. Narrow functions accept validated aggregate events and return a
+bounded trailing-window summary. Profile answers, email addresses, IP
+addresses, and request identifiers are never columns or function parameters.
 
 ## Event contract
 
-| Event | Emission point | Dashboard dimensions |
+| Event | Emission point | Stored dimensions |
 | --- | --- | --- |
-| `quiz_started` | First forward action in a diagnostic | `questionnaireVersion` |
-| `quiz_restarted` | Explicit restart control | `questionnaireVersion` |
-| `quiz_evaluation` | Server-accepted core or refinement result without an email request | `intent`, `catalogueOrigin`, recommendation/verification/why-not counts, hard-filter violation count, duration, provider cost, top score, and mean confirmed score |
-| `quiz_subscription` | Server-accepted email request | `intent`, `catalogueOrigin`, and `status` |
+| `start` | First forward action in a diagnostic | Timestamp only |
+| `evaluation` | Server-accepted core or refinement result without an email request | `intent`, `catalogueOrigin`, recommendation/verification/why-not counts, hard-filter violation count, duration, provider cost, top score, and mean confirmed score |
+| `subscription` | Server-accepted email request | `intent`, `catalogueOrigin`, and `status` |
 
-The server also retains the validated `quiz_evaluation` and
-`quiz_subscription` aggregates as `quiz_funnel` JSON runtime logs. Those logs
-are the fallback audit surface; the Web Analytics events are the durable
-dashboard surface.
+The server also retains evaluation and subscription aggregates as
+`quiz_funnel` JSON runtime logs. Those logs are the fallback audit surface;
+Supabase is the durable dashboard surface.
 
 ## Dashboard panels and calculations
 
-- Completion: count `quiz_evaluation` where `intent = core`, divided by
-  `quiz_started`. Do not publish the rate until both counts cover the same
+- Completion: count `evaluation` where `intent = core`, divided by `start`. Do
+  not publish the rate until both counts cover the same
   reporting window and the denominator is large enough to be useful.
-- Refinement use: count `quiz_evaluation` where `intent = refine`, divided by
+- Refinement use: count `evaluation` where `intent = refine`, divided by
   core evaluations in the same window.
-- Hard-filter validity: filter `quiz_evaluation` by
+- Hard-filter validity: filter `evaluation` by
   `hardFilterViolationCount`. The launch invariant is zero for every returned
   confirmed recommendation.
 - Ranking operations: inspect `topRecommendationScore`,
@@ -38,7 +40,7 @@ dashboard surface.
   truth before a precision claim is possible.
 - Latency and cost: aggregate `evaluationDurationMs` and `providerCostUsd` by
   intent and catalogue origin.
-- Subscription conversion: count `quiz_subscription` by `status`; compare
+- Subscription conversion: count `subscription` by `status`; compare
   requests and successful outcomes (`sent`, `partial`, or
   `already_requested`) with core evaluations over the same window.
 
