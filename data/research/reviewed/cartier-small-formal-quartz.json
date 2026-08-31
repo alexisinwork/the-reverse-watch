@@ -28,6 +28,11 @@
       "note": "The independently retrievable exact official page validates WSTA0107, its small steel case and interchangeable steel bracelet, 29.5 x 22 x 6.6 mm rectangular geometry, High Autonomy quartz movement, 30 m rating, and hours/minutes-only functions. Its MYR 15,800 offer is not used because MYR is outside the supported launch currencies."
     },
     {
+      "url": "https://www.cartier.com/es-es/watches/collections/tank/reloj-tank-must-de-cartier-CRWSTA0107",
+      "status": "validated_primary",
+      "note": "Cartier's exact Spain regional page independently corroborates WSTA0107, the small High Autonomy quartz steel-bracelet configuration, 29.5 x 22 x 6.6 mm dimensions, 3 bar rating, and hours/minutes function. It provides no numerical rate tolerance or defined accuracy period. Retrieved 2026-08-31 after the next-candidate source-led pre-screen."
+    },
+    {
       "url": "https://www.cartier.com/fr-fr/watches/collections/tank/montre-tank-must-de-cartier-CRWSTA0107",
       "status": "fetch_blocked",
       "note": "Retrieved 2026-08-30 through a narrow Perplexity source-discovery pass as an exact regional product route that identifies the High Autonomy quartz configuration and calibre 157. Independent retrieval remained blocked, and the discovered page supplies no numerical accuracy tolerance or period, so it is not used to close the gap."
@@ -199,5 +204,5 @@
     }
   ],
   "missingM1Fields": ["accuracy"],
-  "note": "Keep as research-only. The additive non-round geometry contract now preserves Cartier's exact 29.5 x 22 mm dimensions without inventing a diameter and uses the evidenced overall length as wearing span. Exact current price, 16 mm width, approximately 79.3 g maximum-bracelet weight, QuickSwitch attachment, and the absence of lume are independently reviewed. A 2026-08-30 Perplexity-assisted pass surfaced a blocked exact regional route reported to name calibre 157 and independently validated Cartier's high-efficiency-quartz overview, but the available material describes identity and approximately eight years of autonomy rather than a numerical rate bound and period. Generic quartz or third-party calibre assumptions remain rejected, leaving accuracy as the sole M1 gap."
+  "note": "Keep as research-only. The additive non-round geometry contract now preserves Cartier's exact 29.5 x 22 mm dimensions without inventing a diameter and uses the evidenced overall length as wearing span. Exact current price, 16 mm width, approximately 79.3 g maximum-bracelet weight, QuickSwitch attachment, and the absence of lume are independently reviewed. A 2026-08-31 official Spain-region recheck independently corroborates the exact High Autonomy quartz configuration and dimensions but, like the accessible Malaysia page and Cartier's movement overview, publishes no numerical rate bound or defined accuracy period. Generic quartz or third-party calibre assumptions remain rejected, leaving accuracy as the sole M1 gap."
 }

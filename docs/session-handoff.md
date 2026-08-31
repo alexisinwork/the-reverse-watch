@@ -195,13 +195,14 @@ phase.
   Vostok Amphibia Classic `420059` is now accepted in migration `0031` after
   exact-owner and Vostok-World24 partner spare-part evidence closes its sole
   attachment gap as `spring_bar`; the row opens eight cells and raises
-  coverage to 1,084/28,800 (3.76%). The next source-led pre-screen remains the
-  exact Rado HyperChrome Quartz `R32280109`, selected for its projected 72 empty
-  `1000_2000`, zero-maintenance, simple-date cells. Current Rado evidence is
-  complete except for lug-to-lug, lug width, case attachment, and a controlled
-  lume grade; its official manual lookup exposes no exact strap-service record.
-  No provider request is queued until those four M1 gaps have an exact-source
-  path.
+  coverage to 1,084/28,800 (3.76%). The Rado HyperChrome Quartz `R32280109`
+  pre-screen is retained as a negative result: its projected 72 cells remain
+  blocked by four gaps without an exact service or controlled-lume path. The
+  next ranked hypothesis is Cartier Tank Must Small `WSTA0107`, with eight
+  projected formal, small-wrist, high-price time-only cells. Cartier's exact
+  Spain-region page now corroborates the configuration and dimensions but adds
+  no numerical rate tolerance or defined period, so the candidate remains
+  research-only and no provider request is queued.
 
 ## Accepted 2026-08-28 audit decisions
 

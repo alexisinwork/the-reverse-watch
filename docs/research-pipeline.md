@@ -1306,6 +1306,19 @@ single-candidate cells and 224 under-evidenced cells. No provider request was
 made. The next source-led selection should target the highest-impact remaining
 review gap only after an exact or directly applicable M1 path is identified.
 
+The next ranked hypothesis is Cartier Tank Must Small `WSTA0107`: eight
+projected `2000_5000`/`5000_10000`, `under_5_75`/`5_75_6_25`,
+`formal_architectural`, `zero_maintenance`, `seconds_per_month`,
+`under_80_g`/`under_120_g`, `time_only_no_date` cells remain empty and
+under-evidenced. A 2026-08-31 official Spain-region [exact page](https://www.cartier.com/es-es/watches/collections/tank/reloj-tank-must-de-cartier-CRWSTA0107)
+was reachable and independently corroborates the small High Autonomy quartz
+steel-bracelet configuration, 29.5 x 22 x 6.6 mm dimensions, 3 bar rating, and
+hours/minutes function. It adds no numerical rate tolerance or defined period;
+Cartier's accessible exact-region pages and movement overview remain
+insufficient for the accuracy contract. The candidate stays research-only and
+no provider request is queued. The next selection must continue to require an
+exact or directly applicable path for every projected M1 gap.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
