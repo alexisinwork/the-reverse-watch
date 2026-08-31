@@ -16,7 +16,7 @@ phase.
 - Phases 0–5 are complete at their current owner-approved boundaries; Phase 6
   is closed after its pilot, and Phase 7 is complete at its owner-approved
   production boundary.
-- Phase 8 packets 8.1 and 8.2 are complete without catalogue population.
+- Phase 8 packets 8.1 through 8.4 are complete without catalogue population.
   Migrations `0034_add_discovery_claims.sql` and
   `0035_harden_discovery_trigger_grants.sql` are live, adding seven empty,
   RLS-enabled discovery evidence tables with no browser table, sequence, or
@@ -37,8 +37,13 @@ phase.
   attribution routes backed by a narrow public read model. Pages expose public
   confidence/precision, citations, editorial notes, correction state, and the
   `/quiz` handoff without raw discovery-table access. The authenticated but
-  unidentified Community prop remains visibly unconfirmed. Packet 8.4's light
-  archetype quiz and sharing are next.
+  unidentified Community prop remains visibly unconfirmed.
+- Packet 8.4 publishes a four-question editorial archetype at
+  `/watches/archetype`, with deterministic scoring, a CSS-only share card,
+  reproducible result URLs, invalid-input rejection, and no email collection.
+  Its core-quiz handoff carries only validated social and aesthetic values;
+  exact budget, wrist, operating context, and technical constraints remain
+  required. Packet 8.5 funnel evaluation and editorial operations are next.
 - Phase 5 engineering is complete. On 2026-08-31 the owner moved all further
   brand/model selection, research, verification, and catalogue population into
   an owner-managed workstream. The reusable pipeline remains strict: 204/204

@@ -1493,7 +1493,7 @@ production surfaces.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
-Status: **in progress — packets 8.1–8.3 complete; packet 8.4 next**
+Status: **in progress — packets 8.1–8.4 complete; packet 8.5 next**
 
 Goal: use sourced public-figure and screen-watch research plus a lightweight
 archetype quiz as a discovery funnel into the existing deterministic diagnostic.
@@ -1550,6 +1550,15 @@ Mad Men claims separate while presenting them under one work. The deliberately
 unidentified Community prop renders as unconfirmed with no guessed brand or
 model. Route and browser tests cover the index, citation detail, 404 handling,
 uncertainty, diagnostic handoff, and accessibility.
+
+Packet 8.4 adds `/watches/archetype`, a deterministic four-question editorial
+quiz with four dispositions and a first-party CSS share card. Complete answers
+produce a reproducible share URL; incomplete, forged, or out-of-vocabulary
+values fail closed. The `/quiz` handoff accepts only validated social-signal
+and aesthetic values. Directional price comfort and operating context are not
+promoted into hard constraints, so the diagnostic still requires exact budget,
+wrist, operating, and technical answers. The archetype requires no email, and
+newsletter/dossier consent remains separate.
 
 ## Environment-variable ownership
 

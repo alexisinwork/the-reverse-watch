@@ -1,10 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { data, Form, Link, useActionData, useNavigation } from "react-router";
+import {
+  data,
+  Form,
+  Link,
+  useActionData,
+  useLocation,
+  useNavigation,
+} from "react-router";
 import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { loadRecommendationData } from "../domain/catalogue.server";
+import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
 import {
   createEmailDeliveryDeduplicationClient,
   emailDeliveryDeduplicationKey,
@@ -1494,6 +1502,7 @@ function RecommendationSummary({
 
 export default function Quiz() {
   const actionData = useActionData<typeof action>();
+  const location = useLocation();
   const navigation = useNavigation();
   const [core, setCore] = useState<CoreDraft>(INITIAL_CORE);
   const [refinement, setRefinement] =
@@ -1504,12 +1513,21 @@ export default function Quiz() {
 
   useEffect(() => {
     const saved = readSavedDraft();
+    const archetypeHandoff = parseCoreQuizHandoff(
+      new URLSearchParams(location.search),
+    );
     const timer = window.setTimeout(() => {
       if (saved?.core) setCore(hydrateCoreDraft(saved.core));
-      if (saved?.refinement && isRecord(saved.refinement)) {
+      if (
+        (saved?.refinement && isRecord(saved.refinement)) ||
+        archetypeHandoff
+      ) {
         setRefinement({
           ...INITIAL_REFINEMENT,
-          ...(saved.refinement as Partial<RefinementDraft>),
+          ...(saved?.refinement && isRecord(saved.refinement)
+            ? (saved.refinement as Partial<RefinementDraft>)
+            : {}),
+          ...(archetypeHandoff ?? {}),
         });
       }
       if (
@@ -1523,7 +1541,7 @@ export default function Quiz() {
     }, 0);
 
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [location.search]);
 
   useEffect(() => {
     if (!storageReady) return;

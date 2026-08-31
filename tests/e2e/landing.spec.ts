@@ -81,6 +81,38 @@ test("browses sourced watch discovery without hiding uncertainty", async ({
   expect(accessibility.violations).toEqual([]);
 });
 
+test("creates a shareable archetype without bypassing hard constraints", async ({
+  page,
+}) => {
+  await page.goto("/watches/archetype");
+  await page
+    .getByLabel("Utility, with little interest in luxury codes")
+    .check();
+  await page.getByLabel("Visible purpose and protection").check();
+  await page.getByLabel("Field, water, travel, or hard use").check();
+  await page.getByLabel("A considered first serious watch").check();
+  await page
+    .getByRole("button", { name: "Reveal editorial archetype" })
+    .click();
+
+  await expect(
+    page.getByRole("heading", { level: 1, name: "The Field Rationalist" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Share this result" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Continue to the reference diagnostic" }),
+  ).toHaveAttribute(
+    "href",
+    "/quiz?source=archetype&socialSignal=anti_luxury&aestheticDna=structural_tool",
+  );
+  await expect(page.getByText(/No email is required/)).toBeVisible();
+
+  const accessibility = await new AxeBuilder({ page }).analyze();
+  expect(accessibility.violations).toEqual([]);
+});
+
 test("uses the branded error boundary for unknown routes", async ({ page }) => {
   const response = await page.goto("/not-in-the-archive");
 

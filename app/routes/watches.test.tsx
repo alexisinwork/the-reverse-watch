@@ -21,6 +21,9 @@ describe("discovery explorer pages", () => {
     expect(
       screen.getByRole("link", { name: "Start the reference diagnostic" }),
     ).toHaveAttribute("href", "/quiz");
+    expect(
+      screen.getByRole("link", { name: "Take the archetype quiz" }),
+    ).toHaveAttribute("href", "/watches/archetype");
   });
 
   it("renders citations, uncertainty, and correction state", async () => {

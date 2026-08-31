@@ -36,6 +36,18 @@ export default function WatchesIndex() {
           retail watch is not silently substituted for a custom prop.
         </p>
       </header>
+      <aside
+        className="archetype-invitation"
+        aria-labelledby="archetype-heading"
+      >
+        <span className="eyebrow">Four-question diversion</span>
+        <h2 id="archetype-heading">Find your watch disposition</h2>
+        <p>
+          A shareable editorial archetype, followed by the full evidence-led
+          diagnostic when you want a real shortlist.
+        </p>
+        <Link to="/watches/archetype">Take the archetype quiz</Link>
+      </aside>
       <DiscoveryStoryList stories={stories} />
       <aside className="discovery-cta" aria-labelledby="discovery-cta-heading">
         <h2 id="discovery-cta-heading">Find the right equivalent for you</h2>

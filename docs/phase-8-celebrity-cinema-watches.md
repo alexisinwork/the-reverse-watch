@@ -1,6 +1,6 @@
 # Phase 8 — Celebrity & Cinema Watch Discovery
 
-Status: **in progress — packets 8.1–8.3 complete; packet 8.4 next**
+Status: **in progress — packets 8.1–8.4 complete; packet 8.5 next**
 
 ## Purpose
 
@@ -126,6 +126,14 @@ editorial table or browser database grant is exposed.
 
 Exit: shared result, core-quiz handoff, consent boundaries, and invalid-input
 handling are tested.
+
+Completed 2026-08-31. `/watches/archetype` asks four editorial questions and
+returns one of four deterministic dispositions with a CSS-only, first-party
+share card and reproducible URL. Invalid or incomplete shared inputs fail
+closed. The handoff carries only schema-valid social-signal and aesthetic
+preferences; indicative price and operating context never bypass the full
+diagnostic's exact budget, wrist, or hard-constraint questions. Results require
+no contact detail, and later newsletter/dossier consent remains separate.
 
 ### 8.5 — Funnel evaluation and editorial operations
 

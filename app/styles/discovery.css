@@ -82,6 +82,29 @@
   font-size: 0.8rem;
   line-height: 1.4;
 }
+.archetype-invitation {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  border: 1px solid var(--color-brass);
+  margin-bottom: 2rem;
+  background:
+    linear-gradient(120deg, rgb(184 137 75 / 12%), transparent 55%),
+    var(--color-base-raised);
+}
+.archetype-invitation h2 {
+  margin: 0.65rem 0;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+.archetype-invitation p {
+  max-width: 42rem;
+  color: #b9c0c6;
+  line-height: 1.6;
+}
+.archetype-invitation a,
+.archetype-retake {
+  color: var(--color-brass);
+  font-weight: 750;
+  text-underline-offset: 0.25rem;
+}
 .confidence {
   display: inline-block;
   color: #d3d9de;
@@ -159,6 +182,162 @@
 }
 .correction-panel p {
   margin-bottom: 0;
+}
+.archetype-shell {
+  max-width: 64rem;
+}
+.archetype-form {
+  display: grid;
+  gap: 1rem;
+}
+.archetype-form fieldset {
+  padding: clamp(1rem, 3vw, 1.75rem);
+  border: 1px solid var(--color-line);
+  margin: 0;
+  background: var(--color-base-raised);
+}
+.archetype-form legend {
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 750;
+}
+.archetype-form legend span {
+  margin-right: 0.75rem;
+  color: var(--color-brass);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+}
+.archetype-form fieldset > p {
+  color: #aeb6bd;
+  font-size: 0.8rem;
+}
+.archetype-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0.65rem;
+}
+.archetype-options label {
+  position: relative;
+  cursor: pointer;
+}
+.archetype-options input {
+  position: absolute;
+  inset: 1rem auto auto 1rem;
+}
+.archetype-options label span {
+  display: block;
+  min-height: 100%;
+  padding: 1rem 1rem 1rem 2.5rem;
+  border: 1px solid #42494f;
+  color: #d3d9de;
+  line-height: 1.45;
+}
+.archetype-options input:checked + span {
+  border-color: var(--color-brass);
+  background: rgb(184 137 75 / 10%);
+}
+.archetype-options input:focus-visible + span {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+.archetype-form > button,
+.archetype-share button {
+  width: fit-content;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-brass);
+  background: var(--color-brass);
+  color: #151719;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+}
+.archetype-boundary {
+  max-width: 44rem;
+  color: #959da4;
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+.archetype-error {
+  padding: 1rem;
+  border-left: 3px solid #ffb4ab;
+  background: rgb(255 180 171 / 8%);
+  color: #ffcbc5;
+}
+.archetype-result-header {
+  padding-bottom: 1.5rem;
+}
+.archetype-card {
+  position: relative;
+  display: grid;
+  min-height: 25rem;
+  padding: clamp(1.5rem, 6vw, 4rem);
+  border: 1px solid #806b4a;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 85% 12%, rgb(206 167 108 / 20%), transparent 28%),
+    linear-gradient(145deg, #202529, #0e1113 68%);
+  box-shadow: inset 0 0 0 0.5rem #111416;
+  align-content: end;
+}
+.archetype-card > span,
+.archetype-card small {
+  color: #b9a581;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.archetype-card h2 {
+  max-width: 34rem;
+  margin: 0.7rem 0;
+  font-size: clamp(2.2rem, 8vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+.archetype-card p {
+  max-width: 32rem;
+  color: #d0d5d8;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+.archetype-mark {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  display: grid;
+  width: 6rem;
+  height: 6rem;
+  border: 1px solid #78684f;
+  border-radius: 50%;
+  place-content: center;
+  transform: rotate(-18deg);
+}
+.archetype-mark span {
+  width: 2.8rem;
+  height: 1px;
+  margin: 0.25rem;
+  background: #b99862;
+}
+.archetype-card-field_rationalist {
+  border-color: #667c61;
+}
+.archetype-card-expressive_collector {
+  border-color: #8c5149;
+}
+.archetype-card-architectural_modernist {
+  border-color: #92784f;
+}
+.archetype-reading {
+  max-width: 46rem;
+  margin: 1.5rem 0;
+  color: #bdc4c9;
+  line-height: 1.65;
+}
+.archetype-share {
+  min-height: 4.5rem;
+}
+.archetype-share p {
+  color: #aeb6bd;
+  font-size: 0.8rem;
 }
 @media (max-width: 35rem) {
   .discovery-nav {

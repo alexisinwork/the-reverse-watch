@@ -207,6 +207,36 @@ describe("progressive diagnostic", () => {
     vi.unstubAllGlobals();
   });
 
+  it("carries only valid soft archetype preferences into the diagnostic", async () => {
+    const Stub = createRoutesStub([
+      { path: "/quiz", Component: Quiz, action },
+      { path: "/", Component: () => <p>Home</p> },
+    ]);
+
+    render(
+      <Stub
+        initialEntries={[
+          "/quiz?source=archetype&socialSignal=anti_luxury&aestheticDna=structural_tool",
+        ]}
+      />,
+    );
+
+    await waitFor(() => {
+      const raw = window.sessionStorage.getItem(QUESTIONNAIRE_STORAGE_KEY);
+      expect(raw).not.toBeNull();
+      const saved = JSON.parse(raw ?? "{}") as {
+        core: { budgetMax: string; deploymentEnvironment: string };
+        refinement: Record<string, unknown>;
+      };
+      expect(saved.refinement).toMatchObject({
+        socialSignal: "anti_luxury",
+        aestheticDna: "structural_tool",
+      });
+      expect(saved.core.budgetMax).toBe("");
+      expect(saved.core.deploymentEnvironment).toBe("");
+    });
+  });
+
   it("continues from essential fit into all 21 personal preferences", async () => {
     const user = userEvent.setup();
     const Stub = createRoutesStub([
