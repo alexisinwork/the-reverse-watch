@@ -34,6 +34,10 @@ describe("source-backed dossier renderer", () => {
     expect(first.text).toContain(
       "No reviewed historical narrative is attached",
     );
+    expect(first.text).toContain("The Watch");
+    expect(first.text).toContain("The Mechanism");
+    expect(first.text).toContain("The Historical Reality");
+    expect(first.text).toContain("The Psychological Fit");
     expect(first.text).toContain("Grand Seiko");
     expect(first.text).toContain("https://");
     expect(first.html).toContain("<a href=");

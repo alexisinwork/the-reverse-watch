@@ -123,17 +123,22 @@ function candidateText(
   );
   return [
     `${status === "confirmed" ? "Confirmed fit" : status === "verification" ? "Verify before buying" : "Why it was not selected"}: ${candidateTitle(candidate)}`,
+    "The Watch",
     `Reference: ${candidate.referenceCode}`,
     `Price snapshot: ${price(candidate)} (${candidate.price.marketCountry}; observed source currency ${candidate.price.sourceCurrency}; FX observed ${candidate.price.fxObservedAt}).`,
     `Geometry: ${geometry(candidate)}`,
+    `Product page: ${candidate.productUrl}`,
+    "The Mechanism",
     `Movement: ${movement(candidate)}`,
     `Functions: ${candidate.complications.length > 0 ? candidate.complications.map(label).join(", ") : "none listed"}; date ${candidate.dateStatus}.`,
-    `Score: ${candidate.score}.`,
+    "The Historical Reality",
+    "No reviewed historical narrative is attached to this exact reference variant; no brand history or provenance claim is inferred here.",
+    "The Psychological Fit",
+    `Primary catalogue archetype: ${candidate.primaryArchetype}. Deterministic score: ${candidate.score}.`,
     ...(trace.length > 0 ? ["Score factors:", ...trace] : []),
     ...(reasons.length > 0
       ? ["Verification or rejection reasons:", ...reasons]
       : []),
-    `Product page: ${candidate.productUrl}`,
     ...(sources.length > 0
       ? ["Reviewed sources:", ...sources]
       : ["Reviewed sources: no source IDs attached."]),
@@ -157,7 +162,7 @@ function candidateHtml(
     (source) =>
       `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.title)}</a> (${escapeHtml(source.publisher)})</li>`,
   );
-  return `<article><h3>${escapeHtml(status === "confirmed" ? "Confirmed fit" : status === "verification" ? "Verify before buying" : "Why it was not selected")}: ${escapeHtml(candidateTitle(candidate))}</h3><p><strong>Reference:</strong> ${escapeHtml(candidate.referenceCode)}<br><strong>Price snapshot:</strong> ${escapeHtml(price(candidate))} (${escapeHtml(candidate.price.marketCountry)}; source currency ${escapeHtml(candidate.price.sourceCurrency)}; FX observed ${escapeHtml(candidate.price.fxObservedAt)})<br><strong>Geometry:</strong> ${escapeHtml(geometry(candidate))}<br><strong>Movement:</strong> ${escapeHtml(movement(candidate))}<br><strong>Functions:</strong> ${escapeHtml(candidate.complications.length > 0 ? candidate.complications.map(label).join(", ") : "none listed")}; date ${escapeHtml(candidate.dateStatus)}<br><strong>Score:</strong> ${candidate.score}</p>${trace.length > 0 ? `<p><strong>Score factors</strong></p><ul>${trace.join("")}</ul>` : ""}${reasons.length > 0 ? `<p><strong>Verification or rejection reasons</strong></p><ul>${reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`).join("")}</ul>` : ""}<p><a href="${escapeHtml(candidate.productUrl)}">Open the reviewed product page</a></p><p><strong>Reviewed sources</strong></p>${sources.length > 0 ? `<ul>${sources.join("")}</ul>` : "<p>No source IDs were attached to this candidate.</p>"}</article>`;
+  return `<article><h3>${escapeHtml(status === "confirmed" ? "Confirmed fit" : status === "verification" ? "Verify before buying" : "Why it was not selected")}: ${escapeHtml(candidateTitle(candidate))}</h3><h4>The Watch</h4><p><strong>Reference:</strong> ${escapeHtml(candidate.referenceCode)}<br><strong>Price snapshot:</strong> ${escapeHtml(price(candidate))} (${escapeHtml(candidate.price.marketCountry)}; source currency ${escapeHtml(candidate.price.sourceCurrency)}; FX observed ${escapeHtml(candidate.price.fxObservedAt)})<br><strong>Geometry:</strong> ${escapeHtml(geometry(candidate))}<br><a href="${escapeHtml(candidate.productUrl)}">Open the reviewed product page</a></p><h4>The Mechanism</h4><p><strong>Movement:</strong> ${escapeHtml(movement(candidate))}<br><strong>Functions:</strong> ${escapeHtml(candidate.complications.length > 0 ? candidate.complications.map(label).join(", ") : "none listed")}; date ${escapeHtml(candidate.dateStatus)}</p><h4>The Historical Reality</h4><p>No reviewed historical narrative is attached to this exact reference variant; no brand history or provenance claim is inferred here.</p><h4>The Psychological Fit</h4><p><strong>Primary catalogue archetype:</strong> ${escapeHtml(candidate.primaryArchetype)}<br><strong>Deterministic score:</strong> ${candidate.score}</p>${trace.length > 0 ? `<p><strong>Score factors</strong></p><ul>${trace.join("")}</ul>` : ""}${reasons.length > 0 ? `<p><strong>Verification or rejection reasons</strong></p><ul>${reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`).join("")}</ul>` : ""}<p><strong>Reviewed sources</strong></p>${sources.length > 0 ? `<ul>${sources.join("")}</ul>` : "<p>No source IDs were attached to this candidate.</p>"}</article>`;
 }
 
 function profileLines(profile: NormalizedProfile) {
