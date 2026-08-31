@@ -219,7 +219,9 @@ describe("progressive diagnostic", () => {
     await user.type(screen.getByLabelText("Maximum amount"), "10000");
     await user.click(screen.getByRole("button", { name: "Next" }));
 
-    await user.type(screen.getByLabelText("Wrist circumference (mm)"), "170");
+    expect(screen.getByLabelText("Unit")).toHaveValue("mm");
+    await user.selectOptions(screen.getByLabelText("Unit"), "in");
+    await user.type(screen.getByLabelText("Wrist circumference (in)"), "6.7");
     await user.click(screen.getByRole("button", { name: "Next" }));
 
     await user.click(screen.getByLabelText("Studio, desk, or daily wear"));
@@ -242,6 +244,7 @@ describe("progressive diagnostic", () => {
       ).toBeInTheDocument();
     });
     expect(screen.getByText("USD 10,000")).toBeInTheDocument();
+    expect(screen.getByText(/170\.18 mm · 6\.7 in/)).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: "Refine the ranking profile" }),
     ).toBeInTheDocument();
@@ -325,6 +328,7 @@ describe("progressive diagnostic", () => {
     expect(
       await screen.findByRole("heading", { name: "Measure your wrist" }),
     ).toBeInTheDocument();
+    expect(screen.getByLabelText("Unit")).toHaveValue("mm");
     expect(screen.getByLabelText("Wrist circumference (mm)")).toHaveValue(168);
   });
 });

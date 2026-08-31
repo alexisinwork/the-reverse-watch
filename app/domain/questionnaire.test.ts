@@ -8,6 +8,7 @@ import {
   QUESTIONNAIRE_VERSION,
   questionnaireProfileSchema,
   refinementSchema,
+  wristCircumferenceToMm,
 } from "./questionnaire";
 
 const VALID_CORE = {
@@ -41,6 +42,13 @@ describe("questionnaire domain contract", () => {
     expect(deriveWristBand(6.25 * 25.4)).toBe("6_25_6_75");
     expect(deriveWristBand(6.75 * 25.4)).toBe("6_75_7_5");
     expect(deriveWristBand(7.5 * 25.4)).toBe("7_5_plus");
+  });
+
+  it("normalizes selectable wrist units to canonical millimetres", () => {
+    expect(wristCircumferenceToMm(170, "mm")).toBe(170);
+    expect(wristCircumferenceToMm(6, "in")).toBe(152.4);
+    expect(wristCircumferenceToMm(6.7, "in")).toBe(170.18);
+    expect(() => wristCircumferenceToMm(Number.NaN, "in")).toThrow(RangeError);
   });
 
   it("validates a complete core profile and rejects forged duplicate values", () => {

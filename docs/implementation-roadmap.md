@@ -108,6 +108,7 @@ Verification:
 
 Evidence: `/quiz` implements the six required screens and four optional refine
 groups; server and browser use the same Zod/domain contract; session recovery,
+the wrist screen's millimetre/inch selector and canonical millimetre conversion,
 boundary rules, premium/speculative rules, and the complete core flow are
 covered by the fast gate (13 tests at the phase checkpoint).
 

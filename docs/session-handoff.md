@@ -38,6 +38,10 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
+- The wrist screen now accepts millimetres or inches from an explicit unit
+  selector. Drafts retain the display unit, legacy millimetre-only session
+  drafts still recover, and submitted profiles remain canonical numeric
+  millimetres; the result summary shows both units.
 - Migrations `0001` through `0032` are applied to the connected Supabase
   project. The live v3 catalogue contains all 24 brands and 28 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
@@ -430,7 +434,8 @@ phase.
 - `app/domain/questionnaire.ts` contains the shared price/wrist bands, all core
   and refinement enums, Zod schemas, premium calculation, normalization, and
   speculative-candidate gate.
-- `/quiz` collects exact budget and wrist values, deployment,
+- `/quiz` collects exact budget and wrist values, with a millimetre/inch wrist
+  selector normalized to canonical millimetres, plus deployment,
   service/accuracy, weight, complications/date, then optional identity, fit,
   market, operation, geography, condition, cosmetic, and allergy preferences.
 - Core and refine submissions are validated on the server. The result is built

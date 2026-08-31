@@ -29,6 +29,7 @@ import {
   LUG_CURVATURES,
   LUME_PREFERENCES,
   MARKET_STANCES,
+  MILLIMETRES_PER_INCH,
   normalizeProfile,
   OWNERSHIP_FRICTION_LEVELS,
   PRICE_BANDS,
@@ -42,8 +43,14 @@ import {
   coreProfileSchema,
   WEIGHT_LIMITS,
   WRIST_BANDS,
+  WRIST_UNITS,
+  wristCircumferenceToMm,
 } from "../domain/questionnaire";
-import type { CoreProfile, RefinementProfile } from "../domain/questionnaire";
+import type {
+  CoreProfile,
+  RefinementProfile,
+  WristUnit,
+} from "../domain/questionnaire";
 import type {
   EvaluatedCandidate,
   RecommendationResult,
@@ -124,7 +131,8 @@ const emailSchema = z.string().trim().email().max(320);
 type CoreDraft = {
   budgetCurrency: CoreProfile["budgetCurrency"];
   budgetMax: string;
-  wristCircumferenceMm: string;
+  wristCircumference: string;
+  wristUnit: WristUnit;
   deploymentEnvironment: CoreProfile["deploymentEnvironment"] | "";
   ownershipFriction: CoreProfile["ownershipFriction"] | "";
   accuracyTolerance: CoreProfile["accuracyTolerance"] | "";
@@ -189,7 +197,8 @@ type SavedDraft = {
 const INITIAL_CORE: CoreDraft = {
   budgetCurrency: "USD",
   budgetMax: "",
-  wristCircumferenceMm: "",
+  wristCircumference: "",
+  wristUnit: "mm",
   deploymentEnvironment: "",
   ownershipFriction: "",
   accuracyTolerance: "",
@@ -304,11 +313,22 @@ function labelFor(value: string) {
   return LABELS[value] ?? value.replaceAll("_", " ");
 }
 
+function formatWristMeasurement(value: number) {
+  return String(Number(value.toFixed(2)));
+}
+
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function readSavedDraft(): Partial<SavedDraft> | null {
+type SavedDraftInput = {
+  version: typeof QUESTIONNAIRE_VERSION;
+  core?: unknown;
+  refinement?: unknown;
+  step?: unknown;
+};
+
+function readSavedDraft(): SavedDraftInput | null {
   try {
     const raw = window.sessionStorage.getItem(QUESTIONNAIRE_STORAGE_KEY);
     if (!raw) return null;
@@ -316,10 +336,57 @@ function readSavedDraft(): Partial<SavedDraft> | null {
     if (!isRecord(parsed) || parsed.version !== QUESTIONNAIRE_VERSION) {
       return null;
     }
-    return parsed;
+    return {
+      version: QUESTIONNAIRE_VERSION,
+      core: parsed.core,
+      refinement: parsed.refinement,
+      step: parsed.step,
+    };
   } catch {
     return null;
   }
+}
+
+function hydrateCoreDraft(value: unknown): CoreDraft {
+  if (!isRecord(value)) return INITIAL_CORE;
+
+  const saved = value as Partial<CoreDraft> & {
+    wristCircumferenceMm?: unknown;
+  };
+  const wristUnit = WRIST_UNITS.includes(saved.wristUnit as WristUnit)
+    ? (saved.wristUnit as WristUnit)
+    : "mm";
+  const wristCircumference =
+    typeof saved.wristCircumference === "string"
+      ? saved.wristCircumference
+      : typeof saved.wristCircumferenceMm === "string"
+        ? saved.wristCircumferenceMm
+        : "";
+  delete saved.wristCircumferenceMm;
+
+  return {
+    ...INITIAL_CORE,
+    ...saved,
+    wristCircumference,
+    wristUnit,
+  };
+}
+
+function wristDraftToMm(draft: CoreDraft) {
+  if (draft.wristCircumference.trim() === "") return Number.NaN;
+  const circumference = Number(draft.wristCircumference);
+  if (!Number.isFinite(circumference)) return Number.NaN;
+  return wristCircumferenceToMm(circumference, draft.wristUnit);
+}
+
+function convertWristDraftUnit(value: string, from: WristUnit, to: WristUnit) {
+  if (value.trim() === "" || from === to) return value;
+  const circumference = Number(value);
+  if (!Number.isFinite(circumference)) return "";
+  const millimetres = wristCircumferenceToMm(circumference, from);
+  const converted =
+    to === "mm" ? millimetres : millimetres / MILLIMETRES_PER_INCH;
+  return String(Number(converted.toFixed(to === "mm" ? 2 : 4)));
 }
 
 function buildCoreDraft(draft: CoreDraft): unknown {
@@ -327,7 +394,7 @@ function buildCoreDraft(draft: CoreDraft): unknown {
     version: QUESTIONNAIRE_VERSION,
     budgetCurrency: draft.budgetCurrency,
     budgetMax: Number(draft.budgetMax),
-    wristCircumferenceMm: Number(draft.wristCircumferenceMm),
+    wristCircumferenceMm: wristDraftToMm(draft),
     deploymentEnvironment: draft.deploymentEnvironment,
     ownershipFriction: draft.ownershipFriction,
     accuracyTolerance: draft.accuracyTolerance,
@@ -944,8 +1011,11 @@ function ProfileSummary({
         <div>
           <dt>Wrist</dt>
           <dd>
-            {profile.core.wristCircumferenceMm} mm ·{" "}
-            {labelFor(profile.derived.wristBand)}
+            {formatWristMeasurement(profile.core.wristCircumferenceMm)} mm ·{" "}
+            {formatWristMeasurement(
+              profile.core.wristCircumferenceMm / MILLIMETRES_PER_INCH,
+            )}{" "}
+            in · {labelFor(profile.derived.wristBand)}
           </dd>
         </div>
         <div>
@@ -1355,9 +1425,12 @@ export default function Quiz() {
   useEffect(() => {
     const saved = readSavedDraft();
     const timer = window.setTimeout(() => {
-      if (saved?.core) setCore({ ...INITIAL_CORE, ...saved.core });
-      if (saved?.refinement) {
-        setRefinement({ ...INITIAL_REFINEMENT, ...saved.refinement });
+      if (saved?.core) setCore(hydrateCoreDraft(saved.core));
+      if (saved?.refinement && isRecord(saved.refinement)) {
+        setRefinement({
+          ...INITIAL_REFINEMENT,
+          ...(saved.refinement as Partial<RefinementDraft>),
+        });
       }
       if (
         typeof saved?.step === "number" &&
@@ -1399,6 +1472,7 @@ export default function Quiz() {
     () => coreProfileSchema.safeParse(buildCoreDraft(core)),
     [core],
   );
+  const wristCircumferenceMm = useMemo(() => wristDraftToMm(core), [core]);
   const refinementParse = useMemo(
     () => refinementSchema.safeParse(buildRefinementDraft(refinement)),
     [refinement],
@@ -1430,8 +1504,7 @@ export default function Quiz() {
     step === 0
       ? Number(core.budgetMax) > 0
       : step === 1
-        ? Number(core.wristCircumferenceMm) >= 100 &&
-          Number(core.wristCircumferenceMm) <= 300
+        ? wristCircumferenceMm >= 100 && wristCircumferenceMm <= 300
         : step === 2
           ? core.deploymentEnvironment !== ""
           : step === 3
@@ -1574,26 +1647,50 @@ export default function Quiz() {
             <h1 id="question-heading">Measure your wrist</h1>
             <p>
               Wrap a flexible tape flush above the wrist bone without slack.
-              Enter millimetres; 152.4 mm equals 6 inches.
+              Choose millimetres or inches. The diagnostic normalizes the exact
+              measurement to millimetres before filtering.
             </p>
-            <label className="input-stack input-stack--measure">
-              <span>Wrist circumference (mm)</span>
-              <input
-                inputMode="decimal"
-                max="300"
-                min="100"
-                onChange={(event) =>
-                  setCore((current) => ({
-                    ...current,
-                    wristCircumferenceMm: event.target.value,
-                  }))
-                }
-                placeholder="170"
-                step="0.1"
-                type="number"
-                value={core.wristCircumferenceMm}
-              />
-            </label>
+            <div className="split-inputs wrist-inputs">
+              <label className="input-stack">
+                <span>Unit</span>
+                <select
+                  onChange={(event) => {
+                    const wristUnit = event.target.value as WristUnit;
+                    setCore((current) => ({
+                      ...current,
+                      wristCircumference: convertWristDraftUnit(
+                        current.wristCircumference,
+                        current.wristUnit,
+                        wristUnit,
+                      ),
+                      wristUnit,
+                    }));
+                  }}
+                  value={core.wristUnit}
+                >
+                  <option value="mm">Millimetres (mm)</option>
+                  <option value="in">Inches (in)</option>
+                </select>
+              </label>
+              <label className="input-stack">
+                <span>Wrist circumference ({core.wristUnit})</span>
+                <input
+                  inputMode="decimal"
+                  max={core.wristUnit === "mm" ? "300" : "11.81"}
+                  min={core.wristUnit === "mm" ? "100" : "3.94"}
+                  onChange={(event) =>
+                    setCore((current) => ({
+                      ...current,
+                      wristCircumference: event.target.value,
+                    }))
+                  }
+                  placeholder={core.wristUnit === "mm" ? "170" : "6.7"}
+                  step={core.wristUnit === "mm" ? "0.1" : "0.01"}
+                  type="number"
+                  value={core.wristCircumference}
+                />
+              </label>
+            </div>
             <p className="reference-note">
               One display scale:{" "}
               {WRIST_BANDS.map((band) => band.label).join(" · ")}

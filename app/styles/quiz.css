@@ -153,9 +153,9 @@
   color: var(--color-ink);
 }
 
-.input-stack--measure {
-  display: block;
-  max-width: 22rem;
+.wrist-inputs {
+  max-width: 30rem;
+  grid-template-columns: 11rem minmax(0, 1fr);
 }
 
 .reference-note {
@@ -512,6 +512,10 @@
 
   .split-inputs {
     grid-template-columns: 7rem minmax(0, 1fr);
+  }
+
+  .wrist-inputs {
+    grid-template-columns: 9rem minmax(0, 1fr);
   }
 
   .question-block {

@@ -43,8 +43,9 @@ and changes Phase 2 to a progressive flow.
 
 1. Exact acquisition ceiling and currency. Price ranges remain UI shortcuts;
    the normalized payload contains a numeric maximum.
-2. Measured wrist circumference. It is normalized to millimetres; the canonical
-   display bands are derived from one constants module.
+2. Measured wrist circumference. The UI accepts millimetres or inches through
+   an explicit unit selector, then normalizes the exact value to millimetres;
+   the canonical display bands are derived from one constants module.
 3. Operational deployment: field/water/abuse, studio/desk/daily, or
    formal/architectural.
 4. Movement/service tolerance and required accuracy. Seconds-per-month accuracy

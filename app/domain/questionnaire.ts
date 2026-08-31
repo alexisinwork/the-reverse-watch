@@ -46,36 +46,37 @@ export const PRICE_BANDS = [
   },
 ] as const;
 
-const INCHES_TO_MM = 25.4;
+export const MILLIMETRES_PER_INCH = 25.4;
+export const WRIST_UNITS = ["mm", "in"] as const;
 
 export const WRIST_BANDS = [
   {
     id: "under_5_75",
     minimumMm: 100,
-    maximumExclusiveMm: 5.75 * INCHES_TO_MM,
+    maximumExclusiveMm: 5.75 * MILLIMETRES_PER_INCH,
     label: "Under 5.75 in",
   },
   {
     id: "5_75_6_25",
-    minimumMm: 5.75 * INCHES_TO_MM,
-    maximumExclusiveMm: 6.25 * INCHES_TO_MM,
+    minimumMm: 5.75 * MILLIMETRES_PER_INCH,
+    maximumExclusiveMm: 6.25 * MILLIMETRES_PER_INCH,
     label: "5.75–6.25 in",
   },
   {
     id: "6_25_6_75",
-    minimumMm: 6.25 * INCHES_TO_MM,
-    maximumExclusiveMm: 6.75 * INCHES_TO_MM,
+    minimumMm: 6.25 * MILLIMETRES_PER_INCH,
+    maximumExclusiveMm: 6.75 * MILLIMETRES_PER_INCH,
     label: "6.25–6.75 in",
   },
   {
     id: "6_75_7_5",
-    minimumMm: 6.75 * INCHES_TO_MM,
-    maximumExclusiveMm: 7.5 * INCHES_TO_MM,
+    minimumMm: 6.75 * MILLIMETRES_PER_INCH,
+    maximumExclusiveMm: 7.5 * MILLIMETRES_PER_INCH,
     label: "6.75–7.5 in",
   },
   {
     id: "7_5_plus",
-    minimumMm: 7.5 * INCHES_TO_MM,
+    minimumMm: 7.5 * MILLIMETRES_PER_INCH,
     maximumExclusiveMm: null,
     label: "Over 7.5 in",
   },
@@ -307,6 +308,17 @@ export type RefinementProfile = z.infer<typeof refinementSchema>;
 export type QuestionnaireProfile = z.infer<typeof questionnaireProfileSchema>;
 export type PriceBandId = (typeof PRICE_BANDS)[number]["id"];
 export type WristBandId = (typeof WRIST_BANDS)[number]["id"];
+export type WristUnit = (typeof WRIST_UNITS)[number];
+
+export function wristCircumferenceToMm(circumference: number, unit: WristUnit) {
+  if (!Number.isFinite(circumference)) {
+    throw new RangeError("Wrist circumference must be a finite number.");
+  }
+
+  return unit === "in"
+    ? Number((circumference * MILLIMETRES_PER_INCH).toFixed(4))
+    : circumference;
+}
 
 export function derivePriceBand(amount: number): PriceBandId {
   if (!Number.isFinite(amount) || amount <= 0) {
