@@ -59,6 +59,28 @@ test("exposes a healthy service route", async ({ request }) => {
   });
 });
 
+test("browses sourced watch discovery without hiding uncertainty", async ({
+  page,
+}) => {
+  await page.goto("/watches");
+  await expect(
+    page.getByRole("heading", {
+      level: 1,
+      name: "Watches of Celebrity & Cinema",
+    }),
+  ).toBeVisible();
+  await page
+    .getByRole("link", { name: "Annie Edison's recurring Community watch" })
+    .click();
+  await expect(page.getByText("Unconfirmed identification")).toBeVisible();
+  await expect(page.getByText("Not identified")).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Reviewed sources" }),
+  ).toBeVisible();
+  const accessibility = await new AxeBuilder({ page }).analyze();
+  expect(accessibility.violations).toEqual([]);
+});
+
 test("uses the branded error boundary for unknown routes", async ({ page }) => {
   const response = await page.goto("/not-in-the-archive");
 

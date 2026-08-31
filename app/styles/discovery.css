@@ -1,0 +1,167 @@
+.discovery-shell {
+  width: min(100%, 72rem);
+  min-height: 100vh;
+  padding: 2rem var(--page-gutter) 5rem;
+  margin: 0 auto;
+}
+.discovery-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-line);
+  color: #aeb6bd;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.discovery-nav a,
+.discovery-card a,
+.discovery-cta a,
+.citation-panel a {
+  text-underline-offset: 0.25rem;
+}
+.discovery-header {
+  max-width: 48rem;
+  padding: clamp(3rem, 8vw, 6rem) 0 2.5rem;
+}
+.discovery-header h1,
+.discovery-detail h1 {
+  margin: 0.65rem 0 1rem;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.discovery-header p,
+.discovery-lede {
+  color: #aeb6bd;
+  line-height: 1.65;
+}
+.discovery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 1rem;
+}
+.discovery-card {
+  padding: 1.25rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-base-raised);
+}
+.discovery-card h2 {
+  margin: 0.75rem 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+.discovery-card p {
+  color: #aeb6bd;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.discovery-card dl,
+.discovery-facts {
+  margin: 1.25rem 0 0;
+}
+.discovery-card dl div,
+.discovery-facts div {
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--color-line);
+}
+.discovery-card dt,
+.discovery-facts dt {
+  color: var(--color-brass);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.discovery-card dd,
+.discovery-facts dd {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.confidence {
+  display: inline-block;
+  color: #d3d9de;
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.confidence-confirmed {
+  color: #9fcf8a;
+}
+.confidence-disputed,
+.confidence-unconfirmed {
+  color: #ffb4ab;
+}
+.confidence-family_only {
+  color: #dcb67c;
+}
+.discovery-cta {
+  padding: 1.5rem;
+  border-left: 2px solid var(--color-brass);
+  margin-top: 2rem;
+  background: var(--color-base-raised);
+}
+.discovery-cta h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+.discovery-cta p {
+  color: #aeb6bd;
+}
+.discovery-cta a,
+.citation-panel a {
+  color: var(--color-brass);
+  font-weight: 700;
+}
+.discovery-detail {
+  max-width: 50rem;
+}
+.discovery-detail article {
+  padding-top: clamp(3rem, 8vw, 6rem);
+}
+.discovery-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0 1rem;
+}
+.editorial-note,
+.citation-panel,
+.correction-panel {
+  padding: 1rem;
+  border: 1px solid var(--color-line);
+  margin-top: 1.5rem;
+  background: var(--color-base-raised);
+  color: #c4cacf;
+  line-height: 1.6;
+}
+.citation-panel h2,
+.correction-panel h2 {
+  margin-top: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.citation-panel ul {
+  padding-left: 1.25rem;
+  margin-bottom: 0;
+}
+.citation-panel li + li {
+  margin-top: 0.75rem;
+}
+.citation-panel span {
+  display: block;
+  color: #aeb6bd;
+  font-size: 0.75rem;
+}
+.correction-panel p {
+  margin-bottom: 0;
+}
+@media (max-width: 35rem) {
+  .discovery-nav {
+    flex-direction: column;
+  }
+}

@@ -27,6 +27,7 @@ type StorySeed = {
   displayName: string;
   disambiguation?: string;
   work?: {
+    id: number;
     kind: WorkKind;
     title: string;
     slug: string;
@@ -81,7 +82,7 @@ function buildStory(seed: StorySeed) {
 
   const work = seed.work
     ? {
-        id: seed.id,
+        id: seed.work.id,
         parentWorkId: null,
         workKind: seed.work.kind,
         slug: seed.work.slug,
@@ -216,6 +217,7 @@ const stories: StorySeed[] = [
     disambiguation:
       "Interstellar character portrayed as an adult by Jessica Chastain",
     work: {
+      id: 1,
       kind: "film",
       title: "Interstellar",
       slug: "interstellar-2014",
@@ -251,6 +253,7 @@ const stories: StorySeed[] = [
     displayName: "The Protagonist",
     disambiguation: "TENET character portrayed by John David Washington",
     work: {
+      id: 2,
       kind: "film",
       title: "TENET",
       slug: "tenet-2020",
@@ -284,6 +287,7 @@ const stories: StorySeed[] = [
     displayName: "Paul Atreides",
     disambiguation: "Dune character portrayed by Timothée Chalamet",
     work: {
+      id: 3,
       kind: "film",
       title: "Dune: Part Two",
       slug: "dune-part-two-2024",
@@ -317,9 +321,10 @@ const stories: StorySeed[] = [
     displayName: "J. Robert Oppenheimer",
     disambiguation: "Oppenheimer character portrayed by Cillian Murphy",
     work: {
+      id: 4,
       kind: "film",
       title: "Oppenheimer",
-      slug: "oppenheimer-2023-cushion-b",
+      slug: "oppenheimer-2023",
       releaseDate: "2023-07-21",
     },
     claimType: "screen_worn",
@@ -341,9 +346,10 @@ const stories: StorySeed[] = [
     displayName: "Kitty Oppenheimer",
     disambiguation: "Oppenheimer character portrayed by Emily Blunt",
     work: {
+      id: 4,
       kind: "film",
       title: "Oppenheimer",
-      slug: "oppenheimer-2023-lady-hamilton",
+      slug: "oppenheimer-2023",
       releaseDate: "2023-07-21",
     },
     claimType: "screen_worn",
@@ -365,9 +371,10 @@ const stories: StorySeed[] = [
     displayName: "Lieutenant General Leslie Groves",
     disambiguation: "Oppenheimer character portrayed by Matt Damon",
     work: {
+      id: 4,
       kind: "film",
       title: "Oppenheimer",
-      slug: "oppenheimer-2023-piping-rock",
+      slug: "oppenheimer-2023",
       releaseDate: "2023-07-21",
     },
     claimType: "screen_worn",
@@ -389,6 +396,7 @@ const stories: StorySeed[] = [
     displayName: "James Bond",
     disambiguation: "No Time to Die character portrayed by Daniel Craig",
     work: {
+      id: 7,
       kind: "film",
       title: "No Time to Die",
       slug: "no-time-to-die-2021",
@@ -422,6 +430,7 @@ const stories: StorySeed[] = [
     displayName: "Colonel Walter E. Kurtz",
     disambiguation: "Apocalypse Now character portrayed by Marlon Brando",
     work: {
+      id: 8,
       kind: "film",
       title: "Apocalypse Now",
       slug: "apocalypse-now-1979",
@@ -448,6 +457,7 @@ const stories: StorySeed[] = [
     displayName: "Agent J",
     disambiguation: "Men in Black character portrayed by Will Smith",
     work: {
+      id: 9,
       kind: "film",
       title: "Men in Black",
       slug: "men-in-black-1997",
@@ -482,6 +492,7 @@ const stories: StorySeed[] = [
     disambiguation:
       "Indiana Jones and the Dial of Destiny character portrayed by Harrison Ford",
     work: {
+      id: 10,
       kind: "film",
       title: "Indiana Jones and the Dial of Destiny",
       slug: "indiana-jones-dial-of-destiny-2023",
@@ -516,9 +527,10 @@ const stories: StorySeed[] = [
     displayName: "Don Draper",
     disambiguation: "Mad Men character portrayed by Jon Hamm",
     work: {
+      id: 11,
       kind: "television_series",
       title: "Mad Men",
-      slug: "mad-men-don-draper",
+      slug: "mad-men",
       releaseDate: "2007-07-19",
     },
     claimType: "screen_worn",
@@ -551,9 +563,10 @@ const stories: StorySeed[] = [
     displayName: "Roger Sterling",
     disambiguation: "Mad Men character portrayed by John Slattery",
     work: {
+      id: 11,
       kind: "television_series",
       title: "Mad Men",
-      slug: "mad-men-roger-sterling",
+      slug: "mad-men",
       releaseDate: "2007-07-19",
     },
     claimType: "screen_worn",
@@ -585,6 +598,7 @@ const stories: StorySeed[] = [
     displayName: "Annie Edison",
     disambiguation: "Community character portrayed by Alison Brie",
     work: {
+      id: 13,
       kind: "television_series",
       title: "Community",
       slug: "community-annie-edison",

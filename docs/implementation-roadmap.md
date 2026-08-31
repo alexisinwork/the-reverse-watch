@@ -1493,7 +1493,7 @@ production surfaces.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
-Status: **in progress — packets 8.1–8.2 complete; packet 8.3 next**
+Status: **in progress — packets 8.1–8.3 complete; packet 8.4 next**
 
 Goal: use sourced public-figure and screen-watch research plus a lightweight
 archetype quiz as a discovery funnel into the existing deterministic diagnostic.
@@ -1540,6 +1540,16 @@ evidence, matching entity/work/event relationships, source retrieval times,
 image decisions, unique story/attribution identities, and representation from
 all three editorial categories. The protocol and source index are in
 [`phase-8-editorial-protocol.md`](phase-8-editorial-protocol.md).
+
+Packet 8.3 publishes the pilot at `/watches` through a narrow application-owned
+read model. Index, entity, work, and attribution routes expose accepted claims
+without raw database access; each attribution shows its public confidence and
+precision, editorial qualification, reviewed citations, correction state, and
+the handoff to `/quiz`. Shared-work grouping keeps the three Oppenheimer and two
+Mad Men claims separate while presenting them under one work. The deliberately
+unidentified Community prop renders as unconfirmed with no guessed brand or
+model. Route and browser tests cover the index, citation detail, 404 handling,
+uncertainty, diagnostic handoff, and accessibility.
 
 ## Environment-variable ownership
 

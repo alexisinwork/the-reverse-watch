@@ -117,9 +117,14 @@ export default function Home() {
           dial.
         </p>
         <BeehiivSignup />
-        <a className="diagnostic-link" href="/quiz">
-          Start the reference diagnostic
-        </a>
+        <nav className="landing-links" aria-label="Explore The Reserve">
+          <a className="diagnostic-link" href="/watches">
+            Explore watches of celebrity &amp; cinema
+          </a>
+          <a className="diagnostic-link" href="/quiz">
+            Start the reference diagnostic
+          </a>
+        </nav>
       </main>
 
       <footer className="site-footer">

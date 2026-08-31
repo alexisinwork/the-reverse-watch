@@ -35,6 +35,11 @@ describe("landing page", () => {
     expect(
       screen.getByRole("link", { name: "Start the reference diagnostic" }),
     ).toHaveAttribute("href", "/quiz");
+    expect(
+      screen.getByRole("link", {
+        name: "Explore watches of celebrity & cinema",
+      }),
+    ).toHaveAttribute("href", "/watches");
   });
 
   it("renders a legible first-party Beehiiv subscription form", () => {

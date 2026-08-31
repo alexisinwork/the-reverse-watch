@@ -32,8 +32,13 @@ phase.
   television, and 8 public-figure stories. Twelve are exact-reference claims,
   eight remain model-family-only, and one authenticated screen prop remains
   unidentified. The executable corpus passes the publication contract, stores
-  no images, and has no recommendation-catalogue links. Packet 8.3 explorer
-  pages are next.
+  no images, and has no recommendation-catalogue links.
+- Packet 8.3 publishes the pilot at `/watches` with index, entity, work, and
+  attribution routes backed by a narrow public read model. Pages expose public
+  confidence/precision, citations, editorial notes, correction state, and the
+  `/quiz` handoff without raw discovery-table access. The authenticated but
+  unidentified Community prop remains visibly unconfirmed. Packet 8.4's light
+  archetype quiz and sharing are next.
 - Phase 5 engineering is complete. On 2026-08-31 the owner moved all further
   brand/model selection, research, verification, and catalogue population into
   an owner-managed workstream. The reusable pipeline remains strict: 204/204

@@ -1,6 +1,6 @@
 # Phase 8 — Celebrity & Cinema Watch Discovery
 
-Status: **in progress — packets 8.1–8.2 complete; packet 8.3 next**
+Status: **in progress — packets 8.1–8.3 complete; packet 8.4 next**
 
 ## Purpose
 
@@ -105,6 +105,13 @@ stores no image, and has a null catalogue link.
 
 Exit: pages render sourced claims, handle empty/uncertain records safely, and
 preserve the existing application quality gate.
+
+Completed 2026-08-31. `/watches` now exposes the schema-gated pilot through a
+narrow public read model, with entity, work, and attribution routes. Pages show
+citations, confidence and precision labels, editorial qualifications,
+correction state, and the core diagnostic handoff. Unknown routes return 404,
+the unidentified Community prop stays visibly unconfirmed, and no raw
+editorial table or browser database grant is exposed.
 
 ### 8.4 — Viral archetype quiz and sharing
 

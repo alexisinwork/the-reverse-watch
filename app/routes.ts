@@ -6,4 +6,8 @@ export default [
   route("analytics/quiz-started", "routes/quiz-analytics-start.ts"),
   route("evaluation", "routes/evaluation.tsx"),
   route("health", "routes/health.ts"),
+  route("watches", "routes/watches.tsx"),
+  route("watches/people/:entitySlug", "routes/watch-entity.tsx"),
+  route("watches/works/:workSlug", "routes/watch-work.tsx"),
+  route("watches/stories/:storySlug", "routes/watch-story.tsx"),
 ] satisfies RouteConfig;
