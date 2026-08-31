@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "lip-lightweight-rectangular-quartz",
   "jobId": "e1e0660c-f35a-4ae0-85c1-7b91a9261be8",
-  "reviewedAt": "2026-08-31T10:02:18Z",
+  "reviewedAt": "2026-08-31T10:44:37Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -36,6 +36,11 @@
       "url": "https://www.lepage.fr/fr/24456-montre-lip-churchill-t18-petite-seconde-quartz-cadran-ivoire-bracelet-cuir-noir-385-x-212-mm-671937.html",
       "status": "validated_secondary",
       "note": "Lepage's exact-reference official-retailer page identifies 671937 with the ivory dial, blue leather, sapphire crystal, 38.5 x 21.2 mm case, and 18 mm lugs. It reports 9.2 mm thickness, conflicting with the exact specialist's 8.5 mm; neither secondary measurement is accepted without a current primary or convergent exact-reference value. It provides no whole-watch lume statement. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.uhr.com/lip-churchill-t18-rechteckige-quarzuhr-im-design-der-1930er-jahre-mit-kleiner-sekunde-671937.htm",
+      "status": "validated_secondary",
+      "note": "This exact EAN-linked retailer record repeats the current 671937 blue-leather/sapphire configuration and reports 8.5 mm thickness, matching the existing exact specialist value. It supplies no whole-watch lume statement; the 8.5 mm agreement is retained as corroboration while the conflicting 9.2 mm authorized-retailer measurement remains unresolved. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [

@@ -1696,6 +1696,11 @@ convergent exact-reference measurement, thickness stays null. Lepage also gives
 no whole-watch lume statement, so no grade is promoted and no provider request
 is authorized.
 
+A further 2026-08-31 exact-reference retailer record also reports 8.5 mm for
+`671937`, matching the specialist value, but the 9.2 mm Lepage measurement still
+conflicts and no current primary thickness is published. No whole-watch lume
+statement surfaced; both M1 gaps remain null.
+
 The next Bulova Icon Precisionist Chronograph `98B316` pre-screen remains open
 for `weightFullG` and `lumeGrade`. A newly retrieved exact-reference retailer
 record reports 229 g and 12.40 mm thickness, conflicting with the exact
