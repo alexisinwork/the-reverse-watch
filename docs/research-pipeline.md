@@ -1372,6 +1372,16 @@ impossible dark reading. The factory interface remains accepted as
 `spring_bar` from Citizen's exact-model parts lookup, but lume stays null and
 no provider request is authorized.
 
+The next ranked Certina DS Action Diver 38 mm Titanium `C048.807.44.051.01`
+pre-screen also remains negative for its sole `accuracy` gap. An owner
+discussion supplies a six-day positional series and other daily readings for
+unnamed DS Action/Powermatic 80 divers, but mixes 38 mm, 40.5 mm, and PH1000M
+models and never identifies the selected exact reference. Those observations
+cannot establish a guaranteed exact-reference bound. Certina's exact page,
+manual, and FAQ still provide only approximate or undisclosed general
+tolerances; the unattributed exact-retailer claim remains conflicting and
+untested. No fact is promoted and no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

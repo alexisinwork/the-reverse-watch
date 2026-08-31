@@ -887,6 +887,16 @@ visibility to near-impossible dark reading. Citizen's exact-model parts lookup
 already resolves the factory interface as `spring_bar`; `lumeGrade` remains the
 sole null M1 field, so no provider request was made.
 
+The next named Certina DS Action Diver 38 mm Titanium `C048.807.44.051.01`
+pre-screen also remains open only for `accuracy`. A Certina owner discussion
+reports a six-day positional series and other daily readings for unnamed DS
+Action/Powermatic 80 divers, but mixes 38 mm, 40.5 mm, and PH1000M models and
+never identifies the selected reference. The readings therefore cannot become
+an exact-reference guarantee. Certina's official page, manual, and FAQ still
+offer only approximate or undisclosed general tolerances, while the
+unattributed exact-retailer claim is conflicting and untested. No provider
+request was made; the next candidate must wait for an exact applicable bound.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
