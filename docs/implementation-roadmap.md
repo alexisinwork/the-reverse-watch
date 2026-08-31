@@ -1227,6 +1227,9 @@ headers (`X-Content-Type-Options`, frame/referrer/permissions policies, and a
 vendor-scoped CSP). React Router's generated inline hydration bootstrap requires
 `'unsafe-inline'` in `script-src`; the policy still restricts executable origins
 and explicitly allows only the Beehiiv and Cloudflare challenge hosts.
+Deployment `dpl_Hutab5bkN38Z5VgQH4ywKsvpNmAj` reached `READY` from commit
+`a4b520b`; a protected production response exposed all of these headers plus a
+unique `X-Request-ID` and measured `Server-Timing` value.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

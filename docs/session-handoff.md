@@ -58,6 +58,9 @@ phase.
   `Server-Timing`, and security headers with a vendor-scoped CSP. The full
   desktop/mobile browser matrix remains green after allowing React Router's
   required inline hydration bootstrap and Beehiiv's Cloudflare challenge host.
+- Deployment `dpl_Hutab5bkN38Z5VgQH4ywKsvpNmAj` is `READY` from commit
+  `a4b520b`; a protected production response confirmed the middleware headers,
+  unique request ID, and measured server timing remotely.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the
