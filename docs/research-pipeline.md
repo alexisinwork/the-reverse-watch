@@ -1382,6 +1382,15 @@ manual, and FAQ still provide only approximate or undisclosed general
 tolerances; the unattributed exact-retailer claim remains conflicting and
 untested. No fact is promoted and no provider request is authorized.
 
+The next Baltic MR Classic Blue `MR01BLUS35` pre-screen remains negative for
+configured `weightFullG`, `accuracy`, `lumeGrade`, and `dateStatus`. A blue MR01
+hands-on article lists lume as N/A and notes no date window, but examines an
+earlier ELA05MN sample rather than the current Stitched Lion configuration. A
+Hodinkee specification says Lume: None for a black gold-PVD MR01 sibling; its
+different case and dial cannot be transferred. No exact configured weight or
+rate bound surfaced, so no facts are promoted and no provider request is
+authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

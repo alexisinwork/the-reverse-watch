@@ -897,6 +897,15 @@ offer only approximate or undisclosed general tolerances, while the
 unattributed exact-retailer claim is conflicting and untested. No provider
 request was made; the next candidate must wait for an exact applicable bound.
 
+The next Baltic MR Classic Blue `MR01BLUS35` pre-screen remains negative for
+configured `weightFullG`, `accuracy`, `lumeGrade`, and `dateStatus`. A blue MR01
+hands-on article lists lume as N/A and notes no date window, but examines an
+earlier ELA05MN sample rather than the current Stitched Lion configuration. A
+Hodinkee specification says Lume: None for a black gold-PVD MR01 sibling; its
+different case and dial cannot be transferred. No exact configured weight or
+rate bound surfaced, so no facts were promoted and no provider request was
+made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
