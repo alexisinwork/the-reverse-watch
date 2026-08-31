@@ -59,14 +59,13 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context alongside source-led additions through Bertucci;
-- 27 accepted catalogue targets linked to all current reviewed variants in the
-  local seed, including the newly rendered Vostok 420059 migration;
+- 28 accepted catalogue targets linked to all current reviewed variants in the
+  local seed, including the rendered Vostok 420059 and BOLDR Horizon migrations;
 - 33 coverage-intent targets, with no planned target in the default research
   queue after the source-led Vostok 420059 acceptance;
-- live Supabase parity for 22 brands and all 26 remotely applied variants
-  across the six golden SQL/TypeScript hard-filter profiles; local migration
-  `0031` adds the 23rd brand and 27th variant but awaits a credentialed parity
-  run before remote application; all 20 public catalogue tables have RLS
+- live Supabase parity for 24 brands and all 28 remotely applied variants
+  across the six golden SQL/TypeScript hard-filter profiles; migrations `0031`
+  and `0032` are applied remotely; all 20 public catalogue tables have RLS
   enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist
@@ -1329,9 +1328,9 @@ on the hands and indices still glowing until morning after overnight wear; this
 direct elapsed observation maps to `strong` without inferring performance from
 Swiss Super-LumiNova material labels. The reviewed target is now
 `ready_for_migration`; local seed coverage rises to 1,102/28,800 cells (3.83%)
-across 28 variants. Migration `0032_expand_catalogue_boldr.sql` is rendered but
-not remotely applied because Supabase credentials are unavailable in this
-workspace. No provider request was needed.
+across 28 variants. Migration `0032_expand_catalogue_boldr.sql` is applied
+remotely and the publishable-key catalogue plus six-profile SQL/TypeScript
+parity audit passes. No provider request was needed.
 
 With BOLDR removed from the review queue, the coverage planner's next named
 hypothesis is Cartier Tank Must Small `WSTA0107` at eight empty,

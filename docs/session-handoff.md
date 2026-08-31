@@ -17,23 +17,20 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Migrations `0001` through `0030` are applied to the connected Supabase
-  project. The live v3 catalogue contains all 22 brands and 26 accepted
+- Migrations `0001` through `0032` are applied to the connected Supabase
+  project. The live v3 catalogue contains all 24 brands and 28 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
   result parity passes. All 20 public catalogue tables have RLS enabled with no
   direct browser grants or policies; the application uses only two narrow,
   read-only v3 RPCs for accepted facts and SQL hard-filter codes.
-- Local migration `0031_expand_catalogue_vostok.sql` adds the reviewed Vostok
-  420059 row; connected Supabase parity must be rerun when credentials are
-  available before that migration is applied remotely.
-- Local migration `0032_expand_catalogue_boldr.sql` adds the reviewed BOLDR
-  Odyssey Horizon `ODY-TI-40-H-BL` row on its homogeneous 91 g integrated
-  Druber strap; the bundled 125 g titanium bracelet remains accessory context.
-  Worn & Wound's exact Horizon hands-on review records the hands and indices
-  glowing until morning after overnight wear, closing the sole lume gap as
-  `strong`. Local seed coverage is now 1,102/28,800 cells across 28 variants.
-  Connected Supabase parity must be rerun when credentials are available before
-  migrations `0031` and `0032` are applied remotely.
+- Migration `0031_expand_catalogue_vostok.sql` adds the reviewed Vostok 420059
+  row, and `0032_expand_catalogue_boldr.sql` adds the reviewed BOLDR Odyssey
+  Horizon `ODY-TI-40-H-BL` row on its homogeneous 91 g integrated Druber strap;
+  the bundled 125 g titanium bracelet remains accessory context. Worn & Wound's
+  exact Horizon hands-on review records the hands and indices glowing until
+  morning after overnight wear, closing the sole lume gap as `strong`. Local
+  and live seed coverage is now 1,102/28,800 cells across 28 variants. The
+  publishable-key parity audit passes for all six golden profiles.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

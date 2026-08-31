@@ -1200,6 +1200,14 @@ migration-ready decisions. With no provider call, the ignored ledger remains
 64 attempts (39 succeeded, 25 failed) across 34 target IDs and USD 0.55435
 recorded cost. The default queue is empty again.
 
+Additive migrations `0031_expand_catalogue_vostok.sql` and
+`0032_expand_catalogue_boldr.sql` are now live. Connected verification reports
+24 brands and 28 accepted variants, and the publishable-key catalogue plus all
+six SQL/TypeScript hard-filter profiles pass exact parity. The homogeneous
+BOLDR row remains on its 91 g integrated Druber strap; the bundled titanium
+bracelet is accessory context only. Local and live coverage is 1,102/28,800
+cells, and no provider request was needed.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
@@ -1233,9 +1241,10 @@ hands-on review records the hands and indices still glowing until morning after
 overnight wear. This direct elapsed observation closes BOLDR's sole M1 gap as
 `strong` without treating Swiss Super-LumiNova material labels as performance
 evidence. The homogeneous 91 g integrated Druber-strap row is now
-`ready_for_migration`; seed coverage is 1,102/28,800 cells across 28 variants,
-and `0032_expand_catalogue_boldr.sql` is prepared pending connected Supabase
-parity.
+`ready_for_migration`; seed coverage is 1,102/28,800 cells across 28 variants.
+Migrations `0031` and `0032` are applied remotely, and the publishable-key
+catalogue plus six-profile SQL/TypeScript parity audit passes for all 28 live
+variants.
 
 ## Phase 7 — Product integration, email, deployment, and evaluation
 
