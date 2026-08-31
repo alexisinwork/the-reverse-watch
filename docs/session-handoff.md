@@ -931,6 +931,11 @@ performance, or manufacturer-corroborated attachment mechanism surfaced. Price
 and lug width are now resolved in review; those four physical/ownership gaps
 remain null and no provider request was made.
 
+The 2026-08-31 exact-reference recheck of Patek's current 6301P-001 page found
+no new admissible evidence for lug-to-lug, configured weight, lume performance,
+or attachment mechanism. The Patek Philippe Seal accuracy standard remains
+accepted, but those four fields stay null; no provider request was made.
+
 The next Audemars Piguet Royal Oak Jumbo `16202ST.OO.1240ST.02` pre-screen
 partially resolves the commercial gap. Jomashop's exact-reference page exposes
 a USD 96,500 grey-market offer with `IN STOCK`, `New`, and Add to Bag controls;
