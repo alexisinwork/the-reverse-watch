@@ -17,8 +17,8 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Migrations `0001` through `0029` are applied to the connected Supabase
-  project. The live v3 catalogue contains all 21 brands and 25 accepted
+- Migrations `0001` through `0030` are applied to the connected Supabase
+  project. The live v3 catalogue contains all 22 brands and 26 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
   result parity passes. All 20 public catalogue tables have RLS enabled with no
   direct browser grants or policies; the application uses only two narrow,
@@ -114,6 +114,23 @@ phase.
   parity passes. The row adds a second candidate to twelve sparse cells, so
   coverage remains 1,068/28,800 (3.71%) while single-candidate cells improve to
   1,052.
+- Vostok Europe Nuclear Submarine SSN 571 `VK61-571H614` is accepted as the
+  exact titanium watch worn on its black leather strap with petrol stitching;
+  the supplied black silicone strap remains an accessory and is not blended
+  into the scored configuration. Primary evidence establishes 45.7 x 15.6 x
+  56.2 mm geometry, 22 mm lugs, VK61A -20/+20-seconds-per-month hybrid
+  operation, 300 m resistance, strong continuous tritium, a proprietary
+  screw-fixed interface, chronograph, and date. The [exact OTTO leather
+  listing](https://www.otto.de/p/vostok-europe-chronograph-nuclear-submarine-herrneuhr-vk61-571h614-lederband-46-mm-CS071P09T/),
+  retrieved 2026-08-31, explicitly separates the installed leather strap from
+  the silicone accessory and publishes approximately 135 g; its contradictory
+  commercial state is rejected, so the reviewed Czech EUR 793 short-wait offer
+  remains canonical. Migration `0030` is live with M0/M1 complete and 29
+  verified reference-level evidence rows from six sources. Exact 26-row and
+  six-profile parity passes. The 56.2 mm span limits compatibility to the
+  `7_5_plus` wrist band: the row supports 16 cells, opens eight, and adds a
+  second candidate to eight others. Coverage is now 1,076/28,800 (3.74%),
+  single-candidate cells remain 1,052, and under-evidenced cells fall to 216.
 - The Mondaine provider ledger preserves two failed attempts: the first
   returned useful raw research at USD 0.02028 but failed strict normalization;
   the second was interrupted before a response was persisted after an
@@ -156,9 +173,9 @@ phase.
   evidence; fail-closed SQL hard filters; speculative-candidate suppression;
   deterministic score traces, diversity, why-not explanations, and visible
   relaxations; and the complete 28,800-cell coverage audit.
-- The audit is not complete at the data layer: only 25 homogeneous variants are
-  accepted locally, 1,068 of 28,800 cells are covered, every covered cell is
-  under-diversified, and 224 are under-evidenced. Phase 5 must close that
+- The audit is not complete at the data layer: only 26 homogeneous variants are
+  accepted locally, 1,076 of 28,800 cells are covered, every covered cell is
+  under-diversified, and 216 are under-evidenced. Phase 5 must close that
   breadth and evidence gap before the 200-brand knowledge pack can be treated as
   a recommendation catalogue. Phase 7 dossier, funnel, and owner-media work
   also remains pending; none of this reopens vectors as a launch dependency.
@@ -691,7 +708,7 @@ On 2026-08-28 for Phases 1–4:
    exact or directly applicable sources before invoking the provider. The
    default queue is empty; do not spend on a generic brand sweep or accept a
    brand-level rollup as a reference fact.
-2. Treat the live 25-row v3 catalogue and six-profile parity as the relational
+2. Treat the live 26-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.

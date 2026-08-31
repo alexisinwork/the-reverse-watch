@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-08-31T06:08:07.000Z",
+  "updatedAt": "2026-08-31T06:19:09.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -3281,15 +3281,14 @@
       "targets": [
         {
           "id": "vostok-europe-titanium-precision-chronograph",
-          "referenceLabel": "Validate discontinued-but-offered Vostok Europe Nuclear Submarine VK61-571H614 as one homogeneous titanium and silicone configuration with exact configured mass, numerical VK61 accuracy, continuous tritium readability, and screw-fixed proprietary attachment evidence",
-          "state": "needs_review",
+          "referenceLabel": "Accepted discontinued-but-offered Vostok Europe Nuclear Submarine VK61-571H614 as one homogeneous titanium and black-leather configuration with exact 135 g configured mass, numerical VK61 accuracy, continuous tritium readability, and screw-fixed proprietary attachment evidence",
+          "state": "accepted",
+          "catalogueVariantId": "vostok-europe-vk61-571h614",
           "coverageIntent": {
             "priceBands": [
               "500_1000"
             ],
             "wristBands": [
-              "6_25_6_75",
-              "6_75_7_5",
               "7_5_plus"
             ],
             "deploymentEnvironments": [
@@ -3313,7 +3312,7 @@
               "chronograph"
             ]
           },
-          "coverageRationale": "Add a new-brand titanium meca-quartz chronograph to 48 supported 500-1000 cells, including 24 currently empty precision/tool cells; require a live short-wait offer and homogeneous silicone-configured mass before ranking discontinued stock."
+          "coverageRationale": "Adds a new-brand titanium meca-quartz chronograph to 16 supported 500-1000 cells for the 7.5-plus wrist band, including eight previously empty precision/tool cells. The measured 56.2 mm wearing span excludes the two smaller pre-screened wrist bands. The accepted row retains a live short-wait offer and fixes the homogeneous scored configuration to the exact black-leather listing with approximately 135 g full mass; the supplied silicone strap remains an accessory rather than a blended wearable fact."
         }
       ]
     },

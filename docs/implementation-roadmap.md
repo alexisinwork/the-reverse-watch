@@ -1174,6 +1174,32 @@ thirteen migration-ready decisions. No provider request was made, so the
 ignored ledger remains 64 attempts (39 succeeded, 25 failed) across 34 target
 IDs and USD 0.55435 recorded cost.
 
+A subsequent source-led pass resolves the Vostok Europe Nuclear Submarine SSN
+571 `VK61-571H614` mass gap without another provider request. The
+[configuration-specific OTTO listing](https://www.otto.de/p/vostok-europe-chronograph-nuclear-submarine-herrneuhr-vk61-571h614-lederband-46-mm-CS071P09T/),
+retrieved 2026-08-31, explicitly identifies black leather with petrol stitching
+as the installed strap, lists black silicone separately as a supplied
+accessory, and publishes approximately 135 g in that configuration. Review
+therefore replaces the earlier black-silicone hypothesis with one homogeneous
+leather-worn row; the ambiguous regional 100 g value remains rejected as
+head-only or unscoped. OTTO's contradictory sold-out and cart state is also
+rejected, leaving the independently reviewed Czech EUR 793 short-wait snapshot
+canonical.
+
+Additive migration `0030_expand_catalogue_vostok_europe.sql` is live. Remote
+verification reports M0/M1 complete, 29 verified reference-level evidence rows
+from six sources, 26 accepted variants across 22 brands, and exact
+publishable-key catalogue plus six-profile hard-filter parity. The verified
+56.2 mm wearing span corrects the earlier three-band pre-screen to
+`7_5_plus` only. The row supports 16 `500_1000`, zero-maintenance chronograph
+cells, opens eight, and adds a second candidate to eight; coverage rises to
+1,076/28,800 (3.74%), single-candidate cells remain 1,052, and
+under-evidenced cells fall from 224 to 216. Strict research reports 26 accepted,
+18 `needs_review`, and two excluded targets; 34 reviews include fourteen
+migration-ready decisions. With no provider call, the ignored ledger remains
+64 attempts (39 succeeded, 25 failed) across 34 target IDs and USD 0.55435
+recorded cost. The default queue is empty again.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

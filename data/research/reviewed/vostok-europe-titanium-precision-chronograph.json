@@ -2,20 +2,20 @@
   "reviewVersion": 1,
   "targetId": "vostok-europe-titanium-precision-chronograph",
   "jobId": "4b0c285f-3cd1-4f5a-b97e-bbd8a0d18080",
-  "reviewedAt": "2026-08-30T19:32:02Z",
+  "reviewedAt": "2026-08-31T06:19:09Z",
   "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "outcome": "ready_for_migration",
   "candidateIdentity": {
     "brand": "Vostok Europe",
     "model": "Nuclear Submarine SSN 571",
     "referenceCode": "VK61-571H614",
-    "variantName": "Titanium case on black silicone strap; black leather accessory strap included"
+    "variantName": "Titanium case on black leather strap with petrol stitching; black silicone accessory strap included"
   },
   "sourceChecks": [
     {
       "url": "https://vostok-europe.com/product/vk61-571h614",
       "status": "validated_primary",
-      "note": "Vostok Europe's exact sold-out product route independently identifies VK61-571H614 and both factory-supplied black strap configurations. It publishes titanium, 45.7 x 15.6 x 56.2 mm geometry, 22 mm lugs, K1 crystal, 300 m resistance, VK61 meca-quartz, chronograph, date, 15 tritium tubes with continuous luminosity for at least ten years, and strap replacement with the included screwdriver or a coin. It publishes no configured mass. Retrieved 2026-08-30."
+      "note": "Vostok Europe's exact sold-out product route independently identifies VK61-571H614 and both factory-supplied black strap configurations. It publishes titanium, 45.7 x 15.6 x 56.2 mm geometry, 22 mm lugs, K1 crystal, 300 m resistance, VK61 meca-quartz, chronograph, date, 15 tritium tubes with continuous luminosity for at least ten years, and strap replacement with the included screwdriver or a coin. It publishes no configured mass; the scored leather-worn configuration is fixed by the later exact listing. Retrieved 2026-08-30."
     },
     {
       "url": "https://www.vostok-europe.com/public/vendor/laravel-files/files/manuals-catalogues/ve-catalog-2024.pdf",
@@ -51,6 +51,11 @@
       "url": "https://www.tutuora.hu/vostok/571h614.html",
       "status": "rejected",
       "note": "The exact-reference retailer lists black silicone and 134 g, but supplies no scale image, protocol, or explicit statement that the value is the complete watch on that strap. It conflicts with the ambiguous 100 g regional-manufacturer field and nearby 135-136 g catalogue records. A narrow Perplexity follow-up found no configuration-explicit measurement, so no mass is selected or averaged. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.otto.de/p/vostok-europe-chronograph-nuclear-submarine-herrneuhr-vk61-571h614-lederband-46-mm-CS071P09T/",
+      "status": "validated_secondary",
+      "note": "The exact VK61-571H614 listing explicitly titles the configured product on its black leather strap, describes the petrol contrast stitching, lists the silicone strap separately as an included accessory, and publishes approximately 135 g in the same configuration-specific details. This resolves the earlier 100 g head-only versus unscoped 134-136 g conflict for the leather-worn row. The page shows contradictory sold-out and cart controls, so its EUR 599 commercial state is not selected; the reviewed Czech short-wait snapshot remains. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -74,22 +79,28 @@
         "brand": "Vostok Europe",
         "model": "Nuclear Submarine SSN 571",
         "referenceCode": "VK61-571H614",
-        "variantName": "Titanium case on black silicone strap; black leather accessory strap included"
+        "variantName": "Titanium case on black leather strap with petrol stitching; black silicone accessory strap included"
       },
       "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
-      "note": "The exact manufacturer route and configuration-specific images establish one reference with two supplied factory straps; the reviewed wearable row fixes black silicone and records leather only as an included accessory."
+      "note": "The exact manufacturer route establishes one reference with two supplied factory straps; the exact configuration-specific listing fixes black leather as the reviewed wearable strap and records silicone only as an included accessory."
     },
     {
       "fieldName": "variantName",
-      "value": "Titanium case on black silicone strap; black leather accessory strap included",
-      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "value": "Titanium case on black leather strap with petrol stitching; black silicone accessory strap included",
+      "sourceUrl": "https://www.otto.de/p/vostok-europe-chronograph-nuclear-submarine-herrneuhr-vk61-571h614-lederband-46-mm-CS071P09T/",
       "note": "The normalized name fixes the scored wearable configuration without hiding the second factory-supplied strap."
     },
     {
       "fieldName": "materials.strap",
-      "value": "black silicone",
-      "sourceUrl": "https://vostok-europe.com/product/vk61-571h614",
-      "note": "The exact manufacturer page separately depicts and describes the black expandable silicone strap selected for this wearable row."
+      "value": "black leather with petrol contrast stitching",
+      "sourceUrl": "https://www.otto.de/p/vostok-europe-chronograph-nuclear-submarine-herrneuhr-vk61-571h614-lederband-46-mm-CS071P09T/",
+      "note": "The exact listing titles and describes the black leather strap as the installed configuration and lists black silicone separately as an accessory."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 135,
+      "sourceUrl": "https://www.otto.de/p/vostok-europe-chronograph-nuclear-submarine-herrneuhr-vk61-571h614-lederband-46-mm-CS071P09T/",
+      "note": "The exact configuration-specific listing publishes approximately 135 g alongside the installed black leather strap and separately included silicone accessory; this is normalized to 135 g for the complete leather-worn watch."
     },
     {
       "fieldName": "productionStatus",
@@ -197,11 +208,11 @@
   "rejectedProvisionalFields": [
     {
       "fieldName": "variantName",
-      "reason": "Titanium alone omits the wearable material. The reviewed name fixes the black silicone configuration and discloses the included black leather accessory strap."
+      "reason": "Titanium alone omits the wearable material. The reviewed name fixes the exact black-leather configuration and discloses the included black silicone accessory strap."
     },
     {
       "fieldName": "materials.strap",
-      "reason": "A combined silicone-plus-leather value is not one wearable configuration. The row selects the manufacturer-documented black silicone strap and records leather only as an included accessory."
+      "reason": "A combined silicone-plus-leather value is not one wearable configuration. The row selects the exact listing's installed black leather strap and records silicone only as an included accessory."
     },
     {
       "fieldName": "productionStatus",
@@ -229,7 +240,7 @@
     },
     {
       "fieldName": "geometry.weightFullG",
-      "reason": "The regional manufacturer field says 100 g without an installed-strap scope, an exact authorized listing labels approximately 100 g as main-body weight, and retailer/catalogue values range from 134 to 136 g without a scale protocol. A narrow Perplexity follow-up found no configuration-explicit black-silicone measurement. No value is selected or averaged."
+      "reason": "The provider's 100 g field remains rejected because the regional manufacturer gives no installed-strap scope and an exact authorized listing labels approximately 100 g as main-body weight. Full configured mass is independently re-established as approximately 135 g from a later exact listing that explicitly fixes the installed black leather strap and separately identifies the silicone accessory."
     },
     {
       "fieldName": "movement.type",
@@ -272,6 +283,6 @@
       "reason": "Date display is provider prose and is normalized to present."
     }
   ],
-  "missingM1Fields": ["weightFullG"],
-  "note": "Keep as research-only. Direct review overrules the provider's stale Helveti offer and exact-variant refusal: primary sources establish VK61-571H614 as the titanium SSN 571 on a selected black silicone strap, with 45.7 x 15.6 x 56.2 mm geometry, 22 mm lugs, VK61 -20/+20 seconds per month, 300 m resistance, strong continuous tritium, proprietary screw-fixed straps, chronograph, and date. A Czech official-distribution page supplies a new EUR 793 short-wait snapshot. Vostok Europe Japan reports 100 g without configuration scope, an authorized Japanese listing labels approximately 100 g as main-body weight, and unmeasured retailer records range from 134 to 136 g. A narrow Perplexity follow-up found no configuration-explicit full mass, so weightFullG remains null as the sole M1 gap."
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. Primary sources establish VK61-571H614 as the titanium SSN 571 supplied with black leather and silicone straps, with 45.7 x 15.6 x 56.2 mm geometry, 22 mm lugs, VK61 -20/+20 seconds per month, 300 m resistance, strong continuous tritium, proprietary screw-fixed attachment, chronograph, and date. The homogeneous row now selects black leather with petrol stitching; a later exact listing explicitly fixes that installed configuration, lists silicone separately as an accessory, and publishes approximately 135 g. The ambiguous 100 g regional field remains rejected as head-only or unscoped. A Czech official-distribution page supplies the retained new EUR 793 short-wait snapshot. Every M1 class is resolved without another provider call."
 }

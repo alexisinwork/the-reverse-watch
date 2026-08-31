@@ -696,6 +696,54 @@
       "publisher": "Trusted Shops / Laco Uhrenmanufaktur",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-31T06:08:07Z"
+    },
+    {
+      "id": "vostok-europe-vk61-571h614-product",
+      "url": "https://vostok-europe.com/product/vk61-571h614",
+      "title": "Nuclear Submarine SSN 571 — VK61-571H614",
+      "publisher": "Vostok Europe",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T19:32:02Z"
+    },
+    {
+      "id": "vostok-europe-2024-catalogue",
+      "url": "https://www.vostok-europe.com/public/vendor/laravel-files/files/manuals-catalogues/ve-catalog-2024.pdf",
+      "title": "Vostok Europe 2024 catalogue",
+      "publisher": "Vostok Europe",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T19:32:02Z"
+    },
+    {
+      "id": "vostok-europe-screw-fixed-user-guide",
+      "url": "https://vostok-europe.com/vendor/laravel-files/files/manuals-catalogues/new-2026/ve-users-guide-auto-en.pdf",
+      "title": "Vostok Europe screw-fixed strap user guide",
+      "publisher": "Vostok Europe",
+      "sourceType": "manufacturer_manual",
+      "retrievedAt": "2026-08-30T19:32:02Z"
+    },
+    {
+      "id": "vostok-europe-legacy-archive",
+      "url": "https://vostok-europe.com/archive",
+      "title": "Vostok Europe legacy-product archive",
+      "publisher": "Vostok Europe",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T19:32:02Z"
+    },
+    {
+      "id": "noemi-vostok-europe-vk61-571h614",
+      "url": "https://www.zlatnictvinoemi.cz/hodinky-vostok-europe-ssn571-nuclear-submarine-chrono-line-titanium-vk61-571h614-darek-zdarma",
+      "title": "Vostok Europe SSN 571 VK61-571H614 Czech offer",
+      "publisher": "Zlatnictvi Noemi",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T19:32:02Z"
+    },
+    {
+      "id": "otto-vostok-europe-vk61-571h614-leather",
+      "url": "https://www.otto.de/p/vostok-europe-chronograph-nuclear-submarine-herrneuhr-vk61-571h614-lederband-46-mm-CS071P09T/",
+      "title": "VK61-571H614 leather configuration and full weight",
+      "publisher": "OTTO",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T06:19:09Z"
     }
   ],
   "fx": {
@@ -3564,6 +3612,132 @@
         {
           "sourceId": "trustedshops-laco-augsburg-39-review",
           "fields": ["identity", "lumeGrade"]
+        }
+      ]
+    },
+    {
+      "id": "vostok-europe-vk61-571h614",
+      "brand": {
+        "slug": "vostok-europe",
+        "name": "Vostok Europe",
+        "serviceCountries": null
+      },
+      "collection": "Nuclear Submarine SSN 571",
+      "model": "Nuclear Submarine SSN 571",
+      "referenceCode": "VK61-571H614",
+      "variantName": "Titanium case on black leather strap with petrol stitching; black silicone accessory strap included",
+      "productUrl": "https://vostok-europe.com/product/vk61-571h614",
+      "price": {
+        "amountMinor": 79300,
+        "currency": "EUR",
+        "marketCountry": "CZ",
+        "observedAt": "2026-08-30T19:32:02Z",
+        "staleAfter": "2027-02-26T19:32:02Z",
+        "availability": "short_wait",
+        "availabilityObservedAt": "2026-08-30T19:32:02Z",
+        "availabilityStaleAfter": "2026-09-29T19:32:02Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "titanium",
+        "caseback": "titanium screw-down caseback",
+        "bracelet": null,
+        "strap": "black leather with petrol contrast stitching"
+      },
+      "productionStatus": "discontinued",
+      "geometry": {
+        "caseDiameterMm": 45.7,
+        "caseWidthMm": null,
+        "caseLengthMm": null,
+        "caseThicknessMm": 15.6,
+        "lugToLugMm": 56.2,
+        "lugWidthMm": 22,
+        "weightFullG": 135,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "hybrid",
+        "caliber": "TMI VK61A",
+        "powerReserveHours": null,
+        "accuracyLowerSeconds": -20,
+        "accuracyUpperSeconds": 20,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 300,
+        "crownType": "screw_down",
+        "crownPosition": null,
+        "crystal": "mineral",
+        "lumeGrade": "strong",
+        "attachmentType": "proprietary",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": ["chronograph"],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "titanium_tritium_meca_quartz_chronograph",
+        "socialSignals": ["unapologetic_benchmark"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability", "differentiation"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "vostok-europe-vk61-571h614-product",
+          "fields": [
+            "identity",
+            "materials",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "vostok-europe-2024-catalogue",
+          "fields": [
+            "identity",
+            "movement",
+            "accuracy",
+            "complications",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "vostok-europe-screw-fixed-user-guide",
+          "fields": ["integratedBracelet", "attachmentType"]
+        },
+        {
+          "sourceId": "vostok-europe-legacy-archive",
+          "fields": ["identity", "productionStatus"]
+        },
+        {
+          "sourceId": "noemi-vostok-europe-vk61-571h614",
+          "fields": ["identity", "price", "availability"]
+        },
+        {
+          "sourceId": "otto-vostok-europe-vk61-571h614-leather",
+          "fields": ["identity", "materials", "weightFullG"]
         }
       ]
     }

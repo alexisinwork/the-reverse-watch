@@ -1,7 +1,7 @@
 # Coverage-first research pipeline
 
 Status: **Phase 5 contract active**
-Last verified: **2026-08-30**
+Last verified: **2026-08-31**
 
 This pipeline expands the relational catalogue without turning provider output,
 Markdown, or a brand name into an accepted fact. PostgreSQL remains canonical;
@@ -59,10 +59,10 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context alongside source-led additions through Bertucci;
-- 25 accepted catalogue targets linked to all current reviewed variants;
+- 26 accepted catalogue targets linked to all current reviewed variants;
 - 30 coverage-intent targets, with no planned target in the default research
-  queue after the source-led Laco gap resolution;
-- live Supabase parity for 21 brands and all 25 accepted variants across the
+  queue after the source-led Vostok Europe gap resolution;
+- live Supabase parity for 22 brands and all 26 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
@@ -1138,6 +1138,30 @@ accepted, 19 `needs_review`, two excluded, and thirteen migration-ready reviews.
 No provider request was made, so the ledger remains 64 attempts (39 succeeded,
 25 failed) across 34 target IDs and USD 0.55435 recorded cost. The default queue
 is empty again.
+
+A later source-led pass closes Vostok Europe Nuclear Submarine SSN 571
+`VK61-571H614`'s sole full-mass gap without invoking the provider. The
+[exact OTTO leather configuration](https://www.otto.de/p/vostok-europe-chronograph-nuclear-submarine-herrneuhr-vk61-571h614-lederband-46-mm-CS071P09T/),
+retrieved 2026-08-31, explicitly fixes black leather with petrol stitching as
+the installed strap, lists black silicone separately as an accessory, and
+publishes approximately 135 g. This replaces the earlier silicone-worn
+hypothesis rather than merging configurations. The ambiguous 100 g regional
+field remains rejected, as do OTTO's contradictory sold-out and cart signals;
+the reviewed EUR 793 Czech short-wait snapshot continues to control price and
+availability.
+
+Migration `0030_expand_catalogue_vostok_europe.sql` accepts
+`vostok-europe-vk61-571h614`. Remote verification reports M0/M1 complete, 29
+verified reference-level evidence rows from six sources, 26 variants across 22
+brands, and exact source-group plus six-profile hard-filter parity. Its 56.2 mm
+wearing span admits only the `7_5_plus` wrist representative, correcting the
+three-band planning hypothesis. The row supports 16 cells, opens eight, and
+adds a second candidate to eight. Coverage rises to 1,076/28,800 (3.74%);
+single-candidate cells remain 1,052 and under-evidenced cells fall to 216.
+Strict research reports 26 accepted, 18 `needs_review`, two excluded, and
+fourteen migration-ready reviews. No provider request was made, so the ledger
+remains 64 attempts (39 succeeded, 25 failed) across 34 target IDs and USD
+0.55435 recorded cost. The default queue is empty again.
 
 ## Job idempotency and retention
 

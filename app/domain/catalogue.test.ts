@@ -12,10 +12,10 @@ import { seedCatalogue } from "./seed-catalogue";
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
     expect(seedCatalogue.catalogueVersion).toBe(2);
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(25);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(26);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(25);
+    ).toBe(26);
   });
 
   it("retains evidence for every seed identity and price", () => {
@@ -290,6 +290,44 @@ describe("source-backed seed catalogue", () => {
     });
     expect(laco!.dateStatus).toBe("absent");
     expect(evidenceFields(laco!).has("lumeGrade")).toBe(true);
+  });
+
+  it("retains the reviewed Vostok Europe leather-worn chronograph configuration", () => {
+    const vostokEurope = seedCatalogue.variants.find(
+      (variant) => variant.id === "vostok-europe-vk61-571h614",
+    );
+
+    expect(vostokEurope).toBeDefined();
+    expect(vostokEurope!.referenceCode).toBe("VK61-571H614");
+    expect(vostokEurope!.materials.strap).toBe(
+      "black leather with petrol contrast stitching",
+    );
+    expect(vostokEurope!.geometry).toMatchObject({
+      caseDiameterMm: 45.7,
+      caseThicknessMm: 15.6,
+      lugToLugMm: 56.2,
+      lugWidthMm: 22,
+      weightFullG: 135,
+      integratedBracelet: false,
+    });
+    expect(vostokEurope!.movement).toMatchObject({
+      type: "hybrid",
+      caliber: "TMI VK61A",
+      accuracyLowerSeconds: -20,
+      accuracyUpperSeconds: 20,
+      accuracyPeriodDays: 30,
+    });
+    expect(vostokEurope!.operation).toMatchObject({
+      waterResistanceM: 300,
+      crownType: "screw_down",
+      crystal: "mineral",
+      lumeGrade: "strong",
+      attachmentType: "proprietary",
+    });
+    expect(vostokEurope!.complications).toEqual(["chronograph"]);
+    expect(vostokEurope!.dateStatus).toBe("present");
+    expect(evidenceFields(vostokEurope!).has("weightFullG")).toBe(true);
+    expect(evidenceFields(vostokEurope!).has("attachmentType")).toBe(true);
   });
 
   it("rejects a partial non-round dimension pair", () => {

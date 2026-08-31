@@ -51,7 +51,7 @@ describe("server catalogue loader", () => {
     const second = await load();
 
     expect(first.origin).toBe("supabase");
-    expect(first.catalogue.variants).toHaveLength(25);
+    expect(first.catalogue.variants).toHaveLength(26);
     expect(second.origin).toBe("supabase");
     expect(fetchImpl).toHaveBeenCalledTimes(1);
     const catalogueRequest = fetchImpl.mock.calls[0]?.[0];
