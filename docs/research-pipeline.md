@@ -1521,6 +1521,16 @@ or repeatable performance class. The 31 g configured mass, rectangular
 14 mm proprietary pushpin mount remain accepted provisional facts; no fact is
 promoted and no provider request is authorized.
 
+The next Certina DS Action Diver 38 mm Titanium `C048.807.44.051.01`
+pre-screen remains open only for `accuracy`. An exact Slovak authorized-retailer
+page identifies the selected reference and repeats the Powermatic 80.611
+configuration, but renders its rate field as the ambiguous `+ - 6-4 sec./day`
+without a test method or defined lower and upper bounds. That malformed claim
+cannot be normalized. It joins the earlier exact-retailer -10/+25 claim and
+Certina's approximate -10/+30 guidance for most non-chronometers; neither is a
+variant-specific guaranteed bound. No fact is promoted and no provider request
+is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

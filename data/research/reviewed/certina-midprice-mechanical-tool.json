@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "certina-midprice-mechanical-tool",
   "jobId": "6d55cbf7-1ebd-49c9-bf97-0cafec37f181",
-  "reviewedAt": "2026-08-30T08:16:22Z",
+  "reviewedAt": "2026-08-31T09:52:14Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -51,6 +51,11 @@
       "url": "https://www.ditur.com/certina-ds-action-diver-38mm-titanium-c0488074405101",
       "status": "validated_secondary",
       "note": "The Certina-listed authorized retailer independently matches SKU C0488074405101, MPN C048.807.44.051.01, and EAN 7612307157689, and explicitly validates the date display."
+    },
+    {
+      "url": "https://www.inhodinky.sk/certina-hodinky/hodinky-certina-c048-807-44-051-01-ds-action-diver-38mm-powermatic-80-titanium/",
+      "status": "validated_secondary",
+      "note": "The exact Slovak authorized-retailer page identifies C048.807.44.051.01 and repeats the titanium configuration and Powermatic 80.611. Its accuracy field is rendered as the ambiguous '+ - 6-4 sec./deň' with no test method or tolerance definition; the malformed range cannot be normalized into a canonical lower/upper bound and does not close the accuracy gate."
     },
     {
       "url": "https://www.certina.com/en/watch/ds-action-diver-38mm-titanium/c0488074405100",
@@ -213,5 +218,5 @@
     }
   ],
   "missingM1Fields": ["accuracy"],
-  "note": "Keep as research-only. Correcting the provider's two mixed Certina URLs resolves every other M1 field. A 2026-08-30 Perplexity-assisted pass found an exact specialist-retailer -10/+25 seconds-per-day claim, but it is unattributed, untested, and inconsistent with Certina's approximate -10/+30 guidance for most non-chronometers. A 2026-08-31 owner discussion supplies multi-day readings for unnamed DS Action/Powermatic 80 divers but mixes sizes and references, so it cannot establish an exact-reference guarantee. Certina's official FAQ confirms that mechanical accuracy varies and refers only to undisclosed internal tolerances. No authoritative exact-reference or Powermatic 80.611 guarantee was found, so accuracy remains the sole M1 gap."
+  "note": "Keep as research-only. Correcting the provider's two mixed Certina URLs resolves every other M1 field. A 2026-08-30 Perplexity-assisted pass found an exact specialist-retailer -10/+25 seconds-per-day claim, but it is unattributed, untested, and inconsistent with Certina's approximate -10/+30 guidance for most non-chronometers. A 2026-08-31 exact Slovak authorized-retailer page renders its accuracy as the ambiguous '+ - 6-4 sec./day' without a test method or defined bounds; that malformed field cannot be normalized. The owner discussion supplies multi-day readings for unnamed DS Action/Powermatic 80 divers but mixes sizes and references, so it cannot establish an exact-reference guarantee. Certina's official FAQ confirms that mechanical accuracy varies and refers only to undisclosed internal tolerances. No authoritative exact-reference or Powermatic 80.611 guarantee was found, so accuracy remains the sole M1 gap."
 }
