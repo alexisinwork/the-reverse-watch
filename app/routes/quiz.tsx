@@ -1,5 +1,6 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { data, Form, Link, useActionData, useNavigation } from "react-router";
+import { track } from "@vercel/analytics";
 import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
@@ -107,6 +108,17 @@ type SubscriptionResult =
       newsletterStatus: DeliveryChannelStatus;
       dossierStatus: DeliveryChannelStatus;
     };
+
+type EvaluationSummary = {
+  recommendationCount: number;
+  verificationCount: number;
+  whyNotCount: number;
+  hardFilterViolationCount: number;
+  evaluationDurationMs: number;
+  providerCostUsd: number;
+  topRecommendationScore: number | null;
+  meanRecommendationScore: number | null;
+};
 
 const emailSchema = z.string().trim().email().max(320);
 
@@ -704,24 +716,48 @@ export async function action({ request }: Route.ActionArgs) {
     };
   }
 
-  recordQuizAnalyticsEvent({
-    name: "evaluation",
-    intent,
-    catalogueOrigin: catalogueLoad.origin,
+  const recommendationScores = recommendation.recommendations.map(
+    (candidate) => candidate.score,
+  );
+  const evaluation: EvaluationSummary = {
     recommendationCount: recommendation.recommendations.length,
     verificationCount: recommendation.verificationRequired.length,
     whyNotCount: recommendation.whyNot.length,
     hardFilterViolationCount,
     evaluationDurationMs,
     providerCostUsd: 0,
-  });
-  if (subscription.status !== "not_requested") {
-    recordQuizAnalyticsEvent({
-      name: "subscription",
-      intent,
-      catalogueOrigin: catalogueLoad.origin,
-      status: subscription.status,
-    });
+    topRecommendationScore: recommendationScores[0] ?? null,
+    meanRecommendationScore:
+      recommendationScores.length === 0
+        ? null
+        : Number(
+            (
+              recommendationScores.reduce((total, score) => total + score, 0) /
+              recommendationScores.length
+            ).toFixed(2),
+          ),
+  };
+
+  if (subscription.status === "not_requested") {
+    await recordQuizAnalyticsEvent(
+      {
+        name: "evaluation",
+        intent,
+        catalogueOrigin: catalogueLoad.origin,
+        ...evaluation,
+      },
+      request,
+    );
+  } else {
+    await recordQuizAnalyticsEvent(
+      {
+        name: "subscription",
+        intent,
+        catalogueOrigin: catalogueLoad.origin,
+        status: subscription.status,
+      },
+      request,
+    );
   }
 
   return data<ActionResult>(
@@ -873,6 +909,7 @@ function ProfileSummary({
   subscription,
   onEdit,
   onRefine,
+  onRestart,
 }: {
   profile: ReturnType<typeof normalizeProfile>;
   recommendation: RecommendationResult;
@@ -883,6 +920,7 @@ function ProfileSummary({
   subscription: SubscriptionResult;
   onEdit: () => void;
   onRefine: () => void;
+  onRestart: () => void;
 }) {
   const complicationText =
     profile.core.requiredComplications.length === 0
@@ -979,6 +1017,13 @@ function ProfileSummary({
         </button>
         <button className="button button--quiet" onClick={onEdit} type="button">
           Edit core answers
+        </button>
+        <button
+          className="button button--quiet"
+          onClick={onRestart}
+          type="button"
+        >
+          Restart diagnostic
         </button>
       </div>
     </section>
@@ -1312,6 +1357,7 @@ export default function Quiz() {
     useState<RefinementDraft>(INITIAL_REFINEMENT);
   const [step, setStep] = useState(0);
   const [storageReady, setStorageReady] = useState(false);
+  const startTracked = useRef(false);
 
   useEffect(() => {
     const saved = readSavedDraft();
@@ -1417,6 +1463,21 @@ export default function Quiz() {
     setStep((current) => Math.max(0, current - 1));
   };
 
+  const recordStart = () => {
+    if (startTracked.current) return;
+    startTracked.current = true;
+    track("quiz_started", { questionnaireVersion: QUESTIONNAIRE_VERSION });
+  };
+
+  const restartQuiz = () => {
+    window.sessionStorage.removeItem(QUESTIONNAIRE_STORAGE_KEY);
+    setCore(INITIAL_CORE);
+    setRefinement(INITIAL_REFINEMENT);
+    setStep(0);
+    startTracked.current = false;
+    track("quiz_restarted", { questionnaireVersion: QUESTIONNAIRE_VERSION });
+  };
+
   if (step === SUMMARY_STEP && resultData) {
     return (
       <main className="quiz-shell">
@@ -1427,6 +1488,7 @@ export default function Quiz() {
         <ProfileSummary
           onEdit={() => setStep(0)}
           onRefine={() => setStep(CORE_STEP_COUNT)}
+          onRestart={restartQuiz}
           catalogueNotice={resultData.catalogueNotice}
           catalogueOrigin={resultData.catalogueOrigin}
           profile={resultData.profile}
@@ -1948,13 +2010,16 @@ export default function Quiz() {
             <button
               className="button button--primary"
               disabled={!stepIsComplete}
-              onClick={() => setStep((current) => current + 1)}
+              onClick={() => {
+                recordStart();
+                setStep((current) => current + 1);
+              }}
               type="button"
             >
               Next
             </button>
           ) : (
-            <Form method="post">
+            <Form method="post" onSubmit={recordStart}>
               <input
                 name="intent"
                 type="hidden"

@@ -7,6 +7,7 @@ import {
   ScrollRestoration,
 } from "react-router";
 import * as Sentry from "@sentry/react-router";
+import { Analytics, type BeforeSendEvent } from "@vercel/analytics/react";
 
 import type { Route } from "./+types/root";
 import { requestMiddleware } from "./middleware.server";
@@ -29,6 +30,15 @@ export const links: Route.LinksFunction = () => [
   },
 ];
 
+export function redactAnalyticsUrl(event: BeforeSendEvent) {
+  try {
+    const url = new URL(event.url);
+    return { ...event, url: `${url.origin}${url.pathname}` };
+  } catch {
+    return null;
+  }
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -43,6 +53,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Analytics beforeSend={redactAnalyticsUrl} />
       </body>
     </html>
   );

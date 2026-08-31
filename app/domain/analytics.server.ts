@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { track } from "@vercel/analytics/server";
 
 const quizAnalyticsEventSchema = z
   .object({
@@ -11,6 +12,8 @@ const quizAnalyticsEventSchema = z
     hardFilterViolationCount: z.number().int().nonnegative().optional(),
     evaluationDurationMs: z.number().nonnegative().optional(),
     providerCostUsd: z.number().nonnegative().optional(),
+    topRecommendationScore: z.number().nonnegative().nullable().optional(),
+    meanRecommendationScore: z.number().nonnegative().nullable().optional(),
     status: z
       .enum([
         "not_requested",
@@ -31,7 +34,15 @@ export type QuizAnalyticsEvent = z.infer<typeof quizAnalyticsEventSchema>;
  * email addresses never enter this payload; only funnel dimensions and counts
  * needed for the Phase 7 evaluation are retained.
  */
-export function recordQuizAnalyticsEvent(event: QuizAnalyticsEvent) {
+export async function recordQuizAnalyticsEvent(
+  event: QuizAnalyticsEvent,
+  request?: Request,
+) {
   const parsed = quizAnalyticsEventSchema.parse(event);
   console.info(JSON.stringify({ event: "quiz_funnel", ...parsed }));
+
+  if (!request) return;
+
+  const { name, ...properties } = parsed;
+  await track(`quiz_${name}`, properties, { request });
 }

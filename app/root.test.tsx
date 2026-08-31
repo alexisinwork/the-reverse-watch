@@ -7,7 +7,7 @@ const { captureException } = vi.hoisted(() => ({
 
 vi.mock("@sentry/react-router", () => ({ captureException }));
 
-import { ErrorBoundary } from "./root";
+import { ErrorBoundary, redactAnalyticsUrl } from "./root";
 
 describe("root error reporting", () => {
   beforeEach(() => captureException.mockClear());
@@ -40,5 +40,23 @@ describe("root error reporting", () => {
     expect(
       screen.getByRole("heading", { name: "Record not found" }),
     ).toBeVisible();
+  });
+});
+
+describe("analytics URL privacy", () => {
+  it("removes query parameters before analytics collection", () => {
+    expect(
+      redactAnalyticsUrl({
+        type: "pageview",
+        url: "https://thereserve.watch/quiz?token=private#summary",
+      }),
+    ).toEqual({
+      type: "pageview",
+      url: "https://thereserve.watch/quiz",
+    });
+  });
+
+  it("drops malformed URLs", () => {
+    expect(redactAnalyticsUrl({ type: "event", url: "not a URL" })).toBeNull();
   });
 });

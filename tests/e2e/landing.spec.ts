@@ -27,6 +27,9 @@ test("renders the landing page and Beehiiv embed", async ({ page }) => {
     'script[src="https://subscribe-forms.beehiiv.com/v3/loader.js"]',
   );
   await expect(beehiivLoader).toHaveAttribute("data-beehiiv-form", /.+/);
+  await expect(
+    page.locator('script[src="/_vercel/insights/script.js"]'),
+  ).toHaveCount(1);
 
   // The application-owned loader boundary proves hydration without making the
   // suite depend on Beehiiv's cross-origin response or iframe markup.
@@ -78,6 +81,14 @@ test("completes the six-screen core diagnostic without a model provider", async 
     page.getByRole("heading", { name: "Your search boundary" }),
   ).toBeVisible();
   await expect(page.getByText("USD 10,000")).toBeVisible();
+
+  await page.getByRole("button", { name: "Restart diagnostic" }).click();
+  await expect(
+    page.getByRole("heading", {
+      name: "What is the actual purchase ceiling?",
+    }),
+  ).toBeVisible();
+  await expect(page.getByLabel("Maximum amount")).toHaveValue("");
 });
 
 test("applies optional refinements and preserves cited results", async ({

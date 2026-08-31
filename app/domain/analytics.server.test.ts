@@ -1,12 +1,16 @@
 import { vi } from "vitest";
 
+const { track } = vi.hoisted(() => ({ track: vi.fn() }));
+
+vi.mock("@vercel/analytics/server", () => ({ track }));
+
 import { recordQuizAnalyticsEvent } from "./analytics.server";
 
 describe("quiz analytics contract", () => {
-  it("emits only aggregate funnel fields", () => {
+  it("emits only aggregate funnel fields", async () => {
     const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
 
-    recordQuizAnalyticsEvent({
+    await recordQuizAnalyticsEvent({
       name: "evaluation",
       intent: "core",
       catalogueOrigin: "supabase",
@@ -36,10 +40,10 @@ describe("quiz analytics contract", () => {
     info.mockRestore();
   });
 
-  it("rejects unrecognized fields before logging", () => {
+  it("rejects unrecognized fields before logging", async () => {
     const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
 
-    expect(() =>
+    await expect(
       recordQuizAnalyticsEvent({
         name: "subscription",
         intent: "core",
@@ -47,15 +51,15 @@ describe("quiz analytics contract", () => {
         status: "sent",
         email: "reader@example.com",
       } as never),
-    ).toThrow();
+    ).rejects.toThrow();
     expect(info).not.toHaveBeenCalled();
     info.mockRestore();
   });
 
-  it("accepts partial channel delivery as a measured status", () => {
+  it("accepts partial channel delivery as a measured status", async () => {
     const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
 
-    recordQuizAnalyticsEvent({
+    await recordQuizAnalyticsEvent({
       name: "subscription",
       intent: "refine",
       catalogueOrigin: "bundled_seed",
@@ -63,6 +67,38 @@ describe("quiz analytics contract", () => {
     });
 
     expect(info).toHaveBeenCalledOnce();
+    info.mockRestore();
+  });
+
+  it("forwards only validated aggregates to the Vercel event dashboard", async () => {
+    const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
+    const request = new Request("https://thereserve.watch/quiz", {
+      headers: { "user-agent": "test" },
+    });
+
+    await recordQuizAnalyticsEvent(
+      {
+        name: "evaluation",
+        intent: "refine",
+        catalogueOrigin: "supabase",
+        recommendationCount: 2,
+        hardFilterViolationCount: 0,
+        topRecommendationScore: 8.5,
+      },
+      request,
+    );
+
+    expect(track).toHaveBeenCalledWith(
+      "quiz_evaluation",
+      {
+        intent: "refine",
+        catalogueOrigin: "supabase",
+        recommendationCount: 2,
+        hardFilterViolationCount: 0,
+        topRecommendationScore: 8.5,
+      },
+      { request },
+    );
     info.mockRestore();
   });
 });

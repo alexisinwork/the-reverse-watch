@@ -7,6 +7,8 @@ const redisMock = vi.hoisted(() => ({
   del: vi.fn(),
   set: vi.fn(),
 }));
+const analyticsMock = vi.hoisted(() => ({ track: vi.fn() }));
+const serverAnalyticsMock = vi.hoisted(() => ({ track: vi.fn() }));
 
 vi.mock("@upstash/redis", () => ({
   Redis: class MockRedis {
@@ -14,6 +16,8 @@ vi.mock("@upstash/redis", () => ({
     set = redisMock.set;
   },
 }));
+vi.mock("@vercel/analytics", () => analyticsMock);
+vi.mock("@vercel/analytics/server", () => serverAnalyticsMock);
 
 import {
   QUESTIONNAIRE_STORAGE_KEY,
@@ -49,6 +53,8 @@ describe("progressive diagnostic", () => {
     window.sessionStorage.clear();
     redisMock.del.mockReset();
     redisMock.set.mockReset();
+    analyticsMock.track.mockReset();
+    serverAnalyticsMock.track.mockReset();
   });
 
   it("keeps the recommendation visible when email channels are unavailable", async () => {
@@ -219,6 +225,10 @@ describe("progressive diagnostic", () => {
     await user.type(screen.getByLabelText("Maximum amount"), "10000");
     await user.click(screen.getByRole("button", { name: "Next" }));
 
+    expect(analyticsMock.track).toHaveBeenCalledWith("quiz_started", {
+      questionnaireVersion: QUESTIONNAIRE_VERSION,
+    });
+
     await user.type(screen.getByLabelText("Wrist circumference (mm)"), "170");
     await user.click(screen.getByRole("button", { name: "Next" }));
 
@@ -255,6 +265,7 @@ describe("progressive diagnostic", () => {
     expect(
       screen.getByRole("heading", { name: "Keep the dossier" }),
     ).toBeInTheDocument();
+
     expect(
       screen.getByRole("checkbox", { name: /explicitly opt in/i }),
     ).toBeInTheDocument();
@@ -271,6 +282,19 @@ describe("progressive diagnostic", () => {
     expect(
       screen.getByRole("heading", { name: "Keep the dossier" }),
     ).toBeInTheDocument();
+
+    await user.click(
+      screen.getByRole("button", { name: "Restart diagnostic" }),
+    );
+    expect(
+      screen.getByRole("heading", {
+        name: "What is the actual purchase ceiling?",
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByLabelText("Maximum amount")).toHaveValue(null);
+    expect(analyticsMock.track).toHaveBeenCalledWith("quiz_restarted", {
+      questionnaireVersion: QUESTIONNAIRE_VERSION,
+    });
   });
 
   it("does not advance from a missing budget", () => {

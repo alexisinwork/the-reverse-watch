@@ -1362,11 +1362,20 @@ only the traffic-derived quota remains open.
 
 Each accepted quiz action also emits a privacy-safe `quiz_funnel` runtime event
 with intent, catalogue origin, result counts, returned hard-filter violations,
-evaluation duration, deterministic provider cost, and subscription status. No
-profile answers or email addresses enter the event. Vercel runtime logs provide
-the initial queryable evaluation surface; a conversion dashboard and any
-traffic-derived conclusions remain pending until the deployment has enough
-observations.
+evaluation duration, deterministic provider cost, ranking-score summaries, and
+subscription status. The same validated aggregates now feed Vercel Web
+Analytics custom events, while the first meaningful forward action records a
+`quiz_started` event. Pageview analytics remove query parameters and fragments
+before collection. The resulting dashboard covers completion, refinement use,
+hard-filter validity, operational score distributions, latency, cost, and
+subscription outcomes; its event contract and denominator rules are recorded
+in `docs/phase-7-evaluation-dashboard.md`. No profile answers or email
+addresses enter custom properties. Traffic-derived conclusions remain pending
+until the deployment has enough observations.
+
+The result screen now also exposes a true restart control. Restart clears the
+stored core and refinement draft, returns to the first screen, and records only
+the questionnaire version as a restart event.
 
 Sentry error reporting now covers the React Router client, server render,
 loaders, actions, middleware, and the branded root boundary without enabling
@@ -1400,9 +1409,12 @@ Verification:
   failures are tested.
 - Beehiiv and Resend adapters are tested independently, including paired-config
   parsing, request contracts, provider failures, and visible partial delivery;
-  production smoke currently exercises the provider-free path because no email
-  credentials are configured.
-- Production smoke checks pass on the canonical domain.
+  production provider delivery still requires a consented test recipient.
+- Production smoke checks pass on `www.thereserve.watch` and the Vercel alias.
+  The apex domain currently presents the `www`-only certificate because its
+  third-party DNS A record points to `216.198.79.1`; Vercel requires
+  `76.76.21.21`. Canonical-domain verification remains open until the owner
+  changes that DNS record and certificate issuance completes.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
