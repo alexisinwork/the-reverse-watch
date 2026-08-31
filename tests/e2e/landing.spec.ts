@@ -1,10 +1,9 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-test("renders the landing page and Beehiiv embed", async ({ page }) => {
-  await page.route("https://subscribe-forms.beehiiv.com/**", (route) =>
-    route.abort(),
-  );
+test("renders the landing page and legible subscription form", async ({
+  page,
+}) => {
   const response = await page.goto("/", { waitUntil: "domcontentloaded" });
 
   await expect(
@@ -23,19 +22,31 @@ test("renders the landing page and Beehiiv embed", async ({ page }) => {
     );
   }
 
-  const beehiivLoader = page.locator(
-    'script[src="https://subscribe-forms.beehiiv.com/v3/loader.js"]',
+  const emailInput = page.getByLabel("Email address");
+  await expect(emailInput).toBeVisible();
+  await expect(
+    page.getByRole("checkbox", { name: /agree to receive/i }),
+  ).toBeVisible();
+  await expect(page.getByRole("button", { name: "Subscribe" })).toBeVisible();
+  await expect(
+    page.locator('script[src*="subscribe-forms.beehiiv.com"]'),
+  ).toHaveCount(0);
+
+  const inputColors = await emailInput.evaluate((element) => {
+    const style = window.getComputedStyle(element);
+    return { background: style.backgroundColor, color: style.color };
+  });
+  expect(inputColors).toEqual(
+    expect.objectContaining({
+      background: "rgb(8, 9, 11)",
+      color: "rgb(255, 255, 255)",
+    }),
   );
-  await expect(beehiivLoader).toHaveAttribute("data-beehiiv-form", /.+/);
   await expect(
     page.locator('script[src="/_vercel/insights/script.js"]'),
   ).toHaveCount(1);
 
-  // The application-owned loader boundary proves hydration without making the
-  // suite depend on Beehiiv's cross-origin response or iframe markup.
-  const accessibility = await new AxeBuilder({ page })
-    .exclude('[data-testid="beehiiv-signup"]')
-    .analyze();
+  const accessibility = await new AxeBuilder({ page }).analyze();
   expect(accessibility.violations).toEqual([]);
 });
 

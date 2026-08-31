@@ -1,11 +1,29 @@
 import { render, screen } from "@testing-library/react";
+import { createRoutesStub } from "react-router";
+import { vi } from "vitest";
 
-import { BEEHIIV_FORM_ID } from "../components/beehiiv-signup";
-import Home, { meta } from "./home";
+import Home, { action, meta } from "./home";
+
+function renderHome() {
+  const Stub = createRoutesStub([{ path: "/", Component: Home, action }]);
+  render(<Stub />);
+}
+
+function actionRequest(entries: Record<string, string>) {
+  return new Request("http://test.local/", {
+    method: "POST",
+    body: new URLSearchParams(entries),
+  });
+}
 
 describe("landing page", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.unstubAllGlobals();
+  });
+
   it("preserves the documentary landing-page copy", () => {
-    render(<Home />);
+    renderHome();
 
     expect(
       screen.getByRole("heading", { level: 1, name: "The Reserve" }),
@@ -19,16 +37,63 @@ describe("landing page", () => {
     ).toHaveAttribute("href", "/quiz");
   });
 
-  it("loads the existing Beehiiv form without embedding a credential", () => {
-    render(<Home />);
-    const script = document.querySelector<HTMLScriptElement>(
-      "script[data-beehiiv-form]",
-    );
+  it("renders a legible first-party Beehiiv subscription form", () => {
+    renderHome();
 
-    expect(script).toHaveAttribute("data-beehiiv-form", BEEHIIV_FORM_ID);
-    expect(script).toHaveAttribute(
-      "src",
-      "https://subscribe-forms.beehiiv.com/v3/loader.js",
+    expect(screen.getByLabelText("Email address")).toHaveAttribute(
+      "autocomplete",
+      "email",
+    );
+    expect(
+      screen.getByRole("checkbox", { name: /agree to receive/i }),
+    ).toBeRequired();
+    expect(screen.getByRole("button", { name: "Subscribe" })).toBeVisible();
+    expect(
+      document.querySelector('script[src*="subscribe-forms.beehiiv.com"]'),
+    ).not.toBeInTheDocument();
+  });
+
+  it("requires explicit consent before calling Beehiiv", async () => {
+    const fetchImplementation = vi.fn<typeof fetch>();
+    vi.stubGlobal("fetch", fetchImplementation);
+    const response = await action({
+      request: actionRequest({
+        intent: "newsletter",
+        email: "reader@example.com",
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(response.init?.status).toBe(400);
+    expect(response.data).toEqual({
+      ok: false,
+      message: "Please confirm the email opt-in.",
+    });
+    expect(fetchImplementation).not.toHaveBeenCalled();
+  });
+
+  it("subscribes through the server-side Beehiiv adapter", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    const fetchImplementation = vi
+      .fn<typeof fetch>()
+      .mockResolvedValue(new Response(null, { status: 201 }));
+    vi.stubGlobal("fetch", fetchImplementation);
+    const response = await action({
+      request: actionRequest({
+        intent: "newsletter",
+        email: "reader@example.com",
+        newsletterConsent: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(response.init?.status ?? 200).toBe(200);
+    expect(response.data).toEqual({
+      ok: true,
+      message: "Subscribed. Welcome to The Reserve.",
+    });
+    expect(fetchImplementation).toHaveBeenCalledWith(
+      "https://api.beehiiv.com/v2/publications/pub_123/subscriptions",
+      expect.objectContaining({ method: "POST" }),
     );
   });
 

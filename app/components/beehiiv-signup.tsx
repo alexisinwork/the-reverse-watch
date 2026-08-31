@@ -1,43 +1,66 @@
 import { useEffect, useRef } from "react";
+import { useFetcher } from "react-router";
 
-export const BEEHIIV_FORM_ID = "e0fc5991-3244-47f3-a4fd-1214039d9da7";
+export type NewsletterActionResult =
+  { ok: true; message: string } | { ok: false; message: string };
 
 export function BeehiivSignup() {
-  const embedRef = useRef<HTMLDivElement>(null);
+  const fetcher = useFetcher<NewsletterActionResult>();
+  const formRef = useRef<HTMLFormElement>(null);
+  const isSubmitting = fetcher.state !== "idle";
 
   useEffect(() => {
-    const embed = embedRef.current;
-    if (!embed) return;
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://subscribe-forms.beehiiv.com/v3/loader.js";
-    script.dataset.beehiivForm = BEEHIIV_FORM_ID;
-    embed.append(script);
-
-    return () => {
-      script.remove();
-      embed
-        .querySelector('iframe[src*="subscribe-forms.beehiiv.com"]')
-        ?.remove();
-    };
-  }, []);
+    if (fetcher.data?.ok) formRef.current?.reset();
+  }, [fetcher.data]);
 
   return (
     <section className="signup" aria-labelledby="signup-heading">
-      <h2 className="sr-only" id="signup-heading">
-        Subscribe to The Reserve
-      </h2>
-      <div
-        className="signup-embed"
-        data-testid="beehiiv-signup"
-        ref={embedRef}
-      />
-      <noscript>
-        <p className="noscript-note">
-          Enable JavaScript to open the secure Beehiiv subscription form.
+      <span className="signup-kicker">Independent watch intelligence</span>
+      <h2 id="signup-heading">Enter the archive</h2>
+      <p className="signup-description">
+        Receive new investigations and field notes from The Reserve.
+      </p>
+      <fetcher.Form className="signup-form" method="post" ref={formRef}>
+        <input name="intent" type="hidden" value="newsletter" />
+        <div className="signup-fields">
+          <label className="sr-only" htmlFor="newsletter-email">
+            Email address
+          </label>
+          <input
+            autoComplete="email"
+            id="newsletter-email"
+            inputMode="email"
+            maxLength={320}
+            name="email"
+            placeholder="Email address"
+            required
+            type="email"
+          />
+          <button disabled={isSubmitting} type="submit">
+            {isSubmitting ? "Subscribing…" : "Subscribe"}
+          </button>
+        </div>
+        <label className="signup-consent">
+          <input
+            name="newsletterConsent"
+            required
+            type="checkbox"
+            value="yes"
+          />
+          <span>
+            I agree to receive The Reserve by email and can unsubscribe at any
+            time.
+          </span>
+        </label>
+      </fetcher.Form>
+      {fetcher.data ? (
+        <p
+          className={fetcher.data.ok ? "signup-status" : "signup-error"}
+          role={fetcher.data.ok ? "status" : "alert"}
+        >
+          {fetcher.data.message}
         </p>
-      </noscript>
+      ) : null}
     </section>
   );
 }
