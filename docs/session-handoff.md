@@ -1091,6 +1091,15 @@ its luminous-hands/numerals prose has no charge or timed-decay protocol. The
 record is rejected as an unscoped or mismatched configuration, so neither
 remaining field is promoted and no provider request was made.
 
+The next Omega Speedmaster Moonwatch Professional `310.30.42.50.01.001`
+pre-screen remains open for `attachmentType` and `lumeGrade`. Omega's official
+bracelet-maintenance page recommends authorized service for bracelet changes but
+does not identify the exact factory connector; the exact owner and
+Omega-certified-watchmaker forum evidence for a spring bar remains secondary
+without public Omega product/service corroboration. Exact-reference sources
+continue to establish Super-LumiNova presence without a controlled charge,
+decay, or repeatable performance comparison. No provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
