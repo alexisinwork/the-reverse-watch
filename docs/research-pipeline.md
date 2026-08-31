@@ -1537,6 +1537,11 @@ statement. Citizen's own page likewise supplies no qualifying photoluminescent
 performance evidence. No fact is promoted and no provider request is
 authorized.
 
+A 2026-08-31 exact-reference search across Citizen Japan and current Japanese
+retailer records found no lume or no-lume specification for FRA36-2432. The
+existing B023, 57 g, and ±15-seconds-per-month evidence remains coherent;
+`lumeGrade` stays null and the candidate remains research-only.
+
 The next Casio BABY-G `BGD-5650-1JF` pre-screen leaves its sole M1 gap,
 `lumeGrade`, open. Exact Casio Japan and Europe pages describe the light as an
 LED Super Illuminator/backlight, and an independently retrievable exact-SKU
