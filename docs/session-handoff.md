@@ -1040,6 +1040,15 @@ cannot be normalized. It joins the earlier exact-retailer -10/+25 claim and
 Certina's approximate -10/+30 guidance for most non-chronometers; neither is a
 variant-specific guaranteed bound. No provider request was made.
 
+The next Baltic MR Classic Blue `MR01BLUS35` pre-screen remains negative for
+`weightFullG`, `accuracy`, `lumeGrade`, and `dateStatus`. A newly retrieved
+exact retailer record independently identifies the Blue Stitched Lion reference
+and repeats its 36 mm steel case, Hangzhou CAL5000a, hesalite, and 30 m rating,
+but publishes none of the four missing fields. The current exact variant's
+primary page still supplies no photoluminescent or explicit no-lume statement,
+configured mass, numerical rate bound, or explicit date status; family reviews
+and sibling variants remain non-transferable. No provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,

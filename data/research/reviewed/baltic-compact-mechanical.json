@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "baltic-compact-mechanical",
   "jobId": "c08a4511-2617-459e-9914-17c49bfa34cf",
-  "reviewedAt": "2026-08-30T13:58:51Z",
+  "reviewedAt": "2026-08-31T09:52:14Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -41,6 +41,11 @@
       "url": "https://www.hodinkee.com/articles/intro-baltic-gold-watches",
       "status": "rejected",
       "note": "The article lists Lume: None for a black gold-PVD MR01 sibling. The different case and dial configuration is not directly applicable evidence for the selected blue MR01BLUS35 variant, so no lume value is promoted."
+    },
+    {
+      "url": "https://chroniker.ph/products/mr01blus35-baltic-mr-classic-blue",
+      "status": "validated_secondary",
+      "note": "The exact retailer page independently identifies MR01BLUS35, the Stitched Lion strap, 36 mm steel case, Hangzhou CAL5000a, hesalite, and 30 m resistance. It publishes no configured weight, numerical accuracy bound, lume statement, or date status, so none of the four remaining M1 fields is promoted."
     }
   ],
   "verifiedProvisionalFields": [
@@ -202,5 +207,5 @@
     }
   ],
   "missingM1Fields": ["weightFullG", "accuracy", "lumeGrade", "dateStatus"],
-  "note": "Keep as research-only. A 2026-08-30 Perplexity-assisted pass initially failed to expose a stable configuration, but direct retrieval of Baltic's public Storefront payload resolves MR Classic Blue product 6584366596167 and Stitched Lion variant 39484285321287 at EUR 545 with a 2026-08-31 short wait. Baltic's Turkish representative maps that homogeneous configuration to MR01BLUS35, and Baltic's exact strap page resolves quick_release. A blue MR01 hands-on article lists lume as N/A and no date window but uses the earlier ELA05MN movement and does not identify the current Stitched Lion configuration; a black gold-PVD sibling's Lume: None line is not directly applicable. No exact Blue Stitched Lion configured weight or rate evidence surfaced, and the exact variant's date/lume state remains unproven. Those four facts remain null."
+  "note": "Keep as research-only. A 2026-08-30 Perplexity-assisted pass initially failed to expose a stable configuration, but direct retrieval of Baltic's public Storefront payload resolves MR Classic Blue product 6584366596167 and Stitched Lion variant 39484285321287 at EUR 545 with a 2026-08-31 short wait. Baltic's Turkish representative and an independent exact retailer map that homogeneous configuration to MR01BLUS35, and Baltic's exact strap page resolves quick_release. The newly retrieved exact retailer record repeats the case, movement, strap, and crystal but supplies none of the four missing fields. A blue MR01 hands-on article lists lume as N/A and no date window but uses the earlier ELA05MN movement and does not identify the current Stitched Lion configuration; a black gold-PVD sibling's Lume: None line is not directly applicable. No exact Blue Stitched Lion configured weight or rate evidence surfaced, and the exact variant's date/lume state remains unproven. Those four facts remain null."
 }
