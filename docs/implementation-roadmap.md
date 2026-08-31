@@ -1345,9 +1345,10 @@ the initial queryable evaluation surface; a conversion dashboard and any
 traffic-derived conclusions remain pending until the deployment has enough
 observations.
 
-On 2026-08-31 the full deferred Playwright suite passed: 8 desktop/mobile tests
-covering the landing page, health response, error boundary, and six-screen quiz
-flow. Chromium's missing host libraries were loaded from a temporary user-space
+On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
+tests covering the landing page, health response, error boundary, six-screen
+quiz flow, optional refinement submission, and cited-result rendering.
+Chromium's missing host libraries were loaded from a temporary user-space
 directory for the run; no browser binaries, system packages, or repository
 artifacts were added. The current Vercel Web Analytics window still reports
 zero visitors and pageviews, while runtime logs contain one privacy-safe quiz

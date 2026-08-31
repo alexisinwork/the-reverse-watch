@@ -67,3 +67,43 @@ test("completes the six-screen core diagnostic without a model provider", async 
   ).toBeVisible();
   await expect(page.getByText("USD 10,000")).toBeVisible();
 });
+
+test("applies optional refinements and preserves cited results", async ({
+  page,
+}) => {
+  await page.goto("/quiz");
+
+  await page.getByLabel("Maximum amount").fill("10000");
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Wrist circumference (mm)").fill("170");
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Studio, desk, or daily wear").check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Workhorse mechanical").check();
+  await page.getByLabel("Within ±15 seconds per day").check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("Under 160 g").check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByLabel("GMT").check();
+  await page.getByLabel("Either is acceptable").check();
+  await page.getByRole("button", { name: "View profile" }).click();
+
+  await page
+    .getByRole("button", { name: "Refine the ranking profile" })
+    .click();
+  await page.getByLabel("Social signal").selectOption("discreet_competence");
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("button", { name: "Apply refinements" }).click();
+
+  await expect(
+    page.getByRole("heading", { name: "Your search boundary" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Sources used in this result" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: "Inspect manufacturer source" }).first(),
+  ).toBeVisible();
+});

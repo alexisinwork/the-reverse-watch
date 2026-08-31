@@ -31,10 +31,10 @@ phase.
   morning after overnight wear, closing the sole lume gap as `strong`. Local
   and live seed coverage is now 1,102/28,800 cells across 28 variants. The
   publishable-key parity audit passes for all six golden profiles.
-- The deferred Chromium preflight now passes all eight desktop/mobile landing,
-  health, error-boundary, and six-screen diagnostic tests. The E2E test scopes
-  accessibility checks to application-owned markup and leaves the cross-origin
-  Beehiiv iframe to the vendor's contract.
+- The deferred Chromium suite now passes all ten desktop/mobile landing, health,
+  error-boundary, six-screen diagnostic, optional-refinement, and cited-result
+  tests. The E2E test scopes accessibility checks to application-owned markup
+  and leaves the cross-origin Beehiiv iframe to the vendor's contract.
 - The Phase 6 entry-gate harness evaluates six shared golden profiles through
   the real recommendation function. At 1,000 iterations per profile, all runs
   are deterministic, hard-filter violations are zero, the slowest profile
@@ -105,13 +105,14 @@ phase.
   subscription status. No profile answers or addresses are logged. This
   supplies the initial Vercel-log evaluation surface; conversion conclusions
   remain pending until production traffic provides enough observations.
-- On 2026-08-31 the full deferred Playwright suite passed: 8 desktop/mobile
-  tests covering landing, health, error boundary, and the six-screen quiz flow.
-  Chromium's missing host libraries were loaded from a temporary user-space
-  directory for the run; no browser binaries, system packages, or repository
-  artifacts were added. The current Vercel Web Analytics window reports zero
-  visitors and pageviews, and runtime logs contain one privacy-safe quiz
-  evaluation event, so no production conversion rate or quota is inferred.
+- On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
+  tests covering landing, health, error boundary, the six-screen quiz flow,
+  optional refinement submission, and cited-result rendering. Chromium's
+  missing host libraries were loaded from a temporary user-space directory for
+  the run; no browser binaries, system packages, or repository artifacts were
+  added. The current Vercel Web Analytics window reports zero visitors and
+  pageviews, and runtime logs contain one privacy-safe quiz evaluation event,
+  so no production conversion rate or quota is inferred.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the
