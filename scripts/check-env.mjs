@@ -42,6 +42,8 @@ const groups = {
   production: {
     required: ['CRON_SECRET'],
     optional: [
+      'QUIZ_RATE_LIMIT_MAX_REQUESTS',
+      'QUIZ_RATE_LIMIT_WINDOW_SECONDS',
       'UPSTASH_REDIS_REST_URL',
       'UPSTASH_REDIS_REST_TOKEN',
       'RESEND_API_KEY',

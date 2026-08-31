@@ -61,6 +61,14 @@ phase.
 - Deployment `dpl_Hutab5bkN38Z5VgQH4ywKsvpNmAj` is `READY` from commit
   `a4b520b`; a protected production response confirmed the middleware headers,
   unique request ID, and measured server timing remotely.
+- The quiz action now has an explicit rate-limit policy parser and a tested
+  process-local fallback: both `QUIZ_RATE_LIMIT_MAX_REQUESTS` and
+  `QUIZ_RATE_LIMIT_WINDOW_SECONDS` must be positive integers, partial or invalid
+  configuration returns a visible 503, and a configured window returns 429 plus
+  reset metadata after exhaustion. The variables remain unset because the
+  available production sample contains only five quiz/page requests in seven
+  days; no quota was guessed. A distributed Upstash limiter and measured quota
+  are still pending, so the local bucket is not claimed as global enforcement.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

@@ -60,13 +60,22 @@ API project and project service-account key for The Reserve.
 | Vercel | `VERCEL_TOKEN` and IDs | Optional automation | Use only for non-interactive CI; OAuth is preferred for interactive MCP work. |
 | RunPod | `RUNPOD_API_KEY`, `RUNPOD_ENDPOINT_ID` | Optional Phase 6 | Needed only if the later semantic experiment includes hosted Ollama. |
 | Context7 | `CONTEXT7_API_KEY` | Optional | Higher documentation limits; unauthenticated MCP works for basic use. |
-| Upstash | Redis REST URL/token | Phase 7 | Rate limiting and request deduplication. |
+| Upstash | Redis REST URL/token | Phase 7 | Distributed rate limiting and request deduplication. |
 | Resend | API key and sender | Optional Phase 7 | Transactional dossier delivery; Beehiiv remains the newsletter opt-in system. |
 | Sentry | DSN | Optional Phase 7 | Production error reporting. |
 
 Real credentials go into the ignored `.env` file locally and encrypted Vercel
 environment settings in production. Never add secrets to `.env.example`,
 `.codex/config.toml`, issues, commits, or chat messages.
+
+The quiz quota is configured separately with `QUIZ_RATE_LIMIT_MAX_REQUESTS`
+and `QUIZ_RATE_LIMIT_WINDOW_SECONDS`. Both values must be positive integers.
+They are intentionally blank in `.env.example`: the production log sample
+captured only five quiz/page requests over seven days, which is insufficient
+evidence for a numeric quota. Until a measured quota is set and a distributed
+store is connected, the action does not pretend that a process-local bucket is
+a production-wide control. A partial or invalid policy is a visible 503, not a
+silently guessed default.
 
 Official setup pages:
 

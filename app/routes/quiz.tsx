@@ -43,6 +43,10 @@ import type {
   RecommendationResult,
 } from "../domain/recommendation";
 import { recommendWatches } from "../domain/recommendation";
+import {
+  consumeRateLimit,
+  parseRateLimitPolicy,
+} from "../domain/rate-limit.server";
 import "../styles/quiz.css";
 
 const CORE_STEP_COUNT = 6;
@@ -338,7 +342,58 @@ function issueMessages(error: { issues: { message: string }[] }) {
   return [...new Set(error.issues.map((issue) => issue.message))];
 }
 
+function rateLimitKey(request: Request) {
+  const forwarded = request.headers.get("x-forwarded-for");
+  const address =
+    forwarded?.split(",", 1)[0]?.trim() ||
+    request.headers.get("x-real-ip")?.trim() ||
+    "unknown";
+  return `quiz:${address}`;
+}
+
+function rateLimitHeaders(decision: ReturnType<typeof consumeRateLimit>) {
+  const headers = new Headers();
+  if (decision.limit !== null) {
+    headers.set("X-RateLimit-Limit", String(decision.limit));
+    headers.set("X-RateLimit-Remaining", String(decision.remaining));
+    headers.set(
+      "X-RateLimit-Reset",
+      String(Math.ceil((decision.resetAt ?? Date.now()) / 1_000)),
+    );
+  }
+  if (decision.retryAfterSeconds !== null) {
+    headers.set("Retry-After", String(decision.retryAfterSeconds));
+  }
+  return headers;
+}
+
 export async function action({ request }: Route.ActionArgs) {
+  const rateLimitPolicy = parseRateLimitPolicy();
+  if (!rateLimitPolicy.configured && rateLimitPolicy.reason === "invalid") {
+    return data<ActionResult>(
+      {
+        ok: false,
+        errors: [
+          "Quiz rate limiting is misconfigured; the diagnostic is temporarily unavailable.",
+        ],
+      },
+      { status: 503 },
+    );
+  }
+  const rateLimitDecision = consumeRateLimit(
+    rateLimitKey(request),
+    rateLimitPolicy,
+  );
+  if (!rateLimitDecision.allowed) {
+    return data<ActionResult>(
+      {
+        ok: false,
+        errors: ["Too many diagnostic attempts. Please try again shortly."],
+      },
+      { status: 429, headers: rateLimitHeaders(rateLimitDecision) },
+    );
+  }
+
   const formData = await request.formData();
   const intent = formData.get("intent");
   const serialized = formData.get("profile");
