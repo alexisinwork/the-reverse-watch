@@ -1310,7 +1310,7 @@ variants.
 
 ## Phase 7 — Product integration, email, deployment, and evaluation
 
-Status: **in progress — engineering complete; owner DNS/email verification pending**
+Status: **complete — production funnel verified at the owner-approved boundary**
 
 Goal: turn the recommendation engine into a production funnel.
 
@@ -1434,8 +1434,9 @@ Verification:
   A consented production core request returned recommendations, reported the
   Beehiiv request as sent, and kept the independently unavailable Resend channel
   visible. A follow-up Beehiiv lookup confirmed one active subscription with
-  the expected `the_reserve_diagnostic` source. Live Resend dossier delivery
-  remains pending domain verification.
+  the expected `the_reserve_diagnostic` source. The owner accepted this as the
+  production email boundary and directed that the current Resend state remain
+  unchanged; live Resend dossier delivery is not a Phase 7 exit condition.
 - Production smoke checks pass on `www.thereserve.watch` and the Vercel alias.
   The apex domain currently presents the `www`-only certificate because its
   third-party DNS now publishes three apex A records: the correct Vercel target
@@ -1450,10 +1451,12 @@ above closes Beehiiv's live-delivery checkpoint. The Vercel Resend variables
 exist but are empty, while the validated local API key is active. The intended
 `@thereserve.watch` sender domain was absent from Resend, so it was created
 additively on 2026-08-31 and now awaits its three Namecheap DNS records (DKIM,
-MAIL FROM MX, and MAIL FROM SPF). Resend remains disabled in Production until
-the domain is verified; this avoids deploying a sender path known to return a
-provider rejection. The owner has supplied consented production mailboxes, so
-no further recipient decision is needed after DNS verification.
+MAIL FROM MX, and MAIL FROM SPF). Resend remains disabled in Production; this
+avoids deploying a sender path known to return a provider rejection. On
+2026-08-31 the owner directed that this existing state be preserved and removed
+DNS and live Resend verification from the phase boundary. The tested adapter,
+visible unavailable/partial states, and source-backed dossier remain ready for
+a later additive enablement if the owner revisits the provider.
 
 The authoritative DNS preflight then found existing, conflicting email
 infrastructure at every required Resend hostname: `resend._domainkey` contains
@@ -1465,7 +1468,9 @@ preserved. A same-day recheck against both authoritative Namecheap nameservers
 confirmed that these are still the published records, not resolver propagation.
 The same authoritative check still returns all three apex A records, Vercel
 reports the domain as misconfigured, and the apex TLS certificate does not
-cover `thereserve.watch`.
+cover `thereserve.watch`. The owner explicitly deferred DNS reconciliation;
+`www.thereserve.watch` and the stable Vercel alias are the verified Phase 7
+production surfaces.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 

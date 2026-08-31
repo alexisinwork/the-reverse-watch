@@ -219,6 +219,14 @@ verification commands. Owner-supplied records must still satisfy the same M1,
 homogeneous-variant, field-evidence, null, and staleness requirements before
 they can enter recommendations.
 
+The owner also closed Phase 7 without further DNS or Resend mutation. The
+production funnel retains explicit Beehiiv consent and verified live Beehiiv
+delivery, keeps recommendations and the dossier visible without email, and
+preserves the independently tested Resend adapter and visible unavailable/
+partial-delivery behavior. Resend remains disabled in Production, and apex DNS
+reconciliation is an owner-deferred operations item rather than a phase exit
+condition.
+
 ## 2026-08-28 implementation trace
 
 - The core questionnaire, Q17-style complications, explicit accuracy,

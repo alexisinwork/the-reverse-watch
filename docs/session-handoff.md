@@ -12,9 +12,10 @@ phase.
 
 ## Current checkpoint
 
-- Active phase: **Phase 7 — product integration and production verification, in progress**.
+- Active phase: **Phase 8 — celebrity and cinema watch discovery**.
 - Phases 0–5 are complete at their current owner-approved boundaries; Phase 6
-  is closed after its pilot, and Phase 7 remains active.
+  is closed after its pilot, and Phase 7 is complete at its owner-approved
+  production boundary.
 - Phase 5 engineering is complete. On 2026-08-31 the owner moved all further
   brand/model selection, research, verification, and catalogue population into
   an owner-managed workstream. The reusable pipeline remains strict: 204/204
@@ -165,6 +166,12 @@ phase.
   authoritative Namecheap nameservers still publish these conflicts, so this
   is not resolver propagation; Vercel continues to report misconfiguration and
   the apex TLS certificate remains invalid.
+- On 2026-08-31 the owner directed that DNS be ignored and the current Resend
+  state be left unchanged. Phase 7 therefore closes with
+  `www.thereserve.watch` and the Vercel alias as its verified surfaces,
+  production Resend intentionally unavailable, and the tested adapter retained
+  for later additive enablement. These operations items are not Phase 8
+  blockers.
 - On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
   tests covering landing, health, error boundary, the six-screen quiz flow,
   optional refinement submission, and cited-result rendering. Chromium's
