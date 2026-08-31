@@ -1079,14 +1079,31 @@ official dealer record](https://www.auer.lu/en/luminox-leatherback-sea-turtle-sw
 identifies pull-crown and pushpin interfaces. Ronda's official 515 record closes
 the -10/+20-seconds-per-month rate.
 
-No pre-screened value is accepted. One bounded Perplexity attempt must retain
-the exact white `XS.0307.WO` configuration, independently reconcile Luminox's
-48 g whole-watch field against the authorized retailer's conflicting 40 g row,
-and reject black 0301, 44 mm Leatherback Giant, alternate-strap, and generic
-collection inheritance. If every M1 field survives review, the projected row
-opens 128/128 currently empty `300_500`, zero-maintenance, simple-date
-field/studio cells across four wrist bands, all accuracy tolerances, and every
-weight limit.
+The one bounded Perplexity attempt succeeded at USD 0.02134 with 33 provisional
+facts and 16 unresolved fields. Independent review retains the exact white
+`XS.0307.WO` configuration, accepts Luminox's configured 48 g manufacturer
+value over the authorized retailer's conflicting 40 g row, and rejects black
+0301, 44 mm Leatherback Giant, alternate-strap, and generic collection
+inheritance. Exact-source constant 24/7 tritium visibility maps to `strong`
+lume, while dealer-labelled pushpins and pull crown map to `spring_bar` and
+`push_pull`; the unidirectional bezel is not a movement complication.
+
+Migration `0026_expand_catalogue_luminox_leatherback.sql` accepts
+`luminox-leatherback-xs-0307-wo`. Forward migration
+`0027_repair_luminox_ronda_provenance.sql` preserves both legitimate Ronda 515
+retrieval snapshots and repoints only the Luminox movement, accuracy, and date
+evidence to the 2026-08-31 review snapshot. Remote verification reports M0/M1
+complete, 28 verified reference-level evidence rows from four sources, and 24
+accepted variants across 20 brands. Publishable-key catalogue and SQL
+hard-filter parity passes for all 24 variants and six golden profiles. The row
+opens exactly 128 `300_500`, zero-maintenance, simple-date field/studio cells
+across four wrist bands and raises coverage to 1,068/28,800 (3.71%). Strict
+research reports 24 accepted, 20 `needs_review`, and two excluded targets; 34
+reviews include twelve migration-ready decisions. The ignored ledger contains
+64 attempts (39 succeeded, 25 failed) across 34 target IDs and USD 0.55435
+recorded cost. The default queue is empty again; another provider call requires
+a named homogeneous candidate that first passes exact source-led M1 and
+coverage pre-screening.
 
 ## Job idempotency and retention
 

@@ -624,6 +624,38 @@
       "publisher": "Outland USA",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-30T22:04:38Z"
+    },
+    {
+      "id": "luminox-xs-0307-wo-product",
+      "url": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "title": "Leatherback SEA Turtle 39 mm — XS.0307.WO",
+      "publisher": "Luminox Switzerland",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-31T05:40:25Z"
+    },
+    {
+      "id": "zegarkizgora-luminox-xs-0307-wo",
+      "url": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "title": "Luminox Leatherback SEA Turtle Whiteout XS.0307.WO",
+      "publisher": "Zegarki Zielona Góra",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T05:40:25Z"
+    },
+    {
+      "id": "auer-luminox-xs-0307-wo",
+      "url": "https://www.auer.lu/en/luminox-leatherback-sea-turtle-swiss-carbon-watch-with-date-xs-0307-wo.htm",
+      "title": "Luminox XS.0307.WO exact interface specifications",
+      "publisher": "Auer / Holland Watch Group",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T05:40:25Z"
+    },
+    {
+      "id": "ronda-515-luminox-review",
+      "url": "https://www.ronda.ch/en/watch-movement-finder/caliber/515",
+      "title": "Ronda powertech calibre 515 specification",
+      "publisher": "Ronda AG",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-31T05:40:25Z"
     }
   ],
   "fx": {
@@ -3097,7 +3129,7 @@
           ]
         },
         {
-          "sourceId": "ronda-powertech-512-513-515",
+          "sourceId": "ronda-515-luminox-review",
           "fields": ["movement", "accuracy"]
         },
         {
@@ -3256,6 +3288,126 @@
         {
           "sourceId": "outland-bertucci-a2t-12022",
           "fields": ["identity", "price", "availability"]
+        }
+      ]
+    },
+    {
+      "id": "luminox-leatherback-xs-0307-wo",
+      "brand": {
+        "slug": "luminox",
+        "name": "Luminox",
+        "serviceCountries": null
+      },
+      "collection": "Leatherback SEA Turtle 0300 Series",
+      "model": "Leatherback SEA Turtle",
+      "referenceCode": "XS.0307.WO",
+      "variantName": "Whiteout dial and case · white silicone strap",
+      "productUrl": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "price": {
+        "amountMinor": 131500,
+        "currency": "PLN",
+        "marketCountry": "PL",
+        "observedAt": "2026-08-31T05:40:25Z",
+        "staleAfter": "2027-02-27T05:40:25Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-31T05:40:25Z",
+        "availabilityStaleAfter": "2026-09-30T05:40:25Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "white fiberglass compound",
+        "caseback": "316L stainless steel screw-on caseback",
+        "bracelet": null,
+        "strap": "white silicone"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 39,
+        "caseWidthMm": null,
+        "caseLengthMm": null,
+        "caseThicknessMm": 12,
+        "lugToLugMm": 46,
+        "lugWidthMm": 19,
+        "weightFullG": 48,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "quartz",
+        "caliber": "Ronda 515",
+        "powerReserveHours": null,
+        "accuracyLowerSeconds": -10,
+        "accuracyUpperSeconds": 20,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 100,
+        "crownType": "push_pull",
+        "crownPosition": null,
+        "crystal": "mineral",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "lightweight_tritium_field_quartz",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "luminox-xs-0307-wo-product",
+          "fields": [
+            "identity",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crystal",
+            "lumeGrade",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "zegarkizgora-luminox-xs-0307-wo",
+          "fields": ["identity", "price", "availability", "lugToLugMm"]
+        },
+        {
+          "sourceId": "auer-luminox-xs-0307-wo",
+          "fields": [
+            "identity",
+            "materials",
+            "integratedBracelet",
+            "crownType",
+            "crystal",
+            "attachmentType",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "ronda-powertech-512-513-515",
+          "fields": ["movement", "accuracy", "dateStatus"]
         }
       ]
     }

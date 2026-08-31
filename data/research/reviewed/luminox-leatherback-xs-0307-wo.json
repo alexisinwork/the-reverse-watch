@@ -1,0 +1,245 @@
+{
+  "reviewVersion": 1,
+  "targetId": "luminox-leatherback-xs-0307-wo",
+  "jobId": "e3cb8d64-6739-4854-8a1b-78dadfa08b03",
+  "reviewedAt": "2026-08-31T05:44:01Z",
+  "reviewer": "codex-source-review",
+  "outcome": "ready_for_migration",
+  "candidateIdentity": {
+    "brand": "Luminox",
+    "model": "Leatherback SEA Turtle",
+    "referenceCode": "XS.0307.WO",
+    "variantName": "Whiteout dial and case on supplied white 19 mm silicone strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "status": "validated_primary",
+      "note": "Luminox's current exact-reference page identifies XS.0307.WO in the 0300 Series and publishes the white 39 mm fiberglass-compound case, supplied white silicone strap, 48 g configured weight, 12 mm thickness, 19 mm lugs, 316L screw-on back, Ronda 515 Swiss quartz, 100 m resistance, protected double-security-gasket crown, hardened mineral glass, time and date, and constant 24/7 illumination for up to 25 years. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "status": "validated_secondary",
+      "note": "The exact-reference authorized Luminox retailer publishes PLN 1,315, 24-hour dispatch, current low stock, 46 mm lug-to-lug, 39 mm diameter, 12 mm thickness, 19 mm lugs, Ronda 515, -10/+20 seconds per month, 100 m, mineral glass, date, and tritium illumination. Its 40 g field conflicts with Luminox's exact 48 g whole-watch value and is rejected for mass only. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.auer.lu/en/luminox-leatherback-sea-turtle-swiss-carbon-watch-with-date-xs-0307-wo.htm",
+      "status": "validated_secondary",
+      "note": "The exact-reference official Luminox dealer independently publishes 39 x 12 mm geometry, Ronda 515 quartz, 100 m, hardened mineral, date, a pull crown, 19 mm lugs, original white silicone strap FPX.1901.10Q.K, and a pushpin mount. This closes the normalized push-pull crown and spring-bar interface without inferring them from the supplied strap alone. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.ronda.ch/en/watch-movement-finder/caliber/515",
+      "status": "validated_primary",
+      "note": "Ronda's official powertech 515 record publishes an instantaneous rate of -10/+20 seconds per month, three hands, date, and the current calibre specification. Luminox independently identifies 515 as installed in exact XS.0307.WO. Retrieved 2026-08-31."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.caliber",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "note": "The exact reference remains on Luminox's active product route and in current authorized retail stock."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 131500,
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "note": "The exact current authorized Polish offer is PLN 1,315."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "PLN",
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "note": "The selected exact offer is denominated in Polish złoty."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "PL",
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "note": "The selected Polish authorized-retailer market is normalized to ISO alpha-2."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "note": "The exact listing reports current low stock and 24-hour dispatch."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "note": "The exact seller identifies itself as an authorized Luminox retailer."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "note": "The active authorized retail route is a new-watch offer with manufacturer warranty."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 46,
+      "sourceUrl": "https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO",
+      "note": "The exact authorized listing explicitly labels the case's lug-to-lug length as 46 mm."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://www.auer.lu/en/luminox-leatherback-sea-turtle-swiss-carbon-watch-with-date-xs-0307-wo.htm",
+      "note": "The exact watch uses a separately replaceable 19 mm silicone strap on a pushpin mount, not an integrated bracelet."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "quartz",
+      "sourceUrl": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "note": "Luminox explicitly identifies the installed Ronda 515 as Swiss quartz; the value is normalized to the catalogue enum."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -10,
+      "sourceUrl": "https://www.ronda.ch/en/watch-movement-finder/caliber/515",
+      "note": "Ronda's official installed-calibre record publishes the lower monthly rate bound."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 20,
+      "sourceUrl": "https://www.ronda.ch/en/watch-movement-finder/caliber/515",
+      "note": "Ronda's official installed-calibre record publishes the upper monthly rate bound."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 30,
+      "sourceUrl": "https://www.ronda.ch/en/watch-movement-finder/caliber/515",
+      "note": "The official per-month rate is normalized to the catalogue's 30-day comparison period."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "push_pull",
+      "sourceUrl": "https://www.auer.lu/en/luminox-leatherback-sea-turtle-swiss-carbon-watch-with-date-xs-0307-wo.htm",
+      "note": "The exact official dealer identifies a pull crown, consistent with Luminox's protected double-security-gasket description."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "mineral",
+      "sourceUrl": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "note": "Luminox's hardened mineral glass description is normalized to the mineral enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "note": "The exact reference's self-powered tritium system provides constant 24/7 dark visibility for up to 25 years, satisfying the strong performance grade rather than material presence alone."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://www.auer.lu/en/luminox-leatherback-sea-turtle-swiss-carbon-watch-with-date-xs-0307-wo.htm",
+      "note": "The exact official-dealer mount type Pushpins is normalized to the conventional spring-bar case interface."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "note": "The rotating elapsed-time bezel is not a movement complication, while date is tracked separately; no supported catalogue complication is present."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo",
+      "note": "Luminox explicitly describes exact XS.0307.WO as time and date."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider attached the Polish retailer price to the manufacturer URL. Direct review re-establishes PLN 1,315 from the exact authorized Polish listing."
+    },
+    {
+      "fieldName": "price.currency",
+      "reason": "The provider's source attribution is wrong; PLN is re-established from the exact authorized Polish listing."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "Poland is provider prose and is normalized to PL from the selected exact Polish offer."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Available is provider prose and is sourced to the wrong URL; current exact low stock and 24-hour dispatch normalize to in_stock."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Provider prose mixes official and retailer channels. The selected exact price snapshot is independently normalized to authorized_dealer."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "reason": "The provider incorrectly attributed 46 mm to Luminox's page, which publishes diameter and thickness but not lug-to-lug. Direct review replaces the attribution with the exact authorized listing."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "The provider emitted boolean true, but the only explicit applicability override is not_applicable. The evidenced 19 mm value is ordinarily applicable, so no override is stored."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "reason": "The provider attributed a negative bracelet claim to the manufacturer page. Direct review re-establishes false from the exact replaceable pushpin strap interface."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "Quartz is normalized to the lowercase catalogue enum."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "reason": "The provider attached movement accuracy to Luminox's page, which does not publish it. Direct review uses the official Ronda 515 record."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "reason": "The provider attached movement accuracy to Luminox's page, which does not publish it. Direct review uses the official Ronda 515 record."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "reason": "The provider attached movement accuracy to Luminox's page, which does not publish it. Direct review normalizes the official Ronda monthly rate to 30 days."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Protected push-pull crown with double security gasket is provider prose; the exact official-dealer pull-crown field supports normalization to push_pull."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Hardened mineral crystal is normalized to the mineral catalogue enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The provider returned technology and duration prose rather than a reviewed grade; exact 24/7 performance for up to 25 years maps to strong."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Conventional pushpin is normalized to spring_bar from the exact official-dealer interface field."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is represented by dateStatus and the rotating bezel is not a movement complication; the supported complication list is empty."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "Date display is provider prose and is normalized to present."
+    }
+  ],
+  "missingM1Fields": [],
+  "note": "Ready for migration on exact XS.0307.WO only: white dial and 39 mm white fiberglass-compound case on the supplied white 19 mm silicone strap. Direct review corrects the provider's source-attribution errors for price, lug-to-lug, and Ronda accuracy; accepts Luminox's exact 48 g configured mass over the authorized retailer's conflicting 40 g field; normalizes the exact pull crown and pushpin mount; and maps constant 24/7 tritium visibility to strong. Black 0301, 44 mm Giant, alternate-strap, and generic collection facts are excluded."
+}

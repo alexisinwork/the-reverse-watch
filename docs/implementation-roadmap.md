@@ -1112,14 +1112,31 @@ identifies a pull crown and pushpin strap mount. The [official Ronda 515
 record](https://www.ronda.ch/en/watch-movement-finder/caliber/515) supplies the
 -10/+20-seconds-per-month rate.
 
-These are routing inputs only. One bounded Perplexity attempt and independent
-review must preserve exact `XS.0307.WO` identity, prefer Luminox's current 48 g
-whole-watch field over the authorized retailer's conflicting 40 g row only if
-source review supports that precedence, and exclude black 0301 references,
-44 mm Leatherback Giant cases, alternate straps, and generic collection facts.
-The exact configuration projects to 128/128 currently empty `300_500`,
-zero-maintenance, simple-date cells across field/studio use, four wrist bands,
-all supported accuracy tolerances, and every weight limit.
+The one bounded Perplexity attempt succeeded with 33 provisional facts and 16
+unresolved fields at USD 0.02134. Independent review preserves exact
+`XS.0307.WO` identity, accepts Luminox's configured 48 g manufacturer value
+over the authorized retailer's conflicting 40 g row, and excludes black 0301
+references, 44 mm Leatherback Giant cases, alternate straps, and generic
+collection facts. Constant self-powered 24/7 visibility maps to `strong` lume;
+the exact dealer's pushpins and pull crown map to `spring_bar` and `push_pull`;
+and the bezel is not treated as a movement complication.
+
+Additive migration `0026_expand_catalogue_luminox_leatherback.sql` and the
+forward-only source-snapshot repair
+`0027_repair_luminox_ronda_provenance.sql` are live. The repair preserves both
+Ronda 515 retrieval snapshots while attaching the Luminox movement, accuracy,
+and date evidence to the independently reviewed 2026-08-31 snapshot. Remote
+verification reports M0 and M1 complete, 28 verified reference-level evidence
+rows from four sources, 24 accepted variants across 20 brands, and exact
+publishable-key catalogue plus six-profile SQL hard-filter parity. The row adds
+exactly 128 `300_500`, zero-maintenance, simple-date field/studio cells across
+four wrist bands, raising deterministic coverage to 1,068/28,800 (3.71%).
+Strict research reports 24 accepted, 20 `needs_review`, and two excluded
+targets; 34 reviews include twelve migration-ready decisions. The ignored
+provider ledger contains 64 attempts (39 succeeded, 25 failed) across 34 target
+IDs and USD 0.55435 recorded cost. The default queue is empty; the next Phase 5
+checkpoint must again begin with source-led exact-reference and coverage
+pre-screening before any provider request.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

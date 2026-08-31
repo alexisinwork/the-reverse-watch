@@ -12,10 +12,10 @@ import { seedCatalogue } from "./seed-catalogue";
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
     expect(seedCatalogue.catalogueVersion).toBe(2);
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(23);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(24);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(23);
+    ).toBe(24);
   });
 
   it("retains evidence for every seed identity and price", () => {
@@ -224,6 +224,41 @@ describe("source-backed seed catalogue", () => {
     expect(bertucci!.dateStatus).toBe("present");
     expect(evidenceFields(bertucci!).has("lumeGrade")).toBe(true);
     expect(evidenceFields(bertucci!).has("attachmentType")).toBe(true);
+  });
+
+  it("retains the reviewed Luminox tritium field configuration", () => {
+    const luminox = seedCatalogue.variants.find(
+      (variant) => variant.id === "luminox-leatherback-xs-0307-wo",
+    );
+
+    expect(luminox).toBeDefined();
+    expect(luminox!.referenceCode).toBe("XS.0307.WO");
+    expect(luminox!.geometry).toMatchObject({
+      caseDiameterMm: 39,
+      caseThicknessMm: 12,
+      lugToLugMm: 46,
+      lugWidthMm: 19,
+      weightFullG: 48,
+      integratedBracelet: false,
+    });
+    expect(luminox!.movement).toMatchObject({
+      type: "quartz",
+      caliber: "Ronda 515",
+      accuracyLowerSeconds: -10,
+      accuracyUpperSeconds: 20,
+      accuracyPeriodDays: 30,
+    });
+    expect(luminox!.operation).toMatchObject({
+      waterResistanceM: 100,
+      crownType: "push_pull",
+      crystal: "mineral",
+      lumeGrade: "strong",
+      attachmentType: "spring_bar",
+    });
+    expect(luminox!.complications).toEqual([]);
+    expect(luminox!.dateStatus).toBe("present");
+    expect(evidenceFields(luminox!).has("lumeGrade")).toBe(true);
+    expect(evidenceFields(luminox!).has("attachmentType")).toBe(true);
   });
 
   it("rejects a partial non-round dimension pair", () => {

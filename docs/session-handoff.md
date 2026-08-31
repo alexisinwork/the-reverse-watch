@@ -1,6 +1,6 @@
 # Session handoff
 
-Last updated: 2026-08-30
+Last updated: 2026-08-31
 
 This is the restart point for the next working session. The controlling
 sequence is [`implementation-roadmap.md`](implementation-roadmap.md), which
@@ -17,8 +17,8 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Migrations `0001` through `0025` are applied to the connected Supabase
-  project. The live v3 catalogue contains all 19 brands and 23 accepted
+- Migrations `0001` through `0027` are applied to the connected Supabase
+  project. The live v3 catalogue contains all 20 brands and 24 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
   result parity passes. All 20 public catalogue tables have RLS enabled with no
   direct browser grants or policies; the application uses only two narrow,
@@ -83,22 +83,30 @@ phase.
   24-hour scale as a complication. Migration `0025` is live with M0/M1
   complete and 42 verified reference-level evidence rows from seven sources;
   23-row public parity passes and coverage is 940/28,800 (3.26%).
+- Luminox Leatherback SEA Turtle `XS.0307.WO` is accepted on the exact white
+  dial and fiberglass-compound case with the supplied white 19 mm silicone
+  strap. Review prefers Luminox's configured 48 g manufacturer value over the
+  authorized retailer's conflicting 40 g row, validates 39 x 12 x 46 mm
+  geometry, Ronda 515 -10/+20-seconds-per-month quartz operation, strong
+  constant tritium visibility, spring-bar attachment, protected push-pull
+  crown, 100 m resistance, mineral crystal, and date, and excludes black 0301,
+  44 mm Giant, alternate-strap, and generic collection inheritance. Migration
+  `0026` is live with M0/M1 complete and 28 verified reference-level evidence
+  rows from four sources. Forward migration `0027` preserves both Ronda source
+  snapshots and attaches the Luminox evidence to its independently reviewed
+  snapshot. 24-row public parity passes, and coverage is 1,068/28,800 (3.71%).
 - The Mondaine provider ledger preserves two failed attempts: the first
   returned useful raw research at USD 0.02028 but failed strict normalization;
   the second was interrupted before a response was persisted after an
   equals-style CLI parsing defect caused `--attempts=1` to fall back to three.
   The worker now accepts spaced and equals-style options, and the interrupted
   record retains null response/usage rather than a fabricated cost. The full
-  ignored ledger is now 63 attempts (38 succeeded, 25 failed) across 33 target
-  IDs with USD 0.53301 recorded cost.
-- The next active session-plan item is exactly one bounded provider attempt for
-  Luminox Leatherback SEA Turtle `XS.0307.WO`, fixed to the white dial and case
-  on its supplied white 19 mm silicone strap. Source-led pre-screening retrieved
-  2026-08-31 covers every projected M1 class and 128/128 currently empty
-  `300_500`, zero-maintenance, simple-date field/studio cells across four wrist
-  bands. Review must reconcile Luminox's 48 g whole-watch field against an
-  authorized retailer's conflicting 40 g row and reject black 0301, 44 mm
-  Leatherback Giant, alternate-strap, and generic collection inheritance.
+  ignored ledger is now 64 attempts (39 succeeded, 25 failed) across 34 target
+  IDs with USD 0.55435 recorded cost.
+- The next active session-plan item is source-led selection of one named,
+  homogeneous reference variant with an explicit uncovered-cell purpose and
+  complete projected M1 evidence. The default queue is empty, so no provider
+  request may run until that pre-screen is recorded.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -129,8 +137,8 @@ phase.
   evidence; fail-closed SQL hard filters; speculative-candidate suppression;
   deterministic score traces, diversity, why-not explanations, and visible
   relaxations; and the complete 28,800-cell coverage audit.
-- The audit is not complete at the data layer: only 23 homogeneous variants are
-  accepted locally, 940 of 28,800 cells are covered, every covered cell is
+- The audit is not complete at the data layer: only 24 homogeneous variants are
+  accepted locally, 1,068 of 28,800 cells are covered, every covered cell is
   under-diversified, and 224 are under-evidenced. Phase 5 must close that
   breadth and evidence gap before the 200-brand knowledge pack can be treated as
   a recommendation catalogue. Phase 7 dossier, funnel, and owner-media work
@@ -659,15 +667,12 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Run exactly one bounded Perplexity attempt for
-   `luminox-leatherback-xs-0307-wo`, then independently review the exact white
-   dial/case and supplied white-silicone configuration. Prefer Luminox's current
-   48 g whole-watch field over the authorized retailer's conflicting 40 g row
-   only if source review supports that precedence, and keep black 0301, 44 mm
-   Giant, alternate-strap, and generic collection facts out. If and only if
-   every M1 class survives, render the next additive migration and prove live
-   parity.
-2. Treat the live 23-row v3 catalogue and six-profile parity as the relational
+1. Select the next named homogeneous reference with a source-led pre-screen.
+   Record its uncovered-cell purpose and prove every projected M1 class from
+   exact or directly applicable sources before invoking the provider. The
+   default queue is empty; do not spend on a generic brand sweep or accept a
+   brand-level rollup as a reference fact.
+2. Treat the live 24-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.

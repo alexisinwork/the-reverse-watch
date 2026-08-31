@@ -59,7 +59,9 @@ function projectCatalogue(catalogue: SeedCatalogue) {
         sourceType: source.sourceType,
         retrievedAt: normalizeDate(source.retrievedAt),
       }))
-      .sort((left, right) => left.url.localeCompare(right.url)),
+      .sort((left, right) =>
+        JSON.stringify(left).localeCompare(JSON.stringify(right)),
+      ),
     fx: {
       ...catalogue.fx,
       sourceUrl: sourceUrlById.get(catalogue.fx.sourceId) ?? null,
