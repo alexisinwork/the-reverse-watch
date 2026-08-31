@@ -1,6 +1,6 @@
 # Coverage-first research pipeline
 
-Status: **Phase 5 contract active**
+Status: **Phase 5 engineering complete; catalogue population owner-managed**
 Last verified: **2026-08-31**
 
 This pipeline expands the relational catalogue without turning provider output,
@@ -35,6 +35,21 @@ coverage audit
 No chunking, embedding model, vector extension, vector database, Mastra, Ollama,
 or RunPod service is involved in this phase.
 
+## Owner-managed continuation boundary
+
+As directed on 2026-08-31, automated agent work stops before selecting,
+researching, verifying, or promoting another brand/model. The owner controls
+those editorial decisions. The pipeline remains ready for owner-supplied work:
+
+1. add or update a manifest target with an explicit purpose;
+2. retain manual/provider captures under the ignored artifact directories;
+3. normalize only provisional facts and record a separate reviewed decision;
+4. promote only an M1-complete, homogeneous exact variant through an additive
+   migration;
+5. rerun research, knowledge, coverage, catalogue-parity, and repository gates.
+
+No catalogue count is used as evidence that a fact is reviewed or eligible.
+
 ## Manifest and queue
 
 Run:
@@ -47,7 +62,7 @@ npm run plan:research
 The first command rejects duplicate brand/target IDs, invalid state transitions,
 broken accepted catalogue links, and missing accepted seed rows. `--strict`
 also requires the manifest to reach its declared approximately 200-brand target;
-it is expected to fail while Phase 5 is incomplete.
+the engineering-closeout manifest passes that check.
 
 The planner intersects each active coverage intent with all 28,800 core cells.
 It reports how many targeted cells are empty, under three brands, or lack a

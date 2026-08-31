@@ -214,7 +214,7 @@ whether each response used the live SQL path or the explicit fallback.
 
 ## Phase 5 — Research pipeline and catalogue expansion
 
-Status: **in progress — coverage-first expansion started 2026-08-28**
+Status: **engineering complete — catalogue population is owner-managed as of 2026-08-31**
 
 Goal: expand from the validated seed to the planned approximately 200 brands
 without sacrificing field evidence or coverage.
@@ -242,6 +242,14 @@ Verification:
 - Every manifest brand reaches an accepted dossier/reference state or an
   evidence-backed exclusion.
 - M1 coverage, not raw brand count, controls recommendation eligibility.
+
+Owner scope amendment 2026-08-31: brand/model research, source review, and
+catalogue population are no longer an agent delivery gate. The owner will
+perform that editorial/research work directly. This does not weaken the M1
+eligibility, provenance, homogeneous-variant, or fail-closed requirements; it
+separates the completed ingestion/review machinery from the records later
+supplied through it. Phase 5 engineering is complete when that machinery and
+its handoff pass independently of catalogue size.
 
 Checkpoint 2026-08-29: the complete 200-dossier owner knowledge pack is
 schema-validated and linked as research-only M0/M2 context. Together with one
@@ -1207,6 +1215,21 @@ six SQL/TypeScript hard-filter profiles pass exact parity. The homogeneous
 BOLDR row remains on its 91 g integrated Druber strap; the bundled titanium
 bracelet is accessory context only. Local and live coverage is 1,102/28,800
 cells, and no provider request was needed.
+
+Phase 5 engineering closeout on 2026-08-31 validates the complete reusable
+pipeline without performing further watch research. The strict manifest audit
+passes at 204/204 planned brand slots with all 200 owner knowledge dossiers
+linked; the knowledge intake validates 951 reference families and 1,748 source
+links; all 28 accepted catalogue variants remain linked to canonical manifest
+targets; and all 37 committed review artifacts pass their state/provenance
+contract. The default research queue is empty. The worker's retained-attempt
+index, successful-fingerprint reuse, monotonically increasing resume attempt,
+and bounded `Retry-After` behavior now have deterministic tests. A provider-free
+dry run exits cleanly without selecting or calling a target. The existing
+field-specific refresh windows, provisional-only extraction contract, human
+review gate, immutable ignored artifacts, additive migration renderer,
+coverage audit, and SQL/TypeScript parity path remain the owner handoff for any
+future catalogue records.
 
 Phase 7 integration preflight on 2026-08-31 ran the deferred Chromium suite in
 both desktop and mobile projects. All eight landing, health, error-boundary,

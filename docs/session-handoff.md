@@ -13,7 +13,16 @@ phase.
 ## Current checkpoint
 
 - Active phase: **Phase 7 — product integration and production verification, in progress**.
-- Phases 0–4 are complete and verified.
+- Phases 0–5 are complete at their current owner-approved boundaries; Phase 6
+  is closed after its pilot, and Phase 7 remains active.
+- Phase 5 engineering is complete. On 2026-08-31 the owner moved all further
+  brand/model selection, research, verification, and catalogue population into
+  an owner-managed workstream. The reusable pipeline remains strict: 204/204
+  manifest slots and 200/200 dossier links audit cleanly, accepted records must
+  link canonical variants, extraction remains provisional, and only reviewed
+  additive migrations can promote facts. Resume/reuse and bounded retry timing
+  now have deterministic unit coverage; a provider-free dry run selects no
+  targets.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.

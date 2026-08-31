@@ -208,6 +208,17 @@ These items are not complete merely because the web application advances.
 | Affiliate validation, paid dossiers, concierge, sponsorship, and B2B assessment | Future expansion |
 | Physical production, episodes, thumbnails, and YouTube cadence | Owner/media workstream |
 
+### 2026-08-31 owner scope amendment
+
+The approximately 200-brand research target remains preserved as product
+history, but brand/model research, source verification, and catalogue
+population are now an owner-managed workstream. Phase 5 agent delivery closes
+on the reusable TypeScript/Zod research system, strict manifest and review
+contracts, provenance and refresh policy, additive migration path, and
+verification commands. Owner-supplied records must still satisfy the same M1,
+homogeneous-variant, field-evidence, null, and staleness requirements before
+they can enter recommendations.
+
 ## 2026-08-28 implementation trace
 
 - The core questionnaire, Q17-style complications, explicit accuracy,

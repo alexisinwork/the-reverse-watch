@@ -24,3 +24,21 @@ Raw and normalized artifacts may contain copyrighted source extracts or paid
 provider output and are excluded from git by default. Accepted structured facts
 enter PostgreSQL only through a reviewed additive migration. Extraction never
 writes `accepted` status directly.
+
+## Owner handoff
+
+Brand/model selection and source verification are owner-managed. Before
+promoting any owner-supplied record, keep the exact variant homogeneous and run:
+
+```bash
+npm run audit:knowledge
+npm run audit:research -- --strict
+npm run project:seed-coverage
+npm run audit:coverage
+npm run audit:catalogue-parity
+npm run check
+```
+
+The live parity command requires the configured public Supabase URL and
+publishable key. A failed or incomplete fact remains provisional or `null`; it
+must not be converted into a plausible default to make the checks pass.

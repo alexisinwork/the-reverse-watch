@@ -76,6 +76,11 @@ documented in `docs/deployment-and-rollback.md`. The owner's full original plan
 is preserved in `docs/original_context.md`; it must be read in full before every
 phase, with decisions tracked in `docs/original-plan-requirements.md`.
 
+Phase 5's TypeScript research/review engineering is complete. Further
+brand/model research and catalogue population are owner-managed; every supplied
+record still passes the same provenance, M1, additive-migration, coverage, and
+parity gates before recommendation eligibility.
+
 The canonical catalogue is PostgreSQL/Supabase. Chunking, embeddings, a vector
 database, Mastra, Ollama, and RunPod are not required by the baseline; optional
 semantic work must first beat the deterministic engine on held-out fixtures.

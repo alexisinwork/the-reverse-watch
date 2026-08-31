@@ -16,6 +16,12 @@ import {
   researchJobSchema,
   researchManifestSchema,
 } from "../app/domain/research";
+import {
+  indexResearchJobHistory,
+  nextResearchAttempt,
+  researchRetryDelayMilliseconds,
+  retryAfterMilliseconds,
+} from "../app/domain/research-jobs";
 import { coverageCandidateListSchema } from "../app/domain/coverage";
 import { planCoverageResearch } from "../app/domain/research-planning";
 import type {
@@ -178,21 +184,7 @@ function loadJobHistory() {
           ),
         )
     : [];
-  const successfulFingerprints = new Map<string, ResearchJob>();
-  const maximumAttemptByFingerprint = new Map<string, number>();
-  for (const job of jobs) {
-    maximumAttemptByFingerprint.set(
-      job.requestFingerprint,
-      Math.max(
-        maximumAttemptByFingerprint.get(job.requestFingerprint) ?? 0,
-        job.attempt,
-      ),
-    );
-    if (job.status === "succeeded") {
-      successfulFingerprints.set(job.requestFingerprint, job);
-    }
-  }
-  return { successfulFingerprints, maximumAttemptByFingerprint };
+  return indexResearchJobHistory(jobs);
 }
 
 function writeManifest(manifest: ResearchManifest) {
@@ -294,23 +286,11 @@ async function callPerplexity(
   };
 }
 
-function retryAfterMilliseconds(value: string | null) {
-  if (value === null) return null;
-  const seconds = Number(value);
-  if (Number.isFinite(seconds) && seconds >= 0) return seconds * 1_000;
-  const date = Date.parse(value);
-  return Number.isNaN(date) ? null : Math.max(0, date - Date.now());
-}
-
 async function waitBeforeRetry(
   attempt: number,
   requestedDelayMs: number | null,
 ) {
-  const exponentialDelay = Math.min(8_000, 500 * 2 ** (attempt - 1));
-  const delayMs = Math.min(
-    60_000,
-    Math.max(exponentialDelay, requestedDelayMs ?? 0),
-  );
+  const delayMs = researchRetryDelayMilliseconds(attempt, requestedDelayMs);
   await new Promise((resolve) => setTimeout(resolve, delayMs));
 }
 
@@ -360,7 +340,10 @@ async function researchTarget(
     return;
   }
 
-  const firstAttempt = (maximumAttemptByFingerprint.get(fingerprint) ?? 0) + 1;
+  const firstAttempt = nextResearchAttempt(
+    maximumAttemptByFingerprint,
+    fingerprint,
+  );
   let correction: string | null = null;
   for (let offset = 0; offset < options.attempts; offset += 1) {
     const attempt = firstAttempt + offset;
