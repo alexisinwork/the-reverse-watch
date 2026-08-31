@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "rado-high-accuracy-ceramic-daily",
   "jobId": "cfc4e254-2f7e-4489-a638-812da3382aa1",
-  "reviewedAt": "2026-08-30T19:18:07Z",
+  "reviewedAt": "2026-08-31T10:30:26Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -16,6 +16,11 @@
       "url": "https://www.rado.com/en_us/hyperchrome-r32280109.html",
       "status": "validated_primary",
       "note": "Rado's exact live U.S. e-commerce route identifies R32280109 and EAN 7612819066196 as a new USD 1,400 Add to Cart offer. It independently publishes the rhodium-dial and black-rubber configuration, stainless-steel case and back, 41.5 x 11.7 mm geometry, 87 g configured weight, R292 quartz PreciDrive/HeavyDrive accuracy of -10/+10 seconds per year, 150 m resistance, sapphire, date, Super-LumiNova material and dual-colour nighttime emission, and a pin buckle. It does not publish lug-to-lug, lug width, a timed lume-performance result, or the strap-to-case mechanism. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.rado.com/en_gb/hyperchrome-r32280109.html",
+      "status": "validated_primary",
+      "note": "Rado's exact Great Britain product route independently repeats reference R32280109, the rhodium-dial/black-rubber configuration, 41.5 x 11.7 mm geometry, 87 g configured weight, R292 accuracy of no more than ±10 seconds per year, 150 m resistance, Super-LumiNova color placement, and pin buckle. Its GBP offer is a different market snapshot and is not merged with the homogeneous U.S. price record; it still publishes no lug-to-lug, lug width, timed lume-performance result, or strap-to-case mechanism. Retrieved 2026-08-31."
     },
     {
       "url": "https://www.zegarki.zgora.pl/zegarek/60470_Rado_HyperChrome_Gent_Quartz_XL_R32280109",

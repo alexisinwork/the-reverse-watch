@@ -978,6 +978,12 @@ service page is not an exact-reference parts record. The older 47.7 mm span and
 20/21 mm width remain rejected against the current specification set. Those
 four gaps remain null and no provider request was made.
 
+A 2026-08-31 exact-reference recheck of Rado's Great Britain route independently
+repeats the current 41.5 x 11.7 mm, 87 g, 150 m, R292 ±10 seconds-per-year,
+Super-LumiNova, and pin-buckle record. Its GBP offer is a separate market
+snapshot, so the homogeneous U.S. price remains canonical; no lug, timed-lume,
+or strap-interface evidence was added, and all four gaps remain null.
+
 The next Bulova Icon Precisionist Chronograph `98B316` pre-screen also leaves
 its two review gaps open. A newly found exact-reference hands-on article reports
 274 g and says the luminous hands and markers are readable after light exposure,
