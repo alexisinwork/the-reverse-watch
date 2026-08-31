@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "citizen-compact-lightweight-solar",
   "jobId": "edaa380a-7c11-4db4-851a-f6423f1149eb",
-  "reviewedAt": "2026-08-31T10:02:18Z",
+  "reviewedAt": "2026-08-31T10:42:29Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -66,6 +66,11 @@
       "url": "https://www.ubuy.com.jm/product/2M7CJ2U-20mm-hemsut-watch-bands-compatible-with-citizen-bm8180-03e-bm8475-00f-bn0151-09l-bl8000-03a-bn0118-04e-bm8180-03e-bn0150-28e-bj8050-08e-bn0150-28e-and-more",
       "status": "rejected",
       "note": "The aftermarket compatibility listing says its replacement band fits BM8180-03E watches using standard spring bars, but it does not document or inspect the watch's factory strap-to-case construction. Commercial fitment compatibility alone is insufficient to close the M1 attachment gap."
+    },
+    {
+      "url": "https://www.walmart.com/reviews/product/49092728",
+      "status": "validated_secondary",
+      "note": "The exact BM8180-03E review corpus contains conflicting owner observations: some call the lume effective or readable all night, while another says dark reading is impossible and another wishes the bright response lasted longer. The comments provide no controlled illuminance, charge duration, or timed-decay series, so they add conflict context but cannot establish a catalogue grade. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [

@@ -1185,6 +1185,12 @@ repeatable comparison standard. The conflicting exact-reference observations
 therefore remain useful context rather than a catalogue grade. No provider
 request was made.
 
+A further 2026-08-31 exact-reference review corpus adds conflicting comments
+ranging from effective/all-night lume to impossible dark reading and a response
+that fades quickly. Because the owners do not report controlled illuminance,
+charge duration, or a timed decay series, the sole `lumeGrade` gap remains null;
+no provider request was made.
+
 The next LIP Churchill T18 `671937` pre-screen remains open for
 `caseThicknessMm` and `lumeGrade`. Lepage's exact authorized-retailer page
 matches the current ivory/blue/sapphire configuration but reports 9.2 mm
