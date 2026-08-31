@@ -1400,6 +1400,10 @@ fresh production build served by `react-router-serve`. Its landing assertion
 verifies the application-owned Beehiiv loader while aborting the third-party
 response, so external iframe latency cannot mask hydration failures. The same
 10-test desktop/mobile matrix passes against that production-mode server.
+Vercel exposes the DSN to the client build but not to the request middleware at
+runtime, so the CSP also receives a build-time fallback containing only the
+validated public HTTPS envelope origin. The runtime DSN remains preferred and
+neither path places the DSN key in a response header.
 
 Verification:
 

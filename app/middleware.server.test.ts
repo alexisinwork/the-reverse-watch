@@ -47,5 +47,11 @@ describe("request middleware", () => {
     expect(contentSecurityPolicy("http://example.test/123")).not.toContain(
       "http://example.test",
     );
+    expect(
+      contentSecurityPolicy("not-a-dsn", "https://fallback.ingest.sentry.io"),
+    ).toContain("https://fallback.ingest.sentry.io");
+    expect(
+      contentSecurityPolicy("not-a-dsn", "http://unsafe.example.test"),
+    ).not.toContain("unsafe.example.test");
   });
 });

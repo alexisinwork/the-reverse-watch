@@ -2,13 +2,25 @@ import type { MiddlewareFunction } from "react-router";
 
 import { sentryEnvelopeOrigin } from "./domain/sentry-config";
 
-export function contentSecurityPolicy(sentryDsn = process.env.SENTRY_DSN) {
+declare const __SENTRY_ENVELOPE_ORIGIN__: string | null;
+
+const buildTimeSentryEnvelopeOrigin =
+  typeof __SENTRY_ENVELOPE_ORIGIN__ === "undefined"
+    ? null
+    : __SENTRY_ENVELOPE_ORIGIN__;
+
+export function contentSecurityPolicy(
+  sentryDsn = process.env.SENTRY_DSN,
+  builtSentryOrigin = buildTimeSentryEnvelopeOrigin,
+) {
   const connectSources = [
     "'self'",
     "https://subscribe-forms.beehiiv.com",
     "https://challenges.cloudflare.com",
   ];
-  const sentryOrigin = sentryEnvelopeOrigin(sentryDsn);
+  const sentryOrigin =
+    sentryEnvelopeOrigin(sentryDsn) ??
+    sentryEnvelopeOrigin(builtSentryOrigin ?? undefined);
   if (sentryOrigin) connectSources.push(sentryOrigin);
 
   return [

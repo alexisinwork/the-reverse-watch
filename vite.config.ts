@@ -5,7 +5,10 @@ import { sentryReactRouter } from "@sentry/react-router";
 import { fileURLToPath } from "node:url";
 import { defineConfig, loadEnv } from "vite";
 
-import { sentrySourceMapConfiguration } from "./app/domain/sentry-config";
+import {
+  sentryEnvelopeOrigin,
+  sentrySourceMapConfiguration,
+} from "./app/domain/sentry-config";
 
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -13,6 +16,9 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     define: {
+      __SENTRY_ENVELOPE_ORIGIN__: JSON.stringify(
+        sentryEnvelopeOrigin(env.SENTRY_DSN),
+      ),
       "import.meta.env.SENTRY_DSN": JSON.stringify(env.SENTRY_DSN),
     },
     plugins:
