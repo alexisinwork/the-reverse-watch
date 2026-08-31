@@ -1508,6 +1508,12 @@ numerical rate bound for the installed SW-SF quartz movement surfaced. The
 existing 12 g full-watch mass, 38 mm wearing span, and proprietary Swatch mount
 remain unchanged; no facts are promoted and no provider request is authorized.
 
+A 2026-08-31 recheck of Swatch's official Rakuten storefront confirms the exact
+White Classiness configuration and 34 x 4.3 x 38 mm case, but supplies no
+numerical timekeeping bound or lume evidence. The direct US/Spain pages and
+exact retailer records remain consistent on the two unresolved fields;
+`accuracy` and `lumeGrade` stay null and the candidate remains research-only.
+
 The next Nodus Sector II Field Titanium Shale `SEC-F-SHA` pre-screen leaves its
 sole M1 gap, `lumeGrade`, open. An exact reseller page corroborates the USD 625
 out-of-stock titanium-bracelet configuration and repeats the BGW9 Grade A

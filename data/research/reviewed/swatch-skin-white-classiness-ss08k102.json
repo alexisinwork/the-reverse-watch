@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "swatch-skin-white-classiness-ss08k102",
   "jobId": "f1d2e5cb-8515-42b6-8e5f-487e2869ec16",
-  "reviewedAt": "2026-08-31T09:52:14Z",
+  "reviewedAt": "2026-08-31T10:16:08Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -46,6 +46,11 @@
       "url": "https://www.louispion.fr/skin-ss08k102-s14.html",
       "status": "validated_secondary",
       "note": "The exact Louis Pion retailer page identifies SS08K102-S14 and EAN 7610522872653, reports 11.9 g net product weight, 34 mm case width/height, quartz, and a two-hand display. It publishes no numerical rate bound or lume statement; the rounded 12 g mass already has independent exact-source support and no additional M1 field closes. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://item.rakuten.co.jp/swatchofficial/ss08k102-s14/",
+      "status": "validated_secondary",
+      "note": "Swatch's official Rakuten storefront independently identifies the exact SS08K102-S14 White Classiness, white silicone strap, quartz movement, 3 bar resistance, 34 x 4.3 x 38 mm case, and 24-month warranty. Its specifications and customer comments contain no numerical rate bound or lume evidence, so neither remaining M1 field closes. Rechecked 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
