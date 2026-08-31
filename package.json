@@ -13,7 +13,7 @@
     "format:check": "prettier --check .",
     "test": "vitest",
     "test:run": "vitest run",
-    "test:e2e": "playwright test",
+    "test:e2e": "npm run build && node --env-file-if-exists=.env ./node_modules/@playwright/test/cli.js test",
     "project:seed-coverage": "tsx scripts/project-seed-coverage.ts",
     "render:seed-migration": "tsx scripts/render-seed-migration.ts",
     "audit:catalogue-parity": "tsx scripts/audit-catalogue-parity.ts",
@@ -30,6 +30,7 @@
   "dependencies": {
     "@react-router/node": "^7.18.2",
     "@react-router/serve": "^7.18.2",
+    "@sentry/react-router": "^10.72.0",
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.38.3",
     "@vercel/react-router": "^1.3.6",

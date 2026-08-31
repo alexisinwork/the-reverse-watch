@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import * as Sentry from "@sentry/react-router";
 
 import type { Route } from "./+types/root";
 import { requestMiddleware } from "./middleware.server";
@@ -63,8 +64,11 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       error.status === 404
         ? "The page may have been moved or was never entered into the archive."
         : error.statusText || detail;
-  } else if (import.meta.env.DEV && error instanceof Error) {
-    detail = error.message;
+  } else if (error instanceof Error) {
+    Sentry.captureException(error);
+    if (import.meta.env.DEV) {
+      detail = error.message;
+    }
   }
 
   return (

@@ -1,4 +1,4 @@
-import { requestMiddleware } from "./middleware.server";
+import { contentSecurityPolicy, requestMiddleware } from "./middleware.server";
 
 describe("request middleware", () => {
   it("adds security, request identity, and timing headers to the real response", async () => {
@@ -34,6 +34,18 @@ describe("request middleware", () => {
     expect(response.headers.get("X-Request-ID")).toMatch(/^[0-9a-f-]{36}$/);
     expect(response.headers.get("Server-Timing")).toMatch(
       /^app;dur=\d+(\.\d+)?$/,
+    );
+  });
+
+  it("allows only the configured HTTPS Sentry envelope origin", () => {
+    expect(
+      contentSecurityPolicy("https://public@example.ingest.sentry.io/123456"),
+    ).toContain(
+      "connect-src 'self' https://subscribe-forms.beehiiv.com https://challenges.cloudflare.com https://example.ingest.sentry.io",
+    );
+    expect(contentSecurityPolicy("not-a-dsn")).not.toContain("not-a-dsn");
+    expect(contentSecurityPolicy("http://example.test/123")).not.toContain(
+      "http://example.test",
     );
   });
 });

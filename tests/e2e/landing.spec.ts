@@ -2,7 +2,10 @@ import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
 test("renders the landing page and Beehiiv embed", async ({ page }) => {
-  await page.goto("/");
+  await page.route("https://subscribe-forms.beehiiv.com/**", (route) =>
+    route.abort(),
+  );
+  const response = await page.goto("/", { waitUntil: "domcontentloaded" });
 
   await expect(
     page.getByRole("heading", { level: 1, name: "The Reserve" }),
@@ -13,15 +16,20 @@ test("renders the landing page and Beehiiv embed", async ({ page }) => {
     "/favicon.svg",
   );
 
-  await expect(
-    page.locator('iframe[src*="subscribe-forms.beehiiv.com"]'),
-  ).toBeVisible({
-    timeout: 15_000,
-  });
+  const sentryDsn = process.env.SENTRY_DSN?.trim();
+  if (sentryDsn) {
+    expect(response?.headers()["content-security-policy"]).toContain(
+      new URL(sentryDsn).origin,
+    );
+  }
 
-  // Beehiiv owns the cross-origin iframe markup; its accessibility contract
-  // cannot be audited from this page. The component-level test covers the
-  // loader identity while this flow verifies that the rendered embed appears.
+  const beehiivLoader = page.locator(
+    'script[src="https://subscribe-forms.beehiiv.com/v3/loader.js"]',
+  );
+  await expect(beehiivLoader).toHaveAttribute("data-beehiiv-form", /.+/);
+
+  // The application-owned loader boundary proves hydration without making the
+  // suite depend on Beehiiv's cross-origin response or iframe markup.
   const accessibility = await new AxeBuilder({ page })
     .exclude('[data-testid="beehiiv-signup"]')
     .analyze();

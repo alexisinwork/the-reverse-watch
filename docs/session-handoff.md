@@ -67,6 +67,15 @@ phase.
   `Server-Timing`, and security headers with a vendor-scoped CSP. The full
   desktop/mobile browser matrix remains green after allowing React Router's
   required inline hydration bootstrap and Beehiiv's Cloudflare challenge host.
+- Sentry is integrated through the React Router client/server instrumentation
+  APIs and branded root boundary with default PII disabled. Expected 404 route
+  misses and aborted requests are filtered from server reports. The CSP admits
+  only the HTTPS origin derived from the configured DSN, and source-map upload
+  fails clearly unless auth token, organization, and project are configured
+  together. A privacy-safe connectivity event flushed successfully. The full
+  10-test browser matrix now runs against a fresh production build/server and
+  verifies the application-owned Beehiiv loader without depending on the
+  vendor iframe response.
 - Behavior deployment `dpl_4sWPumUuQMXfg988vtu2Uqg9mjaY` is `READY` from commit
   `7818842`; it includes the explicit quiz policy, optional distributed adapter,
   Beehiiv opt-in, privacy-safe funnel events, source-backed Resend dossier

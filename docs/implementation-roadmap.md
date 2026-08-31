@@ -1368,6 +1368,15 @@ the initial queryable evaluation surface; a conversion dashboard and any
 traffic-derived conclusions remain pending until the deployment has enough
 observations.
 
+Sentry error reporting now covers the React Router client, server render,
+loaders, actions, middleware, and the branded root boundary without enabling
+default PII collection. Expected route-miss 404s and aborted requests are
+excluded from server reporting. The CSP derives only the configured DSN's HTTPS
+envelope origin for `connect-src`; invalid or non-HTTPS DSNs cannot widen the
+policy. Source-map upload remains optional and requires the auth token,
+organization, and project values as one complete build-time set. The configured
+DSN accepted and flushed a privacy-safe automated verification event.
+
 On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
 tests covering the landing page, health response, error boundary, six-screen
 quiz flow, optional refinement submission, and cited-result rendering.
@@ -1376,6 +1385,12 @@ directory for the run; no browser binaries, system packages, or repository
 artifacts were added. The current Vercel Web Analytics window still reports
 zero visitors and pageviews, while runtime logs contain one privacy-safe quiz
 evaluation event, so no production conversion rate or quota is inferred.
+
+The Sentry checkpoint moves Playwright from the Vite development server to a
+fresh production build served by `react-router-serve`. Its landing assertion
+verifies the application-owned Beehiiv loader while aborting the third-party
+response, so external iframe latency cannot mask hydration failures. The same
+10-test desktop/mobile matrix passes against that production-mode server.
 
 Verification:
 
@@ -1421,7 +1436,8 @@ Subsequent commercial expansion is sequenced in
 | `OLLAMA_BASE_URL`, `OLLAMA_CHAT_MODEL` | Optional Phase 6 | Ollama experiment. |
 | `RUNPOD_API_KEY`, `RUNPOD_ENDPOINT_ID` | Optional Phase 6 | Hosted Ollama experiment. |
 | `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 7 | Explicit subscription opt-in. |
-| `SENTRY_DSN` | Optional Phase 7 | Production error reporting. |
+| `SENTRY_DSN` | Optional Phase 7 | Client/server production error reporting and the exact CSP envelope origin. |
+| `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT` | Optional Phase 7 build | Complete set required for Sentry source-map upload; the auth token remains secret. |
 
 Only `.env.example` is committed. Real values belong in ignored local files and
 encrypted deployment settings.
