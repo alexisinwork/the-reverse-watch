@@ -1474,7 +1474,7 @@ production surfaces.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
-Status: **planned — after Phase 7 production verification**
+Status: **in progress — packet 8.1 discovery contract**
 
 Goal: use sourced public-figure and screen-watch research plus a lightweight
 archetype quiz as a discovery funnel into the existing deterministic diagnostic.
@@ -1483,6 +1483,31 @@ The detailed plan, evidence model, delivery packets, and editorial guardrails
 are in [`phase-8-celebrity-cinema-watches.md`](phase-8-celebrity-cinema-watches.md).
 Subsequent commercial expansion is sequenced in
 [`future-expansion-strategy.md`](future-expansion-strategy.md).
+
+Packet 8.1 begins without public-figure research or catalogue changes.
+Additive migrations `0034_add_discovery_claims.sql` and
+`0035_harden_discovery_trigger_grants.sql` define separate entities, works,
+events, attributions, claim evidence, image-rights decisions, and correction
+records. All seven tables have RLS enabled and no browser table or sequence
+grants. The invoker trigger has an empty search path and no browser execution
+grant. A database publication trigger and the shared Zod contract both require
+accepted supporting evidence and an image-rights decision; confirmed claims
+additionally require exact-reference precision, while family-only and disputed
+labels remain explicit. Discovery links may target only an already reviewed
+`reference_variant` and cannot promote catalogue facts. The source and
+publication vocabulary is recorded in
+[`phase-8-discovery-source-contract.md`](phase-8-discovery-source-contract.md).
+
+Both migrations are applied to the connected Supabase project. Live
+verification reports all seven tables at zero rows after a rolled-back gate
+fixture, RLS enabled, zero `anon`/`authenticated` select or insert privileges,
+no missing foreign-key indexes, and no browser execution privilege on the
+trigger. The transaction proved an unsupported confirmed attribution is
+rejected before accepted evidence exists and the same attribution publishes
+after accepted evidence plus a text-only image-rights decision. Security and
+performance advisors add only the expected no-policy and unused-index
+informational notices for intentionally inaccessible, empty packet-8.1 tables;
+they report no new error-level finding.
 
 ## Environment-variable ownership
 

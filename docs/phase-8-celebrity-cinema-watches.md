@@ -1,6 +1,6 @@
 # Phase 8 — Celebrity & Cinema Watch Discovery
 
-Status: **planned — begins only after Phase 7 production verification**
+Status: **in progress — packet 8.1 discovery contract**
 
 ## Purpose
 

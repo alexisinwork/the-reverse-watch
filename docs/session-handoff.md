@@ -16,6 +16,17 @@ phase.
 - Phases 0–5 are complete at their current owner-approved boundaries; Phase 6
   is closed after its pilot, and Phase 7 is complete at its owner-approved
   production boundary.
+- Phase 8 packet 8.1 is in progress without celebrity/model research or
+  catalogue population. Migrations `0034_add_discovery_claims.sql` and
+  `0035_harden_discovery_trigger_grants.sql` are live, adding seven empty,
+  RLS-enabled discovery evidence tables with no browser table, sequence, or
+  trigger-function access. The shared Zod publication contract and database
+  trigger both reject unsupported confirmed claims, require an image-rights
+  decision, preserve bounded family-only/unconfirmed labels, and permit only
+  links to already reviewed catalogue variants. A rolled-back live fixture
+  proved rejection before evidence and publication after accepted evidence;
+  all foreign keys are indexed. The source vocabulary and correction/image
+  policy are in `docs/phase-8-discovery-source-contract.md`.
 - Phase 5 engineering is complete. On 2026-08-31 the owner moved all further
   brand/model selection, research, verification, and catalogue population into
   an owner-managed workstream. The reusable pipeline remains strict: 204/204
