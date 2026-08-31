@@ -51,6 +51,10 @@ import {
 } from "../domain/beehiiv.server";
 import { renderDossierEmail } from "../domain/dossier-email";
 import {
+  summarizeEmailDelivery,
+  type DeliveryChannelStatus,
+} from "../domain/email-delivery";
+import {
   parseResendConfiguration,
   sendDossierWithResend,
 } from "../domain/resend.server";
@@ -92,8 +96,8 @@ type SubscriptionResult =
   | {
       status: "sent" | "partial" | "unavailable" | "failed";
       message: string;
-      newsletterStatus: "sent" | "unavailable" | "failed";
-      dossierStatus: "sent" | "unavailable" | "failed";
+      newsletterStatus: DeliveryChannelStatus;
+      dossierStatus: DeliveryChannelStatus;
     };
 
 const emailSchema = z.string().trim().email().max(320);
@@ -566,10 +570,11 @@ export async function action({ request }: Route.ActionArgs) {
       catalogueOrigin: catalogueLoad.origin,
       intent,
     });
-    let newsletterStatus: SubscriptionResult["newsletterStatus"] =
+    let newsletterStatus: DeliveryChannelStatus =
       beehiivConfiguration.configured ? "failed" : "unavailable";
-    let dossierStatus: SubscriptionResult["dossierStatus"] =
-      resendConfiguration.configured ? "failed" : "unavailable";
+    let dossierStatus: DeliveryChannelStatus = resendConfiguration.configured
+      ? "failed"
+      : "unavailable";
     if (beehiivConfiguration.configured) {
       try {
         await subscribeToBeehiiv(emailOptIn.email, beehiivConfiguration);
@@ -600,37 +605,9 @@ export async function action({ request }: Route.ActionArgs) {
         );
       }
     }
-    const successfulChannels = [newsletterStatus, dossierStatus].filter(
-      (status) => status === "sent",
-    ).length;
-    const failedChannels = [newsletterStatus, dossierStatus].filter(
-      (status) => status === "failed",
-    ).length;
-    const status: Exclude<SubscriptionResult["status"], "not_requested"> =
-      successfulChannels > 0
-        ? failedChannels > 0
-          ? "partial"
-          : "sent"
-        : failedChannels > 0
-          ? "failed"
-          : "unavailable";
-    const channelMessages = [
-      newsletterStatus === "sent"
-        ? "newsletter opt-in recorded"
-        : newsletterStatus === "failed"
-          ? "newsletter opt-in failed"
-          : "newsletter delivery unavailable",
-      dossierStatus === "sent"
-        ? "custom dossier sent"
-        : dossierStatus === "failed"
-          ? "custom dossier delivery failed"
-          : "custom dossier delivery unavailable",
-    ];
+    const summary = summarizeEmailDelivery(newsletterStatus, dossierStatus);
     subscription = {
-      status,
-      newsletterStatus,
-      dossierStatus,
-      message: `${channelMessages.join("; ")}. Your result remains available.`,
+      ...summary,
     };
   }
 
