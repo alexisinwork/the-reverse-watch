@@ -144,20 +144,27 @@ phase.
   Production `/`, `/quiz`, `/health`, and `/evaluation` now return 200 with the
   exact Sentry envelope origin in CSP.
 - A non-mutating production Beehiiv lookup returns 200 and matches the
-  configured publication. The Vercel Resend variables are empty, and the local
-  sender is `@thereserve.watch`; its API key is valid but that sender domain was
-  not registered. The domain was created additively in Resend on 2026-08-31 and
-  now awaits DKIM, MAIL FROM MX, and MAIL FROM SPF records at Namecheap. Keep
-  Resend disabled in Production until verification succeeds, then copy the
-  validated local values without printing them and run one consented paired
-  delivery.
+  configured publication. A subsequent consented production core request
+  returned recommendations, reported Beehiiv as sent, and kept Resend visibly
+  disabled; the provider lookup confirms an active subscription with the
+  expected `the_reserve_diagnostic` source. The Vercel Resend variables are
+  empty, and the local sender is `@thereserve.watch`; its API key is valid but
+  that sender domain was not registered. The domain was created additively in
+  Resend on 2026-08-31 and now awaits DKIM, MAIL FROM MX, and MAIL FROM SPF
+  records at Namecheap. Keep Resend disabled in Production until verification
+  succeeds, then copy the validated local values without printing them and run
+  one consented dossier delivery; the owner has already supplied suitable
+  mailboxes.
 - DNS now contains the correct Vercel apex A record but also retains
   `216.198.79.1` and `162.255.119.72`, so Vercel still reports the domain as
   misconfigured and the apex certificate remains invalid. Remove only those
   two conflicting A records. Do not yet replace the email records:
   `resend._domainkey` has a different DKIM value and `send` points at existing
   Forge/RMTA MX/SPF infrastructure. The owner must choose whether that legacy
-  sender can be replaced or Resend should use a new subdomain.
+  sender can be replaced or Resend should use a new subdomain. Both
+  authoritative Namecheap nameservers still publish these conflicts, so this
+  is not resolver propagation; Vercel continues to report misconfiguration and
+  the apex TLS certificate remains invalid.
 - On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
   tests covering landing, health, error boundary, the six-screen quiz flow,
   optional refinement submission, and cited-result rendering. Chromium's

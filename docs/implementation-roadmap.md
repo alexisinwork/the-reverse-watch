@@ -1430,8 +1430,12 @@ Verification:
 - Consent, empty results, incomplete data, provider-free operation, and external
   failures are tested.
 - Beehiiv and Resend adapters are tested independently, including paired-config
-  parsing, request contracts, provider failures, and visible partial delivery;
-  production provider delivery still requires a consented test recipient.
+  parsing, request contracts, provider failures, and visible partial delivery.
+  A consented production core request returned recommendations, reported the
+  Beehiiv request as sent, and kept the independently unavailable Resend channel
+  visible. A follow-up Beehiiv lookup confirmed one active subscription with
+  the expected `the_reserve_diagnostic` source. Live Resend dossier delivery
+  remains pending domain verification.
 - Production smoke checks pass on `www.thereserve.watch` and the Vercel alias.
   The apex domain currently presents the `www`-only certificate because its
   third-party DNS now publishes three apex A records: the correct Vercel target
@@ -1441,14 +1445,15 @@ Verification:
   certificate issuance completes.
 
 The production Beehiiv key and publication ID pass a non-mutating publication
-lookup and identify the configured publication. The Vercel Resend variables
+lookup and identify the configured publication. The consented production test
+above closes Beehiiv's live-delivery checkpoint. The Vercel Resend variables
 exist but are empty, while the validated local API key is active. The intended
 `@thereserve.watch` sender domain was absent from Resend, so it was created
 additively on 2026-08-31 and now awaits its three Namecheap DNS records (DKIM,
 MAIL FROM MX, and MAIL FROM SPF). Resend remains disabled in Production until
 the domain is verified; this avoids deploying a sender path known to return a
-provider rejection. Final paired Beehiiv/Resend delivery still requires a
-consented recipient after DNS verification.
+provider rejection. The owner has supplied consented production mailboxes, so
+no further recipient decision is needed after DNS verification.
 
 The authoritative DNS preflight then found existing, conflicting email
 infrastructure at every required Resend hostname: `resend._domainkey` contains
@@ -1456,7 +1461,11 @@ a different DKIM key, while `send` resolves through Forge/RMTA and publishes
 Forge MX/SPF data. These records must not be overwritten until the owner
 confirms whether the existing sender is still required. A separate Resend
 sending subdomain is the additive alternative if that infrastructure must be
-preserved.
+preserved. A same-day recheck against both authoritative Namecheap nameservers
+confirmed that these are still the published records, not resolver propagation.
+The same authoritative check still returns all three apex A records, Vercel
+reports the domain as misconfigured, and the apex TLS certificate does not
+cover `thereserve.watch`.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
