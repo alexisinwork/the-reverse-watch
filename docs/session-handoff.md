@@ -65,6 +65,11 @@ phase.
   both the dossier and optional publication subscription. Protected production
   smoke checks on that deployment return 200 for `/`, `/quiz`, and `/health`;
   the deployment-scoped error-level runtime-log query is empty.
+- Commit `9e5b9ab` extracts the newsletter/dossier outcome aggregation into a
+  pure function with all eight sent/partial/unavailable/failure combinations
+  covered. Its production deployment `dpl_G391L3GqQVBN5yUGcxDBrYxLTSnE` is
+  `READY`; `/health` and `/quiz` smoke checks return 200 and the deployment
+  error-level runtime-log query is empty.
 - The quiz action now has an explicit rate-limit policy parser and a tested
   process-local fallback: both `QUIZ_RATE_LIMIT_MAX_REQUESTS` and
   `QUIZ_RATE_LIMIT_WINDOW_SECONDS` must be positive integers, partial or invalid
