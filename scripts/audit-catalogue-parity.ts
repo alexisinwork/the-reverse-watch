@@ -5,8 +5,8 @@ import {
   SUPABASE_HARD_FILTER_RPC,
 } from "../app/domain/catalogue.server";
 import { catalogueParityMismatches } from "../app/domain/catalogue-parity";
+import { goldenEvaluationProfiles } from "../app/domain/evaluation-fixtures";
 import type { QuestionnaireProfile } from "../app/domain/questionnaire";
-import { QUESTIONNAIRE_VERSION } from "../app/domain/questionnaire";
 import {
   evaluateHardFilterPartition,
   recommendWatches,
@@ -47,127 +47,7 @@ const factMismatches = catalogueParityMismatches(
   databaseCatalogue,
 );
 
-const profiles: QuestionnaireProfile[] = [
-  {
-    core: {
-      version: QUESTIONNAIRE_VERSION,
-      budgetCurrency: "USD",
-      budgetMax: 4_000,
-      wristCircumferenceMm: 170,
-      deploymentEnvironment: "field_water_abuse",
-      ownershipFriction: "zero_maintenance",
-      accuracyTolerance: "seconds_per_month",
-      weightLimit: "under_160_g",
-      requiredComplications: ["gmt"],
-      datePreference: "required",
-    },
-  },
-  {
-    core: {
-      version: QUESTIONNAIRE_VERSION,
-      budgetCurrency: "USD",
-      budgetMax: 1_000,
-      wristCircumferenceMm: 165,
-      deploymentEnvironment: "studio_desk_daily",
-      ownershipFriction: "zero_maintenance",
-      accuracyTolerance: "no_requirement",
-      weightLimit: "no_limit",
-      requiredComplications: ["chronograph"],
-      datePreference: "required",
-    },
-  },
-  {
-    core: {
-      version: QUESTIONNAIRE_VERSION,
-      budgetCurrency: "EUR",
-      budgetMax: 15_000,
-      wristCircumferenceMm: 180,
-      deploymentEnvironment: "formal_architectural",
-      ownershipFriction: "workhorse_mechanical",
-      accuracyTolerance: "no_requirement",
-      weightLimit: "no_limit",
-      requiredComplications: [],
-      datePreference: "forbidden",
-    },
-    refinement: {
-      acquisitionChannels: ["authorized_dealer"],
-      lumePreference: "not_important",
-    },
-  },
-  {
-    core: {
-      version: QUESTIONNAIRE_VERSION,
-      budgetCurrency: "USD",
-      budgetMax: 25_000,
-      wristCircumferenceMm: 145,
-      deploymentEnvironment: "field_water_abuse",
-      ownershipFriction: "workhorse_mechanical",
-      accuracyTolerance: "within_5_seconds_per_day",
-      weightLimit: "under_80_g",
-      requiredComplications: ["chronograph"],
-      datePreference: "forbidden",
-    },
-    refinement: {
-      speculativeRiskTolerance: "avoid",
-      requiredLugCurvature: "steep",
-      requiredAttachmentType: "quick_release",
-      requiredLugWidthMm: 20,
-      quickReleaseRequired: true,
-      acquisitionChannels: ["secondary_market"],
-      availabilityTolerance: "in_stock_only",
-      premiumAllowancePercent: 30,
-      liquidityPreference: "require_80_percent_plus",
-      lumePreference: "strong_lume",
-      crownPosition: "4",
-      purchaseCountry: "PL",
-      serviceCountry: "PL",
-      acceptedConditions: ["pre_owned"],
-      allergyConstraint: "nickel_contact",
-    },
-  },
-  {
-    core: {
-      version: QUESTIONNAIRE_VERSION,
-      budgetCurrency: "EUR",
-      budgetMax: 1_000,
-      wristCircumferenceMm: 220,
-      deploymentEnvironment: "studio_desk_daily",
-      ownershipFriction: "zero_maintenance",
-      accuracyTolerance: "within_15_seconds_per_day",
-      weightLimit: "under_120_g",
-      requiredComplications: [],
-      datePreference: "either",
-    },
-    refinement: {
-      acquisitionChannels: ["authorized_dealer"],
-      availabilityTolerance: "short_wait",
-      liquidityPreference: "prefer_60_percent_plus",
-      lumePreference: "some_lume",
-      crownPosition: "3",
-      acceptedConditions: ["new"],
-    },
-  },
-  {
-    core: {
-      version: QUESTIONNAIRE_VERSION,
-      budgetCurrency: "CHF",
-      budgetMax: 7_000,
-      wristCircumferenceMm: 180,
-      deploymentEnvironment: "formal_architectural",
-      ownershipFriction: "specialist_mechanical",
-      accuracyTolerance: "no_requirement",
-      weightLimit: "no_limit",
-      requiredComplications: ["moonphase"],
-      datePreference: "either",
-    },
-    refinement: {
-      speculativeRiskTolerance: "accept",
-      acquisitionChannels: ["grey_market", "secondary_market"],
-      premiumAllowancePercent: 40,
-      purchaseCountry: "US",
-    },
-  },
-];
+const profiles: QuestionnaireProfile[] = [...goldenEvaluationProfiles];
 
 const observedTimes = [
   seedCatalogue.fx.observedAt,

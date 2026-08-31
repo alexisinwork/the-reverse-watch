@@ -18,6 +18,7 @@
     "render:seed-migration": "tsx scripts/render-seed-migration.ts",
     "audit:catalogue-parity": "tsx scripts/audit-catalogue-parity.ts",
     "audit:coverage": "tsx scripts/audit-coverage.ts",
+    "evaluate:baseline": "tsx scripts/evaluate-deterministic-baseline.ts",
     "audit:research": "tsx scripts/audit-research-manifest.ts",
     "plan:research": "tsx scripts/plan-coverage-research.ts",
     "import:knowledge": "tsx scripts/import-knowledge-base.ts --write",

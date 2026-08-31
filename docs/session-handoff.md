@@ -35,6 +35,12 @@ phase.
   health, error-boundary, and six-screen diagnostic tests. The E2E test scopes
   accessibility checks to application-owned markup and leaves the cross-origin
   Beehiiv iframe to the vendor's contract.
+- The Phase 6 entry-gate harness evaluates six shared golden profiles through
+  the real recommendation function. At 1,000 iterations per profile, all runs
+  are deterministic, hard-filter violations are zero, the slowest profile
+  averages 0.2854 ms per evaluation on this runner, and provider cost is USD
+  0.00. Semantic functionality remains an experiment, not a production
+  dependency.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

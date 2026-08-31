@@ -1217,7 +1217,7 @@ outside the page's control.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 
-Status: **optional, pending deterministic baseline evidence**
+Status: **optional, deterministic baseline recorded 2026-08-31**
 
 Goal: determine whether AI improves free-text intake or aesthetic nuance enough
 to justify operational complexity.
@@ -1242,6 +1242,14 @@ Exit decision:
   engine and close the experiment.
 
 Arbitrary fixed-size dossier chunking is explicitly out of scope.
+
+The deterministic entry-gate harness now evaluates the six shared golden
+profiles through the real recommendation function. At 1,000 iterations per
+profile over the 28-variant catalogue, all runs are deterministic, no
+recommendation violates its hard-filter partition, the slowest profile averages
+0.2854 ms per evaluation on this runner, and provider cost is USD 0.00. These
+measurements establish the comparison baseline; no semantic provider is yet in
+the production path.
 
 Follow-on checkpoint 2026-08-31: Worn & Wound's exact sky-blue Horizon
 hands-on review records the hands and indices still glowing until morning after

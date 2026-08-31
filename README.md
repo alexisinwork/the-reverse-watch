@@ -49,6 +49,12 @@ remain identical:
 npm run audit:catalogue-parity
 ```
 
+The deterministic Phase 6 entry-gate measurements can be reproduced with:
+
+```bash
+npm run evaluate:baseline
+```
+
 Real credentials belong in the ignored `.env` file. See
 `docs/accounts-and-secrets.md` and `scripts/check-env.mjs`; never commit `.env`
 or expose credential values in output.
