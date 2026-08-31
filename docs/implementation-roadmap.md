@@ -1208,6 +1208,13 @@ BOLDR row remains on its 91 g integrated Druber strap; the bundled titanium
 bracelet is accessory context only. Local and live coverage is 1,102/28,800
 cells, and no provider request was needed.
 
+Phase 7 integration preflight on 2026-08-31 ran the deferred Chromium suite in
+both desktop and mobile projects. All eight landing, health, error-boundary,
+and six-screen diagnostic tests passed after supplying the runner's missing
+shared libraries from a user-space package extraction. The Beehiiv assertion
+audits only the application-owned boundary; vendor iframe accessibility remains
+outside the page's control.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**

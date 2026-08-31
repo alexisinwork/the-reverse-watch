@@ -31,6 +31,10 @@ phase.
   morning after overnight wear, closing the sole lume gap as `strong`. Local
   and live seed coverage is now 1,102/28,800 cells across 28 variants. The
   publishable-key parity audit passes for all six golden profiles.
+- The deferred Chromium preflight now passes all eight desktop/mobile landing,
+  health, error-boundary, and six-screen diagnostic tests. The E2E test scopes
+  accessibility checks to application-owned markup and leaves the cross-origin
+  Beehiiv iframe to the vendor's contract.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the
