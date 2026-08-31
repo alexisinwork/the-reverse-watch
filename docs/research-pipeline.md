@@ -1346,6 +1346,21 @@ dimensions conflict with the current exact 40 x 11 mm sheet, and it does not
 identify the current leather configuration. The mass and accuracy claims are
 therefore rejected; no provider request is authorized.
 
+The next Omega Speedmaster Moonwatch `310.30.42.50.01.001` source-led pass also
+remains negative for both projected M1 gaps. An exact-reference mirrored Omega
+manual documents the steel bracelet and comfort-adjustment clasp, but contains
+no case-to-bracelet connector or spring-bar specification; it is retained as a
+rejected lead rather than manufacturer service corroboration. A second
+exact-reference review discusses the bracelet but supplies no controlled lume
+charge/decay result or attachment mechanism. A 3861 owner lume discussion is a
+sapphire sibling rather than the exact Hesalite reference and has no controlled
+timed protocol. Existing exact-reference owner and Omega-certified-watchmaker
+forum posts still cannot satisfy the manufacturer-corroboration rule for
+`attachmentType`, while material-only Super-LumiNova mentions cannot establish
+`lumeGrade`. Omega stays research-only and no provider request is authorized;
+the next selection must continue to require an exact or directly applicable
+path for every remaining M1 field.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

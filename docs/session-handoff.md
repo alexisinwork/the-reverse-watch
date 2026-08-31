@@ -861,6 +861,23 @@ On 2026-08-28 for Phases 1–4:
   responses at the strict extraction boundary. The additive database migration
   is prepared but deliberately unpushed until live parity can be verified.
 
+## Phase 5 continuation — Omega exact-reference pre-screen (2026-08-31)
+
+The next ranked coverage candidate, Omega Speedmaster Moonwatch
+`310.30.42.50.01.001`, remains research-only. A mirrored exact-reference Omega
+manual confirms the steel bracelet and comfort-adjustment clasp but omits the
+case-to-bracelet connector and any lume performance. A second exact-reference
+review likewise discusses the bracelet without identifying its attachment
+mechanism or providing a controlled lume charge/decay observation. A 3861
+owner lume thread covers a sapphire sibling, not this Hesalite reference, and
+does not provide a controlled timed protocol. The existing exact-reference
+owner and Omega-certified-watchmaker forum evidence for spring bars remains
+secondary and lacks public Omega product/service corroboration; material-only
+Super-LumiNova evidence remains insufficient for a categorical lume grade. Both
+M1 gaps (`attachmentType`, `lumeGrade`) stay null, no provider request was made,
+and the next source-led selection must target the next named candidate only
+after a complete exact-source path is identified.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,

@@ -48,6 +48,21 @@
       "note": "The exact-reference article establishes Super-LumiNova hour-marker presence but provides no controlled charge duration, darkness interval, brightness comparison, or repeatable grade. Material presence alone cannot resolve lumeGrade."
     },
     {
+      "url": "https://www.timeavenue.ru/files/shared/omega/speed_310.30.42.50.01.001/31030425001001_user_manual_ru.pdf",
+      "status": "rejected",
+      "note": "This mirrored Russian-language manual is an exact-reference operational document and confirms the steel bracelet, comfort-adjustment clasp, and bracelet-length adjustment instructions, but it gives no case-to-bracelet connector or spring-bar specification and no lume performance observation. The mirror is retained as a negative lead rather than manufacturer service corroboration."
+    },
+    {
+      "url": "https://watchtested.com/review-omega-speedmaster-professional-310-30-42-50-01-001",
+      "status": "rejected",
+      "note": "The exact-reference review reports +4 and +2 seconds/day measurements and discusses the Nixon bracelet, but contains no controlled lume charge/decay result and does not identify the case attachment mechanism. It cannot close either remaining M1 gap."
+    },
+    {
+      "url": "https://www.reddit.com/r/OmegaWatches/comments/vit8xu",
+      "status": "rejected",
+      "note": "The discussion concerns a 3861 Speedmaster Sapphire sibling rather than exact Hesalite reference 310.30.42.50.01.001, and its owner impressions are not a controlled timed test. It is not directly applicable evidence for this variant's lumeGrade."
+    },
+    {
       "url": "https://watch-site.nl/en/horloges/omega-speedmaster-31030425001001/",
       "status": "validated_secondary",
       "note": "The exact-reference specification explicitly reports Date: No. A separate exact-reference pre-owned specification independently reports Date display: No."
@@ -201,5 +216,5 @@
     }
   ],
   "missingM1Fields": ["lumeGrade", "attachmentType"],
-  "note": "Keep as research-only. Omega's exact product page and product sheet validate the core exact configuration, current $7,800 U.S. in-stock offer, geometry, approximately 134 g total weight, movement, operation, chronograph, and no-date status; the official 0/+5 seconds-per-day bound is independently corroborated. A 2026-08-30 Perplexity-assisted pass found exact-reference owner and Omega-certified-watchmaker forum evidence for a spring-bar bracelet interface, but no public Omega product or service source corroborates the mechanism as required. Exact-reference lume sources establish material presence without a controlled or convergent performance grade. Lume and attachment remain the two M1 gaps."
+  "note": "Keep as research-only. Omega's exact product page and product sheet validate the core exact configuration, current $7,800 U.S. in-stock offer, geometry, approximately 134 g total weight, movement, operation, chronograph, and no-date status; the official 0/+5 seconds-per-day bound is independently corroborated. A 2026-08-30 Perplexity-assisted pass found exact-reference owner and Omega-certified-watchmaker forum evidence for a spring-bar bracelet interface, but no public Omega product or service source corroborates the mechanism as required. The exact-reference mirrored manual and a second exact-reference review likewise omit the connector. Exact-reference lume sources establish material presence without a controlled or convergent performance grade; a sibling 3861 owner thread is not directly applicable. Lume and attachment remain the two M1 gaps."
 }
