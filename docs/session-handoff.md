@@ -143,6 +143,14 @@ phase.
   repaired from the validated local value and redeployed without exposure.
   Production `/`, `/quiz`, `/health`, and `/evaluation` now return 200 with the
   exact Sentry envelope origin in CSP.
+- A non-mutating production Beehiiv lookup returns 200 and matches the
+  configured publication. The Vercel Resend variables are empty, and the local
+  sender is `@thereserve.watch`; its API key is valid but that sender domain was
+  not registered. The domain was created additively in Resend on 2026-08-31 and
+  now awaits DKIM, MAIL FROM MX, and MAIL FROM SPF records at Namecheap. Keep
+  Resend disabled in Production until verification succeeds, then copy the
+  validated local values without printing them and run one consented paired
+  delivery.
 - On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
   tests covering landing, health, error boundary, the six-screen quiz flow,
   optional refinement submission, and cited-result rendering. Chromium's

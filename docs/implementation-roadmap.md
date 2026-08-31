@@ -1434,9 +1434,20 @@ Verification:
   production provider delivery still requires a consented test recipient.
 - Production smoke checks pass on `www.thereserve.watch` and the Vercel alias.
   The apex domain currently presents the `www`-only certificate because its
-  third-party DNS A record points to `216.198.79.1`; Vercel requires
+  third-party DNS now resolves to `162.255.119.72`; Vercel still reports the
+  domain as misconfigured and requires the apex A record to point to
   `76.76.21.21`. Canonical-domain verification remains open until the owner
   changes that DNS record and certificate issuance completes.
+
+The production Beehiiv key and publication ID pass a non-mutating publication
+lookup and identify the configured publication. The Vercel Resend variables
+exist but are empty, while the validated local API key is active. The intended
+`@thereserve.watch` sender domain was absent from Resend, so it was created
+additively on 2026-08-31 and now awaits its three Namecheap DNS records (DKIM,
+MAIL FROM MX, and MAIL FROM SPF). Resend remains disabled in Production until
+the domain is verified; this avoids deploying a sender path known to return a
+provider rejection. Final paired Beehiiv/Resend delivery still requires a
+consented recipient after DNS verification.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
