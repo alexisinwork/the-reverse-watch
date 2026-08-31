@@ -17,8 +17,8 @@ phase.
 - `/quiz` now returns confirmed, verification-required, relaxation, why-not,
   score-trace, and source sections after the six core screens or optional
   refinement groups.
-- Migrations `0001` through `0024` are applied to the connected Supabase
-  project. The live v3 catalogue contains all 18 brands and 22 accepted
+- Migrations `0001` through `0025` are applied to the connected Supabase
+  project. The live v3 catalogue contains all 19 brands and 23 accepted
   variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
   result parity passes. All 20 public catalogue tables have RLS enabled with no
   direct browser grants or policies; the application uses only two narrow,
@@ -74,22 +74,27 @@ phase.
   luminescence. Migration `0024` is live with M0/M1 complete and 40 verified
   reference-level evidence rows from six sources; 22-row public parity passes
   and coverage is 844/28,800 (2.93%).
+- Bertucci A-2T Original Classic `12022` is accepted on the exact black dial
+  and supplied black B-TYPE nylon band. Review closes current manufacturer
+  dimension-sheet gaps, rejects stale exact-retailer 100 m and approximately
+  54 g rows, preserves the GM10-or-2S60 scalar calibre and differing battery
+  endurance as `null`, accepts their common -20/+20-seconds-per-month rate,
+  maps fixed titanium retention bars to `proprietary`, and rejects the printed
+  24-hour scale as a complication. Migration `0025` is live with M0/M1
+  complete and 42 verified reference-level evidence rows from seven sources;
+  23-row public parity passes and coverage is 940/28,800 (3.26%).
 - The Mondaine provider ledger preserves two failed attempts: the first
   returned useful raw research at USD 0.02028 but failed strict normalization;
   the second was interrupted before a response was persisted after an
   equals-style CLI parsing defect caused `--attempts=1` to fall back to three.
   The worker now accepts spaced and equals-style options, and the interrupted
   record retains null response/usage rather than a fabricated cost. The full
-  ignored ledger is 62 attempts (37 succeeded, 25 failed) across 32 target IDs
-  with USD 0.51546 recorded cost.
-- The next active session-plan item is exactly one bounded provider attempt for
-  Bertucci A-2T Original Classic `12022`, fixed to the black dial and supplied
-  black B-TYPE nylon band. Primary and exact pre-screening retrieved 2026-08-30
-  covers every projected M1 class and 160/160 currently empty `under_300`,
-  zero-maintenance, simple-date field/studio cells. Review must preserve the
-  exact GM10-or-2S60 alternative-calibre state, reconcile stale 100 m/53.9 g
-  retailer rows against Bertucci's current 200 m/62 g record, grade exact lume,
-  and reject Super Classic, solar, other-dial, and other-band inheritance.
+  ignored ledger is now 63 attempts (38 succeeded, 25 failed) across 33 target
+  IDs with USD 0.53301 recorded cost.
+- The next active session-plan item is a source-led exact-reference pre-screen
+  for the next homogeneous Phase 5 coverage candidate. The default queue is
+  empty; do not invoke the provider until a named variant has complete projected
+  M1 evidence, an explicit coverage purpose, and a documented exclusion boundary.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -120,8 +125,8 @@ phase.
   evidence; fail-closed SQL hard filters; speculative-candidate suppression;
   deterministic score traces, diversity, why-not explanations, and visible
   relaxations; and the complete 28,800-cell coverage audit.
-- The audit is not complete at the data layer: only 22 homogeneous variants are
-  accepted locally, 844 of 28,800 cells are covered, every covered cell is
+- The audit is not complete at the data layer: only 23 homogeneous variants are
+  accepted locally, 940 of 28,800 cells are covered, every covered cell is
   under-diversified, and 224 are under-evidenced. Phase 5 must close that
   breadth and evidence gap before the 200-brand knowledge pack can be treated as
   a recommendation catalogue. Phase 7 dossier, funnel, and owner-media work
@@ -650,15 +655,12 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Run exactly one bounded Perplexity attempt for
-   `bertucci-a2t-original-classic-12022`, then independently review the exact
-   black-dial/black-band configuration. Preserve the documented GM10-or-2S60
-   alternative instead of selecting one, prefer Bertucci's current 200 m and
-   62 g records over stale conflicting retailer fields only if source review
-   supports that precedence, and keep Super Classic, solar, other-dial, and
-   other-band facts out. If and only if every M1 class survives, render the next
-   additive migration and prove live parity.
-2. Treat the live 22-row v3 catalogue and six-profile parity as the relational
+1. Begin the next Phase 5 checkpoint with source-led exact-reference selection.
+   Name one homogeneous variant, document its coverage purpose and exclusion
+   boundary, and close every projected M1 class from current exact sources
+   before invoking the provider. Run at most one bounded attempt only after that
+   pre-screen; independently review every provisional claim before acceptance.
+2. Treat the live 23-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the
    all-or-nothing bundled fallback for any divergence.

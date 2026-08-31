@@ -1,0 +1,234 @@
+{
+  "reviewVersion": 1,
+  "targetId": "bertucci-a2t-original-classic-12022",
+  "jobId": "26f59344-ca77-4cc1-88b4-3049faca08dc",
+  "reviewedAt": "2026-08-30T22:04:38Z",
+  "reviewer": "codex-source-review",
+  "outcome": "ready_for_migration",
+  "candidateIdentity": {
+    "brand": "Bertucci",
+    "model": "A-2T Original Classic",
+    "referenceCode": "12022",
+    "variantName": "Black dial on supplied black B-TYPE nylon band"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://bertucciwatches.com/Bertucci/A2TOC.html",
+      "status": "validated_primary",
+      "note": "Bertucci's current exact-reference page separates black-dial, black-band 12022 from adjacent color and band SKUs and publishes USD 185, a 40 mm matte solid-titanium Unibody case, integrated titanium band-retention bars, supplied black B-TYPE nylon band, hardened mineral crystal, ergonomic 4 o'clock crown, Swiss luminous hands and markers that glow for hours, date, and 200 m construction. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://bertucciwatches.com/Bertucci/images/A2DIM22.jpg",
+      "status": "validated_primary",
+      "note": "Bertucci's current A-2T manufacturer dimension drawing publishes 40 mm diameter, 49.5 mm overall lug-to-lug span, and 11 mm thickness. Retrieved and visually checked 2026-08-30."
+    },
+    {
+      "url": "https://bertucciwatches.com/Bertucci/images/A2TOC_Features5.jpg",
+      "status": "validated_primary",
+      "note": "Bertucci's current A-2T Original Classic feature sheet publishes 62 g configured weight, 22 mm band size, 200 m water resistance, screw-down crown and caseback, hardened mineral crystal, all-metal Japanese quartz, date, and the stated three-year battery configuration. Retrieved and visually checked 2026-08-30."
+    },
+    {
+      "url": "https://www.bertucciwatches.jp/items/113576509",
+      "status": "validated_secondary",
+      "note": "The current Japanese authorized distributor identifies exact reference 12022 and independently repeats the 40 mm sandblasted solid-titanium case, mineral glass, titanium screw-down crown and back, 20 ATM/200 m rating, date, Swiss Super-LumiNova, nylon band, and a Miyota GM10 or Miyota 2S60 movement alternative. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://miyotamovement.com/jp/uploads/product/product_FHT5vYquElphXDw1L7.pdf",
+      "status": "validated_primary",
+      "note": "Miyota's official GM10 specification publishes a -20/+20-second-per-month rate, date, and approximately three-year battery life. It validates the accuracy shared by one of the exact distributor-listed alternatives without asserting which calibre is fitted to an individual 12022. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://miyotamovement.com/uploads/product/product_LQg9DXrG7doRcWtwqe.pdf",
+      "status": "validated_primary",
+      "note": "Miyota's official 2S60 specification publishes the same -20/+20-second-per-month rate and date, with a different ten-year battery claim. The row therefore accepts the shared accuracy but retains calibre and battery endurance as unresolved alternatives. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon",
+      "status": "validated_secondary",
+      "note": "The exact 12022 black/black retail offer is currently USD 185 and exposes an in-stock Add to Cart path. No authorized-dealer representation was found on the listing, so the acquisition snapshot is conservatively classified as new grey-market stock. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.sportique.com/products/bertucci-a-2t-original-classic-watch-nylon-strap",
+      "status": "rejected",
+      "note": "The exact-reference retailer reports 100 m and 1.9 oz/about 53.9 g, conflicting with Bertucci's current exact-family 200 m and 62 g feature sheet. Those stale retailer dimensions are rejected and do not override current manufacturer assets. Retrieved 2026-08-30."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "productUrl",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "materials.case",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "materials.caseback",
+    "operation.waterResistanceM",
+    "operation.crownPosition"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/A2TOC.html",
+      "note": "The manufacturer currently publishes and prices the exact 12022 configuration."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon",
+      "note": "The selected live USD offer is a United States retail route, normalized to ISO alpha-2."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon",
+      "note": "The exact black/black 12022 route exposes Add to Cart at retrieval time."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["grey_market"],
+      "sourceUrl": "https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon",
+      "note": "The listing does not establish authorized-dealer status, so the channel is conservatively classified as grey market."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon",
+      "note": "The active retail product route is a new-watch offer."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 11,
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/images/A2DIM22.jpg",
+      "note": "The manufacturer dimension drawing labels the case thickness as 11 mm."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 49.5,
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/images/A2DIM22.jpg",
+      "note": "The manufacturer drawing's 49.5 mm overall vertical span is retained as lug-to-lug for the round fixed-bar case."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 22,
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/images/A2TOC_Features5.jpg",
+      "note": "Bertucci's feature sheet labels the installed band size as 22 mm."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 62,
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/images/A2TOC_Features5.jpg",
+      "note": "The manufacturer feature sheet publishes the configured watch-and-band weight as 62 g."
+    },
+    {
+      "fieldName": "geometry.integratedBracelet",
+      "value": false,
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/A2TOC.html",
+      "note": "Reference 12022 is supplied on a pass-through nylon band rather than an integrated bracelet; the permanent part is the titanium retention-bar interface."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "quartz",
+      "sourceUrl": "https://www.bertucciwatches.jp/items/113576509",
+      "note": "The exact distributor identifies a Japanese Miyota quartz movement; the type is normalized to the catalogue enum."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -20,
+      "sourceUrl": "https://miyotamovement.com/jp/uploads/product/product_FHT5vYquElphXDw1L7.pdf",
+      "note": "Both exact distributor-listed Miyota alternatives share the same lower accuracy bound of -20 seconds per month."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 20,
+      "sourceUrl": "https://miyotamovement.com/uploads/product/product_LQg9DXrG7doRcWtwqe.pdf",
+      "note": "Both exact distributor-listed Miyota alternatives share the same upper accuracy bound of +20 seconds per month."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 30,
+      "sourceUrl": "https://miyotamovement.com/jp/uploads/product/product_FHT5vYquElphXDw1L7.pdf",
+      "note": "The official Miyota rate is specified per month and normalized to the catalogue's 30-day comparison period."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://www.bertucciwatches.jp/items/113576509",
+      "note": "The exact distributor explicitly specifies a titanium screw-down crown."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "mineral",
+      "sourceUrl": "https://www.bertucciwatches.jp/items/113576509",
+      "note": "The exact hardened-mineral-glass description is normalized to the catalogue mineral enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "moderate",
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/A2TOC.html",
+      "note": "The exact current page states that the luminous hands and markers glow intensely for hours. Moderate is the conservative reviewed grade because no controlled exact-reference test supports the stronger all-night category."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "proprietary",
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/A2TOC.html",
+      "note": "Permanent integrated titanium band-retention bars are normalized to the existing proprietary case-interface enum, not integrated bracelet."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://bertucciwatches.com/Bertucci/A2TOC.html",
+      "note": "The printed inner 24-hour scale is dial notation rather than an independently driven complication; the ordinary date is tracked separately."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.bertucciwatches.jp/items/113576509",
+      "note": "The exact-reference distributor explicitly publishes a date display."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "The provider emitted United States as prose; direct review normalizes the selected exact retail market to US."
+    },
+    {
+      "fieldName": "movement.type",
+      "reason": "The provider mixed movement type and unresolved calibre state in one prose value; quartz is normalized separately while calibre remains null."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "reason": "The exact distributor lists Miyota GM10 or 2S60 alternatives, and no evidence resolves which is fitted to an individual 12022. A scalar catalogue field cannot select or flatten that alternative state, so calibre remains null."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "reason": "Titanium screw-down crown is provider prose and is normalized to screw_down."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "reason": "Hardened mineral glass is normalized to the mineral catalogue enum."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The provider returned material and manufacturer prose instead of a reviewed grade; direct review conservatively maps the exact hours-long performance claim to moderate."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Integrated titanium band-retention bars are a fixed proprietary interface, not an integrated bracelet; direct review normalizes them to proprietary."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "Date is tracked by dateStatus, while the printed 24-hour dial scale is not an independently driven catalogue complication. The supported complication list is empty."
+    },
+    {
+      "fieldName": "dateStatus",
+      "reason": "Date present is provider prose and is normalized to the present enum."
+    }
+  ],
+  "missingM1Fields": [],
+  "note": "Ready for migration on exact current reference 12022, black dial on its supplied black B-TYPE nylon band. Direct review closes the provider's image-extraction gaps from Bertucci's current dimension and feature assets, rejects stale 100 m and approximately 54 g retailer rows, preserves the exact distributor's GM10-or-2S60 state by leaving scalar calibre and differing battery endurance null, and accepts only their shared -20/+20-second-per-month rate. The permanent titanium bars are a proprietary strap interface, not an integrated bracelet, and the printed 24-hour scale is not a complication."
+}

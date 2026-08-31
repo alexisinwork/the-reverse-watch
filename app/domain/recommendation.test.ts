@@ -131,6 +131,9 @@ describe("deterministic recommendation engine", () => {
 
   it("suppresses speculative rows unless both explicit gates are present", () => {
     const speculativeCatalogue = structuredClone(seedCatalogue);
+    speculativeCatalogue.variants = speculativeCatalogue.variants.filter(
+      (variant) => variant.id === "grand-seiko-sbgn029",
+    );
     const grandSeiko = speculativeCatalogue.variants.find(
       (variant) => variant.id === "grand-seiko-sbgn029",
     );
@@ -206,9 +209,13 @@ describe("deterministic recommendation engine", () => {
   });
 
   it("accepts an exact external hard-filter partition as authoritative", () => {
+    const grandSeikoOnly = structuredClone(seedCatalogue);
+    grandSeikoOnly.variants = grandSeikoOnly.variants.filter(
+      (variant) => variant.id === "grand-seiko-sbgn029",
+    );
     const hardFilterEvaluation = evaluateHardFilterPartition(
       baseProfile,
-      seedCatalogue,
+      grandSeikoOnly,
       { asOf: TEST_AS_OF },
     );
     hardFilterEvaluation["grand-seiko-sbgn029"] = {
@@ -216,7 +223,7 @@ describe("deterministic recommendation engine", () => {
       missingFacts: [],
     };
 
-    const result = recommendWatches(baseProfile, seedCatalogue, {
+    const result = recommendWatches(baseProfile, grandSeikoOnly, {
       asOf: TEST_AS_OF,
       hardFilterEvaluation,
     });

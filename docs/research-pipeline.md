@@ -59,10 +59,11 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context alongside source-led additions through Bertucci;
-- 22 accepted catalogue targets linked to all current reviewed variants;
-- 29 coverage-intent targets, with exact Bertucci `12022` as the sole planned
-  target in the default research queue;
-- live Supabase parity for 18 brands and all 22 accepted variants across the
+- 23 accepted catalogue targets linked to all current reviewed variants;
+- 29 coverage-intent targets; the default research queue is empty after exact
+  Bertucci `12022` acceptance, so the next candidate starts with source-led
+  exact-reference selection rather than an unbounded provider run;
+- live Supabase parity for 19 brands and all 23 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
@@ -1042,13 +1043,30 @@ shows `12022` in stock at the same USD 185. Bertucci's Japanese distributor
 names Miyota GM10 or 2S60 as exact alternatives, and both official Miyota
 records specify -20/+20 seconds per month.
 
-No pre-screened fact is accepted. One bounded Perplexity attempt must keep the
-alternative-calibre state explicit, reconcile stale 100 m and 53.9 g retailer
-rows against Bertucci's current 200 m/62 g record, and prevent A-2T Super
-Classic `12723`/`12724`, A-2TS solar, other dial, and other band inheritance.
-Independent review must also grade exact Original Classic lume from performance
-evidence rather than material presence alone. The row projects to 160/160
-currently empty `under_300`, zero-maintenance, simple-date field/studio cells.
+The one bounded Perplexity attempt succeeded at USD 0.01755 with 23 provisional
+facts and 26 unresolved fields. Review closes the image-published 49.5 mm span,
+11 mm thickness, 22 mm interface, and 62 g mass directly from current Bertucci
+assets; rejects stale exact-retailer 100 m and approximately 54 g values; and
+keeps the GM10-or-2S60 scalar calibre and differing battery endurance `null`.
+The common official Miyota -20/+20-seconds-per-month rate is accepted. Fixed
+titanium retention bars normalize to `proprietary`, not integrated bracelet;
+the printed 24-hour scale is not a complication; and exact hours-long
+manufacturer lume performance maps conservatively to `moderate` without
+inheriting Super Classic, solar, other-dial, or other-band evidence.
+
+Migration `0025_expand_catalogue_bertucci_a2t.sql` accepts
+`bertucci-a2t-original-classic-12022`. Remote verification reports M0/M1
+complete, 42 verified reference-level evidence rows from seven sources, and 23
+accepted variants across 19 brands. Publishable-key catalogue and SQL
+hard-filter parity passes for all 23 variants and six golden profiles. Its
+sourced 49.5 mm span narrows the accepted intent to the three wrist bands from
+6.25 inches upward, so it adds exactly 96 cells and raises coverage to
+940/28,800 (3.26%). Strict research reports 23 accepted, 20
+`needs_review`, and two excluded targets; 33 reviews include eleven
+migration-ready decisions. The ignored ledger contains 63 attempts (38
+succeeded, 25 failed) across 33 target IDs and USD 0.53301 recorded cost. The
+default queue is empty again; a new provider call requires a named homogeneous
+candidate that first passes exact source-led M1 and coverage pre-screening.
 
 ## Job idempotency and retention
 

@@ -1072,14 +1072,32 @@ Miyota GM10 or 2S60; both official Miyota records specify -20/+20 seconds per
 month. A [current exact retailer](https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon)
 shows the black/black `12022` in stock at USD 185.
 
-These are routing inputs only. One bounded provider attempt and independent
-review must preserve the alternative-calibre state, reconcile stale exact
-retailer rows that say 100 m or 53.9 g against Bertucci's current 200 m/62 g
-feature record, and grade only exact Original Classic lume without inheriting
-A-2T Super Classic `12723`/`12724`, A-2TS solar, other dial, or other band facts.
-The projected homogeneous row would open all 160 targeted `under_300`,
-zero-maintenance, simple-date cells across field/studio use, every wrist band,
-every accuracy tolerance, and every weight limit.
+The single bounded provider attempt succeeded with 23 provisional facts and 26
+unresolved fields at USD 0.01755. Independent review closes the provider's
+image-extraction gaps from Bertucci's current dimension and feature sheets,
+rejects the stale exact-retailer 100 m and approximately 54 g rows, and maps the
+fixed titanium retention bars to the existing `proprietary` strap-interface
+enum rather than an integrated bracelet. The printed 24-hour dial scale is not
+accepted as a complication. Both exact distributor-listed calibres share the
+reviewed -20/+20-seconds-per-month rate, but scalar calibre and their differing
+battery endurance remain `null` rather than selecting one without evidence.
+Exact manufacturer performance copy supports a conservative `moderate` lume
+grade; no Super Classic, solar, other-dial, or other-band fact is inherited.
+
+Additive migration `0025_expand_catalogue_bertucci_a2t.sql` is live. Remote
+verification reports M0 and M1 complete, 42 verified reference-level evidence
+rows from seven sources, 23 accepted variants across 19 brands, and exact
+publishable-key catalogue plus six-profile SQL hard-filter parity. The sourced
+49.5 mm span narrows the planning intent to the three wrist bands from 6.25
+inches upward; the row therefore adds exactly 96 `under_300`, zero-maintenance,
+simple-date field/studio cells, raising deterministic coverage to 940/28,800
+(3.26%). Strict research reports 23 accepted, 20
+`needs_review`, and two excluded targets; 33 reviews include eleven
+migration-ready decisions. The ignored provider ledger contains 63 attempts
+(38 succeeded, 25 failed) across 33 target IDs and USD 0.53301 recorded cost.
+The next Phase 5 checkpoint returns to source-led exact-reference selection;
+the provider must not run until a named homogeneous candidate has complete
+projected M1 evidence and an explicit coverage purpose.
 
 ## Phase 6 — Optional free-text and semantic evaluation
 

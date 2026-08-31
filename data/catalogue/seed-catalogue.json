@@ -568,6 +568,62 @@
       "publisher": "Masters In Time",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-30T21:42:16Z"
+    },
+    {
+      "id": "bertucci-a2t-12022-product",
+      "url": "https://bertucciwatches.com/Bertucci/A2TOC.html",
+      "title": "A-2T Original Classic — reference 12022",
+      "publisher": "Bertucci",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T22:02:41Z"
+    },
+    {
+      "id": "bertucci-a2t-dimensions",
+      "url": "https://bertucciwatches.com/Bertucci/images/A2DIM22.jpg",
+      "title": "A-2T case dimension drawing",
+      "publisher": "Bertucci",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T22:04:38Z"
+    },
+    {
+      "id": "bertucci-a2t-original-features",
+      "url": "https://bertucciwatches.com/Bertucci/images/A2TOC_Features5.jpg",
+      "title": "A-2T Original Classic feature sheet",
+      "publisher": "Bertucci",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T22:04:38Z"
+    },
+    {
+      "id": "bertucci-japan-a2t-12022",
+      "url": "https://www.bertucciwatches.jp/items/113576509",
+      "title": "A-2T Original Classic 12022 specifications",
+      "publisher": "Bertucci Watches Japan",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T22:02:41Z"
+    },
+    {
+      "id": "miyota-gm10-specification",
+      "url": "https://miyotamovement.com/jp/uploads/product/product_FHT5vYquElphXDw1L7.pdf",
+      "title": "Miyota GM10 specification",
+      "publisher": "Miyota",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T22:04:38Z"
+    },
+    {
+      "id": "miyota-2s60-specification",
+      "url": "https://miyotamovement.com/uploads/product/product_LQg9DXrG7doRcWtwqe.pdf",
+      "title": "Miyota 2S60 specification",
+      "publisher": "Miyota",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T22:04:38Z"
+    },
+    {
+      "id": "outland-bertucci-a2t-12022",
+      "url": "https://www.outlandusa.com/p/bertucci-mens-a-2t-original-classics-black-black-nylon",
+      "title": "Bertucci A-2T Original Classic 12022 black/black offer",
+      "publisher": "Outland USA",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-30T22:04:38Z"
     }
   ],
   "fx": {
@@ -3053,6 +3109,153 @@
             "crownType",
             "attachmentType"
           ]
+        }
+      ]
+    },
+    {
+      "id": "bertucci-a2t-original-classic-12022",
+      "brand": {
+        "slug": "bertucci",
+        "name": "Bertucci",
+        "serviceCountries": null
+      },
+      "collection": "A-2T Original Classic",
+      "model": "A-2T Original Classic",
+      "referenceCode": "12022",
+      "variantName": "Black dial · black B-TYPE nylon band",
+      "productUrl": "https://bertucciwatches.com/Bertucci/A2TOC.html",
+      "price": {
+        "amountMinor": 18500,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-30T22:02:41Z",
+        "staleAfter": "2027-02-26T22:02:41Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-30T22:04:38Z",
+        "availabilityStaleAfter": "2026-09-29T22:04:38Z",
+        "channels": ["grey_market"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "sandblasted matte solid-titanium Unibody",
+        "caseback": "titanium screw-down caseback",
+        "bracelet": null,
+        "strap": "black B-TYPE heavy-duty nylon webbing"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 40,
+        "caseWidthMm": null,
+        "caseLengthMm": null,
+        "caseThicknessMm": 11,
+        "lugToLugMm": 49.5,
+        "lugWidthMm": 22,
+        "weightFullG": 62,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "quartz",
+        "caliber": null,
+        "powerReserveHours": null,
+        "accuracyLowerSeconds": -20,
+        "accuracyUpperSeconds": 20,
+        "accuracyPeriodDays": 30
+      },
+      "operation": {
+        "waterResistanceM": 200,
+        "crownType": "screw_down",
+        "crownPosition": "4",
+        "crystal": "mineral",
+        "lumeGrade": "moderate",
+        "attachmentType": "proprietary",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["zero_maintenance"],
+      "traits": {
+        "primaryArchetype": "lightweight_titanium_field_quartz",
+        "socialSignals": ["discreet_competence"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "bertucci-a2t-12022-product",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "waterResistanceM",
+            "crownPosition",
+            "crystal",
+            "lumeGrade",
+            "integratedBracelet",
+            "attachmentType",
+            "complications",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "bertucci-a2t-dimensions",
+          "fields": [
+            "identity",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm"
+          ]
+        },
+        {
+          "sourceId": "bertucci-a2t-original-features",
+          "fields": [
+            "identity",
+            "materials",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "bertucci-japan-a2t-12022",
+          "fields": [
+            "identity",
+            "materials",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "dateStatus"
+          ]
+        },
+        {
+          "sourceId": "miyota-gm10-specification",
+          "fields": ["movement", "accuracy", "dateStatus"]
+        },
+        {
+          "sourceId": "miyota-2s60-specification",
+          "fields": ["movement", "accuracy", "dateStatus"]
+        },
+        {
+          "sourceId": "outland-bertucci-a2t-12022",
+          "fields": ["identity", "price", "availability"]
         }
       ]
     }

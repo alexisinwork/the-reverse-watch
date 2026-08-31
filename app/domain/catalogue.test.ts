@@ -12,10 +12,10 @@ import { seedCatalogue } from "./seed-catalogue";
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
     expect(seedCatalogue.catalogueVersion).toBe(2);
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(22);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(23);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(22);
+    ).toBe(23);
   });
 
   it("retains evidence for every seed identity and price", () => {
@@ -188,6 +188,42 @@ describe("source-backed seed catalogue", () => {
     expect(mondaine!.dateStatus).toBe("absent");
     expect(evidenceFields(mondaine!).has("lumeGrade")).toBe(true);
     expect(evidenceFields(mondaine!).has("attachmentType")).toBe(true);
+  });
+
+  it("retains the reviewed Bertucci fixed-bar titanium configuration", () => {
+    const bertucci = seedCatalogue.variants.find(
+      (variant) => variant.id === "bertucci-a2t-original-classic-12022",
+    );
+
+    expect(bertucci).toBeDefined();
+    expect(bertucci!.referenceCode).toBe("12022");
+    expect(bertucci!.geometry).toMatchObject({
+      caseDiameterMm: 40,
+      caseThicknessMm: 11,
+      lugToLugMm: 49.5,
+      lugWidthMm: 22,
+      weightFullG: 62,
+      integratedBracelet: false,
+    });
+    expect(bertucci!.movement).toMatchObject({
+      type: "quartz",
+      caliber: null,
+      powerReserveHours: null,
+      accuracyLowerSeconds: -20,
+      accuracyUpperSeconds: 20,
+      accuracyPeriodDays: 30,
+    });
+    expect(bertucci!.operation).toMatchObject({
+      waterResistanceM: 200,
+      crownType: "screw_down",
+      crownPosition: "4",
+      lumeGrade: "moderate",
+      attachmentType: "proprietary",
+    });
+    expect(bertucci!.complications).toEqual([]);
+    expect(bertucci!.dateStatus).toBe("present");
+    expect(evidenceFields(bertucci!).has("lumeGrade")).toBe(true);
+    expect(evidenceFields(bertucci!).has("attachmentType")).toBe(true);
   });
 
   it("rejects a partial non-round dimension pair", () => {
