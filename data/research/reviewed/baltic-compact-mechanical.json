@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "baltic-compact-mechanical",
   "jobId": "c08a4511-2617-459e-9914-17c49bfa34cf",
-  "reviewedAt": "2026-08-31T09:52:14Z",
+  "reviewedAt": "2026-08-31T10:40:15Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -46,6 +46,11 @@
       "url": "https://chroniker.ph/products/mr01blus35-baltic-mr-classic-blue",
       "status": "validated_secondary",
       "note": "The exact retailer page independently identifies MR01BLUS35, the Stitched Lion strap, 36 mm steel case, Hangzhou CAL5000a, hesalite, and 30 m resistance. It publishes no configured weight, numerical accuracy bound, lume statement, or date status, so none of the four remaining M1 fields is promoted."
+    },
+    {
+      "url": "https://azzamwatches.com/products/baltic-mr-mr-classic-blue-stitched-lion",
+      "status": "rejected",
+      "note": "The exact-looking retailer page repeats the Blue Stitched Lion configuration and 36 mm/9.9 mm/42-hour specifications, but its reference field is ambiguous ('MR01BLUS35 (or MR02BLUS35)'). It supplies no weight, accuracy, lume, or date evidence and cannot strengthen the exact-reference review. Rechecked 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [

@@ -1583,6 +1583,11 @@ configured mass, numerical rate bound, or explicit date status; family reviews
 and sibling variants remain non-transferable. No fact is promoted and no
 provider request is authorized.
 
+A 2026-08-31 exact-reference search found an additional retailer record, but it
+lists the reference ambiguously as `MR01BLUS35 (or MR02BLUS35)` and adds none of
+the four missing fields. It is rejected rather than used to transfer family
+weight, rate, lume, or date claims; all four remain null.
+
 The next Swatch Skin White Classiness `SS08K102-S14` pre-screen remains open
 only for `accuracy` and `lumeGrade`. An exact Louis Pion retailer record
 corroborates the EAN, 34 mm case, two-hand quartz display, and approximately
