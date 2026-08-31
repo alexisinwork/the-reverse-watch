@@ -1434,6 +1434,12 @@ lug-to-lug span, packaging-free configured weight, numerical rate bound, or
 controlled lume performance surfaced, so those four M1 gaps remain null and no
 provider request is authorized.
 
+A 2026-08-31 exact-reference search and official-page recheck found no new
+admissible evidence for `16202ST.OO.1240ST.02` lug-to-lug, configured weight,
+accuracy, or lume performance. AP's integrated-bracelet and non-applicable
+lug-width decisions remain controlled by primary sources; the four M1 gaps stay
+null and no provider request is authorized.
+
 The next A. Lange & Söhne Lange 1 Tourbillon Perpetual Calendar Lumen
 `720.035FE` pre-screen remains negative for its six review gaps. An exact
 reference editorial review corroborates the 41.9 mm platinum case, L225.1,

@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "audemars-piguet-current-integrated-specialist",
   "jobId": "5213024a-f1d9-4019-91e1-4c34af000c52",
-  "reviewedAt": "2026-08-30T08:52:28Z",
+  "reviewedAt": "2026-08-31T11:04:33Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -15,7 +15,7 @@
     {
       "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02",
       "status": "validated_primary",
-      "note": "The exact current official page independently validates reference 16202ST.OO.1240ST.02, its Royal Oak Jumbo Extra-Thin identity, stainless-steel case and bracelet, blue Petite Tapisserie dial, 39 x 8.1 mm geometry, sapphire front and back, automatic caliber 7121, 52-hour reserve, 50 m water resistance, luminescent hands, and date. Rechecked on 2026-08-30, its rendered HTML still exposes only price templates plus Find a Boutique and omits purchase availability, lug-to-lug, full weight, numerical accuracy, and graded lume; the page's public exact-product price endpoint is reviewed separately."
+      "note": "The exact current official page independently validates reference 16202ST.OO.1240ST.02, its Royal Oak Jumbo Extra-Thin identity, stainless-steel case and bracelet, blue Petite Tapisserie dial, 39 x 8.1 mm geometry, sapphire front and back, automatic caliber 7121, 52-hour reserve, 50 m water resistance, luminescent hands, and date. Rechecked on 2026-08-31, its rendered HTML still exposes only price templates plus Find a Boutique and omits purchase availability, lug-to-lug, full weight, numerical accuracy, and graded lume; the page's public exact-product price endpoint is reviewed separately."
     },
     {
       "url": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
