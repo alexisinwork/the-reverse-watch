@@ -11,8 +11,10 @@ snapshot if the live catalogue or SQL filter contract fails.
 
 Results remain available without an email address. The result screen offers a
 separate, explicit opt-in; a valid request records a Beehiiv subscription when
-the server credentials are configured, while malformed consent or delivery
-failures remain visible without replacing the recommendation.
+the server credentials are configured and can send a deterministic,
+source-backed dossier through Resend when its sender credentials are configured.
+Malformed consent or channel failures remain visible without replacing the
+recommendation.
 The server also emits aggregate `quiz_funnel` events for result and subscription
 measurement without logging profile answers or email addresses.
 

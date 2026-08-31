@@ -9,7 +9,7 @@ const quizAnalyticsEventSchema = z
     verificationCount: z.number().int().nonnegative().optional(),
     whyNotCount: z.number().int().nonnegative().optional(),
     status: z
-      .enum(["not_requested", "sent", "unavailable", "failed"])
+      .enum(["not_requested", "sent", "partial", "unavailable", "failed"])
       .optional(),
   })
   .strict();

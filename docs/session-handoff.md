@@ -78,11 +78,13 @@ phase.
   still pending, so the local bucket is not claimed as global enforcement.
 - The result screen now preserves access without email and exposes a separate,
   checked email opt-in. Server-side validation rejects malformed addresses or
-  an address without consent; valid requests call Beehiiv when both credentials
-  exist, while missing configuration and provider failures remain visible and
-  do not hide the recommendation. The current API integration records the
-  subscription and requests Beehiiv's configured welcome email; a custom
-  result-specific dossier template remains intentionally unclaimed.
+  an address without consent; valid requests call the configured channels while
+  missing configuration and provider failures remain visible and do not hide
+  the recommendation. Beehiiv records the subscription and requests its
+  configured welcome email. Paired `RESEND_API_KEY` and `EMAIL_FROM` values
+  additionally send a deterministic, source-backed dossier whose historical
+  and prose context is explicitly marked unavailable. Beehiiv and Resend
+  outcomes are independent, with partial delivery shown in the result UI.
 - Quiz actions now emit privacy-safe `quiz_funnel` runtime events containing
   only intent, catalogue origin, result counts, and subscription status. No
   profile answers or addresses are logged. This supplies the initial Vercel-log

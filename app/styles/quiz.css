@@ -232,6 +232,7 @@
 }
 
 .delivery-status--failed,
+.delivery-status--partial,
 .delivery-status--unavailable {
   border-left-color: #ad6d55;
 }

@@ -1,0 +1,50 @@
+import { normalizeProfile, QUESTIONNAIRE_VERSION } from "./questionnaire";
+import { recommendWatches } from "./recommendation";
+import { seedCatalogue } from "./seed-catalogue";
+import { renderDossierEmail } from "./dossier-email";
+
+const profile = normalizeProfile({
+  core: {
+    version: QUESTIONNAIRE_VERSION,
+    budgetCurrency: "USD",
+    budgetMax: 4_000,
+    wristCircumferenceMm: 170,
+    deploymentEnvironment: "field_water_abuse",
+    ownershipFriction: "zero_maintenance",
+    accuracyTolerance: "seconds_per_month",
+    weightLimit: "under_160_g",
+    requiredComplications: ["gmt"],
+    datePreference: "required",
+  },
+});
+
+describe("source-backed dossier renderer", () => {
+  it("renders deterministic facts, source links, and an explicit narrative boundary", () => {
+    const recommendation = recommendWatches(profile, seedCatalogue, {
+      asOf: "2026-08-28T20:00:00Z",
+    });
+    const first = renderDossierEmail({
+      profile,
+      recommendation,
+      catalogueOrigin: "bundled_seed",
+      intent: "core",
+    });
+
+    expect(first.subject).toBe("Your Reserve reference diagnostic dossier");
+    expect(first.text).toContain(
+      "No reviewed historical narrative is attached",
+    );
+    expect(first.text).toContain("Grand Seiko");
+    expect(first.text).toContain("https://");
+    expect(first.html).toContain("<a href=");
+    expect(first.html).not.toContain("undefined");
+    expect(first).toEqual(
+      renderDossierEmail({
+        profile,
+        recommendation,
+        catalogueOrigin: "bundled_seed",
+        intent: "core",
+      }),
+    );
+  });
+});

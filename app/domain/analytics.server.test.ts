@@ -45,4 +45,18 @@ describe("quiz analytics contract", () => {
     expect(info).not.toHaveBeenCalled();
     info.mockRestore();
   });
+
+  it("accepts partial channel delivery as a measured status", () => {
+    const info = vi.spyOn(console, "info").mockImplementation(() => undefined);
+
+    recordQuizAnalyticsEvent({
+      name: "subscription",
+      intent: "refine",
+      catalogueOrigin: "bundled_seed",
+      status: "partial",
+    });
+
+    expect(info).toHaveBeenCalledOnce();
+    info.mockRestore();
+  });
 });

@@ -1317,12 +1317,16 @@ depth and is not presented as a production-wide control.
 
 The result screen now keeps recommendations visible without an email and offers
 a separate, checked opt-in field. The server validates the address and consent
-before calling Beehiiv's subscription endpoint; missing credentials, provider
-errors, and malformed requests are surfaced in the result UI without exposing
-the address or hiding the recommendation. The current integration records the
-subscription and requests Beehiiv's configured welcome email. A custom,
-result-specific dossier body is not claimed until a delivery channel and
-template contract are chosen.
+before calling the configured channels; missing credentials, provider errors,
+and malformed requests are surfaced in the result UI without exposing the
+address or hiding the recommendation. Beehiiv records the newsletter opt-in
+and requests its configured welcome email. When `RESEND_API_KEY` and
+`EMAIL_FROM` are paired, the same request sends a deterministic dossier through
+Resend's email API. The dossier contains only accepted catalogue facts, score
+traces, explicit verification/rejection reasons, and reviewed source links; it
+states that historical/prose context is unavailable rather than inventing it.
+Beehiiv and Resend outcomes are independent, so a partial delivery is visible.
+Deduplication and a traffic-derived quota remain open.
 
 Each accepted quiz action also emits a privacy-safe `quiz_funnel` runtime event
 with intent, catalogue origin, result counts, and subscription status. No

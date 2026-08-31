@@ -49,6 +49,11 @@ import {
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
 } from "../domain/beehiiv.server";
+import { renderDossierEmail } from "../domain/dossier-email";
+import {
+  parseResendConfiguration,
+  sendDossierWithResend,
+} from "../domain/resend.server";
 import {
   consumeRateLimit,
   parseRateLimitPolicy,
@@ -78,9 +83,18 @@ type ActionResult =
   | { ok: false; errors: string[] };
 
 type SubscriptionResult =
-  | { status: "not_requested"; message: string }
-  | { status: "sent"; message: string }
-  | { status: "unavailable" | "failed"; message: string };
+  | {
+      status: "not_requested";
+      message: string;
+      newsletterStatus: "not_requested";
+      dossierStatus: "not_requested";
+    }
+  | {
+      status: "sent" | "partial" | "unavailable" | "failed";
+      message: string;
+      newsletterStatus: "sent" | "unavailable" | "failed";
+      dossierStatus: "sent" | "unavailable" | "failed";
+    };
 
 const emailSchema = z.string().trim().email().max(320);
 
@@ -533,30 +547,33 @@ export async function action({ request }: Route.ActionArgs) {
   let subscription: SubscriptionResult = {
     status: "not_requested",
     message: "Results are available without email.",
+    newsletterStatus: "not_requested",
+    dossierStatus: "not_requested",
   };
   if ("error" in emailOptIn) {
     subscription = {
       status: "failed",
       message: emailOptIn.error ?? "Email delivery request was rejected.",
+      newsletterStatus: "failed",
+      dossierStatus: "failed",
     };
   } else if (emailOptIn.email !== null) {
     const beehiivConfiguration = parseBeehiivConfiguration();
-    if (!beehiivConfiguration.configured) {
-      subscription = {
-        status: "unavailable",
-        message:
-          beehiivConfiguration.reason === "invalid"
-            ? "Email delivery is misconfigured; your result remains available."
-            : "Email delivery is not configured; your result remains available.",
-      };
-    } else {
+    const resendConfiguration = parseResendConfiguration();
+    const dossier = renderDossierEmail({
+      profile,
+      recommendation,
+      catalogueOrigin: catalogueLoad.origin,
+      intent,
+    });
+    let newsletterStatus: SubscriptionResult["newsletterStatus"] =
+      beehiivConfiguration.configured ? "failed" : "unavailable";
+    let dossierStatus: SubscriptionResult["dossierStatus"] =
+      resendConfiguration.configured ? "failed" : "unavailable";
+    if (beehiivConfiguration.configured) {
       try {
         await subscribeToBeehiiv(emailOptIn.email, beehiivConfiguration);
-        subscription = {
-          status: "sent",
-          message:
-            "Your opt-in was recorded. Beehiiv will send its configured welcome email.",
-        };
+        newsletterStatus = "sent";
       } catch (error) {
         console.error(
           JSON.stringify({
@@ -564,13 +581,57 @@ export async function action({ request }: Route.ActionArgs) {
             message: error instanceof Error ? error.message : "unknown error",
           }),
         );
-        subscription = {
-          status: "failed",
-          message:
-            "Email delivery failed; your result remains available. Please try again later.",
-        };
       }
     }
+    if (resendConfiguration.configured) {
+      try {
+        await sendDossierWithResend(
+          emailOptIn.email,
+          dossier,
+          resendConfiguration,
+        );
+        dossierStatus = "sent";
+      } catch (error) {
+        console.error(
+          JSON.stringify({
+            event: "resend_dossier_error",
+            message: error instanceof Error ? error.message : "unknown error",
+          }),
+        );
+      }
+    }
+    const successfulChannels = [newsletterStatus, dossierStatus].filter(
+      (status) => status === "sent",
+    ).length;
+    const failedChannels = [newsletterStatus, dossierStatus].filter(
+      (status) => status === "failed",
+    ).length;
+    const status: Exclude<SubscriptionResult["status"], "not_requested"> =
+      successfulChannels > 0
+        ? failedChannels > 0
+          ? "partial"
+          : "sent"
+        : failedChannels > 0
+          ? "failed"
+          : "unavailable";
+    const channelMessages = [
+      newsletterStatus === "sent"
+        ? "newsletter opt-in recorded"
+        : newsletterStatus === "failed"
+          ? "newsletter opt-in failed"
+          : "newsletter delivery unavailable",
+      dossierStatus === "sent"
+        ? "custom dossier sent"
+        : dossierStatus === "failed"
+          ? "custom dossier delivery failed"
+          : "custom dossier delivery unavailable",
+    ];
+    subscription = {
+      status,
+      newsletterStatus,
+      dossierStatus,
+      message: `${channelMessages.join("; ")}. Your result remains available.`,
+    };
   }
 
   recordQuizAnalyticsEvent({
@@ -865,11 +926,12 @@ function DossierDelivery({
       <span className="eyebrow">Optional, explicit opt-in</span>
       <h2 id="delivery-heading">Keep the dossier</h2>
       <p>
-        Results stay visible here. If you want the newsletter welcome email,
-        enter an address and check the opt-in; email is not required to use the
-        diagnostic.
+        Results stay visible here. If you want the newsletter opt-in and a
+        source-backed custom dossier, enter an address and check the opt-in;
+        email is not required to use the diagnostic.
       </p>
-      {subscription.status !== "sent" ? (
+      {subscription.status !== "sent" ||
+      subscription.dossierStatus !== "sent" ? (
         <Form className="delivery-form" method="post">
           <input name="intent" type="hidden" value={intent} />
           <input name="profile" type="hidden" value={profilePayload} />
@@ -896,7 +958,11 @@ function DossierDelivery({
       ) : null}
       <p
         className={`delivery-status delivery-status--${subscription.status}`}
-        role={subscription.status === "failed" ? "alert" : "status"}
+        role={
+          subscription.status === "failed" || subscription.status === "partial"
+            ? "alert"
+            : "status"
+        }
       >
         {subscription.message}
       </p>

@@ -85,6 +85,7 @@ Official setup pages:
   [project service-account keys](https://developers.openai.com/api/reference/typescript/resources/admin/subresources/organization/subresources/projects/subresources/service_accounts/subresources/api_keys/methods/create)
 - [Perplexity API quickstart](https://docs.perplexity.ai/docs/getting-started/quickstart)
 - [Beehiiv create-subscription API](https://developers.beehiiv.com/api-reference/subscriptions/create)
+- [Resend send-email API](https://resend.com/docs/api-reference/emails/send-email)
 - [GitHub fine-grained personal access tokens](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens)
 - [Vercel MCP and OAuth setup](https://vercel.com/docs/agent-resources/vercel-mcp)
 
