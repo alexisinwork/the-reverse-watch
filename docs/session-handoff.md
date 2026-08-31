@@ -139,18 +139,20 @@ phase.
   record retains null response/usage rather than a fabricated cost. The full
   ignored ledger is now 64 attempts (39 succeeded, 25 failed) across 34 target
   IDs with USD 0.55435 recorded cost.
-- BABY-G `BGD-5650-1JF` is reviewed `needs_more_evidence`. Its first provider
-  attempt remains a strict-normalization failure and its one permitted retry
-  produced 40 provisional facts at USD 0.01982. Direct retrieval of Casio's
-  cited Japanese and European exact-product routes was blocked with HTTP 403.
-  The live Sakurawatches exact-reference route corroborates identity and
-  official-packaging/warranty metadata but not the proposed commercial or
-  technical facts in accessible HTML. The extraction expressly leaves the
-  exact case-to-band interface unresolved, so no attachment enum, high-function
-  coverage, price, or catalogue row is promoted. The provider ledger now has
-  66 attempts (40 succeeded, 26 failed) across 35 target IDs and USD 0.57417
-  recorded cost. The default queue is empty; the next session must begin with a
-  fresh source-led exact-reference coverage pre-screen before any provider call.
+- BABY-G `BGD-5650-1JF` remains `needs_more_evidence` after a source-led
+  follow-up. Its first provider attempt remains a strict-normalization failure
+  and its one permitted retry produced 40 provisional facts at USD 0.01982; no
+  new provider request was made. Independently retrievable Casio Japan/Europe
+  exact routes establish 42.1 x 37.9 x 11.3 mm rectangular dimensions, 31 g,
+  resin case/band, Tough Solar/Multi Band 6, 100 m resistance, mineral glass,
+  shock resistance, calendar, alarms/world time, and +/-15-seconds-per-month
+  fallback accuracy. Sakura's exact USD 93 new offer has contradictory Out of
+  stock and Available 93 controls, so availability is unknown. Exact-family
+  replacement-band records resolve the case-side interface as proprietary
+  pushpin/special mount. The rectangular case is stored as width/length, and
+  `lumeGrade` is now the sole M1 gap; no catalogue row is promoted. The full
+  provider ledger remains 69 attempts (41 succeeded, 28 failed) across 37
+  target IDs and USD 0.59193 recorded cost. The default queue is empty.
 
 - Swatch Skin White Classiness `SS08K102-S14` is reviewed
   `needs_more_evidence`. Its one provider attempt produced 40 provisional facts

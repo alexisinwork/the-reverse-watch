@@ -1248,6 +1248,22 @@ ledger is now 69 attempts (41 succeeded, 28
 failed) across 37 target IDs and USD 0.59193 recorded cost; the default queue is
 empty again.
 
+A source-led BABY-G follow-up then independently retrieved Casio Japan and
+Europe's exact `BGD-5650-1JF` routes and Sakura's exact retailer page. The
+official records establish 42.1 x 37.9 x 11.3 mm rectangular dimensions, 31 g,
+resin case and band, Tough Solar/Multi Band 6, 100 m resistance, mineral glass,
+shock resistance, the full calendar, alarms/world time, and the +/-15-seconds-
+per-month fallback accuracy. Sakura supplies a USD 93 new exact-reference
+offer, but its simultaneous Out of stock and Available 93 controls normalize
+availability to unknown. Exact Minott and Uhr Casio replacement-band records
+document the special pushpin/14 mm interface, mapped to `proprietary`; the
+rectangular case is retained as width/length rather than a synthetic diameter.
+Super Illuminator is an LED backlight rather than a qualifying lume grade, so
+`lumeGrade` is now the sole M1 gap and no catalogue row is admitted. No provider
+request was made; the ledger remains 69 attempts (41 succeeded, 28 failed)
+across 37 target IDs and USD 0.59193 recorded cost, with the default queue
+empty.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

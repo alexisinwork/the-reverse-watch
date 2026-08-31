@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "casio-babyg-ultracompact-solar-tool",
   "jobId": "7a94e4de-0586-4ee9-a638-179b688e026c",
-  "reviewedAt": "2026-08-31T08:05:00Z",
+  "reviewedAt": "2026-08-31T09:00:00Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -14,23 +14,33 @@
   "sourceChecks": [
     {
       "url": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
-      "status": "fetch_blocked",
-      "note": "The provider retrieved Casio's exact Japanese BGD-5650-1 product record for identity and manufacturer claims, but direct 2026-08-31 retrieval was blocked with HTTP 403. It is therefore not independently admitted as a primary-source validation in this review."
+      "status": "validated_primary",
+      "note": "The exact Casio Japan product route was independently retrievable on 2026-08-31. It identifies BGD-5650-1JF, publishes the 42.1 x 37.9 x 11.3 mm rectangular dimensions, 31 g mass, Tough Solar/Multi Band 6 operation, 100 m resistance, mineral glass, calendar and LED Super Illuminator, and a ¥19,800 tax-included list price."
     },
     {
       "url": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
-      "status": "fetch_blocked",
-      "note": "The provider identified Casio's European BGD-5650-1 route for solar/radio, resistance, and shock claims, but direct 2026-08-31 retrieval was blocked with HTTP 403. Its manufacturer claims remain provisional pending a retrievable primary record."
+      "status": "validated_primary",
+      "note": "The exact Casio Europe route was independently retrievable on 2026-08-31 and corroborates the 42.1 x 37.9 x 11.3 mm dimensions, 31 g, resin case and band, shock resistance, 100 m rating, Multi Band 6, Tough Solar, mineral glass, 125-180 mm band fit, and +/-15 seconds-per-month fallback accuracy."
     },
     {
       "url": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
       "status": "validated_secondary",
-      "note": "The live exact-reference retailer route was directly retrievable on 2026-08-31. Its title and metadata identify BGD-5650-1JF and describe official packaging, warranty, and Japan delivery. The accessible HTML did not independently expose the provider's structured dimensions, price, stock quantity, or attachment claims, so those facts are not promoted from this source."
+      "note": "The exact-reference retailer route was independently retrievable on 2026-08-31. It exposes a USD 93 new offer, exact BGD-5650-1JF identity, resin case and band, calibre 3493, and the technical feature set, but simultaneously displays Out of stock and Available 93/Add to Cart; availability is therefore normalized to unknown."
+    },
+    {
+      "url": "https://www.minott-center.com/casio-baby-g-uhrenarmband-10652251-resin-schwarz-bgd-5650-1-bgd-5650/a-46603/",
+      "status": "validated_secondary",
+      "note": "The exact BGD-5650-1 replacement-band record identifies Casio part 10652251, a resin band with a special mount/cutout and 14 mm interface. This is exact-family evidence for the physical interface, not a claim that the replacement listing is the watch's retail offer."
+    },
+    {
+      "url": "https://www.uhr.com/g-shock-baby-g-schwarzes-kunststoffband-10652251.htm",
+      "status": "validated_secondary",
+      "note": "The exact-family Casio replacement-band record explicitly states that the band attaches by pushpins and uses a special 14 mm lug interface, supporting the normalized proprietary attachment type."
     },
     {
       "url": "https://support.casio.com/global/en/wat/manual/3493_en/",
       "status": "rejected",
-      "note": "The provider correctly leaves the conventional lug geometry and case-to-band attachment unresolved. The retrievable manual route did not establish an exact BGD-5650-1JF attachment construction, so a resin band must not be normalized as spring-bar, proprietary, or integrated attachment."
+      "note": "The general calibre manual is not used to establish the exact case-to-band construction or a single power-reserve duration. The exact product and replacement-part records supply the admitted facts instead."
     }
   ],
   "verifiedProvisionalFields": [
@@ -39,66 +49,218 @@
     "model",
     "referenceCode",
     "variantName",
-    "productUrl"
+    "productUrl",
+    "materials.case",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.shockResistant",
+    "dateStatus"
   ],
-  "additionalVerifiedFacts": [],
-  "rejectedProvisionalFields": [
+  "additionalVerifiedFacts": [
     {
-      "fieldName": "materials.case",
-      "reason": "The provider cites an exact retailer, but the directly retrievable page metadata establishes identity only; no independently visible construction specification was admitted."
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio currently publishes the exact BGD-5650-1JF product route; current publication is kept separate from seller inventory."
     },
     {
-      "fieldName": "materials.bracelet",
-      "reason": "A named resin band does not establish the catalogue bracelet material or the case attachment semantics without a retrievable exact technical source."
+      "fieldName": "materials.strap",
+      "value": "resin",
+      "sourceUrl": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio describes the supplied component as a resin band. The provider's bracelet label is not used as a metal-bracelet classification."
     },
     {
       "fieldName": "price.amountMinor",
-      "reason": "The provider's USD 95 figure was not independently visible on the current exact retailer page and cannot become a canonical price snapshot."
+      "value": 9300,
+      "sourceUrl": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
+      "note": "The exact Sakura Watches offer is displayed as US $93."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
+      "note": "The exact offer is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "JP",
+      "sourceUrl": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
+      "note": "Sakura identifies its Tokyo operation and worldwide shipping from Japan; the seller market is normalized to Japan."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unknown",
+      "sourceUrl": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
+      "note": "The exact page simultaneously shows Out of stock and Available 93/Add to Cart, so neither in_stock nor unavailable is safe."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["grey_market"],
+      "sourceUrl": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
+      "note": "The exact retailer offer does not establish Casio-authorized-dealer status."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
+      "note": "The exact listing states 100% new, genuine and original, with original box, manual and Japanese warranty card."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 37.9,
+      "sourceUrl": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio publishes the rectangular dimensions as 42.1 x 37.9 x 11.3 mm; 37.9 mm is retained as case width."
     },
     {
       "fieldName": "geometry.caseLengthMm",
-      "reason": "The provider's 42.1 mm wearing span remains a useful pre-screen hypothesis but is not independently validated from a retrievable primary or complete exact secondary specification."
+      "value": 42.1,
+      "sourceUrl": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio publishes 42.1 mm as the overall top-to-bottom rectangular case length. Under the additive non-round geometry contract it supplies the wearing span when conventional lug-to-lug is unavailable."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 11.3,
+      "sourceUrl": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio publishes 11.3 mm thickness."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 14,
+      "sourceUrl": "https://www.minott-center.com/casio-baby-g-uhrenarmband-10652251-resin-schwarz-bgd-5650-1-bgd-5650/a-46603/",
+      "note": "The exact BGD-5650-1 replacement-band record reports a 14 mm case-side interface."
     },
     {
       "fieldName": "geometry.weightFullG",
-      "reason": "The provider's 31 g configured mass is not promoted without a retrievable exact specification that establishes whether the band is included."
+      "value": 31,
+      "sourceUrl": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio publishes 31 g for the configured watch."
     },
     {
       "fieldName": "movement.type",
-      "reason": "Solar radio-controlled operation is a manufacturer claim whose exact product route is currently fetch-blocked, so it remains provisional."
+      "value": "solar",
+      "sourceUrl": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio identifies Tough Solar operation; the radio function is retained separately as a feature rather than folded into the movement type."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "3493",
+      "sourceUrl": "https://www.sakurawatches.com/casio-baby-g-bgd-5650-1jf",
+      "note": "The exact Sakura specification identifies calibre 3493."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -15,
+      "sourceUrl": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio publishes +/-15 seconds per month in the non-radio-controlled state."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 15,
+      "sourceUrl": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio publishes +/-15 seconds per month in the non-radio-controlled state."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 30,
+      "sourceUrl": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "note": "The exact manufacturer specification is per month, normalized to the catalogue's 30-day period."
     },
     {
       "fieldName": "operation.waterResistanceM",
-      "reason": "The asserted 100 m resistance is not independently accepted while the cited exact Casio route is fetch-blocked."
+      "value": 100,
+      "sourceUrl": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio publishes 10 bar/100 m water resistance."
     },
     {
-      "fieldName": "operation.lumeGrade",
-      "reason": "Super Illuminator identifies an illumination feature, not a verified repeatable performance grade."
+      "fieldName": "operation.crystal",
+      "value": "mineral",
+      "sourceUrl": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio specifies mineral glass."
+    },
+    {
+      "fieldName": "operation.shockResistant",
+      "value": true,
+      "sourceUrl": "https://www.casio.com/europe/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio specifies shock resistance for the exact model."
     },
     {
       "fieldName": "operation.attachmentType",
-      "reason": "The extraction expressly marks the exact case-to-band interface unresolved; no attachment enum may be inferred from product imagery or a resin-band label."
+      "value": "proprietary",
+      "sourceUrl": "https://www.uhr.com/g-shock-baby-g-schwarzes-kunststoffband-10652251.htm",
+      "note": "The exact-family replacement record specifies pushpin attachment and a special mount/cutout rather than a standard spring-bar or quick-release interface; this is normalized to proprietary."
+    },
+    {
+      "fieldName": "complications",
+      "value": ["alarm", "world_time"],
+      "sourceUrl": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
+      "note": "The exact Casio feature list supports alarms and world time. Stopwatch, timer, power-saving and display labels are not promoted as catalogue complication enums."
     },
     {
       "fieldName": "dateStatus",
-      "reason": "The provider's calendar/date prose is not independently admitted while the exhaustive exact manufacturer feature list is fetch-blocked."
+      "value": "present",
+      "sourceUrl": "https://www.casio.com/jp/watches/babyg/product.BGD-5650-1/",
+      "note": "Casio specifies a full auto-calendar through 2099 and date display."
     }
   ],
-  "missingM1Fields": [
-    "price",
-    "caseDiameterMm",
-    "caseWidthMm",
-    "caseLengthMm",
-    "caseThicknessMm",
-    "lugToLugMm",
-    "lugWidthMm",
-    "weightFullG",
-    "movement",
-    "accuracy",
-    "waterResistanceM",
-    "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "materials.bracelet",
+      "reason": "The provider's bracelet label is replaced by the exact manufacturer and retailer description of a resin band; the catalogue stores that component as materials.strap."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider's USD 95 value conflicts with the independently visible current exact Sakura offer of USD 93; the latter controls the reviewed snapshot."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "reason": "The provider's free-text international label is not the canonical country code; the reviewed Japan seller market is supplied as JP."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "The provider's Available value ignores the exact page's simultaneous Out of stock banner; contradictory controls normalize to unknown."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "The provider's free-text online-retailer/worldwide-shipping labels are not catalogue channel enums; the exact offer is retained as grey_market because authorization is unproven."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "The provider's prose is replaced by the canonical new condition after the exact retailer's new/genuine/box/manual/warranty claims are reviewed."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "reason": "The exact watch is rectangular. Casio's 42.1 x 37.9 mm dimensions are stored as caseLengthMm and caseWidthMm rather than inventing a circular diameter."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "reason": "Casio publishes overall rectangular case length, not a conventional between-lug span; caseLengthMm is retained as the evidenced wearing span."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "reason": "Casio publishes approximately 11 months of normal use and 22 months in dark-storage power-saving conditions; those conditional durations cannot be collapsed into one canonical reserve-hours value."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "Super Illuminator is an LED backlight, not a repeatable photoluminescent lume grade."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "The provider's broad feature list is reduced to the supported alarm and world_time enums; stopwatch, timer, battery and display labels do not establish additional catalogue complications."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The provider left the interface unresolved; the exact-family replacement records now replace that provisional absence with a proprietary pushpin/special-mount mapping."
+    }
   ],
-  "note": "Needs more evidence. The one allowed retry produced a syntactically valid provisional extraction after the first attempt was retained as a strict-normalization failure. Exact identity is corroborated by the live retailer route, but Casio's cited product pages are direct-fetch blocked and the exact retailer HTML did not expose the proposed technical and commercial facts for independent admission. Most importantly, the provider explicitly leaves the BGD-5650-1JF case-to-band interface unresolved. No homogeneous catalogue variant, price snapshot, or coverage claim is promoted; a future review needs a retrievable exact Casio technical record or equivalent exact-source evidence for the full M1 field set."
+  "missingM1Fields": ["lumeGrade"],
+  "note": "Keep as research-only. Exact Casio Japan and Europe records now independently establish the BGD-5650-1JF identity, rectangular 42.1 x 37.9 x 11.3 mm geometry, 31 g mass, resin case/band, Tough Solar/Multi Band 6 operation, 100 m resistance, mineral glass, shock resistance, +/-15-seconds-per-month fallback accuracy, and current product publication. Sakura supplies a USD 93 new exact-reference offer, but its Out of stock and Available 93 controls conflict, so availability is unknown; no provider USD 95 value is retained. Exact-family Minott/Uhr records document the pushpin special mount, normalized to proprietary. The rectangular dimensions are kept as width/length, and the exact date/calendar is present. Super Illuminator is an LED backlight rather than a qualifying lume grade, leaving lumeGrade as the sole M1 gap; no catalogue row is admitted."
 }
