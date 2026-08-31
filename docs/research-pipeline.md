@@ -1361,6 +1361,17 @@ forum posts still cannot satisfy the manufacturer-corroboration rule for
 the next selection must continue to require an exact or directly applicable
 path for every remaining M1 field.
 
+The next coverage-led Citizen Garrison `BM8180-03E` pre-screen adds one more
+exact-SKU owner discussion but does not close its sole `lumeGrade` gap. The
+discussion reports lamp or sunlight charging, initial brightness fading within
+minutes, and hands/numerals remaining legible overnight (with another owner
+reporting eight-hour legibility), yet it supplies no controlled illuminance,
+charge duration, or timed decay series. These observations join the existing
+exact-reference reports that conflict from all-night visibility to near-
+impossible dark reading. The factory interface remains accepted as
+`spring_bar` from Citizen's exact-model parts lookup, but lume stays null and
+no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

@@ -58,6 +58,11 @@
       "note": "Retrieved 2026-08-30 after Perplexity discovery. The exact-SKU review corpus contains materially incompatible observations ranging from all-night dial visibility to near-impossible dark reading and weak numerals after charging. None includes a controlled charge or timed decay method, so the corpus confirms condition or production variability rather than a stable performance class."
     },
     {
+      "url": "https://www.reddit.com/r/CitizenWatches/comments/1qnmsf3/why_everyone_love_the_citizen_bm818003e/",
+      "status": "validated_secondary",
+      "note": "A 2026 exact-reference owner discussion reports charging by lamp or sunlight, an initially bright response that fades within minutes, and hands/numerals remaining legible through an overnight interval; another owner says the watch remains legible eight hours later. The observations add exact-SKU elapsed context but still omit a controlled illuminance, charge duration, and timed decay series, and therefore do not resolve the existing conflict or establish a catalogue grade."
+    },
+    {
       "url": "https://www.ubuy.com.jm/product/2M7CJ2U-20mm-hemsut-watch-bands-compatible-with-citizen-bm8180-03e-bm8475-00f-bn0151-09l-bl8000-03a-bn0118-04e-bm8180-03e-bn0150-28e-bj8050-08e-bn0150-28e-and-more",
       "status": "rejected",
       "note": "The aftermarket compatibility listing says its replacement band fits BM8180-03E watches using standard spring bars, but it does not document or inspect the watch's factory strap-to-case construction. Commercial fitment compatibility alone is insufficient to close the M1 attachment gap."
@@ -149,5 +154,5 @@
     }
   ],
   "missingM1Fields": ["lumeGrade"],
-  "note": "Keep as research-only. Citizen's exact-model parts lookup resolves the factory interface as spring_bar. The 2026-08-30 Perplexity-assisted source pass found an exact-reference report that dim hands can persist overnight while numerals fade quickly, but independent exact-SKU accounts still range from all-night readability to near-impossible dark reading without a controlled charge or timed decay series. Lume remains the only M1 gap."
+  "note": "Keep as research-only. Citizen's exact-model parts lookup resolves the factory interface as spring_bar. The 2026-08-30 Perplexity-assisted source pass found an exact-reference report that dim hands can persist overnight while numerals fade quickly, but independent exact-SKU accounts still range from all-night readability to near-impossible dark reading without a controlled charge or timed decay series. A 2026-08-31 exact-reference owner discussion adds lamp/sunlight charging and an overnight legibility report, but still lacks controlled illuminance and elapsed measurements and does not resolve the conflict. Lume remains the only M1 gap."
 }

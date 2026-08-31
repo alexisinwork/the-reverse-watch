@@ -878,6 +878,15 @@ M1 gaps (`attachmentType`, `lumeGrade`) stay null, no provider request was made,
 and the next source-led selection must target the next named candidate only
 after a complete exact-source path is identified.
 
+The next coverage-led Citizen Garrison `BM8180-03E` pre-screen added an
+exact-SKU owner discussion reporting lamp or sunlight charging, brightness
+fading within minutes, and overnight legibility (another owner reports eight
+hours). It supplies no controlled illuminance, charge duration, or timed decay
+series and joins existing exact-reference reports that conflict from all-night
+visibility to near-impossible dark reading. Citizen's exact-model parts lookup
+already resolves the factory interface as `spring_bar`; `lumeGrade` remains the
+sole null M1 field, so no provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
