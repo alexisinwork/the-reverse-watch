@@ -41,6 +41,11 @@
       "url": "https://www.reddit.com/r/MicrobrandWatches/comments/1rz0rlq/vaer_s3_field_watch/",
       "status": "rejected",
       "note": "A narrow Perplexity follow-up surfaced a 35 g without-strap claim for an S3 field watch, but exact Calendar Field SKU identity and a weighing protocol are not established. It also conflicts with Vaer's exact page calling 46 g the case weight. Neither head-only value can satisfy the full configured weight contract."
+    },
+    {
+      "url": "https://watchpolice.com/brands/vaer/s3-calendar-field-black-36mm-quartz",
+      "status": "rejected",
+      "note": "The exact SKU is present, but the aggregator record describes an orange-dial/beige-strap variant and an implausible 54.2 bar rating rather than the reviewed black bundle. It supplies no full-watch mass or weighing protocol, so it cannot resolve weightFullG. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -240,5 +245,5 @@
     }
   ],
   "missingM1Fields": ["weightFullG"],
-  "note": "Keep as research-only. Direct review substantially improves the provider result: exact variant 41255028424838 and SKU S3-CF-SIL20BLK-NY20KHA are current and in stock at USD 189; Vaer's live technical panel resolves 36 x 8.4 x 43 mm geometry, 20 mm lugs, GM12 -10/+20 seconds per month, 100 m resistance, screw-down crown, sapphire, quick-release straps, date, and a 6/10 lume-performance rating mapped to moderate. Vaer publishes only 46 g case weight, and a narrow Perplexity pass found no exact full watch-plus-selected-strap measurement. Full configured weight remains null as the sole M1 gap."
+  "note": "Keep as research-only. Direct review substantially improves the provider result: exact variant 41255028424838 and SKU S3-CF-SIL20BLK-NY20KHA are current and in stock at USD 189; Vaer's live technical panel resolves 36 x 8.4 x 43 mm geometry, 20 mm lugs, GM12 -10/+20 seconds per month, 100 m resistance, screw-down crown, sapphire, quick-release straps, date, and a 6/10 lume-performance rating mapped to moderate. Vaer publishes only 46 g case weight, and a narrow source-led pass found no exact full watch-plus-selected-strap measurement. An exact-SKU aggregator record is internally inconsistent on color and resistance and also supplies no mass protocol. Full configured weight remains null as the sole M1 gap."
 }

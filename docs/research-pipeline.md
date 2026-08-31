@@ -1476,6 +1476,15 @@ Sinn 856-series manual continue to control the resolved configuration,
 47.5 mm span, SW330-2 identity, and spring-bar interface. No fact is promoted
 and no provider request is authorized.
 
+The next Vaer S3 Calendar Field bundle `S3-CF-SIL20BLK-NY20KHA` pre-screen
+leaves its sole M1 gap, `weightFullG`, open. Vaer's exact variant page gives
+46 g as case-only mass and its strap payload exposes no unit or scope. A new
+exact-SKU aggregator record describes the wrong orange-dial/beige-strap variant
+and an implausible resistance value, with no wearable weighing protocol. The
+existing exact 6/10 lume performance, dimensions, accuracy, and quick-release
+evidence remain valid; no full configured mass is promoted and no provider
+request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
