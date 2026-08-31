@@ -8,6 +8,10 @@ test("renders the landing page and Beehiiv embed", async ({ page }) => {
     page.getByRole("heading", { level: 1, name: "The Reserve" }),
   ).toBeVisible();
   await expect(page.getByText("Archival Documentary")).toBeVisible();
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute(
+    "href",
+    "/favicon.svg",
+  );
 
   await expect(
     page.locator('iframe[src*="subscribe-forms.beehiiv.com"]'),
