@@ -1338,11 +1338,20 @@ Configured Upstash also deduplicates repeated successful channel deliveries;
 only the traffic-derived quota remains open.
 
 Each accepted quiz action also emits a privacy-safe `quiz_funnel` runtime event
-with intent, catalogue origin, result counts, and subscription status. No
+with intent, catalogue origin, result counts, returned hard-filter violations,
+evaluation duration, deterministic provider cost, and subscription status. No
 profile answers or email addresses enter the event. Vercel runtime logs provide
 the initial queryable evaluation surface; a conversion dashboard and any
 traffic-derived conclusions remain pending until the deployment has enough
 observations.
+
+On 2026-08-31 the full deferred Playwright suite passed: 8 desktop/mobile tests
+covering the landing page, health response, error boundary, and six-screen quiz
+flow. Chromium's missing host libraries were loaded from a temporary user-space
+directory for the run; no browser binaries, system packages, or repository
+artifacts were added. The current Vercel Web Analytics window still reports
+zero visitors and pageviews, while runtime logs contain one privacy-safe quiz
+evaluation event, so no production conversion rate or quota is inferred.
 
 Verification:
 

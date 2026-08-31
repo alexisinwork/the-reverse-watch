@@ -13,6 +13,9 @@ describe("quiz analytics contract", () => {
       recommendationCount: 3,
       verificationCount: 2,
       whyNotCount: 4,
+      hardFilterViolationCount: 0,
+      evaluationDurationMs: 12.34,
+      providerCostUsd: 0,
     });
 
     expect(info).toHaveBeenCalledWith(
@@ -24,6 +27,9 @@ describe("quiz analytics contract", () => {
         recommendationCount: 3,
         verificationCount: 2,
         whyNotCount: 4,
+        hardFilterViolationCount: 0,
+        evaluationDurationMs: 12.34,
+        providerCostUsd: 0,
       }),
     );
     expect(info.mock.calls[0]?.[0]).not.toContain("email");

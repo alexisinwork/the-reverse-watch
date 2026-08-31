@@ -100,10 +100,18 @@ phase.
   explicitly marked unavailable. Beehiiv and Resend outcomes are independent,
   with partial delivery shown in the result UI.
 - Quiz actions now emit privacy-safe `quiz_funnel` runtime events containing
-  only intent, catalogue origin, result counts, and subscription status. No
-  profile answers or addresses are logged. This supplies the initial Vercel-log
-  evaluation surface; conversion conclusions remain pending until production
-  traffic provides enough observations.
+  only intent, catalogue origin, result counts, returned hard-filter
+  violations, evaluation duration, deterministic provider cost, and
+  subscription status. No profile answers or addresses are logged. This
+  supplies the initial Vercel-log evaluation surface; conversion conclusions
+  remain pending until production traffic provides enough observations.
+- On 2026-08-31 the full deferred Playwright suite passed: 8 desktop/mobile
+  tests covering landing, health, error boundary, and the six-screen quiz flow.
+  Chromium's missing host libraries were loaded from a temporary user-space
+  directory for the run; no browser binaries, system packages, or repository
+  artifacts were added. The current Vercel Web Analytics window reports zero
+  visitors and pageviews, and runtime logs contain one privacy-safe quiz
+  evaluation event, so no production conversion rate or quota is inferred.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

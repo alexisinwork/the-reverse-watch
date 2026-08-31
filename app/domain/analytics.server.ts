@@ -8,6 +8,9 @@ const quizAnalyticsEventSchema = z
     recommendationCount: z.number().int().nonnegative().optional(),
     verificationCount: z.number().int().nonnegative().optional(),
     whyNotCount: z.number().int().nonnegative().optional(),
+    hardFilterViolationCount: z.number().int().nonnegative().optional(),
+    evaluationDurationMs: z.number().nonnegative().optional(),
+    providerCostUsd: z.number().nonnegative().optional(),
     status: z
       .enum([
         "not_requested",

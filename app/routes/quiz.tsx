@@ -48,7 +48,10 @@ import type {
   EvaluatedCandidate,
   RecommendationResult,
 } from "../domain/recommendation";
-import { recommendWatches } from "../domain/recommendation";
+import {
+  evaluateHardFilterPartition,
+  recommendWatches,
+} from "../domain/recommendation";
 import {
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
@@ -544,6 +547,7 @@ export async function action({ request }: Route.ActionArgs) {
 
   const profile = normalizeProfile(parsed.data);
   const evaluatedAt = new Date().toISOString();
+  const evaluationStartedAt = performance.now();
   const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
   const recommendation = recommendWatches(
     parsed.data,
@@ -552,6 +556,26 @@ export async function action({ request }: Route.ActionArgs) {
       asOf: evaluatedAt,
       hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
     },
+  );
+  const hardFilterEvaluation =
+    catalogueLoad.hardFilterEvaluation ??
+    evaluateHardFilterPartition(parsed.data, catalogueLoad.catalogue, {
+      asOf: evaluatedAt,
+    });
+  const hardFilterViolationCount = recommendation.recommendations.filter(
+    (candidate) => {
+      const evaluation = hardFilterEvaluation[candidate.id];
+      return (
+        candidate.hardReasons.length > 0 ||
+        candidate.missingFacts.length > 0 ||
+        evaluation === undefined ||
+        evaluation.hardReasons.length > 0 ||
+        evaluation.missingFacts.length > 0
+      );
+    },
+  ).length;
+  const evaluationDurationMs = Number(
+    (performance.now() - evaluationStartedAt).toFixed(2),
   );
   let subscription: SubscriptionResult = {
     status: "not_requested",
@@ -687,6 +711,9 @@ export async function action({ request }: Route.ActionArgs) {
     recommendationCount: recommendation.recommendations.length,
     verificationCount: recommendation.verificationRequired.length,
     whyNotCount: recommendation.whyNot.length,
+    hardFilterViolationCount,
+    evaluationDurationMs,
+    providerCostUsd: 0,
   });
   if (subscription.status !== "not_requested") {
     recordQuizAnalyticsEvent({
