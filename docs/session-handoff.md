@@ -977,6 +977,16 @@ High Autonomy quartz and battery life without a numerical timekeeping bound;
 generic quartz expectations and third-party calibre summaries remain rejected.
 No fact was promoted and no provider request was made.
 
+The next Sinn 856 UTC SI-084 pre-screen leaves `weightFullG`, `accuracy`, and
+`lumeGrade` open. WatchBuys' exact-product owner archive adds individual
+approximately ±2 and +5 seconds-per-day observations, but no shared interval,
+position or temperature conditions, instrument, or factory guarantee. The
+official 70 g value remains head-only, and exact-SKU lume reports still lack an
+independent timed charge/decay protocol. The exact product page and Sinn
+856-series manual continue to control the resolved configuration, 47.5 mm span,
+SW330-2 identity, and spring-bar interface. No fact was promoted and no
+provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
