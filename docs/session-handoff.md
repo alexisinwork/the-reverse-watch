@@ -987,6 +987,13 @@ independent timed charge/decay protocol. The exact product page and Sinn
 SW330-2 identity, and spring-bar interface. No fact was promoted and no
 provider request was made.
 
+The 2026-08-31 exact-reference recheck of WatchBuys SI-084 found no admissible
+new evidence: 70 g is still explicitly head-only, owner timing comments remain
+uncontrolled watch-specific observations, and the repeated eight-hour lume claim
+after a one-minute fluorescent charge has no timed brightness series or
+independent corroboration. All three M1 gaps remain null; no provider request was
+made.
+
 The next Vaer S3 Calendar Field bundle `S3-CF-SIL20BLK-NY20KHA` pre-screen
 leaves its sole M1 gap, `weightFullG`, open. Vaer's exact variant page gives
 46 g as case-only mass and its strap payload exposes no unit or scope. A new

@@ -1476,6 +1476,14 @@ Sinn 856-series manual continue to control the resolved configuration,
 47.5 mm span, SW330-2 identity, and spring-bar interface. No fact is promoted
 and no provider request is authorized.
 
+A 2026-08-31 exact-reference recheck of WatchBuys' SI-084 product and
+verified-owner archive found no new admissible evidence. The page still exposes
+70 g as head-only; owner comments remain individual timing anecdotes without a
+shared protocol or guarantee, and the repeated eight-hour lume claim after a
+one-minute fluorescent charge has no timed brightness series or independent
+corroboration. `weightFullG`, `accuracy`, and `lumeGrade` therefore remain null
+and the candidate stays research-only.
+
 The next Vaer S3 Calendar Field bundle `S3-CF-SIL20BLK-NY20KHA` pre-screen
 leaves its sole M1 gap, `weightFullG`, open. Vaer's exact variant page gives
 46 g as case-only mass and its strap payload exposes no unit or scope. A new
