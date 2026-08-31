@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "casio-babyg-ultracompact-solar-tool",
   "jobId": "7a94e4de-0586-4ee9-a638-179b688e026c",
-  "reviewedAt": "2026-08-31T09:52:14Z",
+  "reviewedAt": "2026-08-31T10:29:06Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -45,7 +45,7 @@
     {
       "url": "https://www.ippojapanwatch.com/products/casio-womens-baby-g-square-design-radio-solar-model-bgd-5650-1jf",
       "status": "validated_secondary",
-      "note": "The independently retrievable exact-reference retailer page identifies SKU BGD-5650-1JF and describes an LED backlight with Super Illuminator and afterglow. It provides no photoluminescent material, charge condition, timed decay, or repeatable lume-performance class, so operation.lumeGrade remains null."
+      "note": "The independently retrievable exact-reference retailer page identifies SKU BGD-5650-1JF and describes an LED backlight with Super Illuminator and afterglow. It provides no photoluminescent material, charge condition, timed decay, or repeatable lume-performance class, so operation.lumeGrade remains null. Rechecked 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [

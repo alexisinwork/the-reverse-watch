@@ -1552,6 +1552,11 @@ or repeatable performance class. The 31 g configured mass, rectangular
 14 mm proprietary pushpin mount remain accepted provisional facts; no fact is
 promoted and no provider request is authorized.
 
+A 2026-08-31 exact-reference search found only the same Casio LED
+Super Illuminator/backlight evidence. Because the light is not
+photoluminescent and no timed charge/decay protocol exists, `lumeGrade` remains
+null and the candidate stays research-only.
+
 The next Certina DS Action Diver 38 mm Titanium `C048.807.44.051.01`
 pre-screen remains open only for `accuracy`. An exact Slovak authorized-retailer
 page identifies the selected reference and repeats the Powermatic 80.611
