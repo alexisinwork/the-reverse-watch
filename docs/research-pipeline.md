@@ -1339,6 +1339,13 @@ under-evidenced formal/small-wrist precision cells. Its exact-region source-led
 pass still lacks a numerical quartz accuracy bound and period, so it remains
 research-only and no provider request is authorized.
 
+The next-ranked Sinn 856 UTC `SI-084` pre-screen also remains open. A used
+Japanese listing reports 83.1 g total and a three-position ±10-second/day
+timegrapher result, but its model is only `856`, its measured 39 x 39 x 10.6 mm
+dimensions conflict with the current exact 40 x 11 mm sheet, and it does not
+identify the current leather configuration. The mass and accuracy claims are
+therefore rejected; no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

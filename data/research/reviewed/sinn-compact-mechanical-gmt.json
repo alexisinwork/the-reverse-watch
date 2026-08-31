@@ -36,6 +36,11 @@
       "url": "https://www.sinn.de/out/media/SINN_856_857_EN(7).pdf",
       "status": "fetch_blocked",
       "note": "The older official document cited by the extraction also returned HTTP 403, so it does not independently resolve the remaining M1 gaps."
+    },
+    {
+      "url": "https://shop.mako78.co.jp/en/products/n23102567571",
+      "status": "rejected",
+      "note": "This used Japanese pawnshop listing reports approximately 83.1 g total and a ±10 seconds-per-day three-position timegrapher result, but its model field is only 856, its measured 39 x 39 x 10.6 mm dimensions conflict with Sinn's current 856 UTC sheet, and it does not identify the current SI-084 configuration or a manufacturer guarantee. It cannot close the current full-weight or accuracy gates. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -171,5 +176,5 @@
     }
   ],
   "missingM1Fields": ["weightFullG", "accuracy", "lumeGrade"],
-  "note": "Keep as research-only. A 2026-08-30 Perplexity-assisted pass and independent retrieval now lock the candidate to WatchBuys SKU SI-084: a new, in-stock USD 2,680 black-calf-leather configuration from Sinn's official North American distributor. That exact page resolves 47.5 mm lug-to-lug and SW330-2, while Sinn's exact-series manual directly establishes the case spring bars. The only weight remains 70 g head-only; individual owner rates lack a shared protocol or guarantee; and exact-SKU lume reports include one eight-hour observation but no independent timed corroboration. Full configured weight, accuracy, and lume remain null."
+  "note": "Keep as research-only. A 2026-08-30 Perplexity-assisted pass and independent retrieval now lock the candidate to WatchBuys SKU SI-084: a new, in-stock USD 2,680 black-calf-leather configuration from Sinn's official North American distributor. That exact page resolves 47.5 mm lug-to-lug and SW330-2, while Sinn's exact-series manual directly establishes the case spring bars. The only weight remains 70 g head-only; individual owner rates lack a shared protocol or guarantee; and exact-SKU lume reports include one eight-hour observation but no independent timed corroboration. A new used 856 listing with 83.1 g total and ±10 seconds-per-day timegrapher results conflicts on dimensions and model identity, so it is rejected rather than substituted. Full configured weight, accuracy, and lume remain null."
 }

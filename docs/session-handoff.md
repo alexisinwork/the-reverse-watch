@@ -41,6 +41,11 @@ phase.
   bound or period. A source-led exact-calibre search found only an unanswered
   monthly-accuracy owner query; keep it research-only and do not invoke the
   provider.
+- The next-ranked Sinn 856 UTC `SI-084` pre-screen found a used listing with
+  83.1 g total mass and a three-position ±10-second/day timegrapher result, but
+  its model identity and 39 x 39 x 10.6 mm measurements conflict with the
+  current exact Sinn sheet. It does not identify the current leather SKU, so
+  both claims remain rejected and no provider request is authorized.
 - On 2026-08-29 the owner explicitly requested that the complete accumulated
   branch be pushed. The 28 existing local commits plus the handoff checkpoint
   were therefore delivered to `origin/main`, superseding the earlier
