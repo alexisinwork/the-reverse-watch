@@ -1228,6 +1228,15 @@ Exit decision:
 
 Arbitrary fixed-size dossier chunking is explicitly out of scope.
 
+Follow-on checkpoint 2026-08-31: Worn & Wound's exact sky-blue Horizon
+hands-on review records the hands and indices still glowing until morning after
+overnight wear. This direct elapsed observation closes BOLDR's sole M1 gap as
+`strong` without treating Swiss Super-LumiNova material labels as performance
+evidence. The homogeneous 91 g integrated Druber-strap row is now
+`ready_for_migration`; seed coverage is 1,102/28,800 cells across 28 variants,
+and `0032_expand_catalogue_boldr.sql` is prepared pending connected Supabase
+parity.
+
 ## Phase 7 — Product integration, email, deployment, and evaluation
 
 Status: **pending**

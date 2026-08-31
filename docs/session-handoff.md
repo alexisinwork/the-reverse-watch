@@ -26,6 +26,14 @@ phase.
 - Local migration `0031_expand_catalogue_vostok.sql` adds the reviewed Vostok
   420059 row; connected Supabase parity must be rerun when credentials are
   available before that migration is applied remotely.
+- Local migration `0032_expand_catalogue_boldr.sql` adds the reviewed BOLDR
+  Odyssey Horizon `ODY-TI-40-H-BL` row on its homogeneous 91 g integrated
+  Druber strap; the bundled 125 g titanium bracelet remains accessory context.
+  Worn & Wound's exact Horizon hands-on review records the hands and indices
+  glowing until morning after overnight wear, closing the sole lume gap as
+  `strong`. Local seed coverage is now 1,102/28,800 cells across 28 variants.
+  Connected Supabase parity must be rerun when credentials are available before
+  migrations `0031` and `0032` are applied remotely.
 - On 2026-08-29 the owner explicitly requested that the complete accumulated
   branch be pushed. The 28 existing local commits plus the handoff checkpoint
   were therefore delivered to `origin/main`, superseding the earlier

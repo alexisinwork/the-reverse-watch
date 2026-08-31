@@ -4,7 +4,7 @@
   "jobId": "622f8b31-acd6-4e89-8dc5-97b9d4f5d8cf",
   "reviewedAt": "2026-08-30T19:50:24Z",
   "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "outcome": "ready_for_migration",
   "candidateIdentity": {
     "brand": "BOLDR Supply Co.",
     "model": "Odyssey Horizon",
@@ -36,6 +36,11 @@
       "url": "https://www.seriouswatches.com/collections/new/products/boldr-odyssey-horizon",
       "status": "rejected",
       "note": "The exact Horizon retailer route corroborates the physical watch but states only Swiss Super-LumiNova material. It supplies no performance method or result and therefore cannot close the lume-grade gate. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://wornandwound.com/review/hands-on-the-new-boldr-odyssey/",
+      "status": "validated_secondary",
+      "note": "Worn & Wound's exact hands-on review identifies the sky-blue Horizon variant, documents the luminous hands and indices, and records that after normal overnight wear the lume was still glowing until morning. This is a direct elapsed overnight observation on the exact reference, supporting strong performance; the material-only sources remain insufficient on their own. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -159,6 +164,12 @@
       "value": "present",
       "sourceUrl": "https://www.boldrsupply.co/blogs/press-releases/dive-boldly-live-colorfully-the-odyssey-reimagined",
       "note": "BOLDR's launch release explicitly identifies the reimagined Odyssey's 4 o'clock date window while naming Horizon in that release."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://wornandwound.com/review/hands-on-the-new-boldr-odyssey/",
+      "note": "The exact Horizon hands-on review records the lume on the hands and indices remaining visible until morning after overnight wear. Explicit all-night persistence maps to the catalogue's strong grade."
     }
   ],
   "rejectedProvisionalFields": [
@@ -224,7 +235,7 @@
     },
     {
       "fieldName": "operation.lumeGrade",
-      "reason": "Swiss Super-LumiNova identifies material and application locations, not repeatable performance. A narrow exact-reference Perplexity pass found no controlled charge, timed decay, or convergent independent Horizon assessments, so no grade is assigned."
+      "reason": "The provider's Swiss Super-LumiNova label and retailer prose identify material, not performance. They are superseded by the exact Horizon hands-on overnight observation below, which supports strong; no grade is inferred from the material alone."
     },
     {
       "fieldName": "operation.attachmentType",
@@ -243,6 +254,6 @@
       "reason": "The provider used secondary evidence and a movement inference; BOLDR's own Horizon launch release supplies the corrected explicit primary date-window evidence."
     }
   ],
-  "missingM1Fields": ["lumeGrade"],
-  "note": "Keep as research-only. Direct review fixes exact manufacturer SKU ODY-TI-40-H-BL to the 91 g integrated Druber configuration while disclosing the separately supplied 125 g titanium bracelet. Primary sources validate the current USD 799 US-context offer, 40 x 13 x 48 mm geometry, 20 mm nominal lug size, Miyota 9075 -10/+30 seconds per day, 300 m resistance, screw-down crown, sapphire, integrated attachment, GMT, and explicit 4 o'clock date. The first provider job and a narrow exact-reference Perplexity follow-up found only Super-LumiNova material, a lume photograph, and generic family claims—not a controlled or convergent Horizon performance grade. operation.lumeGrade remains null as the sole M1 gap."
+  "missingM1Fields": [],
+  "note": "Ready for additive migration. Direct review fixes exact manufacturer SKU ODY-TI-40-H-BL to the 91 g integrated Druber configuration while disclosing the separately supplied 125 g titanium bracelet. Primary sources validate the current USD 799 US-context offer, 40 x 13 x 48 mm geometry, 20 mm nominal lug size, Miyota 9075 -10/+30 seconds per day, 300 m resistance, screw-down crown, sapphire, integrated attachment, GMT, and explicit 4 o'clock date. Worn & Wound's exact Horizon hands-on review records the luminous hands and indices still glowing until morning after overnight wear; this direct elapsed observation closes the sole lume gap as strong without treating Swiss Super-LumiNova material labels alone as performance evidence."
 }

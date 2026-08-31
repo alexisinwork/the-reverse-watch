@@ -840,6 +840,38 @@
       "publisher": "Vostok-World24",
       "sourceType": "secondary_editorial",
       "retrievedAt": "2026-08-31T08:47:55Z"
+    },
+    {
+      "id": "boldr-odyssey-horizon-wornandwound",
+      "url": "https://wornandwound.com/review/hands-on-the-new-boldr-odyssey/",
+      "title": "Hands-On: the New BOLDR Odyssey Horizon",
+      "publisher": "Worn & Wound",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T09:30:00Z"
+    },
+    {
+      "id": "boldr-odyssey-horizon",
+      "url": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "title": "Odyssey Horizon — ODY-TI-40-H-BL",
+      "publisher": "BOLDR Supply Co.",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T19:50:24Z"
+    },
+    {
+      "id": "boldr-odyssey-launch",
+      "url": "https://www.boldrsupply.co/blogs/press-releases/dive-boldly-live-colorfully-the-odyssey-reimagined",
+      "title": "Dive Boldly, Live Colorfully: The Odyssey Reimagined",
+      "publisher": "BOLDR Supply Co.",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-30T19:50:24Z"
+    },
+    {
+      "id": "miyota-9075",
+      "url": "https://miyotamovement.com/product/9075/",
+      "title": "Miyota calibre 9075 specification",
+      "publisher": "Citizen Watch Co. / Miyota",
+      "sourceType": "manufacturer_data_sheet",
+      "retrievedAt": "2026-08-30T19:50:24Z"
     }
   ],
   "fx": {
@@ -3999,6 +4031,119 @@
         {
           "sourceId": "vostok-420059-world24-springbars",
           "fields": ["attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "boldr-odyssey-horizon-druber-gmt",
+      "brand": {
+        "slug": "boldr",
+        "name": "BOLDR Supply Co.",
+        "serviceCountries": null
+      },
+      "collection": "Odyssey",
+      "model": "Odyssey Horizon",
+      "referenceCode": "ODY-TI-40-H-BL",
+      "variantName": "Horizon on integrated Druber strap; titanium bracelet included",
+      "productUrl": "https://www.boldrsupply.co/products/odyssey-horizon?country=US",
+      "price": {
+        "amountMinor": 79900,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-31T09:30:00Z",
+        "staleAfter": "2027-02-27T09:30:00Z",
+        "availability": "in_stock",
+        "availabilityObservedAt": "2026-08-31T09:30:00Z",
+        "availabilityStaleAfter": "2026-09-30T09:30:00Z",
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "titanium",
+        "caseback": "titanium with sapphire exhibition caseback",
+        "bracelet": null,
+        "strap": "integrated Druber rubber"
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 40,
+        "caseWidthMm": null,
+        "caseLengthMm": null,
+        "caseThicknessMm": 13,
+        "lugToLugMm": 48,
+        "lugWidthMm": 20,
+        "weightFullG": 91,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "Miyota 9075",
+        "powerReserveHours": 42,
+        "accuracyLowerSeconds": -10,
+        "accuracyUpperSeconds": 30,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 300,
+        "crownType": "screw_down",
+        "crownPosition": null,
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "integrated",
+        "shockResistant": null,
+        "nickelContactRisk": null
+      },
+      "complications": ["gmt"],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "compact_independent_travel_tool",
+        "socialSignals": ["unapologetic_benchmark"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability", "differentiation"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "boldr-odyssey-horizon",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "lugToLugMm",
+            "lugWidthMm",
+            "weightFullG",
+            "movement",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "attachmentType",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "boldr-odyssey-launch",
+          "fields": ["identity", "complications", "dateStatus"]
+        },
+        {
+          "sourceId": "miyota-9075",
+          "fields": ["movement", "accuracy"]
+        },
+        {
+          "sourceId": "boldr-odyssey-horizon-wornandwound",
+          "fields": ["identity", "lumeGrade"]
         }
       ]
     }

@@ -4373,7 +4373,8 @@
         {
           "id": "boldr-odyssey-horizon-druber-gmt",
           "referenceLabel": "Find exact BOLDR Odyssey Horizon ODY-TI-40-H-BL lume-performance evidence only: require a controlled charge and elapsed observation, a timed decay series, or multiple independent exact-reference assessments that converge on weak, moderate, or strong; do not infer performance from Swiss Super-LumiNova material, a lume photograph, or generic Odyssey-family marketing",
-          "state": "needs_review",
+          "state": "accepted",
+          "catalogueVariantId": "boldr-odyssey-horizon-druber-gmt",
           "coverageIntent": {
             "priceBands": [
               "500_1000"
@@ -4402,7 +4403,7 @@
               "gmt"
             ]
           },
-          "coverageRationale": "Add a new-brand, current titanium flyer GMT to 18 sparse 500-1000 workhorse-mechanical cells. The row must stay fixed to the manufacturer-published 91 g integrated Druber configuration even though the same SKU also includes a 125 g titanium bracelet."
+          "coverageRationale": "Add a new-brand, current titanium flyer GMT to 18 sparse 500-1000 workhorse-mechanical cells. The row stays fixed to the manufacturer-published 91 g integrated Druber configuration even though the same SKU also includes a 125 g titanium bracelet; an exact Horizon overnight lume observation closes the final M1 gate."
         }
       ]
     },

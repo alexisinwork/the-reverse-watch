@@ -1319,6 +1319,18 @@ insufficient for the accuracy contract. The candidate stays research-only and
 no provider request is queued. The next selection must continue to require an
 exact or directly applicable path for every projected M1 gap.
 
+A source-led BOLDR Odyssey Horizon `ODY-TI-40-H-BL` review then closed its sole
+M1 gap. The exact BOLDR row remains homogeneous on the integrated Druber strap
+at 91 g, with the bundled 125 g titanium bracelet retained only as accessory
+context. Worn & Wound's exact sky-blue Horizon hands-on review records the lume
+on the hands and indices still glowing until morning after overnight wear; this
+direct elapsed observation maps to `strong` without inferring performance from
+Swiss Super-LumiNova material labels. The reviewed target is now
+`ready_for_migration`; local seed coverage rises to 1,102/28,800 cells (3.83%)
+across 28 variants. Migration `0032_expand_catalogue_boldr.sql` is rendered but
+not remotely applied because Supabase credentials are unavailable in this
+workspace. No provider request was needed.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
