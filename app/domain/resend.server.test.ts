@@ -4,6 +4,7 @@ import {
   parseResendConfiguration,
   sendDossierWithResend,
 } from "./resend.server";
+import { EMAIL_PROVIDER_TIMEOUT_MS } from "./email-provider.server";
 
 const dossier = {
   subject: "Subject",
@@ -68,6 +69,8 @@ describe("Resend dossier adapter", () => {
       RequestInfo | URL,
       RequestInit,
     ];
+    expect(requestInit.signal).toBeInstanceOf(AbortSignal);
+    expect(EMAIL_PROVIDER_TIMEOUT_MS).toBe(10_000);
     expect(JSON.parse(requestInit.body as string)).toEqual({
       from: "The Reserve <hello@example.com>",
       to: ["reader@example.com"],

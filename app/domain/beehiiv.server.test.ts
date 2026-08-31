@@ -4,6 +4,7 @@ import {
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
 } from "./beehiiv.server";
+import { EMAIL_PROVIDER_TIMEOUT_MS } from "./email-provider.server";
 
 describe("Beehiiv subscription adapter", () => {
   it("requires the API key and publication ID together", () => {
@@ -61,6 +62,8 @@ describe("Beehiiv subscription adapter", () => {
     if (typeof requestInit.body !== "string") {
       throw new Error("Expected a JSON request body");
     }
+    expect(requestInit.signal).toBeInstanceOf(AbortSignal);
+    expect(EMAIL_PROVIDER_TIMEOUT_MS).toBe(10_000);
     expect(JSON.parse(requestInit.body)).toEqual({
       email: "collector@example.com",
       send_welcome_email: true,

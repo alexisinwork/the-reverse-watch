@@ -1,3 +1,5 @@
+import { emailProviderTimeoutSignal } from "./email-provider.server";
+
 type Environment = Record<string, string | undefined>;
 
 export type BeehiivConfiguration =
@@ -29,6 +31,7 @@ export async function subscribeToBeehiiv(
         Authorization: `Bearer ${configuration.apiKey}`,
         "Content-Type": "application/json",
       },
+      signal: emailProviderTimeoutSignal(),
       body: JSON.stringify({
         email,
         send_welcome_email: true,

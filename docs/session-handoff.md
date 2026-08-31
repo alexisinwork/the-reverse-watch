@@ -86,7 +86,8 @@ phase.
   per-channel 15-minute deduplication claims keyed by an opaque request hash;
   provider failures release their claim so a retry can proceed, while repeated
   successful requests are reported without repeating provider side effects.
-  A traffic-derived quota remains pending.
+  Beehiiv and Resend requests now use a shared 10-second abort deadline. A
+  traffic-derived quota remains pending.
 - The result screen now preserves access without email and exposes a separate,
   checked email opt-in. Server-side validation rejects malformed addresses or
   an address without consent; valid requests call the configured channels while

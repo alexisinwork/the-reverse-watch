@@ -1319,8 +1319,9 @@ deduplication. Each validated email request uses an opaque hash of its channel,
 intent, profile, and address with a 15-minute expiry; a repeated successful
 request is reported as already requested without calling Beehiiv or Resend.
 Provider failures release their claim for retry, and claim failures prevent the
-provider call while keeping the recommendation response visible. The traffic-
-derived quota remains pending until production observations justify a value.
+provider call while keeping the recommendation response visible. Beehiiv and
+Resend requests use a shared 10-second abort deadline. The traffic-derived
+quota remains pending until production observations justify a value.
 
 The result screen now keeps recommendations visible without an email and offers
 a separate, checked opt-in field. The server validates the address and consent
@@ -1333,7 +1334,8 @@ Resend's email API. The dossier contains only accepted catalogue facts, score
 traces, explicit verification/rejection reasons, and reviewed source links; it
 states that historical/prose context is unavailable rather than inventing it.
 Beehiiv and Resend outcomes are independent, so a partial delivery is visible.
-Deduplication and a traffic-derived quota remain open.
+Configured Upstash also deduplicates repeated successful channel deliveries;
+only the traffic-derived quota remains open.
 
 Each accepted quiz action also emits a privacy-safe `quiz_funnel` runtime event
 with intent, catalogue origin, result counts, and subscription status. No

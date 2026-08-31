@@ -1,4 +1,5 @@
 import type { DossierEmail } from "./dossier-email";
+import { emailProviderTimeoutSignal } from "./email-provider.server";
 
 type Environment = Record<string, string | undefined>;
 
@@ -29,6 +30,7 @@ export async function sendDossierWithResend(
       "Content-Type": "application/json",
       "User-Agent": "the-reserve-diagnostic",
     },
+    signal: emailProviderTimeoutSignal(),
     body: JSON.stringify({
       from: configuration.emailFrom,
       to: [email],
