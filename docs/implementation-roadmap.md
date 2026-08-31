@@ -1221,6 +1221,13 @@ version-2 core submission returned 200 with `catalogueOrigin: supabase`. The
 temporary share link used for the check was not retained as application
 configuration.
 
+The first operational slice adds server middleware for an unguessable request
+ID, structured method/path/status/duration logs, `Server-Timing`, and security
+headers (`X-Content-Type-Options`, frame/referrer/permissions policies, and a
+vendor-scoped CSP). React Router's generated inline hydration bootstrap requires
+`'unsafe-inline'` in `script-src`; the policy still restricts executable origins
+and explicitly allows only the Beehiiv and Cloudflare challenge hosts.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **closed — SQL-first retained after 2026-08-31 pilot**

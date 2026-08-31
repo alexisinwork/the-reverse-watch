@@ -54,6 +54,10 @@ phase.
   and selected `catalogueOrigin: supabase` against the live 28-variant
   catalogue. A temporary share link was used only for the check and is not
   configuration.
+- Server middleware now emits request IDs, structured duration/status logs,
+  `Server-Timing`, and security headers with a vendor-scoped CSP. The full
+  desktop/mobile browser matrix remains green after allowing React Router's
+  required inline hydration bootstrap and Beehiiv's Cloudflare challenge host.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

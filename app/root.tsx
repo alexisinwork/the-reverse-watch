@@ -8,8 +8,11 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import { requestMiddleware } from "./middleware.server";
 import "./styles/tokens.css";
 import "./styles/app.css";
+
+export const middleware: Route.MiddlewareFunction[] = [requestMiddleware];
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
