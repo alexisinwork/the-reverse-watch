@@ -1058,6 +1058,14 @@ configuration; an indexed exact-retailer `luminescence absent` claim remains
 unusable because direct retrieval is anti-bot blocked. No provider request was
 made.
 
+The next Swatch SILVERWAKATI `SO28N100` pre-screen remains negative for
+`weightFullG`, `accuracy`, and `lumeGrade`. An exact-SKU outlet page repeats
+the 34 mm quartz, 3 bar, and plastic configuration, but its blue-case metadata
+conflicts with the exact silver/blue product and it publishes no watch-only
+weight, numerical rate bound, or lume statement. The existing 18 g/22 g mass
+conflict, qualitative quartz wording, and absence of photoluminescent evidence
+therefore remain unresolved. No provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
