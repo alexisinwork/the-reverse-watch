@@ -1111,6 +1111,11 @@ retailer records found no lume or no-lume specification for FRA36-2432. The
 existing B023, 57 g, and ±15-seconds-per-month evidence remains coherent;
 `lumeGrade` stays null and no provider request was made.
 
+A further 2026-08-31 exact-reference Japanese retailer record repeats the B023,
+±15-seconds-per-month, and stainless-bracelet configuration but reports 56 g
+instead of Citizen Japan's 57 g and supplies no lume statement. The mass conflict
+and sole `lumeGrade` gap remain unresolved; no provider request was made.
+
 The next Casio BABY-G `BGD-5650-1JF` pre-screen leaves its sole M1 gap,
 `lumeGrade`, open. Exact Casio Japan and Europe pages describe the light as an
 LED Super Illuminator/backlight, and an independently retrievable exact-SKU

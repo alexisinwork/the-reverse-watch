@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "citizen-forma-fra36-2432",
   "jobId": "1e807409-1a9c-4eac-9b6f-f4afea08291a",
-  "reviewedAt": "2026-08-31T10:23:12Z",
+  "reviewedAt": "2026-08-31T10:40:28Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -46,6 +46,11 @@
       "url": "https://www.amazon.co.jp/CITIZEN-FORMA-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%9E-Eco-Drive-FRA36-2432/dp/B000RDH76K",
       "status": "rejected",
       "note": "The provider supplied an exact Amazon route for rate, reserve, and weight, but the retrieved URL contains malformed text and is not needed: Citizen Japan and exact retailer records independently establish those facts."
+    },
+    {
+      "url": "https://www.sofmap.com/product_detail.aspx?sku=10716336",
+      "status": "validated_secondary",
+      "note": "Sofmap's exact FRA36-2432 retailer record repeats B023 Eco-Drive, ±15 seconds per month, 56 g, crystal glass, and the stainless bracelet. Its 56 g mass conflicts with Citizen Japan's 57 g value, and it publishes no lume or no-lume statement; neither the mass conflict nor the lume gap is changed. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
