@@ -46,6 +46,11 @@
       "url": "https://watchcharts.com/watch_model/33697-audemars-piguet-royal-oak-jumbo-extra-thin-16202-stainless-steel-16202st/overview",
       "status": "validated_secondary",
       "note": "The current-production model record corroborates lifecycle status only. Its gated or market-derived pricing is not substituted for a homogeneous exact-variant manufacturer offer."
+    },
+    {
+      "url": "https://www.jomashop.com/audemars-piguet-royal-oak-offshore-blue-dial-unisex-watch-16202stoo1240st02.html",
+      "status": "validated_secondary",
+      "note": "The exact-reference retailer page exposes a $96,500 USD offer, IN STOCK status, New condition, and Add to Bag for 16202ST.OO.1240ST.02. The retailer is not treated as an AP-authorized channel; the offer is retained as a homogeneous grey-market snapshot. Its technical table reports only the already verified 39 mm/8.1 mm case and luminescent hands/markers, not weight, lug-to-lug, rate tolerance, or lume performance."
     }
   ],
   "verifiedProvisionalFields": [
@@ -70,21 +75,39 @@
   "additionalVerifiedFacts": [
     {
       "fieldName": "price.amountMinor",
-      "value": 4010000,
-      "sourceUrl": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
-      "note": "AP's exact-product U.S. endpoint returns an amount of 40,100 USD."
+      "value": 9650000,
+      "sourceUrl": "https://www.jomashop.com/audemars-piguet-royal-oak-offshore-blue-dial-unisex-watch-16202stoo1240st02.html",
+      "note": "The exact independent retailer's active grey-market listing displays $96,500 USD; AP's separate $40,100 endpoint remains a manufacturer price fragment and is retained as a source conflict rather than blended into this snapshot."
     },
     {
       "fieldName": "price.currency",
       "value": "USD",
-      "sourceUrl": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
-      "note": "The recovered exact-product price is denominated in U.S. dollars."
+      "sourceUrl": "https://www.jomashop.com/audemars-piguet-royal-oak-offshore-blue-dial-unisex-watch-16202stoo1240st02.html",
+      "note": "The exact independent listing denominates the selected grey-market offer in U.S. dollars."
     },
     {
       "fieldName": "price.marketCountry",
       "value": "US",
-      "sourceUrl": "https://www.audemarspiguet.com/us/en/home.price.16202ST.OO.1240ST.02.US.json",
-      "note": "The endpoint identifies the price country as US."
+      "sourceUrl": "https://www.jomashop.com/audemars-piguet-royal-oak-offshore-blue-dial-unisex-watch-16202stoo1240st02.html",
+      "note": "The exact U.S. retailer route and USD offer establish the reviewed market as US."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.jomashop.com/audemars-piguet-royal-oak-offshore-blue-dial-unisex-watch-16202stoo1240st02.html",
+      "note": "The exact page reports IN STOCK and Add to Bag."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["grey_market"],
+      "sourceUrl": "https://www.jomashop.com/audemars-piguet-royal-oak-offshore-blue-dial-unisex-watch-16202stoo1240st02.html",
+      "note": "The independent retailer's exact offer is not represented as an AP-authorized dealer channel."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.jomashop.com/audemars-piguet-royal-oak-offshore-blue-dial-unisex-watch-16202stoo1240st02.html",
+      "note": "The exact listing states New condition."
     },
     {
       "fieldName": "productionStatus",
@@ -119,18 +142,6 @@
   ],
   "rejectedProvisionalFields": [
     {
-      "fieldName": "price.amountMinor",
-      "reason": "The exact official page does not render a usable price or availability snapshot, and secondary market or sibling-reference values cannot be promoted."
-    },
-    {
-      "fieldName": "price.availability",
-      "reason": "AP's exact page supplies Find a Boutique rather than a stock, allocation, orderability, preorder, or sold-out state. The exact price endpoint and secondary suggested-retail record also omit purchase availability."
-    },
-    {
-      "fieldName": "price.channels",
-      "reason": "The exact-product endpoint identifies amount, currency, and market but no transaction channel. A boutique finder and an independent suggested-retail record do not establish a homogeneous current AP or authorized-dealer offer."
-    },
-    {
       "fieldName": "geometry.lugToLugMm",
       "reason": "The numerical 48.5-48.6 mm case spans surfaced in exacting follow-ups belong to anniversary reference 16202ST.OO.1240ST.01. A reported 57.4 mm fixed-bracelet span is a different fit measure, and no exact .02 source distinguishes a case-only lug-to-lug value."
     },
@@ -163,12 +174,6 @@
       "reason": "Date is represented separately by dateStatus and is removed from the supported complication array."
     }
   ],
-  "missingM1Fields": [
-    "price",
-    "lugToLugMm",
-    "weightFullG",
-    "accuracy",
-    "lumeGrade"
-  ],
-  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference. AP's Heritage documentation explicitly makes conventional between-horns lug width not applicable to model 16202's case-and-first-link architecture. AP's exact-product endpoint resolves a USD 40,100 U.S. price fragment, corroborated by a February 2026 suggested-retail record, but purchase availability and channel remain unresolved. A 2026-08-30 Perplexity-assisted pass found numerical fit, weight, and measured-rate data only for anniversary reference .01 or generic 16202/7121 records; no controlled exact .02 lume evidence surfaced. All five gaps remain null."
+  "missingM1Fields": ["lugToLugMm", "weightFullG", "accuracy", "lumeGrade"],
+  "note": "Keep as research-only. The replacement fixes the previous lifecycle mismatch and exact primary sources establish a current integrated Royal Oak reference. AP's Heritage documentation explicitly makes conventional between-horns lug width not applicable to model 16202's case-and-first-link architecture. An exact Jomashop listing now supplies a homogeneous USD 96,500 grey-market offer with in-stock and new-condition controls; AP's separate USD 40,100 endpoint remains a manufacturer price conflict. No exact .02 lug-to-lug span, packaging-free full configured weight, numerical rate bound, or controlled lume performance surfaced. Those four gaps remain null."
 }

@@ -1412,6 +1412,16 @@ manufacturer-corroborated attachment mechanism surfaced. The price and lug
 width gaps are closed for review purposes; the four physical/ownership gaps
 remain null and no provider request is authorized.
 
+The next Audemars Piguet Royal Oak Jumbo `16202ST.OO.1240ST.02` pre-screen
+partially resolves the commercial gap. Jomashop's exact-reference page exposes
+a USD 96,500 grey-market offer, `IN STOCK`, `New`, and Add to Bag controls; AP's
+separate USD 40,100 endpoint remains a manufacturer price conflict rather than
+an interchangeable offer. AP's integrated-bracelet and Heritage sources still
+establish the attachment class and lug-width non-applicability. No exact `.02`
+lug-to-lug span, packaging-free configured weight, numerical rate bound, or
+controlled lume performance surfaced, so those four M1 gaps remain null and no
+provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
