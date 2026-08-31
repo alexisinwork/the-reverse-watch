@@ -31,6 +31,21 @@
       "url": "https://www.rado.com/media/sgecom_contentsystem/PDF/User_manuals/Manual_en_2020.pdf",
       "status": "validated_primary",
       "note": "Rado's general manual independently states that its average quartz deviation should not exceed 15 seconds per month, but the exact product page's stronger -10/+10 seconds-per-year R292 claim controls this row. The manual does not identify the R32280109 strap fastener or exact case span. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.watchmaxx.com/rado-watch-r32280109",
+      "status": "validated_secondary",
+      "note": "This exact-reference secondary listing independently identifies the rhodium-dial black-rubber configuration, 41.5 mm case, R292 quartz, 150 m resistance, luminous hands/markers, and tang clasp. It supplies no lug-to-lug or lug-width measurement, no timed lume observation, and no case-to-strap fastener evidence; the official product row remains the homogeneous commercial source. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://watchstore.co.il/catalog.asp?page=newshowprod.asp&prodid=2905585",
+      "status": "rejected",
+      "note": "The exact-reference importer listing repeats 41.5 mm, 150 m, and luminous hands/indices, but reports 12 mm thickness against Rado's current 11.7 mm and supplies no lug, timed-lume, or strap-interface evidence. The conflicting geometry prevents promotion. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://service.rado.com/changeyourstrap?country=int",
+      "status": "rejected",
+      "note": "Rado's generic strap-customisation page documents an Easy Clip System for other configurable collections and provides no R32280109-specific service part, lug hole, or fastener record. Its generic strap-change material cannot establish this exact reference's attachmentType. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -188,5 +203,5 @@
     "lumeGrade",
     "attachmentType"
   ],
-  "note": "Keep as research-only. Direct primary review validates current Rado HyperChrome Quartz R32280109 on black rubber as a new, in-stock USD 1,400 U.S. offer with 41.5 x 11.7 mm geometry, 87 g configured mass, R292 PreciDrive/HeavyDrive accuracy of -10/+10 seconds per year, 150 m resistance, sapphire, and date. Rado describes Super-LumiNova colors and low-light legibility but supplies no repeatable performance grade; its pin buckle does not identify the case fastener. A narrow Perplexity pass found no exact service/parts interface record and rejected a 47.7 mm span plus 20/21 mm width because their retailer pages retain an older conflicting 41 x 12.2 mm, 89.6 g, 100 m specification set. Lug-to-lug, lug width, lume grade, and attachment type therefore remain null."
+  "note": "Keep as research-only. Direct primary review validates current Rado HyperChrome Quartz R32280109 on black rubber as a new, in-stock USD 1,400 U.S. offer with 41.5 x 11.7 mm geometry, 87 g configured mass, R292 PreciDrive/HeavyDrive accuracy of -10/+10 seconds per year, 150 m resistance, sapphire, and date. Rado describes Super-LumiNova colors and low-light legibility but supplies no repeatable performance grade; its pin buckle does not identify the case fastener. The exact WatchMaxx listing corroborates the current configuration but adds no missing M1 measurements or controlled observations. A narrow source-led pass found no exact service/parts interface record; Rado's generic Easy Clip page is for other collections. The 47.7 mm span plus 20/21 mm width remains rejected because its retailer pages retain an older conflicting 41 x 12.2 mm, 89.6 g, 100 m specification set, and an importer listing likewise conflicts on thickness. Lug-to-lug, lug width, lume grade, and attachment type therefore remain null."
 }

@@ -1432,6 +1432,19 @@ and availability-on-request. The existing primary page's numeric and physical
 omissions therefore stand; no facts are promoted and no provider request is
 authorized.
 
+The next Rado HyperChrome Quartz `R32280109` pre-screen confirms the current
+official U.S. row but closes none of its four remaining M1 gaps. Rado's exact
+page supplies a homogeneous USD 1,400 in-stock offer, 41.5 x 11.7 mm case,
+87 g configured mass, R292 ±10 seconds-per-year accuracy, 150 m resistance,
+Super-LumiNova color placement, and a pin buckle. An exact WatchMaxx listing
+corroborates the configuration and luminous hands/markers, but it has no
+lug-to-lug or lug-width measurement, timed lume observation, or case-fastener
+record. An importer page conflicts on thickness, and Rado's generic Easy Clip
+service page is not an exact-reference parts record. The older 47.7 mm span and
+20/21 mm width remain rejected against the current 41.5 x 11.7 mm, 87 g,
+150 m specification set. `lugToLugMm`, `lugWidthMm`, `lumeGrade`, and
+`attachmentType` remain null; no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
