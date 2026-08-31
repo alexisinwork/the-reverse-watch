@@ -38,7 +38,9 @@ phase.
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the
   configuration and dimensions but still supplies no numerical quartz rate
-  bound or period; keep it research-only and do not invoke the provider.
+  bound or period. A source-led exact-calibre search found only an unanswered
+  monthly-accuracy owner query; keep it research-only and do not invoke the
+  provider.
 - On 2026-08-29 the owner explicitly requested that the complete accumulated
   branch be pushed. The 28 existing local commits plus the handoff checkpoint
   were therefore delivered to `origin/main`, superseding the earlier

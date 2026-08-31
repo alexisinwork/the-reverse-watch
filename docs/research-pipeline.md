@@ -1316,7 +1316,9 @@ steel-bracelet configuration, 29.5 x 22 x 6.6 mm dimensions, 3 bar rating, and
 hours/minutes function. It adds no numerical rate tolerance or defined period;
 Cartier's accessible exact-region pages and movement overview remain
 insufficient for the accuracy contract. The candidate stays research-only and
-no provider request is queued. The next selection must continue to require an
+no provider request is queued. A source-led exact-calibre search also found only
+an unanswered monthly-accuracy owner query, so generic quartz performance is
+not promoted. The next selection must continue to require an
 exact or directly applicable path for every projected M1 gap.
 
 A source-led BOLDR Odyssey Horizon `ODY-TI-40-H-BL` review then closed its sole

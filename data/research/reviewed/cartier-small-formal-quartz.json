@@ -86,6 +86,11 @@
       "url": "https://mall.elady.com/item/title/CARTIER-Tank-Must-de-Cartier-Steel-Quartz-Ladies-Watch-WSTA0107-Never-Used-BF586200",
       "status": "validated_secondary",
       "note": "A separate exact-reference never-used record reports 80 g and a 17 cm wrist size, independently corroborating the approximately 79.3 g maximum-bracelet configuration."
+    },
+    {
+      "url": "https://www.reddit.com/r/Cartier/comments/15fmr4o",
+      "status": "rejected",
+      "note": "An exact Cartier 157 High Efficiency Quartz owner thread asks for monthly accuracy data but remains unanswered; it contributes no bound, observation, test method, or period. It is retained as an explicit negative search result rather than evidence for generic quartz accuracy. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -204,5 +209,5 @@
     }
   ],
   "missingM1Fields": ["accuracy"],
-  "note": "Keep as research-only. The additive non-round geometry contract now preserves Cartier's exact 29.5 x 22 mm dimensions without inventing a diameter and uses the evidenced overall length as wearing span. Exact current price, 16 mm width, approximately 79.3 g maximum-bracelet weight, QuickSwitch attachment, and the absence of lume are independently reviewed. A 2026-08-31 official Spain-region recheck independently corroborates the exact High Autonomy quartz configuration and dimensions but, like the accessible Malaysia page and Cartier's movement overview, publishes no numerical rate bound or defined accuracy period. Generic quartz or third-party calibre assumptions remain rejected, leaving accuracy as the sole M1 gap."
+  "note": "Keep as research-only. The additive non-round geometry contract now preserves Cartier's exact 29.5 x 22 mm dimensions without inventing a diameter and uses the evidenced overall length as wearing span. Exact current price, 16 mm width, approximately 79.3 g maximum-bracelet weight, QuickSwitch attachment, and the absence of lume are independently reviewed. A 2026-08-31 official Spain-region recheck independently corroborates the exact High Autonomy quartz configuration and dimensions but, like the accessible Malaysia page and Cartier's movement overview, publishes no numerical rate bound or defined accuracy period. A new source-led search found only an unanswered exact-calibre monthly-accuracy query; generic quartz or third-party calibre assumptions remain rejected, leaving accuracy as the sole M1 gap."
 }
