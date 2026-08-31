@@ -1,6 +1,6 @@
 # Phase 8 — Celebrity & Cinema Watch Discovery
 
-Status: **in progress — packet 8.1 discovery contract**
+Status: **in progress — packet 8.1 complete; packet 8.2 next**
 
 ## Purpose
 

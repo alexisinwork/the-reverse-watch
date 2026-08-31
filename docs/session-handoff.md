@@ -16,7 +16,7 @@ phase.
 - Phases 0–5 are complete at their current owner-approved boundaries; Phase 6
   is closed after its pilot, and Phase 7 is complete at its owner-approved
   production boundary.
-- Phase 8 packet 8.1 is in progress without celebrity/model research or
+- Phase 8 packet 8.1 is complete without celebrity/model research or
   catalogue population. Migrations `0034_add_discovery_claims.sql` and
   `0035_harden_discovery_trigger_grants.sql` are live, adding seven empty,
   RLS-enabled discovery evidence tables with no browser table, sequence, or

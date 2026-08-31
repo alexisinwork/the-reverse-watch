@@ -1474,7 +1474,7 @@ production surfaces.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
-Status: **in progress — packet 8.1 discovery contract**
+Status: **in progress — packet 8.1 complete; packet 8.2 next**
 
 Goal: use sourced public-figure and screen-watch research plus a lightweight
 archetype quiz as a discovery funnel into the existing deterministic diagnostic.
