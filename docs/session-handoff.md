@@ -1073,6 +1073,12 @@ exact White Classiness configuration and 34 x 4.3 x 38 mm case, but adds no
 numerical accuracy bound or lume evidence. Both M1 gaps remain null; no provider
 request was made.
 
+A further 2026-08-31 exact-reference search found an EAN-linked Ocarat
+authorized-retailer record for `SS08K102-S14`; it repeats the 34 mm quartz,
+3 bar, white-silicone configuration but supplies no numerical rate tolerance,
+observation period, or lume statement. Both M1 gaps remain null; no provider
+request was made.
+
 The next Nodus Sector II Field Titanium Shale `SEC-F-SHA` pre-screen leaves its
 sole M1 gap, `lumeGrade`, open. An exact reseller page corroborates the USD 625
 out-of-stock titanium-bracelet configuration and repeats the BGW9 Grade A
