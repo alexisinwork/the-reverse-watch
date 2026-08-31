@@ -1005,6 +1005,15 @@ numerical rate bound for the installed SW-SF quartz movement surfaced. The
 existing 12 g full-watch mass, 38 mm wearing span, and proprietary Swatch mount
 remain unchanged; no facts were promoted and no provider request was made.
 
+The next Nodus Sector II Field Titanium Shale `SEC-F-SHA` pre-screen leaves its
+sole M1 gap, `lumeGrade`, open. An exact reseller page corroborates the USD 625
+out-of-stock titanium-bracelet configuration and repeats the BGW9 Grade A
+material description, but supplies no timed charge/decay observation or
+repeatable performance class. The exact Nodus page and two hands-on reviews
+continue to establish the 100 g unsized-bracelet mass, regulated ±10 seconds
+per day, 47 mm span, quick-release interface, and no-date configuration; no
+fact was promoted and no provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,

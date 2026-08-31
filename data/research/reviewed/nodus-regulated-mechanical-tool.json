@@ -26,6 +26,11 @@
       "url": "https://twobrokewatchsnobs.com/nodus-sector-ii-field-titanium-review/",
       "status": "validated_secondary",
       "note": "A second exact-model hands-on review independently identifies the NH38 as a dedicated no-date caliber and reports only that the lume charges quickly. It does not supply a timed decay observation or shared comparison standard, so it corroborates no-date status but cannot close the lume-grade gate. Retrieved 2026-08-30 after a narrow Perplexity source-discovery pass."
+    },
+    {
+      "url": "https://shop.timeandtidewatches.com/products/sector-field-titanium-shale",
+      "status": "validated_secondary",
+      "note": "The exact SEC-F-SHA reseller page corroborates the USD 625 out-of-stock Shale titanium-bracelet configuration and repeats Nodus's BGW9 Grade A material description, but supplies no timed lume observation or repeatable performance class. It adds no accepted M1 fact. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -188,5 +193,5 @@
     }
   ],
   "missingM1Fields": ["lumeGrade"],
-  "note": "Keep as research-only. Direct review corrects the candidate identity to manufacturer SKU SEC-F-SHA and validates the homogeneous Shale titanium-bracelet configuration, including USD 625 US direct pricing, current but unavailable state, 38 x 11.7 x 47 mm geometry, 20 mm conventional lugs, 100 g full-unsized-bracelet mass, Nodus-regulated -10/+10 seconds per day, 100 m resistance, screw-down crown, sapphire, quick release, and explicit no-date status. A narrow Perplexity follow-up found two exact-model reports of rapid initial lume charging and immediate contrast, but neither supplies a controlled charge protocol, elapsed-time series, or repeatable comparison grade. BGW9 Grade A is a material specification rather than performance evidence, so lumeGrade remains null as the sole M1 gap."
+  "note": "Keep as research-only. Direct review corrects the candidate identity to manufacturer SKU SEC-F-SHA and validates the homogeneous Shale titanium-bracelet configuration, including USD 625 US direct pricing, current but unavailable state, 38 x 11.7 x 47 mm geometry, 20 mm conventional lugs, 100 g full-unsized-bracelet mass, Nodus-regulated -10/+10 seconds per day, 100 m resistance, screw-down crown, sapphire, quick release, and explicit no-date status. A narrow source-led follow-up found three exact-model sources describing BGW9 material or rapid initial lume charging, but none supplies a controlled charge protocol, elapsed-time series, or repeatable comparison grade. BGW9 Grade A is a material specification rather than performance evidence, so lumeGrade remains null as the sole M1 gap."
 }
