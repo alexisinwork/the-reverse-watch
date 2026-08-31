@@ -58,9 +58,10 @@ phase.
   `Server-Timing`, and security headers with a vendor-scoped CSP. The full
   desktop/mobile browser matrix remains green after allowing React Router's
   required inline hydration bootstrap and Beehiiv's Cloudflare challenge host.
-- Deployment `dpl_Hutab5bkN38Z5VgQH4ywKsvpNmAj` is `READY` from commit
-  `a4b520b`; a protected production response confirmed the middleware headers,
-  unique request ID, and measured server timing remotely.
+- Deployment `dpl_86WycvsLLf92JtPkHfuPj3QmyoYH` is `READY` from commit
+  `6948a5d`; the prior protected production response confirmed the middleware
+  headers, unique request ID, and measured server timing remotely, and this
+  deployment includes the explicit quiz policy slice below.
 - The quiz action now has an explicit rate-limit policy parser and a tested
   process-local fallback: both `QUIZ_RATE_LIMIT_MAX_REQUESTS` and
   `QUIZ_RATE_LIMIT_WINDOW_SECONDS` must be positive integers, partial or invalid
