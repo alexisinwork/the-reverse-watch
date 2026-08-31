@@ -179,6 +179,63 @@
   margin-top: 2rem;
 }
 
+.delivery-panel {
+  padding: 1.5rem;
+  margin-top: 3.5rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-base-raised);
+}
+
+.delivery-panel h2 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.35rem, 4vw, 2rem);
+}
+
+.delivery-panel > p {
+  max-width: 38rem;
+  color: var(--color-steel-text);
+  line-height: 1.55;
+}
+
+.delivery-form {
+  display: grid;
+  gap: 1rem;
+  max-width: 34rem;
+  margin-top: 1.5rem;
+}
+
+.delivery-opt-in {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: var(--color-steel-text);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.delivery-opt-in input {
+  flex: 0 0 auto;
+  margin-top: 0.2rem;
+  accent-color: var(--color-brass);
+}
+
+.delivery-status {
+  padding: 0.8rem 0.9rem;
+  margin: 1rem 0 0;
+  border-left: 2px solid var(--color-line);
+  font-size: 0.8rem;
+}
+
+.delivery-status--sent {
+  border-left-color: var(--color-brass);
+  color: var(--color-ink) !important;
+}
+
+.delivery-status--failed,
+.delivery-status--unavailable {
+  border-left-color: #ad6d55;
+}
+
 .button {
   min-height: 3rem;
   padding: 0.8rem 1.2rem;
@@ -469,6 +526,14 @@
   .quiz-actions form,
   .quiz-actions .button,
   .summary-actions .button {
+    width: 100%;
+  }
+
+  .delivery-panel {
+    padding: 1.25rem;
+  }
+
+  .delivery-form .button {
     width: 100%;
   }
 }

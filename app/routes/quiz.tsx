@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { data, Form, Link, useActionData, useNavigation } from "react-router";
+import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
 import { loadRecommendationData } from "../domain/catalogue.server";
@@ -44,6 +45,10 @@ import type {
 } from "../domain/recommendation";
 import { recommendWatches } from "../domain/recommendation";
 import {
+  parseBeehiivConfiguration,
+  subscribeToBeehiiv,
+} from "../domain/beehiiv.server";
+import {
   consumeRateLimit,
   parseRateLimitPolicy,
 } from "../domain/rate-limit.server";
@@ -67,8 +72,16 @@ type ActionResult =
       recommendation: RecommendationResult;
       catalogueOrigin: CatalogueOrigin;
       catalogueNotice: string;
+      subscription: SubscriptionResult;
     }
   | { ok: false; errors: string[] };
+
+type SubscriptionResult =
+  | { status: "not_requested"; message: string }
+  | { status: "sent"; message: string }
+  | { status: "unavailable" | "failed"; message: string };
+
+const emailSchema = z.string().trim().email().max(320);
 
 type CoreDraft = {
   budgetCurrency: CoreProfile["budgetCurrency"];
@@ -348,6 +361,28 @@ function issueMessages(error: { issues: { message: string }[] }) {
   return [...new Set(error.issues.map((issue) => issue.message))];
 }
 
+function parseEmailOptIn(formData: FormData) {
+  const emailValue = formData.get("email");
+  const optIn = formData.get("emailOptIn");
+  const hasEmail = typeof emailValue === "string" && emailValue.trim() !== "";
+
+  if (emailValue !== null && typeof emailValue !== "string") {
+    return { error: "The email field is invalid." } as const;
+  }
+  if (hasEmail && optIn !== "yes") {
+    return { error: "Email delivery requires explicit opt-in." } as const;
+  }
+  if (optIn === "yes" && !hasEmail) {
+    return { error: "Enter an email address to request delivery." } as const;
+  }
+  if (!hasEmail) return { email: null } as const;
+
+  const parsed = emailSchema.safeParse(emailValue);
+  return parsed.success
+    ? ({ email: parsed.data } as const)
+    : ({ error: "Enter a valid email address." } as const);
+}
+
 function rateLimitKey(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for");
   const address =
@@ -441,6 +476,7 @@ export async function action({ request }: Route.ActionArgs) {
   }
 
   const formData = await request.formData();
+  const emailOptIn = parseEmailOptIn(formData);
   const intent = formData.get("intent");
   const serialized = formData.get("profile");
 
@@ -485,17 +521,64 @@ export async function action({ request }: Route.ActionArgs) {
   const profile = normalizeProfile(parsed.data);
   const evaluatedAt = new Date().toISOString();
   const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
-  return data<ActionResult>({
-    ok: true,
-    intent,
-    profile,
-    recommendation: recommendWatches(parsed.data, catalogueLoad.catalogue, {
-      asOf: evaluatedAt,
-      hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
-    }),
-    catalogueOrigin: catalogueLoad.origin,
-    catalogueNotice: catalogueLoad.notice,
-  });
+  let subscription: SubscriptionResult = {
+    status: "not_requested",
+    message: "Results are available without email.",
+  };
+  if ("error" in emailOptIn) {
+    subscription = {
+      status: "failed",
+      message: emailOptIn.error ?? "Email delivery request was rejected.",
+    };
+  } else if (emailOptIn.email !== null) {
+    const beehiivConfiguration = parseBeehiivConfiguration();
+    if (!beehiivConfiguration.configured) {
+      subscription = {
+        status: "unavailable",
+        message:
+          beehiivConfiguration.reason === "invalid"
+            ? "Email delivery is misconfigured; your result remains available."
+            : "Email delivery is not configured; your result remains available.",
+      };
+    } else {
+      try {
+        await subscribeToBeehiiv(emailOptIn.email, beehiivConfiguration);
+        subscription = {
+          status: "sent",
+          message:
+            "Your opt-in was recorded. Beehiiv will send its configured welcome email.",
+        };
+      } catch (error) {
+        console.error(
+          JSON.stringify({
+            event: "beehiiv_subscription_error",
+            message: error instanceof Error ? error.message : "unknown error",
+          }),
+        );
+        subscription = {
+          status: "failed",
+          message:
+            "Email delivery failed; your result remains available. Please try again later.",
+        };
+      }
+    }
+  }
+
+  return data<ActionResult>(
+    {
+      ok: true,
+      intent,
+      profile,
+      recommendation: recommendWatches(parsed.data, catalogueLoad.catalogue, {
+        asOf: evaluatedAt,
+        hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
+      }),
+      catalogueOrigin: catalogueLoad.origin,
+      catalogueNotice: catalogueLoad.notice,
+      subscription,
+    },
+    "error" in emailOptIn ? { status: 400 } : undefined,
+  );
 }
 
 export function meta(): ReturnType<Route.MetaFunction> {
@@ -628,6 +711,9 @@ function ProfileSummary({
   recommendation,
   catalogueOrigin,
   catalogueNotice,
+  profilePayload,
+  intent,
+  subscription,
   onEdit,
   onRefine,
 }: {
@@ -635,6 +721,9 @@ function ProfileSummary({
   recommendation: RecommendationResult;
   catalogueOrigin: CatalogueOrigin;
   catalogueNotice: string;
+  profilePayload: string;
+  intent: "core" | "refine";
+  subscription: SubscriptionResult;
   onEdit: () => void;
   onRefine: () => void;
 }) {
@@ -718,6 +807,11 @@ function ProfileSummary({
         catalogueOrigin={catalogueOrigin}
         recommendation={recommendation}
       />
+      <DossierDelivery
+        intent={intent}
+        profilePayload={profilePayload}
+        subscription={subscription}
+      />
       <div className="summary-actions">
         <button
           className="button button--primary"
@@ -730,6 +824,59 @@ function ProfileSummary({
           Edit core answers
         </button>
       </div>
+    </section>
+  );
+}
+
+function DossierDelivery({
+  intent,
+  profilePayload,
+  subscription,
+}: {
+  intent: "core" | "refine";
+  profilePayload: string;
+  subscription: SubscriptionResult;
+}) {
+  return (
+    <section className="delivery-panel" aria-labelledby="delivery-heading">
+      <span className="eyebrow">Optional, explicit opt-in</span>
+      <h2 id="delivery-heading">Keep the dossier</h2>
+      <p>
+        Results stay visible here. If you want the newsletter welcome email,
+        enter an address and check the opt-in; email is not required to use the
+        diagnostic.
+      </p>
+      {subscription.status !== "sent" ? (
+        <Form className="delivery-form" method="post">
+          <input name="intent" type="hidden" value={intent} />
+          <input name="profile" type="hidden" value={profilePayload} />
+          <label className="input-stack" htmlFor="delivery-email">
+            <span>Email address</span>
+            <input
+              id="delivery-email"
+              name="email"
+              placeholder="you@example.com"
+              type="email"
+            />
+          </label>
+          <label className="delivery-opt-in">
+            <input name="emailOptIn" type="checkbox" value="yes" />
+            <span>
+              I explicitly opt in to receive the diagnostic follow-up through
+              The Reserve&apos;s Beehiiv publication.
+            </span>
+          </label>
+          <button className="button button--primary" type="submit">
+            Request email delivery
+          </button>
+        </Form>
+      ) : null}
+      <p
+        className={`delivery-status delivery-status--${subscription.status}`}
+        role={subscription.status === "failed" ? "alert" : "status"}
+      >
+        {subscription.message}
+      </p>
     </section>
   );
 }
@@ -1043,6 +1190,9 @@ export default function Quiz() {
     return () => window.clearTimeout(timer);
   }, [actionData]);
 
+  const resultData = actionData?.ok ? actionData : null;
+  const resultIntent = resultData?.intent;
+
   const coreParse = useMemo(
     () => coreProfileSchema.safeParse(buildCoreDraft(core)),
     [core],
@@ -1056,11 +1206,22 @@ export default function Quiz() {
     () =>
       JSON.stringify({
         core: buildCoreDraft(core),
-        ...(step >= CORE_STEP_COUNT
+        ...(step >= CORE_STEP_COUNT && step < SUMMARY_STEP
           ? { refinement: buildRefinementDraft(refinement) }
           : {}),
       }),
     [core, refinement, step],
+  );
+
+  const resultProfilePayload = useMemo(
+    () =>
+      JSON.stringify({
+        core: buildCoreDraft(core),
+        ...(resultIntent === "refine"
+          ? { refinement: buildRefinementDraft(refinement) }
+          : {}),
+      }),
+    [resultIntent, core, refinement],
   );
 
   const stepIsComplete =
@@ -1093,7 +1254,7 @@ export default function Quiz() {
     setStep((current) => Math.max(0, current - 1));
   };
 
-  if (step === SUMMARY_STEP && actionData?.ok) {
+  if (step === SUMMARY_STEP && resultData) {
     return (
       <main className="quiz-shell">
         <nav className="quiz-nav" aria-label="Diagnostic navigation">
@@ -1103,10 +1264,13 @@ export default function Quiz() {
         <ProfileSummary
           onEdit={() => setStep(0)}
           onRefine={() => setStep(CORE_STEP_COUNT)}
-          catalogueNotice={actionData.catalogueNotice}
-          catalogueOrigin={actionData.catalogueOrigin}
-          profile={actionData.profile}
-          recommendation={actionData.recommendation}
+          catalogueNotice={resultData.catalogueNotice}
+          catalogueOrigin={resultData.catalogueOrigin}
+          profile={resultData.profile}
+          profilePayload={resultProfilePayload}
+          recommendation={resultData.recommendation}
+          intent={resultData.intent}
+          subscription={resultData.subscription}
         />
       </main>
     );

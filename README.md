@@ -9,6 +9,11 @@ reviewed PostgreSQL reference-variant catalogue. The server validates the
 accepted-facts RPC response and visibly falls back to the reviewed bundled
 snapshot if the live catalogue or SQL filter contract fails.
 
+Results remain available without an email address. The result screen offers a
+separate, explicit opt-in; a valid request records a Beehiiv subscription when
+the server credentials are configured, while malformed consent or delivery
+failures remain visible without replacing the recommendation.
+
 ## Local development
 
 Requirements: Node.js 22.22 or newer and npm 12 or newer.

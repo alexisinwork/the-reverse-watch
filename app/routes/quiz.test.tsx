@@ -58,6 +58,25 @@ describe("progressive diagnostic", () => {
     expect(
       screen.getByText(/using the reviewed bundled snapshot/i),
     ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Keep the dossier" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("checkbox", { name: /explicitly opt in/i }),
+    ).toBeInTheDocument();
+    await user.type(
+      screen.getByLabelText("Email address"),
+      "reader@example.com",
+    );
+    await user.click(
+      screen.getByRole("button", { name: "Request email delivery" }),
+    );
+    expect(await screen.findByRole("alert")).toHaveTextContent(
+      /requires explicit opt-in/i,
+    );
+    expect(
+      screen.getByRole("heading", { name: "Keep the dossier" }),
+    ).toBeInTheDocument();
   });
 
   it("does not advance from a missing budget", () => {

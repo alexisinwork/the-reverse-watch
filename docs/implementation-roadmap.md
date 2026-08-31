@@ -1314,6 +1314,15 @@ yet. Deduplication and a traffic-derived quota remain open Phase 7 work; the
 local bucket is defense in depth and is not presented as a production-wide
 control.
 
+The result screen now keeps recommendations visible without an email and offers
+a separate, checked opt-in field. The server validates the address and consent
+before calling Beehiiv's subscription endpoint; missing credentials, provider
+errors, and malformed requests are surfaced in the result UI without exposing
+the address or hiding the recommendation. The current integration records the
+subscription and requests Beehiiv's configured welcome email. A custom,
+result-specific dossier body is not claimed until a delivery channel and
+template contract are chosen.
+
 Verification:
 
 - Full flow works from landing through core result, refinement, cited

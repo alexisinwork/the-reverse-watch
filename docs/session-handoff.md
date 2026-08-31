@@ -74,6 +74,13 @@ phase.
   are configured; partial credentials or Redis timeouts fail visibly with 503.
   The policy remains unset, and deduplication plus a traffic-derived quota are
   still pending, so the local bucket is not claimed as global enforcement.
+- The result screen now preserves access without email and exposes a separate,
+  checked email opt-in. Server-side validation rejects malformed addresses or
+  an address without consent; valid requests call Beehiiv when both credentials
+  exist, while missing configuration and provider failures remain visible and
+  do not hide the recommendation. The current API integration records the
+  subscription and requests Beehiiv's configured welcome email; a custom
+  result-specific dossier template remains intentionally unclaimed.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the
