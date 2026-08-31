@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "omega-mechanical-chronograph",
   "jobId": "7944f21d-58b3-452d-8e5e-292ba99697f9",
-  "reviewedAt": "2026-08-31T10:15:00Z",
+  "reviewedAt": "2026-08-31T10:46:44Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -76,6 +76,16 @@
       "url": "https://www.omegawatches.jp/customer-service/preserve-your-omega/bracelets-straps",
       "status": "validated_primary",
       "note": "Omega's current official bracelet-maintenance page recommends authorized partners for bracelet changes and supplies generic replacement guidance, but it does not identify the bracelet-to-case connector for exact reference 310.30.42.50.01.001 or provide any lume-performance observation. It therefore does not close either remaining M1 gap. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.belmontwatches.com/products/omega-speedmaster-moonwatch-310-30-42-50-01-001-hesalite-1",
+      "status": "validated_secondary",
+      "note": "This exact-reference pre-owned seller record labels the steel bracelet 'Spring Bar Micro' and repeats the 42 mm Hesalite configuration, but its stock and price fields are contradictory and it is not Omega service documentation. The label corroborates secondary spring-bar evidence without satisfying the manufacturer-corroboration rule; it supplies no controlled lume observation. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.reddit.com/r/OmegaWatches/comments/uyl9hv",
+      "status": "rejected",
+      "note": "An exact-reference owner thread identifies spring-bar parts for moving between the factory bracelet and NATO straps, but it is user discussion rather than public Omega product or service material and supplies no lume-performance test. It cannot close attachmentType under the acceptance policy. Retrieved 2026-08-31."
     },
     {
       "url": "https://everywatch.com/omega/31030425001001/watch-31827704",

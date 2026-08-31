@@ -1222,6 +1222,13 @@ without public Omega product/service corroboration. Exact-reference sources
 continue to establish Super-LumiNova presence without a controlled charge,
 decay, or repeatable performance comparison. No provider request was made.
 
+A further 2026-08-31 exact-reference search found a seller listing that labels
+the bracelet "Spring Bar Micro" and an owner thread naming spring-bar parts.
+Both are secondary and neither is public Omega product/service documentation;
+they corroborate the lead without satisfying the manufacturer-interface gate.
+No controlled lume observation surfaced, so both gaps remain null and no provider
+request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
