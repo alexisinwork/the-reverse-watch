@@ -1003,6 +1003,11 @@ existing exact 6/10 lume performance, dimensions, accuracy, and quick-release
 evidence remain valid; no full configured mass was promoted and no provider
 request was made.
 
+The 2026-08-31 exact-reference Vaer recheck found no admissible full-weight
+evidence: 46 g remains explicitly case-only, and the variant payload's raw
+weight values still lack units and wearable scope. `weightFullG` remains null;
+no provider request was made.
+
 The next Swatch Skin White Classiness `SS08K102-S14` pre-screen leaves its two
 M1 gaps, `accuracy` and `lumeGrade`, open. Search discovery found an exact
 authorized-retailer specification labelling luminescence absent and repeating

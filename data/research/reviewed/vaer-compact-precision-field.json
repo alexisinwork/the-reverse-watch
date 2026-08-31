@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "vaer-compact-precision-field",
   "jobId": "014c4a11-e52c-40d3-85aa-fc44e4513f94",
-  "reviewedAt": "2026-08-30T18:51:23Z",
+  "reviewedAt": "2026-08-31T10:13:42Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -15,7 +15,7 @@
     {
       "url": "https://www.vaerwatches.com/products/s3-calendar-field-watch?variant=41255028424838",
       "status": "validated_primary",
-      "note": "Vaer's exact live product route publishes the black 36 mm S3 Calendar Field with the selected black Silicone Ocean and khaki nylon strap bundle. Its technical panel independently supplies 316L steel, 36 x 8.4 x 43 mm geometry, 20 mm lug width, GM12 quartz, -10/+20 seconds per month, 100 m resistance, screw-down crown, sapphire, a date window, quick-release straps, and an exact-reference 6/10 lume-performance rating. It identifies 46 g specifically as case weight, not full worn weight."
+      "note": "Vaer's exact live product route publishes the black 36 mm S3 Calendar Field with the selected black Silicone Ocean and khaki nylon strap bundle. Its technical panel independently supplies 316L steel, 36 x 8.4 x 43 mm geometry, 20 mm lug width, GM12 quartz, -10/+20 seconds per month, 100 m resistance, screw-down crown, sapphire, a date window, quick-release straps, and an exact-reference 6/10 lume-performance rating. It identifies 46 g specifically as case weight, not full worn weight. Rechecked 2026-08-31; no configured watch-plus-selected-strap mass is published."
     },
     {
       "url": "https://www.vaerwatches.com/products/s3-calendar-field-watch.js",

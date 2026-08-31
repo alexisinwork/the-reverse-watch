@@ -1493,6 +1493,12 @@ existing exact 6/10 lume performance, dimensions, accuracy, and quick-release
 evidence remain valid; no full configured mass is promoted and no provider
 request is authorized.
 
+A 2026-08-31 exact-reference recheck of Vaer's live S3 Calendar Field page and
+variant payload found no configured watch-plus-selected-strap mass. The exact
+page still identifies 46 g as case-only weight, while the unexplained payload
+weight values have no unit or wearable scope. `weightFullG` remains null and
+the candidate stays research-only.
+
 The next Swatch Skin White Classiness `SS08K102-S14` pre-screen leaves its two
 M1 gaps, `accuracy` and `lumeGrade`, open. Search discovery found an exact
 authorized-retailer specification labelling luminescence absent and repeating
