@@ -1066,6 +1066,14 @@ weight, numerical rate bound, or lume statement. The existing 18 g/22 g mass
 conflict, qualitative quartz wording, and absence of photoluminescent evidence
 therefore remain unresolved. No provider request was made.
 
+The next Citizen Garrison `BM8180-03E` pre-screen leaves its sole M1 gap,
+`lumeGrade`, open. A 2026-08-31 exact-SKU search rechecked Citizen's luminous
+hands-and-markers specification and the existing Donatwald and owner reports,
+but found no controlled illuminance, charge duration, timed decay series, or
+repeatable comparison standard. The conflicting exact-reference observations
+therefore remain useful context rather than a catalogue grade. No provider
+request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,

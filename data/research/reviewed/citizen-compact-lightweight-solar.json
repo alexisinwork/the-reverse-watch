@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "citizen-compact-lightweight-solar",
   "jobId": "edaa380a-7c11-4db4-851a-f6423f1149eb",
-  "reviewedAt": "2026-08-30T07:39:54Z",
+  "reviewedAt": "2026-08-31T10:02:18Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -154,5 +154,5 @@
     }
   ],
   "missingM1Fields": ["lumeGrade"],
-  "note": "Keep as research-only. Citizen's exact-model parts lookup resolves the factory interface as spring_bar. The 2026-08-30 Perplexity-assisted source pass found an exact-reference report that dim hands can persist overnight while numerals fade quickly, but independent exact-SKU accounts still range from all-night readability to near-impossible dark reading without a controlled charge or timed decay series. A 2026-08-31 exact-reference owner discussion adds lamp/sunlight charging and an overnight legibility report, but still lacks controlled illuminance and elapsed measurements and does not resolve the conflict. Lume remains the only M1 gap."
+  "note": "Keep as research-only. Citizen's exact-model parts lookup resolves the factory interface as spring_bar. The 2026-08-30 Perplexity-assisted source pass found an exact-reference report that dim hands can persist overnight while numerals fade quickly, but independent exact-SKU accounts still range from all-night readability to near-impossible dark reading without a controlled charge or timed decay series. A 2026-08-31 exact-reference search rechecked the manufacturer, Donatwald review, and owner reports and found no additional controlled lume observation; the lamp/sunlight charging and overnight legibility report still lacks controlled illuminance and elapsed measurements and does not resolve the conflict. Lume remains the only M1 gap."
 }
