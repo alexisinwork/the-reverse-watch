@@ -1241,9 +1241,10 @@ reference, B023 Eco-Drive, monthly ±15-second rate, one-year reserve, 18 x
 rectangular length, 13 mm interface width, and 3 atm specification. Citizen's
 57 g primary value supersedes the secondary 56 g claim. Sakura's simultaneous
 Out of stock and Available 102 controls normalize availability to unknown.
-Rectangular geometry is kept as length and width, while no source proves the
-case-to-bracelet interface or a qualifying lume grade. No catalogue row is
-admitted. The ignored provider ledger is now 69 attempts (41 succeeded, 28
+Rectangular geometry is kept as length and width, while the exact Naturum
+record maps the case-side bracelet connection to `spring_bar`; no source proves
+a qualifying lume grade. No catalogue row is admitted. The ignored provider
+ledger is now 69 attempts (41 succeeded, 28
 failed) across 37 target IDs and USD 0.59193 recorded cost; the default queue is
 empty again.
 

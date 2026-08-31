@@ -168,8 +168,9 @@ phase.
   18 x 6 mm B023 solar reference, a 27 mm rectangular length, 13 mm interface
   width, ±15-seconds-per-month rate, one-year reserve, 30 m resistance, and a
   USD 102 new Sakura offer whose contradictory stock controls normalize to
-  unknown. The rectangular geometry is not collapsed into a diameter; the
-  case-to-bracelet interface and qualifying lume grade remain null. The
+  unknown. The rectangular geometry is not collapsed into a diameter; an exact
+  Naturum record resolves the case-side bracelet connection to `spring_bar`,
+  while a qualifying lume grade remains null. The
   provider ledger is now 69 attempts (41 succeeded, 28 failed) across 37 target
   IDs and USD 0.59193 recorded cost. The default queue is empty.
 
