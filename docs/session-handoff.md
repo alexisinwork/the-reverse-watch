@@ -113,6 +113,12 @@ phase.
   added. The current Vercel Web Analytics window reports zero visitors and
   pageviews, and runtime logs contain one privacy-safe quiz evaluation event,
   so no production conversion rate or quota is inferred.
+- The latest production deployment `dpl_Ht5ugMauMSo1bQVZexYGfKjvKdgA` is
+  `READY` from commit `643e5fe`; its `/favicon.svg` asset returns 200 and its
+  deployment-scoped error-level runtime-log query is empty. Protected
+  `/quiz` and `/health` share-link requests remain SSO-gated in the connector,
+  so local browser coverage and the deployment asset check are the direct
+  evidence for this increment.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

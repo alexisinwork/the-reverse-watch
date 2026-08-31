@@ -33,17 +33,15 @@ The application runs at `http://localhost:5173`. The diagnostic is available at
 
 ## Verification
 
-Run the fast development gate while the deterministic core is in progress:
+Run the fast development gate for every change:
 
 ```bash
 npm run check
 ```
 
 This checks formatting, lint rules, strict types, unit tests, and the production
-build. Browser installation, Playwright/E2E execution, and long-running
-background verification are intentionally deferred until Phase 7, after the
-core catalogue and deterministic recommendation engine are complete. The
-deferred suite is kept in the repository for that integration phase:
+build. The Phase 7 integration suite covers both desktop and mobile Chromium;
+install its browser once, then run it with the local server:
 
 ```bash
 npx playwright install chromium
