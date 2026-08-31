@@ -21,6 +21,21 @@
       "url": "https://www.patek.com/en/manufacture/a-story-of-independence/the-patek-philippe-seal",
       "status": "validated_primary",
       "note": "Patek Philippe states that every completed mechanical watch bearing its Seal, regardless of complexity, is regulated to -1/+2 seconds per 24 hours. The exact product page identifies this watch as Patek Philippe Seal, so the finished-watch standard applies without relying on a family-level estimate."
+    },
+    {
+      "url": "https://www.watchxnyc.com/products/patek-philippe-black-glazed-enamel-dial-platinum-case-black-leather-44-8-mm-6301p-001",
+      "status": "validated_secondary",
+      "note": "The independent dealer's exact-reference listing exposes a $1,963,500 USD offer, Add to Cart, NYC pickup, and an unworn condition. The dealer explicitly states it is not Patek-authorized, so this is retained as a secondary-market commercial snapshot rather than a manufacturer retail offer."
+    },
+    {
+      "url": "https://kinsmen.vip/products/grand-complications-ref-6301p-001",
+      "status": "validated_secondary",
+      "note": "The exact-reference Hong Kong dealer listing independently identifies the platinum 6301P-001 with black alligator strap and explicitly reports a 22 mm lug width. It is out of stock and supplies no price; the measurement is retained as secondary physical evidence."
+    },
+    {
+      "url": "https://delugs.com/pages/straps-patek-philippe-grande-and-petite-sonnerie-minute-repeater-6301p-001",
+      "status": "validated_secondary",
+      "note": "The exact-reference strap specialist independently reports 22 mm lug width and standard drilled lugs with spring bars. Its page contains a contradictory 'Black Dial Steel' label for this platinum reference and is not manufacturer service material, so it corroborates the secondary lug-width lead but does not satisfy the manufacturer-corroboration rule for attachmentType."
     }
   ],
   "verifiedProvisionalFields": [
@@ -51,15 +66,39 @@
     },
     {
       "fieldName": "price.amountMinor",
-      "value": 164992300,
-      "sourceUrl": "https://www.patek.com/en/collection/grand-complications/6301P-001",
-      "note": "The exact official page displays $1,649,923; this verifies the numeric display but not a complete homogeneous market offer."
+      "value": 196350000,
+      "sourceUrl": "https://www.watchxnyc.com/products/patek-philippe-black-glazed-enamel-dial-platinum-case-black-leather-44-8-mm-6301p-001",
+      "note": "The exact independent dealer's active U.S. listing displays $1,963,500; the manufacturer page's separate displayed figure is retained as a source conflict rather than blended into this homogeneous secondary-market snapshot."
     },
     {
       "fieldName": "price.currency",
       "value": "USD",
-      "sourceUrl": "https://www.patek.com/en/collection/grand-complications/6301P-001",
-      "note": "The exact official page labels the displayed price in U.S. dollars, while leaving market country and offer context unstated."
+      "sourceUrl": "https://www.watchxnyc.com/products/patek-philippe-black-glazed-enamel-dial-platinum-case-black-leather-44-8-mm-6301p-001",
+      "note": "The exact independent listing denominates the selected secondary-market offer in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.watchxnyc.com/products/patek-philippe-black-glazed-enamel-dial-platinum-case-black-leather-44-8-mm-6301p-001",
+      "note": "The exact seller offers pickup in NYC and Houston and is operating in the U.S. market."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "in_stock",
+      "sourceUrl": "https://www.watchxnyc.com/products/patek-philippe-black-glazed-enamel-dial-platinum-case-black-leather-44-8-mm-6301p-001",
+      "note": "The exact page exposes Add to Cart and pickup controls for the listing; its independent-dealer status is retained separately from availability."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["secondary_market"],
+      "sourceUrl": "https://www.watchxnyc.com/products/patek-philippe-black-glazed-enamel-dial-platinum-case-black-leather-44-8-mm-6301p-001",
+      "note": "The seller explicitly states it is an independent pre-owned luxury watch dealer and not an authorized Patek Philippe retailer."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.watchxnyc.com/products/patek-philippe-black-glazed-enamel-dial-platinum-case-black-leather-44-8-mm-6301p-001",
+      "note": "The exact listing states Unworn; this is normalized to the catalogue's new condition while retaining the secondary-market channel."
     },
     {
       "fieldName": "movement.accuracyLowerSeconds",
@@ -80,6 +119,12 @@
       "note": "Patek states its Seal rate standard per 24-hour period."
     },
     {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 22,
+      "sourceUrl": "https://kinsmen.vip/products/grand-complications-ref-6301p-001",
+      "note": "The exact-reference dealer explicitly reports a 22 mm lug width; Delugs independently reports the same width."
+    },
+    {
       "fieldName": "complications",
       "value": ["power_reserve"],
       "sourceUrl": "https://www.patek.com/en/collection/grand-complications/6301P-001",
@@ -87,10 +132,6 @@
     }
   ],
   "rejectedProvisionalFields": [
-    {
-      "fieldName": "price.marketCountry",
-      "reason": "A dollar-denominated manufacturer display does not establish a market country, and the exact page does not state availability, channel, or condition for a homogeneous retail snapshot."
-    },
     {
       "fieldName": "operation.crystal",
       "reason": "The exact page specifies interchangeable sapphire-crystal and solid case backs but does not explicitly identify the front crystal material."
@@ -113,12 +154,10 @@
     }
   ],
   "missingM1Fields": [
-    "price",
     "lugToLugMm",
-    "lugWidthMm",
     "weightFullG",
     "lumeGrade",
     "attachmentType"
   ],
-  "note": "Keep as research-only. Exact primary sources establish a current high-complication identity, core specifications, and the applicable Patek Philippe Seal accuracy standard, but the displayed USD figure lacks a complete market and availability snapshot and five physical or ownership fields remain unresolved."
+  "note": "Keep as research-only. Exact primary sources establish a current high-complication identity, core specifications, and the applicable Patek Philippe Seal accuracy standard. An exact independent dealer now supplies a homogeneous secondary-market USD 1,963,500 unworn offer with active Add to Cart and U.S. pickup, and two exact-reference strap/dealer records converge on a 22 mm lug width. No exact lug-to-lug span, configured full-watch weight, controlled lume performance, or manufacturer-corroborated attachment mechanism is available; those gaps remain null."
 }

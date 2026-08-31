@@ -914,6 +914,18 @@ assembled full-watch mass or numerical rate tolerance. The exact primary
 dossier and this secondary review therefore leave `weightFullG` and `accuracy`
 null; no provider request was made.
 
+The next Patek Philippe Grande Sonnerie `6301P-001` pre-screen partially
+resolves the review without provider spend. An exact independent U.S. dealer
+lists the platinum reference at USD 1,963,500, unworn, with Add to Cart and
+U.S. pickup; because it explicitly disclaims Patek authorization, the snapshot
+is classified `secondary_market`. An exact Hong Kong dealer and exact-reference
+strap specialist converge on a 22 mm lug width, but the specialist's
+spring-bar claim remains secondary and lacks Patek service corroboration. No
+exact lug-to-lug span, packaging-free configured weight, controlled lume
+performance, or manufacturer-corroborated attachment mechanism surfaced. Price
+and lug width are now resolved in review; those four physical/ownership gaps
+remain null and no provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
