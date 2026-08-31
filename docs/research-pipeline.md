@@ -1576,6 +1576,14 @@ convergent exact-reference measurement, thickness stays null. Lepage also gives
 no whole-watch lume statement, so no grade is promoted and no provider request
 is authorized.
 
+The next Bulova Icon Precisionist Chronograph `98B316` pre-screen remains open
+for `weightFullG` and `lumeGrade`. A newly retrieved exact-reference retailer
+record reports 229 g and 12.40 mm thickness, conflicting with the exact
+current dimensional set at 17.5 mm and the existing 270-276 g hands-on records;
+its luminous-hands/numerals prose has no charge or timed-decay protocol. The
+record is rejected as an unscoped or mismatched configuration, so neither
+remaining field is promoted and no provider request is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
