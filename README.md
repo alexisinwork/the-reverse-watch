@@ -13,6 +13,8 @@ Results remain available without an email address. The result screen offers a
 separate, explicit opt-in; a valid request records a Beehiiv subscription when
 the server credentials are configured, while malformed consent or delivery
 failures remain visible without replacing the recommendation.
+The server also emits aggregate `quiz_funnel` events for result and subscription
+measurement without logging profile answers or email addresses.
 
 ## Local development
 

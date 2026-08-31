@@ -3,6 +3,7 @@ import { data, Form, Link, useActionData, useNavigation } from "react-router";
 import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
+import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { loadRecommendationData } from "../domain/catalogue.server";
 import type { CatalogueOrigin } from "../domain/catalogue.server";
 import {
@@ -521,6 +522,14 @@ export async function action({ request }: Route.ActionArgs) {
   const profile = normalizeProfile(parsed.data);
   const evaluatedAt = new Date().toISOString();
   const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
+  const recommendation = recommendWatches(
+    parsed.data,
+    catalogueLoad.catalogue,
+    {
+      asOf: evaluatedAt,
+      hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
+    },
+  );
   let subscription: SubscriptionResult = {
     status: "not_requested",
     message: "Results are available without email.",
@@ -564,15 +573,29 @@ export async function action({ request }: Route.ActionArgs) {
     }
   }
 
+  recordQuizAnalyticsEvent({
+    name: "evaluation",
+    intent,
+    catalogueOrigin: catalogueLoad.origin,
+    recommendationCount: recommendation.recommendations.length,
+    verificationCount: recommendation.verificationRequired.length,
+    whyNotCount: recommendation.whyNot.length,
+  });
+  if (subscription.status !== "not_requested") {
+    recordQuizAnalyticsEvent({
+      name: "subscription",
+      intent,
+      catalogueOrigin: catalogueLoad.origin,
+      status: subscription.status,
+    });
+  }
+
   return data<ActionResult>(
     {
       ok: true,
       intent,
       profile,
-      recommendation: recommendWatches(parsed.data, catalogueLoad.catalogue, {
-        asOf: evaluatedAt,
-        hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
-      }),
+      recommendation,
       catalogueOrigin: catalogueLoad.origin,
       catalogueNotice: catalogueLoad.notice,
       subscription,

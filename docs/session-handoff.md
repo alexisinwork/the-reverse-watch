@@ -81,6 +81,11 @@ phase.
   do not hide the recommendation. The current API integration records the
   subscription and requests Beehiiv's configured welcome email; a custom
   result-specific dossier template remains intentionally unclaimed.
+- Quiz actions now emit privacy-safe `quiz_funnel` runtime events containing
+  only intent, catalogue origin, result counts, and subscription status. No
+  profile answers or addresses are logged. This supplies the initial Vercel-log
+  evaluation surface; conversion conclusions remain pending until production
+  traffic provides enough observations.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

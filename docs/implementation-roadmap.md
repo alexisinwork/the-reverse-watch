@@ -1323,6 +1323,13 @@ subscription and requests Beehiiv's configured welcome email. A custom,
 result-specific dossier body is not claimed until a delivery channel and
 template contract are chosen.
 
+Each accepted quiz action also emits a privacy-safe `quiz_funnel` runtime event
+with intent, catalogue origin, result counts, and subscription status. No
+profile answers or email addresses enter the event. Vercel runtime logs provide
+the initial queryable evaluation surface; a conversion dashboard and any
+traffic-derived conclusions remain pending until the deployment has enough
+observations.
+
 Verification:
 
 - Full flow works from landing through core result, refinement, cited
