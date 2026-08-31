@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-08-31T08:08:53.570Z",
+  "updatedAt": "2026-08-31T08:25:00.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -940,6 +940,37 @@
             ]
           },
           "coverageRationale": "The accepted diver lacks verified lug-to-lug; research a compact, fully measured precision row."
+        },
+        {
+          "id": "citizen-forma-fra36-2432",
+          "referenceLabel": "FORMA Eco-Drive FRA36-2432 stainless bracelet",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ],
+            "weightLimits": [
+              "under_80_g"
+            ]
+          },
+          "coverageRationale": "Exact Citizen Japan and authorized-retailer records identify the tiny 18 x 6 mm, 57 g B023 Eco-Drive reference at ¥22,000; it directly targets four under-diversified under-$300, sub-6.25-inch, zero-maintenance, monthly-precision, time-only cells. The official route is currently out of stock, so the provider must qualify a current exact new-market offer rather than infer availability from catalogue presence."
         }
       ]
     },

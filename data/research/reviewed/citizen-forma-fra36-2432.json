@@ -1,0 +1,221 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-forma-fra36-2432",
+  "jobId": "1e807409-1a9c-4eac-9b6f-f4afea08291a",
+  "reviewedAt": "2026-08-31T08:25:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "FORMA",
+    "referenceCode": "FRA36-2432",
+    "variantName": "Citizen Collection FORMA Eco-Drive, white rectangular dial, stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://citizen.jp/shop/collection/g/g362432/",
+      "status": "validated_primary",
+      "note": "Citizen Japan's exact product page identifies FRA36-2432, Citizen Collection, B023 Eco-Drive, ±15 seconds per month, approximately one year of reserve, 57 g, 18 mm case width, 6.0 mm thickness, stainless steel, crystal glass, daily-life water resistance, and the stainless three-fold push bracelet. It marks the product out of stock and does not publish a rectangular case length, conventional diameter, or strap-to-case interface."
+    },
+    {
+      "url": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "status": "validated_secondary",
+      "note": "Sakura Watches' exact-reference page exposes a USD 102 offer, new/genuine condition, worldwide shipping from Japan, Add to Cart, and Available 102 while also displaying an Out of stock banner; availability is therefore normalized to unknown. Its exact product specification corroborates B023, 18 x 6 mm, stainless steel, 30 m, and mineral glass."
+    },
+    {
+      "url": "https://item.rakuten.co.jp/beeight/fra36-2432/",
+      "status": "validated_secondary",
+      "note": "Infinitown's exact-reference listing reports approximately 27 x 18 x 6 mm, 13 mm lug width, approximately 56 g, stainless pin-type bracelet, 3 atm, ±15 seconds per month, and approximately 12 months of reserve. Its weight conflicts with Citizen Japan's exact 57 g value, so the manufacturer value is retained."
+    },
+    {
+      "url": "https://item.rakuten.co.jp/nopple/fra36-2432/",
+      "status": "validated_secondary",
+      "note": "The exact Nanaple listing corroborates the 18 mm width, 57 g mass, Eco-Drive operation, 12-month reserve, time-only functions, and the supplied stainless bracelet; its limited-quantity copy does not establish a normalized availability enum."
+    },
+    {
+      "url": "https://www.amazon.co.jp/CITIZEN-FORMA-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%9E-Eco-Drive-FRA36-2432/dp/B000RDH76K",
+      "status": "rejected",
+      "note": "The provider supplied an exact Amazon route for rate, reserve, and weight, but the retrieved URL contains malformed text and is not needed: Citizen Japan and exact retailer records independently establish those facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "productionStatus",
+    "price.amountMinor",
+    "price.currency",
+    "price.marketCountry",
+    "price.availability",
+    "price.channels",
+    "price.conditions",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "The exact reference remains a published Citizen Collection product; its out-of-stock state is represented separately in price availability."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 10200,
+      "sourceUrl": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "note": "Sakura Watches displays the exact-reference offer at USD 102."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "note": "The exact offer is denominated in U.S. dollars."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "JP",
+      "sourceUrl": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "note": "Sakura Watches identifies its Tokyo address and worldwide shipping from Japan; the reviewed seller market is normalized to Japan."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unknown",
+      "sourceUrl": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "note": "The exact page simultaneously displays Out of stock and Available 102/Add to Cart, so no in-stock or unavailable enum is safe."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["grey_market"],
+      "sourceUrl": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "note": "The exact online retailer offer does not establish Citizen-authorized-dealer status."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "note": "The exact retailer states 100% new, genuine and original, with original box, manual, and Japanese warranty card."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 27,
+      "sourceUrl": "https://item.rakuten.co.jp/beeight/fra36-2432/",
+      "note": "The exact rectangular listing reports approximately 27 x 18 x 6 mm; 27 mm is stored as case length."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 13,
+      "sourceUrl": "https://item.rakuten.co.jp/beeight/fra36-2432/",
+      "note": "The exact retailer labels the conventional bracelet interface width as approximately 13 mm."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 57,
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "Citizen Japan's exact product page reports 57 g; this supersedes the conflicting exact-retailer 56 g value."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "quartz",
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "Eco-Drive is light-powered quartz operation."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "B023",
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "Citizen Japan identifies caliber B023."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 8760,
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "The stated approximately one-year full-charge duration is normalized to 8,760 hours using a 365-day year."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -15,
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "Citizen states average monthly accuracy of ±15 seconds."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 15,
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "Citizen states average monthly accuracy of ±15 seconds."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 30,
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "The exact manufacturer specification is per month, normalized to 30 days."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "note": "The exact retailer states 30 m, corroborating Citizen's daily-life water-resistance specification."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "mineral",
+      "sourceUrl": "https://www.sakurawatches.com/citizen-collection-fra36-2432",
+      "note": "Sakura's exact specification calls the crystal mineral glass; Citizen's Japanese page calls it crystal glass."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "The exact specification lists time-setting and charging functions but no calendar display."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://citizen.jp/shop/collection/g/g362432/",
+      "note": "Charge warning, overcharge prevention, and time-setting notification are operating protections rather than supported catalogue complications."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "reason": "The exact watch has a rectangular 27 x 18 mm case; a circular diameter would invent a value."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "reason": "Conventional lug-to-lug is not published for the rectangular bracelet case; the exact 27 mm case length is retained instead."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The provider's exact-retailer 56 g value conflicts with Citizen Japan's exact 57 g value; the manufacturer value is retained."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "Bracelet, three-fold clasp, and pin-type bracelet-link language describe supplied hardware or link construction, not the case-to-bracelet attachment interface."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "reason": "The exact sources do not establish a repeatable lume presence or performance grade."
+    },
+    {
+      "fieldName": "complications",
+      "reason": "The provider's charging and time-setting feature labels are not catalogue complication enums and are normalized to an empty complication list."
+    }
+  ],
+  "missingM1Fields": ["lumeGrade", "attachmentType"],
+  "note": "Keep as research-only. Citizen Japan and exact retailer pages establish the tiny rectangular 27 x 18 x 6 mm, 57 g B023 Eco-Drive configuration, ±15-seconds-per-month accuracy, 30 m resistance, mineral/crystal glass, and time-only display. The exact Sakura offer is USD 102 and new but has contradictory Out of stock and Available 102 states, so availability is unknown. Rectangular geometry is preserved as case length and width rather than a diameter. The case-to-bracelet interface and a qualifying lume grade remain unresolved."
+}

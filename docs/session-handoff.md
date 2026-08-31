@@ -162,8 +162,16 @@ phase.
   No numerical accuracy bound or qualifying lume grade was found, so no row is
   promoted. The provider ledger now has 67 attempts (41 succeeded, 26 failed)
   across 36 target IDs and USD 0.59193 recorded cost. The default queue is
-  empty; the next session must begin with a fresh source-led exact-reference
-  coverage pre-screen before any provider call.
+  empty again. Citizen FORMA Eco-Drive `FRA36-2432` is now reviewed
+  `needs_more_evidence`: both provider attempts failed strict normalization, but
+  the raw responses and independent exact-source review establish the 57 g,
+  18 x 6 mm B023 solar reference, a 27 mm rectangular length, 13 mm interface
+  width, ±15-seconds-per-month rate, one-year reserve, 30 m resistance, and a
+  USD 102 new Sakura offer whose contradictory stock controls normalize to
+  unknown. The rectangular geometry is not collapsed into a diameter; the
+  case-to-bracelet interface and qualifying lume grade remain null. The
+  provider ledger is now 69 attempts (41 succeeded, 28 failed) across 37 target
+  IDs and USD 0.59193 recorded cost. The default queue is empty.
 
 ## Accepted 2026-08-28 audit decisions
 

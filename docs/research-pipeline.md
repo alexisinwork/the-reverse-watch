@@ -1215,6 +1215,38 @@ grade was found, so no catalogue row is admitted. The ignored provider ledger
 is now 67 attempts (41 succeeded, 26 failed) across 36 target IDs and USD
 0.59193 recorded cost; the default queue is empty again.
 
+A 2026-08-31 source-led pre-screen adds one bounded planned Citizen reference:
+FORMA Eco-Drive `FRA36-2432` on its homogeneous stainless-steel bracelet.
+Citizen Japan's exact product route reports the B023 light-powered movement,
+plus or minus 15 seconds per month, approximately one year of reserve, 57 g,
+18 x 6 mm case dimensions, crystal glass, and daily-life water resistance at
+¥22,000, but currently marks the route out of stock. The exact Nanaple
+authorized-retailer listing reports the same reference, approximately
+27 x 18 x 6 mm geometry, 56 g, 3 atm, and a current reduced-price offer with
+limited stock. The measured coverage planner scores this target at 670 and
+identifies four under-diversified under-$300, sub-6.25-inch, zero-maintenance,
+monthly-precision, time-only cells. The planned provider
+request must reconcile the one-dimensional official case-size publication,
+qualify current new-market availability, and establish the bracelet interface
+without promoting the out-of-stock official snapshot; no pre-screened fact is
+accepted by this planning record.
+
+The bounded Citizen `FRA36-2432` pass remains `needs_more_evidence`. Both
+Perplexity attempts failed strict normalization (first on contradictory
+resolved/unresolved conditions, retry on contradictory availability), so the
+raw responses remain ignored and immutable while this review uses independently
+retrieved exact sources. Citizen Japan and Sakura Watches establish the exact
+reference, B023 Eco-Drive, monthly ±15-second rate, one-year reserve, 18 x
+6 mm published case, and a USD 102 new offer; Infinitown adds the 27 mm
+rectangular length, 13 mm interface width, and 3 atm specification. Citizen's
+57 g primary value supersedes the secondary 56 g claim. Sakura's simultaneous
+Out of stock and Available 102 controls normalize availability to unknown.
+Rectangular geometry is kept as length and width, while no source proves the
+case-to-bracelet interface or a qualifying lume grade. No catalogue row is
+admitted. The ignored provider ledger is now 69 attempts (41 succeeded, 28
+failed) across 37 target IDs and USD 0.59193 recorded cost; the default queue is
+empty again.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
