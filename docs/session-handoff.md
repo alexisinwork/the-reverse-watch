@@ -1093,6 +1093,12 @@ Grade A remains a material description, and the available rapid-charging
 comments have no timed decay protocol; `lumeGrade` remains null and no provider
 request was made.
 
+A further 2026-08-31 exact-reference aggregator check labels the Shale record
+luminous but simultaneously misstates the current case thickness, movement
+variant, and no-date display. Its green-lume label has no charge protocol,
+elapsed-decay series, or repeatable comparison; `lumeGrade` remains null and no
+provider request was made.
+
 The next Citizen FORMA `FRA36-2432` pre-screen leaves its sole M1 gap,
 `lumeGrade`, open. A Japanese authorized-retailer recheck independently
 repeats the exact B023, 57 g, 18 x 6 mm, ±15-seconds-per-month, and stainless

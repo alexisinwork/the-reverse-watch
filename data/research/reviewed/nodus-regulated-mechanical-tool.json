@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "nodus-regulated-mechanical-tool",
   "jobId": "330c79e8-1b5b-4eb4-893f-d64b910caf5f",
-  "reviewedAt": "2026-08-31T10:19:44Z",
+  "reviewedAt": "2026-08-31T10:39:08Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -31,6 +31,11 @@
       "url": "https://shop.timeandtidewatches.com/products/sector-field-titanium-shale",
       "status": "validated_secondary",
       "note": "The exact SEC-F-SHA reseller page corroborates the USD 625 out-of-stock Shale titanium-bracelet configuration and repeats Nodus's BGW9 Grade A material description, but supplies no timed lume observation or repeatable performance class. It adds no accepted M1 fact. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://watchpolice.com/brands/nodus/sector-ii-field-titanium-shale",
+      "status": "rejected",
+      "note": "This exact-reference aggregator labels the Shale record luminous and lists a green lume color, but it also misstates the current 38 x 11.7 x 47 mm no-date configuration as 11 mm thick with a date complication and NH38ORIGIN. Its lume labels provide no charge protocol, elapsed decay, or repeatable performance comparison, so they cannot close lumeGrade. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
