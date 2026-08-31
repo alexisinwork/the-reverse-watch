@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "bulova-attainable-precision-quartz-chronograph",
   "jobId": "cb07bdfc-e4a2-4c93-93b1-a842212b07e2",
-  "reviewedAt": "2026-08-31T10:08:00Z",
+  "reviewedAt": "2026-08-31T10:32:12Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -86,6 +86,11 @@
       "url": "https://exactaargentina.com/reloj/bulova/98b316/",
       "status": "rejected",
       "note": "The exact-reference retailer record reports 229 g and 12.40 mm thickness while the exact primary/secondary dimensional set converges on 17.5 mm thickness and the hands-on weight set spans 270-276 g. Its luminous-hands/numerals prose has no charge or timed-decay protocol. The conflicting dimensions and unscoped mass cannot be merged into the reviewed configuration. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://demcrumbliesreviews.com/bulova-precisionist-chronograph-98b316-review-a-beautifully-designed-accurate-watch/",
+      "status": "rejected",
+      "note": "This exact-reference owner video/article reports approximately 262 g with all links, 251 g after removing three links, and roughly 53 mm lug-to-lug, while the independent dimensional set converges on 54.5-54.6 mm and the full-watch records span 270-276 g. Its description of very weak lume is subjective and supplies no charge or timed-decay protocol. The conflicting fit and unscoped mass cannot be merged into the reviewed configuration. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [

@@ -1486,6 +1486,13 @@ resolved diameter, lug width, annual Precisionist accuracy, and spring-bar
 interface. `weightFullG` and `lumeGrade` remain null; no provider request is
 authorized.
 
+A 2026-08-31 exact-reference owner review adds another conflicting measurement
+set: approximately 262 g with all bracelet links, 251 g after removing three,
+and roughly 53 mm lug-to-lug. The independent dimensional records converge on
+54.5-54.6 mm, while full-watch records span 270-276 g; its very weak-lume
+description is subjective and untimed. No value is promoted, and both review
+gaps remain null.
+
 The next Cartier Tank Must Small `WSTA0107` pre-screen leaves its sole M1 gap,
 `accuracy`, open. An exact-reference Watchfinder listing confirms that a
 Cartier-certified service centre inspected accuracy and functionality, but it
