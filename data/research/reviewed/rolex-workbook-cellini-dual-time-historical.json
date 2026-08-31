@@ -1,0 +1,42 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-cellini-dual-time-historical",
+  "jobId": "bb87d40e-2b10-4115-aea7-1762a04c55ed",
+  "reviewedAt": "2026-08-31T17:17:58.140Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Cellini Dual Time",
+    "referenceCode": "50525-0015",
+    "variantName": "Cellini Dual Time Everose / Brown / Alligator Brown"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_dual-time_english_2019.pdf",
+      "status": "fetch_blocked",
+      "note": "Independent retrieval returned HTTP 200; exact reference 50525-0015 was not detectable. Identity remains provisional."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "identity",
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

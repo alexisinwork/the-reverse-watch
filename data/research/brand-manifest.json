@@ -2,22 +2,22 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-08-31T08:25:00.000Z",
+  "updatedAt": "2026-08-31T17:43:50.814Z",
   "brands": [
     {
       "slug": "rolex",
       "name": "Rolex",
-      "priority": "P2",
-      "manifestRationale": "Keep material variants separate and avoid expanding benchmark rows before thin coverage gaps.",
-      "dossierState": "needs_review",
+      "priority": "P1",
+      "manifestRationale": "Owner-directed exact-reference research for every Rolex family/size row in the 2026-08-31 workbook intake; material and commercial variants remain separate.",
+      "dossierState": "researching",
       "knowledgeDossier": {
         "sourceFile": "data/knowledge base/The Reserve — база знаний, 200 брендов/watch_kb/rolex.md",
         "sourceSnapshotDate": "2026-08-28",
-        "sha256": "10f700122156a90c74fe87bc1fd56ad0a708817dc63595b9b95d658860964704",
+        "sha256": "371965a8b146ae0e2524bd9e4310679d5a5d64b566e1f2e7e5c34eab235b50c3",
         "intakeState": "owner_reviewed_input",
         "recommendationEligibility": "research_only",
         "referenceFamilyCount": 14,
-        "sourceUrlCount": 5
+        "sourceUrlCount": 10
       },
       "targets": [
         {
@@ -33,6 +33,522 @@
           "state": "accepted",
           "coverageRationale": "Accepted two-tone commercial/material split from the steel row.",
           "catalogueVariantId": "rolex-124273"
+        },
+        {
+          "id": "rolex-workbook-submariner-no-date",
+          "referenceLabel": "Rolex Submariner No-Date: select one current exact homogeneous Oystersteel configuration",
+          "state": "accepted",
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 2; accepted only after current primary-source verification and exact-reference measurement controls preserved the no-date configuration boundary.",
+          "catalogueVariantId": "rolex-124060"
+        },
+        {
+          "id": "rolex-workbook-submariner-date",
+          "referenceLabel": "Rolex Submariner Date: select one current exact homogeneous Oystersteel configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 3; do not merge material or dial variants."
+        },
+        {
+          "id": "rolex-workbook-cosmograph-daytona",
+          "referenceLabel": "Rolex Cosmograph Daytona: select one current exact homogeneous Oystersteel configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 4 with chronograph coverage."
+        },
+        {
+          "id": "rolex-workbook-gmt-master-ii",
+          "referenceLabel": "Rolex GMT-Master II: select one current exact homogeneous Oystersteel configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 5 with GMT coverage."
+        },
+        {
+          "id": "rolex-workbook-datejust-31",
+          "referenceLabel": "Rolex Datejust 31: select one current exact homogeneous configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 6 and compact wrist coverage."
+        },
+        {
+          "id": "rolex-workbook-datejust-36",
+          "referenceLabel": "Rolex Datejust 36: select one current exact homogeneous Oystersteel configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 7; preserve bracelet and bezel configuration."
+        },
+        {
+          "id": "rolex-workbook-datejust-41",
+          "referenceLabel": "Rolex Datejust 41: select one current exact homogeneous Oystersteel configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "wristBands": [
+              "6_75_7_5",
+              "7_5_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 8; preserve bracelet and bezel configuration."
+        },
+        {
+          "id": "rolex-workbook-oyster-perpetual-28",
+          "referenceLabel": "Rolex Oyster Perpetual 28: select one current exact homogeneous dial configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 9 and ultra-compact mechanical coverage."
+        },
+        {
+          "id": "rolex-workbook-oyster-perpetual-31",
+          "referenceLabel": "Rolex Oyster Perpetual 31: select one current exact homogeneous dial configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 10 and compact mechanical coverage."
+        },
+        {
+          "id": "rolex-workbook-oyster-perpetual-34",
+          "referenceLabel": "Rolex Oyster Perpetual 34: select one current exact homogeneous dial configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 11."
+        },
+        {
+          "id": "rolex-workbook-oyster-perpetual-36",
+          "referenceLabel": "Rolex Oyster Perpetual 36: select one current exact homogeneous dial configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 12."
+        },
+        {
+          "id": "rolex-workbook-oyster-perpetual-41",
+          "referenceLabel": "Rolex Oyster Perpetual 41: select one current exact homogeneous dial configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "wristBands": [
+              "6_75_7_5",
+              "7_5_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 13."
+        },
+        {
+          "id": "rolex-workbook-day-date-36",
+          "referenceLabel": "Rolex Day-Date 36: select one current exact homogeneous precious-metal configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 14 with precious-metal day/date coverage."
+        },
+        {
+          "id": "rolex-workbook-day-date-40",
+          "referenceLabel": "Rolex Day-Date 40: select one current exact homogeneous precious-metal configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "wristBands": [
+              "6_75_7_5",
+              "7_5_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 15 with precious-metal day/date coverage."
+        },
+        {
+          "id": "rolex-workbook-explorer-36-124270-gap",
+          "referenceLabel": "Rolex Explorer 36 reference 124270 Oystersteel: close exact M1 geometry and full-weight gaps without changing configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ]
+          },
+          "coverageRationale": "Workbook row 16 maps to the existing steel database row; research only its unresolved exact-reference facts."
+        },
+        {
+          "id": "rolex-workbook-explorer-36-124273-gap",
+          "referenceLabel": "Rolex Explorer 36 reference 124273 Oystersteel and yellow gold: close exact M1 geometry and full-weight gaps without changing configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ]
+          },
+          "coverageRationale": "Workbook row 16 also maps to the existing two-tone database row; research its unresolved exact-reference facts separately."
+        },
+        {
+          "id": "rolex-workbook-explorer-40",
+          "referenceLabel": "Rolex Explorer 40: select one current exact homogeneous Oystersteel configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "wristBands": [
+              "6_75_7_5",
+              "7_5_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 17."
+        },
+        {
+          "id": "rolex-workbook-explorer-ii",
+          "referenceLabel": "Rolex Explorer II: select one current exact homogeneous Oystersteel dial configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 18 with GMT/date coverage."
+        },
+        {
+          "id": "rolex-workbook-sea-dweller",
+          "referenceLabel": "Rolex Sea-Dweller: select one current exact homogeneous configuration",
+          "state": "accepted",
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 19; accepted only after current primary-source verification and exact-reference full-link and fit measurements completed professional dive coverage.",
+          "catalogueVariantId": "rolex-126600"
+        },
+        {
+          "id": "rolex-workbook-deepsea",
+          "referenceLabel": "Rolex Deepsea: select one current exact homogeneous configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 20 and extreme dive coverage."
+        },
+        {
+          "id": "rolex-workbook-deepsea-challenge",
+          "referenceLabel": "Rolex Deepsea Challenge: select one current exact homogeneous titanium configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "wristBands": [
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 21 and oversized extreme-water coverage."
+        },
+        {
+          "id": "rolex-workbook-sky-dweller",
+          "referenceLabel": "Rolex Sky-Dweller: select one current exact homogeneous configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 22 with annual-calendar/GMT coverage."
+        },
+        {
+          "id": "rolex-workbook-yacht-master-37",
+          "referenceLabel": "Rolex Yacht-Master 37: select one current exact homogeneous configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 23 and compact luxury-sport coverage."
+        },
+        {
+          "id": "rolex-workbook-yacht-master-40",
+          "referenceLabel": "Rolex Yacht-Master 40: select one current exact homogeneous configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ],
+            "wristBands": [
+              "6_75_7_5",
+              "7_5_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 24."
+        },
+        {
+          "id": "rolex-workbook-yacht-master-42",
+          "referenceLabel": "Rolex Yacht-Master 42: select one current exact homogeneous configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "wristBands": [
+              "6_75_7_5",
+              "7_5_plus"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 25."
+        },
+        {
+          "id": "rolex-workbook-yacht-master-ii-historical",
+          "referenceLabel": "Rolex Yacht-Master II discontinued collection: lock one exact historical homogeneous reference and configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact historical replacement for workbook row 26; retain discontinued production state and dated market evidence."
+        },
+        {
+          "id": "rolex-workbook-air-king",
+          "referenceLabel": "Rolex Air-King: select one current exact homogeneous Oystersteel configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "field_water_abuse"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 27."
+        },
+        {
+          "id": "rolex-workbook-1908",
+          "referenceLabel": "Rolex Perpetual 1908: select one current exact homogeneous precious-metal configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 28 and formal mechanical coverage."
+        },
+        {
+          "id": "rolex-workbook-lady-datejust-28",
+          "referenceLabel": "Rolex Lady-Datejust 28: select one current exact homogeneous configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact-reference replacement for workbook row 29 and ultra-compact date coverage."
+        },
+        {
+          "id": "rolex-workbook-pearlmaster-historical",
+          "referenceLabel": "Rolex Pearlmaster discontinued collection: lock one exact historical homogeneous reference and configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact historical replacement for workbook row 30; retain discontinued state and dated price condition."
+        },
+        {
+          "id": "rolex-workbook-milgauss-historical",
+          "referenceLabel": "Rolex Milgauss discontinued collection: lock one exact historical homogeneous reference and configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact historical replacement for workbook row 31; retain antimagnetic and production evidence."
+        },
+        {
+          "id": "rolex-workbook-cellini-time-historical",
+          "referenceLabel": "Rolex Cellini Time discontinued model: lock one exact historical homogeneous reference and configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact historical replacement for workbook row 32."
+        },
+        {
+          "id": "rolex-workbook-cellini-date-historical",
+          "referenceLabel": "Rolex Cellini Date discontinued model: lock one exact historical homogeneous reference and configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact historical replacement for workbook row 33."
+        },
+        {
+          "id": "rolex-workbook-cellini-dual-time-historical",
+          "referenceLabel": "Rolex Cellini Dual Time discontinued model: lock one exact historical homogeneous reference and configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact historical replacement for workbook row 34."
+        },
+        {
+          "id": "rolex-workbook-cellini-moonphase-historical",
+          "referenceLabel": "Rolex Cellini Moonphase discontinued model: lock one exact historical homogeneous reference and configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "formal_architectural"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Owner-directed exact historical replacement for workbook row 35."
         }
       ]
     },
@@ -963,11 +1479,11 @@
             "accuracyTolerances": [
               "seconds_per_month"
             ],
-            "functionProfiles": [
-              "time_only_no_date"
-            ],
             "weightLimits": [
               "under_80_g"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
             ]
           },
           "coverageRationale": "Exact Citizen Japan and authorized-retailer records identify the tiny 18 x 6 mm, 57 g B023 Eco-Drive reference at ¥22,000; it directly targets four under-diversified under-$300, sub-6.25-inch, zero-maintenance, monthly-precision, time-only cells. The official route is currently out of stock, so the provider must qualify a current exact new-market offer rather than infer availability from catalogue presence."
@@ -1957,7 +2473,6 @@
           "id": "vostok-affordable-mechanical-field",
           "referenceLabel": "Select a current source-verifiable mechanical field/water reference",
           "state": "accepted",
-          "catalogueVariantId": "vostok-amphibia-420059",
           "coverageIntent": {
             "priceBands": [
               "under_300"
@@ -1977,7 +2492,8 @@
               "time_only_no_date"
             ]
           },
-          "coverageRationale": "Exact factory, retailer, and directly applicable partner spare-part evidence now supports a homogeneous current 420059 steel-bracelet row and tests the acknowledged low-budget provenance gap."
+          "coverageRationale": "Exact factory, retailer, and directly applicable partner spare-part evidence now supports a homogeneous current 420059 steel-bracelet row and tests the acknowledged low-budget provenance gap.",
+          "catalogueVariantId": "vostok-amphibia-420059"
         }
       ]
     },
@@ -4374,7 +4890,6 @@
           "id": "boldr-odyssey-horizon-druber-gmt",
           "referenceLabel": "Find exact BOLDR Odyssey Horizon ODY-TI-40-H-BL lume-performance evidence only: require a controlled charge and elapsed observation, a timed decay series, or multiple independent exact-reference assessments that converge on weak, moderate, or strong; do not infer performance from Swiss Super-LumiNova material, a lume photograph, or generic Odyssey-family marketing",
           "state": "accepted",
-          "catalogueVariantId": "boldr-odyssey-horizon-druber-gmt",
           "coverageIntent": {
             "priceBands": [
               "500_1000"
@@ -4403,7 +4918,8 @@
               "gmt"
             ]
           },
-          "coverageRationale": "Add a new-brand, current titanium flyer GMT to 18 sparse 500-1000 workhorse-mechanical cells. The row stays fixed to the manufacturer-published 91 g integrated Druber configuration even though the same SKU also includes a 125 g titanium bracelet; an exact Horizon overnight lume observation closes the final M1 gate."
+          "coverageRationale": "Add a new-brand, current titanium flyer GMT to 18 sparse 500-1000 workhorse-mechanical cells. The row stays fixed to the manufacturer-published 91 g integrated Druber configuration even though the same SKU also includes a 125 g titanium bracelet; an exact Horizon overnight lume observation closes the final M1 gate.",
+          "catalogueVariantId": "boldr-odyssey-horizon-druber-gmt"
         }
       ]
     },

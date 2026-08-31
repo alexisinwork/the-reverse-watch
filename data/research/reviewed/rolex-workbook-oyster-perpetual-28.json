@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-oyster-perpetual-28",
+  "jobId": "6235663f-b5e8-4cab-a78c-5bfe5b307609",
+  "reviewedAt": "2026-08-31T17:17:44.285Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Oyster Perpetual 28",
+    "referenceCode": "276200",
+    "variantName": "Lavender dial, Oystersteel, Oyster bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/oyster-perpetual/m276200-0008",
+      "status": "validated_primary",
+      "note": "Manufacturer page independently returned HTTP 200 and contained exact reference 276200. This validates candidate identity and URL only; all other provider-extracted fields require separate field-level review."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

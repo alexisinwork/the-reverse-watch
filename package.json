@@ -25,6 +25,9 @@
     "audit:knowledge": "tsx scripts/import-knowledge-base.ts --check",
     "sync:knowledge-manifest": "tsx scripts/sync-knowledge-manifest.ts",
     "research": "node --env-file=.env --import tsx scripts/run-research-worker.ts",
+    "research:sync-intake": "tsx scripts/sync-research-workbook-intake.ts",
+    "research:review-rolex-intake": "tsx scripts/review-rolex-workbook-intake.ts",
+    "research:export-rolex-workbook": "tsx scripts/export-rolex-research-workbook.ts",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:run && npm run build"
   },
   "dependencies": {
@@ -54,6 +57,7 @@
     "@types/react-dom": "^19.2.5",
     "eslint": "^10.9.1",
     "eslint-plugin-react-hooks": "^7.1.1",
+    "exceljs": "^4.4.0",
     "globals": "^16.4.0",
     "jsdom": "^30.0.1",
     "prettier": "^3.9.6",

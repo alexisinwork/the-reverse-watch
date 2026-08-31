@@ -1,0 +1,237 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-sea-dweller",
+  "jobId": "2ef1d143-902e-4300-a44e-8e64aba3ced8",
+  "reviewedAt": "2026-08-31T17:45:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "ready_for_migration",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Sea-Dweller",
+    "referenceCode": "126600",
+    "variantName": "Sea-Dweller 43 Oystersteel, intense black dial, Oyster bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "status": "validated_primary",
+      "note": "Rolex's exact U.S. product page independently validates reference 126600, the current homogeneous Oystersteel/intense-black/Oyster configuration, USD 14,550 retail price, 43 mm diameter, calibre 3235, approximately 70 hours, -2/+2 seconds per day, 1,220 m water resistance, sapphire Cyclops crystal, Triplock screw-down crown, date, and Chromalight lasting up to eight hours. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.bobswatches.com/rolex-blog/watch-101/rolex-watch-case-size.html",
+      "status": "validated_secondary",
+      "note": "Bob's Watches states that its current-reference thickness, lug-to-lug, and weight table is measured in-house from inventory. Its 126600 row reports 15.0 mm thickness and 51.0 mm lug-to-lug. The approximate 195 g entry is not selected because a full-link control is available. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://superlativewatchco.com/pages/rolex-weight-guide",
+      "status": "validated_secondary",
+      "note": "The 2026 exact-reference control matrix documents a 194.0 g owner-verified, full-link, factory-unworn 126600 with Oyster bracelet and Glidelock. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.everestbands.com/blogs/bezel-barrel/guide-to-rolex-sizes-case-and-lug-dimensions-by-reference",
+      "status": "validated_secondary",
+      "note": "Everest's model-by-reference fitment guide lists references 126600 and 126603 with 22 mm lug width. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.everestbands.com/products/curved-end-rubber-strap-for-rolex-sea-dweller-43mm-126600-tang",
+      "status": "validated_secondary",
+      "note": "Everest's exact fitment product identifies Sea-Dweller 43 references 126600 and 126603 and supplies Rolex-grade spring bars for the case connection, resolving the standard spring-bar interface. Retrieved 2026-08-31."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "productionStatus",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "operation.waterResistanceM",
+    "operation.lumeGrade"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1455000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex displayed USD 14,550 for the exact U.S. configuration at review time."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Currency shown by Rolex's U.S. product route."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "The reviewed commercial snapshot is Rolex's U.S. market route."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unknown",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex publishes a price and jeweler contact route but no inventory state."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex directs purchase enquiries to official Rolex jewelers."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "The manufacturer product route is the new-watch retail offer."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 51,
+      "sourceUrl": "https://www.bobswatches.com/rolex-blog/watch-101/rolex-watch-case-size.html",
+      "note": "In-house inventory measurement for current reference 126600."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 22,
+      "sourceUrl": "https://www.everestbands.com/blogs/bezel-barrel/guide-to-rolex-sizes-case-and-lug-dimensions-by-reference",
+      "note": "Reference-specific strap fitment table lists a 22 mm lug width."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 194,
+      "sourceUrl": "https://superlativewatchco.com/pages/rolex-weight-guide",
+      "note": "Owner-verified full-link, factory-unworn exact-reference control with Oyster bracelet and Glidelock."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex specifies a perpetual mechanical self-winding movement."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "3235",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex's exact technical details specify calibre 3235."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex states approximately 70 hours."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Lower bound of Rolex's -2/+2 seconds-per-day after-casing specification."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Upper bound of Rolex's -2/+2 seconds-per-day after-casing specification."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 1,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "The published precision contract is per day."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Triplock screw-down winding crown maps to screw_down."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex specifies scratch-resistant sapphire with a Cyclops lens."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex states the exact reference's Chromalight glow lasts up to eight hours with uniform luminosity, mapped to strong."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://www.everestbands.com/products/curved-end-rubber-strap-for-rolex-sea-dweller-43mm-126600-tang",
+      "note": "Exact-reference fitment product supplies spring bars for the case connection."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Date is represented separately; the timing bezel and helium valve are not supported complication enums."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "note": "Rolex specifies instantaneous date with rapid setting and a Cyclops lens."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider supplied stale USD 13,450 secondary prose; Rolex's exact current U.S. page displayed USD 14,550."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Limited authorized availability was unsourced narrative; the manufacturer page does not expose inventory."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "Authorized, pre-owned, and marketplace channels were mixed into one non-homogeneous snapshot."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "New, like-new, and used conditions were mixed; the selected manufacturer snapshot is new only."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "reason": "The provider's rounded 50 mm is replaced by the selected current-reference in-house measurement of 51.0 mm."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The provisional 190 g was a sized sale watch; the selected evidence is a documented 194 g full-link factory-unworn control."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "Boolean true is not the schema's applicability representation; a numeric 22 mm lug width is present."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The official page identifies the bracelet but not the interface; exact fitment evidence supplies spring_bar."
+    },
+    {
+      "fieldName": "market.secondaryRatioLow",
+      "reason": "The provider did not establish a dated, configuration-controlled market sample."
+    },
+    {
+      "fieldName": "market.secondaryRatioHigh",
+      "reason": "The provider did not establish a dated, configuration-controlled market sample."
+    },
+    {
+      "fieldName": "market.hypeRisk",
+      "reason": "The qualitative label was not tied to the catalogue's reviewed market method."
+    },
+    {
+      "fieldName": "market.speculativeBubble",
+      "reason": "The claim was not tied to a dated, reviewed market method."
+    }
+  ],
+  "missingM1Fields": [],
+  "note": "Ready for additive migration as exact reference 126600. Primary-source specifications, price, and eight-hour lume statement are combined with exact-reference independent measurements for thickness, lug span, lug width, full configured weight, and attachment interface."
+}

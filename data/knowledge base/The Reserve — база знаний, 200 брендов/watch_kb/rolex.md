@@ -103,11 +103,40 @@
 }
 ```
 
-## 7. ИСТОЧНИКИ
+## 7. ПРОВЕРЕННОЕ РАСШИРЕНИЕ КАТАЛОГА — 2026-08-31
+
+Входная Excel-таблица из 34 семейств/размеров преобразована в 35 целей
+точного референса: Explorer 36 разделён на уже существующие стальной `124270`
+и Rolesor `124273`. По каждой цели выполнен отдельный запрос Perplexity Sonar
+Pro; результат провайдера хранится только как provisional research и не
+считается фактом каталога без независимой проверки каждого поля.
+
+После проверки M1 в каталог допущены две новые однородные конфигурации:
+
+- Submariner `124060`: Oystersteel, чёрный циферблат, Oyster; актуальная
+  розница США $10,050, 41 × 12.5 мм, L2L 47.6 мм, межушное 21 мм, контрольный
+  полный вес 158.8 г, calibre 3230, −2/+2 с/сутки, WR 300 м, no-date,
+  spring-bar;
+- Sea-Dweller `126600`: Oystersteel, intense black, Oyster/Glidelock;
+  актуальная розница США $14,550, 43 × 15.0 мм, L2L 51.0 мм, межушное 22 мм,
+  контрольный полный вес 194.0 г, calibre 3235, −2/+2 с/сутки, WR 1,220 м,
+  date, Chromalight до восьми часов, spring-bar.
+
+Оставшиеся 33 цели остаются `needs_more_evidence`. В частности, результат
+Deepsea `136660` смешал чёрную конфигурацию с URL D-blue и потому не принят.
+Полный ledger, пропуски M1 и решения по каждому источнику находятся в
+`docs/rolex-catalogue-expansion.md` и `data/research/reviewed/`.
+
+## 8. ИСТОЧНИКИ
 - Официальный каталог: https://www.rolex.com/watches/find-rolex
+- Submariner 124060: https://www.rolex.com/en-us/watches/submariner/m124060-0001
+- Sea-Dweller 126600: https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002
 - История / структура: https://www.rolex.com/about-rolex/history/1905-1919
 - Рыночный индекс: https://watchcharts.com/watches/brand/rolex
 - Методология размеров и L2L: https://www.lug2lug.org/guides/watch-size-guide
 - Вторичный рынок, дополнительная проверка листинга: https://www.chrono24.com/
+- Контрольные измерения размеров: https://www.bobswatches.com/rolex-blog/watch-101/rolex-watch-case-size.html
+- Контрольные полные веса: https://superlativewatchco.com/pages/rolex-weight-guide
+- Fitment / spring bars: https://www.everestbands.com/blogs/bezel-barrel/guide-to-rolex-sizes-case-and-lug-dimensions-by-reference
 
 > Ограничение данных: `≈` означает измерение обзорами/сообществом или геометрическую оценку; `данные отсутствуют` сохранено намеренно. Розница и остаточная стоимость требуют обновления в момент выдачи рекомендации.

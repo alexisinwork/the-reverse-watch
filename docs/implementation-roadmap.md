@@ -219,7 +219,7 @@ whether each response used the live SQL path or the explicit fallback.
 
 ## Phase 5 — Research pipeline and catalogue expansion
 
-Status: **engineering complete — catalogue population is owner-managed as of 2026-08-31**
+Status: **engineering complete — owner-directed Rolex workbook expansion verified 2026-08-31**
 
 Goal: expand from the validated seed to the planned approximately 200 brands
 without sacrificing field evidence or coverage.
@@ -1235,6 +1235,20 @@ field-specific refresh windows, provisional-only extraction contract, human
 review gate, immutable ignored artifacts, additive migration renderer,
 coverage audit, and SQL/TypeScript parity path remain the owner handoff for any
 future catalogue records.
+
+The owner's subsequent Rolex workbook request reopens only that named research
+scope. All 34 family/size rows are represented by 35 exact-reference Sonar Pro
+targets, with the two Explorer 36 material configurations kept separate. The
+extended workbook retains 35 exact-reference rows and 1,757 evidence rows;
+every provider fact remains provisional until an independent review decision.
+Submariner `124060` and Sea-Dweller `126600` alone passed the full M1 gate and
+entered additive migration `0036_expand_catalogue_rolex_workbook.sql`. The
+other 33 targets remain null-safe `needs_more_evidence` decisions, including a
+rejected Deepsea dial/URL configuration mismatch. Connected verification now
+reports 24 brands, 30 accepted variants, 40 verified evidence rows for the two
+new variants, M1 completeness for both, six-profile SQL/TypeScript parity, and
+1,147/28,800 local coverage cells (3.98%). The detailed trace is in
+[`rolex-catalogue-expansion.md`](rolex-catalogue-expansion.md).
 
 Phase 7 integration preflight on 2026-08-31 ran the deferred Chromium suite in
 both desktop and mobile projects. All eight landing, health, error-boundary,

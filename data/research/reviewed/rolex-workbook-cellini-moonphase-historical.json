@@ -1,0 +1,42 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-cellini-moonphase-historical",
+  "jobId": "60c0995e-e119-4378-a41a-3211fbf0d7f4",
+  "reviewedAt": "2026-08-31T17:17:58.522Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Cellini Moonphase",
+    "referenceCode": "50535-0002",
+    "variantName": "Cellini Moonphase Everose Gold White Dial 39mm on Tobacco Leather"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://content.rolex.com/dam/media/brochures/cellini/m50535-0002.pdf",
+      "status": "fetch_blocked",
+      "note": "Independent retrieval returned HTTP 200; exact reference 50535-0002 was not detectable. Identity remains provisional."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "identity",
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

@@ -7,7 +7,7 @@ import {
 } from "./research";
 import type { ProposedFact, ResearchTarget } from "./research";
 
-export const PERPLEXITY_RESEARCH_CONTRACT_VERSION = 5 as const;
+export const PERPLEXITY_RESEARCH_CONTRACT_VERSION = 7 as const;
 
 const candidateIdentityValueSchema = z
   .string()
@@ -165,9 +165,45 @@ export const perplexityAgentResponseSchema = z
   })
   .passthrough();
 
+const perplexitySonarSearchResultSchema = z
+  .object({ url: z.url() })
+  .passthrough();
+
+export const perplexitySonarResponseSchema = z
+  .object({
+    id: z.string().min(1),
+    model: z.string().min(1),
+    choices: z
+      .array(
+        z
+          .object({
+            message: z.object({ content: z.string().min(1) }).passthrough(),
+          })
+          .passthrough(),
+      )
+      .min(1),
+    citations: z.array(z.url()).optional(),
+    search_results: z.array(perplexitySonarSearchResultSchema).optional(),
+    usage: z
+      .object({
+        prompt_tokens: z.number().int().nonnegative().optional(),
+        completion_tokens: z.number().int().nonnegative().optional(),
+        cost: z
+          .object({ total_cost: z.number().nonnegative().optional() })
+          .passthrough()
+          .optional(),
+      })
+      .passthrough()
+      .optional(),
+  })
+  .passthrough();
+
 export type ResearchExtraction = z.infer<typeof researchExtractionSchema>;
 export type PerplexityAgentResponse = z.infer<
   typeof perplexityAgentResponseSchema
+>;
+export type PerplexitySonarResponse = z.infer<
+  typeof perplexitySonarResponseSchema
 >;
 
 export function buildResearchPrompt(
@@ -178,17 +214,20 @@ export function buildResearchPrompt(
     `Research target ID (copy exactly): ${target.id}`,
     `Candidate brief: ${target.referenceLabel}`,
     `Coverage purpose: ${target.coverageRationale}`,
-    "Find one exact, currently identifiable and materially homogeneous reference variant.",
+    "Find one exact, identifiable, and materially homogeneous reference variant. Select a current variant unless the candidate brief explicitly requests a discontinued or historical model; for a historical target, lock one exact historical reference and production state.",
     "Use official manufacturer product pages, technical sheets, and manuals first. Use a secondary or market source only for a fact the manufacturer cannot establish.",
     "Do not merge sizes, materials, bracelets, movements, prices, or production states. Missing values must remain null and appear in unresolvedFields.",
     "Return one JSON object and no Markdown. Every non-null claim must cite the exact URL supporting that field.",
+    "Research every allowed field that can be established for the exact configuration. At minimum, make an explicit resolved-or-unresolved determination for identity, exact reference code, product URL, price/currency/market/availability, case geometry, full configured weight, movement/calibre/accuracy, water resistance, lume grade, attachment type, complications/date status, production status, materials, service geography, and current market behavior.",
     `Allowed fieldName values: ${RESEARCH_FACT_FIELDS.join(", ")}.`,
     "Required shape: {targetId, exactVariantFound, candidateIdentity:{brand,model,referenceCode,variantName}|null, claims:[{subjectType,subjectKey,fieldName,value,sourceUrl,sourceType,evidenceKind,observedAt,note}], unresolvedFields:[], sourceAssessment}.",
     "subjectType must be exactly brand, reference_variant, price_snapshot, or market_snapshot. Use reference_variant for watch specifications.",
     "sourceType must be one of manufacturer_product, manufacturer_manual, manufacturer_data_sheet, manufacturer_corporate, regulator_or_registry, central_bank, reviewed_market, secondary_editorial.",
     "evidenceKind must be observed, estimated_class, or missing. Do not turn a family estimate into an observed variant fact.",
     "A null value must use evidenceKind missing and its field must appear in unresolvedFields. A non-null observed or estimated field must not appear in unresolvedFields.",
+    "Before returning, audit every claim mechanically: value null means evidenceKind missing; value non-null means evidenceKind observed or estimated_class; no resolved field may remain in unresolvedFields.",
     "When exactVariantFound is true, claims must include non-null identity and productUrl claims sourced to the selected exact variant.",
+    "For a discontinued target whose manufacturer product page is no longer live, productUrl may be the strongest stable exact-reference manufacturer archive, catalog PDF, authorized-retailer archive, or reviewed-market listing. Explain that substitution in sourceAssessment and do not cite a family page as an exact product URL.",
     "Omit observedAt unless the source establishes a full UTC ISO 8601 date-time such as 2026-08-29T00:00:00Z. Never return a date-only value; the worker supplies retrieval time when it is omitted.",
     `Before returning JSON, verify that targetId is exactly "${target.id}" with no added suffix, and remove every non-null claimed field from unresolvedFields.`,
   ];
@@ -217,6 +256,23 @@ export function extractPerplexitySourceUrls(response: PerplexityAgentResponse) {
         ...(item.contents ?? []).map((result) => result.url),
       ]),
     ),
+  ].sort();
+}
+
+export function extractPerplexitySonarOutputText(
+  response: PerplexitySonarResponse,
+) {
+  return response.choices.map((choice) => choice.message.content).join("\n");
+}
+
+export function extractPerplexitySonarSourceUrls(
+  response: PerplexitySonarResponse,
+) {
+  return [
+    ...new Set([
+      ...(response.citations ?? []),
+      ...(response.search_results ?? []).map((result) => result.url),
+    ]),
   ].sort();
 }
 

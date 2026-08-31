@@ -872,6 +872,62 @@
       "publisher": "Citizen Watch Co. / Miyota",
       "sourceType": "manufacturer_data_sheet",
       "retrievedAt": "2026-08-30T19:50:24Z"
+    },
+    {
+      "id": "rolex-124060-2026-08-31",
+      "url": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "title": "Rolex Submariner Oystersteel — reference 124060",
+      "publisher": "Rolex",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-31T17:45:00Z"
+    },
+    {
+      "id": "rolex-current-size-measurements-2026-08-31",
+      "url": "https://www.bobswatches.com/rolex-blog/watch-101/rolex-watch-case-size.html",
+      "title": "Rolex current-reference thickness, lug-to-lug, and weight measurements",
+      "publisher": "Bob's Watches",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T17:45:00Z"
+    },
+    {
+      "id": "rolex-full-link-weight-controls-2026-08-31",
+      "url": "https://superlativewatchco.com/pages/rolex-weight-guide",
+      "title": "Rolex 2026 exact-reference full-link weight controls",
+      "publisher": "Superlative Watch Co.",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T17:45:00Z"
+    },
+    {
+      "id": "everest-rolex-124060-spring-bars",
+      "url": "https://www.everestbands.com/products/rolex-submariner-produced-after-2020-1-5mm-spring-bars",
+      "title": "Rolex Submariner 124060 replacement spring-bar fitment",
+      "publisher": "Everest Bands",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T17:45:00Z"
+    },
+    {
+      "id": "rolex-126600-2026-08-31",
+      "url": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "title": "Rolex Sea-Dweller Oystersteel — reference 126600",
+      "publisher": "Rolex",
+      "sourceType": "manufacturer_product",
+      "retrievedAt": "2026-08-31T17:45:00Z"
+    },
+    {
+      "id": "everest-rolex-reference-size-guide-2026-08-31",
+      "url": "https://www.everestbands.com/blogs/bezel-barrel/guide-to-rolex-sizes-case-and-lug-dimensions-by-reference",
+      "title": "Rolex case and lug dimensions by reference",
+      "publisher": "Everest Bands",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T17:45:00Z"
+    },
+    {
+      "id": "everest-rolex-126600-spring-bar-fitment",
+      "url": "https://www.everestbands.com/products/curved-end-rubber-strap-for-rolex-sea-dweller-43mm-126600-tang",
+      "title": "Rolex Sea-Dweller 126600 spring-bar strap fitment",
+      "publisher": "Everest Bands",
+      "sourceType": "secondary_editorial",
+      "retrievedAt": "2026-08-31T17:45:00Z"
     }
   ],
   "fx": {
@@ -1994,6 +2050,222 @@
             "ownershipFrictionLevels",
             "traits"
           ]
+        }
+      ]
+    },
+    {
+      "id": "rolex-124060",
+      "brand": { "slug": "rolex", "name": "Rolex", "serviceCountries": null },
+      "collection": "Submariner",
+      "model": "Submariner",
+      "referenceCode": "124060",
+      "variantName": "Oystersteel · black dial · Oyster bracelet",
+      "productUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "price": {
+        "amountMinor": 1005000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-31T17:45:00Z",
+        "staleAfter": "2027-02-27T17:45:00Z",
+        "availability": "unknown",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "Oystersteel",
+        "caseback": "Oystersteel",
+        "bracelet": "Oystersteel Oyster bracelet",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 41,
+        "caseThicknessMm": 12.5,
+        "lugToLugMm": 47.6,
+        "lugWidthMm": 21,
+        "weightFullG": 158.8,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "3230",
+        "powerReserveHours": 70,
+        "accuracyLowerSeconds": -2,
+        "accuracyUpperSeconds": 2,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 300,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": true,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "absent",
+      "eligibleEnvironments": ["field_water_abuse", "studio_desk_daily"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "benchmark_dive_watch",
+        "socialSignals": ["unapologetic_benchmark"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "rolex-124060-2026-08-31",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "rolex-current-size-measurements-2026-08-31",
+          "fields": ["caseThicknessMm", "lugToLugMm"]
+        },
+        {
+          "sourceId": "rolex-full-link-weight-controls-2026-08-31",
+          "fields": ["weightFullG"]
+        },
+        {
+          "sourceId": "everest-rolex-124060-spring-bars",
+          "fields": ["lugWidthMm", "attachmentType"]
+        }
+      ]
+    },
+    {
+      "id": "rolex-126600",
+      "brand": { "slug": "rolex", "name": "Rolex", "serviceCountries": null },
+      "collection": "Sea-Dweller",
+      "model": "Sea-Dweller 43",
+      "referenceCode": "126600",
+      "variantName": "Oystersteel · intense black dial · Oyster bracelet",
+      "productUrl": "https://www.rolex.com/en-us/watches/sea-dweller/m126600-0002",
+      "price": {
+        "amountMinor": 1455000,
+        "currency": "USD",
+        "marketCountry": "US",
+        "observedAt": "2026-08-31T17:45:00Z",
+        "staleAfter": "2027-02-27T17:45:00Z",
+        "availability": "unknown",
+        "availabilityObservedAt": null,
+        "availabilityStaleAfter": null,
+        "channels": ["authorized_dealer"],
+        "conditions": ["new"]
+      },
+      "materials": {
+        "case": "Oystersteel",
+        "caseback": "Oystersteel",
+        "bracelet": "Oystersteel Oyster bracelet with Glidelock",
+        "strap": null
+      },
+      "productionStatus": "current",
+      "geometry": {
+        "caseDiameterMm": 43,
+        "caseThicknessMm": 15,
+        "lugToLugMm": 51,
+        "lugWidthMm": 22,
+        "weightFullG": 194,
+        "lugCurvature": null,
+        "integratedBracelet": false
+      },
+      "movement": {
+        "type": "automatic",
+        "caliber": "3235",
+        "powerReserveHours": 70,
+        "accuracyLowerSeconds": -2,
+        "accuracyUpperSeconds": 2,
+        "accuracyPeriodDays": 1
+      },
+      "operation": {
+        "waterResistanceM": 1220,
+        "crownType": "screw_down",
+        "crownPosition": "3",
+        "crystal": "sapphire",
+        "lumeGrade": "strong",
+        "attachmentType": "spring_bar",
+        "shockResistant": true,
+        "nickelContactRisk": null
+      },
+      "complications": [],
+      "dateStatus": "present",
+      "eligibleEnvironments": ["field_water_abuse"],
+      "ownershipFrictionLevels": ["workhorse_mechanical"],
+      "traits": {
+        "primaryArchetype": "professional_saturation_diver",
+        "socialSignals": ["unapologetic_benchmark"],
+        "aestheticDna": ["structural_tool"],
+        "emotionalObjectives": ["dependability", "milestone"]
+      },
+      "market": {
+        "speculativeBubble": null,
+        "hypeRisk": null,
+        "secondaryRatioLow": null,
+        "secondaryRatioHigh": null
+      },
+      "evidence": [
+        {
+          "sourceId": "rolex-126600-2026-08-31",
+          "fields": [
+            "identity",
+            "price",
+            "materials",
+            "productionStatus",
+            "caseDiameterMm",
+            "movement",
+            "accuracy",
+            "waterResistanceM",
+            "crownType",
+            "crystal",
+            "lumeGrade",
+            "complications",
+            "dateStatus",
+            "eligibleEnvironments",
+            "ownershipFrictionLevels",
+            "traits"
+          ]
+        },
+        {
+          "sourceId": "rolex-current-size-measurements-2026-08-31",
+          "fields": ["caseThicknessMm", "lugToLugMm"]
+        },
+        {
+          "sourceId": "rolex-full-link-weight-controls-2026-08-31",
+          "fields": ["weightFullG"]
+        },
+        {
+          "sourceId": "everest-rolex-reference-size-guide-2026-08-31",
+          "fields": ["lugWidthMm"]
+        },
+        {
+          "sourceId": "everest-rolex-126600-spring-bar-fitment",
+          "fields": ["attachmentType"]
         }
       ]
     },

@@ -272,3 +272,19 @@ Performance findings are only unused-index informational notices expected on a
 newly loaded 18-row catalogue; the indexes are retained for the expansion phase.
 See the advisor's
 [unused-index guidance](https://supabase.com/docs/guides/database/database-linter?lint=0005_unused_index).
+
+## Rolex workbook expansion checkpoint
+
+Migration `0036_expand_catalogue_rolex_workbook.sql` adds only the independently
+reviewed Rolex Submariner `124060` and Sea-Dweller `126600` from the owner's
+35-target workbook intake. Both are materially homogeneous, M1-complete rows.
+Their fit spans are marked measured in PostgreSQL; their full-weight facts use
+documented full-link factory-unworn control configurations. The migration also
+adds exact current USD retail snapshots and 40 verified reference-level field
+evidence rows.
+
+Remote verification on 2026-08-31 reports 24 accepted brands and 30 accepted
+variants. The catalogue and all six SQL/TypeScript hard-filter profiles pass
+exact parity. The 33 unaccepted workbook targets remain outside PostgreSQL's
+recommendation catalogue and retain their missing-field decisions in the
+research layer.

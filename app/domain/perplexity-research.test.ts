@@ -1,12 +1,15 @@
 import {
   buildResearchPrompt,
   extractPerplexityOutputText,
+  extractPerplexitySonarOutputText,
+  extractPerplexitySonarSourceUrls,
   extractPerplexitySourceUrls,
   normalizeProposedFacts,
   parseExtractionText,
   perplexityAgentResponseSchema,
   perplexityResearchResponseFormat,
   researchExtractionSchema,
+  perplexitySonarResponseSchema,
 } from "./perplexity-research";
 
 const target = {
@@ -22,6 +25,10 @@ describe("Perplexity research normalization", () => {
     const prompt = buildResearchPrompt(target);
     expect(prompt).toContain(target.id);
     expect(prompt).toContain("materially homogeneous");
+    expect(prompt).toContain("historical target");
+    expect(prompt).toContain("full configured weight");
+    expect(prompt).toContain("audit every claim mechanically");
+    expect(prompt).toContain("authorized-retailer archive");
     expect(prompt).toContain("official manufacturer");
     expect(prompt).toContain("Never return a date-only value");
     expect(prompt).toContain(`targetId is exactly "${target.id}"`);
@@ -154,6 +161,32 @@ describe("Perplexity research normalization", () => {
     });
     expect(extractPerplexityOutputText(response)).toBe('{"targetId":"x"}');
     expect(extractPerplexitySourceUrls(response)).toEqual([
+      "https://example.com/product",
+    ]);
+  });
+
+  it("extracts Sonar structured output and source URLs", () => {
+    const response = perplexitySonarResponseSchema.parse({
+      id: "sonar_test",
+      model: "sonar-pro",
+      choices: [
+        {
+          message: {
+            role: "assistant",
+            content: '{"targetId":"x"}',
+          },
+        },
+      ],
+      citations: ["https://example.com/product"],
+      search_results: [
+        { url: "https://example.com/product" },
+        { url: "https://example.com/manual" },
+      ],
+    });
+
+    expect(extractPerplexitySonarOutputText(response)).toBe('{"targetId":"x"}');
+    expect(extractPerplexitySonarSourceUrls(response)).toEqual([
+      "https://example.com/manual",
       "https://example.com/product",
     ]);
   });

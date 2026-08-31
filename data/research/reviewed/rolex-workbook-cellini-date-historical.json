@@ -1,0 +1,42 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-cellini-date-historical",
+  "jobId": "76c576dd-f772-4be3-8dd1-bcab5d9572bc",
+  "reviewedAt": "2026-08-31T17:17:57.690Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Cellini Date",
+    "referenceCode": "50519-0006",
+    "variantName": "Cellini Date White Gold / Silver / Alligator Black"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_date_english_2019.pdf",
+      "status": "fetch_blocked",
+      "note": "Independent retrieval returned HTTP 200; exact reference 50519-0006 was not detectable. Identity remains provisional."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "identity",
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

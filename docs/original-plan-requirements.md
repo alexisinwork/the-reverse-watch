@@ -226,6 +226,13 @@ verification commands. Owner-supplied records must still satisfy the same M1,
 homogeneous-variant, field-evidence, null, and staleness requirements before
 they can enter recommendations.
 
+On 2026-08-31 the owner explicitly reopened the named Rolex Excel intake. That
+authorization does not reopen bulk autonomous brand selection. All mentioned
+Rolex families received exact-reference Sonar Pro research, but only two
+independently M1-complete variants were promoted; the remaining 33 preserve
+their unresolved fields and provisional source records. This is the required
+fail-closed application of the owner-managed continuation boundary.
+
 The owner also closed Phase 7 without further DNS or Resend mutation. The
 production funnel retains explicit Beehiiv consent and verified live Beehiiv
 delivery, keeps recommendations and the dossier visible without email, and

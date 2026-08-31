@@ -49,6 +49,9 @@ describe("research job resumption", () => {
     expect(
       nextResearchAttempt(history.maximumAttemptByFingerprint, fingerprint),
     ).toBe(4);
+    expect(history.latestFailureByFingerprint.get(fingerprint)?.attempt).toBe(
+      3,
+    );
   });
 
   it("reuses the latest successful fingerprint without duplicating work", () => {

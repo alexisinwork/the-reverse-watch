@@ -1,0 +1,42 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-datejust-36",
+  "jobId": "9f8cff09-9e39-4441-b8a6-24d103960949",
+  "reviewedAt": "2026-08-31T17:17:43.091Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Datejust 36",
+    "referenceCode": "126200-0008",
+    "variantName": "Datejust 36 Oystersteel, white dial, Oyster bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/datejust/m126200-0008",
+      "status": "fetch_blocked",
+      "note": "Independent retrieval returned HTTP 404; exact reference 126200-0008 was not detectable. Identity remains provisional."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "identity",
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

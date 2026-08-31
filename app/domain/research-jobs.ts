@@ -3,6 +3,7 @@ import type { ResearchJob } from "./research";
 export type ResearchJobHistory = {
   successfulFingerprints: Map<string, ResearchJob>;
   maximumAttemptByFingerprint: Map<string, number>;
+  latestFailureByFingerprint: Map<string, ResearchJob>;
 };
 
 export function indexResearchJobHistory(
@@ -10,6 +11,7 @@ export function indexResearchJobHistory(
 ): ResearchJobHistory {
   const successfulFingerprints = new Map<string, ResearchJob>();
   const maximumAttemptByFingerprint = new Map<string, number>();
+  const latestFailureByFingerprint = new Map<string, ResearchJob>();
 
   for (const job of jobs) {
     const maximumAttempt = maximumAttemptByFingerprint.get(
@@ -26,7 +28,19 @@ export function indexResearchJobHistory(
     }
   }
 
-  return { successfulFingerprints, maximumAttemptByFingerprint };
+  for (const job of jobs) {
+    if (job.status !== "failed") continue;
+    const latest = latestFailureByFingerprint.get(job.requestFingerprint);
+    if (latest === undefined || job.attempt > latest.attempt) {
+      latestFailureByFingerprint.set(job.requestFingerprint, job);
+    }
+  }
+
+  return {
+    successfulFingerprints,
+    maximumAttemptByFingerprint,
+    latestFailureByFingerprint,
+  };
 }
 
 export function nextResearchAttempt(

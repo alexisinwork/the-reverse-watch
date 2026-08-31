@@ -1,0 +1,42 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-pearlmaster-historical",
+  "jobId": "28077ee7-1385-4b93-a1d5-ca22025a5635",
+  "reviewedAt": "2026-08-31T17:17:56.302Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Oyster Perpetual Datejust Pearlmaster 29",
+    "referenceCode": "80319-0040",
+    "variantName": "Datejust Pearlmaster 29 White Gold 12 Diamond White Roman"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://watchbase.com/rolex/pearlmaster/80319-0040",
+      "status": "fetch_blocked",
+      "note": "Independent retrieval failed (TypeError); identity and all extracted facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "identity",
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

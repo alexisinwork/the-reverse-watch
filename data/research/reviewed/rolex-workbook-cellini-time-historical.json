@@ -1,0 +1,42 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-cellini-time-historical",
+  "jobId": "5c163aa5-d8fd-458b-a9be-5aeb58436fcc",
+  "reviewedAt": "2026-08-31T17:17:57.480Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Cellini Time",
+    "referenceCode": "50505",
+    "variantName": "Cellini Time Everose gold 39mm on leather strap (time‑only)"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_time_english_2020.pdf",
+      "status": "fetch_blocked",
+      "note": "Independent retrieval returned HTTP 200; exact reference 50505 was not detectable. Identity remains provisional."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "identity",
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

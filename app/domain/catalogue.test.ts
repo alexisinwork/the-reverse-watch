@@ -12,10 +12,71 @@ import { seedCatalogue } from "./seed-catalogue";
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
     expect(seedCatalogue.catalogueVersion).toBe(2);
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(28);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(30);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(28);
+    ).toBe(30);
+  });
+
+  it("retains the reviewed Rolex workbook variants as M1-complete exact configurations", () => {
+    const submariner = seedCatalogue.variants.find(
+      (variant) => variant.id === "rolex-124060",
+    );
+    const seaDweller = seedCatalogue.variants.find(
+      (variant) => variant.id === "rolex-126600",
+    );
+
+    expect(submariner).toBeDefined();
+    expect(submariner!.price.amountMinor).toBe(1_005_000);
+    expect(submariner!.geometry).toMatchObject({
+      caseDiameterMm: 41,
+      caseThicknessMm: 12.5,
+      lugToLugMm: 47.6,
+      lugWidthMm: 21,
+      weightFullG: 158.8,
+    });
+    expect(submariner!.operation).toMatchObject({
+      waterResistanceM: 300,
+      lumeGrade: "strong",
+      attachmentType: "spring_bar",
+    });
+    expect(submariner!.dateStatus).toBe("absent");
+
+    expect(seaDweller).toBeDefined();
+    expect(seaDweller!.price.amountMinor).toBe(1_455_000);
+    expect(seaDweller!.geometry).toMatchObject({
+      caseDiameterMm: 43,
+      caseThicknessMm: 15,
+      lugToLugMm: 51,
+      lugWidthMm: 22,
+      weightFullG: 194,
+    });
+    expect(seaDweller!.operation).toMatchObject({
+      waterResistanceM: 1220,
+      lumeGrade: "strong",
+      attachmentType: "spring_bar",
+    });
+    expect(seaDweller!.dateStatus).toBe("present");
+
+    const requiredEvidenceFields = [
+      "caseDiameterMm",
+      "caseThicknessMm",
+      "lugToLugMm",
+      "lugWidthMm",
+      "weightFullG",
+      "movement",
+      "accuracy",
+      "waterResistanceM",
+      "lumeGrade",
+      "attachmentType",
+      "dateStatus",
+    ] as const;
+    for (const variant of [submariner!, seaDweller!]) {
+      const fields = evidenceFields(variant);
+      for (const field of requiredEvidenceFields) {
+        expect(fields.has(field)).toBe(true);
+      }
+    }
   });
 
   it("retains evidence for every seed identity and price", () => {

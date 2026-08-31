@@ -1,0 +1,250 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-submariner-no-date",
+  "jobId": "8cc18630-dd4c-4c49-b344-c04cf8f60b17",
+  "reviewedAt": "2026-08-31T17:45:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "ready_for_migration",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Submariner",
+    "referenceCode": "124060",
+    "variantName": "Submariner Oystersteel, black dial, Oyster bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "status": "validated_primary",
+      "note": "Rolex's exact U.S. product page independently validates reference 124060, the current homogeneous Oystersteel/black-dial/Oyster-bracelet configuration, USD 10,050 retail price, 41 mm diameter, calibre 3230, approximately 70 hours, -2/+2 seconds per day, 300 m water resistance, sapphire crystal, Triplock screw-down crown, no date, and long-lasting blue Chromalight. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.bobswatches.com/rolex-blog/watch-101/rolex-watch-case-size.html",
+      "status": "validated_secondary",
+      "note": "Bob's Watches states that its thickness, lug-to-lug, and weight table is measured in-house from inventory. Its current-reference row for 124060 reports 12.5 mm thickness and 47.6 mm lug-to-lug. Its approximate 150 g value is not selected because a configuration-controlled full-link measurement is available. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://superlativewatchco.com/pages/rolex-weight-guide",
+      "status": "validated_secondary",
+      "note": "The 2026 exact-reference control matrix documents a 158.8 g owner-verified, full-link, factory-unworn 124060 on Oyster bracelet. The page explicitly distinguishes control configuration from universal authentication thresholds. Retrieved 2026-08-31."
+    },
+    {
+      "url": "https://www.everestbands.com/products/rolex-submariner-produced-after-2020-1-5mm-spring-bars",
+      "status": "validated_secondary",
+      "note": "Everest's exact fitment product names reference 124060, documents replacement spring bars that also fit the original Rolex bracelet, and states the late-2020 41 mm Submariner uses a 21 mm lug width. This resolves both the lug width and spring-bar interface. Retrieved 2026-08-31."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "collection",
+    "model",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "operation.waterResistanceM"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "identity",
+      "value": {
+        "brand": "Rolex",
+        "model": "Submariner",
+        "referenceCode": "124060",
+        "variantName": "Submariner Oystersteel, black dial, Oyster bracelet"
+      },
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "The exact manufacturer route fixes one materially homogeneous current configuration."
+    },
+    {
+      "fieldName": "variantName",
+      "value": "Submariner Oystersteel, black dial, Oyster bracelet",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Normalized from the exact product page without family-level rollup wording."
+    },
+    {
+      "fieldName": "productionStatus",
+      "value": "current",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "The exact reference remains on Rolex's current collection route."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1005000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Rolex displayed USD 10,050 for the exact U.S. configuration at review time."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Currency shown by Rolex's U.S. product route."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "The reviewed commercial snapshot is Rolex's U.S. market route."
+    },
+    {
+      "fieldName": "price.availability",
+      "value": "unknown",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Rolex publishes a price and jeweler contact route but no inventory state; availability remains unknown."
+    },
+    {
+      "fieldName": "price.channels",
+      "value": ["authorized_dealer"],
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Rolex directs purchase enquiries to official Rolex jewelers."
+    },
+    {
+      "fieldName": "price.conditions",
+      "value": ["new"],
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "The manufacturer product route is the new-watch retail offer."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12.5,
+      "sourceUrl": "https://www.bobswatches.com/rolex-blog/watch-101/rolex-watch-case-size.html",
+      "note": "In-house inventory measurement for the current 124060 reference."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 47.6,
+      "sourceUrl": "https://www.bobswatches.com/rolex-blog/watch-101/rolex-watch-case-size.html",
+      "note": "In-house inventory measurement for the current 124060 reference."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 21,
+      "sourceUrl": "https://www.everestbands.com/products/rolex-submariner-produced-after-2020-1-5mm-spring-bars",
+      "note": "Exact-reference replacement-bar fitment page states a 21 mm lug width."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 158.8,
+      "sourceUrl": "https://superlativewatchco.com/pages/rolex-weight-guide",
+      "note": "Owner-verified full-link, factory-unworn exact-reference control."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "3230",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Rolex's exact technical details specify calibre 3230."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Rolex states approximately 70 hours."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Lower bound of Rolex's -2/+2 seconds-per-day after-casing specification."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Upper bound of Rolex's -2/+2 seconds-per-day after-casing specification."
+    },
+    {
+      "fieldName": "movement.accuracyPeriodDays",
+      "value": 1,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "The published precision contract is per day."
+    },
+    {
+      "fieldName": "operation.crownType",
+      "value": "screw_down",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Triplock screw-down winding crown maps to screw_down."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "Rolex specifies scratch-resistant sapphire."
+    },
+    {
+      "fieldName": "operation.lumeGrade",
+      "value": "strong",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "The exact professional-diver page describes a highly legible Chromalight display with long-lasting blue luminescence and underwater-critical visibility, mapped to strong."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://www.everestbands.com/products/rolex-submariner-produced-after-2020-1-5mm-spring-bars",
+      "note": "Exact-reference fitment evidence documents replacement spring bars compatible with both the original bracelet and fitted straps."
+    },
+    {
+      "fieldName": "complications",
+      "value": [],
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "The exact reference provides time-only functions; the rotating timing bezel is not a supported complication enum."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/submariner/m124060-0001",
+      "note": "The exact technical functions omit date and the crystal has no Cyclops."
+    }
+  ],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "price.amountMinor",
+      "reason": "The provider supplied stale USD 9,100 secondary prose; Rolex's exact current U.S. page displayed USD 10,050."
+    },
+    {
+      "fieldName": "price.availability",
+      "reason": "Limited authorized availability was unsourced narrative; the manufacturer page does not expose inventory, so unknown is retained."
+    },
+    {
+      "fieldName": "price.channels",
+      "reason": "The mixed authorized/secondary array does not describe one homogeneous price snapshot."
+    },
+    {
+      "fieldName": "price.conditions",
+      "reason": "New and pre-owned were mixed; the selected manufacturer snapshot is new only."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "reason": "The provisional 48.3 mm conflicts with the selected in-house current-reference measurement of 47.6 mm."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "reason": "The provisional 155 g lacked a full-link measurement protocol; the documented full-link control is 158.8 g."
+    },
+    {
+      "fieldName": "fieldApplicability.lugWidthMm",
+      "reason": "Boolean true is not the schema's applicability representation; a numeric 21 mm lug width is present."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "reason": "The manufacturer product page establishes the bracelet but not the interface; exact fitment evidence supplies the normalized spring_bar value."
+    },
+    {
+      "fieldName": "market.secondaryRatioLow",
+      "reason": "The provider did not establish a dated, configuration-controlled market sample."
+    },
+    {
+      "fieldName": "market.secondaryRatioHigh",
+      "reason": "The provider did not establish a dated, configuration-controlled market sample."
+    },
+    {
+      "fieldName": "market.hypeRisk",
+      "reason": "The qualitative label was not tied to the catalogue's reviewed market method."
+    },
+    {
+      "fieldName": "market.speculativeBubble",
+      "reason": "The claim was not tied to a dated, reviewed market method."
+    }
+  ],
+  "missingM1Fields": [],
+  "note": "Ready for additive migration as exact reference 124060. Primary-source specifications and current retail price are combined with reference-controlled independent measurements for thickness, lug span, lug width, full configured weight, and attachment interface; no family-level facts are promoted."
+}

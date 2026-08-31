@@ -1,6 +1,6 @@
 # Coverage-first research pipeline
 
-Status: **Phase 5 engineering complete; catalogue population owner-managed**
+Status: **Phase 5 engineering complete; owner-directed Rolex workbook expansion applied**
 Last verified: **2026-08-31**
 
 This pipeline expands the relational catalogue without turning provider output,
@@ -50,6 +50,31 @@ those editorial decisions. The pipeline remains ready for owner-supplied work:
 
 No catalogue count is used as evidence that a fact is reviewed or eligible.
 
+### Owner-directed Rolex workbook run — 2026-08-31
+
+The owner's explicit Rolex request temporarily reopened the owner-managed
+boundary for one named workbook only. The intake covered all 34 source rows as
+35 exact-reference targets, used actual Perplexity `sonar-pro` through
+`/v1/sonar`, and retained USD 3.52509 provider cost. The source workbook was
+not overwritten; the desktop `Rolex_Complete_Model_Research 2_Extended.xlsx`
+copy adds summary, exact-reference, and 1,757-row field-evidence worksheets.
+
+Independent source review accepted only Submariner `124060` and Sea-Dweller
+`126600`. It corrected stale provider prices to the exact current Rolex U.S.
+prices, selected configuration-controlled full-link weights, and verified
+measured fit and attachment fields. The other 33 workbook targets remain
+`needs_more_evidence`; their provisional facts are visible in the extended
+workbook and committed review artifacts but cannot rank. See
+[`rolex-catalogue-expansion.md`](rolex-catalogue-expansion.md).
+
+Additive migration `0036_expand_catalogue_rolex_workbook.sql` is applied
+remotely. Connected verification reports 24 brands, 30 accepted variants, both
+new rows M1-complete, 40 new verified reference-level evidence rows, and exact
+catalogue plus all six SQL/TypeScript hard-filter profiles in parity. Local
+coverage is 1,147/28,800 cells (3.98%). Advisor output adds no Rolex-specific
+finding; the existing server-only RLS/no-policy notices, intentionally public
+RPC warnings, and unused-index informational notices remain.
+
 ## Manifest and queue
 
 Run:
@@ -74,13 +99,13 @@ Current checkpoint:
 
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context alongside source-led additions through Bertucci;
-- 28 accepted catalogue targets linked to all current reviewed variants in the
+- 30 accepted catalogue targets linked to all current reviewed variants in the
   local seed, including the rendered Vostok 420059 and BOLDR Horizon migrations;
-- 33 coverage-intent targets, with no planned target in the default research
-  queue after the source-led Vostok 420059 acceptance;
-- live Supabase parity for 24 brands and all 28 remotely applied variants
+- 52 coverage-intent targets, including the 33 Rolex workbook candidates that
+  remain explicitly held at `needs_more_evidence`;
+- live Supabase parity for 24 brands and all 30 remotely applied variants
   across the six golden SQL/TypeScript hard-filter profiles; migrations `0031`
-  and `0032` are applied remotely; all 20 public catalogue tables have RLS
+  `0031`, `0032`, and `0036` are applied remotely; all public catalogue tables have RLS
   enabled and browser roles have no direct table grants;
 - P0 tranche led by small formal quartz, compact solar field tools, ultralight
   time-only watches, compact mechanical GMTs, and affordable small-wrist

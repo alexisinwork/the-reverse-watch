@@ -16,7 +16,7 @@ Future job artifacts use these paths:
 ```text
 data/research/raw/<job-id>.json          # immutable provider/manual capture
 data/research/normalized/<job-id>.json   # Zod-validated provisional facts
-data/research/reviewed/<job-id>.json     # reviewer decision and migration link
+data/research/reviewed/<target-id>.json  # reviewer decision and migration link
 data/research/jobs/<job-id>.json         # mutable job state and artifact pointers
 ```
 
@@ -42,3 +42,21 @@ npm run check
 The live parity command requires the configured public Supabase URL and
 publishable key. A failed or incomplete fact remains provisional or `null`; it
 must not be converted into a plausible default to make the checks pass.
+
+## Rolex workbook intake
+
+`rolex-workbook-intake.json` is the immutable, SHA-256-linked mapping from the
+owner's 34-row workbook to 35 exact-reference targets. The Explorer 36 source
+row is intentionally split into steel and Rolesor material variants.
+
+```bash
+npm run research:sync-intake -- data/research/rolex-workbook-intake.json
+npm run research -- --target=<target-id> --model=sonar-pro
+npm run research:review-rolex-intake
+npm run research:export-rolex-workbook -- <source.xlsx> <extended.xlsx>
+```
+
+The initial review command never overwrites an existing review artifact. The
+export keeps provider facts visible, overlays independently verified
+corrections, and adds those corrections as separate field-evidence rows. The
+original workbook remains untouched.

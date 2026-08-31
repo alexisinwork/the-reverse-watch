@@ -1,0 +1,42 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-milgauss-historical",
+  "jobId": "c85928d9-1897-40bb-81d2-2efb829e8c8c",
+  "reviewedAt": "2026-08-31T17:17:56.815Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Milgauss",
+    "referenceCode": "116400GV-0002",
+    "variantName": "Milgauss 116400GV Z-blue dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://content.rolex.com/dam/media/brochures/milgauss/m116400gv-0002.pdf",
+      "status": "fetch_blocked",
+      "note": "Independent retrieval returned HTTP 200; exact reference 116400GV-0002 was not detectable. Identity remains provisional."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "identity",
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-workbook-sky-dweller",
+  "jobId": "a2fd56b0-a866-4c06-af47-123d4e493f97",
+  "reviewedAt": "2026-08-31T17:17:52.284Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Sky-Dweller",
+    "referenceCode": "336934",
+    "variantName": "Oystersteel and white gold, bright black dial, Jubilee bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/watches/sky-dweller/m336934-0008",
+      "status": "validated_primary",
+      "note": "Manufacturer page independently returned HTTP 200 and contained exact reference 336934. This validates candidate identity and URL only; all other provider-extracted fields require separate field-level review."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+}

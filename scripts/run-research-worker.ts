@@ -4,13 +4,13 @@ import path from "node:path";
 
 import {
   buildResearchPrompt,
-  extractPerplexityOutputText,
-  extractPerplexitySourceUrls,
+  extractPerplexitySonarOutputText,
+  extractPerplexitySonarSourceUrls,
   normalizeProposedFacts,
   parseExtractionText,
   PERPLEXITY_RESEARCH_CONTRACT_VERSION,
-  perplexityAgentResponseSchema,
   perplexityResearchResponseFormat,
+  perplexitySonarResponseSchema,
 } from "../app/domain/perplexity-research";
 import {
   researchJobSchema,
@@ -55,7 +55,7 @@ type WorkerOptions = {
   attempts: number;
   dryRun: boolean;
   force: boolean;
-  preset: string;
+  model: string;
 };
 
 function integerArgument(name: string, fallback: number | null) {
@@ -88,6 +88,14 @@ function stringArguments(name: string) {
   return values;
 }
 
+function stringArgument(name: string, fallback: string) {
+  const values = stringArguments(name);
+  if (values.length > 1) {
+    throw new RangeError(`${name} may be provided only once.`);
+  }
+  return values[0] ?? fallback;
+}
+
 function optionsFromArguments(): WorkerOptions {
   return {
     targetIds: stringArguments("--target"),
@@ -96,7 +104,10 @@ function optionsFromArguments(): WorkerOptions {
     attempts: integerArgument("--attempts", DEFAULT_ATTEMPTS)!,
     dryRun: process.argv.includes("--dry-run"),
     force: process.argv.includes("--force"),
-    preset: process.env.PERPLEXITY_STANDARD_PRESET || "pro-search",
+    model: stringArgument(
+      "--model",
+      process.env.PERPLEXITY_RESEARCH_MODEL || "sonar-pro",
+    ),
   };
 }
 
@@ -139,11 +150,11 @@ function selectTargets(
   return options.limit === null ? selected : selected.slice(0, options.limit);
 }
 
-function requestFingerprint(target: ResearchTarget, preset: string) {
+function requestFingerprint(target: ResearchTarget, model: string) {
   const input = JSON.stringify({
     contractVersion: CONTRACT_VERSION,
     provider: "perplexity",
-    preset,
+    model,
     targetId: target.id,
     prompt: buildResearchPrompt(target),
   });
@@ -213,12 +224,12 @@ function moveTargetToReview(manifest: ResearchManifest, targetId: string) {
 function newJob({
   target,
   fingerprint,
-  preset,
+  model,
   attempt,
 }: {
   target: ResearchTarget;
   fingerprint: string;
-  preset: string;
+  model: string;
   attempt: number;
 }): ResearchJob {
   return researchJobSchema.parse({
@@ -228,7 +239,7 @@ function newJob({
     attempt,
     requestFingerprint: fingerprint,
     provider: "perplexity",
-    preset,
+    preset: model,
     queuedAt: new Date().toISOString(),
     startedAt: null,
     completedAt: null,
@@ -244,26 +255,30 @@ function newJob({
 
 async function callPerplexity(
   target: ResearchTarget,
-  preset: string,
+  model: string,
   correction: string | null,
 ) {
   const apiKey = process.env.PERPLEXITY_API_KEY;
   if (!apiKey) {
     throw new Error("PERPLEXITY_API_KEY is not configured.");
   }
-  const response = await fetch("https://api.perplexity.ai/v1/agent", {
+  const response = await fetch("https://api.perplexity.ai/v1/sonar", {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      preset,
-      input: buildResearchPrompt(target, correction),
-      language_preference: "en",
-      max_output_tokens: 12_000,
+      model,
+      messages: [
+        {
+          role: "user",
+          content: buildResearchPrompt(target, correction),
+        },
+      ],
+      max_tokens: 12_000,
+      web_search_options: { search_context_size: "high" },
       response_format: perplexityResearchResponseFormat,
-      store: false,
     }),
     signal: AbortSignal.timeout(180_000),
   });
@@ -324,9 +339,10 @@ async function researchTarget(
   manifest: ResearchManifest,
   successfulFingerprints: Map<string, ResearchJob>,
   maximumAttemptByFingerprint: Map<string, number>,
+  latestFailureByFingerprint: Map<string, ResearchJob>,
 ) {
   const { target, brandName } = selection;
-  const fingerprint = requestFingerprint(target, options.preset);
+  const fingerprint = requestFingerprint(target, options.model);
   const reusable = successfulFingerprints.get(fingerprint);
   if (reusable && !options.force) {
     console.log(
@@ -344,14 +360,15 @@ async function researchTarget(
     maximumAttemptByFingerprint,
     fingerprint,
   );
-  let correction: string | null = null;
+  let correction: string | null =
+    latestFailureByFingerprint.get(fingerprint)?.error ?? null;
   for (let offset = 0; offset < options.attempts; offset += 1) {
     const attempt = firstAttempt + offset;
     let retryDelayMs: number | null = null;
     const job = newJob({
       target,
       fingerprint,
-      preset: options.preset,
+      model: options.model,
       attempt,
     });
     writeJob(job);
@@ -362,7 +379,7 @@ async function researchTarget(
     try {
       const providerResponse = await callPerplexity(
         target,
-        options.preset,
+        options.model,
         correction,
       );
       const { raw } = providerResponse;
@@ -381,13 +398,10 @@ async function researchTarget(
             : `HTTP ${providerResponse.status}`;
         throw new Error(`Perplexity request failed: ${error}`);
       }
-      const parsed = perplexityAgentResponseSchema.parse(raw);
+      const parsed = perplexitySonarResponseSchema.parse(raw);
       const completedAt = new Date().toISOString();
-      if (parsed.status !== "completed") {
-        throw new Error(`Perplexity response status is ${parsed.status}.`);
-      }
       const extraction = parseExtractionText(
-        extractPerplexityOutputText(parsed),
+        extractPerplexitySonarOutputText(parsed),
       );
       if (extraction.targetId !== target.id) {
         throw new Error(
@@ -397,7 +411,7 @@ async function researchTarget(
       const facts = normalizeProposedFacts({
         extraction,
         provider: "perplexity",
-        preset: options.preset,
+        preset: options.model,
         jobId: job.jobId,
         retrievedAt: completedAt,
       });
@@ -416,13 +430,13 @@ async function researchTarget(
       job.normalizedArtifactPath = relative(normalizedPath);
       job.sourceUrls = [
         ...new Set([
-          ...extractPerplexitySourceUrls(parsed),
+          ...extractPerplexitySonarSourceUrls(parsed),
           ...facts.map((fact) => fact.sourceUrl),
         ]),
       ].sort();
       job.costUsd = parsed.usage?.cost?.total_cost ?? null;
-      job.inputTokens = parsed.usage?.input_tokens ?? null;
-      job.outputTokens = parsed.usage?.output_tokens ?? null;
+      job.inputTokens = parsed.usage?.prompt_tokens ?? null;
+      job.outputTokens = parsed.usage?.completion_tokens ?? null;
       writeJob(job);
       successfulFingerprints.set(fingerprint, job);
       maximumAttemptByFingerprint.set(fingerprint, attempt);
@@ -476,8 +490,11 @@ if (selections.length === 0) {
   process.exit(0);
 }
 ensureDirectories();
-const { successfulFingerprints, maximumAttemptByFingerprint } =
-  loadJobHistory();
+const {
+  successfulFingerprints,
+  maximumAttemptByFingerprint,
+  latestFailureByFingerprint,
+} = loadJobHistory();
 const failures: string[] = [];
 await mapConcurrent(selections, options.concurrency, async (selection) => {
   try {
@@ -487,6 +504,7 @@ await mapConcurrent(selections, options.concurrency, async (selection) => {
       manifest,
       successfulFingerprints,
       maximumAttemptByFingerprint,
+      latestFailureByFingerprint,
     );
   } catch (error) {
     failures.push(errorMessage(error));

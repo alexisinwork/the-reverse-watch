@@ -134,6 +134,43 @@ export const researchBrandSchema = z
     "A manifest brand needs a knowledge dossier or at least one research target.",
   );
 
+export const researchWorkbookIntakeSchema = z
+  .object({
+    intakeVersion: z.literal(1),
+    sourceWorkbookName: z.string().endsWith(".xlsx"),
+    sourceWorksheet: z.string().min(1),
+    sourceSha256: z.string().regex(/^[a-f0-9]{64}$/),
+    importedAt: z.iso.datetime(),
+    brandSlug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+    targets: z
+      .array(
+        z
+          .object({
+            sourceRow: z.number().int().min(2),
+            id: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+            referenceLabel: z.string().min(1),
+            coverageIntent: coverageIntentSchema,
+            coverageRationale: z.string().min(1),
+          })
+          .strict(),
+      )
+      .min(1),
+  })
+  .strict()
+  .superRefine((intake, context) => {
+    const ids = new Set<string>();
+    intake.targets.forEach((target, index) => {
+      if (ids.has(target.id)) {
+        context.addIssue({
+          code: "custom",
+          path: ["targets", index, "id"],
+          message: `Duplicate workbook target ID: ${target.id}.`,
+        });
+      }
+      ids.add(target.id);
+    });
+  });
+
 export const researchManifestSchema = z
   .object({
     manifestVersion: z.literal(1),
