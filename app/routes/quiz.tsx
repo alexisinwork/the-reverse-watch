@@ -571,10 +571,16 @@ export async function action({ request }: Route.ActionArgs) {
       intent,
     });
     let newsletterStatus: DeliveryChannelStatus =
-      beehiivConfiguration.configured ? "failed" : "unavailable";
+      beehiivConfiguration.configured
+        ? "failed"
+        : beehiivConfiguration.reason === "invalid"
+          ? "misconfigured"
+          : "unavailable";
     let dossierStatus: DeliveryChannelStatus = resendConfiguration.configured
       ? "failed"
-      : "unavailable";
+      : resendConfiguration.reason === "invalid"
+        ? "misconfigured"
+        : "unavailable";
     if (beehiivConfiguration.configured) {
       try {
         await subscribeToBeehiiv(emailOptIn.email, beehiivConfiguration);

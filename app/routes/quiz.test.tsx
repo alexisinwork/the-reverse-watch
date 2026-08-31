@@ -64,6 +64,38 @@ describe("progressive diagnostic", () => {
     });
   });
 
+  it("surfaces partial provider configuration without calling a provider", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "");
+    vi.stubEnv("RESEND_API_KEY", "");
+    vi.stubEnv("EMAIL_FROM", "");
+    const fetchImplementation = vi.fn<typeof fetch>();
+    vi.stubGlobal("fetch", fetchImplementation);
+
+    const response = await action({
+      request: actionRequest({
+        intent: "core",
+        profile: JSON.stringify(coreProfile),
+        email: "reader@example.com",
+        emailOptIn: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+    const payload = response.data;
+
+    expect(response.init?.status ?? 200).toBe(200);
+    expect(payload.ok).toBe(true);
+    if (!payload.ok) throw new Error("Expected a recommendation result");
+    expect(payload.subscription).toMatchObject({
+      status: "failed",
+      newsletterStatus: "misconfigured",
+      dossierStatus: "unavailable",
+    });
+    expect(payload.subscription.message).toContain(
+      "newsletter delivery misconfigured",
+    );
+    expect(fetchImplementation).not.toHaveBeenCalled();
+  });
+
   it("reports partial delivery when Beehiiv fails but Resend succeeds", async () => {
     vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
     vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");

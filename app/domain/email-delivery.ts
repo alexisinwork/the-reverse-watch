@@ -1,4 +1,5 @@
-export type DeliveryChannelStatus = "sent" | "unavailable" | "failed";
+export type DeliveryChannelStatus =
+  "sent" | "unavailable" | "misconfigured" | "failed";
 
 export type EmailDeliverySummary = {
   status: "sent" | "partial" | "unavailable" | "failed";
@@ -15,7 +16,7 @@ export function summarizeEmailDelivery(
     (status) => status === "sent",
   ).length;
   const failedChannels = [newsletterStatus, dossierStatus].filter(
-    (status) => status === "failed",
+    (status) => status === "failed" || status === "misconfigured",
   ).length;
   const status =
     successfulChannels > 0
@@ -30,12 +31,16 @@ export function summarizeEmailDelivery(
       ? "newsletter opt-in recorded"
       : newsletterStatus === "failed"
         ? "newsletter opt-in failed"
-        : "newsletter delivery unavailable",
+        : newsletterStatus === "misconfigured"
+          ? "newsletter delivery misconfigured"
+          : "newsletter delivery unavailable",
     dossierStatus === "sent"
       ? "custom dossier sent"
       : dossierStatus === "failed"
         ? "custom dossier delivery failed"
-        : "custom dossier delivery unavailable",
+        : dossierStatus === "misconfigured"
+          ? "custom dossier delivery misconfigured"
+          : "custom dossier delivery unavailable",
   ];
   return {
     status,
