@@ -1567,6 +1567,15 @@ repeatable comparison standard. The conflicting exact-reference observations
 therefore remain useful context rather than a catalogue grade; no fact is
 promoted and no provider request is authorized.
 
+The next LIP Churchill T18 `671937` pre-screen remains open for
+`caseThicknessMm` and `lumeGrade`. Lepage's exact authorized-retailer page
+matches the current ivory/blue/sapphire configuration but reports 9.2 mm
+thickness, conflicting with the exact specialist's 8.5 mm; the older 8.0 mm
+record belongs to a mineral/Arabic configuration. Without a current primary or
+convergent exact-reference measurement, thickness stays null. Lepage also gives
+no whole-watch lume statement, so no grade is promoted and no provider request
+is authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "lip-lightweight-rectangular-quartz",
   "jobId": "e1e0660c-f35a-4ae0-85c1-7b91a9261be8",
-  "reviewedAt": "2026-08-30T20:20:11Z",
+  "reviewedAt": "2026-08-31T10:02:18Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -31,6 +31,11 @@
       "url": "https://horel.com/en/churchill-t18/10010868-lip-churchill-t18-montre-lip-churchill-t18-671937-2900100108683.html",
       "status": "rejected",
       "note": "Horel reports 8 mm and an interchangeable strap, but its page describes a conflicting older 21 x 38 mm mineral-crystal watch with Arabic numerals rather than LIP's current 38.5 x 21.2 mm sapphire Roman-numeral configuration. Interchangeable also does not specify the fastener. Neither claim is merged into the reviewed row. Retrieved 2026-08-30."
+    },
+    {
+      "url": "https://www.lepage.fr/fr/24456-montre-lip-churchill-t18-petite-seconde-quartz-cadran-ivoire-bracelet-cuir-noir-385-x-212-mm-671937.html",
+      "status": "validated_secondary",
+      "note": "Lepage's exact-reference official-retailer page identifies 671937 with the ivory dial, blue leather, sapphire crystal, 38.5 x 21.2 mm case, and 18 mm lugs. It reports 9.2 mm thickness, conflicting with the exact specialist's 8.5 mm; neither secondary measurement is accepted without a current primary or convergent exact-reference value. It provides no whole-watch lume statement. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
@@ -208,5 +213,5 @@
     }
   ],
   "missingM1Fields": ["caseThicknessMm", "lumeGrade"],
-  "note": "Keep as research-only. Direct primary review validates current LIP Churchill T18 reference 671937 on its homogeneous dark-blue leather configuration, including the in-stock EUR 249 French offer, 21.2 x 38.5 mm rectangular geometry, 18 mm lugs, 27 g full weight, Ronda 1064 at -10/+20 seconds per month, 30 m resistance, push/pull crown, sapphire, and no-date small-seconds display. A narrow Perplexity pass found an exact-reference specialist specification that distinguishes quick-release pushpins at the case from the buckle at the wrist, closing attachmentType. Thickness remains unresolved because 8.0 mm belongs to a conflicting older mineral/Arabic configuration and 8.5 mm is a lone secondary value without current primary or convergent corroboration. No configuration-consistent source explicitly establishes lume absence across both hands and dial. caseThicknessMm and operation.lumeGrade remain null as the two M1 gaps."
+  "note": "Keep as research-only. Direct primary review validates current LIP Churchill T18 reference 671937 on its homogeneous dark-blue leather configuration, including the in-stock EUR 249 French offer, 21.2 x 38.5 mm rectangular geometry, 18 mm lugs, 27 g full weight, Ronda 1064 at -10/+20 seconds per month, 30 m resistance, push/pull crown, sapphire, and no-date small-seconds display. A narrow Perplexity pass found an exact-reference specialist specification that distinguishes quick-release pushpins at the case from the buckle at the wrist, closing attachmentType. A newly retrieved exact authorized-retailer record matches the current ivory/blue/sapphire configuration but reports 9.2 mm thickness, conflicting with the specialist's 8.5 mm; neither secondary measurement is accepted without current primary or convergent corroboration. The 8.0 mm value belongs to a conflicting older mineral/Arabic configuration. No configuration-consistent source explicitly establishes lume absence across both hands and dial. caseThicknessMm and operation.lumeGrade remain null as the two M1 gaps."
 }
