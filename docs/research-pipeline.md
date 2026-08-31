@@ -1503,6 +1503,14 @@ continue to establish the 100 g unsized-bracelet mass, regulated ±10 seconds
 per day, 47 mm span, quick-release interface, and no-date configuration; no
 fact is promoted and no provider request is authorized.
 
+The next Citizen FORMA `FRA36-2432` pre-screen leaves its sole M1 gap,
+`lumeGrade`, open. A Japanese authorized-retailer recheck independently
+repeats the exact B023, 57 g, 18 x 6 mm, ±15-seconds-per-month, and stainless
+bracelet specification, but its technical list contains no lume or no-lume
+statement. Citizen's own page likewise supplies no qualifying photoluminescent
+performance evidence. No fact is promoted and no provider request is
+authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over

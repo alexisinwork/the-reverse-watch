@@ -38,6 +38,11 @@
       "note": "The exact FRA36-2432 product record identifies the case-side bracelet connection as spring-bar type, separately from its three-fold push clasp and bracelet-link pins. Its sold-out state is not used for the selected current Sakura price snapshot."
     },
     {
+      "url": "https://shiho-watch-onlineshop.com/products/detail/336",
+      "status": "validated_secondary",
+      "note": "This Japanese authorized-retailer page independently exposes FRA36-2432, B023, ±15 seconds per month, 57 g, 18 x 6 mm, crystal glass, and the stainless three-fold bracelet. Its exact technical list contains no lume or no-lume statement, so it corroborates the specification boundary but cannot close lumeGrade. Retrieved 2026-08-31."
+    },
+    {
       "url": "https://www.amazon.co.jp/CITIZEN-FORMA-%E3%83%95%E3%82%A9%E3%83%AB%E3%83%9E-Eco-Drive-FRA36-2432/dp/B000RDH76K",
       "status": "rejected",
       "note": "The provider supplied an exact Amazon route for rate, reserve, and weight, but the retrieved URL contains malformed text and is not needed: Citizen Japan and exact retailer records independently establish those facts."
@@ -224,5 +229,5 @@
     }
   ],
   "missingM1Fields": ["lumeGrade"],
-  "note": "Keep as research-only. Citizen Japan and exact retailer pages establish the tiny rectangular 27 x 18 x 6 mm, 57 g B023 Eco-Drive configuration, ±15-seconds-per-month accuracy, 30 m resistance, mineral/crystal glass, and time-only display. The exact Sakura offer is USD 102 and new but has contradictory Out of stock and Available 102 states, so availability is unknown. Rectangular geometry is preserved as case length and width rather than a diameter. The exact case-side bracelet interface is spring-bar type; a qualifying lume grade remains unresolved."
+  "note": "Keep as research-only. Citizen Japan and exact retailer pages establish the tiny rectangular 27 x 18 x 6 mm, 57 g B023 Eco-Drive configuration, ±15-seconds-per-month accuracy, 30 m resistance, mineral/crystal glass, and time-only display. The exact Sakura offer is USD 102 and new but has contradictory Out of stock and Available 102 states, so availability is unknown. Rectangular geometry is preserved as case length and width rather than a diameter. The exact case-side bracelet interface is spring-bar type. A Japanese authorized-retailer recheck repeats the core specification but, like Citizen Japan, gives no lume or no-lume statement; a qualifying lume grade remains unresolved."
 }
