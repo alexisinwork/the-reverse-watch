@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createRoutesStub } from "react-router";
+import { vi } from "vitest";
 
 import {
   QUESTIONNAIRE_STORAGE_KEY,
@@ -8,9 +9,103 @@ import {
 } from "../domain/questionnaire";
 import Quiz, { action } from "./quiz";
 
+const coreProfile = {
+  core: {
+    version: QUESTIONNAIRE_VERSION,
+    budgetCurrency: "USD",
+    budgetMax: 10_000,
+    wristCircumferenceMm: 170,
+    deploymentEnvironment: "studio_desk_daily",
+    ownershipFriction: "workhorse_mechanical",
+    accuracyTolerance: "within_15_seconds_per_day",
+    weightLimit: "under_160_g",
+    requiredComplications: ["gmt"],
+    datePreference: "either",
+  },
+};
+
+function actionRequest(entries: Record<string, string>) {
+  const body = new URLSearchParams(entries);
+  return new Request("http://test.local/quiz", {
+    method: "POST",
+    body,
+  });
+}
+
 describe("progressive diagnostic", () => {
   beforeEach(() => {
     window.sessionStorage.clear();
+  });
+
+  it("keeps the recommendation visible when email channels are unavailable", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "");
+    vi.stubEnv("RESEND_API_KEY", "");
+    vi.stubEnv("EMAIL_FROM", "");
+
+    const response = await action({
+      request: actionRequest({
+        intent: "core",
+        profile: JSON.stringify(coreProfile),
+        email: "reader@example.com",
+        emailOptIn: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+    const payload = response.data;
+
+    expect(response.init?.status ?? 200).toBe(200);
+    expect(payload.ok).toBe(true);
+    if (!payload.ok) throw new Error("Expected a recommendation result");
+    expect(payload.recommendation).toBeDefined();
+    expect(payload.subscription).toMatchObject({
+      status: "unavailable",
+      newsletterStatus: "unavailable",
+      dossierStatus: "unavailable",
+    });
+  });
+
+  it("reports partial delivery when Beehiiv fails but Resend succeeds", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    vi.stubEnv("RESEND_API_KEY", "resend-key");
+    vi.stubEnv("EMAIL_FROM", "The Reserve <hello@example.com>");
+    const fetchImplementation = vi
+      .fn<typeof fetch>()
+      .mockResolvedValueOnce(new Response(null, { status: 502 }))
+      .mockResolvedValueOnce(
+        new Response(JSON.stringify({ id: "email_123" }), { status: 200 }),
+      );
+    vi.stubGlobal("fetch", fetchImplementation);
+    const error = vi
+      .spyOn(console, "error")
+      .mockImplementation(() => undefined);
+
+    const response = await action({
+      request: actionRequest({
+        intent: "core",
+        profile: JSON.stringify(coreProfile),
+        email: "reader@example.com",
+        emailOptIn: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+    const payload = response.data;
+
+    expect(response.init?.status ?? 200).toBe(200);
+    expect(payload.ok).toBe(true);
+    if (!payload.ok) throw new Error("Expected a recommendation result");
+    expect(payload.subscription).toMatchObject({
+      status: "partial",
+      newsletterStatus: "failed",
+      dossierStatus: "sent",
+    });
+    expect(payload.recommendation).toBeDefined();
+    expect(fetchImplementation).toHaveBeenCalledTimes(2);
+    error.mockRestore();
+  });
+
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.unstubAllGlobals();
   });
 
   it("keeps the core result to six screens and returns a validated profile", async () => {
