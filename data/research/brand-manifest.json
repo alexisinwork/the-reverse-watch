@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
   "strategy": "coverage_first",
-  "targetBrandCount": 203,
-  "updatedAt": "2026-08-30T22:04:38.000Z",
+  "targetBrandCount": 204,
+  "updatedAt": "2026-08-31T05:40:25.000Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4491,6 +4491,54 @@
           },
           "coverageRationale": "Independent exact-reference review validates current reference 12022 at USD 185, 40 mm diameter, 49.5 mm lug-to-lug, 11 mm thickness, 22 mm proprietary fixed titanium band-retention bars, 62 g configured mass, matte solid-titanium Unibody case, a shared -20/+20-seconds-per-month rate for the exact distributor-listed Miyota GM10 or 2S60 alternatives, 200 m resistance, screw-down crown and back, hardened mineral crystal, moderate hours-long lume, and date. Current manufacturer assets override stale exact-retailer 100 m and approximately 54 g fields; scalar calibre and differing battery endurance remain null rather than selecting an alternative without evidence. Conservative fit projection supports the three wrist bands from 6.25 inches upward, so the homogeneous field/studio row opens exactly 96 previously empty under_300, zero-maintenance, simple-date cells.",
           "catalogueVariantId": "bertucci-a2t-original-classic-12022"
+        }
+      ]
+    },
+    {
+      "slug": "luminox",
+      "name": "Luminox",
+      "priority": "P0",
+      "manifestRationale": "Source-led lightweight tritium field-quartz candidate outside the owner knowledge pack; retained at exact reference level to open compact mid-affordable simple-date coverage without inheriting adjacent Leatherback variants.",
+      "dossierState": "not_started",
+      "targets": [
+        {
+          "id": "luminox-leatherback-xs-0307-wo",
+          "referenceLabel": "Luminox Leatherback SEA Turtle XS.0307.WO, white dial and case on the supplied white 19 mm silicone strap; keep the exact 39 mm 0300-series configuration separate from black 0301 variants, 44 mm Leatherback Giant references, other straps, and conflicting retailer weight rows",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "no_requirement",
+              "within_15_seconds_per_day",
+              "within_5_seconds_per_day",
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g",
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Primary and exact-reference pre-screening retrieved 2026-08-31 covers the current authorized PLN 1,315 exact XS.0307.WO offer, 39 mm diameter, 46 mm lug-to-lug, 12 mm thickness, 19 mm conventional pushpin interface, manufacturer-published 48 g configured mass, white fiberglass-compound case and supplied white silicone strap, Ronda 515 -10/+20-seconds-per-month quartz operation, 100 m resistance, protected push-pull crown with double security gasket, hardened mineral crystal, date, and constant 24/7 tritium illumination. Independent review must prefer Luminox's exact 48 g whole-watch value over a current authorized retailer's conflicting 40 g row, preserve the exact white configuration, and reject 0301, 44 mm Giant, other-strap, and generic collection inheritance. If every M1 class survives one bounded provider job, the exact field/studio row opens 128 currently empty 300_500, zero-maintenance, simple-date cells."
         }
       ]
     }

@@ -60,9 +60,8 @@ Current checkpoint:
 - the complete 200-dossier owner knowledge pack is linked into the manifest as
   research-only M0/M2 context alongside source-led additions through Bertucci;
 - 23 accepted catalogue targets linked to all current reviewed variants;
-- 29 coverage-intent targets; the default research queue is empty after exact
-  Bertucci `12022` acceptance, so the next candidate starts with source-led
-  exact-reference selection rather than an unbounded provider run;
+- 30 coverage-intent targets, with exact Luminox `XS.0307.WO` as the sole
+  planned target in the default research queue after source-led pre-screening;
 - live Supabase parity for 19 brands and all 23 accepted variants across the
   six golden SQL/TypeScript hard-filter profiles; all 20 public catalogue
   tables have RLS enabled and browser roles have no direct table grants;
@@ -1067,6 +1066,27 @@ migration-ready decisions. The ignored ledger contains 63 attempts (38
 succeeded, 25 failed) across 33 target IDs and USD 0.53301 recorded cost. The
 default queue is empty again; a new provider call requires a named homogeneous
 candidate that first passes exact source-led M1 and coverage pre-screening.
+
+The next source-led checkpoint plans Luminox Leatherback SEA Turtle
+`XS.0307.WO`, fixed to its white dial and case on the supplied white 19 mm
+silicone strap. The [exact current manufacturer page](https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo)
+publishes 48 g configured weight, 39 x 12 mm geometry, Ronda 515 quartz, 100 m
+resistance, a protected double-gasket crown, hardened mineral crystal, date,
+and 24/7 illumination for up to 25 years. A [current exact authorized Polish
+offer](https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO)
+provides PLN 1,315 stock, 24-hour dispatch, and 46 mm lug-to-lug; an [exact
+official dealer record](https://www.auer.lu/en/luminox-leatherback-sea-turtle-swiss-carbon-watch-with-date-xs-0307-wo.htm)
+identifies pull-crown and pushpin interfaces. Ronda's official 515 record closes
+the -10/+20-seconds-per-month rate.
+
+No pre-screened value is accepted. One bounded Perplexity attempt must retain
+the exact white `XS.0307.WO` configuration, independently reconcile Luminox's
+48 g whole-watch field against the authorized retailer's conflicting 40 g row,
+and reject black 0301, 44 mm Leatherback Giant, alternate-strap, and generic
+collection inheritance. If every M1 field survives review, the projected row
+opens 128/128 currently empty `300_500`, zero-maintenance, simple-date
+field/studio cells across four wrist bands, all accuracy tolerances, and every
+weight limit.
 
 ## Job idempotency and retention
 

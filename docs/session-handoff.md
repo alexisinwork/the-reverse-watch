@@ -91,10 +91,14 @@ phase.
   record retains null response/usage rather than a fabricated cost. The full
   ignored ledger is now 63 attempts (38 succeeded, 25 failed) across 33 target
   IDs with USD 0.53301 recorded cost.
-- The next active session-plan item is a source-led exact-reference pre-screen
-  for the next homogeneous Phase 5 coverage candidate. The default queue is
-  empty; do not invoke the provider until a named variant has complete projected
-  M1 evidence, an explicit coverage purpose, and a documented exclusion boundary.
+- The next active session-plan item is exactly one bounded provider attempt for
+  Luminox Leatherback SEA Turtle `XS.0307.WO`, fixed to the white dial and case
+  on its supplied white 19 mm silicone strap. Source-led pre-screening retrieved
+  2026-08-31 covers every projected M1 class and 128/128 currently empty
+  `300_500`, zero-maintenance, simple-date field/studio cells across four wrist
+  bands. Review must reconcile Luminox's 48 g whole-watch field against an
+  authorized retailer's conflicting 40 g row and reject black 0301, 44 mm
+  Leatherback Giant, alternate-strap, and generic collection inheritance.
 
 ## Accepted 2026-08-28 audit decisions
 
@@ -655,11 +659,14 @@ On 2026-08-28 for Phases 1–4:
 
 ## Exact continuation
 
-1. Begin the next Phase 5 checkpoint with source-led exact-reference selection.
-   Name one homogeneous variant, document its coverage purpose and exclusion
-   boundary, and close every projected M1 class from current exact sources
-   before invoking the provider. Run at most one bounded attempt only after that
-   pre-screen; independently review every provisional claim before acceptance.
+1. Run exactly one bounded Perplexity attempt for
+   `luminox-leatherback-xs-0307-wo`, then independently review the exact white
+   dial/case and supplied white-silicone configuration. Prefer Luminox's current
+   48 g whole-watch field over the authorized retailer's conflicting 40 g row
+   only if source review supports that precedence, and keep black 0301, 44 mm
+   Giant, alternate-strap, and generic collection facts out. If and only if
+   every M1 class survives, render the next additive migration and prove live
+   parity.
 2. Treat the live 23-row v3 catalogue and six-profile parity as the relational
    baseline. After every new accepted variant, add one forward migration,
    rerun exact live parity through the publishable-key RPC path, and retain the

@@ -1099,6 +1099,28 @@ The next Phase 5 checkpoint returns to source-led exact-reference selection;
 the provider must not run until a named homogeneous candidate has complete
 projected M1 evidence and an explicit coverage purpose.
 
+That source-led pre-screen selects Luminox Leatherback SEA Turtle
+`XS.0307.WO`, fixed to its white dial, white 39 mm fiberglass-compound case,
+and supplied white 19 mm silicone strap. The [current manufacturer page](https://ch.luminox.com/en/products/leatherback-sea-turtle-39-mm-outdoor-uhr-0307-wo)
+publishes 48 g configured weight, 12 mm thickness, Ronda 515 quartz, 100 m
+resistance, a protected double-gasket crown, hardened mineral crystal, date,
+and constant 24/7 illumination for up to 25 years. A [current exact authorized
+Polish offer](https://www.zegarki.zgora.pl/zegarek/24126_Luminox_Leatherback_Sea_Turtle_0300_Series_Whiteout_XS0307WO)
+adds PLN 1,315 stock with 24-hour dispatch and a 46 mm lug-to-lug span, while
+an [exact official dealer record](https://www.auer.lu/en/luminox-leatherback-sea-turtle-swiss-carbon-watch-with-date-xs-0307-wo.htm)
+identifies a pull crown and pushpin strap mount. The [official Ronda 515
+record](https://www.ronda.ch/en/watch-movement-finder/caliber/515) supplies the
+-10/+20-seconds-per-month rate.
+
+These are routing inputs only. One bounded Perplexity attempt and independent
+review must preserve exact `XS.0307.WO` identity, prefer Luminox's current 48 g
+whole-watch field over the authorized retailer's conflicting 40 g row only if
+source review supports that precedence, and exclude black 0301 references,
+44 mm Leatherback Giant cases, alternate straps, and generic collection facts.
+The exact configuration projects to 128/128 currently empty `300_500`,
+zero-maintenance, simple-date cells across field/studio use, four wrist bands,
+all supported accuracy tolerances, and every weight limit.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **optional, pending deterministic baseline evidence**
