@@ -41,6 +41,11 @@ phase.
   averages 0.2854 ms per evaluation on this runner, and provider cost is USD
   0.00. Semantic functionality remains an experiment, not a production
   dependency.
+- The first bounded semantic pilot used strict structured output on three
+  synthetic free-text profiles. It matched 11/21 expected fields (52.38%) and
+  missed categorical hard constraints, so it was not adopted; the 651-token
+  usage record is retained in the evaluation artifact and no model output
+  entered the recommendation path.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the

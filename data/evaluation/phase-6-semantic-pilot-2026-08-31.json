@@ -1,0 +1,27 @@
+{
+  "evaluatedAt": "2026-08-31T13:03:00Z",
+  "model": "gpt-5.6-terra",
+  "fixtures": 3,
+  "fieldComparisons": 21,
+  "exactFields": 11,
+  "fieldAccuracy": 0.5238,
+  "mismatchesByFixture": [
+    [
+      "deploymentEnvironment",
+      "ownershipFriction",
+      "weightLimit",
+      "datePreference"
+    ],
+    ["deploymentEnvironment", "ownershipFriction", "datePreference"],
+    ["deploymentEnvironment", "weightLimit", "speculativeRiskTolerance"]
+  ],
+  "usage": {
+    "inputTokens": 305,
+    "outputTokens": 346,
+    "reasoningTokens": 135,
+    "totalTokens": 651
+  },
+  "providerCostUsd": null,
+  "status": "not_adopted",
+  "reason": "The pilot did not meet exact-field extraction quality for categorical hard constraints. No model output entered the recommendation path."
+}

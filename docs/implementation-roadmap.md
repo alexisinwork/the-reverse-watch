@@ -1251,6 +1251,14 @@ recommendation violates its hard-filter partition, the slowest profile averages
 measurements establish the comparison baseline; no semantic provider is yet in
 the production path.
 
+A bounded semantic pilot then sent three synthetic held-out free-text profiles
+to the configured GPT-5.6 Terra Responses API with strict JSON Schema output.
+Only 11 of 21 expected fields matched exactly (52.38%); categorical misses
+included deployment, ownership, weight, date, and speculative-risk constraints.
+The 651-token response is retained in
+`data/evaluation/phase-6-semantic-pilot-2026-08-31.json`, but no model output
+entered the recommendation path and the pilot is not adopted.
+
 Follow-on checkpoint 2026-08-31: Worn & Wound's exact sky-blue Horizon
 hands-on review records the hands and indices still glowing until morning after
 overnight wear. This direct elapsed observation closes BOLDR's sole M1 gap as
