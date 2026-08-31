@@ -961,6 +961,11 @@ euro price range and no exact missing measurements or numerical daily-rate
 bound. An exact U.S. seller listing is also price- and availability-on-request.
 No facts were promoted and no provider request was made.
 
+The 2026-08-31 exact-reference search and official-page recheck found no new
+admissible price, lug, configured-weight, accuracy, or attachment evidence for
+`720.035FE`. The display-wide Lumen mapping remains accepted, while those six
+review gaps stay null; no provider request was made.
+
 The next Rado HyperChrome Quartz `R32280109` pre-screen confirms the current
 official U.S. row but closes none of its four remaining M1 gaps. Rado's exact
 page supplies a homogeneous USD 1,400 in-stock offer, 41.5 x 11.7 mm case,
