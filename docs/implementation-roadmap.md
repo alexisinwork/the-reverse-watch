@@ -1215,6 +1215,12 @@ shared libraries from a user-space package extraction. The Beehiiv assertion
 audits only the application-owned boundary; vendor iframe accessibility remains
 outside the page's control.
 
+The same checkpoint smoke-tested the latest protected Vercel production
+deployment: `/`, `/quiz`, and `/health` returned 200, and a valid questionnaire
+version-2 core submission returned 200 with `catalogueOrigin: supabase`. The
+temporary share link used for the check was not retained as application
+configuration.
+
 ## Phase 6 — Optional free-text and semantic evaluation
 
 Status: **closed — SQL-first retained after 2026-08-31 pilot**

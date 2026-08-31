@@ -49,6 +49,11 @@ phase.
 - Phase 6 is closed on that evidence; the SQL-first deterministic engine remains
   the production baseline. Phase 7 integration verification is now the active
   sequence.
+- The latest protected Vercel production deployment passed smoke checks for `/`,
+  `/quiz`, and `/health`; a valid version-2 core submission returned HTTP 200
+  and selected `catalogueOrigin: supabase` against the live 28-variant
+  catalogue. A temporary share link was used only for the check and is not
+  configuration.
 - After BOLDR acceptance, the coverage planner again ranks Cartier Tank Must
   Small `WSTA0107` first at eight empty, under-evidenced formal/small-wrist
   precision cells. Its exact Spain-region product page confirms the
