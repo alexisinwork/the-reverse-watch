@@ -1,8 +1,10 @@
 import {
   DISCOVERY_CONFIDENCE_LABELS,
   discoveryAttributionSchema,
+  discoveryPilotCorpusSchema,
   discoveryPublicationSchema,
 } from "./discovery";
+import { DISCOVERY_PILOT_CORPUS } from "./discovery-pilot";
 
 const timestamp = "2026-08-31T12:00:00.000Z";
 const sourceId = "10000000-0000-4000-8000-000000000001";
@@ -183,6 +185,59 @@ describe("Phase 8 discovery claim contract", () => {
           },
         ],
       }).success,
+    ).toBe(true);
+  });
+});
+
+describe("Phase 8 editorial pilot corpus", () => {
+  it("validates 20 to 30 independent, reviewed discovery stories", () => {
+    const result = discoveryPilotCorpusSchema.safeParse(DISCOVERY_PILOT_CORPUS);
+
+    expect(result.error?.issues).toEqual(undefined);
+    expect(result.success).toBe(true);
+    expect(DISCOVERY_PILOT_CORPUS.stories).toHaveLength(21);
+  });
+
+  it("keeps the text-only pilot outside the recommendation catalogue", () => {
+    for (const story of DISCOVERY_PILOT_CORPUS.stories) {
+      expect(story.publication.attribution.referenceVariantId).toBeNull();
+      expect(story.publication.imageRights.imageState).toBe("no_image_stored");
+      expect(
+        story.publication.evidence.every(
+          (evidence) =>
+            evidence.reviewStatus === "accepted" &&
+            evidence.stance === "supports" &&
+            evidence.source.retrievedAt === DISCOVERY_PILOT_CORPUS.reviewedAt,
+        ),
+      ).toBe(true);
+    }
+  });
+
+  it("includes cinema, television, public figures, and conservative uncertainty", () => {
+    expect(
+      DISCOVERY_PILOT_CORPUS.stories.some(
+        (story) => story.work?.workKind === "film",
+      ),
+    ).toBe(true);
+    expect(
+      DISCOVERY_PILOT_CORPUS.stories.some((story) =>
+        ["television_series", "television_episode"].includes(
+          story.work?.workKind ?? "",
+        ),
+      ),
+    ).toBe(true);
+    expect(
+      DISCOVERY_PILOT_CORPUS.stories.some(
+        (story) => story.entity.entityKind === "public_figure",
+      ),
+    ).toBe(true);
+    expect(
+      DISCOVERY_PILOT_CORPUS.stories.some(
+        (story) =>
+          story.publication.attribution.confidenceCode === "unconfirmed" &&
+          story.publication.attribution.identificationPrecision ===
+            "unidentified",
+      ),
     ).toBe(true);
   });
 });

@@ -422,4 +422,95 @@ export const discoveryPublicationSchema = z
     }
   });
 
+export const discoveryPilotStorySchema = z
+  .object({
+    slug: slugSchema,
+    headline: z.string().trim().min(1),
+    summary: z.string().trim().min(1),
+    entity: discoveryEntitySchema,
+    work: discoveryWorkSchema.nullable(),
+    event: discoveryEventSchema.nullable(),
+    publication: discoveryPublicationSchema,
+  })
+  .superRefine((story, context) => {
+    const attribution = story.publication.attribution;
+    const issue = (path: string[], message: string) =>
+      context.addIssue({ code: "custom", path, message });
+
+    if (attribution.entityId !== story.entity.id) {
+      issue(
+        ["publication", "attribution", "entityId"],
+        "The attribution must belong to the pilot story entity.",
+      );
+    }
+    if (attribution.workId !== (story.work?.id ?? null)) {
+      issue(
+        ["publication", "attribution", "workId"],
+        "The attribution work must match the pilot story work.",
+      );
+    }
+    if (attribution.eventId !== (story.event?.id ?? null)) {
+      issue(
+        ["publication", "attribution", "eventId"],
+        "The attribution event must match the pilot story event.",
+      );
+    }
+    if (attribution.referenceVariantId !== null) {
+      issue(
+        ["publication", "attribution", "referenceVariantId"],
+        "The packet 8.2 pilot cannot create or assume catalogue links.",
+      );
+    }
+    if (story.publication.imageRights.imageState !== "no_image_stored") {
+      issue(
+        ["publication", "imageRights", "imageState"],
+        "The text-only pilot cannot attach uncleared imagery.",
+      );
+    }
+  });
+
+export const discoveryPilotCorpusSchema = z
+  .object({
+    version: z.literal(1),
+    reviewedAt: z.iso.datetime({ offset: true }),
+    stories: z.array(discoveryPilotStorySchema).min(20).max(30),
+  })
+  .superRefine((corpus, context) => {
+    const unique = (values: Array<string | number>) =>
+      new Set(values).size === values.length;
+    const issue = (path: string[], message: string) =>
+      context.addIssue({ code: "custom", path, message });
+
+    if (!unique(corpus.stories.map((story) => story.slug))) {
+      issue(["stories"], "Pilot story slugs must be unique.");
+    }
+    if (!unique(corpus.stories.map((story) => story.entity.id))) {
+      issue(["stories"], "Each pilot story must have an independent entity.");
+    }
+    if (
+      !unique(corpus.stories.map((story) => story.publication.attribution.id))
+    ) {
+      issue(["stories"], "Pilot attribution IDs must be unique.");
+    }
+
+    const hasCinema = corpus.stories.some(
+      (story) => story.work?.workKind === "film",
+    );
+    const hasTelevision = corpus.stories.some((story) =>
+      ["television_series", "television_episode"].includes(
+        story.work?.workKind ?? "",
+      ),
+    );
+    const hasPublicFigure = corpus.stories.some(
+      (story) => story.entity.entityKind === "public_figure",
+    );
+    if (!hasCinema || !hasTelevision || !hasPublicFigure) {
+      issue(
+        ["stories"],
+        "The pilot must include cinema, television, and public-figure stories.",
+      );
+    }
+  });
+
 export type DiscoveryPublication = z.infer<typeof discoveryPublicationSchema>;
+export type DiscoveryPilotCorpus = z.infer<typeof discoveryPilotCorpusSchema>;

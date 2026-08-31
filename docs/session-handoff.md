@@ -16,8 +16,8 @@ phase.
 - Phases 0–5 are complete at their current owner-approved boundaries; Phase 6
   is closed after its pilot, and Phase 7 is complete at its owner-approved
   production boundary.
-- Phase 8 packet 8.1 is complete without celebrity/model research or
-  catalogue population. Migrations `0034_add_discovery_claims.sql` and
+- Phase 8 packets 8.1 and 8.2 are complete without catalogue population.
+  Migrations `0034_add_discovery_claims.sql` and
   `0035_harden_discovery_trigger_grants.sql` are live, adding seven empty,
   RLS-enabled discovery evidence tables with no browser table, sequence, or
   trigger-function access. The shared Zod publication contract and database
@@ -27,6 +27,13 @@ phase.
   proved rejection before evidence and publication after accepted evidence;
   all foreign keys are indexed. The source vocabulary and correction/image
   policy are in `docs/phase-8-discovery-source-contract.md`.
+- Packet 8.2 adds a source hierarchy, contradiction and correction workflow,
+  and 21 independently reviewed text-only pilot cards: 10 cinema, 3
+  television, and 8 public-figure stories. Twelve are exact-reference claims,
+  eight remain model-family-only, and one authenticated screen prop remains
+  unidentified. The executable corpus passes the publication contract, stores
+  no images, and has no recommendation-catalogue links. Packet 8.3 explorer
+  pages are next.
 - Phase 5 engineering is complete. On 2026-08-31 the owner moved all further
   brand/model selection, research, verification, and catalogue population into
   an owner-managed workstream. The reusable pipeline remains strict: 204/204
@@ -62,9 +69,10 @@ phase.
   publishable-key parity audit passes for all six golden profiles.
 - The deferred Chromium suite remains specified for all ten desktop/mobile
   landing, health, error-boundary, complete 6+7-screen diagnostic, personal
-  preference, and cited-result tests. The E2E test scopes accessibility checks
-  to application-owned markup and leaves the cross-origin publication iframe
-  to the provider contract.
+  preference, and cited-result tests. The landing subscription is now an
+  application-owned, high-contrast form that calls Beehiiv server-side, so the
+  E2E accessibility scan covers the complete form without a cross-origin iframe
+  exclusion.
 - The Phase 6 entry-gate harness evaluates six shared golden profiles through
   the real recommendation function. At 1,000 iterations per profile, all runs
   are deterministic, hard-filter violations are zero, the slowest profile

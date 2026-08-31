@@ -1493,7 +1493,7 @@ production surfaces.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
-Status: **in progress — packet 8.1 complete; packet 8.2 next**
+Status: **in progress — packets 8.1–8.2 complete; packet 8.3 next**
 
 Goal: use sourced public-figure and screen-watch research plus a lightweight
 archetype quiz as a discovery funnel into the existing deterministic diagnostic.
@@ -1527,6 +1527,19 @@ after accepted evidence plus a text-only image-rights decision. Security and
 performance advisors add only the expected no-policy and unused-index
 informational notices for intentionally inaccessible, empty packet-8.1 tables;
 they report no new error-level finding.
+
+Packet 8.2 adds a source-ranked editorial protocol, explicit contradiction and
+correction workflow, and a 21-card executable pilot corpus. The reviewed mix is
+10 cinema stories, 3 television stories, and 8 public-figure stories. Twelve
+claims have exact-reference support, eight retain the public model-family-only
+label, and one authenticated production prop remains deliberately unidentified.
+The corpus is text-only, stores no third-party images, and all
+`referenceVariantId` values are null; it neither changes nor assumes catalogue
+facts. Shared validation enforces 20–30 independent cards, accepted supporting
+evidence, matching entity/work/event relationships, source retrieval times,
+image decisions, unique story/attribution identities, and representation from
+all three editorial categories. The protocol and source index are in
+[`phase-8-editorial-protocol.md`](phase-8-editorial-protocol.md).
 
 ## Environment-variable ownership
 

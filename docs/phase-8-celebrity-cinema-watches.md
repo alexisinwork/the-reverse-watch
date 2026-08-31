@@ -1,6 +1,6 @@
 # Phase 8 — Celebrity & Cinema Watch Discovery
 
-Status: **in progress — packet 8.1 complete; packet 8.2 next**
+Status: **in progress — packets 8.1–8.2 complete; packet 8.3 next**
 
 ## Purpose
 
@@ -83,6 +83,15 @@ Exit: schema, migrations, validation, and source contract pass `npm run check`.
 
 Exit: pilot cards meet the evidence contract and link only to reviewed catalogue
 variants or clearly labelled non-catalogue references.
+
+Completed 2026-08-31. The source hierarchy, contradictory-source rules, and
+correction/withdrawal workflow are recorded in
+[`phase-8-editorial-protocol.md`](phase-8-editorial-protocol.md). The executable
+TypeScript pilot contains 21 independently reviewed, text-only cards across
+cinema, television, and public figures. Twelve claims have exact-reference
+support, eight remain explicitly model-family-only, and one production prop is
+published as unidentified. Every card passes the shared publication schema,
+stores no image, and has a null catalogue link.
 
 ### 8.3 — Explorer pages
 
