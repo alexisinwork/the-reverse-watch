@@ -936,6 +936,15 @@ packaging-free configured weight, numerical rate bound, or controlled lume
 performance surfaced. Those four M1 gaps remain null and no provider request
 was made.
 
+The next A. Lange & Söhne Lange 1 Tourbillon Perpetual Calendar Lumen
+`720.035FE` pre-screen remains negative for price, lug-to-lug, lug width,
+configured weight, accuracy, and attachment. An exact-reference editorial
+review corroborates the 41.9 mm platinum case, L225.1, 50-hour reserve,
+display-wide Lumen treatment, and quick-lock deployant, but offers only a broad
+euro price range and no exact missing measurements or numerical daily-rate
+bound. An exact U.S. seller listing is also price- and availability-on-request.
+No facts were promoted and no provider request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,

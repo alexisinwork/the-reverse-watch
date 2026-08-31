@@ -16,6 +16,16 @@
       "url": "https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1-tourbillon-perpetual-calendar-lumen/lange-1-tourbillon-perpetual-calendar-lumen-in-950-platinum-720-035",
       "status": "validated_primary",
       "note": "The exact official product page independently validates reference 720.035FE, its live limited-to-50 listing and price-upon-request treatment, 41.9 x 13 mm 950-platinum case, sapphire case back, black alligator strap and platinum deployant buckle, automatic caliber L225.1, 50-hour reserve, 3-bar water resistance, outsize date, day/night indication, moon phase, tourbillon, weekday, perpetual calendar, and the Lumen concept in which all indications glow in the dark. It omits a numeric price, availability, lug-to-lug, lug width, full weight, numerical accuracy, front-crystal specification, and case attachment interface."
+    },
+    {
+      "url": "https://www.hodinkee.com/articles/introducing-lange-1-tourbillon-perpetual-calendar-lumen",
+      "status": "validated_secondary",
+      "note": "The exact-reference editorial specification corroborates the 41.9 x 13 mm platinum case, all-displays-luminous Lumen implementation, black alligator strap with quick-lock deployant buckle, L225.1, and 50-hour reserve. Its price is only an approximate euro range and it supplies no exact weight, lug dimensions, or numerical daily-rate bound."
+    },
+    {
+      "url": "https://www.chrono24.it/all/a-lange--sohne-new-release-lange-1-tourbillon-perpetual-calendar-lumen-in-950-platinum--id46209599.htm",
+      "status": "rejected",
+      "note": "The exact-reference listing is a new U.S. seller offer with price upon request and availability on request. It adds no numeric price or exact physical measurement and cannot complete the commercial or geometry gates."
     }
   ],
   "verifiedProvisionalFields": [
@@ -96,5 +106,5 @@
     "accuracy",
     "attachmentType"
   ],
-  "note": "Keep as research-only. The exact primary source resolves the high-art identity, core geometry, movement, water rating, complications, and display-wide lume mapping, but price-on-request and five remaining physical or ownership gaps prevent migration."
+  "note": "Keep as research-only. The exact primary source resolves the high-art identity, core geometry, movement, water rating, complications, and display-wide lume mapping. An exact-reference editorial review corroborates those facts but offers only a broad euro price range and no missing physical measurements or numerical daily-rate bound. Price remains on-request, and lug-to-lug, lug width, configured weight, accuracy, and attachment remain null."
 }

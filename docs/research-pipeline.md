@@ -1422,6 +1422,16 @@ lug-to-lug span, packaging-free configured weight, numerical rate bound, or
 controlled lume performance surfaced, so those four M1 gaps remain null and no
 provider request is authorized.
 
+The next A. Lange & Söhne Lange 1 Tourbillon Perpetual Calendar Lumen
+`720.035FE` pre-screen remains negative for its six review gaps. An exact
+reference editorial review corroborates the 41.9 mm platinum case, L225.1,
+50-hour reserve, display-wide Lumen treatment, and quick-lock deployant, but
+offers only a broad euro price range and no exact weight, lug measurements, or
+numerical daily-rate bound. An exact U.S. seller listing also remains price-
+and availability-on-request. The existing primary page's numeric and physical
+omissions therefore stand; no facts are promoted and no provider request is
+authorized.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
