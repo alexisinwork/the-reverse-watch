@@ -130,6 +130,19 @@ phase.
   or request identifiers are stored, and conversion conclusions remain pending
   until production traffic provides enough observations. The result UI also
   has a true restart control that clears the stored draft.
+- Vercel custom-event queries returned 402 on the current plan, so no paid
+  upgrade was introduced. Migration `0033_add_quiz_funnel_evaluation.sql`
+  instead adds the durable aggregate-only store and bounded summary RPC. The
+  raw table has RLS, no `anon` table select/insert privileges, and no profile,
+  contact, IP, or request-identifier columns. Deployment
+  `dpl_4cdupPTWSxdy7AHDx34KzSgfcYWL` from commit `8a7329a` is `READY`;
+  `/evaluation` renders the first balanced provider-free production sample
+  (one start, one core completion, zero hard-filter violations, USD 0 provider
+  cost), and deployment error/fatal logs are empty.
+- The Vercel `SENTRY_DSN` variable existed with an empty value. It was securely
+  repaired from the validated local value and redeployed without exposure.
+  Production `/`, `/quiz`, `/health`, and `/evaluation` now return 200 with the
+  exact Sentry envelope origin in CSP.
 - On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
   tests covering landing, health, error boundary, the six-screen quiz flow,
   optional refinement submission, and cited-result rendering. Chromium's

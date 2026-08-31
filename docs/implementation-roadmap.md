@@ -1310,7 +1310,7 @@ variants.
 
 ## Phase 7 — Product integration, email, deployment, and evaluation
 
-Status: **in progress — integration verification started 2026-08-31**
+Status: **in progress — engineering complete; owner DNS/email verification pending**
 
 Goal: turn the recommendation engine into a production funnel.
 
@@ -1376,6 +1376,17 @@ and denominator rules are recorded in
 IP addresses, or request identifiers enter the store. Traffic-derived
 conclusions remain pending until the deployment has enough observations.
 
+Migration `0033_add_quiz_funnel_evaluation.sql` is applied. Its raw event table
+has RLS enabled, `anon` has neither select nor insert table privileges, and only
+the narrow record and bounded-summary functions are executable. Security and
+performance advisors reported no new error-level findings; the expected
+no-policy informational notice reflects the intentional no-direct-table-access
+design. Production deployment `dpl_4cdupPTWSxdy7AHDx34KzSgfcYWL` from commit
+`8a7329a` is `READY`. One automated provider-free sample produced one start and
+one core evaluation, zero hard-filter violations, 867.2 ms evaluation latency,
+USD 0 provider cost, and a 29.4 top/mean confirmed score. `/evaluation` renders
+that durable summary, and the deployment has no error/fatal runtime logs.
+
 The result screen now also exposes a true restart control. Restart clears the
 stored core and refinement draft and returns to the first screen; a new start
 is recorded only if the visitor advances again.
@@ -1407,6 +1418,10 @@ Vercel exposes the DSN to the client build but not to the request middleware at
 runtime, so the CSP also receives a build-time fallback containing only the
 validated public HTTPS envelope origin. The runtime DSN remains preferred and
 neither path places the DSN key in a response header.
+The Vercel `SENTRY_DSN` entry was present but empty; it was securely repaired
+from the already-verified local value and redeployed without printing it. The
+live `/`, `/quiz`, `/health`, and `/evaluation` responses now return 200 and
+admit the validated Sentry envelope origin in CSP.
 
 Verification:
 
