@@ -151,6 +151,13 @@ phase.
   Resend disabled in Production until verification succeeds, then copy the
   validated local values without printing them and run one consented paired
   delivery.
+- DNS now contains the correct Vercel apex A record but also retains
+  `216.198.79.1` and `162.255.119.72`, so Vercel still reports the domain as
+  misconfigured and the apex certificate remains invalid. Remove only those
+  two conflicting A records. Do not yet replace the email records:
+  `resend._domainkey` has a different DKIM value and `send` points at existing
+  Forge/RMTA MX/SPF infrastructure. The owner must choose whether that legacy
+  sender can be replaced or Resend should use a new subdomain.
 - On 2026-08-31 the full deferred Playwright suite passed: 10 desktop/mobile
   tests covering landing, health, error boundary, the six-screen quiz flow,
   optional refinement submission, and cited-result rendering. Chromium's

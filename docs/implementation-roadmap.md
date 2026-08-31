@@ -1434,10 +1434,11 @@ Verification:
   production provider delivery still requires a consented test recipient.
 - Production smoke checks pass on `www.thereserve.watch` and the Vercel alias.
   The apex domain currently presents the `www`-only certificate because its
-  third-party DNS now resolves to `162.255.119.72`; Vercel still reports the
-  domain as misconfigured and requires the apex A record to point to
-  `76.76.21.21`. Canonical-domain verification remains open until the owner
-  changes that DNS record and certificate issuance completes.
+  third-party DNS now publishes three apex A records: the correct Vercel target
+  `76.76.21.21` plus conflicting `216.198.79.1` and `162.255.119.72` targets.
+  Vercel still reports the domain as misconfigured. Canonical-domain
+  verification remains open until the two conflicting records are removed and
+  certificate issuance completes.
 
 The production Beehiiv key and publication ID pass a non-mutating publication
 lookup and identify the configured publication. The Vercel Resend variables
@@ -1448,6 +1449,14 @@ MAIL FROM MX, and MAIL FROM SPF). Resend remains disabled in Production until
 the domain is verified; this avoids deploying a sender path known to return a
 provider rejection. Final paired Beehiiv/Resend delivery still requires a
 consented recipient after DNS verification.
+
+The authoritative DNS preflight then found existing, conflicting email
+infrastructure at every required Resend hostname: `resend._domainkey` contains
+a different DKIM key, while `send` resolves through Forge/RMTA and publishes
+Forge MX/SPF data. These records must not be overwritten until the owner
+confirms whether the existing sender is still required. A separate Resend
+sending subdomain is the additive alternative if that infrastructure must be
+preserved.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
