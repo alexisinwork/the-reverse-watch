@@ -1011,6 +1011,12 @@ High Autonomy quartz and battery life without a numerical timekeeping bound;
 generic quartz expectations and third-party calibre summaries remain rejected.
 No fact was promoted and no provider request was made.
 
+A 2026-08-31 exact-reference recheck also found an official-agent retailer
+listing for `WSTA0107`; it repeats the 29.5 x 22 mm steel-bracelet High
+Autonomy quartz configuration but supplies no numerical rate tolerance,
+observation period, or test method. The sole `accuracy` gap remains null and no
+provider request was made.
+
 The next Sinn 856 UTC SI-084 pre-screen leaves `weightFullG`, `accuracy`, and
 `lumeGrade` open. WatchBuys' exact-product owner archive adds individual
 approximately ±2 and +5 seconds-per-day observations, but no shared interval,

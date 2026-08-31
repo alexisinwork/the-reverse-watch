@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "cartier-small-formal-quartz",
   "jobId": "cdf7a018-8bf8-4db2-96e5-770d233fc082",
-  "reviewedAt": "2026-08-30T08:02:52Z",
+  "reviewedAt": "2026-08-31T10:33:45Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -31,6 +31,11 @@
       "url": "https://www.cartier.com/es-es/watches/collections/tank/reloj-tank-must-de-cartier-CRWSTA0107",
       "status": "validated_primary",
       "note": "Cartier's exact Spain regional page independently corroborates WSTA0107, the small High Autonomy quartz steel-bracelet configuration, 29.5 x 22 x 6.6 mm dimensions, 3 bar rating, and hours/minutes function. It provides no numerical rate tolerance or defined accuracy period. Retrieved 2026-08-31 after the next-candidate source-led pre-screen."
+    },
+    {
+      "url": "https://www.newcavendishjewellers.com/products/cartier-tank-must-de-cartier-small-model-wsta0107",
+      "status": "validated_secondary",
+      "note": "This exact-reference retailer page identifies itself as an official Cartier agent and repeats the 29.5 x 22 mm steel-bracelet High Autonomy quartz configuration with a current GBP offer. It publishes no numerical rate tolerance, observation period, or test method, so it does not close the accuracy gap. Retrieved 2026-08-31."
     },
     {
       "url": "https://www.cartier.com/fr-fr/watches/collections/tank/montre-tank-must-de-cartier-CRWSTA0107",
