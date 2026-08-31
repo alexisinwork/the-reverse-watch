@@ -98,6 +98,10 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.choice-list--described {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .choice-card {
   display: flex;
   min-height: 3.5rem;
@@ -129,6 +133,20 @@
 .choice-card input {
   flex: 0 0 auto;
   accent-color: var(--color-brass);
+}
+
+.choice-card__copy {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.choice-card__copy strong {
+  font-size: 0.9rem;
+}
+
+.choice-card__copy small {
+  color: var(--color-steel-text);
+  line-height: 1.45;
 }
 
 .split-inputs,
@@ -478,24 +496,9 @@
   font-size: 0.72rem;
 }
 
-.source-register > .catalogue-origin {
-  padding: 0.75rem 0.9rem;
-  border: 1px solid var(--color-line);
-  background: var(--color-base-raised);
-  line-height: 1.5;
-}
-
-.source-register > .catalogue-origin--supabase {
-  border-left: 2px solid var(--color-brass);
-  color: var(--color-ink);
-}
-
-.source-register > .catalogue-origin--bundled_seed {
-  border-left: 2px solid #ad6d55;
-}
-
 @media (max-width: 40rem) {
   .choice-list--compact,
+  .choice-list--described,
   .select-grid,
   .profile-grid,
   .candidate-specs {

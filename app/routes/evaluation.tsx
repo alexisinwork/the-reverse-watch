@@ -45,7 +45,7 @@ export default function EvaluationDashboard() {
     <main className="quiz-shell">
       <nav className="quiz-nav" aria-label="Evaluation navigation">
         <Link to="/">The Reserve</Link>
-        <span>Phase 7 evaluation</span>
+        <span>Product evaluation</span>
       </nav>
       <section className="profile-summary" aria-labelledby="evaluation-heading">
         <span className="eyebrow">Aggregate-only · trailing 30 days</span>
@@ -56,7 +56,7 @@ export default function EvaluationDashboard() {
         </p>
         {error ? <p role="alert">{error}</p> : null}
         {!error && !summary ? (
-          <p>Production evaluation storage is not configured.</p>
+          <p>Evaluation data is not available yet.</p>
         ) : null}
         {summary ? (
           <>
@@ -95,7 +95,7 @@ export default function EvaluationDashboard() {
                 </dd>
               </div>
               <div>
-                <dt>Provider cost</dt>
+                <dt>Analysis cost</dt>
                 <dd>${summary.providerCostUsd.toFixed(6)}</dd>
               </div>
               <div>

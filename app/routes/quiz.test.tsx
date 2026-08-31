@@ -207,7 +207,7 @@ describe("progressive diagnostic", () => {
     vi.unstubAllGlobals();
   });
 
-  it("keeps the core result to six screens and returns a validated profile", async () => {
+  it("continues from essential fit into all 21 personal preferences", async () => {
     const user = userEvent.setup();
     const Stub = createRoutesStub([
       { path: "/quiz", Component: Quiz, action },
@@ -236,7 +236,82 @@ describe("progressive diagnostic", () => {
 
     await user.click(screen.getByLabelText("GMT"));
     await user.click(screen.getByLabelText("Either is acceptable"));
-    await user.click(screen.getByRole("button", { name: "View profile" }));
+    await user.click(
+      screen.getByRole("button", { name: "Continue to personal profile" }),
+    );
+
+    expect(
+      await screen.findByRole("heading", {
+        name: "How do you want to be perceived?",
+      }),
+    ).toBeInTheDocument();
+    expect(screen.getByText(/remaining 21 preferences/i)).toBeInTheDocument();
+    await user.click(
+      screen.getByRole("radio", { name: /Discreet competence/i }),
+    );
+    await user.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(
+      screen.getByRole("heading", {
+        name: "What visual impression should it create?",
+      }),
+    ).toBeInTheDocument();
+    await user.click(
+      screen.getByRole("radio", { name: /Mid-century industrial/i }),
+    );
+    await user.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(
+      screen.getByRole("heading", {
+        name: "What kind of history should it carry?",
+      }),
+    ).toBeInTheDocument();
+    await user.click(
+      screen.getByRole("radio", { name: /Sovereign independent/i }),
+    );
+    await user.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(
+      screen.getByRole("heading", {
+        name: "What should this watch make you feel?",
+      }),
+    ).toBeInTheDocument();
+    await user.click(
+      screen.getByRole("radio", { name: /Generational custody/i }),
+    );
+    await user.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(
+      screen.getByRole("heading", { name: "How should it fit and age?" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText("How should the lugs follow your wrist?"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText("Must straps change without tools?"),
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(
+      screen.getByRole("heading", { name: "How do you want to acquire it?" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText("How should the watch behave in the market?"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("group", { name: "Where are you willing to buy?" }),
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Next" }));
+
+    expect(
+      screen.getByRole("heading", {
+        name: "Where and how will you use it?",
+      }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByLabelText("How important is low-light visibility?"),
+    ).toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "View matches" }));
 
     await waitFor(() => {
       expect(
@@ -246,18 +321,22 @@ describe("progressive diagnostic", () => {
     expect(screen.getByText("USD 10,000")).toBeInTheDocument();
     expect(screen.getByText(/170\.18 mm · 6\.7 in/)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "Refine the ranking profile" }),
+      screen.getByRole("button", { name: "Edit personal answers" }),
     ).toBeInTheDocument();
+    expect(screen.getByText("Discreet competence")).toBeInTheDocument();
+    expect(screen.getByText("Mid-century industrial")).toBeInTheDocument();
+    expect(screen.getByText("Sovereign independent")).toBeInTheDocument();
+    expect(screen.getByText("Generational custody")).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "Promising, but verify first" }),
     ).toBeInTheDocument();
     expect(screen.getByText(/Longines Spirit Zulu Time/)).toBeInTheDocument();
     expect(
-      screen.getByText(/using the reviewed bundled snapshot/i),
-    ).toBeInTheDocument();
-    expect(
       screen.getByRole("heading", { name: "Keep the dossier" }),
     ).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent(
+      /supabase|sql|beehiiv|engine v|catalogue v|bundled snapshot/i,
+    );
 
     expect(
       screen.getByRole("checkbox", { name: /explicitly opt in/i }),

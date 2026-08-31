@@ -9,8 +9,6 @@ type NormalizedProfile = ReturnType<typeof normalizeProfile>;
 export type DossierEmailInput = {
   profile: NormalizedProfile;
   recommendation: RecommendationResult;
-  catalogueOrigin: "supabase" | "bundled_seed";
-  intent: "core" | "refine";
 };
 
 export type DossierEmail = {
@@ -134,7 +132,7 @@ function candidateText(
     "The Historical Reality",
     "No reviewed historical narrative is attached to this exact reference variant; no brand history or provenance claim is inferred here.",
     "The Psychological Fit",
-    `Primary catalogue archetype: ${candidate.primaryArchetype}. Deterministic score: ${candidate.score}.`,
+    `Primary style: ${candidate.primaryArchetype}. Fit score: ${candidate.score}.`,
     ...(trace.length > 0 ? ["Score factors:", ...trace] : []),
     ...(reasons.length > 0
       ? ["Verification or rejection reasons:", ...reasons]
@@ -162,7 +160,7 @@ function candidateHtml(
     (source) =>
       `<li><a href="${escapeHtml(source.url)}">${escapeHtml(source.title)}</a> (${escapeHtml(source.publisher)})</li>`,
   );
-  return `<article><h3>${escapeHtml(status === "confirmed" ? "Confirmed fit" : status === "verification" ? "Verify before buying" : "Why it was not selected")}: ${escapeHtml(candidateTitle(candidate))}</h3><h4>The Watch</h4><p><strong>Reference:</strong> ${escapeHtml(candidate.referenceCode)}<br><strong>Price snapshot:</strong> ${escapeHtml(price(candidate))} (${escapeHtml(candidate.price.marketCountry)}; source currency ${escapeHtml(candidate.price.sourceCurrency)}; FX observed ${escapeHtml(candidate.price.fxObservedAt)})<br><strong>Geometry:</strong> ${escapeHtml(geometry(candidate))}<br><a href="${escapeHtml(candidate.productUrl)}">Open the reviewed product page</a></p><h4>The Mechanism</h4><p><strong>Movement:</strong> ${escapeHtml(movement(candidate))}<br><strong>Functions:</strong> ${escapeHtml(candidate.complications.length > 0 ? candidate.complications.map(label).join(", ") : "none listed")}; date ${escapeHtml(candidate.dateStatus)}</p><h4>The Historical Reality</h4><p>No reviewed historical narrative is attached to this exact reference variant; no brand history or provenance claim is inferred here.</p><h4>The Psychological Fit</h4><p><strong>Primary catalogue archetype:</strong> ${escapeHtml(candidate.primaryArchetype)}<br><strong>Deterministic score:</strong> ${candidate.score}</p>${trace.length > 0 ? `<p><strong>Score factors</strong></p><ul>${trace.join("")}</ul>` : ""}${reasons.length > 0 ? `<p><strong>Verification or rejection reasons</strong></p><ul>${reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`).join("")}</ul>` : ""}<p><strong>Reviewed sources</strong></p>${sources.length > 0 ? `<ul>${sources.join("")}</ul>` : "<p>No source IDs were attached to this candidate.</p>"}</article>`;
+  return `<article><h3>${escapeHtml(status === "confirmed" ? "Confirmed fit" : status === "verification" ? "Verify before buying" : "Why it was not selected")}: ${escapeHtml(candidateTitle(candidate))}</h3><h4>The Watch</h4><p><strong>Reference:</strong> ${escapeHtml(candidate.referenceCode)}<br><strong>Price snapshot:</strong> ${escapeHtml(price(candidate))} (${escapeHtml(candidate.price.marketCountry)}; source currency ${escapeHtml(candidate.price.sourceCurrency)}; FX observed ${escapeHtml(candidate.price.fxObservedAt)})<br><strong>Geometry:</strong> ${escapeHtml(geometry(candidate))}<br><a href="${escapeHtml(candidate.productUrl)}">Open the reviewed product page</a></p><h4>The Mechanism</h4><p><strong>Movement:</strong> ${escapeHtml(movement(candidate))}<br><strong>Functions:</strong> ${escapeHtml(candidate.complications.length > 0 ? candidate.complications.map(label).join(", ") : "none listed")}; date ${escapeHtml(candidate.dateStatus)}</p><h4>The Historical Reality</h4><p>No reviewed historical narrative is attached to this exact reference variant; no brand history or provenance claim is inferred here.</p><h4>The Psychological Fit</h4><p><strong>Primary style:</strong> ${escapeHtml(candidate.primaryArchetype)}<br><strong>Fit score:</strong> ${candidate.score}</p>${trace.length > 0 ? `<p><strong>Score factors</strong></p><ul>${trace.join("")}</ul>` : ""}${reasons.length > 0 ? `<p><strong>Verification or rejection reasons</strong></p><ul>${reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`).join("")}</ul>` : ""}<p><strong>Reviewed sources</strong></p>${sources.length > 0 ? `<ul>${sources.join("")}</ul>` : "<p>No source IDs were attached to this candidate.</p>"}</article>`;
 }
 
 function profileLines(profile: NormalizedProfile) {
@@ -175,9 +173,23 @@ function profileLines(profile: NormalizedProfile) {
     `Function: ${core.requiredComplications.length > 0 ? core.requiredComplications.map(label).join(", ") : "no required complication"}; date ${label(core.datePreference)}.`,
     ...(refinement
       ? [
-          `Refinement was supplied; speculative candidates ${derived.speculativeCandidatesAllowed ? "are allowed with warning" : "are suppressed"}.`,
+          `Personal preferences were supplied; speculative candidates ${derived.speculativeCandidatesAllowed ? "are allowed with warning" : "are suppressed"}.`,
+          ...(refinement.socialSignal
+            ? [`Desired perception: ${label(refinement.socialSignal)}.`]
+            : []),
+          ...(refinement.aestheticDna
+            ? [`Visual character: ${label(refinement.aestheticDna)}.`]
+            : []),
+          ...(refinement.provenancePreference
+            ? [
+                `Heritage preference: ${label(refinement.provenancePreference)}.`,
+              ]
+            : []),
+          ...(refinement.emotionalObjective
+            ? [`Emotional purpose: ${label(refinement.emotionalObjective)}.`]
+            : []),
         ]
-      : ["No optional refinement was supplied."]),
+      : ["No personal preferences were supplied."]),
   ];
 }
 
@@ -191,7 +203,7 @@ export function renderDossierEmail(input: DossierEmailInput): DossierEmail {
     "",
     "Search boundary",
     ...profileLines(profile),
-    `Catalogue: ${input.catalogueOrigin}; engine v${recommendation.engineVersion}; catalogue v${recommendation.catalogueVersion}; evaluated ${recommendation.evaluatedAt}; intent ${input.intent}.`,
+    `Evaluated ${recommendation.evaluatedAt}.`,
     "",
     "Historical and prose context",
     "No reviewed historical narrative is attached to this result. The dossier contains only accepted catalogue facts, scored signals, explicit constraints, and source links; it does not infer provenance, collecting meaning, or performance beyond those records.",
@@ -203,7 +215,7 @@ export function renderDossierEmail(input: DossierEmailInput): DossierEmail {
             candidateText(candidate, recommendation, "confirmed"),
           )
           .join("\n\n")
-      : "No candidate passed every active hard constraint.",
+      : "No reviewed watch configuration met every non-negotiable requirement.",
     "",
     "Verification queue",
     verification.length > 0
@@ -224,7 +236,7 @@ export function renderDossierEmail(input: DossierEmailInput): DossierEmail {
       : "No rejected candidates were retained in the result set.",
     "",
     "Method boundary",
-    `Evaluated ${recommendation.diagnostics.evaluated} variants; ${recommendation.diagnostics.hardRejected} were hard-rejected, ${recommendation.diagnostics.verificationRequired} require verification, and ${recommendation.diagnostics.diversityExcluded} were excluded by diversity selection.`,
+    `Evaluated ${recommendation.diagnostics.evaluated} watch configurations; ${recommendation.diagnostics.hardRejected} fell outside the stated requirements, ${recommendation.diagnostics.verificationRequired} require verification, and ${recommendation.diagnostics.diversityExcluded} were omitted to keep the result varied.`,
     "The reviewed catalogue does not provide a historical dossier or narrative source for every watch. Missing facts stay visible and are never filled with generated claims.",
   ];
 
@@ -237,7 +249,7 @@ export function renderDossierEmail(input: DossierEmailInput): DossierEmail {
     candidate: EvaluatedCandidate,
     status: "confirmed" | "verification" | "whyNot",
   ) => candidateHtml(candidate, recommendation, status);
-  const html = `<!doctype html><html><body><main><p><strong>THE RESERVE — REFERENCE DIAGNOSTIC DOSSIER</strong></p>${section("Search boundary", `${profileHtml}<p>Catalogue: ${escapeHtml(input.catalogueOrigin)}; engine v${recommendation.engineVersion}; catalogue v${recommendation.catalogueVersion}; evaluated ${escapeHtml(recommendation.evaluatedAt)}; intent ${escapeHtml(input.intent)}.</p>`)}${section("Historical and prose context", "<p>No reviewed historical narrative is attached to this result. This dossier contains only accepted catalogue facts, scored signals, explicit constraints, and source links; it does not infer provenance, collecting meaning, or performance beyond those records.</p>")}${section("Confirmed recommendations", confirmed.length > 0 ? confirmed.map((candidate) => candidateHtmlFor(candidate, "confirmed")).join("") : "<p>No candidate passed every active hard constraint.</p>")}${section("Verification queue", verification.length > 0 ? verification.map((candidate) => candidateHtmlFor(candidate, "verification")).join("") : "<p>No candidates require additional verification.</p>")}${section("Why not", whyNot.length > 0 ? whyNot.map((candidate) => candidateHtmlFor(candidate, "whyNot")).join("") : "<p>No rejected candidates were retained in the result set.</p>")} ${section("Method boundary", `<p>Evaluated ${recommendation.diagnostics.evaluated} variants; ${recommendation.diagnostics.hardRejected} were hard-rejected, ${recommendation.diagnostics.verificationRequired} require verification, and ${recommendation.diagnostics.diversityExcluded} were excluded by diversity selection.</p><p>The reviewed catalogue does not provide a historical dossier or narrative source for every watch. Missing facts stay visible and are never filled with generated claims.</p>`)}</main></body></html>`;
+  const html = `<!doctype html><html><body><main><p><strong>THE RESERVE — REFERENCE DIAGNOSTIC DOSSIER</strong></p>${section("Search boundary", `${profileHtml}<p>Evaluated ${escapeHtml(recommendation.evaluatedAt)}.</p>`)}${section("Historical and prose context", "<p>No reviewed historical narrative is attached to this result. This dossier contains only accepted watch facts, scored signals, explicit constraints, and source links; it does not infer provenance, collecting meaning, or performance beyond those records.</p>")}${section("Confirmed recommendations", confirmed.length > 0 ? confirmed.map((candidate) => candidateHtmlFor(candidate, "confirmed")).join("") : "<p>No reviewed watch configuration met every non-negotiable requirement.</p>")}${section("Verification queue", verification.length > 0 ? verification.map((candidate) => candidateHtmlFor(candidate, "verification")).join("") : "<p>No candidates require additional verification.</p>")}${section("Why not", whyNot.length > 0 ? whyNot.map((candidate) => candidateHtmlFor(candidate, "whyNot")).join("") : "<p>No rejected candidates were retained in the result set.</p>")} ${section("Method boundary", `<p>Evaluated ${recommendation.diagnostics.evaluated} watch configurations; ${recommendation.diagnostics.hardRejected} fell outside the stated requirements, ${recommendation.diagnostics.verificationRequired} require verification, and ${recommendation.diagnostics.diversityExcluded} were omitted to keep the result varied.</p><p>The reviewed collection does not provide a historical dossier or narrative source for every watch. Missing facts stay visible and are never filled with generated claims.</p>`)}</main></body></html>`;
 
   return {
     subject: "Your Reserve reference diagnostic dossier",

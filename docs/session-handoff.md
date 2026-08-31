@@ -35,9 +35,13 @@ phase.
   additive migrations can promote facts. Resume/reuse and bounded retry timing
   now have deterministic unit coverage; a provider-free dry run selects no
   targets.
-- `/quiz` now returns confirmed, verification-required, relaxation, why-not,
-  score-trace, and source sections after the six core screens or optional
-  refinement groups.
+- `/quiz` now moves directly from six essential-fit screens into seven visible
+  personal-profile screens before returning confirmed, verification-required,
+  relaxation, why-not, score-trace, and source sections. The first four
+  personal screens ask about desired perception, visual impression, provenance,
+  and emotional purpose; all 21 personal dimensions remain skippable with “No
+  preference.” User-facing quiz, result, dossier, and evaluation copy no longer
+  exposes vendor names or implementation plumbing.
 - The wrist screen now accepts millimetres or inches from an explicit unit
   selector. Drafts retain the display unit, legacy millimetre-only session
   drafts still recover, and submitted profiles remain canonical numeric
@@ -56,10 +60,11 @@ phase.
   morning after overnight wear, closing the sole lume gap as `strong`. Local
   and live seed coverage is now 1,102/28,800 cells across 28 variants. The
   publishable-key parity audit passes for all six golden profiles.
-- The deferred Chromium suite now passes all ten desktop/mobile landing, health,
-  error-boundary, six-screen diagnostic, optional-refinement, and cited-result
-  tests. The E2E test scopes accessibility checks to application-owned markup
-  and leaves the cross-origin Beehiiv iframe to the vendor's contract.
+- The deferred Chromium suite remains specified for all ten desktop/mobile
+  landing, health, error-boundary, complete 6+7-screen diagnostic, personal
+  preference, and cited-result tests. The E2E test scopes accessibility checks
+  to application-owned markup and leaves the cross-origin publication iframe
+  to the provider contract.
 - The Phase 6 entry-gate harness evaluates six shared golden profiles through
   the real recommendation function. At 1,000 iterations per profile, all runs
   are deterministic, hard-filter violations are zero, the slowest profile
@@ -436,8 +441,10 @@ phase.
   speculative-candidate gate.
 - `/quiz` collects exact budget and wrist values, with a millimetre/inch wrist
   selector normalized to canonical millimetres, plus deployment,
-  service/accuracy, weight, complications/date, then optional identity, fit,
-  market, operation, geography, condition, cosmetic, and allergy preferences.
+  service/accuracy, weight, and complications/date. It then presents seven
+  personal-profile screens covering desired perception, visual impression,
+  provenance, emotional purpose, fit, market, operation, geography, condition,
+  cosmetic, and allergy preferences before showing the result.
 - Core and refine submissions are validated on the server. The result is built
   by deterministic recommendation engine v2 from accepted seed facts; missing
   or expired hard facts cannot become confirmed recommendations.

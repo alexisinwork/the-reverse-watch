@@ -68,7 +68,7 @@ test("uses the branded error boundary for unknown routes", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("completes the six-screen core diagnostic without a model provider", async ({
+test("completes the essential and personal diagnostic without a model provider", async ({
   page,
 }) => {
   await page.goto("/quiz");
@@ -86,7 +86,16 @@ test("completes the six-screen core diagnostic without a model provider", async 
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByLabel("GMT").check();
   await page.getByLabel("Either is acceptable").check();
-  await page.getByRole("button", { name: "View profile" }).click();
+  await page
+    .getByRole("button", { name: "Continue to personal profile" })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "How do you want to be perceived?" }),
+  ).toBeVisible();
+  for (let step = 0; step < 6; step += 1) {
+    await page.getByRole("button", { name: "Next" }).click();
+  }
+  await page.getByRole("button", { name: "View matches" }).click();
 
   await expect(
     page.getByRole("heading", { name: "Your search boundary" }),
@@ -102,7 +111,7 @@ test("completes the six-screen core diagnostic without a model provider", async 
   await expect(page.getByLabel("Maximum amount")).toHaveValue("");
 });
 
-test("applies optional refinements and preserves cited results", async ({
+test("captures personal preferences and preserves cited results", async ({
   page,
 }) => {
   await page.goto("/quiz");
@@ -120,16 +129,20 @@ test("applies optional refinements and preserves cited results", async ({
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByLabel("GMT").check();
   await page.getByLabel("Either is acceptable").check();
-  await page.getByRole("button", { name: "View profile" }).click();
-
   await page
-    .getByRole("button", { name: "Refine the ranking profile" })
+    .getByRole("button", { name: "Continue to personal profile" })
     .click();
-  await page.getByLabel("Social signal").selectOption("discreet_competence");
+  await page.getByRole("radio", { name: /Discreet competence/i }).check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("radio", { name: /Mid-century industrial/i }).check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("radio", { name: /Sovereign independent/i }).check();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("radio", { name: /Generational custody/i }).check();
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByRole("button", { name: "Next" }).click();
-  await page.getByRole("button", { name: "Apply refinements" }).click();
+  await page.getByRole("button", { name: "View matches" }).click();
 
   await expect(
     page.getByRole("heading", { name: "Your search boundary" }),
@@ -140,4 +153,9 @@ test("applies optional refinements and preserves cited results", async ({
   await expect(
     page.getByRole("link", { name: "Inspect manufacturer source" }).first(),
   ).toBeVisible();
+  await expect(page.getByText("Discreet competence")).toBeVisible();
+  await expect(page.getByText("Generational custody")).toBeVisible();
+  await expect(page.locator("body")).not.toContainText(
+    /supabase|sql|beehiiv|engine v|catalogue v|bundled snapshot/i,
+  );
 });

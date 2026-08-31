@@ -5,7 +5,6 @@ import { z } from "zod";
 import type { Route } from "./+types/quiz";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { loadRecommendationData } from "../domain/catalogue.server";
-import type { CatalogueOrigin } from "../domain/catalogue.server";
 import {
   createEmailDeliveryDeduplicationClient,
   emailDeliveryDeduplicationKey,
@@ -85,7 +84,7 @@ import {
 import "../styles/quiz.css";
 
 const CORE_STEP_COUNT = 6;
-const REFINE_STEP_COUNT = 4;
+const REFINE_STEP_COUNT = 7;
 const SUMMARY_STEP = CORE_STEP_COUNT + REFINE_STEP_COUNT;
 
 type ActionResult =
@@ -94,8 +93,6 @@ type ActionResult =
       intent: "core" | "refine";
       profile: ReturnType<typeof normalizeProfile>;
       recommendation: RecommendationResult;
-      catalogueOrigin: CatalogueOrigin;
-      catalogueNotice: string;
       subscription: SubscriptionResult;
     }
   | { ok: false; errors: string[] };
@@ -309,6 +306,34 @@ const LABELS: Record<string, string> = {
   "9_destro": "9 o'clock / destro",
 };
 
+const OPTION_DETAILS: Record<string, string> = {
+  discreet_competence: "Recognizable mainly to people who understand watches.",
+  quiet_continuity:
+    "Understated lineage and continuity over broad recognition.",
+  unapologetic_benchmark:
+    "A clear, widely understood expression of achievement and status.",
+  anti_luxury: "Utility and indifference to conventional luxury cues.",
+  structural_tool:
+    "Function-led form: protection, legibility, and purpose are visible.",
+  mid_century_industrial:
+    "Restrained instruments with field, pilot, or marine roots.",
+  integrated_geometry:
+    "Architectural cases, strong angles, and bracelet continuity.",
+  extravagant_creative:
+    "Sculptural or unconventional forms that attract attention.",
+  high_art: "Fine finishing and traditional handcraft as the visual focus.",
+  sovereign_independent:
+    "Independent or foundation-backed ownership matters to you.",
+  industrial_reality:
+    "How the watch is made matters more than its corporate structure.",
+  modern_transparent:
+    "Honest modern origins matter more than an invented heritage.",
+  dependability: "A reliable object that reduces daily friction.",
+  custody: "A lasting object intended to carry memory forward.",
+  differentiation: "A personal choice that rejects generic consensus.",
+  milestone: "A visible marker of progress or achievement.",
+};
+
 function labelFor(value: string) {
   return LABELS[value] ?? value.replaceAll("_", " ");
 }
@@ -520,9 +545,7 @@ export async function action({ request }: Route.ActionArgs) {
     return data<ActionResult>(
       {
         ok: false,
-        errors: [
-          "Quiz rate limiting is misconfigured; the diagnostic is temporarily unavailable.",
-        ],
+        errors: ["The diagnostic is temporarily unavailable. Try again later."],
       },
       { status: 503 },
     );
@@ -534,9 +557,7 @@ export async function action({ request }: Route.ActionArgs) {
     return data<ActionResult>(
       {
         ok: false,
-        errors: [
-          "Quiz rate limiting storage is misconfigured; the diagnostic is temporarily unavailable.",
-        ],
+        errors: ["The diagnostic is temporarily unavailable. Try again later."],
       },
       { status: 503 },
     );
@@ -561,7 +582,7 @@ export async function action({ request }: Route.ActionArgs) {
         {
           ok: false,
           errors: [
-            "Quiz rate limiting is temporarily unavailable; please try again shortly.",
+            "The diagnostic is temporarily unavailable. Try again later.",
           ],
         },
         { status: 503 },
@@ -674,8 +695,6 @@ export async function action({ request }: Route.ActionArgs) {
     const dossier = renderDossierEmail({
       profile,
       recommendation,
-      catalogueOrigin: catalogueLoad.origin,
-      intent,
     });
     const deduplicationClient =
       upstashConfiguration.configured &&
@@ -826,8 +845,6 @@ export async function action({ request }: Route.ActionArgs) {
       intent,
       profile,
       recommendation,
-      catalogueOrigin: catalogueLoad.origin,
-      catalogueNotice: catalogueLoad.notice,
       subscription,
     },
     "error" in emailOptIn ? { status: 400 } : undefined,
@@ -959,11 +976,64 @@ function OptionalSelect<T extends string>({
   );
 }
 
+type OptionalChoiceGroupProps<T extends string> = {
+  legend: string;
+  name: string;
+  options: readonly T[];
+  value: T | "";
+  onChange: (value: T | "") => void;
+};
+
+function OptionalChoiceGroup<T extends string>({
+  legend,
+  name,
+  options,
+  value,
+  onChange,
+}: OptionalChoiceGroupProps<T>) {
+  return (
+    <fieldset className="quiz-fieldset">
+      <legend>{legend}</legend>
+      <div className="choice-list choice-list--described">
+        <label className={`choice-card ${value === "" ? "is-selected" : ""}`}>
+          <input
+            checked={value === ""}
+            name={name}
+            onChange={() => onChange("")}
+            type="radio"
+            value=""
+          />
+          <span className="choice-card__copy">
+            <strong>No preference</strong>
+            <small>Keep this dimension open.</small>
+          </span>
+        </label>
+        {options.map((option) => (
+          <label
+            className={`choice-card ${value === option ? "is-selected" : ""}`}
+            key={option}
+          >
+            <input
+              checked={value === option}
+              name={name}
+              onChange={() => onChange(option)}
+              type="radio"
+              value={option}
+            />
+            <span className="choice-card__copy">
+              <strong>{labelFor(option)}</strong>
+              <small>{OPTION_DETAILS[option]}</small>
+            </span>
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  );
+}
+
 function ProfileSummary({
   profile,
   recommendation,
-  catalogueOrigin,
-  catalogueNotice,
   profilePayload,
   intent,
   subscription,
@@ -973,8 +1043,6 @@ function ProfileSummary({
 }: {
   profile: ReturnType<typeof normalizeProfile>;
   recommendation: RecommendationResult;
-  catalogueOrigin: CatalogueOrigin;
-  catalogueNotice: string;
   profilePayload: string;
   intent: "core" | "refine";
   subscription: SubscriptionResult;
@@ -992,9 +1060,9 @@ function ProfileSummary({
       <span className="eyebrow">Constraint profile complete</span>
       <h1 id="profile-heading">Your search boundary</h1>
       <p>
-        The engine evaluated homogeneous reference variants only. Confirmed
-        matches pass every active hard constraint; incomplete facts are kept in
-        a separate verification queue.
+        Your profile was compared with individually reviewed watch
+        configurations. Confirmed matches meet every non-negotiable requirement;
+        watches with missing evidence stay clearly separated.
       </p>
       <dl className="profile-grid">
         <div>
@@ -1059,12 +1127,32 @@ function ProfileSummary({
             </dd>
           </div>
         ) : null}
+        {profile.refinement?.socialSignal ? (
+          <div>
+            <dt>How you want to be perceived</dt>
+            <dd>{labelFor(profile.refinement.socialSignal)}</dd>
+          </div>
+        ) : null}
+        {profile.refinement?.aestheticDna ? (
+          <div>
+            <dt>Visual impression</dt>
+            <dd>{labelFor(profile.refinement.aestheticDna)}</dd>
+          </div>
+        ) : null}
+        {profile.refinement?.provenancePreference ? (
+          <div>
+            <dt>Heritage preference</dt>
+            <dd>{labelFor(profile.refinement.provenancePreference)}</dd>
+          </div>
+        ) : null}
+        {profile.refinement?.emotionalObjective ? (
+          <div>
+            <dt>Emotional purpose</dt>
+            <dd>{labelFor(profile.refinement.emotionalObjective)}</dd>
+          </div>
+        ) : null}
       </dl>
-      <RecommendationSummary
-        catalogueNotice={catalogueNotice}
-        catalogueOrigin={catalogueOrigin}
-        recommendation={recommendation}
-      />
+      <RecommendationSummary recommendation={recommendation} />
       <DossierDelivery
         intent={intent}
         profilePayload={profilePayload}
@@ -1076,10 +1164,10 @@ function ProfileSummary({
           onClick={onRefine}
           type="button"
         >
-          Refine the ranking profile
+          Edit personal answers
         </button>
         <button className="button button--quiet" onClick={onEdit} type="button">
-          Edit core answers
+          Edit essential answers
         </button>
         <button
           className="button button--quiet"
@@ -1129,7 +1217,7 @@ function DossierDelivery({
             <input name="emailOptIn" type="checkbox" value="yes" />
             <span>
               I explicitly opt in to receive this diagnostic dossier by email
-              and, where enabled, subscribe to The Reserve&apos;s Beehiiv
+              and, where enabled, subscribe to The Reserve&apos;s email
               publication.
             </span>
           </label>
@@ -1271,19 +1359,15 @@ function CandidateCard({
 
 function RecommendationSummary({
   recommendation,
-  catalogueOrigin,
-  catalogueNotice,
 }: {
   recommendation: RecommendationResult;
-  catalogueOrigin: CatalogueOrigin;
-  catalogueNotice: string;
 }) {
   return (
     <div className="recommendation-summary">
       <section aria-labelledby="confirmed-heading">
         <div className="result-section-heading">
           <div>
-            <span className="eyebrow">Deterministic result</span>
+            <span className="eyebrow">Best fit</span>
             <h2 id="confirmed-heading">Confirmed matches</h2>
           </div>
           <span>
@@ -1303,8 +1387,8 @@ function RecommendationSummary({
           </div>
         ) : (
           <p className="empty-result">
-            No catalogue variant passes every active hard constraint with
-            complete evidence. Nothing was silently relaxed.
+            No reviewed watch configuration meets every non-negotiable
+            requirement with complete evidence. Nothing was silently relaxed.
           </p>
         )}
       </section>
@@ -1388,9 +1472,6 @@ function RecommendationSummary({
 
       <section className="source-register" aria-labelledby="sources-heading">
         <h2 id="sources-heading">Sources used in this result</h2>
-        <p className={`catalogue-origin catalogue-origin--${catalogueOrigin}`}>
-          {catalogueNotice}
-        </p>
         <ol>
           {recommendation.sources.map((source) => (
             <li key={source.id}>
@@ -1402,10 +1483,9 @@ function RecommendationSummary({
           ))}
         </ol>
         <p>
-          Engine v{recommendation.engineVersion} · catalogue v
-          {recommendation.catalogueVersion} · evaluated{" "}
-          {recommendation.evaluatedAt.slice(0, 10)}. Current seed coverage is
-          limited; absence is not evidence that a watch does not exist.
+          Evaluated {recommendation.evaluatedAt.slice(0, 10)}. The reviewed
+          collection is still limited; absence is not evidence that a suitable
+          watch does not exist.
         </p>
       </section>
     </div>
@@ -1461,7 +1541,11 @@ export default function Quiz() {
 
   useEffect(() => {
     if (!actionData?.ok) return;
-    const timer = window.setTimeout(() => setStep(SUMMARY_STEP), 0);
+    const timer = window.setTimeout(
+      () =>
+        setStep(actionData.intent === "core" ? CORE_STEP_COUNT : SUMMARY_STEP),
+      0,
+    );
     return () => window.clearTimeout(timer);
   }, [actionData]);
 
@@ -1521,13 +1605,7 @@ export default function Quiz() {
   const visibleStep =
     step < CORE_STEP_COUNT ? step + 1 : step - CORE_STEP_COUNT + 1;
 
-  const goBack = () => {
-    if (step === CORE_STEP_COUNT && actionData?.ok) {
-      setStep(SUMMARY_STEP);
-      return;
-    }
-    setStep((current) => Math.max(0, current - 1));
-  };
+  const goBack = () => setStep((current) => Math.max(0, current - 1));
 
   const recordStart = () => {
     if (startTracked.current) return;
@@ -1559,8 +1637,6 @@ export default function Quiz() {
           onEdit={() => setStep(0)}
           onRefine={() => setStep(CORE_STEP_COUNT)}
           onRestart={restartQuiz}
-          catalogueNotice={resultData.catalogueNotice}
-          catalogueOrigin={resultData.catalogueOrigin}
           profile={resultData.profile}
           profilePayload={resultProfilePayload}
           recommendation={resultData.recommendation}
@@ -1576,15 +1652,15 @@ export default function Quiz() {
       <nav className="quiz-nav" aria-label="Diagnostic navigation">
         <Link to="/">The Reserve</Link>
         <span>
-          {step < CORE_STEP_COUNT ? "Core screening" : "Optional refinement"}
+          {step < CORE_STEP_COUNT ? "Essential fit" : "Personal profile"}
         </span>
       </nav>
 
       <section className="quiz-panel" aria-labelledby="question-heading">
         <div className="progress-copy">
           <span className="eyebrow">
-            {step < CORE_STEP_COUNT ? "Required" : "Optional"} · {visibleStep} /{" "}
-            {totalVisibleSteps}
+            {step < CORE_STEP_COUNT ? "Essential" : "Personal"} · {visibleStep}{" "}
+            / {totalVisibleSteps}
           </span>
           <span>{Math.round((visibleStep / totalVisibleSteps) * 100)}%</span>
         </div>
@@ -1598,8 +1674,8 @@ export default function Quiz() {
           <div className="question-block">
             <h1 id="question-heading">What is the actual purchase ceiling?</h1>
             <p>
-              Enter the maximum outlay. Bands are derived for analytics; the
-              number is what the future SQL filter will enforce.
+              Enter the maximum outlay. The exact number sets your purchase
+              boundary.
             </p>
             <div className="split-inputs">
               <label className="input-stack input-stack--currency">
@@ -1751,8 +1827,8 @@ export default function Quiz() {
           <div className="question-block">
             <h1 id="question-heading">How much weight is comfortable?</h1>
             <p>
-              Full-watch weight becomes a hard filter. A missing catalogue
-              weight will require verification instead of passing silently.
+              If a watch&apos;s full weight has not been verified, it appears
+              separately for review instead of passing silently.
             </p>
             <ChoiceGroup
               legend="Maximum full-watch weight"
@@ -1797,64 +1873,97 @@ export default function Quiz() {
 
         {step === 6 ? (
           <div className="question-block">
-            <h1 id="question-heading">Signal and identity</h1>
+            <h1 id="question-heading">How do you want to be perceived?</h1>
             <p>
-              These answers rank viable references; they do not override hard
-              facts.
+              The remaining 21 preferences are optional across seven screens.
+              Choose what feels true, or leave any dimension open.
             </p>
-            <div className="select-grid">
-              <OptionalSelect
-                label="Social signal"
-                onChange={(socialSignal) =>
-                  setRefinement((current) => ({ ...current, socialSignal }))
-                }
-                options={SOCIAL_SIGNALS}
-                value={refinement.socialSignal}
-              />
-              <OptionalSelect
-                label="Aesthetic DNA"
-                onChange={(aestheticDna) =>
-                  setRefinement((current) => ({ ...current, aestheticDna }))
-                }
-                options={AESTHETIC_DNA}
-                value={refinement.aestheticDna}
-              />
-              <OptionalSelect
-                label="Ownership and lineage"
-                onChange={(provenancePreference) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    provenancePreference,
-                  }))
-                }
-                options={PROVENANCE_PREFERENCES}
-                value={refinement.provenancePreference}
-              />
-              <OptionalSelect
-                label="Emotional objective"
-                onChange={(emotionalObjective) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    emotionalObjective,
-                  }))
-                }
-                options={EMOTIONAL_OBJECTIVES}
-                value={refinement.emotionalObjective}
-              />
-            </div>
+            <OptionalChoiceGroup
+              legend="The signal it sends"
+              name="social-signal"
+              onChange={(socialSignal) =>
+                setRefinement((current) => ({ ...current, socialSignal }))
+              }
+              options={SOCIAL_SIGNALS}
+              value={refinement.socialSignal}
+            />
           </div>
         ) : null}
 
         {step === 7 ? (
           <div className="question-block">
-            <h1 id="question-heading">Fit, attachment, and wear</h1>
+            <h1 id="question-heading">
+              What visual impression should it create?
+            </h1>
             <p>
-              Leave any field blank when it is a preference rather than a
-              constraint.
+              Pick the design language that should be apparent before anyone
+              reads the name on the dial.
+            </p>
+            <OptionalChoiceGroup
+              legend="Visual character"
+              name="aesthetic-dna"
+              onChange={(aestheticDna) =>
+                setRefinement((current) => ({ ...current, aestheticDna }))
+              }
+              options={AESTHETIC_DNA}
+              value={refinement.aestheticDna}
+            />
+          </div>
+        ) : null}
+
+        {step === 8 ? (
+          <div className="question-block">
+            <h1 id="question-heading">What kind of history should it carry?</h1>
+            <p>
+              Decide whether ownership, industrial execution, or an honest
+              modern story matters most to you.
+            </p>
+            <OptionalChoiceGroup
+              legend="Ownership and lineage"
+              name="provenance-preference"
+              onChange={(provenancePreference) =>
+                setRefinement((current) => ({
+                  ...current,
+                  provenancePreference,
+                }))
+              }
+              options={PROVENANCE_PREFERENCES}
+              value={refinement.provenancePreference}
+            />
+          </div>
+        ) : null}
+
+        {step === 9 ? (
+          <div className="question-block">
+            <h1 id="question-heading">What should this watch make you feel?</h1>
+            <p>
+              Choose the emotional job the watch should perform in your life.
+            </p>
+            <OptionalChoiceGroup
+              legend="Emotional purpose"
+              name="emotional-objective"
+              onChange={(emotionalObjective) =>
+                setRefinement((current) => ({
+                  ...current,
+                  emotionalObjective,
+                }))
+              }
+              options={EMOTIONAL_OBJECTIVES}
+              value={refinement.emotionalObjective}
+            />
+          </div>
+        ) : null}
+
+        {step === 10 ? (
+          <div className="question-block">
+            <h1 id="question-heading">How should it fit and age?</h1>
+            <p>
+              These six optional answers define attachment, comfort, and wear
+              boundaries.
             </p>
             <div className="select-grid">
               <OptionalSelect
-                label="Required lug curvature"
+                label="How should the lugs follow your wrist?"
                 onChange={(requiredLugCurvature) =>
                   setRefinement((current) => ({
                     ...current,
@@ -1865,7 +1974,7 @@ export default function Quiz() {
                 value={refinement.requiredLugCurvature}
               />
               <OptionalSelect
-                label="Attachment type"
+                label="What strap or bracelet connection do you prefer?"
                 onChange={(requiredAttachmentType) =>
                   setRefinement((current) => ({
                     ...current,
@@ -1876,7 +1985,7 @@ export default function Quiz() {
                 value={refinement.requiredAttachmentType}
               />
               <label className="input-stack">
-                <span>Required lug width (mm)</span>
+                <span>Do you need a specific lug width? (mm)</span>
                 <input
                   max="40"
                   min="8"
@@ -1891,7 +2000,7 @@ export default function Quiz() {
                 />
               </label>
               <OptionalSelect
-                label="Cosmetic tolerance"
+                label="How much visible wear can you accept?"
                 onChange={(cosmeticTolerance) =>
                   setRefinement((current) => ({
                     ...current,
@@ -1902,7 +2011,7 @@ export default function Quiz() {
                 value={refinement.cosmeticTolerance}
               />
               <OptionalSelect
-                label="Contact allergy"
+                label="Do you have a contact-metal allergy?"
                 onChange={(allergyConstraint) =>
                   setRefinement((current) => ({
                     ...current,
@@ -1913,7 +2022,7 @@ export default function Quiz() {
                 value={refinement.allergyConstraint}
               />
               <label className="input-stack">
-                <span>Quick release</span>
+                <span>Must straps change without tools?</span>
                 <select
                   onChange={(event) =>
                     setRefinement((current) => ({
@@ -1933,16 +2042,16 @@ export default function Quiz() {
           </div>
         ) : null}
 
-        {step === 8 ? (
+        {step === 11 ? (
           <div className="question-block">
-            <h1 id="question-heading">Market and acquisition</h1>
+            <h1 id="question-heading">How do you want to acquire it?</h1>
             <p>
-              Premium is added above the stated ceiling only when explicitly
-              entered and paired with an eligible channel.
+              Set seven optional boundaries for availability, condition, and
+              market behavior.
             </p>
             <div className="select-grid">
               <OptionalSelect
-                label="Market stance"
+                label="How should the watch behave in the market?"
                 onChange={(marketStance) =>
                   setRefinement((current) => ({ ...current, marketStance }))
                 }
@@ -1950,7 +2059,7 @@ export default function Quiz() {
                 value={refinement.marketStance}
               />
               <OptionalSelect
-                label="Speculative risk"
+                label="Will you accept speculative demand?"
                 onChange={(speculativeRiskTolerance) =>
                   setRefinement((current) => ({
                     ...current,
@@ -1961,7 +2070,7 @@ export default function Quiz() {
                 value={refinement.speculativeRiskTolerance}
               />
               <OptionalSelect
-                label="Availability"
+                label="How long are you willing to wait?"
                 onChange={(availabilityTolerance) =>
                   setRefinement((current) => ({
                     ...current,
@@ -1972,7 +2081,7 @@ export default function Quiz() {
                 value={refinement.availabilityTolerance}
               />
               <OptionalSelect
-                label="Liquidity"
+                label="How important is resale liquidity?"
                 onChange={(liquidityPreference) =>
                   setRefinement((current) => ({
                     ...current,
@@ -1983,7 +2092,10 @@ export default function Quiz() {
                 value={refinement.liquidityPreference}
               />
               <label className="input-stack">
-                <span>Premium allowance (0–100%)</span>
+                <span>
+                  How far above your ceiling can an exceptional option go?
+                  (0–100%)
+                </span>
                 <input
                   max="100"
                   min="0"
@@ -1999,7 +2111,7 @@ export default function Quiz() {
               </label>
             </div>
             <CheckboxGroup
-              legend="Accepted acquisition channels"
+              legend="Where are you willing to buy?"
               onChange={(acquisitionChannels) =>
                 setRefinement((current) => ({
                   ...current,
@@ -2010,7 +2122,7 @@ export default function Quiz() {
               values={refinement.acquisitionChannels}
             />
             <CheckboxGroup
-              legend="Accepted condition"
+              legend="Which conditions will you consider?"
               onChange={(acceptedConditions) =>
                 setRefinement((current) => ({
                   ...current,
@@ -2023,16 +2135,16 @@ export default function Quiz() {
           </div>
         ) : null}
 
-        {step === 9 ? (
+        {step === 12 ? (
           <div className="question-block">
-            <h1 id="question-heading">Operation and geography</h1>
+            <h1 id="question-heading">Where and how will you use it?</h1>
             <p>
-              Country codes keep purchase and service constraints separate. Use
-              ISO two-letter codes such as PL, US, GB, or CH.
+              Keep purchase and service needs separate. For countries, use
+              familiar two-letter abbreviations such as PL, US, GB, or CH.
             </p>
             <div className="select-grid">
               <OptionalSelect
-                label="Lume"
+                label="How important is low-light visibility?"
                 onChange={(lumePreference) =>
                   setRefinement((current) => ({ ...current, lumePreference }))
                 }
@@ -2040,7 +2152,7 @@ export default function Quiz() {
                 value={refinement.lumePreference}
               />
               <OptionalSelect
-                label="Crown position"
+                label="Where should the crown sit?"
                 onChange={(crownPosition) =>
                   setRefinement((current) => ({ ...current, crownPosition }))
                 }
@@ -2048,7 +2160,7 @@ export default function Quiz() {
                 value={refinement.crownPosition}
               />
               <label className="input-stack">
-                <span>Purchase country</span>
+                <span>Where will you buy?</span>
                 <input
                   maxLength={2}
                   onChange={(event) =>
@@ -2062,7 +2174,7 @@ export default function Quiz() {
                 />
               </label>
               <label className="input-stack">
-                <span>Service country</span>
+                <span>Where must service be available?</span>
                 <input
                   maxLength={2}
                   onChange={(event) =>
@@ -2128,8 +2240,8 @@ export default function Quiz() {
                 {isSubmitting
                   ? "Validating…"
                   : step < CORE_STEP_COUNT
-                    ? "View profile"
-                    : "Apply refinements"}
+                    ? "Continue to personal profile"
+                    : "View matches"}
               </button>
             </Form>
           )}

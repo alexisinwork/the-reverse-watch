@@ -78,8 +78,9 @@ Status: **complete — verified 2026-08-28**
 
 Original-plan traceability: [progressive questionnaire](original-plan-requirements.md#progressive-questionnaire).
 
-Goal: collect the smallest trustworthy profile first, then offer optional
-refinement without making semantic infrastructure a prerequisite.
+Goal: collect the smallest trustworthy profile first, then continue through a
+visible, skippable personal profile without making semantic infrastructure a
+prerequisite.
 
 Deliverables:
 
@@ -88,7 +89,10 @@ Deliverables:
 - Zod schemas and inferred types for the core profile and refinement fields.
 - Six-screen accessible core flow: budget, wrist, deployment,
   movement/service+accuracy, weight, and complications/date.
-- Early deterministic profile summary with an optional “refine” path.
+- Seven personal-profile screens after essential fit and before the result. The
+  first four give perception, visual impression, provenance, and emotional
+  purpose dedicated choice-card screens; the remaining three expose all other
+  optional dimensions.
 - Refine contract for social signal, aesthetic, provenance, emotional objective,
   market stance, geometry/attachment, acquisition/premium, resale, lume/crown,
   geography, cosmetic tolerance, condition, and allergy.
@@ -106,11 +110,11 @@ Verification:
 - Focused tests cover navigation, persistence, validation, and core completion.
 - The result is a profile summary, not a fabricated watch recommendation.
 
-Evidence: `/quiz` implements the six required screens and four optional refine
-groups; server and browser use the same Zod/domain contract; session recovery,
-the wrist screen's millimetre/inch selector and canonical millimetre conversion,
-boundary rules, premium/speculative rules, and the complete core flow are
-covered by the fast gate (13 tests at the phase checkpoint).
+Evidence: `/quiz` implements six essential screens followed directly by seven
+personal-profile screens covering all 21 optional dimensions; server and
+browser use the same Zod/domain contract. Session recovery, the wrist screen's
+millimetre/inch selector and canonical millimetre conversion, boundary rules,
+premium/speculative rules, and the complete flow are covered by the fast gate.
 
 ## Phase 3 — Reference-variant schema and coverage feasibility
 

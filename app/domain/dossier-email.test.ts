@@ -26,8 +26,6 @@ describe("source-backed dossier renderer", () => {
     const first = renderDossierEmail({
       profile,
       recommendation,
-      catalogueOrigin: "bundled_seed",
-      intent: "core",
     });
 
     expect(first.subject).toBe("Your Reserve reference diagnostic dossier");
@@ -42,12 +40,13 @@ describe("source-backed dossier renderer", () => {
     expect(first.text).toContain("https://");
     expect(first.html).toContain("<a href=");
     expect(first.html).not.toContain("undefined");
+    expect(`${first.text} ${first.html}`).not.toMatch(
+      /supabase|bundled_seed|engine v|catalogue v|intent core/i,
+    );
     expect(first).toEqual(
       renderDossierEmail({
         profile,
         recommendation,
-        catalogueOrigin: "bundled_seed",
-        intent: "core",
       }),
     );
   });

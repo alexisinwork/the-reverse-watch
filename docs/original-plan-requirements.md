@@ -56,10 +56,12 @@ and changes Phase 2 to a progressive flow.
    moon phase, power reserve, alarm, world time, perpetual calendar, date, and
    no-date.
 
-The user receives a deterministic profile summary after the core flow and may
-continue into refinement without losing state.
+After the six essential screens, the user moves directly into seven visible
+personal-profile screens without losing state. The result appears after that
+complete path; all personal dimensions remain optional and expose a clear “No
+preference” choice.
 
-### Optional refinement dimensions
+### Seven-screen personal profile (21 optional dimensions)
 
 - social signal: discreet competence, quiet continuity, unapologetic benchmark,
   or anti-luxury counter-signal;
@@ -81,10 +83,14 @@ continue into refinement without losing state.
 - new, certified pre-owned, other pre-owned, or vintage condition;
 - nickel/contact-allergy constraint.
 
-Colour, cyclops, and similar visual details belong after the first result. Every
-active hard requirement must map to a structured catalogue fact; when it does
-not, the UI must label the result as requiring verification rather than pretend
-the filter ran.
+The first four personal screens ask how the wearer wants to be perceived, what
+visual impression the watch should create, what kind of history it should
+carry, and what emotional purpose it should serve. The final three screens
+expose the remaining fit/wear, market/acquisition, and operation/geography
+dimensions. Colour, cyclops, and similar visual details belong after this first
+result. Every active hard requirement must map to a structured catalogue fact;
+when it does not, the UI must label the result as requiring verification rather
+than pretend the filter ran.
 
 The UI must retain progress, Back/Next behavior, disabled incomplete
 transitions, measurement guidance, server validation, recoverable state, and an
