@@ -176,6 +176,14 @@ phase.
   provider ledger is now 69 attempts (41 succeeded, 28 failed) across 37 target
   IDs and USD 0.59193 recorded cost. The default queue is empty.
 
+  The next source-led pre-screen is the exact Rado HyperChrome Quartz
+  `R32280109`, selected for its projected 72 empty `1000_2000`,
+  zero-maintenance, simple-date cells. Current Rado evidence remains complete
+  except for lug-to-lug, lug width, case attachment, and a controlled lume
+  grade; newly checked exact retailer pages either repeat the current 87 g row
+  without those fields or carry an older conflicting geometry set. No provider
+  request is queued until those four M1 gaps have an exact-source path.
+
 ## Accepted 2026-08-28 audit decisions
 
 - The owner's Claude questionnaire/database audit remains a controlling

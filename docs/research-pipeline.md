@@ -1264,6 +1264,23 @@ request was made; the ledger remains 69 attempts (41 succeeded, 28 failed)
 across 37 target IDs and USD 0.59193 recorded cost, with the default queue
 empty.
 
+The next source-led coverage pre-screen revisits exact Rado HyperChrome Quartz
+`R32280109`, the highest-value unresolved candidate at 72 projected empty
+`1000_2000`, zero-maintenance, simple-date cells. Rado's current [U.S. product
+route](https://www.rado.com/en_us/hyperchrome-r32280109.html) remains the
+controlling source for 41.5 x 11.7 mm, 87 g, R292 +/-10-seconds-per-year,
+150 m, sapphire, date, and Super-LumiNova material. A current [TheWatchAgency
+record](https://www.thewatchagency.com/rado/hyperchrome/r32280109/1316534)
+repeats the exact reference and 87 g but carries a stale 41 mm case row and no
+interface measurement. The exact [T.H. Baker record](https://www.thbaker.co.uk/rado-mens-hyperchrome-black-rubber-strap-watch-r32280109)
+exposes 20 mm lug width and authorized-retailer context, but its 41 mm and
+older specification set cannot be merged with the current Rado row. Rado's
+current page still names only the pin buckle (a wrist closure), and no exact
+service/parts source or controlled charge/decay observation establishes the
+case fastener, wearing span, or lume grade. No fact is promoted and no
+provider request is made; the next evidence attempt must remain narrowly scoped
+to those four M1 gaps.
+
 ## Job idempotency and retention
 
 Each research attempt receives a UUID and a SHA-256 request fingerprint over
