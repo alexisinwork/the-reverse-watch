@@ -1034,6 +1034,12 @@ after a one-minute fluorescent charge has no timed brightness series or
 independent corroboration. All three M1 gaps remain null; no provider request was
 made.
 
+A further 2026-08-31 exact-model owner-thread search found anecdotes from about
+-5 to +8 seconds per day and an unsourced claim that Sinn regulates to ±5
+seconds per day. The thread does not identify the SI-084 strap configuration or
+provide a shared interval, conditions, instrument, or manufacturer document;
+the accuracy gap remains null.
+
 The next Vaer S3 Calendar Field bundle `S3-CF-SIL20BLK-NY20KHA` pre-screen
 leaves its sole M1 gap, `weightFullG`, open. Vaer's exact variant page gives
 46 g as case-only mass and its strap payload exposes no unit or scope. A new

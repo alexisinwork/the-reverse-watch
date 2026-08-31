@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "sinn-compact-mechanical-gmt",
   "jobId": "6e21d896-2d28-46ec-89f8-2780063c99b5",
-  "reviewedAt": "2026-08-31T10:10:35Z",
+  "reviewedAt": "2026-08-31T10:34:52Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -46,6 +46,11 @@
       "url": "https://www.watchbuys.com/store/pc/prv_allreviews.asp?IDCategory=0&IDProduct=351",
       "status": "validated_secondary",
       "note": "The official North American distributor's verified-owner comments for the exact 856 UTC strap product include individual approximately ±2 seconds-per-day and +5 seconds-per-day observations. They do not share a timing interval, position/temperature conditions, instrument, or factory guarantee; the observations therefore cannot define the catalogue accuracy bound. The same archive also repeats a subjective eight-hour lume claim after a one-minute fluorescent charge, without a timed brightness series or independent corroboration. Rechecked 2026-08-31."
+    },
+    {
+      "url": "https://www.reddit.com/r/sinn/comments/1t4suv5/sinn_856_utc_accuracy/",
+      "status": "rejected",
+      "note": "This recent 856 UTC owner thread contains anecdotes ranging from approximately -5 to +8 seconds per day and an unsourced claim that Sinn regulates to ±5 seconds per day. The comments do not identify the SI-084 strap configuration, share an observation interval or conditions, or provide a manufacturer document, so they cannot close the accuracy gap. Retrieved 2026-08-31."
     }
   ],
   "verifiedProvisionalFields": [
