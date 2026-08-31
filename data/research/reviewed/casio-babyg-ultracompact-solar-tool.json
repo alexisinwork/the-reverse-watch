@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "casio-babyg-ultracompact-solar-tool",
   "jobId": "7a94e4de-0586-4ee9-a638-179b688e026c",
-  "reviewedAt": "2026-08-31T09:00:00Z",
+  "reviewedAt": "2026-08-31T09:52:14Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
@@ -41,6 +41,11 @@
       "url": "https://support.casio.com/global/en/wat/manual/3493_en/",
       "status": "rejected",
       "note": "The general calibre manual is not used to establish the exact case-to-band construction or a single power-reserve duration. The exact product and replacement-part records supply the admitted facts instead."
+    },
+    {
+      "url": "https://www.ippojapanwatch.com/products/casio-womens-baby-g-square-design-radio-solar-model-bgd-5650-1jf",
+      "status": "validated_secondary",
+      "note": "The independently retrievable exact-reference retailer page identifies SKU BGD-5650-1JF and describes an LED backlight with Super Illuminator and afterglow. It provides no photoluminescent material, charge condition, timed decay, or repeatable lume-performance class, so operation.lumeGrade remains null."
     }
   ],
   "verifiedProvisionalFields": [
@@ -262,5 +267,5 @@
     }
   ],
   "missingM1Fields": ["lumeGrade"],
-  "note": "Keep as research-only. Exact Casio Japan and Europe records now independently establish the BGD-5650-1JF identity, rectangular 42.1 x 37.9 x 11.3 mm geometry, 31 g mass, resin case/band, Tough Solar/Multi Band 6 operation, 100 m resistance, mineral glass, shock resistance, +/-15-seconds-per-month fallback accuracy, and current product publication. Sakura supplies a USD 93 new exact-reference offer, but its Out of stock and Available 93 controls conflict, so availability is unknown; no provider USD 95 value is retained. Exact-family Minott/Uhr records document the pushpin special mount, normalized to proprietary. The rectangular dimensions are kept as width/length, and the exact date/calendar is present. Super Illuminator is an LED backlight rather than a qualifying lume grade, leaving lumeGrade as the sole M1 gap; no catalogue row is admitted."
+  "note": "Keep as research-only. Exact Casio Japan and Europe records now independently establish the BGD-5650-1JF identity, rectangular 42.1 x 37.9 x 11.3 mm geometry, 31 g mass, resin case/band, Tough Solar/Multi Band 6 operation, 100 m resistance, mineral glass, shock resistance, +/-15-seconds-per-month fallback accuracy, and current product publication. Sakura supplies a USD 93 new exact-reference offer, but its Out of stock and Available 93 controls conflict, so availability is unknown; no provider USD 95 value is retained. Exact-family Minott/Uhr records document the pushpin special mount, normalized to proprietary. The rectangular dimensions are kept as width/length, and the exact date/calendar is present. The exact IPPO retailer page independently repeats the LED-backlight/afterglow description without photoluminescent material or a timed lume protocol. Super Illuminator is an LED backlight rather than a qualifying lume grade, leaving lumeGrade as the sole M1 gap; no catalogue row is admitted."
 }

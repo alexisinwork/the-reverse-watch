@@ -1021,6 +1021,16 @@ bracelet specification, but its technical list contains no lume or no-lume
 statement. Citizen's own page likewise supplies no qualifying photoluminescent
 performance evidence. No fact was promoted and no provider request was made.
 
+The next Casio BABY-G `BGD-5650-1JF` pre-screen leaves its sole M1 gap,
+`lumeGrade`, open. Exact Casio Japan and Europe pages describe the light as an
+LED Super Illuminator/backlight, and an independently retrievable exact-SKU
+retailer page repeats the LED backlight and afterglow wording. None identifies
+photoluminescent material or supplies a charge condition, timed decay series,
+or repeatable performance class. The 31 g configured mass, rectangular
+42.1 x 37.9 x 11.3 mm geometry, Tough Solar/Multi Band 6 operation, and exact
+14 mm proprietary pushpin mount remain accepted provisional facts. No provider
+request was made.
+
 ## Earlier Phase 5 start
 
 - `app/domain/research.ts` defines strict manifest, coverage-intent, job,
