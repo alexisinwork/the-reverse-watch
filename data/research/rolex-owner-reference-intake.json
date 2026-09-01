@@ -1,0 +1,280 @@
+{
+  "intakeVersion": 1,
+  "submittedAt": "2026-08-31T20:00:00.000Z",
+  "brandSlug": "rolex",
+  "approvalScope": "recommendation_catalogue",
+  "targets": [
+    {
+      "targetId": "rolex-workbook-submariner-no-date",
+      "collection": "Submariner",
+      "variantLabel": "No-Date",
+      "referenceCode": "124060",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/submariner"
+    },
+    {
+      "targetId": "rolex-workbook-submariner-date",
+      "collection": "Submariner Date",
+      "variantLabel": "Date",
+      "referenceCode": "126610LN",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/submariner"
+    },
+    {
+      "targetId": "rolex-workbook-cosmograph-daytona",
+      "collection": "Cosmograph Daytona",
+      "variantLabel": "40 mm",
+      "referenceCode": "126500LN",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/cosmograph-daytona"
+    },
+    {
+      "targetId": "rolex-owner-gmt-master-ii-126710grnr",
+      "collection": "GMT-Master II",
+      "variantLabel": "40 mm",
+      "referenceCode": "126710GRNR",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/gmt-master-ii"
+    },
+    {
+      "targetId": "rolex-workbook-datejust-31",
+      "collection": "Datejust",
+      "variantLabel": "31",
+      "referenceCode": "278274",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/datejust"
+    },
+    {
+      "targetId": "rolex-workbook-datejust-36",
+      "collection": "Datejust",
+      "variantLabel": "36",
+      "referenceCode": "126200",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/datejust"
+    },
+    {
+      "targetId": "rolex-owner-datejust-41-126334",
+      "collection": "Datejust",
+      "variantLabel": "41",
+      "referenceCode": "126334",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/datejust"
+    },
+    {
+      "targetId": "rolex-workbook-oyster-perpetual-28",
+      "collection": "Oyster Perpetual",
+      "variantLabel": "28",
+      "referenceCode": "276200",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/oyster-perpetual"
+    },
+    {
+      "targetId": "rolex-workbook-oyster-perpetual-31",
+      "collection": "Oyster Perpetual",
+      "variantLabel": "31",
+      "referenceCode": "277200",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/oyster-perpetual"
+    },
+    {
+      "targetId": "rolex-workbook-oyster-perpetual-34",
+      "collection": "Oyster Perpetual",
+      "variantLabel": "34",
+      "referenceCode": "124200",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/oyster-perpetual"
+    },
+    {
+      "targetId": "rolex-workbook-oyster-perpetual-36",
+      "collection": "Oyster Perpetual",
+      "variantLabel": "36",
+      "referenceCode": "126000",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/oyster-perpetual"
+    },
+    {
+      "targetId": "rolex-owner-oyster-perpetual-41-124300",
+      "collection": "Oyster Perpetual",
+      "variantLabel": "41",
+      "referenceCode": "124300",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/oyster-perpetual"
+    },
+    {
+      "targetId": "rolex-workbook-day-date-36",
+      "collection": "Day-Date",
+      "variantLabel": "36",
+      "referenceCode": "128238",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/day-date"
+    },
+    {
+      "targetId": "rolex-workbook-day-date-40",
+      "collection": "Day-Date",
+      "variantLabel": "40",
+      "referenceCode": "228238",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/day-date"
+    },
+    {
+      "targetId": "rolex-124270",
+      "collection": "Explorer",
+      "variantLabel": "36",
+      "referenceCode": "124270",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/explorer"
+    },
+    {
+      "targetId": "rolex-workbook-explorer-40",
+      "collection": "Explorer",
+      "variantLabel": "40",
+      "referenceCode": "224270",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/explorer"
+    },
+    {
+      "targetId": "rolex-workbook-explorer-ii",
+      "collection": "Explorer II",
+      "variantLabel": "42 mm",
+      "referenceCode": "226570",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/explorer-ii"
+    },
+    {
+      "targetId": "rolex-workbook-sea-dweller",
+      "collection": "Sea-Dweller",
+      "variantLabel": "43 mm",
+      "referenceCode": "126600",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/sea-dweller"
+    },
+    {
+      "targetId": "rolex-workbook-deepsea",
+      "collection": "Deepsea",
+      "variantLabel": "44 mm",
+      "referenceCode": "136660",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/deepsea"
+    },
+    {
+      "targetId": "rolex-workbook-deepsea-challenge",
+      "collection": "Deepsea Challenge",
+      "variantLabel": "50 mm",
+      "referenceCode": "126067",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/deepsea/deepsea-challenge"
+    },
+    {
+      "targetId": "rolex-workbook-sky-dweller",
+      "collection": "Sky-Dweller",
+      "variantLabel": "42 mm",
+      "referenceCode": "336934",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/sky-dweller"
+    },
+    {
+      "targetId": "rolex-owner-yacht-master-37-268622",
+      "collection": "Yacht-Master",
+      "variantLabel": "37",
+      "referenceCode": "268622",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/yacht-master"
+    },
+    {
+      "targetId": "rolex-workbook-yacht-master-40",
+      "collection": "Yacht-Master",
+      "variantLabel": "40",
+      "referenceCode": "126622",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/yacht-master"
+    },
+    {
+      "targetId": "rolex-owner-yacht-master-42-226627",
+      "collection": "Yacht-Master",
+      "variantLabel": "42",
+      "referenceCode": "226627",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/yacht-master"
+    },
+    {
+      "targetId": "rolex-owner-yacht-master-ii-116688",
+      "collection": "Yacht-Master II",
+      "variantLabel": "44 mm",
+      "referenceCode": "116688",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/yacht-master-ii"
+    },
+    {
+      "targetId": "rolex-workbook-air-king",
+      "collection": "Air-King",
+      "variantLabel": "40 mm",
+      "referenceCode": "126900",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/air-king"
+    },
+    {
+      "targetId": "rolex-workbook-1908",
+      "collection": "1908",
+      "variantLabel": "Perpetual 1908",
+      "referenceCode": "52508",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/1908"
+    },
+    {
+      "targetId": "rolex-owner-lady-datejust-28-279174",
+      "collection": "Lady-Datejust",
+      "variantLabel": "28 mm",
+      "referenceCode": "279174",
+      "requestedProductionStatus": "current",
+      "suppliedUrl": "https://www.rolex.com/watches/lady-datejust"
+    },
+    {
+      "targetId": "rolex-owner-pearlmaster-86409",
+      "collection": "Pearlmaster",
+      "variantLabel": "39 mm / 34 mm historically",
+      "referenceCode": "86409",
+      "requestedProductionStatus": "discontinued",
+      "suppliedUrl": "https://www.rolex.com/watches"
+    },
+    {
+      "targetId": "rolex-workbook-milgauss-historical",
+      "collection": "Milgauss",
+      "variantLabel": "40 mm",
+      "referenceCode": "116400GV",
+      "requestedProductionStatus": "discontinued",
+      "suppliedUrl": "https://www.rolex.com/watches"
+    },
+    {
+      "targetId": "rolex-owner-cellini-time-50509",
+      "collection": "Cellini",
+      "variantLabel": "Time",
+      "referenceCode": "50509",
+      "requestedProductionStatus": "discontinued",
+      "suppliedUrl": "https://www.rolex.com/watches"
+    },
+    {
+      "targetId": "rolex-workbook-cellini-date-historical",
+      "collection": "Cellini",
+      "variantLabel": "Date",
+      "referenceCode": "50519",
+      "requestedProductionStatus": "discontinued",
+      "suppliedUrl": "https://www.rolex.com/watches"
+    },
+    {
+      "targetId": "rolex-owner-cellini-dual-time-50529",
+      "collection": "Cellini",
+      "variantLabel": "Dual Time",
+      "referenceCode": "50529",
+      "requestedProductionStatus": "discontinued",
+      "suppliedUrl": "https://www.rolex.com/watches"
+    },
+    {
+      "targetId": "rolex-workbook-cellini-moonphase-historical",
+      "collection": "Cellini",
+      "variantLabel": "Moonphase",
+      "referenceCode": "50535",
+      "requestedProductionStatus": "discontinued",
+      "suppliedUrl": "https://www.rolex.com/watches"
+    }
+  ]
+}

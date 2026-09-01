@@ -240,10 +240,18 @@ requirements.
 
 On 2026-08-31 the owner explicitly reopened the named Rolex Excel intake. That
 authorization does not reopen bulk autonomous brand selection. All mentioned
-Rolex families received exact-reference Sonar Pro research, but only two
-independently M1-complete variants were promoted; the remaining 33 preserve
-their unresolved fields and provisional source records. This is the required
-fail-closed application of the owner-managed continuation boundary.
+Rolex families received exact-reference Sonar Pro research. Two are
+independently M1-complete. The owner's later explicit curator decision approves
+all 35 exact references for the user-visible recommendation catalogue; the
+other 33 keep their unresolved fields, provisional-source distinction, and
+owner-approved review outcome. Missing facts remain `null` and therefore
+cannot satisfy an active hard filter.
+
+The owner's follow-up list adds a retained 34-reference ledger. All 34 entries
+resolve against the accepted catalogue, including ten exact configurations
+researched separately from the workbook. The combined catalogue contains 45
+Rolex variants, each explicitly approved for recommendation use with its
+current field-level evidence state.
 
 The owner also closed Phase 7 without further DNS or Resend mutation. The
 production funnel retains explicit Beehiiv consent and verified live Beehiiv

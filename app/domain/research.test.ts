@@ -1,4 +1,5 @@
 import {
+  ownerReferenceIntakeSchema,
   proposedFactSchema,
   researchJobSchema,
   researchManifestSchema,
@@ -176,5 +177,39 @@ describe("research and review contracts", () => {
         outcome: "needs_more_evidence",
       }).success,
     ).toBe(true);
+    expect(
+      researchReviewSchema.safeParse({
+        ...review,
+        outcome: "owner_approved_for_recommendation",
+        note: "Owner approved promotion while the price remains a hard-filter gap.",
+      }).success,
+    ).toBe(true);
+  });
+
+  it("records an owner-supplied exact-reference approval intake", () => {
+    const intake = {
+      intakeVersion: 1,
+      submittedAt: "2026-08-31T20:00:00Z",
+      brandSlug: "rolex",
+      approvalScope: "recommendation_catalogue",
+      targets: [
+        {
+          targetId: "rolex-owner-gmt-master-ii-126710grnr",
+          collection: "GMT-Master II",
+          variantLabel: "40 mm",
+          referenceCode: "126710GRNR",
+          requestedProductionStatus: "current",
+          suppliedUrl: "https://www.rolex.com/watches/gmt-master-ii",
+        },
+      ],
+    } as const;
+
+    expect(ownerReferenceIntakeSchema.parse(intake)).toEqual(intake);
+    expect(
+      ownerReferenceIntakeSchema.safeParse({
+        ...intake,
+        targets: [...intake.targets, intake.targets[0]],
+      }).success,
+    ).toBe(false);
   });
 });

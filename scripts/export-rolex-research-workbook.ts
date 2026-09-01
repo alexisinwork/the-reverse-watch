@@ -101,7 +101,63 @@ function styleWorksheet(worksheet: ExcelJS.Worksheet) {
 }
 
 const workbook = new ExcelJS.Workbook();
-await workbook.xlsx.readFile(inputPath);
+const sourceWorkbookAvailable = fs.existsSync(inputPath);
+if (sourceWorkbookAvailable) {
+  await workbook.xlsx.readFile(inputPath);
+} else {
+  const source = workbook.addWorksheet("Rolex Research");
+  source.columns = [
+    { header: "Source Workbook Row", key: "sourceRow", width: 20 },
+    { header: "Family / Size Request", key: "referenceLabel", width: 80 },
+    { header: "Coverage Rationale", key: "coverageRationale", width: 80 },
+  ];
+  const sourceRows = new Map<
+    number,
+    { sourceRow: number; referenceLabel: string[]; coverageRationale: string[] }
+  >();
+  for (const target of intake.targets) {
+    const row = sourceRows.get(target.sourceRow) ?? {
+      sourceRow: target.sourceRow,
+      referenceLabel: [],
+      coverageRationale: [],
+    };
+    row.referenceLabel.push(target.referenceLabel);
+    row.coverageRationale.push(target.coverageRationale);
+    sourceRows.set(target.sourceRow, row);
+  }
+  source.addRows(
+    [...sourceRows.values()].map((row) => ({
+      sourceRow: row.sourceRow,
+      referenceLabel: row.referenceLabel.join(" | "),
+      coverageRationale: row.coverageRationale.join(" | "),
+    })),
+  );
+  styleWorksheet(source);
+
+  const notes = workbook.addWorksheet("Research Notes");
+  notes.columns = [{ header: "Note", key: "note", width: 120 }];
+  notes.addRows([
+    {
+      note: `Recovered from immutable intake ${intake.sourceSha256}; the original desktop workbook was unavailable at export time.`,
+    },
+    {
+      note: "This workbook covers the Rolex models/sizes requested by the user.",
+    },
+    {
+      note: "Rolex currently lists 17 principal collections on its official site; Pearlmaster, Milgauss and Cellini are treated as discontinued/historical research rows.",
+    },
+    {
+      note: "Because Rolex offers many material, dial, bracelet and gem-set configurations, an exact-reference research record uses one row per exact SKU/reference.",
+    },
+    {
+      note: "Current prices and availability are time-sensitive and should be rechecked before publication or purchasing.",
+    },
+    {
+      note: "Official Rolex sources are prioritized. Configuration-dependent or unpublished fields remain null rather than being invented.",
+    },
+  ]);
+  styleWorksheet(notes);
+}
 for (const name of [
   "Research Summary",
   "Exact Reference Research",
@@ -224,6 +280,7 @@ const reviewCounts = [...reviews.values()].reduce(
   },
   {
     ready_for_migration: 0,
+    owner_approved_for_recommendation: 0,
     needs_more_evidence: 0,
     excluded: 0,
   },
@@ -237,11 +294,17 @@ summary.columns = [
 summary.addRows([
   { metric: "Source workbook", value: intake.sourceWorkbookName },
   { metric: "Source SHA-256", value: intake.sourceSha256 },
+  {
+    metric: "Source workbook availability",
+    value: sourceWorkbookAvailable
+      ? "Source workbook loaded and preserved."
+      : "Source workbook unavailable; source-row trace reconstructed from the immutable SHA-256-linked intake.",
+  },
   { metric: "Workbook rows covered", value: 34 },
   { metric: "Exact-reference targets", value: intake.targets.length },
   {
-    metric: "Independent review outcome",
-    value: `${reviewCounts.ready_for_migration} ready for migration; ${reviewCounts.needs_more_evidence} need more evidence; ${reviewCounts.excluded} excluded.`,
+    metric: "Review outcome",
+    value: `${reviewCounts.ready_for_migration} ready for migration; ${reviewCounts.owner_approved_for_recommendation} owner-approved for recommendation; ${reviewCounts.needs_more_evidence} need more evidence; ${reviewCounts.excluded} excluded.`,
   },
   { metric: "Research provider", value: "Perplexity Sonar Pro" },
   { metric: "Provider cost (USD)", value: Number(totalCost.toFixed(5)) },
@@ -249,7 +312,7 @@ summary.addRows([
   {
     metric: "Catalogue rule",
     value:
-      "Only exact, materially homogeneous, M1-complete variants with verified field evidence may be migrated as accepted catalogue rows. Missing facts remain null.",
+      "All 35 exact references are owner-approved for recommendation with their supported data. Independent M1 completeness remains separately recorded; missing facts remain null and cannot satisfy active hard filters.",
   },
 ]);
 styleWorksheet(summary);
@@ -258,7 +321,7 @@ const research = workbook.addWorksheet("Exact Reference Research");
 research.columns = [
   { header: "Source Workbook Row", key: "sourceRow", width: 12 },
   { header: "Research Target ID", key: "targetId", width: 42 },
-  { header: "Independent Review Outcome", key: "reviewOutcome", width: 22 },
+  { header: "Review Outcome", key: "reviewOutcome", width: 34 },
   { header: "Missing M1 Fields", key: "missingM1Fields", width: 58 },
   {
     header: "Independently Verified Fields",
@@ -318,7 +381,12 @@ evidence.getColumn("sourceUrl").eachCell((cell, rowNumber) => {
 });
 
 workbook.modified = new Date();
-await workbook.xlsx.writeFile(outputPath);
+const writePath =
+  inputPath === outputPath && sourceWorkbookAvailable
+    ? `${outputPath}.tmp-${process.pid}`
+    : outputPath;
+await workbook.xlsx.writeFile(writePath);
+if (writePath !== outputPath) fs.renameSync(writePath, outputPath);
 console.log(
   `Wrote ${researchRows.length} exact-reference rows and ${evidenceRows.length} field-evidence rows to ${outputPath}.`,
 );

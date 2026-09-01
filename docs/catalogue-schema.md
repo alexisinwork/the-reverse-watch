@@ -292,7 +292,7 @@ See the advisor's
 
 ## Rolex workbook expansion checkpoint
 
-Migration `0036_expand_catalogue_rolex_workbook.sql` adds only the independently
+Migration `0036_expand_catalogue_rolex_workbook.sql` adds the independently
 reviewed Rolex Submariner `124060` and Sea-Dweller `126600` from the owner's
 35-target workbook intake. Both are materially homogeneous, M1-complete rows.
 Their fit spans are marked measured in PostgreSQL; their full-weight facts use
@@ -300,8 +300,19 @@ documented full-link factory-unworn control configurations. The migration also
 adds exact current USD retail snapshots and 40 verified reference-level field
 evidence rows.
 
-Remote verification on 2026-08-31 reports 24 accepted brands and 30 accepted
-variants. The catalogue and all six SQL/TypeScript hard-filter profiles pass
-exact parity. The 33 unaccepted workbook targets remain outside PostgreSQL's
-recommendation catalogue and retain their missing-field decisions in the
-research layer.
+The owner subsequently approved all workbook references for user-visible
+recommendation use. Additive migration
+`0037_approve_rolex_workbook_recommendations.sql` expands the reviewed snapshot
+to 71 accepted variants, including all 35 workbook references and 10 separately
+owner-supplied Rolex configurations. The incomplete rows retain their
+missing-field decisions; owner approval is distinct from independent M1
+completeness, and unknown values cannot pass active filters.
+
+The separately retained 34-row owner reference ledger resolves 34/34 against
+that snapshot. The resulting catalogue contains 45 Rolex variants, all
+recommendation-eligible under the owner's authorization; the two independently
+complete workbook rows retain their stronger migration-ready review outcome.
+Migration
+`0039_repair_speculative_hard_filter.sql` keeps the v3 hard-filter wrapper
+applicability-aware and fail-closed when speculative-demand tolerance is not
+supplied.

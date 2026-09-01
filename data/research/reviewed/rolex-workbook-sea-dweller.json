@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "rolex-workbook-sea-dweller",
   "jobId": "2ef1d143-902e-4300-a44e-8e64aba3ced8",
-  "reviewedAt": "2026-08-31T17:45:00Z",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
   "reviewer": "codex-source-review",
   "outcome": "ready_for_migration",
   "candidateIdentity": {
@@ -233,5 +233,5 @@
     }
   ],
   "missingM1Fields": [],
-  "note": "Ready for additive migration as exact reference 126600. Primary-source specifications, price, and eight-hour lume statement are combined with exact-reference independent measurements for thickness, lug span, lug width, full configured weight, and attachment interface."
+  "note": "Independent exact-reference review remains migration-ready; the owner also confirmed that the complete researched Rolex set should participate in recommendations."
 }

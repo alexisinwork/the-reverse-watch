@@ -286,7 +286,7 @@ describe("deterministic recommendation engine", () => {
     rolexOnly.variants[0]!.price.channels = ["secondary_market"];
     const secondaryPrice = recommend(profile, rolexOnly);
     expect(secondaryPrice.whyNot).toHaveLength(0);
-    expect(secondaryPrice.verificationRequired[0]?.id).toBe("rolex-124273");
+    expect(secondaryPrice.recommendations[0]?.id).toBe("rolex-124273");
   });
 
   it("requires country-specific purchase and service evidence", () => {

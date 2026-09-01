@@ -1,0 +1,26 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-owner-gmt-master-ii-126710grnr",
+  "jobId": "e3ea80f5-4ea1-450b-83cf-939335c983e0",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
+  "reviewer": "owner-directed-catalogue-promotion",
+  "outcome": "owner_approved_for_recommendation",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "GMT-Master II",
+    "referenceCode": "126710GRNR",
+    "variantName": "Oystersteel, grey-black Cerachrom bezel, Oyster bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126710grnr-0004",
+      "status": "validated_primary",
+      "note": "Exact-reference identity evidence retained from the manufacturer_product research claim."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["caseWidthMm", "caseLengthMm", "weightFullG"],
+  "note": "Owner explicitly supplied, researched, and approved this exact Rolex reference for the recommendation catalogue on 2026-08-31. Provisional claims retain source provenance; supplemental price and wearing-span checks are recorded explicitly; unresolved facts remain null and cannot satisfy active hard filters."
+}

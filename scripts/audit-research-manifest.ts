@@ -174,16 +174,24 @@ for (const file of reviewFiles) {
     integrityErrors.push(
       `${review.targetId}: ready_for_migration review requires needs_review or accepted manifest state`,
     );
+  } else if (
+    review.outcome === "owner_approved_for_recommendation" &&
+    target.state !== "accepted"
+  ) {
+    integrityErrors.push(
+      `${review.targetId}: owner-approved recommendation review requires accepted manifest state`,
+    );
   } else if (review.outcome === "excluded" && target.state !== "excluded") {
     integrityErrors.push(
       `${review.targetId}: excluded review requires excluded manifest state`,
     );
   } else if (
     target.state === "accepted" &&
-    review.outcome !== "ready_for_migration"
+    review.outcome !== "ready_for_migration" &&
+    review.outcome !== "owner_approved_for_recommendation"
   ) {
     integrityErrors.push(
-      `${review.targetId}: accepted reviewed target requires ready_for_migration outcome`,
+      `${review.targetId}: accepted reviewed target requires a migration-ready or owner-approved recommendation outcome`,
     );
   }
 }

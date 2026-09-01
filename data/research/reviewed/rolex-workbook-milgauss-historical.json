@@ -2,9 +2,9 @@
   "reviewVersion": 1,
   "targetId": "rolex-workbook-milgauss-historical",
   "jobId": "c85928d9-1897-40bb-81d2-2efb829e8c8c",
-  "reviewedAt": "2026-08-31T17:17:56.815Z",
-  "reviewer": "codex-source-review",
-  "outcome": "needs_more_evidence",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
+  "reviewer": "owner-directed-catalogue-promotion",
+  "outcome": "owner_approved_for_recommendation",
   "candidateIdentity": {
     "brand": "Rolex",
     "model": "Milgauss",
@@ -38,5 +38,5 @@
     "attachmentType",
     "dateStatus"
   ],
-  "note": "Initial independent identity review of the owner-supplied Rolex workbook intake. Sonar Pro output is retained as provisional field-level evidence in the extended workbook, but no non-identity decision fact is promoted by this pass. Price, homogeneous configuration, physical fit, full configured weight, normalized movement accuracy, categorical lume, attachment semantics, and date state must be independently checked before migration."
+  "note": "Owner explicitly approved every researched Rolex exact reference for the recommendation catalogue on 2026-08-31. Existing source provenance is retained, newly checked price and wearing-span evidence is added where available, and every unresolved fact remains null so an active hard filter cannot pass silently."
 }

@@ -57,14 +57,23 @@ mapping, and research-contract version 8 for the full owner field template.
 owner's 34-row workbook to 35 exact-reference targets. The Explorer 36 source
 row is intentionally split into steel and Rolesor material variants.
 
+`rolex-owner-reference-intake.json` preserves the owner's follow-up list of 34
+explicit reference numbers and official family URLs. All 34 map to accepted
+catalogue variants. Ten exact configurations required additional research and
+review artifacts; together with the earlier workbook, the accepted Rolex
+corpus contains 45 recommendation-approved variants.
+
 ```bash
 npm run research:sync-intake -- data/research/rolex-workbook-intake.json
 npm run research -- --target=<target-id> --model=sonar-pro
 npm run research:review-rolex-intake
+npm run research:promote-rolex
 npm run research:export-rolex-workbook -- <source.xlsx> <extended.xlsx>
 ```
 
 The initial review command never overwrites an existing review artifact. The
 export keeps provider facts visible, overlays independently verified
 corrections, and adds those corrections as separate field-evidence rows. The
+promotion command records explicit owner recommendation approval without
+removing unresolved fields or converting missing values into defaults. The
 original workbook remains untouched.

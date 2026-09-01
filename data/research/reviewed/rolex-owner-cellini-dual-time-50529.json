@@ -1,0 +1,67 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-owner-cellini-dual-time-50529",
+  "jobId": "97bb2957-7052-4df8-a948-cc96f669918e",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
+  "reviewer": "owner-directed-catalogue-promotion",
+  "outcome": "owner_approved_for_recommendation",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Cellini Dual Time",
+    "referenceCode": "50529",
+    "variantName": "White gold / black or silver dial / alligator leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://watchbase.com/rolex/cellini/50529-0007",
+      "status": "validated_secondary",
+      "note": "Exact-reference identity evidence retained from the secondary_editorial research claim."
+    },
+    {
+      "url": "https://www.exquisitetimepieces.com/products/rolex-50529-cellini-dual-time-black-dial-210009n43253",
+      "status": "validated_secondary",
+      "note": "Supplemental exact-reference price or wearing-dimension evidence checked during owner-approved promotion."
+    },
+    {
+      "url": "https://chronospex.com/rolex/cellini/cellini-dual-time/50529-0005/",
+      "status": "validated_secondary",
+      "note": "Supplemental exact-reference price or wearing-dimension evidence checked during owner-approved promotion."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1680000,
+      "sourceUrl": "https://www.exquisitetimepieces.com/products/rolex-50529-cellini-dual-time-black-dial-210009n43253",
+      "note": "USD amount stored in minor units for the stated market and condition."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 45.4,
+      "sourceUrl": "https://chronospex.com/rolex/cellini/cellini-dual-time/50529-0005/",
+      "note": "Exact-reference wearing span used by the wrist fit filter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12.6,
+      "sourceUrl": "https://chronospex.com/rolex/cellini/cellini-dual-time/50529-0005/",
+      "note": "Exact-reference case thickness supplement."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 20,
+      "sourceUrl": "https://chronospex.com/rolex/cellini/cellini-dual-time/50529-0005/",
+      "note": "Exact-reference lug width supplement."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Owner explicitly supplied, researched, and approved this exact Rolex reference for the recommendation catalogue on 2026-08-31. Provisional claims retain source provenance; supplemental price and wearing-span checks are recorded explicitly; unresolved facts remain null and cannot satisfy active hard filters."
+}

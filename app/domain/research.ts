@@ -171,6 +171,43 @@ export const researchWorkbookIntakeSchema = z
     });
   });
 
+export const ownerReferenceIntakeSchema = z
+  .object({
+    intakeVersion: z.literal(1),
+    submittedAt: z.iso.datetime(),
+    brandSlug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+    approvalScope: z.literal("recommendation_catalogue"),
+    targets: z
+      .array(
+        z
+          .object({
+            targetId: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+            collection: z.string().min(1),
+            variantLabel: z.string().min(1),
+            referenceCode: z.string().min(1),
+            requestedProductionStatus: z.enum(["current", "discontinued"]),
+            suppliedUrl: z.url(),
+          })
+          .strict(),
+      )
+      .min(1),
+  })
+  .strict()
+  .superRefine((intake, context) => {
+    const referenceCodes = new Set<string>();
+    intake.targets.forEach((target, index) => {
+      const normalized = target.referenceCode.toUpperCase();
+      if (referenceCodes.has(normalized)) {
+        context.addIssue({
+          code: "custom",
+          path: ["targets", index, "referenceCode"],
+          message: `Duplicate owner-supplied reference: ${target.referenceCode}.`,
+        });
+      }
+      referenceCodes.add(normalized);
+    });
+  });
+
 export const researchManifestSchema = z
   .object({
     manifestVersion: z.literal(1),
@@ -394,7 +431,12 @@ export const researchReviewSchema = z
     jobId: z.string().uuid(),
     reviewedAt: z.iso.datetime(),
     reviewer: z.string().min(1),
-    outcome: z.enum(["needs_more_evidence", "ready_for_migration", "excluded"]),
+    outcome: z.enum([
+      "needs_more_evidence",
+      "ready_for_migration",
+      "owner_approved_for_recommendation",
+      "excluded",
+    ]),
     candidateIdentity: z
       .object({
         brand: z.string().min(1),
@@ -453,6 +495,17 @@ export const researchReviewSchema = z
         message: "A migration-ready review cannot retain M1 gaps.",
       });
     }
+    if (
+      review.outcome === "owner_approved_for_recommendation" &&
+      !review.note.toLowerCase().includes("owner")
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["note"],
+        message:
+          "An owner-approved recommendation review must record the owner direction.",
+      });
+    }
     const verified = new Set(review.verifiedProvisionalFields);
     review.rejectedProvisionalFields.forEach((field, index) => {
       if (verified.has(field.fieldName)) {
@@ -466,6 +519,7 @@ export const researchReviewSchema = z
   });
 
 export type CoverageIntent = z.infer<typeof coverageIntentSchema>;
+export type OwnerReferenceIntake = z.infer<typeof ownerReferenceIntakeSchema>;
 export type ResearchManifest = z.infer<typeof researchManifestSchema>;
 export type ResearchTarget = z.infer<typeof researchTargetSchema>;
 export type ResearchJob = z.infer<typeof researchJobSchema>;

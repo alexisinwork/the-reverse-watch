@@ -1,0 +1,44 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-owner-yacht-master-37-268622",
+  "jobId": "79083e1f-7d78-4d1d-9b2d-e023192fb64c",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
+  "reviewer": "owner-directed-catalogue-promotion",
+  "outcome": "owner_approved_for_recommendation",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Yacht-Master 37",
+    "referenceCode": "268622",
+    "variantName": "Yacht-Master 37 Rolesium slate dial (M268622-0002)"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/yacht-master/m268622-0002",
+      "status": "validated_primary",
+      "note": "Exact-reference identity evidence retained from the manufacturer_product research claim."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=6IamIK2STAk",
+      "status": "validated_secondary",
+      "note": "Supplemental exact-reference price or wearing-dimension evidence checked during owner-approved promotion."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 43.6,
+      "sourceUrl": "https://www.youtube.com/watch?v=6IamIK2STAk",
+      "note": "Exact-reference wearing span used by the wrist fit filter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 10.8,
+      "sourceUrl": "https://www.youtube.com/watch?v=6IamIK2STAk",
+      "note": "Exact-reference case thickness supplement."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["caseWidthMm", "caseLengthMm", "weightFullG"],
+  "note": "Owner explicitly supplied, researched, and approved this exact Rolex reference for the recommendation catalogue on 2026-08-31. Provisional claims retain source provenance; supplemental price and wearing-span checks are recorded explicitly; unresolved facts remain null and cannot satisfy active hard filters."
+}

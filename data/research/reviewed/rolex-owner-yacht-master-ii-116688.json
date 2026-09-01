@@ -1,0 +1,50 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-owner-yacht-master-ii-116688",
+  "jobId": "7f6a550d-dd4b-4077-ad7f-eebffdbb1c9d",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
+  "reviewer": "owner-directed-catalogue-promotion",
+  "outcome": "owner_approved_for_recommendation",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Yacht-Master II",
+    "referenceCode": "116688",
+    "variantName": "Yacht-Master II Yellow Gold 44mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.chrono24.com/rolex/ref-116688.htm",
+      "status": "validated_secondary",
+      "note": "Exact-reference identity evidence retained from the reviewed_market research claim."
+    },
+    {
+      "url": "https://hailwoodpeters.com.au/en/watches/rolex-yacht-master-ii-1251993",
+      "status": "validated_secondary",
+      "note": "Supplemental exact-reference price or wearing-dimension evidence checked during owner-approved promotion."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 50.1,
+      "sourceUrl": "https://hailwoodpeters.com.au/en/watches/rolex-yacht-master-ii-1251993",
+      "note": "Exact-reference wearing span used by the wrist fit filter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 14,
+      "sourceUrl": "https://hailwoodpeters.com.au/en/watches/rolex-yacht-master-ii-1251993",
+      "note": "Exact-reference case thickness supplement."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 21,
+      "sourceUrl": "https://hailwoodpeters.com.au/en/watches/rolex-yacht-master-ii-1251993",
+      "note": "Exact-reference lug width supplement."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["caseWidthMm", "caseLengthMm", "weightFullG", "accuracy"],
+  "note": "Owner explicitly supplied, researched, and approved this exact Rolex reference for the recommendation catalogue on 2026-08-31. Provisional claims retain source provenance; supplemental price and wearing-span checks are recorded explicitly; unresolved facts remain null and cannot satisfy active hard filters."
+}

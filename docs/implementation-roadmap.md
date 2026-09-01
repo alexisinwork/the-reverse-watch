@@ -1241,14 +1241,25 @@ scope. All 34 family/size rows are represented by 35 exact-reference Sonar Pro
 targets, with the two Explorer 36 material configurations kept separate. The
 extended workbook retains 35 exact-reference rows and 1,757 evidence rows;
 every provider fact remains provisional until an independent review decision.
-Submariner `124060` and Sea-Dweller `126600` alone passed the full M1 gate and
-entered additive migration `0036_expand_catalogue_rolex_workbook.sql`. The
-other 33 targets remain null-safe `needs_more_evidence` decisions, including a
-rejected Deepsea dial/URL configuration mismatch. Connected verification now
-reports 24 brands, 30 accepted variants, 40 verified evidence rows for the two
-new variants, M1 completeness for both, six-profile SQL/TypeScript parity, and
-1,147/28,800 local coverage cells (3.98%). The detailed trace is in
+Submariner `124060` and Sea-Dweller `126600` passed the full independent M1
+gate and entered additive migration `0036_expand_catalogue_rolex_workbook.sql`.
+The owner's later explicit curator decision approves all 35 exact references
+for recommendation use through additive migration
+`0037_approve_rolex_workbook_recommendations.sql`. The other 33 retain their
+evidence gaps and `owner_approved_for_recommendation` outcome; the Deepsea
+dial/URL caution remains recorded, and missing facts remain null-safe. The
+reviewed snapshot contains 71 variants, including all 35 workbook references
+and 10 separately owner-supplied Rolex configurations, and projects
+1,911/28,800 local coverage cells (6.64%). The detailed trace is in
 [`rolex-catalogue-expansion.md`](rolex-catalogue-expansion.md).
+
+The follow-up owner reference ledger retains all 34 explicitly supplied
+reference numbers and official family URLs. All 34 resolve against the
+accepted snapshot; the combined Rolex corpus contains 45 distinct variants,
+each explicitly approved for recommendation use. Connected verification
+reports 71 total variants, 45 Rolex variants, 34/34 requested references, and
+exact six-profile SQL/TypeScript parity after additive speculative-filter
+repair migration `0039_repair_speculative_hard_filter.sql`.
 
 Owner model-list planning checkpoint 2026-08-31: the owner has now supplied a
 field/evidence template and three catalogue-interest lists with 220 brand rows

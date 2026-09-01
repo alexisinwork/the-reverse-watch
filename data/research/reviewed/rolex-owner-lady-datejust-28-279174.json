@@ -1,0 +1,55 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-owner-lady-datejust-28-279174",
+  "jobId": "96067f55-9388-4b0c-95ee-b9e760448a58",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
+  "reviewer": "owner-directed-catalogue-promotion",
+  "outcome": "owner_approved_for_recommendation",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Lady-Datejust 28",
+    "referenceCode": "279174",
+    "variantName": "Oystersteel and white gold, fluted bezel, Jubilee bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://assets.rolex.com/api/brochure/en/lady-datejust/m279174-0010.pdf",
+      "status": "validated_primary",
+      "note": "Exact-reference identity evidence retained from the manufacturer_data_sheet research claim."
+    },
+    {
+      "url": "https://sheibanjewelers.com/products/pre-owned-rolex-lady-datejust-28mm-white-roman-dial-279174",
+      "status": "validated_secondary",
+      "note": "Supplemental exact-reference price or wearing-dimension evidence checked during owner-approved promotion."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 34,
+      "sourceUrl": "https://sheibanjewelers.com/products/pre-owned-rolex-lady-datejust-28mm-white-roman-dial-279174",
+      "note": "Exact-reference wearing span used by the wrist fit filter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 11,
+      "sourceUrl": "https://sheibanjewelers.com/products/pre-owned-rolex-lady-datejust-28mm-white-roman-dial-279174",
+      "note": "Exact-reference case thickness supplement."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 14,
+      "sourceUrl": "https://sheibanjewelers.com/products/pre-owned-rolex-lady-datejust-28mm-white-roman-dial-279174",
+      "note": "Exact-reference lug width supplement."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "weightFullG",
+    "lumeGrade"
+  ],
+  "note": "Owner explicitly supplied, researched, and approved this exact Rolex reference for the recommendation catalogue on 2026-08-31. Provisional claims retain source provenance; supplemental price and wearing-span checks are recorded explicitly; unresolved facts remain null and cannot satisfy active hard filters."
+}

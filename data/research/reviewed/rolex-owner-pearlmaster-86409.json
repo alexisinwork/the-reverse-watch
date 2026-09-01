@@ -1,0 +1,43 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-owner-pearlmaster-86409",
+  "jobId": "34f67d90-3c50-4373-ba25-9f1381372d72",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
+  "reviewer": "owner-directed-catalogue-promotion",
+  "outcome": "owner_approved_for_recommendation",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Oyster Perpetual Pearlmaster 39",
+    "referenceCode": "86409",
+    "variantName": "Diamond‑paved dial, lugs, bezel and Pearlmaster bracelet in 18 ct white gold"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://content.rolex.com/dam/media/brochures/pearlmaster/m86409rbr-0001.pdf",
+      "status": "validated_primary",
+      "note": "Exact-reference identity evidence retained from the manufacturer_data_sheet research claim."
+    },
+    {
+      "url": "https://thewatchkingnyc.com/products/rolex-pearlmaster-39-diamond-pave-dial-pearlmaster-bracelet-white-gold-watch-86409rbr",
+      "status": "validated_secondary",
+      "note": "Supplemental exact-reference price or wearing-dimension evidence checked during owner-approved promotion."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 18600000,
+      "sourceUrl": "https://thewatchkingnyc.com/products/rolex-pearlmaster-39-diamond-pave-dial-pearlmaster-bracelet-white-gold-watch-86409rbr",
+      "note": "USD amount stored in minor units for the stated market and condition."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "weightFullG",
+    "lumeGrade"
+  ],
+  "note": "Owner explicitly supplied, researched, and approved this exact Rolex reference for the recommendation catalogue on 2026-08-31. Provisional claims retain source provenance; supplemental price and wearing-span checks are recorded explicitly; unresolved facts remain null and cannot satisfy active hard filters."
+}

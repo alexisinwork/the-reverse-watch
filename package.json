@@ -16,6 +16,7 @@
     "test:e2e": "npm run build && node --env-file-if-exists=.env ./node_modules/@playwright/test/cli.js test",
     "project:seed-coverage": "tsx scripts/project-seed-coverage.ts",
     "render:seed-migration": "tsx scripts/render-seed-migration.ts",
+    "render:compact-catalogue-migration": "tsx scripts/render-compact-catalogue-migration.ts",
     "audit:catalogue-parity": "tsx scripts/audit-catalogue-parity.ts",
     "audit:coverage": "tsx scripts/audit-coverage.ts",
     "evaluate:baseline": "tsx scripts/evaluate-deterministic-baseline.ts",
@@ -27,6 +28,7 @@
     "research": "node --env-file=.env --import tsx scripts/run-research-worker.ts",
     "research:sync-intake": "tsx scripts/sync-research-workbook-intake.ts",
     "research:review-rolex-intake": "tsx scripts/review-rolex-workbook-intake.ts",
+    "research:promote-rolex": "tsx scripts/promote-rolex-workbook.ts",
     "research:export-rolex-workbook": "tsx scripts/export-rolex-research-workbook.ts",
     "check": "npm run format:check && npm run lint && npm run typecheck && npm run test:run && npm run build"
   },

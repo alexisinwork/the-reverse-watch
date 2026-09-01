@@ -1,0 +1,55 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-owner-cellini-time-50509",
+  "jobId": "d1f75186-3d82-4373-9029-6e8235396309",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
+  "reviewer": "owner-directed-catalogue-promotion",
+  "outcome": "owner_approved_for_recommendation",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Cellini Time",
+    "referenceCode": "50509",
+    "variantName": "Cellini Time White Gold / White Dial / Black Alligator Strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.signaturewatches.com/products/rolex-cellini-time-wp20615",
+      "status": "validated_secondary",
+      "note": "Exact-reference identity evidence retained from the reviewed_market research claim."
+    },
+    {
+      "url": "https://www.chrono24.com/rolex/ref-50509.htm",
+      "status": "validated_secondary",
+      "note": "Supplemental exact-reference price or wearing-dimension evidence checked during owner-approved promotion."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=RBWkrN-Ug-w",
+      "status": "validated_secondary",
+      "note": "Supplemental exact-reference price or wearing-dimension evidence checked during owner-approved promotion."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1299500,
+      "sourceUrl": "https://www.chrono24.com/rolex/ref-50509.htm",
+      "note": "USD amount stored in minor units for the stated market and condition."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 45.3,
+      "sourceUrl": "https://www.youtube.com/watch?v=RBWkrN-Ug-w",
+      "note": "Exact-reference wearing span used by the wrist fit filter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 11.2,
+      "sourceUrl": "https://www.youtube.com/watch?v=RBWkrN-Ug-w",
+      "note": "Exact-reference case thickness supplement."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["caseWidthMm", "caseLengthMm", "weightFullG", "accuracy"],
+  "note": "Owner explicitly supplied, researched, and approved this exact Rolex reference for the recommendation catalogue on 2026-08-31. Provisional claims retain source provenance; supplemental price and wearing-span checks are recorded explicitly; unresolved facts remain null and cannot satisfy active hard filters."
+}

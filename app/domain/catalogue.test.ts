@@ -8,14 +8,55 @@ import {
   verifiedCaseWearingSpanMm,
 } from "./catalogue";
 import { seedCatalogue } from "./seed-catalogue";
+import ownerReferenceIntake from "../../data/research/rolex-owner-reference-intake.json";
 
 describe("source-backed seed catalogue", () => {
   it("passes the strict catalogue contract with unique reference variants", () => {
     expect(seedCatalogue.catalogueVersion).toBe(2);
-    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(30);
+    expect(seedCatalogueSchema.parse(seedCatalogue).variants).toHaveLength(71);
     expect(
       new Set(seedCatalogue.variants.map((variant) => variant.id)).size,
-    ).toBe(30);
+    ).toBe(71);
+  });
+
+  it("promotes every researched Rolex exact reference into the recommendation catalogue", () => {
+    const rolex = seedCatalogue.variants.filter(
+      (variant) => variant.brand.slug === "rolex",
+    );
+
+    expect(rolex).toHaveLength(45);
+    expect(new Set(rolex.map((variant) => variant.referenceCode)).size).toBe(
+      45,
+    );
+    for (const variant of rolex) {
+      const fields = evidenceFields(variant);
+      expect(variant.referenceCode).not.toBe("");
+      expect(variant.price.amountMinor).toBeGreaterThan(0);
+      expect(fields.has("price")).toBe(true);
+      expect(variant.geometry.lugToLugMm).toBeGreaterThan(0);
+      expect(fields.has("lugToLugMm")).toBe(true);
+    }
+  });
+
+  it("includes every owner-approved Rolex reference in recommendation-ready form", () => {
+    const rolex = seedCatalogue.variants.filter(
+      (variant) => variant.brand.slug === "rolex",
+    );
+
+    expect(ownerReferenceIntake.targets).toHaveLength(34);
+    for (const approved of ownerReferenceIntake.targets) {
+      const requested = approved.referenceCode.toUpperCase();
+      const variant = rolex.find((candidate) => {
+        const reference = candidate.referenceCode.toUpperCase();
+        return reference === requested || reference.startsWith(`${requested}-`);
+      });
+
+      expect(variant, approved.referenceCode).toBeDefined();
+      expect(variant!.price.amountMinor).toBeGreaterThan(0);
+      expect(evidenceFields(variant!).has("price")).toBe(true);
+      expect(variant!.geometry.lugToLugMm).toBeGreaterThan(0);
+      expect(evidenceFields(variant!).has("lugToLugMm")).toBe(true);
+    }
   });
 
   it("retains the reviewed Rolex workbook variants as M1-complete exact configurations", () => {

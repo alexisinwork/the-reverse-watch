@@ -2,7 +2,7 @@
   "reviewVersion": 1,
   "targetId": "rolex-workbook-submariner-no-date",
   "jobId": "8cc18630-dd4c-4c49-b344-c04cf8f60b17",
-  "reviewedAt": "2026-08-31T17:45:00Z",
+  "reviewedAt": "2026-08-31T20:00:00.000Z",
   "reviewer": "codex-source-review",
   "outcome": "ready_for_migration",
   "candidateIdentity": {
@@ -246,5 +246,5 @@
     }
   ],
   "missingM1Fields": [],
-  "note": "Ready for additive migration as exact reference 124060. Primary-source specifications and current retail price are combined with reference-controlled independent measurements for thickness, lug span, lug width, full configured weight, and attachment interface; no family-level facts are promoted."
+  "note": "Independent exact-reference review remains migration-ready; the owner also confirmed that the complete researched Rolex set should participate in recommendations."
 }

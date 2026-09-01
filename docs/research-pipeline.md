@@ -77,21 +77,37 @@ boundary for one named workbook only. The intake covered all 34 source rows as
 not overwritten; the desktop `Rolex_Complete_Model_Research 2_Extended.xlsx`
 copy adds summary, exact-reference, and 1,757-row field-evidence worksheets.
 
-Independent source review accepted only Submariner `124060` and Sea-Dweller
-`126600`. It corrected stale provider prices to the exact current Rolex U.S.
-prices, selected configuration-controlled full-link weights, and verified
-measured fit and attachment fields. The other 33 workbook targets remain
-`needs_more_evidence`; their provisional facts are visible in the extended
-workbook and committed review artifacts but cannot rank. See
+Independent source review made Submariner `124060` and Sea-Dweller `126600`
+fully M1-complete. It corrected stale provider prices to the exact current
+Rolex U.S. prices, selected configuration-controlled full-link weights, and
+verified measured fit and attachment fields. The owner subsequently approved
+all 35 exact references for recommendation use with their currently supported
+data. The other 33 retain explicit evidence gaps and the distinct
+`owner_approved_for_recommendation` outcome; unknown facts remain `null` and
+cannot satisfy an active hard filter. See
 [`rolex-catalogue-expansion.md`](rolex-catalogue-expansion.md).
 
+The follow-up owner reference ledger preserves 34 explicitly named references
+and official family URLs. All 34 resolve against the accepted catalogue; ten
+exact configurations were not present in the original workbook and received
+separate research/review artifacts. Together, the original workbook and
+follow-up intake produce 45 distinct Rolex reference variants, all explicitly
+approved for recommendation use.
+
 Additive migration `0036_expand_catalogue_rolex_workbook.sql` is applied
-remotely. Connected verification reports 24 brands, 30 accepted variants, both
-new rows M1-complete, 40 new verified reference-level evidence rows, and exact
-catalogue plus all six SQL/TypeScript hard-filter profiles in parity. Local
-coverage is 1,147/28,800 cells (3.98%). Advisor output adds no Rolex-specific
-finding; the existing server-only RLS/no-policy notices, intentionally public
-RPC warnings, and unused-index informational notices remain.
+remotely; follow-up migration
+`0037_approve_rolex_workbook_recommendations.sql` materializes the explicit
+owner approval. The local reviewed snapshot contains 71 accepted variants,
+including all 35 workbook references and 10 separately owner-supplied Rolex
+configurations, and projects 1,911/28,800 coverage cells (6.64%). Connected
+verification confirms that the follow-up migration is applied: the public
+`recommendation_catalogue_v3()` payload returns 71 variants, including 45
+Rolex variants, all 35 workbook targets, and all 34 references in the follow-up
+owner list (zero missing). Catalogue facts and all six SQL/TypeScript
+golden-profile partitions pass exact parity. Migration
+`0039_repair_speculative_hard_filter.sql` preserves applicability and
+fail-closed speculative-risk handling in the live v3 filter function. Database
+advisor results show no Rolex-specific integrity or access regression.
 
 ## Manifest and queue
 
