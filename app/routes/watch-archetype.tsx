@@ -5,6 +5,7 @@ import type { Route } from "./+types/watch-archetype";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import {
   ARCHETYPE_QUESTIONS,
+  ARCHETYPE_SCORING_VERSION,
   buildArchetypeSharePath,
   buildCoreQuizHandoff,
   parseArchetypeSearch,
@@ -35,7 +36,7 @@ export function loader({ request }: Route.LoaderArgs) {
     shareUrl:
       result.status === "complete"
         ? new URL(
-            buildArchetypeSharePath(result.answers),
+            buildArchetypeSharePath(result.answers, result.scoringVersion),
             publicOrigin,
           ).toString()
         : null,
@@ -238,6 +239,11 @@ export default function WatchArchetype() {
             </p>
           ) : null}
           <Form className="archetype-form" method="get" onChange={recordStart}>
+            <input
+              name="scoringVersion"
+              type="hidden"
+              value={ARCHETYPE_SCORING_VERSION}
+            />
             {ARCHETYPE_QUESTIONS.map((question, questionIndex) => (
               <fieldset key={question.name}>
                 <legend>

@@ -1575,12 +1575,15 @@ model. Route and browser tests cover the index, citation detail, 404 handling,
 uncertainty, diagnostic handoff, and accessibility.
 
 Packet 8.4 adds `/watches/archetype`, a deterministic four-question editorial
-quiz with four dispositions and a first-party CSS share card. Complete answers
-produce a reproducible share URL; incomplete, forged, or out-of-vocabulary
-values fail closed. The `/quiz` handoff accepts only validated social-signal
-and aesthetic values. Directional price comfort and operating context are not
-promoted into hard constraints, so the diagnostic still requires exact budget,
-wrist, operating, and technical answers. The archetype requires no email, and
+quiz with six dispositions and a first-party CSS share card. Its versioned
+weighted scoring separates mechanical connoisseurship, recognised benchmarks,
+expressive collecting, architecture, custody, and field utility; an exhaustive
+180-combination test keeps every result reachable. Complete answers produce a
+reproducible share URL; incomplete, forged, or out-of-vocabulary values fail
+closed. The `/quiz` handoff accepts only validated social-signal and aesthetic
+values. Directional price comfort and operating context are not promoted into
+hard constraints, so the diagnostic still requires exact budget, wrist,
+operating, and technical answers. The archetype requires no email, and
 newsletter/dossier consent remains separate.
 
 Packet 8.5 adds an aggregate-only discovery funnel with strict TypeScript and

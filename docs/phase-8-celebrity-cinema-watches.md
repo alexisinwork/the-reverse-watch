@@ -143,13 +143,19 @@ editorial table or browser database grant is exposed.
 Exit: shared result, core-quiz handoff, consent boundaries, and invalid-input
 handling are tested.
 
-Completed 2026-08-31. `/watches/archetype` asks four editorial questions and
-returns one of four deterministic dispositions with a CSS-only, first-party
-share card and reproducible URL. Invalid or incomplete shared inputs fail
-closed. The handoff carries only schema-valid social-signal and aesthetic
-preferences; indicative price and operating context never bypass the full
-diagnostic's exact budget, wrist, or hard-constraint questions. Results require
-no contact detail, and later newsletter/dossier consent remains separate.
+Completed 2026-08-31 and expanded 2026-09-01.
+`/watches/archetype` asks four editorial questions and returns one of six
+deterministic dispositions with a CSS-only, first-party share card and
+reproducible URL. Scoring contract `2.0.0` separates mechanical connoisseurship
+and the recognised institutional benchmark from expressive collecting through
+an explicit weighted matrix. Its full 180-combination answer space keeps every
+result reachable. New share URLs carry the scoring version, while unversioned
+links retain the original four-result calculation. Invalid, incomplete, or
+unknown-version shared inputs fail closed. The handoff carries only
+schema-valid social-signal and aesthetic preferences; indicative price and
+operating context never bypass the full diagnostic's exact budget, wrist, or
+hard-constraint questions. Results require no contact detail, and later
+newsletter/dossier consent remains separate.
 
 ### 8.5 — Funnel evaluation and editorial operations
 

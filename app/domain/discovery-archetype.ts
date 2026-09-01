@@ -17,7 +17,14 @@ export const ARCHETYPE_IDS = [
   "quiet_custodian",
   "architectural_modernist",
   "expressive_collector",
+  "mechanical_connoisseur",
+  "recognised_standard_bearer",
 ] as const;
+
+export const ARCHETYPE_SCORING_VERSION = "2.0.0";
+const LEGACY_ARCHETYPE_SCORING_VERSION = "1.0.0";
+type ArchetypeScoringVersion =
+  typeof ARCHETYPE_SCORING_VERSION | typeof LEGACY_ARCHETYPE_SCORING_VERSION;
 
 const answersSchema = z
   .object({
@@ -80,6 +87,22 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
       "You leave room for visual risk, rare craft, and watches with a strong point of view. Character is useful; empty spectacle is not.",
     accent: "Signal red",
   },
+  mechanical_connoisseur: {
+    id: "mechanical_connoisseur",
+    title: "The Mechanical Connoisseur",
+    strapline: "The calibre is not backstage.",
+    description:
+      "You are drawn to watches whose movement architecture, finishing, and service reality withstand close examination. Rarity matters only when the mechanics justify it.",
+    accent: "Tempered blue",
+  },
+  recognised_standard_bearer: {
+    id: "recognised_standard_bearer",
+    title: "The Recognised Standard-Bearer",
+    strapline: "Recognition can be deliberate, not automatic.",
+    description:
+      "You are comfortable choosing an established benchmark when its design, liquidity, and institutional recognition serve a real milestone. Visibility is part of the brief, not a substitute for evidence.",
+    accent: "Ceremonial gold",
+  },
 };
 
 export const ARCHETYPE_QUESTIONS = [
@@ -125,7 +148,67 @@ export const ARCHETYPE_QUESTIONS = [
   },
 ] as const;
 
-const SCORE_MAP: Record<string, ArchetypeId> = {
+type ArchetypeAnswer = ArchetypeAnswers[keyof ArchetypeAnswers];
+type ArchetypeWeights = Partial<Record<ArchetypeId, number>>;
+
+const SCORE_WEIGHTS = {
+  discreet_competence: {
+    architectural_modernist: 4,
+    mechanical_connoisseur: 2,
+    quiet_custodian: 1,
+  },
+  quiet_continuity: {
+    quiet_custodian: 4,
+    mechanical_connoisseur: 2,
+  },
+  unapologetic_benchmark: {
+    recognised_standard_bearer: 5,
+    expressive_collector: 1,
+  },
+  anti_luxury: { field_rationalist: 5 },
+  structural_tool: { field_rationalist: 5 },
+  mid_century_industrial: {
+    quiet_custodian: 4,
+    recognised_standard_bearer: 1,
+  },
+  integrated_geometry: {
+    architectural_modernist: 5,
+    recognised_standard_bearer: 2,
+  },
+  extravagant_creative: { expressive_collector: 5 },
+  high_art: {
+    mechanical_connoisseur: 5,
+    expressive_collector: 1,
+  },
+  field_water_abuse: { field_rationalist: 4 },
+  studio_desk_daily: {
+    quiet_custodian: 2,
+    architectural_modernist: 1,
+    mechanical_connoisseur: 1,
+    expressive_collector: 1,
+  },
+  formal_architectural: {
+    architectural_modernist: 3,
+    mechanical_connoisseur: 2,
+    recognised_standard_bearer: 2,
+  },
+  considered_entry: {
+    field_rationalist: 2,
+    quiet_custodian: 1,
+  },
+  established_collection: {
+    quiet_custodian: 2,
+    architectural_modernist: 1,
+    recognised_standard_bearer: 2,
+  },
+  exceptional_object: {
+    mechanical_connoisseur: 3,
+    expressive_collector: 3,
+    recognised_standard_bearer: 1,
+  },
+} satisfies Record<ArchetypeAnswer, ArchetypeWeights>;
+
+const LEGACY_SCORE_MAP = {
   discreet_competence: "architectural_modernist",
   quiet_continuity: "quiet_custodian",
   unapologetic_benchmark: "expressive_collector",
@@ -141,12 +224,17 @@ const SCORE_MAP: Record<string, ArchetypeId> = {
   considered_entry: "field_rationalist",
   established_collection: "quiet_custodian",
   exceptional_object: "expressive_collector",
-};
+} satisfies Record<ArchetypeAnswer, ArchetypeId>;
 
 export type ArchetypeParseResult =
   | { status: "idle" }
   | { status: "invalid" }
-  | { status: "complete"; answers: ArchetypeAnswers; archetype: Archetype };
+  | {
+      status: "complete";
+      answers: ArchetypeAnswers;
+      archetype: Archetype;
+      scoringVersion: ArchetypeScoringVersion;
+    };
 
 const answerFields = [
   "socialSignal",
@@ -166,31 +254,103 @@ export function parseArchetypeSearch(
   );
   if (!parsed.success) return { status: "invalid" };
 
+  const requestedVersion = search.get("scoringVersion");
+  if (
+    requestedVersion !== null &&
+    requestedVersion !== ARCHETYPE_SCORING_VERSION
+  ) {
+    return { status: "invalid" };
+  }
+
+  const scoringVersion: ArchetypeScoringVersion =
+    requestedVersion === ARCHETYPE_SCORING_VERSION
+      ? ARCHETYPE_SCORING_VERSION
+      : LEGACY_ARCHETYPE_SCORING_VERSION;
+
   return {
     status: "complete",
     answers: parsed.data,
-    archetype: scoreArchetype(parsed.data),
+    archetype:
+      scoringVersion === ARCHETYPE_SCORING_VERSION
+        ? scoreArchetype(parsed.data)
+        : scoreLegacyArchetype(parsed.data),
+    scoringVersion,
   };
 }
 
-export function scoreArchetype(answers: ArchetypeAnswers): Archetype {
-  const scores = Object.fromEntries(
-    ARCHETYPE_IDS.map((id) => [id, 0]),
-  ) as Record<ArchetypeId, number>;
-
+function scoreLegacyArchetype(answers: ArchetypeAnswers): Archetype {
+  const legacyIds = ARCHETYPE_IDS.slice(0, 4);
+  const scores = Object.fromEntries(legacyIds.map((id) => [id, 0])) as Record<
+    ArchetypeId,
+    number
+  >;
   for (const answer of Object.values(answers)) {
-    const archetypeId = SCORE_MAP[answer];
-    if (archetypeId) scores[archetypeId] += 1;
+    scores[LEGACY_SCORE_MAP[answer]] += 1;
   }
-
-  const winner = ARCHETYPE_IDS.reduce((best, candidate) =>
+  const winner = legacyIds.reduce((best, candidate) =>
     scores[candidate] > scores[best] ? candidate : best,
   );
   return ARCHETYPES[winner];
 }
 
-export function buildArchetypeSharePath(answers: ArchetypeAnswers) {
-  return `/watches/archetype?${new URLSearchParams(answers).toString()}`;
+export function scoreArchetype(answers: ArchetypeAnswers): Archetype {
+  const scores = Object.fromEntries(
+    ARCHETYPE_IDS.map((id) => [
+      id,
+      { total: 0, peakAnswer: 0, aestheticAffinity: 0 },
+    ]),
+  ) as Record<
+    ArchetypeId,
+    { total: number; peakAnswer: number; aestheticAffinity: number }
+  >;
+
+  for (const [field, answer] of Object.entries(answers) as [
+    keyof ArchetypeAnswers,
+    ArchetypeAnswer,
+  ][]) {
+    const weights: ArchetypeWeights = SCORE_WEIGHTS[answer];
+    for (const archetypeId of ARCHETYPE_IDS) {
+      const weight = weights[archetypeId] ?? 0;
+      scores[archetypeId].total += weight;
+      scores[archetypeId].peakAnswer = Math.max(
+        scores[archetypeId].peakAnswer,
+        weight,
+      );
+      if (field === "aestheticDna") {
+        scores[archetypeId].aestheticAffinity = weight;
+      }
+    }
+  }
+
+  const winner = ARCHETYPE_IDS.reduce((best, candidate) => {
+    const candidateScore = scores[candidate];
+    const bestScore = scores[best];
+    if (candidateScore.total !== bestScore.total) {
+      return candidateScore.total > bestScore.total ? candidate : best;
+    }
+    if (candidateScore.peakAnswer !== bestScore.peakAnswer) {
+      return candidateScore.peakAnswer > bestScore.peakAnswer
+        ? candidate
+        : best;
+    }
+    if (candidateScore.aestheticAffinity !== bestScore.aestheticAffinity) {
+      return candidateScore.aestheticAffinity > bestScore.aestheticAffinity
+        ? candidate
+        : best;
+    }
+    return best;
+  });
+  return ARCHETYPES[winner];
+}
+
+export function buildArchetypeSharePath(
+  answers: ArchetypeAnswers,
+  scoringVersion: ArchetypeScoringVersion = ARCHETYPE_SCORING_VERSION,
+) {
+  return `/watches/archetype?${new URLSearchParams({
+    ...answers,
+    scoringVersion,
+  }).toString()}`;
 }
 
 export function buildCoreQuizHandoff(answers: ArchetypeAnswers) {

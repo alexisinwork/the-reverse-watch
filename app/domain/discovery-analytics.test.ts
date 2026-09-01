@@ -5,11 +5,11 @@ describe("discovery analytics contract", () => {
     expect(
       discoveryAnalyticsEventSchema.parse({
         name: "archetype_completion",
-        archetypeId: "field_rationalist",
+        archetypeId: "recognised_standard_bearer",
       }),
     ).toEqual({
       name: "archetype_completion",
-      archetypeId: "field_rationalist",
+      archetypeId: "recognised_standard_bearer",
     });
     expect(
       discoveryAnalyticsEventSchema.parse({

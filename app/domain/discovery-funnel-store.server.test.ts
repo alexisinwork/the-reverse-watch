@@ -30,7 +30,7 @@ describe("discovery funnel store", () => {
       persistDiscoveryFunnelEvent(
         {
           name: "archetype_completion",
-          archetypeId: "quiet_custodian",
+          archetypeId: "mechanical_connoisseur",
         },
         { env: environment, fetchImpl },
       ),
@@ -41,7 +41,7 @@ describe("discovery funnel store", () => {
     expect(requestBody(init)).toEqual({
       p_event_name: "archetype_completion",
       p_surface: null,
-      p_archetype_id: "quiet_custodian",
+      p_archetype_id: "mechanical_connoisseur",
     });
     expect(JSON.stringify(requestBody(init))).not.toMatch(
       /email|url|answer|ip/i,

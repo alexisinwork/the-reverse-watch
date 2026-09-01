@@ -326,6 +326,12 @@
 .archetype-card-architectural_modernist {
   border-color: #92784f;
 }
+.archetype-card-mechanical_connoisseur {
+  border-color: #587792;
+}
+.archetype-card-recognised_standard_bearer {
+  border-color: #b89a55;
+}
 .archetype-reading {
   max-width: 46rem;
   margin: 1.5rem 0;

@@ -59,11 +59,14 @@ phase.
   `/quiz` handoff without raw discovery-table access. The authenticated but
   unidentified Community prop remains visibly unconfirmed.
 - Packet 8.4 publishes a four-question editorial archetype at
-  `/watches/archetype`, with deterministic scoring, a CSS-only share card,
-  reproducible result URLs, invalid-input rejection, and no email collection.
-  Its core-quiz handoff carries only validated social and aesthetic values;
-  exact budget, wrist, operating context, and technical constraints remain
-  required.
+  `/watches/archetype`, with six dispositions, versioned weighted scoring, a
+  CSS-only share card, reproducible result URLs, invalid-input rejection, and
+  no email collection. The scoring contract is exhaustively checked across all
+  180 answer combinations. Its core-quiz handoff carries only validated social
+  and aesthetic values; exact budget, wrist, operating context, and technical
+  constraints remain required. Forward migration
+  `0040_expand_discovery_archetypes.sql` expands the aggregate analytics
+  allowlist without changing the RLS, RPC, or retained-data boundary.
 - Packet 8.5 completes Phase 8 with aggregate-only discovery events, a narrow
   RLS-protected Supabase store, the trailing-30-day `/evaluation` funnel, an
   explicit retain/revise/stop contract, and a monthly plus 90/180-day editorial
