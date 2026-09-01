@@ -5,6 +5,10 @@ function errorResponse(status: number) {
   return Response.json({ ok: false }, { status });
 }
 
+export function loader() {
+  return errorResponse(405);
+}
+
 export async function action({ request }: { request: Request }) {
   if (request.method !== "POST") {
     return errorResponse(405);

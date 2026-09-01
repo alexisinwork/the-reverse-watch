@@ -8,7 +8,7 @@ vi.mock("../domain/discovery-funnel-store.server", () => ({
   persistDiscoveryFunnelEvent,
 }));
 
-import { action } from "./discovery-analytics";
+import { action, loader } from "./discovery-analytics";
 
 function request(body: unknown, method = "POST") {
   return new Request("http://test.local/analytics/discovery", {
@@ -45,5 +45,9 @@ describe("discovery analytics endpoint", () => {
     expect(invalid.status).toBe(400);
     expect(wrongMethod.status).toBe(405);
     expect(persistDiscoveryFunnelEvent).not.toHaveBeenCalled();
+  });
+
+  it("returns a clean 405 for unsupported GET requests", () => {
+    expect(loader().status).toBe(405);
   });
 });
