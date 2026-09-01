@@ -1635,6 +1635,10 @@ and validation reason, never values. The email field and submit button also use
 an explicit gap and complete borders so the global keyboard focus ring cannot
 overlap the button.
 
+Follow-up 2026-09-01: the archetype question legends now participate in each
+fieldset's internal layout, with constrained flex items and safe wrapping. Long
+question titles therefore remain inside their cards at narrow viewport widths.
+
 ## Post-Phase-8 guided discovery continuation
 
 Status: **planned — owner-approved 2026-09-01**

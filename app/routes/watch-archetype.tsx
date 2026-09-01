@@ -247,8 +247,12 @@ export default function WatchArchetype() {
             {ARCHETYPE_QUESTIONS.map((question, questionIndex) => (
               <fieldset key={question.name}>
                 <legend>
-                  <span>{String(questionIndex + 1).padStart(2, "0")}</span>
-                  {question.legend}
+                  <span className="archetype-question-number">
+                    {String(questionIndex + 1).padStart(2, "0")}
+                  </span>
+                  <span className="archetype-question-title">
+                    {question.legend}
+                  </span>
                 </legend>
                 {"hint" in question ? <p>{question.hint}</p> : null}
                 <div className="archetype-options">

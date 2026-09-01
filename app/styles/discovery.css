@@ -191,27 +191,42 @@
   gap: 1rem;
 }
 .archetype-form fieldset {
+  min-width: 0;
   padding: clamp(1rem, 3vw, 1.75rem);
   border: 1px solid var(--color-line);
   margin: 0;
   background: var(--color-base-raised);
 }
 .archetype-form legend {
-  padding: 0 0.5rem;
+  display: flex;
+  float: left;
+  width: 100%;
+  min-width: 0;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0 0 1rem;
   font-size: 1rem;
   font-weight: 750;
+  line-height: 1.4;
 }
-.archetype-form legend span {
-  margin-right: 0.75rem;
+.archetype-question-number {
+  flex: 0 0 auto;
   color: var(--color-brass);
   font-size: 0.7rem;
   letter-spacing: 0.1em;
 }
+.archetype-question-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .archetype-form fieldset > p {
+  clear: both;
   color: #aeb6bd;
   font-size: 0.8rem;
 }
 .archetype-options {
+  clear: both;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
   gap: 0.65rem;
@@ -368,5 +383,8 @@
 @media (max-width: 35rem) {
   .discovery-nav {
     flex-direction: column;
+  }
+  .archetype-form legend {
+    align-items: flex-start;
   }
 }
