@@ -13,6 +13,15 @@ phase.
 ## Current checkpoint
 
 - Active roadmap: **Phases 0–8 complete at their documented boundaries**.
+- The owner has approved a post-Phase-8 guided celebrity/cinema continuation,
+  documented in
+  `docs/guided-celebrity-cinema-discovery-plan.md`. It preserves the existing
+  four-question archetype and will fork its result into the full personal quiz
+  or accepted discovery by film/series, actor or public figure, or fictional
+  character. Packets D0–D8 are planned and not yet implemented. Perplexity is
+  limited to private provisional source discovery for unknown subjects; human
+  review and canonical publication gates remain mandatory. This does not
+  reopen Phase 8, start commercial Phase 9, or authorize catalogue research.
 - The owner's 34-row Rolex reference list is preserved in
   `data/research/rolex-owner-reference-intake.json` and resolves 34/34 against
   the recommendation catalogue. Ten exact configurations were added beyond

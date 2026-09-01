@@ -1595,6 +1595,22 @@ retain/revise/stop gates; editorial operations define monthly link checks,
 90/180-day claim review, immediate safety downgrades, and correction service
 levels. Phase 8 is complete without catalogue population or research changes.
 
+## Post-Phase-8 guided discovery continuation
+
+Status: **planned — owner-approved 2026-09-01**
+
+The owner approved a guided continuation that preserves the four-question
+archetype and adds a result fork: proceed to the existing full personal quiz,
+or find watches through a film/series, actor or public figure, or fictional
+character. Unknown subjects may enter a private, deduplicated research queue;
+Perplexity may discover sources and produce structured provisional candidates,
+but independent review and the existing publication gates remain mandatory.
+
+Execute packets D0–D8 from
+[`guided-celebrity-cinema-discovery-plan.md`](guided-celebrity-cinema-discovery-plan.md)
+in order. This additive continuation does not reopen completed Phase 8, start
+commercial Phase 9, or authorize autonomous brand/model catalogue research.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

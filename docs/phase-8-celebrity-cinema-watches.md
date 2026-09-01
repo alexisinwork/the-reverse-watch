@@ -2,6 +2,22 @@
 
 Status: **complete — verified 2026-09-01**
 
+## Owner-approved guided continuation
+
+On 2026-09-01 the owner approved an additive guided-discovery continuation.
+The existing four-question archetype remains the light entry point. Its result
+will offer two explicit paths: continue to the full personal diagnostic, or
+choose a film/series, actor or public figure, or fictional character and find
+the associated reviewed watch attributions. An accepted story can then hand
+back to the full diagnostic to find a personally suitable equivalent.
+
+Unknown subjects may be submitted to a bounded, server-side Perplexity
+research queue, but generated candidates remain private and provisional until
+their sources are independently checked and the existing publication contract
+passes. This does not authorize catalogue research or automatic publication.
+The implementation is divided into constrained packets D0–D8 in
+[`guided-celebrity-cinema-discovery-plan.md`](guided-celebrity-cinema-discovery-plan.md).
+
 ## Purpose
 
 Create a research-led discovery product for watches worn by public figures and
@@ -164,7 +180,8 @@ review cadence and correction service levels are in
   without evidence.
 - Respect copyright, image licences, publicity rights, and platform terms.
 - Do not identify a watch more precisely than the evidence supports.
-- Results remain available without an email address; Beehiiv consent is
-  explicit and separate.
+- Public discovery and archetype results remain available without an email
+  address. Entry to the full diagnostic follows the later owner-approved
+  Beehiiv access boundary; its consent remains explicit.
 - Run the fast quality gate for each packet. Full browser/integration testing
   follows the Phase 7 policy and any later documented verification plan.

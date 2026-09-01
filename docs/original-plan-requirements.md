@@ -261,6 +261,28 @@ partial-delivery behavior. Resend remains disabled in Production, and apex DNS
 reconciliation is an owner-deferred operations item rather than a phase exit
 condition.
 
+### 2026-09-01 celebrity/cinema owner clarification
+
+The four-question archetype remains the light entry product. After receiving a
+deterministic result, the visitor must be offered two explicit paths: continue
+to the existing full personal diagnostic, or choose a film/series, actor or
+public figure, or fictional character and find reviewed watch attributions.
+The full-diagnostic path follows the current owner-approved landing
+subscription and signed access-grant boundary. Public discovery and anonymous
+research intake do not introduce another email gate. After selecting an
+attribution, the visitor may return to the full diagnostic to find a personally
+suitable equivalent. Short-quiz answers may supply only validated soft context;
+exact budget, wrist, operating, and technical hard constraints must still be
+asked and enforced.
+
+For an unknown subject, a server-side Perplexity workflow may discover sources
+and prepare structured provisional candidates. It must not publish claims,
+conflate actors with characters, approve catalogue variants, or treat generated
+text as evidence. Anonymous intake is deduplicated and privacy-minimal;
+independent source review and the existing canonical publication contract are
+required. The detailed execution and verification contract is
+[`guided-celebrity-cinema-discovery-plan.md`](guided-celebrity-cinema-discovery-plan.md).
+
 ## 2026-08-28 implementation trace
 
 - The core questionnaire, Q17-style complications, explicit accuracy,
