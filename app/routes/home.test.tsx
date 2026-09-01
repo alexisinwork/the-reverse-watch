@@ -102,6 +102,36 @@ describe("landing page", () => {
     expect(fetchImplementation).not.toHaveBeenCalled();
   });
 
+  it("fails closed and identifies an unavailable access configuration", async () => {
+    vi.stubEnv("SESSION_SECRET", "");
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    const fetchImplementation = vi.fn<typeof fetch>();
+    vi.stubGlobal("fetch", fetchImplementation);
+    const error = vi
+      .spyOn(console, "error")
+      .mockImplementation(() => undefined);
+
+    const response = await action({
+      request: actionRequest({
+        intent: "newsletter",
+        email: "reader@example.com",
+        newsletterConsent: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(response.init?.status).toBe(503);
+    expect(fetchImplementation).not.toHaveBeenCalled();
+    expect(error).toHaveBeenCalledWith(
+      JSON.stringify({
+        event: "landing_subscription_configuration_error",
+        component: "diagnostic_access",
+        reason: "missing",
+      }),
+    );
+    error.mockRestore();
+  });
+
   it("subscribes through the server-side Beehiiv adapter", async () => {
     vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
     vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");

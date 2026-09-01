@@ -1626,6 +1626,15 @@ Verification:
 - The deferred browser suite is updated to use a server-signed test grant. Its
   execution remains governed by the repository quality-gate instruction.
 
+Follow-up 2026-09-01: the first live signup attempt exposed an empty Production
+`SESSION_SECRET` value. The already verified local 64-character secret was
+restored as a Sensitive Production variable and the paired Preview entry was
+refreshed without printing either value; the next production deployment picks
+up the repaired configuration. Configuration failures now emit only component
+and validation reason, never values. The email field and submit button also use
+an explicit gap and complete borders so the global keyboard focus ring cannot
+overlap the button.
+
 ## Post-Phase-8 guided discovery continuation
 
 Status: **planned — owner-approved 2026-09-01**

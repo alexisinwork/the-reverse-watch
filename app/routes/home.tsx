@@ -82,6 +82,13 @@ export async function action({ request }: Route.ActionArgs) {
 
   const configuration = parseBeehiivConfiguration();
   if (!configuration.configured) {
+    console.error(
+      JSON.stringify({
+        event: "landing_subscription_configuration_error",
+        component: "beehiiv",
+        reason: configuration.reason,
+      }),
+    );
     return data<NewsletterActionResult>(
       {
         ok: false,
@@ -93,6 +100,13 @@ export async function action({ request }: Route.ActionArgs) {
 
   const accessConfiguration = parseDiagnosticAccessConfiguration();
   if (!accessConfiguration.configured) {
+    console.error(
+      JSON.stringify({
+        event: "landing_subscription_configuration_error",
+        component: "diagnostic_access",
+        reason: accessConfiguration.reason,
+      }),
+    );
     return data<NewsletterActionResult>(
       {
         ok: false,
