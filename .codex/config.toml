@@ -41,6 +41,9 @@ enabled = true
 required = false
 default_tools_approval_mode = "auto"
 
+[mcp_servers.supabase.tools.execute_sql]
+approval_mode = "approve"
+
 # Browser automation remains disabled until Phase 5 integration verification,
 # after the core AI work through Phase 4 is complete.
 [mcp_servers.playwright]

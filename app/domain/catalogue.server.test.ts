@@ -70,7 +70,7 @@ describe("server catalogue loader", () => {
     const result = await load();
 
     expect(result.origin).toBe("bundled_seed");
-    expect(result.notice).toMatch(/not configured/i);
+    expect(result.notice).toBe("Using the built-in reviewed catalogue.");
     expect(fetchImpl).not.toHaveBeenCalled();
   });
 
@@ -86,7 +86,7 @@ describe("server catalogue loader", () => {
     const result = await load();
 
     expect(result.origin).toBe("bundled_seed");
-    expect(result.notice).toMatch(/validation failed/i);
+    expect(result.notice).toBe("Using the built-in reviewed catalogue.");
   });
 
   it("loads a complete PostgreSQL hard-filter partition for recommendations", async () => {
@@ -113,7 +113,7 @@ describe("server catalogue loader", () => {
 
     expect(result.origin).toBe("supabase");
     expect(result.hardFilterEvaluation).toEqual(hardFilterEvaluation);
-    expect(result.notice).toMatch(/hard-filter decisions/i);
+    expect(result.notice).toMatch(/fit decisions/i);
     expect(fetchImpl).toHaveBeenCalledTimes(2);
     const hardFilterRequest = fetchImpl.mock.calls[1]?.[0];
     expect(hardFilterRequest).toBeInstanceOf(URL);
@@ -146,6 +146,6 @@ describe("server catalogue loader", () => {
 
     expect(result.origin).toBe("bundled_seed");
     expect(result.hardFilterEvaluation).toBeUndefined();
-    expect(result.notice).toMatch(/hard-filter validation failed/i);
+    expect(result.notice).toMatch(/standard fit rules/i);
   });
 });

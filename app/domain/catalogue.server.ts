@@ -66,8 +66,7 @@ export function createCatalogueLoader({
       return {
         catalogue: seedCatalogue,
         origin: "bundled_seed",
-        notice:
-          "Live catalogue connection is not configured; using the reviewed bundled snapshot.",
+        notice: "Using the built-in reviewed catalogue.",
       };
     }
 
@@ -75,7 +74,7 @@ export function createCatalogueLoader({
       return {
         catalogue: cached.catalogue,
         origin: "supabase",
-        notice: "Accepted catalogue facts loaded from Supabase.",
+        notice: "Accepted facts loaded from the live reviewed catalogue.",
       };
     }
 
@@ -101,14 +100,13 @@ export function createCatalogueLoader({
       return {
         catalogue,
         origin: "supabase",
-        notice: "Accepted catalogue facts loaded from Supabase.",
+        notice: "Accepted facts loaded from the live reviewed catalogue.",
       };
     } catch {
       return {
         catalogue: seedCatalogue,
         origin: "bundled_seed",
-        notice:
-          "Live catalogue validation failed; using the reviewed bundled snapshot.",
+        notice: "Using the built-in reviewed catalogue.",
       };
     }
   };
@@ -178,14 +176,13 @@ export function createRecommendationDataLoader(
         ...catalogueLoad,
         hardFilterEvaluation,
         notice:
-          "Accepted catalogue facts and hard-filter decisions loaded from Supabase.",
+          "Accepted facts and fit decisions loaded from the live reviewed catalogue.",
       };
     } catch {
       return {
         catalogue: seedCatalogue,
         origin: "bundled_seed",
-        notice:
-          "Live hard-filter validation failed; using the reviewed bundled snapshot and deterministic local filters.",
+        notice: "Using the built-in reviewed catalogue and standard fit rules.",
       };
     }
   };

@@ -1,6 +1,6 @@
 # Session handoff
 
-Last updated: 2026-08-31
+Last updated: 2026-09-01
 
 This is the restart point for the next working session. The controlling
 sequence is [`implementation-roadmap.md`](implementation-roadmap.md), which
@@ -13,6 +13,17 @@ phase.
 ## Current checkpoint
 
 - Active roadmap: **Phases 0–8 complete at their documented boundaries**.
+- The owner's 34-row Rolex reference list is preserved in
+  `data/research/rolex-owner-reference-intake.json` and resolves 34/34 against
+  the recommendation catalogue. Ten exact configurations were added beyond
+  the earlier 35-target workbook, bringing the catalogue to 71 accepted
+  variants, including 45 Rolex variants. Every Rolex variant has an explicit
+  recommendation-approval review, price evidence, fit-span evidence, and
+  field-level provenance; unsupported facts remain `null` and fail active hard
+  filters. Migrations `0037_approve_rolex_workbook_recommendations.sql` and
+  `0039_repair_speculative_hard_filter.sql` are live. The remote v3 catalogue,
+  all 34 requested references, and all six SQL/TypeScript golden-profile
+  partitions pass exact parity.
 - Phases 0–5 are complete at their current owner-approved boundaries; Phase 6
   is closed after its pilot, and Phase 7 is complete at its owner-approved
   production boundary.
@@ -82,12 +93,12 @@ phase.
   selector. Drafts retain the display unit, legacy millimetre-only session
   drafts still recover, and submitted profiles remain canonical numeric
   millimetres; the result summary shows both units.
-- Migrations `0001` through `0032` are applied to the connected Supabase
-  project. The live v3 catalogue contains all 24 brands and 28 accepted
-  variants, and exact catalogue plus six-profile SQL/TypeScript predicate and
-  result parity passes. All 20 public catalogue tables have RLS enabled with no
-  direct browser grants or policies; the application uses only two narrow,
-  read-only v3 RPCs for accepted facts and SQL hard-filter codes.
+- Migrations `0001` through `0039` are applied to the connected database. The
+  live v3 catalogue contains 24 brands and 71 accepted variants, 45 of them
+  Rolex, and exact catalogue plus six-profile predicate and result parity
+  passes. All public catalogue tables retain row-level security with no direct
+  browser grants or policies; the application uses only two narrow, read-only
+  catalogue functions for accepted facts and fit decisions.
 - Migration `0031_expand_catalogue_vostok.sql` adds the reviewed Vostok 420059
   row, and `0032_expand_catalogue_boldr.sql` adds the reviewed BOLDR Odyssey
   Horizon `ODY-TI-40-H-BL` row on its homogeneous 91 g integrated Druber strap;
