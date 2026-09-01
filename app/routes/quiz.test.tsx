@@ -287,6 +287,24 @@ describe("progressive diagnostic", () => {
     ).not.toHaveBeenCalled();
   });
 
+  it("does not double-count a refined recommendation", async () => {
+    const response = await action({
+      request: actionRequest({
+        intent: "refine",
+        profile: JSON.stringify({
+          ...coreProfile,
+          refinement: { socialSignal: "anti_luxury" },
+        }),
+        funnelSource: "archetype",
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(response.data.ok).toBe(true);
+    expect(
+      discoveryFunnelMock.persistDiscoveryFunnelEvent,
+    ).not.toHaveBeenCalledWith({ name: "qualified_recommendation" });
+  });
+
   it("continues from essential fit into all 21 personal preferences", async () => {
     const user = userEvent.setup();
     const Stub = createRoutesStub([

@@ -69,3 +69,18 @@ falls outside its service level. No threshold authorizes looser evidence.
 The no-index `/evaluation` dashboard reports the trailing 30-day aggregate.
 Monthly editorial review records the 30- and 90-day values plus a written
 retain/revise/stop decision; low-volume windows remain explicitly inconclusive.
+
+## Launch review — 2026-09-01
+
+The publication gate passes for all 21 pilot cards: every card has accepted
+supporting evidence and an explicit text-only image-rights decision. Twelve
+claims are exact-reference identifications, eight are visibly model-family
+only, and one authenticated prop remains unconfirmed rather than guessed.
+There are no catalogue links, open corrections, stored third-party images, or
+known hard-filter changes in this feature.
+
+The new production funnel opened with zero retained fixtures and no eligible
+traffic sample. Share, handoff, recommendation, and opt-in rates are therefore
+all insufficient—not 0%. The launch decision is to retain the feature as a
+measured pilot, make no expansion claim, and revisit only after the minimum
+sample and the first scheduled editorial review.

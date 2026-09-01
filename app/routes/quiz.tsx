@@ -857,7 +857,9 @@ export async function action({ request }: Route.ActionArgs) {
 
   if (funnelSource === "archetype") {
     const discoveryEvents = [
-      { name: "qualified_recommendation" as const },
+      ...(intent === "core"
+        ? [{ name: "qualified_recommendation" as const }]
+        : []),
       ...(emailOptIn.email ? [{ name: "opt_in" as const }] : []),
     ];
     for (const event of discoveryEvents) {
