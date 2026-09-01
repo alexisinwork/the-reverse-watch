@@ -16,13 +16,27 @@ import "../styles/discovery.css";
 export function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
   const result = parseArchetypeSearch(url.searchParams);
+  const configuredAppUrl = process.env.APP_URL?.trim();
+  let publicOrigin = url.origin;
+
+  if (configuredAppUrl) {
+    try {
+      const configuredOrigin = new URL(configuredAppUrl);
+      if (["http:", "https:"].includes(configuredOrigin.protocol)) {
+        publicOrigin = configuredOrigin.origin;
+      }
+    } catch {
+      // Keep the request origin when the optional canonical origin is invalid.
+    }
+  }
+
   return {
     result,
     shareUrl:
       result.status === "complete"
         ? new URL(
             buildArchetypeSharePath(result.answers),
-            url.origin,
+            publicOrigin,
           ).toString()
         : null,
   };
@@ -49,25 +63,51 @@ function ShareButton({
   title: string;
 }) {
   const [status, setStatus] = useState("");
+  const [showManualLink, setShowManualLink] = useState(false);
+
+  const copyWithBrowserFallback = () => {
+    const copyTarget = document.createElement("textarea");
+    copyTarget.value = shareUrl;
+    copyTarget.readOnly = true;
+    copyTarget.setAttribute("aria-hidden", "true");
+    copyTarget.style.position = "fixed";
+    copyTarget.style.inset = "0 auto auto -9999px";
+    document.body.append(copyTarget);
+
+    try {
+      copyTarget.select();
+      copyTarget.setSelectionRange(0, copyTarget.value.length);
+      return (
+        typeof document.execCommand === "function" &&
+        document.execCommand("copy")
+      );
+    } finally {
+      copyTarget.remove();
+    }
+  };
 
   const share = async () => {
+    setShowManualLink(false);
+
     try {
-      if (navigator.share) {
-        await navigator.share({
-          title: `${title} · The Reserve`,
-          text: `My editorial watch archetype: ${title}`,
-          url: shareUrl,
-        });
-        sendDiscoveryAnalyticsEvent({ name: "share", archetypeId });
-        setStatus("Share sheet opened.");
-        return;
+      let copied = false;
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          copied = true;
+        } catch {
+          copied = copyWithBrowserFallback();
+        }
+      } else {
+        copied = copyWithBrowserFallback();
       }
-      await navigator.clipboard.writeText(shareUrl);
+      if (!copied) throw new Error("The browser rejected the copy command.");
+
       sendDiscoveryAnalyticsEvent({ name: "share", archetypeId });
-      setStatus("Result link copied.");
-    } catch (error) {
-      if (error instanceof DOMException && error.name === "AbortError") return;
-      setStatus("Copy the address from your browser to share this result.");
+      setStatus(`Link to ${title} copied.`);
+    } catch {
+      setShowManualLink(true);
+      setStatus("Automatic copy is unavailable. Copy the link shown below.");
     }
   };
 
@@ -77,6 +117,18 @@ function ShareButton({
         Share this result
       </button>
       <p aria-live="polite">{status}</p>
+      {showManualLink ? (
+        <div className="archetype-share-manual">
+          <label htmlFor="archetype-share-url">Shareable result link</label>
+          <input
+            id="archetype-share-url"
+            onFocus={(event) => event.currentTarget.select()}
+            readOnly
+            value={shareUrl}
+          />
+          <a href={shareUrl}>Open the shareable result</a>
+        </div>
+      ) : null}
     </div>
   );
 }

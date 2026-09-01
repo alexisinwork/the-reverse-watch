@@ -339,6 +339,26 @@
   color: #aeb6bd;
   font-size: 0.8rem;
 }
+.archetype-share-manual {
+  display: grid;
+  gap: 0.6rem;
+  max-width: 46rem;
+}
+.archetype-share-manual label {
+  color: #aeb6bd;
+  font-size: 0.8rem;
+}
+.archetype-share-manual input {
+  width: 100%;
+  border: 1px solid #59636b;
+  background: #101518;
+  color: #f3eee5;
+  padding: 0.75rem;
+}
+.archetype-share-manual a {
+  color: #d4b879;
+  width: fit-content;
+}
 @media (max-width: 35rem) {
   .discovery-nav {
     flex-direction: column;
