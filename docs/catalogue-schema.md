@@ -167,6 +167,23 @@ whereas an unknown null remains the `lug_width` verification-required fact.
 No historical null is reclassified automatically, and new applicability fields
 must be added deliberately to the typed seed, RPC, and filter contracts.
 
+### Planned owner-template research contract
+
+The owner-supplied exact-variant template expands beyond the current research
+worker's version-7 fact vocabulary. Before the 220-brand/1,786-expression
+intake is researched in bulk, the TypeScript/Zod artifact contract must retain
+the additional case/crystal/bezel, movement provenance and battery/solar,
+service/parts-risk, material/comfort, commercial-liquidity, and sourced
+brand/editorial fields listed in
+[`owner-model-research-expansion.md`](owner-model-research-expansion.md#r03-research-contract-expansion).
+
+This does not mean every enrichment field becomes a PostgreSQL hard-filter
+column. Exact constraints and queryable commercial facts remain typed in
+PostgreSQL; brand context remains separately sourced; field evidence remains a
+provenance sidecar rather than a generic EAV catalogue. R0 must explicitly map
+each new field to a typed catalogue column, a typed research-only dossier
+field, or a reviewed `not_applicable` state before provider calls begin.
+
 ## Coverage projection
 
 `npm run project:seed-coverage` regenerates and `npm run audit:coverage` validates

@@ -1,0 +1,160 @@
+# Exact Watch Variant Research Record
+
+  ## 1. Identity
+  - Brand:
+  - Collection:
+  - Model:
+  - Exact Reference / SKU:
+  - Exact Configuration:
+    - Case material:
+    - Case colour / finish:
+    - Dial colour / dial variant:
+    - Supplied bracelet or strap:
+    - Bracelet or strap material:
+  - Production Status: current / discontinued / limited / vintage
+  - Production Years:
+  - Country of Manufacture:
+  - Official Product URL:
+
+  ## 2. Case and Wearability
+  - Case Shape: round / rectangular / square / tonneau / other
+  - Case Diameter (mm):              # round cases only
+  - Case Width (mm):                 # non-round cases
+  - Case Length (mm):                # non-round cases
+  - Case Thickness (mm):
+  - Lug-to-Lug (mm):
+  - Lug Width (mm):
+  - Lug Curvature: flat / moderate / steep / unknown
+  - Case Material:
+  - Case Back Material:
+  - Bezel Material:
+  - Crystal Material:
+  - Crystal Type: flat / domed / boxed / unknown
+  - Full Watch Weight (g):
+  - Head-Only Weight (g):
+  - Integrated Bracelet: yes / no
+  - Attachment Type: spring bar / quick release / proprietary
+  - Clasp Type:
+  - Clasp Micro-Adjustment:
+  - Water Resistance (m / bar / ATM):
+  - Shock Resistance:
+  - Antimagnetic Rating:
+
+  ## 3. Movement and Timekeeping
+  - Movement Type: automatic / manual / quartz / solar / spring drive / hybrid
+  - Movement Manufacturer:
+  - Calibre:
+  - In-House Movement: yes / no / partial
+  - Jewels:
+  - Frequency:
+  - Power Reserve (hours):
+  - Published Accuracy:
+  - Accuracy Lower Bound:
+  - Accuracy Upper Bound:
+  - Accuracy Period: per day / per month / other
+  - Accuracy Basis:
+  - Battery Type:
+  - Battery Life:
+  - Solar Charging / Reserve:
+  - Service Interval:
+  - Service Network / Service Regions:
+  - Parts Availability / Service Risk:
+
+  ## 4. Functions and Daily Operation
+  - Complications:
+    - Time Only:
+    - Date:
+    - Day-Date:
+    - GMT:
+    - Chronograph:
+    - Moon Phase:
+    - Power Reserve Indicator:
+    - Alarm:
+    - World Time:
+    - Perpetual Calendar:
+    - Other:
+  - Date Position:
+  - No-Date Configuration: yes / no
+  - Crown Type: push-pull / screw-down / other
+  - Crown Position:
+  - Lume Material:
+  - Lume Grade: none / weak / moderate / strong
+  - Lume Evidence: exact observed performance, not material name alone
+  - Bezel Type:
+  - Bezel Function:
+
+  ## 5. Materials, Comfort, and Risk
+  - Case Material:
+  - Case Back Material:
+  - Bracelet / Strap Material:
+  - Clasp Material:
+  - Nickel / Contact-Allergy Risk:
+  - Strap Change Method:
+  - Quick-Release: yes / no
+  - Supplied Extra Strap / Bracelet:
+  - Comfort / Fit Notes:
+  - Known Wearability Limitations:
+
+  ## 6. Commercial Facts
+  - Official Retail Price:
+  - Currency:
+  - Retail Price Country / Region:
+  - Retail Price Source URL:
+  - Price Observed Date:
+  - Availability: in stock / pre-order / waitlist / discontinued / unknown
+  - Availability Source URL:
+  - Availability Observed Date:
+  - Purchase Channel: official / authorised dealer / grey market / pre-owned / auction
+  - Condition: new / CPO / pre-owned / vintage
+  - Secondary Market Price Range:
+  - Secondary-to-Retail Ratio:
+  - Market Momentum: falling / stable / rising / unknown
+  - Hype Risk: low / medium / high / speculative bubble
+  - Liquidity Level:
+  - Typical Time to Sell:
+  - Typical Dealer Spread:
+  - Purchase Geography:
+  - Service Geography:
+
+  ## 7. Brand and Editorial Context
+  - Brand Founding Year:
+  - Brand Continuity / Discontinuities:
+  - Current Ownership:
+  - Ownership Type: independent / family-owned / foundation-backed / conglomerate
+  - Movement Sourcing Policy:
+  - Brand Service Reality:
+  - Historical Context:
+  - Design Origin / Aesthetic DNA:
+  - Social Signal:
+  - Buyer Archetypes:
+  - Perception / Collector Reception:
+  - Narrative Risks or Marketing Myths:
+  - Best Use Case:
+  - Main Trade-Offs:
+  - Who Should Not Buy It:
+
+  ## 8. Completeness and Evidence
+  - M0 Status:
+  - M1 Status:
+  - M2 Status:
+  - Missing M1 Fields:
+  - Conflicting Facts:
+  - Rejected Claims:
+  - Researcher:
+  - Reviewer:
+  - Last Reviewed Date:
+
+  ## 9. Field-Level Sources
+  For every factual field:
+  - Field Name:
+  - Accepted Value:
+  - Source Title:
+  - Source URL:
+  - Source Type: manufacturer / official manual / authorised dealer / technical document / reputable secondary source
+  - Exact Reference Confirmed: yes / no
+  - Observed Date:
+  - Retrieved Date:
+  - Verified Date:
+  - Verification State: verified / provisional / rejected
+  - Stale After:
+  - Reviewer Note:

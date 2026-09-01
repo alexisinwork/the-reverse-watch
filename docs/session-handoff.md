@@ -52,6 +52,15 @@ phase.
   additive migrations can promote facts. Resume/reuse and bounded retry timing
   now have deterministic unit coverage; a provider-free dry run selects no
   targets.
+- The owner has now supplied four expansion files: a richer exact-variant
+  research/evidence template and three lists containing 220 brand rows and
+  1,786 top-level model expressions. They were read in full and their hashes,
+  inventory risks, atomization rules, complete field packet, Luna/Sonar Pro
+  batch procedure, approval gates, and completion audit are recorded in
+  `docs/owner-model-research-expansion.md`. Research has not started. Packet R0
+  must first create a lossless source-expression ledger and expand the current
+  version-7 research contract; otherwise important owner-template fields would
+  be discarded.
 - `/quiz` now moves directly from six essential-fit screens into seven visible
   personal-profile screens before returning confirmed, verification-required,
   relaxation, why-not, score-trace, and source sections. The first four
@@ -977,6 +986,15 @@ On 2026-08-28 for Phases 1–4:
   recent runtime errors were present.
 
 ## Exact continuation
+
+The catalogue expansion workstream now has a concrete restart contract in
+`docs/owner-model-research-expansion.md`. When the owner starts that run, begin
+with packet R0, not a provider call: reconcile all 220 brand rows, atomize all
+1,786 source expressions without omissions, and add a lossless version-8
+TypeScript/Zod research contract. Then use GPT-5.6 Luna in source order, ten
+atomic targets per batch, with one `sonar-pro` request per target, independent
+field review, null-safe gaps, and no automatic promotion. This planning
+checkpoint does not itself start paid provider execution.
 
 1. Select the next named homogeneous reference with a source-led pre-screen.
    Record its uncovered-cell purpose and prove every projected M1 class from

@@ -50,6 +50,24 @@ those editorial decisions. The pipeline remains ready for owner-supplied work:
 
 No catalogue count is used as evidence that a fact is reviewed or eligible.
 
+### Owner model-list expansion plan — 2026-08-31
+
+The owner has supplied a new exhaustive-interest intake under
+`data/knowledge base/`: one field/evidence template plus three lists containing
+220 brand rows and 1,786 top-level model expressions. The expressions are not
+yet exact-reference targets: slash and parenthetical alternatives can encode
+several sizes, materials, references, movements, or production states.
+
+[`owner-model-research-expansion.md`](owner-model-research-expansion.md) is the
+controlling plan for that owner-managed workstream. It requires a lossless
+source-expression/atomization ledger and a version-8 contract that can preserve
+the complete owner template before bulk Sonar spend. After that prerequisite,
+GPT-5.6 Luna may run bounded ten-target batches through the existing worker,
+using one `sonar-pro` request per atomic exact-reference target and independent
+field-level source review. Provider output remains provisional and no planned
+target changes the controlling roadmap sequence or recommendation catalogue by
+itself.
+
 ### Owner-directed Rolex workbook run — 2026-08-31
 
 The owner's explicit Rolex request temporarily reopened the owner-managed

@@ -43,6 +43,14 @@ The live parity command requires the configured public Supabase URL and
 publishable key. A failed or incomplete fact remains provisional or `null`; it
 must not be converted into a plausible default to make the checks pass.
 
+The expanded owner model-list programme is specified in
+[`../../docs/owner-model-research-expansion.md`](../../docs/owner-model-research-expansion.md).
+Its three source lists contain 220 brand rows and 1,786 top-level model
+expressions before size/material/reference atomization. Do not add those raw
+expressions directly as manifest targets or run a bulk provider sweep. First
+complete packet R0: source-hash intake, alias review, lossless atomic-target
+mapping, and research-contract version 8 for the full owner field template.
+
 ## Rolex workbook intake
 
 `rolex-workbook-intake.json` is the immutable, SHA-256-linked mapping from the

@@ -1250,6 +1250,18 @@ new variants, M1 completeness for both, six-profile SQL/TypeScript parity, and
 1,147/28,800 local coverage cells (3.98%). The detailed trace is in
 [`rolex-catalogue-expansion.md`](rolex-catalogue-expansion.md).
 
+Owner model-list planning checkpoint 2026-08-31: the owner has now supplied a
+field/evidence template and three catalogue-interest lists with 220 brand rows
+and 1,786 top-level model expressions. This authorizes concrete planning and a
+future named owner-managed research run; it does not itself accept any list
+claim or reopen generic autonomous target selection. The controlling
+[`owner model research expansion plan`](owner-model-research-expansion.md)
+requires lossless atomization, a version-8 research contract for every template
+field, one `sonar-pro` request per atomic target under GPT-5.6 Luna, independent
+field review, and the existing M1/additive-migration gates. The plan is a
+separate owner-managed continuation and does not reorder the controlling phase
+sequence.
+
 Phase 7 integration preflight on 2026-08-31 ran the deferred Chromium suite in
 both desktop and mobile projects. All eight landing, health, error-boundary,
 and six-screen diagnostic tests passed after supplying the runner's missing

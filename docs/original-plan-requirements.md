@@ -226,6 +226,18 @@ verification commands. Owner-supplied records must still satisfy the same M1,
 homogeneous-variant, field-evidence, null, and staleness requirements before
 they can enter recommendations.
 
+The owner subsequently supplied an expanded interest catalogue containing 220
+brand rows and 1,786 top-level model expressions plus a richer exact-variant
+research template. This is an explicit plan-and-prepare scope, not acceptance
+of the listed claims. The complete execution contract is in
+[`owner-model-research-expansion.md`](owner-model-research-expansion.md). It
+preserves every source expression, splits it into homogeneous atomic targets,
+uses one Sonar Pro extraction per target under a Luna worker, and retains the
+independent review and additive-promotion gates. Because the template contains
+fields absent from the current version-7 extraction contract, lossless contract
+expansion is a required first packet rather than silently discarding owner
+requirements.
+
 On 2026-08-31 the owner explicitly reopened the named Rolex Excel intake. That
 authorization does not reopen bulk autonomous brand selection. All mentioned
 Rolex families received exact-reference Sonar Pro research, but only two
