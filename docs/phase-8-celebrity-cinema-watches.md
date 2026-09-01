@@ -157,6 +157,12 @@ operating context never bypass the full diagnostic's exact budget, wrist, or
 hard-constraint questions. Results require no contact detail, and later
 newsletter/dossier consent remains separate.
 
+Migration `0040_expand_discovery_archetypes.sql` was applied to production on
+2026-09-01. Its validated check constraint accepts all six result IDs. A
+rolled-back RPC transaction proved completion/share acceptance for the two new
+IDs without retaining test events; the existing RLS, grant, RPC, and aggregate
+privacy boundaries are unchanged.
+
 ### 8.5 — Funnel evaluation and editorial operations
 
 - Instrument page view, quiz start/completion, share, core-quiz handoff,

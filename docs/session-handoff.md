@@ -66,7 +66,10 @@ phase.
   and aesthetic values; exact budget, wrist, operating context, and technical
   constraints remain required. Forward migration
   `0040_expand_discovery_archetypes.sql` expands the aggregate analytics
-  allowlist without changing the RLS, RPC, or retained-data boundary.
+  allowlist without changing the RLS, RPC, or retained-data boundary. It is
+  live in Supabase as `20260901164305 expand_discovery_archetypes`; a rolled-back
+  transaction accepted completion/share events for both new IDs and retained
+  no fixtures. The replacement check constraint is validated over all six IDs.
 - Packet 8.5 completes Phase 8 with aggregate-only discovery events, a narrow
   RLS-protected Supabase store, the trailing-30-day `/evaluation` funnel, an
   explicit retain/revise/stop contract, and a monthly plus 90/180-day editorial
