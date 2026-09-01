@@ -1595,6 +1595,34 @@ retain/revise/stop gates; editorial operations define monthly link checks,
 90/180-day claim review, immediate safety downgrades, and correction service
 levels. Phase 8 is complete without catalogue population or research changes.
 
+## Post-Phase-8 landing and access refinement
+
+Status: **verified — isolated fast gate passed**
+
+The 2026-09-01 owner direction refreshes the landing hierarchy and moves
+newsletter subscription to the entry boundary of the full reference
+diagnostic. The gauge mark and wordmark form one horizontal lockup. Two large,
+descriptive action panels immediately follow the documentary manifesto: the
+public celebrity/cinema evidence archive and the subscriber reference
+diagnostic.
+
+The public archive and its four-question archetype remain available without an
+email. The handoff into `/quiz` now requires a successful explicit Beehiiv
+subscription. The server issues an opaque, signed, expiring, HttpOnly access
+grant only after Beehiiv accepts the request; both the quiz loader and action
+fail closed without it. The cookie contains no email address. This supersedes
+the former optional-email entry rule while preserving already generated
+recommendations and the separate, explicit results-page delivery consent.
+
+Verification:
+
+- Landing unit coverage confirms the locked action, explicit consent, Beehiiv
+  request, and signed access-cookie response.
+- Access-domain tests cover missing configuration, valid grants, tampering, and
+  expiry; quiz route coverage checks both GET redirect and POST rejection.
+- The deferred browser suite is updated to use a server-signed test grant. Its
+  execution remains governed by the repository quality-gate instruction.
+
 ## Post-Phase-8 guided discovery continuation
 
 Status: **planned — owner-approved 2026-09-01**
@@ -1616,7 +1644,7 @@ commercial Phase 9, or authorize autonomous brand/model catalogue research.
 | Variable | Required in | Purpose |
 | --- | --- | --- |
 | `APP_URL` | Phase 1 | Canonical application origin. |
-| `SESSION_SECRET` | Phase 2 if server sessions are used | Signed server-side state; not required for browser `sessionStorage`. |
+| `SESSION_SECRET` | Post-Phase-8 access refinement | Signs the subscriber diagnostic-access grant; required by the web runtime. |
 | `SUPABASE_URL` | Phase 4 | Public project endpoint for the narrow accepted-facts RPCs. |
 | `SUPABASE_PUBLISHABLE_KEY` | Phase 4 | Public API key; it has RPC execute only and no table grants. |
 | `DATABASE_URL` | Optional Phase 5/7 | Direct SQL workers only if a later job needs them; not required by the web runtime. |

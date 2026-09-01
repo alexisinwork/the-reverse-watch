@@ -23,7 +23,28 @@ import {
   QUESTIONNAIRE_STORAGE_KEY,
   QUESTIONNAIRE_VERSION,
 } from "../domain/questionnaire";
-import Quiz, { action } from "./quiz";
+import {
+  issueDiagnosticAccessCookie,
+  parseDiagnosticAccessConfiguration,
+} from "../domain/diagnostic-access.server";
+import Quiz, { action, loader } from "./quiz";
+
+const SESSION_SECRET =
+  "a-test-secret-that-is-longer-than-thirty-two-characters";
+const accessConfiguration = parseDiagnosticAccessConfiguration({
+  NODE_ENV: "test",
+  SESSION_SECRET,
+});
+if (!accessConfiguration.configured) {
+  throw new Error("Expected diagnostic access configuration");
+}
+const issuedDiagnosticCookie =
+  await issueDiagnosticAccessCookie(accessConfiguration);
+const issuedCookieHeader = issuedDiagnosticCookie.split(";", 1)[0];
+if (typeof issuedCookieHeader !== "string") {
+  throw new Error("Expected diagnostic access cookie");
+}
+const diagnosticCookie: string = issuedCookieHeader;
 
 const coreProfile = {
   core: {
@@ -45,16 +66,57 @@ function actionRequest(entries: Record<string, string>) {
   return new Request("http://test.local/quiz", {
     method: "POST",
     body,
+    headers: { Cookie: diagnosticCookie },
+  });
+}
+
+function authenticatedRouteAction(args: Parameters<typeof action>[0]) {
+  const headers = new Headers(args.request.headers);
+  headers.set("Cookie", diagnosticCookie);
+  return action({
+    ...args,
+    request: new Request(args.request, { headers }),
   });
 }
 
 describe("progressive diagnostic", () => {
   beforeEach(() => {
+    vi.stubEnv("SESSION_SECRET", SESSION_SECRET);
     window.sessionStorage.clear();
     redisMock.del.mockReset();
     redisMock.set.mockReset();
     discoveryFunnelMock.persistDiscoveryFunnelEvent.mockReset();
     discoveryFunnelMock.persistDiscoveryFunnelEvent.mockResolvedValue(false);
+  });
+
+  it("redirects unsigned visits and rejects unsigned submissions", async () => {
+    const redirectResponse = await loader({
+      request: new Request("http://test.local/quiz"),
+    } as Parameters<typeof loader>[0]);
+    expect(redirectResponse).toBeInstanceOf(Response);
+    if (!(redirectResponse instanceof Response)) {
+      throw new Error("Expected redirect response");
+    }
+    expect(redirectResponse.status).toBe(302);
+    expect(redirectResponse.headers.get("Location")).toBe(
+      "/?diagnostic=subscription#newsletter-signup",
+    );
+
+    const response = await action({
+      request: new Request("http://test.local/quiz", {
+        method: "POST",
+        body: new URLSearchParams({
+          intent: "core",
+          profile: JSON.stringify(coreProfile),
+        }),
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(response.init?.status).toBe(403);
+    expect(response.data).toEqual({
+      ok: false,
+      errors: ["Subscribe to The Reserve before starting the diagnostic."],
+    });
   });
 
   it("keeps the recommendation visible when email channels are unavailable", async () => {
@@ -215,7 +277,7 @@ describe("progressive diagnostic", () => {
 
   it("carries only valid soft archetype preferences into the diagnostic", async () => {
     const Stub = createRoutesStub([
-      { path: "/quiz", Component: Quiz, action },
+      { path: "/quiz", Component: Quiz, action: authenticatedRouteAction },
       { path: "/", Component: () => <p>Home</p> },
     ]);
 
@@ -308,7 +370,7 @@ describe("progressive diagnostic", () => {
   it("continues from essential fit into all 21 personal preferences", async () => {
     const user = userEvent.setup();
     const Stub = createRoutesStub([
-      { path: "/quiz", Component: Quiz, action },
+      { path: "/quiz", Component: Quiz, action: authenticatedRouteAction },
       { path: "/", Component: () => <p>Home</p> },
     ]);
 
@@ -466,7 +528,7 @@ describe("progressive diagnostic", () => {
 
   it("does not advance from a missing budget", () => {
     const Stub = createRoutesStub([
-      { path: "/quiz", Component: Quiz, action },
+      { path: "/quiz", Component: Quiz, action: authenticatedRouteAction },
       { path: "/", Component: () => <p>Home</p> },
     ]);
 
@@ -496,7 +558,7 @@ describe("progressive diagnostic", () => {
       }),
     );
     const Stub = createRoutesStub([
-      { path: "/quiz", Component: Quiz, action },
+      { path: "/quiz", Component: Quiz, action: authenticatedRouteAction },
       { path: "/", Component: () => <p>Home</p> },
     ]);
 

@@ -261,6 +261,17 @@ partial-delivery behavior. Resend remains disabled in Production, and apex DNS
 reconciliation is an owner-deferred operations item rather than a phase exit
 condition.
 
+### 2026-09-01 owner landing-access amendment
+
+The owner subsequently moved Beehiiv subscription to the entry boundary for
+the full reference diagnostic. A successful, explicit landing-page opt-in now
+issues a signed, expiring, HttpOnly access grant; unsigned `/quiz` page and
+action requests fail closed. This supersedes the earlier requirement that an
+email be optional before starting the diagnostic. It does not hide an already
+generated recommendation or turn the separate results-page dossier delivery
+into an implicit opt-in: those outputs and consent boundaries remain intact
+after access has been granted.
+
 ### 2026-09-01 celebrity/cinema owner clarification
 
 The four-question archetype remains the light entry product. After receiving a

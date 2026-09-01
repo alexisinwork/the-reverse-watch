@@ -4,6 +4,9 @@ import { vi } from "vitest";
 
 import Home, { action, meta } from "./home";
 
+const SESSION_SECRET =
+  "a-test-secret-that-is-longer-than-thirty-two-characters";
+
 function renderHome() {
   const Stub = createRoutesStub([{ path: "/", Component: Home, action }]);
   render(<Stub />);
@@ -22,6 +25,10 @@ describe("landing page", () => {
     vi.unstubAllGlobals();
   });
 
+  beforeEach(() => {
+    vi.stubEnv("SESSION_SECRET", SESSION_SECRET);
+  });
+
   it("preserves the documentary landing-page copy", () => {
     renderHome();
 
@@ -33,11 +40,11 @@ describe("landing page", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("Archival Documentary")).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "Start the reference diagnostic" }),
-    ).toHaveAttribute("href", "/quiz");
+      screen.getByRole("link", { name: /Start the reference diagnostic/i }),
+    ).toHaveAttribute("href", "#newsletter-signup");
     expect(
       screen.getByRole("link", {
-        name: "Explore watches of celebrity & cinema",
+        name: /Explore watches/i,
       }),
     ).toHaveAttribute("href", "/watches");
   });
@@ -56,6 +63,25 @@ describe("landing page", () => {
     expect(
       document.querySelector('script[src*="subscribe-forms.beehiiv.com"]'),
     ).not.toBeInTheDocument();
+  });
+
+  it("links returning subscribers directly to the diagnostic", async () => {
+    const Stub = createRoutesStub([
+      {
+        path: "/",
+        Component: Home,
+        action,
+        loader: () => ({ diagnosticAccess: true }),
+      },
+    ]);
+    render(<Stub />);
+
+    expect(
+      await screen.findByRole("link", {
+        name: /Start the reference diagnostic/i,
+      }),
+    ).toHaveAttribute("href", "/quiz");
+    expect(screen.getByText(/Subscriber access · Unlocked/i)).toBeVisible();
   });
 
   it("requires explicit consent before calling Beehiiv", async () => {
@@ -94,8 +120,11 @@ describe("landing page", () => {
     expect(response.init?.status ?? 200).toBe(200);
     expect(response.data).toEqual({
       ok: true,
-      message: "Subscribed. Welcome to The Reserve.",
+      message: "Subscribed. The reference diagnostic is now unlocked.",
     });
+    expect(new Headers(response.init?.headers).get("Set-Cookie")).toContain(
+      "reserve_diagnostic_access=",
+    );
     expect(fetchImplementation).toHaveBeenCalledWith(
       "https://api.beehiiv.com/v2/publications/pub_123/subscriptions",
       expect.objectContaining({ method: "POST" }),

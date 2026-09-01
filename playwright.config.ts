@@ -1,5 +1,8 @@
 import { defineConfig, devices } from "@playwright/test";
 
+process.env.SESSION_SECRET ??=
+  "the-reserve-e2e-session-secret-longer-than-thirty-two-characters";
+
 export default defineConfig({
   testDir: "./tests/e2e",
   fullyParallel: true,
@@ -22,6 +25,9 @@ export default defineConfig({
   ],
   webServer: {
     command: "HOST=127.0.0.1 PORT=4173 npm run start",
+    env: {
+      SESSION_SECRET: process.env.SESSION_SECRET,
+    },
     url: "http://127.0.0.1:4173/health",
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

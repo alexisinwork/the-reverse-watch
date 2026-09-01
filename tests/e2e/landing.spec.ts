@@ -1,5 +1,28 @@
 import AxeBuilder from "@axe-core/playwright";
-import { expect, test } from "@playwright/test";
+import { expect, test, type Page } from "@playwright/test";
+
+import {
+  issueDiagnosticAccessCookie,
+  parseDiagnosticAccessConfiguration,
+} from "../../app/domain/diagnostic-access.server";
+
+async function grantDiagnosticAccess(page: Page) {
+  const configuration = parseDiagnosticAccessConfiguration(process.env);
+  if (!configuration.configured) {
+    throw new Error("The E2E diagnostic access secret is not configured.");
+  }
+  const setCookie = await issueDiagnosticAccessCookie(configuration);
+  const [nameValue] = setCookie.split(";", 1);
+  if (!nameValue) throw new Error("The access cookie was not issued.");
+  const separator = nameValue.indexOf("=");
+  await page.context().addCookies([
+    {
+      name: nameValue.slice(0, separator),
+      value: nameValue.slice(separator + 1),
+      url: "http://127.0.0.1:4173",
+    },
+  ]);
+}
 
 test("renders the landing page and legible subscription form", async ({
   page,
@@ -84,6 +107,7 @@ test("browses sourced watch discovery without hiding uncertainty", async ({
 test("creates a shareable archetype without bypassing hard constraints", async ({
   page,
 }) => {
+  await grantDiagnosticAccess(page);
   const discoveryEvents: unknown[] = [];
   page.on("request", (request) => {
     if (!request.url().endsWith("/analytics/discovery")) return;
@@ -156,6 +180,7 @@ test("uses the branded error boundary for unknown routes", async ({ page }) => {
 test("completes the essential and personal diagnostic without a model provider", async ({
   page,
 }) => {
+  await grantDiagnosticAccess(page);
   await page.goto("/quiz");
 
   await page.getByLabel("Maximum amount").fill("10000");
@@ -199,6 +224,7 @@ test("completes the essential and personal diagnostic without a model provider",
 test("captures personal preferences and preserves cited results", async ({
   page,
 }) => {
+  await grantDiagnosticAccess(page);
   await page.goto("/quiz");
 
   await page.getByLabel("Maximum amount").fill("10000");

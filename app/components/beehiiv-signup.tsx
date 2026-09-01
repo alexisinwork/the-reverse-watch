@@ -4,21 +4,28 @@ import { useFetcher } from "react-router";
 export type NewsletterActionResult =
   { ok: true; message: string } | { ok: false; message: string };
 
-export function BeehiivSignup() {
+export function BeehiivSignup({ onSubscribed }: { onSubscribed?: () => void }) {
   const fetcher = useFetcher<NewsletterActionResult>();
   const formRef = useRef<HTMLFormElement>(null);
   const isSubmitting = fetcher.state !== "idle";
 
   useEffect(() => {
-    if (fetcher.data?.ok) formRef.current?.reset();
-  }, [fetcher.data]);
+    if (!fetcher.data?.ok) return;
+    formRef.current?.reset();
+    onSubscribed?.();
+  }, [fetcher.data, onSubscribed]);
 
   return (
-    <section className="signup" aria-labelledby="signup-heading">
+    <section
+      className="signup"
+      id="newsletter-signup"
+      aria-labelledby="signup-heading"
+    >
       <span className="signup-kicker">Independent watch intelligence</span>
       <h2 id="signup-heading">Enter the archive</h2>
       <p className="signup-description">
-        Receive new investigations and field notes from The Reserve.
+        Receive new investigations and field notes from The Reserve, and unlock
+        the full reference diagnostic.
       </p>
       <fetcher.Form className="signup-form" method="post" ref={formRef}>
         <input name="intent" type="hidden" value="newsletter" />

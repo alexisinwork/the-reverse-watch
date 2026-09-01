@@ -3,6 +3,7 @@ import {
   data,
   Form,
   Link,
+  redirect,
   useActionData,
   useLocation,
   useNavigation,
@@ -11,6 +12,7 @@ import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
+import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { loadRecommendationData } from "../domain/catalogue.server";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
 import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
@@ -548,6 +550,16 @@ function rateLimitHeaders(decision: ReturnType<typeof consumeRateLimit>) {
 }
 
 export async function action({ request }: Route.ActionArgs) {
+  if (!(await hasDiagnosticAccess(request))) {
+    return data<ActionResult>(
+      {
+        ok: false,
+        errors: ["Subscribe to The Reserve before starting the diagnostic."],
+      },
+      { status: 403 },
+    );
+  }
+
   const rateLimitPolicy = parseRateLimitPolicy();
   const upstashConfiguration = parseUpstashRateLimitConfiguration();
   if (!rateLimitPolicy.configured && rateLimitPolicy.reason === "invalid") {
@@ -886,6 +898,14 @@ export async function action({ request }: Route.ActionArgs) {
     },
     "error" in emailOptIn ? { status: 400 } : undefined,
   );
+}
+
+export async function loader({ request }: Route.LoaderArgs) {
+  if (!(await hasDiagnosticAccess(request))) {
+    return redirect("/?diagnostic=subscription#newsletter-signup");
+  }
+
+  return null;
 }
 
 export function meta(): ReturnType<Route.MetaFunction> {

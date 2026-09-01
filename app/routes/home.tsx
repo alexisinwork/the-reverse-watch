@@ -1,5 +1,6 @@
 import type { Route } from "./+types/home";
-import { data } from "react-router";
+import { useCallback, useState } from "react";
+import { data, useLoaderData } from "react-router";
 import { z } from "zod";
 
 import {
@@ -11,6 +12,11 @@ import {
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
 } from "../domain/beehiiv.server";
+import {
+  hasDiagnosticAccess,
+  issueDiagnosticAccessCookie,
+  parseDiagnosticAccessConfiguration,
+} from "../domain/diagnostic-access.server";
 import "../styles/home.css";
 
 const newsletterEmailSchema = z.string().trim().email().max(320);
@@ -32,8 +38,13 @@ export function headers({
   if (actionHeaders.has("Cache-Control")) return actionHeaders;
 
   return {
-    "Cache-Control":
-      "public, max-age=0, s-maxage=300, stale-while-revalidate=86400",
+    "Cache-Control": "private, no-store",
+  };
+}
+
+export async function loader({ request }: Route.LoaderArgs) {
+  return {
+    diagnosticAccess: await hasDiagnosticAccess(request),
   };
 }
 
@@ -80,11 +91,30 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
 
+  const accessConfiguration = parseDiagnosticAccessConfiguration();
+  if (!accessConfiguration.configured) {
+    return data<NewsletterActionResult>(
+      {
+        ok: false,
+        message: "Subscriptions are temporarily unavailable. Please try again.",
+      },
+      { status: 503, headers: responseHeaders },
+    );
+  }
+
   try {
     await subscribeToBeehiiv(email.data, configuration);
+    const headers = new Headers(responseHeaders);
+    headers.set(
+      "Set-Cookie",
+      await issueDiagnosticAccessCookie(accessConfiguration),
+    );
     return data<NewsletterActionResult>(
-      { ok: true, message: "Subscribed. Welcome to The Reserve." },
-      { headers: responseHeaders },
+      {
+        ok: true,
+        message: "Subscribed. The reference diagnostic is now unlocked.",
+      },
+      { headers },
     );
   } catch (error) {
     console.error(
@@ -104,27 +134,58 @@ export async function action({ request }: Route.ActionArgs) {
 }
 
 export default function Home() {
+  const loaderData = useLoaderData<typeof loader>();
+  const [diagnosticAccess, setDiagnosticAccess] = useState(
+    loaderData?.diagnosticAccess ?? false,
+  );
+  const unlockDiagnostic = useCallback(() => setDiagnosticAccess(true), []);
+
   return (
     <div className="site-shell">
       <main className="landing" id="main-content">
-        <div className="mark-container">
+        <div className="brand-lockup">
           <GaugeMark />
+          <h1>The Reserve</h1>
         </div>
-        <h1>The Reserve</h1>
         <p className="manifesto">
           The brand tells you a story about heritage. We investigate the
           filings, the balance sheets, and who actually owns the name on the
           dial.
         </p>
-        <BeehiivSignup />
         <nav className="landing-links" aria-label="Explore The Reserve">
-          <a className="diagnostic-link" href="/watches">
-            Explore watches of celebrity &amp; cinema
+          <a className="landing-action" href="/watches">
+            <span className="landing-action__kicker">Evidence archive</span>
+            <strong>Explore watches</strong>
+            <span className="landing-action__description">
+              Examine sourced watch sightings from cinema, television, and
+              public life—with uncertainty left visible.
+            </span>
+            <span className="landing-action__footer">Open the archive →</span>
           </a>
-          <a className="diagnostic-link" href="/quiz">
-            Start the reference diagnostic
+          <a
+            className={`landing-action landing-action--diagnostic${
+              diagnosticAccess ? " landing-action--unlocked" : ""
+            }`}
+            href={diagnosticAccess ? "/quiz" : "#newsletter-signup"}
+          >
+            <span className="landing-action__kicker">
+              {diagnosticAccess
+                ? "Subscriber access · Unlocked"
+                : "Subscriber access"}
+            </span>
+            <strong>Start the reference diagnostic</strong>
+            <span className="landing-action__description">
+              Build an evidence-led shortlist from your real budget, wrist,
+              operating needs, and personal signal.
+            </span>
+            <span className="landing-action__footer">
+              {diagnosticAccess
+                ? "Begin the diagnostic →"
+                : "Subscribe below to unlock ↓"}
+            </span>
           </a>
         </nav>
+        <BeehiivSignup onSubscribed={unlockDiagnostic} />
       </main>
 
       <footer className="site-footer">

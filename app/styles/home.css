@@ -11,25 +11,27 @@
 .landing {
   display: flex;
   width: 100%;
-  max-width: var(--content-width);
+  max-width: 52rem;
   flex-direction: column;
   align-items: flex-start;
   margin: auto 0;
 }
 
-.mark-container {
+.brand-lockup {
   display: flex;
   align-items: center;
-  margin-bottom: 2.5rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .gauge-mark {
-  width: 2.625rem;
-  height: 2.625rem;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex: 0 0 auto;
 }
 
 .landing h1 {
-  margin: 0 0 1.25rem;
+  margin: 0;
   font-size: clamp(2rem, 5vw, 2.75rem);
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -38,7 +40,8 @@
 }
 
 .manifesto {
-  margin: 0 0 1.5rem;
+  max-width: 43rem;
+  margin: 0 0 2rem;
   color: var(--color-ink);
   font-size: 1.0625rem;
   font-weight: 500;
@@ -48,6 +51,7 @@
 
 .signup {
   width: 100%;
+  margin-top: 1.25rem;
   padding: 1.25rem;
   border: 1px solid var(--color-line);
   background: var(--color-base-raised);
@@ -156,32 +160,105 @@
   color: #ffb4ab;
 }
 
-.diagnostic-link {
-  display: inline-block;
-  color: var(--color-steel-text);
-  font-size: 0.75rem;
-  font-weight: 700;
+.landing-links {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.landing-action {
+  position: relative;
+  display: flex;
+  min-height: 15.5rem;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow: hidden;
+  border: 1px solid #39434c;
+  background:
+    linear-gradient(145deg, rgba(91, 107, 120, 0.12), transparent 58%),
+    var(--color-base-raised);
+  color: var(--color-ink);
+  text-decoration: none;
+  transition:
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.landing-action::after {
+  position: absolute;
+  right: -3rem;
+  bottom: -4.5rem;
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid rgba(91, 107, 120, 0.22);
+  border-radius: 50%;
+  content: "";
+}
+
+.landing-action--diagnostic {
+  border-color: rgba(200, 137, 47, 0.68);
+  background:
+    linear-gradient(145deg, rgba(200, 137, 47, 0.18), transparent 62%),
+    var(--color-base-raised);
+}
+
+.landing-action:hover {
+  border-color: var(--color-brass);
+  transform: translateY(-2px);
+}
+
+.landing-action__kicker {
+  position: relative;
+  z-index: 1;
+  color: var(--color-brass);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.landing-action strong {
+  position: relative;
+  z-index: 1;
+  max-width: 14rem;
+  margin-top: 1rem;
+  font-size: clamp(1.35rem, 3.4vw, 1.8rem);
+  letter-spacing: 0.035em;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+
+.landing-action__description {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.85rem;
+  color: #aeb6bd;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.landing-action__footer {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  color: var(--color-ink);
+  font-size: 0.6875rem;
+  font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  text-underline-offset: 0.3rem;
-  transition: color var(--transition-fast);
 }
 
-.landing-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.diagnostic-link:hover {
+.landing-action--unlocked .landing-action__footer {
   color: var(--color-brass);
 }
 
 .site-footer {
   display: flex;
   width: 100%;
-  max-width: var(--content-width);
+  max-width: 52rem;
   align-items: center;
   justify-content: space-between;
   padding-top: 1.5rem;
@@ -213,6 +290,14 @@
 
   .signup-fields input {
     border-right: 1px solid #4d5862;
+  }
+
+  .landing-links {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-action {
+    min-height: 13.5rem;
   }
 }
 
