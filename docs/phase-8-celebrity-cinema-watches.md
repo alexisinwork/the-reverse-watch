@@ -1,6 +1,6 @@
 # Phase 8 — Celebrity & Cinema Watch Discovery
 
-Status: **in progress — packets 8.1–8.4 complete; packet 8.5 next**
+Status: **complete — verified 2026-09-01**
 
 ## Purpose
 
@@ -146,6 +146,17 @@ no contact detail, and later newsletter/dossier consent remains separate.
 
 Exit: retain and expand the feature only if it creates qualified core-quiz
 traffic without degrading research standards or recommendation validity.
+
+Completed 2026-09-01. The archive and archetype now emit only allowlisted,
+aggregate events through a separate RLS-protected store and narrow RPCs. The
+trailing-30-day dashboard reports page views, starts, completions, shares,
+core handoffs, qualified recommendations, explicit opt-ins, and the dormant
+Phase 9 outbound-click event. The event contract contains no answers, URLs,
+contact data, IPs, or user/request identifiers. Retain/revise/stop thresholds
+and denominator rules are published in
+[`phase-8-funnel-evaluation.md`](phase-8-funnel-evaluation.md); the 90/180-day
+review cadence and correction service levels are in
+[`phase-8-editorial-operations.md`](phase-8-editorial-operations.md).
 
 ## Guardrails
 

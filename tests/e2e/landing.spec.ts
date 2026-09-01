@@ -84,6 +84,12 @@ test("browses sourced watch discovery without hiding uncertainty", async ({
 test("creates a shareable archetype without bypassing hard constraints", async ({
   page,
 }) => {
+  const discoveryEvents: unknown[] = [];
+  page.on("request", (request) => {
+    if (!request.url().endsWith("/analytics/discovery")) return;
+    const payload = request.postData();
+    if (payload) discoveryEvents.push(JSON.parse(payload) as unknown);
+  });
   await page.goto("/watches/archetype");
   await page
     .getByLabel("Utility, with little interest in luxury codes")
@@ -108,9 +114,34 @@ test("creates a shareable archetype without bypassing hard constraints", async (
     "/quiz?source=archetype&socialSignal=anti_luxury&aestheticDna=structural_tool",
   );
   await expect(page.getByText(/No email is required/)).toBeVisible();
+  await expect
+    .poll(() => discoveryEvents)
+    .toEqual(
+      expect.arrayContaining([
+        { name: "page_view", surface: "archetype" },
+        { name: "archetype_start" },
+        {
+          name: "archetype_completion",
+          archetypeId: "field_rationalist",
+        },
+      ]),
+    );
 
   const accessibility = await new AxeBuilder({ page }).analyze();
   expect(accessibility.violations).toEqual([]);
+
+  await page
+    .getByRole("link", { name: "Continue to the reference diagnostic" })
+    .click();
+  await expect(
+    page.getByRole("heading", { name: "What is the actual purchase ceiling?" }),
+  ).toBeVisible();
+  await expect
+    .poll(() => discoveryEvents)
+    .toContainEqual({
+      name: "core_handoff",
+      archetypeId: "field_rationalist",
+    });
 });
 
 test("uses the branded error boundary for unknown routes", async ({ page }) => {

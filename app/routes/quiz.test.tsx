@@ -7,6 +7,9 @@ const redisMock = vi.hoisted(() => ({
   del: vi.fn(),
   set: vi.fn(),
 }));
+const discoveryFunnelMock = vi.hoisted(() => ({
+  persistDiscoveryFunnelEvent: vi.fn(),
+}));
 
 vi.mock("@upstash/redis", () => ({
   Redis: class MockRedis {
@@ -14,6 +17,7 @@ vi.mock("@upstash/redis", () => ({
     set = redisMock.set;
   },
 }));
+vi.mock("../domain/discovery-funnel-store.server", () => discoveryFunnelMock);
 
 import {
   QUESTIONNAIRE_STORAGE_KEY,
@@ -49,6 +53,8 @@ describe("progressive diagnostic", () => {
     window.sessionStorage.clear();
     redisMock.del.mockReset();
     redisMock.set.mockReset();
+    discoveryFunnelMock.persistDiscoveryFunnelEvent.mockReset();
+    discoveryFunnelMock.persistDiscoveryFunnelEvent.mockResolvedValue(false);
   });
 
   it("keeps the recommendation visible when email channels are unavailable", async () => {
@@ -235,6 +241,50 @@ describe("progressive diagnostic", () => {
       expect(saved.core.budgetMax).toBe("");
       expect(saved.core.deploymentEnvironment).toBe("");
     });
+  });
+
+  it("attributes completed recommendations and explicit opt-ins to discovery", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "");
+    vi.stubEnv("RESEND_API_KEY", "");
+    vi.stubEnv("EMAIL_FROM", "");
+
+    const response = await action({
+      request: actionRequest({
+        intent: "core",
+        profile: JSON.stringify(coreProfile),
+        funnelSource: "archetype",
+        email: "reader@example.com",
+        emailOptIn: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(response.data.ok).toBe(true);
+    expect(
+      discoveryFunnelMock.persistDiscoveryFunnelEvent,
+    ).toHaveBeenCalledWith({ name: "qualified_recommendation" });
+    expect(
+      discoveryFunnelMock.persistDiscoveryFunnelEvent,
+    ).toHaveBeenCalledWith({ name: "opt_in" });
+  });
+
+  it("rejects forged discovery attribution", async () => {
+    const response = await action({
+      request: actionRequest({
+        intent: "core",
+        profile: JSON.stringify(coreProfile),
+        funnelSource: "paid_campaign",
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(response.init?.status).toBe(400);
+    expect(response.data).toEqual({
+      ok: false,
+      errors: ["The diagnostic source is invalid."],
+    });
+    expect(
+      discoveryFunnelMock.persistDiscoveryFunnelEvent,
+    ).not.toHaveBeenCalled();
   });
 
   it("continues from essential fit into all 21 personal preferences", async () => {

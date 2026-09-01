@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router";
 
+import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { DiscoveryStoryList } from "../components/discovery-story-list";
 import { listPublishedDiscoveryStories } from "../domain/discovery-public";
 import "../styles/discovery.css";
@@ -23,6 +24,7 @@ export default function WatchesIndex() {
   const { stories } = useLoaderData<typeof loader>();
   return (
     <main className="discovery-shell">
+      <DiscoveryAnalytics event={{ name: "page_view", surface: "index" }} />
       <nav className="discovery-nav" aria-label="Discovery navigation">
         <Link to="/">The Reserve</Link>
         <Link to="/quiz">Reference diagnostic</Link>

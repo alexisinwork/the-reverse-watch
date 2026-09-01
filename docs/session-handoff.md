@@ -12,7 +12,7 @@ phase.
 
 ## Current checkpoint
 
-- Active phase: **Phase 8 — celebrity and cinema watch discovery**.
+- Active roadmap: **Phases 0–8 complete at their documented boundaries**.
 - Phases 0–5 are complete at their current owner-approved boundaries; Phase 6
   is closed after its pilot, and Phase 7 is complete at its owner-approved
   production boundary.
@@ -43,7 +43,17 @@ phase.
   reproducible result URLs, invalid-input rejection, and no email collection.
   Its core-quiz handoff carries only validated social and aesthetic values;
   exact budget, wrist, operating context, and technical constraints remain
-  required. Packet 8.5 funnel evaluation and editorial operations are next.
+  required.
+- Packet 8.5 completes Phase 8 with aggregate-only discovery events, a narrow
+  RLS-protected Supabase store, the trailing-30-day `/evaluation` funnel, an
+  explicit retain/revise/stop contract, and a monthly plus 90/180-day editorial
+  refresh schedule. The schema retains no answers, URLs, contact data, IPs,
+  user IDs, or request IDs. Migration
+  `0038_add_discovery_funnel_evaluation.sql` is live and its rolled-back gate
+  test proved valid-event acceptance, invalid-combination rejection, an empty
+  bounded summary, RLS, no browser table/sequence grants, and zero retained
+  fixture rows. Further commercial work begins in the separately sequenced
+  Phase 9 plan; it is not implied by Phase 8 completion.
 - Phase 5 engineering is complete. On 2026-08-31 the owner moved all further
   brand/model selection, research, verification, and catalogue population into
   an owner-managed workstream. The reusable pipeline remains strict: 204/204

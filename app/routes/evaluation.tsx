@@ -1,6 +1,7 @@
 import { data, Link, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/evaluation";
+import { loadDiscoveryFunnelSummary } from "../domain/discovery-funnel-store.server";
 import { loadFunnelSummary } from "../domain/funnel-store.server";
 import "../styles/quiz.css";
 
@@ -8,17 +9,20 @@ export async function loader() {
   const until = new Date();
   const since = new Date(until.getTime() - 30 * 24 * 60 * 60 * 1_000);
   try {
+    const [summary, discoverySummary] = await Promise.all([
+      loadFunnelSummary(since.toISOString(), until.toISOString()),
+      loadDiscoveryFunnelSummary(since.toISOString(), until.toISOString()),
+    ]);
     return data({
-      summary: await loadFunnelSummary(
-        since.toISOString(),
-        until.toISOString(),
-      ),
+      summary,
+      discoverySummary,
       error: null,
     });
   } catch {
     return data(
       {
         summary: null,
+        discoverySummary: null,
         error: "The evaluation store is temporarily unavailable.",
       },
       { status: 503 },
@@ -39,7 +43,7 @@ export function meta(): ReturnType<Route.MetaFunction> {
 }
 
 export default function EvaluationDashboard() {
-  const { summary, error } = useLoaderData<typeof loader>();
+  const { summary, discoverySummary, error } = useLoaderData<typeof loader>();
 
   return (
     <main className="quiz-shell">
@@ -123,6 +127,69 @@ export default function EvaluationDashboard() {
               </dl>
             )}
           </>
+        ) : null}
+        {discoverySummary ? (
+          <section aria-labelledby="discovery-evaluation-heading">
+            <h2 id="discovery-evaluation-heading">Discovery funnel</h2>
+            <dl className="profile-grid">
+              <div>
+                <dt>Discovery page views</dt>
+                <dd>{discoverySummary.pageViews}</dd>
+              </div>
+              <div>
+                <dt>Archetype starts</dt>
+                <dd>{discoverySummary.archetypeStarts}</dd>
+              </div>
+              <div>
+                <dt>Archetype completions</dt>
+                <dd>{discoverySummary.archetypeCompletions}</dd>
+              </div>
+              <div>
+                <dt>Archetype completion</dt>
+                <dd>
+                  {percentage(
+                    discoverySummary.archetypeCompletions,
+                    discoverySummary.archetypeStarts,
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt>Share rate</dt>
+                <dd>
+                  {percentage(
+                    discoverySummary.shares,
+                    discoverySummary.archetypeCompletions,
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt>Core handoff rate</dt>
+                <dd>
+                  {percentage(
+                    discoverySummary.coreHandoffs,
+                    discoverySummary.archetypeCompletions,
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt>Qualified recommendation conversion</dt>
+                <dd>
+                  {percentage(
+                    discoverySummary.qualifiedRecommendations,
+                    discoverySummary.coreHandoffs,
+                  )}
+                </dd>
+              </div>
+              <div>
+                <dt>Discovery-attributed opt-ins</dt>
+                <dd>{discoverySummary.optIns}</dd>
+              </div>
+              <div>
+                <dt>Outbound market clicks</dt>
+                <dd>{discoverySummary.outboundMarketClicks}</dd>
+              </div>
+            </dl>
+          </section>
         ) : null}
       </section>
     </main>

@@ -4,6 +4,7 @@ export default [
   index("routes/home.tsx"),
   route("quiz", "routes/quiz.tsx"),
   route("analytics/quiz-started", "routes/quiz-analytics-start.ts"),
+  route("analytics/discovery", "routes/discovery-analytics.ts"),
   route("evaluation", "routes/evaluation.tsx"),
   route("health", "routes/health.ts"),
   route("watches", "routes/watches.tsx"),

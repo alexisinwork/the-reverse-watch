@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-entity";
+import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { DiscoveryStoryList } from "../components/discovery-story-list";
 import { findPublishedDiscoveryEntity } from "../domain/discovery-public";
 import "../styles/discovery.css";
@@ -29,6 +30,7 @@ export default function WatchEntity() {
   const { entity, stories } = useLoaderData<typeof loader>();
   return (
     <main className="discovery-shell">
+      <DiscoveryAnalytics event={{ name: "page_view", surface: "entity" }} />
       <nav className="discovery-nav">
         <Link to="/watches">All stories</Link>
       </nav>

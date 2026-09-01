@@ -13,6 +13,7 @@ import type { Route } from "./+types/quiz";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { loadRecommendationData } from "../domain/catalogue.server";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
+import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
 import {
   createEmailDeliveryDeduplicationClient,
   emailDeliveryDeduplicationKey,
@@ -613,6 +614,7 @@ export async function action({ request }: Route.ActionArgs) {
   const emailOptIn = parseEmailOptIn(formData);
   const intent = formData.get("intent");
   const serialized = formData.get("profile");
+  const funnelSource = formData.get("funnelSource");
 
   if (
     (intent !== "core" && intent !== "refine") ||
@@ -620,6 +622,12 @@ export async function action({ request }: Route.ActionArgs) {
   ) {
     return data<ActionResult>(
       { ok: false, errors: ["The diagnostic submission is incomplete."] },
+      { status: 400 },
+    );
+  }
+  if (funnelSource !== null && funnelSource !== "archetype") {
+    return data<ActionResult>(
+      { ok: false, errors: ["The diagnostic source is invalid."] },
       { status: 400 },
     );
   }
@@ -847,6 +855,25 @@ export async function action({ request }: Route.ActionArgs) {
     });
   }
 
+  if (funnelSource === "archetype") {
+    const discoveryEvents = [
+      { name: "qualified_recommendation" as const },
+      ...(emailOptIn.email ? [{ name: "opt_in" as const }] : []),
+    ];
+    for (const event of discoveryEvents) {
+      try {
+        await persistDiscoveryFunnelEvent(event);
+      } catch (error) {
+        console.error(
+          JSON.stringify({
+            event: "discovery_funnel_persistence_error",
+            message: error instanceof Error ? error.message : "unknown error",
+          }),
+        );
+      }
+    }
+  }
+
   return data<ActionResult>(
     {
       ok: true,
@@ -1045,6 +1072,7 @@ function ProfileSummary({
   profilePayload,
   intent,
   subscription,
+  funnelSource,
   onEdit,
   onRefine,
   onRestart,
@@ -1054,6 +1082,7 @@ function ProfileSummary({
   profilePayload: string;
   intent: "core" | "refine";
   subscription: SubscriptionResult;
+  funnelSource: "archetype" | null;
   onEdit: () => void;
   onRefine: () => void;
   onRestart: () => void;
@@ -1162,6 +1191,7 @@ function ProfileSummary({
       </dl>
       <RecommendationSummary recommendation={recommendation} />
       <DossierDelivery
+        funnelSource={funnelSource}
         intent={intent}
         profilePayload={profilePayload}
         subscription={subscription}
@@ -1190,10 +1220,12 @@ function ProfileSummary({
 }
 
 function DossierDelivery({
+  funnelSource,
   intent,
   profilePayload,
   subscription,
 }: {
+  funnelSource: "archetype" | null;
   intent: "core" | "refine";
   profilePayload: string;
   subscription: SubscriptionResult;
@@ -1210,6 +1242,9 @@ function DossierDelivery({
       {subscription.status !== "sent" &&
       subscription.status !== "already_requested" ? (
         <Form className="delivery-form" method="post">
+          {funnelSource ? (
+            <input name="funnelSource" type="hidden" value={funnelSource} />
+          ) : null}
           <input name="intent" type="hidden" value={intent} />
           <input name="profile" type="hidden" value={profilePayload} />
           <label className="input-stack" htmlFor="delivery-email">
@@ -1510,12 +1545,14 @@ export default function Quiz() {
   const [step, setStep] = useState(0);
   const [storageReady, setStorageReady] = useState(false);
   const startTracked = useRef(false);
+  const archetypeHandoff = useMemo(
+    () => parseCoreQuizHandoff(new URLSearchParams(location.search)),
+    [location.search],
+  );
+  const funnelSource = archetypeHandoff ? "archetype" : null;
 
   useEffect(() => {
     const saved = readSavedDraft();
-    const archetypeHandoff = parseCoreQuizHandoff(
-      new URLSearchParams(location.search),
-    );
     const timer = window.setTimeout(() => {
       if (saved?.core) setCore(hydrateCoreDraft(saved.core));
       if (
@@ -1541,7 +1578,7 @@ export default function Quiz() {
     }, 0);
 
     return () => window.clearTimeout(timer);
-  }, [location.search]);
+  }, [archetypeHandoff, location.search]);
 
   useEffect(() => {
     if (!storageReady) return;
@@ -1660,6 +1697,7 @@ export default function Quiz() {
           recommendation={resultData.recommendation}
           intent={resultData.intent}
           subscription={resultData.subscription}
+          funnelSource={funnelSource}
         />
       </main>
     );
@@ -2244,6 +2282,9 @@ export default function Quiz() {
             </button>
           ) : (
             <Form method="post" onSubmit={recordStart}>
+              {funnelSource ? (
+                <input name="funnelSource" type="hidden" value={funnelSource} />
+              ) : null}
               <input
                 name="intent"
                 type="hidden"

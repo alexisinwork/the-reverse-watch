@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-story";
+import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { findPublishedDiscoveryStory } from "../domain/discovery-public";
 import "../styles/discovery.css";
 
@@ -33,6 +34,7 @@ export default function WatchStory() {
     .join(" · ");
   return (
     <main className="discovery-shell discovery-detail">
+      <DiscoveryAnalytics event={{ name: "page_view", surface: "story" }} />
       <nav className="discovery-nav" aria-label="Discovery navigation">
         <Link to="/watches">All stories</Link>
         <Link to={`/watches/people/${story.entity.slug}`}>

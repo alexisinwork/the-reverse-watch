@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Form, Link, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-archetype";
+import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import {
   ARCHETYPE_QUESTIONS,
   buildArchetypeSharePath,
   buildCoreQuizHandoff,
   parseArchetypeSearch,
+  type ArchetypeId,
 } from "../domain/discovery-archetype";
+import { sendDiscoveryAnalyticsEvent } from "../domain/discovery-analytics";
 import "../styles/discovery.css";
 
 export function loader({ request }: Route.LoaderArgs) {
@@ -36,7 +39,15 @@ export function meta() {
   ];
 }
 
-function ShareButton({ shareUrl, title }: { shareUrl: string; title: string }) {
+function ShareButton({
+  archetypeId,
+  shareUrl,
+  title,
+}: {
+  archetypeId: ArchetypeId;
+  shareUrl: string;
+  title: string;
+}) {
   const [status, setStatus] = useState("");
 
   const share = async () => {
@@ -47,10 +58,12 @@ function ShareButton({ shareUrl, title }: { shareUrl: string; title: string }) {
           text: `My editorial watch archetype: ${title}`,
           url: shareUrl,
         });
+        sendDiscoveryAnalyticsEvent({ name: "share", archetypeId });
         setStatus("Share sheet opened.");
         return;
       }
       await navigator.clipboard.writeText(shareUrl);
+      sendDiscoveryAnalyticsEvent({ name: "share", archetypeId });
       setStatus("Result link copied.");
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
@@ -70,9 +83,25 @@ function ShareButton({ shareUrl, title }: { shareUrl: string; title: string }) {
 
 export default function WatchArchetype() {
   const { result, shareUrl } = useLoaderData<typeof loader>();
+  const startTracked = useRef(false);
+
+  const recordStart = () => {
+    if (startTracked.current) return;
+    startTracked.current = true;
+    sendDiscoveryAnalyticsEvent({ name: "archetype_start" });
+  };
 
   return (
     <main className="discovery-shell archetype-shell">
+      <DiscoveryAnalytics event={{ name: "page_view", surface: "archetype" }} />
+      {result.status === "complete" ? (
+        <DiscoveryAnalytics
+          event={{
+            name: "archetype_completion",
+            archetypeId: result.archetype.id,
+          }}
+        />
+      ) : null}
       <nav className="discovery-nav" aria-label="Discovery navigation">
         <Link to="/watches">Watches of Celebrity &amp; Cinema</Link>
         <Link to="/quiz">Reference diagnostic</Link>
@@ -107,7 +136,11 @@ export default function WatchArchetype() {
             </p>
           </div>
           {shareUrl ? (
-            <ShareButton shareUrl={shareUrl} title={result.archetype.title} />
+            <ShareButton
+              archetypeId={result.archetype.id}
+              shareUrl={shareUrl}
+              title={result.archetype.title}
+            />
           ) : null}
           <aside className="discovery-cta" aria-labelledby="archetype-next">
             <h2 id="archetype-next">Turn direction into a real shortlist</h2>
@@ -116,7 +149,15 @@ export default function WatchArchetype() {
               aesthetic preferences. It still asks you to confirm exact budget,
               wrist size, operating context, and every active hard constraint.
             </p>
-            <Link to={buildCoreQuizHandoff(result.answers)}>
+            <Link
+              onClick={() =>
+                sendDiscoveryAnalyticsEvent({
+                  name: "core_handoff",
+                  archetypeId: result.archetype.id,
+                })
+              }
+              to={buildCoreQuizHandoff(result.answers)}
+            >
               Continue to the reference diagnostic
             </Link>
           </aside>
@@ -144,7 +185,7 @@ export default function WatchArchetype() {
               questions to generate a fresh one.
             </p>
           ) : null}
-          <Form className="archetype-form" method="get">
+          <Form className="archetype-form" method="get" onChange={recordStart}>
             {ARCHETYPE_QUESTIONS.map((question, questionIndex) => (
               <fieldset key={question.name}>
                 <legend>

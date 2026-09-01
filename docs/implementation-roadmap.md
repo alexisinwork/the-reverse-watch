@@ -1505,7 +1505,7 @@ production surfaces.
 
 ## Phase 8 — Celebrity & cinema watch discovery
 
-Status: **in progress — packets 8.1–8.4 complete; packet 8.5 next**
+Status: **complete — verified 2026-09-01**
 
 Goal: use sourced public-figure and screen-watch research plus a lightweight
 archetype quiz as a discovery funnel into the existing deterministic diagnostic.
@@ -1571,6 +1571,18 @@ and aesthetic values. Directional price comfort and operating context are not
 promoted into hard constraints, so the diagnostic still requires exact budget,
 wrist, operating, and technical answers. The archetype requires no email, and
 newsletter/dossier consent remains separate.
+
+Packet 8.5 adds an aggregate-only discovery funnel with strict TypeScript and
+PostgreSQL event/dimension validation. It measures discovery page views,
+archetype starts/completions/shares, core handoffs, completed recommendations,
+explicit opt-ins, and a dormant future outbound-market event without retaining
+answers, URLs, contact data, IPs, user IDs, or request IDs. The dedicated table
+has RLS, no browser table/sequence grants, and only narrow write/90-day-summary
+RPC access. `/evaluation` reports the trailing 30-day ratios with honest zero
+denominators. The evaluation contract defines minimum samples and
+retain/revise/stop gates; editorial operations define monthly link checks,
+90/180-day claim review, immediate safety downgrades, and correction service
+levels. Phase 8 is complete without catalogue population or research changes.
 
 ## Environment-variable ownership
 
