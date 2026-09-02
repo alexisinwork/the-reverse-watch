@@ -18,11 +18,7 @@
       "note": "The official Schaumburg Watch product page was checked on 2026-09-03 and confirms AQM 4 1/2, product no. 1013, 45mm case, and the 500m diver configuration."
     }
   ],
-  "verifiedProvisionalFields": [
-    "identity",
-    "model",
-    "productUrl"
-  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [
     {
