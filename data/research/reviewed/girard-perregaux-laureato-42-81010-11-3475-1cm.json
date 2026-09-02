@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "girard-perregaux-laureato-42-81010-11-3475-1cm",
+  "jobId": "7fbf2108-7818-4e1d-b5eb-533abd541738",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Girard-Perregaux",
+    "model": "Laureato 42mm Infinite Grey",
+    "referenceCode": "81010-11-3475-1CM",
+    "variantName": "Laureato 42mm Infinite Grey"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.girard-perregaux.com/watches/laureato/81010-11-3475-1cm",
+      "status": "validated_primary",
+      "note": "Girard-Perregaux's official product page was checked on 2026-09-02 and confirms the exact 81010-11-3475-1CM reference, USD 18,800 price, 42mm stainless-steel case, GP01800 self-winding movement, 10.68mm thickness, sapphire caseback, and 100m water resistance."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Girard-Perregaux reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

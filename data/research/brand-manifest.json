@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:43:13.216Z",
+  "updatedAt": "2026-09-02T16:48:11.100Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1690,7 +1690,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "hublot-big-bang-reloaded-all-black-421-cx-1140-nr-rld",
+          "referenceLabel": "Hublot Big Bang Reloaded All Black 44mm exact reference 421.CX.1140.NR.RLD",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Hublot product card publishes the exact reference, 44mm ceramic case, HUB1280 flyback chronograph, 100m rating, strap, and 72-hour reserve."
+        }
+      ]
     },
     {
       "slug": "girard-perregaux",
@@ -1707,7 +1722,19 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "girard-perregaux-laureato-42-81010-11-3475-1cm",
+          "referenceLabel": "Girard-Perregaux Laureato 42mm exact reference 81010-11-3475-1CM",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current official Girard-Perregaux product card publishes the exact reference, price, 42mm steel case, GP01800 self-winding movement, 10.68mm thickness, and 100m rating."
+        }
+      ]
     },
     {
       "slug": "ulysse-nardin",

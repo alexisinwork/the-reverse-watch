@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hublot-big-bang-reloaded-all-black-421-cx-1140-nr-rld",
+  "jobId": "a730787f-e262-48c1-9523-7685356449c2",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hublot",
+    "model": "Big Bang Reloaded",
+    "referenceCode": "421.CX.1140.NR.RLD",
+    "variantName": "Big Bang Reloaded All Black 44 mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hublot.com/en-ae/watches/big-bang/big-bang-reloaded-all-black-44-mm",
+      "status": "validated_primary",
+      "note": "Hublot's official product page was checked on 2026-09-02 and confirms the exact 421.CX.1140.NR.RLD reference, 44mm black ceramic case, HUB1280 Unico flyback chronograph, 100m water resistance, black rubber/fabric straps, and approximately 72-hour reserve."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Hublot reference and official product URL are confirmed; all M1 facts remain provisional until field-level review closes every catalogue requirement."
+}

@@ -453,6 +453,19 @@ complete M1 field set is closed. The manifest therefore now reports 126
 `needs_review` targets and 189 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Seventeenth parallel exact-reference batch (retrieved 2026-09-02)
+
+Two current luxury references were returned by Perplexity and checked against
+official manufacturer product pages:
+
+- Hublot Big Bang Reloaded All Black 44mm `421.CX.1140.NR.RLD` — [official product card](https://www.hublot.com/en-ae/watches/big-bang/big-bang-reloaded-all-black-44-mm).
+- Girard-Perregaux Laureato 42mm Infinite Grey `81010-11-3475-1CM` — [official product card](https://www.girard-perregaux.com/watches/laureato/81010-11-3475-1cm).
+
+Both exact references match the official cards and remain research-only
+`needs_more_evidence`; unresolved M1 facts remain null and no catalogue rows
+were added. The manifest now reports 128 `needs_review` targets and 191 review
+artifacts; accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge
