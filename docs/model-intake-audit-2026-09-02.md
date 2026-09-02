@@ -389,6 +389,46 @@ null and cannot satisfy hard filters. The manifest now reports 116
 `needs_review` targets and 179 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Fourteenth parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional brand targets were sent through the Perplexity research worker
+and checked against current official manufacturer pages:
+
+- Bremont Altitude MB Meteor, Black Dial, Titanium Bracelet
+  `ALT42-MT-TI-BKBK-B` — [official product card](https://us.bremont.com/products/alt42-mt-ti-bkbk-b).
+- MAEN Hudson 38 MK5 `M1.1.7` — [official product card](https://www.maenwatches.com/en-us/products/hudson-38-mk5-m1-1-7?currency=USD)
+  and [official collection specification](https://www.maenwatches.com/en-us/collections/hudson-38-mk5).
+- Venezianico Nereide Ultraleggero 42 `3921506` — [official US card](https://us.venezianico.com/products/nereide-ultraleggero-42-3921506)
+  and [official localized specification card](https://it.venezianico.com/products/nereide-ultraleggero-42-3921506).
+- Halios Seaforth IV — [official current product card](https://halioswatches.com/products/seaforth-iv-gs).
+
+The first three have stable manufacturer references and exact identity
+provenance. Halios publishes a current model page with selectable case, bezel,
+dial, and strap options but no formal SKU; the generated configuration string
+was rejected rather than treated as a real reference. All four remain
+research-only `needs_more_evidence`; unresolved M1 facts remain null, and no
+catalogue rows were added. The manifest now reports 120 `needs_review` targets
+and 183 review artifacts; accepted catalogue rows remain unchanged.
+
+## Fifteenth parallel exact-model batch (retrieved 2026-09-02)
+
+Three more current configurations were sent through Perplexity and checked
+against official manufacturer cards:
+
+- Oak & Oscar The Atwood White Panda — [official product card](https://oakandoscar.com/collections/standard-production/products/the-atwood?variant=43433571713077)
+  and [official model page](https://oakandoscar.com/pages/the-atwood).
+- MARCH LA.B AM2 Automatic Steel — [official product card](https://march-lab.com/en/products/montres-am2-automatiques-steel).
+- Duckworth Prestex Verimatic 39mm Orange Fumé on Rubber — [official product card](https://www.duckworthprestex.com/products/verimatic-automatic-39mm-rubber).
+
+The official pages confirm the current model/configuration identities, but the
+first two do not publish a separate manufacturer SKU and the Duckworth page
+does not support the extracted `D891-05` code. Those identifiers are therefore
+rejected rather than promoted. All three remain research-only
+`needs_more_evidence`; unresolved M1 facts remain null, and no catalogue rows
+were added. The manifest now reports 123 active research targets (120
+`needs_review` and 3 `planned`) and 186 review artifacts; accepted catalogue
+rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:26:55.428Z",
+  "updatedAt": "2026-09-02T16:36:59.051Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4137,7 +4137,25 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 21
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "bremont-altitude-mb-meteor-black-titanium-bracelet",
+          "referenceLabel": "Bremont Altitude MB Meteor Black Dial Titanium Bracelet exact reference ALT42-MT-TI-BKBK-B",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "weightLimits": [
+              "under_80_g"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Bremont product card with a machine-readable exact reference, titanium case, date, and bracelet configuration."
+        }
+      ]
     },
     {
       "slug": "unimatic",
@@ -4275,7 +4293,25 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 20
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "halios-seaforth-iv",
+          "referenceLabel": "Halios Seaforth IV current official model page",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "weightLimits": [
+              "under_120_g"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Seaforth IV page exposes the exact model name and selectable dial/case/strap configuration; resolve the specific purchasable variant and preserve any unresolved option boundary."
+        }
+      ]
     },
     {
       "slug": "zelos",
@@ -4474,7 +4510,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "oak-and-oscar-atwood-white-panda",
+          "referenceLabel": "Oak & Oscar The Atwood White Panda current official configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Atwood product page exposes the White Panda configuration, price, case dimensions, flyback chronograph movement, and included bracelet/strap set."
+        }
+      ]
     },
     {
       "slug": "furlan-marri",
@@ -4508,7 +4559,25 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "maen-hudson-38-mk5-m117",
+          "referenceLabel": "MAEN Hudson 38 MK5 exact reference M1.1.7",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "weightLimits": [
+              "under_160_g"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official MAEN product page exposes a unique M1.1.7 reference, full case dimensions, date function, and bracelet/strap specification."
+        }
+      ]
     },
     {
       "slug": "reservoir",
@@ -4542,7 +4611,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "march-lab-am2-automatic-steel",
+          "referenceLabel": "MARCH LA.B AM2 Automatic Steel current official configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official AM2 Automatic Steel card publishes the exact product, dial and strap option families, dimensions, G100 movement, date, accuracy, lume, and water resistance."
+        }
+      ]
     },
     {
       "slug": "lip",
@@ -4615,7 +4699,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "duckworth-prestex-verimatic-39-orange-rubber",
+          "referenceLabel": "Duckworth Prestex Verimatic 39mm Orange Rubber current official configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Verimatic product card identifies the orange dial and rubber option and publishes exact case, movement, accuracy, lume, and 200m specifications."
+        }
+      ]
     },
     {
       "slug": "garrick",
@@ -6181,7 +6280,25 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "venezianico-nereide-ultraleggero-42-3921506",
+          "referenceLabel": "Venezianico Nereide Ultraleggero 42 exact reference 3921506",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "weightLimits": [
+              "under_120_g"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Venezianico product card identifies the exact 3921506 configuration and publishes core dimensions, movement, lume, strap, and water resistance."
+        }
+      ]
     },
     {
       "slug": "meccaniche-veloci",

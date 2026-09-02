@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "halios-seaforth-iv",
+  "jobId": "4e119220-460c-4097-b765-74adb5daabbf",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Halios",
+    "model": "Seaforth IV",
+    "referenceCode": "Seaforth IV (no published SKU)",
+    "variantName": "Seaforth IV current official model page"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://halioswatches.com/products/seaforth-iv-gs",
+      "status": "validated_primary",
+      "note": "Halios's official current Seaforth IV page was checked on 2026-09-02 and confirms the model, price, titanium/stainless case options, 40mm/41mm bezel-dependent diameter, 46.5mm lug-to-lug, 20mm lug width, 12.4mm thickness, SW200-2, no-date boundary, Globolight XP/Super-LumiNova, and 200m rating."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The official Halios page publishes the Seaforth IV model name but no formal SKU/reference code; the Perplexity-generated configuration string is synthetic and cannot be accepted as a manufacturer reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. The current official Seaforth IV model page is confirmed, but its selectable case, bezel, dial, and strap options do not identify one single reference variant and Halios publishes no formal SKU. No catalogue row is created until one exact configuration can be tied to a stable manufacturer identifier and every M1 field is independently reviewed."
+}

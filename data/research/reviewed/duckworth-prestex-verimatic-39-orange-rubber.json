@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "duckworth-prestex-verimatic-39-orange-rubber",
+  "jobId": "fa8a7ccd-0ec0-4548-9356-ac268f65c477",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Duckworth Prestex",
+    "model": "Verimatic 39mm",
+    "referenceCode": "Verimatic 39mm Orange Fumé on Rubber (no published SKU)",
+    "variantName": "Verimatic 39mm Orange Fumé"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.duckworthprestex.com/products/verimatic-automatic-39mm-rubber",
+      "status": "validated_primary",
+      "note": "Duckworth Prestex's official product card was checked on 2026-09-02 and confirms the current Verimatic 39mm Orange/Rubber configuration, $1,100 price, 39mm case, 11mm thickness, 46.5mm lug-to-lug, 20mm lug width, Miyota 9039, -10/+30 seconds per day accuracy, BGW9 lume, and 200m rating."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The Perplexity response proposed D891-05, but the current official product page does not publish that code; an individually numbered watch or an old secondary listing is not sufficient to establish a current manufacturer reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. The exact current model/configuration and official product URL are confirmed, but the extracted D891-05 code is rejected as unsupported by the current primary page and M1 review remains incomplete; no catalogue row is created."
+}

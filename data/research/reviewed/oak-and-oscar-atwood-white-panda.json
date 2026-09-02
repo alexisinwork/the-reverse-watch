@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "oak-and-oscar-atwood-white-panda",
+  "jobId": "f82b2371-79d6-418c-84f8-c3ba99fa091d",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Oak & Oscar",
+    "model": "The Atwood",
+    "referenceCode": "The Atwood / White Panda (no published SKU)",
+    "variantName": "The Atwood White Panda"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://oakandoscar.com/collections/standard-production/products/the-atwood?variant=43433571713077",
+      "status": "validated_primary",
+      "note": "Oak & Oscar's official product card was checked on 2026-09-02 and confirms the current White Panda Atwood configuration, $2,650 price, 39mm case, 12.9mm height, 46mm lug-to-lug, 20mm lug width, AMT5100M manual flyback chronograph, 5 ATM rating, and bracelet plus nylon strap."
+    },
+    {
+      "url": "https://oakandoscar.com/pages/the-atwood",
+      "status": "validated_primary",
+      "note": "The official model page confirms the Atwood identity and the three dial colorways; no manufacturer SKU/reference code is published."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "Oak & Oscar's official Atwood pages identify the White Panda product variant but do not publish a separate SKU; the path/query identifier is not treated as a manufacturer reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. The current White Panda configuration is confirmed on official Oak & Oscar pages, but no formal SKU is published and the field-level M1 review is incomplete; no catalogue row is created."
+}

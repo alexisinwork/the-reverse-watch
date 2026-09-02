@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "march-lab-am2-automatic-steel",
+  "jobId": "136f3c93-396f-4b4c-ae53-fdb2fd417b13",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "MARCH LA.B",
+    "model": "AM2 AUTOMATIC STEEL",
+    "referenceCode": "AM2 Automatic Steel (no published SKU)",
+    "variantName": "AM2 AUTOMATIC STEEL"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://march-lab.com/en/products/montres-am2-automatiques-steel",
+      "status": "validated_primary",
+      "note": "MARCH LA.B's official product page was checked on 2026-09-02 and confirms the AM2 Automatic Steel product, €1,995 price, 39mm case, 44mm lug-to-lug, 12.5mm thickness, G100 movement, date, -4/+6 seconds per day accuracy, 100m rating, and available steel/leather attachment options."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The official MARCH LA.B AM2 Automatic Steel page does not publish a separate numerical or alphanumeric SKU; the product path is retained only as a URL identifier."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. The current AM2 Automatic Steel product identity is confirmed, but no formal SKU is published and the M1 field-level review is incomplete; no catalogue row is created."
+}

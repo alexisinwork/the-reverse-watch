@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "venezianico-nereide-ultraleggero-42-3921506",
+  "jobId": "6d9f2d0b-0ccd-46e4-a1b4-fde55d3741b6",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Venezianico",
+    "model": "Nereide Ultraleggero 42",
+    "referenceCode": "3921506",
+    "variantName": "Nereide Ultraleggero 42 - 3921506"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://us.venezianico.com/products/nereide-ultraleggero-42-3921506",
+      "status": "validated_primary",
+      "note": "Venezianico's official US product page was checked on 2026-09-02 and confirms the exact 3921506 reference and Nereide Ultraleggero 42 product identity."
+    },
+    {
+      "url": "https://it.venezianico.com/products/nereide-ultraleggero-42-3921506",
+      "status": "validated_primary",
+      "note": "The official localized product page exposes the published 42mm, 49mm lug-to-lug, NH70A, BGW9, 200m, and Italian rubber-strap specifications."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact current reference and official product URLs are confirmed; all M1 facts remain provisional until field-level primary-source review closes every catalogue gap."
+}

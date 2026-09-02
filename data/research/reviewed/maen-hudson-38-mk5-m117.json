@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "maen-hudson-38-mk5-m117",
+  "jobId": "4317ba40-aaff-4f47-ba9c-a276fdbf625c",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "MAEN",
+    "model": "Hudson 38 MK5",
+    "referenceCode": "M1.1.7",
+    "variantName": "HUDSON 38 MK5 - M1.1.7"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.maenwatches.com/en-us/products/hudson-38-mk5-m1-1-7?currency=USD",
+      "status": "validated_primary",
+      "note": "MAEN's official product card was checked on 2026-09-02 and confirms the exact M1.1.7 reference and Hudson 38 MK5 identity."
+    },
+    {
+      "url": "https://www.maenwatches.com/en-us/collections/hudson-38-mk5",
+      "status": "validated_primary",
+      "note": "The official collection page publishes the shared MK5 dimensions, movement, date, 30 ATM rating, bracelet, and strap details; variant-specific fields still require catalogue review."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact current M1.1.7 reference and official product URLs are confirmed; physical, price, movement, fit, weight, lume, attachment, and date-state fields remain provisional until field-level review is complete."
+}

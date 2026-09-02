@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "bremont-altitude-mb-meteor-black-titanium-bracelet",
+  "jobId": "a439b02d-fa90-40c3-97fd-9e9d30f8eefd",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Bremont",
+    "model": "Altitude MB Meteor",
+    "referenceCode": "ALT42-MT-TI-BKBK-B",
+    "variantName": "Altitude MB Meteor, Black Dial, Titanium Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://us.bremont.com/products/alt42-mt-ti-bkbk-b",
+      "status": "validated_primary",
+      "note": "Bremont's official product page was checked on 2026-09-02 and confirms the exact ALT42-MT-TI-BKBK-B reference, black dial, titanium bracelet, 42mm case, BB14-AH movement, 100m water resistance, and 53.29g head-only weight."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact current reference and official product URL are confirmed; all M1 facts remain provisional until the field-level review process closes them for catalogue use."
+}
