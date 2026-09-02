@@ -32,11 +32,14 @@ function parseYears(value: string) {
 }
 
 function parseTitle(value: string) {
-  const cleaned = value.replace(/^\*\*|\*\*$/g, "").trim();
+  const cleaned = value.trim();
   const original = cleaned.match(/\(\*([^,*]+)\*/)?.[1]?.trim() ?? null;
   const dateContext = cleaned.match(/\(([^)]*)\)/)?.[1] ?? cleaned;
   return {
-    titleDisplay: cleaned.replace(/\s*\(\*[^)]*\)\s*$/, "").trim(),
+    titleDisplay: cleaned
+      .replace(/\s*\(\*[^)]*\)\s*$/, "")
+      .replace(/^\*\*|\*\*$/g, "")
+      .trim(),
     titleOriginal: original,
     ...parseYears(dateContext),
   };

@@ -19,6 +19,10 @@ describe("All Movies intake parser", () => {
 
   it("preserves original titles and separates slash-delimited watch candidates", () => {
     const rows = parseAllMovies(source);
+    const drNo = rows[0]!;
+    expect(drNo.titleDisplay).toBe("Доктор Ноу");
+    expect(drNo.titleDisplay).not.toMatch(/\*\*/);
+    expect(drNo.watchCandidates[0]).not.toMatch(/^\*\*|\*\*$/);
     const backToFuture = rows.find((row) =>
       row.titleOriginal?.includes("Back to the Future"),
     );
