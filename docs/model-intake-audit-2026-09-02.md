@@ -656,6 +656,20 @@ schema validation and yielded no evidence artifact. The manifest now reports
 173 `needs_review` targets and 236 review artifacts; accepted catalogue rows
 remain unchanged.
 
+## Thirtieth parallel exact-reference batch (retrieved 2026-09-03)
+
+Three additional configurations passed the Perplexity worker and were checked
+against primary manufacturer pages:
+
+- Eterna 1942 Heritage Pulsometer Limited Edition `1942.41.80.1177` — [official product page](https://shop.eterna.com/en-ch/products/1942-heritage-pulsometer). The exact light-blue reference and manufacturer URL are confirmed.
+- Movado Museum Classic `0607963` — [official product page](https://www.movado.com/us/en/shop-watches/museum-classic-0607963.html). The exact black-PVD reference and manufacturer URL are confirmed.
+- Cyma Grand Maestro The Chess `W02-00818-001` — [official product page](https://cyma.ch/products/w02-00818-001). The exact reference is confirmed against the manufacturer page; the retailer-only provisional URL was rejected.
+
+All three remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. Montblanc `MB129371` and Lemania remain `planned` pending
+valid exact-reference evidence. The manifest now reports 176 `needs_review`
+targets and 239 review artifacts; accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "movado-museum-classic-0607963",
+  "jobId": "022b1d69-d347-47ac-8b99-9085c8a580f2",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Movado",
+    "model": "Museum Classic",
+    "referenceCode": "0607963",
+    "variantName": "Museum Classic black PVD 40 mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.movado.com/us/en/shop-watches/museum-classic-0607963.html",
+      "status": "validated_primary",
+      "note": "The official Movado US product page was checked on 2026-09-03 and confirms style/reference 0607963, the black PVD 40 mm configuration, and the exact manufacturer URL. Extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

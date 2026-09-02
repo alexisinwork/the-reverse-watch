@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cyma-grand-maestro-the-chess-w02-00818-001",
+  "jobId": "ff3b6093-88c4-4a70-bead-275ad3b121e2",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cyma",
+    "model": "Grand Maestro The Chess",
+    "referenceCode": "W02-00818-001",
+    "variantName": "Grand Maestro The Chess Automatic Chronograph Moonphase W02-00818-001"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://cyma.ch/products/w02-00818-001",
+      "status": "validated_primary",
+      "note": "The official Cyma product page was checked on 2026-09-03 and confirms exact reference W02-00818-001, Grand Maestro The Chess, and the manufacturer product URL. Extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productUrl",
+      "reason": "The provisional URL is a City Chain retailer listing; the exact manufacturer URL was independently validated."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted and the retailer URL is rejected."
+}

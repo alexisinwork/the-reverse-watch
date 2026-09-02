@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "eterna-1942-heritage-1942-41-80-1177",
+  "jobId": "d29b5138-fa43-4364-ab4c-0862494661b3",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Eterna",
+    "model": "1942 Heritage Automatic Pulsometer",
+    "referenceCode": "1942.41.80.1177",
+    "variantName": "1942 Heritage Pulsometer Limited Edition 1942 Light Blue"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://shop.eterna.com/en-ch/products/1942-heritage-pulsometer",
+      "status": "validated_primary",
+      "note": "The official Eterna shop product page was checked on 2026-09-03 and confirms the exact reference, light-blue variant, and manufacturer URL. Extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

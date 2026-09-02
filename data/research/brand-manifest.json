@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:05:16.918Z",
+  "updatedAt": "2026-09-02T18:13:58.654Z",
   "brands": [
     {
       "slug": "rolex",
@@ -5833,7 +5833,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "montblanc-1858-iced-sea-mb129371",
+          "referenceLabel": "Montblanc 1858 Iced Sea Automatic Date exact identifier MB129371",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The official Montblanc product page identifies the 1858 Iced Sea Automatic Date MB129371 and publishes the dive-watch configuration and price; verify all M1 fields."
+        }
+      ]
     },
     {
       "slug": "eterna",
@@ -5850,7 +5865,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "eterna-1942-heritage-1942-41-80-1177",
+          "referenceLabel": "Eterna 1942 Heritage Automatic blue exact reference 1942.41.80.1177",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The official Eterna shop page publishes the exact blue 1942 Heritage Automatic reference, SKU, movement, price, and specifications; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "movado",
@@ -5867,7 +5897,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "movado-museum-classic-0607963",
+          "referenceLabel": "Movado Museum Classic exact reference 0607963",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Movado product page publishes reference 0607963, black PVD 40mm configuration, current price, and technical details; verify the exact M1 record."
+        }
+      ]
     },
     {
       "slug": "cyma",
@@ -5884,7 +5929,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "cyma-grand-maestro-the-chess-w02-00818-001",
+          "referenceLabel": "Cyma Grand Maestro The Chess exact reference W02-00818-001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The official Cyma product page confirms the exact W02-00818-001 configuration, ETA 7751 calendar/chronograph, moonphase, price, and published dimensions; verify all M1 fields."
+        }
+      ]
     },
     {
       "slug": "roamer",
