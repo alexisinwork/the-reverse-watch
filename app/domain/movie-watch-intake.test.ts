@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { movieWatchIntakeSummary, parseAllMovies } from "./movie-watch-intake";
+import { groupMovieWatchRows } from "./movie-watch-grouping";
 
 const source = fs.readFileSync(
   path.resolve(process.cwd(), "data/knowledge base/All Movies.txt"),
@@ -33,5 +34,26 @@ describe("All Movies intake parser", () => {
       uniqueSourceRows: 2_104,
       unreviewedRows: 2_349,
     });
+  });
+
+  it("groups by film and removes repeated evidence rows without merging distinct entries", () => {
+    const rows = parseAllMovies(source);
+    const groups = groupMovieWatchRows(rows);
+    expect(groups).toHaveLength(704);
+    expect(groups.reduce((sum, group) => sum + group.sourceRowCount, 0)).toBe(
+      2_349,
+    );
+    expect(
+      groups.reduce((sum, group) => sum + group.duplicateRowsRemoved, 0),
+    ).toBe(248);
+    expect(
+      groups.every((group) =>
+        group.entries.every((entry) => entry.reviewStatus === "unreviewed"),
+      ),
+    ).toBe(true);
+    expect(
+      groups.find((group) => group.titleOriginal === "Peaky Blinders")
+        ?.sourceRowCount,
+    ).toBe(38);
   });
 });

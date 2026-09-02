@@ -26,6 +26,7 @@
     "import:knowledge": "tsx scripts/import-knowledge-base.ts --write",
     "audit:knowledge": "tsx scripts/import-knowledge-base.ts --check",
     "import:movies": "node --env-file-if-exists=.env --import tsx scripts/import-all-movies-intake.ts",
+    "group:movies": "tsx scripts/group-all-movies.ts",
     "verify:movies": "node --env-file-if-exists=.env --import tsx scripts/verify-movie-watch-intake.ts",
     "sync:knowledge-manifest": "tsx scripts/sync-knowledge-manifest.ts",
     "research": "node --env-file=.env --import tsx scripts/run-research-worker.ts",
