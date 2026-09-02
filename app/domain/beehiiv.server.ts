@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 import { emailProviderTimeoutSignal } from "./email-provider.server";
 
 type Environment = Record<string, string | undefined>;
@@ -5,6 +7,21 @@ type Environment = Record<string, string | undefined>;
 export type BeehiivConfiguration =
   | { configured: true; apiKey: string; publicationId: string }
   | { configured: false; reason: "missing" | "invalid" };
+
+const beehiivSubscriptionResponseSchema = z.object({
+  data: z.object({
+    id: z.string().startsWith("sub_"),
+    email: z.string().trim().email(),
+    status: z.string().trim().min(1).max(64),
+  }),
+});
+
+export class BeehiivSubscriptionNotActiveError extends Error {
+  constructor(readonly providerStatus: string) {
+    super("Beehiiv did not activate the subscription");
+    this.name = "BeehiivSubscriptionNotActiveError";
+  }
+}
 
 export function parseBeehiivConfiguration(
   environment: Environment = process.env,
@@ -34,7 +51,9 @@ export async function subscribeToBeehiiv(
       signal: emailProviderTimeoutSignal(),
       body: JSON.stringify({
         email,
+        reactivate_existing: true,
         send_welcome_email: true,
+        double_opt_override: "off",
         utm_source: "the_reserve_diagnostic",
       }),
     },
@@ -43,4 +62,19 @@ export async function subscribeToBeehiiv(
   if (!response.ok) {
     throw new Error(`Beehiiv subscription failed with HTTP ${response.status}`);
   }
+
+  const payload = beehiivSubscriptionResponseSchema.safeParse(
+    await response.json().catch(() => null),
+  );
+  if (!payload.success) {
+    throw new Error("Beehiiv subscription returned an invalid response");
+  }
+  if (payload.data.data.email.toLowerCase() !== email.trim().toLowerCase()) {
+    throw new Error("Beehiiv subscription returned an unexpected address");
+  }
+  if (payload.data.data.status !== "active") {
+    throw new BeehiivSubscriptionNotActiveError(payload.data.data.status);
+  }
+
+  return { status: "active" as const };
 }

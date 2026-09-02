@@ -228,9 +228,15 @@ describe("progressive diagnostic", () => {
       .mockResolvedValueOnce("OK")
       .mockResolvedValueOnce("OK")
       .mockResolvedValue(null);
-    const fetchImplementation = vi
-      .fn<typeof fetch>()
-      .mockResolvedValue(new Response(null, { status: 200 }));
+    const fetchImplementation = vi.fn<typeof fetch>().mockResolvedValue(
+      Response.json({
+        data: {
+          id: "sub_123",
+          email: "reader@example.com",
+          status: "active",
+        },
+      }),
+    );
     vi.stubGlobal("fetch", fetchImplementation);
 
     const first = await action({

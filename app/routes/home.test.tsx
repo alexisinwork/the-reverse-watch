@@ -135,9 +135,15 @@ describe("landing page", () => {
   it("subscribes through the server-side Beehiiv adapter", async () => {
     vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
     vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
-    const fetchImplementation = vi
-      .fn<typeof fetch>()
-      .mockResolvedValue(new Response(null, { status: 201 }));
+    const fetchImplementation = vi.fn<typeof fetch>().mockResolvedValue(
+      Response.json({
+        data: {
+          id: "sub_123",
+          email: "reader@example.com",
+          status: "active",
+        },
+      }),
+    );
     vi.stubGlobal("fetch", fetchImplementation);
     const response = await action({
       request: actionRequest({
@@ -159,6 +165,47 @@ describe("landing page", () => {
       "https://api.beehiiv.com/v2/publications/pub_123/subscriptions",
       expect.objectContaining({ method: "POST" }),
     );
+  });
+
+  it("does not unlock the diagnostic for a non-active Beehiiv response", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn<typeof fetch>().mockResolvedValue(
+        Response.json({
+          data: {
+            id: "sub_123",
+            email: "reader@example.com",
+            status: "invalid",
+          },
+        }),
+      ),
+    );
+    const error = vi.spyOn(console, "error").mockImplementation(() => {});
+
+    const response = await action({
+      request: actionRequest({
+        intent: "newsletter",
+        email: "reader@example.com",
+        newsletterConsent: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+
+    expect(response.init?.status).toBe(422);
+    expect(response.data).toEqual({
+      ok: false,
+      message:
+        "This email address could not be activated. Check it and try again.",
+    });
+    expect(new Headers(response.init?.headers).has("Set-Cookie")).toBe(false);
+    expect(error).toHaveBeenCalledWith(
+      JSON.stringify({
+        event: "landing_beehiiv_subscription_rejected",
+        providerStatus: "invalid",
+      }),
+    );
+    error.mockRestore();
   });
 
   it("retains the original document metadata", () => {

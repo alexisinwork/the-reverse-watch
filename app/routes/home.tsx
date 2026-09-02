@@ -9,6 +9,7 @@ import {
 } from "../components/beehiiv-signup";
 import { GaugeMark } from "../components/gauge-mark";
 import {
+  BeehiivSubscriptionNotActiveError,
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
 } from "../domain/beehiiv.server";
@@ -131,6 +132,22 @@ export async function action({ request }: Route.ActionArgs) {
       { headers },
     );
   } catch (error) {
+    if (error instanceof BeehiivSubscriptionNotActiveError) {
+      console.error(
+        JSON.stringify({
+          event: "landing_beehiiv_subscription_rejected",
+          providerStatus: error.providerStatus,
+        }),
+      );
+      return data<NewsletterActionResult>(
+        {
+          ok: false,
+          message:
+            "This email address could not be activated. Check it and try again.",
+        },
+        { status: 422, headers: responseHeaders },
+      );
+    }
     console.error(
       JSON.stringify({
         event: "landing_beehiiv_subscription_error",

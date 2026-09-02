@@ -29,9 +29,15 @@ describe("Beehiiv subscription adapter", () => {
   });
 
   it("sends an explicitly requested subscription without exposing credentials", async () => {
-    const fetchImplementation = vi
-      .fn()
-      .mockResolvedValue(new Response(null, { status: 201 }));
+    const fetchImplementation = vi.fn().mockResolvedValue(
+      Response.json({
+        data: {
+          id: "sub_123",
+          email: "collector@example.com",
+          status: "active",
+        },
+      }),
+    );
 
     await expect(
       subscribeToBeehiiv(
@@ -43,7 +49,7 @@ describe("Beehiiv subscription adapter", () => {
         },
         fetchImplementation,
       ),
-    ).resolves.toBeUndefined();
+    ).resolves.toEqual({ status: "active" });
 
     expect(fetchImplementation).toHaveBeenCalledWith(
       "https://api.beehiiv.com/v2/publications/pub%2F123/subscriptions",
@@ -66,9 +72,48 @@ describe("Beehiiv subscription adapter", () => {
     expect(EMAIL_PROVIDER_TIMEOUT_MS).toBe(10_000);
     expect(JSON.parse(requestInit.body)).toEqual({
       email: "collector@example.com",
+      reactivate_existing: true,
       send_welcome_email: true,
+      double_opt_override: "off",
       utm_source: "the_reserve_diagnostic",
     });
+  });
+
+  it("rejects a 2xx response when Beehiiv does not activate the address", async () => {
+    const fetchImplementation = vi.fn().mockResolvedValue(
+      Response.json({
+        data: {
+          id: "sub_123",
+          email: "collector@example.com",
+          status: "invalid",
+        },
+      }),
+    );
+
+    await expect(
+      subscribeToBeehiiv(
+        "collector@example.com",
+        { configured: true, apiKey: "key", publicationId: "pub_123" },
+        fetchImplementation,
+      ),
+    ).rejects.toMatchObject({
+      name: "BeehiivSubscriptionNotActiveError",
+      providerStatus: "invalid",
+    });
+  });
+
+  it("rejects a malformed 2xx provider response", async () => {
+    const fetchImplementation = vi
+      .fn()
+      .mockResolvedValue(new Response(null, { status: 200 }));
+
+    await expect(
+      subscribeToBeehiiv(
+        "collector@example.com",
+        { configured: true, apiKey: "key", publicationId: "pub_123" },
+        fetchImplementation,
+      ),
+    ).rejects.toThrow("invalid response");
   });
 
   it("surfaces a non-success provider response", async () => {
