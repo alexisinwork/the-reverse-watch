@@ -54,6 +54,7 @@ API project and project service-account key for The Reserve.
 | Perplexity | `PERPLEXITY_API_KEY` | Phase 5 and research MCP | Dedicated project/key for catalogue research so spend is isolated. |
 | Discovery worker | `DISCOVERY_RESEARCH_WORKER_SECRET` | D5 scheduled worker | Scheduler-only bearer secret; keep separate from public intake and never log it. |
 | Discovery worker | `SUPABASE_SERVICE_ROLE_KEY` | D5 scheduled worker | Server-only queue RPC credential; never expose it to browser code. |
+| Discovery review | `DISCOVERY_RESEARCH_REVIEW_SECRET` | D6 editorial review | Separate server-only bearer secret for source verification and candidate promotion; never log it. |
 | Beehiiv | `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 7 | Existing The Reserve publication; use only server-side. |
 | Supabase API | `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` | Phase 4 web runtime | Project `osfqexnzgkksfvaocjvl`; the public key can execute only the narrow read-only RPC boundary and has no table grants. |
 | Supabase Postgres | `DIRECT_DATABASE_URL` | Migration/research maintenance only | Use a direct/session-pooler credential only for jobs that require SQL. It is not needed by the production recommendation route. `pgvector` is not enabled. |

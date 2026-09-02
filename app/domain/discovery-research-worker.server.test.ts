@@ -37,6 +37,10 @@ function store() {
     claim: vi.fn().mockResolvedValue([item]),
     complete,
     fail,
+    listCandidateSources: vi.fn(),
+    reviewCandidate: vi.fn(),
+    recordCandidateSourceFetch: vi.fn(),
+    reviewCastCredit: vi.fn(),
   };
   return { implementation, complete, fail };
 }

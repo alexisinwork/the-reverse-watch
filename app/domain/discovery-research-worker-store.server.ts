@@ -9,6 +9,12 @@ export const DISCOVERY_RESEARCH_COMPLETE_RPC =
   "complete_discovery_research_run_v1" as const;
 export const DISCOVERY_RESEARCH_FAIL_RPC =
   "fail_discovery_research_run_v1" as const;
+export const DISCOVERY_RESEARCH_SOURCES_RPC =
+  "list_discovery_candidate_sources_v1" as const;
+export const DISCOVERY_RESEARCH_REVIEW_RPC =
+  "review_discovery_candidate_v1" as const;
+export const DISCOVERY_RESEARCH_CAST_RPC =
+  "review_discovery_cast_credit_v1" as const;
 
 const workerItemSchema = z
   .object({
@@ -35,6 +41,15 @@ const workerResultSchema = z
     retryable: z.boolean().optional(),
   })
   .strict();
+const sourceFetchResultSchema = z
+  .object({
+    status: z.enum(["verified", "failed"]),
+    sourceId: z.number().int().positive(),
+  })
+  .strict();
+const candidateSourcesSchema = z.array(
+  z.object({ id: z.number().int().positive(), url: z.url() }).strict(),
+);
 
 type WorkerEnvironment = Pick<
   NodeJS.ProcessEnv,
@@ -81,6 +96,31 @@ export type DiscoveryResearchWorkerStore = {
     category: string;
     retryable: boolean;
   }): Promise<void>;
+  listCandidateSources(
+    candidateId: number,
+  ): Promise<Array<{ id: number; url: string }>>;
+  reviewCandidate(input: {
+    candidateId: number;
+    decision: "accepted" | "rejected";
+    publish: boolean;
+    reviewerNote: string | null;
+    referenceVariantId: string | null;
+    rights: unknown;
+  }): Promise<unknown>;
+  recordCandidateSourceFetch(input: {
+    candidateId: number;
+    sourceId: number;
+    status: "verified" | "failed";
+    fetchedAt: string;
+    contentHash: string | null;
+    failureCategory: string | null;
+  }): Promise<void>;
+  reviewCastCredit(input: {
+    publicFigureEntityId: number;
+    fictionalCharacterEntityId: number;
+    workId: number;
+    decision: "accepted" | "rejected";
+  }): Promise<unknown>;
 };
 
 async function rpc(
@@ -163,6 +203,55 @@ export function createDiscoveryResearchWorkerStore(
       );
       workerResultSchema.parse(body);
     },
+    async listCandidateSources(candidateId) {
+      const body = await rpc(
+        DISCOVERY_RESEARCH_SOURCES_RPC,
+        { p_candidate_id: candidateId },
+        options,
+      );
+      return candidateSourcesSchema.parse(body);
+    },
+    async reviewCandidate(input) {
+      return rpc(
+        DISCOVERY_RESEARCH_REVIEW_RPC,
+        {
+          p_candidate_id: input.candidateId,
+          p_decision: input.decision,
+          p_publish: input.publish,
+          p_reviewer_note: input.reviewerNote,
+          p_reference_variant_id: input.referenceVariantId,
+          p_rights: input.rights,
+        },
+        options,
+      );
+    },
+    async recordCandidateSourceFetch(input) {
+      const body = await rpc(
+        "record_discovery_candidate_source_fetch_v1",
+        {
+          p_candidate_id: input.candidateId,
+          p_source_id: input.sourceId,
+          p_status: input.status,
+          p_fetched_at: input.fetchedAt,
+          p_content_hash: input.contentHash,
+          p_failure_category: input.failureCategory,
+        },
+        options,
+      );
+      sourceFetchResultSchema.parse(body);
+    },
+    async reviewCastCredit(input) {
+      return rpc(
+        DISCOVERY_RESEARCH_CAST_RPC,
+        {
+          p_public_figure_entity_id: input.publicFigureEntityId,
+          p_fictional_character_entity_id: input.fictionalCharacterEntityId,
+          p_work_id: input.workId,
+          p_decision: input.decision,
+        },
+        options,
+      );
+    },
   };
 }
 
@@ -173,6 +262,13 @@ export function candidatePersistenceShape(
   return {
     entity_name: candidate.publicFigureName,
     work_title: candidate.work?.title ?? null,
+    work_kind: candidate.work?.kind ?? null,
+    work_release_year: candidate.work?.releaseYear ?? null,
+    work_season: candidate.work?.season ?? null,
+    work_episode: candidate.work?.episode ?? null,
+    work_scene: candidate.work?.scene ?? null,
+    work_timecode: candidate.work?.timecode ?? null,
+    claim_summary: candidate.claimSummary,
     character_name: candidate.characterName,
     claim_type: candidate.claimType,
     identification_precision: candidate.identificationPrecision,

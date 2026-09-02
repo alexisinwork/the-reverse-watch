@@ -1,6 +1,6 @@
 # Guided Celebrity & Cinema Discovery Plan
 
-Status: **D0–D5 complete — verified 2026-09-02**
+Status: **D0–D6 complete — verified 2026-09-02**
 
 This document is the executable continuation of the completed Phase 8 pilot.
 It preserves the existing four-question archetype quiz and turns its result
@@ -740,6 +740,37 @@ Checks:
 
 Exit: golden promotion tests, rolled-back live rejection/acceptance proof,
 advisors, and `npm run check` pass.
+
+#### D6 implementation record
+
+The review boundary is server-only at
+`/internal/discovery-research/review`, with a separate reviewer secret and
+Supabase service credential. It fetches each candidate source independently
+over HTTPS with redirect-following disabled, rejects application/private
+targets, caps response bytes, and records only fetch status, timestamp, and a
+SHA-256 content hash. Source bodies and provider prose are never copied into
+public records.
+
+Migrations `0051`–`0059` add source-fetch state, reviewer metadata, preserved
+structured work fields, and service-role-only review/promotion RPCs. Accepted
+candidates create canonical entities, works, aliases, claim-level sources and
+evidence as drafts; actor/public-figure and character/screen claims remain
+separate. A reviewed cast-credit RPC validates the two entity kinds and the
+work independently, without implying watch ownership or screen wear.
+
+Publication is a second, atomic transition. It requires independently verified
+supporting sources, a reviewed exact catalogue variant with matching reference
+evidence, an explicit image-rights decision, an exact-reference claim, no
+target mismatch/ambiguity/insufficient-evidence flag, no unresolved
+contradiction, and no possible custom prop. Canonical catalogue variants are
+never created or accepted by this path. The existing publication trigger and
+public projection remain the final gates.
+
+Verification on 2026-09-02: source-fetch safety and promotion gates have
+provider-free tests; the live Supabase rollback proof accepted a canonical
+draft in a transaction and rejected a contradictory publication, leaving no
+rows behind. Supabase security/performance advisors were rerun after the D6
+DDL, and `npm run check` passed with 48 test files and 227 tests.
 
 ### D7 — Connect story context to the full diagnostic
 

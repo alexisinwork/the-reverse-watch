@@ -15,6 +15,10 @@ export default [
     "internal/discovery-research/run",
     "routes/internal-discovery-research-run.ts",
   ),
+  route(
+    "internal/discovery-research/review",
+    "routes/internal-discovery-research-review.ts",
+  ),
   route("watches/people/:entitySlug", "routes/watch-entity.tsx"),
   route("watches/works/:workSlug", "routes/watch-work.tsx"),
   route("watches/stories/:storySlug", "routes/watch-story.tsx"),
