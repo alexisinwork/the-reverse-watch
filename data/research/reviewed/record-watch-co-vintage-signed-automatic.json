@@ -7,11 +7,16 @@
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
     "brand": "Record Watch Co.",
-    "model": "historical automatic wristwatch",
-    "referenceCode": "reference not established",
-    "variantName": "exact signed automatic configuration not established"
+    "model": "Sub-Seconds Automatic",
+    "referenceCode": "889",
+    "variantName": "1950s Sub-Seconds Automatic ref. 889, salmon dial"
   },
   "sourceChecks": [
+    {
+      "url": "https://shop.watchsteez.com/products/record-sub-seconds-automatic-ref-889-salmon-dial",
+      "status": "validated_secondary",
+      "note": "The specialist vintage-watch listing was checked on 2026-09-03 and explicitly identifies Record Watch Co. Geneve, Sub-Seconds Automatic ref. 889, Swiss Made circa 1950s, with the exact pictured salmon-dial configuration. It also identifies the Record cal. 161 bumper automatic and an approximately 33 mm stainless-steel case; no current manufacturer catalogue page for this historical reference was found."
+    },
     {
       "url": "https://www.time2tell.com/en/history-of-the-brands/514-the-true-story-of-record-watches.html",
       "status": "validated_secondary",
@@ -28,7 +33,13 @@
       "note": "The marketplace aggregates heterogeneous Record watches, including different complications and periods, without a single homogeneous reference; it is not used as an exact product source."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
@@ -47,5 +58,5 @@
     "attachmentType",
     "dateStatus"
   ],
-  "note": "No exact materially homogeneous Record Watch Co. automatic reference was confirmed. The source set mixes Calatrava, Datofix, chronometer, military, and other vintage examples, so no model identity, reference, product URL, or M1 fact is promoted. Do not merge this historical brand with the modern Longines Record collection."
+  "note": "Research-only identity review; the exact materially homogeneous Record Watch Co. Sub-Seconds Automatic ref. 889 configuration is confirmed by a specialist secondary listing, while no current manufacturer catalogue page or complete reference-specific M1 evidence is available. Do not merge this historical brand with the modern Longines Record collection."
 }

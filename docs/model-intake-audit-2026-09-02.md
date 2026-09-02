@@ -1248,3 +1248,19 @@ These 11 Rolex artifacts now carry identity/reference provenance and no longer
 claim `identity` as missing; no M1 facts or catalogue rows were changed. The
 Record Watch Co. historical target remains unresolved because no exact
 reference has been established and is not replaced with an inferred model.
+
+## Sixty-ninth Record Watch Co. recheck (retrieved 2026-09-03)
+
+The Record Watch Co. target was retried through three additional Perplexity
+attempts. All three responses failed the research schema because they either
+marked unknown values as observed `null`, omitted a resolved product URL, or
+returned no candidate identity; none was accepted as evidence.
+
+A separate exact-reference check found a concrete historical example: the
+specialist [WatchSteez listing](https://shop.watchsteez.com/products/record-sub-seconds-automatic-ref-889-salmon-dial)
+identifies Record Watch Co. Geneve Sub-Seconds Automatic ref. `889`, Swiss Made
+circa the 1950s, with a salmon dial and Record calibre 161 bumper automatic.
+This is validated secondary evidence, not a manufacturer catalogue page. The
+review artifact now records the identity, reference, variant, and product URL
+as verified, while all M1 facts remain missing and no catalogue row is
+promoted.
