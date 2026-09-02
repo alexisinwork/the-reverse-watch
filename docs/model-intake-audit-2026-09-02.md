@@ -751,3 +751,17 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 191 `needs_review` targets and
 254 review artifacts; accepted catalogue rows remain unchanged.
+
+## Thirty-fifth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- MeisterSinger N°01 Ivory `AM3303` — [official N°01 collection](https://meistersinger.com/en/category/all-watches/classic/n01/) plus [specialist reference listing](https://www.uhrenschmuck24.ch/en/meistersinger-n-01-elfenbein-o-43mm-am3303.html). The model is confirmed by the manufacturer and the exact variant code by the secondary listing.
+- Schaumburg Watch AQM 4 1/2 product no. `1013` — [official product page](https://www.schaumburgwatch.net/en/p/aqm-4-1-2). The exact model and product number are confirmed; the worker's secondary `SCH-AQM412` code was rejected.
+- Kudoke Classic — [official product page](https://www.kudoke.eu/en/classic-2/). The exact model is confirmed; the page publishes no numeric reference code, so the worker's model label was rejected as a code.
+- Lang & Heyne Hektor Edition II — [official product page](https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/). The exact model is confirmed; the URL path was rejected as a reference code.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 195 `needs_review` targets and
+258 review artifacts; accepted catalogue rows remain unchanged.

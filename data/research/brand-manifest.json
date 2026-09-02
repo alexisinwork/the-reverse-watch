@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:41:51.435Z",
+  "updatedAt": "2026-09-02T18:46:21.598Z",
   "brands": [
     {
       "slug": "rolex",
@@ -6588,7 +6588,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "meistersinger-no-01",
+          "referenceLabel": "MeisterSinger No.01 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies MeisterSinger No.01 as a core single-hand model; verify the exact current manufacturer configuration and any reference code."
+        }
+      ]
     },
     {
       "slug": "schaumburg-watch",
@@ -6605,7 +6620,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 4
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "schaumburg-aqm-4-1-2",
+          "referenceLabel": "Schaumburg Watch AQM 4 1/2 exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies AQM 4 1/2 as a distinct Schaumburg tool-watch family; verify one exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "kudoke",
@@ -6622,7 +6652,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "kudoke-classic",
+          "referenceLabel": "Kudoke Classic exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Kudoke Classic as a distinct hand-finished model; verify the current manufacturer fact sheet and exact configuration."
+        }
+      ]
     },
     {
       "slug": "lang-heyne",
@@ -6639,7 +6684,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "lang-heyne-hektor",
+          "referenceLabel": "Lang & Heyne Hektor exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Lang & Heyne Hektor as a current model with a manufacturer factsheet; verify its exact identity and reference data."
+        }
+      ]
     },
     {
       "slug": "moritz-grossmann",

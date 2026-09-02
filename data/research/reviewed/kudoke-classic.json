@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "kudoke-classic",
+  "jobId": "ea655bcc-54f5-4309-bb04-6596adcdffb2",
+  "reviewedAt": "2026-09-03T06:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Kudoke",
+    "model": "Classic",
+    "referenceCode": "reference not established",
+    "variantName": "Classic Stainless Steel White Guilloché Dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.kudoke.eu/en/classic-2/",
+      "status": "validated_primary",
+      "note": "The official Kudoke Classic page was checked on 2026-09-03 and confirms the model, steel case, 41mm diameter, hand-wound movement, sapphire crystals, and 46-hour power reserve. It does not publish a numeric reference code."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker's value \"classic\" is a model label, not a manufacturer reference code; the official page publishes no numeric code."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the exact Classic identity is confirmed, but no manufacturer reference code is published."
+}

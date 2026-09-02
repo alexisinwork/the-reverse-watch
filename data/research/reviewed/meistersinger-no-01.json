@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "meistersinger-no-01",
+  "jobId": "8a6ed6d6-7007-4713-bb7f-995367bb85ac",
+  "reviewedAt": "2026-09-03T06:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "MeisterSinger",
+    "model": "N°01",
+    "referenceCode": "AM3303",
+    "variantName": "N°01 Ivory 43mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://meistersinger.com/en/category/all-watches/classic/n01/",
+      "status": "validated_primary",
+      "note": "The official MeisterSinger N°01 collection page was checked on 2026-09-03 and confirms the model and current Ivory, Blue, and White configurations."
+    },
+    {
+      "url": "https://www.uhrenschmuck24.ch/en/meistersinger-n-01-elfenbein-o-43mm-am3303.html",
+      "status": "validated_secondary",
+      "note": "The specialist retailer page supplies the exact AM3303 code for the Ivory 43mm configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

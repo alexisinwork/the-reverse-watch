@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "lang-heyne-hektor",
+  "jobId": "60ea1fab-b05e-4655-9ec7-a1b700b0afb6",
+  "reviewedAt": "2026-09-03T06:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Lang & Heyne",
+    "model": "Hektor Edition II",
+    "referenceCode": "reference not established",
+    "variantName": "Hektor Edition II Black Dial Stainless Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "status": "validated_primary",
+      "note": "The official Lang & Heyne Hektor Edition II page was checked on 2026-09-03 and confirms the exact model identity. The worker's URL path was not treated as a reference code because no numeric manufacturer reference was published on the fetched page."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied the product URL path as a reference code; this is a locator, not a verified manufacturer reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

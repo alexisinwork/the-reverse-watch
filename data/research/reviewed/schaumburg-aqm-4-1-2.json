@@ -1,0 +1,50 @@
+{
+  "reviewVersion": 1,
+  "targetId": "schaumburg-aqm-4-1-2",
+  "jobId": "e9e83f13-e8d4-4d36-8317-0b648f9e1add",
+  "reviewedAt": "2026-09-03T06:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Schaumburg Watch",
+    "model": "AQM 4 1/2",
+    "referenceCode": "1013",
+    "variantName": "AQM 4 1/2"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.schaumburgwatch.net/en/p/aqm-4-1-2",
+      "status": "validated_primary",
+      "note": "The official Schaumburg Watch product page was checked on 2026-09-03 and confirms AQM 4 1/2, product no. 1013, 45mm case, and the 500m diver configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker's SCH-AQM412 code came from a secondary retailer; the official page identifies the product as no. 1013, which is retained as the canonical product number."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}
