@@ -1148,3 +1148,20 @@ All three remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 293 `needs_review` targets, one
 remaining `planned` target, and 356 review artifacts; accepted catalogue rows
 remain unchanged.
+
+## Sixty-second parallel exact-reference batch (retrieved 2026-09-04)
+
+Five additional Oris dossier references produced schema-valid Perplexity
+results and were checked against official Oris product pages:
+
+- Aquis Date Upcycle `01 733 7766 4135-07 8 22 05PEB` — [official product page](https://www.oris.ch/en-US/product/watch/aquis/aquis-date/01-733-7766-4135-07-8-22-05PEB) confirms the exact reference, 41.5 mm blue-dial configuration, and stainless-steel bracelet.
+- Divers Sixty-Five Date `01 733 7707 4057-07 8 20 18` — [official regional product page](https://www.oris.ch/en-DE/product/watch/divers/divers-sixty-five-date/01-733-7707-4057-07-8-20-18) confirms the exact reference, 40 mm green-dial configuration, and stainless-steel bracelet; the direct US route redirected to an unrelated product during review.
+- Divers Date 39 `01 733 7795 4054-Set` — [official product page](https://www.oris.ch/en-US/product/watch/divers/new-divers/01-733-7795-4054-Set) confirms the exact reference and black 39 mm diver identity.
+- Big Crown Pointer Date Calibre 403 — [official product page](https://www.oris.ch/en-US/product/watch/big-crown/big-crown-pointer-date-calibre-403/01-403-7776-4065-07-8-19-06) confirms the actual reference `01 403 7776 4065-07 8 19 06`, 38 mm blue-dial configuration, and stainless-steel bracelet. The dossier/manifest requested `...8 20 06`, so that reference discrepancy remains explicitly unresolved.
+- ProPilot X Calibre 400 `01 400 7778 7153-07 7 20 01TLC` — [official product page](https://www.oris.ch/en-US/product/watch/propilot-x/propilot-x-calibre-400/01-400-7778-7153-07-7-20-01TLC) confirms the exact reference, 39 mm grey-dial titanium configuration, and titanium bracelet.
+
+All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 298 `needs_review` targets, one
+remaining `planned` target, and 361 review artifacts; accepted catalogue rows
+remain unchanged. The Big Crown reference mismatch is preserved in the review
+artifact rather than silently changing the dossier target.

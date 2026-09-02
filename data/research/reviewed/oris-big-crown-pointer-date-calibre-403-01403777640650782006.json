@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "oris-big-crown-pointer-date-calibre-403-01403777640650782006",
+  "jobId": "fea46699-0829-4f49-9686-3d08df79f6f2",
+  "reviewedAt": "2026-09-04T01:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Oris",
+    "model": "Big Crown Pointer Date Calibre 403",
+    "referenceCode": "01 403 7776 4065-07 8 19 06",
+    "variantName": "Big Crown Pointer Date Calibre 403 38 mm Blue Dial on Stainless Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.oris.ch/en-US/product/watch/big-crown/big-crown-pointer-date-calibre-403/01-403-7776-4065-07-8-19-06",
+      "status": "validated_primary",
+      "note": "The official Oris US product page was checked on 2026-09-04 and confirms the exact current reference 01 403 7776 4065-07 8 19 06, 38 mm case, blue dial, and stainless-steel bracelet."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The owner dossier and manifest requested 01 403 7776 4065-07 8 20 06, but the official Oris page and schema-valid candidate confirm 01 403 7776 4065-07 8 19 06. Keep this upstream reference discrepancy explicit until reconciled."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The official page confirms the 8 19 06 reference, while the dossier target says 8 20 06; no reference field is promoted until that discrepancy is reconciled. All M1 facts remain unpromoted."
+}

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T21:48:46.636Z",
+  "updatedAt": "2026-09-02T21:56:58.372Z",
   "brands": [
     {
       "slug": "rolex",
@@ -3003,6 +3003,76 @@
             ]
           },
           "coverageRationale": "Current official Divers Sixty-Five anniversary configuration; preserve the exact 40 mm steel, black-dial, bracelet-and-leather-set boundary."
+        },
+        {
+          "id": "oris-aquis-upcycle-01733776641350782205peb",
+          "referenceLabel": "Oris Aquis Date Upcycle exact reference 01 733 7766 4135-07 8 22 05PEB",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Aquis Date Upcycle 41.5 as a distinct recycled-dial reference; verify the exact case, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "oris-divers-sixty-five-01733770740570782018",
+          "referenceLabel": "Oris Divers Sixty-Five 40 exact reference 01 733 7707 4057-07 8 20 18",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Divers Sixty-Five 40 01 733 7707 4057-07 8 20 18 as a permanent-collection mechanical diver; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "oris-divers-date-0173377954054-set",
+          "referenceLabel": "Oris Divers Date 39 exact reference 01 733 7795 4054-Set",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Divers Date 39 01 733 7795 4054-Set as a compact 200 m mechanical diver; verify the exact set configuration and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "oris-big-crown-pointer-date-calibre-403-01403777640650782006",
+          "referenceLabel": "Oris Big Crown Pointer Date Calibre 403 exact reference 01 403 7776 4065-07 8 20 06",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Big Crown Pointer Date Calibre 403 as an in-house high-reserve reference; verify the exact dial, strap or bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "oris-propilot-x-calibre-400-01400777871530772001tlc",
+          "referenceLabel": "Oris ProPilot X Calibre 400 exact reference 01 400 7778 7153-07 7 20 01TLC",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies ProPilot X Calibre 400 39 as a lightweight titanium automatic reference; verify the exact bracelet, dimensions, and manufacturer evidence before cataloguing."
         }
       ]
     },

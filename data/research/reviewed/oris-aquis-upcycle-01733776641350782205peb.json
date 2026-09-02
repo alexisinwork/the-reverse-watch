@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "oris-aquis-upcycle-01733776641350782205peb",
+  "jobId": "86277839-d039-443f-8e8f-135a2f1b2242",
+  "reviewedAt": "2026-09-04T01:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Oris",
+    "model": "Aquis Date",
+    "referenceCode": "01 733 7766 4135-07 8 22 05PEB",
+    "variantName": "Aquis Date 41.5 mm Blue Dial on Stainless Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.oris.ch/en-US/product/watch/aquis/aquis-date/01-733-7766-4135-07-8-22-05PEB",
+      "status": "validated_primary",
+      "note": "The official Oris US product page was checked on 2026-09-04 and confirms the exact reference, 41.5 mm Aquis Date identity, blue dial, and stainless-steel bracelet. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

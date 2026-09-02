@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "oris-divers-date-0173377954054-set",
+  "jobId": "8e934df6-25bd-4e74-9c92-5e48473f263b",
+  "reviewedAt": "2026-09-04T01:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Oris",
+    "model": "Divers Date 39",
+    "referenceCode": "01 733 7795 4054-Set",
+    "variantName": "Divers Date 39 Black"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.oris.ch/en-US/product/watch/divers/new-divers/01-733-7795-4054-Set",
+      "status": "validated_primary",
+      "note": "The official Oris US product page was checked on 2026-09-04 and confirms the exact reference, Divers Date 39 identity, black dial, and 200 m water-resistance configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

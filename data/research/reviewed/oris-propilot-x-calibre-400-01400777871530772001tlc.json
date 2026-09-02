@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "oris-propilot-x-calibre-400-01400777871530772001tlc",
+  "jobId": "4fef3d2d-c2fa-47f2-86af-769c5265e821",
+  "reviewedAt": "2026-09-04T01:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Oris",
+    "model": "ProPilot X Calibre 400",
+    "referenceCode": "01 400 7778 7153-07 7 20 01TLC",
+    "variantName": "ProPilot X Calibre 400 Grey 39 mm Titanium on Titanium Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.oris.ch/en-US/product/watch/propilot-x/propilot-x-calibre-400/01-400-7778-7153-07-7-20-01TLC",
+      "status": "validated_primary",
+      "note": "The official Oris US product page was checked on 2026-09-04 and confirms the exact reference, ProPilot X Calibre 400 identity, 39 mm titanium case, grey dial, and titanium bracelet. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

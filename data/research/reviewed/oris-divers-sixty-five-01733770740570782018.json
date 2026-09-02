@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "oris-divers-sixty-five-01733770740570782018",
+  "jobId": "8f2c1dff-8cec-4a08-b30b-9e5dd4207b75",
+  "reviewedAt": "2026-09-04T01:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Oris",
+    "model": "Divers Sixty-Five Date",
+    "referenceCode": "01 733 7707 4057-07 8 20 18",
+    "variantName": "Divers Sixty-Five Date 40 mm Gradient Green Dial on Stainless Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.oris.ch/en-DE/product/watch/divers/divers-sixty-five-date/01-733-7707-4057-07-8-20-18",
+      "status": "validated_primary",
+      "note": "The official Oris regional product page was checked on 2026-09-04 and confirms the exact reference, 40 mm Divers Sixty-Five Date identity, green dial, and stainless-steel bracelet."
+    },
+    {
+      "url": "https://www.oris.ch/en-US/product/watch/divers/divers-sixty-five-date/01-733-7707-4057-07-8-20-18",
+      "status": "rejected",
+      "note": "The direct US route redirected during review to an unrelated product; the exact identity is retained only because the alternate official Oris regional page confirmed the same reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official regional product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}
