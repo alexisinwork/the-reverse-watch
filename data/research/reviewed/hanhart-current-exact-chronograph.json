@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hanhart-current-exact-chronograph",
+  "jobId": "ae89eb2a-d4a6-4e26-bd8d-cdf64d124e7f",
+  "reviewedAt": "2026-09-02T16:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hanhart",
+    "model": "417 ES 42 mm",
+    "referenceCode": "H721.210-",
+    "variantName": "417 ES, 42 mm on leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hanhart.com/en/product/417-es-42-mm/",
+      "status": "validated_primary",
+      "note": "The official Hanhart product page was checked on 2026-09-02 and confirms SKU H721.210-, the 42 mm steel 417 ES configuration, leather strap, hand-wound chronograph, and current ordering status. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

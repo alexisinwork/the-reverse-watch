@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T15:52:55.651Z",
+  "updatedAt": "2026-09-02T15:57:42.740Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2790,7 +2790,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "squale-current-exact-dive",
+          "referenceLabel": "Squale 1521 Full Luminous Bracelet exact reference 1521FULL.SQ20L",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Find a source-verifiable current Squale dive configuration without treating a collection family prefix as an exact reference."
+        }
+      ]
     },
     {
       "slug": "nivada-grenchen",
@@ -2807,7 +2822,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "nivada-grenchen-current-exact-field",
+          "referenceLabel": "Select one current Nivada Grenchen mechanical field or dive watch with a full exact reference/SKU and one homogeneous configuration",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Fill a current independent field/dive candidate while keeping exact reference and configuration boundaries explicit."
+        }
+      ]
     },
     {
       "slug": "vulcain",
@@ -2858,7 +2888,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "fortis-current-exact-tool",
+          "referenceLabel": "Select one current Fortis mechanical tool watch with a full exact reference/SKU and one homogeneous configuration",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Find a current source-verifiable Fortis tool configuration with an exact reference rather than a family label."
+        }
+      ]
     },
     {
       "slug": "junghans",
@@ -2992,7 +3037,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "hanhart-current-exact-chronograph",
+          "referenceLabel": "Hanhart 417 ES 42 mm exact reference H721.210-",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Find a current source-verifiable Hanhart chronograph with exact reference and configuration evidence."
+        }
+      ]
     },
     {
       "slug": "tutima",
@@ -3060,7 +3120,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "muhle-glashutte-current-exact-tool",
+          "referenceLabel": "Select one current Mühle-Glashütte mechanical tool or field watch with a full exact reference/SKU and one homogeneous configuration",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Find a current source-verifiable Mühle-Glashütte tool configuration with exact reference evidence."
+        }
+      ]
     },
     {
       "slug": "certina",

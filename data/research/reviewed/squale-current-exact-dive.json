@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "squale-current-exact-dive",
+  "jobId": "770884cf-cebe-4fb8-ba5a-39304b798750",
+  "reviewedAt": "2026-09-02T16:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Squale",
+    "model": "1521 Full Luminous Bracelet",
+    "referenceCode": "1521FULL.SQ20L",
+    "variantName": "1521 Full Luminous Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.squale.ch/en/1521-full-luminous-bracelet",
+      "status": "validated_primary",
+      "note": "The official Squale product page and official catalog were checked on 2026-09-02 and confirm reference 1521FULL.SQ20L, 42 mm steel case, steel bracelet, and the exact Full Luminous configuration. Perplexity initially cited a secondary listing for the product URL; the official URL replaces it for identity review."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

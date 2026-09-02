@@ -292,6 +292,21 @@ no unverified candidate was added for those brands. The manifest now reports
 104 `needs_review` targets and 167 review artifacts; accepted catalogue rows
 remain unchanged.
 
+## Seventh parallel exact-reference batch (retrieved 2026-09-02)
+
+The Perplexity worker found two exact candidates among the next five P3 brands;
+both were independently checked against official manufacturer sources:
+
+- Squale 1521 Full Luminous Bracelet `1521FULL.SQ20L` — [official product page](https://www.squale.ch/en/1521-full-luminous-bracelet) and [official catalog](https://www.squale.ch/live/assets/media/upload/Squale_Catalog.pdf).
+- Hanhart 417 ES 42 mm `H721.210-` — [official product page](https://www.hanhart.com/en/product/417-es-42-mm/).
+
+Both remain research-only `needs_more_evidence`; exact identity and source URL
+are confirmed, while unresolved M1 facts remain null. Nivada Grenchen, Fortis,
+and Mühle-Glashütte returned contract-invalid or incomplete Perplexity
+responses and remain planned rather than being populated with guesses. The
+manifest now reports 106 `needs_review` targets and 169 review artifacts;
+accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge
