@@ -476,6 +476,23 @@ Checks:
 
 Exit: `npm run check` passes and the contracts can be consumed independently.
 
+#### D0 implementation record
+
+`app/domain/discovery-selection.ts` is the provider-free boundary for this
+packet. It validates the three canonical anchors, bounded local-search input,
+topic states, candidate precision, soft handoff values, and the four reviewed
+context traits. Topic state is deliberately one-way at this boundary:
+`needs_clarification -> queued -> researching -> review_pending -> matched |
+no_evidence | failed`; routes and persistence remain later-packet concerns.
+`discovery_context_v1` returns its score factors and orders equal scores by
+precision, review time, then stable slug. It carries no budget, wrist, or other
+hard filter into the full diagnostic.
+
+Packet-local checklist: D0 changes only the new domain module, its focused
+tests, and this contract record; it makes no route, database, provider,
+catalogue, analytics, or external-system change. Rollback is deletion of the
+unreferenced module and tests before D1 consumes it.
+
 ### D1 — Add the archetype result fork
 
 Scope:

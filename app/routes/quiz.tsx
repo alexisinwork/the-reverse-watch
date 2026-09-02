@@ -731,7 +731,7 @@ export async function action({ request }: Route.ActionArgs) {
         : null;
     const deliver = async (
       channel: "newsletter" | "dossier",
-      send: () => Promise<void>,
+      send: () => Promise<unknown>,
     ): Promise<DeliveryChannelStatus> => {
       const key = deduplicationClient
         ? emailDeliveryDeduplicationKey({
