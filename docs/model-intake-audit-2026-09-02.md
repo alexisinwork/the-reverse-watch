@@ -1213,3 +1213,13 @@ targets remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 308 `needs_review` targets, two
 remaining `planned` targets, and 371 review artifacts; accepted catalogue rows
 remain unchanged.
+
+## Sixty-sixth Patek Philippe retry (retrieved 2026-09-04)
+
+The previously failing Calatrava `5227G-010` target succeeded on the ninth
+Perplexity attempt overall and was checked against the [official Patek Philippe
+product page](https://www.patek.com/zh/%E6%97%B6%E8%AE%A1%E7%B3%BB%E5%88%97/calatrava%E7%B3%BB%E5%88%97/5227g-010).
+The exact white-gold, black-dial automatic-date identity is confirmed; the
+manufacturer marks it discontinued. It remains research-only
+`needs_more_evidence`, with no M1 facts or catalogue row promoted. Only
+Grand Seiko `SBGW291` remains `planned`.

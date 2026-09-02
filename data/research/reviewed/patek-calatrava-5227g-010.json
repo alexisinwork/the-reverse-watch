@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "patek-calatrava-5227g-010",
+  "jobId": "1184fc1b-ed84-42a9-b142-bddb2c987226",
+  "reviewedAt": "2026-09-04T05:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Patek Philippe",
+    "model": "Calatrava",
+    "referenceCode": "5227G-010",
+    "variantName": "Calatrava automatic date, white gold, black lacquered dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.patek.com/zh/%E6%97%B6%E8%AE%A1%E7%B3%BB%E5%88%97/calatrava%E7%B3%BB%E5%88%97/5227g-010",
+      "status": "validated_primary",
+      "note": "The official Patek Philippe product page was checked on 2026-09-04 and confirms reference 5227G-010, Calatrava identity, white-gold case, black lacquered dial, automatic calibre 26-330 S C, date, 39 mm case, and 30 m water resistance. The page marks the reference discontinued, which is retained as status context rather than treated as a missing identity."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and configuration are confirmed, including discontinued status; M1 facts remain unpromoted until field-level primary-source review closes every gap."
+}
