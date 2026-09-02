@@ -1182,3 +1182,18 @@ rows were promoted. The manifest now reports 303 `needs_review` targets, one
 remaining `planned` target, and 366 review artifacts; accepted catalogue rows
 remain unchanged. The WSSA0023 family correction is preserved in its review
 artifact rather than treating the broad dossier label as a reference fact.
+
+## Sixty-fourth parallel exact-reference batch (retrieved 2026-09-04)
+
+Three Omega references explicitly present in the owner dossier produced
+schema-valid Perplexity results and were checked against official Omega US
+product pages:
+
+- Speedmaster Moonwatch Professional `310.30.42.50.01.001` — [official product page](https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001001) confirms the exact 42 mm steel-on-steel reference and current listing.
+- Speedmaster Moonwatch Professional `310.30.42.50.01.002` — [official product page](https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001002) confirms the exact 42 mm steel-on-steel reference and current listing.
+- Seamaster Aqua Terra 150M `220.10.38.20.03.001` — [official product page](https://www.omegawatches.com/en-us/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003001) confirms the exact 38 mm blue-dial steel-on-steel reference and current listing.
+
+All three remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 306 `needs_review` targets, one
+remaining `planned` target, and 369 review artifacts; accepted catalogue rows
+remain unchanged.

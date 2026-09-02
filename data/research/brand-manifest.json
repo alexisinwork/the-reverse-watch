@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T22:10:36.738Z",
+  "updatedAt": "2026-09-02T22:15:17.266Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1308,6 +1308,48 @@
             ]
           },
           "coverageRationale": "Current official Aqua Terra configuration; preserve the 38 mm steel, blue teak-dial, date, and steel-bracelet boundary."
+        },
+        {
+          "id": "omega-speedmaster-moonwatch-31030425001001",
+          "referenceLabel": "Omega Speedmaster Moonwatch Professional exact reference 310.30.42.50.01.001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact Moonwatch bracelet reference identified in the owner dossier; keep the Hesalite/steel configuration separate from sapphire and strap variants."
+        },
+        {
+          "id": "omega-speedmaster-moonwatch-31030425001002",
+          "referenceLabel": "Omega Speedmaster Moonwatch Professional exact reference 310.30.42.50.01.002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the second exact Moonwatch bracelet reference identified in the owner dossier; preserve its separate crystal and bracelet boundary."
+        },
+        {
+          "id": "omega-aqua-terra-22010382003001-exact",
+          "referenceLabel": "Omega Seamaster Aqua Terra 150M exact reference 220.10.38.20.03.001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Retain an exact research target alongside the abstract legacy intent so the 38 mm steel blue-dial configuration can be independently confirmed."
         }
       ]
     },
