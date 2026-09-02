@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cortebert-northstar-cb-3004-44",
+  "jobId": "6748dac4-05b0-44e2-803a-fcea0d78a2dd",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cortébert 1790",
+    "model": "Northstar",
+    "referenceCode": "CB-3004-44",
+    "variantName": "Northstar CB-3004-44 Limited Edition"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://cortebert1790.com/products/northstar-sunset-gold-cb-3004-44",
+      "status": "validated_primary",
+      "note": "The official Cortébert 1790 product page was checked on 2026-09-03 and confirms Northstar reference CB-3004-44. The worker's home-page URL is not the exact product URL."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productUrl",
+      "reason": "The provisional URL is the brand home page; the validated exact manufacturer product page is the Northstar CB-3004-44 page."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted and the non-exact home-page URL is rejected."
+}

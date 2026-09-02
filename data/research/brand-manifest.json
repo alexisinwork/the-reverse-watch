@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:13:58.654Z",
+  "updatedAt": "2026-09-02T18:18:06.230Z",
   "brands": [
     {
       "slug": "rolex",
@@ -5961,7 +5961,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "roamer-premier-automatic-986983-47-85-20",
+          "referenceLabel": "Roamer Premier Automatic exact SKU 986983 47 85 20",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Roamer product page publishes the Premier Automatic SKU, current price, 42mm diver configuration, movement, and water resistance; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "rotary",
@@ -5978,7 +5993,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "rotary-pilot-gb05470-52",
+          "referenceLabel": "Rotary Pilot Automatic exact reference GB05470/52",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The official Rotary product page confirms the Pilot Automatic reference GB05470/52, current sale price, date configuration, and technical details; verify all M1 fields."
+        }
+      ]
     },
     {
       "slug": "record",
@@ -5995,7 +6025,19 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "record-watch-co-vintage-signed-automatic",
+          "referenceLabel": "Record Watch Co. signed vintage automatic watch; exact reference to establish",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Record Watch Co. has no current official product catalogue in the sources checked; research must establish a concrete signed watch reference from reliable evidence and preserve unresolved identity fields."
+        }
+      ]
     },
     {
       "slug": "cortebert",
@@ -6012,7 +6054,19 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 18
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "cortebert-northstar-cb-3004-44",
+          "referenceLabel": "Cortébert Northstar exact reference CB-3004-44",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Cortébert 1790 product page confirms the Northstar CB-3004-44 limited edition and publishes its configuration; verify all M1 fields."
+        }
+      ]
     },
     {
       "slug": "enicar",

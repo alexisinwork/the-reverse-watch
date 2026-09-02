@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "roamer-premier-automatic-986983-47-85-20",
+  "jobId": "5439e1b7-660b-4313-8059-690bddbd697a",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Roamer",
+    "model": "Premier Automatic",
+    "referenceCode": "986983 47 85 20",
+    "variantName": "Premier 42 mm Automatic Three-Hand Date Black Sunray Dial Two-Tone Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://roamer.ch/products/premier-automatic-2",
+      "status": "validated_primary",
+      "note": "The official Roamer product page was checked on 2026-09-03 and confirms SKU 986983 47 85 20 and the Premier Automatic model. The worker's collection URL is a family locator rather than the validated exact product URL."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productUrl",
+      "reason": "The provisional URL is a collection/family locator; the validated exact manufacturer page is roamer.ch/products/premier-automatic-2."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

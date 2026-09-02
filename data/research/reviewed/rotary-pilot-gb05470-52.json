@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rotary-pilot-gb05470-52",
+  "jobId": "4b091b84-8b0c-4a47-840e-4bba4697421c",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rotary",
+    "model": "RW 1895 Pilot Automatic",
+    "referenceCode": "GB05470/52",
+    "variantName": "Pilot Automatic Blue Dial Stainless Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://rotarywatches.com/products/rotary-commando-gents-watch-gb05470-52",
+      "status": "validated_primary",
+      "note": "The official Rotary product page was checked on 2026-09-03 and confirms reference GB05470/52, the Pilot Automatic blue-dial configuration, and the manufacturer URL. Extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

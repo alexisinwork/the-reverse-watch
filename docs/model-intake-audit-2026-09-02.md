@@ -670,6 +670,21 @@ rows were promoted. Montblanc `MB129371` and Lemania remain `planned` pending
 valid exact-reference evidence. The manifest now reports 176 `needs_review`
 targets and 239 review artifacts; accepted catalogue rows remain unchanged.
 
+## Thirty-first parallel exact-reference batch (retrieved 2026-09-03)
+
+Three additional configurations passed the Perplexity worker and were checked
+against primary manufacturer pages:
+
+- Rotary RW 1895 Pilot Automatic `GB05470/52` — [official product page](https://rotarywatches.com/products/rotary-commando-gents-watch-gb05470-52). The exact reference and configuration are confirmed.
+- Roamer Premier Automatic `986983 47 85 20` — [official product page](https://roamer.ch/products/premier-automatic-2). The exact SKU is confirmed; the worker's family URL was rejected.
+- Cortébert Northstar `CB-3004-44` — [official product page](https://cortebert1790.com/products/northstar-sunset-gold-cb-3004-44). The exact reference is confirmed; the worker's home-page URL was rejected.
+
+All three remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. Record Watch Co. remains `planned` because no exact signed
+watch identity survived schema validation. The manifest now reports 179
+`needs_review` targets and 242 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge
