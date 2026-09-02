@@ -863,3 +863,18 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 223 `needs_review` targets and
 286 review artifacts; accepted catalogue rows remain unchanged.
+
+## Forty-third parallel exact-reference batch (retrieved 2026-09-03)
+
+Three configurations passed the Perplexity worker and were checked against
+primary or specialist reference sources:
+
+- Armand Nicolet JS9-41 Diver `A481AGN-NR-MA2481AA` — [official product page](https://www.armandnicolet.com/product-page/a481agn-nr-ma2481aa) plus [exact-reference listing](https://www.thewatchpages.com/watches/armand-nicolet-js9-41-a481agn-nr-ma2481aa/). The exact black-dial steel-bracelet reference is confirmed.
+- Mathey-Tissot Type 21 Chrono Automatic `H1821CHATLNO` — [official product page](https://matheytissot.com/products/type-21-chrono-automatic-h1821chatlno). The exact reference and configuration are confirmed.
+- Delma Blue Shark IV `54701.760.6.034` — [official black/black product page](https://www.delmawatches.com/products/blue-shark-4-black-black). The canonical SKU is confirmed; the worker's mismatching code was rejected.
+
+Claude Meylan Tortue Swirls remains `planned` because six Perplexity attempts
+did not produce a schema-valid exact product URL. The three confirmed targets
+remain research-only `needs_more_evidence`; no M1 facts or catalogue rows were
+promoted. The manifest now reports 226 `needs_review` targets and 289 review
+artifacts; accepted catalogue rows remain unchanged.

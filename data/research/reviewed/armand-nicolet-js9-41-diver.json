@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "armand-nicolet-js9-41-diver",
+  "jobId": "6470d5c0-e474-496e-a643-018321622c0f",
+  "reviewedAt": "2026-09-03T12:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Armand Nicolet",
+    "model": "JS9-41",
+    "referenceCode": "A481AGN-NR-MA2481AA",
+    "variantName": "JS9-41 Diver Black Dial / Black Ceramic Bezel / Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.armandnicolet.com/product-page/a481agn-nr-ma2481aa",
+      "status": "validated_primary",
+      "note": "The official product page was checked on 2026-09-03 and explicitly confirms reference A481AGN-NR-MA2481AA, 41mm stainless-steel case, black turning ceramic bezel, AN200 automatic date movement, and CHF1,700 price."
+    },
+    {
+      "url": "https://www.armandnicolet.com/js9-41",
+      "status": "validated_primary",
+      "note": "The official JS9-41 collection page was checked on 2026-09-03 and confirms the family, 41mm case platform, 13mm thickness, AN200 calibre, date function, and 300m water-resistance specification."
+    },
+    {
+      "url": "https://www.thewatchpages.com/watches/armand-nicolet-js9-41-a481agn-nr-ma2481aa/",
+      "status": "validated_secondary",
+      "note": "The exact-reference listing was checked on 2026-09-03 and corroborates the black-dial steel-bracelet configuration and reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

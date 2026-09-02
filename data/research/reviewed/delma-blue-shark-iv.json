@@ -1,0 +1,61 @@
+{
+  "reviewVersion": 1,
+  "targetId": "delma-blue-shark-iv",
+  "jobId": "30216f8f-cb96-438f-a534-2d9eb5ae403e",
+  "reviewedAt": "2026-09-03T12:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Delma",
+    "model": "Blue Shark IV",
+    "referenceCode": "54701.760.6.034",
+    "variantName": "Blue Shark IV Black Bezel Black Dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.delmawatches.com/products/blue-shark-4-black-black",
+      "status": "validated_primary",
+      "note": "The official Delma product page was checked on 2026-09-03 and confirms Blue Shark IV SKU 54701.760.6.034, black DLC bezel, black dial, 47mm x 20mm case, 55mm lug-to-lug, 22mm lug width, 5000m water resistance, Sellita SW200-1 automatic movement, 41-hour reserve, bracelet, and 999-piece case-type limitation."
+    },
+    {
+      "url": "https://www.delmawatches.com/collections/blue-shark-4",
+      "status": "validated_primary",
+      "note": "The official Blue Shark IV collection was checked on 2026-09-03 and confirms the current 5000m generation and the black/black configuration among the live products."
+    },
+    {
+      "url": "https://monochrome-watches.com/introducing-delma-blue-shark-iv-5000-meter-depth-dive-watch-sellita-sw200-specs-price",
+      "status": "validated_secondary",
+      "note": "The specialist introduction corroborates the Blue Shark IV 5000m generation; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker's value 54701.700.6.049 does not match the official black-bezel/black-dial product; Delma publishes canonical SKU 54701.760.6.034 for this configuration."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the official SKU is normalized to 54701.760.6.034 and no provisional M1 fact is promoted."
+}

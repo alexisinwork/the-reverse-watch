@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T19:47:25.738Z",
+  "updatedAt": "2026-09-02T19:54:28.929Z",
   "brands": [
     {
       "slug": "rolex",
@@ -7596,7 +7596,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "claude-meylan-tortue-swirls",
+          "referenceLabel": "Claude Meylan Tortue Swirls exact configuration",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Tortue Swirls as Claude Meylan's current skeleton line; verify one exact manufacturer or retailer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "armand-nicolet",
@@ -7613,7 +7628,23 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "armand-nicolet-js9-41-diver",
+          "referenceLabel": "Armand Nicolet JS9-41 Diver exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000",
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies JS9-41 Diver as the current high-water-resistance line; verify the exact reference and configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "mathey-tissot",
@@ -7630,7 +7661,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "mathey-tissot-type-21-chrono-automatic",
+          "referenceLabel": "Mathey-Tissot Type 21 Chrono Automatic exact reference H1821CHATLNO",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the current Type 21 Chrono Automatic reference H1821CHATLNO; verify the exact official configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "delma",
@@ -7647,7 +7693,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "delma-blue-shark-iv",
+          "referenceLabel": "Delma Blue Shark IV exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier distinguishes the current Blue Shark IV 5000m diver from the prior 4000m generation; verify one exact current reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "davosa",

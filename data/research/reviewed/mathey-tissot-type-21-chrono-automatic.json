@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "mathey-tissot-type-21-chrono-automatic",
+  "jobId": "a7eef2ba-9d8d-4b48-8207-4386d10fdb53",
+  "reviewedAt": "2026-09-03T12:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Mathey-Tissot",
+    "model": "Type 21 Chrono Automatic",
+    "referenceCode": "H1821CHATLNO",
+    "variantName": "Type 21 Chrono Automatic H1821CHATLNO"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://matheytissot.com/products/type-21-chrono-automatic-h1821chatlno",
+      "status": "validated_primary",
+      "note": "The official product page was checked on 2026-09-03 and explicitly confirms reference H1821CHATLNO, CHF1,990 price, Landeron 77 automatic day-date chronograph, 42mm stainless-steel case, 16mm thickness, 5 ATM water resistance, and leather strap."
+    },
+    {
+      "url": "https://matheytissot.com/collections/type-21-chrono-automatic",
+      "status": "validated_primary",
+      "note": "The official collection was checked on 2026-09-03 and lists H1821CHATLNO as one of the Type 21 Chrono Automatic references."
+    },
+    {
+      "url": "https://www.jomashop.com/mathey-tissot-watch-h1821chatlno.html",
+      "status": "validated_secondary",
+      "note": "The reviewed-market listing was checked as a secondary corroboration of the exact reference; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}
