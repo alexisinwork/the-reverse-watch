@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-royal-oak-77450st",
+  "jobId": "847dc491-8f2d-4d17-a17c-3f38f54c7683",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Royal Oak Selfwinding",
+    "referenceCode": "77450ST.OO.1361ST.02",
+    "variantName": "34 mm stainless steel, silver-toned dial and bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77450ST.OO.1361ST.02",
+      "status": "validated_primary",
+      "note": "The official AP product page was checked on 2026-09-03 and confirms the exact compact steel Royal Oak reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 34,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77450ST.OO.1361ST.02",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 8.8,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77450ST.OO.1361ST.02",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "5800",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77450ST.OO.1361ST.02",
+      "note": "Exact movement calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 50,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77450ST.OO.1361ST.02",
+      "note": "50-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77450ST.OO.1361ST.02",
+      "note": "50 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77450ST.OO.1361ST.02",
+      "note": "Exact compact reference includes date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy"
+  ],
+  "note": "Exact compact current steel reference is confirmed. Fit dimensions, weight, accuracy and stable price remain null."
+}

@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vacheron-historiques-222-4200h-222a-b934",
+  "jobId": "2a65f87a-8fdc-4064-a1c6-e91b463776d6",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Vacheron Constantin",
+    "model": "Historiques 222",
+    "referenceCode": "4200H/222A-B934",
+    "variantName": "Steel / blue dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html",
+      "status": "validated_primary",
+      "note": "The official product page was checked on 2026-09-03 and confirms the exact steel 37 mm reference, 7.95 mm thickness, 5 bar resistance, calibre 2455/2, 40-hour reserve, date and steel integrated bracelet."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 37,
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html",
+      "note": "Official case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 7.95,
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html",
+      "note": "Official case thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "2455/2",
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 40,
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html",
+      "note": "Official power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html",
+      "note": "5 bar / 50 m on the official page."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date by aperture",
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html",
+      "note": "Official functions list date by aperture."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy"
+  ],
+  "note": "Exact current reference is confirmed. Price, fit dimensions, configured weight and daily accuracy remain null where not published by the manufacturer."
+}

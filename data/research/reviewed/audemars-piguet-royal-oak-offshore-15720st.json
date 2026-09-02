@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-royal-oak-offshore-15720st",
+  "jobId": "4557daf3-a3ec-41a3-9e80-bbb1ccd121d1",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Royal Oak Offshore Diver",
+    "referenceCode": "15720ST.OO.A009CA.01",
+    "variantName": "42 mm stainless steel diver, grey dial and rubber strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-offshore/15720ST.OO.A009CA.01",
+      "status": "validated_primary",
+      "note": "The official AP product page was checked on 2026-09-03 and confirms the exact current Offshore Diver reference and 300 m rating."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 42,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-offshore/15720ST.OO.A009CA.01",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 14.2,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-offshore/15720ST.OO.A009CA.01",
+      "note": "Official/normalized exact-reference thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "4308",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-offshore/15720ST.OO.A009CA.01",
+      "note": "Exact movement calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 60,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-offshore/15720ST.OO.A009CA.01",
+      "note": "60-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 300,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-offshore/15720ST.OO.A009CA.01",
+      "note": "300 m diver rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-offshore/15720ST.OO.A009CA.01",
+      "note": "Exact diver includes date display."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy"
+  ],
+  "note": "Exact current Offshore Diver reference is confirmed. Fit dimensions, weight, accuracy and stable price remain null."
+}

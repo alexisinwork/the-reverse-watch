@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-code-1159-15210st",
+  "jobId": "88423694-1fc9-4fa7-b64f-6d327efcdf8f",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Code 11.59 Selfwinding",
+    "referenceCode": "15210ST.OO.A009KB.01",
+    "variantName": "41 mm stainless steel, grey dial, rubber-coated strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/us/en/watch-collection/code-1159/15210ST.OO.A009KB.01",
+      "status": "validated_primary",
+      "note": "The official AP product page was checked on 2026-09-03 and confirms the exact current Code 11.59 steel-toned reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/code-1159/15210ST.OO.A009KB.01",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 10.7,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/code-1159/15210ST.OO.A009KB.01",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "4302",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/code-1159/15210ST.OO.A009KB.01",
+      "note": "Exact movement calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/code-1159/15210ST.OO.A009KB.01",
+      "note": "70-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/code-1159/15210ST.OO.A009KB.01",
+      "note": "30 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/code-1159/15210ST.OO.A009KB.01",
+      "note": "Exact Code 11.59 reference includes date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy"
+  ],
+  "note": "Exact current Code 11.59 reference is confirmed. Fit dimensions, weight, accuracy and stable regional price remain null."
+}

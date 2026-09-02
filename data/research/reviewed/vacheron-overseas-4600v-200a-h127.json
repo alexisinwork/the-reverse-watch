@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vacheron-overseas-4600v-200a-h127",
+  "jobId": "9b21bc6d-64c3-40f3-9ac1-348f3a580127",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Vacheron Constantin",
+    "model": "Overseas self-winding 34.5 mm",
+    "referenceCode": "4600V/200A-H127",
+    "variantName": "Steel deep red lacquered dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.vacheron-constantin.com/us/en/collections/overseas/4600v-200a-h127.html",
+      "status": "validated_primary",
+      "note": "The official product page was checked on 2026-09-03 and confirms the exact reference, 34.5 mm case, 9.33 mm thickness, 15 bar resistance, calibre 1088/1, 40-hour reserve, date, blue Super-LumiNova and interchangeable steel bracelet/strap system."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 34.5,
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/overseas/4600v-200a-h127.html",
+      "note": "Official case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 9.33,
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/overseas/4600v-200a-h127.html",
+      "note": "Official case thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "1088/1",
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/overseas/4600v-200a-h127.html",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 40,
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/overseas/4600v-200a-h127.html",
+      "note": "Official power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 150,
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/overseas/4600v-200a-h127.html",
+      "note": "15 bar / 150 m on the official page."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date-only",
+      "sourceUrl": "https://www.vacheron-constantin.com/us/en/collections/overseas/4600v-200a-h127.html",
+      "note": "Official functions list hours, date, minutes and central seconds."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy"
+  ],
+  "note": "Exact current reference is confirmed. Price, non-round fit dimensions, configured weight and daily accuracy remain null because the manufacturer page does not publish them."
+}

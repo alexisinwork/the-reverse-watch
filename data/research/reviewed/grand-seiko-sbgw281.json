@@ -1,0 +1,96 @@
+{
+  "reviewVersion": 1,
+  "targetId": "grand-seiko-sbgw281",
+  "jobId": "427ca375-fc86-4901-a321-0b6dd7a34e3e",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Grand Seiko",
+    "model": "Heritage",
+    "referenceCode": "SBGW281",
+    "variantName": "37.3 mm manual-wind steel Heritage"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "status": "validated_primary",
+      "note": "The official Grand Seiko page was checked on 2026-09-03 and confirms the exact SBGW281 reference and current manual-wind configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 37.3,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 44.3,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "note": "Official case length."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 11.7,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 61,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "note": "Official listed weight."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "9S64",
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "note": "Manual-wind calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 72,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "note": "72-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "note": "Splash resistant / 3 bar basis in the product record."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbgw281g",
+      "note": "No date display."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "lugToLugMm",
+    "lugWidthMm",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current reference and compact manual-wind configuration are confirmed. Price, fit dimensions, accuracy and lume grade remain null where not stably published."
+}

@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-royal-oak-26240st",
+  "jobId": "59cd4aef-f2ca-472f-b892-794906e41c10",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Royal Oak Selfwinding Chronograph",
+    "referenceCode": "26240ST.OO.1320ST.05",
+    "variantName": "41 mm stainless steel, blue dial, steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26240ST.OO.1320ST.05",
+      "status": "validated_primary",
+      "note": "The official AP product page was checked on 2026-09-03 and confirms the exact current steel chronograph reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26240ST.OO.1320ST.05",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12.4,
+      "sourceUrl": "https://alanfurman.com/shop-page/audemars-piguet-41mm-model-26240st-oo-1320st-05/",
+      "note": "Exact-reference technical listing corroborates thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "4401",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26240ST.OO.1320ST.05",
+      "note": "Exact movement calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://alanfurman.com/shop-page/audemars-piguet-41mm-model-26240st-oo-1320st-05/",
+      "note": "70-hour reserve corroborated for the exact reference."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26240ST.OO.1320ST.05",
+      "note": "50 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://alanfurman.com/shop-page/audemars-piguet-41mm-model-26240st-oo-1320st-05/",
+      "note": "Exact chronograph reference includes date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current steel chronograph reference is confirmed. Fit dimensions, weight, accuracy, lume grade and stable price remain null."
+}

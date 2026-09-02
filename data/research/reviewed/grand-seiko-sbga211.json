@@ -1,0 +1,97 @@
+{
+  "reviewVersion": 1,
+  "targetId": "grand-seiko-sbga211",
+  "jobId": "563ed006-3f09-43d0-aa88-834eab0360c3",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Grand Seiko",
+    "model": "Heritage Collection Spring Drive Snowflake",
+    "referenceCode": "SBGA211",
+    "variantName": "Titanium Snowflake"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "status": "validated_primary",
+      "note": "The official Grand Seiko page was checked on 2026-09-03 and confirms the exact SBGA211 reference and current Snowflake configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 49,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "note": "Official case length."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12.5,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 100,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "note": "Official listed weight."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "9R65",
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "note": "Spring Drive calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 72,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "note": "72-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "note": "10 bar / 100 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_only",
+      "sourceUrl": "https://www.grand-seiko.com/us-en/collections/sbga211g",
+      "note": "Date display is part of the exact SBGA211 specification."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "lugToLugMm",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current reference and core dimensions are confirmed. Price, lug-to-lug, accuracy and lume grade remain null pending stable field-level evidence."
+}

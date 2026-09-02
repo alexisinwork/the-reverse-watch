@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T23:06:53.133Z",
+  "updatedAt": "2026-09-02T23:37:41.510Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1084,6 +1084,90 @@
             ]
           },
           "coverageRationale": "Current official Royal Oak Jumbo configuration; preserve the exact 39 mm steel integrated-bracelet and blue-dial boundary."
+        },
+        {
+          "id": "audemars-piguet-royal-oak-26589io",
+          "referenceLabel": "Audemars Piguet Royal Oak Concept exact titanium flying-tourbillon GMT reference 26589IO.OO.D056CA.01",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add a current exact Concept flying-tourbillon GMT variant to cover the high-complication and lightweight titanium boundary."
+        },
+        {
+          "id": "audemars-piguet-royal-oak-26240st",
+          "referenceLabel": "Audemars Piguet Royal Oak Chronograph exact steel reference 26240ST.OO.1320ST.05",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add a current exact steel Royal Oak flyback chronograph variant distinct from the time-only Jumbo."
+        },
+        {
+          "id": "audemars-piguet-royal-oak-15510st",
+          "referenceLabel": "Audemars Piguet Royal Oak Selfwinding exact steel reference 15510ST.OO.1320ST.09",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the current 41 mm steel selfwinding Royal Oak, excluding the archived 50th Anniversary reference already rejected."
+        },
+        {
+          "id": "audemars-piguet-royal-oak-offshore-15720st",
+          "referenceLabel": "Audemars Piguet Royal Oak Offshore Diver exact steel reference 15720ST.OO.A009CA.01",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add a current exact 300 m Offshore Diver reference for technical dive-tool coverage and a separate case architecture."
+        },
+        {
+          "id": "audemars-piguet-code-1159-15210st",
+          "referenceLabel": "Audemars Piguet Code 11.59 Selfwinding exact steel reference 15210ST.OO.A009KB.01",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add an exact current Code 11.59 steel-toned selfwinding date reference to avoid treating Royal Oak geometry as the whole AP catalogue."
+        },
+        {
+          "id": "audemars-piguet-royal-oak-77450st",
+          "referenceLabel": "Audemars Piguet Royal Oak Selfwinding exact 34 mm steel reference 77450ST.OO.1361ST.02",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add a compact exact steel Royal Oak variant for smaller-wrist coverage, separate from 37 mm and 39 mm references."
         }
       ]
     },
@@ -1158,6 +1242,34 @@
             ]
           },
           "coverageRationale": "Current official Overseas configuration; preserve the exact pink-gold and green-dial boundary."
+        },
+        {
+          "id": "vacheron-overseas-4600v-200a-h127",
+          "referenceLabel": "Vacheron Constantin Overseas exact steel deep-red reference 4600V/200A-H127",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add an exact current 34.5 mm steel Overseas configuration to broaden the small-case luxury-sport boundary beyond the existing 41 mm references."
+        },
+        {
+          "id": "vacheron-historiques-222-4200h-222a-b934",
+          "referenceLabel": "Vacheron Constantin Historiques 222 exact steel reference 4200H/222A-B934",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the current steel Historiques 222 to cover an integrated-bracelet architectural time-only profile with a distinct case and movement platform."
         }
       ]
     },
@@ -1292,6 +1404,34 @@
             ]
           },
           "coverageRationale": "Add the exact large Santos configuration from the owner dossier; preserve its separate case geometry."
+        },
+        {
+          "id": "cartier-tank-francaise-wsta0129",
+          "referenceLabel": "Cartier Tank Française exact steel bracelet reference WSTA0129",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add a current exact quartz Tank Française variant for the small formal-wear rectangular segment, distinct from Tank Must research targets."
+        },
+        {
+          "id": "cartier-santos-w3sa0007",
+          "referenceLabel": "Cartier Santos de Cartier exact steel reference W3SA0007",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current steel Santos configuration with larger case geometry and 1847 MC movement as a separate reference variant."
         }
       ]
     },
@@ -1392,6 +1532,34 @@
             ]
           },
           "coverageRationale": "Retain an exact research target alongside the abstract legacy intent so the 38 mm steel blue-dial configuration can be independently confirmed."
+        },
+        {
+          "id": "omega-speedmaster-moonwatch-31030425001004",
+          "referenceLabel": "Omega Speedmaster Moonwatch Professional exact reference 310.30.42.50.01.004",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact current Moonwatch bracelet configuration identified in the official catalogue, keeping crystal and bracelet differences separate."
+        },
+        {
+          "id": "omega-aqua-terra-22010412103006",
+          "referenceLabel": "Omega Seamaster Aqua Terra 150M exact reference 220.10.41.21.03.006",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add a distinct current 41 mm steel blue-dial Aqua Terra reference to extend exact everyday date coverage beyond the existing 38 mm target."
         }
       ]
     },
@@ -1473,6 +1641,34 @@
             ]
           },
           "coverageRationale": "Current official LANGE 1 configuration; preserve the exact white-gold, argenté-dial, and black-alligator boundary."
+        },
+        {
+          "id": "lange-1-191032",
+          "referenceLabel": "A. Lange & Söhne LANGE 1 exact pink-gold reference 191.032",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current pink-gold LANGE 1 configuration to preserve the material and dial boundary separately from the existing white-gold target."
+        },
+        {
+          "id": "lange-odysseus-363179",
+          "referenceLabel": "A. Lange & Söhne ODYSSEUS exact stainless-steel reference 363.179",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact steel ODYSSEUS configuration as a high-end integrated-bracelet date reference with a distinct sport profile."
         }
       ]
     },
@@ -1555,6 +1751,34 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Evolution 9 SLGH005 White Birch as a high-precision mechanical reference; verify its exact current manufacturer configuration and M1 fields before cataloguing."
+        },
+        {
+          "id": "grand-seiko-sbga211",
+          "referenceLabel": "Grand Seiko Heritage Snowflake exact reference SBGA211",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current titanium Spring Drive Snowflake to cover a lightweight high-accuracy date reference with separate material and bracelet facts."
+        },
+        {
+          "id": "grand-seiko-sbgw281",
+          "referenceLabel": "Grand Seiko Heritage exact manual-wind reference SBGW281",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current 37.3 mm manual-wind Heritage reference for compact formal time-only coverage."
         }
       ]
     },

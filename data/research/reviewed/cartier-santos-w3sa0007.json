@@ -1,0 +1,97 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-santos-w3sa0007",
+  "jobId": "a0dea5b1-3d2f-435c-960b-6884bb30a892",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Santos de Cartier",
+    "referenceCode": "W3SA0007",
+    "variantName": "Medium steel and yellow-gold bezel with diamonds"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-us/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007.html",
+      "status": "validated_primary",
+      "note": "The canonical Cartier product URL was checked on 2026-09-03; the exact W3SA0007 configuration and reference are confirmed by the manufacturer catalogue extraction."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1930000,
+      "sourceUrl": "https://www.cartier.com/en-us/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007.html",
+      "note": "US retail price normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.cartier.com/en-us/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007.html",
+      "note": "US regional price."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 35.1,
+      "sourceUrl": "https://www.cartier.com/en-gb/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007",
+      "note": "Cartier lists 35.1 mm width."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 41.9,
+      "sourceUrl": "https://www.cartier.com/en-gb/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007",
+      "note": "Cartier lists 41.9 mm length."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 8.83,
+      "sourceUrl": "https://www.cartier.com/en-gb/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007",
+      "note": "Cartier lists 8.83 mm thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "1847 MC",
+      "sourceUrl": "https://www.cartier.com/en-gb/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007",
+      "note": "Exact movement calibre from the product specification."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 40,
+      "sourceUrl": "https://www.cartier.com/en-gb/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007",
+      "note": "40-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.cartier.com/en-gb/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007",
+      "note": "10 bar / 100 m."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseDiameterMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact reference, rectangular geometry, calibre and resistance are confirmed. Cartier does not expose round diameter, fit dimensions, configured weight or numerical accuracy for this variant."
+}

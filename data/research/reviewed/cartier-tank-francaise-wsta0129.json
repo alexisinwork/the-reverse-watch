@@ -1,0 +1,97 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-tank-francaise-wsta0129",
+  "jobId": "16c38d4b-e566-4ddd-bbcc-f714ac8cad22",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Tank Française",
+    "referenceCode": "WSTA0129",
+    "variantName": "Small steel quartz model"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-us/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html",
+      "status": "validated_primary",
+      "note": "The canonical Cartier product URL was checked on 2026-09-03; the Perplexity page extraction identifies the exact WSTA0129 small steel quartz configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 445000,
+      "sourceUrl": "https://www.cartier.com/en-us/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html",
+      "note": "US retail price normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.cartier.com/en-us/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html",
+      "note": "US regional price."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 21.2,
+      "sourceUrl": "https://www.cartier.com/en-gt/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html",
+      "note": "Cartier lists 21.2 mm width."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 25.7,
+      "sourceUrl": "https://int.cartier.com/en/collections/watches/all-watches/tank-watches/wsta0129-tank-fran%C3%A7aise-watch.html",
+      "note": "Cartier lists 25.7 mm length."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 6.8,
+      "sourceUrl": "https://www.cartier.com/en-my/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html",
+      "note": "Cartier lists 6.8 mm thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "quartz",
+      "sourceUrl": "https://www.cartier.com/en-us/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html",
+      "note": "Exact product configuration is quartz."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.cartier.com/en-gt/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html",
+      "note": "3 bar / 30 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.cartier.com/en-gt/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html",
+      "note": "No calendar display is listed for this exact model."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseDiameterMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy"
+  ],
+  "note": "Exact reference and rectangular geometry are confirmed. Round diameter, fit dimensions, weight, calibre and accuracy remain null; price is withheld pending stable regional confirmation."
+}

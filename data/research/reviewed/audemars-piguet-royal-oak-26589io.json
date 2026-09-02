@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-royal-oak-26589io",
+  "jobId": "1d45effe-fc30-4c89-9bfd-ecdb9dccd5b8",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Royal Oak Concept Flying Tourbillon GMT",
+    "referenceCode": "26589IO.OO.D056CA.01",
+    "variantName": "Titanium case, green ceramic bezel, green rubber strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-concept/26589IO.OO.D056CA.01",
+      "status": "validated_primary",
+      "note": "The official AP product page was checked on 2026-09-03 and confirms the exact reference and Concept configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 44,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-concept/26589IO.OO.D056CA.01",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 16.1,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-concept/26589IO.OO.D056CA.01",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "2954",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-concept/26589IO.OO.D056CA.01",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 237,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-concept/26589IO.OO.D056CA.01",
+      "note": "Official 237-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-concept/26589IO.OO.D056CA.01",
+      "note": "100 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-concept/26589IO.OO.D056CA.01",
+      "note": "Tourbillon/GMT display has no calendar date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy"
+  ],
+  "note": "Exact current AP Concept reference is confirmed. Fit dimensions, configured weight, numerical accuracy and stable price remain null."
+}

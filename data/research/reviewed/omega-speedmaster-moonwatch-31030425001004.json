@@ -1,0 +1,79 @@
+{
+  "reviewVersion": 1,
+  "targetId": "omega-speedmaster-moonwatch-31030425001004",
+  "jobId": "433fb97c-461b-4392-ba89-2e53a7979f28",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Omega",
+    "model": "Speedmaster Moonwatch Professional",
+    "referenceCode": "310.30.42.50.01.004",
+    "variantName": "Black and white reverse-panda dial on steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001004",
+      "status": "validated_primary",
+      "note": "Omega's exact product page was checked on 2026-09-03 and confirms the reference and 42 mm Moonwatch product identity; movement and technical details were cross-checked against the normalized manufacturer-linked record."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 42,
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001004",
+      "note": "Omega product title and specification identify 42 mm."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "Omega Calibre 3861",
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001004",
+      "note": "Exact Moonwatch calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 50,
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001004",
+      "note": "50-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001004",
+      "note": "5 bar / 50 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001004",
+      "note": "Moonwatch chronograph has no calendar date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact reverse-panda reference is confirmed. Full configured weight, non-diameter case dimensions, daily accuracy, lume grade and stable regional price remain null."
+}

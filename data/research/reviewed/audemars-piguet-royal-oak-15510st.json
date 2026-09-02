@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-royal-oak-15510st",
+  "jobId": "6a943ffa-fcf3-4e2f-8da3-a36962c96a44",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Royal Oak Selfwinding",
+    "referenceCode": "15510ST.OO.1320ST.09",
+    "variantName": "41 mm stainless steel, khaki green dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/15510ST.OO.1320ST.09",
+      "status": "validated_primary",
+      "note": "The official AP product page was checked on 2026-09-03 and confirms the exact current non-anniversary steel reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/15510ST.OO.1320ST.09",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 10.5,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/15510ST.OO.1320ST.09",
+      "note": "Official/normalized exact-reference thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "4302",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/15510ST.OO.1320ST.09",
+      "note": "Exact movement calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/15510ST.OO.1320ST.09",
+      "note": "70-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/15510ST.OO.1320ST.09",
+      "note": "50 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/15510ST.OO.1320ST.09",
+      "note": "Exact reference includes date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy"
+  ],
+  "note": "Exact current steel reference is confirmed and distinguished from the rejected 50th Anniversary target. Fit dimensions, weight, accuracy and stable price remain null."
+}

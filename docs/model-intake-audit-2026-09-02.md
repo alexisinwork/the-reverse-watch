@@ -1387,3 +1387,32 @@ facts are retained with source provenance, while absent price/accuracy/lug,
 configured-weight, or lume fields remain null. The Laurent Ferrier yellow-gold
 counterpart was manually reconciled from its official product card after three
 malformed Perplexity responses; the malformed payloads were not imported.
+
+## Seventy-seventh Perplexity exact-reference pass (retrieved 2026-09-03)
+
+Sixteen additional exact targets completed the Perplexity worker and were
+cross-checked against manufacturer product pages before review artifacts were
+created. The references remain `needs_review`; only confirmed fields were
+recorded, and unverified M1 fields remain null:
+
+- [Vacheron Constantin Overseas `4600V/200A-H127`](https://www.vacheron-constantin.com/us/en/collections/overseas/4600v-200a-h127.html): 34.5 mm steel, 9.33 mm, calibre 1088/1, 40-hour reserve, 150 m, date and interchangeable bracelet/strap system.
+- [Vacheron Constantin Historiques 222 `4200H/222A-B934`](https://www.vacheron-constantin.com/us/en/collections/historiques/4200h-222a-b934.html): 37 mm steel, 7.95 mm, calibre 2455/2, 40-hour reserve, 50 m, date and integrated steel bracelet.
+- [Cartier Tank Française `WSTA0129`](https://www.cartier.com/en-us/watches/collections/tank/tank-francaise-watch-CRWSTA0129.html): small steel quartz configuration, 25.7 x 21.2 x 6.8 mm, 30 m, no date and steel bracelet.
+- [Cartier Santos `W3SA0007`](https://www.cartier.com/en-us/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRW3SA0007.html): exact medium configuration, 41.9 x 35.1 x 8.83 mm, calibre 1847 MC, 40-hour reserve, 100 m and no date.
+- [Omega Speedmaster Moonwatch `310.30.42.50.01.004`](https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425001004): 42 mm reverse-panda steel reference, calibre 3861, 50-hour reserve, 50 m and no date.
+- [Omega Aqua Terra `220.10.41.21.03.006`](https://www.omegawatches.com/en-us/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22010412103006): 41 mm steel reference, calibre 8900, 60-hour reserve, 150 m and date.
+- [A. Lange & Söhne LANGE 1 `191.032`](https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1/lange-1-in-750-pink-gold-191-032): 38.5 mm pink-gold reference, 9.8 mm, calibre L121.1, 72-hour reserve, 30 m and outsized date.
+- [A. Lange & Söhne ODYSSEUS `363.179`](https://www.alange-soehne.com/us-en/timepieces/odysseus/odysseus/odysseus-in-stainless-steel-363-179): 40.5 mm steel reference, 11.1 mm, calibre L155.1 DATOMATIC, 50-hour reserve, 120 m and large date.
+- [Grand Seiko Snowflake `SBGA211`](https://www.grand-seiko.com/us-en/collections/sbga211g): 41 x 49 x 12.5 mm titanium Spring Drive reference, 100 g, calibre 9R65, 72-hour reserve, 100 m and date.
+- [Grand Seiko Heritage `SBGW281`](https://www.grand-seiko.com/us-en/collections/sbgw281g): 37.3 x 44.3 x 11.7 mm manual-wind steel reference, 61 g, calibre 9S64, 72-hour reserve, splash resistance and no date.
+- [Audemars Piguet Royal Oak Concept `26589IO.OO.D056CA.01`](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-concept/26589IO.OO.D056CA.01): 44 x 16.1 mm titanium flying-tourbillon GMT, calibre 2954, 237-hour reserve, 100 m and rubber strap.
+- [Audemars Piguet Royal Oak Chronograph `26240ST.OO.1320ST.05`](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26240ST.OO.1320ST.05): 41 x 12.4 mm steel flyback chronograph, calibre 4401, 70-hour reserve, 50 m, date and integrated bracelet.
+- [Audemars Piguet Royal Oak Selfwinding `15510ST.OO.1320ST.09`](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/15510ST.OO.1320ST.09): 41 x 10.5 mm current steel reference, calibre 4302, 70-hour reserve, 50 m and date; the archived anniversary reference remains rejected.
+- [Audemars Piguet Royal Oak Offshore Diver `15720ST.OO.A009CA.01`](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak-offshore/15720ST.OO.A009CA.01): 42 x 14.2 mm steel diver, calibre 4308, 60-hour reserve, 300 m, rubber strap and date.
+- [Audemars Piguet Code 11.59 `15210ST.OO.A009KB.01`](https://www.audemarspiguet.com/us/en/watch-collection/code-1159/15210ST.OO.A009KB.01): 41 x 10.7 mm steel-toned reference, calibre 4302, 70-hour reserve, 30 m, rubber-coated strap and date.
+- [Audemars Piguet Royal Oak `77450ST.OO.1361ST.02`](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77450ST.OO.1361ST.02): compact 34 x 8.8 mm steel reference, calibre 5800, 50-hour reserve, 50 m, bracelet and date.
+
+The 16 review artifacts retain Perplexity job provenance and manufacturer URLs.
+No model was promoted to the accepted catalogue because residual M1 gaps remain
+for fit geometry, configured weight, daily accuracy, lume grade, or regional
+price as applicable.
