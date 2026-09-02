@@ -1102,3 +1102,19 @@ attempt failed schema validation because the provider marked unknown values as
 observed `null`; no schema-valid evidence was accepted and no review artifact
 was created. The target remains `planned` rather than being promoted from a
 non-confirming response.
+
+## Fifty-ninth parallel exact-reference batch (retrieved 2026-09-03)
+
+Five remaining Tissot dossier references produced schema-valid Perplexity
+results and were checked against official Tissot regional product pages:
+
+- Seastar 1000 40 `T120.807.11.051.00` — [official US product page](https://www.tissotwatches.com/en-us/T1208071105100.html) confirms the exact reference, 40 mm automatic configuration, steel bracelet, and 300 m water resistance.
+- Seastar 2000 Professional `T120.607.11.041.00` — [official US product page](https://www.tissotwatches.com/en-us/T1206071104100.html) confirms the exact reference, 46 mm automatic configuration, steel bracelet, and ISO-certified 600 m diver specification.
+- Le Locle Powermatic 80 `T006.407.11.033.00` — [official US product page](https://www.tissotwatches.com/en-us/T0064071103300.html) confirms the exact reference and silver-dial steel-bracelet configuration.
+- Heritage Visodate Powermatic 80 `T118.430.11.041.00` — [official Thailand product page](https://www.tissotwatches.com/en-th/T1184301104100.html) confirms the exact reference, blue dial, and automatic steel-bracelet configuration.
+- T-Touch Connect Solar `T121.420.47.051.07` — [official UK product page](https://www.tissotwatches.com/en-gb/T1214204705107.html) confirms the exact reference and connected solar multifunction configuration.
+
+All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 285 `needs_review` targets, one
+remaining `planned` target, and 348 review artifacts; accepted catalogue rows
+remain unchanged.

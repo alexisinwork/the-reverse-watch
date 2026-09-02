@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tissot-t1208071105100-seastar-1000-40",
+  "jobId": "5563e239-aca7-4f14-a702-9304d973a67a",
+  "reviewedAt": "2026-09-03T23:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tissot",
+    "model": "Seastar 1000 40mm Powermatic 80",
+    "referenceCode": "T120.807.11.051.00",
+    "variantName": "Seastar 1000 40mm graded grey-black dial stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tissotwatches.com/en-us/T1208071105100.html",
+      "status": "validated_primary",
+      "note": "The official Tissot US product page was checked on 2026-09-03 and confirms exact T120.807.11.051.00 identity, Seastar 1000 40mm, automatic movement, steel bracelet, and 300 m water resistance."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tissot-t0064071103300-le-locle",
+  "jobId": "7dc48d94-1fd8-4268-962b-626c7a284e09",
+  "reviewedAt": "2026-09-03T23:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tissot",
+    "model": "Le Locle Powermatic 80",
+    "referenceCode": "T006.407.11.033.00",
+    "variantName": "Le Locle Powermatic 80 39.3mm silver dial stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tissotwatches.com/en-us/T0064071103300.html",
+      "status": "validated_primary",
+      "note": "The official Tissot US product page was checked on 2026-09-03 and confirms exact T006.407.11.033.00 identity, Le Locle 39.3mm, Powermatic 80 automatic family, silver dial, and steel bracelet."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

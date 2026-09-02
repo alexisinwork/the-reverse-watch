@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T21:30:37.783Z",
+  "updatedAt": "2026-09-02T21:35:02.153Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2775,6 +2775,76 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Gentleman Powermatic 80 T127.407.11.041.00 as a versatile automatic reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t1208071105100-seastar-1000-40",
+          "referenceLabel": "Tissot Seastar 1000 40 exact reference T120.807.11.051.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Seastar 1000 40 T120.807.11.051.00 as a compact mechanical dive reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t1206071104100-seastar-2000",
+          "referenceLabel": "Tissot Seastar 2000 Professional exact reference T120.607.11.041.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Seastar 2000 Professional T120.607.11.041.00 as a deep-water mechanical diver; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t0064071103300-le-locle",
+          "referenceLabel": "Tissot Le Locle Powermatic 80 exact reference T006.407.11.033.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Le Locle Powermatic 80 T006.407.11.033.00 as an accessible dress-mechanical reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t1184301104100-heritage-visodate",
+          "referenceLabel": "Tissot Heritage Visodate exact reference T118.430.11.041.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Heritage Visodate T118.430.11.041.00 as a legacy automatic date reference; verify the exact current availability, dial, bracelet, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t1214204705107-t-touch-connect-solar",
+          "referenceLabel": "Tissot T-Touch Connect Solar exact reference T121.420.47.051.07",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies T-Touch Connect Solar T121.420.47.051.07 as a connected solar multifunction reference; verify the exact current software-linked configuration and manufacturer evidence before cataloguing."
         }
       ]
     },

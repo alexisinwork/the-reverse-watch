@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tissot-t1214204705107-t-touch-connect-solar",
+  "jobId": "ecab563c-9fe4-49f1-bee6-e009e9bfcd17",
+  "reviewedAt": "2026-09-03T23:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tissot",
+    "model": "T-Touch Connect Solar 47.5mm",
+    "referenceCode": "T121.420.47.051.07",
+    "variantName": "Titanium case, black dial, black ceramic bezel, beige textile/leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tissotwatches.com/en-gb/T1214204705107.html",
+      "status": "validated_primary",
+      "note": "The official Tissot UK product page was checked on 2026-09-03 and confirms exact T121.420.47.051.07 identity, T-Touch Connect Solar 47.5mm, titanium/ceramic configuration, and connected solar multifunction family."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

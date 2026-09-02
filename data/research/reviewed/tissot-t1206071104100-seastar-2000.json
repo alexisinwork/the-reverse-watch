@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tissot-t1206071104100-seastar-2000",
+  "jobId": "8c235958-bcbd-4fd6-96ca-612a1649aff1",
+  "reviewedAt": "2026-09-03T23:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tissot",
+    "model": "Seastar 2000 Professional Powermatic 80",
+    "referenceCode": "T120.607.11.041.00",
+    "variantName": "Seastar 2000 Professional blue-gradient dial stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tissotwatches.com/en-us/T1206071104100.html",
+      "status": "validated_primary",
+      "note": "The official Tissot US product page was checked on 2026-09-03 and confirms exact T120.607.11.041.00 identity, Seastar 2000 46mm, automatic movement, steel bracelet, and ISO-certified 600 m dive configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}
