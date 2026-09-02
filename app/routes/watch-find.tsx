@@ -1,6 +1,12 @@
 import { createHash } from "node:crypto";
 
-import { Form, Link, redirect, useLoaderData } from "react-router";
+import {
+  Form,
+  Link,
+  redirect,
+  useActionData,
+  useLoaderData,
+} from "react-router";
 
 import type { Route } from "./+types/watch-find";
 import {
@@ -13,6 +19,8 @@ import {
   searchAcceptedDiscoveryRecords,
 } from "../domain/discovery-search.server";
 import { enqueueDiscoveryResearch } from "../domain/discovery-research-store.server";
+import { verifyFilmOrSeriesTitle } from "../domain/perplexity-title-verification.server";
+import type { TitleVerificationResponse } from "../domain/perplexity-title-verification.server";
 import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
 import {
   consumeRateLimit,
@@ -44,6 +52,34 @@ export async function loader({ request }: Route.LoaderArgs) {
 export async function action({ request }: Route.ActionArgs) {
   const form = await request.formData();
   if (form.get("website")) return new Response(null, { status: 204 });
+  if (form.get("intent") === "verify_work") {
+    const rawTitle = form.get("title");
+    const title = typeof rawTitle === "string" ? rawTitle : "";
+    if (title.trim().length < 2 || title.trim().length > 160)
+      return new Response(
+        "Enter an original title between 2 and 160 characters.",
+        { status: 400 },
+      );
+    const apiKey = process.env.PERPLEXITY_API_KEY?.trim();
+    if (!apiKey)
+      return new Response("Title verification is temporarily unavailable.", {
+        status: 503,
+      });
+    try {
+      return Response.json({
+        kind: "title_verification",
+        title,
+        result: await verifyFilmOrSeriesTitle(title, {
+          apiKey,
+          model: process.env.PERPLEXITY_RESEARCH_MODEL?.trim() || "sonar-pro",
+        }),
+      });
+    } catch {
+      return new Response("Title verification could not be completed.", {
+        status: 503,
+      });
+    }
+  }
   const anchor = discoveryAnchorSchema.safeParse(form.get("anchor"));
   const rawQuery = form.get("query");
   const query = typeof rawQuery === "string" ? rawQuery : "";
@@ -109,6 +145,13 @@ function rateLimitHeaders(decision: RateLimitDecision) {
 
 export default function WatchFind() {
   const { handoff, anchor, query, results } = useLoaderData<typeof loader>();
+  const actionData = useActionData<typeof action>() as
+    | {
+        kind: "title_verification";
+        title: string;
+        result: TitleVerificationResponse;
+      }
+    | undefined;
   return (
     <main className="discovery-shell">
       {anchor ? (
@@ -129,6 +172,56 @@ export default function WatchFind() {
         </p>
       </header>
       <section className="discovery-cta" aria-labelledby="find-anchor-heading">
+        <div className="discovery-search-form">
+          <h2 id="verify-title-heading">Start with an original title</h2>
+          <p>
+            We verify the film or series with Perplexity Sonar before asking
+            which character or actor to research.
+          </p>
+          <Form method="post" aria-labelledby="verify-title-heading">
+            <input name="intent" type="hidden" value="verify_work" />
+            <label htmlFor="original-title">Original title</label>
+            <input
+              id="original-title"
+              maxLength={160}
+              minLength={2}
+              name="title"
+              required
+              type="search"
+            />
+            <button type="submit">Verify title</button>
+          </Form>
+          {actionData &&
+          "kind" in actionData &&
+          actionData.kind === "title_verification" ? (
+            actionData.result.exists ? (
+              <div role="status">
+                <p>
+                  Verified title: {actionData.result.canonicalTitle} (
+                  {actionData.result.releaseYear ?? "year unknown"}).
+                </p>
+                <p>
+                  Now choose the character or actor whose watch attribution you
+                  want to find.
+                </p>
+                <Link
+                  to={`/watches/find?anchor=character&q=${encodeURIComponent(actionData.result.canonicalTitle)}`}
+                >
+                  Search fictional characters
+                </Link>{" "}
+                <Link
+                  to={`/watches/find?anchor=public_figure&q=${encodeURIComponent(actionData.result.canonicalTitle)}`}
+                >
+                  Search actors / public figures
+                </Link>
+              </div>
+            ) : (
+              <p role="status">
+                No source-backed film or series match was found for that title.
+              </p>
+            )
+          ) : null}
+        </div>
         <h2 id="find-anchor-heading">Choose an anchor</h2>
         <Form method="get" className="archetype-next-actions">
           <button name="anchor" type="submit" value="work">

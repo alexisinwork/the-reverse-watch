@@ -8,12 +8,18 @@ const { enqueueDiscoveryResearch, persistDiscoveryFunnelEvent } = vi.hoisted(
     persistDiscoveryFunnelEvent: vi.fn(),
   }),
 );
+const { verifyFilmOrSeriesTitle } = vi.hoisted(() => ({
+  verifyFilmOrSeriesTitle: vi.fn(),
+}));
 
 vi.mock("../domain/discovery-research-store.server", () => ({
   enqueueDiscoveryResearch,
 }));
 vi.mock("../domain/discovery-funnel-store.server", () => ({
   persistDiscoveryFunnelEvent,
+}));
+vi.mock("../domain/perplexity-title-verification.server", () => ({
+  verifyFilmOrSeriesTitle,
 }));
 
 import WatchFind, { action, loader } from "./watch-find";
@@ -38,7 +44,11 @@ it("renders an email-free accepted-record finder with validated handoff", async 
       name: "Find a watch through a story",
     }),
   ).toBeInTheDocument();
-  const anchors = screen.getAllByRole("button");
+  const anchors = [
+    screen.getByRole("button", { name: "Film or TV" }),
+    screen.getByRole("button", { name: "Actor or public figure" }),
+    screen.getByRole("button", { name: "Fictional character" }),
+  ];
   expect(anchors).toHaveLength(3);
   anchors.forEach((anchor) => expect(anchor).toBeEnabled());
   expect(screen.queryByLabelText(/email/i)).not.toBeInTheDocument();
@@ -56,6 +66,7 @@ describe("research intake action", () => {
     process.env.DISCOVERY_RESEARCH_RATE_LIMIT_WINDOW_SECONDS = "60";
     enqueueDiscoveryResearch.mockReset();
     persistDiscoveryFunnelEvent.mockReset();
+    verifyFilmOrSeriesTitle.mockReset();
     persistDiscoveryFunnelEvent.mockResolvedValue(false);
   });
 
@@ -116,5 +127,32 @@ describe("research intake action", () => {
     } as Parameters<typeof action>[0]);
     expect(response.status).toBe(204);
     expect(enqueueDiscoveryResearch).not.toHaveBeenCalled();
+  });
+
+  it("verifies an original title before the actor/character step", async () => {
+    process.env.PERPLEXITY_API_KEY = "provider-key";
+    verifyFilmOrSeriesTitle.mockResolvedValue({
+      exists: true,
+      canonicalTitle: "Inception",
+      releaseYear: 2010,
+      sources: ["https://www.britannica.com/topic/Inception"],
+    });
+    const form = new FormData();
+    form.set("intent", "verify_work");
+    form.set("title", "Inception");
+    const response = await action({
+      request: new Request("http://test.local/watches/find", {
+        method: "POST",
+        body: form,
+      }),
+    } as Parameters<typeof action>[0]);
+    expect(response.status).toBe(200);
+    const body: unknown = await response.json();
+    expect(body).toMatchObject({
+      kind: "title_verification",
+      result: { exists: true, canonicalTitle: "Inception" },
+    });
+    expect(verifyFilmOrSeriesTitle).toHaveBeenCalledTimes(1);
+    delete process.env.PERPLEXITY_API_KEY;
   });
 });
