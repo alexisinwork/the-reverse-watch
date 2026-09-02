@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T15:57:42.740Z",
+  "updatedAt": "2026-09-02T16:09:10.597Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2826,7 +2826,7 @@
         {
           "id": "nivada-grenchen-current-exact-field",
           "referenceLabel": "Select one current Nivada Grenchen mechanical field or dive watch with a full exact reference/SKU and one homogeneous configuration",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "1000_2000"
@@ -2891,7 +2891,7 @@
       "targets": [
         {
           "id": "fortis-current-exact-tool",
-          "referenceLabel": "Select one current Fortis mechanical tool watch with a full exact reference/SKU and one homogeneous configuration",
+          "referenceLabel": "Resolve Fortis Marinemaster M-40 exact reference: Perplexity proposed F8120028, but the current official card shows F8120024",
           "state": "planned",
           "coverageIntent": {
             "priceBands": [
@@ -2901,7 +2901,7 @@
               "simple_date"
             ]
           },
-          "coverageRationale": "Find a current source-verifiable Fortis tool configuration with an exact reference rather than a family label."
+          "coverageRationale": "Hold until the Fortis reference conflict is resolved against the current manufacturer card; do not treat F8120028 as confirmed while the official page identifies F8120024."
         }
       ]
     },
@@ -3124,7 +3124,7 @@
         {
           "id": "muhle-glashutte-current-exact-tool",
           "referenceLabel": "Select one current Mühle-Glashütte mechanical tool or field watch with a full exact reference/SKU and one homogeneous configuration",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"

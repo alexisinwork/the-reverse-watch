@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "nivada-grenchen-current-exact-field",
+  "jobId": "2f253571-a0c1-4dd1-b102-feee358cb2d2",
+  "reviewedAt": "2026-09-02T16:35:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Nivada Grenchen",
+    "model": "Antarctic Spider 38mm Automatic",
+    "referenceCode": "32023A",
+    "variantName": "Antarctic Spider 38mm Automatic on steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://nivadagrenchenofficial.com/products/antarctic-spider",
+      "status": "validated_primary",
+      "note": "The official Nivada Grenchen product page was checked on 2026-09-02 and confirms the Antarctic Spider product family and steel-bracelet configuration; the exact reference 32023A is retained from the validated Perplexity extraction pending field-level review."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

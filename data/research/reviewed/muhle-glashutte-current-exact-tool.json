@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "muhle-glashutte-current-exact-tool",
+  "jobId": "08db093c-826a-42ec-a0fe-10f3b8ebf520",
+  "reviewedAt": "2026-09-02T16:35:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Mühle-Glashütte",
+    "model": "S.A.R. Rescue-Timer LUMEN",
+    "referenceCode": "M1-41-08-KB",
+    "variantName": "S.A.R. Rescue-Timer LUMEN with rubber strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.muehle-glashuette.de/en/watch/s-a-r-rescue-timer-lumen-rubber-strap/",
+      "status": "validated_primary",
+      "note": "The official Mühle-Glashütte product URL was checked on 2026-09-02; the exact M1-41-08-KB reference and configuration are corroborated by the manufacturer's official technical catalog."
+    },
+    {
+      "url": "https://www.muehle-glashuette.de/wp-content/uploads/Muehle_WW_2022.pdf",
+      "status": "validated_primary",
+      "note": "The manufacturer's official catalog explicitly lists S.A.R. Rescue-Timer LUMEN rubber configuration M1-41-08-KB and its technical boundary."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

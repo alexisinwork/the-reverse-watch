@@ -307,6 +307,22 @@ responses and remain planned rather than being populated with guesses. The
 manifest now reports 106 `needs_review` targets and 169 review artifacts;
 accepted catalogue rows remain unchanged.
 
+## Eighth parallel exact-reference batch (retrieved 2026-09-02)
+
+Isolated Perplexity retries produced two additional exact candidates, each
+checked against official manufacturer material:
+
+- Nivada Grenchen Antarctic Spider 38mm Automatic `32023A` — [official product page](https://nivadagrenchenofficial.com/products/antarctic-spider).
+- Mühle-Glashütte S.A.R. Rescue-Timer LUMEN `M1-41-08-KB` — [official product page](https://www.muehle-glashuette.de/en/watch/s-a-r-rescue-timer-lumen-rubber-strap/) and [official technical catalog](https://www.muehle-glashuette.de/wp-content/uploads/Muehle_WW_2022.pdf).
+
+Both remain research-only `needs_more_evidence`; exact identity and
+manufacturer provenance are recorded, while unresolved M1 facts remain null.
+Fortis was intentionally not promoted: Perplexity proposed `F8120028`, while
+the current official Marinemaster page identifies `F8120024`; that reference
+conflict remains planned for resolution. The manifest now reports 108
+`needs_review` targets and 171 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge
