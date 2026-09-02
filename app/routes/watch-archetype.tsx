@@ -163,11 +163,6 @@ export default function WatchArchetype() {
 
       {result.status === "complete" ? (
         <>
-          <header className="discovery-header archetype-result-header">
-            <span className="eyebrow">Editorial archetype</span>
-            <h1>{result.archetype.title}</h1>
-            <p>{result.archetype.strapline}</p>
-          </header>
           <section
             className={`archetype-card archetype-card-${result.archetype.id}`}
             aria-labelledby="archetype-card-title"
