@@ -512,6 +512,16 @@ Checks:
 
 Exit: route/unit tests and `npm run check` pass.
 
+#### D1 implementation record
+
+The archetype result now presents two equal continuations: the existing full
+diagnostic receives only validated social and aesthetic preferences, while the
+new `/watches/find` shell receives the same optional editorial context. The
+finder has exactly three disabled anchor choices until D3 supplies accepted
+local search. It requests no email, invokes no provider, and writes no data.
+The archive remains a tertiary browse link. Rollback is a single route and CTA
+removal; no persisted state or migration is involved.
+
 ### D2 — Establish canonical database parity
 
 Scope:

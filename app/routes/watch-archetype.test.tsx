@@ -57,13 +57,19 @@ describe("watch archetype route", () => {
       screen.getByRole("button", { name: "Share this result" }),
     ).toBeInTheDocument();
     const handoff = screen.getByRole("link", {
-      name: "Continue to the reference diagnostic",
+      name: "Find the right watch for me",
     });
     expect(handoff).toHaveAttribute(
       "href",
       "/quiz?source=archetype&socialSignal=anti_luxury&aestheticDna=structural_tool",
     );
     expect(screen.getByText(/No email is required/)).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Find a watch from film and culture" }),
+    ).toHaveAttribute(
+      "href",
+      "/watches/find?socialSignal=anti_luxury&aestheticDna=structural_tool",
+    );
   });
 
   it("renders an additional versioned archetype result", async () => {

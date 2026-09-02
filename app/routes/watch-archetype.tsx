@@ -11,6 +11,7 @@ import {
   parseArchetypeSearch,
   type ArchetypeId,
 } from "../domain/discovery-archetype";
+import { discoveryHandoffSchema } from "../domain/discovery-selection";
 import { sendDiscoveryAnalyticsEvent } from "../domain/discovery-analytics";
 import "../styles/discovery.css";
 
@@ -196,23 +197,30 @@ export default function WatchArchetype() {
             />
           ) : null}
           <aside className="discovery-cta" aria-labelledby="archetype-next">
-            <h2 id="archetype-next">Turn direction into a real shortlist</h2>
+            <h2 id="archetype-next">Choose your next direction</h2>
             <p>
               The full diagnostic carries forward only the validated social and
               aesthetic preferences. It still asks you to confirm exact budget,
               wrist size, operating context, and every active hard constraint.
             </p>
-            <Link
-              onClick={() =>
-                sendDiscoveryAnalyticsEvent({
-                  name: "core_handoff",
-                  archetypeId: result.archetype.id,
-                })
-              }
-              to={buildCoreQuizHandoff(result.answers)}
-            >
-              Continue to the reference diagnostic
-            </Link>
+            <div className="archetype-next-actions">
+              <Link
+                onClick={() =>
+                  sendDiscoveryAnalyticsEvent({
+                    name: "core_handoff",
+                    archetypeId: result.archetype.id,
+                  })
+                }
+                to={buildCoreQuizHandoff(result.answers)}
+              >
+                Find the right watch for me
+              </Link>
+              <Link
+                to={`/watches/find?${new URLSearchParams(discoveryHandoffSchema.parse({ socialSignal: result.answers.socialSignal, aestheticDna: result.answers.aestheticDna })).toString()}`}
+              >
+                Find a watch from film and culture
+              </Link>
+            </div>
           </aside>
           <p className="archetype-boundary">
             No email is required for this result. Newsletter and dossier consent
@@ -220,6 +228,9 @@ export default function WatchArchetype() {
           </p>
           <Link className="archetype-retake" to="/watches/archetype">
             Retake the archetype quiz
+          </Link>
+          <Link className="archetype-retake" to="/watches">
+            Browse the archive
           </Link>
         </>
       ) : (

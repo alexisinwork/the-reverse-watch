@@ -9,6 +9,7 @@ export default [
   route("health", "routes/health.ts"),
   route("watches", "routes/watches.tsx"),
   route("watches/archetype", "routes/watch-archetype.tsx"),
+  route("watches/find", "routes/watch-find.tsx"),
   route("watches/people/:entitySlug", "routes/watch-entity.tsx"),
   route("watches/works/:workSlug", "routes/watch-work.tsx"),
   route("watches/stories/:storySlug", "routes/watch-story.tsx"),
