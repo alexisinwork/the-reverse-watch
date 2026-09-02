@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:58:28.584Z",
+  "updatedAt": "2026-09-02T21:02:05.771Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2422,6 +2422,62 @@
             ]
           },
           "coverageRationale": "Exact Tsuyosa reference confirmed on Citizen's product page; isolate the NJ0150-56E black-dial steel-bracelet configuration from other NJ0150 colour variants."
+        },
+        {
+          "id": "citizen-bm8180-03e",
+          "referenceLabel": "Citizen Eco-Drive Chandler exact reference BM8180-03E",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Eco-Drive Chandler BM8180-03E as an affordable solar field reference; verify the exact current dial, strap, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "citizen-nj0150-81z-tsuyosa",
+          "referenceLabel": "Citizen Tsuyosa 40 exact reference NJ0150-81Z",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the standard Tsuyosa 40 NJ0150-81Z as a core integrated-bracelet automatic reference; verify the exact dial, bracelet, and current manufacturer evidence separately from NJ0150-56E."
+        },
+        {
+          "id": "citizen-nj0180-80x-zenshin",
+          "referenceLabel": "Citizen Zenshin Mechanical exact reference NJ0180-80X",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Super Titanium Zenshin Mechanical NJ0180-80X as a lightweight automatic reference; verify the exact current configuration and M1 evidence before cataloguing."
+        },
+        {
+          "id": "citizen-na1010-84x-series-8-831",
+          "referenceLabel": "Citizen Series 8 831 exact reference NA1010-84X",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Series 8 831 NA1010-84X as a compact antimagnetic automatic reference; verify the exact current dial, bracelet, and manufacturer evidence before cataloguing."
         }
       ]
     },

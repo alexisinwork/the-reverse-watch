@@ -1,0 +1,55 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-bm8180-03e",
+  "jobId": "d1cfd75d-fb7d-4b59-b222-d2c2f867321a",
+  "reviewedAt": "2026-09-03T21:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Eco-Drive Chandler",
+    "referenceCode": "BM8180-03E",
+    "variantName": "Black dial field watch"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizenwatch.com/us/en/product/BM8180-03E.html",
+      "status": "rejected",
+      "note": "The official URL was checked on 2026-09-03 and confirms the BM8180-03E code and many technical fields, but its current rendered card calls the watch Garrison and labels the movement E101, creating a nomenclature/specification conflict with the Chandler dossier and retailer evidence."
+    },
+    {
+      "url": "https://www.kohls.com/product/prd-514771/citizen-watch-mens-eco-drive-bm8180-03e.jsp",
+      "status": "validated_secondary",
+      "note": "The exact-reference retailer page identifies BM8180-03E as Eco-Drive Chandler; it is retained as secondary identity evidence pending resolution of the official-page naming conflict."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "model",
+      "reason": "The exact official URL currently renders the same BM8180-03E code under the name Garrison, while the exact-reference retailer and dossier use Chandler; model naming is not promoted until the conflict is resolved."
+    },
+    {
+      "fieldName": "variantName",
+      "reason": "The official and secondary cards disagree on the family/model naming attached to BM8180-03E; the black-dial configuration is retained only as provisional context."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; the reference code is confirmed, but the Chandler/Garrison naming conflict and M1 evidence gate prevent promotion."
+}

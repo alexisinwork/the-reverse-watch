@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-na1010-84x-series-8-831",
+  "jobId": "7d42191d-f1c5-4b07-bc65-f15f0b32fe1d",
+  "reviewedAt": "2026-09-03T21:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Series 8 831 Mechanical",
+    "referenceCode": "NA1010-84X",
+    "variantName": "Blue dial on silver stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizen.com.ph/html/en/news/what-s-news/series8.html",
+      "status": "validated_primary",
+      "note": "The official Citizen corporate Series 8 release page was checked on 2026-09-03 and identifies NA1010-84X within the 831 family; it is a manufacturer announcement rather than a live exact-reference commerce page."
+    },
+    {
+      "url": "https://www.citizenwatch.com/us/en/collection/series8/",
+      "status": "validated_primary",
+      "note": "The official U.S. Series 8 collection route corroborates the active 831 family context, but a dedicated current NA1010-84X product card was not located."
+    },
+    {
+      "url": "https://www.deployant.com/new-and-reviewed-citizen-series-8-the-hands-on-in-depth-review/",
+      "status": "validated_secondary",
+      "note": "The specialist review corroborates the exact NA1010-84X model and blue-dial bracelet context; it does not replace the missing live factory product card."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; identity is corroborated by official family material and exact-reference secondary evidence, but no live exact factory product page or M1 facts are promoted."
+}

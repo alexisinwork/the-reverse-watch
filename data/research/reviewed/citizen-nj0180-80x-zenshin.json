@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-nj0180-80x-zenshin",
+  "jobId": "6817af4a-2369-4fdc-8c68-68ff9acaadf7",
+  "reviewedAt": "2026-09-03T21:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Zenshin Mechanical",
+    "referenceCode": "NJ0180-80X",
+    "variantName": "Super Titanium automatic, green dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://citizenwatch.eu/en/p/nj0180-80x/",
+      "status": "validated_primary",
+      "note": "The official Citizen Europe product page was checked on 2026-09-03 and confirms NJ0180-80X, green dial, Super Titanium case and bracelet, automatic 8213 movement, sapphire, 10 bar rating, 40.5 mm diameter, and exact product identity."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

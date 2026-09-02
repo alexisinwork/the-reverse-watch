@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-nj0150-81z-tsuyosa",
+  "jobId": "fd1608b1-f96c-47f0-9d94-9e61c5bc62d5",
+  "reviewedAt": "2026-09-03T21:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Tsuyosa Automatic 40",
+    "referenceCode": "NJ0150-81Z",
+    "variantName": "Yellow dial on integrated stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizenwatches.co.in/products/mechanical/nj0150-81z",
+      "status": "validated_primary",
+      "note": "The official Citizen India page was checked on 2026-09-03 and confirms NJ0150-81Z, yellow dial, automatic 8210-C0P movement, stainless-steel band, and reference-specific product identity."
+    },
+    {
+      "url": "https://citizenwatch.eu/en/p/nj0150-81z/",
+      "status": "validated_primary",
+      "note": "The official Citizen Europe route corroborates the NJ0150-81Z Tsuyosa 40 family and integrated-bracelet configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

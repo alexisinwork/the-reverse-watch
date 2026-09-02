@@ -194,6 +194,20 @@ rows were promoted. The manifest now reports 261 `needs_review` targets, one
 `planned` target, and 324 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Fifty-fourth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four Citizen references returned schema-valid Perplexity results:
+
+- Eco-Drive `BM8180-03E` — the exact code is present on [Citizen's current product URL](https://www.citizenwatch.com/us/en/product/BM8180-03E.html), but that page currently renders the name Garrison while the exact-reference retailer evidence says Chandler. The nomenclature conflict remains unresolved.
+- Tsuyosa Automatic `NJ0150-81Z` — [official Citizen India evidence](https://www.citizenwatches.co.in/products/mechanical/nj0150-81z) and [official European corroboration](https://citizenwatch.eu/en/p/nj0150-81z/) confirm the yellow-dial integrated-bracelet reference.
+- Zenshin Mechanical `NJ0180-80X` — [official Citizen Europe page](https://citizenwatch.eu/en/p/nj0180-80x/) confirms the Super Titanium green-dial reference.
+- Series 8 831 `NA1010-84X` — [official corporate family material](https://www.citizen.com.ph/html/en/news/what-s-news/series8.html) and [specialist exact-reference evidence](https://www.deployant.com/new-and-reviewed-citizen-series-8-the-hands-on-in-depth-review/) corroborate the model; no current dedicated factory product card was located.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 265 `needs_review` targets, one
+`planned` target, and 328 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## High-priority cross-brand exact candidates (retrieved 2026-09-02)
 
 The next parallel research batch added nine exact candidates from brands that
