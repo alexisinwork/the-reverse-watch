@@ -24,6 +24,8 @@ create table private.movie_watch_intake (
   updated_at timestamptz not null default now()
 );
 
+alter table private.movie_watch_intake enable row level security;
+
 create index movie_watch_intake_title_idx
   on private.movie_watch_intake (title_display, year_start);
 
