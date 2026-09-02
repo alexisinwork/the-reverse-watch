@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "czapek-promenade-transparence-bleu",
+  "jobId": "7bac4c35-f8fd-4269-b816-4ed1b07c2371",
+  "reviewedAt": "2026-09-02T20:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Czapek & Cie.",
+    "model": "Promenade Transparencies Aqua Blue",
+    "referenceCode": "Promenade Transparence Bleu",
+    "variantName": "Promenade Transparence Bleu"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.czapek.com/shop/promenade-transparence-bleu-7077",
+      "status": "validated_primary",
+      "note": "Czapek's official product page was checked on 2026-09-02 and confirms the Promenade Transparence Bleu current configuration. Czapek's public card uses the model/product identifier but does not expose a separate manufacturer SKU; the identifier is retained as a product label and not treated as an invented reference code."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. Exact Czapek product identity and official URL are confirmed; no separate manufacturer SKU is published on the checked card and all M1 facts remain provisional."
+}

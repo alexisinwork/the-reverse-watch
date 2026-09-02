@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "de-bethune-db28xs-aerolite-db28xszm",
+  "jobId": "7002ded1-35e4-49d0-9d8d-fa0a3d7cc936",
+  "reviewedAt": "2026-09-02T20:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "De Bethune",
+    "model": "DB28xs Aérolite",
+    "referenceCode": "DB28XSZM",
+    "variantName": "DB28xs Aérolite"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.debethune.ch/wp-content/uploads/2024/08/DB28xs_Aerolite_technical_specifications_EN.pdf",
+      "status": "validated_primary",
+      "note": "De Bethune's official technical specification PDF was checked on 2026-09-02 and confirms the DB28xs Aérolite name, reference DB28XSZM, DB2005 hand-wound movement, six-day reserve, 38.7mm case, zirconium case material, and hours/minutes configuration."
+    },
+    {
+      "url": "https://www.debethune.ch/collections/db28xs/",
+      "status": "validated_primary",
+      "note": "The official DB28XS collection page was checked on 2026-09-02 and confirms the family as a current collection with 38.7mm, hand-wound, time-and-power-reserve/tourbillon variants; specific stock status for Aérolite remains unresolved."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact De Bethune reference and primary-source evidence are confirmed; current availability and complete M1 facts remain unresolved."
+}

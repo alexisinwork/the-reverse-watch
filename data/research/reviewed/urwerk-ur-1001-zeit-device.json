@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "urwerk-ur-1001-zeit-device",
+  "jobId": "12e1a079-1f61-4039-8b28-08c2c5b7f136",
+  "reviewedAt": "2026-09-02T20:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "URWERK",
+    "model": "UR-1001 Zeit Device",
+    "referenceCode": "UR-1001",
+    "variantName": "Zeit Device AlTiN"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.urwerk.com/collections/ur-special-projects/ur-1001",
+      "status": "validated_primary",
+      "note": "URWERK's official page was checked on 2026-09-02 and confirms the UR-1001 Zeit Device model/reference, revolving satellite calendar, wandering-hour and retrograde-minute display, 39-hour reserve, UR-10.01 self-winding calibre, 106 x 62 x 23mm dimensions, and 3 ATM rating. The page lists Zeit Device as a variation and does not publish a separate SKU."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact URWERK model/reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:56:29.433Z",
+  "updatedAt": "2026-09-02T17:03:23.625Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2737,7 +2737,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "kari-voutilainen-28mpr",
+          "referenceLabel": "Kari Voutilainen 28MPR current official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Current official Voutilainen page identifies the 28MPR with moonphase and power-reserve indications; verify exact material variant, availability, reference status, and M1 fields."
+        }
+      ]
     },
     {
       "slug": "urwerk",
@@ -2754,7 +2769,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "urwerk-ur-1001-zeit-device",
+          "referenceLabel": "URWERK UR-1001 Zeit Device current official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Current official URWERK page identifies the UR-1001 Zeit Device and its astronomical calendar/time indications; verify the exact variant reference and M1 fields."
+        }
+      ]
     },
     {
       "slug": "de-bethune",
@@ -2771,7 +2801,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "de-bethune-db28xs-aerolite-db28xszm",
+          "referenceLabel": "De Bethune DB28xs Aérolite exact reference DB28XSZM",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Official De Bethune technical material identifies the DB28xs Aérolite and reference DB28XSZM; verify current availability and complete M1 fields before catalogue consideration."
+        }
+      ]
     },
     {
       "slug": "czapek",
@@ -2788,7 +2833,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "czapek-promenade-transparence-bleu",
+          "referenceLabel": "Czapek & Cie. Promenade Transparence Bleu current official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Czapek product page identifies the Promenade Transparence Bleu configuration; verify a manufacturer reference/SKU and complete M1 fields before catalogue consideration."
+        }
+      ]
     },
     {
       "slug": "arnold-son",

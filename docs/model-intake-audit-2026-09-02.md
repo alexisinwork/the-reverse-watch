@@ -499,6 +499,21 @@ and no catalogue rows were added. The manifest now reports 135
 `needs_review` targets and 198 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Twentieth parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional high-horology model identities were sent through the
+Perplexity worker and checked against primary manufacturer material:
+
+- Kari Voutilainen 28MPR — [official model page](https://www.voutilainen.ch/portfolio/28mpr/) and [official order-status notice](https://www.voutilainen.ch/the-ultimate-vingt-8-28mpr/). The model and three 15-piece material editions are confirmed, but the manufacturer states that orders closed after 2025-12-31; no current-availability claim is made.
+- URWERK UR-1001 Zeit Device `UR-1001` — [official product page](https://www.urwerk.com/collections/ur-special-projects/ur-1001). The exact model/reference and Zeit Device variation are confirmed; the manufacturer does not publish a separate SKU on the page.
+- De Bethune DB28xs Aérolite `DB28XSZM` — [official technical specification](https://www.debethune.ch/wp-content/uploads/2024/08/DB28xs_Aerolite_technical_specifications_EN.pdf) and [DB28XS collection](https://www.debethune.ch/collections/db28xs/). The exact reference and primary technical provenance are confirmed; stock status is unresolved.
+- Czapek & Cie. Promenade Transparence Bleu — [official product page](https://www.czapek.com/shop/promenade-transparence-bleu-7077). The exact current product identity is confirmed, but no separate manufacturer SKU is published on the checked card.
+
+All four remain research-only `needs_more_evidence`; no catalogue rows were
+added and unresolved M1 facts remain null. The manifest now reports 139
+`needs_review` targets and 202 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

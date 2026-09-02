@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "kari-voutilainen-28mpr",
+  "jobId": "6191090e-c352-4e2b-88e4-fdec79a7d93c",
+  "reviewedAt": "2026-09-02T20:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Kari Voutilainen",
+    "model": "28MPR",
+    "referenceCode": "28MPR",
+    "variantName": "The Ultimate Vingt-8 – 28MPR Steel"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.voutilainen.ch/portfolio/28mpr/",
+      "status": "validated_primary",
+      "note": "Voutilainen's official 28MPR page was checked on 2026-09-02 and confirms the model, moonphase and power-reserve indications, 37.5mm case, VINGT-8 in-house movement, 65-hour reserve, and three limited editions of 15 pieces in steel, platinum, and titanium."
+    },
+    {
+      "url": "https://www.voutilainen.ch/the-ultimate-vingt-8-28mpr/",
+      "status": "validated_primary",
+      "note": "The official Voutilainen notice was checked on 2026-09-02 and states that orders for the 28MPR and related Vingt-8 models closed after 2025-12-31; current availability is therefore not asserted."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact model and official URL are confirmed, but orders are closed and complete field-level M1 evidence is not yet assembled; no current-availability claim is made."
+}
