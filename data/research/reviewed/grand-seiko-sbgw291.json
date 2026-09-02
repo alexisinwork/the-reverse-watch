@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "grand-seiko-sbgw291",
+  "jobId": "0b741fb1-51e4-4b3b-8151-de9a05f4111b",
+  "reviewedAt": "2026-09-04T06:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Grand Seiko",
+    "model": "Heritage Collection 44GS Mechanical",
+    "referenceCode": "SBGW291",
+    "variantName": "Heritage 44GS Kuuki, silver sunray dial, stainless steel case with crocodile leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.grand-seiko.com/us-en/collections/sbgw291g",
+      "status": "validated_primary",
+      "note": "The official Grand Seiko US product page was checked on 2026-09-04 and confirms the exact SBGW291 reference, Heritage Collection 44GS identity, silver-colored dial, 36.5 mm case, manual-winding 9S64 movement, 10 bar water resistance, 66 g weight, and current USD 5,300 listing."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact reference and official technical page are confirmed; M1 facts remain unpromoted until field-level evidence is reviewed and reconciled."
+}

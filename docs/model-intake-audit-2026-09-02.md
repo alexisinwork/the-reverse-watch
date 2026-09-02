@@ -1223,3 +1223,13 @@ The exact white-gold, black-dial automatic-date identity is confirmed; the
 manufacturer marks it discontinued. It remains research-only
 `needs_more_evidence`, with no M1 facts or catalogue row promoted. Only
 Grand Seiko `SBGW291` remains `planned`.
+
+## Sixty-seventh Grand Seiko retry (retrieved 2026-09-04)
+
+The final planned target, Grand Seiko Heritage 44GS `SBGW291`, produced a
+schema-valid Perplexity result on the seventeenth overall attempt and was
+checked against the [official Grand Seiko product page](https://www.grand-seiko.com/us-en/collections/sbgw291g).
+The exact identity is confirmed, including the 36.5 mm case, manual-winding
+9S64 movement, 10 bar water resistance, 66 g weight, and current listing. It
+remains research-only `needs_more_evidence`; no M1 facts or catalogue row were
+promoted.

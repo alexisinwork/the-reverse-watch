@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T22:29:55.835Z",
+  "updatedAt": "2026-09-02T22:33:12.387Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1502,7 +1502,7 @@
         {
           "id": "grand-seiko-sbgw291",
           "referenceLabel": "Grand Seiko Heritage 44GS exact reference SBGW291",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
