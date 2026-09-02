@@ -15,27 +15,116 @@
     {
       "url": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
       "status": "validated_primary",
-      "note": "Rolex official product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 127234-0001. Perplexity extraction remains provisional for all non-identity fields."
+      "note": "Rolex official product page was rechecked on 2026-09-03 and confirms the exact 127234-0001 configuration plus its current US price, 36 mm White Rolesor case, calibre 7135, -2/+2 seconds/day precision, 100 m water resistance, approximately 66-hour reserve, Flat Jubilee bracelet, and date display."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1535000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The exact official US page lists $15,350; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The exact official page quotes the current US price in USD."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "White Rolesor (Oystersteel and white gold)",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official technical details specify a White Rolesor Oyster case combining Oystersteel and white gold."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 36,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official technical details specify a 36 mm case diameter."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official page identifies the movement as mechanical and self-winding."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "7135",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official page identifies Manufacture Rolex calibre 7135."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 66,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official page specifies approximately 66 hours; the numeric value is retained as the manufacturer's stated approximation."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official Superlative Chronometer specification states -2 seconds/day after casing."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official Superlative Chronometer specification states +2 seconds/day after casing."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official page specifies water resistance to 100 m."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "scratch-resistant sapphire",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official page specifies scratch-resistant sapphire crystal with a Cyclops lens over the date."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "Flat Jubilee bracelet",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The exact configuration is fitted with the Flat Jubilee bracelet and concealed Crownclasp."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127234-0001",
+      "note": "The official functions list includes an instantaneous date with rapid setting."
+    }
+  ],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
     "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
-    "accuracy",
-    "waterResistanceM",
-    "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "lumeGrade"
   ],
-  "note": "Research-only identity review. The exact current Rolex reference and official product URL are confirmed, while all physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+  "note": "Research-only model review; the exact current reference, price, 36 mm White Rolesor case, calibre 7135, Superlative Chronometer precision, 100 m resistance, Flat Jubilee bracelet, and date display are confirmed by Rolex. Remaining case geometry, configured weight, and specific lume grade remain unverified."
 }

@@ -15,27 +15,116 @@
     {
       "url": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
       "status": "validated_primary",
-      "note": "Rolex official product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 124200-0007. Perplexity extraction remains provisional for all non-identity fields."
+      "note": "Rolex official product page was rechecked on 2026-09-03 and confirms the exact 124200-0007 configuration plus its current US price, 34 mm Oystersteel case, calibre 2232, -2/+2 seconds/day precision, 100 m water resistance, approximately 55-hour reserve, Oyster bracelet, and no-date display."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 640000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The exact official US page lists $6,400; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The exact official page quotes the current US price in USD."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "Oystersteel",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official technical details specify an Oystersteel Oyster case."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 34,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official technical details specify a 34 mm case diameter."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official page identifies the movement as mechanical and self-winding."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "2232",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official page identifies Manufacture Rolex calibre 2232."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 55,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official page specifies approximately 55 hours; the numeric value is retained as the manufacturer's stated approximation."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official Superlative Chronometer specification states -2 seconds/day after casing."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official Superlative Chronometer specification states +2 seconds/day after casing."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official page specifies water resistance to 100 m."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "scratch-resistant sapphire",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official page specifies scratch-resistant sapphire crystal."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "Oyster bracelet",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The exact configuration is fitted with a three-piece Oyster bracelet and Oysterclasp."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007",
+      "note": "The official functions list includes only centre hour, minute, and seconds hands, with no date display."
+    }
+  ],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
     "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
-    "accuracy",
-    "waterResistanceM",
-    "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "lumeGrade"
   ],
-  "note": "Research-only identity review. The exact current Rolex reference and official product URL are confirmed, while all physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+  "note": "Research-only model review; the exact current reference, price, 34 mm Oystersteel case, calibre 2232, Superlative Chronometer precision, 100 m resistance, Oyster bracelet, and no-date display are confirmed by Rolex. Remaining case geometry, configured weight, and specific lume grade remain unverified."
 }

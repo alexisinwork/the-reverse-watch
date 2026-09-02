@@ -1341,3 +1341,18 @@ was corroborated by an exact-model technical article, adding 45.3 mm
 lug-to-lug, 20 mm lug width, 5 ATM water resistance, and a dated EUR 19,999
 MSRP observation. Super-LumiNova is recorded only as a material mention; no
 specific lume grade is invented.
+
+## Seventy-fourth Rolex field-level recheck (retrieved 2026-09-03)
+
+Four exact current Rolex product pages were rechecked and their field-level
+facts were added to the research reviews without catalogue promotion:
+
+- [Day-Date 40 `228236-0007`](https://www.rolex.com/en-us/watches/day-date/m228236-0007): US MSRP $68,800, 40 mm platinum case, calibre 3255, -2/+2 sec/day, 100 m, approximately 70-hour reserve, President bracelet, and day/date.
+- [Land-Dweller 36 `127234-0001`](https://www.rolex.com/en-us/watches/land-dweller/m127234-0001): US MSRP $15,350, 36 mm White Rolesor case, calibre 7135, -2/+2 sec/day, 100 m, approximately 66-hour reserve, Flat Jubilee bracelet, and date.
+- [GMT-Master II `126718GRNR-0001`](https://www.rolex.com/en-us/watches/gmt-master-ii/m126718grnr-0001): US MSRP $50,800, 40 mm 18 kt yellow-gold case, calibre 3285, -2/+2 sec/day, 100 m, approximately 70-hour reserve, Jubilee bracelet, and date.
+- [Oyster Perpetual 34 `124200-0007`](https://www.rolex.com/en-us/watches/oyster-perpetual/m124200-0007): US MSRP $6,400, 34 mm Oystersteel case, calibre 2232, -2/+2 sec/day, 100 m, approximately 55-hour reserve, Oyster bracelet, and no date.
+
+In each case the source confirms the exact suffix URL and the listed
+configuration. Remaining case-width/length/thickness, lug geometry, full
+configured weight, and specific lume-grade fields remain null where Rolex's
+page does not publish them.
