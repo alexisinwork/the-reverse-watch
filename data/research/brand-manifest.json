@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T13:57:01.727Z",
+  "updatedAt": "2026-09-02T13:59:58.245Z",
   "brands": [
     {
       "slug": "rolex",
@@ -620,7 +620,7 @@
         {
           "id": "rolex-gmt-master-ii-126718grnr-0001",
           "referenceLabel": "Rolex GMT-Master II exact yellow-gold Jubilee reference 126718GRNR-0001",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
