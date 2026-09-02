@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "formex-current-exact-everyday",
+  "jobId": "1b00c560-2bbd-4f88-a904-5cada77c5ada",
+  "reviewedAt": "2026-09-02T17:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Formex",
+    "model": "Essence ThirtyNine Automatic Chronometer Black Pearl",
+    "referenceCode": "0339.1.6641.101",
+    "variantName": "Essence ThirtyNine Automatic Chronometer Black Pearl on stainless steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://formexwatch.com/watches/essence-39-automatic-chronometer-black-pearl/",
+      "status": "validated_primary",
+      "note": "The official Formex product page was checked on 2026-09-02 and confirms the current Black Pearl 39 mm configuration and SKU 0339.1.6641.101. Perplexity's URL-like referenceCode is retained as its raw identity output; the manufacturer SKU is the exact product identifier for follow-up."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

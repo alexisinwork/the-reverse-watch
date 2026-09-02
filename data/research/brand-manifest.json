@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:09:10.597Z",
+  "updatedAt": "2026-09-02T16:15:50.820Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2891,7 +2891,7 @@
       "targets": [
         {
           "id": "fortis-current-exact-tool",
-          "referenceLabel": "Resolve Fortis Marinemaster M-40 exact reference: Perplexity proposed F8120028, but the current official card shows F8120024",
+          "referenceLabel": "Fortis Marinemaster M-40 exact reference F8120024; verify the current official configuration and distinguish it from the rejected F8120028 proposal",
           "state": "planned",
           "coverageIntent": {
             "priceBands": [
@@ -2901,7 +2901,7 @@
               "simple_date"
             ]
           },
-          "coverageRationale": "Hold until the Fortis reference conflict is resolved against the current manufacturer card; do not treat F8120028 as confirmed while the official page identifies F8120024."
+          "coverageRationale": "Resolve the previous Perplexity F8120028 mismatch against the current Fortis manufacturer card, which identifies the Marinemaster M-40 as F8120024."
         }
       ]
     },
@@ -4247,7 +4247,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 16
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "zelos-current-exact-dive",
+          "referenceLabel": "Zelos Swordfish Ti 42mm Frost exact reference Swordfish-Ti-42-Frost",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Find a current source-verifiable Zelos dive configuration without treating a collection family as an exact reference."
+        }
+      ]
     },
     {
       "slug": "formex",
@@ -4264,7 +4279,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 17
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "formex-current-exact-everyday",
+          "referenceLabel": "Formex Essence ThirtyNine Automatic Chronometer Black Pearl exact SKU 0339.1.6641.101",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Find a current source-verifiable Formex everyday configuration with exact reference evidence."
+        }
+      ]
     },
     {
       "slug": "traska",
@@ -4281,7 +4311,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 20
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "traska-current-exact-field",
+          "referenceLabel": "Traska Summiteer 38 Charcoal Black exact generation/reference 2196",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Find a current source-verifiable Traska field configuration while preserving generation, size, color, and attachment boundaries."
+        }
+      ]
     },
     {
       "slug": "lorier",

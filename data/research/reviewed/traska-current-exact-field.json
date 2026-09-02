@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "traska-current-exact-field",
+  "jobId": "2e8363c7-0edd-428f-ae51-2fcdf91ec945",
+  "reviewedAt": "2026-09-02T17:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Traska",
+    "model": "Summiteer",
+    "referenceCode": "2196",
+    "variantName": "Charcoal Black"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.traskawatch.com/products/summiteer-38-charcoal-black",
+      "status": "validated_primary",
+      "note": "The official Traska product page and reference-points page were checked on 2026-09-02 and confirm the current Summiteer 38 Charcoal Black configuration and sixth-generation reference 2196. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

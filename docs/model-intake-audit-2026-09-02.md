@@ -323,6 +323,20 @@ conflict remains planned for resolution. The manifest now reports 108
 `needs_review` targets and 171 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Ninth parallel exact-reference batch (retrieved 2026-09-02)
+
+Three more current configurations were found by Perplexity and checked against
+official manufacturer pages:
+
+- Zelos Swordfish Ti 42mm Frost `Swordfish-Ti-42-Frost` — [official card](https://zeloswatches.com/products/swordfish-ti-42mm-frost).
+- Formex Essence ThirtyNine Automatic Chronometer Black Pearl `0339.1.6641.101` — [official card](https://formexwatch.com/watches/essence-39-automatic-chronometer-black-pearl/).
+- Traska Summiteer 38 Charcoal Black `2196` — [official card](https://www.traskawatch.com/products/summiteer-38-charcoal-black) and [official generation reference page](https://www.traskawatch.com/pages/reference-points-summiteer).
+
+All three remain research-only `needs_more_evidence`; exact configuration and
+manufacturer provenance are recorded, while unresolved M1 facts remain null.
+The manifest now reports 111 `needs_review` targets and 174 review artifacts;
+accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

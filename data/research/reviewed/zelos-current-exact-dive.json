@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "zelos-current-exact-dive",
+  "jobId": "43648a8e-4bac-41ea-960e-c5b1d50c6e99",
+  "reviewedAt": "2026-09-02T17:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Zelos",
+    "model": "Swordfish Ti 42mm",
+    "referenceCode": "Swordfish-Ti-42-Frost",
+    "variantName": "Swordfish Ti 42mm Frost"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://zeloswatches.com/products/swordfish-ti-42mm-frost",
+      "status": "validated_primary",
+      "note": "The official Zelos product page was checked on 2026-09-02 and confirms the current Swordfish Ti 42mm Frost configuration and product identifier. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}
