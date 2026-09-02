@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "panerai-luminor-marina-pam01707",
+  "jobId": "bdc36a31-6083-4569-8a37-65f06e254e8a",
+  "reviewedAt": "2026-09-02T15:05:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Panerai",
+    "model": "Luminor Marina",
+    "referenceCode": "PAM01707",
+    "variantName": "Luminor Marina Carbotech 44mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.panerai.com/en/collections/watch-collection/luminor/pam01707-luminor-marina.html",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

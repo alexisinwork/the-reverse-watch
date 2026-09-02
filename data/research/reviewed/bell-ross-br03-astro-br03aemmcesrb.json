@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "bell-ross-br03-astro-br03aemmcesrb",
+  "jobId": "6975131b-c94d-4994-a388-f439f4fd7ec8",
+  "reviewedAt": "2026-09-02T15:20:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Bell & Ross",
+    "model": "BR 03 Astro",
+    "referenceCode": "BR03A-EMM-CE/SRB",
+    "variantName": "BR-03 Astro"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://bellross.com/en-us/products/br-03-astro-rubber-strap",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration; the page currently marks it unavailable. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

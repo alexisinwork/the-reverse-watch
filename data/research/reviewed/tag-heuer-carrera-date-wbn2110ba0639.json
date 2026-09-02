@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tag-heuer-carrera-date-wbn2110ba0639",
+  "jobId": "aeee942e-71a3-4b66-bf0c-4e647bce8786",
+  "reviewedAt": "2026-09-02T15:20:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "TAG Heuer",
+    "model": "Carrera Date",
+    "referenceCode": "WBN2110.BA0639",
+    "variantName": "Carrera Date Automatic 39 mm Steel Black Dial on Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tagheuer.com/us/en/timepieces/collections/tag-heuer-carrera/39-mm-calibre-5-automatic/WBN2110.BA0639.html",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

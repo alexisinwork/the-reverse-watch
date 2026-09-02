@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "piaget-polo-date-g0a51032",
+  "jobId": "a3f38f41-49ed-4e0c-98c5-2f985aa4ef51",
+  "reviewedAt": "2026-09-02T15:05:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Piaget",
+    "model": "Polo Date",
+    "referenceCode": "G0A51032",
+    "variantName": "Piaget Polo Signature Date 42 mm Steel Blue Dial Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.piaget.com/eu-en/watches/piaget-polo/automatic-steel-watch-g0a51032",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

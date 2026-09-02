@@ -258,6 +258,25 @@ detail card carrying the exact configuration. The manifest now reports 97
 `needs_review` targets and 160 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Fifth parallel exact-reference batch (retrieved 2026-09-02)
+
+Six further brands without exact targets were checked in parallel. Each exact
+reference was confirmed on a manufacturer product page and completed a valid
+Perplexity `sonar-pro` extraction after isolated retries for initial contract
+errors:
+
+- TAG Heuer Carrera Date `WBN2110.BA0639` — [official card](https://www.tagheuer.com/us/en/timepieces/collections/tag-heuer-carrera/39-mm-calibre-5-automatic/WBN2110.BA0639.html).
+- Panerai Luminor Marina `PAM01707` — [official card](https://www.panerai.com/en/collections/watch-collection/luminor/pam01707-luminor-marina.html).
+- Glashütte Original Senator Chronograph `1-37-24-01-02-71` — [official card](https://www.glashuette-original.com/en/watches/senator/senator-chronograph-1-37-24-01-02-71/).
+- Piaget Polo Date `G0A51032` — [official card](https://www.piaget.com/eu-en/watches/piaget-polo/automatic-steel-watch-g0a51032).
+- Bulgari Octo Finissimo Automatic 37 mm `104351` — [official card](https://www.bulgari.com/en-us/product/104351).
+- Bell & Ross BR-03 Astro `BR03A-EMM-CE/SRB` — [official card](https://bellross.com/en-us/products/br-03-astro-rubber-strap); the page currently marks the configuration unavailable.
+
+All six are research-only `needs_more_evidence` artifacts. Exact identity,
+reference, and product URL are confirmed; unresolved M1 facts remain null and
+cannot satisfy hard filters. The manifest now reports 103 `needs_review`
+targets and 166 review artifacts; accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

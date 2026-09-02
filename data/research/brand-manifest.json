@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T14:49:58.895Z",
+  "updatedAt": "2026-09-02T15:06:00.297Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1626,7 +1626,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "tag-heuer-carrera-date-wbn2110ba0639",
+          "referenceLabel": "TAG Heuer Carrera Date Automatic exact reference WBN2110.BA0639",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Carrera Date configuration; preserve the exact 39 mm steel, black-dial, steel-bracelet boundary."
+        }
+      ]
     },
     {
       "slug": "panerai",
@@ -1643,7 +1658,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "panerai-luminor-marina-pam01707",
+          "referenceLabel": "Panerai Luminor Marina exact reference PAM01707",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Luminor Marina configuration; preserve the exact Carbotech, 44 mm, black-dial, leather-and-rubber-set boundary."
+        }
+      ]
     },
     {
       "slug": "hublot",
@@ -1711,7 +1741,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "glashutte-original-senator-chronograph-13724010271",
+          "referenceLabel": "Glashütte Original Senator Chronograph exact reference 1-37-24-01-02-71",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Senator Chronograph configuration; preserve the exact 41 mm steel, silver-dial, steel-bracelet and Panorama Date boundary."
+        }
+      ]
     },
     {
       "slug": "piaget",
@@ -1728,7 +1773,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 9
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "piaget-polo-date-g0a51032",
+          "referenceLabel": "Piaget Polo Date exact reference G0A51032",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Polo Date configuration; preserve the exact 42 mm steel, blue-dial, steel-bracelet boundary."
+        }
+      ]
     },
     {
       "slug": "bulgari",
@@ -1745,7 +1805,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "bulgari-octo-finissimo-104351",
+          "referenceLabel": "Bulgari Octo Finissimo 37 mm Automatic exact reference 104351",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Octo Finissimo configuration; preserve the exact 37 mm titanium, ultra-thin, titanium-bracelet boundary."
+        }
+      ]
     },
     {
       "slug": "longines",
@@ -2396,7 +2471,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 33
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "bell-ross-br03-astro-br03aemmcesrb",
+          "referenceLabel": "Bell & Ross BR-03 Astro exact reference BR03A-EMM-CE/SRB",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Current official BR-03 Astro configuration; preserve the exact 41 mm ceramic, astronomical-display, rubber-and-canvas boundary and unavailable status."
+        }
+      ]
     },
     {
       "slug": "h-moser",
