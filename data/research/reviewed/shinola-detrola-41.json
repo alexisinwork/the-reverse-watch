@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "shinola-detrola-41",
+  "jobId": "ec5fa501-fdaf-498a-9365-122eb0d9cd9b",
+  "reviewedAt": "2026-09-03T18:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Shinola",
+    "model": "Detrola Watch",
+    "referenceCode": "S0120307637-1-Nude-41-USA",
+    "variantName": "Detrola Watch - Nude"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.shinola.com/products/detrola-watch-nude",
+      "status": "validated_primary",
+      "note": "The official live product page was checked on 2026-09-03 and confirms the Nude 41 mm Detrola, exact SKU S0120307637-1-Nude-41-USA, TR90 resin/stainless core, Argonite 705 quartz, 10.85 mm thickness, 5 ATM, and cream rubber strap."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

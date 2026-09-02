@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "fiyta-aerospace-space-walk-ga880026-wbw",
+  "jobId": "9a240a4a-ba66-4a1a-b380-ff32adddd9d6",
+  "reviewedAt": "2026-09-03T18:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "FIYTA",
+    "model": "Aerospace Space Walk",
+    "referenceCode": "GA880026.WBW",
+    "variantName": "Spacewalk · Space Station"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://chinawatchshop.com/products/4014",
+      "status": "validated_secondary",
+      "note": "The exact-reference specialist retailer page was checked on 2026-09-03 and identifies FIYTA GA880026.WBW, Spacewalk · Space Station, including the retailer's explicit credit to FIYTA official images. It currently shows no stock."
+    },
+    {
+      "url": "https://www.good-stuffs.com/Fiyta-Space-Walk-Chronograph-Watch-Grade-5-Titanium-ETA-7750-18K-Gold-Coin-Aerospace-Series-GA880026WBW-_p_898.html",
+      "status": "validated_secondary",
+      "note": "The exact-reference technical retailer page corroborates GA880026.WBW, grade-5 titanium, ETA 7750 chronograph, 44 mm case, and the 300-piece limited-edition context. No live FIYTA factory product page was found."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact reference is provisionally confirmed by converging secondary sources, but no manufacturer page was found and no M1 facts are promoted."
+}

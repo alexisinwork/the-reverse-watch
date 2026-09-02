@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "fiyta-extreme-wga868001-bbb",
+  "jobId": "9c0f4481-01e3-4ec7-9c40-d2c2a3c4366d",
+  "reviewedAt": "2026-09-03T18:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "FIYTA",
+    "model": "Extreme",
+    "referenceCode": "WGA868001.BBB",
+    "variantName": "Extreme WGA868001.BBB"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.jamtangan.com/p/fiyta-extreme-wga868001.bbb-men-3d-time-automatic-black-leather-nato-strap-86241",
+      "status": "validated_secondary",
+      "note": "The exact-reference retailer page was checked on 2026-09-03 and identifies FIYTA Extreme WGA868001.BBB with a specific black-leather/NATO configuration. No live FIYTA factory product page or model-specific technical sheet was located."
+    },
+    {
+      "url": "https://fiyta-watches.com/pages/about-us",
+      "status": "validated_primary",
+      "note": "The FIYTA brand page was checked for manufacturer context only; it does not establish the exact WGA868001.BBB product facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact reference is provisionally confirmed by one exact-reference retail record, but no manufacturer page was found and no M1 facts are promoted."
+}

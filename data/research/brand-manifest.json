@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:37:15.251Z",
+  "updatedAt": "2026-09-02T20:41:46.312Z",
   "brands": [
     {
       "slug": "rolex",
@@ -8280,6 +8280,34 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Runwell 41 as an active everyday quartz reference; verify the exact current dial, strap, dimensions, and reference before cataloguing."
+        },
+        {
+          "id": "shinola-detrola-41",
+          "referenceLabel": "Shinola Detrola 41 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Detrola 41 as an active everyday quartz reference; verify the exact current dial, case, strap, dimensions, and reference before cataloguing."
+        },
+        {
+          "id": "shinola-monster-automatic-lake-ontario-39",
+          "referenceLabel": "Shinola Monster Automatic Lake Ontario 39 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Monster Automatic Lake Ontario 39 as an active dive reference; verify the exact current reference, bracelet configuration, and water-resistance evidence before cataloguing."
         }
       ]
     },
@@ -8418,6 +8446,35 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Photographer GA860012.BBB as an active/export reference; verify the exact reference and primary or specialist product evidence before cataloguing."
+        },
+        {
+          "id": "fiyta-extreme-wga868001-bbb",
+          "referenceLabel": "FIYTA Extreme exact reference WGA868001.BBB",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Extreme WGA868001.BBB as an export reference; verify the exact product identity and current technical evidence before cataloguing."
+        },
+        {
+          "id": "fiyta-aerospace-space-walk-ga880026-wbw",
+          "referenceLabel": "FIYTA Aerospace Space Walk exact reference GA880026.WBW",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Aerospace Space Walk GA880026.WBW as a rare space-themed chronograph; verify the exact reference, calibre, titanium configuration, and product status before cataloguing."
         }
       ]
     },

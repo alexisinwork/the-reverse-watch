@@ -940,6 +940,21 @@ rows were promoted. The manifest now reports 250 `needs_review` targets, zero
 `planned` targets, and 313 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Fifty-first parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional dossier models were checked after schema-valid Perplexity
+extraction:
+
+- Shinola Detrola Watch - Nude — [official product page](https://www.shinola.com/products/detrola-watch-nude) confirms the exact 41 mm configuration and SKU `S0120307637-1-Nude-41-USA`.
+- Shinola Lake Ontario Monster Automatic Dive Watch 39 mm — [official product page](https://www.shinola.com/products/monster-automatic-dive-watch-lake-ontario) confirms the current exact product and publishes SKU `S0120484266-1-LakeGrnMOP-39-CHE`; the worker's `USA` suffix was rejected as a localization conflict.
+- FIYTA Extreme `WGA868001.BBB` — [exact-reference retail evidence](https://www.jamtangan.com/p/fiyta-extreme-wga868001.bbb-men-3d-time-automatic-black-leather-nato-strap-86241) identifies the reference, but no live factory page was located.
+- FIYTA Aerospace Space Walk `GA880026.WBW` — [specialist retailer evidence](https://chinawatchshop.com/products/4014) and [technical retailer corroboration](https://www.good-stuffs.com/Fiyta-Space-Walk-Chronograph-Watch-Grade-5-Titanium-ETA-7750-18K-Gold-Coin-Aerospace-Series-GA880026WBW-_p_898.html) agree on the exact reference; manufacturer-level product evidence was not located.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 254 `needs_review` targets, zero
+`planned` targets, and 317 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## Forty-sixth parallel exact-reference batch (retrieved 2026-09-03)
 
 Four additional configurations produced schema-valid Perplexity results and

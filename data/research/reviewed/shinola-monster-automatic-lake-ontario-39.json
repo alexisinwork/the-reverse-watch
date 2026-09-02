@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "shinola-monster-automatic-lake-ontario-39",
+  "jobId": "f67cf219-f032-43db-8eaf-dba3d5d24a4a",
+  "reviewedAt": "2026-09-03T18:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Shinola",
+    "model": "Monster Automatic Dive Watch",
+    "referenceCode": "S0120484266-1-LakeGrnMOP-39-CHE",
+    "variantName": "Lake Ontario Monster Automatic Dive Watch 39mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.shinola.com/products/monster-automatic-dive-watch-lake-ontario",
+      "status": "validated_primary",
+      "note": "The official live product page was checked on 2026-09-03 and confirms the 39 mm Lake Ontario Monster, Sellita SW200-2 Elaboré, 30 ATM/300 m rating, sapphire crystal, steel bracelet, and current product-specific SKU S0120484266-1-LakeGrnMOP-39-CHE."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker returned a USA suffix, while the current official page checked for this review publishes S0120484266-1-LakeGrnMOP-39-CHE. The localization conflict is preserved rather than silently merged."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact product identity is confirmed, but the locale-specific SKU conflict and M1 evidence gate prevent promotion."
+}
