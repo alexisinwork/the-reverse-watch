@@ -1264,3 +1264,58 @@ This is validated secondary evidence, not a manufacturer catalogue page. The
 review artifact now records the identity, reference, variant, and product URL
 as verified, while all M1 facts remain missing and no catalogue row is
 promoted.
+
+## Seventieth exact-reference follow-up (retrieved 2026-09-03)
+
+The Claude Meylan target is now tied to exact secondary reference
+`6047-SWIRL`: [The Watch Pages](https://www.thewatchpages.com/watches/claude-meylan-tortue-6047-swirl/)
+identifies the Tortue skeleton configuration, 40 mm steel case, calibre 165
+CM14, 42-hour reserve, and 3 ATM rating. These facts were added with
+field-level provenance; price, remaining geometry, weight, accuracy, lume, and
+attachment interface remain missing.
+
+The Guinand Werksfahrer Chrono 1 review was also strengthened from the
+[official archive page](https://www.guinand-uhren.de/werksfahrer.html): it
+confirms the exact model's SW510 automatic chronograph, 40.5 mm diameter,
+44.3 mm lug-to-lug, 20 mm band width, 14.9 mm height, approximately 60-hour
+reserve, and 20 bar water resistance. Guinand still publishes no separate
+numeric reference; that field remains unresolved rather than inferred.
+
+## Seventy-first primary-source follow-up (retrieved 2026-09-03)
+
+The exact [ArtyA product page](https://www.artya.com/product-page/purity-wavy-tourbillon-sport-edition-orange)
+confirms the orange Purity Wavy Tourbillon Sport Edition and identifies
+calibre `PUR-T1`, a 44 mm pure-sapphire case, 70-hour reserve, and 30 m water
+resistance. `PUR-T1` is retained as the movement calibre, not promoted as a
+watch reference because the manufacturer publishes no separate watch reference.
+
+The [official Greubel Forsey history page](https://greubelforsey.com/en/history/quadruple-tourbillon-secret)
+confirms the exact Quadruple Tourbillon Secret model, its 40-piece 2012–2018
+production, 43.5 mm diameter, 16.11 mm height, 50-hour reserve, and 3 ATM
+water resistance. The page does not publish a separate watch reference or
+movement calibre, so those fields remain unresolved.
+
+## Seventy-second exact-identity follow-up (retrieved 2026-09-03)
+
+The Hautlence Vortex Bronze target is now tied to the exact specialist
+[The Watch Pages listing](https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/),
+which identifies it as Vortex 03, reference `H1370-1700`, with a bronze 52 x
+50 mm case, automatic HL2.0 movement, and 3 ATM water resistance. [About
+Timepieces](https://about-timepieces.com/product/hautlence-vortex-03-bronze/)
+independently repeats the reference and eight-piece limitation. The two
+sources disagree on power reserve (45 versus 40 hours), so that field remains
+unresolved; no conflicting value is promoted as canonical.
+
+The HMT Pilot review now records the specialist source's exact family identity,
+stainless-steel case, hand-wound operation, leather strap, and no-date layout.
+Its approximately 35 mm size and approximately 38-hour reserve remain
+explicitly unpromoted because the source does not establish a reference-specific
+exact measurement.
+
+The Philippe Dufour and Roger W. Smith reviews were also rechecked for false
+variant matches. Phillips confirms a Simplicity 37 white-gold watch with a
+white lacquer dial, not the candidate's silver guilloché configuration. The
+maker confirms Series Two in 38 or 40 mm, while the exact yellow-gold 40 mm
+secondary lot found during recheck is Mark 1 rather than the candidate's Mark
+2. Neither near-match is merged into the candidate or used to promote M1
+facts.

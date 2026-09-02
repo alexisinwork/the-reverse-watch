@@ -15,11 +15,66 @@
     {
       "url": "https://www.kudoke.eu/en/classic-2/",
       "status": "validated_primary",
-      "note": "The official Kudoke Classic page was checked on 2026-09-03 and confirms the model, steel case, 41mm diameter, hand-wound movement, sapphire crystals, and 46-hour power reserve. It does not publish a numeric reference code."
+      "note": "The official Kudoke Classic page was rechecked on 2026-09-03 and confirms the model, stainless-steel case, 41 mm diameter, 9.3 mm height, sapphire crystals, spring bars, hand-wound movement, and 46-hour power reserve. It does not publish a numeric reference code."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.powerReserveHours",
+    "operation.crystal",
+    "operation.attachmentType"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.kudoke.eu/en/classic-2/",
+      "note": "The official Classic page specifies a stainless-steel case."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.kudoke.eu/en/classic-2/",
+      "note": "The official Classic page specifies a 41 mm case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 9.3,
+      "sourceUrl": "https://www.kudoke.eu/en/classic-2/",
+      "note": "The official Classic page specifies a 9.3 mm case height."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual winding",
+      "sourceUrl": "https://www.kudoke.eu/en/classic-2/",
+      "note": "The official Classic page identifies hand winding."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 46,
+      "sourceUrl": "https://www.kudoke.eu/en/classic-2/",
+      "note": "The official Classic page specifies a 46-hour power reserve."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.kudoke.eu/en/classic-2/",
+      "note": "The official Classic page specifies anti-reflective sapphire glass on the front and caseback."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "spring_bar",
+      "sourceUrl": "https://www.kudoke.eu/en/classic-2/",
+      "note": "The official Classic page explicitly specifies spring bars."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -28,10 +83,8 @@
   ],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
-    "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
@@ -39,8 +92,7 @@
     "accuracy",
     "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
     "dateStatus"
   ],
-  "note": "Research-only model review; the exact Classic identity is confirmed, but no manufacturer reference code is published."
+  "note": "Research-only model review; the exact Classic identity and core case, movement, crystal, and spring-bar facts are confirmed by Kudoke's official page. No manufacturer reference code is published; price, remaining geometry, configured weight, movement calibre, accuracy, water resistance, lume performance, and date status remain unverified."
 }

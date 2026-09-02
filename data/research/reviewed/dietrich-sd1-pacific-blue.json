@@ -15,7 +15,7 @@
     {
       "url": "https://dietrich.com/product/sd1-pacific-blue/",
       "status": "validated_primary",
-      "note": "The official Dietrich product page was checked on 2026-09-03 and confirms Skin Diver (SD-1) - Pacific Blue as the exact product configuration. It publishes no separate manufacturer reference code."
+      "note": "The official Dietrich product page was checked on 2026-09-03 and confirms Skin Diver (SD-1) - Pacific Blue as the exact product configuration. It publishes 38.5 mm diameter, 12 mm height, 20 mm lug width, 46.2 mm lug-to-lug, approximately 145 g with the stainless-steel bracelet, Sellita SW200 automatic movement with 38-hour reserve, 150 m water resistance, and a date display. It publishes no separate manufacturer reference code."
     },
     {
       "url": "https://monochrome-watches.com/dietrich-sd-1-skin-diver-2-review-specs-price/",
@@ -27,9 +27,80 @@
     "identity",
     "model",
     "variantName",
-    "productUrl"
+    "productUrl",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "dateStatus"
   ],
-  "additionalVerifiedFacts": [],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 38.5,
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page specifies a 38.5 mm diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12,
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page specifies 12 mm height."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 46.2,
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page specifies 46.2 mm lug-to-lug."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 20,
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page specifies a 20 mm lug width."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 145,
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page reports approximately 145 g with the stainless-steel bracelet; the approximation is retained in the evidence note."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page identifies a Sellita SW200 automatic movement."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "Sellita SW200",
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page identifies the Sellita SW200 calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 38,
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page states a 38-hour power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 150,
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page specifies water resistance up to 150 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://dietrich.com/product/sd1-pacific-blue/",
+      "note": "The exact official page identifies the date window at 6 o'clock and date indication in its functions."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -38,19 +109,11 @@
   ],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
-    "caseThicknessMm",
-    "lugToLugMm",
-    "lugWidthMm",
-    "weightFullG",
-    "movement",
     "accuracy",
-    "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "attachmentType"
   ],
-  "note": "Research-only model review; exact product identity is confirmed, but no manufacturer reference code or provisional M1 fact is promoted."
+  "note": "Research-only model review; exact Pacific Blue identity and core geometry, configured weight, movement, water resistance, and date status are confirmed by Dietrich's official page. No manufacturer reference code is published; price, remaining geometry, accuracy, lume performance, and attachment interface remain unverified."
 }

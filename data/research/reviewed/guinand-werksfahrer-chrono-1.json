@@ -13,6 +13,11 @@
   },
   "sourceChecks": [
     {
+      "url": "https://www.guinand-uhren.de/werksfahrer.html",
+      "status": "validated_primary",
+      "note": "The current official Guinand archive page was rechecked on 2026-09-03 and publishes the exact Werksfahrer Chrono 1 specifications: 40.5 mm diameter, 14.9 mm height, 44.3 mm lug-to-lug, 20 mm band width, SW510 automatic chronograph, approximately 60-hour reserve, 20 bar water resistance, stainless-steel case, and integrated lugs. It still does not publish a separate numeric reference, and the configurator has no product entry."
+    },
+    {
       "url": "https://www.guinand-uhren.de/werksfahrer-en.html",
       "status": "validated_primary",
       "note": "The official Guinand page was checked on 2026-09-03 and confirms Werksfahrer Chrono 1, its Series 60 context, and the exact black Tricompax SW510 chronograph model. The public page does not publish a separate numeric reference and its configurator currently has no product entry."
@@ -32,9 +37,80 @@
     "identity",
     "model",
     "variantName",
-    "productUrl"
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "dateStatus"
   ],
-  "additionalVerifiedFacts": [],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official Werksfahrer Chrono 1 specification identifies a satin-finished stainless-steel case."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40.5,
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official specification states a 40.5 mm case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 14.9,
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official specification states 14.9 mm total height at the centre of the watch."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 44.3,
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official specification states 44.3 mm across the lugs."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 20,
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official specification states a 20 mm band width."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic chronograph",
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official specification identifies an automatic chronograph movement."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "SW510",
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official specification identifies calibre SW510."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 60,
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official specification states approximately 60 hours of power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 200,
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official specification states 20 bar water resistance, normalized to 200 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.guinand-uhren.de/werksfahrer.html",
+      "note": "The official function list contains time and chronograph indications but no date display."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -43,19 +119,12 @@
   ],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
-    "caseThicknessMm",
-    "lugToLugMm",
-    "lugWidthMm",
     "weightFullG",
-    "movement",
     "accuracy",
-    "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "attachmentType"
   ],
-  "note": "Research-only model review; exact model identity is confirmed, but no manufacturer reference code or provisional M1 fact is promoted."
+  "note": "Research-only model review; exact Werksfahrer Chrono 1 identity and core reference-specific geometry, movement, water resistance, and date status are confirmed by Guinand's official archive page. The manufacturer reference code, price, configured weight, accuracy, lume performance, and attachment interface remain unverified."
 }

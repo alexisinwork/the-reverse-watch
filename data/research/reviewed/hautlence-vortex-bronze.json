@@ -7,9 +7,9 @@
   "outcome": "needs_more_evidence",
   "candidateIdentity": {
     "brand": "Hautlence",
-    "model": "Vortex",
-    "referenceCode": "reference not established",
-    "variantName": "Vortex Bronze"
+    "model": "Vortex 03",
+    "referenceCode": "H1370-1700",
+    "variantName": "Vortex 03 (Bronze)"
   },
   "sourceChecks": [
     {
@@ -21,31 +21,94 @@
       "url": "https://www.hautlence.com/",
       "status": "validated_primary",
       "note": "The current manufacturer homepage was checked on 2026-09-03 and confirms Hautlence as the continuing maker; the historical Vortex product page is no longer in the current catalogue."
+    },
+    {
+      "url": "https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/",
+      "status": "validated_secondary",
+      "note": "The exact specialist listing was checked on 2026-09-03 and identifies Vortex 03, reference H1370-1700, bronze case, 52x50 mm dimensions, automatic HL2.0 calibre, 45-hour reserve, 3 ATM/30 m resistance, and an eight-piece limitation. Its reserve figure conflicts with the 40-hour figure in the previously checked Monochrome and About Timepieces sources, so the reserve remains a source-qualified research fact."
+    },
+    {
+      "url": "https://about-timepieces.com/product/hautlence-vortex-03-bronze/",
+      "status": "validated_secondary",
+      "note": "The exact specialist product page was checked on 2026-09-03 and independently identifies Vortex 03 (Bronze), REF H1370-1700, eight pieces, HLR2.0, and 3 ATM/30 m resistance. It reports a conflicting 40-hour reserve and a historical GBP170,000 ex-VAT asking price."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
-  "additionalVerifiedFacts": [],
-  "rejectedProvisionalFields": [
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "operation.waterResistanceM",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
     {
       "fieldName": "referenceCode",
-      "reason": "The worker supplied HLR2.3; the specialist source identifies HLR2 as the movement calibre, not a published exact watch reference."
+      "value": "H1370-1700",
+      "sourceUrl": "https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/",
+      "note": "The exact specialist listing labels the watch reference H1370-1700; the same reference is independently repeated by About Timepieces."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "bronze",
+      "sourceUrl": "https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/",
+      "note": "The exact listing specifies a bronze case."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 52,
+      "sourceUrl": "https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/",
+      "note": "The rectangular case is listed as 52 x 50 mm; the larger dimension is stored as diameter for the existing research schema, while the second dimension is retained separately below."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 50,
+      "sourceUrl": "https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/",
+      "note": "The exact listing gives the case dimensions as 52 x 50 mm; the smaller dimension is stored as width."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/",
+      "note": "The exact listing specifies automatic winding."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "HL2.0",
+      "sourceUrl": "https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/",
+      "note": "The exact listing identifies calibre HL2.0; other checked sources style the same movement as HLR2.0."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.thewatchpages.com/watches/hautlence-vortex-03-h1370-1700/",
+      "note": "The exact listing specifies 3 ATM, normalized to 30 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://about-timepieces.com/product/hautlence-vortex-03-bronze/",
+      "note": "The exact product page explicitly lists Date: No."
     }
   ],
+  "rejectedProvisionalFields": [],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
-    "caseWidthMm",
     "caseLengthMm",
     "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
     "accuracy",
-    "waterResistanceM",
     "lumeGrade",
     "attachmentType",
-    "dateStatus"
+    "movement"
   ],
-  "note": "Research-only historical model review; no provisional M1 fact is promoted."
+  "note": "Research-only historical model review; the exact Vortex Bronze/Vortex 03 identity and watch reference H1370-1700 are confirmed by two specialist sources. Bronze case, 52 x 50 mm case dimensions, automatic HL2.0/HLR2.0 movement, and 30 m resistance are source-backed. The sources disagree on power reserve (40 versus 45 hours), so it remains unresolved; price, thickness, lug geometry, configured weight, accuracy, lume performance, and attachment interface also remain unresolved."
 }

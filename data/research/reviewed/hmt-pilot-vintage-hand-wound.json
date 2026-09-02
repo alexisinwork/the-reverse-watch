@@ -15,11 +15,45 @@
     {
       "url": "https://clockhouse.in/collection/hmt/hmt-pilot-hand-wound",
       "status": "validated_secondary",
-      "note": "The specialist HMT collection page was checked on 2026-09-03 and identifies the vintage Pilot hand-wound model. It does not establish a single factory reference for this family."
+      "note": "The specialist HMT collection page was checked on 2026-09-03 and identifies the vintage Pilot hand-wound model, stainless-steel case, leather strap, and no-date layout. It describes approximately 35 mm and approximately 38 hours, but does not establish a single factory reference or exact numeric M1 measurements for this family."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.strap",
+    "movement.type",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://clockhouse.in/collection/hmt/hmt-pilot-hand-wound",
+      "note": "The specialist listing describes the vintage Pilot case as stainless steel."
+    },
+    {
+      "fieldName": "materials.strap",
+      "value": "leather",
+      "sourceUrl": "https://clockhouse.in/collection/hmt/hmt-pilot-hand-wound",
+      "note": "The specialist listing shows a leather strap, while cautioning that it may not be original to every vintage example."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual",
+      "sourceUrl": "https://clockhouse.in/collection/hmt/hmt-pilot-hand-wound",
+      "note": "The exact family listing identifies the Pilot as hand-wound; it mentions an HMT 0231 family movement but does not confirm the calibre from the exterior of a particular watch."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://clockhouse.in/collection/hmt/hmt-pilot-hand-wound",
+      "note": "The specialist listing describes the black Pilot dial without a date display."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -39,8 +73,7 @@
     "accuracy",
     "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "attachmentType"
   ],
-  "note": "Research-only model review; exact family identity is documented, but a single reference-specific identity and complete M1 evidence are not confirmed."
+  "note": "Research-only model review; the exact Pilot family identity, case/strap materials, hand-wound operation, and no-date layout are documented. A single reference-specific identity and complete exact M1 evidence are not confirmed; approximate dimensions and reserve are intentionally not promoted as exact numeric facts."
 }

@@ -13,9 +13,14 @@
   },
   "sourceChecks": [
     {
+      "url": "https://www.artya.com/product-page/purity-wavy-tourbillon-sport-edition-orange",
+      "status": "validated_primary",
+      "note": "The exact official ArtyA product page was checked on 2026-09-03 and identifies the orange Purity Wavy Tourbillon Sport Edition with manufacture calibre PUR-T1, 70-hour reserve, 44 mm pure sapphire case, and 30 m water resistance. It exposes an Add to cart control and limits the edition to nine pieces."
+    },
+    {
       "url": "https://www.artya.com/purity-tourbillon-sport",
       "status": "validated_primary",
-      "note": "The official ArtyA page was checked on 2026-09-03 and confirms Purity Tourbillon Sport Edition, orange as one of the launch expressions, 44mm Absolute Sapphire case, manufacture flying tourbillon, 70-hour reserve, 30m water resistance, and nine-piece limitation. It publishes no numeric watch reference."
+      "note": "The official ArtyA family page was checked on 2026-09-03 and confirms the Purity Tourbillon Sport Edition family, orange as one of the launch expressions, 44 mm Absolute Sapphire case, manufacture flying tourbillon, 70-hour reserve, 30 m water resistance, and nine-piece limitation; the exact product page supplies the PUR-T1 calibre reference."
     },
     {
       "url": "https://monochrome-watches.com/introducing-artya-purity-tourbillon-sport-edition-sapphire-crystal-telos-skeleton-specs-price/",
@@ -32,18 +37,60 @@
     "identity",
     "model",
     "variantName",
-    "productUrl"
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "dateStatus"
   ],
-  "additionalVerifiedFacts": [],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "pure sapphire",
+      "sourceUrl": "https://www.artya.com/product-page/purity-wavy-tourbillon-sport-edition-orange",
+      "note": "The exact official product page identifies a pure sapphire Wavy case."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 44,
+      "sourceUrl": "https://www.artya.com/product-page/purity-wavy-tourbillon-sport-edition-orange",
+      "note": "The exact official product page specifies a 44 mm case."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "PUR-T1",
+      "sourceUrl": "https://www.artya.com/product-page/purity-wavy-tourbillon-sport-edition-orange",
+      "note": "The exact official product page identifies the ArtyA manufacture Purity Tourbillon calibre as PUR-T1."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.artya.com/product-page/purity-wavy-tourbillon-sport-edition-orange",
+      "note": "The exact official product page states a 70-hour power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.artya.com/product-page/purity-wavy-tourbillon-sport-edition-orange",
+      "note": "The exact official product page specifies 30 m water resistance."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.artya.com/product-page/purity-wavy-tourbillon-sport-edition-orange",
+      "note": "The exact official product page lists central hours, minutes, and seconds with no date display."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
-      "reason": "The worker's value \"Purity Tourbillon Sport Edition\" is the official model label, not a published manufacturer reference code; the official page publishes no numeric watch reference."
+      "reason": "PUR-T1 is the manufacture calibre identifier on ArtyA's exact product page, not a watch reference; no separate watch reference is published."
     }
   ],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
     "caseThicknessMm",
@@ -52,10 +99,8 @@
     "weightFullG",
     "movement",
     "accuracy",
-    "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "attachmentType"
   ],
-  "note": "Research-only model review; the exact model and orange configuration are confirmed, but no manufacturer reference code is published."
+  "note": "Research-only model review; the exact orange configuration and core geometry, movement calibre PUR-T1, reserve, water resistance, and date status are confirmed by ArtyA's official product page. ArtyA does not publish a separate watch reference; price, remaining geometry, weight, winding-type classification, accuracy, lume performance, and attachment interface remain unverified."
 }

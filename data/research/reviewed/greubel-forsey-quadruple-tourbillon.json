@@ -13,12 +13,58 @@
   },
   "sourceChecks": [
     {
+      "url": "https://greubelforsey.com/en/history/quadruple-tourbillon-secret",
+      "status": "validated_primary",
+      "note": "The exact official Greubel Forsey history page was rechecked on 2026-09-03 and confirms Quadruple Tourbillon Secret, 40 pieces produced from 2012 to 2018, 43.5 mm diameter, 16.11 mm height, 50-hour power reserve, and 3 ATM/30 m water resistance. The manufacturer page does not publish a separate watch reference or a movement calibre number."
+    },
+    {
       "url": "https://greubelforsey.com/en/history-timepieces/quadruple-tourbillon-secret",
       "status": "validated_primary",
       "note": "The official history-timepieces page was checked on 2026-09-03 and confirms the exact Quadruple Tourbillon Secret model, 40-piece 2012-2018 limitation, and configuration."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "productUrl",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 43.5,
+      "sourceUrl": "https://greubelforsey.com/en/history/quadruple-tourbillon-secret",
+      "note": "The official model page specifies a 43.5 mm case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 16.11,
+      "sourceUrl": "https://greubelforsey.com/en/history/quadruple-tourbillon-secret",
+      "note": "The official model page specifies 16.11 mm case height including the crystal."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 50,
+      "sourceUrl": "https://greubelforsey.com/en/history/quadruple-tourbillon-secret",
+      "note": "The official model page specifies a 50-hour chronometric power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://greubelforsey.com/en/history/quadruple-tourbillon-secret",
+      "note": "The official model page specifies 3 ATM, normalized to 30 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://greubelforsey.com/en/history/quadruple-tourbillon-secret",
+      "note": "The official function list names hours, minutes, small seconds, tourbillon rotation, and power reserve, with no date display."
+    }
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [
     {
@@ -28,19 +74,15 @@
   ],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
-    "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
     "movement",
     "accuracy",
-    "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "attachmentType"
   ],
-  "note": "Research-only model review; no provisional M1 fact is promoted."
+  "note": "Research-only model review; the exact Quadruple Tourbillon Secret identity and common geometry, reserve, water resistance, and date status are confirmed by Greubel Forsey's official historical page. The watch reference, case-material choice, remaining geometry, configured weight, movement calibre, accuracy, lume, and attachment interface remain unverified."
 }

@@ -15,11 +15,80 @@
     {
       "url": "https://www.habring2.com/index.php/en/archive/doppel-felix",
       "status": "validated_primary",
-      "note": "The official Habring² archive page was checked on 2026-09-03 and confirms the Doppel-Felix model. The URL path supplied by the worker is a locator, not a reference code; A11R is the movement designation."
+      "note": "The official Habring² archive page was rechecked on 2026-09-03 and confirms the exact Doppel-Felix A11R no-date telemeter configuration, 42 mm 316L stainless-steel case, manual-winding A11R movement, 48-hour reserve, sapphire crystals, 5 bar/50 m water resistance, and shock protection. The page does not publish a separate watch reference; A11R is the movement designation."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.crystal",
+    "operation.waterResistanceM",
+    "operation.shockResistant",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "316L stainless steel",
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The official Doppel-Felix archive page specifies a 42 mm 316L stainless-steel case."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 42,
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The official archive page specifies a 42 mm case."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual winding",
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The official archive page specifies manual winding."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "A11R",
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The official archive page identifies calibre A11R for the no-date configuration."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 48,
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The official archive page states a 48-hour power reserve when fully wound."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The official archive page specifies domed sapphire glass and a sapphire-glass base."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The official archive page specifies 5 bar, normalized to 50 m."
+    },
+    {
+      "fieldName": "operation.shockResistant",
+      "value": true,
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The official archive page specifies shock-proof construction in accordance with DIN and NIHS."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "note": "The selected variant is the A11R no-date configuration with telemeter scale; the date indication is the separate A11RD option."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -28,19 +97,15 @@
   ],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
     "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
     "accuracy",
-    "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "attachmentType"
   ],
-  "note": "Research-only model review; no provisional M1 fact is promoted."
+  "note": "Research-only model review; exact Doppel-Felix A11R no-date identity and core case, movement, crystal, shock-resistance, and water-resistance facts are confirmed by Habring²'s official archive page. No manufacturer watch reference is published; price, remaining geometry, configured weight, accuracy, lume performance, and attachment interface remain unverified."
 }

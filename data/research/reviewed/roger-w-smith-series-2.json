@@ -20,7 +20,7 @@
     {
       "url": "https://www.acollectedman.com/products/buy-roger-smith-series-2-yellow-gold-watch",
       "status": "validated_secondary",
-      "note": "The specialist retailer archive was checked on 2026-09-03 and corroborates the yellow-gold Series 2 configuration; it does not establish a manufacturer reference code or independently prove the Mark 2 designation."
+      "note": "The specialist retailer archive was checked on 2026-09-03 and corroborates the yellow-gold Series 2 configuration; it does not establish a manufacturer reference code or independently prove the Mark 2 designation. A separate Loupe This lot found during recheck is a 40 mm yellow-gold Mark 1, so it is not merged into this Mark 2 candidate."
     }
   ],
   "verifiedProvisionalFields": ["identity", "model", "productUrl"],
@@ -47,5 +47,5 @@
     "attachmentType",
     "dateStatus"
   ],
-  "note": "Research-only model review; no provisional M1 fact is promoted."
+  "note": "Research-only model review; the Series Two family and 38/40 mm sizing are confirmed by the maker, but the candidate's exact 40 mm yellow-gold Mark 2 configuration remains distinct from the rechecked 40 mm yellow-gold Mark 1 lot. No candidate-specific M1 fact or factory reference is promoted."
 }

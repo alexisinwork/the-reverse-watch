@@ -15,11 +15,73 @@
     {
       "url": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
       "status": "validated_primary",
-      "note": "The official Lang & Heyne Hektor Edition II page was checked on 2026-09-03 and confirms the exact model identity. The worker's URL path was not treated as a reference code because no numeric manufacturer reference was published on the fetched page."
+      "note": "The official Lang & Heyne Hektor Edition II page was rechecked on 2026-09-03 and confirms the exact Edition II with 40 mm diameter, 10.95 mm height, LH calibre 33.2-2, manual winding, 48-hour reserve, three integrated lugs, and hours/minutes/central-seconds display. No numeric watch reference is published."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "note": "The official Hektor Edition II page identifies the stainless-steel case and bracelet context."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "note": "The official Hektor Edition II specification states a 40 mm diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 10.95,
+      "sourceUrl": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "note": "The official Hektor Edition II specification states 10.95 mm height."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual winding",
+      "sourceUrl": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "note": "The official Hektor Edition II specification identifies manual winding."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "LH 33.2-2",
+      "sourceUrl": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "note": "The official Hektor Edition II specification identifies LH calibre 33.2-2."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 48,
+      "sourceUrl": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "note": "The official Hektor Edition II specification states a 48-hour running time."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "integrated",
+      "sourceUrl": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "note": "The official page describes three smoothly integrated lugs and the stainless-steel bracelet as part of the case design."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
+      "note": "The official function list contains hours, minutes, and central seconds, with no date display."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -28,19 +90,14 @@
   ],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
-    "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
     "accuracy",
     "waterResistanceM",
-    "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "lumeGrade"
   ],
-  "note": "Research-only model review; no provisional M1 fact is promoted."
+  "note": "Research-only model review; exact Hektor Edition II identity and core case, movement, and integrated-lug facts are confirmed by Lang & Heyne's official page. No manufacturer reference code is published; price, remaining geometry, configured weight, accuracy, water resistance, and lume performance remain unverified."
 }

@@ -15,11 +15,94 @@
     {
       "url": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
       "status": "validated_primary",
-      "note": "The official Byrne page was checked on 2026-09-03 and confirms the exact Gyro Dial Zero Silver & Black model, CHF18,500 price, 41mm titanium case, 5555 automatic calibre, 50m water resistance, and rubber attachment."
+      "note": "The official Byrne page was checked on 2026-09-03 and confirms the exact Gyro Dial Zero Silver & Black model, CHF 18,500 price excluding tax, 41 mm grade-5 titanium case, 14.7 mm thickness, 5555 automatic calibre, 60-hour reserve, 50 m water resistance, and saddlery-rubber bracelet. It does not publish a separate watch reference or a configured full weight."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "materials.strap",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1850000,
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page lists CHF 18,500 excluding tax; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "CHF",
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page quotes the price in Swiss francs."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "grade-5 titanium",
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page specifies a grade-5 titanium housing."
+    },
+    {
+      "fieldName": "materials.strap",
+      "value": "saddlery rubber, black or dark grey",
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page specifies a Jean Rousseau saddlery-rubber bracelet with curvex insert."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page specifies a 41 mm diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 14.7,
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page specifies 14.7 mm thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page specifies a mechanical watch with automatic winding."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "5555",
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page identifies Swiss Made calibre 5555."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 60,
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page specifies a 60-hour power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page specifies 5 ATM, normalized to 50 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "note": "The exact official page describes the four mobile dial faces and no date display."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -27,20 +110,14 @@
     }
   ],
   "missingM1Fields": [
-    "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
-    "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
     "accuracy",
-    "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "attachmentType"
   ],
-  "note": "Research-only model review; no provisional M1 fact is promoted."
+  "note": "Research-only model review; the exact Gyro Dial Zero Silver & Black identity and core commercial, geometry, movement, water-resistance, and date facts are confirmed by Byrne's official page. The watch reference, remaining geometry, configured weight, accuracy, lume performance, and attachment interface remain unverified."
 }
