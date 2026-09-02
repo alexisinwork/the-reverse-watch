@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "frederique-constant-classics-fc303mc5b6",
+  "jobId": "23935b57-0463-4735-86e8-ff75d61e7fae",
+  "reviewedAt": "2026-09-02T14:45:26.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Frederique Constant",
+    "model": "Classics Index Automatic",
+    "referenceCode": "FC-303MC5B6",
+    "variantName": "Classics Index Automatic 40 mm Silver Dial Black Leather"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://frederiqueconstant.com/watches/collection/men/men_classics/men_classics_automatic/fc-303mc5b6/",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

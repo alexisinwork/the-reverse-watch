@@ -236,6 +236,28 @@ remain null because the primary source does not state them. The manifest now
 reports 91 `needs_review` targets and 154 review artifacts; accepted catalogue
 rows remain unchanged.
 
+## Fourth parallel exact-reference batch (retrieved 2026-09-02)
+
+Six additional exact configurations were confirmed by parallel agents against
+current manufacturer pages and then validated through the Perplexity
+`sonar-pro` contract. Two initial responses failed because Perplexity marked
+`null` claims as observed; after isolated retries both completed successfully.
+
+- Oris Aquis Date Calibre 400 `01 400 7769 4135-07 8 22 09PEB` — [official card](https://www.oris.ch/en-US/product/watch/aquis/aquis-date-calibre-400/01-400-7769-4135-07-8-22-09PEB).
+- Oris Divers Sixty-Five 60th Anniversary Edition `01 733 7772 4034-Set` — [official card](https://www.oris.ch/en-US/product/watch/divers/divers-sixty-five/01-733-7772-4034-Set).
+- Stowa Flieger Classic 40 `FL02-18-1-0-2-S` — [official card](https://www.stowa.de/flieger-classic-40_29).
+- Alpina Alpiner Extreme Automatic `AL-525TB3AE6B` — [official card](https://us.alpinawatches.com/product/AL-525TB3AE6B.html).
+- Frederique Constant Classics Index Automatic `FC-303MC5B6` — [official card](https://frederiqueconstant.com/watches/collection/men/men_classics/men_classics_automatic/fc-303mc5b6/).
+- Zodiac Super Sea Wolf 53 Compression `ZO9255` — [official card](https://www.zodiacwatches.com/en-us/products/super-sea-wolf-53-compression-automatic-stainless-steel-watch/ZO9255.html); the official page is currently out of stock.
+
+These six remain `needs_more_evidence`: identity, exact reference, and product
+URL are independently confirmed, while unresolved M1 facts remain null and
+cannot satisfy hard filters. Zodiac `ZO9270` was deliberately not added: only
+an out-of-stock merchandising mention was found, without a separate current
+detail card carrying the exact configuration. The manifest now reports 97
+`needs_review` targets and 160 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

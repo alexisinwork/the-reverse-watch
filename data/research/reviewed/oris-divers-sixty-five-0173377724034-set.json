@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "oris-divers-sixty-five-0173377724034-set",
+  "jobId": "6cf25e5b-7993-4a9e-b879-4878caaac815",
+  "reviewedAt": "2026-09-02T14:45:26.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Oris",
+    "model": "Divers Sixty-Five 60th Anniversary Edition",
+    "referenceCode": "01 733 7772 4034-Set",
+    "variantName": "Divers Sixty-Five 60th Anniversary Edition 40 mm, black dial, steel bracelet and leather strap set"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.oris.ch/en-US/product/watch/divers/divers-sixty-five/01-733-7772-4034-Set",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

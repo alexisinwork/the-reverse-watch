@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "alpina-alpiner-extreme-al525tb3ae6b",
+  "jobId": "6aa2ac30-58d4-4773-ad63-6bd07f2852ac",
+  "reviewedAt": "2026-09-02T14:45:26.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Alpina",
+    "model": "Alpiner Extreme Automatic",
+    "referenceCode": "AL-525TB3AE6B",
+    "variantName": "Alpiner Extreme Automatic 39mm Blue Dial Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://us.alpinawatches.com/product/AL-525TB3AE6B.html",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

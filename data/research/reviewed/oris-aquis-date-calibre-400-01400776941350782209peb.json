@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "oris-aquis-date-calibre-400-01400776941350782209peb",
+  "jobId": "0bacb72c-66ea-425b-9755-9daacd62aaf4",
+  "reviewedAt": "2026-09-02T14:50:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Oris",
+    "model": "Aquis Date Calibre 400",
+    "referenceCode": "01 400 7769 4135-07 8 22 09PEB",
+    "variantName": "Aquis Date Calibre 400 41.5 mm Blue Dial Stainless Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.oris.ch/en-US/product/watch/aquis/aquis-date-calibre-400/01-400-7769-4135-07-8-22-09PEB",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "stowa-flieger-classic-40-fl02-18-1-0-2-s",
+  "jobId": "ba3bbb27-5b6e-438c-8a16-c0eadbc18718",
+  "reviewedAt": "2026-09-02T14:45:26.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Stowa",
+    "model": "Flieger Classic 40",
+    "referenceCode": "FL02-18-1-0-2-S",
+    "variantName": "Flieger Classic 40 Handaufzug Schwarz ohne Datum mit schwarzem Lederband"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.stowa.de/flieger-classic-40_29",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the current exact reference and configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T14:29:54.049Z",
+  "updatedAt": "2026-09-02T14:49:58.895Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2295,7 +2295,36 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 28
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "oris-aquis-date-calibre-400-01400776941350782209peb",
+          "referenceLabel": "Oris Aquis Date Calibre 400 exact reference 01 400 7769 4135-07 8 22 09PEB",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Aquis Date Calibre 400 configuration; preserve the exact 41.5 mm steel, blue-dial, steel-bracelet boundary."
+        },
+        {
+          "id": "oris-divers-sixty-five-0173377724034-set",
+          "referenceLabel": "Oris Divers Sixty-Five 60th Anniversary exact reference 01 733 7772 4034-Set",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Divers Sixty-Five anniversary configuration; preserve the exact 40 mm steel, black-dial, bracelet-and-leather-set boundary."
+        }
+      ]
     },
     {
       "slug": "rado",
@@ -2773,7 +2802,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "stowa-flieger-classic-40-fl02-18-1-0-2-s",
+          "referenceLabel": "Stowa Flieger Classic 40 exact reference FL02-18-1-0-2-S",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Flieger Classic 40 configuration; preserve the exact hand-wound, no-date, black-dial, black-pilot-strap boundary."
+        }
+      ]
     },
     {
       "slug": "laco",
@@ -3013,7 +3057,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "alpina-alpiner-extreme-al525tb3ae6b",
+          "referenceLabel": "Alpina Alpiner Extreme Automatic exact reference AL-525TB3AE6B",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Alpiner Extreme Automatic configuration; preserve the exact steel case, blue dial, and steel-bracelet boundary."
+        }
+      ]
     },
     {
       "slug": "frederique-constant",
@@ -3030,7 +3089,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 9
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "frederique-constant-classics-fc303mc5b6",
+          "referenceLabel": "Frederique Constant Classics Automatic exact reference FC-303MC5B6",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Classics Automatic configuration; preserve the exact 40 mm steel, silver-dial, black-leather boundary."
+        }
+      ]
     },
     {
       "slug": "maurice-lacroix",
@@ -3115,7 +3189,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "zodiac-super-sea-wolf-53-compression-zo9255",
+          "referenceLabel": "Zodiac Super Sea Wolf 53 Compression exact reference ZO9255",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Zodiac Super Sea Wolf 53 Compression configuration; preserve the exact 40 mm steel, silver-dial, steel-bracelet boundary and out-of-stock status."
+        }
+      ]
     },
     {
       "slug": "bulova",

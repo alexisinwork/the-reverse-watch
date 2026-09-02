@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "zodiac-super-sea-wolf-53-compression-zo9255",
+  "jobId": "ede2d135-54c7-4d8c-8052-4a3a357319b2",
+  "reviewedAt": "2026-09-02T14:50:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Zodiac",
+    "model": "Super Sea Wolf 53 Compression",
+    "referenceCode": "ZO9255",
+    "variantName": "Super Sea Wolf 53 Compression Automatic Stainless Steel Watch"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.zodiacwatches.com/en-us/products/super-sea-wolf-53-compression-automatic-stainless-steel-watch/ZO9255.html",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was checked on 2026-09-02 and confirms the exact ZO9255 configuration; it is currently out of stock. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}
