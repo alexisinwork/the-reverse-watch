@@ -1,0 +1,86 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breguet-marine-chronographe-5527tiy1tw0",
+  "jobId": "746a0b6f-057d-44c3-b02f-40eb82295f7e",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breguet",
+    "model": "Marine Chronographe 5527",
+    "referenceCode": "5527TI/Y1/TW0",
+    "variantName": "Titanium, blue dial, titanium bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breguet.com/en/watches/marine/marine-chronographe-5527/5527tiy1tw0",
+      "status": "validated_primary",
+      "note": "The official Breguet page was checked on 2026-09-03 and confirms the exact titanium 5527TI/Y1/TW0 reference, automatic 582QA, 42.3 mm case, flyback chronograph/date, 48-hour reserve and 10 bar resistance."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 42.3,
+      "sourceUrl": "https://www.breguet.com/en/watches/marine/marine-chronographe-5527/5527tiy1tw0",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 13.9,
+      "sourceUrl": "https://www.breguet.com/en/watches/marine/marine-chronographe-5527/5527tiy1tw0",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "582QA",
+      "sourceUrl": "https://www.breguet.com/en/watches/marine/marine-chronographe-5527/5527tiy1tw0",
+      "note": "Official automatic flyback calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 48,
+      "sourceUrl": "https://www.breguet.com/en/watches/marine/marine-chronographe-5527/5527tiy1tw0",
+      "note": "Official reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.breguet.com/en/watches/marine/marine-chronographe-5527/5527tiy1tw0",
+      "note": "10 bar / 100 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.breguet.com/en/watches/marine/marine-chronographe-5527/5527tiy1tw0",
+      "note": "Exact chronograph includes date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current titanium Marine chronograph reference is confirmed. Fit dimensions, weight, accuracy, lume grade and price remain null."
+}

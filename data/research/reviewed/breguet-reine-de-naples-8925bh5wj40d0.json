@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breguet-reine-de-naples-8925bh5wj40d0",
+  "jobId": "8aed61bc-2cf9-422d-9350-f847702dcdd3",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breguet",
+    "model": "Reine de Naples 8925",
+    "referenceCode": "8925BH/5W/J40 D0",
+    "variantName": "18K Breguet gold, diamond-set bracelet, mother-of-pearl dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breguet.com/en/watches/reine-de-naples/reine-de-naples-8925/8925bh5wj40d0",
+      "status": "validated_primary",
+      "note": "The official Breguet page was checked on 2026-09-03 and confirms the exact 8925BH/5W/J40 D0 shaped reference and current Reine de Naples configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 25,
+      "sourceUrl": "https://www.breguet.com/en/watches/reine-de-naples/reine-de-naples-8925/8925bh5wj40d0",
+      "note": "Official smaller case dimension."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 33,
+      "sourceUrl": "https://www.breguet.com/en/watches/reine-de-naples/reine-de-naples-8925/8925bh5wj40d0",
+      "note": "Official larger case dimension."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 8.5,
+      "sourceUrl": "https://www.breguet.com/en/watches/reine-de-naples/reine-de-naples-8925/8925bh5wj40d0",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "586/1",
+      "sourceUrl": "https://www.breguet.com/en/watches/reine-de-naples/reine-de-naples-8925/8925bh5wj40d0",
+      "note": "Official automatic calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 38,
+      "sourceUrl": "https://www.breguet.com/en/watches/reine-de-naples/reine-de-naples-8925/8925bh5wj40d0",
+      "note": "Official reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.breguet.com/en/watches/reine-de-naples/reine-de-naples-8925/8925bh5wj40d0",
+      "note": "3 bar / 30 m."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade",
+    "dateStatus"
+  ],
+  "note": "Exact current shaped reference is confirmed. Round diameter, fit dimensions, configured weight, accuracy, lume grade, date status and stable price remain null."
+}

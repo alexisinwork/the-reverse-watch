@@ -1416,3 +1416,20 @@ The 16 review artifacts retain Perplexity job provenance and manufacturer URLs.
 No model was promoted to the accepted catalogue because residual M1 gaps remain
 for fit geometry, configured weight, daily accuracy, lume grade, or regional
 price as applicable.
+
+## Seventy-eighth Breguet exact-reference pass (retrieved 2026-09-03)
+
+The Breguet catalogue audit found 12 exact current references absent locally;
+six were sent through Perplexity and independently checked against their exact
+manufacturer pages:
+
+- [Classique Souscription 2025 `2025BH/28/9W6`](https://www.breguet.com/en/watches/classique/classique-souscription-2025/2025bh289w6): 40 mm, 18K Breguet gold, manual VS00, 96-hour reserve, 3 bar, Grand Feu enamel and alligator.
+- [Classique Tourbillon `7357BH/1H/386`](https://www.breguet.com/en/watches/classique/classique-tourbillon-7357/7357bh1h386): 35 mm, 18K Breguet gold, manual 187B, 60-hour reserve, 3 bar and tourbillon.
+- [Tradition GMT `7067PT/NM/5W6`](https://www.breguet.com/en/watches/tradition/tradition-gmt-7067/7067ptnm5w6): 40 mm platinum, manual 507DRF, 50-hour reserve, 3 bar, GMT/day-night/power-reserve indications.
+- [Marine `5517TI/Y1/TZ0`](https://www.breguet.com/en/watches/marine/marine-5517/5517tiy1tz0): 40 mm titanium, automatic 777A, 55-hour reserve, 100 m, date and titanium bracelet.
+- [Marine Chronographe `5527TI/Y1/TW0`](https://www.breguet.com/en/watches/marine/marine-chronographe-5527/5527tiy1tw0): 42.3 mm titanium, automatic 582QA, 48-hour reserve, 100 m, flyback chronograph and date.
+- [Reine de Naples `8925BH/5W/J40 D0`](https://www.breguet.com/en/watches/reine-de-naples/reine-de-naples-8925/8925bh5wj40d0): 33 x 25 x 8.5 mm shaped gold case, automatic 586/1, 38-hour reserve, 3 bar and diamond-set bracelet.
+
+All six remain `needs_review`: exact identity and manufacturer-published facts
+are retained with provenance, while price, configured weight, accuracy and
+other unpublished M1 fields remain null.

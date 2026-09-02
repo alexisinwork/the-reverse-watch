@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breguet-classique-souscription-2025bh289w6",
+  "jobId": "d128713a-7f03-4413-9774-c5e55cee7c84",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breguet",
+    "model": "Classique Souscription 2025",
+    "referenceCode": "2025BH/28/9W6",
+    "variantName": "18K Breguet gold, Grand Feu enamel, alligator"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breguet.com/en/watches/classique/classique-souscription-2025/2025bh289w6",
+      "status": "validated_primary",
+      "note": "The official Breguet page was checked on 2026-09-03 and confirms the exact 2025BH/28/9W6 reference, 40 mm case, manual VS00, 96-hour reserve, 3 bar resistance and Grand Feu enamel."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-souscription-2025/2025bh289w6",
+      "note": "Official case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 10.8,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-souscription-2025/2025bh289w6",
+      "note": "Official case thickness."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 21,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-souscription-2025/2025bh289w6",
+      "note": "Official lug width."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "VS00",
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-souscription-2025/2025bh289w6",
+      "note": "Official manual calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 96,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-souscription-2025/2025bh289w6",
+      "note": "Official reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-souscription-2025/2025bh289w6",
+      "note": "3 bar / 30 m."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current anniversary reference is confirmed. Fit length, configured weight, accuracy, lume grade and price remain null."
+}

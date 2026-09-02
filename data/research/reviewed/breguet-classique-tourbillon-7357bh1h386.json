@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breguet-classique-tourbillon-7357bh1h386",
+  "jobId": "d29a0069-f8c0-47b8-96b5-31acfb920c2f",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breguet",
+    "model": "Classique Tourbillon 7357",
+    "referenceCode": "7357BH/1H/386",
+    "variantName": "18K Breguet gold, hand-guilloché dial, calfskin"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breguet.com/en/watches/classique/classique-tourbillon-7357/7357bh1h386",
+      "status": "validated_primary",
+      "note": "The official Breguet page was checked on 2026-09-03 and confirms the exact gold 7357BH/1H/386 reference, 35 mm case, manual 187B, 60-hour reserve, 3 bar resistance and tourbillon."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 35,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-tourbillon-7357/7357bh1h386",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 8.9,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-tourbillon-7357/7357bh1h386",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 18,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-tourbillon-7357/7357bh1h386",
+      "note": "Official lug width."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "187B",
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-tourbillon-7357/7357bh1h386",
+      "note": "Official manual tourbillon calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 60,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-tourbillon-7357/7357bh1h386",
+      "note": "Official reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.breguet.com/en/watches/classique/classique-tourbillon-7357/7357bh1h386",
+      "note": "3 bar / 30 m."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade",
+    "dateStatus"
+  ],
+  "note": "Exact current gold tourbillon reference is confirmed. Fit length, configured weight, accuracy, lume grade, date status and price remain null."
+}

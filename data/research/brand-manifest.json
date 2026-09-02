@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T23:37:41.510Z",
+  "updatedAt": "2026-09-02T23:51:30.492Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1843,6 +1843,90 @@
             ]
           },
           "coverageRationale": "Current official Classique configuration; preserve the exact white-gold, Grand Feu enamel, date, and alligator-strap boundary."
+        },
+        {
+          "id": "breguet-classique-souscription-2025bh289w6",
+          "referenceLabel": "Breguet Classique Souscription exact reference 2025BH/28/9W6",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the current 40 mm platinum-tone enamel Classique Souscription to cover a distinct hand-wound formal reference."
+        },
+        {
+          "id": "breguet-classique-tourbillon-7357bh1h386",
+          "referenceLabel": "Breguet Classique Tourbillon exact reference 7357BH/1H/386",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add an exact current 35 mm hand-wound tourbillon reference for high-horology complication coverage."
+        },
+        {
+          "id": "breguet-tradition-gmt-7067ptnm5w6",
+          "referenceLabel": "Breguet Tradition GMT exact platinum reference 7067PT/NM/5W6",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add the exact platinum Tradition GMT with day/night and power-reserve indications."
+        },
+        {
+          "id": "breguet-marine-5517tiy1tz0",
+          "referenceLabel": "Breguet Marine exact titanium reference 5517TI/Y1/TZ0",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add an exact current 40 mm titanium Marine date reference for technical-luxury material diversity."
+        },
+        {
+          "id": "breguet-marine-chronographe-5527tiy1tw0",
+          "referenceLabel": "Breguet Marine Chronographe exact titanium reference 5527TI/Y1/TW0",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add an exact current titanium flyback chronograph and date reference."
+        },
+        {
+          "id": "breguet-reine-de-naples-8925bh5wj40d0",
+          "referenceLabel": "Breguet Reine de Naples exact diamond-set reference 8925BH/5W/J40 D0",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add an exact current shaped Reine de Naples reference to preserve a high-jewellery feminine geometry rather than a round-case family rollup."
         }
       ]
     },

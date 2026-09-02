@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breguet-tradition-gmt-7067ptnm5w6",
+  "jobId": "3d68b94d-1f48-4b67-b8db-aa872214c68a",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breguet",
+    "model": "Tradition GMT 7067",
+    "referenceCode": "7067PT/NM/5W6",
+    "variantName": "Platinum, Grand Feu enamel, rubber strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breguet.com/en/watches/tradition/tradition-gmt-7067/7067ptnm5w6",
+      "status": "validated_primary",
+      "note": "The official Breguet page was checked on 2026-09-03 and confirms the exact platinum 7067PT/NM/5W6 reference, manual 507DRF, 40 mm case, GMT/day-night/power-reserve functions, 50-hour reserve and 3 bar resistance."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.breguet.com/en/watches/tradition/tradition-gmt-7067/7067ptnm5w6",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12.1,
+      "sourceUrl": "https://www.breguet.com/en/watches/tradition/tradition-gmt-7067/7067ptnm5w6",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 21,
+      "sourceUrl": "https://www.breguet.com/en/watches/tradition/tradition-gmt-7067/7067ptnm5w6",
+      "note": "Official lug width."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "507DRF",
+      "sourceUrl": "https://www.breguet.com/en/watches/tradition/tradition-gmt-7067/7067ptnm5w6",
+      "note": "Official manual GMT calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 50,
+      "sourceUrl": "https://www.breguet.com/en/watches/tradition/tradition-gmt-7067/7067ptnm5w6",
+      "note": "Official reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.breguet.com/en/watches/tradition/tradition-gmt-7067/7067ptnm5w6",
+      "note": "3 bar / 30 m."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current platinum GMT reference is confirmed. Fit length, configured weight, accuracy, lume grade and price remain null."
+}
