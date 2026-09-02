@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "fp-journe-chronometre-bleu-cb",
+  "jobId": "9b1460eb-6401-44e7-add0-73bf1c35cf6e",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "F.P. Journe",
+    "model": "Chronomètre Bleu",
+    "referenceCode": "CB",
+    "variantName": "Chronomètre Bleu / Classique collection / Ref. CB"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.fpjourne.com/sites/default/files/catalog/fichier/F.P.JOURNE_Catalogue_2025_2028_ENG.pdf",
+      "status": "validated_primary",
+      "note": "F.P. Journe's official 2025-2028 catalogue was checked on 2026-09-02 and identifies Chronomètre Bleu reference CB, the Classique collection, tantalum case, blue chrome dial, manual-winding rose-gold movement, and central hours/minutes with small seconds."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact F.P. Journe reference is confirmed by the official catalogue, but this source does not establish current online availability and the full M1 review remains incomplete; no catalogue row is created."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "ulysse-nardin-diver-hammerhead-shark-1183-170le-3a-hammer-3a",
+  "jobId": "8297a72d-cb3c-4105-b482-537929b687a6",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Ulysse Nardin",
+    "model": "Diver Hammerhead Shark",
+    "referenceCode": "1183-170LE-3A-HAMMER/3A",
+    "variantName": "Blue rubber strap variant"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.ulysse-nardin.com/en-us/watches/diver/1183-170le-3a-hammer-3a",
+      "status": "validated_primary",
+      "note": "Ulysse Nardin's official product page was checked on 2026-09-02 and confirms the exact reference, 44mm blue PVD titanium case, 300-piece limited edition, UN-118 automatic movement, date at 6, and blue rubber/titanium strap configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Ulysse Nardin reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

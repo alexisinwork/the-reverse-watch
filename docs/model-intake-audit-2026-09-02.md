@@ -466,6 +466,22 @@ Both exact references match the official cards and remain research-only
 were added. The manifest now reports 128 `needs_review` targets and 191 review
 artifacts; accepted catalogue rows remain unchanged.
 
+## Eighteenth parallel exact-reference batch (retrieved 2026-09-02)
+
+Three additional high-horology references were returned by Perplexity and
+checked against primary manufacturer material:
+
+- Ulysse Nardin Diver Hammerhead Shark `1183-170LE-3A-HAMMER/3A` — [official product card](https://www.ulysse-nardin.com/en-us/watches/diver/1183-170le-3a-hammer-3a).
+- H. Moser & Cie. Streamliner Two Hands 34mm `6400-1200` — [official product card](https://www.h-moser.com/en/streamliner/streamliner-two-hands-6400-1200).
+- F.P. Journe Chronomètre Bleu `CB` — [official 2025-2028 catalogue](https://www.fpjourne.com/sites/default/files/catalog/fichier/F.P.JOURNE_Catalogue_2025_2028_ENG.pdf).
+
+All three exact identities and references are supported by primary sources. The
+F.P. Journe source is an official catalogue rather than a current product
+checkout page, so online availability remains unresolved. All remain
+research-only `needs_more_evidence`; unresolved M1 facts remain null and no
+catalogue rows were added. The manifest now reports 131 `needs_review` targets
+and 194 review artifacts; accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

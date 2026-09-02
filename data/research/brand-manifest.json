@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:48:11.100Z",
+  "updatedAt": "2026-09-02T16:50:43.821Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1751,7 +1751,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 9
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "ulysse-nardin-diver-hammerhead-shark-1183-170le-3a-hammer-3a",
+          "referenceLabel": "Ulysse Nardin Diver Hammerhead Shark exact reference 1183-170LE-3A-HAMMER/3A",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Ulysse Nardin product card publishes an exact reference, limited-edition status, 44mm titanium case, UN-118 movement, date, and diver configuration."
+        }
+      ]
     },
     {
       "slug": "glashutte-original",
@@ -2530,7 +2545,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 48
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "h-moser-streamliner-two-hands-34-6400-1200",
+          "referenceLabel": "H. Moser & Cie. Streamliner Two Hands 34mm exact reference 6400-1200",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official H. Moser product card publishes the exact reference, 34mm steel case and bracelet, HMC 400 movement, two-hand no-date boundary, and 12 ATM rating."
+        }
+      ]
     },
     {
       "slug": "fp-journe",
@@ -2547,7 +2577,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 45
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "fp-journe-chronometre-bleu-cb",
+          "referenceLabel": "F.P. Journe Chronomètre Bleu official reference CB",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official F.P. Journe catalogue material identifies Chronomètre Bleu reference CB and its tantalum/manual-winding configuration; verify exact current product availability and M1 fields."
+        }
+      ]
     },
     {
       "slug": "richard-mille",

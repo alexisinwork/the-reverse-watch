@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "h-moser-streamliner-two-hands-34-6400-1200",
+  "jobId": "8aaa9a65-dfd0-4247-8f96-4523ea23ab9e",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "H. Moser & Cie.",
+    "model": "Streamliner Two Hands 34 mm",
+    "referenceCode": "6400-1200",
+    "variantName": "Streamliner Two Hands 34 mm Silver Fumé"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.h-moser.com/en/streamliner/streamliner-two-hands-6400-1200",
+      "status": "validated_primary",
+      "note": "H. Moser & Cie's official product page was checked on 2026-09-02 and confirms reference 6400-1200, Silver Fumé dial, 34mm steel case and bracelet, HMC 400 automatic movement, two-hand no-date configuration, 12 ATM rating, and 60-hour minimum reserve."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact H. Moser reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}
