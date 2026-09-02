@@ -1652,7 +1652,7 @@ retrieved 2026-09-02.
 
 ## Post-Phase-8 guided discovery continuation
 
-Status: **planned — owner-approved 2026-09-01**
+Status: **in progress — D0–D5 complete, verified 2026-09-02**
 
 The owner approved a guided continuation that preserves the four-question
 archetype and adds a result fork: proceed to the existing full personal quiz,

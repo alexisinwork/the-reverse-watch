@@ -52,6 +52,8 @@ API project and project service-account key for The Reserve.
 | OpenAI Platform | `OPENAI_API_KEY` | Optional Phase 5/6 | Dedicated project service account named `the-reserve-app`; apply project budgets and limits. The SQL-first recommendation baseline does not require it. |
 | OpenAI Platform | `OPENAI_PROJECT_ID`, `OPENAI_ORG_ID` | Optional | Record the dedicated project's IDs when the account belongs to multiple organizations/projects. |
 | Perplexity | `PERPLEXITY_API_KEY` | Phase 5 and research MCP | Dedicated project/key for catalogue research so spend is isolated. |
+| Discovery worker | `DISCOVERY_RESEARCH_WORKER_SECRET` | D5 scheduled worker | Scheduler-only bearer secret; keep separate from public intake and never log it. |
+| Discovery worker | `SUPABASE_SERVICE_ROLE_KEY` | D5 scheduled worker | Server-only queue RPC credential; never expose it to browser code. |
 | Beehiiv | `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 7 | Existing The Reserve publication; use only server-side. |
 | Supabase API | `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY` | Phase 4 web runtime | Project `osfqexnzgkksfvaocjvl`; the public key can execute only the narrow read-only RPC boundary and has no table grants. |
 | Supabase Postgres | `DIRECT_DATABASE_URL` | Migration/research maintenance only | Use a direct/session-pooler credential only for jobs that require SQL. It is not needed by the production recommendation route. `pgvector` is not enabled. |
@@ -107,6 +109,10 @@ Sonar endpoint:
   contradictory-claim investigations.
 - `advanced-deep-research` — exceptional audit cases only, after evaluation and
   cost review.
+
+The D5 cultural-discovery worker is deliberately pinned to the `pro-search`
+preset, a bounded output-token limit, a per-run job limit, and a daily USD cap.
+It does not auto-escalate to deep-research presets.
 
 Dynamic presets intentionally allow Perplexity to improve their underlying
 models. Raw request metadata and preset name must be retained for reproducibility.

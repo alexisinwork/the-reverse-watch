@@ -11,6 +11,10 @@ export default [
   route("watches/archetype", "routes/watch-archetype.tsx"),
   route("watches/find", "routes/watch-find.tsx"),
   route("watches/research/:requestToken", "routes/watch-research-status.tsx"),
+  route(
+    "internal/discovery-research/run",
+    "routes/internal-discovery-research-run.ts",
+  ),
   route("watches/people/:entitySlug", "routes/watch-entity.tsx"),
   route("watches/works/:workSlug", "routes/watch-work.tsx"),
   route("watches/stories/:storySlug", "routes/watch-story.tsx"),

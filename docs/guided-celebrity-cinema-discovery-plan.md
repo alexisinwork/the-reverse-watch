@@ -1,6 +1,6 @@
 # Guided Celebrity & Cinema Discovery Plan
 
-Status: **D0–D4 complete — owner-approved product direction, 2026-09-01**
+Status: **D0–D5 complete — verified 2026-09-02**
 
 This document is the executable continuation of the completed Phase 8 pilot.
 It preserves the existing four-question archetype quiz and turns its result
@@ -676,6 +676,49 @@ Checks:
 Exit: provider-free tests, one bounded staging smoke run, cost record, and fast
 gate pass. Keep the public submit control disabled until caps and scheduler
 authentication are verified in deployment.
+
+#### D5 implementation record
+
+The worker boundary uses the current Perplexity Agent API at
+`/v1/agent` with the `pro-search` preset, web search, JSON Schema output, a
+bounded output-token limit, and `store: false`. The API contract was checked
+against Perplexity's [Agent API reference](https://docs.perplexity.ai/api-reference/agent-post)
+and [structured-output guidance](https://docs.perplexity.ai/docs/agent-api/output-control),
+retrieved 2026-09-02. The discovery-specific contract
+keeps public figures, fictional characters, and works separate; exact-reference
+precision, custom-prop possibility, contradictions, and source roles remain
+explicit. Candidate URLs are accepted only when they also appear in the
+provider's returned annotations/search results. Malformed, mismatched, or
+unsupported output remains private and never reaches canonical discovery or the
+recommendation catalogue.
+
+Migration `0050_add_discovery_research_worker.sql` adds bounded leases, private
+raw-response retention, atomic daily-cost checking, stale-lease recovery, and
+service-role-only claim/complete/fail RPCs. The four D4 private tables now also
+have RLS enabled with no browser policies. The protected
+`/internal/discovery-research/run` route requires a separate worker secret,
+Supabase service credential, provider key, per-run job cap, output-token cap,
+and daily USD cap; missing configuration returns 503 and never calls either
+provider or database. Retryable provider failures are reduced to an allowlisted
+category and retried by the queue up to two times. Worker completion writes only
+draft provisional candidates and evidence links with `review_status = draft`;
+no public record or catalogue variant is created. Rollback is disabling the
+worker configuration or the route; queue data and canonical records are
+retained, and the migration is additive.
+
+Verification on 2026-09-02: the provider-free D5 suites cover successful
+structured output, ambiguity, no evidence, contradictions, malformed output,
+timeouts, rate limits, citation enforcement, and bounded worker outcome
+mapping. The live migration check claimed and failed a queued run inside a
+rollback transaction; a second claim cannot see that leased topic, and the
+four private tables have RLS enabled with no browser-role table grants. The
+protected route's staging smoke stayed provider-free because incomplete worker
+configuration returns 503 before either provider or database access. The
+configured daily cost ceiling is passed into the atomic claim RPC and each
+successful run records provider token usage and cost; no provider spend was
+incurred during verification. Security and performance advisors report no
+critical finding for the D5 objects; expected informational notices remain
+for private tables without browser policies and not-yet-used indexes.
 
 ### D6 — Add review and canonical promotion
 
