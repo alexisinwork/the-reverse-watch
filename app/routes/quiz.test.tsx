@@ -101,6 +101,18 @@ describe("progressive diagnostic", () => {
     expect(redirectResponse.headers.get("Location")).toBe(
       "/?diagnostic=subscription#newsletter-signup",
     );
+    const contextualRedirect = await loader({
+      request: new Request(
+        "http://test.local/quiz?story=don-draper-mad-men-omega",
+      ),
+    } as Parameters<typeof loader>[0]);
+    expect(contextualRedirect).toBeInstanceOf(Response);
+    if (!(contextualRedirect instanceof Response)) {
+      throw new Error("Expected contextual redirect response");
+    }
+    expect(contextualRedirect.headers.get("Location")).toBe(
+      "/?diagnostic=subscription&story=don-draper-mad-men-omega#newsletter-signup",
+    );
 
     const response = await action({
       request: new Request("http://test.local/quiz", {
@@ -353,6 +365,73 @@ describe("progressive diagnostic", () => {
     expect(
       discoveryFunnelMock.persistDiscoveryFunnelEvent,
     ).not.toHaveBeenCalled();
+  });
+
+  it("fails closed for a forged or unpublished story context", async () => {
+    const forged = await action({
+      request: new Request("http://test.local/quiz?story=../private", {
+        method: "POST",
+        body: new URLSearchParams({
+          intent: "core",
+          profile: JSON.stringify(coreProfile),
+        }),
+        headers: { Cookie: diagnosticCookie },
+      }),
+    } as Parameters<typeof action>[0]);
+    expect(forged.init?.status).toBe(400);
+    expect(forged.data).toEqual({
+      ok: false,
+      errors: ["The discovery story context is invalid."],
+    });
+
+    vi.stubEnv("SUPABASE_URL", "");
+    vi.stubEnv("SUPABASE_PUBLISHABLE_KEY", "");
+    const unpublished = await action({
+      request: new Request("http://test.local/quiz?story=not-published", {
+        method: "POST",
+        body: new URLSearchParams({
+          intent: "core",
+          profile: JSON.stringify(coreProfile),
+        }),
+        headers: { Cookie: diagnosticCookie },
+      }),
+    } as Parameters<typeof action>[0]);
+    expect(unpublished.init?.status).toBe(400);
+    expect(unpublished.data).toEqual({
+      ok: false,
+      errors: ["The discovery story context is unavailable."],
+    });
+  });
+
+  it("returns reviewed story context without changing the hard-input flow", async () => {
+    vi.stubEnv("SUPABASE_URL", "");
+    vi.stubEnv("SUPABASE_PUBLISHABLE_KEY", "");
+    const response = await action({
+      request: new Request(
+        "http://test.local/quiz?story=don-draper-mad-men-omega",
+        {
+          method: "POST",
+          body: new URLSearchParams({
+            intent: "core",
+            profile: JSON.stringify(coreProfile),
+          }),
+          headers: { Cookie: diagnosticCookie },
+        },
+      ),
+    } as Parameters<typeof action>[0]);
+    expect(response.data.ok).toBe(true);
+    if (!response.data.ok) throw new Error("Expected recommendation result");
+    expect(response.data.storyContext).toMatchObject({
+      storySlug: "don-draper-mad-men-omega",
+      entityName: "Don Draper",
+    });
+    expect(
+      response.data.recommendation.recommendations.every(
+        (candidate) =>
+          candidate.hardReasons.length === 0 &&
+          candidate.missingFacts.length === 0,
+      ),
+    ).toBe(true);
   });
 
   it("does not double-count a refined recommendation", async () => {

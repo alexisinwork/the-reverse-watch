@@ -1,6 +1,6 @@
 # Guided Celebrity & Cinema Discovery Plan
 
-Status: **D0–D6 complete — verified 2026-09-02**
+Status: **D0–D7 complete — verified 2026-09-02**
 
 This document is the executable continuation of the completed Phase 8 pilot.
 It preserves the existing four-question archetype quiz and turns its result
@@ -792,6 +792,34 @@ Checks:
 
 Exit: SQL/TypeScript parity, golden profiles, route tests, and `npm run check`
 pass.
+
+#### D7 implementation record
+
+Accepted story pages now offer a `Find the right equivalent` handoff carrying
+only the published story slug. The diagnostic validates the slug, preserves a
+valid handoff through the subscriber-unlock redirect, resolves it through the
+narrow published-story context RPC, and falls back only to the bundled
+reviewed corpus when the public read is unavailable. Unknown, unpublished,
+malformed, or stale context is rejected before evaluation.
+
+The full diagnostic still asks for budget, wrist, deployment, movement/service,
+accuracy, weight, complications, and date constraints. Accepted story traits
+can add only low-priority social-signal and aesthetic score factors when the
+user has not answered those optional questions. SQL hard-filter results,
+missing-fact separation, and catalogue linking remain authoritative; context
+cannot promote a rejected or verification-only reference. The result explains
+whether an exact reviewed reference is absent, fails a hard constraint, or
+meets it, without treating a family-only or unidentified claim as an exact
+catalogue match.
+
+Verification on 2026-09-02: the D7 context RPC was applied additively; golden
+domain tests cover bounded slugs, soft-trait mapping, hard rejection, and the
+no-context baseline; route tests cover the story CTA, forged context, unknown
+context, and accepted context. The fast gate reached lint, strict typecheck,
+50 test files and 238 tests, and the production build. The repository-wide
+format check remains blocked by two separately added, owner-owned reviewed
+JSON files; all tracked and D7-scoped files pass formatting, and those files
+were not modified.
 
 ### D8 — Production funnel and operations verification
 

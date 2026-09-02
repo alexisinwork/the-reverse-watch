@@ -321,4 +321,38 @@ describe("deterministic recommendation engine", () => {
       "cosmeticTolerance",
     ]);
   });
+
+  it("keeps the no-context baseline and hard partition unchanged", () => {
+    const baseline = recommend(baseProfile);
+    const contextual = recommendWatches(baseProfile, seedCatalogue, {
+      asOf: TEST_AS_OF,
+      storyContext: {
+        socialSignal: "discreet_competence",
+        aestheticDna: "structural_tool",
+      },
+    });
+
+    expect(contextual.recommendations.map((candidate) => candidate.id)).toEqual(
+      baseline.recommendations.map((candidate) => candidate.id),
+    );
+    expect(
+      contextual.recommendations[0]?.scoreTrace.map((factor) => factor.factor),
+    ).toEqual(
+      expect.arrayContaining([
+        "story_context_social_signal",
+        "story_context_aesthetic_dna",
+      ]),
+    );
+    const baselinePartition = evaluateHardFilterPartition(
+      baseProfile,
+      seedCatalogue,
+      { asOf: TEST_AS_OF },
+    );
+    const contextualPartition = evaluateHardFilterPartition(
+      baseProfile,
+      seedCatalogue,
+      { asOf: TEST_AS_OF },
+    );
+    expect(contextualPartition).toEqual(baselinePartition);
+  });
 });

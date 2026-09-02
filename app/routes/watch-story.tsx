@@ -119,7 +119,9 @@ export default function WatchStory() {
       </article>
       <aside className="discovery-cta">
         <h2>Find the right equivalent for you</h2>
-        <Link to="/quiz">Start the reference diagnostic</Link>
+        <Link to={`/quiz?story=${encodeURIComponent(story.slug)}`}>
+          Start the reference diagnostic
+        </Link>
       </aside>
     </main>
   );

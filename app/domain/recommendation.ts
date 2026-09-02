@@ -10,7 +10,11 @@ import {
   supportedAccuracyTolerances,
   verifiedCaseWearingSpanMm,
 } from "./catalogue";
-import type { QuestionnaireProfile } from "./questionnaire";
+import type {
+  AESTHETIC_DNA,
+  QuestionnaireProfile,
+  SOCIAL_SIGNALS,
+} from "./questionnaire";
 import {
   effectiveBudgetCeiling,
   permitsSpeculativeCandidate,
@@ -133,6 +137,10 @@ type EvaluationContext = {
   catalogue: SeedCatalogue;
   asOfMs: number;
   hardFilterEvaluation?: HardFilterEvaluation;
+  storyContext?: {
+    socialSignal: (typeof SOCIAL_SIGNALS)[number] | null;
+    aestheticDna: (typeof AESTHETIC_DNA)[number] | null;
+  };
 };
 
 const HARD_REASON_EXPLANATIONS: Record<HardReasonCode, string> = {
@@ -436,7 +444,6 @@ function evaluateRefinementHardFilters(
       "Speculative candidates require both an eligible secondary channel and explicit risk acceptance.",
     );
   }
-
   if (!refinement) return;
 
   if (
@@ -784,6 +791,30 @@ function scoreCandidate(
     );
   }
   if (
+    !refinement?.socialSignal &&
+    context.storyContext?.socialSignal &&
+    variant.traits.socialSignals.includes(context.storyContext.socialSignal)
+  ) {
+    addScore(
+      candidate,
+      "story_context_social_signal",
+      6,
+      "Softly aligns with the reviewed story attribution context.",
+    );
+  }
+  if (
+    !refinement?.aestheticDna &&
+    context.storyContext?.aestheticDna &&
+    variant.traits.aestheticDna.includes(context.storyContext.aestheticDna)
+  ) {
+    addScore(
+      candidate,
+      "story_context_aesthetic_dna",
+      8,
+      "Softly aligns with the reviewed story design context.",
+    );
+  }
+  if (
     refinement?.emotionalObjective &&
     variant.traits.emotionalObjectives.includes(refinement.emotionalObjective)
   ) {
@@ -1009,7 +1040,12 @@ export function recommendWatches(
   {
     asOf = new Date().toISOString(),
     hardFilterEvaluation,
-  }: { asOf?: string; hardFilterEvaluation?: HardFilterEvaluation } = {},
+    storyContext,
+  }: {
+    asOf?: string;
+    hardFilterEvaluation?: HardFilterEvaluation;
+    storyContext?: EvaluationContext["storyContext"];
+  } = {},
 ): RecommendationResult {
   const asOfMs = evaluationTimestamp(asOf);
   if (hardFilterEvaluation) {
@@ -1020,6 +1056,7 @@ export function recommendWatches(
     catalogue,
     asOfMs,
     hardFilterEvaluation,
+    storyContext,
   };
   const evaluated = catalogue.variants.map((variant) =>
     evaluateVariant(variant, context),

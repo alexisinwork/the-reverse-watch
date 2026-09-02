@@ -15,6 +15,11 @@ import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { loadRecommendationData } from "../domain/catalogue.server";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
+import {
+  explainStoryConstraint,
+  parseDiscoveryStorySlug,
+} from "../domain/discovery-context.server";
+import { loadPublishedDiscoveryStoryContext } from "../domain/discovery-store.server";
 import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
 import {
   createEmailDeliveryDeduplicationClient,
@@ -105,6 +110,13 @@ type ActionResult =
       profile: ReturnType<typeof normalizeProfile>;
       recommendation: RecommendationResult;
       subscription: SubscriptionResult;
+      storyContext?: {
+        storySlug: string;
+        headline: string;
+        entityName: string;
+        workTitle: string | null;
+        explanation: ReturnType<typeof explainStoryConstraint>;
+      };
     }
   | { ok: false; errors: string[] };
 
@@ -623,6 +635,15 @@ export async function action({ request }: Route.ActionArgs) {
   }
 
   const formData = await request.formData();
+  const storySlugResult = parseDiscoveryStorySlug(
+    new URL(request.url).searchParams.get("story"),
+  );
+  if (storySlugResult.status === "invalid") {
+    return data<ActionResult>(
+      { ok: false, errors: ["The discovery story context is invalid."] },
+      { status: 400 },
+    );
+  }
   const emailOptIn = parseEmailOptIn(formData);
   const intent = formData.get("intent");
   const serialized = formData.get("profile");
@@ -673,6 +694,15 @@ export async function action({ request }: Route.ActionArgs) {
   }
 
   const profile = normalizeProfile(parsed.data);
+  const discoveryContext = storySlugResult.slug
+    ? await loadPublishedDiscoveryStoryContext(storySlugResult.slug)
+    : null;
+  if (storySlugResult.slug && !discoveryContext) {
+    return data<ActionResult>(
+      { ok: false, errors: ["The discovery story context is unavailable."] },
+      { status: 400 },
+    );
+  }
   const evaluatedAt = new Date().toISOString();
   const evaluationStartedAt = performance.now();
   const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
@@ -682,6 +712,12 @@ export async function action({ request }: Route.ActionArgs) {
     {
       asOf: evaluatedAt,
       hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
+      storyContext: discoveryContext
+        ? {
+            socialSignal: discoveryContext.traits.socialSignal,
+            aestheticDna: discoveryContext.traits.aestheticDna,
+          }
+        : undefined,
     },
   );
   const hardFilterEvaluation =
@@ -888,21 +924,43 @@ export async function action({ request }: Route.ActionArgs) {
     }
   }
 
+  const result: Extract<ActionResult, { ok: true }> = {
+    ok: true,
+    intent,
+    profile,
+    recommendation,
+    subscription,
+    ...(discoveryContext && storySlugResult.slug
+      ? {
+          storyContext: {
+            storySlug: storySlugResult.slug,
+            headline: discoveryContext.story.headline,
+            entityName: discoveryContext.story.entity.name,
+            workTitle: discoveryContext.story.work?.title ?? null,
+            explanation: explainStoryConstraint(
+              discoveryContext.story,
+              recommendation,
+            ),
+          },
+        }
+      : {}),
+  };
   return data<ActionResult>(
-    {
-      ok: true,
-      intent,
-      profile,
-      recommendation,
-      subscription,
-    },
+    result,
     "error" in emailOptIn ? { status: 400 } : undefined,
   );
 }
 
 export async function loader({ request }: Route.LoaderArgs) {
   if (!(await hasDiagnosticAccess(request))) {
-    return redirect("/?diagnostic=subscription#newsletter-signup");
+    const storyContext = parseDiscoveryStorySlug(
+      new URL(request.url).searchParams.get("story"),
+    );
+    const storyQuery =
+      storyContext.status === "valid"
+        ? `&story=${encodeURIComponent(storyContext.slug)}`
+        : "";
+    return redirect(`/?diagnostic=subscription${storyQuery}#newsletter-signup`);
   }
 
   return null;
@@ -1095,6 +1153,7 @@ function ProfileSummary({
   intent,
   subscription,
   funnelSource,
+  storyContext,
   onEdit,
   onRefine,
   onRestart,
@@ -1105,6 +1164,13 @@ function ProfileSummary({
   intent: "core" | "refine";
   subscription: SubscriptionResult;
   funnelSource: "archetype" | null;
+  storyContext?: {
+    storySlug: string;
+    headline: string;
+    entityName: string;
+    workTitle: string | null;
+    explanation: ReturnType<typeof explainStoryConstraint>;
+  };
   onEdit: () => void;
   onRefine: () => void;
   onRestart: () => void;
@@ -1212,6 +1278,19 @@ function ProfileSummary({
         ) : null}
       </dl>
       <RecommendationSummary recommendation={recommendation} />
+      {storyContext ? (
+        <section
+          className="delivery-panel"
+          aria-labelledby="story-context-heading"
+        >
+          <span className="eyebrow">Reviewed story context</span>
+          <h2 id="story-context-heading">
+            {storyContext.entityName}
+            {storyContext.workTitle ? ` · ${storyContext.workTitle}` : ""}
+          </h2>
+          <p>{storyContext.explanation.message}</p>
+        </section>
+      ) : null}
       <DossierDelivery
         funnelSource={funnelSource}
         intent={intent}
@@ -1720,6 +1799,7 @@ export default function Quiz() {
           intent={resultData.intent}
           subscription={resultData.subscription}
           funnelSource={funnelSource}
+          storyContext={resultData.storyContext}
         />
       </main>
     );

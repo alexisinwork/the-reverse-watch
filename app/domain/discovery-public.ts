@@ -4,7 +4,13 @@ import {
   DISCOVERY_CONFIDENCE_LABELS,
   discoveryPilotCorpusSchema,
 } from "./discovery";
+import { PRICE_COMFORTS } from "./discovery-archetype";
 import { DISCOVERY_PILOT_CORPUS } from "./discovery-pilot";
+import {
+  AESTHETIC_DNA,
+  DEPLOYMENT_ENVIRONMENTS,
+  SOCIAL_SIGNALS,
+} from "./questionnaire";
 
 export const publishedDiscoveryStorySchema = z
   .object({
@@ -96,6 +102,20 @@ export const publishedDiscoveryStorySchema = z
 export const publishedDiscoveryStoriesSchema = z.array(
   publishedDiscoveryStorySchema,
 );
+
+export const publishedDiscoveryStoryContextSchema = z
+  .object({
+    story: publishedDiscoveryStorySchema,
+    traits: z
+      .object({
+        socialSignal: z.enum(SOCIAL_SIGNALS).nullable(),
+        aestheticDna: z.enum(AESTHETIC_DNA).nullable(),
+        deploymentEnvironment: z.enum(DEPLOYMENT_ENVIRONMENTS).nullable(),
+        priceComfort: z.enum(PRICE_COMFORTS).nullable(),
+      })
+      .strict(),
+  })
+  .strict();
 
 function publishedStories() {
   return publishedDiscoveryStoriesSchema.parse(

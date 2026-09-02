@@ -18,6 +18,7 @@ import {
   issueDiagnosticAccessCookie,
   parseDiagnosticAccessConfiguration,
 } from "../domain/diagnostic-access.server";
+import { parseDiscoveryStorySlug } from "../domain/discovery-context.server";
 import "../styles/home.css";
 
 const newsletterEmailSchema = z.string().trim().email().max(320);
@@ -44,8 +45,13 @@ export function headers({
 }
 
 export async function loader({ request }: Route.LoaderArgs) {
+  const storyContext = parseDiscoveryStorySlug(
+    new URL(request.url).searchParams.get("story"),
+  );
   return {
     diagnosticAccess: await hasDiagnosticAccess(request),
+    discoveryStorySlug:
+      storyContext.status === "valid" ? storyContext.slug : null,
   };
 }
 
@@ -169,6 +175,9 @@ export default function Home() {
   const [diagnosticAccess, setDiagnosticAccess] = useState(
     loaderData?.diagnosticAccess ?? false,
   );
+  const diagnosticHref = loaderData?.discoveryStorySlug
+    ? `/quiz?story=${encodeURIComponent(loaderData.discoveryStorySlug)}`
+    : "/quiz";
   const unlockDiagnostic = useCallback(() => setDiagnosticAccess(true), []);
 
   return (
@@ -197,7 +206,7 @@ export default function Home() {
             className={`landing-action landing-action--diagnostic${
               diagnosticAccess ? " landing-action--unlocked" : ""
             }`}
-            href={diagnosticAccess ? "/quiz" : "#newsletter-signup"}
+            href={diagnosticAccess ? diagnosticHref : "#newsletter-signup"}
           >
             <span className="landing-action__kicker">
               {diagnosticAccess

@@ -84,6 +84,27 @@ describe("landing page", () => {
     expect(screen.getByText(/Subscriber access · Unlocked/i)).toBeVisible();
   });
 
+  it("preserves a valid story handoff while unlocking the diagnostic", async () => {
+    const Stub = createRoutesStub([
+      {
+        path: "/",
+        Component: Home,
+        action,
+        loader: () => ({
+          diagnosticAccess: true,
+          discoveryStorySlug: "don-draper-mad-men-omega",
+        }),
+      },
+    ]);
+    render(<Stub />);
+
+    expect(
+      await screen.findByRole("link", {
+        name: /Start the reference diagnostic/i,
+      }),
+    ).toHaveAttribute("href", "/quiz?story=don-draper-mad-men-omega");
+  });
+
   it("requires explicit consent before calling Beehiiv", async () => {
     const fetchImplementation = vi.fn<typeof fetch>();
     vi.stubGlobal("fetch", fetchImplementation);
