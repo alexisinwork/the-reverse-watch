@@ -853,15 +853,18 @@ build completed with dependency-resolution warnings only, and the Vercel
 runtime-error query returned no errors in the most recent 30-minute window.
 The live D7 Supabase RPC proof passed immediately before this checkpoint.
 
-The full local browser suite was started as required at this phase, but its 12
-non-health tests could not launch because the installed Chromium headless shell
-requires the absent system library `libnspr4.so`; two health tests passed. The
-runner cannot install the missing system dependency because this environment
-has no non-interactive sudo authority. Vercel deployment URLs are protected by
-SSO in the connected inspection surface, so read-only route responses there
-could not be used as an application smoke substitute. D8 remains open for an
-owner-authorized environment with browser dependencies and a production smoke
-credential/session; no provider worker or scheduler was enabled.
+After the Chromium host dependencies were installed, the full local browser
+matrix passed: all 14 desktop/mobile tests, including the archetype-to-quiz
+handoff, discovery citation rendering, health, error boundary, and diagnostic
+flows. A stale E2E accessible-name assertion was aligned with the existing
+visible CTA; the test continues to prove that only soft preferences cross the
+handoff. Vercel reports no production runtime errors in the most recent
+one-hour window, and its connected fetch confirms the production landing page
+returns 200. Protected `/health`, `/watches/archetype`, and `/quiz` requests
+are still redirected to Vercel SSO in that inspection surface, so they cannot
+substitute for an authenticated browser smoke session. D8 remains open for
+that production smoke evidence and for confirmed worker secrets, caps, and
+scheduler authentication; no provider worker or scheduler was enabled.
 
 ## Golden scenario matrix
 

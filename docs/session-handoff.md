@@ -1508,10 +1508,13 @@ request was made.
   `dpl_CpZz4d1As9UN7kgjaEiAV4LW2td8` reached `READY`; its build completed and
   the recent runtime-error query was empty. The D7 Supabase context RPC returned
   a published story and `null` for an unknown slug.
-- D8 browser verification is still open. `npm run test:e2e` ran the complete
-  configured matrix: two health checks passed, while the other 12 tests could
-  not launch because Chromium lacks `libnspr4.so`. Installing system
-  dependencies is unavailable in the current non-root environment. Vercel
-  route inspection is also SSO-protected. Do not enable the discovery worker or
-  scheduler until a browser-capable, authenticated production smoke run is
-  available; no provider secret or token was recorded here.
+- D8 browser verification now has a clean local baseline: after Chromium host
+  dependencies were installed, `npm run test:e2e` passed all 14 desktop/mobile
+  tests and `npm run check` passed all 50 test files / 238 tests plus build.
+  The only test change aligned a stale E2E CTA name with the existing visible
+  archetype-to-quiz handoff. Vercel reports no production runtime errors in the
+  latest one-hour window and its connected fetch returned 200 for `/`, but
+  `/health`, `/watches/archetype`, and `/quiz` redirect through Vercel SSO.
+  Do not enable the discovery worker or scheduler until an authenticated
+  production smoke run and the required provider configuration are confirmed;
+  no provider secret or token is recorded here.

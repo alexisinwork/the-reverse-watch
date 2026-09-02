@@ -9,10 +9,10 @@ Last verified: 2026-09-02
 - Vercel project `the-reverse-watch` in the `alexisinworks-projects` team is
   sourced from `alexisinwork/the-reverse-watch`; pushes to `main` deploy to
   Production.
-- Production deployment `dpl_E18EH9PcXGJvMrTmg6JGWr15Yihu` is `READY` from
-  commit `f9ab3b5` (`Record D8 verification checkpoint`). The preceding
-  `dpl_CpZz4d1As9UN7kgjaEiAV4LW2td8` deployment is the recorded rollback target;
-  it contains the verified D7 application behavior.
+- At the D8 browser-verification checkpoint, production deployment
+  `dpl_8LkBWyme1Ey17k3u53r763L6eWWP` is `READY` from commit `8f197f2`.
+  The preceding `dpl_2ADoRRWLNidT1NwMGrYASpfZYAid` is an available rollback
+  candidate. Both include the verified D7 application behavior.
 - `https://www.thereserve.watch`, `/quiz`, `/health`, and `/evaluation` return
   200, as does the stable `https://the-reverse-watch.vercel.app` alias. The
   third-party apex DNS still publishes conflicting A records and its
@@ -27,16 +27,16 @@ Last verified: 2026-09-02
   recommendations and source-backed dossier UI, explicit email consent,
   Upstash-backed delivery deduplication, privacy-safe funnel aggregation,
   Sentry instrumentation, and a production evaluation dashboard. The complete
-  desktop/mobile Playwright matrix and the fast quality gate pass.
+  desktop/mobile Playwright matrix (14 tests) and the fast quality gate pass.
 - Beehiiv production configuration and one consented live subscription are
   verified. Resend's adapter is tested, but its production variables remain
   empty and the sender domain remains unverified. The owner directed that this
   state be preserved; provider unavailability remains visible without hiding
   recommendations.
-- Vercel reported no runtime errors in the 30 minutes before the D8 checkpoint.
-  The connected Vercel inspection surface redirects deployment URLs through
-  SSO, so D8 application route smoke responses remain pending a production
-  smoke session.
+- Vercel reported no runtime errors in the hour before the D8 checkpoint. Its
+  connected fetch returned 200 for the production landing page; `/health`,
+  `/watches/archetype`, and `/quiz` redirect through SSO, so authenticated
+  browser smoke evidence for those routes remains pending.
 
 ### Historical Phase 5 checkpoints
 

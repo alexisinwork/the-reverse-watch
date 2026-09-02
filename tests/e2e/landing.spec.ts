@@ -132,7 +132,7 @@ test("creates a shareable archetype without bypassing hard constraints", async (
     page.getByRole("button", { name: "Share this result" }),
   ).toBeVisible();
   await expect(
-    page.getByRole("link", { name: "Continue to the reference diagnostic" }),
+    page.getByRole("link", { name: "Find the right watch for me" }),
   ).toHaveAttribute(
     "href",
     "/quiz?source=archetype&socialSignal=anti_luxury&aestheticDna=structural_tool",
@@ -154,9 +154,7 @@ test("creates a shareable archetype without bypassing hard constraints", async (
   const accessibility = await new AxeBuilder({ page }).analyze();
   expect(accessibility.violations).toEqual([]);
 
-  await page
-    .getByRole("link", { name: "Continue to the reference diagnostic" })
-    .click();
+  await page.getByRole("link", { name: "Find the right watch for me" }).click();
   await expect(
     page.getByRole("heading", { name: "What is the actual purchase ceiling?" }),
   ).toBeVisible();
