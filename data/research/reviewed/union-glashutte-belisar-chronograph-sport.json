@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "union-glashutte-belisar-chronograph-sport",
+  "jobId": "f9436871-385b-49ef-a2d8-8455478d0ebc",
+  "reviewedAt": "2026-09-03T05:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Union Glashütte",
+    "model": "Belisar Chronograph Sport",
+    "referenceCode": "D014.927.11.057.00",
+    "variantName": "Belisar Chronograph Sport (stainless steel bracelet, ceramic bezel)"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.union-glashuette.com/en_int/d0149271105700.html",
+      "status": "validated_primary",
+      "note": "The official Union Glashütte product page was checked on 2026-09-03 and confirms ref. D014.927.11.057.00, Belisar Chronograph Sport, stainless steel bracelet, and ceramic bezel."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

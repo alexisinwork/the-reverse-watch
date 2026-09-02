@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "molnija-achs-1-version-6",
+  "jobId": "909fcf7c-3f79-47d6-a3c4-58a6e11bca55",
+  "reviewedAt": "2026-09-03T05:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Molnija",
+    "model": "AChS-1",
+    "referenceCode": "0010102-6.0",
+    "variantName": "AChS-1 3520.D 44 mm quartz chronograph"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://molnija.shop/upload/iblock/2fc/ozd49mm954gaa5e835k1a8p6rfioh3nb.pdf",
+      "status": "validated_primary",
+      "note": "The official Molnija manual was checked on 2026-09-03 and confirms AChS-1 Version 6.0, 44mm, quartz chronograph, sapphire, and 10 ATM. The exact 0010102-6.0 article is supplied by the specialist retailer source used by the worker."
+    },
+    {
+      "url": "https://yshio.ru/catalog/russian_wristwatch_lightning_asf-1_3520.d_44%20mm/",
+      "status": "validated_secondary",
+      "note": "The specialist retailer page supplies article 0010102-6.0 for the AChS-1 3520.D 44mm configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "referenceCode"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productUrl",
+      "reason": "The worker supplied a secondary retailer page; the official manual confirms the model but is not a product route."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "slava-heritage-tradition-2427",
+  "jobId": "e2230337-747b-47f2-8172-dbb9e6c1a72e",
+  "reviewedAt": "2026-09-03T05:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Slava",
+    "model": "Tradition",
+    "referenceCode": "1221434/300-2427",
+    "variantName": "Slava Tradition 1221434/300-2427"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://smirs.com/russian-watches/td-slava/slava-2427/",
+      "status": "validated_secondary",
+      "note": "The specialist Russian-watch reference page was checked on 2026-09-03 and identifies Slava Tradition ref. 1221434/300-2427. The current official Slava storefront does not expose this exact historical configuration as a product page."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; the exact reference is confirmed by specialist secondary evidence, but a current manufacturer product page and complete reference-specific M1 evidence are unavailable."
+}

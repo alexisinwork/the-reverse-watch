@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "agat-295-damascus-46mm",
+  "jobId": "211174b2-aff7-4599-855d-6fe214a991a1",
+  "reviewedAt": "2026-09-03T05:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "AGAT",
+    "model": "295 Damascus 46 mm",
+    "referenceCode": "46-1206",
+    "variantName": "AGAT Exclusive Damascus 46 mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://agatwatch.ru/collection/exclusive/chasy-agat-295-damask-46-mm/",
+      "status": "validated_primary",
+      "note": "The official AGAT Watch product page was checked on 2026-09-03 and confirms article 46-1206, the 46mm Damascus configuration, and AGAT 3801 automatic movement."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

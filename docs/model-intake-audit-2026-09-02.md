@@ -737,3 +737,17 @@ All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. HMT remains explicitly reference-ambiguous rather than
 receiving an invented code. The manifest now reports 187 `needs_review` targets
 and 250 review artifacts; accepted catalogue rows remain unchanged.
+
+## Thirty-fourth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Slava Tradition `1221434/300-2427` — [specialist reference page](https://smirs.com/russian-watches/td-slava/slava-2427/). The exact historical configuration is confirmed; no current official product page was found.
+- Molnija AChS-1 Version 6.0 `0010102-6.0` — [official manual](https://molnija.shop/upload/iblock/2fc/ozd49mm954gaa5e835k1a8p6rfioh3nb.pdf). The manufacturer confirms the Version 6.0 model; the exact article code comes from a specialist retailer and the retailer URL was not promoted.
+- AGAT 295 Damascus 46mm article `46-1206` — [official product page](https://agatwatch.ru/collection/exclusive/chasy-agat-295-damask-46-mm/). The exact article and configuration are confirmed.
+- Union Glashütte Belisar Chronograph Sport `D014.927.11.057.00` — [official product page](https://www.union-glashuette.com/en_int/d0149271105700.html). The exact reference and stainless-steel/ceramic configuration are confirmed.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 191 `needs_review` targets and
+254 review artifacts; accepted catalogue rows remain unchanged.

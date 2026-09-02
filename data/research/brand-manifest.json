@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:38:06.018Z",
+  "updatedAt": "2026-09-02T18:41:51.435Z",
   "brands": [
     {
       "slug": "rolex",
@@ -6339,7 +6339,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 11
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "slava-heritage-tradition-2427",
+          "referenceLabel": "Slava Heritage/Tradition exact movement family 2427",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the Slava Heritage/Tradition 2427 family, but not a single current reference; verify the exact model identity before any catalogue use."
+        }
+      ]
     },
     {
       "slug": "molnija",
@@ -6356,7 +6371,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "molnija-achs-1-version-6",
+          "referenceLabel": "Molnija AChS-1 wrist watch exact version 6",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Molnija shop lists AChS-1 version 6 as a current aviation wrist-watch configuration; verify the exact product page and reference details."
+        }
+      ]
     },
     {
       "slug": "agat-zlatoust",
@@ -6373,7 +6403,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "agat-295-damascus-46mm",
+          "referenceLabel": "AGAT 295 Damascus exact 46mm configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official AGAT Watch store lists the 295 Damascus 46mm configuration; verify the exact product identity and manufacturer details."
+        }
+      ]
     },
     {
       "slug": "vostok-europe",
@@ -6494,7 +6539,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "union-glashutte-belisar-chronograph-sport",
+          "referenceLabel": "Union Glashütte Belisar Chronograph Sport exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The official Union Glashütte collection lists Belisar Chronograph Sport configurations; verify one exact current reference rather than scoring the family as a single variant."
+        }
+      ]
     },
     {
       "slug": "bruno-sohnle",
