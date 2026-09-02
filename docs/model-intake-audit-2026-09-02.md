@@ -640,6 +640,22 @@ rows were promoted. Precista PRS-10 remains `planned` for the next worker run.
 The manifest now reports 169 `needs_review` targets and 232 review artifacts;
 accepted catalogue rows remain unchanged.
 
+## Twenty-ninth parallel exact-reference batch (retrieved 2026-09-02)
+
+Three additional configurations passed the Perplexity worker and were checked
+against primary manufacturer pages:
+
+- Precista Military PRS-10 Sapphire — [official product page](https://www.timefactors.com/products/precista-prs-10-sapphire). The exact model and manufacturer URL are confirmed.
+- Universal Genève Compax Prêt-à-Porter `UGCO001` — [official product page](https://www.universalgeneve.com/en/compax-pp/ugco001). The exact reference and panda configuration are confirmed.
+- Favre-Leuba Deep Raider Day Date `00.20312.110.02.210` — [official product page](https://www.favreleuba.com/deep-raider-day-date-00-20312-110-02-210). The exact two-tone reference is confirmed; the worker's URL for the neighboring steel variant was rejected.
+- Minerva The Unveiled Crownless `MB137544` — [official Montblanc product page](https://www.montblanc.com/en-us/minerva-the-unveiled-crownless-MB137544.html). The exact Minerva model, identifier, and manufacturer URL are confirmed after a dedicated retry.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. Lemania remains `planned` after its worker payloads failed
+schema validation and yielded no evidence artifact. The manifest now reports
+173 `needs_review` targets and 236 review artifacts; accepted catalogue rows
+remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

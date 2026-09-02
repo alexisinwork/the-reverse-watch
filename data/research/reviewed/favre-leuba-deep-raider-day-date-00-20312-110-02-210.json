@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "favre-leuba-deep-raider-day-date-00-20312-110-02-210",
+  "jobId": "e08baff7-f291-45c2-951c-fb6a0a53758d",
+  "reviewedAt": "2026-09-02T21:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Favre-Leuba",
+    "model": "Deep Raider Day Date",
+    "referenceCode": "00.20312.110.02.210",
+    "variantName": "Deep Raider Day Date Two-Tone Blue"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.favreleuba.com/deep-raider-day-date-00-20312-110-02-210",
+      "status": "validated_primary",
+      "note": "The official Favre-Leuba product page was checked on 2026-09-02 and confirms exact reference 00.20312.110.02.210, the two-tone Deep Raider Day Date configuration, and the manufacturer product URL. The storefront is a pre-book listing; extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productUrl",
+      "reason": "The provisional URL points to the neighboring steel reference 00.20311.110.10.200 rather than the exact two-tone 00.20312.110.02.210 page; it is rejected."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact reference is independently confirmed on the official page, while the worker's neighboring-variant URL is rejected; no M1 fact is promoted."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "precista-prs-10-sapphire",
+  "jobId": "9b7164a9-e1bd-49aa-8f3e-4febf7104391",
+  "reviewedAt": "2026-09-02T21:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Precista",
+    "model": "PRS-10 Sapphire",
+    "referenceCode": "PRS-10 Sapphire",
+    "variantName": "Precista Military PRS-10 Sapphire"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.timefactors.com/products/precista-prs-10-sapphire",
+      "status": "validated_primary",
+      "note": "The Time Factors official product page was checked on 2026-09-02 and confirms the Precista Military PRS-10 Sapphire model, product naming, and exact product URL. The listed item is sold out; extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact official model and URL are confirmed; no technical, price, fit, lume, attachment, or date-state fact is promoted into the catalogue."
+}

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T17:45:33.499Z",
+  "updatedAt": "2026-09-02T18:05:16.918Z",
   "brands": [
     {
       "slug": "rolex",
@@ -5552,7 +5552,7 @@
         {
           "id": "cwc-rn-diver-mk2-rn300-mt-qs120",
           "referenceLabel": "CWC RN Quartz Diver Mk.2 exact reference RN300-MT QS120",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "500_1000"
@@ -5580,7 +5580,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "precista-prs-10-sapphire",
+          "referenceLabel": "Precista Military PRS-10 Sapphire exact official model PRS-10",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Time Factors' official product page identifies the PRS-10 Sapphire and publishes a current model reference, price, date configuration, and technical specifications; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "ollech-wajs",
@@ -5597,7 +5612,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "ollech-wajs-ocean-graph-mkii",
+          "referenceLabel": "Ollech & Wajs OW Ocean Graph MkII exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "The official Ollech & Wajs product page confirms the current Ocean Graph MkII, 1,000m dive architecture, multifunction GMT bezel, and movement choice; verify the exact variant facts."
+        }
+      ]
     },
     {
       "slug": "excelsior-park",
@@ -5614,7 +5644,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "excelsior-park-ep-884-si-01",
+          "referenceLabel": "Excelsior Park EP 884-SI 01 exact official model and leather configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Excelsior Park product page confirms EP 884-SI 01, its leather configuration, price, manual-wind movement, and published dimensions; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "gallet",
@@ -5631,7 +5676,19 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 9
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "gallet-multichron-sub",
+          "referenceLabel": "Gallet MultiChron Sub exact official heritage model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Gallet's official Icons page identifies the historic MultiChron Sub and its 37mm AS1950/51 configuration; no formal reference or current price is published, so verify identity and preserve missing fields."
+        }
+      ]
     },
     {
       "slug": "favre-leuba",
@@ -5648,7 +5705,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "favre-leuba-deep-raider-day-date-00-20312-110-02-210",
+          "referenceLabel": "Favre-Leuba Deep Raider Day Date exact reference 00.20312.110.02.210",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The current official Favre-Leuba product page publishes the exact reference, 40mm two-tone configuration, current price, day/date function, and dive specifications; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "universal-geneve",
@@ -5665,7 +5737,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 4
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "universal-geneve-compax-ugco001",
+          "referenceLabel": "Universal Genève Compax Prêt-à-Porter exact reference UGCO001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The official Universal Genève Compax page confirms reference UGCO001, current pre-order pricing, UG-200 chronograph, and published geometry; verify all M1 fields before catalogue consideration."
+        }
+      ]
     },
     {
       "slug": "lemania",
@@ -5682,7 +5769,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 4
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "lemania-signed-vintage-chronograph-5100",
+          "referenceLabel": "Lemania-signed vintage chronograph using Calibre 5100; exact watch reference to establish",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner dossier identifies Lemania as a vintage-only signed-watch brand and Calibre 5100 lineage; research must establish an exact signed watch reference and cannot substitute a movement-only claim."
+        }
+      ]
     },
     {
       "slug": "minerva",
@@ -5699,7 +5801,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "minerva-unveiled-crownless-137544",
+          "referenceLabel": "Minerva The Unveiled Crownless exact reference MB137544 / 137544",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Montblanc Minerva collection and product page publish the exact Minerva model, identifier MB137544, price, movement, and dimensions; verify the complete M1 field set and brand-boundary provenance."
+        }
+      ]
     },
     {
       "slug": "montblanc",

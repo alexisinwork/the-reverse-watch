@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "universal-geneve-compax-ugco001",
+  "jobId": "68ddf899-cd73-455b-aad9-7165d74e9464",
+  "reviewedAt": "2026-09-02T21:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Universal Genève",
+    "model": "Compax Prêt-à-Porter",
+    "referenceCode": "UGCO001",
+    "variantName": "Compax Prêt-à-Porter panda on brown alligator Bund strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.universalgeneve.com/en/compax-pp/ugco001",
+      "status": "validated_primary",
+      "note": "The official Universal Genève product page was checked on 2026-09-02 and confirms exact reference UGCO001, the panda Compax Prêt-à-Porter configuration, and the manufacturer product URL. Extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact official reference and product URL are confirmed; no provisional M1 fact is promoted until field-level review closes all gaps."
+}
