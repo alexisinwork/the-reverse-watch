@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "patek-calatrava-6119r-001",
+  "jobId": "6ddc22d7-faed-4cbd-960f-add6bce895fa",
+  "reviewedAt": "2026-09-04T04:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Patek Philippe",
+    "model": "Calatrava",
+    "referenceCode": "6119R-001",
+    "variantName": "Calatrava Clous de Paris rose gold with silvery grained dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.patek.com/en/collection/calatrava/6119r-001",
+      "status": "validated_primary",
+      "note": "The official Patek Philippe product page was checked on 2026-09-04 and confirms reference 6119R-001, rose-gold Calatrava identity, silvery grained dial, 39 mm case, and manually wound 30-255 PS movement."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and configuration are confirmed; M1 facts remain unpromoted until field-level primary-source review closes every gap."
+}

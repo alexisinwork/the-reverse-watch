@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "patek-calatrava-6007g-001",
+  "jobId": "25c8d5be-59b2-4453-a7f3-34596485c752",
+  "reviewedAt": "2026-09-04T04:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Patek Philippe",
+    "model": "Calatrava",
+    "referenceCode": "6007G-001",
+    "variantName": "Calatrava Date Sweep Seconds white gold with ebony black dial and yellow accents"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://static.patek.com/pdf/pressreleases/en/2023_PatekPhilippe_Watches_and_Wonders.pdf",
+      "status": "validated_primary",
+      "note": "The official Patek Philippe 2023 press release was checked on 2026-09-04 and confirms the 6007G-001 reference as a white-gold Calatrava with black graphic dial, yellow accents, calibre 26-330 S C, and date."
+    },
+    {
+      "url": "https://www.watchesoff5th.com/products/patek-philippe-calatrava-date-sweep-seconds-ref-6007g-001",
+      "status": "validated_secondary",
+      "note": "The exact-reference retailer listing supplies the candidate product URL and matches the official reference identity; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference identity is confirmed by an official Patek Philippe source and the product URL is secondary; M1 facts remain unpromoted until field-level primary-source review closes every gap."
+}

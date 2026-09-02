@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T22:15:17.266Z",
+  "updatedAt": "2026-09-02T22:17:36.022Z",
   "brands": [
     {
       "slug": "rolex",
@@ -979,6 +979,48 @@
             ]
           },
           "coverageRationale": "Current official Nautilus configuration; preserve the exact white-gold case, blue dial, and integrated bracelet boundary."
+        },
+        {
+          "id": "patek-calatrava-6119r-001",
+          "referenceLabel": "Patek Philippe Calatrava exact rose-gold reference 6119R-001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact Calatrava reference named in the owner dossier; preserve the rose-gold formal configuration."
+        },
+        {
+          "id": "patek-calatrava-5227g-010",
+          "referenceLabel": "Patek Philippe Calatrava exact white-gold reference 5227G-010",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact Calatrava reference named in the owner dossier; preserve the white-gold formal configuration."
+        },
+        {
+          "id": "patek-calatrava-6007g-001",
+          "referenceLabel": "Patek Philippe Calatrava exact white-gold reference 6007G-001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact limited Calatrava reference named in the owner dossier; preserve its distinct textured-dial boundary."
         }
       ]
     },

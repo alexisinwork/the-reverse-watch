@@ -1197,3 +1197,19 @@ All three remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 306 `needs_review` targets, one
 remaining `planned` target, and 369 review artifacts; accepted catalogue rows
 remain unchanged.
+
+## Sixty-fifth parallel exact-reference batch (retrieved 2026-09-04)
+
+Two Patek Philippe Calatrava references produced schema-valid Perplexity
+results and were checked against primary or corroborating sources:
+
+- Calatrava `6119R-001` — [official Patek Philippe product page](https://www.patek.com/en/collection/calatrava/6119r-001) confirms the exact rose-gold reference, 39 mm case, silvery grained dial, and manually wound 30-255 PS movement.
+- Calatrava `6007G-001` — [official Patek Philippe press release](https://static.patek.com/pdf/pressreleases/en/2023_PatekPhilippe_Watches_and_Wonders.pdf) confirms the exact white-gold reference, graphic black dial with yellow accents, calibre 26-330 S C, and date; the exact product URL remains a secondary retailer link.
+
+The `5227G-010` target was retried through all eight Perplexity attempts but
+every response failed the provider schema because unknown values were marked as
+observed `null`; it remains `planned` with no review artifact. The two valid
+targets remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 308 `needs_review` targets, two
+remaining `planned` targets, and 371 review artifacts; accepted catalogue rows
+remain unchanged.
