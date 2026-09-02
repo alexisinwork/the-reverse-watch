@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "gallet-multichron-sub",
+  "jobId": "615fdd5d-2129-4188-8917-aa55135f35f5",
+  "reviewedAt": "2026-09-02T20:05:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Gallet",
+    "model": "MultiChron Sub",
+    "referenceCode": "/icons/",
+    "variantName": "MultiChron Sub (Icons heritage, 37 mm, AS1950/51)"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.gallet.com/us-en/icons/",
+      "status": "validated_primary",
+      "note": "Gallet's official Icons heritage page was checked on 2026-09-02 and identifies the historic MultiChron Sub, its 37 mm case size, and AS1950/51 movement. The page publishes no commercial reference number or current product price."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The provisional `/icons/` path is a page path, not a Gallet reference code; the official heritage page publishes no commercial SKU."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only heritage-model review. Gallet confirms the MultiChron Sub identity on its official Icons page, but no commercial reference or current price is published; all M1 fields remain unaccepted."
+}

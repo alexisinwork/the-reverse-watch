@@ -1,0 +1,50 @@
+{
+  "reviewVersion": 1,
+  "targetId": "ollech-wajs-ocean-graph-mkii",
+  "jobId": "139f7a61-3f11-40ff-9877-60998eb59ab9",
+  "reviewedAt": "2026-09-02T20:05:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Ollech & Wajs",
+    "model": "OW Ocean Graph MkII",
+    "referenceCode": "OW-OCEAN-GRAPH-MKII-2",
+    "variantName": "OW Ocean Graph MkII – SNP092 COSC"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://ow-watch.com/products/ow-ocean-graph-1",
+      "status": "validated_primary",
+      "note": "The official Ollech & Wajs Ocean Graph MkII page was checked on 2026-09-02 and confirms the exact model, 1,000 m architecture, multifunction bezel, and SNP092 movement selection. It does not publish the retailer-only OW-OCEAN-GRAPH-MKII-2 code."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The provisional OW-OCEAN-GRAPH-MKII-2 string appears only on a specialist retailer page and is not published on the official manufacturer page; it is not accepted as a manufacturer reference."
+    },
+    {
+      "fieldName": "productUrl",
+      "reason": "The provisional URL is a retailer listing rather than the validated manufacturer product page, so it is rejected as the exact product URL."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. The official Ocean Graph MkII model is confirmed, but the retailer-only reference and URL are rejected; no M1 fact is promoted."
+}

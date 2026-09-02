@@ -625,6 +625,21 @@ five worker attempts returned schema-invalid Perplexity payloads and therefore
 produced no evidence artifact. The manifest now reports 165 `needs_review`
 targets and 228 review artifacts; accepted catalogue rows remain unchanged.
 
+## Twenty-eighth parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary manufacturer pages:
+
+- Excelsior Park EP 884-SI 01 — [official product page](https://excelsiorparkwatches.com/products/884-si-01). The exact reference and leather configuration are confirmed.
+- Ollech & Wajs OW Ocean Graph MkII — [official product page](https://ow-watch.com/products/ow-ocean-graph-1). The exact model is confirmed, while the retailer-only `OW-OCEAN-GRAPH-MKII-2` code and retailer URL were rejected.
+- CWC RN Quartz Diver Mk.2 `RN300-MT QS120` — [official product page](https://www.cwcwatch.com/collections/m-o-d-spec/products/cwc-rn-divers-watch-matte-top-mk2). The exact reference and matte-top configuration are confirmed after the earlier schema-invalid attempts.
+- Gallet MultiChron Sub — [official Icons page](https://www.gallet.com/us-en/icons/). The historical model is confirmed; `/icons/` was rejected as a non-reference path because Gallet publishes no commercial SKU for it.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. Precista PRS-10 remains `planned` for the next worker run.
+The manifest now reports 169 `needs_review` targets and 232 review artifacts;
+accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

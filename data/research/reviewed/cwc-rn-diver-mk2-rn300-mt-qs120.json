@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cwc-rn-diver-mk2-rn300-mt-qs120",
+  "jobId": "41c7ee4c-f540-4fa7-b871-a4041fc5ef12",
+  "reviewedAt": "2026-09-02T20:05:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "CWC",
+    "model": "RN Quartz Diver Mk.2",
+    "referenceCode": "RN300-MT QS120",
+    "variantName": "RN Quartz Diver Mk.2 Matte Top"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cwcwatch.com/collections/m-o-d-spec/products/cwc-rn-divers-watch-matte-top-mk2",
+      "status": "validated_primary",
+      "note": "The official CWC product page was checked on 2026-09-02 and confirms RN Quartz Diver Mk.2, reference RN300-MT QS120, and the exact matte-top configuration. Extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact CWC reference and manufacturer product URL are confirmed; no provisional M1 fact is promoted until field-level review closes all gaps."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "excelsior-park-ep-884-si-01",
+  "jobId": "d7b2f0f0-f729-4821-9528-e5ce2f007133",
+  "reviewedAt": "2026-09-02T20:05:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Excelsior Park",
+    "model": "EP 884-SI",
+    "referenceCode": "EP 884-SI 01",
+    "variantName": "EP 884-SI 01"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://excelsiorparkwatches.com/products/884-si-01",
+      "status": "validated_primary",
+      "note": "The official Excelsior Park product page was checked on 2026-09-02 and confirms the EP 884-SI 01 exact configuration, reference naming, and product URL. The leather variant is sold out; extracted M1 facts remain provisional."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact official reference and product URL are confirmed; all M1 facts remain unaccepted pending field-level evidence review."
+}
