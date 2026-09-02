@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T17:35:03.637Z",
+  "updatedAt": "2026-09-02T17:37:39.417Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4584,7 +4584,7 @@
         {
           "id": "fears-brunswick-38-polar-white",
           "referenceLabel": "Fears Brunswick 38 Polar White exact official model",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"
@@ -4612,7 +4612,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "vertex-m100a",
+          "referenceLabel": "Vertex M100A exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The current official M100A product page confirms the 40mm military-tribute model, current price, case dimensions, and non-date automatic movement; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "bremont",
@@ -5034,7 +5049,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "furlan-marri-blue-sector",
+          "referenceLabel": "Furlan Marri Cornes de Vache Blue Sector exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The current official Blue Sector product page confirms the 37.5mm automatic time-only configuration, current CHF 1,250 price, and exact product boundary; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "maen",
@@ -5238,7 +5268,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "garrick-s7-timepiece",
+          "referenceLabel": "Garrick S7 Timepiece exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The current official S7 product page confirms the 38mm made-to-order timepiece, current price, case dimensions, and BF04 manual movement; verify the complete M1 field set while preserving bespoke options."
+        }
+      ]
     },
     {
       "slug": "rgm",

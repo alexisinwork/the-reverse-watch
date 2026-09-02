@@ -1,0 +1,14 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vertex-m100a",
+  "jobId": "cea26a03-3106-4cc0-ad8c-bf2840ba0f4b",
+  "reviewedAt": "2026-09-02T23:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {"brand": "Vertex", "model": "The M100A", "referenceCode": "M100A", "variantName": "The M100A"},
+  "sourceChecks": [{"url": "https://vertex-watches.com/en-us/products/the-m100", "status": "validated_primary", "note": "Vertex's official M100A product page was checked on 2026-09-02 and confirms the M100A model, 40mm case, price, 100m rating, and Sellita SW260-1 automatic movement."}],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [], "rejectedProvisionalFields": [],
+  "missingM1Fields": ["price", "caseDiameterMm", "caseWidthMm", "caseLengthMm", "caseThicknessMm", "lugToLugMm", "lugWidthMm", "weightFullG", "movement", "accuracy", "waterResistanceM", "lumeGrade", "attachmentType", "dateStatus"],
+  "note": "Research-only identity review. Exact Vertex model and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

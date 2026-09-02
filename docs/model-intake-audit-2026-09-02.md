@@ -594,6 +594,22 @@ Brunswick 38 remains the next `planned` target because it was not selected by
 the coverage planner in this run. The manifest now reports 158 `needs_review`
 targets and 221 review artifacts; accepted catalogue rows remain unchanged.
 
+## Twenty-sixth parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary manufacturer pages:
+
+- Fears Brunswick 38 Polar White — [official product page](https://www.fearswatches.com/products/brunswick-white). Fears publishes no conventional reference code; a path-like value was rejected.
+- Vertex M100A — [official product page](https://vertex-watches.com/en-us/products/the-m100).
+- Furlan Marri Cornes de Vache Blue Sector — [official product page](https://www.furlanmarri.com/products/blue-sector). The official page confirms the model but does not publish the inferred `20202` value; it was rejected.
+- Garrick S7 Timepiece — [official product page](https://garrick.co.uk/products/s7-timepiece).
+
+All four remain research-only `needs_more_evidence`; exact identities and
+manufacturer identifiers (or the documented absence of one) are recorded,
+unresolved M1 facts remain null, and no catalogue rows were added. The
+manifest now reports 162 `needs_review` targets and 225 review artifacts;
+accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge
