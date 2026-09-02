@@ -1498,3 +1498,20 @@ request was made.
   remains a later reversible routing task.
 - Supabase project scope previously recorded is `osfqexnzgkksfvaocjvl`; never
   perform destructive removals, truncation, or resets.
+
+## D7/D8 continuation checkpoint — 2026-09-02
+
+- D7 is pushed to `main` as `9b9c53f`. Accepted story pages carry a validated
+  slug into the full diagnostic; hard constraints remain authoritative and
+  the published-story context RPC is additive and read-only for browser roles.
+- The corresponding Vercel production deployment
+  `dpl_CpZz4d1As9UN7kgjaEiAV4LW2td8` reached `READY`; its build completed and
+  the recent runtime-error query was empty. The D7 Supabase context RPC returned
+  a published story and `null` for an unknown slug.
+- D8 browser verification is still open. `npm run test:e2e` ran the complete
+  configured matrix: two health checks passed, while the other 12 tests could
+  not launch because Chromium lacks `libnspr4.so`. Installing system
+  dependencies is unavailable in the current non-root environment. Vercel
+  route inspection is also SSO-protected. Do not enable the discovery worker or
+  scheduler until a browser-capable, authenticated production smoke run is
+  available; no provider secret or token was recorded here.

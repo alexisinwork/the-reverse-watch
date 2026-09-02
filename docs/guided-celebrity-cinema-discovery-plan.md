@@ -823,6 +823,8 @@ were not modified.
 
 ### D8 — Production funnel and operations verification
 
+Status: **in progress — verification checkpoint 2026-09-02**
+
 Scope:
 
 - enable the bounded intake/worker only after production secrets, caps, and
@@ -846,6 +848,23 @@ Checks:
 Exit: production evidence is recorded, rollback is rehearsed, and this
 continuation can be marked complete without starting catalogue research or
 commercial Phase 9.
+
+#### D8 verification checkpoint
+
+The D7 commit `9b9c53f` produced a `READY` Vercel production deployment. Its
+build completed with dependency-resolution warnings only, and the Vercel
+runtime-error query returned no errors in the most recent 30-minute window.
+The live D7 Supabase RPC proof passed immediately before this checkpoint.
+
+The full local browser suite was started as required at this phase, but its 12
+non-health tests could not launch because the installed Chromium headless shell
+requires the absent system library `libnspr4.so`; two health tests passed. The
+runner cannot install the missing system dependency because this environment
+has no non-interactive sudo authority. Vercel deployment URLs are protected by
+SSO in the connected inspection surface, so read-only route responses there
+could not be used as an application smoke substitute. D8 remains open for an
+owner-authorized environment with browser dependencies and a production smoke
+credential/session; no provider worker or scheduler was enabled.
 
 ## Golden scenario matrix
 

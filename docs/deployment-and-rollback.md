@@ -1,28 +1,28 @@
 # Vercel deployment and rollback
 
-Last verified: 2026-08-31
+Last verified: 2026-09-02
 
 ## Current state
 
-### Current Phase 7 release
+### Current D8 verification release
 
 - Vercel project `the-reverse-watch` in the `alexisinworks-projects` team is
   sourced from `alexisinwork/the-reverse-watch`; pushes to `main` deploy to
   Production.
-- Production deployment `dpl_GKjFNx8PNJmPoXpM8AMGm37RehA8` is `READY` from
-  commit `ec7fa69`. Deployment `dpl_5bnj6MbdkCKD14RgW8qsnK3RcnYs` is the
-  recorded rollback target; it contains the same verified application behavior
-  before the latest documentation checkpoint.
+- Production deployment `dpl_CpZz4d1As9UN7kgjaEiAV4LW2td8` is `READY` from
+  commit `9b9c53f` (`Connect discovery story context to diagnostic`). The
+  preceding `dpl_5CALMC361bZn47NGUHSevzpdmrmv` deployment is the recorded
+  rollback target; it contains the verified D6 application behavior.
 - `https://www.thereserve.watch`, `/quiz`, `/health`, and `/evaluation` return
   200, as does the stable `https://the-reverse-watch.vercel.app` alias. The
   third-party apex DNS still publishes conflicting A records and its
   certificate is invalid. On 2026-08-31 the owner deferred apex reconciliation;
   do not change those records as part of application delivery.
 - `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY` are configured for Production
-  and Preview. The runtime uses narrow read-only v3 catalogue/hard-filter RPCs
-  and bounded Phase 7 evaluation RPCs. Migrations through
-  `0033_add_quiz_funnel_evaluation.sql` are applied; browser roles retain no
-  direct raw-event or catalogue table access.
+  and Preview. The runtime uses narrow read-only v3 catalogue/hard-filter RPCs,
+  bounded Phase 7 evaluation RPCs, and the D7 published-story context RPC.
+  Migrations through `0060_add_discovery_story_context.sql` are applied; browser
+  roles retain no direct raw-event, discovery, or catalogue table access.
 - The production path includes the six-screen diagnostic, deterministic
   recommendations and source-backed dossier UI, explicit email consent,
   Upstash-backed delivery deduplication, privacy-safe funnel aggregation,
@@ -33,8 +33,10 @@ Last verified: 2026-08-31
   empty and the sender domain remains unverified. The owner directed that this
   state be preserved; provider unavailability remains visible without hiding
   recommendations.
-- The current deployment returned 200 from the verified surfaces, and Vercel
-  reported no runtime errors in the surrounding production window.
+- Vercel reported no runtime errors in the 30 minutes before the D8 checkpoint.
+  The connected Vercel inspection surface redirects deployment URLs through
+  SSO, so D8 application route smoke responses remain pending a production
+  smoke session.
 
 ### Historical Phase 5 checkpoints
 
