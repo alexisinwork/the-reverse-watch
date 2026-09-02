@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "gronefeld-1941-principia",
+  "jobId": "f2a0f847-18ae-499a-ab8a-9564f013b145",
+  "reviewedAt": "2026-09-03T07:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Grönefeld",
+    "model": "1941 Principia",
+    "referenceCode": "G-06",
+    "variantName": "1941 Principia White Gold Light Blue"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.gronefeld.com/model/white-gold-br-or-br-stainless-steel-6",
+      "status": "validated_primary",
+      "note": "The official Grönefeld product/configurator page was checked on 2026-09-03 and confirms the exact 1941 Principia configuration, G-06 calibre, selectable white-gold case and light-blue dial, and technical specification sheet."
+    },
+    {
+      "url": "https://www.gronefeld.com/collection/1941-principia",
+      "status": "validated_primary",
+      "note": "The official collection page was checked on 2026-09-03 and confirms 1941 Principia as the manufacturer's automatic model family."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

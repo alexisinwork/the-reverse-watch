@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "trilobe-nuit-fantastique-grained-silver",
+  "jobId": "aa1e708e-9e46-4968-bcd3-750d1f61f74b",
+  "reviewedAt": "2026-09-03T07:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Trilobe",
+    "model": "Nuit Fantastique",
+    "referenceCode": "NF05AG",
+    "variantName": "Nuit Fantastique Grained Silver Titanium"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://trilobe.com/us/collections/nuit-fantastique/grained-silver/",
+      "status": "validated_primary",
+      "note": "The official Trilobe product page was checked on 2026-09-03 and confirms Nuit Fantastique Grained Silver, reference NF05AG, titanium construction, automatic movement, and the available 38.5mm/40.5mm case-size choices."
+    },
+    {
+      "url": "https://trilobe.com/us/news/new-collection-nuit-fantastique/",
+      "status": "validated_primary",
+      "note": "The official collection announcement was checked on 2026-09-03 and confirms the Nuit Fantastique collection context."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; case-size selection remains a variant boundary to resolve, and no provisional M1 fact is promoted."
+}

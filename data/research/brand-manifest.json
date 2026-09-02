@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:59:11.868Z",
+  "updatedAt": "2026-09-02T19:09:19.513Z",
   "brands": [
     {
       "slug": "rolex",
@@ -6955,7 +6955,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "romain-gauthier-continuum-titanium",
+          "referenceLabel": "Romain Gauthier Continuum Titanium exact configuration MON00500",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Continuum Titanium MON00500 as a distinct lightweight independent model; verify exact primary-source identity and configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "gronefeld",
@@ -6972,7 +6987,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 9
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "gronefeld-1941-principia",
+          "referenceLabel": "Grönefeld 1941 Principia exact configuration G-06",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies 1941 Principia G-06 as a distinct automatic independent model; verify exact manufacturer or specialist reference evidence before cataloguing."
+        }
+      ]
     },
     {
       "slug": "ressence",
@@ -6989,7 +7019,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "ressence-type-1-slim-rocs-1-3",
+          "referenceLabel": "RESSENCE Type 1 Slim exact configuration ROCS 1.3",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Type 1 Slim ROCS 1.3 as a distinct oil-free display configuration; verify the exact current product reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "trilobe",
@@ -7006,7 +7051,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "trilobe-nuit-fantastique-grained-silver",
+          "referenceLabel": "TRILOBE Nuit Fantastique Grained Silver exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Nuit Fantastique Grained Silver as a distinct X-Centric model; verify exact size, material, and reference boundaries before cataloguing."
+        }
+      ]
     },
     {
       "slug": "singer-reimagined",

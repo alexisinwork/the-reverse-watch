@@ -793,3 +793,17 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 203 `needs_review` targets and
 266 review artifacts; accepted catalogue rows remain unchanged.
+
+## Thirty-eighth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Romain Gauthier Continuum Titanium Edition One `MON00500` — [FHH reference page](https://www.hautehorlogerie.org/fr/watches-and-culture/paysage-horloger/montres-et-nouveautes/continuum-titanium-edition-one) plus [specialist reference page](https://www.thewatchpages.com/watches/romain-gauthier-c-by-romain-gauthier-titanium-edition-one-mon00500/). The exact 28-piece titanium configuration and reference are confirmed.
+- Grönefeld 1941 Principia `G-06` — [official configuration page](https://www.gronefeld.com/model/white-gold-br-or-br-stainless-steel-6). The exact model, G-06 calibre, and white-gold/light-blue configuration are confirmed.
+- RESSENCE TYPE 1 Slim Black `T13S-BXX1-VBA` — [official product page](https://ressencewatches.com/products/type-1-slim-black). The exact product SKU and configuration are confirmed; ROCS 1.3 is retained as movement context, not a watch reference.
+- Trilobe Nuit Fantastique Grained Silver `NF05AG` — [official product page](https://trilobe.com/us/collections/nuit-fantastique/grained-silver/). The exact model, reference, titanium construction, and selectable case-size boundary are confirmed.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 207 `needs_review` targets and
+270 review artifacts; accepted catalogue rows remain unchanged.

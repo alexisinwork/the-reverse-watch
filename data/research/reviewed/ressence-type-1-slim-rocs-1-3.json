@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "ressence-type-1-slim-rocs-1-3",
+  "jobId": "39454166-0e11-4da3-990b-7d395c7004bf",
+  "reviewedAt": "2026-09-03T07:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "RESSENCE",
+    "model": "TYPE 1 Slim",
+    "referenceCode": "T13S-BXX1-VBA",
+    "variantName": "TYPE 1 Slim Black"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://ressencewatches.com/products/type-1-slim-black",
+      "status": "validated_primary",
+      "note": "The official product page was checked on 2026-09-03 and confirms the exact TYPE 1 Slim Black watch, SKU T13S-BXX1-VBA, ROCS 1.3 movement, titanium case, dimensions, price, and strap configuration."
+    },
+    {
+      "url": "https://ressencewatches.com/pages/rocs",
+      "status": "validated_primary",
+      "note": "The official ROCS technology page was checked on 2026-09-03; ROCS 1.3 is treated as movement context rather than a watch reference code."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

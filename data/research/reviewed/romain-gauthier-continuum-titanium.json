@@ -1,0 +1,56 @@
+{
+  "reviewVersion": 1,
+  "targetId": "romain-gauthier-continuum-titanium",
+  "jobId": "e932960e-c27c-4fd3-b42a-a185f7a15c75",
+  "reviewedAt": "2026-09-03T07:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Romain Gauthier",
+    "model": "C by Romain Gauthier Continuum Titanium Edition One",
+    "referenceCode": "MON00500",
+    "variantName": "Continuum Titanium Edition One"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hautehorlogerie.org/fr/watches-and-culture/paysage-horloger/montres-et-nouveautes/continuum-titanium-edition-one",
+      "status": "validated_secondary",
+      "note": "The Fondation de la Haute Horlogerie page was checked on 2026-09-03 and confirms the exact Continuum Titanium Edition One, 28-piece titanium configuration, and model specifications."
+    },
+    {
+      "url": "https://www.thewatchpages.com/watches/romain-gauthier-c-by-romain-gauthier-titanium-edition-one-mon00500/",
+      "status": "validated_secondary",
+      "note": "The specialist reference page was checked on 2026-09-03 and confirms MON00500, 41mm titanium, manual winding, and the Continuum Titanium Edition One identity."
+    },
+    {
+      "url": "https://romaingauthier.com/en/plp/",
+      "status": "validated_primary",
+      "note": "The current manufacturer timepiece index was checked on 2026-09-03; it retains the Continuum line context and links to the maker's exact Edition One documentation, while the old legacy URL is no longer live."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}
