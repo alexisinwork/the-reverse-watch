@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hmt-pilot-vintage-hand-wound",
+  "jobId": "bc9f7aa5-4c1b-4c0f-abc2-bb50496f816f",
+  "reviewedAt": "2026-09-03T04:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "HMT",
+    "model": "Pilot",
+    "referenceCode": "reference not established",
+    "variantName": "Vintage Pilot hand-wound, black dial, stainless-steel case on leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://clockhouse.in/collection/hmt/hmt-pilot-hand-wound",
+      "status": "validated_secondary",
+      "note": "The specialist HMT collection page was checked on 2026-09-03 and identifies the vintage Pilot hand-wound model. It does not establish a single factory reference for this family."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied a URL path as a reference code; the available evidence does not establish a single factory reference for the vintage Pilot family."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact family identity is documented, but a single reference-specific identity and complete M1 evidence are not confirmed."
+}

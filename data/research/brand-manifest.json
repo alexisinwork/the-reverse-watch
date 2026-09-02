@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:32:20.373Z",
+  "updatedAt": "2026-09-02T18:38:06.018Z",
   "brands": [
     {
       "slug": "rolex",
@@ -6211,7 +6211,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 18
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "shanghai-a623-revival-sd078-1553-018-08",
+          "referenceLabel": "Shanghai A623 Revival exact reference SD078.1553.018.08",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the current A623 Revival by exact SD078.1553.018.08 reference and links the Shanghai official product page; verify the exact page and complete M1 facts."
+        }
+      ]
     },
     {
       "slug": "beijing-watch",
@@ -6228,7 +6243,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 14
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "beijing-great-wall-bg030007",
+          "referenceLabel": "Beijing The Great Wall Watch exact reference BG030007",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Beijing The Great Wall Watch 41mm by exact BG030007 reference and links the official product page; verify the current manufacturer listing."
+        }
+      ]
     },
     {
       "slug": "hmt",
@@ -6245,7 +6275,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 21
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "hmt-pilot-vintage-hand-wound",
+          "referenceLabel": "HMT Pilot vintage hand-wound exact model identity",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies HMT Pilot as a distinct vintage hand-wound model but does not establish a single factory reference; research must confirm identity without inventing a reference code."
+        }
+      ]
     },
     {
       "slug": "luch",
@@ -6262,7 +6307,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 16
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "luch-one-hand-71950990",
+          "referenceLabel": "Luch One-hand exact reference 71950990",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies a current Luch One-hand 71950990 configuration and links the official Luch product page; verify the exact reference and current identity."
+        }
+      ]
     },
     {
       "slug": "slava",

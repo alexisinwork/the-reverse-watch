@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "beijing-great-wall-bg030007",
+  "jobId": "58af3782-a383-4611-b6e6-e7082759121b",
+  "reviewedAt": "2026-09-03T04:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Beijing Watch Factory",
+    "model": "The Great Wall Watch 41mm",
+    "referenceCode": "BG030007",
+    "variantName": "Beijing The Great Wall Watch 41mm (Brick Texture Dial)"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://beijingwatches.com/products/beijing-the-great-wall-brick-texture-dial-watch-41mm",
+      "status": "validated_primary",
+      "note": "The official Beijing Watches product page was checked on 2026-09-03 and confirms the 41mm Great Wall configuration and reference BG030007."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

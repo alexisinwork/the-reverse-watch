@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "luch-one-hand-71950990",
+  "jobId": "2f5f2d9b-c7ef-42f3-ba00-6568b9fabdee",
+  "reviewedAt": "2026-09-03T04:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Luch",
+    "model": "One-hand",
+    "referenceCode": "71950990",
+    "variantName": "71950990"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://luch.by/en/kollektsii/odnostrelochnik/71950990/",
+      "status": "validated_primary",
+      "note": "The official Luch product page was checked on 2026-09-03 and identifies the One-hand watch by exact reference 71950990."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

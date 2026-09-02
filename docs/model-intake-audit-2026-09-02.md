@@ -722,3 +722,18 @@ rows were promoted. Every accepted identity has an explicit source check, while
 the incomplete M1 fields remain null. The manifest now reports 183
 `needs_review` targets and 246 review artifacts; accepted catalogue rows remain
 unchanged.
+
+## Thirty-third parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Shanghai A623 Revival `SD078.1553.018.08` — [official product page](https://shanghaiwatch.com/products/shanghai-watch-in-red-a623-revival-mechanical-watch). The exact reference and 36mm configuration are confirmed.
+- Beijing The Great Wall Watch `BG030007` — [official product page](https://beijingwatches.com/products/beijing-the-great-wall-brick-texture-dial-watch-41mm). The exact reference and brick-texture 41mm configuration are confirmed.
+- HMT Pilot vintage hand-wound — [specialist collection page](https://clockhouse.in/collection/hmt/hmt-pilot-hand-wound). The model identity is confirmed, but no single factory reference is established; the worker's URL path was rejected as a reference code.
+- Luch One-hand `71950990` — [official product page](https://luch.by/en/kollektsii/odnostrelochnik/71950990/). The exact reference is confirmed.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. HMT remains explicitly reference-ambiguous rather than
+receiving an invented code. The manifest now reports 187 `needs_review` targets
+and 250 review artifacts; accepted catalogue rows remain unchanged.

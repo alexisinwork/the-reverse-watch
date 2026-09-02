@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "shanghai-a623-revival-sd078-1553-018-08",
+  "jobId": "e1d7e138-b87d-4698-81cb-0034f586ca3a",
+  "reviewedAt": "2026-09-03T04:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Shanghai",
+    "model": "A623 Revival",
+    "referenceCode": "SD078.1553.018.08",
+    "variantName": "Shanghai Watch In Red | A623 Revival | Mechanical Watch 36mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://shanghaiwatch.com/products/shanghai-watch-in-red-a623-revival-mechanical-watch",
+      "status": "validated_primary",
+      "note": "The official Shanghai Watch product page was checked on 2026-09-03 and explicitly lists ref. SD078.1553.018.08, the A623 Revival name, and the 36mm configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}
