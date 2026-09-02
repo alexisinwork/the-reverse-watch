@@ -9,10 +9,15 @@ const limit = Math.min(
   50,
   Math.max(1, Number(process.env.MOVIE_WATCH_MAX_JOBS_PER_RUN || 10)),
 );
+const concurrency = Math.min(
+  3,
+  Math.max(1, Number(process.env.MOVIE_WATCH_CONCURRENCY || 3)),
+);
 if (!supabaseUrl || !serviceRoleKey || !perplexityApiKey)
   throw new Error(
     "SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, and PERPLEXITY_API_KEY are required.",
   );
+const verifiedPerplexityApiKey = perplexityApiKey;
 
 const headers = {
   apikey: serviceRoleKey,
@@ -43,8 +48,7 @@ if (!claim.ok)
 const rows = z.array(rowSchema).parse(await claim.json());
 console.log(`Claimed ${rows.length} movie/watch rows for Sonar verification.`);
 
-let succeeded = 0;
-for (const row of rows) {
+async function processRow(row: z.infer<typeof rowSchema>) {
   try {
     const result = await verifyMovieWatchIntake(
       {
@@ -57,7 +61,7 @@ for (const row of rows) {
         context: row.context_raw,
         affordableAlternative: row.affordable_alternative_raw,
       },
-      { apiKey: perplexityApiKey },
+      { apiKey: verifiedPerplexityApiKey },
     );
     const complete = await fetch(rpc("complete_movie_watch_verification_v1"), {
       method: "POST",
@@ -70,7 +74,7 @@ for (const row of rows) {
       signal: AbortSignal.timeout(30_000),
     });
     if (!complete.ok) throw new Error(`completion returned ${complete.status}`);
-    succeeded += 1;
+    return true;
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown error";
     await fetch(rpc("complete_movie_watch_verification_v1"), {
@@ -87,7 +91,16 @@ for (const row of rows) {
     console.error(
       `Verification failed for source row ${row.source_hash.slice(0, 8)}.`,
     );
+    return false;
   }
+}
+
+let succeeded = 0;
+for (let offset = 0; offset < rows.length; offset += concurrency) {
+  const results = await Promise.all(
+    rows.slice(offset, offset + concurrency).map(processRow),
+  );
+  succeeded += results.filter(Boolean).length;
 }
 console.log(
   `Stored ${succeeded}/${rows.length} provisional movie/watch dossiers for review.`,
