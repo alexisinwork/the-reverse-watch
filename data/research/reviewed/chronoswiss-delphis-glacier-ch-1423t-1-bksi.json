@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "chronoswiss-delphis-glacier-ch-1423t-1-bksi",
+  "jobId": "99dd1d08-661c-4b49-ae82-15dad961fbf3",
+  "reviewedAt": "2026-09-02T22:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Chronoswiss",
+    "model": "Delphis Glacier",
+    "referenceCode": "CH-1423T.1-BKSI",
+    "variantName": "Delphis Glacier"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://chronoswiss.com/en/eu/delphis-glacier-CH-1423T.1-BKSI",
+      "status": "validated_primary",
+      "note": "Chronoswiss's official product page was checked on 2026-09-02 and confirms the Delphis Glacier model and exact CH-1423T.1-BKSI reference in the current catalogue."
+    },
+    {
+      "url": "https://chronoswiss.com/en/intl/products",
+      "status": "validated_primary",
+      "note": "The official product index was checked on 2026-09-02 and lists CH-1423T.1-BKSI as Delphis Glacier with current regional pricing."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Chronoswiss reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

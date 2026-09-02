@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "yema-superman-gilt-cmm-10-12-14-69-sn-m2",
+  "jobId": "95606364-9e05-4a5a-88a7-fdf4df09ed0e",
+  "reviewedAt": "2026-09-02T22:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "YEMA",
+    "model": "Superman Gilt CMM.10",
+    "referenceCode": "12.14.69.SN.M2",
+    "variantName": "Superman Gilt CMM.10 Silver 39mm Scales Slim bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://yema.com/products/yema-superman-gilt-cmm-10-12-14-69-sn-m2",
+      "status": "validated_primary",
+      "note": "YEMA's official product page was checked on 2026-09-02 and confirms reference 12.14.69.SN.M2, Superman Gilt CMM.10, 39mm size option, CMM.10 manufacture movement, 70-hour reserve, 300m rating, and Scales Slim steel bracelet."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact YEMA reference and official product URL are confirmed; the 39mm boundary is retained and all M1 facts remain provisional until field-level review is complete."
+}

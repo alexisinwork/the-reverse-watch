@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vulcain-monopusher-heritage-black-white-vul-mp-002",
+  "jobId": "cea28746-7fb2-426d-aba1-036d76e1c153",
+  "reviewedAt": "2026-09-02T22:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Vulcain",
+    "model": "Monopusher Heritage",
+    "referenceCode": "VUL-MP-002",
+    "variantName": "Monopusher Heritage - Black & White"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://vulcain.ch/products/monopusher-heritage-vul-mp-002",
+      "status": "validated_primary",
+      "note": "Vulcain's official product page was checked on 2026-09-02 and confirms the Monopusher Heritage Black & White configuration and stable product identifier VUL-MP-002."
+    },
+    {
+      "url": "https://vulcain.ch/collections/monopusher",
+      "status": "validated_primary",
+      "note": "The official Monopusher collection was checked on 2026-09-02 and confirms the Black & White variant and current collection placement; availability is recorded only from the product card."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Vulcain product identity and official URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

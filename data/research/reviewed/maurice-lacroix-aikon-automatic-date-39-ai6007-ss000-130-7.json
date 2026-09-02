@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "maurice-lacroix-aikon-automatic-date-39-ai6007-ss000-130-7",
+  "jobId": "f16a1b7f-9f25-44d3-a4da-2219b76808ab",
+  "reviewedAt": "2026-09-02T22:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Maurice Lacroix",
+    "model": "AIKON Automatic Date 39mm",
+    "referenceCode": "AI6007-SS000-130-7",
+    "variantName": "AIKON AUTOMATIC DATE 39MM AI6007-SS000-130-7"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.mauricelacroix.com/us_en/watches/aikon-automatic-date-39mm/AI6007-SS000-130-7.html",
+      "status": "validated_primary",
+      "note": "Maurice Lacroix's official US product page was checked on 2026-09-02 and confirms the exact AI6007-SS000-130-7 reference and AIKON Automatic Date 39mm configuration."
+    },
+    {
+      "url": "https://www.mauricelacroix.com/us_en/watches/watches-men",
+      "status": "validated_primary",
+      "note": "The official men's catalogue was checked on 2026-09-02 and lists the exact reference as an in-stock AIKON Automatic Date 39mm product."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Maurice Lacroix reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

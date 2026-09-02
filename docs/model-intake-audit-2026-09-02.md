@@ -529,6 +529,21 @@ added and unresolved M1 facts remain null. The manifest now reports 143
 `needs_review` targets and 206 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Twenty-second parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional current configurations were sent through the Perplexity worker
+and checked against primary manufacturer pages:
+
+- Chronoswiss Delphis Glacier `CH-1423T.1-BKSI` — [official product page](https://chronoswiss.com/en/eu/delphis-glacier-CH-1423T.1-BKSI).
+- Vulcain Monopusher Heritage Black & White `VUL-MP-002` — [official product page](https://vulcain.ch/products/monopusher-heritage-vul-mp-002).
+- YEMA Superman Gilt CMM.10 `12.14.69.SN.M2` — [official product page](https://yema.com/products/yema-superman-gilt-cmm-10-12-14-69-sn-m2). The 39mm boundary is retained separately from the 41mm option.
+- Maurice Lacroix AIKON Automatic Date 39mm `AI6007-SS000-130-7` — [official product page](https://www.mauricelacroix.com/us_en/watches/aikon-automatic-date-39mm/AI6007-SS000-130-7.html).
+
+All four remain research-only `needs_more_evidence`; exact identities and
+manufacturer references are recorded, unresolved M1 facts remain null, and no
+catalogue rows were added. The manifest now reports 147 `needs_review` targets
+and 210 review artifacts; accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

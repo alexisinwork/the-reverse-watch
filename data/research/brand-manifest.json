@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T17:07:20.450Z",
+  "updatedAt": "2026-09-02T17:11:55.975Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2993,7 +2993,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "chronoswiss-delphis-glacier-ch-1423t-1-bksi",
+          "referenceLabel": "Chronoswiss Delphis Glacier exact reference CH-1423T.1-BKSI",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Current official Chronoswiss product listing identifies the Delphis Glacier reference CH-1423T.1-BKSI; verify the exact product page and complete M1 fields."
+        }
+      ]
     },
     {
       "slug": "doxa",
@@ -3106,7 +3121,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "vulcain-monopusher-heritage-black-white-vul-mp-002",
+          "referenceLabel": "Vulcain Monopusher Heritage Black & White exact product identifier VUL-MP-002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Vulcain product page identifies the Monopusher Heritage Black & White configuration and product handle VUL-MP-002; verify the manufacturer reference and complete M1 fields."
+        }
+      ]
     },
     {
       "slug": "yema",
@@ -3123,7 +3153,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "yema-superman-gilt-cmm-10-12-14-69-sn-m2",
+          "referenceLabel": "YEMA Superman Gilt CMM.10 exact reference 12.14.69.SN.M2",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official YEMA product card publishes the exact Superman Gilt CMM.10 reference and 39/41mm size variants; lock one homogeneous 39mm configuration before M1 review."
+        }
+      ]
     },
     {
       "slug": "fortis",
@@ -3553,7 +3598,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "maurice-lacroix-aikon-automatic-date-39-ai6007-ss000-130-7",
+          "referenceLabel": "Maurice Lacroix AIKON Automatic Date 39mm exact reference AI6007-SS000-130-7",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Maurice Lacroix product page publishes the exact AIKON Automatic Date 39mm reference; verify the complete M1 field set and current availability."
+        }
+      ]
     },
     {
       "slug": "baume-mercier",
