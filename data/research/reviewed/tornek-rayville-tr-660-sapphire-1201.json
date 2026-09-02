@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tornek-rayville-tr-660-sapphire-1201",
+  "jobId": "8ecec6e2-88e2-478e-b54b-b003dbce9538",
+  "reviewedAt": "2026-09-02T18:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tornek-Rayville",
+    "model": "TR-660",
+    "referenceCode": "TR-660 w/Sapphire Inlay (1201) Non-date",
+    "variantName": "TR-660 Sapphire Inlay (1201) Non-date"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://tornek-rayville.us/products/tr-660-w-sapphire-inlay-1201-non-date-3167895",
+      "status": "validated_primary",
+      "note": "The official Tornek-Rayville product page was checked on 2026-09-02 and confirms the exact TR-660 w/Sapphire Inlay (1201) Non-date configuration and technical specification page. Its displayed price is anomalous ($999,491.00), so no price fact is accepted."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The official page publishes the product title but no formal reference code matching the path-like secondary-editorial string; the generated value is not accepted as a manufacturer identifier."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact manufacturer configuration and official URL are confirmed, but all M1 facts remain provisional until field-level evidence is reviewed; the storefront price is explicitly unusable."
+}

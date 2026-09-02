@@ -5,10 +5,37 @@
   "reviewedAt": "2026-09-02T23:45:00.000Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
-  "candidateIdentity": {"brand": "Garrick", "model": "S7 Timepiece", "referenceCode": "S7", "variantName": "S7 Timepiece 38mm made-to-order"},
-  "sourceChecks": [{"url": "https://garrick.co.uk/products/s7-timepiece", "status": "validated_primary", "note": "Garrick's official S7 product page was checked on 2026-09-02 and confirms the S7 model, made-to-order status, price, 38mm case, and BF04 manual movement."}],
+  "candidateIdentity": {
+    "brand": "Garrick",
+    "model": "S7 Timepiece",
+    "referenceCode": "S7",
+    "variantName": "S7 Timepiece 38mm made-to-order"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://garrick.co.uk/products/s7-timepiece",
+      "status": "validated_primary",
+      "note": "Garrick's official S7 product page was checked on 2026-09-02 and confirms the S7 model, made-to-order status, price, 38mm case, and BF04 manual movement."
+    }
+  ],
   "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
-  "additionalVerifiedFacts": [], "rejectedProvisionalFields": [],
-  "missingM1Fields": ["price", "caseDiameterMm", "caseWidthMm", "caseLengthMm", "caseThicknessMm", "lugToLugMm", "lugWidthMm", "weightFullG", "movement", "accuracy", "waterResistanceM", "lumeGrade", "attachmentType", "dateStatus"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
   "note": "Research-only identity review. Exact Garrick model and official product URL are confirmed; bespoke case/dial options and all M1 facts remain provisional until field-level review is complete."
 }

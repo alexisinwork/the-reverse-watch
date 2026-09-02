@@ -610,6 +610,21 @@ unresolved M1 facts remain null, and no catalogue rows were added. The
 manifest now reports 162 `needs_review` targets and 225 review artifacts;
 accepted catalogue rows remain unchanged.
 
+## Twenty-seventh parallel exact-reference batch (retrieved 2026-09-02)
+
+Three additional configurations passed the Perplexity worker and were checked
+against primary manufacturer pages:
+
+- Tornek-Rayville TR-660 w/Sapphire Inlay (1201) Non-date — [official product page](https://tornek-rayville.us/products/tr-660-w-sapphire-inlay-1201-non-date-3167895). The page confirms the exact configuration and specifications, but its displayed `$999,491.00` price is anomalous and a path-like secondary reference was rejected.
+- Wolbrook X-15 Limited Edition Skindiver WT Professional Tool-Watch `23-SWP-001-NYB-BLK-X15` — [official product page](https://wolbrook.com/products/skindiver-wt-professional-tool-watch-x-15-edition). The exact manufacturer SKU and configuration are confirmed.
+- Benrus TYPE-I BLACK — [official Japan product page](https://www.benrus.co.jp/collection/type1_black.html). The model is confirmed; the retailer-only `TYPE1-BK` string and incorrect `benrus.jp` provisional URL were rejected.
+
+All three remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. CWC RN Quartz Diver Mk.2 remains `planned` because all
+five worker attempts returned schema-invalid Perplexity payloads and therefore
+produced no evidence artifact. The manifest now reports 165 `needs_review`
+targets and 228 review artifacts; accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T17:37:39.417Z",
+  "updatedAt": "2026-09-02T17:45:33.499Z",
   "brands": [
     {
       "slug": "rolex",
@@ -5452,7 +5452,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "tornek-rayville-tr-660-sapphire-1201",
+          "referenceLabel": "Tornek-Rayville TR-660 Sapphire Inlay 1201 Non-date exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official product page confirms the TR-660 Sapphire Inlay 1201 non-date configuration and publishes technical specifications; its displayed price requires field-level review because the storefront formatting is anomalous."
+        }
+      ]
     },
     {
       "slug": "wolbrook",
@@ -5469,7 +5484,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "wolbrook-x15-23-swp-001-nyb-blk-x15",
+          "referenceLabel": "Wolbrook X-15 Skindiver WT Professional exact reference 23-SWP-001-NYB-BLK-X15",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "The current official X-15 page publishes the exact SKU, 40mm worldtimer configuration, and current price; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "benrus",
@@ -5486,7 +5516,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "benrus-type-i-black",
+          "referenceLabel": "Benrus Type-I Black exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Benrus Japan collection page identifies the Type-I Black model; verify the exact current configuration and M1 facts before use."
+        }
+      ]
     },
     {
       "slug": "cwc",
@@ -5503,7 +5548,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "cwc-rn-diver-mk2-rn300-mt-qs120",
+          "referenceLabel": "CWC RN Quartz Diver Mk.2 exact reference RN300-MT QS120",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official CWC product page confirms the RN Quartz Diver Mk.2 reference and publishes current price and military-dive specifications; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "precista",

@@ -5,11 +5,42 @@
   "reviewedAt": "2026-09-02T23:45:00.000Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
-  "candidateIdentity": {"brand": "Fears", "model": "Brunswick 38", "referenceCode": "/", "variantName": "Brunswick 38 Polar White"},
-  "sourceChecks": [{"url": "https://www.fearswatches.com/products/brunswick-white", "status": "validated_primary", "note": "Fears' official product page was checked on 2026-09-02 and confirms the Brunswick 38 Polar White model, current price, configurable strap/bracelet and caseback options, and published technical specifications. No conventional reference code is published."}],
+  "candidateIdentity": {
+    "brand": "Fears",
+    "model": "Brunswick 38",
+    "referenceCode": "/",
+    "variantName": "Brunswick 38 Polar White"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.fearswatches.com/products/brunswick-white",
+      "status": "validated_primary",
+      "note": "Fears' official product page was checked on 2026-09-02 and confirms the Brunswick 38 Polar White model, current price, configurable strap/bracelet and caseback options, and published technical specifications. No conventional reference code is published."
+    }
+  ],
   "verifiedProvisionalFields": ["identity", "productUrl"],
   "additionalVerifiedFacts": [],
-  "rejectedProvisionalFields": [{"fieldName": "referenceCode", "reason": "The path-like value returned by Perplexity is not a manufacturer reference; Fears publishes no conventional reference code on the official product page."}],
-  "missingM1Fields": ["price", "caseDiameterMm", "caseWidthMm", "caseLengthMm", "caseThicknessMm", "lugToLugMm", "lugWidthMm", "weightFullG", "movement", "accuracy", "waterResistanceM", "lumeGrade", "attachmentType", "dateStatus"],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The path-like value returned by Perplexity is not a manufacturer reference; Fears publishes no conventional reference code on the official product page."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
   "note": "Research-only identity review. Exact Fears model and official product URL are confirmed; configurable options and all M1 facts remain provisional until field-level review is complete."
 }

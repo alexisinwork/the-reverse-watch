@@ -1,0 +1,50 @@
+{
+  "reviewVersion": 1,
+  "targetId": "benrus-type-i-black",
+  "jobId": "7d0f5cca-0b1e-4861-8216-9c253fffe38b",
+  "reviewedAt": "2026-09-02T18:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Benrus",
+    "model": "Type-I Black",
+    "referenceCode": "TYPE1-BK",
+    "variantName": "TYPE-I BLACK"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.benrus.co.jp/collection/type1_black.html",
+      "status": "validated_primary",
+      "note": "The official Benrus Japan TYPE-I BLACK page was checked on 2026-09-02 and confirms the exact model identity and publishes product specifications. It does not publish the TYPE1-BK reference string or the benrus.jp URL returned by the worker."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "TYPE1-BK appears only on a reviewed-market retailer listing, not on the official Benrus page; it is not accepted as a manufacturer reference without primary confirmation."
+    },
+    {
+      "fieldName": "productUrl",
+      "reason": "The provisional URL uses benrus.jp, while the validated official product page is on benrus.co.jp; the incorrect provisional URL is rejected."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. Benrus Type-I Black is confirmed as an official model, but the generated retailer reference and incorrect provisional URL are rejected; M1 facts remain unaccepted pending exact field-level review."
+}

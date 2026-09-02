@@ -5,11 +5,42 @@
   "reviewedAt": "2026-09-02T23:45:00.000Z",
   "reviewer": "codex-source-review",
   "outcome": "needs_more_evidence",
-  "candidateIdentity": {"brand": "Furlan Marri", "model": "Cornes de Vache Blue Sector", "referenceCode": "/", "variantName": "Blue Sector"},
-  "sourceChecks": [{"url": "https://www.furlanmarri.com/products/blue-sector", "status": "validated_primary", "note": "Furlan Marri's official Blue Sector page was checked on 2026-09-02 and confirms the 37.5mm automatic time-only model, current CHF 1,250 price, and product URL. The page does not publish the inferred 20202 value as a reference."}],
+  "candidateIdentity": {
+    "brand": "Furlan Marri",
+    "model": "Cornes de Vache Blue Sector",
+    "referenceCode": "/",
+    "variantName": "Blue Sector"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.furlanmarri.com/products/blue-sector",
+      "status": "validated_primary",
+      "note": "Furlan Marri's official Blue Sector page was checked on 2026-09-02 and confirms the 37.5mm automatic time-only model, current CHF 1,250 price, and product URL. The page does not publish the inferred 20202 value as a reference."
+    }
+  ],
   "verifiedProvisionalFields": ["identity", "productUrl"],
   "additionalVerifiedFacts": [],
-  "rejectedProvisionalFields": [{"fieldName": "referenceCode", "reason": "The inferred 20202 value does not appear on the official Blue Sector page and is rejected rather than treated as a manufacturer reference."}],
-  "missingM1Fields": ["price", "caseDiameterMm", "caseWidthMm", "caseLengthMm", "caseThicknessMm", "lugToLugMm", "lugWidthMm", "weightFullG", "movement", "accuracy", "waterResistanceM", "lumeGrade", "attachmentType", "dateStatus"],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The inferred 20202 value does not appear on the official Blue Sector page and is rejected rather than treated as a manufacturer reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
   "note": "Research-only identity review. Exact Furlan Marri model and official product URL are confirmed; the unsupported inferred reference was rejected and all M1 facts remain provisional."
 }

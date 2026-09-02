@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "wolbrook-x15-23-swp-001-nyb-blk-x15",
+  "jobId": "9670712a-ca73-468b-a2b8-a3012868fa63",
+  "reviewedAt": "2026-09-02T18:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Wolbrook",
+    "model": "X-15 Skindiver WT Professional Tool-Watch",
+    "referenceCode": "23-SWP-001-NYB-BLK-X15",
+    "variantName": "X-15 - Limited Edition - Skindiver WT Professional Tool-Watch"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://wolbrook.com/products/skindiver-wt-professional-tool-watch-x-15-edition",
+      "status": "validated_primary",
+      "note": "The official Wolbrook X-15 product page was checked on 2026-09-02 and confirms the exact SKU 23-SWP-001-NYB-BLK-X15, limited-edition identity, and product URL. The page states the 40 mm / 48 mm / 13 mm geometry, 120 m rating, Miyota 8315, and 20 mm lug width; these remain provisional M1 facts pending field-level review."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact limited-edition reference and official product URL are confirmed; no provisional technical or price fact is promoted into the catalogue."
+}
