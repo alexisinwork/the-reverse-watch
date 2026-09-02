@@ -1356,3 +1356,17 @@ In each case the source confirms the exact suffix URL and the listed
 configuration. Remaining case-width/length/thickness, lug geometry, full
 configured weight, and specific lume-grade fields remain null where Rolex's
 page does not publish them.
+
+## Seventy-fifth Rolex field-level recheck (retrieved 2026-09-03)
+
+Four additional exact Rolex pages were checked and their field-level facts
+were added to the research reviews:
+
+- [Day-Date 40 `228236-0018`](https://www.rolex.com/en-us/watches/day-date/m228236-0018): 40 mm platinum case, calibre 3255, current US price $68,800, -2/+2 sec/day, 100 m, approximately 70-hour reserve, President bracelet, and day/date.
+- [GMT-Master II `126713GRNR-0001`](https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001): 40 mm Yellow Rolesor case, calibre 3285, current US price $20,450, -2/+2 sec/day, 100 m, approximately 70-hour reserve, Jubilee bracelet, and date.
+- [Oyster Perpetual 31 `277200-0014`](https://www.rolex.com/en-us/watches/oyster-perpetual/m277200-0014): 31 mm Oystersteel case, calibre 2232, current US price $6,300, -2/+2 sec/day, 100 m, approximately 55-hour reserve, Oyster bracelet, and no date.
+- [Yacht-Master 37 `268621-0003`](https://www.rolex.com/en-us/watches/yacht-master/m268621-0003): 37 mm Everose Rolesor case, calibre 2236, current US price $17,750, -2/+2 sec/day, 100 m, approximately 55-hour reserve, Oyster bracelet, and date. This exact reference is also linked to the owner-approved workbook review.
+
+The entries remain research-only where their residual case geometry, full
+configured weight, or specific lume grade is not published; no unsupported
+defaults were added.

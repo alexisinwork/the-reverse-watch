@@ -15,27 +15,116 @@
     {
       "url": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
       "status": "validated_primary",
-      "note": "Rolex official product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 126713GRNR-0001. Perplexity extraction remains provisional for all non-identity fields."
+      "note": "Rolex official product page was rechecked on 2026-09-03 and confirms the exact 126713GRNR-0001 configuration plus its current US price, 40 mm Yellow Rolesor case, calibre 3285, -2/+2 seconds/day precision, 100 m water resistance, approximately 70-hour reserve, Jubilee bracelet, and date display."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 2045000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The exact official US page lists $20,450; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The exact official page quotes the current US price in USD."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "Yellow Rolesor (Oystersteel and yellow gold)",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official technical details specify a Yellow Rolesor Oyster case combining Oystersteel and yellow gold."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official technical details specify a 40 mm case diameter."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic GMT",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official page identifies the movement as mechanical, self-winding, with GMT function."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "3285",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official page identifies Manufacture Rolex calibre 3285."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official page specifies approximately 70 hours; the numeric value is retained as the manufacturer's stated approximation."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official Superlative Chronometer specification states -2 seconds/day after casing."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official Superlative Chronometer specification states +2 seconds/day after casing."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official page specifies water resistance to 100 m."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "scratch-resistant sapphire",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official page specifies scratch-resistant sapphire crystal."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "Jubilee bracelet",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The exact configuration is fitted with a five-piece Jubilee bracelet and Oysterlock clasp."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126713grnr-0001",
+      "note": "The official functions list includes an instantaneous date."
+    }
+  ],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
     "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
-    "accuracy",
-    "waterResistanceM",
-    "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "lumeGrade"
   ],
-  "note": "Research-only identity review. The exact current Rolex reference and official product URL are confirmed, while all physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+  "note": "Research-only model review; the exact current reference, price, 40 mm Yellow Rolesor case, calibre 3285, Superlative Chronometer precision, 100 m resistance, Jubilee bracelet, and date display are confirmed by Rolex. Remaining case geometry, configured weight, and specific lume grade remain unverified."
 }

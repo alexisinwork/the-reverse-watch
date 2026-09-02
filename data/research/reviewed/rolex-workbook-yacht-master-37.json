@@ -15,32 +15,117 @@
     {
       "url": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
       "status": "validated_primary",
-      "note": "The official Rolex US product page was checked on 2026-09-04 and confirms Yacht-Master 37 reference 268621, Everose Rolesor case and Oyster bracelet, chocolate dial, and the exact -0003 route."
+      "note": "The official Rolex US product page was rechecked on 2026-09-03 and confirms Yacht-Master 37 reference 268621, Everose Rolesor case and Oyster bracelet, chocolate dial, the exact -0003 route, current US price, calibre 2236, -2/+2 seconds/day precision, 100 m water resistance, and approximately 55-hour reserve."
     }
   ],
   "verifiedProvisionalFields": [
     "identity",
     "referenceCode",
     "variantName",
-    "productUrl"
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.attachmentType",
+    "dateStatus"
   ],
-  "additionalVerifiedFacts": [],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1775000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The exact official US page lists $17,750; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The exact official page quotes the current US price in USD."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "Everose Rolesor (Oystersteel and Everose gold)",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official technical details specify an Everose Rolesor Oyster case combining Oystersteel and Everose gold."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 37,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official technical details specify a 37 mm case diameter."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official page identifies the movement as mechanical and self-winding."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "2236",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official page identifies Manufacture Rolex calibre 2236."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 55,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official page specifies approximately 55 hours; the numeric value is retained as the manufacturer's stated approximation."
+    },
+    {
+      "fieldName": "movement.accuracyLowerSeconds",
+      "value": -2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official Superlative Chronometer specification states -2 seconds/day after casing."
+    },
+    {
+      "fieldName": "movement.accuracyUpperSeconds",
+      "value": 2,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official Superlative Chronometer specification states +2 seconds/day after casing."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official page specifies water resistance to 100 m."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "scratch-resistant sapphire",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official page specifies scratch-resistant sapphire crystal with a Cyclops lens over the date."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "Oyster bracelet",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The exact configuration is fitted with a three-piece Oyster bracelet and Oysterlock clasp."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "note": "The official functions list includes an instantaneous date."
+    }
+  ],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
     "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
-    "accuracy",
-    "waterResistanceM",
-    "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "lumeGrade"
   ],
-  "note": "Owner explicitly approved every researched Rolex exact reference for the recommendation catalogue on 2026-08-31. Existing source provenance is retained, newly checked price and wearing-span evidence is added where available, and every unresolved fact remains null so an active hard filter cannot pass silently."
+  "note": "Owner explicitly approved this researched Rolex exact reference for the recommendation catalogue on 2026-08-31. The official Rolex page now confirms its current price, 37 mm Everose Rolesor case, calibre 2236, Superlative Chronometer precision, 100 m resistance, Oyster bracelet, and date display; remaining geometry, configured weight, and specific lume grade remain null so active hard filters cannot pass silently."
 }
