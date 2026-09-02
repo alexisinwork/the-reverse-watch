@@ -909,3 +909,18 @@ targets remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 233 `needs_review` targets, 296
 review artifacts, and one remaining `planned` target; accepted catalogue rows
 remain unchanged.
+
+## Forty-sixth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations produced schema-valid Perplexity results and
+were checked against official or specialist reference sources:
+
+- Limes Endurance GMT `. BL.R` `U8778R-LG2BL-1.1` — [official product page](https://www.limes-watches.com/diver/endurance-gmt/340/endurance-gmt.-bl.r) explicitly confirms the exact model, reference, and configuration.
+- Nivrel Deep Ocean `N 145.001 CASMB` — [official product page](https://www.nivrel.com/en/deep-ocean_119_1068) confirms the item number, model, and exact black steel-bracelet product identity. The page currently marks it out of stock, so availability was not treated as production proof.
+- Alexander Shorokhoff Levels `AS.DT03-3` — [specialist exact-reference listing](https://www.thewatchpages.com/watches/alexander-shorokhoff-levels-asdt03-3) and [Alexander Shorokhoff distributor record](https://www.alexander-shorokhoff.sk/eshop/levels/p-142.xhtml) corroborate the exact reference and blue Levels configuration. The manufacturer's reference URL was identified but exceeded the browser fetch limit.
+- Poljot International Basilika Chronograph `3133.8031888` — [specialist product page](https://www.poljot24.de/en/basilika.html) confirms the SKU, 44mm steel case, and Poljot 3133 configuration. The linked manufacturer page was not fetchable, so this remains specialist-source confirmed and research-only.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 237 `needs_review` targets, 300
+review artifacts, and one remaining `planned` target; accepted catalogue rows
+remain unchanged.

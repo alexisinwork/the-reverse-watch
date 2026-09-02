@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "poljot-international-basilika-chronograph",
+  "jobId": "b6a621a0-dc58-441d-8918-ab1bfae4fddb",
+  "reviewedAt": "2026-09-03T14:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Poljot International",
+    "model": "Basilika Chronograph",
+    "referenceCode": "3133.8031888",
+    "variantName": "Basilika Chronograph 44mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.poljot24.de/en/basilika.html",
+      "status": "validated_secondary",
+      "note": "The specialist Poljot24 product page was checked on 2026-09-03 and explicitly confirms Poljot International Basilika Chronograph, SKU 3133.8031888, 44mm steel case, and Poljot 3133 movement."
+    },
+    {
+      "url": "https://poljot-international.com/produkt/basilika-chronograph",
+      "status": "fetch_blocked",
+      "note": "The manufacturer's product URL is linked by the specialist listing but was not safely fetchable in the browser on 2026-09-03; no unsupported manufacturer-page claim is made."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed from the specialist product record, but no provisional M1 fact is promoted."
+}

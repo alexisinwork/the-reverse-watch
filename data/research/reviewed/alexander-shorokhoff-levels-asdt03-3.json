@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "alexander-shorokhoff-levels-asdt03-3",
+  "jobId": "fa5429ce-847f-44da-a2f0-719bc48fea1b",
+  "reviewedAt": "2026-09-03T14:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Alexander Shorokhoff",
+    "model": "Levels",
+    "referenceCode": "AS.DT03-3",
+    "variantName": "Levels blue dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://alexander-shorokhoff.com/en/referenznummer/as-dt03-3-en/",
+      "status": "fetch_blocked",
+      "note": "The manufacturer's exact-reference page was identified and checked on 2026-09-03, but the page exceeded the browser fetch limit; no unsupported claim is taken from the failed fetch."
+    },
+    {
+      "url": "https://www.thewatchpages.com/watches/alexander-shorokhoff-levels-asdt03-3",
+      "status": "validated_secondary",
+      "note": "The specialist exact-reference listing was checked and confirms Levels, reference AS.DT03-3, blue dial, dual automatic movements, and the 99-piece limitation."
+    },
+    {
+      "url": "https://www.alexander-shorokhoff.sk/eshop/levels/p-142.xhtml",
+      "status": "validated_secondary",
+      "note": "The Alexander Shorokhoff distributor listing was checked and independently corroborates AS.DT03-3 and the Levels configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is corroborated, but no provisional M1 fact is promoted."
+}

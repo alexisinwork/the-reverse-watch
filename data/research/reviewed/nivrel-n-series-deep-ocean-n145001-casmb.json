@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "nivrel-n-series-deep-ocean-n145001-casmb",
+  "jobId": "28e052be-d188-4c1e-b69f-5d21a4be1388",
+  "reviewedAt": "2026-09-03T14:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Nivrel",
+    "model": "Deep Ocean",
+    "referenceCode": "N 145.001 CASMB",
+    "variantName": "Deep Ocean"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.nivrel.com/en/deep-ocean_119_1068",
+      "status": "validated_primary",
+      "note": "The official Nivrel product page was checked on 2026-09-03 and confirms Deep Ocean, item number N145.001CASMB, the black dial, steel bracelet, and exact product identity."
+    },
+    {
+      "url": "https://masterhorologer.com/2011/05/09/nivrel-deep-ocean-diving-watch-500-meters-water-resistance-eta-2824-2-movement-43mm-stainless-steel-case/",
+      "status": "validated_secondary",
+      "note": "The specialist review was checked and corroborates the Nivrel Deep Ocean model family and historical configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but no provisional M1 fact is promoted."
+}

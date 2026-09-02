@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:11:00.409Z",
+  "updatedAt": "2026-09-02T20:19:29.309Z",
   "brands": [
     {
       "slug": "rolex",
@@ -7854,7 +7854,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "limes-endurance-gmt-u8778r-lg2bl-1-1",
+          "referenceLabel": "Limes Endurance GMT exact reference U8778R-LG2BL-1.1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Endurance GMT U8778R-LG2BL-1.1 as an active Ickler-built GMT; verify the exact current configuration and reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "nivrel",
@@ -7871,7 +7886,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "nivrel-n-series-deep-ocean-n145001-casmb",
+          "referenceLabel": "Nivrel N-Series Deep Ocean exact reference N 145.001 CASMB",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies N-Series Deep Ocean N 145.001 CASMB as a 500m German diver; verify one exact black configuration and reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "alexander-shorokhoff",
@@ -7888,7 +7918,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "alexander-shorokhoff-levels-asdt03-3",
+          "referenceLabel": "Alexander Shorokhoff Levels exact reference ASDT03-3",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Levels ASDT03-3 as an active exact-design benchmark; verify the manufacturer product identity and reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "poljot-international",
@@ -7905,7 +7950,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "poljot-international-basilika-chronograph",
+          "referenceLabel": "Poljot International Basilika Chronograph exact 3133 configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Basilika Chronograph as a 3133 NOS/last-stock family; verify one exact product configuration and any published reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "chaika-zarya-elektronika",

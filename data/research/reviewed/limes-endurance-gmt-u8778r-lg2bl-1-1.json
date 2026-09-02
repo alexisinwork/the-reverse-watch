@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "limes-endurance-gmt-u8778r-lg2bl-1-1",
+  "jobId": "dc4321c6-a8ed-4528-9635-fcae8da4bb23",
+  "reviewedAt": "2026-09-03T14:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Limes",
+    "model": "Endurance GMT",
+    "referenceCode": "U8778R-LG2BL-1.1",
+    "variantName": "Endurance GMT . BL.R"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.limes-watches.com/diver/endurance-gmt/340/endurance-gmt.-bl.r",
+      "status": "validated_primary",
+      "note": "The official Limes product page was checked on 2026-09-03 and explicitly confirms Endurance GMT . BL.R and ref. U8778R-LG2BL-1.1."
+    },
+    {
+      "url": "https://www.icklerwatchblog.com/index.php/category/limes-mechanical-watches-made-in-germany/",
+      "status": "validated_secondary",
+      "note": "The Ickler/Limes specialist source was checked as a supporting brand and product-context source; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but no provisional M1 fact is promoted."
+}
