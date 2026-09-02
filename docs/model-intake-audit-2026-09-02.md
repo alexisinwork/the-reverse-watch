@@ -337,6 +337,20 @@ manufacturer provenance are recorded, while unresolved M1 facts remain null.
 The manifest now reports 111 `needs_review` targets and 174 review artifacts;
 accepted catalogue rows remain unchanged.
 
+## Tenth parallel exact-reference batch (retrieved 2026-09-02)
+
+UNIMATIC produced a valid Perplexity extraction and was independently checked
+against its official product card and technical sheet:
+
+- UNIMATIC Modello Quattro `U4S-T-LB` — [official product card](https://www.unimaticwatches.com/u4s-t-lb/) and [official technical sheet](https://www.unimaticwatches.com/wp-content/uploads/2026/03/TECH-SPECS-U4S-T-LB.pdf). The exact 40 mm titanium, mint NATO, time-only limited-edition configuration is in stock at the checked retrieval date.
+
+It remains research-only `needs_more_evidence`; exact identity and
+manufacturer provenance are recorded, while unresolved M1 facts remain null.
+Farer `Alert` has an official card, but its Perplexity response remained
+contract-invalid after retries, so it stays planned. The manifest now reports
+112 `needs_review` targets and 175 review artifacts; accepted catalogue rows
+remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

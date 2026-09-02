@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "unimatic-modello-quattro-u4stlb",
+  "jobId": "46770e48-d9fe-4386-a5c3-88bc152d5ec5",
+  "reviewedAt": "2026-09-02T17:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "UNIMATIC",
+    "model": "Modello Quattro",
+    "referenceCode": "U4S-T-LB",
+    "variantName": "Modello Quattro U4S-T-LB Limited Edition - Time Only"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.unimaticwatches.com/u4s-t-lb/",
+      "status": "validated_primary",
+      "note": "The official UNIMATIC product page was checked on 2026-09-02 and confirms the exact U4S-T-LB configuration, 40 mm titanium case, and current in-stock status."
+    },
+    {
+      "url": "https://www.unimaticwatches.com/wp-content/uploads/2026/03/TECH-SPECS-U4S-T-LB.pdf",
+      "status": "validated_primary",
+      "note": "The official technical sheet explicitly repeats reference U4S-T-LB and its exact technical configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

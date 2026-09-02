@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:15:50.820Z",
+  "updatedAt": "2026-09-02T16:18:05.706Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2089,7 +2089,7 @@
           "state": "accepted",
           "coverageIntent": {
             "priceBands": [
-              "500_1000"
+              "1000_2000"
             ],
             "wristBands": [
               "6_25_6_75",
@@ -3911,7 +3911,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "farer-current-exact-three-hand",
+          "referenceLabel": "Farer Alert Three Hand Series III exact product identifier Alert",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Farer Alert configuration; preserve its exact dial, size, movement, and attachment boundary rather than merging the Three Hand family."
+        }
+      ]
     },
     {
       "slug": "serica",
@@ -4139,7 +4154,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 19
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "unimatic-modello-quattro-u4stlb",
+          "referenceLabel": "UNIMATIC Modello Quattro exact reference U4S-T-LB",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official UNIMATIC Modello Quattro titanium configuration; preserve the exact 40 mm case, NATO attachment, and limited-edition boundary."
+        }
+      ]
     },
     {
       "slug": "brew",
