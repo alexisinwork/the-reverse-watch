@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T21:16:54.963Z",
+  "updatedAt": "2026-09-02T21:30:37.783Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2705,6 +2705,76 @@
           "state": "accepted",
           "coverageRationale": "Accepted compact integrated-bracelet calibration variant.",
           "catalogueVariantId": "tissot-t1372071104100"
+        },
+        {
+          "id": "tissot-t1372101103100-prx-quartz-35",
+          "referenceLabel": "Tissot PRX Quartz 35 exact reference T137.210.11.031.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies PRX Quartz 35 T137.210.11.031.00 as a compact integrated-bracelet quartz reference; verify the exact dial, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t1372071111100-prx-powermatic-35",
+          "referenceLabel": "Tissot PRX Powermatic 80 35 exact reference T137.207.11.111.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies PRX Powermatic 80 35 T137.207.11.111.00 as a compact integrated-bracelet automatic reference; verify the exact dial, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t1374071104100-prx-powermatic-40",
+          "referenceLabel": "Tissot PRX Powermatic 80 40 exact reference T137.407.11.041.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies PRX Powermatic 80 40 T137.407.11.041.00 as a core integrated-bracelet automatic reference; verify the exact dial, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t1374271101100-prx-automatic-chronograph",
+          "referenceLabel": "Tissot PRX Automatic Chronograph exact reference T137.427.11.011.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies PRX Automatic Chronograph T137.427.11.011.00 as an integrated-bracelet mechanical chronograph; verify the exact dial, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "tissot-t1274071104100-gentleman-powermatic",
+          "referenceLabel": "Tissot Gentleman Powermatic 80 exact reference T127.407.11.041.00",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Gentleman Powermatic 80 T127.407.11.041.00 as a versatile automatic reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
         }
       ]
     },

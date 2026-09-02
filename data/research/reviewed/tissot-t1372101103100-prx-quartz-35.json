@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tissot-t1372101103100-prx-quartz-35",
+  "jobId": "f494dcb3-4655-49ff-a7b2-2e835bc68f3e",
+  "reviewedAt": "2026-09-03T23:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tissot",
+    "model": "PRX 35mm",
+    "referenceCode": "T137.210.11.031.00",
+    "variantName": "PRX 35mm silver dial stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tissotwatches.com/en-us/T1372101103100.html",
+      "status": "validated_primary",
+      "note": "The official Tissot US product page was checked on 2026-09-03 and confirms exact T137.210.11.031.00 identity, PRX 35mm, silver dial, quartz movement, stainless-steel bracelet, and current product card."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

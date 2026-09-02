@@ -1077,3 +1077,28 @@ All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 275 `needs_review` targets, one
 remaining `planned` target, and 338 review artifacts; accepted catalogue rows
 remain unchanged.
+
+## Fifty-seventh parallel exact-reference batch (retrieved 2026-09-03)
+
+Five remaining Tissot dossier references produced schema-valid Perplexity
+results and were checked against official Tissot US product pages:
+
+- PRX Quartz 35 `T137.210.11.031.00` — [official product page](https://www.tissotwatches.com/en-us/T1372101103100.html) confirms the exact reference, silver dial, quartz movement, and steel bracelet.
+- PRX Powermatic 80 35 `T137.207.11.111.00` — [official product page](https://www.tissotwatches.com/en-us/T1372071111100.html) confirms the exact reference, white mother-of-pearl dial, automatic movement, and steel bracelet.
+- PRX Powermatic 80 40 `T137.407.11.041.00` — [official product page](https://www.tissotwatches.com/en-us/T1374071104100.html) confirms the exact reference, blue dial, automatic movement, and integrated steel bracelet.
+- PRX Automatic Chronograph `T137.427.11.011.00` — [official product page](https://www.tissotwatches.com/en-us/T1374271101100.html) confirms the exact reference and PRX 42 mm automatic chronograph identity.
+- Gentleman Powermatic 80 Silicium `T127.407.11.041.00` — [official product page](https://www.tissotwatches.com/en-us/T1274071104100.html) confirms the exact reference, blue dial, Powermatic 80 Silicium automatic family, and steel bracelet.
+
+All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 280 `needs_review` targets, one
+remaining `planned` target, and 343 review artifacts; accepted catalogue rows
+remain unchanged.
+
+## Fifty-eighth Grand Seiko recheck (retrieved 2026-09-03)
+
+The planned Grand Seiko Heritage 44GS `SBGW291` target was retried through the
+Perplexity worker with eight additional attempts at concurrency one. Every
+attempt failed schema validation because the provider marked unknown values as
+observed `null`; no schema-valid evidence was accepted and no review artifact
+was created. The target remains `planned` rather than being promoted from a
+non-confirming response.

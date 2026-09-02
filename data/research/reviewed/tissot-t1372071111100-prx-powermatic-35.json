@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tissot-t1372071111100-prx-powermatic-35",
+  "jobId": "5a360e9d-3a00-46bc-9358-cecddd99303b",
+  "reviewedAt": "2026-09-03T23:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tissot",
+    "model": "PRX 35mm Powermatic 80",
+    "referenceCode": "T137.207.11.111.00",
+    "variantName": "PRX 35mm white mother-of-pearl dial stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tissotwatches.com/en-us/T1372071111100.html",
+      "status": "validated_primary",
+      "note": "The official Tissot US product page was checked on 2026-09-03 and confirms exact T137.207.11.111.00 identity, PRX 35mm Powermatic 80, white mother-of-pearl dial, automatic movement, and stainless-steel bracelet."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}
