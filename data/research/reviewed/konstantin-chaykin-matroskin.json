@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "konstantin-chaykin-matroskin",
+  "jobId": "1bccb69b-ca71-4504-8977-14055009bdb3",
+  "reviewedAt": "2026-09-02T22:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Konstantin Chaykin",
+    "model": "Matroskin",
+    "referenceCode": "/",
+    "variantName": "Matroskin the Cat Wristmon"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://chaykin.ru/collections/watches/wristmons/matroskin/",
+      "status": "validated_primary",
+      "note": "Konstantin Chaykin's official Matroskin product page was checked on 2026-09-02 and confirms the distinct 40mm Wristmon, K.18-27 architecture, moon-phase Joker indication, and limited series of 90 pieces."
+    },
+    {
+      "url": "https://chaykin.ru/upload/iblock/76f/oiyexxnnvybta7o8xgoz3m5wca1ookzg.pdf",
+      "status": "validated_primary",
+      "note": "The official Matroskin technical PDF was checked on 2026-09-02 and corroborates the model-level identity and technical specification table; no conventional alphanumeric reference is published."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Konstantin Chaykin model and official product URL are confirmed; the manufacturer publishes no conventional reference code, and all M1 facts remain provisional until field-level review is complete."
+}

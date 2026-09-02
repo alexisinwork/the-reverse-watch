@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "eberhard-lancia-hf-41048-02",
+  "jobId": "a3a97c4c-8d84-43e6-a1f4-72cdbb3e0958",
+  "reviewedAt": "2026-09-02T22:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Eberhard & Co.",
+    "model": "LANCIA HF",
+    "referenceCode": "41048.02",
+    "variantName": "LANCIA HF blue dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.eberhard-co-watches.ch/en/novita/lancia-hf/",
+      "status": "validated_primary",
+      "note": "Eberhard & Co.'s official LANCIA HF page was checked on 2026-09-02 and explicitly maps reference 41048.02 to the blue-dial configuration, separately from 41048.01 white and 41048.03 black."
+    },
+    {
+      "url": "https://www.eberhard-co-watches.ch/wp-content/uploads/2026/04/CATALOGUE-LES-COLLECTIONS.pdf",
+      "status": "validated_primary",
+      "note": "The official Eberhard catalogue was checked on 2026-09-02 and corroborates the LANCIA HF reference family and 41mm/50m configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Eberhard & Co. reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

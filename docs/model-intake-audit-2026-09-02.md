@@ -544,6 +544,22 @@ manufacturer references are recorded, unresolved M1 facts remain null, and no
 catalogue rows were added. The manifest now reports 147 `needs_review` targets
 and 210 review artifacts; accepted catalogue rows remain unchanged.
 
+## Twenty-third parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional current or explicitly listed manufacturer configurations were
+sent through the Perplexity worker and checked against primary brand pages:
+
+- Baume & Mercier Clifton 10793 `M0A10793` — [official Clifton product page](https://www.baume-et-mercier.com/fr/fr/collections/clifton-homme/montre-clifton-10793-seconde-au-centre.html) and [official men's catalogue](https://www.baume-et-mercier.com/us/en/watches/mens-watches.html).
+- EBEL 1911 Product SKU `1216585` — [official product page](https://www.ebel.com/en/shop-watches/ebel-1911-1216585.html).
+- Eberhard & Co. LANCIA HF blue dial `41048.02` — [official product page](https://www.eberhard-co-watches.ch/en/novita/lancia-hf/), which separately maps the white `.01`, blue `.02`, and black `.03` variants.
+- Konstantin Chaykin Matroskin — [official product page](https://chaykin.ru/collections/watches/wristmons/matroskin/) and [official technical PDF](https://chaykin.ru/upload/iblock/76f/oiyexxnnvybta7o8xgoz3m5wca1ookzg.pdf). The manufacturer publishes no conventional alphanumeric reference, so the model-level identity is preserved without inventing one.
+
+All four remain research-only `needs_more_evidence`; exact identities and
+manufacturer identifiers (or the documented absence of one) are recorded,
+unresolved M1 facts remain null, and no catalogue rows were added. The
+manifest now reports 151 `needs_review` targets and 214 review artifacts;
+accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "ebel-1911-1216585",
+  "jobId": "62a58267-7211-4e6c-be12-221697929cf6",
+  "reviewedAt": "2026-09-02T22:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "EBEL",
+    "model": "1911",
+    "referenceCode": "1216585",
+    "variantName": "EBEL 1911 42mm petrol-blue dial stainless steel quartz on bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.ebel.com/en/shop-watches/ebel-1911-1216585.html",
+      "status": "validated_primary",
+      "note": "EBEL's official product page was checked on 2026-09-02 and explicitly labels 1216585 as Product SKU for the 42mm 1911 petrol-blue steel quartz configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact EBEL Product SKU and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

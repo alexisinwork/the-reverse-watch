@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T17:11:55.975Z",
+  "updatedAt": "2026-09-02T17:17:20.017Z",
   "brands": [
     {
       "slug": "rolex",
@@ -3630,7 +3630,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 9
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "baume-mercier-clifton-10793-m0a10793",
+          "referenceLabel": "Baume & Mercier Clifton 10793 exact reference M0A10793",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The current official men's catalogue lists Clifton 10793 with the exact M0A10793 reference; verify the complete M1 field set against primary product evidence."
+        }
+      ]
     },
     {
       "slug": "ebel",
@@ -3647,7 +3662,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 10
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "ebel-1911-1216585",
+          "referenceLabel": "EBEL 1911 exact Product SKU 1216585",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The official EBEL product card publishes Product SKU 1216585 for a current 42mm steel 1911 configuration; preserve the SKU as the manufacturer product identifier and verify remaining M1 fields."
+        }
+      ]
     },
     {
       "slug": "eberhard",
@@ -3664,7 +3694,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "eberhard-lancia-hf-41048-02",
+          "referenceLabel": "Eberhard & Co. LANCIA HF blue dial exact reference 41048.02",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The current official LANCIA HF page separates the blue-dial configuration as reference 41048.02 within the 120-piece-per-dial limited edition; verify all M1 fields without collapsing it into the white or black variants."
+        }
+      ]
     },
     {
       "slug": "zodiac",
@@ -4014,7 +4059,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "konstantin-chaykin-matroskin",
+          "referenceLabel": "Konstantin Chaykin Matroskin exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The current official Matroskin page confirms a distinct 40mm limited model with K.18-27 Joker indication and moon-phase display; the manufacturer page does not publish a conventional reference code, so identity must remain model-level until further evidence."
+        }
+      ]
     },
     {
       "slug": "poljot-sturmanskie",

@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "baume-mercier-clifton-10793-m0a10793",
+  "jobId": "86cecb04-d46c-4045-985c-97f23d8108d8",
+  "reviewedAt": "2026-09-02T22:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Baume & Mercier",
+    "model": "Clifton 10793",
+    "referenceCode": "M0A10793",
+    "variantName": "Clifton Baumatic 39 mm, off-white grained dial, integrated steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.baume-et-mercier.com/fr/fr/collections/clifton-homme/montre-clifton-10793-seconde-au-centre.html",
+      "status": "validated_primary",
+      "note": "Baume & Mercier's official Clifton product page was checked on 2026-09-02 and confirms the dedicated 10793 configuration, 39mm Baumatic model identity, and official product URL."
+    },
+    {
+      "url": "https://www.baume-et-mercier.com/us/en/watches/mens-watches.html",
+      "status": "validated_primary",
+      "note": "The official men's catalogue was checked on 2026-09-02 and lists Clifton 10793 together with the exact M0A10793 reference."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Baume & Mercier reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}
