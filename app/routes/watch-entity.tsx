@@ -39,6 +39,12 @@ export function meta({ data: loaderData }: Route.MetaArgs) {
 
 export default function WatchEntity() {
   const { entity, stories } = useLoaderData<typeof loader>();
+  const onScreenStories = stories.filter(
+    (story) => story.attribution.claimType === "screen_worn",
+  );
+  const publicLifeStories = stories.filter(
+    (story) => story.attribution.claimType !== "screen_worn",
+  );
   return (
     <main className="discovery-shell">
       <DiscoveryAnalytics event={{ name: "page_view", surface: "entity" }} />
@@ -50,7 +56,31 @@ export default function WatchEntity() {
         <h1>{entity.name}</h1>
         {entity.disambiguation ? <p>{entity.disambiguation}</p> : null}
       </header>
-      <DiscoveryStoryList stories={stories} />
+      {entity.kind === "public_figure" ? (
+        <>
+          <section aria-labelledby="on-screen-heading">
+            <h2 id="on-screen-heading">On screen</h2>
+            {onScreenStories.length ? (
+              <DiscoveryStoryList stories={onScreenStories} />
+            ) : (
+              <p>
+                No reviewed on-screen attribution is recorded for this public
+                figure.
+              </p>
+            )}
+          </section>
+          <section aria-labelledby="public-life-heading">
+            <h2 id="public-life-heading">In public life</h2>
+            {publicLifeStories.length ? (
+              <DiscoveryStoryList stories={publicLifeStories} />
+            ) : (
+              <p>No reviewed public-life attribution is recorded.</p>
+            )}
+          </section>
+        </>
+      ) : (
+        <DiscoveryStoryList stories={stories} />
+      )}
     </main>
   );
 }

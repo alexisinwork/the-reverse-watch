@@ -3,7 +3,7 @@ import { createRoutesStub } from "react-router";
 import { expect, it } from "vitest";
 import WatchFind, { loader } from "./watch-find";
 
-it("renders an email-free, provider-free finder shell with validated handoff", async () => {
+it("renders an email-free accepted-record finder with validated handoff", async () => {
   const Stub = createRoutesStub([
     {
       path: "/watches/find",
@@ -25,9 +25,7 @@ it("renders an email-free, provider-free finder shell with validated handoff", a
   ).toBeInTheDocument();
   const anchors = screen.getAllByRole("button");
   expect(anchors).toHaveLength(3);
-  anchors.forEach((anchor) => expect(anchor).toBeDisabled());
+  anchors.forEach((anchor) => expect(anchor).toBeEnabled());
   expect(screen.queryByLabelText(/email/i)).not.toBeInTheDocument();
-  expect(
-    screen.getByText(/does not send a research request/i),
-  ).toBeInTheDocument();
+  expect(screen.queryByText(/research request/i)).not.toBeInTheDocument();
 });

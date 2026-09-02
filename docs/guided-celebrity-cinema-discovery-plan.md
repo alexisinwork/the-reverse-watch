@@ -588,6 +588,24 @@ Checks:
 
 Exit: component, route, accessibility, and `npm run check` gates pass.
 
+#### D3 implementation record
+
+Migrations `0045` and `0046` add `discovery_search_v1`, a narrow anonymous
+read RPC that accepts only one anchor and a two-to-160-character query. It
+searches accepted canonical names plus accepted aliases, escapes literal `%`,
+`_`, and backslash characters, caps output at twelve compact results, and never
+exposes raw tables. The server finder uses that RPC with the reviewed fixture as
+a failure fallback.
+
+`/watches/find` now offers Film or TV, Actor or public figure, and Fictional
+character anchors. A selected anchor enables a bounded GET search and renders
+work/year/type, person descriptor, or character/work/year disambiguation. Work
+results route to work evidence pages; people and characters route to their
+separate entity evidence pages. Public-figure pages retain separate **On
+screen** and **In public life** sections, so neither route composition nor a
+shared watch identity can silently imply the other claim type. No provider,
+research request, email capture, or catalogue mutation is part of D3.
+
 ### D4 — Add private research intake without AI
 
 Scope:
