@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "montblanc-1858-iced-sea-mb129371",
+  "jobId": "c4eb5610-381e-407c-b6a3-f4c83f4170fc",
+  "reviewedAt": "2026-09-03T13:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Montblanc",
+    "model": "Iced Sea Automatic Date",
+    "referenceCode": "MB129371",
+    "variantName": "Montblanc Iced Sea Automatic Date - Steel - Ceramic - Black"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.montblanc.com/en-us/montblanc-iced-sea-automatic-date-MB129371.html",
+      "status": "validated_primary",
+      "note": "The official Montblanc page was checked on 2026-09-03 and confirms Iced Sea Automatic Date, Ident No. MB129371, black dial, steel case, ceramic bezel, and the exact product identity."
+    },
+    {
+      "url": "https://monochrome-watches.com/montblanc-1858-iced-sea-automatic-date-collection-dive-watch-introducing/",
+      "status": "validated_secondary",
+      "note": "The specialist collection introduction was checked and corroborates the Montblanc 1858 Iced Sea Automatic Date model family; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but no provisional M1 fact is promoted."
+}

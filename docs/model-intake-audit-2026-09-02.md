@@ -893,3 +893,19 @@ All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 230 `needs_review` targets and
 293 review artifacts; accepted catalogue rows remain unchanged. Four goals
 remain `planned`, including Claude Meylan Tortue Swirls.
+
+## Forty-fifth parallel exact-reference batch (retrieved 2026-09-03)
+
+Three additional research targets produced schema-valid Perplexity results and
+were checked against primary or specialist reference sources:
+
+- Montblanc 1858 Iced Sea Automatic Date `MB129371` — [official product page](https://www.montblanc.com/en-us/montblanc-iced-sea-automatic-date-MB129371.html) confirms the exact black steel-and-ceramic configuration and identifier.
+- Heuer Lemania 5100 Chronograph `510.500` — [OnTheDash exact-reference page](https://www.onthedash.com/chronograph/reference-510-500-stainless-steel-finish/) and [specialist dealer archive](https://www.bachmann-scher.de/en/sold-watches/heuer-vintage-chronograph-ref-510500-stainless-steel-lemania-5100-bj-1977-6096.html) confirm the Heuer-branded stainless-steel watch and Lemania 5100 calibre. The target's “Lemania-signed” label was corrected in the review rather than treating the movement maker as the watch brand.
+- Claude Meylan Tortue Swirl — [GPHG watch listing](https://www.gphg.org/en/watches/tortue-swirl) and [specialist hands-on](https://monochrome-watches.com/hands-on-new-claude-meylan-tortue-swirls-specs-price/) confirm the model. The sources describe two steel case expressions and publish no separate manufacturer reference, so the URL path was rejected as a code and the exact case variant remains unresolved.
+
+Record Watch Co. remains `planned`: the worker returned no exact candidate
+identity, and no review artifact was created. The three confirmed model-level
+targets remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 233 `needs_review` targets, 296
+review artifacts, and one remaining `planned` target; accepted catalogue rows
+remain unchanged.

@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "lemania-signed-vintage-chronograph-5100",
+  "jobId": "27c0ee86-b972-4424-bb5f-1e173ee4ec76",
+  "reviewedAt": "2026-09-03T13:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Heuer",
+    "model": "Lemania 5100 Chronograph",
+    "referenceCode": "510.500",
+    "variantName": "Heuer 510.500 stainless-steel chronograph"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.onthedash.com/chronograph/reference-510-500-stainless-steel-finish/",
+      "status": "validated_secondary",
+      "note": "The specialist OnTheDash reference page was checked on 2026-09-03 and explicitly identifies case/model reference 510.500, stainless-steel finish, and Lemania 5100 movement. It identifies the watch as Heuer/TAG Heuer rather than a Lemania-branded case."
+    },
+    {
+      "url": "https://www.bachmann-scher.de/en/sold-watches/heuer-vintage-chronograph-ref-510500-stainless-steel-lemania-5100-bj-1977-6096.html",
+      "status": "validated_secondary",
+      "note": "The specialist dealer archive was checked and corroborates the Heuer ref. 510.500 stainless-steel watch and Lemania 5100 base calibre."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the exact watch resolves to a Heuer-branded reference using the Lemania 5100 calibre, and no provisional M1 fact is promoted."
+}

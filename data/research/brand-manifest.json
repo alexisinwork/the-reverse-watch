@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:00:48.979Z",
+  "updatedAt": "2026-09-02T20:11:00.409Z",
   "brands": [
     {
       "slug": "rolex",
@@ -5773,7 +5773,7 @@
         {
           "id": "lemania-signed-vintage-chronograph-5100",
           "referenceLabel": "Lemania-signed vintage chronograph using Calibre 5100; exact watch reference to establish",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"
@@ -5837,7 +5837,7 @@
         {
           "id": "montblanc-1858-iced-sea-mb129371",
           "referenceLabel": "Montblanc 1858 Iced Sea Automatic Date exact identifier MB129371",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"
@@ -7600,7 +7600,7 @@
         {
           "id": "claude-meylan-tortue-swirls",
           "referenceLabel": "Claude Meylan Tortue Swirls exact configuration",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"

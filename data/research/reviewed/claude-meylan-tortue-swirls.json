@@ -1,0 +1,60 @@
+{
+  "reviewVersion": 1,
+  "targetId": "claude-meylan-tortue-swirls",
+  "jobId": "25c2119b-6821-4651-87d2-21feaef666b5",
+  "reviewedAt": "2026-09-03T13:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Claude Meylan",
+    "model": "Tortue Swirl",
+    "referenceCode": "reference not established",
+    "variantName": "Tortue Swirl skeleton; exact case variant not established"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.gphg.org/en/watches/tortue-swirl",
+      "status": "validated_secondary",
+      "note": "The GPHG watch-specific listing was checked on 2026-09-03 and confirms the Claude Meylan Tortue Swirl model identity. It does not publish a separate manufacturer reference or resolve the case-version choice."
+    },
+    {
+      "url": "https://monochrome-watches.com/hands-on-new-claude-meylan-tortue-swirls-specs-price/",
+      "status": "validated_secondary",
+      "note": "The specialist hands-on article was checked and confirms the Tortue Swirls model and two steel case expressions; the exact selected case configuration has not been established."
+    },
+    {
+      "url": "https://en.worldtempus.com/node/64814",
+      "status": "validated_secondary",
+      "note": "The specialist reference page was checked and corroborates the Tortue Swirl naming; it does not establish a numeric or alphanumeric manufacturer reference."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied the GPHG URL path as a reference code; the available sources publish only the Tortue Swirl marketing name and describe two steel case expressions without a separate manufacturer reference."
+    },
+    {
+      "fieldName": "variantName",
+      "reason": "The sources confirm the Tortue Swirl model but distinguish bezel and no-bezel steel versions; a single exact configuration cannot be selected from the evidence."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the Tortue Swirl family is confirmed, but the exact case configuration and manufacturer reference remain unresolved, so no provisional M1 fact is promoted."
+}
