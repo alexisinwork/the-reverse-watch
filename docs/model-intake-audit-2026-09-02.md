@@ -1061,3 +1061,19 @@ remaining `planned` target, and 333 review artifacts; accepted catalogue rows
 remain unchanged. The direct Japanese Citizen URLs for the Attesa and
 Chronomaster were retained as fetch-blocked provenance, while accessible
 official regional/global pages independently confirmed both references.
+
+## Fifty-sixth parallel exact-reference batch (retrieved 2026-09-03)
+
+Five remaining Seiko dossier references produced schema-valid Perplexity
+results and were checked against official Seiko product pages:
+
+- Prospex Turtle `SRPE93` — [official Seiko USA product page](https://seikousa.com/products/srpe93) confirms the exact reference, black-dial silicone-strap configuration, 4R36 automatic movement, and 200 m dive rating.
+- Prospex Samurai `SRPL13` — [official Seiko USA product page](https://seikousa.com/products/srpl13) confirms the exact reference, black-dial steel-bracelet configuration, 4R35 automatic movement, and 200 m dive rating.
+- Presage Cocktail Time `SRPB43J1` — [official Seiko Malaysia product page](https://www.seikowatches.com/my-en/products/presage/srpb43j1) confirms the exact reference, 4R35 automatic movement, leather band, 40.5 mm case, and 5 bar rating.
+- King Seiko KSK `SPB281J1` — [official Seiko Boutique Malaysia listing](https://seikoboutique.com.my/product/spb281j1/) confirms the exact reference, 6R31 automatic movement, and 37 mm by 43.6 mm case geometry.
+- Astron GPS Solar `SSJ013J1` — [official Seiko US product page](https://www.seikowatches.com/us-en/products/astron/ssj013j1) confirms the exact reference, 3X62 GPS Solar movement, titanium case, and GPS/date configuration.
+
+All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 275 `needs_review` targets, one
+remaining `planned` target, and 338 review artifacts; accepted catalogue rows
+remain unchanged.

@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-ssj013-astron-gps-solar",
+  "jobId": "6f7e5230-3d5f-45ab-a2d8-49ef9d222aa7",
+  "reviewedAt": "2026-09-03T22:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "Astron GPS Solar",
+    "referenceCode": "SSJ013J1",
+    "variantName": "GPS Solar limited edition"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.seikowatches.com/us-en/products/astron/ssj013j1",
+      "status": "validated_primary",
+      "note": "The official Seiko Watch Corporation US product page was checked on 2026-09-03 and confirms SSJ013J1, Astron GPS Solar identity, 3X62 movement, titanium case, 41.2 mm diameter, 10 bar water resistance, and GPS/date functions."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

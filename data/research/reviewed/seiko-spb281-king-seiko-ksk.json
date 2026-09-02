@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-spb281-king-seiko-ksk",
+  "jobId": "7d601adf-31d7-4ecb-b88a-22f85ae1cb61",
+  "reviewedAt": "2026-09-03T22:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "King Seiko KSK",
+    "referenceCode": "SPB281J1",
+    "variantName": "King Seiko modern reinterpretation, light-grey dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://seikoboutique.com.my/product/spb281j1/",
+      "status": "validated_primary",
+      "note": "The official Seiko Boutique Malaysia product page was checked on 2026-09-03 and confirms King Seiko SPB281J1 identity, 6R31 automatic movement, stainless-steel case, light-grey configuration, and exact 37 mm by 43.6 mm dimensions."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

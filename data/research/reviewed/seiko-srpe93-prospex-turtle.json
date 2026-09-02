@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-srpe93-prospex-turtle",
+  "jobId": "1af8f03f-ea7d-4c15-9755-1da520c94cc3",
+  "reviewedAt": "2026-09-03T22:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "Prospex",
+    "referenceCode": "SRPE93",
+    "variantName": "Prospex Automatic Diver black dial, black silicone strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://seikousa.com/products/srpe93",
+      "status": "validated_primary",
+      "note": "The official Seiko USA product page was checked on 2026-09-03 and confirms SRPE93, Prospex Automatic Diver identity, black dial and silicone strap configuration, 4R36 automatic movement, and 200 m dive water resistance."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

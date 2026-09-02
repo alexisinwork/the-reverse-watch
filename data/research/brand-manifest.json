@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T21:08:30.138Z",
+  "updatedAt": "2026-09-02T21:16:54.963Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2308,6 +2308,76 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Prospex Solar Diver SNE573 as a compact low-maintenance reference; verify the exact current strap configuration and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "seiko-srpe93-prospex-turtle",
+          "referenceLabel": "Seiko Prospex Turtle exact reference SRPE93",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Prospex Turtle SRPE93 as a core 200 m mechanical diver; verify the exact current dial, strap, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "seiko-srpl13-prospex-samurai",
+          "referenceLabel": "Seiko Prospex Samurai exact reference SRPL13",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Prospex Samurai SRPL13 as a current mechanical dive reference; verify the exact limited configuration and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "seiko-srpb43-presage-cocktail-time",
+          "referenceLabel": "Seiko Presage Cocktail Time exact reference SRPB43",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Presage Cocktail Time SRPB43 as an accessible dress-mechanical reference; verify the exact dial, bracelet or strap, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "seiko-spb281-king-seiko-ksk",
+          "referenceLabel": "Seiko King Seiko KSK exact reference SPB281",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies King Seiko KSK SPB281 as a compact premium mechanical reference; verify the exact current configuration and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "seiko-ssj013-astron-gps-solar",
+          "referenceLabel": "Seiko Astron GPS Solar exact reference SSJ013",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Astron GPS Solar SSJ013 as a current satellite-synchronised solar reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
         }
       ]
     },
