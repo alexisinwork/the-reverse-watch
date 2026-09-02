@@ -141,3 +141,61 @@ An important intake correction is recorded: Orient `RA-AC0Q` is a family
 prefix, not an exact reference. The exact candidate is `RA-AC0Q01B`, while the
 manufacturer currently lists additional distinct `RA-AC0Q` references. These
 must be researched as separate homogeneous variants.
+
+## Rolex exact-reference expansion (retrieved 2026-09-02)
+
+The Rolex recheck added 36 current exact configuration targets to the manifest.
+They remain research-only: 24 received valid Perplexity extractions and
+independent primary-source identity checks; 12 remain `planned` after
+Perplexity rate-limit or contract-validation failures and are queued for a
+later retry. No failed extraction is treated as confirmation.
+
+- Land-Dweller: `127234-0001`, `127235-0001`, `127236-0001`, `127335-0001`,
+  `127336-0001`, `127285TBR-0002`, `127286TBR-0001`, `127385TBR-0003`, and
+  `127386TBR-0001` — [official Land-Dweller catalogue](https://www.rolex.com/en-us/watches/land-dweller/all-models), with direct cards for
+  [127234](https://www.rolex.com/en-us/watches/land-dweller/m127234-0001),
+  [127235](https://www.rolex.com/en-us/watches/land-dweller/m127235-0001),
+  [127236](https://www.rolex.com/en-us/watches/land-dweller/m127236-0001),
+  [127335](https://www.rolex.com/en-us/watches/land-dweller/m127335-0001),
+  [127336](https://www.rolex.com/en-us/watches/land-dweller/m127336-0001),
+  [127285TBR](https://www.rolex.com/en-us/watches/land-dweller/m127285tbr-0002),
+  [127286TBR](https://www.rolex.com/en-us/watches/land-dweller/m127286tbr-0001),
+  [127385TBR](https://www.rolex.com/en-us/watches/land-dweller/m127385tbr-0003), and
+  [127386TBR](https://www.rolex.com/en-us/watches/land-dweller/m127386tbr-0001).
+- GMT-Master II: `126710BLNR-0002/-0003`, `126713GRNR-0001`,
+  `126715CHNR-0001/-0002`, `126718GRNR-0001/-0002`, `126711CHNR-0002`,
+  `126720VTNR-0001/-0002`, and `126729VTNR-0001` — [official all-models page](https://www.rolex.com/watches/gmt-master-ii/all-models).
+- Oyster Perpetual: `134303-0001`, `134300-0006`, `276208-0002`,
+  `276205-0001`, `124205-0002`, `126000-0016`, `277200-0014`,
+  `124200-0007`, and `124200-0008` — [official all-models page](https://www.rolex.com/en-us/watches/oyster-perpetual/all-models).
+- Daytona and Day-Date: [Daytona 126506-0001](https://www.rolex.com/en-us/watches/cosmograph-daytona/m126506-0001), [Day-Date 228236-0007](https://www.rolex.com/en-us/watches/day-date/m228236-0007), and [Day-Date 228236-0018](https://www.rolex.com/en-us/watches/day-date/m228236-0018).
+- Yacht-Master and Yacht-Master II: [126680-0001](https://www.rolex.com/watches/yacht-master-ii/m126680-0001), [126688-0001](https://www.rolex.com/watches/yacht-master-ii/m126688-0001), [126655-0002](https://www.rolex.com/watches/yacht-master/m126655-0002), the existing [226658-0001](https://www.rolex.com/en-us/watches/yacht-master/m226658-0001), and [268621-0004](https://www.rolex.com/watches/yacht-master/m268621-0004).
+
+Rolex's official pages confirm the exact current configuration boundaries, but
+do not publish every M1 field required by this project (notably full configured
+weight, lug-to-lug, lug width, and sometimes thickness). Those values remain
+missing rather than inherited from a family page. The manifest now reports 58
+`needs_review` targets, 12 still `planned`, and 121 review artifacts; accepted
+catalogue rows remain unchanged.
+
+## ZRC 1904 exact variants
+
+ZRC 1904 is present in the last-100 source list but has no linked knowledge
+dossier in the 204-brand manifest, so these are documented as verified research
+leads rather than inserted into the catalogue. The official [Grands Fonds
+Heritage collection](https://zrc1904.com/category/collections/watches-grands-fonds/gf-heritage/)
+currently confirms six separate 39 mm configurations:
+
+- `GF3811121113` [S2-Metal](https://zrc1904.com/product/gf3811121113-s2-metal/) — steel bracelet and ceramic bezel.
+- `GF3811121118` [S2-Rubber](https://zrc1904.com/product/s2-rubber-new/) — FKM Tropic rubber and ceramic bezel.
+- `GF3813231114` [Chesnut](https://zrc1904.com/product/gf3813231114-chesnut/) — brown gradient dial and aluminium bezel.
+- `GF3815235118` [Crimson](https://zrc1904.com/product/crimson-gf3815235118/) — red gradient dial, date, and FKM Tropic rubber.
+- `GF3813121318` [Smoke](https://zrc1904.com/product/heritage-smoke-gf3813121318/) — smoke dial, no date, and FKM Tropic rubber.
+- `GF3811231314` [Milanese](https://zrc1904.com/product/gf3811231314-milanese/) — Milanese mesh, aluminium bezel, and date.
+
+All six share the family-level 39 mm steel monobloc, crown-at-6, sapphire, and
+300 m water-resistance architecture, but the exact bezel, dial, date, and
+attachment boundaries differ. The structured S2-Rubber configuration is used
+over an inconsistent prose sentence on that page: it specifies FKM Tropic
+rubber and a pin buckle. A ZRC dossier and exact research targets must be added
+before these references can enter the manifest or PostgreSQL.

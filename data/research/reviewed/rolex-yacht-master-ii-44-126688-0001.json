@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-yacht-master-ii-44-126688-0001",
+  "jobId": "0d7091c6-cd20-4f8c-901c-a76755020dab",
+  "reviewedAt": "2026-09-02T13:45:52.417Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Yacht-Master II",
+    "referenceCode": "126688-0001",
+    "variantName": "Yacht-Master II 18 kt yellow gold, Oyster bracelet, white dial, blue Cerachrom bezel (M126688-0001)"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/yacht-master-ii/m126688-0001",
+      "status": "validated_primary",
+      "note": "Rolex official product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 126688-0001. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact current Rolex reference and official product URL are confirmed, while all physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

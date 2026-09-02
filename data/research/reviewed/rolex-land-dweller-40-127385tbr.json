@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-land-dweller-40-127385tbr",
+  "jobId": "9c053ba3-42f9-458c-b47d-ce3cb81cdab1",
+  "reviewedAt": "2026-09-02T13:45:52.412Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Land-Dweller 40",
+    "referenceCode": "127385TBR-0003",
+    "variantName": "Land-Dweller 40 Everose gold and diamonds, intense white honeycomb dial, Flat Jubilee bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/land-dweller/m127385tbr-0003",
+      "status": "validated_primary",
+      "note": "Rolex official product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 127385TBR-0003. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact current Rolex reference and official product URL are confirmed, while all physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

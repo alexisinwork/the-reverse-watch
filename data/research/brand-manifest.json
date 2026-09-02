@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T13:22:56.781Z",
+  "updatedAt": "2026-09-02T13:57:01.727Z",
   "brands": [
     {
       "slug": "rolex",
@@ -420,6 +420,510 @@
             ]
           },
           "coverageRationale": "The current official Rolex collection includes the yellow-gold Yacht-Master 42 on Oysterflex reference 226658, which is absent from the accepted corpus and must remain separate from the RLX titanium and white-gold 42 mm variants."
+        },
+        {
+          "id": "rolex-land-dweller-36-127234",
+          "referenceLabel": "Rolex Land-Dweller 36 exact White Rolesor reference 127234-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; keep 36 mm White Rolesor separate from other Land-Dweller materials and sizes."
+        },
+        {
+          "id": "rolex-land-dweller-36-127235",
+          "referenceLabel": "Rolex Land-Dweller 36 exact Everose-gold reference 127235-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the 36 mm Everose-gold boundary."
+        },
+        {
+          "id": "rolex-land-dweller-36-127236",
+          "referenceLabel": "Rolex Land-Dweller 36 exact platinum reference 127236-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the 36 mm platinum boundary."
+        },
+        {
+          "id": "rolex-land-dweller-40-127335",
+          "referenceLabel": "Rolex Land-Dweller 40 exact Everose-gold reference 127335-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the 40 mm Everose-gold boundary."
+        },
+        {
+          "id": "rolex-land-dweller-40-127336",
+          "referenceLabel": "Rolex Land-Dweller 40 exact platinum reference 127336-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the 40 mm platinum boundary."
+        },
+        {
+          "id": "rolex-land-dweller-36-127285tbr",
+          "referenceLabel": "Rolex Land-Dweller 36 exact diamond-set Everose-gold reference 127285TBR-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official diamond-set configuration; preserve the exact dial and bezel boundary."
+        },
+        {
+          "id": "rolex-land-dweller-36-127286tbr",
+          "referenceLabel": "Rolex Land-Dweller 36 exact diamond-set platinum reference 127286TBR-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official diamond-set configuration; preserve the exact platinum, dial, and bezel boundary."
+        },
+        {
+          "id": "rolex-land-dweller-40-127385tbr",
+          "referenceLabel": "Rolex Land-Dweller 40 exact diamond-set Everose-gold reference 127385TBR-0003",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official diamond-set configuration; preserve the exact 40 mm Everose-gold boundary."
+        },
+        {
+          "id": "rolex-land-dweller-40-127386tbr",
+          "referenceLabel": "Rolex Land-Dweller 40 exact diamond-set platinum reference 127386TBR-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official diamond-set configuration; preserve the exact 40 mm platinum boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126710blnr-0002",
+          "referenceLabel": "Rolex GMT-Master II exact Oystersteel Jubilee reference 126710BLNR-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; keep the blue-black bezel and Jubilee bracelet separate from the Oyster sibling."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126710blnr-0003",
+          "referenceLabel": "Rolex GMT-Master II exact Oystersteel Oyster reference 126710BLNR-0003",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; keep the blue-black bezel and Oyster bracelet separate from the Jubilee sibling."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126713grnr-0001",
+          "referenceLabel": "Rolex GMT-Master II exact Yellow Rolesor Jubilee reference 126713GRNR-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the Yellow Rolesor and Jubilee boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126715chnr-0001",
+          "referenceLabel": "Rolex GMT-Master II exact Everose-gold Oyster reference 126715CHNR-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the Everose-gold, black-dial, and Oyster boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126715chnr-0002",
+          "referenceLabel": "Rolex GMT-Master II exact Everose-gold tiger-iron Oyster reference 126715CHNR-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the exact tiger-iron dial and Everose-gold Oyster boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126718grnr-0001",
+          "referenceLabel": "Rolex GMT-Master II exact yellow-gold Jubilee reference 126718GRNR-0001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the yellow-gold, black-dial, and Jubilee boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126718grnr-0002",
+          "referenceLabel": "Rolex GMT-Master II exact yellow-gold tiger-iron Jubilee reference 126718GRNR-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the exact tiger-iron dial and yellow-gold Jubilee boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126711chnr-0002",
+          "referenceLabel": "Rolex GMT-Master II exact Everose Rolesor Oyster reference 126711CHNR-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the Everose Rolesor and Oyster bracelet boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126720vtnr-0001",
+          "referenceLabel": "Rolex GMT-Master II exact left-handed Oystersteel Oyster reference 126720VTNR-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official left-handed configuration; preserve the crown-side and Oyster bracelet boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126720vtnr-0002",
+          "referenceLabel": "Rolex GMT-Master II exact left-handed Oystersteel Jubilee reference 126720VTNR-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official left-handed configuration; preserve the crown-side and Jubilee bracelet boundary."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126729vtnr-0001",
+          "referenceLabel": "Rolex GMT-Master II exact white-gold Oyster reference 126729VTNR-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the white-gold, green Cerachrom-dial, and Oyster boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-41-134303-0001",
+          "referenceLabel": "Rolex Oyster Perpetual 41 exact Yellow Rolesor slate reference 134303-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the Yellow Rolesor and slate-dial boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-41-134300-0006",
+          "referenceLabel": "Rolex Oyster Perpetual 41 exact pistachio Oystersteel reference 134300-0006",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the pistachio-dial boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-28-276208-0002",
+          "referenceLabel": "Rolex Oyster Perpetual 28 exact yellow-gold green-stone reference 276208-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the 28 mm yellow-gold and green-stone boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-28-276205-0001",
+          "referenceLabel": "Rolex Oyster Perpetual 28 exact Everose-gold black-dial reference 276205-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the 28 mm Everose-gold and black-dial boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-34-124205-0002",
+          "referenceLabel": "Rolex Oyster Perpetual 34 exact Everose-gold dumortierite reference 124205-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the 34 mm Everose-gold and dumortierite boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-36-126000-0016",
+          "referenceLabel": "Rolex Oyster Perpetual 36 exact multicoloured Jubilee motif reference 126000-0016",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the exact multicoloured Jubilee motif dial."
+        },
+        {
+          "id": "rolex-oyster-perpetual-31-277200-0014",
+          "referenceLabel": "Rolex Oyster Perpetual 31 exact lavender Oystersteel reference 277200-0014",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the lavender-dial boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-34-124200-0007",
+          "referenceLabel": "Rolex Oyster Perpetual 34 exact beige Oystersteel reference 124200-0007",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the beige-dial boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-34-124200-0008",
+          "referenceLabel": "Rolex Oyster Perpetual 34 exact lavender Oystersteel reference 124200-0008",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official configuration; preserve the lavender-dial boundary."
+        },
+        {
+          "id": "rolex-daytona-40-126506-0001",
+          "referenceLabel": "Rolex Cosmograph Daytona exact platinum reference 126506-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Daytona configuration; preserve the platinum and Cerachrom-bezel boundary."
+        },
+        {
+          "id": "rolex-day-date-40-228236-0007",
+          "referenceLabel": "Rolex Day-Date 40 exact platinum bright-blue-dial reference 228236-0007",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Day-Date configuration; preserve the platinum and bright-blue-dial boundary."
+        },
+        {
+          "id": "rolex-day-date-40-228236-0018",
+          "referenceLabel": "Rolex Day-Date 40 exact platinum ice-blue-dial reference 228236-0018",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Day-Date configuration; preserve the platinum and ice-blue-dial boundary."
+        },
+        {
+          "id": "rolex-yacht-master-ii-44-126680-0001",
+          "referenceLabel": "Rolex Yacht-Master II exact Oystersteel reference 126680-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Yacht-Master II configuration; preserve the 44 mm Oystersteel boundary."
+        },
+        {
+          "id": "rolex-yacht-master-ii-44-126688-0001",
+          "referenceLabel": "Rolex Yacht-Master II exact yellow-gold reference 126688-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Yacht-Master II configuration; preserve the 44 mm yellow-gold boundary."
+        },
+        {
+          "id": "rolex-yacht-master-40-126655-0002",
+          "referenceLabel": "Rolex Yacht-Master 40 exact Everose-gold Oysterflex reference 126655-0002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Yacht-Master configuration; preserve the 40 mm Everose-gold and Oysterflex boundary."
+        },
+        {
+          "id": "rolex-yacht-master-37-268621-0004",
+          "referenceLabel": "Rolex Yacht-Master 37 exact Everose Rolesor black-dial reference 268621-0004",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Yacht-Master configuration; preserve the 37 mm Everose Rolesor and black-dial boundary."
         }
       ]
     },

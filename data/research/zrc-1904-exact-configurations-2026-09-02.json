@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "brand": "ZRC 1904",
+  "retrievedAt": "2026-09-02",
+  "verificationState": "source_confirmed_research_only",
+  "sourceUrl": "https://zrc1904.com/category/collections/watches-grands-fonds/gf-heritage/",
+  "note": "These exact configurations are confirmed on current official ZRC product pages, but the brand has no linked knowledge dossier in the 204-brand research manifest. Do not migrate to PostgreSQL until the dossier, Perplexity packet, and field-level M1 review exist.",
+  "variants": [
+    {
+      "referenceCode": "GF3811121113",
+      "variantName": "S2-Metal",
+      "productUrl": "https://zrc1904.com/product/gf3811121113-s2-metal/",
+      "configuration": {
+        "caseDiameterMm": 39,
+        "caseMaterial": "316L steel monobloc",
+        "bezel": "ceramic",
+        "movement": "Sellita SW200-1 Elaborated",
+        "powerReserveHours": 41,
+        "dateStatus": "time_only_no_date",
+        "attachment": "steel bracelet with diver extension and ZRC clasp",
+        "price": { "amount": 3290, "currency": "CHF" }
+      }
+    },
+    {
+      "referenceCode": "GF3811121118",
+      "variantName": "S2-Rubber",
+      "productUrl": "https://zrc1904.com/product/s2-rubber-new/",
+      "configuration": {
+        "caseDiameterMm": 39,
+        "caseMaterial": "steel monobloc",
+        "bezel": "ceramic",
+        "movement": "Sellita SW200-1 Elaborated",
+        "powerReserveHours": 41,
+        "dateStatus": "time_only_no_date",
+        "attachment": "FKM Tropic rubber with pin buckle",
+        "price": { "amount": 3090, "currency": "CHF" }
+      },
+      "caveat": "The structured strap section says FKM Tropic rubber; one prose sentence incorrectly says steel wristband."
+    },
+    {
+      "referenceCode": "GF3813231114",
+      "variantName": "Chesnut",
+      "productUrl": "https://zrc1904.com/product/gf3813231114-chesnut/",
+      "configuration": {
+        "caseDiameterMm": 39,
+        "caseMaterial": "steel monobloc",
+        "dial": "brown gradient",
+        "bezel": "aluminium",
+        "movement": "Sellita SW200-1 Elaborated",
+        "dateStatus": "time_only_no_date",
+        "attachment": "304L Milanese mesh with sliding clasp",
+        "price": { "amount": 3290, "currency": "CHF" }
+      }
+    },
+    {
+      "referenceCode": "GF3815235118",
+      "variantName": "Crimson",
+      "productUrl": "https://zrc1904.com/product/crimson-gf3815235118/",
+      "configuration": {
+        "caseDiameterMm": 39,
+        "caseMaterial": "steel monobloc",
+        "dial": "red gradient",
+        "bezel": "aluminium",
+        "movement": "Sellita SW200-1 Elaborated",
+        "dateStatus": "date",
+        "attachment": "FKM Tropic rubber with pin buckle",
+        "price": { "amount": 3090, "currency": "CHF" }
+      }
+    },
+    {
+      "referenceCode": "GF3813121318",
+      "variantName": "Smoke",
+      "productUrl": "https://zrc1904.com/product/heritage-smoke-gf3813121318/",
+      "configuration": {
+        "caseDiameterMm": 39,
+        "caseMaterial": "steel monobloc",
+        "dial": "smoke / tropicalised",
+        "bezel": "ceramic",
+        "movement": "Sellita SW200-1 Elaborated",
+        "dateStatus": "time_only_no_date",
+        "attachment": "FKM Tropic rubber with pin buckle",
+        "price": { "amount": 3090, "currency": "CHF" }
+      }
+    },
+    {
+      "referenceCode": "GF3811231314",
+      "variantName": "Milanese",
+      "productUrl": "https://zrc1904.com/product/gf3811231314-milanese/",
+      "configuration": {
+        "caseDiameterMm": 39,
+        "caseMaterial": "steel monobloc",
+        "dial": "Heritage configuration",
+        "bezel": "aluminium",
+        "movement": "Sellita SW200-1 Elaborated",
+        "dateStatus": "date",
+        "attachment": "Milanese metal mesh with ZRC clasp",
+        "price": { "amount": 3290, "currency": "CHF" }
+      }
+    }
+  ]
+}
