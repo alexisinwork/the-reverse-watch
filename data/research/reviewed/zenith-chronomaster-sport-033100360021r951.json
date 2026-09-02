@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "zenith-chronomaster-sport-033100360021r951",
+  "jobId": "4a6bcf8f-c9f5-447c-b302-e5b84187ecfb",
+  "reviewedAt": "2026-09-02T14:19:54.790Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Zenith",
+    "model": "Chronomaster Sport",
+    "referenceCode": "03.3100.3600/21.R951",
+    "variantName": "Chronomaster Sport Stainless Steel / Black Dial / Black Ceramic Bezel / Black FKM Rubber Strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.zenith-watches.com/int/product/chronomaster-sport-03-3100-3600-21-r951",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 03.3100.3600/21.R951. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

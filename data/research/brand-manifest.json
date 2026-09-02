@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T14:11:12.359Z",
+  "updatedAt": "2026-09-02T14:19:35.685Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1305,6 +1305,20 @@
             ]
           },
           "coverageRationale": "Add high-art context only after a complete M1 variant can be verified."
+        },
+        {
+          "id": "lange-1-191039",
+          "referenceLabel": "A. Lange & Söhne LANGE 1 exact white-gold reference 191.039",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official LANGE 1 configuration; preserve the exact white-gold, argenté-dial, and black-alligator boundary."
         }
       ]
     },
@@ -1380,7 +1394,22 @@
         "referenceFamilyCount": 7,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "breguet-classique-5177bb-29-9v6",
+          "referenceLabel": "Breguet Classique exact white-gold reference 5177BB/29/9V6",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Classique configuration; preserve the exact white-gold, Grand Feu enamel, date, and alligator-strap boundary."
+        }
+      ]
     },
     {
       "slug": "blancpain",
@@ -1421,6 +1450,20 @@
             ]
           },
           "coverageRationale": "Test high-price specialist field coverage rather than adding another formal-only row."
+        },
+        {
+          "id": "blancpain-fifty-fathoms-5015-1130-52a",
+          "referenceLabel": "Blancpain Fifty Fathoms Automatique exact steel reference 5015 1130 52A",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Fifty Fathoms configuration; preserve the 45 mm steel, black-dial date, and sail-canvas/rubber boundary."
         }
       ]
     },
@@ -1439,7 +1482,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "breitling-navitimer-ab0138211b1a1",
+          "referenceLabel": "Breitling Navitimer B01 Chronograph 43 exact steel reference AB0138211B1A1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Navitimer configuration; preserve the exact steel, black-dial, and steel-bracelet boundary."
+        }
+      ]
     },
     {
       "slug": "zenith",
@@ -1456,7 +1514,22 @@
         "referenceFamilyCount": 9,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "zenith-chronomaster-sport-033100360021r951",
+          "referenceLabel": "Zenith Chronomaster Sport exact steel/FKM reference 03.3100.3600/21.R951",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Chronomaster Sport configuration; preserve the exact steel, black-dial, ceramic-bezel, and FKM-strap boundary."
+        }
+      ]
     },
     {
       "slug": "chopard",
@@ -1473,7 +1546,22 @@
         "referenceFamilyCount": 9,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "chopard-alpine-eagle-xl-chrono-298609-3001",
+          "referenceLabel": "Chopard Alpine Eagle XL Chrono exact Lucent Steel reference 298609-3001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Alpine Eagle XL Chrono configuration; preserve the exact 44 mm Lucent Steel and integrated-bracelet boundary."
+        }
+      ]
     },
     {
       "slug": "tudor",

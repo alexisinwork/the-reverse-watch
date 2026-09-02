@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breitling-navitimer-ab0138211b1a1",
+  "jobId": "046daab2-9b94-49d6-b4b3-f8f98f90f497",
+  "reviewedAt": "2026-09-02T14:19:54.790Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breitling",
+    "model": "Navitimer B01 Chronograph 43",
+    "referenceCode": "AB0138211B1A1",
+    "variantName": "Navitimer B01 Chronograph 43 Stainless Steel / Black Dial / Stainless Steel Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breitling.com/us-en/watches/navitimer/navitimer-b01-chronograph-43-my22/AB0138211B1A1/",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for AB0138211B1A1. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

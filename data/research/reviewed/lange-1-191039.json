@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "lange-1-191039",
+  "jobId": "9b74d8c8-17a5-479e-b4ab-0135c823b614",
+  "reviewedAt": "2026-09-02T14:19:54.791Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "A. Lange & Söhne",
+    "model": "LANGE 1",
+    "referenceCode": "191.039",
+    "variantName": "LANGE 1 in 750 white gold with argenté dial on black alligator strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1/lange-1-in-750-white-gold-191-039",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 191.039. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

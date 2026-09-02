@@ -197,8 +197,25 @@ the M1 review still has unresolved physical, price, or fit fields.
 
 The exact family references are not merged: `4520V` is only a family prefix and
 the Vacheron suffix determines dial/material configuration; `16202ST` is
-likewise insufficient without the full AP product code. The manifest now
-reports 79 `needs_review` targets and 142 review artifacts; the 73 accepted
+likewise insufficient without the full AP product code. At the end of this
+batch, the manifest reported 79 `needs_review` targets and 142 review
+artifacts; the 73 accepted catalogue rows remained unchanged.
+
+## Second high-priority exact batch (retrieved 2026-09-02)
+
+Six more current references were confirmed from official manufacturer pages and
+validated through the Perplexity `sonar-pro` contract:
+
+- Breguet Classique `5177BB/29/9V6` — [official card](https://www.breguet.com/en/watches/classique/classique-5177/5177bb299v6).
+- Blancpain Fifty Fathoms Automatique `5015 1130 52A` — [official card](https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5015-1130-52a).
+- Breitling Navitimer B01 Chronograph 43 `AB0138211B1A1` — [official card](https://www.breitling.com/us-en/watches/navitimer/navitimer-b01-chronograph-43-my22/AB0138211B1A1/).
+- Zenith Chronomaster Sport `03.3100.3600/21.R951` — [official card](https://www.zenith-watches.com/int/product/chronomaster-sport-03-3100-3600-21-r951).
+- Chopard Alpine Eagle XL Chrono `298609-3001` — [official card](https://www.chopard.com/en-us/watch/298609-3001.html).
+- A. Lange & Söhne LANGE 1 `191.039` — [official card](https://www.alange-soehne.com/us-en/timepieces/lange-1/lange-1/lange-1-in-750-white-gold-191-039).
+
+They remain research-only because exact configuration identity is confirmed but
+at least one M1 decision field is still unresolved for each row. The manifest
+now reports 85 `needs_review` targets and 148 review artifacts; accepted
 catalogue rows remain unchanged.
 
 ## ZRC 1904 exact variants

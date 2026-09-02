@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breguet-classique-5177bb-29-9v6",
+  "jobId": "70892610-d658-4d04-8a66-40bc5b37f07f",
+  "reviewedAt": "2026-09-02T14:19:54.786Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breguet",
+    "model": "Classique 5177",
+    "referenceCode": "5177BB/29/9V6",
+    "variantName": "Classique 5177 white gold Grand Feu enamel"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breguet.com/en/watches/classique/classique-5177/5177bb299v6",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 5177BB/29/9V6. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}
