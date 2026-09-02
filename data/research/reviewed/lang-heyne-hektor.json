@@ -16,6 +16,11 @@
       "url": "https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/",
       "status": "validated_primary",
       "note": "The official Lang & Heyne Hektor Edition II page was rechecked on 2026-09-03 and confirms the exact Edition II with 40 mm diameter, 10.95 mm height, LH calibre 33.2-2, manual winding, 48-hour reserve, three integrated lugs, and hours/minutes/central-seconds display. No numeric watch reference is published."
+    },
+    {
+      "url": "https://www.timekeepers.club/articles/novelties/lang-and-heyne-hektor-edition-ii",
+      "status": "validated_secondary",
+      "note": "The exact-model technical article was checked on 2026-09-03 and corroborates the stainless-steel Hektor Edition II with 40 mm diameter, 10.95 mm thickness, 20 mm lug width, 45.3 mm lug-to-lug, 50 m water resistance, steel bracelet with butterfly clasp, and stated MSRP of EUR 19,999 excluding taxes."
     }
   ],
   "verifiedProvisionalFields": [
@@ -25,14 +30,47 @@
     "productUrl",
     "materials.case",
     "geometry.caseDiameterMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
     "geometry.caseThicknessMm",
     "movement.type",
     "movement.caliber",
     "movement.powerReserveHours",
+    "operation.waterResistanceM",
     "operation.attachmentType",
     "dateStatus"
   ],
   "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1999900,
+      "sourceUrl": "https://www.timekeepers.club/articles/novelties/lang-and-heyne-hektor-edition-ii",
+      "note": "The exact-model article states an MSRP of EUR 19,999 excluding taxes; the value is normalized to minor currency units and retained as a dated secondary MSRP observation."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "EUR",
+      "sourceUrl": "https://www.timekeepers.club/articles/novelties/lang-and-heyne-hektor-edition-ii",
+      "note": "The exact-model article quotes the MSRP in euros."
+    },
+    {
+      "fieldName": "geometry.lugToLugMm",
+      "value": 45.3,
+      "sourceUrl": "https://www.timekeepers.club/articles/novelties/lang-and-heyne-hektor-edition-ii",
+      "note": "The exact-model technical specifications state 45.3 mm lug-to-lug."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 20,
+      "sourceUrl": "https://www.timekeepers.club/articles/novelties/lang-and-heyne-hektor-edition-ii",
+      "note": "The exact-model technical specifications state 20 mm lug width."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.timekeepers.club/articles/novelties/lang-and-heyne-hektor-edition-ii",
+      "note": "The exact-model technical specifications state 5 ATM, normalized to 50 m."
+    },
     {
       "fieldName": "materials.case",
       "value": "stainless steel",
@@ -89,15 +127,11 @@
     }
   ],
   "missingM1Fields": [
-    "price",
     "caseWidthMm",
     "caseLengthMm",
-    "lugToLugMm",
-    "lugWidthMm",
     "weightFullG",
     "accuracy",
-    "waterResistanceM",
     "lumeGrade"
   ],
-  "note": "Research-only model review; exact Hektor Edition II identity and core case, movement, and integrated-lug facts are confirmed by Lang & Heyne's official page. No manufacturer reference code is published; price, remaining geometry, configured weight, accuracy, water resistance, and lume performance remain unverified."
+  "note": "Research-only model review; exact Hektor Edition II identity and core case, movement, integrated-lug, lug geometry, water resistance, and dated secondary MSRP are confirmed by the manufacturer and an exact-model technical article. No manufacturer reference code, case width/length, configured weight, accuracy, or lume grade is published."
 }

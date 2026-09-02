@@ -21,6 +21,11 @@
       "url": "https://greubelforsey.com/en/history-timepieces/quadruple-tourbillon-secret",
       "status": "validated_primary",
       "note": "The official history-timepieces page was checked on 2026-09-03 and confirms the exact Quadruple Tourbillon Secret model, 40-piece 2012-2018 limitation, and configuration."
+    },
+    {
+      "url": "https://greubelforsey.com/user/pages/11.history-timepieces/09.quadruple-tourbillon-secret/03._bloc-tech/greubel-forsey-quadruple-tourbillon-secret-technical-sheet-fr.pdf",
+      "status": "validated_primary",
+      "note": "The official technical sheet was checked on 2026-09-03 and confirms a hand-wound patented-tourbillon movement, 50-hour reserve, and the 8-piece red-gold plus 8-piece platinum edition breakdown. This edition count is narrower than the 40-piece production figure on the historical overview, so the generic candidate is not assigned a material-specific reference."
     }
   ],
   "verifiedProvisionalFields": [
@@ -29,6 +34,7 @@
     "productUrl",
     "geometry.caseDiameterMm",
     "geometry.caseThicknessMm",
+    "movement.type",
     "movement.powerReserveHours",
     "operation.waterResistanceM",
     "dateStatus"
@@ -45,6 +51,12 @@
       "value": 16.11,
       "sourceUrl": "https://greubelforsey.com/en/history/quadruple-tourbillon-secret",
       "note": "The official model page specifies 16.11 mm case height including the crystal."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual",
+      "sourceUrl": "https://greubelforsey.com/user/pages/11.history-timepieces/09.quadruple-tourbillon-secret/03._bloc-tech/greubel-forsey-quadruple-tourbillon-secret-technical-sheet-fr.pdf",
+      "note": "The official technical sheet specifies a hand-wound movement with patented tourbillon."
     },
     {
       "fieldName": "movement.powerReserveHours",
@@ -65,7 +77,6 @@
       "note": "The official function list names hours, minutes, small seconds, tourbillon rotation, and power reserve, with no date display."
     }
   ],
-  "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -79,7 +90,6 @@
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
     "accuracy",
     "lumeGrade",
     "attachmentType"

@@ -26,10 +26,68 @@
       "url": "https://www.chrono24.com/all/philippe-dufour-simplicity--id41856758.htm",
       "status": "validated_secondary",
       "note": "The reviewed market listing supplies the specific 37mm white-gold and silver guilloché configuration, but it is not sufficient to create a manufacturer reference or promote M1 facts."
+    },
+    {
+      "url": "https://www.hautehorlogerie.org/en/watches-and-culture/watchmaking-scene/watches-and-novelties/simplicity",
+      "status": "validated_secondary",
+      "note": "The Fondation de la Haute Horlogerie profile was checked on 2026-09-03 and confirms the 37 mm white-gold Simplicity configuration with silver guilloché centre, manual winding, hours/minutes/small seconds, and sapphire caseback."
+    },
+    {
+      "url": "https://www.sothebys.com/en/auctions/ecatalogue/2017/important-watches-hk0743/lot.2198.html",
+      "status": "validated_secondary",
+      "note": "The Sotheby's exact auction record was checked on 2026-09-03 and independently confirms a 37 mm white-gold Simplicity with solid silver guilloché centrefield, manual calibre 11, and subsidiary seconds. Its individual movement number 152 is a serial identifier, not a manufacturer reference for the candidate."
     }
   ],
-  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
-  "additionalVerifiedFacts": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "18K white gold",
+      "sourceUrl": "https://www.sothebys.com/en/auctions/ecatalogue/2017/important-watches-hk0743/lot.2198.html",
+      "note": "The exact 37 mm guilloché Simplicity auction record specifies an 18K white-gold case; FHH independently describes this as an offered Simplicity configuration."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 37,
+      "sourceUrl": "https://www.sothebys.com/en/auctions/ecatalogue/2017/important-watches-hk0743/lot.2198.html",
+      "note": "The exact auction record specifies a 37 mm diameter, matching the candidate configuration and FHH's 37 mm variant description."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual",
+      "sourceUrl": "https://www.sothebys.com/en/auctions/ecatalogue/2017/important-watches-hk0743/lot.2198.html",
+      "note": "The exact auction record specifies a manual-winding movement."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "11",
+      "sourceUrl": "https://www.sothebys.com/en/auctions/ecatalogue/2017/important-watches-hk0743/lot.2198.html",
+      "note": "The exact auction record identifies calibre 11; FHH independently identifies the Simplicity as mechanical manual-winding."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire caseback",
+      "sourceUrl": "https://www.hautehorlogerie.org/en/watches-and-culture/watchmaking-scene/watches-and-novelties/simplicity",
+      "note": "FHH describes the Simplicity configuration with a sapphire caseback."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "absent",
+      "sourceUrl": "https://www.hautehorlogerie.org/en/watches-and-culture/watchmaking-scene/watches-and-novelties/simplicity",
+      "note": "FHH lists the functions as hours, minutes, and small seconds, with no date display."
+    }
+  ],
   "rejectedProvisionalFields": [
     {
       "fieldName": "referenceCode",
@@ -38,19 +96,16 @@
   ],
   "missingM1Fields": [
     "price",
-    "caseDiameterMm",
     "caseWidthMm",
     "caseLengthMm",
     "caseThicknessMm",
     "lugToLugMm",
     "lugWidthMm",
     "weightFullG",
-    "movement",
     "accuracy",
     "waterResistanceM",
     "lumeGrade",
-    "attachmentType",
-    "dateStatus"
+    "attachmentType"
   ],
-  "note": "Research-only model review; the exact market configuration is retained as a lead. Phillips confirms a closely related Simplicity 37 white-gold/lacquer-dial lot, not this candidate's silver guilloché configuration, so no variant-specific M1 fact or factory reference is promoted."
+  "note": "Research-only model review; the 37 mm white-gold silver-guilloché configuration, manual calibre 11, and no-date display are now corroborated by FHH and Sotheby's. No factory reference, price, remaining geometry, weight, accuracy, water resistance, lume, or attachment interface is established."
 }

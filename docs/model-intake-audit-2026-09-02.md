@@ -1319,3 +1319,25 @@ maker confirms Series Two in 38 or 40 mm, while the exact yellow-gold 40 mm
 secondary lot found during recheck is Mark 1 rather than the candidate's Mark
 2. Neither near-match is merged into the candidate or used to promote M1
 facts.
+
+## Seventy-third corroboration pass (retrieved 2026-09-03)
+
+The Greubel Forsey target was checked against the manufacturer's [official
+technical sheet](https://greubelforsey.com/user/pages/11.history-timepieces/09.quadruple-tourbillon-secret/03._bloc-tech/greubel-forsey-quadruple-tourbillon-secret-technical-sheet-fr.pdf),
+which confirms hand winding and the 50-hour reserve. Its material-specific
+edition count (8 rose-gold plus 8 platinum) differs from the 40-piece figure
+on the manufacturer's historical overview, so no material-specific reference
+was inferred for the generic target.
+
+The Philippe Dufour Simplicity review now has a stronger configuration match:
+[FHH](https://www.hautehorlogerie.org/en/watches-and-culture/watchmaking-scene/watches-and-novelties/simplicity)
+describes the 37 mm white-gold silver-guilloché variant, while [Sotheby's
+lot 2198](https://www.sothebys.com/en/auctions/ecatalogue/2017/important-watches-hk0743/lot.2198.html)
+confirms a matching 37 mm white-gold guilloché Simplicity with manual calibre
+11. The lot's movement number is not treated as a model reference.
+
+The official [Lang & Heyne Hektor Edition II page](https://www.lang-und-heyne.de/en/modelle/hektor-edition-ii/)
+was corroborated by an exact-model technical article, adding 45.3 mm
+lug-to-lug, 20 mm lug width, 5 ATM water resistance, and a dated EUR 19,999
+MSRP observation. Super-LumiNova is recorded only as a material mention; no
+specific lume grade is invented.
