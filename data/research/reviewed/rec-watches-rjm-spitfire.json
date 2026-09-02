@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rec-watches-rjm-spitfire",
+  "jobId": "514dd04b-073a-4025-824d-dc13e942c0ba",
+  "reviewedAt": "2026-09-03T17:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "REC Watches",
+    "model": "RJM-01",
+    "referenceCode": "RJM-01",
+    "variantName": "DNA Edition RJM-01"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.recwatches.com/timepieces/limited-editions/aircraft/rjm-01/",
+      "status": "validated_primary",
+      "note": "The official REC product page was checked on 2026-09-03 and confirms DNA Edition RJM-01, the PT879 Mk IX Spitfire provenance, limited run, 41 mm case, Miyota 9015, 30 m rating, 78 g weight, and current sold-out status."
+    },
+    {
+      "url": "https://www.hodinkee.com/articles/rec-watches-rjm-introducing",
+      "status": "validated_secondary",
+      "note": "The specialist introduction corroborates the RJM aviation provenance and configuration context; it does not override the exact manufacturer page."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

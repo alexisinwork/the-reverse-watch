@@ -925,6 +925,21 @@ is explicitly kept separate from the modern Longines Record collection. The
 manifest now reports 246 `needs_review` targets, zero `planned` targets, and 309
 review artifacts; accepted catalogue rows remain unchanged.
 
+## Fiftieth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional dossier models were checked after schema-valid Perplexity
+extraction:
+
+- SevenFriday M-Series M2/02 — [official India product page](https://in.sevenfriday.com/products/sf-m2-02) confirms the exact reference and current regional technical card; the global manufacturer route was also checked.
+- SevenFriday Q-Series Q2/03 “CHOO-CHOO” — [official product page](https://www.sevenfriday.com/products/sf-q2-03) confirms the exact reference, configuration, Fast Strap Changer, Miyota 8219, and 3 ATM rating.
+- REC Watches Mark I M1 Mini Cooper `REC-M1` — [Mini specialist evidence](https://www.somerfordmini.co.uk/mark-i-discover-collection) and an [exact-reference retailer listing](https://watchard.com/rec-mark-i-chronograph-m1-men-s-watch) corroborate the historical model; no current REC factory page was found.
+- REC Watches DNA Edition RJM-01 — [official product page](https://www.recwatches.com/timepieces/limited-editions/aircraft/rjm-01/) confirms the exact Spitfire-derived reference and sold-out status.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 250 `needs_review` targets, zero
+`planned` targets, and 313 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## Forty-sixth parallel exact-reference batch (retrieved 2026-09-03)
 
 Four additional configurations produced schema-valid Perplexity results and

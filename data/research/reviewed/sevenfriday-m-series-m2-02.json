@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "sevenfriday-m-series-m2-02",
+  "jobId": "ab167432-562e-48d1-94f0-a00a5c2e5056",
+  "reviewedAt": "2026-09-03T17:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "SevenFriday",
+    "model": "M-Series",
+    "referenceCode": "M2/02",
+    "variantName": "M2/02"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://in.sevenfriday.com/products/sf-m2-02",
+      "status": "validated_primary",
+      "note": "The official regional manufacturer product page was checked on 2026-09-03 and confirms M2/02, the 47 x 47.6 mm rose-gold-PVD stainless-steel configuration, brown leather strap, Miyota 8215, 3 ATM rating, and current regional offer."
+    },
+    {
+      "url": "https://www.sevenfriday.com/products/sf-m2-02",
+      "status": "validated_primary",
+      "note": "The manufacturer product route corroborates the M2/02 identity; the India page is retained as the more complete accessible technical card for this review."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

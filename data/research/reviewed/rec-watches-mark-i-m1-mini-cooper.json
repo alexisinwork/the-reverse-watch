@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rec-watches-mark-i-m1-mini-cooper",
+  "jobId": "56674fa3-2581-4984-88cd-e8b5894bba78",
+  "reviewedAt": "2026-09-03T17:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "REC Watches",
+    "model": "Mark I",
+    "referenceCode": "REC-M1",
+    "variantName": "Mark I M1 Mini Cooper"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.somerfordmini.co.uk/mark-i-discover-collection",
+      "status": "validated_secondary",
+      "note": "The Mini specialist page was checked on 2026-09-03 and corroborates the Mark I / Mini Cooper provenance and REC-M1 family naming, but it is not a current REC manufacturer product page."
+    },
+    {
+      "url": "https://watchard.com/rec-mark-i-chronograph-m1-men-s-watch",
+      "status": "validated_secondary",
+      "note": "The exact REC-M1 retailer listing supplies a stable model-level identity and chronograph naming; it is retained as secondary evidence because REC's own Mark I page is no longer live."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; identity is provisionally confirmed by converging specialist and exact-reference retailer evidence, but no current REC factory product page was found and no M1 facts are promoted."
+}

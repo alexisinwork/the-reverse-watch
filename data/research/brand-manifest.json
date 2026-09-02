@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:33:09.773Z",
+  "updatedAt": "2026-09-02T20:37:15.251Z",
   "brands": [
     {
       "slug": "rolex",
@@ -8160,6 +8160,34 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies P-Series P1B/01 as an active design reference; verify the exact product identity and current primary-source facts before cataloguing."
+        },
+        {
+          "id": "sevenfriday-m-series-m2-02",
+          "referenceLabel": "SevenFriday M-Series M2/02 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies M-Series M2/02 as an active design reference; verify the exact product identity and current primary-source facts before cataloguing."
+        },
+        {
+          "id": "sevenfriday-q-series-q2-03-choo-choo",
+          "referenceLabel": "SevenFriday Q-Series Q2/03 Choo-Choo exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Q-Series Q2/03 Choo-Choo as an active design reference; verify the exact product identity and current primary-source facts before cataloguing."
         }
       ]
     },
@@ -8192,6 +8220,34 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies P51-01 Mustang as a provenance-led automotive reference; verify the exact donor-derived configuration and current evidence before cataloguing."
+        },
+        {
+          "id": "rec-watches-mark-i-m1-mini-cooper",
+          "referenceLabel": "REC Watches Mark I M1 Mini Cooper exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Mark I M1 Mini Cooper as a historical provenance reference; verify the exact model, donor configuration, and production status before cataloguing."
+        },
+        {
+          "id": "rec-watches-rjm-spitfire",
+          "referenceLabel": "REC Watches RJM Spitfire exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies RJM Spitfire as an aviation-provenance reference; verify the exact aircraft-dial configuration and production status before cataloguing."
         }
       ]
     },

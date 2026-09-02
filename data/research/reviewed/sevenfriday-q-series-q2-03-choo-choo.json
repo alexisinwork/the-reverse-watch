@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "sevenfriday-q-series-q2-03-choo-choo",
+  "jobId": "15b5d5f8-37a1-48e1-8905-b99e37993652",
+  "reviewedAt": "2026-09-03T17:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "SevenFriday",
+    "model": "Q-Series",
+    "referenceCode": "Q2/03",
+    "variantName": "CHOO-CHOO"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.sevenfriday.com/products/sf-q2-03",
+      "status": "validated_primary",
+      "note": "The official live product page was checked on 2026-09-03 and confirms Q2/03 CHOO-CHOO, the 44.3 x 49.7 mm stainless-steel configuration, railroad-track leather strap with Fast Strap Changer, Miyota 8219, 3 ATM rating, and current price."
+    },
+    {
+      "url": "https://www.watchesbysjx.com/2015/04/sevenfriday-q-series-q2-03-choo-choo.html",
+      "status": "validated_secondary",
+      "note": "The specialist introduction corroborates the Q2/03 CHOO-CHOO identity and Q-Series architecture; official product data remains authoritative for the exact configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}
