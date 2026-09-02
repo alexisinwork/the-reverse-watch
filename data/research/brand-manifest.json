@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:24:03.913Z",
+  "updatedAt": "2026-09-02T20:31:54.170Z",
   "brands": [
     {
       "slug": "rolex",
@@ -8146,7 +8146,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "sevenfriday-p-series-p1b-01",
+          "referenceLabel": "SevenFriday P-Series P1B/01 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies P-Series P1B/01 as an active design reference; verify the exact product identity and current primary-source facts before cataloguing."
+        }
+      ]
     },
     {
       "slug": "rec-watches",
@@ -8163,7 +8178,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "rec-watches-p51-01-mustang",
+          "referenceLabel": "REC Watches P51-01 Mustang exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies P51-01 Mustang as a provenance-led automotive reference; verify the exact donor-derived configuration and current evidence before cataloguing."
+        }
+      ]
     },
     {
       "slug": "shinola",
@@ -8180,7 +8210,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "shinola-runwell-41",
+          "referenceLabel": "Shinola Runwell 41 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Runwell 41 as an active everyday quartz reference; verify the exact current dial, strap, dimensions, and reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "vaer",
@@ -8303,7 +8348,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "fiyta-photographer-ga860012-bbb",
+          "referenceLabel": "FIYTA Photographer exact reference GA860012.BBB",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Photographer GA860012.BBB as an active/export reference; verify the exact reference and primary or specialist product evidence before cataloguing."
+        }
+      ]
     },
     {
       "slug": "swatch",

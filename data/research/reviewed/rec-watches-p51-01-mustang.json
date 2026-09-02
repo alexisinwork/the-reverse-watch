@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rec-watches-p51-01-mustang",
+  "jobId": "8ae37462-eac2-4ba6-91b9-2765a05dfaa5",
+  "reviewedAt": "2026-09-03T16:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "REC Watches",
+    "model": "P51 Mustang",
+    "referenceCode": "P51-01",
+    "variantName": "P51-01 Mustang"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.recwatches.com/timepieces/limited-editions/muscle-cars/p51-01/",
+      "status": "validated_primary",
+      "note": "The official REC product page was checked on 2026-09-03 and confirms DNA Edition P51-01, the salvaged Mustang dial provenance, limited run, 44 mm case, 9130 Miyota movement, 30 m water resistance, and the exact configured strap/material description. The page currently marks the reference sold out."
+    },
+    {
+      "url": "https://www.recwatches.com/timepieces/p51-01/",
+      "status": "validated_primary",
+      "note": "The current brand product route resolves to the same exact P51-01 identity and repeats the reference-specific technical block; it is treated as the live canonical product URL for this review."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied. Current availability is sold out and is not treated as active stock."
+}

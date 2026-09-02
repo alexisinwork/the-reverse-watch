@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "sevenfriday-p-series-p1b-01",
+  "jobId": "e47c4ea0-92f6-422e-be76-cb3379892814",
+  "reviewedAt": "2026-09-03T16:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "SevenFriday",
+    "model": "P-Series",
+    "referenceCode": "P1B/01",
+    "variantName": "P1B/01 Industrial Essence"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.sevenfriday.com/products/sf-p1b-01",
+      "status": "validated_primary",
+      "note": "The official live product page was checked on 2026-09-03 and confirms P1B/01, P-Series, 47 x 47.6 mm, stainless steel, black leather strap, Miyota 82S7, 3 ATM, and current price/availability."
+    },
+    {
+      "url": "https://watchbase.com/sevenfriday/p-series/p1b-01",
+      "status": "validated_secondary",
+      "note": "WatchBase corroborates the P1B/01 Industrial Essence naming; it is not used to merge the separate P1B/01M bracelet configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied. The leather P1B/01 configuration remains separate from P1B/01M on bracelet."
+}

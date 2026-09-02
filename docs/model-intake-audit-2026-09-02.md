@@ -939,3 +939,18 @@ All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 241 `needs_review` targets, 304
 review artifacts, and one remaining `planned` target; accepted catalogue rows
 remain unchanged.
+
+## Forty-eighth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four further configurations produced schema-valid Perplexity results and were
+checked against current manufacturer pages where available:
+
+- SevenFriday P-Series P1B/01 Industrial Essence — [official product page](https://www.sevenfriday.com/products/sf-p1b-01) confirms the exact reference, 47 x 47.6 mm stainless-steel configuration, black leather strap, Miyota 82S7, 3 ATM rating, and current price. The bracelet P1B/01M remains a separate configuration.
+- REC Watches P51-01 Mustang — [official product page](https://www.recwatches.com/timepieces/limited-editions/muscle-cars/p51-01/) confirms the exact DNA Edition, salvaged Mustang provenance, limited run, and reference-specific technical block; [the current product route](https://www.recwatches.com/timepieces/p51-01/) shows the same identity and sold-out status.
+- Shinola Runwell Watch - White — [official product page](https://www.shinola.com/products/runwell-watch-white) confirms the exact 41 mm white-dial SKU `S0110000109-1-Wht-41-USA`, Argonite 1069 quartz movement, 10.1 mm thickness, 5 ATM rating, and tan leather configuration.
+- FIYTA Photographer Automatic Skeleton `GA860012.BBB` — [exact-reference dealer evidence](https://www.good-stuffs.com/Fiyta-Photographer-series-automatic-wristwatch-GA860012BBB_p_360.html) and [independent dealer corroboration](https://novahora.com/gb/fiyta-photographer/8470-fiyta-photographer-watch-ga860012bbb.html) agree on the identity. A live FIYTA factory product page for this reference was not located, so this remains secondary-source confirmation.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 245 `needs_review` targets, 308
+review artifacts, and one remaining `planned` target; accepted catalogue rows
+remain unchanged.

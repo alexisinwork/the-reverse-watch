@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "fiyta-photographer-ga860012-bbb",
+  "jobId": "1ff72550-fa37-4fda-8c18-e64254d62efa",
+  "reviewedAt": "2026-09-03T16:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "FIYTA",
+    "model": "Photographer Automatic Skeleton",
+    "referenceCode": "GA860012.BBB",
+    "variantName": "Photographer Skeleton black PVD on leather"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.good-stuffs.com/Fiyta-Photographer-series-automatic-wristwatch-GA860012BBB_p_360.html",
+      "status": "validated_secondary",
+      "note": "The exact-reference retailer page was checked on 2026-09-03 and identifies GA860012.BBB, listing 42 mm diameter, 11.75 mm thickness, 20 mm lug width, 89 g weight, sapphire crystal, black stainless-steel case, leather strap, and Japanese automatic movement."
+    },
+    {
+      "url": "https://novahora.com/gb/fiyta-photographer/8470-fiyta-photographer-watch-ga860012bbb.html",
+      "status": "validated_secondary",
+      "note": "A second exact-reference dealer page corroborates the Photographer GA860012.BBB identity and core configuration. No live FIYTA factory product page or model-specific technical sheet was found."
+    },
+    {
+      "url": "https://fiyta-watches.com/pages/about-us",
+      "status": "validated_primary",
+      "note": "The FIYTA brand page was checked for manufacturer context only; it does not establish the exact GA860012.BBB product facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is provisionally confirmed by converging exact-reference dealer evidence, but no factory page was found and no M1 facts are promoted."
+}
