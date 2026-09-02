@@ -1,4 +1,6 @@
-import { Form, Link, useLoaderData } from "react-router";
+import { createHash } from "node:crypto";
+
+import { Form, Link, redirect, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-find";
 import {
@@ -10,6 +12,14 @@ import {
   fallbackDiscoverySearch,
   searchAcceptedDiscoveryRecords,
 } from "../domain/discovery-search.server";
+import { enqueueDiscoveryResearch } from "../domain/discovery-research-store.server";
+import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
+import {
+  consumeRateLimit,
+  parseDiscoveryResearchRateLimitPolicy,
+  type RateLimitDecision,
+} from "../domain/rate-limit.server";
+import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import "../styles/discovery.css";
 
 export async function loader({ request }: Route.LoaderArgs) {
@@ -31,10 +41,81 @@ export async function loader({ request }: Route.LoaderArgs) {
   };
 }
 
+export async function action({ request }: Route.ActionArgs) {
+  const form = await request.formData();
+  if (form.get("website")) return new Response(null, { status: 204 });
+  const anchor = discoveryAnchorSchema.safeParse(form.get("anchor"));
+  const rawQuery = form.get("query");
+  const query = typeof rawQuery === "string" ? rawQuery : "";
+  if (!anchor.success) return new Response("Invalid request", { status: 400 });
+  const rateLimitPolicy = parseDiscoveryResearchRateLimitPolicy();
+  if (!rateLimitPolicy.configured) {
+    return new Response("Research intake is temporarily unavailable", {
+      status: 503,
+    });
+  }
+  const rateLimitDecision = consumeRateLimit(
+    researchRateLimitKey(request),
+    rateLimitPolicy,
+  );
+  if (!rateLimitDecision.allowed) {
+    return new Response("Too many research requests. Please try again later.", {
+      status: 429,
+      headers: rateLimitHeaders(rateLimitDecision),
+    });
+  }
+  try {
+    const topic = await enqueueDiscoveryResearch({
+      anchor: anchor.data,
+      displayText: query,
+      releaseYear: null,
+    });
+    if (!topic)
+      return new Response("Research intake is unavailable", { status: 503 });
+    void persistDiscoveryFunnelEvent({
+      name: "research_request_submitted",
+      anchor: anchor.data,
+    }).catch(() => undefined);
+    return redirect(`/watches/research/${topic.token}`);
+  } catch {
+    return new Response("Invalid request", { status: 400 });
+  }
+}
+
+function researchRateLimitKey(request: Request) {
+  const forwarded = request.headers.get("x-forwarded-for");
+  const address =
+    forwarded?.split(",", 1)[0]?.trim() ||
+    request.headers.get("x-real-ip")?.trim() ||
+    "unknown";
+  return `discovery-research:${createHash("sha256").update(address).digest("hex")}`;
+}
+
+function rateLimitHeaders(decision: RateLimitDecision) {
+  const headers = new Headers();
+  if (decision.limit !== null) {
+    headers.set("X-RateLimit-Limit", String(decision.limit));
+    headers.set("X-RateLimit-Remaining", String(decision.remaining));
+    headers.set(
+      "X-RateLimit-Reset",
+      String(Math.ceil((decision.resetAt ?? Date.now()) / 1_000)),
+    );
+  }
+  if (decision.retryAfterSeconds !== null) {
+    headers.set("Retry-After", String(decision.retryAfterSeconds));
+  }
+  return headers;
+}
+
 export default function WatchFind() {
   const { handoff, anchor, query, results } = useLoaderData<typeof loader>();
   return (
     <main className="discovery-shell">
+      {anchor ? (
+        <DiscoveryAnalytics
+          event={{ name: "cultural_anchor_selected", anchor }}
+        />
+      ) : null}
       <nav className="discovery-nav" aria-label="Discovery navigation">
         <Link to="/watches/archetype">Watch archetype</Link>
         <Link to="/watches">Browse the archive</Link>
@@ -104,7 +185,20 @@ export default function WatchFind() {
             ))}
           </ul>
         ) : anchor && query.trim().length >= 2 ? (
-          <p>No accepted record matches that search.</p>
+          <>
+            <p>No accepted record matches that search.</p>
+            <Form method="post">
+              <input name="anchor" type="hidden" value={anchor} />
+              <input name="query" type="hidden" value={query} />
+              <input
+                aria-hidden="true"
+                name="website"
+                tabIndex={-1}
+                type="text"
+              />
+              <button type="submit">Research this subject</button>
+            </Form>
+          </>
         ) : null}
         {handoff ? (
           <p className="archetype-boundary">

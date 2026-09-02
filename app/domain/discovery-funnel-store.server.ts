@@ -81,6 +81,8 @@ export async function persistDiscoveryFunnelEvent(
         p_event_name: parsed.name,
         p_surface: "surface" in parsed ? parsed.surface : null,
         p_archetype_id: "archetypeId" in parsed ? parsed.archetypeId : null,
+        p_anchor_kind: "anchor" in parsed ? parsed.anchor : null,
+        p_research_status: "status" in parsed ? parsed.status : null,
       }),
       signal: AbortSignal.timeout(timeoutMs),
     },

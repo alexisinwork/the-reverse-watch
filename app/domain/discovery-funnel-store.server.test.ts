@@ -42,10 +42,29 @@ describe("discovery funnel store", () => {
       p_event_name: "archetype_completion",
       p_surface: null,
       p_archetype_id: "mechanical_connoisseur",
+      p_anchor_kind: null,
+      p_research_status: null,
     });
     expect(JSON.stringify(requestBody(init))).not.toMatch(
       /email|url|answer|ip/i,
     );
+  });
+
+  it("persists research telemetry without submitted text or request tokens", async () => {
+    const fetchImpl = vi
+      .fn<typeof fetch>()
+      .mockResolvedValue(new Response(null, { status: 204 }));
+    await persistDiscoveryFunnelEvent(
+      { name: "research_request_submitted", anchor: "public_figure" },
+      { env: environment, fetchImpl },
+    );
+    expect(requestBody(fetchImpl.mock.calls[0]![1])).toEqual({
+      p_event_name: "research_request_submitted",
+      p_surface: null,
+      p_archetype_id: null,
+      p_anchor_kind: "public_figure",
+      p_research_status: null,
+    });
   });
 
   it("does not persist client events outside production", async () => {

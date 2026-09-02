@@ -135,3 +135,13 @@ To roll back the database read path, remove that RPC from the deployed reader
 or omit the Supabase configuration in the affected environment, then redeploy.
 Do not delete the imported canonical discovery rows, evidence, image-rights
 decisions, or source records: the database remains the review audit trail.
+
+### D4 discovery research-intake rollback
+
+Migrations `0047` through `0049` are additive and retain the private queue and
+its aggregate funnel history for audit. If the D4 web route misbehaves, remove
+the research form/status route from the deployed application or leave the
+dedicated research-rate-limit variables unset; the public action then returns a
+visible 503 before an enqueue. Do not delete queued topics, candidate artifacts,
+or telemetry rows during rollback. Browser roles retain no `private` schema or
+table privileges, and no worker or provider route is deployed in D4.

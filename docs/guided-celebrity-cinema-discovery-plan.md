@@ -1,6 +1,6 @@
 # Guided Celebrity & Cinema Discovery Plan
 
-Status: **planned — owner-approved product direction, 2026-09-01**
+Status: **D0–D4 complete — owner-approved product direction, 2026-09-01**
 
 This document is the executable continuation of the completed Phase 8 pilot.
 It preserves the existing four-question archetype quiz and turns its result
@@ -625,6 +625,35 @@ Checks:
 - no request can mutate canonical discovery or catalogue tables.
 
 Exit: migration/security tests, route tests, advisors, and `npm run check` pass.
+
+#### D4 implementation record
+
+Migrations `0047` and `0048` establish the private, additive topic, run,
+candidate, and source queue, and repair the opaque-token generator for the
+connected PostgreSQL environment. Anonymous and authenticated browser roles
+have no `private` schema or table privileges; their only queue access is the
+bounded enqueue RPC and an opaque-token status RPC that returns the coarse topic
+state alone. A repeated normalized anchor/title/year request updates the same
+private topic's `request_count`; it neither creates another provider run nor
+touches canonical discovery or catalogue rows.
+
+`/watches/find` now offers the research form only after an accepted-record
+search has no match. It rejects a honeypot submission without writing a topic,
+validates the same length, control-character, URL, anchor, and year rules on
+the server as PostgreSQL, and redirects a successful enqueue to
+`/watches/research/:requestToken`. The status route displays only the
+allowlisted state. The worker remains deliberately absent and no provider is
+called.
+
+The intake stays visibly unavailable until the separately measured
+`DISCOVERY_RESEARCH_RATE_LIMIT_MAX_REQUESTS` and
+`DISCOVERY_RESEARCH_RATE_LIMIT_WINDOW_SECONDS` production values are configured.
+When configured, the action uses a short-lived, SHA-256-derived network signal
+solely as an in-memory throttle key; it does not put an IP address in the queue
+or analytics. Migration `0049` adds only aggregate cultural-anchor and coarse
+status dimensions to the existing funnel RPC. It rejects raw query text,
+tokens, IDs, URLs, identity, profile, and network fields by contract and by
+database event shape.
 
 ### D5 — Add bounded Perplexity research worker
 

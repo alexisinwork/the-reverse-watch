@@ -1,6 +1,10 @@
 import { z } from "zod";
 
 import { ARCHETYPE_IDS } from "./discovery-archetype";
+import {
+  DISCOVERY_ANCHOR_KINDS,
+  discoveryTopicStatusSchema,
+} from "./discovery-selection";
 
 export const DISCOVERY_SURFACES = [
   "index",
@@ -26,6 +30,18 @@ export const discoveryAnalyticsEventSchema = z.discriminatedUnion("name", [
     .strict(),
   z.object({ name: z.literal("qualified_recommendation") }).strict(),
   z.object({ name: z.literal("opt_in") }).strict(),
+  z
+    .object({
+      name: z.enum(["cultural_anchor_selected", "research_request_submitted"]),
+      anchor: z.enum(DISCOVERY_ANCHOR_KINDS),
+    })
+    .strict(),
+  z
+    .object({
+      name: z.literal("research_status_seen"),
+      status: discoveryTopicStatusSchema,
+    })
+    .strict(),
   z
     .object({
       name: z.literal("outbound_market_click"),

@@ -44,6 +44,18 @@ describe("discovery analytics contract", () => {
         surface: "story",
       }).success,
     ).toBe(true);
+    expect(
+      discoveryAnalyticsEventSchema.safeParse({
+        name: "research_request_submitted",
+        anchor: "character",
+      }).success,
+    ).toBe(true);
+    expect(
+      discoveryAnalyticsEventSchema.safeParse({
+        name: "research_status_seen",
+        status: "review_pending",
+      }).success,
+    ).toBe(true);
   });
 
   it("rejects answers, URLs, and unknown event values", () => {

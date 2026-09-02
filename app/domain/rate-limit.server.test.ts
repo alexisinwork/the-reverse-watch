@@ -2,6 +2,7 @@ import {
   clearRateLimitBuckets,
   consumeRateLimit,
   parseRateLimitPolicy,
+  parseDiscoveryResearchRateLimitPolicy,
 } from "./rate-limit.server";
 
 describe("rate-limit policy", () => {
@@ -68,5 +69,18 @@ describe("rate-limit policy", () => {
       resetAt: null,
       retryAfterSeconds: null,
     });
+  });
+
+  it("keeps research intake on its own explicit, measured quota", () => {
+    expect(parseDiscoveryResearchRateLimitPolicy({})).toEqual({
+      configured: false,
+      reason: "missing",
+    });
+    expect(
+      parseDiscoveryResearchRateLimitPolicy({
+        DISCOVERY_RESEARCH_RATE_LIMIT_MAX_REQUESTS: "3",
+        DISCOVERY_RESEARCH_RATE_LIMIT_WINDOW_SECONDS: "3600",
+      }),
+    ).toEqual({ configured: true, maxRequests: 3, windowMs: 3_600_000 });
   });
 });

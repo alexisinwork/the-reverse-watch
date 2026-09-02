@@ -27,13 +27,13 @@ function positiveInteger(value: string | undefined) {
   return Number.isSafeInteger(parsed) && parsed > 0 ? parsed : null;
 }
 
-export function parseRateLimitPolicy(
+export function parseNamedRateLimitPolicy(
+  maximumKey: string,
+  windowKey: string,
   environment: Record<string, string | undefined> = process.env,
 ): RateLimitPolicy {
-  const maxRequests = positiveInteger(environment.QUIZ_RATE_LIMIT_MAX_REQUESTS);
-  const windowSeconds = positiveInteger(
-    environment.QUIZ_RATE_LIMIT_WINDOW_SECONDS,
-  );
+  const maxRequests = positiveInteger(environment[maximumKey]);
+  const windowSeconds = positiveInteger(environment[windowKey]);
   if (maxRequests === null && windowSeconds === null) {
     return { configured: false, reason: "missing" };
   }
@@ -49,6 +49,26 @@ export function parseRateLimitPolicy(
     maxRequests,
     windowMs,
   };
+}
+
+export function parseRateLimitPolicy(
+  environment: Record<string, string | undefined> = process.env,
+): RateLimitPolicy {
+  return parseNamedRateLimitPolicy(
+    "QUIZ_RATE_LIMIT_MAX_REQUESTS",
+    "QUIZ_RATE_LIMIT_WINDOW_SECONDS",
+    environment,
+  );
+}
+
+export function parseDiscoveryResearchRateLimitPolicy(
+  environment: Record<string, string | undefined> = process.env,
+): RateLimitPolicy {
+  return parseNamedRateLimitPolicy(
+    "DISCOVERY_RESEARCH_RATE_LIMIT_MAX_REQUESTS",
+    "DISCOVERY_RESEARCH_RATE_LIMIT_WINDOW_SECONDS",
+    environment,
+  );
 }
 
 export function consumeRateLimit(
