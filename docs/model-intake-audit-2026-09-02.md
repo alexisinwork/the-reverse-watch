@@ -179,6 +179,21 @@ missing rather than inherited from a family page. The manifest now reports 70
 `needs_review` targets, no `planned` targets, and 133 review artifacts; accepted
 catalogue rows remain unchanged.
 
+## Fifty-third parallel exact-reference batch (retrieved 2026-09-03)
+
+Four Seiko references returned schema-valid Perplexity results and were checked
+against manufacturer pages:
+
+- Seiko 5 Sports `SRPD55` — [official product page](https://www.seikowatches.com/us-en/products/5sports/srpd55) confirms the exact 4R36 configuration.
+- Seiko 5 Sports Field GMT `SSK023` — [official product page](https://www.seikowatches.com/us-en/products/5sports/ssk023) confirms the exact 4R34 GMT configuration.
+- Seiko Prospex 1965 Diver `SPB143J1` — [official product page](https://www.seikowatches.com/ph-en/products/prospex/spb143j1) confirms the J1 suffix and exact diver configuration; the target's shorter `SPB143` label is retained as the family shorthand.
+- Seiko Prospex Solar Diver `SNE573P1` — [official regional product page](https://www.seikowatches.com/middleeast-en/products/prospex/sne573) and [exact-reference retailer evidence](https://us.firstclasswatches.com/seiko-prospex-compact-solar-385mm-scuba-diver-sne573p1-p-73030/) confirm the P1 configuration.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 261 `needs_review` targets, one
+`planned` target, and 324 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## High-priority cross-brand exact candidates (retrieved 2026-09-02)
 
 The next parallel research batch added nine exact candidates from brands that

@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-srpd55",
+  "jobId": "28aec2bd-da3c-457e-91b7-919760b79638",
+  "reviewedAt": "2026-09-03T20:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "Seiko 5 Sports",
+    "referenceCode": "SRPD55",
+    "variantName": "SRPD55"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.seikowatches.com/us-en/products/5sports/srpd55",
+      "status": "validated_primary",
+      "note": "The official live U.S. Seiko page was checked on 2026-09-03 and confirms SRPD55, 4R36 automatic movement, 42.5 mm case, 13.4 mm thickness, 46 mm lug-to-lug, 22 mm lug width, day/date, Hardlex, LumiBrite, 10 bar resistance, 170 g, and USD 350 pricing."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

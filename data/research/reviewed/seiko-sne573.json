@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-sne573",
+  "jobId": "31362a6c-9696-4168-bd03-b13684e9821d",
+  "reviewedAt": "2026-09-03T20:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "Prospex Solar Diver",
+    "referenceCode": "SNE573P1",
+    "variantName": "Prospex Compact Solar Scuba Diver 38.5mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.seikowatches.com/middleeast-en/products/prospex/sne573",
+      "status": "validated_primary",
+      "note": "The official live Middle East Seiko page was checked on 2026-09-03 and confirms SNE573/SNE573P1, V147 solar movement, compact Prospex diver identity, 200 m resistance, and the regional product listing."
+    },
+    {
+      "url": "https://us.firstclasswatches.com/seiko-prospex-compact-solar-385mm-scuba-diver-sne573p1-p-73030/",
+      "status": "validated_secondary",
+      "note": "The exact SNE573P1 retailer listing corroborates the supplied 38.5 mm rubber-strap configuration; the manufacturer page remains authoritative for the reference identity."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed as SNE573P1, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

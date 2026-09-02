@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:47:17.359Z",
+  "updatedAt": "2026-09-02T20:58:28.584Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2252,6 +2252,62 @@
             ]
           },
           "coverageRationale": "Exact Alpinist reference confirmed on Seiko's regional product page; keep the green dial and leather-strap configuration separate from other SPB121 variants."
+        },
+        {
+          "id": "seiko-srpd55",
+          "referenceLabel": "Seiko 5 Sports exact reference SRPD55",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Seiko 5 Sports SRPD55 as a core affordable mechanical reference; verify the exact current dial, bracelet, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "seiko-ssk023",
+          "referenceLabel": "Seiko 5 Sports Field GMT exact reference SSK023",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies 5 Sports Field GMT SSK023 as an affordable caller-GMT reference; verify the exact configuration and current product evidence before cataloguing."
+        },
+        {
+          "id": "seiko-spb143",
+          "referenceLabel": "Seiko Prospex 1965 Diver exact reference SPB143",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Prospex 1965 Diver SPB143 as a core mechanical dive reference; verify the exact current bracelet/dial configuration and M1 evidence before cataloguing."
+        },
+        {
+          "id": "seiko-sne573",
+          "referenceLabel": "Seiko Prospex Solar Diver exact reference SNE573",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Prospex Solar Diver SNE573 as a compact low-maintenance reference; verify the exact current strap configuration and manufacturer evidence before cataloguing."
         }
       ]
     },

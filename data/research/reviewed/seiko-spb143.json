@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-spb143",
+  "jobId": "ef0b7913-2000-4da9-a66b-ac2e32d6cb99",
+  "reviewedAt": "2026-09-03T20:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "Prospex 1965 Diver's Watch Re-interpretation",
+    "referenceCode": "SPB143J1",
+    "variantName": "1965 Heritage Diver's Watch"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.seikowatches.com/ph-en/products/prospex/spb143j1",
+      "status": "validated_primary",
+      "note": "The official live Philippines Seiko page was checked on 2026-09-03 and confirms the exact SPB143J1 reference, 6R35 automatic movement, 40.5 mm case, 13.2 mm thickness, 47.6 mm lug-to-lug, 20 mm lugs, date, sapphire, LumiBrite, 200 m diver's resistance, and the regional PHP price."
+    },
+    {
+      "url": "https://www.seikowatches.com/us-en/products/prospex/spb143j1",
+      "status": "validated_primary",
+      "note": "The manufacturer product route was checked as a regional corroboration; the J1 suffix is retained because it is the exact manufacturer reference on the detailed live product page."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed as SPB143J1, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}
