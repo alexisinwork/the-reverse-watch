@@ -3,10 +3,14 @@ import { Link, useLoaderData } from "react-router";
 import type { Route } from "./+types/watch-story";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { findPublishedDiscoveryStory } from "../domain/discovery-public";
+import { loadPublishedDiscoveryStories } from "../domain/discovery-store.server";
 import "../styles/discovery.css";
 
-export function loader({ params }: Route.LoaderArgs) {
-  const story = findPublishedDiscoveryStory(params.storySlug ?? "");
+export async function loader({ params }: Route.LoaderArgs) {
+  const stories = await loadPublishedDiscoveryStories();
+  const story =
+    stories?.find((entry) => entry.slug === params.storySlug) ??
+    findPublishedDiscoveryStory(params.storySlug ?? "");
   // React Router uses thrown Responses to preserve HTTP status boundaries.
   // eslint-disable-next-line @typescript-eslint/only-throw-error
   if (!story) throw new Response("Discovery record not found", { status: 404 });

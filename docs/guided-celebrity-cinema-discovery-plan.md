@@ -543,6 +543,32 @@ Checks:
 Exit: fast gate, migration gate, parity audit, and live read smoke test pass.
 This packet does not research or populate catalogue variants.
 
+#### D2 implementation record
+
+Migrations `0041` through `0044` establish the additive canonical support
+layer and the protected pilot import/read boundary. Aliases, cast credits, and
+attribution traits are RLS-enabled and unavailable to browser table roles; cast
+credits additionally validate that their two entities are respectively a public
+figure and a fictional character. Traits use the four existing archetype
+vocabularies and retain a reviewed source and timestamp.
+
+The reviewed 21-story corpus imports through the service-role-only,
+transactional `import_discovery_pilot_v1` RPC. It preserves every public card's
+slug, headline, summary, bounded attribution, accepted source locator, and
+text-only image-rights decision. A second import updates the same canonical
+rows rather than creating additional cards. The public
+`discovery_published_stories_v1` RPC returns only accepted, evidence-gated card
+projections; it is the sole browser-readable discovery database boundary.
+
+The public archive routes now try that projection server-side and use the
+already-reviewed static corpus when configuration, transport, or response
+validation fails. `scripts/import-discovery-pilot.ts` performs the service-role
+import, and `scripts/audit-discovery-parity.ts` checks the live public RPC
+against the static fixture. Rollback is application-only: disable the RPC read
+path or remove its environment configuration and the archive immediately uses
+the fixture again. Canonical rows and evidence are retained for audit; no
+rollback deletes or truncates discovery data.
+
 ### D3 — Build accepted-record finder
 
 Scope:

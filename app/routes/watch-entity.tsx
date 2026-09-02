@@ -4,10 +4,21 @@ import type { Route } from "./+types/watch-entity";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { DiscoveryStoryList } from "../components/discovery-story-list";
 import { findPublishedDiscoveryEntity } from "../domain/discovery-public";
+import { loadPublishedDiscoveryStories } from "../domain/discovery-store.server";
 import "../styles/discovery.css";
 
-export function loader({ params }: Route.LoaderArgs) {
-  const result = findPublishedDiscoveryEntity(params.entitySlug ?? "");
+export async function loader({ params }: Route.LoaderArgs) {
+  const stories = await loadPublishedDiscoveryStories();
+  const result = stories
+    ? (() => {
+        const matches = stories.filter(
+          (story) => story.entity.slug === params.entitySlug,
+        );
+        return matches.length === 0
+          ? null
+          : { entity: matches[0]!.entity, stories: matches };
+      })()
+    : findPublishedDiscoveryEntity(params.entitySlug ?? "");
   if (!result) {
     // React Router uses thrown Responses to preserve HTTP status boundaries.
     // eslint-disable-next-line @typescript-eslint/only-throw-error

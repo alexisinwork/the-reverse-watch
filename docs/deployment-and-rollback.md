@@ -124,3 +124,14 @@ operation to restore the recorded production deployment. If DNS was changed,
 restore the previous verified records as a separate reversible action.
 Never delete the failed deployment during incident review; retain its build and
 runtime logs for diagnosis.
+
+### D2 discovery archive read rollback
+
+The discovery archive has an independent, single-code fallback. Its server
+loader requests only the versioned `discovery_published_stories_v1` RPC and
+returns the checked-in 21-story reviewed corpus when the Supabase configuration
+is absent, the request fails, or the response fails its runtime schema check.
+To roll back the database read path, remove that RPC from the deployed reader
+or omit the Supabase configuration in the affected environment, then redeploy.
+Do not delete the imported canonical discovery rows, evidence, image-rights
+decisions, or source records: the database remains the review audit trail.

@@ -3,10 +3,15 @@ import { Link, useLoaderData } from "react-router";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { DiscoveryStoryList } from "../components/discovery-story-list";
 import { listPublishedDiscoveryStories } from "../domain/discovery-public";
+import { loadPublishedDiscoveryStories } from "../domain/discovery-store.server";
 import "../styles/discovery.css";
 
-export function loader() {
-  return { stories: listPublishedDiscoveryStories() };
+export async function loader() {
+  return {
+    stories:
+      (await loadPublishedDiscoveryStories()) ??
+      listPublishedDiscoveryStories(),
+  };
 }
 
 export function meta() {

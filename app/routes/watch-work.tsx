@@ -4,10 +4,20 @@ import type { Route } from "./+types/watch-work";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { DiscoveryStoryList } from "../components/discovery-story-list";
 import { findPublishedDiscoveryWork } from "../domain/discovery-public";
+import { loadPublishedDiscoveryStories } from "../domain/discovery-store.server";
 import "../styles/discovery.css";
 
-export function loader({ params }: Route.LoaderArgs) {
-  const result = findPublishedDiscoveryWork(params.workSlug ?? "");
+export async function loader({ params }: Route.LoaderArgs) {
+  const stories = await loadPublishedDiscoveryStories();
+  const result = stories
+    ? (() => {
+        const matches = stories.filter(
+          (story) => story.work?.slug === params.workSlug,
+        );
+        const work = matches[0]?.work;
+        return work ? { work, stories: matches } : null;
+      })()
+    : findPublishedDiscoveryWork(params.workSlug ?? "");
   // React Router uses thrown Responses to preserve HTTP status boundaries.
   // eslint-disable-next-line @typescript-eslint/only-throw-error
   if (!result) throw new Response("Discovery work not found", { status: 404 });

@@ -1,5 +1,12 @@
 import { z } from "zod";
 
+import {
+  AESTHETIC_DNA,
+  DEPLOYMENT_ENVIRONMENTS,
+  SOCIAL_SIGNALS,
+} from "./questionnaire";
+import { PRICE_COMFORTS } from "./discovery-archetype";
+
 export const DISCOVERY_CONFIDENCE_LABELS = {
   confirmed: "Confirmed identification",
   disputed: "Disputed identification",
@@ -29,6 +36,49 @@ export const discoveryEntitySchema = z.object({
   disambiguation: nullableTextSchema,
   reviewStatus: discoveryReviewStatusSchema.exclude(["withdrawn"]),
 });
+
+const discoveryLocaleSchema = z
+  .string()
+  .regex(/^[a-z]{2,3}(?:-[A-Z]{2})?$/, "Use a supported BCP 47 locale.");
+
+const discoveryAliasFieldsSchema = z.object({
+  displayAlias: z.string().trim().min(1),
+  normalizedAlias: z
+    .string()
+    .trim()
+    .min(1)
+    .refine(
+      (value) => value === value.toLocaleLowerCase(),
+      "Normalized aliases must be lowercase.",
+    ),
+  locale: discoveryLocaleSchema,
+  reviewStatus: discoveryReviewStatusSchema.exclude(["withdrawn"]),
+  reviewedAt: z.iso.datetime({ offset: true }).nullable(),
+});
+
+function reviewedRecord(
+  record: { reviewStatus: string; reviewedAt: string | null },
+  context: z.RefinementCtx,
+) {
+  const requiresReviewTime = ["accepted", "rejected"].includes(
+    record.reviewStatus,
+  );
+  if (requiresReviewTime !== (record.reviewedAt !== null)) {
+    context.addIssue({
+      code: "custom",
+      path: ["reviewedAt"],
+      message:
+        "Accepted and rejected records require a review time; draft and in-review records do not.",
+    });
+  }
+}
+
+export const discoveryEntityAliasSchema = discoveryAliasFieldsSchema
+  .extend({
+    id: recordIdSchema,
+    entityId: recordIdSchema,
+  })
+  .superRefine(reviewedRecord);
 
 export const discoveryWorkSchema = z
   .object({
@@ -68,6 +118,34 @@ export const discoveryWorkSchema = z
           "Season and episode numbers belong only to television episodes.",
       });
     }
+  });
+
+export const discoveryWorkAliasSchema = discoveryAliasFieldsSchema
+  .extend({
+    id: recordIdSchema,
+    workId: recordIdSchema,
+  })
+  .superRefine(reviewedRecord);
+
+export const discoveryCastCreditSchema = z
+  .object({
+    id: recordIdSchema,
+    publicFigureEntityId: recordIdSchema,
+    fictionalCharacterEntityId: recordIdSchema,
+    workId: recordIdSchema,
+    reviewStatus: discoveryReviewStatusSchema.exclude(["withdrawn"]),
+    reviewedAt: z.iso.datetime({ offset: true }).nullable(),
+  })
+  .superRefine((credit, context) => {
+    if (credit.publicFigureEntityId === credit.fictionalCharacterEntityId) {
+      context.addIssue({
+        code: "custom",
+        path: ["fictionalCharacterEntityId"],
+        message:
+          "A cast credit requires separate public figure and character entities.",
+      });
+    }
+    reviewedRecord(credit, context);
   });
 
 export const discoveryEventSchema = z
@@ -263,6 +341,35 @@ export const discoverySourceSchema = z.object({
   retrievedAt: z.iso.datetime({ offset: true }),
   archivedUrl: z.url().nullable(),
 });
+
+export const discoveryAttributionTraitsSchema = z
+  .object({
+    id: recordIdSchema,
+    attributionId: recordIdSchema,
+    socialSignal: z.enum(SOCIAL_SIGNALS).nullable(),
+    aestheticDna: z.enum(AESTHETIC_DNA).nullable(),
+    deploymentEnvironment: z.enum(DEPLOYMENT_ENVIRONMENTS).nullable(),
+    priceComfort: z.enum(PRICE_COMFORTS).nullable(),
+    evidenceSourceId: z.uuid(),
+    editorialNote: nullableTextSchema,
+    reviewStatus: discoveryReviewStatusSchema.exclude(["withdrawn"]),
+    reviewedAt: z.iso.datetime({ offset: true }).nullable(),
+  })
+  .superRefine((traits, context) => {
+    if (
+      traits.socialSignal === null &&
+      traits.aestheticDna === null &&
+      traits.deploymentEnvironment === null &&
+      traits.priceComfort === null
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["socialSignal"],
+        message: "A trait record must contain at least one reviewed dimension.",
+      });
+    }
+    reviewedRecord(traits, context);
+  });
 
 export const discoveryEvidenceSchema = z.object({
   id: recordIdSchema,

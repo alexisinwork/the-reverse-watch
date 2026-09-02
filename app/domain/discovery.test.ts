@@ -1,8 +1,12 @@
 import {
   DISCOVERY_CONFIDENCE_LABELS,
   discoveryAttributionSchema,
+  discoveryAttributionTraitsSchema,
+  discoveryCastCreditSchema,
+  discoveryEntityAliasSchema,
   discoveryPilotCorpusSchema,
   discoveryPublicationSchema,
+  discoveryWorkAliasSchema,
 } from "./discovery";
 import { DISCOVERY_PILOT_CORPUS } from "./discovery-pilot";
 
@@ -186,6 +190,83 @@ describe("Phase 8 discovery claim contract", () => {
         ],
       }).success,
     ).toBe(true);
+  });
+});
+
+describe("D2 discovery support contracts", () => {
+  const reviewedAt = "2026-09-02T12:00:00.000Z";
+
+  it("requires reviewed aliases to carry a review time and normalized locale", () => {
+    const alias = {
+      id: 1,
+      entityId: 1,
+      displayAlias: "Example Name",
+      normalizedAlias: "example name",
+      locale: "en",
+      reviewStatus: "accepted" as const,
+      reviewedAt,
+    };
+    expect(discoveryEntityAliasSchema.safeParse(alias).success).toBe(true);
+    expect(
+      discoveryWorkAliasSchema.safeParse({
+        ...alias,
+        entityId: undefined,
+        workId: 1,
+        normalizedAlias: "Example Name",
+      }).success,
+    ).toBe(false);
+    expect(
+      discoveryEntityAliasSchema.safeParse({ ...alias, reviewedAt: null })
+        .success,
+    ).toBe(false);
+  });
+
+  it("keeps cast-credit entities separate and records a review time", () => {
+    const credit = {
+      id: 1,
+      publicFigureEntityId: 1,
+      fictionalCharacterEntityId: 2,
+      workId: 3,
+      reviewStatus: "accepted" as const,
+      reviewedAt,
+    };
+    expect(discoveryCastCreditSchema.safeParse(credit).success).toBe(true);
+    expect(
+      discoveryCastCreditSchema.safeParse({
+        ...credit,
+        fictionalCharacterEntityId: 1,
+      }).success,
+    ).toBe(false);
+  });
+
+  it("requires a source, a reviewed dimension, and review metadata for traits", () => {
+    const traits = {
+      id: 1,
+      attributionId: 1,
+      socialSignal: "quiet_continuity" as const,
+      aestheticDna: null,
+      deploymentEnvironment: null,
+      priceComfort: null,
+      evidenceSourceId: sourceId,
+      editorialNote: null,
+      reviewStatus: "accepted" as const,
+      reviewedAt,
+    };
+    expect(discoveryAttributionTraitsSchema.safeParse(traits).success).toBe(
+      true,
+    );
+    expect(
+      discoveryAttributionTraitsSchema.safeParse({
+        ...traits,
+        socialSignal: null,
+      }).success,
+    ).toBe(false);
+    expect(
+      discoveryAttributionTraitsSchema.safeParse({
+        ...traits,
+        reviewedAt: null,
+      }).success,
+    ).toBe(false);
   });
 });
 
