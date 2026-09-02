@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-ao4010-51e-campanola-cosmosign",
+  "jobId": "b8e1c9f8-8cbe-46f2-a093-d3c75007d08b",
+  "reviewedAt": "2026-09-03T21:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Campanola Cosmosign",
+    "referenceCode": "AO4010-51E",
+    "variantName": "Cosmosign black dial metal bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizenwatch-global.com/campanola/collection/AO4010-51E.html",
+      "status": "validated_primary",
+      "note": "The official Campanola product page was checked on 2026-09-03 and confirms exact AO4010-51E identity, Caliber 4398, black dial, stainless-steel case and bracelet, 44 mm diameter, 15.5 mm design thickness, and Cosmosign astronomical display."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

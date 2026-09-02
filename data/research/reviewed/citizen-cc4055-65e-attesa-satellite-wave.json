@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-cc4055-65e-attesa-satellite-wave",
+  "jobId": "e5e96630-a21e-43ae-841b-5f9d46b44062",
+  "reviewedAt": "2026-09-03T21:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Attesa Satellite Wave GPS",
+    "referenceCode": "CC4055-65E",
+    "variantName": "Attesa ACT Line Black Titanium Series Satellite Wave GPS"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizenwatch.com/latam/producto/CC4055-65E.html?cgid=caballero-satellite-wave",
+      "status": "validated_primary",
+      "note": "The official Citizen LATAM product page was checked on 2026-09-03 and confirms ATTESA, exact CC4055-65E reference, Super Titanium/DLC case and bracelet, F950 Eco-Drive Satellite Wave GPS, and the associated product identity."
+    },
+    {
+      "url": "https://citizen.jp/shop/attesa/g/gCC4055-65E/",
+      "status": "fetch_blocked",
+      "note": "The official Japanese product URL was supplied by the Perplexity research result but direct retrieval was blocked; the accessible official LATAM page independently confirms the exact reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed by an accessible official regional product page, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

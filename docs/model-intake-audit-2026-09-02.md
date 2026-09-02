@@ -1043,3 +1043,21 @@ All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 245 `needs_review` targets, 308
 review artifacts, and one remaining `planned` target; accepted catalogue rows
 remain unchanged.
+
+## Fifty-fifth parallel exact-reference batch (retrieved 2026-09-03)
+
+Five remaining Citizen dossier references produced schema-valid Perplexity
+results and were checked against official Citizen pages:
+
+- Series 8 880 GMT `NB6030-59L` — [official Citizen Canada product page](https://www.citizenwatch.com/ca/en/product/NB6030-59L.html) confirms the exact reference, blue dial, steel bracelet, 9054 automatic movement, and GMT configuration.
+- Attesa Satellite Wave GPS `CC4055-65E` — [official Citizen LATAM product page](https://www.citizenwatch.com/latam/producto/CC4055-65E.html?cgid=caballero-satellite-wave) confirms the exact reference, Super Titanium/DLC case and bracelet, F950 Eco-Drive, and Satellite Wave GPS configuration.
+- The Citizen Chronomaster `AQ4091-56M` — [official Citizen Global lineup](https://www.citizenwatch-global.com/the-citizen/lineup/5sec/product/index.html) confirms the exact reference, hand-dyed indigo Washi dial, Super Titanium, A060 Eco-Drive, and ±5 seconds-per-year specification.
+- The Citizen Caliber 0100 `AQ6021-51E` — [official Citizen US product page](https://www.citizenwatch.com/us/en/product/AQ6021-51E) confirms the exact limited-edition reference, Caliber 0100 Eco-Drive, Super Titanium case and bracelet, and black dial.
+- Campanola Cosmosign `AO4010-51E` — [official Campanola product page](https://www.citizenwatch-global.com/campanola/collection/AO4010-51E.html) confirms the exact reference, Caliber 4398, black dial, stainless-steel case and bracelet, and Cosmosign astronomical display.
+
+All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 270 `needs_review` targets, one
+remaining `planned` target, and 333 review artifacts; accepted catalogue rows
+remain unchanged. The direct Japanese Citizen URLs for the Attesa and
+Chronomaster were retained as fetch-blocked provenance, while accessible
+official regional/global pages independently confirmed both references.

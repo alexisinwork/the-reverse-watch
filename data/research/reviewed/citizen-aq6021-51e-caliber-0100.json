@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-aq6021-51e-caliber-0100",
+  "jobId": "d0a8d129-3baa-4217-800a-132ea46fc7fb",
+  "reviewedAt": "2026-09-03T21:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Caliber 0100",
+    "referenceCode": "AQ6021-51E",
+    "variantName": "Super Titanium Limited Edition black dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizenwatch.com/us/en/product/AQ6021-51E",
+      "status": "validated_primary",
+      "note": "The official Citizen US product page was checked on 2026-09-03 and confirms exact AQ6021-51E identity, Caliber 0100 Eco-Drive, Super Titanium bracelet and case, black dial, limited-edition status, and 38 mm case width. It also records that the model is currently out of stock."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

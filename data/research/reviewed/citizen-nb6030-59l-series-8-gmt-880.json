@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-nb6030-59l-series-8-gmt-880",
+  "jobId": "d2c4314c-6996-4825-85c3-70f281e3952b",
+  "reviewedAt": "2026-09-03T21:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Series 8 880 GMT",
+    "referenceCode": "NB6030-59L",
+    "variantName": "Blue dial, stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizenwatch.com/ca/en/product/NB6030-59L.html",
+      "status": "validated_primary",
+      "note": "The official Citizen Canada product page was checked on 2026-09-03 and confirms the Series 8 880 GMT identity, exact NB6030-59L reference, blue dial, stainless-steel bracelet, and product configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

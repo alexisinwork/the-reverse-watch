@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T21:02:05.771Z",
+  "updatedAt": "2026-09-02T21:08:30.138Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2478,6 +2478,78 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Series 8 831 NA1010-84X as a compact antimagnetic automatic reference; verify the exact current dial, bracelet, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "citizen-nb6030-59l-series-8-gmt-880",
+          "referenceLabel": "Citizen Series 8 GMT 880 exact reference NB6030-59L",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "gmt",
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Series 8 GMT 880 NB6030-59L as a current true-GMT automatic reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "citizen-cc4055-65e-attesa-satellite-wave",
+          "referenceLabel": "Citizen Attesa Satellite Wave exact reference CC4055-65E",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "gmt",
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Attesa Satellite Wave CC4055-65E as a GPS Eco-Drive reference; verify the exact current titanium configuration and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "citizen-aq4091-56m-the-citizen-chronomaster",
+          "referenceLabel": "Citizen The Citizen Chronomaster exact reference AQ4091-56M",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies The Citizen Chronomaster AQ4091-56M as a high-precision Eco-Drive reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "citizen-aq6021-51e-caliber-0100",
+          "referenceLabel": "Citizen The Citizen Caliber 0100 exact reference AQ6021-51E",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies The Citizen Caliber 0100 AQ6021-51E as an ultra-precise Eco-Drive reference; verify the exact current configuration and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "citizen-ao4010-51e-campanola-cosmosign",
+          "referenceLabel": "Citizen Campanola Cosmosign exact reference AO4010-51E",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Campanola Cosmosign AO4010-51E as a specialist quartz astronomical-dial reference; verify the exact current display, case, and manufacturer evidence before cataloguing."
         }
       ]
     },

@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-aq4091-56m-the-citizen-chronomaster",
+  "jobId": "b77098f6-56ce-4bcd-ad38-541e4136b12f",
+  "reviewedAt": "2026-09-03T21:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "The Citizen Chronomaster",
+    "referenceCode": "AQ4091-56M",
+    "variantName": "Indigo-dyed Washi dial, Super Titanium bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizenwatch-global.com/the-citizen/lineup/5sec/product/index.html",
+      "status": "validated_primary",
+      "note": "The official Citizen Global The CITIZEN lineup page was checked on 2026-09-03 and lists exact AQ4091-56M with indigo-dyed Washi paper dial, Super Titanium, A060 Eco-Drive, 40 mm case, ±5 seconds per year, and 10 ATM water resistance."
+    },
+    {
+      "url": "https://citizen.jp/shop/the-citizen/g/gAQ4091-56M/",
+      "status": "fetch_blocked",
+      "note": "The official Japanese product URL was supplied by the Perplexity research result but direct retrieval was blocked; the accessible official Global lineup independently confirms the exact reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}
