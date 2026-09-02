@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "mb-and-f-lm-sequential-flyback-evo",
+  "jobId": "e1595402-5740-47ae-af2f-37c6c3aa47dd",
+  "reviewedAt": "2026-09-02T20:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "MB&F",
+    "model": "Legacy Machine Sequential Flyback EVO",
+    "referenceCode": "11.TR.LG",
+    "variantName": "Aquamarine dial plate, grade 5 titanium"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.mbandf.com/machines/mbf-machines/legacy-machines/lm-sequential-flyback-evo",
+      "status": "validated_primary",
+      "note": "MB&F's official model page was checked on 2026-09-02 and confirms the Legacy Machine Sequential Flyback EVO identity, aquamarine dial plate, grade 5 titanium, dual flyback chronographs, 44mm case, 80m rating, and 72-hour hand-wound movement reserve. The official page does not publish a SKU."
+    },
+    {
+      "url": "https://www.watches-of-switzerland.co.uk/MBand.F-LM-Sequential-Flyback-Evo-11.TR.LG/p/18520061",
+      "status": "validated_secondary",
+      "note": "A reviewed retailer page was checked on 2026-09-02 and correlates the model with MPN/reference 11.TR.LG. This is recorded as dealer-correlated reference evidence, not as an MB&F manufacturer SKU; retailer item number 18520061 is not used as the watch reference."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact MB&F model and official product URL are confirmed, while 11.TR.LG is only dealer-correlated because MB&F does not publish a public SKU on the checked page. All M1 facts remain provisional until field-level review is complete."
+}

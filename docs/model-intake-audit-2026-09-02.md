@@ -482,6 +482,23 @@ research-only `needs_more_evidence`; unresolved M1 facts remain null and no
 catalogue rows were added. The manifest now reports 131 `needs_review` targets
 and 194 review artifacts; accepted catalogue rows remain unchanged.
 
+## Nineteenth parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional current luxury references were sent through the Perplexity
+worker and checked against manufacturer pages, with a secondary reference
+check where the manufacturer does not publish a public SKU:
+
+- Richard Mille RM 30-01 Le Mans Classic — [official model page](https://www.richardmille.com/collections/rm-30-01-lmc). The model identity, RMAR2 movement, 150-piece limit, and 50 m rating are confirmed; the official page publishes no separate SKU, so `RM 30-01 LMC` remains a model/reference label.
+- Parmigiani Fleurier Tonda PF Automatic 36mm Steel Platinum Silver Sand `PFC804-1020001-100182` — [official product card](https://www.parmigiani.com/en/watches/tonda-pf-automatic-steel-silver-sand/). The official card confirms the exact product reference and current configuration; the regional `-EN` display suffix is retained only in the intake label.
+- MB&F Legacy Machine Sequential Flyback EVO `11.TR.LG` — [official model page](https://www.mbandf.com/machines/mbf-machines/legacy-machines/lm-sequential-flyback-evo) plus [retailer MPN correlation](https://www.watches-of-switzerland.co.uk/MBand.F-LM-Sequential-Flyback-Evo-11.TR.LG/p/18520061). MB&F confirms the model and configuration, while `11.TR.LG` is dealer-correlated rather than an official MB&F SKU; retailer item `18520061` is explicitly not used as the reference.
+- Laurent Ferrier Classic Tourbillon White Enamel Grand Feu Red Gold `LCF001.02.R5.E10` — [official product card](https://laurentferrier.ch/collections/catalogue/products/classic-tourbillon-white-enamel-grand-feu-redgold). The exact red-gold reference is kept separate from the different yellow-gold white-enamel reference `LCF001.02.J1.E10`.
+
+All four remain research-only `needs_more_evidence`; exact identities and
+available reference provenance are recorded, unresolved M1 facts remain null,
+and no catalogue rows were added. The manifest now reports 135
+`needs_review` targets and 198 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

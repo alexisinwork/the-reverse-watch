@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:50:43.821Z",
+  "updatedAt": "2026-09-02T16:56:29.433Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2609,7 +2609,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 46
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "richard-mille-rm-30-01-le-mans-classic",
+          "referenceLabel": "Richard Mille RM 30-01 Le Mans Classic (official model; separate SKU unpublished)",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Current official Richard Mille page identifies the RM 30-01 Le Mans Classic limited-edition model; retain RM 30-01 LMC as a model/reference label because no separate manufacturer SKU is published, then verify the M1 fields before catalogue consideration."
+        }
+      ]
     },
     {
       "slug": "parmigiani-fleurier",
@@ -2626,7 +2641,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 32
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "parmigiani-tonda-pf-automatic-36-pfc-804-1020001-100182-en",
+          "referenceLabel": "Parmigiani Fleurier Tonda PF Automatic 36mm exact reference PFC-804-1020001-100182-EN",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Parmigiani Fleurier product card publishes the exact reference and 36.1mm steel/platinum configuration; verify the complete M1 field set and current availability."
+        }
+      ]
     },
     {
       "slug": "mb-and-f",
@@ -2643,7 +2673,22 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 37
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "mb-and-f-lm-sequential-flyback-evo",
+          "referenceLabel": "MB&F Legacy Machine Sequential Flyback EVO reference 11.TR.LG (dealer-correlated; official SKU unpublished)",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official MB&F product page identifies the Legacy Machine Sequential Flyback EVO; 11.TR.LG is correlated by a reviewed retailer, while the manufacturer SKU remains unpublished."
+        }
+      ]
     },
     {
       "slug": "laurent-ferrier",
@@ -2660,7 +2705,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 4
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "laurent-ferrier-classic-tourbillon-white-enamel-lcf001-02-r5-e10",
+          "referenceLabel": "Laurent Ferrier Classic Tourbillon White Enamel exact reference LCF001.02.R5.E10",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Current official Laurent Ferrier product card publishes the exact reference and tourbillon configuration; verify the complete M1 field set and current availability."
+        }
+      ]
     },
     {
       "slug": "kari-voutilainen",

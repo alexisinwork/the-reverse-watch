@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "richard-mille-rm-30-01-le-mans-classic",
+  "jobId": "d7bb8366-2867-411b-81be-8afffaf10bff",
+  "reviewedAt": "2026-09-02T20:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Richard Mille",
+    "model": "RM 30-01",
+    "referenceCode": "RM 30-01 LMC",
+    "variantName": "Le Mans Classic"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.richardmille.com/collections/rm-30-01-lmc",
+      "status": "validated_primary",
+      "note": "Richard Mille's official model page was checked on 2026-09-02 and confirms the RM 30-01 Le Mans Classic identity, RMAR2 movement, 150-piece limited edition, Le Mans Classic association, date/power-reserve/rotor indicators, titanium and Green Quartz TPT case construction, and 50m water resistance. The page does not publish a separate SKU; RM 30-01 LMC is retained as a model/reference label, not an invented product code."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact Richard Mille model and official product URL are confirmed; the manufacturer does not publish a separate SKU on the checked page and all M1 facts remain provisional until field-level review is complete."
+}

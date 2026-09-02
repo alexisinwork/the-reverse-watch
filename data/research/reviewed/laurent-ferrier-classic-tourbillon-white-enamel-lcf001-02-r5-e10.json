@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "laurent-ferrier-classic-tourbillon-white-enamel-lcf001-02-r5-e10",
+  "jobId": "7b33cc9d-954e-4489-8484-fac16b7d40af",
+  "reviewedAt": "2026-09-02T20:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Laurent Ferrier",
+    "model": "Classic Tourbillon",
+    "referenceCode": "LCF001.02.R5.E10",
+    "variantName": "Classic Tourbillon White Enamel Grand Feu Red Gold"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://laurentferrier.ch/collections/catalogue/products/classic-tourbillon-white-enamel-grand-feu-redgold",
+      "status": "validated_primary",
+      "note": "Laurent Ferrier's official product card was checked on 2026-09-02 and confirms the exact LCF001.02.R5.E10 reference, white Grand Feu enamel dial, 18K red gold 5N case, 41mm case, LF619.01 hand-wound tourbillon, 30m rating, 80-hour reserve, and CHF 180,000 price. The separate yellow-gold card has a different reference and is not merged into this record."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Laurent Ferrier reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

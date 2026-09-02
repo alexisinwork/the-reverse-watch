@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "parmigiani-tonda-pf-automatic-36-pfc-804-1020001-100182-en",
+  "jobId": "dba12311-447a-495a-88b1-21ad23798a9c",
+  "reviewedAt": "2026-09-02T20:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Parmigiani Fleurier",
+    "model": "Tonda PF Automatic 36mm",
+    "referenceCode": "PFC804-1020001-100182",
+    "variantName": "Tonda PF Automatic 36mm Steel Platinum Silver Sand"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.parmigiani.com/en/watches/tonda-pf-automatic-steel-silver-sand/",
+      "status": "validated_primary",
+      "note": "Parmigiani Fleurier's official product card was checked on 2026-09-02 and confirms the exact PFC804-1020001-100182 product reference, Tonda PF Automatic 36mm Silver Sand configuration, steel and 950 platinum construction, PF770-HM automatic movement, 36.1mm case, 100m rating, and CHF 21,900 price. The card's REF includes the regional -EN suffix; the normalized reference preserves the manufacturer's SKU form without that display suffix."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Parmigiani Fleurier reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}
