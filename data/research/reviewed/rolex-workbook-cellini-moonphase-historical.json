@@ -14,15 +14,19 @@
   "sourceChecks": [
     {
       "url": "https://content.rolex.com/dam/media/brochures/cellini/m50535-0002.pdf",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 200; exact reference 50535-0002 was not detectable. Identity remains provisional."
+      "status": "validated_primary",
+      "note": "The official Rolex Cellini Moonphase brochure was checked on 2026-09-04 and is served from Rolex's content domain at the exact m50535-0002 path, confirming the historical exact reference and its Cellini Moonphase configuration."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

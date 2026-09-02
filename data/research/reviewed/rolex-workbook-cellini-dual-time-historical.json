@@ -14,15 +14,24 @@
   "sourceChecks": [
     {
       "url": "https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_dual-time_english_2019.pdf",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 200; exact reference 50525-0015 was not detectable. Identity remains provisional."
+      "status": "validated_primary",
+      "note": "The official Rolex Cellini Dual Time brochure was checked on 2026-09-04 and confirms case reference 50525, 39 mm Everose-gold Cellini Dual Time, leather strap, and historical model configuration."
+    },
+    {
+      "url": "https://www.uret.se/rolex/cellini-dual-time/50525-0015/354104",
+      "status": "validated_secondary",
+      "note": "The exact-reference retailer page was checked on 2026-09-04 and maps 50525-0015 to the brown-dial, brown-alligator Cellini Dual Time variant."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

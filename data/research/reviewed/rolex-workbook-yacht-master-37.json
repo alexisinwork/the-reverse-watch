@@ -13,16 +13,20 @@
   },
   "sourceChecks": [
     {
-      "url": "https://www.rolex.com/en-us/watches/yacht-master/m268622-0002",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 200; exact reference 268621-0003 was not detectable. Identity remains provisional."
+      "url": "https://www.rolex.com/en-us/watches/yacht-master/m268621-0003",
+      "status": "validated_primary",
+      "note": "The official Rolex US product page was checked on 2026-09-04 and confirms Yacht-Master 37 reference 268621, Everose Rolesor case and Oyster bracelet, chocolate dial, and the exact -0003 route."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

@@ -13,16 +13,25 @@
   },
   "sourceChecks": [
     {
-      "url": "https://assets.rolex.com/api/brochure/en/yacht-master-ii/m126680-0001.pdf",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 200; exact reference 116680 was not detectable. Identity remains provisional."
+      "url": "https://www.bucherer.com/us/en/rolex-certified-pre-owned/watches/yacht-master-ii/1489-351-7.html",
+      "status": "validated_secondary",
+      "note": "The Rolex Certified Pre-Owned retailer page was checked on 2026-09-04 and confirms Yacht-Master II reference 116680, 44 mm steel case and bracelet, white dial, and calibre 4161."
+    },
+    {
+      "url": "https://newsroom.rolex.com/watches/oyster-collection/yacht-master-ii",
+      "status": "validated_primary",
+      "note": "Rolex's official Yacht-Master II newsroom page was checked on 2026-09-04 and confirms the historical 44 mm Oystersteel Yacht-Master II platform and calibre 4161 context, while the exact 116680 mapping is retained from the certified-pre-owned source."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

@@ -44,6 +44,7 @@
     }
   ],
   "verifiedProvisionalFields": [
+    "identity",
     "collection",
     "model",
     "productUrl",
@@ -173,10 +174,6 @@
     }
   ],
   "rejectedProvisionalFields": [
-    {
-      "fieldName": "identity",
-      "reason": "The provider cited a secondary catalogue for identity even though BOLDR's own embedded product payload publishes the exact SKU; the reviewed primary identity also fixes the worn strap."
-    },
     {
       "fieldName": "referenceCode",
       "reason": "The secondary-sourced code is replaced by the same exact SKU from BOLDR's embedded product variant."

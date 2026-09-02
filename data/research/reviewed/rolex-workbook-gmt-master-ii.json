@@ -13,16 +13,20 @@
   },
   "sourceChecks": [
     {
-      "url": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126710blro-0002",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 404; exact reference 126710BLRO was not detectable. Identity remains provisional."
+      "url": "https://assets.rolex.com/api/brochure/ms/gmt-master-ii/m126710blro-0002.pdf",
+      "status": "validated_primary",
+      "note": "The official Rolex brochure was checked on 2026-09-04 and confirms GMT-Master II reference 126710BLRO, 40 mm Oystersteel case, black dial, and red/blue Cerachrom bezel configuration."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

@@ -14,15 +14,24 @@
   "sourceChecks": [
     {
       "url": "https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_date_english_2019.pdf",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 200; exact reference 50519-0006 was not detectable. Identity remains provisional."
+      "status": "validated_primary",
+      "note": "The official Rolex Cellini Date brochure was checked on 2026-09-04 and confirms case reference 50519, 39 mm white-gold Cellini Date, and the historical model configuration."
+    },
+    {
+      "url": "https://www.chrono24.com/rolex/-cellini-50519-silver-dial-white-gold-black-leather-strap-39mm--id45436090.htm",
+      "status": "validated_secondary",
+      "note": "The exact-reference listing was checked on 2026-09-04 and maps 50519-0006 to the silver-dial, white-gold, black-leather Cellini Date variant."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

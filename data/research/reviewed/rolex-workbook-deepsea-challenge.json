@@ -13,16 +13,20 @@
   },
   "sourceChecks": [
     {
-      "url": "https://www.rolex.com/zh-hant/watches/deepsea/m126067-0001",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 404; exact reference 126067 was not detectable. Identity remains provisional."
+      "url": "https://www.rolex.com/en-us/watches/deepsea/m126067-0002",
+      "status": "validated_primary",
+      "note": "The official Rolex US product page was checked on 2026-09-04 and confirms Deepsea Challenge reference 126067, RLX titanium case and Oyster bracelet, black dial, and current product configuration."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

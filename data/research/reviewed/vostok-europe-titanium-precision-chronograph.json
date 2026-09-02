@@ -59,6 +59,7 @@
     }
   ],
   "verifiedProvisionalFields": [
+    "identity",
     "collection",
     "model",
     "referenceCode",

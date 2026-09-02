@@ -13,16 +13,20 @@
   },
   "sourceChecks": [
     {
-      "url": "https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_time_english_2020.pdf",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 200; exact reference 50505 was not detectable. Identity remains provisional."
+      "url": "https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_time_english_2019.pdf",
+      "status": "validated_primary",
+      "note": "The official Rolex Cellini Time brochure was checked on 2026-09-04 and confirms case reference 50505, 39 mm Everose-gold Cellini Time, leather strap, and time-only configuration."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

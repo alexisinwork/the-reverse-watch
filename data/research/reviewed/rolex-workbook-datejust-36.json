@@ -14,15 +14,19 @@
   "sourceChecks": [
     {
       "url": "https://www.rolex.com/en-us/watches/datejust/m126200-0008",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 404; exact reference 126200-0008 was not detectable. Identity remains provisional."
+      "status": "validated_primary",
+      "note": "The official Rolex Datejust product page was checked on 2026-09-04 and confirms the exact m126200-0008 route, Datejust 36, 126200 Oystersteel reference, white dial, Oyster bracelet, and current configuration."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

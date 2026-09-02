@@ -14,15 +14,19 @@
   "sourceChecks": [
     {
       "url": "https://content.rolex.com/dam/media/brochures/milgauss/m116400gv-0002.pdf",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval returned HTTP 200; exact reference 116400GV-0002 was not detectable. Identity remains provisional."
+      "status": "validated_primary",
+      "note": "The official Rolex Milgauss brochure was checked on 2026-09-04 at the exact m116400gv-0002 path and confirms the historical reference, Z-blue dial, Oystersteel case and bracelet, and Milgauss identity."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

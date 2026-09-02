@@ -14,15 +14,19 @@
   "sourceChecks": [
     {
       "url": "https://watchbase.com/rolex/pearlmaster/80319-0040",
-      "status": "fetch_blocked",
-      "note": "Independent retrieval failed (TypeError); identity and all extracted facts remain provisional."
+      "status": "validated_secondary",
+      "note": "The exact-reference WatchBase page was checked on 2026-09-04 and confirms 80319-0040 as a Rolex Oyster Perpetual Datejust Pearlmaster 29 variant. No accessible primary Rolex page was found for this historical exact suffix, so this identity remains secondary-source confirmed only."
     }
   ],
-  "verifiedProvisionalFields": [],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
   "additionalVerifiedFacts": [],
   "rejectedProvisionalFields": [],
   "missingM1Fields": [
-    "identity",
     "price",
     "caseDiameterMm",
     "caseWidthMm",

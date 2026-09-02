@@ -44,6 +44,7 @@
     }
   ],
   "verifiedProvisionalFields": [
+    "identity",
     "collection",
     "model",
     "referenceCode",
@@ -152,10 +153,6 @@
     }
   ],
   "rejectedProvisionalFields": [
-    {
-      "fieldName": "identity",
-      "reason": "The provider omitted the configured strap from its nested identity object; the reviewed homogeneous identity includes the exact brown riveted calf-leather configuration."
-    },
     {
       "fieldName": "fieldApplicability.lugWidthMm",
       "reason": "The provider returned a boolean rather than the catalogue applicability enum; the explicit 18 mm value is normalized to observed."

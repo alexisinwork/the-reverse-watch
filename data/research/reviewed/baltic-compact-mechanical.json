@@ -54,6 +54,7 @@
     }
   ],
   "verifiedProvisionalFields": [
+    "identity",
     "collection",
     "model",
     "variantName",

@@ -1233,3 +1233,18 @@ The exact identity is confirmed, including the 36.5 mm case, manual-winding
 9S64 movement, 10 bar water resistance, 66 g weight, and current listing. It
 remains research-only `needs_more_evidence`; no M1 facts or catalogue row were
 promoted.
+
+## Sixty-eighth Rolex recheck (retrieved 2026-09-04)
+
+The Rolex recheck closed the identity/provenance gap on 11 previously
+`fetch_blocked` workbook reviews:
+
+- Current exact pages confirm Datejust 36 `126200-0008`, Deepsea Challenge `126067`, Submariner `124060`, and Yacht-Master 37 `268621-0003` ([Datejust](https://www.rolex.com/watches/datejust/m126200-0008), [Deepsea Challenge](https://www.rolex.com/en-us/watches/deepsea/m126067-0002), [Submariner](https://www.rolex.com/en-us/watches/submariner/m124060-0001), [Yacht-Master 37](https://www.rolex.com/en-us/watches/yacht-master/m268621-0003)).
+- Official Rolex brochures confirm historical exact references Cellini Moonphase `50535-0002`, Cellini Time `50505`, Milgauss `116400GV-0002`, and GMT-Master II `126710BLRO` ([Cellini Moonphase](https://content.rolex.com/dam/media/brochures/cellini/m50535-0002.pdf), [Cellini Time](https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_time_english_2019.pdf), [Milgauss](https://content.rolex.com/dam/media/brochures/milgauss/m116400gv-0002.pdf), [GMT brochure](https://assets.rolex.com/api/brochure/ms/gmt-master-ii/m126710blro-0002.pdf)).
+- Cellini Date `50519-0006` and Cellini Dual Time `50525-0015` now have official base-reference brochures plus exact-suffix secondary corroboration ([Cellini Date brochure](https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_date_english_2019.pdf), [Date exact listing](https://www.chrono24.com/rolex/-cellini-50519-silver-dial-white-gold-black-leather-strap-39mm--id45436090.htm), [Dual Time brochure](https://newsroom-content.rolex.com/-/media/project/rolex/newsroom/rolex/rolex-newsroom-int/brochures/en/02_rolex_cellini_dual-time_english_2019.pdf), [Dual Time exact listing](https://www.uret.se/rolex/cellini-dual-time/50525-0015/354104)).
+- Yacht-Master II `116680` is corroborated by Rolex's historical platform newsroom material and a Rolex Certified Pre-Owned listing ([Rolex newsroom](https://newsroom.rolex.com/watches/oyster-collection/yacht-master-ii), [Bucherer CPO](https://www.bucherer.com/us/en/rolex-certified-pre-owned/watches/yacht-master-ii/1489-351-7.html)). Pearlmaster `80319-0040` is confirmed only by the exact WatchBase secondary page; no primary Rolex page for that historical suffix was found.
+
+These 11 Rolex artifacts now carry identity/reference provenance and no longer
+claim `identity` as missing; no M1 facts or catalogue rows were changed. The
+Record Watch Co. historical target remains unresolved because no exact
+reference has been established and is not replaced with an inferred model.
