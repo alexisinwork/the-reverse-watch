@@ -1370,3 +1370,20 @@ were added to the research reviews:
 The entries remain research-only where their residual case geometry, full
 configured weight, or specific lume grade is not published; no unsupported
 defaults were added.
+
+## Seventy-sixth Perplexity exact-reference pass (retrieved 2026-09-03)
+
+Five new targets completed the Perplexity worker and were independently
+checked against manufacturer pages before review artifacts were created:
+
+- [Richard Mille RM 72-01](https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph): official model identity, CRMC1 automatic movement, approximately 50-hour reserve, 38.40 x 47.34 x 11.68 mm case dimensions, 30 m resistance, rubber strap, and date display.
+- [Parmigiani Fleurier Tonda PF Micro-Rotor No Date `PFC914-1020023-100182`](https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/): exact reference, CHF 24,200 price, steel/950-platinum construction, 40 mm x 7.8 mm case, PF703, 48-hour reserve, 100 m resistance, steel bracelet, and no date.
+- [MB&F HM12 The Guardian Green `12.TL.GR`](https://www.mbandf.com/machines/mbf-machines/horological-machines/hm12): official Green edition identity and CHF 280,000 price; the per-colour reference remains dealer-correlated because MB&F does not publish a public SKU. Secondary technical corroboration supplies 49.3 x 43.6 x 13.8 mm dimensions, 84-hour reserve, 30 m resistance, and Velcro quick-release strap.
+- [Kari Voutilainen 28CG Platinum](https://www.voutilainen.ch/portfolio/28cg-platinum/): official model identity, 37 mm platinum configuration, in-house hand-wound movement, 65-hour reserve, sapphire crystals, and no-date display; the CHF 105,600 price and diameter are separately corroborated by technical coverage.
+- [URWERK UR-100V Lightspeed Ceramic](https://www.urwerk.com/collections/ur-satellite/ur-100v): official variation identity, 43 x 51.7 x 14.55 mm dimensions, ceramic composite case, UR 12.02 automatic movement, 48-hour reserve, and 50 m resistance; technical coverage corroborates the CHF 67,000 price and rubber-strap configuration.
+
+The five reviews remain research-only. Their exact identities and published
+facts are retained with source provenance, while absent price/accuracy/lug,
+configured-weight, or lume fields remain null. The Laurent Ferrier yellow-gold
+counterpart was manually reconciled from its official product card after three
+malformed Perplexity responses; the malformed payloads were not imported.

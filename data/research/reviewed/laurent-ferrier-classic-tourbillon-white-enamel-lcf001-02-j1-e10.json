@@ -1,0 +1,124 @@
+{
+  "reviewVersion": 1,
+  "targetId": "laurent-ferrier-classic-tourbillon-white-enamel-lcf001-02-j1-e10",
+  "jobId": "cf934a7a-7a28-49cd-8faa-3a25849c6900",
+  "reviewedAt": "2026-09-03T01:20:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Laurent Ferrier",
+    "model": "Classic Tourbillon",
+    "referenceCode": "LCF001.02.J1.E10",
+    "variantName": "Classic Tourbillon White Enamel Grand Feu Yellow Gold"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "status": "validated_primary",
+      "note": "Laurent Ferrier's official product card was checked on 2026-09-03 and confirms the separate LCF001.02.J1.E10 yellow-gold reference, white Grand Feu enamel dial, 18K yellow-gold 2N case, 41 mm diameter, 12.50 mm thickness, LF619.01 hand-wound tourbillon, 80-hour reserve, 30 m rating, sapphire crystal, leather strap, no date, and CHF 180,000 price."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "18K yellow gold 2N",
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official product card specifies an 18K yellow-gold 2N case."
+    },
+    {
+      "fieldName": "price.amountMinor",
+      "value": 18000000,
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official product card lists CHF 180,000; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "CHF",
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official product card quotes the price in Swiss francs."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official product card specifies a 41 mm case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12.5,
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official product card specifies 12.50 mm case thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual mechanical tourbillon",
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The manufacturer identifies a hand-wound tourbillon movement."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "LF619.01",
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official movement section names calibre LF619.01."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 80,
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official movement section specifies an 80-hour power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official product card specifies 30 m water resistance."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official description specifies sapphire crystal."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "alligator leather strap",
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The exact product configuration is supplied on a leather strap with a gold buckle option."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu",
+      "note": "The official functions and dial configuration contain no date indication."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "The exact Laurent Ferrier yellow-gold reference is confirmed by the manufacturer. A malformed Perplexity response was not imported; this artifact records only the fields directly confirmed by the official product card. Remaining lug geometry, configured weight, daily accuracy, and lume grade remain null."
+}

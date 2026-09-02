@@ -1,0 +1,102 @@
+{
+  "reviewVersion": 1,
+  "targetId": "richard-mille-rm-72-01-automatic-flyback-chronograph",
+  "jobId": "61ebd1b6-3145-441f-8187-b2b6ad2bf8a0",
+  "reviewedAt": "2026-09-03T01:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Richard Mille",
+    "model": "RM 72-01",
+    "referenceCode": "RM 72-01",
+    "variantName": "Automatic Winding Lifestyle Flyback Chronograph"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "status": "validated_primary",
+      "note": "Richard Mille's official page was checked on 2026-09-03 and confirms the RM 72-01 model, CRMC1 automatic movement, approximately 50-hour reserve, 38.40 x 47.34 x 11.68 mm case dimensions, 30 m water resistance, date display, and rubber-strap configuration. The page presents a family of case-material variants rather than one single material configuration, so case material remains unresolved."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 38.4,
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "The official technical dimensions give case width as 38.40 mm."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 47.34,
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "The official technical dimensions give case length as 47.34 mm."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 11.68,
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "The official technical dimensions give case thickness as 11.68 mm."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "Richard Mille identifies the movement as automatic winding."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "CRMC1",
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "The official page names in-house calibre CRMC1."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 50,
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "The official page states approximately 50 hours with a stated tolerance."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "The official technical specification states 30 m water resistance."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "rubber strap",
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "The official model description specifies a rubber strap with an integrated case interface."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph",
+      "note": "Date is listed among the model functions."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact Richard Mille model identity and core technical facts are confirmed by the manufacturer. The current page does not select one homogeneous case-material variant or publish price, round-case diameter, lug measurements, configured weight, daily accuracy, or lume grade; these remain null."
+}

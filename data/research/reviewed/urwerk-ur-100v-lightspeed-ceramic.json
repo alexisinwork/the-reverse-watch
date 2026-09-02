@@ -1,0 +1,132 @@
+{
+  "reviewVersion": 1,
+  "targetId": "urwerk-ur-100v-lightspeed-ceramic",
+  "jobId": "2182f129-fc48-4f5e-9bd9-aaf56e17b80b",
+  "reviewedAt": "2026-09-03T01:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "URWERK",
+    "model": "UR-100V",
+    "referenceCode": "UR-100V",
+    "variantName": "Lightspeed Ceramic"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "status": "validated_primary",
+      "note": "URWERK's official UR-100V page was checked on 2026-09-03 and lists Lightspeed Ceramic as a variation, confirming the UR-100V model, 43 x 51.7 x 14.55 mm dimensions, white ceramic composite case, UR 12.02 automatic movement, 48-hour reserve, and 50 m rating. The manufacturer does not publish a separate SKU for this variation on the page."
+    },
+    {
+      "url": "https://monochrome-watches.com/urwerk-ur-100v-lightspeed-ceramic-review-price/",
+      "status": "validated_secondary",
+      "note": "The technical review corroborates the Lightspeed Ceramic configuration, rubber straps, sapphire crystals, and no-date display."
+    },
+    {
+      "url": "https://watchesbysjx.com/2026/02/urwerk-ur-100v-lightspeed-ceramic.html",
+      "status": "validated_secondary",
+      "note": "The technical review reports a CHF 67,000 excluding taxes list price."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 6700000,
+      "sourceUrl": "https://watchesbysjx.com/2026/02/urwerk-ur-100v-lightspeed-ceramic.html",
+      "note": "The corroborating technical review reports CHF 67,000 excluding taxes; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "CHF",
+      "sourceUrl": "https://watchesbysjx.com/2026/02/urwerk-ur-100v-lightspeed-ceramic.html",
+      "note": "The reported list price is denominated in CHF."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "white ceramic composite with silver fibreglass and carbon inserts",
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The official page describes the white ceramic case and its composite construction."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 43,
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The official dimensions list 43 mm width for the non-round case."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 51.7,
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The official dimensions list 51.7 mm length."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 14.55,
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The official dimensions list 14.55 mm height."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic mechanical",
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The manufacturer describes the self-winding mechanical movement."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "UR 12.02",
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The official page names calibre UR 12.02."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 48,
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The official page specifies 48 hours."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The official page specifies 5 ATM / 50 m."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "rubber strap",
+      "sourceUrl": "https://monochrome-watches.com/urwerk-ur-100v-lightspeed-ceramic-review-price/",
+      "note": "The corroborating technical review specifies the rubber-strap configuration."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.urwerk.com/collections/ur-satellite/ur-100v",
+      "note": "The official functions describe satellite hours/minutes and astronomical light-travel indication without a calendar date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseDiameterMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "The exact UR-100V Lightspeed Ceramic model variant and core technical facts are confirmed by URWERK. The brand does not publish a separate variant SKU, round-case diameter, lug measurements, configured weight, daily accuracy, or lume grade; these remain null."
+}

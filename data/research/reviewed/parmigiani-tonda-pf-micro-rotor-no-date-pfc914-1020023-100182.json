@@ -1,0 +1,117 @@
+{
+  "reviewVersion": 1,
+  "targetId": "parmigiani-tonda-pf-micro-rotor-no-date-pfc914-1020023-100182",
+  "jobId": "770ede71-a808-4a38-99ec-44f71757498e",
+  "reviewedAt": "2026-09-03T01:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Parmigiani Fleurier",
+    "model": "Tonda PF Micro-Rotor No Date",
+    "referenceCode": "PFC914-1020023-100182",
+    "variantName": "Agave Blue"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "status": "validated_primary",
+      "note": "Parmigiani Fleurier's official product page was checked on 2026-09-03 and confirms the exact PFC914-1020023-100182 Agave Blue configuration, current CHF price, steel/platinum construction, 40 mm x 7.8 mm case, PF703 automatic micro-rotor movement, 48-hour reserve, 100 m rating, sapphire crystal, bracelet, and no-date display."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 2420000,
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The official page lists CHF 24,200; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "CHF",
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The official product card quotes the price in Swiss francs."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel with 950 platinum bezel",
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The manufacturer specifies a stainless-steel case and 950 platinum bezel."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The official product page specifies a 40 mm case."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 7.8,
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The official product page specifies 7.8 mm thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic micro-rotor",
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The manufacturer identifies the automatic micro-rotor movement."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "PF703",
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The official technical section names calibre PF703."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 48,
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The official technical section specifies 48 hours."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The official product page specifies 100 m water resistance."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "stainless-steel bracelet",
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The exact product card specifies the stainless-steel bracelet configuration."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/",
+      "note": "The product is explicitly the no-date configuration."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact Parmigiani Fleurier reference and the listed M1 facts are confirmed by the current manufacturer product card. Case width/length, lug measurements, configured weight, daily accuracy, and lume grade remain null because the exact page does not publish them."
+}

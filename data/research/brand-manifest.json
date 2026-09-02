@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T22:33:12.387Z",
+  "updatedAt": "2026-09-02T23:06:53.133Z",
   "brands": [
     {
       "slug": "rolex",
@@ -3410,6 +3410,20 @@
             ]
           },
           "coverageRationale": "Current official Richard Mille page identifies the RM 30-01 Le Mans Classic limited-edition model; retain RM 30-01 LMC as a model/reference label because no separate manufacturer SKU is published, then verify the M1 fields before catalogue consideration."
+        },
+        {
+          "id": "richard-mille-rm-72-01-automatic-flyback-chronograph",
+          "referenceLabel": "Richard Mille RM 72-01 Automatic Winding Lifestyle Flyback Chronograph official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Richard Mille's current official RM 72-01 page identifies the Automatic Winding Lifestyle Flyback Chronograph with in-house CRMC1; verify the exact variant and M1 fields from the official page https://www.richardmille.com/collections/rm-72-01-automatic-flyback-chronograph before catalogue consideration."
         }
       ]
     },
@@ -3442,6 +3456,20 @@
             ]
           },
           "coverageRationale": "Current official Parmigiani Fleurier product card publishes the exact reference and 36.1mm steel/platinum configuration; verify the complete M1 field set and current availability."
+        },
+        {
+          "id": "parmigiani-tonda-pf-micro-rotor-no-date-pfc914-1020023-100182",
+          "referenceLabel": "Parmigiani Fleurier Tonda PF Micro-Rotor No Date exact reference PFC914-1020023-100182",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Parmigiani Fleurier product card identifies Tonda PF Micro-Rotor No Date Agave Blue, reference PFC914-1020023-100182; verify the complete M1 field set and current availability from https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/."
         }
       ]
     },
@@ -3474,6 +3502,20 @@
             ]
           },
           "coverageRationale": "Current official MB&F product page identifies the Legacy Machine Sequential Flyback EVO; 11.TR.LG is correlated by a reviewed retailer, while the manufacturer SKU remains unpublished."
+        },
+        {
+          "id": "mb-and-f-hm12-the-guardian-12-tl-gr",
+          "referenceLabel": "MB&F HM12 The Guardian green variant reference 12.TL.GR (dealer-correlated; official SKU unpublished)",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "MB&F's current official HM12 page identifies The Guardian; 12.TL.GR is correlated by an authorized retailer and the manufacturer SKU remains unpublished. Verify the variant and M1 fields from https://www.mbandf.com/machines/mbf-machines/horological-machines/hm12 before catalogue consideration."
         }
       ]
     },
@@ -3506,6 +3548,20 @@
             ]
           },
           "coverageRationale": "Current official Laurent Ferrier product card publishes the exact reference and tourbillon configuration; verify the complete M1 field set and current availability."
+        },
+        {
+          "id": "laurent-ferrier-classic-tourbillon-white-enamel-lcf001-02-j1-e10",
+          "referenceLabel": "Laurent Ferrier Classic Tourbillon White Enamel Grand Feu exact reference LCF001.02.J1.E10",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Current official Laurent Ferrier product card identifies the separate yellow-gold Classic Tourbillon White Enamel Grand Feu reference LCF001.02.J1.E10; verify the complete M1 field set and current availability from https://laurentferrier.ch/products/classic-tourbillon-white-enamel-grand-feu."
         }
       ]
     },
@@ -3538,6 +3594,20 @@
             ]
           },
           "coverageRationale": "Current official Voutilainen page identifies the 28MPR with moonphase and power-reserve indications; verify exact material variant, availability, reference status, and M1 fields."
+        },
+        {
+          "id": "kari-voutilainen-28cg-platinum",
+          "referenceLabel": "Kari Voutilainen 28CG Platinum official reference 28CG Platinum",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Kari Voutilainen's current official timepiece page identifies the 28CG Platinum variant; verify the exact reference, availability, and M1 fields from https://www.voutilainen.ch/portfolio/28cg-platinum/."
         }
       ]
     },
@@ -3570,6 +3640,20 @@
             ]
           },
           "coverageRationale": "Current official URWERK page identifies the UR-1001 Zeit Device and its astronomical calendar/time indications; verify the exact variant reference and M1 fields."
+        },
+        {
+          "id": "urwerk-ur-100v-lightspeed-ceramic",
+          "referenceLabel": "URWERK UR-100V Lightspeed Ceramic official model variant",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "URWERK's current official UR-100V page lists the Lightspeed Ceramic variation; verify the exact variant identity and M1 fields from https://www.urwerk.com/collections/ur-satellite/ur-100v before catalogue consideration."
         }
       ]
     },

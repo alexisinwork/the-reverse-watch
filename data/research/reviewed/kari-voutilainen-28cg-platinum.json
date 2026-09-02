@@ -1,0 +1,103 @@
+{
+  "reviewVersion": 1,
+  "targetId": "kari-voutilainen-28cg-platinum",
+  "jobId": "e8caf6fd-0390-4a5a-8210-7fde1158e3ec",
+  "reviewedAt": "2026-09-03T01:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Kari Voutilainen",
+    "model": "28CG",
+    "referenceCode": "28CG Platinum",
+    "variantName": "28CG Platinum"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.voutilainen.ch/portfolio/28cg-platinum/",
+      "status": "validated_primary",
+      "note": "Kari Voutilainen's official 28CG Platinum page was checked on 2026-09-03 and confirms the 28CG Platinum model, 37 mm platinum case, hand-finished in-house movement architecture, 65-hour reserve, blue guilloché dial, and strap configuration. The page does not publish a numeric product SKU or complete M1 specification."
+    },
+    {
+      "url": "https://timekeepers.club/articles/novelties/voutilainen-28cg-platinum",
+      "status": "validated_secondary",
+      "note": "The technical article corroborates the platinum variant, 37 mm diameter, turquoise-blue crocodile strap, and CHF 105,600 excl. taxes MSRP."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.powerReserveHours",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 10560000,
+      "sourceUrl": "https://timekeepers.club/articles/novelties/voutilainen-28cg-platinum",
+      "note": "The corroborating technical article reports CHF 105,600 excluding taxes; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "CHF",
+      "sourceUrl": "https://timekeepers.club/articles/novelties/voutilainen-28cg-platinum",
+      "note": "The reported MSRP is denominated in CHF."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "platinum",
+      "sourceUrl": "https://www.voutilainen.ch/portfolio/28cg-platinum/",
+      "note": "The official page identifies the selected variant as 28CG Platinum."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 37,
+      "sourceUrl": "https://timekeepers.club/articles/novelties/voutilainen-28cg-platinum",
+      "note": "The corroborating technical article specifies a 37 mm case diameter."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual mechanical",
+      "sourceUrl": "https://www.voutilainen.ch/portfolio/28cg-platinum/",
+      "note": "The official description identifies the hand-wound in-house movement architecture."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 65,
+      "sourceUrl": "https://www.voutilainen.ch/portfolio/28cg-platinum/",
+      "note": "The official page specifies a 65-hour power reserve."
+    },
+    {
+      "fieldName": "operation.crystal",
+      "value": "sapphire",
+      "sourceUrl": "https://www.voutilainen.ch/portfolio/28cg-platinum/",
+      "note": "The official description specifies sapphire crystals front and back."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.voutilainen.ch/portfolio/28cg-platinum/",
+      "note": "The official functions shown are hours, minutes, and seconds without a date indication."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "Exact 28CG Platinum identity is confirmed by the manufacturer; the formal numeric SKU is not published, so the official model/reference label is retained. Price and diameter are corroborated secondary facts. Remaining geometry, weight, accuracy, water resistance, and lume remain null."
+}

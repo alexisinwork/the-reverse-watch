@@ -1,0 +1,125 @@
+{
+  "reviewVersion": 1,
+  "targetId": "mb-and-f-hm12-the-guardian-12-tl-gr",
+  "jobId": "d1e268e1-eb65-405d-bc03-14a6d49aab94",
+  "reviewedAt": "2026-09-03T01:10:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "MB&F",
+    "model": "HM12 The Guardian",
+    "referenceCode": "12.TL.GR",
+    "variantName": "HM12 The Guardian Green"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.mbandf.com/machines/mbf-machines/horological-machines/hm12",
+      "status": "validated_primary",
+      "note": "MB&F's official HM12 page was checked on 2026-09-03 and confirms the The Guardian Green edition, Grade 5 titanium family construction, current CHF price, 84-hour automatic movement, and the HM12 design. MB&F does not publish a separate per-colour manufacturer SKU on the page."
+    },
+    {
+      "url": "https://shsilver.com/products/mb-f-hm12-the-guardian-green",
+      "status": "validated_secondary",
+      "note": "The authorized retailer page correlates the Green edition with reference 12.TL.GR; this is retained as dealer-correlated reference evidence, not as an MB&F manufacturer SKU."
+    },
+    {
+      "url": "https://watchilove.com/2026/06/introducing-mbf-hm12-the-guardian/",
+      "status": "validated_secondary",
+      "note": "The technical article corroborates the 49.3 x 43.6 x 13.8 mm case, 20 mm strap interface, and Velcro quick-release strap."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 28000000,
+      "sourceUrl": "https://www.mbandf.com/machines/mbf-machines/horological-machines/hm12",
+      "note": "The official page lists CHF 280,000 excluding taxes; the value is normalized to minor currency units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "CHF",
+      "sourceUrl": "https://www.mbandf.com/machines/mbf-machines/horological-machines/hm12",
+      "note": "The official product page quotes the price in CHF."
+    },
+    {
+      "fieldName": "materials.case",
+      "value": "Grade 5 titanium",
+      "sourceUrl": "https://www.mbandf.com/machines/mbf-machines/horological-machines/hm12",
+      "note": "The HM12 technical description identifies the Grade 5 titanium case construction."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 43.6,
+      "sourceUrl": "https://watchilove.com/2026/06/introducing-mbf-hm12-the-guardian/",
+      "note": "The corroborating technical specification lists 43.6 mm case width."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 49.3,
+      "sourceUrl": "https://watchilove.com/2026/06/introducing-mbf-hm12-the-guardian/",
+      "note": "The corroborating technical specification lists 49.3 mm case length."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 13.8,
+      "sourceUrl": "https://watchilove.com/2026/06/introducing-mbf-hm12-the-guardian/",
+      "note": "The corroborating technical specification lists 13.8 mm case height."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 20,
+      "sourceUrl": "https://watchilove.com/2026/06/introducing-mbf-hm12-the-guardian/",
+      "note": "The technical specification lists a 20 mm strap/lug interface."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic mechanical",
+      "sourceUrl": "https://www.mbandf.com/machines/mbf-machines/horological-machines/hm12",
+      "note": "The HM12 is described as an automatic mechanical horological machine."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 84,
+      "sourceUrl": "https://watchilove.com/2026/06/introducing-mbf-hm12-the-guardian/",
+      "note": "The corroborating technical specification gives an 84-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://timeandtidewatches.com/mbf-hm12-the-guardian-introducing/",
+      "note": "The technical summary gives 30 m water resistance."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "Velcro strap with quick-release",
+      "sourceUrl": "https://watchilove.com/2026/06/introducing-mbf-hm12-the-guardian/",
+      "note": "The HM12 uses a Velcro strap with a quick-release system for mounting on the Guardian."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseDiameterMm",
+    "lugToLugMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade",
+    "dateStatus"
+  ],
+  "note": "The HM12 Green identity is confirmed by MB&F and its dealer-correlated reference is separately documented. Exact case width/length/thickness and movement reserve are corroborated secondary facts; round diameter, lug-to-lug, configured weight, daily accuracy, lume, and date status remain null."
+}
