@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-land-dweller-40-white-rolesor",
+  "jobId": "e2454d58-eaa1-47ce-a3f4-3ce6afe5773a",
+  "reviewedAt": "2026-09-02T05:45:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Land-Dweller 40",
+    "referenceCode": "M127334-0001",
+    "variantName": "Oystersteel and white gold, intense white honeycomb dial, Flat Jubilee bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/land-dweller/m127334-0001",
+      "status": "validated_primary",
+      "note": "The official Rolex page was independently fetched on 2026-09-02 and identifies Land-Dweller 40 reference 127334 in Oystersteel and white gold, with the exact white honeycomb-dial and Flat Jubilee configuration. It supports the official USD 16,450 price, 40 mm case, 7135 manufacture calibre, approximately 66-hour reserve, -2/+2 seconds/day precision, 100 m water resistance, sapphire crystal, date, and Crownclasp details."
+    },
+    {
+      "url": "https://www.rolex.com/en-us/watches/land-dweller/all-models",
+      "status": "validated_primary",
+      "note": "The official Land-Dweller model index was independently fetched on 2026-09-02 and shows this current white Rolesor 40 mm configuration alongside separate material and size variants."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.bracelet",
+    "productionStatus",
+    "price.amountMinor",
+    "price.currency",
+    "price.marketCountry",
+    "geometry.caseDiameterMm",
+    "geometry.integratedBracelet",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crownType",
+    "operation.crystal",
+    "operation.claspMicroadjustment",
+    "complications",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1645000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127334-0001",
+      "note": "The official US page displays $16,450 for the exact Land-Dweller 40 white Rolesor configuration."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127334-0001",
+      "note": "The page is the United States locale and displays the price in USD."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/land-dweller/m127334-0001",
+      "note": "The exact official source is the US Rolex locale."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "The official source confirms a real current Rolex family missing from the owner list and accepted catalogue, but this exact variant remains research-only until independent exact-reference wearing-span, weight, lume-grade, and case-attachment evidence is reviewed. Do not add it to PostgreSQL or let it satisfy an active hard filter while those M1 fields are unknown."
+}

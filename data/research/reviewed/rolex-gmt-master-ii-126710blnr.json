@@ -1,0 +1,79 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-gmt-master-ii-126710blnr",
+  "jobId": "f8d416a0-a79c-42a2-969b-5120aac4323e",
+  "reviewedAt": "2026-09-02T06:05:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "GMT-Master II",
+    "referenceCode": "126710BLNR",
+    "variantName": "Oystersteel, black dial, blue-black Cerachrom bezel, Oyster bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126710blnr-0003",
+      "status": "validated_primary",
+      "note": "The official Rolex page was independently fetched on 2026-09-02 and identifies the exact current 126710BLNR configuration. It supports the official US price, 40 mm Oystersteel case, 3285 calibre, approximately 70-hour reserve, -2/+2 seconds/day precision, 100 m water resistance, black-and-blue Cerachrom bezel, GMT/date functions, sapphire crystal, and Oyster bracelet with Easylink."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.bracelet",
+    "productionStatus",
+    "price.amountMinor",
+    "price.currency",
+    "price.marketCountry",
+    "geometry.caseDiameterMm",
+    "geometry.integratedBracelet",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crownType",
+    "operation.crystal",
+    "operation.claspMicroadjustment",
+    "complications",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1180000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126710blnr-0003",
+      "note": "The official US page displays $11,800 for the exact current configuration."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126710blnr-0003",
+      "note": "The page is the United States locale and displays the price in USD."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/gmt-master-ii/m126710blnr-0003",
+      "note": "The exact official source is the US Rolex locale."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseThicknessMm",
+    "lugToLugMm",
+    "weightFullG",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "The exact current reference is confirmed and is absent from the accepted Rolex corpus, but it remains research-only until independent exact-reference thickness, wearing-span, full-weight, graded-lume, and case-attachment evidence is reviewed. Unknown facts remain null and cannot satisfy an active hard filter."
+}

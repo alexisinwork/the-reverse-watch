@@ -1,0 +1,79 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-yacht-master-42-226658",
+  "jobId": "87e2dd90-a64b-47a8-be6e-764c1f513d70",
+  "reviewedAt": "2026-09-02T06:06:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Yacht-Master 42",
+    "referenceCode": "M226658-0001",
+    "variantName": "18 kt yellow gold, black dial, Oysterflex bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/yacht-master/m226658-0001",
+      "status": "validated_primary",
+      "note": "The official Rolex page was independently fetched on 2026-09-02 and identifies the exact current 226658 configuration. It supports the official US price, 42 mm yellow-gold case, 3235 calibre, approximately 70-hour reserve, -2/+2 seconds/day precision, 100 m water resistance, black Cerachrom bezel, date, sapphire crystal, and Oysterflex/Glidelock configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.bracelet",
+    "productionStatus",
+    "price.amountMinor",
+    "price.currency",
+    "price.marketCountry",
+    "geometry.caseDiameterMm",
+    "geometry.integratedBracelet",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crownType",
+    "operation.crystal",
+    "operation.claspMicroadjustment",
+    "complications",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 3810000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m226658-0001",
+      "note": "The official US page displays $38,100 for the exact current configuration."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m226658-0001",
+      "note": "The page is the United States locale and displays the price in USD."
+    },
+    {
+      "fieldName": "price.marketCountry",
+      "value": "US",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/yacht-master/m226658-0001",
+      "note": "The exact official source is the US Rolex locale."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseThicknessMm",
+    "lugToLugMm",
+    "weightFullG",
+    "lumeGrade",
+    "attachmentType"
+  ],
+  "note": "The exact current reference is confirmed and is absent from the accepted Rolex corpus, but it remains research-only until independent exact-reference thickness, wearing-span, full-weight, graded-lume, and case-attachment evidence is reviewed. Unknown facts remain null and cannot satisfy an active hard filter."
+}

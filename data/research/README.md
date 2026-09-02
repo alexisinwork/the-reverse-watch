@@ -1,5 +1,12 @@
 # Research workspace contract
 
+`model-intake-index.json` is the generated, lossless comparison of the three
+owner-supplied model lists against the accepted catalogue. Rebuild it with
+`npm run audit:model-intake`. It preserves source hashes, line numbers, source
+order, verbatim expressions, canonical-brand resolution, and exact/family/no
+catalogue matches. Parenthetical and slash expressions remain
+`needs_atomization`; they are not accepted reference facts.
+
 `brand-manifest.json` is a planning queue, not a source of accepted watch facts.
 Coverage intents describe which catalogue gaps a target is meant to investigate;
 they do not claim that a not-yet-reviewed reference satisfies those axes.

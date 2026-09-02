@@ -21,6 +21,7 @@
     "audit:coverage": "tsx scripts/audit-coverage.ts",
     "evaluate:baseline": "tsx scripts/evaluate-deterministic-baseline.ts",
     "audit:research": "tsx scripts/audit-research-manifest.ts",
+    "audit:model-intake": "tsx scripts/audit-model-intake.ts",
     "plan:research": "tsx scripts/plan-coverage-research.ts",
     "import:knowledge": "tsx scripts/import-knowledge-base.ts --write",
     "audit:knowledge": "tsx scripts/import-knowledge-base.ts --check",

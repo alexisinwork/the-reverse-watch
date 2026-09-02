@@ -1639,6 +1639,17 @@ Follow-up 2026-09-01: the archetype question legends now participate in each
 fieldset's internal layout, with constrained flex items and safe wrapping. Long
 question titles therefore remain inside their cards at narrow viewport widths.
 
+Follow-up 2026-09-02: a read-only Beehiiv audit found that the latest landing
+request reached the configured `The Reserve Stories` publication but was
+classified as `invalid`. The adapter had treated every HTTP 2xx as a completed
+subscription without validating Beehiiv's response body. The corrected
+contract passes the user's explicit consent as `double_opt_override: off`,
+allows a knowingly repeated opt-in to reactivate an existing record, validates
+the returned address and provider status, and issues diagnostic access only for
+an `active` subscription. This behavior was reconciled against Beehiiv's
+[create-subscription API](https://developers.beehiiv.com/api-reference/subscriptions/create),
+retrieved 2026-09-02.
+
 ## Post-Phase-8 guided discovery continuation
 
 Status: **planned — owner-approved 2026-09-01**
@@ -1654,6 +1665,14 @@ Execute packets D0–D8 from
 [`guided-celebrity-cinema-discovery-plan.md`](guided-celebrity-cinema-discovery-plan.md)
 in order. This additive continuation does not reopen completed Phase 8, start
 commercial Phase 9, or authorize autonomous brand/model catalogue research.
+
+Owner scope amendment 2026-09-02: the owner explicitly started the separate
+exhaustive model-list audit. This reopens only the research/disposition work,
+not automatic catalogue acceptance. The lossless intake index preserves all
+220 source brand rows and 1,786 expressions; current Rolex gaps are tracked as
+separate exact-reference review targets. The existing M1, provenance,
+homogeneous-variant, additive-migration, and fail-closed requirements remain
+unchanged.
 
 ## Environment-variable ownership
 

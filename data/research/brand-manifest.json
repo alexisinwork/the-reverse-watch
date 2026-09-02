@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-08-31T20:00:00.000Z",
+  "updatedAt": "2026-09-02T05:46:28.312Z",
   "brands": [
     {
       "slug": "rolex",
@@ -348,6 +348,78 @@
           "state": "accepted",
           "coverageRationale": "Owner supplied and approved discontinued exact reference 50529 for recommendation; preserve its white-gold configuration separately from 50525.",
           "catalogueVariantId": "rolex-50529"
+        },
+        {
+          "id": "rolex-land-dweller-40-white-rolesor",
+          "referenceLabel": "Rolex Land-Dweller 40: current exact white Rolesor configuration, reference M127334-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "specialist_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Rolex's current collection now includes Land-Dweller, which is absent from the owner list and accepted catalogue. Research one exact current white Rolesor reference before considering any material or dial siblings."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126710blnr",
+          "referenceLabel": "Rolex GMT-Master II current exact Oystersteel configuration, reference 126710BLNR",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "specialist_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "The current official Rolex collection includes the blue-and-black Cerachrom bezel GMT-Master II 126710BLNR, which is absent from the accepted corpus and must remain separate from 126710BLRO and 126710GRNR."
+        },
+        {
+          "id": "rolex-yacht-master-42-226658",
+          "referenceLabel": "Rolex Yacht-Master 42 current exact yellow-gold Oysterflex configuration, reference M226658-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "specialist_mechanical"
+            ],
+            "accuracyTolerances": [
+              "no_requirement"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The current official Rolex collection includes the yellow-gold Yacht-Master 42 on Oysterflex reference 226658, which is absent from the accepted corpus and must remain separate from the RLX titanium and white-gold 42 mm variants."
         }
       ]
     },
