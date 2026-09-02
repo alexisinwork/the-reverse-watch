@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "lepee-1839-time-machine",
+  "jobId": "fd5780f7-bc91-4cf6-95af-595942a18c75",
+  "reviewedAt": "2026-09-03T11:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "L'Epée 1839",
+    "model": "Time Machine",
+    "referenceCode": "74.6001/114_BUC",
+    "variantName": "Bucherer Exclusive L'Epée Time Machine"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.lepee1839.ch/collection/collections-creative-art/time-machine",
+      "status": "validated_primary",
+      "note": "The official L'Epée page was checked on 2026-09-03 and confirms Time Machine as a mechanical sculpture/table clock, its 25.7 x 22 x 21cm dimensions, 5.2kg weight, in-house calibre 1855, 8-day power reserve, and standard references. It is explicitly not a wristwatch."
+    },
+    {
+      "url": "https://www.bucherer.com/de/en/watches/l%E2%80%99epee/time-machine-2/1392-063-3.html",
+      "status": "validated_secondary",
+      "note": "Bucherer’s exact product listing was checked on 2026-09-03 and identifies the Bucherer-exclusive Time Machine as reference 74.6001/114_BUC."
+    },
+    {
+      "url": "https://www.tourneau.com/watches/lepee-1839/time-machine-74.6001-114_buc-LEP0100022.html",
+      "status": "validated_secondary",
+      "note": "The Bucherer/Tourneau listing was checked on 2026-09-03 and corroborates manufacturer reference 74.6001/114_BUC and the brass-palladium, manual-winding clock configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; identity is confirmed, but Time Machine is an interior table clock rather than a wristwatch, so wrist-specific M1 fields are not applicable and no catalogue row is promoted."
+}

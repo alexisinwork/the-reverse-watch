@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T19:37:14.397Z",
+  "updatedAt": "2026-09-02T19:47:25.738Z",
   "brands": [
     {
       "slug": "rolex",
@@ -7468,7 +7468,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "lepee-1839-time-machine",
+          "referenceLabel": "L'Epée 1839 Time Machine exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Time Machine as a current L'Epée mechanical object; verify the exact product identity and preserve its non-wristwatch status before cataloguing."
+        }
+      ]
     },
     {
       "slug": "alain-silberstein",
@@ -7485,7 +7500,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "alain-silberstein-louis-erard-le-regulateur",
+          "referenceLabel": "Louis Erard x Alain Silberstein Le Régulateur exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Le Régulateur as a documented modern Alain Silberstein partner collaboration; verify the exact collaboration reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "ikepod",
@@ -7502,7 +7532,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 10
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "ikepod-hemipod-gen3",
+          "referenceLabel": "Ikepod Hemipod gen3 exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Hemipod gen3 as the current Swiss Made chronograph line; verify one exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "dewitt",
@@ -7519,7 +7564,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "dewitt-academia-endless-drive",
+          "referenceLabel": "DeWitt Academia Endless Drive exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Academia Endless Drive as a current DeWitt model with a published DW1653 movement; verify the exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "claude-meylan",

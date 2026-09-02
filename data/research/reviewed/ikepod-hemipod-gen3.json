@@ -1,0 +1,61 @@
+{
+  "reviewVersion": 1,
+  "targetId": "ikepod-hemipod-gen3",
+  "jobId": "aedabc7b-9dd5-46d8-a516-c37371763be6",
+  "reviewedAt": "2026-09-03T11:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Ikepod",
+    "model": "Hemipod gen3 02",
+    "referenceCode": "HE02-RU-LB",
+    "variantName": "Hemipod gen3 02"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://ikepod.com/en/30-hemipod",
+      "status": "validated_primary",
+      "note": "The official Ikepod collection page was checked on 2026-09-03 and lists HEMIPOD gen3 02 as HE02-RU-LB, priced at EUR5,900, with a Swiss Made automatic titanium chronograph, 44mm case, and pin rubber strap."
+    },
+    {
+      "url": "https://ikepod.com/en/watches/250-hemipod-he02-gen3.html",
+      "status": "validated_primary",
+      "note": "The official product URL was checked on 2026-09-03; the collection page is used as the clearer source for the exact product code because the direct product fetch exposes a conflicting page title."
+    },
+    {
+      "url": "https://monochrome-watches.com/2025-ikepod-hemipod-chronograph-re-edition-icon-marc-newton-reinvented-price-review/",
+      "status": "validated_secondary",
+      "note": "The specialist review corroborates the 2025 Hemipod gen3 chronograph identity; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker's value \"HE02 gen3\" is a model-generation label; the official collection publishes the exact product code HE02-RU-LB."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the official product code is normalized to HE02-RU-LB and no provisional M1 fact is promoted."
+}

@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "dewitt-academia-endless-drive",
+  "jobId": "d157cb68-706c-4651-abd3-c67094d5a544",
+  "reviewedAt": "2026-09-03T11:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "DeWitt",
+    "model": "Academia Endless Drive",
+    "referenceCode": "AC.ED.001",
+    "variantName": "Academia Endless Drive 18-carat rose gold and black rubber on black leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://dewitt.ch/product/academia-endless-drive/",
+      "status": "validated_primary",
+      "note": "The official DeWitt product page was checked on 2026-09-03 and confirms Academia Endless Drive, 42.5mm rose-gold/black-rubber case, 30m water resistance, automatic movement, 59-hour reserve, black leather strap, and rose-gold pin buckle."
+    },
+    {
+      "url": "https://monochrome-watches.com/dewitt-academia-endless-drive-hands-on-price/",
+      "status": "validated_secondary",
+      "note": "The specialist launch report was checked on 2026-09-03 and confirms the exact reference AC.ED.001, 60-piece pink-gold edition, DW1653 movement, 42.5mm case, 12.85mm thickness, and CHF38,500 launch price."
+    },
+    {
+      "url": "https://www.gphg.org/fr/watches/academia-endless-drive",
+      "status": "validated_secondary",
+      "note": "The GPHG reference page was checked on 2026-09-03 and corroborates reference AC.ED.001 and the Academia Endless Drive configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

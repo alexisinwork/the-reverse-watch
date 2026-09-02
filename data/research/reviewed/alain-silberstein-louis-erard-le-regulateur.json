@@ -1,0 +1,61 @@
+{
+  "reviewVersion": 1,
+  "targetId": "alain-silberstein-louis-erard-le-regulateur",
+  "jobId": "b2823dcd-e41f-4abb-b7ce-47895e93d6bc",
+  "reviewedAt": "2026-09-03T11:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Louis Erard x Alain Silberstein",
+    "model": "Le Régulateur",
+    "referenceCode": "85358TT09.BTT82",
+    "variantName": "Le Régulateur Louis Erard x Alain Silberstein"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.louiserard.com/products/le-regulateur-louis-erard-x-alain-silberstein-2",
+      "status": "validated_primary",
+      "note": "The official Louis Erard product page was checked on 2026-09-03 and explicitly confirms reference 85358TT09.BTT82, the Louis Erard x Alain Silberstein collaboration, 40mm titanium case, Sellita SW266-1 automatic calibre, 100m water resistance, and CHF4,000 price."
+    },
+    {
+      "url": "https://www.louiserard.com/collections/louis-erard-x-alain-silberstein",
+      "status": "validated_primary",
+      "note": "The official collaboration collection was checked on 2026-09-03 and confirms Le Régulateur as a current Louis Erard x Alain Silberstein model family."
+    },
+    {
+      "url": "https://monochrome-watches.com/triptyque-louis-erard-x-alain-silberstein-review-live-pics-price/",
+      "status": "validated_secondary",
+      "note": "The specialist collaboration review corroborates the Alain Silberstein Le Régulateur identity; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker's value \"2/3/85248AA15.BVA159\" does not match the exact official product selected for this review; the official page publishes 85358TT09.BTT82 for the standard Le Régulateur configuration."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the exact official Le Régulateur configuration and reference are confirmed, but no provisional M1 fact is promoted."
+}

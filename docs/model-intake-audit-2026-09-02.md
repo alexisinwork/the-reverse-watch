@@ -849,3 +849,17 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 219 `needs_review` targets and
 282 review artifacts; accepted catalogue rows remain unchanged.
+
+## Forty-second parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- L'Epée 1839 Time Machine Bucherer Exclusive `74.6001/114_BUC` — [official model page](https://www.lepee1839.ch/collection/collections-creative-art/time-machine) plus [Bucherer listing](https://www.bucherer.com/de/en/watches/l%E2%80%99epee/time-machine-2/1392-063-3.html). The exact clock reference is confirmed; the review explicitly preserves that this is a table clock, not a wristwatch.
+- Louis Erard x Alain Silberstein Le Régulateur `85358TT09.BTT82` — [official product page](https://www.louiserard.com/products/le-regulateur-louis-erard-x-alain-silberstein-2). The exact collaboration reference is confirmed; the worker's mismatching reference was rejected.
+- Ikepod Hemipod gen3 02 `HE02-RU-LB` — [official Hemipod collection](https://ikepod.com/en/30-hemipod) plus [official product URL](https://ikepod.com/en/watches/250-hemipod-he02-gen3.html). The exact product code is confirmed; the direct product page's conflicting title is not used to alter the collection identity.
+- DeWitt Academia Endless Drive `AC.ED.001` — [official product page](https://dewitt.ch/product/academia-endless-drive/) plus [specialist exact-reference report](https://monochrome-watches.com/dewitt-academia-endless-drive-hands-on-price/). The exact reference and rose-gold/black-rubber configuration are confirmed.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 223 `needs_review` targets and
+286 review artifacts; accepted catalogue rows remain unchanged.
