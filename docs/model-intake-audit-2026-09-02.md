@@ -277,6 +277,21 @@ reference, and product URL are confirmed; unresolved M1 facts remain null and
 cannot satisfy hard filters. The manifest now reports 103 `needs_review`
 targets and 166 review artifacts; accepted catalogue rows remain unchanged.
 
+## Sixth parallel exact-reference batch (retrieved 2026-09-02)
+
+DOXA was independently checked against its official product page and then
+validated through the Perplexity `sonar-pro` contract:
+
+- DOXA SUB 300T Professional `840.10.351.10` — [official card](https://doxawatches.com/products/sub-300t-professional); orange Professional dial, steel Beads of Rice bracelet, and 1,200 m water-resistance configuration.
+
+The candidate remains research-only `needs_more_evidence`: exact identity,
+reference, and product URL are confirmed, while unresolved M1 facts remain
+null and cannot satisfy hard filters. Parallel agent capacity was exhausted
+while checking Squale, Nivada Grenchen, Fortis, Hanhart, and Mühle-Glashütte;
+no unverified candidate was added for those brands. The manifest now reports
+104 `needs_review` targets and 167 review artifacts; accepted catalogue rows
+remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

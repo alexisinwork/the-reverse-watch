@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T15:06:00.297Z",
+  "updatedAt": "2026-09-02T15:52:55.651Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2758,7 +2758,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "doxa-sub-300t-professional-8401035110",
+          "referenceLabel": "DOXA SUB 300T Professional exact reference 840.10.351.10",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official SUB 300T Professional configuration; preserve the exact 42.5 mm steel, orange Professional dial, steel Beads of Rice bracelet, and 1,200 m boundary."
+        }
+      ]
     },
     {
       "slug": "squale",
