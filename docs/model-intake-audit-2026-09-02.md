@@ -807,3 +807,17 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 207 `needs_review` targets and
 270 review artifacts; accepted catalogue rows remain unchanged.
+
+## Thirty-ninth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Singer Reimagined Track1 Flamboyant Red Edition `SR007` — [official Track1 product page](https://singerreimagined.com/singer-track1-sklt-edition/) plus [specialist exact-version article](https://monochrome-watches.com/the-singer-reimagined-track-1-flamboyant-red-edition-specs-price/). The Track1 family and exact Flamboyant Red configuration are confirmed.
+- BYRNE Gyro Dial Zero — [official product page](https://en.byrnewatch.com/byrne-gyro-dial-311-zero). The exact model and configuration are confirmed; no separate manufacturer reference code is published.
+- HYT Moon Runner Desert `H02984-A` — [official product page](https://www.hytwatches.com/en/moonrunner/desert/index.html). The exact reference, configuration, and limited-edition boundary are confirmed.
+- Hautlence Vortex Bronze — [specialist exact-version article](https://monochrome-watches.com/hautlence-vortex-bronze-extreme-high-end-goes-bronze-well-live-photos-specs-price/). The historical model is confirmed; `HLR2` is retained as movement context, not a watch reference.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 211 `needs_review` targets and
+274 review artifacts; accepted catalogue rows remain unchanged.

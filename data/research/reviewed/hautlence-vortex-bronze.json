@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hautlence-vortex-bronze",
+  "jobId": "73be98fc-0025-4f02-a9fd-4f4412a03f63",
+  "reviewedAt": "2026-09-03T08:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hautlence",
+    "model": "Vortex",
+    "referenceCode": "reference not established",
+    "variantName": "Vortex Bronze"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://monochrome-watches.com/hautlence-vortex-bronze-extreme-high-end-goes-bronze-well-live-photos-specs-price/",
+      "status": "validated_secondary",
+      "note": "The specialist article was checked on 2026-09-03 and confirms the exact Vortex Bronze identity, bronze configuration, 52x50x17.8mm dimensions, HLR2 movement, eight-piece limitation, and historical CHF170,000 price."
+    },
+    {
+      "url": "https://www.hautlence.com/",
+      "status": "validated_primary",
+      "note": "The current manufacturer homepage was checked on 2026-09-03 and confirms Hautlence as the continuing maker; the historical Vortex product page is no longer in the current catalogue."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied HLR2.3; the specialist source identifies HLR2 as the movement calibre, not a published exact watch reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only historical model review; no provisional M1 fact is promoted."
+}

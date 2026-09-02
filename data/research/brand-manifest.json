@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T19:09:19.513Z",
+  "updatedAt": "2026-09-02T19:18:21.595Z",
   "brands": [
     {
       "slug": "rolex",
@@ -7083,7 +7083,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "singer-reimagined-track-1-flamboyant-sr007",
+          "referenceLabel": "Singer Reimagined Track1 Flamboyant Edition exact configuration SR007",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Track1 as the signature central chronograph family; verify the exact SR007 configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "byrne-watch",
@@ -7100,7 +7115,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 4
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "byrne-gyro-dial-311-zero",
+          "referenceLabel": "BYRNE Gyro Dial 311 Zero exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Gyro Dial 311 Zero as the core Byrne display watch; verify the exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "hyt",
@@ -7117,7 +7147,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "hyt-moon-runner",
+          "referenceLabel": "HYT Moon Runner exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Moon Runner as a distinct current-era HYT liquid-display configuration; verify the exact manufacturer reference and version before cataloguing."
+        }
+      ]
     },
     {
       "slug": "hautlence",
@@ -7134,7 +7179,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "hautlence-vortex-bronze",
+          "referenceLabel": "Hautlence Vortex Bronze exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Vortex Bronze as a distinct historical high-complication configuration; verify exact identity and reference provenance before cataloguing."
+        }
+      ]
     },
     {
       "slug": "jacob-and-co",

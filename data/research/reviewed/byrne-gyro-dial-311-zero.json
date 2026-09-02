@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "byrne-gyro-dial-311-zero",
+  "jobId": "c57e793a-bcb1-4a0a-a3f4-1e9798928288",
+  "reviewedAt": "2026-09-03T08:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "BYRNE",
+    "model": "Gyro Dial Zero",
+    "referenceCode": "reference not established",
+    "variantName": "Gyro Dial Zero Silver & Black"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://en.byrnewatch.com/byrne-gyro-dial-311-zero",
+      "status": "validated_primary",
+      "note": "The official Byrne page was checked on 2026-09-03 and confirms the exact Gyro Dial Zero Silver & Black model, CHF18,500 price, 41mm titanium case, 5555 automatic calibre, 50m water resistance, and rubber attachment."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied '311 Zero'; the official page names the exact model Gyro Dial Zero and does not publish a separate numeric/alphanumeric watch reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

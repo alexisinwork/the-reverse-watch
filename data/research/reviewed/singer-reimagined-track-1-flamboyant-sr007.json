@@ -1,0 +1,56 @@
+{
+  "reviewVersion": 1,
+  "targetId": "singer-reimagined-track-1-flamboyant-sr007",
+  "jobId": "10150482-027d-4a33-8785-54a002376676",
+  "reviewedAt": "2026-09-03T08:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Singer Reimagined",
+    "model": "Track1",
+    "referenceCode": "SR007",
+    "variantName": "Track1 Flamboyant Red Edition"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://singerreimagined.com/singer-track1-sklt-edition/",
+      "status": "validated_primary",
+      "note": "The official Track1 product page was checked on 2026-09-03 and confirms the Track1 model architecture, 43mm case platform, Singer 6361 calibre, and chronograph family."
+    },
+    {
+      "url": "https://monochrome-watches.com/the-singer-reimagined-track-1-flamboyant-red-edition-specs-price/",
+      "status": "validated_secondary",
+      "note": "The specialist article was checked on 2026-09-03 and confirms the exact Flamboyant Red Edition, titanium case, 25-piece limitation, and configuration."
+    },
+    {
+      "url": "https://www.chrono24.com/all/singer-reimagined-track-1-flamboyant-edition-sr007--id45779623.htm",
+      "status": "validated_secondary",
+      "note": "The reviewed market identity supplies the SR007 label for this exact Flamboyant Edition; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

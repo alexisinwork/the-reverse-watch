@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hyt-moon-runner",
+  "jobId": "5957dc12-cbd5-46cb-84f0-aafc5deb136c",
+  "reviewedAt": "2026-09-03T08:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "HYT",
+    "model": "Moon Runner Desert",
+    "referenceCode": "H02984-A",
+    "variantName": "Moon Runner Desert Limited Edition of 15"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hytwatches.com/en/moonrunner/desert/index.html",
+      "status": "validated_primary",
+      "note": "The official HYT page was checked on 2026-09-03 and confirms Moon Runner Desert, reference H02984-A, 601-MO movement, 48x52.3x17.2mm dimensions, CHF125,000 price, 30m water resistance, and 15-piece limitation."
+    },
+    {
+      "url": "https://www.hytwatches.com/en/moonrunner/col_moonrunner.html",
+      "status": "validated_primary",
+      "note": "The official Moon Runner collection page was checked on 2026-09-03 and confirms Desert as a distinct limited Moon Runner configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}
