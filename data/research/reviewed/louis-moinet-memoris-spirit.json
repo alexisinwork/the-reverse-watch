@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "louis-moinet-memoris-spirit",
+  "jobId": "489191b7-a91e-46ee-9c69-148fddcbfa57",
+  "reviewedAt": "2026-09-03T09:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Louis Moinet",
+    "model": "Memoris Spirit",
+    "referenceCode": "LM-84.20.50",
+    "variantName": "Memoris Spirit Grade 5 Titanium Limited Edition of 60"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://louismoinet.com/watches/memoris-spirit-lm-84-20-50/",
+      "status": "validated_primary",
+      "note": "The official product page was checked on 2026-09-03 and explicitly confirms Memoris Spirit reference LM-84.20.50, Grade 5 titanium, 60-piece limitation, 40.7mm case, LM84 automatic calibre, 48-hour reserve, 50m water resistance, 20mm lug width, alligator strap, and folding clasp."
+    },
+    {
+      "url": "https://monochrome-watches.com/louis-moinet-memoris-spirit-chronograph-hands-on-price/",
+      "status": "validated_secondary",
+      "note": "The specialist review was checked on 2026-09-03 and corroborates the Memoris Spirit chronograph architecture and titanium configuration; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

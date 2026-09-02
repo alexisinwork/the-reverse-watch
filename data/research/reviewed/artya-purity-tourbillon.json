@@ -1,0 +1,61 @@
+{
+  "reviewVersion": 1,
+  "targetId": "artya-purity-tourbillon",
+  "jobId": "a38e3bb9-1504-4108-9cbc-cc0d1c64c941",
+  "reviewedAt": "2026-09-03T09:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "ArtyA",
+    "model": "Purity Tourbillon Sport Edition",
+    "referenceCode": "reference not established",
+    "variantName": "Purity Wavy Tourbillon Sport Edition Orange"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.artya.com/purity-tourbillon-sport",
+      "status": "validated_primary",
+      "note": "The official ArtyA page was checked on 2026-09-03 and confirms Purity Tourbillon Sport Edition, orange as one of the launch expressions, 44mm Absolute Sapphire case, manufacture flying tourbillon, 70-hour reserve, 30m water resistance, and nine-piece limitation. It publishes no numeric watch reference."
+    },
+    {
+      "url": "https://monochrome-watches.com/introducing-artya-purity-tourbillon-sport-edition-sapphire-crystal-telos-skeleton-specs-price/",
+      "status": "validated_secondary",
+      "note": "The specialist introduction was checked on 2026-09-03 and corroborates the Purity Tourbillon Sport identity and sapphire configuration; it is not used to invent a reference code or promote M1 facts."
+    },
+    {
+      "url": "https://timeandtidewatches.com/artya-geneve-purity-tourbillon-sport-edition-introducing/",
+      "status": "validated_secondary",
+      "note": "The specialist launch coverage was checked on 2026-09-03 and corroborates the orange Sport Edition configuration; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker's value \"Purity Tourbillon Sport Edition\" is the official model label, not a published manufacturer reference code; the official page publishes no numeric watch reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the exact model and orange configuration are confirmed, but no manufacturer reference code is published."
+}

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T19:26:12.351Z",
+  "updatedAt": "2026-09-02T19:37:14.397Z",
   "brands": [
     {
       "slug": "rolex",
@@ -7339,7 +7339,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "daniel-roth-extra-plat",
+          "referenceLabel": "Daniel Roth Extra Plat revival exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the revived Extra Plat as Daniel Roth's current core time-only model; verify one exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "gerald-genta-brand",
@@ -7356,7 +7371,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "gerald-genta-arena-mickey-103613",
+          "referenceLabel": "Gérald Genta Arena Mickey exact reference 103613",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the limited Arena Mickey as a distinctive Gérald Genta/Bulgari complication; verify the exact reference and production boundary before cataloguing."
+        }
+      ]
     },
     {
       "slug": "artya",
@@ -7373,7 +7403,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "artya-purity-tourbillon",
+          "referenceLabel": "ArtyA Purity Tourbillon exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Purity Tourbillon as ArtyA's current flagship line; verify one exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "louis-moinet",
@@ -7390,7 +7435,23 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "louis-moinet-memoris-spirit",
+          "referenceLabel": "Louis Moinet Memoris Spirit exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph",
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Memoris Spirit as Louis Moinet's chronograph-first flagship; verify one exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "lepee-1839",

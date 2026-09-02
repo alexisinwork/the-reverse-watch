@@ -1,0 +1,62 @@
+{
+  "reviewVersion": 1,
+  "targetId": "gerald-genta-arena-mickey-103613",
+  "jobId": "cf779baf-3d6d-491b-9b3c-648ab61513b8",
+  "reviewedAt": "2026-09-03T09:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Gérald Genta",
+    "model": "Arena Retrograde with Smiling Disney Mickey Mouse",
+    "referenceCode": "103613",
+    "variantName": "Arena Retrograde with Smiling Disney Mickey Mouse"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.bulgari.com/en-us/",
+      "status": "validated_primary",
+      "note": "The current Bulgari domain was checked on 2026-09-03 as the successor brand channel; the historical Gérald Genta product page is no longer exposed there, so no M1 fact is accepted from this landing page."
+    },
+    {
+      "url": "https://watchesbysjx.com/2021/08/bulgari-gerald-genta-retro-mickey-mouse-disney-103613.html",
+      "status": "validated_secondary",
+      "note": "The specialist launch report was checked on 2026-09-03 and confirms the exact Gérald Genta/Bulgari Arena Retrograde Mickey Mouse reference 103613 and 150-piece edition."
+    },
+    {
+      "url": "https://www.monochrome-watches.com/gerald-genta-arena-retrograde-with-smiling-disney-mickey-mouse-2021-hands-on-price/",
+      "status": "validated_secondary",
+      "note": "The specialist exact-version review was checked on 2026-09-03 and corroborates the Arena Retrograde with Smiling Disney Mickey Mouse identity and reference 103613."
+    },
+    {
+      "url": "https://www.thewatchpages.com/watches/gerald-genta-arena-retro-mickey-mouse-disney-103613",
+      "status": "validated_secondary",
+      "note": "The exact-reference listing was checked on 2026-09-03 and records reference 103613, 150-piece limitation, BVL 262, 100m water resistance, and the red rubber strap; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "daniel-roth-extra-plat",
+  "jobId": "26ec14bf-a63c-4a31-91e8-ae17aaa4b2df",
+  "reviewedAt": "2026-09-03T09:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Daniel Roth",
+    "model": "Extra Plat",
+    "referenceCode": "DBBG01A1",
+    "variantName": "Extra Plat Platinum"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.danielroth.com/watch/extraplat/extraplat-souscription/",
+      "status": "validated_primary",
+      "note": "The official Extra Plat page was checked on 2026-09-03 and confirms the revived Extra Plat family, double-ellipse case, DR002 manual movement, 7.7mm profile, 30m water resistance, and 20mm leather strap; this page is the yellow-gold Souscription configuration."
+    },
+    {
+      "url": "https://www.thewatchpages.com/watches/daniel-roth-extra-plat-platinum-dbbg01a1",
+      "status": "validated_secondary",
+      "note": "The exact platinum configuration and manufacturer reference DBBG01A1 were checked on 2026-09-03; the listing corroborates 38.60 x 35.50mm, DR002, 65-hour reserve, and 30m water resistance."
+    },
+    {
+      "url": "https://monochrome-watches.com/2026-daniel-roth-extra-plat-platinum-edition-grey-guilloche-dial-introducing-price/",
+      "status": "validated_secondary",
+      "note": "The specialist launch report was checked on 2026-09-03 and independently confirms Extra Plat Platinum reference DBBG01A1, CHF65,000 launch price, and the platinum configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

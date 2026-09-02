@@ -835,3 +835,17 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 215 `needs_review` targets and
 278 review artifacts; accepted catalogue rows remain unchanged.
+
+## Forty-first parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Daniel Roth Extra Plat Platinum `DBBG01A1` — [official Extra Plat page](https://www.danielroth.com/watch/extraplat/extraplat-souscription/) plus [specialist platinum launch report](https://monochrome-watches.com/2026-daniel-roth-extra-plat-platinum-edition-grey-guilloche-dial-introducing-price/). The exact platinum reference is confirmed; the official page currently exposes the yellow-gold Souscription configuration, so no M1 fact is transferred across variants.
+- Gérald Genta Arena Retrograde with Smiling Disney Mickey Mouse `103613` — [specialist exact-version report](https://www.monochrome-watches.com/gerald-genta-arena-retrograde-with-smiling-disney-mickey-mouse-2021-hands-on-price/) plus [exact-reference listing](https://www.thewatchpages.com/watches/gerald-genta-arena-retro-mickey-mouse-disney-103613). The exact reference and 150-piece identity are corroborated; the current Bulgari site no longer exposes the historical product page.
+- ArtyA Purity Tourbillon Sport Edition Orange — [official product page](https://www.artya.com/purity-tourbillon-sport) plus [specialist introduction](https://monochrome-watches.com/introducing-artya-purity-tourbillon-sport-edition-sapphire-crystal-telos-skeleton-specs-price/). The exact model and orange configuration are confirmed, but no manufacturer reference code is published.
+- Louis Moinet Memoris Spirit `LM-84.20.50` — [official product page](https://louismoinet.com/watches/memoris-spirit-lm-84-20-50/). The exact titanium reference, 60-piece boundary, and product identity are confirmed.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 219 `needs_review` targets and
+282 review artifacts; accepted catalogue rows remain unchanged.
