@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "record-watch-co-vintage-signed-automatic",
+  "jobId": "14729f03-a0c3-4422-97e1-de86ec10b35b",
+  "reviewedAt": "2026-09-03T16:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Record Watch Co.",
+    "model": "historical automatic wristwatch",
+    "referenceCode": "reference not established",
+    "variantName": "exact signed automatic configuration not established"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.time2tell.com/en/history-of-the-brands/514-the-true-story-of-record-watches.html",
+      "status": "validated_secondary",
+      "note": "The historical brand account was checked on 2026-09-03 and supports the discontinued Record Watch Co. context and historical automatic production, but does not map one exact reference or configuration."
+    },
+    {
+      "url": "https://www.omegaforums.net/threads/vintage-record-calatrava-automatic-ss.42105/",
+      "status": "rejected",
+      "note": "The forum material demonstrates an individual vintage Record automatic but does not provide a sufficiently complete, authenticated, reference-level evidence chain for the target; it cannot define a catalogue identity."
+    },
+    {
+      "url": "https://www.chrono24.com/record/index.htm",
+      "status": "rejected",
+      "note": "The marketplace aggregates heterogeneous Record watches, including different complications and periods, without a single homogeneous reference; it is not used as an exact product source."
+    }
+  ],
+  "verifiedProvisionalFields": [],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "No exact materially homogeneous Record Watch Co. automatic reference was confirmed. The source set mixes Calatrava, Datofix, chronometer, military, and other vintage examples, so no model identity, reference, product URL, or M1 fact is promoted. Do not merge this historical brand with the modern Longines Record collection."
+}

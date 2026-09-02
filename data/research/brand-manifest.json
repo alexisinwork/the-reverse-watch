@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:31:54.170Z",
+  "updatedAt": "2026-09-02T20:33:09.773Z",
   "brands": [
     {
       "slug": "rolex",
@@ -6029,7 +6029,7 @@
         {
           "id": "record-watch-co-vintage-signed-automatic",
           "referenceLabel": "Record Watch Co. signed vintage automatic watch; exact reference to establish",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "functionProfiles": [
               "time_only_no_date"

@@ -910,6 +910,21 @@ rows were promoted. The manifest now reports 233 `needs_review` targets, 296
 review artifacts, and one remaining `planned` target; accepted catalogue rows
 remain unchanged.
 
+## Forty-ninth exact-reference negative result (retrieved 2026-09-03)
+
+The Record Watch Co. signed-vintage-automatic target was checked through
+Perplexity and its source set. The historical brand account supports a
+discontinued Record Watch Co. line and historical automatic production, but the
+available forum and marketplace material combines unrelated Calatrava, Datofix,
+chronometer, military, and other vintage examples. No source chain establishes
+one authenticated, materially homogeneous reference with a stable product URL.
+
+The target is therefore recorded as `needs_more_evidence` with all M1 fields
+missing. No catalogue row is promoted, and the historical Record Watch Co. line
+is explicitly kept separate from the modern Longines Record collection. The
+manifest now reports 246 `needs_review` targets, zero `planned` targets, and 309
+review artifacts; accepted catalogue rows remain unchanged.
+
 ## Forty-sixth parallel exact-reference batch (retrieved 2026-09-03)
 
 Four additional configurations produced schema-valid Perplexity results and
