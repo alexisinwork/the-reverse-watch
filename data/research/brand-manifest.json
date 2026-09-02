@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:51:23.457Z",
+  "updatedAt": "2026-09-02T18:59:11.868Z",
   "brands": [
     {
       "slug": "rolex",
@@ -6827,7 +6827,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "dornbluth-calibre-99-1-m",
+          "referenceLabel": "D. Dornblüth & Sohn Calibre 99.1-M exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Calibre 99.1-M as a core independent German hand-wound model; locate a primary or specialist exact-reference source before cataloguing."
+        }
+      ]
     },
     {
       "slug": "greubel-forsey",
@@ -6844,7 +6859,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 9
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "greubel-forsey-quadruple-tourbillon",
+          "referenceLabel": "Greubel Forsey Quadruple Tourbillon exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Quadruple Tourbillon as a distinct high-complication family; verify exact manufacturer configuration and reference identity before cataloguing."
+        }
+      ]
     },
     {
       "slug": "philippe-dufour",
@@ -6861,7 +6891,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "philippe-dufour-simplicity",
+          "referenceLabel": "Philippe Dufour Simplicity exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Simplicity as the core Philippe Dufour time-only model; verify exact size/reference provenance before cataloguing."
+        }
+      ]
     },
     {
       "slug": "roger-w-smith",
@@ -6878,7 +6923,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "roger-w-smith-series-2",
+          "referenceLabel": "Roger W. Smith Series 2 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Series 2 as the maker's core time-only line; verify exact current configuration and reference identity before cataloguing."
+        }
+      ]
     },
     {
       "slug": "romain-gauthier",

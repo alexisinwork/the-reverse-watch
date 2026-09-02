@@ -1,0 +1,56 @@
+{
+  "reviewVersion": 1,
+  "targetId": "philippe-dufour-simplicity",
+  "jobId": "4da8c785-e255-4257-b756-cd5b8bacdbb2",
+  "reviewedAt": "2026-09-03T07:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Philippe Dufour",
+    "model": "Simplicity",
+    "referenceCode": "reference not established",
+    "variantName": "Simplicity 37 mm white gold, silver guilloché dial, small seconds"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://philippedufour.ch/en/philippe-dufour/",
+      "status": "validated_primary",
+      "note": "The maker's official page was checked on 2026-09-03 and confirms Simplicity as the model launched in 2000, with individual pieces in gold, platinum, and rare steel."
+    },
+    {
+      "url": "https://www.phillips.com/detail/philippe-dufour/130502",
+      "status": "validated_secondary",
+      "note": "The Phillips institutional auction record was checked on 2026-09-03 and confirms a Simplicity watch identity; it does not establish a factory reference for the specific 37mm white-gold variant."
+    },
+    {
+      "url": "https://www.chrono24.com/all/philippe-dufour-simplicity--id41856758.htm",
+      "status": "validated_secondary",
+      "note": "The reviewed market listing supplies the specific 37mm white-gold and silver guilloché configuration, but it is not sufficient to create a manufacturer reference or promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied a synthetic catalogue label; Philippe Dufour does not publish it as a factory reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the exact market configuration is retained as a lead, but no provisional M1 fact is promoted."
+}

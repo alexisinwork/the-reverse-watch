@@ -779,3 +779,17 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 199 `needs_review` targets and
 262 review artifacts; accepted catalogue rows remain unchanged.
+
+## Thirty-seventh parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- D. Dornblüth & Sohn Caliber 99.1-M `99.1-M` — [official product page](https://www.dornblueth.com/details-en-D.Dornbl%C3%BCth%20&%20Sohn%20-%20caliber%2099.1-M%20small%20second%2040mm-23.html). The exact small-second 40mm configuration and reference are confirmed.
+- Greubel Forsey Quadruple Tourbillon Secret — [official history page](https://greubelforsey.com/en/history-timepieces/quadruple-tourbillon-secret). The exact model and limited configuration are confirmed; the URL path was not treated as a reference code.
+- Philippe Dufour Simplicity 37mm white gold — [official maker page](https://philippedufour.ch/en/philippe-dufour/) plus [Phillips auction record](https://www.phillips.com/detail/philippe-dufour/130502). The model is confirmed and the reviewed-market configuration is retained, but no manufacturer reference code is established.
+- Roger W. Smith Series Two 40mm yellow gold — [official Watches page](https://rwsmithwatches.com/watches) plus [specialist retailer archive](https://www.acollectedman.com/products/buy-roger-smith-series-2-yellow-gold-watch). The Series Two family and 40mm option are confirmed; the URL path was not treated as a reference code.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 203 `needs_review` targets and
+266 review artifacts; accepted catalogue rows remain unchanged.

@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "roger-w-smith-series-2",
+  "jobId": "c6fa04b6-c72c-4f7b-bf3c-46d00013b3f1",
+  "reviewedAt": "2026-09-03T07:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Roger W. Smith",
+    "model": "Series Two",
+    "referenceCode": "reference not established",
+    "variantName": "Series Two 40mm Yellow Gold Mark 2"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://rwsmithwatches.com/watches",
+      "status": "validated_primary",
+      "note": "The maker's Watches page was checked on 2026-09-03 and confirms Series Two, its power-reserve display, and 38mm or 40mm case options."
+    },
+    {
+      "url": "https://www.acollectedman.com/products/buy-roger-smith-series-2-yellow-gold-watch",
+      "status": "validated_secondary",
+      "note": "The specialist retailer archive was checked on 2026-09-03 and corroborates the yellow-gold Series 2 configuration; it does not establish a manufacturer reference code or independently prove the Mark 2 designation."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied the manufacturer's URL path as a reference code; this is a locator, not a published Roger W. Smith reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

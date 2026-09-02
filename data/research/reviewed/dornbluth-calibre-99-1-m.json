@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "dornbluth-calibre-99-1-m",
+  "jobId": "38a508fd-7ff5-49f0-825b-8e4c87cfc2fa",
+  "reviewedAt": "2026-09-03T07:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "D. Dornblüth & Sohn",
+    "model": "Caliber 99.1-M",
+    "referenceCode": "99.1-M",
+    "variantName": "Caliber 99.1-M small second 40mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.dornblueth.com/details-en-D.Dornbl%C3%BCth%20&%20Sohn%20-%20caliber%2099.1-M%20small%20second%2040mm-23.html",
+      "status": "validated_primary",
+      "note": "The official product page was checked on 2026-09-03 and confirms the exact 99.1-M small-second 40mm identity, case size, and movement family."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

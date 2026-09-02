@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "greubel-forsey-quadruple-tourbillon",
+  "jobId": "ce581b43-95cf-40a1-af27-06a33c321310",
+  "reviewedAt": "2026-09-03T07:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Greubel Forsey",
+    "model": "Quadruple Tourbillon Secret",
+    "referenceCode": "reference not established",
+    "variantName": "Quadruple Tourbillon Secret"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://greubelforsey.com/en/history-timepieces/quadruple-tourbillon-secret",
+      "status": "validated_primary",
+      "note": "The official history-timepieces page was checked on 2026-09-03 and confirms the exact Quadruple Tourbillon Secret model, 40-piece 2012-2018 limitation, and configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied the official URL path as a reference code; the manufacturer page does not publish a numeric or alphanumeric reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}
