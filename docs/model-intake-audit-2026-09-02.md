@@ -364,6 +364,19 @@ manufacturer provenance are recorded, while unresolved M1 facts remain null.
 The manifest now reports 114 `needs_review` targets and 177 review artifacts;
 accepted catalogue rows remain unchanged.
 
+## Twelfth parallel exact-reference batch (retrieved 2026-09-02)
+
+The Fortis reference conflict was resolved by an isolated Perplexity retry and
+primary-source recheck:
+
+- Fortis Marinemaster M-40 `F8120024` — [official card](https://www.fortis-swiss.com/products/marinemaster-m-40), Amber Orange on Horizon Strap.
+
+The earlier `F8120028` proposal is rejected. The corrected exact identity is
+recorded as research-only `needs_more_evidence`; unresolved M1 facts remain
+null and cannot satisfy hard filters. The manifest now reports 115
+`needs_review` targets and 178 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

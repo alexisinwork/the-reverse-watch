@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "fortis-current-exact-tool",
+  "jobId": "ed7f5aa5-4658-4ffc-8260-e5b76f16ec24",
+  "reviewedAt": "2026-09-02T19:05:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Fortis",
+    "model": "Marinemaster M-40",
+    "referenceCode": "F8120024",
+    "variantName": "Amber Orange on Horizon Strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.fortis-swiss.com/products/marinemaster-m-40",
+      "status": "validated_primary",
+      "note": "The official Fortis product page was checked on 2026-09-02 and identifies the current Marinemaster M-40 as reference F8120024. The earlier Perplexity proposal F8120028 was rejected; the corrected extraction agrees with the official reference and Amber Orange/Horizon Strap configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

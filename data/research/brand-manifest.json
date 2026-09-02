@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:22:34.206Z",
+  "updatedAt": "2026-09-02T16:24:27.750Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2891,8 +2891,8 @@
       "targets": [
         {
           "id": "fortis-current-exact-tool",
-          "referenceLabel": "Fortis Marinemaster M-40 exact reference F8120024; verify the current official configuration and distinguish it from the rejected F8120028 proposal",
-          "state": "planned",
+          "referenceLabel": "Fortis Marinemaster M-40 exact reference F8120024, Amber Orange on Horizon Strap",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"
@@ -2901,7 +2901,7 @@
               "simple_date"
             ]
           },
-          "coverageRationale": "Resolve the previous Perplexity F8120028 mismatch against the current Fortis manufacturer card, which identifies the Marinemaster M-40 as F8120024."
+          "coverageRationale": "Current Fortis manufacturer card and corrected Perplexity extraction agree on F8120024; preserve the exact Amber Orange dial and Horizon Strap configuration."
         }
       ]
     },
