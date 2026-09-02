@@ -514,6 +514,21 @@ added and unresolved M1 facts remain null. The manifest now reports 139
 `needs_review` targets and 202 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Twenty-first parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional current or currently documented luxury configurations were
+sent through the Perplexity worker and checked against manufacturer pages:
+
+- Arnold & Son HM London Skyline Steel 39.5mm — [official product page](https://www.arnoldandson.com/collections/hm/hm-london-skyline-steel/). The official card confirms the exact steel model and 20-piece edition, but leaves its Reference field blank; the secondary `1764` label is not accepted as a watch SKU.
+- Angelus Chronodate Titanium Black `0CDZF.B03A.M009T` — [official product page](https://angelus-watches.com/collections/lab/chronodate-titanium-black/). The exact manufacturer reference and titanium/carbon configuration are confirmed.
+- BOVET 1822 19Thirty Blue Meteorite Titanium `NTT0011` — [official product page](https://www.bovet.com/timepiece/19thirty-ntt0011/) and [official collection page](https://www.bovet.com/collections/fleurier/19thirty/). The exact reference and variant are confirmed.
+- Speake-Marin Resilience Titanium 38mm `413802000` — [official product page](https://speake-marin.com/watch/resilience-titanium/). The exact 38mm reference is confirmed separately from the 42mm `414202000` configuration.
+
+All four remain research-only `needs_more_evidence`; no catalogue rows were
+added and unresolved M1 facts remain null. The manifest now reports 143
+`needs_review` targets and 206 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

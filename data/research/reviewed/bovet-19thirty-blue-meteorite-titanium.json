@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "bovet-19thirty-blue-meteorite-titanium",
+  "jobId": "903774b9-e1d0-4083-b741-534682e61a96",
+  "reviewedAt": "2026-09-02T21:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "BOVET 1822",
+    "model": "19Thirty",
+    "referenceCode": "NTT0011",
+    "variantName": "19Thirty Blue Meteorite Titanium"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.bovet.com/timepiece/19thirty-ntt0011/",
+      "status": "validated_primary",
+      "note": "BOVET 1822's official product page was checked on 2026-09-02 and confirms the exact NTT0011 product reference, 19Thirty Blue Meteorite Titanium variant, 42mm Grade 5 titanium case, hand-wound in-house movement, seven-day reserve, and hours/minutes/small-seconds/power-reserve indications."
+    },
+    {
+      "url": "https://www.bovet.com/collections/fleurier/19thirty/",
+      "status": "validated_primary",
+      "note": "The official 19Thirty collection page was checked on 2026-09-02 and confirms the family and Blue Meteorite Titanium material variant."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact BOVET reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

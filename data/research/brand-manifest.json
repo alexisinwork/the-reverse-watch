@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T17:03:23.625Z",
+  "updatedAt": "2026-09-02T17:07:20.450Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2865,7 +2865,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "arnold-son-hm-london-skyline-steel",
+          "referenceLabel": "Arnold & Son HM London Skyline Steel 39.5mm (official model; separate SKU unpublished)",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Arnold & Son product page identifies the steel HM London Skyline limited edition; the card leaves Reference blank, so no secondary `1764` label is treated as a manufacturer SKU."
+        }
+      ]
     },
     {
       "slug": "angelus",
@@ -2882,7 +2897,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "angelus-chronodate-titanium-black-0cdzf-b03a-m009t",
+          "referenceLabel": "Angelus Chronodate Titanium Black exact reference 0CDZF.B03A.M009T",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Angelus product page publishes the exact reference and titanium/carbon Chronodate configuration; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "bovet",
@@ -2899,7 +2929,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "bovet-19thirty-blue-meteorite-titanium",
+          "referenceLabel": "BOVET 1822 19Thirty Blue Meteorite Titanium current official variant",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official BOVET 19Thirty collection page identifies the Blue Meteorite Titanium variant; verify whether a separate manufacturer reference is published and complete M1 fields."
+        }
+      ]
     },
     {
       "slug": "speake-marin",
@@ -2916,7 +2961,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "speake-marin-resilience-titanium-38-413802000",
+          "referenceLabel": "Speake-Marin Resilience Titanium 38mm exact reference 413802000",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Speake-Marin product page publishes the 38mm reference 413802000 and titanium Resilience configuration; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "chronoswiss",

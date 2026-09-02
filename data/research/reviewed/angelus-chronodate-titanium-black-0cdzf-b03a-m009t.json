@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "angelus-chronodate-titanium-black-0cdzf-b03a-m009t",
+  "jobId": "5009ae63-6429-4ab5-b76d-62bc9ba796c6",
+  "reviewedAt": "2026-09-02T21:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Angelus",
+    "model": "Chronodate Titanium Black",
+    "referenceCode": "0CDZF.B03A.M009T",
+    "variantName": "Chronodate Titanium Black Titanium bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://angelus-watches.com/collections/lab/chronodate-titanium-black/",
+      "status": "validated_primary",
+      "note": "Angelus's official product page was checked on 2026-09-02 and confirms reference 0CDZF.B03A.M009T, the Chronodate Titanium Black configuration, A-500 Titanium Edition automatic chronograph, 42.5mm titanium/carbon composite case, peripheral date, 30m rating, and titanium bracelet."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Angelus reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

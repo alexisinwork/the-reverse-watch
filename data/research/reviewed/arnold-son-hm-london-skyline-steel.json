@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "arnold-son-hm-london-skyline-steel",
+  "jobId": "3eeb73a3-00ba-4b10-a267-79e681d2e401",
+  "reviewedAt": "2026-09-02T21:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Arnold & Son",
+    "model": "HM London Skyline",
+    "referenceCode": "HM London Skyline Steel (no published SKU)",
+    "variantName": "Steel 39.5mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.arnoldandson.com/collections/hm/hm-london-skyline-steel/",
+      "status": "validated_primary",
+      "note": "Arnold & Son's official product page was checked on 2026-09-02 and confirms the HM London Skyline Steel 39.5mm model, 20-piece limited edition, A&S1001 movement, 90-hour reserve, stainless-steel case, 39.5mm diameter, 30m rating, and blue alligator strap. The official Reference field is blank; the secondary `1764` mention is not accepted as a watch SKU."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The official card leaves Reference blank; `1764` in a secondary article is an anniversary/year label rather than a manufacturer reference. The stable product/model identifier is retained without inventing a numeric SKU."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. Exact Arnold & Son model and official URL are confirmed; no manufacturer SKU is published on the card and all M1 facts remain provisional."
+}

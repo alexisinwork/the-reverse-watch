@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "speake-marin-resilience-titanium-38-413802000",
+  "jobId": "7ffeff97-7c3b-4f47-ba6b-5f1ee69c4217",
+  "reviewedAt": "2026-09-02T21:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Speake-Marin",
+    "model": "Resilience Titanium",
+    "referenceCode": "413802000",
+    "variantName": "Resilience Titanium 38mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://speake-marin.com/watch/resilience-titanium/",
+      "status": "validated_primary",
+      "note": "Speake-Marin's official product page was checked on 2026-09-02 and confirms reference 413802000 for the 38mm Resilience Titanium, grade 5 titanium Piccadilly case, SMA03 automatic micro-rotor movement, 52-hour reserve, 3 ATM rating, and light-blue Saffiano leather strap."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Speake-Marin reference and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}
