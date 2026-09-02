@@ -377,6 +377,18 @@ null and cannot satisfy hard filters. The manifest now reports 115
 `needs_review` targets and 178 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Thirteenth parallel exact-reference batch (retrieved 2026-09-02)
+
+Autodromo's current Monoposto Series Two Azzurro product variant was found by
+Perplexity and checked against the [official product card](https://autodromo.com/products/monoposto?variant=42336117817478).
+The manufacturer exposes the exact color variant but no separate SKU, so the
+product-and-color identifier is retained without inventing a reference.
+
+It remains research-only `needs_more_evidence`; unresolved M1 facts remain
+null and cannot satisfy hard filters. The manifest now reports 116
+`needs_review` targets and 179 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

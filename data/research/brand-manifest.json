@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:24:27.750Z",
+  "updatedAt": "2026-09-02T16:26:55.428Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4243,7 +4243,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 13
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "autodromo-monoposto-series-two-azzurro",
+          "referenceLabel": "Autodromo Monoposto Series Two Azzurro exact product variant on the official product card",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Monoposto Series Two Azzurro configuration; preserve the exact dial, limited-edition color, leather attachment, and no-date boundary."
+        }
+      ]
     },
     {
       "slug": "halios",

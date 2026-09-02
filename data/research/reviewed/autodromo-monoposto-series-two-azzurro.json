@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "autodromo-monoposto-series-two-azzurro",
+  "jobId": "27f7ccb3-b706-4b48-aee0-f2dba9ca15a0",
+  "reviewedAt": "2026-09-02T19:40:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Autodromo",
+    "model": "Monoposto Series Two",
+    "referenceCode": "Monoposto Series Two / Azzurro",
+    "variantName": "Monoposto Series Two - Azzurro Dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://autodromo.com/products/monoposto?variant=42336117817478",
+      "status": "validated_primary",
+      "note": "The official Autodromo product card was checked on 2026-09-02 and confirms the current Monoposto Series Two Azzurro configuration and exact variant selection. Autodromo does not expose a separate reference/SKU on the product card; the product-and-color identifier is retained without inventing one."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact current Azzurro product variant and official URL are confirmed; Autodromo's page does not publish a separate SKU. Physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}
