@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:18:06.230Z",
+  "updatedAt": "2026-09-02T18:32:20.373Z",
   "brands": [
     {
       "slug": "rolex",
@@ -6083,7 +6083,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 24
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "enicar-sherpa-graph-072-02-01",
+          "referenceLabel": "Enicar Sherpa Graph exact vintage reference 072-02-01",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Sherpa Graph ref. 072-02-01 as a distinct historical chronograph; verify the exact reference and preserve missing vintage facts as null."
+        }
+      ]
     },
     {
       "slug": "solvil-et-titus",
@@ -6100,7 +6115,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 25
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "solvil-et-titus-saber-automatic-w06-03423-001",
+          "referenceLabel": "Solvil et Titus Saber 3 Hands Date Automatic exact reference W06-03423-001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The official Solvil et Titus storefront lists Saber automatic date variants by exact W06 reference; verify W06-03423-001 against the primary product page."
+        }
+      ]
     },
     {
       "slug": "smiths",
@@ -6117,7 +6147,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 20
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "smiths-everest-prs-25-36mm",
+          "referenceLabel": "Smiths Everest exact reference PRS-25 36mm black dial",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Time Factors publishes a dedicated Smiths Everest PRS-25 product page with an exact 36mm configuration; verify the current reference and complete M1 facts."
+        }
+      ]
     },
     {
       "slug": "sea-gull",
@@ -6134,7 +6179,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 16
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "sea-gull-1963-times-edition-819-17-1963a",
+          "referenceLabel": "Sea-Gull 1963 Times Edition Reissue exact reference 819.17.1963A",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the current 1963 Times Edition Reissue by exact reference 819.17.1963A; verify it against Sea-Gull's official product page and avoid inferring missing dimensions."
+        }
+      ]
     },
     {
       "slug": "shanghai-watch",

@@ -706,3 +706,19 @@ attachment boundaries differ. The structured S2-Rubber configuration is used
 over an inconsistent prose sentence on that page: it specifies FKM Tropic
 rubber and a pin buckle. A ZRC dossier and exact research targets must be added
 before these references can enter the manifest or PostgreSQL.
+
+## Thirty-second parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Enicar Sherpa Graph `072-02-01` — [specialist reference guide](https://enicar101.com/sherpa-graph-mkiii/). The historical exact reference is confirmed; no current manufacturer page exists for this vintage model.
+- Solvil et Titus Saber 3 Hands Date Automatic `W06-03423-001` — [official global storefront](https://www.solvil-et-titus.com/). The exact reference is listed by the manufacturer at the Saber collection/homepage level, and the exact product route is retained.
+- Smiths Everest PRS-25 36mm — [official Time Factors product page](https://www.timefactors.com/products/smiths-everest-prs-25-36mm-black-dial). The exact reference and black-dial configuration are confirmed; the current sold-out state does not invalidate identity.
+- Sea-Gull 1963 Times Edition Reissue `819.17.1963A` — [official product page](https://en.seagullwatch.com/tr/products/seagull-1963-chronograph-watch-times-edition-reissue-37-3mm-1963a). The exact model number and 37.3mm configuration are confirmed.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. Every accepted identity has an explicit source check, while
+the incomplete M1 fields remain null. The manifest now reports 183
+`needs_review` targets and 246 review artifacts; accepted catalogue rows remain
+unchanged.

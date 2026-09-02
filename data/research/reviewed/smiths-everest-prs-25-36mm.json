@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "smiths-everest-prs-25-36mm",
+  "jobId": "bd02fdb9-02d1-466e-9fa2-4c08003c960a",
+  "reviewedAt": "2026-09-03T04:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Smiths",
+    "model": "Everest",
+    "referenceCode": "PRS-25",
+    "variantName": "PRS-25 36mm Black Dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.timefactors.com/products/smiths-everest-prs-25-36mm-black-dial",
+      "status": "validated_primary",
+      "note": "The official Time Factors product page was checked on 2026-09-03 and explicitly identifies Smiths Everest PRS-25 36mm Black Dial. It currently shows sold out, which is a stock state and not an identity failure."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

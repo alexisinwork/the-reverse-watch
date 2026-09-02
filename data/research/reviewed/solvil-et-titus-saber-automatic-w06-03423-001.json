@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "solvil-et-titus-saber-automatic-w06-03423-001",
+  "jobId": "526abf06-8c7f-4e73-b16a-142ea3f82f73",
+  "reviewedAt": "2026-09-03T04:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Solvil et Titus",
+    "model": "Saber 3 Hands Date Automatic",
+    "referenceCode": "W06-03423-001",
+    "variantName": "Saber 3 Hands Date Automatic Silver White Dial Stainless Steel Men Watch"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.solvil-et-titus.com/products/w06-03423-001",
+      "status": "validated_primary",
+      "note": "The official Solvil et Titus global storefront was checked on 2026-09-03; its homepage links the exact W06-03423-001 product and lists the Saber automatic date configuration at $410."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

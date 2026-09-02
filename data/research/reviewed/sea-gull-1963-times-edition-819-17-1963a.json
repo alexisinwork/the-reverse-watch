@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "sea-gull-1963-times-edition-819-17-1963a",
+  "jobId": "b45469c7-d90e-48dc-8913-c18cb16b828a",
+  "reviewedAt": "2026-09-03T04:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Sea-Gull",
+    "model": "1963 Times Edition Reissue",
+    "referenceCode": "819.17.1963A",
+    "variantName": "1963 Series Chronograph 70th Anniversary Reissue 37.3mm Times Edition"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://en.seagullwatch.com/tr/products/seagull-1963-chronograph-watch-times-edition-reissue-37-3mm-1963a",
+      "status": "validated_primary",
+      "note": "The official Sea-Gull storefront was checked on 2026-09-03 and explicitly gives model number 819.17.1963A for the 37.3mm 1963 Times Edition Reissue."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

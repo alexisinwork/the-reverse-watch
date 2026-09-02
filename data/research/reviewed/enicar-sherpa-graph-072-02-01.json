@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "enicar-sherpa-graph-072-02-01",
+  "jobId": "1c06201b-52b2-4f90-ba67-f7de5d30a74a",
+  "reviewedAt": "2026-09-03T04:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Enicar",
+    "model": "Sherpa Graph",
+    "referenceCode": "072-02-01",
+    "variantName": "Sherpa Graph Chronograph 300 Mk III / Mk IV Valjoux 72"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://enicar101.com/sherpa-graph-mkiii/",
+      "status": "validated_secondary",
+      "note": "The specialist Enicar 101 reference guide was checked on 2026-09-03 and explicitly lists Sherpa Graph MK III ref. 072-02-01, dimensions, and Valjoux 72. No current manufacturer product page exists for this historical reference."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; historical identity is confirmed by a specialist reference guide, but no manufacturer page or complete reference-specific M1 evidence is available."
+}
