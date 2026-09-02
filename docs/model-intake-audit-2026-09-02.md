@@ -108,3 +108,36 @@ Perplexity `sonar-pro` worker when selected, independently checked against
 primary sources, and accepted only through the existing reviewed-artifact and
 additive-migration path. Unknown facts remain `null`; they do not satisfy hard
 filters.
+
+## Follow-up research batch (retrieved 2026-09-02)
+
+The next Perplexity `sonar-pro` batch and independent primary-source review
+confirmed these exact references as research-only candidates:
+
+- Orient Diver Design 40 / Mako 40 `RA-AC0Q01B` — [manufacturer product page](https://orient-watch.com/en/orient/collection/sports/diver-design-40/RA-AC0Q01B/).
+- Serica 5303 `5303-3` Crystal Blue and `5303-1` Enamel Black — [5303-3](https://serica-watches.com/en/collections/collection-5303/products/5303-3-diving-chronometer), [5303-1](https://serica-watches.com/en/collections/collection-5303/products/5303-1-diving-chronometer).
+- Wempe Iron Walker Automatic GMT 42 `WI250004` — [US product page](https://www.wempe.com/en-us/watches/wempe-glashuette-i-sa/iron-walker/iron-walker-automatic-gmt-42-wi250004) and [German product page](https://www.wempe.com/de-de/uhren/wempe-glashuette-i-sa/iron-walker/iron-walker-gmt-wi250004).
+- Seiko Prospex Alpinist `SPB121J1` — [Poland product page](https://www.seikowatches.com/pl-pl/products/prospex/spb121j1).
+- Longines Spirit 37 `L3.410.4.93.6` — [US product page](https://www.longines.com/en-us/p/watch-longines-spirit-l3-410-4-93-6).
+
+Their review artifacts remain `needs_more_evidence`; no catalogue or database
+row was created. The same batch also confirmed from official collection pages
+that Serica `5303-2` is a separate exact target. Timex `TW2V00400`, Raketa
+`W-11-16-10-0283`, and Tutima `6151-01` were independently identified, but
+their first Perplexity extractions failed the contract validation and therefore
+remained planned until retry. The failed responses attempted to use `null`
+with `observed`/`estimated_class`, or left a field both resolved and unresolved;
+they were not accepted as evidence.
+
+The contract retry then succeeded for Timex `TW2V00400`, Raketa
+`W-11-16-10-0283`, Tutima `6151-01`, Serica `5303-2`, Citizen `NJ0150-56E`,
+and Hamilton `H70455133`. Their exact identities and source-backed facts are
+now represented by separate review artifacts, all still `needs_more_evidence`
+because at least one hard M1 field (for example configured weight, numeric
+accuracy, lug geometry, or attachment interface) remains unresolved. The
+corresponding primary sources are [Timex](https://timex.com/products/expedition-field-post-solar-36mm-recycled-fabric-strap-watch-tw2v00400), [Raketa](https://world.raketa.com/product/big-zero-0283), [Tutima](https://tutima.com/watch/seven-seas-6151-01/), [Serica 5303-2](https://serica-watches.com/en/collections/collection-5303/products/5303-2-diving-chronometer), [Citizen](https://www.citizenwatch.com/us/en/product/NJ0150-56E), and [Hamilton](https://www.hamiltonwatch.com/en-us/h70455133-khaki-field-auto.html).
+
+An important intake correction is recorded: Orient `RA-AC0Q` is a family
+prefix, not an exact reference. The exact candidate is `RA-AC0Q01B`, while the
+manufacturer currently lists additional distinct `RA-AC0Q` references. These
+must be researched as separate homogeneous variants.

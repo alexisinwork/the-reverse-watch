@@ -1,0 +1,55 @@
+{
+  "reviewVersion": 1,
+  "targetId": "wempe-iron-walker-gmt-wi250004",
+  "jobId": "063e08ec-13c0-4ef1-a91b-f4ee8432660c",
+  "reviewedAt": "2026-09-02T13:20:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Wempe Glashütte i/SA",
+    "model": "Iron Walker Automatic GMT 42",
+    "referenceCode": "WI250004",
+    "variantName": "Black dial on black rubber strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.wempe.com/en-us/watches/wempe-glashuette-i-sa/iron-walker/iron-walker-automatic-gmt-42-wi250004",
+      "status": "validated_primary",
+      "note": "Wempe's exact US product page identifies WI250004 and the Iron Walker Automatic GMT 42 reference."
+    },
+    {
+      "url": "https://www.wempe.com/de-de/uhren/wempe-glashuette-i-sa/iron-walker/iron-walker-gmt-wi250004",
+      "status": "validated_primary",
+      "note": "Wempe's German product page corroborates the exact reference, steel case, 42 mm case, SW330-2 automatic GMT, 100 m resistance, rubber strap, and the EUR offer."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["lugToLugMm", "lugWidthMm", "weightFullG"],
+  "note": "Exact reference and homogeneous black-rubber configuration are confirmed by two regional Wempe product pages. Lug geometry and configured weight are not published on the reviewed primary pages, so this remains research-only."
+}

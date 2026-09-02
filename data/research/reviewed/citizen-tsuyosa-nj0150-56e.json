@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "citizen-tsuyosa-nj0150-56e",
+  "jobId": "45dca787-f2fa-4dda-8d39-82b8d168b8ce",
+  "reviewedAt": "2026-09-02T15:45:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Citizen",
+    "model": "Tsuyosa Automatic",
+    "referenceCode": "NJ0150-56E",
+    "variantName": "Black dial on stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.citizenwatch.com/us/en/product/NJ0150-56E",
+      "status": "validated_primary",
+      "note": "Citizen's exact product page identifies NJ0150-56E, black dial, steel bracelet, 40 mm case, 8210 automatic, sapphire, date, 42-hour reserve, 50 m resistance, 9.1 mm lug width, and current USD 396 sale price against USD 495 original price."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["lugToLugMm", "accuracy", "attachmentType"],
+  "note": "Exact Citizen SKU and black-dial bracelet configuration are confirmed by the primary product page. Citizen does not publish lug-to-lug, numeric accuracy, or the exact case-to-bracelet attachment interface on the reviewed page; keep research-only."
+}

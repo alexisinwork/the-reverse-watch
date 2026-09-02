@@ -1,0 +1,53 @@
+{
+  "reviewVersion": 1,
+  "targetId": "longines-spirit-37-l34104936",
+  "jobId": "ef1e9562-af98-457c-9468-2042fb70d0e3",
+  "reviewedAt": "2026-09-02T13:30:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Longines",
+    "model": "Spirit 37 mm",
+    "referenceCode": "L3.410.4.93.6",
+    "variantName": "Sunray blue dial on stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.longines.com/en-us/p/watch-longines-spirit-l3-410-4-93-6",
+      "status": "validated_primary",
+      "note": "Longines' exact product page identifies L3.410.4.93.6, 37 mm, 72-hour self-winding movement, COSC context, date, 10 bar, sapphire with AR, blue dial, steel bracelet, and USD 2,850."
+    },
+    {
+      "url": "https://www.longines.com/pl/p/watch-longines-spirit-l3-410-4-93-6",
+      "status": "validated_primary",
+      "note": "Longines Poland independently corroborates the exact reference and regional configuration; exact geometry and weight are retained only where the product evidence states them."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.lumeGrade",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["weightFullG", "accuracy", "attachmentType"],
+  "note": "Exact Spirit 37 identity and current blue-dial bracelet configuration are confirmed. The reviewed sources do not provide a numeric accuracy tolerance, configured mass, or exact attachment interface, so the reference is not promotion-ready."
+}

@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "timex-expedition-field-post-solar-tw2v00400",
+  "jobId": "b294cccc-253d-4f13-8b0a-9f71e1a0b5f7",
+  "reviewedAt": "2026-09-02T15:30:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Timex",
+    "model": "Expedition Field Post Solar",
+    "referenceCode": "TW2V00400",
+    "variantName": "36 mm black dial on recycled-fabric strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://timex.com/products/expedition-field-post-solar-36mm-recycled-fabric-strap-watch-tw2v00400",
+      "status": "validated_primary",
+      "note": "Timex's exact product page identifies TW2V00400, 36 mm case, recycled-fabric strap, solar quartz operation, sapphire crystal, 100 m resistance, 44.5 mm lug-to-lug, 12 mm thickness, 53.2 g, 18 mm attachment width, and USD 209 offer."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.lumeGrade"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["movement", "accuracy", "attachmentType", "dateStatus"],
+  "note": "Exact Timex SKU and physical configuration are confirmed by the manufacturer. Timex does not publish a calibre, numeric accuracy, exact strap attachment interface, or explicit date status on the reviewed page; retain this as research-only."
+}

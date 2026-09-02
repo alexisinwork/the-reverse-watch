@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hamilton-khaki-field-auto-h70455133",
+  "jobId": "b2de3b75-0a1c-4255-927a-409568db2320",
+  "reviewedAt": "2026-09-02T15:45:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hamilton",
+    "model": "Khaki Field Auto",
+    "referenceCode": "H70455133",
+    "variantName": "38 mm black dial on stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hamiltonwatch.com/en-us/h70455133-khaki-field-auto.html",
+      "status": "validated_primary",
+      "note": "Hamilton's exact product page identifies H70455133, 38 mm, 11 mm, 47 mm lug-to-lug, 20 mm lug width, H-10 automatic, 80-hour reserve, sapphire, Super-LumiNova, 100 m resistance, steel bracelet and USD 845 in-stock offer."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.bracelet",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.lumeGrade"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "weightFullG",
+    "accuracy",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact Hamilton reference and homogeneous steel-bracelet configuration are confirmed by the manufacturer. Configured mass, numeric accuracy, exact attachment interface, and date status remain unresolved; keep research-only."
+}

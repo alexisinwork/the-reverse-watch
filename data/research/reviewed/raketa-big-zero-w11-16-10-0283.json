@@ -1,0 +1,49 @@
+{
+  "reviewVersion": 1,
+  "targetId": "raketa-big-zero-w11-16-10-0283",
+  "jobId": "14f50d70-88a4-47f2-b8e4-3f8ad87bf529",
+  "reviewedAt": "2026-09-02T15:30:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Raketa",
+    "model": "Big Zero",
+    "referenceCode": "W-11-16-10-0283",
+    "variantName": "Big Zero 0283"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://world.raketa.com/product/big-zero-0283",
+      "status": "validated_primary",
+      "note": "Raketa's exact product page identifies W-11-16-10-0283, 40 mm case, 14.05 mm thickness, 43 mm lug-to-lug, 20 mm strap width, automatic calibre 2615, 40-hour reserve, sapphire crystal, 10 ATM, and EUR 2,000 offer."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.lumeGrade",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["weightFullG", "accuracy", "attachmentType"],
+  "note": "Exact Raketa SKU and current product identity are confirmed by the manufacturer. The exact page does not provide configured weight, numeric accuracy, or the strap attachment interface; keep research-only."
+}

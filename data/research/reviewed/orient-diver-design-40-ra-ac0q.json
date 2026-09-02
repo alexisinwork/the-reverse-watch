@@ -1,0 +1,56 @@
+{
+  "reviewVersion": 1,
+  "targetId": "orient-diver-design-40-ra-ac0q",
+  "jobId": "f8504497-cbb6-4e91-aa45-37371d26894a",
+  "reviewedAt": "2026-09-02T13:20:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Orient",
+    "model": "Diver Design 40 / Mako 40",
+    "referenceCode": "RA-AC0Q01B",
+    "variantName": "Black dial on stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://orient-watch.com/en/orient/collection/sports/diver-design-40/RA-AC0Q01B/",
+      "status": "validated_primary",
+      "note": "Orient's exact product page identifies RA-AC0Q01B, Diver Design 40, black dial, stainless-steel bracelet, 39.9 x 12.8 x 46.5 mm geometry, 20 bar resistance, F6722, over 40 hours, date, sapphire, and 165 g."
+    },
+    {
+      "url": "https://orient-watch.com/en/orient/collection/sports/diver-design-40/",
+      "status": "validated_primary",
+      "note": "The manufacturer collection lists RA-AC0Q01B alongside other distinct RA-AC0Q references; the family prefix is not treated as a reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.bracelet",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["price"],
+  "note": "Exact reference is independently confirmed, but the manufacturer page does not expose a current price and the provisional result covers only one of the many RA-AC0Q configurations. Keep research-only until price evidence and the remaining exact targets are separately reviewed."
+}

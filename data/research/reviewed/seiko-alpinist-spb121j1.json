@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-alpinist-spb121j1",
+  "jobId": "9114fdc9-5e88-4250-af42-d3fd785f054f",
+  "reviewedAt": "2026-09-02T13:30:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "Prospex Alpinist",
+    "referenceCode": "SPB121J1",
+    "variantName": "Green dial on brown leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.seikowatches.com/pl-pl/products/prospex/spb121j1",
+      "status": "validated_primary",
+      "note": "Seiko's exact regional product page identifies SPB121, 39.5 mm case, 46.4 mm lug-to-lug, 13.2 mm thickness, 6R35, approximately 70 hours, -15/+25 seconds per day, 20 bar, sapphire, LumiBrite, date, leather strap, and PLN 3,400."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.lumeGrade",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["attachmentType"],
+  "note": "Exact SPB121J1 identity and primary specifications are confirmed. The manufacturer does not establish the case-to-strap attachment interface on the reviewed page, so this remains research-only until that field is independently resolved."
+}

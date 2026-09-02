@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T05:46:28.312Z",
+  "updatedAt": "2026-09-02T13:22:56.781Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1049,6 +1049,40 @@
           "state": "accepted",
           "coverageRationale": "Accepted workhorse mechanical GMT calibration variant.",
           "catalogueVariantId": "longines-l38024636"
+        },
+        {
+          "id": "longines-spirit-37-l34104936",
+          "referenceLabel": "Spirit 37 mm L3.410.4.93.6 exact blue-dial steel-bracelet configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "formal_architectural"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Exact Spirit 37 reference confirmed on Longines' regional product pages; keep this blue-dial bracelet configuration separate from the accepted Spirit Zulu Time GMT."
         }
       ]
     },
@@ -1276,6 +1310,40 @@
           },
           "coverageRationale": "Source-led current solar diver fixed to one homogeneous exact bracelet SKU. Independent review validates an orderable supported-currency manufacturer offer, full configured mass, the conservative exact V157 rate bound after retaining a conflicting narrower regional claim, professional-diving strong LumiBrite language, and exact original-bracelet spring-bar fitment.",
           "catalogueVariantId": "seiko-sne599p1"
+        },
+        {
+          "id": "seiko-alpinist-spb121j1",
+          "referenceLabel": "Prospex Alpinist SPB121J1 exact green-dial leather configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Exact Alpinist reference confirmed on Seiko's regional product page; keep the green dial and leather-strap configuration separate from other SPB121 variants."
         }
       ]
     },
@@ -1358,6 +1426,38 @@
             ]
           },
           "coverageRationale": "Exact Citizen Japan and authorized-retailer records identify the tiny 18 x 6 mm, 57 g B023 Eco-Drive reference at ¥22,000; it directly targets four under-diversified under-$300, sub-6.25-inch, zero-maintenance, monthly-precision, time-only cells. The official route is currently out of stock, so the provider must qualify a current exact new-market offer rather than infer availability from catalogue presence."
+        },
+        {
+          "id": "citizen-tsuyosa-nj0150-56e",
+          "referenceLabel": "Tsuyosa Automatic NJ0150-56E exact black-dial steel-bracelet configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "wristBands": [
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Exact Tsuyosa reference confirmed on Citizen's product page; isolate the NJ0150-56E black-dial steel-bracelet configuration from other NJ0150 colour variants."
         }
       ]
     },
@@ -1383,6 +1483,41 @@
           "state": "accepted",
           "coverageRationale": "Accepted hand-wound field calibration variant.",
           "catalogueVariantId": "hamilton-h69439131"
+        },
+        {
+          "id": "hamilton-khaki-field-auto-h70455133",
+          "referenceLabel": "Khaki Field Auto 38 mm H70455133 exact steel-bracelet configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date",
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Exact Khaki Field Auto reference confirmed on Hamilton's product page; preserve the H70455133 38 mm steel-bracelet boundary and do not infer an unlisted date."
         }
       ]
     },
@@ -1976,7 +2111,41 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "tutima-seven-seas-6151-01",
+          "referenceLabel": "M2 Seven Seas 6151-01 exact titanium Kevlar configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000",
+              "2000_5000"
+            ],
+            "wristBands": [
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Exact M2 Seven Seas titanium configuration from the intake queue; do not merge the 6151-01 with other case, strap, or calibre variants."
+        }
+      ]
     },
     {
       "slug": "muhle-glashutte",
@@ -2256,6 +2425,39 @@
           "state": "accepted",
           "coverageRationale": "Accepted low-cost quartz field/water calibration variant.",
           "catalogueVariantId": "timex-tw2y40300"
+        },
+        {
+          "id": "timex-expedition-field-post-solar-tw2v00400",
+          "referenceLabel": "Expedition Field Post Solar 36 mm TW2V00400 exact recycled-fabric configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "wristBands": [
+              "under_5_75",
+              "5_75_6_25",
+              "6_25_6_75"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "zero_maintenance"
+            ],
+            "accuracyTolerances": [
+              "seconds_per_month"
+            ],
+            "weightLimits": [
+              "under_80_g",
+              "under_120_g"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Exact current solar field reference from the intake queue; isolate the 36 mm recycled-fabric configuration from other Expedition variants."
         }
       ]
     },
@@ -2304,6 +2506,40 @@
           },
           "coverageRationale": "Diversify affordable mechanical date cells with a second industrial archetype.",
           "catalogueVariantId": "orient-ra-ac0m03s"
+        },
+        {
+          "id": "orient-diver-design-40-ra-ac0q",
+          "referenceLabel": "Diver Design 40 / Mako 40 RA-AC0Q01B exact black-dial steel-bracelet configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Exact-reference follow-up for the missing affordable mechanical diver family; material, bracelet, and dial configuration must remain atomic."
         }
       ]
     },
@@ -2322,7 +2558,43 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "raketa-big-zero-w11-16-10-0283",
+          "referenceLabel": "Big Zero W-11-16-10-0283 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000",
+              "1000_2000"
+            ],
+            "wristBands": [
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Exact Big Zero follow-up from the intake queue; verify the current product and preserve its hand-wound configuration boundary."
+        }
+      ]
     },
     {
       "slug": "vostok",
@@ -2579,7 +2851,116 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "serica-5303-cosc",
+          "referenceLabel": "5303 COSC exact current configuration; resolve the complete reference/SKU",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000",
+              "2000_5000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Exact 5303 COSC family follow-up; research must resolve the complete current SKU and isolate dial/bracelet configuration before any catalogue consideration."
+        },
+        {
+          "id": "serica-5303-1",
+          "referenceLabel": "5303-1 Diving Chronometer Enamel Black exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000",
+              "2000_5000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Serica collection confirms 5303-1 as a separate exact dial/reference variant; it must be researched independently from 5303-2 and 5303-3."
+        },
+        {
+          "id": "serica-5303-2",
+          "referenceLabel": "5303-2 Diving Chronometer Porcelain White exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000",
+              "2000_5000"
+            ],
+            "wristBands": [
+              "5_75_6_25",
+              "6_25_6_75",
+              "6_75_7_5"
+            ],
+            "deploymentEnvironments": [
+              "field_water_abuse",
+              "studio_desk_daily"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_5_seconds_per_day",
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "under_160_g",
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official Serica collection confirms 5303-2 as a separate exact dial/reference variant; it must be researched independently from 5303-1 and 5303-3."
+        }
+      ]
     },
     {
       "slug": "studio-underd0g",
@@ -3785,7 +4166,41 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "wempe-iron-walker-gmt-wi250004",
+          "referenceLabel": "Iron Walker Automatic GMT 42 WI250004 exact steel and rubber configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "wristBands": [
+              "6_25_6_75",
+              "6_75_7_5",
+              "7_5_plus"
+            ],
+            "deploymentEnvironments": [
+              "studio_desk_daily",
+              "field_water_abuse"
+            ],
+            "ownershipFrictionLevels": [
+              "workhorse_mechanical"
+            ],
+            "accuracyTolerances": [
+              "within_15_seconds_per_day",
+              "no_requirement"
+            ],
+            "weightLimits": [
+              "no_limit"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Exact Iron Walker GMT follow-up from the intake queue; preserve the WI250004 case, movement, rubber-strap, and GMT configuration boundary."
+        }
+      ]
     },
     {
       "slug": "union-glashutte",

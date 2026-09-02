@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tutima-seven-seas-6151-01",
+  "jobId": "9a7ec75f-85fe-4731-b484-1a2f7c864108",
+  "reviewedAt": "2026-09-02T15:30:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tutima",
+    "model": "M2 Seven Seas",
+    "referenceCode": "6151-01",
+    "variantName": "Seven Seas titanium case on Kevlar strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://tutima.com/watch/seven-seas-6151-01/",
+      "status": "validated_primary",
+      "note": "Tutima's exact product page identifies Seven Seas 6151-01, titanium case, 44 mm, 13 mm, automatic Tutima Cal. 330, 38-hour reserve, sapphire, day/date, and 50 bar resistance."
+    },
+    {
+      "url": "https://tutima.com/de/uhr/seven-seas-6151-01/",
+      "status": "validated_primary",
+      "note": "Tutima's German product page corroborates the exact SKU and EUR 1,900 regional offer."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.strap",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.crystal",
+    "operation.lumeGrade",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "accuracy",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "attachmentType"
+  ],
+  "note": "Exact Tutima SKU, titanium/Kevlar configuration, price and core specifications are confirmed by two manufacturer regional pages. Lug geometry, configured weight, numeric accuracy and exact strap interface remain unresolved, so this is not promotion-ready."
+}

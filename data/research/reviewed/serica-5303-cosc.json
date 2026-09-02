@@ -1,0 +1,56 @@
+{
+  "reviewVersion": 1,
+  "targetId": "serica-5303-cosc",
+  "jobId": "b17bbd4d-0668-4d82-a4ae-ffb8c0045eb3",
+  "reviewedAt": "2026-09-02T13:20:00Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Serica",
+    "model": "5303 COSC Diving Chronometer",
+    "referenceCode": "5303-3",
+    "variantName": "Crystal Blue dial on woven steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://serica-watches.com/en/collections/collection-5303/products/5303-3-diving-chronometer",
+      "status": "validated_primary",
+      "note": "Serica's exact product page identifies Ref. 5303-3 Crystal Blue and its 5303 diving-chronometer configuration."
+    },
+    {
+      "url": "https://serica-watches.com/en/collections/collection-5303",
+      "status": "validated_primary",
+      "note": "The manufacturer collection distinguishes 5303-1, 5303-2, and 5303-3; these are separate dial/reference variants, not one family row."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "collection",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl",
+    "materials.case",
+    "materials.caseback",
+    "materials.bracelet",
+    "price.amountMinor",
+    "price.currency",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugToLugMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "movement.accuracyLowerSeconds",
+    "movement.accuracyUpperSeconds",
+    "movement.accuracyPeriodDays",
+    "operation.waterResistanceM",
+    "operation.lumeGrade",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": ["weightFullG", "attachmentType"],
+  "note": "Perplexity found an exact current 5303-3 reference and the primary Serica pages corroborate the identity and separate 5303 variants. Weight and exact attachment interface remain unresolved; do not promote this research-only record."
+}
