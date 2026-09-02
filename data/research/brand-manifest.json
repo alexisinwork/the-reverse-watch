@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T14:19:35.685Z",
+  "updatedAt": "2026-09-02T14:29:54.049Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1874,6 +1874,20 @@
             ]
           },
           "coverageRationale": "Diversify the mechanical GMT cells now represented by only one brand at a time."
+        },
+        {
+          "id": "sinn-857-utc-857010",
+          "referenceLabel": "Sinn 857 UTC exact TEGIMENT steel reference 857.010",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Current official Sinn 857 UTC configuration; preserve the exact TEGIMENT steel, black-dial, and leather-strap boundary."
         }
       ]
     },
@@ -2727,7 +2741,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "junghans-max-bill-automatic-27470002",
+          "referenceLabel": "Junghans max bill Automatic exact steel reference 27/4700.02",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official max bill configuration; preserve the exact 38 mm steel case, silver dial, and black leather-strap boundary."
+        }
+      ]
     },
     {
       "slug": "stowa",
@@ -2927,6 +2956,20 @@
             ]
           },
           "coverageRationale": "Fill mid-price mechanical field cells currently dependent on incomplete rows."
+        },
+        {
+          "id": "certina-ds-action-diver-c0488074405101",
+          "referenceLabel": "Certina DS Action Diver 38mm Titanium exact reference C048.807.44.051.01",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official titanium dive configuration; preserve the exact 38 mm case, black dial, ceramic bezel, and titanium bracelet boundary."
         }
       ]
     },
@@ -3120,6 +3163,21 @@
             ]
           },
           "coverageRationale": "Diversify affordable chronograph cells beyond one solar Seiko row."
+        },
+        {
+          "id": "bulova-lunar-pilot-96b251",
+          "referenceLabel": "Bulova Lunar Pilot exact steel reference 96B251",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Current official Lunar Pilot configuration; preserve the exact 45 mm steel, black-dial, and supplied-strap boundary, with availability recorded separately."
         }
       ]
     },
@@ -3502,6 +3560,36 @@
             ]
           },
           "coverageRationale": "Target the audit's near-empty affordable independent/small-wrist combination."
+        },
+        {
+          "id": "baltic-aquascaphe-sb01-blue-gilt-fkm",
+          "referenceLabel": "Baltic Aquascaphe Classic Blue Gilt exact SB01 configuration on FKM Rubber Sport",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Blue Gilt configuration; keep the family code, dial, and selected FKM attachment explicit because Baltic does not publish a separate full SKU."
+        },
+        {
+          "id": "baltic-aquascaphe-sb01-black-gilt-fkm",
+          "referenceLabel": "Baltic Aquascaphe Classic Black Gilt exact SB01 configuration on FKM Rubber Sport",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500",
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Black Gilt configuration; keep the family code, dial, and selected FKM attachment explicit because Baltic does not publish a separate full SKU."
         }
       ]
     },

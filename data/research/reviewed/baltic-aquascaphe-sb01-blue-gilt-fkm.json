@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "baltic-aquascaphe-sb01-blue-gilt-fkm",
+  "jobId": "9772c113-02c9-48ff-8b8d-2c52cb56e9f1",
+  "reviewedAt": "2026-09-02T14:30:13.425Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Baltic",
+    "model": "Aquascaphe Classic Blue Gilt",
+    "referenceCode": "SB01 (Blue Gilt / FKM Rubber Sport)",
+    "variantName": "Aquascaphe Classic Blue Gilt on Rubber Sport FKM"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://baltic-watches.com/en/products/aquascaphe-classic-blue-gilt",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration for SB01 (Blue Gilt / FKM Rubber Sport). Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

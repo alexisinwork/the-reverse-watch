@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "sinn-857-utc-857010",
+  "jobId": "5d06ace0-d746-461b-afbe-37198e1ba47d",
+  "reviewedAt": "2026-09-02T14:30:13.420Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Sinn",
+    "model": "857 UTC",
+    "referenceCode": "857.010",
+    "variantName": "/857 UTC Tegimented steel, black dial, leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.sinn.de/fr/montres/857-utc.html",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration for 857.010. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

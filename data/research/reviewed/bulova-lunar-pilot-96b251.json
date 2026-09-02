@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "bulova-lunar-pilot-96b251",
+  "jobId": "3045cb2c-e71d-4b66-ab62-bddf1bfd683f",
+  "reviewedAt": "2026-09-02T14:30:13.425Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Bulova",
+    "model": "Lunar Pilot",
+    "referenceCode": "96B251",
+    "variantName": "Men’s Special Edition Lunar Pilot Chronograph Black Dial Steel"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.bulova.com/global/product/96B251.html",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration for 96B251. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

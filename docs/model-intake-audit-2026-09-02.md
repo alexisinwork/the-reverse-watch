@@ -218,6 +218,24 @@ at least one M1 decision field is still unresolved for each row. The manifest
 now reports 85 `needs_review` targets and 148 review artifacts; accepted
 catalogue rows remain unchanged.
 
+## Tool/value exact batch (retrieved 2026-09-02)
+
+Six additional current configurations were confirmed through official product
+pages and valid Perplexity `sonar-pro` extractions:
+
+- Sinn 857 UTC `857.010` — [official card](https://www.sinn.de/fr/montres/857-utc.html).
+- Certina DS Action Diver 38mm Titanium `C048.807.44.051.01` — [official card](https://www.certina.com/pl/watch/ds-action-diver-38mm-titanium/c0488074405101) and [official product sheet](https://www.certina.com/pl/watch-sheet/138286).
+- Bulova Lunar Pilot `96B251` — [official card](https://www.bulova.com/global/product/96B251.html).
+- Baltic Aquascaphe Classic Blue Gilt and Black Gilt — [Blue Gilt](https://baltic-watches.com/en/products/aquascaphe-classic-blue-gilt) and [Black Gilt](https://baltic-watches.com/en/products/aquascaphe-classic-black-gilt). Baltic publishes `SB01` as a family code rather than a full SKU, so the dial and selected FKM attachment are retained in each target boundary.
+- Junghans max bill Automatic `27/4700.02` — [official card](https://junghans.de/shop/uhren/junghans-max-bill/max-bill-automatic/max-bill-automatic-16/).
+
+All six remain research-only pending M1 completion. Certina's official sheet
+confirms 38 mm, 104 g, 19 mm lug width, 45.01 mm lug-to-lug, Powermatic 80.611,
+300 m resistance, and titanium construction, while date state and accuracy
+remain null because the primary source does not state them. The manifest now
+reports 91 `needs_review` targets and 154 review artifacts; accepted catalogue
+rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "certina-ds-action-diver-c0488074405101",
+  "jobId": "caee5982-e823-4215-a50e-04728e92323a",
+  "reviewedAt": "2026-09-02T14:30:13.424Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Certina",
+    "model": "DS Action Diver 38mm Titanium",
+    "referenceCode": "C048.807.44.051.01",
+    "variantName": "DS Action Diver 38mm Titanium black dial on titanium bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.certina.com/pl/watch/ds-action-diver-38mm-titanium/c0488074405101",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration for C048.807.44.051.01. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}
