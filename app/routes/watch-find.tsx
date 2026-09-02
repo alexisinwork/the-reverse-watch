@@ -201,19 +201,35 @@ export default function WatchFind() {
                   {actionData.result.releaseYear ?? "year unknown"}).
                 </p>
                 <p>
-                  Now choose the character or actor whose watch attribution you
+                  Now enter the actor or character whose watch attribution you
                   want to find.
                 </p>
-                <Link
-                  to={`/watches/find?anchor=character&q=${encodeURIComponent(actionData.result.canonicalTitle)}`}
-                >
-                  Search fictional characters
-                </Link>{" "}
-                <Link
-                  to={`/watches/find?anchor=public_figure&q=${encodeURIComponent(actionData.result.canonicalTitle)}`}
-                >
-                  Search actors / public figures
-                </Link>
+                <Form method="get" className="discovery-search-form">
+                  <input
+                    name="work"
+                    type="hidden"
+                    value={actionData.result.canonicalTitle}
+                  />
+                  <label htmlFor="verified-person">
+                    Actor or fictional character
+                  </label>
+                  <input
+                    id="verified-person"
+                    maxLength={160}
+                    minLength={2}
+                    name="q"
+                    required
+                    type="search"
+                  />
+                  <div className="archetype-next-actions">
+                    <button name="anchor" type="submit" value="public_figure">
+                      Search actor / public figure
+                    </button>
+                    <button name="anchor" type="submit" value="character">
+                      Search fictional character
+                    </button>
+                  </div>
+                </Form>
               </div>
             ) : (
               <p role="status">
