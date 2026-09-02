@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cuervo-y-sobrinos-esplendidos-heritage-champagne-silver-2452-1hle",
+  "jobId": "d23f7238-977d-4471-bdb6-9122e1c0b05c",
+  "reviewedAt": "2026-09-02T23:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cuervo y Sobrinos",
+    "model": "Espléndidos Heritage",
+    "referenceCode": "2452.1HLE",
+    "variantName": "Espléndidos Heritage champagne silver"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cuervoysobrinos.com/swiss-watches/esplendidos/heritage-champagne-silver/",
+      "status": "validated_primary",
+      "note": "Cuervo y Sobrinos' official product page was checked on 2026-09-02 and confirms SKU 2452.1HLE, the champagne/silver Esplendidos Heritage configuration, current price, and product specifications."
+    },
+    {
+      "url": "https://www.cuervoysobrinos.com/product-category/novelties-watches/",
+      "status": "validated_primary",
+      "note": "The official brand storefront and product categories were checked on 2026-09-02 to distinguish current product listings from archived models."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Cuervo y Sobrinos SKU and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

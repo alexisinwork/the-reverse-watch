@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "kurono-tokyo-2026-anniversary-malachite",
+  "jobId": "695d85fc-9132-422f-9f61-f5acdf217cb0",
+  "reviewedAt": "2026-09-02T23:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Kurono Tokyo",
+    "model": "Special Projects Malachite",
+    "referenceCode": "/",
+    "variantName": "2026 Anniversary Malachite '孔雀石'"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://kuronotokyo.com/pages/kurono-anniversary-malachite",
+      "status": "validated_primary",
+      "note": "Kurono Tokyo's official anniversary page was checked on 2026-09-02 and confirms the Special Projects Malachite model, its limited-release status, and the US$1,850 price. The page publishes no conventional reference code."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The value CM026B returned by Perplexity does not appear on Kurono Tokyo's official product page; it is rejected rather than treated as a manufacturer reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact Kurono Tokyo model and official product URL are confirmed; the manufacturer publishes no conventional reference code, and the unsupported inferred code was rejected. All M1 facts remain provisional until field-level review is complete."
+}

@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "studio-underd0g-desert-sky-01series-gen3",
+  "jobId": "fc37820f-d878-4d6c-a702-60891ecd0af4",
+  "reviewedAt": "2026-09-02T23:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Studio Underd0g",
+    "model": "01SERIES Desert Sky (Gen3)",
+    "referenceCode": "01DST",
+    "variantName": "Desert Sky (Gen3)"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://underd0g.com/products/01dst",
+      "status": "validated_primary",
+      "note": "Studio Underd0g's official Desert Sky page was checked on 2026-09-02 and confirms the 01SERIES chronograph, Gen3 configuration, and exact 01DST product identifier in the official product URL."
+    },
+    {
+      "url": "https://underd0g.com/collections/01series",
+      "status": "validated_primary",
+      "note": "The official 01SERIES collection page was checked on 2026-09-02 and places Desert Sky within the current Gen3 chronograph collection."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Studio Underd0g product identifier and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}

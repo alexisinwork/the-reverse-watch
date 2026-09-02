@@ -577,6 +577,23 @@ schema validation or lacked a resolved product URL. The manifest now reports
 154 `needs_review` targets and 217 review artifacts; accepted catalogue rows
 remain unchanged.
 
+## Twenty-fifth parallel exact-reference batch (retrieved 2026-09-02)
+
+Four additional manufacturer configurations passed the Perplexity worker and
+were checked against primary brand pages:
+
+- Kurono Tokyo 2026 Anniversary Special Projects Malachite `孔雀石` — [official product page](https://kuronotokyo.com/pages/kurono-anniversary-malachite). The page publishes no conventional reference code; an inferred `CM026B` value was rejected.
+- Cuervo y Sobrinos Espléndidos Heritage champagne/silver `2452.1HLE` — [official product page](https://www.cuervoysobrinos.com/swiss-watches/esplendidos/heritage-champagne-silver/).
+- Studio Underd0g 01SERIES Desert Sky Gen3 `01DST` — [official product page](https://underd0g.com/products/01dst).
+- anOrdain Model 2 Racing Green Large — [official product page](https://anordain.com/products/model-2-racing-green). The page offers selectable movement and strap configurations but no conventional reference code; an inferred `M2RGL` value was rejected.
+
+All four remain research-only `needs_more_evidence`; exact identities and
+manufacturer identifiers (or the documented absence of one) are recorded,
+unresolved M1 facts remain null, and no catalogue rows were added. Fears
+Brunswick 38 remains the next `planned` target because it was not selected by
+the coverage planner in this run. The manifest now reports 158 `needs_review`
+targets and 221 review artifacts; accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T17:27:14.123Z",
+  "updatedAt": "2026-09-02T17:35:03.637Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4159,7 +4159,7 @@
         {
           "id": "cuervo-y-sobrinos-esplendidos-heritage-champagne-silver-2452-1hle",
           "referenceLabel": "Cuervo y Sobrinos Esplendidos Heritage champagne silver exact SKU 2452.1HLE",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"
@@ -4326,7 +4326,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "kurono-tokyo-2026-anniversary-malachite",
+          "referenceLabel": "Kurono Tokyo 2026 Anniversary Malachite exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The current official anniversary page identifies the Malachite Special Projects watch, its US$1,850 price, and closed limited-release status; no conventional reference code is published, so preserve model-level identity."
+        }
+      ]
     },
     {
       "slug": "farer",
@@ -4501,7 +4516,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 11
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "studio-underd0g-desert-sky-01series-gen3",
+          "referenceLabel": "Studio Underd0g Desert Sky 01SERIES Gen3 exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The current official Desert Sky page identifies the 01SERIES Gen3 chronograph, publishes its 600 GBP price and complete case/movement specification, and treats the colour model as the exact product boundary."
+        }
+      ]
     },
     {
       "slug": "anordain",
@@ -4518,7 +4548,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "anordain-model-2-racing-green",
+          "referenceLabel": "anOrdain Model 2 Racing Green exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The official anOrdain product page identifies the Model 2 Racing Green and publishes current configuration choices, price, and core dimensions; retain the chosen dial as the model boundary and keep selectable size/movement details provisional."
+        }
+      ]
     },
     {
       "slug": "fears",
@@ -4535,7 +4580,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "fears-brunswick-38-polar-white",
+          "referenceLabel": "Fears Brunswick 38 Polar White exact official model",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The current official Fears product page identifies the Brunswick 38 Polar White and publishes its price and technical specification; strap/bracelet and open/closed caseback are explicit configuration choices and must not be collapsed into unreviewed facts."
+        }
+      ]
     },
     {
       "slug": "vertex",

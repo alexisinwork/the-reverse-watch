@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "anordain-model-2-racing-green",
+  "jobId": "bf55ba78-85fc-4add-8e20-5dc86649abd5",
+  "reviewedAt": "2026-09-02T23:15:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "anOrdain",
+    "model": "Model 2",
+    "referenceCode": "/",
+    "variantName": "Model 2 Racing Green Large"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://anordain.com/products/model-2-racing-green",
+      "status": "validated_primary",
+      "note": "anOrdain's official Model 2 Racing Green page was checked on 2026-09-02 and confirms the Racing Green dial, Large 39.5mm option, current build-slot price, and official product URL. The page exposes selectable movements and straps rather than a single fixed reference."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The value M2RGL returned by Perplexity does not appear on anOrdain's official product page; the page offers selectable size, movement, and strap options but publishes no conventional reference code."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact anOrdain dial/model page is confirmed, but the manufacturer publishes no conventional reference code and offers multiple physical configuration choices; an unsupported inferred code was rejected and all M1 facts remain provisional."
+}
