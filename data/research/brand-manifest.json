@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T21:43:20.922Z",
+  "updatedAt": "2026-09-02T21:48:46.636Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2750,6 +2750,48 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Ventura Quartz H24411732 as a distinctive quartz case design; verify the exact case, strap, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "hamilton-h32675140-jazzmaster-open-heart",
+          "referenceLabel": "Hamilton Jazzmaster Open Heart 40 exact reference H32675140",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Jazzmaster Open Heart 40 H32675140 as an open-heart automatic reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "hamilton-h38416711-intra-matic-auto-chrono",
+          "referenceLabel": "Hamilton Intra-Matic Auto Chrono 40 exact reference H38416711",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Intra-Matic Auto Chrono 40 H38416711 as a mechanical chronograph reference; verify the exact dial, strap or bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "hamilton-h35405741-pan-europ-auto",
+          "referenceLabel": "Hamilton Pan Europ Auto 42 exact reference H35405741",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Pan Europ Auto 42 H35405741 as a retro-styled automatic reference; verify the exact dial, strap, dimensions, and manufacturer evidence before cataloguing."
         }
       ]
     },

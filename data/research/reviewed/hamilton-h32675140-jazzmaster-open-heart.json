@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hamilton-h32675140-jazzmaster-open-heart",
+  "jobId": "99a735bf-485f-4377-ae33-dd99248fb712",
+  "reviewedAt": "2026-09-04T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hamilton",
+    "model": "Jazzmaster Open Heart Auto 40mm",
+    "referenceCode": "H32675140",
+    "variantName": "Jazzmaster Open Heart 40 blue gradient dial stainless-steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hamiltonwatch.com/en-us/h32675140-jazzmaster-open-heart-auto.html",
+      "status": "validated_primary",
+      "note": "The official Hamilton US product page was checked on 2026-09-04 and confirms exact H32675140 identity, 40 mm Jazzmaster Open Heart, blue dial, steel bracelet, H-10 automatic movement, and current collection status."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

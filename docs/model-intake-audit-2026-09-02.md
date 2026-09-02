@@ -1134,3 +1134,17 @@ All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 290 `needs_review` targets, one
 remaining `planned` target, and 353 review artifacts; accepted catalogue rows
 remain unchanged.
+
+## Sixty-first parallel exact-reference batch (retrieved 2026-09-04)
+
+The final three Hamilton dossier references produced schema-valid Perplexity
+results and were checked against official Hamilton US product pages:
+
+- Jazzmaster Open Heart Auto 40 `H32675140` — [official product page](https://www.hamiltonwatch.com/en-us/h32675140-jazzmaster-open-heart-auto.html) confirms the exact reference, blue gradient dial, steel bracelet, H-10 automatic movement, and current collection status.
+- Intra-Matic Auto Chrono 40 `H38416711` — [official product page](https://www.hamiltonwatch.com/en-us/h38416711-intramatic-auto-chrono.html) confirms the exact reference, white dial, leather strap, H-31 automatic chronograph movement, and current collection status.
+- Pan Europ Day Date Auto 42 `H35405741` — [official product page](https://www.hamiltonwatch.com/en-us/h35405741-american-classic-pan-europ-day-date-auto.html) confirms the exact reference, blue dial, H-30 automatic movement, and current collection status.
+
+All three remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 293 `needs_review` targets, one
+remaining `planned` target, and 356 review artifacts; accepted catalogue rows
+remain unchanged.
