@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "grand-seiko-slgh005",
+  "jobId": "763bc043-9f00-416f-88ad-805f3f647d6f",
+  "reviewedAt": "2026-09-03T19:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Grand Seiko",
+    "model": "Evolution 9 Hi-Beat 36000 80 Hours",
+    "referenceCode": "SLGH005",
+    "variantName": "White Birch"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.grand-seiko.com/us-en/collections/slgh005g",
+      "status": "validated_primary",
+      "note": "The official Grand Seiko product route was checked on 2026-09-03 and identifies SLGH005 as the Evolution 9 White Birch reference with 9SA5 high-beat movement and an active manufacturer collection entry."
+    },
+    {
+      "url": "https://www.grand-seiko.com/us-en/special/whitebirch/slgh005",
+      "status": "validated_primary",
+      "note": "The official White Birch page corroborates the SLGH005 identity, Heritage/Series 9 design, 9SA5 calibre, and 80-hour power-reserve designation."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

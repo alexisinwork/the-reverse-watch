@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "grand-seiko-sbgx261",
+  "jobId": "a6b14bfb-5cfc-4771-a180-23bc7a90c273",
+  "reviewedAt": "2026-09-03T19:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Grand Seiko",
+    "model": "Heritage Collection Quartz",
+    "referenceCode": "SBGX261",
+    "variantName": "37 mm black dial on stainless steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.grand-seiko.com/us-en/collections/sbgx261g",
+      "status": "validated_primary",
+      "note": "The official live U.S. product page was checked on 2026-09-03 and confirms SBGX261, the 37 mm stainless-steel black-dial Heritage quartz configuration, 9F62 quartz movement, 10 bar rating, and exact manufacturer product identity."
+    },
+    {
+      "url": "https://grandseikoboutique.us/products/watch-quartz-37mm-black-sbgx261",
+      "status": "validated_primary",
+      "note": "The official Grand Seiko boutique listing corroborates the black 37 mm quartz configuration and stainless-steel bracelet boundary."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

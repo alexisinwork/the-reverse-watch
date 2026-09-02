@@ -955,6 +955,21 @@ rows were promoted. The manifest now reports 254 `needs_review` targets, zero
 `planned` targets, and 317 review artifacts; accepted catalogue rows remain
 unchanged.
 
+## Fifty-second parallel exact-reference batch (retrieved 2026-09-03)
+
+Three of four Grand Seiko references returned schema-valid Perplexity results
+and were checked against official pages:
+
+- Heritage Spring Drive “Shunbun” `SBGA413` — [official product page](https://www.grand-seiko.com/us-en/collections/sbga413g) confirms the exact 62GS configuration.
+- Heritage quartz `SBGX261` — [official product page](https://www.grand-seiko.com/us-en/collections/sbgx261g) and [official boutique listing](https://grandseikoboutique.us/products/watch-quartz-37mm-black-sbgx261) confirm the exact black-dial 37 mm configuration.
+- Evolution 9 White Birch `SLGH005` — [official White Birch page](https://www.grand-seiko.com/us-en/special/whitebirch/slgh005) confirms the exact reference and 9SA5 identity; the collection route was also checked.
+- Heritage 44GS `SBGW291` — eight Perplexity attempts failed schema validation because the provider repeatedly marked null values as observed; it remains `planned` with no review artifact and no claims accepted.
+
+The three successful targets remain research-only `needs_more_evidence`; no M1
+facts or catalogue rows were promoted. The manifest now reports 257
+`needs_review` targets, one `planned` target, and 320 review artifacts; accepted
+catalogue rows remain unchanged.
+
 ## Forty-sixth parallel exact-reference batch (retrieved 2026-09-03)
 
 Four additional configurations produced schema-valid Perplexity results and

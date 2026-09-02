@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:41:46.312Z",
+  "updatedAt": "2026-09-02T20:47:17.359Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1344,6 +1344,63 @@
           "state": "accepted",
           "coverageRationale": "Accepted complete high-accuracy GMT calibration variant.",
           "catalogueVariantId": "grand-seiko-sbgn029"
+        },
+        {
+          "id": "grand-seiko-sbgw291",
+          "referenceLabel": "Grand Seiko Heritage 44GS exact reference SBGW291",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the compact 44GS hand-wound SBGW291 as a core Heritage reference; verify one exact current configuration and all M1 fields before cataloguing."
+        },
+        {
+          "id": "grand-seiko-sbga413",
+          "referenceLabel": "Grand Seiko Heritage 62GS exact reference SBGA413",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the Heritage 62GS Spring Drive SBGA413 as a core reference; verify the exact dial, case, bracelet, and current manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "grand-seiko-sbgx261",
+          "referenceLabel": "Grand Seiko Heritage quartz exact reference SBGX261",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Heritage quartz SBGX261 as a precision everyday reference; verify the exact current configuration and M1 fields before cataloguing."
+        },
+        {
+          "id": "grand-seiko-slgh005",
+          "referenceLabel": "Grand Seiko Evolution 9 White Birch exact reference SLGH005",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Evolution 9 SLGH005 White Birch as a high-precision mechanical reference; verify its exact current manufacturer configuration and M1 fields before cataloguing."
         }
       ]
     },

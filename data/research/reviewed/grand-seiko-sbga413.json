@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "grand-seiko-sbga413",
+  "jobId": "f3eb633f-2fe2-41e3-8f81-694adb30f4ac",
+  "reviewedAt": "2026-09-03T19:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Grand Seiko",
+    "model": "Heritage Spring Drive Four Seasons Shunbun",
+    "referenceCode": "SBGA413",
+    "variantName": "Heritage Collection Spring Drive Shunbun"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.grand-seiko.com/us-en/collections/sbga413g",
+      "status": "validated_primary",
+      "note": "The official live U.S. product page was checked on 2026-09-03 and confirms SBGA413, the Heritage 62GS-inspired configuration, 40 mm high-intensity-titanium case and bracelet, Spring Drive 9R65, approximately 72-hour reserve, 10 bar resistance, and the USD 7,200 manufacturer price."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}
