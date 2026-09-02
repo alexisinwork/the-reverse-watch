@@ -64,7 +64,7 @@ for (const row of rows) {
       headers,
       body: JSON.stringify({
         p_source_hash: row.source_hash,
-        p_status: "needs_review",
+        p_status: "pending",
         p_payload: result,
       }),
       signal: AbortSignal.timeout(30_000),
