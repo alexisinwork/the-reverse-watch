@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "gorilla-fastback-gt-modena",
+  "jobId": "8d45a3c3-bbeb-456c-862d-b1b8a0878c31",
+  "reviewedAt": "2026-09-03T15:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Gorilla",
+    "model": "Fastback GT Modena",
+    "referenceCode": "FBY21.0",
+    "variantName": "Fastback GT Modena"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://gorilla-watches.com/en/collections/fastback-collection",
+      "status": "validated_primary",
+      "note": "The official Gorilla Fastback collection page was checked on 2026-09-03 and confirms the Fastback 44mm product family and current brand storefront."
+    },
+    {
+      "url": "https://www.thewatchpages.com/watches/gorilla-fastback-gt-modena",
+      "status": "validated_secondary",
+      "note": "The specialist exact-model listing was checked and confirms Fastback GT Modena, 44mm all-black carbon case, yellow dial, Miyota 90S5, and 100m water resistance."
+    },
+    {
+      "url": "https://www.elpalaciodehierro.com/gorilla-reloj-fastback-gt-modena-unisex-42795354.html",
+      "status": "validated_secondary",
+      "note": "The retailer listing was checked and explicitly identifies model FBY21.0 as Gorilla Fastback GT Modena."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is corroborated, but no provisional M1 fact is promoted."
+}

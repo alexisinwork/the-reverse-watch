@@ -1,0 +1,56 @@
+{
+  "reviewVersion": 1,
+  "targetId": "meccaniche-veloci-quattrovalvole-49-mv8802",
+  "jobId": "e757ca40-adb6-4ad2-a9da-4c3e6d3c3b9b",
+  "reviewedAt": "2026-09-03T15:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Meccaniche Veloci",
+    "model": "QuattroValvole",
+    "referenceCode": "W10NV1NE",
+    "variantName": "QuattroValvole Nardi Edition"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.meccanicheveloci.com/en/watches/quattrovalvole/quattrovalvole-collection/quattrovalvole-nardi-edition",
+      "status": "validated_primary",
+      "note": "The official Meccaniche Veloci page was checked on 2026-09-03 and explicitly confirms QuattroValvole Nardi Edition, Ref. W10NV1NE, 50-piece limitation, and the exact configuration."
+    },
+    {
+      "url": "https://www.europastar.com/watch-gallery/1004090980-meccaniche-veloci-quattrovalvole-nardi-edition.html",
+      "status": "validated_secondary",
+      "note": "The specialist reference article was checked and corroborates the QuattroValvole Nardi Edition identity and limited-edition boundary."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied MV8802, which is the calibre designation. The official product page publishes the watch reference W10NV1NE, retained as the canonical identifier."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; the watch reference is normalized from the calibre-like worker value to W10NV1NE, and no provisional M1 fact is promoted."
+}

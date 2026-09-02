@@ -924,3 +924,18 @@ All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 237 `needs_review` targets, 300
 review artifacts, and one remaining `planned` target; accepted catalogue rows
 remain unchanged.
+
+## Forty-seventh parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations produced schema-valid Perplexity results and
+were checked against official or specialist sources:
+
+- Zarya `G5241401` — [Zarya product-store page](https://zaria-time.ru/shop/watchzaria/zarja-g5241401/) confirms the exact SKU and black-dial leather-strap configuration.
+- Meccaniche Veloci QuattroValvole Nardi Edition `W10NV1NE` — [official product page](https://www.meccanicheveloci.com/en/watches/quattrovalvole/quattrovalvole-collection/quattrovalvole-nardi-edition) explicitly confirms the watch reference. The worker's `MV8802` was rejected as the calibre, not the watch reference.
+- Gorilla Fastback GT Modena `FBY21.0` — [specialist exact-model listing](https://www.thewatchpages.com/watches/gorilla-fastback-gt-modena) confirms the model/configuration, while [retailer evidence](https://www.elpalaciodehierro.com/gorilla-reloj-fastback-gt-modena-unisex-42795354.html) corroborates model FBY21.0.
+- Dietrich SD-1 Skin Diver Pacific Blue — [official product page](https://dietrich.com/product/sd1-pacific-blue/) confirms the exact product configuration. No separate manufacturer reference code is published; the worker's marketing name was not promoted as a reference.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 241 `needs_review` targets, 304
+review artifacts, and one remaining `planned` target; accepted catalogue rows
+remain unchanged.

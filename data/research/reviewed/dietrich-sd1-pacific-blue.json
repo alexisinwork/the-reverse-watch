@@ -1,0 +1,56 @@
+{
+  "reviewVersion": 1,
+  "targetId": "dietrich-sd1-pacific-blue",
+  "jobId": "222a74bd-263e-4efa-b56c-96d3ac21adf2",
+  "reviewedAt": "2026-09-03T15:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Dietrich",
+    "model": "SD-1 Skin Diver",
+    "referenceCode": "reference not established",
+    "variantName": "Skin Diver (SD-1) - Pacific Blue"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://dietrich.com/product/sd1-pacific-blue/",
+      "status": "validated_primary",
+      "note": "The official Dietrich product page was checked on 2026-09-03 and confirms Skin Diver (SD-1) - Pacific Blue as the exact product configuration. It publishes no separate manufacturer reference code."
+    },
+    {
+      "url": "https://monochrome-watches.com/dietrich-sd-1-skin-diver-2-review-specs-price/",
+      "status": "validated_secondary",
+      "note": "The specialist review was checked and corroborates the Dietrich SD-1 Skin Diver family and Pacific Blue configuration; it is not used to invent a reference code."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied the marketing name SD-1 Pacific Blue as a reference; the official product page does not publish a separate numeric or alphanumeric manufacturer reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact product identity is confirmed, but no manufacturer reference code or provisional M1 fact is promoted."
+}

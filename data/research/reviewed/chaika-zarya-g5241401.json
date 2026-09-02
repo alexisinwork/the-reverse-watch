@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "chaika-zarya-g5241401",
+  "jobId": "cf788188-289d-4d32-b5ab-a0e19dd93cf4",
+  "reviewedAt": "2026-09-03T15:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Zarya",
+    "model": "Zarya G5241401",
+    "referenceCode": "G5241401",
+    "variantName": "Zarya G5241401 black dial, leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://zaria-time.ru/shop/watchzaria/zarja-g5241401/",
+      "status": "validated_primary",
+      "note": "The Zarya product-store page was checked on 2026-09-03 and explicitly confirms Zarya G5241401, SKU G5241401, and the black-dial leather-strap product identity."
+    },
+    {
+      "url": "https://slava.su/2615-g5241401-chasy-naruchnye-zarya",
+      "status": "validated_secondary",
+      "note": "The specialist Russian watch listing was checked as an identity cross-check; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but no provisional M1 fact is promoted."
+}

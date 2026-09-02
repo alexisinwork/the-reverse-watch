@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T20:19:29.309Z",
+  "updatedAt": "2026-09-02T20:24:03.913Z",
   "brands": [
     {
       "slug": "rolex",
@@ -7982,7 +7982,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 10
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "chaika-zarya-g5241401",
+          "referenceLabel": "Zarya G5241401 exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "under_300"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Zarya G5241401 as a current factory listing; verify the exact product identity and whether the movement is mechanical or quartz before cataloguing."
+        }
+      ]
     },
     {
       "slug": "venezianico",
@@ -8034,7 +8049,23 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "meccaniche-veloci-quattrovalvole-49-mv8802",
+          "referenceLabel": "Meccaniche Veloci QuattroValvole Nardi Edition exact reference W10NV1NE",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000",
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies QuattroValvole 49 MV8802 as an active high-price chronograph family; verify one exact current configuration and reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "gorilla-watches",
@@ -8051,7 +8082,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "gorilla-fastback-gt-modena",
+          "referenceLabel": "Gorilla Fastback GT Modena exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Fastback GT Modena as an active 44mm design watch; verify one exact live configuration and any manufacturer reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "dietrich",
@@ -8068,7 +8114,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "dietrich-sd1-pacific-blue",
+          "referenceLabel": "Dietrich SD-1 Pacific Blue exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies SD-1 Pacific Blue as an active independent skin-diver; verify the exact product identity and reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "sevenfriday",
