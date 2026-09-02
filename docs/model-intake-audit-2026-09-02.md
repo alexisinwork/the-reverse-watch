@@ -145,10 +145,11 @@ must be researched as separate homogeneous variants.
 ## Rolex exact-reference expansion (retrieved 2026-09-02)
 
 The Rolex recheck added 36 current exact configuration targets to the manifest.
-They remain research-only: 24 received valid Perplexity extractions and
-independent primary-source identity checks; 12 remain `planned` after
-Perplexity rate-limit or contract-validation failures and are queued for a
-later retry. No failed extraction is treated as confirmation.
+They remain research-only: all 36 ultimately received valid Perplexity extractions and
+independent primary-source identity checks. Several intermediate attempts hit
+rate limits or contract-validation errors; those responses were retried and
+never treated as confirmation. No Rolex target from this expansion remains
+`planned`.
 
 - Land-Dweller: `127234-0001`, `127235-0001`, `127236-0001`, `127335-0001`,
   `127336-0001`, `127285TBR-0002`, `127286TBR-0001`, `127385TBR-0003`, and
@@ -174,8 +175,8 @@ later retry. No failed extraction is treated as confirmation.
 Rolex's official pages confirm the exact current configuration boundaries, but
 do not publish every M1 field required by this project (notably full configured
 weight, lug-to-lug, lug width, and sometimes thickness). Those values remain
-missing rather than inherited from a family page. The manifest now reports 58
-`needs_review` targets, 12 still `planned`, and 121 review artifacts; accepted
+missing rather than inherited from a family page. The manifest now reports 70
+`needs_review` targets, no `planned` targets, and 133 review artifacts; accepted
 catalogue rows remain unchanged.
 
 ## ZRC 1904 exact variants
