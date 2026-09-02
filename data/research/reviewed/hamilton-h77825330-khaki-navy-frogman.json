@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hamilton-h77825330-khaki-navy-frogman",
+  "jobId": "c1d2f673-f7c5-4bb6-9175-65f69c702353",
+  "reviewedAt": "2026-09-04T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hamilton",
+    "model": "Khaki Navy Frogman Auto",
+    "referenceCode": "H77825330",
+    "variantName": "Khaki Navy Frogman Automatic 46mm black dial black rubber strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hamiltonwatch.com/en-us/h77825330-khaki-navy-frogman-auto.html",
+      "status": "validated_primary",
+      "note": "The official Hamilton US product page was checked on 2026-09-04 and confirms exact H77825330 identity, Khaki Navy Frogman Automatic 46mm, black dial, black rubber strap, and automatic diver configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

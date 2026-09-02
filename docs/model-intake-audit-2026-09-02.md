@@ -1118,3 +1118,19 @@ All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 285 `needs_review` targets, one
 remaining `planned` target, and 348 review artifacts; accepted catalogue rows
 remain unchanged.
+
+## Sixtieth parallel exact-reference batch (retrieved 2026-09-04)
+
+Five Hamilton dossier references produced schema-valid Perplexity results and
+were checked against official Hamilton US product pages:
+
+- Khaki Field Murph 38 `H70405730` — [official product page](https://www.hamiltonwatch.com/en-us/h70405730-khaki-field-murph-38mm.html) confirms the exact reference, black dial, leather strap, H-10 automatic movement, and current collection status.
+- Khaki Aviation Pilot Pioneer `H76419931` — [official product page](https://www.hamiltonwatch.com/en-us/h76419931-khaki-pilot.html) confirms the exact reference, 36 × 33 mm case, H-50 hand-wound movement, and textile strap.
+- Khaki Navy Scuba Auto `H82505140` — [official product page](https://www.hamiltonwatch.com/en-us/h82505140-khaki-navy-scuba-auto.html) confirms the exact reference, blue dial, steel bracelet, H-10 automatic movement, and 300 m water resistance.
+- Khaki Navy Frogman Auto `H77825330` — [official product page](https://www.hamiltonwatch.com/en-us/h77825330-khaki-navy-frogman-auto.html) confirms the exact reference and 46 mm black-dial rubber-strap diver configuration.
+- Ventura Quartz `H24411732` — [official product page](https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html) confirms the exact reference, black dial, black leather strap, and quartz configuration.
+
+All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 290 `needs_review` targets, one
+remaining `planned` target, and 353 review artifacts; accepted catalogue rows
+remain unchanged.

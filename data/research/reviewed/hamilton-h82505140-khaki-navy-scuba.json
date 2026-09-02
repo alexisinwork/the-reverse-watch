@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hamilton-h82505140-khaki-navy-scuba",
+  "jobId": "14dcf39c-2f0d-46da-88a9-786b830f0969",
+  "reviewedAt": "2026-09-04T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hamilton",
+    "model": "Khaki Navy Scuba Auto",
+    "referenceCode": "H82505140",
+    "variantName": "Blue dial, stainless-steel bracelet, 43mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hamiltonwatch.com/en-us/h82505140-khaki-navy-scuba-auto.html",
+      "status": "validated_primary",
+      "note": "The official Hamilton US product page was checked on 2026-09-04 and confirms exact H82505140 identity, Khaki Navy Scuba Auto, blue dial, steel bracelet, H-10 automatic movement, and 300 m water resistance."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

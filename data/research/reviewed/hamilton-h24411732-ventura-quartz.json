@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hamilton-h24411732-ventura-quartz",
+  "jobId": "a4497e0d-e0fb-4e32-af12-a609a413b94f",
+  "reviewedAt": "2026-09-04T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hamilton",
+    "model": "Ventura Quartz",
+    "referenceCode": "H24411732",
+    "variantName": "Ventura Quartz black dial black leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hamiltonwatch.com/en-us/h24411732-ventura-quartz.html",
+      "status": "validated_primary",
+      "note": "The official Hamilton US product page was checked on 2026-09-04 and confirms exact H24411732 identity, Ventura Quartz, black dial, black leather strap, and quartz product configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

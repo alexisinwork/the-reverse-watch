@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hamilton-h76419931-pilot-pioneer",
+  "jobId": "063b3db9-725b-43cc-8bbd-8635b72975b2",
+  "reviewedAt": "2026-09-04T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hamilton",
+    "model": "Khaki Aviation Pilot Pioneer Mechanical",
+    "referenceCode": "H76419931",
+    "variantName": "Black dial on grey NATO strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hamiltonwatch.com/en-us/h76419931-khaki-pilot.html",
+      "status": "validated_primary",
+      "note": "The official Hamilton US product page was checked on 2026-09-04 and confirms exact H76419931 identity, Khaki Aviation Pilot Pioneer Mechanical, black dial, textile NATO strap, H-50 hand-wound movement, and current collection status."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but M1 facts remain unpromoted until the catalogue evidence gate is satisfied."
+}

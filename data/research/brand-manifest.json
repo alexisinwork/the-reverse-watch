@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T21:35:02.153Z",
+  "updatedAt": "2026-09-02T21:43:20.922Z",
   "brands": [
     {
       "slug": "rolex",
@@ -2680,6 +2680,76 @@
             ]
           },
           "coverageRationale": "Exact Khaki Field Auto reference confirmed on Hamilton's product page; preserve the H70455133 38 mm steel-bracelet boundary and do not infer an unlisted date."
+        },
+        {
+          "id": "hamilton-h70405730-khaki-field-murph-38",
+          "referenceLabel": "Hamilton Khaki Field Murph 38 exact reference H70405730",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Khaki Field Murph 38 H70405730 as a compact automatic field reference; verify the exact dial, strap, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "hamilton-h76419931-pilot-pioneer",
+          "referenceLabel": "Hamilton Khaki Aviation Pilot Pioneer exact reference H76419931",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Khaki Aviation Pilot Pioneer H76419931 as a compact hand-wound aviation reference; verify the exact case, strap, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "hamilton-h82505140-khaki-navy-scuba",
+          "referenceLabel": "Hamilton Khaki Navy Scuba Auto 43 exact reference H82505140",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Khaki Navy Scuba Auto 43 H82505140 as a 300 m automatic diver; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "hamilton-h77825330-khaki-navy-frogman",
+          "referenceLabel": "Hamilton Khaki Navy Frogman 46 exact reference H77825330",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Khaki Navy Frogman 46 H77825330 as a large 300 m automatic diver; verify the exact dial, strap, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "hamilton-h24411732-ventura-quartz",
+          "referenceLabel": "Hamilton Ventura Quartz exact reference H24411732",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Ventura Quartz H24411732 as a distinctive quartz case design; verify the exact case, strap, dimensions, and manufacturer evidence before cataloguing."
         }
       ]
     },
