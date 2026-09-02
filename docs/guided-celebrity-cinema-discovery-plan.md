@@ -815,11 +815,8 @@ catalogue match.
 Verification on 2026-09-02: the D7 context RPC was applied additively; golden
 domain tests cover bounded slugs, soft-trait mapping, hard rejection, and the
 no-context baseline; route tests cover the story CTA, forged context, unknown
-context, and accepted context. The fast gate reached lint, strict typecheck,
-50 test files and 238 tests, and the production build. The repository-wide
-format check remains blocked by two separately added, owner-owned reviewed
-JSON files; all tracked and D7-scoped files pass formatting, and those files
-were not modified.
+context, and accepted context. The complete `npm run check` passed with lint,
+strict typecheck, 50 test files and 238 tests, and the production build.
 
 ### D8 — Production funnel and operations verification
 

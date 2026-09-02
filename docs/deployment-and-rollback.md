@@ -9,10 +9,10 @@ Last verified: 2026-09-02
 - Vercel project `the-reverse-watch` in the `alexisinworks-projects` team is
   sourced from `alexisinwork/the-reverse-watch`; pushes to `main` deploy to
   Production.
-- Production deployment `dpl_CpZz4d1As9UN7kgjaEiAV4LW2td8` is `READY` from
-  commit `9b9c53f` (`Connect discovery story context to diagnostic`). The
-  preceding `dpl_5CALMC361bZn47NGUHSevzpdmrmv` deployment is the recorded
-  rollback target; it contains the verified D6 application behavior.
+- Production deployment `dpl_E18EH9PcXGJvMrTmg6JGWr15Yihu` is `READY` from
+  commit `f9ab3b5` (`Record D8 verification checkpoint`). The preceding
+  `dpl_CpZz4d1As9UN7kgjaEiAV4LW2td8` deployment is the recorded rollback target;
+  it contains the verified D7 application behavior.
 - `https://www.thereserve.watch`, `/quiz`, `/health`, and `/evaluation` return
   200, as does the stable `https://the-reverse-watch.vercel.app` alias. The
   third-party apex DNS still publishes conflicting A records and its
