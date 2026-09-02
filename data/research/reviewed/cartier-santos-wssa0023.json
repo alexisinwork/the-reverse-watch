@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-santos-wssa0023",
+  "jobId": "826db33c-426b-49af-b0ce-691ef2192f5d",
+  "reviewedAt": "2026-09-04T02:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Santos-Dumont",
+    "referenceCode": "WSSA0023",
+    "variantName": "Santos-Dumont small model, High Autonomy quartz movement, steel case and navy blue alligator strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-kw/watches/collections/santos-de-cartier/santos-dumont-watch-CRWSSA0023.html",
+      "status": "validated_primary",
+      "note": "The official Cartier Kuwait product page was checked on 2026-09-04 and confirms reference WSSA0023 as Santos-Dumont, small model, High Autonomy quartz, steel case, navy blue alligator strap, 38 x 27.5 mm dimensions, and 30 m water resistance. This corrects the dossier's broad Santos-family label without changing the exact reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact WSSA0023 identity is confirmed as Santos-Dumont rather than Santos de Cartier; M1 facts remain unpromoted until field-level evidence is reviewed and reconciled."
+}

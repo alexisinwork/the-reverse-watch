@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-tank-must-wsta0042",
+  "jobId": "7c5f7514-c060-4c11-aa5f-75fac257183e",
+  "reviewedAt": "2026-09-04T02:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Tank Must de Cartier",
+    "referenceCode": "WSTA0042",
+    "variantName": "Tank Must small model, quartz movement, steel case, black leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://int.cartier.com/es-eu/collections/gifts/mother-s-day-at-the-maison/es-la-ocasi%C3%B3n-de-demostrar-el-amor/wsta0042-reloj-tank-must.html",
+      "status": "validated_primary",
+      "note": "The official Cartier regional product page was checked on 2026-09-04 and confirms reference WSTA0042, small Tank Must identity, quartz movement, steel case, leather strap, 29.5 x 22 mm dimensions, and 30 m water resistance."
+    },
+    {
+      "url": "https://www.cartier.com/en-bl/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0042",
+      "status": "fetch_blocked",
+      "note": "The exact regional product route returned 403 to the direct verifier; identity is retained from the accessible official Cartier product page above."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact small Tank Must leather-strap reference is confirmed; M1 facts remain unpromoted until field-level evidence is reviewed and reconciled."
+}

@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-santos-wssa0018",
+  "jobId": "7b5443d8-79a1-41f7-8adc-7698a5036bd1",
+  "reviewedAt": "2026-09-04T02:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Santos de Cartier",
+    "referenceCode": "WSSA0018",
+    "variantName": "Santos de Cartier large model, automatic movement, steel case with interchangeable steel bracelet and leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-sa/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRWSSA0018.html",
+      "status": "validated_primary",
+      "note": "The official Cartier Saudi Arabia product page was checked on 2026-09-04 and confirms reference WSSA0018, large Santos de Cartier identity, calibre 1847 MC automatic movement, steel case and bracelet, 47.5 x 39.8 mm dimensions, and 100 m water resistance."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact large Santos configuration is confirmed; M1 facts remain unpromoted until field-level evidence is reviewed and reconciled."
+}

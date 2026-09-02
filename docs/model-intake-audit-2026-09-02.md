@@ -1165,3 +1165,20 @@ rows were promoted. The manifest now reports 298 `needs_review` targets, one
 remaining `planned` target, and 361 review artifacts; accepted catalogue rows
 remain unchanged. The Big Crown reference mismatch is preserved in the review
 artifact rather than silently changing the dossier target.
+
+## Sixty-third parallel exact-reference batch (retrieved 2026-09-04)
+
+Five Cartier dossier references produced schema-valid Perplexity results and
+were checked against official Cartier regional product pages:
+
+- Tank Must `WSTA0042` — [official product page](https://int.cartier.com/es-eu/collections/gifts/mother-s-day-at-the-maison/es-la-ocasi%C3%B3n-de-demostrar-el-amor/wsta0042-reloj-tank-must.html) confirms the small quartz steel-and-leather configuration, 29.5 × 22 mm case, and 30 m water resistance.
+- Tank Must `WSTA0052` — [official product page](https://www.cartier.com/th-th/%E0%B8%99%E0%B8%B2%E0%B8%AC%E0%B8%B4%E0%B8%81%E0%B8%B2/%E0%B8%84%E0%B8%AD%E0%B8%A5%E0%B9%80%E0%B8%A5%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%99/tank/%E0%B8%99%E0%B8%B2%E0%B8%AC%E0%B8%B4%E0%B8%81%E0%B8%B2-tank-must-de-cartier-CRWSTA0052.html?lang=th_TH) confirms the large High Autonomy quartz steel-bracelet configuration, 33.7 × 25.5 mm case, and 30 m water resistance.
+- Tank Must `WSTA0106` — [official product page](https://www.cartier.com/en-gb/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0106) confirms the large High Autonomy quartz steel-bracelet configuration, 33.7 × 25.5 mm case, and 30 m water resistance.
+- Santos-family reference `WSSA0023` — [official product page](https://www.cartier.com/en-kw/watches/collections/santos-de-cartier/santos-dumont-watch-CRWSSA0023.html) confirms that the exact reference is Santos-Dumont small, High Autonomy quartz, steel case, and navy alligator strap; the broad dossier label was corrected at identity level.
+- Santos de Cartier `WSSA0018` — [official product page](https://www.cartier.com/en-sa/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRWSSA0018.html) confirms the large automatic steel configuration, calibre 1847 MC, 39.8 mm case width, and 100 m water resistance.
+
+All five remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 303 `needs_review` targets, one
+remaining `planned` target, and 366 review artifacts; accepted catalogue rows
+remain unchanged. The WSSA0023 family correction is preserved in its review
+artifact rather than treating the broad dossier label as a reference fact.

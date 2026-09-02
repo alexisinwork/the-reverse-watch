@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-tank-must-wsta0106",
+  "jobId": "def43d18-0b2b-421e-852e-78fb81e16cb5",
+  "reviewedAt": "2026-09-04T02:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Tank Must de Cartier",
+    "referenceCode": "WSTA0106",
+    "variantName": "Tank Must large model, High Autonomy quartz movement, steel case and steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-gb/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0106",
+      "status": "validated_primary",
+      "note": "The official Cartier GB product page was checked on 2026-09-04 and confirms reference WSTA0106, large Tank Must identity, High Autonomy quartz movement, steel case and bracelet, 33.7 x 25.5 mm dimensions, and 30 m water resistance."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact large Tank Must steel-bracelet reference is confirmed; M1 facts remain unpromoted until field-level evidence is reviewed and reconciled."
+}

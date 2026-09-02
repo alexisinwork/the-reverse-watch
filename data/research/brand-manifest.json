@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T21:56:58.372Z",
+  "updatedAt": "2026-09-02T22:10:36.738Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1180,6 +1180,76 @@
             ]
           },
           "coverageRationale": "Current official Tank Must configuration; preserve the small rectangular steel case and steel-bracelet boundary."
+        },
+        {
+          "id": "cartier-tank-must-wsta0042",
+          "referenceLabel": "Cartier Tank Must exact steel reference WSTA0042",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact small Tank Must quartz configuration from the owner dossier; verify current manufacturer identity before any M1 promotion."
+        },
+        {
+          "id": "cartier-tank-must-wsta0052",
+          "referenceLabel": "Cartier Tank Must exact steel reference WSTA0052",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact medium Tank Must quartz configuration from the owner dossier; preserve rectangular case geometry."
+        },
+        {
+          "id": "cartier-tank-must-wsta0106",
+          "referenceLabel": "Cartier Tank Must exact steel reference WSTA0106",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact larger Tank Must quartz configuration from the owner dossier; verify the current reference separately from WSTA0107."
+        },
+        {
+          "id": "cartier-santos-wssa0023",
+          "referenceLabel": "Cartier Santos de Cartier exact steel reference WSSA0023",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact medium Santos configuration from the owner dossier; preserve the steel bracelet and 1847 MC platform boundary."
+        },
+        {
+          "id": "cartier-santos-wssa0018",
+          "referenceLabel": "Cartier Santos de Cartier exact steel reference WSSA0018",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact large Santos configuration from the owner dossier; preserve its separate case geometry."
         }
       ]
     },

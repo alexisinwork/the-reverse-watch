@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-tank-must-wsta0052",
+  "jobId": "c177b2b4-dfd9-4afb-9485-9eb836fb44b2",
+  "reviewedAt": "2026-09-04T02:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Tank Must de Cartier",
+    "referenceCode": "WSTA0052",
+    "variantName": "Tank Must large model, High Autonomy quartz movement, steel case and steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/th-th/%E0%B8%99%E0%B8%B2%E0%B8%AC%E0%B8%B4%E0%B8%81%E0%B8%B2/%E0%B8%84%E0%B8%AD%E0%B8%A5%E0%B9%80%E0%B8%A5%E0%B8%8A%E0%B8%B1%E0%B9%88%E0%B8%99/tank/%E0%B8%99%E0%B8%B2%E0%B8%AC%E0%B8%B4%E0%B8%81%E0%B8%B2-tank-must-de-cartier-CRWSTA0052.html?lang=th_TH",
+      "status": "validated_primary",
+      "note": "The official Cartier Thailand product page was checked on 2026-09-04 and confirms reference WSTA0052, large Tank Must identity, High Autonomy quartz movement, steel case and bracelet, 33.7 x 25.5 mm dimensions, and 30 m water resistance."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact large Tank Must steel-bracelet reference is confirmed; M1 facts remain unpromoted until field-level evidence is reviewed and reconciled."
+}
