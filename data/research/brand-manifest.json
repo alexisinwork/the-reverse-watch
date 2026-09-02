@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T19:54:28.929Z",
+  "updatedAt": "2026-09-02T20:00:48.979Z",
   "brands": [
     {
       "slug": "rolex",
@@ -7725,7 +7725,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "davosa-argonautic-39",
+          "referenceLabel": "Davosa Argonautic 39 exact reference 161.532.50",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Argonautic 39 as an active direct-to-consumer diver with published reference 161.532.50; verify the exact current configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "steinhart",
@@ -7742,7 +7757,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "steinhart-ocean-one-39",
+          "referenceLabel": "Steinhart Ocean One 39 exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Ocean One 39 as a current DTC benchmark; verify one exact live configuration and reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "archimede",
@@ -7759,7 +7789,23 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "archimede-pilot-42-automatic",
+          "referenceLabel": "Archimede Pilot 42 Automatic exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000",
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Pilot 42 Automatic as an active Ickler-built pilot model; verify one exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "guinand",
@@ -7776,7 +7822,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "guinand-werksfahrer-chrono-1",
+          "referenceLabel": "Guinand Werksfahrer Chrono 1 exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Werksfahrer Chrono 1 as a current German SW510 chronograph; verify the exact configurator reference before cataloguing."
+        }
+      ]
     },
     {
       "slug": "limes",

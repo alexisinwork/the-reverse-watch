@@ -1,0 +1,56 @@
+{
+  "reviewVersion": 1,
+  "targetId": "steinhart-ocean-one-39",
+  "jobId": "a821bb4b-4e7d-4f1c-a7d0-db73f82cc3c7",
+  "reviewedAt": "2026-09-03T12:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Steinhart",
+    "model": "Ocean One 39",
+    "referenceCode": "103-1547",
+    "variantName": "Ocean One 39 nova green"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.steinhartwatches.de/en/ocean-one-39-nova-green.html",
+      "status": "validated_primary",
+      "note": "The official Steinhart product page was checked on 2026-09-03 and confirms Ocean One 39 nova green, SKU 103-1547, the 39mm configuration, and the live direct-sale product identity."
+    },
+    {
+      "url": "https://www.steinhartwatches.de/de/taucheruhren/ocean-one-39-nova-green.html",
+      "status": "validated_primary",
+      "note": "The official German product page independently exposes Artikelnummer 103-1547 for the same exact configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied the URL path as the reference; the official page publishes SKU 103-1547, which is the canonical identifier retained in this review."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but no provisional M1 fact is promoted."
+}

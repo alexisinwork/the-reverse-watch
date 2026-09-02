@@ -878,3 +878,18 @@ did not produce a schema-valid exact product URL. The three confirmed targets
 remain research-only `needs_more_evidence`; no M1 facts or catalogue rows were
 promoted. The manifest now reports 226 `needs_review` targets and 289 review
 artifacts; accepted catalogue rows remain unchanged.
+
+## Forty-fourth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Davosa Argonautic 39 `161.532.50` — [official product page](https://www.davosa.com/en-int/products/argonautic-39-16153250) explicitly confirms the model, reference, and black-dial steel-bracelet product identity.
+- Steinhart Ocean One 39 nova green `103-1547` — [official English product page](https://www.steinhartwatches.de/en/ocean-one-39-nova-green.html) and [official German product page](https://www.steinhartwatches.de/de/taucheruhren/ocean-one-39-nova-green.html) confirm the exact SKU. The worker's URL path was rejected as a reference code.
+- Archimede Pilot 42 A . LS `UA7929-A1.1` — [official exact product page](https://www.archimede-watches.com/us/Pilot-42-A-.-LS/) and [official Pilot 42 family page](https://www.archimede-watches.com/us/PILOT/PILOT-42/) confirm the exact leather-strap configuration and product number.
+- Guinand Werksfahrer Chrono 1 — [official product page](https://www.guinand-uhren.de/werksfahrer-en.html) and [specialist announcement](https://uhrforum.de/threads/neue-uhr-guinand-werksfahrer-chrono-1.371191/page-2) confirm the exact Series 60 chronograph model. No separate manufacturer reference is published; the worker's inferred `.60.50.01` was rejected.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 230 `needs_review` targets and
+293 review artifacts; accepted catalogue rows remain unchanged. Four goals
+remain `planned`, including Claude Meylan Tortue Swirls.

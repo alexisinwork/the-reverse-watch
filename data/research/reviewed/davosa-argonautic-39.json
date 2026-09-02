@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "davosa-argonautic-39",
+  "jobId": "44374c4a-36ad-47e8-b6b2-ba5c3c69303d",
+  "reviewedAt": "2026-09-03T12:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Davosa",
+    "model": "Argonautic 39",
+    "referenceCode": "161.532.50",
+    "variantName": "Argonautic 39 black on steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.davosa.com/en-int/products/argonautic-39-16153250",
+      "status": "validated_primary",
+      "note": "The official Davosa page was checked on 2026-09-03 and explicitly confirms Argonautic 39, ref. 161.532.50, the black-dial stainless-steel-bracelet configuration, and the direct-sale product identity."
+    },
+    {
+      "url": "https://www.davosa.com/en-int/products/argonautic-39-161532-50",
+      "status": "validated_primary",
+      "note": "The alternate official Davosa URL was checked as a reference-page cross-check; the canonical product page supplies the confirmed reference used here."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but no provisional M1 fact is promoted."
+}

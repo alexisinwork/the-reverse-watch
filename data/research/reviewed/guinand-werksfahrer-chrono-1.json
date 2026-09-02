@@ -1,0 +1,61 @@
+{
+  "reviewVersion": 1,
+  "targetId": "guinand-werksfahrer-chrono-1",
+  "jobId": "8e2ca341-4966-4b79-a9e6-37a642619a5e",
+  "reviewedAt": "2026-09-03T12:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Guinand",
+    "model": "Werksfahrer Chrono",
+    "referenceCode": "reference not established",
+    "variantName": "Werksfahrer Chrono 1"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.guinand-uhren.de/werksfahrer-en.html",
+      "status": "validated_primary",
+      "note": "The official Guinand page was checked on 2026-09-03 and confirms Werksfahrer Chrono 1, its Series 60 context, and the exact black Tricompax SW510 chronograph model. The public page does not publish a separate numeric reference and its configurator currently has no product entry."
+    },
+    {
+      "url": "https://uhrforum.de/threads/neue-uhr-guinand-werksfahrer-chrono-1.371191/page-2",
+      "status": "validated_secondary",
+      "note": "The specialist forum announcement was checked and corroborates the specific Werksfahrer Chrono 1 identity; it is not used to establish an unprinted reference code."
+    },
+    {
+      "url": "https://www.invaluable.com/auction-lot/guinand-werksfahrer-chronograph-1-tricompax-herre-185-c-ad6476eb24",
+      "status": "validated_secondary",
+      "note": "The auction record was checked and corroborates the exact Werksfahrer Chronograph 1 Tricompax identity."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker's .60.50.01 is an inference from Series 60 numbering practice and is not printed on the official product page or corroborated as a product reference. The official page identifies the model as Werksfahrer Chrono 1 / model 60.50 but does not establish a separate reference code."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact model identity is confirmed, but no manufacturer reference code or provisional M1 fact is promoted."
+}

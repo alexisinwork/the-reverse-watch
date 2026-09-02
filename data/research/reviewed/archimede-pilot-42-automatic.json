@@ -1,0 +1,52 @@
+{
+  "reviewVersion": 1,
+  "targetId": "archimede-pilot-42-automatic",
+  "jobId": "161320cc-76d7-4054-9dba-d0d64fcd945d",
+  "reviewedAt": "2026-09-03T12:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Archimede",
+    "model": "Pilot 42 A Automatik",
+    "referenceCode": "UA7929-A1.1",
+    "variantName": "Pilot 42 A . LS"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.archimede-watches.com/us/Pilot-42-A-.-LS/",
+      "status": "validated_primary",
+      "note": "The official Archimede product page was checked on 2026-09-03 and explicitly confirms Pilot 42 A . LS and product number UA7929-A1.1."
+    },
+    {
+      "url": "https://www.archimede-watches.com/us/PILOT/PILOT-42/",
+      "status": "validated_primary",
+      "note": "The official Pilot 42 family page was checked and confirms the exact . LS configuration within the date-at-6 Pilot 42 A group."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; exact identity is confirmed, but no provisional M1 fact is promoted."
+}
