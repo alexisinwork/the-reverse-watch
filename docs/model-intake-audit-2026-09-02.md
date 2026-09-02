@@ -179,6 +179,28 @@ missing rather than inherited from a family page. The manifest now reports 70
 `needs_review` targets, no `planned` targets, and 133 review artifacts; accepted
 catalogue rows remain unchanged.
 
+## High-priority cross-brand exact candidates (retrieved 2026-09-02)
+
+The next parallel research batch added nine exact candidates from brands that
+previously had no accepted reference variant. All nine received valid final
+Perplexity `sonar-pro` extractions and independent primary-source identity
+checks. They remain `needs_more_evidence`; no catalogue row was created because
+the M1 review still has unresolved physical, price, or fit fields.
+
+- Patek Philippe Nautilus `5811/1G-001` — [official card](https://www.patek.com/en/collection/nautilus/5811-1G-001).
+- Audemars Piguet Royal Oak Jumbo `16202ST.OO.1240ST.02` — [official card](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02).
+- Vacheron Constantin Overseas: `4520V/210A-B128`, `4520V/210A-B483`,
+  `4520V/210R-B705`, and `4520V/210R-B967` — [official blue-dial card](https://www.vacheron-constantin.com/ww/en/collections/overseas/4520v-210a-b128.html), [black dial](https://www.vacheron-constantin.com/ww/en/collections/overseas/4520v-210a-b483.html), [pink-gold blue dial](https://www.vacheron-constantin.com/ww/en/collections/overseas/4520v-210r-b705.html), and [pink-gold green dial](https://www.vacheron-constantin.com/ww/en/collections/overseas/4520v-210r-b967.html).
+- Cartier Tank Must small `WSTA0107` — [official card](https://www.cartier.com/en-my/watches/collections/tank/tank-must-de-cartier-watch-CRWSTA0107.html).
+- Omega Seamaster Aqua Terra 150M 38 mm `220.10.38.20.03.001` — [official card](https://www.omegawatches.com/en-us/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382003001).
+- IWC Pilot's Watch Mark XX `IW328201` — [official card](https://www.iwc.com/eu-en/watches/pilot-watches/iw328201-pilots-watch-mark-xx).
+
+The exact family references are not merged: `4520V` is only a family prefix and
+the Vacheron suffix determines dial/material configuration; `16202ST` is
+likewise insufficient without the full AP product code. The manifest now
+reports 79 `needs_review` targets and 142 review artifacts; the 73 accepted
+catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

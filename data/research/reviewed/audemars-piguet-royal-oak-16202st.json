@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "audemars-piguet-royal-oak-16202st",
+  "jobId": "f63ff8a6-6842-45b1-8113-18258e968987",
+  "reviewedAt": "2026-09-02T14:10:23.960Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Audemars Piguet",
+    "model": "Royal Oak “Jumbo” Extra-Thin",
+    "referenceCode": "16202ST.OO.1240ST.02",
+    "variantName": "Royal Oak “Jumbo” Extra-Thin Stainless Steel Blue Dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202ST.OO.1240ST.02",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 16202ST.OO.1240ST.02. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

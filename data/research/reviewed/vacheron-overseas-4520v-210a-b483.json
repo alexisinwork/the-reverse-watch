@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vacheron-overseas-4520v-210a-b483",
+  "jobId": "51d594b1-9d51-4f6c-864f-33b58e422db0",
+  "reviewedAt": "2026-09-02T14:10:23.961Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Vacheron Constantin",
+    "model": "Overseas Self-Winding",
+    "referenceCode": "4520V/210A-B483",
+    "variantName": "Overseas self-winding 41 mm steel black dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.vacheron-constantin.com/ww/en/collections/overseas/4520v-210a-b483.html",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 4520V/210A-B483. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

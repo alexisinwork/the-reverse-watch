@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "vacheron-overseas-4520v-210r-b705",
+  "jobId": "ba6c9750-8cbe-40b9-8c80-778429a5fa57",
+  "reviewedAt": "2026-09-02T14:10:23.961Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Vacheron Constantin",
+    "model": "Overseas",
+    "referenceCode": "4520V/210R-B705",
+    "variantName": "Overseas self-winding 41 mm pink gold blue dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.vacheron-constantin.com/ww/en/collections/overseas/4520v-210r-b705.html",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 4520V/210R-B705. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T13:59:58.245Z",
+  "updatedAt": "2026-09-02T14:11:12.359Z",
   "brands": [
     {
       "slug": "rolex",
@@ -965,6 +965,20 @@
             ]
           },
           "coverageRationale": "Fill high-horology complication cells only when M1 decision facts are sourceable."
+        },
+        {
+          "id": "patek-nautilus-5811-1g-001",
+          "referenceLabel": "Patek Philippe Nautilus exact white-gold reference 5811/1G-001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Nautilus configuration; preserve the exact white-gold case, blue dial, and integrated bracelet boundary."
         }
       ]
     },
@@ -1014,6 +1028,20 @@
             ]
           },
           "coverageRationale": "Add one material-specific row for archetype diversity, not a family-wide rollup."
+        },
+        {
+          "id": "audemars-piguet-royal-oak-16202st",
+          "referenceLabel": "Audemars Piguet Royal Oak Jumbo Extra-Thin exact steel reference 16202ST.OO.1240ST.02",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Royal Oak Jumbo configuration; preserve the exact 39 mm steel integrated-bracelet and blue-dial boundary."
         }
       ]
     },
@@ -1032,7 +1060,64 @@
         "referenceFamilyCount": 10,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "vacheron-overseas-4520v-210a-b128",
+          "referenceLabel": "Vacheron Constantin Overseas exact steel blue-dial reference 4520V/210A-B128",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Overseas configuration; preserve the exact steel blue-dial bracelet and supplied-strap boundary."
+        },
+        {
+          "id": "vacheron-overseas-4520v-210a-b483",
+          "referenceLabel": "Vacheron Constantin Overseas exact steel black-dial reference 4520V/210A-B483",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Overseas configuration; preserve the exact steel black-dial boundary."
+        },
+        {
+          "id": "vacheron-overseas-4520v-210r-b705",
+          "referenceLabel": "Vacheron Constantin Overseas exact pink-gold blue-dial reference 4520V/210R-B705",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Overseas configuration; preserve the exact pink-gold and blue-dial boundary."
+        },
+        {
+          "id": "vacheron-overseas-4520v-210r-b967",
+          "referenceLabel": "Vacheron Constantin Overseas exact pink-gold green-dial reference 4520V/210R-B967",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Overseas configuration; preserve the exact pink-gold and green-dial boundary."
+        }
+      ]
     },
     {
       "slug": "cartier",
@@ -1081,6 +1166,20 @@
             ]
           },
           "coverageRationale": "Fill the sparse small-wrist formal precision cells with a non-round archetype."
+        },
+        {
+          "id": "cartier-tank-must-wsta0107",
+          "referenceLabel": "Cartier Tank Must small exact steel reference WSTA0107",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Tank Must configuration; preserve the small rectangular steel case and steel-bracelet boundary."
         }
       ]
     },
@@ -1125,6 +1224,20 @@
             ]
           },
           "coverageRationale": "Diversify premium chronograph cells beyond the seed's single solar row."
+        },
+        {
+          "id": "omega-aqua-terra-22010382003001",
+          "referenceLabel": "Omega Seamaster Aqua Terra 150M exact steel blue-dial reference 220.10.38.20.03.001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Aqua Terra configuration; preserve the 38 mm steel, blue teak-dial, date, and steel-bracelet boundary."
         }
       ]
     },
@@ -1235,7 +1348,22 @@
         "referenceFamilyCount": 9,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "iwc-mark-xx-iw328201",
+          "referenceLabel": "IWC Pilot's Watch Mark XX exact steel black-dial reference IW328201",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current official Mark XX configuration; preserve the exact steel case, black dial, and leather EasX-CHANGE strap boundary."
+        }
+      ]
     },
     {
       "slug": "breguet",

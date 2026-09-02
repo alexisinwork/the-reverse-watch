@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "patek-nautilus-5811-1g-001",
+  "jobId": "7d2ddf8d-56b9-49ee-ad97-132a1c20ce7f",
+  "reviewedAt": "2026-09-02T14:10:23.959Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Patek Philippe",
+    "model": "Nautilus",
+    "referenceCode": "5811/1G-001",
+    "variantName": "Nautilus 5811/1G-001 White Gold Blue Sunburst Dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.patek.com/en/collection/nautilus/5811-1G-001",
+      "status": "validated_primary",
+      "note": "The official manufacturer product page was independently checked on 2026-09-02 and confirms the current exact configuration URL for 5811/1G-001. Perplexity extraction remains provisional for all non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact reference and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}
