@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T17:17:20.017Z",
+  "updatedAt": "2026-09-02T17:27:14.123Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4091,7 +4091,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 9
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "poljot-international-kirovsky-2415-1981115",
+          "referenceLabel": "Poljot International Kirovsky II exact reference 2415.1981115",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The current official Kirovsky product page publishes reference 2415.1981115 and a complete model description; verify the exact configuration and remaining M1 fields."
+        }
+      ]
     },
     {
       "slug": "pequignet",
@@ -4108,7 +4123,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "pequignet-royale-paris-chrono-blue-9120313-c",
+          "referenceLabel": "Pequignet Royale Paris Chrono blue counters exact SKU 9120313/C",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Pequignet's current official product page publishes SKU 9120313/C for the 39.5mm Royale Paris Chrono with blue counters and lists the current 6,450 EUR price; verify the complete M1 field set."
+        }
+      ]
     },
     {
       "slug": "cuervo-y-sobrinos",
@@ -4125,7 +4155,22 @@
         "referenceFamilyCount": 5,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "cuervo-y-sobrinos-esplendidos-heritage-champagne-silver-2452-1hle",
+          "referenceLabel": "Cuervo y Sobrinos Esplendidos Heritage champagne silver exact SKU 2452.1HLE",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The official product page publishes SKU 2452.1HLE for a distinct Esplendidos Heritage rectangular configuration and provides current technical and availability information; verify every M1 field before catalogue use."
+        }
+      ]
     },
     {
       "slug": "christopher-ward",
@@ -4249,7 +4294,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "ming-57-05-comet-strap",
+          "referenceLabel": "MING 57.05 Comet leather strap exact official model",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "The current official MING page identifies the 57.05 Comet strap configuration and publishes its 40mm worldtime specifications; no separate conventional reference code is presented, so preserve model-level identity pending further evidence."
+        }
+      ]
     },
     {
       "slug": "kurono-tokyo",

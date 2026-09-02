@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "ming-57-05-comet-strap",
+  "jobId": "885ed4a3-249e-4447-82a0-f807648ff64f",
+  "reviewedAt": "2026-09-02T22:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "MING",
+    "model": "57.05 Comet",
+    "referenceCode": "/",
+    "variantName": "57.05 Comet leather strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.ming.watch/featured-product/ming-57-05-comet-strap",
+      "status": "validated_primary",
+      "note": "MING's official strap product page was checked on 2026-09-02 and confirms the 57.05 Comet model, 200-piece edition, worldtime function, and the leather-strap configuration with its 40mm technical specification table."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "Perplexity returned a path-like Polymesh URL as a reference, but MING's official strap page publishes no conventional reference code; the inferred value is rejected."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The MING model and official strap URL are confirmed, but the manufacturer page publishes no conventional reference code; a path-like value returned by Perplexity was rejected rather than treated as a reference. All M1 facts remain provisional until field-level review is complete."
+}

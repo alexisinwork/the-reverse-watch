@@ -560,6 +560,23 @@ unresolved M1 facts remain null, and no catalogue rows were added. The
 manifest now reports 151 `needs_review` targets and 214 review artifacts;
 accepted catalogue rows remain unchanged.
 
+## Twenty-fourth parallel exact-reference batch (retrieved 2026-09-02)
+
+Three additional watch configurations passed the Perplexity worker and were
+checked against primary manufacturer pages:
+
+- Poljot International Kirovsky II `2415.1981115` — [official product page](https://www.poljot-international.com/produkt/kirovsky?lang=en).
+- Pequignet Royale Paris Chrono, silver dial with blue counters `9120313/C` — [official product page](https://showroom.pequignet.com/en/products/montre-royale-paris-chrono-compteurs-bleu-39-5-mm).
+- MING 57.05 Comet leather strap — [official product page](https://www.ming.watch/featured-product/ming-57-05-comet-strap). MING publishes the model and configuration but no conventional reference code; a path-like value returned by Perplexity was explicitly rejected.
+
+All three remain research-only `needs_more_evidence`; exact identities and
+manufacturer identifiers (or the documented absence of one) are recorded,
+unresolved M1 facts remain null, and no catalogue rows were added. The Cuervo
+y Sobrinos target was not promoted because all five worker attempts failed
+schema validation or lacked a resolved product URL. The manifest now reports
+154 `needs_review` targets and 217 review artifacts; accepted catalogue rows
+remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

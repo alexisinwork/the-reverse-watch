@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "pequignet-royale-paris-chrono-blue-9120313-c",
+  "jobId": "2a1cf024-d876-472a-af21-1dc8e0f59d90",
+  "reviewedAt": "2026-09-02T22:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Pequignet",
+    "model": "Royale Paris Chrono",
+    "referenceCode": "9120313/C",
+    "variantName": "Royale Paris Chrono silver dial, blue counters, steel bracelet 39.5 mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://showroom.pequignet.com/en/products/montre-royale-paris-chrono-compteurs-bleu-39-5-mm",
+      "status": "validated_primary",
+      "note": "Pequignet's official product page was checked on 2026-09-02 and confirms SKU 9120313/C for the 39.5mm Royale Paris Chrono with silver dial, blue counters, and a steel bracelet option."
+    },
+    {
+      "url": "https://showroom.pequignet.com/en",
+      "status": "validated_primary",
+      "note": "The official Pequignet storefront was checked on 2026-09-02 and lists the corresponding 9120313 model at 6,450 EUR TTC."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact Pequignet SKU and official product URL are confirmed; all M1 facts remain provisional until field-level review is complete."
+}
