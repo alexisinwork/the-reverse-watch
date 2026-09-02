@@ -351,6 +351,19 @@ contract-invalid after retries, so it stays planned. The manifest now reports
 112 `needs_review` targets and 175 review artifacts; accepted catalogue rows
 remain unchanged.
 
+## Eleventh parallel exact-reference batch (retrieved 2026-09-02)
+
+Two current configurations were found by Perplexity and confirmed against
+official manufacturer pages:
+
+- Lorier Neptune `737080` — [official card](https://www.lorierwatches.com/products/watch-neptune-black-nodate-bracelet-737080).
+- Farer Alert, Three Hand Series III — [official card](https://farer.com/products/alert). Farer publishes the stable product identifier `Alert` but no separate SKU on the card; it is recorded as a product identifier, not an invented reference.
+
+Both remain research-only `needs_more_evidence`; exact configuration and
+manufacturer provenance are recorded, while unresolved M1 facts remain null.
+The manifest now reports 114 `needs_review` targets and 177 review artifacts;
+accepted catalogue rows remain unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

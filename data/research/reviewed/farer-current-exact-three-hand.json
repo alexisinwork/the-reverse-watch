@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "farer-current-exact-three-hand",
+  "jobId": "3a6a453d-ef68-4d76-a32b-c0be005a7d77",
+  "reviewedAt": "2026-09-02T18:20:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Farer",
+    "model": "Three Hand Series III Alert",
+    "referenceCode": "Alert",
+    "variantName": "Alert"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://farer.com/products/alert",
+      "status": "validated_primary",
+      "note": "The official Farer product page was checked on 2026-09-02 and confirms the current Alert configuration. Farer exposes the stable product slug /products/alert but no separate numeric SKU on the page; Alert is retained as the product identifier and is not represented as an unpublished SKU."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact current Alert product configuration and official URL are confirmed; Farer's page does not publish a separate SKU. Physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "lorier-neptune-737080",
+  "jobId": "aa83097c-aa0f-4710-8046-3055d96b3299",
+  "reviewedAt": "2026-09-02T18:20:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Lorier",
+    "model": "Neptune",
+    "referenceCode": "737080",
+    "variantName": "Neptune Black No-Date on Bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.lorierwatches.com/products/watch-neptune-black-nodate-bracelet-737080",
+      "status": "validated_primary",
+      "note": "The official Lorier product page was checked on 2026-09-02 and explicitly lists Ref. 737080 for the current black no-date bracelet configuration. Perplexity extraction remains provisional for non-identity fields."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. Exact configuration and official product URL are confirmed, while physical, price, movement, fit, weight, lume, attachment, and date-state facts remain provisional until field-level primary-source review closes every M1 gap."
+}

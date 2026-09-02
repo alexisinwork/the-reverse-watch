@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:18:05.706Z",
+  "updatedAt": "2026-09-02T16:22:34.206Z",
   "brands": [
     {
       "slug": "rolex",
@@ -3915,7 +3915,7 @@
         {
           "id": "farer-current-exact-three-hand",
           "referenceLabel": "Farer Alert Three Hand Series III exact product identifier Alert",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "1000_2000"
@@ -4373,7 +4373,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 18
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "lorier-neptune-737080",
+          "referenceLabel": "Lorier Neptune exact reference 737080, current black no-date bracelet configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official Neptune configuration; preserve the exact 39 mm steel, black dial, no-date, bracelet boundary."
+        }
+      ]
     },
     {
       "slug": "nodus",
