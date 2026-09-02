@@ -821,3 +821,17 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 211 `needs_review` targets and
 274 review artifacts; accepted catalogue rows remain unchanged.
+
+## Fortieth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Jacob & Co. Astronomia Sky `AT110.40.AA.AA.A` — [specialist exact-reference page](https://www.thewatchpages.com/watches/jacob-co-astronomia-sky-at11040aaaaa) plus [official Astronomia Sky locator](https://jacobandco.com/timepieces/astronomia-sky). The exact rose-gold/yellow-sapphire identity and reference are retained; the official locator was not used to promote M1 facts.
+- Franck Muller Cintrée Curvex Crazy Hours `5850CHDCODR30CD5NE` — [official Crazy Hours page](https://www.franckmuller.com/crazy-hours) and [official US catalogue](https://franckmuller-usa.com/cintree_curvex_men_crazy_hours). The exact 30th Anniversary Color Dreams reference is confirmed.
+- Roger Dubuis Excalibur Double Tourbillon `RDDBEX1131` — [official product page](https://www.rogerdubuis.com/watches/excalibur/double-tourbillon-white-gold-45mm-rddbex1131). The exact white-gold 45mm reference is confirmed.
+- Gérald Charles Maestro 2.0 Ultra-Thin `GC2.0-A-00` — [official model page](https://www.geraldcharles.com/products/maestro-2-0-ultra-thin-green) plus [authorized retailer exact black listing](https://www.mayors.com/Gerald-Charles-Maestro-2.0-Ultra+Thin-39mm-Mens-Watch-Black-GC2.0+A+00/p/18620001). The exact black-dial reference is corroborated; no M1 fact is promoted from the retailer listing.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 215 `needs_review` targets and
+278 review artifacts; accepted catalogue rows remain unchanged.

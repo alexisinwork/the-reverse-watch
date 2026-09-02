@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "jacob-and-co-astronomia-sky",
+  "jobId": "db755c6d-5929-49e2-a5b2-13eaa4b54df3",
+  "reviewedAt": "2026-09-03T09:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Jacob & Co.",
+    "model": "Astronomia Sky",
+    "referenceCode": "AT110.40.AA.AA.A",
+    "variantName": "Astronomia Sky Rose Gold, Yellow Sapphire"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://jacobandco.com/timepieces/astronomia-sky",
+      "status": "validated_primary",
+      "note": "The official Astronomia Sky locator was checked on 2026-09-03 and confirms the model family; the current fetch exposed only an iframe, so it is not used to promote M1 facts."
+    },
+    {
+      "url": "https://www.thewatchpages.com/watches/jacob-co-astronomia-sky-at11040aaaaa",
+      "status": "validated_secondary",
+      "note": "The exact reference AT110.40.AA.AA.A, 47mm rose-gold configuration, manual movement, blue alligator strap, 30m water resistance, and 18-piece limit were checked on 2026-09-03."
+    },
+    {
+      "url": "https://www.wywatl.com/products/astronomia-sky-jacob-co-astronomia-sky-yellow-sapphire-tourbillon-47-mm-at110-40-aa-aa-a",
+      "status": "validated_secondary",
+      "note": "The reviewed-market listing corroborates the yellow-sapphire/rose-gold configuration and the exact reference; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

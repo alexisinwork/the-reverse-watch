@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T19:18:21.595Z",
+  "updatedAt": "2026-09-02T19:26:12.351Z",
   "brands": [
     {
       "slug": "rolex",
@@ -7211,7 +7211,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 4
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "jacob-and-co-astronomia-sky",
+          "referenceLabel": "Jacob & Co. Astronomia Sky exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Astronomia as the signature Jacob & Co. high-complication family; verify one exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "franck-muller",
@@ -7228,7 +7243,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 4
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "franck-muller-cintree-curvex-crazy-hours",
+          "referenceLabel": "Franck Muller Cintrée Curvex Crazy Hours exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Cintrée Curvex Crazy Hours as a distinct jumping-hour configuration; verify the exact official reference and material boundary before cataloguing."
+        }
+      ]
     },
     {
       "slug": "roger-dubuis",
@@ -7245,7 +7275,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "roger-dubuis-excalibur-double-flying-tourbillon-rddbex1131",
+          "referenceLabel": "Roger Dubuis Excalibur Double Flying Tourbillon exact reference RDDBEX1131",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies the current Excalibur Double Flying Tourbillon reference RDDBEX1131; verify the exact manufacturer configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "gerald-charles",
@@ -7262,7 +7307,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 4
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "gerald-charles-maestro-2-ultra-thin",
+          "referenceLabel": "Gérald Charles Maestro 2.0 Ultra-Thin exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Maestro 2.0 Ultra-Thin as the core modern Gérald Charles model; verify the exact manufacturer reference and material configuration before cataloguing."
+        }
+      ]
     },
     {
       "slug": "daniel-roth",

@@ -1,0 +1,47 @@
+{
+  "reviewVersion": 1,
+  "targetId": "roger-dubuis-excalibur-double-flying-tourbillon-rddbex1131",
+  "jobId": "0a854164-a40a-4035-ba13-cc0a1dbfa480",
+  "reviewedAt": "2026-09-03T09:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Roger Dubuis",
+    "model": "Excalibur Double Tourbillon",
+    "referenceCode": "RDDBEX1131",
+    "variantName": "Excalibur Double Tourbillon White Gold 45mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rogerdubuis.com/watches/excalibur/double-tourbillon-white-gold-45mm-rddbex1131",
+      "status": "validated_primary",
+      "note": "The official product page was checked on 2026-09-03 and explicitly confirms reference RDDBEX1131, white-gold 45mm case, RD108 skeleton double flying tourbillon, 14.66mm thickness, 30m water resistance, and black calf strap."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

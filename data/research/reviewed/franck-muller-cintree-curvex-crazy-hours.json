@@ -1,0 +1,57 @@
+{
+  "reviewVersion": 1,
+  "targetId": "franck-muller-cintree-curvex-crazy-hours",
+  "jobId": "6035ad92-96e3-4f83-a7d8-40f08167a2d3",
+  "reviewedAt": "2026-09-03T09:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Franck Muller",
+    "model": "Cintrée Curvex Crazy Hours",
+    "referenceCode": "5850CHDCODR30CD5NE",
+    "variantName": "Cintrée Curvex Crazy Hours Color Dreams 30th Anniversary"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.franckmuller.com/crazy-hours",
+      "status": "validated_primary",
+      "note": "The official Crazy Hours collection page was checked on 2026-09-03 and confirms the Crazy Hours mechanism and the 5850 CH Color Dreams 30th Anniversary family."
+    },
+    {
+      "url": "https://franckmuller-usa.com/cintree_curvex_men_crazy_hours",
+      "status": "validated_primary",
+      "note": "The official US catalogue was checked on 2026-09-03 and lists the exact reference 5850CHDCODR30CD5NE as Cintrée Curvex Crazy Hours Color Dreams 30th Anniversary."
+    },
+    {
+      "url": "https://deployant.com/review-franck-muller-crazy-hours-5850ch/",
+      "status": "validated_secondary",
+      "note": "The specialist review corroborates the 5850 Crazy Hours identity; it is not used to promote M1 facts."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "model",
+    "referenceCode",
+    "variantName",
+    "productUrl"
+  ],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}
