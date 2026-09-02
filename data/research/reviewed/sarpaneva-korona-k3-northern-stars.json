@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "sarpaneva-korona-k3-northern-stars",
+  "jobId": "5d073b2f-193a-4c75-86d6-b373ffe091b8",
+  "reviewedAt": "2026-09-03T06:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Sarpaneva",
+    "model": "Korona K3 Northern Stars",
+    "referenceCode": "K3 Northern Stars Guilloché",
+    "variantName": "K3 Northern Stars Guilloché Candy Factory Pink"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://studiosarpaneva.com/products/k3-northern-stars-guilloche",
+      "status": "validated_primary",
+      "note": "The official StudioSarpaneva product page was checked on 2026-09-03 and confirms the K3 Northern Stars Guilloché model and Candy Factory Pink configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "K3 Northern Stars Guilloché is the model/configuration label shown by the worker, not an independently published manufacturer reference code."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}

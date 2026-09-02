@@ -1,0 +1,51 @@
+{
+  "reviewVersion": 1,
+  "targetId": "moritz-grossmann-benu-power-reserve-mg-003704",
+  "jobId": "bb036d24-3e50-4edb-9184-24c7abd5371a",
+  "reviewedAt": "2026-09-03T06:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Moritz Grossmann",
+    "model": "Benu Power Reserve",
+    "referenceCode": "MG-003704",
+    "variantName": "Benu Power Reserve White Gold Azurage Sector Dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://en.grossmann-uhren.com/watch/power-reserve/",
+      "status": "validated_primary",
+      "note": "The official Moritz Grossmann Power Reserve page was checked on 2026-09-03 and confirms the model family and current versions."
+    },
+    {
+      "url": "https://monochrome-watches.com/2025-new-sector-dials-moritz-grossmann-benu-power-reserve-price-introducing/",
+      "status": "validated_secondary",
+      "note": "The specialist editorial source supplies the exact MG-003704 reference and White Gold Azurage Sector Dial configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "referenceCode"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "productUrl",
+      "reason": "The official page is a model-family locator rather than an exact MG-003704 product route."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

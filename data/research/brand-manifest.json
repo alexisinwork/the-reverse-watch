@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T18:46:21.598Z",
+  "updatedAt": "2026-09-02T18:51:23.457Z",
   "brands": [
     {
       "slug": "rolex",
@@ -6571,7 +6571,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 5
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "bruno-sohnle-stuttgart-automatik-ii-big",
+          "referenceLabel": "Bruno Söhnle Stuttgart Automatik II Big exact current configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Stuttgart Automatik II Big as a current automatic model; verify the exact manufacturer configuration and reference data."
+        }
+      ]
     },
     {
       "slug": "meistersinger",
@@ -6716,7 +6731,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "moritz-grossmann-benu-power-reserve-mg-003704",
+          "referenceLabel": "Moritz Grossmann Benu Power Reserve exact family MG-003704",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Benu Power Reserve family MG-003704; verify an exact current manufacturer configuration before treating the family as a reference variant."
+        }
+      ]
     },
     {
       "slug": "sarpaneva",
@@ -6733,7 +6763,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 7
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "sarpaneva-korona-k3-northern-stars",
+          "referenceLabel": "Sarpaneva Korona K3 Northern Stars exact configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Korona K3 Northern Stars as a distinct Sarpaneva configuration; verify the exact model page and current reference details."
+        }
+      ]
     },
     {
       "slug": "habring",
@@ -6750,7 +6795,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "habring-doppel-felix-a11r",
+          "referenceLabel": "Habring² Doppel-Felix exact caliber reference A11R",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "The owner-reviewed dossier identifies Doppel-Felix with A11R rattrapante movement; verify the exact manufacturer model configuration and preserve missing facts as null."
+        }
+      ]
     },
     {
       "slug": "dornbluth",

@@ -765,3 +765,17 @@ against primary or specialist reference sources:
 All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
 rows were promoted. The manifest now reports 195 `needs_review` targets and
 258 review artifacts; accepted catalogue rows remain unchanged.
+
+## Thirty-sixth parallel exact-reference batch (retrieved 2026-09-03)
+
+Four additional configurations passed the Perplexity worker and were checked
+against primary or specialist reference sources:
+
+- Bruno Söhnle Stuttgart Automatik II Big `17-12173-361` — [official product page](https://www.brunosoehnle-glashuette.com/de/herrenuhren/extravagant/stuttgart-automatik-ii-big-17-12173-361). The exact product number and configuration are confirmed.
+- Moritz Grossmann Benu Power Reserve `MG-003704` — [official model page](https://en.grossmann-uhren.com/watch/power-reserve/) plus [specialist reference source](https://monochrome-watches.com/2025-new-sector-dials-moritz-grossmann-benu-power-reserve-price-introducing/). The model family is confirmed by the manufacturer and the exact sector-dial reference by specialist editorial evidence.
+- Sarpaneva Korona K3 Northern Stars Guilloché — [official product page](https://studiosarpaneva.com/products/k3-northern-stars-guilloche). The exact model and Candy Factory Pink configuration are confirmed; the descriptive label was not treated as a reference code.
+- Habring² Doppel-Felix A11R — [official archive page](https://www.habring2.com/index.php/en/archive/doppel-felix). The exact model is confirmed; the worker's URL path was rejected as a reference code and A11R is retained only as movement context.
+
+All four remain research-only `needs_more_evidence`; no M1 facts or catalogue
+rows were promoted. The manifest now reports 199 `needs_review` targets and
+262 review artifacts; accepted catalogue rows remain unchanged.

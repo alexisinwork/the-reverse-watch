@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "bruno-sohnle-stuttgart-automatik-ii-big",
+  "jobId": "c47935db-e8aa-41fb-ae34-ea54b03cf0a9",
+  "reviewedAt": "2026-09-03T06:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Bruno Söhnle",
+    "model": "Stuttgart Automatik II Big",
+    "referenceCode": "17-12173-361",
+    "variantName": "Stuttgart Automatik II Big 17-12173-361"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.brunosoehnle-glashuette.com/de/herrenuhren/extravagant/stuttgart-automatik-ii-big-17-12173-361",
+      "status": "validated_primary",
+      "note": "The official Bruno Söhnle product page was checked on 2026-09-03 and confirms product number 17-12173-361 and the Stuttgart Automatik II Big configuration."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review; no provisional M1 fact is promoted."
+}

@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "habring-doppel-felix-a11r",
+  "jobId": "b7c1e25a-91a6-438f-bd63-228131450db2",
+  "reviewedAt": "2026-09-03T06:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Habring²",
+    "model": "Doppel-Felix",
+    "referenceCode": "reference not established",
+    "variantName": "Doppel-Felix A11R (no date, telemeter scale)"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.habring2.com/index.php/en/archive/doppel-felix",
+      "status": "validated_primary",
+      "note": "The official Habring² archive page was checked on 2026-09-03 and confirms the Doppel-Felix model. The URL path supplied by the worker is a locator, not a reference code; A11R is the movement designation."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "model", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [
+    {
+      "fieldName": "referenceCode",
+      "reason": "The worker supplied the archive URL path as a reference code; the available page identifies the model and A11R movement but does not publish a separate manufacturer reference."
+    }
+  ],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review; no provisional M1 fact is promoted."
+}
