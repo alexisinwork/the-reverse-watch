@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "damasko-df10-black",
+  "jobId": "e89140fa-191e-49d5-b62f-b28139c17304",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "DAMASKO",
+    "model": "DF10",
+    "referenceCode": "SW10434.25",
+    "variantName": "DF10 Black - Leather strap Vintage black - Elaboré"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.damasko-watches.com/en/DF10-Black/SW10434.25",
+      "status": "validated_primary",
+      "note": "DAMASKO's official English product page was checked on 2026-09-02 and confirms the exact SW10434.25 configuration, DF10 Black identity, €2,050 price, A26-1 movement, 39mm diameter, 9.95mm height, 48mm lug-to-lug, 20mm lug width, 56g head weight, and X1C1 lume."
+    },
+    {
+      "url": "https://www.damasko-watches.com/en/current-collection/three-hand-models/",
+      "status": "validated_primary",
+      "note": "The official current-collection page independently lists DF10 Black and the same core dimensions and movement specification."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact current DAMASKO configuration and manufacturer reference are confirmed; no catalogue row is created until the field-level M1 review closes all required facts for this exact strap and movement execution."
+}

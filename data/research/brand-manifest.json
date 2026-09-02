@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T16:36:59.051Z",
+  "updatedAt": "2026-09-02T16:43:13.216Z",
   "brands": [
     {
       "slug": "rolex",
@@ -4594,7 +4594,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "reservoir-airfight-propeller-rsv02-af-230-122-1",
+          "referenceLabel": "RESERVOIR Airfight Propeller exact reference RSV02.AF/230-122-1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Official RESERVOIR Airfight Propeller product and technical materials expose a stable reference for a retrograde-minute/jumping-hour configuration; verify current sale status and all exact M1 fields."
+        }
+      ]
     },
     {
       "slug": "march-lab",
@@ -4748,7 +4763,22 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 8
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "rgm-model-150-p-pilot",
+          "referenceLabel": "RGM Model 150-P Pilot current official configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current official RGM Model 150 page identifies the 150-P Pilot variant, manual Unitas 6498 movement, 42mm case, sub-seconds, and Super-LumiNova pilot dial."
+        }
+      ]
     },
     {
       "slug": "damasko",
@@ -4765,7 +4795,25 @@
         "referenceFamilyCount": 3,
         "sourceUrlCount": 6
       },
-      "targets": []
+      "targets": [
+        {
+          "id": "damasko-df10-black",
+          "referenceLabel": "DAMASKO DF10 Black current official configuration",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "weightLimits": [
+              "under_80_g"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Current DAMASKO official model and product pages identify DF10 Black and publish exact 39mm field-watch dimensions, A26-1 movement, 56g head weight, and X1C1 lume."
+        }
+      ]
     },
     {
       "slug": "marathon",

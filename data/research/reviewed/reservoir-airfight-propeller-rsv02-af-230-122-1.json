@@ -1,0 +1,46 @@
+{
+  "reviewVersion": 1,
+  "targetId": "reservoir-airfight-propeller-rsv02-af-230-122-1",
+  "jobId": "fe4583ec-010f-43cd-8c56-36ef945d8532",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "RESERVOIR",
+    "model": "Airfight Propeller",
+    "referenceCode": "RSV02.AF/230-122-1",
+    "variantName": "Airfight Propeller First Gen"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.reservoir-watch.com/vintage-watch-collections/aeronautic/airfight/airfight-propeller-firstgen/",
+      "status": "validated_primary",
+      "note": "The official RESERVOIR Airfight Propeller First Gen page was checked on 2026-09-02 and confirms the model, RSV02.AF/230-122-1 reference, retrograde-minute/jumping-hour display, ETA-2824-based module, 37-hour power reserve, and 50m water resistance."
+    },
+    {
+      "url": "https://www.reservoir-watch.com/pressroom/",
+      "status": "validated_primary",
+      "note": "The official press room lists Airfight Propeller and the RSV02.AF reference family; current sale status and complete exact M1 specification require further source review."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only identity review. The exact Airfight Propeller reference is supported by official RESERVOIR pages, but current availability and field-level M1 completeness remain unresolved; no catalogue row is created."
+}

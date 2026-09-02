@@ -429,6 +429,30 @@ were added. The manifest now reports 123 active research targets (120
 `needs_review` and 3 `planned`) and 186 review artifacts; accepted catalogue
 rows remain unchanged.
 
+## Sixteenth parallel exact-model batch (retrieved 2026-09-02)
+
+Two further references were returned by Perplexity and checked against
+official manufacturer material:
+
+- RESERVOIR Airfight Propeller First Gen `RSV02.AF/230-122-1` — [official model page](https://www.reservoir-watch.com/vintage-watch-collections/aeronautic/airfight/airfight-propeller-firstgen/)
+  and [official press room](https://www.reservoir-watch.com/pressroom/).
+- RGM Model 150-P Pilot `150-P` — [official model page](https://www.rgmwatches.com/model-150/).
+
+Both exact identities and references have primary-source support, but remain
+research-only `needs_more_evidence` while current availability and complete
+field-level M1 evidence are reviewed. Damasko DF10 Black remains `planned`
+after four contract-invalid Perplexity responses; null claims were not accepted
+as facts. The manifest now reports 126 active research targets (125
+`needs_review` and 1 `planned`) and 188 review artifacts; accepted catalogue
+rows remain unchanged.
+
+Damasko was then retried successfully: [DF10 Black `SW10434.25`](https://www.damasko-watches.com/en/DF10-Black/SW10434.25)
+is now an exact research-only identity review. Its primary page confirms the
+reference and core dimensions, but it remains `needs_more_evidence` until the
+complete M1 field set is closed. The manifest therefore now reports 126
+`needs_review` targets and 189 review artifacts; accepted catalogue rows remain
+unchanged.
+
 ## ZRC 1904 exact variants
 
 ZRC 1904 is present in the last-100 source list but has no linked knowledge

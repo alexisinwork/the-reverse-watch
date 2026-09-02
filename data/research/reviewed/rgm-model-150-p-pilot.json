@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rgm-model-150-p-pilot",
+  "jobId": "46bf6347-b209-4089-babe-e5ffa7762568",
+  "reviewedAt": "2026-09-02T16:34:05.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "RGM Watch Co.",
+    "model": "Model 150",
+    "referenceCode": "150-P",
+    "variantName": "Model 150-P Pilot"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rgmwatches.com/model-150/",
+      "status": "validated_primary",
+      "note": "RGM's official Model 150 page was checked on 2026-09-02 and confirms the 150-P Pilot variant, $3,450 price, 42mm by 10.5mm case, 52mm lug-to-lug, 22mm lug width, manual RGM/Unitas 6498 movement, sub-seconds, Super-LumiNova, and 5 ATM rating."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Research-only model review. Exact RGM 150-P identity and manufacturer provenance are confirmed; all M1 facts remain provisional until the field-level review process closes them for catalogue use."
+}
