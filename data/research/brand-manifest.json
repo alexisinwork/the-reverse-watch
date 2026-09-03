@@ -1120,6 +1120,20 @@
             ]
           },
           "coverageRationale": "Add exact current Day-Date 40 white-gold reference."
+        },
+        {
+          "id": "rolex-submariner-124060-0001",
+          "referenceLabel": "Rolex Submariner exact Oystersteel reference 124060-0001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the exact current no-date Submariner configuration exposed by the live Rolex model page."
+        },
+        {
+          "id": "rolex-day-date-40-228235-0055",
+          "referenceLabel": "Rolex Day-Date 40 exact Everose-gold slate-ombré reference 228235-0055",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the exact current Everose-gold Day-Date 40 configuration exposed by the live Rolex model page."
         }
       ]
     },

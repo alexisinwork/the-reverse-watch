@@ -1634,3 +1634,12 @@ The Perplexity API returned `401 insufficient_quota` during these audits, so no
 new provider jobs or review artifacts were fabricated. Exact primary-page
 confirmation is recorded separately from the required Perplexity normalization
 and field-level M1 review; all newly queued targets remain `planned`.
+
+## Eighty-fifth Rolex current-catalogue recheck (retrieved 2026-09-03)
+
+A fresh check of the official [Rolex all-models catalogue](https://www.rolex.com/watches/find-rolex) and [2026 new-watches catalogue](https://www.rolex.com/watches/new-watches) found 17 active collection families and 56 current model cards. The earlier Rolex queue already covers the visible Land-Dweller, Oyster Perpetual, Datejust, Day-Date, GMT-Master II, Yacht-Master II, and other current reference families. Two exact product cards were absent from the manifest and were added as `planned`: [Submariner 124060-0001](https://www.rolex.com/watches/submariner/m124060-0001.html) and [Day-Date 40 228235-0055](https://www.rolex.com/watches/day-date/m228235-0055).
+
+This Rolex pass used the official catalogue for current-model discovery and the
+exact product cards for identity confirmation. It did not create a Perplexity
+job because the API remains at `401 insufficient_quota`; both new references
+therefore stay `planned` until strict Perplexity normalization succeeds.
