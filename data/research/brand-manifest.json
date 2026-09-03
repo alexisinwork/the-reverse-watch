@@ -37126,6 +37126,2811 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Pan Europ Auto 42 H35405741 as a retro-styled automatic reference; verify the exact dial, strap, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "hamilton-reference-h11221114",
+          "referenceLabel": "Hamilton exact current reference H11221114",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h11221150",
+          "referenceLabel": "Hamilton exact current reference H11221150",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h11221514",
+          "referenceLabel": "Hamilton exact current reference H11221514",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h11221550",
+          "referenceLabel": "Hamilton exact current reference H11221550",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h11221750",
+          "referenceLabel": "Hamilton exact current reference H11221750",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h11221914",
+          "referenceLabel": "Hamilton exact current reference H11221914",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h11261760",
+          "referenceLabel": "Hamilton exact current reference H11261760",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h13321611",
+          "referenceLabel": "Hamilton exact current reference H13321611",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h13321811",
+          "referenceLabel": "Hamilton exact current reference H13321811",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h13421611",
+          "referenceLabel": "Hamilton exact current reference H13421611",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h13431553",
+          "referenceLabel": "Hamilton exact current reference H13431553",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h13519711",
+          "referenceLabel": "Hamilton exact current reference H13519711",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24211130",
+          "referenceLabel": "Hamilton exact current reference H24211130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24211142",
+          "referenceLabel": "Hamilton exact current reference H24211142",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24211170",
+          "referenceLabel": "Hamilton exact current reference H24211170",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24211732",
+          "referenceLabel": "Hamilton exact current reference H24211732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24211852",
+          "referenceLabel": "Hamilton exact current reference H24211852",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24301131",
+          "referenceLabel": "Hamilton exact current reference H24301131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24301141",
+          "referenceLabel": "Hamilton exact current reference H24301141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24301731",
+          "referenceLabel": "Hamilton exact current reference H24301731",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24301941",
+          "referenceLabel": "Hamilton exact current reference H24301941",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24411142",
+          "referenceLabel": "Hamilton exact current reference H24411142",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24411143",
+          "referenceLabel": "Hamilton exact current reference H24411143",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24411232",
+          "referenceLabel": "Hamilton exact current reference H24411232",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24411942",
+          "referenceLabel": "Hamilton exact current reference H24411942",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24412732",
+          "referenceLabel": "Hamilton exact current reference H24412732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24432141",
+          "referenceLabel": "Hamilton exact current reference H24432141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24432941",
+          "referenceLabel": "Hamilton exact current reference H24432941",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24525331",
+          "referenceLabel": "Hamilton exact current reference H24525331",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24525332",
+          "referenceLabel": "Hamilton exact current reference H24525332",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24535331",
+          "referenceLabel": "Hamilton exact current reference H24535331",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24535332",
+          "referenceLabel": "Hamilton exact current reference H24535332",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24555331",
+          "referenceLabel": "Hamilton exact current reference H24555331",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24585331",
+          "referenceLabel": "Hamilton exact current reference H24585331",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24625330",
+          "referenceLabel": "Hamilton exact current reference H24625330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24635330",
+          "referenceLabel": "Hamilton exact current reference H24635330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24645330",
+          "referenceLabel": "Hamilton exact current reference H24645330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h24655331",
+          "referenceLabel": "Hamilton exact current reference H24655331",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h31231113",
+          "referenceLabel": "Hamilton exact current reference H31231113",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h31231140",
+          "referenceLabel": "Hamilton exact current reference H31231140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h31241113",
+          "referenceLabel": "Hamilton exact current reference H31241113",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h31271113",
+          "referenceLabel": "Hamilton exact current reference H31271113",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32215101",
+          "referenceLabel": "Hamilton exact current reference H32215101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32215140",
+          "referenceLabel": "Hamilton exact current reference H32215140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32215142",
+          "referenceLabel": "Hamilton exact current reference H32215142",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32215143",
+          "referenceLabel": "Hamilton exact current reference H32215143",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32215170",
+          "referenceLabel": "Hamilton exact current reference H32215170",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32215190",
+          "referenceLabel": "Hamilton exact current reference H32215190",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32215642",
+          "referenceLabel": "Hamilton exact current reference H32215642",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32215840",
+          "referenceLabel": "Hamilton exact current reference H32215840",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32301141",
+          "referenceLabel": "Hamilton exact current reference H32301141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32301171",
+          "referenceLabel": "Hamilton exact current reference H32301171",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32301181",
+          "referenceLabel": "Hamilton exact current reference H32301181",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32405111",
+          "referenceLabel": "Hamilton exact current reference H32405111",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32405811",
+          "referenceLabel": "Hamilton exact current reference H32405811",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32451141",
+          "referenceLabel": "Hamilton exact current reference H32451141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32461121",
+          "referenceLabel": "Hamilton exact current reference H32461121",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32461131",
+          "referenceLabel": "Hamilton exact current reference H32461131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32461141",
+          "referenceLabel": "Hamilton exact current reference H32461141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32461161",
+          "referenceLabel": "Hamilton exact current reference H32461161",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32505131",
+          "referenceLabel": "Hamilton exact current reference H32505131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32505141",
+          "referenceLabel": "Hamilton exact current reference H32505141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32505511",
+          "referenceLabel": "Hamilton exact current reference H32505511",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32505751",
+          "referenceLabel": "Hamilton exact current reference H32505751",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32515145",
+          "referenceLabel": "Hamilton exact current reference H32515145",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32515155",
+          "referenceLabel": "Hamilton exact current reference H32515155",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32515555",
+          "referenceLabel": "Hamilton exact current reference H32515555",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675101",
+          "referenceLabel": "Hamilton exact current reference H32675101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675141",
+          "referenceLabel": "Hamilton exact current reference H32675141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675151",
+          "referenceLabel": "Hamilton exact current reference H32675151",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675160",
+          "referenceLabel": "Hamilton exact current reference H32675160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675170",
+          "referenceLabel": "Hamilton exact current reference H32675170",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675181",
+          "referenceLabel": "Hamilton exact current reference H32675181",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675501",
+          "referenceLabel": "Hamilton exact current reference H32675501",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675540",
+          "referenceLabel": "Hamilton exact current reference H32675540",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675551",
+          "referenceLabel": "Hamilton exact current reference H32675551",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675560",
+          "referenceLabel": "Hamilton exact current reference H32675560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675570",
+          "referenceLabel": "Hamilton exact current reference H32675570",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32675581",
+          "referenceLabel": "Hamilton exact current reference H32675581",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705041",
+          "referenceLabel": "Hamilton exact current reference H32705041",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705121",
+          "referenceLabel": "Hamilton exact current reference H32705121",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705131",
+          "referenceLabel": "Hamilton exact current reference H32705131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705140",
+          "referenceLabel": "Hamilton exact current reference H32705140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705141",
+          "referenceLabel": "Hamilton exact current reference H32705141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705160",
+          "referenceLabel": "Hamilton exact current reference H32705160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705180",
+          "referenceLabel": "Hamilton exact current reference H32705180",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705181",
+          "referenceLabel": "Hamilton exact current reference H32705181",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705501",
+          "referenceLabel": "Hamilton exact current reference H32705501",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705521",
+          "referenceLabel": "Hamilton exact current reference H32705521",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705560",
+          "referenceLabel": "Hamilton exact current reference H32705560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705640",
+          "referenceLabel": "Hamilton exact current reference H32705640",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h32705731",
+          "referenceLabel": "Hamilton exact current reference H32705731",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38416111",
+          "referenceLabel": "Hamilton exact current reference H38416111",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38416541",
+          "referenceLabel": "Hamilton exact current reference H38416541",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38416560",
+          "referenceLabel": "Hamilton exact current reference H38416560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38429541",
+          "referenceLabel": "Hamilton exact current reference H38429541",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38429591",
+          "referenceLabel": "Hamilton exact current reference H38429591",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38429861",
+          "referenceLabel": "Hamilton exact current reference H38429861",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38446730",
+          "referenceLabel": "Hamilton exact current reference H38446730",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38446731",
+          "referenceLabel": "Hamilton exact current reference H38446731",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h38446732",
+          "referenceLabel": "Hamilton exact current reference H38446732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h42415541",
+          "referenceLabel": "Hamilton exact current reference H42415541",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h42415551",
+          "referenceLabel": "Hamilton exact current reference H42415551",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h42535141",
+          "referenceLabel": "Hamilton exact current reference H42535141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h42535160",
+          "referenceLabel": "Hamilton exact current reference H42535160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h42535541",
+          "referenceLabel": "Hamilton exact current reference H42535541",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h42535560",
+          "referenceLabel": "Hamilton exact current reference H42535560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h42535810",
+          "referenceLabel": "Hamilton exact current reference H42535810",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h52304130",
+          "referenceLabel": "Hamilton exact current reference H52304130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h52304530",
+          "referenceLabel": "Hamilton exact current reference H52304530",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h52314130",
+          "referenceLabel": "Hamilton exact current reference H52314130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h52314530",
+          "referenceLabel": "Hamilton exact current reference H52314530",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h52404131",
+          "referenceLabel": "Hamilton exact current reference H52404131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h52414130",
+          "referenceLabel": "Hamilton exact current reference H52414130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h52414131",
+          "referenceLabel": "Hamilton exact current reference H52414131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64455133",
+          "referenceLabel": "Hamilton exact current reference H64455133",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64455523",
+          "referenceLabel": "Hamilton exact current reference H64455523",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64455533",
+          "referenceLabel": "Hamilton exact current reference H64455533",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64465733",
+          "referenceLabel": "Hamilton exact current reference H64465733",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64475131",
+          "referenceLabel": "Hamilton exact current reference H64475131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64475140",
+          "referenceLabel": "Hamilton exact current reference H64475140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64475160",
+          "referenceLabel": "Hamilton exact current reference H64475160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64475531",
+          "referenceLabel": "Hamilton exact current reference H64475531",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64475540",
+          "referenceLabel": "Hamilton exact current reference H64475540",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64475560",
+          "referenceLabel": "Hamilton exact current reference H64475560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64615135",
+          "referenceLabel": "Hamilton exact current reference H64615135",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64615735",
+          "referenceLabel": "Hamilton exact current reference H64615735",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64635140",
+          "referenceLabel": "Hamilton exact current reference H64635140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64635560",
+          "referenceLabel": "Hamilton exact current reference H64635560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h64655941",
+          "referenceLabel": "Hamilton exact current reference H64655941",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h68401735",
+          "referenceLabel": "Hamilton exact current reference H68401735",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h68551933",
+          "referenceLabel": "Hamilton exact current reference H68551933",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301110",
+          "referenceLabel": "Hamilton exact current reference H69301110",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301130",
+          "referenceLabel": "Hamilton exact current reference H69301130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301131",
+          "referenceLabel": "Hamilton exact current reference H69301131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301140",
+          "referenceLabel": "Hamilton exact current reference H69301140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301160",
+          "referenceLabel": "Hamilton exact current reference H69301160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301430",
+          "referenceLabel": "Hamilton exact current reference H69301430",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301910",
+          "referenceLabel": "Hamilton exact current reference H69301910",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301930",
+          "referenceLabel": "Hamilton exact current reference H69301930",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301940",
+          "referenceLabel": "Hamilton exact current reference H69301940",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69301960",
+          "referenceLabel": "Hamilton exact current reference H69301960",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69399930",
+          "referenceLabel": "Hamilton exact current reference H69399930",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401110",
+          "referenceLabel": "Hamilton exact current reference H69401110",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401130",
+          "referenceLabel": "Hamilton exact current reference H69401130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401131",
+          "referenceLabel": "Hamilton exact current reference H69401131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401140",
+          "referenceLabel": "Hamilton exact current reference H69401140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401160",
+          "referenceLabel": "Hamilton exact current reference H69401160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401430",
+          "referenceLabel": "Hamilton exact current reference H69401430",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401910",
+          "referenceLabel": "Hamilton exact current reference H69401910",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401930",
+          "referenceLabel": "Hamilton exact current reference H69401930",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401940",
+          "referenceLabel": "Hamilton exact current reference H69401940",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69401960",
+          "referenceLabel": "Hamilton exact current reference H69401960",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69409930",
+          "referenceLabel": "Hamilton exact current reference H69409930",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69439363",
+          "referenceLabel": "Hamilton exact current reference H69439363",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69439411",
+          "referenceLabel": "Hamilton exact current reference H69439411",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69439511",
+          "referenceLabel": "Hamilton exact current reference H69439511",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69439531",
+          "referenceLabel": "Hamilton exact current reference H69439531",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69439910",
+          "referenceLabel": "Hamilton exact current reference H69439910",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69439931",
+          "referenceLabel": "Hamilton exact current reference H69439931",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69439933",
+          "referenceLabel": "Hamilton exact current reference H69439933",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69439940",
+          "referenceLabel": "Hamilton exact current reference H69439940",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69449961",
+          "referenceLabel": "Hamilton exact current reference H69449961",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69459510",
+          "referenceLabel": "Hamilton exact current reference H69459510",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69459530",
+          "referenceLabel": "Hamilton exact current reference H69459530",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69509110",
+          "referenceLabel": "Hamilton exact current reference H69509110",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69509130",
+          "referenceLabel": "Hamilton exact current reference H69509130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69509140",
+          "referenceLabel": "Hamilton exact current reference H69509140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69509160",
+          "referenceLabel": "Hamilton exact current reference H69509160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69509910",
+          "referenceLabel": "Hamilton exact current reference H69509910",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69509930",
+          "referenceLabel": "Hamilton exact current reference H69509930",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69509940",
+          "referenceLabel": "Hamilton exact current reference H69509940",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69509960",
+          "referenceLabel": "Hamilton exact current reference H69509960",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69529913",
+          "referenceLabel": "Hamilton exact current reference H69529913",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h69529933",
+          "referenceLabel": "Hamilton exact current reference H69529933",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70205140",
+          "referenceLabel": "Hamilton exact current reference H70205140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70205830",
+          "referenceLabel": "Hamilton exact current reference H70205830",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70225110",
+          "referenceLabel": "Hamilton exact current reference H70225110",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70225130",
+          "referenceLabel": "Hamilton exact current reference H70225130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70225931",
+          "referenceLabel": "Hamilton exact current reference H70225931",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70315110",
+          "referenceLabel": "Hamilton exact current reference H70315110",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70315130",
+          "referenceLabel": "Hamilton exact current reference H70315130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70315931",
+          "referenceLabel": "Hamilton exact current reference H70315931",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70405130",
+          "referenceLabel": "Hamilton exact current reference H70405130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70405140",
+          "referenceLabel": "Hamilton exact current reference H70405140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70405710",
+          "referenceLabel": "Hamilton exact current reference H70405710",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70405740",
+          "referenceLabel": "Hamilton exact current reference H70405740",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455140",
+          "referenceLabel": "Hamilton exact current reference H70455140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455160",
+          "referenceLabel": "Hamilton exact current reference H70455160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455533",
+          "referenceLabel": "Hamilton exact current reference H70455533",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455540",
+          "referenceLabel": "Hamilton exact current reference H70455540",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455553",
+          "referenceLabel": "Hamilton exact current reference H70455553",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455560",
+          "referenceLabel": "Hamilton exact current reference H70455560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455733",
+          "referenceLabel": "Hamilton exact current reference H70455733",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455940",
+          "referenceLabel": "Hamilton exact current reference H70455940",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70455960",
+          "referenceLabel": "Hamilton exact current reference H70455960",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70475930",
+          "referenceLabel": "Hamilton exact current reference H70475930",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70515137",
+          "referenceLabel": "Hamilton exact current reference H70515137",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70545140",
+          "referenceLabel": "Hamilton exact current reference H70545140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70545540",
+          "referenceLabel": "Hamilton exact current reference H70545540",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70545550",
+          "referenceLabel": "Hamilton exact current reference H70545550",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70555533",
+          "referenceLabel": "Hamilton exact current reference H70555533",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70575733",
+          "referenceLabel": "Hamilton exact current reference H70575733",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70605140",
+          "referenceLabel": "Hamilton exact current reference H70605140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70605160",
+          "referenceLabel": "Hamilton exact current reference H70605160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70605540",
+          "referenceLabel": "Hamilton exact current reference H70605540",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70605560",
+          "referenceLabel": "Hamilton exact current reference H70605560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70605731",
+          "referenceLabel": "Hamilton exact current reference H70605731",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70605732",
+          "referenceLabel": "Hamilton exact current reference H70605732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70605733",
+          "referenceLabel": "Hamilton exact current reference H70605733",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h70665533",
+          "referenceLabel": "Hamilton exact current reference H70665533",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h71626735",
+          "referenceLabel": "Hamilton exact current reference H71626735",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76205530",
+          "referenceLabel": "Hamilton exact current reference H76205530",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76255810",
+          "referenceLabel": "Hamilton exact current reference H76255810",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76265810",
+          "referenceLabel": "Hamilton exact current reference H76265810",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76409140",
+          "referenceLabel": "Hamilton exact current reference H76409140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76409530",
+          "referenceLabel": "Hamilton exact current reference H76409530",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76409540",
+          "referenceLabel": "Hamilton exact current reference H76409540",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76419951",
+          "referenceLabel": "Hamilton exact current reference H76419951",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76709510",
+          "referenceLabel": "Hamilton exact current reference H76709510",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76709530",
+          "referenceLabel": "Hamilton exact current reference H76709530",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h76719530",
+          "referenceLabel": "Hamilton exact current reference H76719530",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77506540",
+          "referenceLabel": "Hamilton exact current reference H77506540",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77616533",
+          "referenceLabel": "Hamilton exact current reference H77616533",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77735560",
+          "referenceLabel": "Hamilton exact current reference H77735560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77755133",
+          "referenceLabel": "Hamilton exact current reference H77755133",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77755533",
+          "referenceLabel": "Hamilton exact current reference H77755533",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77765141",
+          "referenceLabel": "Hamilton exact current reference H77765141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77765541",
+          "referenceLabel": "Hamilton exact current reference H77765541",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77825331",
+          "referenceLabel": "Hamilton exact current reference H77825331",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77845330",
+          "referenceLabel": "Hamilton exact current reference H77845330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77855330",
+          "referenceLabel": "Hamilton exact current reference H77855330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77912135",
+          "referenceLabel": "Hamilton exact current reference H77912135",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77912335",
+          "referenceLabel": "Hamilton exact current reference H77912335",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77916920",
+          "referenceLabel": "Hamilton exact current reference H77916920",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77922141",
+          "referenceLabel": "Hamilton exact current reference H77922141",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h77922541",
+          "referenceLabel": "Hamilton exact current reference H77922541",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h78505330",
+          "referenceLabel": "Hamilton exact current reference H78505330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h78535380",
+          "referenceLabel": "Hamilton exact current reference H78535380",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82315131",
+          "referenceLabel": "Hamilton exact current reference H82315131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82335131",
+          "referenceLabel": "Hamilton exact current reference H82335131",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82395331",
+          "referenceLabel": "Hamilton exact current reference H82395331",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82395332",
+          "referenceLabel": "Hamilton exact current reference H82395332",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82415130",
+          "referenceLabel": "Hamilton exact current reference H82415130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82415330",
+          "referenceLabel": "Hamilton exact current reference H82415330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82415331",
+          "referenceLabel": "Hamilton exact current reference H82415331",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82425110",
+          "referenceLabel": "Hamilton exact current reference H82425110",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82425140",
+          "referenceLabel": "Hamilton exact current reference H82425140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82515130",
+          "referenceLabel": "Hamilton exact current reference H82515130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82525160",
+          "referenceLabel": "Hamilton exact current reference H82525160",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82535140",
+          "referenceLabel": "Hamilton exact current reference H82535140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82555130",
+          "referenceLabel": "Hamilton exact current reference H82555130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82555150",
+          "referenceLabel": "Hamilton exact current reference H82555150",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82555330",
+          "referenceLabel": "Hamilton exact current reference H82555330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+        },
+        {
+          "id": "hamilton-reference-h82565930",
+          "referenceLabel": "Hamilton exact current reference H82565930",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
         }
       ]
     },

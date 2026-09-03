@@ -2048,3 +2048,15 @@ references were added as separate planned targets. The audit also retained
 the officially published `AW5008-06W` product card even though it was sold out
 and absent from collection pagination. Perplexity was unavailable because of
 quota exhaustion; no technical, price, or availability fields were promoted.
+
+## One-hundred-eighth Hamilton exact-reference expansion (retrieved 2026-09-03)
+
+The reconciled Hamilton audit used the official [US catalogue](https://www.hamiltonwatch.com/en-us/collection.html),
+[International catalogue](https://www.hamiltonwatch.com/en-int/collection.html),
+and product cards, checking exact Reference values and
+`Status = Current collection`. The deduplicated union contained 265 current
+references; all 10 manifest references were present and 255 additional exact
+references were added as planned targets. Twelve `Past collection` cards and
+three necklace accessory SKUs were excluded. Perplexity was unavailable because
+of quota exhaustion; no technical, price, or availability fields were
+promoted.
