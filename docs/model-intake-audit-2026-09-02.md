@@ -2060,3 +2060,24 @@ references were added as planned targets. Twelve `Past collection` cards and
 three necklace accessory SKUs were excluded. Perplexity was unavailable because
 of quota exhaustion; no technical, price, or availability fields were
 promoted.
+
+## One-hundred-ninth Tissot exact-reference expansion (retrieved 2026-09-03)
+
+The complete Tissot audit compared the manifest with 454 unique exact
+references from 454 official product cards in the [Tissot collection catalogue](https://www.tissotwatches.com/en-us/collection.html).
+Nine manifest references matched current cards; two legacy manifest targets
+were not found in the current catalogue. The other 445 exact references were
+added as separate planned targets, with duplicate references removed after
+normalizing card URLs and punctuation. Perplexity was unavailable because of
+quota exhaustion; no technical, price, or availability fields were promoted.
+
+## One-hundred-tenth Citizen US/EU regional supplementation (retrieved 2026-09-03)
+
+The follow-up Citizen audit widened the comparison from the US catalogue to
+the official [Citizen US catalogues](https://www.citizenwatch.com/us/en/collection/mens)
+and [Citizen EU catalogue](https://citizenwatch.eu/en/watches/). Their
+deduplicated union contained 783 exact references; 455 were already represented
+after the US expansion and 328 additional regional references were added as
+planned targets. Each supplemental identity was checked against an official
+product card; no technical, price, or availability fields were promoted.
+Perplexity was unavailable because of quota exhaustion.
