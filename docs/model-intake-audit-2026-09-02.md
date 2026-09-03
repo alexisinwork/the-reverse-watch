@@ -2291,3 +2291,27 @@ excluded from the current watch universe. Each added target retains its direct
 official Piaget product-page URL. Technical, price, and availability fields
 remain unpromoted. Perplexity was unavailable; official Piaget pages and
 sitemap were used as the primary-source fallback.
+
+## One-hundred-twenty-ninth Christopher Ward exact-reference expansion (retrieved 2026-09-03)
+
+The Christopher Ward audit reconciled the official current catalogue and its
+product listings. It found 506 current exact references; one was already
+represented and 505 additional exact references were added as planned targets.
+No accessory or archived record was promoted. Each added target retains an
+official Christopher Ward catalogue/product source. Technical, price, and
+availability fields remain unpromoted. Perplexity was unavailable because of
+quota/connector limits; official Christopher Ward pages were used as the
+primary-source fallback.
+
+## One-hundred-thirtieth Bulgari exact-reference expansion (retrieved 2026-09-03)
+
+The Bulgari audit reconciled the official [current watches catalogue](https://www.bulgari.com/en-us/watches),
+Octo, Bvlgari Bvlgari, Bvlgari Aluminium, Serpenti, Divas' Dream and Lvcea
+collections, plus official product details and the horlogerie editorial scope.
+It found 167 current retail watch references; one was already represented and
+166 additional exact references were added as planned targets. Jewelry and
+other accessories, a legacy candidate, and editorial-only Serpenti Aeterna
+references were recorded as excluded from the current watch universe. Each
+added target retains an official Bulgari catalogue or product source.
+Technical, price, and availability fields remain unpromoted. Perplexity was
+unavailable; official Bulgari pages were used as the primary-source fallback.
