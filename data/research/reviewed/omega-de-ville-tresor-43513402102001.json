@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "omega-de-ville-tresor-43513402102001",
+  "jobId": "a7c39993-8237-4735-bcf3-5d8f0e37dd70",
+  "reviewedAt": "2026-09-03T03:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Omega",
+    "model": "De Ville Trésor",
+    "referenceCode": "435.13.40.21.02.001",
+    "variantName": "De Ville Trésor 40 mm steel"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.omegawatches.com/en-us/watch-omega-de-ville-tresor-co-axial-master-chronometer-40-mm-43513402102001",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

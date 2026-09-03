@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-pasha-wspa0013",
+  "jobId": "fbdd2ed2-bc4f-4609-9513-ee70aba9a70a",
+  "reviewedAt": "2026-09-03T03:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Pasha de Cartier",
+    "referenceCode": "WSPA0013",
+    "variantName": "Pasha de Cartier 35 mm steel"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-sa/watches/collections/pasha-de-cartier/pasha-de-cartier-watch--CRWSPA0013.html",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

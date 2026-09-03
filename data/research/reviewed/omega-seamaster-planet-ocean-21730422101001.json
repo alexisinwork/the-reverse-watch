@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "omega-seamaster-planet-ocean-21730422101001",
+  "jobId": "758875ce-5c0d-417d-99e5-5b565cfd30d7",
+  "reviewedAt": "2026-09-03T03:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Omega",
+    "model": "Seamaster Planet Ocean 600M",
+    "referenceCode": "217.30.42.21.01.001",
+    "variantName": "Seamaster Planet Ocean 600M 42 mm steel black dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.omegawatches.com/en-us/watch-omega-seamaster-planet-ocean-600m-co-axial-master-chronometer-42-mm-21730422101001",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

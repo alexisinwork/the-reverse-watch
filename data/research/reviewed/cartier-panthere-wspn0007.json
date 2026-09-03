@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-panthere-wspn0007",
+  "jobId": "356b2032-21b6-4bf3-b3f5-6c519539d668",
+  "reviewedAt": "2026-09-03T03:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Panthère de Cartier",
+    "referenceCode": "WSPN0007",
+    "variantName": "Panthère de Cartier medium steel"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-bl/watches/collections/panthere-de-cartier/panthere-de-cartier-watch-CRWSPN0007",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "cartier-santos-wssa0061",
+  "jobId": "f39a6622-65f8-4674-9156-42d59da3586f",
+  "reviewedAt": "2026-09-03T03:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Cartier",
+    "model": "Santos de Cartier",
+    "referenceCode": "WSSA0061",
+    "variantName": "Santos de Cartier medium steel green dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.cartier.com/en-us/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRWSSA0061.html",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

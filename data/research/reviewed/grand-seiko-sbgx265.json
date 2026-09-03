@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "grand-seiko-sbgx265",
+  "jobId": "051ded15-a7e0-4675-b35b-7f5eb4afb5d2",
+  "reviewedAt": "2026-09-03T03:45:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Grand Seiko",
+    "model": "Heritage",
+    "referenceCode": "SBGX265",
+    "variantName": "Heritage quartz 37 mm blue dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.grand-seiko.com/us-en/collections/sbgx265g",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

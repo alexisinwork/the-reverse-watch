@@ -1556,3 +1556,37 @@ candidate was checked against an exact current manufacturer product page.
 The successful targets received review artifacts with their Perplexity job IDs
 and exact manufacturer URLs. All remain research-only `needs_review`; no model
 is promoted to the recommendation catalogue until its M1 fields are reviewed.
+
+## Eighty-third targeted Perplexity worker pass (retrieved 2026-09-03)
+
+The queued current-catalogue references were sent through the strict Perplexity
+normalization worker. Nine targets returned valid normalized jobs and were
+cross-checked against exact manufacturer pages before adding research-only
+review artifacts:
+
+- **Cartier:** Santos de Cartier `WSSA0061`, Panthère de Cartier `WSPN0007`,
+  Ballon Bleu de Cartier `WSBB0030`, and Pasha de Cartier `WSPA0013`.
+- **Omega:** Seamaster Diver 300M `210.30.42.20.01.010`, Seamaster Planet
+  Ocean 600M `217.30.42.21.01.001`, and De Ville Trésor
+  `435.13.40.21.02.001`.
+- **Grand Seiko:** Heritage quartz `SBGX265` and Heritage Hi-Beat `SBGH347`.
+
+The exact primary checks are [Cartier WSSA0061](https://www.cartier.com/en-us/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRWSSA0061.html), [Cartier WSPN0007](https://www.cartier.com/en-bl/watches/collections/panthere-de-cartier/panthere-de-cartier-watch-CRWSPN0007), [Cartier WSBB0030](https://www.cartier.com/en-us/watches/collections/ballon-de-cartier/ballon-bleu-de-cartier-watch-CRWSBB0030.html), [Cartier WSPA0013](https://www.cartier.com/en-sa/watches/collections/pasha-de-cartier/pasha-de-cartier-watch--CRWSPA0013.html), [Omega 210.30.42.20.01.010](https://www.omegawatches.com/en-us/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001010), [Omega 217.30.42.21.01.001](https://www.omegawatches.com/en-us/watch-omega-seamaster-planet-ocean-600m-co-axial-master-chronometer-42-mm-21730422101001), [Omega 435.13.40.21.02.001](https://www.omegawatches.com/en-us/watch-omega-de-ville-tresor-co-axial-master-chronometer-40-mm-43513402102001), [Grand Seiko SBGX265](https://www.grand-seiko.com/us-en/collections/sbgx265g), and [Grand Seiko SBGH347](https://www.grand-seiko.com/gr-en/collections/sbgh347g).
+
+The remaining 28 queued targets exhausted their worker attempts because the
+provider returned malformed or otherwise unusable structured claims: Cartier
+Tank Must `W4TA0031`; Omega De Ville Prestige `434.10.40.20.10.001`; Grand
+Seiko `SBGJ237`, `SBGE255`, `SBGC253`, `SBGM255`, `SBGY007`, `SBGA293`,
+`SLGA021`, and `SLGC001`; IWC `IW388305`; Chopard `168574-3013`; Tudor
+`M79000B-0001`, `M7939G1A0NRU-0003`, `M7943A1A0NU-0001`, `M79310N-0001`,
+`M79470-0004`, `M25610TNL-0001`, `M2542G267NU-0002`, `M79930-0007`,
+`M91560-0002`, and `M2840D1A0-0001`; Panerai `PAM03313` and `PAM01731`;
+Hublot `421.EX.5129.NR.RLD` and `642.QK.0110.NR`; and Seiko `SPB507J1` and
+`SRPL83`. Their exact identities may be documented by primary pages from the
+catalogue recheck, but no malformed payload was imported and no review
+artifact was created for a failed worker target.
+
+All nine successful targets remain `needs_review` with identity, reference
+code, and manufacturer URL confirmed. Non-identity claims remain provisional
+until field-level M1 review; missing facts remain null and no model is
+promoted to the recommendation catalogue.

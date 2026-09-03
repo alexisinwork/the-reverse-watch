@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-03T01:12:29.382Z",
+  "updatedAt": "2026-09-03T01:21:36.963Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1688,7 +1688,7 @@
         {
           "id": "cartier-santos-wssa0061",
           "referenceLabel": "Cartier Santos de Cartier exact green-dial reference WSSA0061",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
@@ -1716,7 +1716,7 @@
         {
           "id": "cartier-panthere-wspn0007",
           "referenceLabel": "Cartier Panthere de Cartier exact steel reference WSPN0007",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
@@ -1758,7 +1758,7 @@
         {
           "id": "cartier-ballon-bleu-wsbb0030",
           "referenceLabel": "Cartier Ballon Bleu exact steel reference WSBB0030",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
@@ -1786,7 +1786,7 @@
         {
           "id": "cartier-pasha-wspa0013",
           "referenceLabel": "Cartier Pasha de Cartier exact steel reference WSPA0013",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
@@ -1956,7 +1956,7 @@
         {
           "id": "omega-seamaster-diver-21030422001010",
           "referenceLabel": "Omega Seamaster Diver 300M exact steel reference 210.30.42.20.01.010",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
@@ -1970,7 +1970,7 @@
         {
           "id": "omega-seamaster-planet-ocean-21730422101001",
           "referenceLabel": "Omega Seamaster Planet Ocean 600M exact steel reference 217.30.42.21.01.001",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
@@ -2054,7 +2054,7 @@
         {
           "id": "omega-de-ville-tresor-43513402102001",
           "referenceLabel": "Omega De Ville Tresor exact steel reference 435.13.40.21.02.001",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
@@ -2421,7 +2421,7 @@
         {
           "id": "grand-seiko-sbgx265",
           "referenceLabel": "Grand Seiko Heritage exact quartz reference SBGX265",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "2000_5000"
@@ -2435,7 +2435,7 @@
         {
           "id": "grand-seiko-sbgh347",
           "referenceLabel": "Grand Seiko Heritage exact Hi-Beat reference SBGH347",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
