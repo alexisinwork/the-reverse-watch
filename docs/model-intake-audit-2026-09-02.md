@@ -2103,3 +2103,13 @@ same `41/4660.46` identity and were not duplicated in the manifest. The 19
 confirmed references were added as planned targets. Technical, price, and
 availability fields remain unpromoted. Perplexity was unavailable because of
 quota exhaustion.
+
+## One-hundred-thirteenth Rado exact-reference expansion (retrieved 2026-09-03)
+
+The complete Rado audit used the official [men's catalogue](https://www.rado.com/en_us/watches/all-watches/men-watches.html)
+and [women's catalogue](https://www.rado.com/en_us/watches/all-watches/women-watches.html).
+The catalogues contained 238 and 258 current cards respectively; their
+deduplicated union contained 343 unique exact SKUs. The existing
+`R32280109` reference was confirmed in the union, and 342 additional exact
+references were added as planned targets. No technical, price, or availability
+fields were promoted.

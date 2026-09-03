@@ -48735,8 +48735,8 @@
       },
       "targets": [
         {
-    "id": "rado-high-accuracy-ceramic-daily",
-    "referenceLabel": "Rado HyperChrome Quartz exact reference R32280109",
+          "id": "rado-high-accuracy-ceramic-daily",
+          "referenceLabel": "Rado HyperChrome Quartz exact reference R32280109",
           "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
@@ -48770,6 +48770,3768 @@
             ]
           },
           "coverageRationale": "Add a new-brand, sub-120 g, high-accuracy quartz daily watch to 72 currently empty 1000-2000 precision/simple-date cells; require exact configuration and interface proof before ranking."
+        },
+        {
+          "id": "rado-reference-r12391153",
+          "referenceLabel": "Rado The Original exact reference R12391153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12391103",
+          "referenceLabel": "Rado The Original exact reference R12391103",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12305304",
+          "referenceLabel": "Rado The Original exact reference R12305304",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12304303",
+          "referenceLabel": "Rado The Original exact reference R12304303",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12304313",
+          "referenceLabel": "Rado The Original exact reference R12304313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912303",
+          "referenceLabel": "Rado Florence exact reference R48912303",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912023",
+          "referenceLabel": "Rado Florence exact reference R48912023",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912153",
+          "referenceLabel": "Rado Florence exact reference R48912153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912163",
+          "referenceLabel": "Rado Florence exact reference R48912163",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12408613",
+          "referenceLabel": "Rado The Original Automatic exact reference R12408613",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912403",
+          "referenceLabel": "Rado Florence exact reference R48912403",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912713",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48912713",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912723",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48912723",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912703",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48912703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12408633",
+          "referenceLabel": "Rado The Original Automatic exact reference R12408633",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48914703",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48914703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48916703",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48916703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22860075",
+          "referenceLabel": "Rado Coupole Automatic exact reference R22860075",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413573",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413573",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413503",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413503",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413533",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413533",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413523",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413523",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413613",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413613",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413493",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413493",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413343",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413343",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413803",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413803",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22861115",
+          "referenceLabel": "Rado Coupole Automatic exact reference R22861115",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22876015",
+          "referenceLabel": "Rado Coupole Automatic exact reference R22876015",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912773",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48912773",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912733",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48912733",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912763",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48912763",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48912743",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48912743",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22877025",
+          "referenceLabel": "Rado Coupole Automatic exact reference R22877025",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32280313",
+          "referenceLabel": "Rado HyperChrome exact reference R32280313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32280203",
+          "referenceLabel": "Rado HyperChrome exact reference R32280203",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48914713",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48914713",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22876013",
+          "referenceLabel": "Rado Coupole Automatic exact reference R22876013",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413323",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413323",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413313",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413073",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413073",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32280213",
+          "referenceLabel": "Rado HyperChrome exact reference R32280213",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12160303",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12160303",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12160213",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12160213",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12160103",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12160103",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32281309",
+          "referenceLabel": "Rado HyperChrome exact reference R32281309",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32280153",
+          "referenceLabel": "Rado HyperChrome exact reference R32280153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48903153",
+          "referenceLabel": "Rado Florence Automatic exact reference R48903153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32283313",
+          "referenceLabel": "Rado HyperChrome exact reference R32283313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12160113",
+          "referenceLabel": "Rado Diastar Original Automatic exact reference R12160113",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12160223",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12160223",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48905205",
+          "referenceLabel": "Rado Florence Automatic exact reference R48905205",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48905015",
+          "referenceLabel": "Rado Florence Automatic exact reference R48905015",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48903103",
+          "referenceLabel": "Rado Florence Automatic exact reference R48903103",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48903253",
+          "referenceLabel": "Rado Florence Automatic exact reference R48903253",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12160253",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12160253",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30021152",
+          "referenceLabel": "Rado Centrix exact reference R30021152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12413314",
+          "referenceLabel": "Rado The Original Automatic exact reference R12413314",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48904013",
+          "referenceLabel": "Rado Florence Automatic exact reference R48904013",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r14067166",
+          "referenceLabel": "Rado DiaMaster Thinline Automatic exact reference R14067166",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22895025",
+          "referenceLabel": "Rado Coupole Open Heart Automatic exact reference R22895025",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32259203",
+          "referenceLabel": "Rado HyperChrome Chronograph exact reference R32259203",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32259313",
+          "referenceLabel": "Rado HyperChrome Chronograph exact reference R32259313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12638173",
+          "referenceLabel": "Rado New Original Chronograph exact reference R12638173",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12065303",
+          "referenceLabel": "Rado DiaStar Original Open Heart exact reference R12065303",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r14068176",
+          "referenceLabel": "Rado DiaMaster Thinline Automatic exact reference R14068176",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r14068036",
+          "referenceLabel": "Rado DiaMaster Thinline Automatic exact reference R14068036",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32259323",
+          "referenceLabel": "Rado Hyperchrome Chronograph exact reference R32259323",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30023302",
+          "referenceLabel": "Rado Centrix exact reference R30023302",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30023012",
+          "referenceLabel": "Rado Centrix exact reference R30023012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30022152",
+          "referenceLabel": "Rado Centrix exact reference R30022152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22878045",
+          "referenceLabel": "Rado Coupole Automatic Power Reserve exact reference R22878045",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32259163",
+          "referenceLabel": "Rado HyperChrome Chronograph exact reference R32259163",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27238712",
+          "referenceLabel": "Rado True Round Diamonds exact reference R27238712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27238722",
+          "referenceLabel": "Rado True Round Diamonds exact reference R27238722",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48903733",
+          "referenceLabel": "Rado Florence Automatic exact reference R48903733",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12161253",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12161253",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30021712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30021712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22879325",
+          "referenceLabel": "Rado Coupole Automatic Power Reserve exact reference R22879325",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22879215",
+          "referenceLabel": "Rado Coupole Automatic Power Reserve exact reference R22879215",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48903723",
+          "referenceLabel": "Rado Florence Automatic exact reference R48903723",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48903703",
+          "referenceLabel": "Rado Florence Automatic exact reference R48903703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12949153",
+          "referenceLabel": "Rado New Original Chronograph exact reference R12949153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12161263",
+          "referenceLabel": "Rado Diastar Original Automatic exact reference R12161263",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12161663",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12161663",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12161653",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12161653",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12161643",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12161643",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12161633",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12161633",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27054162",
+          "referenceLabel": "Rado True Square Thinline exact reference R27054162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27054152",
+          "referenceLabel": "Rado True Square Thinline exact reference R27054152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30023712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30023712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30022712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30022712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30018152",
+          "referenceLabel": "Rado Centrix Automatic exact reference R30018152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27047902",
+          "referenceLabel": "Rado True Square Thinline  exact reference R27047902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12162153",
+          "referenceLabel": "Rado DiaStar Original Automatic Skeleton exact reference R12162153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12163118",
+          "referenceLabel": "Rado DiaStar Original 60-Year Anniversary Edition exact reference R12163118",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30017302",
+          "referenceLabel": "Rado Centrix Automatic exact reference R30017302",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30017012",
+          "referenceLabel": "Rado Centrix Automatic exact reference R30017012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27056712",
+          "referenceLabel": "Rado True Round Automatic Diamonds exact reference R27056712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27090602",
+          "referenceLabel": "Rado True Round Thinline Les Couleurs™ Le Corbusier Cream white 32001 exact reference R27090602",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27092622",
+          "referenceLabel": "Rado True Round Thinline Les Couleurs™ Le Corbusier Spectacular ultramarine 4320K exact reference R27092622",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27095652",
+          "referenceLabel": "Rado True Round Thinline Les Couleurs™ Le Corbusier Powerful orange 4320S exact reference R27095652",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27093632",
+          "referenceLabel": "Rado True Round Thinline Les Couleurs™ Le Corbusier Sunshine yellow 4320W exact reference R27093632",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27091612",
+          "referenceLabel": "Rado True Round Thinline Les Couleurs™ Le Corbusier Iron grey 32010 exact reference R27091612",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27097672",
+          "referenceLabel": "Rado True Round Thinline Les Couleurs™ Le Corbusier Pale sienna 32123 exact reference R27097672",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27096662",
+          "referenceLabel": "Rado True Round Thinline Les Couleurs™ Le Corbusier Slightly greyed English green 32041 exact reference R27096662",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27077102",
+          "referenceLabel": "Rado True Square Automatic exact reference R27077102",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27078172",
+          "referenceLabel": "Rado True Square Automatic exact reference R27078172",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30018712",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30018712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27108312",
+          "referenceLabel": "Rado True Round Secret exact reference R27108312",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20255162",
+          "referenceLabel": "Rado Integral exact reference R20255162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32223229",
+          "referenceLabel": "Rado Captain Cook exact reference R32223229",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32505203",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32505203",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32505313",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32505313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30134162",
+          "referenceLabel": "Rado Centrix Chronograph exact reference R30134162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12169409",
+          "referenceLabel": "Rado DiaStar Original Skeleton Limited Edition exact reference R12169409",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12169209",
+          "referenceLabel": "Rado DiaStar Original Skeleton Limited Edition exact reference R12169209",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20256162",
+          "referenceLabel": "Rado Integral exact reference R20256162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12165155",
+          "referenceLabel": "Rado DiaStar Original X Tej Chauhan Special Edition exact reference R12165155",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30023732",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30023732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30022742",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30022742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32223313",
+          "referenceLabel": "Rado Captain Cook exact reference R32223313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32223213",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32223213",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30008712",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30008712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30017722",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30017722",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30017712",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30017712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32105353",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32105353",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32105203",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32105203",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27056732",
+          "referenceLabel": "Rado True Round Automatic Diamonds exact reference R27056732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32223203",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32223203",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30210152",
+          "referenceLabel": "Rado Centrix Chronograph exact reference R30210152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20258162",
+          "referenceLabel": "Rado Integral 40-Year Anniversary Edition exact reference R20258162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20253712",
+          "referenceLabel": "Rado Integral Diamonds exact reference R20253712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12161733",
+          "referenceLabel": "Rado DiaStar Original Automatic Diamonds exact reference R12161733",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12164153",
+          "referenceLabel": "Rado DiaStar Original Automatic Skeleton exact reference R12164153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30012202",
+          "referenceLabel": "Rado Centrix Automatic Open Heart exact reference R30012202",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30012152",
+          "referenceLabel": "Rado Centrix Automatic Open Heart exact reference R30012152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20255712",
+          "referenceLabel": "Rado Integral Diamonds exact reference R20255712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32137203",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32137203",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32138303",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32138303",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32505019",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32505019",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32505318",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32505318",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30212302",
+          "referenceLabel": "Rado Centrix Chronograph exact reference R30212302",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30211152",
+          "referenceLabel": "Rado Centrix Chronograph exact reference R30211152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30212402",
+          "referenceLabel": "Rado Centrix Chronograph exact reference R30212402",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12166309",
+          "referenceLabel": "Rado DiaStar Original Skeleton Limited Edition exact reference R12166309",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20254712",
+          "referenceLabel": "Rado Integral Diamonds exact reference R20254712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27049012",
+          "referenceLabel": "Rado True Round x Les Couleurs® Le Corbusier® exact reference R27049012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27048162",
+          "referenceLabel": "Rado True Round x Les Couleurs® Le Corbusier® exact reference R27048162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27111162",
+          "referenceLabel": "Rado True Round x Les Couleurs® Le Corbusier® exact reference R27111162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20256712",
+          "referenceLabel": "Rado Integral Diamonds exact reference R20256712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27197169",
+          "referenceLabel": "Rado True Square Automatic Skeleton exact reference R27197169",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27177255",
+          "referenceLabel": "Rado True Square Automatic Skeleton exact reference R27177255",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27178205",
+          "referenceLabel": "Rado True Square Automatic Skeleton exact reference R27178205",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27115012",
+          "referenceLabel": "Rado True Round Automatic Open Heart exact reference R27115012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27108112",
+          "referenceLabel": "Rado True Round Automatic Open Heart exact reference R27108112",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27107172",
+          "referenceLabel": "Rado True Round Automatic Open Heart exact reference R27107172",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30018742",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30018742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27075152",
+          "referenceLabel": "Rado True Square Undigital exact reference R27075152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32223258",
+          "referenceLabel": "Rado Captain Cook exact reference R32223258",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30008302",
+          "referenceLabel": "Rado Centrix Automatic Open Heart exact reference R30008302",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30013302",
+          "referenceLabel": "Rado Centrix Automatic Open Heart exact reference R30013302",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27107742",
+          "referenceLabel": "Rado True Round Secret exact reference R27107742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27078702",
+          "referenceLabel": "Rado True Square Automatic Diamonds exact reference R27078702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27108732",
+          "referenceLabel": "Rado True Round Secret Diamonds exact reference R27108732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27107732",
+          "referenceLabel": "Rado True Round Secret Diamonds exact reference R27107732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32136323",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32136323",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27073012",
+          "referenceLabel": "Rado True Square Automatic Open Heart exact reference R27073012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27086162",
+          "referenceLabel": "Rado True Square Automatic Open Heart exact reference R27086162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32138208",
+          "referenceLabel": "Rado Captain Cook X European Cricket Special Edition exact reference R32138208",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32154208",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32154208",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30008742",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30008742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30017732",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30017732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27083202",
+          "referenceLabel": "Rado True Square Automatic Open Heart exact reference R27083202",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32222108",
+          "referenceLabel": "Rado Captain Cook X Tennis Limited Edition exact reference R32222108",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27086172",
+          "referenceLabel": "Rado True Square X Kunihiko Morinaga Special Edition exact reference R27086172",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32193018",
+          "referenceLabel": "Rado Captain Cook Over-Pole Limited Edition exact reference R32193018",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32252162",
+          "referenceLabel": "Rado HyperChrome Automatic exact reference R32252162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32504407",
+          "referenceLabel": "Rado Captain Cook Automatic Bronze exact reference R32504407",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32504315",
+          "referenceLabel": "Rado Captain Cook Automatic Bronze exact reference R32504315",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32504317",
+          "referenceLabel": "Rado Captain Cook Automatic Bronze exact reference R32504317",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27196152",
+          "referenceLabel": "Rado True Square Automatic Skeleton exact reference R27196152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27197152",
+          "referenceLabel": "Rado True Square Automatic Skeleton exact reference R27197152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22242703",
+          "referenceLabel": "Rado LaCoupole Diamonds exact reference R22242703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30008902",
+          "referenceLabel": "Rado Centrix Open Heart Diamonds exact reference R30008902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27086752",
+          "referenceLabel": "Rado True Square Automatic Open Heart Diamonds Limited Edition exact reference R27086752",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27073752",
+          "referenceLabel": "Rado True Square Automatic Open Heart Diamonds Limited Edition exact reference R27073752",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27073712",
+          "referenceLabel": "Rado True Square Automatic Open Heart exact reference R27073712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27176712",
+          "referenceLabel": "Rado True Square Automatic Open Heart exact reference R27176712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30028912",
+          "referenceLabel": "Rado Centrix Automatic Diamonds Open Heart exact reference R30028912",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30028902",
+          "referenceLabel": "Rado Centrix Automatic Diamonds Open Heart exact reference R30028902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27083712",
+          "referenceLabel": "Rado True Square Automatic Open Heart  exact reference R27083712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27086712",
+          "referenceLabel": "Rado True Square Automatic Open Heart exact reference R27086712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27073702",
+          "referenceLabel": "Rado True Square Automatic Open Heart exact reference R27073702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27112312",
+          "referenceLabel": "Rado True Round Thinline Anima Limited Edition exact reference R27112312",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27073722",
+          "referenceLabel": "Rado True Square Automatic Open Heart Sparkling exact reference R27073722",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27083722",
+          "referenceLabel": "Rado True Square Automatic Open Heart Sparkling exact reference R27083722",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32256712",
+          "referenceLabel": "Rado HyperChrome Automatic Diamonds exact reference R32256712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10201409",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10201409",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10201319",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10201319",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10201259",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10201259",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10202209",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10202209",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10202309",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10202309",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10202319",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10202319",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27174712",
+          "referenceLabel": "Rado True Square Open Heart X Ji Chang-wook Limited Edition exact reference R27174712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32144202",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Diver exact reference R32144202",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32130312",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Diver exact reference R32130312",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32129152",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Diver exact reference R32129152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10206109",
+          "referenceLabel": "Rado Anatom Automatic Skeleton exact reference R10206109",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32145208",
+          "referenceLabel": "Rado Captain Cook Automatic Chronograph exact reference R32145208",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32145158",
+          "referenceLabel": "Rado Captain Cook Automatic Chronograph exact reference R32145158",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32128202",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic exact reference R32128202",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32127152",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic exact reference R32127152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32150168",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Skeleton exact reference R32150168",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32127162",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic exact reference R32127162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32151318",
+          "referenceLabel": "Rado Captain Cook Automatic Chronograph exact reference R32151318",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32128162",
+          "referenceLabel": "Rado Captain Cook Hrithik Roshan Special Edition exact reference R32128162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10260152",
+          "referenceLabel": "Rado Anatom exact reference R10260152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10201152",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10201152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32153209",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Skeleton exact reference R32153209",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32192152",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Skeleton exact reference R32192152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32150162",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Skeleton exact reference R32150162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32148162",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Skeleton exact reference R32148162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10200152",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10200152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10203102",
+          "referenceLabel": "Rado Anatom Automatic exact reference R10203102",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10201712",
+          "referenceLabel": "Rado Anatom Automatic Diamonds exact reference R10201712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10260712",
+          "referenceLabel": "Rado Anatom exact reference R10260712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32146208",
+          "referenceLabel": "Rado Captain Cook Automatic Chronograph exact reference R32146208",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10263702",
+          "referenceLabel": "Rado Anatom exact reference R10263702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10261712",
+          "referenceLabel": "Rado Anatom exact reference R10261712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32157152",
+          "referenceLabel": "Rado HyperChrome Automatic Diamonds exact reference R32157152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32158102",
+          "referenceLabel": "Rado HyperChrome Automatic Diamonds exact reference R32158102",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32189313",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Automatic Chronograph exact reference R32189313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32195202",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Chronograph exact reference R32195202",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32190153",
+          "referenceLabel": "Rado Captain Cook High-Tech Ceramic Automatic Chronograph exact reference R32190153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27124702",
+          "referenceLabel": "Rado True Square Automatic Skeleton Diamonds exact reference R27124702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10264712",
+          "referenceLabel": "Rado Anatom exact reference R10264712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r10204712",
+          "referenceLabel": "Rado Anatom Automatic Diamonds exact reference R10204712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12307304",
+          "referenceLabel": "Rado The Original exact reference R12307304",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913303",
+          "referenceLabel": "Rado Florence exact reference R48913303",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913153",
+          "referenceLabel": "Rado Florence exact reference R48913153",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913023",
+          "referenceLabel": "Rado Florence exact reference R48913023",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12306303",
+          "referenceLabel": "Rado The Original exact reference R12306303",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12306313",
+          "referenceLabel": "Rado The Original exact reference R12306313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913163",
+          "referenceLabel": "Rado Florence exact reference R48913163",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913403",
+          "referenceLabel": "Rado Florence exact reference R48913403",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913713",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48913713",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913703",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48913703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913723",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48913723",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48917703",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48917703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48915703",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48915703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12416803",
+          "referenceLabel": "Rado The Original Automatic exact reference R12416803",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12416633",
+          "referenceLabel": "Rado The Original Automatic exact reference R12416633",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12416613",
+          "referenceLabel": "Rado The Original Automatic exact reference R12416613",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12416573",
+          "referenceLabel": "Rado The Original Automatic exact reference R12416573",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913733",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48913733",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913903",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48913903",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913763",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48913763",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48913743",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48913743",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12170343",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12170343",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12170323",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12170323",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12170333",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12170333",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r48915903",
+          "referenceLabel": "Rado Florence Diamonds exact reference R48915903",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12170113",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12170113",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12170223",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12170223",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30026152",
+          "referenceLabel": "Rado Centrix exact reference R30026152",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12170253",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12170253",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30024302",
+          "referenceLabel": "Rado Centrix exact reference R30024302",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30024012",
+          "referenceLabel": "Rado Centrix exact reference R30024012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27072012",
+          "referenceLabel": "Rado True Square exact reference R27072012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27080172",
+          "referenceLabel": "Rado True Square  exact reference R27080172",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27059712",
+          "referenceLabel": "Rado True Round Diamonds exact reference R27059712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30040712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30040712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30026712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30026712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12171253",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12171253",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12171263",
+          "referenceLabel": "Rado Diastar Original Automatic exact reference R12171263",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12171663",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12171663",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30038712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30038712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30039712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30039712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30025712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30025712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30024712",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30024712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27080722",
+          "referenceLabel": "Rado True Square Diamonds exact reference R27080722",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12171643",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12171643",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12171633",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12171633",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12171653",
+          "referenceLabel": "Rado DiaStar Original Automatic exact reference R12171653",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27181902",
+          "referenceLabel": "Rado True Square Diamonds exact reference R27181902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27072902",
+          "referenceLabel": "Rado True Square Diamonds exact reference R27072902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27242742",
+          "referenceLabel": "Rado True Round Automatic Diamonds exact reference R27242742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30019302",
+          "referenceLabel": "Rado Centrix Automatic exact reference R30019302",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30019012",
+          "referenceLabel": "Rado Centrix Automatic exact reference R30019012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27242712",
+          "referenceLabel": "Rado True Round Automatic Diamonds exact reference R27242712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30020712",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30020712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27243742",
+          "referenceLabel": "Rado True Round Automatic Diamonds exact reference R27243742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27080702",
+          "referenceLabel": "Rado True Square Diamonds exact reference R27080702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27123905",
+          "referenceLabel": "Rado True Square x Ash Barty Limited Edition exact reference R27123905",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27957909",
+          "referenceLabel": "Rado True Round Thinline Diamonds exact reference R27957909",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30025742",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30025742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30024732",
+          "referenceLabel": "Rado Centrix Diamonds exact reference R30024732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27079702",
+          "referenceLabel": "Rado True Square Diamonds exact reference R27079702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30019722",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30019722",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30019712",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30019712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30233942",
+          "referenceLabel": "Rado Centrix Moonphase exact reference R30233942",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30232902",
+          "referenceLabel": "Rado Centrix Moonphase exact reference R30232902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30232922",
+          "referenceLabel": "Rado Centrix Moonphase exact reference R30232922",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20250712",
+          "referenceLabel": "Rado Integral Diamonds exact reference R20250712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r12171713",
+          "referenceLabel": "Rado DiaStar Original Automatic Diamonds exact reference R12171713",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30234762",
+          "referenceLabel": "Rado Centrix Moonphase Limited Edition exact reference R30234762",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20252702",
+          "referenceLabel": "Rado Integral Diamonds exact reference R20252702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30031742",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30031742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30020742",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30020742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20251912",
+          "referenceLabel": "Rado Integral Diamonds exact reference R20251912",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r20251902",
+          "referenceLabel": "Rado Integral Diamonds exact reference R20251902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27123012",
+          "referenceLabel": "Rado True Square Automatic Open Heart exact reference R27123012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r27183012",
+          "referenceLabel": "Rado True Round Open Heart Limited Edition exact reference R27183012",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30032742",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30032742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30037742",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30037742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30037744",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30037744",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30037732",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30037732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30019744",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30019744",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30019742",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30019742",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30019732",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30019732",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32500718",
+          "referenceLabel": "Rado Captain Cook Automatic exact reference R32500718",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32139708",
+          "referenceLabel": "Rado Captain Cook Marina Hoermanseder exact reference R32139708",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22243703",
+          "referenceLabel": "Rado LaCoupole Diamonds exact reference R22243703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22240703",
+          "referenceLabel": "Rado LaCoupole Diamonds exact reference R22240703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r22241703",
+          "referenceLabel": "Rado LaCoupole Diamonds exact reference R22241703",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32117708",
+          "referenceLabel": "Rado Captain Cook x Marina Hoermanseder Heartbeat exact reference R32117708",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30029922",
+          "referenceLabel": "Rado Centrix Automatic Diamonds Open Heart exact reference R30029922",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30029902",
+          "referenceLabel": "Rado Centrix Automatic Diamonds Open Heart exact reference R30029902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30029912",
+          "referenceLabel": "Rado Centrix Automatic Diamonds Open Heart exact reference R30029912",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32043712",
+          "referenceLabel": "Rado HyperChrome Automatic Diamonds exact reference R32043712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r32033902",
+          "referenceLabel": "Rado HyperChrome Automatic Diamonds exact reference R32033902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30032752",
+          "referenceLabel": "Rado Centrix Open Heart Diamonds exact reference R30032752",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30029952",
+          "referenceLabel": "Rado Centrix Open Heart Diamonds exact reference R30029952",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30029932",
+          "referenceLabel": "Rado Centrix Automatic Diamonds Open Heart exact reference R30029932",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30029942",
+          "referenceLabel": "Rado Centrix Automatic Diamonds Open Heart exact reference R30029942",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30227702",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30227702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30228702",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30228702",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30229902",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30229902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30230902",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30230902",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30230922",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30230922",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30230912",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30230912",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "rado-reference-r30231712",
+          "referenceLabel": "Rado Centrix Automatic Diamonds exact reference R30231712",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Rado catalogue card; detailed facts remain unpromoted until field-level evidence is captured."
         }
       ]
     },
