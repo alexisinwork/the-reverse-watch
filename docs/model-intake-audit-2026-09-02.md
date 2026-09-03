@@ -2494,3 +2494,34 @@ references were added as planned targets. Accessories and records absent from
 the live watch feed were excluded. Technical, price, and availability fields
 remain unpromoted. Perplexity was unavailable; official Alpina catalogue,
 products endpoint and product cards were used as the primary-source fallback.
+
+## One-hundred-forty-sixth Frederique Constant exact-reference expansion (retrieved 2026-09-03)
+
+The Frederique Constant audit reconciled the official regional men's and
+women's catalogues, live product-grid endpoints and product cards. It found
+125 current watch references; one was already represented and 124 additional
+exact references were added as planned targets. Accessories and archived
+records outside the live endpoints were excluded. Technical, price, and
+availability fields remain unpromoted. Perplexity was unavailable; official
+Frederique Constant catalogues and product cards were used as the primary-source
+fallback.
+
+## One-hundred-forty-seventh Mühle-Glashütte exact-reference expansion (retrieved 2026-09-03)
+
+The Mühle-Glashütte audit reconciled the official live wristwatch catalogue,
+collection pages and individual product pages. It found 205 current exact
+references; none were already represented, so all 205 were added as planned
+targets. Accessories, straps and archived records outside the live wristwatch
+listing were excluded. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Mühle-Glashütte catalogue and
+product pages were used as the primary-source fallback.
+
+## One-hundred-forty-eighth Baume & Mercier exact-reference expansion (retrieved 2026-09-03)
+
+The Baume & Mercier audit reconciled the official all-watches listing and
+Clifton, Joia, Classima, Hampton and Riviera collection pages. It found 174
+current watch references; one was already represented and 173 additional exact
+references were added as planned targets. Strap records were excluded as
+non-watch records. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Baume & Mercier catalogue and
+collection pages were used as the primary-source fallback.
