@@ -2388,3 +2388,52 @@ wristwatch universe. Each added target retains an official Parmigiani Fleurier
 product-page source. Technical, price, and availability fields remain
 unpromoted. Perplexity was unavailable; official Parmigiani Fleurier API and
 product pages were used as the primary-source fallback.
+
+## One-hundred-thirty-seventh Arnold & Son exact-reference expansion (retrieved 2026-09-03)
+
+The Arnold & Son audit reconciled the official [all-watches listing](https://www.arnoldandson.com/all-watches/),
+[collection index](https://www.arnoldandson.com/collections/) and current
+collection/product pages. It found 75 current watch variants; one was already
+represented and 74 additional variants were added as planned targets. The HM
+London Skyline Red Gold page does not publish a manufacturer reference, so its
+model identity was retained without inventing an SKU. Three unique, sold-out
+Double Tourbillon pieces were recorded as excluded. Technical, price, and
+availability fields remain unpromoted. Perplexity was unavailable; official
+Arnold & Son pages were used as the primary-source fallback.
+
+## One-hundred-thirty-eighth Angelus exact-reference expansion (retrieved 2026-09-03)
+
+The Angelus audit reconciled the official [current watch collections](https://angelus-watches.com/collections/),
+[Lab and La Fabrique pages](https://angelus-watches.com/collections/lab/) and
+official heritage and calibre scopes. It found 25 current watch references;
+one was already represented and 24 additional exact references were added as
+planned targets. Historical watches, clocks, calibre pages and accessories
+were recorded as excluded. Each added target retains an official Angelus
+source. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official Angelus pages and sitemap were used as
+the primary-source fallback.
+
+## One-hundred-thirty-ninth BOVET 1822 variant expansion (retrieved 2026-09-03)
+
+The BOVET audit reconciled the official [collections index](https://www.bovet.com/collections/),
+[Dimier collections](https://www.bovet.com/collections/dimier/) and
+[Fleurier collections](https://www.bovet.com/collections/fleurier/). It found
+44 current watch variants; one was already represented and 43 additional
+official variants were added as planned targets. Bespoke commissions,
+accessories and archived/discontinued scope were recorded as excluded. Where
+the official page exposes a model variant rather than a separate SKU, the
+published identity was retained without inventing a reference. Technical,
+price, and availability fields remain unpromoted. Perplexity was unavailable;
+official BOVET pages and sitemap were used as the primary-source fallback.
+
+## One-hundred-fortieth Speake-Marin exact-reference expansion (retrieved 2026-09-03)
+
+The Speake-Marin audit reconciled the official [current product catalogue](https://speake-marin.com/),
+[product API](https://speake-marin.com/products.json?limit=250) and current
+product pages. It found 29 current watch references; one was already
+represented and 28 additional exact references were added as planned targets.
+A unique Minute Repeater Carillon, an archived 2018 Resilience piece and
+non-watch product types were recorded as excluded. Each added target retains
+an official Speake-Marin product source. Technical, price, and availability
+fields remain unpromoted. Perplexity was unavailable; official Speake-Marin
+pages and product API were used as the primary-source fallback.
