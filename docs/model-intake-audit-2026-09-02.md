@@ -2728,14 +2728,36 @@ excluded. Technical, price, and availability fields remain unpromoted.
 Perplexity was unavailable; official Autodromo catalogue and product pages
 were used as the primary-source fallback.
 
-## One-hundred-sixty-eighth Bremont exact-reference expansion (retrieved 2026-09-03)
+## One-hundred-sixty-eighth Halios exact-reference expansion (retrieved 2026-09-03)
 
-The Bremont audit reconciled the official live all-watches Shopify feed, the
-official collection page, product JSON pages and the manufacturer sitemap. It
-found 118 current watch references with exact manufacturer SKUs; one was
-already represented and 117 additional exact references were added as planned
-targets. The current feed was scoped to watch products only; Bremont archive
-records, accessories, service products and non-watch catalogue records were
-excluded. Technical, price, and availability fields remain unpromoted.
-Perplexity was unavailable; official Bremont catalogue, product JSON and
-sitemap pages were used as the primary-source fallback.
+The Halios audit reconciled the official live catalogue, product feed, product
+pages and upcoming-project page. It found three current catalogue identities;
+one was already represented and two additional exact identities were added as
+planned targets. Future projects and rubber straps were excluded. Technical,
+price, and availability fields remain unpromoted. Perplexity was unavailable;
+official Halios catalogue and product pages were used as the primary-source
+fallback.
+
+## One-hundred-sixty-ninth Unimatic exact-reference expansion (retrieved 2026-09-03)
+
+The Unimatic audit reconciled the official current catalogue, pagination,
+collaborations and product pages. It found 39 current exact references; one
+was already represented and 38 additional exact references were added as
+planned targets. Archive records and accessories were excluded. Technical,
+price, and availability fields remain unpromoted. Perplexity was unavailable;
+official Unimatic catalogue and product pages were used as the primary-source
+fallback.
+
+## One-hundred-seventieth Cuervo y Sobrinos exact-reference expansion (retrieved 2026-09-03)
+
+The Cuervo y Sobrinos audit reconciled the official product sitemap, WordPress
+product endpoint, current product pages and WooCommerce variation records. It
+found 91 unique exact current watch references across 72 published product
+pages; one was already represented and 90 additional exact references were
+added as individual planned targets. Variation-level SKUs were retained where
+the parent product SKU was blank. Two published orphan pages without an exact
+SKU were not promoted, and no archive or accessory record was treated as a
+current watch reference. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Cuervo y Sobrinos catalogue,
+sitemap, product endpoint and product/variation pages were used as the
+primary-source fallback.
