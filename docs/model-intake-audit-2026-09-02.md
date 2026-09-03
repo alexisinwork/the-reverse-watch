@@ -2144,3 +2144,24 @@ additional exact references were added as planned targets. The duplicate
 not treated as current US-en coverage. Technical, price, and availability
 fields remain unpromoted. Perplexity was unavailable because of quota
 exhaustion.
+
+## One-hundred-sixteenth Hamilton current-reference follow-up (retrieved 2026-09-03)
+
+The official Hamilton US and International current-collection filters exposed
+267 exact watch references. The manifest contained 265 matching records, but
+one of those (`H31231140`) is a necklace accessory and was excluded from the
+watch catalogue. The remaining 264 represented watches leave three confirmed
+current gaps, which were added as planned targets with their official product
+pages: [H32301161](https://www.hamiltonwatch.com/en-int/h32301161-jazzmaster-quartz.html),
+[H78505331](https://www.hamiltonwatch.com/en-int/h78505331-khaki-navy-belowzero-auto-limited-edition.html), and
+[H89479970](https://www.hamiltonwatch.com/en-us/h89479970-khaki-field-mechanical-lancaster.html).
+Technical, price, and availability fields remain unpromoted. Perplexity was
+unavailable because of quota exhaustion.
+
+## One-hundred-seventeenth DOXA exact-reference recheck (retrieved 2026-09-03)
+
+The official [DOXA SUB 200 130th Anniversary Celebration product page](https://doxawatches.com/products/sub-200-130th-anniversary-celebration)
+confirmed the previously added exact reference `799.10.101LE.10`. The current
+DOXA comparison remains 301 unique references with no additional manifest
+change required in this recheck. Technical, price, and availability fields
+remain unpromoted. Perplexity was unavailable because of quota exhaustion.

@@ -47537,15 +47537,11 @@
           "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
         },
         {
-          "id": "hamilton-reference-h31231140",
-          "referenceLabel": "Hamilton exact current reference H31231140",
-          "state": "planned",
-          "coverageIntent": {
-            "functionProfiles": [
-              "simple_date"
-            ]
-          },
-          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+      "id": "hamilton-reference-h31231140",
+      "referenceLabel": "Hamilton exact current reference H31231140",
+      "state": "excluded",
+      "coverageRationale": "The official Hamilton catalogue recheck identifies H31231140 as a necklace accessory rather than a watch reference.",
+      "exclusionReason": "Non-watch necklace accessory excluded from the watch catalogue."
         },
         {
           "id": "hamilton-reference-h31241113",
@@ -49910,8 +49906,41 @@
               "simple_date"
             ]
           },
-          "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
-        }
+      "coverageRationale": "Add the exact current Hamilton reference confirmed in the official US and International catalogue audit; preserve the reference identity while technical and commercial fields remain unpromoted."
+    },
+    {
+      "id": "hamilton-reference-h32301161",
+      "referenceLabel": "Hamilton exact current reference H32301161",
+      "state": "planned",
+      "coverageIntent": {
+        "functionProfiles": [
+          "simple_date"
+        ]
+      },
+      "coverageRationale": "Official Hamilton Jazzmaster Quartz product page confirms the exact current reference: https://www.hamiltonwatch.com/en-int/h32301161-jazzmaster-quartz.html. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "hamilton-reference-h78505331",
+      "referenceLabel": "Hamilton exact current reference H78505331",
+      "state": "planned",
+      "coverageIntent": {
+        "functionProfiles": [
+          "simple_date"
+        ]
+      },
+      "coverageRationale": "Official Hamilton Khaki Navy BeLOWZERO Auto Limited Edition product page confirms the exact current reference: https://www.hamiltonwatch.com/en-int/h78505331-khaki-navy-belowzero-auto-limited-edition.html. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "hamilton-reference-h89479970",
+      "referenceLabel": "Hamilton exact current reference H89479970",
+      "state": "planned",
+      "coverageIntent": {
+        "functionProfiles": [
+          "simple_date"
+        ]
+      },
+      "coverageRationale": "Official Hamilton Khaki Field Mechanical Lancaster Exclusive Edition product page confirms the exact current reference: https://www.hamiltonwatch.com/en-us/h89479970-khaki-field-mechanical-lancaster.html. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    }
       ]
     },
     {
