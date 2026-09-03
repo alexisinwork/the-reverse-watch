@@ -1590,3 +1590,47 @@ All nine successful targets remain `needs_review` with identity, reference
 code, and manufacturer URL confirmed. Non-identity claims remain provisional
 until field-level M1 review; missing facts remain null and no model is
 promoted to the recommendation catalogue.
+
+## Eighty-fourth primary-catalogue gap audit (retrieved 2026-09-03)
+
+The four parallel read-only audits rechecked the 28 failed worker targets
+against current manufacturer pages. All 28 exact identities were confirmed as
+current, including Cartier `W4TA0031`, Omega `434.10.40.20.10.001`, Seiko
+`SPB507J1` and `SRPL83`, IWC `IW388305`, Chopard `168574-3013`, Panerai
+`PAM03313` and `PAM01731`, Hublot `421.EX.5129.NR.RLD` and
+`642.QK.0110.NR`, eight Grand Seiko references (`SBGJ237`, `SBGE255`,
+`SBGC253`, `SBGM255`, `SBGY007`, `SBGA293`, `SLGA021`, `SLGC001`), and ten
+Tudor references (`M79000B-0001`, `M7939G1A0NRU-0003`, `M7943A1A0NU-0001`,
+`M79310N-0001`, `M79470-0004`, `M25610TNL-0001`, `M2542G267NU-0002`,
+`M79930-0007`, `M91560-0002`, `M2840D1A0-0001`). The official checks include
+[Cartier W4TA0031](https://www.cartier.com/en-ca/watches/collections/tank/tank-must-de-cartier-watch-CRW4TA0031.html), [Omega 434.10.40.20.10.001](https://www.omegawatches.com.hk/en-hk/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43410402010001), [Seiko SPB507J1](https://www.seikowatches.com/us-en/products/prospex/spb507j1), [Seiko SRPL83](https://www.seikowatches.com/pl-pl/products/5sports/srpl83), [IWC IW388305](https://www.iwc.com/us-en/watches/pilot-watches/iw388305-pilots-watch-performance-chronograph-41-amg), [Chopard 168574-3013](https://www.chopard.com/en-us/watch/168574-3013.html), [Panerai PAM03313](https://www.panerai.com/en/collections/watch-collection/luminor/pam03313-luminor-marina.html), [Panerai PAM01731](https://www.panerai.com/en/collections/watch-collection/luminor/pam01731-luminor.html), [Hublot 421.EX.5129.NR.RLD](https://www.hublot.com/en-us/watches/big-bang/big-bang-reloaded-blue-ceramic-44-mm), [Hublot 642.QK.0110.NR](https://www.hublot.com/en-us/watches/big-bang/spirit-of-big-bang-frosted-carbon-42-mm), [Grand Seiko SBGJ237](https://www.grand-seiko.com/us-en/collections/sbgj237g), and [Tudor M79000B-0001](https://www.tudorwatch.com/en/watches/black-bay-54/m79000b-0001).
+
+The same audits identified 39 additional exact references and added them to
+the manifest as `planned` targets for later Perplexity normalization: 12 Grand
+Seiko references (`SBGE295`, `SLGC009`, `SBGA481`, `SBGE253`, `SBGE257`,
+`SBGM221`, `SBGW301`, `SBGA407`, `SBGY043`, `SBGM257`, `SLGA019`, `SLGA015`),
+three Tudor references (`M79000-0001`, `M7939A1A0RU-0001`, `M25407N-0001`),
+three IWC Performance Chronograph variants (`IW388304`, `IW388306`,
+`IW388309`), nine Chopard references (`168619-3010`, `168619-3020`,
+`278598-6002`, `278573-3030`, `168629-3002`, `298601-3012`, `203787-0001`,
+`168860-3005`, `168627-3003`), three Hublot Big Bang Reloaded variants
+(`421.GM.1144.NR.RLD`, `421.MX.1133.NR.RLD`, `421.NM.1123.NR.RLD`), Cartier
+`WJSA0013`, four Omega De Ville Prestige dial variants
+(`434.10.40.20.01.001`, `.02.001`, `.03.001`, `.06.001`), and four Seiko
+references (`SPB519J1`, `SSK003`, `SSK033`, `SRPL85`). Individual primary
+checks include the [Grand Seiko collection](https://www.grand-seiko.com/us-en/collections), [Tudor M79000-0001](https://www.tudorwatch.com/en/watch-family/daring-watches/m79000-0001), [IWC IW388304](https://www.iwc.com/us-en/watches/pilot-watches/iw388304-pilots-watch-performance-chronograph-41-amg), [IWC IW388306](https://www.iwc.com/us-en/watches/pilot-watches/iw388306-pilots-watch-performance-chronograph-41-mercedes-amg-petronas), [IWC IW388309](https://www.iwc.com/us-en/watches/pilot-watches/iw388309-pilots-watch-performance-chronograph-41), [Chopard 168619-3010](https://www.chopard.com/en-intl/watch/168619-3010.html), [Chopard 168629-3002](https://www.chopard.com/en-intl/watch/168629-3002.html), [Hublot dark-green](https://www.hublot.com/en-us/watches/big-bang/big-bang-reloaded-dark-green-ceramic-44-mm), [Hublot Magic Gold](https://www.hublot.com/en-us/watches/big-bang/big-bang-reloaded-magic-gold-44-mm), [Cartier WJSA0013](https://www.cartier.com/en-us/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRWJSA0013.html), [Omega black Prestige](https://www.omegawatches.com.hk/en-hk/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43410402001001), [Seiko SPB519J1](https://www.seikowatches.com/us-en/products/prospex/spb519j1), and [Seiko SRPL85](https://www.seikowatches.com/us-en/products/5sports/srpl85).
+
+The Panerai collection audit additionally surfaced many candidate references,
+including Luminor `PAM01732`, `PAM01733`, `PAM01735`, `PAM01629`, `PAM01631`,
+`PAM01678`, `PAM01783`, `PAM03312`, `PAM03314`, `PAM03323`, `PAM03325`,
+`PAM01460`, `PAM05218`, and Submersible `PAM01756`, `PAM01738`, `PAM01495`,
+`PAM01089`, `PAM01565`, `PAM01697`, `PAM01698`, `PAM01596`, `PAM01518`,
+`PAM01676`, `PAM01287`, `PAM01289`, `PAM01543`, `PAM01579`, `PAM01466`,
+`PAM01513`. Because this pass only established collection-level visibility for
+these additional Panerai candidates, they remain discovery notes until each
+exact product card is independently checked.
+
+The Perplexity API returned `401 insufficient_quota` during these audits, so no
+new provider jobs or review artifacts were fabricated. Exact primary-page
+confirmation is recorded separately from the required Perplexity normalization
+and field-level M1 review; all newly queued targets remain `planned`.

@@ -1796,6 +1796,13 @@
             ]
           },
           "coverageRationale": "Add exact current Pasha 35 mm reference."
+        },
+        {
+          "id": "cartier-santos-wjsa0013",
+          "referenceLabel": "Cartier Santos de Cartier exact yellow-gold diamond reference WJSA0013",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the distinct current yellow-gold and diamond Santos variant confirmed on the manufacturer page."
         }
       ]
     },
@@ -2064,6 +2071,34 @@
             ]
           },
           "coverageRationale": "Add exact current De Ville Tresor reference."
+        },
+        {
+          "id": "omega-de-ville-prestige-43410402001001",
+          "referenceLabel": "Omega De Ville Prestige exact black-dial reference 434.10.40.20.01.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the separate current De Ville Prestige black-dial configuration confirmed on the manufacturer page."
+        },
+        {
+          "id": "omega-de-ville-prestige-43410402002001",
+          "referenceLabel": "Omega De Ville Prestige exact silver-dial reference 434.10.40.20.02.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the separate current De Ville Prestige silver-dial configuration confirmed on the manufacturer page."
+        },
+        {
+          "id": "omega-de-ville-prestige-43410402003001",
+          "referenceLabel": "Omega De Ville Prestige exact blue-dial reference 434.10.40.20.03.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the separate current De Ville Prestige blue-dial configuration confirmed on the manufacturer page."
+        },
+        {
+          "id": "omega-de-ville-prestige-43410402006001",
+          "referenceLabel": "Omega De Ville Prestige exact grey-dial reference 434.10.40.20.06.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the separate current De Ville Prestige grey-dial configuration confirmed on the manufacturer page."
         }
       ]
     },
@@ -2557,6 +2592,90 @@
             ]
           },
           "coverageRationale": "Add exact current Evolution 9 Tentagraph reference."
+        },
+        {
+          "id": "grand-seiko-sbge295",
+          "referenceLabel": "Grand Seiko Sport exact Spring Drive GMT reference SBGE295",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["gmt"] },
+          "coverageRationale": "Add a current exact Sport Spring Drive GMT reference confirmed on the manufacturer collection page."
+        },
+        {
+          "id": "grand-seiko-slgc009",
+          "referenceLabel": "Grand Seiko Evolution 9 exact Tentagraph reference SLGC009",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add a distinct current Evolution 9 Tentagraph dial variant."
+        },
+        {
+          "id": "grand-seiko-sbga481",
+          "referenceLabel": "Grand Seiko Sport exact Spring Drive reference SBGA481",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a current exact Sport Spring Drive reference."
+        },
+        {
+          "id": "grand-seiko-sbge253",
+          "referenceLabel": "Grand Seiko Sport exact Spring Drive GMT reference SBGE253",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["gmt"] },
+          "coverageRationale": "Add a current exact Sport Spring Drive GMT variant."
+        },
+        {
+          "id": "grand-seiko-sbge257",
+          "referenceLabel": "Grand Seiko Sport exact Spring Drive GMT reference SBGE257",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["gmt"] },
+          "coverageRationale": "Add a current exact Sport Spring Drive GMT variant."
+        },
+        {
+          "id": "grand-seiko-sbgm221",
+          "referenceLabel": "Grand Seiko Elegance exact automatic GMT reference SBGM221",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["gmt"] },
+          "coverageRationale": "Add the current exact Elegance mechanical GMT reference."
+        },
+        {
+          "id": "grand-seiko-sbgw301",
+          "referenceLabel": "Grand Seiko Heritage exact hand-wound reference SBGW301",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add a current exact Heritage hand-wound reference."
+        },
+        {
+          "id": "grand-seiko-sbga407",
+          "referenceLabel": "Grand Seiko Elegance exact Spring Drive reference SBGA407",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a current exact Elegance Spring Drive reference."
+        },
+        {
+          "id": "grand-seiko-sbgy043",
+          "referenceLabel": "Grand Seiko Elegance exact hand-wound Spring Drive reference SBGY043",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add a current exact Elegance hand-wound Spring Drive reference."
+        },
+        {
+          "id": "grand-seiko-sbgm257",
+          "referenceLabel": "Grand Seiko Elegance exact automatic GMT reference SBGM257",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["gmt"] },
+          "coverageRationale": "Add a current exact Elegance mechanical GMT variant."
+        },
+        {
+          "id": "grand-seiko-slga019",
+          "referenceLabel": "Grand Seiko Evolution 9 exact Spring Drive reference SLGA019",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a current exact Evolution 9 Spring Drive reference."
+        },
+        {
+          "id": "grand-seiko-slga015",
+          "referenceLabel": "Grand Seiko Evolution 9 exact Spring Drive diver reference SLGA015",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a current exact Evolution 9 Spring Drive diver reference."
         }
       ]
     },
@@ -2726,6 +2845,27 @@
             ]
           },
           "coverageRationale": "Add the exact 30 bar Aquatimer date reference."
+        },
+        {
+          "id": "iwc-performance-chronograph-iw388304",
+          "referenceLabel": "IWC Pilot's Watch Performance Chronograph 41 AMG exact titanium bracelet reference IW388304",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the separate current titanium-bracelet AMG chronograph variant confirmed on the manufacturer page."
+        },
+        {
+          "id": "iwc-performance-chronograph-iw388306",
+          "referenceLabel": "IWC Pilot's Watch Performance Chronograph 41 Mercedes-AMG exact Ceratanium reference IW388306",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the separate current Ceratanium AMG chronograph variant confirmed on the manufacturer page."
+        },
+        {
+          "id": "iwc-performance-chronograph-iw388309",
+          "referenceLabel": "IWC Pilot's Watch Performance Chronograph 41 exact gold reference IW388309",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the separate current 18 ct 5N gold chronograph variant confirmed on the manufacturer page."
         }
       ]
     },
@@ -3218,6 +3358,69 @@
             ]
           },
           "coverageRationale": "Add the exact two-tone Happy Sport date reference."
+        },
+        {
+          "id": "chopard-reference-168619-3010",
+          "referenceLabel": "Chopard exact current reference 168619-3010",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a separately listed current Chopard reference confirmed by an individual manufacturer card."
+        },
+        {
+          "id": "chopard-reference-168619-3020",
+          "referenceLabel": "Chopard exact current reference 168619-3020",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a separately listed current Chopard reference confirmed by an individual manufacturer card."
+        },
+        {
+          "id": "chopard-reference-278598-6002",
+          "referenceLabel": "Chopard exact current reference 278598-6002",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a separately listed current Chopard reference confirmed by an individual manufacturer card."
+        },
+        {
+          "id": "chopard-reference-278573-3030",
+          "referenceLabel": "Chopard exact current reference 278573-3030",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a separately listed current Chopard reference confirmed by an individual manufacturer card."
+        },
+        {
+          "id": "chopard-luc-168629-3002",
+          "referenceLabel": "Chopard L.U.C exact current reference 168629-3002",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the separately listed current L.U.C variant confirmed by an individual manufacturer card."
+        },
+        {
+          "id": "chopard-reference-298601-3012",
+          "referenceLabel": "Chopard exact current reference 298601-3012",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a separately listed current Chopard reference confirmed by an individual manufacturer card."
+        },
+        {
+          "id": "chopard-reference-203787-0001",
+          "referenceLabel": "Chopard exact current reference 203787-0001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a separately listed current Chopard reference confirmed by an individual manufacturer card."
+        },
+        {
+          "id": "chopard-reference-168860-3005",
+          "referenceLabel": "Chopard exact current reference 168860-3005",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a separately listed current Chopard reference confirmed by an individual manufacturer card."
+        },
+        {
+          "id": "chopard-reference-168627-3003",
+          "referenceLabel": "Chopard exact current reference 168627-3003",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add a separately listed current Chopard reference confirmed by an individual manufacturer card."
         }
       ]
     },
@@ -3434,6 +3637,27 @@
             ]
           },
           "coverageRationale": "Add exact current Royal day-date reference."
+        },
+        {
+          "id": "tudor-black-bay-54-lagoon-blue-m79000-0001",
+          "referenceLabel": "Tudor Black Bay 54 Lagoon Blue exact reference M79000-0001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the current blue-dial Black Bay 54 variant confirmed on the manufacturer page."
+        },
+        {
+          "id": "tudor-black-bay-58-burgundy-m7939a1a0ru-0001",
+          "referenceLabel": "Tudor Black Bay 58 burgundy exact reference M7939A1A0RU-0001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the current burgundy Black Bay 58 variant confirmed on the manufacturer page."
+        },
+        {
+          "id": "tudor-pelagos-39-m25407n-0001",
+          "referenceLabel": "Tudor Pelagos 39 exact titanium reference M25407N-0001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the current compact Pelagos 39 reference confirmed on the manufacturer page."
         }
       ]
     },
@@ -3740,6 +3964,27 @@
             ]
           },
           "coverageRationale": "Add the exact frosted-carbon skeleton chronograph reference."
+        },
+        {
+          "id": "hublot-big-bang-reloaded-421-gm-1144-nr-rld",
+          "referenceLabel": "Hublot Big Bang Reloaded exact dark-green ceramic reference 421.GM.1144.NR.RLD",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the current Big Bang Reloaded dark-green ceramic variant confirmed on the manufacturer page."
+        },
+        {
+          "id": "hublot-big-bang-reloaded-421-mx-1133-nr-rld",
+          "referenceLabel": "Hublot Big Bang Reloaded exact Magic Gold reference 421.MX.1133.NR.RLD",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the current Big Bang Reloaded Magic Gold variant confirmed on the manufacturer page."
+        },
+        {
+          "id": "hublot-big-bang-reloaded-421-nm-1123-nr-rld",
+          "referenceLabel": "Hublot Big Bang Reloaded exact titanium ceramic reference 421.NM.1123.NR.RLD",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the current Big Bang Reloaded titanium-ceramic variant confirmed on the manufacturer page."
         }
       ]
     },
@@ -4497,6 +4742,34 @@
             ]
           },
           "coverageRationale": "Add exact current 5 Sports Field GMT reference."
+        },
+        {
+          "id": "seiko-prospex-spb519j1",
+          "referenceLabel": "Seiko Prospex exact reference SPB519J1",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the current exact Prospex reference confirmed on the manufacturer product page."
+        },
+        {
+          "id": "seiko-5-sports-ssk003",
+          "referenceLabel": "Seiko 5 Sports exact GMT reference SSK003",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["gmt"] },
+          "coverageRationale": "Add the current exact 5 Sports GMT reference confirmed on the manufacturer product page."
+        },
+        {
+          "id": "seiko-5-sports-ssk033",
+          "referenceLabel": "Seiko 5 Sports exact GMT reference SSK033",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["gmt"] },
+          "coverageRationale": "Add the current exact 5 Sports GMT reference confirmed on the manufacturer product page."
+        },
+        {
+          "id": "seiko-5-sports-srpl85",
+          "referenceLabel": "Seiko 5 Sports exact reference SRPL85",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the current exact 5 Sports reference confirmed on the manufacturer product page."
         }
       ]
     },
