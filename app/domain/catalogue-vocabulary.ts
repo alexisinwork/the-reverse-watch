@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import rawPositioningMap from "../../data/catalogue/positioning-map.json";
+
 export const VOCABULARY_KINDS = [
   "wearing_scenario",
   "complication",
@@ -252,4 +254,22 @@ export function splitScenarioTokens(cell: string) {
 
 export function splitComplicationTokens(cell: string) {
   return splitOn(cell, /\s*,\s*/);
+}
+
+const positioningMapSchema = z.record(z.string().min(1), slugSchema);
+
+export const positioningMapForTest =
+  positioningMapSchema.parse(rawPositioningMap);
+
+const positioningByNormalizedPhrase = new Map(
+  Object.entries(positioningMapForTest).map(([phrase, slug]) => [
+    normalizeSourceToken(phrase),
+    slug,
+  ]),
+);
+
+export function resolvePositioningGroup(phrase: string) {
+  return (
+    positioningByNormalizedPhrase.get(normalizeSourceToken(phrase)) ?? null
+  );
 }

@@ -3,6 +3,8 @@ import { describe, expect, it } from "vitest";
 import {
   BUNDLED_VOCABULARY,
   normalizeSourceToken,
+  positioningMapForTest,
+  resolvePositioningGroup,
   resolveVocabularySlug,
   splitComplicationTokens,
   splitScenarioTokens,
@@ -98,5 +100,49 @@ describe("token splitting", () => {
 
   it("drops empty segments", () => {
     expect(splitScenarioTokens("офис //  / вечер")).toEqual(["офис", "вечер"]);
+  });
+});
+
+describe("resolvePositioningGroup", () => {
+  it("maps an avant-garde phrase", () => {
+    expect(
+      resolvePositioningGroup("авангардный флагман с открытым калибром"),
+    ).toBe("avant_garde");
+  });
+
+  it("maps a neoclassical phrase", () => {
+    expect(resolvePositioningGroup("современная неоклассика")).toBe(
+      "quiet_classic",
+    );
+  });
+
+  it("maps a platinum Ice Blue phrase", () => {
+    expect(resolvePositioningGroup("ультимативная платина Ice Blue")).toBe(
+      "platinum_ice",
+    );
+  });
+
+  it("maps an instrument phrase", () => {
+    expect(resolvePositioningGroup("эталонный инструмент")).toBe("instrument");
+  });
+
+  it("is whitespace and case insensitive", () => {
+    expect(resolvePositioningGroup("  Тихая   Классика ")).toBe(
+      "quiet_classic",
+    );
+  });
+
+  it("returns null for an unmapped phrase", () => {
+    expect(resolvePositioningGroup("никогда не встречалось")).toBeNull();
+  });
+
+  it("only ever returns a known positioning group slug", () => {
+    const groups = new Set(
+      BUNDLED_VOCABULARY.filter((row) => row.kind === "positioning_group").map(
+        (row) => row.slug,
+      ),
+    );
+    const mapped = Object.values(positioningMapForTest);
+    for (const slug of mapped) expect(groups.has(slug)).toBe(true);
   });
 });
