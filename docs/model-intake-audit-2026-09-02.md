@@ -2461,3 +2461,14 @@ non-watch records were promoted. Each added target retains an official Fortis
 product source. Technical, price, and availability fields remain unpromoted.
 Perplexity was unavailable; official Fortis catalogue and product JSON pages
 were used as the primary-source fallback.
+
+## One-hundred-forty-third Stowa exact-reference expansion (retrieved 2026-09-03)
+
+The Stowa audit reconciled the official [watches catalogue](https://www.stowa.de/watches),
+pagination, sitemap and individual product pages. It found 74 current exact
+references; one was already represented and 73 additional references were
+added as planned targets. A wall clock and non-watch accessories were
+recorded as excluded. Each added target retains an official Stowa product
+source. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official Stowa pages, SKU metadata and sitemap
+were used as the primary-source fallback.
