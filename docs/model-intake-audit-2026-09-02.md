@@ -1846,6 +1846,19 @@ These are identity-level catalogue confirmations only. Perplexity was
 unavailable because the API quota is exhausted, so no technical or commercial
 fields were promoted and these targets remain outside the accepted catalogue.
 
+## Ninety-sixth Hublot, Panerai and Seiko recheck (retrieved 2026-09-03)
+
+The exact-card audit found no omissions among the eight reviewed Hublot or
+eight reviewed Panerai references. It found five Seiko regional/configuration
+codes absent from the manifest: `SNE573P1`, `SPB143J1`, `SPB281J1`, `SRPB43J1`,
+and `SSJ013J1`. These were checked on the official [SNE573P1](https://www.seikowatches.com/middleeast-en/products/prospex/sne573),
+[SPB143J1](https://www.seikowatches.com/ph-en/products/prospex/spb143j1),
+[SPB281J1](https://seikoboutique.com.my/product/spb281j1/),
+[SRPB43J1](https://www.seikowatches.com/my-en/products/presage/srpb43j1), and
+[SSJ013J1](https://www.seikowatches.com/us-en/products/astron/ssj013j1)
+cards, then added as separate `planned` targets. These are identity-level
+regional references; no technical fields were promoted.
+
 ## Ninety-third Rolex current-reference recheck (retrieved 2026-09-03)
 
 The parallel Rolex audit compared all current family indexes and individual

@@ -11794,6 +11794,41 @@
           "state": "planned",
           "coverageIntent": { "functionProfiles": ["simple_date"] },
           "coverageRationale": "Add the current exact 5 Sports reference confirmed on the manufacturer product page."
+        },
+        {
+          "id": "seiko-prospex-sne573p1",
+          "referenceLabel": "Seiko Prospex exact regional reference SNE573P1",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the exact regional Prospex configuration confirmed on the official product card."
+        },
+        {
+          "id": "seiko-prospex-spb143j1",
+          "referenceLabel": "Seiko Prospex exact regional reference SPB143J1",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the exact regional Prospex configuration confirmed on the official product card."
+        },
+        {
+          "id": "seiko-prospex-spb281j1",
+          "referenceLabel": "Seiko Prospex exact regional reference SPB281J1",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the exact regional Prospex configuration confirmed on the official product card."
+        },
+        {
+          "id": "seiko-presage-srpb43j1",
+          "referenceLabel": "Seiko Presage exact regional reference SRPB43J1",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the exact regional Presage configuration confirmed on the official product card."
+        },
+        {
+          "id": "seiko-astron-ssj013j1",
+          "referenceLabel": "Seiko Astron exact regional reference SSJ013J1",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the exact regional Astron configuration confirmed on the official product card."
         }
       ]
     },
