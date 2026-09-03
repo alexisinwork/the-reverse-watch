@@ -1234,6 +1234,18 @@ The exact identity is confirmed, including the 36.5 mm case, manual-winding
 remains research-only `needs_more_evidence`; no M1 facts or catalogue row were
 promoted.
 
+## One-hundredth Longines exact-SKU expansion (retrieved 2026-09-03)
+
+The complete parallel audit extracted 798 unique current Longines SKUs from
+pages 1–34 of the [official Longines watch
+catalogue](https://www.longines.com/en-us/watches). Two exact references were
+already represented in the manifest, and 796 missing exact references were
+added as separate planned targets across Conquest, Flagship, Heritage,
+HydroConquest, La Grande Classique, DolceVita, Master, PrimaLuna, Spirit,
+Record, Avigation, and related collections. No corrections were found.
+Perplexity was unavailable, so these additions retain identity-level primary
+source confirmation only; no technical or commercial fields were promoted.
+
 ## Sixty-eighth Rolex recheck (retrieved 2026-09-04)
 
 The Rolex recheck closed the identity/provenance gap on 11 previously
@@ -1955,6 +1967,6 @@ The interrupted parallel audit confirmed the existing Rado HyperChrome Quartz
 reference R32280109 against the [official Rado watch
 catalogue](https://www.rado.com/en_us/watches/all-watches/men-watches.html).
 No complete catalogue omission list was accepted from that pass. The existing
-target was normalized from a generic research ID to an explicit
-Rado HyperChrome reference; no technical, price, or availability claims were
-promoted.
+target label was normalized to expose the explicit Rado HyperChrome reference
+while retaining its existing review-artifact ID; no technical, price, or
+availability claims were promoted.
