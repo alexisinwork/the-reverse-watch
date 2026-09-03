@@ -2113,3 +2113,34 @@ deduplicated union contained 343 unique exact SKUs. The existing
 `R32280109` reference was confirmed in the union, and 342 additional exact
 references were added as planned targets. No technical, price, or availability
 fields were promoted.
+
+## One-hundred-fourteenth Oris exact-reference expansion (retrieved 2026-09-03)
+
+The complete Oris audit compared the manifest with 207 unique current
+references from the official [current Oris catalogue](https://www.oris.ch/en-US/product/watch?page=5)
+and canonical product pages. Four current references were already represented;
+203 additional exact references were added as planned targets. Three
+manifest-only references were not counted as current, and 1,630 Previous/
+archived references were excluded using the [official archived catalogue](https://www.oris.ch/en-US/product/watch?mode=watches_archived&page=0).
+Every added target retains its official product-card URL in the coverage
+rationale. No technical, price, or availability fields were promoted.
+Perplexity was unavailable because of quota exhaustion.
+
+## One-hundred-fifteenth Seiko US-en exact-reference expansion (retrieved 2026-09-03)
+
+The Seiko US-en audit compared the manifest with 376 official catalogue cards,
+representing 375 unique current references across the [5 Sports](https://www.seikowatches.com/us-en/products/5sports/lineup),
+[Astron](https://www.seikowatches.com/us-en/products/astron/lineup),
+[Coutura](https://www.seikowatches.com/us-en/products/coutura/coutura),
+[Diamond Collection](https://www.seikowatches.com/us-en/products/diamondcollection),
+[Discover More](https://www.seikowatches.com/us-en/products/discovermore/lineup),
+[King Seiko](https://www.seikowatches.com/us-en/products/kingseiko/lineup),
+[Presage](https://www.seikowatches.com/us-en/products/presage/lineup),
+[Prospex](https://www.seikowatches.com/us-en/products/prospex/lineup), and
+[Seiko Power Design Project](https://www.seikowatches.com/us-en/products/seiko-power-design-project)
+catalogues. Twenty-one current references were already represented; 354
+additional exact references were added as planned targets. The duplicate
+`SJE107` card was counted once. Nine manifest-only regional references were
+not treated as current US-en coverage. Technical, price, and availability
+fields remain unpromoted. Perplexity was unavailable because of quota
+exhaustion.
