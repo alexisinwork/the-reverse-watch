@@ -1909,3 +1909,42 @@ All 241 exact identities were added as separate `planned` targets. The source
 cards are primary confirmation of identity only; no technical or commercial
 fields were promoted without successful Perplexity normalization and the
 repository’s field-level review.
+
+## Ninety-seventh IWC and Chopard exact-card expansion (retrieved 2026-09-03)
+
+The parallel catalogue audit compared the manifest with the official
+[IWC Schaffhausen watch catalogue](https://www.iwc.com/eu-en/watches) and
+[Chopard watch catalogue](https://www.chopard.com/en-intl/watches). It found
+208 additional IWC references across Aquatimer, Ingenieur, Pilot's Watches,
+Portofino, and Portugieser, plus 221 additional Chopard references. IWC
+identities were checked against the manufacturer catalogue; Chopard identities
+were checked against individual official cards using the manufacturer's
+reference URL pattern. All 429 were added as planned targets.
+These are identity-level confirmations only. Perplexity normalization remains
+pending because the API quota is exhausted, so no specifications or prices
+were promoted.
+
+## Ninety-eighth Tudor exact-card recheck (retrieved 2026-09-03)
+
+The independent Tudor audit compared the 24 existing targets with current
+official family pages and individual product cards, using the [TUDOR 2026
+catalogue](https://www.tudorwatch.com/en/new-watches) and family pages for
+[Black Bay](https://www.tudorwatch.com/en/watch-family/black-bay),
+[Black Bay 54](https://www.tudorwatch.com/en/watch-family/black-bay-54),
+[Black Bay 58](https://www.tudorwatch.com/en/watch-family/black-bay-58),
+[Black Bay One](https://www.tudorwatch.com/en/watches/black-bay-one),
+[Black Bay GMT](https://www.tudorwatch.com/en/watch-family/black-bay-gmt),
+[Black Bay Chrono](https://www.tudorwatch.com/en/watch-family/black-bay-chrono),
+[Pelagos FXD](https://www.tudorwatch.com/en/watch-family/pelagos-fxd),
+[Pelagos](https://www.tudorwatch.com/en/watch-family/pelagos),
+[Ranger](https://www.tudorwatch.com/en/watch-family/ranger),
+[Clair de Rose](https://www.tudorwatch.com/en/watch-family/clair-de-rose),
+[1926](https://www.tudorwatch.com/en/watches/1926), and
+[Royal](https://www.tudorwatch.com/en/watch-family/tudor-royal). It identified
+191 current reference codes in the comparison and added 188 new exact targets
+after deduplicating already represented codes and excluding one malformed
+Royal code whose linked official card resolves to a different reference. The
+audit also corrected the manifest's M79000-0001 to M79000B-0001 and
+M2542G267NU-0002 to M2542GXX7NU-0002. No technical or commercial fields
+were promoted; Perplexity normalization remains pending because its API quota
+is exhausted.
