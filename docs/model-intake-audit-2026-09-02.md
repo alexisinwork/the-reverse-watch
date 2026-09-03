@@ -2849,3 +2849,17 @@ records were kept outside the current watch catalogue. Technical, price, and
 availability fields remain unpromoted pending field-level review. Perplexity
 was unavailable; official Chronoswiss catalogue and product pages were used as
 the primary-source fallback.
+
+## One-hundred-seventy-eighth Vulcain exact-reference expansion (retrieved 2026-09-03)
+
+The Vulcain audit reconciled the official current collections, product cards and
+linked manufacturer product pages. It found 66 unique current wristwatch
+references; none were previously represented by an exact manufacturer
+reference, so all 66 were added as individual planned targets. A current
+Monopusher page whose public handle is VUL-MP-002 was retained as manifest-only
+because the page publishes the exact reference 650157A08.BHM288. A table clock,
+one current Nautical card without an accessible exact reference, accessories and
+historical material were excluded rather than assigned invented references.
+Technical, price, and availability fields remain unpromoted pending field-level
+review. Perplexity was unavailable; official Vulcain collection and product
+pages were used as the primary-source fallback.
