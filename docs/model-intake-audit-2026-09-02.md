@@ -2038,3 +2038,13 @@ planned targets. Farer exposes product handles rather than a separate public
 reference field, and strap `W-*` SKUs were deliberately not treated as watch
 models. Perplexity was unavailable; no technical, price, or availability fields
 were promoted.
+
+## One-hundred-seventh Citizen exact-reference expansion (retrieved 2026-09-03)
+
+The complete Citizen audit compared the manifest with 454 unique current
+references and explicit Model fields from the official US catalogue and
+collection pages. Five references were already represented; 449 additional
+references were added as separate planned targets. The audit also retained
+the officially published `AW5008-06W` product card even though it was sold out
+and absent from collection pagination. Perplexity was unavailable because of
+quota exhaustion; no technical, price, or availability fields were promoted.
