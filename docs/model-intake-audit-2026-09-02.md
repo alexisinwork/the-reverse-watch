@@ -2761,3 +2761,46 @@ current watch reference. Technical, price, and availability fields remain
 unpromoted. Perplexity was unavailable; official Cuervo y Sobrinos catalogue,
 sitemap, product endpoint and product/variation pages were used as the
 primary-source fallback.
+
+## One-hundred-seventy-first Bremont exact-reference expansion (retrieved 2026-09-03)
+
+The Bremont audit reconciled the official Shopify all-watches feed, product
+JSON, sitemap, collection and product pages. It found 118 current catalogue
+references; one was already represented and 117 additional exact references
+were added as planned targets. Archive, accessories and non-watch records were
+excluded. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official Bremont catalogue, feed and product pages
+were used as the primary-source fallback.
+
+## One-hundred-seventy-second Nodus exact-reference expansion (retrieved 2026-09-03)
+
+The Nodus audit reconciled the official current family pages, product pages,
+Design Lab, manuals and accessories sections. It found 53 current exact
+references; none were already represented and all 53 were added as planned
+targets. The pre-existing unresolved selection brief was retained
+manifest-only. Project archives, past Design Lab releases, legacy manual-only
+references and accessories were excluded. Technical, price, and availability
+fields remain unpromoted. Perplexity was unavailable; official Nodus catalogue
+and product pages were used as the primary-source fallback.
+
+## One-hundred-seventy-third Formex exact-reference expansion (retrieved 2026-09-03)
+
+The Formex audit reconciled the official current Watches collection, product
+sitemap, special-edition pages and individual product pages. It found 68
+current exact references; one was already represented and 67 additional exact
+references were added as planned targets. Historical/discontinued records,
+Nearly New secondary inventory and accessories were excluded. Technical, price,
+and availability fields remain unpromoted. Perplexity was unavailable; official
+Formex catalogue, sitemap and product pages were used as the primary-source
+fallback.
+
+## One-hundred-seventy-fourth Traska exact-reference expansion (retrieved 2026-09-03)
+
+The Traska audit reconciled the official live catalogue, Shopify product feed,
+individual product pages and manufacturer reference-point/history pages. It
+found 61 current exact model/SKU identities; one was already represented and
+60 additional exact identities were added as planned targets. Earlier
+generations and non-watch accessories were excluded. Technical, price, and
+availability fields remain unpromoted. Perplexity was unavailable; official
+Traska catalogue, product feed and product pages were used as the primary-source
+fallback.
