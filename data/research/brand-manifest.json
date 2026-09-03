@@ -54697,6 +54697,1524 @@
             ]
           },
           "coverageRationale": "Current official titanium dive configuration; preserve the exact 38 mm case, black dial, ceramic bezel, and titanium bracelet boundary."
+        },
+        {
+          "id": "certina-reference-0292071104100",
+          "referenceLabel": "Certina DS 1 38mm exact reference C029.207.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0292071105100",
+          "referenceLabel": "Certina DS 1 38mm exact reference C029.207.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0292071609100",
+          "referenceLabel": "Certina DS 1 38mm exact reference C029.207.16.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0294261104100",
+          "referenceLabel": "Certina DS 1 Big Date Powermatic 80 exact reference C029.426.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0294261109160",
+          "referenceLabel": "Certina DS 1 Big Date Powermatic 80 exact reference C029.426.11.091.60",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0294263604100",
+          "referenceLabel": "Certina DS 1 Big Date Powermatic 80 exact reference C029.426.36.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0294621601100",
+          "referenceLabel": "Certina DS 1 Chrono Auto exact reference C029.462.16.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0294622605100",
+          "referenceLabel": "Certina DS 1 Chrono Auto exact reference C029.462.26.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0294301601100",
+          "referenceLabel": "Certina DS 1 Day Date exact reference C029.430.16.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0298071603101",
+          "referenceLabel": "Certina DS 1 Powermatic 80 exact reference C029.807.16.031.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0298071608101",
+          "referenceLabel": "Certina DS 1 Powermatic 80 exact reference C029.807.16.081.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0299071104100",
+          "referenceLabel": "Certina DS 1 Skeleton exact reference C029.907.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0299071608100",
+          "referenceLabel": "Certina DS 1 Skeleton exact reference C029.907.16.081.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0244621804100",
+          "referenceLabel": "Certina DS 2 Chronograph Automatic exact reference C024.462.18.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0492101112601",
+          "referenceLabel": "Certina DS 2 Lady exact reference C049.210.11.126.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0492102211600",
+          "referenceLabel": "Certina DS 2 Lady exact reference C049.210.22.116.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0492103302600",
+          "referenceLabel": "Certina DS 2 Lady exact reference C049.210.33.026.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0492103311600",
+          "referenceLabel": "Certina DS 2 Lady exact reference C049.210.33.116.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0244071104101",
+          "referenceLabel": "Certina DS 2 exact reference C024.407.11.041.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0244071105100",
+          "referenceLabel": "Certina DS 2 exact reference C024.407.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0244071742100",
+          "referenceLabel": "Certina DS 2 exact reference C024.407.17.421.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434271104100",
+          "referenceLabel": "Certina DS 7 Chrono Auto exact reference C043.427.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434274404100",
+          "referenceLabel": "Certina DS 7 Chrono Auto exact reference C043.427.44.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434173808100",
+          "referenceLabel": "Certina DS 7 Chronograph exact reference C043.417.38.081.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434174404100",
+          "referenceLabel": "Certina DS 7 Chronograph exact reference C043.417.44.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434072209100",
+          "referenceLabel": "Certina DS 7 Powermatic 80 exact reference C043.407.22.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434074404100",
+          "referenceLabel": "Certina DS 7 Powermatic 80 exact reference C043.407.44.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434101104100",
+          "referenceLabel": "Certina DS 7 Quartz exact reference C043.410.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434101109100",
+          "referenceLabel": "Certina DS 7 Quartz exact reference C043.410.11.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0434104405100",
+          "referenceLabel": "Certina DS 7 Quartz exact reference C043.410.44.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454171105100",
+          "referenceLabel": "Certina DS 8 Chrono exact reference C045.417.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454171604100",
+          "referenceLabel": "Certina DS 8 Chrono exact reference C045.417.16.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454172203100",
+          "referenceLabel": "Certina DS 8 Chrono exact reference C045.417.22.031.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454101101100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.11.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454101105100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454101135100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.11.351.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454101603200",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.16.032.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454101604100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.16.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454101609100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.16.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454102203100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.22.031.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454102603100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.26.031.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454103336100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.33.361.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454104404100",
+          "referenceLabel": "Certina DS 8 Gent 40mm exact reference C045.410.44.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0330511111801",
+          "referenceLabel": "Certina DS 8 Lady 27mm exact reference C033.051.11.118.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0330512211801",
+          "referenceLabel": "Certina DS 8 Lady 27mm exact reference C033.051.22.118.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0330513311800",
+          "referenceLabel": "Certina DS 8 Lady 27mm exact reference C033.051.33.118.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0450101101100",
+          "referenceLabel": "Certina DS 8 Lady 31mm exact reference C045.010.11.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0450101103200",
+          "referenceLabel": "Certina DS 8 Lady 31mm exact reference C045.010.11.032.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0450101105100",
+          "referenceLabel": "Certina DS 8 Lady 31mm exact reference C045.010.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0450101133100",
+          "referenceLabel": "Certina DS 8 Lady 31mm exact reference C045.010.11.331.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0450101611100",
+          "referenceLabel": "Certina DS 8 Lady 31mm exact reference C045.010.16.111.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0450102203100",
+          "referenceLabel": "Certina DS 8 Lady 31mm exact reference C045.010.22.031.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0450103336100",
+          "referenceLabel": "Certina DS 8 Lady 31mm exact reference C045.010.33.361.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0450105503100",
+          "referenceLabel": "Certina DS 8 Lady 31mm exact reference C045.010.55.031.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454231104100",
+          "referenceLabel": "Certina DS 8 Moonphase Gent exact reference C045.423.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0454231605100",
+          "referenceLabel": "Certina DS 8 Moonphase Gent exact reference C045.423.16.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0452231613100",
+          "referenceLabel": "Certina DS 8 Moonphase Lady exact reference C045.223.16.131.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0452232211100",
+          "referenceLabel": "Certina DS 8 Moonphase Lady exact reference C045.223.22.111.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320071101100",
+          "referenceLabel": "Certina DS Action 345mm Powermatic 80 exact reference C032.007.11.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320072211600",
+          "referenceLabel": "Certina DS Action 345mm Powermatic 80 exact reference C032.007.22.116.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320072212600",
+          "referenceLabel": "Certina DS Action 345mm Powermatic 80 exact reference C032.007.22.126.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0482101112100",
+          "referenceLabel": "Certina DS Action 345mm exact reference C048.210.11.121.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0482101138100",
+          "referenceLabel": "Certina DS Action 345mm exact reference C048.210.11.381.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0482102209100",
+          "referenceLabel": "Certina DS Action 345mm exact reference C048.210.22.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0482102213100",
+          "referenceLabel": "Certina DS Action 345mm exact reference C048.210.22.131.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0482104413100",
+          "referenceLabel": "Certina DS Action 345mm exact reference C048.210.44.131.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484101104100",
+          "referenceLabel": "Certina DS Action 40mm exact reference C048.410.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484101105100",
+          "referenceLabel": "Certina DS Action 40mm exact reference C048.410.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484101109100",
+          "referenceLabel": "Certina DS Action 40mm exact reference C048.410.11.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484101705100",
+          "referenceLabel": "Certina DS Action 40mm exact reference C048.410.17.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484102204100",
+          "referenceLabel": "Certina DS Action 40mm exact reference C048.410.22.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484104435100",
+          "referenceLabel": "Certina DS Action 40mm exact reference C048.410.44.351.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484171105100",
+          "referenceLabel": "Certina DS Action Chrono exact reference C048.417.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484173320100",
+          "referenceLabel": "Certina DS Action Chrono exact reference C048.417.33.201.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484174404100",
+          "referenceLabel": "Certina DS Action Chrono exact reference C048.417.44.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0324301104100",
+          "referenceLabel": "Certina DS Action Day Date Powermatic 80 exact reference C032.430.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0324301108101",
+          "referenceLabel": "Certina DS Action Day Date Powermatic 80 exact reference C032.430.11.081.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0324301109100",
+          "referenceLabel": "Certina DS Action Day Date Powermatic 80 exact reference C032.430.11.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0324301604100",
+          "referenceLabel": "Certina DS Action Day Date Powermatic 80 exact reference C032.430.16.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0488071105100",
+          "referenceLabel": "Certina DS Action Diver 38mm Powermatic 80 exact reference C048.807.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0488071109100",
+          "referenceLabel": "Certina DS Action Diver 38mm Powermatic 80 exact reference C048.807.11.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0488072204100",
+          "referenceLabel": "Certina DS Action Diver 38mm Powermatic 80 exact reference C048.807.22.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0488073805100",
+          "referenceLabel": "Certina DS Action Diver 38mm Powermatic 80 exact reference C048.807.38.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0488074405100",
+          "referenceLabel": "Certina DS Action Diver 38mm Powermatic 80 exact reference C048.807.44.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0488074404100",
+          "referenceLabel": "Certina DS Action Diver 38mm Titanium exact reference C048.807.44.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0488074408100",
+          "referenceLabel": "Certina DS Action Diver 38mm Titanium exact reference C048.807.44.081.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484071101100",
+          "referenceLabel": "Certina DS Action Diver 405mm exact reference C048.407.11.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484071105101",
+          "referenceLabel": "Certina DS Action Diver 405mm exact reference C048.407.11.051.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484071805101",
+          "referenceLabel": "Certina DS Action Diver 405mm exact reference C048.407.18.051.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0484074404100",
+          "referenceLabel": "Certina DS Action Diver 405mm exact reference C048.407.44.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0326071104100",
+          "referenceLabel": "Certina DS Action Diver 43mm Powermatic 80 exact reference C032.607.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0326071105100",
+          "referenceLabel": "Certina DS Action Diver 43mm Powermatic 80 exact reference C032.607.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0326071109100",
+          "referenceLabel": "Certina DS Action Diver 43mm Powermatic 80 exact reference C032.607.11.091.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0326072204100",
+          "referenceLabel": "Certina DS Action Diver 43mm Powermatic 80 exact reference C032.607.22.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0326072205100",
+          "referenceLabel": "Certina DS Action Diver 43mm Powermatic 80 exact reference C032.607.22.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0326073805100",
+          "referenceLabel": "Certina DS Action Diver 43mm Powermatic 80 exact reference C032.607.38.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0326074405100",
+          "referenceLabel": "Certina DS Action Diver 43mm Powermatic 80 exact reference C032.607.44.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0326074805100",
+          "referenceLabel": "Certina DS Action Diver 43mm Powermatic 80 exact reference C032.607.48.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0328271104100",
+          "referenceLabel": "Certina DS Action Diver Chrono exact reference C032.827.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0328271105100",
+          "referenceLabel": "Certina DS Action Diver Chrono exact reference C032.827.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0328271827100",
+          "referenceLabel": "Certina DS Action Diver Chrono exact reference C032.827.18.271.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0329291104100",
+          "referenceLabel": "Certina DS Action GMT Powermatic 80 exact reference C032.929.11.041.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0329291104101",
+          "referenceLabel": "Certina DS Action GMT Powermatic 80 exact reference C032.929.11.041.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0329291105100",
+          "referenceLabel": "Certina DS Action GMT Powermatic 80 exact reference C032.929.11.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0329292605100",
+          "referenceLabel": "Certina DS Action GMT Powermatic 80 exact reference C032.929.26.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320511103600",
+          "referenceLabel": "Certina DS Action Lady Diamonds exact reference C032.051.11.036.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320511105600",
+          "referenceLabel": "Certina DS Action Lady Diamonds exact reference C032.051.11.056.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320511111600",
+          "referenceLabel": "Certina DS Action Lady Diamonds exact reference C032.051.11.116.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320512203600",
+          "referenceLabel": "Certina DS Action Lady Diamonds exact reference C032.051.22.036.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320512208600",
+          "referenceLabel": "Certina DS Action Lady Diamonds exact reference C032.051.22.086.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320512212600",
+          "referenceLabel": "Certina DS Action Lady Diamonds exact reference C032.051.22.126.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0320512212601",
+          "referenceLabel": "Certina DS Action Lady Diamonds exact reference C032.051.22.126.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0322071104600",
+          "referenceLabel": "Certina DS Action Lady Powermatic 80 exact reference C032.207.11.046.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0322071105600",
+          "referenceLabel": "Certina DS Action Lady Powermatic 80 exact reference C032.207.11.056.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0322071111600",
+          "referenceLabel": "Certina DS Action Lady Powermatic 80 exact reference C032.207.11.116.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0322072211600",
+          "referenceLabel": "Certina DS Action Lady Powermatic 80 exact reference C032.207.22.116.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0322072212600",
+          "referenceLabel": "Certina DS Action Lady Powermatic 80 exact reference C032.207.22.126.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0322072229600",
+          "referenceLabel": "Certina DS Action Lady Powermatic 80 exact reference C032.207.22.296.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-9022514101600",
+          "referenceLabel": "Certina DS Jubile Lady exact reference C902.251.41.016.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-9022514601600",
+          "referenceLabel": "Certina DS Jubile Lady exact reference C902.251.46.016.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-9024514101100",
+          "referenceLabel": "Certina DS Jubile exact reference C902.451.41.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-9024514601100",
+          "referenceLabel": "Certina DS Jubile exact reference C902.451.46.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0364071604000",
+          "referenceLabel": "Certina DS Ph200m Powermatic 80 exact reference C036.407.16.040.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0364071804000",
+          "referenceLabel": "Certina DS Ph200m Powermatic 80 exact reference C036.407.18.040.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0384071609700",
+          "referenceLabel": "Certina DS Powermatic 80 exact reference C038.407.16.097.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0249071704110",
+          "referenceLabel": "Certina DS Super Ph1000m exact reference C024.907.17.041.10",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0249071805100",
+          "referenceLabel": "Certina DS Super Ph1000m exact reference C024.907.18.051.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0506074401102",
+          "referenceLabel": "Certina DS Super Ph2000m exact reference C050.607.44.011.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0506074404110",
+          "referenceLabel": "Certina DS Super Ph2000m exact reference C050.607.44.041.10",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0506074405102",
+          "referenceLabel": "Certina DS Super Ph2000m exact reference C050.607.44.051.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0506074436102",
+          "referenceLabel": "Certina DS Super Ph2000m exact reference C050.607.44.361.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0374071728010",
+          "referenceLabel": "Certina DS Super Ph500m exact reference C037.407.17.280.10",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0374071805000",
+          "referenceLabel": "Certina DS Super Ph500m exact reference C037.407.18.050.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0474521108100",
+          "referenceLabel": "Certina DS X GMT exact reference C047.452.11.081.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0474521108101",
+          "referenceLabel": "Certina DS X GMT exact reference C047.452.11.081.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0474521701100",
+          "referenceLabel": "Certina DS X GMT exact reference C047.452.17.011.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0474521708100",
+          "referenceLabel": "Certina DS X GMT exact reference C047.452.17.081.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "certina-reference-0474521708101",
+          "referenceLabel": "Certina DS X GMT exact reference C047.452.17.081.01",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by the official Certina catalogue product URL; detailed facts remain unpromoted until field-level evidence is captured."
         }
       ]
     },

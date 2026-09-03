@@ -2081,3 +2081,14 @@ after the US expansion and 328 additional regional references were added as
 planned targets. Each supplemental identity was checked against an official
 product card; no technical, price, or availability fields were promoted.
 Perplexity was unavailable because of quota exhaustion.
+
+## One-hundred-eleventh Certina exact-reference expansion (retrieved 2026-09-03)
+
+The complete Certina audit compared the manifest with 139 unique current
+references from the official [Certina all-watches catalogue](https://www.certina.com/en/watch/all-watches)
+and its official product-card URLs. The existing exact reference
+`C048.807.44.051.01` was present; 138 additional exact references were added
+as planned targets. The separate generic mid-price mechanical target remains
+unpromoted. Product URLs encode the exact reference identity, while technical,
+price, and availability fields remain unpromoted until captured from each
+product sheet. Perplexity was unavailable because of quota exhaustion.
