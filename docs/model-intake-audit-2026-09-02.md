@@ -1694,3 +1694,44 @@ These remain discovery-only: the official release confirms seven variants but
 not these individual codes, and direct product-card checks did not produce a
 usable primary page during this pass. They are deliberately not manifest
 targets or confirmed models yet.
+
+Primary-page index for the 39 newly queued targets: Grand Seiko
+[SBGE295](https://www.grand-seiko.com/us-en/collections/sbge295g),
+[SLGC009](https://www.grand-seiko.com/us-en/collections/slgc009g),
+[SBGA481](https://www.grand-seiko.com/us-en/collections/sbga481g),
+[SBGE253](https://www.grand-seiko.com/us-en/collections/sbge253g),
+[SBGE257](https://www.grand-seiko.com/us-en/collections/sbge257g),
+[SBGM221](https://www.grand-seiko.com/us-en/collections/sbgm221g),
+[SBGW301](https://www.grand-seiko.com/us-en/collections/sbgw301g),
+[SBGA407](https://www.grand-seiko.com/us-en/collections/sbga407g),
+[SBGY043](https://www.grand-seiko.com/us-en/collections/sbgy043g),
+[SBGM257](https://www.grand-seiko.com/us-en/collections/sbgm257g),
+[SLGA019](https://www.grand-seiko.com/us-en/collections/slga019g), and
+[SLGA015](https://www.grand-seiko.com/us-en/collections/slga015g); Tudor
+[M79000-0001](https://www.tudorwatch.com/en/watch-family/daring-watches/m79000-0001),
+[M7939A1A0RU-0001](https://www.tudorwatch.com/en/watches/black-bay-58/m7939a1a0ru-0001),
+and [M25407N-0001](https://www.tudorwatch.com/en/watches/pelagos/m25407n-0001);
+IWC [IW388304](https://www.iwc.com/us-en/watches/pilot-watches/iw388304-pilots-watch-performance-chronograph-41-amg),
+[IW388306](https://www.iwc.com/us-en/watches/pilot-watches/iw388306-pilots-watch-performance-chronograph-41-mercedes-amg-petronas),
+and [IW388309](https://www.iwc.com/us-en/watches/pilot-watches/iw388309-pilots-watch-performance-chronograph-41);
+Chopard [168619-3010](https://www.chopard.com/en-intl/watch/168619-3010.html),
+[168619-3020](https://www.chopard.com/en-intl/watch/168619-3020.html),
+[278598-6002](https://www.chopard.com/en-intl/watch/278598-6002.html),
+[278573-3030](https://www.chopard.com/en-intl/watch/278573-3030.html),
+[168629-3002](https://www.chopard.com/en-intl/watch/168629-3002.html),
+[298601-3012](https://www.chopard.com/en-intl/watch/298601-3012.html),
+[203787-0001](https://www.chopard.com/en-intl/watch/203787-0001.html),
+[168860-3005](https://www.chopard.com/en-intl/watch/168860-3005.html), and
+[168627-3003](https://www.chopard.com/en-intl/watch/168627-3003.html); Hublot
+[421.GM.1144.NR.RLD](https://www.hublot.com/en-us/watches/big-bang/big-bang-reloaded-dark-green-ceramic-44-mm),
+[421.MX.1133.NR.RLD](https://www.hublot.com/en-us/watches/big-bang/big-bang-reloaded-magic-gold-44-mm),
+and [421.NM.1123.NR.RLD](https://www.hublot.com/en-us/watches/big-bang/big-bang-reloaded-titanium-ceramic-44-mm);
+Cartier [WJSA0013](https://www.cartier.com/en-us/watches/collections/santos-de-cartier/santos-de-cartier-watch-CRWJSA0013.html);
+Omega [434.10.40.20.01.001](https://www.omegawatches.com.hk/en-hk/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43410402001001),
+[434.10.40.20.02.001](https://www.omegawatches.com.hk/en-hk/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43410402002001),
+[434.10.40.20.03.001](https://www.omegawatches.com.hk/en-hk/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43410402003001),
+and [434.10.40.20.06.001](https://www.omegawatches.com.hk/en-hk/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43410402006001);
+Seiko [SPB519J1](https://www.seikowatches.com/us-en/products/prospex/spb519j1),
+[SSK003](https://www.seikowatches.com/us-en/products/5sports/ssk003),
+[SSK033](https://www.seikowatches.com/pl-pl/products/5sports/ssk033), and
+[SRPL85](https://www.seikowatches.com/us-en/products/5sports/srpl85).
