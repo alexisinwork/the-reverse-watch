@@ -1,0 +1,103 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breitling-chronomat-ab0158101a1a1",
+  "jobId": "4ae06f69-6ed5-4d94-82e8-2d57c98e0e13",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breitling",
+    "model": "Chronomat B01 Chronograph 42",
+    "referenceCode": "AB0158101A1A1",
+    "variantName": "Chronomat B01 Chronograph 42"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "status": "validated_primary",
+      "note": "Exact official Breitling product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 42,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 13.77,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic chronograph",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "Breitling Manufacture Caliber 01",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official stated reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 200,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official rating."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "Rouleaux stainless-steel bracelet",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official configured bracelet."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_with_window",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/",
+      "note": "Official functions include date and chronograph."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact Breitling reference and primary-source core specifications are confirmed; unresolved fit, weight, accuracy, lume, and price remain null."
+}

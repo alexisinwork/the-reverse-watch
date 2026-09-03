@@ -1,0 +1,103 @@
+{
+  "reviewVersion": 1,
+  "targetId": "iwc-portugieser-automatic-42-iw501701",
+  "jobId": "0191664d-d4d3-4d07-80a1-5edd6ca54737",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "IWC Schaffhausen",
+    "model": "Portugieser Automatic 42",
+    "referenceCode": "IW501701",
+    "variantName": "Portugieser Automatic 42"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "status": "validated_primary",
+      "note": "Exact official IWC product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 42.4,
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "Official case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12.9,
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "Official case thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "52011",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 168,
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "Official stated reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "5 bar converted to 50 m."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "black alligator strap",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "Official configured attachment."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_only",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42",
+      "note": "Official functions include a date display."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact IWC reference and primary-source core specifications are confirmed; unresolved fit, weight, accuracy, lume, and price remain null."
+}

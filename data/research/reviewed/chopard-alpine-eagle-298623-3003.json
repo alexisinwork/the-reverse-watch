@@ -1,0 +1,103 @@
+{
+  "reviewVersion": 1,
+  "targetId": "chopard-alpine-eagle-298623-3003",
+  "jobId": "3e9f2455-e979-4029-ab9b-b4c42b71dd35",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Chopard",
+    "model": "Alpine Eagle 41 XPS",
+    "referenceCode": "298623-3003",
+    "variantName": "Alpine Eagle 41 XPS"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "status": "validated_primary",
+      "note": "Exact official Chopard product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "Lucent Steel",
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 8,
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official case thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic micro-rotor",
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official L.U.C movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "L.U.C 96.40-L",
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 65,
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official stated reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official 100 m rating."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "Lucent Steel integrated bracelet",
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official configured bracelet."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.chopard.com/en-us/watch/298623-3003.html",
+      "note": "Official functions do not list a date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact Chopard reference and primary-source core specifications are confirmed; unresolved fit, weight, accuracy, lume, and price remain null."
+}

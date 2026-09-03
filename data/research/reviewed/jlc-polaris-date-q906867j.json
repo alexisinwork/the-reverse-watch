@@ -1,0 +1,103 @@
+{
+  "reviewVersion": 1,
+  "targetId": "jlc-polaris-date-q906867j",
+  "jobId": "c323440b-f807-48ce-aff4-213f4d6bc89d",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Jaeger-LeCoultre",
+    "model": "Polaris Date",
+    "referenceCode": "Q906867J",
+    "variantName": "Polaris Date Stainless Steel"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "status": "validated_primary",
+      "note": "Exact official JLC product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 42,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 13.92,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "JLC 899A/1",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "Official calibre designation."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "Official stated reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 200,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "20 bar converted to 200 m."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "quick-change strap",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "Official configured attachment system."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_with_window",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j",
+      "note": "Official model name and dial function."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact JLC reference and primary-source core specifications are confirmed; unresolved fit, weight, accuracy, lume, and price remain null."
+}

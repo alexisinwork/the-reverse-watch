@@ -1,0 +1,109 @@
+{
+  "reviewVersion": 1,
+  "targetId": "breitling-avenger-gmt-a32320101b1a1",
+  "jobId": "d6946116-d150-4049-a4e9-1d8cd15d9fa2",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Breitling",
+    "model": "Avenger Automatic GMT 44",
+    "referenceCode": "A32320101B1A1",
+    "variantName": "Avenger Automatic GMT 44"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "status": "validated_primary",
+      "note": "Exact official Breitling product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 44,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 12.05,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 172.52,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official configured weight."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic GMT",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "Breitling Caliber 32",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 42,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official stated reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 300,
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official rating."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "three-row stainless-steel bracelet",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official configured bracelet."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_with_window",
+      "sourceUrl": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/",
+      "note": "Official functions include date and second time zone."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact Breitling reference and primary-source core specifications are confirmed; unresolved fit, accuracy, lume, and price remain null."
+}

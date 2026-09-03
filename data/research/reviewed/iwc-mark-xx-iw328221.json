@@ -1,0 +1,103 @@
+{
+  "reviewVersion": 1,
+  "targetId": "iwc-mark-xx-iw328221",
+  "jobId": "263b2c32-5d5d-4286-9ae2-cc7a127246c1",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "IWC Schaffhausen",
+    "model": "Pilot's Watch Mark XX",
+    "referenceCode": "IW328221",
+    "variantName": "Pilot's Watch Mark XX Le Petit Prince"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "status": "validated_primary",
+      "note": "Exact official IWC product page checked on 2026-09-03; it confirms the reference and listed configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "Official case diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 10.8,
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "Official case thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "32112",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 120,
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "Official stated power reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "10 bar converted to 100 m."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "blue rubber EasX-CHANGE strap",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "Official configured attachment."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_with_window",
+      "sourceUrl": "https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince",
+      "note": "Official dial/function description."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact IWC reference and primary-source core specifications are confirmed. Remaining fit, weight, accuracy, lume, and price fields stay unresolved."
+}

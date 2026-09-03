@@ -1454,3 +1454,32 @@ The malformed first Zenith Chronomaster response was not imported; a forced
 retry succeeded and produced a field-level review. All ten entries remain
 `needs_review` with provenance, and no absent fit, weight, accuracy or lume
 fields were filled with estimates.
+
+## Eightieth Perplexity exact-reference pass (retrieved 2026-09-03)
+
+Eleven additional exact references completed the Perplexity worker and were
+cross-checked against the exact manufacturer pages before review artifacts were
+created:
+
+- [IWC Pilot's Watch Mark XX Le Petit Prince `IW328221`](https://www.iwc.com/us-en/watches/pilot-watches/iw328221-pilots-watch-mark-xx-le-petit-prince): 40 x 10.8 mm stainless steel case, calibre 32112, 120-hour reserve, 100 m, blue rubber EasX-CHANGE strap, and date.
+- [IWC Portugieser Automatic 42 `IW501701`](https://www.iwc.com/us-en/watches/portugieser/iw501701-portugieser-automatic-42): 42.4 x 12.9 mm stainless steel case, calibre 52011, 168-hour reserve, 50 m, black alligator strap, and date.
+- [Chopard Alpine Eagle 41 XPS `298623-3003`](https://www.chopard.com/en-us/watch/298623-3003.html): 41 x 8.0 mm Lucent Steel case, L.U.C 96.40-L micro-rotor, 65-hour reserve, 100 m, integrated Lucent Steel bracelet, and no date.
+- [Breitling Chronomat B01 Chronograph 42 `AB0158101A1A1`](https://www.breitling.com/us-en/watches/chronomat/chronomat-b01-42-my26/AB0158101A1A1/): 42 x 13.77 mm stainless steel case, Manufacture Caliber 01, 70-hour reserve, 200 m, Rouleaux bracelet, and date.
+- [Breitling Avenger Automatic GMT 44 `A32320101B1A1`](https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1A1/): 44 x 12.05 mm stainless steel case, 172.52 g configured weight, Caliber 32 GMT, 42-hour reserve, 300 m, steel bracelet, and date.
+- [Panerai Radiomir Quaranta `PAM01573`](https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html): 40 mm steel case, P.900 automatic movement, 72-hour reserve, 50 m, strap, and date.
+- [Panerai Luminor Luna Rossa GMT `PAM01791`](https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html): 40 mm steel case, 156 g configured weight, P.900/GMT, 72-hour reserve, 100 m, steel bracelet, and date.
+- [Hublot Classic Fusion Titanium Blue `565.NX.7170.RX`](https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm): 38 mm titanium case, HUB1110, 48-hour reserve, 50 m, blue rubber strap, and no date.
+- [Hublot Big Bang Original Soft Touch All Black `431.RXN.2740.RX.VEL`](https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm): 43 mm titanium/rubber case, HUB1280 UNICO flyback chronograph, 72-hour reserve, 100 m, and black rubber strap.
+- [Jaeger-LeCoultre Reverso Classic Monoface `Q2608442`](https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442): 35.78 x 21 x 7.4 mm steel case, manual JLC 846, 50-hour reserve, 30 m, blue alligator strap, and no date.
+- [Jaeger-LeCoultre Polaris Date `Q906867J`](https://www.jaeger-lecoultre.com/us-en/watches/polaris/polaris-date-stainless-steel-q906867j): 42 x 13.92 mm steel case, automatic JLC 899A/1, 70-hour reserve, 200 m, quick-change strap, and date.
+
+The separate Chopard [L.U.C `168629-3001`](https://www.chopard.com/en-us/watch/168629-3001.html)
+target remains `planned`: all three forced Perplexity attempts failed strict
+normalization because the provider returned malformed null claims. Its exact
+official identity was independently located, but no review artifact or
+provisional worker facts were created from the failed payloads.
+
+All eleven successful entries remain `needs_review`; the review artifacts keep
+the Perplexity job IDs and manufacturer URLs. Unpublished fit geometry,
+configured weight, accuracy, lume, and regional price fields remain null, so no
+entry was promoted to the accepted recommendation catalogue.

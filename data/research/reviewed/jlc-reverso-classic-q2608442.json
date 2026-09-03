@@ -1,0 +1,109 @@
+{
+  "reviewVersion": 1,
+  "targetId": "jlc-reverso-classic-q2608442",
+  "jobId": "6e2228d6-7966-4ffc-b0b6-9bb72cfbe79e",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Jaeger-LeCoultre",
+    "model": "Reverso Classic Monoface",
+    "referenceCode": "Q2608442",
+    "variantName": "Reverso Classic Monoface"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "status": "validated_primary",
+      "note": "Exact official JLC product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseWidthMm",
+    "geometry.caseLengthMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseWidthMm",
+      "value": 21,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official rectangular-case width."
+    },
+    {
+      "fieldName": "geometry.caseLengthMm",
+      "value": 35.78,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official rectangular-case length."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 7.4,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official case thickness."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "manual-winding",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "JLC 846",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 50,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official stated reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "3 bar converted to 30 m."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "blue alligator strap",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official configured attachment."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.jaeger-lecoultre.com/us-en/watches/reverso/reverso-classic/reverso-classic-q2608442",
+      "note": "Official hours-and-minutes display."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact JLC reference and primary-source core specifications are confirmed; unresolved fit, weight, accuracy, lume, and price remain null."
+}

@@ -1,0 +1,97 @@
+{
+  "reviewVersion": 1,
+  "targetId": "panerai-radiomir-quaranta-pam01573",
+  "jobId": "53562602-6434-4884-badc-d317c4e7297a",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Panerai",
+    "model": "Radiomir Quaranta",
+    "referenceCode": "PAM01573",
+    "variantName": "Radiomir Quaranta"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "status": "validated_primary",
+      "note": "Exact official Panerai product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic",
+      "sourceUrl": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "P.900",
+      "sourceUrl": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 72,
+      "sourceUrl": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "note": "Three-day reserve normalized to 72 hours."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "note": "Official rating."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "strap",
+      "sourceUrl": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "note": "Official configured attachment."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.panerai.com/en/collections/watch-collection/radiomir/pam01573-radiomir-quaranta.html",
+      "note": "Official functions include date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact Panerai reference and primary-source core specifications are confirmed; unpublished fit, thickness, weight, accuracy, lume, and price remain null."
+}

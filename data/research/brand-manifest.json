@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-03T00:02:42.141Z",
+  "updatedAt": "2026-09-03T00:15:20.453Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1641,6 +1641,34 @@
           "state": "accepted",
           "coverageRationale": "Accepted formal dual-time calibration variant.",
           "catalogueVariantId": "jlc-q3988481"
+        },
+        {
+          "id": "jlc-reverso-classic-q2608442",
+          "referenceLabel": "Jaeger-LeCoultre Reverso Classic Monoface exact steel reference Q2608442",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact compact manual-wind Reverso formal reference."
+        },
+        {
+          "id": "jlc-polaris-date-q906867j",
+          "referenceLabel": "Jaeger-LeCoultre Polaris Date exact steel reference Q906867J",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current 42 mm Polaris Date technical reference."
         }
       ]
     },
@@ -1867,6 +1895,34 @@
             ]
           },
           "coverageRationale": "Current official Mark XX configuration; preserve the exact steel case, black dial, and leather EasX-CHANGE strap boundary."
+        },
+        {
+          "id": "iwc-mark-xx-iw328221",
+          "referenceLabel": "IWC Pilot's Watch Mark XX exact steel blue-dial reference IW328221",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact blue-dial Le Petit Prince Mark XX variant separately from the local black-dial reference."
+        },
+        {
+          "id": "iwc-portugieser-automatic-42-iw501701",
+          "referenceLabel": "IWC Portugieser Automatic 42 exact steel reference IW501701",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add a distinct high-reserve Portugieser date and power-reserve reference."
         }
       ]
     },
@@ -2099,6 +2155,34 @@
             ]
           },
           "coverageRationale": "Current official Navitimer configuration; preserve the exact steel, black-dial, and steel-bracelet boundary."
+        },
+        {
+          "id": "breitling-chronomat-ab0158101a1a1",
+          "referenceLabel": "Breitling Chronomat B01 Chronograph 42 exact steel reference AB0158101A1A1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact current Chronomat steel chronograph with date and 200 m resistance."
+        },
+        {
+          "id": "breitling-avenger-gmt-a32320101b1a1",
+          "referenceLabel": "Breitling Avenger Automatic GMT 44 exact steel reference A32320101B1A1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add the exact current Avenger GMT steel bracelet reference for travel-tool coverage."
         }
       ]
     },
@@ -2191,6 +2275,34 @@
             ]
           },
           "coverageRationale": "Current official Alpine Eagle XL Chrono configuration; preserve the exact 44 mm Lucent Steel and integrated-bracelet boundary."
+        },
+        {
+          "id": "chopard-alpine-eagle-298623-3003",
+          "referenceLabel": "Chopard Alpine Eagle exact Lucent Steel micro-rotor reference 298623-3003",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact thin Lucent Steel micro-rotor Alpine Eagle as a time-only high-horology variant."
+        },
+        {
+          "id": "chopard-luc-168629-3001",
+          "referenceLabel": "Chopard L.U.C exact Lucent Steel micro-rotor reference 168629-3001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add an exact current L.U.C micro-rotor reference distinct from Alpine Eagle sport geometry."
         }
       ]
     },
@@ -2331,6 +2443,34 @@
             ]
           },
           "coverageRationale": "Current official Luminor Marina configuration; preserve the exact Carbotech, 44 mm, black-dial, leather-and-rubber-set boundary."
+        },
+        {
+          "id": "panerai-radiomir-quaranta-pam01573",
+          "referenceLabel": "Panerai Radiomir Quaranta exact steel reference PAM01573",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact compact 40 mm Radiomir date reference."
+        },
+        {
+          "id": "panerai-luminor-gmt-pam01791",
+          "referenceLabel": "Panerai Luminor Luna Rossa GMT exact steel reference PAM01791",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add the exact 40 mm steel Luminor GMT bracelet reference for travel coverage."
         }
       ]
     },
@@ -2363,6 +2503,34 @@
             ]
           },
           "coverageRationale": "Current official Hublot product card publishes the exact reference, 44mm ceramic case, HUB1280 flyback chronograph, 100m rating, strap, and 72-hour reserve."
+        },
+        {
+          "id": "hublot-classic-fusion-565-nx-7170-rx",
+          "referenceLabel": "Hublot Classic Fusion Titanium exact 38 mm reference 565.NX.7170.RX",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add a compact exact Classic Fusion titanium time-only reference distinct from Big Bang chronographs."
+        },
+        {
+          "id": "hublot-big-bang-original-431-rxn-2740-rx-vel",
+          "referenceLabel": "Hublot Big Bang Original Soft Touch exact 43 mm reference 431.RXN.2740.RX.VEL",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact current velvet-effect rubber and titanium Big Bang flyback chronograph."
         }
       ]
     },

@@ -1,0 +1,91 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hublot-big-bang-original-431-rxn-2740-rx-vel",
+  "jobId": "e63b02fa-e285-43a5-bde5-0715f6808d1f",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hublot",
+    "model": "Big Bang Original Soft Touch All Black 43mm",
+    "referenceCode": "431.RXN.2740.RX.VEL",
+    "variantName": "Big Bang Original Soft Touch All Black 43mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm",
+      "status": "validated_primary",
+      "note": "Exact official Hublot product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "titanium with black velvet-effect rubber",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm",
+      "note": "Official case construction."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 43,
+      "sourceUrl": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic flyback chronograph",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "HUB1280 UNICO",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 72,
+      "sourceUrl": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm",
+      "note": "Official stated reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm",
+      "note": "Official rating."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "black structured rubber strap",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-soft-touch-all-black-43-mm",
+      "note": "Official configured attachment."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade",
+    "dateStatus"
+  ],
+  "note": "Exact Hublot reference and primary-source core specifications are confirmed. Date status and unpublished fit, thickness, weight, accuracy, lume, and price remain unresolved."
+}

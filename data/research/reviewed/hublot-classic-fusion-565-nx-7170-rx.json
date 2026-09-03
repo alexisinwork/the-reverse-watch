@@ -1,0 +1,97 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hublot-classic-fusion-565-nx-7170-rx",
+  "jobId": "62d6c0fa-dce4-4a5a-bcae-c83dbfef82e1",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hublot",
+    "model": "Classic Fusion Titanium Blue 38mm",
+    "referenceCode": "565.NX.7170.RX",
+    "variantName": "Classic Fusion Titanium Blue 38mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "status": "validated_primary",
+      "note": "Exact official Hublot product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "titanium",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 38,
+      "sourceUrl": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "self-winding",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "HUB1110",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 48,
+      "sourceUrl": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "note": "Official stated reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 50,
+      "sourceUrl": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "note": "Official rating."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "blue rubber strap",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "note": "Official configured attachment."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.hublot.com/en-us/watches/classic-fusion/classic-fusion-titanium-blue-38-mm",
+      "note": "Official three-hand display does not list a date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact Hublot reference and primary-source core specifications are confirmed; unpublished fit, thickness, weight, accuracy, lume, and price remain null."
+}

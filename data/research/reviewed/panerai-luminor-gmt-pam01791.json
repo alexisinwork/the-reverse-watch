@@ -1,0 +1,103 @@
+{
+  "reviewVersion": 1,
+  "targetId": "panerai-luminor-gmt-pam01791",
+  "jobId": "d453d0b3-ca0d-45d8-a72b-17b6d8b3924f",
+  "reviewedAt": "2026-09-03T00:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Panerai",
+    "model": "Luminor Luna Rossa GMT",
+    "referenceCode": "PAM01791",
+    "variantName": "Luminor Luna Rossa GMT"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "status": "validated_primary",
+      "note": "Exact official Panerai product page checked on 2026-09-03."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.weightFullG",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "materials.case",
+      "value": "stainless steel",
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Official case material."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.weightFullG",
+      "value": 156,
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Official configured weight."
+    },
+    {
+      "fieldName": "movement.type",
+      "value": "automatic GMT",
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Official movement description."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "P.900/GMT",
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Official calibre/function designation."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 72,
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Three-day reserve normalized to 72 hours."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Official rating."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "stainless-steel bracelet",
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Official configured bracelet."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "present",
+      "sourceUrl": "https://www.panerai.com/gb/en/collections/watch-collection/luminor/pam01791-luminor-luna-rossa-gmt.html",
+      "note": "Official functions include date and GMT."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact Panerai reference and primary-source core specifications are confirmed; unpublished fit, thickness, accuracy, lume, and price remain null."
+}
