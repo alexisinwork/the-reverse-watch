@@ -2449,3 +2449,15 @@ family; no missing collection family was found and no target was removed.
 Rolex remains represented at exact-variant level where the grouped official
 view exposes multiple configurations. Perplexity was unavailable; official
 Rolex pages were used as the primary-source fallback.
+
+## One-hundred-forty-second Fortis exact-reference expansion (retrieved 2026-09-03)
+
+The Fortis audit reconciled the official [current watch catalogue](https://www.fortis-swiss.com/collections/all-watches),
+collection pages and product JSON endpoints. It found 80 current exact SKU
+variants; one was already represented and 79 additional SKUs were added as
+planned targets. Strap and bracelet configurations were preserved as distinct
+reference variants where Fortis publishes distinct SKUs. No excluded
+non-watch records were promoted. Each added target retains an official Fortis
+product source. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official Fortis catalogue and product JSON pages
+were used as the primary-source fallback.
