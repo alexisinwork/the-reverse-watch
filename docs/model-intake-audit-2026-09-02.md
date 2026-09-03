@@ -1512,3 +1512,44 @@ claims: IWC `IW388305`, Chopard `168574-3013`, Hublot
 payload was imported and no review artifact was created. All successful
 targets remain `needs_review`; no model was promoted without field-level M1
 closure.
+
+## Eighty-second current-catalogue recheck (retrieved 2026-09-03)
+
+A new six-agent pass rechecked Rolex, Omega, Cartier, Grand Seiko, Tudor, and
+Seiko. Perplexity was used for discovery where available; every retained
+candidate was checked against an exact current manufacturer product page.
+
+- **Rolex:** 12 missing current references were confirmed: Submariner Date
+  `126610LV`, Sea-Dweller `126603`, Submariner Date `126613LB` and
+  `126613LN`, Datejust 36 `126234` and `126231`, Datejust 31 `278240` and
+  `278241`, Day-Date 36 `128239` and `128235`, Cosmograph Daytona `126503`,
+  and Day-Date 40 `228239`. Existing and legacy references were explicitly
+  excluded from duplication; `126719BLRO` failed the live product-page gate.
+
+  Exact primary pages: [126610LV](https://www.rolex.com/watches/submariner/m126610lv-0002), [126603](https://www.rolex.com/watches/sea-dweller/m126603-0001), [126613LB](https://www.rolex.com/watches/submariner/m126613lb-0002), [126613LN](https://www.rolex.com/watches/submariner/m126613ln-0002), [126234](https://www.rolex.com/watches/datejust/m126234-0015), [126231](https://www.rolex.com/watches/datejust/m126231-0018), [278240](https://www.rolex.com/watches/datejust/m278240-0002), [278241](https://www.rolex.com/watches/datejust/m278241-0004), [128239](https://www.rolex.com/watches/day-date/m128239-0063), [128235](https://www.rolex.com/watches/day-date/m128235-0070), [126503](https://www.rolex.com/watches/cosmograph-daytona/m126503-0001), and [228239](https://www.rolex.com/watches/day-date/m228239-0004).
+- **Omega:** 10 missing exact references were confirmed across Speedmaster,
+  Seamaster, Aqua Terra, Constellation, and De Ville. The first worker pass
+  successfully normalized six of them: Speedmaster Moonwatch
+  `310.30.42.50.04.001`, Speedmaster Pilot `332.10.41.51.01.002`, Aqua Terra
+  `220.10.30.20.02.001` and `220.10.41.21.01.002`, and Constellation
+  `131.10.39.20.02.001` and `131.30.41.21.04.001`.
+- **Cartier:** 10 exact product pages were confirmed. The worker pass
+  normalized Tank Louis `WJTA0037`, Santos `WSSA0071`, Panthère `W3PN0010`,
+  Ballon Bleu `WSBB0061`, and Pasha `WSPA0009`. Panthère `W3PN0010` retains a
+  documented official-dimension conflict and is not promoted.
+- **Grand Seiko:** 10 exact missing references were confirmed across Heritage,
+  Sport, Elegance, and Evolution 9; they remain queued for worker
+  normalization.
+- **Tudor:** 10 exact missing references were confirmed across Black Bay,
+  Pelagos, Ranger, 1926, and Royal; they remain queued for worker
+  normalization. The agent's Perplexity request returned 401, so only official
+  pages were used and no provider result was imported.
+- **Seiko:** eight of the new exact references were successfully normalized in
+  this worker pass: `HAB005J1`, `SSK025`, `SJE103J1`, `SJE105J1`, `SSJ039J1`,
+  `HCC001J1`, `HCC002J1`, and `SPB453J1`. `SPB507J1` exhausted malformed
+  retries and remains `planned`.
+
+The successful targets received review artifacts with their Perplexity job IDs
+and exact manufacturer URLs. All remain research-only `needs_review`; the 12
+Rolex references and other queued exact pages are not treated as catalogue
+facts until their worker provenance is complete.

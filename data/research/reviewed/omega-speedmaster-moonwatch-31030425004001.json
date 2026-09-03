@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "omega-speedmaster-moonwatch-31030425004001",
+  "jobId": "bfacdc3e-8079-42e1-bb2b-65b86c677ea7",
+  "reviewedAt": "2026-09-03T05:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Omega",
+    "model": "Speedmaster Moonwatch Professional",
+    "referenceCode": "310.30.42.50.04.001",
+    "variantName": "Speedmaster Moonwatch Professional"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.omegawatches.com/en-us/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31030425004001",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker produced a successful normalized job."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Non-identity claims remain provisional until field-level review closes M1 gaps; no missing facts are estimated."
+}

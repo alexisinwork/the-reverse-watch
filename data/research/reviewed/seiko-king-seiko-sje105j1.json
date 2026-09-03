@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "seiko-king-seiko-sje105j1",
+  "jobId": "05d7aa93-bbc7-4abc-a711-96fc38ec67dd",
+  "reviewedAt": "2026-09-03T05:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Seiko",
+    "model": "King Seiko KSK",
+    "referenceCode": "SJE105J1",
+    "variantName": "King Seiko KSK"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.seikowatches.com/us-en/products/kingseiko/sje105j1",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker produced a successful normalized job."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Non-identity claims remain provisional until field-level review closes M1 gaps; no missing facts are estimated."
+}

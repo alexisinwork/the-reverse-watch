@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "omega-aqua-terra-22010302002001",
+  "jobId": "0a8b1535-c0b9-4eec-a934-e86963e059db",
+  "reviewedAt": "2026-09-03T05:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Omega",
+    "model": "Seamaster Aqua Terra 150M",
+    "referenceCode": "220.10.30.20.02.001",
+    "variantName": "Seamaster Aqua Terra 150M"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.omegawatches.com/en-us/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-30-mm-22010302002001",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker produced a successful normalized job."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Non-identity claims remain provisional until field-level review closes M1 gaps; no missing facts are estimated."
+}

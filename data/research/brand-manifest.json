@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-03T00:42:05.104Z",
+  "updatedAt": "2026-09-03T01:04:48.511Z",
   "brands": [
     {
       "slug": "rolex",
@@ -952,6 +952,174 @@
             ]
           },
           "coverageRationale": "Add the exact current Datejust 41 green ombré dial suffix rather than treating the Datejust family as one variant."
+        },
+        {
+          "id": "rolex-submariner-date-126610lv",
+          "referenceLabel": "Rolex Submariner Date exact Oystersteel reference 126610LV",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Submariner Date green Cerachrom reference after primary-source verification."
+        },
+        {
+          "id": "rolex-sea-dweller-126603",
+          "referenceLabel": "Rolex Sea-Dweller exact Yellow Rolesor reference 126603",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Sea-Dweller Yellow Rolesor reference."
+        },
+        {
+          "id": "rolex-submariner-date-126613lb",
+          "referenceLabel": "Rolex Submariner Date exact Yellow Rolesor reference 126613LB",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Submariner Date blue-bezel reference."
+        },
+        {
+          "id": "rolex-submariner-date-126613ln",
+          "referenceLabel": "Rolex Submariner Date exact Yellow Rolesor reference 126613LN",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Submariner Date black-bezel reference."
+        },
+        {
+          "id": "rolex-datejust-36-126234",
+          "referenceLabel": "Rolex Datejust 36 exact White Rolesor reference 126234",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Datejust 36 bright-black-dial reference."
+        },
+        {
+          "id": "rolex-datejust-36-126231",
+          "referenceLabel": "Rolex Datejust 36 exact Everose Rolesor reference 126231",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Datejust 36 Everose Rolesor reference."
+        },
+        {
+          "id": "rolex-datejust-31-278240",
+          "referenceLabel": "Rolex Datejust 31 exact Oystersteel reference 278240",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Datejust 31 black-dial reference."
+        },
+        {
+          "id": "rolex-datejust-31-278241",
+          "referenceLabel": "Rolex Datejust 31 exact Everose Rolesor reference 278241",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Datejust 31 diamond-dial reference."
+        },
+        {
+          "id": "rolex-day-date-36-128239",
+          "referenceLabel": "Rolex Day-Date 36 exact white-gold reference 128239",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Day-Date 36 white-gold reference."
+        },
+        {
+          "id": "rolex-day-date-36-128235",
+          "referenceLabel": "Rolex Day-Date 36 exact Everose-gold reference 128235",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Day-Date 36 Everose-gold reference."
+        },
+        {
+          "id": "rolex-daytona-126503",
+          "referenceLabel": "Rolex Cosmograph Daytona exact Yellow Rolesor reference 126503",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add exact current Cosmograph Daytona Yellow Rolesor reference."
+        },
+        {
+          "id": "rolex-day-date-40-228239",
+          "referenceLabel": "Rolex Day-Date 40 exact white-gold reference 228239",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Day-Date 40 white-gold reference."
         }
       ]
     },
@@ -1488,6 +1656,146 @@
             ]
           },
           "coverageRationale": "Add the exact current steel Santos configuration with larger case geometry and 1847 MC movement as a separate reference variant."
+        },
+        {
+          "id": "cartier-tank-must-w4ta0031",
+          "referenceLabel": "Cartier Tank Must exact diamond-bezel reference W4TA0031",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Tank Must diamond-bezel reference."
+        },
+        {
+          "id": "cartier-tank-louis-wjta0037",
+          "referenceLabel": "Cartier Tank Louis exact rose-gold reference WJTA0037",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Tank Louis rose-gold reference."
+        },
+        {
+          "id": "cartier-santos-wssa0061",
+          "referenceLabel": "Cartier Santos de Cartier exact green-dial reference WSSA0061",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Santos green-dial reference."
+        },
+        {
+          "id": "cartier-santos-wssa0071",
+          "referenceLabel": "Cartier Santos de Cartier exact large reference WSSA0071",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current large Santos date reference."
+        },
+        {
+          "id": "cartier-panthere-wspn0007",
+          "referenceLabel": "Cartier Panthere de Cartier exact steel reference WSPN0007",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current steel Panthere reference."
+        },
+        {
+          "id": "cartier-panthere-w3pn0010",
+          "referenceLabel": "Cartier Panthere de Cartier exact two-tone reference W3PN0010",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current two-tone Panthere reference."
+        },
+        {
+          "id": "cartier-ballon-bleu-wsbb0061",
+          "referenceLabel": "Cartier Ballon Bleu exact steel reference WSBB0061",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Ballon Bleu 40 mm reference."
+        },
+        {
+          "id": "cartier-ballon-bleu-wsbb0030",
+          "referenceLabel": "Cartier Ballon Bleu exact steel reference WSBB0030",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Ballon Bleu 33 mm reference."
+        },
+        {
+          "id": "cartier-pasha-wspa0009",
+          "referenceLabel": "Cartier Pasha de Cartier exact steel reference WSPA0009",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Pasha 41 mm reference."
+        },
+        {
+          "id": "cartier-pasha-wspa0013",
+          "referenceLabel": "Cartier Pasha de Cartier exact steel reference WSPA0013",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Pasha 35 mm reference."
         }
       ]
     },
@@ -1616,6 +1924,146 @@
             ]
           },
           "coverageRationale": "Add a distinct current 41 mm steel blue-dial Aqua Terra reference to extend exact everyday date coverage beyond the existing 38 mm target."
+        },
+        {
+          "id": "omega-speedmaster-moonwatch-31030425004001",
+          "referenceLabel": "Omega Speedmaster Moonwatch Professional exact steel reference 310.30.42.50.04.001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add exact current Speedmaster white-dial reference."
+        },
+        {
+          "id": "omega-speedmaster-pilot-33210415101002",
+          "referenceLabel": "Omega Speedmaster Pilot exact steel reference 332.10.41.51.01.002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add exact current Speedmaster Pilot reference."
+        },
+        {
+          "id": "omega-seamaster-diver-21030422001010",
+          "referenceLabel": "Omega Seamaster Diver 300M exact steel reference 210.30.42.20.01.010",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Diver 300M reference."
+        },
+        {
+          "id": "omega-seamaster-planet-ocean-21730422101001",
+          "referenceLabel": "Omega Seamaster Planet Ocean 600M exact steel reference 217.30.42.21.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Planet Ocean reference."
+        },
+        {
+          "id": "omega-aqua-terra-22010302002001",
+          "referenceLabel": "Omega Aqua Terra 150M exact 30 mm reference 220.10.30.20.02.001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current 30 mm Aqua Terra reference."
+        },
+        {
+          "id": "omega-aqua-terra-22010412101002",
+          "referenceLabel": "Omega Aqua Terra 150M exact 41 mm reference 220.10.41.21.01.002",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current 41 mm Aqua Terra reference."
+        },
+        {
+          "id": "omega-constellation-13130412104001",
+          "referenceLabel": "Omega Constellation exact 41 mm reference 131.30.41.21.04.001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Constellation 41 mm reference."
+        },
+        {
+          "id": "omega-constellation-13110392002001",
+          "referenceLabel": "Omega Constellation exact 39 mm reference 131.10.39.20.02.001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Constellation 39 mm reference."
+        },
+        {
+          "id": "omega-de-ville-prestige-43410402010001",
+          "referenceLabel": "Omega De Ville Prestige exact steel reference 434.10.40.20.10.001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current De Ville Prestige reference."
+        },
+        {
+          "id": "omega-de-ville-tresor-43513402102001",
+          "referenceLabel": "Omega De Ville Tresor exact steel reference 435.13.40.21.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current De Ville Tresor reference."
         }
       ]
     },
@@ -1969,6 +2417,146 @@
             ]
           },
           "coverageRationale": "Add the exact current 37.3 mm manual-wind Heritage reference for compact formal time-only coverage."
+        },
+        {
+          "id": "grand-seiko-sbgx265",
+          "referenceLabel": "Grand Seiko Heritage exact quartz reference SBGX265",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Heritage 9F62 quartz reference."
+        },
+        {
+          "id": "grand-seiko-sbgh347",
+          "referenceLabel": "Grand Seiko Heritage exact Hi-Beat reference SBGH347",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Heritage Hi-Beat reference."
+        },
+        {
+          "id": "grand-seiko-sbgj237",
+          "referenceLabel": "Grand Seiko Sport exact Hi-Beat GMT reference SBGJ237",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add exact current Sport Hi-Beat GMT reference."
+        },
+        {
+          "id": "grand-seiko-sbge255",
+          "referenceLabel": "Grand Seiko Sport exact Spring Drive GMT reference SBGE255",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add exact current Sport Spring Drive GMT reference."
+        },
+        {
+          "id": "grand-seiko-sbgc253",
+          "referenceLabel": "Grand Seiko Sport exact Spring Drive Chronograph GMT reference SBGC253",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add exact current Sport chronograph GMT reference."
+        },
+        {
+          "id": "grand-seiko-sbgm255",
+          "referenceLabel": "Grand Seiko Elegance exact mechanical GMT reference SBGM255",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add exact current Elegance mechanical GMT reference."
+        },
+        {
+          "id": "grand-seiko-sbgy007",
+          "referenceLabel": "Grand Seiko Elegance exact Spring Drive reference SBGY007",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current hand-wound Spring Drive reference."
+        },
+        {
+          "id": "grand-seiko-sbga293",
+          "referenceLabel": "Grand Seiko Elegance exact Spring Drive reference SBGA293",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Elegance date reference."
+        },
+        {
+          "id": "grand-seiko-slga021",
+          "referenceLabel": "Grand Seiko Evolution 9 exact Spring Drive reference SLGA021",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Evolution 9 five-day reference."
+        },
+        {
+          "id": "grand-seiko-slgc001",
+          "referenceLabel": "Grand Seiko Evolution 9 exact Tentagraph reference SLGC001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add exact current Evolution 9 Tentagraph reference."
         }
       ]
     },
@@ -2706,6 +3294,146 @@
             ]
           },
           "coverageRationale": "Add the exact current 1000 m Pelagos Ultra for specialist water-abuse coverage."
+        },
+        {
+          "id": "tudor-black-bay-54-blue-m79000b-0001",
+          "referenceLabel": "Tudor Black Bay 54 Blue exact steel reference M79000B-0001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Black Bay 54 Blue reference."
+        },
+        {
+          "id": "tudor-black-bay-58-gmt-m7939g1a0nru-0003",
+          "referenceLabel": "Tudor Black Bay 58 GMT exact steel reference M7939G1A0NRU-0003",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add exact current Black Bay 58 GMT reference."
+        },
+        {
+          "id": "tudor-black-bay-68-m7943a1a0nu-0001",
+          "referenceLabel": "Tudor Black Bay 68 Blue exact steel reference M7943A1A0NU-0001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Black Bay 68 reference."
+        },
+        {
+          "id": "tudor-black-bay-chrono-39-m79310n-0001",
+          "referenceLabel": "Tudor Black Bay Chrono exact steel reference M79310N-0001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add exact current Black Bay Chrono reference."
+        },
+        {
+          "id": "tudor-black-bay-pro-m79470-0004",
+          "referenceLabel": "Tudor Black Bay Pro exact steel reference M79470-0004",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add exact current Black Bay Pro GMT reference."
+        },
+        {
+          "id": "tudor-pelagos-lhd-m25610tnl-0001",
+          "referenceLabel": "Tudor Pelagos LHD exact titanium reference M25610TNL-0001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Pelagos LHD reference."
+        },
+        {
+          "id": "tudor-pelagos-fxd-gmt-m2542g267nu-0002",
+          "referenceLabel": "Tudor Pelagos FXD GMT exact titanium reference M2542G267NU-0002",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add exact current Pelagos FXD GMT reference."
+        },
+        {
+          "id": "tudor-ranger-36-m79930-0007",
+          "referenceLabel": "Tudor Ranger exact steel reference M79930-0007",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Ranger 36 reference."
+        },
+        {
+          "id": "tudor-1926-m91560-0002",
+          "referenceLabel": "Tudor 1926 exact steel reference M91560-0002",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add exact current 1926 moon-phase reference."
+        },
+        {
+          "id": "tudor-royal-40-m2840d1a0-0001",
+          "referenceLabel": "Tudor Royal exact steel reference M2840D1A0-0001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Royal day-date reference."
         }
       ]
     },
@@ -3629,6 +4357,146 @@
             ]
           },
           "coverageRationale": "The owner-reviewed dossier identifies Astron GPS Solar SSJ013 as a current satellite-synchronised solar reference; verify the exact dial, bracelet, dimensions, and manufacturer evidence before cataloguing."
+        },
+        {
+          "id": "seiko-prospex-land-spb507j1",
+          "referenceLabel": "Seiko Prospex Land Mechanical exact reference SPB507J1",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Prospex Land Mechanical reference."
+        },
+        {
+          "id": "seiko-prospex-1965-spb453j1",
+          "referenceLabel": "Seiko Prospex 1965 Heritage Diver exact reference SPB453J1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "1000_2000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Prospex Heritage Diver reference."
+        },
+        {
+          "id": "seiko-presage-hcc001j1",
+          "referenceLabel": "Seiko Presage Classic exact reference HCC001J1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Presage Classic reference."
+        },
+        {
+          "id": "seiko-presage-hcc002j1",
+          "referenceLabel": "Seiko Presage Classic exact reference HCC002J1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "500_1000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add exact current Presage Classic dial variant."
+        },
+        {
+          "id": "seiko-king-seiko-sje103j1",
+          "referenceLabel": "Seiko King Seiko KSK exact reference SJE103J1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current King Seiko KSK reference."
+        },
+        {
+          "id": "seiko-king-seiko-sje105j1",
+          "referenceLabel": "Seiko King Seiko KSK exact reference SJE105J1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current King Seiko KSK dial variant."
+        },
+        {
+          "id": "seiko-astron-ssj039j1",
+          "referenceLabel": "Seiko Astron GPS Solar exact reference SSJ039J1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add exact current Astron limited reference."
+        },
+        {
+          "id": "seiko-astron-hab005j1",
+          "referenceLabel": "Seiko Astron GPS Solar exact reference HAB005J1",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "2000_5000"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add exact current Astron chronograph reference."
+        },
+        {
+          "id": "seiko-5-sports-srpl83",
+          "referenceLabel": "Seiko 5 Sports exact reference SRPL83",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add exact current 5 Sports SKX reference."
+        },
+        {
+          "id": "seiko-5-sports-ssk025",
+          "referenceLabel": "Seiko 5 Sports exact GMT reference SSK025",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "300_500"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add exact current 5 Sports Field GMT reference."
         }
       ]
     },
