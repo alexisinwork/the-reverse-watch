@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "jlc-duometre-heliotourbillon-q6206150",
+  "jobId": "5275880e-4516-48ff-aee9-f6b4a1c1e71d",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Jaeger-LeCoultre",
+    "model": "Duometre Heliotourbillon Perpetual",
+    "referenceCode": "Q6206150",
+    "variantName": "Duometre Heliotourbillon Perpetual"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.jaeger-lecoultre.com/us-en/watches/high-complication/duometre-heliotourbillon-perpetual-q6206150",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

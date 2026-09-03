@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "iwc-ingenieur-automatic-42-iw338902",
+  "jobId": "65eee564-70f7-4f6c-a3d2-dbbada0d873a",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "IWC Schaffhausen",
+    "model": "Ingenieur Automatic 42",
+    "referenceCode": "IW338902",
+    "variantName": "Ingenieur Automatic 42"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.iwc.com/us-en/watches/ingenieur/iw338902-ingenieur-automatic-42",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

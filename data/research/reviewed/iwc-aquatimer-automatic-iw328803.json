@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "iwc-aquatimer-automatic-iw328803",
+  "jobId": "63c1b936-0ffa-4243-9bc4-c245c7a8d3d2",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "IWC Schaffhausen",
+    "model": "Aquatimer Automatic",
+    "referenceCode": "IW328803",
+    "variantName": "Aquatimer Automatic"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.iwc.com/us-en/watches/aquatimer/iw328803-aquatimer-automatic",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hublot-classic-fusion-542-nx-1270-rx-mdm",
+  "jobId": "111b21e5-5c1b-44c5-ae2e-7a69a0d0e394",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hublot",
+    "model": "Classic Fusion Original Titanium 42 mm",
+    "referenceCode": "542.NX.1270.RX.MDM",
+    "variantName": "Classic Fusion Original Titanium 42 mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hublot.com/es-int/watches/classic-fusion/classic-fusion-original-titanium-42-mm",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

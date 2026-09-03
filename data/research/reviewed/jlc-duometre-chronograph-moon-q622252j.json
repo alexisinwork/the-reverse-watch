@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "jlc-duometre-chronograph-moon-q622252j",
+  "jobId": "e8cce3d8-7a13-4359-a8cb-dd761763b3fd",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Jaeger-LeCoultre",
+    "model": "Duometre Chronograph Moon",
+    "referenceCode": "Q622252J",
+    "variantName": "Duometre Chronograph Moon"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.jaeger-lecoultre.com/us-en/watches/duometre/duometre-chronograph-moon-pink-gold-q622252j",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

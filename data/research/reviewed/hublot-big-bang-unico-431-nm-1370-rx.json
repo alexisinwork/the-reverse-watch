@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "hublot-big-bang-unico-431-nm-1370-rx",
+  "jobId": "23f6f9ec-46bd-4172-9a8f-bbc64f189008",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Hublot",
+    "model": "Big Bang Original Unico Titanium Ceramic 43 mm",
+    "referenceCode": "431.NM.1370.RX",
+    "variantName": "Big Bang Original Unico Titanium Ceramic 43 mm"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.hublot.com/en-us/watches/big-bang/big-bang-original-unico-titanium-ceramic-43-mm",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

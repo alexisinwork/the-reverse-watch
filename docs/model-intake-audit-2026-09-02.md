@@ -1483,3 +1483,32 @@ All eleven successful entries remain `needs_review`; the review artifacts keep
 the Perplexity job IDs and manufacturer URLs. Unpublished fit geometry,
 configured weight, accuracy, lume, and regional price fields remain null, so no
 entry was promoted to the accepted recommendation catalogue.
+
+## Eighty-first Perplexity exact-reference expansion (retrieved 2026-09-03)
+
+The follow-up sweep checked the remaining candidates from the six specialist
+brand audits. Perplexity was used for discovery and strict normalization, with
+the exact manufacturer page as the acceptance gate. Thirty-three targets
+produced successful normalized jobs and now have review artifacts:
+
+- **IWC:** [Big Pilot's Watch Constant Force Tourbillon `IW590503`](https://www.iwc.com/us-en/watches/pilot-watches/iw590503-big-pilots-watch-constant-force-tourbillon), [Portugieser Chronograph `IW371624`](https://www.iwc.com/us-en/watches/portugieser/iw371624-portugieser-chronograph), [Portugieser Chronograph Ceratanium `IW371631`](https://www.iwc.com/us-en/watches/portugieser/iw371631-portugieser-chronograph-ceratanium), Ingenieur Automatic 35 `IW324902`, Ingenieur Automatic 40 `IW328907`, Ingenieur Automatic 42 `IW338902`, and Aquatimer Automatic `IW328803`.
+- **Chopard:** [Alpine Eagle 41 `298600-3035`](https://www.chopard.com/en-us/watch/298600-3035.html), [L.U.C XPS `168629-3001`](https://www.chopard.com/en-us/watch/168629-3001.html), Mille Miglia Power Control `168566-3022`, Mille Miglia Chrono `168571-3001`, Happy Sport 33 `278608-3006`, Happy Sport Sun Moon and Stars `278573-6027`, and Happy Sport `278559-3001`/`278559-6019`.
+- **Hublot:** Big Bang Titanium Peach Ceramic `441.NCU.5920.RX`, Big Bang Original Unico Titanium Ceramic `431.NM.1370.RX`, Classic Fusion Original Titanium `542.NX.1270.RX.MDM`, Classic Fusion Racing Grey Chronograph `541.NX.7070.RX`, and Spirit of Big Bang Black Magic `642.CI.0170.RX`.
+- **Jaeger-LeCoultre:** Reverso Classic Monoface Origin `Q3878560`, Reverso Tribute Duoface Calendar `Q3918420`, Polaris Chronograph `Q902843J`, Master Control Chronometre Date `Q4158120`, Master Control Date Power Reserve `Q4168120`, Master Control Perpetual Calendar `Q4178180`, Duometre Chronograph Moon `Q622252J`, and Duometre Heliotourbillon Perpetual `Q6206150`.
+- **Panerai:** Luminor Luna Rossa Chrono `PAM01768`, Submersible Navy SEALs GMT `PAM01323`, Submersible `PAM01590`, Submersible `PAM01595`, and Submersible `PAM02068`.
+
+The exact manufacturer checks also supplied the following corrections: IWC
+`IW590503` has no published current price; JLC `Q6206150`'s 11.15 mm figure is
+movement thickness rather than case thickness; and Panerai `PAM01347` was not
+counted because its exact page and current retail status could not be
+established. Hublot `601.NE.0172.LR.1104.JPN19` was likewise excluded because
+its official result redirects to the home page rather than an active product
+card.
+
+Six targets remain `planned` after all three worker attempts returned malformed
+claims: IWC `IW388305`, Chopard `168574-3013`, Hublot
+`421.EX.5129.NR.RLD` and `642.QK.0110.NR`, and Panerai `PAM03313` and
+`PAM01731`. Their official pages were located by the agents, but no failed
+payload was imported and no review artifact was created. All successful
+targets remain `needs_review`; no model was promoted without field-level M1
+closure.

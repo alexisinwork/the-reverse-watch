@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "iwc-big-pilot-tourbillon-iw590503",
+  "jobId": "0dd93ac1-e9db-4f1f-b3c9-e0548d156fea",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "IWC Schaffhausen",
+    "model": "Big Pilot's Watch Constant Force Tourbillon",
+    "referenceCode": "IW590503",
+    "variantName": "Big Pilot's Watch Constant Force Tourbillon"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.iwc.com/us-en/watches/pilot-watches/iw590503-big-pilots-watch-constant-force-tourbillon",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

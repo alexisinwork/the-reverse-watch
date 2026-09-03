@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "chopard-happy-sport-sun-moon-stars-278573-6027",
+  "jobId": "7aca648b-04fc-42b6-a9d5-42448c880cf1",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Chopard",
+    "model": "Happy Sport Sun Moon and Stars",
+    "referenceCode": "278573-6027",
+    "variantName": "Happy Sport Sun Moon and Stars"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.chopard.com/en-us/watch/278573-6027.html",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

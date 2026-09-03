@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "panerai-submersible-gmt-pam01323",
+  "jobId": "9129f2ec-137e-4e07-b1c7-31786efb9f07",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Panerai",
+    "model": "Submersible Navy SEALs GMT",
+    "referenceCode": "PAM01323",
+    "variantName": "Submersible Navy SEALs GMT"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.panerai.com/us/en/collections/watch-collection/submersible/pam01323-submersible-navy-seals-gmt.html",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}

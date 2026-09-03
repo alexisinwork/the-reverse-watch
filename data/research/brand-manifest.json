@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-03T00:15:20.453Z",
+  "updatedAt": "2026-09-03T00:42:05.104Z",
   "brands": [
     {
       "slug": "rolex",
@@ -1669,6 +1669,112 @@
             ]
           },
           "coverageRationale": "Add the exact current 42 mm Polaris Date technical reference."
+        },
+        {
+          "id": "jlc-reverso-classic-origin-q3878560",
+          "referenceLabel": "Jaeger-LeCoultre Reverso Classic Monoface Origin exact steel reference Q3878560",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the compact quartz Reverso Classic Origin reference."
+        },
+        {
+          "id": "jlc-reverso-tribute-calendar-q3918420",
+          "referenceLabel": "Jaeger-LeCoultre Reverso Tribute Duoface Calendar exact steel reference Q3918420",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add the exact Duoface calendar and moon-phase reference."
+        },
+        {
+          "id": "jlc-polaris-chronograph-q902843j",
+          "referenceLabel": "Jaeger-LeCoultre Polaris Chronograph exact steel reference Q902843J",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact Polaris chronograph reference."
+        },
+        {
+          "id": "jlc-master-chronometre-date-q4158120",
+          "referenceLabel": "Jaeger-LeCoultre Master Control Chronometre Date exact steel reference Q4158120",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact Master Control chronometre date reference."
+        },
+        {
+          "id": "jlc-master-date-power-reserve-q4168120",
+          "referenceLabel": "Jaeger-LeCoultre Master Control Chronometre Date Power Reserve exact steel reference Q4168120",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact Master Control date and power-reserve reference."
+        },
+        {
+          "id": "jlc-master-perpetual-calendar-q4178180",
+          "referenceLabel": "Jaeger-LeCoultre Master Control Chronometre Perpetual Calendar exact steel reference Q4178180",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add the exact Master Control perpetual-calendar reference."
+        },
+        {
+          "id": "jlc-duometre-chronograph-moon-q622252j",
+          "referenceLabel": "Jaeger-LeCoultre Duometre Chronograph Moon exact pink-gold reference Q622252J",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add the exact Duometre twin-power-reserve chronograph reference."
+        },
+        {
+          "id": "jlc-duometre-heliotourbillon-q6206150",
+          "referenceLabel": "Jaeger-LeCoultre Duometre Heliotourbillon Perpetual exact platinum reference Q6206150",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add the exact Duometre Heliotourbillon perpetual-calendar reference."
         }
       ]
     },
@@ -1923,6 +2029,115 @@
             ]
           },
           "coverageRationale": "Add a distinct high-reserve Portugieser date and power-reserve reference."
+        },
+        {
+          "id": "iwc-performance-chronograph-iw388305",
+          "referenceLabel": "IWC Pilot's Watch Performance Chronograph 41 AMG exact titanium reference IW388305",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact AMG titanium Pilot's chronograph."
+        },
+        {
+          "id": "iwc-big-pilot-tourbillon-iw590503",
+          "referenceLabel": "IWC Big Pilot's Watch Constant Force Tourbillon exact Armor Gold reference IW590503",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add the exact constant-force tourbillon reference without inventing a price."
+        },
+        {
+          "id": "iwc-portugieser-chronograph-iw371624",
+          "referenceLabel": "IWC Portugieser Chronograph exact steel reference IW371624",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact steel Portugieser chronograph."
+        },
+        {
+          "id": "iwc-portugieser-chronograph-ceratanium-iw371631",
+          "referenceLabel": "IWC Portugieser Chronograph exact Ceratanium reference IW371631",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact Ceratanium Portugieser chronograph."
+        },
+        {
+          "id": "iwc-ingenieur-automatic-35-iw324902",
+          "referenceLabel": "IWC Ingenieur Automatic 35 exact steel reference IW324902",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the compact exact Ingenieur date reference."
+        },
+        {
+          "id": "iwc-ingenieur-automatic-40-iw328907",
+          "referenceLabel": "IWC Ingenieur Automatic 40 exact steel reference IW328907",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Ingenieur Automatic 40."
+        },
+        {
+          "id": "iwc-ingenieur-automatic-42-iw338902",
+          "referenceLabel": "IWC Ingenieur Automatic 42 exact ceramic reference IW338902",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact ceramic Ingenieur Automatic 42."
+        },
+        {
+          "id": "iwc-aquatimer-automatic-iw328803",
+          "referenceLabel": "IWC Aquatimer Automatic exact steel reference IW328803",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact 30 bar Aquatimer date reference."
         }
       ]
     },
@@ -2293,7 +2508,7 @@
         {
           "id": "chopard-luc-168629-3001",
           "referenceLabel": "Chopard L.U.C exact Lucent Steel micro-rotor reference 168629-3001",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "10000_15000"
@@ -2303,6 +2518,118 @@
             ]
           },
           "coverageRationale": "Add an exact current L.U.C micro-rotor reference distinct from Alpine Eagle sport geometry."
+        },
+        {
+          "id": "chopard-alpine-eagle-298600-3035",
+          "referenceLabel": "Chopard Alpine Eagle 41 exact Lucent Steel reference 298600-3035",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Alpine Eagle date reference."
+        },
+        {
+          "id": "chopard-luc-time-traveler-168574-3013",
+          "referenceLabel": "Chopard L.U.C Time Traveler One exact titanium reference 168574-3013",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add the exact L.U.C world-time reference."
+        },
+        {
+          "id": "chopard-mille-miglia-power-control-168566-3022",
+          "referenceLabel": "Chopard Mille Miglia GTS Power Control exact reference 168566-3022",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact 2026 Racing Edition power-control reference."
+        },
+        {
+          "id": "chopard-mille-miglia-chrono-168571-3001",
+          "referenceLabel": "Chopard Mille Miglia GTS Chrono exact reference 168571-3001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact Mille Miglia chronograph reference."
+        },
+        {
+          "id": "chopard-happy-sport-33-278608-3006",
+          "referenceLabel": "Chopard Happy Sport 33 exact steel reference 278608-3006",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact compact Happy Sport reference."
+        },
+        {
+          "id": "chopard-happy-sport-sun-moon-stars-278573-6027",
+          "referenceLabel": "Chopard Happy Sport Sun Moon and Stars exact reference 278573-6027",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact moving-motif Happy Sport reference."
+        },
+        {
+          "id": "chopard-happy-sport-278559-3001",
+          "referenceLabel": "Chopard Happy Sport exact steel reference 278559-3001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact seven-diamond Happy Sport date reference."
+        },
+        {
+          "id": "chopard-happy-sport-278559-6019",
+          "referenceLabel": "Chopard Happy Sport exact two-tone reference 278559-6019",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact two-tone Happy Sport date reference."
         }
       ]
     },
@@ -2471,6 +2798,83 @@
             ]
           },
           "coverageRationale": "Add the exact 40 mm steel Luminor GMT bracelet reference for travel coverage."
+        },
+        {
+          "id": "panerai-luminor-marina-pam03313",
+          "referenceLabel": "Panerai Luminor Marina exact steel reference PAM03313",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact 44 mm Luminor Marina date reference."
+        },
+        {
+          "id": "panerai-luminor-pam01731",
+          "referenceLabel": "Panerai Luminor exact steel reference PAM01731",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact hand-wound Luminor reference."
+        },
+        {
+          "id": "panerai-submersible-pam01590",
+          "referenceLabel": "Panerai Submersible exact steel reference PAM01590",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact 42 mm Submersible date reference."
+        },
+        {
+          "id": "panerai-submersible-pam02068",
+          "referenceLabel": "Panerai Submersible exact ceramic-bezel reference PAM02068",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact ceramic-bezel Submersible reference."
+        },
+        {
+          "id": "panerai-submersible-pam01595",
+          "referenceLabel": "Panerai Submersible exact steel reference PAM01595",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact 44 mm Submersible date reference."
+        },
+        {
+          "id": "panerai-submersible-gmt-pam01323",
+          "referenceLabel": "Panerai Submersible Navy SEALs GMT exact reference PAM01323",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "gmt"
+            ]
+          },
+          "coverageRationale": "Add the exact Navy SEALs GMT reference."
+        },
+        {
+          "id": "panerai-luminor-chrono-pam01768",
+          "referenceLabel": "Panerai Luminor Luna Rossa Chrono exact reference PAM01768",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact limited Luna Rossa chronograph reference."
         }
       ]
     },
@@ -2531,6 +2935,83 @@
             ]
           },
           "coverageRationale": "Add the exact current velvet-effect rubber and titanium Big Bang flyback chronograph."
+        },
+        {
+          "id": "hublot-big-bang-titanium-peach-441-ncu-5920-rx",
+          "referenceLabel": "Hublot Big Bang Titanium Peach Ceramic exact 42 mm reference 441.NCU.5920.RX",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact titanium and peach-ceramic Big Bang chronograph."
+        },
+        {
+          "id": "hublot-big-bang-unico-431-nm-1370-rx",
+          "referenceLabel": "Hublot Big Bang Original Unico exact 43 mm reference 431.NM.1370.RX",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact titanium and ceramic Unico chronograph."
+        },
+        {
+          "id": "hublot-big-bang-reloaded-421-ex-5129-nr-rld",
+          "referenceLabel": "Hublot Big Bang Reloaded exact blue ceramic reference 421.EX.5129.NR.RLD",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact blue ceramic Reloaded chronograph."
+        },
+        {
+          "id": "hublot-classic-fusion-542-nx-1270-rx-mdm",
+          "referenceLabel": "Hublot Classic Fusion Original Titanium exact 42 mm reference 542.NX.1270.RX.MDM",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact 42 mm Classic Fusion titanium reference."
+        },
+        {
+          "id": "hublot-classic-fusion-chronograph-541-nx-7070-rx",
+          "referenceLabel": "Hublot Classic Fusion Racing Grey Chronograph exact reference 541.NX.7070.RX",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact titanium Classic Fusion chronograph."
+        },
+        {
+          "id": "hublot-spirit-black-magic-642-ci-0170-rx",
+          "referenceLabel": "Hublot Spirit of Big Bang Black Magic exact reference 642.CI.0170.RX",
+          "state": "needs_review",
+          "coverageIntent": {
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact ceramic skeleton chronograph reference."
+        },
+        {
+          "id": "hublot-spirit-frosted-carbon-642-qk-0110-nr",
+          "referenceLabel": "Hublot Spirit of Big Bang Frosted Carbon exact reference 642.QK.0110.NR",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact frosted-carbon skeleton chronograph reference."
         }
       ]
     },

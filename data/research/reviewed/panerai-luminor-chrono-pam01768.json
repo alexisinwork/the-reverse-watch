@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "panerai-luminor-chrono-pam01768",
+  "jobId": "bdc36a31-6083-4569-8a37-65f06e254e8a",
+  "reviewedAt": "2026-09-03T03:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Panerai",
+    "model": "Luminor Luna Rossa Chrono",
+    "referenceCode": "PAM01768",
+    "variantName": "Luminor Luna Rossa Chrono"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.panerai.com/us/en/collections/watch-collection/luminor/pam01768-luminor-luna-rossa-chrono.html",
+      "status": "validated_primary",
+      "note": "Exact manufacturer product page checked on 2026-09-03; Perplexity worker also produced a successfully normalized job for this target."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact reference identity and manufacturer URL are confirmed. Normalized non-identity claims remain provisional until field-level review closes the listed M1 gaps; no missing facts are estimated."
+}
