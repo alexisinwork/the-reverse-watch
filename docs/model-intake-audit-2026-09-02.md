@@ -2804,3 +2804,42 @@ generations and non-watch accessories were excluded. Technical, price, and
 availability fields remain unpromoted. Perplexity was unavailable; official
 Traska catalogue, product feed and product pages were used as the primary-source
 fallback.
+
+## One-hundred-seventy-fifth YEMA exact-reference expansion (retrieved 2026-09-03)
+
+The YEMA audit reconciled the official current Watches collection and its
+manufacturer Shopify product feed. It found 74 current watch product cards
+containing 115 unique exact SKU references; one reference was already
+represented and 114 additional exact references were added as individual
+planned targets. Duplicate new/"Like New" merchandising variants carrying the
+same SKU were deduplicated by exact reference. Accessories, straps and records
+outside the current Watches collection were not promoted. Technical, price and
+availability fields remain unpromoted. Perplexity was unavailable; the official
+YEMA collection feed and linked product pages were used as the primary-source
+fallback.
+
+## One-hundred-seventy-sixth Laco exact-reference expansion (retrieved 2026-09-03)
+
+The Laco audit reconciled the official live category pages for Flieger PRO, Pilot
+Watch ORIGINAL, Pilot Watches BASIC, DIN 8330, Special Models, Squad Watches,
+Sport Watches, Editions, Navy Watches and Chronographs. It found 154 unique
+current exact article references; the existing Augsburg 39 reference 861988 was
+already represented and 153 additional exact references were added as planned
+targets. Product URLs duplicated across category pages were deduplicated by exact
+article reference. The Laco watch archive, watch straps and accessories were
+kept outside the current watch catalogue. Technical, price, and availability
+fields remain unpromoted pending field-level review. Perplexity was unavailable;
+official Laco category and product pages were used as the primary-source
+fallback.
+
+## One-hundred-seventy-seventh Chronoswiss exact-reference expansion (retrieved 2026-09-03)
+
+The Chronoswiss audit reconciled the official international Watches catalogue
+and every linked manufacturer product page. It found 68 unique current exact
+references; `CH-1423T.1-BKSI` was already represented and 67 additional exact
+references were added as individual planned targets. All 68 product URLs
+returned HTTP 200 during validation. Previous Editions and service/accessory
+records were kept outside the current watch catalogue. Technical, price, and
+availability fields remain unpromoted pending field-level review. Perplexity
+was unavailable; official Chronoswiss catalogue and product pages were used as
+the primary-source fallback.
