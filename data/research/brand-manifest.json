@@ -91691,7 +91691,899 @@
               "time_only_no_date"
             ]
           },
-          "coverageRationale": "Current official Parmigiani Fleurier product card identifies Tonda PF Micro-Rotor No Date Agave Blue, reference PFC914-1020023-100182; verify the complete M1 field set and current availability from https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/."
+         "coverageRationale": "Current official Parmigiani Fleurier product card identifies Tonda PF Micro-Rotor No Date Agave Blue, reference PFC914-1020023-100182; verify the complete M1 field set and current availability from https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-agave-blue/."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-1020002-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-1020002-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-steel-warm-grey/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-1020003-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-1020003-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-steel-rose-gold-sand-grey/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-1020004-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-1020004-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-steel-rose-gold-white-citrine-set/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-1020005-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-1020005-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-steel-platinum-stone-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-1020006-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-1020006-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-steel-rose-gold-deep-ruby-set/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-1020007-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-1020007-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-steel-platinum-alta-rosa/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-rose-gold-deep-ruby/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-2020001-300182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-2020001-300182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-rose-gold-deep-ruby-set/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-2120001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-2120001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-rose-gold-set-warm-grey-set/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc804-2120002-210182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF AUTOMATIC 36 MM exact reference PFC804-2120002-210182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-automatic-rose-gold-set-sand-gold-set/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc904-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MINUTE RATTRAPANTE exact reference PFC904-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-minute-rattrapante/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc904-1020002-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MINUTE RATTRAPANTE exact reference PFC904-1020002-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-minute-rattrapante-stainless-steel-arctic-rose/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc904-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MINUTE RATTRAPANTE exact reference PFC904-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-minute-rattrapante-platinum/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc905-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF GMT RATTRAPANTE exact reference PFC905-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-gmt-rattrapante/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc905-1020002-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF GMT RATTRAPANTE exact reference PFC905-1020002-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-gmt-rattrapante-steel-platinum-verzasca/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc905-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF GMT RATTRAPANTE exact reference PFC905-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-gmt-rattrapante-gold/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc905-2020002-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF GMT RATTRAPANTE exact reference PFC905-2020002-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-gmt-rattrapante-platinum/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc907-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF GREGORIAN ANNUAL CALENDAR exact reference PFC907-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-annual-calendar-steel/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc907-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF GREGORIAN ANNUAL CALENDAR exact reference PFC907-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-ac-rose-gold/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc907-2020001-300182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF GREGORIAN ANNUAL CALENDAR exact reference PFC907-2020001-300182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-annual-calendar-brown-alligator/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc908-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF CHRONOGRAPHE MYSTERIEUX exact reference PFC908-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-chronographe-mysterieux-steel-mineral-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc908-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF CHRONOGRAPHE MYSTERIEUX exact reference PFC908-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-chronographe-mysterieux-platinum/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc912-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SKELETON exact reference PFC912-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-skeleton-2/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc912-1020002-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SKELETON exact reference PFC912-1020002-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-skeleton-steel-slate-green/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc912-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SKELETON exact reference PFC912-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-skeleton/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc912-2020003-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SKELETON exact reference PFC912-2020003-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-skeleton-platinum-milano-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc912-2020004-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SKELETON exact reference PFC912-2020004-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-skeleton-rose-gold-milano-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc914-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MICRO-ROTOR exact reference PFC914-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-steel/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc914-1020021-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MICRO-ROTOR exact reference PFC914-1020021-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-platinum-golden-siena/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc914-1020022-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MICRO-ROTOR exact reference PFC914-1020022-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-steel-rose-gold-stone-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc914-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MICRO-ROTOR exact reference PFC914-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-rose-gold/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc914-2020001-300182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MICRO-ROTOR exact reference PFC914-2020001-300182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-warm-grey/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc914-2020002-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MICRO-ROTOR exact reference PFC914-2020002-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-platinum-grey/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc914-2020022-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MICRO-ROTOR exact reference PFC914-2020022-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-platinum-stone-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc914-2020023-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF MICRO-ROTOR exact reference PFC914-2020023-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-micro-rotor-no-date-rose-gold-agave-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc915-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF CHRONOGRAPH exact reference PFC915-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-chrono-steel/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc915-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF CHRONOGRAPH exact reference PFC915-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-chrono-rose-gold/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc915-2020001-300182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF CHRONOGRAPH exact reference PFC915-2020001-300182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-chronograph-blue-alligator/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc917-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF CHRONOGRAPH exact reference PFC917-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-chronograph-no-date-steel-platinum-steel-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc917-2020001-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF CHRONOGRAPH exact reference PFC917-2020001-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-chronograph-no-date-rose-gold/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc930-1020001-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT AUTOMATIC exact reference PFC930-1020001-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-automatic-steel-silver/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc930-2020001-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT AUTOMATIC exact reference PFC930-2020001-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-automatic-rose-gold/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-1020001-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-1020001-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-chronograph-steel-silver-cosc/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-1020002-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-1020002-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/milano-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-1020003-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-1020003-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/arctic-grey/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-1020004-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-1020004-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/london-grey/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-1020021-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-1020021-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-chronograph-no-date-cermet-blackor-warm-grey-cosc/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-1020022-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-1020022-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-chronograph-no-date-cermet-blackor-blue-cosc/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-1020023-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-1020023-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-chronograph-no-date-steel-silver-verzasca-cosc/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-1020024-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-1020024-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-chronograph-no-date-cermet-blackor-mineral-blue-cosc/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-2020001-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-2020001-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-chronograph-rose-gold-cosc/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc931-2020021-400182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPORT CHRONOGRAPH exact reference PFC931-2020021-400182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-sport-chronograph-no-date-rose-gold-silver-sandstone-cosc/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc940-2010001-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC PETITE SECONDE exact reference PFC940-2010001-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-petite-seconde-rose-gold-sand-gold/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc940-2010002-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC PETITE SECONDE exact reference PFC940-2010002-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-petite-seconde-rose-gold-dune/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc940-2010003-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC PETITE SECONDE exact reference PFC940-2010003-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-petite-seconde-platinum-golden-hour/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc940-2010004-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC PETITE SECONDE exact reference PFC940-2010004-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-petite-seconde-platinum-grey-celadon/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfc940-2010006-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC PETITE SECONDE exact reference PFC940-2010006-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-petite-seconde-platinum-anniversaire/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh916-2010002-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF SPLIT-SECONDS CHRONOGRAPH exact reference PFH916-2010002-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-split-seconds-chronograph-rose-gold-grey/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh921-2020002-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF FLYING TOURBILLON exact reference PFH921-2020002-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-flying-tourbillon-platinum-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh951-2010001-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC CHRONOGRAPH RATTRAPANTE exact reference PFH951-2010001-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-chronograph-rattrapante-rose-gold-natural-umber/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh951-2010002-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC CHRONOGRAPH RATTRAPANTE exact reference PFH951-2010002-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-chronograph-rattrapante-platinum-anniversaire/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh952-2010001-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC QUANTIEME PERPETUEL exact reference PFH952-2010001-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-perpetual-calendar-rose-gold-golden-hour/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh952-2010002-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC QUANTIEME PERPETUEL exact reference PFH952-2010002-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-perpetual-calendar-platinum-morning-blue/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh952-2010004-300181",
+          "referenceLabel": "Parmigiani Fleurier TORIC QUANTIEME PERPETUEL exact reference PFH952-2010004-300181",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/toric-quantieme-perpetuel-rose-gold-anniversaire/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh982-1022501-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF XIALI CHINESE CALENDAR exact reference PFH982-1022501-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-xiali-steel/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh982-2022501-200182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF XIALI CHINESE CALENDAR exact reference PFH982-2022501-200182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-xiali-gold/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-pfh983-1020001-100182",
+          "referenceLabel": "Parmigiani Fleurier TONDA PF HIJRI PERPETUAL CALENDAR exact reference PFH983-1020001-100182",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000",
+              "10000_15000",
+              "15000_plus"
+            ]
+          },
+          "coverageRationale": "Current exact Parmigiani Fleurier reference confirmed by the official product page: https://www.parmigiani.com/en/watches/tonda-pf-hijri/. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "parmigiani-fleurier-excluded-1",
+          "referenceLabel": "PFH996-2010001-300181",
+          "state": "excluded",
+          "coverageRationale": "Official Parmigiani Fleurier catalogue scope checked during the current audit: https://www.parmigiani.com/en/watches/tourbillon-carillon-white-gold-anniversaire/.",
+          "exclusionReason": "Legacy catalogue entry; excluded from the active current wristwatch scope as archived/legacy."
+        },
+        {
+          "id": "parmigiani-fleurier-excluded-2",
+          "referenceLabel": "PFH990-2010001-300181",
+          "state": "excluded",
+          "coverageRationale": "Official Parmigiani Fleurier catalogue scope checked during the current audit: https://www.parmigiani.com/en/the-house/expertise/pieces-of-exception/armoriale-repetition-mysterieuse/.",
+          "exclusionReason": "Legacy exception piece and pocket-watch scope (non-wristwatch); excluded from the active current wristwatch scope."
+        },
+        {
+          "id": "parmigiani-fleurier-excluded-3",
+          "referenceLabel": "PFHH99-2010001-200100",
+          "state": "excluded",
+          "coverageRationale": "Official Parmigiani Fleurier catalogue scope checked during the current audit: https://www.parmigiani.com/en/the-house/expertise/pieces-of-exception/ravenale-white-gold/.",
+          "exclusionReason": "Legacy exception piece and pocket-watch scope (non-wristwatch); excluded from the active current wristwatch scope."
         }
       ]
     },

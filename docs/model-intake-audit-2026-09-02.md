@@ -2376,3 +2376,15 @@ the current watch universe. Each added target retains an official Czapek & Cie.
 product-page URL. Technical, price, and availability fields remain
 unpromoted. Perplexity was unavailable; official Czapek & Cie. pages, Finder
 and Archives were used as the primary-source fallback.
+
+## One-hundred-thirty-sixth Parmigiani Fleurier exact-reference expansion (retrieved 2026-09-03)
+
+The Parmigiani Fleurier audit reconciled the official [watches catalogue](https://www.parmigiani.com/en/watches/),
+collections pages, official WooCommerce API and individual product pages. It
+found 69 current exact references; two were already represented and 67
+additional exact references were added as planned targets. Legacy exception
+pieces and pocket-watch records were recorded as excluded from the current
+wristwatch universe. Each added target retains an official Parmigiani Fleurier
+product-page source. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Parmigiani Fleurier API and
+product pages were used as the primary-source fallback.
