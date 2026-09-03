@@ -2525,3 +2525,45 @@ references were added as planned targets. Strap records were excluded as
 non-watch records. Technical, price, and availability fields remain
 unpromoted. Perplexity was unavailable; official Baume & Mercier catalogue and
 collection pages were used as the primary-source fallback.
+
+## One-hundred-forty-ninth Zodiac exact-reference expansion (retrieved 2026-09-03)
+
+The Zodiac audit reconciled the official live catalogue, collection pages,
+sitemap and product cards. It found 38 current references; one was already
+represented and 37 additional exact references were added as planned targets.
+Accessories, duplicate collection cards and historical records without a
+current exact SKU were excluded. Technical, price, and availability fields
+remain unpromoted. Perplexity was unavailable; official Zodiac catalogue and
+product pages were used as the primary-source fallback.
+
+## One-hundred-fiftieth Bulova exact-reference expansion (retrieved 2026-09-03)
+
+The Bulova audit reconciled the official US men's and women's live collection
+pagination and individual product pages. It found 342 current Bulova watch
+references; two were already represented and 340 additional exact references
+were added as planned targets. Caravelle, straps, a winder, a pendant
+necklace, duplicate records and archived references were excluded from the
+Bulova watch scope. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Bulova collection and product
+pages were used as the primary-source fallback.
+
+## One-hundred-fifty-second Ebel exact-reference expansion (retrieved 2026-09-03)
+
+The Ebel audit reconciled the official live Explore Watches catalogue, exact
+reference category data and official indexed product pages. It found 104
+current references; one was already represented and 103 additional exact
+references were added as planned targets. Accessories, archived references and
+localized duplicate URLs were excluded. Technical, price, and availability
+fields remain unpromoted. Perplexity was unavailable; official Ebel catalogue
+and product pages were used as the primary-source fallback.
+
+## One-hundred-fifty-first Timex exact-SKU expansion (retrieved 2026-09-03)
+
+The Timex audit reconciled the official live Shopify all-products catalogue,
+pagination, sitemap and product pages. It found 1,465 current watch SKU
+variants; two were already represented and the remaining 1,463 were expanded
+into separate planned targets, each retaining its exact product-card URL and
+API page provenance. Straps, protection plans and other non-watch records were
+excluded. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; the official Timex Shopify catalogue and product
+pages were used as the primary-source fallback.
