@@ -1994,3 +1994,12 @@ catalogue](https://bellross.com/en-us/collections/toutes-nos-montres),
 [BR-X3](https://bellross.com/en-us/collections/br-x3), and
 [BR-X5](https://bellross.com/en-us/collections/br-x5). Perplexity was
 unavailable; no technical or commercial fields were promoted.
+
+## One-hundred-third Mido exact-reference expansion (retrieved 2026-09-03)
+
+The complete parallel Mido audit compared the manifest with 244 current exact
+references from the official [Mido watch catalogue](https://www.midowatches.com/en/watches.html)
+and official product cards. One reference was already represented; 243
+additional references across Baroncelli, Belluna, Commander, Multifort, Ocean
+Star, and Rainflower were added as separate planned targets. Perplexity was
+unavailable, so no technical, price, or availability fields were promoted.

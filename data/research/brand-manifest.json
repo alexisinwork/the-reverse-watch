@@ -35175,6 +35175,2921 @@
           "state": "accepted",
           "coverageRationale": "Accepted big-date integrated-geometry calibration variant.",
           "catalogueVariantId": "mido-m0495261104100"
+        },
+        {
+          "id": "mido-reference-m0072071103600",
+          "referenceLabel": "Mido exact current reference M0072071103600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0072071103800",
+          "referenceLabel": "Mido exact current reference M0072071103800",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0072071111600",
+          "referenceLabel": "Mido exact current reference M0072071111600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0072071603600",
+          "referenceLabel": "Mido exact current reference M0072071603600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0072073603600",
+          "referenceLabel": "Mido exact current reference M0072073603600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0072073611600",
+          "referenceLabel": "Mido exact current reference M0072073611600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0072073629100",
+          "referenceLabel": "Mido exact current reference M0072073629100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0272071101000",
+          "referenceLabel": "Mido exact current reference M0272071101000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0272072201000",
+          "referenceLabel": "Mido exact current reference M0272072201000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0272073626000",
+          "referenceLabel": "Mido exact current reference M0272073626000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274071101000",
+          "referenceLabel": "Mido exact current reference M0274071101000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274071101100",
+          "referenceLabel": "Mido exact current reference M0274071101100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274071105100",
+          "referenceLabel": "Mido exact current reference M0274071105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274071601000",
+          "referenceLabel": "Mido exact current reference M0274071601000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274071601100",
+          "referenceLabel": "Mido exact current reference M0274071601100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274072201000",
+          "referenceLabel": "Mido exact current reference M0274072201000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274072201100",
+          "referenceLabel": "Mido exact current reference M0274072201100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274073626000",
+          "referenceLabel": "Mido exact current reference M0274073626000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274073626100",
+          "referenceLabel": "Mido exact current reference M0274073626100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274081103100",
+          "referenceLabel": "Mido exact current reference M0274081103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274081104100",
+          "referenceLabel": "Mido exact current reference M0274081104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274081105100",
+          "referenceLabel": "Mido exact current reference M0274081105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274081603100",
+          "referenceLabel": "Mido exact current reference M0274081603100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274081606100",
+          "referenceLabel": "Mido exact current reference M0274081606100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274083603100",
+          "referenceLabel": "Mido exact current reference M0274083603100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0274261101800",
+          "referenceLabel": "Mido exact current reference M0274261101800",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0276251703100",
+          "referenceLabel": "Mido exact current reference M0276251703100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0276251704100",
+          "referenceLabel": "Mido exact current reference M0276251704100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0276253706100",
+          "referenceLabel": "Mido exact current reference M0276253706100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0372071103100",
+          "referenceLabel": "Mido exact current reference M0372071103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0372071103101",
+          "referenceLabel": "Mido exact current reference M0372071103101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0372071103601",
+          "referenceLabel": "Mido exact current reference M0372071103601",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0372071104100",
+          "referenceLabel": "Mido exact current reference M0372071104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0372071610600",
+          "referenceLabel": "Mido exact current reference M0372071610600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0372072103100",
+          "referenceLabel": "Mido exact current reference M0372072103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0372072203601",
+          "referenceLabel": "Mido exact current reference M0372072203601",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0372073603100",
+          "referenceLabel": "Mido exact current reference M0372073603100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374053605000",
+          "referenceLabel": "Mido exact current reference M0374053605000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374071103100",
+          "referenceLabel": "Mido exact current reference M0374071103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374071103101",
+          "referenceLabel": "Mido exact current reference M0374071103101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374071104100",
+          "referenceLabel": "Mido exact current reference M0374071104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374071104101",
+          "referenceLabel": "Mido exact current reference M0374071104101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374071105101",
+          "referenceLabel": "Mido exact current reference M0374071105101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374071603100",
+          "referenceLabel": "Mido exact current reference M0374071603100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374072103100",
+          "referenceLabel": "Mido exact current reference M0374072103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0374073606100",
+          "referenceLabel": "Mido exact current reference M0374073606100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0378071103100",
+          "referenceLabel": "Mido exact current reference M0378071103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0378072203100",
+          "referenceLabel": "Mido exact current reference M0378072203100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0378073603100",
+          "referenceLabel": "Mido exact current reference M0378073603100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0378073603101",
+          "referenceLabel": "Mido exact current reference M0378073603101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0390071104600",
+          "referenceLabel": "Mido exact current reference M0390071104600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0390071107600",
+          "referenceLabel": "Mido exact current reference M0390071107600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0390071109600",
+          "referenceLabel": "Mido exact current reference M0390071109600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0390071110600",
+          "referenceLabel": "Mido exact current reference M0390071110600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0390071133600",
+          "referenceLabel": "Mido exact current reference M0390071133600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0390072210600",
+          "referenceLabel": "Mido exact current reference M0390072210600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0390073604600",
+          "referenceLabel": "Mido exact current reference M0390073604600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0390073607600",
+          "referenceLabel": "Mido exact current reference M0390073607600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0392071610600",
+          "referenceLabel": "Mido exact current reference M0392071610600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0392072210600",
+          "referenceLabel": "Mido exact current reference M0392072210600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76002218",
+          "referenceLabel": "Mido exact current reference M76002218",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76003648",
+          "referenceLabel": "Mido exact current reference M76003648",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76003658",
+          "referenceLabel": "Mido exact current reference M76003658",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76004151",
+          "referenceLabel": "Mido exact current reference M76004151",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76004211",
+          "referenceLabel": "Mido exact current reference M76004211",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76004671",
+          "referenceLabel": "Mido exact current reference M76004671",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76004691",
+          "referenceLabel": "Mido exact current reference M76004691",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76009691",
+          "referenceLabel": "Mido exact current reference M76009691",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m76009n61",
+          "referenceLabel": "Mido exact current reference M76009N61",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m86003158",
+          "referenceLabel": "Mido exact current reference M86003158",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m86004151",
+          "referenceLabel": "Mido exact current reference M86004151",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m86004181",
+          "referenceLabel": "Mido exact current reference M86004181",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m86004211",
+          "referenceLabel": "Mido exact current reference M86004211",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m86004671",
+          "referenceLabel": "Mido exact current reference M86004671",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m86009n61",
+          "referenceLabel": "Mido exact current reference M86009N61",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0243072211600",
+          "referenceLabel": "Mido exact current reference M0243072211600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0243073711600",
+          "referenceLabel": "Mido exact current reference M0243073711600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0212071103100",
+          "referenceLabel": "Mido exact current reference M0212071103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0212071104100",
+          "referenceLabel": "Mido exact current reference M0212071104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0212071110600",
+          "referenceLabel": "Mido exact current reference M0212071110600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0212071629600",
+          "referenceLabel": "Mido exact current reference M0212071629600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0212073302100",
+          "referenceLabel": "Mido exact current reference M0212073302100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0212073305100",
+          "referenceLabel": "Mido exact current reference M0212073305100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214071141100",
+          "referenceLabel": "Mido exact current reference M0214071141100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214071141101",
+          "referenceLabel": "Mido exact current reference M0214071141101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214071141103",
+          "referenceLabel": "Mido exact current reference M0214071141103",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214071841100",
+          "referenceLabel": "Mido exact current reference M0214071841100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214072141100",
+          "referenceLabel": "Mido exact current reference M0214072141100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214073341100",
+          "referenceLabel": "Mido exact current reference M0214073341100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214073341101",
+          "referenceLabel": "Mido exact current reference M0214073341101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214073641100",
+          "referenceLabel": "Mido exact current reference M0214073641100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214073741100",
+          "referenceLabel": "Mido exact current reference M0214073741100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214301103100",
+          "referenceLabel": "Mido exact current reference M0214301103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214301104100",
+          "referenceLabel": "Mido exact current reference M0214301104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214301106100",
+          "referenceLabel": "Mido exact current reference M0214301106100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214303309100",
+          "referenceLabel": "Mido exact current reference M0214303309100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214311103100",
+          "referenceLabel": "Mido exact current reference M0214311103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214311104100",
+          "referenceLabel": "Mido exact current reference M0214311104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214311106100",
+          "referenceLabel": "Mido exact current reference M0214311106100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214311106101",
+          "referenceLabel": "Mido exact current reference M0214311106101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214311106102",
+          "referenceLabel": "Mido exact current reference M0214311106102",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0214312203100",
+          "referenceLabel": "Mido exact current reference M0214312203100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216261103100",
+          "referenceLabel": "Mido exact current reference M0216261103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216261105100",
+          "referenceLabel": "Mido exact current reference M0216261105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216261106100",
+          "referenceLabel": "Mido exact current reference M0216261106100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216261109100",
+          "referenceLabel": "Mido exact current reference M0216261109100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216261704100",
+          "referenceLabel": "Mido exact current reference M0216261704100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216262203100",
+          "referenceLabel": "Mido exact current reference M0216262203100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216262206100",
+          "referenceLabel": "Mido exact current reference M0216262206100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216263305100",
+          "referenceLabel": "Mido exact current reference M0216263305100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216263306100",
+          "referenceLabel": "Mido exact current reference M0216263306100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216263604100",
+          "referenceLabel": "Mido exact current reference M0216263604100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216263605100",
+          "referenceLabel": "Mido exact current reference M0216263605100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0216263605101",
+          "referenceLabel": "Mido exact current reference M0216263605101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0316313302100",
+          "referenceLabel": "Mido exact current reference M0316313302100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0316313306100",
+          "referenceLabel": "Mido exact current reference M0316313306100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m716937213",
+          "referenceLabel": "Mido exact current reference M716937213",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m842932113",
+          "referenceLabel": "Mido exact current reference M842932113",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m842932213",
+          "referenceLabel": "Mido exact current reference M842932213",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m842932223",
+          "referenceLabel": "Mido exact current reference M842932223",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m842932311",
+          "referenceLabel": "Mido exact current reference M842932311",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m842932511",
+          "referenceLabel": "Mido exact current reference M842932511",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m842942113",
+          "referenceLabel": "Mido exact current reference M842942113",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m842942123",
+          "referenceLabel": "Mido exact current reference M842942123",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m842942711",
+          "referenceLabel": "Mido exact current reference M842942711",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m84294n711",
+          "referenceLabel": "Mido exact current reference M84294N711",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384291104100",
+          "referenceLabel": "Mido exact current reference M0384291104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384301103100",
+          "referenceLabel": "Mido exact current reference M0384301103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384301104100",
+          "referenceLabel": "Mido exact current reference M0384301104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384301105100",
+          "referenceLabel": "Mido exact current reference M0384301105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384301603100",
+          "referenceLabel": "Mido exact current reference M0384301603100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384301704100",
+          "referenceLabel": "Mido exact current reference M0384301704100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384301708100",
+          "referenceLabel": "Mido exact current reference M0384301708100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384311103100",
+          "referenceLabel": "Mido exact current reference M0384311103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384311104100",
+          "referenceLabel": "Mido exact current reference M0384311104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384311106100",
+          "referenceLabel": "Mido exact current reference M0384311106100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384311109700",
+          "referenceLabel": "Mido exact current reference M0384311109700",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384311603100",
+          "referenceLabel": "Mido exact current reference M0384311603100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384313603100",
+          "referenceLabel": "Mido exact current reference M0384313603100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384313605100",
+          "referenceLabel": "Mido exact current reference M0384313605100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384313605700",
+          "referenceLabel": "Mido exact current reference M0384313605700",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384313705100",
+          "referenceLabel": "Mido exact current reference M0384313705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384313705109",
+          "referenceLabel": "Mido exact current reference M0384313705109",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384361103100",
+          "referenceLabel": "Mido exact current reference M0384361103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384361104100",
+          "referenceLabel": "Mido exact current reference M0384361104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384361106100",
+          "referenceLabel": "Mido exact current reference M0384361106100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384363606100",
+          "referenceLabel": "Mido exact current reference M0384363606100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0384363705100",
+          "referenceLabel": "Mido exact current reference M0384363705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0386621106000",
+          "referenceLabel": "Mido exact current reference M0386621106000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0386621704000",
+          "referenceLabel": "Mido exact current reference M0386621704000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0386623705000",
+          "referenceLabel": "Mido exact current reference M0386623705000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0404071104700",
+          "referenceLabel": "Mido exact current reference M0404071104700",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0404071105700",
+          "referenceLabel": "Mido exact current reference M0404071105700",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0404071604000",
+          "referenceLabel": "Mido exact current reference M0404071604000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0404071606000",
+          "referenceLabel": "Mido exact current reference M0404071606000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0404073302700",
+          "referenceLabel": "Mido exact current reference M0404073302700",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0404073606000",
+          "referenceLabel": "Mido exact current reference M0404073606000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0475071105100",
+          "referenceLabel": "Mido exact current reference M0475071105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0475071108100",
+          "referenceLabel": "Mido exact current reference M0475071108100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0475071704100",
+          "referenceLabel": "Mido exact current reference M0475071704100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0475073705100",
+          "referenceLabel": "Mido exact current reference M0475073705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0491101109600",
+          "referenceLabel": "Mido exact current reference M0491101109600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0491101111600",
+          "referenceLabel": "Mido exact current reference M0491101111600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0491101126300",
+          "referenceLabel": "Mido exact current reference M0491101126300",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0491103326300",
+          "referenceLabel": "Mido exact current reference M0491103326300",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0491103329600",
+          "referenceLabel": "Mido exact current reference M0491103329600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0493071104100",
+          "referenceLabel": "Mido exact current reference M0493071104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0493071108100",
+          "referenceLabel": "Mido exact current reference M0493071108100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0493071110600",
+          "referenceLabel": "Mido exact current reference M0493071110600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0493071113600",
+          "referenceLabel": "Mido exact current reference M0493071113600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0493073329600",
+          "referenceLabel": "Mido exact current reference M0493073329600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495261108100",
+          "referenceLabel": "Mido exact current reference M0495261108100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495261109100",
+          "referenceLabel": "Mido exact current reference M0495261109100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495261704100",
+          "referenceLabel": "Mido exact current reference M0495261704100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495261708100",
+          "referenceLabel": "Mido exact current reference M0495261708100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495261708101",
+          "referenceLabel": "Mido exact current reference M0495261708101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495263302100",
+          "referenceLabel": "Mido exact current reference M0495263302100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495263304100",
+          "referenceLabel": "Mido exact current reference M0495263304100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495263308100",
+          "referenceLabel": "Mido exact current reference M0495263308100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495263704100",
+          "referenceLabel": "Mido exact current reference M0495263704100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495263729100",
+          "referenceLabel": "Mido exact current reference M0495263729100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495264408100",
+          "referenceLabel": "Mido exact current reference M0495264408100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495271104100",
+          "referenceLabel": "Mido exact current reference M0495271104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495271108100",
+          "referenceLabel": "Mido exact current reference M0495271108100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0495273308100",
+          "referenceLabel": "Mido exact current reference M0495273308100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0555071104100",
+          "referenceLabel": "Mido exact current reference M0555071104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0555071105100",
+          "referenceLabel": "Mido exact current reference M0555071105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0555071705100",
+          "referenceLabel": "Mido exact current reference M0555071705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0555071709100",
+          "referenceLabel": "Mido exact current reference M0555071709100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0555072205100",
+          "referenceLabel": "Mido exact current reference M0555072205100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0555073304100",
+          "referenceLabel": "Mido exact current reference M0555073304100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0555073705100",
+          "referenceLabel": "Mido exact current reference M0555073705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0262071104100",
+          "referenceLabel": "Mido exact current reference M0262071104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0262071105100",
+          "referenceLabel": "Mido exact current reference M0262071105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0262073705600",
+          "referenceLabel": "Mido exact current reference M0262073705600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266081104101",
+          "referenceLabel": "Mido exact current reference M0266081104101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266081105100",
+          "referenceLabel": "Mido exact current reference M0266081105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266083305100",
+          "referenceLabel": "Mido exact current reference M0266083305100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266291104100",
+          "referenceLabel": "Mido exact current reference M0266291104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266291105101",
+          "referenceLabel": "Mido exact current reference M0266291105101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266291705100",
+          "referenceLabel": "Mido exact current reference M0266291705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266291705101",
+          "referenceLabel": "Mido exact current reference M0266291705101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266292205100",
+          "referenceLabel": "Mido exact current reference M0266292205100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0266293729100",
+          "referenceLabel": "Mido exact current reference M0266293729100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268071104101",
+          "referenceLabel": "Mido exact current reference M0268071104101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268291704100",
+          "referenceLabel": "Mido exact current reference M0268291704100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268291705100",
+          "referenceLabel": "Mido exact current reference M0268291705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268291804100",
+          "referenceLabel": "Mido exact current reference M0268291804100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268301104100",
+          "referenceLabel": "Mido exact current reference M0268301104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268301105100",
+          "referenceLabel": "Mido exact current reference M0268301105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268301603000",
+          "referenceLabel": "Mido exact current reference M0268301603000",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268301708100",
+          "referenceLabel": "Mido exact current reference M0268301708100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268301742100",
+          "referenceLabel": "Mido exact current reference M0268301742100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268301809100",
+          "referenceLabel": "Mido exact current reference M0268301809100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0268302105100",
+          "referenceLabel": "Mido exact current reference M0268302105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269071104100",
+          "referenceLabel": "Mido exact current reference M0269071104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269071104101",
+          "referenceLabel": "Mido exact current reference M0269071104101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269071106100",
+          "referenceLabel": "Mido exact current reference M0269071106100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269071705100",
+          "referenceLabel": "Mido exact current reference M0269071705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269072102100",
+          "referenceLabel": "Mido exact current reference M0269072102100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269073705100",
+          "referenceLabel": "Mido exact current reference M0269073705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269301101100",
+          "referenceLabel": "Mido exact current reference M0269301101100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269301103100",
+          "referenceLabel": "Mido exact current reference M0269301103100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269301104100",
+          "referenceLabel": "Mido exact current reference M0269301104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269301105100",
+          "referenceLabel": "Mido exact current reference M0269301105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0269301705100",
+          "referenceLabel": "Mido exact current reference M0269301705100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0424301104100",
+          "referenceLabel": "Mido exact current reference M0424301104100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0424301108100",
+          "referenceLabel": "Mido exact current reference M0424301108100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0424301109100",
+          "referenceLabel": "Mido exact current reference M0424301109100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0424301605100",
+          "referenceLabel": "Mido exact current reference M0424301605100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0424301704100",
+          "referenceLabel": "Mido exact current reference M0424301704100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0424302105100",
+          "referenceLabel": "Mido exact current reference M0424302105100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0424303609100",
+          "referenceLabel": "Mido exact current reference M0424303609100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0424304405100",
+          "referenceLabel": "Mido exact current reference M0424304405100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432071101100",
+          "referenceLabel": "Mido exact current reference M0432071101100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432071110600",
+          "referenceLabel": "Mido exact current reference M0432071110600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432071613100",
+          "referenceLabel": "Mido exact current reference M0432071613100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432073310600",
+          "referenceLabel": "Mido exact current reference M0432073310600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432073601100",
+          "referenceLabel": "Mido exact current reference M0432073601100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432073610600",
+          "referenceLabel": "Mido exact current reference M0432073610600",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432073611800",
+          "referenceLabel": "Mido exact current reference M0432073611800",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432361110100",
+          "referenceLabel": "Mido exact current reference M0432361110100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
+        },
+
+        {
+          "id": "mido-reference-m0432363610100",
+          "referenceLabel": "Mido exact current reference M0432363610100",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Mido reference confirmed by an official product card."
         }
       ]
     },
