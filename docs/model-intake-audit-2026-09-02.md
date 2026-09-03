@@ -1738,3 +1738,13 @@ Seamaster Diver 300M `210.32.44.51.01.002`, `522.92.44.20.04.001`, and
 All 14 were added as separate `planned` targets. Their primary identities are
 confirmed, but none has a successful Perplexity normalization job while the
 provider quota remains exhausted.
+
+## Eighty-ninth Rolex GMT exact-reference recheck (retrieved 2026-09-03)
+
+The official [Rolex GMT-Master II model index](https://www.rolex.com/en-us/watches/gmt-master-ii/all-models)
+and the individual [126710GRNR-0004 product card](https://www.rolex.com/en-us/watches/gmt-master-ii/m126710grnr-0004)
+showed one current Oystersteel/Oyster configuration absent from the manifest.
+It was added as `rolex-gmt-master-ii-126710grnr-0004` with `planned` status.
+The card identifies the exact reference, 40 mm Oystersteel case, calibre 3285,
+GMT function, and 100 m water resistance; Perplexity normalization is still
+pending because the API quota remains exhausted.

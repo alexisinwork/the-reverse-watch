@@ -1134,6 +1134,13 @@
           "state": "planned",
           "coverageIntent": { "functionProfiles": ["simple_date"] },
           "coverageRationale": "Add the exact current Everose-gold Day-Date 40 configuration exposed by the live Rolex model page."
+        },
+        {
+          "id": "rolex-gmt-master-ii-126710grnr-0004",
+          "referenceLabel": "Rolex GMT-Master II exact Oystersteel Oyster reference 126710GRNR-0004",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["gmt"] },
+          "coverageRationale": "Add the exact current grey-and-black Cerachrom GMT configuration exposed by the live Rolex product page."
         }
       ]
     },
