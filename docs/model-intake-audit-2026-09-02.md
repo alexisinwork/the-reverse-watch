@@ -2472,3 +2472,25 @@ recorded as excluded. Each added target retains an official Stowa product
 source. Technical, price, and availability fields remain unpromoted.
 Perplexity was unavailable; official Stowa pages, SKU metadata and sitemap
 were used as the primary-source fallback.
+
+## One-hundred-forty-fourth Nivada Grenchen exact-SKU expansion (retrieved 2026-09-03)
+
+The Nivada Grenchen audit reconciled the official [Our Watches catalogue](https://nivadagrenchenofficial.com/collections/our-watches),
+[official Shopify products API](https://nivadagrenchenofficial.com/collections/our-watches/products.json?limit=250)
+and all-products scope. It found 668 current exact SKU configurations across
+107 live watch product records; no reference was already represented, so all
+668 SKUs were added as separate planned targets. Six product records explicitly
+marked Closed and non-watch/accessory records were recorded as excluded.
+Technical, price, and availability fields remain unpromoted. Perplexity was
+unavailable; official Nivada Grenchen catalogue and Shopify API were used as
+the primary-source fallback.
+
+## One-hundred-forty-fifth Alpina exact-reference expansion (retrieved 2026-09-03)
+
+The Alpina audit reconciled the official [live watches catalogue](https://alpinawatches.com/en-gb/collections/all-watches),
+its Shopify products endpoint and official product cards. It found 68 current
+watch references; one was already represented and 67 additional exact
+references were added as planned targets. Accessories and records absent from
+the live watch feed were excluded. Technical, price, and availability fields
+remain unpromoted. Perplexity was unavailable; official Alpina catalogue,
+products endpoint and product cards were used as the primary-source fallback.
