@@ -2255,3 +2255,39 @@ records and accessories were recorded as excluded from the current watch
 universe. Each added target retains an official Glashütte Original catalogue
 or collection source. Technical, price, and availability fields remain
 unpromoted. Perplexity was unavailable because of quota exhaustion.
+
+## One-hundred-twenty-sixth F.P. Journe exact-variant expansion (retrieved 2026-09-03)
+
+The F.P. Journe audit reconciled the official [current collections catalogue](https://www.fpjourne.com/en/collections),
+the 2025–2028 official catalogue and PDF, and the individual collection pages.
+It found 48 current model variants; one was already represented and 47
+additional variants were added as planned targets. Accessories, non-watch
+items, retrospective collections and unique pieces were recorded as excluded
+from the current watch universe. Each added target retains an official F.P.
+Journe collection-page source. Technical, price, and availability fields
+remain unpromoted. Perplexity was unavailable in this session; official F.P.
+Journe pages and catalogue were used as the primary-source fallback.
+
+## One-hundred-twenty-seventh H. Moser & Cie. exact-reference expansion (retrieved 2026-09-03)
+
+The H. Moser & Cie. audit reconciled the official [collections catalogue](https://www.h-moser.com/en/collections),
+Streamliner, Pioneer, Endeavour and Heritage collection pages, and official
+archive pages. It found 78 current exact references; one was already
+represented and 77 additional exact references were added as planned targets.
+The Alpine wall clock, archived/sold-out watches and other non-current records
+were recorded as excluded from the current watch universe. Each added target
+retains an official H. Moser & Cie. catalogue or collection source. Technical,
+price, and availability fields remain unpromoted. Perplexity was unavailable;
+official H. Moser & Cie. pages were used as the primary-source fallback.
+
+## One-hundred-twenty-eighth Piaget exact-reference expansion (retrieved 2026-09-03)
+
+The Piaget audit reconciled the official [all-watches catalogue](https://www.piaget.com/us-en/watches/all-watches),
+official sitemap, regional watch catalogue and individual product pages. It
+found 189 current exact references; one was already represented and 188
+additional exact references were added as planned targets. A duplicate sitemap
+URL, straps, jewelry and other non-watch or service scopes were recorded as
+excluded from the current watch universe. Each added target retains its direct
+official Piaget product-page URL. Technical, price, and availability fields
+remain unpromoted. Perplexity was unavailable; official Piaget pages and
+sitemap were used as the primary-source fallback.
