@@ -2708,16 +2708,34 @@ records were excluded. Technical, price, and availability fields remain
 unpromoted. Perplexity was unavailable; official Pequignet catalogue, products
 endpoint and product pages were used as the primary-source fallback.
 
-## One-hundred-sixty-sixth Autodromo current-catalogue expansion (retrieved 2026-09-03)
+## One-hundred-sixty-sixth Brew exact-reference expansion (retrieved 2026-09-03)
 
-The Autodromo audit reconciled the official Watches collection and individual
-manufacturer product cards. It found five current watch variants: the two
-Monoposto Series Two color variants and the three Group C Turbo Sport color
-variants. The Azzurro Monoposto variant was already represented; Moss Green and
-the Gold, Grey, and Silver Anodized Group C variants were added as four separate
-planned targets. The manufacturer exposes these as product/color variants
-without separate model reference numbers, so no SKU or reference was invented.
-Archive watches, accessories, and historical catalogue entries were excluded.
-Technical, price, and availability fields remain unpromoted. Perplexity was
-unavailable; the official Autodromo collection and product cards were used as
-the primary-source fallback.
+The Brew audit reconciled the official Watches collection, family collections,
+FAQ and current product pages. It found 25 current catalogue identities; one
+was already represented and 24 additional exact identities were added as
+planned targets. Retromatic and Mastergraph archive references and non-watch
+accessories were excluded. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Brew Watches collection and
+product pages were used as the primary-source fallback.
+
+## One-hundred-sixty-seventh Autodromo exact-reference expansion (retrieved 2026-09-03)
+
+The Autodromo audit reconciled the official Watches collection, current
+product pages and archive pages. It found five current catalogue identities;
+one was already represented and four additional exact variants were added as
+planned targets. Historical archive watches and non-watch accessories were
+excluded. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official Autodromo catalogue and product pages
+were used as the primary-source fallback.
+
+## One-hundred-sixty-eighth Bremont exact-reference expansion (retrieved 2026-09-03)
+
+The Bremont audit reconciled the official live all-watches Shopify feed, the
+official collection page, product JSON pages and the manufacturer sitemap. It
+found 118 current watch references with exact manufacturer SKUs; one was
+already represented and 117 additional exact references were added as planned
+targets. The current feed was scoped to watch products only; Bremont archive
+records, accessories, service products and non-watch catalogue records were
+excluded. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official Bremont catalogue, product JSON and
+sitemap pages were used as the primary-source fallback.
