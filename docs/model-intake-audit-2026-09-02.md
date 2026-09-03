@@ -2437,3 +2437,15 @@ non-watch product types were recorded as excluded. Each added target retains
 an official Speake-Marin product source. Technical, price, and availability
 fields remain unpromoted. Perplexity was unavailable; official Speake-Marin
 pages and product API were used as the primary-source fallback.
+
+## One-hundred-forty-first Rolex official catalogue recheck (retrieved 2026-09-03)
+
+The official [Rolex collection page](https://www.rolex.com/watches) and
+[all-models view](https://www.rolex.com/watches/find-rolex) were rechecked
+against the Rolex manifest targets. The current official view exposes 17
+collection families and 56 grouped model rows. Every one of those 17 families
+is already represented in the manifest, including the current Land-Dweller
+family; no missing collection family was found and no target was removed.
+Rolex remains represented at exact-variant level where the grouped official
+view exposes multiple configurations. Perplexity was unavailable; official
+Rolex pages were used as the primary-source fallback.
