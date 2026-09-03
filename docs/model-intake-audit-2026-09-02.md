@@ -1748,3 +1748,137 @@ It was added as `rolex-gmt-master-ii-126710grnr-0004` with `planned` status.
 The card identifies the exact reference, 40 mm Oystersteel case, calibre 3285,
 GMT function, and 100 m water resistance; Perplexity normalization is still
 pending because the API quota remains exhausted.
+
+## Ninetieth Tudor current-catalogue expansion (retrieved 2026-09-03)
+
+The official Tudor 2026 catalogue and exact product cards exposed five
+references absent from the manifest: Black Bay 58 `M7939A1A0NU-0001`,
+`M7939A1A0NU-0002`, and `M7939A1A0NU-0003`, Monarch `M2639W1A0U-0001`, and
+Northflag `M9140G1A0U-0001`. The exact checks are the [Black Bay 58
+five-link card](https://www.tudorwatch.com/en/watches/black-bay-58/m7939a1a0nu-0001),
+[three-link card](https://www.tudorwatch.com/en/watches/black-bay-58/m7939a1a0nu-0002),
+[rubber-strap card](https://www.tudorwatch.com/en/watches/black-bay-58/m7939a1a0nu-0003),
+[Monarch card](https://www.tudorwatch.com/en/watches/tudor-monarch/m2639w1a0u-0001),
+and [Northflag card](https://www.tudorwatch.com/en/watches/tudor-northflag/m9140g1a0u-0001).
+All five were added as separate `planned` targets. Their exact identities are
+confirmed by Tudor; Perplexity normalization remains pending while the API
+quota is exhausted, so no unverified field was promoted.
+
+The same catalogue pass also confirmed [Black Bay Chrono Carbon 26
+`M79377KN-0003`](https://www.tudorwatch.com/en/watch-family/daring-watches/m79377kn-0003),
+[Royal 30 `M2830A1A0-0004`](https://www.tudorwatch.com/en/watches/tudor-royal/m2830a1a0-0004),
+and [Royal 40 steel-and-gold
+`M2840D1A3-0002`](https://www.tudorwatch.com/en/watches/tudor-royal/m2840d1a3-0002).
+They were added as separate `planned` targets with identity-only primary
+evidence; no characteristics were promoted without the required normalization
+review.
+
+## Ninety-first high-horology catalogue expansion (retrieved 2026-09-03)
+
+An independent exact-reference pass found 49 additional current cards absent
+from the manifest: 16 Patek Philippe, 18 Audemars Piguet, and 15 Vacheron
+Constantin. The Patek cards are [6301P-001](https://www.patek.com/en/collection/grand-complications/6301P-001),
+[5330G-001](https://www.patek.com/en/collection/complications/5330g-001),
+[5328G-001](https://www.patek.com/en/collection/complications/5328G-001),
+[5236P-011](https://www.patek.com/en/collection/grand-complications/5236p-011),
+[5270P-015](https://www.patek.com/en/collection/grand-complications/5270p-015),
+[5227G-015](https://www.patek.com/en/collection/calatrava/5227g-015),
+[6007G-010](https://www.patek.com/en/collection/calatrava/6007g-010),
+[5822P-001](https://www.patek.com/en/collection/cubitus/5822P-001),
+[5168G-010](https://www.patek.com/en/collection/aquanaut/5168G-010),
+[5738/1R-001](https://www.patek.com/en/collection/golden-ellipse/5738-1r-001),
+[7300/1200A-011](https://www.patek.com/en/collection/twenty4/7300-1200A-011),
+[7340/1R-001](https://www.patek.com/en/collection/twenty4/7340-1R-001),
+[5738G-001](https://www.patek.com/en/collection/golden-ellipse/5738g-001),
+[7200/50G-001](https://www.patek.com/en/collection/calatrava/7200-50g-001),
+[7200/50G-012](https://www.patek.com/en/collection/calatrava/7200-50g-012), and
+[5320G-011](https://www.patek.com/en/collection/grand-complications/5320G-011).
+
+The Audemars Piguet cards are [26665SG.ZZ.D209CR.01](https://www.audemarspiguet.com/us/en/watch-collection/code-1159/26665SG.ZZ.D209CR.01),
+[77410BC.ZZ.D132CR.01](https://www.audemarspiguet.com/us/en/watch-collection/code-1159/77410BC.ZZ.D132CR.01),
+[77410OR.ZZ.D343CR.01](https://www.audemarspiguet.com/us/en/watch-collection/code-1159/77410OR.ZZ.D343CR.01),
+[26242OR.ZZ.1322OR.02](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26242OR.ZZ.1322OR.02),
+[16202BA.HH.1241BA.01](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202BA.HH.1241BA.01),
+[16202BC.ZZ.1241BC.01](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/16202BC.ZZ.1241BC.01),
+[26715BC.ZZ.1356BC.01](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26715BC.ZZ.1356BC.01),
+[26715OR.ZZ.1356OR.01](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26715OR.ZZ.1356OR.01),
+[26715ST.ZZ.1356ST.01](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/26715ST.ZZ.1356ST.01),
+[77451ST.ZZ.1361ST.03](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77451ST.ZZ.1361ST.03),
+[77451ST.ZZ.1361ST.04](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77451ST.ZZ.1361ST.04),
+[77452BC.ZZ.1365BC.01](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77452BC.ZZ.1365BC.01),
+[77452OR.ZZ.1365OR.01](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/77452OR.ZZ.1365OR.01),
+[67651OR.ZZ.1261OR.02-A](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/67651OR.ZZ.1261OR.02-A),
+[75220BA.OO.7522BA.01](https://www.audemarspiguet.com/us/en/watch-collection/Etablisseurs/75220BA.OO.7522BA.01),
+[67650ST.OO.1261ST.01-A](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/67650ST.OO.1261ST.01-A),
+[67651ST.ZZ.1261ST.01-A](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/67651ST.ZZ.1261ST.01-A), and
+[67630OR.OO.1312OR.01-B](https://www.audemarspiguet.com/us/en/watch-collection/royal-oak/67630OR.OO.1312OR.01-B).
+
+The Vacheron Constantin cards are [4600V/200A-B980](https://www.vacheron-constantin.com/ww/en/collections/overseas/4600v-200a-b980.html),
+[4600V/200R-H128](https://www.vacheron-constantin.com/ww/en/collections/overseas/4600v-200r-h128.html),
+[3200T/000P-H167](https://www.vacheron-constantin.com/ww/en/collections/traditionnelle/3200t-000p-h167.html),
+[7930V/210T-H072](https://www.vacheron-constantin.com/ww/en/collections/overseas/7930v-210t-h072.html),
+[7930V/210T-H074](https://www.vacheron-constantin.com/ww/en/collections/overseas/7930v-210t-h074.html),
+[2500V/220P-H028](https://www.vacheron-constantin.com/ww/en/collections/overseas/2500v-220p-h028.html),
+[1100S/000R-H115](https://www.vacheron-constantin.com/ww/en/collections/historiques/1100s-000r-h115.html),
+[5000H/000A-B582](https://www.vacheron-constantin.com/ww/en/collections/historiques/5000h-000a-b582.html),
+[4305T/000G-H135](https://www.vacheron-constantin.com/ww/en/collections/traditionnelle/4305t-000g-h135.html),
+[85180/000G-H035](https://www.vacheron-constantin.com/ww/en/collections/patrimony/85180-000g-h035.html),
+[4600E/000R-H101](https://www.vacheron-constantin.com/ww/en/collections/fiftysix/4600e-000r-h101.html),
+[1410U/000G-H017](https://www.vacheron-constantin.com/ww/en/collections/patrimony/1410u-000g-h017.html),
+[8005F/000R-B498](https://www.vacheron-constantin.com/ww/en/collections/egerie/8005f-000r-b498.html),
+[6000E/000R-B488](https://www.vacheron-constantin.com/ww/en/collections/fiftysix/6000e-000r-b488.html), and
+[5520V/210A-B481](https://www.vacheron-constantin.com/ww/en/collections/overseas/5520v-210a-b481.html).
+All 49 were added as separate `planned` targets. Their identities are
+primary-source-confirmed; no Perplexity normalization or non-identity field
+was accepted because the provider quota remains exhausted.
+
+## Ninety-second Cartier and Grand Seiko exact-card expansion (retrieved 2026-09-03)
+
+The parallel catalogue audit compared the manifest against the official
+[Cartier all-watches catalogue](https://www.cartier.com/en-us/watches/collections/clash-unlimited/)
+and [Grand Seiko watch finder](https://www.grand-seiko.com/us-en/collections/all).
+It found 113 Cartier references absent from the manifest across Baignoire,
+Ballon Bleu, Panthère, Roadster, Santos/Santos-Dumont, Tank, and Tortue, plus
+110 Grand Seiko references across Elegance, Evolution 9, Heritage, Masterpiece,
+and Sport. Each retained reference was checked against an individual official
+product card by the agent; all 223 were added as separate `planned` targets.
+These are identity-level catalogue confirmations only. Perplexity was
+unavailable because the API quota is exhausted, so no technical or commercial
+fields were promoted and these targets remain outside the accepted catalogue.
+
+## Ninety-third Rolex current-reference recheck (retrieved 2026-09-03)
+
+The parallel Rolex audit compared all current family indexes and individual
+product cards. It found 77 displayed reference codes absent from the manifest:
+1908 (2), Cosmograph Daytona (13), Datejust (18), Lady-Datejust (13), Day-Date
+(13), Deepsea (1), Oyster Perpetual (7), Sky-Dweller (6), Submariner (2), and
+Yacht-Master (2). The official sources are the [Rolex all-models
+finder](https://www.rolex.com/en-us/watches/find-rolex) and the family indexes
+for [1908](https://www.rolex.com/en-us/watches/1908/all-models),
+[Daytona](https://www.rolex.com/en-us/watches/cosmograph-daytona/all-models),
+[Datejust](https://www.rolex.com/en-us/watches/datejust/all-models),
+[Lady-Datejust](https://www.rolex.com/en-us/watches/lady-datejust/all-models),
+[Day-Date](https://www.rolex.com/en-us/watches/day-date/all-models),
+[Deepsea](https://www.rolex.com/en-us/watches/deepsea/all-models),
+[Oyster Perpetual](https://www.rolex.com/en-us/watches/oyster-perpetual/all-models),
+[Sky-Dweller](https://www.rolex.com/en-us/watches/sky-dweller/all-models),
+[Submariner](https://www.rolex.com/en-us/watches/submariner/all-models), and
+[Yacht-Master](https://www.rolex.com/en-us/watches/yacht-master/all-models).
+All 77 exact identities were added as separate `planned` targets. The audit
+found no displayed-reference gap in Air-King, Explorer, Explorer II, GMT-Master
+II, Land-Dweller, Sea-Dweller, or Yacht-Master II. No specs or prices were
+promoted, and Perplexity normalization remains pending because its API quota
+is exhausted.
+
+## Ninety-fourth Breguet, Blancpain, Breitling and Zenith expansion (retrieved 2026-09-03)
+
+The parallel exact-card pass found 142 additional references absent from the
+manifest: 40 Breguet, 23 Blancpain, 47 Breitling, and 32 Zenith. Discovery and
+identity checks used the official [Breguet watch finder](https://www.breguet.com/en/find-a-watch),
+[Blancpain Fifty Fathoms finder](https://www.blancpain.com/en/watch-finder?facets_query=collection/12236),
+[Breitling collections](https://www.breitling.com/us-en/collections/), and
+[Zenith watch catalogue](https://www.zenith-watches.com/int/products/watches),
+with each retained reference checked against an official product card. All 142
+were added as separate `planned` targets. These are identity-level
+confirmations only; Perplexity normalization remains pending because its API
+quota is exhausted, and no unverified specifications were promoted.
