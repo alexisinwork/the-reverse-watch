@@ -2315,3 +2315,64 @@ references were recorded as excluded from the current watch universe. Each
 added target retains an official Bulgari catalogue or product source.
 Technical, price, and availability fields remain unpromoted. Perplexity was
 unavailable; official Bulgari pages were used as the primary-source fallback.
+
+## One-hundred-thirty-first Casio G-SHOCK exact-reference expansion (retrieved 2026-09-03)
+
+The Casio G-SHOCK audit reconciled the official [US G-SHOCK catalogue](https://www.casio.com/us/watches/gshock/),
+official sitemap, product pages, and an international product page for the
+represented reference. It found 407 current exact references; one was already
+represented and 406 additional exact references were added as planned
+targets. Fifty-nine records explicitly marked discontinued/old on official
+pages were recorded as excluded from the current watch universe. Each added
+target retains a direct official Casio product-page URL. Technical, price, and
+availability fields remain unpromoted. Perplexity was unavailable; official
+Casio pages were used as the primary-source fallback.
+
+## One-hundred-thirty-second MB&F exact-variant expansion (retrieved 2026-09-03)
+
+The MB&F audit reconciled the official [MB&F Machines catalogue](https://www.mbandf.com/machines/mbf-machines),
+official Eshop, machine pages, catalogue PDFs and special-project scopes. It
+found 62 current machine variants; two were already represented and 60
+additional variants were added as planned targets. Past machines,
+performance-art/unique scopes, M.A.D.Editions and non-watch co-creations were
+recorded as excluded from the current MB&F Machines universe. Where MB&F does
+not publish a separate SKU, the official model identity is retained without
+inventing one. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official MB&F pages and PDFs were used as the
+primary-source fallback.
+
+## One-hundred-thirty-third Richard Mille exact-reference expansion (retrieved 2026-09-03)
+
+The Richard Mille audit reconciled the official [current collections catalogue](https://www.richardmille.com/collections),
+collection product pages, sitemap and historical-models scope. It found 32
+current exact references; two were already represented and 30 additional exact
+references were added as planned targets. Historical models, watchcase and
+other accessory scope, the motorcycle collaboration, unique haute-joaillerie
+pieces and pre-owned inventory were recorded as excluded. Each added target
+retains an official Richard Mille collection-page source. Technical, price,
+and availability fields remain unpromoted. Perplexity was unavailable;
+official Richard Mille pages were used as the primary-source fallback.
+
+## One-hundred-thirty-fourth De Bethune exact-reference expansion (retrieved 2026-09-03)
+
+The De Bethune audit reconciled the official [current collections](https://www.debethune.ch/collections/),
+family pages, watch sitemap and historical catalogue. It found 28 current
+exact references; none were represented and all 28 were added as planned
+targets. The previously listed DB28XSZM was reclassified as archived, while
+historical, no-current-model, accessory, clock and unique-piece scopes were
+recorded as excluded. Each added target retains an official De Bethune
+collection-page source. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official De Bethune pages were used as
+the primary-source fallback.
+
+## One-hundred-thirty-fifth Czapek & Cie. exact-reference expansion (retrieved 2026-09-03)
+
+The Czapek & Cie. audit reconciled the official [Watch Finder](https://www.czapek.com/czapek-watch-finder),
+current product pages, sitemap and Archives scope. It found 62 current exact
+references; one was already represented and 61 additional exact references
+were added as planned targets. Archived products, sitemap-only records,
+accessories and the non-watch coffee-table book were recorded as excluded from
+the current watch universe. Each added target retains an official Czapek & Cie.
+product-page URL. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Czapek & Cie. pages, Finder
+and Archives were used as the primary-source fallback.
