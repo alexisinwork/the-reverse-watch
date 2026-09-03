@@ -2003,3 +2003,38 @@ and official product cards. One reference was already represented; 243
 additional references across Baroncelli, Belluna, Commander, Multifort, Ocean
 Star, and Rainflower were added as separate planned targets. Perplexity was
 unavailable, so no technical, price, or availability fields were promoted.
+
+## One-hundred-fourth DOXA exact-reference expansion (retrieved 2026-09-03)
+
+The complete parallel DOXA audit compared the manifest with 301 unique exact
+references extracted from the official [DOXA all-watches catalogue](https://doxawatches.com/collections/all-doxa-watches),
+official collection pages, product cards, and the product feed. One reference
+was already represented; the other 300 references were added as separate
+planned targets, including the previously omitted 130th Anniversary
+`799.10.101LE.10` card. Sixteen published references were unavailable for
+purchase at retrieval time but remain identity-confirmed. Perplexity was
+unavailable because of quota exhaustion; no technical, price, or availability
+fields were promoted.
+
+## One-hundred-fifth Baltic product-identity expansion (retrieved 2026-09-03)
+
+The parallel Baltic audit found 60 current product identities in the official
+[Baltic all-watches catalogue](https://baltic-watches.com/en/collections/watches).
+Two Aquascaphe Classic Blue Gilt and Black Gilt configurations were already
+represented; 58 additional configurations were added as planned targets.
+Baltic does not publish one public full-SKU registry for these configurations,
+so the manifest retains the official product handle and configuration name
+instead of inferring codes. Three archived Aquascaphe GMT identities were
+excluded from the current count using the [official archive](https://baltic-watches.com/en/archives/aquascaphe-gmt).
+Perplexity was unavailable; no technical, price, or availability fields were
+promoted.
+
+## One-hundred-sixth Farer product-identity expansion (retrieved 2026-09-03)
+
+The parallel Farer audit found 37 current product identities in the official
+[Farer all-watches catalogue](https://farer.com/collections/all-watches?pp=0).
+The Alert identity was already represented; 36 additional models were added as
+planned targets. Farer exposes product handles rather than a separate public
+reference field, and strap `W-*` SKUs were deliberately not treated as watch
+models. Perplexity was unavailable; no technical, price, or availability fields
+were promoted.
