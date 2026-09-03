@@ -1685,3 +1685,12 @@ confirms the new model family and its seven-variant structure but does not
 expose the individual reference numbers, so secondary-site codes were not
 imported. Exact product-card discovery remains queued for Perplexity recovery
 and primary-page validation.
+
+An independent industry index lists the candidate codes as
+`324.30.38.50.01.002`, `324.30.38.50.02.003`, `324.30.38.50.04.001`,
+`324.20.38.50.02.002`, `324.20.38.50.02.001`, `324.15.38.50.05.001`, and
+`324.15.38.50.03.001` ([index](https://www.minutesandbeyond.com/blog/omega-speedmaster-38-2026)).
+These remain discovery-only: the official release confirms seven variants but
+not these individual codes, and direct product-card checks did not produce a
+usable primary page during this pass. They are deliberately not manifest
+targets or confirmed models yet.
