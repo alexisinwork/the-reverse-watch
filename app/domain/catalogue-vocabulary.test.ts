@@ -145,4 +145,10 @@ describe("resolvePositioningGroup", () => {
     const mapped = Object.values(positioningMapForTest);
     for (const slug of mapped) expect(groups.has(slug)).toBe(true);
   });
+
+  it("has no two phrases that collapse to the same normalized key", () => {
+    const keys = Object.keys(positioningMapForTest);
+    const normalized = keys.map(normalizeSourceToken);
+    expect(new Set(normalized).size).toBe(keys.length);
+  });
 });
