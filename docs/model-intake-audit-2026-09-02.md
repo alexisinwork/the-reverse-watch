@@ -326,7 +326,7 @@ remain unchanged.
 The Perplexity worker found two exact candidates among the next five P3 brands;
 both were independently checked against official manufacturer sources:
 
-- Squale 1521 Full Luminous Bracelet `1521FULL.SQ20L` — [official product page](https://www.squale.ch/en/1521-full-luminous-bracelet) and [official catalog](https://www.squale.ch/live/assets/media/upload/Squale_Catalog.pdf).
+- Squale 1521 Full Luminous Bracelet `1521FULL.SQ20L` — earlier candidate recorded from the [official product page](https://www.squale.ch/en/1521-full-luminous-bracelet) and [official catalog](https://www.squale.ch/live/assets/media/upload/Squale_Catalog.pdf); the 2026-09-03 live-page recheck supersedes this identifier with `1521FULL.SQ20B`.
 - Hanhart 417 ES 42 mm `H721.210-` — [official product page](https://www.hanhart.com/en/product/417-es-42-mm/).
 
 Both remain research-only `needs_more_evidence`; exact identity and source URL
@@ -335,6 +335,12 @@ and Mühle-Glashütte returned contract-invalid or incomplete Perplexity
 responses and remain planned rather than being populated with guesses. The
 manifest now reports 106 `needs_review` targets and 169 review artifacts;
 accepted catalogue rows remain unchanged.
+
+## Squale current exact-reference recheck (retrieved 2026-09-03)
+
+Squale was rechecked against the [official current smart-search feed](https://www.squale.ch/en/smart-search), the [current watches catalogue](https://www.squale.ch/en/squale-watches), the [official sitemap](https://www.squale.ch/sitemap.xml), and each linked manufacturer product page. The current feed exposes 90 watch records with exact `referenza` values; every linked page was fetched and its visible `REF.` value matched the feed. The manifest now contains one individual planned target for each of those 90 exact current references.
+
+The earlier `1521FULL.SQ20L` candidate is manifest-only and is not counted as current: the live product page identifies the bracelet configuration as `1521FULL.SQ20B`. Archive/history pages and straps, bracelets, buckles, pouches, and other accessories were excluded from the current watch universe. Perplexity was unavailable in this session, so official Squale primary sources were used as the fallback; no aggregate placeholders or invented references were added.
 
 ## Eighth parallel exact-reference batch (retrieved 2026-09-02)
 
