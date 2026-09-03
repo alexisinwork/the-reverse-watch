@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-03T01:04:48.511Z",
+  "updatedAt": "2026-09-03T01:12:29.382Z",
   "brands": [
     {
       "slug": "rolex",
@@ -956,7 +956,7 @@
         {
           "id": "rolex-submariner-date-126610lv",
           "referenceLabel": "Rolex Submariner Date exact Oystersteel reference 126610LV",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "10000_15000"
@@ -970,7 +970,7 @@
         {
           "id": "rolex-sea-dweller-126603",
           "referenceLabel": "Rolex Sea-Dweller exact Yellow Rolesor reference 126603",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -984,7 +984,7 @@
         {
           "id": "rolex-submariner-date-126613lb",
           "referenceLabel": "Rolex Submariner Date exact Yellow Rolesor reference 126613LB",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -998,7 +998,7 @@
         {
           "id": "rolex-submariner-date-126613ln",
           "referenceLabel": "Rolex Submariner Date exact Yellow Rolesor reference 126613LN",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -1012,7 +1012,7 @@
         {
           "id": "rolex-datejust-36-126234",
           "referenceLabel": "Rolex Datejust 36 exact White Rolesor reference 126234",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "10000_15000"
@@ -1026,7 +1026,7 @@
         {
           "id": "rolex-datejust-36-126231",
           "referenceLabel": "Rolex Datejust 36 exact Everose Rolesor reference 126231",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "10000_15000"
@@ -1040,7 +1040,7 @@
         {
           "id": "rolex-datejust-31-278240",
           "referenceLabel": "Rolex Datejust 31 exact Oystersteel reference 278240",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "5000_10000"
@@ -1054,7 +1054,7 @@
         {
           "id": "rolex-datejust-31-278241",
           "referenceLabel": "Rolex Datejust 31 exact Everose Rolesor reference 278241",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "10000_15000"
@@ -1068,7 +1068,7 @@
         {
           "id": "rolex-day-date-36-128239",
           "referenceLabel": "Rolex Day-Date 36 exact white-gold reference 128239",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -1082,7 +1082,7 @@
         {
           "id": "rolex-day-date-36-128235",
           "referenceLabel": "Rolex Day-Date 36 exact Everose-gold reference 128235",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -1096,7 +1096,7 @@
         {
           "id": "rolex-daytona-126503",
           "referenceLabel": "Rolex Cosmograph Daytona exact Yellow Rolesor reference 126503",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"
@@ -1110,7 +1110,7 @@
         {
           "id": "rolex-day-date-40-228239",
           "referenceLabel": "Rolex Day-Date 40 exact white-gold reference 228239",
-          "state": "planned",
+          "state": "needs_review",
           "coverageIntent": {
             "priceBands": [
               "15000_plus"

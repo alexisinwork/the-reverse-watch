@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-datejust-31-278240",
+  "jobId": "b7cb0383-83e3-475c-9c29-128611699c35",
+  "reviewedAt": "2026-09-03T06:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Datejust 31",
+    "referenceCode": "278240",
+    "variantName": "Datejust 31 Oystersteel bright black dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/watches/datejust/m278240-0002",
+      "status": "validated_primary",
+      "note": "Exact live Rolex product page checked on 2026-09-03; Perplexity worker produced a successful normalized job."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact Rolex reference identity and official product URL are confirmed. Non-identity claims remain provisional until field-level review closes M1 gaps; no missing facts are estimated."
+}

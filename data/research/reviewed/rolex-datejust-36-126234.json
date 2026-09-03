@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-datejust-36-126234",
+  "jobId": "ed28f1fb-4fec-455a-8fd7-f34d2bad5d8a",
+  "reviewedAt": "2026-09-03T06:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Datejust 36",
+    "referenceCode": "126234",
+    "variantName": "Datejust 36 White Rolesor bright black dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/watches/datejust/m126234-0015",
+      "status": "validated_primary",
+      "note": "Exact live Rolex product page checked on 2026-09-03; Perplexity worker produced a successful normalized job."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact Rolex reference identity and official product URL are confirmed. Non-identity claims remain provisional until field-level review closes M1 gaps; no missing facts are estimated."
+}

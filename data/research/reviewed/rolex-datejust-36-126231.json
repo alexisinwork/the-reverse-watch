@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-datejust-36-126231",
+  "jobId": "e821a59c-6ea5-4e15-abf1-7e5dd462e943",
+  "reviewedAt": "2026-09-03T06:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Datejust 36",
+    "referenceCode": "126231",
+    "variantName": "Datejust 36 Everose Rolesor"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/watches/datejust/m126231-0018",
+      "status": "validated_primary",
+      "note": "Exact live Rolex product page checked on 2026-09-03; Perplexity worker produced a successful normalized job."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact Rolex reference identity and official product URL are confirmed. Non-identity claims remain provisional until field-level review closes M1 gaps; no missing facts are estimated."
+}

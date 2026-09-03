@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-submariner-date-126610lv",
+  "jobId": "af24ecf2-4831-45f6-8caa-948ee424ec3f",
+  "reviewedAt": "2026-09-03T06:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Submariner Date",
+    "referenceCode": "126610LV",
+    "variantName": "Submariner Date Oystersteel green Cerachrom"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/watches/submariner/m126610lv-0002",
+      "status": "validated_primary",
+      "note": "Exact live Rolex product page checked on 2026-09-03; Perplexity worker produced a successful normalized job."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact Rolex reference identity and official product URL are confirmed. Non-identity claims remain provisional until field-level review closes M1 gaps; no missing facts are estimated."
+}

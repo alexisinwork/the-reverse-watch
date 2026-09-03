@@ -1527,6 +1527,10 @@ candidate was checked against an exact current manufacturer product page.
   excluded from duplication; `126719BLRO` failed the live product-page gate.
 
   Exact primary pages: [126610LV](https://www.rolex.com/watches/submariner/m126610lv-0002), [126603](https://www.rolex.com/watches/sea-dweller/m126603-0001), [126613LB](https://www.rolex.com/watches/submariner/m126613lb-0002), [126613LN](https://www.rolex.com/watches/submariner/m126613ln-0002), [126234](https://www.rolex.com/watches/datejust/m126234-0015), [126231](https://www.rolex.com/watches/datejust/m126231-0018), [278240](https://www.rolex.com/watches/datejust/m278240-0002), [278241](https://www.rolex.com/watches/datejust/m278241-0004), [128239](https://www.rolex.com/watches/day-date/m128239-0063), [128235](https://www.rolex.com/watches/day-date/m128235-0070), [126503](https://www.rolex.com/watches/cosmograph-daytona/m126503-0001), and [228239](https://www.rolex.com/watches/day-date/m228239-0004).
+
+  The subsequent targeted worker pass successfully normalized all 12 Rolex
+  targets; each now has a review artifact with its Perplexity job ID and exact
+  product URL.
 - **Omega:** 10 missing exact references were confirmed across Speedmaster,
   Seamaster, Aqua Terra, Constellation, and De Ville. The first worker pass
   successfully normalized six of them: Speedmaster Moonwatch
@@ -1550,6 +1554,5 @@ candidate was checked against an exact current manufacturer product page.
   retries and remains `planned`.
 
 The successful targets received review artifacts with their Perplexity job IDs
-and exact manufacturer URLs. All remain research-only `needs_review`; the 12
-Rolex references and other queued exact pages are not treated as catalogue
-facts until their worker provenance is complete.
+and exact manufacturer URLs. All remain research-only `needs_review`; no model
+is promoted to the recommendation catalogue until its M1 fields are reviewed.

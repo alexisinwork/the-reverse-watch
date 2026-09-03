@@ -1,0 +1,41 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-datejust-31-278241",
+  "jobId": "da906add-1b45-48b1-8735-50c1e74aca86",
+  "reviewedAt": "2026-09-03T06:30:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Datejust 31",
+    "referenceCode": "278241",
+    "variantName": "Datejust 31 Everose Rolesor diamond-set dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/watches/datejust/m278241-0004",
+      "status": "validated_primary",
+      "note": "Exact live Rolex product page checked on 2026-09-03; Perplexity worker produced a successful normalized job."
+    }
+  ],
+  "verifiedProvisionalFields": ["identity", "referenceCode", "productUrl"],
+  "additionalVerifiedFacts": [],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseDiameterMm",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "movement",
+    "accuracy",
+    "waterResistanceM",
+    "lumeGrade",
+    "attachmentType",
+    "dateStatus"
+  ],
+  "note": "Exact Rolex reference identity and official product URL are confirmed. Non-identity claims remain provisional until field-level review closes M1 gaps; no missing facts are estimated."
+}
