@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "zenith-chronomaster-sport-033100360069m3100",
+  "jobId": "ca935833-c6ba-4d90-b023-932212764f8a",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Zenith",
+    "model": "Chronomaster Sport",
+    "referenceCode": "03.3100.3600/69.M3100",
+    "variantName": "41 mm steel, white dial, steel bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.zenith-watches.com/en_us/product/chronomaster-sport-03-3100-3600-69-m3100",
+      "status": "validated_primary",
+      "note": "The official Zenith product page was checked on 2026-09-03 and confirms the exact Chronomaster Sport steel-bracelet reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.zenith-watches.com/en_us/product/chronomaster-sport-03-3100-3600-69-m3100",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 13.6,
+      "sourceUrl": "https://pressroom.zenith-watches.com/app/uploads/2021/01/ZENITH-Chronomaster-Sport_FR-1.pdf",
+      "note": "Official technical sheet corroborates thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "El Primero 3600",
+      "sourceUrl": "https://www.zenith-watches.com/en_us/products/chronomaster-sport",
+      "note": "Official calibre family."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 60,
+      "sourceUrl": "https://pressroom.zenith-watches.com/app/uploads/2021/01/ZENITH-Chronomaster-Sport_FR-1.pdf",
+      "note": "Official technical sheet reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.zenith-watches.com/en_us/products/chronomaster-sport",
+      "note": "10 ATM / 100 m."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://topperjewelers.com/products/zenith-chronomaster-sport-03-3100-3600-69-m3100",
+      "note": "Exact reference has a date at 4:30; secondary exact-reference page used for this field."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current Zenith reference is confirmed. Stable price, fit geometry, configured weight, accuracy and lume grade remain null."
+}

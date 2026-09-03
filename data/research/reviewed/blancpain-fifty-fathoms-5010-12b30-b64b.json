@@ -1,0 +1,98 @@
+{
+  "reviewVersion": 1,
+  "targetId": "blancpain-fifty-fathoms-5010-12b30-b64b",
+  "jobId": "19201dc3-10dc-4a2a-b8cb-70b6cba92688",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Blancpain",
+    "model": "Fifty Fathoms Automatique",
+    "referenceCode": "5010 12B30 B64B",
+    "variantName": "42.3 mm Grade 23 titanium, black dial, rubber bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "status": "validated_primary",
+      "note": "The official Blancpain page was checked on 2026-09-03 and confirms the exact 5010 12B30 B64B current reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 2240000,
+      "sourceUrl": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "note": "US retail price normalized to minor units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "note": "US regional price."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 42.3,
+      "sourceUrl": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 14.3,
+      "sourceUrl": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "1315",
+      "sourceUrl": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "note": "Official automatic calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 120,
+      "sourceUrl": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "note": "120-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 300,
+      "sourceUrl": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "note": "300 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b",
+      "note": "Exact configuration has date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current 42.3 mm titanium Fifty Fathoms reference is confirmed; fit dimensions, weight, accuracy and lume grade remain null."
+}

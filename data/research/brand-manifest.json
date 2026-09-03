@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "strategy": "coverage_first",
   "targetBrandCount": 204,
-  "updatedAt": "2026-09-02T23:51:30.492Z",
+  "updatedAt": "2026-09-03T00:02:42.141Z",
   "brands": [
     {
       "slug": "rolex",
@@ -924,6 +924,34 @@
             ]
           },
           "coverageRationale": "Current official Yacht-Master configuration; preserve the 37 mm Everose Rolesor and black-dial boundary."
+        },
+        {
+          "id": "rolex-oyster-perpetual-41-134300-0010",
+          "referenceLabel": "Rolex Oyster Perpetual 41 exact Oystersteel reference 134300-0010",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current 41 mm Oyster Perpetual suffix identified in the 2026 Rolex catalogue; preserve the Oystersteel and no-date boundary."
+        },
+        {
+          "id": "rolex-datejust-41-126334-0033",
+          "referenceLabel": "Rolex Datejust 41 exact White Rolesor reference 126334-0033",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Datejust 41 green ombré dial suffix rather than treating the Datejust family as one variant."
         }
       ]
     },
@@ -1021,6 +1049,34 @@
             ]
           },
           "coverageRationale": "Add the exact limited Calatrava reference named in the owner dossier; preserve its distinct textured-dial boundary."
+        },
+        {
+          "id": "patek-calatrava-5226g-001",
+          "referenceLabel": "Patek Philippe Calatrava exact white-gold reference 5226G-001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the current exact textured-dial Calatrava with a separate white-gold, date and calfskin configuration."
+        },
+        {
+          "id": "patek-aquanaut-5261r-001",
+          "referenceLabel": "Patek Philippe Aquanaut Luce Annual Calendar exact rose-gold reference 5261R-001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "high_complication"
+            ]
+          },
+          "coverageRationale": "Add the exact current Aquanaut annual-calendar and moon-phase reference as a distinct complication variant."
         }
       ]
     },
@@ -1983,6 +2039,34 @@
             ]
           },
           "coverageRationale": "Current official Fifty Fathoms configuration; preserve the 45 mm steel, black-dial date, and sail-canvas/rubber boundary."
+        },
+        {
+          "id": "blancpain-fifty-fathoms-5010-12b30-b64b",
+          "referenceLabel": "Blancpain Fifty Fathoms Automatique exact titanium reference 5010 12B30 B64B",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current 42 mm titanium Fifty Fathoms date variant to separate material and size coverage from the local 45 mm steel model."
+        },
+        {
+          "id": "blancpain-air-command-ac03-12b40-98s",
+          "referenceLabel": "Blancpain Air Command exact titanium-bracelet reference AC03 12B40 98S",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "15000_plus"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact current 36.2 mm Air Command flyback chronograph with titanium bracelet."
         }
       ]
     },
@@ -2047,6 +2131,34 @@
             ]
           },
           "coverageRationale": "Current official Chronomaster Sport configuration; preserve the exact steel, black-dial, ceramic-bezel, and FKM-strap boundary."
+        },
+        {
+          "id": "zenith-chronomaster-sport-033100360069m3100",
+          "referenceLabel": "Zenith Chronomaster Sport exact steel reference 03.3100.3600/69.M3100",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "10000_15000"
+            ],
+            "functionProfiles": [
+              "chronograph"
+            ]
+          },
+          "coverageRationale": "Add the exact current steel-bracelet Chronomaster Sport as a separate attachment variant from the local FKM-strap reference."
+        },
+        {
+          "id": "zenith-defy-skyline-039300362051i001",
+          "referenceLabel": "Zenith Defy Skyline exact steel reference 03.9300.3620/51.I001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add an exact current Defy Skyline date reference to cover Zenith's integrated-sport alternative to Chronomaster."
         }
       ]
     },
@@ -2127,6 +2239,34 @@
           },
           "coverageRationale": "Add a source-complete compact premium tool row without borrowing Rolex brand-level facts.",
           "catalogueVariantId": "tudor-m79000n-0001"
+        },
+        {
+          "id": "tudor-black-bay-ceramic-m7941a1acnu-0001",
+          "referenceLabel": "Tudor Black Bay Ceramic exact reference M7941A1ACNU-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "time_only_no_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current ceramic Black Bay with METAS/COSC movement as a distinct case-material and resistance profile."
+        },
+        {
+          "id": "tudor-pelagos-ultra-m2543c1a7nu-0001",
+          "referenceLabel": "Tudor Pelagos Ultra exact titanium reference M2543C1A7NU-0001",
+          "state": "needs_review",
+          "coverageIntent": {
+            "priceBands": [
+              "5000_10000"
+            ],
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current 1000 m Pelagos Ultra for specialist water-abuse coverage."
         }
       ]
     },

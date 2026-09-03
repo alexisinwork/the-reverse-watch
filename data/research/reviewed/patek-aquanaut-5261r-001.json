@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "patek-aquanaut-5261r-001",
+  "jobId": "c948d221-a954-4d58-8d21-d1119d3b9970",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Patek Philippe",
+    "model": "Aquanaut Luce Annual Calendar",
+    "referenceCode": "5261R-001",
+    "variantName": "Rose gold, annual calendar, moon phases, composite strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.patek.com/en/collection/aquanaut/5261r-001",
+      "status": "validated_primary",
+      "note": "The official Patek Philippe page was checked on 2026-09-03 and confirms the exact 5261R-001 configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 39.9,
+      "sourceUrl": "https://www.patek.com/en/collection/aquanaut/5261r-001",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 10.94,
+      "sourceUrl": "https://www.patek.com/en/collection/aquanaut/5261r-001",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "26-330 S QA LU",
+      "sourceUrl": "https://www.patek.com/en/collection/aquanaut/5261r-001",
+      "note": "Official automatic annual-calendar calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": [35, 45],
+      "sourceUrl": "https://www.patek.com/en/collection/aquanaut/5261r-001",
+      "note": "Official 35–45 hour range."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.patek.com/en/collection/aquanaut/5261r-001",
+      "note": "30 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "annual_calendar_semi_perpetual",
+      "sourceUrl": "https://www.patek.com/en/collection/aquanaut/5261r-001",
+      "note": "Annual calendar, moon phase, day/month hands and date aperture."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current Aquanaut complication reference is confirmed. Price and unprovided fit, weight, accuracy and lume fields remain null."
+}

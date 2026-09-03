@@ -1,0 +1,92 @@
+{
+  "reviewVersion": 1,
+  "targetId": "blancpain-air-command-ac03-12b40-98s",
+  "jobId": "ac3e8ff8-7aae-4c4e-8432-eab4f92d978f",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Blancpain",
+    "model": "Air Command",
+    "referenceCode": "AC03 12B40 98S",
+    "variantName": "36.2 mm titanium, titanium bracelet, flyback chronograph"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s",
+      "status": "validated_primary",
+      "note": "The official Blancpain page was checked on 2026-09-03 and confirms the exact AC03 12B40 98S reference and titanium-bracelet configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 2600000,
+      "sourceUrl": "https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s",
+      "note": "USD price from the catalog record, normalized to minor units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s",
+      "note": "Regional price record."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 36.2,
+      "sourceUrl": "https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 11.5,
+      "sourceUrl": "https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "F188B",
+      "sourceUrl": "https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s",
+      "note": "Official automatic flyback calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 40,
+      "sourceUrl": "https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s",
+      "note": "40-hour reserve."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s",
+      "note": "Flyback chronograph configuration has no date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "waterResistanceM",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current Air Command reference is confirmed. The manufacturer page does not provide a stable water-resistance value or remaining fit/accuracy fields, so they remain null."
+}

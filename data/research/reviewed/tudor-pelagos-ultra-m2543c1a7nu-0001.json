@@ -1,0 +1,91 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tudor-pelagos-ultra-m2543c1a7nu-0001",
+  "jobId": "70fcc1ec-e22f-4239-b261-87778bebbfe7",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tudor",
+    "model": "Pelagos Ultra",
+    "referenceCode": "M2543C1A7NU-0001",
+    "variantName": "43 mm titanium professional diver"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001",
+      "status": "validated_primary",
+      "note": "The official Tudor product page was checked on 2026-09-03 and confirms the exact current Pelagos Ultra reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 43,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 14.5,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 22,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001",
+      "note": "Official lug width."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "MT5612-U",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001",
+      "note": "COSC/METAS automatic calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 65,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001",
+      "note": "65-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 1000,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001",
+      "note": "1000 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001",
+      "note": "Exact Pelagos Ultra configuration includes date."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current titanium professional-diver reference is confirmed. Price, fit geometry, configured weight, accuracy and lume grade remain null."
+}

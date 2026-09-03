@@ -1,0 +1,93 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-oyster-perpetual-41-134300-0010",
+  "jobId": "4f3c1fa0-39e7-4711-a5c4-31654abfbefe",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Oyster Perpetual 41",
+    "referenceCode": "134300-0010",
+    "variantName": "Oystersteel, multicolour Jubilee-motif dial"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010",
+      "status": "validated_primary",
+      "note": "The exact Rolex suffix page was checked on 2026-09-03 and confirms the current Oyster Perpetual 41 configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 705000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010",
+      "note": "US retail price normalized to minor units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010",
+      "note": "US regional price."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "3230",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010",
+      "note": "Approximately 70 hours."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010",
+      "note": "100 m Oyster case rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010",
+      "note": "Oyster Perpetual is time-only."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current Rolex suffix is confirmed. Rolex does not publish the remaining fit geometry, configured weight, accuracy or specific lume grade on the product page."
+}

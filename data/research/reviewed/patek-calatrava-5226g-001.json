@@ -1,0 +1,85 @@
+{
+  "reviewVersion": 1,
+  "targetId": "patek-calatrava-5226g-001",
+  "jobId": "43a090b6-f807-4411-83e1-7120f45678ef",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Patek Philippe",
+    "model": "Calatrava",
+    "referenceCode": "5226G-001",
+    "variantName": "White gold, charcoal textured dial, calfskin straps"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.patek.com/en/collection/calatrava/5226g-001",
+      "status": "validated_primary",
+      "note": "The official Patek Philippe page was checked on 2026-09-03 and confirms the exact 5226G-001 configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 40,
+      "sourceUrl": "https://www.patek.com/en/collection/calatrava/5226g-001",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 8.53,
+      "sourceUrl": "https://www.patek.com/en/collection/calatrava/5226g-001",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "26-330 S C",
+      "sourceUrl": "https://www.patek.com/en/collection/calatrava/5226g-001",
+      "note": "Official automatic calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": [35, 45],
+      "sourceUrl": "https://www.patek.com/en/collection/calatrava/5226g-001",
+      "note": "Official 35–45 hour range."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 30,
+      "sourceUrl": "https://www.patek.com/en/collection/calatrava/5226g-001",
+      "note": "30 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.patek.com/en/collection/calatrava/5226g-001",
+      "note": "Exact Calatrava includes date and sweep seconds."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current white-gold Calatrava reference is confirmed. Price and unprovided fit, weight, accuracy and lume fields remain null."
+}

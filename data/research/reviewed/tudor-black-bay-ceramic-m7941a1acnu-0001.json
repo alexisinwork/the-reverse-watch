@@ -1,0 +1,91 @@
+{
+  "reviewVersion": 1,
+  "targetId": "tudor-black-bay-ceramic-m7941a1acnu-0001",
+  "jobId": "f5dd2da9-93f0-41f2-a12f-713de9b05dda",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Tudor",
+    "model": "Black Bay Ceramic",
+    "referenceCode": "M7941A1ACNU-0001",
+    "variantName": "41 mm ceramic case and bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001",
+      "status": "validated_primary",
+      "note": "The official Tudor product page was checked on 2026-09-03 and confirms the exact current Black Bay Ceramic reference."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "geometry.lugWidthMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "geometry.caseThicknessMm",
+      "value": 13.6,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001",
+      "note": "Official thickness."
+    },
+    {
+      "fieldName": "geometry.lugWidthMm",
+      "value": 21,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001",
+      "note": "Official lug width."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "MT5602-U",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001",
+      "note": "COSC/METAS automatic calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001",
+      "note": "70-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 200,
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001",
+      "note": "200 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "no_date",
+      "sourceUrl": "https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001",
+      "note": "Exact ceramic configuration is time-only."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "lugToLugMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current ceramic reference is confirmed. Price, non-published fit geometry, weight, accuracy and lume grade remain null."
+}

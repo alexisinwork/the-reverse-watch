@@ -1433,3 +1433,24 @@ manufacturer pages:
 All six remain `needs_review`: exact identity and manufacturer-published facts
 are retained with provenance, while price, configured weight, accuracy and
 other unpublished M1 fields remain null.
+
+## Seventy-ninth Perplexity exact-reference pass (retrieved 2026-09-03)
+
+The next catalogue sweep added ten exact references after Perplexity discovery
+and manufacturer-page cross-checking:
+
+- [Rolex Oyster Perpetual 41 `134300-0010`](https://www.rolex.com/en-us/watches/oyster-perpetual/m134300-0010): Oystersteel, 41 mm, calibre 3230, approximately 70-hour reserve, 100 m, Oyster bracelet and no date.
+- [Rolex Datejust 41 `126334-0033`](https://www.rolex.com/en-us/watches/datejust/m126334-0033): White Rolesor, 41 mm, calibre 3235, approximately 70-hour reserve, 100 m, Oyster bracelet and instantaneous date.
+- [Patek Philippe Calatrava `5226G-001`](https://www.patek.com/en/collection/calatrava/5226g-001): white gold, 40 x 8.53 mm, calibre 26-330 S C, 35–45-hour reserve, 30 m and date.
+- [Patek Philippe Aquanaut Luce `5261R-001`](https://www.patek.com/en/collection/aquanaut/5261r-001): rose gold, 39.9 x 10.94 mm, calibre 26-330 S QA LU, 35–45-hour reserve, 30 m and annual calendar/moon phase.
+- [Blancpain Fifty Fathoms `5010 12B30 B64B`](https://www.blancpain.com/en-us/fifty-fathoms/fifty-fathoms-automatique-5010-12b30-b64b): Grade 23 titanium, 42.3 x 14.3 mm, calibre 1315, 120-hour reserve, 300 m and date.
+- [Blancpain Air Command `AC03 12B40 98S`](https://www.blancpain.com/en/air-command/air-command-ac03-12b40-98s): 36.2 x 11.5 mm titanium flyback chronograph, calibre F188B, 40-hour reserve and titanium bracelet.
+- [Zenith Defy Skyline `03.9300.3620/51.I001`](https://www.zenith-watches.com/en_nl/product/defy-skyline-03-9300-3620-51-i001): 41 mm steel, calibre El Primero 3620, 60-hour reserve, 100 m, quick-change bracelet/strap system and date.
+- [Zenith Chronomaster Sport `03.3100.3600/69.M3100`](https://www.zenith-watches.com/en_us/product/chronomaster-sport-03-3100-3600-69-m3100): 41 mm steel-bracelet reference, El Primero 3600, 60-hour reserve, 100 m and date.
+- [Tudor Black Bay Ceramic `M7941A1ACNU-0001`](https://www.tudorwatch.com/en/watches/black-bay/m7941a1acnu-0001): 41 mm ceramic, MT5602-U, 70-hour reserve, 200 m and no date.
+- [Tudor Pelagos Ultra `M2543C1A7NU-0001`](https://www.tudorwatch.com/en/watches/pelagos/m2543c1a7nu-0001): 43 mm titanium, MT5612-U, 65-hour reserve, 1,000 m, rubber/bracelet options and date.
+
+The malformed first Zenith Chronomaster response was not imported; a forced
+retry succeeded and produced a field-level review. All ten entries remain
+`needs_review` with provenance, and no absent fit, weight, accuracy or lume
+fields were filled with estimates.

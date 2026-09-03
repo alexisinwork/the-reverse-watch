@@ -1,0 +1,86 @@
+{
+  "reviewVersion": 1,
+  "targetId": "zenith-defy-skyline-039300362051i001",
+  "jobId": "7a797612-d2aa-40bc-b18f-3a5b247b74ba",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Zenith",
+    "model": "Defy Skyline",
+    "referenceCode": "03.9300.3620/51.I001",
+    "variantName": "41 mm steel, blue dial, bracelet and rubber strap"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.zenith-watches.com/en_nl/product/defy-skyline-03-9300-3620-51-i001",
+      "status": "validated_primary",
+      "note": "The official Zenith product page was checked on 2026-09-03 and confirms the exact Defy Skyline reference and current steel configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.zenith-watches.com/en_nl/product/defy-skyline-03-9300-3620-51-i001",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "El Primero 3620",
+      "sourceUrl": "https://www.zenith-watches.com/en_nl/product/defy-skyline-03-9300-3620-51-i001",
+      "note": "Official calibre family."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 60,
+      "sourceUrl": "https://www.zenith-watches.com/en_nl/product/defy-skyline-03-9300-3620-51-i001",
+      "note": "60-hour reserve."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.zenith-watches.com/en_nl/product/defy-skyline-03-9300-3620-51-i001",
+      "note": "10 ATM / 100 m."
+    },
+    {
+      "fieldName": "operation.attachmentType",
+      "value": "integrated quick-change bracelet/strap system",
+      "sourceUrl": "https://www.zenith-watches.com/en_nl/product/defy-skyline-03-9300-3620-51-i001",
+      "note": "Exact attachment system."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.zenith-watches.com/en_nl/product/defy-skyline-03-9300-3620-51-i001",
+      "note": "Date at 3 o'clock in the exact configuration."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "price",
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current Zenith reference is confirmed. The source record used for review did not establish stable regional price or remaining geometry/accuracy/lume fields."
+}

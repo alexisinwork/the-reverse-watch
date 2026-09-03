@@ -1,0 +1,93 @@
+{
+  "reviewVersion": 1,
+  "targetId": "rolex-datejust-41-126334-0033",
+  "jobId": "f7c2c8e5-c189-4203-b125-1c4d43115d83",
+  "reviewedAt": "2026-09-03T00:00:00.000Z",
+  "reviewer": "codex-source-review",
+  "outcome": "needs_more_evidence",
+  "candidateIdentity": {
+    "brand": "Rolex",
+    "model": "Datejust 41",
+    "referenceCode": "126334-0033",
+    "variantName": "White Rolesor, green lacquer ombré dial, Oyster bracelet"
+  },
+  "sourceChecks": [
+    {
+      "url": "https://www.rolex.com/en-us/watches/datejust/m126334-0033",
+      "status": "validated_primary",
+      "note": "The exact Rolex suffix page was checked on 2026-09-03 and confirms the current Datejust 41 configuration."
+    }
+  ],
+  "verifiedProvisionalFields": [
+    "identity",
+    "referenceCode",
+    "productUrl",
+    "price.amountMinor",
+    "price.currency",
+    "materials.case",
+    "geometry.caseDiameterMm",
+    "geometry.caseThicknessMm",
+    "movement.type",
+    "movement.caliber",
+    "movement.powerReserveHours",
+    "operation.waterResistanceM",
+    "operation.attachmentType",
+    "dateStatus"
+  ],
+  "additionalVerifiedFacts": [
+    {
+      "fieldName": "price.amountMinor",
+      "value": 1165000,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/datejust/m126334-0033",
+      "note": "US retail price normalized to minor units."
+    },
+    {
+      "fieldName": "price.currency",
+      "value": "USD",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/datejust/m126334-0033",
+      "note": "US regional price."
+    },
+    {
+      "fieldName": "geometry.caseDiameterMm",
+      "value": 41,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/datejust/m126334-0033",
+      "note": "Official diameter."
+    },
+    {
+      "fieldName": "movement.caliber",
+      "value": "3235",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/datejust/m126334-0033",
+      "note": "Official calibre."
+    },
+    {
+      "fieldName": "movement.powerReserveHours",
+      "value": 70,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/datejust/m126334-0033",
+      "note": "Approximately 70 hours."
+    },
+    {
+      "fieldName": "operation.waterResistanceM",
+      "value": 100,
+      "sourceUrl": "https://www.rolex.com/en-us/watches/datejust/m126334-0033",
+      "note": "100 m rating."
+    },
+    {
+      "fieldName": "dateStatus",
+      "value": "date_present",
+      "sourceUrl": "https://www.rolex.com/en-us/watches/datejust/m126334-0033",
+      "note": "Instantaneous date with Cyclops lens."
+    }
+  ],
+  "rejectedProvisionalFields": [],
+  "missingM1Fields": [
+    "caseWidthMm",
+    "caseLengthMm",
+    "caseThicknessMm",
+    "lugToLugMm",
+    "lugWidthMm",
+    "weightFullG",
+    "accuracy",
+    "lumeGrade"
+  ],
+  "note": "Exact current Rolex Datejust suffix is confirmed; unprovided case geometry, weight, accuracy and lume grade remain null."
+}
