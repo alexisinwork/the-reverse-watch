@@ -2530,7 +2530,7 @@ collection pages were used as the primary-source fallback.
 
 The Zodiac audit reconciled the official live catalogue, collection pages,
 sitemap and product cards. It found 38 current references; one was already
-represented and 37 additional exact references were added as planned targets.
+represented and 37 additional references were added as planned targets.
 Accessories, duplicate collection cards and historical records without a
 current exact SKU were excluded. Technical, price, and availability fields
 remain unpromoted. Perplexity was unavailable; official Zodiac catalogue and
@@ -2547,16 +2547,6 @@ Bulova watch scope. Technical, price, and availability fields remain
 unpromoted. Perplexity was unavailable; official Bulova collection and product
 pages were used as the primary-source fallback.
 
-## One-hundred-fifty-second Ebel exact-reference expansion (retrieved 2026-09-03)
-
-The Ebel audit reconciled the official live Explore Watches catalogue, exact
-reference category data and official indexed product pages. It found 104
-current references; one was already represented and 103 additional exact
-references were added as planned targets. Accessories, archived references and
-localized duplicate URLs were excluded. Technical, price, and availability
-fields remain unpromoted. Perplexity was unavailable; official Ebel catalogue
-and product pages were used as the primary-source fallback.
-
 ## One-hundred-fifty-first Timex exact-SKU expansion (retrieved 2026-09-03)
 
 The Timex audit reconciled the official live Shopify all-products catalogue,
@@ -2568,9 +2558,15 @@ excluded. Technical, price, and availability fields remain unpromoted.
 Perplexity was unavailable; the official Timex Shopify catalogue and product
 pages were used as the primary-source fallback.
 
-## One-hundred-fifty-sixth Pequignet exact-reference expansion (retrieved 2026-09-03)
+## One-hundred-fifty-second Ebel exact-reference expansion (retrieved 2026-09-03)
 
-The Pequignet audit reconciled the official [all-models catalogue](https://pequignet.com/collections/tous-les-modeles-pequignet), its official Shopify products endpoint and the linked manufacturer product pages. It found 200 unique current watch references with exact manufacturer SKUs; one was already represented and 199 additional exact references were added as planned targets. Three coffret bundle records were excluded from the watch-reference universe, as was one duplicate product variant whose SKU is absent. Accessories and archive records were kept outside the current watch scope. Technical, price, and availability fields remain unpromoted. Perplexity was unavailable; official Pequignet catalogue, products endpoint and product pages were used as the primary-source fallback.
+The Ebel audit reconciled the official live Explore Watches catalogue, exact
+reference category data and official indexed product pages. It found 104
+current references; one was already represented and 103 additional exact
+references were added as planned targets. Accessories, archived references and
+localized duplicate URLs were excluded. Technical, price, and availability
+fields remain unpromoted. Perplexity was unavailable; official Ebel catalogue
+and product pages were used as the primary-source fallback.
 
 ## One-hundred-fifty-third Eberhard & Co. exact-reference expansion (retrieved 2026-09-03)
 
@@ -2627,47 +2623,101 @@ excluded. Technical, price, and availability fields remain unpromoted.
 Perplexity was unavailable; official MING catalogue and product pages were used
 as the primary-source fallback.
 
-## One-hundred-fifty-ninth Kurono Tokyo current-catalogue expansion (retrieved 2026-09-03)
+## One-hundred-fifty-eighth Studio Underd0g exact-reference expansion (retrieved 2026-09-03)
 
-The Kurono Tokyo audit reconciled the official catalogue, Salon Editions
-pages, sitemap and current product pages. It found two current catalogue
-identities not yet represented; both were added as separate planned targets.
-The represented 2026 Anniversary Malachite identity was retained. Sold-out
-Inseki, the closed Diver's expression-of-interest release and historical
-records were excluded. Technical, price, and availability fields remain
-unpromoted. Perplexity was unavailable; official Kurono Tokyo pages were used
+The Studio Underd0g audit reconciled the official live product feed, series
+collections and product pages. It found 18 current catalogue identities; one
+was already represented and 17 additional exact identities were added as
+planned targets. Historical special editions, pocket watches, duplicate
+Exclusive Access listings and accessories were excluded. Technical, price, and
+availability fields remain unpromoted. Perplexity was unavailable; official
+Studio Underd0g pages and product feed were used as the primary-source fallback.
+
+## One-hundred-fifty-ninth Vostok exact-reference expansion (retrieved 2026-09-03)
+
+The Vostok audit reconciled the official Chistopol Watch Factory live catalogue
+and exact-model product pages. It found 477 current factory references; one was
+already represented and 476 additional exact references were added as planned
+targets. Officially duplicated presentation pages and non-watch accessories
+were excluded; strap/bracelet variants published as distinct exact references
+were retained. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official Vostok factory catalogue pages were used
 as the primary-source fallback.
 
-## One-hundred-sixtieth MING exact-reference expansion (retrieved 2026-09-03)
+## One-hundred-sixtieth Vertex exact-reference expansion (retrieved 2026-09-03)
 
-The MING audit reconciled the official Watches catalogue, product guide and
-individual featured-product pages. It found 16 current catalogue identities;
-one was already represented and 15 additional exact identities were added as
-planned targets. Archive entries and catalogue-classified accessories were
+The Vertex audit reconciled the official watches feed, collection pages and
+individual product pages. It found 10 current catalogue references; one was
+already represented and nine additional exact references were added as planned
+targets. Stale merchandising text, duplicate product records and accessories
+were excluded. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official Vertex catalogue and product pages were
+used as the primary-source fallback.
+
+## One-hundred-sixty-first anOrdain exact-reference expansion (retrieved 2026-09-03)
+
+The anOrdain audit reconciled the official collections, current releases and
+individual product pages. It found 17 current model/colour identities; one was
+already represented and 16 additional identities were added as planned
+targets. The Archive collection, accessories and a historical Fabrik GMT
+variant were excluded. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official anOrdain catalogue and
+product pages were used as the primary-source fallback.
+
+## One-hundred-sixty-second Fears exact-reference expansion (retrieved 2026-09-03)
+
+The Fears audit reconciled the official current watch collection, pagination
+and individual product pages. It found 18 current catalogue identities; one
+was already represented and 17 additional exact identities were added as
+planned targets. Previous Models, the Archival Collection and non-watch
+accessories were excluded. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Fears collection and product
+pages were used as the primary-source fallback.
+
+## One-hundred-sixty-third Serica exact-reference expansion (retrieved 2026-09-03)
+
+The Serica audit reconciled the official live catalogue, Shopify product feed,
+individual product pages, history and accessories pages. It found 21 current
+catalogue references; two were already represented and 17 additional exact
+references were added as planned targets. A generic legacy manifest entry was
+retained as manifest-only because it does not identify a distinct current
+reference. Historical models and accessories were excluded. Technical, price,
+and availability fields remain unpromoted. Perplexity was unavailable; official
+Serica catalogue, product feed and product pages were used as the primary-source
+fallback.
+
+## One-hundred-sixty-fourth Kurono Tokyo current-catalogue expansion (retrieved 2026-09-03)
+
+The Kurono Tokyo audit reconciled the official catalogue, Salon Editions pages,
+sitemap and current product pages. It found two current catalogue identities
+not yet represented; both were added as separate planned targets. The
+represented 2026 Anniversary Malachite identity was retained. Sold-out Inseki,
+the closed Diver's expression-of-interest release and historical records were
 excluded. Technical, price, and availability fields remain unpromoted.
-Perplexity was unavailable; official MING catalogue and product pages were used
-as the primary-source fallback.
+Perplexity was unavailable; official Kurono Tokyo pages were used as the
+primary-source fallback.
 
-## One-hundred-sixty-first Serica exact-reference expansion (retrieved 2026-09-03)
+## One-hundred-sixty-fifth Pequignet exact-reference expansion (retrieved 2026-09-03)
 
-The Serica audit reconciled the official live catalogue, Shopify product feed,
-individual product pages, history and accessories pages. It found 21 current
-catalogue references; two were already represented and 17 additional exact
-references were added as planned targets. A generic legacy manifest entry was
-retained as manifest-only because it does not identify a distinct current
-reference. Historical models and accessories were excluded. Technical, price,
-and availability fields remain unpromoted. Perplexity was unavailable; official
-Serica catalogue, product feed and product pages were used as the primary-source
-fallback.
+The Pequignet audit reconciled the official all-models catalogue, Shopify
+products endpoint and linked manufacturer product pages. It found 200 unique
+current watch references with exact manufacturer SKUs; one was already
+represented and 199 additional exact references were added as planned targets.
+Coffret bundles, duplicate variants without exact SKU, accessories and archive
+records were excluded. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Pequignet catalogue, products
+endpoint and product pages were used as the primary-source fallback.
 
-## One-hundred-fifty-eighth Serica exact-reference expansion (retrieved 2026-09-03)
+## One-hundred-sixty-sixth Autodromo current-catalogue expansion (retrieved 2026-09-03)
 
-The Serica audit reconciled the official live catalogue, Shopify product feed,
-individual product pages, history and accessories pages. It found 21 current
-catalogue references; two were already represented and 17 additional exact
-references were added as planned targets. A generic legacy manifest entry was
-retained as manifest-only because it does not identify a distinct current
-reference. Historical models and accessories were excluded. Technical, price,
-and availability fields remain unpromoted. Perplexity was unavailable; official
-Serica catalogue, product feed and product pages were used as the primary-source
-fallback.
+The Autodromo audit reconciled the official Watches collection and individual
+manufacturer product cards. It found five current watch variants: the two
+Monoposto Series Two color variants and the three Group C Turbo Sport color
+variants. The Azzurro Monoposto variant was already represented; Moss Green and
+the Gold, Grey, and Silver Anodized Group C variants were added as four separate
+planned targets. The manufacturer exposes these as product/color variants
+without separate model reference numbers, so no SKU or reference was invented.
+Archive watches, accessories, and historical catalogue entries were excluded.
+Technical, price, and availability fields remain unpromoted. Perplexity was
+unavailable; the official Autodromo collection and product cards were used as
+the primary-source fallback.
