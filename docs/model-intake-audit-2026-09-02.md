@@ -1680,20 +1680,8 @@ The official [OMEGA press room release](https://press.omegawatches.com/omega-ext
 dated 2026-08-25 reports seven new Speedmaster 38 mm references, including
 steel, bicolour, and diamond-set configurations, with six date variants using
 calibre 3330 and one no-date variant using calibre 3332. The current manifest
-does not yet contain these 2026 Speedmaster 38 exact codes. The release page
-confirms the new model family and its seven-variant structure but does not
-expose the individual reference numbers, so secondary-site codes were not
-imported. Exact product-card discovery remains queued for Perplexity recovery
-and primary-page validation.
-
-An independent industry index lists the candidate codes as
-`324.30.38.50.01.002`, `324.30.38.50.02.003`, `324.30.38.50.04.001`,
-`324.20.38.50.02.002`, `324.20.38.50.02.001`, `324.15.38.50.05.001`, and
-`324.15.38.50.03.001` ([index](https://www.minutesandbeyond.com/blog/omega-speedmaster-38-2026)).
-These remain discovery-only: the official release confirms seven variants but
-not these individual codes, and direct product-card checks did not produce a
-usable primary page during this pass. They are deliberately not manifest
-targets or confirmed models yet.
+does not enumerate the codes, but a parallel exact-page audit confirmed all
+seven on individual official Omega product pages: [324.30.38.50.01.002](https://www.omegawatches.com/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385001002), [324.30.38.50.02.003](https://www.omegawatches.com/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385002003), [324.30.38.50.04.001](https://www.omegawatches.com/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32430385004001), [324.20.38.50.02.002](https://www.omegawatches.com/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32420385002002), [324.20.38.50.02.001](https://www.omegawatches.com/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32420385002001), [324.15.38.50.05.001](https://www.omegawatches.com/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32415385005001), and [324.15.38.50.03.001](https://www.omegawatches.com/watch-omega-speedmaster-38-co-axial-chronometer-chronograph-38-mm-32415385003001). They are now manifest targets, but remain `planned` until a valid Perplexity job provides the research-normalization record.
 
 Primary-page index for the 39 newly queued targets: Grand Seiko
 [SBGE295](https://www.grand-seiko.com/us-en/collections/sbge295g),
@@ -1735,3 +1723,18 @@ Seiko [SPB519J1](https://www.seikowatches.com/us-en/products/prospex/spb519j1),
 [SSK003](https://www.seikowatches.com/us-en/products/5sports/ssk003),
 [SSK033](https://www.seikowatches.com/pl-pl/products/5sports/ssk033), and
 [SRPL85](https://www.seikowatches.com/us-en/products/5sports/srpl85).
+
+## Eighty-eighth Omega exact-reference expansion (retrieved 2026-09-03)
+
+The independent Omega catalogue audit found 14 more current exact references
+on official product cards: nine Constellation Observatory references
+(`140.13.39.21.01.001`, `140.13.39.21.02.001`, `140.13.39.21.03.001`,
+`140.13.39.21.10.001`, `140.50.39.21.99.001`, `140.53.39.21.99.001`,
+`140.53.39.21.99.002`, `140.53.39.21.99.004`, `140.93.39.21.99.001`),
+Seamaster Diver 300M `210.32.44.51.01.002`, `522.92.44.20.04.001`, and
+`522.92.44.20.04.002`, and Speedmaster Moonwatch `310.60.42.50.01.002` and
+`310.60.42.50.10.002`. Representative exact primary checks are [Constellation Observatory 140.13.39.21.01.001](https://www.omegawatches.com.hk/en-hk/watch-omega-constellation-observatory-co-axial-master-chronometer-39-4-mm-14013392101001), [Seamaster Diver 300M 007 First Light](https://www.omegawatches.com.hk/en-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-chronograph-44-mm-21032445101002), [Seamaster Milano Cortina](https://www.omegawatches.com.hk/en-hk/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-43-5-mm-52292442004001), and [Speedmaster Moonwatch 310.60.42.50.01.002](https://www.omegawatches.com.hk/en-hk/watch-omega-speedmaster-moonwatch-professional-co-axial-master-chronometer-chronograph-42-mm-31060425001002).
+
+All 14 were added as separate `planned` targets. Their primary identities are
+confirmed, but none has a successful Perplexity normalization job while the
+provider quota remains exhausted.

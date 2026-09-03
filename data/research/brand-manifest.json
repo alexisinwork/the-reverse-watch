@@ -2113,6 +2113,174 @@
           "state": "planned",
           "coverageIntent": { "functionProfiles": ["simple_date"] },
           "coverageRationale": "Add the separate current De Ville Prestige grey-dial configuration confirmed on the manufacturer page."
+        },
+        {
+          "id": "omega-speedmaster-38-32430385001002",
+          "referenceLabel": "Omega Speedmaster 38 exact steel black no-date reference 324.30.38.50.01.002",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": ["5000_10000"],
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the current 38 mm steel no-date Speedmaster reference confirmed on the exact Omega product page."
+        },
+        {
+          "id": "omega-speedmaster-38-32430385002003",
+          "referenceLabel": "Omega Speedmaster 38 exact steel silver-dial reference 324.30.38.50.02.003",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": ["5000_10000"],
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the current 38 mm steel silver-dial Speedmaster reference confirmed on the exact Omega product page."
+        },
+        {
+          "id": "omega-speedmaster-38-32430385004001",
+          "referenceLabel": "Omega Speedmaster 38 exact steel white-dial reference 324.30.38.50.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": ["5000_10000"],
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the current 38 mm steel white-dial Speedmaster reference confirmed on the exact Omega product page."
+        },
+        {
+          "id": "omega-speedmaster-38-32420385002002",
+          "referenceLabel": "Omega Speedmaster 38 exact steel and Sedna Gold reference 324.20.38.50.02.002",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": ["10000_15000"],
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the current 38 mm steel and Sedna Gold Speedmaster reference confirmed on the exact Omega product page."
+        },
+        {
+          "id": "omega-speedmaster-38-32420385002001",
+          "referenceLabel": "Omega Speedmaster 38 exact steel and Moonshine Gold reference 324.20.38.50.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": ["10000_15000"],
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the current 38 mm steel and Moonshine Gold Speedmaster reference confirmed on the exact Omega product page."
+        },
+        {
+          "id": "omega-speedmaster-38-32415385005001",
+          "referenceLabel": "Omega Speedmaster 38 exact diamond-set mother-of-pearl reference 324.15.38.50.05.001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": ["10000_15000"],
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the current diamond-set mother-of-pearl 38 mm Speedmaster reference confirmed on the exact Omega product page."
+        },
+        {
+          "id": "omega-speedmaster-38-32415385003001",
+          "referenceLabel": "Omega Speedmaster 38 exact diamond-set ice-blue reference 324.15.38.50.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "priceBands": ["10000_15000"],
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the current diamond-set ice-blue 38 mm Speedmaster reference confirmed on the exact Omega product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14013392101001",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.13.39.21.01.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14013392102001",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.13.39.21.02.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14013392103001",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.13.39.21.03.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14013392110001",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.13.39.21.10.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14050392199001",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.50.39.21.99.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14053392199001",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.53.39.21.99.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14053392199002",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.53.39.21.99.002",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14053392199004",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.53.39.21.99.004",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-constellation-observatory-14093392199001",
+          "referenceLabel": "Omega Constellation Observatory exact reference 140.93.39.21.99.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["time_only_no_date"] },
+          "coverageRationale": "Add the current exact Constellation Observatory configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-seamaster-diver-007-21032445101002",
+          "referenceLabel": "Omega Seamaster Diver 300M Chronograph 007 First Light exact reference 210.32.44.51.01.002",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the current exact 007 First Light Seamaster chronograph confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-seamaster-diver-milano-52292442004001",
+          "referenceLabel": "Omega Seamaster Diver 300M Milano Cortina exact reference 522.92.44.20.04.001",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the current exact Milano Cortina Seamaster configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-seamaster-diver-milano-52292442004002",
+          "referenceLabel": "Omega Seamaster Diver 300M Milano Cortina exact reference 522.92.44.20.04.002",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["simple_date"] },
+          "coverageRationale": "Add the current exact Milano Cortina Seamaster configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-speedmaster-moonwatch-31060425001002",
+          "referenceLabel": "Omega Speedmaster Moonwatch Professional exact Canopus Gold reference 310.60.42.50.01.002",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the current exact Moonwatch precious-metal configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-speedmaster-moonwatch-31060425010002",
+          "referenceLabel": "Omega Speedmaster Moonwatch Professional exact reference 310.60.42.50.10.002",
+          "state": "planned",
+          "coverageIntent": { "functionProfiles": ["chronograph"] },
+          "coverageRationale": "Add the current exact Moonwatch configuration confirmed on the manufacturer product page."
         }
       ]
     },
