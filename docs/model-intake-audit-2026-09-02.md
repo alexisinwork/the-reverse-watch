@@ -2567,3 +2567,107 @@ API page provenance. Straps, protection plans and other non-watch records were
 excluded. Technical, price, and availability fields remain unpromoted.
 Perplexity was unavailable; the official Timex Shopify catalogue and product
 pages were used as the primary-source fallback.
+
+## One-hundred-fifty-sixth Pequignet exact-reference expansion (retrieved 2026-09-03)
+
+The Pequignet audit reconciled the official [all-models catalogue](https://pequignet.com/collections/tous-les-modeles-pequignet), its official Shopify products endpoint and the linked manufacturer product pages. It found 200 unique current watch references with exact manufacturer SKUs; one was already represented and 199 additional exact references were added as planned targets. Three coffret bundle records were excluded from the watch-reference universe, as was one duplicate product variant whose SKU is absent. Accessories and archive records were kept outside the current watch scope. Technical, price, and availability fields remain unpromoted. Perplexity was unavailable; official Pequignet catalogue, products endpoint and product pages were used as the primary-source fallback.
+
+## One-hundred-fifty-third Eberhard & Co. exact-reference expansion (retrieved 2026-09-03)
+
+The Eberhard & Co. audit reconciled the official live Finder across its
+pagination, current collection/novelty pages and individual manufacturer
+product pages. The reconciled set contains 161 exact references: one was
+already represented and 160 additional references were added as planned
+targets. Repeated Finder cards, a desk clock, accessories and historical
+records without a current live-catalogue signal were excluded. Technical,
+price, and availability fields remain unpromoted. Perplexity was unavailable;
+official Eberhard & Co. Finder, collection and product pages were used as the
+primary-source fallback.
+
+## One-hundred-fifty-fourth Raketa exact-reference expansion (retrieved 2026-09-03)
+
+The Raketa audit reconciled the official live watches catalogue, collections,
+sitemap and product pages. It found 23 current exact references; one was
+already represented and 22 additional references were added as planned
+targets. Strap and bracelet SKUs, historical records and alternate-language
+duplicate URLs were excluded. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Raketa catalogue and product
+pages were used as the primary-source fallback.
+
+## One-hundred-fifty-fifth Konstantin Chaykin exact-reference expansion (retrieved 2026-09-03)
+
+The Konstantin Chaykin audit reconciled the official current catalogue plus
+Louis Erard and Behrens collaboration product pages. It found 11 current exact
+references; all 11 were added as planned targets. Current Wristmons without a
+published exact reference were preserved as manifest-only or excluded
+records, and bundles, sold-out historical collaborations and archive records
+were excluded. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official manufacturer and collaboration pages were
+used as the primary-source fallback.
+
+## One-hundred-fifty-sixth Poljot / Sturmanskie exact-reference expansion (retrieved 2026-09-03)
+
+The Poljot / Sturmanskie audit reconciled the official live all-watches
+catalogue, paginated product records, archive and accessories pages. It found
+147 unique current exact references; all 147 were added individually as planned
+targets. The pre-existing Poljot International Kirovsky target was retained as
+manifest-only because it belongs to a separate German catalogue. Archive
+records, straps, bracelets and historical assemblies were excluded. Technical,
+price, and availability fields remain unpromoted. Perplexity was unavailable;
+official Sturmanskie pages and the official Poljot International product page
+were used as the primary-source fallback.
+
+## One-hundred-fifty-seventh MING exact-reference expansion (retrieved 2026-09-03)
+
+The MING audit reconciled the official Watches catalogue, product guide and
+individual featured-product pages. It found 16 current catalogue identities;
+one was already represented and 15 additional exact identities were added as
+planned targets. Archive entries and catalogue-classified accessories were
+excluded. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official MING catalogue and product pages were used
+as the primary-source fallback.
+
+## One-hundred-fifty-ninth Kurono Tokyo current-catalogue expansion (retrieved 2026-09-03)
+
+The Kurono Tokyo audit reconciled the official catalogue, Salon Editions
+pages, sitemap and current product pages. It found two current catalogue
+identities not yet represented; both were added as separate planned targets.
+The represented 2026 Anniversary Malachite identity was retained. Sold-out
+Inseki, the closed Diver's expression-of-interest release and historical
+records were excluded. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable; official Kurono Tokyo pages were used
+as the primary-source fallback.
+
+## One-hundred-sixtieth MING exact-reference expansion (retrieved 2026-09-03)
+
+The MING audit reconciled the official Watches catalogue, product guide and
+individual featured-product pages. It found 16 current catalogue identities;
+one was already represented and 15 additional exact identities were added as
+planned targets. Archive entries and catalogue-classified accessories were
+excluded. Technical, price, and availability fields remain unpromoted.
+Perplexity was unavailable; official MING catalogue and product pages were used
+as the primary-source fallback.
+
+## One-hundred-sixty-first Serica exact-reference expansion (retrieved 2026-09-03)
+
+The Serica audit reconciled the official live catalogue, Shopify product feed,
+individual product pages, history and accessories pages. It found 21 current
+catalogue references; two were already represented and 17 additional exact
+references were added as planned targets. A generic legacy manifest entry was
+retained as manifest-only because it does not identify a distinct current
+reference. Historical models and accessories were excluded. Technical, price,
+and availability fields remain unpromoted. Perplexity was unavailable; official
+Serica catalogue, product feed and product pages were used as the primary-source
+fallback.
+
+## One-hundred-fifty-eighth Serica exact-reference expansion (retrieved 2026-09-03)
+
+The Serica audit reconciled the official live catalogue, Shopify product feed,
+individual product pages, history and accessories pages. It found 21 current
+catalogue references; two were already represented and 17 additional exact
+references were added as planned targets. A generic legacy manifest entry was
+retained as manifest-only because it does not identify a distinct current
+reference. Historical models and accessories were excluded. Technical, price,
+and availability fields remain unpromoted. Perplexity was unavailable; official
+Serica catalogue, product feed and product pages were used as the primary-source
+fallback.
