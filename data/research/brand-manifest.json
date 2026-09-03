@@ -4488,6 +4488,2175 @@
           "state": "planned",
           "coverageIntent": { "functionProfiles": ["chronograph"] },
           "coverageRationale": "Add the current exact Moonwatch configuration confirmed on the manufacturer product page."
+        },
+        {
+          "id": "omega-seamaster-235-10-38-20-06-001",
+          "referenceLabel": "Omega seamaster exact current reference 235.10.38.20.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-235-12-38-20-06-001",
+          "referenceLabel": "Omega seamaster exact current reference 235.12.38.20.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-235-10-38-20-13-001",
+          "referenceLabel": "Omega seamaster exact current reference 235.10.38.20.13.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-235-12-38-20-13-001",
+          "referenceLabel": "Omega seamaster exact current reference 235.12.38.20.13.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-234-30-41-21-03-002",
+          "referenceLabel": "Omega seamaster exact current reference 234.30.41.21.03.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-234-30-41-21-03-001",
+          "referenceLabel": "Omega seamaster exact current reference 234.30.41.21.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-234-30-41-21-01-001",
+          "referenceLabel": "Omega seamaster exact current reference 234.30.41.21.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-234-92-41-21-10-001",
+          "referenceLabel": "Omega seamaster exact current reference 234.92.41.21.10.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-234-63-41-21-99-001",
+          "referenceLabel": "Omega seamaster exact current reference 234.63.41.21.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-234-63-41-21-99-002",
+          "referenceLabel": "Omega seamaster exact current reference 234.63.41.21.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-234-93-41-21-99-001",
+          "referenceLabel": "Omega seamaster exact current reference 234.93.41.21.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-234-93-41-21-99-002",
+          "referenceLabel": "Omega seamaster exact current reference 234.93.41.21.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-217-32-42-21-01-001",
+          "referenceLabel": "Omega seamaster exact current reference 217.32.42.21.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-217-30-42-21-01-002",
+          "referenceLabel": "Omega seamaster exact current reference 217.30.42.21.01.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-217-32-42-21-01-002",
+          "referenceLabel": "Omega seamaster exact current reference 217.32.42.21.01.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-217-30-42-21-01-003",
+          "referenceLabel": "Omega seamaster exact current reference 217.30.42.21.01.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-217-32-42-21-01-003",
+          "referenceLabel": "Omega seamaster exact current reference 217.32.42.21.01.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-217-32-42-21-01-004",
+          "referenceLabel": "Omega seamaster exact current reference 217.32.42.21.01.004",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-92-46-22-01-006",
+          "referenceLabel": "Omega seamaster exact current reference 215.92.46.22.01.006",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-92-46-22-01-007",
+          "referenceLabel": "Omega seamaster exact current reference 215.92.46.22.01.007",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-30-46-21-03-002",
+          "referenceLabel": "Omega seamaster exact current reference 215.30.46.21.03.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-30-46-21-03-001",
+          "referenceLabel": "Omega seamaster exact current reference 215.30.46.21.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-32-46-21-03-001",
+          "referenceLabel": "Omega seamaster exact current reference 215.32.46.21.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-92-46-21-01-001",
+          "referenceLabel": "Omega seamaster exact current reference 215.92.46.21.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-30-46-21-06-001",
+          "referenceLabel": "Omega seamaster exact current reference 215.30.46.21.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-32-46-21-06-001",
+          "referenceLabel": "Omega seamaster exact current reference 215.32.46.21.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-30-46-21-04-001",
+          "referenceLabel": "Omega seamaster exact current reference 215.30.46.21.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-215-32-46-21-04-001",
+          "referenceLabel": "Omega seamaster exact current reference 215.32.46.21.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-227-32-55-21-03-001",
+          "referenceLabel": "Omega seamaster exact current reference 227.32.55.21.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-522-53-37-20-04-001",
+          "referenceLabel": "Omega seamaster exact current reference 522.53.37.20.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-522-53-40-20-04-002",
+          "referenceLabel": "Omega seamaster exact current reference 522.53.40.20.04.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-522-53-40-20-04-003",
+          "referenceLabel": "Omega seamaster exact current reference 522.53.40.20.04.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-511-13-40-20-11-002",
+          "referenceLabel": "Omega seamaster exact current reference 511.13.40.20.11.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-seamaster-216-92-46-79-10-001",
+          "referenceLabel": "Omega seamaster exact current reference 216.92.46.79.10.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-332-10-41-51-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 332.10.41.51.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-332-12-41-51-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 332.12.41.51.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-332-10-41-51-03-001",
+          "referenceLabel": "Omega speedmaster exact current reference 332.10.41.51.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-332-12-41-51-03-001",
+          "referenceLabel": "Omega speedmaster exact current reference 332.12.41.51.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-332-10-41-51-10-001",
+          "referenceLabel": "Omega speedmaster exact current reference 332.10.41.51.10.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-332-12-41-51-10-001",
+          "referenceLabel": "Omega speedmaster exact current reference 332.12.41.51.10.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-332-10-41-51-11-001",
+          "referenceLabel": "Omega speedmaster exact current reference 332.10.41.51.11.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-332-12-41-51-11-001",
+          "referenceLabel": "Omega speedmaster exact current reference 332.12.41.51.11.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-30-40-50-06-001",
+          "referenceLabel": "Omega speedmaster exact current reference 310.30.40.50.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-32-40-50-06-002",
+          "referenceLabel": "Omega speedmaster exact current reference 310.32.40.50.06.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-32-40-50-06-001",
+          "referenceLabel": "Omega speedmaster exact current reference 310.32.40.50.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-311-50-39-30-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 311.50.39.30.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-311-30-40-30-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 311.30.40.30.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-311-93-42-30-99-001",
+          "referenceLabel": "Omega speedmaster exact current reference 311.93.42.30.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-311-90-42-30-99-002",
+          "referenceLabel": "Omega speedmaster exact current reference 311.90.42.30.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-32-42-50-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 310.32.42.50.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-92-44-51-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 310.92.44.51.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-92-44-51-01-002",
+          "referenceLabel": "Omega speedmaster exact current reference 310.92.44.51.01.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-92-44-51-01-003",
+          "referenceLabel": "Omega speedmaster exact current reference 310.92.44.51.01.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-92-44-51-01-004",
+          "referenceLabel": "Omega speedmaster exact current reference 310.92.44.51.01.004",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-92-44-51-01-005",
+          "referenceLabel": "Omega speedmaster exact current reference 310.92.44.51.01.005",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-92-44-50-06-001",
+          "referenceLabel": "Omega speedmaster exact current reference 310.92.44.50.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-92-44-50-06-002",
+          "referenceLabel": "Omega speedmaster exact current reference 310.92.44.50.06.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-310-92-44-50-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 310.92.44.50.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-30-43-51-03-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.30.43.51.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-32-43-51-03-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.32.43.51.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-30-43-51-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.30.43.51.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-33-43-51-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.33.43.51.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-30-43-51-02-002",
+          "referenceLabel": "Omega speedmaster exact current reference 329.30.43.51.02.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-32-43-51-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.32.43.51.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-92-43-51-10-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.92.43.51.10.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-522-30-43-51-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 522.30.43.51.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-522-32-43-51-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 522.32.43.51.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-522-60-43-51-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 522.60.43.51.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-522-62-43-51-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 522.62.43.51.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-32-44-51-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.32.44.51.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-30-44-51-01-002",
+          "referenceLabel": "Omega speedmaster exact current reference 329.30.44.51.01.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-33-44-51-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.33.44.51.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-30-44-51-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.30.44.51.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-33-44-51-04-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.33.44.51.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-30-44-51-04-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.30.44.51.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-23-44-51-06-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.23.44.51.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-53-44-51-03-001",
+          "referenceLabel": "Omega speedmaster exact current reference 329.53.44.51.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-329-30-44-51-01-003",
+          "referenceLabel": "Omega speedmaster exact current reference 329.30.44.51.01.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-522-50-45-52-03-001",
+          "referenceLabel": "Omega speedmaster exact current reference 522.50.45.52.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-30-43-52-06-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.30.43.52.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-30-43-52-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.30.43.52.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-93-44-52-03-002",
+          "referenceLabel": "Omega speedmaster exact current reference 304.93.44.52.03.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-93-44-52-03-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.93.44.52.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-33-44-52-03-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.33.44.52.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-33-44-52-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.33.44.52.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-30-44-52-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.30.44.52.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-23-44-52-13-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.23.44.52.13.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-23-44-52-06-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.23.44.52.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-63-44-52-01-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.63.44.52.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-63-44-52-02-001",
+          "referenceLabel": "Omega speedmaster exact current reference 304.63.44.52.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-93-44-52-99-002",
+          "referenceLabel": "Omega speedmaster exact current reference 304.93.44.52.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-93-44-52-99-004",
+          "referenceLabel": "Omega speedmaster exact current reference 304.93.44.52.99.004",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-304-93-44-52-99-003",
+          "referenceLabel": "Omega speedmaster exact current reference 304.93.44.52.99.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-324-58-38-50-63-001",
+          "referenceLabel": "Omega speedmaster exact current reference 324.58.38.50.63.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-324-55-38-50-63-001",
+          "referenceLabel": "Omega speedmaster exact current reference 324.55.38.50.63.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-324-58-38-50-60-001",
+          "referenceLabel": "Omega speedmaster exact current reference 324.58.38.50.60.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-speedmaster-324-55-38-50-60-001",
+          "referenceLabel": "Omega speedmaster exact current reference 324.55.38.50.60.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["chronograph"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-25-60-02-002",
+          "referenceLabel": "Omega constellation exact current reference 131.10.25.60.02.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-25-60-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.25.60.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-25-60-53-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.25.60.53.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-01-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-02-002",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.02.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-03-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-03-002",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.03.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-05-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.05.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-11-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.11.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-60-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.60.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-28-60-60-002",
+          "referenceLabel": "Omega constellation exact current reference 131.10.28.60.60.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-29-20-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.29.20.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-29-20-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.29.20.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-34-20-02-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.34.20.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-34-20-53-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.34.20.53.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-36-60-01-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.36.60.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-10-39-20-06-001",
+          "referenceLabel": "Omega constellation exact current reference 131.10.39.20.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-12-41-21-06-001",
+          "referenceLabel": "Omega constellation exact current reference 131.12.41.21.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-25-60-53-002",
+          "referenceLabel": "Omega constellation exact current reference 131.15.25.60.53.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-25-60-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.25.60.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-25-60-55-002",
+          "referenceLabel": "Omega constellation exact current reference 131.15.25.60.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-25-60-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.25.60.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-28-60-01-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.28.60.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-28-60-02-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.28.60.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-28-60-11-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.28.60.11.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-28-60-60-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.28.60.60.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-28-60-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.28.60.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-29-20-53-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.29.20.53.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-29-20-60-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.29.20.60.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-15-29-20-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.15.29.20.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-18-29-20-60-001",
+          "referenceLabel": "Omega constellation exact current reference 131.18.29.20.60.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-25-60-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.25.60.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-25-60-55-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.25.60.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-28-60-05-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.28.60.05.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-28-60-05-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.28.60.05.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-28-60-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.28.60.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-28-60-52-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.28.60.52.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-28-60-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.28.60.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-28-60-55-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.28.60.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-28-60-58-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.28.60.58.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-28-60-63-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.28.60.63.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-02-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.02.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-05-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.05.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-05-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.05.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-52-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.52.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-53-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.53.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-55-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-29-20-58-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.29.20.58.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-34-20-63-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.34.20.63.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-36-60-02-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.36.60.02.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-39-20-02-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.39.20.02.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-39-20-02-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.39.20.02.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-39-20-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.39.20.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-39-20-52-002",
+          "referenceLabel": "Omega constellation exact current reference 131.20.39.20.52.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-20-39-20-58-001",
+          "referenceLabel": "Omega constellation exact current reference 131.20.39.20.58.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-23-41-21-03-001",
+          "referenceLabel": "Omega constellation exact current reference 131.23.41.21.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-23-41-21-06-001",
+          "referenceLabel": "Omega constellation exact current reference 131.23.41.21.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-23-41-21-06-002",
+          "referenceLabel": "Omega constellation exact current reference 131.23.41.21.06.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-23-41-21-10-001",
+          "referenceLabel": "Omega constellation exact current reference 131.23.41.21.10.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-23-41-21-11-001",
+          "referenceLabel": "Omega constellation exact current reference 131.23.41.21.11.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-25-60-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.25.60.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-25-60-55-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.25.60.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-25-60-60-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.25.60.60.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-25-60-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.25.60.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-25-60-99-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.25.60.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-28-60-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.28.60.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-28-60-55-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.28.60.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-28-60-55-003",
+          "referenceLabel": "Omega constellation exact current reference 131.25.28.60.55.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-28-60-60-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.28.60.60.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-28-60-63-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.28.60.63.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-28-60-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.28.60.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-28-60-99-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.28.60.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-52-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.52.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-52-003",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.52.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-53-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.53.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-55-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-58-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.58.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-63-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.63.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-29-20-99-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.29.20.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-39-20-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.25.39.20.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-25-39-20-52-002",
+          "referenceLabel": "Omega constellation exact current reference 131.25.39.20.52.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-28-29-20-52-001",
+          "referenceLabel": "Omega constellation exact current reference 131.28.29.20.52.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-28-29-20-58-001",
+          "referenceLabel": "Omega constellation exact current reference 131.28.29.20.58.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-28-29-20-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.28.29.20.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-28-29-20-99-002",
+          "referenceLabel": "Omega constellation exact current reference 131.28.29.20.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-28-29-20-99-003",
+          "referenceLabel": "Omega constellation exact current reference 131.28.29.20.99.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-28-34-20-55-001",
+          "referenceLabel": "Omega constellation exact current reference 131.28.34.20.55.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-30-41-21-01-001",
+          "referenceLabel": "Omega constellation exact current reference 131.30.41.21.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-30-41-21-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.30.41.21.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-30-41-21-99-002",
+          "referenceLabel": "Omega constellation exact current reference 131.30.41.21.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-30-41-21-99-003",
+          "referenceLabel": "Omega constellation exact current reference 131.30.41.21.99.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-33-41-21-01-001",
+          "referenceLabel": "Omega constellation exact current reference 131.33.41.21.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-33-41-21-03-001",
+          "referenceLabel": "Omega constellation exact current reference 131.33.41.21.03.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-33-41-21-04-001",
+          "referenceLabel": "Omega constellation exact current reference 131.33.41.21.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-33-41-21-06-001",
+          "referenceLabel": "Omega constellation exact current reference 131.33.41.21.06.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-50-41-21-99-001",
+          "referenceLabel": "Omega constellation exact current reference 131.50.41.21.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-55-25-60-55-003",
+          "referenceLabel": "Omega constellation exact current reference 131.55.25.60.55.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-55-25-60-99-003",
+          "referenceLabel": "Omega constellation exact current reference 131.55.25.60.99.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-55-28-60-58-001",
+          "referenceLabel": "Omega constellation exact current reference 131.55.28.60.58.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-55-28-60-99-005",
+          "referenceLabel": "Omega constellation exact current reference 131.55.28.60.99.005",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-55-29-20-55-003",
+          "referenceLabel": "Omega constellation exact current reference 131.55.29.20.55.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-55-29-20-60-001",
+          "referenceLabel": "Omega constellation exact current reference 131.55.29.20.60.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-55-29-20-99-006",
+          "referenceLabel": "Omega constellation exact current reference 131.55.29.20.99.006",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-58-29-20-52-002",
+          "referenceLabel": "Omega constellation exact current reference 131.58.29.20.52.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-58-29-20-53-003",
+          "referenceLabel": "Omega constellation exact current reference 131.58.29.20.53.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-58-29-20-55-002",
+          "referenceLabel": "Omega constellation exact current reference 131.58.29.20.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-58-29-20-55-003",
+          "referenceLabel": "Omega constellation exact current reference 131.58.29.20.55.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-58-29-20-60-002",
+          "referenceLabel": "Omega constellation exact current reference 131.58.29.20.60.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-58-34-20-61-001",
+          "referenceLabel": "Omega constellation exact current reference 131.58.34.20.61.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-constellation-131-63-41-21-01-001",
+          "referenceLabel": "Omega constellation exact current reference 131.63.41.21.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-425-20-34-20-55-004",
+          "referenceLabel": "Omega de-ville exact current reference 425.20.34.20.55.004",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-425-30-34-20-55-002",
+          "referenceLabel": "Omega de-ville exact current reference 425.30.34.20.55.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-425-30-34-20-57-004",
+          "referenceLabel": "Omega de-ville exact current reference 425.30.34.20.57.004",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-17-26-60-04-008",
+          "referenceLabel": "Omega de-ville exact current reference 428.17.26.60.04.008",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-17-26-60-04-007",
+          "referenceLabel": "Omega de-ville exact current reference 428.17.26.60.04.007",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-15-26-60-04-001",
+          "referenceLabel": "Omega de-ville exact current reference 428.15.26.60.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-18-26-60-04-001",
+          "referenceLabel": "Omega de-ville exact current reference 428.18.26.60.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-17-26-60-04-006",
+          "referenceLabel": "Omega de-ville exact current reference 428.17.26.60.04.006",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-17-26-60-04-004",
+          "referenceLabel": "Omega de-ville exact current reference 428.17.26.60.04.004",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-17-26-60-04-005",
+          "referenceLabel": "Omega de-ville exact current reference 428.17.26.60.04.005",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-57-26-60-04-004",
+          "referenceLabel": "Omega de-ville exact current reference 428.57.26.60.04.004",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-57-26-60-04-005",
+          "referenceLabel": "Omega de-ville exact current reference 428.57.26.60.04.005",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-58-26-60-04-001",
+          "referenceLabel": "Omega de-ville exact current reference 428.58.26.60.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-15-26-60-04-003",
+          "referenceLabel": "Omega de-ville exact current reference 428.15.26.60.04.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-18-26-60-04-003",
+          "referenceLabel": "Omega de-ville exact current reference 428.18.26.60.04.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-58-26-60-04-003",
+          "referenceLabel": "Omega de-ville exact current reference 428.58.26.60.04.003",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-58-26-60-99-001",
+          "referenceLabel": "Omega de-ville exact current reference 428.58.26.60.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-58-26-60-99-002",
+          "referenceLabel": "Omega de-ville exact current reference 428.58.26.60.99.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-57-26-60-99-001",
+          "referenceLabel": "Omega de-ville exact current reference 428.57.26.60.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-58-26-60-04-002",
+          "referenceLabel": "Omega de-ville exact current reference 428.58.26.60.04.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-18-26-60-04-002",
+          "referenceLabel": "Omega de-ville exact current reference 428.18.26.60.04.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-17-26-60-04-009",
+          "referenceLabel": "Omega de-ville exact current reference 428.17.26.60.04.009",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-15-26-60-04-002",
+          "referenceLabel": "Omega de-ville exact current reference 428.15.26.60.04.002",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-55-26-60-04-001",
+          "referenceLabel": "Omega de-ville exact current reference 428.55.26.60.04.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-428-55-26-60-99-001",
+          "referenceLabel": "Omega de-ville exact current reference 428.55.26.60.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-529-53-43-22-01-001",
+          "referenceLabel": "Omega de-ville exact current reference 529.53.43.22.01.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
+        },
+        {
+          "id": "omega-de-ville-529-53-43-22-99-001",
+          "referenceLabel": "Omega de-ville exact current reference 529.53.43.22.99.001",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": ["simple_date"]
+          },
+          "coverageRationale": "Add the exact current Omega reference confirmed on the official product-card audit."
         }
       ]
     },

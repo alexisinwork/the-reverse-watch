@@ -1882,3 +1882,17 @@ with each retained reference checked against an official product card. All 142
 were added as separate `planned` targets. These are identity-level
 confirmations only; Perplexity normalization remains pending because its API
 quota is exhausted, and no unverified specifications were promoted.
+
+## Ninety-fifth Omega exact-card expansion (retrieved 2026-09-03)
+
+The independent Omega audit compared the 42 existing Omega targets with the
+official HK catalogue and product cards, finding 241 additional current
+references: 34 Seamaster, 63 Speedmaster, 117 Constellation, and 27 De Ville.
+Evidence is retained through the official [Seamaster catalogue](https://www.omegawatches.com.hk/en-hk/watches/seamaster/catalog),
+[Speedmaster catalogue](https://www.omegawatches.com.hk/en-hk/watches/speedmaster/catalog),
+[Constellation catalogue](https://www.omegawatches.com.hk/en-hk/watches/constellation/constellation/catalog),
+and [De Ville catalogue](https://www.omegawatches.com.hk/en-hk/watches/de-ville/catalog).
+All 241 exact identities were added as separate `planned` targets. The source
+cards are primary confirmation of identity only; no technical or commercial
+fields were promoted without successful Perplexity normalization and the
+repository’s field-level review.
