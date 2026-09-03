@@ -2165,3 +2165,36 @@ confirmed the previously added exact reference `799.10.101LE.10`. The current
 DOXA comparison remains 301 unique references with no additional manifest
 change required in this recheck. Technical, price, and availability fields
 remain unpromoted. Perplexity was unavailable because of quota exhaustion.
+
+## One-hundred-eighteenth Swatch US-en exact-reference expansion (retrieved 2026-09-03)
+
+The complete Swatch audit used the official [US watches catalogue](https://www.swatch.com/en-us/watches/)
+and its paginated product endpoint. It returned 298 current watch cards, all
+marked as non-archived, with one exact reference already represented and 297
+additional exact references added as planned targets. The audit excluded 86
+accessory records plus three archived accessory records from the watch
+universe. Every added target retains its official Swatch product-page URL;
+technical, price, and availability fields remain unpromoted. Perplexity was
+unavailable because of quota exhaustion.
+
+## One-hundred-nineteenth Marathon exact-reference expansion (retrieved 2026-09-03)
+
+The Marathon audit reconciled the official US and EU watch catalogues,
+product JSON feeds, product database, and canonical product pages. It found
+272 current exact references; two were already represented and 270 additional
+references were added as planned targets. The non-watch `CO194001-BK` wrist
+compass was excluded. Every added target retains an official Marathon product
+URL in its coverage rationale. Technical, price, and availability fields
+remain unpromoted. Perplexity was unavailable because of quota exhaustion.
+
+## One-hundred-twentieth Orient exact-reference expansion (retrieved 2026-09-03)
+
+The complete Orient audit reconciled the official [Orient search catalogue](https://orient-watch.com/en/orient/search/)
+with the official [Orient sitemap](https://orient-watch.com/sitemap.xml) and
+canonical product pages. It found 273 current exact references; two were
+already represented and 271 additional exact references were added as planned
+targets. Six sitemap entries returned HTTP 404 during current-catalogue
+verification and were recorded as excluded rather than treated as watches.
+Every added target retains its official Orient product-page URL. Technical,
+price, and availability fields remain unpromoted. Perplexity was unavailable
+because of quota exhaustion.
