@@ -1673,3 +1673,15 @@ This Rolex pass used the official catalogue for current-model discovery and the
 exact product cards for identity confirmation. It did not create a Perplexity
 job because the API remains at `401 insufficient_quota`; both new references
 therefore stay `planned` until strict Perplexity normalization succeeds.
+
+## Eighty-sixth Omega current-release check (retrieved 2026-09-03)
+
+The official [OMEGA press room release](https://press.omegawatches.com/omega-extends-the-speedmaster-38-mm-collection/)
+dated 2026-08-25 reports seven new Speedmaster 38 mm references, including
+steel, bicolour, and diamond-set configurations, with six date variants using
+calibre 3330 and one no-date variant using calibre 3332. The current manifest
+does not yet contain these 2026 Speedmaster 38 exact codes. The release page
+confirms the new model family and its seven-variant structure but does not
+expose the individual reference numbers, so secondary-site codes were not
+imported. Exact product-card discovery remains queued for Perplexity recovery
+and primary-page validation.
