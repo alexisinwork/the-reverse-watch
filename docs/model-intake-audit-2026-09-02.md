@@ -2198,3 +2198,14 @@ verification and were recorded as excluded rather than treated as watches.
 Every added target retains its official Orient product-page URL. Technical,
 price, and availability fields remain unpromoted. Perplexity was unavailable
 because of quota exhaustion.
+
+## One-hundred-twenty-first Girard-Perregaux exact-reference expansion (retrieved 2026-09-03)
+
+The complete Girard-Perregaux audit reconciled the official watches catalogue,
+collection pages, GraphQL catalogue, and canonical product pages. It found 140
+current exact references; one was already represented and 139 additional exact
+references were added as planned targets. The `coming_soon` placeholder and a
+non-watch/archived-accessory bucket were recorded as excluded. Every added
+target retains its official Girard-Perregaux product-page URL. Technical,
+price, and availability fields remain unpromoted. Perplexity was unavailable;
+the official catalogue and product pages were used as primary-source fallback.

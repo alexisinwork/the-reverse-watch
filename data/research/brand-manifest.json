@@ -18422,17 +18422,1838 @@
         "sourceUrlCount": 7
       },
       "targets": [
-        {
-          "id": "girard-perregaux-laureato-42-81010-11-3475-1cm",
-          "referenceLabel": "Girard-Perregaux Laureato 42mm exact reference 81010-11-3475-1CM",
-          "state": "needs_review",
-          "coverageIntent": {
-            "priceBands": [
-              "15000_plus"
-            ]
-          },
-          "coverageRationale": "Current official Girard-Perregaux product card publishes the exact reference, price, 42mm steel case, GP01800 self-winding movement, 10.68mm thickness, and 100m rating."
-        }
+    {
+      "id": "girard-perregaux-laureato-42-81010-11-3475-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato 42mm exact reference 81010-11-3475-1CM",
+      "state": "needs_review",
+      "coverageIntent": {
+        "priceBands": [
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current official Girard-Perregaux product card publishes the exact reference, price, 42mm steel case, GP01800 self-winding movement, 10.68mm thickness, and 100m rating."
+    },
+    {
+      "id": "girard-perregaux-99116-11-3615-1cm",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99116-11-3615-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99116-11-3615-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99116-11-3528-1cm",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99116-11-3528-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99116-11-3528-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81006-11-3626-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81006-11-3626-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81006-11-3626-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81006-11s3597-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81006-11S3597-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81006-11s3597-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81008-11-3627-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81008-11-3627-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81008-11-3627-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81008-11-3530-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81008-11-3530-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81008-11-3530-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-56-3578-1cx",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-56-3578-1CX",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-56-3578-1cx. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99840-52-2013-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99840-52-2013-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99840-52-2013-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-93510-52-3552-5cx",
+      "referenceLabel": "Girard-Perregaux Bridges exact reference 93510-52-3552-5CX",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/bridges/93510-52-3552-5cx. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99296-53-3559-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99296-53-3559-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99296-53-3559-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99112-58s3451-1cm",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99112-58S3451-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99112-58s3451-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99296-21-3128-5gx",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99296-21-3128-5GX",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99296-21-3128-5gx. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99296-52-3434-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99296-52-3434-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99296-52-3434-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-93510-21-1930-5cx",
+      "referenceLabel": "Girard-Perregaux Bridges exact reference 93510-21-1930-5CX",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/bridges/93510-21-1930-5cx. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99112-58-3576-1cm",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99112-58-3576-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99112-58-3576-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81008-63-3412-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81008-63-3412-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81008-63-3412-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-11-3310-1gm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-11-3310-1GM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-11-3310-1gm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-131-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-131-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-131-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-131-11a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-131-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-131-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-1a1-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-1A1-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-1a1-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555d11a1a1-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555D11A1A1-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555d11a1a1-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-1a1-11a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-1A1-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-1a1-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80488d52a451-ck4a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80488D52A451-CK4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80488d52a451-ck4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80488d52a751-ck6a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80488D52A751-CK6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80488d52a751-ck6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80488d52a401-ck4a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80488D52A401-CK4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80488d52a401-ck4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80488d11a701-hk7b",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80488D11A701-HK7B",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80488d11a701-hk7b. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-52-436-52a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-52-436-52A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-52-436-52a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-52-436-bb4a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-52-436-BB4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-52-436-bb4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-52-3333-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-52-3333-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-52-3333-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-11z631-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-11Z631-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-11z631-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-21-3263-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-21-3263-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-21-3263-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-11z131-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-11Z131-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-11z131-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-11-3370-1gm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-11-3370-1GM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-11-3370-1gm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-21-3311-1gm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-21-3311-1GM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-21-3311-1gm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81060-21-492-fh3a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81060-21-492-FH3A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81060-21-492-fh3a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81060-21-491-fh6a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81060-21-491-FH6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81060-21-491-fh6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81060-41-3222-1cx",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81060-41-3222-1CX",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81060-41-3222-1cx. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81060-36-694-fh6a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81060-36-694-FH6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81060-36-694-fh6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-52-132-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-52-132-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-52-132-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-52-3160-2gc",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-52-3160-2GC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-52-3160-2gc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-52-432-bb4a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-52-432-BB4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-52-432-bb4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-11z431-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-11Z431-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-11z431-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81020-52-432-52a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81020-52-432-52A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81020-52-432-52a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99276-52-000-ba6e",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99276-52-000-BA6E",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99276-52-000-ba6e. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49535-11-131-11a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49535-11-131-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49535-11-131-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49535-11-131-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49535-11-131-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49535-11-131-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99292-21-651-ba6f",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99292-21-651-BA6F",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99292-21-651-ba6f. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99292-21-3093-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99292-21-3093-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99292-21-3093-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99292-21-3084-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99292-21-3084-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99292-21-3084-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99292-21-3092-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99292-21-3092-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99292-21-3092-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-52-3423-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-52-3423-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-52-3423-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-52-000-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-52-000-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-52-000-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-52-3161-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-52-3161-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-52-3161-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-52-3351-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-52-3351-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-52-3351-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-52-3352-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-52-3352-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-52-3352-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-52-3162-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-52-3162-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-52-3162-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-52-3131-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-52-3131-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-52-3131-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99290-52-451-ba4a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99290-52-451-BA4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99290-52-451-ba4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99290-53-653-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99290-53-653-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99290-53-653-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81015-32-3518-32a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81015-32-3518-32A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81015-32-3518-32a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81015-32-001-32a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81015-32-001-32A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81015-32-001-32a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-434-bh6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-434-BH6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-434-bh6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-433-bh6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-433-BH6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-433-bh6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81005-11-3407-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81005-11-3407-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81005-11-3407-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81005-11-3154-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81005-11-3154-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81005-11-3154-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81005-11-3460-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81005-11-3460-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81005-11-3460-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-11-431-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-11-431-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-11-431-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-11-3153-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-11-3153-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-11-3153-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-11-634-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-11-634-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-11-634-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-11-131-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-11-131-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-11-131-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-84000-21-001-bb6a",
+      "referenceLabel": "Girard-Perregaux Bridges exact reference 84000-21-001-BB6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/bridges/84000-21-001-bb6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-84000-21-632-bh6a",
+      "referenceLabel": "Girard-Perregaux Bridges exact reference 84000-21-632-BH6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/bridges/84000-21-632-bh6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81015-53-3240-1gm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81015-53-3240-1GM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81015-53-3240-1gm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81015-52-002-52a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81015-52-002-52A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81015-52-002-52a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-53-3350-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-53-3350-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-53-3350-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-53-3303-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-53-3303-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-53-3303-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99274-53-3198-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99274-53-3198-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99274-53-3198-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80189d11a431-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 80189D11A431-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/80189d11a431-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80189d11a131-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 80189D11A131-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/80189d11a131-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99820-21-3226-5gc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99820-21-3226-5GC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99820-21-3226-5gc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-431-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-431-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-431-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-632-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-632-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-632-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49555-11-231-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49555-11-231-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49555-11-231-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99295-21-000-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99295-21-000-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99295-21-000-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99295-43-000-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99295-43-000-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99295-43-000-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80484d11a432-bk4a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80484D11A432-BK4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80484d11a432-bk4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80484d52a761-bk7a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80484D52A761-BK7A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80484d52a761-bk7a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80484d11a161-bk6b",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80484D11A161-BK6B",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80484d11a161-bk6b. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99820-21-001-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99820-21-001-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99820-21-001-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99820-52-001-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99820-52-001-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99820-52-001-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99820-53-002-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99820-53-002-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99820-53-002-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80484d52a401-ck4e",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80484D52A401-CK4E",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80484d52a401-ck4e. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80484d11a701-hk7a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80484D11A701-HK7A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80484d11a701-hk7a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80498d53m7b1-bkla",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80498D53M7B1-BKLA",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80498d53m7b1-bkla. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49524d52a751-ck6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49524D52A751-CK6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49524d52a751-ck6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49524d11a171-ck6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49524D11A171-CK6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49524d11a171-ck6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49523d11a171-11a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49523D11A171-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49523d11a171-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49523-11-171-cb6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49523-11-171-CB6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49523-11-171-cb6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49523d11a171-cb6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49523D11A171-CB6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49523d11a171-cb6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49523-11-171-11a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49523-11-171-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49523-11-171-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81005-58s3463-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81005-58S3463-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81005-58s3463-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81005-11s3464-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81005-11S3464-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81005-11s3464-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81005-11s3320-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81005-11S3320-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81005-11s3320-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-25882-11-421-bb4a",
+      "referenceLabel": "Girard-Perregaux Vintage 1945 exact reference 25882-11-421-BB4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/vintage-1945/25882-11-421-bb4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49528d52a771-ck6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49528D52A771-CK6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49528d52a771-ck6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49528d11a172-cb6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49528D11A172-CB6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49528d11a172-cb6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49528d11a631-cb6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49528D11A631-CB6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49528d11a631-cb6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49528d52a131-cb6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49528D52A131-CB6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49528d52a131-cb6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49528d11a172-11a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49528D11A172-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49528d11a172-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49528-52-771-ck6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49528-52-771-CK6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49528-52-771-ck6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49545-11-131-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49545-11-131-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49545-11-131-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49545d11a131-bb60",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49545D11A131-BB60",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49545d11a131-bb60. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49545-11-131-11a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49545-11-131-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49545-11-131-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-82000-11-631-fa6a",
+      "referenceLabel": "Girard-Perregaux Bridges exact reference 82000-11-631-FA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/bridges/82000-11-631-fa6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-82000-11-3259-5cx",
+      "referenceLabel": "Girard-Perregaux Bridges exact reference 82000-11-3259-5CX",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/bridges/82000-11-3259-5cx. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81071-43-2022-1cx",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81071-43-2022-1CX",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81071-43-2022-1cx. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99115-21-3372-1gm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 99115-21-3372-1GM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/99115-21-3372-1gm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81010-52-3118-1cm",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81010-52-3118-1CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81010-52-3118-1cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-39500-21-3266-6cx",
+      "referenceLabel": "Girard-Perregaux Legacy Editions exact reference 39500-21-3266-6CX",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/legacy-editions/39500-21-3266-6cx. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80494b53p7b1-ck4a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80494B53P7B1-CK4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80494b53p7b1-ck4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-25882-11-223-bb6b",
+      "referenceLabel": "Girard-Perregaux Vintage 1945 exact reference 25882-11-223-BB6B",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/vintage-1945/25882-11-223-bb6b. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99295-43-3314-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99295-43-3314-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99295-43-3314-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99295-43-3313-5cc",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99295-43-3313-5CC",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99295-43-3313-5cc. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99295-43-001-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99295-43-001-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99295-43-001-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99295-43-002-ua2a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99295-43-002-UA2A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99295-43-002-ua2a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-39800-21-3199-6cm",
+      "referenceLabel": "Girard-Perregaux Legacy Editions exact reference 39800-21-3199-6CM",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/legacy-editions/39800-21-3199-6cm. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99275-52-000-ba6e",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99275-52-000-BA6E",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99275-52-000-ba6e. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99275-53-000-ba6e",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99275-53-000-BA6E",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99275-53-000-ba6e. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-81015-11-001-11a",
+      "referenceLabel": "Girard-Perregaux Laureato exact reference 81015-11-001-11A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/laureato/81015-11-001-11a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80496d52a451-ck4a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80496D52A451-CK4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80496d52a451-ck4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-80496d52a751-ck4a",
+      "referenceLabel": "Girard-Perregaux Cat's Eye exact reference 80496D52A751-CK4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/cats-eye/80496d52a751-ck4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-25882-11-121-bb6b",
+      "referenceLabel": "Girard-Perregaux Vintage 1945 exact reference 25882-11-121-BB6B",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/vintage-1945/25882-11-121-bb6b. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-49535-52-151-bk6a",
+      "referenceLabel": "Girard-Perregaux 1966 exact reference 49535-52-151-BK6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/1966/49535-52-151-bk6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-86000-52-001-bb6a",
+      "referenceLabel": "Girard-Perregaux Bridges exact reference 86000-52-001-BB6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/bridges/86000-52-001-bb6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-25882-21-423-bb4a",
+      "referenceLabel": "Girard-Perregaux Vintage 1945 exact reference 25882-21-423-BB4A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/vintage-1945/25882-21-423-bb4a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-39800-32-001-32a",
+      "referenceLabel": "Girard-Perregaux Legacy Editions exact reference 39800-32-001-32A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/legacy-editions/39800-32-001-32a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-25882-11-631-bb6b",
+      "referenceLabel": "Girard-Perregaux Vintage 1945 exact reference 25882-11-631-BB6B",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/vintage-1945/25882-11-631-bb6b. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99830-52-001-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99830-52-001-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99830-52-001-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-99830-21-000-ba6a",
+      "referenceLabel": "Girard-Perregaux Grand Complications exact reference 99830-21-000-BA6A",
+      "state": "planned",
+      "coverageIntent": {
+        "priceBands": [
+          "5000_10000",
+          "10000_15000",
+          "15000_plus"
+        ]
+      },
+      "coverageRationale": "Current exact Girard-Perregaux reference confirmed by the official product page: https://www.girard-perregaux.com/en-us/watches/grand-complications/99830-21-000-ba6a. Technical, price, and availability fields remain unpromoted until field-level evidence is captured."
+    },
+    {
+      "id": "girard-perregaux-coming-soon",
+      "referenceLabel": "Girard-Perregaux exact reference coming_soon",
+      "state": "excluded",
+      "coverageRationale": "Official Girard-Perregaux catalogue entry checked during the current audit: https://www.girard-perregaux.com/watches.",
+      "exclusionReason": "Catalog placeholder \"FOR THE FANS\", not a watch exact reference; excluded."
+    },
+    {
+      "id": "girard-perregaux-archived-discontinued-accessories",
+      "referenceLabel": "Girard-Perregaux exact reference archived/discontinued/accessories",
+      "state": "excluded",
+      "coverageRationale": "Official Girard-Perregaux catalogue entry checked during the current audit: https://www.girard-perregaux.com/watches.",
+      "exclusionReason": "No archived, discontinued, or accessory records were returned by the official current watches query (visible_in_listing=1); excluded from the current exact-reference universe."
+    }
       ]
     },
     {
