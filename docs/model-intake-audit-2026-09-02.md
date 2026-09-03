@@ -1970,3 +1970,27 @@ No complete catalogue omission list was accepted from that pass. The existing
 target label was normalized to expose the explicit Rado HyperChrome reference
 while retaining its existing review-artifact ID; no technical, price, or
 availability claims were promoted.
+
+## One-hundred-first NOMOS exact-reference expansion (retrieved 2026-09-03)
+
+The parallel NOMOS audit expanded 164 official product cards into 251 unique
+exact references, including slash-separated variants, using the [official
+NOMOS all-models catalogue](https://nomos-glashuette.com/en-us/store/watches)
+and collection pages. The manifest already represented Ref. 746; the other
+250 references across Tangente, Ludwig, Orion, Tetra, Zürich, Ahoi, Tangomat,
+Club, Lux, Metro, Lambda, Minimatik, and Autobahn were added as separate
+planned targets. Perplexity was unavailable, so these remain identity-level
+primary-source confirmations without promoted technical or commercial fields.
+
+## One-hundred-second Bell & Ross exact-reference expansion (retrieved 2026-09-03)
+
+The complete Bell & Ross audit used the official catalogue JSON and product
+pages, finding 130 current exact references in BR-03, BR-05, BR-X3, and BR-X5.
+One exact reference was already represented; the other 129 were added as
+separate planned targets. The primary sources are the [Bell & Ross all-watches
+catalogue](https://bellross.com/en-us/collections/toutes-nos-montres),
+[BR-03](https://bellross.com/en-us/collections/br-03),
+[BR-05](https://bellross.com/en-us/collections/br-05),
+[BR-X3](https://bellross.com/en-us/collections/br-x3), and
+[BR-X5](https://bellross.com/en-us/collections/br-x5). Perplexity was
+unavailable; no technical or commercial fields were promoted.

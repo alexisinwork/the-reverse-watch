@@ -28195,6 +28195,3005 @@
           "state": "accepted",
           "coverageRationale": "Accepted independent thin-sports calibration variant.",
           "catalogueVariantId": "nomos-746"
+        },
+        {
+          "id": "nomos-reference-122",
+          "referenceLabel": "Nomos Glashütte exact current reference 122",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-123",
+          "referenceLabel": "Nomos Glashütte exact current reference 123",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-150",
+          "referenceLabel": "Nomos Glashütte exact current reference 150",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-151",
+          "referenceLabel": "Nomos Glashütte exact current reference 151",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-120",
+          "referenceLabel": "Nomos Glashütte exact current reference 120",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-127",
+          "referenceLabel": "Nomos Glashütte exact current reference 127",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-126",
+          "referenceLabel": "Nomos Glashütte exact current reference 126",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-104",
+          "referenceLabel": "Nomos Glashütte exact current reference 104",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-105",
+          "referenceLabel": "Nomos Glashütte exact current reference 105",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-101",
+          "referenceLabel": "Nomos Glashütte exact current reference 101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-139",
+          "referenceLabel": "Nomos Glashütte exact current reference 139",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-132",
+          "referenceLabel": "Nomos Glashütte exact current reference 132",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-133",
+          "referenceLabel": "Nomos Glashütte exact current reference 133",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-190",
+          "referenceLabel": "Nomos Glashütte exact current reference 190",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-191",
+          "referenceLabel": "Nomos Glashütte exact current reference 191",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-176",
+          "referenceLabel": "Nomos Glashütte exact current reference 176",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-192",
+          "referenceLabel": "Nomos Glashütte exact current reference 192",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-192-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 192.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-188",
+          "referenceLabel": "Nomos Glashütte exact current reference 188",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-189",
+          "referenceLabel": "Nomos Glashütte exact current reference 189",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-172",
+          "referenceLabel": "Nomos Glashütte exact current reference 172",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-135",
+          "referenceLabel": "Nomos Glashütte exact current reference 135",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-135-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 135.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-136",
+          "referenceLabel": "Nomos Glashütte exact current reference 136",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-136-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 136.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-164",
+          "referenceLabel": "Nomos Glashütte exact current reference 164",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-165",
+          "referenceLabel": "Nomos Glashütte exact current reference 165",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-130",
+          "referenceLabel": "Nomos Glashütte exact current reference 130",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-166",
+          "referenceLabel": "Nomos Glashütte exact current reference 166",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-167",
+          "referenceLabel": "Nomos Glashütte exact current reference 167",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-195",
+          "referenceLabel": "Nomos Glashütte exact current reference 195",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-196",
+          "referenceLabel": "Nomos Glashütte exact current reference 196",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-147",
+          "referenceLabel": "Nomos Glashütte exact current reference 147",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-147-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 147.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-148",
+          "referenceLabel": "Nomos Glashütte exact current reference 148",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-148-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 148.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-140",
+          "referenceLabel": "Nomos Glashütte exact current reference 140",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-149",
+          "referenceLabel": "Nomos Glashütte exact current reference 149",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-145",
+          "referenceLabel": "Nomos Glashütte exact current reference 145",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-146",
+          "referenceLabel": "Nomos Glashütte exact current reference 146",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-142",
+          "referenceLabel": "Nomos Glashütte exact current reference 142",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-143",
+          "referenceLabel": "Nomos Glashütte exact current reference 143",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-144",
+          "referenceLabel": "Nomos Glashütte exact current reference 144",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-180",
+          "referenceLabel": "Nomos Glashütte exact current reference 180",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-180-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 180.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-182",
+          "referenceLabel": "Nomos Glashütte exact current reference 182",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-182-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 182.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-580",
+          "referenceLabel": "Nomos Glashütte exact current reference 580",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-581",
+          "referenceLabel": "Nomos Glashütte exact current reference 581",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-161",
+          "referenceLabel": "Nomos Glashütte exact current reference 161",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-162",
+          "referenceLabel": "Nomos Glashütte exact current reference 162",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-163",
+          "referenceLabel": "Nomos Glashütte exact current reference 163",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-243",
+          "referenceLabel": "Nomos Glashütte exact current reference 243",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-244",
+          "referenceLabel": "Nomos Glashütte exact current reference 244",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-240",
+          "referenceLabel": "Nomos Glashütte exact current reference 240",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-241",
+          "referenceLabel": "Nomos Glashütte exact current reference 241",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-242",
+          "referenceLabel": "Nomos Glashütte exact current reference 242",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-249",
+          "referenceLabel": "Nomos Glashütte exact current reference 249",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-226",
+          "referenceLabel": "Nomos Glashütte exact current reference 226",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-227",
+          "referenceLabel": "Nomos Glashütte exact current reference 227",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-210",
+          "referenceLabel": "Nomos Glashütte exact current reference 210",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-201",
+          "referenceLabel": "Nomos Glashütte exact current reference 201",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-205",
+          "referenceLabel": "Nomos Glashütte exact current reference 205",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-211-gob",
+          "referenceLabel": "Nomos Glashütte exact current reference 211.GOB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-212-gob",
+          "referenceLabel": "Nomos Glashütte exact current reference 212.GOB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-215",
+          "referenceLabel": "Nomos Glashütte exact current reference 215",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-216",
+          "referenceLabel": "Nomos Glashütte exact current reference 216",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-234",
+          "referenceLabel": "Nomos Glashütte exact current reference 234",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-235",
+          "referenceLabel": "Nomos Glashütte exact current reference 235",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-231",
+          "referenceLabel": "Nomos Glashütte exact current reference 231",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-236",
+          "referenceLabel": "Nomos Glashütte exact current reference 236",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-237",
+          "referenceLabel": "Nomos Glashütte exact current reference 237",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-251",
+          "referenceLabel": "Nomos Glashütte exact current reference 251",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-262",
+          "referenceLabel": "Nomos Glashütte exact current reference 262",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-282-s2",
+          "referenceLabel": "Nomos Glashütte exact current reference 282.S2",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-250-s2",
+          "referenceLabel": "Nomos Glashütte exact current reference 250.S2",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-326",
+          "referenceLabel": "Nomos Glashütte exact current reference 326",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-319",
+          "referenceLabel": "Nomos Glashütte exact current reference 319",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-320",
+          "referenceLabel": "Nomos Glashütte exact current reference 320",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-329",
+          "referenceLabel": "Nomos Glashütte exact current reference 329",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-330",
+          "referenceLabel": "Nomos Glashütte exact current reference 330",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-315",
+          "referenceLabel": "Nomos Glashütte exact current reference 315",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-325",
+          "referenceLabel": "Nomos Glashütte exact current reference 325",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-301",
+          "referenceLabel": "Nomos Glashütte exact current reference 301",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-309",
+          "referenceLabel": "Nomos Glashütte exact current reference 309",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-348",
+          "referenceLabel": "Nomos Glashütte exact current reference 348",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-349",
+          "referenceLabel": "Nomos Glashütte exact current reference 349",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-397",
+          "referenceLabel": "Nomos Glashütte exact current reference 397",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-396",
+          "referenceLabel": "Nomos Glashütte exact current reference 396",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-384",
+          "referenceLabel": "Nomos Glashütte exact current reference 384",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-387",
+          "referenceLabel": "Nomos Glashütte exact current reference 387",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-378",
+          "referenceLabel": "Nomos Glashütte exact current reference 378",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-379",
+          "referenceLabel": "Nomos Glashütte exact current reference 379",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-343",
+          "referenceLabel": "Nomos Glashütte exact current reference 343",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-346",
+          "referenceLabel": "Nomos Glashütte exact current reference 346",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-366",
+          "referenceLabel": "Nomos Glashütte exact current reference 366",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-401",
+          "referenceLabel": "Nomos Glashütte exact current reference 401",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-401-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 401.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-410",
+          "referenceLabel": "Nomos Glashütte exact current reference 410",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-410-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 410.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-405",
+          "referenceLabel": "Nomos Glashütte exact current reference 405",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-405-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 405.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-402",
+          "referenceLabel": "Nomos Glashütte exact current reference 402",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-402-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 402.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-418",
+          "referenceLabel": "Nomos Glashütte exact current reference 418",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-419",
+          "referenceLabel": "Nomos Glashütte exact current reference 419",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-406",
+          "referenceLabel": "Nomos Glashütte exact current reference 406",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-408",
+          "referenceLabel": "Nomos Glashütte exact current reference 408",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-440",
+          "referenceLabel": "Nomos Glashütte exact current reference 440",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-440-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 440.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-437",
+          "referenceLabel": "Nomos Glashütte exact current reference 437",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-437-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 437.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-439",
+          "referenceLabel": "Nomos Glashütte exact current reference 439",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-439-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 439.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-438",
+          "referenceLabel": "Nomos Glashütte exact current reference 438",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-438-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 438.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-425",
+          "referenceLabel": "Nomos Glashütte exact current reference 425",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-475",
+          "referenceLabel": "Nomos Glashütte exact current reference 475",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-427",
+          "referenceLabel": "Nomos Glashütte exact current reference 427",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-477",
+          "referenceLabel": "Nomos Glashütte exact current reference 477",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-424",
+          "referenceLabel": "Nomos Glashütte exact current reference 424",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-474",
+          "referenceLabel": "Nomos Glashütte exact current reference 474",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-426",
+          "referenceLabel": "Nomos Glashütte exact current reference 426",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-476",
+          "referenceLabel": "Nomos Glashütte exact current reference 476",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-805",
+          "referenceLabel": "Nomos Glashütte exact current reference 805",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-807",
+          "referenceLabel": "Nomos Glashütte exact current reference 807",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-560",
+          "referenceLabel": "Nomos Glashütte exact current reference 560",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-566",
+          "referenceLabel": "Nomos Glashütte exact current reference 566",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-567",
+          "referenceLabel": "Nomos Glashütte exact current reference 567",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-569",
+          "referenceLabel": "Nomos Glashütte exact current reference 569",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-569-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 569.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-563",
+          "referenceLabel": "Nomos Glashütte exact current reference 563",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-568",
+          "referenceLabel": "Nomos Glashütte exact current reference 568",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-568-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 568.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-525",
+          "referenceLabel": "Nomos Glashütte exact current reference 525",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-525-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 525.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-518",
+          "referenceLabel": "Nomos Glashütte exact current reference 518",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-528",
+          "referenceLabel": "Nomos Glashütte exact current reference 528",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-517",
+          "referenceLabel": "Nomos Glashütte exact current reference 517",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-527",
+          "referenceLabel": "Nomos Glashütte exact current reference 527",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-516",
+          "referenceLabel": "Nomos Glashütte exact current reference 516",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-526",
+          "referenceLabel": "Nomos Glashütte exact current reference 526",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-635",
+          "referenceLabel": "Nomos Glashütte exact current reference 635",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-755",
+          "referenceLabel": "Nomos Glashütte exact current reference 755",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-755-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 755.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-757",
+          "referenceLabel": "Nomos Glashütte exact current reference 757",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-757-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 757.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-756",
+          "referenceLabel": "Nomos Glashütte exact current reference 756",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-756-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 756.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-701-1",
+          "referenceLabel": "Nomos Glashütte exact current reference 701.1",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-703-1",
+          "referenceLabel": "Nomos Glashütte exact current reference 703.1",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-708",
+          "referenceLabel": "Nomos Glashütte exact current reference 708",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-709",
+          "referenceLabel": "Nomos Glashütte exact current reference 709",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-707",
+          "referenceLabel": "Nomos Glashütte exact current reference 707",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-707-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 707.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-714",
+          "referenceLabel": "Nomos Glashütte exact current reference 714",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-714-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 714.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-711",
+          "referenceLabel": "Nomos Glashütte exact current reference 711",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-711-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 711.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-715",
+          "referenceLabel": "Nomos Glashütte exact current reference 715",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-715-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 715.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-717",
+          "referenceLabel": "Nomos Glashütte exact current reference 717",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-717-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 717.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-706",
+          "referenceLabel": "Nomos Glashütte exact current reference 706",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-706-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 706.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-719",
+          "referenceLabel": "Nomos Glashütte exact current reference 719",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-719-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 719.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-716",
+          "referenceLabel": "Nomos Glashütte exact current reference 716",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-716-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 716.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-718",
+          "referenceLabel": "Nomos Glashütte exact current reference 718",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-718-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 718.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-745",
+          "referenceLabel": "Nomos Glashütte exact current reference 745",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-747",
+          "referenceLabel": "Nomos Glashütte exact current reference 747",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-750",
+          "referenceLabel": "Nomos Glashütte exact current reference 750",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-735",
+          "referenceLabel": "Nomos Glashütte exact current reference 735",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-737",
+          "referenceLabel": "Nomos Glashütte exact current reference 737",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-739",
+          "referenceLabel": "Nomos Glashütte exact current reference 739",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-739-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 739.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-730",
+          "referenceLabel": "Nomos Glashütte exact current reference 730",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-725",
+          "referenceLabel": "Nomos Glashütte exact current reference 725",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-725-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 725.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-726",
+          "referenceLabel": "Nomos Glashütte exact current reference 726",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-726-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 726.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-724",
+          "referenceLabel": "Nomos Glashütte exact current reference 724",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-724-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 724.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-720",
+          "referenceLabel": "Nomos Glashütte exact current reference 720",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-720-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 720.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-736",
+          "referenceLabel": "Nomos Glashütte exact current reference 736",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-738",
+          "referenceLabel": "Nomos Glashütte exact current reference 738",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-722",
+          "referenceLabel": "Nomos Glashütte exact current reference 722",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-722-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 722.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-723",
+          "referenceLabel": "Nomos Glashütte exact current reference 723",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-723-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 723.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-721",
+          "referenceLabel": "Nomos Glashütte exact current reference 721",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-721-gb",
+          "referenceLabel": "Nomos Glashütte exact current reference 721.GB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-761",
+          "referenceLabel": "Nomos Glashütte exact current reference 761",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-762",
+          "referenceLabel": "Nomos Glashütte exact current reference 762",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-763",
+          "referenceLabel": "Nomos Glashütte exact current reference 763",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-764",
+          "referenceLabel": "Nomos Glashütte exact current reference 764",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-759",
+          "referenceLabel": "Nomos Glashütte exact current reference 759",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-760",
+          "referenceLabel": "Nomos Glashütte exact current reference 760",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-792",
+          "referenceLabel": "Nomos Glashütte exact current reference 792",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-792-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 792.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790",
+          "referenceLabel": "Nomos Glashütte exact current reference 790",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s8",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S8",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-791",
+          "referenceLabel": "Nomos Glashütte exact current reference 791",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-791-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 791.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s7",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S7",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s9",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S9",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-781",
+          "referenceLabel": "Nomos Glashütte exact current reference 781",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-782",
+          "referenceLabel": "Nomos Glashütte exact current reference 782",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s3",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S3",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s6",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S6",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s4",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S4",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s2",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S2",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s5",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S5",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s11",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S11",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s10",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S10",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-790-s1",
+          "referenceLabel": "Nomos Glashütte exact current reference 790.S1",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-940",
+          "referenceLabel": "Nomos Glashütte exact current reference 940",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-941",
+          "referenceLabel": "Nomos Glashütte exact current reference 941",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-942",
+          "referenceLabel": "Nomos Glashütte exact current reference 942",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-920",
+          "referenceLabel": "Nomos Glashütte exact current reference 920",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-921",
+          "referenceLabel": "Nomos Glashütte exact current reference 921",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1122",
+          "referenceLabel": "Nomos Glashütte exact current reference 1122",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1122-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 1122.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1123",
+          "referenceLabel": "Nomos Glashütte exact current reference 1123",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1123-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 1123.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1124",
+          "referenceLabel": "Nomos Glashütte exact current reference 1124",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1124-sb",
+          "referenceLabel": "Nomos Glashütte exact current reference 1124.SB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1170",
+          "referenceLabel": "Nomos Glashütte exact current reference 1170",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1106",
+          "referenceLabel": "Nomos Glashütte exact current reference 1106",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1110",
+          "referenceLabel": "Nomos Glashütte exact current reference 1110",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1101",
+          "referenceLabel": "Nomos Glashütte exact current reference 1101",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1108",
+          "referenceLabel": "Nomos Glashütte exact current reference 1108",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1102",
+          "referenceLabel": "Nomos Glashütte exact current reference 1102",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1113",
+          "referenceLabel": "Nomos Glashütte exact current reference 1113",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1114",
+          "referenceLabel": "Nomos Glashütte exact current reference 1114",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1180",
+          "referenceLabel": "Nomos Glashütte exact current reference 1180",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1165",
+          "referenceLabel": "Nomos Glashütte exact current reference 1165",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-953",
+          "referenceLabel": "Nomos Glashütte exact current reference 953",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-954",
+          "referenceLabel": "Nomos Glashütte exact current reference 954",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-935",
+          "referenceLabel": "Nomos Glashütte exact current reference 935",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-930",
+          "referenceLabel": "Nomos Glashütte exact current reference 930",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-931",
+          "referenceLabel": "Nomos Glashütte exact current reference 931",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1250",
+          "referenceLabel": "Nomos Glashütte exact current reference 1250",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1252",
+          "referenceLabel": "Nomos Glashütte exact current reference 1252",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1251",
+          "referenceLabel": "Nomos Glashütte exact current reference 1251",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
+        },
+
+        {
+          "id": "nomos-reference-1303",
+          "referenceLabel": "Nomos Glashütte exact current reference 1303",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current NOMOS reference confirmed in the official catalogue audit."
         }
       ]
     },
@@ -29556,6 +32555,1553 @@
             ]
           },
           "coverageRationale": "Current official BR-03 Astro configuration; preserve the exact 41 mm ceramic, astronomical-display, rubber-and-canvas boundary and unavailable status."
+        },
+        {
+          "id": "bell-ross-reference-br03a-bl-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-BL-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-her-ce-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-HER-CE/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-mil-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-MIL-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-ph-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-PH-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-lm-skce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-LM-SKCE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-bl-skce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-BL-SKCE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-he-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-HE-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-cps-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-CPS-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0392-rco-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR0392-RCO-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-hrz-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-HRZ-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0392-paf7-ce-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR0392-PAF7-CE/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-bl-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-BL-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-blu-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-BLU-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-gn-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-GN-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-gh-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-GH-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-gb-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-GB-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-gr-skst-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-GR-SKST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-wh-stpg-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-WH-STPG/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03ad-bbr-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03AD-BBR-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0393-bl-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR0393-BL-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0393-blu-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR0393-BLU-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0393-gn-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR0393-GN-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0393-com-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR0393-COM-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0394-bl-ce",
+          "referenceLabel": "Bell & Ross exact current reference BR0394-BL-CE",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0394-rsd-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR0394-RSD-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0394-btr-ce-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR0394-BTR-CE/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0394-blc-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR0394-BLC-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0394-blu-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR0394-BLU-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-d-bl-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-D-BL-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-d-ol-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-D-OL-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-d-lm-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-D-LM-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0392-d-tr-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR0392-D-TR-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-d-bl-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-D-BL-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-d-blu-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-D-BLU-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-d-wh-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-D-WH-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-d-bl-br-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-D-BL-BR/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0392-d-lt-br-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR0392-D-LT-BR/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0392-d-wh-br-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR0392-D-WH-BR/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br0392-d-br-br-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR0392-D-BR-BR/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03-cyber-ce",
+          "referenceLabel": "Bell & Ross exact current reference BR03-CYBER-CE",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br03a-bl-skst-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR03A-BL-SKST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-s-bl-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-S-BL-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-s-gr-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-S-GR-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-s-bu-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-S-BU-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-s-mp-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-S-MP-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-s-ea-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-S-EA-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-s-ea-lgd-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-S-EA-LGD/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-blu-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BLU-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-blu-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BLU-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-gr-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-GR-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-gr-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-GR-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-br-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BR-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-br-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BR-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-mi-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-MI-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-mi-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-MI-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-ab-skst-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-AB-SKST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-ab-skst-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-AB-SKST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-el-glst-ssg",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-EL-GLST/SSG",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-glst-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-GLST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-blu-skst-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BLU-SKST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-blu-skst-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BLU-SKST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-gn-skst-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-GN-SKST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-gn-skst-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-GN-SKST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-sk-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-SK-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-sk-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-SK-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-ch-skst-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-CH-SKST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-ch-skst-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-CH-SKST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-stfld-sfd",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-STFLD/SFD",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-stfld-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-STFLD/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-stfld-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-STFLD/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-ce-sce",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-CE/SCE",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-sk-ce-sce",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-SK-CE/SCE",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-sk-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-SK-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-blm-skce-sce",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BLM-SKCE/SCE",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-ph-sk-ce-sce",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-PH-SK-CE/SCE",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-ph-sk-ce-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-PH-SK-CE/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-stpg-ssg",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-STPG/SSG",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-stpg-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-STPG/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-pg-spg",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-PG/SPG",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-bl-pg-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BL-PG/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-blu-pg-spg",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BLU-PG/SPG",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-blu-pg-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-BLU-PG/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-gn-pg-spg",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-GN-PG/SPG",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-gn-pg-scr",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-GN-PG/SCR",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-pg-sk-pg-spg",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-PG-SK-PG/SPG",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05a-pg-sk-pg-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05A-PG-SK-PG/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05g-bl-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05G-BL-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05g-bl-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05G-BL-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05g-pb-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05G-PB-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05g-pb-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05G-PB-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05g-gn-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05G-GN-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05g-gn-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05G-GN-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05g-si-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05G-SI-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05g-si-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05G-SI-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-blc-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-BLC-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-blc-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-BLC-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-blu-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-BLU-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-blu-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-BLU-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-paf-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-PAF-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-paf-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-PAF-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-gn-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-GN-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-gn-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-GN-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-rth-stpg-ssg",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-RTH-STPG/SSG",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-rth-stpg-srb",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-RTH-STPG/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-std-stpg-ssg",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-STD-STPG/SSG",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-std-stpg-sca",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-STD-STPG/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-br05c-sp-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BR05C-SP-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx3r-bl-ti-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX3R-BL-TI/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx3r-blu-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX3R-BLU-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx3r-paf-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX3R-PAF-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx3r-gn-ca-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX3R-GN-CA/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx3m-trb-st-scr",
+          "referenceLabel": "Bell & Ross exact current reference BRX3M-TRB-ST/SCR",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx3m-mr-st-sca",
+          "referenceLabel": "Bell & Ross exact current reference BRX3M-MR-ST/SCA",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-bl-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-BL-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-bl-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-BL-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-ib-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-IB-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-ib-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-IB-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-irs-st-sst",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-IRS-ST/SST",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-irs-st-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-IRS-ST/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-bl-ti-sti",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-BL-TI/STI",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-bl-ti-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-BL-TI/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-rac-ti-sti",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-RAC-TI/STI",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-rac-ti-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-RAC-TI/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-bo-tc-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-BO-TC/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-lum-tc-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-LUM-TC/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
+        },
+
+        {
+          "id": "bell-ross-reference-brx5r-blum-tc-srb",
+          "referenceLabel": "Bell & Ross exact current reference BRX5R-BLUM-TC/SRB",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Add the exact current Bell & Ross reference confirmed on an official product card."
         }
       ]
     },
