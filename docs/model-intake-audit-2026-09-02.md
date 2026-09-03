@@ -2209,3 +2209,49 @@ non-watch/archived-accessory bucket were recorded as excluded. Every added
 target retains its official Girard-Perregaux product-page URL. Technical,
 price, and availability fields remain unpromoted. Perplexity was unavailable;
 the official catalogue and product pages were used as primary-source fallback.
+
+## One-hundred-twenty-second Sinn exact-reference expansion (retrieved 2026-09-03)
+
+The complete Sinn audit reconciled the official [Sinn watches catalogue](https://www.sinn.de/en/watches/),
+series index, official 2025/2026 catalogue PDF, and canonical product pages.
+It found 172 current exact references; one was already represented and 171
+additional exact references were added as planned targets. No accessory or
+archived record was admitted to the current watch universe. Every added target
+retains its official Sinn product-page URL. Technical, price, and availability
+fields remain unpromoted. Perplexity was unavailable because of quota
+exhaustion.
+
+## One-hundred-twenty-third Ulysse Nardin exact-reference expansion (retrieved 2026-09-03)
+
+The complete Ulysse Nardin audit reconciled the official [watches catalogue](https://www.ulysse-nardin.com/en-us/watches),
+collection pages, official GraphQL catalogue, canonical product pages, and
+[discontinued-models catalogue](https://www.ulysse-nardin.com/en-us/watches/discontinued-models).
+It found 202 current exact references; one was already represented and 201
+additional exact references were added as planned targets. The discontinued
+catalogue set and accessories scope were recorded as excluded from the current
+watch universe. Every added target retains its official Ulysse Nardin
+product-page URL. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable because of quota exhaustion.
+
+## One-hundred-twenty-fourth TAG Heuer exact-reference expansion (retrieved 2026-09-03)
+
+The TAG Heuer audit reconciled the official [all-watches catalogue](https://www.tagheuer.com/us/en/timepieces/discover/discover-all-watches/),
+regional catalogue pagination, collection pages, and the official vintage and
+accessories scopes. It found 175 current exact references; one was already
+represented and 174 additional exact references were added as planned targets.
+Accessories and archived/discontinued timepieces were recorded as excluded
+from the current watch universe. Each added target retains an official TAG
+Heuer catalogue or collection source. Technical, price, and availability
+fields remain unpromoted. Perplexity was unavailable because of quota
+exhaustion.
+
+## One-hundred-twenty-fifth Glashütte Original exact-reference expansion (retrieved 2026-09-03)
+
+The Glashütte Original audit reconciled the official [watch finder](https://www.glashuette-original.com/en/watch-finder/),
+watch-finder API response, collection pages, and current catalogue scope. It
+found 267 current exact references; one was already represented and 266
+additional exact references were added as planned targets. Archived/discontinued
+records and accessories were recorded as excluded from the current watch
+universe. Each added target retains an official Glashütte Original catalogue
+or collection source. Technical, price, and availability fields remain
+unpromoted. Perplexity was unavailable because of quota exhaustion.
