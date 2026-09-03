@@ -1605,6 +1605,36 @@ Tudor references (`M79000B-0001`, `M7939G1A0NRU-0003`, `M7943A1A0NU-0001`,
 `M79930-0007`, `M91560-0002`, `M2840D1A0-0001`). The official checks include
 [Cartier W4TA0031](https://www.cartier.com/en-ca/watches/collections/tank/tank-must-de-cartier-watch-CRW4TA0031.html), [Omega 434.10.40.20.10.001](https://www.omegawatches.com.hk/en-hk/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43410402010001), [Seiko SPB507J1](https://www.seikowatches.com/us-en/products/prospex/spb507j1), [Seiko SRPL83](https://www.seikowatches.com/pl-pl/products/5sports/srpl83), [IWC IW388305](https://www.iwc.com/us-en/watches/pilot-watches/iw388305-pilots-watch-performance-chronograph-41-amg), [Chopard 168574-3013](https://www.chopard.com/en-us/watch/168574-3013.html), [Panerai PAM03313](https://www.panerai.com/en/collections/watch-collection/luminor/pam03313-luminor-marina.html), [Panerai PAM01731](https://www.panerai.com/en/collections/watch-collection/luminor/pam01731-luminor.html), [Hublot 421.EX.5129.NR.RLD](https://www.hublot.com/en-us/watches/big-bang/big-bang-reloaded-blue-ceramic-44-mm), [Hublot 642.QK.0110.NR](https://www.hublot.com/en-us/watches/big-bang/spirit-of-big-bang-frosted-carbon-42-mm), [Grand Seiko SBGJ237](https://www.grand-seiko.com/us-en/collections/sbgj237g), and [Tudor M79000B-0001](https://www.tudorwatch.com/en/watches/black-bay-54/m79000b-0001).
 
+Complete exact-card index for the remaining 28 targets: Grand Seiko
+[SBGJ237](https://www.grand-seiko.com/us-en/collections/sbgj237g),
+[SBGE255](https://www.grand-seiko.com/us-en/collections/sbge255g),
+[SBGC253](https://www.grand-seiko.com/us-en/collections/sbgc253g),
+[SBGM255](https://www.grand-seiko.com/us-en/collections/sbgm255g),
+[SBGY007](https://www.grand-seiko.com/us-en/collections/sbgy007g),
+[SBGA293](https://www.grand-seiko.com/us-en/collections/sbga293g),
+[SLGA021](https://www.grand-seiko.com/us-en/collections/slga021g), and
+[SLGC001](https://www.grand-seiko.com/us-en/collections/slgc001g); Tudor
+[M79000B-0001](https://www.tudorwatch.com/en/watches/black-bay-54/m79000b-0001),
+[M7939G1A0NRU-0003](https://www.tudorwatch.com/en/watches/black-bay-58/m7939g1a0nru-0003),
+[M7943A1A0NU-0001](https://www.tudorwatch.com/en/watches/black-bay-68/m7943a1a0nu-0001),
+[M79310N-0001](https://www.tudorwatch.com/en/watch-family/daring-watches/m79310n-0001),
+[M79470-0004](https://www.tudorwatch.com/en/watches/black-bay-pro/m79470-0004),
+[M25610TNL-0001](https://www.tudorwatch.com/en/watches/pelagos/m25610tnl-0001),
+[M2542G267NU-0002](https://www.tudorwatch.com/en/watches/pelagos-fxd/m2542gxx7nu-0002),
+[M79930-0007](https://www.tudorwatch.com/en/watches/ranger/m79930-0007),
+[M91560-0002](https://www.tudorwatch.com/en/watches/1926/m91560-0002), and
+[M2840D1A0-0001](https://www.tudorwatch.com/en/watches/tudor-royal/m2840d1a0-0001);
+IWC [IW388305](https://www.iwc.com/us-en/watches/pilot-watches/iw388305-pilots-watch-performance-chronograph-41-amg);
+Chopard [168574-3013](https://www.chopard.com/en-us/watch/168574-3013.html);
+Panerai [PAM03313](https://www.panerai.com/en/collections/watch-collection/luminor/pam03313-luminor-marina.html)
+and [PAM01731](https://www.panerai.com/en/collections/watch-collection/luminor/pam01731-luminor.html);
+Hublot [421.EX.5129.NR.RLD](https://www.hublot.com/en-us/watches/big-bang/big-bang-reloaded-blue-ceramic-44-mm)
+and [642.QK.0110.NR](https://www.hublot.com/en-us/watches/big-bang/spirit-of-big-bang-frosted-carbon-42-mm);
+Cartier [W4TA0031](https://www.cartier.com/en-ca/watches/collections/tank/tank-must-de-cartier-watch-CRW4TA0031.html);
+Omega [434.10.40.20.10.001](https://www.omegawatches.com.hk/en-hk/watch-omega-de-ville-prestige-co-axial-master-chronometer-40-mm-43410402010001);
+Seiko [SPB507J1](https://www.seikowatches.com/us-en/products/prospex/spb507j1) and
+[SRPL83](https://www.seikowatches.com/pl-pl/products/5sports/srpl83).
+
 The same audits identified 39 additional exact references and added them to
 the manifest as `planned` targets for later Perplexity normalization: 12 Grand
 Seiko references (`SBGE295`, `SLGC009`, `SBGA481`, `SBGE253`, `SBGE257`,
