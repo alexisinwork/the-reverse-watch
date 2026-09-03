@@ -19938,8 +19938,8 @@
       },
       "targets": [
         {
-          "id": "rado-high-accuracy-ceramic-daily",
-          "referenceLabel": "Validate current Rado HyperChrome Quartz R32280109 as one homogeneous black-rubber configuration with exact wearing span, full configured mass, numerical PreciDrive accuracy, graded night readability, and factory attachment evidence",
+    "id": "rado-hyperchrome-r32280109",
+    "referenceLabel": "Rado HyperChrome Quartz exact reference R32280109",
           "state": "needs_review",
           "coverageIntent": {
             "priceBands": [

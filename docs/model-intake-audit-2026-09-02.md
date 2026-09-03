@@ -1948,3 +1948,13 @@ audit also corrected the manifest's M79000-0001 to M79000B-0001 and
 M2542G267NU-0002 to M2542GXX7NU-0002. No technical or commercial fields
 were promoted; Perplexity normalization remains pending because its API quota
 is exhausted.
+
+## Ninety-ninth Rado identity normalization (retrieved 2026-09-03)
+
+The interrupted parallel audit confirmed the existing Rado HyperChrome Quartz
+reference R32280109 against the [official Rado watch
+catalogue](https://www.rado.com/en_us/watches/all-watches/men-watches.html).
+No complete catalogue omission list was accepted from that pass. The existing
+target was normalized from a generic research ID to an explicit
+Rado HyperChrome reference; no technical, price, or availability claims were
+promoted.
