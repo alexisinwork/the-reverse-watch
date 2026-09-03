@@ -2092,3 +2092,14 @@ as planned targets. The separate generic mid-price mechanical target remains
 unpromoted. Product URLs encode the exact reference identity, while technical,
 price, and availability fields remain unpromoted until captured from each
 product sheet. Perplexity was unavailable because of quota exhaustion.
+
+## One-hundred-twelfth Junghans exact-reference follow-up (retrieved 2026-09-03)
+
+The official [Junghans watch catalogue](https://junghans.de/en/collection/) exposed 23 product-card entries that
+were present in the watch catalogue API but absent from the public SKU search
+index. Official card image metadata and item-number fields confirmed 19 unique
+exact watch references; four duplicate max bill Quarz entries repeated the
+same `41/4660.46` identity and were not duplicated in the manifest. The 19
+confirmed references were added as planned targets. Technical, price, and
+availability fields remain unpromoted. Perplexity was unavailable because of
+quota exhaustion.

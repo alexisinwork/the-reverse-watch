@@ -54437,6 +54437,215 @@
             ]
           },
           "coverageRationale": "Current official max bill configuration; preserve the exact 38 mm steel case, silver dial, and black leather-strap boundary."
+        },
+        {
+          "id": "junghans-reference-41466046",
+          "referenceLabel": "Junghans max bill Quarz exact reference 41/4660.46",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-41785702",
+          "referenceLabel": "Junghans max bill Quarz exact reference 41/7857.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-41785704",
+          "referenceLabel": "Junghans max bill Quarz exact reference 41/7857.04",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-47455802",
+          "referenceLabel": "Junghans max bill Damen exact reference 47/4558.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-47455302",
+          "referenceLabel": "Junghans max bill Damen exact reference 47/4553.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-47455702",
+          "referenceLabel": "Junghans max bill Damen exact reference 47/4557.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-47455602",
+          "referenceLabel": "Junghans max bill Damen exact reference 47/4556.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-47455502",
+          "referenceLabel": "Junghans max bill Damen exact reference 47/4555.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-47454002",
+          "referenceLabel": "Junghans max bill Damen exact reference 47/4540.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27422202",
+          "referenceLabel": "Junghans Meister Chronoscope exact reference 27/4222.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27442946",
+          "referenceLabel": "Junghans Meister Chronoscope exact reference 27/4429.46",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27422402",
+          "referenceLabel": "Junghans Meister Chronoscope exact reference 27/4224.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27452602",
+          "referenceLabel": "Junghans Meister Chronoscope exact reference 27/4526.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27437202",
+          "referenceLabel": "Junghans FORM A Chronoscope exact reference 27/4372.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27437000",
+          "referenceLabel": "Junghans FORM A Chronoscope exact reference 27/4370.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27447302",
+          "referenceLabel": "Junghans FORM A Chronoscope exact reference 27/4473.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27421044",
+          "referenceLabel": "Junghans Meister S Automatic exact reference 27/4210.44",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27421100",
+          "referenceLabel": "Junghans Meister S Automatic exact reference 27/4211.00",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
+        },
+        {
+          "id": "junghans-reference-27780602",
+          "referenceLabel": "Junghans max bill Automatic exact reference 27/7806.02",
+          "state": "planned",
+          "coverageIntent": {
+            "functionProfiles": [
+              "simple_date"
+            ]
+          },
+          "coverageRationale": "Current exact reference confirmed by an official Junghans product card; detailed facts remain unpromoted until field-level evidence is captured."
         }
       ]
     },
