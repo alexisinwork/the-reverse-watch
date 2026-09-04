@@ -1,7 +1,6 @@
 import { z } from "zod";
 
 import type { PublishedDiscoveryStory } from "./discovery-public";
-import type { RecommendationResult } from "./recommendation";
 import type { AESTHETIC_DNA, SOCIAL_SIGNALS } from "./questionnaire";
 
 const storySlugSchema = z
@@ -38,9 +37,22 @@ function originalIdentity(story: PublishedDiscoveryStory) {
     .join(" ");
 }
 
+/**
+ * Only the reference code and hard reasons are read, so either engine's
+ * result satisfies this shape.
+ */
+type StoryConstraintCandidate = {
+  referenceCode: string;
+  hardReasons: readonly { code: string }[];
+};
+
 export function explainStoryConstraint(
   story: PublishedDiscoveryStory,
-  recommendation: RecommendationResult,
+  recommendation: {
+    recommendations: readonly StoryConstraintCandidate[];
+    verificationRequired: readonly StoryConstraintCandidate[];
+    whyNot: readonly StoryConstraintCandidate[];
+  },
 ) {
   const identity = originalIdentity(story) || "This attribution";
   const candidates = [

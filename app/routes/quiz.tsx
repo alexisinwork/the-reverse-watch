@@ -5,6 +5,7 @@ import {
   Link,
   redirect,
   useActionData,
+  useLoaderData,
   useLocation,
   useNavigation,
 } from "react-router";
@@ -13,7 +14,8 @@ import { z } from "zod";
 import type { Route } from "./+types/quiz";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
-import { loadRecommendationData } from "../domain/catalogue.server";
+import { loadRecommendationCatalogue } from "../domain/catalogue.server";
+import { loadCatalogueVocabulary } from "../domain/catalogue-vocabulary.server";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
 import {
   explainStoryConstraint,
@@ -25,60 +27,30 @@ import {
   createEmailDeliveryDeduplicationClient,
   emailDeliveryDeduplicationKey,
 } from "../domain/email-deduplication.server";
+import { CURRENCIES } from "../domain/questionnaire";
 import {
-  ACCURACY_TOLERANCES,
-  ACQUISITION_CHANNELS,
-  AESTHETIC_DNA,
-  ALLERGY_CONSTRAINTS,
-  ATTACHMENT_TYPES,
-  AVAILABILITY_TOLERANCES,
-  COMPLICATIONS,
-  CONDITIONS,
-  COSMETIC_TOLERANCES,
-  CROWN_POSITIONS,
-  CURRENCIES,
-  DATE_PREFERENCES,
-  DEPLOYMENT_ENVIRONMENTS,
-  EMOTIONAL_OBJECTIVES,
-  LIQUIDITY_PREFERENCES,
-  LUG_CURVATURES,
-  LUME_PREFERENCES,
-  MARKET_STANCES,
-  MILLIMETRES_PER_INCH,
-  normalizeProfile,
-  OWNERSHIP_FRICTION_LEVELS,
-  PRICE_BANDS,
-  PROVENANCE_PREFERENCES,
-  QUESTIONNAIRE_STORAGE_KEY,
-  QUESTIONNAIRE_VERSION,
-  questionnaireProfileSchema,
-  refinementSchema,
-  SOCIAL_SIGNALS,
-  SPECULATIVE_RISK_TOLERANCES,
-  coreProfileSchema,
-  WEIGHT_LIMITS,
-  WRIST_BANDS,
-  WRIST_UNITS,
-  wristCircumferenceToMm,
-} from "../domain/questionnaire";
+  ALLERGY_CONSTRAINTS_V3,
+  CRYSTAL_CHOICES,
+  MOVEMENT_CONSTRUCTIONS,
+  MOVEMENT_TYPE_CHOICES,
+  normalizeProfileV3,
+  profileV3Schema,
+  QUESTIONNAIRE_V3_STORAGE_KEY,
+  QUESTIONNAIRE_V3_VERSION,
+  WATER_RESISTANCE_MINIMUMS,
+} from "../domain/questionnaire-v3";
+import { CASE_SHAPES } from "../domain/sheet-intake";
+import type { CaseShape } from "../domain/sheet-intake";
 import type {
-  CoreProfile,
-  RefinementProfile,
-  WristUnit,
-} from "../domain/questionnaire";
-import type {
-  EvaluatedCandidate,
-  RecommendationResult,
+  EvaluatedCandidateV3,
+  RecommendationResultV3,
 } from "../domain/recommendation";
-import {
-  evaluateHardFilterPartition,
-  recommendWatches,
-} from "../domain/recommendation";
+import { recommendWatchesV3 } from "../domain/recommendation";
 import {
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
 } from "../domain/beehiiv.server";
-import { renderDossierEmail } from "../domain/dossier-email";
+import { renderDossierEmailV3 } from "../domain/dossier-email";
 import {
   summarizeEmailDelivery,
   type DeliveryChannelStatus,
@@ -99,16 +71,21 @@ import {
 } from "../domain/rate-limit-upstash.server";
 import "../styles/quiz.css";
 
-const CORE_STEP_COUNT = 6;
-const REFINE_STEP_COUNT = 7;
-const SUMMARY_STEP = CORE_STEP_COUNT + REFINE_STEP_COUNT;
+const SCREEN_COUNT = 6;
+const SUMMARY_STEP = SCREEN_COUNT;
+
+/**
+ * The version-3 flow submits one complete profile, so every submission is a
+ * qualified recommendation for the funnel counters.
+ */
+const SUBMISSION_INTENT = "core" as const;
 
 type ActionResult =
   | {
       ok: true;
-      intent: "core" | "refine";
-      profile: ReturnType<typeof normalizeProfile>;
-      recommendation: RecommendationResult;
+      intent: typeof SUBMISSION_INTENT;
+      profile: ReturnType<typeof normalizeProfileV3>;
+      recommendation: RecommendationResultV3;
       subscription: SubscriptionResult;
       storyContext?: {
         storySlug: string;
@@ -146,368 +123,52 @@ type EvaluationSummary = {
   meanRecommendationScore: number | null;
 };
 
+type VocabularyOption = { slug: string; labelEn: string };
+
+type QuizLoaderData = {
+  scenarios: VocabularyOption[];
+  complications: VocabularyOption[];
+};
+
 const emailSchema = z.string().trim().email().max(320);
 
-type CoreDraft = {
-  budgetCurrency: CoreProfile["budgetCurrency"];
-  budgetMax: string;
-  wristCircumference: string;
-  wristUnit: WristUnit;
-  deploymentEnvironment: CoreProfile["deploymentEnvironment"] | "";
-  ownershipFriction: CoreProfile["ownershipFriction"] | "";
-  accuracyTolerance: CoreProfile["accuracyTolerance"] | "";
-  weightLimit: CoreProfile["weightLimit"] | "";
-  requiredComplications: CoreProfile["requiredComplications"];
-  datePreference: CoreProfile["datePreference"] | "";
-};
-
-type OptionalValue<T> = T | "";
-
-type RefinementDraft = {
-  socialSignal: OptionalValue<NonNullable<RefinementProfile["socialSignal"]>>;
-  aestheticDna: OptionalValue<NonNullable<RefinementProfile["aestheticDna"]>>;
-  provenancePreference: OptionalValue<
-    NonNullable<RefinementProfile["provenancePreference"]>
-  >;
-  emotionalObjective: OptionalValue<
-    NonNullable<RefinementProfile["emotionalObjective"]>
-  >;
-  marketStance: OptionalValue<NonNullable<RefinementProfile["marketStance"]>>;
-  speculativeRiskTolerance: OptionalValue<
-    NonNullable<RefinementProfile["speculativeRiskTolerance"]>
-  >;
-  requiredLugCurvature: OptionalValue<
-    NonNullable<RefinementProfile["requiredLugCurvature"]>
-  >;
-  requiredAttachmentType: OptionalValue<
-    NonNullable<RefinementProfile["requiredAttachmentType"]>
-  >;
-  requiredLugWidthMm: string;
-  quickReleaseRequired: "" | "yes" | "no";
-  acquisitionChannels: NonNullable<RefinementProfile["acquisitionChannels"]>;
-  availabilityTolerance: OptionalValue<
-    NonNullable<RefinementProfile["availabilityTolerance"]>
-  >;
-  premiumAllowancePercent: string;
-  liquidityPreference: OptionalValue<
-    NonNullable<RefinementProfile["liquidityPreference"]>
-  >;
-  lumePreference: OptionalValue<
-    NonNullable<RefinementProfile["lumePreference"]>
-  >;
-  crownPosition: OptionalValue<NonNullable<RefinementProfile["crownPosition"]>>;
-  purchaseCountry: string;
-  serviceCountry: string;
-  cosmeticTolerance: OptionalValue<
-    NonNullable<RefinementProfile["cosmeticTolerance"]>
-  >;
-  acceptedConditions: NonNullable<RefinementProfile["acceptedConditions"]>;
-  allergyConstraint: OptionalValue<
-    NonNullable<RefinementProfile["allergyConstraint"]>
-  >;
-};
-
-type SavedDraft = {
-  version: typeof QUESTIONNAIRE_VERSION;
-  core: CoreDraft;
-  refinement: RefinementDraft;
-  step: number;
-};
-
-const INITIAL_CORE: CoreDraft = {
-  budgetCurrency: "USD",
-  budgetMax: "",
-  wristCircumference: "",
-  wristUnit: "mm",
-  deploymentEnvironment: "",
-  ownershipFriction: "",
-  accuracyTolerance: "",
-  weightLimit: "",
-  requiredComplications: [],
-  datePreference: "",
-};
-
-const INITIAL_REFINEMENT: RefinementDraft = {
-  socialSignal: "",
-  aestheticDna: "",
-  provenancePreference: "",
-  emotionalObjective: "",
-  marketStance: "",
-  speculativeRiskTolerance: "",
-  requiredLugCurvature: "",
-  requiredAttachmentType: "",
-  requiredLugWidthMm: "",
-  quickReleaseRequired: "",
-  acquisitionChannels: [],
-  availabilityTolerance: "",
-  premiumAllowancePercent: "0",
-  liquidityPreference: "",
-  lumePreference: "",
-  crownPosition: "",
-  purchaseCountry: "",
-  serviceCountry: "",
-  cosmeticTolerance: "",
-  acceptedConditions: [],
-  allergyConstraint: "",
-};
-
 const LABELS: Record<string, string> = {
-  field_water_abuse: "Field, water, or abuse",
-  studio_desk_daily: "Studio, desk, or daily wear",
-  formal_architectural: "Formal or architectural",
-  zero_maintenance: "Quartz, solar, or digital precision",
-  workhorse_mechanical: "Workhorse mechanical",
-  specialist_mechanical: "Specialist mechanical is acceptable",
-  seconds_per_month: "Seconds per month",
-  within_5_seconds_per_day: "Within ±5 seconds per day",
-  within_15_seconds_per_day: "Within ±15 seconds per day",
-  no_requirement: "No accuracy requirement",
-  under_80_g: "Under 80 g",
-  under_120_g: "Under 120 g",
-  under_160_g: "Under 160 g",
-  no_limit: "No weight limit",
-  required: "Date required",
-  forbidden: "No date",
-  either: "Either is acceptable",
-  discreet_competence: "Discreet competence",
-  quiet_continuity: "Quiet continuity",
-  unapologetic_benchmark: "Unapologetic benchmark",
-  anti_luxury: "Anti-luxury tool",
-  structural_tool: "Structural tool",
-  mid_century_industrial: "Mid-century industrial",
-  integrated_geometry: "Integrated geometry",
-  extravagant_creative: "Extravagant or creative",
-  high_art: "High art and finishing",
-  sovereign_independent: "Sovereign independent",
-  industrial_reality: "Industrial reality",
-  modern_transparent: "Transparent modern rebirth",
-  dependability: "Dependable armor",
-  custody: "Generational custody",
-  differentiation: "Creative differentiation",
-  milestone: "Milestone marker",
-  evergreen: "Evergreen",
-  contrarian: "Contrarian",
-  trend_agnostic: "Trend agnostic",
-  avoid: "Avoid speculative risk",
-  accept: "Accept speculative risk",
-  spring_bar: "Standard spring bars",
-  quick_release: "Quick release",
-  proprietary: "Proprietary attachment",
-  integrated: "Integrated bracelet",
-  authorized_dealer: "Authorized dealer",
-  grey_market: "Grey market",
-  secondary_market: "Secondary market",
-  in_stock_only: "In stock only",
-  short_wait: "Short wait is acceptable",
-  waitlist_or_allocation: "Wait-list or allocation is acceptable",
-  not_important: "Not important",
-  prefer_60_percent_plus: "Prefer 60%+ residual value",
-  require_80_percent_plus: "Require 80%+ residual value",
-  some_lume: "Some lume",
-  strong_lume: "Strong lume",
-  wear_and_patina_ok: "Wear and patina are welcome",
-  light_wear_ok: "Light wear is acceptable",
-  keep_looking_new: "Should keep looking new",
-  new: "New only",
-  certified_pre_owned: "Certified pre-owned",
-  pre_owned: "Pre-owned",
-  vintage: "Vintage",
-  none: "No known contact allergy",
-  nickel_contact: "Nickel/contact allergy",
-  flat: "Flat",
-  moderate: "Moderate",
-  steep: "Steep",
-  gmt: "GMT",
-  chronograph: "Chronograph",
-  moonphase: "Moon phase",
-  power_reserve: "Power reserve display",
-  alarm: "Alarm",
-  world_time: "World time",
-  perpetual_calendar: "Perpetual calendar",
-  "3": "3 o'clock",
-  "4": "4 o'clock",
-  "9_destro": "9 o'clock / destro",
-};
-
-const OPTION_DETAILS: Record<string, string> = {
-  discreet_competence: "Recognizable mainly to people who understand watches.",
-  quiet_continuity:
-    "Understated lineage and continuity over broad recognition.",
-  unapologetic_benchmark:
-    "A clear, widely understood expression of achievement and status.",
-  anti_luxury: "Utility and indifference to conventional luxury cues.",
-  structural_tool:
-    "Function-led form: protection, legibility, and purpose are visible.",
-  mid_century_industrial:
-    "Restrained instruments with field, pilot, or marine roots.",
-  integrated_geometry:
-    "Architectural cases, strong angles, and bracelet continuity.",
-  extravagant_creative:
-    "Sculptural or unconventional forms that attract attention.",
-  high_art: "Fine finishing and traditional handcraft as the visual focus.",
-  sovereign_independent:
-    "Independent or foundation-backed ownership matters to you.",
-  industrial_reality:
-    "How the watch is made matters more than its corporate structure.",
-  modern_transparent:
-    "Honest modern origins matter more than an invented heritage.",
-  dependability: "A reliable object that reduces daily friction.",
-  custody: "A lasting object intended to carry memory forward.",
-  differentiation: "A personal choice that rejects generic consensus.",
-  milestone: "A visible marker of progress or achievement.",
+  automatic: "Automatic",
+  manual: "Hand-wound",
+  quartz: "Quartz",
+  solar: "Solar",
+  spring_drive: "Spring drive",
+  hybrid: "Hybrid",
+  mass_produced: "Widely produced calibre",
+  manufacture: "In-house calibre",
+  sapphire: "Sapphire",
+  mineral: "Mineral",
+  acrylic: "Acrylic",
+  other: "Other",
+  round: "Round",
+  tonneau: "Tonneau",
+  rectangular: "Rectangular",
+  cushion: "Cushion",
+  square: "Square",
+  oval: "Oval",
+  none: "No allergy constraint",
+  nickel_contact: "Avoid skin-contact nickel",
+  under_300: "Under 300",
+  "300_500": "300–500",
+  "500_1000": "500–1,000",
+  "1000_2000": "1,000–2,000",
+  "2000_5000": "2,000–5,000",
+  "5000_10000": "5,000–10,000",
+  "10000_15000": "10,000–15,000",
+  "15000_plus": "15,000+",
 };
 
 function labelFor(value: string) {
   return LABELS[value] ?? value.replaceAll("_", " ");
 }
 
-function formatWristMeasurement(value: number) {
-  return String(Number(value.toFixed(2)));
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null && !Array.isArray(value);
-}
-
-type SavedDraftInput = {
-  version: typeof QUESTIONNAIRE_VERSION;
-  core?: unknown;
-  refinement?: unknown;
-  step?: unknown;
-};
-
-function readSavedDraft(): SavedDraftInput | null {
-  try {
-    const raw = window.sessionStorage.getItem(QUESTIONNAIRE_STORAGE_KEY);
-    if (!raw) return null;
-    const parsed: unknown = JSON.parse(raw);
-    if (!isRecord(parsed) || parsed.version !== QUESTIONNAIRE_VERSION) {
-      return null;
-    }
-    return {
-      version: QUESTIONNAIRE_VERSION,
-      core: parsed.core,
-      refinement: parsed.refinement,
-      step: parsed.step,
-    };
-  } catch {
-    return null;
-  }
-}
-
-function hydrateCoreDraft(value: unknown): CoreDraft {
-  if (!isRecord(value)) return INITIAL_CORE;
-
-  const saved = value as Partial<CoreDraft> & {
-    wristCircumferenceMm?: unknown;
-  };
-  const wristUnit = WRIST_UNITS.includes(saved.wristUnit as WristUnit)
-    ? (saved.wristUnit as WristUnit)
-    : "mm";
-  const wristCircumference =
-    typeof saved.wristCircumference === "string"
-      ? saved.wristCircumference
-      : typeof saved.wristCircumferenceMm === "string"
-        ? saved.wristCircumferenceMm
-        : "";
-  delete saved.wristCircumferenceMm;
-
-  return {
-    ...INITIAL_CORE,
-    ...saved,
-    wristCircumference,
-    wristUnit,
-  };
-}
-
-function wristDraftToMm(draft: CoreDraft) {
-  if (draft.wristCircumference.trim() === "") return Number.NaN;
-  const circumference = Number(draft.wristCircumference);
-  if (!Number.isFinite(circumference)) return Number.NaN;
-  return wristCircumferenceToMm(circumference, draft.wristUnit);
-}
-
-function convertWristDraftUnit(value: string, from: WristUnit, to: WristUnit) {
-  if (value.trim() === "" || from === to) return value;
-  const circumference = Number(value);
-  if (!Number.isFinite(circumference)) return "";
-  const millimetres = wristCircumferenceToMm(circumference, from);
-  const converted =
-    to === "mm" ? millimetres : millimetres / MILLIMETRES_PER_INCH;
-  return String(Number(converted.toFixed(to === "mm" ? 2 : 4)));
-}
-
-function buildCoreDraft(draft: CoreDraft): unknown {
-  return {
-    version: QUESTIONNAIRE_VERSION,
-    budgetCurrency: draft.budgetCurrency,
-    budgetMax: Number(draft.budgetMax),
-    wristCircumferenceMm: wristDraftToMm(draft),
-    deploymentEnvironment: draft.deploymentEnvironment,
-    ownershipFriction: draft.ownershipFriction,
-    accuracyTolerance: draft.accuracyTolerance,
-    weightLimit: draft.weightLimit,
-    requiredComplications: draft.requiredComplications,
-    datePreference: draft.datePreference,
-  };
-}
-
-function includeOptional(
-  target: Record<string, unknown>,
-  key: string,
-  value: string,
-) {
-  if (value !== "") target[key] = value;
-}
-
-function buildRefinementDraft(draft: RefinementDraft): unknown {
-  const value: Record<string, unknown> = {};
-  includeOptional(value, "socialSignal", draft.socialSignal);
-  includeOptional(value, "aestheticDna", draft.aestheticDna);
-  includeOptional(value, "provenancePreference", draft.provenancePreference);
-  includeOptional(value, "emotionalObjective", draft.emotionalObjective);
-  includeOptional(value, "marketStance", draft.marketStance);
-  includeOptional(
-    value,
-    "speculativeRiskTolerance",
-    draft.speculativeRiskTolerance,
-  );
-  includeOptional(value, "requiredLugCurvature", draft.requiredLugCurvature);
-  includeOptional(
-    value,
-    "requiredAttachmentType",
-    draft.requiredAttachmentType,
-  );
-  includeOptional(value, "availabilityTolerance", draft.availabilityTolerance);
-  includeOptional(value, "liquidityPreference", draft.liquidityPreference);
-  includeOptional(value, "lumePreference", draft.lumePreference);
-  includeOptional(value, "crownPosition", draft.crownPosition);
-  includeOptional(value, "cosmeticTolerance", draft.cosmeticTolerance);
-  includeOptional(value, "allergyConstraint", draft.allergyConstraint);
-
-  if (draft.requiredLugWidthMm !== "") {
-    value.requiredLugWidthMm = Number(draft.requiredLugWidthMm);
-  }
-  if (draft.quickReleaseRequired !== "") {
-    value.quickReleaseRequired = draft.quickReleaseRequired === "yes";
-  }
-  if (draft.acquisitionChannels.length > 0) {
-    value.acquisitionChannels = draft.acquisitionChannels;
-  }
-  if (draft.premiumAllowancePercent !== "") {
-    value.premiumAllowancePercent = Number(draft.premiumAllowancePercent);
-  }
-  if (draft.purchaseCountry.trim() !== "") {
-    value.purchaseCountry = draft.purchaseCountry;
-  }
-  if (draft.serviceCountry.trim() !== "") {
-    value.serviceCountry = draft.serviceCountry;
-  }
-  if (draft.acceptedConditions.length > 0) {
-    value.acceptedConditions = draft.acceptedConditions;
-  }
-
-  return value;
+function waterResistanceLabel(metres: number) {
+  return metres === 0 ? "No requirement" : `${metres} m or deeper`;
 }
 
 function issueMessages(error: { issues: { message: string }[] }) {
@@ -561,6 +222,47 @@ function rateLimitHeaders(decision: ReturnType<typeof consumeRateLimit>) {
   return headers;
 }
 
+/**
+ * The version-3 questionnaire posts flat form fields rather than a serialised
+ * blob, so an unchecked box is simply an absent field and an unset optional
+ * preference is an empty string.
+ */
+function parseProfileForm(formData: FormData) {
+  const single = (name: string) => {
+    const value = formData.get(name);
+    return typeof value === "string" ? value.trim() : "";
+  };
+  const multiple = (name: string) =>
+    formData
+      .getAll(name)
+      .filter((value): value is string => typeof value === "string")
+      .map((value) => value.trim())
+      .filter((value) => value.length > 0);
+  const optionalNumber = (raw: string) =>
+    raw === "" ? undefined : Number(raw);
+  const optionalBoolean = (raw: string) =>
+    raw === "" ? undefined : raw === "yes";
+  const optionalText = (raw: string) => (raw === "" ? undefined : raw);
+
+  return {
+    version: Number(single("version")),
+    budgetCurrency: single("budgetCurrency"),
+    budgetMax: Number(single("budgetMax")),
+    wearingScenarios: multiple("wearingScenarios"),
+    minimumWaterResistanceM: Number(single("minimumWaterResistanceM")),
+    caseDiameterMinMm: Number(single("caseDiameterMinMm")),
+    caseDiameterMaxMm: Number(single("caseDiameterMaxMm")),
+    movementTypes: multiple("movementTypes"),
+    requiredComplications: multiple("requiredComplications"),
+    allergyConstraint: single("allergyConstraint"),
+    maxCaseThicknessMm: optionalNumber(single("maxCaseThicknessMm")),
+    caseShape: optionalText(single("caseShape")),
+    movementConstruction: optionalText(single("movementConstruction")),
+    displayCaseback: optionalBoolean(single("displayCaseback")),
+    crystal: optionalText(single("crystal")),
+    microAdjustmentRequired: optionalBoolean(single("microAdjustmentRequired")),
+  };
+}
 export async function action({ request }: Route.ActionArgs) {
   if (!(await hasDiagnosticAccess(request))) {
     return data<ActionResult>(
@@ -645,19 +347,9 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
   const emailOptIn = parseEmailOptIn(formData);
-  const intent = formData.get("intent");
-  const serialized = formData.get("profile");
+  const intent = SUBMISSION_INTENT;
   const funnelSource = formData.get("funnelSource");
 
-  if (
-    (intent !== "core" && intent !== "refine") ||
-    typeof serialized !== "string"
-  ) {
-    return data<ActionResult>(
-      { ok: false, errors: ["The diagnostic submission is incomplete."] },
-      { status: 400 },
-    );
-  }
   if (funnelSource !== null && funnelSource !== "archetype") {
     return data<ActionResult>(
       { ok: false, errors: ["The diagnostic source is invalid."] },
@@ -665,17 +357,7 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
 
-  let rawProfile: unknown;
-  try {
-    rawProfile = JSON.parse(serialized);
-  } catch {
-    return data<ActionResult>(
-      { ok: false, errors: ["The diagnostic payload is not valid JSON."] },
-      { status: 400 },
-    );
-  }
-
-  const parsed = questionnaireProfileSchema.safeParse(rawProfile);
+  const parsed = profileV3Schema.safeParse(parseProfileForm(formData));
   if (!parsed.success) {
     return data<ActionResult>(
       { ok: false, errors: issueMessages(parsed.error) },
@@ -683,17 +365,7 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
 
-  if (intent === "core" && parsed.data.refinement !== undefined) {
-    return data<ActionResult>(
-      {
-        ok: false,
-        errors: ["Core submissions cannot include refinement data."],
-      },
-      { status: 400 },
-    );
-  }
-
-  const profile = normalizeProfile(parsed.data);
+  const profile = normalizeProfileV3(parsed.data);
   const discoveryContext = storySlugResult.slug
     ? await loadPublishedDiscoveryStoryContext(storySlugResult.slug)
     : null;
@@ -705,37 +377,18 @@ export async function action({ request }: Route.ActionArgs) {
   }
   const evaluatedAt = new Date().toISOString();
   const evaluationStartedAt = performance.now();
-  const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
-  const recommendation = recommendWatches(
+  const catalogueLoad = await loadRecommendationCatalogue();
+  const recommendation = recommendWatchesV3(
     parsed.data,
     catalogueLoad.catalogue,
-    {
-      asOf: evaluatedAt,
-      hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
-      storyContext: discoveryContext
-        ? {
-            socialSignal: discoveryContext.traits.socialSignal,
-            aestheticDna: discoveryContext.traits.aestheticDna,
-          }
-        : undefined,
-    },
+    { asOf: evaluatedAt },
   );
-  const hardFilterEvaluation =
-    catalogueLoad.hardFilterEvaluation ??
-    evaluateHardFilterPartition(parsed.data, catalogueLoad.catalogue, {
-      asOf: evaluatedAt,
-    });
+  // Version 4 of the hard-filter RPC lands with the parity work; until then the
+  // TypeScript predicate is the only evaluator, so a violation can only appear
+  // as a reason or missing fact carried on the candidate itself.
   const hardFilterViolationCount = recommendation.recommendations.filter(
-    (candidate) => {
-      const evaluation = hardFilterEvaluation[candidate.id];
-      return (
-        candidate.hardReasons.length > 0 ||
-        candidate.missingFacts.length > 0 ||
-        evaluation === undefined ||
-        evaluation.hardReasons.length > 0 ||
-        evaluation.missingFacts.length > 0
-      );
-    },
+    (candidate) =>
+      candidate.hardReasons.length > 0 || candidate.missingFacts.length > 0,
   ).length;
   const evaluationDurationMs = Number(
     (performance.now() - evaluationStartedAt).toFixed(2),
@@ -756,7 +409,7 @@ export async function action({ request }: Route.ActionArgs) {
   } else if (emailOptIn.email !== null) {
     const beehiivConfiguration = parseBeehiivConfiguration();
     const resendConfiguration = parseResendConfiguration();
-    const dossier = renderDossierEmail({
+    const dossier = renderDossierEmailV3({
       profile,
       recommendation,
     });
@@ -905,9 +558,7 @@ export async function action({ request }: Route.ActionArgs) {
 
   if (funnelSource === "archetype") {
     const discoveryEvents = [
-      ...(intent === "core"
-        ? [{ name: "qualified_recommendation" as const }]
-        : []),
+      { name: "qualified_recommendation" as const },
       ...(emailOptIn.email ? [{ name: "opt_in" as const }] : []),
     ];
     for (const event of discoveryEvents) {
@@ -963,7 +614,16 @@ export async function loader({ request }: Route.LoaderArgs) {
     return redirect(`/?diagnostic=subscription${storyQuery}#newsletter-signup`);
   }
 
-  return null;
+  const vocabulary = await loadCatalogueVocabulary();
+  const options = (kind: "wearing_scenario" | "complication") =>
+    vocabulary
+      .filter((row) => row.kind === kind && row.active)
+      .map((row) => ({ slug: row.slug, labelEn: row.labelEn }));
+
+  return {
+    scenarios: options("wearing_scenario"),
+    complications: options("complication"),
+  } satisfies QuizLoaderData;
 }
 
 export function meta(): ReturnType<Route.MetaFunction> {
@@ -977,13 +637,189 @@ export function meta(): ReturnType<Route.MetaFunction> {
   ];
 }
 
-type ChoiceGroupProps<T extends string> = {
-  legend: string;
-  name: string;
-  options: readonly T[];
-  value: T | "";
-  onChange: (value: T) => void;
+type QuizDraft = {
+  budgetCurrency: (typeof CURRENCIES)[number];
+  budgetMax: string;
+  wearingScenarios: string[];
+  minimumWaterResistanceM: string;
+  caseDiameterMinMm: string;
+  caseDiameterMaxMm: string;
+  movementTypes: string[];
+  requiredComplications: string[];
+  allergyConstraint: (typeof ALLERGY_CONSTRAINTS_V3)[number];
+  maxCaseThicknessMm: string;
+  caseShape: CaseShape | "";
+  movementConstruction: (typeof MOVEMENT_CONSTRUCTIONS)[number] | "";
+  displayCaseback: "" | "yes" | "no";
+  crystal: (typeof CRYSTAL_CHOICES)[number] | "";
+  microAdjustmentRequired: "" | "yes" | "no";
 };
+
+const INITIAL_DRAFT: QuizDraft = {
+  budgetCurrency: "USD",
+  budgetMax: "",
+  wearingScenarios: [],
+  minimumWaterResistanceM: "0",
+  caseDiameterMinMm: "36",
+  caseDiameterMaxMm: "42",
+  movementTypes: [],
+  requiredComplications: [],
+  allergyConstraint: "none",
+  maxCaseThicknessMm: "",
+  caseShape: "",
+  movementConstruction: "",
+  displayCaseback: "",
+  crystal: "",
+  microAdjustmentRequired: "",
+};
+
+type SavedDraft = {
+  version: typeof QUESTIONNAIRE_V3_VERSION;
+  step: number;
+  draft: QuizDraft;
+};
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function stringArray(value: unknown) {
+  return Array.isArray(value)
+    ? value.filter((entry): entry is string => typeof entry === "string")
+    : [];
+}
+
+function hydrateDraft(value: unknown): QuizDraft {
+  if (!isRecord(value)) return INITIAL_DRAFT;
+  const text = (key: keyof QuizDraft) => {
+    const raw = value[key];
+    return typeof raw === "string" ? raw : "";
+  };
+  return {
+    ...INITIAL_DRAFT,
+    budgetCurrency:
+      (CURRENCIES as readonly string[]).indexOf(text("budgetCurrency")) >= 0
+        ? (text("budgetCurrency") as QuizDraft["budgetCurrency"])
+        : INITIAL_DRAFT.budgetCurrency,
+    budgetMax: text("budgetMax"),
+    wearingScenarios: stringArray(value.wearingScenarios),
+    minimumWaterResistanceM:
+      text("minimumWaterResistanceM") || INITIAL_DRAFT.minimumWaterResistanceM,
+    caseDiameterMinMm:
+      text("caseDiameterMinMm") || INITIAL_DRAFT.caseDiameterMinMm,
+    caseDiameterMaxMm:
+      text("caseDiameterMaxMm") || INITIAL_DRAFT.caseDiameterMaxMm,
+    movementTypes: stringArray(value.movementTypes),
+    requiredComplications: stringArray(value.requiredComplications),
+    allergyConstraint:
+      text("allergyConstraint") === "nickel_contact"
+        ? "nickel_contact"
+        : "none",
+    maxCaseThicknessMm: text("maxCaseThicknessMm"),
+    caseShape: text("caseShape") as QuizDraft["caseShape"],
+    movementConstruction: text(
+      "movementConstruction",
+    ) as QuizDraft["movementConstruction"],
+    displayCaseback: text("displayCaseback") as QuizDraft["displayCaseback"],
+    crystal: text("crystal") as QuizDraft["crystal"],
+    microAdjustmentRequired: text(
+      "microAdjustmentRequired",
+    ) as QuizDraft["microAdjustmentRequired"],
+  };
+}
+
+function readSavedDraft(): SavedDraft | null {
+  try {
+    const raw = window.sessionStorage.getItem(QUESTIONNAIRE_V3_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed: unknown = JSON.parse(raw);
+    if (!isRecord(parsed)) return null;
+    if (parsed.version !== QUESTIONNAIRE_V3_VERSION) return null;
+    return {
+      version: QUESTIONNAIRE_V3_VERSION,
+      step: typeof parsed.step === "number" ? parsed.step : 0,
+      draft: hydrateDraft(parsed.draft),
+    };
+  } catch {
+    return null;
+  }
+}
+
+/** The exact field set the action parses, so a draft posts unchanged. */
+function profileFormFields(draft: QuizDraft) {
+  const fields: { name: string; value: string }[] = [
+    { name: "version", value: String(QUESTIONNAIRE_V3_VERSION) },
+    { name: "budgetCurrency", value: draft.budgetCurrency },
+    { name: "budgetMax", value: draft.budgetMax },
+    {
+      name: "minimumWaterResistanceM",
+      value: draft.minimumWaterResistanceM,
+    },
+    { name: "caseDiameterMinMm", value: draft.caseDiameterMinMm },
+    { name: "caseDiameterMaxMm", value: draft.caseDiameterMaxMm },
+    { name: "allergyConstraint", value: draft.allergyConstraint },
+    { name: "maxCaseThicknessMm", value: draft.maxCaseThicknessMm },
+    { name: "caseShape", value: draft.caseShape },
+    { name: "movementConstruction", value: draft.movementConstruction },
+    { name: "displayCaseback", value: draft.displayCaseback },
+    { name: "crystal", value: draft.crystal },
+    {
+      name: "microAdjustmentRequired",
+      value: draft.microAdjustmentRequired,
+    },
+  ];
+  for (const scenario of draft.wearingScenarios) {
+    fields.push({ name: "wearingScenarios", value: scenario });
+  }
+  for (const movement of draft.movementTypes) {
+    fields.push({ name: "movementTypes", value: movement });
+  }
+  for (const complication of draft.requiredComplications) {
+    fields.push({ name: "requiredComplications", value: complication });
+  }
+  return fields;
+}
+
+function ProfileFields({ draft }: { draft: QuizDraft }) {
+  return (
+    <>
+      {profileFormFields(draft).map((field, index) => (
+        <input
+          key={`${field.name}-${index}`}
+          name={field.name}
+          type="hidden"
+          value={field.value}
+        />
+      ))}
+    </>
+  );
+}
+
+function draftToProfileInput(draft: QuizDraft) {
+  const optionalNumber = (raw: string) =>
+    raw.trim() === "" ? undefined : Number(raw);
+  const optionalBoolean = (raw: string) =>
+    raw === "" ? undefined : raw === "yes";
+  const optionalText = (raw: string) => (raw === "" ? undefined : raw);
+  return {
+    version: QUESTIONNAIRE_V3_VERSION,
+    budgetCurrency: draft.budgetCurrency,
+    budgetMax: Number(draft.budgetMax),
+    wearingScenarios: draft.wearingScenarios,
+    minimumWaterResistanceM: Number(draft.minimumWaterResistanceM),
+    caseDiameterMinMm: Number(draft.caseDiameterMinMm),
+    caseDiameterMaxMm: Number(draft.caseDiameterMaxMm),
+    movementTypes: draft.movementTypes,
+    requiredComplications: draft.requiredComplications,
+    allergyConstraint: draft.allergyConstraint,
+    maxCaseThicknessMm: optionalNumber(draft.maxCaseThicknessMm),
+    caseShape: optionalText(draft.caseShape),
+    movementConstruction: optionalText(draft.movementConstruction),
+    displayCaseback: optionalBoolean(draft.displayCaseback),
+    crystal: optionalText(draft.crystal),
+    microAdjustmentRequired: optionalBoolean(draft.microAdjustmentRequired),
+  };
+}
 
 function ChoiceGroup<T extends string>({
   legend,
@@ -991,7 +827,15 @@ function ChoiceGroup<T extends string>({
   options,
   value,
   onChange,
-}: ChoiceGroupProps<T>) {
+  renderLabel = labelFor,
+}: {
+  legend: string;
+  name: string;
+  options: readonly T[];
+  value: T | "";
+  onChange: (value: T) => void;
+  renderLabel?: (value: T) => string;
+}) {
   return (
     <fieldset className="quiz-fieldset">
       <legend>{legend}</legend>
@@ -1008,7 +852,7 @@ function ChoiceGroup<T extends string>({
               type="radio"
               value={option}
             />
-            <span>{labelFor(option)}</span>
+            <span>{renderLabel(option)}</span>
           </label>
         ))}
       </div>
@@ -1016,24 +860,22 @@ function ChoiceGroup<T extends string>({
   );
 }
 
-type CheckboxGroupProps<T extends string> = {
-  legend: string;
-  options: readonly T[];
-  values: T[];
-  onChange: (values: T[]) => void;
-};
-
-function CheckboxGroup<T extends string>({
+function OptionCheckboxGroup({
   legend,
   options,
   values,
   onChange,
-}: CheckboxGroupProps<T>) {
-  const toggle = (option: T) => {
+}: {
+  legend: string;
+  options: readonly VocabularyOption[];
+  values: string[];
+  onChange: (values: string[]) => void;
+}) {
+  const toggle = (slug: string) => {
     onChange(
-      values.includes(option)
-        ? values.filter((value) => value !== option)
-        : [...values, option],
+      values.includes(slug)
+        ? values.filter((value) => value !== slug)
+        : [...values, slug],
     );
   };
 
@@ -1043,16 +885,16 @@ function CheckboxGroup<T extends string>({
       <div className="choice-list choice-list--compact">
         {options.map((option) => (
           <label
-            className={`choice-card ${values.includes(option) ? "is-selected" : ""}`}
-            key={option}
+            className={`choice-card ${values.includes(option.slug) ? "is-selected" : ""}`}
+            key={option.slug}
           >
             <input
-              checked={values.includes(option)}
-              onChange={() => toggle(option)}
+              checked={values.includes(option.slug)}
+              onChange={() => toggle(option.slug)}
               type="checkbox"
-              value={option}
+              value={option.slug}
             />
-            <span>{labelFor(option)}</span>
+            <span>{option.labelEn}</span>
           </label>
         ))}
       </div>
@@ -1060,19 +902,17 @@ function CheckboxGroup<T extends string>({
   );
 }
 
-type OptionalSelectProps<T extends string> = {
-  label: string;
-  options: readonly T[];
-  value: T | "";
-  onChange: (value: T | "") => void;
-};
-
 function OptionalSelect<T extends string>({
   label,
   options,
   value,
   onChange,
-}: OptionalSelectProps<T>) {
+}: {
+  label: string;
+  options: readonly T[];
+  value: T | "";
+  onChange: (value: T | "") => void;
+}) {
   return (
     <label className="input-stack">
       <span>{label}</span>
@@ -1091,302 +931,35 @@ function OptionalSelect<T extends string>({
   );
 }
 
-type OptionalChoiceGroupProps<T extends string> = {
-  legend: string;
-  name: string;
-  options: readonly T[];
-  value: T | "";
-  onChange: (value: T | "") => void;
-};
-
-function OptionalChoiceGroup<T extends string>({
-  legend,
-  name,
-  options,
+function OptionalYesNo({
+  label,
+  yesLabel,
+  noLabel,
   value,
   onChange,
-}: OptionalChoiceGroupProps<T>) {
-  return (
-    <fieldset className="quiz-fieldset">
-      <legend>{legend}</legend>
-      <div className="choice-list choice-list--described">
-        <label className={`choice-card ${value === "" ? "is-selected" : ""}`}>
-          <input
-            checked={value === ""}
-            name={name}
-            onChange={() => onChange("")}
-            type="radio"
-            value=""
-          />
-          <span className="choice-card__copy">
-            <strong>No preference</strong>
-            <small>Keep this dimension open.</small>
-          </span>
-        </label>
-        {options.map((option) => (
-          <label
-            className={`choice-card ${value === option ? "is-selected" : ""}`}
-            key={option}
-          >
-            <input
-              checked={value === option}
-              name={name}
-              onChange={() => onChange(option)}
-              type="radio"
-              value={option}
-            />
-            <span className="choice-card__copy">
-              <strong>{labelFor(option)}</strong>
-              <small>{OPTION_DETAILS[option]}</small>
-            </span>
-          </label>
-        ))}
-      </div>
-    </fieldset>
-  );
-}
-
-function ProfileSummary({
-  profile,
-  recommendation,
-  profilePayload,
-  intent,
-  subscription,
-  funnelSource,
-  storyContext,
-  onEdit,
-  onRefine,
-  onRestart,
 }: {
-  profile: ReturnType<typeof normalizeProfile>;
-  recommendation: RecommendationResult;
-  profilePayload: string;
-  intent: "core" | "refine";
-  subscription: SubscriptionResult;
-  funnelSource: "archetype" | null;
-  storyContext?: {
-    storySlug: string;
-    headline: string;
-    entityName: string;
-    workTitle: string | null;
-    explanation: ReturnType<typeof explainStoryConstraint>;
-  };
-  onEdit: () => void;
-  onRefine: () => void;
-  onRestart: () => void;
-}) {
-  const complicationText =
-    profile.core.requiredComplications.length === 0
-      ? "No required complication"
-      : profile.core.requiredComplications.map(labelFor).join(", ");
-
-  return (
-    <section className="profile-summary" aria-labelledby="profile-heading">
-      <span className="eyebrow">Constraint profile complete</span>
-      <h1 id="profile-heading">Your search boundary</h1>
-      <p>
-        Your profile was compared with individually reviewed watch
-        configurations. Confirmed matches meet every non-negotiable requirement;
-        watches with missing evidence stay clearly separated.
-      </p>
-      <dl className="profile-grid">
-        <div>
-          <dt>Budget ceiling</dt>
-          <dd>
-            {profile.core.budgetCurrency}{" "}
-            {profile.core.budgetMax.toLocaleString()}
-          </dd>
-        </div>
-        <div>
-          <dt>Derived price band</dt>
-          <dd>{labelFor(profile.derived.priceBand)}</dd>
-        </div>
-        <div>
-          <dt>Wrist</dt>
-          <dd>
-            {formatWristMeasurement(profile.core.wristCircumferenceMm)} mm ·{" "}
-            {formatWristMeasurement(
-              profile.core.wristCircumferenceMm / MILLIMETRES_PER_INCH,
-            )}{" "}
-            in · {labelFor(profile.derived.wristBand)}
-          </dd>
-        </div>
-        <div>
-          <dt>Deployment</dt>
-          <dd>{labelFor(profile.core.deploymentEnvironment)}</dd>
-        </div>
-        <div>
-          <dt>Ownership tolerance</dt>
-          <dd>{labelFor(profile.core.ownershipFriction)}</dd>
-        </div>
-        <div>
-          <dt>Accuracy</dt>
-          <dd>{labelFor(profile.core.accuracyTolerance)}</dd>
-        </div>
-        <div>
-          <dt>Weight</dt>
-          <dd>{labelFor(profile.core.weightLimit)}</dd>
-        </div>
-        <div>
-          <dt>Function</dt>
-          <dd>
-            {complicationText}; {labelFor(profile.core.datePreference)}
-          </dd>
-        </div>
-        {profile.refinement?.premiumAllowancePercent ? (
-          <div>
-            <dt>Explicit effective ceiling</dt>
-            <dd>
-              {profile.core.budgetCurrency}{" "}
-              {profile.derived.effectiveBudgetCeiling.toLocaleString()}
-            </dd>
-          </div>
-        ) : null}
-        {profile.refinement ? (
-          <div>
-            <dt>Speculative candidates</dt>
-            <dd>
-              {profile.derived.speculativeCandidatesAllowed
-                ? "Allowed with warning"
-                : "Suppressed"}
-            </dd>
-          </div>
-        ) : null}
-        {profile.refinement?.socialSignal ? (
-          <div>
-            <dt>How you want to be perceived</dt>
-            <dd>{labelFor(profile.refinement.socialSignal)}</dd>
-          </div>
-        ) : null}
-        {profile.refinement?.aestheticDna ? (
-          <div>
-            <dt>Visual impression</dt>
-            <dd>{labelFor(profile.refinement.aestheticDna)}</dd>
-          </div>
-        ) : null}
-        {profile.refinement?.provenancePreference ? (
-          <div>
-            <dt>Heritage preference</dt>
-            <dd>{labelFor(profile.refinement.provenancePreference)}</dd>
-          </div>
-        ) : null}
-        {profile.refinement?.emotionalObjective ? (
-          <div>
-            <dt>Emotional purpose</dt>
-            <dd>{labelFor(profile.refinement.emotionalObjective)}</dd>
-          </div>
-        ) : null}
-      </dl>
-      <RecommendationSummary recommendation={recommendation} />
-      {storyContext ? (
-        <section
-          className="delivery-panel"
-          aria-labelledby="story-context-heading"
-        >
-          <span className="eyebrow">Reviewed story context</span>
-          <h2 id="story-context-heading">
-            {storyContext.entityName}
-            {storyContext.workTitle ? ` · ${storyContext.workTitle}` : ""}
-          </h2>
-          <p>{storyContext.explanation.message}</p>
-        </section>
-      ) : null}
-      <DossierDelivery
-        funnelSource={funnelSource}
-        intent={intent}
-        profilePayload={profilePayload}
-        subscription={subscription}
-      />
-      <div className="summary-actions">
-        <button
-          className="button button--primary"
-          onClick={onRefine}
-          type="button"
-        >
-          Edit personal answers
-        </button>
-        <button className="button button--quiet" onClick={onEdit} type="button">
-          Edit essential answers
-        </button>
-        <button
-          className="button button--quiet"
-          onClick={onRestart}
-          type="button"
-        >
-          Restart diagnostic
-        </button>
-      </div>
-    </section>
-  );
-}
-
-function DossierDelivery({
-  funnelSource,
-  intent,
-  profilePayload,
-  subscription,
-}: {
-  funnelSource: "archetype" | null;
-  intent: "core" | "refine";
-  profilePayload: string;
-  subscription: SubscriptionResult;
+  label: string;
+  yesLabel: string;
+  noLabel: string;
+  value: "" | "yes" | "no";
+  onChange: (value: "" | "yes" | "no") => void;
 }) {
   return (
-    <section className="delivery-panel" aria-labelledby="delivery-heading">
-      <span className="eyebrow">Optional, explicit opt-in</span>
-      <h2 id="delivery-heading">Keep the dossier</h2>
-      <p>
-        Results stay visible here. If you want the newsletter opt-in and a
-        source-backed custom dossier, enter an address and check the opt-in;
-        email is not required to use the diagnostic.
-      </p>
-      {subscription.status !== "sent" &&
-      subscription.status !== "already_requested" ? (
-        <Form className="delivery-form" method="post">
-          {funnelSource ? (
-            <input name="funnelSource" type="hidden" value={funnelSource} />
-          ) : null}
-          <input name="intent" type="hidden" value={intent} />
-          <input name="profile" type="hidden" value={profilePayload} />
-          <label className="input-stack" htmlFor="delivery-email">
-            <span>Email address</span>
-            <input
-              id="delivery-email"
-              name="email"
-              placeholder="you@example.com"
-              type="email"
-            />
-          </label>
-          <label className="delivery-opt-in">
-            <input name="emailOptIn" type="checkbox" value="yes" />
-            <span>
-              I explicitly opt in to receive this diagnostic dossier by email
-              and, where enabled, subscribe to The Reserve&apos;s email
-              publication.
-            </span>
-          </label>
-          <button className="button button--primary" type="submit">
-            Request email delivery
-          </button>
-        </Form>
-      ) : null}
-      <p
-        className={`delivery-status delivery-status--${subscription.status}`}
-        role={
-          subscription.status === "failed" || subscription.status === "partial"
-            ? "alert"
-            : "status"
-        }
+    <label className="input-stack">
+      <span>{label}</span>
+      <select
+        onChange={(event) => onChange(event.target.value as "" | "yes" | "no")}
+        value={value}
       >
-        {subscription.message}
-      </p>
-    </section>
+        <option value="">No preference</option>
+        <option value="yes">{yesLabel}</option>
+        <option value="no">{noLabel}</option>
+      </select>
+    </label>
   );
 }
 
-function formatCandidatePrice(
-  price: RecommendationResult["recommendations"][number]["price"],
-) {
+function formatCandidatePrice(price: EvaluatedCandidateV3["price"]) {
   return new Intl.NumberFormat("en", {
     style: "currency",
     currency: price.currency,
@@ -1398,7 +971,7 @@ function CandidateCard({
   candidate,
   status,
 }: {
-  candidate: EvaluatedCandidate;
+  candidate: EvaluatedCandidateV3;
   status: "confirmed" | "verification";
 }) {
   return (
@@ -1434,11 +1007,9 @@ function CandidateCard({
                   candidate.geometry.caseWidthMm !== null
                 ? `${candidate.geometry.caseLengthMm} × ${candidate.geometry.caseWidthMm} mm`
                 : "Unknown size"}
-            {" · "}Wrist span{" "}
-            {candidate.geometry.lugToLugMm ??
-              candidate.geometry.caseLengthMm ??
-              "?"}{" "}
-            mm
+            {candidate.geometry.caseThicknessMm !== null
+              ? ` · ${candidate.geometry.caseThicknessMm} mm thick`
+              : ""}
           </dd>
         </div>
         <div>
@@ -1451,11 +1022,11 @@ function CandidateCard({
           </dd>
         </div>
         <div>
-          <dt>Weight</dt>
+          <dt>Water resistance</dt>
           <dd>
-            {candidate.geometry.weightFullG === null
+            {candidate.operation.waterResistanceM === null
               ? "Not published"
-              : `${candidate.geometry.weightFullG} g`}
+              : `${candidate.operation.waterResistanceM} m`}
           </dd>
         </div>
         <div>
@@ -1463,6 +1034,10 @@ function CandidateCard({
           <dd>{candidate.score.toFixed(1)}</dd>
         </div>
       </dl>
+
+      {candidate.positioningLine ? (
+        <p className="candidate-positioning">{candidate.positioningLine}</p>
+      ) : null}
 
       {candidate.scoreTrace.length > 0 ? (
         <ul className="factor-list" aria-label="Score factors">
@@ -1504,7 +1079,7 @@ function CandidateCard({
 function RecommendationSummary({
   recommendation,
 }: {
-  recommendation: RecommendationResult;
+  recommendation: RecommendationResultV3;
 }) {
   return (
     <div className="recommendation-summary">
@@ -1636,13 +1211,242 @@ function RecommendationSummary({
   );
 }
 
+function DossierDelivery({
+  draft,
+  funnelSource,
+  subscription,
+}: {
+  draft: QuizDraft;
+  funnelSource: "archetype" | null;
+  subscription: SubscriptionResult;
+}) {
+  return (
+    <section className="delivery-panel" aria-labelledby="delivery-heading">
+      <span className="eyebrow">Optional, explicit opt-in</span>
+      <h2 id="delivery-heading">Keep the dossier</h2>
+      <p>
+        Results stay visible here. If you want the newsletter opt-in and a
+        source-backed custom dossier, enter an address and check the opt-in;
+        email is not required to use the diagnostic.
+      </p>
+      {subscription.status !== "sent" &&
+      subscription.status !== "already_requested" ? (
+        <Form className="delivery-form" method="post">
+          {funnelSource ? (
+            <input name="funnelSource" type="hidden" value={funnelSource} />
+          ) : null}
+          <ProfileFields draft={draft} />
+          <label className="input-stack" htmlFor="delivery-email">
+            <span>Email address</span>
+            <input
+              id="delivery-email"
+              name="email"
+              placeholder="you@example.com"
+              type="email"
+            />
+          </label>
+          <label className="delivery-opt-in">
+            <input name="emailOptIn" type="checkbox" value="yes" />
+            <span>
+              I explicitly opt in to receive this diagnostic dossier by email
+              and, where enabled, subscribe to The Reserve&apos;s email
+              publication.
+            </span>
+          </label>
+          <button className="button button--primary" type="submit">
+            Request email delivery
+          </button>
+        </Form>
+      ) : null}
+      <p
+        className={`delivery-status delivery-status--${subscription.status}`}
+        role={
+          subscription.status === "failed" || subscription.status === "partial"
+            ? "alert"
+            : "status"
+        }
+      >
+        {subscription.message}
+      </p>
+    </section>
+  );
+}
+
+function ProfileSummary({
+  draft,
+  profile,
+  recommendation,
+  subscription,
+  funnelSource,
+  storyContext,
+  scenarioLabels,
+  complicationLabels,
+  onEdit,
+  onRestart,
+}: {
+  draft: QuizDraft;
+  profile: ReturnType<typeof normalizeProfileV3>;
+  recommendation: RecommendationResultV3;
+  subscription: SubscriptionResult;
+  funnelSource: "archetype" | null;
+  storyContext?: {
+    storySlug: string;
+    headline: string;
+    entityName: string;
+    workTitle: string | null;
+    explanation: ReturnType<typeof explainStoryConstraint>;
+  };
+  scenarioLabels: Map<string, string>;
+  complicationLabels: Map<string, string>;
+  onEdit: () => void;
+  onRestart: () => void;
+}) {
+  const named = (slugs: readonly string[], labels: Map<string, string>) =>
+    slugs.map((slug) => labels.get(slug) ?? labelFor(slug)).join(", ");
+
+  return (
+    <section className="profile-summary" aria-labelledby="profile-heading">
+      <span className="eyebrow">Constraint profile complete</span>
+      <h1 id="profile-heading">Your search boundary</h1>
+      <p>
+        Your profile was compared with individually reviewed watch
+        configurations. Confirmed matches meet every non-negotiable requirement;
+        watches with missing evidence stay clearly separated.
+      </p>
+      <dl className="profile-grid">
+        <div>
+          <dt>Budget ceiling</dt>
+          <dd>
+            {profile.budgetCurrency} {profile.budgetMax.toLocaleString()}
+          </dd>
+        </div>
+        <div>
+          <dt>Derived price band</dt>
+          <dd>{labelFor(profile.derived.priceBand)}</dd>
+        </div>
+        <div>
+          <dt>Wearing scenarios</dt>
+          <dd>{named(profile.wearingScenarios, scenarioLabels)}</dd>
+        </div>
+        <div>
+          <dt>Water resistance</dt>
+          <dd>{waterResistanceLabel(profile.minimumWaterResistanceM)}</dd>
+        </div>
+        <div>
+          <dt>Case diameter</dt>
+          <dd>
+            {profile.caseDiameterMinMm}–{profile.caseDiameterMaxMm} mm
+          </dd>
+        </div>
+        <div>
+          <dt>Movement</dt>
+          <dd>{profile.movementTypes.map(labelFor).join(", ")}</dd>
+        </div>
+        <div>
+          <dt>Required functions</dt>
+          <dd>
+            {profile.requiredComplications.length === 0
+              ? "No required function"
+              : named(profile.requiredComplications, complicationLabels)}
+          </dd>
+        </div>
+        <div>
+          <dt>Allergy constraint</dt>
+          <dd>{labelFor(profile.allergyConstraint)}</dd>
+        </div>
+        {profile.maxCaseThicknessMm !== undefined ? (
+          <div>
+            <dt>Thickness limit</dt>
+            <dd>{profile.maxCaseThicknessMm} mm</dd>
+          </div>
+        ) : null}
+        {profile.caseShape !== undefined ? (
+          <div>
+            <dt>Case shape</dt>
+            <dd>{labelFor(profile.caseShape)}</dd>
+          </div>
+        ) : null}
+        {profile.movementConstruction !== undefined ? (
+          <div>
+            <dt>Calibre</dt>
+            <dd>{labelFor(profile.movementConstruction)}</dd>
+          </div>
+        ) : null}
+        {profile.displayCaseback !== undefined ? (
+          <div>
+            <dt>Caseback</dt>
+            <dd>{profile.displayCaseback ? "Display" : "Solid"}</dd>
+          </div>
+        ) : null}
+        {profile.crystal !== undefined ? (
+          <div>
+            <dt>Crystal</dt>
+            <dd>{labelFor(profile.crystal)}</dd>
+          </div>
+        ) : null}
+        {profile.microAdjustmentRequired !== undefined ? (
+          <div>
+            <dt>Clasp micro-adjustment</dt>
+            <dd>
+              {profile.microAdjustmentRequired ? "Required" : "Not wanted"}
+            </dd>
+          </div>
+        ) : null}
+      </dl>
+      <RecommendationSummary recommendation={recommendation} />
+      {storyContext ? (
+        <section
+          className="delivery-panel"
+          aria-labelledby="story-context-heading"
+        >
+          <span className="eyebrow">Reviewed story context</span>
+          <h2 id="story-context-heading">
+            {storyContext.entityName}
+            {storyContext.workTitle ? ` · ${storyContext.workTitle}` : ""}
+          </h2>
+          <p>{storyContext.explanation.message}</p>
+        </section>
+      ) : null}
+      <DossierDelivery
+        draft={draft}
+        funnelSource={funnelSource}
+        subscription={subscription}
+      />
+      <div className="summary-actions">
+        <button
+          className="button button--primary"
+          onClick={onEdit}
+          type="button"
+        >
+          Edit answers
+        </button>
+        <button
+          className="button button--quiet"
+          onClick={onRestart}
+          type="button"
+        >
+          Restart diagnostic
+        </button>
+      </div>
+    </section>
+  );
+}
+
+const SCREEN_TITLES = [
+  "What is the actual purchase ceiling?",
+  "Where will this watch actually be worn?",
+  "What case size works on your wrist?",
+  "Which movements are acceptable?",
+  "Any preferences on the details?",
+  "What must this watch do?",
+] as const;
+
 export default function Quiz() {
   const actionData = useActionData<typeof action>();
+  const loaderData = useLoaderData<typeof loader>();
   const location = useLocation();
   const navigation = useNavigation();
-  const [core, setCore] = useState<CoreDraft>(INITIAL_CORE);
-  const [refinement, setRefinement] =
-    useState<RefinementDraft>(INITIAL_REFINEMENT);
+  const [draft, setDraft] = useState<QuizDraft>(INITIAL_DRAFT);
   const [step, setStep] = useState(0);
   const [storageReady, setStorageReady] = useState(false);
   const startTracked = useRef(false);
@@ -1652,114 +1456,79 @@ export default function Quiz() {
   );
   const funnelSource = archetypeHandoff ? "archetype" : null;
 
+  const scenarios = loaderData.scenarios;
+  const complications = loaderData.complications;
+  const scenarioLabels = useMemo(
+    () => new Map(scenarios.map((option) => [option.slug, option.labelEn])),
+    [scenarios],
+  );
+  const complicationLabels = useMemo(
+    () => new Map(complications.map((option) => [option.slug, option.labelEn])),
+    [complications],
+  );
+
+  const update = (patch: Partial<QuizDraft>) =>
+    setDraft((current) => ({ ...current, ...patch }));
+
   useEffect(() => {
     const saved = readSavedDraft();
     const timer = window.setTimeout(() => {
-      if (saved?.core) setCore(hydrateCoreDraft(saved.core));
-      if (
-        (saved?.refinement && isRecord(saved.refinement)) ||
-        archetypeHandoff
-      ) {
-        setRefinement({
-          ...INITIAL_REFINEMENT,
-          ...(saved?.refinement && isRecord(saved.refinement)
-            ? (saved.refinement as Partial<RefinementDraft>)
-            : {}),
-          ...(archetypeHandoff ?? {}),
-        });
-      }
-      if (
-        typeof saved?.step === "number" &&
-        saved.step >= 0 &&
-        saved.step < SUMMARY_STEP
-      ) {
-        setStep(saved.step);
+      if (saved) {
+        setDraft(saved.draft);
+        if (saved.step >= 0 && saved.step < SUMMARY_STEP) setStep(saved.step);
       }
       setStorageReady(true);
     }, 0);
 
     return () => window.clearTimeout(timer);
-  }, [archetypeHandoff, location.search]);
+  }, []);
 
   useEffect(() => {
     if (!storageReady) return;
     const saved: SavedDraft = {
-      version: QUESTIONNAIRE_VERSION,
-      core,
-      refinement,
-      step: step === SUMMARY_STEP ? CORE_STEP_COUNT - 1 : step,
+      version: QUESTIONNAIRE_V3_VERSION,
+      step: step === SUMMARY_STEP ? SCREEN_COUNT - 1 : step,
+      draft,
     };
     window.sessionStorage.setItem(
-      QUESTIONNAIRE_STORAGE_KEY,
+      QUESTIONNAIRE_V3_STORAGE_KEY,
       JSON.stringify(saved),
     );
-  }, [core, refinement, step, storageReady]);
+  }, [draft, step, storageReady]);
 
   useEffect(() => {
     if (!actionData?.ok) return;
-    const timer = window.setTimeout(
-      () =>
-        setStep(actionData.intent === "core" ? CORE_STEP_COUNT : SUMMARY_STEP),
-      0,
-    );
+    const timer = window.setTimeout(() => setStep(SUMMARY_STEP), 0);
     return () => window.clearTimeout(timer);
   }, [actionData]);
 
   const resultData = actionData?.ok ? actionData : null;
-  const resultIntent = resultData?.intent;
 
-  const coreParse = useMemo(
-    () => coreProfileSchema.safeParse(buildCoreDraft(core)),
-    [core],
-  );
-  const wristCircumferenceMm = useMemo(() => wristDraftToMm(core), [core]);
-  const refinementParse = useMemo(
-    () => refinementSchema.safeParse(buildRefinementDraft(refinement)),
-    [refinement],
+  const profileParse = useMemo(
+    () => profileV3Schema.safeParse(draftToProfileInput(draft)),
+    [draft],
   );
 
-  const profilePayload = useMemo(
-    () =>
-      JSON.stringify({
-        core: buildCoreDraft(core),
-        ...(step >= CORE_STEP_COUNT && step < SUMMARY_STEP
-          ? { refinement: buildRefinementDraft(refinement) }
-          : {}),
-      }),
-    [core, refinement, step],
-  );
-
-  const resultProfilePayload = useMemo(
-    () =>
-      JSON.stringify({
-        core: buildCoreDraft(core),
-        ...(resultIntent === "refine"
-          ? { refinement: buildRefinementDraft(refinement) }
-          : {}),
-      }),
-    [resultIntent, core, refinement],
-  );
-
+  const diameterMin = Number(draft.caseDiameterMinMm);
+  const diameterMax = Number(draft.caseDiameterMaxMm);
   const stepIsComplete =
     step === 0
-      ? Number(core.budgetMax) > 0
+      ? Number(draft.budgetMax) > 0
       : step === 1
-        ? wristCircumferenceMm >= 100 && wristCircumferenceMm <= 300
+        ? draft.wearingScenarios.length > 0
         : step === 2
-          ? core.deploymentEnvironment !== ""
+          ? Number.isFinite(diameterMin) &&
+            Number.isFinite(diameterMax) &&
+            diameterMin > 0 &&
+            diameterMax >= diameterMin
           : step === 3
-            ? core.ownershipFriction !== "" && core.accuracyTolerance !== ""
+            ? draft.movementTypes.length > 0
             : step === 4
-              ? core.weightLimit !== ""
-              : step === 5
-                ? core.datePreference !== "" && coreParse.success
-                : refinementParse.success;
+              ? true
+              : profileParse.success;
 
   const isSubmitting = navigation.state === "submitting";
-  const totalVisibleSteps =
-    step < CORE_STEP_COUNT ? CORE_STEP_COUNT : REFINE_STEP_COUNT;
-  const visibleStep =
-    step < CORE_STEP_COUNT ? step + 1 : step - CORE_STEP_COUNT + 1;
+  const visibleStep = Math.min(step, SCREEN_COUNT - 1) + 1;
 
   const goBack = () => setStep((current) => Math.max(0, current - 1));
 
@@ -1775,9 +1544,8 @@ export default function Quiz() {
   };
 
   const restartQuiz = () => {
-    window.sessionStorage.removeItem(QUESTIONNAIRE_STORAGE_KEY);
-    setCore(INITIAL_CORE);
-    setRefinement(INITIAL_REFINEMENT);
+    window.sessionStorage.removeItem(QUESTIONNAIRE_V3_STORAGE_KEY);
+    setDraft(INITIAL_DRAFT);
     setStep(0);
     startTracked.current = false;
   };
@@ -1790,16 +1558,16 @@ export default function Quiz() {
           <span>Reference diagnostic</span>
         </nav>
         <ProfileSummary
+          complicationLabels={complicationLabels}
+          draft={draft}
+          funnelSource={funnelSource}
           onEdit={() => setStep(0)}
-          onRefine={() => setStep(CORE_STEP_COUNT)}
           onRestart={restartQuiz}
           profile={resultData.profile}
-          profilePayload={resultProfilePayload}
           recommendation={resultData.recommendation}
-          intent={resultData.intent}
-          subscription={resultData.subscription}
-          funnelSource={funnelSource}
+          scenarioLabels={scenarioLabels}
           storyContext={resultData.storyContext}
+          subscription={resultData.subscription}
         />
       </main>
     );
@@ -1809,44 +1577,38 @@ export default function Quiz() {
     <main className="quiz-shell">
       <nav className="quiz-nav" aria-label="Diagnostic navigation">
         <Link to="/">The Reserve</Link>
-        <span>
-          {step < CORE_STEP_COUNT ? "Essential fit" : "Personal profile"}
-        </span>
+        <span>Reference diagnostic</span>
       </nav>
 
       <section className="quiz-panel" aria-labelledby="question-heading">
         <div className="progress-copy">
           <span className="eyebrow">
-            {step < CORE_STEP_COUNT ? "Essential" : "Personal"} · {visibleStep}{" "}
-            / {totalVisibleSteps}
+            Step {visibleStep} of {SCREEN_COUNT}
           </span>
-          <span>{Math.round((visibleStep / totalVisibleSteps) * 100)}%</span>
+          <span>{Math.round((visibleStep / SCREEN_COUNT) * 100)}%</span>
         </div>
         <div className="progress-track" aria-hidden="true">
-          <span
-            style={{ width: `${(visibleStep / totalVisibleSteps) * 100}%` }}
-          />
+          <span style={{ width: `${(visibleStep / SCREEN_COUNT) * 100}%` }} />
         </div>
 
         {step === 0 ? (
           <div className="question-block">
-            <h1 id="question-heading">What is the actual purchase ceiling?</h1>
+            <h1 id="question-heading">{SCREEN_TITLES[0]}</h1>
             <p>
               Enter the maximum outlay. The exact number sets your purchase
-              boundary.
+              boundary; nothing above it is offered.
             </p>
             <div className="split-inputs">
               <label className="input-stack input-stack--currency">
                 <span>Currency</span>
                 <select
                   onChange={(event) =>
-                    setCore((current) => ({
-                      ...current,
+                    update({
                       budgetCurrency: event.target
-                        .value as CoreProfile["budgetCurrency"],
-                    }))
+                        .value as QuizDraft["budgetCurrency"],
+                    })
                   }
-                  value={core.budgetCurrency}
+                  value={draft.budgetCurrency}
                 >
                   {CURRENCIES.map((currency) => (
                     <option key={currency}>{currency}</option>
@@ -1858,551 +1620,237 @@ export default function Quiz() {
                 <input
                   inputMode="decimal"
                   min="1"
-                  onChange={(event) =>
-                    setCore((current) => ({
-                      ...current,
-                      budgetMax: event.target.value,
-                    }))
-                  }
-                  placeholder="10000"
+                  onChange={(event) => {
+                    recordStart();
+                    update({ budgetMax: event.target.value });
+                  }}
                   type="number"
-                  value={core.budgetMax}
+                  value={draft.budgetMax}
                 />
               </label>
             </div>
-            <p className="reference-note">
-              Shared bands: {PRICE_BANDS.map((band) => band.label).join(" · ")}
-            </p>
           </div>
         ) : null}
 
         {step === 1 ? (
           <div className="question-block">
-            <h1 id="question-heading">Measure your wrist</h1>
+            <h1 id="question-heading">{SCREEN_TITLES[1]}</h1>
             <p>
-              Wrap a flexible tape flush above the wrist bone without slack.
-              Choose millimetres or inches. The diagnostic normalizes the exact
-              measurement to millimetres before filtering.
+              Pick every situation this watch has to cover. A watch qualifies
+              when it is reviewed for at least one of them.
             </p>
-            <div className="split-inputs wrist-inputs">
-              <label className="input-stack">
-                <span>Unit</span>
-                <select
-                  onChange={(event) => {
-                    const wristUnit = event.target.value as WristUnit;
-                    setCore((current) => ({
-                      ...current,
-                      wristCircumference: convertWristDraftUnit(
-                        current.wristCircumference,
-                        current.wristUnit,
-                        wristUnit,
-                      ),
-                      wristUnit,
-                    }));
-                  }}
-                  value={core.wristUnit}
-                >
-                  <option value="mm">Millimetres (mm)</option>
-                  <option value="in">Inches (in)</option>
-                </select>
-              </label>
-              <label className="input-stack">
-                <span>Wrist circumference ({core.wristUnit})</span>
-                <input
-                  inputMode="decimal"
-                  max={core.wristUnit === "mm" ? "300" : "11.81"}
-                  min={core.wristUnit === "mm" ? "100" : "3.94"}
-                  onChange={(event) =>
-                    setCore((current) => ({
-                      ...current,
-                      wristCircumference: event.target.value,
-                    }))
-                  }
-                  placeholder={core.wristUnit === "mm" ? "170" : "6.7"}
-                  step={core.wristUnit === "mm" ? "0.1" : "0.01"}
-                  type="number"
-                  value={core.wristCircumference}
-                />
-              </label>
-            </div>
-            <p className="reference-note">
-              One display scale:{" "}
-              {WRIST_BANDS.map((band) => band.label).join(" · ")}
-            </p>
+            <OptionCheckboxGroup
+              legend="Wearing scenarios"
+              onChange={(values) => update({ wearingScenarios: values })}
+              options={scenarios}
+              values={draft.wearingScenarios}
+            />
+            <ChoiceGroup
+              legend="Minimum water resistance"
+              name="minimumWaterResistanceM"
+              onChange={(value) => update({ minimumWaterResistanceM: value })}
+              options={WATER_RESISTANCE_MINIMUMS.map(String)}
+              renderLabel={(value) => waterResistanceLabel(Number(value))}
+              value={draft.minimumWaterResistanceM}
+            />
           </div>
         ) : null}
 
         {step === 2 ? (
           <div className="question-block">
-            <h1 id="question-heading">Where will it operate?</h1>
-            <p>Deployment changes water, shock, and thickness requirements.</p>
-            <ChoiceGroup
-              legend="Primary environment"
-              name="deployment"
-              onChange={(deploymentEnvironment) =>
-                setCore((current) => ({
-                  ...current,
-                  deploymentEnvironment,
-                }))
-              }
-              options={DEPLOYMENT_ENVIRONMENTS}
-              value={core.deploymentEnvironment}
-            />
+            <h1 id="question-heading">{SCREEN_TITLES[2]}</h1>
+            <p>
+              Set the diameter range you will actually wear. Thickness and shape
+              stay open unless you constrain them.
+            </p>
+            <div className="split-inputs">
+              <label className="input-stack">
+                <span>Smallest diameter (mm)</span>
+                <input
+                  inputMode="decimal"
+                  max="60"
+                  min="20"
+                  onChange={(event) =>
+                    update({ caseDiameterMinMm: event.target.value })
+                  }
+                  type="number"
+                  value={draft.caseDiameterMinMm}
+                />
+              </label>
+              <label className="input-stack">
+                <span>Largest diameter (mm)</span>
+                <input
+                  inputMode="decimal"
+                  max="60"
+                  min="20"
+                  onChange={(event) =>
+                    update({ caseDiameterMaxMm: event.target.value })
+                  }
+                  type="number"
+                  value={draft.caseDiameterMaxMm}
+                />
+              </label>
+            </div>
+            <div className="split-inputs">
+              <label className="input-stack">
+                <span>Thickness limit (mm, optional)</span>
+                <input
+                  inputMode="decimal"
+                  max="30"
+                  min="3"
+                  onChange={(event) =>
+                    update({ maxCaseThicknessMm: event.target.value })
+                  }
+                  placeholder="No preference"
+                  type="number"
+                  value={draft.maxCaseThicknessMm}
+                />
+              </label>
+              <OptionalSelect
+                label="Case shape"
+                onChange={(value) => update({ caseShape: value })}
+                options={CASE_SHAPES}
+                value={draft.caseShape}
+              />
+            </div>
           </div>
         ) : null}
 
         {step === 3 ? (
           <div className="question-block">
-            <h1 id="question-heading">
-              What ownership friction is acceptable?
-            </h1>
+            <h1 id="question-heading">{SCREEN_TITLES[3]}</h1>
             <p>
-              Service tolerance and accuracy are separate constraints; neither
-              is inferred from the other.
+              Select every movement type you would own. Anything unselected is
+              excluded outright.
             </p>
-            <ChoiceGroup
-              legend="Movement and service tolerance"
-              name="friction"
-              onChange={(ownershipFriction) =>
-                setCore((current) => ({ ...current, ownershipFriction }))
-              }
-              options={OWNERSHIP_FRICTION_LEVELS}
-              value={core.ownershipFriction}
-            />
-            <ChoiceGroup
-              legend="Required accuracy"
-              name="accuracy"
-              onChange={(accuracyTolerance) =>
-                setCore((current) => ({ ...current, accuracyTolerance }))
-              }
-              options={ACCURACY_TOLERANCES}
-              value={core.accuracyTolerance}
+            <fieldset className="quiz-fieldset">
+              <legend>Movement types</legend>
+              <div className="choice-list choice-list--compact">
+                {MOVEMENT_TYPE_CHOICES.map((option) => (
+                  <label
+                    className={`choice-card ${draft.movementTypes.includes(option) ? "is-selected" : ""}`}
+                    key={option}
+                  >
+                    <input
+                      checked={draft.movementTypes.includes(option)}
+                      onChange={() =>
+                        update({
+                          movementTypes: draft.movementTypes.includes(option)
+                            ? draft.movementTypes.filter(
+                                (value) => value !== option,
+                              )
+                            : [...draft.movementTypes, option],
+                        })
+                      }
+                      type="checkbox"
+                      value={option}
+                    />
+                    <span>{labelFor(option)}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+            <OptionalSelect
+              label="Calibre construction"
+              onChange={(value) => update({ movementConstruction: value })}
+              options={MOVEMENT_CONSTRUCTIONS}
+              value={draft.movementConstruction}
             />
           </div>
         ) : null}
 
         {step === 4 ? (
           <div className="question-block">
-            <h1 id="question-heading">How much weight is comfortable?</h1>
+            <h1 id="question-heading">{SCREEN_TITLES[4]}</h1>
             <p>
-              If a watch&apos;s full weight has not been verified, it appears
-              separately for review instead of passing silently.
+              Every answer here is optional. A preference with no reviewed data
+              behind it is reported as unscored rather than applied silently.
             </p>
-            <ChoiceGroup
-              legend="Maximum full-watch weight"
-              name="weight"
-              onChange={(weightLimit) =>
-                setCore((current) => ({ ...current, weightLimit }))
-              }
-              options={WEIGHT_LIMITS}
-              value={core.weightLimit}
+            <OptionalYesNo
+              label="Caseback"
+              noLabel="Solid"
+              onChange={(value) => update({ displayCaseback: value })}
+              value={draft.displayCaseback}
+              yesLabel="Display"
+            />
+            <OptionalSelect
+              label="Crystal"
+              onChange={(value) => update({ crystal: value })}
+              options={CRYSTAL_CHOICES}
+              value={draft.crystal}
+            />
+            <OptionalYesNo
+              label="Clasp micro-adjustment"
+              noLabel="Not wanted"
+              onChange={(value) => update({ microAdjustmentRequired: value })}
+              value={draft.microAdjustmentRequired}
+              yesLabel="Required"
             />
           </div>
         ) : null}
 
         {step === 5 ? (
           <div className="question-block">
-            <h1 id="question-heading">Which functions are non-negotiable?</h1>
+            <h1 id="question-heading">{SCREEN_TITLES[5]}</h1>
             <p>
-              Leave complications empty for time-only or simple-date candidates.
+              A required function excludes every watch without it. Leave the
+              list empty if nothing is mandatory.
             </p>
-            <CheckboxGroup
-              legend="Required complications"
-              onChange={(requiredComplications) =>
-                setCore((current) => ({
-                  ...current,
-                  requiredComplications,
-                }))
-              }
-              options={COMPLICATIONS}
-              values={core.requiredComplications}
+            <OptionCheckboxGroup
+              legend="Required functions"
+              onChange={(values) => update({ requiredComplications: values })}
+              options={complications}
+              values={draft.requiredComplications}
             />
             <ChoiceGroup
-              legend="Date preference"
-              name="date"
-              onChange={(datePreference) =>
-                setCore((current) => ({ ...current, datePreference }))
-              }
-              options={DATE_PREFERENCES}
-              value={core.datePreference}
+              legend="Skin contact"
+              name="allergyConstraint"
+              onChange={(value) => update({ allergyConstraint: value })}
+              options={ALLERGY_CONSTRAINTS_V3}
+              value={draft.allergyConstraint}
             />
-          </div>
-        ) : null}
-
-        {step === 6 ? (
-          <div className="question-block">
-            <h1 id="question-heading">How do you want to be perceived?</h1>
-            <p>
-              The remaining 21 preferences are optional across seven screens.
-              Choose what feels true, or leave any dimension open.
-            </p>
-            <OptionalChoiceGroup
-              legend="The signal it sends"
-              name="social-signal"
-              onChange={(socialSignal) =>
-                setRefinement((current) => ({ ...current, socialSignal }))
-              }
-              options={SOCIAL_SIGNALS}
-              value={refinement.socialSignal}
-            />
-          </div>
-        ) : null}
-
-        {step === 7 ? (
-          <div className="question-block">
-            <h1 id="question-heading">
-              What visual impression should it create?
-            </h1>
-            <p>
-              Pick the design language that should be apparent before anyone
-              reads the name on the dial.
-            </p>
-            <OptionalChoiceGroup
-              legend="Visual character"
-              name="aesthetic-dna"
-              onChange={(aestheticDna) =>
-                setRefinement((current) => ({ ...current, aestheticDna }))
-              }
-              options={AESTHETIC_DNA}
-              value={refinement.aestheticDna}
-            />
-          </div>
-        ) : null}
-
-        {step === 8 ? (
-          <div className="question-block">
-            <h1 id="question-heading">What kind of history should it carry?</h1>
-            <p>
-              Decide whether ownership, industrial execution, or an honest
-              modern story matters most to you.
-            </p>
-            <OptionalChoiceGroup
-              legend="Ownership and lineage"
-              name="provenance-preference"
-              onChange={(provenancePreference) =>
-                setRefinement((current) => ({
-                  ...current,
-                  provenancePreference,
-                }))
-              }
-              options={PROVENANCE_PREFERENCES}
-              value={refinement.provenancePreference}
-            />
-          </div>
-        ) : null}
-
-        {step === 9 ? (
-          <div className="question-block">
-            <h1 id="question-heading">What should this watch make you feel?</h1>
-            <p>
-              Choose the emotional job the watch should perform in your life.
-            </p>
-            <OptionalChoiceGroup
-              legend="Emotional purpose"
-              name="emotional-objective"
-              onChange={(emotionalObjective) =>
-                setRefinement((current) => ({
-                  ...current,
-                  emotionalObjective,
-                }))
-              }
-              options={EMOTIONAL_OBJECTIVES}
-              value={refinement.emotionalObjective}
-            />
-          </div>
-        ) : null}
-
-        {step === 10 ? (
-          <div className="question-block">
-            <h1 id="question-heading">How should it fit and age?</h1>
-            <p>
-              These six optional answers define attachment, comfort, and wear
-              boundaries.
-            </p>
-            <div className="select-grid">
-              <OptionalSelect
-                label="How should the lugs follow your wrist?"
-                onChange={(requiredLugCurvature) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    requiredLugCurvature,
-                  }))
-                }
-                options={LUG_CURVATURES}
-                value={refinement.requiredLugCurvature}
-              />
-              <OptionalSelect
-                label="What strap or bracelet connection do you prefer?"
-                onChange={(requiredAttachmentType) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    requiredAttachmentType,
-                  }))
-                }
-                options={ATTACHMENT_TYPES}
-                value={refinement.requiredAttachmentType}
-              />
-              <label className="input-stack">
-                <span>Do you need a specific lug width? (mm)</span>
-                <input
-                  max="40"
-                  min="8"
-                  onChange={(event) =>
-                    setRefinement((current) => ({
-                      ...current,
-                      requiredLugWidthMm: event.target.value,
-                    }))
-                  }
-                  type="number"
-                  value={refinement.requiredLugWidthMm}
-                />
-              </label>
-              <OptionalSelect
-                label="How much visible wear can you accept?"
-                onChange={(cosmeticTolerance) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    cosmeticTolerance,
-                  }))
-                }
-                options={COSMETIC_TOLERANCES}
-                value={refinement.cosmeticTolerance}
-              />
-              <OptionalSelect
-                label="Do you have a contact-metal allergy?"
-                onChange={(allergyConstraint) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    allergyConstraint,
-                  }))
-                }
-                options={ALLERGY_CONSTRAINTS}
-                value={refinement.allergyConstraint}
-              />
-              <label className="input-stack">
-                <span>Must straps change without tools?</span>
-                <select
-                  onChange={(event) =>
-                    setRefinement((current) => ({
-                      ...current,
-                      quickReleaseRequired: event.target.value as
-                        "" | "yes" | "no",
-                    }))
-                  }
-                  value={refinement.quickReleaseRequired}
-                >
-                  <option value="">No preference</option>
-                  <option value="yes">Required</option>
-                  <option value="no">Not required</option>
-                </select>
-              </label>
-            </div>
-          </div>
-        ) : null}
-
-        {step === 11 ? (
-          <div className="question-block">
-            <h1 id="question-heading">How do you want to acquire it?</h1>
-            <p>
-              Set seven optional boundaries for availability, condition, and
-              market behavior.
-            </p>
-            <div className="select-grid">
-              <OptionalSelect
-                label="How should the watch behave in the market?"
-                onChange={(marketStance) =>
-                  setRefinement((current) => ({ ...current, marketStance }))
-                }
-                options={MARKET_STANCES}
-                value={refinement.marketStance}
-              />
-              <OptionalSelect
-                label="Will you accept speculative demand?"
-                onChange={(speculativeRiskTolerance) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    speculativeRiskTolerance,
-                  }))
-                }
-                options={SPECULATIVE_RISK_TOLERANCES}
-                value={refinement.speculativeRiskTolerance}
-              />
-              <OptionalSelect
-                label="How long are you willing to wait?"
-                onChange={(availabilityTolerance) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    availabilityTolerance,
-                  }))
-                }
-                options={AVAILABILITY_TOLERANCES}
-                value={refinement.availabilityTolerance}
-              />
-              <OptionalSelect
-                label="How important is resale liquidity?"
-                onChange={(liquidityPreference) =>
-                  setRefinement((current) => ({
-                    ...current,
-                    liquidityPreference,
-                  }))
-                }
-                options={LIQUIDITY_PREFERENCES}
-                value={refinement.liquidityPreference}
-              />
-              <label className="input-stack">
-                <span>
-                  How far above your ceiling can an exceptional option go?
-                  (0–100%)
-                </span>
-                <input
-                  max="100"
-                  min="0"
-                  onChange={(event) =>
-                    setRefinement((current) => ({
-                      ...current,
-                      premiumAllowancePercent: event.target.value,
-                    }))
-                  }
-                  type="number"
-                  value={refinement.premiumAllowancePercent}
-                />
-              </label>
-            </div>
-            <CheckboxGroup
-              legend="Where are you willing to buy?"
-              onChange={(acquisitionChannels) =>
-                setRefinement((current) => ({
-                  ...current,
-                  acquisitionChannels,
-                }))
-              }
-              options={ACQUISITION_CHANNELS}
-              values={refinement.acquisitionChannels}
-            />
-            <CheckboxGroup
-              legend="Which conditions will you consider?"
-              onChange={(acceptedConditions) =>
-                setRefinement((current) => ({
-                  ...current,
-                  acceptedConditions,
-                }))
-              }
-              options={CONDITIONS}
-              values={refinement.acceptedConditions}
-            />
-          </div>
-        ) : null}
-
-        {step === 12 ? (
-          <div className="question-block">
-            <h1 id="question-heading">Where and how will you use it?</h1>
-            <p>
-              Keep purchase and service needs separate. For countries, use
-              familiar two-letter abbreviations such as PL, US, GB, or CH.
-            </p>
-            <div className="select-grid">
-              <OptionalSelect
-                label="How important is low-light visibility?"
-                onChange={(lumePreference) =>
-                  setRefinement((current) => ({ ...current, lumePreference }))
-                }
-                options={LUME_PREFERENCES}
-                value={refinement.lumePreference}
-              />
-              <OptionalSelect
-                label="Where should the crown sit?"
-                onChange={(crownPosition) =>
-                  setRefinement((current) => ({ ...current, crownPosition }))
-                }
-                options={CROWN_POSITIONS}
-                value={refinement.crownPosition}
-              />
-              <label className="input-stack">
-                <span>Where will you buy?</span>
-                <input
-                  maxLength={2}
-                  onChange={(event) =>
-                    setRefinement((current) => ({
-                      ...current,
-                      purchaseCountry: event.target.value.toUpperCase(),
-                    }))
-                  }
-                  placeholder="PL"
-                  value={refinement.purchaseCountry}
-                />
-              </label>
-              <label className="input-stack">
-                <span>Where must service be available?</span>
-                <input
-                  maxLength={2}
-                  onChange={(event) =>
-                    setRefinement((current) => ({
-                      ...current,
-                      serviceCountry: event.target.value.toUpperCase(),
-                    }))
-                  }
-                  placeholder="PL"
-                  value={refinement.serviceCountry}
-                />
-              </label>
-            </div>
           </div>
         ) : null}
 
         {actionData && !actionData.ok ? (
-          <div className="form-error" role="alert">
-            <strong>Check the profile:</strong>
-            <ul>
-              {actionData.errors.map((error) => (
-                <li key={error}>{error}</li>
-              ))}
-            </ul>
-          </div>
+          <ul className="error-list" role="alert">
+            {actionData.errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
         ) : null}
 
         <div className="quiz-actions">
-          <button
-            className="button button--quiet"
-            disabled={step === 0}
-            onClick={goBack}
-            type="button"
-          >
-            Back
-          </button>
-
-          {step !== CORE_STEP_COUNT - 1 && step !== SUMMARY_STEP - 1 ? (
+          {step > 0 ? (
+            <button
+              className="button button--quiet"
+              onClick={goBack}
+              type="button"
+            >
+              Back
+            </button>
+          ) : null}
+          {step < SCREEN_COUNT - 1 ? (
             <button
               className="button button--primary"
               disabled={!stepIsComplete}
-              onClick={() => {
-                recordStart();
-                setStep((current) => current + 1);
-              }}
+              onClick={() => setStep((current) => current + 1)}
               type="button"
             >
               Next
             </button>
           ) : (
-            <Form method="post" onSubmit={recordStart}>
+            <Form method="post">
               {funnelSource ? (
                 <input name="funnelSource" type="hidden" value={funnelSource} />
               ) : null}
-              <input
-                name="intent"
-                type="hidden"
-                value={step < CORE_STEP_COUNT ? "core" : "refine"}
-              />
-              <input name="profile" type="hidden" value={profilePayload} />
+              <ProfileFields draft={draft} />
               <button
                 className="button button--primary"
                 disabled={!stepIsComplete || isSubmitting}
                 type="submit"
               >
-                {isSubmitting
-                  ? "Validating…"
-                  : step < CORE_STEP_COUNT
-                    ? "Continue to personal profile"
-                    : "View matches"}
+                {isSubmitting ? "Evaluating…" : "See the shortlist"}
               </button>
             </Form>
           )}
