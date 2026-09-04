@@ -495,9 +495,11 @@ describe("sheet-native catalogue fields", () => {
   });
 
   it("defaults the new fields when they are absent", () => {
-    const parsed = seedReferenceVariantSchema.parse(
-      structuredClone(baseVariant),
-    );
+    const parsed = seedReferenceVariantSchema.parse({
+      ...structuredClone(baseVariant),
+      wearingScenarios: undefined,
+      complicationSlugs: undefined,
+    });
     expect(parsed.geometry.caseShape).toBeNull();
     expect(parsed.materials.displayCaseback).toBeNull();
     expect(parsed.movement.construction).toBeNull();

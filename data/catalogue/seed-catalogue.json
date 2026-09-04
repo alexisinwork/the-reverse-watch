@@ -3114,7 +3114,16 @@
           "sourceId": "outland-bertucci-a2t-12022",
           "fields": ["identity", "price", "availability"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "boldr-odyssey-horizon-druber-gmt",
@@ -3228,7 +3237,16 @@
           "sourceId": "boldr-odyssey-horizon-wornandwound",
           "fields": ["identity", "lumeGrade"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date", "gmt"]
     },
     {
       "id": "brew-metric-titanium-mtrc-titan",
@@ -3357,7 +3375,9 @@
           "sourceId": "reddit-brew-metric-titanium-owner",
           "fields": ["identity", "lumeGrade"]
         }
-      ]
+      ],
+      "wearingScenarios": ["everyday", "office", "smart_casual"],
+      "complicationSlugs": ["chronograph"]
     },
     {
       "id": "casio-g5600ue-1",
@@ -3490,7 +3510,16 @@
           "sourceId": "american-perfit-casio-band-10512401",
           "fields": ["attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["alarm", "date", "world_time"]
     },
     {
       "id": "christopher-ward-c63-39agm4-s00w0-b0",
@@ -3597,7 +3626,16 @@
             "traits"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date", "gmt"]
     },
     {
       "id": "citizen-bn0150-28e",
@@ -3705,7 +3743,16 @@
           "sourceId": "citizen-e168-manual",
           "fields": ["accuracy"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "grand-seiko-sbgn029",
@@ -3812,7 +3859,16 @@
           "sourceId": "grand-seiko-9f86",
           "fields": ["price", "accuracy", "complications", "dateStatus"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date", "gmt"]
     },
     {
       "id": "hamilton-h69439131",
@@ -3915,7 +3971,9 @@
             "traits"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": ["everyday", "office", "smart_casual"],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "jlc-q3988481",
@@ -4021,7 +4079,16 @@
             "traits"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["gmt"]
     },
     {
       "id": "laco-augsburg-39-861988",
@@ -4138,7 +4205,9 @@
           "sourceId": "trustedshops-laco-augsburg-39-review",
           "fields": ["identity", "lumeGrade"]
         }
-      ]
+      ],
+      "wearingScenarios": ["everyday", "office", "smart_casual"],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "longines-l38024636",
@@ -4244,7 +4313,16 @@
             "traits"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date", "gmt"]
     },
     {
       "id": "luminox-leatherback-xs-0307-wo",
@@ -4365,7 +4443,16 @@
           "sourceId": "ronda-515-luminox-review",
           "fields": ["movement", "accuracy", "dateStatus"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "marathon-ww194003bk-0108",
@@ -4502,7 +4589,16 @@
           "sourceId": "opticsplanet-marathon-gpm-fixed-bars",
           "fields": ["attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "marathon-ww194004bk-0808",
@@ -4624,7 +4720,9 @@
           "sourceId": "marathon-maintenance-services",
           "fields": ["attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": ["everyday", "office", "smart_casual"],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "mido-m0495261104100",
@@ -4729,7 +4827,16 @@
             "traits"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "mondaine-classic-a660-30314-11sbbv",
@@ -4873,7 +4980,16 @@
             "attachmentType"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "nomos-746",
@@ -4990,7 +5106,16 @@
             "dateStatus"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "orient-ra-ac0m03s",
@@ -5108,7 +5233,16 @@
           "sourceId": "delugs-orient-ra-ac0m03s-fitment",
           "fields": ["attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-116400gv-0002",
@@ -5234,7 +5368,16 @@
           "sourceId": "rolex-9724a232d0a4b95f7006",
           "fields": ["caseThicknessMm", "lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-116680",
@@ -5347,7 +5490,16 @@
           "sourceId": "rolex-9ef3970462af1ce5946f",
           "fields": ["lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["chronograph"]
     },
     {
       "id": "rolex-116688",
@@ -5462,7 +5614,16 @@
           "sourceId": "rolex-2c31d22bea5b3f4d1612",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["chronograph"]
     },
     {
       "id": "rolex-124060",
@@ -5575,7 +5736,16 @@
           "sourceId": "everest-rolex-124060-spring-bars",
           "fields": ["lugWidthMm", "attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-124200",
@@ -5700,7 +5870,16 @@
           "sourceId": "rolex-dc59c677eee906e0d689",
           "fields": ["lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-124270",
@@ -5814,7 +5993,19 @@
             "weightFullG"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "evening",
+        "everyday",
+        "field",
+        "office",
+        "reception",
+        "smart_casual",
+        "sport",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-124273",
@@ -5923,7 +6114,19 @@
           "sourceId": "rolex-d8ebda4ad7cfd906078f",
           "fields": ["identity", "caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "evening",
+        "everyday",
+        "field",
+        "office",
+        "reception",
+        "smart_casual",
+        "sport",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-124300",
@@ -6039,7 +6242,16 @@
           "sourceId": "rolex-950af1bb16f7011c4f7b",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-126000",
@@ -6166,7 +6378,16 @@
           "sourceId": "rolex-b5d108c8ab3b87eaf94a",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-126067",
@@ -6303,7 +6524,16 @@
           "sourceId": "rolex-b1f657f18e90400087e3",
           "fields": ["accuracy"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-126200-0008",
@@ -6427,7 +6657,16 @@
           "sourceId": "rolex-0167e3ec182c7eb7e8b7",
           "fields": ["market"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-126300",
@@ -6546,7 +6785,16 @@
           "sourceId": "rolex-ae643d1614643507d168",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-126334",
@@ -6657,7 +6905,16 @@
           "sourceId": "rolex-60a95b2dfe26fe50298c",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-126500ln-0002",
@@ -6790,7 +7047,16 @@
           "sourceId": "rolex-49f4847136753567b28d",
           "fields": ["market"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["chronograph"]
     },
     {
       "id": "rolex-126600",
@@ -6907,7 +7173,9 @@
           "sourceId": "everest-rolex-126600-spring-bar-fitment",
           "fields": ["attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": ["diving", "field", "sport"],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-126610ln",
@@ -7042,7 +7310,16 @@
           "sourceId": "rolex-d4c11426217c9a8895c2",
           "fields": ["accuracy"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-126622",
@@ -7164,7 +7441,16 @@
           "sourceId": "rolex-2cf21fcde96f5fd1d43a",
           "fields": ["caseThicknessMm", "lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-126710blro",
@@ -7288,7 +7574,16 @@
           "sourceId": "rolex-ce5fefb9a042f14b05a2",
           "fields": ["lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date", "gmt"]
     },
     {
       "id": "rolex-126710grnr",
@@ -7428,7 +7723,16 @@
           "sourceId": "rolex-17b4f85c4fbd3fa2fd3f",
           "fields": ["accuracy"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date", "gmt"]
     },
     {
       "id": "rolex-126900",
@@ -7547,7 +7851,16 @@
           "sourceId": "rolex-6e56fa73a5d95d7b9359",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-128238",
@@ -7656,7 +7969,16 @@
           "sourceId": "rolex-9c02b85d35acd7d6714c",
           "fields": ["caseThicknessMm", "lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-134300",
@@ -7778,7 +8100,16 @@
             "shockResistant"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-136660",
@@ -7906,7 +8237,16 @@
           "sourceId": "rolex-4e5716e29bad242a5fad",
           "fields": ["attachmentType", "market"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-224270",
@@ -8035,7 +8375,16 @@
           "sourceId": "rolex-33c65087a2931d41ec0f",
           "fields": ["dateStatus"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-226570",
@@ -8148,7 +8497,16 @@
           "sourceId": "rolex-4ce5d04c436fb7c2fcf9",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date", "gmt"]
     },
     {
       "id": "rolex-226627",
@@ -8270,7 +8628,16 @@
             "market"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-228238",
@@ -8389,7 +8756,16 @@
           "sourceId": "rolex-988ab5d5d73721b415d6",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-268621-0003",
@@ -8519,7 +8895,16 @@
           "sourceId": "rolex-8cd11f6bf8c53a44f677",
           "fields": ["crownPosition", "market"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-268622",
@@ -8643,7 +9028,16 @@
           "sourceId": "rolex-eb7084b39ff32f7d8fca",
           "fields": ["caseThicknessMm", "lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-276200",
@@ -8765,7 +9159,16 @@
           "sourceId": "rolex-f22b598c8971a5a62420",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-277200",
@@ -8879,7 +9282,16 @@
           "sourceId": "rolex-379b9f523b75dc82e4dc",
           "fields": ["market"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-278274",
@@ -8989,7 +9401,16 @@
           "sourceId": "rolex-8ba29b20fac7d3218a4f",
           "fields": ["caseThicknessMm", "lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-279160",
@@ -9109,7 +9530,16 @@
           "sourceId": "rolex-d00e71580d8539e39985",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-279174",
@@ -9229,7 +9659,16 @@
           "sourceId": "rolex-a314a381f4b908f6cca6",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-336934",
@@ -9349,7 +9788,16 @@
           "sourceId": "rolex-dab8abd2f648fcec9e17",
           "fields": ["caseThicknessMm", "lugCurvature"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date", "gmt"]
     },
     {
       "id": "rolex-50505",
@@ -9484,7 +9932,16 @@
           "sourceId": "rolex-a00111d15a4a4a6af7fc",
           "fields": ["caseThicknessMm", "lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-50509",
@@ -9611,7 +10068,16 @@
           "sourceId": "rolex-832c95358af69f240750",
           "fields": ["caseThicknessMm", "lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-50519-0006",
@@ -9742,7 +10208,16 @@
           "sourceId": "rolex-92c0947a2079f33b191c",
           "fields": ["caseThicknessMm", "lugToLugMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-50525-0015",
@@ -9858,7 +10333,16 @@
           "sourceId": "rolex-52377aacb1717504cd86",
           "fields": ["lugCurvature"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["gmt"]
     },
     {
       "id": "rolex-50529",
@@ -9962,7 +10446,16 @@
           "sourceId": "rolex-a5654fed5359053ba7f8",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-50535-0002",
@@ -10083,7 +10576,16 @@
           "sourceId": "rolex-fb895ca5c1269593c821",
           "fields": ["shockResistant"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date", "moonphase"]
     },
     {
       "id": "rolex-52508",
@@ -10200,7 +10702,16 @@
           "sourceId": "rolex-fadce1207caa7ed55164",
           "fields": ["market"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-80319-0040",
@@ -10324,7 +10835,16 @@
           "sourceId": "rolex-d074ada3c66d92580e08",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "rolex-86409",
@@ -10438,7 +10958,16 @@
             "lugWidthMm"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "rolex-m226659-0002",
@@ -10564,7 +11093,16 @@
           "sourceId": "rolex-14804f46369be705d33f",
           "fields": ["caseThicknessMm", "lugToLugMm", "lugWidthMm"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "seiko-hcc004j1",
@@ -10684,7 +11222,16 @@
           "sourceId": "louis-pion-seiko-hcc004j1",
           "fields": ["attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "seiko-sne599p1",
@@ -10813,7 +11360,16 @@
           "sourceId": "watchstraponline-seiko-sne599p1-bracelet",
           "fields": ["materials", "attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "seiko-ssc813",
@@ -10918,7 +11474,16 @@
             "traits"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["chronograph", "date", "power_reserve"]
     },
     {
       "id": "timex-tw2y40300",
@@ -11021,7 +11586,16 @@
             "traits"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "tissot-t1372071104100",
@@ -11126,7 +11700,16 @@
             "traits"
           ]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "evening",
+        "everyday",
+        "office",
+        "reception",
+        "smart_casual",
+        "suit"
+      ],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "tudor-m79000n-0001",
@@ -11271,7 +11854,16 @@
           "sourceId": "delugs-tudor-m79000n-0001",
           "fields": ["attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["time_only"]
     },
     {
       "id": "vostok-amphibia-420059",
@@ -11441,7 +12033,9 @@
           "sourceId": "vostok-420059-world24-springbars",
           "fields": ["attachmentType"]
         }
-      ]
+      ],
+      "wearingScenarios": ["diving", "field", "sport"],
+      "complicationSlugs": ["date"]
     },
     {
       "id": "vostok-europe-vk61-571h614",
@@ -11568,7 +12162,16 @@
           "sourceId": "otto-vostok-europe-vk61-571h614-leather",
           "fields": ["identity", "materials", "weightFullG"]
         }
-      ]
+      ],
+      "wearingScenarios": [
+        "diving",
+        "everyday",
+        "field",
+        "office",
+        "smart_casual",
+        "sport"
+      ],
+      "complicationSlugs": ["chronograph", "date"]
     }
   ]
 }

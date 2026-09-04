@@ -15,6 +15,7 @@
     "test:run": "vitest run",
     "test:e2e": "npm run build && node --env-file-if-exists=.env ./node_modules/@playwright/test/cli.js test",
     "project:seed-coverage": "tsx scripts/project-seed-coverage.ts",
+    "migrate:seed-catalogue-v3": "tsx scripts/migrate-seed-catalogue-v3.ts",
     "render:seed-migration": "tsx scripts/render-seed-migration.ts",
     "render:compact-catalogue-migration": "tsx scripts/render-compact-catalogue-migration.ts",
     "audit:catalogue-parity": "tsx scripts/audit-catalogue-parity.ts",

@@ -208,6 +208,15 @@ export const BUNDLED_VOCABULARY: readonly VocabularyRow[] = [
   ),
   complication("ring_command", "Ring Command bezel", ["ring command"], 190),
   complication("ringlock", "Ringlock case system", ["ringlock"], 200),
+  complication("power_reserve", "Power reserve", ["запас хода"], 210),
+  complication("alarm", "Alarm", ["будильник"], 220),
+  complication("world_time", "World time", ["мировое время"], 230),
+  complication(
+    "perpetual_calendar",
+    "Perpetual calendar",
+    ["вечный календарь"],
+    240,
+  ),
 
   positioning("instrument", "Instrument", 10),
   positioning("quiet_classic", "Quiet classic", 20),
