@@ -2,12 +2,20 @@
 
 The Reserve is a server-rendered Remix-style application built with React
 Router v7 Framework Mode, Vite, and strict TypeScript. The application preserves
-the documentary landing page and Beehiiv signup and now includes the progressive
-reference diagnostic at `/quiz`. The diagnostic returns deterministic,
-source-cited candidates, verification gaps, and rejection reasons from a
-reviewed PostgreSQL reference-variant catalogue. The server validates the
+the documentary landing page and Beehiiv signup and now includes the six-screen
+reference diagnostic at `/quiz`: budget, use, case, movement, details, and
+requirements. Every question maps onto a column of the owner's model intake
+sheet, which is the canonical catalogue intake format. The diagnostic returns
+deterministic, source-cited candidates, verification gaps, and rejection reasons
+from a reviewed PostgreSQL reference-variant catalogue. The server validates the
 accepted-facts RPC response and visibly falls back to the reviewed bundled
 snapshot if the live catalogue or SQL filter contract fails.
+
+Wearing scenarios, complications, and positioning groups are PostgreSQL
+vocabularies read at runtime, so the owner extends them without a code change;
+the bundled list in `app/domain/catalogue-vocabulary.ts` is the all-or-nothing
+fallback. The result screen offers a positioning facet that narrows what is
+displayed without re-ranking anything.
 
 Results remain available without an email address. The result screen offers a
 separate, explicit opt-in; a valid request records a Beehiiv subscription when
@@ -61,6 +69,26 @@ The deterministic Phase 6 entry-gate measurements can be reproduced with:
 ```bash
 npm run evaluate:baseline
 ```
+
+## Catalogue intake
+
+The owner's tab-separated model sheet is imported with:
+
+```bash
+npm run import:model-sheet -- data/research/model-sheet-sample.tsv
+```
+
+The importer drops workbook artifact rows, collapses exact duplicate
+references, and exits non-zero listing conflicting duplicates and unparseable
+rows for owner resolution; it never picks a winner between conflicting rows. It
+also reports which accepted rows would supersede an already-reviewed variant,
+without merging them.
+
+`npm run migrate:seed-catalogue-v3` is the one-shot forward migration that gave
+the reviewed variants their wearing-scenario and complication slugs. Run
+Prettier over `data/catalogue/seed-catalogue.json` afterwards.
+`npm run build:watches-workbook` exports the reviewed facts back into the
+owner's workbook layout.
 
 Real credentials belong in the ignored `.env` file. See
 `docs/accounts-and-secrets.md` and `scripts/check-env.mjs`; never commit `.env`

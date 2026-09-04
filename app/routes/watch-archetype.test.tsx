@@ -49,7 +49,7 @@ describe("watch archetype route", () => {
 
     expect(
       await screen.findByRole("heading", {
-        level: 2,
+        level: 1,
         name: "The Field Rationalist",
       }),
     ).toBeInTheDocument();
@@ -79,7 +79,7 @@ describe("watch archetype route", () => {
 
     expect(
       await screen.findByRole("heading", {
-        level: 2,
+        level: 1,
         name: "The Mechanical Connoisseur",
       }),
     ).toBeVisible();

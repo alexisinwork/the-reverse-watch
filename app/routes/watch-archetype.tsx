@@ -173,7 +173,7 @@ export default function WatchArchetype() {
               <span />
             </div>
             <span>The Reserve · watch disposition no. 01</span>
-            <h2 id="archetype-card-title">{result.archetype.title}</h2>
+            <h1 id="archetype-card-title">{result.archetype.title}</h1>
             <p>{result.archetype.strapline}</p>
             <small>{result.archetype.accent}</small>
           </section>

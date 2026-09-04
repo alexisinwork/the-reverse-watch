@@ -1,6 +1,6 @@
 # Session handoff
 
-Last updated: 2026-09-01
+Last updated: 2026-09-04
 
 This is the restart point for the next working session. The controlling
 sequence is [`implementation-roadmap.md`](implementation-roadmap.md), which
@@ -1518,3 +1518,58 @@ request was made.
   Do not enable the discovery worker or scheduler until an authenticated
   production smoke run and the required provider configuration are confirmed;
   no provider secret or token is recorded here.
+
+## Quiz v3 and sheet-native catalogue checkpoint — 2026-09-04
+
+Branch `quiz-v3` implements
+[`superpowers/plans/2026-09-03-quiz-v3.md`](superpowers/plans/2026-09-03-quiz-v3.md)
+against
+[`superpowers/specs/2026-09-03-quiz-v3-design.md`](superpowers/specs/2026-09-03-quiz-v3-design.md).
+Tasks 1 through 17 are implemented and committed; the work is not merged to
+`main` and not deployed.
+
+Delivered:
+
+- `/quiz` is six screens posting a version-3 profile as flat form fields.
+  Version 2 — its schemas, engine, thirteen screens, and dossier renderer — is
+  deleted. `CURRENCIES`, `PRICE_BANDS`, `derivePriceBand`,
+  `effectiveBudgetCeiling`, the social/aesthetic/deployment vocabularies, and
+  the coverage and research constants survive in `questionnaire.ts`.
+- Engine v3: seven hard reasons, six missing-fact codes, nine soft factors, and
+  an unscored-preference channel for preferences with no reviewed data.
+- Wearing scenarios, complications, and positioning groups are a PostgreSQL
+  vocabulary (`catalogue_vocabulary`) with a bundled all-or-nothing fallback.
+  The result page has a positioning facet that narrows display only.
+- Sheet intake: a row parser, deduplication with conflict rejection, and
+  `npm run import:model-sheet`. The 71 reviewed variants carry scenario and
+  complication slugs.
+- Migrations `0065` (vocabulary, join tables, variant columns, seeds), `0066`
+  (`recommendation_catalogue_v4`, `recommendation_hard_filter_v4`), and `0067`
+  (join-table backfill mirroring the TypeScript forward migration).
+
+Verified locally: `npm run check` (58 files / 332 tests, plus lint, types, and
+build) and `npm run test:e2e` (14 desktop and mobile tests). `npm run
+evaluate:baseline` reports all six version-3 golden profiles deterministic with
+zero hard-filter violations. Fixing the browser suite required giving the
+archetype result card an `h1`; it had rendered its title as `h2` since it was
+introduced, so the page had no level-one heading and axe failed the spec that
+had never been run.
+
+Outstanding, both blocked on the database:
+
+1. **No reachable Supabase project.** The MCP server is configured for
+   `project_ref=elxarigqnwqshmfmoaip`, whose hostname has no DNS record; the
+   management API answers but every SQL call times out. Migrations `0065`,
+   `0066`, and `0067` are therefore written but **not applied**, and
+   `npm run audit:catalogue-parity` has not run. Until they are applied the
+   deployed app falls back to the bundled catalogue, because
+   `catalogue.server.ts` now targets the v4 RPCs. Point the MCP server at the
+   live project, apply the three migrations in order, then run the parity audit
+   and the Supabase security and performance advisors.
+2. **The owner's sheet has never been imported.** `data/research/model-sheet-sample.tsv`
+   is gitignored and absent from this checkout, so the importer has only been
+   exercised on a synthetic fixture. The plan's expected findings — the
+   Sky-Dweller, Submariner, Yacht-Master, and Explorer duplicate groups, seven
+   artifact rows, and the two wrong `134300` URLs — remain unconfirmed, and no
+   sheet-sourced values exist yet for case shape, display caseback, movement
+   construction, micro-adjustment, or positioning.

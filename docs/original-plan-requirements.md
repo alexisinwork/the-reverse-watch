@@ -314,3 +314,42 @@ required. The detailed execution and verification contract is
   lacks reviewed supporting fields. They are not silently treated as matches.
 - Semantic infrastructure remains deferred. No chunks, embeddings, vector
   database, Mastra, Ollama, or RunPod dependency was introduced.
+
+## 2026-09-03 owner questionnaire amendment
+
+The owner's model intake sheet replaces the progressive questionnaire as the
+contract for `/quiz`. Design:
+[`superpowers/specs/2026-09-03-quiz-v3-design.md`](superpowers/specs/2026-09-03-quiz-v3-design.md).
+
+Superseded for the diagnostic:
+
+- Questionnaire v2 and its 21 personal-preference dimensions. `/quiz` now asks
+  thirteen questions across six screens — budget, use, case, movement, details,
+  requirements — and every one maps onto a sheet column.
+- Wrist-based fit filtering. Wrist circumference, the derived wrist band, and
+  the lug-to-lug wrist ratio are no longer asked or applied as a hard filter.
+  Case diameter range replaces them as the size constraint the owner's sheet
+  actually records. The wrist bands survive only inside the coverage grid and
+  the research contract.
+- Speculative-candidate opt-in, premium acquisition allowance, availability and
+  liquidity tolerances, provenance and cosmetic preferences, lume, crown
+  position, attachment, and lug-width filters. None of them has a column in the
+  sheet, so none is asked; the catalogue fields stay in the schema.
+- Date preference as a hard filter. Date is now one complication slug among
+  many, and `date_required` / `date_forbidden` no longer exist as reason codes.
+
+Unaffected:
+
+- The editorial archetype quiz at `/watches/archetype` and every discovery
+  surface. They keep their own social-signal, aesthetic-DNA, and deployment
+  vocabularies, and the archetype hand-off into `/quiz` still carries funnel
+  attribution.
+- The dossier contract, provenance and evidence rules, missing-fact handling,
+  and the SQL-first architecture, all of which the version-3 engine keeps.
+- The coverage audit and the research extraction contract, which still read the
+  accuracy, weight, ownership-friction, deployment, and wrist-band vocabularies.
+
+Retained but no longer asked: `dateStatus`, `complications`, and
+`eligibleEnvironments` stay on the catalogue record for the coverage audit, the
+dossier, and the research pipeline. They are null or empty for sheet-sourced
+rows and are never scored by the version-3 engine.

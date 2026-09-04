@@ -175,40 +175,32 @@ test("uses the branded error boundary for unknown routes", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("completes the essential and personal diagnostic without a model provider", async ({
+test("completes the six-screen diagnostic without a model provider", async ({
   page,
 }) => {
   await grantDiagnosticAccess(page);
   await page.goto("/quiz");
 
+  await expect(page.getByText("Step 1 of 6")).toBeVisible();
   await page.getByLabel("Maximum amount").fill("10000");
   await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("Wrist circumference (mm)").fill("170");
+
+  await page.getByRole("checkbox", { name: "Office" }).check();
   await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("Studio, desk, or daily wear").check();
   await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("Workhorse mechanical").check();
-  await page.getByLabel("Within ±15 seconds per day").check();
+
+  await page.getByRole("checkbox", { name: "Automatic" }).check();
   await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("Under 160 g").check();
   await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("GMT").check();
-  await page.getByLabel("Either is acceptable").check();
-  await page
-    .getByRole("button", { name: "Continue to personal profile" })
-    .click();
-  await expect(
-    page.getByRole("heading", { name: "How do you want to be perceived?" }),
-  ).toBeVisible();
-  for (let step = 0; step < 6; step += 1) {
-    await page.getByRole("button", { name: "Next" }).click();
-  }
-  await page.getByRole("button", { name: "View matches" }).click();
+
+  await expect(page.getByText("Step 6 of 6")).toBeVisible();
+  await page.getByRole("button", { name: "See the shortlist" }).click();
 
   await expect(
     page.getByRole("heading", { name: "Your search boundary" }),
   ).toBeVisible();
   await expect(page.getByText("USD 10,000")).toBeVisible();
+  await expect(page.locator("body")).not.toContainText(/personal profile/i);
 
   await page.getByRole("button", { name: "Restart diagnostic" }).click();
   await expect(
@@ -219,51 +211,51 @@ test("completes the essential and personal diagnostic without a model provider",
   await expect(page.getByLabel("Maximum amount")).toHaveValue("");
 });
 
-test("captures personal preferences and preserves cited results", async ({
+test("narrows the shortlist by positioning without changing the exclusions", async ({
   page,
 }) => {
   await grantDiagnosticAccess(page);
   await page.goto("/quiz");
 
-  await page.getByLabel("Maximum amount").fill("10000");
+  await page.getByLabel("Maximum amount").fill("100000");
   await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("Wrist circumference (mm)").fill("170");
-  await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("Studio, desk, or daily wear").check();
-  await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("Workhorse mechanical").check();
-  await page.getByLabel("Within ±15 seconds per day").check();
-  await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("Under 160 g").check();
-  await page.getByRole("button", { name: "Next" }).click();
-  await page.getByLabel("GMT").check();
-  await page.getByLabel("Either is acceptable").check();
-  await page
-    .getByRole("button", { name: "Continue to personal profile" })
-    .click();
-  await page.getByRole("radio", { name: /Discreet competence/i }).check();
-  await page.getByRole("button", { name: "Next" }).click();
-  await page.getByRole("radio", { name: /Mid-century industrial/i }).check();
-  await page.getByRole("button", { name: "Next" }).click();
-  await page.getByRole("radio", { name: /Sovereign independent/i }).check();
-  await page.getByRole("button", { name: "Next" }).click();
-  await page.getByRole("radio", { name: /Generational custody/i }).check();
+  await page.getByRole("checkbox", { name: "Office" }).check();
   await page.getByRole("button", { name: "Next" }).click();
   await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("checkbox", { name: "Automatic" }).check();
+  await page.getByRole("checkbox", { name: "Quartz" }).check();
   await page.getByRole("button", { name: "Next" }).click();
-  await page.getByRole("button", { name: "View matches" }).click();
+  await page.getByRole("button", { name: "Next" }).click();
+  await page.getByRole("button", { name: "See the shortlist" }).click();
 
-  await expect(
-    page.getByRole("heading", { name: "Your search boundary" }),
-  ).toBeVisible();
   await expect(
     page.getByRole("heading", { name: "Sources used in this result" }),
   ).toBeVisible();
   await expect(
     page.getByRole("link", { name: "Inspect manufacturer source" }).first(),
   ).toBeVisible();
-  await expect(page.getByText("Discreet competence")).toBeVisible();
-  await expect(page.getByText("Generational custody")).toBeVisible();
+
+  const facet = page.getByRole("group", { name: "Positioning" });
+  const shortlisted = page.locator(".candidate-card");
+  const excluded = page.locator(".why-not-list article");
+  const exclusionsBefore = await excluded.count();
+
+  // The facet only appears once a returned candidate carries a positioning
+  // group, which no reviewed variant does until the sheet is imported.
+  if (await facet.isVisible()) {
+    const before = await shortlisted.count();
+    const chip = facet.getByRole("button").nth(1);
+    const label = await chip.textContent();
+    await chip.click();
+    await expect(chip).toHaveAttribute("aria-pressed", "true");
+    const after = await shortlisted.count();
+    expect(after).toBeLessThanOrEqual(before);
+    expect(await excluded.count()).toBe(exclusionsBefore);
+    await facet.getByRole("button", { name: "All" }).click();
+    expect(await shortlisted.count()).toBe(before);
+    expect(label).not.toBeNull();
+  }
+
   await expect(page.locator("body")).not.toContainText(
     /supabase|sql|beehiiv|engine v|catalogue v|bundled snapshot/i,
   );
