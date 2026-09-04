@@ -429,6 +429,38 @@
   line-height: 1.4;
 }
 
+.positioning-facet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.positioning-facet button {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--color-line);
+  background: transparent;
+  color: var(--color-steel-text);
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.positioning-facet button[aria-pressed="true"] {
+  border-color: var(--color-brass);
+  color: var(--color-brass);
+}
+
+.candidate-positioning {
+  margin: 0 0 1rem;
+  color: var(--color-steel-text);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
 .factor-list,
 .verification-list,
 .explanation-list,

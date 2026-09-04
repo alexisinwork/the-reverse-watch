@@ -15,7 +15,9 @@ import type { Route } from "./+types/quiz";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { loadRecommendationCatalogue } from "../domain/catalogue.server";
+import type { VocabularyKind } from "../domain/catalogue-vocabulary";
 import { loadCatalogueVocabulary } from "../domain/catalogue-vocabulary.server";
+import { PositioningFacet } from "../components/positioning-facet";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
 import {
   explainStoryConstraint,
@@ -128,6 +130,7 @@ type VocabularyOption = { slug: string; labelEn: string };
 type QuizLoaderData = {
   scenarios: VocabularyOption[];
   complications: VocabularyOption[];
+  positioningGroups: VocabularyOption[];
 };
 
 const emailSchema = z.string().trim().email().max(320);
@@ -615,7 +618,7 @@ export async function loader({ request }: Route.LoaderArgs) {
   }
 
   const vocabulary = await loadCatalogueVocabulary();
-  const options = (kind: "wearing_scenario" | "complication") =>
+  const options = (kind: VocabularyKind) =>
     vocabulary
       .filter((row) => row.kind === kind && row.active)
       .map((row) => ({ slug: row.slug, labelEn: row.labelEn }));
@@ -623,6 +626,7 @@ export async function loader({ request }: Route.LoaderArgs) {
   return {
     scenarios: options("wearing_scenario"),
     complications: options("complication"),
+    positioningGroups: options("positioning_group"),
   } satisfies QuizLoaderData;
 }
 
@@ -1078,9 +1082,27 @@ function CandidateCard({
 
 function RecommendationSummary({
   recommendation,
+  positioningGroups,
 }: {
   recommendation: RecommendationResultV3;
+  positioningGroups: readonly VocabularyOption[];
 }) {
+  const [positioning, setPositioning] = useState<string | null>(null);
+  // Only groups a returned candidate actually carries are offered, so the
+  // facet can never empty the list it sits above.
+  const availableGroups = useMemo(() => {
+    const present = new Set(
+      recommendation.recommendations
+        .map((candidate) => candidate.positioningGroup)
+        .filter((group): group is string => group !== null),
+    );
+    return positioningGroups.filter((group) => present.has(group.slug));
+  }, [positioningGroups, recommendation.recommendations]);
+  const visible = recommendation.recommendations.filter(
+    (candidate) =>
+      positioning === null || candidate.positioningGroup === positioning,
+  );
+
   return (
     <div className="recommendation-summary">
       <section aria-labelledby="confirmed-heading">
@@ -1094,9 +1116,14 @@ function RecommendationSummary({
             {recommendation.diagnostics.evaluated}
           </span>
         </div>
-        {recommendation.recommendations.length > 0 ? (
+        <PositioningFacet
+          groups={availableGroups}
+          onSelect={setPositioning}
+          selected={positioning}
+        />
+        {visible.length > 0 ? (
           <div className="candidate-list">
-            {recommendation.recommendations.map((candidate) => (
+            {visible.map((candidate) => (
               <CandidateCard
                 candidate={candidate}
                 key={candidate.id}
@@ -1281,6 +1308,7 @@ function ProfileSummary({
   storyContext,
   scenarioLabels,
   complicationLabels,
+  positioningGroups,
   onEdit,
   onRestart,
 }: {
@@ -1298,6 +1326,7 @@ function ProfileSummary({
   };
   scenarioLabels: Map<string, string>;
   complicationLabels: Map<string, string>;
+  positioningGroups: readonly VocabularyOption[];
   onEdit: () => void;
   onRestart: () => void;
 }) {
@@ -1393,7 +1422,10 @@ function ProfileSummary({
           </div>
         ) : null}
       </dl>
-      <RecommendationSummary recommendation={recommendation} />
+      <RecommendationSummary
+        positioningGroups={positioningGroups}
+        recommendation={recommendation}
+      />
       {storyContext ? (
         <section
           className="delivery-panel"
@@ -1563,6 +1595,7 @@ export default function Quiz() {
           funnelSource={funnelSource}
           onEdit={() => setStep(0)}
           onRestart={restartQuiz}
+          positioningGroups={loaderData.positioningGroups}
           profile={resultData.profile}
           recommendation={resultData.recommendation}
           scenarioLabels={scenarioLabels}
