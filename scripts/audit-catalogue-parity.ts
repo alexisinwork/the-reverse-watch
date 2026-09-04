@@ -6,10 +6,10 @@ import {
 } from "../app/domain/catalogue.server";
 import { catalogueParityMismatches } from "../app/domain/catalogue-parity";
 import { goldenEvaluationProfiles } from "../app/domain/evaluation-fixtures";
-import type { QuestionnaireProfile } from "../app/domain/questionnaire";
+import type { ProfileV3 } from "../app/domain/questionnaire-v3";
 import {
-  evaluateHardFilterPartition,
-  recommendWatches,
+  evaluateHardFilterPartitionV3,
+  recommendWatchesV3,
 } from "../app/domain/recommendation";
 import { seedCatalogue } from "../app/domain/seed-catalogue";
 
@@ -47,7 +47,7 @@ const factMismatches = catalogueParityMismatches(
   databaseCatalogue,
 );
 
-const profiles: QuestionnaireProfile[] = [...goldenEvaluationProfiles];
+const profiles: ProfileV3[] = [...goldenEvaluationProfiles];
 
 const observedTimes = [
   seedCatalogue.fx.observedAt,
@@ -76,7 +76,7 @@ if (latestObservation >= earliestExpiry) {
 }
 const evaluationTime = new Date(latestObservation).toISOString();
 
-async function fetchSqlHardFilter(profile: QuestionnaireProfile) {
+async function fetchSqlHardFilter(profile: ProfileV3) {
   const hardFilterResponse = await fetch(
     new URL(`/rest/v1/rpc/${SUPABASE_HARD_FILTER_RPC}`, configuredSupabaseUrl),
     {
@@ -101,7 +101,7 @@ async function fetchSqlHardFilter(profile: QuestionnaireProfile) {
 const sqlHardFilters = await Promise.all(profiles.map(fetchSqlHardFilter));
 
 function projectHardFilter(
-  evaluation: ReturnType<typeof evaluateHardFilterPartition>,
+  evaluation: ReturnType<typeof evaluateHardFilterPartitionV3>,
 ) {
   return Object.fromEntries(
     Object.entries(evaluation)
@@ -118,7 +118,7 @@ function projectHardFilter(
 
 const hardFilterMismatches = profiles.flatMap((profile, index) => {
   const expected = projectHardFilter(
-    evaluateHardFilterPartition(profile, seedCatalogue, {
+    evaluateHardFilterPartitionV3(profile, seedCatalogue, {
       asOf: evaluationTime,
     }),
   );
@@ -134,8 +134,8 @@ const hardFilterMismatches = profiles.flatMap((profile, index) => {
 
 const recommendationMismatches = profiles.flatMap((profile, index) => {
   const options = { asOf: evaluationTime };
-  const expected = recommendWatches(profile, seedCatalogue, options);
-  const actual = recommendWatches(profile, databaseCatalogue, {
+  const expected = recommendWatchesV3(profile, seedCatalogue, options);
+  const actual = recommendWatchesV3(profile, databaseCatalogue, {
     ...options,
     hardFilterEvaluation: sqlHardFilters[index],
   });

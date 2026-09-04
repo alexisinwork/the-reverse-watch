@@ -35,6 +35,8 @@ function projectVariant(
       conditions: sorted(variant.price.conditions),
     },
     complications: sorted(variant.complications),
+    complicationSlugs: sorted(variant.complicationSlugs),
+    wearingScenarios: sorted(variant.wearingScenarios),
     eligibleEnvironments: sorted(variant.eligibleEnvironments),
     ownershipFrictionLevels: sorted(variant.ownershipFrictionLevels),
     traits: {

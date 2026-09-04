@@ -2,8 +2,8 @@ import { performance } from "node:perf_hooks";
 
 import { goldenEvaluationProfiles } from "../app/domain/evaluation-fixtures";
 import {
-  evaluateHardFilterPartition,
-  recommendWatches,
+  evaluateHardFilterPartitionV3,
+  recommendWatchesV3,
 } from "../app/domain/recommendation";
 import { seedCatalogue } from "../app/domain/seed-catalogue";
 
@@ -40,14 +40,14 @@ if (latestObservation >= earliestExpiry) {
 const asOf = new Date(latestObservation).toISOString();
 
 const rows = goldenEvaluationProfiles.map((profile, index) => {
-  const expectedPartition = evaluateHardFilterPartition(
+  const expectedPartition = evaluateHardFilterPartitionV3(
     profile,
     seedCatalogue,
     {
       asOf,
     },
   );
-  const first = recommendWatches(profile, seedCatalogue, { asOf });
+  const first = recommendWatchesV3(profile, seedCatalogue, { asOf });
   const firstProjection = JSON.stringify({
     recommendations: first.recommendations.map((candidate) => candidate.id),
     verificationRequired: first.verificationRequired.map(
@@ -58,7 +58,7 @@ const rows = goldenEvaluationProfiles.map((profile, index) => {
   const start = performance.now();
   let deterministic = true;
   for (let iteration = 0; iteration < iterations; iteration += 1) {
-    const result = recommendWatches(profile, seedCatalogue, { asOf });
+    const result = recommendWatchesV3(profile, seedCatalogue, { asOf });
     const projection = JSON.stringify({
       recommendations: result.recommendations.map((candidate) => candidate.id),
       verificationRequired: result.verificationRequired.map(

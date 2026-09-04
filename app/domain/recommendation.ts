@@ -1157,6 +1157,14 @@ export const MISSING_FACT_CODES_V3 = [
 export type HardReasonCodeV3 = (typeof HARD_REASON_CODES_V3)[number];
 export type MissingFactCodeV3 = (typeof MISSING_FACT_CODES_V3)[number];
 
+export type HardFilterEvaluationV3 = Record<
+  string,
+  {
+    hardReasons: HardReasonCodeV3[];
+    missingFacts: MissingFactCodeV3[];
+  }
+>;
+
 export function evaluateHardFiltersV3(
   variant: SeedReferenceVariant,
   profile: ProfileV3,
@@ -1613,20 +1621,54 @@ function buildUnscoredPreferencesV3(
   return unscored;
 }
 
-export function recommendWatchesV3(
+export function evaluateHardFilterPartitionV3(
   profile: ProfileV3,
   catalogue: SeedCatalogue,
   { asOf = new Date().toISOString() }: { asOf?: string } = {},
+): HardFilterEvaluationV3 {
+  const asOfMs = evaluationTimestamp(asOf);
+  return Object.fromEntries(
+    catalogue.variants.map((variant) => [
+      variant.id,
+      evaluateHardFiltersV3(variant, profile, asOfMs, catalogue.fx),
+    ]),
+  );
+}
+
+function assertHardFilterCoverageV3(
+  catalogue: SeedCatalogue,
+  evaluation: HardFilterEvaluationV3,
+) {
+  const expected = new Set(catalogue.variants.map((variant) => variant.id));
+  const actual = new Set(Object.keys(evaluation));
+  const missing = [...expected].filter((id) => !actual.has(id));
+  const unexpected = [...actual].filter((id) => !expected.has(id));
+  if (missing.length > 0 || unexpected.length > 0) {
+    throw new RangeError(
+      `Hard-filter evaluation does not match the catalogue (missing: ${missing.join(", ") || "none"}; unexpected: ${unexpected.join(", ") || "none"}).`,
+    );
+  }
+}
+
+export function recommendWatchesV3(
+  profile: ProfileV3,
+  catalogue: SeedCatalogue,
+  {
+    asOf = new Date().toISOString(),
+    hardFilterEvaluation,
+  }: { asOf?: string; hardFilterEvaluation?: HardFilterEvaluationV3 } = {},
 ): RecommendationResultV3 {
   const asOfMs = evaluationTimestamp(asOf);
+  if (hardFilterEvaluation) {
+    assertHardFilterCoverageV3(catalogue, hardFilterEvaluation);
+  }
   const evaluated = catalogue.variants.map((variant) => {
     const candidate = initialCandidateV3(variant, profile, catalogue);
-    const { hardReasons, missingFacts } = evaluateHardFiltersV3(
-      variant,
-      profile,
-      asOfMs,
-      catalogue.fx,
-    );
+    // A supplied evaluation is authoritative: it is the database predicate the
+    // parity audit holds to the same result as the TypeScript one.
+    const { hardReasons, missingFacts } = hardFilterEvaluation
+      ? hardFilterEvaluation[variant.id]!
+      : evaluateHardFiltersV3(variant, profile, asOfMs, catalogue.fx);
     candidate.hardReasons = hardReasons.map((code) => ({
       code,
       explanation: HARD_REASON_EXPLANATIONS_V3[code],

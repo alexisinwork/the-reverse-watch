@@ -3,12 +3,12 @@ import { z } from "zod";
 import { seedCatalogue } from "./seed-catalogue";
 import { seedCatalogueSchema } from "./catalogue";
 import type { SeedCatalogue } from "./catalogue";
-import type { QuestionnaireProfile } from "./questionnaire";
-import { HARD_REASON_CODES, MISSING_FACT_CODES } from "./recommendation";
-import type { HardFilterEvaluation } from "./recommendation";
+import type { ProfileV3 } from "./questionnaire-v3";
+import { HARD_REASON_CODES_V3, MISSING_FACT_CODES_V3 } from "./recommendation";
+import type { HardFilterEvaluationV3 } from "./recommendation";
 
-export const SUPABASE_CATALOGUE_RPC = "recommendation_catalogue_v3";
-export const SUPABASE_HARD_FILTER_RPC = "recommendation_hard_filter_v3";
+export const SUPABASE_CATALOGUE_RPC = "recommendation_catalogue_v4";
+export const SUPABASE_HARD_FILTER_RPC = "recommendation_hard_filter_v4";
 export const CATALOGUE_CACHE_TTL_MS = 60_000;
 export const CATALOGUE_REQUEST_TIMEOUT_MS = 3_500;
 
@@ -21,15 +21,15 @@ export type CatalogueLoadResult = {
 };
 
 export type RecommendationDataLoadResult = CatalogueLoadResult & {
-  hardFilterEvaluation?: HardFilterEvaluation;
+  hardFilterEvaluation?: HardFilterEvaluationV3;
 };
 
 export const hardFilterEvaluationSchema = z.record(
   z.string().min(1),
   z
     .object({
-      hardReasons: z.array(z.enum(HARD_REASON_CODES)),
-      missingFacts: z.array(z.enum(MISSING_FACT_CODES)),
+      hardReasons: z.array(z.enum(HARD_REASON_CODES_V3)),
+      missingFacts: z.array(z.enum(MISSING_FACT_CODES_V3)),
     })
     .strict(),
 );
@@ -116,7 +116,7 @@ export const loadRecommendationCatalogue = createCatalogueLoader();
 
 function hasExactVariantCoverage(
   catalogue: SeedCatalogue,
-  evaluation: HardFilterEvaluation,
+  evaluation: HardFilterEvaluationV3,
 ) {
   const expected = new Set(catalogue.variants.map((variant) => variant.id));
   const actual = Object.keys(evaluation);
@@ -135,7 +135,7 @@ export function createRecommendationDataLoader(
     options.requestTimeoutMs ?? CATALOGUE_REQUEST_TIMEOUT_MS;
 
   return async function loadRecommendationData(
-    profile: QuestionnaireProfile,
+    profile: ProfileV3,
     asOf: string,
   ): Promise<RecommendationDataLoadResult> {
     const catalogueLoad = await loadCatalogue();

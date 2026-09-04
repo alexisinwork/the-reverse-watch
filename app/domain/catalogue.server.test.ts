@@ -4,8 +4,8 @@ import {
   SUPABASE_CATALOGUE_RPC,
   SUPABASE_HARD_FILTER_RPC,
 } from "./catalogue.server";
-import type { QuestionnaireProfile } from "./questionnaire";
-import { QUESTIONNAIRE_VERSION } from "./questionnaire";
+import type { ProfileV3 } from "./questionnaire-v3";
+import { QUESTIONNAIRE_V3_VERSION } from "./questionnaire-v3";
 import { seedCatalogue } from "./seed-catalogue";
 
 const configuredEnv = {
@@ -13,25 +13,23 @@ const configuredEnv = {
   SUPABASE_PUBLISHABLE_KEY: "sb_publishable_test",
 };
 
-const profile: QuestionnaireProfile = {
-  core: {
-    version: QUESTIONNAIRE_VERSION,
-    budgetCurrency: "USD",
-    budgetMax: 4_000,
-    wristCircumferenceMm: 170,
-    deploymentEnvironment: "field_water_abuse",
-    ownershipFriction: "zero_maintenance",
-    accuracyTolerance: "seconds_per_month",
-    weightLimit: "under_160_g",
-    requiredComplications: ["gmt"],
-    datePreference: "required",
-  },
+const profile: ProfileV3 = {
+  version: QUESTIONNAIRE_V3_VERSION,
+  budgetCurrency: "USD",
+  budgetMax: 4_000,
+  wearingScenarios: ["office", "everyday"],
+  minimumWaterResistanceM: 0,
+  caseDiameterMinMm: 36,
+  caseDiameterMaxMm: 42,
+  movementTypes: ["automatic", "quartz"],
+  requiredComplications: [],
+  allergyConstraint: "none",
 };
 
 describe("server catalogue loader", () => {
-  it("targets the applicability-aware v3 RPC pair", () => {
-    expect(SUPABASE_CATALOGUE_RPC).toBe("recommendation_catalogue_v3");
-    expect(SUPABASE_HARD_FILTER_RPC).toBe("recommendation_hard_filter_v3");
+  it("targets the sheet-native v4 RPC pair", () => {
+    expect(SUPABASE_CATALOGUE_RPC).toBe("recommendation_catalogue_v4");
+    expect(SUPABASE_HARD_FILTER_RPC).toBe("recommendation_hard_filter_v4");
   });
 
   it("uses and caches a strictly validated Supabase catalogue", async () => {

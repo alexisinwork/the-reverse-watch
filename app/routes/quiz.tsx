@@ -14,7 +14,7 @@ import { z } from "zod";
 import type { Route } from "./+types/quiz";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
-import { loadRecommendationCatalogue } from "../domain/catalogue.server";
+import { loadRecommendationData } from "../domain/catalogue.server";
 import type { VocabularyKind } from "../domain/catalogue-vocabulary";
 import { loadCatalogueVocabulary } from "../domain/catalogue-vocabulary.server";
 import { PositioningFacet } from "../components/positioning-facet";
@@ -47,7 +47,10 @@ import type {
   EvaluatedCandidateV3,
   RecommendationResultV3,
 } from "../domain/recommendation";
-import { recommendWatchesV3 } from "../domain/recommendation";
+import {
+  evaluateHardFilterPartitionV3,
+  recommendWatchesV3,
+} from "../domain/recommendation";
 import {
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
@@ -380,18 +383,31 @@ export async function action({ request }: Route.ActionArgs) {
   }
   const evaluatedAt = new Date().toISOString();
   const evaluationStartedAt = performance.now();
-  const catalogueLoad = await loadRecommendationCatalogue();
+  const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
   const recommendation = recommendWatchesV3(
     parsed.data,
     catalogueLoad.catalogue,
-    { asOf: evaluatedAt },
+    {
+      asOf: evaluatedAt,
+      hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
+    },
   );
-  // Version 4 of the hard-filter RPC lands with the parity work; until then the
-  // TypeScript predicate is the only evaluator, so a violation can only appear
-  // as a reason or missing fact carried on the candidate itself.
+  const hardFilterEvaluation =
+    catalogueLoad.hardFilterEvaluation ??
+    evaluateHardFilterPartitionV3(parsed.data, catalogueLoad.catalogue, {
+      asOf: evaluatedAt,
+    });
   const hardFilterViolationCount = recommendation.recommendations.filter(
-    (candidate) =>
-      candidate.hardReasons.length > 0 || candidate.missingFacts.length > 0,
+    (candidate) => {
+      const evaluation = hardFilterEvaluation[candidate.id];
+      return (
+        candidate.hardReasons.length > 0 ||
+        candidate.missingFacts.length > 0 ||
+        evaluation === undefined ||
+        evaluation.hardReasons.length > 0 ||
+        evaluation.missingFacts.length > 0
+      );
+    },
   ).length;
   const evaluationDurationMs = Number(
     (performance.now() - evaluationStartedAt).toFixed(2),
