@@ -27,3 +27,4 @@ data/research/jobs/
 # Owner-supplied source data kept out of git (brand-manifest.txt duplicates brand-manifest.json)
 data/research/brand-manifest.txt
 data/research/model-sheet-sample.tsv
+.scratch/

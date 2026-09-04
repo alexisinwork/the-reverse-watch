@@ -1555,18 +1555,44 @@ archetype result card an `h1`; it had rendered its title as `h2` since it was
 introduced, so the page had no level-one heading and axe failed the spec that
 had never been run.
 
-Outstanding, both blocked on the database:
+Database work completed the same day, after the owner supplied the live
+project ref `osfqexnzgkksfvaocjvl` (the MCP server had been pointed at
+`elxarigqnwqshmfmoaip`, whose hostname no longer resolves; its URL in
+`~/.claude.json` is now corrected):
 
-1. **No reachable Supabase project.** The MCP server is configured for
-   `project_ref=elxarigqnwqshmfmoaip`, whose hostname has no DNS record; the
-   management API answers but every SQL call times out. Migrations `0065`,
-   `0066`, and `0067` are therefore written but **not applied**, and
-   `npm run audit:catalogue-parity` has not run. Until they are applied the
-   deployed app falls back to the bundled catalogue, because
-   `catalogue.server.ts` now targets the v4 RPCs. Point the MCP server at the
-   live project, apply the three migrations in order, then run the parity audit
-   and the Supabase security and performance advisors.
-2. **The owner's sheet has never been imported.** `data/research/model-sheet-sample.tsv`
+- Migrations `0065`, `0066`, `0067`, `0068`, and `0069` are applied and
+  recorded in `supabase_migrations.schema_migrations` as versions
+  `20260904090100` through `20260904090500`. The vocabulary table holds 79
+  rows (44 wearing scenarios, 24 complications, 11 positioning groups),
+  matching `BUNDLED_VOCABULARY` exactly, and all 71 accepted variants carry
+  scenario and complication rows (414 and 85).
+- `npm run audit:catalogue-parity` passes for 71 variants and all six
+  version-3 golden profiles: the v4 SQL predicate and `evaluateHardFiltersV3`
+  agree, and the database catalogue matches the seed exactly.
+- Two defects surfaced while getting there, both fixed additively:
+  - **`0068`**: the catalogue RPC returned every row of `public.sources`,
+    including 18 discovery sources whose `sourceType` is outside the
+    catalogue contract. `seedCatalogueSchema` rejected the whole payload, so
+    the server had been silently falling back to the bundled snapshot.
+    `recommendation_catalogue_v4` now returns only the sources its variants
+    cite plus the FX source — 369, matching the seed. `recommendation_catalogue_v3`
+    still has the defect and is left untouched for rollback.
+  - **`0069`**: Supabase's default privileges on the `public` schema
+    re-granted `EXECUTE` to `authenticated` on the three new functions.
+    Migration `0009` set the policy for this contract (anonymous role only),
+    so the grant is revoked again.
+- Advisor-equivalent checks on the new objects: RLS enabled with no direct
+  policies on all three tables (access only through the security-definer
+  RPCs), `search_path = ''` on all three functions, every foreign key covered
+  by a leading index, and `EXECUTE` held only by `anon`, `service_role`, and
+  the owner.
+- The live runtime path was exercised with the application's own loader:
+  catalogue origin `supabase`, hard-filter partition from the v4 RPC, 71
+  variants, three diverse recommendations.
+
+Outstanding:
+
+1. **The owner's sheet has never been imported.** `data/research/model-sheet-sample.tsv`
    is gitignored and absent from this checkout, so the importer has only been
    exercised on a synthetic fixture. The plan's expected findings — the
    Sky-Dweller, Submariner, Yacht-Master, and Explorer duplicate groups, seven
