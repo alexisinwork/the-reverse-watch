@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { CASE_SHAPES, microAdjustmentSchema } from "./sheet-intake";
+
 import type { ACCURACY_TOLERANCES } from "./questionnaire";
 import {
   ACQUISITION_CHANNELS,
@@ -75,6 +77,7 @@ export const seedReferenceVariantSchema = z
         caseback: z.string().min(1).nullable(),
         bracelet: z.string().min(1).nullable(),
         strap: z.string().min(1).nullable(),
+        displayCaseback: z.boolean().nullable().default(null),
       })
       .strict(),
     productionStatus: z.enum(["announced", "current", "discontinued"]),
@@ -89,6 +92,7 @@ export const seedReferenceVariantSchema = z
         weightFullG: nullablePositiveNumber,
         lugCurvature: z.enum(["flat", "moderate", "steep"]).nullable(),
         integratedBracelet: z.boolean().nullable(),
+        caseShape: z.enum(CASE_SHAPES).nullable().default(null),
       })
       .strict()
       .superRefine((geometry, context) => {
@@ -135,6 +139,10 @@ export const seedReferenceVariantSchema = z
         accuracyLowerSeconds: z.number().nullable(),
         accuracyUpperSeconds: z.number().nullable(),
         accuracyPeriodDays: nullablePositiveNumber,
+        construction: z
+          .enum(["mass_produced", "manufacture"])
+          .nullable()
+          .default(null),
       })
       .strict()
       .superRefine((movement, context) => {
@@ -175,6 +183,7 @@ export const seedReferenceVariantSchema = z
         nickelContactRisk: z
           .enum(["none_known", "possible", "confirmed"])
           .nullable(),
+        microAdjustment: microAdjustmentSchema.nullable().default(null),
       })
       .strict(),
     complications: z.array(
@@ -188,6 +197,10 @@ export const seedReferenceVariantSchema = z
         "perpetual_calendar",
       ]),
     ),
+    positioningLine: z.string().trim().min(1).max(300).nullable().default(null),
+    positioningGroup: z.string().min(1).nullable().default(null),
+    wearingScenarios: z.array(z.string().min(1)).default([]),
+    complicationSlugs: z.array(z.string().min(1)).default([]),
     dateStatus: z.enum(["present", "absent"]),
     eligibleEnvironments: z.array(z.enum(DEPLOYMENT_ENVIRONMENTS)).min(1),
     ownershipFrictionLevels: z.array(z.enum(OWNERSHIP_FRICTION_LEVELS)).min(1),
@@ -343,6 +356,13 @@ export type EvidenceField =
   | "shockResistant"
   | "nickelContactRisk"
   | "complications"
+  | "caseShape"
+  | "displayCaseback"
+  | "movementConstruction"
+  | "microAdjustment"
+  | "positioning"
+  | "wearingScenarios"
+  | "complicationSlugs"
   | "dateStatus"
   | "eligibleEnvironments"
   | "ownershipFrictionLevels"

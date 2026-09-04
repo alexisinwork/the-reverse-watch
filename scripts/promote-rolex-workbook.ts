@@ -1029,6 +1029,7 @@ function buildVariant(
       caseback: stringValue(facts, "materials.caseback"),
       bracelet: stringValue(facts, "materials.bracelet"),
       strap: stringValue(facts, "materials.strap"),
+      displayCaseback: null,
     },
     productionStatus,
     geometry: {
@@ -1045,6 +1046,7 @@ function buildVariant(
       weightFullG: numberValue(facts, "geometry.weightFullG"),
       lugCurvature,
       integratedBracelet,
+      caseShape: null,
     },
     fieldApplicability: {},
     movement: {
@@ -1054,6 +1056,7 @@ function buildVariant(
       accuracyLowerSeconds: movementLower,
       accuracyUpperSeconds: movementUpper,
       accuracyPeriodDays: accuracyPeriod,
+      construction: null,
     },
     operation: {
       waterResistanceM: numberValue(facts, "operation.waterResistanceM"),
@@ -1064,7 +1067,12 @@ function buildVariant(
       attachmentType,
       shockResistant,
       nickelContactRisk,
+      microAdjustment: null,
     },
+    positioningLine: null,
+    positioningGroup: null,
+    wearingScenarios: [],
+    complicationSlugs: [],
     complications,
     dateStatus: date,
     eligibleEnvironments: [...profile.eligibleEnvironments],

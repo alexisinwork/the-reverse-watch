@@ -4,6 +4,7 @@ import {
   isFieldNotApplicable,
   priceSnapshotKind,
   seedCatalogueSchema,
+  seedReferenceVariantSchema,
   supportedAccuracyTolerances,
   verifiedCaseWearingSpanMm,
 } from "./catalogue";
@@ -470,5 +471,58 @@ describe("source-backed seed catalogue", () => {
     )!;
     numericNotApplicable.fieldApplicability.lugWidthMm = "not_applicable";
     expect(seedCatalogueSchema.safeParse(contradictory).success).toBe(false);
+  });
+});
+
+describe("sheet-native catalogue fields", () => {
+  const baseVariant = seedCatalogue.variants[0]!;
+
+  it("accepts a variant carrying the new sheet fields", () => {
+    const variant = structuredClone(baseVariant);
+    variant.geometry.caseShape = "round";
+    variant.materials.displayCaseback = true;
+    variant.movement.construction = "manufacture";
+    variant.operation.microAdjustment = {
+      present: true,
+      systemName: "Glidelock",
+      rangeMm: 20,
+    };
+    variant.positioningLine = "мировой эталон дайвера";
+    variant.positioningGroup = "instrument";
+    variant.wearingScenarios = ["sport", "diving"];
+    variant.complicationSlugs = ["date", "dive_bezel"];
+    expect(() => seedReferenceVariantSchema.parse(variant)).not.toThrow();
+  });
+
+  it("defaults the new fields when they are absent", () => {
+    const parsed = seedReferenceVariantSchema.parse(
+      structuredClone(baseVariant),
+    );
+    expect(parsed.geometry.caseShape).toBeNull();
+    expect(parsed.materials.displayCaseback).toBeNull();
+    expect(parsed.movement.construction).toBeNull();
+    expect(parsed.operation.microAdjustment).toBeNull();
+    expect(parsed.positioningLine).toBeNull();
+    expect(parsed.positioningGroup).toBeNull();
+    expect(parsed.wearingScenarios).toEqual([]);
+    expect(parsed.complicationSlugs).toEqual([]);
+  });
+
+  it("rejects an unknown case shape", () => {
+    const variant: unknown = {
+      ...structuredClone(baseVariant),
+      geometry: { ...baseVariant.geometry, caseShape: "triangular" },
+    };
+    expect(() => seedReferenceVariantSchema.parse(variant)).toThrow();
+  });
+
+  it("rejects a micro-adjustment range without a positive value", () => {
+    const variant = structuredClone(baseVariant);
+    variant.operation.microAdjustment = {
+      present: true,
+      systemName: "Glidelock",
+      rangeMm: 0,
+    };
+    expect(() => seedReferenceVariantSchema.parse(variant)).toThrow();
   });
 });
