@@ -2,6 +2,14 @@ import fs from "node:fs";
 import path from "node:path";
 import ExcelJS from "exceljs";
 
+import { BUNDLED_VOCABULARY } from "../app/domain/catalogue-vocabulary";
+
+type MicroAdjustment = {
+  present: boolean;
+  systemName: string | null;
+  rangeMm: number | null;
+};
+
 type Target = {
   id: string;
   referenceLabel: string;
@@ -22,11 +30,25 @@ type Variant = {
     caseDiameterMm?: number | null;
     lugWidthMm?: number | null;
     integratedBracelet?: boolean | null;
+    caseShape?: string | null;
   };
-  materials?: { caseback?: string | null; bracelet?: string | null };
-  movement?: { type?: string | null; caliber?: string | null };
-  operation?: { waterResistanceM?: number | null; crystal?: string | null };
-  eligibleEnvironments?: string[];
+  materials?: {
+    caseback?: string | null;
+    bracelet?: string | null;
+    displayCaseback?: boolean | null;
+  };
+  movement?: {
+    type?: string | null;
+    caliber?: string | null;
+    construction?: string | null;
+  };
+  operation?: {
+    waterResistanceM?: number | null;
+    crystal?: string | null;
+    microAdjustment?: MicroAdjustment | null;
+  };
+  wearingScenarios?: string[];
+  positioningLine?: string | null;
   traits?: { socialSignals?: string[]; primaryArchetype?: string };
 };
 
@@ -85,20 +107,55 @@ function water(value: number | null | undefined) {
     return `${value} м — брызги и краткий контакт с водой; не дайвинг`;
   return `${value} м — только брызги/повседневное ношение; не плавать`;
 }
+const SCENARIO_LABELS = new Map(
+  BUNDLED_VOCABULARY.filter((row) => row.kind === "wearing_scenario").map(
+    (row) => [row.slug, row.labelEn],
+  ),
+);
+
 function scenarios(values: string[] | undefined) {
   return (values ?? [])
-    .map(
-      (v) =>
-        (
-          ({
-            field_water_abuse: "спорт / вода",
-            studio_desk_daily: "офис / костюм / повседневное",
-            formal_social: "костюм",
-          }) as Record<string, string>
-        )[v] ?? v,
-    )
+    .map((slug) => SCENARIO_LABELS.get(slug) ?? slug)
     .filter(Boolean)
-    .join("; ");
+    .join(" / ");
+}
+
+const SHAPE_LABELS: Record<string, string> = {
+  round: "круглая",
+  tonneau: "тонно",
+  rectangular: "прямоугольная",
+  cushion: "подушка",
+  square: "квадратная",
+  oval: "овальная",
+  other: "другая",
+};
+
+function caseShape(value: string | null | undefined) {
+  if (value == null) return "";
+  return SHAPE_LABELS[value] ?? value;
+}
+
+function displayCaseback(value: boolean | null | undefined) {
+  if (value == null) return "";
+  return value ? "да" : "нет";
+}
+
+function construction(
+  value: string | null | undefined,
+  caliber: string | null | undefined,
+) {
+  if (value == null) return caliber ? `(${caliber})` : "";
+  const label = value === "manufacture" ? "мануфактурный" : "массовый";
+  return caliber ? `${label} (${caliber})` : label;
+}
+
+function microAdjustment(value: MicroAdjustment | null | undefined) {
+  if (value == null) return "";
+  if (!value.present) {
+    return value.systemName ? `нет (${value.systemName})` : "нет";
+  }
+  const name = value.systemName ?? "есть";
+  return value.rangeMm === null ? name : `${name} (+${value.rangeMm} мм)`;
 }
 
 const workbook = new ExcelJS.Workbook();
@@ -125,17 +182,22 @@ for (const brand of manifest.brands) {
       g?.lugToLugMm ?? "",
       g?.caseThicknessMm ?? "",
       g?.caseDiameterMm ?? "",
-      "",
-      m?.caseback?.toLowerCase().includes("exhibition") ? "да" : "",
+      caseShape(g?.caseShape),
+      displayCaseback(
+        m?.displayCaseback ??
+          (m?.caseback?.toLowerCase().includes("exhibition") ? true : null),
+      ),
       g?.integratedBracelet == null ? "" : g.integratedBracelet ? "да" : "нет",
       variant?.movement?.type ?? "",
-      "",
+      construction(variant?.movement?.construction, variant?.movement?.caliber),
       water(op?.waterResistanceM),
       op?.crystal ?? "",
       g?.lugWidthMm ?? "",
-      "",
-      scenarios(variant?.eligibleEnvironments),
-      variant?.traits?.socialSignals?.join("; ") ?? "",
+      microAdjustment(op?.microAdjustment),
+      scenarios(variant?.wearingScenarios),
+      variant?.positioningLine ??
+        variant?.traits?.socialSignals?.join("; ") ??
+        "",
       variant ? "catalogue data; needs owner review" : "needs research",
       variant
         ? "Проверить форму, display-back, тип механизма, microadjust и социальный контекст"

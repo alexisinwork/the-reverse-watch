@@ -1,30 +1,12 @@
 import {
-  coreProfileSchema,
   derivePriceBand,
-  deriveWristBand,
   effectiveBudgetCeiling,
-  normalizeProfile,
-  permitsSpeculativeCandidate,
-  QUESTIONNAIRE_VERSION,
-  questionnaireProfileSchema,
-  refinementSchema,
-  wristCircumferenceToMm,
+  WEIGHT_LIMIT_GRAMS,
+  WEIGHT_LIMITS,
+  WRIST_BANDS,
 } from "./questionnaire";
 
-const VALID_CORE = {
-  version: QUESTIONNAIRE_VERSION,
-  budgetCurrency: "USD",
-  budgetMax: 10_000,
-  wristCircumferenceMm: 170,
-  deploymentEnvironment: "studio_desk_daily",
-  ownershipFriction: "workhorse_mechanical",
-  accuracyTolerance: "within_15_seconds_per_day",
-  weightLimit: "under_160_g",
-  requiredComplications: ["gmt"],
-  datePreference: "either",
-} as const;
-
-describe("questionnaire domain contract", () => {
+describe("shared questionnaire constants", () => {
   it("derives one price band at every shared boundary", () => {
     expect(derivePriceBand(299.99)).toBe("under_300");
     expect(derivePriceBand(300)).toBe("300_500");
@@ -36,77 +18,34 @@ describe("questionnaire domain contract", () => {
     expect(derivePriceBand(15_000)).toBe("15000_plus");
   });
 
-  it("derives wrist display bands from the normalized millimetre value", () => {
-    expect(deriveWristBand(5.75 * 25.4 - 0.01)).toBe("under_5_75");
-    expect(deriveWristBand(5.75 * 25.4)).toBe("5_75_6_25");
-    expect(deriveWristBand(6.25 * 25.4)).toBe("6_25_6_75");
-    expect(deriveWristBand(6.75 * 25.4)).toBe("6_75_7_5");
-    expect(deriveWristBand(7.5 * 25.4)).toBe("7_5_plus");
+  it("rejects a non-positive or non-finite price", () => {
+    expect(() => derivePriceBand(0)).toThrow(RangeError);
+    expect(() => derivePriceBand(Number.NaN)).toThrow(RangeError);
   });
 
-  it("normalizes selectable wrist units to canonical millimetres", () => {
-    expect(wristCircumferenceToMm(170, "mm")).toBe(170);
-    expect(wristCircumferenceToMm(6, "in")).toBe(152.4);
-    expect(wristCircumferenceToMm(6.7, "in")).toBe(170.18);
-    expect(() => wristCircumferenceToMm(Number.NaN, "in")).toThrow(RangeError);
-  });
-
-  it("validates a complete core profile and rejects forged duplicate values", () => {
-    expect(coreProfileSchema.safeParse(VALID_CORE).success).toBe(true);
-    expect(
-      coreProfileSchema.safeParse({
-        ...VALID_CORE,
-        requiredComplications: ["gmt", "gmt"],
-      }).success,
-    ).toBe(false);
-  });
-
-  it("requires an eligible acquisition channel for an explicit premium", () => {
-    expect(
-      refinementSchema.safeParse({ premiumAllowancePercent: 30 }).success,
-    ).toBe(false);
-    expect(
-      refinementSchema.safeParse({
-        premiumAllowancePercent: 30,
-        acquisitionChannels: ["secondary_market"],
-      }).success,
-    ).toBe(true);
-    expect(() => effectiveBudgetCeiling(10_000, 101)).toThrow(RangeError);
+  it("expands a budget ceiling only by an explicit whole-percent allowance", () => {
+    expect(effectiveBudgetCeiling(10_000)).toBe(10_000);
     expect(effectiveBudgetCeiling(10_000, 30)).toBe(13_000);
+    expect(() => effectiveBudgetCeiling(10_000, 101)).toThrow(RangeError);
+    expect(() => effectiveBudgetCeiling(0)).toThrow(RangeError);
   });
 
-  it("suppresses speculative candidates unless both explicit gates pass", () => {
-    expect(
-      permitsSpeculativeCandidate({
-        speculativeRiskTolerance: "accept",
-        acquisitionChannels: ["authorized_dealer"],
-      }),
-    ).toBe(false);
-    expect(
-      permitsSpeculativeCandidate({
-        speculativeRiskTolerance: "accept",
-        acquisitionChannels: ["grey_market"],
-      }),
-    ).toBe(true);
+  it("keeps the coverage-grid bands contiguous and closed at the top", () => {
+    for (const [index, band] of WRIST_BANDS.entries()) {
+      const next = WRIST_BANDS[index + 1];
+      if (!next) {
+        expect(band.maximumExclusiveMm).toBeNull();
+        continue;
+      }
+      expect(band.maximumExclusiveMm).toBe(next.minimumMm);
+    }
   });
 
-  it("normalizes derived values without replacing exact inputs", () => {
-    const parsed = questionnaireProfileSchema.parse({
-      core: VALID_CORE,
-      refinement: {
-        premiumAllowancePercent: 20,
-        acquisitionChannels: ["secondary_market"],
-        speculativeRiskTolerance: "accept",
-      },
-    });
-    const normalized = normalizeProfile(parsed);
-
-    expect(normalized.core.budgetMax).toBe(10_000);
-    expect(normalized.derived).toMatchObject({
-      priceBand: "10000_15000",
-      wristBand: "6_25_6_75",
-      effectiveBudgetCeiling: 12_000,
-      speculativeCandidatesAllowed: true,
-    });
+  it("maps every weight limit to a gram ceiling or an explicit absence", () => {
+    for (const limit of WEIGHT_LIMITS) {
+      const grams = WEIGHT_LIMIT_GRAMS[limit];
+      expect(grams === null || grams > 0).toBe(true);
+    }
+    expect(WEIGHT_LIMIT_GRAMS.no_limit).toBeNull();
   });
 });

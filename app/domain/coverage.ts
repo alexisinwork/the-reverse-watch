@@ -17,7 +17,6 @@ import {
   supportedAccuracyTolerances,
   verifiedCaseWearingSpanMm,
 } from "./catalogue";
-import { MAX_LUG_TO_LUG_TO_WRIST_RATIO } from "./recommendation";
 
 export const FUNCTION_PROFILES = [
   "time_only_no_date",
@@ -49,6 +48,13 @@ export const coverageCandidateListSchema = z.array(coverageCandidateSchema);
 
 export type CoverageCandidate = z.infer<typeof coverageCandidateSchema>;
 export type FunctionProfile = (typeof FUNCTION_PROFILES)[number];
+
+/**
+ * The conservative across-wrist span the coverage grid treats as wearable.
+ * It moved here from the version-2 engine, whose deletion left this as its
+ * only consumer.
+ */
+const MAX_LUG_TO_LUG_TO_WRIST_RATIO = 0.31;
 
 const WRIST_BAND_REPRESENTATIVES_MM = {
   under_5_75: 140,

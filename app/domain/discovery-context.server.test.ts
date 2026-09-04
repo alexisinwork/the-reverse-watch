@@ -4,24 +4,39 @@ import {
   explainStoryConstraint,
   parseDiscoveryStorySlug,
 } from "./discovery-context.server";
-import { recommendWatches } from "./recommendation";
-import type { QuestionnaireProfile } from "./questionnaire";
+import { recommendWatchesV3 } from "./recommendation";
+import { profileV3Schema } from "./questionnaire-v3";
 import { seedCatalogue } from "./seed-catalogue";
 
-const profile: QuestionnaireProfile = {
-  core: {
-    version: 2,
-    budgetCurrency: "USD" as const,
-    budgetMax: 4_000,
-    wristCircumferenceMm: 170,
-    deploymentEnvironment: "studio_desk_daily" as const,
-    ownershipFriction: "workhorse_mechanical" as const,
-    accuracyTolerance: "no_requirement" as const,
-    weightLimit: "no_limit" as const,
-    requiredComplications: [],
-    datePreference: "either" as const,
-  },
-};
+const profile = profileV3Schema.parse({
+  version: 3,
+  budgetCurrency: "USD",
+  budgetMax: 4_000,
+  wearingScenarios: [
+    "everyday",
+    "office",
+    "smart_casual",
+    "suit",
+    "evening",
+    "reception",
+    "sport",
+    "field",
+    "diving",
+  ],
+  minimumWaterResistanceM: 0,
+  caseDiameterMinMm: 20,
+  caseDiameterMaxMm: 60,
+  movementTypes: [
+    "automatic",
+    "manual",
+    "quartz",
+    "solar",
+    "spring_drive",
+    "hybrid",
+  ],
+  requiredComplications: [],
+  allergyConstraint: "none",
+});
 
 describe("validated discovery story context", () => {
   it("accepts bounded slugs and rejects forged query values", () => {
@@ -59,18 +74,9 @@ describe("validated discovery story context", () => {
     grandSeikoOnly.variants = grandSeikoOnly.variants.filter(
       (variant) => variant.id === "grand-seiko-sbgn029",
     );
-    const recommendation = recommendWatches(
-      {
-        ...profile,
-        core: { ...profile.core, budgetMax: 500 },
-      },
+    const recommendation = recommendWatchesV3(
+      { ...profile, budgetMax: 500 },
       grandSeikoOnly,
-      {
-        storyContext: {
-          socialSignal: "discreet_competence",
-          aestheticDna: "structural_tool",
-        },
-      },
     );
 
     const explanation = explainStoryConstraint(story, recommendation);
@@ -82,7 +88,7 @@ describe("validated discovery story context", () => {
     const story = findPublishedDiscoveryStory(
       "murph-cooper-interstellar-hamilton",
     )!;
-    const recommendation = recommendWatches(profile, seedCatalogue);
+    const recommendation = recommendWatchesV3(profile, seedCatalogue);
     expect(explainStoryConstraint(story, recommendation).status).toBe(
       "not_in_reviewed_catalogue",
     );

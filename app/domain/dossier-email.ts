@@ -1,21 +1,12 @@
 import type { SeedCatalogue } from "./catalogue";
-import type { normalizeProfile } from "./questionnaire";
 import type { normalizeProfileV3 } from "./questionnaire-v3";
 import type {
-  EvaluatedCandidate,
   EvaluatedCandidateV3,
-  RecommendationResult,
   RecommendationResultV3,
   ScoreFactor,
 } from "./recommendation";
 
-type NormalizedProfile = ReturnType<typeof normalizeProfile>;
 type NormalizedProfileV3 = ReturnType<typeof normalizeProfileV3>;
-
-export type DossierEmailInput = {
-  profile: NormalizedProfile;
-  recommendation: RecommendationResult;
-};
 
 export type DossierEmailV3Input = {
   profile: NormalizedProfileV3;
@@ -35,9 +26,9 @@ type DossierCandidate = {
   productUrl: string;
   primaryArchetype: string;
   score: number;
-  price: EvaluatedCandidate["price"];
-  geometry: EvaluatedCandidate["geometry"];
-  movement: EvaluatedCandidate["movement"];
+  price: EvaluatedCandidateV3["price"];
+  geometry: EvaluatedCandidateV3["geometry"];
+  movement: EvaluatedCandidateV3["movement"];
   functions: string;
   hardReasons: readonly { explanation: string }[];
   missingFacts: readonly { explanation: string }[];
@@ -48,22 +39,11 @@ type DossierCandidate = {
 type DossierRecommendation = {
   evaluatedAt: string;
   sources: SeedCatalogue["sources"];
-  diagnostics: RecommendationResult["diagnostics"];
+  diagnostics: RecommendationResultV3["diagnostics"];
   confirmed: DossierCandidate[];
   verification: DossierCandidate[];
   whyNot: DossierCandidate[];
 };
-
-function v2CandidateView(candidate: EvaluatedCandidate): DossierCandidate {
-  return {
-    ...candidate,
-    functions: `${
-      candidate.complications.length > 0
-        ? candidate.complications.map(label).join(", ")
-        : "none listed"
-    }; date ${candidate.dateStatus}`,
-  };
-}
 
 function v3CandidateView(candidate: EvaluatedCandidateV3): DossierCandidate {
   return {
@@ -227,36 +207,6 @@ function candidateHtml(
   return `<article><h3>${escapeHtml(status === "confirmed" ? "Confirmed fit" : status === "verification" ? "Verify before buying" : "Why it was not selected")}: ${escapeHtml(candidateTitle(candidate))}</h3><h4>The Watch</h4><p><strong>Reference:</strong> ${escapeHtml(candidate.referenceCode)}<br><strong>Price snapshot:</strong> ${escapeHtml(price(candidate))} (${escapeHtml(candidate.price.marketCountry)}; source currency ${escapeHtml(candidate.price.sourceCurrency)}; FX observed ${escapeHtml(candidate.price.fxObservedAt)})<br><strong>Geometry:</strong> ${escapeHtml(geometry(candidate))}<br><a href="${escapeHtml(candidate.productUrl)}">Open the reviewed product page</a></p><h4>The Mechanism</h4><p><strong>Movement:</strong> ${escapeHtml(movement(candidate))}<br><strong>Functions:</strong> ${escapeHtml(candidate.functions)}</p><h4>The Historical Reality</h4><p>No reviewed historical narrative is attached to this exact reference variant; no brand history or provenance claim is inferred here.</p><h4>The Psychological Fit</h4><p><strong>Primary style:</strong> ${escapeHtml(candidate.primaryArchetype)}<br><strong>Fit score:</strong> ${candidate.score}</p>${trace.length > 0 ? `<p><strong>Score factors</strong></p><ul>${trace.join("")}</ul>` : ""}${reasons.length > 0 ? `<p><strong>Verification or rejection reasons</strong></p><ul>${reasons.map((reason) => `<li>${escapeHtml(reason)}</li>`).join("")}</ul>` : ""}<p><strong>Reviewed sources</strong></p>${sourceItems.length > 0 ? `<ul>${sourceItems.join("")}</ul>` : "<p>No source IDs were attached to this candidate.</p>"}</article>`;
 }
 
-function profileLines(profile: NormalizedProfile) {
-  const { core, refinement, derived } = profile;
-  return [
-    `Budget ceiling: ${core.budgetCurrency} ${core.budgetMax.toLocaleString()}; derived band ${label(derived.priceBand)}; effective ceiling ${core.budgetCurrency} ${derived.effectiveBudgetCeiling.toLocaleString()}.`,
-    `Wrist: ${core.wristCircumferenceMm} mm (${label(derived.wristBand)}).`,
-    `Deployment: ${label(core.deploymentEnvironment)}.`,
-    `Ownership: ${label(core.ownershipFriction)}; accuracy: ${label(core.accuracyTolerance)}; weight: ${label(core.weightLimit)}.`,
-    `Function: ${core.requiredComplications.length > 0 ? core.requiredComplications.map(label).join(", ") : "no required complication"}; date ${label(core.datePreference)}.`,
-    ...(refinement
-      ? [
-          `Personal preferences were supplied; speculative candidates ${derived.speculativeCandidatesAllowed ? "are allowed with warning" : "are suppressed"}.`,
-          ...(refinement.socialSignal
-            ? [`Desired perception: ${label(refinement.socialSignal)}.`]
-            : []),
-          ...(refinement.aestheticDna
-            ? [`Visual character: ${label(refinement.aestheticDna)}.`]
-            : []),
-          ...(refinement.provenancePreference
-            ? [
-                `Heritage preference: ${label(refinement.provenancePreference)}.`,
-              ]
-            : []),
-          ...(refinement.emotionalObjective
-            ? [`Emotional purpose: ${label(refinement.emotionalObjective)}.`]
-            : []),
-        ]
-      : ["No personal preferences were supplied."]),
-  ];
-}
-
 function profileLinesV3(profile: NormalizedProfileV3) {
   const optional = [
     profile.maxCaseThicknessMm !== undefined
@@ -350,18 +300,6 @@ function renderDossier(
     html,
     text: textSections.join("\n"),
   };
-}
-
-export function renderDossierEmail(input: DossierEmailInput): DossierEmail {
-  const { profile, recommendation } = input;
-  return renderDossier(profileLines(profile), {
-    evaluatedAt: recommendation.evaluatedAt,
-    sources: recommendation.sources,
-    diagnostics: recommendation.diagnostics,
-    confirmed: recommendation.recommendations.map(v2CandidateView),
-    verification: recommendation.verificationRequired.map(v2CandidateView),
-    whyNot: recommendation.whyNot.map(v2CandidateView),
-  });
 }
 
 export function renderDossierEmailV3(input: DossierEmailV3Input): DossierEmail {
