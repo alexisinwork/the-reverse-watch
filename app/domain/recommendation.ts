@@ -10,6 +10,7 @@ import {
   supportedAccuracyTolerances,
   verifiedCaseWearingSpanMm,
 } from "./catalogue";
+import type { ProfileV3 } from "./questionnaire-v3";
 import type {
   AESTHETIC_DNA,
   QuestionnaireProfile,
@@ -1116,4 +1117,119 @@ export function recommendWatches(
       diversityExcluded: Math.max(0, eligible.length - recommendations.length),
     },
   };
+}
+
+export const RECOMMENDATION_V3_ENGINE_VERSION = 3 as const;
+
+export const HARD_REASON_CODES_V3 = [
+  "over_budget",
+  "case_diameter_out_of_range",
+  "water_resistance_below_minimum",
+  "movement_type_mismatch",
+  "scenario_mismatch",
+  "missing_complication",
+  "allergy_risk",
+] as const;
+
+export const MISSING_FACT_CODES_V3 = [
+  "fx_rate",
+  "price",
+  "case_diameter",
+  "water_resistance",
+  "wearing_scenarios",
+  "nickel_contact_risk",
+] as const;
+
+export type HardReasonCodeV3 = (typeof HARD_REASON_CODES_V3)[number];
+export type MissingFactCodeV3 = (typeof MISSING_FACT_CODES_V3)[number];
+
+export function evaluateHardFiltersV3(
+  variant: SeedReferenceVariant,
+  profile: ProfileV3,
+  asOfMs: number,
+  fx?: SeedCatalogue["fx"],
+) {
+  const hardReasons: HardReasonCodeV3[] = [];
+  const missingFacts: MissingFactCodeV3[] = [];
+  const reject = (code: HardReasonCodeV3) => {
+    if (!hardReasons.includes(code)) hardReasons.push(code);
+  };
+  const missing = (code: MissingFactCodeV3) => {
+    if (!missingFacts.includes(code)) missingFacts.push(code);
+  };
+
+  const requiresFx =
+    fx !== undefined && variant.price.currency !== profile.budgetCurrency;
+  const fxUsable = !requiresFx || asOfMs <= Date.parse(fx.staleAfter);
+  if (requiresFx && !fxUsable) missing("fx_rate");
+
+  if (
+    !hasVerifiedField(variant, "price") ||
+    asOfMs > Date.parse(variant.price.staleAfter)
+  ) {
+    missing("price");
+  } else if (fxUsable) {
+    const amountMinor = fx
+      ? convertMinorCurrency(
+          variant.price.amountMinor,
+          variant.price.currency,
+          profile.budgetCurrency,
+          fx,
+        )
+      : variant.price.amountMinor;
+    if (amountMinor > Math.round(profile.budgetMax * 100))
+      reject("over_budget");
+  }
+
+  const diameter = variant.geometry.caseDiameterMm;
+  if (diameter === null || !hasVerifiedField(variant, "caseDiameterMm")) {
+    missing("case_diameter");
+  } else if (
+    diameter < profile.caseDiameterMinMm ||
+    diameter > profile.caseDiameterMaxMm
+  ) {
+    reject("case_diameter_out_of_range");
+  }
+
+  if (profile.minimumWaterResistanceM > 0) {
+    const resistance = variant.operation.waterResistanceM;
+    if (resistance === null || !hasVerifiedField(variant, "waterResistanceM")) {
+      missing("water_resistance");
+    } else if (resistance < profile.minimumWaterResistanceM) {
+      reject("water_resistance_below_minimum");
+    }
+  }
+
+  if (!profile.movementTypes.includes(variant.movement.type)) {
+    reject("movement_type_mismatch");
+  }
+
+  if (variant.wearingScenarios.length === 0) {
+    missing("wearing_scenarios");
+  } else if (
+    !variant.wearingScenarios.some((scenario) =>
+      profile.wearingScenarios.includes(scenario),
+    )
+  ) {
+    reject("scenario_mismatch");
+  }
+
+  if (
+    profile.requiredComplications.some(
+      (complication) => !variant.complicationSlugs.includes(complication),
+    )
+  ) {
+    reject("missing_complication");
+  }
+
+  if (profile.allergyConstraint === "nickel_contact") {
+    const risk = variant.operation.nickelContactRisk;
+    if (risk === null || !hasVerifiedField(variant, "nickelContactRisk")) {
+      missing("nickel_contact_risk");
+    } else if (risk !== "none_known") {
+      reject("allergy_risk");
+    }
+  }
+
+  return { hardReasons, missingFacts };
 }
