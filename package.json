@@ -24,6 +24,7 @@
     "audit:research": "tsx scripts/audit-research-manifest.ts",
     "audit:model-intake": "tsx scripts/audit-model-intake.ts",
     "plan:research": "tsx scripts/plan-coverage-research.ts",
+    "import:model-sheet": "tsx scripts/import-model-sheet.ts",
     "import:knowledge": "tsx scripts/import-knowledge-base.ts --write",
     "audit:knowledge": "tsx scripts/import-knowledge-base.ts --check",
     "import:movies": "node --env-file-if-exists=.env --import tsx scripts/import-all-movies-intake.ts",
