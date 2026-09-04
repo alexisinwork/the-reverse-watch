@@ -1590,9 +1590,24 @@ project ref `osfqexnzgkksfvaocjvl` (the MCP server had been pointed at
   catalogue origin `supabase`, hard-filter partition from the v4 RPC, 71
   variants, three diverse recommendations.
 
+Deployment evidence (2026-09-04): production deployment
+`dpl_GPH5pFqyWygjSjBQAB8pioMzZCfR` for `9825588` reached `READY` and holds the
+`thereserve.watch` and `www.thereserve.watch` aliases. `/health` returns 200
+with `{"status":"ok"}`, `/` returns 200, `/quiz` redirects as designed for an
+unsigned visit, and Vercel reports no runtime errors in the window. The public
+contract was probed with the publishable key: `recommendation_catalogue_v4`
+returns 71 variants and 369 sources, `catalogue_vocabulary_v1` answers, and a
+direct table read is still refused with 401.
+
 Outstanding:
 
-1. **The owner's sheet has never been imported.** `data/research/model-sheet-sample.tsv`
+1. **Production's own `SUPABASE_URL` is unverified.** The local `.env` and every
+   check above target `osfqexnzgkksfvaocjvl`, but the Vercel environment API
+   refused the token available here, so it is not confirmed that the deployed
+   function reads the same project. If it points anywhere else the app falls
+   back to the bundled catalogue silently — visible in the result-screen notice.
+   Confirm with `vercel env ls` or the dashboard.
+2. **The owner's sheet has never been imported.** `data/research/model-sheet-sample.tsv`
    is gitignored and absent from this checkout, so the importer has only been
    exercised on a synthetic fixture. The plan's expected findings — the
    Sky-Dweller, Submariner, Yacht-Master, and Explorer duplicate groups, seven
