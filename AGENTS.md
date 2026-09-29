@@ -45,6 +45,27 @@
 - Use least-privilege tokens and project/service accounts rather than personal
   keys wherever the provider supports them.
 
+## AI search direction (owner decision, 2026-09-29)
+
+This overrides the SQL-first catalogue invariants below wherever they
+conflict.
+
+- Quiz results come only from the AI search in
+  `app/domain/ai-watch-finder.server.ts`: Muse Spark must call Perplexity
+  through its `search_watches_via_perplexity` tool before answering. The
+  reviewed catalogue is no longer used for quiz results. Keep its tables;
+  never drop them.
+- Every search that finds watches is stored permanently by
+  `app/domain/ai-watch-store.server.ts` (migration 0070). A submission with
+  the same answers and price band is served from the database with no new
+  search. Stored results never expire.
+- Actor/movie watches and `/watches/find` are to use the same approach and
+  publish immediately, with no editorial review step.
+- Store image URLs only, never image files.
+- Only search constraints may reach Muse Spark or Perplexity. Never send
+  email, session, cookie, IP, or other identifying data. No visitor data is
+  stored.
+
 ## Quality invariants
 
 - Exact watch constraints belong in PostgreSQL. The first subjective matcher is

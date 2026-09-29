@@ -6,7 +6,7 @@ const quizAnalyticsEventSchema = z
   .object({
     name: z.enum(["evaluation", "subscription"]),
     intent: z.enum(["core", "refine"]),
-    catalogueOrigin: z.enum(["supabase", "bundled_seed"]),
+    catalogueOrigin: z.enum(["supabase", "bundled_seed", "ai_search"]),
     recommendationCount: z.number().int().nonnegative().optional(),
     verificationCount: z.number().int().nonnegative().optional(),
     whyNotCount: z.number().int().nonnegative().optional(),

@@ -37,60 +37,30 @@ function originalIdentity(story: PublishedDiscoveryStory) {
     .join(" ");
 }
 
-/**
- * Only the reference code and hard reasons are read, so either engine's
- * result satisfies this shape.
- */
-type StoryConstraintCandidate = {
-  referenceCode: string;
-  hardReasons: readonly { code: string }[];
-};
+const normalizedReference = (value: string | null) =>
+  value?.replace(/[\s.-]/g, "").toLowerCase() || null;
 
+/** Whether the story's own watch is among the watches found for the visitor. */
 export function explainStoryConstraint(
   story: PublishedDiscoveryStory,
-  recommendation: {
-    recommendations: readonly StoryConstraintCandidate[];
-    verificationRequired: readonly StoryConstraintCandidate[];
-    whyNot: readonly StoryConstraintCandidate[];
-  },
+  watches: readonly { referenceCode: string | null }[],
 ) {
   const identity = originalIdentity(story) || "This attribution";
-  const candidates = [
-    ...recommendation.recommendations,
-    ...recommendation.verificationRequired,
-    ...recommendation.whyNot,
-  ];
-  const original = candidates.find(
-    (candidate) =>
-      story.attribution.reference !== null &&
-      candidate.referenceCode === story.attribution.reference,
-  );
-  if (!original) {
-    return {
-      identity,
-      status: "not_in_reviewed_catalogue" as const,
-      message:
-        `${identity} is not in the current reviewed recommendation catalogue; ` +
-        "the equivalent shortlist is evaluated independently.",
-      hardReasons: [] as string[],
-    };
-  }
-  if (original.hardReasons.length > 0) {
-    return {
-      identity,
-      status: "fails_hard_constraints" as const,
-      message:
-        `${identity} is retained as context, but it fails one or more of ` +
-        "your non-negotiable constraints.",
-      hardReasons: original.hardReasons.map((reason) => reason.code),
-    };
-  }
-  return {
-    identity,
-    status: "meets_hard_constraints" as const,
-    message: `${identity} meets the current hard constraints; the shortlist still ranks reviewed equivalents by fit.`,
-    hardReasons: [] as string[],
-  };
+  const reference = normalizedReference(story.attribution.reference);
+  const inShortlist =
+    reference !== null &&
+    watches.some((watch) => normalizedReference(watch.referenceCode) === reference);
+  return inShortlist
+    ? {
+        identity,
+        status: "in_shortlist" as const,
+        message: `${identity} is in your shortlist: it fits your constraints.`,
+      }
+    : {
+        identity,
+        status: "not_in_shortlist" as const,
+        message: `${identity} is not in your shortlist; the watches above were found for your own constraints.`,
+      };
 }
 
 export type DiscoveryStoryContext = {

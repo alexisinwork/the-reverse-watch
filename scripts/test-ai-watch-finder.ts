@@ -1,13 +1,11 @@
 import {
-  findWatchWithAi,
-  loadAiWatchFinderConfig,
+  quizBrief,
+  runAiWatchSearch,
 } from "../app/domain/ai-watch-finder.server";
 import { goldenEvaluationProfiles } from "../app/domain/evaluation-fixtures";
 import { QUESTIONNAIRE_V3_VERSION, type ProfileV3 } from "../app/domain/questionnaire-v3";
 
-// Deliberately unsatisfiable by any real catalogue entry. With the
-// vetted-candidate gate removed, this now still goes through the exact same
-// Muse Spark -> Perplexity tool-calling path as any other profile.
+// Deliberately unsatisfiable, to exercise the honest "no match" path.
 const impossibleProfile: ProfileV3 = {
   version: QUESTIONNAIRE_V3_VERSION,
   budgetCurrency: "USD",
@@ -22,36 +20,30 @@ const impossibleProfile: ProfileV3 = {
 };
 
 async function run(label: string, profile: ProfileV3) {
+  const brief = quizBrief(profile);
   console.log(`\n=== ${label} ===`);
-  console.log("Outgoing non-PII constraint payload (this is ALL the AI ever sees):");
-  console.log(JSON.stringify(profile, null, 2));
+  console.log("Brief sent to the AI (the only data it sees):");
+  console.log([brief.task, ...brief.lines].join("\n"));
 
-  const config = loadAiWatchFinderConfig();
-  try {
-    const result = await findWatchWithAi(profile, config);
-    switch (result.status) {
-      case "found":
-        console.log(
-          `RESULT: found ${result.brand} ${result.model} ` +
-            `(${result.referenceCode ?? "no reference code"}) — ${result.sourceUrl ?? "no source URL"}`,
-        );
-        console.log(`Rationale: ${result.rationale}`);
-        break;
-      case "no_match":
-        console.log(`RESULT: no match. Rationale: ${result.rationale}`);
-        break;
-      case "unavailable":
-        console.log(`RESULT: unavailable — ${result.reason}`);
-        break;
-    }
-  } catch (error) {
-    console.log(`RESULT: error — ${error instanceof Error ? error.message : String(error)}`);
+  const started = Date.now();
+  const result = await runAiWatchSearch(brief);
+  console.log(`\nResult after ${Math.round((Date.now() - started) / 1000)} s: ${result.status}`);
+  if (result.status === "found") {
+    console.log(result.summary);
+    result.watches.forEach((watch, index) => {
+      console.log(
+        `${index + 1}. ${watch.brand} ${watch.model}${watch.referenceCode ? ` (${watch.referenceCode})` : ""}` +
+          `${watch.priceNote ? ` — ${watch.priceNote}` : ""}\n   source: ${watch.sourceUrl}\n   image:  ${watch.imageUrl ?? "none"}`,
+      );
+    });
+  } else if (result.status === "no_match") {
+    console.log(result.summary);
   }
 }
 
 async function main() {
-  await run("Broad, easily satisfiable profile", goldenEvaluationProfiles[0]!);
-  await run("Deliberately impossible profile", impossibleProfile);
+  await run("Broad profile", goldenEvaluationProfiles[0]!);
+  await run("Impossible profile", impossibleProfile);
 }
 
 await main();

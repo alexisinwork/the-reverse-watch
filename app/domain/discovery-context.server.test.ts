@@ -4,39 +4,6 @@ import {
   explainStoryConstraint,
   parseDiscoveryStorySlug,
 } from "./discovery-context.server";
-import { recommendWatchesV3 } from "./recommendation";
-import { profileV3Schema } from "./questionnaire-v3";
-import { seedCatalogue } from "./seed-catalogue";
-
-const profile = profileV3Schema.parse({
-  version: 3,
-  budgetCurrency: "USD",
-  budgetMax: 4_000,
-  wearingScenarios: [
-    "everyday",
-    "office",
-    "smart_casual",
-    "suit",
-    "evening",
-    "reception",
-    "sport",
-    "field",
-    "diving",
-  ],
-  minimumWaterResistanceM: 0,
-  caseDiameterMinMm: 20,
-  caseDiameterMaxMm: 60,
-  movementTypes: [
-    "automatic",
-    "manual",
-    "quartz",
-    "solar",
-    "spring_drive",
-    "hybrid",
-  ],
-  requiredComplications: [],
-  allergyConstraint: "none",
-});
 
 describe("validated discovery story context", () => {
   it("accepts bounded slugs and rejects forged query values", () => {
@@ -65,32 +32,26 @@ describe("validated discovery story context", () => {
     });
   });
 
-  it("explains hard rejection without allowing story context to override it", () => {
+  it("recognises the story's watch in the shortlist despite reference formatting", () => {
     const story = structuredClone(
       findPublishedDiscoveryStory("don-draper-mad-men-omega")!,
     );
     story.attribution.reference = "SBGN029";
-    const grandSeikoOnly = structuredClone(seedCatalogue);
-    grandSeikoOnly.variants = grandSeikoOnly.variants.filter(
-      (variant) => variant.id === "grand-seiko-sbgn029",
-    );
-    const recommendation = recommendWatchesV3(
-      { ...profile, budgetMax: 500 },
-      grandSeikoOnly,
-    );
 
-    const explanation = explainStoryConstraint(story, recommendation);
-    expect(explanation.status).toBe("fails_hard_constraints");
-    expect(explanation.hardReasons).toContain("over_budget");
+    expect(
+      explainStoryConstraint(story, [
+        { referenceCode: null },
+        { referenceCode: "sbgn-029" },
+      ]).status,
+    ).toBe("in_shortlist");
   });
 
-  it("reports family-only or stale attributions as outside the exact catalogue", () => {
+  it("reports a story watch that the search did not return", () => {
     const story = findPublishedDiscoveryStory(
       "murph-cooper-interstellar-hamilton",
     )!;
-    const recommendation = recommendWatchesV3(profile, seedCatalogue);
-    expect(explainStoryConstraint(story, recommendation).status).toBe(
-      "not_in_reviewed_catalogue",
-    );
+    expect(
+      explainStoryConstraint(story, [{ referenceCode: "SPB143" }]).status,
+    ).toBe("not_in_shortlist");
   });
 });

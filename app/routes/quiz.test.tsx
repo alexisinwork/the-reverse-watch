@@ -11,7 +11,7 @@ const discoveryFunnelMock = vi.hoisted(() => ({
   persistDiscoveryFunnelEvent: vi.fn(),
 }));
 const aiSearchMock = vi.hoisted(() => ({
-  searchWatchForQuiz: vi.fn(),
+  searchWithStore: vi.fn(),
 }));
 
 vi.mock("@upstash/redis", () => ({
@@ -21,7 +21,7 @@ vi.mock("@upstash/redis", () => ({
   },
 }));
 vi.mock("../domain/discovery-funnel-store.server", () => discoveryFunnelMock);
-vi.mock("../domain/ai-watch-finder.server", () => aiSearchMock);
+vi.mock("../domain/ai-watch-store.server", () => aiSearchMock);
 
 import { QUESTIONNAIRE_V3_STORAGE_KEY } from "../domain/questionnaire-v3";
 import {
@@ -139,14 +139,22 @@ describe("version-3 diagnostic", () => {
     redisMock.set.mockReset();
     discoveryFunnelMock.persistDiscoveryFunnelEvent.mockReset();
     discoveryFunnelMock.persistDiscoveryFunnelEvent.mockResolvedValue(false);
-    aiSearchMock.searchWatchForQuiz.mockReset();
-    aiSearchMock.searchWatchForQuiz.mockResolvedValue({
+    aiSearchMock.searchWithStore.mockReset();
+    aiSearchMock.searchWithStore.mockResolvedValue({
       status: "found",
-      brand: "Seiko",
-      model: "Prospex SPB143",
-      referenceCode: "SPB143",
-      sourceUrl: "https://www.seikowatches.com/spb143",
-      rationale: "Automatic diver within budget and diameter.",
+      fromCache: false,
+      summary: "One strong fit.",
+      watches: [
+        {
+          brand: "Seiko",
+          model: "Prospex SPB143",
+          referenceCode: "SPB143",
+          sourceUrl: "https://www.seikowatches.com/spb143",
+          imageUrl: "https://images.example/spb143.jpg",
+          priceNote: "about USD 1,300 new",
+          rationale: "Automatic diver within budget and diameter.",
+        },
+      ],
     });
   });
 
@@ -161,11 +169,14 @@ describe("version-3 diagnostic", () => {
     const payload = response.data;
     if (!payload.ok) throw new Error("Expected a recommendation result");
 
-    expect(aiSearchMock.searchWatchForQuiz).toHaveBeenCalledTimes(1);
-    const [sentProfile] = aiSearchMock.searchWatchForQuiz.mock.calls[0]!;
-    expect(JSON.stringify(sentProfile)).not.toContain("reader@example.com");
-    expect(sentProfile).toMatchObject({ budgetMax: 15000, budgetCurrency: "USD" });
-    expect(payload.aiSearch).toMatchObject({ status: "found", brand: "Seiko" });
+    expect(aiSearchMock.searchWithStore).toHaveBeenCalledTimes(1);
+    const [request] = aiSearchMock.searchWithStore.mock.calls[0]!;
+    expect(JSON.stringify(request)).not.toContain("reader@example.com");
+    expect(request).toMatchObject({
+      kind: "quiz",
+      cacheInput: { budgetCurrency: "USD", priceBand: "15000_plus" },
+    });
+    expect(payload.aiSearch).toMatchObject({ status: "found" });
   });
 
   it("shows the AI pick as the headline result", async () => {
@@ -180,14 +191,18 @@ describe("version-3 diagnostic", () => {
     );
 
     expect(
-      await screen.findByRole("heading", { name: "The watch we found for you" }),
+      await screen.findByRole("heading", { name: "The watches we found for you" }),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "Seiko Prospex SPB143" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "Open the source the search used" }),
+      screen.getByRole("link", { name: "Open the source" }),
     ).toHaveAttribute("href", "https://www.seikowatches.com/spb143");
+    expect(screen.getByRole("img", { name: "Seiko Prospex SPB143" })).toHaveAttribute(
+      "src",
+      "https://images.example/spb143.jpg",
+    );
   });
 
   it("redirects unsigned visits and rejects unsigned submissions", async () => {
@@ -285,7 +300,7 @@ describe("version-3 diagnostic", () => {
     expect(response.init?.status ?? 200).toBe(200);
     expect(payload.ok).toBe(true);
     if (!payload.ok) throw new Error("Expected a recommendation result");
-    expect(payload.recommendation).toBeDefined();
+    expect(payload.aiSearch).toBeDefined();
     expect(payload.subscription).toMatchObject({
       status: "unavailable",
       newsletterStatus: "unavailable",
@@ -357,7 +372,7 @@ describe("version-3 diagnostic", () => {
       newsletterStatus: "failed",
       dossierStatus: "sent",
     });
-    expect(payload.recommendation).toBeDefined();
+    expect(payload.aiSearch).toBeDefined();
     expect(fetchImplementation).toHaveBeenCalledTimes(2);
     error.mockRestore();
   });
@@ -481,7 +496,7 @@ describe("version-3 diagnostic", () => {
     });
   });
 
-  it("returns reviewed story context without changing the hard-input flow", async () => {
+  it("returns story context alongside the AI shortlist", async () => {
     vi.stubEnv("SUPABASE_URL", "");
     vi.stubEnv("SUPABASE_PUBLISHABLE_KEY", "");
     const response = await action(
@@ -496,13 +511,9 @@ describe("version-3 diagnostic", () => {
       storySlug: "don-draper-mad-men-omega",
       entityName: "Don Draper",
     });
-    expect(
-      response.data.recommendation.recommendations.every(
-        (candidate) =>
-          candidate.hardReasons.length === 0 &&
-          candidate.missingFacts.length === 0,
-      ),
-    ).toBe(true);
+    expect(response.data.storyContext?.explanation.status).toBe(
+      "not_in_shortlist",
+    );
   });
 
   it("renders six screens and no personal-profile stage", async () => {

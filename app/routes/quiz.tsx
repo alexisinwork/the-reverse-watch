@@ -13,15 +13,16 @@ import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
 import {
-  searchWatchForQuiz,
+  quizBrief,
+  quizCacheInput,
   type AiSearchView,
+  type FoundWatch,
 } from "../domain/ai-watch-finder.server";
+import { searchWithStore } from "../domain/ai-watch-store.server";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
-import { loadRecommendationData } from "../domain/catalogue.server";
 import type { VocabularyKind } from "../domain/catalogue-vocabulary";
 import { loadCatalogueVocabulary } from "../domain/catalogue-vocabulary.server";
-import { PositioningFacet } from "../components/positioning-facet";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
 import {
   explainStoryConstraint,
@@ -47,19 +48,11 @@ import {
 } from "../domain/questionnaire-v3";
 import { CASE_SHAPES } from "../domain/sheet-intake";
 import type { CaseShape } from "../domain/sheet-intake";
-import type {
-  EvaluatedCandidateV3,
-  RecommendationResultV3,
-} from "../domain/recommendation";
-import {
-  evaluateHardFilterPartitionV3,
-  recommendWatchesV3,
-} from "../domain/recommendation";
 import {
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
 } from "../domain/beehiiv.server";
-import { renderDossierEmailV3 } from "../domain/dossier-email";
+import { renderDossierEmail } from "../domain/dossier-email";
 import {
   summarizeEmailDelivery,
   type DeliveryChannelStatus,
@@ -95,7 +88,6 @@ type ActionResult =
       intent: typeof SUBMISSION_INTENT;
       profile: ReturnType<typeof normalizeProfileV3>;
       aiSearch: AiSearchView;
-      recommendation: RecommendationResultV3;
       subscription: SubscriptionResult;
       storyContext?: {
         storySlug: string;
@@ -122,23 +114,11 @@ type SubscriptionResult =
       dossierStatus: DeliveryChannelStatus;
     };
 
-type EvaluationSummary = {
-  recommendationCount: number;
-  verificationCount: number;
-  whyNotCount: number;
-  hardFilterViolationCount: number;
-  evaluationDurationMs: number;
-  providerCostUsd: number;
-  topRecommendationScore: number | null;
-  meanRecommendationScore: number | null;
-};
-
 type VocabularyOption = { slug: string; labelEn: string };
 
 type QuizLoaderData = {
   scenarios: VocabularyOption[];
   complications: VocabularyOption[];
-  positioningGroups: VocabularyOption[];
 };
 
 const emailSchema = z.string().trim().email().max(320);
@@ -386,40 +366,20 @@ export async function action({ request }: Route.ActionArgs) {
       { status: 400 },
     );
   }
+  const evaluationStartedAt = performance.now();
   // Only the validated constraint profile goes to the AI search; the email
   // field and every request header stay on this server.
-  const aiSearchPromise = searchWatchForQuiz(parsed.data);
-  const evaluatedAt = new Date().toISOString();
-  const evaluationStartedAt = performance.now();
-  const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
-  const recommendation = recommendWatchesV3(
-    parsed.data,
-    catalogueLoad.catalogue,
-    {
-      asOf: evaluatedAt,
-      hardFilterEvaluation: catalogueLoad.hardFilterEvaluation,
-    },
-  );
-  const hardFilterEvaluation =
-    catalogueLoad.hardFilterEvaluation ??
-    evaluateHardFilterPartitionV3(parsed.data, catalogueLoad.catalogue, {
-      asOf: evaluatedAt,
-    });
-  const hardFilterViolationCount = recommendation.recommendations.filter(
-    (candidate) => {
-      const evaluation = hardFilterEvaluation[candidate.id];
-      return (
-        candidate.hardReasons.length > 0 ||
-        candidate.missingFacts.length > 0 ||
-        evaluation === undefined ||
-        evaluation.hardReasons.length > 0 ||
-        evaluation.missingFacts.length > 0
-      );
-    },
-  ).length;
+  const aiSearch = await searchWithStore({
+    kind: "quiz",
+    cacheInput: quizCacheInput(parsed.data),
+    brief: quizBrief(parsed.data),
+  });
   const evaluationDurationMs = Number(
     (performance.now() - evaluationStartedAt).toFixed(2),
   );
+  const foundWatches = aiSearch.status === "found" ? aiSearch.watches : [];
+  const resultOrigin =
+    aiSearch.status === "found" && aiSearch.fromCache ? "supabase" : "ai_search";
   let subscription: SubscriptionResult = {
     status: "not_requested",
     message: "Results are available without email.",
@@ -436,10 +396,7 @@ export async function action({ request }: Route.ActionArgs) {
   } else if (emailOptIn.email !== null) {
     const beehiivConfiguration = parseBeehiivConfiguration();
     const resendConfiguration = parseResendConfiguration();
-    const dossier = renderDossierEmailV3({
-      profile,
-      recommendation,
-    });
+    const dossier = renderDossierEmail({ profile, aiSearch });
     const deduplicationClient =
       upstashConfiguration.configured &&
       (beehiivConfiguration.configured || resendConfiguration.configured)
@@ -545,40 +502,25 @@ export async function action({ request }: Route.ActionArgs) {
     };
   }
 
-  const recommendationScores = recommendation.recommendations.map(
-    (candidate) => candidate.score,
-  );
-  const evaluation: EvaluationSummary = {
-    recommendationCount: recommendation.recommendations.length,
-    verificationCount: recommendation.verificationRequired.length,
-    whyNotCount: recommendation.whyNot.length,
-    hardFilterViolationCount,
-    evaluationDurationMs,
-    providerCostUsd: 0,
-    topRecommendationScore: recommendationScores[0] ?? null,
-    meanRecommendationScore:
-      recommendationScores.length === 0
-        ? null
-        : Number(
-            (
-              recommendationScores.reduce((total, score) => total + score, 0) /
-              recommendationScores.length
-            ).toFixed(2),
-          ),
-  };
-
   if (subscription.status === "not_requested") {
     await recordQuizAnalyticsEvent({
       name: "evaluation",
       intent,
-      catalogueOrigin: catalogueLoad.origin,
-      ...evaluation,
+      catalogueOrigin: resultOrigin,
+      recommendationCount: foundWatches.length,
+      verificationCount: 0,
+      whyNotCount: 0,
+      hardFilterViolationCount: 0,
+      evaluationDurationMs,
+      providerCostUsd: 0,
+      topRecommendationScore: null,
+      meanRecommendationScore: null,
     });
   } else {
     await recordQuizAnalyticsEvent({
       name: "subscription",
       intent,
-      catalogueOrigin: catalogueLoad.origin,
+      catalogueOrigin: resultOrigin,
       status: subscription.status,
     });
   }
@@ -602,13 +544,11 @@ export async function action({ request }: Route.ActionArgs) {
     }
   }
 
-  const aiSearch = await aiSearchPromise;
   const result: Extract<ActionResult, { ok: true }> = {
     ok: true,
     intent,
     profile,
     aiSearch,
-    recommendation,
     subscription,
     ...(discoveryContext && storySlugResult.slug
       ? {
@@ -619,7 +559,7 @@ export async function action({ request }: Route.ActionArgs) {
             workTitle: discoveryContext.story.work?.title ?? null,
             explanation: explainStoryConstraint(
               discoveryContext.story,
-              recommendation,
+              foundWatches,
             ),
           },
         }
@@ -652,7 +592,6 @@ export async function loader({ request }: Route.LoaderArgs) {
   return {
     scenarios: options("wearing_scenario"),
     complications: options("complication"),
-    positioningGroups: options("positioning_group"),
   } satisfies QuizLoaderData;
 }
 
@@ -1044,332 +983,109 @@ function NumberField({
   );
 }
 
-function formatCandidatePrice(price: EvaluatedCandidateV3["price"]) {
-  return new Intl.NumberFormat("en", {
-    style: "currency",
-    currency: price.currency,
-    maximumFractionDigits: 0,
-  }).format(price.amountMinor / 100);
+function WatchImage({ watch }: { watch: FoundWatch }) {
+  const [failed, setFailed] = useState(false);
+  const title = `${watch.brand} ${watch.model}`;
+  if (!watch.imageUrl || failed) {
+    return (
+      <div aria-hidden="true" className="watch-card__image watch-card__image--empty">
+        <span>{watch.brand}</span>
+      </div>
+    );
+  }
+  return (
+    <img
+      alt={title}
+      className="watch-card__image"
+      decoding="async"
+      loading="lazy"
+      onError={() => setFailed(true)}
+      referrerPolicy="no-referrer"
+      src={watch.imageUrl}
+    />
+  );
 }
 
-function CandidateCard({
-  candidate,
-  status,
-}: {
-  candidate: EvaluatedCandidateV3;
-  status: "confirmed" | "verification";
-}) {
+function WatchCard({ watch, rank }: { watch: FoundWatch; rank: number }) {
   return (
-    <article className="candidate-card">
-      <div className="candidate-card__heading">
-        <div>
-          <span className="eyebrow">
-            {status === "confirmed" ? "Confirmed fit" : "Verify before buying"}
-          </span>
-          <h3>
-            {candidate.brand} {candidate.model}
-          </h3>
-          <p>
-            Ref. {candidate.referenceCode} · {candidate.variantName}
+    <article className="watch-card">
+      <WatchImage watch={watch} />
+      <div className="watch-card__body">
+        <span className="eyebrow">
+          {rank === 1 ? "Best fit" : `Option ${rank}`}
+        </span>
+        <h3>
+          {watch.brand} {watch.model}
+        </h3>
+        {watch.referenceCode || watch.priceNote ? (
+          <p className="watch-card__meta">
+            {[
+              watch.referenceCode ? `Ref. ${watch.referenceCode}` : null,
+              watch.priceNote,
+            ]
+              .filter(Boolean)
+              .join(" · ")}
           </p>
-        </div>
-        <div className="candidate-price">
-          <strong>{formatCandidatePrice(candidate.price)}</strong>
-          <span>
-            {candidate.price.marketCountry} price · FX dated{" "}
-            {candidate.price.fxObservedAt.slice(0, 10)}
-          </span>
-        </div>
-      </div>
-
-      <dl className="candidate-specs">
-        <div>
-          <dt>Case</dt>
-          <dd>
-            {candidate.geometry.caseDiameterMm !== null
-              ? `${candidate.geometry.caseDiameterMm} mm diameter`
-              : candidate.geometry.caseLengthMm !== null &&
-                  candidate.geometry.caseWidthMm !== null
-                ? `${candidate.geometry.caseLengthMm} × ${candidate.geometry.caseWidthMm} mm`
-                : "Unknown size"}
-            {candidate.geometry.caseThicknessMm !== null
-              ? ` · ${candidate.geometry.caseThicknessMm} mm thick`
-              : ""}
-          </dd>
-        </div>
-        <div>
-          <dt>Movement</dt>
-          <dd>
-            {labelFor(candidate.movement.type)}
-            {candidate.movement.caliber
-              ? ` · ${candidate.movement.caliber}`
-              : ""}
-          </dd>
-        </div>
-        <div>
-          <dt>Water resistance</dt>
-          <dd>
-            {candidate.operation.waterResistanceM === null
-              ? "Not published"
-              : `${candidate.operation.waterResistanceM} m`}
-          </dd>
-        </div>
-        <div>
-          <dt>Score</dt>
-          <dd>{candidate.score.toFixed(1)}</dd>
-        </div>
-      </dl>
-
-      {candidate.positioningLine ? (
-        <p className="candidate-positioning">{candidate.positioningLine}</p>
-      ) : null}
-
-      {candidate.scoreTrace.length > 0 ? (
-        <ul className="factor-list" aria-label="Score factors">
-          {candidate.scoreTrace.slice(0, 4).map((factor) => (
-            <li key={factor.factor}>
-              <strong>
-                {factor.points > 0 ? "+" : ""}
-                {factor.points}
-              </strong>{" "}
-              {factor.explanation}
-            </li>
-          ))}
-        </ul>
-      ) : null}
-
-      {candidate.missingFacts.length > 0 ? (
-        <ul
-          className="verification-list"
-          aria-label="Facts requiring verification"
+        ) : null}
+        <p className="watch-card__rationale">{watch.rationale}</p>
+        <a
+          className="candidate-link"
+          href={watch.sourceUrl}
+          rel="noreferrer nofollow"
+          target="_blank"
         >
-          {candidate.missingFacts.map((fact) => (
-            <li key={fact.code}>{fact.explanation}</li>
-          ))}
-        </ul>
-      ) : null}
-
-      <a
-        className="candidate-link"
-        href={candidate.productUrl}
-        rel="noreferrer"
-        target="_blank"
-      >
-        Inspect manufacturer source
-      </a>
+          Open the source
+        </a>
+      </div>
     </article>
   );
 }
 
 function AiRecommendation({ aiSearch }: { aiSearch: AiSearchView }) {
   return (
-    <section className="recommendation-summary" aria-labelledby="ai-pick-heading">
+    <section className="ai-results" aria-labelledby="ai-pick-heading">
       <div className="result-section-heading">
         <div>
           <span className="eyebrow">AI search · live web</span>
-          <h2 id="ai-pick-heading">The watch we found for you</h2>
+          <h2 id="ai-pick-heading">The watches we found for you</h2>
         </div>
+        {aiSearch.status === "found" ? (
+          <span>
+            {aiSearch.watches.length}{" "}
+            {aiSearch.watches.length === 1 ? "watch" : "watches"}
+          </span>
+        ) : null}
       </div>
       {aiSearch.status === "found" ? (
-        <article className="candidate-card">
-          <div className="candidate-card__heading">
-            <div>
-              <span className="eyebrow">Best fit from a live search</span>
-              <h3>
-                {[aiSearch.brand, aiSearch.model].filter(Boolean).join(" ")}
-              </h3>
-              {aiSearch.referenceCode ? (
-                <p>Ref. {aiSearch.referenceCode}</p>
-              ) : null}
-            </div>
+        <>
+          <p className="result-summary">{aiSearch.summary}</p>
+          <div className="watch-list">
+            {aiSearch.watches.map((watch, index) => (
+              <WatchCard
+                key={`${watch.brand}-${watch.model}-${watch.referenceCode ?? index}`}
+                rank={index + 1}
+                watch={watch}
+              />
+            ))}
           </div>
-          <p className="candidate-positioning">{aiSearch.rationale}</p>
-          {aiSearch.sourceUrl ? (
-            <a
-              className="candidate-link"
-              href={aiSearch.sourceUrl}
-              rel="noreferrer nofollow"
-              target="_blank"
-            >
-              Open the source the search used
-            </a>
-          ) : null}
-        </article>
+        </>
       ) : aiSearch.status === "no_match" ? (
         <p className="empty-result">
-          The live search found no watch that meets every requirement:{" "}
-          {aiSearch.rationale}
+          The live search found no watch that meets every requirement.{" "}
+          {aiSearch.summary}
         </p>
       ) : (
         <p className="empty-result">
-          The AI search is unavailable right now. The reviewed catalogue
-          results below are unaffected.
+          The AI search is unavailable right now. Please try again in a few
+          minutes.
         </p>
       )}
-      <p>
+      <p className="result-footnote">
         Found by an AI search of the live web using only your constraints
-        above; no email or personal data is sent. Check price, reference, and
-        specifications with the seller before buying.
+        above; no email or personal data is sent. Images and prices come from
+        the linked sources, so check them with the seller before buying.
       </p>
     </section>
-  );
-}
-
-function RecommendationSummary({
-  recommendation,
-  positioningGroups,
-}: {
-  recommendation: RecommendationResultV3;
-  positioningGroups: readonly VocabularyOption[];
-}) {
-  const [positioning, setPositioning] = useState<string | null>(null);
-  // Only groups a returned candidate actually carries are offered, so the
-  // facet can never empty the list it sits above.
-  const availableGroups = useMemo(() => {
-    const present = new Set(
-      recommendation.recommendations
-        .map((candidate) => candidate.positioningGroup)
-        .filter((group): group is string => group !== null),
-    );
-    return positioningGroups.filter((group) => present.has(group.slug));
-  }, [positioningGroups, recommendation.recommendations]);
-  const visible = recommendation.recommendations.filter(
-    (candidate) =>
-      positioning === null || candidate.positioningGroup === positioning,
-  );
-
-  return (
-    <div className="recommendation-summary">
-      <section aria-labelledby="confirmed-heading">
-        <div className="result-section-heading">
-          <div>
-            <span className="eyebrow">Best fit</span>
-            <h2 id="confirmed-heading">Confirmed matches</h2>
-          </div>
-          <span>
-            {recommendation.recommendations.length} /{" "}
-            {recommendation.diagnostics.evaluated}
-          </span>
-        </div>
-        <PositioningFacet
-          groups={availableGroups}
-          onSelect={setPositioning}
-          selected={positioning}
-        />
-        {visible.length > 0 ? (
-          <div className="candidate-list">
-            {visible.map((candidate) => (
-              <CandidateCard
-                candidate={candidate}
-                key={candidate.id}
-                status="confirmed"
-              />
-            ))}
-          </div>
-        ) : (
-          <p className="empty-result">
-            No reviewed watch configuration meets every non-negotiable
-            requirement with complete evidence. Nothing was silently relaxed.
-          </p>
-        )}
-      </section>
-
-      {recommendation.verificationRequired.length > 0 ? (
-        <section aria-labelledby="verification-heading">
-          <div className="result-section-heading">
-            <div>
-              <span className="eyebrow">Evidence boundary</span>
-              <h2 id="verification-heading">Promising, but verify first</h2>
-            </div>
-          </div>
-          <div className="candidate-list">
-            {recommendation.verificationRequired.map((candidate) => (
-              <CandidateCard
-                candidate={candidate}
-                key={candidate.id}
-                status="verification"
-              />
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {recommendation.relaxations.length > 0 ? (
-        <section aria-labelledby="relaxation-heading">
-          <div className="result-section-heading">
-            <div>
-              <span className="eyebrow">No silent compromise</span>
-              <h2 id="relaxation-heading">Optional next relaxations</h2>
-            </div>
-          </div>
-          <ol className="explanation-list">
-            {recommendation.relaxations.map((relaxation) => (
-              <li key={relaxation.code}>{relaxation.explanation}</li>
-            ))}
-          </ol>
-        </section>
-      ) : null}
-
-      {recommendation.whyNot.length > 0 ? (
-        <section aria-labelledby="why-not-heading">
-          <div className="result-section-heading">
-            <div>
-              <span className="eyebrow">Exclusion trace</span>
-              <h2 id="why-not-heading">Why not these</h2>
-            </div>
-          </div>
-          <div className="why-not-list">
-            {recommendation.whyNot.map((candidate) => (
-              <article key={candidate.id}>
-                <h3>
-                  {candidate.brand} {candidate.model}
-                </h3>
-                <ul>
-                  {candidate.hardReasons.map((reason) => (
-                    <li key={reason.code}>{reason.explanation}</li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {recommendation.unscoredPreferences.length > 0 ? (
-        <section aria-labelledby="unscored-heading">
-          <div className="result-section-heading">
-            <div>
-              <span className="eyebrow">Evidence boundary</span>
-              <h2 id="unscored-heading">Preferences not scored yet</h2>
-            </div>
-          </div>
-          <ul className="explanation-list">
-            {recommendation.unscoredPreferences.map((preference) => (
-              <li key={preference.field}>{preference.explanation}</li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
-      <section className="source-register" aria-labelledby="sources-heading">
-        <h2 id="sources-heading">Sources used in this result</h2>
-        <ol>
-          {recommendation.sources.map((source) => (
-            <li key={source.id}>
-              <a href={source.url} rel="noreferrer" target="_blank">
-                {source.publisher}: {source.title}
-              </a>{" "}
-              <span>retrieved {source.retrievedAt.slice(0, 10)}</span>
-            </li>
-          ))}
-        </ol>
-        <p>
-          Evaluated {recommendation.evaluatedAt.slice(0, 10)}. The reviewed
-          collection is still limited; absence is not evidence that a suitable
-          watch does not exist.
-        </p>
-      </section>
-    </div>
   );
 }
 
@@ -1438,20 +1154,17 @@ function ProfileSummary({
   draft,
   profile,
   aiSearch,
-  recommendation,
   subscription,
   funnelSource,
   storyContext,
   scenarioLabels,
   complicationLabels,
-  positioningGroups,
   onEdit,
   onRestart,
 }: {
   draft: QuizDraft;
   profile: ReturnType<typeof normalizeProfileV3>;
   aiSearch: AiSearchView;
-  recommendation: RecommendationResultV3;
   subscription: SubscriptionResult;
   funnelSource: "archetype" | null;
   storyContext?: {
@@ -1463,7 +1176,6 @@ function ProfileSummary({
   };
   scenarioLabels: Map<string, string>;
   complicationLabels: Map<string, string>;
-  positioningGroups: readonly VocabularyOption[];
   onEdit: () => void;
   onRestart: () => void;
 }) {
@@ -1475,11 +1187,8 @@ function ProfileSummary({
       <span className="eyebrow">Constraint profile complete</span>
       <h1 id="profile-heading">Your search boundary</h1>
       <p>
-        An AI search of the live web picked the watch that best fits your
-        profile. Below it, your profile is also compared with individually
-        reviewed watch configurations: confirmed matches meet every
-        non-negotiable requirement, and watches with missing evidence stay
-        clearly separated.
+        An AI search of the live web looked for watches that meet every
+        requirement below. Each one links to the source it came from.
       </p>
       <dl className="profile-grid">
         <div>
@@ -1562,10 +1271,6 @@ function ProfileSummary({
         ) : null}
       </dl>
       <AiRecommendation aiSearch={aiSearch} />
-      <RecommendationSummary
-        positioningGroups={positioningGroups}
-        recommendation={recommendation}
-      />
       {storyContext ? (
         <section
           className="delivery-panel"
@@ -1735,10 +1440,8 @@ export default function Quiz() {
           funnelSource={funnelSource}
           onEdit={() => setStep(0)}
           onRestart={restartQuiz}
-          positioningGroups={loaderData.positioningGroups}
           profile={resultData.profile}
           aiSearch={resultData.aiSearch}
-          recommendation={resultData.recommendation}
           scenarioLabels={scenarioLabels}
           storyContext={resultData.storyContext}
           subscription={resultData.subscription}
@@ -1992,8 +1695,9 @@ export default function Quiz() {
               </button>
               {isSubmitting ? (
                 <p aria-live="polite">
-                  The AI is searching the live web for your watch. This usually
-                  takes 15–40 seconds.
+                  The AI is searching the live web for your watches. A new
+                  combination of answers can take up to two minutes; answers
+                  searched before load straight away.
                 </p>
               ) : null}
             </Form>

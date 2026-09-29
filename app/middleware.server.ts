@@ -29,7 +29,9 @@ export function contentSecurityPolicy(
     "script-src 'self' 'unsafe-inline' https://subscribe-forms.beehiiv.com https://challenges.cloudflare.com",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
     "font-src https://fonts.gstatic.com",
-    "img-src 'self' data: https://subscribe-forms.beehiiv.com https://challenges.cloudflare.com",
+    // AI search results link watch photos from arbitrary retailer and
+    // manufacturer hosts (the URL is stored, never the file).
+    "img-src 'self' data: https:",
     `connect-src ${connectSources.join(" ")}`,
   ].join("; ");
 }
