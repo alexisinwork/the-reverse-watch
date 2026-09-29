@@ -175,18 +175,21 @@ test("uses the branded error boundary for unknown routes", async ({ page }) => {
   ).toBeVisible();
 });
 
-test("completes the six-screen diagnostic without a model provider", async ({
+test("completes the six-screen diagnostic and streams the shortlist", async ({
   page,
 }) => {
   await grantDiagnosticAccess(page);
   await page.goto("/quiz");
 
   await expect(page.getByText("Step 1 of 6")).toBeVisible();
-  await page.getByLabel("Maximum amount").fill("10000");
+  await page.getByRole("radio", { name: "USD 9k–10k" }).check();
+  await page.getByRole("button", { name: "Next" }).click();
+
+  await page.getByLabel("Wrist circumference").fill("17.5");
+  await expect(page.getByText(/cases of 38–42 mm/)).toBeVisible();
   await page.getByRole("button", { name: "Next" }).click();
 
   await page.getByRole("checkbox", { name: "Office" }).check();
-  await page.getByRole("button", { name: "Next" }).click();
   await page.getByRole("button", { name: "Next" }).click();
 
   await page.getByRole("checkbox", { name: "Automatic" }).check();
@@ -196,17 +199,21 @@ test("completes the six-screen diagnostic without a model provider", async ({
   await expect(page.getByText("Step 6 of 6")).toBeVisible();
   await page.getByRole("button", { name: "See the shortlist" }).click();
 
+  // The answers render at once; the AI shortlist streams in afterwards.
   await expect(
     page.getByRole("heading", { name: "Your search boundary" }),
   ).toBeVisible();
-  await expect(page.getByText("USD 10,000")).toBeVisible();
+  await expect(page.getByText("USD 9k–10k")).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "Watches that fit every answer" }),
+  ).toBeVisible();
   await expect(page.locator("body")).not.toContainText(/personal profile/i);
 
   await page.getByRole("button", { name: "Restart diagnostic" }).click();
   await expect(
     page.getByRole("heading", {
-      name: "What is the actual purchase ceiling?",
+      name: "What price range are you shopping in?",
     }),
   ).toBeVisible();
-  await expect(page.getByLabel("Maximum amount")).toHaveValue("");
+  await expect(page.getByRole("radio", { name: "USD 9k–10k" })).not.toBeChecked();
 });
