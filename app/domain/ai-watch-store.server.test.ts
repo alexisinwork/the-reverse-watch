@@ -1,16 +1,10 @@
 import { vi } from "vitest";
 
-const finderMock = vi.hoisted(() => ({ runAiWatchSearch: vi.fn() }));
-
-vi.mock("./ai-watch-finder.server", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("./ai-watch-finder.server")>()),
-  runAiWatchSearch: finderMock.runAiWatchSearch,
-}));
+const finderMock = { runAiWatchSearch: vi.fn() };
 
 import { aiSearchCacheKey, searchWithStore } from "./ai-watch-store.server";
 
 const store = { supabaseUrl: "https://db.test", serviceKey: "sb_secret_test" };
-const brief = { task: "Find.", lines: ["Constraint."], maxWatches: 5 };
 const foundWatch = {
   brand: "Seiko",
   model: "Prospex",
@@ -19,6 +13,7 @@ const foundWatch = {
   imageUrl: "https://img.example/spb143.jpg",
   priceNote: null,
   rationale: "Fits.",
+  details: { waterResistanceM: 200 },
 };
 
 function json(body: unknown, status = 200) {
@@ -43,7 +38,7 @@ describe("searchWithStore", () => {
     );
 
     const result = await searchWithStore(
-      { kind: "quiz", cacheInput: { a: 1 }, brief },
+      { kind: "quiz", cacheInput: { a: 1 }, run: finderMock.runAiWatchSearch },
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
     );
 
@@ -70,7 +65,7 @@ describe("searchWithStore", () => {
     );
 
     const result = await searchWithStore(
-      { kind: "quiz", cacheInput: { a: 1 }, brief },
+      { kind: "quiz", cacheInput: { a: 1 }, run: finderMock.runAiWatchSearch },
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
     );
 
@@ -90,7 +85,7 @@ describe("searchWithStore", () => {
     const fetchImpl = vi.fn(async (_input: RequestInfo | URL) => json(null));
 
     await searchWithStore(
-      { kind: "quiz", cacheInput: { a: 1 }, brief },
+      { kind: "quiz", cacheInput: { a: 1 }, run: finderMock.runAiWatchSearch },
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
     );
 
@@ -108,7 +103,7 @@ describe("searchWithStore", () => {
     const fetchImpl = vi.fn(async () => json({ message: "down" }, 503));
 
     const result = await searchWithStore(
-      { kind: "quiz", cacheInput: { a: 1 }, brief },
+      { kind: "quiz", cacheInput: { a: 1 }, run: finderMock.runAiWatchSearch },
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
     );
 
@@ -124,7 +119,7 @@ describe("searchWithStore", () => {
     );
 
     const result = await searchWithStore(
-      { kind: "quiz", cacheInput: { a: 1 }, brief },
+      { kind: "quiz", cacheInput: { a: 1 }, run: finderMock.runAiWatchSearch },
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
     );
 

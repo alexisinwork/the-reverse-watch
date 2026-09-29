@@ -22,8 +22,15 @@ vi.mock("@upstash/redis", () => ({
 }));
 vi.mock("../domain/discovery-funnel-store.server", () => discoveryFunnelMock);
 vi.mock("../domain/ai-watch-store.server", () => aiSearchMock);
+vi.mock("../domain/fx.server", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../domain/fx.server")>()),
+  loadFxTable: async () => ({
+    date: "2026-09-29",
+    perEur: { EUR: 1, USD: 1.1355, GBP: 0.85718, CHF: 0.9461 },
+  }),
+}));
 
-import { QUESTIONNAIRE_V3_STORAGE_KEY } from "../domain/questionnaire-v3";
+import { QUESTIONNAIRE_V4_STORAGE_KEY } from "../domain/questionnaire-v4";
 import {
   issueDiagnosticAccessCookie,
   parseDiagnosticAccessConfiguration,
@@ -50,13 +57,12 @@ const diagnosticCookie: string = issuedCookieHeader;
 type FormEntries = Record<string, string | string[]>;
 
 const completeProfile: FormEntries = {
-  version: "3",
+  version: "4",
   budgetCurrency: "USD",
-  budgetMax: "15000",
+  priceRange: "10000_15000",
+  wristCm: "17.5",
   wearingScenarios: ["office"],
   minimumWaterResistanceM: "100",
-  caseDiameterMinMm: "36",
-  caseDiameterMaxMm: "41",
   movementTypes: ["automatic"],
   requiredComplications: [],
   allergyConstraint: "none",
@@ -118,20 +124,23 @@ function routeStub() {
   ]);
 }
 
-async function completeAllScreens(user: ReturnType<typeof userEvent.setup>) {
-  await user.type(screen.getByLabelText("Maximum amount"), "15000");
+async function pickRangeAndWrist(user: ReturnType<typeof userEvent.setup>) {
+  await user.click(await screen.findByRole("radio", { name: "USD 10k–15k" }));
   await user.click(screen.getByRole("button", { name: "Next" }));
+  await user.type(await screen.findByLabelText("Wrist circumference"), "17.5");
+  await user.click(screen.getByRole("button", { name: "Next" }));
+}
 
+async function completeAllScreens(user: ReturnType<typeof userEvent.setup>) {
+  await pickRangeAndWrist(user);
   await user.click(await screen.findByRole("checkbox", { name: "Office" }));
   await user.click(screen.getByRole("button", { name: "Next" }));
-  await user.click(screen.getByRole("button", { name: "Next" }));
-
   await user.click(await screen.findByRole("checkbox", { name: "Automatic" }));
   await user.click(screen.getByRole("button", { name: "Next" }));
   await user.click(screen.getByRole("button", { name: "Next" }));
 }
 
-describe("version-3 diagnostic", () => {
+describe("version-4 diagnostic", () => {
   beforeEach(() => {
     vi.stubEnv("SESSION_SECRET", SESSION_SECRET);
     window.sessionStorage.clear();
@@ -153,6 +162,14 @@ describe("version-3 diagnostic", () => {
           imageUrl: "https://images.example/spb143.jpg",
           priceNote: "about USD 1,300 new",
           rationale: "Automatic diver within budget and diameter.",
+          details: {
+            price: { amount: 1_300, currency: "USD" },
+            caseDiameterMm: 40.5,
+            waterResistanceM: 200,
+            movement: "automatic",
+            sourceKind: "manufacturer",
+            referenceVerified: true,
+          },
         },
       ],
     });
@@ -174,9 +191,13 @@ describe("version-3 diagnostic", () => {
     expect(JSON.stringify(request)).not.toContain("reader@example.com");
     expect(request).toMatchObject({
       kind: "quiz",
-      cacheInput: { budgetCurrency: "USD", priceBand: "15000_plus" },
+      cacheInput: {
+        budgetCurrency: "USD",
+        priceRange: "10000_15000",
+        caseDiameter: { minimumMm: 38, maximumMm: 42 },
+      },
     });
-    expect(payload.aiSearch).toMatchObject({ status: "found" });
+    expect(await payload.aiSearch).toMatchObject({ status: "found" });
   });
 
   it("shows the AI pick as the headline result", async () => {
@@ -184,14 +205,16 @@ describe("version-3 diagnostic", () => {
     const Stub = routeStub();
     render(<Stub initialEntries={["/quiz"]} />);
 
-    await screen.findByLabelText("Maximum amount");
     await completeAllScreens(user);
     await user.click(
       await screen.findByRole("button", { name: "See the shortlist" }),
     );
 
     expect(
-      await screen.findByRole("heading", { name: "The watches we found for you" }),
+      await screen.findByRole("heading", { name: "Watches that fit every answer" }),
+    ).toBeInTheDocument();
+    expect(
+      await screen.findByText("Reference confirmed on the manufacturer's page"),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "Seiko Prospex SPB143" }),
@@ -265,21 +288,22 @@ describe("version-3 diagnostic", () => {
     expect(response.init?.status).toBe(400);
   });
 
-  it("accepts a complete version-3 payload", async () => {
+  it("accepts a complete version-4 payload and streams the result", async () => {
     const response = await action(buildRequest(completeProfile));
     expect(response.init?.status ?? 200).toBe(200);
-    expect(response.data.ok).toBe(true);
+    if (!response.data.ok) throw new Error("Expected a result");
+    expect(response.data.aiSearch).toBeInstanceOf(Promise);
+    expect(await response.data.aiSearch).toMatchObject({ status: "found" });
   });
 
-  it("rejects an inverted diameter range", async () => {
-    const response = await action(
-      buildRequest({
-        ...completeProfile,
-        caseDiameterMinMm: "42",
-        caseDiameterMaxMm: "38",
-      }),
-    );
-    expect(response.init?.status).toBe(400);
+  it("rejects an implausible wrist size and an unknown price range", async () => {
+    expect(
+      (await action(buildRequest({ ...completeProfile, wristCm: "40" }))).init?.status,
+    ).toBe(400);
+    expect(
+      (await action(buildRequest({ ...completeProfile, priceRange: "3000_3500" })))
+        .init?.status,
+    ).toBe(400);
   });
 
   it("keeps the recommendation visible when email channels are unavailable", async () => {
@@ -511,7 +535,7 @@ describe("version-3 diagnostic", () => {
       storySlug: "don-draper-mad-men-omega",
       entityName: "Don Draper",
     });
-    expect(response.data.storyContext?.explanation.status).toBe(
+    expect((await response.data.storyContext?.explanation)?.status).toBe(
       "not_in_shortlist",
     );
   });
@@ -530,8 +554,7 @@ describe("version-3 diagnostic", () => {
     const Stub = routeStub();
     render(<Stub initialEntries={["/quiz"]} />);
 
-    await user.type(await screen.findByLabelText("Maximum amount"), "15000");
-    await user.click(screen.getByRole("button", { name: "Next" }));
+    await pickRangeAndWrist(user);
 
     expect(
       await screen.findByRole("checkbox", { name: "Office" }),
@@ -546,7 +569,6 @@ describe("version-3 diagnostic", () => {
     const Stub = routeStub();
     render(<Stub initialEntries={["/quiz"]} />);
 
-    await screen.findByLabelText("Maximum amount");
     await completeAllScreens(user);
 
     expect(
@@ -558,11 +580,11 @@ describe("version-3 diagnostic", () => {
       await screen.findByRole("heading", { name: "Your search boundary" }),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: "Keep the dossier" }),
+      screen.getByRole("heading", { name: "Email me this shortlist" }),
     ).toBeInTheDocument();
   });
 
-  it("does not advance from a missing budget", async () => {
+  it("does not advance without a price range", async () => {
     const Stub = routeStub();
     render(<Stub initialEntries={["/quiz"]} />);
 
@@ -571,17 +593,17 @@ describe("version-3 diagnostic", () => {
 
   it("recovers an unfinished draft from session storage", async () => {
     window.sessionStorage.setItem(
-      QUESTIONNAIRE_V3_STORAGE_KEY,
+      QUESTIONNAIRE_V4_STORAGE_KEY,
       JSON.stringify({
-        version: 3,
-        step: 2,
+        version: 4,
+        step: 1,
         draft: {
           budgetCurrency: "EUR",
-          budgetMax: "5000",
+          priceRange: "4000_5000",
+          wristValue: "17.5",
+          wristUnit: "cm",
           wearingScenarios: ["office"],
           minimumWaterResistanceM: "100",
-          caseDiameterMinMm: "38",
-          caseDiameterMaxMm: "40",
           movementTypes: [],
           requiredComplications: [],
           allergyConstraint: "none",
@@ -599,22 +621,24 @@ describe("version-3 diagnostic", () => {
 
     expect(
       await screen.findByRole("heading", {
-        name: "What case size works on your wrist?",
+        name: "What is your wrist size?",
       }),
     ).toBeInTheDocument();
-    expect(screen.getByLabelText("Smallest diameter")).toHaveValue(38);
-    expect(screen.getByLabelText("Largest diameter")).toHaveValue(40);
+    expect(screen.getByLabelText("Wrist circumference")).toHaveValue(17.5);
+    expect(screen.getByText(/cases of 38–42 mm/)).toBeInTheDocument();
   });
 
-  it("discards a version-2 draft rather than migrating it", async () => {
+  it("discards an older draft rather than migrating it", async () => {
     window.sessionStorage.setItem(
-      "the-reserve:diagnostic:v2",
-      JSON.stringify({ version: 2, step: 3, core: { budgetMax: "9000" } }),
+      "the-reserve:diagnostic:v3",
+      JSON.stringify({ version: 3, step: 3, draft: { budgetMax: "9000" } }),
     );
     const Stub = routeStub();
     render(<Stub initialEntries={["/quiz"]} />);
 
-    expect(await screen.findByLabelText("Maximum amount")).toHaveValue(null);
+    expect(
+      await screen.findByRole("radio", { name: "USD 10k–15k" }),
+    ).not.toBeChecked();
     expect(screen.getByText(/step 1 of 6/i)).toBeInTheDocument();
   });
 
@@ -629,7 +653,6 @@ describe("version-3 diagnostic", () => {
       />,
     );
 
-    await screen.findByLabelText("Maximum amount");
     await completeAllScreens(user);
 
     await waitFor(() => {
@@ -640,6 +663,6 @@ describe("version-3 diagnostic", () => {
     expect(container.querySelector('input[name="funnelSource"]')).toHaveValue(
       "archetype",
     );
-    expect(container.querySelector('input[name="version"]')).toHaveValue("3");
+    expect(container.querySelector('input[name="version"]')).toHaveValue("4");
   });
 });

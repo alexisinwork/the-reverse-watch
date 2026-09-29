@@ -1,18 +1,17 @@
 import { renderDossierEmail } from "./dossier-email";
-import { normalizeProfileV3, QUESTIONNAIRE_V3_VERSION } from "./questionnaire-v3";
+import type { ProfileV4 } from "./questionnaire-v4";
 
-const profile = normalizeProfileV3({
-  version: QUESTIONNAIRE_V3_VERSION,
+const profile: ProfileV4 = {
+  version: 4,
   budgetCurrency: "EUR",
-  budgetMax: 4000,
+  priceRange: "3000_4000",
+  wristCm: 17.5,
   wearingScenarios: ["office"],
   minimumWaterResistanceM: 100,
-  caseDiameterMinMm: 38,
-  caseDiameterMaxMm: 41,
   movementTypes: ["automatic"],
   requiredComplications: [],
   allergyConstraint: "none",
-});
+};
 
 describe("renderDossierEmail", () => {
   it("lists the found watches with sources, images, and the search boundary", () => {
@@ -31,13 +30,15 @@ describe("renderDossierEmail", () => {
             imageUrl: "https://images.example/conquest.jpg",
             priceNote: "about EUR 2,300 new",
             rationale: "38 mm automatic with 100 m water resistance.",
+            details: {},
           },
         ],
       },
     });
 
     expect(email.subject).toBe("Your Reserve reference diagnostic dossier");
-    expect(email.text).toContain("Budget ceiling: EUR 4,000.");
+    expect(email.text).toContain("Price range: EUR 3k–4k.");
+    expect(email.text).toContain("Wrist: 17.5 cm (cases 38-42 mm).");
     expect(email.text).toContain("1. Longines Conquest 38 (ref. L3.720.4.92.6)");
     expect(email.text).toContain("Source: https://www.longines.com/conquest");
     expect(email.html).toContain('<img src="https://images.example/conquest.jpg"');
@@ -61,6 +62,7 @@ describe("renderDossierEmail", () => {
             imageUrl: null,
             priceNote: null,
             rationale: "fits",
+            details: {},
           },
         ],
       },

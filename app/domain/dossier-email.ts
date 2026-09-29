@@ -1,7 +1,10 @@
-import type { AiSearchView, FoundWatch } from "./ai-watch-finder.server";
-import type { normalizeProfileV3 } from "./questionnaire-v3";
-
-type NormalizedProfileV3 = ReturnType<typeof normalizeProfileV3>;
+import type { AiSearchView, FoundWatch } from "./ai-watch-types";
+import {
+  caseDiameterForWrist,
+  findPriceRange,
+  priceRangeLabel,
+  type ProfileV4,
+} from "./questionnaire-v4";
 
 export type DossierEmail = {
   subject: string;
@@ -33,12 +36,13 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#39;");
 }
 
-function profileLines(profile: NormalizedProfileV3) {
+function profileLines(profile: ProfileV4) {
+  const diameter = caseDiameterForWrist(profile.wristCm);
   return [
-    `Budget ceiling: ${profile.budgetCurrency} ${profile.budgetMax.toLocaleString("en")}.`,
+    `Price range: ${priceRangeLabel(findPriceRange(profile.priceRange)!, profile.budgetCurrency)}.`,
+    `Wrist: ${profile.wristCm} cm (cases ${diameter.minimumMm}-${diameter.maximumMm} mm).`,
     `Wearing scenarios: ${profile.wearingScenarios.map(label).join(", ")}.`,
     `Minimum water resistance: ${profile.minimumWaterResistanceM === 0 ? "no requirement" : `${profile.minimumWaterResistanceM} m`}.`,
-    `Case diameter: ${profile.caseDiameterMinMm}-${profile.caseDiameterMaxMm} mm.`,
     `Movement types: ${profile.movementTypes.map(label).join(", ")}.`,
     `Required functions: ${profile.requiredComplications.length > 0 ? profile.requiredComplications.map(label).join(", ") : "none"}.`,
     `Allergy constraint: ${label(profile.allergyConstraint)}.`,
@@ -73,13 +77,13 @@ function watchHtml(watch: FoundWatch, index: number) {
 }
 
 const METHOD_NOTE =
-  "These watches were found by an AI search of the live web using only the constraints above. Check price, reference, and specifications with the seller before buying.";
+  "These watches were found with Muse Spark and a live Perplexity web search using only the constraints above, and each reference was confirmed on the manufacturer's or an authorised retailer's page. Check the price with the seller before buying.";
 
 export function renderDossierEmail({
   profile,
   aiSearch,
 }: {
-  profile: NormalizedProfileV3;
+  profile: ProfileV4;
   aiSearch: AiSearchView;
 }): DossierEmail {
   const lines = profileLines(profile);

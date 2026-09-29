@@ -1,49 +1,48 @@
+// Live end-to-end timing of the AI search engine against real providers.
+//   npx tsx --env-file=.env scripts/test-ai-watch-finder.ts
 import {
-  quizBrief,
-  runAiWatchSearch,
+  searchFilmWatches,
+  searchQuizWatches,
 } from "../app/domain/ai-watch-finder.server";
-import { goldenEvaluationProfiles } from "../app/domain/evaluation-fixtures";
-import { QUESTIONNAIRE_V3_VERSION, type ProfileV3 } from "../app/domain/questionnaire-v3";
+import type { AiSearchOutcome } from "../app/domain/ai-watch-types";
+import type { ProfileV4 } from "../app/domain/questionnaire-v4";
 
-// Deliberately unsatisfiable, to exercise the honest "no match" path.
-const impossibleProfile: ProfileV3 = {
-  version: QUESTIONNAIRE_V3_VERSION,
-  budgetCurrency: "USD",
-  budgetMax: 50,
-  wearingScenarios: ["diving"],
-  minimumWaterResistanceM: 300,
-  caseDiameterMinMm: 59,
-  caseDiameterMaxMm: 60,
-  movementTypes: ["spring_drive"],
+async function time(label: string, run: () => Promise<AiSearchOutcome>) {
+  const started = performance.now();
+  const result = await run();
+  console.log(`\n=== ${label}: ${((performance.now() - started) / 1000).toFixed(1)} s, ${result.status} ===`);
+  if (result.status === "no_match") console.log(result.summary);
+  if (result.status === "found") {
+    console.log(result.summary);
+    for (const watch of result.watches) {
+      console.log(
+        `  ${watch.brand} ${watch.model} ${watch.referenceCode ?? ""} ${watch.priceNote ?? ""}` +
+          ` | ${watch.details.sourceKind ?? watch.details.person ?? ""} | photo ${watch.imageUrl ? "yes" : "no"}`,
+      );
+    }
+  }
+}
+
+const office: ProfileV4 = {
+  version: 4,
+  budgetCurrency: "EUR",
+  priceRange: "3000_4000",
+  wristCm: 17.5,
+  wearingScenarios: ["office", "everyday"],
+  minimumWaterResistanceM: 100,
+  movementTypes: ["automatic"],
   requiredComplications: [],
   allergyConstraint: "none",
 };
 
-async function run(label: string, profile: ProfileV3) {
-  const brief = quizBrief(profile);
-  console.log(`\n=== ${label} ===`);
-  console.log("Brief sent to the AI (the only data it sees):");
-  console.log([brief.task, ...brief.lines].join("\n"));
-
-  const started = Date.now();
-  const result = await runAiWatchSearch(brief);
-  console.log(`\nResult after ${Math.round((Date.now() - started) / 1000)} s: ${result.status}`);
-  if (result.status === "found") {
-    console.log(result.summary);
-    result.watches.forEach((watch, index) => {
-      console.log(
-        `${index + 1}. ${watch.brand} ${watch.model}${watch.referenceCode ? ` (${watch.referenceCode})` : ""}` +
-          `${watch.priceNote ? ` — ${watch.priceNote}` : ""}\n   source: ${watch.sourceUrl}\n   image:  ${watch.imageUrl ?? "none"}`,
-      );
-    });
-  } else if (result.status === "no_match") {
-    console.log(result.summary);
-  }
-}
-
-async function main() {
-  await run("Broad profile", goldenEvaluationProfiles[0]!);
-  await run("Impossible profile", impossibleProfile);
-}
-
-await main();
+await time("quiz: EUR 3k-4k, office, 100 m, automatic", () => searchQuizWatches(office));
+await time("quiz: USD 1k-2k, nickel allergy", () =>
+  searchQuizWatches({
+    ...office,
+    budgetCurrency: "USD",
+    priceRange: "1000_2000",
+    allergyConstraint: "nickel_contact",
+  }),
+);
+await time("film: Daniel Craig", () => searchFilmWatches("Daniel Craig"));
+await time("film: Succession", () => searchFilmWatches("Succession"));

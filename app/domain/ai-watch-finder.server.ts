@@ -1,19 +1,31 @@
 import { z } from "zod";
 
-import { derivePriceBand, PRICE_BANDS } from "./questionnaire";
-import type { ProfileV3 } from "./questionnaire-v3";
+import {
+  allowedMovement,
+  classifySource,
+  fitsDiameter,
+  fitsPrice,
+  meetsWaterResistance,
+  nickelSafe,
+  normalizeMovement,
+  normalizeReference,
+  pageMentionsReference,
+} from "./ai-watch-guardrails";
+import type { AiSearchOutcome, FoundWatch } from "./ai-watch-types";
+import { convert, loadFxTable, type FxTable } from "./fx.server";
+import {
+  caseDiameterForWrist,
+  findPriceRange,
+  type ProfileV4,
+} from "./questionnaire-v4";
 
 export type MuseSparkConfig = {
   apiKey: string;
   baseUrl: string;
-  model: string;
+  /** Used where latency matters most (proposals, ranking). */
+  fastModel: string;
 };
-
-export type PerplexityConfig = {
-  apiKey: string;
-  model: string;
-};
-
+export type PerplexityConfig = { apiKey: string; model: string };
 export type AiWatchFinderConfig = {
   museSpark: MuseSparkConfig | null;
   perplexity: PerplexityConfig | null;
@@ -28,59 +40,395 @@ export function loadAiWatchFinderConfig(
     museSpark: museSparkKey
       ? {
           apiKey: museSparkKey,
-          baseUrl: (
-            env.MUSE_SPARK_BASE_URL?.trim() || "https://api.meta.ai/v1"
-          ).replace(/\/?$/, "/"),
-          model: env.MUSE_SPARK_MODEL?.trim() || "muse-spark-1.3-contributor",
+          baseUrl: (env.MUSE_SPARK_BASE_URL?.trim() || "https://api.meta.ai/v1").replace(
+            /\/?$/,
+            "/",
+          ),
+          // Measured: 1.2-contributor answers in 8-9 s where 1.3 takes 15-17 s,
+          // almost all of it hidden reasoning before the first token.
+          fastModel: env.MUSE_SPARK_FAST_MODEL?.trim() || "muse-spark-1.2-contributor",
         }
       : null,
     perplexity: perplexityKey
       ? {
           apiKey: perplexityKey,
-          model: env.PERPLEXITY_RESEARCH_MODEL?.trim() || "sonar-pro",
+          // sonar measured as fast as sonar-pro at half the cost here.
+          model: env.PERPLEXITY_SEARCH_MODEL?.trim() || "sonar",
         }
       : null,
   };
 }
 
-/**
- * What to search for, as plain non-identifying text. Callers build it from
- * search constraints only; no email, session, cookie, or IP ever goes in.
- */
-export type WatchBrief = {
-  task: string;
-  lines: string[];
-  maxWatches: number;
+export type {
+  AiSearchOutcome,
+  AiSearchView,
+  FoundWatch,
+  WatchDetails,
+} from "./ai-watch-types";
+
+export type Deps = {
+  config: AiWatchFinderConfig;
+  fetchImpl: typeof fetch;
+  sleep: (ms: number) => Promise<void>;
+  loadFx: () => Promise<FxTable | null>;
+  now: () => number;
 };
+
+function defaultDeps(overrides: Partial<Deps> = {}): Deps {
+  const fetchImpl = overrides.fetchImpl ?? fetch;
+  return {
+    config: overrides.config ?? loadAiWatchFinderConfig(),
+    fetchImpl,
+    sleep:
+      overrides.sleep ?? ((ms) => new Promise<void>((resolve) => setTimeout(resolve, ms))),
+    loadFx: overrides.loadFx ?? (() => loadFxTable(fetchImpl)),
+    now: overrides.now ?? Date.now,
+  };
+}
+
+// Model output ends up in href and src attributes.
+export function safeHttpUrl(value: string | null | undefined) {
+  if (!value) return null;
+  try {
+    const url = new URL(value.trim());
+    return url.protocol === "https:" || url.protocol === "http:" ? url.toString() : null;
+  } catch {
+    return null;
+  }
+}
+
+function clean(value: unknown) {
+  return typeof value === "string" && value.trim() ? value.trim() : null;
+}
+
+function finite(value: unknown) {
+  return typeof value === "number" && Number.isFinite(value) ? value : null;
+}
+
+// Placeholder names models sometimes emit instead of admitting a gap.
+const VAGUE = /\b(unknown|unidentified|unspecified|various|n\/a|tbd)\b/i;
+
+function logError(event: string, error: unknown) {
+  console.error(
+    JSON.stringify({
+      event,
+      message: error instanceof Error ? error.message : "unknown error",
+    }),
+  );
+}
+
+function parseModelJson(content: string) {
+  return JSON.parse(content.replace(/^```(?:json)?\s*|\s*```$/g, "")) as unknown;
+}
+
+// ---------------------------------------------------------------------------
+// Upstream calls
+
+const PERPLEXITY_RETRIES = 2;
+
+async function perplexityPost(path: "chat/completions" | "search", body: unknown, deps: Deps, timeoutMs: number) {
+  const config = deps.config.perplexity!;
+  for (let attempt = 0; ; attempt += 1) {
+    const response = await deps.fetchImpl(`https://api.perplexity.ai/${path}`, {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${config.apiKey}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(timeoutMs),
+    });
+    if (response.status === 429 && attempt < PERPLEXITY_RETRIES) {
+      await response.body?.cancel();
+      const retryAfter = Number(response.headers.get("retry-after"));
+      await deps.sleep(
+        Number.isFinite(retryAfter) && retryAfter > 0
+          ? Math.min(retryAfter, 5) * 1_000
+          : 1_000 * (attempt + 1),
+      );
+      continue;
+    }
+    if (!response.ok) {
+      throw new Error(
+        `Perplexity ${path} returned ${response.status}: ${(await response.text()).slice(0, 200)}`,
+      );
+    }
+    return (await response.json()) as unknown;
+  }
+}
+
+async function sonarJson(prompt: string, schema: Record<string, unknown>, deps: Deps) {
+  const body = (await perplexityPost(
+    "chat/completions",
+    {
+      model: deps.config.perplexity!.model,
+      max_tokens: 2_000,
+      web_search_options: { search_context_size: "low" },
+      response_format: { type: "json_schema", json_schema: { schema } },
+      messages: [{ role: "user", content: prompt }],
+    },
+    deps,
+    20_000,
+  )) as { choices?: { message?: { content?: unknown } }[] };
+  const content = body.choices?.[0]?.message?.content;
+  if (typeof content !== "string") throw new Error("Perplexity returned no content.");
+  return parseModelJson(content);
+}
+
+type SearchHit = { url: string; title: string; snippet: string };
+
+/** Perplexity Search API: raw ranked results, up to 5 queries per request. */
+async function searchWeb(queries: string[], deps: Deps): Promise<SearchHit[]> {
+  if (queries.length === 0) return [];
+  const body = (await perplexityPost(
+    "search",
+    { query: queries.slice(0, 5), max_results: 20, max_tokens_per_page: 256 },
+    deps,
+    8_000,
+  )) as { results?: unknown };
+  const results = Array.isArray(body.results) ? body.results.flat() : [];
+  return results.flatMap((raw) => {
+    const item = raw as Record<string, unknown>;
+    const url = safeHttpUrl(clean(item.url));
+    return url ? [{ url, title: clean(item.title) ?? "", snippet: clean(item.snippet) ?? "" }] : [];
+  });
+}
+
+async function museJson(
+  system: string,
+  user: string,
+  cacheKey: string,
+  deps: Deps,
+  timeoutMs: number,
+): Promise<unknown> {
+  const config = deps.config.museSpark!;
+  const response = await deps.fetchImpl(new URL("chat/completions", config.baseUrl), {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${config.apiKey}`,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      model: config.fastModel,
+      // "none" is rejected by the API; "minimal" is the fastest allowed.
+      reasoning_effort: "minimal",
+      // The system prompt comes first and never changes, so Muse Spark's
+      // automatic prefix cache serves it at a fraction of the input price.
+      prompt_cache_key: cacheKey,
+      max_tokens: 4_000,
+      response_format: { type: "json_object" },
+      messages: [
+        { role: "system", content: system },
+        { role: "user", content: user },
+      ],
+    }),
+    signal: AbortSignal.timeout(timeoutMs),
+  });
+  if (!response.ok) {
+    throw new Error(`Muse Spark returned ${response.status}: ${(await response.text()).slice(0, 200)}`);
+  }
+  const body = (await response.json()) as { choices?: { message?: { content?: unknown } }[] };
+  const content = body.choices?.[0]?.message?.content;
+  if (typeof content !== "string") throw new Error("Muse Spark returned no content.");
+  return parseModelJson(content);
+}
+
+// ---------------------------------------------------------------------------
+// Source pages: reference check and product photo
+
+const PAGE_BYTES = 1_500_000;
+
+export async function inspectSourcePage(
+  url: string,
+  reference: string | null,
+  fetchImpl: typeof fetch,
+): Promise<{ reachable: boolean; referenceFound: boolean; imageUrl: string | null }> {
+  try {
+    const response = await fetchImpl(url, {
+      headers: {
+        "user-agent": "Mozilla/5.0 (compatible; TheReserveBot/1.0; +https://thereserve.watch)",
+        accept: "text/html,application/xhtml+xml",
+      },
+      redirect: "follow",
+      signal: AbortSignal.timeout(5_000),
+    });
+    if (!response.ok) {
+      await response.body?.cancel();
+      return { reachable: false, referenceFound: pageMentionsReference(reference, "", url), imageUrl: null };
+    }
+    const html = (await response.text()).slice(0, PAGE_BYTES);
+    const meta =
+      html.match(
+        /<meta[^>]+(?:property|name)=["'](?:og:image|twitter:image)(?::src)?["'][^>]*content=["']([^"']+)["']/i,
+      ) ??
+      html.match(
+        /<meta[^>]+content=["']([^"']+)["'][^>]*(?:property|name)=["'](?:og:image|twitter:image)["']/i,
+      );
+    let imageUrl: string | null = null;
+    if (meta?.[1]) {
+      try {
+        imageUrl = safeHttpUrl(new URL(meta[1].replace(/&amp;/g, "&"), response.url || url).toString());
+      } catch {
+        imageUrl = null;
+      }
+    }
+    return {
+      reachable: true,
+      referenceFound: pageMentionsReference(reference, html, response.url || url),
+      imageUrl,
+    };
+  } catch {
+    return { reachable: false, referenceFound: pageMentionsReference(reference, "", url), imageUrl: null };
+  }
+}
+
+/**
+ * The URL is kept (never the file) only if the host serves an image. A
+ * one-byte ranged GET, not HEAD: some CDNs (Akamai for Longines) leave a
+ * HEAD from Node's fetch hanging while answering a ranged GET instantly.
+ */
+export async function verifyImageUrl(
+  url: string | null,
+  fetchImpl: typeof fetch,
+): Promise<string | null> {
+  if (!url) return null;
+  try {
+    const response = await fetchImpl(url, {
+      headers: { range: "bytes=0-0" },
+      redirect: "follow",
+      signal: AbortSignal.timeout(3_000),
+    });
+    await response.body?.cancel();
+    const type = (response.headers.get("content-type") ?? "").toLowerCase();
+    return response.ok && type.startsWith("image/") ? url : null;
+  } catch {
+    return null;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Anytime collection: every angle runs its whole pipeline independently.
+
+/**
+ * Resolves with whatever the angles have produced once all are done, or
+ * after softMs if `enough` is already satisfied, or at hardMs regardless.
+ */
+export function collectUntilDeadline<T>(
+  tasks: Promise<T[]>[],
+  {
+    softMs,
+    hardMs,
+    enough,
+  }: { softMs: number; hardMs: number; enough: (items: T[]) => boolean },
+): Promise<T[]> {
+  return new Promise((resolve) => {
+    const items: T[] = [];
+    let pending = tasks.length;
+    let settled = false;
+    let softPassed = false;
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(softTimer);
+      clearTimeout(hardTimer);
+      resolve([...items]);
+    };
+    const check = () => {
+      if (pending === 0 || (softPassed && enough(items))) finish();
+    };
+    const softTimer = setTimeout(() => {
+      softPassed = true;
+      check();
+    }, softMs);
+    const hardTimer = setTimeout(finish, hardMs);
+    if (tasks.length === 0) finish();
+    for (const task of tasks) {
+      task
+        .then((produced) => {
+          items.push(...produced);
+        })
+        .catch((error: unknown) => logError("ai_search_angle_failed", error))
+        .finally(() => {
+          pending -= 1;
+          check();
+        });
+    }
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Quiz search
 
 export const QUIZ_MAX_WATCHES = 5;
 
-/**
- * Results are stored and reused per price band, so the search itself targets
- * the band rather than the visitor's exact ceiling; otherwise a stored result
- * would not hold for the next visitor in the same band.
- */
-function priceRangeLine(profile: ProfileV3) {
-  const band = PRICE_BANDS.find(
-    (candidate) => candidate.id === derivePriceBand(profile.budgetMax),
-  )!;
-  const amount = (value: number) =>
-    `${profile.budgetCurrency} ${value.toLocaleString("en")}`;
-  return band.maximumExclusive === null
-    ? `Price: ${amount(band.minimum)} or more (new, retail).`
-    : `Price: between ${amount(band.minimum)} and ${amount(band.maximumExclusive)} (new, retail).`;
+const MOVEMENT_WORDS: Record<string, string> = {
+  automatic: "automatic",
+  manual: "hand-wound",
+  quartz: "quartz",
+  solar: "solar",
+  spring_drive: "Spring Drive",
+  hybrid: "hybrid",
+};
+
+function money(amount: number, currency: string) {
+  return `${currency} ${Math.round(amount).toLocaleString("en")}`;
 }
 
-/** The inputs that decide whether two quiz submissions share a result. */
-export function quizCacheInput(profile: ProfileV3) {
+/** Plain-text constraints: the only thing about the visitor that leaves. */
+export function quizConstraintLines(profile: ProfileV4) {
+  const range = findPriceRange(profile.priceRange)!;
+  const diameter = caseDiameterForWrist(profile.wristCm);
+  const optional = [
+    profile.maxCaseThicknessMm !== undefined
+      ? `Case thickness at most ${profile.maxCaseThicknessMm} mm.`
+      : null,
+    profile.caseShape !== undefined ? `Case shape: ${profile.caseShape}.` : null,
+    profile.movementConstruction !== undefined
+      ? `Calibre: ${profile.movementConstruction === "manufacture" ? "in-house" : "widely produced"}.`
+      : null,
+    profile.displayCaseback !== undefined
+      ? `Case back: ${profile.displayCaseback ? "display (sapphire)" : "solid"}.`
+      : null,
+    profile.crystal !== undefined ? `Crystal: ${profile.crystal}.` : null,
+    profile.microAdjustmentRequired !== undefined
+      ? `Clasp micro-adjustment ${profile.microAdjustmentRequired ? "required" : "not wanted"}.`
+      : null,
+  ].filter((line): line is string => line !== null);
+  return [
+    range.maximum === null
+      ? `New retail price of ${money(range.minimum, profile.budgetCurrency)} or more.`
+      : `New retail price between ${money(range.minimum, profile.budgetCurrency)} and ${money(range.maximum, profile.budgetCurrency)}.`,
+    `Case diameter ${diameter.minimumMm}-${diameter.maximumMm} mm (wearer's wrist ${profile.wristCm} cm).`,
+    profile.minimumWaterResistanceM > 0
+      ? `Water resistance of at least ${profile.minimumWaterResistanceM} m.`
+      : "No water-resistance requirement.",
+    `Movement: ${profile.movementTypes.map((type) => MOVEMENT_WORDS[type] ?? type).join(" or ")}.`,
+    `Worn for: ${profile.wearingScenarios.join(", ").replaceAll("_", " ")}.`,
+    profile.requiredComplications.length > 0
+      ? `Must have: ${profile.requiredComplications.join(", ").replaceAll("_", " ")}.`
+      : "No required complications.",
+    ...(profile.allergyConstraint === "nickel_contact"
+      ? [
+          "Nickel allergy: no steel may touch the skin. The case back and the strap or bracelet must be titanium, ceramic, gold, platinum, or a leather, rubber or textile strap.",
+        ]
+      : []),
+    ...optional,
+  ];
+}
+
+/**
+ * What decides whether two quiz submissions share a stored result: the
+ * range, the wrist's diameter band rather than the exact wrist, and every
+ * other answer, order-insensitive.
+ */
+export function quizCacheInput(profile: ProfileV4) {
   const sorted = (values: readonly string[]) => [...values].sort();
   return {
     budgetCurrency: profile.budgetCurrency,
-    priceBand: derivePriceBand(profile.budgetMax),
+    priceRange: profile.priceRange,
+    caseDiameter: caseDiameterForWrist(profile.wristCm),
     wearingScenarios: sorted(profile.wearingScenarios),
     minimumWaterResistanceM: profile.minimumWaterResistanceM,
-    caseDiameterMinMm: profile.caseDiameterMinMm,
-    caseDiameterMaxMm: profile.caseDiameterMaxMm,
     movementTypes: sorted(profile.movementTypes),
     requiredComplications: sorted(profile.requiredComplications),
     allergyConstraint: profile.allergyConstraint,
@@ -93,458 +441,582 @@ export function quizCacheInput(profile: ProfileV3) {
   };
 }
 
-export function quizBrief(profile: ProfileV3): WatchBrief {
-  const optional = [
-    profile.maxCaseThicknessMm !== undefined
-      ? `Maximum case thickness: ${profile.maxCaseThicknessMm} mm.`
-      : null,
-    profile.caseShape !== undefined ? `Case shape: ${profile.caseShape}.` : null,
-    profile.movementConstruction !== undefined
-      ? `Movement construction: ${profile.movementConstruction === "manufacture" ? "in-house calibre" : "widely produced calibre"}.`
-      : null,
-    profile.displayCaseback !== undefined
-      ? `Caseback: ${profile.displayCaseback ? "display" : "solid"}.`
-      : null,
-    profile.crystal !== undefined ? `Crystal: ${profile.crystal}.` : null,
-    profile.microAdjustmentRequired !== undefined
-      ? `Clasp micro-adjustment: ${profile.microAdjustmentRequired ? "required" : "not wanted"}.`
-      : null,
-  ].filter((line): line is string => line !== null);
-
-  return {
-    task: `Find up to ${QUIZ_MAX_WATCHES} distinct real, currently available watches that each satisfy every constraint below, best fit first.`,
-    lines: [
-      priceRangeLine(profile),
-      `Wearing scenarios: ${profile.wearingScenarios.join(", ")}.`,
-      `Minimum water resistance: ${profile.minimumWaterResistanceM} m.`,
-      `Case diameter: ${profile.caseDiameterMinMm}-${profile.caseDiameterMaxMm} mm.`,
-      `Movement types: ${profile.movementTypes.join(", ")}.`,
-      `Required complications: ${profile.requiredComplications.length > 0 ? profile.requiredComplications.join(", ") : "none"}.`,
-      `Allergy constraint: ${profile.allergyConstraint === "nickel_contact" ? "no nickel may touch the skin (case back and bracelet included)" : "none"}.`,
-      ...optional,
-    ],
-    maxWatches: QUIZ_MAX_WATCHES,
-  };
-}
-
-function extractMessage(body: unknown): Record<string, unknown> {
-  const choices = (body as { choices?: unknown } | null)?.choices;
-  const first = Array.isArray(choices) ? choices[0] : undefined;
-  const message = (first as { message?: unknown } | undefined)?.message;
-  if (!message || typeof message !== "object") {
-    const finishReason = (first as { finish_reason?: unknown } | undefined)
-      ?.finish_reason;
-    const usage = (body as { usage?: unknown } | null)?.usage;
-    throw new Error(
-      `The model response did not include a message (finish_reason=${JSON.stringify(finishReason)}, usage=${JSON.stringify(usage)}).`,
-    );
-  }
-  return message as Record<string, unknown>;
-}
-
-function parseJsonObject(text: string): unknown {
-  const unfenced = text
-    .trim()
-    .replace(/^```(?:json)?\s*/i, "")
-    .replace(/\s*```$/, "");
-  const start = unfenced.indexOf("{");
-  const end = unfenced.lastIndexOf("}");
-  if (start === -1 || end < start) {
-    throw new Error("The model response did not contain a JSON object.");
-  }
-  return JSON.parse(unfenced.slice(start, end + 1));
-}
-
-const modelWatchSchema = z.object({
-  brand: z.string().nullable(),
-  model: z.string().nullable(),
-  referenceCode: z.string().nullable(),
-  sourceUrl: z.string().nullable(),
-  imageUrl: z.string().nullable(),
-  priceNote: z.string().nullable(),
-  rationale: z.string(),
-});
-
-const modelAnswerSchema = z.object({
-  found: z.boolean(),
-  watches: z.array(modelWatchSchema).max(10),
-  summary: z.string().min(1),
-});
-
-export type FoundWatch = {
+type QuizCandidate = {
   brand: string;
   model: string;
   referenceCode: string | null;
-  sourceUrl: string;
-  imageUrl: string | null;
-  priceNote: string | null;
-  rationale: string;
+  price: { amount: number; currency: string } | null;
+  waterResistanceM: number | null;
+  caseDiameterMm: number | null;
+  movement: string | null;
+  materials: { case: string | null; caseback: string | null; strap: string | null };
+  sourceHint: string | null;
+  note: string | null;
 };
 
-export type FindWatchesResult =
-  | { status: "found"; watches: FoundWatch[]; summary: string }
-  | { status: "no_match"; summary: string }
-  | { status: "unavailable"; reason: string };
-
-// Model output ends up in href and src attributes.
-export function safeHttpUrl(value: string | null | undefined) {
-  if (!value) return null;
-  try {
-    const url = new URL(value.trim());
-    return url.protocol === "https:" || url.protocol === "http:"
-      ? url.toString()
-      : null;
-  } catch {
-    return null;
-  }
+function readQuizCandidate(raw: unknown): QuizCandidate | null {
+  const item = raw as Record<string, unknown>;
+  const brand = clean(item.brand);
+  const model = clean(item.model);
+  if (!brand || !model || VAGUE.test(`${brand} ${model}`)) return null;
+  const amount = finite(item.priceAmount);
+  const currency = clean(item.priceCurrency)?.toUpperCase().slice(0, 3) ?? null;
+  return {
+    brand,
+    model,
+    referenceCode: clean(item.referenceCode),
+    price: amount !== null && currency ? { amount, currency } : null,
+    waterResistanceM: finite(item.waterResistanceM),
+    caseDiameterMm: finite(item.caseDiameterMm),
+    movement: normalizeMovement(clean(item.movementType)),
+    materials: {
+      case: clean(item.caseMaterial),
+      caseback: clean(item.casebackMaterial),
+      strap: clean(item.strapMaterial),
+    },
+    sourceHint: safeHttpUrl(clean(item.manufacturerUrl)),
+    note: clean(item.why),
+  };
 }
 
-function clean(value: string | null | undefined) {
-  const trimmed = value?.trim();
-  return trimmed ? trimmed : null;
-}
+const CANDIDATE_FIELDS =
+  '{"candidates":[{"brand","model","referenceCode","priceAmount","priceCurrency","waterResistanceM","caseDiameterMm","movementType","caseMaterial","casebackMaterial","strapMaterial","why"}]}';
 
-/**
- * The URL is only kept (never the file) when the host really answers with an
- * image; many sites refuse HEAD, so a one-byte ranged GET is the fallback.
- */
-export async function verifyImageUrl(
-  url: string | null,
-  fetchImpl: typeof fetch,
-): Promise<string | null> {
-  if (!url) return null;
-  const isImage = (response: Response) =>
-    response.ok &&
-    (response.headers.get("content-type") ?? "").toLowerCase().startsWith("image/");
-  try {
-    const head = await fetchImpl(url, {
-      method: "HEAD",
-      redirect: "follow",
-      signal: AbortSignal.timeout(5_000),
-    });
-    if (isImage(head)) return url;
-    const ranged = await fetchImpl(url, {
-      headers: { range: "bytes=0-0" },
-      redirect: "follow",
-      signal: AbortSignal.timeout(5_000),
-    });
-    await ranged.body?.cancel();
-    return isImage(ranged) ? url : null;
-  } catch {
-    return null;
-  }
-}
+const QUIZ_PROPOSE_SYSTEM = [
+  "You are the senior watch buyer of The Reserve.",
+  "You receive anonymous search constraints and propose specific current-production wristwatch references that meet every one of them.",
+  "Treat every constraint as hard. Leave out any watch that breaks one; do not explain a violation away.",
+  "Give the exact manufacturer reference number of one specific configuration, its current official new retail price (priceAmount with the ISO priceCurrency; use the requested currency where the brand publishes it), water resistance in metres, case diameter in mm, movement type, and the case, case-back and strap or bracelet materials of that configuration.",
+  "Use null for any fact you are not sure of rather than guessing.",
+  "For each watch add one sentence (why) on why it suits the stated uses, in plain English.",
+  "Prefer variety across brands and designs.",
+  `Respond only with JSON: ${CANDIDATE_FIELDS}.`,
+].join(" ");
 
-async function finalizeWatches(
-  candidates: z.infer<typeof modelWatchSchema>[],
-  maxWatches: number,
-  fetchImpl: typeof fetch,
-): Promise<FoundWatch[]> {
-  const seen = new Set<string>();
-  const kept: FoundWatch[] = [];
-  for (const candidate of candidates) {
-    const brand = clean(candidate.brand);
-    const model = clean(candidate.model);
-    const sourceUrl = safeHttpUrl(candidate.sourceUrl);
-    // Anything served to later visitors must name a real watch and cite it.
-    if (!brand || !model || !sourceUrl) continue;
-    const referenceCode = clean(candidate.referenceCode);
-    const identity = `${brand}|${model}|${referenceCode ?? ""}`.toLowerCase();
-    if (seen.has(identity)) continue;
-    seen.add(identity);
-    kept.push({
-      brand,
-      model,
-      referenceCode,
-      sourceUrl,
-      imageUrl: safeHttpUrl(candidate.imageUrl),
-      priceNote: clean(candidate.priceNote),
-      rationale: candidate.rationale.trim(),
-    });
-    if (kept.length === maxWatches) break;
-  }
-  const images = await Promise.all(
-    kept.map((watch) => verifyImageUrl(watch.imageUrl, fetchImpl)),
-  );
-  return kept.map((watch, index) => ({ ...watch, imageUrl: images[index]! }));
-}
+const QUIZ_ANGLES = [
+  "Focus on established Swiss brands.",
+  "Focus on German, Japanese, British and American brands.",
+  "Focus on independent and smaller specialist brands.",
+];
 
-const PERPLEXITY_SEARCH_TOOL = {
-  type: "function",
-  function: {
-    name: "search_watches_via_perplexity",
-    description:
-      "Search the live web via Perplexity. Returns an answer, citation URLs, and image results (imageUrl plus the page it came from). Always use this before answering; never answer from memory alone. You may call it again to find a missing image or detail.",
-    parameters: {
-      type: "object",
-      properties: {
-        query: {
-          type: "string",
-          description: "A natural-language web search query.",
+const sonarCandidateSchema = {
+  type: "object",
+  properties: {
+    candidates: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          ...Object.fromEntries(
+            ["brand", "model"].map((key) => [key, { type: "string" }]),
+          ),
+          ...Object.fromEntries(
+            [
+              "referenceCode",
+              "priceCurrency",
+              "movementType",
+              "caseMaterial",
+              "casebackMaterial",
+              "strapMaterial",
+              "manufacturerUrl",
+              "why",
+            ].map((key) => [key, { type: ["string", "null"] }]),
+          ),
+          ...Object.fromEntries(
+            ["priceAmount", "waterResistanceM", "caseDiameterMm"].map((key) => [
+              key,
+              { type: ["number", "null"] },
+            ]),
+          ),
         },
+        required: ["brand", "model"],
       },
-      required: ["query"],
-      additionalProperties: false,
     },
   },
-} as const;
+  required: ["candidates"],
+};
 
-type SearchImage = { imageUrl: string; originUrl: string | null };
+type ScoredCandidate = QuizCandidate & { priceInBudget: number | null };
+
+/** Every hard rule the candidate breaks; empty means eligible. */
+export function quizRuleFailures(candidate: ScoredCandidate, profile: ProfileV4) {
+  const range = findPriceRange(profile.priceRange)!;
+  const failures: string[] = [];
+  if (normalizeReference(candidate.referenceCode) === null) failures.push("reference");
+  if (!fitsPrice(range, candidate.priceInBudget)) failures.push("price");
+  if (!meetsWaterResistance(profile.minimumWaterResistanceM, candidate.waterResistanceM)) {
+    failures.push("water_resistance");
+  }
+  if (!fitsDiameter(caseDiameterForWrist(profile.wristCm), candidate.caseDiameterMm)) {
+    failures.push("diameter");
+  }
+  if (!allowedMovement(profile.movementTypes, candidate.movement)) failures.push("movement");
+  if (profile.allergyConstraint === "nickel_contact" && !nickelSafe(candidate.materials)) {
+    failures.push("nickel");
+  }
+  return failures;
+}
+
+function factsRationale(candidate: QuizCandidate) {
+  const parts = [
+    candidate.caseDiameterMm !== null ? `${candidate.caseDiameterMm} mm` : null,
+    candidate.movement ? MOVEMENT_WORDS[candidate.movement] ?? candidate.movement : null,
+    candidate.waterResistanceM !== null ? `${candidate.waterResistanceM} m water resistance` : null,
+  ].filter(Boolean);
+  return parts.length > 0 ? `${parts.join(", ")}.` : "Meets every stated constraint.";
+}
+
+type VerifiedQuizWatch = { angle: number; order: number; watch: FoundWatch };
 
 /**
- * Executes the live Perplexity search that Muse Spark's tool call requested.
- * The query text is whatever Muse Spark composed from the brief it was
- * given; nothing else is added here.
+ * One angle's whole pipeline: propose, apply the hard rules, ground each
+ * survivor on a manufacturer or authorised-retailer page that shows the
+ * exact reference, and read its product photo. Angles never wait for one
+ * another.
  */
-const PERPLEXITY_RETRIES = 2;
-
-async function postToPerplexity(
-  query: string,
-  config: PerplexityConfig,
-  fetchImpl: typeof fetch,
-  sleep: (ms: number) => Promise<void>,
-) {
-  for (let attempt = 0; ; attempt += 1) {
-    const response = await fetchImpl("https://api.perplexity.ai/chat/completions", {
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${config.apiKey}`,
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        model: config.model,
-        messages: [{ role: "user", content: query }],
-        max_tokens: 1_200,
-        return_images: true,
-      }),
-      signal: AbortSignal.timeout(40_000),
+async function runQuizAngle(
+  angle: number,
+  propose: () => Promise<unknown[]>,
+  profile: ProfileV4,
+  fx: Promise<FxTable | null>,
+  counts: Record<string, number>,
+  deps: Deps,
+): Promise<VerifiedQuizWatch[]> {
+  const [proposals, table] = await Promise.all([propose(), fx]);
+  const eligible = proposals
+    .map(readQuizCandidate)
+    .filter((candidate): candidate is QuizCandidate => candidate !== null)
+    .map((candidate) => ({
+      ...candidate,
+      priceInBudget:
+        candidate.price && table
+          ? convert(candidate.price.amount, candidate.price.currency, profile.budgetCurrency, table)
+          : candidate.price?.currency === profile.budgetCurrency
+            ? candidate.price.amount
+            : null,
+    }))
+    .filter((candidate) => {
+      const failures = quizRuleFailures(candidate, profile);
+      for (const failure of failures) counts[failure] = (counts[failure] ?? 0) + 1;
+      return failures.length === 0;
     });
-    if (response.status !== 429 || attempt === PERPLEXITY_RETRIES) return response;
-    await response.body?.cancel();
-    const retryAfterSeconds = Number(response.headers.get("retry-after"));
-    await sleep(
-      Number.isFinite(retryAfterSeconds) && retryAfterSeconds > 0
-        ? Math.min(retryAfterSeconds, 20) * 1_000
-        : 2_000 * (attempt + 1),
-    );
-  }
+  if (eligible.length === 0) return [];
+
+  const hits = await searchWeb(
+    eligible.map((candidate) => `${candidate.brand} ${candidate.referenceCode}`),
+    deps,
+  );
+
+  const verified = await Promise.all(
+    eligible.map(async (candidate, order): Promise<VerifiedQuizWatch | null> => {
+      const reference = normalizeReference(candidate.referenceCode)!;
+      const urls = [
+        candidate.sourceHint,
+        ...hits
+          .filter((hit) =>
+            `${hit.url} ${hit.title} ${hit.snippet}`.toLowerCase().replace(/[^a-z0-9]/g, "").includes(reference),
+          )
+          .map((hit) => hit.url),
+      ].filter(
+        (url, index, all): url is string =>
+          url !== null && all.indexOf(url) === index && classifySource(url, candidate.brand) !== null,
+      );
+      for (const url of urls.slice(0, 2)) {
+        const page = await inspectSourcePage(url, candidate.referenceCode, deps.fetchImpl);
+        if (!page.referenceFound) continue;
+        return {
+          angle,
+          order,
+          watch: {
+            brand: candidate.brand,
+            model: candidate.model,
+            referenceCode: candidate.referenceCode,
+            sourceUrl: url,
+            imageUrl: await verifyImageUrl(page.imageUrl, deps.fetchImpl),
+            priceNote: candidate.price ? money(candidate.price.amount, candidate.price.currency) : null,
+            rationale: candidate.note ?? factsRationale(candidate),
+            details: {
+              price: candidate.price,
+              waterResistanceM: candidate.waterResistanceM,
+              caseDiameterMm: candidate.caseDiameterMm,
+              movement: candidate.movement,
+              materials: candidate.materials,
+              sourceKind: classifySource(url, candidate.brand)!,
+              referenceVerified: true,
+            },
+          },
+        };
+      }
+      counts.unverified_source = (counts.unverified_source ?? 0) + 1;
+      return null;
+    }),
+  );
+  return verified.filter((item): item is VerifiedQuizWatch => item !== null);
 }
 
-async function searchWatchesViaPerplexity(
-  query: string,
-  config: PerplexityConfig,
-  fetchImpl: typeof fetch,
-  sleep: (ms: number) => Promise<void>,
-): Promise<{ text: string; citations: string[]; images: SearchImage[] }> {
-  const response = await postToPerplexity(query, config, fetchImpl, sleep);
-  if (!response.ok) {
-    throw new Error(
-      `Perplexity returned ${response.status}: ${(await response.text()).slice(0, 300)}`,
-    );
+/** Round-robin across angles, so the shortlist mixes brands and styles. */
+function interleave(items: VerifiedQuizWatch[], limit: number) {
+  const byAngle = new Map<number, VerifiedQuizWatch[]>();
+  for (const item of [...items].sort((a, b) => a.order - b.order)) {
+    byAngle.set(item.angle, [...(byAngle.get(item.angle) ?? []), item]);
   }
-  const body = (await response.json()) as {
-    citations?: unknown;
-    images?: unknown;
-  };
-  const message = extractMessage(body);
-  const text = message.content;
-  if (typeof text !== "string" || text.length === 0) {
-    throw new Error("Perplexity response did not include message content.");
+  const angles = [...byAngle.keys()].sort((a, b) => a - b);
+  const result: FoundWatch[] = [];
+  const seen = new Set<string>();
+  for (let round = 0; result.length < limit; round += 1) {
+    let added = false;
+    for (const angle of angles) {
+      const item = byAngle.get(angle)![round];
+      if (!item) continue;
+      added = true;
+      const key = `${item.watch.brand}|${normalizeReference(item.watch.referenceCode)}`.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      result.push(item.watch);
+      if (result.length === limit) break;
+    }
+    if (!added) break;
   }
-  const citations = Array.isArray(body.citations)
-    ? body.citations.filter((value): value is string => typeof value === "string")
-    : [];
-  const images = Array.isArray(body.images)
-    ? body.images
-        .map((image) => {
-          const record = image as Record<string, unknown>;
-          const imageUrl = safeHttpUrl(
-            typeof record.image_url === "string" ? record.image_url : null,
-          );
-          const originUrl = safeHttpUrl(
-            typeof record.origin_url === "string" ? record.origin_url : null,
-          );
-          return imageUrl ? { imageUrl, originUrl } : null;
-        })
-        .filter((image): image is SearchImage => image !== null)
-        .slice(0, 12)
-    : [];
-  return { text, citations, images };
+  return result;
 }
 
-const MAX_TOOL_ROUNDS = 4;
-// Keeps one quiz inside Perplexity's per-minute rate limit.
-const MAX_SEARCHES_PER_BRIEF = 4;
-
-const defaultSleep = (ms: number) =>
-  new Promise<void>((resolve) => setTimeout(resolve, ms));
-
-/**
- * Muse Spark is required to call the Perplexity tool before it answers,
- * reviews the live results, and returns up to brief.maxWatches watches. Only
- * watches that name a brand and model and cite an http(s) source survive,
- * and an image URL is kept only if it really serves an image.
- */
-export async function findWatchesWithAi(
-  brief: WatchBrief,
-  config: AiWatchFinderConfig,
-  fetchImpl: typeof fetch = fetch,
-  sleep: (ms: number) => Promise<void> = defaultSleep,
-): Promise<FindWatchesResult> {
-  if (!config.museSpark) {
-    return { status: "unavailable", reason: "Muse Spark is not configured." };
+export async function searchQuizWatches(
+  profile: ProfileV4,
+  overrides: Partial<Deps> = {},
+  timing: { softMs: number; hardMs: number } = { softMs: 12_000, hardMs: 28_000 },
+): Promise<AiSearchOutcome> {
+  const deps = defaultDeps(overrides);
+  if (!deps.config.museSpark || !deps.config.perplexity) {
+    logError("ai_watch_search_unavailable", new Error("Muse Spark or Perplexity is not configured."));
+    return { status: "unavailable" };
   }
-  if (!config.perplexity) {
+  const lines = quizConstraintLines(profile);
+  const constraints = lines.map((line) => `- ${line}`).join("\n");
+  const fx = deps.loadFx();
+  const counts: Record<string, number> = {};
+
+  const museAngles = QUIZ_ANGLES.map((angleText, index) =>
+    runQuizAngle(
+      index,
+      async () => {
+        const payload = (await museJson(
+          QUIZ_PROPOSE_SYSTEM,
+          `Propose 5 candidates. ${angleText}\nConstraints:\n${constraints}`,
+          "reserve-quiz-propose-v1",
+          deps,
+          timing.hardMs,
+        )) as { candidates?: unknown };
+        return Array.isArray(payload.candidates) ? payload.candidates : [];
+      },
+      profile,
+      fx,
+      counts,
+      deps,
+    ),
+  );
+  // A live Perplexity angle catches recent releases the model may not know.
+  const liveAngle = runQuizAngle(
+    QUIZ_ANGLES.length,
+    async () => {
+      const payload = (await sonarJson(
+        [
+          "List up to 6 current-production wristwatches that meet EVERY constraint below, favouring recent releases.",
+          constraints,
+          "For each give the exact reference number, current new retail price with ISO currency, water resistance in metres, case diameter in mm, movement type, case, case-back and strap materials, the official manufacturer product page URL, and one sentence on why it fits. Use null for anything you cannot confirm.",
+        ].join("\n"),
+        sonarCandidateSchema,
+        deps,
+      )) as { candidates?: unknown };
+      return Array.isArray(payload.candidates) ? payload.candidates : [];
+    },
+    profile,
+    fx,
+    counts,
+    deps,
+  );
+
+  const verified = await collectUntilDeadline([...museAngles, liveAngle], {
+    softMs: timing.softMs,
+    hardMs: timing.hardMs,
+    enough: (items) => items.length >= 3,
+  });
+  const watches = interleave(verified, QUIZ_MAX_WATCHES);
+  console.info(
+    JSON.stringify({ event: "ai_quiz_guardrails", verified: verified.length, shown: watches.length, rejectedBy: counts }),
+  );
+
+  if (watches.length === 0) {
     return {
-      status: "unavailable",
-      reason: "Perplexity is not configured for the search tool Muse Spark requires.",
+      status: "no_match",
+      summary:
+        "No watch could be confirmed to meet every requirement with its reference on the manufacturer's or an authorised retailer's own page.",
     };
   }
-  const museSpark = config.museSpark;
-  const perplexity = config.perplexity;
-
-  const systemPrompt = [
-    "You are the watch researcher for The Reserve. You receive an anonymous search brief only; no personal or identifying data is available to you and none should be requested.",
-    "You MUST call the search_watches_via_perplexity tool before writing any other response; never answer, and never write JSON, on your first turn.",
-    "Only include watches the search results actually surfaced. Never invent a watch, reference code, price, or URL.",
-    "For each watch give: brand, model, referenceCode (null if unknown), sourceUrl (the page that supports it, preferably the manufacturer's), imageUrl (one of the imageUrl values the tool returned that shows this watch, or null), priceNote (e.g. 'about EUR 2,300 new', or null), and a one or two sentence rationale.",
-    "Treat every constraint as hard: a watch that breaks one must be left out, not explained away.",
-    "When you have searched enough, respond only with the requested JSON.",
-  ].join(" ");
-  const userPrompt = [brief.task, "", ...brief.lines].join("\n");
-
-  const messages: Record<string, unknown>[] = [
-    { role: "system", content: systemPrompt },
-    { role: "user", content: userPrompt },
-  ];
-
-  let sawToolCall = false;
-  let searchesRun = 0;
-  for (let round = 0; round < MAX_TOOL_ROUNDS; round += 1) {
-    // Meta's Model API only supports tool_choice: "auto"; forcing a named
-    // function (or "required") is rejected with a 400. The system prompt
-    // does the forcing, and sawToolCall hard-fails if that did not happen.
-    const response = await fetchImpl(new URL("chat/completions", museSpark.baseUrl), {
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${museSpark.apiKey}`,
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        model: museSpark.model,
-        messages,
-        tools: [PERPLEXITY_SEARCH_TOOL],
-        tool_choice: "auto",
-        ...(sawToolCall
-          ? {
-              response_format: {
-                type: "json_schema",
-                json_schema: {
-                  name: "WatchFind",
-                  schema: z.toJSONSchema(modelAnswerSchema, { target: "draft-7" }),
-                },
-              },
-            }
-          : {}),
-        // Muse Spark is a reasoning model: hidden reasoning tokens count
-        // against max_tokens before any visible content is written, so this
-        // must be generous or the response truncates with content: null.
-        max_tokens: 10_000,
-      }),
-      signal: AbortSignal.timeout(90_000),
-    });
-    if (!response.ok) {
-      throw new Error(
-        `Muse Spark returned ${response.status}: ${(await response.text()).slice(0, 300)}`,
-      );
-    }
-    const message = extractMessage(await response.json());
-    const toolCalls = message.tool_calls;
-
-    if (Array.isArray(toolCalls) && toolCalls.length > 0) {
-      sawToolCall = true;
-      messages.push(message);
-      // One at a time: a burst of parallel calls trips Perplexity's rate limit.
-      for (const toolCall of toolCalls) {
-        const call = toolCall as {
-          id: string;
-          function: { name: string; arguments: string };
-        };
-        let content: string;
-        if (searchesRun >= MAX_SEARCHES_PER_BRIEF) {
-          content = JSON.stringify({
-            error: "Search budget used up. Answer now with what earlier searches found.",
-          });
-        } else {
-          searchesRun += 1;
-          const args = parseJsonObject(call.function.arguments) as {
-            query?: unknown;
-          };
-          const query = typeof args.query === "string" ? args.query : userPrompt;
-          content = JSON.stringify(
-            await searchWatchesViaPerplexity(query, perplexity, fetchImpl, sleep),
-          );
-        }
-        messages.push({ role: "tool", tool_call_id: call.id, content });
-      }
-      continue;
-    }
-
-    if (!sawToolCall) {
-      throw new Error(
-        "Muse Spark answered without ever calling search_watches_via_perplexity, violating the required search-first instruction.",
-      );
-    }
-    const content = message.content;
-    if (typeof content !== "string" || content.length === 0) {
-      throw new Error("Muse Spark answered without a tool call and without content.");
-    }
-    const answer = modelAnswerSchema.parse(parseJsonObject(content));
-    const watches = answer.found
-      ? await finalizeWatches(answer.watches, brief.maxWatches, fetchImpl)
-      : [];
-    return watches.length > 0
-      ? { status: "found", watches, summary: answer.summary }
-      : { status: "no_match", summary: answer.summary };
-  }
-
-  throw new Error(
-    `Muse Spark did not produce a final answer within ${MAX_TOOL_ROUNDS} tool-calling rounds.`,
-  );
+  return {
+    status: "found",
+    watches,
+    summary: `${watches.length} ${watches.length === 1 ? "watch meets" : "watches meet"} every requirement, each confirmed on the manufacturer's or an authorised retailer's page.`,
+  };
 }
 
-/** What the browser receives: no internal error text, no upstream bodies. */
-export type AiSearchOutcome =
-  | { status: "found"; watches: FoundWatch[]; summary: string }
-  | { status: "no_match"; summary: string }
-  | { status: "unavailable" };
+// ---------------------------------------------------------------------------
+// Film, series, actor, character, and public-figure search
 
-export type AiSearchView =
-  | (Extract<AiSearchOutcome, { status: "found" }> & { fromCache: boolean })
-  | Exclude<AiSearchOutcome, { status: "found" }>;
+const filmCandidateSchema = {
+  type: "object",
+  properties: {
+    sightings: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          brand: { type: "string" },
+          model: { type: "string" },
+          referenceCode: { type: ["string", "null"] },
+          person: { type: ["string", "null"] },
+          work: { type: ["string", "null"] },
+          year: { type: ["number", "null"] },
+          context: { type: "string" },
+          evidenceUrl: { type: ["string", "null"] },
+          manufacturerUrl: { type: ["string", "null"] },
+        },
+        required: ["brand", "model", "context"],
+      },
+    },
+  },
+  required: ["sightings"],
+};
 
-export const AI_SEARCH_TIMEOUT_MS = 180_000;
+type FilmCandidate = {
+  brand: string;
+  model: string;
+  referenceCode: string | null;
+  person: string | null;
+  work: string | null;
+  year: number | null;
+  context: string;
+  evidenceUrl: string;
+  manufacturerUrl: string | null;
+};
 
-/**
- * Runs one brief without ever throwing: failures, missing configuration,
- * and timeouts are logged server-side and reach the page as "unavailable".
- */
-export async function runAiWatchSearch(
-  brief: WatchBrief,
-  {
-    config = loadAiWatchFinderConfig(),
-    timeoutMs = AI_SEARCH_TIMEOUT_MS,
-    fetchImpl = fetch,
-  }: {
-    config?: AiWatchFinderConfig;
-    timeoutMs?: number;
-    fetchImpl?: typeof fetch;
-  } = {},
+// Forums and social posts are not documentation.
+const WEAK_EVIDENCE_HOSTS = /(^|\.)(reddit\.com|quora\.com|pinterest\.[a-z.]+|facebook\.com|instagram\.com|tiktok\.com|x\.com|twitter\.com)$/;
+
+function readFilmCandidates(payload: unknown): FilmCandidate[] {
+  const sightings = (payload as { sightings?: unknown })?.sightings;
+  if (!Array.isArray(sightings)) return [];
+  return sightings.flatMap((raw) => {
+    const item = raw as Record<string, unknown>;
+    const brand = clean(item.brand);
+    const model = clean(item.model);
+    const evidenceUrl = safeHttpUrl(clean(item.evidenceUrl));
+    // A sighting without a named watch and a documenting page is never shown.
+    if (!brand || !model || !evidenceUrl || VAGUE.test(`${brand} ${model}`)) return [];
+    if (WEAK_EVIDENCE_HOSTS.test(new URL(evidenceUrl).hostname)) return [];
+    const year = finite(item.year);
+    return [
+      {
+        brand,
+        model,
+        referenceCode: clean(item.referenceCode),
+        person: clean(item.person),
+        work: clean(item.work),
+        year: year !== null && year > 1850 && year < 2100 ? Math.round(year) : null,
+        context: clean(item.context) ?? "",
+        evidenceUrl,
+        manufacturerUrl: safeHttpUrl(clean(item.manufacturerUrl)),
+      },
+    ];
+  });
+}
+
+function dedupeSightings(items: FilmCandidate[]) {
+  const seen = new Set<string>();
+  return items.filter((item) => {
+    const key = `${item.brand}|${item.referenceCode ?? item.model}|${item.person ?? ""}`
+      .toLowerCase()
+      .replace(/[^a-z0-9|]/g, "");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+export const FILM_MAX_WATCHES = 8;
+
+/** Lowercased, whitespace-collapsed subject: the film search cache input. */
+export function normalizeFilmQuery(query: string) {
+  return query.trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+function filmPrompts(subject: string) {
+  const intro = `The subject may be a film, TV series, actor, fictional character, or public figure: "${subject}".`;
+  const ask =
+    "For each watch give the brand, model, exact reference number if documented, who wore it (person), the film or series title (work) if any, the year, one sentence of context (scene or occasion), a URL of a page that documents the sighting (evidenceUrl), and the official manufacturer product page URL if one exists (manufacturerUrl). Use null for anything you cannot confirm. Never invent a sighting.";
+  return [
+    `${intro} Which specific wristwatches are worn on screen in it, or by this person or character on screen? ${ask}`,
+    `${intro} Which specific wristwatches has this person worn in public, owned, or promoted as a brand ambassador? If the subject is a film or series, which watches are tied to it through official partnerships or its cast? ${ask}`,
+    `${intro} Which watch sightings connected to it are documented by watch-identification sites and publications (for example watchesinmovies.info, Hodinkee, Esquire, GQ)? ${ask}`,
+  ];
+}
+
+const FILM_RANK_SYSTEM = [
+  "You are the film and culture editor of The Reserve.",
+  "You receive a search subject (a film, series, actor, character, or public figure) and a JSON list of documented watch sightings gathered from web searches.",
+  "Merge duplicates of the same watch and moment, drop sightings the evidence does not support, and rank the rest by how notable and well documented they are.",
+  "For each kept sighting write one sentence of context naming who wore it, where, and when, using only the facts provided.",
+  'Respond only with JSON: {"order":[{"index","note"}],"summary"}.',
+].join(" ");
+
+const rankSchema = z.object({
+  order: z.array(z.object({ index: z.number().int().nonnegative(), note: z.string() })),
+  summary: z.string(),
+});
+
+async function firstImage(urls: (string | null)[], reference: string | null, deps: Deps) {
+  for (const url of urls) {
+    if (!url) continue;
+    const page = await inspectSourcePage(url, reference, deps.fetchImpl);
+    const image = await verifyImageUrl(page.imageUrl, deps.fetchImpl);
+    if (image) return image;
+  }
+  return null;
+}
+
+function withTimeout<T>(promise: Promise<T>, ms: number, fallback: T): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<T>((resolve) => setTimeout(() => resolve(fallback), ms)),
+  ]);
+}
+
+export async function searchFilmWatches(
+  query: string,
+  overrides: Partial<Deps> = {},
+): Promise<AiSearchOutcome> {
+  const deps = defaultDeps(overrides);
+  if (!deps.config.museSpark || !deps.config.perplexity) {
+    logError("ai_watch_search_unavailable", new Error("Muse Spark or Perplexity is not configured."));
+    return { status: "unavailable" };
+  }
+  const subject = query.trim().replace(/\s+/g, " ").slice(0, 160);
+
+  // Stage 1: three live angles at once.
+  const settled = await Promise.allSettled(
+    filmPrompts(subject).map((prompt) => sonarJson(prompt, filmCandidateSchema, deps)),
+  );
+  if (settled.every((result) => result.status === "rejected")) {
+    throw new Error("Every film search angle failed.");
+  }
+  const candidates = dedupeSightings(
+    settled.flatMap((result) =>
+      result.status === "fulfilled" ? readFilmCandidates(result.value) : [],
+    ),
+  ).slice(0, 16);
+  if (candidates.length === 0) {
+    return { status: "no_match", summary: `No documented watch sightings were found for "${subject}".` };
+  }
+
+  // Stage 2: Muse Spark merges and ranks while photos are fetched; the photo
+  // stage has its own budget so one slow site cannot hold the answer back.
+  const pageImages = new Map<string, Promise<string | null>>();
+  const imageFor = (candidate: FilmCandidate) => {
+    const key = `${candidate.manufacturerUrl}|${candidate.evidenceUrl}`;
+    if (!pageImages.has(key)) {
+      pageImages.set(
+        key,
+        firstImage([candidate.manufacturerUrl, candidate.evidenceUrl], candidate.referenceCode, deps),
+      );
+    }
+    return pageImages.get(key)!;
+  };
+  const [ranking, images] = await Promise.all([
+    museJson(
+      FILM_RANK_SYSTEM,
+      [
+        `Subject: ${subject}`,
+        "",
+        "Sightings:",
+        JSON.stringify(
+          candidates.map((candidate, index) => ({
+            index,
+            brand: candidate.brand,
+            model: candidate.model,
+            reference: candidate.referenceCode,
+            person: candidate.person,
+            work: candidate.work,
+            year: candidate.year,
+            context: candidate.context,
+            evidence: candidate.evidenceUrl,
+          })),
+        ),
+      ].join("\n"),
+      "reserve-film-rank-v1",
+      deps,
+      15_000,
+    )
+      .then((payload) => rankSchema.parse(payload))
+      .catch((error: unknown) => {
+        logError("ai_rank_failed", error);
+        return null;
+      }),
+    withTimeout(
+      Promise.all(candidates.map(imageFor)),
+      8_000,
+      candidates.map(() => null),
+    ),
+  ]);
+
+  const order = ranking
+    ? ranking.order.filter((entry) => entry.index < candidates.length)
+    : candidates.map((candidate, index) => ({ index, note: candidate.context }));
+  const used = new Set<number>();
+  const watches: FoundWatch[] = [];
+  for (const entry of order) {
+    if (used.has(entry.index)) continue;
+    used.add(entry.index);
+    const candidate = candidates[entry.index]!;
+    watches.push({
+      brand: candidate.brand,
+      model: candidate.model,
+      referenceCode: candidate.referenceCode,
+      sourceUrl: candidate.evidenceUrl,
+      imageUrl: images[entry.index] ?? null,
+      priceNote: null,
+      rationale: entry.note.trim() || candidate.context,
+      details: {
+        person: candidate.person,
+        work: candidate.work,
+        year: candidate.year,
+        context: candidate.context,
+        evidenceUrl: candidate.evidenceUrl,
+      },
+    });
+    if (watches.length === FILM_MAX_WATCHES) break;
+  }
+  if (watches.length === 0) {
+    return { status: "no_match", summary: `No documented watch sightings were found for "${subject}".` };
+  }
+  return {
+    status: "found",
+    watches,
+    summary: ranking?.summary?.trim() || `${watches.length} documented watch sightings.`,
+  };
+}
+
+// ---------------------------------------------------------------------------
+
+export const AI_SEARCH_TIMEOUT_MS = 35_000;
+
+/** Never throws: failures and timeouts are logged and become "unavailable". */
+export async function runSafely(
+  search: () => Promise<AiSearchOutcome>,
+  timeoutMs = AI_SEARCH_TIMEOUT_MS,
 ): Promise<AiSearchOutcome> {
   let timer: ReturnType<typeof setTimeout> | undefined;
   try {
-    const result = await Promise.race([
-      findWatchesWithAi(brief, config, fetchImpl),
+    return await Promise.race([
+      search(),
       new Promise<never>((_, reject) => {
         timer = setTimeout(
           () => reject(new Error(`AI watch search exceeded ${timeoutMs} ms.`)),
@@ -552,18 +1024,8 @@ export async function runAiWatchSearch(
         );
       }),
     ]);
-    if (result.status !== "unavailable") return result;
-    console.error(
-      JSON.stringify({ event: "ai_watch_search_unavailable", reason: result.reason }),
-    );
-    return { status: "unavailable" };
   } catch (error) {
-    console.error(
-      JSON.stringify({
-        event: "ai_watch_search_error",
-        message: error instanceof Error ? error.message : "unknown error",
-      }),
-    );
+    logError("ai_watch_search_error", error);
     return { status: "unavailable" };
   } finally {
     clearTimeout(timer);

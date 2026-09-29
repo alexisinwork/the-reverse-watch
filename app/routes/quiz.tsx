@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   data,
   Form,
@@ -13,88 +13,93 @@ import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
 import {
-  quizBrief,
+  ChoiceGroup,
+  NumberField,
+  OptionalChoice,
+  OptionCheckboxGroup,
+} from "../components/quiz-fields";
+import { WatchResults } from "../components/watch-results";
+import {
   quizCacheInput,
-  type AiSearchView,
-  type FoundWatch,
+  searchQuizWatches,
 } from "../domain/ai-watch-finder.server";
 import { searchWithStore } from "../domain/ai-watch-store.server";
+import type { AiSearchView } from "../domain/ai-watch-types";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
-import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import type { VocabularyKind } from "../domain/catalogue-vocabulary";
 import { loadCatalogueVocabulary } from "../domain/catalogue-vocabulary.server";
+import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
 import {
   explainStoryConstraint,
   parseDiscoveryStorySlug,
 } from "../domain/discovery-context.server";
-import { loadPublishedDiscoveryStoryContext } from "../domain/discovery-store.server";
 import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
+import { loadPublishedDiscoveryStoryContext } from "../domain/discovery-store.server";
+import { renderDossierEmail } from "../domain/dossier-email";
 import {
   createEmailDeliveryDeduplicationClient,
   emailDeliveryDeduplicationKey,
 } from "../domain/email-deduplication.server";
-import { CURRENCIES } from "../domain/questionnaire";
+import { summarizeEmailDelivery, type DeliveryChannelStatus } from "../domain/email-delivery";
+import { loadFxTable } from "../domain/fx.server";
+import { parseBeehiivConfiguration, subscribeToBeehiiv } from "../domain/beehiiv.server";
 import {
   ALLERGY_CONSTRAINTS_V3,
   CRYSTAL_CHOICES,
   MOVEMENT_CONSTRUCTIONS,
   MOVEMENT_TYPE_CHOICES,
-  normalizeProfileV3,
-  profileV3Schema,
-  QUESTIONNAIRE_V3_STORAGE_KEY,
-  QUESTIONNAIRE_V3_VERSION,
   WATER_RESISTANCE_MINIMUMS,
 } from "../domain/questionnaire-v3";
-import { CASE_SHAPES } from "../domain/sheet-intake";
-import type { CaseShape } from "../domain/sheet-intake";
 import {
-  parseBeehiivConfiguration,
-  subscribeToBeehiiv,
-} from "../domain/beehiiv.server";
-import { renderDossierEmail } from "../domain/dossier-email";
-import {
-  summarizeEmailDelivery,
-  type DeliveryChannelStatus,
-} from "../domain/email-delivery";
-import {
-  parseResendConfiguration,
-  sendDossierWithResend,
-} from "../domain/resend.server";
+  BUDGET_CURRENCIES,
+  caseDiameterForWrist,
+  findPriceRange,
+  PRICE_RANGES,
+  priceRangeLabel,
+  profileV4Schema,
+  QUESTIONNAIRE_V4_STORAGE_KEY,
+  QUESTIONNAIRE_V4_VERSION,
+  WRIST_CM_MAX,
+  WRIST_CM_MIN,
+  type BudgetCurrency,
+  type ProfileV4,
+} from "../domain/questionnaire-v4";
+import { parseResendConfiguration, sendDossierWithResend } from "../domain/resend.server";
 import {
   consumeRateLimit,
   parseRateLimitPolicy,
+  type RateLimitDecision,
 } from "../domain/rate-limit.server";
-import type { RateLimitDecision } from "../domain/rate-limit.server";
 import {
   consumeUpstashRateLimit,
   createUpstashRateLimitClient,
   parseUpstashRateLimitConfiguration,
 } from "../domain/rate-limit-upstash.server";
+import { CASE_SHAPES, type CaseShape } from "../domain/sheet-intake";
 import "../styles/quiz.css";
 
 const SCREEN_COUNT = 6;
 const SUMMARY_STEP = SCREEN_COUNT;
 
-/**
- * The version-3 flow submits one complete profile, so every submission is a
- * qualified recommendation for the funnel counters.
- */
+/** Every submission is one complete profile: a qualified evaluation. */
 const SUBMISSION_INTENT = "core" as const;
+
+type StoryExplanation = ReturnType<typeof explainStoryConstraint>;
 
 type ActionResult =
   | {
       ok: true;
-      intent: typeof SUBMISSION_INTENT;
-      profile: ReturnType<typeof normalizeProfileV3>;
-      aiSearch: AiSearchView;
+      profile: ProfileV4;
+      /** Streamed: the page renders before the search has finished. */
+      aiSearch: Promise<AiSearchView> | AiSearchView;
       subscription: SubscriptionResult;
       storyContext?: {
         storySlug: string;
         headline: string;
         entityName: string;
         workTitle: string | null;
-        explanation: ReturnType<typeof explainStoryConstraint>;
+        explanation: Promise<StoryExplanation> | StoryExplanation;
       };
     }
   | { ok: false; errors: string[] };
@@ -107,19 +112,13 @@ type SubscriptionResult =
       dossierStatus: "not_requested";
     }
   | {
-      status:
-        "sent" | "partial" | "unavailable" | "failed" | "already_requested";
+      status: "sent" | "partial" | "unavailable" | "failed" | "already_requested";
       message: string;
       newsletterStatus: DeliveryChannelStatus;
       dossierStatus: DeliveryChannelStatus;
     };
 
 type VocabularyOption = { slug: string; labelEn: string };
-
-type QuizLoaderData = {
-  scenarios: VocabularyOption[];
-  complications: VocabularyOption[];
-};
 
 const emailSchema = z.string().trim().email().max(320);
 
@@ -128,7 +127,7 @@ const LABELS: Record<string, string> = {
   manual: "Hand-wound",
   quartz: "Quartz",
   solar: "Solar",
-  spring_drive: "Spring drive",
+  spring_drive: "Spring Drive",
   hybrid: "Hybrid",
   mass_produced: "Widely produced calibre",
   manufacture: "In-house calibre",
@@ -142,24 +141,12 @@ const LABELS: Record<string, string> = {
   cushion: "Cushion",
   square: "Square",
   oval: "Oval",
-  none: "No allergy constraint",
-  nickel_contact: "Avoid skin-contact nickel",
-  under_300: "Under 300",
-  "300_500": "300–500",
-  "500_1000": "500–1,000",
-  "1000_2000": "1,000–2,000",
-  "2000_5000": "2,000–5,000",
-  "5000_10000": "5,000–10,000",
-  "10000_15000": "10,000–15,000",
-  "15000_plus": "15,000+",
+  none: "No allergy",
+  nickel_contact: "Nickel allergy: no steel on skin",
 };
 
 function labelFor(value: string) {
   return LABELS[value] ?? value.replaceAll("_", " ");
-}
-
-function waterResistanceLabel(metres: number) {
-  return metres === 0 ? "No requirement" : `${metres} m or deeper`;
 }
 
 function issueMessages(error: { issues: { message: string }[] }) {
@@ -191,21 +178,16 @@ function parseEmailOptIn(formData: FormData) {
 function rateLimitKey(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for");
   const address =
-    forwarded?.split(",", 1)[0]?.trim() ||
-    request.headers.get("x-real-ip")?.trim() ||
-    "unknown";
+    forwarded?.split(",", 1)[0]?.trim() || request.headers.get("x-real-ip")?.trim() || "unknown";
   return `quiz:${address}`;
 }
 
-function rateLimitHeaders(decision: ReturnType<typeof consumeRateLimit>) {
+function rateLimitHeaders(decision: RateLimitDecision) {
   const headers = new Headers();
   if (decision.limit !== null) {
     headers.set("X-RateLimit-Limit", String(decision.limit));
     headers.set("X-RateLimit-Remaining", String(decision.remaining));
-    headers.set(
-      "X-RateLimit-Reset",
-      String(Math.ceil((decision.resetAt ?? Date.now()) / 1_000)),
-    );
+    headers.set("X-RateLimit-Reset", String(Math.ceil((decision.resetAt ?? Date.now()) / 1_000)));
   }
   if (decision.retryAfterSeconds !== null) {
     headers.set("Retry-After", String(decision.retryAfterSeconds));
@@ -213,11 +195,7 @@ function rateLimitHeaders(decision: ReturnType<typeof consumeRateLimit>) {
   return headers;
 }
 
-/**
- * The version-3 questionnaire posts flat form fields rather than a serialised
- * blob, so an unchecked box is simply an absent field and an unset optional
- * preference is an empty string.
- */
+/** Flat form fields: an unchecked box is an absent field, an unset preference "". */
 function parseProfileForm(formData: FormData) {
   const single = (name: string) => {
     const value = formData.get(name);
@@ -229,20 +207,17 @@ function parseProfileForm(formData: FormData) {
       .filter((value): value is string => typeof value === "string")
       .map((value) => value.trim())
       .filter((value) => value.length > 0);
-  const optionalNumber = (raw: string) =>
-    raw === "" ? undefined : Number(raw);
-  const optionalBoolean = (raw: string) =>
-    raw === "" ? undefined : raw === "yes";
+  const optionalNumber = (raw: string) => (raw === "" ? undefined : Number(raw));
+  const optionalBoolean = (raw: string) => (raw === "" ? undefined : raw === "yes");
   const optionalText = (raw: string) => (raw === "" ? undefined : raw);
 
   return {
     version: Number(single("version")),
     budgetCurrency: single("budgetCurrency"),
-    budgetMax: Number(single("budgetMax")),
+    priceRange: single("priceRange"),
+    wristCm: Number(single("wristCm")),
     wearingScenarios: multiple("wearingScenarios"),
     minimumWaterResistanceM: Number(single("minimumWaterResistanceM")),
-    caseDiameterMinMm: Number(single("caseDiameterMinMm")),
-    caseDiameterMaxMm: Number(single("caseDiameterMaxMm")),
     movementTypes: multiple("movementTypes"),
     requiredComplications: multiple("requiredComplications"),
     allergyConstraint: single("allergyConstraint"),
@@ -254,41 +229,110 @@ function parseProfileForm(formData: FormData) {
     microAdjustmentRequired: optionalBoolean(single("microAdjustmentRequired")),
   };
 }
+
+function logError(event: string, error: unknown) {
+  console.error(
+    JSON.stringify({ event, message: error instanceof Error ? error.message : "unknown error" }),
+  );
+}
+
+async function deliverEmail(
+  email: string,
+  profile: ProfileV4,
+  aiSearch: AiSearchView,
+): Promise<SubscriptionResult> {
+  const beehiivConfiguration = parseBeehiivConfiguration();
+  const resendConfiguration = parseResendConfiguration();
+  const upstashConfiguration = parseUpstashRateLimitConfiguration();
+  const dossier = renderDossierEmail({ profile, aiSearch });
+  const deduplicationClient =
+    upstashConfiguration.configured &&
+    (beehiivConfiguration.configured || resendConfiguration.configured)
+      ? createEmailDeliveryDeduplicationClient(upstashConfiguration)
+      : null;
+
+  const deliver = async (
+    channel: "newsletter" | "dossier",
+    send: () => Promise<unknown>,
+  ): Promise<DeliveryChannelStatus> => {
+    const key = deduplicationClient
+      ? emailDeliveryDeduplicationKey({ channel, email, intent: SUBMISSION_INTENT, profile })
+      : null;
+    if (!deduplicationClient || !key) {
+      await send();
+      return "sent";
+    }
+    let claimed: boolean;
+    try {
+      claimed = await deduplicationClient.claim(key);
+    } catch (error) {
+      logError("email_deduplication_error", error);
+      return "failed";
+    }
+    if (!claimed) return "already_requested";
+    try {
+      await send();
+      return "sent";
+    } catch (error) {
+      try {
+        await deduplicationClient.release(key);
+      } catch (releaseError) {
+        logError("email_deduplication_error", releaseError);
+      }
+      throw error;
+    }
+  };
+
+  let newsletterStatus: DeliveryChannelStatus = beehiivConfiguration.configured
+    ? "failed"
+    : beehiivConfiguration.reason === "invalid"
+      ? "misconfigured"
+      : "unavailable";
+  let dossierStatus: DeliveryChannelStatus = resendConfiguration.configured
+    ? "failed"
+    : resendConfiguration.reason === "invalid"
+      ? "misconfigured"
+      : "unavailable";
+  if (beehiivConfiguration.configured) {
+    try {
+      newsletterStatus = await deliver("newsletter", () =>
+        subscribeToBeehiiv(email, beehiivConfiguration),
+      );
+    } catch (error) {
+      logError("beehiiv_subscription_error", error);
+    }
+  }
+  if (resendConfiguration.configured) {
+    try {
+      dossierStatus = await deliver("dossier", () =>
+        sendDossierWithResend(email, dossier, resendConfiguration),
+      );
+    } catch (error) {
+      logError("resend_dossier_error", error);
+    }
+  }
+  return summarizeEmailDelivery(newsletterStatus, dossierStatus);
+}
+
 export async function action({ request }: Route.ActionArgs) {
   if (!(await hasDiagnosticAccess(request))) {
     return data<ActionResult>(
-      {
-        ok: false,
-        errors: ["Subscribe to The Reserve before starting the diagnostic."],
-      },
+      { ok: false, errors: ["Subscribe to The Reserve before starting the diagnostic."] },
       { status: 403 },
     );
   }
 
   const rateLimitPolicy = parseRateLimitPolicy();
   const upstashConfiguration = parseUpstashRateLimitConfiguration();
-  if (!rateLimitPolicy.configured && rateLimitPolicy.reason === "invalid") {
-    return data<ActionResult>(
-      {
-        ok: false,
-        errors: ["The diagnostic is temporarily unavailable. Try again later."],
-      },
+  const unavailable = () =>
+    data<ActionResult>(
+      { ok: false, errors: ["The diagnostic is temporarily unavailable. Try again later."] },
       { status: 503 },
     );
+  if (!rateLimitPolicy.configured && rateLimitPolicy.reason === "invalid") return unavailable();
+  if (!upstashConfiguration.configured && upstashConfiguration.reason === "invalid") {
+    return unavailable();
   }
-  if (
-    !upstashConfiguration.configured &&
-    upstashConfiguration.reason === "invalid"
-  ) {
-    return data<ActionResult>(
-      {
-        ok: false,
-        errors: ["The diagnostic is temporarily unavailable. Try again later."],
-      },
-      { status: 503 },
-    );
-  }
-
   const key = rateLimitKey(request);
   let rateLimitDecision: RateLimitDecision;
   if (rateLimitPolicy.configured && upstashConfiguration.configured) {
@@ -298,39 +342,21 @@ export async function action({ request }: Route.ActionArgs) {
         key,
       );
     } catch (error) {
-      console.error(
-        JSON.stringify({
-          event: "rate_limit_error",
-          message: error instanceof Error ? error.message : "unknown error",
-        }),
-      );
-      return data<ActionResult>(
-        {
-          ok: false,
-          errors: [
-            "The diagnostic is temporarily unavailable. Try again later.",
-          ],
-        },
-        { status: 503 },
-      );
+      logError("rate_limit_error", error);
+      return unavailable();
     }
   } else {
     rateLimitDecision = consumeRateLimit(key, rateLimitPolicy);
   }
   if (!rateLimitDecision.allowed) {
     return data<ActionResult>(
-      {
-        ok: false,
-        errors: ["Too many diagnostic attempts. Please try again shortly."],
-      },
+      { ok: false, errors: ["Too many diagnostic attempts. Please try again shortly."] },
       { status: 429, headers: rateLimitHeaders(rateLimitDecision) },
     );
   }
 
   const formData = await request.formData();
-  const storySlugResult = parseDiscoveryStorySlug(
-    new URL(request.url).searchParams.get("story"),
-  );
+  const storySlugResult = parseDiscoveryStorySlug(new URL(request.url).searchParams.get("story"));
   if (storySlugResult.status === "invalid") {
     return data<ActionResult>(
       { ok: false, errors: ["The discovery story context is invalid."] },
@@ -338,9 +364,7 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
   const emailOptIn = parseEmailOptIn(formData);
-  const intent = SUBMISSION_INTENT;
   const funnelSource = formData.get("funnelSource");
-
   if (funnelSource !== null && funnelSource !== "archetype") {
     return data<ActionResult>(
       { ok: false, errors: ["The diagnostic source is invalid."] },
@@ -348,15 +372,12 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
 
-  const parsed = profileV3Schema.safeParse(parseProfileForm(formData));
+  const parsed = profileV4Schema.safeParse(parseProfileForm(formData));
   if (!parsed.success) {
-    return data<ActionResult>(
-      { ok: false, errors: issueMessages(parsed.error) },
-      { status: 400 },
-    );
+    return data<ActionResult>({ ok: false, errors: issueMessages(parsed.error) }, { status: 400 });
   }
+  const profile = parsed.data;
 
-  const profile = normalizeProfileV3(parsed.data);
   const discoveryContext = storySlugResult.slug
     ? await loadPublishedDiscoveryStoryContext(storySlugResult.slug)
     : null;
@@ -366,26 +387,38 @@ export async function action({ request }: Route.ActionArgs) {
       { status: 400 },
     );
   }
-  const evaluationStartedAt = performance.now();
-  // Only the validated constraint profile goes to the AI search; the email
+
+  const startedAt = performance.now();
+  // Only the validated constraint profile reaches the AI search; the email
   // field and every request header stay on this server.
-  const aiSearch = await searchWithStore({
+  const search = searchWithStore({
     kind: "quiz",
-    cacheInput: quizCacheInput(parsed.data),
-    brief: quizBrief(parsed.data),
+    cacheInput: quizCacheInput(profile),
+    run: () => searchQuizWatches(profile),
   });
-  const evaluationDurationMs = Number(
-    (performance.now() - evaluationStartedAt).toFixed(2),
-  );
-  const foundWatches = aiSearch.status === "found" ? aiSearch.watches : [];
-  const resultOrigin =
-    aiSearch.status === "found" && aiSearch.fromCache ? "supabase" : "ai_search";
+
+  if (funnelSource === "archetype") {
+    const events = [
+      { name: "qualified_recommendation" as const },
+      ...(emailOptIn.email ? [{ name: "opt_in" as const }] : []),
+    ];
+    for (const event of events) {
+      try {
+        await persistDiscoveryFunnelEvent(event);
+      } catch (error) {
+        logError("discovery_funnel_persistence_error", error);
+      }
+    }
+  }
+
   let subscription: SubscriptionResult = {
     status: "not_requested",
     message: "Results are available without email.",
     newsletterStatus: "not_requested",
     dossierStatus: "not_requested",
   };
+
+  let aiSearch: Promise<AiSearchView> | AiSearchView;
   if ("error" in emailOptIn) {
     subscription = {
       status: "failed",
@@ -393,160 +426,38 @@ export async function action({ request }: Route.ActionArgs) {
       newsletterStatus: "failed",
       dossierStatus: "failed",
     };
+    aiSearch = search;
   } else if (emailOptIn.email !== null) {
-    const beehiivConfiguration = parseBeehiivConfiguration();
-    const resendConfiguration = parseResendConfiguration();
-    const dossier = renderDossierEmail({ profile, aiSearch });
-    const deduplicationClient =
-      upstashConfiguration.configured &&
-      (beehiivConfiguration.configured || resendConfiguration.configured)
-        ? createEmailDeliveryDeduplicationClient(upstashConfiguration)
-        : null;
-    const deliver = async (
-      channel: "newsletter" | "dossier",
-      send: () => Promise<unknown>,
-    ): Promise<DeliveryChannelStatus> => {
-      const key = deduplicationClient
-        ? emailDeliveryDeduplicationKey({
-            channel,
-            email: emailOptIn.email,
-            intent,
-            profile,
-          })
-        : null;
-      if (!deduplicationClient || !key) {
-        await send();
-        return "sent";
-      }
-
-      let claimed: boolean;
-      try {
-        claimed = await deduplicationClient.claim(key);
-      } catch (error) {
-        console.error(
-          JSON.stringify({
-            event: "email_deduplication_error",
-            channel,
-            operation: "claim",
-            message: error instanceof Error ? error.message : "unknown error",
-          }),
-        );
-        return "failed";
-      }
-      if (!claimed) return "already_requested";
-
-      try {
-        await send();
-        return "sent";
-      } catch (error) {
-        try {
-          await deduplicationClient.release(key);
-        } catch (releaseError) {
-          console.error(
-            JSON.stringify({
-              event: "email_deduplication_error",
-              channel,
-              operation: "release",
-              message:
-                releaseError instanceof Error
-                  ? releaseError.message
-                  : "unknown error",
-            }),
-          );
-        }
-        throw error;
-      }
-    };
-    let newsletterStatus: DeliveryChannelStatus =
-      beehiivConfiguration.configured
-        ? "failed"
-        : beehiivConfiguration.reason === "invalid"
-          ? "misconfigured"
-          : "unavailable";
-    let dossierStatus: DeliveryChannelStatus = resendConfiguration.configured
-      ? "failed"
-      : resendConfiguration.reason === "invalid"
-        ? "misconfigured"
-        : "unavailable";
-    if (beehiivConfiguration.configured) {
-      try {
-        newsletterStatus = await deliver("newsletter", () =>
-          subscribeToBeehiiv(emailOptIn.email, beehiivConfiguration),
-        );
-      } catch (error) {
-        console.error(
-          JSON.stringify({
-            event: "beehiiv_subscription_error",
-            message: error instanceof Error ? error.message : "unknown error",
-          }),
-        );
-      }
-    }
-    if (resendConfiguration.configured) {
-      try {
-        dossierStatus = await deliver("dossier", () =>
-          sendDossierWithResend(emailOptIn.email, dossier, resendConfiguration),
-        );
-      } catch (error) {
-        console.error(
-          JSON.stringify({
-            event: "resend_dossier_error",
-            message: error instanceof Error ? error.message : "unknown error",
-          }),
-        );
-      }
-    }
-    const summary = summarizeEmailDelivery(newsletterStatus, dossierStatus);
-    subscription = {
-      ...summary,
-    };
-  }
-
-  if (subscription.status === "not_requested") {
-    await recordQuizAnalyticsEvent({
-      name: "evaluation",
-      intent,
-      catalogueOrigin: resultOrigin,
-      recommendationCount: foundWatches.length,
-      verificationCount: 0,
-      whyNotCount: 0,
-      hardFilterViolationCount: 0,
-      evaluationDurationMs,
-      providerCostUsd: 0,
-      topRecommendationScore: null,
-      meanRecommendationScore: null,
-    });
-  } else {
+    // The dossier needs the finished shortlist; by now it is normally stored.
+    aiSearch = await search;
+    subscription = await deliverEmail(emailOptIn.email, profile, aiSearch);
     await recordQuizAnalyticsEvent({
       name: "subscription",
-      intent,
-      catalogueOrigin: resultOrigin,
+      intent: SUBMISSION_INTENT,
+      catalogueOrigin: aiSearch.status === "found" && aiSearch.fromCache ? "supabase" : "ai_search",
       status: subscription.status,
     });
-  }
-
-  if (funnelSource === "archetype") {
-    const discoveryEvents = [
-      { name: "qualified_recommendation" as const },
-      ...(emailOptIn.email ? [{ name: "opt_in" as const }] : []),
-    ];
-    for (const event of discoveryEvents) {
-      try {
-        await persistDiscoveryFunnelEvent(event);
-      } catch (error) {
-        console.error(
-          JSON.stringify({
-            event: "discovery_funnel_persistence_error",
-            message: error instanceof Error ? error.message : "unknown error",
-          }),
-        );
-      }
-    }
+  } else {
+    aiSearch = search.then(async (result) => {
+      await recordQuizAnalyticsEvent({
+        name: "evaluation",
+        intent: SUBMISSION_INTENT,
+        catalogueOrigin: result.status === "found" && result.fromCache ? "supabase" : "ai_search",
+        recommendationCount: result.status === "found" ? result.watches.length : 0,
+        verificationCount: 0,
+        whyNotCount: 0,
+        hardFilterViolationCount: 0,
+        evaluationDurationMs: Number((performance.now() - startedAt).toFixed(2)),
+        providerCostUsd: 0,
+        topRecommendationScore: null,
+        meanRecommendationScore: null,
+      });
+      return result;
+    });
   }
 
   const result: Extract<ActionResult, { ok: true }> = {
     ok: true,
-    intent,
     profile,
     aiSearch,
     subscription,
@@ -557,34 +468,29 @@ export async function action({ request }: Route.ActionArgs) {
             headline: discoveryContext.story.headline,
             entityName: discoveryContext.story.entity.name,
             workTitle: discoveryContext.story.work?.title ?? null,
-            explanation: explainStoryConstraint(
-              discoveryContext.story,
-              foundWatches,
+            explanation: Promise.resolve(aiSearch).then((resolved) =>
+              explainStoryConstraint(
+                discoveryContext.story,
+                resolved.status === "found" ? resolved.watches : [],
+              ),
             ),
           },
         }
       : {}),
   };
-  return data<ActionResult>(
-    result,
-    "error" in emailOptIn ? { status: 400 } : undefined,
-  );
+  return data<ActionResult>(result, "error" in emailOptIn ? { status: 400 } : undefined);
 }
 
 export async function loader({ request }: Route.LoaderArgs) {
   if (!(await hasDiagnosticAccess(request))) {
-    const storyContext = parseDiscoveryStorySlug(
-      new URL(request.url).searchParams.get("story"),
-    );
+    const storyContext = parseDiscoveryStorySlug(new URL(request.url).searchParams.get("story"));
     const storyQuery =
-      storyContext.status === "valid"
-        ? `&story=${encodeURIComponent(storyContext.slug)}`
-        : "";
+      storyContext.status === "valid" ? `&story=${encodeURIComponent(storyContext.slug)}` : "";
     return redirect(`/?diagnostic=subscription${storyQuery}#newsletter-signup`);
   }
 
-  const vocabulary = await loadCatalogueVocabulary();
-  const options = (kind: VocabularyKind) =>
+  const [vocabulary, fx] = await Promise.all([loadCatalogueVocabulary(), loadFxTable()]);
+  const options = (kind: VocabularyKind): VocabularyOption[] =>
     vocabulary
       .filter((row) => row.kind === kind && row.active)
       .map((row) => ({ slug: row.slug, labelEn: row.labelEn }));
@@ -592,7 +498,8 @@ export async function loader({ request }: Route.LoaderArgs) {
   return {
     scenarios: options("wearing_scenario"),
     complications: options("complication"),
-  } satisfies QuizLoaderData;
+    fx,
+  };
 }
 
 export function meta(): ReturnType<Route.MetaFunction> {
@@ -600,19 +507,18 @@ export function meta(): ReturnType<Route.MetaFunction> {
     { title: "Watch Diagnostic · The Reserve" },
     {
       name: "description",
-      content:
-        "Define the physical, financial, and operational constraints for your next watch.",
+      content: "Six quick answers, then a shortlist of watches confirmed on their makers' own pages.",
     },
   ];
 }
 
 type QuizDraft = {
-  budgetCurrency: (typeof CURRENCIES)[number];
-  budgetMax: string;
+  budgetCurrency: BudgetCurrency;
+  priceRange: string;
+  wristValue: string;
+  wristUnit: "cm" | "in";
   wearingScenarios: string[];
   minimumWaterResistanceM: string;
-  caseDiameterMinMm: string;
-  caseDiameterMaxMm: string;
   movementTypes: string[];
   requiredComplications: string[];
   allergyConstraint: (typeof ALLERGY_CONSTRAINTS_V3)[number];
@@ -626,11 +532,11 @@ type QuizDraft = {
 
 const INITIAL_DRAFT: QuizDraft = {
   budgetCurrency: "USD",
-  budgetMax: "",
+  priceRange: "",
+  wristValue: "",
+  wristUnit: "cm",
   wearingScenarios: [],
   minimumWaterResistanceM: "0",
-  caseDiameterMinMm: "36",
-  caseDiameterMaxMm: "42",
   movementTypes: [],
   requiredComplications: [],
   allergyConstraint: "none",
@@ -642,72 +548,53 @@ const INITIAL_DRAFT: QuizDraft = {
   microAdjustmentRequired: "",
 };
 
-type SavedDraft = {
-  version: typeof QUESTIONNAIRE_V3_VERSION;
-  step: number;
-  draft: QuizDraft;
-};
+function wristCm(draft: QuizDraft) {
+  const value = Number(draft.wristValue);
+  if (!draft.wristValue.trim() || !Number.isFinite(value)) return null;
+  return Math.round((draft.wristUnit === "in" ? value * 2.54 : value) * 10) / 10;
+}
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
 
-function stringArray(value: unknown) {
-  return Array.isArray(value)
-    ? value.filter((entry): entry is string => typeof entry === "string")
-    : [];
-}
-
-function hydrateDraft(value: unknown): QuizDraft {
-  if (!isRecord(value)) return INITIAL_DRAFT;
-  const text = (key: keyof QuizDraft) => {
-    const raw = value[key];
-    return typeof raw === "string" ? raw : "";
-  };
-  return {
-    ...INITIAL_DRAFT,
-    budgetCurrency:
-      (CURRENCIES as readonly string[]).indexOf(text("budgetCurrency")) >= 0
-        ? (text("budgetCurrency") as QuizDraft["budgetCurrency"])
-        : INITIAL_DRAFT.budgetCurrency,
-    budgetMax: text("budgetMax"),
-    wearingScenarios: stringArray(value.wearingScenarios),
-    minimumWaterResistanceM:
-      text("minimumWaterResistanceM") || INITIAL_DRAFT.minimumWaterResistanceM,
-    caseDiameterMinMm:
-      text("caseDiameterMinMm") || INITIAL_DRAFT.caseDiameterMinMm,
-    caseDiameterMaxMm:
-      text("caseDiameterMaxMm") || INITIAL_DRAFT.caseDiameterMaxMm,
-    movementTypes: stringArray(value.movementTypes),
-    requiredComplications: stringArray(value.requiredComplications),
-    allergyConstraint:
-      text("allergyConstraint") === "nickel_contact"
-        ? "nickel_contact"
-        : "none",
-    maxCaseThicknessMm: text("maxCaseThicknessMm"),
-    caseShape: text("caseShape") as QuizDraft["caseShape"],
-    movementConstruction: text(
-      "movementConstruction",
-    ) as QuizDraft["movementConstruction"],
-    displayCaseback: text("displayCaseback") as QuizDraft["displayCaseback"],
-    crystal: text("crystal") as QuizDraft["crystal"],
-    microAdjustmentRequired: text(
-      "microAdjustmentRequired",
-    ) as QuizDraft["microAdjustmentRequired"],
-  };
-}
-
-function readSavedDraft(): SavedDraft | null {
+function readSavedDraft(): { step: number; draft: QuizDraft } | null {
   try {
-    const raw = window.sessionStorage.getItem(QUESTIONNAIRE_V3_STORAGE_KEY);
+    const raw = window.sessionStorage.getItem(QUESTIONNAIRE_V4_STORAGE_KEY);
     if (!raw) return null;
     const parsed: unknown = JSON.parse(raw);
-    if (!isRecord(parsed)) return null;
-    if (parsed.version !== QUESTIONNAIRE_V3_VERSION) return null;
+    if (!isRecord(parsed) || parsed.version !== QUESTIONNAIRE_V4_VERSION || !isRecord(parsed.draft)) {
+      return null;
+    }
+    const saved = parsed.draft;
+    const text = (key: keyof QuizDraft) =>
+      typeof saved[key] === "string" ? (saved[key] as string) : "";
+    const list = (key: keyof QuizDraft) =>
+      Array.isArray(saved[key])
+        ? (saved[key] as unknown[]).filter((entry): entry is string => typeof entry === "string")
+        : [];
     return {
-      version: QUESTIONNAIRE_V3_VERSION,
       step: typeof parsed.step === "number" ? parsed.step : 0,
-      draft: hydrateDraft(parsed.draft),
+      draft: {
+        ...INITIAL_DRAFT,
+        budgetCurrency: (BUDGET_CURRENCIES as readonly string[]).includes(text("budgetCurrency"))
+          ? (text("budgetCurrency") as BudgetCurrency)
+          : INITIAL_DRAFT.budgetCurrency,
+        priceRange: findPriceRange(text("priceRange")) ? text("priceRange") : "",
+        wristValue: text("wristValue"),
+        wristUnit: text("wristUnit") === "in" ? "in" : "cm",
+        wearingScenarios: list("wearingScenarios"),
+        minimumWaterResistanceM: text("minimumWaterResistanceM") || "0",
+        movementTypes: list("movementTypes"),
+        requiredComplications: list("requiredComplications"),
+        allergyConstraint: text("allergyConstraint") === "nickel_contact" ? "nickel_contact" : "none",
+        maxCaseThicknessMm: text("maxCaseThicknessMm"),
+        caseShape: text("caseShape") as QuizDraft["caseShape"],
+        movementConstruction: text("movementConstruction") as QuizDraft["movementConstruction"],
+        displayCaseback: text("displayCaseback") as QuizDraft["displayCaseback"],
+        crystal: text("crystal") as QuizDraft["crystal"],
+        microAdjustmentRequired: text("microAdjustmentRequired") as QuizDraft["microAdjustmentRequired"],
+      },
     };
   } catch {
     return null;
@@ -717,34 +604,23 @@ function readSavedDraft(): SavedDraft | null {
 /** The exact field set the action parses, so a draft posts unchanged. */
 function profileFormFields(draft: QuizDraft) {
   const fields: { name: string; value: string }[] = [
-    { name: "version", value: String(QUESTIONNAIRE_V3_VERSION) },
+    { name: "version", value: String(QUESTIONNAIRE_V4_VERSION) },
     { name: "budgetCurrency", value: draft.budgetCurrency },
-    { name: "budgetMax", value: draft.budgetMax },
-    {
-      name: "minimumWaterResistanceM",
-      value: draft.minimumWaterResistanceM,
-    },
-    { name: "caseDiameterMinMm", value: draft.caseDiameterMinMm },
-    { name: "caseDiameterMaxMm", value: draft.caseDiameterMaxMm },
+    { name: "priceRange", value: draft.priceRange },
+    { name: "wristCm", value: String(wristCm(draft) ?? "") },
+    { name: "minimumWaterResistanceM", value: draft.minimumWaterResistanceM },
     { name: "allergyConstraint", value: draft.allergyConstraint },
     { name: "maxCaseThicknessMm", value: draft.maxCaseThicknessMm },
     { name: "caseShape", value: draft.caseShape },
     { name: "movementConstruction", value: draft.movementConstruction },
     { name: "displayCaseback", value: draft.displayCaseback },
     { name: "crystal", value: draft.crystal },
-    {
-      name: "microAdjustmentRequired",
-      value: draft.microAdjustmentRequired,
-    },
+    { name: "microAdjustmentRequired", value: draft.microAdjustmentRequired },
   ];
-  for (const scenario of draft.wearingScenarios) {
-    fields.push({ name: "wearingScenarios", value: scenario });
-  }
-  for (const movement of draft.movementTypes) {
-    fields.push({ name: "movementTypes", value: movement });
-  }
-  for (const complication of draft.requiredComplications) {
-    fields.push({ name: "requiredComplications", value: complication });
+  for (const value of draft.wearingScenarios) fields.push({ name: "wearingScenarios", value });
+  for (const value of draft.movementTypes) fields.push({ name: "movementTypes", value });
+  for (const value of draft.requiredComplications) {
+    fields.push({ name: "requiredComplications", value });
   }
   return fields;
 }
@@ -753,31 +629,23 @@ function ProfileFields({ draft }: { draft: QuizDraft }) {
   return (
     <>
       {profileFormFields(draft).map((field, index) => (
-        <input
-          key={`${field.name}-${index}`}
-          name={field.name}
-          type="hidden"
-          value={field.value}
-        />
+        <input key={`${field.name}-${index}`} name={field.name} type="hidden" value={field.value} />
       ))}
     </>
   );
 }
 
 function draftToProfileInput(draft: QuizDraft) {
-  const optionalNumber = (raw: string) =>
-    raw.trim() === "" ? undefined : Number(raw);
-  const optionalBoolean = (raw: string) =>
-    raw === "" ? undefined : raw === "yes";
+  const optionalNumber = (raw: string) => (raw.trim() === "" ? undefined : Number(raw));
+  const optionalBoolean = (raw: string) => (raw === "" ? undefined : raw === "yes");
   const optionalText = (raw: string) => (raw === "" ? undefined : raw);
   return {
-    version: QUESTIONNAIRE_V3_VERSION,
+    version: QUESTIONNAIRE_V4_VERSION,
     budgetCurrency: draft.budgetCurrency,
-    budgetMax: Number(draft.budgetMax),
+    priceRange: draft.priceRange,
+    wristCm: wristCm(draft) ?? Number.NaN,
     wearingScenarios: draft.wearingScenarios,
     minimumWaterResistanceM: Number(draft.minimumWaterResistanceM),
-    caseDiameterMinMm: Number(draft.caseDiameterMinMm),
-    caseDiameterMaxMm: Number(draft.caseDiameterMaxMm),
     movementTypes: draft.movementTypes,
     requiredComplications: draft.requiredComplications,
     allergyConstraint: draft.allergyConstraint,
@@ -790,302 +658,170 @@ function draftToProfileInput(draft: QuizDraft) {
   };
 }
 
-/**
- * The form state lives in React and is submitted through ProfileFields, so
- * these radio names only group the pills; they are never posted.
- */
-function ChoiceGroup<T extends string>({
-  legend,
-  name,
-  options,
-  value,
-  onChange,
-  renderLabel = labelFor,
-}: {
-  legend: string;
-  name: string;
-  options: readonly T[];
-  value: T | "";
-  onChange: (value: T) => void;
-  renderLabel?: (value: T) => string;
-}) {
-  return (
-    <fieldset className="quiz-fieldset">
-      <legend>{legend}</legend>
-      <div className="chip-list">
-        {options.map((option) => (
-          <label
-            className={`chip chip--radio ${value === option ? "is-selected" : ""}`}
-            key={option}
-          >
-            <input
-              checked={value === option}
-              className="chip__input"
-              name={name}
-              onChange={() => onChange(option)}
-              type="radio"
-              value={option}
-            />
-            <span>{renderLabel(option)}</span>
-          </label>
-        ))}
-      </div>
-    </fieldset>
-  );
-}
+const RANGE_TIERS = [
+  { label: "Under 10k", test: (minimum: number) => minimum < 10_000 },
+  { label: "10k to 100k", test: (minimum: number) => minimum >= 10_000 && minimum < 100_000 },
+  { label: "100k and above", test: (minimum: number) => minimum >= 100_000 },
+];
 
-function OptionCheckboxGroup({
-  legend,
-  hint,
-  options,
-  values,
-  onChange,
-}: {
-  legend: string;
-  hint?: string;
-  options: readonly VocabularyOption[];
-  values: string[];
-  onChange: (values: string[]) => void;
-}) {
-  const toggle = (slug: string) => {
-    onChange(
-      values.includes(slug)
-        ? values.filter((value) => value !== slug)
-        : [...values, slug],
-    );
-  };
-
-  return (
-    <fieldset className="quiz-fieldset">
-      <legend>
-        {legend}
-        {values.length > 0 ? (
-          <span className="legend-count"> · {values.length} selected</span>
-        ) : null}
-      </legend>
-      {hint ? <p className="field-hint">{hint}</p> : null}
-      <div className="chip-list">
-        {options.map((option) => (
-          <label
-            className={`chip ${values.includes(option.slug) ? "is-selected" : ""}`}
-            key={option.slug}
-          >
-            <input
-              checked={values.includes(option.slug)}
-              className="chip__input"
-              onChange={() => toggle(option.slug)}
-              type="checkbox"
-              value={option.slug}
-            />
-            <span aria-hidden="true" className="chip__mark" />
-            <span>{option.labelEn}</span>
-          </label>
-        ))}
-      </div>
-    </fieldset>
-  );
-}
-
-function OptionalSelect<T extends string>({
-  label,
-  options,
+function PriceRangePicker({
+  currency,
   value,
   onChange,
 }: {
-  label: string;
-  options: readonly T[];
-  value: T | "";
-  onChange: (value: T | "") => void;
-}) {
-  const name = useId();
-  return (
-    <ChoiceGroup<T | "none-selected">
-      legend={label}
-      name={name}
-      onChange={(next) => onChange(next === "none-selected" ? "" : next)}
-      options={["none-selected", ...options]}
-      renderLabel={(option) =>
-        option === "none-selected" ? "No preference" : labelFor(option)
-      }
-      value={value === "" ? "none-selected" : value}
-    />
-  );
-}
-
-function OptionalYesNo({
-  label,
-  yesLabel,
-  noLabel,
-  value,
-  onChange,
-}: {
-  label: string;
-  yesLabel: string;
-  noLabel: string;
-  value: "" | "yes" | "no";
-  onChange: (value: "" | "yes" | "no") => void;
-}) {
-  const name = useId();
-  return (
-    <ChoiceGroup<"" | "yes" | "no">
-      legend={label}
-      name={name}
-      onChange={onChange}
-      options={["", "yes", "no"]}
-      renderLabel={(option) =>
-        option === "yes" ? yesLabel : option === "no" ? noLabel : "No preference"
-      }
-      value={value}
-    />
-  );
-}
-
-function NumberField({
-  label,
-  value,
-  onChange,
-  min,
-  max,
-  prefix,
-  unit,
-  placeholder,
-}: {
-  label: string;
+  currency: string;
   value: string;
-  onChange: (value: string) => void;
-  min?: number;
-  max?: number;
-  prefix?: string;
-  unit?: string;
-  placeholder?: string;
+  onChange: (id: string) => void;
 }) {
-  const id = useId();
   return (
-    <div className="field">
-      <label className="field__label" htmlFor={id}>
-        {label}
-      </label>
-      <div className="field__control">
-        {prefix ? <span className="field__affix">{prefix}</span> : null}
-        <input
-          id={id}
-          inputMode="decimal"
-          max={max}
-          min={min}
-          onChange={(event) => onChange(event.target.value)}
-          placeholder={placeholder}
-          type="number"
-          value={value}
-        />
-        {unit ? <span className="field__affix">{unit}</span> : null}
-      </div>
-    </div>
-  );
-}
-
-function WatchImage({ watch }: { watch: FoundWatch }) {
-  const [failed, setFailed] = useState(false);
-  const title = `${watch.brand} ${watch.model}`;
-  if (!watch.imageUrl || failed) {
-    return (
-      <div aria-hidden="true" className="watch-card__image watch-card__image--empty">
-        <span>{watch.brand}</span>
-      </div>
-    );
-  }
-  return (
-    <img
-      alt={title}
-      className="watch-card__image"
-      decoding="async"
-      loading="lazy"
-      onError={() => setFailed(true)}
-      referrerPolicy="no-referrer"
-      src={watch.imageUrl}
-    />
-  );
-}
-
-function WatchCard({ watch, rank }: { watch: FoundWatch; rank: number }) {
-  return (
-    <article className="watch-card">
-      <WatchImage watch={watch} />
-      <div className="watch-card__body">
-        <span className="eyebrow">
-          {rank === 1 ? "Best fit" : `Option ${rank}`}
-        </span>
-        <h3>
-          {watch.brand} {watch.model}
-        </h3>
-        {watch.referenceCode || watch.priceNote ? (
-          <p className="watch-card__meta">
-            {[
-              watch.referenceCode ? `Ref. ${watch.referenceCode}` : null,
-              watch.priceNote,
-            ]
-              .filter(Boolean)
-              .join(" · ")}
-          </p>
-        ) : null}
-        <p className="watch-card__rationale">{watch.rationale}</p>
-        <a
-          className="candidate-link"
-          href={watch.sourceUrl}
-          rel="noreferrer nofollow"
-          target="_blank"
-        >
-          Open the source
-        </a>
-      </div>
-    </article>
-  );
-}
-
-function AiRecommendation({ aiSearch }: { aiSearch: AiSearchView }) {
-  return (
-    <section className="ai-results" aria-labelledby="ai-pick-heading">
-      <div className="result-section-heading">
-        <div>
-          <span className="eyebrow">AI search · live web</span>
-          <h2 id="ai-pick-heading">The watches we found for you</h2>
-        </div>
-        {aiSearch.status === "found" ? (
-          <span>
-            {aiSearch.watches.length}{" "}
-            {aiSearch.watches.length === 1 ? "watch" : "watches"}
-          </span>
-        ) : null}
-      </div>
-      {aiSearch.status === "found" ? (
-        <>
-          <p className="result-summary">{aiSearch.summary}</p>
-          <div className="watch-list">
-            {aiSearch.watches.map((watch, index) => (
-              <WatchCard
-                key={`${watch.brand}-${watch.model}-${watch.referenceCode ?? index}`}
-                rank={index + 1}
-                watch={watch}
-              />
+    <fieldset className="quiz-fieldset">
+      <legend>Price range</legend>
+      {RANGE_TIERS.map((tier) => (
+        <div className="range-tier" key={tier.label}>
+          <span className="range-tier__label">{tier.label}</span>
+          <div className="chip-list">
+            {PRICE_RANGES.filter((range) => tier.test(range.minimum)).map((range) => (
+              <label
+                className={`chip chip--radio chip--range ${value === range.id ? "is-selected" : ""}`}
+                key={range.id}
+              >
+                <input
+                  checked={value === range.id}
+                  className="chip__input"
+                  name="priceRangeChoice"
+                  onChange={() => onChange(range.id)}
+                  type="radio"
+                  value={range.id}
+                />
+                <span>{priceRangeLabel(range, currency)}</span>
+              </label>
             ))}
           </div>
-        </>
-      ) : aiSearch.status === "no_match" ? (
-        <p className="empty-result">
-          The live search found no watch that meets every requirement.{" "}
-          {aiSearch.summary}
-        </p>
-      ) : (
-        <p className="empty-result">
-          The AI search is unavailable right now. Please try again in a few
-          minutes.
-        </p>
-      )}
-      <p className="result-footnote">
-        Found by an AI search of the live web using only your constraints
-        above; no email or personal data is sent. Images and prices come from
-        the linked sources, so check them with the seller before buying.
+        </div>
+      ))}
+    </fieldset>
+  );
+}
+
+const QUICK_WRISTS_CM = [15, 16, 17, 18, 19, 20];
+
+function WristStep({
+  draft,
+  update,
+}: {
+  draft: QuizDraft;
+  update: (patch: Partial<QuizDraft>) => void;
+}) {
+  const cm = wristCm(draft);
+  const valid = cm !== null && cm >= WRIST_CM_MIN && cm <= WRIST_CM_MAX;
+  const diameter = valid ? caseDiameterForWrist(cm) : null;
+  return (
+    <>
+      <ChoiceGroup
+        legend="Measure in"
+        name="wristUnit"
+        onChange={(unit) => {
+          const current = wristCm(draft);
+          update({
+            wristUnit: unit,
+            wristValue:
+              current === null
+                ? draft.wristValue
+                : String(unit === "in" ? Math.round((current / 2.54) * 10) / 10 : current),
+          });
+        }}
+        options={["cm", "in"] as const}
+        renderLabel={(unit) => (unit === "cm" ? "Centimetres" : "Inches")}
+        value={draft.wristUnit}
+      />
+      <div className="field-row field-row--single">
+        <NumberField
+          label="Wrist circumference"
+          max={draft.wristUnit === "in" ? 10 : WRIST_CM_MAX}
+          min={draft.wristUnit === "in" ? 4.5 : WRIST_CM_MIN}
+          onChange={(value) => update({ wristValue: value })}
+          placeholder={draft.wristUnit === "in" ? "e.g. 6.9" : "e.g. 17.5"}
+          step={0.1}
+          unit={draft.wristUnit}
+          value={draft.wristValue}
+        />
+      </div>
+      <div className="chip-list quick-picks" aria-label="Common wrist sizes">
+        {QUICK_WRISTS_CM.map((size) => (
+          <button
+            className="chip"
+            key={size}
+            onClick={() =>
+              update({
+                wristValue:
+                  draft.wristUnit === "in" ? String(Math.round((size / 2.54) * 10) / 10) : String(size),
+              })
+            }
+            type="button"
+          >
+            {draft.wristUnit === "in" ? `${Math.round((size / 2.54) * 10) / 10} in` : `${size} cm`}
+          </button>
+        ))}
+      </div>
+      <p className="wrist-note" aria-live="polite">
+        {diameter
+          ? `We'll look for cases of ${diameter.minimumMm}–${diameter.maximumMm} mm, which sit well on a ${cm} cm wrist.`
+          : "Wrap a soft tape or a strip of paper around your wrist just above the bone."}
       </p>
-    </section>
+    </>
+  );
+}
+
+function ProfileSummary({
+  profile,
+  scenarioLabels,
+  complicationLabels,
+}: {
+  profile: ProfileV4;
+  scenarioLabels: Map<string, string>;
+  complicationLabels: Map<string, string>;
+}) {
+  const named = (slugs: readonly string[], labels: Map<string, string>) =>
+    slugs.map((slug) => labels.get(slug) ?? labelFor(slug)).join(", ");
+  const range = findPriceRange(profile.priceRange)!;
+  const diameter = caseDiameterForWrist(profile.wristCm);
+  const optional = [
+    profile.maxCaseThicknessMm !== undefined ? ["Thickness", `Up to ${profile.maxCaseThicknessMm} mm`] : null,
+    profile.caseShape !== undefined ? ["Case shape", labelFor(profile.caseShape)] : null,
+    profile.movementConstruction !== undefined ? ["Calibre", labelFor(profile.movementConstruction)] : null,
+    profile.displayCaseback !== undefined ? ["Case back", profile.displayCaseback ? "Display" : "Solid"] : null,
+    profile.crystal !== undefined ? ["Crystal", labelFor(profile.crystal)] : null,
+    profile.microAdjustmentRequired !== undefined
+      ? ["Clasp micro-adjustment", profile.microAdjustmentRequired ? "Required" : "Not wanted"]
+      : null,
+  ].filter((entry): entry is [string, string] => entry !== null);
+  const rows: [string, string][] = [
+    ["Price range", priceRangeLabel(range, profile.budgetCurrency)],
+    ["Wrist", `${profile.wristCm} cm · cases ${diameter.minimumMm}–${diameter.maximumMm} mm`],
+    ["Worn for", named(profile.wearingScenarios, scenarioLabels)],
+    [
+      "Water resistance",
+      profile.minimumWaterResistanceM === 0 ? "No requirement" : `${profile.minimumWaterResistanceM} m or more`,
+    ],
+    ["Movement", profile.movementTypes.map(labelFor).join(", ")],
+    [
+      "Must have",
+      profile.requiredComplications.length === 0
+        ? "Nothing specific"
+        : named(profile.requiredComplications, complicationLabels),
+    ],
+    ["Skin contact", labelFor(profile.allergyConstraint)],
+    ...optional,
+  ];
+  return (
+    <dl className="profile-grid">
+      {rows.map(([term, value]) => (
+        <div key={term}>
+          <dt>{term}</dt>
+          <dd>{value}</dd>
+        </div>
+      ))}
+    </dl>
   );
 }
 
@@ -1100,222 +836,60 @@ function DossierDelivery({
 }) {
   return (
     <section className="delivery-panel" aria-labelledby="delivery-heading">
-      <span className="eyebrow">Optional, explicit opt-in</span>
-      <h2 id="delivery-heading">Keep the dossier</h2>
+      <span className="eyebrow">Optional</span>
+      <h2 id="delivery-heading">Email me this shortlist</h2>
       <p>
-        Results stay visible here. If you want the newsletter opt-in and a
-        source-backed custom dossier, enter an address and check the opt-in;
-        email is not required to use the diagnostic.
+        Your results stay here either way. Opt in to receive the shortlist by email and The
+        Reserve&apos;s newsletter.
       </p>
-      {subscription.status !== "sent" &&
-      subscription.status !== "already_requested" ? (
+      {subscription.status !== "sent" && subscription.status !== "already_requested" ? (
         <Form className="delivery-form" method="post">
-          {funnelSource ? (
-            <input name="funnelSource" type="hidden" value={funnelSource} />
-          ) : null}
+          {funnelSource ? <input name="funnelSource" type="hidden" value={funnelSource} /> : null}
           <ProfileFields draft={draft} />
           <label className="input-stack" htmlFor="delivery-email">
             <span>Email address</span>
-            <input
-              id="delivery-email"
-              name="email"
-              placeholder="you@example.com"
-              type="email"
-            />
+            <input id="delivery-email" name="email" placeholder="you@example.com" type="email" />
           </label>
           <label className="delivery-opt-in">
             <input name="emailOptIn" type="checkbox" value="yes" />
             <span>
-              I explicitly opt in to receive this diagnostic dossier by email
-              and, where enabled, subscribe to The Reserve&apos;s email
-              publication.
+              I opt in to receive this shortlist by email and, where enabled, The Reserve&apos;s
+              email publication.
             </span>
           </label>
           <button className="button button--primary" type="submit">
-            Request email delivery
+            Email my shortlist
           </button>
         </Form>
       ) : null}
-      <p
-        className={`delivery-status delivery-status--${subscription.status}`}
-        role={
-          subscription.status === "failed" || subscription.status === "partial"
-            ? "alert"
-            : "status"
-        }
-      >
-        {subscription.message}
-      </p>
-    </section>
-  );
-}
-
-function ProfileSummary({
-  draft,
-  profile,
-  aiSearch,
-  subscription,
-  funnelSource,
-  storyContext,
-  scenarioLabels,
-  complicationLabels,
-  onEdit,
-  onRestart,
-}: {
-  draft: QuizDraft;
-  profile: ReturnType<typeof normalizeProfileV3>;
-  aiSearch: AiSearchView;
-  subscription: SubscriptionResult;
-  funnelSource: "archetype" | null;
-  storyContext?: {
-    storySlug: string;
-    headline: string;
-    entityName: string;
-    workTitle: string | null;
-    explanation: ReturnType<typeof explainStoryConstraint>;
-  };
-  scenarioLabels: Map<string, string>;
-  complicationLabels: Map<string, string>;
-  onEdit: () => void;
-  onRestart: () => void;
-}) {
-  const named = (slugs: readonly string[], labels: Map<string, string>) =>
-    slugs.map((slug) => labels.get(slug) ?? labelFor(slug)).join(", ");
-
-  return (
-    <section className="profile-summary" aria-labelledby="profile-heading">
-      <span className="eyebrow">Constraint profile complete</span>
-      <h1 id="profile-heading">Your search boundary</h1>
-      <p>
-        An AI search of the live web looked for watches that meet every
-        requirement below. Each one links to the source it came from.
-      </p>
-      <dl className="profile-grid">
-        <div>
-          <dt>Budget ceiling</dt>
-          <dd>
-            {profile.budgetCurrency} {profile.budgetMax.toLocaleString()}
-          </dd>
-        </div>
-        <div>
-          <dt>Derived price band</dt>
-          <dd>{labelFor(profile.derived.priceBand)}</dd>
-        </div>
-        <div>
-          <dt>Wearing scenarios</dt>
-          <dd>{named(profile.wearingScenarios, scenarioLabels)}</dd>
-        </div>
-        <div>
-          <dt>Water resistance</dt>
-          <dd>{waterResistanceLabel(profile.minimumWaterResistanceM)}</dd>
-        </div>
-        <div>
-          <dt>Case diameter</dt>
-          <dd>
-            {profile.caseDiameterMinMm}–{profile.caseDiameterMaxMm} mm
-          </dd>
-        </div>
-        <div>
-          <dt>Movement</dt>
-          <dd>{profile.movementTypes.map(labelFor).join(", ")}</dd>
-        </div>
-        <div>
-          <dt>Required functions</dt>
-          <dd>
-            {profile.requiredComplications.length === 0
-              ? "No required function"
-              : named(profile.requiredComplications, complicationLabels)}
-          </dd>
-        </div>
-        <div>
-          <dt>Allergy constraint</dt>
-          <dd>{labelFor(profile.allergyConstraint)}</dd>
-        </div>
-        {profile.maxCaseThicknessMm !== undefined ? (
-          <div>
-            <dt>Thickness limit</dt>
-            <dd>{profile.maxCaseThicknessMm} mm</dd>
-          </div>
-        ) : null}
-        {profile.caseShape !== undefined ? (
-          <div>
-            <dt>Case shape</dt>
-            <dd>{labelFor(profile.caseShape)}</dd>
-          </div>
-        ) : null}
-        {profile.movementConstruction !== undefined ? (
-          <div>
-            <dt>Calibre</dt>
-            <dd>{labelFor(profile.movementConstruction)}</dd>
-          </div>
-        ) : null}
-        {profile.displayCaseback !== undefined ? (
-          <div>
-            <dt>Caseback</dt>
-            <dd>{profile.displayCaseback ? "Display" : "Solid"}</dd>
-          </div>
-        ) : null}
-        {profile.crystal !== undefined ? (
-          <div>
-            <dt>Crystal</dt>
-            <dd>{labelFor(profile.crystal)}</dd>
-          </div>
-        ) : null}
-        {profile.microAdjustmentRequired !== undefined ? (
-          <div>
-            <dt>Clasp micro-adjustment</dt>
-            <dd>
-              {profile.microAdjustmentRequired ? "Required" : "Not wanted"}
-            </dd>
-          </div>
-        ) : null}
-      </dl>
-      <AiRecommendation aiSearch={aiSearch} />
-      {storyContext ? (
-        <section
-          className="delivery-panel"
-          aria-labelledby="story-context-heading"
+      {subscription.status !== "not_requested" ? (
+        <p
+          className={`delivery-status delivery-status--${subscription.status}`}
+          role={subscription.status === "failed" || subscription.status === "partial" ? "alert" : "status"}
         >
-          <span className="eyebrow">Reviewed story context</span>
-          <h2 id="story-context-heading">
-            {storyContext.entityName}
-            {storyContext.workTitle ? ` · ${storyContext.workTitle}` : ""}
-          </h2>
-          <p>{storyContext.explanation.message}</p>
-        </section>
+          {subscription.message}
+        </p>
       ) : null}
-      <DossierDelivery
-        draft={draft}
-        funnelSource={funnelSource}
-        subscription={subscription}
-      />
-      <div className="summary-actions">
-        <button
-          className="button button--primary"
-          onClick={onEdit}
-          type="button"
-        >
-          Edit answers
-        </button>
-        <button
-          className="button button--quiet"
-          onClick={onRestart}
-          type="button"
-        >
-          Restart diagnostic
-        </button>
-      </div>
     </section>
   );
 }
 
 const SCREEN_TITLES = [
-  "What is the actual purchase ceiling?",
+  "What price range are you shopping in?",
+  "What is your wrist size?",
   "Where will this watch actually be worn?",
-  "What case size works on your wrist?",
   "Which movements are acceptable?",
   "Any preferences on the details?",
   "What must this watch do?",
+] as const;
+
+const SCREEN_INTROS = [
+  "Pick the range for a new watch at list price. Everything we suggest sits inside it.",
+  "It decides which case sizes will look proportionate on you.",
+  "Pick every situation this watch has to cover.",
+  "Anything you leave unselected is excluded.",
+  "All optional. Leave a question on “No preference” to keep every option open.",
+  "A required function excludes every watch without it. Leave the list empty if nothing is essential.",
 ] as const;
 
 export default function Quiz() {
@@ -1333,19 +907,16 @@ export default function Quiz() {
   );
   const funnelSource = archetypeHandoff ? "archetype" : null;
 
-  const scenarios = loaderData.scenarios;
-  const complications = loaderData.complications;
   const scenarioLabels = useMemo(
-    () => new Map(scenarios.map((option) => [option.slug, option.labelEn])),
-    [scenarios],
+    () => new Map(loaderData.scenarios.map((option) => [option.slug, option.labelEn])),
+    [loaderData.scenarios],
   );
   const complicationLabels = useMemo(
-    () => new Map(complications.map((option) => [option.slug, option.labelEn])),
-    [complications],
+    () => new Map(loaderData.complications.map((option) => [option.slug, option.labelEn])),
+    [loaderData.complications],
   );
 
-  const update = (patch: Partial<QuizDraft>) =>
-    setDraft((current) => ({ ...current, ...patch }));
+  const update = (patch: Partial<QuizDraft>) => setDraft((current) => ({ ...current, ...patch }));
 
   useEffect(() => {
     const saved = readSavedDraft();
@@ -1356,20 +927,18 @@ export default function Quiz() {
       }
       setStorageReady(true);
     }, 0);
-
     return () => window.clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     if (!storageReady) return;
-    const saved: SavedDraft = {
-      version: QUESTIONNAIRE_V3_VERSION,
-      step: step === SUMMARY_STEP ? SCREEN_COUNT - 1 : step,
-      draft,
-    };
     window.sessionStorage.setItem(
-      QUESTIONNAIRE_V3_STORAGE_KEY,
-      JSON.stringify(saved),
+      QUESTIONNAIRE_V4_STORAGE_KEY,
+      JSON.stringify({
+        version: QUESTIONNAIRE_V4_VERSION,
+        step: step === SUMMARY_STEP ? SCREEN_COUNT - 1 : step,
+        draft,
+      }),
     );
   }, [draft, step, storageReady]);
 
@@ -1380,24 +949,16 @@ export default function Quiz() {
   }, [actionData]);
 
   const resultData = actionData?.ok ? actionData : null;
+  const profileParse = useMemo(() => profileV4Schema.safeParse(draftToProfileInput(draft)), [draft]);
+  const wrist = wristCm(draft);
 
-  const profileParse = useMemo(
-    () => profileV3Schema.safeParse(draftToProfileInput(draft)),
-    [draft],
-  );
-
-  const diameterMin = Number(draft.caseDiameterMinMm);
-  const diameterMax = Number(draft.caseDiameterMaxMm);
   const stepIsComplete =
     step === 0
-      ? Number(draft.budgetMax) > 0
+      ? draft.priceRange !== ""
       : step === 1
-        ? draft.wearingScenarios.length > 0
+        ? wrist !== null && wrist >= WRIST_CM_MIN && wrist <= WRIST_CM_MAX
         : step === 2
-          ? Number.isFinite(diameterMin) &&
-            Number.isFinite(diameterMax) &&
-            diameterMin > 0 &&
-            diameterMax >= diameterMin
+          ? draft.wearingScenarios.length > 0
           : step === 3
             ? draft.movementTypes.length > 0
             : step === 4
@@ -1407,21 +968,18 @@ export default function Quiz() {
   const isSubmitting = navigation.state === "submitting";
   const visibleStep = Math.min(step, SCREEN_COUNT - 1) + 1;
 
-  const goBack = () => setStep((current) => Math.max(0, current - 1));
-
   const recordStart = () => {
     if (startTracked.current) return;
     startTracked.current = true;
     if (import.meta.env.PROD) {
-      void fetch("/analytics/quiz-started", {
-        method: "POST",
-        keepalive: true,
-      }).catch(() => undefined);
+      void fetch("/analytics/quiz-started", { method: "POST", keepalive: true }).catch(
+        () => undefined,
+      );
     }
   };
 
   const restartQuiz = () => {
-    window.sessionStorage.removeItem(QUESTIONNAIRE_V3_STORAGE_KEY);
+    window.sessionStorage.removeItem(QUESTIONNAIRE_V4_STORAGE_KEY);
     setDraft(INITIAL_DRAFT);
     setStep(0);
     startTracked.current = false;
@@ -1434,18 +992,40 @@ export default function Quiz() {
           <Link to="/">The Reserve</Link>
           <span>Reference diagnostic</span>
         </nav>
-        <ProfileSummary
-          complicationLabels={complicationLabels}
-          draft={draft}
-          funnelSource={funnelSource}
-          onEdit={() => setStep(0)}
-          onRestart={restartQuiz}
-          profile={resultData.profile}
-          aiSearch={resultData.aiSearch}
-          scenarioLabels={scenarioLabels}
-          storyContext={resultData.storyContext}
-          subscription={resultData.subscription}
-        />
+        <section className="profile-summary" aria-labelledby="profile-heading">
+          <span className="eyebrow">Your answers</span>
+          <h1 id="profile-heading">Your search boundary</h1>
+          <ProfileSummary
+            complicationLabels={complicationLabels}
+            profile={resultData.profile}
+            scenarioLabels={scenarioLabels}
+          />
+          <WatchResults
+            defaultCurrency={resultData.profile.budgetCurrency}
+            eyebrow="Live search · confirmed sources"
+            footnote="Found with Muse Spark and a live Perplexity web search using only your answers above; no email or personal data is sent. Check prices with the seller before buying."
+            fx={loaderData.fx}
+            heading="Watches that fit every answer"
+            mode="quiz"
+            result={resultData.aiSearch}
+          />
+          {resultData.storyContext ? (
+            <StoryContextPanel storyContext={resultData.storyContext} />
+          ) : null}
+          <DossierDelivery
+            draft={draft}
+            funnelSource={funnelSource}
+            subscription={resultData.subscription}
+          />
+          <div className="summary-actions">
+            <button className="button button--primary" onClick={() => setStep(0)} type="button">
+              Edit answers
+            </button>
+            <button className="button button--quiet" onClick={restartQuiz} type="button">
+              Restart diagnostic
+            </button>
+          </div>
+        </section>
       </main>
     );
   }
@@ -1468,190 +1048,144 @@ export default function Quiz() {
           <span style={{ width: `${(visibleStep / SCREEN_COUNT) * 100}%` }} />
         </div>
 
-        {step === 0 ? (
-          <div className="question-block">
-            <h1 id="question-heading">{SCREEN_TITLES[0]}</h1>
-            <p>
-              Enter the maximum outlay. The exact number sets your purchase
-              boundary; nothing above it is offered.
-            </p>
-            <ChoiceGroup
-              legend="Currency"
-              name="budgetCurrencyChoice"
-              onChange={(value) => update({ budgetCurrency: value })}
-              options={CURRENCIES}
-              renderLabel={(value) => value}
-              value={draft.budgetCurrency}
-            />
-            <div className="field-row field-row--single">
-              <NumberField
-                label="Maximum amount"
-                min={1}
+        <div className="question-block">
+          <h1 id="question-heading">{SCREEN_TITLES[Math.min(step, SCREEN_COUNT - 1)]}</h1>
+          <p>{SCREEN_INTROS[Math.min(step, SCREEN_COUNT - 1)]}</p>
+
+          {step === 0 ? (
+            <>
+              <ChoiceGroup
+                legend="Currency"
+                name="budgetCurrencyChoice"
                 onChange={(value) => {
                   recordStart();
-                  update({ budgetMax: value });
+                  update({ budgetCurrency: value });
                 }}
-                placeholder="e.g. 5000"
-                prefix={draft.budgetCurrency}
-                value={draft.budgetMax}
+                options={BUDGET_CURRENCIES}
+                renderLabel={(value) => value}
+                value={draft.budgetCurrency}
               />
-            </div>
-          </div>
-        ) : null}
-
-        {step === 1 ? (
-          <div className="question-block">
-            <h1 id="question-heading">{SCREEN_TITLES[1]}</h1>
-            <p>
-              Pick every situation this watch has to cover. A watch qualifies
-              when it is reviewed for at least one of them.
-            </p>
-            <OptionCheckboxGroup
-              hint="Tap every one that applies."
-              legend="Wearing scenarios"
-              onChange={(values) => update({ wearingScenarios: values })}
-              options={scenarios}
-              values={draft.wearingScenarios}
-            />
-            <ChoiceGroup
-              legend="Minimum water resistance"
-              name="minimumWaterResistanceM"
-              onChange={(value) => update({ minimumWaterResistanceM: value })}
-              options={WATER_RESISTANCE_MINIMUMS.map(String)}
-              renderLabel={(value) =>
-                value === "0" ? "No requirement" : `${value} m+`
-              }
-              value={draft.minimumWaterResistanceM}
-            />
-          </div>
-        ) : null}
-
-        {step === 2 ? (
-          <div className="question-block">
-            <h1 id="question-heading">{SCREEN_TITLES[2]}</h1>
-            <p>
-              Set the diameter range you will actually wear. Thickness and shape
-              stay open unless you constrain them.
-            </p>
-            <div className="field-row">
-              <NumberField
-                label="Smallest diameter"
-                max={60}
-                min={20}
-                onChange={(value) => update({ caseDiameterMinMm: value })}
-                unit="mm"
-                value={draft.caseDiameterMinMm}
+              <PriceRangePicker
+                currency={draft.budgetCurrency}
+                onChange={(id) => {
+                  recordStart();
+                  update({ priceRange: id });
+                }}
+                value={draft.priceRange}
               />
-              <NumberField
-                label="Largest diameter"
-                max={60}
-                min={20}
-                onChange={(value) => update({ caseDiameterMaxMm: value })}
-                unit="mm"
-                value={draft.caseDiameterMaxMm}
+            </>
+          ) : null}
+
+          {step === 1 ? <WristStep draft={draft} update={update} /> : null}
+
+          {step === 2 ? (
+            <>
+              <OptionCheckboxGroup
+                hint="Tap every one that applies."
+                legend="Wearing scenarios"
+                onChange={(values) => update({ wearingScenarios: values })}
+                options={loaderData.scenarios}
+                values={draft.wearingScenarios}
               />
-              <NumberField
-                label="Max thickness"
-                max={30}
-                min={3}
-                onChange={(value) => update({ maxCaseThicknessMm: value })}
-                placeholder="Any"
-                unit="mm"
-                value={draft.maxCaseThicknessMm}
+              <ChoiceGroup
+                legend="Minimum water resistance"
+                name="minimumWaterResistanceM"
+                onChange={(value) => update({ minimumWaterResistanceM: value })}
+                options={WATER_RESISTANCE_MINIMUMS.map(String)}
+                renderLabel={(value) => (value === "0" ? "No requirement" : `${value} m+`)}
+                value={draft.minimumWaterResistanceM}
               />
-            </div>
-            <OptionalSelect
-              label="Case shape"
-              onChange={(value) => update({ caseShape: value })}
-              options={CASE_SHAPES}
-              value={draft.caseShape}
-            />
-          </div>
-        ) : null}
+            </>
+          ) : null}
 
-        {step === 3 ? (
-          <div className="question-block">
-            <h1 id="question-heading">{SCREEN_TITLES[3]}</h1>
-            <p>
-              Select every movement type you would own. Anything unselected is
-              excluded outright.
-            </p>
-            <OptionCheckboxGroup
-              legend="Movement types"
-              onChange={(values) =>
-                update({
-                  movementTypes: MOVEMENT_TYPE_CHOICES.filter((option) =>
-                    values.includes(option),
-                  ),
-                })
-              }
-              options={MOVEMENT_TYPE_CHOICES.map((option) => ({
-                slug: option,
-                labelEn: labelFor(option),
-              }))}
-              values={draft.movementTypes}
-            />
-            <OptionalSelect
-              label="Calibre construction"
-              onChange={(value) => update({ movementConstruction: value })}
-              options={MOVEMENT_CONSTRUCTIONS}
-              value={draft.movementConstruction}
-            />
-          </div>
-        ) : null}
+          {step === 3 ? (
+            <>
+              <OptionCheckboxGroup
+                legend="Movement types"
+                onChange={(values) =>
+                  update({
+                    movementTypes: MOVEMENT_TYPE_CHOICES.filter((option) => values.includes(option)),
+                  })
+                }
+                options={MOVEMENT_TYPE_CHOICES.map((option) => ({
+                  slug: option,
+                  labelEn: labelFor(option),
+                }))}
+                values={draft.movementTypes}
+              />
+              <OptionalChoice
+                label="Calibre"
+                onChange={(value) => update({ movementConstruction: value })}
+                options={MOVEMENT_CONSTRUCTIONS}
+                renderLabel={labelFor}
+                value={draft.movementConstruction}
+              />
+            </>
+          ) : null}
 
-        {step === 4 ? (
-          <div className="question-block">
-            <h1 id="question-heading">{SCREEN_TITLES[4]}</h1>
-            <p>
-              Every answer here is optional. A preference with no reviewed data
-              behind it is reported as unscored rather than applied silently.
-            </p>
-            <OptionalYesNo
-              label="Caseback"
-              noLabel="Solid"
-              onChange={(value) => update({ displayCaseback: value })}
-              value={draft.displayCaseback}
-              yesLabel="Display"
-            />
-            <OptionalSelect
-              label="Crystal"
-              onChange={(value) => update({ crystal: value })}
-              options={CRYSTAL_CHOICES}
-              value={draft.crystal}
-            />
-            <OptionalYesNo
-              label="Clasp micro-adjustment"
-              noLabel="Not wanted"
-              onChange={(value) => update({ microAdjustmentRequired: value })}
-              value={draft.microAdjustmentRequired}
-              yesLabel="Required"
-            />
-          </div>
-        ) : null}
+          {step === 4 ? (
+            <>
+              <OptionalChoice
+                label="Case shape"
+                onChange={(value) => update({ caseShape: value })}
+                options={CASE_SHAPES}
+                renderLabel={labelFor}
+                value={draft.caseShape}
+              />
+              <div className="field-row field-row--single">
+                <NumberField
+                  label="Max thickness"
+                  max={30}
+                  min={3}
+                  onChange={(value) => update({ maxCaseThicknessMm: value })}
+                  placeholder="Any"
+                  unit="mm"
+                  value={draft.maxCaseThicknessMm}
+                />
+              </div>
+              <OptionalChoice
+                label="Case back"
+                onChange={(value) => update({ displayCaseback: value })}
+                options={["yes", "no"] as const}
+                renderLabel={(value) => (value === "yes" ? "Display" : "Solid")}
+                value={draft.displayCaseback}
+              />
+              <OptionalChoice
+                label="Crystal"
+                onChange={(value) => update({ crystal: value })}
+                options={CRYSTAL_CHOICES}
+                renderLabel={labelFor}
+                value={draft.crystal}
+              />
+              <OptionalChoice
+                label="Clasp micro-adjustment"
+                onChange={(value) => update({ microAdjustmentRequired: value })}
+                options={["yes", "no"] as const}
+                renderLabel={(value) => (value === "yes" ? "Required" : "Not wanted")}
+                value={draft.microAdjustmentRequired}
+              />
+            </>
+          ) : null}
 
-        {step === 5 ? (
-          <div className="question-block">
-            <h1 id="question-heading">{SCREEN_TITLES[5]}</h1>
-            <p>
-              A required function excludes every watch without it. Leave the
-              list empty if nothing is mandatory.
-            </p>
-            <OptionCheckboxGroup
-              legend="Required functions"
-              onChange={(values) => update({ requiredComplications: values })}
-              options={complications}
-              values={draft.requiredComplications}
-            />
-            <ChoiceGroup
-              legend="Skin contact"
-              name="allergyConstraint"
-              onChange={(value) => update({ allergyConstraint: value })}
-              options={ALLERGY_CONSTRAINTS_V3}
-              value={draft.allergyConstraint}
-            />
-          </div>
-        ) : null}
+          {step === 5 ? (
+            <>
+              <OptionCheckboxGroup
+                legend="Required functions"
+                onChange={(values) => update({ requiredComplications: values })}
+                options={loaderData.complications}
+                values={draft.requiredComplications}
+              />
+              <ChoiceGroup
+                legend="Skin contact"
+                name="allergyConstraint"
+                onChange={(value) => update({ allergyConstraint: value })}
+                options={ALLERGY_CONSTRAINTS_V3}
+                renderLabel={labelFor}
+                value={draft.allergyConstraint}
+              />
+            </>
+          ) : null}
+        </div>
 
         {actionData && !actionData.ok ? (
           <ul className="error-list" role="alert">
@@ -1665,7 +1199,7 @@ export default function Quiz() {
           {step > 0 ? (
             <button
               className="button button--quiet"
-              onClick={goBack}
+              onClick={() => setStep((current) => Math.max(0, current - 1))}
               type="button"
             >
               Back
@@ -1682,28 +1216,46 @@ export default function Quiz() {
             </button>
           ) : (
             <Form method="post">
-              {funnelSource ? (
-                <input name="funnelSource" type="hidden" value={funnelSource} />
-              ) : null}
+              {funnelSource ? <input name="funnelSource" type="hidden" value={funnelSource} /> : null}
               <ProfileFields draft={draft} />
               <button
                 className="button button--primary"
                 disabled={!stepIsComplete || isSubmitting}
                 type="submit"
               >
-                {isSubmitting ? "Searching…" : "See the shortlist"}
+                {isSubmitting ? "Starting search…" : "See the shortlist"}
               </button>
-              {isSubmitting ? (
-                <p aria-live="polite">
-                  The AI is searching the live web for your watches. A new
-                  combination of answers can take up to two minutes; answers
-                  searched before load straight away.
-                </p>
-              ) : null}
             </Form>
           )}
         </div>
       </section>
     </main>
+  );
+}
+
+function StoryContextPanel({
+  storyContext,
+}: {
+  storyContext: NonNullable<Extract<ActionResult, { ok: true }>["storyContext"]>;
+}) {
+  const [explanation, setExplanation] = useState<StoryExplanation | null>(null);
+  useEffect(() => {
+    let active = true;
+    void Promise.resolve(storyContext.explanation).then((value) => {
+      if (active) setExplanation(value);
+    });
+    return () => {
+      active = false;
+    };
+  }, [storyContext.explanation]);
+  return (
+    <section className="delivery-panel" aria-labelledby="story-context-heading">
+      <span className="eyebrow">Story context</span>
+      <h2 id="story-context-heading">
+        {storyContext.entityName}
+        {storyContext.workTitle ? ` · ${storyContext.workTitle}` : ""}
+      </h2>
+      <p>{explanation ? explanation.message : "Comparing with your shortlist…"}</p>
+    </section>
   );
 }

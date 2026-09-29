@@ -3,17 +3,16 @@ import { createHash } from "node:crypto";
 import { z } from "zod";
 
 import {
-  runAiWatchSearch,
+  runSafely,
   safeHttpUrl,
+  type AiSearchOutcome,
   type AiSearchView,
-  type AiWatchFinderConfig,
   type FoundWatch,
-  type WatchBrief,
 } from "./ai-watch-finder.server";
 
 export type AiSearchKind = "quiz" | "film" | "find";
 
-type StoreConfig = { supabaseUrl: string; serviceKey: string };
+export type StoreConfig = { supabaseUrl: string; serviceKey: string };
 
 export function loadAiWatchStoreConfig(
   env: NodeJS.ProcessEnv = process.env,
@@ -38,7 +37,7 @@ function stableJson(value: unknown): string {
 /** Same kind and same (order-insensitive) inputs always give the same key. */
 export function aiSearchCacheKey(kind: AiSearchKind, input: unknown) {
   return createHash("sha256")
-    .update(stableJson({ kind, version: 1, input }))
+    .update(stableJson({ kind, version: 2, input }))
     .digest("hex");
 }
 
@@ -62,6 +61,7 @@ const storedWatchSchema = z.object({
   imageUrl: z.string().nullable(),
   priceNote: z.string().nullable(),
   rationale: z.string(),
+  details: z.record(z.string(), z.unknown()).nullable().optional(),
 });
 
 const storedSearchSchema = z
@@ -82,7 +82,7 @@ export async function loadStoredSearch(
       method: "POST",
       headers: rpcHeaders(config),
       body: JSON.stringify({ p_cache_key: cacheKey }),
-      signal: AbortSignal.timeout(8_000),
+      signal: AbortSignal.timeout(6_000),
     },
   );
   if (!response.ok) {
@@ -90,10 +90,17 @@ export async function loadStoredSearch(
   }
   const stored = storedSearchSchema.parse(await response.json());
   if (!stored) return null;
-  const watches = stored.watches.flatMap((watch) => {
+  const watches = stored.watches.flatMap((watch): FoundWatch[] => {
     const sourceUrl = safeHttpUrl(watch.sourceUrl);
     return sourceUrl
-      ? [{ ...watch, sourceUrl, imageUrl: safeHttpUrl(watch.imageUrl) }]
+      ? [
+          {
+            ...watch,
+            sourceUrl,
+            imageUrl: safeHttpUrl(watch.imageUrl),
+            details: (watch.details ?? {}) as FoundWatch["details"],
+          },
+        ]
       : [];
   });
   return watches.length > 0 ? { summary: stored.summary, watches } : null;
@@ -104,7 +111,7 @@ export async function storeSearch(
   entry: {
     kind: AiSearchKind;
     cacheKey: string;
-    brief: WatchBrief;
+    cacheInput: unknown;
     summary: string;
     watches: FoundWatch[];
   },
@@ -118,11 +125,12 @@ export async function storeSearch(
       body: JSON.stringify({
         p_kind: entry.kind,
         p_cache_key: entry.cacheKey,
-        p_brief: entry.brief,
+        // Only the search constraints: never who asked.
+        p_brief: entry.cacheInput,
         p_summary: entry.summary,
         p_watches: entry.watches,
       }),
-      signal: AbortSignal.timeout(8_000),
+      signal: AbortSignal.timeout(6_000),
     },
   );
   if (!response.ok) {
@@ -142,26 +150,20 @@ function logStoreError(event: string, error: unknown) {
 }
 
 /**
- * Serves a stored result when this exact brief was searched before;
- * otherwise runs the Muse Spark -> Perplexity search and stores what it
- * found. Storage problems never block the visitor: they are logged and the
- * live search result is still returned.
+ * Serves a stored result when this exact search ran before; otherwise runs
+ * it and stores what it found. Storage problems never block the visitor:
+ * they are logged and the live result is still returned.
  */
 export async function searchWithStore(
   {
     kind,
     cacheInput,
-    brief,
-  }: { kind: AiSearchKind; cacheInput: unknown; brief: WatchBrief },
+    run,
+  }: { kind: AiSearchKind; cacheInput: unknown; run: () => Promise<AiSearchOutcome> },
   {
     store = loadAiWatchStoreConfig(),
-    finderConfig,
     fetchImpl = fetch,
-  }: {
-    store?: StoreConfig | null;
-    finderConfig?: AiWatchFinderConfig;
-    fetchImpl?: typeof fetch;
-  } = {},
+  }: { store?: StoreConfig | null; fetchImpl?: typeof fetch } = {},
 ): Promise<AiSearchView> {
   const cacheKey = aiSearchCacheKey(kind, cacheInput);
 
@@ -173,25 +175,20 @@ export async function searchWithStore(
       logStoreError("ai_watch_store_read_error", error);
     }
   } else {
-    console.error(
-      JSON.stringify({
-        event: "ai_watch_store_unconfigured",
-        message: "SUPABASE_SERVICE_ROLE_KEY is not set; results are not stored.",
-      }),
+    logStoreError(
+      "ai_watch_store_unconfigured",
+      new Error("SUPABASE_SERVICE_ROLE_KEY is not set; results are not stored."),
     );
   }
 
-  const outcome = await runAiWatchSearch(brief, {
-    ...(finderConfig ? { config: finderConfig } : {}),
-    fetchImpl,
-  });
+  const outcome = await runSafely(run);
   if (outcome.status !== "found") return outcome;
 
   if (store) {
     try {
       await storeSearch(
         store,
-        { kind, cacheKey, brief, summary: outcome.summary, watches: outcome.watches },
+        { kind, cacheKey, cacheInput, summary: outcome.summary, watches: outcome.watches },
         fetchImpl,
       );
     } catch (error) {
