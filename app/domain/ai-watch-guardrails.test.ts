@@ -63,6 +63,10 @@ describe("numeric hard checks", () => {
     expect(allowedMovement(["manual"], "Hand-wound")).toBe(true);
     expect(allowedMovement(["automatic"], "Quartz")).toBe(false);
     expect(allowedMovement(["automatic"], null)).toBe(false);
+    // A Spring Drive watch is not an automatic in the quiz's terms.
+    expect(allowedMovement(["automatic"], "Automatic (Spring Drive)")).toBe(false);
+    expect(allowedMovement(["spring_drive"], "Automatic (Spring Drive)")).toBe(true);
+    expect(allowedMovement(["automatic"], "Solar quartz")).toBe(false);
   });
 });
 

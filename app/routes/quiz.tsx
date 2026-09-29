@@ -568,7 +568,7 @@ function readSavedDraft(): { step: number; draft: QuizDraft } | null {
     }
     const saved = parsed.draft;
     const text = (key: keyof QuizDraft) =>
-      typeof saved[key] === "string" ? (saved[key] as string) : "";
+      typeof saved[key] === "string" ? (saved[key]) : "";
     const list = (key: keyof QuizDraft) =>
       Array.isArray(saved[key])
         ? (saved[key] as unknown[]).filter((entry): entry is string => typeof entry === "string")

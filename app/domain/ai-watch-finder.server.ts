@@ -706,7 +706,7 @@ export async function searchQuizWatches(
           deps,
           timing.hardMs,
         )) as { candidates?: unknown };
-        return Array.isArray(payload.candidates) ? payload.candidates : [];
+        return Array.isArray(payload.candidates) ? (payload.candidates as unknown[]) : [];
       },
       profile,
       fx,
@@ -727,7 +727,7 @@ export async function searchQuizWatches(
         sonarCandidateSchema,
         deps,
       )) as { candidates?: unknown };
-      return Array.isArray(payload.candidates) ? payload.candidates : [];
+      return Array.isArray(payload.candidates) ? (payload.candidates as unknown[]) : [];
     },
     profile,
     fx,

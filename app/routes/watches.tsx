@@ -1,4 +1,4 @@
-import { Link, useLoaderData } from "react-router";
+import { Form, Link, useLoaderData } from "react-router";
 
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { DiscoveryStoryList } from "../components/discovery-story-list";
@@ -32,7 +32,10 @@ export default function WatchesIndex() {
       <DiscoveryAnalytics event={{ name: "page_view", surface: "index" }} />
       <nav className="discovery-nav" aria-label="Discovery navigation">
         <Link to="/">The Reserve</Link>
-        <Link to="/quiz">Reference diagnostic</Link>
+        <div className="discovery-nav__links">
+          <Link to="/watches/find">Search the screen</Link>
+          <Link to="/quiz">Reference diagnostic</Link>
+        </div>
       </nav>
       <header className="discovery-header">
         <span className="eyebrow">Source-led archive</span>
@@ -42,6 +45,25 @@ export default function WatchesIndex() {
           not evidence of an actor&apos;s private collection, and an inspired
           retail watch is not silently substituted for a custom prop.
         </p>
+        <Form action="/watches/find" className="find-form" method="get" role="search">
+          <label className="sr-only" htmlFor="archive-search">
+            Search any film, series, actor or public figure
+          </label>
+          <div className="search-box">
+            <input
+              id="archive-search"
+              maxLength={120}
+              minLength={2}
+              name="q"
+              placeholder="Search any film, series, actor or public figure"
+              required
+              type="search"
+            />
+            <button className="button button--primary" type="submit">
+              Search
+            </button>
+          </div>
+        </Form>
       </header>
       <aside
         className="archetype-invitation"

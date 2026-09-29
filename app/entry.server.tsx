@@ -15,7 +15,9 @@ import { renderToPipeableStream } from "react-dom/server";
 
 import { shouldReportSentryServerError } from "./domain/sentry-error";
 
-export const streamTimeout = 5_000;
+// Streamed AI search results resolve within AI_SEARCH_TIMEOUT_MS (35 s),
+// so the stream must outlive that or the page shows the error state early.
+export const streamTimeout = 40_000;
 
 const captureSentryError = Sentry.createSentryHandleError({
   logErrors: true,

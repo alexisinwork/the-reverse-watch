@@ -193,14 +193,14 @@ export default function Home() {
           dial.
         </p>
         <nav className="landing-links" aria-label="Explore The Reserve">
-          <a className="landing-action" href="/watches">
-            <span className="landing-action__kicker">Evidence archive</span>
-            <strong>Explore watches</strong>
+          <a className="landing-action" href="/watches/find">
+            <span className="landing-action__kicker">Film · TV · People</span>
+            <strong>Find the watch from the screen</strong>
             <span className="landing-action__description">
-              Examine sourced watch sightings from cinema, television, and
-              public life—with uncertainty left visible.
+              Search any film, series, actor or public figure and see the
+              watches they wore, each linked to the page that proves it.
             </span>
-            <span className="landing-action__footer">Open the archive →</span>
+            <span className="landing-action__footer">Search now →</span>
           </a>
           <a
             className={`landing-action landing-action--diagnostic${
@@ -215,8 +215,8 @@ export default function Home() {
             </span>
             <strong>Start the reference diagnostic</strong>
             <span className="landing-action__description">
-              Build an evidence-led shortlist from your real budget, wrist,
-              operating needs, and personal signal.
+              Six quick answers (price range, wrist, where you wear it), then
+              watches confirmed on their makers&apos; own pages.
             </span>
             <span className="landing-action__footer">
               {diagnosticAccess
@@ -225,6 +225,9 @@ export default function Home() {
             </span>
           </a>
         </nav>
+        <p className="landing-secondary">
+          Or browse the <a href="/watches">reviewed archive of film and TV watches</a>.
+        </p>
         <BeehiivSignup onSubscribed={unlockDiagnostic} />
       </main>
 

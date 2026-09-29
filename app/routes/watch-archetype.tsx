@@ -195,8 +195,8 @@ export default function WatchArchetype() {
             <h2 id="archetype-next">Choose your next direction</h2>
             <p>
               The full diagnostic carries forward only the validated social and
-              aesthetic preferences. It still asks you to confirm exact budget,
-              wrist size, operating context, and every active hard constraint.
+              aesthetic preferences. It still asks for your price range, wrist
+              size, where you will wear it, and every hard requirement.
             </p>
             <div className="archetype-next-actions">
               <Link

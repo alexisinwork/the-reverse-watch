@@ -1,158 +1,107 @@
 import { render, screen } from "@testing-library/react";
 import { createRoutesStub } from "react-router";
-import { expect, it, vi } from "vitest";
+import { vi } from "vitest";
 
-const { enqueueDiscoveryResearch, persistDiscoveryFunnelEvent } = vi.hoisted(
-  () => ({
-    enqueueDiscoveryResearch: vi.fn(),
-    persistDiscoveryFunnelEvent: vi.fn(),
-  }),
-);
-const { verifyFilmOrSeriesTitle } = vi.hoisted(() => ({
-  verifyFilmOrSeriesTitle: vi.fn(),
+const store = vi.hoisted(() => ({ searchWithStore: vi.fn() }));
+const finder = vi.hoisted(() => ({ searchFilmWatches: vi.fn() }));
+
+vi.mock("../domain/ai-watch-store.server", () => store);
+vi.mock("../domain/ai-watch-finder.server", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../domain/ai-watch-finder.server")>()),
+  searchFilmWatches: finder.searchFilmWatches,
 }));
 
-vi.mock("../domain/discovery-research-store.server", () => ({
-  enqueueDiscoveryResearch,
-}));
-vi.mock("../domain/discovery-funnel-store.server", () => ({
-  persistDiscoveryFunnelEvent,
-}));
-vi.mock("../domain/perplexity-title-verification.server", () => ({
-  verifyFilmOrSeriesTitle,
-}));
+import { clearRateLimitBuckets } from "../domain/rate-limit.server";
+import WatchFind, { loader } from "./watch-find";
 
-import WatchFind, { action, loader } from "./watch-find";
-
-it("renders an email-free accepted-record finder with validated handoff", async () => {
-  const Stub = createRoutesStub([
+const sighting = {
+  status: "found",
+  fromCache: false,
+  summary: "Bond wore Omega.",
+  watches: [
     {
-      path: "/watches/find",
-      Component: WatchFind,
-      loader: (args) => loader(args),
+      brand: "Omega",
+      model: "Seamaster Diver 300M",
+      referenceCode: "210.90.42.20.01.001",
+      sourceUrl: "https://www.hodinkee.com/bond",
+      imageUrl: "https://img.test/omega.jpg",
+      priceNote: null,
+      rationale: "Worn by Daniel Craig in No Time to Die.",
+      details: { person: "Daniel Craig", work: "No Time to Die", year: 2021 },
     },
+  ],
+};
+
+function stub(entry: string) {
+  const Stub = createRoutesStub([
+    { path: "/watches/find", Component: WatchFind, loader: (args) => loader(args) },
   ]);
-  render(
-    <Stub
-      initialEntries={[
-        "/watches/find?socialSignal=anti_luxury&aestheticDna=structural_tool",
-      ]}
-    />,
-  );
-  expect(
-    await screen.findByRole("heading", {
-      name: "Find a watch through a story",
-    }),
-  ).toBeInTheDocument();
-  const anchors = [
-    screen.getByRole("button", { name: "Film or TV" }),
-    screen.getByRole("button", { name: "Actor or public figure" }),
-    screen.getByRole("button", { name: "Fictional character" }),
-  ];
-  expect(anchors).toHaveLength(3);
-  anchors.forEach((anchor) => expect(anchor).toBeEnabled());
-  expect(screen.queryByLabelText(/email/i)).not.toBeInTheDocument();
-  expect(screen.queryByText(/research request/i)).not.toBeInTheDocument();
-});
+  return render(<Stub initialEntries={[entry]} />);
+}
 
-describe("research intake action", () => {
-  const originalEnvironment = {
-    maxRequests: process.env.DISCOVERY_RESEARCH_RATE_LIMIT_MAX_REQUESTS,
-    windowSeconds: process.env.DISCOVERY_RESEARCH_RATE_LIMIT_WINDOW_SECONDS,
-  };
+function loaderArgs(url: string, ip = "203.0.113.7") {
+  return {
+    request: new Request(url, { headers: { "x-forwarded-for": ip } }),
+  } as Parameters<typeof loader>[0];
+}
 
+describe("find a watch from the screen", () => {
   beforeEach(() => {
-    process.env.DISCOVERY_RESEARCH_RATE_LIMIT_MAX_REQUESTS = "2";
-    process.env.DISCOVERY_RESEARCH_RATE_LIMIT_WINDOW_SECONDS = "60";
-    enqueueDiscoveryResearch.mockReset();
-    persistDiscoveryFunnelEvent.mockReset();
-    verifyFilmOrSeriesTitle.mockReset();
-    persistDiscoveryFunnelEvent.mockResolvedValue(false);
+    store.searchWithStore.mockReset();
+    finder.searchFilmWatches.mockReset();
+    clearRateLimitBuckets();
   });
 
-  afterEach(() => {
-    if (originalEnvironment.maxRequests === undefined) {
-      delete process.env.DISCOVERY_RESEARCH_RATE_LIMIT_MAX_REQUESTS;
-    } else {
-      process.env.DISCOVERY_RESEARCH_RATE_LIMIT_MAX_REQUESTS =
-        originalEnvironment.maxRequests;
-    }
-    if (originalEnvironment.windowSeconds === undefined) {
-      delete process.env.DISCOVERY_RESEARCH_RATE_LIMIT_WINDOW_SECONDS;
-    } else {
-      process.env.DISCOVERY_RESEARCH_RATE_LIMIT_WINDOW_SECONDS =
-        originalEnvironment.windowSeconds;
-    }
-  });
-
-  it("queues a valid topic and records only its anchor kind", async () => {
-    enqueueDiscoveryResearch.mockResolvedValue({
-      token: "c".repeat(48),
-      status: "queued",
-    });
-    const form = new FormData();
-    form.set("anchor", "work");
-    form.set("query", "Arrival");
-    const response = await action({
-      request: new Request("http://test.local/watches/find", {
-        method: "POST",
-        headers: { "x-real-ip": "203.0.113.9" },
-        body: form,
-      }),
-    } as Parameters<typeof action>[0]);
-
-    expect(response.status).toBe(302);
-    expect(response.headers.get("location")).toBe(
-      `/watches/research/${"c".repeat(48)}`,
+  it("offers one search box and examples before any search", async () => {
+    stub("/watches/find");
+    expect(
+      await screen.findByRole("heading", { name: "Find the watch from the screen" }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("searchbox", { name: /film, series, actor/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Daniel Craig" })).toHaveAttribute(
+      "href",
+      "/watches/find?q=Daniel%20Craig",
     );
-    expect(enqueueDiscoveryResearch).toHaveBeenCalledWith({
-      anchor: "work",
-      displayText: "Arrival",
-      releaseYear: null,
-    });
-    expect(persistDiscoveryFunnelEvent).toHaveBeenCalledWith({
-      name: "research_request_submitted",
-      anchor: "work",
-    });
+    expect(store.searchWithStore).not.toHaveBeenCalled();
   });
 
-  it("silently accepts the honeypot without queuing a topic", async () => {
-    const form = new FormData();
-    form.set("website", "bot.example");
-    const response = await action({
-      request: new Request("http://test.local/watches/find", {
-        method: "POST",
-        body: form,
-      }),
-    } as Parameters<typeof action>[0]);
-    expect(response.status).toBe(204);
-    expect(enqueueDiscoveryResearch).not.toHaveBeenCalled();
+  it("searches a normalized query and streams in documented sightings", async () => {
+    store.searchWithStore.mockResolvedValue(sighting);
+    stub("/watches/find?q=%20Daniel%20%20Craig%20");
+
+    expect(
+      await screen.findByRole("heading", { name: "Omega Seamaster Diver 300M" }),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Daniel Craig · No Time to Die · 2021")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "See the evidence" })).toHaveAttribute(
+      "href",
+      "https://www.hodinkee.com/bond",
+    );
+    expect(store.searchWithStore).toHaveBeenCalledWith(
+      expect.objectContaining({ kind: "film", cacheInput: { query: "daniel craig" } }),
+    );
   });
 
-  it("verifies an original title before the actor/character step", async () => {
-    process.env.PERPLEXITY_API_KEY = "provider-key";
-    verifyFilmOrSeriesTitle.mockResolvedValue({
-      exists: true,
-      canonicalTitle: "Inception",
-      releaseYear: 2010,
-      sources: ["https://www.britannica.com/topic/Inception"],
-    });
-    const form = new FormData();
-    form.set("intent", "verify_work");
-    form.set("title", "Inception");
-    const response = await action({
-      request: new Request("http://test.local/watches/find", {
-        method: "POST",
-        body: form,
-      }),
-    } as Parameters<typeof action>[0]);
-    expect(response.status).toBe(200);
-    const body: unknown = await response.json();
-    expect(body).toMatchObject({
-      kind: "title_verification",
-      result: { exists: true, canonicalTitle: "Inception" },
-    });
-    expect(verifyFilmOrSeriesTitle).toHaveBeenCalledTimes(1);
-    delete process.env.PERPLEXITY_API_KEY;
+  it("does not search for a one-character query", () => {
+    const result = loader(loaderArgs("http://test.local/watches/find?q=x"));
+    expect(result.result).toBeNull();
+    expect(store.searchWithStore).not.toHaveBeenCalled();
+  });
+
+  it("rate-limits fresh searches per visitor but not stored answers", async () => {
+    store.searchWithStore.mockImplementation(({ run }: { run: () => Promise<unknown> }) => run());
+    finder.searchFilmWatches.mockResolvedValue(sighting);
+
+    const outcomes = [];
+    for (let index = 0; index < 13; index += 1) {
+      outcomes.push(await loader(loaderArgs(`http://test.local/watches/find?q=query-${index}`)).result);
+    }
+
+    expect(finder.searchFilmWatches).toHaveBeenCalledTimes(12);
+    expect(outcomes.at(-1)).toMatchObject({ status: "no_match" });
+    const otherVisitor = await loader(
+      loaderArgs("http://test.local/watches/find?q=another", "198.51.100.9"),
+    ).result;
+    expect(otherVisitor).toMatchObject({ status: "found" });
   });
 });

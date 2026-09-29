@@ -98,7 +98,7 @@ export async function loadStoredSearch(
             ...watch,
             sourceUrl,
             imageUrl: safeHttpUrl(watch.imageUrl),
-            details: (watch.details ?? {}) as FoundWatch["details"],
+            details: (watch.details ?? {}),
           },
         ]
       : [];

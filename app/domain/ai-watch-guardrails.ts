@@ -143,12 +143,21 @@ const MOVEMENT_ALIASES: Record<string, string> = {
   smart: "hybrid",
 };
 
+// Longest first, so "Automatic (Spring Drive)" or "solar quartz" resolve to
+// the specific type rather than the generic word they also contain.
+const ALIASES_BY_SPECIFICITY = Object.keys(MOVEMENT_ALIASES).sort(
+  (a, b) => b.length - a.length,
+);
+const SPECIFIC_TYPES = new Set(["spring_drive", "solar", "hybrid"]);
+
 export function normalizeMovement(value: string | null) {
   if (!value) return null;
   const folded = fold(value);
-  if (MOVEMENT_ALIASES[folded]) return MOVEMENT_ALIASES[folded]!;
-  const found = Object.keys(MOVEMENT_ALIASES).find((alias) => folded.includes(alias));
-  return found ? MOVEMENT_ALIASES[found]! : null;
+  if (MOVEMENT_ALIASES[folded]) return MOVEMENT_ALIASES[folded];
+  const matches = ALIASES_BY_SPECIFICITY.filter((alias) => folded.includes(alias)).map(
+    (alias) => MOVEMENT_ALIASES[alias]!,
+  );
+  return matches.find((type) => SPECIFIC_TYPES.has(type)) ?? matches[0] ?? null;
 }
 
 export function allowedMovement(allowed: readonly string[], value: string | null) {

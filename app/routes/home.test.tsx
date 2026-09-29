@@ -44,8 +44,11 @@ describe("landing page", () => {
     ).toHaveAttribute("href", "#newsletter-signup");
     expect(
       screen.getByRole("link", {
-        name: /Explore watches/i,
+        name: /Find the watch from the screen/i,
       }),
+    ).toHaveAttribute("href", "/watches/find");
+    expect(
+      screen.getByRole("link", { name: /reviewed archive/i }),
     ).toHaveAttribute("href", "/watches");
   });
 

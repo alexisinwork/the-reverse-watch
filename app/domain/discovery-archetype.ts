@@ -139,7 +139,7 @@ export const ARCHETYPE_QUESTIONS = [
   {
     name: "priceComfort",
     legend: "At this early stage, which price idea feels plausible?",
-    hint: "This is directional only. The full diagnostic still requires an exact maximum budget.",
+    hint: "This is directional only. The full diagnostic then asks for your exact price range.",
     options: [
       ["considered_entry", "A considered first serious watch"],
       ["established_collection", "An established collection purchase"],

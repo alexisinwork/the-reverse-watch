@@ -1,321 +1,174 @@
 import { createHash } from "node:crypto";
 
-import {
-  Form,
-  Link,
-  redirect,
-  useActionData,
-  useLoaderData,
-} from "react-router";
+import { Form, Link, useLoaderData, useNavigation } from "react-router";
 
 import type { Route } from "./+types/watch-find";
+import { WatchResults } from "../components/watch-results";
 import {
-  discoveryAnchorSchema,
-  discoverySearchSchema,
-  parseDiscoveryHandoff,
-} from "../domain/discovery-selection";
-import {
-  fallbackDiscoverySearch,
-  searchAcceptedDiscoveryRecords,
-} from "../domain/discovery-search.server";
-import { enqueueDiscoveryResearch } from "../domain/discovery-research-store.server";
-import { verifyFilmOrSeriesTitle } from "../domain/perplexity-title-verification.server";
-import type { TitleVerificationResponse } from "../domain/perplexity-title-verification.server";
-import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
-import {
-  consumeRateLimit,
-  parseDiscoveryResearchRateLimitPolicy,
-  type RateLimitDecision,
-} from "../domain/rate-limit.server";
-import { DiscoveryAnalytics } from "../components/discovery-analytics";
+  normalizeFilmQuery,
+  searchFilmWatches,
+} from "../domain/ai-watch-finder.server";
+import { searchWithStore } from "../domain/ai-watch-store.server";
+import { parseDiscoveryHandoff } from "../domain/discovery-selection";
+import { consumeRateLimit, type RateLimitPolicy } from "../domain/rate-limit.server";
 import "../styles/discovery.css";
 
-export async function loader({ request }: Route.LoaderArgs) {
-  const searchParams = new URL(request.url).searchParams;
-  const anchor = discoveryAnchorSchema.safeParse(searchParams.get("anchor"));
-  const parsedSearch = discoverySearchSchema.safeParse({
-    anchor: anchor.success ? anchor.data : undefined,
-    query: searchParams.get("q") ?? undefined,
-  });
-  const results = parsedSearch.success
-    ? ((await searchAcceptedDiscoveryRecords(parsedSearch.data)) ??
-      fallbackDiscoverySearch(parsedSearch.data))
-    : [];
-  return {
-    handoff: parseDiscoveryHandoff(searchParams),
-    anchor: anchor.success ? anchor.data : null,
-    query: searchParams.get("q") ?? "",
-    results,
-  };
-}
+const QUERY_MAX = 120;
 
-export async function action({ request }: Route.ActionArgs) {
-  const form = await request.formData();
-  if (form.get("website")) return new Response(null, { status: 204 });
-  if (form.get("intent") === "verify_work") {
-    const rawTitle = form.get("title");
-    const title = typeof rawTitle === "string" ? rawTitle : "";
-    if (title.trim().length < 2 || title.trim().length > 160)
-      return new Response(
-        "Enter an original title between 2 and 160 characters.",
-        { status: 400 },
-      );
-    const apiKey = process.env.PERPLEXITY_API_KEY?.trim();
-    if (!apiKey)
-      return new Response("Title verification is temporarily unavailable.", {
-        status: 503,
-      });
-    try {
-      return Response.json({
-        kind: "title_verification",
-        title,
-        result: await verifyFilmOrSeriesTitle(title, {
-          apiKey,
-          model: process.env.PERPLEXITY_RESEARCH_MODEL?.trim() || "sonar-pro",
-        }),
-      });
-    } catch {
-      return new Response("Title verification could not be completed.", {
-        status: 503,
-      });
-    }
-  }
-  const anchor = discoveryAnchorSchema.safeParse(form.get("anchor"));
-  const rawQuery = form.get("query");
-  const query = typeof rawQuery === "string" ? rawQuery : "";
-  if (!anchor.success) return new Response("Invalid request", { status: 400 });
-  const rateLimitPolicy = parseDiscoveryResearchRateLimitPolicy();
-  if (!rateLimitPolicy.configured) {
-    return new Response("Research intake is temporarily unavailable", {
-      status: 503,
-    });
-  }
-  const rateLimitDecision = consumeRateLimit(
-    researchRateLimitKey(request),
-    rateLimitPolicy,
-  );
-  if (!rateLimitDecision.allowed) {
-    return new Response("Too many research requests. Please try again later.", {
-      status: 429,
-      headers: rateLimitHeaders(rateLimitDecision),
-    });
-  }
-  try {
-    const topic = await enqueueDiscoveryResearch({
-      anchor: anchor.data,
-      displayText: query,
-      releaseYear: null,
-    });
-    if (!topic)
-      return new Response("Research intake is unavailable", { status: 503 });
-    void persistDiscoveryFunnelEvent({
-      name: "research_request_submitted",
-      anchor: anchor.data,
-    }).catch(() => undefined);
-    return redirect(`/watches/research/${topic.token}`);
-  } catch {
-    return new Response("Invalid request", { status: 400 });
-  }
-}
+// Stored answers are free; only fresh searches spend provider credit.
+const NEW_SEARCH_POLICY: RateLimitPolicy = {
+  configured: true,
+  maxRequests: 12,
+  windowMs: 10 * 60 * 1_000,
+};
 
-function researchRateLimitKey(request: Request) {
+const EXAMPLES = [
+  "Daniel Craig",
+  "James Bond",
+  "Succession",
+  "Paul Newman",
+  "The Bear",
+  "Ryan Gosling in Drive",
+];
+
+function visitorKey(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for");
   const address =
-    forwarded?.split(",", 1)[0]?.trim() ||
-    request.headers.get("x-real-ip")?.trim() ||
-    "unknown";
-  return `discovery-research:${createHash("sha256").update(address).digest("hex")}`;
+    forwarded?.split(",", 1)[0]?.trim() || request.headers.get("x-real-ip")?.trim() || "unknown";
+  // Only a hash of the address is kept, in memory, for the rate limit.
+  return `film-search:${createHash("sha256").update(address).digest("hex")}`;
 }
 
-function rateLimitHeaders(decision: RateLimitDecision) {
-  const headers = new Headers();
-  if (decision.limit !== null) {
-    headers.set("X-RateLimit-Limit", String(decision.limit));
-    headers.set("X-RateLimit-Remaining", String(decision.remaining));
-    headers.set(
-      "X-RateLimit-Reset",
-      String(Math.ceil((decision.resetAt ?? Date.now()) / 1_000)),
-    );
-  }
-  if (decision.retryAfterSeconds !== null) {
-    headers.set("Retry-After", String(decision.retryAfterSeconds));
-  }
-  return headers;
+export function loader({ request }: Route.LoaderArgs) {
+  const url = new URL(request.url);
+  const query = (url.searchParams.get("q") ?? "").trim().replace(/\s+/g, " ").slice(0, QUERY_MAX);
+  const handoff = parseDiscoveryHandoff(url.searchParams);
+  if (query.length < 2) return { query, handoff, result: null };
+
+  const key = visitorKey(request);
+  // Streamed: the page renders immediately and the watches arrive after.
+  const result = searchWithStore({
+    kind: "film",
+    cacheInput: { query: normalizeFilmQuery(query) },
+    run: async () => {
+      if (!consumeRateLimit(key, NEW_SEARCH_POLICY).allowed) {
+        return {
+          status: "no_match",
+          summary:
+            "You have run a lot of new searches in a short time. Please try again in a few minutes; searches others already made still load instantly.",
+        };
+      }
+      return searchFilmWatches(query);
+    },
+  });
+  return { query, handoff, result };
+}
+
+export function meta({ data }: Route.MetaArgs) {
+  const query = data?.query;
+  return [
+    {
+      title: query ? `Watches in “${query}” · The Reserve` : "Find a watch from the screen · The Reserve",
+    },
+    {
+      name: "description",
+      content:
+        "Search any film, series, actor, character or public figure and see the watches they wore, each with its source.",
+    },
+  ];
 }
 
 export default function WatchFind() {
-  const { handoff, anchor, query, results } = useLoaderData<typeof loader>();
-  const actionData = useActionData<typeof action>() as
-    | {
-        kind: "title_verification";
-        title: string;
-        result: TitleVerificationResponse;
-      }
-    | undefined;
+  const { query, handoff, result } = useLoaderData<typeof loader>();
+  const navigation = useNavigation();
+  const searching = navigation.state === "loading" && navigation.location?.pathname === "/watches/find";
+
   return (
-    <main className="discovery-shell">
-      {anchor ? (
-        <DiscoveryAnalytics
-          event={{ name: "cultural_anchor_selected", anchor }}
-        />
-      ) : null}
+    <main className="discovery-shell find-shell">
       <nav className="discovery-nav" aria-label="Discovery navigation">
-        <Link to="/watches/archetype">Watch archetype</Link>
-        <Link to="/watches">Browse the archive</Link>
-      </nav>
-      <header className="discovery-header">
-        <span className="eyebrow">Film and culture</span>
-        <h1>Find a watch through a story</h1>
-        <p>
-          Choose a film or television work, a public figure, or a fictional
-          character. This archive shows reviewed claims only.
-        </p>
-      </header>
-      <section className="discovery-cta" aria-labelledby="find-anchor-heading">
-        <div className="discovery-search-form">
-          <h2 id="verify-title-heading">Start with an original title</h2>
-          <p>
-            We verify the film or series with Perplexity Sonar before asking
-            which character or actor to research.
-          </p>
-          <Form method="post" aria-labelledby="verify-title-heading">
-            <input name="intent" type="hidden" value="verify_work" />
-            <label htmlFor="original-title">Original title</label>
-            <input
-              id="original-title"
-              maxLength={160}
-              minLength={2}
-              name="title"
-              required
-              type="search"
-            />
-            <button type="submit">Verify title</button>
-          </Form>
-          {actionData &&
-          "kind" in actionData &&
-          actionData.kind === "title_verification" ? (
-            actionData.result.exists ? (
-              <div role="status">
-                <p>
-                  Verified title: {actionData.result.canonicalTitle} (
-                  {actionData.result.releaseYear ?? "year unknown"}).
-                </p>
-                <p>
-                  Now enter the actor or character whose watch attribution you
-                  want to find.
-                </p>
-                <Form method="get" className="discovery-search-form">
-                  <input
-                    name="work"
-                    type="hidden"
-                    value={actionData.result.canonicalTitle}
-                  />
-                  <label htmlFor="verified-person">
-                    Actor or fictional character
-                  </label>
-                  <input
-                    id="verified-person"
-                    maxLength={160}
-                    minLength={2}
-                    name="q"
-                    required
-                    type="search"
-                  />
-                  <div className="archetype-next-actions">
-                    <button name="anchor" type="submit" value="public_figure">
-                      Search actor / public figure
-                    </button>
-                    <button name="anchor" type="submit" value="character">
-                      Search fictional character
-                    </button>
-                  </div>
-                </Form>
-              </div>
-            ) : (
-              <p role="status">
-                No source-backed film or series match was found for that title.
-              </p>
-            )
-          ) : null}
+        <Link to="/">The Reserve</Link>
+        <div className="discovery-nav__links">
+          <Link to="/watches">Reviewed archive</Link>
+          <Link to="/watches/archetype">Watch archetype</Link>
+          <Link to="/quiz">Reference diagnostic</Link>
         </div>
-        <h2 id="find-anchor-heading">Choose an anchor</h2>
-        <Form method="get" className="archetype-next-actions">
-          <button name="anchor" type="submit" value="work">
-            Film or TV
-          </button>
-          <button name="anchor" type="submit" value="public_figure">
-            Actor or public figure
-          </button>
-          <button name="anchor" type="submit" value="character">
-            Fictional character
-          </button>
-        </Form>
-        {anchor ? (
-          <Form method="get" className="discovery-search-form">
-            <input name="anchor" type="hidden" value={anchor} />
-            <label htmlFor="discovery-query">
-              Search accepted{" "}
-              {anchor === "work"
-                ? "works"
-                : anchor === "character"
-                  ? "characters"
-                  : "public figures"}
-            </label>
+      </nav>
+
+      <header className="find-hero">
+        <span className="eyebrow">Film · Television · People</span>
+        <h1>Find the watch from the screen</h1>
+        <p>
+          Type a film, series, actor, character or public figure. We search the live web and
+          show each watch with who wore it, where, and the page that proves it.
+        </p>
+        <Form className="find-form" method="get" role="search">
+          <label className="sr-only" htmlFor="find-query">
+            Film, series, actor or public figure
+          </label>
+          <div className="search-box">
+            <svg aria-hidden="true" className="search-box__icon" viewBox="0 0 24 24">
+              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="1.8" />
+              <path d="m20 20-4.2-4.2" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+            </svg>
             <input
+              autoComplete="off"
               defaultValue={query}
-              id="discovery-query"
-              maxLength={160}
+              id="find-query"
+              maxLength={QUERY_MAX}
               minLength={2}
               name="q"
+              placeholder="e.g. Daniel Craig, Succession, Steve McQueen"
               required
               type="search"
             />
-            <button type="submit">Search archive</button>
-          </Form>
-        ) : null}
-        {anchor && query.length > 0 && query.trim().length < 2 ? (
-          <p>Enter at least two characters to search the reviewed archive.</p>
-        ) : null}
-        {results.length > 0 ? (
-          <ul className="discovery-search-results">
-            {results.map((result) => (
-              <li key={`${result.anchor}:${result.slug}`}>
-                <Link
-                  to={
-                    result.anchor === "work"
-                      ? `/watches/works/${result.slug}`
-                      : `/watches/people/${result.slug}`
-                  }
-                >
-                  {result.label}
-                </Link>
-                {result.descriptor ? <span>{result.descriptor}</span> : null}
-              </li>
-            ))}
-          </ul>
-        ) : anchor && query.trim().length >= 2 ? (
-          <>
-            <p>No accepted record matches that search.</p>
-            <Form method="post">
-              <input name="anchor" type="hidden" value={anchor} />
-              <input name="query" type="hidden" value={query} />
-              <input
-                aria-hidden="true"
-                name="website"
-                tabIndex={-1}
-                type="text"
-              />
-              <button type="submit">Research this subject</button>
-            </Form>
-          </>
-        ) : null}
-        {handoff ? (
-          <p className="archetype-boundary">
-            Your editorial direction is available as optional context; it is not
-            a watch recommendation or a hard constraint.
-          </p>
-        ) : null}
-      </section>
+            <button className="button button--primary" disabled={searching} type="submit">
+              {searching ? "Searching…" : "Search"}
+            </button>
+          </div>
+        </Form>
+        <div className="find-examples" aria-label="Example searches">
+          <span>Try</span>
+          {EXAMPLES.map((example) => (
+            <Link className="chip" key={example} to={`/watches/find?q=${encodeURIComponent(example)}`}>
+              {example}
+            </Link>
+          ))}
+        </div>
+      </header>
+
+      {result ? (
+        <WatchResults
+          eyebrow="Live search · documented sightings"
+          footnote="Found with a live Perplexity web search and ranked by Muse Spark. Each sighting links to the page that documents it; attributions from films can be disputed."
+          fx={null}
+          heading={`Watches in “${query}”`}
+          key={query}
+          mode="film"
+          result={result}
+        />
+      ) : (
+        <section className="find-empty" aria-label="How it works">
+          <div>
+            <strong>1</strong>
+            <p>Search a title or a name. Spelling doesn&apos;t need to be perfect.</p>
+          </div>
+          <div>
+            <strong>2</strong>
+            <p>We gather documented sightings from the live web in parallel.</p>
+          </div>
+          <div>
+            <strong>3</strong>
+            <p>Every watch links to its evidence. Searches are saved, so repeats are instant.</p>
+          </div>
+        </section>
+      )}
+
+      {handoff?.socialSignal || handoff?.aestheticDna ? (
+        <p className="archetype-boundary">
+          Your archetype is kept as optional context; it is not a watch recommendation or a hard
+          constraint.
+        </p>
+      ) : null}
     </main>
   );
 }
