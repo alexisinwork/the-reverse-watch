@@ -39,6 +39,9 @@ create table private.ai_watch_search_results (
   watch_id uuid not null references private.ai_watches (id),
   rationale text not null,
   price_note text,
+  -- Per-search facts the guardrails checked (price, water resistance,
+  -- materials, source type) or, for films, where the watch was worn.
+  details jsonb not null default '{}'::jsonb check (jsonb_typeof(details) = 'object'),
   primary key (search_id, rank)
 );
 
@@ -64,7 +67,8 @@ as $$
           'sourceUrl', w.source_url,
           'imageUrl', w.image_url,
           'priceNote', r.price_note,
-          'rationale', r.rationale
+          'rationale', r.rationale,
+          'details', r.details
         )
         order by r.rank
       )
@@ -126,13 +130,18 @@ begin
       set image_url = coalesce(private.ai_watches.image_url, excluded.image_url)
     returning id into v_watch_id;
 
-    insert into private.ai_watch_search_results (search_id, rank, watch_id, rationale, price_note)
+    insert into private.ai_watch_search_results
+      (search_id, rank, watch_id, rationale, price_note, details)
     values (
       v_search_id,
       v_rank,
       v_watch_id,
       v_watch ->> 'rationale',
-      nullif(v_watch ->> 'priceNote', '')
+      nullif(v_watch ->> 'priceNote', ''),
+      case
+        when jsonb_typeof(v_watch -> 'details') = 'object' then v_watch -> 'details'
+        else '{}'::jsonb
+      end
     );
   end loop;
 
