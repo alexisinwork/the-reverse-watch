@@ -62,6 +62,7 @@ API project and project service-account key for The Reserve.
 | Vercel | OAuth for MCP | Phase 1 | Sign in to the account/team that will own `thereserve.watch`. |
 | Vercel | `VERCEL_TOKEN` and IDs | Optional automation | Use only for non-interactive CI; OAuth is preferred for interactive MCP work. |
 | RunPod | `RUNPOD_API_KEY`, `RUNPOD_ENDPOINT_ID` | Optional Phase 6 | Needed only if the later semantic experiment includes hosted Ollama. |
+| Meta Model API | `MUSE_SPARK_API_KEY` | Optional Phase 6 | Owner's existing Muse Spark 1.3 Contributor access; dedicated key for this project, not the owner's personal Meta login. |
 | Context7 | `CONTEXT7_API_KEY` | Optional | Higher documentation limits; unauthenticated MCP works for basic use. |
 | Upstash | Redis REST URL/token | Phase 7 | Distributed rate limiting and request deduplication. |
 | Resend | API key and sender | Optional Phase 7 | Transactional dossier delivery; Beehiiv remains the newsletter opt-in system. |
@@ -129,6 +130,18 @@ models. Raw request metadata and preset name must be retained for reproducibilit
 Any generation uses the Responses API with Zod-validated structured output.
 Model choices remain configurable and must pass the project's deterministic
 evaluation baseline. Arbitrary fixed-size dossier chunking is not planned.
+
+### Meta Muse Spark
+
+`AI_PROVIDER=muse-spark` selects Meta's Muse Spark 1.3 Contributor as the
+optional Phase 6 semantic-experiment provider, alongside `openai` and
+`ollama`. It is OpenAI-SDK-compatible: call it with the standard OpenAI client
+pointed at `MUSE_SPARK_BASE_URL` (`https://api.meta.ai/v1`) using
+`MUSE_SPARK_API_KEY` as the bearer token and `MUSE_SPARK_MODEL`
+(`muse-spark-1.3-contributor`) as the model id. Like the other Phase 6
+providers, it has no runtime caller yet; it is config-layer only until a
+semantic experiment is built and cleared against the deterministic evaluation
+baseline in `npm run evaluate:baseline`.
 
 ## Project MCP servers
 

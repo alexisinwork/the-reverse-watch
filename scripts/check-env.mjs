@@ -29,6 +29,7 @@ const groups = {
       'OPENAI_PROJECT_ID',
       'OLLAMA_BASE_URL',
       'RUNPOD_ENDPOINT_ID',
+      'MUSE_SPARK_API_KEY',
     ],
   },
   deployment: {

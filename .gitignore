@@ -28,3 +28,5 @@ data/research/jobs/
 data/research/brand-manifest.txt
 data/research/model-sheet-sample.tsv
 .scratch/
+.vercel
+.env*

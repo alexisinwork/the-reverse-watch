@@ -1693,6 +1693,7 @@ unchanged.
 | `OPENAI_EMBEDDING_MODEL` | Optional Phase 6 | Semantic experiment only. |
 | `OLLAMA_BASE_URL`, `OLLAMA_CHAT_MODEL` | Optional Phase 6 | Ollama experiment. |
 | `RUNPOD_API_KEY`, `RUNPOD_ENDPOINT_ID` | Optional Phase 6 | Hosted Ollama experiment. |
+| `MUSE_SPARK_API_KEY`, `MUSE_SPARK_BASE_URL`, `MUSE_SPARK_MODEL` | Optional Phase 6 | Meta Muse Spark 1.3 Contributor experiment, called through the OpenAI SDK against Meta's own Model API base URL. |
 | `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID` | Phase 7 | Explicit subscription opt-in. |
 | `SENTRY_DSN` | Optional Phase 7 | Client/server production error reporting and the exact CSP envelope origin. |
 | `SENTRY_AUTH_TOKEN`, `SENTRY_ORG`, `SENTRY_PROJECT` | Optional Phase 7 build | Complete set required for Sentry source-map upload; the auth token remains secret. |
