@@ -12,6 +12,10 @@ import {
 import { z } from "zod";
 
 import type { Route } from "./+types/quiz";
+import {
+  searchWatchForQuiz,
+  type AiSearchView,
+} from "../domain/ai-watch-finder.server";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { loadRecommendationData } from "../domain/catalogue.server";
@@ -90,6 +94,7 @@ type ActionResult =
       ok: true;
       intent: typeof SUBMISSION_INTENT;
       profile: ReturnType<typeof normalizeProfileV3>;
+      aiSearch: AiSearchView;
       recommendation: RecommendationResultV3;
       subscription: SubscriptionResult;
       storyContext?: {
@@ -381,6 +386,9 @@ export async function action({ request }: Route.ActionArgs) {
       { status: 400 },
     );
   }
+  // Only the validated constraint profile goes to the AI search; the email
+  // field and every request header stay on this server.
+  const aiSearchPromise = searchWatchForQuiz(parsed.data);
   const evaluatedAt = new Date().toISOString();
   const evaluationStartedAt = performance.now();
   const catalogueLoad = await loadRecommendationData(parsed.data, evaluatedAt);
@@ -594,10 +602,12 @@ export async function action({ request }: Route.ActionArgs) {
     }
   }
 
+  const aiSearch = await aiSearchPromise;
   const result: Extract<ActionResult, { ok: true }> = {
     ok: true,
     intent,
     profile,
+    aiSearch,
     recommendation,
     subscription,
     ...(discoveryContext && storySlugResult.slug
@@ -1096,6 +1106,60 @@ function CandidateCard({
   );
 }
 
+function AiRecommendation({ aiSearch }: { aiSearch: AiSearchView }) {
+  return (
+    <section className="recommendation-summary" aria-labelledby="ai-pick-heading">
+      <div className="result-section-heading">
+        <div>
+          <span className="eyebrow">AI search · live web</span>
+          <h2 id="ai-pick-heading">The watch we found for you</h2>
+        </div>
+      </div>
+      {aiSearch.status === "found" ? (
+        <article className="candidate-card">
+          <div className="candidate-card__heading">
+            <div>
+              <span className="eyebrow">Best fit from a live search</span>
+              <h3>
+                {[aiSearch.brand, aiSearch.model].filter(Boolean).join(" ")}
+              </h3>
+              {aiSearch.referenceCode ? (
+                <p>Ref. {aiSearch.referenceCode}</p>
+              ) : null}
+            </div>
+          </div>
+          <p className="candidate-positioning">{aiSearch.rationale}</p>
+          {aiSearch.sourceUrl ? (
+            <a
+              className="candidate-link"
+              href={aiSearch.sourceUrl}
+              rel="noreferrer nofollow"
+              target="_blank"
+            >
+              Open the source the search used
+            </a>
+          ) : null}
+        </article>
+      ) : aiSearch.status === "no_match" ? (
+        <p className="empty-result">
+          The live search found no watch that meets every requirement:{" "}
+          {aiSearch.rationale}
+        </p>
+      ) : (
+        <p className="empty-result">
+          The AI search is unavailable right now. The reviewed catalogue
+          results below are unaffected.
+        </p>
+      )}
+      <p>
+        Found by an AI search of the live web using only your constraints
+        above; no email or personal data is sent. Check price, reference, and
+        specifications with the seller before buying.
+      </p>
+    </section>
+  );
+}
+
 function RecommendationSummary({
   recommendation,
   positioningGroups,
@@ -1318,6 +1382,7 @@ function DossierDelivery({
 function ProfileSummary({
   draft,
   profile,
+  aiSearch,
   recommendation,
   subscription,
   funnelSource,
@@ -1330,6 +1395,7 @@ function ProfileSummary({
 }: {
   draft: QuizDraft;
   profile: ReturnType<typeof normalizeProfileV3>;
+  aiSearch: AiSearchView;
   recommendation: RecommendationResultV3;
   subscription: SubscriptionResult;
   funnelSource: "archetype" | null;
@@ -1354,9 +1420,11 @@ function ProfileSummary({
       <span className="eyebrow">Constraint profile complete</span>
       <h1 id="profile-heading">Your search boundary</h1>
       <p>
-        Your profile was compared with individually reviewed watch
-        configurations. Confirmed matches meet every non-negotiable requirement;
-        watches with missing evidence stay clearly separated.
+        An AI search of the live web picked the watch that best fits your
+        profile. Below it, your profile is also compared with individually
+        reviewed watch configurations: confirmed matches meet every
+        non-negotiable requirement, and watches with missing evidence stay
+        clearly separated.
       </p>
       <dl className="profile-grid">
         <div>
@@ -1438,6 +1506,7 @@ function ProfileSummary({
           </div>
         ) : null}
       </dl>
+      <AiRecommendation aiSearch={aiSearch} />
       <RecommendationSummary
         positioningGroups={positioningGroups}
         recommendation={recommendation}
@@ -1613,6 +1682,7 @@ export default function Quiz() {
           onRestart={restartQuiz}
           positioningGroups={loaderData.positioningGroups}
           profile={resultData.profile}
+          aiSearch={resultData.aiSearch}
           recommendation={resultData.recommendation}
           scenarioLabels={scenarioLabels}
           storyContext={resultData.storyContext}
@@ -1899,8 +1969,14 @@ export default function Quiz() {
                 disabled={!stepIsComplete || isSubmitting}
                 type="submit"
               >
-                {isSubmitting ? "Evaluating…" : "See the shortlist"}
+                {isSubmitting ? "Searching…" : "See the shortlist"}
               </button>
+              {isSubmitting ? (
+                <p aria-live="polite">
+                  The AI is searching the live web for your watch. This usually
+                  takes 15–40 seconds.
+                </p>
+              ) : null}
             </Form>
           )}
         </div>

@@ -303,3 +303,80 @@ export async function findWatchWithAi(
     `Muse Spark did not produce a final answer within ${MAX_TOOL_ROUNDS} tool-calling rounds.`,
   );
 }
+
+/** What the browser receives: no internal error text, no upstream bodies. */
+export type AiSearchView =
+  | {
+      status: "found";
+      brand: string | null;
+      model: string | null;
+      referenceCode: string | null;
+      sourceUrl: string | null;
+      rationale: string;
+    }
+  | { status: "no_match"; rationale: string }
+  | { status: "unavailable" };
+
+// The model chooses this URL, and it ends up in an href.
+function safeHttpUrl(value: string | null) {
+  if (!value) return null;
+  try {
+    const url = new URL(value);
+    return url.protocol === "https:" || url.protocol === "http:"
+      ? url.toString()
+      : null;
+  } catch {
+    return null;
+  }
+}
+
+export const AI_SEARCH_TIMEOUT_MS = 100_000;
+
+/**
+ * Runs the Muse Spark -> Perplexity search for one quiz submission without
+ * ever throwing: failures, missing configuration, and timeouts are logged
+ * server-side and surface to the page only as "unavailable".
+ */
+export async function searchWatchForQuiz(
+  profile: ProfileV3,
+  {
+    config = loadAiWatchFinderConfig(),
+    timeoutMs = AI_SEARCH_TIMEOUT_MS,
+    fetchImpl = fetch,
+  }: {
+    config?: AiWatchFinderConfig;
+    timeoutMs?: number;
+    fetchImpl?: typeof fetch;
+  } = {},
+): Promise<AiSearchView> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  try {
+    const result = await Promise.race([
+      findWatchWithAi(profile, config, fetchImpl),
+      new Promise<never>((_, reject) => {
+        timer = setTimeout(
+          () => reject(new Error(`AI watch search exceeded ${timeoutMs} ms.`)),
+          timeoutMs,
+        );
+      }),
+    ]);
+    if (result.status === "found") {
+      return { ...result, sourceUrl: safeHttpUrl(result.sourceUrl) };
+    }
+    if (result.status === "no_match") return result;
+    console.error(
+      JSON.stringify({ event: "ai_watch_search_unavailable", reason: result.reason }),
+    );
+    return { status: "unavailable" };
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        event: "ai_watch_search_error",
+        message: error instanceof Error ? error.message : "unknown error",
+      }),
+    );
+    return { status: "unavailable" };
+  } finally {
+    clearTimeout(timer);
+  }
+}

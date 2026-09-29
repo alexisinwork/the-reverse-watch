@@ -10,6 +10,9 @@ const redisMock = vi.hoisted(() => ({
 const discoveryFunnelMock = vi.hoisted(() => ({
   persistDiscoveryFunnelEvent: vi.fn(),
 }));
+const aiSearchMock = vi.hoisted(() => ({
+  searchWatchForQuiz: vi.fn(),
+}));
 
 vi.mock("@upstash/redis", () => ({
   Redis: class MockRedis {
@@ -18,6 +21,7 @@ vi.mock("@upstash/redis", () => ({
   },
 }));
 vi.mock("../domain/discovery-funnel-store.server", () => discoveryFunnelMock);
+vi.mock("../domain/ai-watch-finder.server", () => aiSearchMock);
 
 import { QUESTIONNAIRE_V3_STORAGE_KEY } from "../domain/questionnaire-v3";
 import {
@@ -135,6 +139,55 @@ describe("version-3 diagnostic", () => {
     redisMock.set.mockReset();
     discoveryFunnelMock.persistDiscoveryFunnelEvent.mockReset();
     discoveryFunnelMock.persistDiscoveryFunnelEvent.mockResolvedValue(false);
+    aiSearchMock.searchWatchForQuiz.mockReset();
+    aiSearchMock.searchWatchForQuiz.mockResolvedValue({
+      status: "found",
+      brand: "Seiko",
+      model: "Prospex SPB143",
+      referenceCode: "SPB143",
+      sourceUrl: "https://www.seikowatches.com/spb143",
+      rationale: "Automatic diver within budget and diameter.",
+    });
+  });
+
+  it("runs the AI search on every submission with the profile only", async () => {
+    const response = await action(
+      buildRequest({
+        ...completeProfile,
+        email: "reader@example.com",
+        emailOptIn: "yes",
+      }),
+    );
+    const payload = response.data;
+    if (!payload.ok) throw new Error("Expected a recommendation result");
+
+    expect(aiSearchMock.searchWatchForQuiz).toHaveBeenCalledTimes(1);
+    const [sentProfile] = aiSearchMock.searchWatchForQuiz.mock.calls[0]!;
+    expect(JSON.stringify(sentProfile)).not.toContain("reader@example.com");
+    expect(sentProfile).toMatchObject({ budgetMax: 15000, budgetCurrency: "USD" });
+    expect(payload.aiSearch).toMatchObject({ status: "found", brand: "Seiko" });
+  });
+
+  it("shows the AI pick as the headline result", async () => {
+    const user = userEvent.setup();
+    const Stub = routeStub();
+    render(<Stub initialEntries={["/quiz"]} />);
+
+    await screen.findByLabelText("Maximum amount");
+    await completeAllScreens(user);
+    await user.click(
+      await screen.findByRole("button", { name: "See the shortlist" }),
+    );
+
+    expect(
+      await screen.findByRole("heading", { name: "The watch we found for you" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: "Seiko Prospex SPB143" }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "Open the source the search used" }),
+    ).toHaveAttribute("href", "https://www.seikowatches.com/spb143");
   });
 
   it("redirects unsigned visits and rejects unsigned submissions", async () => {
