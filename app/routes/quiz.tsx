@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import {
   data,
   Form,
@@ -851,6 +851,10 @@ function draftToProfileInput(draft: QuizDraft) {
   };
 }
 
+/**
+ * The form state lives in React and is submitted through ProfileFields, so
+ * these radio names only group the pills; they are never posted.
+ */
 function ChoiceGroup<T extends string>({
   legend,
   name,
@@ -869,14 +873,15 @@ function ChoiceGroup<T extends string>({
   return (
     <fieldset className="quiz-fieldset">
       <legend>{legend}</legend>
-      <div className="choice-list">
+      <div className="chip-list">
         {options.map((option) => (
           <label
-            className={`choice-card ${value === option ? "is-selected" : ""}`}
+            className={`chip chip--radio ${value === option ? "is-selected" : ""}`}
             key={option}
           >
             <input
               checked={value === option}
+              className="chip__input"
               name={name}
               onChange={() => onChange(option)}
               type="radio"
@@ -892,11 +897,13 @@ function ChoiceGroup<T extends string>({
 
 function OptionCheckboxGroup({
   legend,
+  hint,
   options,
   values,
   onChange,
 }: {
   legend: string;
+  hint?: string;
   options: readonly VocabularyOption[];
   values: string[];
   onChange: (values: string[]) => void;
@@ -911,19 +918,27 @@ function OptionCheckboxGroup({
 
   return (
     <fieldset className="quiz-fieldset">
-      <legend>{legend}</legend>
-      <div className="choice-list choice-list--compact">
+      <legend>
+        {legend}
+        {values.length > 0 ? (
+          <span className="legend-count"> · {values.length} selected</span>
+        ) : null}
+      </legend>
+      {hint ? <p className="field-hint">{hint}</p> : null}
+      <div className="chip-list">
         {options.map((option) => (
           <label
-            className={`choice-card ${values.includes(option.slug) ? "is-selected" : ""}`}
+            className={`chip ${values.includes(option.slug) ? "is-selected" : ""}`}
             key={option.slug}
           >
             <input
               checked={values.includes(option.slug)}
+              className="chip__input"
               onChange={() => toggle(option.slug)}
               type="checkbox"
               value={option.slug}
             />
+            <span aria-hidden="true" className="chip__mark" />
             <span>{option.labelEn}</span>
           </label>
         ))}
@@ -943,21 +958,18 @@ function OptionalSelect<T extends string>({
   value: T | "";
   onChange: (value: T | "") => void;
 }) {
+  const name = useId();
   return (
-    <label className="input-stack">
-      <span>{label}</span>
-      <select
-        onChange={(event) => onChange(event.target.value as T | "")}
-        value={value}
-      >
-        <option value="">No preference</option>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {labelFor(option)}
-          </option>
-        ))}
-      </select>
-    </label>
+    <ChoiceGroup<T | "none-selected">
+      legend={label}
+      name={name}
+      onChange={(next) => onChange(next === "none-selected" ? "" : next)}
+      options={["none-selected", ...options]}
+      renderLabel={(option) =>
+        option === "none-selected" ? "No preference" : labelFor(option)
+      }
+      value={value === "" ? "none-selected" : value}
+    />
   );
 }
 
@@ -974,18 +986,61 @@ function OptionalYesNo({
   value: "" | "yes" | "no";
   onChange: (value: "" | "yes" | "no") => void;
 }) {
+  const name = useId();
   return (
-    <label className="input-stack">
-      <span>{label}</span>
-      <select
-        onChange={(event) => onChange(event.target.value as "" | "yes" | "no")}
-        value={value}
-      >
-        <option value="">No preference</option>
-        <option value="yes">{yesLabel}</option>
-        <option value="no">{noLabel}</option>
-      </select>
-    </label>
+    <ChoiceGroup<"" | "yes" | "no">
+      legend={label}
+      name={name}
+      onChange={onChange}
+      options={["", "yes", "no"]}
+      renderLabel={(option) =>
+        option === "yes" ? yesLabel : option === "no" ? noLabel : "No preference"
+      }
+      value={value}
+    />
+  );
+}
+
+function NumberField({
+  label,
+  value,
+  onChange,
+  min,
+  max,
+  prefix,
+  unit,
+  placeholder,
+}: {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  min?: number;
+  max?: number;
+  prefix?: string;
+  unit?: string;
+  placeholder?: string;
+}) {
+  const id = useId();
+  return (
+    <div className="field">
+      <label className="field__label" htmlFor={id}>
+        {label}
+      </label>
+      <div className="field__control">
+        {prefix ? <span className="field__affix">{prefix}</span> : null}
+        <input
+          id={id}
+          inputMode="decimal"
+          max={max}
+          min={min}
+          onChange={(event) => onChange(event.target.value)}
+          placeholder={placeholder}
+          type="number"
+          value={value}
+        />
+        {unit ? <span className="field__affix">{unit}</span> : null}
+      </div>
+    </div>
   );
 }
 
@@ -1717,36 +1772,26 @@ export default function Quiz() {
               Enter the maximum outlay. The exact number sets your purchase
               boundary; nothing above it is offered.
             </p>
-            <div className="split-inputs">
-              <label className="input-stack input-stack--currency">
-                <span>Currency</span>
-                <select
-                  onChange={(event) =>
-                    update({
-                      budgetCurrency: event.target
-                        .value as QuizDraft["budgetCurrency"],
-                    })
-                  }
-                  value={draft.budgetCurrency}
-                >
-                  {CURRENCIES.map((currency) => (
-                    <option key={currency}>{currency}</option>
-                  ))}
-                </select>
-              </label>
-              <label className="input-stack">
-                <span>Maximum amount</span>
-                <input
-                  inputMode="decimal"
-                  min="1"
-                  onChange={(event) => {
-                    recordStart();
-                    update({ budgetMax: event.target.value });
-                  }}
-                  type="number"
-                  value={draft.budgetMax}
-                />
-              </label>
+            <ChoiceGroup
+              legend="Currency"
+              name="budgetCurrencyChoice"
+              onChange={(value) => update({ budgetCurrency: value })}
+              options={CURRENCIES}
+              renderLabel={(value) => value}
+              value={draft.budgetCurrency}
+            />
+            <div className="field-row field-row--single">
+              <NumberField
+                label="Maximum amount"
+                min={1}
+                onChange={(value) => {
+                  recordStart();
+                  update({ budgetMax: value });
+                }}
+                placeholder="e.g. 5000"
+                prefix={draft.budgetCurrency}
+                value={draft.budgetMax}
+              />
             </div>
           </div>
         ) : null}
@@ -1759,6 +1804,7 @@ export default function Quiz() {
               when it is reviewed for at least one of them.
             </p>
             <OptionCheckboxGroup
+              hint="Tap every one that applies."
               legend="Wearing scenarios"
               onChange={(values) => update({ wearingScenarios: values })}
               options={scenarios}
@@ -1769,7 +1815,9 @@ export default function Quiz() {
               name="minimumWaterResistanceM"
               onChange={(value) => update({ minimumWaterResistanceM: value })}
               options={WATER_RESISTANCE_MINIMUMS.map(String)}
-              renderLabel={(value) => waterResistanceLabel(Number(value))}
+              renderLabel={(value) =>
+                value === "0" ? "No requirement" : `${value} m+`
+              }
               value={draft.minimumWaterResistanceM}
             />
           </div>
@@ -1782,56 +1830,39 @@ export default function Quiz() {
               Set the diameter range you will actually wear. Thickness and shape
               stay open unless you constrain them.
             </p>
-            <div className="split-inputs">
-              <label className="input-stack">
-                <span>Smallest diameter (mm)</span>
-                <input
-                  inputMode="decimal"
-                  max="60"
-                  min="20"
-                  onChange={(event) =>
-                    update({ caseDiameterMinMm: event.target.value })
-                  }
-                  type="number"
-                  value={draft.caseDiameterMinMm}
-                />
-              </label>
-              <label className="input-stack">
-                <span>Largest diameter (mm)</span>
-                <input
-                  inputMode="decimal"
-                  max="60"
-                  min="20"
-                  onChange={(event) =>
-                    update({ caseDiameterMaxMm: event.target.value })
-                  }
-                  type="number"
-                  value={draft.caseDiameterMaxMm}
-                />
-              </label>
-            </div>
-            <div className="split-inputs">
-              <label className="input-stack">
-                <span>Thickness limit (mm, optional)</span>
-                <input
-                  inputMode="decimal"
-                  max="30"
-                  min="3"
-                  onChange={(event) =>
-                    update({ maxCaseThicknessMm: event.target.value })
-                  }
-                  placeholder="No preference"
-                  type="number"
-                  value={draft.maxCaseThicknessMm}
-                />
-              </label>
-              <OptionalSelect
-                label="Case shape"
-                onChange={(value) => update({ caseShape: value })}
-                options={CASE_SHAPES}
-                value={draft.caseShape}
+            <div className="field-row">
+              <NumberField
+                label="Smallest diameter"
+                max={60}
+                min={20}
+                onChange={(value) => update({ caseDiameterMinMm: value })}
+                unit="mm"
+                value={draft.caseDiameterMinMm}
+              />
+              <NumberField
+                label="Largest diameter"
+                max={60}
+                min={20}
+                onChange={(value) => update({ caseDiameterMaxMm: value })}
+                unit="mm"
+                value={draft.caseDiameterMaxMm}
+              />
+              <NumberField
+                label="Max thickness"
+                max={30}
+                min={3}
+                onChange={(value) => update({ maxCaseThicknessMm: value })}
+                placeholder="Any"
+                unit="mm"
+                value={draft.maxCaseThicknessMm}
               />
             </div>
+            <OptionalSelect
+              label="Case shape"
+              onChange={(value) => update({ caseShape: value })}
+              options={CASE_SHAPES}
+              value={draft.caseShape}
+            />
           </div>
         ) : null}
 
@@ -1842,33 +1873,21 @@ export default function Quiz() {
               Select every movement type you would own. Anything unselected is
               excluded outright.
             </p>
-            <fieldset className="quiz-fieldset">
-              <legend>Movement types</legend>
-              <div className="choice-list choice-list--compact">
-                {MOVEMENT_TYPE_CHOICES.map((option) => (
-                  <label
-                    className={`choice-card ${draft.movementTypes.includes(option) ? "is-selected" : ""}`}
-                    key={option}
-                  >
-                    <input
-                      checked={draft.movementTypes.includes(option)}
-                      onChange={() =>
-                        update({
-                          movementTypes: draft.movementTypes.includes(option)
-                            ? draft.movementTypes.filter(
-                                (value) => value !== option,
-                              )
-                            : [...draft.movementTypes, option],
-                        })
-                      }
-                      type="checkbox"
-                      value={option}
-                    />
-                    <span>{labelFor(option)}</span>
-                  </label>
-                ))}
-              </div>
-            </fieldset>
+            <OptionCheckboxGroup
+              legend="Movement types"
+              onChange={(values) =>
+                update({
+                  movementTypes: MOVEMENT_TYPE_CHOICES.filter((option) =>
+                    values.includes(option),
+                  ),
+                })
+              }
+              options={MOVEMENT_TYPE_CHOICES.map((option) => ({
+                slug: option,
+                labelEn: labelFor(option),
+              }))}
+              values={draft.movementTypes}
+            />
             <OptionalSelect
               label="Calibre construction"
               onChange={(value) => update({ movementConstruction: value })}

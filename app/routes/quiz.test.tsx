@@ -591,8 +591,8 @@ describe("version-3 diagnostic", () => {
         name: "What case size works on your wrist?",
       }),
     ).toBeInTheDocument();
-    expect(screen.getByLabelText("Smallest diameter (mm)")).toHaveValue(38);
-    expect(screen.getByLabelText("Largest diameter (mm)")).toHaveValue(40);
+    expect(screen.getByLabelText("Smallest diameter")).toHaveValue(38);
+    expect(screen.getByLabelText("Largest diameter")).toHaveValue(40);
   });
 
   it("discards a version-2 draft rather than migrating it", async () => {
