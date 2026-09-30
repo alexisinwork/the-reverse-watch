@@ -272,7 +272,7 @@ push(
   "",
   `- **Catalogue size:** ${all.length} watches (${byStatus("pending")} pending, ${byStatus("approved")} approved, ${byStatus("rejected")} rejected).`,
   `- **Reference confirmed** on a manufacturer or authorised-retailer page: ${confirmedRef} (${pct(confirmedRef, live.length)}). The others appear only under "Also worth a look".`,
-  `- **Price confirmed** (two independent Perplexity lookups within ±5%, same currency, each source live or under 90 days old): ${confirmedPrice} (${pct(confirmedPrice, live.length)}). A watch without a confirmed price is never shown by the price filter; the daily recheck keeps trying.`,
+  `- **Price confirmed** (two independent lookups within ±5% in the same currency, each source live or under 90 days old; Perplexity first, then Muse Spark's own web search for watches with a confirmed reference. Muse was added after search 78, so earlier watches have not had it yet): ${confirmedPrice} (${pct(confirmedPrice, live.length)}). A watch without a confirmed price is never shown by the price filter; the daily recheck keeps trying.`,
   `- **Photo URL** found: ${withPhoto} (${pct(withPhoto, live.length)}).`,
   "",
   "## Build run",
