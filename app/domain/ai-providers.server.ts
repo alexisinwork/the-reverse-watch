@@ -229,6 +229,8 @@ export async function museJson(
   cacheKey: string,
   deps: Deps,
   timeoutMs: number,
+  /** Hidden reasoning counts against this, so long prompts need more. */
+  maxTokens = 4_000,
 ): Promise<unknown> {
   const config = deps.config.museSpark!;
   const response = await deps.fetchImpl(
@@ -248,7 +250,7 @@ export async function museJson(
         // The system prompt comes first and never changes, so Muse Spark's
         // automatic prefix cache serves it at a fraction of the input price.
         prompt_cache_key: cacheKey,
-        max_tokens: 4_000,
+        max_tokens: maxTokens,
         response_format: { type: "json_object" },
         messages: [
           { role: "system", content: system },

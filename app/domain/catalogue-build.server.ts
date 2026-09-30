@@ -192,6 +192,9 @@ export async function proposeForCell(
       "reserve-catalogue-build-v1",
       deps,
       120_000,
+      // The full model with a long "already found" list can spend 4,000
+      // tokens reasoning and return nothing.
+      12_000,
     )) as {
       candidates?: unknown;
     };
