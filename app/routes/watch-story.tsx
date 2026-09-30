@@ -95,9 +95,10 @@ export default function WatchStory() {
           <ul>
             {story.citations.map((citation) => (
               <li key={citation.url}>
-                <a href={citation.url} rel="noreferrer" target="_blank">
+                {/* Sources are named, not linked (owner decision). */}
+                <span className="citation-title">
                   {citation.title ?? citation.publisher ?? "Source record"}
-                </a>
+                </span>
                 {citation.publisher ? <span>{citation.publisher}</span> : null}
               </li>
             ))}

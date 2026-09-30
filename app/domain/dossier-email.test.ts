@@ -42,13 +42,12 @@ describe("renderDossierEmail", () => {
     expect(email.text).toContain(
       "1. Longines Conquest 38 (ref. L3.720.4.92.6)",
     );
-    expect(email.text).toContain("Source: https://www.longines.com/conquest");
+    // Source links are never sent: they are often wrong (owner decision).
+    expect(email.text).not.toContain("https://www.longines.com/conquest");
     expect(email.html).toContain(
       '<img src="https://images.example/conquest.jpg"',
     );
-    expect(email.html).toContain(
-      '<a href="https://www.longines.com/conquest">',
-    );
+    expect(email.html).not.toContain("<a href=");
     expect(email.html).not.toContain("undefined");
   });
 
@@ -76,7 +75,7 @@ describe("renderDossierEmail", () => {
 
     expect(email.html).not.toContain("<script>");
     expect(email.html).toContain("A&lt;b&gt;");
-    expect(email.html).toContain("https://example.com/?a=1&amp;b=2");
+    expect(email.html).not.toContain("example.com");
   });
 
   it("explains an empty result instead of listing watches", () => {

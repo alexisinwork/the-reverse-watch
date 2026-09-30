@@ -747,3 +747,9 @@
     animation: none;
   }
 }
+
+.price-tag {
+  color: var(--color-steel-text);
+  font-size: 0.72rem;
+  font-style: italic;
+}

@@ -56,9 +56,10 @@ function watchTitle(watch: FoundWatch) {
 function watchText(watch: FoundWatch, index: number) {
   return [
     `${index + 1}. ${watchTitle(watch)}`,
-    ...(watch.priceNote ? [`Price: ${watch.priceNote}`] : []),
+    ...(watch.priceNote
+      ? [`Price: ${watch.priceNote} (approximate, may be wrong)`]
+      : []),
     watch.rationale,
-    `Source: ${watch.sourceUrl}`,
   ].join("\n");
 }
 
@@ -70,10 +71,9 @@ function watchHtml(watch: FoundWatch, index: number) {
       : "",
     `<h3>${index + 1}. ${escapeHtml(watchTitle(watch))}</h3>`,
     watch.priceNote
-      ? `<p><strong>Price:</strong> ${escapeHtml(watch.priceNote)}</p>`
+      ? `<p><strong>Price:</strong> ${escapeHtml(watch.priceNote)} <em>(approximate, may be wrong)</em></p>`
       : "",
     `<p>${escapeHtml(watch.rationale)}</p>`,
-    `<p><a href="${escapeHtml(watch.sourceUrl)}">Open the source</a></p>`,
     "</article>",
   ].join("");
 }

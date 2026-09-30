@@ -221,9 +221,13 @@ describe("version-4 diagnostic", () => {
     expect(
       screen.getByRole("heading", { name: "Seiko Prospex SPB143" }),
     ).toBeInTheDocument();
+    // No source links (they are often wrong); prices carry a warning.
     expect(
-      screen.getByRole("link", { name: "Open the source" }),
-    ).toHaveAttribute("href", "https://www.seikowatches.com/spb143");
+      screen.queryByRole("link", { name: "Open the source" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.getByText("Approximate price, may be wrong"),
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("img", { name: "Seiko Prospex SPB143" }),
     ).toHaveAttribute("src", "https://images.example/spb143.jpg");

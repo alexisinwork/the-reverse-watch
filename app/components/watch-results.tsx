@@ -173,24 +173,27 @@ function PriceLine({
   fx: FxTable | null;
 }) {
   const price = watch.details.price;
-  if (!price) return null;
-  if (price.currency === displayCurrency || !fx) {
-    return (
-      <strong className="watch-card__price">
-        {formatMoney(price.amount, price.currency)}
-      </strong>
-    );
+  // Prices come from web searches and can be out of date or wrong: every
+  // card says so, and a card without a price says that too.
+  if (!price) {
+    return <span className="price-tag">Price not available</span>;
   }
-  const converted = convert(price.amount, price.currency, displayCurrency, fx);
+  const converted =
+    price.currency === displayCurrency || !fx
+      ? null
+      : convert(price.amount, price.currency, displayCurrency, fx);
   return (
-    <strong className="watch-card__price">
-      {converted === null
-        ? formatMoney(price.amount, price.currency)
-        : `≈ ${formatMoney(converted, displayCurrency)}`}
-      {converted !== null ? (
-        <small> {formatMoney(price.amount, price.currency)} list</small>
-      ) : null}
-    </strong>
+    <>
+      <strong className="watch-card__price">
+        {converted === null
+          ? formatMoney(price.amount, price.currency)
+          : `≈ ${formatMoney(converted, displayCurrency)}`}
+        {converted !== null ? (
+          <small> {formatMoney(price.amount, price.currency)} list</small>
+        ) : null}
+      </strong>
+      <span className="price-tag">Approximate price, may be wrong</span>
+    </>
   );
 }
 
@@ -250,7 +253,13 @@ function WatchCard({
         </h3>
         <div className="watch-card__meta">
           {watch.referenceCode ? <span>Ref. {watch.referenceCode}</span> : null}
-          <PriceLine displayCurrency={displayCurrency} fx={fx} watch={watch} />
+          {mode === "quiz" ? (
+            <PriceLine
+              displayCurrency={displayCurrency}
+              fx={fx}
+              watch={watch}
+            />
+          ) : null}
         </div>
         {facts.length > 0 ? (
           <ul className="watch-card__facts" aria-label="Key facts">
@@ -278,14 +287,6 @@ function WatchCard({
               page
             </span>
           ) : null}
-          <a
-            className="candidate-link"
-            href={watch.sourceUrl}
-            rel="noreferrer nofollow"
-            target="_blank"
-          >
-            {mode === "film" ? "See the evidence" : "Open the source"}
-          </a>
         </div>
       </div>
     </article>

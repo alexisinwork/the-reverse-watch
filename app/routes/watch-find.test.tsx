@@ -86,8 +86,8 @@ describe("find a watch from the screen", () => {
       screen.getByText("Daniel Craig · No Time to Die · 2021"),
     ).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: "See the evidence" }),
-    ).toHaveAttribute("href", "https://www.hodinkee.com/bond");
+      screen.queryByRole("link", { name: "See the evidence" }),
+    ).not.toBeInTheDocument();
     expect(store.searchWithStore).toHaveBeenCalledWith(
       expect.objectContaining({
         kind: "film",

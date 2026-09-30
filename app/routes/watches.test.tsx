@@ -51,11 +51,15 @@ describe("discovery explorer pages", () => {
     ).toBeInTheDocument();
     expect(screen.getByText("Unconfirmed identification")).toBeInTheDocument();
     expect(screen.getByText("Not identified")).toBeInTheDocument();
+    // Sources are named, not linked (owner decision).
     expect(
-      screen.getByRole("link", {
+      screen.getByText("Various Episodes: Annie Edison's Watch"),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", {
         name: "Various Episodes: Annie Edison's Watch",
       }),
-    ).toHaveAttribute("href", expect.stringContaining("propstoreauction.com"));
+    ).not.toBeInTheDocument();
     expect(screen.getByText(/No open correction/)).toBeInTheDocument();
   });
 });
