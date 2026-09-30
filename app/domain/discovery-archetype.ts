@@ -141,9 +141,15 @@ export const ARCHETYPE_QUESTIONS = [
     legend: "At this early stage, which price idea feels plausible?",
     hint: "This is directional only. The full diagnostic then asks for your exact price range.",
     options: [
-      ["considered_entry", "A considered first serious watch"],
-      ["established_collection", "An established collection purchase"],
-      ["exceptional_object", "An exceptional object, if justified"],
+      [
+        "considered_entry",
+        "A considered first serious watch (about $2,000–5,000)",
+      ],
+      [
+        "established_collection",
+        "An established collection purchase (about $5,000–10,000)",
+      ],
+      ["exceptional_object", "An exceptional object, if justified ($10,000+)"],
     ],
   },
 ] as const;

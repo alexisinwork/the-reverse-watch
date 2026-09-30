@@ -13,15 +13,17 @@ export const ARCHETYPE_BANDS: Record<
   PriceComfort,
   { minimumUsd: number; maximumUsd: number | null; label: string }
 > = {
+  // A first serious watch starts at about USD 2,000 (owner decision,
+  // 2026-09-30); the option labels in discovery-archetype.ts match.
   considered_entry: {
-    minimumUsd: 0,
-    maximumUsd: 2_000,
-    label: "a considered first serious watch, up to about USD 2,000",
+    minimumUsd: 2_000,
+    maximumUsd: 5_000,
+    label: "a considered first serious watch, about USD 2,000 to 5,000",
   },
   established_collection: {
-    minimumUsd: 2_000,
+    minimumUsd: 5_000,
     maximumUsd: 10_000,
-    label: "an established collection purchase, about USD 2,000 to 10,000",
+    label: "an established collection purchase, about USD 5,000 to 10,000",
   },
   exceptional_object: {
     minimumUsd: 10_000,
