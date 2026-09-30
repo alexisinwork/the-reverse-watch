@@ -117,7 +117,7 @@ const limits = {
   "perplexity-chat": semaphore(6),
   "perplexity-search": semaphore(3),
   muse: semaphore(CONCURRENCY),
-  "muse-research": semaphore(4),
+  "muse-research": semaphore(8),
   web: semaphore(24),
 };
 
@@ -145,7 +145,14 @@ const limitedFetch: typeof fetch = async (input, init) => {
   return limits[kind](async () => {
     for (let attempt = 0; ; attempt += 1) {
       progress.calls[kind] = (progress.calls[kind] ?? 0) + 1;
-      const response = await fetch(input, init);
+      // Provider calls may have waited in the queue above, so their timeout
+      // starts only now, when the request is actually sent.
+      const response = await fetch(
+        input,
+        kind === "web"
+          ? init
+          : { ...init, signal: AbortSignal.timeout(120_000) },
+      );
       if (response.status !== 429 || kind === "web" || attempt >= 7)
         return response;
       await response.body?.cancel();
