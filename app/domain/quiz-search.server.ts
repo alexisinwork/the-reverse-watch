@@ -15,6 +15,7 @@ import {
   catalogueIdentityKey,
   catalogueToFoundWatch,
   CATALOGUE_MAIN_LIMIT,
+  closestCatalogue,
   matchCatalogue,
   stylesForScenarios,
   type CatalogueWatch,
@@ -184,6 +185,25 @@ export async function searchQuiz(
           main.length > 0
             ? `${main.length} ${main.length === 1 ? "watch" : "watches"} from the checked catalogue meet every answer; the live search found nothing further.`
             : "No watch with a confirmed reference meets every answer yet. The watches below do, but the manufacturer's page did not confirm their reference.",
+      };
+    }
+    // Nothing fits every answer and the live search could not help (for
+    // example both AI providers are down): still show the closest watches
+    // in the visitor's price range rather than an empty page.
+    const closest = closestCatalogue(catalogue, profile, fx)
+      .map(catalogueToFoundWatch)
+      .filter((watch): watch is FoundWatch => watch !== null);
+    if (closest.length > 0) {
+      return {
+        status: "found",
+        watches: closest,
+        alsoWorth: [],
+        fromCache: true,
+        origin: "catalogue",
+        summary:
+          live.status === "unavailable"
+            ? "Our live search is unavailable right now, so these are the closest watches in our catalogue: each is in your price range, but not every one meets every answer. Try again later for a full search."
+            : "No watch we could find meets every answer. These are the closest in our catalogue: each is in your price range, but not every one meets every answer.",
       };
     }
     return live;

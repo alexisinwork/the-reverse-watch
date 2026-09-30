@@ -427,6 +427,39 @@ export function matchCatalogue(
   };
 }
 
+/**
+ * The last resort when nothing fits every answer and the live search is
+ * down: catalogue watches in the visitor's price range that break the
+ * fewest other answers. Price is never relaxed.
+ */
+export function closestCatalogue(
+  watches: readonly CatalogueWatch[],
+  profile: ProfileV4,
+  fx: FxTable | null,
+  limit = CATALOGUE_MAIN_LIMIT,
+) {
+  const wanted = stylesForScenarios(profile.wearingScenarios);
+  const scored = watches.flatMap((watch) => {
+    if (watch.reviewStatus === "rejected" || watch.sourceUrl === null)
+      return [];
+    const failures = catalogueRuleFailures(watch, profile, fx);
+    return failures.includes("price")
+      ? []
+      : [{ watch, misses: failures.length }];
+  });
+  const fewest = Math.min(...scored.map((entry) => entry.misses));
+  // Only the best tier, so a two-rule miss never sits above a one-rule miss.
+  return pick(
+    scored
+      .filter((entry) => entry.misses <= fewest + 1)
+      .sort((a, b) => a.misses - b.misses)
+      .slice(0, 60)
+      .map((entry) => entry.watch),
+    limit,
+    wanted,
+  );
+}
+
 /** Wrist sizes (cm) whose suggested diameter range includes this case. */
 export function wristFit(caseDiameterMm: number | null) {
   if (caseDiameterMm === null) return null;

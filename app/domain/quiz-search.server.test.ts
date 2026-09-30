@@ -170,6 +170,29 @@ describe("searchQuiz", () => {
     expect(runLive).toHaveBeenCalledTimes(1);
   });
 
+  it("shows the closest in-budget catalogue watches when nothing fits and the live search is down", async () => {
+    const store = client([
+      // In budget, but only 50 m (the visitor asked for 100 m).
+      row(1, { waterResistanceM: 50 }),
+      // In budget, but misses water resistance and movement.
+      row(2, { waterResistanceM: 50, movement: "quartz" }),
+      // Out of budget: never shown, however well it fits otherwise.
+      row(3, { priceAmount: 9_000 }),
+    ]);
+    const result = await searchQuiz(profile, {
+      client: store.value,
+      loadFx: async () => fx,
+      runLive: async () => ({ status: "unavailable" }),
+    });
+    expect(result).toMatchObject({ status: "found", origin: "catalogue" });
+    if (result.status !== "found") throw new Error("expected found");
+    expect(result.summary).toContain("live search is unavailable");
+    expect(result.watches.map((watch) => watch.brand)).toEqual([
+      "Brand1",
+      "Brand2",
+    ]);
+  });
+
   it("falls back to the live search when the catalogue cannot be read", async () => {
     const result = await searchQuiz(profile, {
       client: null,
