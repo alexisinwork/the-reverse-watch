@@ -245,7 +245,7 @@ describe("Muse Spark web-search fallback", () => {
           ? Response.json({
               choices: [{ message: { content: JSON.stringify(museAnswer) } }],
             })
-          : base.fetchImpl(input, init)) as typeof fetch,
+          : base.fetchImpl(input, init)),
     };
 
     const without = await doublePriceCheck(watch, withMuse, fx);
@@ -300,7 +300,7 @@ describe("Muse Spark web-search fallback", () => {
           ? Response.json({
               choices: [{ message: { content: JSON.stringify(museAnswer) } }],
             })
-          : base.fetchImpl(input, init)) as typeof fetch,
+          : base.fetchImpl(input, init)),
     };
     const result = await doublePriceCheck(watch, withMuse, fx, null, {
       museFallback: true,
