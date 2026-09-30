@@ -555,6 +555,32 @@
   font-variant-numeric: tabular-nums;
 }
 
+.search-progress > p.search-progress__found {
+  margin: 1rem 0 0.75rem;
+  color: var(--color-steel-text);
+  font-size: 0.8rem;
+}
+
+.search-progress__steps {
+  margin: -0.5rem 0 1.25rem;
+  padding: 0 0 0 1.3rem;
+  color: var(--color-steel-text);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  list-style: none;
+}
+
+.search-progress__steps li {
+  position: relative;
+}
+
+.search-progress__steps li::before {
+  position: absolute;
+  left: -1.1rem;
+  color: var(--color-success);
+  content: "✓";
+}
+
 .watch-card--skeleton .watch-card__image,
 .watch-card--skeleton .watch-card__body span {
   background: linear-gradient(

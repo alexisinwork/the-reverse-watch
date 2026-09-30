@@ -45,3 +45,19 @@ export type AiSearchView =
       alsoWorth?: FoundWatch[];
     })
   | Exclude<AiSearchOutcome, { status: "found" }>;
+
+/** One step of a running search, shown to the visitor as it happens. */
+export type ProgressEvent = {
+  text: string;
+  /** Set when this step confirmed a watch: shown before the search ends. */
+  watch?: FoundWatch;
+};
+
+/**
+ * A chain of promises the server resolves one event at a time; React
+ * Router streams each link to the browser as soon as it resolves.
+ */
+export type ProgressLink = {
+  event: ProgressEvent;
+  next: Promise<ProgressLink | null>;
+};

@@ -33,7 +33,7 @@ import {
 import { QuestionScreen } from "../components/quiz/question-screens";
 import { ProfileFields } from "../components/quiz/quiz-steps";
 import { WatchResults } from "../components/watch-results";
-import type { AiSearchView } from "../domain/ai-watch-types";
+import type { AiSearchView, ProgressLink } from "../domain/ai-watch-types";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import type { VocabularyKind } from "../domain/catalogue-vocabulary";
 import { loadCatalogueVocabulary } from "../domain/catalogue-vocabulary.server";
@@ -65,6 +65,7 @@ import {
   parseEmailOptIn,
   parseProfileForm,
 } from "../domain/quiz-form";
+import { createProgressFeed } from "../domain/progress-feed";
 import { searchQuiz } from "../domain/quiz-search.server";
 import {
   consumeRateLimit,
@@ -92,6 +93,8 @@ type ActionResult =
       profile: ProfileV4;
       /** Streamed: the page renders before the search has finished. */
       aiSearch: Promise<AiSearchView> | AiSearchView;
+      /** Live steps of the search, streamed while it runs. */
+      progress: Promise<ProgressLink | null>;
       subscription: SubscriptionResult;
       storyContext?: {
         storySlug: string;
@@ -200,7 +203,9 @@ export async function action({ request }: Route.ActionArgs) {
   const startedAt = performance.now();
   // Only the validated constraint profile reaches the AI search; the email
   // field and every request header stay on this server.
-  const search = searchQuiz(profile);
+  const progress = createProgressFeed();
+  const search = searchQuiz(profile, { report: progress.report });
+  void search.finally(progress.close);
 
   if (funnelSource === "archetype") {
     const events = [
@@ -274,6 +279,7 @@ export async function action({ request }: Route.ActionArgs) {
     ok: true,
     profile,
     aiSearch,
+    progress: progress.feed,
     subscription,
     ...(discoveryContext && storySlugResult.slug
       ? {
@@ -484,6 +490,7 @@ export default function Quiz() {
             fx={loaderData.fx}
             heading="Watches that fit every answer"
             mode="quiz"
+            progress={resultData.progress}
             result={resultData.aiSearch}
           />
           {resultData.storyContext ? (

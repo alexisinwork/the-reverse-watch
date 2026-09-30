@@ -293,6 +293,7 @@ async function sonarPriceLookup(
     {
       model: deps.config.perplexity!.model,
       max_tokens: 900,
+      temperature: 0,
       web_search_options: { search_context_size: options.contextSize },
       response_format: {
         type: "json_schema",

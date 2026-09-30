@@ -1,8 +1,18 @@
 import { Suspense, useEffect, useState } from "react";
 import { Await } from "react-router";
 
-import type { AiSearchView, FoundWatch } from "../domain/ai-watch-types";
-import { convert, formatMoney, supportedCurrencies, type FxTable } from "../domain/fx";
+import type {
+  AiSearchView,
+  FoundWatch,
+  ProgressEvent,
+  ProgressLink,
+} from "../domain/ai-watch-types";
+import {
+  convert,
+  formatMoney,
+  supportedCurrencies,
+  type FxTable,
+} from "../domain/fx";
 
 type Mode = "quiz" | "film";
 
@@ -11,7 +21,10 @@ const PROGRESS_STEPS: Record<Mode, { after: number; text: string }[]> = {
     { after: 0, text: "Filtering the catalogue for every answer…" },
     { after: 2, text: "Searching live for watches that fit every answer…" },
     { after: 5, text: "Checking price, size, water resistance and materials…" },
-    { after: 9, text: "Confirming each reference on the manufacturer's own page…" },
+    {
+      after: 9,
+      text: "Confirming each reference on the manufacturer's own page…",
+    },
     { after: 18, text: "Still confirming the last references…" },
   ],
   film: [
@@ -21,8 +34,44 @@ const PROGRESS_STEPS: Record<Mode, { after: number; text: string }[]> = {
   ],
 };
 
-function SearchProgress({ mode }: { mode: Mode }) {
+/** Reads the server's live feed of search steps as each one arrives. */
+function useProgressFeed(
+  feed: Promise<ProgressLink | null> | null | undefined,
+) {
+  const [events, setEvents] = useState<ProgressEvent[]>([]);
+  useEffect(() => {
+    if (!feed) return;
+    let active = true;
+    void (async () => {
+      try {
+        for (let link = await feed; link && active; link = await link.next) {
+          const event = link.event;
+          setEvents((current) => [...current, event]);
+        }
+      } catch {
+        // A broken stream only stops the live steps; the result still loads.
+      }
+    })();
+    return () => {
+      active = false;
+    };
+  }, [feed]);
+  return events;
+}
+
+function SearchProgress({
+  mode,
+  progress,
+  displayCurrency,
+  fx,
+}: {
+  mode: Mode;
+  progress?: Promise<ProgressLink | null> | null;
+  displayCurrency: string;
+  fx: FxTable | null;
+}) {
   const [seconds, setSeconds] = useState(0);
+  const events = useProgressFeed(progress);
   useEffect(() => {
     const started = Date.now();
     const timer = window.setInterval(
@@ -31,25 +80,60 @@ function SearchProgress({ mode }: { mode: Mode }) {
     );
     return () => window.clearInterval(timer);
   }, []);
-  const step = [...PROGRESS_STEPS[mode]].reverse().find((entry) => seconds >= entry.after)!;
+  // Until the first real step arrives, a timed hint keeps the page alive.
+  const fallback = [...PROGRESS_STEPS[mode]]
+    .reverse()
+    .find((entry) => seconds >= entry.after)!;
+  const current = events.at(-1)?.text ?? fallback.text;
+  const earlier = events.slice(0, -1).slice(-5);
+  const confirmed = events.flatMap((event) =>
+    event.watch ? [event.watch] : [],
+  );
   return (
     <div className="search-progress" role="status" aria-live="polite">
       <p>
         <span className="search-progress__pulse" aria-hidden="true" />
-        {step.text} <span className="search-progress__time">{seconds} s</span>
+        {current} <span className="search-progress__time">{seconds} s</span>
       </p>
-      <div className="watch-list" aria-hidden="true">
-        {[0, 1, 2].map((index) => (
-          <div className="watch-card watch-card--skeleton" key={index}>
-            <div className="watch-card__image" />
-            <div className="watch-card__body">
-              <span />
-              <span />
-              <span />
-            </div>
+      {earlier.length > 0 ? (
+        <ol className="search-progress__steps" aria-label="Search steps so far">
+          {earlier.map((event, index) => (
+            <li key={`${index}-${event.text}`}>{event.text}</li>
+          ))}
+        </ol>
+      ) : null}
+      {confirmed.length > 0 ? (
+        <>
+          <p className="search-progress__found">
+            Confirmed so far; the final order may change.
+          </p>
+          <div className="watch-list">
+            {confirmed.map((watch, index) => (
+              <WatchCard
+                displayCurrency={displayCurrency}
+                fx={fx}
+                key={`${watch.brand}-${watch.referenceCode ?? watch.model}-${index}`}
+                mode={mode}
+                rank={index + 1}
+                watch={watch}
+              />
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      ) : (
+        <div className="watch-list" aria-hidden="true">
+          {[0, 1, 2].map((index) => (
+            <div className="watch-card watch-card--skeleton" key={index}>
+              <div className="watch-card__image" />
+              <div className="watch-card__body">
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -58,7 +142,10 @@ function WatchImage({ watch }: { watch: FoundWatch }) {
   const [failed, setFailed] = useState(false);
   if (!watch.imageUrl || failed) {
     return (
-      <div aria-hidden="true" className="watch-card__image watch-card__image--empty">
+      <div
+        aria-hidden="true"
+        className="watch-card__image watch-card__image--empty"
+      >
         <span>{watch.brand}</span>
       </div>
     );
@@ -88,7 +175,11 @@ function PriceLine({
   const price = watch.details.price;
   if (!price) return null;
   if (price.currency === displayCurrency || !fx) {
-    return <strong className="watch-card__price">{formatMoney(price.amount, price.currency)}</strong>;
+    return (
+      <strong className="watch-card__price">
+        {formatMoney(price.amount, price.currency)}
+      </strong>
+    );
   }
   const converted = convert(price.amount, price.currency, displayCurrency, fx);
   return (
@@ -133,17 +224,21 @@ function WatchCard({
       ? [
           details.caseDiameterMm ? `${details.caseDiameterMm} mm` : null,
           details.waterResistanceM ? `${details.waterResistanceM} m` : null,
-          details.movement ? (MOVEMENT_LABELS[details.movement] ?? details.movement) : null,
+          details.movement
+            ? (MOVEMENT_LABELS[details.movement] ?? details.movement)
+            : null,
         ].filter((fact): fact is string => fact !== null)
       : [];
   const eyebrow =
     mode === "film"
-      ? [details.person, details.work, details.year].filter(Boolean).join(" · ") || "Documented sighting"
+      ? [details.person, details.work, details.year]
+          .filter(Boolean)
+          .join(" · ") || "Documented sighting"
       : unconfirmedReference
         ? "Also worth a look"
         : rank === 1
-        ? "Best fit"
-        : `Option ${rank}`;
+          ? "Best fit"
+          : `Option ${rank}`;
 
   return (
     <article className="watch-card">
@@ -177,7 +272,10 @@ function WatchCard({
           {details.referenceVerified ? (
             <span className="verified-badge">
               Reference confirmed on the{" "}
-              {details.sourceKind === "retailer" ? "authorised retailer's" : "manufacturer's"} page
+              {details.sourceKind === "retailer"
+                ? "authorised retailer's"
+                : "manufacturer's"}{" "}
+              page
             </span>
           ) : null}
           <a
@@ -220,9 +318,15 @@ function ResultBody({
       <p className="result-summary">
         {result.summary}
         {result.origin === "catalogue" ? (
-          <span className="result-summary__cached"> Instant: from the catalogue.</span>
+          <span className="result-summary__cached">
+            {" "}
+            Instant: from the catalogue.
+          </span>
         ) : result.fromCache ? (
-          <span className="result-summary__cached"> Instant: answered before.</span>
+          <span className="result-summary__cached">
+            {" "}
+            Instant: answered before.
+          </span>
         ) : null}
       </p>
       {result.watches.length > 0 ? (
@@ -243,8 +347,9 @@ function ResultBody({
         <section className="also-worth" aria-labelledby="also-worth-heading">
           <h3 id="also-worth-heading">Also worth a look</h3>
           <p className="result-footnote">
-            These fit every answer too, but no manufacturer or authorised-retailer page confirmed
-            their exact reference. Check the reference with the seller.
+            These fit every answer too, but no manufacturer or
+            authorised-retailer page confirmed their exact reference. Check the
+            reference with the seller.
           </p>
           <div className="watch-list">
             {result.alsoWorth.map((watch, index) => (
@@ -274,8 +379,11 @@ export function WatchResults({
   fx,
   defaultCurrency = "USD",
   footnote,
+  progress,
 }: {
   result: AiSearchView | Promise<AiSearchView>;
+  /** The live steps of a running search, when the server sends them. */
+  progress?: Promise<ProgressLink | null> | null;
   mode: Mode;
   heading: string;
   eyebrow: string;
@@ -306,7 +414,16 @@ export function WatchResults({
           </label>
         ) : null}
       </div>
-      <Suspense fallback={<SearchProgress mode={mode} />}>
+      <Suspense
+        fallback={
+          <SearchProgress
+            displayCurrency={displayCurrency}
+            fx={fx}
+            mode={mode}
+            progress={progress}
+          />
+        }
+      >
         <Await
           errorElement={
             <p className="empty-result">
@@ -328,8 +445,9 @@ export function WatchResults({
       {footnote ? <p className="result-footnote">{footnote}</p> : null}
       {mode === "quiz" && fx ? (
         <p className="result-footnote">
-          Converted prices use European Central Bank reference rates of {fx.date} and are
-          approximate; list prices are the manufacturer&apos;s.
+          Converted prices use European Central Bank reference rates of{" "}
+          {fx.date} and are approximate; list prices are the
+          manufacturer&apos;s.
         </p>
       ) : null}
     </section>

@@ -4,10 +4,17 @@ import { Form, Link, useLoaderData, useNavigation } from "react-router";
 
 import type { Route } from "./+types/watch-find";
 import { WatchResults } from "../components/watch-results";
-import { normalizeFilmQuery, searchFilmWatches } from "../domain/film-search.server";
+import {
+  normalizeFilmQuery,
+  searchFilmWatches,
+} from "../domain/film-search.server";
 import { searchWithStore } from "../domain/ai-watch-store.server";
+import { createProgressFeed } from "../domain/progress-feed";
 import { parseDiscoveryHandoff } from "../domain/discovery-selection";
-import { consumeRateLimit, type RateLimitPolicy } from "../domain/rate-limit.server";
+import {
+  consumeRateLimit,
+  type RateLimitPolicy,
+} from "../domain/rate-limit.server";
 import "../styles/discovery.css";
 
 const QUERY_MAX = 120;
@@ -31,19 +38,25 @@ const EXAMPLES = [
 function visitorKey(request: Request) {
   const forwarded = request.headers.get("x-forwarded-for");
   const address =
-    forwarded?.split(",", 1)[0]?.trim() || request.headers.get("x-real-ip")?.trim() || "unknown";
+    forwarded?.split(",", 1)[0]?.trim() ||
+    request.headers.get("x-real-ip")?.trim() ||
+    "unknown";
   // Only a hash of the address is kept, in memory, for the rate limit.
   return `film-search:${createHash("sha256").update(address).digest("hex")}`;
 }
 
 export function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
-  const query = (url.searchParams.get("q") ?? "").trim().replace(/\s+/g, " ").slice(0, QUERY_MAX);
+  const query = (url.searchParams.get("q") ?? "")
+    .trim()
+    .replace(/\s+/g, " ")
+    .slice(0, QUERY_MAX);
   const handoff = parseDiscoveryHandoff(url.searchParams);
-  if (query.length < 2) return { query, handoff, result: null };
+  if (query.length < 2) return { query, handoff, result: null, progress: null };
 
   const key = visitorKey(request);
   // Streamed: the page renders immediately and the watches arrive after.
+  const progress = createProgressFeed();
   const result = searchWithStore({
     kind: "film",
     cacheInput: { query: normalizeFilmQuery(query) },
@@ -55,17 +68,20 @@ export function loader({ request }: Route.LoaderArgs) {
             "You have run a lot of new searches in a short time. Please try again in a few minutes; searches others already made still load instantly.",
         };
       }
-      return searchFilmWatches(query);
+      return searchFilmWatches(query, { report: progress.report });
     },
   });
-  return { query, handoff, result };
+  void result.finally(progress.close);
+  return { query, handoff, result, progress: progress.feed };
 }
 
 export function meta({ data }: Route.MetaArgs) {
   const query = data?.query;
   return [
     {
-      title: query ? `Watches in “${query}” · The Reserve` : "Find a watch from the screen · The Reserve",
+      title: query
+        ? `Watches in “${query}” · The Reserve`
+        : "Find a watch from the screen · The Reserve",
     },
     {
       name: "description",
@@ -76,9 +92,11 @@ export function meta({ data }: Route.MetaArgs) {
 }
 
 export default function WatchFind() {
-  const { query, handoff, result } = useLoaderData<typeof loader>();
+  const { query, handoff, result, progress } = useLoaderData<typeof loader>();
   const navigation = useNavigation();
-  const searching = navigation.state === "loading" && navigation.location?.pathname === "/watches/find";
+  const searching =
+    navigation.state === "loading" &&
+    navigation.location?.pathname === "/watches/find";
 
   return (
     <main className="discovery-shell find-shell">
@@ -95,17 +113,35 @@ export default function WatchFind() {
         <span className="eyebrow">Film · Television · People</span>
         <h1>Find the watch from the screen</h1>
         <p>
-          Type a film, series, actor, character or public figure. We search the live web and
-          show each watch with who wore it, where, and the page that proves it.
+          Type a film, series, actor, character or public figure. We search the
+          live web and show each watch with who wore it, where, and the page
+          that proves it.
         </p>
         <Form className="find-form" method="get" role="search">
           <label className="sr-only" htmlFor="find-query">
             Film, series, actor or public figure
           </label>
           <div className="search-box">
-            <svg aria-hidden="true" className="search-box__icon" viewBox="0 0 24 24">
-              <circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="1.8" />
-              <path d="m20 20-4.2-4.2" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+            <svg
+              aria-hidden="true"
+              className="search-box__icon"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                cx="11"
+                cy="11"
+                r="7"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+              />
+              <path
+                d="m20 20-4.2-4.2"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeWidth="1.8"
+              />
             </svg>
             <input
               autoComplete="off"
@@ -118,7 +154,11 @@ export default function WatchFind() {
               required
               type="search"
             />
-            <button className="button button--primary" disabled={searching} type="submit">
+            <button
+              className="button button--primary"
+              disabled={searching}
+              type="submit"
+            >
               {searching ? "Searching…" : "Search"}
             </button>
           </div>
@@ -126,7 +166,11 @@ export default function WatchFind() {
         <div className="find-examples" aria-label="Example searches">
           <span>Try</span>
           {EXAMPLES.map((example) => (
-            <Link className="chip" key={example} to={`/watches/find?q=${encodeURIComponent(example)}`}>
+            <Link
+              className="chip"
+              key={example}
+              to={`/watches/find?q=${encodeURIComponent(example)}`}
+            >
               {example}
             </Link>
           ))}
@@ -141,13 +185,17 @@ export default function WatchFind() {
           heading={`Watches in “${query}”`}
           key={query}
           mode="film"
+          progress={progress}
           result={result}
         />
       ) : (
         <section className="find-empty" aria-label="How it works">
           <div>
             <strong>1</strong>
-            <p>Search a title or a name. Spelling doesn&apos;t need to be perfect.</p>
+            <p>
+              Search a title or a name. Spelling doesn&apos;t need to be
+              perfect.
+            </p>
           </div>
           <div>
             <strong>2</strong>
@@ -155,15 +203,18 @@ export default function WatchFind() {
           </div>
           <div>
             <strong>3</strong>
-            <p>Every watch links to its evidence. Searches are saved, so repeats are instant.</p>
+            <p>
+              Every watch links to its evidence. Searches are saved, so repeats
+              are instant.
+            </p>
           </div>
         </section>
       )}
 
       {handoff?.socialSignal || handoff?.aestheticDna ? (
         <p className="archetype-boundary">
-          Your archetype is kept as optional context; it is not a watch recommendation or a hard
-          constraint.
+          Your archetype is kept as optional context; it is not a watch
+          recommendation or a hard constraint.
         </p>
       ) : null}
     </main>

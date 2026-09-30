@@ -7,7 +7,7 @@
 import { quizCacheInput, searchQuizWatches } from "./quiz-live-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import { searchWithStore } from "./ai-watch-store.server";
-import type { AiSearchView, FoundWatch } from "./ai-watch-types";
+import type { AiSearchView, FoundWatch, ProgressEvent } from "./ai-watch-types";
 import { loadFxTable, type FxTable } from "./fx.server";
 import { findPriceRange, type ProfileV4 } from "./questionnaire-v4";
 import {
@@ -108,18 +108,22 @@ export async function searchQuiz(
   {
     client = catalogueClient(),
     loadFx = () => loadFxTable(),
+    report,
     runLive = () =>
       searchWithStore({
         kind: "quiz",
         cacheInput: quizCacheInput(profile),
-        run: () => searchQuizWatches(profile),
+        run: () => searchQuizWatches(profile, report ? { report } : {}),
       }),
   }: {
     client?: CatalogueClient | null;
     loadFx?: () => Promise<FxTable | null>;
+    /** Tells the visitor what the search is doing (optional). */
+    report?: (event: ProgressEvent) => void;
     runLive?: () => Promise<AiSearchView>;
   } = {},
 ): Promise<AiSearchView> {
+  report?.({ text: "Checking The Reserve's catalogue of confirmed watches…" });
   const range = findPriceRange(profile.priceRange)!;
   let catalogue: CatalogueWatch[] = [];
   let fx: FxTable | null = null;
@@ -142,6 +146,9 @@ export async function searchQuiz(
     .filter((watch): watch is FoundWatch => watch !== null);
 
   if (catalogueCoversRange(range) && main.length >= CATALOGUE_ENOUGH) {
+    report?.({
+      text: `Found ${main.length} catalogue watches that meet every answer.`,
+    });
     return {
       status: "found",
       watches: main,
@@ -152,7 +159,19 @@ export async function searchQuiz(
     };
   }
 
+  report?.({
+    text: !catalogueCoversRange(range)
+      ? "Above 10k the catalogue is not complete yet, so we search live."
+      : main.length > 0
+        ? `The catalogue has ${main.length} confirmed ${main.length === 1 ? "fit" : "fits"}; searching live for more…`
+        : "No catalogue watch fits every answer yet; searching live…",
+  });
   const live = await runLive();
+  if (live.status === "found" && live.fromCache) {
+    report?.({
+      text: "These answers were searched before: loading the saved result.",
+    });
+  }
   if (live.status !== "found") {
     if (main.length > 0 || alsoWorth.length > 0) {
       return {

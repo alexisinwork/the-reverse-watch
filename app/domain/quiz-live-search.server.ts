@@ -236,10 +236,25 @@ const QUIZ_PROPOSE_SYSTEM = [
 ].join(" ");
 
 const QUIZ_ANGLES = [
-  "Focus on established Swiss brands.",
-  "Focus on German, Japanese, British and American brands.",
-  "Focus on independent and smaller specialist brands.",
+  { focus: "Focus on established Swiss brands.", label: "Swiss makers" },
+  {
+    focus: "Focus on German, Japanese, British and American brands.",
+    label: "German, Japanese, British and American makers",
+  },
+  {
+    focus: "Focus on independent and smaller specialist brands.",
+    label: "Independent makers",
+  },
 ];
+const LIVE_ANGLE_LABEL = "Recent releases (live web)";
+
+function hostOf(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
 
 const sonarCandidateSchema = {
   type: "object",
@@ -338,6 +353,7 @@ type VerifiedQuizWatch = { angle: number; order: number; watch: FoundWatch };
  */
 async function runQuizAngle(
   angle: number,
+  label: string,
   propose: () => Promise<unknown[]>,
   profile: ProfileV4,
   fx: Promise<FxTable | null>,
@@ -368,8 +384,14 @@ async function runQuizAngle(
         counts[failure] = (counts[failure] ?? 0) + 1;
       return failures.length === 0;
     });
+  deps.report?.({
+    text: `${label}: ${proposals.length} proposed, ${eligible.length} fit your price, size, water resistance and movement.`,
+  });
   if (eligible.length === 0) return [];
 
+  deps.report?.({
+    text: `${label}: confirming ${eligible.length} ${eligible.length === 1 ? "reference" : "references"} on makers' and authorised retailers' pages…`,
+  });
   const hits = await findPages(
     eligible.map(
       (candidate) => `${candidate.brand} ${candidate.referenceCode}`,
@@ -397,14 +419,20 @@ async function runQuizAngle(
             all.indexOf(url) === index &&
             classifySource(url, candidate.brand) !== null,
         );
-        for (const url of urls.slice(0, 2)) {
-          const page = await inspectSourcePage(
-            url,
-            candidate.referenceCode,
-            deps.fetchImpl,
-          );
-          if (!page.referenceFound) continue;
-          return {
+        // Both candidate pages are opened at once; the first in order that
+        // shows the exact reference wins.
+        const pages = await Promise.all(
+          urls
+            .slice(0, 2)
+            .map((url) =>
+              inspectSourcePage(url, candidate.referenceCode, deps.fetchImpl),
+            ),
+        );
+        const found = pages.findIndex((page) => page.referenceFound);
+        if (found >= 0) {
+          const url = urls[found]!;
+          const page = pages[found]!;
+          const result: VerifiedQuizWatch = {
             angle,
             order,
             watch: {
@@ -430,6 +458,11 @@ async function runQuizAngle(
               },
             },
           };
+          deps.report?.({
+            text: `Confirmed ${candidate.brand} ${candidate.model} on ${hostOf(url)}.`,
+            watch: result.watch,
+          });
+          return result;
         }
         counts.unverified_source = (counts.unverified_source ?? 0) + 1;
         return null;
@@ -487,13 +520,17 @@ export async function searchQuizWatches(
   const fx = deps.loadFx();
   const counts: Record<string, number> = {};
 
-  const museAngles = QUIZ_ANGLES.map((angleText, index) =>
+  deps.report?.({
+    text: "Searching live: Muse Spark is proposing watches from three groups of makers while Perplexity checks recent releases on the web.",
+  });
+  const museAngles = QUIZ_ANGLES.map((angle, index) =>
     runQuizAngle(
       index,
+      angle.label,
       async () => {
         const payload = (await museJson(
           QUIZ_PROPOSE_SYSTEM,
-          `Propose 5 candidates. ${angleText}\nConstraints:\n${constraints}`,
+          `Propose 5 candidates. ${angle.focus}\nConstraints:\n${constraints}`,
           "reserve-quiz-propose-v1",
           deps,
           timing.hardMs,
@@ -511,6 +548,7 @@ export async function searchQuizWatches(
   // A live web-search angle catches recent releases the model may not know.
   const liveAngle = runQuizAngle(
     QUIZ_ANGLES.length,
+    LIVE_ANGLE_LABEL,
     async () => {
       const payload = (await webResearchJson(
         [
@@ -535,7 +573,9 @@ export async function searchQuizWatches(
   const verified = await collectUntilDeadline([...museAngles, liveAngle], {
     softMs: timing.softMs,
     hardMs: timing.hardMs,
-    enough: (items) => items.length >= 3,
+    // Watches stream to the page as they are confirmed, so waiting for a full
+    // shortlist costs the visitor little and makes repeat runs agree more.
+    enough: (items) => items.length >= QUIZ_MAX_WATCHES,
   });
   const watches = interleave(verified, QUIZ_MAX_WATCHES);
   console.info(

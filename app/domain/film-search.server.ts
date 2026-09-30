@@ -197,6 +197,9 @@ export async function searchFilmWatches(
   const subject = query.trim().replace(/\s+/g, " ").slice(0, 160);
 
   // Stage 1: three live angles at once.
+  deps.report?.({
+    text: `Searching films, series, interviews and watch-spotting sites for "${subject}"…`,
+  });
   const settled = await Promise.allSettled(
     filmPrompts(subject).map((prompt) =>
       webResearchJson(prompt, filmCandidateSchema, deps, { maxToolCalls: 4 }),
@@ -216,6 +219,10 @@ export async function searchFilmWatches(
       summary: `No documented watch sightings were found for "${subject}".`,
     };
   }
+
+  deps.report?.({
+    text: `Found ${candidates.length} documented ${candidates.length === 1 ? "sighting" : "sightings"}. Merging duplicates, ranking them and finding a photo of each watch…`,
+  });
 
   // Stage 2: Muse Spark merges and ranks while photos are fetched; the photo
   // stage has its own budget so one slow site cannot hold the answer back.

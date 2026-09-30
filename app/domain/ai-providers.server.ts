@@ -12,7 +12,7 @@
  * Every call takes a `Deps` object so tests can swap in a fake fetch and
  * clock. Only watch-search constraints are ever sent to either provider.
  */
-import type { AiSearchOutcome } from "./ai-watch-types";
+import type { AiSearchOutcome, ProgressEvent } from "./ai-watch-types";
 import { loadFxTable, type FxTable } from "./fx.server";
 import { safeHttpUrl } from "./source-pages.server";
 
@@ -76,6 +76,8 @@ export type Deps = {
   sleep: (ms: number) => Promise<void>;
   loadFx: () => Promise<FxTable | null>;
   now: () => number;
+  /** Tells the visitor what the search is doing right now (optional). */
+  report?: (event: ProgressEvent) => void;
 };
 
 export function defaultDeps(overrides: Partial<Deps> = {}): Deps {
@@ -88,6 +90,7 @@ export function defaultDeps(overrides: Partial<Deps> = {}): Deps {
       ((ms) => new Promise<void>((resolve) => setTimeout(resolve, ms))),
     loadFx: overrides.loadFx ?? (() => loadFxTable(fetchImpl)),
     now: overrides.now ?? Date.now,
+    ...(overrides.report ? { report: overrides.report } : {}),
   };
 }
 
@@ -170,6 +173,8 @@ export async function sonarJson(
     {
       model: deps.config.perplexity!.model,
       max_tokens: 2_000,
+      // Same question, same answer as far as the model allows.
+      temperature: 0,
       web_search_options: { search_context_size: "low" },
       response_format: { type: "json_schema", json_schema: { schema } },
       messages: [{ role: "user", content: prompt }],
@@ -233,6 +238,8 @@ export async function museJson(
         model: config.fastModel,
         // "none" is rejected by the API; "minimal" is the fastest allowed.
         reasoning_effort: "minimal",
+        // Same question, same answer as far as the model allows.
+        temperature: 0,
         // The system prompt comes first and never changes, so Muse Spark's
         // automatic prefix cache serves it at a fraction of the input price.
         prompt_cache_key: cacheKey,
@@ -303,6 +310,7 @@ export async function museWebResearch(
       tools: [{ type: "web_search" }],
       max_tool_calls: maxToolCalls,
       reasoning: { effort: "minimal" },
+      temperature: 0,
       ...(schema
         ? {
             text: {
