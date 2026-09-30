@@ -58,3 +58,19 @@ export function summarizeEmailDelivery(
     message: `${channelMessages.join("; ")}. Your result remains available.`,
   };
 }
+
+/** What the visitor is told about the optional email delivery. */
+export type SubscriptionResult =
+  | {
+      status: "not_requested";
+      message: string;
+      newsletterStatus: "not_requested";
+      dossierStatus: "not_requested";
+    }
+  | {
+      status:
+        "sent" | "partial" | "unavailable" | "failed" | "already_requested";
+      message: string;
+      newsletterStatus: DeliveryChannelStatus;
+      dossierStatus: DeliveryChannelStatus;
+    };

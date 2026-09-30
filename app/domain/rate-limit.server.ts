@@ -109,3 +109,29 @@ export function consumeRateLimit(
 export function clearRateLimitBuckets() {
   buckets.clear();
 }
+
+/** The visitor's address as a rate-limit key; nothing is stored. */
+export function rateLimitKey(request: Request, prefix = "quiz") {
+  const forwarded = request.headers.get("x-forwarded-for");
+  const address =
+    forwarded?.split(",", 1)[0]?.trim() ||
+    request.headers.get("x-real-ip")?.trim() ||
+    "unknown";
+  return `${prefix}:${address}`;
+}
+
+export function rateLimitHeaders(decision: RateLimitDecision) {
+  const headers = new Headers();
+  if (decision.limit !== null) {
+    headers.set("X-RateLimit-Limit", String(decision.limit));
+    headers.set("X-RateLimit-Remaining", String(decision.remaining));
+    headers.set(
+      "X-RateLimit-Reset",
+      String(Math.ceil((decision.resetAt ?? Date.now()) / 1_000)),
+    );
+  }
+  if (decision.retryAfterSeconds !== null) {
+    headers.set("Retry-After", String(decision.retryAfterSeconds));
+  }
+  return headers;
+}
