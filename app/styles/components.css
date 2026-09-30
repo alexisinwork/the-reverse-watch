@@ -753,3 +753,8 @@
   font-size: 0.72rem;
   font-style: italic;
 }
+
+.show-all-watches {
+  display: block;
+  margin: 1.25rem auto 0;
+}

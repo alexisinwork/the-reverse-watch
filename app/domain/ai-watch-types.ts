@@ -21,6 +21,11 @@ export type WatchDetails = {
   reviewStatus?: "pending" | "approved" | "rejected";
   /** Price confirmed by two independent lookups (or by the reviewer). */
   priceConfirmed?: boolean;
+  /**
+   * Quiz near fits only: in the visitor's price range, but misses these
+   * answers (plain-English labels, e.g. "Case size outside your range").
+   */
+  misses?: string[];
 };
 
 export type FoundWatch = {

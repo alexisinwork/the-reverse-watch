@@ -9,6 +9,7 @@ import type {
   ProgressLink,
 } from "../domain/ai-watch-types";
 import { convert, formatMoney, type FxTable } from "../domain/fx";
+import { QUIZ_SHOWN_FIRST } from "../domain/watch-catalogue";
 
 type Mode = "quiz" | "film";
 
@@ -234,9 +235,11 @@ function WatchCard({
           .join(" · ") || "Documented sighting"
       : unconfirmedReference
         ? "Also worth a look"
-        : rank === 1
-          ? "Best fit"
-          : `Option ${rank}`;
+        : details.misses && details.misses.length > 0
+          ? `Option ${rank} · Close fit`
+          : rank === 1
+            ? "Best fit"
+            : `Option ${rank}`;
 
   return (
     <article className="watch-card">
@@ -265,6 +268,11 @@ function WatchCard({
         ) : null}
         <p className="watch-card__rationale">{watch.rationale}</p>
         <div className="watch-card__footer">
+          {details.misses?.map((miss) => (
+            <span className="review-badge review-badge--warning" key={miss}>
+              {miss}
+            </span>
+          ))}
           {details.reviewStatus === "pending" ? (
             <span className="review-badge">Not yet reviewed</span>
           ) : null}
@@ -299,6 +307,7 @@ function ResultBody({
   displayCurrency: string;
   fx: FxTable | null;
 }) {
+  const [showAll, setShowAll] = useState(false);
   if (result.status === "unavailable") {
     return (
       <p className="empty-result">
@@ -329,7 +338,10 @@ function ResultBody({
       </p>
       {result.watches.length > 0 ? (
         <div className="watch-list">
-          {result.watches.map((watch, index) => (
+          {(showAll || mode !== "quiz"
+            ? result.watches
+            : result.watches.slice(0, QUIZ_SHOWN_FIRST)
+          ).map((watch, index) => (
             <WatchCard
               displayCurrency={displayCurrency}
               fx={fx}
@@ -340,6 +352,17 @@ function ResultBody({
             />
           ))}
         </div>
+      ) : null}
+      {mode === "quiz" &&
+      !showAll &&
+      result.watches.length > QUIZ_SHOWN_FIRST ? (
+        <button
+          className="button button--quiet show-all-watches"
+          onClick={() => setShowAll(true)}
+          type="button"
+        >
+          Show all {result.watches.length} watches
+        </button>
       ) : null}
       {result.alsoWorth && result.alsoWorth.length > 0 ? (
         <section className="also-worth" aria-labelledby="also-worth-heading">

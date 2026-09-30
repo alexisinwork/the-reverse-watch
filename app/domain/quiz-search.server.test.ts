@@ -193,6 +193,72 @@ describe("searchQuiz", () => {
     ]);
   });
 
+  it("fills free places with in-budget near fits, marked with what they miss", async () => {
+    const store = client([
+      row(1),
+      row(2),
+      row(3),
+      // In budget but 44 mm for a 17.5 cm wrist: a near fit.
+      row(4, { caseDiameterMm: 44 }),
+      // Misses case size and water resistance: a near fit, ranked after 4.
+      row(5, { caseDiameterMm: 44, waterResistanceM: 30 }),
+      // Out of budget, or unsafe for a nickel allergy: never offered.
+      row(6, { priceAmount: 9_000 }),
+      row(7, { caseMaterial: "stainless steel" }),
+    ]);
+    // With a nickel allergy every steel watch is ruled out: no near fit
+    // may bend that rule, so nothing is offered.
+    const allergic = await searchQuiz(
+      { ...profile, allergyConstraint: "nickel_contact" },
+      {
+        client: store.value,
+        loadFx: async () => fx,
+        runLive: async () => ({ status: "no_match", summary: "None." }),
+      },
+    );
+    expect(allergic).toEqual({ status: "no_match", summary: "None." });
+
+    const plain = await searchQuiz(profile, {
+      client: store.value,
+      loadFx: async () => fx,
+      runLive: vi.fn(),
+    });
+    if (plain.status !== "found") throw new Error("expected found");
+    expect(plain.watches.map((watch) => watch.brand)).toEqual([
+      "Brand1",
+      "Brand2",
+      "Brand3",
+      "Brand7",
+      "Brand4",
+      "Brand5",
+    ]);
+    expect(plain.watches[4]!.details.misses).toEqual([
+      "Case size outside your range",
+    ]);
+    expect(plain.watches[5]!.details.misses).toEqual([
+      "Case size outside your range",
+      "Less water resistance than you asked for",
+    ]);
+    expect(plain.summary).toContain("2 more are in your price range");
+  });
+
+  it("returns at most ten watches", async () => {
+    const store = client(
+      Array.from({ length: 14 }, (_, index) =>
+        row(index + 1, {
+          id: `00000000-0000-0000-0000-0000000000${String(index + 10)}`,
+        }),
+      ),
+    );
+    const result = await searchQuiz(profile, {
+      client: store.value,
+      loadFx: async () => fx,
+      runLive: vi.fn(),
+    });
+    if (result.status !== "found") throw new Error("expected found");
+    expect(result.watches).toHaveLength(10);
+  });
+
   it("falls back to the live search when the catalogue cannot be read", async () => {
     const result = await searchQuiz(profile, {
       client: null,

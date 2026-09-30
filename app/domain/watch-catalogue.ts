@@ -393,7 +393,8 @@ function pick(
   return result;
 }
 
-export const CATALOGUE_MAIN_LIMIT = 5;
+/** Shortlist places shown before "Show all". */
+export const QUIZ_SHOWN_FIRST = 5;
 export const CATALOGUE_ALSO_LIMIT = 3;
 
 /**
@@ -416,7 +417,7 @@ export function matchCatalogue(
   return {
     main: pick(
       eligible.filter((watch) => watch.referenceConfirmed),
-      CATALOGUE_MAIN_LIMIT,
+      QUIZ_RESULT_LIMIT,
       wanted,
     ),
     alsoWorth: pick(
@@ -427,37 +428,86 @@ export function matchCatalogue(
   };
 }
 
+/** How many watches a quiz shortlist can hold (5 shown, 5 more on request). */
+export const QUIZ_RESULT_LIMIT = 10;
+
+// Never relaxed for a near fit: the budget, a nickel allergy and a
+// function the visitor said they must have.
+const HARD_RULES = new Set(["price", "nickel", "complications"]);
+const MAX_MISSES = 2;
+
+/** What a near fit misses, in the visitor's words. */
+export const MISS_LABELS: Record<string, string> = {
+  style: "Made for other occasions",
+  diameter: "Case size outside your range",
+  water_resistance: "Less water resistance than you asked for",
+  movement: "A different movement",
+  thickness: "Thicker than you asked for",
+  case_shape: "A different case shape",
+  crystal: "A different crystal",
+  caseback: "A different caseback",
+  calibre: "A different kind of calibre",
+  clasp: "Clasp adjustment not confirmed",
+};
+
 /**
- * The last resort when nothing fits every answer and the live search is
- * down: catalogue watches in the visitor's price range that break the
- * fewest other answers. Price is never relaxed.
+ * Watches in the visitor's price range that miss one or two of the softer
+ * answers (case size, water resistance…), to fill a shortlist that has
+ * free places. Fewest misses first; each carries what it misses.
  */
-export function closestCatalogue(
+export function nearFits(
   watches: readonly CatalogueWatch[],
   profile: ProfileV4,
   fx: FxTable | null,
-  limit = CATALOGUE_MAIN_LIMIT,
+  limit: number,
+  exclude: ReadonlySet<string> = new Set(),
 ) {
+  if (limit <= 0) return [];
   const wanted = stylesForScenarios(profile.wearingScenarios);
-  const scored = watches.flatMap((watch) => {
-    if (watch.reviewStatus === "rejected" || watch.sourceUrl === null)
-      return [];
-    const failures = catalogueRuleFailures(watch, profile, fx);
-    return failures.includes("price")
-      ? []
-      : [{ watch, misses: failures.length }];
-  });
-  const fewest = Math.min(...scored.map((entry) => entry.misses));
-  // Only the best tier, so a two-rule miss never sits above a one-rule miss.
-  return pick(
-    scored
-      .filter((entry) => entry.misses <= fewest + 1)
-      .sort((a, b) => a.misses - b.misses)
-      .slice(0, 60)
-      .map((entry) => entry.watch),
-    limit,
-    wanted,
-  );
+  const tiers = new Map<
+    number,
+    { watch: CatalogueWatch; misses: string[] }[]
+  >();
+  for (const watch of watches) {
+    if (
+      watch.reviewStatus === "rejected" ||
+      watch.sourceUrl === null ||
+      exclude.has(watch.identityKey)
+    ) {
+      continue;
+    }
+    const misses = catalogueRuleFailures(watch, profile, fx);
+    if (
+      misses.length === 0 ||
+      misses.length > MAX_MISSES ||
+      misses.some((miss) => HARD_RULES.has(miss))
+    ) {
+      continue;
+    }
+    tiers.set(misses.length, [
+      ...(tiers.get(misses.length) ?? []),
+      { watch, misses },
+    ]);
+  }
+  // One tier at a time, so a two-answer miss never ranks above a one-answer
+  // miss; within a tier, reviewed watches and brand variety come first.
+  const result: { watch: CatalogueWatch; misses: string[] }[] = [];
+  for (
+    let count = 1;
+    count <= MAX_MISSES && result.length < limit;
+    count += 1
+  ) {
+    const tier = tiers.get(count) ?? [];
+    const missesOf = new Map(tier.map((entry) => [entry.watch, entry.misses]));
+    for (const watch of pick(
+      tier.map((entry) => entry.watch),
+      limit - result.length,
+      wanted,
+    )) {
+      result.push({ watch, misses: missesOf.get(watch)! });
+    }
+  }
+  return result;
 }
 
 /** Wrist sizes (cm) whose suggested diameter range includes this case. */

@@ -14,9 +14,10 @@ import {
   catalogueCoversRange,
   catalogueIdentityKey,
   catalogueToFoundWatch,
-  CATALOGUE_MAIN_LIMIT,
-  closestCatalogue,
   matchCatalogue,
+  MISS_LABELS,
+  nearFits,
+  QUIZ_RESULT_LIMIT,
   stylesForScenarios,
   type CatalogueWatch,
 } from "./watch-catalogue";
@@ -146,17 +147,50 @@ export async function searchQuiz(
     .map(catalogueToFoundWatch)
     .filter((watch): watch is FoundWatch => watch !== null);
 
+  // Free places on the shortlist go to watches in the visitor's price range
+  // that miss a softer answer (case size, water resistance…), each marked
+  // with what it misses (owner decision, 2026-09-30).
+  const withNearFits = (watches: FoundWatch[]) => {
+    const taken = new Set([...watches, ...alsoWorth].map(watchKey));
+    const extra = nearFits(
+      catalogue,
+      profile,
+      fx,
+      QUIZ_RESULT_LIMIT - watches.length,
+      taken,
+    ).flatMap(({ watch, misses }) => {
+      const found = catalogueToFoundWatch(watch);
+      return found
+        ? [
+            {
+              ...found,
+              details: {
+                ...found.details,
+                misses: misses.map((miss) => MISS_LABELS[miss] ?? miss),
+              },
+            },
+          ]
+        : [];
+    });
+    return { watches: [...watches, ...extra], nearFitCount: extra.length };
+  };
+  const nearFitNote = (count: number) =>
+    count > 0
+      ? ` ${count} more ${count === 1 ? "is" : "are"} in your price range but ${count === 1 ? "misses" : "miss"} an answer, marked on the card.`
+      : "";
+
   if (catalogueCoversRange(range) && main.length >= CATALOGUE_ENOUGH) {
     report?.({
       text: `Found ${main.length} catalogue watches that meet every answer.`,
     });
+    const filled = withNearFits(main);
     return {
       status: "found",
-      watches: main,
+      watches: filled.watches,
       alsoWorth,
       fromCache: true,
       origin: "catalogue",
-      summary: `${main.length} watches from The Reserve's checked catalogue meet every answer, each with its reference confirmed on the manufacturer's or an authorised retailer's page.`,
+      summary: `${main.length} watches from The Reserve's checked catalogue meet every answer, each with its reference confirmed on the manufacturer's or an authorised retailer's page.${nearFitNote(filled.nearFitCount)}`,
     };
   }
 
@@ -174,39 +208,26 @@ export async function searchQuiz(
     });
   }
   if (live.status !== "found") {
-    if (main.length > 0 || alsoWorth.length > 0) {
-      return {
-        status: "found",
-        watches: main,
-        alsoWorth,
-        fromCache: true,
-        origin: "catalogue",
-        summary:
-          main.length > 0
-            ? `${main.length} ${main.length === 1 ? "watch" : "watches"} from the checked catalogue meet every answer; the live search found nothing further.`
-            : "No watch with a confirmed reference meets every answer yet. The watches below do, but the manufacturer's page did not confirm their reference.",
-      };
-    }
-    // Nothing fits every answer and the live search could not help (for
-    // example both AI providers are down): still show the closest watches
-    // in the visitor's price range rather than an empty page.
-    const closest = closestCatalogue(catalogue, profile, fx)
-      .map(catalogueToFoundWatch)
-      .filter((watch): watch is FoundWatch => watch !== null);
-    if (closest.length > 0) {
-      return {
-        status: "found",
-        watches: closest,
-        alsoWorth: [],
-        fromCache: true,
-        origin: "catalogue",
-        summary:
-          live.status === "unavailable"
-            ? "Our live search is unavailable right now, so these are the closest watches in our catalogue: each is in your price range, but not every one meets every answer. Try again later for a full search."
-            : "No watch we could find meets every answer. These are the closest in our catalogue: each is in your price range, but not every one meets every answer.",
-      };
-    }
-    return live;
+    // The live search found nothing or is down (for example both AI
+    // providers failing): the catalogue still answers, never an empty page.
+    const filled = withNearFits(main);
+    if (filled.watches.length === 0 && alsoWorth.length === 0) return live;
+    const lead =
+      main.length > 0
+        ? `${main.length} ${main.length === 1 ? "watch" : "watches"} from the checked catalogue meet every answer.`
+        : alsoWorth.length > 0
+          ? 'No watch with a confirmed reference meets every answer yet; those under "Also worth a look" do, but their reference is not confirmed.'
+          : live.status === "unavailable"
+            ? "Our live search is unavailable right now, so these are the closest watches in our catalogue."
+            : "No watch we could find meets every answer. These are the closest in our catalogue.";
+    return {
+      status: "found",
+      watches: filled.watches,
+      alsoWorth,
+      fromCache: true,
+      origin: "catalogue",
+      summary: `${lead}${nearFitNote(filled.nearFitCount)}`,
+    };
   }
 
   if (client && !live.fromCache)
@@ -224,16 +245,19 @@ export async function searchQuiz(
           known.get(watchKey(watch))?.reviewStatus ?? ("pending" as const),
       },
     }));
-  const watches = [...main, ...liveWatches].slice(0, CATALOGUE_MAIN_LIMIT);
+  const filled = withNearFits(
+    [...main, ...liveWatches].slice(0, QUIZ_RESULT_LIMIT),
+  );
   return {
     status: "found",
-    watches,
+    watches: filled.watches,
     alsoWorth,
     fromCache: live.fromCache,
     origin: main.length > 0 ? "mixed" : "live",
-    summary:
+    summary: `${
       main.length > 0
         ? `${main.length} from the checked catalogue, the rest from a live search. ${live.summary}`
-        : live.summary,
+        : live.summary
+    }${nearFitNote(filled.nearFitCount)}`,
   };
 }
