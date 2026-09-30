@@ -8,7 +8,8 @@ type Mode = "quiz" | "film";
 
 const PROGRESS_STEPS: Record<Mode, { after: number; text: string }[]> = {
   quiz: [
-    { after: 0, text: "Proposing watches that fit every answer…" },
+    { after: 0, text: "Filtering the catalogue for every answer…" },
+    { after: 2, text: "Searching live for watches that fit every answer…" },
     { after: 5, text: "Checking price, size, water resistance and materials…" },
     { after: 9, text: "Confirming each reference on the manufacturer's own page…" },
     { after: 18, text: "Still confirming the last references…" },
@@ -117,12 +118,14 @@ function WatchCard({
   mode,
   displayCurrency,
   fx,
+  unconfirmedReference = false,
 }: {
   watch: FoundWatch;
   rank: number;
   mode: Mode;
   displayCurrency: string;
   fx: FxTable | null;
+  unconfirmedReference?: boolean;
 }) {
   const details = watch.details;
   const facts =
@@ -136,7 +139,9 @@ function WatchCard({
   const eyebrow =
     mode === "film"
       ? [details.person, details.work, details.year].filter(Boolean).join(" · ") || "Documented sighting"
-      : rank === 1
+      : unconfirmedReference
+        ? "Also worth a look"
+        : rank === 1
         ? "Best fit"
         : `Option ${rank}`;
 
@@ -161,6 +166,14 @@ function WatchCard({
         ) : null}
         <p className="watch-card__rationale">{watch.rationale}</p>
         <div className="watch-card__footer">
+          {details.reviewStatus === "pending" ? (
+            <span className="review-badge">Not yet reviewed</span>
+          ) : null}
+          {unconfirmedReference ? (
+            <span className="review-badge review-badge--warning">
+              Manufacturer reference not confirmed
+            </span>
+          ) : null}
           {details.referenceVerified ? (
             <span className="verified-badge">
               Reference confirmed on the{" "}
@@ -206,20 +219,48 @@ function ResultBody({
     <>
       <p className="result-summary">
         {result.summary}
-        {result.fromCache ? <span className="result-summary__cached"> Instant: answered before.</span> : null}
+        {result.origin === "catalogue" ? (
+          <span className="result-summary__cached"> Instant: from the catalogue.</span>
+        ) : result.fromCache ? (
+          <span className="result-summary__cached"> Instant: answered before.</span>
+        ) : null}
       </p>
-      <div className="watch-list">
-        {result.watches.map((watch, index) => (
-          <WatchCard
-            displayCurrency={displayCurrency}
-            fx={fx}
-            key={`${watch.brand}-${watch.model}-${watch.referenceCode ?? ""}-${index}`}
-            mode={mode}
-            rank={index + 1}
-            watch={watch}
-          />
-        ))}
-      </div>
+      {result.watches.length > 0 ? (
+        <div className="watch-list">
+          {result.watches.map((watch, index) => (
+            <WatchCard
+              displayCurrency={displayCurrency}
+              fx={fx}
+              key={`${watch.brand}-${watch.model}-${watch.referenceCode ?? ""}-${index}`}
+              mode={mode}
+              rank={index + 1}
+              watch={watch}
+            />
+          ))}
+        </div>
+      ) : null}
+      {result.alsoWorth && result.alsoWorth.length > 0 ? (
+        <section className="also-worth" aria-labelledby="also-worth-heading">
+          <h3 id="also-worth-heading">Also worth a look</h3>
+          <p className="result-footnote">
+            These fit every answer too, but no manufacturer or authorised-retailer page confirmed
+            their exact reference. Check the reference with the seller.
+          </p>
+          <div className="watch-list">
+            {result.alsoWorth.map((watch, index) => (
+              <WatchCard
+                displayCurrency={displayCurrency}
+                fx={fx}
+                key={`also-${watch.brand}-${watch.model}-${watch.referenceCode ?? ""}-${index}`}
+                mode={mode}
+                rank={index + 1}
+                unconfirmedReference
+                watch={watch}
+              />
+            ))}
+          </div>
+        </section>
+      ) : null}
     </>
   );
 }

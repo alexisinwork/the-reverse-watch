@@ -45,20 +45,39 @@
 - Use least-privilege tokens and project/service accounts rather than personal
   keys wherever the provider supports them.
 
-## AI search direction (owner decision, 2026-09-29)
+## Watch catalogue direction (owner decision, 2026-09-30)
 
 This overrides the SQL-first catalogue invariants below wherever they
-conflict.
+conflict, and supersedes the 2026-09-29 "AI search only" direction for the
+quiz.
 
-- Quiz results come only from the AI search in
-  `app/domain/ai-watch-finder.server.ts`: Muse Spark must call Perplexity
-  through its `search_watches_via_perplexity` tool before answering. The
-  reviewed catalogue is no longer used for quiz results. Keep its tables;
-  never drop them.
-- Every search that finds watches is stored permanently by
-  `app/domain/ai-watch-store.server.ts` (migration 0070). A submission with
-  the same answers and price band is served from the database with no new
-  search. Stored results never expire.
+- Quiz answers are filtered in code from the watch catalogue
+  (`private.watch_catalogue`, migrations 0071–0072;
+  `app/domain/watch-catalogue.ts`, `app/domain/quiz-search.server.ts`).
+  Each watch has checked facts and a review status (pending / approved /
+  rejected). Pending watches are public but marked "Not yet reviewed".
+- The catalogue is built locally by `scripts/build-catalogue.ts`: 11 price
+  ranges up to 10k × 6 wearing styles (dress, everyday, sport, dive, field,
+  travel) × 10 runs, written to the production database.
+- Above 10k, or where the catalogue has fewer than three confirmed fits, the
+  live AI search (`app/domain/ai-watch-finder.server.ts`, stored by
+  `ai-watch-store.server.ts`, migration 0070) runs and adds its finds to the
+  catalogue as pending.
+- The wrist pre-fills an editable case-diameter range; the diameter range is
+  what is enforced.
+- A watch whose reference no manufacturer or authorised-retailer page
+  confirms is shown only under "Also worth a look", tagged "Manufacturer
+  reference not confirmed".
+- Prices and photos come through Perplexity. A price is stored only when a
+  second, independent lookup agrees within ±5% in the same currency and each
+  source is under 90 days old or a live page showing the price and the
+  reference (`app/domain/price-check.server.ts`). Grey-market and
+  marketplace prices never count. The daily cron
+  `/internal/catalogue/recheck-prices` rechecks prices older than 90 days
+  and parks changes for review.
+- Review happens on `/admin/catalogue` (ADMIN_PASSWORD plus a cookie signed
+  with SESSION_SECRET): Approve, Reject, Edit, accept or dismiss price
+  changes. `scripts/catalogue-report.ts` writes the `.md` report.
 - Actor/movie watches and `/watches/find` are to use the same approach and
   publish immediately, with no editorial review step.
 - Store image URLs only, never image files.

@@ -14,7 +14,7 @@ import {
 import type { AiSearchOutcome, FoundWatch } from "./ai-watch-types";
 import { convert, loadFxTable, type FxTable } from "./fx.server";
 import {
-  caseDiameterForWrist,
+  diameterRangeFor,
   findPriceRange,
   type ProfileV4,
 } from "./questionnaire-v4";
@@ -74,7 +74,7 @@ export type Deps = {
   now: () => number;
 };
 
-function defaultDeps(overrides: Partial<Deps> = {}): Deps {
+export function defaultDeps(overrides: Partial<Deps> = {}): Deps {
   const fetchImpl = overrides.fetchImpl ?? fetch;
   return {
     config: overrides.config ?? loadAiWatchFinderConfig(),
@@ -117,7 +117,7 @@ function logError(event: string, error: unknown) {
   );
 }
 
-function parseModelJson(content: string) {
+export function parseModelJson(content: string) {
   return JSON.parse(content.replace(/^```(?:json)?\s*|\s*```$/g, "")) as unknown;
 }
 
@@ -126,7 +126,7 @@ function parseModelJson(content: string) {
 
 const PERPLEXITY_RETRIES = 2;
 
-async function perplexityPost(path: "chat/completions" | "search", body: unknown, deps: Deps, timeoutMs: number) {
+export async function perplexityPost(path: "chat/completions" | "search", body: unknown, deps: Deps, timeoutMs: number) {
   const config = deps.config.perplexity!;
   for (let attempt = 0; ; attempt += 1) {
     const response = await deps.fetchImpl(`https://api.perplexity.ai/${path}`, {
@@ -175,10 +175,10 @@ async function sonarJson(prompt: string, schema: Record<string, unknown>, deps: 
   return parseModelJson(content);
 }
 
-type SearchHit = { url: string; title: string; snippet: string };
+export type SearchHit = { url: string; title: string; snippet: string };
 
 /** Perplexity Search API: raw ranked results, up to 5 queries per request. */
-async function searchWeb(queries: string[], deps: Deps): Promise<SearchHit[]> {
+export async function searchWeb(queries: string[], deps: Deps): Promise<SearchHit[]> {
   if (queries.length === 0) return [];
   const body = (await perplexityPost(
     "search",
@@ -194,7 +194,7 @@ async function searchWeb(queries: string[], deps: Deps): Promise<SearchHit[]> {
   });
 }
 
-async function museJson(
+export async function museJson(
   system: string,
   user: string,
   cacheKey: string,
@@ -377,7 +377,7 @@ function money(amount: number, currency: string) {
 /** Plain-text constraints: the only thing about the visitor that leaves. */
 export function quizConstraintLines(profile: ProfileV4) {
   const range = findPriceRange(profile.priceRange)!;
-  const diameter = caseDiameterForWrist(profile.wristCm);
+  const diameter = diameterRangeFor(profile);
   const optional = [
     profile.maxCaseThicknessMm !== undefined
       ? `Case thickness at most ${profile.maxCaseThicknessMm} mm.`
@@ -426,7 +426,7 @@ export function quizCacheInput(profile: ProfileV4) {
   return {
     budgetCurrency: profile.budgetCurrency,
     priceRange: profile.priceRange,
-    caseDiameter: caseDiameterForWrist(profile.wristCm),
+    caseDiameter: diameterRangeFor(profile),
     wearingScenarios: sorted(profile.wearingScenarios),
     minimumWaterResistanceM: profile.minimumWaterResistanceM,
     movementTypes: sorted(profile.movementTypes),
@@ -547,7 +547,7 @@ export function quizRuleFailures(candidate: ScoredCandidate, profile: ProfileV4)
   if (!meetsWaterResistance(profile.minimumWaterResistanceM, candidate.waterResistanceM)) {
     failures.push("water_resistance");
   }
-  if (!fitsDiameter(caseDiameterForWrist(profile.wristCm), candidate.caseDiameterMm)) {
+  if (!fitsDiameter(diameterRangeFor(profile), candidate.caseDiameterMm)) {
     failures.push("diameter");
   }
   if (!allowedMovement(profile.movementTypes, candidate.movement)) failures.push("movement");

@@ -1,4 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "react-router"
+  "framework": "react-router",
+  "crons": [
+    {
+      "path": "/internal/catalogue/recheck-prices",
+      "schedule": "30 4 * * *"
+    }
+  ]
 }

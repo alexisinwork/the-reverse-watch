@@ -30,3 +30,6 @@ data/research/model-sheet-sample.tsv
 .scratch/
 .vercel
 .env*
+
+# Catalogue build progress (local)
+.catalogue-build/

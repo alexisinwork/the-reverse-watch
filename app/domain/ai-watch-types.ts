@@ -13,6 +13,10 @@ export type WatchDetails = {
   year?: number | null;
   context?: string | null;
   evidenceUrl?: string | null;
+  /** Catalogue watches only: pending ones are public but marked unreviewed. */
+  reviewStatus?: "pending" | "approved" | "rejected";
+  /** Price confirmed by two independent lookups (or by the reviewer). */
+  priceConfirmed?: boolean;
 };
 
 export type FoundWatch = {
@@ -33,5 +37,11 @@ export type AiSearchOutcome =
   | { status: "unavailable" };
 
 export type AiSearchView =
-  | (Extract<AiSearchOutcome, { status: "found" }> & { fromCache: boolean })
+  | (Extract<AiSearchOutcome, { status: "found" }> & {
+      fromCache: boolean;
+      /** Where the shortlist came from; absent for film searches. */
+      origin?: "catalogue" | "live" | "mixed";
+      /** Fits every answer, but no maker's page confirmed the reference. */
+      alsoWorth?: FoundWatch[];
+    })
   | Exclude<AiSearchOutcome, { status: "found" }>;

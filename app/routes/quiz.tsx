@@ -19,11 +19,6 @@ import {
   OptionCheckboxGroup,
 } from "../components/quiz-fields";
 import { WatchResults } from "../components/watch-results";
-import {
-  quizCacheInput,
-  searchQuizWatches,
-} from "../domain/ai-watch-finder.server";
-import { searchWithStore } from "../domain/ai-watch-store.server";
 import type { AiSearchView } from "../domain/ai-watch-types";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
 import type { VocabularyKind } from "../domain/catalogue-vocabulary";
@@ -35,6 +30,7 @@ import {
   parseDiscoveryStorySlug,
 } from "../domain/discovery-context.server";
 import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
+import { searchQuiz } from "../domain/quiz-search.server";
 import { loadPublishedDiscoveryStoryContext } from "../domain/discovery-store.server";
 import { renderDossierEmail } from "../domain/dossier-email";
 import {
@@ -53,7 +49,10 @@ import {
 } from "../domain/questionnaire-v3";
 import {
   BUDGET_CURRENCIES,
+  CASE_DIAMETER_MM_MAX,
+  CASE_DIAMETER_MM_MIN,
   caseDiameterForWrist,
+  diameterRangeFor,
   findPriceRange,
   PRICE_RANGES,
   priceRangeLabel,
@@ -216,6 +215,8 @@ function parseProfileForm(formData: FormData) {
     budgetCurrency: single("budgetCurrency"),
     priceRange: single("priceRange"),
     wristCm: Number(single("wristCm")),
+    caseDiameterMinMm: optionalNumber(single("caseDiameterMinMm")),
+    caseDiameterMaxMm: optionalNumber(single("caseDiameterMaxMm")),
     wearingScenarios: multiple("wearingScenarios"),
     minimumWaterResistanceM: Number(single("minimumWaterResistanceM")),
     movementTypes: multiple("movementTypes"),
@@ -391,11 +392,7 @@ export async function action({ request }: Route.ActionArgs) {
   const startedAt = performance.now();
   // Only the validated constraint profile reaches the AI search; the email
   // field and every request header stay on this server.
-  const search = searchWithStore({
-    kind: "quiz",
-    cacheInput: quizCacheInput(profile),
-    run: () => searchQuizWatches(profile),
-  });
+  const search = searchQuiz(profile);
 
   if (funnelSource === "archetype") {
     const events = [
@@ -517,6 +514,8 @@ type QuizDraft = {
   priceRange: string;
   wristValue: string;
   wristUnit: "cm" | "in";
+  diameterMin: string;
+  diameterMax: string;
   wearingScenarios: string[];
   minimumWaterResistanceM: string;
   movementTypes: string[];
@@ -535,6 +534,8 @@ const INITIAL_DRAFT: QuizDraft = {
   priceRange: "",
   wristValue: "",
   wristUnit: "cm",
+  diameterMin: "",
+  diameterMax: "",
   wearingScenarios: [],
   minimumWaterResistanceM: "0",
   movementTypes: [],
@@ -583,6 +584,8 @@ function readSavedDraft(): { step: number; draft: QuizDraft } | null {
         priceRange: findPriceRange(text("priceRange")) ? text("priceRange") : "",
         wristValue: text("wristValue"),
         wristUnit: text("wristUnit") === "in" ? "in" : "cm",
+        diameterMin: text("diameterMin"),
+        diameterMax: text("diameterMax"),
         wearingScenarios: list("wearingScenarios"),
         minimumWaterResistanceM: text("minimumWaterResistanceM") || "0",
         movementTypes: list("movementTypes"),
@@ -608,6 +611,8 @@ function profileFormFields(draft: QuizDraft) {
     { name: "budgetCurrency", value: draft.budgetCurrency },
     { name: "priceRange", value: draft.priceRange },
     { name: "wristCm", value: String(wristCm(draft) ?? "") },
+    { name: "caseDiameterMinMm", value: draft.diameterMin },
+    { name: "caseDiameterMaxMm", value: draft.diameterMax },
     { name: "minimumWaterResistanceM", value: draft.minimumWaterResistanceM },
     { name: "allergyConstraint", value: draft.allergyConstraint },
     { name: "maxCaseThicknessMm", value: draft.maxCaseThicknessMm },
@@ -644,6 +649,8 @@ function draftToProfileInput(draft: QuizDraft) {
     budgetCurrency: draft.budgetCurrency,
     priceRange: draft.priceRange,
     wristCm: wristCm(draft) ?? Number.NaN,
+    caseDiameterMinMm: optionalNumber(draft.diameterMin),
+    caseDiameterMaxMm: optionalNumber(draft.diameterMax),
     wearingScenarios: draft.wearingScenarios,
     minimumWaterResistanceM: Number(draft.minimumWaterResistanceM),
     movementTypes: draft.movementTypes,
@@ -703,6 +710,32 @@ function PriceRangePicker({
   );
 }
 
+/** A wrist change pre-fills the case range; the visitor can then edit it. */
+function wristPatch(draft: QuizDraft, patch: Pick<QuizDraft, "wristValue"> & Partial<QuizDraft>) {
+  const next = { ...draft, ...patch };
+  const cm = wristCm(next);
+  if (cm === null || cm < WRIST_CM_MIN || cm > WRIST_CM_MAX) return patch;
+  const suggested = caseDiameterForWrist(cm);
+  return {
+    ...patch,
+    diameterMin: String(suggested.minimumMm),
+    diameterMax: String(suggested.maximumMm),
+  };
+}
+
+/** The edited range when it is complete and sensible, else null. */
+function draftDiameter(draft: QuizDraft) {
+  if (draft.diameterMin.trim() === "" && draft.diameterMax.trim() === "") return null;
+  const minimumMm = Number(draft.diameterMin);
+  const maximumMm = Number(draft.diameterMax);
+  const inBounds = (value: number) =>
+    Number.isFinite(value) && value >= CASE_DIAMETER_MM_MIN && value <= CASE_DIAMETER_MM_MAX;
+  if (draft.diameterMin.trim() === "" || draft.diameterMax.trim() === "") return "invalid" as const;
+  return inBounds(minimumMm) && inBounds(maximumMm) && minimumMm <= maximumMm
+    ? { minimumMm, maximumMm }
+    : ("invalid" as const);
+}
+
 const QUICK_WRISTS_CM = [15, 16, 17, 18, 19, 20];
 
 function WristStep({
@@ -714,7 +747,12 @@ function WristStep({
 }) {
   const cm = wristCm(draft);
   const valid = cm !== null && cm >= WRIST_CM_MIN && cm <= WRIST_CM_MAX;
-  const diameter = valid ? caseDiameterForWrist(cm) : null;
+  const edited = draftDiameter(draft);
+  const diameter = !valid
+    ? null
+    : edited && edited !== "invalid"
+      ? edited
+      : caseDiameterForWrist(cm);
   return (
     <>
       <ChoiceGroup
@@ -739,7 +777,7 @@ function WristStep({
           label="Wrist circumference"
           max={draft.wristUnit === "in" ? 10 : WRIST_CM_MAX}
           min={draft.wristUnit === "in" ? 4.5 : WRIST_CM_MIN}
-          onChange={(value) => update({ wristValue: value })}
+          onChange={(value) => update(wristPatch(draft, { wristValue: value }))}
           placeholder={draft.wristUnit === "in" ? "e.g. 6.9" : "e.g. 17.5"}
           step={0.1}
           unit={draft.wristUnit}
@@ -752,10 +790,12 @@ function WristStep({
             className="chip"
             key={size}
             onClick={() =>
-              update({
-                wristValue:
-                  draft.wristUnit === "in" ? String(Math.round((size / 2.54) * 10) / 10) : String(size),
-              })
+              update(
+                wristPatch(draft, {
+                  wristValue:
+                    draft.wristUnit === "in" ? String(Math.round((size / 2.54) * 10) / 10) : String(size),
+                }),
+              )
             }
             type="button"
           >
@@ -765,9 +805,43 @@ function WristStep({
       </div>
       <p className="wrist-note" aria-live="polite">
         {diameter
-          ? `We'll look for cases of ${diameter.minimumMm}–${diameter.maximumMm} mm, which sit well on a ${cm} cm wrist.`
+          ? `We'll look for cases of ${diameter.minimumMm}–${diameter.maximumMm} mm, which sit well on a ${cm} cm wrist. Adjust the range below if you prefer.`
           : "Wrap a soft tape or a strip of paper around your wrist just above the bone."}
       </p>
+      {valid ? (
+        <fieldset className="quiz-fieldset">
+          <legend>Case diameter range</legend>
+          <p className="field-hint">Only watches inside this range are suggested.</p>
+          <div className="field-row">
+            <NumberField
+              label="Smallest case"
+              max={CASE_DIAMETER_MM_MAX}
+              min={CASE_DIAMETER_MM_MIN}
+              onChange={(value) => update({ diameterMin: value })}
+              placeholder={String(caseDiameterForWrist(cm).minimumMm)}
+              step={0.5}
+              unit="mm"
+              value={draft.diameterMin}
+            />
+            <NumberField
+              label="Largest case"
+              max={CASE_DIAMETER_MM_MAX}
+              min={CASE_DIAMETER_MM_MIN}
+              onChange={(value) => update({ diameterMax: value })}
+              placeholder={String(caseDiameterForWrist(cm).maximumMm)}
+              step={0.5}
+              unit="mm"
+              value={draft.diameterMax}
+            />
+          </div>
+          {edited === "invalid" ? (
+            <p className="field-hint field-hint--error" role="alert">
+              Enter both sizes between {CASE_DIAMETER_MM_MIN} and {CASE_DIAMETER_MM_MAX} mm, the
+              smallest first.
+            </p>
+          ) : null}
+        </fieldset>
+      ) : null}
     </>
   );
 }
@@ -784,7 +858,7 @@ function ProfileSummary({
   const named = (slugs: readonly string[], labels: Map<string, string>) =>
     slugs.map((slug) => labels.get(slug) ?? labelFor(slug)).join(", ");
   const range = findPriceRange(profile.priceRange)!;
-  const diameter = caseDiameterForWrist(profile.wristCm);
+  const diameter = diameterRangeFor(profile);
   const optional = [
     profile.maxCaseThicknessMm !== undefined ? ["Thickness", `Up to ${profile.maxCaseThicknessMm} mm`] : null,
     profile.caseShape !== undefined ? ["Case shape", labelFor(profile.caseShape)] : null,
@@ -956,7 +1030,10 @@ export default function Quiz() {
     step === 0
       ? draft.priceRange !== ""
       : step === 1
-        ? wrist !== null && wrist >= WRIST_CM_MIN && wrist <= WRIST_CM_MAX
+        ? wrist !== null &&
+          wrist >= WRIST_CM_MIN &&
+          wrist <= WRIST_CM_MAX &&
+          draftDiameter(draft) !== "invalid"
         : step === 2
           ? draft.wearingScenarios.length > 0
           : step === 3
@@ -1002,8 +1079,8 @@ export default function Quiz() {
           />
           <WatchResults
             defaultCurrency={resultData.profile.budgetCurrency}
-            eyebrow="Live search · confirmed sources"
-            footnote="Found with Muse Spark and a live Perplexity web search using only your answers above; no email or personal data is sent. Check prices with the seller before buying."
+            eyebrow="Checked catalogue · confirmed sources"
+            footnote="Filtered from The Reserve's checked watch catalogue. Where it has gaps, or above 10k, a live Muse Spark and Perplexity search fills in using only your answers above; no email or personal data is sent. Check prices with the seller before buying."
             fx={loaderData.fx}
             heading="Watches that fit every answer"
             mode="quiz"

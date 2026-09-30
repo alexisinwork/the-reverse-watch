@@ -11,6 +11,7 @@ const typedConfigs = tseslint.configs.recommendedTypeChecked.map((config) => ({
 export default tseslint.config(
   {
     ignores: [
+      ".catalogue-build/**",
       ".react-router/**",
       ".vercel/**",
       "build/**",
@@ -45,6 +46,18 @@ export default tseslint.config(
       ...reactHooks.configs.recommended.rules,
       "@typescript-eslint/consistent-type-imports": "error",
       "@typescript-eslint/no-floating-promises": "error",
+    },
+  },
+  {
+    // Fetch stubs and module mocks in tests are async and loosely typed by
+    // design.
+    files: ["**/*.test.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/require-await": "off",
+      "@typescript-eslint/no-base-to-string": "off",
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/consistent-type-imports": ["error", { disallowTypeAnnotations: false }],
+      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
     },
   },
 );

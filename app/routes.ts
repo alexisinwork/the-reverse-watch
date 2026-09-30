@@ -19,6 +19,11 @@ export default [
     "internal/discovery-research/review",
     "routes/internal-discovery-research-review.ts",
   ),
+  route(
+    "internal/catalogue/recheck-prices",
+    "routes/internal-catalogue-recheck-prices.ts",
+  ),
+  route("admin/catalogue", "routes/admin-catalogue.tsx"),
   route("watches/people/:entitySlug", "routes/watch-entity.tsx"),
   route("watches/works/:workSlug", "routes/watch-work.tsx"),
   route("watches/stories/:storySlug", "routes/watch-story.tsx"),

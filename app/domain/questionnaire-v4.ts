@@ -80,6 +80,24 @@ export function caseDiameterForWrist(wristCm: number) {
   return { minimumMm: 42, maximumMm: 46 };
 }
 
+export const CASE_DIAMETER_MM_MIN = 20;
+export const CASE_DIAMETER_MM_MAX = 60;
+
+/**
+ * The enforced case diameter range: the visitor's edited range when given,
+ * otherwise the one the wrist suggests.
+ */
+export function diameterRangeFor(profile: {
+  wristCm: number;
+  caseDiameterMinMm?: number;
+  caseDiameterMaxMm?: number;
+}) {
+  if (profile.caseDiameterMinMm !== undefined && profile.caseDiameterMaxMm !== undefined) {
+    return { minimumMm: profile.caseDiameterMinMm, maximumMm: profile.caseDiameterMaxMm };
+  }
+  return caseDiameterForWrist(profile.wristCm);
+}
+
 export const profileV4Schema = z
   .object({
     version: z.literal(QUESTIONNAIRE_V4_VERSION),
@@ -92,6 +110,18 @@ export const profileV4Schema = z
       .finite()
       .min(WRIST_CM_MIN, "Enter a wrist size of at least 12 cm (4.7 in).")
       .max(WRIST_CM_MAX, "Enter a wrist size of at most 25 cm (9.8 in)."),
+    caseDiameterMinMm: z
+      .number()
+      .finite()
+      .min(CASE_DIAMETER_MM_MIN, "Enter a case diameter of at least 20 mm.")
+      .max(CASE_DIAMETER_MM_MAX, "Enter a case diameter of at most 60 mm.")
+      .optional(),
+    caseDiameterMaxMm: z
+      .number()
+      .finite()
+      .min(CASE_DIAMETER_MM_MIN, "Enter a case diameter of at least 20 mm.")
+      .max(CASE_DIAMETER_MM_MAX, "Enter a case diameter of at most 60 mm.")
+      .optional(),
     wearingScenarios: z.array(z.string().min(1)).min(1).max(12),
     minimumWaterResistanceM: z.number().int().nonnegative().max(12_000),
     movementTypes: z.array(z.enum(MOVEMENT_TYPE_CHOICES)).min(1),
@@ -107,6 +137,23 @@ export const profileV4Schema = z
   .strict()
   .superRefine((profile, context) => {
     const unique = (values: string[]) => new Set(values).size === values.length;
+    if ((profile.caseDiameterMinMm === undefined) !== (profile.caseDiameterMaxMm === undefined)) {
+      context.addIssue({
+        code: "custom",
+        path: ["caseDiameterMaxMm"],
+        message: "Enter both the smallest and the largest case diameter.",
+      });
+    } else if (
+      profile.caseDiameterMinMm !== undefined &&
+      profile.caseDiameterMaxMm !== undefined &&
+      profile.caseDiameterMinMm > profile.caseDiameterMaxMm
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["caseDiameterMaxMm"],
+        message: "The largest case diameter must not be smaller than the smallest.",
+      });
+    }
     for (const field of [
       "wearingScenarios",
       "movementTypes",

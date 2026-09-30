@@ -490,6 +490,38 @@
   content: "";
 }
 
+.review-badge {
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  color: var(--color-steel-text);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.review-badge--warning {
+  border-color: var(--color-brass);
+  color: var(--color-brass-bright);
+}
+
+.also-worth {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.also-worth h3 {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.field-hint--error {
+  color: var(--color-danger);
+}
+
 .candidate-link {
   color: var(--color-brass-bright);
   font-size: 0.75rem;

@@ -1,0 +1,503 @@
+/**
+ * Filling the catalogue: one search per (price range, wearing style, run).
+ * Muse Spark or Perplexity proposes watches; each new one is grounded on a
+ * manufacturer or authorised-retailer page that shows its reference, its
+ * price is double-checked through Perplexity, and its photo URL is kept.
+ * Only search constraints are ever sent to either provider.
+ */
+import {
+  inspectSourcePage,
+  museJson,
+  parseModelJson,
+  perplexityPost,
+  safeHttpUrl,
+  searchWeb,
+  verifyImageUrl,
+  type Deps,
+} from "./ai-watch-finder.server";
+import {
+  classifySource,
+  normalizeMovement,
+  normalizeReference,
+} from "./ai-watch-guardrails";
+import { convert, type FxTable } from "./fx";
+import {
+  doublePriceCheck,
+  priceDifference,
+  PRICE_TOLERANCE,
+} from "./price-check.server";
+import type { PriceRange } from "./questionnaire-v4";
+import {
+  CATALOGUE_STYLES,
+  catalogueIdentityKey,
+  STYLE_BRIEFS,
+  type CatalogueStyle,
+  type CatalogueWatch,
+} from "./watch-catalogue";
+import type { CatalogueEntry, PriceRecord } from "./watch-catalogue.server";
+
+export type BuildCell = {
+  range: PriceRange;
+  style: CatalogueStyle;
+  run: number;
+};
+
+export const BUILD_RUNS = 10;
+
+/** Each run looks from a different angle so the ten runs do not repeat. */
+export const RUN_FOCUS: { provider: "muse" | "perplexity"; text: string }[] = [
+  { provider: "muse", text: "Focus on established Swiss brands." },
+  { provider: "muse", text: "Focus on Japanese brands." },
+  { provider: "muse", text: "Focus on German and Austrian brands." },
+  {
+    provider: "muse",
+    text: "Focus on independent brands and well-regarded microbrands.",
+  },
+  { provider: "muse", text: "Focus on British, American and Nordic brands." },
+  {
+    provider: "muse",
+    text: "Focus on French, Italian and other European brands.",
+  },
+  { provider: "perplexity", text: "Favour releases from the last two years." },
+  {
+    provider: "muse",
+    text: "Focus on the best-known, most widely recommended classics.",
+  },
+  {
+    provider: "muse",
+    text: "Focus on lesser-known heritage brands and overlooked models.",
+  },
+  {
+    provider: "perplexity",
+    text: "Favour models that authorised retailers currently stock and recommend.",
+  },
+];
+
+const BUILD_FIELDS =
+  '{"candidates":[{"brand","model","referenceCode","priceAmount","priceCurrency","caseDiameterMm","caseThicknessMm","caseShape","waterResistanceM","movementType","inHouseCalibre","crystal","displayCaseback","complications","caseMaterial","casebackMaterial","strapMaterial","styles","manufacturerUrl","why"}]}';
+
+export const COMPLICATION_SLUGS = [
+  "date",
+  "pointer_date",
+  "day_of_week",
+  "annual_calendar",
+  "moonphase",
+  "small_seconds",
+  "gmt",
+  "day_night_indicator",
+  "bezel_24h",
+  "dive_bezel",
+  "sixty_minute_bezel",
+  "chronograph",
+  "tachymeter",
+  "flyback",
+  "regatta_timer",
+  "helium_valve",
+  "antimagnetic_shield",
+  "power_reserve",
+  "alarm",
+  "world_time",
+  "perpetual_calendar",
+] as const;
+
+const BUILD_SYSTEM = [
+  "You are the senior watch buyer of The Reserve, building a catalogue of current-production wristwatches.",
+  "You receive a price range, a wearing style and a focus, and propose specific current-production references that suit that style and whose current official new retail price is inside the range.",
+  "Give the exact manufacturer reference number of one specific configuration, its current official new retail price (priceAmount with ISO priceCurrency, US dollars where the brand publishes them), case diameter and thickness in mm, case shape (round, tonneau, rectangular, cushion, square or oval), water resistance in metres, movement type (automatic, manual, quartz, solar, spring_drive or hybrid), whether the calibre is in-house (inHouseCalibre), crystal (sapphire, mineral, acrylic or other), whether the case back is a display back, the case, case-back and strap or bracelet materials, and the official product page URL (manufacturerUrl).",
+  `complications is a list using only these words: ${COMPLICATION_SLUGS.join(", ")}.`,
+  `styles is every wearing style it genuinely suits, using only: ${CATALOGUE_STYLES.join(", ")}.`,
+  "Use null for any fact you are not sure of rather than guessing. Never invent a reference.",
+  "why is one plain-English sentence on why it suits the style.",
+  `Respond only with JSON: ${BUILD_FIELDS}.`,
+].join(" ");
+
+function stringOrNull(key: string) {
+  return [key, { type: ["string", "null"] }] as const;
+}
+function numberOrNull(key: string) {
+  return [key, { type: ["number", "null"] }] as const;
+}
+
+const buildCandidateSchema = {
+  type: "object",
+  properties: {
+    candidates: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: Object.fromEntries<unknown>([
+          ["brand", { type: "string" }],
+          ["model", { type: "string" }],
+          ...[
+            "referenceCode",
+            "priceCurrency",
+            "caseShape",
+            "movementType",
+            "crystal",
+            "caseMaterial",
+            "casebackMaterial",
+            "strapMaterial",
+            "manufacturerUrl",
+            "why",
+          ].map(stringOrNull),
+          ...[
+            "priceAmount",
+            "caseDiameterMm",
+            "caseThicknessMm",
+            "waterResistanceM",
+          ].map(numberOrNull),
+          ["inHouseCalibre", { type: ["boolean", "null"] }],
+          ["displayCaseback", { type: ["boolean", "null"] }],
+          ["complications", { type: "array", items: { type: "string" } }],
+          ["styles", { type: "array", items: { type: "string" } }],
+        ]),
+        required: ["brand", "model"],
+      },
+    },
+  },
+  required: ["candidates"],
+};
+
+function money(amount: number) {
+  return `USD ${Math.round(amount).toLocaleString("en")}`;
+}
+
+export function cellPrompt(cell: BuildCell, exclude: string[]) {
+  const focus = RUN_FOCUS[(cell.run - 1) % RUN_FOCUS.length]!;
+  return [
+    `Propose 6 candidates. ${focus.text}`,
+    `Price range: new retail price between ${money(cell.range.minimum)} and ${money(cell.range.maximum!)}.`,
+    `Wearing style: ${STYLE_BRIEFS[cell.style]}.`,
+    exclude.length > 0
+      ? `Already in the catalogue for this range and style; propose different watches: ${exclude.slice(0, 60).join("; ")}.`
+      : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
+}
+
+export async function proposeForCell(
+  cell: BuildCell,
+  exclude: string[],
+  deps: Deps,
+): Promise<unknown[]> {
+  const focus = RUN_FOCUS[(cell.run - 1) % RUN_FOCUS.length]!;
+  const prompt = cellPrompt(cell, exclude);
+  if (focus.provider === "muse") {
+    const payload = (await museJson(
+      BUILD_SYSTEM,
+      prompt,
+      "reserve-catalogue-build-v1",
+      deps,
+      60_000,
+    )) as {
+      candidates?: unknown;
+    };
+    return Array.isArray(payload.candidates)
+      ? (payload.candidates as unknown[])
+      : [];
+  }
+  const body = (await perplexityPost(
+    "chat/completions",
+    {
+      model: deps.config.perplexity!.model,
+      max_tokens: 3_000,
+      web_search_options: { search_context_size: "low" },
+      response_format: {
+        type: "json_schema",
+        json_schema: { schema: buildCandidateSchema },
+      },
+      messages: [
+        { role: "system", content: BUILD_SYSTEM },
+        { role: "user", content: prompt },
+      ],
+    },
+    deps,
+    40_000,
+  )) as { choices?: { message?: { content?: unknown } }[] };
+  const content = body.choices?.[0]?.message?.content;
+  if (typeof content !== "string") return [];
+  const payload = parseModelJson(content) as { candidates?: unknown };
+  return Array.isArray(payload.candidates)
+    ? (payload.candidates as unknown[])
+    : [];
+}
+
+export type BuildCandidate = {
+  brand: string;
+  model: string;
+  referenceCode: string | null;
+  price: { amount: number; currency: string } | null;
+  caseDiameterMm: number | null;
+  caseThicknessMm: number | null;
+  caseShape: string | null;
+  waterResistanceM: number | null;
+  movement: string | null;
+  inHouseCalibre: boolean | null;
+  crystal: string | null;
+  displayCaseback: boolean | null;
+  complications: string[];
+  caseMaterial: string | null;
+  casebackMaterial: string | null;
+  strapMaterial: string | null;
+  styles: CatalogueStyle[];
+  manufacturerUrl: string | null;
+  why: string | null;
+};
+
+function text(value: unknown) {
+  return typeof value === "string" && value.trim() ? value.trim() : null;
+}
+function num(value: unknown, min: number, max: number) {
+  return typeof value === "number" &&
+    Number.isFinite(value) &&
+    value >= min &&
+    value <= max
+    ? value
+    : null;
+}
+function bool(value: unknown) {
+  return typeof value === "boolean" ? value : null;
+}
+
+const VAGUE = /\b(unknown|unidentified|unspecified|various|n\/a|tbd)\b/i;
+const SHAPES = new Set([
+  "round",
+  "tonneau",
+  "rectangular",
+  "cushion",
+  "square",
+  "oval",
+]);
+const CRYSTALS = new Set(["sapphire", "mineral", "acrylic", "other"]);
+
+export function readBuildCandidate(raw: unknown): BuildCandidate | null {
+  const item = (raw ?? {}) as Record<string, unknown>;
+  const brand = text(item.brand);
+  const model = text(item.model);
+  if (!brand || !model || VAGUE.test(`${brand} ${model}`)) return null;
+  const amount = num(item.priceAmount, 1, 10_000_000);
+  const currency = text(item.priceCurrency)?.toUpperCase().slice(0, 3) ?? null;
+  const shape = text(item.caseShape)?.toLowerCase() ?? null;
+  const crystal = text(item.crystal)?.toLowerCase() ?? null;
+  const list = (value: unknown) =>
+    Array.isArray(value)
+      ? value.filter((entry): entry is string => typeof entry === "string")
+      : [];
+  return {
+    brand,
+    model,
+    referenceCode: text(item.referenceCode),
+    price:
+      amount !== null && currency && /^[A-Z]{3}$/.test(currency)
+        ? { amount, currency }
+        : null,
+    caseDiameterMm: num(item.caseDiameterMm, 15, 70),
+    caseThicknessMm: num(item.caseThicknessMm, 2, 40),
+    caseShape: shape && SHAPES.has(shape) ? shape : null,
+    waterResistanceM: num(item.waterResistanceM, 0, 20_000),
+    movement: normalizeMovement(text(item.movementType)),
+    inHouseCalibre: bool(item.inHouseCalibre),
+    crystal: crystal && CRYSTALS.has(crystal) ? crystal : null,
+    displayCaseback: bool(item.displayCaseback),
+    complications: list(item.complications).filter((slug): slug is string =>
+      (COMPLICATION_SLUGS as readonly string[]).includes(slug),
+    ),
+    caseMaterial: text(item.caseMaterial),
+    casebackMaterial: text(item.casebackMaterial),
+    strapMaterial: text(item.strapMaterial),
+    styles: list(item.styles)
+      .map((style) => style.toLowerCase())
+      .filter((style): style is CatalogueStyle =>
+        (CATALOGUE_STYLES as readonly string[]).includes(style),
+      ),
+    manufacturerUrl: safeHttpUrl(text(item.manufacturerUrl)),
+    why: text(item.why),
+  };
+}
+
+/** The proposal's own price, in USD, sits inside the cell's range (±5%). */
+export function proposedPriceFits(
+  candidate: BuildCandidate,
+  range: PriceRange,
+  fx: FxTable | null,
+) {
+  if (!candidate.price) return false;
+  const usd =
+    candidate.price.currency === "USD"
+      ? candidate.price.amount
+      : fx
+        ? convert(candidate.price.amount, candidate.price.currency, "USD", fx)
+        : null;
+  if (usd === null) return false;
+  return usd >= range.minimum * 0.95 && usd <= range.maximum! * 1.05;
+}
+
+export function candidateIdentity(candidate: {
+  brand: string;
+  model: string;
+  referenceCode: string | null;
+}) {
+  return catalogueIdentityKey(
+    candidate.brand,
+    candidate.model,
+    candidate.referenceCode,
+  );
+}
+
+async function firstVerifiedImage(
+  urls: (string | null)[],
+  fetchImpl: typeof fetch,
+) {
+  for (const url of urls.slice(0, 4)) {
+    const verified = await verifyImageUrl(url, fetchImpl);
+    if (verified) return verified;
+  }
+  return null;
+}
+
+/**
+ * Grounds the reference on a manufacturer or authorised-retailer page,
+ * double-checks the price and finds a photo. Returns the catalogue entry.
+ */
+export async function verifyCandidate(
+  candidate: BuildCandidate,
+  styles: CatalogueStyle[],
+  foundIn: Record<string, unknown>,
+  deps: Deps,
+  fx: FxTable | null,
+): Promise<CatalogueEntry> {
+  const reference = normalizeReference(candidate.referenceCode);
+  let sourceUrl: string | null = null;
+  let sourceKind: "manufacturer" | "retailer" | null = null;
+  let referenceConfirmed = false;
+  let pageImage: string | null = null;
+
+  const hits = await searchWeb(
+    [`${candidate.brand} ${candidate.referenceCode ?? candidate.model}`],
+    deps,
+  ).catch(() => []);
+  const ranked = [
+    candidate.manufacturerUrl,
+    ...hits
+      .filter((hit) =>
+        reference
+          ? `${hit.url} ${hit.title} ${hit.snippet}`
+              .toLowerCase()
+              .replace(/[^a-z0-9]/g, "")
+              .includes(reference)
+          : true,
+      )
+      .map((hit) => hit.url),
+  ].filter(
+    (url, index, all): url is string =>
+      url !== null &&
+      all.indexOf(url) === index &&
+      classifySource(url, candidate.brand) !== null,
+  );
+
+  if (reference) {
+    for (const url of ranked.slice(0, 3)) {
+      const page = await inspectSourcePage(
+        url,
+        candidate.referenceCode,
+        deps.fetchImpl,
+      );
+      if (!page.referenceFound) continue;
+      sourceUrl = url;
+      sourceKind = classifySource(url, candidate.brand);
+      referenceConfirmed = true;
+      pageImage = page.imageUrl;
+      break;
+    }
+  }
+  if (!sourceUrl) {
+    // Not confirmed: keep the best maker or retailer page as the link.
+    const fallback = ranked[0] ?? null;
+    if (fallback) {
+      const page = await inspectSourcePage(
+        fallback,
+        candidate.referenceCode,
+        deps.fetchImpl,
+      );
+      if (page.reachable) {
+        sourceUrl = fallback;
+        sourceKind = classifySource(fallback, candidate.brand);
+        pageImage = page.imageUrl;
+      }
+    }
+  }
+
+  const price = await doublePriceCheck(candidate, deps, fx, sourceUrl);
+  const imageUrl = await firstVerifiedImage(
+    [pageImage, ...price.imageUrls],
+    deps.fetchImpl,
+  );
+
+  return {
+    identityKey: candidateIdentity(candidate),
+    brand: candidate.brand,
+    model: candidate.model,
+    referenceCode: candidate.referenceCode,
+    referenceConfirmed,
+    styles: [...new Set([...styles, ...candidate.styles])],
+    caseDiameterMm: candidate.caseDiameterMm,
+    caseThicknessMm: candidate.caseThicknessMm,
+    caseShape: candidate.caseShape,
+    waterResistanceM: candidate.waterResistanceM,
+    movement: candidate.movement,
+    inHouseCalibre: candidate.inHouseCalibre,
+    crystal: candidate.crystal,
+    displayCaseback: candidate.displayCaseback,
+    complications: candidate.complications,
+    caseMaterial: candidate.caseMaterial,
+    casebackMaterial: candidate.casebackMaterial,
+    strapMaterial: candidate.strapMaterial,
+    priceStatus: price.status,
+    priceAmount: price.status === "confirmed" ? price.amount : null,
+    priceCurrency: price.status === "confirmed" ? price.currency : null,
+    priceCheckedAt: new Date(deps.now()).toISOString(),
+    priceEvidence: { ...price.evidence, proposed: candidate.price },
+    sourceUrl,
+    sourceKind,
+    imageUrl,
+    rationale: candidate.why,
+    foundIn: [foundIn],
+  };
+}
+
+/** A 90-day recheck of one catalogue watch's price. */
+export async function recheckPrice(
+  watch: CatalogueWatch,
+  deps: Deps,
+  fx: FxTable | null,
+): Promise<PriceRecord> {
+  const check = await doublePriceCheck(watch, deps, fx, watch.sourceUrl);
+  if (check.status !== "confirmed") return { kind: "unconfirmed" };
+  if (
+    watch.priceStatus !== "confirmed" ||
+    watch.priceAmount === null ||
+    !watch.priceCurrency
+  ) {
+    return {
+      kind: "confirmed",
+      amount: check.amount,
+      currency: check.currency,
+      evidence: check.evidence,
+    };
+  }
+  const difference = priceDifference(
+    { amount: watch.priceAmount, currency: watch.priceCurrency },
+    { amount: check.amount, currency: check.currency },
+    fx,
+  );
+  if (difference !== null && difference <= PRICE_TOLERANCE) {
+    return { kind: "same", evidence: check.evidence };
+  }
+  return {
+    kind: "changed",
+    amount: check.amount,
+    currency: check.currency,
+    evidence: check.evidence,
+  };
+}
