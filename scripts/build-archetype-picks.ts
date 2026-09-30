@@ -21,7 +21,6 @@ import {
   proposeForCell,
   readBuildCandidate,
   verifyCandidate,
-  type BuildCandidate,
 } from "../app/domain/catalogue-build.server";
 import {
   ARCHETYPES,
