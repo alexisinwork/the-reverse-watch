@@ -1,11 +1,14 @@
-import { data, Link, useLoaderData } from "react-router";
+import { data, Link, redirect, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/evaluation";
+import { isAdmin } from "../domain/admin-auth.server";
 import { loadDiscoveryFunnelSummary } from "../domain/discovery-funnel-store.server";
 import { loadFunnelSummary } from "../domain/funnel-store.server";
 import "../styles/quiz.css";
 
-export async function loader() {
+/** Visitor numbers for the owner only: signed in on /admin/catalogue. */
+export async function loader({ request }: Route.LoaderArgs) {
+  if (!(await isAdmin(request))) return redirect("/admin/catalogue");
   const until = new Date();
   const since = new Date(until.getTime() - 30 * 24 * 60 * 60 * 1_000);
   try {

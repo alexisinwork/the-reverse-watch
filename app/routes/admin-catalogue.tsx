@@ -669,6 +669,7 @@ export default function AdminCatalogue() {
         <div>
           <Link to="/">The Reserve</Link>
           <h1>Catalogue review</h1>
+          <Link to="/admin/evaluation">Visitor numbers</Link>
         </div>
         <Form method="post">
           <button

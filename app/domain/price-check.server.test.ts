@@ -15,6 +15,11 @@ describe("pageShowsPrice", () => {
     expect(pageShowsPrice("CHF 5’450.–", 5_450)).toBe(true);
     expect(pageShowsPrice("5.450,00 €", 5_450)).toBe(true);
     expect(pageShowsPrice("Price 15,450", 5_450)).toBe(false);
+    expect(pageShowsPrice("$6,100 210.30.42.20.03.001", 6_100)).toBe(true);
+    expect(pageShowsPrice("<b>$6,100</b> 200 m", 6_100)).toBe(true);
+    expect(pageShowsPrice("CHF 6 100.–", 6_100)).toBe(true);
+    expect(pageShowsPrice("USD 6100", 6_100)).toBe(true);
+    expect(pageShowsPrice("ref 61001", 6_100)).toBe(false);
   });
 });
 
@@ -283,6 +288,33 @@ describe("Perplexity finds, Muse Spark double-checks", () => {
     });
     expect(result.evidence.method).toBe("perplexity_then_muse");
     expect(museUrls[0]).toBe("https://muse.test/v1/responses");
+  });
+
+  it("falls back to a second Perplexity lookup when Muse finds nothing", async () => {
+    const { deps: museDeps } = withMuse(
+      [
+        sonar({
+          amount: 6_100,
+          currency: "USD",
+          sourceUrl: "https://www.omegawatches.com/a",
+          sourceDate: null,
+        }),
+        sonar({
+          amount: 6_100,
+          currency: "USD",
+          sourceUrl: "https://www.mayors.com/omega",
+          sourceDate: null,
+        }),
+      ],
+      [],
+      {
+        "https://www.omegawatches.com/a": "<b>$6,100</b> 210.30.42.20.03.001",
+        "https://www.mayors.com/omega": "$6,100 210.30.42.20.03.001",
+      },
+    );
+    const result = await doublePriceCheck(watch, museDeps, fx);
+    expect(result).toMatchObject({ status: "confirmed", amount: 6_100 });
+    expect(result.evidence.method).toBe("perplexity_then_perplexity");
   });
 
   it("counts a page Muse opened only when our own fetch is blocked", async () => {

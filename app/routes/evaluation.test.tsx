@@ -16,6 +16,9 @@ vi.mock("../domain/discovery-funnel-store.server", () => ({
 
 import EvaluationDashboard, { loader } from "./evaluation";
 
+const admin = vi.hoisted(() => ({ isAdmin: vi.fn(async () => true) }));
+vi.mock("../domain/admin-auth.server", () => admin);
+
 describe("evaluation dashboard", () => {
   it("renders aggregate discovery conversion with honest denominators", async () => {
     stores.loadFunnelSummary.mockResolvedValue({
@@ -46,10 +49,10 @@ describe("evaluation dashboard", () => {
       archetypeCompletionsByType: { quiet_custodian: 30 },
     });
     const Stub = createRoutesStub([
-      { path: "/evaluation", Component: EvaluationDashboard, loader },
+      { path: "/admin/evaluation", Component: EvaluationDashboard, loader },
     ]);
 
-    render(<Stub initialEntries={["/evaluation"]} />);
+    render(<Stub initialEntries={["/admin/evaluation"]} />);
 
     expect(
       await screen.findByRole("heading", { name: "Discovery funnel" }),
@@ -59,6 +62,17 @@ describe("evaluation dashboard", () => {
     expect(screen.getByText("50.0%")).toBeInTheDocument();
     expect(screen.getAllByText("Insufficient sample").length).toBeGreaterThan(
       0,
+    );
+  });
+
+  it("sends visitors who are not signed in to the admin login", async () => {
+    admin.isAdmin.mockResolvedValueOnce(false);
+    const response = await loader({
+      request: new Request("http://test.local/admin/evaluation"),
+    } as Parameters<typeof loader>[0]);
+    expect(response).toBeInstanceOf(Response);
+    expect((response as Response).headers.get("Location")).toBe(
+      "/admin/catalogue",
     );
   });
 });

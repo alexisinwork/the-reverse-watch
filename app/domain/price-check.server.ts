@@ -83,14 +83,24 @@ const priceSchema = {
   required: ["prices"],
 };
 
+/**
+ * Numbers as pages write prices: "6100", "6,100", "6.100,00", "6 100",
+ * "6’100.–". Digit groups join only across one consistent thousands
+ * separator, so "$6,100 210.30.42" reads as 6100 and 210, not 6100210.
+ */
+const PRICE_NUMBER =
+  /(?<![\d.,])(\d{1,3}(?:([,.'  ’ ])\d{3}(?:\2\d{3})*)?(?!\d)|\d+)(?:([.,])(\d{1,2})(?!\d))?/g;
+
 /** True when the page text shows the amount, in any common number format. */
 export function pageShowsPrice(html: string, amount: number) {
-  const text = html
-    .replace(/<[^>]+>/g, " ")
-    .replace(/(\d)[\s,.'  ’](?=\d{3}(?!\d))/g, "$1")
-    .replace(/(\d)[\s,.'  ’](?=\d{3}(?!\d))/g, "$1");
-  const target = String(Math.round(amount));
-  return new RegExp(`(?<!\\d)${target}(?:[.,]\\d{2})?(?!\\d)`).test(text);
+  const text = html.replace(/<[^>]+>/g, " ");
+  const target = Math.round(amount);
+  for (const match of text.matchAll(PRICE_NUMBER)) {
+    const [, digits = "", separator] = match;
+    const whole = Number(separator ? digits.split(separator).join("") : digits);
+    if (whole === target) return true;
+  }
+  return false;
 }
 
 export function isFreshDate(
@@ -478,14 +488,14 @@ function agreeingPair(
 }
 
 /**
- * The owner's price rule, in two independent lookups by two different
- * providers:
+ * The owner's price rule, in two independent lookups:
  *   1. Perplexity finds the price (the search provider).
  *   2. Muse Spark's own web search double-checks it on other pages, in the
- *      same currency.
- * Confirmed only when a source from each agrees within 5% and both are
- * live pages or dated within 90 days. (Without a Muse key, or with
- * WEB_SEARCH_PROVIDER=muse, the same provider does both lookups.)
+ *      same currency; only if Muse cannot confirm does one more Perplexity
+ *      lookup, on pages neither has used, try (owner decision 2026-09-30).
+ * Confirmed only when the first lookup and one check agree within 5% and
+ * both sources are live pages or dated within 90 days. (Without a Muse
+ * key, or with WEB_SEARCH_PROVIDER=muse, one provider does both lookups.)
  */
 export async function doublePriceCheck(
   watch: WatchIdentity,
@@ -534,49 +544,58 @@ export async function doublePriceCheck(
     CURRENCY_PREFERENCE.find((code) =>
       firstUsable.some((lookup) => lookup.currency === code),
     ) ?? firstUsable[0]!.currency;
-  const second = await lookupWithRetry(watch, deps, {
-    avoidUrls: first.lookups.map((lookup) => lookup.sourceUrl),
-    currency,
-    hintUrl: null,
-    provider: checkProvider,
-  });
-  const lookups = [first.lookups, second.lookups];
-  const secondUsable = second.lookups.filter(
-    (lookup) => usable(lookup) && lookup.currency === currency,
+  const firstInCurrency = firstUsable.filter(
+    (lookup) => lookup.currency === currency,
   );
-  if (secondUsable.length === 0) {
-    return unconfirmed(
-      second.lookups.length === 0
-        ? "second_lookup_empty"
-        : second.lookups.some(usable)
+  const secondLookups: PriceLookup[][] = [];
+  const images = [...imageUrls];
+  const tried = first.lookups.map((lookup) => lookup.sourceUrl);
+  // The check: Muse Spark first; if it cannot confirm, one more
+  // independent Perplexity lookup on pages neither has used.
+  const checkers: WebSearchProvider[] =
+    checkProvider === "muse" && firstProvider === "perplexity"
+      ? ["muse", "perplexity"]
+      : [checkProvider];
+  for (const provider of checkers) {
+    const second = await lookupWithRetry(watch, deps, {
+      avoidUrls: tried,
+      currency,
+      hintUrl: null,
+      provider,
+    });
+    secondLookups.push(second.lookups);
+    images.push(...second.imageUrls);
+    tried.push(...second.lookups.map((lookup) => lookup.sourceUrl));
+    const secondUsable = second.lookups.filter(
+      (lookup) => usable(lookup) && lookup.currency === currency,
+    );
+    const pair = agreeingPair(firstInCurrency, secondUsable, fx);
+    if (pair) {
+      return {
+        status: "confirmed",
+        amount: pair.a.amount,
+        currency: pair.a.currency,
+        evidence: {
+          method: `${firstProvider}_then_${provider}`,
+          checkedAt,
+          difference: pair.difference,
+          agreed: [pair.a, pair.b],
+          lookups: [first.lookups, ...secondLookups],
+        },
+        imageUrls: images,
+      };
+    }
+  }
+  const seconds = secondLookups.flat();
+  return unconfirmed(
+    seconds.length === 0
+      ? "second_lookup_empty"
+      : seconds.some((lookup) => usable(lookup) && lookup.currency === currency)
+        ? "lookups_disagree"
+        : seconds.some(usable)
           ? "currency_mismatch"
           : "second_source_stale",
-      lookups,
-      [...imageUrls, ...second.imageUrls],
-    );
-  }
-  const pair = agreeingPair(
-    firstUsable.filter((lookup) => lookup.currency === currency),
-    secondUsable,
-    fx,
+    [first.lookups, ...secondLookups],
+    images,
   );
-  if (!pair) {
-    return unconfirmed("lookups_disagree", lookups, [
-      ...imageUrls,
-      ...second.imageUrls,
-    ]);
-  }
-  return {
-    status: "confirmed",
-    amount: pair.a.amount,
-    currency: pair.a.currency,
-    evidence: {
-      method,
-      checkedAt,
-      difference: pair.difference,
-      agreed: [pair.a, pair.b],
-      lookups,
-    },
-    imageUrls: [...imageUrls, ...second.imageUrls],
-  };
 }
