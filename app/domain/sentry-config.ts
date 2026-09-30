@@ -10,6 +10,8 @@ export type SentrySourceMapConfiguration = {
   authToken: string;
   org: string;
   project: string;
+  /** No usage data about our builds goes to Sentry. */
+  telemetry: false;
 };
 
 function configuredValue(value: string | undefined) {
@@ -39,6 +41,7 @@ export function sentrySourceMapConfiguration(
     authToken: configuredValue(environment.SENTRY_AUTH_TOKEN)!,
     org: configuredValue(environment.SENTRY_ORG)!,
     project: configuredValue(environment.SENTRY_PROJECT)!,
+    telemetry: false,
   };
 }
 

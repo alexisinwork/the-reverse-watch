@@ -25,7 +25,12 @@ describe("Sentry configuration", () => {
         SENTRY_ORG: " reserve ",
         SENTRY_PROJECT: " web ",
       }),
-    ).toEqual({ authToken: "token", org: "reserve", project: "web" });
+    ).toEqual({
+      authToken: "token",
+      org: "reserve",
+      project: "web",
+      telemetry: false,
+    });
   });
 
   it("derives only an HTTPS envelope origin from a DSN", () => {
