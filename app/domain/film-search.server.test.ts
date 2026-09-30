@@ -20,7 +20,7 @@ function deps(answer: (prompt: string) => object[]): Partial<Deps> {
       perplexity: { apiKey: "p", model: "sonar" },
       webSearch: "perplexity",
     },
-    fetchImpl: (async (input: string | URL | Request, init?: RequestInit) => {
+    fetchImpl: async (input: string | URL | Request, init?: RequestInit) => {
       const url = String(input);
       if (url === "https://api.perplexity.ai/chat/completions") {
         const prompt = (
@@ -34,7 +34,7 @@ function deps(answer: (prompt: string) => object[]): Partial<Deps> {
         throw new Error("The ranker must not run for the cast fallback.");
       }
       return new Response("", { status: 404 });
-    }),
+    },
     sleep: async () => undefined,
   };
 }
