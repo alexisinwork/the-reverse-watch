@@ -24,6 +24,7 @@ export const PRICE_MAX_AGE_DAYS = 90;
  * another market (Brazil, Japan...) converted by exchange rate misleads.
  */
 const PRICE_CURRENCIES = new Set(["USD", "EUR", "GBP", "CHF"]);
+const CURRENCY_PREFERENCE = ["USD", "EUR", "GBP", "CHF"];
 
 export type PriceLookup = {
   amount: number;
@@ -274,7 +275,9 @@ export async function lookupPrices(
   const openedByMuse = new Set<string>();
   let body: SonarBody;
   if (options.provider === "muse") {
-    const research = await museWebResearch(lookupPrompt(watch, options), deps, {
+    // A page counts as live via Muse only if Muse actually opened it.
+    const prompt = `${lookupPrompt(watch, options)} Open every page you cite and read the price on it before answering.`;
+    const research = await museWebResearch(prompt, deps, {
       schema: priceSchema,
       // Measured 2026-09-30: caps of 3/4 halved cost but re-confirmed 2 of 10
       // known prices instead of 6; 5/8 keeps accuracy.
@@ -525,7 +528,12 @@ export async function doublePriceCheck(
     );
   }
   // Same market only: a UK price and a euro price legitimately differ.
-  const currency = firstUsable[0]!.currency;
+  // Check in the most widely published market the first lookup found: a US
+  // dollar price is far easier to find twice than a UK dealer's pounds.
+  const currency =
+    CURRENCY_PREFERENCE.find((code) =>
+      firstUsable.some((lookup) => lookup.currency === code),
+    ) ?? firstUsable[0]!.currency;
   const second = await lookupWithRetry(watch, deps, {
     avoidUrls: first.lookups.map((lookup) => lookup.sourceUrl),
     currency,
