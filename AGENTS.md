@@ -71,8 +71,9 @@ quiz.
 - A watch whose reference no manufacturer or authorised-retailer page
   confirms is shown only under "Also worth a look", tagged "Manufacturer
   reference not confirmed".
-- Prices and photos come through Perplexity. A price is stored only when a
-  second, independent lookup agrees within ±5% in the same currency and each
+- Prices and photos come through Perplexity; Muse Spark's built-in web
+  search makes the independent second price check (owner decision,
+  2026-09-30). A price is stored only when that second lookup agrees within ±5% in the same currency and each
   source is under 90 days old or a live page showing the price and the
   reference (`app/domain/price-check.server.ts`). Grey-market and
   marketplace prices never count. The daily cron

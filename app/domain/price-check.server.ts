@@ -10,11 +10,11 @@ import {
   parseModelJson,
   perplexityPost,
   type Deps,
+  type WebSearchProvider,
 } from "./ai-providers.server";
 import { safeHttpUrl } from "./source-pages.server";
 import { classifySource, pageMentionsReference } from "./ai-watch-guardrails";
 import { convert, type FxTable } from "./fx";
-import { musePriceSearch } from "./muse-price-search.server";
 
 export const PRICE_TOLERANCE = 0.05;
 export const PRICE_MAX_AGE_DAYS = 90;
@@ -180,6 +180,8 @@ export type LookupOptions = {
   /** The maker's page that confirmed the reference, as a starting point. */
   hintUrl: string | null;
   contextSize: "low" | "medium";
+  /** Who searches: Perplexity Sonar, or Muse Spark's built-in web search. */
+  provider: WebSearchProvider;
 };
 
 // Grey-market dealers, marketplaces and pre-owned sellers: their prices
@@ -266,7 +268,7 @@ export async function lookupPrices(
 ): Promise<{ lookups: PriceLookup[]; imageUrls: string[] }> {
   const openedByMuse = new Set<string>();
   let body: SonarBody;
-  if (deps.config.webSearch === "muse") {
+  if (options.provider === "muse") {
     const research = await museWebResearch(lookupPrompt(watch, options), deps, {
       schema: priceSchema,
       // Measured 2026-09-30: caps of 3/4 halved cost but re-confirmed 2 of 10
@@ -444,25 +446,58 @@ function preferManufacturer(brand: string) {
     Number(b.currency === "USD") - Number(a.currency === "USD");
 }
 
+function agreeingPair(
+  firsts: PriceLookup[],
+  seconds: PriceLookup[],
+  fx: FxTable | null,
+) {
+  for (const a of firsts) {
+    for (const b of seconds) {
+      if (
+        a.currency !== b.currency ||
+        urlKey(a.sourceUrl) === urlKey(b.sourceUrl)
+      ) {
+        continue;
+      }
+      const difference = priceDifference(a, b, fx);
+      if (difference !== null && difference <= PRICE_TOLERANCE) {
+        return { a, b, difference };
+      }
+    }
+  }
+  return null;
+}
+
 /**
- * Confirmed only when a source from the first lookup and a different
- * source from the second, independent lookup agree within 5% in the same
- * currency, and both are live pages or dated within 90 days.
+ * The owner's price rule, in two independent lookups by two different
+ * providers:
+ *   1. Perplexity finds the price (the search provider).
+ *   2. Muse Spark's own web search double-checks it on other pages, in the
+ *      same currency.
+ * Confirmed only when a source from each agrees within 5% and both are
+ * live pages or dated within 90 days. (Without a Muse key, or with
+ * WEB_SEARCH_PROVIDER=muse, the same provider does both lookups.)
  */
-async function perplexityDoubleCheck(
+export async function doublePriceCheck(
   watch: WatchIdentity,
   deps: Deps,
   fx: FxTable | null,
-  hintUrl: string | null,
+  hintUrl: string | null = null,
 ): Promise<PriceCheck> {
   const checkedAt = new Date(deps.now()).toISOString();
+  const firstProvider: WebSearchProvider =
+    deps.config.webSearch === "muse" ? "muse" : "perplexity";
+  const checkProvider: WebSearchProvider = deps.config.museSpark
+    ? "muse"
+    : "perplexity";
+  const method = `${firstProvider}_then_${checkProvider}`;
   const unconfirmed = (
     reason: string,
     lookups: PriceLookup[][],
     imageUrls: string[],
   ): PriceCheck => ({
     status: "unconfirmed",
-    evidence: { method: "double_perplexity", checkedAt, reason, lookups },
+    evidence: { method, checkedAt, reason, lookups },
     imageUrls,
   });
 
@@ -470,6 +505,7 @@ async function perplexityDoubleCheck(
     avoidUrls: [],
     currency: null,
     hintUrl,
+    provider: firstProvider,
   });
   const imageUrls = first.imageUrls;
   const firstUsable = first.lookups
@@ -488,6 +524,7 @@ async function perplexityDoubleCheck(
     avoidUrls: first.lookups.map((lookup) => lookup.sourceUrl),
     currency,
     hintUrl: null,
+    provider: checkProvider,
   });
   const lookups = [first.lookups, second.lookups];
   const secondUsable = second.lookups.filter(
@@ -501,188 +538,31 @@ async function perplexityDoubleCheck(
           ? "currency_mismatch"
           : "second_source_stale",
       lookups,
-      imageUrls,
+      [...imageUrls, ...second.imageUrls],
     );
   }
-  for (const a of firstUsable.filter(
-    (lookup) => lookup.currency === currency,
-  )) {
-    for (const b of secondUsable) {
-      if (urlKey(a.sourceUrl) === urlKey(b.sourceUrl)) continue;
-      const difference = priceDifference(a, b, fx);
-      if (difference !== null && difference <= PRICE_TOLERANCE) {
-        return {
-          status: "confirmed",
-          amount: a.amount,
-          currency: a.currency,
-          evidence: {
-            method: "double_perplexity",
-            checkedAt,
-            difference,
-            agreed: [a, b],
-            lookups,
-          },
-          imageUrls,
-        };
-      }
-    }
-  }
-  return unconfirmed("lookups_disagree", lookups, imageUrls);
-}
-
-/** Muse Spark's reported prices, kept only for live retail pages showing the price and reference. */
-async function museLookups(
-  watch: WatchIdentity,
-  deps: Deps,
-  options: {
-    avoidUrls: string[];
-    currency: string | null;
-    hintUrl: string | null;
-  },
-) {
-  const reported = await musePriceSearch(watch, deps, options).catch(() => []);
-  const avoid = new Set(options.avoidUrls.map(urlKey));
-  const seen = new Set<string>();
-  const checked = await Promise.all(
-    reported
-      .filter((price) => {
-        const key = urlKey(price.sourceUrl);
-        if (
-          !PRICE_CURRENCIES.has(price.currency) ||
-          !isRetailSource(price.sourceUrl) ||
-          avoid.has(key) ||
-          seen.has(key)
-        )
-          return false;
-        seen.add(key);
-        return options.currency === null || price.currency === options.currency;
-      })
-      .slice(0, MAX_SOURCES)
-      .map(async (price): Promise<PriceLookup> => ({
-        ...price,
-        sourceDate: null,
-        ...(await liveCheck(
-          price.sourceUrl,
-          price.amount,
-          watch.referenceCode,
-          deps.fetchImpl,
-          new Set(),
-        )),
-        fresh: false,
-      })),
+  const pair = agreeingPair(
+    firstUsable.filter((lookup) => lookup.currency === currency),
+    secondUsable,
+    fx,
   );
-  return { reported: checked, live: checked.filter((lookup) => lookup.live) };
-}
-
-function agreeingPair(
-  firsts: PriceLookup[],
-  seconds: PriceLookup[],
-  fx: FxTable | null,
-) {
-  for (const a of firsts) {
-    for (const b of seconds) {
-      if (
-        a.currency !== b.currency ||
-        urlKey(a.sourceUrl) === urlKey(b.sourceUrl)
-      )
-        continue;
-      const difference = priceDifference(a, b, fx);
-      if (difference !== null && difference <= PRICE_TOLERANCE)
-        return { a, b, difference };
-    }
+  if (!pair) {
+    return unconfirmed("lookups_disagree", lookups, [
+      ...imageUrls,
+      ...second.imageUrls,
+    ]);
   }
-  return null;
-}
-
-/**
- * The Perplexity double check, then (when museFallback is on and it could
- * not confirm) Muse Spark searching the web for this watch's price itself.
- * A Muse price is one more independent lookup: it counts only on a live
- * retail page showing the price and the reference, and only when it agrees
- * within 5% with another lookup - a Perplexity source or a second Muse
- * search on a different page.
- */
-export async function doublePriceCheck(
-  watch: WatchIdentity,
-  deps: Deps,
-  fx: FxTable | null,
-  hintUrl: string | null = null,
-  {
-    museFallback = false,
-    previous,
-  }: {
-    museFallback?: boolean;
-    /** An earlier, unconfirmed Perplexity check to reuse instead of repeating it. */
-    previous?: PriceCheck;
-  } = {},
-): Promise<PriceCheck> {
-  const check =
-    previous ?? (await perplexityDoubleCheck(watch, deps, fx, hintUrl));
-  if (
-    check.status === "confirmed" ||
-    !museFallback ||
-    !deps.config.museSpark ||
-    deps.config.webSearch === "muse"
-  )
-    return check;
-
-  const earlier = (
-    (check.evidence.lookups as PriceLookup[][] | undefined) ?? []
-  ).flat();
-  const earlierUsable = earlier
-    .filter(usable)
-    .sort(preferManufacturer(watch.brand));
-  const first = await museLookups(watch, deps, {
-    avoidUrls: [],
-    currency: null,
-    hintUrl,
-  });
-  const done = (
-    pair: { a: PriceLookup; b: PriceLookup; difference: number },
-    muse: PriceLookup[][],
-  ): PriceCheck => ({
+  return {
     status: "confirmed",
     amount: pair.a.amount,
     currency: pair.a.currency,
     evidence: {
-      method: "perplexity_and_muse_web_search",
-      checkedAt: check.evidence.checkedAt,
+      method,
+      checkedAt,
       difference: pair.difference,
       agreed: [pair.a, pair.b],
-      lookups: check.evidence.lookups,
-      museLookups: muse,
+      lookups,
     },
-    imageUrls: check.imageUrls,
-  });
-  const withEarlier = agreeingPair(earlierUsable, first.live, fx);
-  if (withEarlier) return done(withEarlier, [first.reported]);
-  if (first.live.length === 0) {
-    return {
-      ...check,
-      evidence: {
-        ...check.evidence,
-        museLookups: [first.reported],
-        museReason: "no_live_price",
-      },
-    };
-  }
-  const currency = first.live[0]!.currency;
-  const second = await museLookups(watch, deps, {
-    avoidUrls: [...first.reported, ...earlier].map(
-      (lookup) => lookup.sourceUrl,
-    ),
-    currency,
-    hintUrl: null,
-  });
-  const pair = agreeingPair(first.live, second.live, fx);
-  if (pair) return done(pair, [first.reported, second.reported]);
-  return {
-    ...check,
-    evidence: {
-      ...check.evidence,
-      museLookups: [first.reported, second.reported],
-      museReason:
-        second.live.length === 0 ? "second_muse_empty" : "muse_disagree",
-    },
+    imageUrls: [...imageUrls, ...second.imageUrls],
   };
 }

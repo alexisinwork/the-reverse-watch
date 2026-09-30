@@ -197,41 +197,32 @@ describe("doublePriceCheck", () => {
   });
 });
 
-describe("Muse Spark web-search fallback", () => {
-  it("does not run Muse unless the caller asks", async () => {
-    const perplexity = [
-      sonar({
-        amount: 6_100,
-        currency: "USD",
-        sourceUrl: "https://www.omegawatches.com/a",
-        sourceDate: null,
-      }),
-      Response.json({ choices: [{ message: { content: '{"prices":[]}' } }] }),
-      Response.json({ choices: [{ message: { content: '{"prices":[]}' } }] }),
-    ];
-    const base = deps({
-      sonar: perplexity,
-      pages: {
-        "https://www.omegawatches.com/a": "<b>$6,100</b> 210.30.42.20.03.001",
-        "https://www.mayors.com/omega":
-          "Price $6,100.00 ref 210.30.42.20.03.001",
-      },
-    });
-    const museAnswer = {
-      prices: [
+describe("Perplexity finds, Muse Spark double-checks", () => {
+  function museAnswer(prices: object[], opened: string[] = []) {
+    return Response.json({
+      output: [
+        ...opened.map((url) => ({
+          type: "web_search_call",
+          status: "completed",
+          action: { type: "open_page", url },
+        })),
         {
-          amount: 6_100,
-          currency: "USD",
-          sourceUrl: "https://www.mayors.com/omega",
-        },
-        {
-          amount: 5_200,
-          currency: "USD",
-          sourceUrl: "https://www.chrono24.com/x",
+          type: "message",
+          content: [{ type: "output_text", text: JSON.stringify({ prices }) }],
         },
       ],
-    };
-    const withMuse: typeof base = {
+    });
+  }
+
+  function withMuse(
+    perplexity: Response[],
+    muse: Response[],
+    pages: Record<string, string>,
+  ) {
+    const base = deps({ sonar: perplexity, pages });
+    const museQueue = [...muse];
+    const museUrls: string[] = [];
+    const value: typeof base = {
       ...base,
       config: {
         ...base.config,
@@ -241,82 +232,89 @@ describe("Muse Spark web-search fallback", () => {
           fastModel: "m",
         },
       },
-      fetchImpl: (async (input: string | URL | Request, init?: RequestInit) =>
-        String(input).startsWith("https://muse.test")
-          ? Response.json({
-              choices: [{ message: { content: JSON.stringify(museAnswer) } }],
-            })
-          : base.fetchImpl(input, init)),
+      fetchImpl: (async (input: string | URL | Request, init?: RequestInit) => {
+        const url = String(input);
+        if (url.startsWith("https://muse.test")) {
+          museUrls.push(url);
+          return museQueue.shift() ?? museAnswer([]);
+        }
+        return base.fetchImpl(input, init);
+      }),
     };
+    return { deps: value, museUrls };
+  }
 
-    const without = await doublePriceCheck(watch, withMuse, fx);
-    expect(without.status).toBe("unconfirmed");
-  });
-
-  it("confirms when Muse's live page agrees, ignoring grey-market pages", async () => {
-    const museAnswer = {
-      prices: [
-        {
-          amount: 6_100,
-          currency: "USD",
-          sourceUrl: "https://www.mayors.com/omega",
-        },
-        {
-          amount: 5_200,
-          currency: "USD",
-          sourceUrl: "https://www.chrono24.com/x",
-        },
-      ],
-    };
-    const base = deps({
-      sonar: [
+  it("confirms when Muse's page agrees with Perplexity's, ignoring grey-market pages", async () => {
+    const { deps: museDeps, museUrls } = withMuse(
+      [
         sonar({
           amount: 6_100,
           currency: "USD",
           sourceUrl: "https://www.omegawatches.com/a",
           sourceDate: null,
         }),
-        Response.json({ choices: [{ message: { content: '{"prices":[]}' } }] }),
-        Response.json({ choices: [{ message: { content: '{"prices":[]}' } }] }),
       ],
-      pages: {
+      [
+        museAnswer([
+          {
+            amount: 5_200,
+            currency: "USD",
+            sourceUrl: "https://www.chrono24.com/x",
+          },
+          {
+            amount: 6_100,
+            currency: "USD",
+            sourceUrl: "https://www.mayors.com/omega",
+          },
+        ]),
+      ],
+      {
         "https://www.omegawatches.com/a": "<b>$6,100</b> 210.30.42.20.03.001",
         "https://www.mayors.com/omega":
           "Price $6,100.00 ref 210.30.42.20.03.001",
         "https://www.chrono24.com/x": "$5,200 210.30.42.20.03.001",
       },
-    });
-    const withMuse: typeof base = {
-      ...base,
-      config: {
-        ...base.config,
-        museSpark: {
-          apiKey: "test",
-          baseUrl: "https://muse.test/v1/",
-          fastModel: "m",
-        },
-      },
-      fetchImpl: (async (input: string | URL | Request, init?: RequestInit) =>
-        String(input).startsWith("https://muse.test")
-          ? Response.json({
-              choices: [{ message: { content: JSON.stringify(museAnswer) } }],
-            })
-          : base.fetchImpl(input, init)),
-    };
-    const result = await doublePriceCheck(watch, withMuse, fx, null, {
-      museFallback: true,
-    });
+    );
+    const result = await doublePriceCheck(watch, museDeps, fx);
     expect(result).toMatchObject({
       status: "confirmed",
       amount: 6_100,
       currency: "USD",
     });
-    expect(result.evidence.method).toBe("perplexity_and_muse_web_search");
-    const muse = (
-      result.evidence.museLookups as { sourceUrl: string }[][]
-    ).flat();
-    expect(muse.map((lookup) => lookup.sourceUrl)).toEqual([
-      "https://www.mayors.com/omega",
-    ]);
+    expect(result.evidence.method).toBe("perplexity_then_muse");
+    expect(museUrls[0]).toBe("https://muse.test/v1/responses");
+  });
+
+  it("counts a page Muse opened only when our own fetch is blocked", async () => {
+    const blocked = "https://www.tissotwatches.com/en-us/T1224101103300.html";
+    const run = (opened: string[]) =>
+      withMuse(
+        [
+          sonar({
+            amount: 450,
+            currency: "USD",
+            sourceUrl: "https://www.mayors.com/tissot",
+            sourceDate: null,
+          }),
+        ],
+        [
+          museAnswer(
+            [{ amount: 450, currency: "USD", sourceUrl: blocked }],
+            opened,
+          ),
+        ],
+        { "https://www.mayors.com/tissot": "$450 T122.410.11.033.00" },
+      ).deps;
+    const tissot = {
+      brand: "Tissot",
+      model: "Carson Premium",
+      referenceCode: "T122.410.11.033.00",
+    };
+    expect((await doublePriceCheck(tissot, run([blocked]), fx)).status).toBe(
+      "confirmed",
+    );
+    expect((await doublePriceCheck(tissot, run([]), fx)).status).toBe(
+      "unconfirmed",
+    );
   });
 });

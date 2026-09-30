@@ -412,11 +412,7 @@ export async function verifyCandidate(
     }
   }
 
-  // Muse Spark's own web search is the fallback for watches whose
-  // reference is confirmed: those are the ones shown as main picks.
-  const price = await doublePriceCheck(candidate, deps, fx, sourceUrl, {
-    museFallback: referenceConfirmed,
-  });
+  const price = await doublePriceCheck(candidate, deps, fx, sourceUrl);
   const imageUrl = await firstVerifiedImage(
     [pageImage, ...price.imageUrls],
     deps.fetchImpl,
@@ -460,9 +456,7 @@ export async function recheckPrice(
   deps: Deps,
   fx: FxTable | null,
 ): Promise<PriceRecord> {
-  const check = await doublePriceCheck(watch, deps, fx, watch.sourceUrl, {
-    museFallback: watch.referenceConfirmed,
-  });
+  const check = await doublePriceCheck(watch, deps, fx, watch.sourceUrl);
   if (check.status !== "confirmed") return { kind: "unconfirmed" };
   if (
     watch.priceStatus !== "confirmed" ||

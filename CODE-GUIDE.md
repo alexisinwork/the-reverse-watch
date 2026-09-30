@@ -79,11 +79,12 @@ cookies, IP or anything identifying.
   × style × run) using `domain/catalogue-build.server.ts`. For every new watch
   it confirms the reference on a maker/retailer page, double-checks the price
   and keeps a photo URL. It is resumable and stops at a spend limit.
-- **Prices:** `domain/price-check.server.ts`. A price is stored only when two
-  independent lookups agree within ±5% in the same currency (USD, EUR, GBP
-  or CHF), each on a live page or a source under 90 days old. Grey-market
-  and marketplace sites never count. `domain/muse-price-search.server.ts` is
-  the Muse Spark fallback used in Perplexity mode.
+- **Prices:** `domain/price-check.server.ts`. Perplexity finds the price;
+  Muse Spark's own web search double-checks it on other pages. It is stored
+  only when the two agree within ±5% in the same currency (USD, EUR, GBP or
+  CHF), each on a live page or a source under 90 days old. A page Muse
+  opened counts as live only when our own fetch of it is blocked.
+  Grey-market and marketplace sites never count.
 - **Reviewing:** `/admin/catalogue`, signed in with `ADMIN_PASSWORD`.
 - **Report:** `scripts/catalogue-report.ts` writes `docs/reports/…` and a copy
   to the Desktop.
