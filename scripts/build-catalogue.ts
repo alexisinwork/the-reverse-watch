@@ -282,16 +282,30 @@ async function runCell(cell: BuildCell) {
   };
 
   let proposals: BuildCandidate[] = [];
-  try {
-    proposals = (await proposeForCell(cell, [...names], deps))
-      .map(readBuildCandidate)
-      .filter((candidate): candidate is BuildCandidate => candidate !== null);
-  } catch (error) {
-    result.errors += 1;
-    console.error(
-      `  ${key} proposal failed: ${error instanceof Error ? error.message.slice(0, 160) : "unknown"}`,
-    );
-    return; // not recorded: retried on the next start
+  // A dropped connection ("fetch failed") pauses and retries instead of
+  // failing every queued search within seconds.
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      proposals = (await proposeForCell(cell, [...names], deps))
+        .map(readBuildCandidate)
+        .filter((candidate): candidate is BuildCandidate => candidate !== null);
+      break;
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "unknown";
+      if (
+        /fetch failed|ECONNRESET|ENOTFOUND|ETIMEDOUT/i.test(message) &&
+        attempt < 5
+      ) {
+        console.error(
+          `  ${key} network error; retrying in ${30 * (attempt + 1)} s`,
+        );
+        await sleep(30_000 * (attempt + 1));
+        continue;
+      }
+      result.errors += 1;
+      console.error(`  ${key} proposal failed: ${message.slice(0, 160)}`);
+      return; // not recorded: retried on the next start
+    }
   }
   result.proposals = proposals.length;
 
