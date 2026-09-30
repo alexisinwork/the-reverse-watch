@@ -10,6 +10,7 @@ import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { defaultDeps, searchReady } from "../app/domain/ai-providers.server";
 import {
   BUILD_RUNS,
+  CATALOGUE_GAPS,
   proposedUsd,
   candidateIdentity,
   proposeForCell,
@@ -65,7 +66,12 @@ function estimatedSpend(calls: Record<string, number>) {
 }
 
 const DIR = ".catalogue-build";
-const PROGRESS = `${DIR}/progress.json`;
+// --plan gaps: the gap-filling searches (CATALOGUE_GAPS), with their own
+// progress file, instead of the main range x style x run plan.
+const GAP_PLAN =
+  process.argv.includes("--plan") &&
+  process.argv[process.argv.indexOf("--plan") + 1] === "gaps";
+const PROGRESS = `${DIR}/${GAP_PLAN ? "progress-gaps" : "progress"}.json`;
 mkdirSync(DIR, { recursive: true });
 
 type CellResult = {
@@ -220,14 +226,26 @@ const ranges = PRICE_RANGES.filter(
   (range) => range.maximum !== null && range.maximum <= CATALOGUE_MAX_PRICE,
 );
 const cells: BuildCell[] = [];
-for (let run = 1; run <= RUNS; run += 1) {
-  for (const range of ranges)
-    for (const style of CATALOGUE_STYLES) cells.push({ range, style, run });
+if (GAP_PLAN) {
+  // One search per gap, price range and style; the brand focus rotates so
+  // neighbouring searches look in different places.
+  let index = 0;
+  for (const gap of CATALOGUE_GAPS)
+    for (const range of ranges)
+      for (const style of gap.styles) {
+        cells.push({ range, style, run: (index % 9) + 1, gap });
+        index += 1;
+      }
+} else {
+  for (let run = 1; run <= RUNS; run += 1) {
+    for (const range of ranges)
+      for (const style of CATALOGUE_STYLES) cells.push({ range, style, run });
+  }
 }
+const cellKey = (cell: BuildCell) =>
+  `${cell.range.id}|${cell.style}|${cell.run}${cell.gap ? `|${cell.gap.id}` : ""}`;
 const todo = cells
-  .filter(
-    (cell) => !progress.cells[`${cell.range.id}|${cell.style}|${cell.run}`],
-  )
+  .filter((cell) => !progress.cells[cellKey(cell)])
   .slice(0, LIMIT);
 console.log(
   `${cells.length} searches in the plan, ${Object.keys(progress.cells).length} already done, ${todo.length} to run now.`,
@@ -259,7 +277,7 @@ async function runCell(cell: BuildCell) {
     return;
   }
   const started = performance.now();
-  const key = `${cell.range.id}|${cell.style}|${cell.run}`;
+  const key = cellKey(cell);
   const names =
     cellNames.get(cellKeyOf(cell.range.id, cell.style)) ?? new Set<string>();
   cellNames.set(cellKeyOf(cell.range.id, cell.style), names);
@@ -283,6 +301,7 @@ async function runCell(cell: BuildCell) {
     range: cell.range.id,
     style: cell.style,
     run: cell.run,
+    ...(cell.gap ? { gap: cell.gap.id } : {}),
     at: new Date().toISOString().slice(0, 10),
   };
 
@@ -317,6 +336,11 @@ async function runCell(cell: BuildCell) {
   const unique = new Map<string, BuildCandidate>();
   for (const candidate of proposals) {
     if (!proposedPriceFits(candidate, cell.range, fx)) {
+      result.outOfRange += 1;
+      continue;
+    }
+    // A gap search keeps only watches that really fill the gap.
+    if (cell.gap && !cell.gap.fits(candidate)) {
       result.outOfRange += 1;
       continue;
     }

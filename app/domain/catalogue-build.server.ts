@@ -42,7 +42,60 @@ export type BuildCell = {
   range: PriceRange;
   style: CatalogueStyle;
   run: number;
+  /** Gap-filling searches ask for one specific kind of watch. */
+  gap?: CatalogueGap;
 };
+
+/**
+ * Kinds of watch the first build rarely found (measured 2026-09-30: most
+ * quiz answers that fell back to a live search asked for one of these).
+ */
+export type CatalogueGap = {
+  id: string;
+  text: string;
+  styles: CatalogueStyle[];
+  fits: (candidate: BuildCandidate) => boolean;
+};
+
+export const CATALOGUE_GAPS: CatalogueGap[] = [
+  {
+    id: "quartz_solar",
+    text: "quartz or solar movement only (no mechanical watches)",
+    styles: ["dress", "everyday", "sport", "dive", "field", "travel"],
+    fits: (candidate) =>
+      candidate.movement === "quartz" || candidate.movement === "solar",
+  },
+  {
+    id: "water_200",
+    text: "water resistance of at least 200 m",
+    styles: ["dive", "sport", "field"],
+    fits: (candidate) => (candidate.waterResistanceM ?? 0) >= 200,
+  },
+  {
+    id: "water_300",
+    text: "water resistance of at least 300 m (a proper diver)",
+    styles: ["dive"],
+    fits: (candidate) => (candidate.waterResistanceM ?? 0) >= 300,
+  },
+  {
+    id: "small_case",
+    text: "a small case, 34 to 38 mm in diameter, for a slim wrist",
+    styles: ["dress", "everyday", "sport"],
+    fits: (candidate) =>
+      candidate.caseDiameterMm !== null &&
+      candidate.caseDiameterMm >= 33.5 &&
+      candidate.caseDiameterMm <= 38.5,
+  },
+  {
+    id: "large_case",
+    text: "a large case, 44 to 46 mm in diameter, for a large wrist",
+    styles: ["sport", "dive", "field"],
+    fits: (candidate) =>
+      candidate.caseDiameterMm !== null &&
+      candidate.caseDiameterMm >= 43.5 &&
+      candidate.caseDiameterMm <= 46.5,
+  },
+];
 
 export const BUILD_RUNS = 10;
 
@@ -170,6 +223,9 @@ export function cellPrompt(cell: BuildCell, exclude: string[]) {
     `Propose 6 candidates. ${focus.text}`,
     `Price range: new retail price between ${money(cell.range.minimum)} and ${money(cell.range.maximum!)}.`,
     `Wearing style: ${STYLE_BRIEFS[cell.style]}.`,
+    cell.gap
+      ? `Hard requirement: ${cell.gap.text}. Every watch you propose must meet it.`
+      : "",
     exclude.length > 0
       ? `Already in the catalogue for this range and style; propose different watches: ${exclude.slice(0, 60).join("; ")}.`
       : "",
