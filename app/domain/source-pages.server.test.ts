@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 
-import { publicFetch, safeHttpUrl } from "./source-pages.server";
+import {
+  inspectSourcePage,
+  publicFetch,
+  safeHttpUrl,
+} from "./source-pages.server";
 
 describe("safeHttpUrl", () => {
   it("keeps public http(s) addresses", () => {
@@ -62,5 +66,23 @@ describe("publicFetch", () => {
 
     const ok = await publicFetch("https://maker.example/c", {}, fetchImpl);
     expect(ok?.finalUrl).toBe("https://maker.example/c");
+  });
+});
+
+describe("inspectSourcePage", () => {
+  const url = "https://www.archimede-watches.com/sporttaucher-ua300-st-bl.html";
+  const answer = (status: number) => async () =>
+    new Response("<html></html>", { status });
+
+  it("never confirms a reference from a page that does not exist", async () => {
+    for (const status of [404, 410, 500]) {
+      const page = await inspectSourcePage(url, "UA300-ST-BL", answer(status));
+      expect(page).toMatchObject({ reachable: false, referenceFound: false });
+    }
+  });
+
+  it("accepts the reference in the URL only when the maker blocks automated visitors", async () => {
+    const page = await inspectSourcePage(url, "UA300-ST-BL", answer(403));
+    expect(page).toMatchObject({ reachable: false, referenceFound: true });
   });
 });

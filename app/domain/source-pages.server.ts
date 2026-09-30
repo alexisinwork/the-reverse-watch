@@ -112,12 +112,19 @@ export async function inspectSourcePage(
   referenceFound: boolean;
   imageUrl: string | null;
 }> {
-  // A blocked or missing page can still confirm the reference when the
-  // maker's own URL carries it (the caller has already checked the domain).
+  // A page that exists but blocks automated visitors (401/403/429) can still
+  // confirm the reference when the maker's own URL carries it (the caller
+  // has already checked the domain). A missing page (404/410) or one that
+  // never answered confirms nothing: AI output can invent a URL that
+  // contains its own invented reference.
   const unreachable = {
     reachable: false,
-    referenceFound: pageMentionsReference(reference, "", url),
+    referenceFound: false,
     imageUrl: null,
+  };
+  const blocked = {
+    ...unreachable,
+    referenceFound: pageMentionsReference(reference, "", url),
   };
   try {
     const fetched = await publicFetch(
@@ -125,11 +132,11 @@ export async function inspectSourcePage(
       { headers: PAGE_HEADERS, signal: AbortSignal.timeout(5_000) },
       fetchImpl,
     );
-    if (!fetched) return { ...unreachable, referenceFound: false };
+    if (!fetched) return unreachable;
     const { response, finalUrl } = fetched;
     if (!response.ok) {
       await response.body?.cancel();
-      return unreachable;
+      return [401, 403, 429].includes(response.status) ? blocked : unreachable;
     }
     const html = (await response.text()).slice(0, PAGE_BYTES);
     const meta =
