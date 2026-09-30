@@ -7,7 +7,11 @@
   justify-content: space-between;
   padding: 2.5rem var(--page-gutter);
   background:
-    radial-gradient(ellipse 60% 40% at 50% 0%, rgb(200 137 47 / 8%), transparent 70%),
+    radial-gradient(
+      ellipse 60% 40% at 50% 0%,
+      rgb(200 137 47 / 8%),
+      transparent 70%
+    ),
     var(--color-base);
 }
 
@@ -225,7 +229,11 @@
   padding: 0.8rem 1.5rem;
   border: 0;
   border-radius: var(--radius-pill);
-  background: linear-gradient(180deg, var(--color-brass-bright), var(--color-brass));
+  background: linear-gradient(
+    180deg,
+    var(--color-brass-bright),
+    var(--color-brass)
+  );
   color: #120c04;
   cursor: pointer;
   font-size: 0.8125rem;

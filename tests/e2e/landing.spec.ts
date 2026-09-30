@@ -215,5 +215,7 @@ test("completes the six-screen diagnostic and streams the shortlist", async ({
       name: "What price range are you shopping in?",
     }),
   ).toBeVisible();
-  await expect(page.getByRole("radio", { name: "USD 9k–10k" })).not.toBeChecked();
+  await expect(
+    page.getByRole("radio", { name: "USD 9k–10k" }),
+  ).not.toBeChecked();
 });

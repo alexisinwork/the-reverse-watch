@@ -56,8 +56,14 @@ export default tseslint.config(
       "@typescript-eslint/require-await": "off",
       "@typescript-eslint/no-base-to-string": "off",
       "@typescript-eslint/no-unsafe-assignment": "off",
-      "@typescript-eslint/consistent-type-imports": ["error", { disallowTypeAnnotations: false }],
-      "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+      "@typescript-eslint/consistent-type-imports": [
+        "error",
+        { disallowTypeAnnotations: false },
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_" },
+      ],
     },
   },
 );

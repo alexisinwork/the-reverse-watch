@@ -49,7 +49,9 @@ export function explainStoryConstraint(
   const reference = normalizedReference(story.attribution.reference);
   const inShortlist =
     reference !== null &&
-    watches.some((watch) => normalizedReference(watch.referenceCode) === reference);
+    watches.some(
+      (watch) => normalizedReference(watch.referenceCode) === reference,
+    );
   return inShortlist
     ? {
         identity,

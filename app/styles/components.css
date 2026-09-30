@@ -40,7 +40,11 @@
 }
 
 .button--primary {
-  background: linear-gradient(180deg, var(--color-brass-bright), var(--color-brass));
+  background: linear-gradient(
+    180deg,
+    var(--color-brass-bright),
+    var(--color-brass)
+  );
   color: #120c04;
 }
 
@@ -378,7 +382,11 @@
   overflow: hidden;
   border: 1px solid var(--color-line-strong);
   border-radius: var(--radius);
-  background: linear-gradient(160deg, var(--color-surface), var(--color-base-raised) 70%);
+  background: linear-gradient(
+    160deg,
+    var(--color-surface),
+    var(--color-base-raised) 70%
+  );
   box-shadow: var(--shadow-card);
 }
 

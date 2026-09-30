@@ -4,7 +4,11 @@ import { z } from "zod";
 
 import { runSafely } from "./ai-providers.server";
 import { safeHttpUrl } from "./source-pages.server";
-import { type AiSearchOutcome, type AiSearchView, type FoundWatch } from "./ai-watch-types";
+import {
+  type AiSearchOutcome,
+  type AiSearchView,
+  type FoundWatch,
+} from "./ai-watch-types";
 
 export type AiSearchKind = "quiz" | "film" | "find";
 
@@ -24,7 +28,10 @@ function stableJson(value: unknown): string {
     return `{${Object.keys(value)
       .sort()
       .filter((key) => (value as Record<string, unknown>)[key] !== undefined)
-      .map((key) => `${JSON.stringify(key)}:${stableJson((value as Record<string, unknown>)[key])}`)
+      .map(
+        (key) =>
+          `${JSON.stringify(key)}:${stableJson((value as Record<string, unknown>)[key])}`,
+      )
       .join(",")}}`;
   }
   return JSON.stringify(value);
@@ -94,7 +101,7 @@ export async function loadStoredSearch(
             ...watch,
             sourceUrl,
             imageUrl: safeHttpUrl(watch.imageUrl),
-            details: (watch.details ?? {}),
+            details: watch.details ?? {},
           },
         ]
       : [];
@@ -155,7 +162,11 @@ export async function searchWithStore(
     kind,
     cacheInput,
     run,
-  }: { kind: AiSearchKind; cacheInput: unknown; run: () => Promise<AiSearchOutcome> },
+  }: {
+    kind: AiSearchKind;
+    cacheInput: unknown;
+    run: () => Promise<AiSearchOutcome>;
+  },
   {
     store = loadAiWatchStoreConfig(),
     fetchImpl = fetch,
@@ -173,7 +184,9 @@ export async function searchWithStore(
   } else {
     logStoreError(
       "ai_watch_store_unconfigured",
-      new Error("SUPABASE_SERVICE_ROLE_KEY is not set; results are not stored."),
+      new Error(
+        "SUPABASE_SERVICE_ROLE_KEY is not set; results are not stored.",
+      ),
     );
   }
 
@@ -184,7 +197,13 @@ export async function searchWithStore(
     try {
       await storeSearch(
         store,
-        { kind, cacheKey, cacheInput, summary: outcome.summary, watches: outcome.watches },
+        {
+          kind,
+          cacheKey,
+          cacheInput,
+          summary: outcome.summary,
+          watches: outcome.watches,
+        },
         fetchImpl,
       );
     } catch (error) {

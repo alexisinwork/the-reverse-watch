@@ -39,10 +39,16 @@ describe("renderDossierEmail", () => {
     expect(email.subject).toBe("Your Reserve reference diagnostic dossier");
     expect(email.text).toContain("Price range: EUR 3k–4k.");
     expect(email.text).toContain("Wrist: 17.5 cm (cases 38-42 mm).");
-    expect(email.text).toContain("1. Longines Conquest 38 (ref. L3.720.4.92.6)");
+    expect(email.text).toContain(
+      "1. Longines Conquest 38 (ref. L3.720.4.92.6)",
+    );
     expect(email.text).toContain("Source: https://www.longines.com/conquest");
-    expect(email.html).toContain('<img src="https://images.example/conquest.jpg"');
-    expect(email.html).toContain('<a href="https://www.longines.com/conquest">');
+    expect(email.html).toContain(
+      '<img src="https://images.example/conquest.jpg"',
+    );
+    expect(email.html).toContain(
+      '<a href="https://www.longines.com/conquest">',
+    );
     expect(email.html).not.toContain("undefined");
   });
 

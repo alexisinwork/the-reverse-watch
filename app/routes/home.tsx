@@ -226,7 +226,8 @@ export default function Home() {
           </a>
         </nav>
         <p className="landing-secondary">
-          Or browse the <a href="/watches">reviewed archive of film and TV watches</a>.
+          Or browse the{" "}
+          <a href="/watches">reviewed archive of film and TV watches</a>.
         </p>
         <BeehiivSignup onSubscribed={unlockDiagnostic} />
       </main>

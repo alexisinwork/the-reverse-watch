@@ -9,7 +9,8 @@ import {
 } from "./questionnaire-v3";
 
 export const QUESTIONNAIRE_V4_VERSION = 4 as const;
-export const QUESTIONNAIRE_V4_STORAGE_KEY = "the-reserve:diagnostic:v4" as const;
+export const QUESTIONNAIRE_V4_STORAGE_KEY =
+  "the-reserve:diagnostic:v4" as const;
 
 export const BUDGET_CURRENCIES = ["USD", "EUR", "GBP", "CHF"] as const;
 export type BudgetCurrency = (typeof BUDGET_CURRENCIES)[number];
@@ -25,8 +26,10 @@ function buildPriceRanges(): PriceRange[] {
   const bounds = [0, 500, 1_000];
   for (let value = 2_000; value <= 10_000; value += 1_000) bounds.push(value);
   for (let value = 15_000; value <= 50_000; value += 5_000) bounds.push(value);
-  for (let value = 75_000; value <= 100_000; value += 25_000) bounds.push(value);
-  for (let value = 200_000; value <= 1_000_000; value += 100_000) bounds.push(value);
+  for (let value = 75_000; value <= 100_000; value += 25_000)
+    bounds.push(value);
+  for (let value = 200_000; value <= 1_000_000; value += 100_000)
+    bounds.push(value);
   const ranges: PriceRange[] = bounds.slice(0, -1).map((minimum, index) => ({
     id: `${minimum}_${bounds[index + 1]}`,
     minimum,
@@ -92,8 +95,14 @@ export function diameterRangeFor(profile: {
   caseDiameterMinMm?: number;
   caseDiameterMaxMm?: number;
 }) {
-  if (profile.caseDiameterMinMm !== undefined && profile.caseDiameterMaxMm !== undefined) {
-    return { minimumMm: profile.caseDiameterMinMm, maximumMm: profile.caseDiameterMaxMm };
+  if (
+    profile.caseDiameterMinMm !== undefined &&
+    profile.caseDiameterMaxMm !== undefined
+  ) {
+    return {
+      minimumMm: profile.caseDiameterMinMm,
+      maximumMm: profile.caseDiameterMaxMm,
+    };
   }
   return caseDiameterForWrist(profile.wristCm);
 }
@@ -137,7 +146,10 @@ export const profileV4Schema = z
   .strict()
   .superRefine((profile, context) => {
     const unique = (values: string[]) => new Set(values).size === values.length;
-    if ((profile.caseDiameterMinMm === undefined) !== (profile.caseDiameterMaxMm === undefined)) {
+    if (
+      (profile.caseDiameterMinMm === undefined) !==
+      (profile.caseDiameterMaxMm === undefined)
+    ) {
       context.addIssue({
         code: "custom",
         path: ["caseDiameterMaxMm"],
@@ -151,7 +163,8 @@ export const profileV4Schema = z
       context.addIssue({
         code: "custom",
         path: ["caseDiameterMaxMm"],
-        message: "The largest case diameter must not be smaller than the smallest.",
+        message:
+          "The largest case diameter must not be smaller than the smallest.",
       });
     }
     for (const field of [

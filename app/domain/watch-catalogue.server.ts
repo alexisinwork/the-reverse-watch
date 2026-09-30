@@ -8,7 +8,9 @@ import {
 
 export type StoreConfig = { supabaseUrl: string; serviceKey: string };
 
-function loadStoreConfig(env: NodeJS.ProcessEnv = process.env): StoreConfig | null {
+function loadStoreConfig(
+  env: NodeJS.ProcessEnv = process.env,
+): StoreConfig | null {
   const supabaseUrl = env.SUPABASE_URL?.trim();
   const serviceKey = env.SUPABASE_SERVICE_ROLE_KEY?.trim();
   return supabaseUrl && serviceKey ? { supabaseUrl, serviceKey } : null;
@@ -170,15 +172,13 @@ export async function reviewCatalogueWatch(
   status: "pending" | "approved" | "rejected" | null,
   patch: ReviewPatch = {},
 ) {
-  const ok = z
-    .boolean()
-    .parse(
-      await rpc(client, "watch_catalogue_review_v1", {
-        p_id: id,
-        p_status: status,
-        p_patch: patch,
-      }),
-    );
+  const ok = z.boolean().parse(
+    await rpc(client, "watch_catalogue_review_v1", {
+      p_id: id,
+      p_status: status,
+      p_patch: patch,
+    }),
+  );
   clearCatalogueCache();
   return ok;
 }
@@ -198,14 +198,12 @@ export async function recordCataloguePrice(
   id: string,
   result: PriceRecord,
 ) {
-  const ok = z
-    .boolean()
-    .parse(
-      await rpc(client, "watch_catalogue_price_v1", {
-        p_id: id,
-        p_result: result,
-      }),
-    );
+  const ok = z.boolean().parse(
+    await rpc(client, "watch_catalogue_price_v1", {
+      p_id: id,
+      p_result: result,
+    }),
+  );
   clearCatalogueCache();
   return ok;
 }

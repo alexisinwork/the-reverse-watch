@@ -10,7 +10,6 @@ export { convert, supportedCurrencies, type FxTable } from "./fx";
 export const ECB_DAILY_URL =
   "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml";
 
-
 export function parseEcbDailyXml(xml: string): FxTable {
   const date = xml.match(/<Cube\s+time=['"](\d{4}-\d{2}-\d{2})['"]/)?.[1];
   if (!date) throw new Error("ECB feed has no reference date.");
@@ -54,4 +53,3 @@ export async function loadFxTable(
     return cached?.table ?? null;
   }
 }
-

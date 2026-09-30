@@ -34,7 +34,14 @@ const AUTHORISED_RETAILER_HOSTS = [
   "shop.hodinkee.com",
 ];
 
-const BRAND_STOPWORDS = new Set(["watch", "watches", "company", "and", "the", "de"]);
+const BRAND_STOPWORDS = new Set([
+  "watch",
+  "watches",
+  "company",
+  "and",
+  "the",
+  "de",
+]);
 
 function hostOf(url: string) {
   try {
@@ -56,7 +63,10 @@ function fold(value: string) {
 }
 
 /** The brand's own site (by domain) or an authorised retailer, else null. */
-export function classifySource(url: string | null, brand: string): SourceKind | null {
+export function classifySource(
+  url: string | null,
+  brand: string,
+): SourceKind | null {
   if (!url) return null;
   const host = hostOf(url);
   if (!host) return null;
@@ -109,7 +119,8 @@ export function fitsDiameter(
   if (caseDiameterMm === null) return false;
   // Published diameters are often rounded to the nearest half millimetre.
   return (
-    caseDiameterMm >= range.minimumMm - 0.5 && caseDiameterMm <= range.maximumMm + 0.5
+    caseDiameterMm >= range.minimumMm - 0.5 &&
+    caseDiameterMm <= range.maximumMm + 0.5
   );
 }
 
@@ -117,7 +128,10 @@ export function fitsPrice(
   range: { minimum: number; maximum: number | null },
   priceInBudgetCurrency: number | null,
 ) {
-  if (priceInBudgetCurrency === null || !Number.isFinite(priceInBudgetCurrency)) {
+  if (
+    priceInBudgetCurrency === null ||
+    !Number.isFinite(priceInBudgetCurrency)
+  ) {
     return false;
   }
   return (
@@ -154,13 +168,16 @@ export function normalizeMovement(value: string | null) {
   if (!value) return null;
   const folded = fold(value);
   if (MOVEMENT_ALIASES[folded]) return MOVEMENT_ALIASES[folded];
-  const matches = ALIASES_BY_SPECIFICITY.filter((alias) => folded.includes(alias)).map(
-    (alias) => MOVEMENT_ALIASES[alias]!,
-  );
+  const matches = ALIASES_BY_SPECIFICITY.filter((alias) =>
+    folded.includes(alias),
+  ).map((alias) => MOVEMENT_ALIASES[alias]!);
   return matches.find((type) => SPECIFIC_TYPES.has(type)) ?? matches[0] ?? null;
 }
 
-export function allowedMovement(allowed: readonly string[], value: string | null) {
+export function allowedMovement(
+  allowed: readonly string[],
+  value: string | null,
+) {
   const movement = normalizeMovement(value);
   return movement !== null && allowed.includes(movement);
 }

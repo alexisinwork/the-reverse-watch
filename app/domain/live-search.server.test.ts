@@ -1,6 +1,11 @@
 import { vi } from "vitest";
 
-import { collectUntilDeadline, quizCacheInput, quizConstraintLines, searchQuizWatches } from "./quiz-live-search.server";
+import {
+  collectUntilDeadline,
+  quizCacheInput,
+  quizConstraintLines,
+  searchQuizWatches,
+} from "./quiz-live-search.server";
 import { runSafely, type Deps } from "./ai-providers.server";
 import { searchFilmWatches } from "./film-search.server";
 import type { FxTable } from "./fx";
@@ -19,12 +24,19 @@ const profile: ProfileV4 = {
 };
 
 const config: Deps["config"] = {
-  museSpark: { apiKey: "muse", baseUrl: "https://muse.test/v1/", fastModel: "fast" },
+  museSpark: {
+    apiKey: "muse",
+    baseUrl: "https://muse.test/v1/",
+    fastModel: "fast",
+  },
   perplexity: { apiKey: "pplx", model: "sonar" },
   webSearch: "perplexity",
 };
 
-const fx: FxTable = { date: "2026-09-29", perEur: { EUR: 1, USD: 1.1355, GBP: 0.85718 } };
+const fx: FxTable = {
+  date: "2026-09-29",
+  perEur: { EUR: 1, USD: 1.1355, GBP: 0.85718 },
+};
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -62,67 +74,155 @@ type Script = {
 function network(script: Script) {
   let museCall = 0;
   const bodies: string[] = [];
-  const fetchImpl = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
-    const url = String(input);
-    bodies.push(String(init?.body ?? ""));
-    if (url.startsWith("https://muse.test/")) {
-      const request = JSON.parse(String(init?.body)) as { messages: { content: string }[] };
-      if (request.messages[0]!.content.includes("film and culture editor")) {
-        return json({ choices: [{ message: { content: JSON.stringify({ order: [{ index: 1, note: "Second first." }, { index: 0, note: "Then first." }], summary: "Two sightings." }) } }] });
+  const fetchImpl = vi.fn(
+    async (input: RequestInfo | URL, init?: RequestInit) => {
+      const url = String(input);
+      bodies.push(String(init?.body ?? ""));
+      if (url.startsWith("https://muse.test/")) {
+        const request = JSON.parse(String(init?.body)) as {
+          messages: { content: string }[];
+        };
+        if (request.messages[0]!.content.includes("film and culture editor")) {
+          return json({
+            choices: [
+              {
+                message: {
+                  content: JSON.stringify({
+                    order: [
+                      { index: 1, note: "Second first." },
+                      { index: 0, note: "Then first." },
+                    ],
+                    summary: "Two sightings.",
+                  }),
+                },
+              },
+            ],
+          });
+        }
+        const candidates = script.muse?.[museCall++] ?? [];
+        return json({
+          choices: [{ message: { content: JSON.stringify({ candidates }) } }],
+        });
       }
-      const candidates = script.muse?.[museCall++] ?? [];
-      return json({ choices: [{ message: { content: JSON.stringify({ candidates }) } }] });
-    }
-    if (url === "https://api.perplexity.ai/chat/completions") {
-      const prompt = (JSON.parse(String(init?.body)) as { messages: { content: string }[] }).messages[0]!.content;
-      if (prompt.includes("The subject may be")) {
+      if (url === "https://api.perplexity.ai/chat/completions") {
+        const prompt = (
+          JSON.parse(String(init?.body)) as { messages: { content: string }[] }
+        ).messages[0]!.content;
+        if (prompt.includes("The subject may be")) {
+          return json({
+            choices: [
+              {
+                message: {
+                  content: JSON.stringify({
+                    sightings: [
+                      {
+                        brand: "Omega",
+                        model: "Seamaster Diver 300M",
+                        referenceCode: "210.90.42.20.01.001",
+                        person: "Daniel Craig",
+                        work: "No Time to Die",
+                        year: 2021,
+                        context: "Worn as Bond.",
+                        evidenceUrl: "https://www.hodinkee.com/bond",
+                        manufacturerUrl: "https://www.omegawatches.com/210-90",
+                      },
+                      {
+                        brand: "Omega",
+                        model: "Unknown Omega",
+                        referenceCode: null,
+                        person: "Daniel Craig",
+                        work: null,
+                        year: null,
+                        context: "?",
+                        evidenceUrl: "https://www.esquire.com/x",
+                        manufacturerUrl: null,
+                      },
+                      {
+                        brand: "Rolex",
+                        model: "Submariner",
+                        referenceCode: null,
+                        person: "Daniel Craig",
+                        work: null,
+                        year: null,
+                        context: "Forum claim.",
+                        evidenceUrl: "https://www.reddit.com/r/watches/1",
+                        manufacturerUrl: null,
+                      },
+                      {
+                        brand: "Omega",
+                        model: "Planet Ocean",
+                        referenceCode: "2900.50.91",
+                        person: "Daniel Craig",
+                        work: "Casino Royale",
+                        year: 2006,
+                        context: "Worn as Bond.",
+                        evidenceUrl: "https://www.watch-id.com/po",
+                        manufacturerUrl: null,
+                      },
+                    ],
+                  }),
+                },
+              },
+            ],
+          });
+        }
         return json({
           choices: [
             {
               message: {
-                content: JSON.stringify({
-                  sightings: [
-                    { brand: "Omega", model: "Seamaster Diver 300M", referenceCode: "210.90.42.20.01.001", person: "Daniel Craig", work: "No Time to Die", year: 2021, context: "Worn as Bond.", evidenceUrl: "https://www.hodinkee.com/bond", manufacturerUrl: "https://www.omegawatches.com/210-90" },
-                    { brand: "Omega", model: "Unknown Omega", referenceCode: null, person: "Daniel Craig", work: null, year: null, context: "?", evidenceUrl: "https://www.esquire.com/x", manufacturerUrl: null },
-                    { brand: "Rolex", model: "Submariner", referenceCode: null, person: "Daniel Craig", work: null, year: null, context: "Forum claim.", evidenceUrl: "https://www.reddit.com/r/watches/1", manufacturerUrl: null },
-                    { brand: "Omega", model: "Planet Ocean", referenceCode: "2900.50.91", person: "Daniel Craig", work: "Casino Royale", year: 2006, context: "Worn as Bond.", evidenceUrl: "https://www.watch-id.com/po", manufacturerUrl: null },
-                  ],
-                }),
+                content: JSON.stringify({ candidates: script.live ?? [] }),
               },
             },
           ],
         });
       }
-      return json({ choices: [{ message: { content: JSON.stringify({ candidates: script.live ?? [] }) } }] });
-    }
-    if (url === "https://api.perplexity.ai/search") {
-      const queries = (JSON.parse(String(init?.body)) as { query: string[] }).query;
-      return json({
-        results: queries.map((query) => {
-          const reference = query.split(" ").slice(1).join(" ");
-          const slug = reference.toLowerCase().replace(/[^a-z0-9]/g, "-");
-          const brand = query.split(" ")[0]!.toLowerCase();
-          const url = script.searchUrl?.(query) ?? `https://www.${brand}.com/p/${slug}`;
-          return { url, title: `${query}`, snippet: reference };
-        }),
-      });
-    }
-    if (url.startsWith("https://img.test/")) {
-      return new Response(null, { status: 206, headers: { "content-type": "image/jpeg" } });
-    }
-    const page = script.pages?.[url];
-    if (page !== undefined) return new Response(page, { status: 200, headers: { "content-type": "text/html" } });
-    if (url.includes(".com/p/")) {
-      return new Response(`<meta property="og:image" content="https://img.test/${encodeURIComponent(url)}.jpg">ref ${url.split("/p/")[1]}`, { status: 200 });
-    }
-    return new Response("not found", { status: 404 });
-  });
+      if (url === "https://api.perplexity.ai/search") {
+        const queries = (JSON.parse(String(init?.body)) as { query: string[] })
+          .query;
+        return json({
+          results: queries.map((query) => {
+            const reference = query.split(" ").slice(1).join(" ");
+            const slug = reference.toLowerCase().replace(/[^a-z0-9]/g, "-");
+            const brand = query.split(" ")[0]!.toLowerCase();
+            const url =
+              script.searchUrl?.(query) ?? `https://www.${brand}.com/p/${slug}`;
+            return { url, title: `${query}`, snippet: reference };
+          }),
+        });
+      }
+      if (url.startsWith("https://img.test/")) {
+        return new Response(null, {
+          status: 206,
+          headers: { "content-type": "image/jpeg" },
+        });
+      }
+      const page = script.pages?.[url];
+      if (page !== undefined)
+        return new Response(page, {
+          status: 200,
+          headers: { "content-type": "text/html" },
+        });
+      if (url.includes(".com/p/")) {
+        return new Response(
+          `<meta property="og:image" content="https://img.test/${encodeURIComponent(url)}.jpg">ref ${url.split("/p/")[1]}`,
+          { status: 200 },
+        );
+      }
+      return new Response("not found", { status: 404 });
+    },
+  );
   return { fetchImpl: fetchImpl as unknown as typeof fetch, bodies };
 }
 
 function deps(script: Script): Partial<Deps> & { bodies: string[] } {
   const { fetchImpl, bodies } = network(script);
-  return { config, fetchImpl, loadFx: async () => fx, sleep: async () => undefined, bodies };
+  return {
+    config,
+    fetchImpl,
+    loadFx: async () => fx,
+    sleep: async () => undefined,
+    bodies,
+  };
 }
 
 describe("searchQuizWatches", () => {
@@ -135,9 +235,32 @@ describe("searchQuizWatches", () => {
   it("returns watches that pass every rule and are confirmed on a manufacturer page", async () => {
     const setup = deps({
       muse: [
-        [candidate(), candidate({ brand: "Tudor", model: "Black Bay 41", referenceCode: "M79540-0006", priceAmount: 2_290 })],
-        [candidate({ brand: "Nomos", model: "Club Sport", referenceCode: "781", priceAmount: 3_780, caseDiameterMm: 42 })],
-        [candidate({ brand: "Oris", model: "Aquis", referenceCode: "01 400 7769 4135", waterResistanceM: 50 })],
+        [
+          candidate(),
+          candidate({
+            brand: "Tudor",
+            model: "Black Bay 41",
+            referenceCode: "M79540-0006",
+            priceAmount: 2_290,
+          }),
+        ],
+        [
+          candidate({
+            brand: "Nomos",
+            model: "Club Sport",
+            referenceCode: "781",
+            priceAmount: 3_780,
+            caseDiameterMm: 42,
+          }),
+        ],
+        [
+          candidate({
+            brand: "Oris",
+            model: "Aquis",
+            referenceCode: "01 400 7769 4135",
+            waterResistanceM: 50,
+          }),
+        ],
       ],
     });
 
@@ -146,7 +269,10 @@ describe("searchQuizWatches", () => {
     expect(result.status).toBe("found");
     if (result.status !== "found") throw new Error("expected watches");
     // Tudor breaks the price range and Oris the water resistance.
-    expect(result.watches.map((watch) => watch.brand)).toEqual(["Longines", "Nomos"]);
+    expect(result.watches.map((watch) => watch.brand)).toEqual([
+      "Longines",
+      "Nomos",
+    ]);
     expect(result.watches[0]).toMatchObject({
       referenceCode: "L3.810.4.73.6",
       sourceUrl: "https://www.longines.com/p/l3-810-4-73-6",
@@ -172,7 +298,10 @@ describe("searchQuizWatches", () => {
     const setup = deps({
       muse: [[candidate()], [], []],
       searchUrl: () => "https://www.longines.com/watches/spirit",
-      pages: { "https://www.longines.com/watches/spirit": "<html>a different watch</html>" },
+      pages: {
+        "https://www.longines.com/watches/spirit":
+          "<html>a different watch</html>",
+      },
     });
 
     expect((await searchQuizWatches(profile, setup)).status).toBe("no_match");
@@ -216,7 +345,10 @@ describe("searchQuizWatches", () => {
 
   it("is unavailable without both providers configured", async () => {
     expect(
-      await searchQuizWatches(profile, { ...deps({}), config: { museSpark: null, perplexity: null, webSearch: "perplexity" } }),
+      await searchQuizWatches(profile, {
+        ...deps({}),
+        config: { museSpark: null, perplexity: null, webSearch: "perplexity" },
+      }),
     ).toEqual({ status: "unavailable" });
   });
 });
@@ -290,9 +422,15 @@ describe("runSafely", () => {
 describe("quiz cache input and constraints", () => {
   it("shares results across wrists in the same diameter band", () => {
     expect(quizCacheInput({ ...profile, wristCm: 17.1 })).toEqual(
-      quizCacheInput({ ...profile, wristCm: 17.9, wearingScenarios: ["everyday", "office"] }),
+      quizCacheInput({
+        ...profile,
+        wristCm: 17.9,
+        wearingScenarios: ["everyday", "office"],
+      }),
     );
-    expect(quizCacheInput({ ...profile, wristCm: 19 })).not.toEqual(quizCacheInput(profile));
+    expect(quizCacheInput({ ...profile, wristCm: 19 })).not.toEqual(
+      quizCacheInput(profile),
+    );
   });
 
   it("describes the range and the wrist's diameter band", () => {

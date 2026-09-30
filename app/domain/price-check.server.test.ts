@@ -232,14 +232,14 @@ describe("Perplexity finds, Muse Spark double-checks", () => {
           fastModel: "m",
         },
       },
-      fetchImpl: (async (input: string | URL | Request, init?: RequestInit) => {
+      fetchImpl: async (input: string | URL | Request, init?: RequestInit) => {
         const url = String(input);
         if (url.startsWith("https://muse.test")) {
           museUrls.push(url);
           return museQueue.shift() ?? museAnswer([]);
         }
         return base.fetchImpl(input, init);
-      }),
+      },
     };
     return { deps: value, museUrls };
   }

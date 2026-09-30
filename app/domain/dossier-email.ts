@@ -69,7 +69,9 @@ function watchHtml(watch: FoundWatch, index: number) {
       ? `<img src="${escapeHtml(watch.imageUrl)}" alt="${escapeHtml(watchTitle(watch))}" width="240" style="max-width:240px;height:auto">`
       : "",
     `<h3>${index + 1}. ${escapeHtml(watchTitle(watch))}</h3>`,
-    watch.priceNote ? `<p><strong>Price:</strong> ${escapeHtml(watch.priceNote)}</p>` : "",
+    watch.priceNote
+      ? `<p><strong>Price:</strong> ${escapeHtml(watch.priceNote)}</p>`
+      : "",
     `<p>${escapeHtml(watch.rationale)}</p>`,
     `<p><a href="${escapeHtml(watch.sourceUrl)}">Open the source</a></p>`,
     "</article>",
@@ -110,7 +112,9 @@ export function renderDossierEmail({
 
   const html = `<!doctype html><html><body><main><p><strong>THE RESERVE — REFERENCE DIAGNOSTIC DOSSIER</strong></p><section><h2>Your search boundary</h2><ul>${lines
     .map((line) => `<li>${escapeHtml(line)}</li>`)
-    .join("")}</ul></section><section><h2>Your shortlist</h2><p>${escapeHtml(outcome)}</p>${watches
+    .join(
+      "",
+    )}</ul></section><section><h2>Your shortlist</h2><p>${escapeHtml(outcome)}</p>${watches
     .map(watchHtml)
     .join("")}</section><p>${escapeHtml(METHOD_NOTE)}</p></main></body></html>`;
 

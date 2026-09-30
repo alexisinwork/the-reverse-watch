@@ -211,7 +211,9 @@ describe("version-4 diagnostic", () => {
     );
 
     expect(
-      await screen.findByRole("heading", { name: "Watches that fit every answer" }),
+      await screen.findByRole("heading", {
+        name: "Watches that fit every answer",
+      }),
     ).toBeInTheDocument();
     expect(
       await screen.findByText("Reference confirmed on the manufacturer's page"),
@@ -222,10 +224,9 @@ describe("version-4 diagnostic", () => {
     expect(
       screen.getByRole("link", { name: "Open the source" }),
     ).toHaveAttribute("href", "https://www.seikowatches.com/spb143");
-    expect(screen.getByRole("img", { name: "Seiko Prospex SPB143" })).toHaveAttribute(
-      "src",
-      "https://images.example/spb143.jpg",
-    );
+    expect(
+      screen.getByRole("img", { name: "Seiko Prospex SPB143" }),
+    ).toHaveAttribute("src", "https://images.example/spb143.jpg");
   });
 
   it("redirects unsigned visits and rejects unsigned submissions", async () => {
@@ -298,11 +299,15 @@ describe("version-4 diagnostic", () => {
 
   it("rejects an implausible wrist size and an unknown price range", async () => {
     expect(
-      (await action(buildRequest({ ...completeProfile, wristCm: "40" }))).init?.status,
+      (await action(buildRequest({ ...completeProfile, wristCm: "40" }))).init
+        ?.status,
     ).toBe(400);
     expect(
-      (await action(buildRequest({ ...completeProfile, priceRange: "3000_3500" })))
-        .init?.status,
+      (
+        await action(
+          buildRequest({ ...completeProfile, priceRange: "3000_3500" }),
+        )
+      ).init?.status,
     ).toBe(400);
   });
 

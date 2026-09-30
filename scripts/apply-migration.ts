@@ -9,7 +9,9 @@ import postgres from "postgres";
 
 const file = process.argv[2];
 if (!file || !/^\d{4}_[a-z0-9_]+\.sql$/.test(file)) {
-  console.error("Pass a migration file name such as 0070_add_ai_watch_search_cache.sql");
+  console.error(
+    "Pass a migration file name such as 0070_add_ai_watch_search_cache.sql",
+  );
   process.exit(2);
 }
 const url = process.env.DIRECT_DATABASE_URL?.trim();
@@ -48,7 +50,9 @@ try {
         values (${new Date().toISOString().replace(/\D/g, "").slice(0, 14)}, ${name}, ${[sqlText]})`;
     }
   });
-  console.log(`Applied ${file}${tracked ? " and recorded it in the migration history" : ""}.`);
+  console.log(
+    `Applied ${file}${tracked ? " and recorded it in the migration history" : ""}.`,
+  );
 } finally {
   await sql.end();
 }

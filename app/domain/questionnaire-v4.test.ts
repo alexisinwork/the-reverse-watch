@@ -21,16 +21,23 @@ describe("price ranges", () => {
 
   it("is contiguous with no gaps or overlaps", () => {
     for (let index = 1; index < PRICE_RANGES.length; index += 1) {
-      expect(PRICE_RANGES[index]!.minimum).toBe(PRICE_RANGES[index - 1]!.maximum);
+      expect(PRICE_RANGES[index]!.minimum).toBe(
+        PRICE_RANGES[index - 1]!.maximum,
+      );
     }
-    expect(new Set(PRICE_RANGES.map((range) => range.id)).size).toBe(PRICE_RANGES.length);
+    expect(new Set(PRICE_RANGES.map((range) => range.id)).size).toBe(
+      PRICE_RANGES.length,
+    );
   });
 });
 
 describe("wrist sizing", () => {
   it("maps wrist circumference to a proportionate diameter range", () => {
     expect(caseDiameterForWrist(14)).toEqual({ minimumMm: 34, maximumMm: 38 });
-    expect(caseDiameterForWrist(17.5)).toEqual({ minimumMm: 38, maximumMm: 42 });
+    expect(caseDiameterForWrist(17.5)).toEqual({
+      minimumMm: 38,
+      maximumMm: 42,
+    });
     expect(caseDiameterForWrist(21)).toEqual({ minimumMm: 42, maximumMm: 46 });
   });
 });
@@ -53,8 +60,14 @@ describe("profileV4Schema", () => {
   });
 
   it("rejects removed currencies, unknown ranges, and implausible wrists", () => {
-    expect(profileV4Schema.safeParse({ ...valid, budgetCurrency: "PLN" }).success).toBe(false);
-    expect(profileV4Schema.safeParse({ ...valid, priceRange: "3000_3500" }).success).toBe(false);
-    expect(profileV4Schema.safeParse({ ...valid, wristCm: 40 }).success).toBe(false);
+    expect(
+      profileV4Schema.safeParse({ ...valid, budgetCurrency: "PLN" }).success,
+    ).toBe(false);
+    expect(
+      profileV4Schema.safeParse({ ...valid, priceRange: "3000_3500" }).success,
+    ).toBe(false);
+    expect(profileV4Schema.safeParse({ ...valid, wristCm: 40 }).success).toBe(
+      false,
+    );
   });
 });

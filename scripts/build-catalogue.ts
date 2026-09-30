@@ -48,6 +48,9 @@ const COST_PER_CALL: Record<string, number> = {
   "perplexity-chat": 0.0075,
   "perplexity-search": 0.005,
   muse: 0.006,
+  // Muse Spark web research (the second price lookup): tokens plus a few
+  // billed searches and page opens, measured at about $0.05 per call.
+  "muse-research": 0.05,
   web: 0,
 };
 
@@ -114,6 +117,7 @@ const limits = {
   "perplexity-chat": semaphore(6),
   "perplexity-search": semaphore(3),
   muse: semaphore(CONCURRENCY),
+  "muse-research": semaphore(4),
   web: semaphore(24),
 };
 
@@ -122,6 +126,8 @@ function bucket(url: string): keyof typeof limits {
     return "perplexity-chat";
   if (url.startsWith("https://api.perplexity.ai/search"))
     return "perplexity-search";
+  if (url.includes("api.meta.ai") && url.includes("/responses"))
+    return "muse-research";
   if (url.includes("api.meta.ai")) return "muse";
   return "web";
 }

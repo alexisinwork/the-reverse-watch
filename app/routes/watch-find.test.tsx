@@ -34,7 +34,11 @@ const sighting = {
 
 function stub(entry: string) {
   const Stub = createRoutesStub([
-    { path: "/watches/find", Component: WatchFind, loader: (args) => loader(args) },
+    {
+      path: "/watches/find",
+      Component: WatchFind,
+      loader: (args) => loader(args),
+    },
   ]);
   return render(<Stub initialEntries={[entry]} />);
 }
@@ -55,9 +59,13 @@ describe("find a watch from the screen", () => {
   it("offers one search box and examples before any search", async () => {
     stub("/watches/find");
     expect(
-      await screen.findByRole("heading", { name: "Find the watch from the screen" }),
+      await screen.findByRole("heading", {
+        name: "Find the watch from the screen",
+      }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("searchbox", { name: /film, series, actor/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("searchbox", { name: /film, series, actor/i }),
+    ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Daniel Craig" })).toHaveAttribute(
       "href",
       "/watches/find?q=Daniel%20Craig",
@@ -70,15 +78,21 @@ describe("find a watch from the screen", () => {
     stub("/watches/find?q=%20Daniel%20%20Craig%20");
 
     expect(
-      await screen.findByRole("heading", { name: "Omega Seamaster Diver 300M" }),
+      await screen.findByRole("heading", {
+        name: "Omega Seamaster Diver 300M",
+      }),
     ).toBeInTheDocument();
-    expect(screen.getByText("Daniel Craig · No Time to Die · 2021")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "See the evidence" })).toHaveAttribute(
-      "href",
-      "https://www.hodinkee.com/bond",
-    );
+    expect(
+      screen.getByText("Daniel Craig · No Time to Die · 2021"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: "See the evidence" }),
+    ).toHaveAttribute("href", "https://www.hodinkee.com/bond");
     expect(store.searchWithStore).toHaveBeenCalledWith(
-      expect.objectContaining({ kind: "film", cacheInput: { query: "daniel craig" } }),
+      expect.objectContaining({
+        kind: "film",
+        cacheInput: { query: "daniel craig" },
+      }),
     );
   });
 
@@ -89,12 +103,18 @@ describe("find a watch from the screen", () => {
   });
 
   it("rate-limits fresh searches per visitor but not stored answers", async () => {
-    store.searchWithStore.mockImplementation(({ run }: { run: () => Promise<unknown> }) => run());
+    store.searchWithStore.mockImplementation(
+      ({ run }: { run: () => Promise<unknown> }) => run(),
+    );
     finder.searchFilmWatches.mockResolvedValue(sighting);
 
     const outcomes = [];
     for (let index = 0; index < 13; index += 1) {
-      outcomes.push(await loader(loaderArgs(`http://test.local/watches/find?q=query-${index}`)).result);
+      outcomes.push(
+        await loader(
+          loaderArgs(`http://test.local/watches/find?q=query-${index}`),
+        ).result,
+      );
     }
 
     expect(finder.searchFilmWatches).toHaveBeenCalledTimes(12);

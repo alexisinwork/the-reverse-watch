@@ -45,7 +45,12 @@ export default function WatchesIndex() {
           not evidence of an actor&apos;s private collection, and an inspired
           retail watch is not silently substituted for a custom prop.
         </p>
-        <Form action="/watches/find" className="find-form" method="get" role="search">
+        <Form
+          action="/watches/find"
+          className="find-form"
+          method="get"
+          role="search"
+        >
           <label className="sr-only" htmlFor="archive-search">
             Search any film, series, actor or public figure
           </label>

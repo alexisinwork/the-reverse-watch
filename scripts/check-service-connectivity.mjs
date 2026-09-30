@@ -46,7 +46,10 @@ async function withTimeout(promiseFactory, ms = 10_000) {
 // Supabase — the exact read-only RPC the app itself calls.
 async function checkSupabase() {
   const name = "Supabase (recommendation_catalogue_v4 RPC)";
-  if (!configured(env.SUPABASE_URL) || !configured(env.SUPABASE_PUBLISHABLE_KEY)) {
+  if (
+    !configured(env.SUPABASE_URL) ||
+    !configured(env.SUPABASE_PUBLISHABLE_KEY)
+  ) {
     return record(name, "skip", "not configured");
   }
   try {
@@ -83,7 +86,8 @@ async function checkSupabase() {
 // Perplexity — 1-token completion, cheapest possible authenticated call.
 async function checkPerplexity() {
   const name = "Perplexity (sonar chat completion)";
-  if (!configured(env.PERPLEXITY_API_KEY)) return record(name, "skip", "not configured");
+  if (!configured(env.PERPLEXITY_API_KEY))
+    return record(name, "skip", "not configured");
   try {
     const response = await withTimeout((signal) =>
       fetch("https://api.perplexity.ai/chat/completions", {
@@ -102,7 +106,11 @@ async function checkPerplexity() {
     );
     if (!response.ok) {
       const text = await response.text();
-      return record(name, "fail", `HTTP ${response.status} ${text.slice(0, 120)}`);
+      return record(
+        name,
+        "fail",
+        `HTTP ${response.status} ${text.slice(0, 120)}`,
+      );
     }
     record(name, "pass", "authenticated, minimal completion returned");
   } catch (error) {
@@ -113,7 +121,8 @@ async function checkPerplexity() {
 // Meta Muse Spark — 1-token completion via the OpenAI-compatible endpoint.
 async function checkMuseSpark() {
   const name = "Muse Spark (Meta Model API)";
-  if (!configured(env.MUSE_SPARK_API_KEY)) return record(name, "skip", "not configured");
+  if (!configured(env.MUSE_SPARK_API_KEY))
+    return record(name, "skip", "not configured");
   const baseUrl = env.MUSE_SPARK_BASE_URL || "https://api.meta.ai/v1";
   const model = env.MUSE_SPARK_MODEL || "muse-spark-1.3-contributor";
   try {
@@ -134,7 +143,11 @@ async function checkMuseSpark() {
     );
     const text = await response.text();
     if (!response.ok) {
-      return record(name, "fail", `HTTP ${response.status} ${text.slice(0, 200)}`);
+      return record(
+        name,
+        "fail",
+        `HTTP ${response.status} ${text.slice(0, 200)}`,
+      );
     }
     record(name, "pass", "authenticated, 1-token completion returned");
   } catch (error) {
@@ -145,17 +158,24 @@ async function checkMuseSpark() {
 // OpenAI — listing models costs nothing and confirms the key/org/project.
 async function checkOpenAi() {
   const name = "OpenAI (models list)";
-  if (!configured(env.OPENAI_API_KEY)) return record(name, "skip", "not configured");
+  if (!configured(env.OPENAI_API_KEY))
+    return record(name, "skip", "not configured");
   try {
     const headers = { authorization: `Bearer ${env.OPENAI_API_KEY}` };
-    if (configured(env.OPENAI_ORG_ID)) headers["OpenAI-Organization"] = env.OPENAI_ORG_ID;
-    if (configured(env.OPENAI_PROJECT_ID)) headers["OpenAI-Project"] = env.OPENAI_PROJECT_ID;
+    if (configured(env.OPENAI_ORG_ID))
+      headers["OpenAI-Organization"] = env.OPENAI_ORG_ID;
+    if (configured(env.OPENAI_PROJECT_ID))
+      headers["OpenAI-Project"] = env.OPENAI_PROJECT_ID;
     const response = await withTimeout((signal) =>
       fetch("https://api.openai.com/v1/models", { headers, signal }),
     );
     if (!response.ok) {
       const text = await response.text();
-      return record(name, "fail", `HTTP ${response.status} ${text.slice(0, 120)}`);
+      return record(
+        name,
+        "fail",
+        `HTTP ${response.status} ${text.slice(0, 120)}`,
+      );
     }
     record(name, "pass", "authenticated");
   } catch (error) {
@@ -166,22 +186,36 @@ async function checkOpenAi() {
 // Beehiiv — read-only publication lookup, creates no subscriber.
 async function checkBeehiiv() {
   const name = "Beehiiv (publication lookup)";
-  if (!configured(env.BEEHIIV_API_KEY) || !configured(env.BEEHIIV_PUBLICATION_ID)) {
+  if (
+    !configured(env.BEEHIIV_API_KEY) ||
+    !configured(env.BEEHIIV_PUBLICATION_ID)
+  ) {
     return record(name, "skip", "not configured");
   }
   try {
     const response = await withTimeout((signal) =>
-      fetch(`https://api.beehiiv.com/v2/publications/${env.BEEHIIV_PUBLICATION_ID}`, {
-        headers: { authorization: `Bearer ${env.BEEHIIV_API_KEY}` },
-        signal,
-      }),
+      fetch(
+        `https://api.beehiiv.com/v2/publications/${env.BEEHIIV_PUBLICATION_ID}`,
+        {
+          headers: { authorization: `Bearer ${env.BEEHIIV_API_KEY}` },
+          signal,
+        },
+      ),
     );
     if (!response.ok) {
       const text = await response.text();
-      return record(name, "fail", `HTTP ${response.status} ${text.slice(0, 120)}`);
+      return record(
+        name,
+        "fail",
+        `HTTP ${response.status} ${text.slice(0, 120)}`,
+      );
     }
     const body = await response.json();
-    record(name, "pass", body?.data?.name ? `publication "${body.data.name}"` : "authenticated");
+    record(
+      name,
+      "pass",
+      body?.data?.name ? `publication "${body.data.name}"` : "authenticated",
+    );
   } catch (error) {
     record(name, "fail", String(error?.message ?? error));
   }
@@ -190,7 +224,8 @@ async function checkBeehiiv() {
 // GitHub — repo-scoped read, matches the fine-grained PAT's actual scope.
 async function checkGitHub() {
   const name = "GitHub (repo lookup)";
-  if (!configured(env.GITHUB_PAT_TOKEN)) return record(name, "skip", "not configured");
+  if (!configured(env.GITHUB_PAT_TOKEN))
+    return record(name, "skip", "not configured");
   try {
     const response = await withTimeout((signal) =>
       fetch("https://api.github.com/repos/alexisinwork/the-reverse-watch", {
@@ -213,7 +248,8 @@ async function checkGitHub() {
 // Resend — read-only domain list, sends no email.
 async function checkResend() {
   const name = "Resend (domains list)";
-  if (!configured(env.RESEND_API_KEY)) return record(name, "skip", "not configured");
+  if (!configured(env.RESEND_API_KEY))
+    return record(name, "skip", "not configured");
   try {
     const response = await withTimeout((signal) =>
       fetch("https://api.resend.com/domains", {
@@ -233,7 +269,10 @@ async function checkResend() {
 // Upstash — read-only PING.
 async function checkUpstash() {
   const name = "Upstash Redis (PING)";
-  if (!configured(env.UPSTASH_REDIS_REST_URL) || !configured(env.UPSTASH_REDIS_REST_TOKEN)) {
+  if (
+    !configured(env.UPSTASH_REDIS_REST_URL) ||
+    !configured(env.UPSTASH_REDIS_REST_TOKEN)
+  ) {
     return record(name, "skip", "not configured");
   }
   try {
@@ -264,8 +303,15 @@ async function main() {
 
   const width = Math.max(...results.map((result) => result.name.length));
   for (const result of results) {
-    const marker = result.outcome === "pass" ? "PASS" : result.outcome === "fail" ? "FAIL" : "SKIP";
-    console.log(`${marker.padEnd(4)} ${result.name.padEnd(width)}  ${result.detail}`);
+    const marker =
+      result.outcome === "pass"
+        ? "PASS"
+        : result.outcome === "fail"
+          ? "FAIL"
+          : "SKIP";
+    console.log(
+      `${marker.padEnd(4)} ${result.name.padEnd(width)}  ${result.detail}`,
+    );
   }
 
   const failed = results.filter((result) => result.outcome === "fail").length;

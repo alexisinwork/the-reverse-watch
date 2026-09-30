@@ -16,30 +16,30 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 
 ## Folders
 
-| Folder | What is in it |
-|---|---|
-| `app/routes/` | One file per page or endpoint. `app/routes.ts` maps URLs to files. |
-| `app/components/` | Reusable page parts. `components/quiz/` holds the quiz screens. |
-| `app/domain/` | Everything that is not page layout: rules, searches, database calls. Files ending in `.server.ts` never reach the browser. |
-| `app/styles/` | CSS. Colours and spacing live in `tokens.css`. |
-| `db/migrations/` | Numbered SQL files, applied in order with `scripts/apply-migration.ts`. Additive only: tables are never dropped. |
-| `scripts/` | Command-line jobs you run on your machine (catalogue build, reports, price passes). |
-| `docs/` | Product history, plans and reports (`docs/reports/`). |
+| Folder            | What is in it                                                                                                              |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| `app/routes/`     | One file per page or endpoint. `app/routes.ts` maps URLs to files.                                                         |
+| `app/components/` | Reusable page parts. `components/quiz/` holds the quiz screens.                                                            |
+| `app/domain/`     | Everything that is not page layout: rules, searches, database calls. Files ending in `.server.ts` never reach the browser. |
+| `app/styles/`     | CSS. Colours and spacing live in `tokens.css`.                                                                             |
+| `db/migrations/`  | Numbered SQL files, applied in order with `scripts/apply-migration.ts`. Additive only: tables are never dropped.           |
+| `scripts/`        | Command-line jobs you run on your machine (catalogue build, reports, price passes).                                        |
+| `docs/`           | Product history, plans and reports (`docs/reports/`).                                                                      |
 
 ## Pages and endpoints
 
-| URL | File | What it does |
-|---|---|---|
-| `/` | `routes/home.tsx` | Landing page and newsletter sign-up (which unlocks the quiz). |
-| `/quiz` | `routes/quiz.tsx` | The six-question diagnostic and the shortlist. |
-| `/watches/find` | `routes/watch-find.tsx` | Search box for watches in films, series and on people. |
-| `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx` | Published, reviewed film and celebrity watch stories. |
-| `/watches/archetype` | `routes/watch-archetype.tsx` | The signal/aesthetic archetype mini-quiz. |
-| `/admin/catalogue` | `routes/admin-catalogue.tsx` | Password-protected catalogue review: Approve, Reject, Edit, price changes. |
-| `/internal/catalogue/recheck-prices` | `routes/internal-catalogue-recheck-prices.ts` | Daily Vercel cron (see `vercel.json`): rechecks prices older than 90 days. |
-| `/evaluation` | `routes/evaluation.tsx` | Funnel analytics summary. |
-| `/health` | `routes/health.ts` | Uptime check. |
-| Others | `quiz-analytics-start.ts`, `discovery-analytics.ts`, `watch-research-status.tsx`, `internal-discovery-research-*.ts` | Analytics pings and the older film-research intake (see "Older code"). |
+| URL                                                                       | File                                                                                                                 | What it does                                                               |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `/`                                                                       | `routes/home.tsx`                                                                                                    | Landing page and newsletter sign-up (which unlocks the quiz).              |
+| `/quiz`                                                                   | `routes/quiz.tsx`                                                                                                    | The six-question diagnostic and the shortlist.                             |
+| `/watches/find`                                                           | `routes/watch-find.tsx`                                                                                              | Search box for watches in films, series and on people.                     |
+| `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx`                                        | Published, reviewed film and celebrity watch stories.                      |
+| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The signal/aesthetic archetype mini-quiz.                                  |
+| `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes. |
+| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily Vercel cron (see `vercel.json`): rechecks prices older than 90 days. |
+| `/evaluation`                                                             | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary.                                                  |
+| `/health`                                                                 | `routes/health.ts`                                                                                                   | Uptime check.                                                              |
+| Others                                                                    | `quiz-analytics-start.ts`, `discovery-analytics.ts`, `watch-research-status.tsx`, `internal-discovery-research-*.ts` | Analytics pings and the older film-research intake (see "Older code").     |
 
 ## How a quiz answer is produced
 
@@ -96,31 +96,31 @@ cookies, IP or anything identifying.
 
 ## The AI providers
 
-| File | What it does |
-|---|---|
-| `domain/ai-providers.server.ts` | All provider calls: Muse Spark chat, Muse Spark web research (built-in `web_search`), Perplexity Sonar and Search API, and the `WEB_SEARCH_PROVIDER` switch (`webResearchJson`, `findPages`). |
-| `domain/source-pages.server.ts` | Opens maker and retailer pages: is the reference on the page, which photo does it declare. `safeHttpUrl` and `publicFetch` make sure the server only ever fetches public web addresses, even through redirects (URLs come from AI output). |
-| `domain/ai-watch-guardrails.ts` | Hard rules in code: authorised sources, reference matching, water resistance, diameter, price range, movement, nickel. |
-| `domain/film-search.server.ts` | The film/people search behind `/watches/find`. |
-| `domain/quiz-live-search.server.ts` | The quiz's live search. |
+| File                                | What it does                                                                                                                                                                                                                               |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `domain/ai-providers.server.ts`     | All provider calls: Muse Spark chat, Muse Spark web research (built-in `web_search`), Perplexity Sonar and Search API, and the `WEB_SEARCH_PROVIDER` switch (`webResearchJson`, `findPages`).                                              |
+| `domain/source-pages.server.ts`     | Opens maker and retailer pages: is the reference on the page, which photo does it declare. `safeHttpUrl` and `publicFetch` make sure the server only ever fetches public web addresses, even through redirects (URLs come from AI output). |
+| `domain/ai-watch-guardrails.ts`     | Hard rules in code: authorised sources, reference matching, water resistance, diameter, price range, movement, nickel.                                                                                                                     |
+| `domain/film-search.server.ts`      | The film/people search behind `/watches/find`.                                                                                                                                                                                             |
+| `domain/quiz-live-search.server.ts` | The quiz's live search.                                                                                                                                                                                                                    |
 
 Every provider call takes a `Deps` object (config, fetch, clock). Tests pass
 a fake fetch, so no test ever calls a real provider.
 
 ## Where to change things
 
-| To change… | Edit |
-|---|---|
-| Quiz questions or their wording | `components/quiz/question-screens.tsx`, titles in `routes/quiz.tsx` |
-| Price ranges or wrist → diameter table | `domain/questionnaire-v4.ts` |
-| Which quiz scenarios map to which wearing style | `SCENARIO_STYLES` in `domain/watch-catalogue.ts` |
-| How catalogue watches are ranked | `pick()` in `domain/watch-catalogue.ts` |
-| Price tolerance, age limit, allowed currencies, grey-market list | top of `domain/price-check.server.ts` |
-| Authorised retailers | `AUTHORISED_RETAILER_HOSTS` in `domain/ai-watch-guardrails.ts` |
-| Search prompts | `quiz-live-search.server.ts`, `film-search.server.ts`, `catalogue-build.server.ts` |
-| Muse Spark model or search provider | env vars `MUSE_SPARK_FAST_MODEL`, `MUSE_SPARK_MODEL`, `WEB_SEARCH_PROVIDER` |
-| Admin page | `routes/admin-catalogue.tsx`, login in `domain/admin-auth.server.ts` |
-| Colours and fonts | `app/styles/tokens.css` |
+| To change…                                                       | Edit                                                                               |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Quiz questions or their wording                                  | `components/quiz/question-screens.tsx`, titles in `routes/quiz.tsx`                |
+| Price ranges or wrist → diameter table                           | `domain/questionnaire-v4.ts`                                                       |
+| Which quiz scenarios map to which wearing style                  | `SCENARIO_STYLES` in `domain/watch-catalogue.ts`                                   |
+| How catalogue watches are ranked                                 | `pick()` in `domain/watch-catalogue.ts`                                            |
+| Price tolerance, age limit, allowed currencies, grey-market list | top of `domain/price-check.server.ts`                                              |
+| Authorised retailers                                             | `AUTHORISED_RETAILER_HOSTS` in `domain/ai-watch-guardrails.ts`                     |
+| Search prompts                                                   | `quiz-live-search.server.ts`, `film-search.server.ts`, `catalogue-build.server.ts` |
+| Muse Spark model or search provider                              | env vars `MUSE_SPARK_FAST_MODEL`, `MUSE_SPARK_MODEL`, `WEB_SEARCH_PROVIDER`        |
+| Admin page                                                       | `routes/admin-catalogue.tsx`, login in `domain/admin-auth.server.ts`               |
+| Colours and fonts                                                | `app/styles/tokens.css`                                                            |
 
 ## Security in one list
 

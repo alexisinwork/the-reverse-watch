@@ -17,7 +17,9 @@ export function convert(
 }
 
 export function supportedCurrencies(table: FxTable | null) {
-  return table ? Object.keys(table.perEur).sort() : ["CHF", "EUR", "GBP", "USD"];
+  return table
+    ? Object.keys(table.perEur).sort()
+    : ["CHF", "EUR", "GBP", "USD"];
 }
 
 export function formatMoney(amount: number, currency: string) {

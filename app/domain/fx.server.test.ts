@@ -21,14 +21,18 @@ describe("ECB reference rates", () => {
     const table = parseEcbDailyXml(XML);
     expect(convert(1_000, "EUR", "USD", table)).toBeCloseTo(1_135.5);
     expect(convert(1_135.5, "USD", "EUR", table)).toBeCloseTo(1_000);
-    expect(convert(100, "GBP", "CHF", table)).toBeCloseTo((100 / 0.85718) * 0.9461);
+    expect(convert(100, "GBP", "CHF", table)).toBeCloseTo(
+      (100 / 0.85718) * 0.9461,
+    );
     expect(convert(100, "XXX", "EUR", table)).toBeNull();
   });
 
   it("rejects a feed without a date or with too few rates", () => {
     expect(() => parseEcbDailyXml("<Cube></Cube>")).toThrow();
     expect(() =>
-      parseEcbDailyXml("<Cube time='2026-09-29'><Cube currency='USD' rate='1.1'/></Cube>"),
+      parseEcbDailyXml(
+        "<Cube time='2026-09-29'><Cube currency='USD' rate='1.1'/></Cube>",
+      ),
     ).toThrow();
   });
 

@@ -50,7 +50,9 @@ describe("searchWithStore", () => {
     });
     expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
     const [, init] = fetchImpl.mock.calls[0] as unknown as [URL, RequestInit];
-    expect((init.headers as Record<string, string>).apikey).toBe("sb_secret_test");
+    expect((init.headers as Record<string, string>).apikey).toBe(
+      "sb_secret_test",
+    );
     expect(init.headers).not.toHaveProperty("authorization");
   });
 
@@ -81,7 +83,10 @@ describe("searchWithStore", () => {
   });
 
   it("does not store a no_match or unavailable result", async () => {
-    finderMock.runAiWatchSearch.mockResolvedValue({ status: "no_match", summary: "None." });
+    finderMock.runAiWatchSearch.mockResolvedValue({
+      status: "no_match",
+      summary: "None.",
+    });
     const fetchImpl = vi.fn(async (_input: RequestInfo | URL) => json(null));
 
     await searchWithStore(
@@ -90,7 +95,9 @@ describe("searchWithStore", () => {
     );
 
     expect(
-      fetchImpl.mock.calls.some(([input]) => String(input).includes("store_v1")),
+      fetchImpl.mock.calls.some(([input]) =>
+        String(input).includes("store_v1"),
+      ),
     ).toBe(false);
   });
 
@@ -114,7 +121,10 @@ describe("searchWithStore", () => {
     const fetchImpl = vi.fn(async () =>
       json({
         summary: "Stored.",
-        watches: [{ ...foundWatch, sourceUrl: "javascript:alert(1)" }, foundWatch],
+        watches: [
+          { ...foundWatch, sourceUrl: "javascript:alert(1)" },
+          foundWatch,
+        ],
       }),
     );
 

@@ -5,7 +5,11 @@ export type WatchDetails = {
   waterResistanceM?: number | null;
   caseDiameterMm?: number | null;
   movement?: string | null;
-  materials?: { case: string | null; caseback: string | null; strap: string | null };
+  materials?: {
+    case: string | null;
+    caseback: string | null;
+    strap: string | null;
+  };
   sourceKind?: SourceKind;
   referenceVerified?: boolean;
   person?: string | null;
