@@ -49,7 +49,7 @@ function row(overrides: Record<string, unknown>) {
 function client(rows: unknown[]): CatalogueClient {
   return {
     config: { supabaseUrl: "https://db.test", serviceKey: "sb_secret_x" },
-    fetchImpl: (async () => Response.json(rows)) as typeof fetch,
+    fetchImpl: async () => Response.json(rows),
   };
 }
 

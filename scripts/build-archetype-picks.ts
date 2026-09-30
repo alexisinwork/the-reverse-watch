@@ -106,7 +106,7 @@ if (process.argv.includes("--top-up")) {
           known.add(identity);
           try {
             const entry = await verifyCandidate(
-              candidate as BuildCandidate,
+              candidate,
               [cell.style],
               { range: cell.range.id, style: cell.style, archetypeTopUp: true },
               deps,
