@@ -96,7 +96,10 @@ export function defaultDeps(overrides: Partial<Deps> = {}): Deps {
 
 /** A trimmed, non-empty string from model output, or null. */
 export function clean(value: unknown) {
-  return typeof value === "string" && value.trim() ? value.trim() : null;
+  if (typeof value !== "string") return null;
+  const text = value.trim();
+  // Models sometimes write the word "null" instead of a JSON null.
+  return text && !/^(null|none|n\/a|undefined)$/i.test(text) ? text : null;
 }
 
 /** A finite number from model output, or null. */
@@ -105,7 +108,8 @@ export function finite(value: unknown) {
 }
 
 // Placeholder names models sometimes emit instead of admitting a gap.
-export const VAGUE = /\b(unknown|unidentified|unspecified|various|n\/a|tbd)\b/i;
+export const VAGUE =
+  /\b(unknown|unidentified|unspecified|various|n\/a|tbd|null|none)\b/i;
 
 export function logError(event: string, error: unknown) {
   console.error(
@@ -167,6 +171,7 @@ export async function sonarJson(
   prompt: string,
   schema: Record<string, unknown>,
   deps: Deps,
+  contextSize: "low" | "medium" = "low",
 ) {
   const body = (await perplexityPost(
     "chat/completions",
@@ -175,7 +180,7 @@ export async function sonarJson(
       max_tokens: 2_000,
       // Same question, same answer as far as the model allows.
       temperature: 0,
-      web_search_options: { search_context_size: "low" },
+      web_search_options: { search_context_size: contextSize },
       response_format: { type: "json_schema", json_schema: { schema } },
       messages: [{ role: "user", content: prompt }],
     },
@@ -375,7 +380,16 @@ export async function webResearchJson(
   prompt: string,
   schema: Record<string, unknown>,
   deps: Deps,
-  { maxToolCalls = 6, system }: { maxToolCalls?: number; system?: string } = {},
+  {
+    maxToolCalls = 6,
+    system,
+    contextSize = "low",
+  }: {
+    maxToolCalls?: number;
+    system?: string;
+    /** Perplexity only: "medium" reads more of each page (slower, surer). */
+    contextSize?: "low" | "medium";
+  } = {},
 ): Promise<unknown> {
   if (deps.config.webSearch === "muse") {
     const research = await museWebResearch(prompt, deps, {
@@ -385,7 +399,12 @@ export async function webResearchJson(
     });
     return parseModelJson(research.text);
   }
-  return sonarJson(system ? `${system}\n\n${prompt}` : prompt, schema, deps);
+  return sonarJson(
+    system ? `${system}\n\n${prompt}` : prompt,
+    schema,
+    deps,
+    contextSize,
+  );
 }
 
 /**
