@@ -1,6 +1,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { Await } from "react-router";
 
+import { YouTubeCallout } from "./youtube-callout";
 import type {
   AiSearchView,
   FoundWatch,
@@ -444,6 +445,7 @@ export function WatchResults({
         </Await>
       </Suspense>
       {footnote ? <p className="result-footnote">{footnote}</p> : null}
+      <YouTubeCallout variant="panel" />
       {mode === "quiz" && fx ? (
         <p className="result-footnote">
           Converted prices use European Central Bank reference rates of{" "}

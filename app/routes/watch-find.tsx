@@ -9,6 +9,12 @@ import {
   searchFilmWatches,
 } from "../domain/film-search.server";
 import { searchWithStore } from "../domain/ai-watch-store.server";
+import {
+  FILM_SUBJECT_KINDS,
+  FILM_SUBJECT_LABELS,
+  parseFilmSubjectKind,
+  type FilmSubjectKind,
+} from "../domain/film-subject";
 import { createProgressFeed } from "../domain/progress-feed";
 import { parseDiscoveryHandoff } from "../domain/discovery-selection";
 import type { RateLimitPolicy } from "../domain/rate-limit.server";
@@ -24,13 +30,13 @@ const NEW_SEARCH_POLICY: RateLimitPolicy = {
   windowMs: 10 * 60 * 1_000,
 };
 
-const EXAMPLES = [
-  "Daniel Craig",
-  "James Bond",
-  "Succession",
-  "Paul Newman",
-  "The Bear",
-  "Ryan Gosling in Drive",
+const EXAMPLES: { query: string; kind: FilmSubjectKind }[] = [
+  { query: "Daniel Craig", kind: "actor" },
+  { query: "James Bond", kind: "character" },
+  { query: "Succession", kind: "series" },
+  { query: "Heat", kind: "movie" },
+  { query: "Roger Federer", kind: "celebrity" },
+  { query: "The Bear", kind: "series" },
 ];
 
 function visitorKey(request: Request) {
@@ -49,15 +55,26 @@ export function loader({ request }: Route.LoaderArgs) {
     .trim()
     .replace(/\s+/g, " ")
     .slice(0, QUERY_MAX);
+  const kind = parseFilmSubjectKind(url.searchParams.get("type"));
   const handoff = parseDiscoveryHandoff(url.searchParams);
-  if (query.length < 2) return { query, handoff, result: null, progress: null };
+  // Both the text and the type are required before anything is searched.
+  if (query.length < 2 || !kind) {
+    return {
+      query,
+      kind,
+      handoff,
+      result: null,
+      progress: null,
+      needsType: query.length >= 2 && !kind,
+    };
+  }
 
   const key = visitorKey(request);
   // Streamed: the page renders immediately and the watches arrive after.
   const progress = createProgressFeed();
   const result = searchWithStore({
     kind: "film",
-    cacheInput: { query: normalizeFilmQuery(query) },
+    cacheInput: { query: normalizeFilmQuery(query), kind },
     run: async () => {
       if (!(await consumeSharedRateLimit(key, NEW_SEARCH_POLICY)).allowed) {
         return {
@@ -66,11 +83,18 @@ export function loader({ request }: Route.LoaderArgs) {
             "You have run a lot of new searches in a short time. Please try again in a few minutes; searches others already made still load instantly.",
         };
       }
-      return searchFilmWatches(query, { report: progress.report });
+      return searchFilmWatches(query, { report: progress.report }, kind);
     },
   });
   void result.finally(progress.close);
-  return { query, handoff, result, progress: progress.feed };
+  return {
+    query,
+    kind,
+    handoff,
+    result,
+    progress: progress.feed,
+    needsType: false,
+  };
 }
 
 export function meta({ data }: Route.MetaArgs) {
@@ -90,7 +114,8 @@ export function meta({ data }: Route.MetaArgs) {
 }
 
 export default function WatchFind() {
-  const { query, handoff, result, progress } = useLoaderData<typeof loader>();
+  const { query, kind, handoff, result, progress, needsType } =
+    useLoaderData<typeof loader>();
   const navigation = useNavigation();
   const searching =
     navigation.state === "loading" &&
@@ -111,15 +136,33 @@ export default function WatchFind() {
         <span className="eyebrow">Film · Television · People</span>
         <h1>Find the watch from the screen</h1>
         <p>
-          Type a film, series, actor, character or public figure. We search the
-          live web and show each watch with who wore it, where, and the page
-          that proves it.
+          Choose what you are looking for, then type its name. We search the
+          live web and show each watch with who wore it and where.
         </p>
         <Form className="find-form" method="get" role="search">
+          <label className="sr-only" htmlFor="find-type">
+            What are you searching for?
+          </label>
           <label className="sr-only" htmlFor="find-query">
-            Film, series, actor or public figure
+            Name of the movie, series, actor, character or celebrity
           </label>
           <div className="search-box">
+            <select
+              className="search-box__type"
+              defaultValue={kind ?? ""}
+              id="find-type"
+              name="type"
+              required
+            >
+              <option disabled value="">
+                Search for…
+              </option>
+              {FILM_SUBJECT_KINDS.map((option) => (
+                <option key={option} value={option}>
+                  {FILM_SUBJECT_LABELS[option]}
+                </option>
+              ))}
+            </select>
             <svg
               aria-hidden="true"
               className="search-box__icon"
@@ -148,7 +191,7 @@ export default function WatchFind() {
               maxLength={QUERY_MAX}
               minLength={2}
               name="q"
-              placeholder="e.g. Daniel Craig, Succession, Steve McQueen"
+              placeholder="e.g. Daniel Craig, Succession, James Bond"
               required
               type="search"
             />
@@ -161,15 +204,25 @@ export default function WatchFind() {
             </button>
           </div>
         </Form>
+        {needsType ? (
+          <p className="find-error" role="alert">
+            Choose whether you are searching for a movie, series, actor,
+            character or celebrity.
+          </p>
+        ) : null}
         <div className="find-examples" aria-label="Example searches">
           <span>Try</span>
           {EXAMPLES.map((example) => (
             <Link
               className="chip"
-              key={example}
-              to={`/watches/find?q=${encodeURIComponent(example)}`}
+              key={example.query}
+              to={`/watches/find?type=${example.kind}&q=${encodeURIComponent(example.query)}`}
             >
-              {example}
+              {example.query}
+              <span className="chip__hint">
+                {" "}
+                · {FILM_SUBJECT_LABELS[example.kind]}
+              </span>
             </Link>
           ))}
         </div>
@@ -178,10 +231,10 @@ export default function WatchFind() {
       {result ? (
         <WatchResults
           eyebrow="Live search · documented sightings"
-          footnote="Found with a live Perplexity web search and ranked by Muse Spark. Each sighting links to the page that documents it; attributions from films can be disputed."
+          footnote="Found with a live Perplexity web search and ranked by Muse Spark. Identifications from films can be disputed."
           fx={null}
           heading={`Watches in “${query}”`}
-          key={query}
+          key={`${kind}:${query}`}
           mode="film"
           progress={progress}
           result={result}
@@ -191,8 +244,8 @@ export default function WatchFind() {
           <div>
             <strong>1</strong>
             <p>
-              Search a title or a name. Spelling doesn&apos;t need to be
-              perfect.
+              Choose Movie, Series, Actor, Character or Celebrity, then type the
+              name. Spelling doesn&apos;t need to be perfect.
             </p>
           </div>
           <div>
@@ -202,8 +255,8 @@ export default function WatchFind() {
           <div>
             <strong>3</strong>
             <p>
-              Every watch links to its evidence. Searches are saved, so repeats
-              are instant.
+              Searches are saved, so anyone searching the same name later gets
+              the answer instantly.
             </p>
           </div>
         </section>

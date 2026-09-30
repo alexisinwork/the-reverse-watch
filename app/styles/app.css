@@ -94,3 +94,41 @@ a {
   color: var(--color-steel-text);
   line-height: 1.6;
 }
+
+/* YouTube channel invitation ---------------------------------------------- */
+
+.youtube-footer {
+  padding: 1.5rem var(--page-gutter) 2rem;
+  border-top: 1px solid var(--color-line);
+  color: var(--color-steel-text);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.youtube-footer p {
+  margin: 0;
+}
+
+.youtube-footer a,
+.youtube-panel a {
+  color: var(--color-brass-bright);
+}
+
+.youtube-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.youtube-panel p {
+  margin: 0.25rem 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+}

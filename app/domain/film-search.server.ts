@@ -17,6 +17,7 @@ import {
   type Deps,
 } from "./ai-providers.server";
 import type { AiSearchOutcome, FoundWatch } from "./ai-watch-types";
+import type { FilmSubjectKind } from "./film-subject";
 import {
   inspectSourcePage,
   safeHttpUrl,
@@ -138,15 +139,55 @@ export function normalizeFilmQuery(query: string) {
   return query.trim().replace(/\s+/g, " ").toLowerCase();
 }
 
-function filmPrompts(subject: string) {
-  const intro = `The subject may be a film, TV series, actor, fictional character, or public figure: "${subject}".`;
-  const ask =
-    "For each watch give the brand, model, exact reference number if documented, who wore it (person), the film or series title (work) if any, the year, one sentence of context (scene or occasion), a URL of a page that documents the sighting (evidenceUrl), the official manufacturer product page URL if one exists (manufacturerUrl), and the URL of a photo of that watch model from a page you found (imageUrl). Use null for anything you cannot confirm. Never invent a sighting.";
-  return [
-    `${intro} Which specific wristwatches are worn on screen in it, or by this person or character on screen? ${ask}`,
-    `${intro} Which specific wristwatches has this person worn in public, owned, or promoted as a brand ambassador? If the subject is a film or series, which watches are tied to it through official partnerships or its cast? ${ask}`,
-    `${intro} Which watch sightings connected to it are documented by watch-identification sites and publications (for example watchesinmovies.info, Hodinkee, Esquire, GQ)? ${ask}`,
-  ];
+const SIGHTING_FIELDS =
+  "For each watch give the brand, model, exact reference number if documented, who wore it (person), the film or series title (work) if any, the year, one sentence of context (scene or occasion), a URL of a page that documents the sighting (evidenceUrl), the official manufacturer product page URL if one exists (manufacturerUrl), and the URL of a photo of that watch model from a page you found (imageUrl). Use null for anything you cannot confirm. Never invent a sighting.";
+
+const WATCH_SPOTTING_SITES =
+  "watch-identification sites and publications (for example watchesinmovies.info, Hodinkee, Esquire, GQ, WatchPaparazzi)";
+
+/**
+ * Three questions asked at once, worded for what the visitor chose. Without
+ * a kind (older links and scripts) the questions cover every kind.
+ */
+function filmPrompts(subject: string, kind: FilmSubjectKind | null) {
+  const ask = SIGHTING_FIELDS;
+  switch (kind) {
+    case "movie":
+    case "series": {
+      const what = kind === "movie" ? "film" : "TV series";
+      return [
+        `Which specific wristwatches are worn on screen in the ${what} "${subject}", and by which character (and actor)? ${ask}`,
+        `Which watches are tied to the ${what} "${subject}" through official brand partnerships, product placement, or its lead cast at its premieres and press? ${ask}`,
+        `Which watch sightings in the ${what} "${subject}" are documented by ${WATCH_SPOTTING_SITES}? ${ask}`,
+      ];
+    }
+    case "actor":
+      return [
+        `Which specific wristwatches has the actor ${subject} worn on screen, in which films or series and roles? ${ask}`,
+        `Which specific wristwatches has the actor ${subject} worn in public, at premieres and events, owned, or promoted as a brand ambassador? ${ask}`,
+        `Which watch sightings of the actor ${subject} are documented by ${WATCH_SPOTTING_SITES}? ${ask}`,
+      ];
+    case "character":
+      return [
+        `Which specific wristwatches does the fictional character ${subject} wear, in which films or series, and played by which actor? ${ask}`,
+        `Which watch brands have official partnerships tied to the character ${subject}, and which models were made for or worn in the role? ${ask}`,
+        `Which watch sightings of the character ${subject} are documented by ${WATCH_SPOTTING_SITES}? ${ask}`,
+      ];
+    case "celebrity":
+      return [
+        `Which specific wristwatches has ${subject} worn in public, at events, in interviews or on official occasions? ${ask}`,
+        `Which watches does ${subject} own, and which brands has ${subject} promoted as an ambassador? ${ask}`,
+        `Which watch sightings of ${subject} are documented by ${WATCH_SPOTTING_SITES}? ${ask}`,
+      ];
+    default: {
+      const intro = `The subject may be a film, TV series, actor, fictional character, or public figure: "${subject}".`;
+      return [
+        `${intro} Which specific wristwatches are worn on screen in it, or by this person or character on screen? ${ask}`,
+        `${intro} Which specific wristwatches has this person worn in public, owned, or promoted as a brand ambassador? If the subject is a film or series, which watches are tied to it through official partnerships or its cast? ${ask}`,
+        `${intro} Which watch sightings connected to it are documented by ${WATCH_SPOTTING_SITES}? ${ask}`,
+      ];
+    }
+  }
 }
 
 /** The fallback questions: documented watches of the subject's lead cast. */
@@ -202,6 +243,8 @@ function withTimeout<T>(
 export async function searchFilmWatches(
   query: string,
   overrides: Partial<Deps> = {},
+  /** Movie, series, actor, character or celebrity, as the visitor chose. */
+  kind: FilmSubjectKind | null = null,
 ): Promise<AiSearchOutcome> {
   const deps = defaultDeps(overrides);
   if (!searchReady(deps.config)) {
@@ -218,7 +261,7 @@ export async function searchFilmWatches(
     text: `Searching films, series, interviews and watch-spotting sites for "${subject}"…`,
   });
   const settled = await Promise.allSettled(
-    filmPrompts(subject).map((prompt) =>
+    filmPrompts(subject, kind).map((prompt) =>
       webResearchJson(prompt, filmCandidateSchema, deps, {
         maxToolCalls: 4,
         contextSize: "medium",
@@ -238,7 +281,8 @@ export async function searchFilmWatches(
   // screen. Rather than a dead end, show what the lead cast wear off screen,
   // and say so plainly.
   let castFallback = false;
-  if (candidates.length === 0) {
+  const titleSearch = kind === null || kind === "movie" || kind === "series";
+  if (candidates.length === 0 && titleSearch) {
     deps.report?.({
       text: `No wristwatch is documented on screen in "${subject}". Checking the watches its lead actors wear off screen…`,
     });
@@ -261,7 +305,9 @@ export async function searchFilmWatches(
   if (candidates.length === 0) {
     return {
       status: "no_match",
-      summary: `No documented watch sightings were found for "${subject}", on screen or on its cast. Try an actor's name instead.`,
+      summary: titleSearch
+        ? `No documented watch sightings were found for "${subject}", on screen or on its cast. Try an actor's name instead.`
+        : `No documented watch sightings were found for "${subject}".`,
     };
   }
 

@@ -5,11 +5,13 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "react-router";
 import * as Sentry from "@sentry/react-router";
 import { Analytics, type BeforeSendEvent } from "@vercel/analytics/react";
 
 import type { Route } from "./+types/root";
+import { YouTubeCallout } from "./components/youtube-callout";
 import { requestMiddleware } from "./middleware.server";
 import "./styles/tokens.css";
 import "./styles/app.css";
@@ -61,7 +63,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  const { pathname } = useLocation();
+  return (
+    <>
+      <Outlet />
+      {/* On every visitor page; the admin pages are for the owner only. */}
+      {pathname.startsWith("/admin") ? null : <YouTubeCallout />}
+    </>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
