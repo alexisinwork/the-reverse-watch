@@ -303,6 +303,8 @@ function ResultBody({
     return (
       <p className="empty-result">
         The search is unavailable right now. Please try again in a minute.
+        Meanwhile, the <a href="/watches">archive of film and TV watches</a> and
+        the <a href="/watches/archetype">archetype quiz</a> work as usual.
       </p>
     );
   }

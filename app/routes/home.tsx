@@ -1,5 +1,4 @@
 import type { Route } from "./+types/home";
-import { createHash } from "node:crypto";
 import { useCallback, useState } from "react";
 import { data, useLoaderData } from "react-router";
 import { z } from "zod";
@@ -9,6 +8,7 @@ import {
   type NewsletterActionResult,
 } from "../components/beehiiv-signup";
 import { GaugeMark } from "../components/gauge-mark";
+import { visitorKey } from "../domain/visitor-key.server";
 import {
   BeehiivSubscriptionNotActiveError,
   isActiveBeehiivSubscriber,
@@ -32,14 +32,6 @@ const LOOKUP_POLICY: RateLimitPolicy = {
   maxRequests: 10,
   windowMs: 15 * 60 * 1_000,
 };
-
-function visitorKey(request: Request) {
-  const address =
-    request.headers.get("x-forwarded-for")?.split(",", 1)[0]?.trim() ||
-    request.headers.get("x-real-ip")?.trim() ||
-    "unknown";
-  return `subscriber-lookup:${createHash("sha256").update(address).digest("hex")}`;
-}
 
 export function meta(): ReturnType<Route.MetaFunction> {
   return [
@@ -155,8 +147,12 @@ export async function action({ request }: Route.ActionArgs) {
   if (intent === "returning") {
     // Limits how fast one visitor can test addresses against the list.
     if (
-      !(await consumeSharedRateLimit(visitorKey(request), LOOKUP_POLICY))
-        .allowed
+      !(
+        await consumeSharedRateLimit(
+          visitorKey("subscriber-lookup", request),
+          LOOKUP_POLICY,
+        )
+      ).allowed
     ) {
       return data<NewsletterActionResult>(
         { ok: false, message: "Too many attempts. Try again in 15 minutes." },

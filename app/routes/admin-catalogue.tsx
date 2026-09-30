@@ -1,5 +1,3 @@
-import { createHash } from "node:crypto";
-
 import {
   data,
   Form,
@@ -11,6 +9,7 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/admin-catalogue";
+import { visitorKey } from "../domain/visitor-key.server";
 import {
   adminLogin,
   adminLogout,
@@ -49,14 +48,6 @@ const NO_INDEX = {
   "X-Robots-Tag": "noindex, nofollow",
   "Cache-Control": "no-store",
 };
-
-function visitorKey(request: Request) {
-  const address =
-    request.headers.get("x-forwarded-for")?.split(",", 1)[0]?.trim() ||
-    request.headers.get("x-real-ip")?.trim() ||
-    "unknown";
-  return `admin-login:${createHash("sha256").update(address).digest("hex")}`;
-}
 
 export function headers({ loaderHeaders, actionHeaders }: Route.HeadersArgs) {
   return {
@@ -308,7 +299,12 @@ export async function action({ request }: Route.ActionArgs) {
 
   if (intent === "login") {
     if (
-      !(await consumeSharedRateLimit(visitorKey(request), LOGIN_POLICY)).allowed
+      !(
+        await consumeSharedRateLimit(
+          visitorKey("admin-login", request),
+          LOGIN_POLICY,
+        )
+      ).allowed
     ) {
       return data(
         { error: "Too many attempts. Try again in 15 minutes." },

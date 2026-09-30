@@ -1,9 +1,8 @@
-import { createHash } from "node:crypto";
-
 import { Form, Link, useLoaderData, useNavigation } from "react-router";
 
 import type { Route } from "./+types/watch-find";
 import { WatchResults } from "../components/watch-results";
+import { visitorKey } from "../domain/visitor-key.server";
 import {
   normalizeFilmQuery,
   searchFilmWatches,
@@ -40,16 +39,6 @@ const EXAMPLES: { query: string; kind: FilmSubjectKind }[] = [
   { query: "The Bear", kind: "series" },
 ];
 
-function visitorKey(request: Request) {
-  const forwarded = request.headers.get("x-forwarded-for");
-  const address =
-    forwarded?.split(",", 1)[0]?.trim() ||
-    request.headers.get("x-real-ip")?.trim() ||
-    "unknown";
-  // Only a hash of the address is kept, in memory, for the rate limit.
-  return `film-search:${createHash("sha256").update(address).digest("hex")}`;
-}
-
 export function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
   const query = (url.searchParams.get("q") ?? "")
@@ -70,7 +59,7 @@ export function loader({ request }: Route.LoaderArgs) {
     };
   }
 
-  const key = visitorKey(request);
+  const key = visitorKey("film-search", request);
   // Streamed: the page renders immediately and the watches arrive after.
   const progress = createProgressFeed();
   const search = searchWithStore({
