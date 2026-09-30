@@ -1,5 +1,8 @@
 # Repository agent instructions
 
+Start with `CODE-GUIDE.md`: a plain-English map of the code and where to
+change what.
+
 ## Delivery boundaries
 
 - Work from `docs/implementation-roadmap.md` one phase at a time.
@@ -60,7 +63,7 @@ quiz.
   ranges up to 10k × 6 wearing styles (dress, everyday, sport, dive, field,
   travel) × 10 runs, written to the production database.
 - Above 10k, or where the catalogue has fewer than three confirmed fits, the
-  live AI search (`app/domain/ai-watch-finder.server.ts`, stored by
+  live AI search (`app/domain/quiz-live-search.server.ts`, stored by
   `ai-watch-store.server.ts`, migration 0070) runs and adds its finds to the
   catalogue as pending.
 - The wrist pre-fills an editable case-diameter range; the diameter range is
@@ -75,6 +78,10 @@ quiz.
   marketplace prices never count. The daily cron
   `/internal/catalogue/recheck-prices` rechecks prices older than 90 days
   and parks changes for review.
+- `WEB_SEARCH_PROVIDER=muse` makes Muse Spark's built-in web_search do all
+  web searching (no Perplexity calls); the default is `perplexity`. With
+  Muse, a page Muse opened counts as "live" only when our own fetch of it is
+  blocked (owner decision, 2026-09-30).
 - Review happens on `/admin/catalogue` (ADMIN_PASSWORD plus a cookie signed
   with SESSION_SECRET): Approve, Reject, Edit, accept or dismiss price
   changes. `scripts/catalogue-report.ts` writes the `.md` report.
