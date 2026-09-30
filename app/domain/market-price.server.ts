@@ -169,7 +169,15 @@ export async function lookupMarketPrice(
         )
       : [];
   }
-  const base = { method: "market_new_listings", provider, checkedAt, listings };
+  const base = {
+    method: "market_new_listings",
+    provider,
+    checkedAt,
+    listings,
+    // Kept so later checks can compare the market price with the price
+    // the search first proposed.
+    expectedUsd,
+  };
   if (listings.length === 0) {
     return { status: "none", evidence: { ...base, reason: "no_new_listings" } };
   }
@@ -177,7 +185,7 @@ export async function lookupMarketPrice(
   if (expectedUsd && (amount > expectedUsd * 3 || amount < expectedUsd / 3)) {
     return {
       status: "none",
-      evidence: { ...base, reason: "far_from_expected", amount, expectedUsd },
+      evidence: { ...base, reason: "far_from_expected", amount },
     };
   }
   return { status: "found", amount, currency: "USD", evidence: base };
