@@ -8,14 +8,11 @@ import type {
   ProgressEvent,
   ProgressLink,
 } from "../domain/ai-watch-types";
-import {
-  convert,
-  formatMoney,
-  supportedCurrencies,
-  type FxTable,
-} from "../domain/fx";
+import { convert, formatMoney, type FxTable } from "../domain/fx";
 
 type Mode = "quiz" | "film";
+
+const SITE_CURRENCY = "USD";
 
 const PROGRESS_STEPS: Record<Mode, { after: number; text: string }[]> = {
   quiz: [
@@ -189,9 +186,6 @@ function PriceLine({
         {converted === null
           ? formatMoney(price.amount, price.currency)
           : `≈ ${formatMoney(converted, displayCurrency)}`}
-        {converted !== null ? (
-          <small> {formatMoney(price.amount, price.currency)} list</small>
-        ) : null}
       </strong>
       <span className="price-tag">Approximate price, may be wrong</span>
     </>
@@ -379,7 +373,6 @@ export function WatchResults({
   heading,
   eyebrow,
   fx,
-  defaultCurrency = "USD",
   footnote,
   progress,
 }: {
@@ -390,11 +383,11 @@ export function WatchResults({
   heading: string;
   eyebrow: string;
   fx: FxTable | null;
-  defaultCurrency?: string;
   footnote?: string;
 }) {
-  const [displayCurrency, setDisplayCurrency] = useState(defaultCurrency);
-  const currencies = supportedCurrencies(fx);
+  // Every price on the site is shown in US dollars (owner decision),
+  // converted from other currencies with the day's ECB reference rates.
+  const displayCurrency = SITE_CURRENCY;
   return (
     <section className="ai-results" aria-labelledby="ai-results-heading">
       <div className="result-section-heading">
@@ -402,19 +395,6 @@ export function WatchResults({
           <span className="eyebrow">{eyebrow}</span>
           <h2 id="ai-results-heading">{heading}</h2>
         </div>
-        {mode === "quiz" ? (
-          <label className="currency-select">
-            <span>Prices in</span>
-            <select
-              onChange={(event) => setDisplayCurrency(event.target.value)}
-              value={displayCurrency}
-            >
-              {currencies.map((currency) => (
-                <option key={currency}>{currency}</option>
-              ))}
-            </select>
-          </label>
-        ) : null}
       </div>
       <Suspense
         fallback={

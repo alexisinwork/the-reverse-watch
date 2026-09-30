@@ -288,6 +288,13 @@ export type MuseResearch = {
  * API). Meta bills each search or page open ($2.50 per 1,000) plus tokens,
  * so maxToolCalls keeps a lookup cheap and fast.
  */
+const WEB_RESEARCH_INSTRUCTIONS = [
+  "You are the research desk of The Reserve, a watch publication.",
+  "Search the live web, open the pages you rely on, and report only what those pages show.",
+  "Never estimate or invent facts, prices, references or URLs; use null for anything you could not find.",
+  "Answer only in the JSON format requested.",
+].join(" ");
+
 export async function museWebResearch(
   input: string,
   deps: Deps,
@@ -312,7 +319,10 @@ export async function museWebResearch(
     },
     body: JSON.stringify({
       model: config.fastModel,
-      ...(instructions ? { instructions } : {}),
+      // A fixed instruction block first plus a cache key lets Meta reuse the
+      // cached prefix across calls at a fraction of the input price.
+      instructions: instructions ?? WEB_RESEARCH_INSTRUCTIONS,
+      prompt_cache_key: "reserve-web-research-v1",
       input,
       tools: [{ type: "web_search" }],
       max_tool_calls: maxToolCalls,
