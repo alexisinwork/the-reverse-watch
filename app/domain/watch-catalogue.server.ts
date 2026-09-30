@@ -186,7 +186,7 @@ export async function reviewCatalogueWatch(
 export type PriceRecord =
   | { kind: "same"; evidence: Record<string, unknown> }
   | {
-      kind: "changed" | "confirmed";
+      kind: "changed" | "confirmed" | "approximate";
       amount: number;
       currency: string;
       evidence: Record<string, unknown>;

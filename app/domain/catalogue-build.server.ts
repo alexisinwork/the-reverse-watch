@@ -27,6 +27,7 @@ import {
   priceDifference,
   PRICE_TOLERANCE,
 } from "./price-check.server";
+import { lookupMarketPrice } from "./market-price.server";
 import type { PriceRange } from "./questionnaire-v4";
 import {
   CATALOGUE_STYLES,
@@ -451,13 +452,55 @@ export async function verifyCandidate(
 }
 
 /** A 90-day recheck of one catalogue watch's price. */
+/** The price the search first proposed, in USD, for the market sanity check. */
+export function proposedUsd(
+  watch: { priceEvidence: Record<string, unknown> },
+  fx: FxTable | null,
+) {
+  const evidence = watch.priceEvidence as {
+    proposed?: { amount?: unknown; currency?: unknown } | null;
+    observed?: { amount?: unknown; currency?: unknown } | null;
+  };
+  const price = evidence.proposed ?? evidence.observed;
+  if (
+    !price ||
+    typeof price.amount !== "number" ||
+    typeof price.currency !== "string"
+  ) {
+    return null;
+  }
+  return price.currency === "USD"
+    ? price.amount
+    : fx
+      ? convert(price.amount, price.currency, "USD", fx)
+      : null;
+}
+
 export async function recheckPrice(
   watch: CatalogueWatch,
   deps: Deps,
   fx: FxTable | null,
 ): Promise<PriceRecord> {
   const check = await doublePriceCheck(watch, deps, fx, watch.sourceUrl);
-  if (check.status !== "confirmed") return { kind: "unconfirmed" };
+  if (check.status !== "confirmed") {
+    // No retail price: a watch with no price at all gets an approximate
+    // market price instead; an approximate or confirmed one keeps its own.
+    if (watch.priceStatus !== "unconfirmed") return { kind: "unconfirmed" };
+    const market = await lookupMarketPrice(
+      watch,
+      deps,
+      fx,
+      proposedUsd(watch, fx),
+    );
+    return market.status === "found"
+      ? {
+          kind: "approximate",
+          amount: market.amount,
+          currency: market.currency,
+          evidence: market.evidence,
+        }
+      : { kind: "unconfirmed" };
+  }
   if (
     watch.priceStatus !== "confirmed" ||
     watch.priceAmount === null ||

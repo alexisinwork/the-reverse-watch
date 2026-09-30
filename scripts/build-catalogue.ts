@@ -10,6 +10,7 @@ import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { defaultDeps, searchReady } from "../app/domain/ai-providers.server";
 import {
   BUILD_RUNS,
+  proposedUsd,
   candidateIdentity,
   proposeForCell,
   proposedPriceFits,
@@ -27,8 +28,10 @@ import {
 import {
   catalogueClient,
   listCatalogue,
+  recordCataloguePrice,
   upsertCatalogueWatch,
 } from "../app/domain/watch-catalogue.server";
+import { lookupMarketPrice } from "../app/domain/market-price.server";
 
 function flag(name: string, fallback: number) {
   const index = process.argv.indexOf(`--${name}`);
@@ -76,6 +79,7 @@ type CellResult = {
   added: number;
   referenceConfirmed: number;
   priceConfirmed: number;
+  priceApproximate: number;
   errors: number;
   seconds: number;
   finishedAt: string;
@@ -270,6 +274,7 @@ async function runCell(cell: BuildCell) {
     added: 0,
     referenceConfirmed: 0,
     priceConfirmed: 0,
+    priceApproximate: 0,
     errors: 0,
     seconds: 0,
     finishedAt: "",
@@ -350,7 +355,25 @@ async function runCell(cell: BuildCell) {
             deps,
             fx,
           );
-          await upsertCatalogueWatch(client!, entry);
+          const id = await upsertCatalogueWatch(client!, entry);
+          // No retail price: record an approximate market price instead.
+          if (entry.priceStatus !== "confirmed") {
+            const market = await lookupMarketPrice(
+              candidate,
+              deps,
+              fx,
+              proposedUsd({ priceEvidence: entry.priceEvidence ?? {} }, fx),
+            );
+            if (market.status === "found") {
+              await recordCataloguePrice(client!, id, {
+                kind: "approximate",
+                amount: market.amount,
+                currency: market.currency,
+                evidence: market.evidence,
+              });
+              result.priceApproximate += 1;
+            }
+          }
           known.add(identity);
           result.added += 1;
           if (entry.referenceConfirmed) result.referenceConfirmed += 1;
@@ -378,7 +401,7 @@ async function runCell(cell: BuildCell) {
   saveProgress();
   const done = Object.keys(progress.cells).length;
   console.log(
-    `$${estimatedSpend(progress.calls).toFixed(2)} ${String(done).padStart(3)}/${cells.length} ${key.padEnd(24)} proposed=${result.proposals} new=${result.added} (ref ${result.referenceConfirmed}, price ${result.priceConfirmed}) repeat=${result.merged} out=${result.outOfRange} err=${result.errors} ${result.seconds}s | catalogue ${known.size}`,
+    `$${estimatedSpend(progress.calls).toFixed(2)} ${String(done).padStart(3)}/${cells.length} ${key.padEnd(24)} proposed=${result.proposals} new=${result.added} (ref ${result.referenceConfirmed}, price ${result.priceConfirmed}, approx ${result.priceApproximate}) repeat=${result.merged} out=${result.outOfRange} err=${result.errors} ${result.seconds}s | catalogue ${known.size}`,
   );
 }
 

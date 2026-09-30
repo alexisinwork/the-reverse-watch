@@ -259,6 +259,9 @@ const confirmedRef = live.filter((watch) => watch.referenceConfirmed).length;
 const confirmedPrice = live.filter(
   (watch) => watch.priceStatus === "confirmed",
 ).length;
+const approximatePrice = live.filter(
+  (watch) => watch.priceStatus === "approximate",
+).length;
 const withPhoto = live.filter((watch) => watch.imageUrl).length;
 const byStatus = (status: string) =>
   all.filter((watch) => watch.reviewStatus === status).length;
@@ -272,7 +275,8 @@ push(
   "",
   `- **Catalogue size:** ${all.length} watches (${byStatus("pending")} pending, ${byStatus("approved")} approved, ${byStatus("rejected")} rejected).`,
   `- **Reference confirmed** on a manufacturer or authorised-retailer page: ${confirmedRef} (${pct(confirmedRef, live.length)}). The others appear only under "Also worth a look".`,
-  `- **Price confirmed** (two independent lookups within ±5% in the same currency, each source live or under 90 days old; Perplexity first, then Muse Spark's own web search for watches with a confirmed reference. Muse was added after search 78, so earlier watches have not had it yet): ${confirmedPrice} (${pct(confirmedPrice, live.length)}). A watch without a confirmed price is never shown by the price filter; the daily recheck keeps trying.`,
+  `- **Price confirmed** (two independent lookups within ±5% in the same currency, each source live or under 90 days old; Perplexity finds, Muse Spark checks, Perplexity as fallback): ${confirmedPrice} (${pct(confirmedPrice, live.length)}). Watches with a confirmed or approximate price are placed in price ranges; watches with neither are left out of the price filter, and the daily recheck keeps trying.`,
+  `- **Approximate market price** (new or unworn listings, where no retail price could be confirmed): ${approximatePrice} (${pct(approximatePrice, live.length)}).`,
   `- **Photo URL** found: ${withPhoto} (${pct(withPhoto, live.length)}).`,
   "",
   "## Build run",
@@ -348,8 +352,8 @@ push(
       .filter((entry) => entry !== undefined)
       .map((entry) => priceRangeLabel(entry, "USD"));
     const price =
-      watch.priceStatus === "confirmed" && watch.priceAmount !== null
-        ? `${watch.priceCurrency} ${Math.round(watch.priceAmount).toLocaleString("en")}`
+      watch.priceStatus !== "unconfirmed" && watch.priceAmount !== null
+        ? `${watch.priceCurrency} ${Math.round(watch.priceAmount).toLocaleString("en")}${watch.priceStatus === "approximate" ? " (approx.)" : ""}`
         : "not confirmed";
     return `| ${index + 1} | ${esc(`${watch.brand} ${watch.model}`)} | ${esc(watch.referenceCode)} | ${watch.caseDiameterMm !== null ? `${watch.caseDiameterMm} mm` : "—"} | ${wristFitLabel(watch.caseDiameterMm)} | ${price} | ${range ? priceRangeLabel(range, "USD") : found.length > 0 ? `(${found.join(", ")})` : "—"} | ${watch.styles.map((style) => STYLE_LABELS[style]).join(", ") || "—"} | ${watch.referenceConfirmed ? "confirmed" : "not confirmed"} | ${watch.reviewStatus} |`;
   }),

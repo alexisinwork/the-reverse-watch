@@ -574,7 +574,9 @@ function WatchRow({ row }: { row: Row }) {
           <em>
             {row.priceStatus === "confirmed"
               ? "price confirmed"
-              : "price not confirmed"}
+              : row.priceStatus === "approximate"
+                ? "approximate market price (new/unworn listings)"
+                : "price not confirmed"}
           </em>
           {row.priceCheckedAt
             ? ` · checked ${row.priceCheckedAt.slice(0, 10)}`

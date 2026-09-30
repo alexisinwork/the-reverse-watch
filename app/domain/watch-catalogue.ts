@@ -171,7 +171,12 @@ export const catalogueWatchSchema = z.object({
   strapMaterial: z.string().nullable(),
   priceAmount: nullableNumber,
   priceCurrency: z.string().nullable(),
-  priceStatus: z.enum(["confirmed", "unconfirmed"]),
+  /**
+   * confirmed: two independent retail lookups agree within 5%.
+   * approximate: a market price from new or unworn listings (Chrono24 or
+   * other dealers) where no retail price could be confirmed.
+   */
+  priceStatus: z.enum(["confirmed", "approximate", "unconfirmed"]),
   priceCheckedAt: z.string().nullable(),
   priceEvidence: z.record(z.string(), z.unknown()),
   priceChange: z
@@ -201,8 +206,10 @@ export function priceIn(
   currency: string,
   fx: FxTable | null,
 ) {
+  // Both confirmed retail and approximate market prices place a watch in a
+  // price range; visitors are told every price is approximate.
   if (
-    watch.priceStatus !== "confirmed" ||
+    watch.priceStatus === "unconfirmed" ||
     watch.priceAmount === null ||
     !watch.priceCurrency
   ) {
@@ -316,8 +323,8 @@ export function catalogueToFoundWatch(
 ): FoundWatch | null {
   const sourceUrl = watch.sourceUrl;
   if (!sourceUrl) return null;
-  const confirmedPrice =
-    watch.priceStatus === "confirmed" &&
+  const knownPrice =
+    watch.priceStatus !== "unconfirmed" &&
     watch.priceAmount !== null &&
     watch.priceCurrency
       ? { amount: watch.priceAmount, currency: watch.priceCurrency }
@@ -328,13 +335,13 @@ export function catalogueToFoundWatch(
     referenceCode: watch.referenceCode,
     sourceUrl,
     imageUrl: watch.imageUrl,
-    priceNote: confirmedPrice
-      ? `${confirmedPrice.currency} ${Math.round(confirmedPrice.amount).toLocaleString("en")}`
+    priceNote: knownPrice
+      ? `${knownPrice.currency} ${Math.round(knownPrice.amount).toLocaleString("en")}`
       : null,
     rationale: watch.rationale ?? factsLine(watch),
     details: {
-      price: confirmedPrice,
-      priceConfirmed: confirmedPrice !== null,
+      price: knownPrice,
+      priceConfirmed: watch.priceStatus === "confirmed",
       waterResistanceM: watch.waterResistanceM,
       caseDiameterMm: watch.caseDiameterMm,
       movement: watch.movement,

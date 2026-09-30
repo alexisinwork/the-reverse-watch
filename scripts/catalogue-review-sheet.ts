@@ -82,7 +82,11 @@ function issuesOf(watch: CatalogueWatch) {
     );
   }
   if (!watch.sourceUrl) issues.push("No source page");
-  if (watch.priceStatus !== "confirmed") {
+  if (watch.priceStatus === "approximate") {
+    issues.push(
+      "Approximate market price (new/unworn listings), not a confirmed retail price",
+    );
+  } else if (watch.priceStatus !== "confirmed") {
     const reason = (watch.priceEvidence as { reason?: string }).reason;
     issues.push(
       `No confirmed price${reason && PRICE_REASONS[reason] ? ` (${PRICE_REASONS[reason]})` : ""}`,
@@ -202,8 +206,8 @@ rows.forEach(({ watch, issues }, index) => {
     reference: watch.referenceCode ?? "",
     refOk: watch.referenceConfirmed ? "yes" : "no",
     price:
-      watch.priceStatus === "confirmed" && watch.priceAmount !== null
-        ? `${watch.priceCurrency} ${Math.round(watch.priceAmount).toLocaleString("en")}`
+      watch.priceStatus !== "unconfirmed" && watch.priceAmount !== null
+        ? `${watch.priceCurrency} ${Math.round(watch.priceAmount).toLocaleString("en")}${watch.priceStatus === "approximate" ? " (approx.)" : ""}`
         : "not confirmed",
     range: range ? priceRangeLabel(range, "USD") : "",
     diameter: watch.caseDiameterMm ?? "",
