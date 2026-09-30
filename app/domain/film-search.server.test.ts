@@ -88,4 +88,21 @@ describe("searchFilmWatches cast fallback", () => {
     );
     expect(result).toMatchObject({ status: "no_match" });
   });
+
+  it("fails rather than reporting no watches when the cast searches all fail", async () => {
+    const base = deps(() => []);
+    await expect(
+      searchFilmWatches("Busy Film", {
+        ...base,
+        fetchImpl: async (input, init) => {
+          const body = String(init?.body ?? "");
+          // The film questions answer "nothing"; every cast question errors.
+          if (body.includes("lead actors")) {
+            return new Response("rate limited", { status: 503 });
+          }
+          return base.fetchImpl!(input, init);
+        },
+      }),
+    ).rejects.toThrow("Every cast search failed.");
+  });
 });

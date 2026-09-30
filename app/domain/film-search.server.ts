@@ -312,6 +312,11 @@ export async function searchFilmWatches(
         }),
       ),
     );
+    // Failed lookups are not "nothing found": saying no watch exists after
+    // a provider hiccup would be wrong (and would be remembered).
+    if (cast.every((result) => result.status === "rejected")) {
+      throw new Error("Every cast search failed.");
+    }
     candidates = dedupeSightings(
       cast.flatMap((result) =>
         result.status === "fulfilled" ? readFilmCandidates(result.value) : [],
