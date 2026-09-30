@@ -60,6 +60,14 @@ function visitorKey(request: Request) {
   return `admin-login:${createHash("sha256").update(address).digest("hex")}`;
 }
 
+export function headers({ loaderHeaders, actionHeaders }: Route.HeadersArgs) {
+  return {
+    ...NO_INDEX,
+    ...Object.fromEntries(actionHeaders),
+    ...Object.fromEntries(loaderHeaders),
+  };
+}
+
 export function meta(): ReturnType<Route.MetaFunction> {
   return [
     { title: "Catalogue review · The Reserve" },

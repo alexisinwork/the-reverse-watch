@@ -12,9 +12,16 @@ import {
 } from "./ai-watch-finder.server";
 import { classifySource, pageMentionsReference } from "./ai-watch-guardrails";
 import { convert, type FxTable } from "./fx";
+import { musePriceSearch } from "./muse-price-search.server";
 
 export const PRICE_TOLERANCE = 0.05;
 export const PRICE_MAX_AGE_DAYS = 90;
+
+/**
+ * Only prices in the quiz's budget currencies count: a regional price in
+ * another market (Brazil, Japan...) converted by exchange rate misleads.
+ */
+const PRICE_CURRENCIES = new Set(["USD", "EUR", "GBP", "CHF"]);
 
 export type PriceLookup = {
   amount: number;
@@ -146,7 +153,7 @@ export type LookupOptions = {
 // Grey-market dealers, marketplaces and pre-owned sellers: their prices
 // are discounts or asks, not the retail price, so they never count.
 const NON_RETAIL_HOSTS =
-  /(^|\.)(chrono24\.[a-z.]+|watchmaxx\.com|jomashop\.com|watchfinder\.[a-z.]+|ebay\.[a-z.]+|amazon\.[a-z.]+|timeshop24\.[a-z.]+|uhrzeit\.org|watchspies\.com|crownandcaliber\.com|bobswatches\.com|thewatchbox\.com|watchbox\.com|1stdibs\.com|walmart\.com|aliexpress\.com|ashford\.com|prestigetime\.com|authenticwatches\.com|worldofwatches\.com|creationwatches\.com|certifiedwatchstore\.com|reddit\.com|watchuseek\.com|watchcharts\.com)$/;
+  /(^|\.)(chrono24\.[a-z.]+|watchmaxx\.com|jomashop\.com|watchfinder\.[a-z.]+|ebay\.[a-z.]+|amazon\.[a-z.]+|timeshop24\.[a-z.]+|uhrzeit\.org|watchspies\.com|crownandcaliber\.com|bobswatches\.com|thewatchbox\.com|watchbox\.com|1stdibs\.com|walmart\.com|aliexpress\.com|ashford\.com|prestigetime\.com|authenticwatches\.com|worldofwatches\.com|creationwatches\.com|certifiedwatchstore\.com|trendyol\.com|hepsiburada\.com|allegro\.[a-z.]+|idealo\.[a-z.]+|preissuchmaschine\.de|reddit\.com|watchuseek\.com|watchcharts\.com)$/;
 
 export function isRetailSource(url: string) {
   try {
@@ -204,6 +211,7 @@ function readLookupEntry(entry: unknown) {
   );
   if (
     amount === null ||
+    (currency !== null && !PRICE_CURRENCIES.has(currency)) ||
     amount < 20 ||
     amount > 5_000_000 ||
     !currency ||
@@ -369,11 +377,11 @@ function preferManufacturer(brand: string) {
  * source from the second, independent lookup agree within 5% in the same
  * currency, and both are live pages or dated within 90 days.
  */
-export async function doublePriceCheck(
+async function perplexityDoubleCheck(
   watch: WatchIdentity,
   deps: Deps,
   fx: FxTable | null,
-  hintUrl: string | null = null,
+  hintUrl: string | null,
 ): Promise<PriceCheck> {
   const checkedAt = new Date(deps.now()).toISOString();
   const unconfirmed = (
@@ -448,4 +456,147 @@ export async function doublePriceCheck(
     }
   }
   return unconfirmed("lookups_disagree", lookups, imageUrls);
+}
+
+/** Muse Spark's reported prices, kept only for live retail pages showing the price and reference. */
+async function museLookups(
+  watch: WatchIdentity,
+  deps: Deps,
+  options: {
+    avoidUrls: string[];
+    currency: string | null;
+    hintUrl: string | null;
+  },
+) {
+  const reported = await musePriceSearch(watch, deps, options).catch(() => []);
+  const avoid = new Set(options.avoidUrls.map(urlKey));
+  const seen = new Set<string>();
+  const checked = await Promise.all(
+    reported
+      .filter((price) => {
+        const key = urlKey(price.sourceUrl);
+        if (
+          !PRICE_CURRENCIES.has(price.currency) ||
+          !isRetailSource(price.sourceUrl) ||
+          avoid.has(key) ||
+          seen.has(key)
+        )
+          return false;
+        seen.add(key);
+        return options.currency === null || price.currency === options.currency;
+      })
+      .slice(0, MAX_SOURCES)
+      .map(async (price): Promise<PriceLookup> => ({
+        ...price,
+        sourceDate: null,
+        live: await pageIsLive(
+          price.sourceUrl,
+          price.amount,
+          watch.referenceCode,
+          deps.fetchImpl,
+        ),
+        fresh: false,
+      })),
+  );
+  return { reported: checked, live: checked.filter((lookup) => lookup.live) };
+}
+
+function agreeingPair(
+  firsts: PriceLookup[],
+  seconds: PriceLookup[],
+  fx: FxTable | null,
+) {
+  for (const a of firsts) {
+    for (const b of seconds) {
+      if (
+        a.currency !== b.currency ||
+        urlKey(a.sourceUrl) === urlKey(b.sourceUrl)
+      )
+        continue;
+      const difference = priceDifference(a, b, fx);
+      if (difference !== null && difference <= PRICE_TOLERANCE)
+        return { a, b, difference };
+    }
+  }
+  return null;
+}
+
+/**
+ * The Perplexity double check, then (when museFallback is on and it could
+ * not confirm) Muse Spark searching the web for this watch's price itself.
+ * A Muse price is one more independent lookup: it counts only on a live
+ * retail page showing the price and the reference, and only when it agrees
+ * within 5% with another lookup - a Perplexity source or a second Muse
+ * search on a different page.
+ */
+export async function doublePriceCheck(
+  watch: WatchIdentity,
+  deps: Deps,
+  fx: FxTable | null,
+  hintUrl: string | null = null,
+  { museFallback = false }: { museFallback?: boolean } = {},
+): Promise<PriceCheck> {
+  const check = await perplexityDoubleCheck(watch, deps, fx, hintUrl);
+  if (check.status === "confirmed" || !museFallback || !deps.config.museSpark)
+    return check;
+
+  const earlier = (
+    (check.evidence.lookups as PriceLookup[][] | undefined) ?? []
+  ).flat();
+  const earlierUsable = earlier
+    .filter(usable)
+    .sort(preferManufacturer(watch.brand));
+  const first = await museLookups(watch, deps, {
+    avoidUrls: [],
+    currency: null,
+    hintUrl,
+  });
+  const done = (
+    pair: { a: PriceLookup; b: PriceLookup; difference: number },
+    muse: PriceLookup[][],
+  ): PriceCheck => ({
+    status: "confirmed",
+    amount: pair.a.amount,
+    currency: pair.a.currency,
+    evidence: {
+      method: "perplexity_and_muse_web_search",
+      checkedAt: check.evidence.checkedAt,
+      difference: pair.difference,
+      agreed: [pair.a, pair.b],
+      lookups: check.evidence.lookups,
+      museLookups: muse,
+    },
+    imageUrls: check.imageUrls,
+  });
+  const withEarlier = agreeingPair(earlierUsable, first.live, fx);
+  if (withEarlier) return done(withEarlier, [first.reported]);
+  if (first.live.length === 0) {
+    return {
+      ...check,
+      evidence: {
+        ...check.evidence,
+        museLookups: [first.reported],
+        museReason: "no_live_price",
+      },
+    };
+  }
+  const currency = first.live[0]!.currency;
+  const second = await museLookups(watch, deps, {
+    avoidUrls: [...first.reported, ...earlier].map(
+      (lookup) => lookup.sourceUrl,
+    ),
+    currency,
+    hintUrl: null,
+  });
+  const pair = agreeingPair(first.live, second.live, fx);
+  if (pair) return done(pair, [first.reported, second.reported]);
+  return {
+    ...check,
+    evidence: {
+      ...check.evidence,
+      museLookups: [first.reported, second.reported],
+      museReason:
+        second.live.length === 0 ? "second_muse_empty" : "muse_disagree",
+    },
+  };
 }
