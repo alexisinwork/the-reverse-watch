@@ -60,10 +60,15 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
      added to the catalogue as pending.
    - Results already found for identical answers are served from the stored
      results (`domain/ai-watch-store.server.ts`).
-4. **Show** (`components/watch-results.tsx`): main picks, "Also worth a look"
+4. **Live steps:** while a search runs, the server sends each step and
+   each watch as soon as it is confirmed (`domain/progress-feed.ts`: a chain
+   of promises React Router streams to the page). The page shows them in
+   `components/watch-results.tsx`, so visitors see progress instead of a
+   30-second wait.
+5. **Show** (`components/watch-results.tsx`): main picks, "Also worth a look"
    (reference not confirmed), "Not yet reviewed" badges, prices converted
    with ECB rates (`domain/fx.ts`).
-5. **Optional email** (`domain/quiz-email.server.ts`): Beehiiv newsletter and
+6. **Optional email** (`domain/quiz-email.server.ts`): Beehiiv newsletter and
    Resend dossier, only with explicit opt-in.
 
 Only search constraints ever reach Muse Spark or Perplexity: never email,
@@ -94,7 +99,7 @@ cookies, IP or anything identifying.
 | File | What it does |
 |---|---|
 | `domain/ai-providers.server.ts` | All provider calls: Muse Spark chat, Muse Spark web research (built-in `web_search`), Perplexity Sonar and Search API, and the `WEB_SEARCH_PROVIDER` switch (`webResearchJson`, `findPages`). |
-| `domain/source-pages.server.ts` | Opens maker and retailer pages: is the reference on the page, which photo does it declare. |
+| `domain/source-pages.server.ts` | Opens maker and retailer pages: is the reference on the page, which photo does it declare. `safeHttpUrl` and `publicFetch` make sure the server only ever fetches public web addresses, even through redirects (URLs come from AI output). |
 | `domain/ai-watch-guardrails.ts` | Hard rules in code: authorised sources, reference matching, water resistance, diameter, price range, movement, nickel. |
 | `domain/film-search.server.ts` | The film/people search behind `/watches/find`. |
 | `domain/quiz-live-search.server.ts` | The quiz's live search. |
@@ -116,6 +121,19 @@ a fake fetch, so no test ever calls a real provider.
 | Muse Spark model or search provider | env vars `MUSE_SPARK_FAST_MODEL`, `MUSE_SPARK_MODEL`, `WEB_SEARCH_PROVIDER` |
 | Admin page | `routes/admin-catalogue.tsx`, login in `domain/admin-auth.server.ts` |
 | Colours and fonts | `app/styles/tokens.css` |
+
+## Security in one list
+
+- Secrets live only in `.env` (never committed) and Vercel's environment.
+- Only watch-search constraints are sent to the AI providers.
+- `/quiz` needs the signed subscriber cookie; `/admin/catalogue` needs
+  `ADMIN_PASSWORD` (cookie signed with `SESSION_SECRET`, HTTPS-only,
+  same-site strict); the cron endpoint needs `CRON_SECRET`.
+- Paid searches are rate-limited per visitor, shared across server
+  instances through Upstash (`consumeSharedRateLimit`).
+- Database: every table has row-level security; the server writes through
+  service-role functions only.
+- Security headers (CSP, HSTS, frame denial) are set in `app/entry.server.tsx`.
 
 ## Everyday commands
 
