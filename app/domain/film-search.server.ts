@@ -240,6 +240,18 @@ function withTimeout<T>(
   ]);
 }
 
+const STAGE_ONE_MS = 18_000;
+
+/** Rejects after `ms`, so Promise.allSettled keeps only answers in time. */
+function withDeadline<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error(`No answer within ${ms} ms.`)), ms),
+    ),
+  ]);
+}
+
 export async function searchFilmWatches(
   query: string,
   overrides: Partial<Deps> = {},
@@ -260,12 +272,17 @@ export async function searchFilmWatches(
   deps.report?.({
     text: `Searching films, series, interviews and watch-spotting sites for "${subject}"…`,
   });
+  // Each question gets 18 s; whatever has answered by then is used, so a
+  // slow search can never push the page past its time limit.
   const settled = await Promise.allSettled(
     filmPrompts(subject, kind).map((prompt) =>
-      webResearchJson(prompt, filmCandidateSchema, deps, {
-        maxToolCalls: 4,
-        contextSize: "medium",
-      }),
+      withDeadline(
+        webResearchJson(prompt, filmCandidateSchema, deps, {
+          maxToolCalls: 4,
+          contextSize: "medium",
+        }),
+        STAGE_ONE_MS,
+      ),
     ),
   );
   if (settled.every((result) => result.status === "rejected")) {
@@ -364,7 +381,7 @@ export async function searchFilmWatches(
           ].join("\n"),
           "reserve-film-rank-v1",
           deps,
-          15_000,
+          10_000,
         )
           .then((payload) => rankSchema.parse(payload))
           .catch((error: unknown) => {
