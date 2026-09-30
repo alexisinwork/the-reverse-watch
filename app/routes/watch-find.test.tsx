@@ -6,8 +6,8 @@ const store = vi.hoisted(() => ({ searchWithStore: vi.fn() }));
 const finder = vi.hoisted(() => ({ searchFilmWatches: vi.fn() }));
 
 vi.mock("../domain/ai-watch-store.server", () => store);
-vi.mock("../domain/ai-watch-finder.server", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("../domain/ai-watch-finder.server")>()),
+vi.mock("../domain/film-search.server", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../domain/film-search.server")>()),
   searchFilmWatches: finder.searchFilmWatches,
 }));
 

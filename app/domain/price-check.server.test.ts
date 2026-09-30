@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import type { Deps } from "./ai-watch-finder.server";
+import type { Deps } from "./ai-providers.server";
 import {
   doublePriceCheck,
   isFreshDate,
@@ -43,6 +43,7 @@ function deps(responses: {
     config: {
       museSpark: null,
       perplexity: { apiKey: "test", model: "sonar" },
+      webSearch: "perplexity",
     },
     fetchImpl: async (input: string | URL | Request) => {
       const url = String(input);

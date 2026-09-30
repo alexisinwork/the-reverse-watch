@@ -1,14 +1,8 @@
 import { vi } from "vitest";
 
-import {
-  collectUntilDeadline,
-  quizCacheInput,
-  quizConstraintLines,
-  runSafely,
-  searchFilmWatches,
-  searchQuizWatches,
-  type Deps,
-} from "./ai-watch-finder.server";
+import { collectUntilDeadline, quizCacheInput, quizConstraintLines, searchQuizWatches } from "./quiz-live-search.server";
+import { runSafely, type Deps } from "./ai-providers.server";
+import { searchFilmWatches } from "./film-search.server";
 import type { FxTable } from "./fx";
 import type { ProfileV4 } from "./questionnaire-v4";
 
@@ -27,6 +21,7 @@ const profile: ProfileV4 = {
 const config: Deps["config"] = {
   museSpark: { apiKey: "muse", baseUrl: "https://muse.test/v1/", fastModel: "fast" },
   perplexity: { apiKey: "pplx", model: "sonar" },
+  webSearch: "perplexity",
 };
 
 const fx: FxTable = { date: "2026-09-29", perEur: { EUR: 1, USD: 1.1355, GBP: 0.85718 } };
@@ -221,7 +216,7 @@ describe("searchQuizWatches", () => {
 
   it("is unavailable without both providers configured", async () => {
     expect(
-      await searchQuizWatches(profile, { ...deps({}), config: { museSpark: null, perplexity: null } }),
+      await searchQuizWatches(profile, { ...deps({}), config: { museSpark: null, perplexity: null, webSearch: "perplexity" } }),
     ).toEqual({ status: "unavailable" });
   });
 });

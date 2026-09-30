@@ -1,16 +1,16 @@
 // Live end-to-end timing of the AI search engine against real providers.
 //   npx tsx --env-file=.env scripts/test-ai-watch-finder.ts
-import {
-  searchFilmWatches,
-  searchQuizWatches,
-} from "../app/domain/ai-watch-finder.server";
+import { searchFilmWatches } from "../app/domain/film-search.server";
+import { searchQuizWatches } from "../app/domain/quiz-live-search.server";
 import type { AiSearchOutcome } from "../app/domain/ai-watch-types";
 import type { ProfileV4 } from "../app/domain/questionnaire-v4";
 
 async function time(label: string, run: () => Promise<AiSearchOutcome>) {
   const started = performance.now();
   const result = await run();
-  console.log(`\n=== ${label}: ${((performance.now() - started) / 1000).toFixed(1)} s, ${result.status} ===`);
+  console.log(
+    `\n=== ${label}: ${((performance.now() - started) / 1000).toFixed(1)} s, ${result.status} ===`,
+  );
   if (result.status === "no_match") console.log(result.summary);
   if (result.status === "found") {
     console.log(result.summary);
@@ -35,7 +35,9 @@ const office: ProfileV4 = {
   allergyConstraint: "none",
 };
 
-await time("quiz: EUR 3k-4k, office, 100 m, automatic", () => searchQuizWatches(office));
+await time("quiz: EUR 3k-4k, office, 100 m, automatic", () =>
+  searchQuizWatches(office),
+);
 await time("quiz: USD 1k-2k, nickel allergy", () =>
   searchQuizWatches({
     ...office,

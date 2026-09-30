@@ -5,10 +5,8 @@
 //   node --env-file=.env --import tsx scripts/retest-film-search.ts
 import { mkdirSync, writeFileSync } from "node:fs";
 
-import {
-  runSafely,
-  searchFilmWatches,
-} from "../app/domain/ai-watch-finder.server";
+import { runSafely } from "../app/domain/ai-providers.server";
+import { searchFilmWatches } from "../app/domain/film-search.server";
 
 const SUBJECTS: { kind: string; query: string }[] = [
   { kind: "film", query: "Heat" },

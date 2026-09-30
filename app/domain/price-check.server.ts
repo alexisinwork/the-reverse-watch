@@ -1,15 +1,17 @@
 /**
  * Price confirmation for the catalogue. A price is stored only when two
- * independent Perplexity lookups, on two different source pages, agree
+ * independent web lookups (Perplexity or Muse Spark, per WEB_SEARCH_PROVIDER),
+ * on two different source pages, agree
  * within 5% in the same currency, and each source is either under 90 days
  * old or a live page that shows the price and the reference right now.
  */
 import {
+  museWebResearch,
   parseModelJson,
   perplexityPost,
-  safeHttpUrl,
   type Deps,
-} from "./ai-watch-finder.server";
+} from "./ai-providers.server";
+import { safeHttpUrl } from "./source-pages.server";
 import { classifySource, pageMentionsReference } from "./ai-watch-guardrails";
 import { convert, type FxTable } from "./fx";
 import { musePriceSearch } from "./muse-price-search.server";
@@ -30,6 +32,8 @@ export type PriceLookup = {
   sourceDate: string | null;
   /** The page loads now and shows both the amount and the reference. */
   live: boolean;
+  /** Who saw it live: our own fetch, or (only when we are blocked) Muse. */
+  liveVia?: "fetch" | "muse";
   /** The source is dated within the last 90 days. */
   fresh: boolean;
 };
@@ -108,12 +112,19 @@ function urlKey(url: string) {
   }
 }
 
-async function pageIsLive(
+type PageCheck = "shows" | "missing" | "blocked";
+
+/**
+ * Loads the page ourselves: "shows" when it carries both the amount and the
+ * reference, "missing" when it loads without them, "blocked" when it will
+ * not load for our server (bot walls, geo-blocks, errors).
+ */
+async function checkPage(
   url: string,
   amount: number,
   reference: string | null,
   fetchImpl: typeof fetch,
-) {
+): Promise<PageCheck> {
   try {
     const response = await fetchImpl(url, {
       headers: {
@@ -126,18 +137,38 @@ async function pageIsLive(
     });
     if (!response.ok) {
       await response.body?.cancel();
-      return false;
+      return "blocked";
     }
     const html = (await response.text()).slice(0, 1_500_000);
     // The price must sit on a page about this exact reference.
-    return (
-      pageShowsPrice(html, amount) &&
+    return pageShowsPrice(html, amount) &&
       (reference === null ||
         pageMentionsReference(reference, html, response.url || url))
-    );
+      ? "shows"
+      : "missing";
   } catch {
-    return false;
+    return "blocked";
   }
+}
+
+/**
+ * Owner's rule: a page is live when our own fetch shows the price and the
+ * reference. Only when our server is blocked does a page that Muse Spark's
+ * web search opened in this same lookup count instead.
+ */
+async function liveCheck(
+  url: string,
+  amount: number,
+  reference: string | null,
+  fetchImpl: typeof fetch,
+  openedByMuse: Set<string>,
+): Promise<Pick<PriceLookup, "live" | "liveVia">> {
+  const result = await checkPage(url, amount, reference, fetchImpl);
+  if (result === "shows") return { live: true, liveVia: "fetch" };
+  if (result === "blocked" && openedByMuse.has(urlKey(url))) {
+    return { live: true, liveVia: "muse" };
+  }
+  return { live: false };
 }
 
 export type LookupOptions = {
@@ -232,7 +263,27 @@ export async function lookupPrices(
   deps: Deps,
   options: LookupOptions,
 ): Promise<{ lookups: PriceLookup[]; imageUrls: string[] }> {
-  const body = (await perplexityPost(
+  const openedByMuse = new Set<string>();
+  let body: SonarBody;
+  if (deps.config.webSearch === "muse") {
+    const research = await museWebResearch(lookupPrompt(watch, options), deps, {
+      schema: priceSchema,
+      maxToolCalls: options.contextSize === "low" ? 5 : 8,
+    });
+    for (const page of research.openedPages) openedByMuse.add(urlKey(page));
+    body = { choices: [{ message: { content: research.text } }] };
+  } else {
+    body = await sonarPriceLookup(watch, deps, options);
+  }
+  return readPriceAnswer(watch, deps, options, body, openedByMuse);
+}
+
+async function sonarPriceLookup(
+  watch: WatchIdentity,
+  deps: Deps,
+  options: LookupOptions,
+): Promise<SonarBody> {
+  return (await perplexityPost(
     "chat/completions",
     {
       model: deps.config.perplexity!.model,
@@ -248,7 +299,15 @@ export async function lookupPrices(
     deps,
     30_000,
   )) as SonarBody;
+}
 
+async function readPriceAnswer(
+  watch: WatchIdentity,
+  deps: Deps,
+  options: LookupOptions,
+  body: SonarBody,
+  openedByMuse: Set<string>,
+): Promise<{ lookups: PriceLookup[]; imageUrls: string[] }> {
   // Product photos come back with the first lookup; manufacturer and
   // authorised-retailer pages first.
   const imageUrls = (body.images ?? [])
@@ -307,12 +366,13 @@ export async function lookupPrices(
       return {
         ...entry,
         sourceDate: dates[0] ?? null,
-        live: await pageIsLive(
+        ...(await liveCheck(
           entry.sourceUrl,
           entry.amount,
           watch.referenceCode,
           deps.fetchImpl,
-        ),
+          openedByMuse,
+        )),
         fresh: dates.some((date) => isFreshDate(date, now)),
       };
     }),
@@ -489,12 +549,13 @@ async function museLookups(
       .map(async (price): Promise<PriceLookup> => ({
         ...price,
         sourceDate: null,
-        live: await pageIsLive(
+        ...(await liveCheck(
           price.sourceUrl,
           price.amount,
           watch.referenceCode,
           deps.fetchImpl,
-        ),
+          new Set(),
+        )),
         fresh: false,
       })),
   );
@@ -534,10 +595,23 @@ export async function doublePriceCheck(
   deps: Deps,
   fx: FxTable | null,
   hintUrl: string | null = null,
-  { museFallback = false }: { museFallback?: boolean } = {},
+  {
+    museFallback = false,
+    previous,
+  }: {
+    museFallback?: boolean;
+    /** An earlier, unconfirmed Perplexity check to reuse instead of repeating it. */
+    previous?: PriceCheck;
+  } = {},
 ): Promise<PriceCheck> {
-  const check = await perplexityDoubleCheck(watch, deps, fx, hintUrl);
-  if (check.status === "confirmed" || !museFallback || !deps.config.museSpark)
+  const check =
+    previous ?? (await perplexityDoubleCheck(watch, deps, fx, hintUrl));
+  if (
+    check.status === "confirmed" ||
+    !museFallback ||
+    !deps.config.museSpark ||
+    deps.config.webSearch === "muse"
+  )
     return check;
 
   const earlier = (

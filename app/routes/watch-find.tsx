@@ -4,10 +4,7 @@ import { Form, Link, useLoaderData, useNavigation } from "react-router";
 
 import type { Route } from "./+types/watch-find";
 import { WatchResults } from "../components/watch-results";
-import {
-  normalizeFilmQuery,
-  searchFilmWatches,
-} from "../domain/ai-watch-finder.server";
+import { normalizeFilmQuery, searchFilmWatches } from "../domain/film-search.server";
 import { searchWithStore } from "../domain/ai-watch-store.server";
 import { parseDiscoveryHandoff } from "../domain/discovery-selection";
 import { consumeRateLimit, type RateLimitPolicy } from "../domain/rate-limit.server";

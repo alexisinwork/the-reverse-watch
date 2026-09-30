@@ -5,7 +5,7 @@
 import {
   normalizeFilmQuery,
   searchFilmWatches,
-} from "../app/domain/ai-watch-finder.server";
+} from "../app/domain/film-search.server";
 import { searchWithStore } from "../app/domain/ai-watch-store.server";
 
 const SUBJECTS = [

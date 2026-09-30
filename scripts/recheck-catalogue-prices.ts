@@ -2,7 +2,7 @@
 // the daily cron uses. By default: every price older than 90 days or never
 // checked. --unconfirmed: every watch whose price is not yet confirmed.
 //   node --env-file=.env --import tsx scripts/recheck-catalogue-prices.ts [--unconfirmed] [--concurrency 4]
-import { defaultDeps } from "../app/domain/ai-watch-finder.server";
+import { defaultDeps, searchReady } from "../app/domain/ai-providers.server";
 import { recheckPrice } from "../app/domain/catalogue-build.server";
 import { loadFxTable } from "../app/domain/fx.server";
 import { PRICE_MAX_AGE_DAYS } from "../app/domain/price-check.server";
@@ -17,7 +17,7 @@ const index = process.argv.indexOf("--concurrency");
 const concurrency = index >= 0 ? Number(process.argv[index + 1]) || 4 : 4;
 const client = catalogueClient();
 const deps = defaultDeps();
-if (!client || !deps.config.perplexity) {
+if (!client || !searchReady(deps.config)) {
   throw new Error("Supabase service key and PERPLEXITY_API_KEY are required.");
 }
 const fx = await loadFxTable();

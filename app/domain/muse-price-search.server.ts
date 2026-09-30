@@ -5,12 +5,8 @@
  * the text around prices). Only the watch's brand, model and reference are
  * ever sent; nothing about any visitor exists here.
  */
-import {
-  safeHttpUrl,
-  searchWeb,
-  parseModelJson,
-  type Deps,
-} from "./ai-watch-finder.server";
+import { safeHttpUrl } from "./source-pages.server";
+import { searchWeb, parseModelJson, type Deps } from "./ai-providers.server";
 
 const TOOLS = [
   {

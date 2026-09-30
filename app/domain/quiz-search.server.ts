@@ -4,7 +4,7 @@
  * confirmed fits, the live Muse Spark -> Perplexity search runs and what it
  * finds is added to the catalogue as pending.
  */
-import { quizCacheInput, searchQuizWatches } from "./ai-watch-finder.server";
+import { quizCacheInput, searchQuizWatches } from "./quiz-live-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import { searchWithStore } from "./ai-watch-store.server";
 import type { AiSearchView, FoundWatch } from "./ai-watch-types";

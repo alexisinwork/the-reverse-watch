@@ -7,14 +7,15 @@
  */
 import {
   inspectSourcePage,
-  museJson,
-  parseModelJson,
-  perplexityPost,
   safeHttpUrl,
-  searchWeb,
   verifyImageUrl,
+} from "./source-pages.server";
+import {
+  findPages,
+  museJson,
+  webResearchJson,
   type Deps,
-} from "./ai-watch-finder.server";
+} from "./ai-providers.server";
 import {
   classifySource,
   normalizeMovement,
@@ -45,7 +46,7 @@ export type BuildCell = {
 export const BUILD_RUNS = 10;
 
 /** Each run looks from a different angle so the ten runs do not repeat. */
-export const RUN_FOCUS: { provider: "muse" | "perplexity"; text: string }[] = [
+export const RUN_FOCUS: { provider: "muse" | "web"; text: string }[] = [
   { provider: "muse", text: "Focus on established Swiss brands." },
   { provider: "muse", text: "Focus on Japanese brands." },
   { provider: "muse", text: "Focus on German and Austrian brands." },
@@ -58,7 +59,7 @@ export const RUN_FOCUS: { provider: "muse" | "perplexity"; text: string }[] = [
     provider: "muse",
     text: "Focus on French, Italian and other European brands.",
   },
-  { provider: "perplexity", text: "Favour releases from the last two years." },
+  { provider: "web", text: "Favour releases from the last two years." },
   {
     provider: "muse",
     text: "Focus on the best-known, most widely recommended classics.",
@@ -68,7 +69,7 @@ export const RUN_FOCUS: { provider: "muse" | "perplexity"; text: string }[] = [
     text: "Focus on lesser-known heritage brands and overlooked models.",
   },
   {
-    provider: "perplexity",
+    provider: "web",
     text: "Favour models that authorised retailers currently stock and recommend.",
   },
 ];
@@ -197,27 +198,10 @@ export async function proposeForCell(
       ? (payload.candidates as unknown[])
       : [];
   }
-  const body = (await perplexityPost(
-    "chat/completions",
-    {
-      model: deps.config.perplexity!.model,
-      max_tokens: 3_000,
-      web_search_options: { search_context_size: "low" },
-      response_format: {
-        type: "json_schema",
-        json_schema: { schema: buildCandidateSchema },
-      },
-      messages: [
-        { role: "system", content: BUILD_SYSTEM },
-        { role: "user", content: prompt },
-      ],
-    },
-    deps,
-    40_000,
-  )) as { choices?: { message?: { content?: unknown } }[] };
-  const content = body.choices?.[0]?.message?.content;
-  if (typeof content !== "string") return [];
-  const payload = parseModelJson(content) as { candidates?: unknown };
+  const payload = (await webResearchJson(prompt, buildCandidateSchema, deps, {
+    system: BUILD_SYSTEM,
+    maxToolCalls: 6,
+  })) as { candidates?: unknown };
   return Array.isArray(payload.candidates)
     ? (payload.candidates as unknown[])
     : [];
@@ -373,7 +357,7 @@ export async function verifyCandidate(
   let referenceConfirmed = false;
   let pageImage: string | null = null;
 
-  const hits = await searchWeb(
+  const hits = await findPages(
     [`${candidate.brand} ${candidate.referenceCode ?? candidate.model}`],
     deps,
   ).catch(() => []);

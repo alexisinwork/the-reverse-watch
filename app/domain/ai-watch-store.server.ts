@@ -2,13 +2,9 @@ import { createHash } from "node:crypto";
 
 import { z } from "zod";
 
-import {
-  runSafely,
-  safeHttpUrl,
-  type AiSearchOutcome,
-  type AiSearchView,
-  type FoundWatch,
-} from "./ai-watch-finder.server";
+import { runSafely } from "./ai-providers.server";
+import { safeHttpUrl } from "./source-pages.server";
+import { type AiSearchOutcome, type AiSearchView, type FoundWatch } from "./ai-watch-types";
 
 export type AiSearchKind = "quiz" | "film" | "find";
 

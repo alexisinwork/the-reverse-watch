@@ -7,7 +7,7 @@
 //   node --env-file=.env --import tsx scripts/build-catalogue.ts [--runs 10] [--concurrency 6] [--limit 5] [--budget 30]
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 
-import { defaultDeps } from "../app/domain/ai-watch-finder.server";
+import { defaultDeps, searchReady } from "../app/domain/ai-providers.server";
 import {
   BUILD_RUNS,
   candidateIdentity,
@@ -159,19 +159,20 @@ const client = catalogueClient({ fetchImpl: fetch });
 if (!client)
   throw new Error("SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY are required.");
 const baseDeps = defaultDeps({ fetchImpl: limitedFetch });
-if (!baseDeps.config.museSpark || !baseDeps.config.perplexity) {
-  throw new Error("MUSE_SPARK_API_KEY and PERPLEXITY_API_KEY are required.");
+if (!searchReady(baseDeps.config)) {
+  throw new Error(
+    "MUSE_SPARK_API_KEY is required, and PERPLEXITY_API_KEY unless WEB_SEARCH_PROVIDER=muse.",
+  );
 }
+const muse = baseDeps.config.museSpark!;
 // Latency does not matter here, knowledge does: use the full model.
 const deps = {
   ...baseDeps,
   config: {
     ...baseDeps.config,
     museSpark: {
-      ...baseDeps.config.museSpark,
-      fastModel:
-        process.env.MUSE_SPARK_MODEL?.trim() ||
-        baseDeps.config.museSpark.fastModel,
+      ...muse,
+      fastModel: process.env.MUSE_SPARK_MODEL?.trim() || muse.fastModel,
     },
   },
 };

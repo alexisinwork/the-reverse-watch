@@ -1,7 +1,7 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 
 import type { Route } from "./+types/internal-catalogue-recheck-prices";
-import { defaultDeps } from "../domain/ai-watch-finder.server";
+import { defaultDeps, searchReady } from "../domain/ai-providers.server";
 import { recheckPrice } from "../domain/catalogue-build.server";
 import { loadFxTable } from "../domain/fx.server";
 import { PRICE_MAX_AGE_DAYS } from "../domain/price-check.server";
@@ -37,7 +37,7 @@ export async function loader({ request }: Route.LoaderArgs) {
   }
   const client = catalogueClient();
   const deps = defaultDeps();
-  if (!client || !deps.config.perplexity)
+  if (!client || !searchReady(deps.config))
     return Response.json({ ok: false }, { status: 503 });
 
   const before = new Date(Date.now() - PRICE_MAX_AGE_DAYS * 86_400_000);
