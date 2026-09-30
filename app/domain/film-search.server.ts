@@ -43,6 +43,7 @@ const filmCandidateSchema = {
           context: { type: "string" },
           evidenceUrl: { type: ["string", "null"] },
           manufacturerUrl: { type: ["string", "null"] },
+          imageUrl: { type: ["string", "null"] },
         },
         required: ["brand", "model", "context"],
       },
@@ -61,6 +62,8 @@ type FilmCandidate = {
   context: string;
   evidenceUrl: string;
   manufacturerUrl: string | null;
+  /** A photo URL the search reported; checked before it is used. */
+  imageUrl: string | null;
 };
 
 // Forums and social posts are not documentation.
@@ -92,16 +95,27 @@ function readFilmCandidates(payload: unknown): FilmCandidate[] {
         context: clean(item.context) ?? "",
         evidenceUrl,
         manufacturerUrl: safeHttpUrl(clean(item.manufacturerUrl)),
+        imageUrl: safeHttpUrl(clean(item.imageUrl)),
       },
     ];
   });
 }
 
+/** "Severance (TV series), season 2" and "Severance" are the same work. */
+function workKey(work: string | null) {
+  return (work ?? "")
+    .toLowerCase()
+    .replace(/\([^)]*\)/g, "")
+    .replace(/\bseason\s*\d+\b|\bs\d+\b/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+/** One sighting per watch per work, whoever the search named as wearer. */
 function dedupeSightings(items: FilmCandidate[]) {
   const seen = new Set<string>();
   return items.filter((item) => {
     const key =
-      `${item.brand}|${item.referenceCode ?? item.model}|${item.person ?? ""}`
+      `${item.brand}|${item.referenceCode ?? item.model}|${workKey(item.work)}`
         .toLowerCase()
         .replace(/[^a-z0-9|]/g, "");
     if (seen.has(key)) return false;
@@ -120,7 +134,7 @@ export function normalizeFilmQuery(query: string) {
 function filmPrompts(subject: string) {
   const intro = `The subject may be a film, TV series, actor, fictional character, or public figure: "${subject}".`;
   const ask =
-    "For each watch give the brand, model, exact reference number if documented, who wore it (person), the film or series title (work) if any, the year, one sentence of context (scene or occasion), a URL of a page that documents the sighting (evidenceUrl), and the official manufacturer product page URL if one exists (manufacturerUrl). Use null for anything you cannot confirm. Never invent a sighting.";
+    "For each watch give the brand, model, exact reference number if documented, who wore it (person), the film or series title (work) if any, the year, one sentence of context (scene or occasion), a URL of a page that documents the sighting (evidenceUrl), the official manufacturer product page URL if one exists (manufacturerUrl), and the URL of a photo of that watch model from a page you found (imageUrl). Use null for anything you cannot confirm. Never invent a sighting.";
   return [
     `${intro} Which specific wristwatches are worn on screen in it, or by this person or character on screen? ${ask}`,
     `${intro} Which specific wristwatches has this person worn in public, owned, or promoted as a brand ambassador? If the subject is a film or series, which watches are tied to it through official partnerships or its cast? ${ask}`,
@@ -185,7 +199,7 @@ export async function searchFilmWatches(
   // Stage 1: three live angles at once.
   const settled = await Promise.allSettled(
     filmPrompts(subject).map((prompt) =>
-      webResearchJson(prompt, filmCandidateSchema, deps, { maxToolCalls: 5 }),
+      webResearchJson(prompt, filmCandidateSchema, deps, { maxToolCalls: 4 }),
     ),
   );
   if (settled.every((result) => result.status === "rejected")) {
@@ -209,12 +223,17 @@ export async function searchFilmWatches(
   const imageFor = (candidate: FilmCandidate) => {
     const key = `${candidate.manufacturerUrl}|${candidate.evidenceUrl}`;
     if (!pageImages.has(key)) {
+      // The photo the search reported first, then the pages' own photos.
       pageImages.set(
         key,
-        firstImage(
-          [candidate.manufacturerUrl, candidate.evidenceUrl],
-          candidate.referenceCode,
-          deps,
+        verifyImageUrl(candidate.imageUrl, deps.fetchImpl).then(
+          (reported) =>
+            reported ??
+            firstImage(
+              [candidate.manufacturerUrl, candidate.evidenceUrl],
+              candidate.referenceCode,
+              deps,
+            ),
         ),
       );
     }

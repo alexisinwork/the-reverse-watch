@@ -190,6 +190,8 @@ type QuizCandidate = {
     strap: string | null;
   };
   sourceHint: string | null;
+  /** A photo URL the search reported; checked before it is used. */
+  imageHint: string | null;
   note: string | null;
 };
 
@@ -214,6 +216,7 @@ function readQuizCandidate(raw: unknown): QuizCandidate | null {
       strap: clean(item.strapMaterial),
     },
     sourceHint: safeHttpUrl(clean(item.manufacturerUrl)),
+    imageHint: safeHttpUrl(clean(item.imageUrl)),
     note: clean(item.why),
   };
 }
@@ -258,6 +261,7 @@ const sonarCandidateSchema = {
               "casebackMaterial",
               "strapMaterial",
               "manufacturerUrl",
+              "imageUrl",
               "why",
             ].map((key) => [key, { type: ["string", "null"] }]),
           ),
@@ -408,7 +412,9 @@ async function runQuizAngle(
               model: candidate.model,
               referenceCode: candidate.referenceCode,
               sourceUrl: url,
-              imageUrl: await verifyImageUrl(page.imageUrl, deps.fetchImpl),
+              imageUrl:
+                (await verifyImageUrl(page.imageUrl, deps.fetchImpl)) ??
+                (await verifyImageUrl(candidate.imageHint, deps.fetchImpl)),
               priceNote: candidate.price
                 ? money(candidate.price.amount, candidate.price.currency)
                 : null,
@@ -510,10 +516,11 @@ export async function searchQuizWatches(
         [
           "List up to 6 current-production wristwatches that meet EVERY constraint below, favouring recent releases.",
           constraints,
-          "For each give the exact reference number, current new retail price with ISO currency, water resistance in metres, case diameter in mm, movement type, case, case-back and strap materials, the official manufacturer product page URL, and one sentence on why it fits. Use null for anything you cannot confirm.",
+          "For each give the exact reference number, current new retail price with ISO currency, water resistance in metres, case diameter in mm, movement type, case, case-back and strap materials, the official manufacturer product page URL, the URL of its product photo (imageUrl), and one sentence on why it fits. Use null for anything you cannot confirm.",
         ].join("\n"),
         sonarCandidateSchema,
         deps,
+        { maxToolCalls: 4 },
       )) as { candidates?: unknown };
       return Array.isArray(payload.candidates)
         ? (payload.candidates as unknown[])

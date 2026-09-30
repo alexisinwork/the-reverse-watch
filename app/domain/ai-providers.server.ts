@@ -398,7 +398,7 @@ export async function findPages(
     ].join("\n"),
     deps,
     {
-      maxToolCalls: Math.min(12, queries.length * 2),
+      maxToolCalls: Math.min(8, queries.length + 2),
       schema: {
         type: "object",
         properties: {

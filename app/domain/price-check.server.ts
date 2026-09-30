@@ -73,6 +73,7 @@ const priceSchema = {
           currency: { type: ["string", "null"] },
           sourceUrl: { type: ["string", "null"] },
           sourceDate: { type: ["string", "null"] },
+          imageUrl: { type: ["string", "null"] },
         },
         required: ["amount", "currency", "sourceUrl", "sourceDate"],
       },
@@ -198,7 +199,7 @@ export function isRetailSource(url: string) {
 
 function lookupPrompt(watch: WatchIdentity, options: LookupOptions) {
   const name = `${watch.brand} ${watch.model}${watch.referenceCode ? ` reference ${watch.referenceCode}` : ""}`;
-  const list = `For each of up to ${MAX_SOURCES} pages give the amount, the ISO currency code, the page URL and the page date (YYYY-MM-DD) if known.`;
+  const list = `For each of up to ${MAX_SOURCES} pages give the amount, the ISO currency code, the page URL, the page date (YYYY-MM-DD) if known, and the URL of the product photo shown on that page (imageUrl) if there is one.`;
   // Plainly worded questions get answers; long lists of caveats make the
   // model return nulls. Grey-market pages are filtered out in code.
   if (options.avoidUrls.length === 0) {
@@ -268,6 +269,8 @@ export async function lookupPrices(
   if (deps.config.webSearch === "muse") {
     const research = await museWebResearch(lookupPrompt(watch, options), deps, {
       schema: priceSchema,
+      // Measured 2026-09-30: caps of 3/4 halved cost but re-confirmed 2 of 10
+      // known prices instead of 6; 5/8 keeps accuracy.
       maxToolCalls: options.contextSize === "low" ? 5 : 8,
     });
     for (const page of research.openedPages) openedByMuse.add(urlKey(page));
@@ -377,7 +380,16 @@ async function readPriceAnswer(
       };
     }),
   );
-  return { lookups, imageUrls };
+  // Photos the answer reported for its pages come after the search's own.
+  const reportedImages = (
+    Array.isArray(parsed.prices) ? (parsed.prices as unknown[]) : []
+  )
+    .map((entry) => (entry ?? {}) as { imageUrl?: unknown })
+    .map((entry) =>
+      safeHttpUrl(typeof entry.imageUrl === "string" ? entry.imageUrl : null),
+    )
+    .filter((url): url is string => url !== null);
+  return { lookups, imageUrls: [...imageUrls, ...reportedImages] };
 }
 
 /** Relative difference of b from a, after converting b into a's currency. */
