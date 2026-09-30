@@ -28,18 +28,18 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 
 ## Pages and endpoints
 
-| URL                                                                       | File                                                                                                                 | What it does                                                               |
-| ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `/`                                                                       | `routes/home.tsx`                                                                                                    | Landing page and newsletter sign-up (which unlocks the quiz).              |
-| `/quiz`                                                                   | `routes/quiz.tsx`                                                                                                    | The six-question diagnostic and the shortlist.                             |
-| `/watches/find`                                                           | `routes/watch-find.tsx`                                                                                              | Search box for watches in films, series and on people.                     |
-| `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx`                                        | Published, reviewed film and celebrity watch stories.                      |
-| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The signal/aesthetic archetype mini-quiz.                                  |
-| `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes. |
-| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily Vercel cron (see `vercel.json`): rechecks prices older than 90 days. |
-| `/evaluation`                                                             | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary.                                                  |
-| `/health`                                                                 | `routes/health.ts`                                                                                                   | Uptime check.                                                              |
-| Others                                                                    | `quiz-analytics-start.ts`, `discovery-analytics.ts`, `watch-research-status.tsx`, `internal-discovery-research-*.ts` | Analytics pings and the older film-research intake (see "Older code").     |
+| URL                                                                       | File                                                                                                                 | What it does                                                                                                                                                                                               |
+| ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                                                                       | `routes/home.tsx`                                                                                                    | Landing page: three cards (film search, archetype quiz, diagnostic) and the newsletter sign-up, which unlocks the diagnostic. An address already on the Beehiiv list unlocks it without subscribing again. |
+| `/quiz`                                                                   | `routes/quiz.tsx`                                                                                                    | The six-question diagnostic and the shortlist.                                                                                                                                                             |
+| `/watches/find`                                                           | `routes/watch-find.tsx`                                                                                              | Search box for watches in films, series and on people.                                                                                                                                                     |
+| `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx`                                        | Published, reviewed film and celebrity watch stories.                                                                                                                                                      |
+| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The archetype mini-quiz, then 10 watches for that archetype and price idea from `app/data/archetype-picks.json` (built by `scripts/build-archetype-picks.ts`; no AI call when a visitor uses it).          |
+| `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes.                                                                                                                                 |
+| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily Vercel cron (see `vercel.json`): rechecks prices older than 90 days.                                                                                                                                 |
+| `/admin/evaluation`                                                       | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary, behind the admin login (`/evaluation` redirects).                                                                                                                                |
+| `/health`                                                                 | `routes/health.ts`                                                                                                   | Uptime check.                                                                                                                                                                                              |
+| Others                                                                    | `quiz-analytics-start.ts`, `discovery-analytics.ts`, `watch-research-status.tsx`, `internal-discovery-research-*.ts` | Analytics pings and the older film-research intake (see "Older code").                                                                                                                                     |
 
 ## How a quiz answer is produced
 
@@ -107,20 +107,60 @@ cookies, IP or anything identifying.
 Every provider call takes a `Deps` object (config, fetch, clock). Tests pass
 a fake fetch, so no test ever calls a real provider.
 
+### When a provider is down (fallbacks, from first to last)
+
+1. **Stored results first.** Any film search or quiz answer run before is
+   served from the database with no AI call (`ai-watch-store.server.ts`).
+   `scripts/prewarm-film-searches.ts` and `scripts/prewarm-imdb.ts` fill
+   this ahead of time (IMDb Top 250 movies, top 100 TV shows, their leads).
+2. **The quiz answers from the catalogue in code** whenever three or more
+   watches fit; no AI is involved.
+3. **The other provider.** `webResearchJson` and `findPages` retry once
+   with the other provider (Perplexity ↔ Muse) when the chosen one fails or
+   times out (`fallbackSearchDeps` in `ai-providers.server.ts`). Price and
+   market-price checks already use both.
+4. **Time limits.** Each film-search step stops at 18 s, and every search
+   at 35 s (`runSafely`), so a stuck provider never hangs the page.
+5. **Both providers down.** The quiz shows the closest catalogue watches in
+   the visitor's price range, saying plainly that not every answer is met
+   (`closestCatalogue` in `watch-catalogue.ts`). A new film search shows
+   "unavailable, try again" with links to the archive and archetype quiz,
+   which never need AI. A failed lookup is never reported as "no watches".
+
 ## Where to change things
 
-| To change…                                                       | Edit                                                                               |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Quiz questions or their wording                                  | `components/quiz/question-screens.tsx`, titles in `routes/quiz.tsx`                |
-| Price ranges or wrist → diameter table                           | `domain/questionnaire-v4.ts`                                                       |
-| Which quiz scenarios map to which wearing style                  | `SCENARIO_STYLES` in `domain/watch-catalogue.ts`                                   |
-| How catalogue watches are ranked                                 | `pick()` in `domain/watch-catalogue.ts`                                            |
-| Price tolerance, age limit, allowed currencies, grey-market list | top of `domain/price-check.server.ts`                                              |
-| Authorised retailers                                             | `AUTHORISED_RETAILER_HOSTS` in `domain/ai-watch-guardrails.ts`                     |
-| Search prompts                                                   | `quiz-live-search.server.ts`, `film-search.server.ts`, `catalogue-build.server.ts` |
-| Muse Spark model or search provider                              | env vars `MUSE_SPARK_FAST_MODEL`, `MUSE_SPARK_MODEL`, `WEB_SEARCH_PROVIDER`        |
-| Admin page                                                       | `routes/admin-catalogue.tsx`, login in `domain/admin-auth.server.ts`               |
-| Colours and fonts                                                | `app/styles/tokens.css`                                                            |
+| To change…                                                       | Edit                                                                                  |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Quiz questions or their wording                                  | `components/quiz/question-screens.tsx`, titles in `routes/quiz.tsx`                   |
+| Price ranges or wrist → diameter table                           | `domain/questionnaire-v4.ts`                                                          |
+| Which quiz scenarios map to which wearing style                  | `SCENARIO_STYLES` in `domain/watch-catalogue.ts`                                      |
+| How catalogue watches are ranked                                 | `pick()` in `domain/watch-catalogue.ts`                                               |
+| Price tolerance, age limit, allowed currencies, grey-market list | top of `domain/price-check.server.ts`                                                 |
+| Authorised retailers                                             | `AUTHORISED_RETAILER_HOSTS` in `domain/ai-watch-guardrails.ts`                        |
+| Search prompts                                                   | `quiz-live-search.server.ts`, `film-search.server.ts`, `catalogue-build.server.ts`    |
+| Muse Spark model or search provider                              | env vars `MUSE_SPARK_FAST_MODEL`, `MUSE_SPARK_MODEL`, `WEB_SEARCH_PROVIDER`           |
+| Admin page                                                       | `routes/admin-catalogue.tsx`, login in `domain/admin-auth.server.ts`                  |
+| Colours and fonts                                                | `app/styles/tokens.css`                                                               |
+| Home page cards                                                  | `routes/home.tsx`, styles in `styles/home.css`                                        |
+| Newsletter sign-up and the "Already subscribed?" check           | `components/beehiiv-signup.tsx`, `domain/beehiiv.server.ts`                           |
+| The dossier email (sent through Resend)                          | `domain/dossier-email.ts` (content), `domain/resend.server.ts` (sending)              |
+| Rate limits                                                      | the `*_POLICY` constants in each route; keys from `domain/visitor-key.server.ts`      |
+| Film search types (movie, series, actor…)                        | `domain/film-subject.ts`, prompts in `domain/film-search.server.ts`                   |
+| The archetype quiz's 10 watches                                  | rerun `scripts/build-archetype-picks.ts`, then commit `app/data/archetype-picks.json` |
+
+## When something breaks
+
+| Symptom                    | Look at                                                                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Searches say "unavailable" | Vercel logs for `ai_watch_search_error`, `web_research_fallback`, `find_pages_fallback`; provider keys and credit (Perplexity, Muse). |
+| Sign-up fails              | Logs for `landing_beehiiv_*`; `BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`.                                                            |
+| Dossier email not arriving | Logs for the quiz email step; `RESEND_API_KEY`, `EMAIL_FROM` (domain verified in Resend).                                             |
+| Quiz shows no watches      | `/admin/catalogue` (are watches approved and priced?); `.catalogue-build/coverage.ts` measures which answers the catalogue covers.    |
+| Admin login loops          | `SESSION_SECRET`, `ADMIN_PASSWORD`; the cookie is only sent on `/admin` over HTTPS.                                                   |
+| Prices look stale          | The daily cron `/internal/catalogue/recheck-prices` (`CRON_SECRET`), Vercel cron logs.                                                |
+
+Every error is logged as one JSON line with an `event` name, so searching the
+Vercel logs for the event name finds it. Sentry collects page errors.
 
 ## Security in one list
 
@@ -129,8 +169,14 @@ a fake fetch, so no test ever calls a real provider.
 - `/quiz` needs the signed subscriber cookie; `/admin/catalogue` needs
   `ADMIN_PASSWORD` (cookie signed with `SESSION_SECRET`, HTTPS-only,
   same-site strict); the cron endpoint needs `CRON_SECRET`.
-- Paid searches are rate-limited per visitor, shared across server
-  instances through Upstash (`consumeSharedRateLimit`).
+- Paid searches, the admin login, the subscriber check and the analytics
+  counters are rate-limited per visitor, shared across server instances
+  through Upstash (`consumeSharedRateLimit`). Visitor keys are hashed
+  addresses (`visitor-key.server.ts`); no IP address is stored.
+- Forms and counters refuse requests sent from other websites (Origin
+  check; the admin cookie is also same-site strict).
+- Pages the server fetches (URLs from AI output) must be public web
+  addresses, checked again after every redirect (`source-pages.server.ts`).
 - Database: every table has row-level security; the server writes through
   service-role functions only.
 - Security headers (CSP, frame denial, nosniff, referrer and permissions
@@ -147,6 +193,7 @@ node --env-file=.env --import tsx scripts/build-catalogue.ts --budget 30
 node --env-file=.env --import tsx scripts/catalogue-report.ts
 node --env-file=.env --import tsx scripts/recheck-catalogue-prices.ts --unconfirmed
 node --env-file=.env --import tsx scripts/compare-search-providers.ts
+node --env-file=.env --import tsx scripts/prewarm-imdb.ts --verify
 git push origin main && vercel deploy --prod   # deploys are not triggered by git
 ```
 
