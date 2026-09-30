@@ -30,8 +30,10 @@ export function YouTubeCallout({
       </aside>
     );
   }
+  // An aside, not a <footer>: pages have their own footer, and screen
+  // readers expect a single page footer (contentinfo landmark).
   return (
-    <footer className="youtube-footer">
+    <aside aria-label="Our YouTube channel" className="youtube-footer">
       <p>
         Curious about watches?{" "}
         <a href={YOUTUBE_CHANNEL_URL} rel="noopener noreferrer" target="_blank">
@@ -39,6 +41,6 @@ export function YouTubeCallout({
         </a>
         .
       </p>
-    </footer>
+    </aside>
   );
 }

@@ -24,8 +24,12 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "HOST=127.0.0.1 PORT=4173 npm run start",
+    // Settings go in env (not "HOST=… npm run start"), so it also runs on
+    // Windows.
+    command: "npm run start",
     env: {
+      HOST: "127.0.0.1",
+      PORT: "4173",
       SESSION_SECRET: process.env.SESSION_SECRET,
     },
     url: "http://127.0.0.1:4173/health",

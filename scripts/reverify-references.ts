@@ -27,14 +27,50 @@ const LIMIT =
   limitIndex === -1 ? Infinity : Number(process.argv[limitIndex + 1]);
 const CONCURRENCY = 8;
 
+const budgetIndex = process.argv.indexOf("--search-budget");
+// USD for Perplexity searches (USD 5 per 1,000). Once spent, a watch whose
+// stored page no longer exists loses its badge without a search, and one
+// whose page merely blocks us is left unchanged.
+const SEARCH_BUDGET_USD =
+  budgetIndex === -1 ? 4 : Number(process.argv[budgetIndex + 1]);
+const SEARCH_COST_USD = 0.005;
+let searchSpend = 0;
+
 const client = catalogueClient();
-const deps = defaultDeps();
+const baseDeps = defaultDeps();
+// Perplexity only: no quiet fallback to Muse web research, which costs
+// about ten times as much per lookup.
+const deps = {
+  ...baseDeps,
+  config: { ...baseDeps.config, museSpark: null },
+};
 if (!client || !deps.config.perplexity) {
   throw new Error("Supabase service key and PERPLEXITY_API_KEY are required.");
 }
 
 type Outcome =
-  "page still good" | "real page found" | "badge dropped" | "error";
+  | "page still good"
+  | "real page found"
+  | "badge dropped"
+  | "not re-checked"
+  | "error";
+
+/** The stored page's HTTP status, or null when it never answered. */
+async function pageStatus(url: string) {
+  try {
+    const response = await fetch(url, {
+      headers: {
+        "user-agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/140 Safari/537.36",
+      },
+      signal: AbortSignal.timeout(10_000),
+    });
+    await response.body?.cancel();
+    return response.status;
+  } catch {
+    return null;
+  }
+}
 type Row = { watch: CatalogueWatch; outcome: Outcome; detail: string };
 
 async function reverify(watch: CatalogueWatch): Promise<Row> {
@@ -46,9 +82,23 @@ async function reverify(watch: CatalogueWatch): Promise<Row> {
   }
 
   const reference = normalizeReference(watch.referenceCode);
-  const hits = reference
-    ? await findPages([`${watch.brand} ${watch.referenceCode}`], deps)
-    : [];
+  if (reference && searchSpend >= SEARCH_BUDGET_USD) {
+    const status = watch.sourceUrl ? await pageStatus(watch.sourceUrl) : 404;
+    if (status !== 404 && status !== 410) {
+      return {
+        watch,
+        outcome: "not re-checked",
+        detail: `search budget spent; stored page answered ${status ?? "nothing"}`,
+      };
+    }
+  }
+  if (reference && searchSpend < SEARCH_BUDGET_USD) {
+    searchSpend += SEARCH_COST_USD;
+  }
+  const hits =
+    reference && searchSpend <= SEARCH_BUDGET_USD
+      ? await findPages([`${watch.brand} ${watch.referenceCode}`], deps)
+      : [];
   const candidates = hits
     .filter(
       (hit) =>
@@ -95,6 +145,12 @@ const confirmed = (await listCatalogue(client, true))
   .filter(
     (watch) => watch.reviewStatus !== "rejected" && watch.referenceConfirmed,
   )
+  // Approved watches first: visitors see those.
+  .sort(
+    (a, b) =>
+      Number(b.reviewStatus === "approved") -
+      Number(a.reviewStatus === "approved"),
+  )
   .slice(0, LIMIT);
 console.log(
   `${confirmed.length} watches marked "reference confirmed" to re-check${DRY_RUN ? " (dry run: nothing is written)" : ""}.`,
@@ -130,7 +186,10 @@ const report = [
   `- Stored page is real and shows the reference: **${count("page still good")}**`,
   `- Stored page was wrong; the real maker/retailer page was found and stored: **${count("real page found")}**`,
   `- No page confirms the reference; badge dropped (now under "Also worth a look"): **${count("badge dropped")}**`,
+  `- Not re-checked (search budget spent; page exists but blocks us): **${count("not re-checked")}**`,
   `- Errors (unchanged; rerun to retry): **${count("error")}**`,
+  "",
+  `Search spend: about USD ${searchSpend.toFixed(2)}.`,
   "",
   "## Badge dropped",
   "",

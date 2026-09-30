@@ -50,7 +50,9 @@ test("renders the landing page and legible subscription form", async ({
   await expect(
     page.getByRole("checkbox", { name: /agree to receive/i }),
   ).toBeVisible();
-  await expect(page.getByRole("button", { name: "Subscribe" })).toBeVisible();
+  await expect(
+    page.getByRole("button", { name: "Subscribe", exact: true }),
+  ).toBeVisible();
   await expect(
     page.locator('script[src*="subscribe-forms.beehiiv.com"]'),
   ).toHaveCount(0);
@@ -61,8 +63,8 @@ test("renders the landing page and legible subscription form", async ({
   });
   expect(inputColors).toEqual(
     expect.objectContaining({
-      background: "rgb(8, 9, 11)",
-      color: "rgb(255, 255, 255)",
+      background: "rgb(18, 21, 26)",
+      color: "rgb(239, 238, 233)",
     }),
   );
   await expect(
@@ -156,7 +158,9 @@ test("creates a shareable archetype without bypassing hard constraints", async (
 
   await page.getByRole("link", { name: "Find the right watch for me" }).click();
   await expect(
-    page.getByRole("heading", { name: "What is the actual purchase ceiling?" }),
+    page.getByRole("heading", {
+      name: "What price range are you shopping in?",
+    }),
   ).toBeVisible();
   await expect
     .poll(() => discoveryEvents)

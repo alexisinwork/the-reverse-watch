@@ -94,6 +94,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 
   return (
     <main className="error-page">
+      {/* React 19 moves this into <head>: error pages need a tab title too. */}
+      <title>{`${heading} · The Reserve`}</title>
       <div className="error-panel">
         <span className="eyebrow">Error {status}</span>
         <h1>{heading}</h1>
