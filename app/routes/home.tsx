@@ -197,8 +197,8 @@ export default function Home() {
             <span className="landing-action__kicker">Film · TV · People</span>
             <strong>Find the watch from the screen</strong>
             <span className="landing-action__description">
-              Search any film, series, actor or public figure and see the
-              watches they wore, each linked to the page that proves it.
+              Search any movie, series, actor, character or celebrity and see
+              the watches they wore, and where.
             </span>
             <span className="landing-action__footer">Search now →</span>
           </a>

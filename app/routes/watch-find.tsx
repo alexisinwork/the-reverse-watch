@@ -16,6 +16,7 @@ import {
   type FilmSubjectKind,
 } from "../domain/film-subject";
 import { createProgressFeed } from "../domain/progress-feed";
+import { fillPhotosFromCatalogue } from "../domain/watch-catalogue.server";
 import { parseDiscoveryHandoff } from "../domain/discovery-selection";
 import type { RateLimitPolicy } from "../domain/rate-limit.server";
 import { consumeSharedRateLimit } from "../domain/rate-limit-upstash.server";
@@ -72,7 +73,7 @@ export function loader({ request }: Route.LoaderArgs) {
   const key = visitorKey(request);
   // Streamed: the page renders immediately and the watches arrive after.
   const progress = createProgressFeed();
-  const result = searchWithStore({
+  const search = searchWithStore({
     kind: "film",
     cacheInput: { query: normalizeFilmQuery(query), kind },
     run: async () => {
@@ -86,6 +87,12 @@ export function loader({ request }: Route.LoaderArgs) {
       return searchFilmWatches(query, { report: progress.report }, kind);
     },
   });
+  // Sightings without a photo borrow the catalogue's photo of that watch.
+  const result = search.then(async (view) =>
+    view.status === "found"
+      ? { ...view, watches: await fillPhotosFromCatalogue(view.watches) }
+      : view,
+  );
   void result.finally(progress.close);
   return {
     query,

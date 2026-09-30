@@ -1,0 +1,74 @@
+/**
+ * The ten watches shown after the archetype quiz, per archetype and per the
+ * quiz's price idea. Chosen from the catalogue by scripts/build-archetype-
+ * picks.ts and stored in app/data/archetype-picks.json.
+ */
+import type { FoundWatch } from "./ai-watch-types";
+import type { ArchetypeId, PRICE_COMFORTS } from "./discovery-archetype";
+import picksFile from "../data/archetype-picks.json";
+
+export type PriceComfort = (typeof PRICE_COMFORTS)[number];
+
+export const ARCHETYPE_BANDS: Record<
+  PriceComfort,
+  { minimumUsd: number; maximumUsd: number | null; label: string }
+> = {
+  considered_entry: {
+    minimumUsd: 0,
+    maximumUsd: 2_000,
+    label: "a considered first serious watch, up to about USD 2,000",
+  },
+  established_collection: {
+    minimumUsd: 2_000,
+    maximumUsd: 10_000,
+    label: "an established collection purchase, about USD 2,000 to 10,000",
+  },
+  exceptional_object: {
+    minimumUsd: 10_000,
+    maximumUsd: null,
+    label: "an exceptional object, USD 10,000 and above",
+  },
+};
+
+export type ArchetypePick = {
+  id: string;
+  brand: string;
+  model: string;
+  referenceCode: string | null;
+  imageUrl: string | null;
+  price: { amount: number; currency: string } | null;
+  caseDiameterMm: number | null;
+  waterResistanceM: number | null;
+  movement: string | null;
+  why: string;
+};
+
+export type ArchetypePicks = {
+  generatedAt: string;
+  lists: Record<ArchetypeId, Record<PriceComfort, ArchetypePick[]>>;
+};
+
+const picks = picksFile as unknown as Partial<ArchetypePicks>;
+
+/** The picks as watch cards, or an empty list before the file is built. */
+export function archetypeWatches(
+  archetypeId: ArchetypeId,
+  band: PriceComfort,
+): FoundWatch[] {
+  return (picks.lists?.[archetypeId]?.[band] ?? []).map((pick) => ({
+    brand: pick.brand,
+    model: pick.model,
+    referenceCode: pick.referenceCode,
+    // Source links are never shown to visitors (owner decision).
+    sourceUrl: "",
+    imageUrl: pick.imageUrl,
+    priceNote: null,
+    rationale: pick.why,
+    details: {
+      price: pick.price,
+      caseDiameterMm: pick.caseDiameterMm,
+      waterResistanceM: pick.waterResistanceM,
+      movement: pick.movement,
+    },
+  }));
+}

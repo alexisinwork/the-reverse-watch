@@ -220,3 +220,82 @@ export async function cataloguePricesDue(
     }),
   );
 }
+
+function foldText(value: string) {
+  return value
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^a-z0-9]/g, "");
+}
+
+/**
+ * Gives watches without a photo the catalogue's photo of the same watch:
+ * matched by brand and reference, or by brand and model when there is no
+ * reference. Film sightings often cite pages without a product photo.
+ */
+export async function fillPhotosFromCatalogue<
+  T extends {
+    brand: string;
+    model: string;
+    referenceCode: string | null;
+    imageUrl: string | null;
+  },
+>(
+  watches: T[],
+  client: CatalogueClient | null = catalogueClient(),
+): Promise<T[]> {
+  if (!client || watches.every((watch) => watch.imageUrl)) return watches;
+  let catalogue: CatalogueWatch[];
+  try {
+    catalogue = await loadCatalogueCached(client);
+  } catch {
+    return watches;
+  }
+  const brandKey = (brand: string) => foldText(brand.split(/\s+/)[0] ?? brand);
+  const byReference = new Map<string, string>();
+  const byModel = new Map<string, string>();
+  for (const watch of catalogue) {
+    if (!watch.imageUrl || watch.reviewStatus === "rejected") continue;
+    if (watch.referenceCode) {
+      byReference.set(
+        `${brandKey(watch.brand)}|${foldText(watch.referenceCode)}`,
+        watch.imageUrl,
+      );
+    }
+    byModel.set(
+      `${brandKey(watch.brand)}|${foldText(watch.model)}`,
+      watch.imageUrl,
+    );
+  }
+  // Film sightings name models loosely ("Seamaster Diver 300M Co-Axial
+  // Chronometer"): failing an exact match, the longest catalogue model of the
+  // same brand that one name contains wins, if it is specific enough.
+  const modelsByBrand = new Map<string, { model: string; image: string }[]>();
+  for (const [key, image] of byModel) {
+    const [brand = "", model = ""] = key.split("|");
+    if (model.length < 6) continue;
+    modelsByBrand.set(brand, [
+      ...(modelsByBrand.get(brand) ?? []),
+      { model, image },
+    ]);
+  }
+  const looseMatch = (brand: string, model: string) =>
+    (modelsByBrand.get(brand) ?? [])
+      .filter(
+        (entry) => model.includes(entry.model) || entry.model.includes(model),
+      )
+      .sort((a, b) => b.model.length - a.model.length)[0]?.image;
+  return watches.map((watch) => {
+    if (watch.imageUrl) return watch;
+    const brand = brandKey(watch.brand);
+    const model = foldText(watch.model);
+    const image =
+      (watch.referenceCode
+        ? byReference.get(`${brand}|${foldText(watch.referenceCode)}`)
+        : undefined) ??
+      byModel.get(`${brand}|${model}`) ??
+      (model.length >= 6 ? looseMatch(brand, model) : undefined);
+    return image ? { ...watch, imageUrl: image } : watch;
+  });
+}

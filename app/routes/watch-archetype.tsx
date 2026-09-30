@@ -3,6 +3,8 @@ import { Form, Link, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-archetype";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
+import { WatchResults } from "../components/watch-results";
+import { ARCHETYPE_BANDS, archetypeWatches } from "../domain/archetype-picks";
 import {
   ARCHETYPE_QUESTIONS,
   ARCHETYPE_SCORING_VERSION,
@@ -13,9 +15,10 @@ import {
 } from "../domain/discovery-archetype";
 import { discoveryHandoffSchema } from "../domain/discovery-selection";
 import { sendDiscoveryAnalyticsEvent } from "../domain/discovery-analytics";
+import { loadFxTable } from "../domain/fx.server";
 import "../styles/discovery.css";
 
-export function loader({ request }: Route.LoaderArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
   const result = parseArchetypeSearch(url.searchParams);
   const configuredAppUrl = process.env.APP_URL?.trim();
@@ -32,8 +35,19 @@ export function loader({ request }: Route.LoaderArgs) {
     }
   }
 
+  // Ten catalogue watches for this archetype, in the price band it chose.
+  const watches =
+    result.status === "complete"
+      ? archetypeWatches(result.archetype.id, result.answers.priceComfort)
+      : [];
   return {
     result,
+    watches,
+    band:
+      result.status === "complete"
+        ? ARCHETYPE_BANDS[result.answers.priceComfort].label
+        : null,
+    fx: watches.length > 0 ? await loadFxTable() : null,
     shareUrl:
       result.status === "complete"
         ? new URL(
@@ -136,7 +150,8 @@ function ShareButton({
 }
 
 export default function WatchArchetype() {
-  const { result, shareUrl } = useLoaderData<typeof loader>();
+  const { result, shareUrl, watches, band, fx } =
+    useLoaderData<typeof loader>();
   const startTracked = useRef(false);
 
   const recordStart = () => {
@@ -184,6 +199,22 @@ export default function WatchArchetype() {
               resemble—any public figure or fictional character.
             </p>
           </div>
+          {watches.length > 0 ? (
+            <WatchResults
+              eyebrow={`Chosen for ${band ?? "your price idea"}`}
+              footnote="Chosen by The Reserve from its watch catalogue for this archetype and the price idea you picked. Prices are approximate; the full diagnostic filters by your exact budget and wrist size."
+              fx={fx}
+              heading={`Ten watches for ${result.archetype.title}`}
+              mode="quiz"
+              result={{
+                status: "found",
+                watches,
+                summary: `${watches.length} watches that suit ${result.archetype.title}.`,
+                fromCache: true,
+                origin: "catalogue",
+              }}
+            />
+          ) : null}
           {shareUrl ? (
             <ShareButton
               archetypeId={result.archetype.id}
