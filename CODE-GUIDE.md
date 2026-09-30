@@ -133,7 +133,8 @@ a fake fetch, so no test ever calls a real provider.
   instances through Upstash (`consumeSharedRateLimit`).
 - Database: every table has row-level security; the server writes through
   service-role functions only.
-- Security headers (CSP, HSTS, frame denial) are set in `app/entry.server.tsx`.
+- Security headers (CSP, frame denial, nosniff, referrer and permissions
+  policies) are set in `app/middleware.server.ts`; Vercel adds HSTS.
 
 ## Everyday commands
 
