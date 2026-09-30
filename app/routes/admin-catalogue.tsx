@@ -290,10 +290,21 @@ function editPatch(formData: FormData): ReviewPatch | string {
   return patch;
 }
 
+/**
+ * The page address a form was posted from. React Router posts forms to a
+ * hidden data address (/admin/catalogue.data?...&_routes=...); redirecting
+ * there would show the raw data instead of the page.
+ */
+export function pageAddress(requestUrl: string) {
+  const url = new URL(requestUrl);
+  url.searchParams.delete("_routes");
+  const query = url.searchParams.toString();
+  return `${url.pathname.replace(/\.data$/, "")}${query ? `?${query}` : ""}`;
+}
+
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
   const intent = field(formData, "intent");
-  const back = new URL(request.url);
 
   if (intent === "login") {
     if (
@@ -310,7 +321,8 @@ export async function action({ request }: Route.ActionArgs) {
         { error: "Wrong password." },
         { status: 401, headers: NO_INDEX },
       );
-    return redirect(back.pathname + back.search, {
+    // A redirect, so the browser stores the new sign-in cookie.
+    return redirect(pageAddress(request.url), {
       headers: { "Set-Cookie": cookie },
     });
   }
@@ -365,7 +377,9 @@ export async function action({ request }: Route.ActionArgs) {
       { status: 400, headers: NO_INDEX },
     );
   }
-  return redirect(back.pathname + back.search);
+  // No redirect: React Router reloads the list after every form action, so
+  // the page refreshes in place and keeps the filter and search.
+  return data({ ok: true as const }, { headers: NO_INDEX });
 }
 
 function money(amount: number | null, currency: string | null) {
