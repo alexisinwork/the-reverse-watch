@@ -1,5 +1,6 @@
-// Runs the film search for well-known subjects ahead of time so visitors
-// get stored, instant results. Already-stored subjects are skipped by the
+// Runs the film search for well-known subjects, each with its type (actor,
+// celebrity, character, movie, series), ahead of time so visitors get
+// stored, instant results. Already-stored subjects are skipped by the
 // store lookup, so re-running only fills gaps.
 //   npx tsx --env-file=.env scripts/prewarm-film-searches.ts
 import {
@@ -7,9 +8,17 @@ import {
   searchFilmWatches,
 } from "../app/domain/film-search.server";
 import { searchWithStore } from "../app/domain/ai-watch-store.server";
+import type { FilmSubjectKind } from "../app/domain/film-subject";
 
-const SUBJECTS = [
-  // People and actors
+const LISTS: Record<FilmSubjectKind, string[]> = {
+  actor: [],
+  celebrity: [],
+  character: [],
+  movie: [],
+  series: [],
+};
+const RAW = [
+  // Actors
   "Daniel Craig",
   "Sean Connery",
   "Roger Moore",
@@ -44,6 +53,7 @@ const SUBJECTS = [
   "Bradley Cooper",
   "Michael B. Jordan",
   "Pedro Pascal",
+  // Celebrities
   "Barack Obama",
   "John F. Kennedy",
   "Roger Federer",
@@ -115,6 +125,23 @@ const SUBJECTS = [
   "The White Lotus",
 ];
 
+// Each name belongs to the section it follows in the list above.
+const SECTION_KINDS: [string, FilmSubjectKind][] = [
+  ["Daniel Craig", "actor"],
+  ["Barack Obama", "celebrity"],
+  ["James Bond", "character"],
+  ["Casino Royale", "movie"],
+  ["Succession", "series"],
+];
+let current: FilmSubjectKind = "actor";
+for (const name of RAW) {
+  current = SECTION_KINDS.find(([first]) => first === name)?.[1] ?? current;
+  LISTS[current].push(name);
+}
+const SUBJECTS = Object.entries(LISTS).flatMap(([kind, names]) =>
+  names.map((name) => ({ name, kind: kind as FilmSubjectKind })),
+);
+
 // Two at a time: each search makes three Perplexity calls, and the current
 // Perplexity usage tier rate-limits bursts.
 const CONCURRENCY = 2;
@@ -127,15 +154,19 @@ type Row = {
   cached: boolean;
 };
 
-async function run(subject: string): Promise<Row> {
+async function run(entry: {
+  name: string;
+  kind: FilmSubjectKind;
+}): Promise<Row> {
   const started = performance.now();
+  // The same saved-result key the search page uses: the name and its type.
   const result = await searchWithStore({
     kind: "film",
-    cacheInput: { query: normalizeFilmQuery(subject) },
-    run: () => searchFilmWatches(subject),
+    cacheInput: { query: normalizeFilmQuery(entry.name), kind: entry.kind },
+    run: () => searchFilmWatches(entry.name, {}, entry.kind),
   });
   return {
-    subject,
+    subject: `${entry.name} (${entry.kind})`,
     status: result.status,
     watches: result.status === "found" ? result.watches.length : 0,
     seconds: Math.round((performance.now() - started) / 100) / 10,
@@ -143,7 +174,7 @@ async function run(subject: string): Promise<Row> {
   };
 }
 
-const queue = [...new Set(SUBJECTS)];
+const queue = [...SUBJECTS];
 const rows: Row[] = [];
 async function worker() {
   for (let subject = queue.shift(); subject; subject = queue.shift()) {
