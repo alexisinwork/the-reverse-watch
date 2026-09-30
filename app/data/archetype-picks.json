@@ -1,1 +1,2753 @@
-{"generatedAt":"","lists":{}}
+{
+ "generatedAt": "2026-09-30T20:09:58.399Z",
+ "lists": {
+  "field_rationalist": {
+   "considered_entry": [
+    {
+     "id": "ef3c9491-2b4a-4b53-aafb-12f68101a2c6",
+     "brand": "Archimede",
+     "model": "Outdoor 39 Black",
+     "referenceCode": "UA7749B-A1.1",
+     "imageUrl": "https://www.beansandbezels.com/wp-content/uploads/2024/04/archimede_outdoor_39_protect_black_forest_watch_03_2024__6_44_57_PM-scaled-1530x700.jpg",
+     "price": {
+      "amount": 1320,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "Its 39 mm stainless steel case with 200 m resistance and field/sport/everyday/dive use covers real legible utility without excess."
+    },
+    {
+     "id": "20b92fb2-32f8-4759-989a-a0d231f7e4ec",
+     "brand": "Baltic",
+     "model": "Hermetique Tourer Beige",
+     "referenceCode": "Tourer Beige",
+     "imageUrl": "https://cdn.baltic-watches.com/f/73554/3347x4399/bf03aa7f97/hermetique-tourer-beige-wristshot.jpg?width=3072",
+     "price": {
+      "amount": 700,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 37,
+     "waterResistanceM": 150,
+     "movement": "automatic",
+     "why": "Its 37 mm stainless steel case with 150 m resistance and automatic movement is sized and built for competent everyday field/travel use."
+    },
+    {
+     "id": "82c9e6e2-440e-4976-942a-65ac67659381",
+     "brand": "Christopher Ward",
+     "model": "C65 Sandhurst Series 2",
+     "referenceCode": "C65-38A3-S00B1-B0",
+     "imageUrl": "https://www.christopherward.com/on/demandware.static/-/Library-Sites-cw-library/default/dw566eb17b/images/pdp-long-description/c65-sandhurst-series-2/bronze/6_mob@2x.jpg",
+     "price": {
+      "amount": 1300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 150,
+     "movement": "automatic",
+     "why": "Its 38 mm stainless steel field watch with 150 m resistance and automatic movement prioritizes proportion and resilience over recognition."
+    },
+    {
+     "id": "aca724fd-375b-4954-8f89-05baa688e144",
+     "brand": "Citizen",
+     "model": "Eco-Drive Weekender Field",
+     "referenceCode": "BM8180-03E",
+     "imageUrl": "https://cdn2.jomashop.com/media/catalog/product/cache/b3e31d40bbb1abcc90b26106659d5d3f/c/i/citizen-strap-eco-drive-180-men_s-watch-bm8180-03e_2_2.jpg?width=800&height=800",
+     "price": {
+      "amount": 295,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 37,
+     "waterResistanceM": 100,
+     "movement": "solar",
+     "why": "Its 37 mm stainless steel solar field watch with 100 m resistance offers low-maintenance competence for everyday use."
+    },
+    {
+     "id": "f7ae118e-aacb-4f0a-9958-4063677b651b",
+     "brand": "Hamilton",
+     "model": "Khaki Field Automatic 38mm Black",
+     "referenceCode": "H70455533",
+     "imageUrl": "https://www.hamiltonwatch.com/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/h/7/h70455533.png",
+     "price": {
+      "amount": 795,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its 38 mm stainless steel automatic field watch with 100 m resistance is a straightforward legible tool whose form explains its purpose."
+    },
+    {
+     "id": "055d6bd8-bb34-450e-98df-ae6e95b66ed3",
+     "brand": "Seiko",
+     "model": "5 Sports Field",
+     "referenceCode": "SRPH33",
+     "imageUrl": "https://www.seikowatches.com/us-en/-/media/Images/GlobalEn/Seiko/Home/common/SeikoLogo/ThumbnailSeikoLogo.jpg",
+     "price": {
+      "amount": 350,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40.5,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its 40.5 mm stainless steel automatic field watch with 100 m resistance delivers practical field/everyday/travel function in a considered band."
+    },
+    {
+     "id": "bc7a9734-7482-454b-a6e2-fbeb0541baed",
+     "brand": "Serica",
+     "model": "4512 Commando",
+     "referenceCode": "4512",
+     "imageUrl": "https://i.ytimg.com/vi/03q8fFp9h4s/maxresdefault.jpg",
+     "price": {
+      "amount": 690,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 37.7,
+     "waterResistanceM": 200,
+     "movement": "manual",
+     "why": "Its 37.7 mm stainless steel manual watch with 200 m resistance and field/everyday/dive use is utility-first resilience in compact form."
+    },
+    {
+     "id": "464e6ca3-2c88-4643-9ec4-4ac5b97c12d8",
+     "brand": "Timex",
+     "model": "Expedition North Field Post Solar 41mm",
+     "referenceCode": "TW2V03700",
+     "imageUrl": "https://watchard.com/media/catalog/product/z/e/zegarek-meski-timex-expedition-north-solar-tw2v03700.jpg",
+     "price": {
+      "amount": 179,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "solar",
+     "why": "Its 41 mm solar watch with 100 m resistance for sport/field/everyday use is a rational low-upkeep tool that earns its keep."
+    },
+    {
+     "id": "3dd04202-7f89-43f1-87c6-34bbd411be86",
+     "brand": "Tornek-Rayville",
+     "model": "TR-660",
+     "referenceCode": "TR-660",
+     "imageUrl": "https://tornek-rayville.us/cdn/shop/products/MkII_Tornek-Rayville_Front_Dial02_White_Rubber_1000x1000_d0e95b66-9de0-4437-a2f6-0ad43f149ea1_1000x.png?v=1624833606",
+     "price": {
+      "amount": 949,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "Its 40 mm steel automatic watch with 200 m resistance for field/dive/sport use combines legibility with serious water resilience."
+    },
+    {
+     "id": "8ea905ef-5baf-4abd-b46b-603750e5ef7b",
+     "brand": "Unimatic",
+     "model": "Modello Tre 40mm Field",
+     "referenceCode": "UT3-C-A",
+     "imageUrl": "https://shop.uncrate.com/cdn/shop/files/unimatic-uc3-watch-31.jpg?v=1694195674&width=1445",
+     "price": {
+      "amount": 525,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "Its 40 mm stainless steel automatic field watch with 300 m resistance extends field purpose into dive/sport competence without gimmick."
+    }
+   ],
+   "established_collection": [
+    {
+     "id": "04122ddf-22a9-43cc-9193-5a57360bef9d",
+     "brand": "Ball",
+     "model": "Engineer M Skindiver III",
+     "referenceCode": "DD3100A-S1C-BK",
+     "imageUrl": "https://img.chrono24.com/images/uhren/y72s8ulyz0ee-miwb4r2l2odrjg9u9cc3t5v6-ExtraLarge.jpg",
+     "price": {
+      "amount": 3999,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41.5,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "Its dive/field/sport purpose, 300 m rating, and 41.5 mm steel case deliver legible resilience for real use."
+    },
+    {
+     "id": "53f4c6a0-0db3-434c-90b4-4283072be561",
+     "brand": "BALL",
+     "model": "Roadmaster Pilot GMT",
+     "referenceCode": "DG3038A-S4C",
+     "imageUrl": "https://cdn.thewatchpages.com/app/uploads/2024/03/12165456/ball-watch-roadmaster-pilot-gmt-dg3038a-s5cj-br-scaled.jpeg",
+     "price": {
+      "amount": 3499,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": null,
+     "movement": "automatic",
+     "why": "Its titanium case and travel/sport purpose provide lightweight utility where function explains form."
+    },
+    {
+     "id": "64232e6f-a7b7-4d17-bb0e-04a12cb19bd8",
+     "brand": "Casio",
+     "model": "G-Shock MR-G",
+     "referenceCode": "MRG-B5000B-1",
+     "imageUrl": "https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/M/MR/MRG/mrg-b5000b-1/assets/MRG-B5000B-1_4.png.transform/main-visual-sp/image.png",
+     "price": {
+      "amount": 4000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 49.4,
+     "waterResistanceM": 200,
+     "movement": "solar",
+     "why": "Its solar power, titanium build, 200 m rating, and field/sport purpose prioritize competence over recognition."
+    },
+    {
+     "id": "402275a5-7f32-4764-9c31-ff2508bbf631",
+     "brand": "Citizen",
+     "model": "Attesa Eco-Drive Radio-Controlled Dual Time",
+     "referenceCode": "CC3087-51A",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48627822-7k383f0xbw0jmg6yht7unp39-ExtraLarge.jpg",
+     "price": {
+      "amount": 2275,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 100,
+     "movement": "solar",
+     "why": "Its solar titanium construction, 100 m rating, and travel purpose offer practical dual-time utility in a resilient package."
+    },
+    {
+     "id": "639ad178-b686-4630-b8d5-86bf42b8f134",
+     "brand": "Damasko",
+     "model": "DC56",
+     "referenceCode": "DC56",
+     "imageUrl": "https://cdn.watchcharts.com/removebg/34f8831e-a41c-410e-a661-f20db9270350.png",
+     "price": {
+      "amount": 3094,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its 40 mm steel case, 100 m rating, and field/sport purpose suit utility-first everyday wear."
+    },
+    {
+     "id": "573d1d6e-4a9c-4e8f-8ae0-cbd191014308",
+     "brand": "Fortis",
+     "model": "Flieger F-39 Automatic",
+     "referenceCode": "F4220005",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48481998-01xqn7wjropiy4ebrtw3j754-ExtraLarge.jpg",
+     "price": {
+      "amount": 2400,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its 39 mm steel case, 100 m rating, and field purpose deliver a legible, right-sized tool watch."
+    },
+    {
+     "id": "651280a5-5597-4192-83a0-06f3c016f85a",
+     "brand": "Hamilton",
+     "model": "Khaki Field Automatic Chronograph",
+     "referenceCode": "H71706630",
+     "imageUrl": "https://www.thewatchcompany.com/media/catalog/product/cache/2e643380bf6acdbc360c33153b32ea2f/H/a/Hamilton-H71706830_4.jpg",
+     "price": {
+      "amount": 2175,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 44,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its 44 mm steel case, 100 m rating, and field/sport purpose make its chronograph function clear and usable."
+    },
+    {
+     "id": "cb3d3913-9c95-4c2e-ad41-4c6ee74be4d9",
+     "brand": "Hanhart",
+     "model": "417 ES Flyback 39",
+     "referenceCode": "H701.210-7010",
+     "imageUrl": "https://www.montredo.com/cdn/shop/files/20260513_133255.webp?v=1778680515&width=80",
+     "price": {
+      "amount": 2340,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 100,
+     "movement": "manual",
+     "why": "Its 39 mm steel case, 100 m rating, and field/sport purpose offer simple manual-wound resilience."
+    },
+    {
+     "id": "3b27c3ec-9625-42ca-8817-1da19b4a3c4a",
+     "brand": "IWC",
+     "model": "Pilot's Watch Automatic 41",
+     "referenceCode": "IW326905",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48712163-5p838nvxnj793mc355y41kv8-ExtraLarge.jpg",
+     "price": {
+      "amount": 6800,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its 41 mm steel case, 100 m rating, and field/everyday/sport/travel purpose cover real use without excess."
+    },
+    {
+     "id": "22470ec6-e374-40ee-bc57-58840a6e18d4",
+     "brand": "Longines",
+     "model": "Conquest 41",
+     "referenceCode": "L3.781.4.56.6",
+     "imageUrl": "https://api.ecom.longines.com/media/catalog/product/l/3/l3-781-4-56-6-nightmode-image-f28da1.png?w=2560",
+     "price": {
+      "amount": 2000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "Its 41 mm steel case and 300 m rating provide straightforward sport/everyday capability that earns its keep."
+    }
+   ],
+   "exceptional_object": [
+    {
+     "id": "77b1b087-bab1-45f6-9621-de8a68002f2d",
+     "brand": "Bell & Ross",
+     "model": "BR-X5 Black Titanium",
+     "referenceCode": "BRX5R-BL-TI/STI",
+     "imageUrl": "https://bellross.com/cdn/shop/files/br-x5-black-titanium-Produit-Ecrin_Ouvert-v2.jpg?v=1771422952&width=2000",
+     "price": {
+      "amount": 10300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Titanium 41 mm case with 100 m resistance and field/everyday/sport use fits resilient legible utility."
+    },
+    {
+     "id": "c90ff0e0-ea9d-44a2-b9a3-11005546ff96",
+     "brand": "Glashütte Original",
+     "model": "Spezialist SeaQ 39.5mm Blue",
+     "referenceCode": "1-39-11-06-80-70",
+     "imageUrl": "https://www.glashuette-original.com/app/uploads/2020/11/Glashuette_Original-W13911068070-Detail-2.jpg",
+     "price": {
+      "amount": 11300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.5,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "39.5 mm stainless steel case with 200 m resistance and dive/field/sport use plus in-house calibre suits real-use competence."
+    },
+    {
+     "id": "6a5d1ec3-cc2d-4223-ba83-1808f811274d",
+     "brand": "Grand Seiko",
+     "model": "Evolution 9 Collection Spring Drive GMT Iwate Snow",
+     "referenceCode": "SBGE307",
+     "imageUrl": "https://www.grand-seiko.com/us-en/-/media/Images/GlobalEn/GrandSeiko/Home/collections/Products/20240409_WW/SBGE307/SBGE307_KV2000.jpg",
+     "price": {
+      "amount": 11500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 200,
+     "movement": "spring_drive",
+     "why": "Titanium 41 mm Spring Drive GMT with 200 m resistance and in-house calibre covers travel/sport/everyday utility."
+    },
+    {
+     "id": "e1d58d56-bcf9-4f10-85f5-5cc56aa98835",
+     "brand": "IWC",
+     "model": "Big Pilot's Watch 43",
+     "referenceCode": "IW329303",
+     "imageUrl": "https://kingjewelers.com/cdn/shop/files/IWC-IW329303-1.jpg?v=1726579782&width=1445",
+     "price": {
+      "amount": 10000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 43,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "43 mm stainless steel pilot with 100 m resistance and in-house calibre built for field/everyday/travel legibility."
+    },
+    {
+     "id": "14f82928-b00c-4f9d-b042-e239e5267a98",
+     "brand": "Jaeger-LeCoultre",
+     "model": "Polaris Geographic",
+     "referenceCode": "Q9078640",
+     "imageUrl": "https://img.jaeger-lecoultre.com/gallery-image-large-2/bdbfc7976f0ebce5ce3dfea4395223266844bb8f.jpg",
+     "price": {
+      "amount": 19100,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "42 mm stainless steel 100 m watch with in-house calibre listed for field/travel/everyday/sport purpose."
+    },
+    {
+     "id": "e143fd65-0f5d-4f60-9b90-bcd320f8a632",
+     "brand": "Montblanc",
+     "model": "1858 Iced Sea 0 Oxygen Deep 4810",
+     "referenceCode": "MB133269",
+     "imageUrl": "https://sheibanjewelers.com/cdn/shop/files/montblanc-watches-mb133269-sheiban-jewelers-cleveland-ohio-3.jpg?v=1761066808&width=1080",
+     "price": {
+      "amount": 10300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 43,
+     "waterResistanceM": 4810,
+     "movement": "automatic",
+     "why": "43 mm titanium dive watch with 4810 m resistance prioritizes extreme resilience over recognition."
+    },
+    {
+     "id": "809900f4-4a83-4264-a011-0d5b7dbc7daf",
+     "brand": "Omega",
+     "model": "Seamaster Diver 300M Co-Axial Master Chronometer 42mm Titanium",
+     "referenceCode": "210.90.42.20.01.001",
+     "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21090422001001-ba176b.png?w=1024",
+     "price": {
+      "amount": 11300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "42 mm titanium 300 m diver with in-house calibre delivers corrosion-resistant tool competence for dive/sport."
+    },
+    {
+     "id": "e60ef610-028c-469c-ba9e-7b86e69bc681",
+     "brand": "Rolex",
+     "model": "Explorer II",
+     "referenceCode": "226570",
+     "imageUrl": "https://img.chrono24.com/images/uhren/19603688-vumi81cqtacegvbar1ulrt41-ExtraLarge.jpg",
+     "price": {
+      "amount": 10600,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "42 mm steel 100 m watch with in-house calibre listed for everyday/field/sport/travel is a rationalist staple."
+    },
+    {
+     "id": "0c161a28-c263-4885-be34-dd9148b6a096",
+     "brand": "Bremont",
+     "model": "Longitude 39 Stainless Steel Black Dial",
+     "referenceCode": "LN39-SS-BK-R-S",
+     "imageUrl": "https://cdn.thewatchpages.com/app/uploads/2025/05/13132036/bremont-altitude-39-date-alt39-dt-ss-bk-b.jpeg?width=3840&quality=75",
+     "price": {
+      "amount": 10187,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "39 mm stainless steel 100 m watch with in-house calibre listed for field/travel/everyday use."
+    },
+    {
+     "id": "17f14b65-702e-4547-8a94-3592d71dce89",
+     "brand": "Sarpaneva",
+     "model": "K0 Expedition",
+     "referenceCode": "K0-EXPEDITION",
+     "imageUrl": "https://storage.googleapis.com/pubzapuscentral/watchprosite/ahci/33/raw/ahci_image.3143933.jpg",
+     "price": {
+      "amount": 16033,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "42 mm stainless steel 200 m watch listed for field/sport/everyday explains its purpose through form."
+    }
+   ]
+  },
+  "quiet_custodian": {
+   "considered_entry": [
+    {
+     "id": "ea1732b8-1261-494f-b2e6-108036ac9d48",
+     "brand": "Baltic",
+     "model": "HMS 002 Silver",
+     "referenceCode": "HMS002",
+     "imageUrl": "https://cdn.baltic-watches.com/f/73554/3000x1936/b52665fe3e/hms-002-collection-2.jpg?width=1200",
+     "price": {
+      "amount": 385,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 38 mm automatic in stainless steel for everyday and dress use is restrained and will age quietly."
+    },
+    {
+     "id": "2bfcc9e4-f90f-4782-98b4-98cb667d8451",
+     "brand": "Benrus",
+     "model": "DTU-2A/P Field Watch",
+     "referenceCode": "DTU-2A/P",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/2641/6826/files/Benrus_Crest_Logo.png?v=1743360974",
+     "price": {
+      "amount": 990,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.5,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39.5 mm automatic field watch in stainless steel offers continuity without theatre."
+    },
+    {
+     "id": "82c9e6e2-440e-4976-942a-65ac67659381",
+     "brand": "Christopher Ward",
+     "model": "C65 Sandhurst Series 2",
+     "referenceCode": "C65-38A3-S00B1-B0",
+     "imageUrl": "https://www.christopherward.com/on/demandware.static/-/Library-Sites-cw-library/default/dw566eb17b/images/pdp-long-description/c65-sandhurst-series-2/bronze/6_mob@2x.jpg",
+     "price": {
+      "amount": 1300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 150,
+     "movement": "automatic",
+     "why": "The 38 mm automatic field watch in stainless steel with 150 m is a considered everyday keeper."
+    },
+    {
+     "id": "eb0f5be4-b6c1-4950-9a29-bca272270406",
+     "brand": "CWC",
+     "model": "G10 1980 Reissue Fatboy",
+     "referenceCode": "G10FATBOY80",
+     "imageUrl": "http://www.cwcwatch.com/cdn/shop/articles/Main_Cover_447098dc-51b9-4db0-921b-d13ccf820f52_600x.png?v=1689257873",
+     "price": {
+      "amount": 333,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 50,
+     "movement": "quartz",
+     "why": "The 38 mm quartz field watch in stainless steel carries history in a quiet everyday form."
+    },
+    {
+     "id": "8bb638f5-7f18-4271-abb0-1953f10b4863",
+     "brand": "Junghans",
+     "model": "Form A Automatic",
+     "referenceCode": "027/4731.00",
+     "imageUrl": "https://img.everywatch.com/media/2026/03/20/junghans-form-058-4930-00-73690609.jpg",
+     "price": {
+      "amount": 1330,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.3,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39.3 mm automatic everyday and dress watch in stainless steel rewards attention over time."
+    },
+    {
+     "id": "71ad6f67-61ec-4bba-aa73-eac207b1a9ac",
+     "brand": "Laco",
+     "model": "Augsburg 39",
+     "referenceCode": "861688.2",
+     "imageUrl": "https://www.laco.de/media/e1/08/c2/1751015394/laco-fliegeruhr-typ-a-augsburg42-861688_2-neu-2020.png?ts=1751015394",
+     "price": {
+      "amount": 460,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 39 mm automatic field and everyday watch in stainless steel is restrained and practical."
+    },
+    {
+     "id": "6b5e99b6-dbf3-4f32-bedc-4abe62b04b57",
+     "brand": "Mido",
+     "model": "Baroncelli III",
+     "referenceCode": "M8600.4.26.1",
+     "imageUrl": "https://www.thewatchcompany.com/media/catalog/product/cache/2e643380bf6acdbc360c33153b32ea2f/M/I/MIDO-BaroncelliIII-M8600.4.26.1.jpg",
+     "price": {
+      "amount": 910,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 38 mm automatic everyday and dress watch in stainless steel is understated and well sized."
+    },
+    {
+     "id": "bc1c1e1c-af2a-4e23-91e6-55335172c03d",
+     "brand": "NOMOS Glashütte",
+     "model": "Club 36",
+     "referenceCode": "701",
+     "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=2560,bg=gray,sf=png/webshop/c1/5c/f8/1785365825/0701.1_Club_SB_2d-back-masked-2026.jpg",
+     "price": {
+      "amount": 1830,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 36,
+     "waterResistanceM": 100,
+     "movement": "manual",
+     "why": "The 36 mm manual watch with in-house calibre in stainless steel is quiet and built to keep."
+    },
+    {
+     "id": "02d116ea-2d89-45c0-bc27-53395dd272d4",
+     "brand": "Orient Star",
+     "model": "Elegant Classic",
+     "referenceCode": "RE-ND0001S00B",
+     "imageUrl": "https://www.seriouswatches.com/cdn/shop/products/RE-AU0001S00B_240x.png?v=1616499825",
+     "price": {
+      "amount": 624.36,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39 mm automatic dress and everyday watch with in-house calibre will age into a record."
+    },
+    {
+     "id": "bc7a9734-7482-454b-a6e2-fbeb0541baed",
+     "brand": "Serica",
+     "model": "4512 Commando",
+     "referenceCode": "4512",
+     "imageUrl": "https://i.ytimg.com/vi/03q8fFp9h4s/maxresdefault.jpg",
+     "price": {
+      "amount": 690,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 37.7,
+     "waterResistanceM": 200,
+     "movement": "manual",
+     "why": "The 37.7 mm manual field watch in stainless steel with 200 m is restrained yet durable."
+    }
+   ],
+   "established_collection": [
+    {
+     "id": "69c78848-1bb7-4d16-9524-3c10de385f42",
+     "brand": "BALL",
+     "model": "Trainmaster Eternity",
+     "referenceCode": "NM2080D-S1J-BK",
+     "imageUrl": "https://cdn2.jomashop.com/media/catalog/product/cache/9d6243d99187096e972f05545e39058c/b/a/ball-trainmaster-eternity-automatic-black-dial-watch-nm2080dsjbk.jpg?width=350&height=350",
+     "price": {
+      "amount": 2299,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 40 mm steel dress watch with automatic movement and 50 m resistance is restrained enough to age quietly into daily use."
+    },
+    {
+     "id": "a6aef0aa-e922-4047-8066-fddfa16d36d6",
+     "brand": "Baume & Mercier",
+     "model": "Clifton Baumatic 10399",
+     "referenceCode": "M0A10468",
+     "imageUrl": "https://www.baume-et-mercier.com/en/collections/clifton-men/watch-clifton-10399-date.html?srsltid=AU7gw4XKR3jeB-bxxxDOm1eihOT4eMUOV37kiBHSTaK0aRaOAmZaYx30",
+     "price": {
+      "amount": 3400,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39 mm steel dress watch with in-house automatic calibre keeps continuity without display."
+    },
+    {
+     "id": "35e8f843-3c61-4962-b8aa-a791eee5fc37",
+     "brand": "Cartier",
+     "model": "Drive de Cartier Extra-Flat",
+     "referenceCode": "WSNM0011",
+     "imageUrl": "https://img.chrono24.com/images/uhren/s4qj3q728tae-6hbt5u3cqbdtqqqw0b3ot1gx-ExtraLarge.jpg",
+     "price": {
+      "amount": 6149,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 38 mm steel extra-flat manual dress watch with in-house calibre rewards close attention over time."
+    },
+    {
+     "id": "472a6668-07bc-4928-9b0f-c65bf47c2337",
+     "brand": "Citizen",
+     "model": "The Citizen Chronomaster",
+     "referenceCode": "AQ4091-56M",
+     "imageUrl": "https://www.ippojapanwatch.com/cdn/shop/files/ippoAQ4091-56M02.jpg?v=1752890997",
+     "price": {
+      "amount": 3600,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38.3,
+     "waterResistanceM": 100,
+     "movement": "solar",
+     "why": "The 38.3 mm titanium solar dress watch with in-house calibre and 100 m resistance is built for long custodianship."
+    },
+    {
+     "id": "fe3717e2-f723-4e34-a8d6-794b75b15110",
+     "brand": "Dornblueth & Sohn",
+     "model": "99.1M Kleine Sekunde",
+     "referenceCode": "99.1M",
+     "imageUrl": "https://about-timepieces.com/wp-content/uploads/2020/11/IMG_20201108_112924-scaled.jpg",
+     "price": {
+      "amount": 7170,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "The 40 mm stainless manual dress watch offers a small-seconds layout to study rather than show."
+    },
+    {
+     "id": "c051fcae-5cd7-4589-be51-165f74f5f648",
+     "brand": "Fears",
+     "model": "Brunswick 38 Champagne",
+     "referenceCode": "BS23800",
+     "imageUrl": "https://www.fearswatches.com/cdn/shop/files/Fears_Brunswick_38_Champagne_Flat_Lay_800x.png?v=1741790172",
+     "price": {
+      "amount": 3500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 38 mm stainless automatic with 100 m resistance balances everyday use with dress restraint."
+    },
+    {
+     "id": "691f6774-625a-4758-9627-781d6bba395c",
+     "brand": "Frederique Constant",
+     "model": "Manufacture Classic Date Auto",
+     "referenceCode": "FC-710MS4H6",
+     "imageUrl": "https://cdn1.ethoswatches.com/media/catalog/product/cache/2a50063f4776979c2a938462c3a0aee4/f/r/frederique-constant-manufacture-fc-710ms4h6-hover.jpg",
+     "price": {
+      "amount": 2595,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 40 mm stainless in-house automatic dress watch with 50 m resistance is modest and made to keep."
+    },
+    {
+     "id": "0b3f545e-0c05-4a2b-9c3c-efd9c5161221",
+     "brand": "Girard-Perregaux",
+     "model": "1966 40mm",
+     "referenceCode": "49555-11-131-BB60",
+     "imageUrl": "https://api.girard-perregaux.com/media/catalog/product/4/9/49555-11-131-BB60-hero-d2b36d.png",
+     "price": {
+      "amount": 9600,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 40 mm stainless in-house automatic dress watch continues a classic form without theatre."
+    },
+    {
+     "id": "3fa49f01-d529-4963-8a63-5b6d5a4a8286",
+     "brand": "Glashütte Original",
+     "model": "Sixties Automatic",
+     "referenceCode": "1-39-52-01-02-04",
+     "imageUrl": "https://www.glashuette-original.com/app/uploads/2020/12/Glashuette_Original-W13952010204-Detail-2.jpg",
+     "price": {
+      "amount": 7500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 39 mm stainless in-house automatic dress watch will patina as a record rather than an invoice."
+    },
+    {
+     "id": "adf9bf6c-a2bc-4c7c-90f1-5344ed8b2fc2",
+     "brand": "Grand Seiko",
+     "model": "Elegance Collection Asakage Manual",
+     "referenceCode": "SBGW285",
+     "imageUrl": "https://www.grand-seiko.com/us-en/-/media/Images/GlobalEn/GrandSeiko/Home/collections/Products/SBGW285/01_SBGW285_kv.jpg",
+     "price": {
+      "amount": 4900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 37.3,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 37.3 mm stainless manual in-house dress watch is small, quiet, and suited to long attention."
+    }
+   ],
+   "exceptional_object": [
+    {
+     "id": "a777e170-e221-4bc9-8f56-3a4628df63ac",
+     "brand": "A. Lange & Sohne",
+     "model": "Lange 1",
+     "referenceCode": "191.032",
+     "imageUrl": "https://img.alange-soehne.com/product-slideshow-image-1/74007df5fe1f253a4399ddb98bb7b5069be72be2.jpg",
+     "price": {
+      "amount": 49400,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38.5,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 38.5 mm pink gold manual everyday/dress Lange 1 with in-house calibre is restrained and rewards long attention."
+    },
+    {
+     "id": "117de086-27b8-450d-af34-790b69d609a9",
+     "brand": "Blancpain",
+     "model": "Villeret Ultraplate",
+     "referenceCode": "6651-1127-55B",
+     "imageUrl": "https://cdn2.jomashop.com/media/catalog/product/cache/b3e31d40bbb1abcc90b26106659d5d3f/b/l/blancpain-villeret-automatic-white-dial-men_s-watch-6651-1127-55b_2.jpg?width=800&height=800",
+     "price": {
+      "amount": 12900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 40 mm steel automatic Villeret Ultraplate with in-house calibre is a quiet dress/everyday object built for continuity."
+    },
+    {
+     "id": "1b0f0a51-6bce-46f8-a1e5-5a9006668358",
+     "brand": "Breguet",
+     "model": "Classique 7147",
+     "referenceCode": "7147BR/29/9WU",
+     "imageUrl": "https://www.breguet.com/sites/default/files/styles/wide/public/images/7147BR_29_9WU_face_rvb.png?itok=Wv-4CwLy",
+     "price": {
+      "amount": 32300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 40 mm pink gold automatic Classique 7147 with in-house calibre offers understated dress history without theatre."
+    },
+    {
+     "id": "8b402ff8-d738-4d86-b750-02cb39bb826f",
+     "brand": "Cartier",
+     "model": "Tank Louis Large",
+     "referenceCode": "WGTA0011",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48845182-0xwpgd4x085mkl0jkga3nsxs-ExtraLarge.jpg",
+     "price": {
+      "amount": 15400,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": null,
+     "waterResistanceM": null,
+     "movement": "manual",
+     "why": "The manual dress Tank Louis Large is a restrained classic that ages as a record rather than an invoice."
+    },
+    {
+     "id": "9f15d99d-e525-4f44-a095-a5ee6c93c75e",
+     "brand": "Chopard",
+     "model": "L.U.C 1860",
+     "referenceCode": "168860-3001",
+     "imageUrl": "https://img.chrono24.com/images/uhren/46878929-lde73xoyc6tb3u7zu1kgftaz-ExtraLarge.jpg",
+     "price": {
+      "amount": 29700,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 36.5,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 36.5 mm stainless steel manual L.U.C 1860 with in-house calibre is small, restrained, and made to keep."
+    },
+    {
+     "id": "7d25759c-f7dd-45ce-b990-53fac770f76f",
+     "brand": "Grand Seiko",
+     "model": "Elegance Collection Manual Winding Omiwatari",
+     "referenceCode": "SBGW257",
+     "imageUrl": "https://www.grand-seiko.com/us-en/-/media/Images/Common/GrandSeiko/GrandSeikoLogo/GS_logo_common_2.jpg",
+     "price": {
+      "amount": 38000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 37.3,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 37.3 mm steel manual Omiwatari with in-house calibre is a quiet dress/everyday piece for slow appreciation."
+    },
+    {
+     "id": "a47dba1f-cd9b-4a6a-a4ca-604c60174538",
+     "brand": "Jaeger-LeCoultre",
+     "model": "Master Control Date",
+     "referenceCode": "Q4018420",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48653039-i6arfizay5zd7zdd4rmzx4kw-ExtraLarge.jpg",
+     "price": {
+      "amount": 10400,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 40 mm stainless steel automatic Master Control Date with in-house calibre is a restrained dress/everyday custodian watch."
+    },
+    {
+     "id": "33586327-f0f2-4eaa-b2e6-a284872ecab7",
+     "brand": "NOMOS Glashuette",
+     "model": "Lambda 39",
+     "referenceCode": "953",
+     "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=2560,sf=png/webshop/ec/cb/32/1743076271/0953_lambda_39_rg_gz-2d-front-masked.jpg",
+     "price": {
+      "amount": 17000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 39 mm stainless steel manual Lambda 39 with in-house calibre suits everyday/dress continuity without display."
+    },
+    {
+     "id": "e6c450f1-001c-443c-a1ca-4d753dfb3ead",
+     "brand": "Patek Philippe",
+     "model": "Calatrava Clous de Paris",
+     "referenceCode": "6119R-001",
+     "imageUrl": "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/4655-51882/pp-6119r-001-det-overview-16",
+     "price": {
+      "amount": 37510,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 39 mm rose gold manual Calatrava Clous de Paris with in-house calibre is restrained dress history that deepens over time."
+    },
+    {
+     "id": "88380cfc-1270-4864-be48-76428c6bc4e5",
+     "brand": "RGM",
+     "model": "Classic 801 Enamel",
+     "referenceCode": "801-EN",
+     "imageUrl": "https://images.squarespace-cdn.com/content/v1/550b2072e4b0d3cbec5358d7/1543605092234-RJNO89YHNS3NGCW6LTA4/image-asset.jpeg",
+     "price": {
+      "amount": 11900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "The 40 mm stainless steel manual Classic 801 Enamel with in-house calibre is a quiet dress/everyday object made to age well."
+    }
+   ]
+  },
+  "architectural_modernist": {
+   "considered_entry": [
+    {
+     "id": "b2aa38be-cf2b-4e83-be01-741e88499f4a",
+     "brand": "Braun",
+     "model": "Classic 40mm Black Dial",
+     "referenceCode": "BN0032BKBKG",
+     "imageUrl": "https://braun-clocks.com/cdn/shop/products/0b0d2509-88ce-4064-a95e-336b789fb3cc@2x.jpg?v=1643891315",
+     "price": {
+      "amount": 210,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "quartz",
+     "why": "The 40 mm quartz Braun Classic in stainless steel is a dress/everyday design object with controlled surfaces suited to formal environments."
+    },
+    {
+     "id": "b9c2a817-34f0-417a-b1a8-a686d39c5e2b",
+     "brand": "Junghans",
+     "model": "max bill Handaufzug",
+     "referenceCode": "027/3400.02",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0716/2783/3515/files/2532061434_27a4e592-1003-4250-b0b2-1b445cd0fda3.jpg?v=1780698111",
+     "price": {
+      "amount": 1690,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 34,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 34 mm manual Junghans max bill Handaufzug in stainless steel offers deliberate geometry for dress/everyday wear."
+    },
+    {
+     "id": "bc1c1e1c-af2a-4e23-91e6-55335172c03d",
+     "brand": "NOMOS Glashütte",
+     "model": "Club 36",
+     "referenceCode": "701",
+     "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=2560,bg=gray,sf=png/webshop/c1/5c/f8/1785365825/0701.1_Club_SB_2d-back-masked-2026.jpg",
+     "price": {
+      "amount": 1830,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 36,
+     "waterResistanceM": 100,
+     "movement": "manual",
+     "why": "The 36 mm manual NOMOS Glashutte Club 36 with in-house calibre in stainless steel holds proportion in everyday/dress settings."
+    },
+    {
+     "id": "71963b55-ccf2-4b19-a1e7-a3dc010f0a6b",
+     "brand": "Baltic",
+     "model": "MR01 Blue Roulette",
+     "referenceCode": "MR01-BLUE",
+     "imageUrl": "https://storiesoftime.com/cdn/shop/files/baltic-mr01-blue-roulette-a-collected-man-limited-edition-58188099944771_grande.jpg?v=1736257127",
+     "price": {
+      "amount": 500,
+      "currency": "GBP"
+     },
+     "caseDiameterMm": 36,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 36 mm automatic Baltic MR01 Blue Roulette in stainless steel is a restrained everyday/dress size for designed environments."
+    },
+    {
+     "id": "abed100a-ffb2-4f4e-a723-f28e77e03e43",
+     "brand": "Citizen",
+     "model": "Eco-Drive Axiom",
+     "referenceCode": "AU1060-51G",
+     "imageUrl": "https://i.ebayimg.com/images/g/F74AAOSwG-lngdL~/s-l400.jpg",
+     "price": {
+      "amount": 450,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 30,
+     "movement": "solar",
+     "why": "The 40 mm solar Citizen Eco-Drive Axiom with in-house calibre in stainless steel suits dress/everyday formality."
+    },
+    {
+     "id": "b4af3b5a-2665-481a-99d2-fe77281e7dc0",
+     "brand": "D1 Milano",
+     "model": "Ultra Thin 38mm Black",
+     "referenceCode": "UTBJ14",
+     "imageUrl": "https://scarce.co/cdn/shop/products/D1-UTBJ14_7.jpg?v=1690245791",
+     "price": {
+      "amount": 335,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 50,
+     "movement": "quartz",
+     "why": "The 38 mm quartz D1 Milano Ultra Thin in steel emphasizes thin proportion for everyday/dress use."
+    },
+    {
+     "id": "6b5e99b6-dbf3-4f32-bedc-4abe62b04b57",
+     "brand": "Mido",
+     "model": "Baroncelli III",
+     "referenceCode": "M8600.4.26.1",
+     "imageUrl": "https://www.thewatchcompany.com/media/catalog/product/cache/2e643380bf6acdbc360c33153b32ea2f/M/I/MIDO-BaroncelliIII-M8600.4.26.1.jpg",
+     "price": {
+      "amount": 910,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 38 mm automatic Mido Baroncelli III in stainless steel is a measured everyday/dress size with controlled presence."
+    },
+    {
+     "id": "153d65f3-649b-4f94-bf55-5b7486eca16e",
+     "brand": "Frederique Constant",
+     "model": "Classics Slimline Automatic",
+     "referenceCode": "FC-235S2S6",
+     "imageUrl": "https://citizenwatch.widen.net/content/pk25yi2pej/webp/Carr%C3%A9e+Small+Seconds.webp?u=41zuoe&width=700&height=1091&quality=80&crop=true&keep=c&color=FFFFFF",
+     "price": {
+      "amount": 895,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 40 mm automatic Frederique Constant Classics Slimline in stainless steel offers slim proportion for dress/everyday wear."
+    },
+    {
+     "id": "49fad677-c905-447f-9d9a-596d1d1c5e80",
+     "brand": "Bravur",
+     "model": "Heritage Automatic White",
+     "referenceCode": "BW003-W",
+     "imageUrl": "http://bravurwatches.com/cdn/shop/collections/BW003S-B-LBL2_front_low_res.jpg?v=1530304443&width=2048",
+     "price": {
+      "amount": 1350,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 38 mm automatic Bravur Heritage Automatic White in steel provides a clean dress/everyday surface."
+    },
+    {
+     "id": "8bb638f5-7f18-4271-abb0-1953f10b4863",
+     "brand": "Junghans",
+     "model": "Form A Automatic",
+     "referenceCode": "027/4731.00",
+     "imageUrl": "https://img.everywatch.com/media/2026/03/20/junghans-form-058-4930-00-73690609.jpg",
+     "price": {
+      "amount": 1330,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.3,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39.3 mm automatic Junghans Form A in stainless steel gives deliberate geometry for everyday/dress settings."
+    }
+   ],
+   "established_collection": [
+    {
+     "id": "51e9155f-0748-4b35-a8c9-96af720c8ce0",
+     "brand": "Bulgari",
+     "model": "Octo Roma Automatic 41",
+     "referenceCode": "103927",
+     "imageUrl": "https://www.bulgari.com/dw/image/v2/BCSG_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw1d7d0893/images/images/1350422.png?sw=450",
+     "price": {
+      "amount": 8500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 41 mm steel Octo Roma with in-house automatic calibre offers controlled faceted geometry suited to formal designed environments."
+    },
+    {
+     "id": "5ae4d57c-1545-4682-a987-52bd80bb5bd7",
+     "brand": "Bulgari",
+     "model": "Aluminium 40 Black",
+     "referenceCode": "103382",
+     "imageUrl": "https://media.bulgari.com/image/upload/c_fill,h_1090,w_1090/q_auto/f_auto/1260569.png",
+     "price": {
+      "amount": 3600,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 40 mm automatic aluminium everyday watch pairs industrial material with restrained 100 m sport proportions."
+    },
+    {
+     "id": "167b4a59-508b-409f-837d-7634976c2967",
+     "brand": "Cartier",
+     "model": "Santos de Cartier Large",
+     "referenceCode": "WSSA0039",
+     "imageUrl": "https://img.chrono24.com/images/uhren/47924660-y79hf9pwag9i2063wq8kx7fm-ExtraLarge.jpg",
+     "price": {
+      "amount": 9850,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.8,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 39.8 mm steel Santos Large with in-house automatic calibre brings deliberate square geometry for everyday and sport wear."
+    },
+    {
+     "id": "35e8f843-3c61-4962-b8aa-a791eee5fc37",
+     "brand": "Cartier",
+     "model": "Drive de Cartier Extra-Flat",
+     "referenceCode": "WSNM0011",
+     "imageUrl": "https://img.chrono24.com/images/uhren/s4qj3q728tae-6hbt5u3cqbdtqqqw0b3ot1gx-ExtraLarge.jpg",
+     "price": {
+      "amount": 6149,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 38 mm steel Drive Extra-Flat with manual in-house calibre offers slim dress proportions for formal environments."
+    },
+    {
+     "id": "6302dd4f-e7b9-45f3-9846-daefbc36ed7f",
+     "brand": "Baume & Mercier",
+     "model": "Hampton",
+     "referenceCode": "M0A10528",
+     "imageUrl": "https://img.chrono24.com/images/uhren/ct00tb62r8kt-0gm6kcqxboas38s3klrmjkya-ExtraLarge.jpg",
+     "price": {
+      "amount": 3350,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 31,
+     "waterResistanceM": 30,
+     "movement": "quartz",
+     "why": "The 31 mm steel Hampton quartz dress watch provides a rectangular Art-Deco geometry for everyday dress wear."
+    },
+    {
+     "id": "c196cc3f-c964-419c-ab6d-168b70dba2a4",
+     "brand": "Citizen",
+     "model": "Eco-Drive One",
+     "referenceCode": "AR5054-51E",
+     "imageUrl": "https://img.chrono24.com/images/uhren/47768301-9wnff1xq639o3mttm8dqjt6s-ExtraLarge.jpg",
+     "price": {
+      "amount": 3995,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 36.6,
+     "waterResistanceM": 30,
+     "movement": "solar",
+     "why": "The 36.6 mm solar Eco-Drive One with in-house calibre is an ultra-controlled thin dress piece."
+    },
+    {
+     "id": "a33e1594-2999-4831-bf19-fe91f41aaac7",
+     "brand": "Grand Seiko",
+     "model": "Elegance 9F Quartz",
+     "referenceCode": "SBGP013",
+     "imageUrl": "https://www.grand-seiko.com/us-en/-/media/Images/Product--Image/All/GrandSeiko/2022/02/19/22/14/SBGP013G/SBGP013G.png",
+     "price": {
+      "amount": 3100,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "quartz",
+     "why": "The 40 mm stainless steel 9F quartz Elegance with in-house calibre offers precise dress proportions with 100 m utility."
+    },
+    {
+     "id": "fc1cd912-294e-4dff-b54f-14a6f94fd98d",
+     "brand": "CHANEL",
+     "model": "J12 Calibre 12.1 38mm",
+     "referenceCode": "H5699",
+     "imageUrl": "https://kingram-luxurystore.com/cdn/shop/files/ss-9987103920001-11.jpg?v=1774498221&width=900",
+     "price": {
+      "amount": 7950,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The 38 mm ceramic J12 with in-house automatic calibre holds a formal presence through uniform material and controlled surfaces."
+    },
+    {
+     "id": "6863a24f-3d11-4409-9950-5f7428e14c82",
+     "brand": "Citizen",
+     "model": "Calibre 0200 Automatic",
+     "referenceCode": "NC0200-90E",
+     "imageUrl": "https://cdn.watchcharts.com/removebg/134eb509-d99a-4b4f-9781-8acf79879f8f.png",
+     "price": {
+      "amount": 6000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 40 mm stainless steel Calibre 0200 with in-house automatic calibre presents balanced everyday-dress proportions."
+    },
+    {
+     "id": "3fa49f01-d529-4963-8a63-5b6d5a4a8286",
+     "brand": "Glashütte Original",
+     "model": "Sixties Automatic",
+     "referenceCode": "1-39-52-01-02-04",
+     "imageUrl": "https://www.glashuette-original.com/app/uploads/2020/12/Glashuette_Original-W13952010204-Detail-2.jpg",
+     "price": {
+      "amount": 7500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 39 mm stainless steel Sixties Automatic with in-house calibre offers symmetrical dress geometry for formal settings."
+    }
+   ],
+   "exceptional_object": [
+    {
+     "id": "a777e170-e221-4bc9-8f56-3a4628df63ac",
+     "brand": "A. Lange & Sohne",
+     "model": "Lange 1",
+     "referenceCode": "191.032",
+     "imageUrl": "https://img.alange-soehne.com/product-slideshow-image-1/74007df5fe1f253a4399ddb98bb7b5069be72be2.jpg",
+     "price": {
+      "amount": 49400,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38.5,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 38.5 mm pink gold case with manual in-house calibre presents deliberate asymmetric dial geometry suited to formal environments."
+    },
+    {
+     "id": "31dc03a9-61f6-447f-8dc4-5ea1d5cd4bb0",
+     "brand": "Bulgari",
+     "model": "Octo Roma Automatic 41 Blue",
+     "referenceCode": "103926",
+     "imageUrl": "https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/b/v/bvlgari-octo-103926-multiple-6.jpg",
+     "price": {
+      "amount": 10300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 41 mm steel everyday/sport watch with in-house calibre offers controlled octagonal surfaces that hold their own in designed environments."
+    },
+    {
+     "id": "524a891f-6519-4ef7-9112-1f6816cc3007",
+     "brand": "Cartier",
+     "model": "Santos-Dumont Large",
+     "referenceCode": "WGSA0022",
+     "imageUrl": "https://chronexttime.imgix.net/V/6/V67576/V67576_1_det.png?w=570&ar=1:1&auto=format&fm=png&q=55&usm=50&usmrad=1.5&dpr=1&trim=color&fit=fill&auto=compress&bg=FFFFFF&bg-remove=true",
+     "price": {
+      "amount": 13200,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 43.5,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The steel dress/everyday watch with in-house calibre uses deliberate exposed-screw square geometry for formal settings."
+    },
+    {
+     "id": "8b402ff8-d738-4d86-b750-02cb39bb826f",
+     "brand": "Cartier",
+     "model": "Tank Louis Large",
+     "referenceCode": "WGTA0011",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48845182-0xwpgd4x085mkl0jkga3nsxs-ExtraLarge.jpg",
+     "price": {
+      "amount": 15400,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": null,
+     "waterResistanceM": null,
+     "movement": "manual",
+     "why": "The manual dress watch presents a controlled rectangular proportion that reads as pure geometry."
+    },
+    {
+     "id": "47eab3a3-5d9b-4538-aa8d-c671882c7885",
+     "brand": "Glashütte Original",
+     "model": "Seventies Chronograph Panorama Date",
+     "referenceCode": "1-37-02-08-02-70",
+     "imageUrl": "https://www.glashuette-original.com/app/uploads/2021/11/Glashuette_Original-W13702080262-Detail-9-1920x1024.jpg",
+     "price": {
+      "amount": 16600,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 40 mm stainless steel sport watch uses a deliberate TV-shaped case for architectural proportion."
+    },
+    {
+     "id": "26beb92d-8e66-4e80-a94d-89a7a16ea637",
+     "brand": "IWC",
+     "model": "Ingenieur Automatic 35",
+     "referenceCode": "IW324903",
+     "imageUrl": "https://content.thewosgroup.com/productimage/17810922/17810922_1.jpg?impolicy=hero&imwidth=700",
+     "price": {
+      "amount": 51800,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 35,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 35 mm steel everyday/sport watch with in-house calibre offers controlled engineered surfaces for formal or designed environments."
+    },
+    {
+     "id": "e9f8c497-c1c3-4bda-bfd8-945370f9c6d7",
+     "brand": "Jaeger-LeCoultre",
+     "model": "Master Ultra Thin Date",
+     "referenceCode": "Q1238420",
+     "imageUrl": "https://www.cooperjewelers.com/cdn/shop/products/master-ultra-thin-q1238420-watches-jaeger-lecoultre-cooper-jewelers-886_800x.png?v=1636474447",
+     "price": {
+      "amount": 10400,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 39 mm steel dress/everyday watch with in-house calibre provides restrained thin proportion and controlled surfaces."
+    },
+    {
+     "id": "e6c450f1-001c-443c-a1ca-4d753dfb3ead",
+     "brand": "Patek Philippe",
+     "model": "Calatrava Clous de Paris",
+     "referenceCode": "6119R-001",
+     "imageUrl": "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/4655-51882/pp-6119r-001-det-overview-16",
+     "price": {
+      "amount": 37510,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 39 mm rose gold dress/everyday watch with manual in-house calibre pairs controlled round geometry with structured Clous de Paris detailing."
+    },
+    {
+     "id": "8d9ad73b-7e7f-431d-9a97-28b74b99dd7c",
+     "brand": "Zenith",
+     "model": "Defy Skyline",
+     "referenceCode": "03.9300.3620/21.I001",
+     "imageUrl": "https://chpremier.com/cdn/shop/products/zenith-defy-skyline-039300362021i001-539300_1024x1024.jpg?v=1701372729",
+     "price": {
+      "amount": 10000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 41 mm stainless steel everyday/sport watch with in-house calibre brings faceted geometric surfaces suited to modernist settings."
+    },
+    {
+     "id": "33586327-f0f2-4eaa-b2e6-a284872ecab7",
+     "brand": "NOMOS Glashuette",
+     "model": "Lambda 39",
+     "referenceCode": "953",
+     "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=2560,sf=png/webshop/ec/cb/32/1743076271/0953_lambda_39_rg_gz-2d-front-masked.jpg",
+     "price": {
+      "amount": 17000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 39 mm stainless steel everyday/dress watch with manual in-house calibre offers minimal controlled surfaces and strict proportion."
+    }
+   ]
+  },
+  "expressive_collector": {
+   "considered_entry": [
+    {
+     "id": "317f4920-2fc1-4f12-882b-c5ed7fc243f0",
+     "brand": "Baltic",
+     "model": "Aquascaphe GMT Blue Gilt",
+     "referenceCode": "AQUASCAPHEGMT-BLUE",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0012/9299/2583/files/MK2_Date_39_Blue_FKM_Face_1353x2000_fa97eeac-6427-49cd-afce-9e5c216dba9a.png?v=1784706849&width=3072&quality=75",
+     "price": {
+      "amount": 850,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The blue gilt GMT pairs travel function with a bold gilt dive-watch look in 39 mm steel."
+    },
+    {
+     "id": "71963b55-ccf2-4b19-a1e7-a3dc010f0a6b",
+     "brand": "Baltic",
+     "model": "MR01 Blue Roulette",
+     "referenceCode": "MR01-BLUE",
+     "imageUrl": "https://storiesoftime.com/cdn/shop/files/baltic-mr01-blue-roulette-a-collected-man-limited-edition-58188099944771_grande.jpg?v=1736257127",
+     "price": {
+      "amount": 500,
+      "currency": "GBP"
+     },
+     "caseDiameterMm": 36,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 36 mm blue roulette dial offers a strong dress-watch point of view in a small automatic package."
+    },
+    {
+     "id": "886fb547-d7c4-4631-969b-dc4b68c1bf66",
+     "brand": "Doxa",
+     "model": "SUB 200 Black",
+     "referenceCode": "799.10.101.10",
+     "imageUrl": "https://content.thewosgroup.com/productimage/18800000/18800000_1.jpg",
+     "price": {
+      "amount": 1290,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The 42 mm 200 m SUB 200 brings Doxa's unmistakable expressive dive-watch character for everyday sport use."
+    },
+    {
+     "id": "7121b8f0-dc05-471b-95b7-e1a9e1338e69",
+     "brand": "Farer",
+     "model": "Lander IV GMT Black",
+     "referenceCode": "LANDER-IV-GMT",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/1004/6504/t/80/assets/626fb0ea7abd--Lander-slide5-ce4ddc.jpg?v=1710762004",
+     "price": {
+      "amount": 1575,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.5,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 39.5 mm black GMT combines travel utility with Farer's distinctive design-led everyday approach."
+    },
+    {
+     "id": "b9c2a817-34f0-417a-b1a8-a686d39c5e2b",
+     "brand": "Junghans",
+     "model": "max bill Handaufzug",
+     "referenceCode": "027/3400.02",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0716/2783/3515/files/2532061434_27a4e592-1003-4250-b0b2-1b445cd0fda3.jpg?v=1780698111",
+     "price": {
+      "amount": 1690,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 34,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 34 mm hand-wound max bill is rigorous Bauhaus craft that refuses anonymity on the wrist."
+    },
+    {
+     "id": "ab37ccc3-1456-471c-9c1b-958b4be107b2",
+     "brand": "LIP",
+     "model": "Grande Nautic Ski",
+     "referenceCode": "671530",
+     "imageUrl": "https://www.lepage.fr/70671/lip-grande-nautic-ski-titanium-automatic-black-dial-tropic-strap-41-mm.jpg",
+     "price": {
+      "amount": 940,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The 41 mm 200 m Grande Nautic Ski offers rare French dive-sport character with travel versatility."
+    },
+    {
+     "id": "08cf0171-1c25-4f44-a223-cd843eb392c6",
+     "brand": "Lorier",
+     "model": "Neptune Series IV Black/Gilt",
+     "referenceCode": "Neptune SIV Black/Gilt",
+     "imageUrl": "https://www.lorierwatches.com/cdn/shop/products/White_background_Neptune_1500x.jpg?v=1670429951",
+     "price": {
+      "amount": 599,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The 39 mm black/gilt Neptune delivers vintage-inspired gilt dive character with 200 m sport capability."
+    },
+    {
+     "id": "aec4a66d-cf84-47a1-81d0-a2cb38f1d65c",
+     "brand": "Louis Erard",
+     "model": "Excellence Petite Seconde",
+     "referenceCode": "34230AA01",
+     "imageUrl": "https://content.thewosgroup.com/productimage/18810066/18810066_1.jpg?impolicy=hero&imwidth=700",
+     "price": {
+      "amount": 1460,
+      "currency": "CHF"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39 mm petite seconde layout gives a refined dress-watch with a distinctive small-seconds point of view."
+    },
+    {
+     "id": "9c8bb24d-20d4-4328-b54e-e5e1f969826f",
+     "brand": "Nivada Grenchen",
+     "model": "F77 Black",
+     "referenceCode": "68001A77",
+     "imageUrl": "https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/n/i/nivada-grenchen-f77-69000a77-multiple-1.jpg",
+     "price": {
+      "amount": 1360,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 37,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 37 mm F77 reissue brings a strong integrated-design sport point of view in compact steel."
+    },
+    {
+     "id": "fbeb5597-579e-4ca3-a4c1-f0786e0e80f4",
+     "brand": "Orient Star",
+     "model": "Classic Semi Skeleton",
+     "referenceCode": "RE-AV0001S00B",
+     "imageUrl": "https://watchard.com/media/catalog/product/z/e/zegarek-meski-orient-star-classic-re-av0001s00b_1_1.jpg",
+     "price": {
+      "amount": 1080,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 39.3,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39.3 mm semi-skeleton showcases in-house mechanical craft openly for a visually risky dress watch."
+    }
+   ],
+   "established_collection": [
+    {
+     "id": "5ef3be9f-0e5f-4160-8b52-6217e7ef8e51",
+     "brand": "Bell & Ross",
+     "model": "BR 03-92 Diver Full Lum",
+     "referenceCode": "BR0392-D-C5-CE/SRB",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48840771-8mnxvhicz5069oih6ukjyl1v-ExtraLarge.jpg",
+     "price": {
+      "amount": 4600,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "The full-lum ceramic 42 mm diver makes a bold visual statement with strong point of view for a risk-tolerant collector."
+    },
+    {
+     "id": "cf4b17a2-08b9-4c90-9f65-ad19312f6195",
+     "brand": "Bell & Ross",
+     "model": "BR 03-92 Diver Orange",
+     "referenceCode": "BR0392-D-O-ST/SRB",
+     "imageUrl": "https://cdn2.jomashop.com/media/catalog/product/cache/b3e31d40bbb1abcc90b26106659d5d3f/b/e/bell-ross-diver-automatic-blue-dial-mens-watch-br0392dbustsrb-br0392dbustsrb.jpg?width=800&height=800",
+     "price": {
+      "amount": 4000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "The orange-dial 42 mm steel diver offers expressive color with serious 300 m dive capability, not empty spectacle."
+    },
+    {
+     "id": "5ae4d57c-1545-4682-a987-52bd80bb5bd7",
+     "brand": "Bulgari",
+     "model": "Aluminium 40 Black",
+     "referenceCode": "103382",
+     "imageUrl": "https://media.bulgari.com/image/upload/c_fill,h_1090,w_1090/q_auto/f_auto/1260569.png",
+     "price": {
+      "amount": 3600,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 40 mm aluminium everyday-sport watch brings unconventional material and design character in a rigorous package."
+    },
+    {
+     "id": "51e9155f-0748-4b35-a8c9-96af720c8ce0",
+     "brand": "Bulgari",
+     "model": "Octo Roma Automatic 41",
+     "referenceCode": "103927",
+     "imageUrl": "https://www.bulgari.com/dw/image/v2/BCSG_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw1d7d0893/images/images/1350422.png?sw=450",
+     "price": {
+      "amount": 8500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 41 mm in-house Octo Roma delivers strong architectural point of view with rigorous in-house craft."
+    },
+    {
+     "id": "167b4a59-508b-409f-837d-7634976c2967",
+     "brand": "Cartier",
+     "model": "Santos de Cartier Large",
+     "referenceCode": "WSSA0039",
+     "imageUrl": "https://img.chrono24.com/images/uhren/47924660-y79hf9pwag9i2063wq8kx7fm-ExtraLarge.jpg",
+     "price": {
+      "amount": 9850,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.8,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 39.8 mm in-house Santos Large pairs iconic design character with 100 m everyday-sport versatility."
+    },
+    {
+     "id": "e28a892a-3af5-4cea-bfb9-b089eaf87259",
+     "brand": "Casio",
+     "model": "G-Shock MR-G Frogman",
+     "referenceCode": "MRGBF1000B-1A",
+     "imageUrl": "https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/M/MR/MRG/mrg-bf1000b-1a/assets/MRG-BF1000B-1A.png.transform/main-visual-sp/image.png",
+     "price": {
+      "amount": 6500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 56,
+     "waterResistanceM": 200,
+     "movement": "solar",
+     "why": "The 56 mm titanium solar in-house Frogman embraces visual risk and extreme 200 m dive purpose."
+    },
+    {
+     "id": "2e4cfe7f-7ec7-4a98-a60e-095f72c0e75d",
+     "brand": "Christopher Ward",
+     "model": "C1 Bel Canto Classic",
+     "referenceCode": "C01-41APT2-T00B1-EB",
+     "imageUrl": "https://www.christopherward.com/dw/image/v2/BDWD_PRD/on/demandware.static/-/Sites-cw-master-catalog/default/dw73c1c8e6/images/WATCHES/C01-41APT0-T00K0-MG/C01-41APT0-T00K0-MG_Picture_1.jpg?sw=284&sh=284",
+     "price": {
+      "amount": 4495,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 41 mm Bel Canto offers rare chiming craft with expressive dial character for a collector seeking distinction."
+    },
+    {
+     "id": "fd9acfd0-e457-408b-9953-2c3539284b63",
+     "brand": "Doxa",
+     "model": "SUB 1500T Caribbean",
+     "referenceCode": "883.10.201.32",
+     "imageUrl": "https://content.thewosgroup.com/productimage/18800059/18800059_1.jpg?impolicy=hero&imwidth=700",
+     "price": {
+      "amount": 2650,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 45,
+     "waterResistanceM": 1500,
+     "movement": "automatic",
+     "why": "The 45 mm Caribbean SUB 1500T brings vivid color and serious 1500 m dive rigor with unmistakable identity."
+    },
+    {
+     "id": "d175739e-69d3-4600-91fe-342e099e9ebf",
+     "brand": "Eberhard & Co.",
+     "model": "Chrono 4 Grande Taille",
+     "referenceCode": "31052.1",
+     "imageUrl": "https://www.eberhard-co-watches.ch/wp-content/uploads/2014/03/31052-3.png",
+     "price": {
+      "amount": 7860,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 43,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 43 mm Chrono 4 Grande Taille shows a strong, unconventional dial layout with expressive sporting character."
+    },
+    {
+     "id": "3fa49f01-d529-4963-8a63-5b6d5a4a8286",
+     "brand": "Glashütte Original",
+     "model": "Sixties Automatic",
+     "referenceCode": "1-39-52-01-02-04",
+     "imageUrl": "https://www.glashuette-original.com/app/uploads/2020/12/Glashuette_Original-W13952010204-Detail-2.jpg",
+     "price": {
+      "amount": 7500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 39 mm in-house Sixties Automatic offers expressive vintage-inspired design with rare manufacture craft."
+    }
+   ],
+   "exceptional_object": [
+    {
+     "id": "1aea3482-77fc-4d81-a0b2-5a9d160b827a",
+     "brand": "Bell & Ross",
+     "model": "BR 05 Skeleton Black Lum",
+     "referenceCode": "BR05A-BL-SK-ST/SST",
+     "imageUrl": "https://bellross.com/cdn/shop/files/886-BR05A-BL-SK-ST-SST-cases-vue-produit-5.jpg?v=1759855109&width=2000",
+     "price": {
+      "amount": 9500,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its skeleton dial with black lum is a bold visual statement that refuses anonymity while staying wearable at 40 mm in steel."
+    },
+    {
+     "id": "80105142-d227-4409-8498-968977614d2d",
+     "brand": "Jaeger-LeCoultre",
+     "model": "Duometre Quantieme Lunaire",
+     "referenceCode": "Q6042421",
+     "imageUrl": "https://watchbox-cdn.imgix.net/posted-product-images/639240125376669404_JAEG970810_5062198-41-66.png?auto=format,compress&w=1200&h=630&fit=crop",
+     "price": {
+      "amount": 41700,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40.5,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "The moon-phase with dual-time layout in rose gold gives rigorous in-house craft a distinctly expressive, point-of-view dial."
+    },
+    {
+     "id": "0908cfac-648d-4879-af5c-aa5ee7e3b526",
+     "brand": "Kudoke",
+     "model": "Kudoke 3",
+     "referenceCode": "KUDOKE-3",
+     "imageUrl": "https://www.kudoke.eu/wp-content/uploads/2025/12/KUDOKE3_skyblue_sw.jpg",
+     "price": {
+      "amount": 11900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "Its hand-finished in-house manual calibre and 39 mm steel dress case offer rare independent craft with real character."
+    },
+    {
+     "id": "1072690b-5f7f-4809-99e5-2d8d1a4f4c68",
+     "brand": "Maurice Lacroix",
+     "model": "Aikon Master Grand Date Technicolour",
+     "referenceCode": "AI6118-SS00E-430-C",
+     "imageUrl": "https://img.chrono24.com/images/uhren/47846919-k2lfictanqqcqotxr8d4qngf-ExtraLarge.jpg",
+     "price": {
+      "amount": 8900,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 45,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The Technicolour grand-date dial in a large 45 mm steel case is pure visual risk backed by an in-house calibre."
+    },
+    {
+     "id": "ccabb26a-e3f2-4094-8893-b4f0da4b20fc",
+     "brand": "Ming",
+     "model": "29.01 Worldtimer Midnight",
+     "referenceCode": "29.01",
+     "imageUrl": "https://www.ming.watch/cdn-cgi/image/fit=contain,quality=90,format=auto,width=800/https://cdn.prod.website-files.com/62cd089edd0c372e58a75932/642bb4c5a11863d98334269d__Z918081_1.jpg",
+     "price": {
+      "amount": 22000,
+      "currency": "CHF"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The midnight worldtimer display packs travel function into a strong, unconventional 40 mm design."
+    },
+    {
+     "id": "d709d1fb-407a-49a9-bb9b-ab36ece23b79",
+     "brand": "Omega",
+     "model": "Seamaster Ploprof 1200M",
+     "referenceCode": "227.32.55.21.03.001",
+     "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-ploprof-1200m-co-axial-master-chronometer-55-x-45_mm-22732552103001-ca2ee4.png?w=1024",
+     "price": {
+      "amount": 16100,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 55,
+     "waterResistanceM": 1200,
+     "movement": "automatic",
+     "why": "At 55 mm with 1200 m water resistance, its oversized steel Ploprof shape is rigorous tool craft that rejects subtlety."
+    },
+    {
+     "id": "bdf4ac85-baf5-4a53-b8a2-7b9cc34cbe38",
+     "brand": "OMEGA",
+     "model": "Seamaster Planet Ocean 600M Deep Black",
+     "referenceCode": "215.92.46.21.01.001",
+     "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-planet-ocean-6000m-co-axial-master-chronometer-45-5-mm-21530462103002-bbbb21.png?w=210",
+     "price": {
+      "amount": 15300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 45.5,
+     "waterResistanceM": 600,
+     "movement": "automatic",
+     "why": "The all-ceramic 45.5 mm Deep Black case gives a 600 m dive watch a dark, monolithic presence."
+    },
+    {
+     "id": "88380cfc-1270-4864-be48-76428c6bc4e5",
+     "brand": "RGM",
+     "model": "Classic 801 Enamel",
+     "referenceCode": "801-EN",
+     "imageUrl": "https://images.squarespace-cdn.com/content/v1/550b2072e4b0d3cbec5358d7/1543605092234-RJNO89YHNS3NGCW6LTA4/image-asset.jpeg",
+     "price": {
+      "amount": 11900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "Its enamel dial made in-house brings rare traditional craft to a 40 mm steel dress watch."
+    },
+    {
+     "id": "cc1c41b1-900a-4cff-aad5-10bea4d1fcbb",
+     "brand": "Singer Reimagined",
+     "model": "1969 Timer",
+     "referenceCode": "SR201",
+     "imageUrl": "https://singerreimagined.com/share.jpg",
+     "price": {
+      "amount": 42600,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": null,
+     "movement": "automatic",
+     "why": "The 40 mm reimagined timer design offers a distinctive retro-sport point of view for dress and everyday wear."
+    },
+    {
+     "id": "8964940d-0e26-4bf4-8122-2bf91f71d8d9",
+     "brand": "Arnold & Son",
+     "model": "Globetrotter GMT",
+     "referenceCode": "1WTAS.G01A.C153S",
+     "imageUrl": "https://cdn1.ethoswatches.com/media/catalog/product/cache/6e5de5bc3d185d8179cdc7258143f41a/a/r/arnold-son-globetrotter-1wtas-s02c-c155s-multiple-3.jpg",
+     "price": {
+      "amount": 23225,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 45,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 45 mm steel Globetrotter GMT turns world travel into sculptural dial architecture with in-house calibre."
+    }
+   ]
+  },
+  "mechanical_connoisseur": {
+   "considered_entry": [
+    {
+     "id": "bc1c1e1c-af2a-4e23-91e6-55335172c03d",
+     "brand": "NOMOS Glashütte",
+     "model": "Club 36",
+     "referenceCode": "701",
+     "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=2560,bg=gray,sf=png/webshop/c1/5c/f8/1785365825/0701.1_Club_SB_2d-back-masked-2026.jpg",
+     "price": {
+      "amount": 1830,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 36,
+     "waterResistanceM": 100,
+     "movement": "manual",
+     "why": "Its manual-wind in-house calibre in stainless steel rewards close inspection of movement architecture and finishing."
+    },
+    {
+     "id": "850e5b37-689d-4ca5-b114-a19410e039fe",
+     "brand": "NOMOS Glashütte",
+     "model": "Ludwig 33 Duo",
+     "referenceCode": "242",
+     "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=1024/webshop/d5/b5/b9/1743073664/0242_0249_detail_4.jpg",
+     "price": {
+      "amount": 1800,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 32.8,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "Its manual-wind in-house calibre offers a dress-scale mechanical study in traditional construction."
+    },
+    {
+     "id": "fbeb5597-579e-4ca3-a4c1-f0786e0e80f4",
+     "brand": "Orient Star",
+     "model": "Classic Semi Skeleton",
+     "referenceCode": "RE-AV0001S00B",
+     "imageUrl": "https://watchard.com/media/catalog/product/z/e/zegarek-meski-orient-star-classic-re-av0001s00b_1_1.jpg",
+     "price": {
+      "amount": 1080,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 39.3,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "Its automatic in-house calibre with semi-skeleton dial puts the movement layout front and center for examination."
+    },
+    {
+     "id": "4b2feddd-9dfa-40b3-879a-d3031eedbdb2",
+     "brand": "Orient",
+     "model": "Classic Bambino GMT",
+     "referenceCode": "RA-AA0002L19B",
+     "imageUrl": "https://watchard.com/media/catalog/product/cache/3/image/1320x1584/z/e/zegarek-meski-orient-mako-iii-automatic-ra-aa0002l19b_9.webp",
+     "price": {
+      "amount": 350,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "Its automatic in-house calibre adds a mechanical GMT complication at a considered price."
+    },
+    {
+     "id": "b9c2a817-34f0-417a-b1a8-a686d39c5e2b",
+     "brand": "Junghans",
+     "model": "max bill Handaufzug",
+     "referenceCode": "027/3400.02",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0716/2783/3515/files/2532061434_27a4e592-1003-4250-b0b2-1b445cd0fda3.jpg?v=1780698111",
+     "price": {
+      "amount": 1690,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 34,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "Its 34 mm manual-wind steel case offers a hand-wound mechanical experience focused on the calibre."
+    },
+    {
+     "id": "aec4a66d-cf84-47a1-81d0-a2cb38f1d65c",
+     "brand": "Louis Erard",
+     "model": "Excellence Petite Seconde",
+     "referenceCode": "34230AA01",
+     "imageUrl": "https://content.thewosgroup.com/productimage/18810066/18810066_1.jpg?impolicy=hero&imwidth=700",
+     "price": {
+      "amount": 1460,
+      "currency": "CHF"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "Its automatic petite seconde layout showcases classical movement architecture beyond central seconds."
+    },
+    {
+     "id": "58b43cc1-bc91-4f4d-9a49-32864a406da9",
+     "brand": "Mido",
+     "model": "Multifort M Chronometer Black",
+     "referenceCode": "M038.431.11.051.00",
+     "imageUrl": "https://www.thewatchcompany.com/media/catalog/product/cache/2e643380bf6acdbc360c33153b32ea2f/M/I/MIDO-Multifort-M038.431.37.051.09.jpg",
+     "price": {
+      "amount": 1530,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its automatic chronometer-rated everyday-sport build invites scrutiny of timing performance and service reality."
+    },
+    {
+     "id": "74617d05-fb38-4dcb-99aa-eb9beab2cbc6",
+     "brand": "Certina",
+     "model": "DS Action GMT Powermatic 80",
+     "referenceCode": "C032.929.11.051.00",
+     "imageUrl": "https://cdn.laroyale.nl/Z2J4Z1FCaHNodDJMamVDdDhOYlNyTVFhVElQcXNJbTA=/resize:fit:800:800/quality:100/aHR0cHM6Ly93d3cubGFyb3lhbGUubmwvbWVkaWEvY2F0YWxvZy9wcm9kdWN0Ly9jL2UvY2VydGluYV9kcy1hY3Rpb24tZ210X2MwMzIuOTI5LjExLjA1MS4wMF9uMDFfc20uanBn",
+     "price": {
+      "amount": 1070,
+      "currency": "GBP"
+     },
+     "caseDiameterMm": 43,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "Its automatic Powermatic 80 GMT combines travel mechanics with 200 m sport capability for daily examination."
+    },
+    {
+     "id": "7121b8f0-dc05-471b-95b7-e1a9e1338e69",
+     "brand": "Farer",
+     "model": "Lander IV GMT Black",
+     "referenceCode": "LANDER-IV-GMT",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/1004/6504/t/80/assets/626fb0ea7abd--Lander-slide5-ce4ddc.jpg?v=1710762004",
+     "price": {
+      "amount": 1575,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.5,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its 39.5 mm automatic GMT in stainless steel offers a mechanical travel complication to study up close."
+    },
+    {
+     "id": "20b92fb2-32f8-4759-989a-a0d231f7e4ec",
+     "brand": "Baltic",
+     "model": "Hermetique Tourer Beige",
+     "referenceCode": "Tourer Beige",
+     "imageUrl": "https://cdn.baltic-watches.com/f/73554/3347x4399/bf03aa7f97/hermetique-tourer-beige-wristshot.jpg?width=3072",
+     "price": {
+      "amount": 700,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 37,
+     "waterResistanceM": 150,
+     "movement": "automatic",
+     "why": "Its 37 mm automatic field design in stainless steel provides a compact mechanical everyday watch to evaluate."
+    }
+   ],
+   "established_collection": [
+    {
+     "id": "d0e57d48-d236-46f6-bc0c-2396e5de9806",
+     "brand": "Breitling",
+     "model": "Avenger B01 Chronograph 44",
+     "referenceCode": "AB0138211B1X1",
+     "imageUrl": "https://www.prestigetime.com/images/watches/61/3692/ab0138241c1p1/ab0138241c1p1-Navitimer_main.jpg",
+     "price": {
+      "amount": 8250,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 44,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "Its in-house automatic chronograph calibre in a 300 m steel sport case gives movement architecture to examine under real tool-watch conditions."
+    },
+    {
+     "id": "35e8f843-3c61-4962-b8aa-a791eee5fc37",
+     "brand": "Cartier",
+     "model": "Drive de Cartier Extra-Flat",
+     "referenceCode": "WSNM0011",
+     "imageUrl": "https://img.chrono24.com/images/uhren/s4qj3q728tae-6hbt5u3cqbdtqqqw0b3ot1gx-ExtraLarge.jpg",
+     "price": {
+      "amount": 6149,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "Its manual-winding in-house calibre in a 38 mm extra-flat steel dress case puts finishing and hand-wound mechanics front and center."
+    },
+    {
+     "id": "fc1cd912-294e-4dff-b54f-14a6f94fd98d",
+     "brand": "CHANEL",
+     "model": "J12 Calibre 12.1 38mm",
+     "referenceCode": "H5699",
+     "imageUrl": "https://kingram-luxurystore.com/cdn/shop/files/ss-9987103920001-11.jpg?v=1774498221&width=900",
+     "price": {
+      "amount": 7950,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "Its in-house automatic calibre in a 38 mm ceramic 200 m case pairs manufacture movement interest with serviceable everyday-sport construction."
+    },
+    {
+     "id": "6863a24f-3d11-4409-9950-5f7428e14c82",
+     "brand": "Citizen",
+     "model": "Calibre 0200 Automatic",
+     "referenceCode": "NC0200-90E",
+     "imageUrl": "https://cdn.watchcharts.com/removebg/134eb509-d99a-4b4f-9781-8acf79879f8f.png",
+     "price": {
+      "amount": 6000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "Its in-house automatic calibre in a 40 mm stainless dress-everyday case offers manufacture movement examination at an established-collection price."
+    },
+    {
+     "id": "b7da2d01-3272-46f1-a9c7-34410c9b2f5a",
+     "brand": "Damasko",
+     "model": "DC86 Chronograph",
+     "referenceCode": "DC86",
+     "imageUrl": "https://www.thewatchmakersshop.com/cdn/shop/files/EA14BED8-3413-4000-B7B0-23AE99488D03_grande.jpg?v=1746283570",
+     "price": {
+      "amount": 4140,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 43,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its in-house automatic chronograph in a 43 mm steel field-sport case rewards close study of movement layout and rugged service reality."
+    },
+    {
+     "id": "fe3717e2-f723-4e34-a8d6-794b75b15110",
+     "brand": "Dornblueth & Sohn",
+     "model": "99.1M Kleine Sekunde",
+     "referenceCode": "99.1M",
+     "imageUrl": "https://about-timepieces.com/wp-content/uploads/2020/11/IMG_20201108_112924-scaled.jpg",
+     "price": {
+      "amount": 7170,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "Its manual-winding 40 mm stainless dress-everyday layout with small seconds invites appreciation of traditional movement architecture and finishing."
+    },
+    {
+     "id": "86fc4910-dd8a-4c07-a02f-08fa9d538133",
+     "brand": "Frederique Constant",
+     "model": "Classics Moonphase Manufacture",
+     "referenceCode": "FC-335MC4P6",
+     "imageUrl": "https://citizenwatch.widen.net/content/0haymkh0gn/webp/Heart+Beat+Moonphase+Date.webp?u=41zuoe&width=700&height=933&quality=80&crop=true&keep=c&color=FFFFFF00",
+     "price": {
+      "amount": 2895,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40.5,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "Its in-house automatic moonphase manufacture calibre in stainless steel gives complex calendar mechanics to inspect in a dress-everyday watch."
+    },
+    {
+     "id": "3fa49f01-d529-4963-8a63-5b6d5a4a8286",
+     "brand": "Glashütte Original",
+     "model": "Sixties Automatic",
+     "referenceCode": "1-39-52-01-02-04",
+     "imageUrl": "https://www.glashuette-original.com/app/uploads/2020/12/Glashuette_Original-W13952010204-Detail-2.jpg",
+     "price": {
+      "amount": 7500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "Its in-house automatic calibre in a 39 mm stainless dress case centers the appeal on Glashütte movement construction and finishing."
+    },
+    {
+     "id": "b2bf94e9-75b6-4b9e-b1d5-bce6271bea44",
+     "brand": "Horage",
+     "model": "Supersede GMT Ascent",
+     "referenceCode": "Supersede GMT",
+     "imageUrl": "https://static.wixstatic.com/media/9c9890_f4a2f6ee468f41f6bcd192670f8c8100~mv2.png/v1/fill/w_1080,h_1112,al_c,q_90,enc_avif,quality_auto/9c9890_f4a2f6ee468f41f6bcd192670f8c8100~mv2.png",
+     "price": {
+      "amount": 6490,
+      "currency": "CHF"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "Its in-house automatic GMT in a 40 mm steel travel-sport case makes movement architecture and dual-time mechanics the main event."
+    },
+    {
+     "id": "84f4a4d7-c542-4810-b216-60e0711092d5",
+     "brand": "IWC",
+     "model": "Aquatimer Automatic",
+     "referenceCode": "IW328002",
+     "imageUrl": "https://grandcaliber.com/cdn/shop/files/IWC-Watches-PDP-Banner-Image.jpg?v=1782396066&width=3000",
+     "price": {
+      "amount": 6900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "Its in-house automatic calibre in a 42 mm steel 300 m dive case lets the movement be judged alongside true dive-watch capability."
+    }
+   ],
+   "exceptional_object": [
+    {
+     "id": "a777e170-e221-4bc9-8f56-3a4628df63ac",
+     "brand": "A. Lange & Sohne",
+     "model": "Lange 1",
+     "referenceCode": "191.032",
+     "imageUrl": "https://img.alange-soehne.com/product-slideshow-image-1/74007df5fe1f253a4399ddb98bb7b5069be72be2.jpg",
+     "price": {
+      "amount": 49400,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38.5,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 38.5 mm pink gold manual with in-house calibre puts its movement architecture front and center for close examination."
+    },
+    {
+     "id": "66f55337-93f2-4ec7-a641-7714ec8722ea",
+     "brand": "A. Lange & Sohne",
+     "model": "Lange 1 Moon Phase",
+     "referenceCode": "192.032",
+     "imageUrl": "https://img.alange-soehne.com/product-slideshow-product-2/db993824f11ca7ab273b9c047dce9fb50133b282.jpg",
+     "price": {
+      "amount": 55610,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38.5,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 38.5 mm pink gold manual with in-house calibre offers a second Lange moon-phase architecture to study finishing and layout."
+    },
+    {
+     "id": "9f15d99d-e525-4f44-a095-a5ee6c93c75e",
+     "brand": "Chopard",
+     "model": "L.U.C 1860",
+     "referenceCode": "168860-3001",
+     "imageUrl": "https://img.chrono24.com/images/uhren/46878929-lde73xoyc6tb3u7zu1kgftaz-ExtraLarge.jpg",
+     "price": {
+      "amount": 29700,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 36.5,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 36.5 mm stainless steel manual dress watch with in-house calibre rewards inspection of traditional finishing at small scale."
+    },
+    {
+     "id": "80105142-d227-4409-8498-968977614d2d",
+     "brand": "Jaeger-LeCoultre",
+     "model": "Duometre Quantieme Lunaire",
+     "referenceCode": "Q6042421",
+     "imageUrl": "https://watchbox-cdn.imgix.net/posted-product-images/639240125376669404_JAEG970810_5062198-41-66.png?auto=format,compress&w=1200&h=630&fit=crop",
+     "price": {
+      "amount": 41700,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40.5,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "The 40.5 mm rose gold manual dress watch with in-house calibre showcases dual-architecture mechanics worth examining closely."
+    },
+    {
+     "id": "ce43a019-f34b-4647-9edc-cf29a912fa57",
+     "brand": "Jaeger-LeCoultre",
+     "model": "Master Ultra Thin Perpetual",
+     "referenceCode": "Q1303520",
+     "imageUrl": "https://img.everywatch.com/media/2026/07/22/jaeger-lecoultre-master-ultra-thin-q1303520-85885558.jpg",
+     "price": {
+      "amount": 38800,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39 mm stainless steel automatic dress watch with in-house calibre packs perpetual calendar mechanics into an ultra-thin case."
+    },
+    {
+     "id": "0908cfac-648d-4879-af5c-aa5ee7e3b526",
+     "brand": "Kudoke",
+     "model": "Kudoke 3",
+     "referenceCode": "KUDOKE-3",
+     "imageUrl": "https://www.kudoke.eu/wp-content/uploads/2025/12/KUDOKE3_skyblue_sw.jpg",
+     "price": {
+      "amount": 11900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "The 39 mm steel manual with in-house calibre offers independent movement architecture for mechanics-led rarity."
+    },
+    {
+     "id": "33586327-f0f2-4eaa-b2e6-a284872ecab7",
+     "brand": "NOMOS Glashuette",
+     "model": "Lambda 39",
+     "referenceCode": "953",
+     "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=2560,sf=png/webshop/ec/cb/32/1743076271/0953_lambda_39_rg_gz-2d-front-masked.jpg",
+     "price": {
+      "amount": 17000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 39 mm stainless steel manual with in-house calibre gives long-form hand-wound architecture to judge on finishing."
+    },
+    {
+     "id": "e6c450f1-001c-443c-a1ca-4d753dfb3ead",
+     "brand": "Patek Philippe",
+     "model": "Calatrava Clous de Paris",
+     "referenceCode": "6119R-001",
+     "imageUrl": "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/4655-51882/pp-6119r-001-det-overview-16",
+     "price": {
+      "amount": 37510,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 39 mm rose gold manual dress watch with in-house calibre centers on hand-wound calibre craft over complication count."
+    },
+    {
+     "id": "88380cfc-1270-4864-be48-76428c6bc4e5",
+     "brand": "RGM",
+     "model": "Classic 801 Enamel",
+     "referenceCode": "801-EN",
+     "imageUrl": "https://images.squarespace-cdn.com/content/v1/550b2072e4b0d3cbec5358d7/1543605092234-RJNO89YHNS3NGCW6LTA4/image-asset.jpeg",
+     "price": {
+      "amount": 11900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "manual",
+     "why": "The 40 mm stainless steel manual dress watch with in-house calibre pairs enamel work with in-house mechanics to inspect."
+    },
+    {
+     "id": "c8b4b0a9-2936-4d95-935e-87e53efda9f2",
+     "brand": "Arnold & Son",
+     "model": "HM Small Second",
+     "referenceCode": "1NWA.A01A.C079A",
+     "imageUrl": "https://cdn.arnoldandson.com/content/uploads/2025/02/28082838/AS-HM-Steel-ambre_soldat.png",
+     "price": {
+      "amount": 13626,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 40 mm stainless steel manual dress watch with in-house calibre presents small-second architecture built for movement scrutiny."
+    }
+   ]
+  },
+  "recognised_standard_bearer": {
+   "considered_entry": [
+    {
+     "id": "6c6d2ac8-3884-40be-8780-4677bec69d3f",
+     "brand": "Hamilton",
+     "model": "Khaki Aviation Pilot Day Date Auto",
+     "referenceCode": "H64615135",
+     "imageUrl": "https://www.hamiltonwatch.com/media/catalog/product/cache/6517c62f5899ad6aa0ba23ceb3eeff97/h/6/h64615135.png",
+     "price": {
+      "amount": 1125,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 42 mm automatic Hamilton Khaki Aviation Pilot with 100 m resistance is an established pilot benchmark for a visible milestone."
+    },
+    {
+     "id": "b32298e6-89ce-4968-966b-43d26fdbc43f",
+     "brand": "Hamilton",
+     "model": "Jazzmaster Viewmatic Auto 40mm",
+     "referenceCode": "H32515555",
+     "imageUrl": "https://www.hamiltonwatch.com/media/catalog/product/h/3/h32515555.png",
+     "price": {
+      "amount": 945,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 40 mm automatic Hamilton Jazzmaster Viewmatic in stainless steel is a recognised dress-everyday standard at USD 945."
+    },
+    {
+     "id": "6893270f-e615-46ad-aaa1-6da659c79f39",
+     "brand": "Christopher Ward",
+     "model": "C60 Trident Pro 600 40mm Black",
+     "referenceCode": "C60-40ADA2-S00B0-B0",
+     "imageUrl": "https://content1.hourstriker.com/images/dbitems/christopher-ward-c60-trident-pro-300-44mm-c60-44ada31s0kk1-b0-db32071-01.webp",
+     "price": {
+      "amount": 910,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 600,
+     "movement": "automatic",
+     "why": "The 40 mm automatic Christopher Ward C60 Trident Pro with 600 m resistance is a benchmark dive-sport choice in stainless steel."
+    },
+    {
+     "id": "886fb547-d7c4-4631-969b-dc4b68c1bf66",
+     "brand": "Doxa",
+     "model": "SUB 200 Black",
+     "referenceCode": "799.10.101.10",
+     "imageUrl": "https://content.thewosgroup.com/productimage/18800000/18800000_1.jpg",
+     "price": {
+      "amount": 1290,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The 42 mm automatic Doxa SUB 200 with 200 m resistance is an institutionally recognised dive design in stainless steel."
+    },
+    {
+     "id": "ab83d2f6-16e7-4ced-aa37-0459bf26dd84",
+     "brand": "Mido",
+     "model": "Ocean Star 200C Blue",
+     "referenceCode": "M026.430.11.041.00",
+     "imageUrl": "https://www.midowatches.com/media/catalog/product/M/0/M042.430.11.041.00_0_front_1.png",
+     "price": {
+      "amount": 792,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42.5,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The 42.5 mm automatic Mido Ocean Star 200C with 200 m resistance is an established dive-sport benchmark in steel."
+    },
+    {
+     "id": "d4296eef-dbc9-401b-9007-43b1af98226e",
+     "brand": "Certina",
+     "model": "DS Action Day-Date",
+     "referenceCode": "C032.607.11.051.00",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48631124-16r3yhi8qh9ehgspsv39v3w1-ExtraLarge.jpg",
+     "price": {
+      "amount": 925,
+      "currency": "CHF"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The 41 mm automatic Certina DS Action Day-Date with 200 m resistance is a recognised field-sport-everyday standard in stainless steel."
+    },
+    {
+     "id": "bc1c1e1c-af2a-4e23-91e6-55335172c03d",
+     "brand": "NOMOS Glashütte",
+     "model": "Club 36",
+     "referenceCode": "701",
+     "imageUrl": "https://cdn.nomos-glashuette.com/img/f=scale-down,w=2560,bg=gray,sf=png/webshop/c1/5c/f8/1785365825/0701.1_Club_SB_2d-back-masked-2026.jpg",
+     "price": {
+      "amount": 1830,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 36,
+     "waterResistanceM": 100,
+     "movement": "manual",
+     "why": "The 36 mm NOMOS Glashutte Club with in-house manual calibre and 100 m resistance is a recognised design benchmark in stainless steel."
+    },
+    {
+     "id": "b9c2a817-34f0-417a-b1a8-a686d39c5e2b",
+     "brand": "Junghans",
+     "model": "max bill Handaufzug",
+     "referenceCode": "027/3400.02",
+     "imageUrl": "https://cdn.shopify.com/s/files/1/0716/2783/3515/files/2532061434_27a4e592-1003-4250-b0b2-1b445cd0fda3.jpg?v=1780698111",
+     "price": {
+      "amount": 1690,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 34,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 34 mm Junghans max bill Handaufzug in stainless steel is an established dress-everyday design benchmark."
+    },
+    {
+     "id": "7246f84e-9d33-43c9-a27f-9599ea79d440",
+     "brand": "Ball",
+     "model": "Fireman Enterprise",
+     "referenceCode": "NM2098C-S20J-WH",
+     "imageUrl": "https://cdn.thewatchpages.com/app/uploads/2021/06/13202017/ball-watch-fireman-enterprise-nm2098c-s20j-bk-scaled.jpg",
+     "price": {
+      "amount": 1299,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 40 mm automatic Ball Fireman Enterprise with 100 m resistance is a recognised everyday-dress standard in stainless steel."
+    },
+    {
+     "id": "fc0badc9-c64a-4b78-a335-ad4edd8a100d",
+     "brand": "Casio",
+     "model": "G-Shock Carbon Core GA-2100",
+     "referenceCode": "GA2100-1A1",
+     "imageUrl": "https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/G/GA/GA2/GA-2100-1A1/assets/GA-2100-1A1_Seq02.jpg.transform/main-visual-sp/image.jpg",
+     "price": {
+      "amount": 110,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 48.5,
+     "waterResistanceM": 200,
+     "movement": "quartz",
+     "why": "The 48.5 mm quartz Casio G-Shock Carbon Core with in-house calibre and 200 m resistance is a deliberate, highly visible everyday-sport benchmark at USD 110."
+    }
+   ],
+   "established_collection": [
+    {
+     "id": "167b4a59-508b-409f-837d-7634976c2967",
+     "brand": "Cartier",
+     "model": "Santos de Cartier Large",
+     "referenceCode": "WSSA0039",
+     "imageUrl": "https://img.chrono24.com/images/uhren/47924660-y79hf9pwag9i2063wq8kx7fm-ExtraLarge.jpg",
+     "price": {
+      "amount": 9850,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39.8,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The Santos de Cartier Large in steel with in-house calibre is an established design benchmark with everyday-sport recognition."
+    },
+    {
+     "id": "64d408bf-4776-46bc-90a9-87b588b3f1b9",
+     "brand": "Breitling",
+     "model": "Avenger Automatic 42",
+     "referenceCode": "A17328101B1A1",
+     "imageUrl": "https://www-breitling.eu.saleor.cloud/media/thumbnails/products/a17328101b1a1-soldier_1c790088_thumbnail_1024.webp",
+     "price": {
+      "amount": 5200,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "The steel 42 mm Breitling Avenger Automatic with 300 m rating is a widely recognized sport benchmark."
+    },
+    {
+     "id": "c840f239-6c7e-4f6e-86f7-ab77aa35037a",
+     "brand": "Bell & Ross",
+     "model": "BR 03 Diver Black Matte",
+     "referenceCode": "BR03A-D-BL-ST/SRB",
+     "imageUrl": "https://loro.ca/wp-content/uploads/2024/11/BR03_Diver_BlackSteel-Square_Structure-3-v2.jpg",
+     "price": {
+      "amount": 4600,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "The steel 42 mm Bell & Ross BR 03 Diver with 300 m rating is an established dive benchmark."
+    },
+    {
+     "id": "fc1cd912-294e-4dff-b54f-14a6f94fd98d",
+     "brand": "CHANEL",
+     "model": "J12 Calibre 12.1 38mm",
+     "referenceCode": "H5699",
+     "imageUrl": "https://kingram-luxurystore.com/cdn/shop/files/ss-9987103920001-11.jpg?v=1774498221&width=900",
+     "price": {
+      "amount": 7950,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 38,
+     "waterResistanceM": 200,
+     "movement": "automatic",
+     "why": "The 38 mm CHANEL J12 with in-house calibre in ceramic is an institutionally recognized everyday-sport standard."
+    },
+    {
+     "id": "51e9155f-0748-4b35-a8c9-96af720c8ce0",
+     "brand": "Bulgari",
+     "model": "Octo Roma Automatic 41",
+     "referenceCode": "103927",
+     "imageUrl": "https://www.bulgari.com/dw/image/v2/BCSG_PRD/on/demandware.static/-/Sites-masterCatalog/default/dw1d7d0893/images/images/1350422.png?sw=450",
+     "price": {
+      "amount": 8500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The steel 41 mm Bulgari Octo Roma Automatic with in-house calibre is a recognized modern everyday-sport benchmark."
+    },
+    {
+     "id": "a33e1594-2999-4831-bf19-fe91f41aaac7",
+     "brand": "Grand Seiko",
+     "model": "Elegance 9F Quartz",
+     "referenceCode": "SBGP013",
+     "imageUrl": "https://www.grand-seiko.com/us-en/-/media/Images/Product--Image/All/GrandSeiko/2022/02/19/22/14/SBGP013G/SBGP013G.png",
+     "price": {
+      "amount": 3100,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "quartz",
+     "why": "The 40 mm Grand Seiko Elegance 9F Quartz with in-house calibre in stainless steel is an established dress-everyday benchmark."
+    },
+    {
+     "id": "0310dc08-3ecc-4e9a-892a-e849447f7796",
+     "brand": "DOXA",
+     "model": "SUB 300T Sharkhunter",
+     "referenceCode": "840.10.101.10",
+     "imageUrl": "https://www.belmontwatches.com/cdn/shop/files/DoxaSUB300TSharkhunter840.10.101.10DoxaSUB300TCaribbean840.10.201.10DSC08116.jpg?v=1747677513&width=1946",
+     "price": {
+      "amount": 2190,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42.5,
+     "waterResistanceM": 1200,
+     "movement": "automatic",
+     "why": "The 42.5 mm stainless steel DOXA SUB 300T with 1200 m rating is a historic dive benchmark."
+    },
+    {
+     "id": "64232e6f-a7b7-4d17-bb0e-04a12cb19bd8",
+     "brand": "Casio",
+     "model": "G-Shock MR-G",
+     "referenceCode": "MRG-B5000B-1",
+     "imageUrl": "https://www.casio.com/content/dam/casio/product-info/locales/us/en/timepiece/product/watch/M/MR/MRG/mrg-b5000b-1/assets/MRG-B5000B-1_4.png.transform/main-visual-sp/image.png",
+     "price": {
+      "amount": 4000,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 49.4,
+     "waterResistanceM": 200,
+     "movement": "solar",
+     "why": "The titanium 49.4 mm Casio G-Shock MR-G with in-house calibre and 200 m rating is a recognized field-sport standard."
+    },
+    {
+     "id": "a6aef0aa-e922-4047-8066-fddfa16d36d6",
+     "brand": "Baume & Mercier",
+     "model": "Clifton Baumatic 10399",
+     "referenceCode": "M0A10468",
+     "imageUrl": "https://www.baume-et-mercier.com/en/collections/clifton-men/watch-clifton-10399-date.html?srsltid=AU7gw4XKR3jeB-bxxxDOm1eihOT4eMUOV37kiBHSTaK0aRaOAmZaYx30",
+     "price": {
+      "amount": 3400,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 50,
+     "movement": "automatic",
+     "why": "The 39 mm stainless steel Baume & Mercier Clifton Baumatic with in-house calibre is an established dress-everyday benchmark."
+    },
+    {
+     "id": "3fa49f01-d529-4963-8a63-5b6d5a4a8286",
+     "brand": "Glashütte Original",
+     "model": "Sixties Automatic",
+     "referenceCode": "1-39-52-01-02-04",
+     "imageUrl": "https://www.glashuette-original.com/app/uploads/2020/12/Glashuette_Original-W13952010204-Detail-2.jpg",
+     "price": {
+      "amount": 7500,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 39,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 39 mm stainless steel Glashütte Original Sixties Automatic with in-house calibre is a recognized dress-everyday standard."
+    }
+   ],
+   "exceptional_object": [
+    {
+     "id": "420d657b-ddec-4aa4-be79-f90caf3cad49",
+     "brand": "Rolex",
+     "model": "Cosmograph Daytona",
+     "referenceCode": "126500LN",
+     "imageUrl": "https://www.sissyslogcabin.com/cdn/shop/files/m126500ln-0001_ac0c3bca-5a6d-48e7-bbbd-e70fe455af2c.webp?height=750&v=1780332294",
+     "price": {
+      "amount": 16900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The steel 40 mm Daytona with in-house calibre is the established benchmark chronograph for a milestone with lasting liquidity and recognition."
+    },
+    {
+     "id": "be43cd61-8f68-4db8-a61a-3924ddc51ce8",
+     "brand": "Patek Philippe",
+     "model": "Aquanaut",
+     "referenceCode": "5167A-001",
+     "imageUrl": "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/221059-51882/pp-5167a-001-16-9-banner",
+     "price": {
+      "amount": 27257,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 40,
+     "waterResistanceM": 120,
+     "movement": "automatic",
+     "why": "The steel 40 mm Aquanaut with in-house calibre and 120 m rating is an institutionally recognized luxury-sport standard that remains highly visible."
+    },
+    {
+     "id": "bc4e759a-2f70-4b87-86ea-fe10cd74fc9e",
+     "brand": "Audemars Piguet",
+     "model": "Royal Oak Offshore Diver",
+     "referenceCode": "15720ST.OO.A002CA.01",
+     "imageUrl": "https://wolvyn.com/wp-content/uploads/2026/04/282.jpg",
+     "price": {
+      "amount": 32900,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "The 42 mm steel Royal Oak Offshore Diver with in-house calibre and 300 m rating is a deliberate, established benchmark dive-sport icon."
+    },
+    {
+     "id": "2d90fd80-a293-4760-923a-874f15cd945c",
+     "brand": "Blancpain",
+     "model": "Fifty Fathoms Automatique",
+     "referenceCode": "5015-1130-52A",
+     "imageUrl": "https://content.thewosgroup.com/productimage/17480217/17480217_1.jpg",
+     "price": {
+      "amount": 19100,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 45,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "The 45 mm steel Fifty Fathoms Automatique with in-house calibre and 300 m rating is the historic benchmark dive watch institutions still reference."
+    },
+    {
+     "id": "a777e170-e221-4bc9-8f56-3a4628df63ac",
+     "brand": "A. Lange & Sohne",
+     "model": "Lange 1",
+     "referenceCode": "191.032",
+     "imageUrl": "https://img.alange-soehne.com/product-slideshow-image-1/74007df5fe1f253a4399ddb98bb7b5069be72be2.jpg",
+     "price": {
+      "amount": 49400,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": 38.5,
+     "waterResistanceM": 30,
+     "movement": "manual",
+     "why": "The 38.5 mm pink gold Lange 1 with in-house manual calibre is the recognized German dress benchmark for marking an exceptional achievement."
+    },
+    {
+     "id": "8b402ff8-d738-4d86-b750-02cb39bb826f",
+     "brand": "Cartier",
+     "model": "Tank Louis Large",
+     "referenceCode": "WGTA0011",
+     "imageUrl": "https://img.chrono24.com/images/uhren/48845182-0xwpgd4x085mkl0jkga3nsxs-ExtraLarge.jpg",
+     "price": {
+      "amount": 15400,
+      "currency": "EUR"
+     },
+     "caseDiameterMm": null,
+     "waterResistanceM": null,
+     "movement": "manual",
+     "why": "The Tank Louis Large in dress style is a deliberate design benchmark whose visibility serves a formal milestone."
+    },
+    {
+     "id": "2d8de00d-c2b6-4edb-aa92-1d3e8dadf69f",
+     "brand": "Breitling",
+     "model": "Navitimer B01 Chronograph 43",
+     "referenceCode": "AB0121211G1P1",
+     "imageUrl": "https://www-breitling.eu.saleor.cloud/media/thumbnails/products/ab0121211g1p1-soldier_12c1c2cb_thumbnail_1024.webp",
+     "price": {
+      "amount": 10200,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 43,
+     "waterResistanceM": 30,
+     "movement": "automatic",
+     "why": "The 43 mm steel Navitimer B01 with in-house calibre is the established pilot-chronograph standard with broad recognition."
+    },
+    {
+     "id": "809900f4-4a83-4264-a011-0d5b7dbc7daf",
+     "brand": "Omega",
+     "model": "Seamaster Diver 300M Co-Axial Master Chronometer 42mm Titanium",
+     "referenceCode": "210.90.42.20.01.001",
+     "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21090422001001-ba176b.png?w=1024",
+     "price": {
+      "amount": 11300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 42,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "The 42 mm titanium Seamaster Diver 300M with in-house calibre and 300 m rating is a widely recognized dive benchmark with proven staying power."
+    },
+    {
+     "id": "f6b6cd6d-e954-45b4-be07-427e6b418907",
+     "brand": "Panerai",
+     "model": "Luminor Marina",
+     "referenceCode": "PAM01078",
+     "imageUrl": "https://cdn.thewatchpages.com/app/uploads/2019/07/13221335/panerai-luminor-marina-pam01312.jpg",
+     "price": {
+      "amount": 11200,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 44,
+     "waterResistanceM": 300,
+     "movement": "automatic",
+     "why": "The 44 mm steel Luminor Marina with in-house calibre and 300 m rating is an established, instantly visible dive-everyday standard."
+    },
+    {
+     "id": "f20f5920-e94e-4826-a0e0-3f61745ab0d5",
+     "brand": "Zenith",
+     "model": "Chronomaster Sport",
+     "referenceCode": "03.3100.3600/69.M3100",
+     "imageUrl": "https://grandcaliber.com/cdn/shop/files/Zenith_Chronomaster_Sport_03.3100.3600_69.M3100.jpg?v=1752080920&width=1440",
+     "price": {
+      "amount": 12300,
+      "currency": "USD"
+     },
+     "caseDiameterMm": 41,
+     "waterResistanceM": 100,
+     "movement": "automatic",
+     "why": "The 41 mm steel Chronomaster Sport with in-house calibre and 100 m rating is the recognized El Primero chronograph benchmark for everyday sport use."
+    }
+   ]
+  }
+ }
+}
