@@ -42,6 +42,11 @@ describe("landing page", () => {
     expect(
       screen.getByRole("link", { name: /Start the reference diagnostic/i }),
     ).toHaveAttribute("href", "#newsletter-signup");
+    // Clicking the locked diagnostic puts the cursor in the email field.
+    screen
+      .getByRole("link", { name: /Start the reference diagnostic/i })
+      .click();
+    expect(screen.getByPlaceholderText("Email address")).toHaveFocus();
     expect(
       screen.getByRole("link", {
         name: /Find the watch from the screen/i,

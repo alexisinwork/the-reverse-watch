@@ -291,6 +291,16 @@ export default function Home() {
               diagnosticAccess ? " landing-action--unlocked" : ""
             }`}
             href={diagnosticAccess ? diagnosticHref : "#newsletter-signup"}
+            onClick={(event) => {
+              if (diagnosticAccess) return;
+              // Locked: take the visitor straight to the email field.
+              event.preventDefault();
+              const input = document.getElementById("newsletter-email");
+              input?.focus({ preventScroll: true });
+              if (typeof input?.scrollIntoView === "function") {
+                input.scrollIntoView({ behavior: "smooth", block: "center" });
+              }
+            }}
           >
             <span className="landing-action__kicker">
               {diagnosticAccess
