@@ -17,10 +17,8 @@ import {
   isAdmin,
   parseAdminConfiguration,
 } from "../domain/admin-auth.server";
-import {
-  consumeRateLimit,
-  type RateLimitPolicy,
-} from "../domain/rate-limit.server";
+import type { RateLimitPolicy } from "../domain/rate-limit.server";
+import { consumeSharedRateLimit } from "../domain/rate-limit-upstash.server";
 import {
   CATALOGUE_STYLES,
   STYLE_LABELS,
@@ -298,7 +296,9 @@ export async function action({ request }: Route.ActionArgs) {
   const back = new URL(request.url);
 
   if (intent === "login") {
-    if (!consumeRateLimit(visitorKey(request), LOGIN_POLICY).allowed) {
+    if (
+      !(await consumeSharedRateLimit(visitorKey(request), LOGIN_POLICY)).allowed
+    ) {
       return data(
         { error: "Too many attempts. Try again in 15 minutes." },
         { status: 429, headers: NO_INDEX },

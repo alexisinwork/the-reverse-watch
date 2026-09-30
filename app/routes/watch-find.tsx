@@ -11,10 +11,8 @@ import {
 import { searchWithStore } from "../domain/ai-watch-store.server";
 import { createProgressFeed } from "../domain/progress-feed";
 import { parseDiscoveryHandoff } from "../domain/discovery-selection";
-import {
-  consumeRateLimit,
-  type RateLimitPolicy,
-} from "../domain/rate-limit.server";
+import type { RateLimitPolicy } from "../domain/rate-limit.server";
+import { consumeSharedRateLimit } from "../domain/rate-limit-upstash.server";
 import "../styles/discovery.css";
 
 const QUERY_MAX = 120;
@@ -61,7 +59,7 @@ export function loader({ request }: Route.LoaderArgs) {
     kind: "film",
     cacheInput: { query: normalizeFilmQuery(query) },
     run: async () => {
-      if (!consumeRateLimit(key, NEW_SEARCH_POLICY).allowed) {
+      if (!(await consumeSharedRateLimit(key, NEW_SEARCH_POLICY)).allowed) {
         return {
           status: "no_match",
           summary:

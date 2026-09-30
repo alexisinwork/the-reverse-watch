@@ -1,7 +1,11 @@
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 
-import type { RateLimitDecision, RateLimitPolicy } from "./rate-limit.server";
+import {
+  consumeRateLimit,
+  type RateLimitDecision,
+  type RateLimitPolicy,
+} from "./rate-limit.server";
 
 type Environment = Record<string, string | undefined>;
 
@@ -79,4 +83,33 @@ export async function consumeUpstashRateLimit(
       ? null
       : Math.max(Math.ceil((result.reset - Date.now()) / 1_000), 1),
   };
+}
+
+/**
+ * A limit shared by every server instance (Upstash) when configured,
+ * otherwise this instance's own memory. An Upstash outage falls back to the
+ * in-memory limit instead of either blocking or waving everyone through.
+ */
+export async function consumeSharedRateLimit(
+  key: string,
+  policy: RateLimitPolicy,
+  environment: Environment = process.env,
+): Promise<RateLimitDecision> {
+  const configuration = parseUpstashRateLimitConfiguration(environment);
+  if (policy.configured && configuration.configured) {
+    try {
+      return await consumeUpstashRateLimit(
+        createUpstashRateLimitClient(policy, configuration),
+        key,
+      );
+    } catch (error) {
+      console.error(
+        JSON.stringify({
+          event: "shared_rate_limit_error",
+          message: error instanceof Error ? error.message : "unknown error",
+        }),
+      );
+    }
+  }
+  return consumeRateLimit(key, policy);
 }

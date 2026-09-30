@@ -12,7 +12,7 @@ import {
   type Deps,
   type WebSearchProvider,
 } from "./ai-providers.server";
-import { safeHttpUrl } from "./source-pages.server";
+import { publicFetch, safeHttpUrl } from "./source-pages.server";
 import { classifySource, pageMentionsReference } from "./ai-watch-guardrails";
 import { convert, type FxTable } from "./fx";
 
@@ -127,15 +127,21 @@ async function checkPage(
   fetchImpl: typeof fetch,
 ): Promise<PageCheck> {
   try {
-    const response = await fetchImpl(url, {
-      headers: {
-        "user-agent":
-          "Mozilla/5.0 (compatible; TheReserveBot/1.0; +https://thereserve.watch)",
-        accept: "text/html,application/xhtml+xml",
+    const fetched = await publicFetch(
+      url,
+      {
+        headers: {
+          "user-agent":
+            "Mozilla/5.0 (compatible; TheReserveBot/1.0; +https://thereserve.watch)",
+          accept: "text/html,application/xhtml+xml",
+        },
+        signal: AbortSignal.timeout(6_000),
       },
-      redirect: "follow",
-      signal: AbortSignal.timeout(6_000),
-    });
+      fetchImpl,
+    );
+    // Not a public web address: never counts, not even via Muse.
+    if (!fetched) return "missing";
+    const { response, finalUrl } = fetched;
     if (!response.ok) {
       await response.body?.cancel();
       return "blocked";
@@ -143,8 +149,7 @@ async function checkPage(
     const html = (await response.text()).slice(0, 1_500_000);
     // The price must sit on a page about this exact reference.
     return pageShowsPrice(html, amount) &&
-      (reference === null ||
-        pageMentionsReference(reference, html, response.url || url))
+      (reference === null || pageMentionsReference(reference, html, finalUrl))
       ? "shows"
       : "missing";
   } catch {
