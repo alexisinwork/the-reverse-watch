@@ -35,6 +35,41 @@ export function parseBeehiivConfiguration(
   return { configured: true, apiKey, publicationId };
 }
 
+/**
+ * Whether this address is already an active subscriber, so a returning
+ * reader unlocks the diagnostic without subscribing again (and without a
+ * second welcome email). Unknown addresses are simply not active.
+ */
+export async function isActiveBeehiivSubscriber(
+  email: string,
+  configuration: Extract<BeehiivConfiguration, { configured: true }>,
+  fetchImplementation: typeof fetch = fetch,
+): Promise<boolean> {
+  const response = await fetchImplementation(
+    `https://api.beehiiv.com/v2/publications/${encodeURIComponent(configuration.publicationId)}/subscriptions/by_email/${encodeURIComponent(email.trim().toLowerCase())}`,
+    {
+      headers: { Authorization: `Bearer ${configuration.apiKey}` },
+      signal: emailProviderTimeoutSignal(),
+    },
+  );
+  if (response.status === 404) return false;
+  if (!response.ok) {
+    throw new Error(
+      `Beehiiv subscriber lookup failed with HTTP ${response.status}`,
+    );
+  }
+  const payload = beehiivSubscriptionResponseSchema.safeParse(
+    await response.json().catch(() => null),
+  );
+  if (!payload.success) {
+    throw new Error("Beehiiv subscriber lookup returned an invalid response");
+  }
+  return (
+    payload.data.data.email.toLowerCase() === email.trim().toLowerCase() &&
+    payload.data.data.status === "active"
+  );
+}
+
 export async function subscribeToBeehiiv(
   email: string,
   configuration: Extract<BeehiivConfiguration, { configured: true }>,

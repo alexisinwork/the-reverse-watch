@@ -1,4 +1,5 @@
 import type { Route } from "./+types/home";
+import { createHash } from "node:crypto";
 import { useCallback, useState } from "react";
 import { data, useLoaderData } from "react-router";
 import { z } from "zod";
@@ -10,9 +11,12 @@ import {
 import { GaugeMark } from "../components/gauge-mark";
 import {
   BeehiivSubscriptionNotActiveError,
+  isActiveBeehiivSubscriber,
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
 } from "../domain/beehiiv.server";
+import type { RateLimitPolicy } from "../domain/rate-limit.server";
+import { consumeSharedRateLimit } from "../domain/rate-limit-upstash.server";
 import {
   hasDiagnosticAccess,
   issueDiagnosticAccessCookie,
@@ -22,6 +26,20 @@ import { parseDiscoveryStorySlug } from "../domain/discovery-context.server";
 import "../styles/home.css";
 
 const newsletterEmailSchema = z.string().trim().email().max(320);
+
+const LOOKUP_POLICY: RateLimitPolicy = {
+  configured: true,
+  maxRequests: 10,
+  windowMs: 15 * 60 * 1_000,
+};
+
+function visitorKey(request: Request) {
+  const address =
+    request.headers.get("x-forwarded-for")?.split(",", 1)[0]?.trim() ||
+    request.headers.get("x-real-ip")?.trim() ||
+    "unknown";
+  return `subscriber-lookup:${createHash("sha256").update(address).digest("hex")}`;
+}
 
 export function meta(): ReturnType<Route.MetaFunction> {
   return [
@@ -66,13 +84,15 @@ export async function action({ request }: Route.ActionArgs) {
   }
 
   const formData = await request.formData();
-  if (formData.get("intent") !== "newsletter") {
+  const intent = formData.get("intent");
+  if (intent !== "newsletter" && intent !== "returning") {
     return data<NewsletterActionResult>(
       { ok: false, message: "The subscription request is incomplete." },
       { status: 400, headers: responseHeaders },
     );
   }
-  if (formData.get("newsletterConsent") !== "yes") {
+  // A returning subscriber agreed when they first subscribed.
+  if (intent === "newsletter" && formData.get("newsletterConsent") !== "yes") {
     return data<NewsletterActionResult>(
       { ok: false, message: "Please confirm the email opt-in." },
       { status: 400, headers: responseHeaders },
@@ -123,19 +143,72 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
 
-  try {
-    await subscribeToBeehiiv(email.data, configuration);
+  const unlocked = async (message: string) => {
     const headers = new Headers(responseHeaders);
     headers.set(
       "Set-Cookie",
       await issueDiagnosticAccessCookie(accessConfiguration),
     );
-    return data<NewsletterActionResult>(
-      {
-        ok: true,
-        message: "Subscribed. The reference diagnostic is now unlocked.",
-      },
-      { headers },
+    return data<NewsletterActionResult>({ ok: true, message }, { headers });
+  };
+
+  if (intent === "returning") {
+    // Limits how fast one visitor can test addresses against the list.
+    if (
+      !(await consumeSharedRateLimit(visitorKey(request), LOOKUP_POLICY))
+        .allowed
+    ) {
+      return data<NewsletterActionResult>(
+        { ok: false, message: "Too many attempts. Try again in 15 minutes." },
+        { status: 429, headers: responseHeaders },
+      );
+    }
+    try {
+      if (await isActiveBeehiivSubscriber(email.data, configuration)) {
+        return await unlocked(
+          "Welcome back. The reference diagnostic is unlocked.",
+        );
+      }
+      return data<NewsletterActionResult>(
+        {
+          ok: false,
+          message:
+            "We could not find an active subscription for that address. Subscribe below to unlock the diagnostic.",
+        },
+        { status: 404, headers: responseHeaders },
+      );
+    } catch (error) {
+      console.error(
+        JSON.stringify({
+          event: "landing_beehiiv_lookup_error",
+          message: error instanceof Error ? error.message : "unknown error",
+        }),
+      );
+      return data<NewsletterActionResult>(
+        {
+          ok: false,
+          message: "We could not check your subscription. Please try again.",
+        },
+        { status: 502, headers: responseHeaders },
+      );
+    }
+  }
+
+  try {
+    // Someone already on the list is let straight in: no second sign-up and
+    // no second welcome email. If the check fails, subscribing still works.
+    const alreadySubscribed = await isActiveBeehiivSubscriber(
+      email.data,
+      configuration,
+    ).catch(() => false);
+    if (alreadySubscribed) {
+      return await unlocked(
+        "You are already subscribed. The reference diagnostic is unlocked.",
+      );
+    }
+    await subscribeToBeehiiv(email.data, configuration);
+    return await unlocked(
+      "Subscribed. The reference diagnostic is now unlocked.",
     );
   } catch (error) {
     if (error instanceof BeehiivSubscriptionNotActiveError) {
@@ -201,6 +274,17 @@ export default function Home() {
               the watches they wore, and where.
             </span>
             <span className="landing-action__footer">Search now →</span>
+          </a>
+          <a className="landing-action" href="/watches/archetype">
+            <span className="landing-action__kicker">
+              Four questions · No sign-up
+            </span>
+            <strong>Find your watch archetype</strong>
+            <span className="landing-action__description">
+              Four quick questions reveal the kind of collector you are, with
+              ten watches that suit you at your price.
+            </span>
+            <span className="landing-action__footer">Take the quiz →</span>
           </a>
           <a
             className={`landing-action landing-action--diagnostic${

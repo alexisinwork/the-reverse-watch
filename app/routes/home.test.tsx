@@ -159,14 +159,19 @@ describe("landing page", () => {
   it("subscribes through the server-side Beehiiv adapter", async () => {
     vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
     vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
-    const fetchImplementation = vi.fn<typeof fetch>().mockResolvedValue(
-      Response.json({
-        data: {
-          id: "sub_123",
-          email: "reader@example.com",
-          status: "active",
-        },
-      }),
+    const fetchImplementation = vi.fn<typeof fetch>((input) =>
+      Promise.resolve(
+        // Not on the list yet, so the subscription is created.
+        String(input).includes("/by_email/")
+          ? new Response(null, { status: 404 })
+          : Response.json({
+              data: {
+                id: "sub_123",
+                email: "reader@example.com",
+                status: "active",
+              },
+            }),
+      ),
     );
     vi.stubGlobal("fetch", fetchImplementation);
     const response = await action({
@@ -196,14 +201,16 @@ describe("landing page", () => {
     vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
     vi.stubGlobal(
       "fetch",
-      vi.fn<typeof fetch>().mockResolvedValue(
-        Response.json({
-          data: {
-            id: "sub_123",
-            email: "reader@example.com",
-            status: "invalid",
-          },
-        }),
+      vi.fn<typeof fetch>(() =>
+        Promise.resolve(
+          Response.json({
+            data: {
+              id: "sub_123",
+              email: "reader@example.com",
+              status: "invalid",
+            },
+          }),
+        ),
       ),
     );
     const error = vi.spyOn(console, "error").mockImplementation(() => {});
@@ -230,6 +237,70 @@ describe("landing page", () => {
       }),
     );
     error.mockRestore();
+  });
+
+  it("lets an existing subscriber in without subscribing them again", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    const fetchImplementation = vi.fn<typeof fetch>(() =>
+      Promise.resolve(
+        Response.json({
+          data: {
+            id: "sub_123",
+            email: "reader@example.com",
+            status: "active",
+          },
+        }),
+      ),
+    );
+    vi.stubGlobal("fetch", fetchImplementation);
+
+    const forms: Record<string, string>[] = [
+      // The sign-up form, from someone already on the list...
+      {
+        intent: "newsletter",
+        email: "reader@example.com",
+        newsletterConsent: "yes",
+      },
+      // ...and the "Already subscribed?" form, which needs no consent box.
+      { intent: "returning", email: "reader@example.com" },
+    ];
+    for (const form of forms) {
+      const response = await action({
+        request: actionRequest(form),
+      } as Parameters<typeof action>[0]);
+      expect(response.init?.status ?? 200).toBe(200);
+      expect(response.data).toMatchObject({ ok: true });
+      expect(new Headers(response.init?.headers).get("Set-Cookie")).toContain(
+        "reserve_diagnostic_access=",
+      );
+    }
+    // Only lookups: no second subscription and no second welcome email.
+    expect(
+      fetchImplementation.mock.calls.every(([input]) =>
+        String(input).includes("/by_email/reader%40example.com"),
+      ),
+    ).toBe(true);
+  });
+
+  it("does not unlock a returning visitor who is not on the list", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn<typeof fetch>(() =>
+        Promise.resolve(new Response(null, { status: 404 })),
+      ),
+    );
+    const response = await action({
+      request: actionRequest({
+        intent: "returning",
+        email: "stranger@example.com",
+      }),
+    } as Parameters<typeof action>[0]);
+    expect(response.init?.status).toBe(404);
+    expect(response.data).toMatchObject({ ok: false });
+    expect(new Headers(response.init?.headers).has("Set-Cookie")).toBe(false);
   });
 
   it("retains the original document metadata", () => {

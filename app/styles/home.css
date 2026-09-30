@@ -59,8 +59,15 @@
 .landing-links {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+}
+
+/* Three cards side by side need room; tablets stack them. */
+@media (max-width: 52rem) {
+  .landing-links {
+    grid-template-columns: 1fr;
+  }
 }
 
 .landing-action {
@@ -68,7 +75,7 @@
   display: flex;
   min-height: 15rem;
   flex-direction: column;
-  padding: 1.6rem;
+  padding: 1.4rem;
   overflow: hidden;
   border: 1px solid var(--color-line-strong);
   border-radius: var(--radius-lg);
@@ -122,7 +129,7 @@
   max-width: 16rem;
   margin-top: 0.9rem;
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3.4vw, 1.95rem);
+  font-size: clamp(1.45rem, 2.6vw, 1.7rem);
   font-weight: 500;
   line-height: 1.12;
 }
@@ -268,6 +275,23 @@
   flex: 0 0 auto;
   margin: 0.1rem 0 0;
   accent-color: var(--color-brass);
+}
+
+.signup-switch {
+  margin-top: 0.85rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-brass);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8125rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.signup-switch:hover {
+  color: var(--color-brass-bright);
 }
 
 .signup-status,

@@ -1,6 +1,7 @@
 import { vi } from "vitest";
 
 import {
+  isActiveBeehiivSubscriber,
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
 } from "./beehiiv.server";
@@ -114,6 +115,65 @@ describe("Beehiiv subscription adapter", () => {
         fetchImplementation,
       ),
     ).rejects.toThrow("invalid response");
+  });
+
+  it("recognises an active subscriber by address and treats unknown ones as not subscribed", async () => {
+    const configuration = {
+      configured: true as const,
+      apiKey: "key",
+      publicationId: "pub_123",
+    };
+    const active = vi.fn().mockResolvedValue(
+      Response.json({
+        data: {
+          id: "sub_123",
+          email: "collector@example.com",
+          status: "active",
+        },
+      }),
+    );
+    await expect(
+      isActiveBeehiivSubscriber(
+        " Collector@Example.com ",
+        configuration,
+        active,
+      ),
+    ).resolves.toBe(true);
+    expect(active).toHaveBeenCalledWith(
+      "https://api.beehiiv.com/v2/publications/pub_123/subscriptions/by_email/collector%40example.com",
+      expect.objectContaining({ headers: { Authorization: "Bearer key" } }),
+    );
+
+    const unsubscribed = vi.fn().mockResolvedValue(
+      Response.json({
+        data: {
+          id: "sub_123",
+          email: "collector@example.com",
+          status: "inactive",
+        },
+      }),
+    );
+    await expect(
+      isActiveBeehiivSubscriber(
+        "collector@example.com",
+        configuration,
+        unsubscribed,
+      ),
+    ).resolves.toBe(false);
+
+    const unknown = vi
+      .fn()
+      .mockResolvedValue(new Response(null, { status: 404 }));
+    await expect(
+      isActiveBeehiivSubscriber("new@example.com", configuration, unknown),
+    ).resolves.toBe(false);
+
+    const failing = vi
+      .fn()
+      .mockResolvedValue(new Response(null, { status: 500 }));
+    await expect(
+      isActiveBeehiivSubscriber("new@example.com", configuration, failing),
+    ).rejects.toThrow("HTTP 500");
   });
 
   it("surfaces a non-success provider response", async () => {

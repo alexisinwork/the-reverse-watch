@@ -388,6 +388,41 @@ export async function museWebResearch(
  * WEB_SEARCH_PROVIDER selects. Used for film sightings, live quiz
  * proposals and catalogue proposals.
  */
+/**
+ * The same deps with the other web-search provider, when its key is set:
+ * the fallback for when the chosen provider is down, stuck or out of quota.
+ */
+export function fallbackSearchDeps(deps: Deps): Deps | null {
+  const other = deps.config.webSearch === "muse" ? "perplexity" : "muse";
+  const ready =
+    other === "muse"
+      ? deps.config.museSpark !== null
+      : deps.config.perplexity !== null;
+  return ready
+    ? { ...deps, config: { ...deps.config, webSearch: other } }
+    : null;
+}
+
+// A fallback runs after the first provider already used some of the
+// visitor's wait, so it gets less time than a first attempt.
+const FALLBACK_MUSE_TIMEOUT_MS = 30_000;
+
+/** Runs the search with the chosen provider, then the other one on failure. */
+async function withSearchFallback<T>(
+  deps: Deps,
+  event: string,
+  run: (deps: Deps, isFallback: boolean) => Promise<T>,
+): Promise<T> {
+  try {
+    return await run(deps, false);
+  } catch (error) {
+    const fallback = fallbackSearchDeps(deps);
+    if (!fallback) throw error;
+    logError(event, error);
+    return run(fallback, true);
+  }
+}
+
 export async function webResearchJson(
   prompt: string,
   schema: Record<string, unknown>,
@@ -403,19 +438,26 @@ export async function webResearchJson(
     contextSize?: "low" | "medium";
   } = {},
 ): Promise<unknown> {
-  if (deps.config.webSearch === "muse") {
-    const research = await museWebResearch(prompt, deps, {
-      schema,
-      maxToolCalls,
-      ...(system ? { instructions: system } : {}),
-    });
-    return parseModelJson(research.text);
-  }
-  return sonarJson(
-    system ? `${system}\n\n${prompt}` : prompt,
-    schema,
+  return withSearchFallback(
     deps,
-    contextSize,
+    "web_research_fallback",
+    async (activeDeps, isFallback) => {
+      if (activeDeps.config.webSearch === "muse") {
+        const research = await museWebResearch(prompt, activeDeps, {
+          schema,
+          maxToolCalls,
+          ...(system ? { instructions: system } : {}),
+          ...(isFallback ? { timeoutMs: FALLBACK_MUSE_TIMEOUT_MS } : {}),
+        });
+        return parseModelJson(research.text);
+      }
+      return sonarJson(
+        system ? `${system}\n\n${prompt}` : prompt,
+        schema,
+        activeDeps,
+        contextSize,
+      );
+    },
   );
 }
 
@@ -428,7 +470,21 @@ export async function findPages(
   deps: Deps,
 ): Promise<SearchHit[]> {
   if (queries.length === 0) return [];
-  if (deps.config.webSearch !== "muse") return searchWeb(queries, deps);
+  return withSearchFallback(
+    deps,
+    "find_pages_fallback",
+    (activeDeps, isFallback) =>
+      activeDeps.config.webSearch === "muse"
+        ? musePages(queries, activeDeps, isFallback)
+        : searchWeb(queries, activeDeps),
+  );
+}
+
+async function musePages(
+  queries: string[],
+  deps: Deps,
+  isFallback: boolean,
+): Promise<SearchHit[]> {
   const research = await museWebResearch(
     [
       "For each watch below, find its official product page on the manufacturer's website, or an authorised retailer's product page for it.",
@@ -438,6 +494,7 @@ export async function findPages(
     deps,
     {
       maxToolCalls: Math.min(8, queries.length + 2),
+      ...(isFallback ? { timeoutMs: FALLBACK_MUSE_TIMEOUT_MS } : {}),
       schema: {
         type: "object",
         properties: {

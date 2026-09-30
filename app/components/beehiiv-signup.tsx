@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useFetcher } from "react-router";
 
 export type NewsletterActionResult =
@@ -7,6 +7,8 @@ export type NewsletterActionResult =
 export function BeehiivSignup({ onSubscribed }: { onSubscribed?: () => void }) {
   const fetcher = useFetcher<NewsletterActionResult>();
   const formRef = useRef<HTMLFormElement>(null);
+  // A returning subscriber only needs their address checked against the list.
+  const [returning, setReturning] = useState(false);
   const isSubmitting = fetcher.state !== "idle";
 
   useEffect(() => {
@@ -28,7 +30,11 @@ export function BeehiivSignup({ onSubscribed }: { onSubscribed?: () => void }) {
         the full reference diagnostic.
       </p>
       <fetcher.Form className="signup-form" method="post" ref={formRef}>
-        <input name="intent" type="hidden" value="newsletter" />
+        <input
+          name="intent"
+          type="hidden"
+          value={returning ? "returning" : "newsletter"}
+        />
         <div className="signup-fields">
           <label className="sr-only" htmlFor="newsletter-email">
             Email address
@@ -44,22 +50,39 @@ export function BeehiivSignup({ onSubscribed }: { onSubscribed?: () => void }) {
             type="email"
           />
           <button disabled={isSubmitting} type="submit">
-            {isSubmitting ? "Subscribing…" : "Subscribe"}
+            {returning
+              ? isSubmitting
+                ? "Checking…"
+                : "Unlock"
+              : isSubmitting
+                ? "Subscribing…"
+                : "Subscribe"}
           </button>
         </div>
-        <label className="signup-consent">
-          <input
-            name="newsletterConsent"
-            required
-            type="checkbox"
-            value="yes"
-          />
-          <span>
-            I agree to receive The Reserve by email and can unsubscribe at any
-            time.
-          </span>
-        </label>
+        {returning ? null : (
+          <label className="signup-consent">
+            <input
+              name="newsletterConsent"
+              required
+              type="checkbox"
+              value="yes"
+            />
+            <span>
+              I agree to receive The Reserve by email and can unsubscribe at any
+              time.
+            </span>
+          </label>
+        )}
       </fetcher.Form>
+      <button
+        className="signup-switch"
+        onClick={() => setReturning((value) => !value)}
+        type="button"
+      >
+        {returning
+          ? "New here? Subscribe instead"
+          : "Already subscribed? Enter your email to unlock"}
+      </button>
       {fetcher.data ? (
         <p
           className={fetcher.data.ok ? "signup-status" : "signup-error"}
