@@ -172,7 +172,7 @@ export default function WatchArchetype() {
         />
       ) : null}
       <nav className="discovery-nav" aria-label="Discovery navigation">
-        <Link to="/watches">Watches of Celebrity &amp; Cinema</Link>
+        <Link to="/watches">Watches from movies</Link>
         <Link to="/quiz">Reference diagnostic</Link>
       </nav>
 
@@ -256,7 +256,7 @@ export default function WatchArchetype() {
             Retake the archetype quiz
           </Link>
           <Link className="archetype-retake" to="/watches">
-            Browse the archive
+            Browse watches from movies
           </Link>
         </>
       ) : (

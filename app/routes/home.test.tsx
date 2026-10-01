@@ -53,7 +53,7 @@ describe("landing page", () => {
       }),
     ).toHaveAttribute("href", "/watches/find");
     expect(
-      screen.getByRole("link", { name: /reviewed archive/i }),
+      screen.getByRole("link", { name: /Watches from movies/i }),
     ).toHaveAttribute("href", "/watches");
   });
 

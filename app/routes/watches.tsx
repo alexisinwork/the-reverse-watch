@@ -38,7 +38,7 @@ export default function WatchesIndex() {
         </div>
       </nav>
       <header className="discovery-header">
-        <span className="eyebrow">Source-led archive</span>
+        <span className="eyebrow">Watches from movies</span>
         <h1>Watches of Celebrity &amp; Cinema</h1>
         <p>
           Reviewed identifications with explicit uncertainty. A screen prop is

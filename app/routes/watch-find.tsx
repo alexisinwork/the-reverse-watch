@@ -122,7 +122,7 @@ export default function WatchFind() {
       <nav className="discovery-nav" aria-label="Discovery navigation">
         <Link to="/">The Reserve</Link>
         <div className="discovery-nav__links">
-          <Link to="/watches">Reviewed archive</Link>
+          <Link to="/watches">Watches from movies</Link>
           <Link to="/watches/archetype">Watch archetype</Link>
           <Link to="/quiz">Reference diagnostic</Link>
         </div>
