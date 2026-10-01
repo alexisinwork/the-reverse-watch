@@ -112,7 +112,7 @@ describe("strict rules", () => {
       ),
     ).toContain("chronograph");
     expect(
-      strictFailures(target, watch({ caseDiameterMm: 42 }), false),
+      strictFailures(target, watch({ caseDiameterMm: 43 }), false),
     ).toContain("size");
     expect(
       strictFailures(target, watch({ waterResistanceM: 100 }), false),

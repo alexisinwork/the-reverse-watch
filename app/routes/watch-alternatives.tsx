@@ -3,7 +3,9 @@
  * budget, and see watches that look and work like it for less, new or
  * pre-owned. The rules are in app/domain/alternatives.ts.
  */
+import { Suspense, useMemo } from "react";
 import {
+  Await,
   Form,
   Link,
   redirect,
@@ -22,7 +24,9 @@ import {
 import {
   findAlternatives,
   resolveNamedWatch,
+  type AlternativesOutcome,
 } from "../domain/alternatives.server";
+import { createProgressFeed } from "../domain/progress-feed";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { formatMoney } from "../domain/fx";
 import {
@@ -129,7 +133,13 @@ export async function loader({ request }: Route.LoaderArgs) {
   }
   const url = new URL(request.url);
   const form = readForm(url);
-  const empty = { form, error: null, options: [], target: null, result: null };
+  const empty = {
+    form,
+    error: null as string | null,
+    options: [] as { label: string; reference: string; name: string }[],
+    page: null as Promise<ReturnType<typeof buildPage>> | null,
+    progress: null as ReturnType<typeof createProgressFeed>["feed"] | null,
+  };
   if (form.name.length < 2 && !form.reference) return empty;
 
   const budget = readBudget(form);
@@ -165,12 +175,6 @@ export async function loader({ request }: Route.LoaderArgs) {
       })),
     };
   }
-  if (resolved.status === "not_found") {
-    return {
-      ...empty,
-      error: `We don't have “${form.name}” in our catalogue yet. Check the spelling, add its reference, or try a similar model.`,
-    };
-  }
   if (
     !(
       await consumeSharedRateLimit(
@@ -186,11 +190,41 @@ export async function loader({ request }: Route.LoaderArgs) {
     };
   }
 
-  const { target, alternatives } = await findAlternatives({
-    target: resolved.watch,
+  // Catalogue answers come back at once; a live web search (an unknown
+  // watch, or too few matches) streams its steps while it runs.
+  const progress = createProgressFeed(120_000);
+  const page = findAlternatives({
+    target: resolved.status === "found" ? resolved.watch : null,
+    name: form.name,
+    reference: form.reference || null,
     budget,
     allowQuartz: form.quartz === "yes",
-  });
+    report: progress.report,
+  })
+    .then((outcome) => buildPage(outcome, budget, form))
+    .catch(() => ({
+      target: null,
+      result: { status: "unavailable" } as AiSearchView,
+    }));
+  void page.finally(progress.close);
+  return { ...empty, page, progress: progress.feed };
+}
+
+function buildPage(
+  outcome: AlternativesOutcome,
+  budget: AlternativesBudget,
+  form: FormValues,
+) {
+  if (outcome.status === "not_found") {
+    return {
+      target: null,
+      result: {
+        status: "no_match",
+        summary: `We couldn't identify “${form.name}”, in our catalogue or on the web. Check the spelling, or add its reference.`,
+      } as AiSearchView,
+    };
+  }
+  const { target, alternatives, searchedLive } = outcome;
   const cards = alternatives
     .map(asCard)
     .filter((card): card is FoundWatch => card !== null);
@@ -199,23 +233,19 @@ export async function loader({ request }: Route.LoaderArgs) {
     cards.length > 0
       ? {
           status: "found",
-          fromCache: true,
-          origin: "catalogue",
+          fromCache: !searchedLive,
+          origin: searchedLive ? "mixed" : "catalogue",
           watches: cards,
           summary: `${cards.length} ${cards.length === 1 ? "watch" : "watches"} like the ${target.brand} ${target.model} ${budgetLabel(budget)}, most alike first. Same role, functions and size; ranked by how closely the dial, hands, bezel and finish match.`,
         }
       : {
           status: "no_match",
-          summary: `No watch in our catalogue is close enough to the ${target.brand} ${target.model} ${budgetLabel(budget)} (${formatMoney(window.minimum, window.currency)}–${window.maximum === null ? "more" : formatMoney(window.maximum, window.currency)}). Try a wider budget${form.quartz === "no" ? ", or allow quartz and solar watches" : ""}.`,
+          summary: `No watch is close enough to the ${target.brand} ${target.model} ${budgetLabel(budget)} (${formatMoney(window.minimum, window.currency)}–${window.maximum === null ? "more" : formatMoney(window.maximum, window.currency)}). Try a wider budget${form.quartz === "no" ? ", or allow quartz and solar watches" : ""}.`,
         };
   const targetCard = catalogueToFoundWatch(target);
   return {
-    ...empty,
     target: targetCard
-      ? {
-          card: targetCard,
-          preowned: target.preownedPrice ?? null,
-        }
+      ? { card: targetCard, preowned: target.preownedPrice ?? null }
       : null,
     result,
   };
@@ -237,13 +267,51 @@ export function meta({ data }: Route.MetaArgs) {
   ];
 }
 
+type LoadedTarget = NonNullable<
+  Awaited<ReturnType<typeof buildPage>>["target"]
+>;
+
+function TargetPanel({ target }: { target: LoadedTarget }) {
+  return (
+    <section className="alternatives-target" aria-label="The watch you named">
+      <span className="eyebrow">Your watch</span>
+      <h2>
+        {target.card.brand} {target.card.model}
+      </h2>
+      <p>
+        {[
+          target.card.referenceCode
+            ? `Ref. ${target.card.referenceCode}`
+            : null,
+          target.card.details.caseDiameterMm
+            ? `${target.card.details.caseDiameterMm} mm`
+            : null,
+          target.card.details.price
+            ? `new about ${formatMoney(target.card.details.price.amount, target.card.details.price.currency)}`
+            : null,
+          target.preowned
+            ? `pre-owned from dealers about ${formatMoney(target.preowned.low, target.preowned.currency)}–${formatMoney(target.preowned.high, target.preowned.currency)}`
+            : null,
+        ]
+          .filter(Boolean)
+          .join(" · ")}
+      </p>
+    </section>
+  );
+}
+
 export default function WatchAlternatives() {
   const data = useLoaderData<typeof loader>();
   const navigation = useNavigation();
   const searching =
     navigation.state === "loading" &&
     navigation.location?.pathname === "/watches/alternatives";
-  const { form, error, options, target, result } = data;
+  const { form, error, options, page, progress } = data;
+  // The cards stream in; the "Your watch" panel reads the same answer.
+  const resultOf = useMemo(
+    () => (page ? page.then((loaded) => loaded.result) : null),
+    [page],
+  );
 
   return (
     <main className="discovery-shell find-shell">
@@ -406,7 +474,7 @@ export default function WatchAlternatives() {
             </div>
           </div>
         ) : null}
-        {!result && options.length === 0 ? (
+        {!page && options.length === 0 ? (
           <div className="find-examples" aria-label="Example watches">
             <span>Try</span>
             {EXAMPLES.map((example) => (
@@ -422,45 +490,26 @@ export default function WatchAlternatives() {
         ) : null}
       </header>
 
-      {target ? (
-        <section
-          className="alternatives-target"
-          aria-label="The watch you named"
-        >
-          <span className="eyebrow">Your watch</span>
-          <h2>
-            {target.card.brand} {target.card.model}
-          </h2>
-          <p>
-            {[
-              target.card.referenceCode
-                ? `Ref. ${target.card.referenceCode}`
-                : null,
-              target.card.details.caseDiameterMm
-                ? `${target.card.details.caseDiameterMm} mm`
-                : null,
-              target.card.details.price
-                ? `new about ${formatMoney(target.card.details.price.amount, target.card.details.price.currency)}`
-                : null,
-              target.preowned
-                ? `pre-owned from dealers about ${formatMoney(target.preowned.low, target.preowned.currency)}–${formatMoney(target.preowned.high, target.preowned.currency)}`
-                : null,
-            ]
-              .filter(Boolean)
-              .join(" · ")}
-          </p>
-        </section>
-      ) : null}
-
-      {result ? (
-        <WatchResults
-          eyebrow="Alternatives · from our checked catalogue"
-          footnote="Alternatives share the original's role, functions and size; none is a copy of it. Every price is approximate: check it, and the reference, with the seller before buying."
-          fx={null}
-          heading={`Alternatives to the ${target?.card.brand ?? ""} ${target?.card.model ?? ""}`}
-          mode="quiz"
-          result={result}
-        />
+      {page ? (
+        <>
+          <Suspense fallback={null}>
+            <Await resolve={page}>
+              {(loaded) =>
+                loaded.target ? <TargetPanel target={loaded.target} /> : null
+              }
+            </Await>
+          </Suspense>
+          <WatchResults
+            eyebrow="Alternatives · checked watches"
+            footnote="Alternatives share the original's role, functions and size; none is a copy of it. Every price is approximate: check it, and the reference, with the seller before buying."
+            fx={null}
+            heading={`Alternatives to the ${form.name || form.reference}`}
+            key={`${form.name}|${form.reference}|${form.mode}|${form.amount}|${form.range}|${form.currency}|${form.quartz}`}
+            mode="quiz"
+            progress={progress}
+            result={resultOf ?? page.then((loaded) => loaded.result)}
+          />
+        </>
       ) : null}
     </main>
   );

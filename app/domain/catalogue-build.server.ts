@@ -173,7 +173,7 @@ function numberOrNull(key: string) {
   return [key, { type: ["number", "null"] }] as const;
 }
 
-const buildCandidateSchema = {
+export const buildCandidateSchema = {
   type: "object",
   properties: {
     candidates: {

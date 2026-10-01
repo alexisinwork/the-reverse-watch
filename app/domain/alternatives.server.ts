@@ -3,12 +3,18 @@
  * subscriber named, fetch pre-owned prices where they could bring a match
  * into budget, and rank alternatives with the rules in alternatives.ts.
  */
-import { defaultDeps } from "./ai-providers.server";
+import { defaultDeps, searchReady } from "./ai-providers.server";
+import type { ProgressEvent } from "./ai-watch-types";
+import {
+  findAlternativesLive,
+  identifyWatchLive,
+} from "./alternatives-live.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import {
   budgetWindow,
   rankAlternatives,
   strictFailures,
+  type Alternative,
   type AlternativesBudget,
 } from "./alternatives";
 import { loadFxTable } from "./fx.server";
@@ -16,6 +22,7 @@ import { lookupPreownedPrice } from "./preowned-price.server";
 import { priceIn, type CatalogueWatch } from "./watch-catalogue";
 import {
   catalogueClient,
+  clearCatalogueCache,
   loadCatalogueCached,
   recordPreownedPrice,
 } from "./watch-catalogue.server";
@@ -135,7 +142,10 @@ export function resolveNamedWatch(
 }
 
 const PREOWNED_MAX_AGE_MS = 90 * 24 * 60 * 60 * 1_000;
-const PREOWNED_LOOKUPS_PER_SEARCH = 6;
+const PREOWNED_LOOKUPS_PER_SEARCH = 5;
+// The visitor waits at most this long for pre-owned prices; lookups still
+// running keep going and are saved for the next search.
+const PREOWNED_WAIT_MS = 8_000;
 
 const preownedFresh = (watch: CatalogueWatch, now: number) =>
   watch.preownedPrice !== null &&
@@ -177,36 +187,115 @@ async function fillPreownedPrices(
   const todo = preownedFresh(target, now)
     ? candidates
     : [target, ...candidates];
-  await Promise.allSettled(
+  const lookups = Promise.allSettled(
     todo.map(async (watch) => {
       const price = await lookupPreownedPrice(watch, deps, fx);
       if (price) await recordPreownedPrice(client, watch.id, price);
     }),
   );
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  await Promise.race([
+    lookups,
+    new Promise((resolve) => {
+      timer = setTimeout(resolve, PREOWNED_WAIT_MS);
+    }),
+  ]);
+  clearTimeout(timer);
 }
 
+/** Below this many matches, the live web search looks for more. */
+export const ALTERNATIVES_ENOUGH = 3;
+
+export type AlternativesOutcome =
+  | { status: "not_found" }
+  | {
+      status: "found";
+      target: CatalogueWatch;
+      alternatives: Alternative[];
+      /** True when the live web search added watches to this answer. */
+      searchedLive: boolean;
+    };
+
+/**
+ * The whole search: the named watch (from the catalogue, or identified on
+ * the web when it isn't there), pre-owned prices where they matter, the
+ * ranking, and a live web search when fewer than three alternatives match.
+ */
 export async function findAlternatives({
-  target,
+  target: known,
+  name,
+  reference,
   budget,
   allowQuartz,
+  report,
 }: {
-  target: CatalogueWatch;
+  /** The catalogue watch, or null when the name wasn't found there. */
+  target: CatalogueWatch | null;
+  name: string;
+  reference: string | null;
   budget: AlternativesBudget;
   allowQuartz: boolean;
-}) {
+  report?: (event: ProgressEvent) => void;
+}): Promise<AlternativesOutcome> {
   const client = catalogueClient();
   if (!client) throw new Error("The catalogue is not configured.");
+  const deps = defaultDeps(report ? { report } : {});
+  const fx = await loadFxTable();
+
+  let targetId = known?.id ?? null;
+  if (!targetId && searchReady(deps.config)) {
+    targetId = await identifyWatchLive(name, reference, {
+      client,
+      deps,
+      fx,
+      report,
+    }).catch(() => null);
+    clearCatalogueCache();
+  }
+  if (!targetId) return { status: "not_found" };
+
+  report?.({ text: "Comparing it with our catalogue and pre-owned prices…" });
   let catalogue = await loadCatalogueCached(client);
-  await fillPreownedPrices(target, catalogue, budget, allowQuartz).catch(
+  const first = catalogue.find((watch) => watch.id === targetId);
+  if (!first) return { status: "not_found" };
+  await fillPreownedPrices(first, catalogue, budget, allowQuartz).catch(
     () => undefined,
   );
-  // Re-read so freshly stored pre-owned prices count.
   catalogue = await loadCatalogueCached(client);
-  const fx = await loadFxTable();
-  const fresh = catalogue.find((watch) => watch.id === target.id) ?? target;
-  return {
-    target: fresh,
-    alternatives: rankAlternatives(fresh, catalogue, budget, allowQuartz, fx),
+  let target = catalogue.find((watch) => watch.id === targetId) ?? first;
+  let alternatives = rankAlternatives(
+    target,
+    catalogue,
+    budget,
+    allowQuartz,
     fx,
-  };
+  );
+
+  let searchedLive = false;
+  if (alternatives.length < ALTERNATIVES_ENOUGH && searchReady(deps.config)) {
+    const added = await findAlternativesLive(
+      target,
+      budget,
+      allowQuartz,
+      new Set(catalogue.map((watch) => watch.identityKey)),
+      { client, deps, fx, report },
+    ).catch(() => 0);
+    if (added > 0) {
+      searchedLive = true;
+      clearCatalogueCache();
+      catalogue = await loadCatalogueCached(client);
+      target = catalogue.find((watch) => watch.id === targetId) ?? target;
+      alternatives = rankAlternatives(
+        target,
+        catalogue,
+        budget,
+        allowQuartz,
+        fx,
+      );
+    }
+  }
+  report?.({
+    text: `Found ${alternatives.length} ${alternatives.length === 1 ? "alternative" : "alternatives"}.`,
+  });
+  return { status: "found", target, alternatives, searchedLive };
 }

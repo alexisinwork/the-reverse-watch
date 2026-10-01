@@ -19,7 +19,7 @@ const LIMIT = Number(argument("--limit") ?? Infinity);
 const BUDGET_USD = Number(argument("--budget") ?? 15);
 // Conservative per-photo estimate (about 1,000 input and 450 output tokens).
 const COST_PER_PHOTO = 0.006;
-const CONCURRENCY = 6;
+const CONCURRENCY = 12;
 
 const client = catalogueClient();
 const deps = defaultDeps();

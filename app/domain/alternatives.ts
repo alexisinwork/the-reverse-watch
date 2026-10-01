@@ -18,7 +18,10 @@ import {
   type CatalogueWatch,
 } from "./watch-catalogue";
 
-export const ALTERNATIVES_SCORING_VERSION = "1.0.0";
+export const ALTERNATIVES_SCORING_VERSION = "1.1.0";
+
+/** A case within this many millimetres can be an alternative. */
+export const SIZE_TOLERANCE_MM = 3;
 
 // ---------------------------------------------------------------------------
 // Budget
@@ -151,7 +154,8 @@ export function strictFailures(
   if (
     target.caseDiameterMm !== null &&
     (candidate.caseDiameterMm === null ||
-      Math.abs(candidate.caseDiameterMm - target.caseDiameterMm) > 2)
+      Math.abs(candidate.caseDiameterMm - target.caseDiameterMm) >
+        SIZE_TOLERANCE_MM)
   ) {
     failures.push("size");
   }
@@ -276,12 +280,25 @@ export function lookScore(target: CatalogueWatch, candidate: CatalogueWatch) {
       }
     }
   }
-  // Size: full marks within 1 mm, sliding to none at 2 mm.
+  // Size: full marks within 1 mm, sliding to none at 3 mm.
   if (target.caseDiameterMm !== null && candidate.caseDiameterMm !== null) {
     const gap = Math.abs(target.caseDiameterMm - candidate.caseDiameterMm);
-    points += Math.max(0, 2 - gap);
+    points += Math.max(0, 2 - Math.max(0, gap - 1));
     if (gap <= 1) shares.push(`${candidate.caseDiameterMm} mm`);
     else differs.push(`${candidate.caseDiameterMm} mm case`);
+  }
+  // Functions the original lacks make it a different watch to wear.
+  if (
+    !has(target, "gmt") &&
+    !has(target, "world_time") &&
+    has(candidate, "gmt")
+  ) {
+    points -= 2;
+    differs.push("adds a GMT hand");
+  }
+  if (!has(target, "dive_bezel") && has(candidate, "dive_bezel")) {
+    points -= 1;
+    differs.push("adds a diving bezel");
   }
   // Date or no date.
   if (has(target, "date") === has(candidate, "date")) {
@@ -375,6 +392,12 @@ export function rankAlternatives(
     const price = priceInWindow(candidate, window, fx);
     if (!price) return [];
     const look = lookScore(target, candidate);
+    // Around a typed price, nearer is better: up to one point.
+    if (budget.kind === "exact") {
+      const distance =
+        Math.abs(price.amount - budget.amount) / EXACT_PRICE_SPREAD;
+      look.points += Math.max(0, 1 - distance);
+    }
     const sameBrand =
       candidate.brand.trim().toLowerCase() ===
       target.brand.trim().toLowerCase();
