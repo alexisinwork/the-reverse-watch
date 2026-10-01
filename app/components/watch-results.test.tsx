@@ -15,6 +15,33 @@ const watch = (index: number, misses?: string[]): FoundWatch => ({
 });
 
 describe("quiz shortlist", () => {
+  it("tags only the cards whose maker reference is not confirmed", () => {
+    render(
+      <WatchResults
+        eyebrow="Picks"
+        fx={null}
+        heading="Watches"
+        mode="quiz"
+        result={{
+          status: "found",
+          fromCache: true,
+          summary: "Two watches.",
+          watches: [
+            {
+              ...watch(1),
+              details: { ...watch(1).details, referenceVerified: true },
+            },
+            watch(2),
+          ],
+        }}
+      />,
+    );
+    expect(
+      screen.getAllByText("Manufacturer reference not confirmed"),
+    ).toHaveLength(1);
+    expect(screen.getByText(/Reference confirmed on the/)).toBeInTheDocument();
+  });
+
   it("shows five watches, then all ten on request, with near fits marked", () => {
     render(
       <WatchResults
@@ -45,5 +72,9 @@ describe("quiz shortlist", () => {
     expect(
       screen.queryByRole("button", { name: /Show all/ }),
     ).not.toBeInTheDocument();
+    // None of these has a confirmed reference, so every card says so.
+    expect(
+      screen.getAllByText("Manufacturer reference not confirmed"),
+    ).toHaveLength(10);
   });
 });

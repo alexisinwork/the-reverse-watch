@@ -37,6 +37,10 @@ export type ArchetypePick = {
   brand: string;
   model: string;
   referenceCode: string | null;
+  /** A maker's or authorised retailer's page shows this reference. */
+  referenceConfirmed?: boolean;
+  /** Whether that page is the maker's own or an authorised retailer's. */
+  sourceKind?: "manufacturer" | "retailer" | null;
   imageUrl: string | null;
   price: { amount: number; currency: string } | null;
   caseDiameterMm: number | null;
@@ -68,6 +72,8 @@ export function archetypeWatches(
     rationale: pick.why,
     details: {
       price: pick.price,
+      referenceVerified: pick.referenceConfirmed === true,
+      ...(pick.sourceKind ? { sourceKind: pick.sourceKind } : {}),
       caseDiameterMm: pick.caseDiameterMm,
       waterResistanceM: pick.waterResistanceM,
       movement: pick.movement,

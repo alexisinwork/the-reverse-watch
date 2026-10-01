@@ -276,7 +276,10 @@ function WatchCard({
           {details.reviewStatus === "pending" ? (
             <span className="review-badge">Not yet reviewed</span>
           ) : null}
-          {unconfirmedReference ? (
+          {/* Every catalogue-style card says when no maker's or authorised
+              retailer's page confirmed its reference (owner decision). */}
+          {unconfirmedReference ||
+          (mode === "quiz" && details.referenceVerified !== true) ? (
             <span className="review-badge review-badge--warning">
               Manufacturer reference not confirmed
             </span>
@@ -451,13 +454,6 @@ export function WatchResults({
       </Suspense>
       {footnote ? <p className="result-footnote">{footnote}</p> : null}
       <YouTubeCallout variant="panel" />
-      {mode === "quiz" && fx ? (
-        <p className="result-footnote">
-          Converted prices use European Central Bank reference rates of{" "}
-          {fx.date} and are approximate; list prices are the
-          manufacturer&apos;s.
-        </p>
-      ) : null}
     </section>
   );
 }

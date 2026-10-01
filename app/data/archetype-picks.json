@@ -16,7 +16,9 @@
      "caseDiameterMm": 41.5,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "300 m dive-rated steel tool watch listed for dive/field/sport use fits real-use competence over recognition."
+     "why": "300 m dive-rated steel tool watch listed for dive/field/sport use fits real-use competence over recognition.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "8a2b64f7-75d4-4fb6-8388-fa51a1e3b189",
@@ -31,7 +33,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Ceramic 42 mm watch listed for field/everyday/sport use offers legible military purpose with resilient case material."
+     "why": "Ceramic 42 mm watch listed for field/everyday/sport use offers legible military purpose with resilient case material.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "03742032-0d31-43cf-8ba2-05afefa93fc4",
@@ -46,7 +50,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "40 mm steel watch with 100 m rating listed for everyday/field use is a right-sized legible field option."
+     "why": "40 mm steel watch with 100 m rating listed for everyday/field use is a right-sized legible field option.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "402275a5-7f32-4764-9c31-ff2508bbf631",
@@ -61,7 +67,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "solar",
-     "why": "Titanium solar watch with 100 m rating for travel/everyday/sport use delivers low-maintenance utility in a tough light metal."
+     "why": "Titanium solar watch with 100 m rating for travel/everyday/sport use delivers low-maintenance utility in a tough light metal.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "639ad178-b686-4630-b8d5-86bf42b8f134",
@@ -76,7 +84,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "40 mm steel watch with 100 m rating listed for field/sport/everyday use is form-follows-purpose field design."
+     "why": "40 mm steel watch with 100 m rating listed for field/sport/everyday use is form-follows-purpose field design.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "573d1d6e-4a9c-4e8f-8ae0-cbd191014308",
@@ -91,7 +101,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "39 mm stainless steel watch with 100 m rating listed for field/everyday/sport use is a compact legible flieger."
+     "why": "39 mm stainless steel watch with 100 m rating listed for field/everyday/sport use is a compact legible flieger.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "2b434e84-4d45-47fa-9d6a-59480857210b",
@@ -106,7 +118,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "quartz",
-     "why": "40 mm stainless steel quartz watch with in-house calibre and 100 m rating listed for field/everyday/sport use prioritizes accuracy and resilience."
+     "why": "40 mm stainless steel quartz watch with in-house calibre and 100 m rating listed for field/everyday/sport use prioritizes accuracy and resilience.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "cb3d3913-9c95-4c2e-ad41-4c6ee74be4d9",
@@ -121,7 +135,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 100,
      "movement": "manual",
-     "why": "39 mm stainless steel manual watch with 100 m rating listed for field/sport/everyday use is a simple readable flyback tool."
+     "why": "39 mm stainless steel manual watch with 100 m rating listed for field/sport/everyday use is a simple readable flyback tool.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "16431cbe-eb8a-47a9-a265-ec60d71a3fc0",
@@ -136,7 +152,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "42 mm stainless steel automatic with 300 m rating listed for sport/dive use is a purpose-built rescue-timer tool."
+     "why": "42 mm stainless steel automatic with 300 m rating listed for sport/dive use is a purpose-built rescue-timer tool.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "93eb3453-4295-416e-93d8-4e3391e2d488",
@@ -151,7 +169,9 @@
      "caseDiameterMm": 41.5,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "41.5 mm stainless steel automatic with 300 m rating listed for sport/dive/everyday use is a straightforward high-water-resistance daily tool."
+     "why": "41.5 mm stainless steel automatic with 300 m rating listed for sport/dive/everyday use is a straightforward high-water-resistance daily tool.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     }
    ],
    "established_collection": [
@@ -168,7 +188,9 @@
      "caseDiameterMm": 44,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 44 mm steel Avenger GMT offers 300 m resistance with everyday/field/sport/travel use for real travel competence."
+     "why": "The 44 mm steel Avenger GMT offers 300 m resistance with everyday/field/sport/travel use for real travel competence.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "bdb93f26-f8ed-4742-a0d7-1a9a283ad280",
@@ -183,7 +205,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 41 mm stainless steel Scientigraf is listed for field/sport/everyday use at 100 m for legible utility."
+     "why": "The 41 mm stainless steel Scientigraf is listed for field/sport/everyday use at 100 m for legible utility.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1ea5290d-3c1e-4f8b-8726-5db297cdf882",
@@ -198,7 +222,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 200,
      "movement": "automatic",
-     "why": "The 43 mm titanium Triple-GMT provides 200 m resistance with sport/travel/everyday use for resilient travel function."
+     "why": "The 43 mm titanium Triple-GMT provides 200 m resistance with sport/travel/everyday use for resilient travel function.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "b2bf94e9-75b6-4b9e-b1d5-bce6271bea44",
@@ -213,7 +239,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 40 mm steel Supersede GMT pairs in-house calibre and 100 m with everyday/field/sport/travel use."
+     "why": "The 40 mm steel Supersede GMT pairs in-house calibre and 100 m with everyday/field/sport/travel use.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "3b27c3ec-9625-42ca-8817-1da19b4a3c4a",
@@ -228,7 +256,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 41 mm stainless steel Pilot's Watch offers in-house calibre and 100 m with field/everyday/sport/travel use."
+     "why": "The 41 mm stainless steel Pilot's Watch offers in-house calibre and 100 m with field/everyday/sport/travel use.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "82f65fc0-c7a0-4d2d-a116-cff609bfb02c",
@@ -243,7 +273,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 42 mm steel Spirit Flyback gives 100 m with everyday/field/sport use for purpose-driven timing."
+     "why": "The 42 mm steel Spirit Flyback gives 100 m with everyday/field/sport use for purpose-driven timing.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "31fdd723-3505-44ba-bd93-c312c09ecdcf",
@@ -258,7 +290,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 600,
      "movement": "automatic",
-     "why": "The 38 mm stainless steel Bluefin delivers 600 m with dive/sport/everyday use in a compact resilient case."
+     "why": "The 38 mm stainless steel Bluefin delivers 600 m with dive/sport/everyday use in a compact resilient case.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "d9946e3c-ef5f-4b1d-ac87-68cff4fdd72f",
@@ -273,7 +307,9 @@
      "caseDiameterMm": 36,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 36 mm steel Explorer provides in-house calibre and 100 m with everyday/field/sport use and no excess."
+     "why": "The 36 mm steel Explorer provides in-house calibre and 100 m with everyday/field/sport use and no excess.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "3dc053e1-a2d6-4990-b6ad-4abac8a2b44b",
@@ -288,7 +324,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 43 mm steel Aquaracer GMT offers 300 m with dive/sport/travel use for legible dive-travel utility."
+     "why": "The 43 mm steel Aquaracer GMT offers 300 m with dive/sport/travel use for legible dive-travel utility.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "88b58d1c-26d4-4bb6-b259-bd7391ce3677",
@@ -303,7 +341,9 @@
      "caseDiameterMm": 42.5,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 42.5 mm titanium M2 Pioneer combines 300 m with field/sport/everyday use for tough lightweight service."
+     "why": "The 42.5 mm titanium M2 Pioneer combines 300 m with field/sport/everyday use for tough lightweight service.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     }
    ],
    "exceptional_object": [
@@ -320,7 +360,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its titanium case, 100 m rating, and field/everyday/sport purpose fit resilient legible use."
+     "why": "Its titanium case, 100 m rating, and field/everyday/sport purpose fit resilient legible use.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "93dfb8e7-73d8-49cf-bf1d-5286ca526286",
@@ -335,7 +377,9 @@
      "caseDiameterMm": 39.5,
      "waterResistanceM": 200,
      "movement": "automatic",
-     "why": "Its 39.5 mm stainless steel case, 200 m rating, and dive/field/sport use suit practical wear."
+     "why": "Its 39.5 mm stainless steel case, 200 m rating, and dive/field/sport use suit practical wear.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "6a5d1ec3-cc2d-4223-ba83-1808f811274d",
@@ -350,7 +394,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 200,
      "movement": "spring_drive",
-     "why": "Its titanium case, 200 m rating, and travel purpose with in-house Spring Drive GMT suit utility."
+     "why": "Its titanium case, 200 m rating, and travel purpose with in-house Spring Drive GMT suit utility.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "e1d58d56-bcf9-4f10-85f5-5cc56aa98835",
@@ -365,7 +411,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its stainless steel 43 mm case, 100 m rating, and field/everyday/travel purpose match the brief."
+     "why": "Its stainless steel 43 mm case, 100 m rating, and field/everyday/travel purpose match the brief.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "e143fd65-0f5d-4f60-9b90-bcd320f8a632",
@@ -380,7 +428,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 4810,
      "movement": "automatic",
-     "why": "Its titanium case and 4810 m dive rating offer extreme resilience for real use."
+     "why": "Its titanium case and 4810 m dive rating offer extreme resilience for real use.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "809900f4-4a83-4264-a011-0d5b7dbc7daf",
@@ -395,7 +445,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "Its titanium 42 mm case, 300 m rating, and in-house calibre suit competent dive use."
+     "why": "Its titanium 42 mm case, 300 m rating, and in-house calibre suit competent dive use.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "e60ef610-028c-469c-ba9e-7b86e69bc681",
@@ -410,7 +462,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its steel 42 mm case, 100 m rating, and everyday/field/sport/travel purpose fit utility first."
+     "why": "Its steel 42 mm case, 100 m rating, and everyday/field/sport/travel purpose fit utility first.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "0c161a28-c263-4885-be34-dd9148b6a096",
@@ -425,7 +479,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its 39 mm stainless steel case, 100 m rating, and field/travel/everyday purpose suit legible use."
+     "why": "Its 39 mm stainless steel case, 100 m rating, and field/travel/everyday purpose suit legible use.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "7c4f66da-504d-48c1-a395-2ccb5c5362da",
@@ -440,7 +496,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 200,
      "movement": "automatic",
-     "why": "Its stainless steel 42 mm case, 200 m rating, and field/sport/everyday purpose fit resilience."
+     "why": "Its stainless steel 42 mm case, 200 m rating, and field/sport/everyday purpose fit resilience.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "a0f0d27c-2a08-45c3-9935-5e8b498ca3fb",
@@ -455,7 +513,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "Its 39 mm stainless steel case, 300 m rating, and field/dive/sport/everyday purpose suit competence."
+     "why": "Its 39 mm stainless steel case, 300 m rating, and field/dive/sport/everyday purpose suit competence.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     }
    ]
   },
@@ -474,7 +534,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 39 mm stainless steel Clifton with in-house calibre and dress/everyday purpose is restrained and built for long continuity."
+     "why": "The 39 mm stainless steel Clifton with in-house calibre and dress/everyday purpose is restrained and built for long continuity.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "500f2c2b-39a6-43d0-b2f5-f7bc26fa010b",
@@ -489,7 +551,9 @@
      "caseDiameterMm": 38.5,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 38.5 mm steel Flagship Heritage with automatic movement suits quiet everyday dress wear that rewards attention over time."
+     "why": "The 38.5 mm steel Flagship Heritage with automatic movement suits quiet everyday dress wear that rewards attention over time.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "2dd094d2-9ea8-4017-8ec0-81c32350fa5c",
@@ -504,7 +568,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 39 mm steel Heritage Small Second with automatic movement and 50 m rating is a restrained dress/everyday record-keeper."
+     "why": "The 39 mm steel Heritage Small Second with automatic movement and 50 m rating is a restrained dress/everyday record-keeper.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "adf9bf6c-a2bc-4c7c-90f1-5344ed8b2fc2",
@@ -519,7 +585,9 @@
      "caseDiameterMm": 37.3,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 37.3 mm steel manual-wind Elegance with in-house calibre is a small, quiet dress watch made to age gracefully."
+     "why": "The 37.3 mm steel manual-wind Elegance with in-house calibre is a small, quiet dress watch made to age gracefully.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "9d05dfdf-9bae-4991-9a4b-bac598748bcb",
@@ -534,7 +602,9 @@
      "caseDiameterMm": 39.2,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 39.2 mm steel Ludwig Neomatik with in-house automatic calibre offers restrained dress/everyday continuity without theatre."
+     "why": "The 39.2 mm steel Ludwig Neomatik with in-house automatic calibre offers restrained dress/everyday continuity without theatre.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "286f446c-7cd7-4f37-81e3-145c6a46d69e",
@@ -549,7 +619,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 38 mm steel Orion with manual in-house calibre and dress/everyday purpose is simple, small, and built to be kept."
+     "why": "The 38 mm steel Orion with manual in-house calibre and dress/everyday purpose is simple, small, and built to be kept.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "33fa8503-ffe6-4618-89b9-6640bb741025",
@@ -564,7 +636,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 39 mm stainless steel Traversetolo Vitre with automatic movement is a modest dress/everyday size for steady long-term wear."
+     "why": "The 39 mm stainless steel Traversetolo Vitre with automatic movement is a modest dress/everyday size for steady long-term wear.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "c051fcae-5cd7-4589-be51-165f74f5f648",
@@ -579,7 +653,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 38 mm stainless steel Brunswick with automatic movement and 100 m rating is a restrained everyday/dress size that avoids display."
+     "why": "The 38 mm stainless steel Brunswick with automatic movement and 100 m rating is a restrained everyday/dress size that avoids display.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "691f6774-625a-4758-9627-781d6bba395c",
@@ -594,7 +670,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 40 mm stainless steel Manufacture Classic Date with in-house automatic calibre gives quiet dress/everyday history to live with."
+     "why": "The 40 mm stainless steel Manufacture Classic Date with in-house automatic calibre gives quiet dress/everyday history to live with.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "321a3d84-5e60-45ca-bf6a-e67a23646351",
@@ -609,7 +687,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 38 mm stainless steel Jazzmaster Thinline Small Second with automatic movement is a restrained dress/everyday proportion for a first serious watch."
+     "why": "The 38 mm stainless steel Jazzmaster Thinline Small Second with automatic movement is a restrained dress/everyday proportion for a first serious watch.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ],
    "established_collection": [
@@ -626,7 +706,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "38 mm steel manual in-house dress watch at 30 m is restrained and built to reward long attention."
+     "why": "38 mm steel manual in-house dress watch at 30 m is restrained and built to reward long attention.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fe3717e2-f723-4e34-a8d6-794b75b15110",
@@ -641,7 +723,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "40 mm manual stainless steel dress-everyday watch keeps continuity without theatre."
+     "why": "40 mm manual stainless steel dress-everyday watch keeps continuity without theatre.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "0b3f545e-0c05-4a2b-9c3c-efd9c5161221",
@@ -656,7 +740,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "40 mm stainless steel automatic in-house everyday-dress watch at 30 m will age quietly."
+     "why": "40 mm stainless steel automatic in-house everyday-dress watch at 30 m will age quietly.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "3fa49f01-d529-4963-8a63-5b6d5a4a8286",
@@ -671,7 +757,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "39 mm stainless steel automatic in-house dress-everyday watch is understated and historically rooted."
+     "why": "39 mm stainless steel automatic in-house dress-everyday watch is understated and historically rooted.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "bab16265-a807-460f-8549-3c2f5e47c0a4",
@@ -686,7 +774,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "39 mm steel manual in-house dress-everyday watch favours restraint over announcement."
+     "why": "39 mm steel manual in-house dress-everyday watch favours restraint over announcement.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "6ab78c32-ec40-4413-b3b2-139cdfa39b87",
@@ -701,7 +791,9 @@
      "caseDiameterMm": 39.5,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "39.5 mm stainless steel automatic in-house dress-everyday-travel watch adds quiet utility for a custodian."
+     "why": "39.5 mm stainless steel automatic in-house dress-everyday-travel watch adds quiet utility for a custodian.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "6741fc86-d8f9-47e9-b6fc-131507dc6647",
@@ -716,7 +808,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "38 mm stainless steel manual dress-everyday watch at 50 m is small, plain, and lasting."
+     "why": "38 mm stainless steel manual dress-everyday watch at 50 m is small, plain, and lasting.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "b2cfe6a0-0496-49ca-9286-1f3673af8672",
@@ -731,7 +825,9 @@
      "caseDiameterMm": 39.9,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "39.9 mm stainless steel automatic in-house dress-everyday-travel watch offers discreet continuity."
+     "why": "39.9 mm stainless steel automatic in-house dress-everyday-travel watch offers discreet continuity.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1e39ac99-06e7-42cb-922d-5e251072f377",
@@ -746,7 +842,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "40 mm steel automatic in-house dress-everyday watch at 30 m is a restrained record-keeper."
+     "why": "40 mm steel automatic in-house dress-everyday watch at 30 m is a restrained record-keeper.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "905808d5-b8bc-4767-9ee6-20da95065dc4",
@@ -761,7 +859,9 @@
      "caseDiameterMm": 36,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "36 mm steel automatic in-house everyday-dress watch at 100 m ages into a record without display."
+     "why": "36 mm steel automatic in-house everyday-dress watch at 100 m ages into a record without display.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ],
    "exceptional_object": [
@@ -778,7 +878,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 40 mm pink gold Saxonia Thin with manual in-house calibre is restrained everyday/dress continuity that will age quietly."
+     "why": "The 40 mm pink gold Saxonia Thin with manual in-house calibre is restrained everyday/dress continuity that will age quietly.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "117de086-27b8-450d-af34-790b69d609a9",
@@ -793,7 +895,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 40 mm steel Villeret Ultraplate with automatic in-house calibre is an understated dress/everyday object built to reward attention over time."
+     "why": "The 40 mm steel Villeret Ultraplate with automatic in-house calibre is an understated dress/everyday object built to reward attention over time.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "a3ff4044-6f6d-4387-9b31-ac91c8e4e599",
@@ -808,7 +912,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 40 mm rose gold Classique 7147 with automatic in-house calibre offers quiet dress history without theatre."
+     "why": "The 40 mm rose gold Classique 7147 with automatic in-house calibre offers quiet dress history without theatre.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "8b402ff8-d738-4d86-b750-02cb39bb826f",
@@ -823,7 +929,9 @@
      "caseDiameterMm": null,
      "waterResistanceM": null,
      "movement": "manual",
-     "why": "The manual Tank Louis Large in dress style is a restrained classic that records time rather than announcing price."
+     "why": "The manual Tank Louis Large in dress style is a restrained classic that records time rather than announcing price.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "9f15d99d-e525-4f44-a095-a5ee6c93c75e",
@@ -838,7 +946,9 @@
      "caseDiameterMm": 36.5,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 36.5 mm stainless steel L.U.C 1860 with manual in-house calibre is small, restrained dress continuity."
+     "why": "The 36.5 mm stainless steel L.U.C 1860 with manual in-house calibre is small, restrained dress continuity.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "7d25759c-f7dd-45ce-b990-53fac770f76f",
@@ -853,7 +963,9 @@
      "caseDiameterMm": 37.3,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 37.3 mm steel Omiwatari with manual in-house calibre is a restrained dress/everyday piece made to age into a record."
+     "why": "The 37.3 mm steel Omiwatari with manual in-house calibre is a restrained dress/everyday piece made to age into a record.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "a47dba1f-cd9b-4a6a-a4ca-604c60174538",
@@ -868,7 +980,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 40 mm stainless steel Master Control Date with automatic in-house calibre is quiet everyday/dress utility with history."
+     "why": "The 40 mm stainless steel Master Control Date with automatic in-house calibre is quiet everyday/dress utility with history.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "33586327-f0f2-4eaa-b2e6-a284872ecab7",
@@ -883,7 +997,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 39 mm stainless steel Lambda 39 with manual in-house calibre is restrained everyday/dress continuity."
+     "why": "The 39 mm stainless steel Lambda 39 with manual in-house calibre is restrained everyday/dress continuity.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "e6c450f1-001c-443c-a1ca-4d753dfb3ead",
@@ -898,7 +1014,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 39 mm rose gold Calatrava Clous de Paris with manual in-house calibre is restrained dress history that rewards long attention."
+     "why": "The 39 mm rose gold Calatrava Clous de Paris with manual in-house calibre is restrained dress history that rewards long attention.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "88380cfc-1270-4864-be48-76428c6bc4e5",
@@ -913,7 +1031,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "The 40 mm stainless steel Classic 801 Enamel with manual in-house calibre will age as a record through its enamel dial."
+     "why": "The 40 mm stainless steel Classic 801 Enamel with manual in-house calibre will age as a record through its enamel dial.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     }
    ]
   },
@@ -932,7 +1052,9 @@
      "caseDiameterMm": 31,
      "waterResistanceM": 30,
      "movement": "quartz",
-     "why": "Its rectangular steel case and dress styling give deliberate geometry suited to formal, designed environments."
+     "why": "Its rectangular steel case and dress styling give deliberate geometry suited to formal, designed environments.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "c840f239-6c7e-4f6e-86f7-ab77aa35037a",
@@ -947,7 +1069,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "Its square 42 mm steel case and controlled matte surfaces hold their own as architectural form."
+     "why": "Its square 42 mm steel case and controlled matte surfaces hold their own as architectural form.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "8a2b64f7-75d4-4fb6-8388-fa51a1e3b189",
@@ -962,7 +1086,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its square 42 mm ceramic case and military field design offer controlled surfaces and strong proportion."
+     "why": "Its square 42 mm ceramic case and military field design offer controlled surfaces and strong proportion.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "5ae4d57c-1545-4682-a987-52bd80bb5bd7",
@@ -977,7 +1103,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its 40 mm aluminium automatic design blends everyday and sport use with distinct modernist material contrast."
+     "why": "Its 40 mm aluminium automatic design blends everyday and sport use with distinct modernist material contrast.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "c196cc3f-c964-419c-ab6d-168b70dba2a4",
@@ -992,7 +1120,9 @@
      "caseDiameterMm": 36.6,
      "waterResistanceM": 30,
      "movement": "solar",
-     "why": "Its 36.6 mm solar dress case offers restrained proportion and controlled surfaces for formal settings."
+     "why": "Its 36.6 mm solar dress case offers restrained proportion and controlled surfaces for formal settings.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "a33e1594-2999-4831-bf19-fe91f41aaac7",
@@ -1007,7 +1137,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "quartz",
-     "why": "Its 40 mm stainless steel dress design with in-house quartz calibre emphasizes precise proportion and finish."
+     "why": "Its 40 mm stainless steel dress design with in-house quartz calibre emphasizes precise proportion and finish.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "adf9bf6c-a2bc-4c7c-90f1-5344ed8b2fc2",
@@ -1022,7 +1154,9 @@
      "caseDiameterMm": 37.3,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "Its 37.3 mm manual stainless steel dress case reflects deliberate, restrained geometry."
+     "why": "Its 37.3 mm manual stainless steel dress case reflects deliberate, restrained geometry.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "708e0020-f923-43b6-94c3-e0c0d7d98363",
@@ -1037,7 +1171,9 @@
      "caseDiameterMm": 40.4,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "Its 40.4 mm stainless steel travel-dress design pairs clean surfaces with functional proportion."
+     "why": "Its 40.4 mm stainless steel travel-dress design pairs clean surfaces with functional proportion.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "788addc3-9f5f-4654-8059-93a8f1d7cd4b",
@@ -1052,7 +1188,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its 38 mm automatic dress design offers minimal, controlled surfaces ideal for an architectural modernist."
+     "why": "Its 38 mm automatic dress design offers minimal, controlled surfaces ideal for an architectural modernist.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "2dd094d2-9ea8-4017-8ec0-81c32350fa5c",
@@ -1067,7 +1205,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "Its 39 mm stainless steel dress design with small seconds provides balanced proportion for formal environments."
+     "why": "Its 39 mm stainless steel dress design with small seconds provides balanced proportion for formal environments.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ],
    "established_collection": [
@@ -1084,7 +1224,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 41 mm steel Octo Roma with in-house automatic calibre offers deliberate octagonal geometry that holds its own in formal everyday settings."
+     "why": "The 41 mm steel Octo Roma with in-house automatic calibre offers deliberate octagonal geometry that holds its own in formal everyday settings.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "225aa466-f72b-46ae-ba8c-3153f6de74fe",
@@ -1099,7 +1241,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 41 mm steel Octo Roma in blue with in-house automatic calibre pairs controlled faceted surfaces with dress and everyday versatility."
+     "why": "The 41 mm steel Octo Roma in blue with in-house automatic calibre pairs controlled faceted surfaces with dress and everyday versatility.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "9ba8493e-c38a-43b1-a66c-f332a36a8fc3",
@@ -1114,7 +1258,9 @@
      "caseDiameterMm": 39.8,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 39.8 mm steel Santos de Cartier Large with in-house automatic calibre brings exposed-screw square geometry suited to designed formal environments."
+     "why": "The 39.8 mm steel Santos de Cartier Large with in-house automatic calibre brings exposed-screw square geometry suited to designed formal environments.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "35e8f843-3c61-4962-b8aa-a791eee5fc37",
@@ -1129,7 +1275,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 38 mm steel Drive de Cartier Extra-Flat with manual in-house calibre offers slim proportion and dress clarity for formal settings."
+     "why": "The 38 mm steel Drive de Cartier Extra-Flat with manual in-house calibre offers slim proportion and dress clarity for formal settings.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "6741fc86-d8f9-47e9-b6fc-131507dc6647",
@@ -1144,7 +1292,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "The 38 mm stainless steel MING 27.02 Classic with manual movement offers restrained geometry for dress and everyday designed environments."
+     "why": "The 38 mm stainless steel MING 27.02 Classic with manual movement offers restrained geometry for dress and everyday designed environments.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fc1cd912-294e-4dff-b54f-14a6f94fd98d",
@@ -1159,7 +1309,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 200,
      "movement": "automatic",
-     "why": "The 38 mm ceramic J12 Calibre 12.1 with in-house automatic calibre offers a controlled continuous ceramic surface for everyday formal wear."
+     "why": "The 38 mm ceramic J12 Calibre 12.1 with in-house automatic calibre offers a controlled continuous ceramic surface for everyday formal wear.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1b38e373-2d68-4caa-a3e1-4b64f4560496",
@@ -1174,7 +1326,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 42 mm titanium Hermes H08 with in-house automatic calibre offers a distinctive shaped case that reads as deliberate modern geometry."
+     "why": "The 42 mm titanium Hermes H08 with in-house automatic calibre offers a distinctive shaped case that reads as deliberate modern geometry.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "0b732eb2-4b11-4d89-bd91-6f15855664f9",
@@ -1189,7 +1343,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 41 mm steel BR 05 Automatic with 100 m resistance offers integrated angular architecture for everyday sport settings."
+     "why": "The 41 mm steel BR 05 Automatic with 100 m resistance offers integrated angular architecture for everyday sport settings.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1e39ac99-06e7-42cb-922d-5e251072f377",
@@ -1204,7 +1360,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 40 mm steel De Ville Prestige with in-house automatic calibre offers clean symmetrical proportion for dress and everyday formal use."
+     "why": "The 40 mm steel De Ville Prestige with in-house automatic calibre offers clean symmetrical proportion for dress and everyday formal use.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "b2cfe6a0-0496-49ca-9286-1f3673af8672",
@@ -1219,7 +1377,9 @@
      "caseDiameterMm": 39.9,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 39.9 mm stainless steel Zurich Weltzeit with in-house automatic calibre offers disciplined dial geometry for dress travel and everyday use."
+     "why": "The 39.9 mm stainless steel Zurich Weltzeit with in-house automatic calibre offers disciplined dial geometry for dress travel and everyday use.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ],
    "exceptional_object": [
@@ -1236,7 +1396,9 @@
      "caseDiameterMm": 38.5,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 38.5 mm pink gold Lange 1 offers deliberate off-center dial geometry and manual in-house proportion suited to formal environments."
+     "why": "The 38.5 mm pink gold Lange 1 offers deliberate off-center dial geometry and manual in-house proportion suited to formal environments.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "31dc03a9-61f6-447f-8dc4-5ea1d5cd4bb0",
@@ -1251,7 +1413,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 41 mm steel Octo Roma Automatic brings controlled octagonal surfaces and everyday-sport balance for designed settings."
+     "why": "The 41 mm steel Octo Roma Automatic brings controlled octagonal surfaces and everyday-sport balance for designed settings.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "b4bbb660-6396-43e6-90ca-add9d8ddc61d",
@@ -1266,7 +1430,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 41 mm steel Bvlgari Bvlgari offers strict circular geometry with engraved bezel for architectural formality."
+     "why": "The 41 mm steel Bvlgari Bvlgari offers strict circular geometry with engraved bezel for architectural formality.",
+     "referenceConfirmed": true,
+     "sourceKind": "retailer"
     },
     {
      "id": "524a891f-6519-4ef7-9112-1f6816cc3007",
@@ -1281,7 +1447,9 @@
      "caseDiameterMm": 43.5,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 43.5 mm steel Santos-Dumont Large pairs exposed-screw square geometry with dress-everyday restraint."
+     "why": "The 43.5 mm steel Santos-Dumont Large pairs exposed-screw square geometry with dress-everyday restraint.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "8b402ff8-d738-4d86-b750-02cb39bb826f",
@@ -1296,7 +1464,9 @@
      "caseDiameterMm": null,
      "waterResistanceM": null,
      "movement": "manual",
-     "why": "The Tank Louis Large provides pure rectangular dress geometry in a manual dress watch."
+     "why": "The Tank Louis Large provides pure rectangular dress geometry in a manual dress watch.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "47eab3a3-5d9b-4538-aa8d-c671882c7885",
@@ -1311,7 +1481,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 40 mm stainless Seventies Chronograph Panorama Date offers a controlled TV-shaped case for modernist proportion."
+     "why": "The 40 mm stainless Seventies Chronograph Panorama Date offers a controlled TV-shaped case for modernist proportion.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "26beb92d-8e66-4e80-a94d-89a7a16ea637",
@@ -1326,7 +1498,9 @@
      "caseDiameterMm": 35,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 35 mm steel Ingenieur Automatic delivers compact grid-like integrated everyday-sport geometry with in-house calibre."
+     "why": "The 35 mm steel Ingenieur Automatic delivers compact grid-like integrated everyday-sport geometry with in-house calibre.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "33586327-f0f2-4eaa-b2e6-a284872ecab7",
@@ -1341,7 +1515,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 39 mm stainless Lambda 39 offers restrained manual dress proportion with in-house calibre for formal spaces."
+     "why": "The 39 mm stainless Lambda 39 offers restrained manual dress proportion with in-house calibre for formal spaces.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "e6c450f1-001c-443c-a1ca-4d753dfb3ead",
@@ -1356,7 +1532,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 39 mm rose gold Calatrava Clous de Paris pairs hobnail bezel detail with manual dress discipline."
+     "why": "The 39 mm rose gold Calatrava Clous de Paris pairs hobnail bezel detail with manual dress discipline.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "8d9ad73b-7e7f-431d-9a97-28b74b99dd7c",
@@ -1371,7 +1549,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 41 mm stainless Defy Skyline brings faceted contemporary geometry with in-house calibre for modern environments."
+     "why": "The 41 mm stainless Defy Skyline brings faceted contemporary geometry with in-house calibre for modern environments.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ]
   },
@@ -1390,7 +1570,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 41 mm automatic Bel Canto with hour-strike complication is rigorous craft that refuses anonymity with a strong point of view."
+     "why": "The 41 mm automatic Bel Canto with hour-strike complication is rigorous craft that refuses anonymity with a strong point of view.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "024040df-d676-4c31-a80b-770e54cb1937",
@@ -1405,7 +1587,9 @@
      "caseDiameterMm": 40.5,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 40.5 mm automatic C1 Moonglow brings moonphase craft and dress character in steel for visual risk without spectacle."
+     "why": "The 40.5 mm automatic C1 Moonglow brings moonphase craft and dress character in steel for visual risk without spectacle.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "788addc3-9f5f-4654-8059-93a8f1d7cd4b",
@@ -1420,7 +1604,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 38 mm automatic MING Ghost offers a rare, design-led point of view in a compact dress-everyday form."
+     "why": "The 38 mm automatic MING Ghost offers a rare, design-led point of view in a compact dress-everyday form.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "cf4b17a2-08b9-4c90-9f65-ad19312f6195",
@@ -1435,7 +1621,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 42 mm automatic BR 03-92 Diver Orange uses bold orange color and 300 m dive rigor for expressive sport character."
+     "why": "The 42 mm automatic BR 03-92 Diver Orange uses bold orange color and 300 m dive rigor for expressive sport character.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "8a2b64f7-75d4-4fb6-8388-fa51a1e3b189",
@@ -1450,7 +1638,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 42 mm automatic BR 03-92 Military in ceramic brings material risk and field character with a strong point of view."
+     "why": "The 42 mm automatic BR 03-92 Military in ceramic brings material risk and field character with a strong point of view.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "64232e6f-a7b7-4d17-bb0e-04a12cb19bd8",
@@ -1465,7 +1655,9 @@
      "caseDiameterMm": 49.4,
      "waterResistanceM": 200,
      "movement": "solar",
-     "why": "The 49.4 mm titanium solar MR-G with in-house calibre and 200 m rating is rigorous craft with unapologetic visual presence."
+     "why": "The 49.4 mm titanium solar MR-G with in-house calibre and 200 m rating is rigorous craft with unapologetic visual presence.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "a440b34a-e0cf-4e40-a5c5-65c3d4dcf6cd",
@@ -1480,7 +1672,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 43 mm automatic Unomat with single-hand display and 300 m dive rating is characterful, rigorous, and visually risky."
+     "why": "The 43 mm automatic Unomat with single-hand display and 300 m dive rating is characterful, rigorous, and visually risky.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fc45a143-4a77-42c3-a084-1940ba16489a",
@@ -1495,7 +1689,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": null,
      "movement": "automatic",
-     "why": "The 41 mm automatic Uni-Racer offers motorsport-inspired design character for everyday-sport wear with a clear point of view."
+     "why": "The 41 mm automatic Uni-Racer offers motorsport-inspired design character for everyday-sport wear with a clear point of view.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1b35b679-ee53-46aa-971b-0ccdb8b229b2",
@@ -1510,7 +1706,9 @@
      "caseDiameterMm": 44,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 44 mm automatic Marinemaster M-44 Amber Orange pairs 300 m dive rigor with bold amber-orange visual risk."
+     "why": "The 44 mm automatic Marinemaster M-44 Amber Orange pairs 300 m dive rigor with bold amber-orange visual risk.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fd9acfd0-e457-408b-9953-2c3539284b63",
@@ -1525,7 +1723,9 @@
      "caseDiameterMm": 45,
      "waterResistanceM": 1500,
      "movement": "automatic",
-     "why": "The 45 mm automatic SUB 1500T Caribbean with 1500 m rating brings rare extreme depth rigor in an expressive colorway."
+     "why": "The 45 mm automatic SUB 1500T Caribbean with 1500 m rating brings rare extreme depth rigor in an expressive colorway.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     }
    ],
    "established_collection": [
@@ -1542,7 +1742,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The full-lum ceramic 42 mm diver at 300 m refuses anonymity while staying a rigorous tool watch."
+     "why": "The full-lum ceramic 42 mm diver at 300 m refuses anonymity while staying a rigorous tool watch.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "475a4ae1-a97a-4e6e-913a-ec61001c08a4",
@@ -1557,7 +1759,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The black lum ceramic skeleton in 41 mm pairs openwork craft with sport everyday use at 100 m."
+     "why": "The black lum ceramic skeleton in 41 mm pairs openwork craft with sport everyday use at 100 m.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fc1cd912-294e-4dff-b54f-14a6f94fd98d",
@@ -1572,7 +1776,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 200,
      "movement": "automatic",
-     "why": "The 38 mm ceramic everyday sport watch with in-house calibre and 200 m rating is visual risk with substance."
+     "why": "The 38 mm ceramic everyday sport watch with in-house calibre and 200 m rating is visual risk with substance.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "44be894e-e88f-456c-949b-b1c7cad42d93",
@@ -1587,7 +1793,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 41 mm automatic Verde in everyday dress form offers a strong point of view at USD 5340."
+     "why": "The 41 mm automatic Verde in everyday dress form offers a strong point of view at USD 5340.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "3fa49f01-d529-4963-8a63-5b6d5a4a8286",
@@ -1602,7 +1810,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "The 39 mm in-house automatic dress everyday watch in stainless steel brings rare German craft with character."
+     "why": "The 39 mm in-house automatic dress everyday watch in stainless steel brings rare German craft with character.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "aabb18e4-f2a9-4e14-a5e2-695c9da8f1d2",
@@ -1617,7 +1827,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 40 mm manual in-house Asaborake dress everyday watch shows rigorous craft with a distinct aesthetic."
+     "why": "The 40 mm manual in-house Asaborake dress everyday watch shows rigorous craft with a distinct aesthetic.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1b38e373-2d68-4caa-a3e1-4b64f4560496",
@@ -1632,7 +1844,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 42 mm titanium in-house everyday sport watch at 100 m has a bold, non-anonymous design voice."
+     "why": "The 42 mm titanium in-house everyday sport watch at 100 m has a bold, non-anonymous design voice.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "31fdd723-3505-44ba-bd93-c312c09ecdcf",
@@ -1647,7 +1861,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 600,
      "movement": "automatic",
-     "why": "The 38 mm automatic 600 m dive sport everyday watch in stainless steel is compact rigor with a strong Bluefin point of view."
+     "why": "The 38 mm automatic 600 m dive sport everyday watch in stainless steel is compact rigor with a strong Bluefin point of view.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "eff96bcf-ada5-4fc1-9f7a-d99aa7f1c0de",
@@ -1662,7 +1878,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 42 mm titanium travel sport everyday watch at 100 m offers expressive world-travel function, not empty spectacle."
+     "why": "The 42 mm titanium travel sport everyday watch at 100 m offers expressive world-travel function, not empty spectacle.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "ea7b4128-9fe3-4ba7-9eb9-b57d7a301c69",
@@ -1677,7 +1895,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 200,
      "movement": "automatic",
-     "why": "The 42 mm automatic skeleton turquoise dive sport everyday watch at 200 m leaves clear room for color and openwork risk."
+     "why": "The 42 mm automatic skeleton turquoise dive sport everyday watch at 200 m leaves clear room for color and openwork risk.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     }
    ],
    "exceptional_object": [
@@ -1694,7 +1914,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its skeleton dial with black lum in 40 mm steel is visual risk with a strong point of view for everyday wear."
+     "why": "Its skeleton dial with black lum in 40 mm steel is visual risk with a strong point of view for everyday wear.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1072690b-5f7f-4809-99e5-2d8d1a4f4c68",
@@ -1709,7 +1931,9 @@
      "caseDiameterMm": 45,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its Technicolour grand date in 45 mm stainless steel refuses anonymity while remaining an in-house everyday sport object."
+     "why": "Its Technicolour grand date in 45 mm stainless steel refuses anonymity while remaining an in-house everyday sport object.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "88380cfc-1270-4864-be48-76428c6bc4e5",
@@ -1724,7 +1948,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "Its enamel dial with in-house manual calibre in 40 mm steel offers rare craft with rigorous dress character."
+     "why": "Its enamel dial with in-house manual calibre in 40 mm steel offers rare craft with rigorous dress character.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "0908cfac-648d-4879-af5c-aa5ee7e3b526",
@@ -1739,7 +1965,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "Its 39 mm steel manual design with in-house calibre presents a distinctive independent point of view for dress and everyday."
+     "why": "Its 39 mm steel manual design with in-house calibre presents a distinctive independent point of view for dress and everyday.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "8964940d-0e26-4bf4-8122-2bf91f71d8d9",
@@ -1754,7 +1982,9 @@
      "caseDiameterMm": 45,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "Its 45 mm steel Globetrotter GMT with in-house calibre makes travel a bold expressive statement."
+     "why": "Its 45 mm steel Globetrotter GMT with in-house calibre makes travel a bold expressive statement.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "ccabb26a-e3f2-4094-8893-b4f0da4b20fc",
@@ -1769,7 +1999,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its 40 mm Midnight worldtimer brings graphic character to travel, dress and everyday use."
+     "why": "Its 40 mm Midnight worldtimer brings graphic character to travel, dress and everyday use.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "cc1c41b1-900a-4cff-aad5-10bea4d1fcbb",
@@ -1784,7 +2016,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": null,
      "movement": "automatic",
-     "why": "Its 40 mm stainless steel reimagined timer takes a rigorous but unconventional approach to dress and everyday."
+     "why": "Its 40 mm stainless steel reimagined timer takes a rigorous but unconventional approach to dress and everyday.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "bdf4ac85-baf5-4a53-b8a2-7b9cc34cbe38",
@@ -1799,7 +2033,9 @@
      "caseDiameterMm": 45.5,
      "waterResistanceM": 600,
      "movement": "automatic",
-     "why": "Its 45.5 mm ceramic Deep Black Planet Ocean with 600 m rating turns a dive tool into dark spectacle with purpose."
+     "why": "Its 45.5 mm ceramic Deep Black Planet Ocean with 600 m rating turns a dive tool into dark spectacle with purpose.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "93e8bc04-4d21-4d58-bb69-66725e4317b8",
@@ -1814,7 +2050,9 @@
      "caseDiameterMm": 44,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "Its Fibratech Blu Notte case in 44 mm with 300 m rating offers material risk beyond ordinary steel dive watches."
+     "why": "Its Fibratech Blu Notte case in 44 mm with 300 m rating offers material risk beyond ordinary steel dive watches.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "d709d1fb-407a-49a9-bb9b-ab36ece23b79",
@@ -1829,7 +2067,9 @@
      "caseDiameterMm": 55,
      "waterResistanceM": 1200,
      "movement": "automatic",
-     "why": "Its 55 mm steel case with 1200 m rating is an uncompromising oversized dive object with undeniable presence."
+     "why": "Its 55 mm steel case with 1200 m rating is an uncompromising oversized dive object with undeniable presence.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ]
   },
@@ -1848,7 +2088,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "Its in-house automatic calibre in a 39 mm dress-everyday steel case rewards close study of architecture and finishing."
+     "why": "Its in-house automatic calibre in a 39 mm dress-everyday steel case rewards close study of architecture and finishing.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fb5271af-8abf-4fd0-9add-f36f42674324",
@@ -1863,7 +2105,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its in-house automatic GMT calibre in aluminium offers real travel mechanics to examine up close."
+     "why": "Its in-house automatic GMT calibre in aluminium offers real travel mechanics to examine up close.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "b7da2d01-3272-46f1-a9c7-34410c9b2f5a",
@@ -1878,7 +2122,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its in-house automatic chronograph calibre gives serious movement architecture for mechanical inspection."
+     "why": "Its in-house automatic chronograph calibre gives serious movement architecture for mechanical inspection.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "86fc4910-dd8a-4c07-a02f-08fa9d538133",
@@ -1893,7 +2139,9 @@
      "caseDiameterMm": 40.5,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "Its in-house automatic moonphase manufacture calibre puts complex mechanics on display in a dress watch."
+     "why": "Its in-house automatic moonphase manufacture calibre puts complex mechanics on display in a dress watch.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "adf9bf6c-a2bc-4c7c-90f1-5344ed8b2fc2",
@@ -1908,7 +2156,9 @@
      "caseDiameterMm": 37.3,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "Its in-house manual-winding calibre in a 37.3 mm steel case invites appreciation of hand-wound architecture."
+     "why": "Its in-house manual-winding calibre in a 37.3 mm steel case invites appreciation of hand-wound architecture.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "cb3d3913-9c95-4c2e-ad41-4c6ee74be4d9",
@@ -1923,7 +2173,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 100,
      "movement": "manual",
-     "why": "Its manual flyback movement in a 39 mm steel field case offers hands-on mechanical interest."
+     "why": "Its manual flyback movement in a 39 mm steel field case offers hands-on mechanical interest.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fa621e0f-3ac2-4a56-8a26-855bb2662ea9",
@@ -1938,7 +2190,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 60,
      "movement": "automatic",
-     "why": "Its in-house automatic calibre in a 39 mm bronze pilot's case combines material and movement scrutiny."
+     "why": "Its in-house automatic calibre in a 39 mm bronze pilot's case combines material and movement scrutiny.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1320deb7-ffcf-4d08-9a00-262e1aac33a9",
@@ -1953,7 +2207,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its in-house automatic GMT calibre provides true travel functionality for calibre-focused examination."
+     "why": "Its in-house automatic GMT calibre provides true travel functionality for calibre-focused examination.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "0c9a789f-5842-4bdf-897b-6ffd638767c0",
@@ -1968,7 +2224,9 @@
      "caseDiameterMm": 38.5,
      "waterResistanceM": 100,
      "movement": "manual",
-     "why": "Its in-house manual calibre in a 38.5 mm steel case offers transparent Glashütte movement logic to study."
+     "why": "Its in-house manual calibre in a 38.5 mm steel case offers transparent Glashütte movement logic to study.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "2942e3ed-6dd3-4f3b-b167-7c7fbdc82c07",
@@ -1983,7 +2241,9 @@
      "caseDiameterMm": 39.5,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "Its in-house Co-Axial Master Chronometer automatic calibre stands up to technical and finishing scrutiny."
+     "why": "Its in-house Co-Axial Master Chronometer automatic calibre stands up to technical and finishing scrutiny.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ],
    "established_collection": [
@@ -2000,7 +2260,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "Manual-wind in-house calibre in a 38 mm dress watch rewards close study of movement architecture."
+     "why": "Manual-wind in-house calibre in a 38 mm dress watch rewards close study of movement architecture.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "6863a24f-3d11-4409-9950-5f7428e14c82",
@@ -2015,7 +2277,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "In-house calibre automatic in stainless steel offers examinable manufacture mechanics for everyday dress wear."
+     "why": "In-house calibre automatic in stainless steel offers examinable manufacture mechanics for everyday dress wear.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "0819b485-d139-4579-a815-e1d3dad1a5d0",
@@ -2030,7 +2294,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "In-house perpetual calendar manufacture combines complex architecture with dress everyday use in stainless steel."
+     "why": "In-house perpetual calendar manufacture combines complex architecture with dress everyday use in stainless steel.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "bab16265-a807-460f-8549-3c2f5e47c0a4",
@@ -2045,7 +2311,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "Manual-wind in-house calibre in a 39 mm steel dress watch puts finishing and layout front and center."
+     "why": "Manual-wind in-house calibre in a 39 mm steel dress watch puts finishing and layout front and center.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "b2bf94e9-75b6-4b9e-b1d5-bce6271bea44",
@@ -2060,7 +2328,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "In-house calibre automatic GMT in 40 mm steel suits a connoisseur who values travel mechanics."
+     "why": "In-house calibre automatic GMT in 40 mm steel suits a connoisseur who values travel mechanics.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "84f4a4d7-c542-4810-b216-60e0711092d5",
@@ -2075,7 +2345,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "In-house calibre 300 m steel diver lets movement quality be judged alongside serious dive capability."
+     "why": "In-house calibre 300 m steel diver lets movement quality be judged alongside serious dive capability.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "d5c09c38-e532-41d5-9536-970245d9aed7",
@@ -2090,7 +2362,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "Manual-wind in-house calibre with power reserve in steel offers visible mechanical justification for dress purchase."
+     "why": "Manual-wind in-house calibre with power reserve in steel offers visible mechanical justification for dress purchase.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "a972717f-5304-4a71-9bc8-2b8a8fc72173",
@@ -2105,7 +2379,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "Manual-wind in-house calibre in steel with travel everyday function invites examination of architecture and serviceability."
+     "why": "Manual-wind in-house calibre in steel with travel everyday function invites examination of architecture and serviceability.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "790119d3-48a0-4af9-932f-f3532256e1e0",
@@ -2120,7 +2396,9 @@
      "caseDiameterMm": 44,
      "waterResistanceM": 100,
      "movement": "manual",
-     "why": "Manual-wind in-house calibre in titanium field watch centers the calibre rather than keeping it backstage."
+     "why": "Manual-wind in-house calibre in titanium field watch centers the calibre rather than keeping it backstage.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "5cb90575-5d0b-4f89-8779-569d646c0d78",
@@ -2135,7 +2413,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "Manual-wind 40 mm steel dress watch appeals to close examination of traditional movement layout and finishing."
+     "why": "Manual-wind 40 mm steel dress watch appeals to close examination of traditional movement layout and finishing.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ],
    "exceptional_object": [
@@ -2152,7 +2432,9 @@
      "caseDiameterMm": 38.5,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 38.5 mm pink gold manual with in-house calibre puts its movement architecture front and center for close study."
+     "why": "The 38.5 mm pink gold manual with in-house calibre puts its movement architecture front and center for close study.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "80105142-d227-4409-8498-968977614d2d",
@@ -2167,7 +2449,9 @@
      "caseDiameterMm": 40.5,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "The 40.5 mm manual rose gold watch with in-house calibre offers dual-time mechanics worth examining."
+     "why": "The 40.5 mm manual rose gold watch with in-house calibre offers dual-time mechanics worth examining.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "0908cfac-648d-4879-af5c-aa5ee7e3b526",
@@ -2182,7 +2466,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "The 39 mm manual steel watch with in-house calibre shows independent movement design at USD 11900."
+     "why": "The 39 mm manual steel watch with in-house calibre shows independent movement design at USD 11900.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "88380cfc-1270-4864-be48-76428c6bc4e5",
@@ -2197,7 +2483,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 50,
      "movement": "manual",
-     "why": "The 40 mm manual steel watch with in-house calibre rewards inspection of its construction and finishing."
+     "why": "The 40 mm manual steel watch with in-house calibre rewards inspection of its construction and finishing.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "9f15d99d-e525-4f44-a095-a5ee6c93c75e",
@@ -2212,7 +2500,9 @@
      "caseDiameterMm": 36.5,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 36.5 mm manual stainless steel dress watch with in-house calibre is a compact mechanical study."
+     "why": "The 36.5 mm manual stainless steel dress watch with in-house calibre is a compact mechanical study.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "13970546-bf88-4d74-b777-76b052eb7909",
@@ -2227,7 +2517,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 39 mm automatic steel watch with in-house calibre packs a perpetual calendar to judge on mechanics."
+     "why": "The 39 mm automatic steel watch with in-house calibre packs a perpetual calendar to judge on mechanics.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "7145d8ab-9c61-42ba-901d-e1eec42fd5a1",
@@ -2242,7 +2534,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 41 mm automatic steel watch with in-house calibre offers a perpetual calendar for mechanical value."
+     "why": "The 41 mm automatic steel watch with in-house calibre offers a perpetual calendar for mechanical value.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "95005bdb-fede-4ab8-a722-60306ef87f31",
@@ -2257,7 +2551,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 40 mm automatic stainless steel watch with in-house calibre showcases high-beat engineering."
+     "why": "The 40 mm automatic stainless steel watch with in-house calibre showcases high-beat engineering.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "57d5b482-df18-4cef-ae74-bca5f80b5601",
@@ -2272,7 +2568,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 38 mm automatic steel watch with in-house calibre presents a chronograph movement to evaluate."
+     "why": "The 38 mm automatic steel watch with in-house calibre presents a chronograph movement to evaluate.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "e6c450f1-001c-443c-a1ca-4d753dfb3ead",
@@ -2287,7 +2585,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 39 mm manual rose gold dress watch with in-house calibre invites scrutiny of its calibre and finishing."
+     "why": "The 39 mm manual rose gold dress watch with in-house calibre invites scrutiny of its calibre and finishing.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ]
   },
@@ -2306,7 +2606,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 42 mm stainless steel Breitling Avenger Automatic with 300 m rating is an established sport benchmark with instant visibility."
+     "why": "The 42 mm stainless steel Breitling Avenger Automatic with 300 m rating is an established sport benchmark with instant visibility.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "c840f239-6c7e-4f6e-86f7-ab77aa35037a",
@@ -2321,7 +2623,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 42 mm steel Bell & Ross BR 03 Diver Black Matte with 300 m rating is a recognised dive standard in everyday/sport form."
+     "why": "The 42 mm steel Bell & Ross BR 03 Diver Black Matte with 300 m rating is a recognised dive standard in everyday/sport form.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fa621e0f-3ac2-4a56-8a26-855bb2662ea9",
@@ -2336,7 +2640,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 60,
      "movement": "automatic",
-     "why": "The 39 mm bronze IWC Pilot's Watch Automatic Spitfire with in-house calibre is an institutional pilot benchmark for a milestone."
+     "why": "The 39 mm bronze IWC Pilot's Watch Automatic Spitfire with in-house calibre is an institutional pilot benchmark for a milestone.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "adf9bf6c-a2bc-4c7c-90f1-5344ed8b2fc2",
@@ -2351,7 +2657,9 @@
      "caseDiameterMm": 37.3,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "The 37.3 mm stainless steel Grand Seiko manual with in-house calibre is an established dress/everyday benchmark with strong recognition."
+     "why": "The 37.3 mm stainless steel Grand Seiko manual with in-house calibre is an established dress/everyday benchmark with strong recognition.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1320deb7-ffcf-4d08-9a00-262e1aac33a9",
@@ -2366,7 +2674,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 42 mm stainless steel Longines Conquest GMT with in-house calibre and 100 m rating is a recognised travel/everyday standard."
+     "why": "The 42 mm stainless steel Longines Conquest GMT with in-house calibre and 100 m rating is a recognised travel/everyday standard.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "0310dc08-3ecc-4e9a-892a-e849447f7796",
@@ -2381,7 +2691,9 @@
      "caseDiameterMm": 42.5,
      "waterResistanceM": 1200,
      "movement": "automatic",
-     "why": "The 42.5 mm stainless steel DOXA SUB 300T Sharkhunter with 1200 m rating is a deliberate, highly visible dive benchmark."
+     "why": "The 42.5 mm stainless steel DOXA SUB 300T Sharkhunter with 1200 m rating is a deliberate, highly visible dive benchmark.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "5ae4d57c-1545-4682-a987-52bd80bb5bd7",
@@ -2396,7 +2708,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "The 40 mm Bulgari Aluminium 40 Black automatic with 100 m rating is an established everyday/sport design icon."
+     "why": "The 40 mm Bulgari Aluminium 40 Black automatic with 100 m rating is an established everyday/sport design icon.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "5f6b08ad-65a1-47ea-9b6f-e275a6aba4cb",
@@ -2411,7 +2725,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 1000,
      "movement": "automatic",
-     "why": "The 43 mm stainless steel Hamilton Khaki Navy Belowzero Automatic with 1000 m rating is a recognised value dive benchmark at USD 2095."
+     "why": "The 43 mm stainless steel Hamilton Khaki Navy Belowzero Automatic with 1000 m rating is a recognised value dive benchmark at USD 2095.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "a6aef0aa-e922-4047-8066-fddfa16d36d6",
@@ -2426,7 +2742,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 50,
      "movement": "automatic",
-     "why": "The 39 mm stainless steel Baume & Mercier Clifton Baumatic with in-house calibre is an established dress/everyday standard."
+     "why": "The 39 mm stainless steel Baume & Mercier Clifton Baumatic with in-house calibre is an established dress/everyday standard.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "cb63204c-f2f7-4142-87b3-2983d5600cef",
@@ -2441,7 +2759,9 @@
      "caseDiameterMm": 39,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "The 39 mm steel Alpina Seastrong Diver Extreme Automatic GMT with 300 m rating is a recognised sport/dive/travel benchmark."
+     "why": "The 39 mm steel Alpina Seastrong Diver Extreme Automatic GMT with 300 m rating is a recognised sport/dive/travel benchmark.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     }
    ],
    "established_collection": [
@@ -2458,7 +2778,9 @@
      "caseDiameterMm": 39.8,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "39.8 mm steel Santos with in-house calibre and 100 m rating covers dress, everyday, field and sport in one recognised design."
+     "why": "39.8 mm steel Santos with in-house calibre and 100 m rating covers dress, everyday, field and sport in one recognised design.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "905808d5-b8bc-4767-9ee6-20da95065dc4",
@@ -2473,7 +2795,9 @@
      "caseDiameterMm": 36,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "36 mm steel Datejust with in-house calibre and 100 m rating is an everyday dress benchmark."
+     "why": "36 mm steel Datejust with in-house calibre and 100 m rating is an everyday dress benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "d9946e3c-ef5f-4b1d-ac87-68cff4fdd72f",
@@ -2488,7 +2812,9 @@
      "caseDiameterMm": 36,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "36 mm steel Explorer with in-house calibre and 100 m rating is an everyday field sport benchmark."
+     "why": "36 mm steel Explorer with in-house calibre and 100 m rating is an everyday field sport benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "15e95bc7-7388-4c2c-af2f-aaca802751ab",
@@ -2503,7 +2829,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 150,
      "movement": "automatic",
-     "why": "38 mm stainless steel Aqua Terra with in-house calibre and 150 m rating is an everyday sport benchmark."
+     "why": "38 mm stainless steel Aqua Terra with in-house calibre and 150 m rating is an everyday sport benchmark.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "1c922f7c-8abd-4be5-b6ef-42815351662c",
@@ -2518,7 +2846,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "42 mm steel Seamaster Diver with 300 m rating is a dive sport travel benchmark."
+     "why": "42 mm steel Seamaster Diver with 300 m rating is a dive sport travel benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "43ade9ad-c33c-46f8-bd60-b6e2735865e2",
@@ -2533,7 +2863,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "41 mm stainless steel Polaris with in-house calibre and 100 m rating is a sport everyday benchmark."
+     "why": "41 mm stainless steel Polaris with in-house calibre and 100 m rating is a sport everyday benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "3b27c3ec-9625-42ca-8817-1da19b4a3c4a",
@@ -2548,7 +2880,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "41 mm stainless steel Pilot's Watch with in-house calibre and 100 m rating covers field, everyday, sport and travel."
+     "why": "41 mm stainless steel Pilot's Watch with in-house calibre and 100 m rating covers field, everyday, sport and travel.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "6ab78c32-ec40-4413-b3b2-139cdfa39b87",
@@ -2563,7 +2897,9 @@
      "caseDiameterMm": 39.5,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "39.5 mm stainless steel GMT with in-house calibre and 30 m rating covers dress, everyday, field and travel."
+     "why": "39.5 mm stainless steel GMT with in-house calibre and 30 m rating covers dress, everyday, field and travel.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "fc1cd912-294e-4dff-b54f-14a6f94fd98d",
@@ -2578,7 +2914,9 @@
      "caseDiameterMm": 38,
      "waterResistanceM": 200,
      "movement": "automatic",
-     "why": "38 mm ceramic J12 with in-house calibre and 200 m rating is an everyday sport benchmark."
+     "why": "38 mm ceramic J12 with in-house calibre and 200 m rating is an everyday sport benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "e024fdf0-a0eb-47b1-a36f-ccc4d4042bcb",
@@ -2593,7 +2931,9 @@
      "caseDiameterMm": 44,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "44 mm steel Avenger chronograph with in-house calibre and 300 m rating is a sport dive benchmark."
+     "why": "44 mm steel Avenger chronograph with in-house calibre and 300 m rating is a sport dive benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ],
    "exceptional_object": [
@@ -2610,7 +2950,9 @@
      "caseDiameterMm": 38.5,
      "waterResistanceM": 30,
      "movement": "manual",
-     "why": "Its 38.5 mm pink gold everyday/dress case with manual in-house calibre at USD 56094 serves as an exceptional, visible milestone object."
+     "why": "Its 38.5 mm pink gold everyday/dress case with manual in-house calibre at USD 56094 serves as an exceptional, visible milestone object.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "bc4e759a-2f70-4b87-86ea-fe10cd74fc9e",
@@ -2625,7 +2967,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "Its 42 mm steel sport/dive design with automatic in-house calibre and 300 m rating serves as an established, visible benchmark."
+     "why": "Its 42 mm steel sport/dive design with automatic in-house calibre and 300 m rating serves as an established, visible benchmark.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "2d90fd80-a293-4760-923a-874f15cd945c",
@@ -2640,7 +2984,9 @@
      "caseDiameterMm": 45,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "Its 45 mm steel dive/sport design with automatic in-house calibre and 300 m rating serves as an established, recognized benchmark."
+     "why": "Its 45 mm steel dive/sport design with automatic in-house calibre and 300 m rating serves as an established, recognized benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "2d8de00d-c2b6-4edb-aa92-1d3e8dadf69f",
@@ -2655,7 +3001,9 @@
      "caseDiameterMm": 43,
      "waterResistanceM": 30,
      "movement": "automatic",
-     "why": "Its 43 mm steel everyday/travel design with automatic in-house calibre serves as an established, visible benchmark."
+     "why": "Its 43 mm steel everyday/travel design with automatic in-house calibre serves as an established, visible benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "8b402ff8-d738-4d86-b750-02cb39bb826f",
@@ -2670,7 +3018,9 @@
      "caseDiameterMm": null,
      "waterResistanceM": null,
      "movement": "manual",
-     "why": "Its manual dress design at USD 17487 serves as an established, institutionally recognized milestone object."
+     "why": "Its manual dress design at USD 17487 serves as an established, institutionally recognized milestone object.",
+     "referenceConfirmed": false,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "809900f4-4a83-4264-a011-0d5b7dbc7daf",
@@ -2685,7 +3035,9 @@
      "caseDiameterMm": 42,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "Its 42 mm titanium dive/sport design with automatic in-house calibre and 300 m rating serves as an established, visible benchmark."
+     "why": "Its 42 mm titanium dive/sport design with automatic in-house calibre and 300 m rating serves as an established, visible benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "f6b6cd6d-e954-45b4-be07-427e6b418907",
@@ -2700,7 +3052,9 @@
      "caseDiameterMm": 44,
      "waterResistanceM": 300,
      "movement": "automatic",
-     "why": "Its 44 mm steel dive/everyday/field/sport design with automatic in-house calibre and 300 m rating serves as an established, visible benchmark."
+     "why": "Its 44 mm steel dive/everyday/field/sport design with automatic in-house calibre and 300 m rating serves as an established, visible benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "be43cd61-8f68-4db8-a61a-3924ddc51ce8",
@@ -2715,7 +3069,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 120,
      "movement": "automatic",
-     "why": "Its 40 mm steel sport/everyday/travel design with automatic in-house calibre and 120 m rating serves as an established, visible milestone object."
+     "why": "Its 40 mm steel sport/everyday/travel design with automatic in-house calibre and 120 m rating serves as an established, visible milestone object.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "420d657b-ddec-4aa4-be79-f90caf3cad49",
@@ -2730,7 +3086,9 @@
      "caseDiameterMm": 40,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its 40 mm steel sport/everyday design with automatic in-house calibre and 100 m rating serves as an established, liquid benchmark."
+     "why": "Its 40 mm steel sport/everyday design with automatic in-house calibre and 100 m rating serves as an established, liquid benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     },
     {
      "id": "4c14aa0e-72ca-4f08-a8b8-caef9e9962e8",
@@ -2745,7 +3103,9 @@
      "caseDiameterMm": 41,
      "waterResistanceM": 100,
      "movement": "automatic",
-     "why": "Its 41 mm steel everyday/dress design with automatic in-house calibre and 100 m rating serves as an established, liquid benchmark."
+     "why": "Its 41 mm steel everyday/dress design with automatic in-house calibre and 100 m rating serves as an established, liquid benchmark.",
+     "referenceConfirmed": true,
+     "sourceKind": "manufacturer"
     }
    ]
   }

@@ -252,6 +252,8 @@ for (const archetypeId of ARCHETYPE_IDS) {
           brand: watch.brand,
           model: watch.model,
           referenceCode: watch.referenceCode,
+          referenceConfirmed: watch.referenceConfirmed,
+          sourceKind: watch.sourceKind,
           imageUrl: watch.imageUrl,
           price:
             watch.priceAmount !== null && watch.priceCurrency
