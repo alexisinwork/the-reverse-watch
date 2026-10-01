@@ -1,9 +1,11 @@
 import { z } from "zod";
 
+import type { DesignTraits } from "./design-traits";
 import {
   catalogueWatchSchema,
   type CatalogueStyle,
   type CatalogueWatch,
+  type PreownedPrice,
 } from "./watch-catalogue";
 
 export type StoreConfig = { supabaseUrl: string; serviceKey: string };
@@ -298,4 +300,42 @@ export async function fillPhotosFromCatalogue<
       (model.length >= 6 ? looseMatch(brand, model) : undefined);
     return image ? { ...watch, imageUrl: image } : watch;
   });
+}
+
+/** Stores how a watch looks, read from its photo. */
+export async function recordDesignTraits(
+  client: CatalogueClient,
+  id: string,
+  traits: DesignTraits,
+) {
+  const ok = z
+    .boolean()
+    .nullable()
+    .parse(
+      await rpc(client, "watch_catalogue_traits_v1", {
+        p_id: id,
+        p_traits: traits,
+      }),
+    );
+  clearCatalogueCache();
+  return ok === true;
+}
+
+/** Stores established-dealer pre-owned prices for a watch. */
+export async function recordPreownedPrice(
+  client: CatalogueClient,
+  id: string,
+  price: PreownedPrice,
+) {
+  const ok = z
+    .boolean()
+    .nullable()
+    .parse(
+      await rpc(client, "watch_catalogue_preowned_v1", {
+        p_id: id,
+        p_price: price,
+      }),
+    );
+  clearCatalogueCache();
+  return ok === true;
 }

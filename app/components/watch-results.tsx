@@ -197,7 +197,11 @@ function PriceLine({
           ? formatMoney(price.amount, price.currency)
           : `≈ ${formatMoney(converted, displayCurrency)}`}
       </strong>
-      <span className="price-tag">Approximate price, may be wrong</span>
+      <span className="price-tag">
+        {watch.details.priceCondition === "pre-owned"
+          ? "Pre-owned from established dealers, approximate"
+          : "Approximate price, may be wrong"}
+      </span>
     </>
   );
 }

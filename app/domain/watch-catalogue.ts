@@ -5,6 +5,8 @@
  */
 import { z } from "zod";
 
+import { designTraitsSchema } from "./design-traits";
+
 import {
   allowedMovement,
   fitsDiameter,
@@ -149,6 +151,18 @@ const nullableNumber = z
   .transform((value) => (value === null ? null : Number(value)))
   .pipe(z.number().finite().nullable());
 
+/** Pre-owned asking prices from established dealers, in one currency. */
+const preownedPriceSchema = z.object({
+  currency: z.string(),
+  low: z.number(),
+  median: z.number(),
+  high: z.number(),
+  listings: z.number().int(),
+  checkedAt: z.string(),
+});
+
+export type PreownedPrice = z.infer<typeof preownedPriceSchema>;
+
 export const catalogueWatchSchema = z.object({
   id: z.string(),
   identityKey: z.string(),
@@ -196,6 +210,10 @@ export const catalogueWatchSchema = z.object({
   reviewedAt: z.string().nullable(),
   createdAt: z.string(),
   updatedAt: z.string(),
+  /** How it looks, read from its photo (design-traits.ts); null until read. */
+  designTraits: designTraitsSchema.nullable().optional().catch(null),
+  /** Established-dealer pre-owned asking prices; null until looked up. */
+  preownedPrice: preownedPriceSchema.nullable().optional().catch(null),
 });
 
 export type CatalogueWatch = z.infer<typeof catalogueWatchSchema>;

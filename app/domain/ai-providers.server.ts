@@ -274,6 +274,59 @@ export async function museJson(
   return parseModelJson(content);
 }
 
+/**
+ * Muse Spark reading one image (a watch's product photo) with a JSON
+ * answer. Used to record how a watch looks; the image URL is a public
+ * product photo, never anything from a visitor.
+ */
+export async function museVisionJson(
+  prompt: string,
+  imageUrl: string,
+  deps: Deps,
+  timeoutMs = 45_000,
+): Promise<unknown> {
+  const config = deps.config.museSpark!;
+  const response = await deps.fetchImpl(
+    new URL("chat/completions", config.baseUrl),
+    {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${config.apiKey}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        model: config.fastModel,
+        reasoning_effort: "minimal",
+        temperature: 0,
+        max_tokens: 1_500,
+        response_format: { type: "json_object" },
+        messages: [
+          {
+            role: "user",
+            content: [
+              { type: "text", text: prompt },
+              { type: "image_url", image_url: { url: imageUrl } },
+            ],
+          },
+        ],
+      }),
+      signal: AbortSignal.timeout(timeoutMs),
+    },
+  );
+  if (!response.ok) {
+    throw new Error(
+      `Muse Spark vision returned ${response.status}: ${(await response.text()).slice(0, 200)}`,
+    );
+  }
+  const body = (await response.json()) as {
+    choices?: { message?: { content?: unknown } }[];
+  };
+  const content = body.choices?.[0]?.message?.content;
+  if (typeof content !== "string")
+    throw new Error("Muse Spark vision returned no content.");
+  return parseModelJson(content);
+}
+
 export type MuseResearch = {
   /** The final answer text (JSON when a schema was given). */
   text: string;

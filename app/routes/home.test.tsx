@@ -59,14 +59,12 @@ describe("landing page", () => {
       within(free).getByRole("link", { name: /Find your watch archetype/i }),
     ).toHaveAttribute("href", "/watches/archetype");
     const subscribers = screen.getByRole("region", { name: "For subscribers" });
+    // Locked until subscribed: the card leads to the sign-up box.
     expect(
-      within(subscribers).getByText("Find a cheaper alternative"),
-    ).toBeInTheDocument();
-    expect(
-      within(subscribers).queryByRole("link", {
+      within(subscribers).getByRole("link", {
         name: /Find a cheaper alternative/i,
       }),
-    ).not.toBeInTheDocument();
+    ).toHaveAttribute("href", "#newsletter-signup");
     expect(screen.queryByText(/Or browse/i)).not.toBeInTheDocument();
   });
 
@@ -102,7 +100,13 @@ describe("landing page", () => {
         name: /Start the reference diagnostic/i,
       }),
     ).toHaveAttribute("href", "/quiz");
-    expect(screen.getByText(/Subscriber access · Unlocked/i)).toBeVisible();
+    // Both subscriber cards are open: the diagnostic and the alternatives.
+    expect(screen.getAllByText(/Subscriber access · Unlocked/i)).toHaveLength(
+      2,
+    );
+    expect(
+      screen.getByRole("link", { name: /Find a cheaper alternative/i }),
+    ).toHaveAttribute("href", "/watches/alternatives");
   });
 
   it("preserves a valid story handoff while unlocking the diagnostic", async () => {

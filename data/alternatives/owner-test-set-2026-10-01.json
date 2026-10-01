@@ -1,0 +1,85 @@
+{
+  "source": "Owner-provided test set, 2026-10-01: 20 popular watches with alternatives at a lower, middle and higher budget. Prices are the owner's EUR shopping budgets (USD where marked). 'quartz' marks quartz/solar alternatives, 'used' pre-owned ones.",
+  "cases": [
+    { "original": "Rolex Submariner", "alternatives": [
+      { "watch": "Casio Duro MDV-107", "eur": [70, 120], "quartz": true },
+      { "watch": "Orient Kamasu", "eur": [280, 440] },
+      { "watch": "Certina DS Action Diver", "eur": [880, 1100] } ] },
+    { "original": "Rolex GMT-Master II", "alternatives": [
+      { "watch": "Timex Q Timex GMT 38 mm", "eur": [249, 249], "quartz": true },
+      { "watch": "Seiko 5 Sports GMT SSK003", "eur": [400, 500] },
+      { "watch": "Longines Spirit Zulu Time 39 mm", "eur": [3400, 3600] } ] },
+    { "original": "Rolex Daytona", "alternatives": [
+      { "watch": "Timex Q Timex Chronograph", "eur": [219, 259], "quartz": true },
+      { "watch": "Seiko Speedtimer SSC813", "eur": [550, 750], "quartz": true },
+      { "watch": "Hamilton Intra-Matic Auto Chrono", "eur": [2400, 2600] } ] },
+    { "original": "Rolex Datejust", "alternatives": [
+      { "watch": "Casio MTP-1302", "eur": [45, 80], "quartz": true },
+      { "watch": "Tissot Ballade quartz", "eur": [345, 395], "quartz": true },
+      { "watch": "Tissot Ballade Powermatic 80 COSC", "eur": [1045, 1045] } ] },
+    { "original": "Rolex Explorer", "alternatives": [
+      { "watch": "Citizen Garrison BM8180", "eur": [200, 275], "quartz": true },
+      { "watch": "Hamilton Khaki Field Murph 38 mm", "eur": [900, 1100] },
+      { "watch": "Tudor Ranger", "eur": [3220, 3700] } ] },
+    { "original": "Rolex Oyster Perpetual", "alternatives": [
+      { "watch": "Casio MTP-B145", "eur": [70, 110], "quartz": true },
+      { "watch": "Citizen Tsuyosa", "eur": [250, 400] },
+      { "watch": "Tissot Gentleman Powermatic 80", "eur": [795, 925] } ] },
+    { "original": "Omega Speedmaster Moonwatch", "alternatives": [
+      { "watch": "Swatch MoonSwatch Mission to the Moon", "eur": [290, 290], "quartz": true },
+      { "watch": "Bulova Lunar Pilot 96K111", "eur": [595, 800], "quartz": true },
+      { "watch": "Tissot PR516 Mechanical Chronograph", "eur": [1800, 2050] } ] },
+    { "original": "Omega Seamaster Diver 300M", "alternatives": [
+      { "watch": "Citizen Promaster BN0151", "eur": [230, 300], "quartz": true },
+      { "watch": "Certina DS Action Diver", "eur": [880, 1100] },
+      { "watch": "Christopher Ward C60 Trident Pro 300", "eur": [1260, 1260] } ] },
+    { "original": "Tudor Black Bay 58", "alternatives": [
+      { "watch": "Orient Mako 40", "eur": [340, 400] },
+      { "watch": "Baltic Aquascaphe Classic", "eur": [720, 900] },
+      { "watch": "Christopher Ward C60 Trident Pro 300", "eur": [1260, 1260] } ] },
+    { "original": "IWC Pilot's Watch Mark XX", "alternatives": [
+      { "watch": "Citizen Garrison BM8180", "eur": [200, 275], "quartz": true },
+      { "watch": "Laco Augsburg 39", "eur": [390, 440] },
+      { "watch": "Stowa Flieger Classic 40", "eur": [1350, 1560] } ] },
+    { "original": "Breitling Navitimer", "alternatives": [
+      { "watch": "Casio Edifice EF-527", "eur": [169, 169], "quartz": true },
+      { "watch": "Citizen AT8260-18A", "eur": [440, 550], "quartz": true },
+      { "watch": "Sinn 903 St II", "eur": [3350, 3350] } ] },
+    { "original": "TAG Heuer Monaco", "alternatives": [
+      { "watch": "Brew Metric", "usd": [475, 475] },
+      { "watch": "Straton Speciale", "usd": [1300, 1300] },
+      { "watch": "TAG Heuer Monaco automatic chronograph", "eur": [3000, 4500], "used": true } ] },
+    { "original": "Audemars Piguet Royal Oak", "alternatives": [
+      { "watch": "Casio Edifice EFR-S108D", "eur": [110, 150], "quartz": true },
+      { "watch": "Tissot PRX Powermatic 80", "eur": [650, 775] },
+      { "watch": "Christopher Ward The Twelve", "eur": [1555, 1555] } ] },
+    { "original": "Patek Philippe Nautilus", "alternatives": [
+      { "watch": "Citizen Tsuyosa", "eur": [250, 400] },
+      { "watch": "Tissot PRX Powermatic 80", "eur": [650, 775] },
+      { "watch": "Maen Manhattan 37 Ultra-Thin", "eur": [1450, 1450] } ] },
+    { "original": "Patek Philippe Aquanaut", "alternatives": [
+      { "watch": "Herbelin Cap Camarat Square", "eur": [650, 650], "quartz": true },
+      { "watch": "Tissot PRX Powermatic 80 rubber", "eur": [745, 745] },
+      { "watch": "Frederique Constant Highlife Automatic COSC", "eur": [1995, 1995] } ] },
+    { "original": "Vacheron Constantin Overseas", "alternatives": [
+      { "watch": "Citizen Tsuyosa", "eur": [250, 400] },
+      { "watch": "Tissot PRX Powermatic 80", "eur": [650, 775] },
+      { "watch": "Frederique Constant Highlife Automatic COSC", "eur": [1995, 1995] } ] },
+    { "original": "Cartier Tank", "alternatives": [
+      { "watch": "Seiko SWR049", "eur": [180, 280], "quartz": true },
+      { "watch": "Hamilton Boulton quartz", "eur": [745, 795], "quartz": true },
+      { "watch": "Longines DolceVita quartz", "eur": [1550, 1800], "quartz": true } ] },
+    { "original": "Cartier Santos de Cartier", "alternatives": [
+      { "watch": "Herbelin Cap Camarat Square quartz", "eur": [650, 650], "quartz": true },
+      { "watch": "Herbelin Cap Camarat Square Automatic 1646B15", "eur": [950, 950] },
+      { "watch": "Cartier Santos Galbée", "eur": [3000, 5000], "used": true } ] },
+    { "original": "Jaeger-LeCoultre Reverso", "alternatives": [
+      { "watch": "Seiko SWR049", "eur": [180, 280], "quartz": true },
+      { "watch": "Vario Versa", "usd": [428, 428], "quartz": true },
+      { "watch": "Hamilton Boulton Mechanical", "eur": [975, 975] } ] },
+    { "original": "Grand Seiko Snowflake SBGA211", "alternatives": [
+      { "watch": "Orient Bambino 38", "eur": [240, 350] },
+      { "watch": "Citizen Zenshin NJ0180-80A", "eur": [340, 450] },
+      { "watch": "Seiko Presage Sharp Edged SPB165", "eur": [800, 1050] } ] }
+  ]
+}

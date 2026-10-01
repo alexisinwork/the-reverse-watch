@@ -26,6 +26,8 @@ export type WatchDetails = {
    * answers (plain-English labels, e.g. "Case size outside your range").
    */
   misses?: string[];
+  /** Alternatives only: the price shown is a pre-owned dealer price. */
+  priceCondition?: "new" | "pre-owned";
 };
 
 export type FoundWatch = {

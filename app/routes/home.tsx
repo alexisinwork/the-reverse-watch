@@ -1,5 +1,5 @@
 import type { Route } from "./+types/home";
-import { useCallback, useState } from "react";
+import { useCallback, useState, type MouseEvent } from "react";
 import { data, useLoaderData } from "react-router";
 import { z } from "zod";
 
@@ -248,6 +248,16 @@ export default function Home() {
     ? `/quiz?story=${encodeURIComponent(loaderData.discoveryStorySlug)}`
     : "/quiz";
   const unlockDiagnostic = useCallback(() => setDiagnosticAccess(true), []);
+  // Locked subscriber cards take the visitor straight to the email field.
+  const focusSignupWhenLocked = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (diagnosticAccess) return;
+    event.preventDefault();
+    const input = document.getElementById("newsletter-email");
+    input?.focus({ preventScroll: true });
+    if (typeof input?.scrollIntoView === "function") {
+      input.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   return (
     <div className="site-shell">
@@ -305,19 +315,7 @@ export default function Home() {
                   diagnosticAccess ? " landing-action--unlocked" : ""
                 }`}
                 href={diagnosticAccess ? diagnosticHref : "#newsletter-signup"}
-                onClick={(event) => {
-                  if (diagnosticAccess) return;
-                  // Locked: take the visitor straight to the email field.
-                  event.preventDefault();
-                  const input = document.getElementById("newsletter-email");
-                  input?.focus({ preventScroll: true });
-                  if (typeof input?.scrollIntoView === "function") {
-                    input.scrollIntoView({
-                      behavior: "smooth",
-                      block: "center",
-                    });
-                  }
-                }}
+                onClick={focusSignupWhenLocked}
               >
                 <span className="landing-action__kicker">
                   {diagnosticAccess
@@ -335,20 +333,33 @@ export default function Home() {
                     : "Subscribe below to unlock ↓"}
                 </span>
               </a>
-              <div
-                aria-disabled="true"
-                className="landing-action landing-action--diagnostic landing-action--soon"
+              <a
+                className={`landing-action landing-action--diagnostic${
+                  diagnosticAccess ? " landing-action--unlocked" : ""
+                }`}
+                href={
+                  diagnosticAccess
+                    ? "/watches/alternatives"
+                    : "#newsletter-signup"
+                }
+                onClick={focusSignupWhenLocked}
               >
                 <span className="landing-action__kicker">
-                  Subscriber access · Coming soon
+                  {diagnosticAccess
+                    ? "Subscriber access · Unlocked"
+                    : "Subscriber access"}
                 </span>
                 <strong>Find a cheaper alternative</strong>
                 <span className="landing-action__description">
                   Name a watch you love and your budget, and we&apos;ll find
-                  watches that look and work like it for less.
+                  watches that look and work like it for less, new or pre-owned.
                 </span>
-                <span className="landing-action__footer">In development</span>
-              </div>
+                <span className="landing-action__footer">
+                  {diagnosticAccess
+                    ? "Find alternatives →"
+                    : "Subscribe below to unlock ↓"}
+                </span>
+              </a>
             </div>
           </section>
         </nav>
