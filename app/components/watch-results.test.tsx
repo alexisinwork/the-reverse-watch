@@ -78,3 +78,42 @@ describe("quiz shortlist", () => {
     ).toHaveLength(10);
   });
 });
+
+describe("film sightings", () => {
+  it("link to where each sighting was documented, never to a script URL", () => {
+    render(
+      <WatchResults
+        eyebrow="Film"
+        fx={null}
+        heading="Watches"
+        mode="film"
+        result={{
+          status: "found",
+          fromCache: true,
+          summary: "Two sightings.",
+          watches: [
+            {
+              ...watch(1),
+              details: {
+                person: "Daniel Craig",
+                evidenceUrl: "https://www.jamesbondwatches.com/casino-royale",
+              },
+            },
+            {
+              ...watch(2),
+              sourceUrl: "javascript:alert(1)",
+              details: { person: "Daniel Craig" },
+            },
+          ],
+        }}
+      />,
+    );
+    const links = screen.getAllByRole("link", { name: /^Source:/ });
+    expect(links).toHaveLength(1);
+    expect(links[0]).toHaveAttribute(
+      "href",
+      "https://www.jamesbondwatches.com/casino-royale",
+    );
+    expect(links[0]).toHaveTextContent("Source: jamesbondwatches.com");
+  });
+});

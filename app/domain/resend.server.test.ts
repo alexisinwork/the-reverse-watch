@@ -3,6 +3,7 @@ import { vi } from "vitest";
 import {
   parseResendConfiguration,
   sendDossierWithResend,
+  senderWithName,
 } from "./resend.server";
 import { EMAIL_PROVIDER_TIMEOUT_MS } from "./email-provider.server";
 
@@ -73,6 +74,7 @@ describe("Resend dossier adapter", () => {
     expect(EMAIL_PROVIDER_TIMEOUT_MS).toBe(10_000);
     expect(JSON.parse(requestInit.body as string)).toEqual({
       from: "The Reserve <hello@example.com>",
+      reply_to: "hello@example.com",
       to: ["reader@example.com"],
       subject: "Subject",
       html: "<p>HTML</p>",
@@ -93,5 +95,16 @@ describe("Resend dossier adapter", () => {
         fetchImplementation,
       ),
     ).rejects.toThrow("HTTP 422");
+  });
+});
+
+describe("senderWithName", () => {
+  it("names The Reserve when the address is bare", () => {
+    expect(senderWithName("alex@thereserve.watch")).toBe(
+      "The Reserve <alex@thereserve.watch>",
+    );
+    expect(senderWithName("Alex <alex@thereserve.watch>")).toBe(
+      "Alex <alex@thereserve.watch>",
+    );
   });
 });

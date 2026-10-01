@@ -206,3 +206,10 @@
     width: 100%;
   }
 }
+
+.delivery-note {
+  margin: 0.75rem 0 0;
+  color: var(--color-steel-text);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}

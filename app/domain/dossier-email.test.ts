@@ -36,18 +36,25 @@ describe("renderDossierEmail", () => {
       },
     });
 
-    expect(email.subject).toBe("Your Reserve reference diagnostic dossier");
+    expect(email.subject).toBe("Your watch shortlist from The Reserve");
     expect(email.text).toContain("Price range: EUR 3k–4k.");
     expect(email.text).toContain("Wrist: 17.5 cm (cases 38-42 mm).");
     expect(email.text).toContain(
       "1. Longines Conquest 38 (ref. L3.720.4.92.6)",
     );
+    // An unconfirmed reference is flagged, as on the site.
+    expect(email.text).toContain("Manufacturer reference not confirmed");
     // Source links are never sent: they are often wrong (owner decision).
     expect(email.text).not.toContain("https://www.longines.com/conquest");
-    expect(email.html).toContain(
-      '<img src="https://images.example/conquest.jpg"',
+    expect(email.html).not.toContain("longines.com");
+    // No photos from other websites: mail providers distrust them.
+    expect(email.html).not.toContain("<img");
+    // Who sent it and why, as a legitimate email says.
+    expect(email.text).toContain(
+      "You are receiving this email because you asked for your shortlist on thereserve.watch",
     );
-    expect(email.html).not.toContain("<a href=");
+    expect(email.html).toContain('<a href="https://thereserve.watch"');
+    expect(email.text).not.toMatch(/perplexity|muse/i);
     expect(email.html).not.toContain("undefined");
   });
 
@@ -85,6 +92,6 @@ describe("renderDossierEmail", () => {
     });
 
     expect(email.text).toContain("The search was unavailable");
-    expect(email.html).not.toContain("<article>");
+    expect(email.html).not.toContain("1. ");
   });
 });

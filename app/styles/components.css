@@ -758,3 +758,18 @@
   display: block;
   margin: 1.25rem auto 0;
 }
+
+/* Where a film sighting was documented. */
+.watch-card__source {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--color-brass);
+  font-size: 0.8rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+.watch-card__source:hover {
+  color: var(--color-brass-bright);
+}

@@ -17,6 +17,11 @@ export function parseResendConfiguration(
   return { configured: true, apiKey, emailFrom };
 }
 
+/** "The Reserve <address>" unless EMAIL_FROM already names the sender. */
+export function senderWithName(emailFrom: string) {
+  return emailFrom.includes("<") ? emailFrom : `The Reserve <${emailFrom}>`;
+}
+
 export async function sendDossierWithResend(
   email: string,
   dossier: DossierEmail,
@@ -32,7 +37,9 @@ export async function sendDossierWithResend(
     },
     signal: emailProviderTimeoutSignal(),
     body: JSON.stringify({
-      from: configuration.emailFrom,
+      from: senderWithName(configuration.emailFrom),
+      // Replies reach a person, which mail providers also count in favour.
+      reply_to: configuration.emailFrom.replace(/^.*<|>.*$/g, ""),
       to: [email],
       subject: dossier.subject,
       html: dossier.html,

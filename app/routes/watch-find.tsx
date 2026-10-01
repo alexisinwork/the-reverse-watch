@@ -15,6 +15,7 @@ import {
   type FilmSubjectKind,
 } from "../domain/film-subject";
 import { createProgressFeed } from "../domain/progress-feed";
+import { mergeSightings } from "../domain/film-sightings";
 import { fillPhotosFromCatalogue } from "../domain/watch-catalogue.server";
 import { parseDiscoveryHandoff } from "../domain/discovery-selection";
 import type { RateLimitPolicy } from "../domain/rate-limit.server";
@@ -79,7 +80,10 @@ export function loader({ request }: Route.LoaderArgs) {
   // Sightings without a photo borrow the catalogue's photo of that watch.
   const result = search.then(async (view) =>
     view.status === "found"
-      ? { ...view, watches: await fillPhotosFromCatalogue(view.watches) }
+      ? {
+          ...view,
+          watches: mergeSightings(await fillPhotosFromCatalogue(view.watches)),
+        }
       : view,
   );
   void result.finally(progress.close);

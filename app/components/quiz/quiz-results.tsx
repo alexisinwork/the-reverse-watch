@@ -1,6 +1,6 @@
 /** The panels around the shortlist: the answers, story context, email. */
 import { useEffect, useState } from "react";
-import { Form } from "react-router";
+import { Form, useNavigation } from "react-router";
 
 import type { SubscriptionResult } from "../../domain/email-delivery";
 import {
@@ -93,6 +93,10 @@ export function DossierDelivery({
   funnelSource: "archetype" | null;
   subscription: SubscriptionResult;
 }) {
+  // The send takes a few seconds: say so instead of looking frozen.
+  const navigation = useNavigation();
+  const sending =
+    navigation.state !== "idle" && navigation.formData?.has("email") === true;
   return (
     <section className="delivery-panel" aria-labelledby="delivery-heading">
       <span className="eyebrow">Optional</span>
@@ -124,9 +128,19 @@ export function DossierDelivery({
               The Reserve&apos;s email publication.
             </span>
           </label>
-          <button className="button button--primary" type="submit">
-            Email my shortlist
+          <button
+            aria-busy={sending}
+            className="button button--primary"
+            disabled={sending}
+            type="submit"
+          >
+            {sending ? "Sending your shortlist…" : "Email my shortlist"}
           </button>
+          <p className="delivery-note">
+            It usually arrives within a minute. If you don&apos;t see it, check
+            your spam or promotions folder and mark it as &ldquo;Not
+            spam&rdquo;.
+          </p>
         </Form>
       ) : null}
       {subscription.status !== "not_requested" ? (
@@ -140,6 +154,10 @@ export function DossierDelivery({
           }
         >
           {subscription.message}
+          {subscription.status === "sent" ||
+          subscription.status === "already_requested"
+            ? " If it isn't in your inbox within a few minutes, check your spam or promotions folder."
+            : null}
         </p>
       ) : null}
     </section>

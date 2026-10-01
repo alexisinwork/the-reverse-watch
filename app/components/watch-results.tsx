@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { Await } from "react-router";
 
 import { YouTubeCallout } from "./youtube-callout";
@@ -139,6 +139,14 @@ function SearchProgress({
 
 function WatchImage({ watch }: { watch: FoundWatch }) {
   const [failed, setFailed] = useState(false);
+  // A photo that failed before the page's scripts loaded never fires
+  // onError, and the browser shows its alt text (the watch name again)
+  // instead: check once on mount and show the placeholder.
+  const image = useRef<HTMLImageElement>(null);
+  useEffect(() => {
+    const element = image.current;
+    if (element?.complete && element.naturalWidth === 0) setFailed(true);
+  }, []);
   if (!watch.imageUrl || failed) {
     return (
       <div
@@ -156,6 +164,7 @@ function WatchImage({ watch }: { watch: FoundWatch }) {
       decoding="async"
       loading="lazy"
       onError={() => setFailed(true)}
+      ref={image}
       referrerPolicy="no-referrer"
       src={watch.imageUrl}
     />
@@ -201,6 +210,24 @@ const MOVEMENT_LABELS: Record<string, string> = {
   spring_drive: "Spring Drive",
   hybrid: "Hybrid",
 };
+
+/**
+ * Film sightings link to where they were documented (owner decision,
+ * 2026-10-01: 91% of these links checked live, unlike the catalogue's
+ * AI-written maker URLs). Only plain web addresses are ever linked.
+ */
+function sourceLink(watch: FoundWatch) {
+  const url = watch.details.evidenceUrl ?? watch.sourceUrl;
+  return url && /^https?:\/\//i.test(url) ? url : null;
+}
+
+function hostOf(url: string) {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return "source";
+  }
+}
 
 function WatchCard({
   watch,
@@ -267,6 +294,16 @@ function WatchCard({
           </ul>
         ) : null}
         <p className="watch-card__rationale">{watch.rationale}</p>
+        {mode === "film" && sourceLink(watch) ? (
+          <a
+            className="watch-card__source"
+            href={sourceLink(watch)!}
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+          >
+            Source: {hostOf(sourceLink(watch)!)}
+          </a>
+        ) : null}
         <div className="watch-card__footer">
           {details.misses?.map((miss) => (
             <span className="review-badge review-badge--warning" key={miss}>
