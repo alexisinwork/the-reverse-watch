@@ -521,7 +521,7 @@ export async function searchQuizWatches(
   const counts: Record<string, number> = {};
 
   deps.report?.({
-    text: "Searching live: Muse Spark is proposing watches from three groups of makers while Perplexity checks recent releases on the web.",
+    text: "Searching the web live: proposing watches from three groups of makers while checking recent releases.",
   });
   const museAngles = QUIZ_ANGLES.map((angle, index) =>
     runQuizAngle(

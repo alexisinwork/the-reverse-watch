@@ -227,7 +227,7 @@ export default function WatchFind() {
       {result ? (
         <WatchResults
           eyebrow="Live search · documented sightings"
-          footnote="Found with a live Perplexity web search and ranked by Muse Spark. Identifications from films can be disputed."
+          footnote="Found with a live web search. Identifications from films can be disputed."
           fx={null}
           heading={`Watches in “${query}”`}
           key={`${kind}:${query}`}
