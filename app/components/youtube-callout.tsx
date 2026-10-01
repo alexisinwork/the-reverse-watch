@@ -39,7 +39,7 @@ export function YouTubeCallout({
         <a href={YOUTUBE_CHANNEL_URL} rel="noopener noreferrer" target="_blank">
           Check our YouTube channel
         </a>
-        .
+        . <a href="/privacy">Privacy policy</a>
       </p>
     </aside>
   );

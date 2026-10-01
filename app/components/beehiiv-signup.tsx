@@ -69,7 +69,7 @@ export function BeehiivSignup({ onSubscribed }: { onSubscribed?: () => void }) {
             />
             <span>
               I agree to receive The Reserve by email and can unsubscribe at any
-              time.
+              time. See our <a href="/privacy">privacy policy</a>.
             </span>
           </label>
         )}

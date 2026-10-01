@@ -15,6 +15,11 @@ export const ARCHETYPE_BANDS: Record<
 > = {
   // A first serious watch starts at about USD 2,000 (owner decision,
   // 2026-09-30); the option labels in discovery-archetype.ts match.
+  first_good_watch: {
+    minimumUsd: 0,
+    maximumUsd: 2_000,
+    label: "a first good watch, under USD 2,000",
+  },
   considered_entry: {
     minimumUsd: 2_000,
     maximumUsd: 5_000,

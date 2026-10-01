@@ -27,6 +27,7 @@ import {
 } from "../components/quiz/quiz-draft";
 import {
   DossierDelivery,
+  ExpertReportTeaser,
   ProfileSummary,
   StoryContextPanel,
 } from "../components/quiz/quiz-results";
@@ -517,6 +518,7 @@ export default function Quiz() {
             funnelSource={funnelSource}
             subscription={resultData.subscription}
           />
+          <ExpertReportTeaser />
           <div className="summary-actions">
             <button
               className="button button--primary"

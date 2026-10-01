@@ -139,6 +139,7 @@ function footerLines(sentOn: string) {
     `You are receiving this email because you asked for your shortlist on thereserve.watch on ${sentOn}. It is a one-off email; we will not send it again.`,
     "Newsletter emails from The Reserve come separately and always include a link to unsubscribe.",
     "The Reserve · https://thereserve.watch · Questions? Just reply to this email.",
+    "Privacy policy: https://thereserve.watch/privacy",
   ];
 }
 
@@ -197,7 +198,15 @@ export function renderDossierEmail({
   )
     .map(
       (line) =>
-        `<p style="margin:0 0 6px;">${escapeHtml(line).replace("https://thereserve.watch", '<a href="https://thereserve.watch" style="color:#5b6168;">thereserve.watch</a>')}</p>`,
+        `<p style="margin:0 0 6px;">${escapeHtml(line)
+          .replace(
+            "https://thereserve.watch/privacy",
+            '<a href="https://thereserve.watch/privacy" style="color:#5b6168;">thereserve.watch/privacy</a>',
+          )
+          .replace(
+            /https:\/\/thereserve\.watch(?!\/)/,
+            '<a href="https://thereserve.watch" style="color:#5b6168;">thereserve.watch</a>',
+          )}</p>`,
     )
     .join("")}</div></body></html>`;
 

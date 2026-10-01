@@ -125,7 +125,8 @@ export function DossierDelivery({
             <input name="emailOptIn" type="checkbox" value="yes" />
             <span>
               I opt in to receive this shortlist by email and, where enabled,
-              The Reserve&apos;s email publication.
+              The Reserve&apos;s email publication. See our{" "}
+              <a href="/privacy">privacy policy</a>.
             </span>
           </label>
           <button
@@ -160,6 +161,31 @@ export function DossierDelivery({
             : null}
         </p>
       ) : null}
+    </section>
+  );
+}
+
+/**
+ * A possible future paid product, shown as planned only: there is no
+ * payment and nothing to buy yet (owner decision, 2026-10-01).
+ */
+export function ExpertReportTeaser() {
+  return (
+    <section
+      className="delivery-panel future-panel"
+      aria-labelledby="expert-report-heading"
+    >
+      <span className="future-tag">Coming soon</span>
+      <h2 id="expert-report-heading">Expert-reviewed report</h2>
+      <p>
+        A planned paid add-on: a watch specialist reviews your shortlist and
+        writes up real-world prices (retail and pre-owned), what to check before
+        buying second-hand, and the best alternatives for your answers.
+      </p>
+      <p className="delivery-note">
+        Not available yet. Subscribers to The Reserve will hear first when it
+        launches.
+      </p>
     </section>
   );
 }

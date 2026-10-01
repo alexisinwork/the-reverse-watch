@@ -7,8 +7,10 @@
 // --top-up first searches the $10k-$50k ranges (the catalogue was built up
 // to $10k) and adds what it finds to the catalogue, approving watches with
 // a price (owner rule).
-//   node --env-file=.env --import tsx scripts/build-archetype-picks.ts [--top-up]
-import { writeFileSync } from "node:fs";
+// --bands first_good_watch,considered_entry rebuilds only those price bands
+// and keeps every other list in the file as it is.
+//   node --env-file=.env --import tsx scripts/build-archetype-picks.ts [--top-up] [--bands a,b]
+import { readFileSync, writeFileSync } from "node:fs";
 
 import {
   defaultDeps,
@@ -194,6 +196,17 @@ function describe(watch: CatalogueWatch, index: number) {
     .join(", ");
 }
 
+const bandsIndex = process.argv.indexOf("--bands");
+const onlyBands =
+  bandsIndex === -1
+    ? null
+    : new Set(process.argv[bandsIndex + 1]?.split(",") ?? []);
+const existing = onlyBands
+  ? (JSON.parse(
+      readFileSync("app/data/archetype-picks.json", "utf8"),
+    ) as ArchetypePicks)
+  : null;
+
 const picks: ArchetypePicks = {
   generatedAt: new Date().toISOString(),
   lists: {} as ArchetypePicks["lists"],
@@ -201,8 +214,11 @@ const picks: ArchetypePicks = {
 
 for (const archetypeId of ARCHETYPE_IDS) {
   const archetype = ARCHETYPES[archetypeId];
-  picks.lists[archetypeId] = {} as ArchetypePicks["lists"][ArchetypeId];
+  picks.lists[archetypeId] = {
+    ...existing?.lists[archetypeId],
+  } as ArchetypePicks["lists"][ArchetypeId];
   for (const band of PRICE_COMFORTS) {
+    if (onlyBands && !onlyBands.has(band)) continue;
     const pool = catalogue
       .filter(
         (watch) =>

@@ -128,3 +128,17 @@ Every expansion must report its own funnel:
 Pause or roll back an expansion when it causes unsupported claims, undisclosed
 commercial influence, hard-filter violations, unacceptable support burden,
 privacy/security issues, or a measurable decline in audience trust.
+
+## Future possible actions (owner, 2026-10-01)
+
+- **Paid expert-reviewed report** (status: *future possible action*). Shown on
+  the quiz results as a "Coming soon" panel only (`ExpertReportTeaser` in
+  `app/components/quiz/quiz-results.tsx`); there is no payment flow. Scope: a
+  specialist reviews the visitor's shortlist and writes up retail and
+  pre-owned prices, second-hand checks, and alternatives. Needs before
+  launch: payment provider, delivery workflow, refund terms, and an update
+  to the privacy page for the extra data it would hold.
+- **Affiliate "Check price" links** on watch cards, with the disclosure
+  "We may earn a commission from some links." and ranking kept independent.
+- **Newsletter sponsorship** and **clearly marked brand placements**, kept
+  out of the shortlist ranking.

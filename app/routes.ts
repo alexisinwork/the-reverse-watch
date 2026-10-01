@@ -8,6 +8,7 @@ export default [
   route("evaluation", "routes/evaluation-moved.ts"),
   route("admin/evaluation", "routes/evaluation.tsx"),
   route("health", "routes/health.ts"),
+  route("privacy", "routes/privacy.tsx"),
   route("watches", "routes/watches.tsx"),
   route("watches/archetype", "routes/watch-archetype.tsx"),
   route("watches/find", "routes/watch-find.tsx"),

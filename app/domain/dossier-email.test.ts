@@ -55,6 +55,7 @@ describe("renderDossierEmail", () => {
     );
     expect(email.html).toContain('<a href="https://thereserve.watch"');
     expect(email.text).not.toMatch(/perplexity|muse/i);
+    expect(email.html).toContain('<a href="https://thereserve.watch/privacy"');
     expect(email.html).not.toContain("undefined");
   });
 

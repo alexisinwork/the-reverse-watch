@@ -7,6 +7,7 @@ import {
 } from "./questionnaire";
 
 export const PRICE_COMFORTS = [
+  "first_good_watch",
   "considered_entry",
   "established_collection",
   "exceptional_object",
@@ -141,6 +142,7 @@ export const ARCHETYPE_QUESTIONS = [
     legend: "At this early stage, which price idea feels plausible?",
     hint: "This is directional only. The full diagnostic then asks for your exact price range.",
     options: [
+      ["first_good_watch", "A first good watch (under $2,000)"],
       [
         "considered_entry",
         "A considered first serious watch (about $2,000–5,000)",
@@ -198,6 +200,10 @@ const SCORE_WEIGHTS = {
     mechanical_connoisseur: 2,
     recognised_standard_bearer: 2,
   },
+  first_good_watch: {
+    field_rationalist: 2,
+    quiet_custodian: 1,
+  },
   considered_entry: {
     field_rationalist: 2,
     quiet_custodian: 1,
@@ -227,6 +233,7 @@ const LEGACY_SCORE_MAP = {
   field_water_abuse: "field_rationalist",
   studio_desk_daily: "quiet_custodian",
   formal_architectural: "architectural_modernist",
+  first_good_watch: "field_rationalist",
   considered_entry: "field_rationalist",
   established_collection: "quiet_custodian",
   exceptional_object: "expressive_collector",
