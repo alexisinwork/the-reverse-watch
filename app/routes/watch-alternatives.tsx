@@ -192,7 +192,7 @@ export async function loader({ request }: Route.LoaderArgs) {
 
   // Catalogue answers come back at once; a live web search (an unknown
   // watch, or too few matches) streams its steps while it runs.
-  const progress = createProgressFeed(120_000);
+  const progress = createProgressFeed(110_000);
   const page = findAlternatives({
     target: resolved.status === "found" ? resolved.watch : null,
     name: form.name,

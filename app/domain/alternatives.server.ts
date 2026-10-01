@@ -206,6 +206,15 @@ async function fillPreownedPrices(
 /** Below this many matches, the live web search looks for more. */
 export const ALTERNATIVES_ENOUGH = 3;
 
+/**
+ * The whole search, live steps included, ends inside this (the page's
+ * stream allows 115 s): a step that would start too late is skipped and
+ * the visitor gets what was found so far.
+ */
+export const ALTERNATIVES_TIME_BUDGET_MS = 90_000;
+// The "find more alternatives" web search needs about this long.
+const LIVE_ALTERNATIVES_NEEDS_MS = 45_000;
+
 export type AlternativesOutcome =
   | { status: "not_found" }
   | {
@@ -237,6 +246,7 @@ export async function findAlternatives({
   allowQuartz: boolean;
   report?: (event: ProgressEvent) => void;
 }): Promise<AlternativesOutcome> {
+  const started = Date.now();
   const client = catalogueClient();
   if (!client) throw new Error("The catalogue is not configured.");
   const deps = defaultDeps(report ? { report } : {});
@@ -272,7 +282,12 @@ export async function findAlternatives({
   );
 
   let searchedLive = false;
-  if (alternatives.length < ALTERNATIVES_ENOUGH && searchReady(deps.config)) {
+  const timeLeft = ALTERNATIVES_TIME_BUDGET_MS - (Date.now() - started);
+  if (
+    alternatives.length < ALTERNATIVES_ENOUGH &&
+    searchReady(deps.config) &&
+    timeLeft >= LIVE_ALTERNATIVES_NEEDS_MS
+  ) {
     const added = await findAlternativesLive(
       target,
       budget,
