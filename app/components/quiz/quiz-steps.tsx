@@ -1,4 +1,6 @@
 /** Inputs for the price-range and wrist steps, and the hidden form fields. */
+import { useState } from "react";
+
 import {
   CASE_DIAMETER_MM_MAX,
   CASE_DIAMETER_MM_MIN,
@@ -33,14 +35,27 @@ export function ProfileFields({ draft }: { draft: QuizDraft }) {
 }
 
 const RANGE_TIERS = [
-  { label: "Under 10k", test: (minimum: number) => minimum < 10_000 },
   {
+    id: "under_10k",
+    label: "Under 10k",
+    test: (minimum: number) => minimum < 10_000,
+  },
+  {
+    id: "10k_100k",
     label: "10k to 100k",
     test: (minimum: number) => minimum >= 10_000 && minimum < 100_000,
   },
-  { label: "100k and above", test: (minimum: number) => minimum >= 100_000 },
+  {
+    id: "100k_plus",
+    label: "100k and above",
+    test: (minimum: number) => minimum >= 100_000,
+  },
 ];
 
+/**
+ * A dropdown of three bands ("Under 10k" first) and only that band's
+ * ranges, so visitors see a handful of choices rather than all of them.
+ */
 export function PriceRangePicker({
   currency,
   value,
@@ -50,39 +65,55 @@ export function PriceRangePicker({
   value: string;
   onChange: (id: string) => void;
 }) {
+  const chosen = PRICE_RANGES.find((range) => range.id === value);
+  const [tierId, setTierId] = useState(
+    chosen
+      ? (RANGE_TIERS.find((tier) => tier.test(chosen.minimum))?.id ??
+          "under_10k")
+      : "under_10k",
+  );
+  const tier = RANGE_TIERS.find((entry) => entry.id === tierId)!;
   return (
     <fieldset className="quiz-fieldset">
       <legend>Price range</legend>
-      {RANGE_TIERS.map((tier) => (
-        <div className="range-tier" key={tier.label}>
-          <span className="range-tier__label">{tier.label}</span>
-          <div className="chip-list">
-            {PRICE_RANGES.filter((range) => tier.test(range.minimum)).map(
-              (range) => (
-                <label
-                  className={`chip chip--radio chip--range ${value === range.id ? "is-selected" : ""}`}
-                  key={range.id}
-                >
-                  <input
-                    checked={value === range.id}
-                    className="chip__input"
-                    name="priceRangeChoice"
-                    onChange={() => onChange(range.id)}
-                    type="radio"
-                    value={range.id}
-                  />
-                  <span>{priceRangeLabel(range, currency)}</span>
-                </label>
-              ),
-            )}
-          </div>
-        </div>
-      ))}
+      <label className="range-tier__select">
+        <span className="sr-only">Price band</span>
+        <select
+          onChange={(event) => setTierId(event.target.value)}
+          value={tierId}
+        >
+          {RANGE_TIERS.map((entry) => (
+            <option key={entry.id} value={entry.id}>
+              {currency} {entry.label}
+            </option>
+          ))}
+        </select>
+      </label>
+      <div className="chip-list">
+        {PRICE_RANGES.filter((range) => tier.test(range.minimum)).map(
+          (range) => (
+            <label
+              className={`chip chip--radio chip--range ${value === range.id ? "is-selected" : ""}`}
+              key={range.id}
+            >
+              <input
+                checked={value === range.id}
+                className="chip__input"
+                name="priceRangeChoice"
+                onChange={() => onChange(range.id)}
+                type="radio"
+                value={range.id}
+              />
+              <span>{priceRangeLabel(range, currency)}</span>
+            </label>
+          ),
+        )}
+      </div>
     </fieldset>
   );
 }
 
-const QUICK_WRISTS_CM = [15, 16, 17, 18, 19, 20];
+const QUICK_WRISTS_CM = [15, 16, 17, 18, 19, 20, 21];
 
 export function WristStep({
   draft,
@@ -151,9 +182,10 @@ export function WristStep({
             }
             type="button"
           >
+            {/* The largest pick stands for "this size or more". */}
             {draft.wristUnit === "in"
-              ? `${Math.round((size / 2.54) * 10) / 10} in`
-              : `${size} cm`}
+              ? `${Math.round((size / 2.54) * 10) / 10}${size === 21 ? "+" : ""} in`
+              : `${size}${size === 21 ? "+" : ""} cm`}
           </button>
         ))}
       </div>

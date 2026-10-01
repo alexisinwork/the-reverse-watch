@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { createRoutesStub } from "react-router";
 import { vi } from "vitest";
@@ -125,7 +125,12 @@ function routeStub() {
 }
 
 async function pickRangeAndWrist(user: ReturnType<typeof userEvent.setup>) {
-  await user.click(await screen.findByRole("radio", { name: "USD 10k–15k" }));
+  // "Under 10k" is preselected; the 10k-100k ranges are one dropdown away.
+  await user.selectOptions(
+    await screen.findByRole("combobox", { name: "Price band" }),
+    "10k_100k",
+  );
+  await user.click(screen.getByRole("radio", { name: "USD 10k–15k" }));
   await user.click(screen.getByRole("button", { name: "Next" }));
   await user.type(await screen.findByLabelText("Wrist circumference"), "17.5");
   await user.click(screen.getByRole("button", { name: "Next" }));
@@ -133,7 +138,9 @@ async function pickRangeAndWrist(user: ReturnType<typeof userEvent.setup>) {
 
 async function completeAllScreens(user: ReturnType<typeof userEvent.setup>) {
   await pickRangeAndWrist(user);
-  await user.click(await screen.findByRole("checkbox", { name: "Office" }));
+  await user.click(
+    await screen.findByRole("checkbox", { name: "Office & business" }),
+  );
   await user.click(screen.getByRole("button", { name: "Next" }));
   await user.click(await screen.findByRole("checkbox", { name: "Automatic" }));
   await user.click(screen.getByRole("button", { name: "Next" }));
@@ -566,11 +573,17 @@ describe("version-4 diagnostic", () => {
     await pickRangeAndWrist(user);
 
     expect(
-      await screen.findByRole("checkbox", { name: "Office" }),
+      await screen.findByRole("checkbox", { name: "Office & business" }),
     ).toBeInTheDocument();
+    // Seven plain choices, not the vocabulary's 44.
     expect(
-      screen.getByRole("checkbox", { name: "Smart casual" }),
-    ).toBeInTheDocument();
+      within(
+        screen.getByRole("group", { name: /Wearing scenarios/ }),
+      ).getAllByRole("checkbox"),
+    ).toHaveLength(7);
+    expect(
+      screen.queryByRole("checkbox", { name: "Smart casual" }),
+    ).not.toBeInTheDocument();
   });
 
   it("walks the six screens and returns a shortlist", async () => {
@@ -645,9 +658,11 @@ describe("version-4 diagnostic", () => {
     const Stub = routeStub();
     render(<Stub initialEntries={["/quiz"]} />);
 
+    // The band dropdown starts on "Under 10k", with nothing chosen yet.
     expect(
-      await screen.findByRole("radio", { name: "USD 10k–15k" }),
-    ).not.toBeChecked();
+      await screen.findByRole("combobox", { name: "Price band" }),
+    ).toHaveValue("under_10k");
+    expect(screen.getByRole("radio", { name: "USD 5k–6k" })).not.toBeChecked();
     expect(screen.getByText(/step 1 of 6/i)).toBeInTheDocument();
   });
 

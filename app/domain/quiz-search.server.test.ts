@@ -242,6 +242,37 @@ describe("searchQuiz", () => {
     expect(plain.summary).toContain("2 more are in your price range");
   });
 
+  it("searches the web before falling back to close fits", async () => {
+    // One full fit (too few) and one in-budget watch with too large a case.
+    const rows = [row(1), row(4, { caseDiameterMm: 44 })];
+    const runLive = vi.fn(async () => liveResult);
+    const found = await searchQuiz(profile, {
+      client: client(rows).value,
+      loadFx: async () => fx,
+      runLive,
+    });
+    expect(runLive).toHaveBeenCalledTimes(1);
+    if (found.status !== "found") throw new Error("expected found");
+    // Full fits, then what the web search found, then close fits last.
+    expect(found.watches.map((watch) => watch.brand)).toEqual([
+      "Brand1",
+      "Longines",
+      "Brand4",
+    ]);
+
+    clearCatalogueCache();
+    const nothingLive = await searchQuiz(profile, {
+      client: client(rows).value,
+      loadFx: async () => fx,
+      runLive: async () => ({ status: "no_match", summary: "None." }),
+    });
+    if (nothingLive.status !== "found") throw new Error("expected found");
+    expect(nothingLive.watches.map((watch) => watch.brand)).toEqual([
+      "Brand1",
+      "Brand4",
+    ]);
+  });
+
   it("returns at most ten watches", async () => {
     const store = client(
       Array.from({ length: 14 }, (_, index) =>

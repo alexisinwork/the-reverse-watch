@@ -38,7 +38,12 @@ describe("wrist sizing", () => {
       minimumMm: 38,
       maximumMm: 42,
     });
-    expect(caseDiameterForWrist(21)).toEqual({ minimumMm: 42, maximumMm: 46 });
+    expect(caseDiameterForWrist(20.5)).toEqual({
+      minimumMm: 42,
+      maximumMm: 46,
+    });
+    // 21 cm and above (the "21+ cm" quick pick).
+    expect(caseDiameterForWrist(21)).toEqual({ minimumMm: 43, maximumMm: 47 });
   });
 });
 

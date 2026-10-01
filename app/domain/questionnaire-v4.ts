@@ -80,7 +80,8 @@ export function caseDiameterForWrist(wristCm: number) {
   if (wristCm < 18) return { minimumMm: 38, maximumMm: 42 };
   if (wristCm < 19) return { minimumMm: 40, maximumMm: 43 };
   if (wristCm < 20) return { minimumMm: 41, maximumMm: 44 };
-  return { minimumMm: 42, maximumMm: 46 };
+  if (wristCm < 21) return { minimumMm: 42, maximumMm: 46 };
+  return { minimumMm: 43, maximumMm: 47 };
 }
 
 export const CASE_DIAMETER_MM_MIN = 20;
