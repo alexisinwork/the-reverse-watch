@@ -261,63 +261,97 @@ export default function Home() {
           filings, the balance sheets, and who actually owns the name on the
           dial.
         </p>
-        <nav className="landing-links" aria-label="Explore The Reserve">
-          <a className="landing-action" href="/watches/find">
-            <span className="landing-action__kicker">Film · TV · People</span>
-            <strong>Find the watch from the screen</strong>
-            <span className="landing-action__description">
-              Search any movie, series, actor, character or celebrity and see
-              the watches they wore, and where.
-            </span>
-            <span className="landing-action__footer">Search now →</span>
-          </a>
-          <a className="landing-action" href="/watches/archetype">
-            <span className="landing-action__kicker">
-              Four questions · No sign-up
-            </span>
-            <strong>Find your watch archetype</strong>
-            <span className="landing-action__description">
-              Four quick questions reveal the kind of collector you are, with
-              ten watches that suit you at your price.
-            </span>
-            <span className="landing-action__footer">Take the quiz →</span>
-          </a>
-          <a
-            className={`landing-action landing-action--diagnostic${
-              diagnosticAccess ? " landing-action--unlocked" : ""
-            }`}
-            href={diagnosticAccess ? diagnosticHref : "#newsletter-signup"}
-            onClick={(event) => {
-              if (diagnosticAccess) return;
-              // Locked: take the visitor straight to the email field.
-              event.preventDefault();
-              const input = document.getElementById("newsletter-email");
-              input?.focus({ preventScroll: true });
-              if (typeof input?.scrollIntoView === "function") {
-                input.scrollIntoView({ behavior: "smooth", block: "center" });
-              }
-            }}
+        <nav className="landing-groups" aria-label="Explore The Reserve">
+          {/* Row 1: free for everyone. Row 2: for newsletter subscribers. */}
+          <section className="landing-group" aria-labelledby="free-heading">
+            <h2 className="landing-group__label" id="free-heading">
+              Free
+            </h2>
+            <div className="landing-links">
+              <a className="landing-action" href="/watches/find">
+                <span className="landing-action__kicker">
+                  Film · TV · People
+                </span>
+                <strong>Find the watch from the screen</strong>
+                <span className="landing-action__description">
+                  Search any movie, series, actor, character or celebrity and
+                  see the watches they wore, and where.
+                </span>
+                <span className="landing-action__footer">Search now →</span>
+              </a>
+              <a className="landing-action" href="/watches/archetype">
+                <span className="landing-action__kicker">
+                  Four questions · No sign-up
+                </span>
+                <strong>Find your watch archetype</strong>
+                <span className="landing-action__description">
+                  Four quick questions reveal the kind of collector you are,
+                  with ten watches that suit you at your price.
+                </span>
+                <span className="landing-action__footer">Take the quiz →</span>
+              </a>
+            </div>
+          </section>
+          <section
+            className="landing-group"
+            aria-labelledby="subscriber-heading"
           >
-            <span className="landing-action__kicker">
-              {diagnosticAccess
-                ? "Subscriber access · Unlocked"
-                : "Subscriber access"}
-            </span>
-            <strong>Start the reference diagnostic</strong>
-            <span className="landing-action__description">
-              Six quick answers (price range, wrist, where you wear it), then
-              watches confirmed on their makers&apos; own pages.
-            </span>
-            <span className="landing-action__footer">
-              {diagnosticAccess
-                ? "Begin the diagnostic →"
-                : "Subscribe below to unlock ↓"}
-            </span>
-          </a>
+            <h2 className="landing-group__label" id="subscriber-heading">
+              For subscribers
+            </h2>
+            <div className="landing-links">
+              <a
+                className={`landing-action landing-action--diagnostic${
+                  diagnosticAccess ? " landing-action--unlocked" : ""
+                }`}
+                href={diagnosticAccess ? diagnosticHref : "#newsletter-signup"}
+                onClick={(event) => {
+                  if (diagnosticAccess) return;
+                  // Locked: take the visitor straight to the email field.
+                  event.preventDefault();
+                  const input = document.getElementById("newsletter-email");
+                  input?.focus({ preventScroll: true });
+                  if (typeof input?.scrollIntoView === "function") {
+                    input.scrollIntoView({
+                      behavior: "smooth",
+                      block: "center",
+                    });
+                  }
+                }}
+              >
+                <span className="landing-action__kicker">
+                  {diagnosticAccess
+                    ? "Subscriber access · Unlocked"
+                    : "Subscriber access"}
+                </span>
+                <strong>Start the reference diagnostic</strong>
+                <span className="landing-action__description">
+                  Six quick answers (price range, wrist, where you wear it),
+                  then watches confirmed on their makers&apos; own pages.
+                </span>
+                <span className="landing-action__footer">
+                  {diagnosticAccess
+                    ? "Begin the diagnostic →"
+                    : "Subscribe below to unlock ↓"}
+                </span>
+              </a>
+              <div
+                aria-disabled="true"
+                className="landing-action landing-action--diagnostic landing-action--soon"
+              >
+                <span className="landing-action__kicker">
+                  Subscriber access · Coming soon
+                </span>
+                <strong>Find a cheaper alternative</strong>
+                <span className="landing-action__description">
+                  Name a watch you love and your budget, and we&apos;ll find
+                  watches that look and work like it for less.
+                </span>
+                <span className="landing-action__footer">In development</span>
+              </div>
+            </div>
+          </section>
         </nav>
-        <p className="landing-secondary">
-          Or browse <a href="/watches">Watches from movies</a>.
-        </p>
         <BeehiivSignup onSubscribed={unlockDiagnostic} />
       </main>
 

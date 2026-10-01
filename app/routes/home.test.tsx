@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { createRoutesStub } from "react-router";
 import { vi } from "vitest";
 
@@ -52,9 +52,22 @@ describe("landing page", () => {
         name: /Find the watch from the screen/i,
       }),
     ).toHaveAttribute("href", "/watches/find");
+    // Two rows: free (film search, archetype), then subscriber-only
+    // (diagnostic, and the cheaper-alternative finder, not yet live).
+    const free = screen.getByRole("region", { name: "Free" });
     expect(
-      screen.getByRole("link", { name: /Watches from movies/i }),
-    ).toHaveAttribute("href", "/watches");
+      within(free).getByRole("link", { name: /Find your watch archetype/i }),
+    ).toHaveAttribute("href", "/watches/archetype");
+    const subscribers = screen.getByRole("region", { name: "For subscribers" });
+    expect(
+      within(subscribers).getByText("Find a cheaper alternative"),
+    ).toBeInTheDocument();
+    expect(
+      within(subscribers).queryByRole("link", {
+        name: /Find a cheaper alternative/i,
+      }),
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText(/Or browse/i)).not.toBeInTheDocument();
   });
 
   it("renders a legible first-party Beehiiv subscription form", () => {

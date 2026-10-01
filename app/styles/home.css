@@ -59,15 +59,37 @@
 .landing-links {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1rem;
 }
 
-/* Three cards side by side need room; tablets stack them. */
-@media (max-width: 52rem) {
-  .landing-links {
-    grid-template-columns: 1fr;
-  }
+/* Two rows of two: free first, then subscriber-only. */
+.landing-groups {
+  display: grid;
+  width: 100%;
+  gap: 1.75rem;
+}
+
+.landing-group__label {
+  margin: 0 0 0.7rem;
+  color: var(--color-steel-text);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Planned, not yet live: visibly quieter and not clickable. */
+.landing-action--soon {
+  border-style: dashed;
+  cursor: default;
+  opacity: 0.78;
+}
+
+.landing-action--soon:hover {
+  border-color: rgb(200 137 47 / 55%);
+  transform: none;
 }
 
 .landing-action {
