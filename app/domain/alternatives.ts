@@ -18,7 +18,7 @@ import {
   type CatalogueWatch,
 } from "./watch-catalogue";
 
-export const ALTERNATIVES_SCORING_VERSION = "1.1.0";
+export const ALTERNATIVES_SCORING_VERSION = "1.2.0";
 
 /** A case within this many millimetres can be an alternative. */
 export const SIZE_TOLERANCE_MM = 3;
@@ -146,11 +146,11 @@ export function strictFailures(
   if (has(target, "dive_bezel") && !has(candidate, "dive_bezel")) {
     failures.push("dive_bezel");
   }
-  // A second time zone: GMT and world-time watches both qualify. A plain
-  // watch's alternative may still have one.
+  // A second time zone (GMT or world time) only for a watch that has one,
+  // and always for it: an alternative never adds or drops a function.
   const zones = (watch: CatalogueWatch) =>
     has(watch, "gmt") || has(watch, "world_time");
-  if (zones(target) && !zones(candidate)) failures.push("gmt");
+  if (zones(target) !== zones(candidate)) failures.push("gmt");
   if (
     target.caseDiameterMm !== null &&
     (candidate.caseDiameterMm === null ||
@@ -287,15 +287,7 @@ export function lookScore(target: CatalogueWatch, candidate: CatalogueWatch) {
     if (gap <= 1) shares.push(`${candidate.caseDiameterMm} mm`);
     else differs.push(`${candidate.caseDiameterMm} mm case`);
   }
-  // Functions the original lacks make it a different watch to wear.
-  if (
-    !has(target, "gmt") &&
-    !has(target, "world_time") &&
-    has(candidate, "gmt")
-  ) {
-    points -= 2;
-    differs.push("adds a GMT hand");
-  }
+  // A diving bezel the original lacks makes it a different watch to wear.
   if (!has(target, "dive_bezel") && has(candidate, "dive_bezel")) {
     points -= 1;
     differs.push("adds a diving bezel");

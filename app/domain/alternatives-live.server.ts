@@ -111,6 +111,7 @@ export async function identifyWatchLive(
     [
       `Identify the wristwatch a person means by “${name}”${reference ? `, reference ${reference}` : ""}.`,
       "Return exactly one candidate: its current (or most recent) production version, with its real reference and facts from the maker's own pages.",
+      "When the name covers a family of models, choose its best-known core model (for example the time-and-date steel version), not a complication, limited edition, gem-set or precious-metal variant.",
       "If you cannot tell which watch is meant, return an empty candidates list.",
       FORMAT_RULES,
     ].join(" "),
