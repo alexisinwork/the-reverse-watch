@@ -18,7 +18,7 @@ import {
   type CatalogueWatch,
 } from "./watch-catalogue";
 
-export const ALTERNATIVES_SCORING_VERSION = "1.2.0";
+export const ALTERNATIVES_SCORING_VERSION = "1.3.0";
 
 /** A case within this many millimetres can be an alternative. */
 export const SIZE_TOLERANCE_MM = 3;
@@ -131,6 +131,31 @@ const has = (watch: CatalogueWatch, slug: string) =>
   watch.complications.includes(slug);
 
 /** Every strict rule the candidate breaks; empty means it may be shown. */
+/**
+ * Functions, from the catalogue's tags or, when those miss one, from what
+ * the photo plainly shows (a chronograph dial, a GMT bezel or dial, a
+ * diving bezel).
+ */
+function functionsOf(watch: CatalogueWatch) {
+  const traits = watch.designTraits;
+  return {
+    chronograph:
+      has(watch, "chronograph") ||
+      traits?.dialLayout?.startsWith("chronograph") === true,
+    secondZone:
+      has(watch, "gmt") ||
+      has(watch, "world_time") ||
+      traits?.dialLayout === "gmt" ||
+      traits?.bezel === "gmt",
+    diveBezel: has(watch, "dive_bezel") || traits?.bezel === "dive",
+  };
+}
+
+/** Rectangular and square cases form one family; every other shape another. */
+const isRectangular = (watch: CatalogueWatch) =>
+  shapeOf(watch) === "rectangular";
+
+/** Every strict rule the candidate breaks; empty means it may be shown. */
 export function strictFailures(
   target: CatalogueWatch,
   candidate: CatalogueWatch,
@@ -138,20 +163,25 @@ export function strictFailures(
 ) {
   const failures: string[] = [];
   if (isHomageBrand(candidate.brand)) failures.push("homage");
-  if (!candidate.styles.includes(primaryStyle(target))) failures.push("style");
-  // A chronograph's alternative is a chronograph, and only then.
-  if (has(target, "chronograph") !== has(candidate, "chronograph")) {
-    failures.push("chronograph");
+  // Role: a diver's alternative is a diver. Other style labels overlap
+  // (dress, everyday, sport), so sharing any one of them is enough.
+  if (primaryStyle(target) === "dive") {
+    if (!candidate.styles.includes("dive")) failures.push("style");
+  } else if (!candidate.styles.some((style) => target.styles.includes(style))) {
+    failures.push("style");
   }
-  if (has(target, "dive_bezel") && !has(candidate, "dive_bezel")) {
-    failures.push("dive_bezel");
-  }
-  // A second time zone (GMT or world time) only for a watch that has one,
-  // and always for it: an alternative never adds or drops a function.
-  const zones = (watch: CatalogueWatch) =>
-    has(watch, "gmt") || has(watch, "world_time");
-  if (zones(target) !== zones(candidate)) failures.push("gmt");
+  // An alternative never adds or drops a chronograph or second time zone.
+  const mine = functionsOf(target);
+  const theirs = functionsOf(candidate);
+  if (mine.chronograph !== theirs.chronograph) failures.push("chronograph");
+  if (mine.secondZone !== theirs.secondZone) failures.push("gmt");
+  if (mine.diveBezel && !theirs.diveBezel) failures.push("dive_bezel");
+  // Rectangular watches stay rectangular, round-ish ones stay round-ish.
+  if (isRectangular(target) !== isRectangular(candidate))
+    failures.push("shape");
+  // Diameter only means something for round-ish cases.
   if (
+    !isRectangular(target) &&
     target.caseDiameterMm !== null &&
     (candidate.caseDiameterMm === null ||
       Math.abs(candidate.caseDiameterMm - target.caseDiameterMm) >
@@ -173,15 +203,6 @@ export function strictFailures(
     !allowQuartz
   ) {
     failures.push("movement");
-  }
-  if (shapeOf(target) !== "round" && shapeOf(candidate) !== shapeOf(target)) {
-    failures.push("shape");
-  }
-  if (
-    target.designTraits?.strap === "integrated_bracelet" &&
-    candidate.designTraits?.strap !== "integrated_bracelet"
-  ) {
-    failures.push("integrated_bracelet");
   }
   return failures;
 }
@@ -253,7 +274,7 @@ const LAYOUT_WORDS: Record<string, string> = {
 };
 
 export const MAX_LOOK_POINTS =
-  TRAIT_POINTS.reduce((sum, trait) => sum + trait.points, 0) + 3;
+  TRAIT_POINTS.reduce((sum, trait) => sum + trait.points, 0) + 7;
 
 export function lookScore(target: CatalogueWatch, candidate: CatalogueWatch) {
   let points = 0;
@@ -286,6 +307,20 @@ export function lookScore(target: CatalogueWatch, candidate: CatalogueWatch) {
     points += Math.max(0, 2 - Math.max(0, gap - 1));
     if (gap <= 1) shares.push(`${candidate.caseDiameterMm} mm`);
     else differs.push(`${candidate.caseDiameterMm} mm case`);
+  }
+  // The same case shape (round, cushion, octagonal…) and an integrated
+  // bracelet are a large part of the look.
+  if (shapeOf(target) === shapeOf(candidate)) {
+    points += 2;
+    if (shapeOf(target) !== "round") shares.push(`${shapeOf(target)} case`);
+  }
+  if (
+    target.designTraits?.strap === "integrated_bracelet" &&
+    candidate.designTraits?.strap === "integrated_bracelet"
+  ) {
+    points += 2;
+  } else if (target.designTraits?.strap === "integrated_bracelet") {
+    differs.push("no integrated bracelet");
   }
   // A diving bezel the original lacks makes it a different watch to wear.
   if (!has(target, "dive_bezel") && has(candidate, "dive_bezel")) {
