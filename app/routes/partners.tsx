@@ -77,6 +77,30 @@ export default function Partners() {
           secret key (<code>sk_live_…</code>) for your server.
         </p>
 
+        <h2>Get started in 3 steps</h2>
+        <ol>
+          <li>
+            <strong>Ask for your key.</strong> Email{" "}
+            <a href={`mailto:${PRIVACY_CONTACT}?subject=Partner%20key`}>
+              {PRIVACY_CONTACT}
+            </a>{" "}
+            with every address your site is reached at (for example{" "}
+            <code>https://myshop.com</code> and{" "}
+            <code>https://www.myshop.com</code>). The widgets only appear on
+            those addresses.
+          </li>
+          <li>
+            <strong>Add the widget.</strong> Paste the two lines below where it
+            should appear (or use the WordPress or Shopify steps further down),
+            replacing <code>pk_live_YOUR_KEY</code> with your key.
+          </li>
+          <li>
+            <strong>Publish and check.</strong> Open the page on your live site.
+            The widget loads within a second or two. If it doesn&apos;t, see
+            &ldquo;If the widget doesn&apos;t appear&rdquo; at the bottom.
+          </li>
+        </ol>
+
         <h2>What you can add</h2>
         <ul>
           {PARTNER_FEATURES.map((feature) => (
@@ -260,6 +284,33 @@ const { result } = await response.json();
           <li>
             The small &ldquo;Powered by The Reserve&rdquo; line stays on the
             widgets.
+          </li>
+        </ul>
+
+        <h2>If the widget doesn&apos;t appear</h2>
+        <ul>
+          <li>
+            <strong>Blank space or &ldquo;refused to connect&rdquo;:</strong>{" "}
+            the page&apos;s address isn&apos;t registered for your key. Send us
+            the exact address shown in your browser (with or without{" "}
+            <code>www</code>).
+          </li>
+          <li>
+            <strong>Nothing at all:</strong> check the key is pasted in full (
+            <code>pk_live_</code> plus 24 letters and digits) and that the{" "}
+            <code>&lt;script&gt;</code> line is on the page. Your browser&apos;s
+            console shows a message starting with &ldquo;[The Reserve]&rdquo;
+            when something is missing.
+          </li>
+          <li>
+            <strong>Testing on your computer:</strong> ask us to add{" "}
+            <code>http://localhost:3000</code> (or your port) to your key.
+          </li>
+          <li>
+            <strong>
+              &ldquo;Used all of its searches for this month&rdquo;:
+            </strong>{" "}
+            your plan&apos;s monthly limit is reached; contact us to raise it.
           </li>
         </ul>
 

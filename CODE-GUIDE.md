@@ -138,6 +138,10 @@ a fake fetch, so no test ever calls a real provider.
 
 Paying partners put The Reserve's features on their own websites (owner
 decision, 2026-10-04). Everything is included for every partner.
+Step-by-step for adding a partner (and the email to send them):
+`docs/partner-onboarding.md`. Partners' own guide: `/partners`. Every
+other channel (npm, Shopify app, WordPress.org, Wix…):
+`docs/partner-distribution-playbook.md`.
 
 1. **A site** is created on `/admin/sites`: a name, the website addresses
    allowed to show widgets, an optional monthly limit and theme. That gives a
