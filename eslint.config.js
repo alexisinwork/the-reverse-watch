@@ -17,6 +17,7 @@ export default tseslint.config(
       "build/**",
       "coverage/**",
       "node_modules/**",
+      "packages/*/dist/**",
     ],
   },
   {
@@ -24,6 +25,13 @@ export default tseslint.config(
     files: ["**/*.{js,mjs,cjs}"],
     languageOptions: {
       globals: globals.node,
+    },
+  },
+  {
+    // The partner widget loader runs in partners' browsers.
+    files: ["public/**/*.js", "integrations/**/*.js"],
+    languageOptions: {
+      globals: globals.browser,
     },
   },
   ...typedConfigs,

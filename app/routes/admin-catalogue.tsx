@@ -9,6 +9,7 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/admin-catalogue";
+import { pageAddress } from "../domain/page-address";
 import { visitorKey } from "../domain/visitor-key.server";
 import {
   adminLogin,
@@ -281,17 +282,7 @@ function editPatch(formData: FormData): ReviewPatch | string {
   return patch;
 }
 
-/**
- * The page address a form was posted from. React Router posts forms to a
- * hidden data address (/admin/catalogue.data?...&_routes=...); redirecting
- * there would show the raw data instead of the page.
- */
-export function pageAddress(requestUrl: string) {
-  const url = new URL(requestUrl);
-  url.searchParams.delete("_routes");
-  const query = url.searchParams.toString();
-  return `${url.pathname.replace(/\.data$/, "")}${query ? `?${query}` : ""}`;
-}
+export { pageAddress };
 
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
@@ -681,7 +672,8 @@ export default function AdminCatalogue() {
         <div>
           <Link to="/">The Reserve</Link>
           <h1>Catalogue review</h1>
-          <Link to="/admin/evaluation">Visitor numbers</Link>
+          <Link to="/admin/evaluation">Visitor numbers</Link> ·{" "}
+          <Link to="/admin/sites">Partner sites</Link>
         </div>
         <Form method="post">
           <button

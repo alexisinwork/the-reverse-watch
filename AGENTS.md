@@ -93,6 +93,22 @@ quiz.
   email, session, cookie, IP, or other identifying data. No visitor data is
   stored.
 
+## Partner widgets direction (owner decision, 2026-10-04)
+
+- Paying partners show The Reserve's features on their own websites:
+  `public/embed.js` (one script tag), the WordPress plugin
+  (`integrations/wordpress/`), Shopify, and the `/api/v1` JSON API. Every
+  feature is included for every partner.
+- Widgets (`/embed/:key/…`) reuse the site's route modules. Inside a widget:
+  no subscription gate, no newsletter sign-up, no email collection, no
+  dossier; provenance labels and "Powered by The Reserve" stay.
+- Only a partner's registered origins may frame a widget or use its public
+  key; secret keys are for servers only and are stored hashed. Partner sites
+  are switched off, never deleted. Uses are counted per site, month and
+  feature for invoicing.
+- After changing the WordPress plugin, rerun
+  `scripts/package-wordpress-plugin.ts` and commit the zip.
+
 ## Quality invariants
 
 - Exact watch constraints belong in PostgreSQL. The first subjective matcher is

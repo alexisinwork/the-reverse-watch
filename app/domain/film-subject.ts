@@ -1,4 +1,7 @@
 /** What the visitor is searching for on /watches/find; chosen from a list. */
+/** Longest film, series or person name a search accepts. */
+export const FILM_QUERY_MAX = 120;
+
 export const FILM_SUBJECT_KINDS = [
   "movie",
   "series",

@@ -1,6 +1,7 @@
 {
   "include": [
     "app/**/*",
+    "packages/*/src/**/*",
     "scripts/**/*",
     "tests/**/*",
     "*.ts",

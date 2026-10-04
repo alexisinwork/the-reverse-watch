@@ -1,12 +1,17 @@
-import { Link, useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-story";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
+import { SurfaceLink } from "../components/surface";
 import { findPublishedDiscoveryStory } from "../domain/discovery-public";
 import { loadPublishedDiscoveryStories } from "../domain/discovery-store.server";
+import {
+  meterPartnerUse,
+  partnerSiteFrom,
+} from "../domain/partner-embed.server";
 import "../styles/discovery.css";
 
-export async function loader({ params }: Route.LoaderArgs) {
+export async function loader({ params, context }: Route.LoaderArgs) {
   const stories = await loadPublishedDiscoveryStories();
   const story =
     stories?.find((entry) => entry.slug === params.storySlug) ??
@@ -14,6 +19,7 @@ export async function loader({ params }: Route.LoaderArgs) {
   // React Router uses thrown Responses to preserve HTTP status boundaries.
   // eslint-disable-next-line @typescript-eslint/only-throw-error
   if (!story) throw new Response("Discovery record not found", { status: 404 });
+  await meterPartnerUse(partnerSiteFrom(context), "stories");
   return { story };
 }
 
@@ -40,14 +46,14 @@ export default function WatchStory() {
     <main className="discovery-shell discovery-detail">
       <DiscoveryAnalytics event={{ name: "page_view", surface: "story" }} />
       <nav className="discovery-nav" aria-label="Discovery navigation">
-        <Link to="/watches">All stories</Link>
-        <Link to={`/watches/people/${story.entity.slug}`}>
+        <SurfaceLink to="/watches">All stories</SurfaceLink>
+        <SurfaceLink to={`/watches/people/${story.entity.slug}`}>
           {story.entity.name}
-        </Link>
+        </SurfaceLink>
         {story.work ? (
-          <Link to={`/watches/works/${story.work.slug}`}>
+          <SurfaceLink to={`/watches/works/${story.work.slug}`}>
             {story.work.title}
-          </Link>
+          </SurfaceLink>
         ) : null}
       </nav>
       <article>
@@ -120,9 +126,9 @@ export default function WatchStory() {
       </article>
       <aside className="discovery-cta">
         <h2>Find the right equivalent for you</h2>
-        <Link to={`/quiz?story=${encodeURIComponent(story.slug)}`}>
+        <SurfaceLink to={`/quiz?story=${encodeURIComponent(story.slug)}`}>
           Start the reference diagnostic
-        </Link>
+        </SurfaceLink>
       </aside>
     </main>
   );

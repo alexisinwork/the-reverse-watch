@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { SurfaceLink } from "./surface";
 
 import type { PublishedDiscoveryStory } from "../domain/discovery-public";
 
@@ -17,7 +17,9 @@ export function DiscoveryStoryList({
             {story.attribution.confidenceLabel}
           </span>
           <h2>
-            <Link to={`/watches/stories/${story.slug}`}>{story.headline}</Link>
+            <SurfaceLink to={`/watches/stories/${story.slug}`}>
+              {story.headline}
+            </SurfaceLink>
           </h2>
           <p>{story.summary}</p>
           <dl>

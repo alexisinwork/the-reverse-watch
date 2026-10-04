@@ -1,0 +1,28 @@
+{
+  "name": "@thereserve/client",
+  "version": "1.0.0",
+  "description": "Typed client for The Reserve's partner API: watch shortlists, film watch search, cheaper alternatives, archetypes and stories.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "homepage": "https://thereserve.watch/partners"
+}

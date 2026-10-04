@@ -25,6 +25,9 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 | `db/migrations/`  | Numbered SQL files, applied in order with `scripts/apply-migration.ts`. Additive only: tables are never dropped.           |
 | `scripts/`        | Command-line jobs you run on your machine (catalogue build, reports, price passes).                                        |
 | `docs/`           | Product history, plans and reports (`docs/reports/`).                                                                      |
+| `public/`         | Static files. `embed.js` is the script partners paste on their sites; `downloads/` holds the WordPress plugin zip.         |
+| `integrations/`   | The WordPress plugin and the Shopify theme block (source).                                                                 |
+| `packages/`       | `client` (typed API client) and `react` (widget component), ready to publish to npm; not published yet.                    |
 
 ## Pages and endpoints
 
@@ -38,6 +41,10 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 | `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes.                                                                                                                                 |
 | `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily Vercel cron (see `vercel.json`): rechecks prices older than 90 days.                                                                                                                                 |
 | `/admin/evaluation`                                                       | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary, behind the admin login (`/evaluation` redirects).                                                                                                                                |
+| `/partners`                                                               | `routes/partners.tsx`                                                                                                | Public guide for partners: the script tag, WordPress, Shopify, other builders, React, the API.                                                                                                             |
+| `/embed/:key/…`                                                           | `routes/embed-layout.tsx` + the pages above                                                                          | Partner widgets: quiz, archetype, find, alternatives, stories inside a frame on a partner's site (see "Partner widgets").                                                                                  |
+| `/api/v1/…`                                                               | `routes/api-v1-*.ts`                                                                                                 | Partner JSON API; description at `/api/v1/openapi.json`.                                                                                                                                                   |
+| `/admin/sites`                                                            | `routes/admin-sites.tsx`                                                                                             | Partner sites: keys, allowed websites, monthly limit, theme, uses per month.                                                                                                                               |
 | `/health`                                                                 | `routes/health.ts`                                                                                                   | Uptime check.                                                                                                                                                                                              |
 | Others                                                                    | `quiz-analytics-start.ts`, `discovery-analytics.ts`, `watch-research-status.tsx`, `internal-discovery-research-*.ts` | Analytics pings and the older film-research intake (see "Older code").                                                                                                                                     |
 
@@ -127,26 +134,61 @@ a fake fetch, so no test ever calls a real provider.
    "unavailable, try again" with links to the archive and archetype quiz,
    which never need AI. A failed lookup is never reported as "no watches".
 
+## Partner widgets
+
+Paying partners put The Reserve's features on their own websites (owner
+decision, 2026-10-04). Everything is included for every partner.
+
+1. **A site** is created on `/admin/sites`: a name, the website addresses
+   allowed to show widgets, an optional monthly limit and theme. That gives a
+   public key (`pk_live_…`); a secret key (`sk_live_…`, shown once, stored
+   hashed) is only needed for server-to-server API calls. Data: migration
+   0075, `domain/partner-sites.server.ts`; rules: `domain/partner-sites.ts`.
+2. **The partner pastes** `<div data-reserve="quiz"></div>` and
+   `<script src=".../embed.js" data-key="pk_live_…" async>`, or uses the
+   WordPress plugin or Shopify Custom Liquid (`/partners` explains each).
+3. **`public/embed.js`** turns each `data-reserve` element into a frame of
+   `/embed/<key>/<feature>`, resizes it from the widget's messages and
+   re-sends them as `reserve:*` events on the element.
+4. **`routes/embed-layout.tsx`** checks the key (middleware), tells the root
+   middleware which websites may frame the page (`embed-context.ts`), applies
+   the theme, and provides the "surface" (`components/surface.tsx`) so the
+   ordinary pages hide The Reserve's navigation, newsletter, dossier email and
+   promotions, and keep their links inside the frame.
+5. **The pages** (`quiz.tsx`, `watch-find.tsx`, `watch-alternatives.tsx`,
+   `watch-archetype.tsx`, `watches.tsx`, `watch-story.tsx`) read the partner
+   site with `partnerSiteFrom(context)`: no subscription check there, and each
+   search is counted (`meterPartnerUse`). A failed count never blocks a
+   partner; only a reached monthly limit does.
+6. **The API** (`routes/api-v1-*.ts`, `domain/partner-api.server.ts`) runs the
+   same searches (`film-search-run.server.ts`,
+   `alternatives-search.server.ts`, `searchQuiz`) and streams steps as
+   server-sent events when asked.
+
 ## Where to change things
 
-| To change…                                                       | Edit                                                                                  |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| Quiz questions or their wording                                  | `components/quiz/question-screens.tsx`, titles in `routes/quiz.tsx`                   |
-| Price ranges or wrist → diameter table                           | `domain/questionnaire-v4.ts`                                                          |
-| Which quiz scenarios map to which wearing style                  | `SCENARIO_STYLES` in `domain/watch-catalogue.ts`                                      |
-| How catalogue watches are ranked                                 | `pick()` in `domain/watch-catalogue.ts`                                               |
-| Price tolerance, age limit, allowed currencies, grey-market list | top of `domain/price-check.server.ts`                                                 |
-| Authorised retailers                                             | `AUTHORISED_RETAILER_HOSTS` in `domain/ai-watch-guardrails.ts`                        |
-| Search prompts                                                   | `quiz-live-search.server.ts`, `film-search.server.ts`, `catalogue-build.server.ts`    |
-| Muse Spark model or search provider                              | env vars `MUSE_SPARK_FAST_MODEL`, `MUSE_SPARK_MODEL`, `WEB_SEARCH_PROVIDER`           |
-| Admin page                                                       | `routes/admin-catalogue.tsx`, login in `domain/admin-auth.server.ts`                  |
-| Colours and fonts                                                | `app/styles/tokens.css`                                                               |
-| Home page cards                                                  | `routes/home.tsx`, styles in `styles/home.css`                                        |
-| Newsletter sign-up and the "Already subscribed?" check           | `components/beehiiv-signup.tsx`, `domain/beehiiv.server.ts`                           |
-| The dossier email (sent through Resend)                          | `domain/dossier-email.ts` (content), `domain/resend.server.ts` (sending)              |
-| Rate limits                                                      | the `*_POLICY` constants in each route; keys from `domain/visitor-key.server.ts`      |
-| Film search types (movie, series, actor…)                        | `domain/film-subject.ts`, prompts in `domain/film-search.server.ts`                   |
-| The archetype quiz's 10 watches                                  | rerun `scripts/build-archetype-picks.ts`, then commit `app/data/archetype-picks.json` |
+| To change…                                                       | Edit                                                                                      |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| Quiz questions or their wording                                  | `components/quiz/question-screens.tsx`, titles in `routes/quiz.tsx`                       |
+| Price ranges or wrist → diameter table                           | `domain/questionnaire-v4.ts`                                                              |
+| Which quiz scenarios map to which wearing style                  | `SCENARIO_STYLES` in `domain/watch-catalogue.ts`                                          |
+| How catalogue watches are ranked                                 | `pick()` in `domain/watch-catalogue.ts`                                                   |
+| Price tolerance, age limit, allowed currencies, grey-market list | top of `domain/price-check.server.ts`                                                     |
+| Authorised retailers                                             | `AUTHORISED_RETAILER_HOSTS` in `domain/ai-watch-guardrails.ts`                            |
+| Search prompts                                                   | `quiz-live-search.server.ts`, `film-search.server.ts`, `catalogue-build.server.ts`        |
+| Muse Spark model or search provider                              | env vars `MUSE_SPARK_FAST_MODEL`, `MUSE_SPARK_MODEL`, `WEB_SEARCH_PROVIDER`               |
+| Admin page                                                       | `routes/admin-catalogue.tsx`, login in `domain/admin-auth.server.ts`                      |
+| Colours and fonts                                                | `app/styles/tokens.css`                                                                   |
+| Home page cards                                                  | `routes/home.tsx`, styles in `styles/home.css`                                            |
+| Newsletter sign-up and the "Already subscribed?" check           | `components/beehiiv-signup.tsx`, `domain/beehiiv.server.ts`                               |
+| The dossier email (sent through Resend)                          | `domain/dossier-email.ts` (content), `domain/resend.server.ts` (sending)                  |
+| Rate limits                                                      | the `*_POLICY` constants in each route; keys from `domain/visitor-key.server.ts`          |
+| Film search types (movie, series, actor…)                        | `domain/film-subject.ts`, prompts in `domain/film-search.server.ts`                       |
+| The archetype quiz's 10 watches                                  | rerun `scripts/build-archetype-picks.ts`, then commit `app/data/archetype-picks.json`     |
+| What a partner widget hides or shows                             | `useEmbed()` checks in the pages; frame and theme in `routes/embed-layout.tsx`            |
+| Widget themes (colours, fonts)                                   | `partnerThemeSchema` and `themeVariables` in `domain/partner-sites.ts`                    |
+| The partner script tag                                           | `public/embed.js` (and its test `app/embed-loader.test.ts`)                               |
+| The WordPress plugin                                             | `integrations/wordpress/the-reserve/`, then `npx tsx scripts/package-wordpress-plugin.ts` |
 
 ## When something breaks
 
@@ -180,7 +222,13 @@ Vercel logs for the event name finds it. Sentry collects page errors.
 - Database: every table has row-level security; the server writes through
   service-role functions only.
 - Security headers (CSP, frame denial, nosniff, referrer and permissions
-  policies) are set in `app/middleware.server.ts`; Vercel adds HSTS.
+  policies) are set in `app/middleware.server.ts`; Vercel adds HSTS. Only
+  `/embed/<key>/…` pages may be framed, and only by that key's registered
+  websites; opened directly in a tab (`Sec-Fetch-Dest: document`), a widget
+  address sends the visitor to The Reserve's own page.
+- Partner API: secret keys only from servers (refused with a browser Origin),
+  public keys only from registered websites; per-visitor or per-partner rate
+  limits plus the optional monthly limit.
 
 ## Everyday commands
 

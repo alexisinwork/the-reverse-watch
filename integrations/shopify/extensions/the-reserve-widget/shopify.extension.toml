@@ -1,0 +1,5 @@
+# Shopify theme app extension: lets merchants add The Reserve as a block in
+# the theme editor (Add block → Apps → The Reserve). Deploy with the Shopify
+# CLI from an app created in the Shopify Partner Dashboard.
+name = "The Reserve widget"
+type = "theme"

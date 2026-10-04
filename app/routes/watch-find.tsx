@@ -1,35 +1,28 @@
-import { Form, Link, useLoaderData, useNavigation } from "react-router";
+import { Form, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-find";
+import {
+  EmbedThemeFields,
+  SurfaceLink,
+  useEmbed,
+  useSearchingHere,
+} from "../components/surface";
 import { WatchResults } from "../components/watch-results";
-import { visitorKey } from "../domain/visitor-key.server";
+import { parseDiscoveryHandoff } from "../domain/discovery-selection";
+import { readFilmQuery, runFilmSearch } from "../domain/film-search-run.server";
 import {
-  normalizeFilmQuery,
-  searchFilmWatches,
-} from "../domain/film-search.server";
-import { searchWithStore } from "../domain/ai-watch-store.server";
-import {
+  FILM_QUERY_MAX,
   FILM_SUBJECT_KINDS,
   FILM_SUBJECT_LABELS,
   parseFilmSubjectKind,
   type FilmSubjectKind,
 } from "../domain/film-subject";
+import { partnerSiteFrom } from "../domain/partner-embed.server";
 import { createProgressFeed } from "../domain/progress-feed";
-import { mergeSightings } from "../domain/film-sightings";
-import { fillPhotosFromCatalogue } from "../domain/watch-catalogue.server";
-import { parseDiscoveryHandoff } from "../domain/discovery-selection";
-import type { RateLimitPolicy } from "../domain/rate-limit.server";
-import { consumeSharedRateLimit } from "../domain/rate-limit-upstash.server";
+import { visitorKey } from "../domain/visitor-key.server";
 import "../styles/discovery.css";
 
-const QUERY_MAX = 120;
-
-// Stored answers are free; only fresh searches spend provider credit.
-const NEW_SEARCH_POLICY: RateLimitPolicy = {
-  configured: true,
-  maxRequests: 12,
-  windowMs: 10 * 60 * 1_000,
-};
+const QUERY_MAX = FILM_QUERY_MAX;
 
 const EXAMPLES: { query: string; kind: FilmSubjectKind }[] = [
   { query: "Daniel Craig", kind: "actor" },
@@ -40,12 +33,9 @@ const EXAMPLES: { query: string; kind: FilmSubjectKind }[] = [
   { query: "The Bear", kind: "series" },
 ];
 
-export function loader({ request }: Route.LoaderArgs) {
+export function loader({ request, context }: Route.LoaderArgs) {
   const url = new URL(request.url);
-  const query = (url.searchParams.get("q") ?? "")
-    .trim()
-    .replace(/\s+/g, " ")
-    .slice(0, QUERY_MAX);
+  const query = readFilmQuery(url.searchParams.get("q"));
   const kind = parseFilmSubjectKind(url.searchParams.get("type"));
   const handoff = parseDiscoveryHandoff(url.searchParams);
   // Both the text and the type are required before anything is searched.
@@ -60,32 +50,15 @@ export function loader({ request }: Route.LoaderArgs) {
     };
   }
 
-  const key = visitorKey("film-search", request);
   // Streamed: the page renders immediately and the watches arrive after.
   const progress = createProgressFeed();
-  const search = searchWithStore({
-    kind: "film",
-    cacheInput: { query: normalizeFilmQuery(query), kind },
-    run: async () => {
-      if (!(await consumeSharedRateLimit(key, NEW_SEARCH_POLICY)).allowed) {
-        return {
-          status: "no_match",
-          summary:
-            "You have run a lot of new searches in a short time. Please try again in a few minutes; searches others already made still load instantly.",
-        };
-      }
-      return searchFilmWatches(query, { report: progress.report }, kind);
-    },
+  const result = runFilmSearch({
+    query,
+    kind,
+    rateKey: visitorKey("film-search", request),
+    site: partnerSiteFrom(context),
+    report: progress.report,
   });
-  // Sightings without a photo borrow the catalogue's photo of that watch.
-  const result = search.then(async (view) =>
-    view.status === "found"
-      ? {
-          ...view,
-          watches: mergeSightings(await fillPhotosFromCatalogue(view.watches)),
-        }
-      : view,
-  );
   void result.finally(progress.close);
   return {
     query,
@@ -116,21 +89,21 @@ export function meta({ data }: Route.MetaArgs) {
 export default function WatchFind() {
   const { query, kind, handoff, result, progress, needsType } =
     useLoaderData<typeof loader>();
-  const navigation = useNavigation();
-  const searching =
-    navigation.state === "loading" &&
-    navigation.location?.pathname === "/watches/find";
+  const searching = useSearchingHere();
+  const embed = useEmbed();
 
   return (
     <main className="discovery-shell find-shell">
-      <nav className="discovery-nav" aria-label="Discovery navigation">
-        <Link to="/">The Reserve</Link>
-        <div className="discovery-nav__links">
-          <Link to="/watches">Watches from movies</Link>
-          <Link to="/watches/archetype">Watch archetype</Link>
-          <Link to="/quiz">Reference diagnostic</Link>
-        </div>
-      </nav>
+      {embed ? null : (
+        <nav className="discovery-nav" aria-label="Discovery navigation">
+          <SurfaceLink to="/">The Reserve</SurfaceLink>
+          <div className="discovery-nav__links">
+            <SurfaceLink to="/watches">Watches from movies</SurfaceLink>
+            <SurfaceLink to="/watches/archetype">Watch archetype</SurfaceLink>
+            <SurfaceLink to="/quiz">Reference diagnostic</SurfaceLink>
+          </div>
+        </nav>
+      )}
 
       <header className="find-hero">
         <span className="eyebrow">Film · Television · People</span>
@@ -140,6 +113,7 @@ export default function WatchFind() {
           live web and show each watch with who wore it and where.
         </p>
         <Form className="find-form" method="get" role="search">
+          <EmbedThemeFields />
           <label className="sr-only" htmlFor="find-type">
             What are you searching for?
           </label>
@@ -213,7 +187,7 @@ export default function WatchFind() {
         <div className="find-examples" aria-label="Example searches">
           <span>Try</span>
           {EXAMPLES.map((example) => (
-            <Link
+            <SurfaceLink
               className="chip"
               key={example.query}
               to={`/watches/find?type=${example.kind}&q=${encodeURIComponent(example.query)}`}
@@ -223,7 +197,7 @@ export default function WatchFind() {
                 {" "}
                 · {FILM_SUBJECT_LABELS[example.kind]}
               </span>
-            </Link>
+            </SurfaceLink>
           ))}
         </div>
       </header>

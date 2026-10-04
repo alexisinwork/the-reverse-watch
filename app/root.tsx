@@ -67,8 +67,12 @@ export default function App() {
   return (
     <>
       <Outlet />
-      {/* On every visitor page; the admin pages are for the owner only. */}
-      {pathname.startsWith("/admin") ? null : <YouTubeCallout />}
+      {/* On every visitor page; the admin pages are for the owner only, and
+          partner widgets carry only the partner's chosen feature. */}
+      {pathname.startsWith("/admin") ||
+      pathname.startsWith("/embed/") ? null : (
+        <YouTubeCallout />
+      )}
     </>
   );
 }

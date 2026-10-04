@@ -1,8 +1,9 @@
 import { useRef, useState } from "react";
-import { Form, Link, useLoaderData } from "react-router";
+import { Form, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-archetype";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
+import { EmbedThemeFields, SurfaceLink, useEmbed } from "../components/surface";
 import { WatchResults } from "../components/watch-results";
 import { ARCHETYPE_BANDS, archetypeWatches } from "../domain/archetype-picks";
 import {
@@ -16,11 +17,21 @@ import {
 import { discoveryHandoffSchema } from "../domain/discovery-selection";
 import { sendDiscoveryAnalyticsEvent } from "../domain/discovery-analytics";
 import { loadFxTable } from "../domain/fx.server";
+import {
+  meterPartnerUse,
+  partnerSiteFrom,
+} from "../domain/partner-embed.server";
 import "../styles/discovery.css";
 
-export async function loader({ request }: Route.LoaderArgs) {
+export async function loader({ request, context }: Route.LoaderArgs) {
   const url = new URL(request.url);
-  const result = parseArchetypeSearch(url.searchParams);
+  const parsed = parseArchetypeSearch(url.searchParams);
+  // A partner widget counts each archetype result.
+  const limitMessage =
+    parsed.status === "complete"
+      ? await meterPartnerUse(partnerSiteFrom(context), "archetype")
+      : null;
+  const result = limitMessage ? ({ status: "idle" } as const) : parsed;
   const configuredAppUrl = process.env.APP_URL?.trim();
   let publicOrigin = url.origin;
 
@@ -42,6 +53,7 @@ export async function loader({ request }: Route.LoaderArgs) {
       : [];
   return {
     result,
+    limitMessage,
     watches,
     band:
       result.status === "complete"
@@ -150,8 +162,9 @@ function ShareButton({
 }
 
 export default function WatchArchetype() {
-  const { result, shareUrl, watches, band, fx } =
+  const { result, limitMessage, shareUrl, watches, band, fx } =
     useLoaderData<typeof loader>();
+  const embed = useEmbed();
   const startTracked = useRef(false);
 
   const recordStart = () => {
@@ -171,10 +184,12 @@ export default function WatchArchetype() {
           }}
         />
       ) : null}
-      <nav className="discovery-nav" aria-label="Discovery navigation">
-        <Link to="/watches">Watches from movies</Link>
-        <Link to="/quiz">Reference diagnostic</Link>
-      </nav>
+      {embed ? null : (
+        <nav className="discovery-nav" aria-label="Discovery navigation">
+          <SurfaceLink to="/watches">Watches from movies</SurfaceLink>
+          <SurfaceLink to="/quiz">Reference diagnostic</SurfaceLink>
+        </nav>
+      )}
 
       {result.status === "complete" ? (
         <>
@@ -215,7 +230,8 @@ export default function WatchArchetype() {
               }}
             />
           ) : null}
-          {shareUrl ? (
+          {/* Inside a partner widget the result stays on the partner's page. */}
+          {shareUrl && !embed ? (
             <ShareButton
               archetypeId={result.archetype.id}
               shareUrl={shareUrl}
@@ -230,7 +246,7 @@ export default function WatchArchetype() {
               size, where you will wear it, and every hard requirement.
             </p>
             <div className="archetype-next-actions">
-              <Link
+              <SurfaceLink
                 onClick={() =>
                   sendDiscoveryAnalyticsEvent({
                     name: "core_handoff",
@@ -240,24 +256,25 @@ export default function WatchArchetype() {
                 to={buildCoreQuizHandoff(result.answers)}
               >
                 Find the right watch for me
-              </Link>
-              <Link
+              </SurfaceLink>
+              <SurfaceLink
                 to={`/watches/find?${new URLSearchParams(discoveryHandoffSchema.parse({ socialSignal: result.answers.socialSignal, aestheticDna: result.answers.aestheticDna })).toString()}`}
               >
                 Find a watch from film and culture
-              </Link>
+              </SurfaceLink>
             </div>
           </aside>
           <p className="archetype-boundary">
-            No email is required for this result. Newsletter and dossier consent
-            remain separate, explicit choices in the full diagnostic.
+            {embed
+              ? "No email is required for this result."
+              : "No email is required for this result. Newsletter and dossier consent remain separate, explicit choices in the full diagnostic."}
           </p>
-          <Link className="archetype-retake" to="/watches/archetype">
+          <SurfaceLink className="archetype-retake" to="/watches/archetype">
             Retake the archetype quiz
-          </Link>
-          <Link className="archetype-retake" to="/watches">
+          </SurfaceLink>
+          <SurfaceLink className="archetype-retake" to="/watches">
             Browse watches from movies
-          </Link>
+          </SurfaceLink>
         </>
       ) : (
         <>
@@ -269,6 +286,11 @@ export default function WatchArchetype() {
               applies budget, wrist, and technical constraints afterwards.
             </p>
           </header>
+          {limitMessage ? (
+            <p className="archetype-error" role="alert">
+              {limitMessage}
+            </p>
+          ) : null}
           {result.status === "invalid" ? (
             <p className="archetype-error" role="alert">
               That shared result is incomplete or invalid. Answer the four
@@ -276,6 +298,7 @@ export default function WatchArchetype() {
             </p>
           ) : null}
           <Form className="archetype-form" method="get" onChange={recordStart}>
+            <EmbedThemeFields />
             <input
               name="scoringVersion"
               type="hidden"

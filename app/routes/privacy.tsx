@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 import "../styles/legal.css";
 
-export const PRIVACY_UPDATED = "1 October 2026";
+export const PRIVACY_UPDATED = "4 October 2026";
 export const PRIVACY_CONTACT = "alex@thereserve.watch";
 
 export function meta() {
@@ -79,6 +79,17 @@ export default function Privacy() {
             it for at most a few minutes. The address itself is never stored.
           </li>
         </ul>
+
+        <h2>The Reserve on other websites</h2>
+        <p>
+          Some shops and magazines show The Reserve&apos;s tools on their own
+          pages, in a frame served by us. There, we receive only the answers and
+          searches you type into it, handled as above. The frame never asks for
+          your email address, shows no newsletter sign-up and sets no cookies.
+          We count how often each website&apos;s frame is used (not by whom) to
+          bill that website, and the frame tells the page around it its height
+          and how many watches it found, nothing about you.
+        </p>
 
         <h2>Cookies and storage on your device</h2>
         <ul>

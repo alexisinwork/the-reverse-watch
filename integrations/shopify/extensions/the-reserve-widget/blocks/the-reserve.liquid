@@ -1,0 +1,62 @@
+{% comment %}
+  The Reserve watch widget as a theme app block. The merchant pastes their
+  public key and picks a feature; the widget is served from thereserve.watch.
+{% endcomment %}
+{%- if block.settings.public_key != blank -%}
+  <div
+    {{ block.shopify_attributes }}
+    data-reserve="{{ block.settings.feature | escape }}"
+    data-key="{{ block.settings.public_key | escape }}"
+    {% if block.settings.scheme != blank %}data-scheme="{{ block.settings.scheme | escape }}"{% endif %}
+    {% if block.settings.accent != blank %}data-accent="{{ block.settings.accent | escape }}"{% endif %}
+    {% if block.settings.params != blank %}data-params="{{ block.settings.params | escape }}"{% endif %}
+  ></div>
+  <script src="https://thereserve.watch/embed.js" async></script>
+{%- elsif request.design_mode -%}
+  <p>The Reserve: add your public key (pk_live_…) in this block's settings.</p>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "The Reserve",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "public_key",
+      "label": "Public key",
+      "info": "pk_live_… from The Reserve. Your shop's address must be registered for it."
+    },
+    {
+      "type": "select",
+      "id": "feature",
+      "label": "Feature",
+      "default": "quiz",
+      "options": [
+        { "value": "quiz", "label": "Watch diagnostic (shortlist)" },
+        { "value": "archetype", "label": "Watch archetype quiz" },
+        { "value": "find", "label": "Watches from film, TV and people" },
+        { "value": "alternatives", "label": "Cheaper alternatives" },
+        { "value": "stories", "label": "Watches from movies (stories)" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "scheme",
+      "label": "Look",
+      "default": "light",
+      "options": [
+        { "value": "light", "label": "Light" },
+        { "value": "dark", "label": "Dark" }
+      ]
+    },
+    { "type": "color", "id": "accent", "label": "Accent colour" },
+    {
+      "type": "text",
+      "id": "params",
+      "label": "Start with a search (optional)",
+      "info": "e.g. type=actor&q=Daniel Craig"
+    }
+  ]
+}
+{% endschema %}

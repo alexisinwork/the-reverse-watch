@@ -42,7 +42,7 @@ export function catalogueClient(
   return config ? { config, fetchImpl: overrides.fetchImpl ?? fetch } : null;
 }
 
-async function rpc(
+export async function rpc(
   client: CatalogueClient,
   name: string,
   body: unknown,

@@ -1674,6 +1674,59 @@ separate exact-reference review targets. The existing M1, provenance,
 homogeneous-variant, additive-migration, and fail-closed requirements remain
 unchanged.
 
+## Partner widgets and API
+
+Status: **verified — fast gate passed, 2026-10-04**
+
+Owner decision 2026-10-04: The Reserve's features can be put on other
+websites by paying partners, in the easiest way for them. Partners pay and
+every feature is included in the price; there is no per-feature tier. The
+newsletter sign-up, the dossier email and the subscription gate are excluded
+from partner widgets, and visitors there may use every feature freely.
+
+Delivered:
+
+- **Partner sites** (`private.partner_sites`, `private.partner_site_usage`,
+  migration 0075): a public key (`pk_live_…`), an optional secret key stored
+  only as a SHA-256 hash, the website addresses allowed to show widgets, an
+  optional monthly limit, a theme, and per-month, per-feature use counts for
+  invoicing. Sites are switched off, never deleted. Managed on
+  `/admin/sites`.
+- **Widgets** (`/embed/:key/quiz|archetype|find|alternatives|stories`): the
+  site's own route modules mounted a second time under an embed layout
+  (`routes.ts`). Only the partner's registered addresses may frame them
+  (`frame-ancestors`; every other page stays `frame-ancestors 'none'` plus
+  `X-Frame-Options: DENY`). The widget hides The Reserve's navigation,
+  newsletter, dossier email, paid-report teaser and YouTube callouts, keeps
+  "Not yet reviewed" and "Manufacturer reference not confirmed", and shows a
+  small "Powered by The Reserve" line.
+- **One script tag** (`public/embed.js`), a WordPress plugin (shortcode,
+  block, settings page; `integrations/wordpress/`, downloadable from
+  `/downloads/the-reserve-wordpress.zip`), Shopify (Custom Liquid today; a
+  theme app block in `integrations/shopify/` for a future Shopify app),
+  instructions for Wix, Squarespace, Webflow and Tag Manager, and a React
+  snippet, all on the public guide `/partners`.
+- **JSON API** (`/api/v1/quiz|find|alternatives|archetype|stories`, OpenAPI
+  3.1 at `/api/v1/openapi.json`) with live steps as server-sent events.
+  Secret keys from servers only (refused when a browser Origin is present);
+  public keys only from registered origins.
+- `packages/client` and `packages/react` are ready to publish to npm but are
+  not published: that needs the owner's npm account. `/partners` does not
+  mention npm until they are.
+
+Reconciliation: `future-expansion-strategy.md` Phase 13 asked for buyer
+validation before any B2B work. The owner has decided to sell partner access
+directly, so this section supersedes that gate for widgets and the API. Its
+safeguards still hold: tenant isolation (per-key origins and counts), fixed
+provenance and disclosure labels regardless of branding, usage limits, and
+no visitor data. Retailer-supplied catalogues remain out of scope.
+
+Verification: unit tests for keys, origins, frame-ancestors, theme
+validation, link mapping inside a frame, API authentication, streaming,
+metering failure (never blocks a paying partner), the widget loader, and the
+quiz/alternatives routes inside a widget (no subscription, no email, monthly
+limit). The WordPress PHP was not linted locally (no PHP runtime available).
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

@@ -98,6 +98,11 @@ Packets:
 
 ## Phase 13 — B2B white-label assessment
 
+> Update 2026-10-04: the owner chose to sell partner widgets and API access
+> directly. See "Partner widgets and API" in `implementation-roadmap.md`; the
+> safeguards below remain in force, and retailer-supplied catalogues remain
+> out of scope.
+
 Goal: evaluate whether the deterministic recommendation engine can serve a
 retailer without putting consumer data or catalogue authority at risk.
 

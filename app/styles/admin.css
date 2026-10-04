@@ -206,3 +206,20 @@
     grid-template-columns: 1fr;
   }
 }
+
+.admin-shell textarea,
+.admin-edit select {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-base-raised);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 0.85rem;
+}
+
+.admin-shell code {
+  font-size: 0.85rem;
+  user-select: all;
+}

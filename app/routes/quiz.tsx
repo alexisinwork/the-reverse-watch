@@ -8,7 +8,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   data,
   Form,
-  Link,
   redirect,
   useActionData,
   useLoaderData,
@@ -33,11 +32,10 @@ import {
 } from "../components/quiz/quiz-results";
 import { QuestionScreen } from "../components/quiz/question-screens";
 import { ProfileFields } from "../components/quiz/quiz-steps";
+import { SurfaceLink, useEmbed } from "../components/surface";
 import { WatchResults } from "../components/watch-results";
 import type { AiSearchView, ProgressLink } from "../domain/ai-watch-types";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
-import type { VocabularyKind } from "../domain/catalogue-vocabulary";
-import { loadCatalogueVocabulary } from "../domain/catalogue-vocabulary.server";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
 import {
@@ -66,7 +64,12 @@ import {
   parseEmailOptIn,
   parseProfileForm,
 } from "../domain/quiz-form";
+import {
+  meterPartnerUse,
+  partnerSiteFrom,
+} from "../domain/partner-embed.server";
 import { createProgressFeed } from "../domain/progress-feed";
+import { loadQuizOptions } from "../domain/quiz-options.server";
 import { searchQuiz } from "../domain/quiz-search.server";
 import {
   consumeRateLimit,
@@ -107,10 +110,10 @@ type ActionResult =
     }
   | { ok: false; errors: string[] };
 
-type VocabularyOption = { slug: string; labelEn: string };
-
-export async function action({ request }: Route.ActionArgs) {
-  if (!(await hasDiagnosticAccess(request))) {
+export async function action({ request, context }: Route.ActionArgs) {
+  // Partner widgets need no subscription: the partner pays for access.
+  const site = partnerSiteFrom(context);
+  if (!site && !(await hasDiagnosticAccess(request))) {
     return data<ActionResult>(
       {
         ok: false,
@@ -173,7 +176,11 @@ export async function action({ request }: Route.ActionArgs) {
       { status: 400 },
     );
   }
-  const emailOptIn = parseEmailOptIn(formData);
+  // Partner widgets never collect an email address (no newsletter, no
+  // dossier), whatever the form sends.
+  const emailOptIn = site
+    ? ({ email: null } as const)
+    : parseEmailOptIn(formData);
   const funnelSource = formData.get("funnelSource");
   if (funnelSource !== null && funnelSource !== "archetype") {
     return data<ActionResult>(
@@ -190,6 +197,14 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
   const profile = parsed.data;
+
+  const limitMessage = await meterPartnerUse(site, "quiz");
+  if (limitMessage) {
+    return data<ActionResult>(
+      { ok: false, errors: [limitMessage] },
+      { status: 429 },
+    );
+  }
 
   const discoveryContext = storySlugResult.slug
     ? await loadPublishedDiscoveryStoryContext(storySlugResult.slug)
@@ -305,18 +320,8 @@ export async function action({ request }: Route.ActionArgs) {
   );
 }
 
-const QUIZ_SCENARIOS: VocabularyOption[] = [
-  { slug: "everyday", labelEn: "Everyday" },
-  { slug: "office", labelEn: "Office & business" },
-  { slug: "suit", labelEn: "Suit & formal evenings" },
-  { slug: "sport", labelEn: "Sport & weekends" },
-  { slug: "diving", labelEn: "Diving & water" },
-  { slug: "field", labelEn: "Outdoors & expeditions" },
-  { slug: "travel", labelEn: "Travel & flights" },
-];
-
-export async function loader({ request }: Route.LoaderArgs) {
-  if (!(await hasDiagnosticAccess(request))) {
+export async function loader({ request, context }: Route.LoaderArgs) {
+  if (!partnerSiteFrom(context) && !(await hasDiagnosticAccess(request))) {
     const storyContext = parseDiscoveryStorySlug(
       new URL(request.url).searchParams.get("story"),
     );
@@ -327,27 +332,8 @@ export async function loader({ request }: Route.LoaderArgs) {
     return redirect(`/?diagnostic=subscription${storyQuery}#newsletter-signup`);
   }
 
-  const [vocabulary, fx] = await Promise.all([
-    loadCatalogueVocabulary(),
-    loadFxTable(),
-  ]);
-  const options = (kind: VocabularyKind): VocabularyOption[] =>
-    vocabulary
-      .filter((row) => row.kind === kind && row.active)
-      .map((row) => ({ slug: row.slug, labelEn: row.labelEn }));
-
-  // Seven plain choices instead of the vocabulary's 44: together they cover
-  // every catalogue style (owner decision, 2026-10-01).
-  const scenarioSlugs = new Set(
-    options("wearing_scenario").map((option) => option.slug),
-  );
-  return {
-    scenarios: QUIZ_SCENARIOS.filter((option) =>
-      scenarioSlugs.has(option.slug),
-    ),
-    complications: options("complication"),
-    fx,
-  };
+  const [options, fx] = await Promise.all([loadQuizOptions(), loadFxTable()]);
+  return { ...options, fx };
 }
 
 export function meta(): ReturnType<Route.MetaFunction> {
@@ -384,6 +370,7 @@ export default function Quiz() {
   const loaderData = useLoaderData<typeof loader>();
   const location = useLocation();
   const navigation = useNavigation();
+  const embed = useEmbed();
   const [draft, setDraft] = useState<QuizDraft>(INITIAL_DRAFT);
   const [step, setStep] = useState(0);
   const [storageReady, setStorageReady] = useState(false);
@@ -426,14 +413,19 @@ export default function Quiz() {
 
   useEffect(() => {
     if (!storageReady) return;
-    window.sessionStorage.setItem(
-      QUESTIONNAIRE_V4_STORAGE_KEY,
-      JSON.stringify({
-        version: QUESTIONNAIRE_V4_VERSION,
-        step: step === SUMMARY_STEP ? SCREEN_COUNT - 1 : step,
-        draft,
-      }),
-    );
+    try {
+      window.sessionStorage.setItem(
+        QUESTIONNAIRE_V4_STORAGE_KEY,
+        JSON.stringify({
+          version: QUESTIONNAIRE_V4_VERSION,
+          step: step === SUMMARY_STEP ? SCREEN_COUNT - 1 : step,
+          draft,
+        }),
+      );
+    } catch {
+      // Storage can be blocked, e.g. inside a partner's frame; the quiz
+      // still works, it just isn't restored after a reload.
+    }
   }, [draft, step, storageReady]);
 
   useEffect(() => {
@@ -480,7 +472,11 @@ export default function Quiz() {
   };
 
   const restartQuiz = () => {
-    window.sessionStorage.removeItem(QUESTIONNAIRE_V4_STORAGE_KEY);
+    try {
+      window.sessionStorage.removeItem(QUESTIONNAIRE_V4_STORAGE_KEY);
+    } catch {
+      // Blocked storage: nothing was saved.
+    }
     setDraft(INITIAL_DRAFT);
     setStep(0);
     startTracked.current = false;
@@ -489,10 +485,12 @@ export default function Quiz() {
   if (step === SUMMARY_STEP && resultData) {
     return (
       <main className="quiz-shell">
-        <nav className="quiz-nav" aria-label="Diagnostic navigation">
-          <Link to="/">The Reserve</Link>
-          <span>Reference diagnostic</span>
-        </nav>
+        {embed ? null : (
+          <nav className="quiz-nav" aria-label="Diagnostic navigation">
+            <SurfaceLink to="/">The Reserve</SurfaceLink>
+            <span>Reference diagnostic</span>
+          </nav>
+        )}
         <section className="profile-summary" aria-labelledby="profile-heading">
           <span className="eyebrow">Your answers</span>
           <h1 id="profile-heading">Your search boundary</h1>
@@ -513,12 +511,17 @@ export default function Quiz() {
           {resultData.storyContext ? (
             <StoryContextPanel storyContext={resultData.storyContext} />
           ) : null}
-          <DossierDelivery
-            draft={draft}
-            funnelSource={funnelSource}
-            subscription={resultData.subscription}
-          />
-          <ExpertReportTeaser />
+          {/* No email, newsletter or paid add-on inside partner widgets. */}
+          {embed ? null : (
+            <>
+              <DossierDelivery
+                draft={draft}
+                funnelSource={funnelSource}
+                subscription={resultData.subscription}
+              />
+              <ExpertReportTeaser />
+            </>
+          )}
           <div className="summary-actions">
             <button
               className="button button--primary"
@@ -542,10 +545,12 @@ export default function Quiz() {
 
   return (
     <main className="quiz-shell">
-      <nav className="quiz-nav" aria-label="Diagnostic navigation">
-        <Link to="/">The Reserve</Link>
-        <span>Reference diagnostic</span>
-      </nav>
+      {embed ? null : (
+        <nav className="quiz-nav" aria-label="Diagnostic navigation">
+          <SurfaceLink to="/">The Reserve</SurfaceLink>
+          <span>Reference diagnostic</span>
+        </nav>
+      )}
 
       <section className="quiz-panel" aria-labelledby="question-heading">
         <div className="progress-copy">

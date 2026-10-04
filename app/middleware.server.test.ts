@@ -1,3 +1,6 @@
+import { RouterContextProvider } from "react-router";
+
+import { embedFrameContext } from "./embed-context";
 import { contentSecurityPolicy, requestMiddleware } from "./middleware.server";
 
 describe("request middleware", () => {
@@ -53,5 +56,35 @@ describe("request middleware", () => {
     expect(
       contentSecurityPolicy("not-a-dsn", "http://unsafe.example.test"),
     ).not.toContain("unsafe.example.test");
+  });
+
+  it("never lets another website frame an ordinary page", () => {
+    expect(contentSecurityPolicy()).toContain("frame-ancestors 'none'");
+  });
+
+  it("lets only the partner's registered websites frame a widget", async () => {
+    const request = new Request(
+      "https://example.test/embed/pk_live_abcdefghijklmnopqrstuvwx/quiz",
+    );
+    const context = new RouterContextProvider();
+    context.set(embedFrameContext, [
+      "https://shop.example.com",
+      "https://www.shop.example.com",
+    ]);
+    const response = (await requestMiddleware(
+      {
+        request,
+        context,
+        url: new URL(request.url),
+        pattern: "/embed/:key/quiz",
+        params: {},
+      },
+      () => Promise.resolve(new Response("ok", { status: 200 })),
+    )) as Response;
+
+    expect(response.headers.get("X-Frame-Options")).toBeNull();
+    expect(response.headers.get("Content-Security-Policy")).toContain(
+      "frame-ancestors https://shop.example.com https://www.shop.example.com",
+    );
   });
 });

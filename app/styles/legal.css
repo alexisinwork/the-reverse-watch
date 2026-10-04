@@ -48,3 +48,38 @@
 .legal-page a {
   color: var(--color-brass);
 }
+
+/* /partners: install instructions with copyable code. */
+.partner-page code {
+  padding: 0.1rem 0.3rem;
+  border-radius: 4px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: 0.85em;
+}
+
+.partner-code {
+  overflow-x: auto;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-base-raised);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.partner-code code {
+  padding: 0;
+  background: none;
+  white-space: pre;
+}
+
+.partner-page ol {
+  padding-left: 1.2rem;
+}
+
+.partner-page ol li {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}

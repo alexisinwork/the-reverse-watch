@@ -18,6 +18,9 @@ import {
   type CatalogueWatch,
 } from "./watch-catalogue";
 
+/** Longest watch name the alternatives search accepts. */
+export const ALTERNATIVES_NAME_MAX = 120;
+
 export const ALTERNATIVES_SCORING_VERSION = "1.3.0";
 
 /** A case within this many millimetres can be an alternative. */

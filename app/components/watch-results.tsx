@@ -1,6 +1,8 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { Await } from "react-router";
 
+import { postToHost } from "./embed-bridge";
+import { SurfaceLink, useEmbed } from "./surface";
 import { YouTubeCallout } from "./youtube-callout";
 import type {
   AiSearchView,
@@ -352,12 +354,20 @@ function ResultBody({
   fx: FxTable | null;
 }) {
   const [showAll, setShowAll] = useState(false);
+  const embed = useEmbed();
+  const count = result.status === "found" ? result.watches.length : 0;
+  useEffect(() => {
+    if (embed)
+      postToHost({ type: "reserve:results", feature: embed.feature, count });
+  }, [embed, count]);
   if (result.status === "unavailable") {
     return (
       <p className="empty-result">
         The search is unavailable right now. Please try again in a minute.
-        Meanwhile, <a href="/watches">Watches from movies</a> and the{" "}
-        <a href="/watches/archetype">archetype quiz</a> work as usual.
+        Meanwhile, <SurfaceLink to="/watches">Watches from movies</SurfaceLink>{" "}
+        and the{" "}
+        <SurfaceLink to="/watches/archetype">archetype quiz</SurfaceLink> work
+        as usual.
       </p>
     );
   }
@@ -457,6 +467,7 @@ export function WatchResults({
   // Every price on the site is shown in US dollars (owner decision),
   // converted from other currencies with the day's ECB reference rates.
   const displayCurrency = SITE_CURRENCY;
+  const embed = useEmbed();
   return (
     <section className="ai-results" aria-labelledby="ai-results-heading">
       <div className="result-section-heading">
@@ -494,7 +505,7 @@ export function WatchResults({
         </Await>
       </Suspense>
       {footnote ? <p className="result-footnote">{footnote}</p> : null}
-      <YouTubeCallout variant="panel" />
+      {embed ? null : <YouTubeCallout variant="panel" />}
     </section>
   );
 }
