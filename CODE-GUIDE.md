@@ -136,6 +136,10 @@ a fake fetch, so no test ever calls a real provider.
 
 ## Partner widgets
 
+Persistent commercial strategy, audit baseline and next action:
+`docs/business-plan.md`. Portable HTML/CSS/JavaScript demo:
+`public/watch-advisor-demo/` (download: `/downloads/the-reserve-native-demo.zip`).
+
 Paying partners put The Reserve's features on their own websites (owner
 decision, 2026-10-04). Everything is included for every partner.
 Step-by-step for adding a partner (and the email to send them):

@@ -1727,6 +1727,27 @@ metering failure (never blocks a paying partner), the widget loader, and the
 quiz/alternatives routes inside a widget (no subscription, no email, monthly
 limit). The WordPress PHP was not linted locally (no PHP runtime available).
 
+## Partner native demo and commercial continuity — 2026-10-24
+
+Owner follow-up: provide downloadable native JavaScript integration files and
+retain the audit/business strategy in the repository for future sessions.
+This extends the existing partner phase; it does not reopen the core engine.
+
+Delivered: `public/watch-advisor-demo/` with standalone HTML, CSS, public config,
+five tools mounted on demand through the existing loader, ready-event timeout
+and script errors; `/downloads/the-reserve-native-demo.zip`; persistent
+[`business plan`](business-plan.md) with source evidence, explicit financial
+assumptions, 12-week validation sequence and vertical recommendation hypothesis.
+`AGENTS.md` and `CODE-GUIDE.md` route future partner work to that record.
+
+Verification: `npm run check` passed on 2026-10-24 (83 test files, 500 tests,
+formatting, lint, types and production build). An offline jsdom smoke check with
+the real loader passed placeholder handling, all five mounts, preserved frames
+and the ready state. No Playwright/browser suite was run. Independent-domain execution
+is pending publication and a real public partner key. Next: owner installs on
+`oleksandr-kukhtin.dev`, then records the included five-feature, framing, quota,
+mobile and counter checklist. Retailer catalogues remain future scope.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

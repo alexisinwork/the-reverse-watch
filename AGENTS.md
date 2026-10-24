@@ -3,6 +3,11 @@
 Start with `CODE-GUIDE.md`: a plain-English map of the code and where to
 change what.
 
+Before commercial planning or partner-product work, read `docs/business-plan.md`.
+Keep its evidence, assumptions and current next action updated after relevant
+changes. Use the recorded baseline and subsequent diffs to avoid repeating a full
+audit without cause; do not treat unverified business hypotheses as product facts.
+
 ## Delivery boundaries
 
 - Work from `docs/implementation-roadmap.md` one phase at a time.

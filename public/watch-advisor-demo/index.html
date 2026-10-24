@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>The Reserve — Watch Advisor Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./config.js" defer></script>
+    <script src="./demo.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">The Reserve · Integration demo</p>
+        <h1>Find your next watch.</h1>
+        <p>Explore watches for your budget, preferences and everyday needs.</p>
+      </header>
+      <nav aria-label="Watch tools">
+        <button type="button" data-feature="quiz" aria-pressed="true">Watch finder</button>
+        <button type="button" data-feature="archetype" aria-pressed="false">Your archetype</button>
+        <button type="button" data-feature="find" aria-pressed="false">Film &amp; TV</button>
+        <button type="button" data-feature="alternatives" aria-pressed="false">Alternatives</button>
+        <button type="button" data-feature="stories" aria-pressed="false">Stories</button>
+      </nav>
+      <section aria-label="The Reserve watch advisor">
+        <p id="status" role="status" aria-live="polite">Preparing the watch advisor…</p>
+        <div id="widgets"></div>
+        <button id="retry" type="button" hidden>Reload demo</button>
+        <noscript>Enable JavaScript to use the watch advisor.</noscript>
+      </section>
+      <footer><a href="https://thereserve.watch/partners">Powered by The Reserve</a></footer>
+    </main>
+  </body>
+</html>

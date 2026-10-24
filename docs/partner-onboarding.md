@@ -8,6 +8,11 @@ channels: [`partner-distribution-playbook.md`](partner-distribution-playbook.md)
 
 ## Before you start
 
+For a complete standalone HTML/CSS/JavaScript demo, download
+https://thereserve.watch/downloads/the-reserve-native-demo.zip.
+Source and installation checklist: `public/watch-advisor-demo/README.txt`.
+Replace its placeholder with this site's public key before publishing.
+
 Agree the price with the partner (every feature is included) and ask for:
 
 - **Every address their site is reached at**, exactly as it appears in the

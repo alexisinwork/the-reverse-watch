@@ -1,5 +1,11 @@
 # Future Expansion Strategy
 
+Current operating plan and evidence baseline:
+[`business-plan.md`](business-plan.md). The 2026-10-24 owner follow-up prioritizes
+the native partner demo, paid-pilot validation and measured support/cost over
+new distribution channels or a general multi-industry engine. Historical phases
+below remain recorded; the implementation roadmap controls delivery.
+
 This document sequences commercial expansion after the core recommendation
 engine and Phase 8's celebrity/cinema discovery product. It records hypotheses,
 not revenue guarantees. Validate current partner terms, pricing, tax, consumer
