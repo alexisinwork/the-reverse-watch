@@ -68,6 +68,7 @@ try {
   let unreferenced = 0;
   let exactCatalogueMatches = 0;
   let rowsWithDialsSpecs = 0;
+  let canonicalTitleConflicts = 0;
   for (const row of rows) {
     if (!row.reference_code) unreferenced++;
     if (row.reference_code) {
@@ -99,9 +100,23 @@ try {
     };
     const merged = mergeCatalogueFacts([watch], catalogue)[0]!;
     if (JSON.stringify(merged) === JSON.stringify(watch)) continue;
+    let model = merged.model;
+    if (model !== row.model) {
+      const collision = await sql<{ id: string }[]>`
+        select id from private.ai_watches
+        where id <> ${row.watch_id}
+          and lower(brand)=lower(${row.brand})
+          and lower(model)=lower(${model})
+          and lower(coalesce(reference_code,''))=lower(coalesce(${row.reference_code},''))
+        limit 1`;
+      if (collision.length) {
+        model = row.model;
+        canonicalTitleConflicts++;
+      }
+    }
     const result =
       await sql`update private.ai_watch_search_results set price_note=${merged.priceNote},details=${sql.json(merged.details)} where search_id=${row.search_id} and rank=${row.rank}`;
-    await sql`update private.ai_watches set model=${merged.model}, image_url=coalesce(image_url,${merged.imageUrl}) where id=${row.watch_id}`;
+    await sql`update private.ai_watches set model=${model}, image_url=coalesce(image_url,${merged.imageUrl}) where id=${row.watch_id}`;
     if (Number(result.count) > 0) {
       changed++;
     }
@@ -114,6 +129,7 @@ try {
     exactCatalogueMatchedRows: exactCatalogueMatches,
     cachedRowsWithoutReference: unreferenced,
     cachedRowsWithDialsSpecs: rowsWithDialsSpecs,
+    canonicalTitleConflicts,
     rowsRefreshed: changed,
     policy:
       "Only fields from unique, reference-confirmed local catalogue matches were added; existing facts, prices when not newly confirmed, source/rationale, ranks, search membership and attribution were preserved.",

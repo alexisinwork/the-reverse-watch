@@ -3,6 +3,19 @@ import { z } from "zod";
 import { catalogueIdentityKey } from "./watch-catalogue";
 
 const stringList = z.array(z.string()).optional().default([]);
+const complicationList = z
+  .array(
+    z.union([
+      z.string(),
+      z.object({ name: z.string().optional() }).passthrough(),
+    ]),
+  )
+  .optional()
+  .default([]);
+const complicationNames = (values: Array<string | { name?: string }>) =>
+  values
+    .map((value) => (typeof value === "string" ? value : (value.name ?? "")))
+    .filter(Boolean);
 export const dialsModelSchema = z
   .object({
     id: z.string(),
@@ -48,7 +61,7 @@ export const dialsModelSchema = z
         numberOfJewels: z.number().nullable().optional(),
         powerReserve: z.number().nullable().optional(),
         frequency: z.number().nullable().optional(),
-        complications: stringList,
+        complications: complicationList,
       })
       .nullable()
       .optional(),
@@ -95,7 +108,9 @@ export function dialsStyles(model: DialsModel) {
       .filter((part): part is string => typeof part === "string")
       .join(" "),
   );
-  const complications = (model.caliber?.complications ?? []).map(fold);
+  const complications = complicationNames(
+    model.caliber?.complications ?? [],
+  ).map(fold);
   const styles = new Set<string>();
   if (
     /diver|diving|dive|submariner/.test(text) &&
@@ -136,7 +151,7 @@ export function dialsFacts(model: DialsModel) {
     displayCaseback: model.back
       ? /open|exhibition|sapphire/i.test(model.back)
       : null,
-    complications: (model.caliber?.complications ?? []).filter(Boolean),
+    complications: complicationNames(model.caliber?.complications ?? []),
   };
 }
 
@@ -187,6 +202,6 @@ export function dialsSupplementalDetails(model: DialsModel) {
   add("Jewels", model.caliber?.numberOfJewels);
   add("Power reserve (hours)", model.caliber?.powerReserve);
   add("Frequency (vibrations/hour)", model.caliber?.frequency);
-  add("Complications", model.caliber?.complications);
+  add("Complications", complicationNames(model.caliber?.complications ?? []));
   return details;
 }

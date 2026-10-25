@@ -63,6 +63,10 @@ const boundedNumber = (value: number | null, min: number, max: number) =>
   value !== null && Number.isFinite(value) && value >= min && value <= max
     ? value
     : null;
+const boundedInteger = (value: number | null, min: number, max: number) =>
+  value !== null && Number.isInteger(value) && value >= min && value <= max
+    ? value
+    : null;
 const sourceMeta = (
   row: MirrorRow,
   model: ReturnType<typeof dialsModelSchema.parse>,
@@ -179,7 +183,9 @@ try {
         ...rawFacts,
         caseDiameterMm: boundedNumber(rawFacts.caseDiameterMm, 15, 70),
         caseThicknessMm: boundedNumber(rawFacts.caseThicknessMm, 2, 40),
-        waterResistanceM: boundedNumber(rawFacts.waterResistanceM, 0, 20000),
+        // The canonical catalogue stores metres as an integer. Fractional
+        // source values are ambiguous and remain in the archived Dials row.
+        waterResistanceM: boundedInteger(rawFacts.waterResistanceM, 0, 20000),
       };
       const meta = sourceMeta(row, model);
       const duplicate = count !== 1 || lookup.length > 1;
@@ -276,7 +282,7 @@ try {
           styles: dialsStyles(model),
           case_diameter_mm: boundedNumber(dials.caseDiameterMm, 15, 70),
           case_thickness_mm: boundedNumber(dials.caseThicknessMm, 2, 40),
-          water_resistance_m: boundedNumber(dials.waterResistanceM, 0, 20000),
+          water_resistance_m: dials.waterResistanceM,
           movement: dials.movement,
           crystal: dials.crystal,
           display_caseback: dials.displayCaseback,

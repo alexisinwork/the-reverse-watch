@@ -28,7 +28,7 @@ const model = dialsModelSchema.parse({
     reference: "8800",
     movement: "Automatic",
     powerReserve: 48,
-    complications: ["Date"],
+    complications: [{ name: "Date", slug: "date", type: "DATE" }],
   },
   pictures: [{ url: "https://images.dials.co/no-hotlink.png" }],
 });
@@ -56,6 +56,7 @@ describe("Dials local catalogue normalization", () => {
       Series: "Seamaster",
       "Calibre reference": "8800",
       "Power reserve (hours)": 48,
+      Complications: "Date",
     });
     expect(dialsSupplementalDetails(model)).not.toHaveProperty("pictures");
   });
