@@ -1871,6 +1871,10 @@ live RPC. Owner's follow-up pins missing-fact/reference/image research to Perple
 the independent price check and previously authorized $100 cumulative allowance
 remain. No new allowance was created by approval or restart.
 
+Delivery `74b3d33` is deployed as `dpl_8Jq9e6g8uMM4A6fWrWJ21RsZt29Q`;
+authenticated production admin smoke passed HTTP 200 with 44,880 and both pool
+labels visible. Fast gate: 529 tests/types/lint/format/build passed.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

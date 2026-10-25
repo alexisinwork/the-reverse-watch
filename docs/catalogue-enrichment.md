@@ -18,6 +18,12 @@ This is one-time approval, not automatic approval of future finds. The owner als
 explicitly requests Perplexity API research for unverified claims/references and
 image URLs; the worker now pins its research provider accordingly, retaining the
 independent Muse price cross-check and the same cumulative $100 allowance.
+Delivery: `74b3d33`, production deployment
+`dpl_8Jq9e6g8uMM4A6fWrWJ21RsZt29Q`. Authenticated production GET returned HTTP
+200 and showed the entire 44,880-row catalogue plus separate recommendation and
+unpriced-import totals. Evidence: `docs/reports/admin-catalogue-production.json`.
+The fast gate passed 529 tests; the worker remained active under its existing
+allowance. Editorial approval does not reset research progress or spending.
 
 - All 42,590 source records are archived in `private.watch_catalogue_intake`,
   with source commit, original source pointers and assertions. Original local
