@@ -1786,6 +1786,17 @@ and twelve existing desktop/mobile checks passed; admin mobile controls verified
 Shopify schema/download validation passed, but hosted builder/store verification
 remains separate. Next checkpoint remains public portfolio integration.
 
+### Result deduplication and budget input follow-up
+
+Follow-up 2026-10-25: the owner requests display-time duplicate prevention across
+all tools, explicitly without a cache-wide audit or rewrite. The shared result
+renderer now checks normalized brand/title OR brand/reference matches before
+showing cards, including streamed previews and Also worth a look. It keeps the
+first ranked reference's facts intact; raw caches/catalogue variants remain.
+Archetype counts reflect unique display cards. Alternatives now show and submit
+only Price or Range for the selected budget mode, retaining input values when
+switching. Both changes apply to the app and every widget via shared routes.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

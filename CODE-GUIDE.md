@@ -75,6 +75,9 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 5. **Show** (`components/watch-results.tsx`): main picks, "Also worth a look"
    (reference not confirmed), "Not yet reviewed" badges, prices converted
    with ECB rates (`domain/fx.ts`).
+   A final shared check (`domain/watch-result-dedup.ts`) shows repeated
+   brand/title or brand/reference matches only once, including streamed cards
+   and duplicates across sections. Raw catalogue/cache facts remain unchanged.
 6. **Optional email** (`domain/quiz-email.server.ts`): Beehiiv newsletter and
    Resend dossier, only with explicit opt-in.
 

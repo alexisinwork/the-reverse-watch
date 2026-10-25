@@ -94,6 +94,11 @@ quiz.
 - Actor/movie watches and `/watches/find` are to use the same approach and
   publish immediately, with no editorial review step.
 - Store image URLs only, never image files.
+- Final watch-card rendering must remove repeated normalized brand/title or
+  brand/reference matches across all result sections and streamed previews.
+  Use `app/domain/watch-result-dedup.ts` after hard filtering; keep the first
+  ranked card's reference facts intact and preserve raw cached/catalogue data.
+  The owner requested display-time checking, not a cache-wide cleanup.
 - Only search constraints may reach Muse Spark or Perplexity. Never send
   email, session, cookie, IP, or other identifying data. No visitor data is
   stored.

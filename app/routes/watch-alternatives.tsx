@@ -3,7 +3,7 @@
  * budget, and see watches that look and work like it for less, new or
  * pre-owned. The rules are in app/domain/alternatives.ts.
  */
-import { Suspense, useMemo } from "react";
+import { Suspense, useMemo, useState } from "react";
 import { Await, Form, redirect, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-alternatives";
@@ -20,6 +20,7 @@ import {
   readAlternativesForm,
   startAlternativesSearch,
   type AlternativesPage,
+  type AlternativesForm,
 } from "../domain/alternatives-search.server";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { formatMoney } from "../domain/fx";
@@ -86,6 +87,75 @@ export function meta({ data }: Route.MetaArgs) {
 }
 
 type LoadedTarget = NonNullable<AlternativesPage["target"]>;
+
+function BudgetFields({ form }: { form: AlternativesForm }) {
+  const [mode, setMode] = useState(form.mode);
+  const [amount, setAmount] = useState(form.amount);
+  const [rangeId, setRangeId] = useState(form.range);
+  return (
+    <fieldset className="alternatives-fieldset">
+      <legend>Budget</legend>
+      <label className="alternatives-choice">
+        <input
+          checked={mode === "exact"}
+          onChange={() => setMode("exact")}
+          name="mode"
+          type="radio"
+          value="exact"
+        />
+        <span>Around a price (± 1,000)</span>
+      </label>
+      <label className="alternatives-choice">
+        <input
+          checked={mode === "range"}
+          onChange={() => setMode("range")}
+          name="mode"
+          type="radio"
+          value="range"
+        />
+        <span>A price range</span>
+      </label>
+      <div className="field-row">
+        <label className="input-stack">
+          <span>Currency</span>
+          <select defaultValue={form.currency} name="currency">
+            {BUDGET_CURRENCIES.map((currency) => (
+              <option key={currency}>{currency}</option>
+            ))}
+          </select>
+        </label>
+        {mode === "exact" ? (
+          <label className="input-stack">
+            <span>Price</span>
+            <input
+              value={amount}
+              onChange={(event) => setAmount(event.target.value)}
+              inputMode="numeric"
+              name="amount"
+              placeholder="e.g. 2000"
+              type="text"
+            />
+          </label>
+        ) : (
+          <label className="input-stack">
+            <span>Range</span>
+            <select
+              value={rangeId}
+              onChange={(event) => setRangeId(event.target.value)}
+              name="range"
+            >
+              {PRICE_RANGES.map((range) => (
+                <option key={range.id} value={range.id}>
+                  {priceRangeLabel(range)}
+                </option>
+              ))}
+            </select>
+          </label>
+        )}
+      </div>
+    </fieldset>
+  );
+}
 
 function TargetPanel({ target }: { target: LoadedTarget }) {
   return (
@@ -176,57 +246,10 @@ export default function WatchAlternatives() {
             </label>
           </div>
 
-          <fieldset className="alternatives-fieldset">
-            <legend>Budget</legend>
-            <label className="alternatives-choice">
-              <input
-                defaultChecked={form.mode === "exact"}
-                name="mode"
-                type="radio"
-                value="exact"
-              />
-              <span>Around a price (± 1,000)</span>
-            </label>
-            <label className="alternatives-choice">
-              <input
-                defaultChecked={form.mode === "range"}
-                name="mode"
-                type="radio"
-                value="range"
-              />
-              <span>A price range</span>
-            </label>
-            <div className="field-row">
-              <label className="input-stack">
-                <span>Currency</span>
-                <select defaultValue={form.currency} name="currency">
-                  {BUDGET_CURRENCIES.map((currency) => (
-                    <option key={currency}>{currency}</option>
-                  ))}
-                </select>
-              </label>
-              <label className="input-stack">
-                <span>Price</span>
-                <input
-                  defaultValue={form.amount}
-                  inputMode="numeric"
-                  name="amount"
-                  placeholder="e.g. 2000"
-                  type="text"
-                />
-              </label>
-              <label className="input-stack">
-                <span>Or range</span>
-                <select defaultValue={form.range} name="range">
-                  {PRICE_RANGES.map((range) => (
-                    <option key={range.id} value={range.id}>
-                      {priceRangeLabel(range)}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-          </fieldset>
+          <BudgetFields
+            form={form}
+            key={`${form.mode}|${form.amount}|${form.range}|${form.currency}`}
+          />
 
           <fieldset className="alternatives-fieldset">
             <legend>Are quartz or solar watches fine?</legend>

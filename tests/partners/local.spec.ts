@@ -189,6 +189,46 @@ test("submit cheaper alternatives against the real catalogue", async ({
   ).toBeVisible();
 });
 
+test("alternatives shows and submits only the selected budget input", async ({
+  page,
+}) => {
+  await page.goto("/watch-advisor-demo");
+  const frame = await openTool(page, "alternatives");
+  await expect(frame.getByLabel("Price", { exact: true })).toBeVisible();
+  await expect(frame.locator('[name="range"]')).toHaveCount(0);
+  await frame.getByLabel("Price", { exact: true }).fill("2500");
+  await frame
+    .getByRole("radio", { name: "A price range", exact: true })
+    .check();
+  await expect(frame.locator('[name="amount"]')).toHaveCount(0);
+  await frame
+    .getByRole("combobox", { name: "Range", exact: true })
+    .selectOption("2000_3000");
+  const rangeData = await frame
+    .locator("form")
+    .evaluate((form) =>
+      Object.fromEntries(new FormData(form as HTMLFormElement)),
+    );
+  expect(rangeData).toMatchObject({ mode: "range", range: "2000_3000" });
+  expect(rangeData).not.toHaveProperty("amount");
+  await frame.getByRole("radio", { name: /Around a price/ }).check();
+  await expect(frame.getByLabel("Price", { exact: true })).toHaveValue("2500");
+  await expect(frame.locator('[name="range"]')).toHaveCount(0);
+  const exactData = await frame
+    .locator("form")
+    .evaluate((form) =>
+      Object.fromEntries(new FormData(form as HTMLFormElement)),
+    );
+  expect(exactData).toMatchObject({ mode: "exact", amount: "2500" });
+  expect(exactData).not.toHaveProperty("range");
+  await frame
+    .getByRole("radio", { name: "A price range", exact: true })
+    .check();
+  await expect(
+    frame.getByRole("combobox", { name: "Range", exact: true }),
+  ).toHaveValue("2000_3000");
+});
+
 test("script failure displays a working retry", async ({ page }) => {
   await page.route(`${service}/embed.js`, (route) => route.abort());
   await page.goto("/watch-advisor-demo");

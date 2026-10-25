@@ -219,7 +219,7 @@ export default function WatchArchetype() {
               eyebrow={`Chosen for ${band ?? "your price idea"}`}
               footnote="Chosen by The Reserve from its watch catalogue for this archetype and the price idea you picked. Prices are approximate; the full diagnostic filters by your exact budget and wrist size."
               fx={fx}
-              heading={`Ten watches for ${result.archetype.title}`}
+              heading={`${watches.length} ${watches.length === 1 ? "watch" : "watches"} for ${result.archetype.title}`}
               mode="quiz"
               result={{
                 status: "found",

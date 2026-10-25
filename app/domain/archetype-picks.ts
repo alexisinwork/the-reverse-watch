@@ -6,6 +6,7 @@
 import type { FoundWatch } from "./ai-watch-types";
 import type { ArchetypeId, PRICE_COMFORTS } from "./discovery-archetype";
 import picksFile from "../data/archetype-picks.json";
+import { uniqueWatchResults } from "./watch-result-dedup";
 
 export type PriceComfort = (typeof PRICE_COMFORTS)[number];
 
@@ -66,22 +67,24 @@ export function archetypeWatches(
   archetypeId: ArchetypeId,
   band: PriceComfort,
 ): FoundWatch[] {
-  return (picks.lists?.[archetypeId]?.[band] ?? []).map((pick) => ({
-    brand: pick.brand,
-    model: pick.model,
-    referenceCode: pick.referenceCode,
-    // Source links are never shown to visitors (owner decision).
-    sourceUrl: "",
-    imageUrl: pick.imageUrl,
-    priceNote: null,
-    rationale: pick.why,
-    details: {
-      price: pick.price,
-      referenceVerified: pick.referenceConfirmed === true,
-      ...(pick.sourceKind ? { sourceKind: pick.sourceKind } : {}),
-      caseDiameterMm: pick.caseDiameterMm,
-      waterResistanceM: pick.waterResistanceM,
-      movement: pick.movement,
-    },
-  }));
+  return uniqueWatchResults(
+    (picks.lists?.[archetypeId]?.[band] ?? []).map((pick) => ({
+      brand: pick.brand,
+      model: pick.model,
+      referenceCode: pick.referenceCode,
+      // Source links are never shown to visitors (owner decision).
+      sourceUrl: "",
+      imageUrl: pick.imageUrl,
+      priceNote: null,
+      rationale: pick.why,
+      details: {
+        price: pick.price,
+        referenceVerified: pick.referenceConfirmed === true,
+        ...(pick.sourceKind ? { sourceKind: pick.sourceKind } : {}),
+        caseDiameterMm: pick.caseDiameterMm,
+        waterResistanceM: pick.waterResistanceM,
+        movement: pick.movement,
+      },
+    })),
+  );
 }

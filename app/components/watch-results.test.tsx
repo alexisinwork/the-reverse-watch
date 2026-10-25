@@ -15,6 +15,41 @@ const watch = (index: number, misses?: string[]): FoundWatch => ({
 });
 
 describe("quiz shortlist", () => {
+  it("checks both titles and references before rendering any result section", () => {
+    const first = {
+      ...watch(1),
+      brand: "Omega",
+      model: "Planet Ocean",
+      referenceCode: "2201.50.00",
+    };
+    render(
+      <WatchResults
+        eyebrow="Picks"
+        fx={null}
+        heading="Watches"
+        mode="quiz"
+        result={{
+          status: "found",
+          fromCache: true,
+          summary: "3 watches.",
+          watches: [
+            first,
+            {
+              ...first,
+              model: "Seamaster Planet Ocean",
+              referenceCode: "2201-50-00",
+            },
+            { ...first, referenceCode: "232.30.42.21.01.001" },
+          ],
+          alsoWorth: [{ ...first, referenceCode: "ref789" }, watch(2)],
+        }}
+      />,
+    );
+    expect(screen.getAllByRole("article")).toHaveLength(2);
+    expect(
+      screen.getAllByRole("heading", { level: 3, name: /Planet Ocean/ }),
+    ).toHaveLength(1);
+  });
   it("tags only the cards whose maker reference is not confirmed", () => {
     render(
       <WatchResults

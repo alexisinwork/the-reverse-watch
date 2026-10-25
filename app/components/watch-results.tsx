@@ -12,6 +12,10 @@ import type {
 } from "../domain/ai-watch-types";
 import { convert, formatMoney, type FxTable } from "../domain/fx";
 import { QUIZ_SHOWN_FIRST } from "../domain/watch-catalogue";
+import {
+  uniqueSearchView,
+  uniqueWatchResults,
+} from "../domain/watch-result-dedup";
 
 type Mode = "quiz" | "film";
 
@@ -87,8 +91,8 @@ function SearchProgress({
     .find((entry) => seconds >= entry.after)!;
   const current = events.at(-1)?.text ?? fallback.text;
   const earlier = events.slice(0, -1).slice(-5);
-  const confirmed = events.flatMap((event) =>
-    event.watch ? [event.watch] : [],
+  const confirmed = uniqueWatchResults(
+    events.flatMap((event) => (event.watch ? [event.watch] : [])),
   );
   return (
     <div className="search-progress" role="status" aria-live="polite">
@@ -510,7 +514,7 @@ export function WatchResults({
               displayCurrency={displayCurrency}
               fx={fx}
               mode={mode}
-              result={resolved}
+              result={uniqueSearchView(resolved)}
             />
           )}
         </Await>

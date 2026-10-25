@@ -218,6 +218,17 @@ download parity were checked, but no hosted Shopify/builder installation or
 marketplace publication is claimed. Owner, agent and partner checklists are in
 `docs/partner-onboarding.md`, `AGENTS.md`, `/admin/sites` and `/partners`.
 
+Result UI follow-up, 2026-10-25: shared display-time deduplication now removes
+repeated normalized brand/title or brand/reference cards across all tools,
+widgets, result sections and live previews. Different reference facts are not
+merged. The owner's correction explicitly excludes cache-wide cleanup; stored
+results/catalogue records were not rewritten. Daniel Craig's cached actor
+result displays five unique cards, with Planet Ocean and Aqua Terra once each.
+The alternatives budget input now shows/submits Price or Range exclusively,
+preserving each value while switching. Fast gate: 508 tests/types/build passed;
+seven partner/WordPress and twelve desktop/mobile browser checks passed. Main
+app budget toggling and the Daniel Craig result were also checked in-browser.
+
 Download: `/downloads/the-reserve-native-demo.zip`. Source:
 `public/watch-advisor-demo/`. Regenerate after edits with PowerShell:
 
