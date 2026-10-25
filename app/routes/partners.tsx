@@ -51,7 +51,7 @@ function Code({ children }: { children: string }) {
 
 export default function Partners() {
   const { origin } = useLoaderData<typeof loader>();
-  const tag = `<div data-reserve="quiz"></div>
+  const tag = `<div data-reserve="all"></div>
 <script src="${origin}/embed.js" data-key="pk_live_YOUR_KEY" async></script>`;
   return (
     <main className="legal-page partner-page" id="main-content">
@@ -102,6 +102,12 @@ export default function Partners() {
         </ol>
 
         <h2>What you can add</h2>
+        <p>
+          <code>all</code> adds the complete five-tool advisor with tabs. Each
+          tool keeps its own answers and results; results do not link to other
+          tools. The only link on quiz results is the Powered by The Reserve
+          credit.
+        </p>
         <ul>
           {PARTNER_FEATURES.map((feature) => (
             <li key={feature}>
@@ -113,8 +119,9 @@ export default function Partners() {
 
         <h2>Any website: paste two lines</h2>
         <p>
-          Put this where the widget should appear. Change <code>quiz</code> to
-          any feature above. The widget grows to fit its content.
+          Put this where the widget should appear. Keep <code>all</code> for the
+          complete advisor, or use any single feature above. The widget grows to
+          fit its content.
         </p>
         <Code>{tag}</Code>
         <p>
@@ -123,7 +130,7 @@ export default function Partners() {
           anywhere else on the page is enough.
         </p>
 
-        <h2>WordPress</h2>
+        <h2 id="wordpress">WordPress</h2>
         <ol>
           <li>
             Download the plugin:{" "}
@@ -145,8 +152,15 @@ export default function Partners() {
             Reserve&rdquo; block in the editor:
           </li>
         </ol>
-        <Code>{`[the_reserve feature="quiz"]
+        <Code>{`[the_reserve feature="all"]
 [the_reserve feature="find" scheme="light" accent="#0a7cff"]`}</Code>
+        <p>
+          For Elementor use its Shortcode widget; for Divi use a Text module
+          that processes shortcodes. In the standard block editor use Shortcode
+          or The Reserve. Choose “All five tools” in The Reserve block settings
+          for the complete advisor. Check the published page rather than the
+          editor preview.
+        </p>
 
         <h2>Shopify</h2>
         <ol>
@@ -157,10 +171,30 @@ export default function Partners() {
             <em>Add section → Custom Liquid</em> (or the &ldquo;Custom
             liquid&rdquo; block inside a section).
           </li>
-          <li>Paste the two lines above and save.</li>
+          <li>
+            Paste the all-tools code above, save, and check the published
+            storefront. Register your custom domain and any myshopify.com
+            address you actually use.
+          </li>
         </ol>
+        <p>
+          For a configurable theme section without an app, download{" "}
+          <a href="/downloads/the-reserve-shopify-section.liquid">
+            the-reserve-shopify-section.liquid
+          </a>
+          , add its contents to <code>sections/the-reserve-advisor.liquid</code>{" "}
+          in a copy of your theme, then Customize → Add section → The Reserve
+          advisor. Paste your public key and select your look. Preview before
+          publishing. The app block source is also available for a
+          developer-managed Shopify app; this is not an App Store listing.
+        </p>
 
-        <h2>Wix, Squarespace, Webflow and others</h2>
+        <h2 id="builders">Wix, Squarespace, Webflow and others</h2>
+        <p>
+          Use the same all-tools snippet above. No platform-specific API key or
+          app is needed; your plan must allow JavaScript embeds. Never paste a
+          secret key. Test a published page on each exact registered origin.
+        </p>
         <ul>
           <li>
             <strong>Wix:</strong> <em>Add → Embed code → Embed HTML</em>, choose
@@ -176,12 +210,77 @@ export default function Partners() {
             the two lines.
           </li>
           <li>
+            <strong>Framer:</strong> Insert → Embed → HTML, paste the full
+            snippet and publish. Set enough height when the builder wraps it in
+            another frame.
+          </li>
+          <li>
+            <strong>Ghost:</strong> add an HTML card to a page or post, paste
+            the snippet and publish.
+          </li>
+          <li>
+            <strong>Carrd:</strong> add Embed → Code on a plan that supports
+            custom code; paste the snippet and publish.
+          </li>
+          <li>
             <strong>Google Tag Manager:</strong> a Custom HTML tag with the
             script line, then add{" "}
             <code>&lt;div data-reserve=&quot;quiz&quot;&gt;&lt;/div&gt;</code>{" "}
             to the page.
           </li>
         </ul>
+        <p>
+          Wix and other nested embeds may use an additional frame origin. Ask
+          the owner to register the exact intermediate origin as well as your
+          public domain; every ancestor must be allowed. Do not use wildcard
+          origins. Allow the Reserve origin in your script, style and frame
+          content-security policies. The shared advisor stylesheet is{" "}
+          <code>/embed.css</code>.
+        </p>
+        <h2>Before you call the install complete</h2>
+        <ol>
+          <li>Publish, then open the page in a private browser window.</li>
+          <li>
+            Complete all five tools and switch tabs: previous answers must
+            remain.
+          </li>
+          <li>
+            Check mobile width, resizing, keyboard focus, source/review labels
+            and the Powered by credit.
+          </li>
+          <li>
+            Confirm quiz results contain no links to other tools and no email or
+            subscription gate.
+          </li>
+          <li>
+            Send the owner the published page URL and the test date so they can
+            confirm feature counters in admin.
+          </li>
+        </ol>
+        <p>
+          Platform instructions checked 2026-10-25 against{" "}
+          <a href="https://developer.wordpress.org/reference/functions/register_block_type/">
+            WordPress
+          </a>
+          ,{" "}
+          <a href="https://shopify.dev/docs/storefronts/themes/architecture/sections/section-schema">
+            Shopify
+          </a>
+          ,{" "}
+          <a href="https://support.squarespace.com/hc/en-us/articles/206543167-Add-custom-code-to-a-page-with-code-blocks">
+            Squarespace
+          </a>
+          ,{" "}
+          <a href="https://help.webflow.com/hc/en-us/articles/33961332238611-Custom-code-embed">
+            Webflow
+          </a>{" "}
+          and{" "}
+          <a href="https://www.framer.com/help/articles/how-to-add-an-iframe-or-embed-script/">
+            Framer
+          </a>
+          . A supported embed method does not establish a tested installation on
+          every hosted builder.
+        </p>
 
         <h2>Your colours</h2>
         <p>

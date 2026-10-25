@@ -3,7 +3,7 @@
  * Plugin Name:       The Reserve Watch Widgets
  * Plugin URI:        https://thereserve.watch/partners
  * Description:       Add The Reserve's watch finder, archetype quiz, film watch search, cheaper alternatives and watch stories to any page with a shortcode or block.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            The Reserve
@@ -22,12 +22,13 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-define('THE_RESERVE_VERSION', '1.0.0');
+define('THE_RESERVE_VERSION', '1.1.0');
 define('THE_RESERVE_OPTION', 'the_reserve_settings');
 define('THE_RESERVE_DEFAULT_URL', 'https://thereserve.watch');
 
 function the_reserve_features() {
 	return array(
+		'all'          => __('All five tools (tabbed advisor)', 'the-reserve'),
 		'quiz'         => __('Watch diagnostic (shortlist)', 'the-reserve'),
 		'archetype'    => __('Watch archetype quiz', 'the-reserve'),
 		'find'         => __('Watches from film, TV and people', 'the-reserve'),
@@ -132,7 +133,7 @@ add_filter('script_loader_tag', 'the_reserve_script_tag', 10, 2);
 
 function the_reserve_render(array $atts) {
 	$settings = the_reserve_settings();
-	$feature  = isset($atts['feature']) ? sanitize_key($atts['feature']) : 'quiz';
+	$feature  = isset($atts['feature']) ? sanitize_key($atts['feature']) : 'all';
 	if (!array_key_exists($feature, the_reserve_features())) {
 		$feature = 'quiz';
 	}
@@ -160,7 +161,7 @@ function the_reserve_render(array $atts) {
 function the_reserve_shortcode($atts) {
 	$atts = shortcode_atts(
 		array(
-			'feature' => 'quiz',
+			'feature' => 'all',
 			'scheme'  => '',
 			'accent'  => '',
 			'bg'      => '',
@@ -197,7 +198,7 @@ function the_reserve_register_block() {
 			'editor_script'   => 'the-reserve-block-editor',
 			'render_callback' => 'the_reserve_render',
 			'attributes'      => array(
-				'feature' => array('type' => 'string', 'default' => 'quiz'),
+				'feature' => array('type' => 'string', 'default' => 'all'),
 				'scheme'  => array('type' => 'string', 'default' => ''),
 				'accent'  => array('type' => 'string', 'default' => ''),
 				'params'  => array('type' => 'string', 'default' => ''),
@@ -247,7 +248,13 @@ function the_reserve_settings_page() {
 	?>
 	<div class="wrap">
 		<h1><?php esc_html_e('The Reserve watch widgets', 'the-reserve'); ?></h1>
-		<p><?php esc_html_e('Add a widget with the shortcode [the_reserve feature="quiz"] or the "The Reserve" block. Features: quiz, archetype, find, alternatives, stories.', 'the-reserve'); ?></p>
+		<p><?php esc_html_e('Add all five tools with [the_reserve feature="all"] or the "The Reserve" block. Individual tools: quiz, archetype, find, alternatives, stories.', 'the-reserve'); ?></p>
+		<ol>
+			<li><?php esc_html_e('Ask The Reserve to register every exact published website origin and give you a public partner key.', 'the-reserve'); ?></li>
+			<li><?php esc_html_e('Save the public key below, add a Shortcode block with [the_reserve feature="all"], then publish.', 'the-reserve'); ?></li>
+			<li><?php esc_html_e('Test each tab on desktop and mobile. Results stay within the selected tool; only the Powered by link leaves the results.', 'the-reserve'); ?></li>
+		</ol>
+		<p><a href="https://thereserve.watch/partners#wordpress" target="_blank" rel="noopener noreferrer"><?php esc_html_e('Partner installation guide', 'the-reserve'); ?></a></p>
 		<form action="options.php" method="post">
 			<?php settings_fields('the_reserve'); ?>
 			<table class="form-table" role="presentation">

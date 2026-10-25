@@ -196,6 +196,28 @@ origin, set its public Vite configuration in the portfolio deployment and verify
 settings remain ignored; no public deployment is claimed here.
 WordPress/Shopify publication remains deferred until the public native install works.
 
+Partner UI/distribution follow-up, 2026-10-25: fixed the partner page's accidental
+catalogue thumbnail column, styled responsive forms/cards, and added role-based
+onboarding plus personalized native/WordPress/builder snippets in admin. The ten
+audited inactive test fixtures were removed under the owner's explicit cleanup
+request; an ignored local backup exists. Only the two active owner/local sites
+remain. Future integration runs remove their own guarded fixture IDs; real
+partners/history retain the no-deletion policy.
+
+The shared loader now supports `data-reserve="all"` with five on-demand tabs and
+preserved frames. WordPress 1.1.0 and Shopify's standalone theme section use it;
+Wix, Squarespace, Webflow, Framer, Ghost and Carrd use the same HTML snippet with
+platform instructions. Widget results keep review/source labels as text and no
+cross-tool/outbound links; the Powered by credit is the only link on diagnostic
+and archetype results. Navigation between tools belongs to the parent tabs.
+
+Evidence: fast gate passed 501 tests and build; six browser integration tests
+passed including a real local WordPress/PHP shortcode installation, plus all
+12 existing desktop/mobile E2E checks. Shopify Liquid JSON/schema/options and
+download parity were checked, but no hosted Shopify/builder installation or
+marketplace publication is claimed. Owner, agent and partner checklists are in
+`docs/partner-onboarding.md`, `AGENTS.md`, `/admin/sites` and `/partners`.
+
 Download: `/downloads/the-reserve-native-demo.zip`. Source:
 `public/watch-advisor-demo/`. Regenerate after edits with PowerShell:
 

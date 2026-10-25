@@ -1,0 +1,34 @@
+{% comment %}Copy to your theme's sections folder. No Shopify app is required.{% endcomment %}
+<div class="page-width" style="padding-block: 24px">
+  {% if section.settings.public_key != blank %}
+    <div data-reserve="{{ section.settings.feature | escape }}"
+      data-key="{{ section.settings.public_key | escape }}"
+      data-scheme="{{ section.settings.scheme | escape }}"
+      {% if section.settings.accent != blank %}data-accent="{{ section.settings.accent | escape }}"{% endif %}
+    ></div>
+    <script src="https://thereserve.watch/embed.js" async></script>
+  {% elsif request.design_mode %}
+    <p>The Reserve: add your public partner key in this section's settings.</p>
+  {% endif %}
+</div>
+{% schema %}
+{
+  "name": "The Reserve advisor",
+  "settings": [
+    { "type": "text", "id": "public_key", "label": "Public partner key", "info": "Use pk_live_ only. Register your published domain with The Reserve." },
+    { "type": "select", "id": "feature", "label": "Tools", "default": "all", "options": [
+      { "value": "all", "label": "All five tools (tabs)" },
+      { "value": "quiz", "label": "Watch diagnostic" },
+      { "value": "archetype", "label": "Watch archetype" },
+      { "value": "find", "label": "Film, TV and people" },
+      { "value": "alternatives", "label": "Cheaper alternatives" },
+      { "value": "stories", "label": "Watch stories" }
+    ] },
+    { "type": "select", "id": "scheme", "label": "Look", "default": "light", "options": [
+      { "value": "light", "label": "Light" }, { "value": "dark", "label": "Dark" }
+    ] },
+    { "type": "color", "id": "accent", "label": "Accent colour" }
+  ],
+  "presets": [{ "name": "The Reserve advisor" }]
+}
+{% endschema %}

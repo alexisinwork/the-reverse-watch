@@ -250,6 +250,7 @@ function WatchCard({
   fx: FxTable | null;
   unconfirmedReference?: boolean;
 }) {
+  const embed = useEmbed();
   const details = watch.details;
   const facts =
     mode === "quiz"
@@ -301,14 +302,20 @@ function WatchCard({
         ) : null}
         <p className="watch-card__rationale">{watch.rationale}</p>
         {mode === "film" && sourceLink(watch) ? (
-          <a
-            className="watch-card__source"
-            href={sourceLink(watch)!}
-            rel="noopener noreferrer nofollow"
-            target="_blank"
-          >
-            Source: {hostOf(sourceLink(watch)!)}
-          </a>
+          embed ? (
+            <span className="watch-card__source">
+              Source: {hostOf(sourceLink(watch)!)}
+            </span>
+          ) : (
+            <a
+              className="watch-card__source"
+              href={sourceLink(watch)!}
+              rel="noopener noreferrer nofollow"
+              target="_blank"
+            >
+              Source: {hostOf(sourceLink(watch)!)}
+            </a>
+          )
         ) : null}
         <div className="watch-card__footer">
           {details.misses?.map((miss) => (
@@ -364,10 +371,14 @@ function ResultBody({
     return (
       <p className="empty-result">
         The search is unavailable right now. Please try again in a minute.
-        Meanwhile, <SurfaceLink to="/watches">Watches from movies</SurfaceLink>{" "}
-        and the{" "}
-        <SurfaceLink to="/watches/archetype">archetype quiz</SurfaceLink> work
-        as usual.
+        {embed ? null : (
+          <>
+            Meanwhile,{" "}
+            <SurfaceLink to="/watches">Watches from movies</SurfaceLink> and the{" "}
+            <SurfaceLink to="/watches/archetype">archetype quiz</SurfaceLink>{" "}
+            work as usual.
+          </>
+        )}
       </p>
     );
   }

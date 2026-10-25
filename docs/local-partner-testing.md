@@ -44,13 +44,37 @@ tool switches, the six-screen diagnostic, archetype results, Heat film search,
 Tudor Black Bay 58 alternatives, mobile overflow, admin configuration, loader
 failure/retry, registered CSP framing, blocked unregistered framing, disabled keys,
 quota enforcement and recorded usage. It creates isolated disabled/quota test
-partners; quota partners are switched off in `finally`, never deleted. Static
+partners; quota partners are switched off in `finally`, then only the test's own
+disposable fixture IDs are removed by the guarded helper (owner exception,
+2026-10-25). Real partner records/history remain protected. Static
 stories intentionally remain available at quota, as specified by the existing
 routes; searches and generated results enforce the monthly cap.
 
 Additional checks: `npm run check` and the existing desktop/mobile browser suite
 (`npm run test:e2e`). Browser checks are explicitly authorized by the owner for
 this integration. Generated screenshots/traces remain in ignored `test-results/`.
+
+## Optional real WordPress verification
+
+The local Playground runtime used for this session is available at
+http://localhost:9400/reserve-advisor/. It runs the actual PHP plugin mounted
+from `integrations/wordpress/the-reserve/`, with a public key and local Reserve
+origin in its local WordPress options. No Reserve secret is installed in WordPress.
+Its extra exact origin `http://localhost:9400` is registered on the local partner.
+
+With that runtime running, PowerShell can include the additional browser test:
+
+```powershell
+$env:WORDPRESS_TEST_URL = 'http://localhost:9400/reserve-advisor/'
+npm run test:partners
+```
+
+The optional test runs all five shared tabs, completes an archetype, verifies
+only the Powered by result link remains, checks answer preservation and mobile
+overflow. It skips when the URL is not supplied. To provision another runtime,
+follow the official [Playground CLI](https://wordpress.github.io/wordpress-playground/developers/local-development/wp-playground-cli/)
+instructions, mount the plugin, activate it and create a published shortcode
+page. Do not claim a hosted WordPress installation from this local test.
 
 ## Publishing later
 

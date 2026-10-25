@@ -184,22 +184,24 @@ export default function WatchFind() {
             character or celebrity.
           </p>
         ) : null}
-        <div className="find-examples" aria-label="Example searches">
-          <span>Try</span>
-          {EXAMPLES.map((example) => (
-            <SurfaceLink
-              className="chip"
-              key={example.query}
-              to={`/watches/find?type=${example.kind}&q=${encodeURIComponent(example.query)}`}
-            >
-              {example.query}
-              <span className="chip__hint">
-                {" "}
-                · {FILM_SUBJECT_LABELS[example.kind]}
-              </span>
-            </SurfaceLink>
-          ))}
-        </div>
+        {embed && result ? null : (
+          <div className="find-examples" aria-label="Example searches">
+            <span>Try</span>
+            {EXAMPLES.map((example) => (
+              <SurfaceLink
+                className="chip"
+                key={example.query}
+                to={`/watches/find?type=${example.kind}&q=${encodeURIComponent(example.query)}`}
+              >
+                {example.query}
+                <span className="chip__hint">
+                  {" "}
+                  · {FILM_SUBJECT_LABELS[example.kind]}
+                </span>
+              </SurfaceLink>
+            ))}
+          </div>
+        )}
       </header>
 
       {result ? (

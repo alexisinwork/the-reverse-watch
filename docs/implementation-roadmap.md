@@ -1771,6 +1771,21 @@ authorized browser testing for this work. The Reserve fast gate passed all 500
 unit tests, lint, formatting, types and build. Public-domain publication remains
 the next checkpoint, recorded in the business plan.
 
+### Partner admin and builder follow-up
+
+Partner follow-up, 2026-10-25: the owner requested admin layout repair, removal
+of unused switched-off test integrations, role-specific installation instructions,
+and parity for WordPress/Shopify/builders. Delivered responsive full-width partner
+cards; guarded removal of ten disposable inactive test fixtures; shared five-tool
+`data-reserve="all"` tabs; WordPress 1.1.0 ZIP; standalone Shopify theme section;
+builder steps and personalized admin snippets. Real partner records retain the
+switch-off policy. Owner steering also removes cross-tool/outbound result links
+from all widget channels, leaving the Powered by credit and textual provenance.
+Fast gate: 501 tests passed. Browser evidence: six partner/real-WordPress tests
+and twelve existing desktop/mobile checks passed; admin mobile controls verified.
+Shopify schema/download validation passed, but hosted builder/store verification
+remains separate. Next checkpoint remains public portfolio integration.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

@@ -4,7 +4,7 @@
  *   <div data-reserve="quiz"></div>
  *   <script src="https://thereserve.watch/embed.js" data-key="pk_live_…" async></script>
  *
- * Features: quiz, archetype, find, alternatives, stories.
+ * Features: quiz, archetype, find, alternatives, stories; all = five-tool advisor.
  * Optional attributes (on the script tag for every widget, or on one widget):
  *   data-scheme="light"  data-accent="#0a7cff"  data-bg="#ffffff"
  *   data-surface="#f5f5f5"  data-text="#111111"  data-font="system|serif"
@@ -88,6 +88,7 @@
     options = options || {};
     var feature = options.feature || attr(el, "reserve") || attr(el, "feature");
     var key = options.key || setting(el, "key");
+    if (feature === "all" && key) return mountAdvisor(el, key);
     if (FEATURES.indexOf(feature) === -1) {
       warn(
         el,
@@ -115,6 +116,122 @@
     el.appendChild(iframe);
     frames.push({ el: el, iframe: iframe });
     return iframe;
+  }
+
+  function mountAdvisor(el, key) {
+    if (!document.querySelector("link[data-reserve-advisor-style]")) {
+      var css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = base + "/embed.css";
+      css.setAttribute("data-reserve-advisor-style", "true");
+      document.head.appendChild(css);
+    }
+    el.__theReserve = { feature: "all" };
+    el.classList.add("reserve-advisor");
+    var scheme = setting(el, "scheme");
+    if (scheme) el.setAttribute("data-scheme", scheme);
+    el.innerHTML = "";
+    var toolbar = document.createElement("div");
+    toolbar.className = "reserve-advisor__tools";
+    toolbar.setAttribute("role", "group");
+    toolbar.setAttribute("aria-label", "Watch discovery tools");
+    var status = document.createElement("p");
+    status.className = "reserve-advisor__status";
+    status.setAttribute("role", "status");
+    var retry = document.createElement("button");
+    retry.type = "button";
+    retry.className = "reserve-advisor__retry";
+    retry.textContent = "Try again";
+    retry.hidden = true;
+    var content = document.createElement("div");
+    content.className = "reserve-advisor__content";
+    el.append(toolbar, status, retry, content);
+    var panels = {};
+    var buttons = {};
+    var active = "quiz";
+    var labels = [
+      "Find your watch",
+      "Your watch archetype",
+      "Film, TV & people",
+      "Cheaper alternatives",
+      "Watch stories",
+    ];
+    function show(feature) {
+      active = feature;
+      FEATURES.forEach(function (name) {
+        buttons[name].setAttribute("aria-pressed", String(name === feature));
+        if (panels[name]) panels[name].element.hidden = name !== feature;
+      });
+      var panel = panels[feature];
+      if (!panel) {
+        var child = document.createElement("div");
+        child.setAttribute("data-reserve", feature);
+        child.setAttribute("data-key", key);
+        [
+          "scheme",
+          "accent",
+          "bg",
+          "background",
+          "surface",
+          "text",
+          "font",
+          "radius",
+          "height",
+          "params",
+        ].forEach(function (name) {
+          var value = setting(el, name);
+          if (value !== null) child.setAttribute("data-" + name, value);
+        });
+        panel = { element: child, ready: false, timedOut: false };
+        panels[feature] = panel;
+        var current = panel;
+        var timer = window.setTimeout(function () {
+          current.timedOut = true;
+          if (active === feature && el.isConnected) {
+            status.textContent =
+              "The advisor has not confirmed it is ready. Check your connection or contact the website owner.";
+            retry.hidden = false;
+          }
+        }, 25000);
+        child.addEventListener("reserve:ready", function () {
+          window.clearTimeout(timer);
+          current.ready = true;
+          if (active === feature) {
+            status.textContent = "Watch advisor ready.";
+            retry.hidden = true;
+          }
+        });
+        content.appendChild(child);
+        mount(child);
+      }
+      status.textContent = panel.ready
+        ? "Watch advisor ready."
+        : panel.timedOut
+          ? "The advisor has not confirmed it is ready. Try again."
+          : "Loading the watch advisor…";
+      retry.hidden = panel.ready || !panel.timedOut;
+    }
+    FEATURES.forEach(function (feature, index) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.textContent = labels[index];
+      button.addEventListener("click", function () {
+        show(feature);
+      });
+      buttons[feature] = button;
+      toolbar.appendChild(button);
+    });
+    retry.addEventListener("click", function () {
+      var previous = panels[active];
+      frames = frames.filter(function (frame) {
+        return frame.el !== previous.element;
+      });
+      previous.element.remove();
+      delete panels[active];
+      show(active);
+    });
+    show(active);
+    return null;
   }
 
   function scan(root) {
@@ -163,7 +280,7 @@
     );
   }
 
-  window.TheReserve = { version: "1.0.0", mount: mount, scan: scan };
+  window.TheReserve = { version: "1.1.0", mount: mount, scan: scan };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
@@ -172,4 +289,8 @@
   } else {
     scan();
   }
+  // Theme editors replace sections without reloading the page.
+  document.addEventListener("shopify:section:load", function (event) {
+    scan(event.target);
+  });
 })();

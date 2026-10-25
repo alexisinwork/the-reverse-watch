@@ -2,7 +2,7 @@ import { useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-story";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
-import { SurfaceLink } from "../components/surface";
+import { SurfaceLink, useEmbed } from "../components/surface";
 import { findPublishedDiscoveryStory } from "../domain/discovery-public";
 import { loadPublishedDiscoveryStories } from "../domain/discovery-store.server";
 import {
@@ -34,6 +34,7 @@ export function meta({ data: loaderData }: Route.MetaArgs) {
 }
 
 export default function WatchStory() {
+  const embed = useEmbed();
   const { story } = useLoaderData<typeof loader>();
   const identity = [
     story.attribution.brand,
@@ -47,14 +48,18 @@ export default function WatchStory() {
       <DiscoveryAnalytics event={{ name: "page_view", surface: "story" }} />
       <nav className="discovery-nav" aria-label="Discovery navigation">
         <SurfaceLink to="/watches">All stories</SurfaceLink>
-        <SurfaceLink to={`/watches/people/${story.entity.slug}`}>
-          {story.entity.name}
-        </SurfaceLink>
-        {story.work ? (
-          <SurfaceLink to={`/watches/works/${story.work.slug}`}>
-            {story.work.title}
-          </SurfaceLink>
-        ) : null}
+        {embed ? null : (
+          <>
+            <SurfaceLink to={`/watches/people/${story.entity.slug}`}>
+              {story.entity.name}
+            </SurfaceLink>
+            {story.work ? (
+              <SurfaceLink to={`/watches/works/${story.work.slug}`}>
+                {story.work.title}
+              </SurfaceLink>
+            ) : null}
+          </>
+        )}
       </nav>
       <article>
         <span
@@ -124,12 +129,14 @@ export default function WatchStory() {
           )}
         </section>
       </article>
-      <aside className="discovery-cta">
-        <h2>Find the right equivalent for you</h2>
-        <SurfaceLink to={`/quiz?story=${encodeURIComponent(story.slug)}`}>
-          Start the reference diagnostic
-        </SurfaceLink>
-      </aside>
+      {embed ? null : (
+        <aside className="discovery-cta">
+          <h2>Find the right equivalent for you</h2>
+          <SurfaceLink to={`/quiz?story=${encodeURIComponent(story.slug)}`}>
+            Start the reference diagnostic
+          </SurfaceLink>
+        </aside>
+      )}
     </main>
   );
 }

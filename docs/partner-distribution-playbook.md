@@ -7,8 +7,8 @@ not launched yet. Day-to-day onboarding of a partner is in
 | Channel | State | Needs from you |
 | --- | --- | --- |
 | Script tag (any website) | **Live** | Nothing |
-| WordPress plugin (zip download) | **Live**, not yet tested on a real WordPress | 10-minute test (section 1) |
-| Shopify Custom Liquid | **Live** | Nothing |
+| WordPress plugin (zip download) | **Implemented; local real WordPress/PHP check passed 2026-10-25** | Verify each published partner site |
+| Shopify Custom Liquid / standalone theme section | **Implemented; no hosted store test** | Install section or snippet; verify published shop |
 | Wix, Squarespace, Webflow, Google Tag Manager | **Live** (paste the script) | Nothing |
 | JSON API | **Live** | Nothing |
 | npm packages (`@thereserve/client`, `@thereserve/react`) | Code ready, **not published** | npm account (section 2) |
@@ -22,7 +22,8 @@ Rule for every channel: when it goes live, add its instructions to
 
 ## 1. Test the WordPress plugin (do this first)
 
-The plugin's PHP has not been run yet. Test it without installing anything:
+The plugin has passed a local real WordPress/PHP browser check. Still verify
+each partner's published installation. A manual sandbox check is also available:
 
 1. Open https://playground.wordpress.net (a full WordPress in your browser).
 2. In its admin: **Plugins → Add New → Upload Plugin**, choose

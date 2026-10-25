@@ -113,6 +113,21 @@ quiz.
   feature for invoicing.
 - After changing the WordPress plugin, rerun
   `scripts/package-wordpress-plugin.ts` and commit the zip.
+- `data-reserve="all"` is the shared five-tool advisor for native HTML,
+  WordPress, Shopify and website builders. Keep `public/embed.js` and
+  `public/embed.css` consistent with the plugin and theme section. Results in
+  partner widgets must not contain cross-tool or outbound links; the Powered by
+  credit is the only link on quiz/archetype result screens. Preserve source and
+  review labels as text. Use the advisor tabs to switch tools.
+- Onboarding roles and steps live in `docs/partner-onboarding.md`; builder
+  installation files live in `integrations/`. Verify new channels on real
+  platform runtimes where available; never claim marketplace publication or
+  hosted builder testing from a generic HTML smoke check.
+- Owner exception 2026-10-25: disposable, inactive fixtures named exactly
+  `Local integration disabled check` / `Local integration quota check` may be
+  removed with their synthetic counters by `removeLocalTestPartners`, whose
+  guards must stay intact. Real partner sites and their history are still
+  switched off, never deleted. Integration tests clean up their own fixture IDs.
 
 ## Quality invariants
 

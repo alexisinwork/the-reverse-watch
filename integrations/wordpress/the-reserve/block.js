@@ -17,7 +17,7 @@
     icon: "clock",
     category: "widgets",
     attributes: {
-      feature: { type: "string", default: "quiz" },
+      feature: { type: "string", default: "all" },
       scheme: { type: "string", default: "" },
       accent: { type: "string", default: "" },
       params: { type: "string", default: "" },

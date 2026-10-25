@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { parseEnv } from "node:util";
 import { randomBytes } from "node:crypto";
 import { createServer } from "node:http";
+import { removeLocalTestPartners } from "../../scripts/local-test-partner-cleanup";
 
 type Site = {
   id: string;
@@ -31,13 +32,21 @@ async function rpc<T>(name: string, body: unknown): Promise<T> {
 }
 const listPartnerSites = async (): Promise<Site[]> =>
   rpc("partner_sites_list_v1", {});
-const savePartnerSite = async (input: object): Promise<Site> =>
-  rpc("partner_site_save_v1", {
+const createdTestSites: string[] = [];
+const savePartnerSite = async (input: object): Promise<Site> => {
+  const site = await rpc<Site>("partner_site_save_v1", {
     p_site: {
       publicKey: `pk_live_${randomBytes(12).toString("hex")}`,
       ...input,
     },
   });
+  if (!("id" in input)) createdTestSites.push(site.id);
+  return site;
+};
+
+test.afterAll(async () => {
+  await removeLocalTestPartners(createdTestSites);
+});
 const recordPartnerUse = async (
   site: Site,
   feature: string,
@@ -87,8 +96,15 @@ test("five real tools, preserved answers, mobile and admin", async ({
     .getByRole("button", { name: "Reveal editorial archetype" })
     .click();
   await expect(
-    archetype.getByRole("heading", { name: "Choose your next direction" }),
+    archetype.getByRole("heading", {
+      name: "The Field Rationalist",
+      exact: true,
+    }),
   ).toBeVisible();
+  await expect(archetype.getByRole("link")).toHaveCount(1);
+  await expect(archetype.getByRole("link")).toHaveText(
+    "Powered by The Reserve",
+  );
   const find = await openTool(page, "find");
   await find.getByLabel("What are you searching for?").selectOption("movie");
   await find
@@ -148,6 +164,8 @@ test("complete six-screen diagnostic", async ({ page }) => {
   await expect(
     frame.getByRole("heading", { name: /Watches that fit every answer/ }),
   ).toBeVisible({ timeout: 90_000 });
+  await expect(frame.getByRole("link")).toHaveCount(1);
+  await expect(frame.getByRole("link")).toHaveText("Powered by The Reserve");
 });
 
 test("submit cheaper alternatives against the real catalogue", async ({

@@ -4,7 +4,7 @@ Tags: watches, quiz, product finder, recommendations, widget
 Requires at least: 6.0
 Tested up to: 6.8
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,15 +28,19 @@ You need a partner key from The Reserve: https://thereserve.watch/partners
 
 1. Upload the plugin (Plugins → Add New → Upload Plugin) and activate it.
 2. Settings → The Reserve: paste your public key (pk_live_…) and choose your colours.
-3. Add `[the_reserve feature="quiz"]` to a page, or insert the "The Reserve" block.
+3. Add `[the_reserve feature="all"]` for the complete five-tool advisor, or insert the "The Reserve" block. Use `feature="quiz"` for a single tool.
 
-Shortcode options: `feature` (quiz, archetype, find, alternatives, stories), `scheme` (light, dark), `accent`, `bg`, `surface`, `text` (hex colours), `font` (system, serif), `radius` (0–32), `params` (e.g. `type=actor&q=Daniel Craig`).
+Shortcode options: `feature` (all, quiz, archetype, find, alternatives, stories), `scheme` (light, dark), `accent`, `bg`, `surface`, `text` (hex colours), `font` (system, serif), `radius` (0–32), `params` (e.g. `type=actor&q=Daniel Craig`).
 
 == External services ==
 
-The widgets are served by The Reserve (https://thereserve.watch). The plugin loads https://thereserve.watch/embed.js on pages that show a widget, and the widget runs in a frame from thereserve.watch. Only what a visitor types into the widget (their search answers) is sent; no personal data. Privacy policy: https://thereserve.watch/privacy
+The widgets are served by The Reserve (https://thereserve.watch). The plugin loads https://thereserve.watch/embed.js on pages that show a widget; the all-tools advisor also loads https://thereserve.watch/embed.css. The widget runs in a frame from thereserve.watch. Only search constraints reach the research providers; no email or identifying visitor data is sent. Privacy policy: https://thereserve.watch/privacy
 
 == Changelog ==
+
+= 1.1.0 =
+* Five-tool advisor with tabs, preserved answers and mobile layout (feature="all").
+* Widget results stay within the selected tool; no cross-tool result links.
 
 = 1.0.0 =
 * First release: shortcode, block, settings page.

@@ -104,4 +104,46 @@ describe("embed.js", () => {
     (window as Window & { TheReserve?: Loader }).TheReserve!.scan();
     expect(document.querySelector("#later iframe")).not.toBeNull();
   });
+
+  it("mounts the five-tool advisor lazily and preserves each frame across tabs", () => {
+    vi.useFakeTimers();
+    try {
+      document.body.innerHTML =
+        '<div id="advisor" data-reserve="all" data-scheme="light"></div>';
+      loadScript({ "data-key": KEY });
+      const advisor = document.querySelector<HTMLElement>("#advisor")!;
+      const quiz = advisor.querySelector("iframe")!;
+      expect(quiz.src).toContain(`/embed/${KEY}/quiz?scheme=light`);
+      const buttons = advisor.querySelectorAll<HTMLButtonElement>(
+        ".reserve-advisor__tools button",
+      );
+      expect(buttons).toHaveLength(5);
+      buttons[1]!.click();
+      expect(advisor.querySelectorAll("iframe")).toHaveLength(2);
+      expect(quiz.parentElement!.hidden).toBe(true);
+      buttons[0]!.click();
+      expect(advisor.querySelector("iframe")).toBe(quiz);
+      expect(quiz.parentElement!.hidden).toBe(false);
+      (window as Window & { TheReserve?: Loader }).TheReserve!.scan();
+      expect(advisor.querySelectorAll("iframe")).toHaveLength(2);
+      window.dispatchEvent(
+        new MessageEvent("message", {
+          origin: "https://thereserve.watch",
+          source: quiz.contentWindow,
+          data: { type: "reserve:ready", feature: "quiz", height: 700 },
+        }),
+      );
+      expect(advisor.querySelector('[role="status"]')!.textContent).toBe(
+        "Watch advisor ready.",
+      );
+      expect(
+        document
+          .querySelector("link[data-reserve-advisor-style]")!
+          .getAttribute("href"),
+      ).toBe("https://thereserve.watch/embed.css");
+    } finally {
+      vi.clearAllTimers();
+      vi.useRealTimers();
+    }
+  });
 });

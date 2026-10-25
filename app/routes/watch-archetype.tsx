@@ -238,43 +238,49 @@ export default function WatchArchetype() {
               title={result.archetype.title}
             />
           ) : null}
-          <aside className="discovery-cta" aria-labelledby="archetype-next">
-            <h2 id="archetype-next">Choose your next direction</h2>
-            <p>
-              The full diagnostic carries forward only the validated social and
-              aesthetic preferences. It still asks for your price range, wrist
-              size, where you will wear it, and every hard requirement.
-            </p>
-            <div className="archetype-next-actions">
-              <SurfaceLink
-                onClick={() =>
-                  sendDiscoveryAnalyticsEvent({
-                    name: "core_handoff",
-                    archetypeId: result.archetype.id,
-                  })
-                }
-                to={buildCoreQuizHandoff(result.answers)}
-              >
-                Find the right watch for me
-              </SurfaceLink>
-              <SurfaceLink
-                to={`/watches/find?${new URLSearchParams(discoveryHandoffSchema.parse({ socialSignal: result.answers.socialSignal, aestheticDna: result.answers.aestheticDna })).toString()}`}
-              >
-                Find a watch from film and culture
-              </SurfaceLink>
-            </div>
-          </aside>
+          {embed ? null : (
+            <aside className="discovery-cta" aria-labelledby="archetype-next">
+              <h2 id="archetype-next">Choose your next direction</h2>
+              <p>
+                The full diagnostic carries forward only the validated social
+                and aesthetic preferences. It still asks for your price range,
+                wrist size, where you will wear it, and every hard requirement.
+              </p>
+              <div className="archetype-next-actions">
+                <SurfaceLink
+                  onClick={() =>
+                    sendDiscoveryAnalyticsEvent({
+                      name: "core_handoff",
+                      archetypeId: result.archetype.id,
+                    })
+                  }
+                  to={buildCoreQuizHandoff(result.answers)}
+                >
+                  Find the right watch for me
+                </SurfaceLink>
+                <SurfaceLink
+                  to={`/watches/find?${new URLSearchParams(discoveryHandoffSchema.parse({ socialSignal: result.answers.socialSignal, aestheticDna: result.answers.aestheticDna })).toString()}`}
+                >
+                  Find a watch from film and culture
+                </SurfaceLink>
+              </div>
+            </aside>
+          )}
           <p className="archetype-boundary">
             {embed
               ? "No email is required for this result."
               : "No email is required for this result. Newsletter and dossier consent remain separate, explicit choices in the full diagnostic."}
           </p>
-          <SurfaceLink className="archetype-retake" to="/watches/archetype">
-            Retake the archetype quiz
-          </SurfaceLink>
-          <SurfaceLink className="archetype-retake" to="/watches">
-            Browse watches from movies
-          </SurfaceLink>
+          {embed ? null : (
+            <>
+              <SurfaceLink className="archetype-retake" to="/watches/archetype">
+                Retake the archetype quiz
+              </SurfaceLink>
+              <SurfaceLink className="archetype-retake" to="/watches">
+                Browse watches from movies
+              </SurfaceLink>
+            </>
+          )}
         </>
       ) : (
         <>

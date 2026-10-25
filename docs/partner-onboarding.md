@@ -8,6 +8,47 @@ channels: [`partner-distribution-playbook.md`](partner-distribution-playbook.md)
 
 ## Before you start
 
+## Who does what
+
+- **Alex (owner):** agree scope/usage, collect exact published and staging
+  origins, create the partner in `/admin/sites`, copy its public installation
+  code, and confirm usage after the partner's test. Use `ADMIN_PASSWORD` from
+  the ignored Reserve `.env` for local admin; never send it to a partner.
+- **Codex / future agent:** read `CODE-GUIDE.md`, `AGENTS.md`, the business plan
+  and controlling roadmap. Reuse the current loader/plugin/Shopify section,
+  configure only authorized exact origins, protect secrets, package changed
+  plugins, and run applicable fast and authorized browser checks. Keep source
+  and review labels. Do not claim a live builder install without evidence.
+- **Partner:** install the supplied public code/plugin/section, paste only the
+  public key, publish the page, complete each tool on desktop/mobile, and send
+  Alex the exact page URL and test date. Do not edit the origin policy yourself
+  or put secret keys/admin passwords in page code.
+
+## Choose the installation
+
+Use `data-reserve="all"` for the full advisor: five tabs with independent
+answers/results. Native HTML, WordPress `[the_reserve feature="all"]`, Shopify
+Custom Liquid/section, and builder snippets all use the same loader. Single
+features remain available by replacing `all` with the feature slug. Widget
+results have no cross-tool links or funnel CTA; the Powered by credit is the
+only link on quiz/archetype results.
+
+1. **Owner:** Add a partner site → name, exact origins, monthly limit, optional
+   theme and notes → Create. Then expand **Code to send the partner**.
+2. **Owner:** Send the matching native/WordPress/Shopify/builder instructions
+   from that card and `/partners`; no account/password sharing is required.
+3. **Partner:** install on the chosen page and publish. WordPress: upload ZIP,
+   activate, save public key in Settings → The Reserve, add Shortcode block.
+   Shopify: paste the snippet in Custom Liquid, or install the downloadable
+   section in a duplicate theme and configure its public key before publishing.
+   Other builders: use the HTML/Code Embed block described in
+   [`builder steps`](../integrations/builders/README.md).
+4. **Both:** check all five tools, preserved answers, no cross-tool result
+   links, no newsletter gate, labels, Powered by credit, mobile width and
+   resizing. Owner confirms per-feature counters. Record URL/date/outcome.
+
+## Before sharing the demo
+
 For a complete standalone HTML/CSS/JavaScript demo, download
 https://thereserve.watch/downloads/the-reserve-native-demo.zip.
 Source and installation checklist: `public/watch-advisor-demo/README.txt`.
@@ -43,7 +84,7 @@ Agree the price with the partner (every feature is included) and ask for:
 
 ## 2. If they want the API: create a secret key
 
-Click **Create secret key (for the partner's server)** on their site. The key
+Expand **Server API access**, then click **Create secret key (for the partner's server)**. The key
 (`sk_live_…`) is shown **once**: copy it straight into your email to the
 partner's developer. It is not stored and can't be shown again; if it's lost
 or leaked, click **Replace secret key** (the old one stops working at once).

@@ -1,9 +1,8 @@
 /**
  * Where a page is shown: on The Reserve itself, or inside a partner's
  * widget (/embed/:key/…). Pages use these instead of plain links so the
- * same page works in both places: inside a widget, links to other widget
- * pages stay in the frame and keep the key and theme, and everything else
- * opens The Reserve in a new tab.
+ * same page works in both places. Partner widgets only navigate within their
+ * selected tool; the embed layout owns the sole outbound Powered by credit.
  */
 import { createContext, useContext, type ReactNode } from "react";
 import { Link, useLocation, useNavigation } from "react-router";
@@ -58,20 +57,15 @@ export function SurfaceLink({
     );
   }
   const { internal, href } = embedHref(to, embed);
-  return internal ? (
+  if (
+    !internal ||
+    new URL(href, embed.siteOrigin).pathname.split("/")[3] !== embed.feature
+  )
+    return null;
+  return (
     <Link className={className} onClick={onClick} to={href}>
       {children}
     </Link>
-  ) : (
-    <a
-      className={className}
-      href={href}
-      onClick={onClick}
-      rel="noopener"
-      target="_blank"
-    >
-      {children}
-    </a>
   );
 }
 
