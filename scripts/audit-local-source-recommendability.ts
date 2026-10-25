@@ -1,6 +1,6 @@
 // Counts which locally stored models can satisfy the quiz's baseline facts.
 // This is an audit only: it neither changes review states nor prices.
-import { writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import postgres from "postgres";
 const url = process.env.DIRECT_DATABASE_URL;
 if (!url) throw new Error("DIRECT_DATABASE_URL required");
@@ -115,8 +115,9 @@ try {
     "docs/reports/local-source-recommendability.json",
     `${JSON.stringify(report, null, 2)}\n`,
   );
+  await mkdir("data/watch-archive", { recursive: true });
   await writeFile(
-    "docs/reports/catalogue-enrichment-queue.json",
+    "data/watch-archive/catalogue-enrichment-queue.json",
     `${JSON.stringify({ at: report.at, records: queue }, null, 2)}\n`,
   );
   console.log(JSON.stringify(report, null, 2));
