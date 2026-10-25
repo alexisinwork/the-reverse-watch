@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-25T17:27:09.418Z",
+  "at": "2026-10-25T17:58:09.287Z",
   "totals": [
     {
       "total": 44880,
@@ -11,19 +11,19 @@
   ],
   "importedExamples": [
     {
-      "id": "0648c4d9-c61e-4736-9594-12dc59db897f",
+      "id": "4438c171-6d7e-4b41-b75d-7f02a38fda51",
       "brand": "Seiko",
-      "reference_code": "SPB237",
+      "reference_code": "SPB153",
       "reference_confirmed": true,
-      "case_diameter_mm": null,
-      "case_thickness_mm": null,
+      "case_diameter_mm": "42.70",
+      "case_thickness_mm": "13.20",
       "water_resistance_m": null,
-      "movement": null,
+      "movement": "automatic",
       "styles": [
         "dive",
         "sport"
       ],
-      "image_url": "https://www.seikowatches.com/hk-zh/-/media/Images/Product--Image/All/Seiko/2022/02/20/01/03/SPB237J1/SPB237J1.png",
+      "image_url": "https://www.seikowatches.com/uk-en/-/media/Images/Product--Image/All/Seiko/2022/02/20/00/50/SPB153J1/SPB153J1.png",
       "price_status": "confirmed"
     },
     {
@@ -43,41 +43,41 @@
       "price_status": "confirmed"
     },
     {
-      "id": "479372d9-a7b0-40b3-804a-70ec5c6741f6",
-      "brand": "Tissot",
-      "reference_code": "T006.407.11.033.02",
+      "id": "eef14c97-c955-4872-890c-9bcd3d6219f4",
+      "brand": "Seiko",
+      "reference_code": "SPB183",
       "reference_confirmed": true,
-      "case_diameter_mm": null,
-      "case_thickness_mm": null,
-      "water_resistance_m": null,
-      "movement": null,
-      "styles": [
-        "everyday",
-        "dress"
-      ],
-      "image_url": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw8500696c/product-pictures/e32b821b-97f5-4c48-8972-320332d9f5d2_T006-407-11-033-02_shadow.png",
-      "price_status": "confirmed"
-    },
-    {
-      "id": "61f251c8-58ca-4767-832f-3cabecb9d1db",
-      "brand": "Tissot",
-      "reference_code": "T006.207.11.036.01",
-      "reference_confirmed": true,
-      "case_diameter_mm": null,
-      "case_thickness_mm": null,
+      "case_diameter_mm": "42.70",
+      "case_thickness_mm": "13.20",
       "water_resistance_m": null,
       "movement": "automatic",
       "styles": [
-        "everyday",
-        "dress"
+        "dive",
+        "sport"
       ],
-      "image_url": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw9f11962b/product-pictures/84afef79-0388-47ce-8198-6d7ec82e02ec_T006-207-11-036-01_shadow.png",
+      "image_url": "https://www.seikowatches.com/my-en/-/media/Images/Product--Image/All/Seiko/2022/02/20/00/55/SPB183J1/SPB183J1.png",
       "price_status": "confirmed"
     },
     {
-      "id": "f4b33f6f-c389-45ab-96f6-072f4b12c5b4",
+      "id": "e633af39-60c2-4da1-9bed-12d379e3bc36",
       "brand": "Seiko",
-      "reference_code": "SPB288",
+      "reference_code": "SPB301",
+      "reference_confirmed": true,
+      "case_diameter_mm": "42.70",
+      "case_thickness_mm": "13.20",
+      "water_resistance_m": null,
+      "movement": "automatic",
+      "styles": [
+        "dive",
+        "sport"
+      ],
+      "image_url": "https://www.seikowatches.com/in-en/-/media/Images/Product--Image/All/Seiko/2022/04/02/13/15/SPB301J1/SPB301J1.png",
+      "price_status": "confirmed"
+    },
+    {
+      "id": "ab3ad834-88ad-464b-83bc-bfb87dc8f349",
+      "brand": "Seiko",
+      "reference_code": "SPB257",
       "reference_confirmed": true,
       "case_diameter_mm": null,
       "case_thickness_mm": null,
@@ -87,7 +87,7 @@
         "dive",
         "sport"
       ],
-      "image_url": "https://www.seikowatches.com/middleeast-en/-/media/Images/GlobalEn/Seiko/Home/common/SeikoLogo/ThumbnailSeikoLogo.jpg",
+      "image_url": null,
       "price_status": "confirmed"
     }
   ],
@@ -98,23 +98,23 @@
     },
     {
       "state": "enriched",
-      "count": 18
+      "count": 52
     },
     {
       "state": "needs_evidence",
-      "count": 4
+      "count": 8
     },
     {
       "state": "pending",
-      "count": 42352
+      "count": 42311
     },
     {
       "state": "retry",
-      "count": 3
+      "count": 5
     },
     {
       "state": "running",
-      "count": 1
+      "count": 2
     }
   ],
   "archived": [
@@ -126,7 +126,7 @@
   "retry": [
     {
       "last_error": "Error",
-      "count": 1
+      "count": 3
     },
     {
       "last_error": "upstream_or_validation_error",
@@ -135,11 +135,11 @@
   ],
   "status": {
     "states": {
-      "retry": 3,
-      "pending": 42351,
-      "running": 1,
-      "enriched": 19,
-      "needs_evidence": 4,
+      "retry": 5,
+      "pending": 42311,
+      "running": 2,
+      "enriched": 52,
+      "needs_evidence": 8,
       "blocked_identity": 212
     },
     "records": 42590,
@@ -160,13 +160,10 @@
   "recommendationRows": 3115,
   "quizEligibility": [
     {
-      "id": "0648c4d9-c61e-4736-9594-12dc59db897f",
-      "reference": "SPB237",
+      "id": "4438c171-6d7e-4b41-b75d-7f02a38fda51",
+      "reference": "SPB153",
       "searchable": true,
-      "relaxedQuizRuleFailures": [
-        "diameter",
-        "movement"
-      ]
+      "relaxedQuizRuleFailures": []
     },
     {
       "id": "d48b490d-805c-43bc-b5cf-3524a2579fc7",
@@ -178,25 +175,20 @@
       ]
     },
     {
-      "id": "479372d9-a7b0-40b3-804a-70ec5c6741f6",
-      "reference": "T006.407.11.033.02",
+      "id": "eef14c97-c955-4872-890c-9bcd3d6219f4",
+      "reference": "SPB183",
       "searchable": true,
-      "relaxedQuizRuleFailures": [
-        "diameter",
-        "movement"
-      ]
+      "relaxedQuizRuleFailures": []
     },
     {
-      "id": "61f251c8-58ca-4767-832f-3cabecb9d1db",
-      "reference": "T006.207.11.036.01",
+      "id": "e633af39-60c2-4da1-9bed-12d379e3bc36",
+      "reference": "SPB301",
       "searchable": true,
-      "relaxedQuizRuleFailures": [
-        "diameter"
-      ]
+      "relaxedQuizRuleFailures": []
     },
     {
-      "id": "f4b33f6f-c389-45ab-96f6-072f4b12c5b4",
-      "reference": "SPB288",
+      "id": "ab3ad834-88ad-464b-83bc-bfb87dc8f349",
+      "reference": "SPB257",
       "searchable": true,
       "relaxedQuizRuleFailures": [
         "diameter",
@@ -210,35 +202,35 @@
     "Casio DW5600E-1V",
     "Citizen BM8180-03E",
     "CWC G10FATBOY80",
-    "Seiko SPB301",
-    "Seiko SPB183",
+    "Certina C032.929.11.051.00",
+    "Mido M026.830.11.051.00",
     "Seiko SPB153",
-    "Seiko SPB237",
-    "Seiko SPB288"
+    "Seiko SPB301",
+    "Seiko SPB183"
   ],
   "exactLookupPropagation": [
     {
-      "reference": "Breitling A17328101B1X1",
+      "reference": "Panerai PAM01661",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "Seiko SPB237",
+      "reference": "Omega 227.32.55.21.03.001",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "Breguet 7147BR/12/9WU",
+      "reference": "OMEGA 215.92.46.21.01.001",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "Blancpain 5015-1130-52A",
+      "reference": "Omega 210.32.42.20.03.001",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "Blancpain 6651-1127-55B",
+      "reference": "Omega 210.90.42.20.01.001",
       "matched": true,
       "imageMatches": true
     }

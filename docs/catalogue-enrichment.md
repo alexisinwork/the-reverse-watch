@@ -8,6 +8,17 @@ fully verified for that amount.
 
 ## Delivered integration
 
+Owner follow-up, 2026-10-25: approved all currently pending editorial records
+in a backed-up transaction: 41,899 approvals, leaving 44,877 approved, three
+rejected and zero pending at that checkpoint. Approval does not confirm prices,
+references or missing facts. Full admin pagination now covers all 44,880 rows;
+the former 3,118 count was the smaller recommendation read model. Separate totals
+show the recommendation pool and 41,762 imported records awaiting a verified price.
+This is one-time approval, not automatic approval of future finds. The owner also
+explicitly requests Perplexity API research for unverified claims/references and
+image URLs; the worker now pins its research provider accordingly, retaining the
+independent Muse price cross-check and the same cumulative $100 allowance.
+
 - All 42,590 source records are archived in `private.watch_catalogue_intake`,
   with source commit, original source pointers and assertions. Original local
   snapshots and normalized files remain in ignored `data/watch-archive/`.
@@ -25,7 +36,8 @@ fully verified for that amount.
   in admin search without transferring the entire 170MB archive on every request.
   Required unknown facts still fail their filters.
 - The admin catalogue shows source/queue counts and searches imported identities.
-  Its ordinary review lists remain the bounded recommendation read model.
+  After the owner count correction, its paginated lists cover the entire master;
+  separate totals identify the smaller recommendation pool and unpriced imports.
 
 ## Automatic research worker
 

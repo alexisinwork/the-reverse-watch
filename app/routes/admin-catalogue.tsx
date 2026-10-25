@@ -29,7 +29,6 @@ import {
 } from "../domain/watch-catalogue";
 import {
   catalogueClient,
-  listCatalogue,
   recordCataloguePrice,
   reviewCatalogueWatch,
   rpc,
@@ -38,7 +37,6 @@ import {
 import "../styles/admin.css";
 import { z } from "zod";
 
-const PAGE_SIZE = 60;
 const FILTERS = ["pending", "approved", "rejected", "price", "all"] as const;
 type Filter = (typeof FILTERS)[number];
 
@@ -94,12 +92,6 @@ type Row = Pick<
   | "reviewStatus"
 > & { wristFit: string };
 
-function matchesFilter(watch: CatalogueWatch, filter: Filter) {
-  if (filter === "all") return true;
-  if (filter === "price") return watch.priceChange !== null;
-  return watch.reviewStatus === filter;
-}
-
 export async function loader({ request }: Route.LoaderArgs) {
   const configured = parseAdminConfiguration().configured;
   if (!(await isAdmin(request))) {
@@ -122,27 +114,34 @@ export async function loader({ request }: Route.LoaderArgs) {
     );
   }
   const url = new URL(request.url);
-  const filterParam = url.searchParams.get("status") ?? "pending";
+  const filterParam = url.searchParams.get("status") ?? "all";
   const filter: Filter = (FILTERS as readonly string[]).includes(filterParam)
     ? (filterParam as Filter)
-    : "pending";
+    : "all";
   const query = (url.searchParams.get("q") ?? "")
     .trim()
     .toLowerCase()
     .slice(0, 80);
-  const page = Math.max(1, Number(url.searchParams.get("page")) || 1);
-
-  const all = await listCatalogue(client, true);
-  if (query.length >= 3) {
-    const imported = await rpc(client, "watch_catalogue_named_v1", {
-      p_query: query,
-      p_reference: null,
+  const requestedPage = Number(url.searchParams.get("page")) || 1;
+  const page = Number.isFinite(requestedPage)
+    ? Math.max(1, Math.min(100000, Math.floor(requestedPage)))
+    : 1;
+  const cataloguePage = z
+    .object({
+      rows: z.array(catalogueWatchSchema),
+      counts: z.record(z.string(), z.number()),
+      page: z.number(),
+      pages: z.number(),
+      filteredTotal: z.number(),
     })
-      .then((value) => z.array(catalogueWatchSchema).parse(value))
-      .catch(() => []);
-    const known = new Set(all.map((w) => w.id));
-    all.push(...imported.filter((w) => !known.has(w.id)));
-  }
+    .parse(
+      await rpc(
+        client,
+        "watch_catalogue_admin_page_v1",
+        { p_filter: filter, p_query: query, p_page: page },
+        15000,
+      ),
+    );
   const intake = await rpc(client, "watch_catalogue_intake_status_v1", {})
     .then((value) =>
       z
@@ -154,48 +153,33 @@ export async function loader({ request }: Route.LoaderArgs) {
         .parse(value),
     )
     .catch(() => null);
-  const counts = Object.fromEntries(
-    FILTERS.map((name) => [
-      name,
-      all.filter((watch) => matchesFilter(watch, name)).length,
-    ]),
-  );
-  const filtered = all.filter(
-    (watch) =>
-      matchesFilter(watch, filter) &&
-      (!query ||
-        `${watch.brand} ${watch.model} ${watch.referenceCode ?? ""}`
-          .toLowerCase()
-          .includes(query)),
-  );
-  const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-  const rows: Row[] = filtered
-    .slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
-    .map((watch) => ({
-      id: watch.id,
-      brand: watch.brand,
-      model: watch.model,
-      referenceCode: watch.referenceCode,
-      referenceConfirmed: watch.referenceConfirmed,
-      styles: watch.styles,
-      caseDiameterMm: watch.caseDiameterMm,
-      waterResistanceM: watch.waterResistanceM,
-      movement: watch.movement,
-      caseMaterial: watch.caseMaterial,
-      casebackMaterial: watch.casebackMaterial,
-      strapMaterial: watch.strapMaterial,
-      priceAmount: watch.priceAmount,
-      priceCurrency: watch.priceCurrency,
-      priceStatus: watch.priceStatus,
-      priceCheckedAt: watch.priceCheckedAt,
-      priceChange: watch.priceChange,
-      sourceUrl: watch.sourceUrl,
-      sourceKind: watch.sourceKind,
-      imageUrl: watch.imageUrl,
-      rationale: watch.rationale,
-      reviewStatus: watch.reviewStatus,
-      wristFit: wristFitLabel(watch.caseDiameterMm),
-    }));
+  const counts = cataloguePage.counts;
+  const pages = cataloguePage.pages;
+  const rows: Row[] = cataloguePage.rows.map((watch) => ({
+    id: watch.id,
+    brand: watch.brand,
+    model: watch.model,
+    referenceCode: watch.referenceCode,
+    referenceConfirmed: watch.referenceConfirmed,
+    styles: watch.styles,
+    caseDiameterMm: watch.caseDiameterMm,
+    waterResistanceM: watch.waterResistanceM,
+    movement: watch.movement,
+    caseMaterial: watch.caseMaterial,
+    casebackMaterial: watch.casebackMaterial,
+    strapMaterial: watch.strapMaterial,
+    priceAmount: watch.priceAmount,
+    priceCurrency: watch.priceCurrency,
+    priceStatus: watch.priceStatus,
+    priceCheckedAt: watch.priceCheckedAt,
+    priceChange: watch.priceChange,
+    sourceUrl: watch.sourceUrl,
+    sourceKind: watch.sourceKind,
+    imageUrl: watch.imageUrl,
+    rationale: watch.rationale,
+    reviewStatus: watch.reviewStatus,
+    wristFit: wristFitLabel(watch.caseDiameterMm),
+  }));
   return data(
     {
       authed: true as const,
@@ -205,7 +189,7 @@ export async function loader({ request }: Route.LoaderArgs) {
       counts,
       filter,
       query,
-      page: Math.min(page, pages),
+      page: cataloguePage.page,
       pages,
     },
     { headers: NO_INDEX },
@@ -712,6 +696,24 @@ export default function AdminCatalogue() {
         </Form>
       </header>
       {error ? <p className="warn">{error}</p> : null}
+      {"all" in counts ? (
+        <section aria-label="Catalogue totals">
+          <h2>
+            Entire catalogue: {(counts.all ?? 0).toLocaleString("en")} watches
+          </h2>
+          <p>
+            Recommendation pool:{" "}
+            {(counts.recommendationPool ?? 0).toLocaleString("en")}. Imported
+            watches awaiting a verified price:{" "}
+            {(counts.awaitingPrice ?? 0).toLocaleString("en")}.
+          </p>
+          <p>
+            All records are listed below, including incomplete imports.
+            Editorial approval does not verify a price or fill missing
+            specifications; each search still applies its required facts.
+          </p>
+        </section>
+      ) : null}
       {"intake" in loaded && loaded.intake ? (
         <section aria-label="Imported catalogue">
           <h2>Imported catalogue</h2>

@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-25T17:49:14.671Z",
+  "approvedThisRun": 41899,
+  "counts": [
+    {
+      "total": 44880,
+      "pending": 0,
+      "approved": 44877,
+      "rejected": 3,
+      "recommendation_pool": 3118,
+      "awaiting_price": 41762
+    }
+  ],
+  "scope": "One-time owner editorial approval only; prices, primary-reference verification, facts and rejected rows unchanged. Ignored local before-state backup saved."
+}

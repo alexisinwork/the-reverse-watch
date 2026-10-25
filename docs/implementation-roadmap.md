@@ -1858,6 +1858,19 @@ timed out; the subsequent IPv4 smoke returned HTTP 200 for health and archetype,
 with new SPB153/SPB183/SPB301 references in the public result. Local enrichment remains running;
 the append-only budget journal also survives Windows/OneDrive snapshot locks.
 
+### Owner bulk approval and complete admin visibility (2026-10-25)
+
+Owner approved all existing pending editorial entries: 41,899 updated, with an
+ignored local before-state backup. Verified checkpoint: 44,880 master rows,
+44,877 approved, three rejected, zero pending. Prices/reference confirmation and
+research queue states are unchanged by editorial approval. Migration 0080 and
+server-side admin pagination expose the whole master independently of the 3,118
+recommendation read-model count. Explicit totals explain the 41,762 unpriced
+imports. Verified first/second/last pages and exact-reference search against the
+live RPC. Owner's follow-up pins missing-fact/reference/image research to Perplexity;
+the independent price check and previously authorized $100 cumulative allowance
+remain. No new allowance was created by approval or restart.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

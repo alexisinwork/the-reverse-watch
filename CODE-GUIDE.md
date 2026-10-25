@@ -117,6 +117,10 @@ prices before they become eligible. Progress and results are mirrored locally.
 Shared feature hydration: `domain/catalogue-result-enrichment.server.ts`;
 archetype role supplements: `domain/archetype-catalogue.server.ts`.
 Admin shows live queue counts. Current workflow: `docs/catalogue-enrichment.md`.
+Admin's `watch_catalogue_admin_page_v1` RPC paginates the entire master catalogue,
+including unpriced imports; its totals are separate from the recommendation pool.
+`scripts/approve-pending-catalogue.ts` performs an owner-authorized one-time
+editorial approval with a local before-state backup; it does not verify facts.
 Source strategy and runnable intake commands:
 `docs/local-watch-database-strategy.md`, `docs/reports/local-watch-intake-pilot.md`,
 `docs/reports/local-watch-intake-full.md`.

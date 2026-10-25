@@ -57,6 +57,11 @@ const sql = postgres(url, {
   onnotice: () => undefined,
 });
 const deps = defaultDeps({ fetchImpl: trackedFetch });
+// Owner explicitly requests Perplexity for missing-fact/reference research.
+// The existing independent price checker may still use Muse as its second source.
+deps.config.webSearch = "perplexity";
+if (!deps.config.perplexity)
+  throw new Error("PERPLEXITY_API_KEY is required for catalogue research");
 const [lock] = await sql<
   { locked: boolean }[]
 >`select pg_try_advisory_lock(hashtext('reserve_catalogue_enrichment')) as locked`;

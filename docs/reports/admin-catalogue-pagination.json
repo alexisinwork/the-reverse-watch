@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-25T17:52:15.268Z",
+  "counts": {
+    "all": 44880,
+    "price": 0,
+    "pending": 0,
+    "approved": 44877,
+    "rejected": 3,
+    "awaitingPrice": 41762,
+    "recommendationPool": 3118
+  },
+  "firstPageRows": 60,
+  "secondPageRows": 60,
+  "pages": 748,
+  "lastPage": 748,
+  "lastPageRows": 60,
+  "searchHits": 1,
+  "scope": "Authenticated admin pagination covers master catalogue; recommendation filters unchanged."
+}
