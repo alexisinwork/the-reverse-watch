@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
+    "dev:partners": "node --env-file=.env --import tsx scripts/dev-partners.ts",
     "start": "node scripts/start-server.mjs",
     "typegen": "react-router typegen",
     "typecheck": "npm run typegen && tsc --noEmit",
@@ -14,6 +15,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "test:e2e": "npm run build && node --env-file-if-exists=.env ./node_modules/@playwright/test/cli.js test",
+    "test:partners": "node --env-file=.env ./node_modules/@playwright/test/cli.js test --config playwright.partners.config.ts",
     "project:seed-coverage": "tsx scripts/project-seed-coverage.ts",
     "migrate:seed-catalogue-v3": "tsx scripts/migrate-seed-catalogue-v3.ts",
     "render:seed-migration": "tsx scripts/render-seed-migration.ts",

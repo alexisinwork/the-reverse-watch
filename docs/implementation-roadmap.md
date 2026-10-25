@@ -1748,6 +1748,29 @@ is pending publication and a real public partner key. Next: owner installs on
 `oleksandr-kukhtin.dev`, then records the included five-feature, framing, quota,
 mobile and counter checklist. Retailer catalogues remain future scope.
 
+## Local portfolio partner integration — 2026-10-25
+
+Owner continuation: run both cloned applications locally, integrate all five
+tools into the personal website, register it in admin and test the whole flow.
+This extends the partner phase; no new catalogue, commercial tier or database
+schema is introduced.
+
+Delivered: sibling `personal-website` route `/watch-advisor-demo`, home project
+and navigation links, on-demand frames with preserved answers, ready/error/retry
+states and public Vite settings. `/admin/sites` includes copyable Vite config
+and the existing native ZIP. `npm run dev:partners` configures a dedicated local
+partner and runs ports 5173/8080 without copying Reserve secrets into the portfolio
+server. The hosted catalogue/providers remain in use. Instructions:
+[`local-partner-testing.md`](local-partner-testing.md).
+
+Verification: `npm run test:partners` passed five real integration tests covering
+all tools and submissions, preserved answers, mobile overflow, admin, failure
+recovery, CSP rejection from an actual unregistered server, disabled keys, quota
+and usage. Existing desktop/mobile E2E passed 12/12. The owner explicitly
+authorized browser testing for this work. The Reserve fast gate passed all 500
+unit tests, lint, formatting, types and build. Public-domain publication remains
+the next checkpoint, recorded in the business plan.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

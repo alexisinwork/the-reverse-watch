@@ -139,6 +139,9 @@ a fake fetch, so no test ever calls a real provider.
 Persistent commercial strategy, audit baseline and next action:
 `docs/business-plan.md`. Portable HTML/CSS/JavaScript demo:
 `public/watch-advisor-demo/` (download: `/downloads/the-reserve-native-demo.zip`).
+Local portfolio integration: `npm run dev:partners` starts both checkouts;
+`npm run test:partners` runs the opt-in browser checks. Setup and limits:
+`docs/local-partner-testing.md`.
 
 Paying partners put The Reserve's features on their own websites (owner
 decision, 2026-10-04). Everything is included for every partner.

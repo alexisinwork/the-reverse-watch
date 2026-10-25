@@ -440,6 +440,21 @@ function SiteCard({
         <details className="admin-edit">
           <summary>Code to send the partner</summary>
           <p className="admin-note">
+            Native demo:{" "}
+            <a href={`${origin}/downloads/the-reserve-native-demo.zip`}>
+              download HTML, CSS and JavaScript
+            </a>
+            . For a Vite website, use this public configuration and restart its
+            development server after changing it. Register each local website
+            address with its port in the site settings.
+          </p>
+          <textarea
+            readOnly
+            rows={2}
+            aria-label={`Vite configuration for ${site.name}`}
+            value={`VITE_RESERVE_ORIGIN=${origin}\nVITE_RESERVE_PUBLIC_KEY=${site.publicKey}`}
+          />
+          <p className="admin-note">
             Paste where the widget should appear. data-reserve can be quiz,
             archetype, find, alternatives or stories. Full guide:{" "}
             <a href={`${origin}/partners`} rel="noreferrer" target="_blank">

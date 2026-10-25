@@ -1,6 +1,6 @@
 # The Reserve — business plan and continuing strategy
 
-Updated: 2026-10-24. Owner: Alex. Evidence baseline: commit `da6108a`.
+Updated: 2026-10-25. Owner: Alex. Evidence baseline: commit `da6108a`.
 This is the persistent repository record of the supplied audit/business-plan
 conversation. Earlier Word documents and ZIP attachments were mentioned in that
 conversation but are not available here; their contents have not been independently
@@ -168,12 +168,33 @@ smoke check using the real widget loader passed placeholder handling, five-tool
 mounting, preserved frames and ready-state handling. Browser/E2E and independent
 host checks were not run. These results do not close the evidence backlog above.
 
-**Next action:** owner copies the demo to
-`https://oleksandr-kukhtin.dev/watch-advisor-demo/`, creates a dedicated partner
-for that exact origin and replaces the public-key placeholder. Then complete
-the verification checklist in `public/watch-advisor-demo/README.txt` and record
-results here. No real partner key or personal-site deployment was supplied in
-this task. WordPress/Shopify publication is deferred until the native install works.
+Local integration evidence, 2026-10-25: the sibling `personal-website` now has a
+native React `/watch-advisor-demo` route, navigation and project links. Both
+applications run together through `npm run dev:partners`; a dedicated
+**Portfolio local integration** partner permits localhost/loopback port 8080,
+with a 200-use monthly limit and public-only portfolio configuration. The
+existing hosted database/providers are used, not a local database. Admin now
+offers copyable public Vite configuration and the native download. No visitor
+or provider secret is copied into the portfolio.
+
+The five opt-in integration tests passed: all five frames, preserved answers,
+real six-screen diagnostic, archetype results, cached Heat sightings, Tudor
+Black Bay 58 alternatives, mobile overflow, admin sign-in/configuration,
+script failure/retry, actual CSP rejection on an unregistered local server,
+disabled keys, exhausted quota and usage records. The existing desktop/mobile
+browser suite passed all 12 tests. These establish local cross-origin
+integration, not public-domain operation, fresh provider discovery, paid demand
+or deployment rights for source images. See
+[`local testing`](local-partner-testing.md) for repeatable commands and limits.
+Portfolio types/build and targeted route/navigation lint passed; full portfolio
+lint retains pre-existing formatting and interview-preview errors. This does
+not imply a clean whole-portfolio audit.
+
+**Next action:** configure a separate production partner for the exact portfolio
+origin, set its public Vite configuration in the portfolio deployment and verify
+`https://oleksandr-kukhtin.dev/watch-advisor-demo` after publication. Local-only
+settings remain ignored; no public deployment is claimed here.
+WordPress/Shopify publication remains deferred until the public native install works.
 
 Download: `/downloads/the-reserve-native-demo.zip`. Source:
 `public/watch-advisor-demo/`. Regenerate after edits with PowerShell:
