@@ -34,7 +34,7 @@ fully verified for that amount.
 node --env-file=.env --import tsx scripts/import-local-catalogue.ts --write
 
 # Persistent allowance shared across restarts, not $100 every invocation:
-node --env-file=.env --import tsx scripts/enrich-local-catalogue.ts --budget 100
+node --dns-result-order=ipv4first --env-file=.env --import tsx scripts/enrich-local-catalogue.ts --budget 100
 
 # Live counts, permissions and exact-reference propagation checks:
 node --env-file=.env --import tsx scripts/catalogue-enrichment-report.ts
@@ -135,9 +135,9 @@ Production checkpoint: code commit `31f3e04` deployed as
 `dpl_6MQnwKQTfSL7pQ9UkENDpYr8zqus`, READY and aliased to
 `https://thereserve.watch`. The CLI needed explicit scope
 `alexisinworks-projects`; default-scope deploy initially returned Not authorized.
-After publication, direct HTTP checks from this machine timed out; subsequent
-Vercel inspection/curl also encountered a transient API fetch failure. Therefore
-deployment READY is verified, but a successful post-deployment public HTTP smoke
-check is **not** claimed. Live DB/helper checks and the 529-test gate passed.
-The local worker was separately confirmed running with its durable allowance
-journal; deployment/auth scope does not control that process.
+Initial default-network checks timed out, including a Vercel API fetch. A
+subsequent IPv4 smoke check succeeded: `/health` and the complete field-rationalist
+archetype page both returned HTTP 200; the public HTML contained SPB153, SPB183,
+SPB301 and the new role-supplement rationale. Live DB/helper checks and the
+529-test gate passed. The local worker was resumed with IPv4-first DNS and its
+durable allowance journal; deployment/auth scope does not control that process.

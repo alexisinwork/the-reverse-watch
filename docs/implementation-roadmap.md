@@ -1853,9 +1853,9 @@ stay explicit. Browser/store installation testing is not inferred from shared co
 
 Production delivery evidence: `31f3e04` pushed to main/master; deployment
 `dpl_6MQnwKQTfSL7pQ9UkENDpYr8zqus` READY on thereserve.watch with explicit Vercel
-scope. Fast gate passed 529 tests, types/lint/format/build. Post-deploy HTTP smoke
-remains unverified because this environment's requests timed out and Vercel's
-subsequent inspection hit a fetch failure. Local enrichment remains running;
+scope. Fast gate passed 529 tests, types/lint/format/build. Initial network checks
+timed out; the subsequent IPv4 smoke returned HTTP 200 for health and archetype,
+with new SPB153/SPB183/SPB301 references in the public result. Local enrichment remains running;
 the append-only budget journal also survives Windows/OneDrive snapshot locks.
 
 ## Environment-variable ownership
