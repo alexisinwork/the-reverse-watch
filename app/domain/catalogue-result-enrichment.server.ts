@@ -64,8 +64,33 @@ export function mergeCatalogueFacts(
       row.priceCurrency
         ? { amount: row.priceAmount, currency: row.priceCurrency }
         : watch.details.price;
+    const evidence = row.foundIn.filter(
+      (item): item is { source: string; url?: string } =>
+        !!item &&
+        typeof item === "object" &&
+        "source" in item &&
+        typeof (item as { source?: unknown }).source === "string",
+    );
+    const catalogueEvidence =
+      evidence.find((item) => item.source === "dials") ??
+      evidence.find((item) => item.source === "spacecity");
+    const dialsEvidence = evidence.find((item) => item.source === "dials");
+    const useDialsTitle = !!dialsEvidence && row.sourceKind === "catalogue";
+    const referenceSourceLabel = catalogueEvidence
+      ? catalogueEvidence.source === "dials"
+        ? "Dials"
+        : "Space City Timepieces"
+      : watch.details.referenceSourceLabel;
+    const referenceSourceUrl =
+      (catalogueEvidence?.url && /^https:\/\//i.test(catalogueEvidence.url)
+        ? catalogueEvidence.url
+        : undefined) ?? watch.details.referenceSourceUrl;
+    const dialsDetails = row.sourceDetails?.dials;
     return {
       ...watch,
+      ...(useDialsTitle && row.model !== watch.model
+        ? { model: row.model }
+        : {}),
       imageUrl: watch.imageUrl ?? row.imageUrl,
       priceNote:
         price && price !== watch.details.price
@@ -84,6 +109,15 @@ export function mergeCatalogueFacts(
           strap: watch.details.materials?.strap ?? row.strapMaterial,
         },
         referenceVerified: true,
+        ...(row.sourceKind ? { sourceKind: row.sourceKind } : {}),
+        ...(referenceSourceLabel ? { referenceSourceLabel } : {}),
+        ...(referenceSourceUrl ? { referenceSourceUrl } : {}),
+        ...(dialsDetails && typeof dialsDetails === "object"
+          ? { sourceDetails: dialsDetails }
+          : {}),
+        ...(useDialsTitle && row.model !== watch.model
+          ? { previousModelTitle: watch.model }
+          : {}),
         catalogueId: row.id,
         catalogueUpdatedAt: row.updatedAt,
         ...(price !== watch.details.price ? { priceConfirmed: true } : {}),

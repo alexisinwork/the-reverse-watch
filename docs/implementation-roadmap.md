@@ -1722,7 +1722,9 @@ provenance and disclosure labels regardless of branding, usage limits, and
 no visitor identity, quiz answers, email, IP address or persistent browser
 identifier. Owner decision (2026-10-25) adds aggregate interaction analytics:
 random in-memory tab session, redacted route, feature, clicked control, source
-domain/UTM and yes/no result feedback, scoped to a registered partner site.
+domain/UTM, result-feedback yes/no and the hosting platform's two-letter country
+code when available, scoped to a registered partner site. No IP or precise
+location is retained.
 Analytics are shown in `/admin/analytics`; they do not identify a person or
 retain answer values. Retailer-supplied catalogues remain out of scope.
 
@@ -1917,6 +1919,11 @@ where exact local facts were available. The resumable Dials mirror is free and
 does not use image CDN assets or listing prices; dataset ingestion/display is
 subject to the required model-page attribution decision. Perplexity allowance
 remains capped at $100, separately from Dials and Muse.
+
+Owner follow-up: analytics now groups sessions by hosting country code (no IP or
+precise location) and has a dedicated “Did people like their results?” section
+with yes/no and positive-response share by service. Migration 0085 is additive;
+RPC write and summary were verified in a rolled-back transaction.
 
 ## Environment-variable ownership
 

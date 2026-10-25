@@ -464,6 +464,37 @@
   font-size: 0.75rem;
 }
 
+.watch-card__specifications {
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+}
+
+.watch-card__specifications summary {
+  cursor: pointer;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.watch-card__specifications dl {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.8fr) minmax(0, 1.2fr);
+  gap: 0.3rem 0.8rem;
+  margin: 0.6rem 0;
+}
+
+.watch-card__specifications dl > div {
+  display: contents;
+}
+
+.watch-card__specifications dt {
+  color: var(--color-muted);
+}
+
+.watch-card__specifications dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
 .watch-card__rationale {
   margin: 0.85rem 0 0;
   color: var(--color-ink-soft);

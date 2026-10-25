@@ -4,6 +4,7 @@ import { findSiteByPublicKey } from "../domain/partner-sites.server";
 import { isSameOrigin, visitorKey } from "../domain/visitor-key.server";
 import { consumeSharedRateLimit } from "../domain/rate-limit-upstash.server";
 import type { RateLimitPolicy } from "../domain/rate-limit.server";
+import { interactionCountry } from "../domain/interaction-country.server";
 const policy: RateLimitPolicy = {
   configured: true,
   maxRequests: 300,
@@ -37,10 +38,11 @@ export async function action({ request }: { request: Request }) {
   const { siteKey, ...event } = parsed.data;
   if (siteKey && !(await findSiteByPublicKey(siteKey, client)))
     return new Response(null, { status: 403 });
+  const countryCode = interactionCountry(request);
   try {
     await rpc(
       client,
-      "record_partner_interaction_v1",
+      "record_partner_interaction_v2",
       {
         p_session_id: event.sessionId,
         p_site_key: siteKey ?? null,
@@ -52,6 +54,7 @@ export async function action({ request }: { request: Request }) {
         p_traffic_source: event.source ?? null,
         p_campaign: event.campaign ?? null,
         p_helpful: event.helpful ?? null,
+        p_country_code: countryCode,
       },
       2000,
     );

@@ -41,6 +41,9 @@ const summarySchema = z.object({
       sessions: z.number(),
     }),
   ),
+  byCountry: z.array(
+    z.object({ country: z.string().length(2), sessions: z.number() }),
+  ),
   byControl: z.array(
     z.object({ control: z.string(), feature: z.string(), clicks: z.number() }),
   ),
@@ -48,6 +51,7 @@ const summarySchema = z.object({
     z.object({
       session: z.string(),
       site: z.string(),
+      country: z.string().nullable(),
       started: z.string(),
       lastSeen: z.string(),
       eventCount: z.number(),
@@ -191,9 +195,10 @@ export default function AdminAnalytics() {
         </Form>
       </header>
       <p className="admin-note">
-        Anonymous page and button journeys for one browser tab session. No
-        names, emails, quiz answer values, IPs, or full URLs are stored. A
-        reload starts a new anonymous session.
+        Anonymous page and button journeys for one browser tab session. The
+        hosting country code is included when available. No names, emails, quiz
+        answer values, IPs, precise locations, or full URLs are stored. A reload
+        starts a new anonymous session.
       </p>
       {result.error ? <p className="warn">{result.error}</p> : null}
       {summary ? (
@@ -247,7 +252,8 @@ export default function AdminAnalytics() {
                     <th>Service</th>
                     <th>Sessions</th>
                     <th>Completed</th>
-                    <th>Liked / No</th>
+                    <th>Yes · liked</th>
+                    <th>No · not a fit</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -260,9 +266,8 @@ export default function AdminAnalytics() {
                       </td>
                       <td>{x.sessions}</td>
                       <td>{x.completions}</td>
-                      <td>
-                        {x.liked} / {x.disliked}
-                      </td>
+                      <td>{x.liked}</td>
+                      <td>{x.disliked}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -330,6 +335,35 @@ export default function AdminAnalytics() {
               </table>
             </article>
             <article className="admin-panel">
+              <h2>Countries</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Country</th>
+                    <th>Sessions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {summary.byCountry.map((x) => (
+                    <tr key={x.country}>
+                      <td>
+                        {new Intl.DisplayNames(["en"], { type: "region" }).of(
+                          x.country,
+                        ) ?? x.country}
+                        <span className="admin-note"> ({x.country})</span>
+                      </td>
+                      <td>{x.sessions}</td>
+                    </tr>
+                  ))}
+                  {!summary.byCountry.length ? (
+                    <tr>
+                      <td colSpan={2}>No country data for this period.</td>
+                    </tr>
+                  ) : null}
+                </tbody>
+              </table>
+            </article>
+            <article className="admin-panel">
               <h2>Most clicked</h2>
               <table>
                 <thead>
@@ -352,15 +386,54 @@ export default function AdminAnalytics() {
             </article>
           </section>
           <section className="admin-panel">
+            <h2>Did people like their results?</h2>
+            <p>
+              “Yes” and “No” answer “Did we find watches you like?” on the
+              results screen. Counts are grouped by service and respect the
+              filters above.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Service</th>
+                  <th>Yes, liked</th>
+                  <th>No, not a fit</th>
+                  <th>Feedback received</th>
+                </tr>
+              </thead>
+              <tbody>
+                {summary.byFeature.map((x) => {
+                  const total = x.liked + x.disliked;
+                  return (
+                    <tr key={`feedback-${x.feature}`}>
+                      <td>
+                        {PARTNER_FEATURE_LABELS[
+                          x.feature as keyof typeof PARTNER_FEATURE_LABELS
+                        ] ?? x.feature}
+                      </td>
+                      <td>{x.liked}</td>
+                      <td>{x.disliked}</td>
+                      <td>
+                        {total
+                          ? `${Math.round((x.liked / total) * 100)}% yes (${total} responses)`
+                          : "No responses yet"}
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </section>
+          <section className="admin-panel">
             <h2>Recent anonymous journeys</h2>
             {summary.journeys.length ? (
               <div className="admin-journeys">
                 {summary.journeys.map((j) => (
                   <details key={j.session}>
                     <summary>
-                      <code>…{j.session.slice(-8)}</code> · {j.site} ·{" "}
-                      {j.eventCount} actions ·{" "}
-                      {new Date(j.lastSeen).toLocaleString()}
+                      <code>…{j.session.slice(-8)}</code> · {j.site}
+                      {j.country ? ` · ${j.country}` : ""} · {j.eventCount}{" "}
+                      actions · {new Date(j.lastSeen).toLocaleString()}
                     </summary>
                     <ol>
                       {j.events.map((e, i) => (

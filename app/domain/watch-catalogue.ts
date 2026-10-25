@@ -151,6 +151,11 @@ const nullableNumber = z
   .transform((value) => (value === null ? null : Number(value)))
   .pipe(z.number().finite().nullable());
 
+const sourceDetailsSchema = z.record(
+  z.string(),
+  z.record(z.string(), z.union([z.string(), z.number()])),
+);
+
 /** Pre-owned asking prices from established dealers, in one currency. */
 const preownedPriceSchema = z.object({
   currency: z.string(),
@@ -203,6 +208,7 @@ export const catalogueWatchSchema = z.object({
     .nullable(),
   sourceUrl: z.string().nullable(),
   sourceKind: z.enum(["manufacturer", "retailer", "catalogue"]).nullable(),
+  sourceDetails: sourceDetailsSchema.optional().catch({}),
   imageUrl: z.string().nullable(),
   rationale: z.string().nullable(),
   foundIn: z.array(z.unknown()),
@@ -348,12 +354,27 @@ export function catalogueToFoundWatch(
       ? { amount: watch.priceAmount, currency: watch.priceCurrency }
       : null;
   const catalogueSource = watch.foundIn.find(
-    (item): item is { source: string; url?: string } =>
-      !!item &&
-      typeof item === "object" &&
-      "source" in item &&
-      (item as { source?: unknown }).source === "spacecity",
+    (item): item is { source: string; url?: string } => {
+      if (!item || typeof item !== "object" || !("source" in item))
+        return false;
+      const source = (item as { source?: unknown }).source;
+      return (
+        typeof source === "string" &&
+        ["dials", "spacecity"].includes(source.toLowerCase())
+      );
+    },
   );
+  const catalogueSourceLabel =
+    catalogueSource?.source.toLowerCase() === "dials"
+      ? "Dials"
+      : catalogueSource
+        ? "Space City Timepieces"
+        : undefined;
+  const catalogueSourceUrl =
+    typeof catalogueSource?.url === "string" &&
+    /^https:\/\//i.test(catalogueSource.url)
+      ? catalogueSource.url
+      : undefined;
   return {
     brand: watch.brand,
     model: watch.model,
@@ -378,11 +399,14 @@ export function catalogueToFoundWatch(
       ...(watch.sourceKind ? { sourceKind: watch.sourceKind } : {}),
       ...(catalogueSource
         ? {
-            referenceSourceLabel: "Space City Timepieces",
-            ...(catalogueSource.url
-              ? { referenceSourceUrl: catalogueSource.url }
+            referenceSourceLabel: catalogueSourceLabel,
+            ...(catalogueSourceUrl
+              ? { referenceSourceUrl: catalogueSourceUrl }
               : {}),
           }
+        : {}),
+      ...(watch.sourceDetails?.dials
+        ? { sourceDetails: watch.sourceDetails.dials }
         : {}),
       referenceVerified: watch.referenceConfirmed,
       reviewStatus: watch.reviewStatus,

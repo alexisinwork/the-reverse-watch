@@ -1,94 +1,95 @@
 {
-  "at": "2026-10-25T21:03:54.348Z",
+  "at": "2026-10-25T21:50:16.559Z",
   "totals": [
     {
       "total": 55029,
       "imported": 51920,
-      "imported_reference_confirmed": 17,
-      "imported_with_image": 14,
-      "imported_priced": 15
+      "imported_reference_confirmed": 1347,
+      "imported_with_image": 86,
+      "imported_priced": 38
     }
   ],
   "importedExamples": [
     {
-      "id": "8539effb-7c01-49ce-9222-2204c7e04903",
-      "brand": "Tissot",
-      "reference_code": "T006.407.16.033.01",
+      "id": "4ec489b8-966d-41e8-86e2-670c48dbf203",
+      "brand": "Omega",
+      "reference_code": "220.10.38.20.57.001",
       "reference_confirmed": true,
-      "case_diameter_mm": null,
+      "case_diameter_mm": "38.00",
       "case_thickness_mm": null,
       "water_resistance_m": null,
-      "movement": null,
-      "styles": [
-        "everyday",
-        "dress"
-      ],
-      "image_url": null,
-      "price_status": "confirmed"
-    },
-    {
-      "id": "d411c834-38ed-4216-84cb-8d633003a371",
-      "brand": "Tissot",
-      "reference_code": "T094.210.11.336.00",
-      "reference_confirmed": true,
-      "case_diameter_mm": null,
-      "case_thickness_mm": null,
-      "water_resistance_m": null,
-      "movement": null,
-      "styles": [
-        "everyday",
-        "dress"
-      ],
-      "image_url": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dwe3b22a3f/product-pictures/99887ca7-f2d8-422d-b279-d8bc6440e622_T094-210-11-336-00_Shadow.png",
-      "price_status": "confirmed"
-    },
-    {
-      "id": "9ff32eb7-c242-47f2-a76a-f9045acaefc5",
-      "brand": "Tissot",
-      "reference_code": "T058.109.36.031.01",
-      "reference_confirmed": true,
-      "case_diameter_mm": null,
-      "case_thickness_mm": null,
-      "water_resistance_m": null,
-      "movement": "quartz",
-      "styles": [
-        "everyday",
-        "dress"
-      ],
-      "image_url": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw14a4a4ba/product-pictures/c189e5ba-531e-49dc-ae6e-b1524287828a_T058-109-36-031-01_shadow.png",
-      "price_status": "confirmed"
-    },
-    {
-      "id": "5fc266ba-9038-4652-8cdc-fdcf33c4f7b2",
-      "brand": "Tissot",
-      "reference_code": "T058.109.16.031.01",
-      "reference_confirmed": true,
-      "case_diameter_mm": null,
-      "case_thickness_mm": null,
-      "water_resistance_m": null,
-      "movement": null,
-      "styles": [
-        "everyday",
-        "dress"
-      ],
-      "image_url": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw417d0523/product-pictures/975b06c8-1b7a-445d-b511-3054b940d16c_T058-109-16-031-01_shadow.png",
-      "price_status": "unconfirmed"
-    },
-    {
-      "id": "abf76b6a-324b-4d01-bcbf-f52ac064e477",
-      "brand": "Tissot",
-      "reference_code": "T100.430.36.051.01",
-      "reference_confirmed": true,
-      "case_diameter_mm": null,
-      "case_thickness_mm": null,
-      "water_resistance_m": null,
-      "movement": null,
+      "movement": "automatic",
       "styles": [
         "sport",
         "everyday"
       ],
-      "image_url": null,
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382057001-b42a03.png?w=1024",
       "price_status": "unconfirmed"
+    },
+    {
+      "id": "fe177210-fcc9-45f4-94ce-b50e7faad408",
+      "brand": "Omega",
+      "reference_code": "231.10.42.21.02.006",
+      "reference_confirmed": true,
+      "case_diameter_mm": "41.50",
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": "automatic",
+      "styles": [
+        "sport",
+        "everyday"
+      ],
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-master-co-axial-chronometer-41-5-mm-23110422102006-7eb896.png?w=1024",
+      "price_status": "unconfirmed"
+    },
+    {
+      "id": "04db1694-ed29-44fe-854d-1baf3fea8dd9",
+      "brand": "Omega",
+      "reference_code": "220.52.41.21.03.002",
+      "reference_confirmed": true,
+      "case_diameter_mm": "41.00",
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": "automatic",
+      "styles": [
+        "sport",
+        "everyday",
+        "dress"
+      ],
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-small-seconds-41-mm-22052412103002-e913cc.png?w=1024",
+      "price_status": "confirmed"
+    },
+    {
+      "id": "347a5744-340c-474d-a556-123e9acb53fb",
+      "brand": "Omega",
+      "reference_code": "220.20.34.20.60.001",
+      "reference_confirmed": true,
+      "case_diameter_mm": "34.00",
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": "automatic",
+      "styles": [
+        "everyday",
+        "dress"
+      ],
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-34-mm-22020342060001-76a4dc.png?w=1024",
+      "price_status": "unconfirmed"
+    },
+    {
+      "id": "0fd6e191-3fbb-4482-8fa4-93a6c4a930ce",
+      "brand": "Omega",
+      "reference_code": "220.12.41.21.06.001",
+      "reference_confirmed": true,
+      "case_diameter_mm": null,
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": "automatic",
+      "styles": [
+        "sport",
+        "everyday"
+      ],
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22012412106001-230391.png?w=1024",
+      "price_status": "confirmed"
     }
   ],
   "states": [
@@ -98,15 +99,15 @@
     },
     {
       "state": "enriched",
-      "count": 238
+      "count": 317
     },
     {
       "state": "needs_evidence",
-      "count": 67
+      "count": 76
     },
     {
       "state": "pending",
-      "count": 60183
+      "count": 60097
     },
     {
       "state": "retry",
@@ -119,8 +120,8 @@
   ],
   "archived": [
     {
-      "records": 67975,
-      "object_payloads": 67975
+      "records": 67977,
+      "object_payloads": 67977
     }
   ],
   "retry": [
@@ -136,13 +137,13 @@
   "status": {
     "states": {
       "retry": 13,
-      "pending": 60182,
+      "pending": 60097,
       "running": 1,
-      "enriched": 239,
-      "needs_evidence": 67,
+      "enriched": 317,
+      "needs_evidence": 76,
       "blocked_identity": 7473
     },
-    "records": 67975,
+    "records": 67977,
     "importedIdentities": 51920
   },
   "access": [
@@ -157,41 +158,33 @@
       "anon_status": false
     }
   ],
-  "recommendationRows": 3121,
+  "recommendationRows": 3147,
   "quizEligibility": [
     {
-      "id": "8539effb-7c01-49ce-9222-2204c7e04903",
-      "reference": "T006.407.16.033.01",
-      "searchable": true,
-      "relaxedQuizRuleFailures": [
-        "diameter",
-        "movement"
-      ]
+      "id": "4ec489b8-966d-41e8-86e2-670c48dbf203",
+      "searchable": false
     },
     {
-      "id": "d411c834-38ed-4216-84cb-8d633003a371",
-      "reference": "T094.210.11.336.00",
-      "searchable": true,
-      "relaxedQuizRuleFailures": [
-        "diameter",
-        "movement"
-      ]
+      "id": "fe177210-fcc9-45f4-94ce-b50e7faad408",
+      "searchable": false
     },
     {
-      "id": "9ff32eb7-c242-47f2-a76a-f9045acaefc5",
-      "reference": "T058.109.36.031.01",
+      "id": "04db1694-ed29-44fe-854d-1baf3fea8dd9",
+      "reference": "220.52.41.21.03.002",
+      "searchable": true,
+      "relaxedQuizRuleFailures": []
+    },
+    {
+      "id": "347a5744-340c-474d-a556-123e9acb53fb",
+      "searchable": false
+    },
+    {
+      "id": "0fd6e191-3fbb-4482-8fa4-93a6c4a930ce",
+      "reference": "220.12.41.21.06.001",
       "searchable": true,
       "relaxedQuizRuleFailures": [
         "diameter"
       ]
-    },
-    {
-      "id": "5fc266ba-9038-4652-8cdc-fdcf33c4f7b2",
-      "searchable": false
-    },
-    {
-      "id": "abf76b6a-324b-4d01-bcbf-f52ac064e477",
-      "searchable": false
     }
   ],
   "liveArchetypeReferences": [
@@ -208,27 +201,27 @@
   ],
   "exactLookupPropagation": [
     {
-      "reference": "IWC IW329301",
+      "reference": "Omega 220.10.38.20.57.001",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "IWC IW328803",
+      "reference": "Omega 231.10.42.21.02.006",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "IWC IW328802",
+      "reference": "Omega 220.52.41.21.03.002",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "IWC IW328902",
+      "reference": "Omega 220.20.34.20.60.001",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "IWC IW328901",
+      "reference": "Omega 220.12.41.21.06.001",
       "matched": true,
       "imageMatches": true
     }

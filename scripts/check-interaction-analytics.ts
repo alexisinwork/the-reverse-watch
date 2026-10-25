@@ -15,23 +15,28 @@ try {
   await sql
     .begin(async (tx) => {
       const session = crypto.randomUUID();
-      await tx`select public.record_partner_interaction_v1(${session},null,'result_feedback','quiz','/quiz','result_feedback',null,'smoke-check',null,true)`;
+      await tx`select public.record_partner_interaction_v2(${session},null,'result_feedback','quiz','/quiz','result_feedback',null,'smoke-check',null,true,'PL')`;
       const [row] =
         await tx`select public.partner_interaction_analytics_v1(now()-interval '1 day',now()+interval '1 minute',null) as report`;
-      const totals = z
+      const report = z
         .object({
           totals: z.object({
             events: z.number(),
             liked: z.number(),
             sessions: z.number(),
           }),
+          byCountry: z.array(
+            z.object({ country: z.string(), sessions: z.number() }),
+          ),
         })
-        .parse(row?.report).totals;
+        .parse(row?.report);
+      const totals = report.totals;
       if (
         !totals ||
         totals.events < 1 ||
         totals.liked < 1 ||
-        totals.sessions < 1
+        totals.sessions < 1 ||
+        !report.byCountry.some((country) => country.country === "PL")
       )
         throw new Error(
           "Analytics aggregate did not include the transactional smoke event",

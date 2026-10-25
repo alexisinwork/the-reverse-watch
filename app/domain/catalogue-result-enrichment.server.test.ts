@@ -113,6 +113,32 @@ describe("catalogue enrichment propagation", () => {
     expect(result?.details.caseDiameterMm).toBe(41);
     expect(watch.imageUrl).toBeNull();
   });
+  it("updates an older catalogue-derived cache title and adds Dials specifications with attribution", () => {
+    const [result] = mergeCatalogueFacts(
+      [sighting()],
+      [
+        catalogue({
+          model: "Seiko Diver 200m",
+          sourceKind: "catalogue",
+          sourceUrl: "https://dials.co/watches/seiko/diver/diver-200m",
+          sourceDetails: {
+            dials: { "Case diameter (mm)": 42, "Power reserve (hours)": 72 },
+          },
+          foundIn: [
+            {
+              source: "dials",
+              url: "https://dials.co/watches/seiko/diver/diver-200m",
+            },
+          ],
+        }),
+      ],
+    );
+    expect(result?.model).toBe("Seiko Diver 200m");
+    expect(result?.details.previousModelTitle).toBe("Diver");
+    expect(result?.details.referenceSourceLabel).toBe("Dials");
+    expect(result?.details.referenceSourceUrl).toContain("dials.co/watches");
+    expect(result?.details.sourceDetails?.["Power reserve (hours)"]).toBe(72);
+  });
   it("fails open when the optional catalogue lookup is unavailable", async () => {
     expect(await enrichResultWatches([sighting()], null)).toEqual([sighting()]);
   });

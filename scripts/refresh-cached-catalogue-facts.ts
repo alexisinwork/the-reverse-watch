@@ -1,5 +1,5 @@
-// Add only already-verified current catalogue facts to saved results.
-// Search membership, ranks, evidence and populated values stay untouched.
+// Scan every saved result and add exact verified local catalogue facts.
+// Unreferenced/ambiguous items are counted and left unchanged.
 import { writeFile } from "node:fs/promises";
 import postgres from "postgres";
 import { z } from "zod";
@@ -34,7 +34,7 @@ const rows = await sql<
 >`
   select r.search_id,r.rank,w.id as watch_id,w.brand,w.model,w.reference_code,w.source_url,w.image_url,r.price_note,r.rationale,r.details
   from private.ai_watch_search_results r join private.ai_watches w on w.id=r.watch_id
-  where w.reference_code is not null order by r.search_id,r.rank`;
+  order by r.search_id,r.rank`;
 try {
   const keys = [
     ...new Map(
@@ -65,7 +65,28 @@ try {
         ),
     );
   let changed = 0;
+  let unreferenced = 0;
+  let exactCatalogueMatches = 0;
+  let rowsWithDialsSpecs = 0;
   for (const row of rows) {
+    if (!row.reference_code) unreferenced++;
+    if (row.reference_code) {
+      const key = `${row.brand.toLowerCase().replace(/[^a-z0-9]/g, "")}|${row.reference_code.toLowerCase().replace(/[^a-z0-9]/g, "")}`;
+      const matches = catalogue.filter(
+        (candidate) =>
+          candidate.brand.toLowerCase().replace(/[^a-z0-9]/g, "") +
+            "|" +
+            (candidate.referenceCode ?? "")
+              .toLowerCase()
+              .replace(/[^a-z0-9]/g, "") ===
+            key &&
+          candidate.referenceConfirmed &&
+          candidate.reviewStatus !== "rejected",
+      );
+      if (matches.length === 1) exactCatalogueMatches++;
+      if (matches.length === 1 && !!matches[0]!.sourceDetails?.dials)
+        rowsWithDialsSpecs++;
+    }
     const watch: FoundWatch = {
       brand: row.brand,
       model: row.model,
@@ -80,7 +101,7 @@ try {
     if (JSON.stringify(merged) === JSON.stringify(watch)) continue;
     const result =
       await sql`update private.ai_watch_search_results set price_note=${merged.priceNote},details=${sql.json(merged.details)} where search_id=${row.search_id} and rank=${row.rank}`;
-    await sql`update private.ai_watches set image_url=coalesce(image_url,${merged.imageUrl}) where id=${row.watch_id}`;
+    await sql`update private.ai_watches set model=${merged.model}, image_url=coalesce(image_url,${merged.imageUrl}) where id=${row.watch_id}`;
     if (Number(result.count) > 0) {
       changed++;
     }
@@ -90,6 +111,9 @@ try {
     cachedWatchEntries: rows.length,
     distinctCachedIdentities: keys.length,
     catalogueEntriesMatched: catalogue.length,
+    exactCatalogueMatchedRows: exactCatalogueMatches,
+    cachedRowsWithoutReference: unreferenced,
+    cachedRowsWithDialsSpecs: rowsWithDialsSpecs,
     rowsRefreshed: changed,
     policy:
       "Only fields from unique, reference-confirmed local catalogue matches were added; existing facts, prices when not newly confirmed, source/rationale, ranks, search membership and attribution were preserved.",

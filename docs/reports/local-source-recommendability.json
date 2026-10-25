@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-25T21:52:48.536Z",
+  "sources": [
+    {
+      "source": "native",
+      "models": 3109,
+      "exact_references": 1371,
+      "with_photo_url": 2890,
+      "with_usable_price": 2980,
+      "with_diameter": 3021,
+      "with_movement": 3102,
+      "with_style_tags": 3109,
+      "baseline_quiz_eligible": 1292,
+      "eligible_without_photo": 51
+    },
+    {
+      "source": "spacecity",
+      "models": 10149,
+      "exact_references": 861,
+      "with_photo_url": 1,
+      "with_usable_price": 0,
+      "with_diameter": 6861,
+      "with_movement": 6305,
+      "with_style_tags": 1,
+      "baseline_quiz_eligible": 0,
+      "eligible_without_photo": 0
+    },
+    {
+      "source": "timepiecepedia",
+      "models": 41771,
+      "exact_references": 492,
+      "with_photo_url": 91,
+      "with_usable_price": 40,
+      "with_diameter": 5796,
+      "with_movement": 5719,
+      "with_style_tags": 96,
+      "baseline_quiz_eligible": 20,
+      "eligible_without_photo": 0
+    }
+  ],
+  "dialsSupplement": {
+    "dials_supplemented": 2,
+    "exact_dials_references": 2,
+    "dials_supplemented_quiz_eligible": 0,
+    "dials_supplemented_without_photo": 2
+  },
+  "cachedResults": {
+    "result_rows": 2570,
+    "with_reference": 1219,
+    "with_photo_url": 1878,
+    "already_has_supplemental_spec": 0
+  },
+  "missingFieldCounts": {
+    "photo": 52047,
+    "usable_price": 52009,
+    "diameter": 39351,
+    "movement": 39903,
+    "style": 51823,
+    "water_resistance": 52032,
+    "case_material": 40558,
+    "crystal": 51995
+  },
+  "missingRecordCount": 52652,
+  "quizEligibility": "Reference, usable price, diameter, movement and at least one explicit style tag; photos are optional and missing facts remain null.",
+  "note": "A model count is not a recommendable count. Unknown prices prevent any active budget fit. The baseline counts watches that can satisfy common hard filters; water resistance, wrist, currency conversion and specific style constraints are checked per profile."
+}

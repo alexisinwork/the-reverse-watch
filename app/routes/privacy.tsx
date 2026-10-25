@@ -69,8 +69,10 @@ export default function Privacy() {
             domain, optional campaign name, and whether results were liked.
             Events in one open browser tab share a random session code held only
             in memory; a reload starts a new code. We do not store names, email,
-            quiz answer values, IP addresses, full URLs, or advertising IDs.
-            Events link only within that browsing session.
+            quiz answer values, IP addresses, precise location, full URLs, or
+            advertising IDs. We store only the two-letter country code supplied
+            by our hosting platform, when available. Events link only within
+            that browsing session.
           </li>
           <li>
             <strong>Error reports.</strong> If a page breaks, a technical report

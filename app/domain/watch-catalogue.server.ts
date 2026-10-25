@@ -140,6 +140,7 @@ export type CatalogueEntry = {
   priceEvidence?: Record<string, unknown>;
   sourceUrl?: string | null;
   sourceKind?: "manufacturer" | "retailer" | "catalogue" | null;
+  sourceDetails?: Record<string, Record<string, string | number>>;
   imageUrl?: string | null;
   rationale?: string | null;
   foundIn?: unknown[];

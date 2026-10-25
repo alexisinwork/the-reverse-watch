@@ -274,6 +274,9 @@ no existing accepted values are overwritten. The new app/widget analytics asks
 whether results were liked and aggregates feature, click, source and exit funnel
 by partner site. It uses random per-tab session IDs in memory, retains no quiz
 answers or direct personal identifiers, and is visible in `/admin/analytics`.
+The owner also requested country-level reporting; the system stores only the
+two-letter hosting-country code, not an IP address or precise location. The
+admin page now shows an explicit yes/no feedback table by service.
 Current evidence and limits are in the roadmap and dated reports. Next action:
 finish local Dials mirror/import under its model attribution terms, then complete
 the fast code gate and deliver the additive app/admin changes; partner link policy

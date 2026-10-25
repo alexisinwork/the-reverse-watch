@@ -15,6 +15,8 @@ export type WatchDetails = {
   sourceKind?: SourceKind;
   referenceSourceLabel?: string;
   referenceSourceUrl?: string;
+  sourceDetails?: Record<string, string | number>;
+  previousModelTitle?: string;
   referenceVerified?: boolean;
   person?: string | null;
   work?: string | null;

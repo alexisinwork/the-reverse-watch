@@ -308,6 +308,34 @@ function WatchCard({
             ))}
           </ul>
         ) : null}
+        {details.sourceDetails && Object.keys(details.sourceDetails).length ? (
+          <details className="watch-card__specifications">
+            <summary>
+              More specifications
+              {details.referenceSourceLabel
+                ? ` · ${details.referenceSourceLabel}`
+                : ""}
+            </summary>
+            <dl>
+              {Object.entries(details.sourceDetails).map(([label, value]) => (
+                <div key={label}>
+                  <dt>{label}</dt>
+                  <dd>{String(value)}</dd>
+                </div>
+              ))}
+            </dl>
+            {details.referenceSourceUrl ? (
+              <a
+                className="watch-card__source"
+                href={details.referenceSourceUrl}
+                rel="noopener noreferrer nofollow"
+                target="_blank"
+              >
+                View the model in {details.referenceSourceLabel ?? "the source"}
+              </a>
+            ) : null}
+          </details>
+        ) : null}
         <p className="watch-card__rationale">{watch.rationale}</p>
         {mode === "film" && sourceLink(watch) ? (
           embed ? (

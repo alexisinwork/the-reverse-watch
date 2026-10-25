@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-25T21:47:05.687Z",
+  "mode": "write",
+  "snapshot": "c7ee599d26e18d1e93477c4ef96bc742540102379100306bbc7f4764fde90fd8",
+  "declaredModels": 41996,
+  "mirroredValidModels": 2,
+  "uniqueExactReferences": 238,
+  "ambiguousSourceIdentities": 0,
+  "mirrored": 2,
+  "exactReferences": 2,
+  "noReferenceNames": 0,
+  "duplicateSourceIdentities": 0,
+  "ambiguousMasterIdentities": 0,
+  "existingUpdated": 2,
+  "newIdentities": 0,
+  "nullFactsFilled": 12,
+  "strongerCatalogueConflictsResolved": 0,
+  "primaryFactsPreserved": 0,
+  "intakeArchived": 2,
+  "noImageFromDials": 0,
+  "noPriceFromDials": 0,
+  "databaseAfterImport": {
+    "total": 55029,
+    "dials_rows": 0,
+    "dials_reference_confirmed": 0,
+    "dials_with_image": 0,
+    "dials_priced": 0,
+    "dials_base_quiz_eligible": 0
+  },
+  "policy": "Exact source identity only. Dials reference data may resolve catalogue-level conflicts, but manufacturer/authorised-retailer facts are preserved. Full source JSON and conflicts remain in private intake. No Dials photos or seller prices are imported; missing prices remain ineligible for budget-filtered recommendations."
+}
