@@ -10,6 +10,7 @@ import {
   partnerSiteFrom,
 } from "../domain/partner-embed.server";
 import "../styles/discovery.css";
+import { storyCatalogueWatch } from "../domain/catalogue-result-enrichment.server";
 
 export async function loader({ params, context }: Route.LoaderArgs) {
   const stories = await loadPublishedDiscoveryStories();
@@ -20,7 +21,7 @@ export async function loader({ params, context }: Route.LoaderArgs) {
   // eslint-disable-next-line @typescript-eslint/only-throw-error
   if (!story) throw new Response("Discovery record not found", { status: 404 });
   await meterPartnerUse(partnerSiteFrom(context), "stories");
-  return { story };
+  return { story, watch: await storyCatalogueWatch(story.attribution) };
 }
 
 export function meta({ data: loaderData }: Route.MetaArgs) {
@@ -35,7 +36,7 @@ export function meta({ data: loaderData }: Route.MetaArgs) {
 
 export default function WatchStory() {
   const embed = useEmbed();
-  const { story } = useLoaderData<typeof loader>();
+  const { story, watch } = useLoaderData<typeof loader>();
   const identity = [
     story.attribution.brand,
     story.attribution.model,
@@ -69,6 +70,24 @@ export default function WatchStory() {
         </span>
         <h1>{story.headline}</h1>
         <p className="discovery-lede">{story.summary}</p>
+        {watch?.imageUrl ? (
+          <figure>
+            <img
+              src={watch.imageUrl}
+              alt={`${watch.brand} ${watch.model}`}
+              loading="lazy"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "360px",
+                objectFit: "contain",
+              }}
+            />
+            <figcaption>
+              Reference photo; identification evidence is listed separately
+              below.
+            </figcaption>
+          </figure>
+        ) : null}
         <dl className="discovery-facts">
           <div>
             <dt>Identification</dt>

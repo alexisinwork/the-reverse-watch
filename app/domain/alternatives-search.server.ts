@@ -28,7 +28,13 @@ import {
 import type { RateLimitPolicy } from "./rate-limit.server";
 import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
 import { catalogueToFoundWatch } from "./watch-catalogue";
-import { catalogueClient, loadCatalogueCached } from "./watch-catalogue.server";
+import {
+  catalogueClient,
+  loadCatalogueCached,
+  rpc,
+} from "./watch-catalogue.server";
+import { catalogueWatchSchema } from "./watch-catalogue";
+import { z } from "zod";
 
 // Pre-owned lookups cost a little, so a visitor's new searches are capped.
 export const ALTERNATIVES_SEARCH_POLICY: RateLimitPolicy = {
@@ -205,7 +211,21 @@ export async function startAlternativesSearch(
       code: "unavailable",
       error: "The search is unavailable right now.",
     };
-  const catalogue = await loadCatalogueCached(client);
+  const catalogue = [...(await loadCatalogueCached(client))];
+  // Unpriced imported identities can resolve a named target without loading
+  // the full research archive into every recommendation request.
+  try {
+    const named = z.array(catalogueWatchSchema).parse(
+      await rpc(client, "watch_catalogue_named_v1", {
+        p_query: form.name,
+        p_reference: form.reference || null,
+      }),
+    );
+    const known = new Set(catalogue.map((w) => w.id));
+    catalogue.push(...named.filter((w) => !known.has(w.id)));
+  } catch {
+    /* Existing catalogue and live fallback remain available. */
+  }
   const resolved = resolveNamedWatch(
     catalogue,
     form.name,

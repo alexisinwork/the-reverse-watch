@@ -60,6 +60,29 @@ describe("classifySource", () => {
 });
 
 describe("pageMentionsReference", () => {
+  it("does not confirm a prefix as a different regional/configuration reference", () => {
+    expect(
+      pageMentionsReference(
+        "SPB153",
+        "Reference SPB153J1",
+        "https://seikowatches.com/spb153j1",
+      ),
+    ).toBe(false);
+    expect(
+      pageMentionsReference(
+        "SKX007",
+        "Reference SKX007-K1",
+        "https://seikowatches.com/skx007-k1",
+      ),
+    ).toBe(false);
+    expect(
+      pageMentionsReference(
+        "SKX007J",
+        "Reference SKX007J",
+        "https://seikowatches.com/product",
+      ),
+    ).toBe(true);
+  });
   it("matches references regardless of dots, dashes, and spacing", () => {
     expect(
       pageMentionsReference(

@@ -4,6 +4,11 @@ import { afterEach, vi } from "vitest";
 
 import WatchArchetype, { loader } from "./watch-archetype";
 
+// Route rendering tests must not wait for the live ECB feed.
+vi.mock("../domain/fx.server", () => ({
+  loadFxTable: vi.fn().mockResolvedValue(null),
+}));
+
 function renderArchetype(path: string) {
   const Stub = createRoutesStub([
     {

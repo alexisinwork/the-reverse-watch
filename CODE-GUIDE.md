@@ -110,9 +110,14 @@ cookies, IP or anything identifying.
 counts/hashes. `scripts/local-watch-intake.ts` normalizes a four-brand pilot (or
 all 224 brands with `--all`, including CSV coverage reconciliation) and
 compares it with a read-only catalogue snapshot; `scripts/lib/watch-intake.ts`
-contains its pure normalization/candidate rules. Outputs stay research-only in
-`data/watch-archive/`; nothing is automatically promoted to public catalogue
-rows. Images and prices are excluded. Strategy and runnable commands:
+contains its pure normalization/candidate rules. The subsequent
+`scripts/import-local-catalogue.ts` archives all source records and adds bare
+identities; `scripts/enrich-local-catalogue.ts` verifies missing facts/photos and
+prices before they become eligible. Progress and results are mirrored locally.
+Shared feature hydration: `domain/catalogue-result-enrichment.server.ts`;
+archetype role supplements: `domain/archetype-catalogue.server.ts`.
+Admin shows live queue counts. Current workflow: `docs/catalogue-enrichment.md`.
+Source strategy and runnable intake commands:
 `docs/local-watch-database-strategy.md`, `docs/reports/local-watch-intake-pilot.md`,
 `docs/reports/local-watch-intake-full.md`.
 

@@ -1,0 +1,247 @@
+{
+  "at": "2026-10-25T17:27:09.418Z",
+  "totals": [
+    {
+      "total": 44880,
+      "imported": 41771,
+      "imported_reference_confirmed": 9,
+      "imported_with_image": 8,
+      "imported_priced": 9
+    }
+  ],
+  "importedExamples": [
+    {
+      "id": "0648c4d9-c61e-4736-9594-12dc59db897f",
+      "brand": "Seiko",
+      "reference_code": "SPB237",
+      "reference_confirmed": true,
+      "case_diameter_mm": null,
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": null,
+      "styles": [
+        "dive",
+        "sport"
+      ],
+      "image_url": "https://www.seikowatches.com/hk-zh/-/media/Images/Product--Image/All/Seiko/2022/02/20/01/03/SPB237J1/SPB237J1.png",
+      "price_status": "confirmed"
+    },
+    {
+      "id": "d48b490d-805c-43bc-b5cf-3524a2579fc7",
+      "brand": "Tissot",
+      "reference_code": "T006.407.11.033.03",
+      "reference_confirmed": true,
+      "case_diameter_mm": null,
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": null,
+      "styles": [
+        "everyday",
+        "dress"
+      ],
+      "image_url": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw9cd76665/product-pictures/081f190e-c331-497b-9d9d-3bcbdd48aee4_T006-407-11-033-03_shadow.png",
+      "price_status": "confirmed"
+    },
+    {
+      "id": "479372d9-a7b0-40b3-804a-70ec5c6741f6",
+      "brand": "Tissot",
+      "reference_code": "T006.407.11.033.02",
+      "reference_confirmed": true,
+      "case_diameter_mm": null,
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": null,
+      "styles": [
+        "everyday",
+        "dress"
+      ],
+      "image_url": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw8500696c/product-pictures/e32b821b-97f5-4c48-8972-320332d9f5d2_T006-407-11-033-02_shadow.png",
+      "price_status": "confirmed"
+    },
+    {
+      "id": "61f251c8-58ca-4767-832f-3cabecb9d1db",
+      "brand": "Tissot",
+      "reference_code": "T006.207.11.036.01",
+      "reference_confirmed": true,
+      "case_diameter_mm": null,
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": "automatic",
+      "styles": [
+        "everyday",
+        "dress"
+      ],
+      "image_url": "https://www.tissotwatches.com/on/demandware.static/-/Sites-Tissot-Catalogue/default/dw9f11962b/product-pictures/84afef79-0388-47ce-8198-6d7ec82e02ec_T006-207-11-036-01_shadow.png",
+      "price_status": "confirmed"
+    },
+    {
+      "id": "f4b33f6f-c389-45ab-96f6-072f4b12c5b4",
+      "brand": "Seiko",
+      "reference_code": "SPB288",
+      "reference_confirmed": true,
+      "case_diameter_mm": null,
+      "case_thickness_mm": null,
+      "water_resistance_m": null,
+      "movement": null,
+      "styles": [
+        "dive",
+        "sport"
+      ],
+      "image_url": "https://www.seikowatches.com/middleeast-en/-/media/Images/GlobalEn/Seiko/Home/common/SeikoLogo/ThumbnailSeikoLogo.jpg",
+      "price_status": "confirmed"
+    }
+  ],
+  "states": [
+    {
+      "state": "blocked_identity",
+      "count": 212
+    },
+    {
+      "state": "enriched",
+      "count": 18
+    },
+    {
+      "state": "needs_evidence",
+      "count": 4
+    },
+    {
+      "state": "pending",
+      "count": 42352
+    },
+    {
+      "state": "retry",
+      "count": 3
+    },
+    {
+      "state": "running",
+      "count": 1
+    }
+  ],
+  "archived": [
+    {
+      "records": 42590,
+      "object_payloads": 42590
+    }
+  ],
+  "retry": [
+    {
+      "last_error": "Error",
+      "count": 1
+    },
+    {
+      "last_error": "upstream_or_validation_error",
+      "count": 2
+    }
+  ],
+  "status": {
+    "states": {
+      "retry": 3,
+      "pending": 42351,
+      "running": 1,
+      "enriched": 19,
+      "needs_evidence": 4,
+      "blocked_identity": 212
+    },
+    "records": 42590,
+    "importedIdentities": 41771
+  },
+  "access": [
+    {
+      "intake_rls": true
+    }
+  ],
+  "grants": [
+    {
+      "anon_lookup": false,
+      "authenticated_lookup": false,
+      "anon_status": false
+    }
+  ],
+  "recommendationRows": 3115,
+  "quizEligibility": [
+    {
+      "id": "0648c4d9-c61e-4736-9594-12dc59db897f",
+      "reference": "SPB237",
+      "searchable": true,
+      "relaxedQuizRuleFailures": [
+        "diameter",
+        "movement"
+      ]
+    },
+    {
+      "id": "d48b490d-805c-43bc-b5cf-3524a2579fc7",
+      "reference": "T006.407.11.033.03",
+      "searchable": true,
+      "relaxedQuizRuleFailures": [
+        "diameter",
+        "movement"
+      ]
+    },
+    {
+      "id": "479372d9-a7b0-40b3-804a-70ec5c6741f6",
+      "reference": "T006.407.11.033.02",
+      "searchable": true,
+      "relaxedQuizRuleFailures": [
+        "diameter",
+        "movement"
+      ]
+    },
+    {
+      "id": "61f251c8-58ca-4767-832f-3cabecb9d1db",
+      "reference": "T006.207.11.036.01",
+      "searchable": true,
+      "relaxedQuizRuleFailures": [
+        "diameter"
+      ]
+    },
+    {
+      "id": "f4b33f6f-c389-45ab-96f6-072f4b12c5b4",
+      "reference": "SPB288",
+      "searchable": true,
+      "relaxedQuizRuleFailures": [
+        "diameter",
+        "movement"
+      ]
+    }
+  ],
+  "liveArchetypeReferences": [
+    "Baltic Tourer Beige",
+    "Benrus DTU-2A/P",
+    "Casio DW5600E-1V",
+    "Citizen BM8180-03E",
+    "CWC G10FATBOY80",
+    "Seiko SPB301",
+    "Seiko SPB183",
+    "Seiko SPB153",
+    "Seiko SPB237",
+    "Seiko SPB288"
+  ],
+  "exactLookupPropagation": [
+    {
+      "reference": "Breitling A17328101B1X1",
+      "matched": true,
+      "imageMatches": true
+    },
+    {
+      "reference": "Seiko SPB237",
+      "matched": true,
+      "imageMatches": true
+    },
+    {
+      "reference": "Breguet 7147BR/12/9WU",
+      "matched": true,
+      "imageMatches": true
+    },
+    {
+      "reference": "Blancpain 5015-1130-52A",
+      "matched": true,
+      "imageMatches": true
+    },
+    {
+      "reference": "Blancpain 6651-1127-55B",
+      "matched": true,
+      "imageMatches": true
+    }
+  ],
+  "scope": "No film attribution or archetype membership inferred from reference data. Read-time hydration is shared by app/widgets/API. No cache-wide rewrite."
+}

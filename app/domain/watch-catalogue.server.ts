@@ -254,7 +254,7 @@ export async function fillPhotosFromCatalogue<
   } catch {
     return watches;
   }
-  const brandKey = (brand: string) => foldText(brand.split(/\s+/)[0] ?? brand);
+  const brandKey = (brand: string) => foldText(brand);
   const byReference = new Map<string, string>();
   const byModel = new Map<string, string>();
   for (const watch of catalogue) {
@@ -292,12 +292,10 @@ export async function fillPhotosFromCatalogue<
     if (watch.imageUrl) return watch;
     const brand = brandKey(watch.brand);
     const model = foldText(watch.model);
-    const image =
-      (watch.referenceCode
-        ? byReference.get(`${brand}|${foldText(watch.referenceCode)}`)
-        : undefined) ??
-      byModel.get(`${brand}|${model}`) ??
-      (model.length >= 6 ? looseMatch(brand, model) : undefined);
+    const image = watch.referenceCode
+      ? byReference.get(`${brand}|${foldText(watch.referenceCode)}`)
+      : (byModel.get(`${brand}|${model}`) ??
+        (model.length >= 6 ? looseMatch(brand, model) : undefined));
     return image ? { ...watch, imageUrl: image } : watch;
   });
 }

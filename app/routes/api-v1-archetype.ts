@@ -5,7 +5,8 @@
  * watches. No AI call: the watches are chosen ahead of time.
  */
 import type { Route } from "./+types/api-v1-archetype";
-import { ARCHETYPE_BANDS, archetypeWatches } from "../domain/archetype-picks";
+import { ARCHETYPE_BANDS } from "../domain/archetype-picks";
+import { archetypeCatalogueWatches } from "../domain/archetype-catalogue.server";
 import {
   ARCHETYPE_QUESTIONS,
   ARCHETYPE_SCORING_VERSION,
@@ -86,7 +87,10 @@ export async function loader({ request }: Route.LoaderArgs) {
         description: archetype.description,
       },
       priceIdea: ARCHETYPE_BANDS[answers.priceComfort].label,
-      watches: archetypeWatches(archetype.id, answers.priceComfort),
+      watches: await archetypeCatalogueWatches(
+        archetype.id,
+        answers.priceComfort,
+      ),
     },
     200,
     origin,

@@ -14,6 +14,7 @@ import type { PartnerSite } from "./partner-sites.server";
 import type { RateLimitPolicy } from "./rate-limit.server";
 import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
 import { fillPhotosFromCatalogue } from "./watch-catalogue.server";
+import { enrichResultWatches } from "./catalogue-result-enrichment.server";
 
 // Stored answers are free; only fresh searches spend provider credit.
 export const FILM_NEW_SEARCH_POLICY: RateLimitPolicy = {
@@ -62,7 +63,11 @@ export async function runFilmSearch({
   return view.status === "found"
     ? {
         ...view,
-        watches: mergeSightings(await fillPhotosFromCatalogue(view.watches)),
+        watches: mergeSightings(
+          await enrichResultWatches(
+            await fillPhotosFromCatalogue(view.watches),
+          ),
+        ),
       }
     : view;
 }

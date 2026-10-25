@@ -18,6 +18,7 @@ import {
 } from "../domain/partner-api.server";
 import { meterPartnerUse } from "../domain/partner-embed.server";
 import type { RateLimitPolicy } from "../domain/rate-limit.server";
+import { storyCatalogueWatch } from "../domain/catalogue-result-enrichment.server";
 
 const VISITOR_POLICY: RateLimitPolicy = {
   configured: true,
@@ -59,7 +60,14 @@ export async function loader({ request, params }: Route.LoaderArgs) {
       stories.find((entry) => entry.slug === params.storySlug) ??
       findPublishedDiscoveryStory(params.storySlug);
     return story
-      ? apiJson({ story: publicStory(story) }, 200, origin)
+      ? apiJson(
+          {
+            story: publicStory(story),
+            watch: await storyCatalogueWatch(story.attribution),
+          },
+          200,
+          origin,
+        )
       : apiError(404, "not_found", "No published story has that slug.", origin);
   }
   return apiJson({ stories: stories.map(publicStory) }, 200, origin);

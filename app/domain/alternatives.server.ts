@@ -85,8 +85,20 @@ export function resolveNamedWatch(
     const byRef = live.filter(
       (watch) => normalizeReference(watch.referenceCode) === ref,
     );
-    if (byRef.length > 0)
-      return { status: "found", watch: [...byRef].sort(better)[0]! };
+    const namedBrand = byRef.filter((watch) =>
+      words(watch.brand).every((word) => words(name).includes(word)),
+    );
+    const matching = namedBrand.length ? namedBrand : byRef;
+    if (
+      matching.length > 1 &&
+      new Set(matching.map((watch) => fold(watch.brand))).size > 1
+    )
+      return {
+        status: "ambiguous",
+        options: [...matching].sort(better).slice(0, 6),
+      };
+    if (matching.length > 0)
+      return { status: "found", watch: [...matching].sort(better)[0]! };
   }
   const wanted = words(name);
   if (wanted.length === 0) return { status: "not_found" };
@@ -253,20 +265,24 @@ export async function findAlternatives({
   const fx = await loadFxTable();
 
   let targetId = known?.id ?? null;
-  if (!targetId && searchReady(deps.config)) {
-    targetId = await identifyWatchLive(name, reference, {
-      client,
-      deps,
-      fx,
-      report,
-    }).catch(() => null);
+  if (
+    (!targetId || known?.referenceConfirmed === false) &&
+    searchReady(deps.config)
+  ) {
+    targetId =
+      (await identifyWatchLive(name, reference, {
+        client,
+        deps,
+        fx,
+        report,
+      }).catch(() => null)) ?? targetId;
     clearCatalogueCache();
   }
   if (!targetId) return { status: "not_found" };
 
   report?.({ text: "Comparing it with our catalogue and pre-owned prices…" });
   let catalogue = await loadCatalogueCached(client);
-  const first = catalogue.find((watch) => watch.id === targetId);
+  const first = catalogue.find((watch) => watch.id === targetId) ?? known;
   if (!first) return { status: "not_found" };
   await fillPreownedPrices(first, catalogue, budget, allowQuartz).catch(
     () => undefined,

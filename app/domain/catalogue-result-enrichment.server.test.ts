@@ -1,0 +1,212 @@
+import { describe, it, expect } from "vitest";
+import { catalogueWatchSchema } from "./watch-catalogue";
+import {
+  mergeCatalogueFacts,
+  enrichResultWatches,
+} from "./catalogue-result-enrichment.server";
+import { quoteSupportsValue } from "./catalogue-enrichment.server";
+import type { FoundWatch } from "./ai-watch-types";
+import { rankEnrichedArchetype } from "./archetype-catalogue.server";
+import { resolveNamedWatch } from "./alternatives.server";
+
+const catalogue = (patch: Record<string, unknown> = {}) =>
+  catalogueWatchSchema.parse({
+    id: "reference-id",
+    identityKey: "seiko|skx007j",
+    brand: "Seiko",
+    model: "Diver",
+    referenceCode: "SKX007J",
+    referenceConfirmed: true,
+    styles: ["dive"],
+    caseDiameterMm: 42,
+    caseThicknessMm: null,
+    caseShape: null,
+    waterResistanceM: 200,
+    movement: "automatic",
+    inHouseCalibre: null,
+    crystal: null,
+    displayCaseback: null,
+    complications: [],
+    caseMaterial: "steel",
+    casebackMaterial: null,
+    strapMaterial: null,
+    priceAmount: 500,
+    priceCurrency: "USD",
+    priceStatus: "confirmed",
+    priceCheckedAt: null,
+    priceEvidence: {},
+    priceChange: null,
+    sourceUrl: "https://seikowatches.com/product",
+    sourceKind: "manufacturer",
+    imageUrl: "https://seikowatches.com/photo.jpg",
+    rationale: null,
+    foundIn: [],
+    reviewStatus: "pending",
+    reviewedAt: null,
+    createdAt: "2026-10-25",
+    updatedAt: "2026-10-25",
+    ...patch,
+  });
+const sighting = (patch: Partial<FoundWatch> = {}): FoundWatch => ({
+  brand: "Seiko",
+  model: "Diver",
+  referenceCode: "SKX007J",
+  sourceUrl: "https://evidence.test/movie",
+  imageUrl: null,
+  priceNote: null,
+  rationale: "A documented sighting",
+  details: {
+    person: "Actor",
+    work: "Film",
+    evidenceUrl: "https://evidence.test/movie",
+  },
+  ...patch,
+});
+
+describe("catalogue enrichment propagation", () => {
+  it("fills exact-reference missing facts without inventing attribution", () => {
+    const [watch] = mergeCatalogueFacts([sighting()], [catalogue()]);
+    expect(watch?.imageUrl).toBe("https://seikowatches.com/photo.jpg");
+    expect(watch?.details.caseDiameterMm).toBe(42);
+    expect(watch?.details.person).toBe("Actor");
+    expect(watch?.sourceUrl).toBe("https://evidence.test/movie");
+    expect(watch?.details.catalogueId).toBe("reference-id");
+  });
+  it("never crosses reference suffixes or brands or fills family-only identifications", () => {
+    for (const watch of [
+      sighting({ referenceCode: "SKX007K1" }),
+      sighting({ brand: "Other" }),
+      sighting({ referenceCode: null }),
+    ])
+      expect(mergeCatalogueFacts([watch], [catalogue()])[0]).toEqual(watch);
+  });
+  it("does not use unconfirmed, rejected or ambiguous catalogue identities", () => {
+    for (const rows of [
+      [catalogue({ referenceConfirmed: false })],
+      [catalogue({ reviewStatus: "rejected" })],
+      [catalogue(), catalogue({ id: "other-id" })],
+    ])
+      expect(mergeCatalogueFacts([sighting()], rows)[0]).toEqual(sighting());
+  });
+  it("reflects an explicit failed variant recheck in a cached result", () => {
+    const [watch] = mergeCatalogueFacts(
+      [sighting({ details: { referenceVerified: true } })],
+      [
+        catalogue({
+          referenceConfirmed: false,
+          priceEvidence: { referenceRecheck: "exact_variant_not_confirmed" },
+        }),
+      ],
+    );
+    expect(watch?.details.referenceVerified).toBe(false);
+  });
+  it("preserves known evidence facts and a pre-owned price", () => {
+    const watch = sighting({
+      details: {
+        caseDiameterMm: 41,
+        price: { amount: 300, currency: "USD" },
+        priceCondition: "pre-owned",
+      },
+    });
+    const [result] = mergeCatalogueFacts([watch], [catalogue()]);
+    expect(result?.details.price?.amount).toBe(300);
+    expect(result?.details.caseDiameterMm).toBe(41);
+    expect(watch.imageUrl).toBeNull();
+  });
+  it("fails open when the optional catalogue lookup is unavailable", async () => {
+    expect(await enrichResultWatches([sighting()], null)).toEqual([sighting()]);
+  });
+});
+describe("grounded field extraction", () => {
+  const claim = {
+    field: "caseDiameterMm" as const,
+    value: 42,
+    quote: "Case diameter 42 mm",
+    sourceUrl: "https://seikowatches.com/product",
+  };
+  it("requires the field label and exact numeric value in the quote", () => {
+    expect(quoteSupportsValue(claim)).toBe(true);
+    expect(quoteSupportsValue({ ...claim, quote: "Lug to lug 42 mm" })).toBe(
+      false,
+    );
+    expect(quoteSupportsValue({ ...claim, quote: "Case diameter 41 mm" })).toBe(
+      false,
+    );
+    expect(
+      quoteSupportsValue({ ...claim, quote: "Case size 42 x 30 mm" }),
+    ).toBe(false);
+    expect(
+      quoteSupportsValue({
+        ...claim,
+        quote: "Case diameter 40 mm. Thickness 42 mm.",
+      }),
+    ).toBe(false);
+    expect(
+      quoteSupportsValue({
+        ...claim,
+        field: "waterResistanceM",
+        value: 200,
+        quote: "Water resistance: 20 bar",
+      }),
+    ).toBe(true);
+  });
+});
+
+describe("new archetype catalogue membership", () => {
+  it("does not resolve a reference shared by different brands arbitrarily", () => {
+    const rows = [catalogue(), catalogue({ brand: "Other", id: "other-id" })];
+    const resolved = resolveNamedWatch(rows, "Seiko Diver", "SKX007J");
+    expect(resolved.status === "found" && resolved.watch.brand).toBe("Seiko");
+    expect(resolveNamedWatch(rows, "Diver", "SKX007J").status).toBe(
+      "ambiguous",
+    );
+  });
+  const enriched = () =>
+    catalogue({ foundIn: [{ source: "catalogue_enrichment" }] });
+  it("adds a price-bounded, documented role fit without inventing recognition", () => {
+    expect(
+      rankEnrichedArchetype(
+        [enriched()],
+        "field_rationalist",
+        "first_good_watch",
+        null,
+      ),
+    ).toHaveLength(1);
+    expect(
+      rankEnrichedArchetype(
+        [enriched()],
+        "field_rationalist",
+        "established_collection",
+        null,
+      ),
+    ).toHaveLength(0);
+    expect(
+      rankEnrichedArchetype(
+        [enriched()],
+        "recognised_standard_bearer",
+        "first_good_watch",
+        null,
+      ),
+    ).toHaveLength(0);
+  });
+  it("does not rank unverified or unpriced research records", () => {
+    expect(
+      rankEnrichedArchetype(
+        [
+          catalogue(),
+          catalogue({
+            referenceConfirmed: false,
+            foundIn: [{ source: "catalogue_enrichment" }],
+          }),
+          catalogue({
+            priceStatus: "unconfirmed",
+            foundIn: [{ source: "catalogue_enrichment" }],
+          }),
+        ],
+        "field_rationalist",
+        "first_good_watch",
+        null,
+      ),
+    ).toEqual([]);
+  });
+});

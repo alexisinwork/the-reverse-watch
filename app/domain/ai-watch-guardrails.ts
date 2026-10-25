@@ -100,8 +100,14 @@ export function pageMentionsReference(
 ) {
   const needle = normalizeReference(reference);
   if (!needle) return false;
-  const haystack = `${url} ${pageText}`.toLowerCase().replace(/[^a-z0-9]/g, "");
-  return haystack.includes(needle);
+  // Formatting may vary, but a prefix is not an exact variant reference:
+  // SPB153 must not confirm SPB153J1, nor SKX007 confirm SKX007-K1.
+  const formatted = needle.split("").join("[.\\s\\-_/]*");
+  const pageUrl = url.replace(/\.(?:html?|aspx?|php)(?=$|[?#])/i, "");
+  return new RegExp(
+    `(?<![a-z0-9])${formatted}(?![a-z0-9]|[-_./][a-z0-9])`,
+    "i",
+  ).test(`${pageUrl} ${pageText}`);
 }
 
 export function meetsWaterResistance(

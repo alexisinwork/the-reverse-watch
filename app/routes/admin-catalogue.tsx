@@ -25,15 +25,18 @@ import {
   wristFitLabel,
   type CatalogueStyle,
   type CatalogueWatch,
+  catalogueWatchSchema,
 } from "../domain/watch-catalogue";
 import {
   catalogueClient,
   listCatalogue,
   recordCataloguePrice,
   reviewCatalogueWatch,
+  rpc,
   type ReviewPatch,
 } from "../domain/watch-catalogue.server";
 import "../styles/admin.css";
+import { z } from "zod";
 
 const PAGE_SIZE = 60;
 const FILTERS = ["pending", "approved", "rejected", "price", "all"] as const;
@@ -130,6 +133,27 @@ export async function loader({ request }: Route.LoaderArgs) {
   const page = Math.max(1, Number(url.searchParams.get("page")) || 1);
 
   const all = await listCatalogue(client, true);
+  if (query.length >= 3) {
+    const imported = await rpc(client, "watch_catalogue_named_v1", {
+      p_query: query,
+      p_reference: null,
+    })
+      .then((value) => z.array(catalogueWatchSchema).parse(value))
+      .catch(() => []);
+    const known = new Set(all.map((w) => w.id));
+    all.push(...imported.filter((w) => !known.has(w.id)));
+  }
+  const intake = await rpc(client, "watch_catalogue_intake_status_v1", {})
+    .then((value) =>
+      z
+        .object({
+          records: z.number(),
+          importedIdentities: z.number(),
+          states: z.record(z.string(), z.number()),
+        })
+        .parse(value),
+    )
+    .catch(() => null);
   const counts = Object.fromEntries(
     FILTERS.map((name) => [
       name,
@@ -176,6 +200,7 @@ export async function loader({ request }: Route.LoaderArgs) {
     {
       authed: true as const,
       error: null,
+      intake,
       rows,
       counts,
       filter,
@@ -687,6 +712,28 @@ export default function AdminCatalogue() {
         </Form>
       </header>
       {error ? <p className="warn">{error}</p> : null}
+      {"intake" in loaded && loaded.intake ? (
+        <section aria-label="Imported catalogue">
+          <h2>Imported catalogue</h2>
+          <p>
+            {loaded.intake.records.toLocaleString("en")} source records;{" "}
+            {loaded.intake.importedIdentities.toLocaleString("en")} new
+            reference identities.
+          </p>
+          <p>
+            {Object.entries(loaded.intake.states)
+              .map(
+                ([state, count]) =>
+                  `${state.replaceAll("_", " ")}: ${count.toLocaleString("en")}`,
+              )
+              .join(" · ")}
+          </p>
+          <p>
+            Imported facts need source verification. References enter
+            recommendations once their price and required facts are established.
+          </p>
+        </section>
+      ) : null}
       <ActionError />
       <nav className="admin-filters" aria-label="Filter">
         {FILTERS.map((name) => (

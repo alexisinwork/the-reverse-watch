@@ -253,6 +253,17 @@ not assumed permissions. A local master does not by itself remove the hosted
 runtime's Supabase/provider dependencies. This research does not change the
 commercial next action above (public portfolio partner verification).
 
+Catalogue integration follow-up, 2026-10-25: owner authorizes source import,
+primary-source enrichment/images and a $100 first-pass allowance. All source
+records are archived; 41,771 new bare identities are in the database, becoming
+recommendation-eligible only as price/required facts are established. Shared app,
+widget and API routes now hydrate exact references from the same catalogue.
+No new partner-facing completeness or celebrity-attribution claim is justified
+by import counts. Local paid worker progress is resumable; full enrichment is
+still running, and conservative request allowance is not an actual billing quote.
+Workflow: `docs/catalogue-enrichment.md`. Commercial next action remains the
+public portfolio partner verification above.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

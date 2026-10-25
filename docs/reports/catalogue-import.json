@@ -1,0 +1,24 @@
+{
+  "records": 42590,
+  "identities": 42473,
+  "duplicateGroups": 95,
+  "inputSha256": "f945f08d0b8b6704a60fd1a18a26aab1e7b2edd21d917ba80b90b245bfcbff4a",
+  "snapshot": "d37b781c12475cee5dc9a4f270037204590c1575",
+  "at": "2026-10-25T16:44:01.555Z",
+  "states": [
+    {
+      "state": "blocked_identity",
+      "count": 212
+    },
+    {
+      "state": "pending",
+      "count": 42378
+    }
+  ],
+  "totals": [
+    {
+      "total": 44880,
+      "imported": 41771
+    }
+  ]
+}

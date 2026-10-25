@@ -1834,6 +1834,23 @@ ignored locally; report: `docs/reports/local-watch-intake-full.md`. Factual
 verification, conflict resolution and publication stay deferred per owner;
 there is no owner action required to retain/use the local research archive.
 
+### Full catalogue integration and paid enrichment (2026-10-25)
+
+Owner now requests live integration, missing facts/image URLs and propagation to
+all features, superseding the preceding deferral; first-pass allowance $100.
+Applied additive migrations 0076–0079; all 42,590 source records are archived and
+41,771 bare identities added without overwriting old accepted facts. 212 ambiguous
+source identities stay blocked. Shared exact-reference hydration covers quiz,
+alternatives, archetype, film/person and story detail routes, including widgets
+and API. Priced/verified role fits can enter dynamic archetype supplements;
+celebrity links and brand prestige are not inferred. Admin has queue/search access.
+Source suffix checking is now boundary-aware; a failed imported confirmation is
+parked rather than exposed as confirmed. Unit/DB propagation evidence and commands:
+`docs/catalogue-enrichment.md`. The resumable local worker continues with a saved,
+conservative $100 request allowance. Full per-record enrichment remains **in
+progress**, not complete; missing facts, source conflicts and unresolved identities
+stay explicit. Browser/store installation testing is not inferred from shared code.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

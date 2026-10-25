@@ -1,6 +1,8 @@
 export type SourceKind = "manufacturer" | "retailer";
 
 export type WatchDetails = {
+  catalogueId?: string;
+  catalogueUpdatedAt?: string;
   price?: { amount: number; currency: string } | null;
   waterResistanceM?: number | null;
   caseDiameterMm?: number | null;

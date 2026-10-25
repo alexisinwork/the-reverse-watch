@@ -5,7 +5,8 @@ import type { Route } from "./+types/watch-archetype";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { EmbedThemeFields, SurfaceLink, useEmbed } from "../components/surface";
 import { WatchResults } from "../components/watch-results";
-import { ARCHETYPE_BANDS, archetypeWatches } from "../domain/archetype-picks";
+import { ARCHETYPE_BANDS } from "../domain/archetype-picks";
+import { archetypeCatalogueWatches } from "../domain/archetype-catalogue.server";
 import {
   ARCHETYPE_QUESTIONS,
   ARCHETYPE_SCORING_VERSION,
@@ -49,7 +50,10 @@ export async function loader({ request, context }: Route.LoaderArgs) {
   // Ten catalogue watches for this archetype, in the price band it chose.
   const watches =
     result.status === "complete"
-      ? archetypeWatches(result.archetype.id, result.answers.priceComfort)
+      ? await archetypeCatalogueWatches(
+          result.archetype.id,
+          result.answers.priceComfort,
+        )
       : [];
   return {
     result,

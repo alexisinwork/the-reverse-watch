@@ -9,6 +9,7 @@ import { normalizeReference } from "./ai-watch-guardrails";
 import { searchWithStore } from "./ai-watch-store.server";
 import type { AiSearchView, FoundWatch, ProgressEvent } from "./ai-watch-types";
 import { loadFxTable, type FxTable } from "./fx.server";
+import { enrichSearchView } from "./catalogue-result-enrichment.server";
 import { findPriceRange, type ProfileV4 } from "./questionnaire-v4";
 import {
   catalogueCoversRange,
@@ -201,7 +202,7 @@ export async function searchQuiz(
         ? `The catalogue has ${main.length} confirmed ${main.length === 1 ? "fit" : "fits"}; searching live for more…`
         : "No catalogue watch fits every answer yet; searching live…",
   });
-  const live = await runLive();
+  const live = await enrichSearchView(await runLive());
   if (live.status === "found" && live.fromCache) {
     report?.({
       text: "These answers were searched before: loading the saved result.",
