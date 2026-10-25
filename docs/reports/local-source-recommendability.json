@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-25T22:56:40.590Z",
+  "at": "2026-10-25T23:01:00.272Z",
   "sources": [
     {
       "source": "dials",
@@ -28,12 +28,12 @@
     {
       "source": "spacecity",
       "models": 10149,
-      "exact_references": 893,
-      "with_photo_url": 6,
+      "exact_references": 894,
+      "with_photo_url": 8,
       "with_usable_price": 0,
       "with_diameter": 6866,
-      "with_movement": 6308,
-      "with_style_tags": 15,
+      "with_movement": 6309,
+      "with_style_tags": 17,
       "baseline_quiz_eligible": 0,
       "eligible_without_photo": 0
     },
@@ -41,20 +41,20 @@
       "source": "timepiecepedia",
       "models": 41771,
       "exact_references": 40802,
-      "with_photo_url": 213,
-      "with_usable_price": 69,
+      "with_photo_url": 219,
+      "with_usable_price": 71,
       "with_diameter": 40629,
       "with_movement": 40541,
-      "with_style_tags": 15508,
-      "baseline_quiz_eligible": 69,
+      "with_style_tags": 15510,
+      "baseline_quiz_eligible": 71,
       "eligible_without_photo": 3
     }
   ],
   "dialsSupplement": {
     "dials_supplemented": 41911,
     "exact_dials_references": 41911,
-    "dials_supplemented_quiz_eligible": 671,
-    "dials_supplemented_without_photo": 41114
+    "dials_supplemented_quiz_eligible": 673,
+    "dials_supplemented_without_photo": 41109
   },
   "cachedResults": {
     "result_rows": 2570,
@@ -63,16 +63,17 @@
     "already_has_supplemental_spec": 304
   },
   "missingFieldCounts": {
-    "photo": 52390,
-    "usable_price": 52451,
-    "movement": 5081,
-    "style": 36719,
-    "water_resistance": 13121,
-    "case_material": 5184,
-    "crystal": 11573,
+    "photo": 52383,
+    "reference": 11853,
+    "usable_price": 52449,
+    "style": 36715,
+    "water_resistance": 13120,
+    "crystal": 11572,
+    "movement": 5080,
+    "case_material": 5183,
     "diameter": 4581
   },
-  "missingRecordCount": 53026,
+  "missingRecordCount": 54170,
   "quizEligibility": "Reference, usable price, diameter, movement and at least one explicit style tag; photos are optional and missing facts remain null.",
   "note": "A model count is not a recommendable count. Unknown prices prevent any active budget fit. The baseline counts watches that can satisfy common hard filters; water resistance, wrist, currency conversion and specific style constraints are checked per profile."
 }

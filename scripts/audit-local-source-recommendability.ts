@@ -52,6 +52,7 @@ try {
       brand: string;
       model: string;
       reference_code: string | null;
+      reference_confirmed: boolean;
       source: string;
       has_photo: boolean;
       has_usable_price: boolean;
@@ -63,7 +64,8 @@ try {
       has_crystal: boolean;
     }[]
   >`
-    select brand,model,reference_code,coalesce(import_source,'native') as source,
+    select brand,model,reference_code,reference_confirmed,
+      coalesce(import_source,'native') as source,
       image_url is not null as has_photo,
       price_amount is not null and price_status <> 'unconfirmed' as has_usable_price,
       case_diameter_mm is not null as has_diameter,
@@ -77,7 +79,9 @@ try {
   const missingCounts: Record<string, number> = {};
   const queue = inventory
     .map((row) => {
+      const hasReference = row.reference_confirmed && !!row.reference_code;
       const missing = [
+        ["reference", hasReference],
         ["photo", row.has_photo],
         ["usable_price", row.has_usable_price],
         ["diameter", row.has_diameter],
@@ -91,15 +95,44 @@ try {
         missingCounts[String(name)] = (missingCounts[String(name)] ?? 0) + 1;
         return [String(name)];
       });
+      const coreFitMissing =
+        !row.has_diameter || !row.has_movement || !row.has_style;
+      const nextAction = !hasReference
+        ? "confirm_reference"
+        : coreFitMissing
+          ? "complete_core_fit_facts"
+          : !row.has_usable_price
+            ? "verify_current_price"
+            : !row.has_photo
+              ? "optional_photo"
+              : "fill_optional_specifications";
+      const priority =
+        nextAction === "confirm_reference"
+          ? 1
+          : nextAction === "complete_core_fit_facts"
+            ? 2
+            : nextAction === "verify_current_price"
+              ? 3
+              : nextAction === "optional_photo"
+                ? 4
+                : 5;
       return {
         brand: row.brand,
         model: row.model,
         reference: row.reference_code,
         source: row.source,
+        nextAction,
+        priority,
         missing,
       };
     })
-    .filter((row) => row.missing.length);
+    .filter((row) => row.missing.length)
+    .sort(
+      (a, b) =>
+        a.priority - b.priority ||
+        a.brand.localeCompare(b.brand) ||
+        a.model.localeCompare(b.model),
+    );
   const report = {
     at: new Date().toISOString(),
     sources,

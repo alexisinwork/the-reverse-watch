@@ -284,6 +284,11 @@ matches. The final fast code gate passed. The local missing-field queue and
 coverage report identify the next research priorities. The remaining owner
 choice is whether a Dials model-page attribution link is acceptable inside a
 widget watch result, given the earlier link-free widget screen requirement.
+The combined master and saved results have also been exported to the ignored
+local JSONL snapshot at
+data/watch-archive/local-snapshots/2026-10-25T23-01-48-212Z/. The runtime still
+uses its configured database; this snapshot provides local safekeeping, not an
+offline database service.
 
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.

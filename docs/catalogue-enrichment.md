@@ -229,7 +229,7 @@ pass. No image files or Dials image URLs are stored or served.
 The actionable local missing-field queue is ignored at
 data/watch-archive/catalogue-enrichment-queue.json; compact counts are in
 docs/reports/local-source-recommendability.json. The 55,500-row catalogue
-currently has 52,451 records without a usable price, so bulk enrichment of every
+currently has 52,449 records without a usable price, so bulk enrichment of every
 record is not economical. Enrich Dials/Space City/Timepiecepedia facts locally,
 then research likely quiz candidates and cached references on demand. Keep
 prices null until the existing two-source price check succeeds; missing photos
