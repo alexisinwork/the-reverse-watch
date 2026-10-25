@@ -117,7 +117,10 @@ This follow-up starts with source audit, not a production migration.
    report linked/new/ambiguous/conflicting rows and field completeness. Retain
    original intake and do not auto-promote. Design any additive DB migration only
    after this mapping and the existing schema/research interfaces are reviewed.
-3. **Next: coverage expansion:** request HoroDB bulk snapshot and clarify Dials mirror
+3. **Downloaded-source expansion — completed:** all 224 Timepiecepedia brands
+   and CSV coverage reconciled locally; [full report](reports/local-watch-intake-full.md).
+   Owner defers factual checks and images. Further-source expansion: request
+   HoroDB bulk snapshot and clarify Dials mirror
    terms; import allowed sources with resumable checkpoints, rate limits, retries,
    content hashes and no-op reruns. Keep listing observations separate.
 4. **Verification/read model:** primary-source checks, conflict review and controlled

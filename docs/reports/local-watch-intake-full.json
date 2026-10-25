@@ -1,0 +1,3773 @@
+{
+  "source": "https://github.com/timepiecepedia/timepiecepedia-data",
+  "commit": "d37b781c12475cee5dc9a4f270037204590c1575",
+  "licence": "CC0-1.0 declared by publisher; upstream rights not independently established",
+  "sourceAuditAt": "2026-10-25T16:06:45.171Z",
+  "catalogueRetrievedAt": "2026-10-25T16:14:02.257Z",
+  "catalogueSha256": "81b023a90b2827b578404615b9e802ff3da31b6684f77c4ae1edf63ff6830f36",
+  "catalogueRows": 3109,
+  "records": 42590,
+  "distinctSourcePages": 42584,
+  "distinctFullBrandReferences": 42063,
+  "csvCoverage": {
+    "rows": 48603,
+    "overlappingJsonPages": 48603,
+    "supplementalRows": 0,
+    "sha256": "a445b3f4d881e50ec242ad421a7f0b06f8344241accf412690f5e4d848a5f620"
+  },
+  "statuses": {
+    "new_candidate": 41367,
+    "ambiguous": 605,
+    "conflict": 292,
+    "exact_candidate": 239,
+    "alias_or_format_candidate": 83,
+    "missing_identity": 4
+  },
+  "brands": [
+    {
+      "brand": "a-lange-sohne",
+      "file": "catalog/a-lange-sohne_full.json",
+      "sha256": "b6e09fcc3bd1194f6b408e200ef2b0c3aeb9abf612ba9f6c787c4b9bf61d007f",
+      "records": 438,
+      "statuses": {
+        "new_candidate": 438
+      },
+      "completeness": {
+        "reference": 438,
+        "caseDiameterMm": 438,
+        "caseThicknessMm": 432,
+        "waterResistanceM": 35
+      }
+    },
+    {
+      "brand": "akrivia",
+      "file": "catalog/akrivia_full.json",
+      "sha256": "49600b76843f455172170ce0561ec83daeedeb8d11cc9c692b9a15975cfed3e3",
+      "records": 22,
+      "statuses": {
+        "ambiguous": 9,
+        "new_candidate": 13
+      },
+      "completeness": {
+        "reference": 22,
+        "caseDiameterMm": 17,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "alexandre-meerson",
+      "file": "catalog/alexandre-meerson_full.json",
+      "sha256": "be676370ac277c0ef4791b1fc6dbfe99b0b3176cb30c60770ae3cb3b8c4af3e9",
+      "records": 32,
+      "statuses": {
+        "new_candidate": 32
+      },
+      "completeness": {
+        "reference": 32,
+        "caseDiameterMm": 32,
+        "caseThicknessMm": 32,
+        "waterResistanceM": 32
+      }
+    },
+    {
+      "brand": "amida",
+      "file": "catalog/amida_full.json",
+      "sha256": "cbd4d9f58576944bf54cdbe07d2378ed932d266269a98e9e2c745649cb71f687",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "anonimo",
+      "file": "catalog/anonimo_full.json",
+      "sha256": "63ab8ba28078b0f96f75e38cac3e863af544f7c024f30ee92dd44e5e4f21898d",
+      "records": 37,
+      "statuses": {
+        "new_candidate": 37
+      },
+      "completeness": {
+        "reference": 37,
+        "caseDiameterMm": 37,
+        "caseThicknessMm": 16,
+        "waterResistanceM": 37
+      }
+    },
+    {
+      "brand": "aonic",
+      "file": "catalog/aonic_full.json",
+      "sha256": "c97e3b6540169baef886df76aa860c45a6154b56fa8a00643ffa6120bdef521a",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "apple",
+      "file": "catalog/apple_full.json",
+      "sha256": "7de226ad8b308818ed72ba3b6bd56e25e119e08278b4d33bf6cb78f882ee81ad",
+      "records": 42,
+      "statuses": {
+        "new_candidate": 42
+      },
+      "completeness": {
+        "reference": 42,
+        "caseDiameterMm": 42,
+        "caseThicknessMm": 42,
+        "waterResistanceM": 42
+      }
+    },
+    {
+      "brand": "archimede",
+      "file": "catalog/archimede_full.json",
+      "sha256": "f2dc7951cdbebcce3016516f14e23b3ea8a38fe851423579c2db3afccae2582c",
+      "records": 106,
+      "statuses": {
+        "new_candidate": 106
+      },
+      "completeness": {
+        "reference": 106,
+        "caseDiameterMm": 106,
+        "caseThicknessMm": 106,
+        "waterResistanceM": 106
+      }
+    },
+    {
+      "brand": "armand-nicolet",
+      "file": "catalog/armand-nicolet_full.json",
+      "sha256": "32fa1057064cb2e304b674d20cff7ccab418f114eeb8c81019a53de4adfad41a",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "armin-strom",
+      "file": "catalog/armin-strom_full.json",
+      "sha256": "ef37d13fc4e111d821a032afe9abe00d5a27d4154311d8cebf80cb7a8ff9fc5e",
+      "records": 24,
+      "statuses": {
+        "new_candidate": 24
+      },
+      "completeness": {
+        "reference": 24,
+        "caseDiameterMm": 24,
+        "caseThicknessMm": 24,
+        "waterResistanceM": 24
+      }
+    },
+    {
+      "brand": "arnold-son",
+      "file": "catalog/arnold-son_full.json",
+      "sha256": "2d24bd1c3b415f7106a5bc1fc52e9c260d4d5dc1afd215ee3a1e36383792ef80",
+      "records": 45,
+      "statuses": {
+        "new_candidate": 45
+      },
+      "completeness": {
+        "reference": 45,
+        "caseDiameterMm": 45,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 45
+      }
+    },
+    {
+      "brand": "audemars-piguet",
+      "file": "catalog/audemars-piguet_full.json",
+      "sha256": "a545a2c46d0fe38987c51116031c019e33df56d34b5eefa57f033b6862ea89f0",
+      "records": 1393,
+      "statuses": {
+        "new_candidate": 1390,
+        "conflict": 1,
+        "exact_candidate": 2
+      },
+      "completeness": {
+        "reference": 1393,
+        "caseDiameterMm": 1390,
+        "caseThicknessMm": 1207,
+        "waterResistanceM": 1221
+      }
+    },
+    {
+      "brand": "autodromo",
+      "file": "catalog/autodromo_full.json",
+      "sha256": "c8fd7e5590dfbfed3204a1028873e52b17dafe8211ad2fe08c1b4100572541c3",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "avoirdupois",
+      "file": "catalog/avoirdupois_full.json",
+      "sha256": "3b9b8cfb9f9a22b6ba2b8e6e39dff5ccf4e00c629f7fb0a50a6f4b8455761cbc",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "ball-watch",
+      "file": "catalog/ball-watch_full.json",
+      "sha256": "e5293b7f6e650be15e908084364fc508f3ce2b56cc13df469d1e975ba7109bdf",
+      "records": 43,
+      "statuses": {
+        "new_candidate": 43
+      },
+      "completeness": {
+        "reference": 43,
+        "caseDiameterMm": 43,
+        "caseThicknessMm": 43,
+        "waterResistanceM": 40
+      }
+    },
+    {
+      "brand": "baltic",
+      "file": "catalog/baltic_full.json",
+      "sha256": "f7278e23f54b10b23a651a9cec658555b596c00dfbd8b01074dcb42bfa809a32",
+      "records": 14,
+      "statuses": {
+        "ambiguous": 14
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "bastian-antoni",
+      "file": "catalog/bastian-antoni_full.json",
+      "sha256": "b9946c19784381722f4f9c468c65eb9e6ceca3352a8cad1898c4a788439ee550",
+      "records": 5,
+      "statuses": {
+        "new_candidate": 5
+      },
+      "completeness": {
+        "reference": 5,
+        "caseDiameterMm": 5,
+        "caseThicknessMm": 5,
+        "waterResistanceM": 5
+      }
+    },
+    {
+      "brand": "baume-mercier",
+      "file": "catalog/baume-mercier_full.json",
+      "sha256": "cb0557537a838a10380950f47594b05e8aad3392a70ea1a7a9437fb15bb41c8c",
+      "records": 163,
+      "statuses": {
+        "new_candidate": 161,
+        "alias_or_format_candidate": 1,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 163,
+        "caseDiameterMm": 160,
+        "caseThicknessMm": 113,
+        "waterResistanceM": 159
+      }
+    },
+    {
+      "brand": "bausele",
+      "file": "catalog/bausele_full.json",
+      "sha256": "3aa7e1259b11e715619b9c95d2c64390a3cdd62ff49be27568ef3974f291e5b6",
+      "records": 17,
+      "statuses": {
+        "new_candidate": 17
+      },
+      "completeness": {
+        "reference": 17,
+        "caseDiameterMm": 17,
+        "caseThicknessMm": 12,
+        "waterResistanceM": 17
+      }
+    },
+    {
+      "brand": "beijing",
+      "file": "catalog/beijing_full.json",
+      "sha256": "94d52819904674253a60daa582adc786b2a2081e40f651a326f4f5266ac25f15",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 0,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "bell-ross",
+      "file": "catalog/bell-ross_full.json",
+      "sha256": "6770cf6b12f175dae1b5efdf3209cf394523cd65bebbe757e348a78558fca13a",
+      "records": 218,
+      "statuses": {
+        "new_candidate": 210,
+        "exact_candidate": 7,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 218,
+        "caseDiameterMm": 218,
+        "caseThicknessMm": 20,
+        "waterResistanceM": 218
+      }
+    },
+    {
+      "brand": "bereve",
+      "file": "catalog/bereve_full.json",
+      "sha256": "26ac18ef22d45bb8d546caef6a5f13f223a7af2d0e1b1a0bed03272fa8cbfca3",
+      "records": 4,
+      "statuses": {
+        "new_candidate": 4
+      },
+      "completeness": {
+        "reference": 4,
+        "caseDiameterMm": 4,
+        "caseThicknessMm": 4,
+        "waterResistanceM": 4
+      }
+    },
+    {
+      "brand": "berneron",
+      "file": "catalog/berneron_full.json",
+      "sha256": "a38b3e9274eca311556747c6f19e633d828a9a8821e0a02f4d0e690742dd6627",
+      "records": 4,
+      "statuses": {
+        "new_candidate": 4
+      },
+      "completeness": {
+        "reference": 4,
+        "caseDiameterMm": 4,
+        "caseThicknessMm": 4,
+        "waterResistanceM": 4
+      }
+    },
+    {
+      "brand": "blancpain",
+      "file": "catalog/blancpain_full.json",
+      "sha256": "b889c1daa2bb113318b371c4d83e880a2a8715243db5d04b2fc2351e742f13bb",
+      "records": 294,
+      "statuses": {
+        "new_candidate": 288,
+        "exact_candidate": 2,
+        "conflict": 4
+      },
+      "completeness": {
+        "reference": 294,
+        "caseDiameterMm": 294,
+        "caseThicknessMm": 294,
+        "waterResistanceM": 292
+      }
+    },
+    {
+      "brand": "boldr",
+      "file": "catalog/boldr_full.json",
+      "sha256": "59670917aeb777a6502ca0e94d01d2b0289f863bde7f3809a6355ed1788762a7",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "borealis",
+      "file": "catalog/borealis_full.json",
+      "sha256": "23feb2edac2aa88dfa287b803b93f785477a4dd55878b05571817e1ebc5fe075",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "botta-design",
+      "file": "catalog/botta-design_full.json",
+      "sha256": "e6cf30160eb6cdfc67e3c7c66901ec119c0b6e4f032e33d96f88944b562b23f9",
+      "records": 13,
+      "statuses": {
+        "new_candidate": 2,
+        "ambiguous": 11
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "breguet",
+      "file": "catalog/breguet_full.json",
+      "sha256": "d48e6ffc2eee89b56f11a0d18dc2ec2ce1ce34adc53b21c938ad3e035357a4c3",
+      "records": 328,
+      "statuses": {
+        "new_candidate": 322,
+        "exact_candidate": 5,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 328,
+        "caseDiameterMm": 328,
+        "caseThicknessMm": 324,
+        "waterResistanceM": 327
+      }
+    },
+    {
+      "brand": "breitling",
+      "file": "catalog/breitling_full.json",
+      "sha256": "e26cb8ab9f539d27ad1954ab4f3637070d6453ff38253a85735de9d0735038e8",
+      "records": 5035,
+      "statuses": {
+        "new_candidate": 4975,
+        "ambiguous": 18,
+        "conflict": 18,
+        "exact_candidate": 24
+      },
+      "completeness": {
+        "reference": 5035,
+        "caseDiameterMm": 5032,
+        "caseThicknessMm": 4396,
+        "waterResistanceM": 5023
+      }
+    },
+    {
+      "brand": "bremont",
+      "file": "catalog/bremont_full.json",
+      "sha256": "13a46fbd82a2044abeb47a173865f5e1103c45ab72f1e5f23c5b9e88b7e774c7",
+      "records": 120,
+      "statuses": {
+        "new_candidate": 117,
+        "exact_candidate": 3
+      },
+      "completeness": {
+        "reference": 120,
+        "caseDiameterMm": 120,
+        "caseThicknessMm": 65,
+        "waterResistanceM": 120
+      }
+    },
+    {
+      "brand": "breva",
+      "file": "catalog/breva_full.json",
+      "sha256": "1b465d349180cd66b975f7052e744b604f3192010ec9f24342f85df913e5e919",
+      "records": 3,
+      "statuses": {
+        "new_candidate": 3
+      },
+      "completeness": {
+        "reference": 3,
+        "caseDiameterMm": 3,
+        "caseThicknessMm": 3,
+        "waterResistanceM": 3
+      }
+    },
+    {
+      "brand": "bulgari",
+      "file": "catalog/bulgari_full.json",
+      "sha256": "19989b27aacd0c709c47b310317d0ab9f0380172c162b17cb1d606d1a0e98f0d",
+      "records": 153,
+      "statuses": {
+        "new_candidate": 152,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 153,
+        "caseDiameterMm": 153,
+        "caseThicknessMm": 100,
+        "waterResistanceM": 105
+      }
+    },
+    {
+      "brand": "bvlgari",
+      "file": "catalog/bvlgari_full.json",
+      "sha256": "48960df647b7df4f106e77de9ccb76e5ee2df21b0da7dfbe24cf23291442f47d",
+      "records": 30,
+      "statuses": {
+        "new_candidate": 16,
+        "ambiguous": 14
+      },
+      "completeness": {
+        "reference": 30,
+        "caseDiameterMm": 28,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "carl-f-bucherer",
+      "file": "catalog/carl-f-bucherer_full.json",
+      "sha256": "4599e220dd9f36e7650a61c9c912efb2c3150c6d231705e1708dc7bece40c4fa",
+      "records": 68,
+      "statuses": {
+        "new_candidate": 67,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 68,
+        "caseDiameterMm": 68,
+        "caseThicknessMm": 68,
+        "waterResistanceM": 68
+      }
+    },
+    {
+      "brand": "cartier",
+      "file": "catalog/cartier_full.json",
+      "sha256": "5fb0c8a76d19cc296abd279785158a7b8b932b43533386f5f0f46210cf04ed9b",
+      "records": 219,
+      "statuses": {
+        "new_candidate": 212,
+        "conflict": 5,
+        "exact_candidate": 2
+      },
+      "completeness": {
+        "reference": 219,
+        "caseDiameterMm": 219,
+        "caseThicknessMm": 214,
+        "waterResistanceM": 219
+      }
+    },
+    {
+      "brand": "casio",
+      "file": "catalog/casio_full.json",
+      "sha256": "0c7d71ba40948867a69e7b2c3f14d116bc53b3ed784b089678bd23c30eef74a3",
+      "records": 122,
+      "statuses": {
+        "new_candidate": 122
+      },
+      "completeness": {
+        "reference": 122,
+        "caseDiameterMm": 122,
+        "caseThicknessMm": 118,
+        "waterResistanceM": 122
+      }
+    },
+    {
+      "brand": "certina",
+      "file": "catalog/certina_full.json",
+      "sha256": "5931287dac35243726c716d6d12ca92fd6d6728e0dfe98189501c41f30f3854a",
+      "records": 855,
+      "statuses": {
+        "new_candidate": 843,
+        "conflict": 8,
+        "exact_candidate": 3,
+        "alias_or_format_candidate": 1
+      },
+      "completeness": {
+        "reference": 855,
+        "caseDiameterMm": 843,
+        "caseThicknessMm": 768,
+        "waterResistanceM": 812
+      }
+    },
+    {
+      "brand": "chopard",
+      "file": "catalog/chopard_full.json",
+      "sha256": "932f6314a58327c8b823582e3f0228820b998973254ef19de012bf30633b311f",
+      "records": 225,
+      "statuses": {
+        "new_candidate": 211,
+        "conflict": 6,
+        "exact_candidate": 8
+      },
+      "completeness": {
+        "reference": 225,
+        "caseDiameterMm": 225,
+        "caseThicknessMm": 182,
+        "waterResistanceM": 224
+      }
+    },
+    {
+      "brand": "christiaan-van-der-klaauw",
+      "file": "catalog/christiaan-van-der-klaauw_full.json",
+      "sha256": "fa03433005b03e00d019bca897a59025ca89f2512e779a3e90e437bcf5b3097f",
+      "records": 20,
+      "statuses": {
+        "new_candidate": 20
+      },
+      "completeness": {
+        "reference": 20,
+        "caseDiameterMm": 20,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "christopher-ward",
+      "file": "catalog/christopher-ward_full.json",
+      "sha256": "91730a1af3590665a191aea2053b4f745da927464f98f0f4121379795df8f1a0",
+      "records": 4,
+      "statuses": {
+        "new_candidate": 4
+      },
+      "completeness": {
+        "reference": 4,
+        "caseDiameterMm": 4,
+        "caseThicknessMm": 4,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "chronotheory-co",
+      "file": "catalog/chronotheory-co_full.json",
+      "sha256": "8bde623fcc329363f4c1845f2a695c8b530c316292f54d0f0f512f1c92dc7cdb",
+      "records": 3,
+      "statuses": {
+        "new_candidate": 3
+      },
+      "completeness": {
+        "reference": 3,
+        "caseDiameterMm": 3,
+        "caseThicknessMm": 3,
+        "waterResistanceM": 3
+      }
+    },
+    {
+      "brand": "citizen",
+      "file": "catalog/citizen_full.json",
+      "sha256": "380c2fcd9747a02cf47cdbd496f3a87c1bf5aadd6ba2b1dd414754cfb345095a",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "code41",
+      "file": "catalog/code41_full.json",
+      "sha256": "a0e60dcb1586554e4d39e75d5fc5005c97074a97dca6ff94daf8ccd0cae8b149",
+      "records": 90,
+      "statuses": {
+        "new_candidate": 90
+      },
+      "completeness": {
+        "reference": 90,
+        "caseDiameterMm": 90,
+        "caseThicknessMm": 90,
+        "waterResistanceM": 90
+      }
+    },
+    {
+      "brand": "corum",
+      "file": "catalog/corum_full.json",
+      "sha256": "02ce9b26211d37a69778eb6e89757c32c2cb3d1159092e13bf4a3a310eba0d89",
+      "records": 43,
+      "statuses": {
+        "new_candidate": 43
+      },
+      "completeness": {
+        "reference": 43,
+        "caseDiameterMm": 43,
+        "caseThicknessMm": 43,
+        "waterResistanceM": 43
+      }
+    },
+    {
+      "brand": "crafter-blue",
+      "file": "catalog/crafter-blue_full.json",
+      "sha256": "dce3af7a328b2c115b8ddf27a46d0b70496d2867c66019b89ee2fa2b091db3dc",
+      "records": 6,
+      "statuses": {
+        "new_candidate": 6
+      },
+      "completeness": {
+        "reference": 6,
+        "caseDiameterMm": 6,
+        "caseThicknessMm": 6,
+        "waterResistanceM": 6
+      }
+    },
+    {
+      "brand": "credor",
+      "file": "catalog/credor_full.json",
+      "sha256": "fe151691b2bcb5b91b6942bdb65238f56329fa55eeadc47a0436bda82e71b534",
+      "records": 25,
+      "statuses": {
+        "new_candidate": 19,
+        "ambiguous": 6
+      },
+      "completeness": {
+        "reference": 25,
+        "caseDiameterMm": 24,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "cuervo-y-sobrinos",
+      "file": "catalog/cuervo-y-sobrinos_full.json",
+      "sha256": "14efe36825bcfa9cd608098b2c8912771ba4923a9476ab59d38d2c54ecfb5a8e",
+      "records": 13,
+      "statuses": {
+        "new_candidate": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 13,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "czapek",
+      "file": "catalog/czapek_full.json",
+      "sha256": "afe3e60df4c61bf34fcde99feed0c787d186a099cf92d3a075f7b0943f1bcc11",
+      "records": 16,
+      "statuses": {
+        "new_candidate": 16
+      },
+      "completeness": {
+        "reference": 16,
+        "caseDiameterMm": 16,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 16
+      }
+    },
+    {
+      "brand": "d-dornblueth-sohn",
+      "file": "catalog/d-dornblueth-sohn_full.json",
+      "sha256": "2b993f5ad747a2eecb5207b608f7b9c175096a7f23dea7fcadcc59b873cf8155",
+      "records": 28,
+      "statuses": {
+        "new_candidate": 28
+      },
+      "completeness": {
+        "reference": 28,
+        "caseDiameterMm": 28,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "d-malchert",
+      "file": "catalog/d-malchert_full.json",
+      "sha256": "1db2f9f964b85ef1c87b67c3931cb1f84862f7470e8dc4f2be4fa88917839f83",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "damasko",
+      "file": "catalog/damasko_full.json",
+      "sha256": "e9456f7cc30e12624b5e9a2cabfce6146151e53bd10250e8576aaca6a8003ae4",
+      "records": 88,
+      "statuses": {
+        "new_candidate": 75,
+        "exact_candidate": 1,
+        "ambiguous": 8,
+        "conflict": 3,
+        "alias_or_format_candidate": 1
+      },
+      "completeness": {
+        "reference": 88,
+        "caseDiameterMm": 88,
+        "caseThicknessMm": 88,
+        "waterResistanceM": 88
+      }
+    },
+    {
+      "brand": "dan-henry",
+      "file": "catalog/dan-henry_full.json",
+      "sha256": "d4d6d7491a5c25c8a5c7e01597eb5d8c0f853678af4423a666f24cc498a50e13",
+      "records": 4,
+      "statuses": {
+        "new_candidate": 4
+      },
+      "completeness": {
+        "reference": 4,
+        "caseDiameterMm": 4,
+        "caseThicknessMm": 4,
+        "waterResistanceM": 4
+      }
+    },
+    {
+      "brand": "daniel-roth",
+      "file": "catalog/daniel-roth_full.json",
+      "sha256": "3b082ef77e5f70df961329612acc29fa3d35df917b07fef4ff0d42116a82dddc",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "de-bethune",
+      "file": "catalog/de-bethune_full.json",
+      "sha256": "9e04f3b23a97df03b1c3ae7a754ff5596eb18544b3dd2b09f38fdb1973786a5c",
+      "records": 34,
+      "statuses": {
+        "new_candidate": 32,
+        "ambiguous": 2
+      },
+      "completeness": {
+        "reference": 34,
+        "caseDiameterMm": 34,
+        "caseThicknessMm": 21,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "defakto",
+      "file": "catalog/defakto_full.json",
+      "sha256": "2d6cc8476bb16b5e58a0cfba285d600eb46417c6c2b47276989a804dfcca9bee",
+      "records": 35,
+      "statuses": {
+        "new_candidate": 35
+      },
+      "completeness": {
+        "reference": 35,
+        "caseDiameterMm": 35,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 35
+      }
+    },
+    {
+      "brand": "deutsche-uhrenmanufaktur-glashutte",
+      "file": "catalog/deutsche-uhrenmanufaktur-glashutte_full.json",
+      "sha256": "3c83e279f4f9e416f393b36ddb5cf270722ecaa08b51911312f28561fdc64ac0",
+      "records": 12,
+      "statuses": {
+        "new_candidate": 12
+      },
+      "completeness": {
+        "reference": 12,
+        "caseDiameterMm": 12,
+        "caseThicknessMm": 12,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "dietrich",
+      "file": "catalog/dietrich_full.json",
+      "sha256": "07a105af42acbdb6bd871796bb32956c506b3346dc62cc47a37d81f6940a5307",
+      "records": 8,
+      "statuses": {
+        "new_candidate": 8
+      },
+      "completeness": {
+        "reference": 8,
+        "caseDiameterMm": 8,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 8
+      }
+    },
+    {
+      "brand": "dornbluth-and-sohn",
+      "file": "catalog/dornbluth-and-sohn_full.json",
+      "sha256": "54e0fbc717dc375baa47fdb8f9459307c4bf4edf9d8930a5d1ad977d845c0ccb",
+      "records": 12,
+      "statuses": {
+        "new_candidate": 6,
+        "ambiguous": 6
+      },
+      "completeness": {
+        "reference": 12,
+        "caseDiameterMm": 12,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "doxa",
+      "file": "catalog/doxa_full.json",
+      "sha256": "2a47610013021429ee4662e2480da65ba410fe1d5f3814e48ecb9b020cd6a972",
+      "records": 38,
+      "statuses": {
+        "new_candidate": 36,
+        "conflict": 1,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 38,
+        "caseDiameterMm": 38,
+        "caseThicknessMm": 38,
+        "waterResistanceM": 38
+      }
+    },
+    {
+      "brand": "eberhard",
+      "file": "catalog/eberhard_full.json",
+      "sha256": "ccc0a9b7525ccb4165613d7f679f14c08de56910c5a9d695b4389f9ac4f8e6a8",
+      "records": 18,
+      "statuses": {
+        "new_candidate": 18
+      },
+      "completeness": {
+        "reference": 18,
+        "caseDiameterMm": 18,
+        "caseThicknessMm": 18,
+        "waterResistanceM": 18
+      }
+    },
+    {
+      "brand": "elka-watch-co",
+      "file": "catalog/elka-watch-co_full.json",
+      "sha256": "adfed4cc10e5dcba00ae8ecd0ab6334168c0ae462063ba6b2fef4896ed7d2544",
+      "records": 37,
+      "statuses": {
+        "new_candidate": 37
+      },
+      "completeness": {
+        "reference": 37,
+        "caseDiameterMm": 37,
+        "caseThicknessMm": 37,
+        "waterResistanceM": 37
+      }
+    },
+    {
+      "brand": "eterna",
+      "file": "catalog/eterna_full.json",
+      "sha256": "d94b552e02536fa20895a1630f7bef7dbac55690fbc9bb68dfbcb175714883cb",
+      "records": 86,
+      "statuses": {
+        "new_candidate": 85,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 86,
+        "caseDiameterMm": 86,
+        "caseThicknessMm": 3,
+        "waterResistanceM": 86
+      }
+    },
+    {
+      "brand": "excelsior-park",
+      "file": "catalog/excelsior-park_full.json",
+      "sha256": "23afde8eef187d3736a6fc1437b29753119788d73560bb28dc5c89538a2798ab",
+      "records": 16,
+      "statuses": {
+        "new_candidate": 16
+      },
+      "completeness": {
+        "reference": 16,
+        "caseDiameterMm": 16,
+        "caseThicknessMm": 16,
+        "waterResistanceM": 16
+      }
+    },
+    {
+      "brand": "farer",
+      "file": "catalog/farer_full.json",
+      "sha256": "2bd28f6672b3e1baac55b47f4c100c07d49b5c98dd1a9bd1bd591d559c10b9c1",
+      "records": 13,
+      "statuses": {
+        "ambiguous": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "fiona-kruger",
+      "file": "catalog/fiona-kruger_full.json",
+      "sha256": "ec787392a613f1574fc474ede5e2105286ae33e137f5f0184bdd9c01d30bd3a1",
+      "records": 3,
+      "statuses": {
+        "new_candidate": 3
+      },
+      "completeness": {
+        "reference": 3,
+        "caseDiameterMm": 3,
+        "caseThicknessMm": 3,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "fiyta",
+      "file": "catalog/fiyta_full.json",
+      "sha256": "557a8daad0259c1ef6565a763f8941cdb1bf65846329d4d04419cce9ce6e24d4",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 14,
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 0,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "formex",
+      "file": "catalog/formex_full.json",
+      "sha256": "85c4eb1d1ece06954e807673c9c75051de40caed19aec46d1942a10bcb6b641a",
+      "records": 127,
+      "statuses": {
+        "new_candidate": 125,
+        "conflict": 2
+      },
+      "completeness": {
+        "reference": 127,
+        "caseDiameterMm": 127,
+        "caseThicknessMm": 127,
+        "waterResistanceM": 127
+      }
+    },
+    {
+      "brand": "fortis",
+      "file": "catalog/fortis_full.json",
+      "sha256": "bebe2ca43753d3ceeaa8b89355ae3fa43d7767e7bb4fc805739d866d50fa6336",
+      "records": 19,
+      "statuses": {
+        "new_candidate": 19
+      },
+      "completeness": {
+        "reference": 19,
+        "caseDiameterMm": 19,
+        "caseThicknessMm": 14,
+        "waterResistanceM": 19
+      }
+    },
+    {
+      "brand": "fp-journe",
+      "file": "catalog/fp-journe_full.json",
+      "sha256": "cf770e13304a53da5238722663b3fb624b27cc8a45e2e1ba6eac7ca6b7ae7e84",
+      "records": 27,
+      "statuses": {
+        "new_candidate": 27
+      },
+      "completeness": {
+        "reference": 27,
+        "caseDiameterMm": 27,
+        "caseThicknessMm": 27,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "franck-muller",
+      "file": "catalog/franck-muller_full.json",
+      "sha256": "279711817b96e1919773987705ff1d0c1eec5012136bcec0f94e2a9ede0e7668",
+      "records": 27,
+      "statuses": {
+        "new_candidate": 27
+      },
+      "completeness": {
+        "reference": 27,
+        "caseDiameterMm": 26,
+        "caseThicknessMm": 2,
+        "waterResistanceM": 2
+      }
+    },
+    {
+      "brand": "frederique-constant",
+      "file": "catalog/frederique-constant_full.json",
+      "sha256": "1723bd856b28d87eba67e474aba69a9363fbef27460ea894d12abef353b3560c",
+      "records": 121,
+      "statuses": {
+        "new_candidate": 120,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 121,
+        "caseDiameterMm": 114,
+        "caseThicknessMm": 99,
+        "waterResistanceM": 119
+      }
+    },
+    {
+      "brand": "furlan-marri",
+      "file": "catalog/furlan-marri_full.json",
+      "sha256": "652758fa860b0b9f184436b2b3bce892697188cbb559030f11d3e5ea8d30ac03",
+      "records": 23,
+      "statuses": {
+        "new_candidate": 23
+      },
+      "completeness": {
+        "reference": 23,
+        "caseDiameterMm": 23,
+        "caseThicknessMm": 23,
+        "waterResistanceM": 23
+      }
+    },
+    {
+      "brand": "garrick",
+      "file": "catalog/garrick_full.json",
+      "sha256": "3387a571ee2d7f74fb58a5bcbbe2c5473f52340223be067ac21f7ee1834ceffc",
+      "records": 11,
+      "statuses": {
+        "ambiguous": 11
+      },
+      "completeness": {
+        "reference": 11,
+        "caseDiameterMm": 11,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "gerald-charles",
+      "file": "catalog/gerald-charles_full.json",
+      "sha256": "493d37df1f4945c4f8c6203b8e8d15ec703a4c4198773d693df0b9cca0e6f34c",
+      "records": 13,
+      "statuses": {
+        "new_candidate": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 13,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "girard-perregaux",
+      "file": "catalog/girard-perregaux_full.json",
+      "sha256": "eebc00b220b62071d2c05ff5c4ce10422d0e83fbfa9580f2ae2476c351cbb3f5",
+      "records": 155,
+      "statuses": {
+        "new_candidate": 154,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 155,
+        "caseDiameterMm": 155,
+        "caseThicknessMm": 154,
+        "waterResistanceM": 147
+      }
+    },
+    {
+      "brand": "giuliano-mazzuoli",
+      "file": "catalog/giuliano-mazzuoli_full.json",
+      "sha256": "6bcc2595c9bd9d525ccf8ce5712ed51353d382ddb3108cf6496c4ea15be09bee",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 14
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 14,
+        "waterResistanceM": 6
+      }
+    },
+    {
+      "brand": "glashutte-original",
+      "file": "catalog/glashutte-original_full.json",
+      "sha256": "4cd00149f404b22d28a0f0227add35d0d7047eba6fe6319be99fb6ad700c0233",
+      "records": 813,
+      "statuses": {
+        "new_candidate": 798,
+        "conflict": 8,
+        "exact_candidate": 7
+      },
+      "completeness": {
+        "reference": 813,
+        "caseDiameterMm": 808,
+        "caseThicknessMm": 808,
+        "waterResistanceM": 813
+      }
+    },
+    {
+      "brand": "glycine",
+      "file": "catalog/glycine_full.json",
+      "sha256": "56ae43bb305b736f9cf93e81d9f5870fc3bcf1393a75293439b70d95e525564d",
+      "records": 11,
+      "statuses": {
+        "new_candidate": 10,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 11,
+        "caseDiameterMm": 11,
+        "caseThicknessMm": 11,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "graham",
+      "file": "catalog/graham_full.json",
+      "sha256": "6cd0b452411b2f282ed80ca0fd1dc3ca7038b1033a9c1862e5860909feddbd7e",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 14
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "grand-seiko",
+      "file": "catalog/grand-seiko_full.json",
+      "sha256": "87306d2ca83630f7bbb0a3d2fdd5ee3fbaca7b557e58cb7e6ab59d8a86635db4",
+      "records": 104,
+      "statuses": {
+        "new_candidate": 92,
+        "conflict": 11,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 104,
+        "caseDiameterMm": 104,
+        "caseThicknessMm": 104,
+        "waterResistanceM": 102
+      }
+    },
+    {
+      "brand": "greubel-forsey",
+      "file": "catalog/greubel-forsey_full.json",
+      "sha256": "c2a782444e99e9aa2f4f2bf6634397911ba364e65737e8b2149adacae7d50eda",
+      "records": 29,
+      "statuses": {
+        "ambiguous": 15,
+        "new_candidate": 14
+      },
+      "completeness": {
+        "reference": 29,
+        "caseDiameterMm": 29,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "gronefeld",
+      "file": "catalog/gronefeld_full.json",
+      "sha256": "8fadcab03c90bf63a9074eb8f291d6eb69895c2a405ffa4f9ccf29e7d42a6ecb",
+      "records": 16,
+      "statuses": {
+        "new_candidate": 16
+      },
+      "completeness": {
+        "reference": 16,
+        "caseDiameterMm": 16,
+        "caseThicknessMm": 2,
+        "waterResistanceM": 2
+      }
+    },
+    {
+      "brand": "h-moser-cie",
+      "file": "catalog/h-moser-cie_full.json",
+      "sha256": "48bfb3c2cfd92a45bc1a2b6614d3809060fdbdb00840978923f636c5d23ae5e1",
+      "records": 141,
+      "statuses": {
+        "new_candidate": 141
+      },
+      "completeness": {
+        "reference": 141,
+        "caseDiameterMm": 141,
+        "caseThicknessMm": 138,
+        "waterResistanceM": 16
+      }
+    },
+    {
+      "brand": "habring2",
+      "file": "catalog/habring2_full.json",
+      "sha256": "e0b2151c3232051a324490f512ff2768382362e5c3d503eb91f1d95d4b13389c",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "halios",
+      "file": "catalog/halios_full.json",
+      "sha256": "ef5438a271efbfdb2a55f994237793f615af7e20033650923249eb2042858977",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 14,
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "hamilton",
+      "file": "catalog/hamilton_full.json",
+      "sha256": "b6e3dd6bc23b4522157e6695ea116936cfe96e86b79f1de43f0fdda8f2985c2d",
+      "records": 1182,
+      "statuses": {
+        "new_candidate": 1156,
+        "exact_candidate": 10,
+        "conflict": 16
+      },
+      "completeness": {
+        "reference": 1182,
+        "caseDiameterMm": 1167,
+        "caseThicknessMm": 490,
+        "waterResistanceM": 1174
+      }
+    },
+    {
+      "brand": "harry-winston",
+      "file": "catalog/harry-winston_full.json",
+      "sha256": "36ed8f4208ebaed75a1e08216e06e3c318ca6d5726e472f926f3cf5bc686694f",
+      "records": 34,
+      "statuses": {
+        "new_candidate": 34
+      },
+      "completeness": {
+        "reference": 34,
+        "caseDiameterMm": 34,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "hautlence",
+      "file": "catalog/hautlence_full.json",
+      "sha256": "698d625446494192f2c32b33f6dcf2d93c150e8f758c6794601d9e2c7be863df",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "helson",
+      "file": "catalog/helson_full.json",
+      "sha256": "dbbcf047ae70f4ddeb294ed9cf2b2fe34365e3fd6f5b64425fd7c2732d9862f9",
+      "records": 15,
+      "statuses": {
+        "new_candidate": 3,
+        "ambiguous": 12
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "hermes",
+      "file": "catalog/hermes_full.json",
+      "sha256": "10f5291b17e86504c624eb1cc6925e2a89efdd4268da4d5ad27c59da3d6e0816",
+      "records": 34,
+      "statuses": {
+        "new_candidate": 34
+      },
+      "completeness": {
+        "reference": 34,
+        "caseDiameterMm": 32,
+        "caseThicknessMm": 5,
+        "waterResistanceM": 5
+      }
+    },
+    {
+      "brand": "hmt",
+      "file": "catalog/hmt_full.json",
+      "sha256": "392be06f75da3801f48a933ba4e8e516ff770cda10aefc6113394d117e91d77e",
+      "records": 14,
+      "statuses": {
+        "ambiguous": 14
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "hublot",
+      "file": "catalog/hublot_full.json",
+      "sha256": "2d08cb4aeb8a068e0332c48d4b34965af085fdb6f75429f539e5800b74d62365",
+      "records": 403,
+      "statuses": {
+        "new_candidate": 402,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 403,
+        "caseDiameterMm": 399,
+        "caseThicknessMm": 21,
+        "waterResistanceM": 399
+      }
+    },
+    {
+      "brand": "ikepod",
+      "file": "catalog/ikepod_full.json",
+      "sha256": "948deca50fa59f872344866a33e93b7937b9e475c714655f7a4adc97ce63b098",
+      "records": 4,
+      "statuses": {
+        "new_candidate": 4
+      },
+      "completeness": {
+        "reference": 4,
+        "caseDiameterMm": 4,
+        "caseThicknessMm": 4,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "itay-noy",
+      "file": "catalog/itay-noy_full.json",
+      "sha256": "86d8d6a9628c249ce09cdbb04e461cd746fffddf02c9f752ef0fab01d3bfde66",
+      "records": 13,
+      "statuses": {
+        "new_candidate": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 13,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "iwc",
+      "file": "catalog/iwc_full.json",
+      "sha256": "e3a99c8b4338768d3d6286ce86d34edb9d6821d1e6af47f868528bc465c4501e",
+      "records": 1862,
+      "statuses": {
+        "new_candidate": 1814,
+        "alias_or_format_candidate": 48
+      },
+      "completeness": {
+        "reference": 1862,
+        "caseDiameterMm": 1860,
+        "caseThicknessMm": 1817,
+        "waterResistanceM": 1829
+      }
+    },
+    {
+      "brand": "jaeger-lecoultre",
+      "file": "catalog/jaeger-lecoultre_full.json",
+      "sha256": "ae291603acbfcfd6677c0b6b2615cd63c58a5790fe0d2f8d471fcf5d6276bbd9",
+      "records": 629,
+      "statuses": {
+        "new_candidate": 615,
+        "alias_or_format_candidate": 12,
+        "exact_candidate": 2
+      },
+      "completeness": {
+        "reference": 629,
+        "caseDiameterMm": 629,
+        "caseThicknessMm": 571,
+        "waterResistanceM": 625
+      }
+    },
+    {
+      "brand": "jaquet-droz",
+      "file": "catalog/jaquet-droz_full.json",
+      "sha256": "c4537ae62ef5ace3dc621d6c7f31ee1c25a08cd798733e8610f937b9fd34cfef",
+      "records": 33,
+      "statuses": {
+        "new_candidate": 33
+      },
+      "completeness": {
+        "reference": 33,
+        "caseDiameterMm": 33,
+        "caseThicknessMm": 33,
+        "waterResistanceM": 33
+      }
+    },
+    {
+      "brand": "jeanrichard",
+      "file": "catalog/jeanrichard_full.json",
+      "sha256": "64daf1cfff43c97907b1b3e0c36e58554b953efa234eaa783b259a4c47a805bf",
+      "records": 6,
+      "statuses": {
+        "new_candidate": 6
+      },
+      "completeness": {
+        "reference": 6,
+        "caseDiameterMm": 6,
+        "caseThicknessMm": 6,
+        "waterResistanceM": 6
+      }
+    },
+    {
+      "brand": "junghans-max-bill",
+      "file": "catalog/junghans-max-bill_full.json",
+      "sha256": "0d8776113e1bd6d91a19c40096feec48d5320db970a62f51292858349a557203",
+      "records": 13,
+      "statuses": {
+        "new_candidate": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "junghans",
+      "file": "catalog/junghans_full.json",
+      "sha256": "5d98558144df2e557fa14ee9df04907870f209ef81f24dd842623067276ab49b",
+      "records": 41,
+      "statuses": {
+        "new_candidate": 36,
+        "conflict": 5
+      },
+      "completeness": {
+        "reference": 41,
+        "caseDiameterMm": 41,
+        "caseThicknessMm": 41,
+        "waterResistanceM": 41
+      }
+    },
+    {
+      "brand": "kari-voutilainen",
+      "file": "catalog/kari-voutilainen_full.json",
+      "sha256": "45fcce640e1247fc77fc5ccb6f698183432a09206f165bd3f4e6f6e3512c9751",
+      "records": 30,
+      "statuses": {
+        "ambiguous": 13,
+        "new_candidate": 17
+      },
+      "completeness": {
+        "reference": 30,
+        "caseDiameterMm": 23,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "karoshi",
+      "file": "catalog/karoshi_full.json",
+      "sha256": "d706ba081ebca018b3b5584c4486b1044a28fe79e8464dd9f3026fbf46595939",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "kikuchi-nakagawa",
+      "file": "catalog/kikuchi-nakagawa_full.json",
+      "sha256": "42720fb94172c94488e91784d62707d578059611fe573e6f7b711b3215867ccd",
+      "records": 4,
+      "statuses": {
+        "new_candidate": 4
+      },
+      "completeness": {
+        "reference": 4,
+        "caseDiameterMm": 4,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 4
+      }
+    },
+    {
+      "brand": "kobold",
+      "file": "catalog/kobold_full.json",
+      "sha256": "6105d039a3ba100f0f0c302387bd7250d9bf6a747965984653eb1d8bdb310635",
+      "records": 12,
+      "statuses": {
+        "new_candidate": 12
+      },
+      "completeness": {
+        "reference": 12,
+        "caseDiameterMm": 12,
+        "caseThicknessMm": 12,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "kollokium",
+      "file": "catalog/kollokium_full.json",
+      "sha256": "bca65a1ab96a5545457c826211755ad1a024e640317b9dfbba8629e916c7b990",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "konstantin-chaykin",
+      "file": "catalog/konstantin-chaykin_full.json",
+      "sha256": "d05382ba7511a2e33b3688b8e2b953bc4c896588284aa5e9914c361c295d84dc",
+      "records": 13,
+      "statuses": {
+        "ambiguous": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "l-jr",
+      "file": "catalog/l-jr_full.json",
+      "sha256": "0e7bc19963109c30b89dc5d166dfe04dd5bd2192686ed40a7fdf0ee843bf4bf0",
+      "records": 6,
+      "statuses": {
+        "new_candidate": 6
+      },
+      "completeness": {
+        "reference": 6,
+        "caseDiameterMm": 6,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 6
+      }
+    },
+    {
+      "brand": "laarvee",
+      "file": "catalog/laarvee_full.json",
+      "sha256": "8e205a98eef685609e585bf2d20321e9dbe45d2aa1d2ee0c5bce4b310c708071",
+      "records": 5,
+      "statuses": {
+        "new_candidate": 5
+      },
+      "completeness": {
+        "reference": 5,
+        "caseDiameterMm": 5,
+        "caseThicknessMm": 5,
+        "waterResistanceM": 5
+      }
+    },
+    {
+      "brand": "laco",
+      "file": "catalog/laco_full.json",
+      "sha256": "11baafebfbc6b861f7686ba78dda5a8c2403d966c03d08c84f993aa9e9acefe0",
+      "records": 162,
+      "statuses": {
+        "new_candidate": 150,
+        "conflict": 12
+      },
+      "completeness": {
+        "reference": 162,
+        "caseDiameterMm": 162,
+        "caseThicknessMm": 148,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "lang-1943",
+      "file": "catalog/lang-1943_full.json",
+      "sha256": "1f77e704edf8078212b470e8e87b0074a7708670d40508f2e03d50c497ad8b61",
+      "records": 5,
+      "statuses": {
+        "new_candidate": 5
+      },
+      "completeness": {
+        "reference": 5,
+        "caseDiameterMm": 5,
+        "caseThicknessMm": 5,
+        "waterResistanceM": 5
+      }
+    },
+    {
+      "brand": "lang-heyne",
+      "file": "catalog/lang-heyne_full.json",
+      "sha256": "2e712d648b707149194806b1f9f131ad4d7c02a801be0e6f51e17f3a92eb8c29",
+      "records": 4,
+      "statuses": {
+        "new_candidate": 4
+      },
+      "completeness": {
+        "reference": 4,
+        "caseDiameterMm": 4,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "laurent-ferrier",
+      "file": "catalog/laurent-ferrier_full.json",
+      "sha256": "b47bae7941759ed020e2d9e554cc75ce85e9c62fb6cff9015f65223c398bab80",
+      "records": 27,
+      "statuses": {
+        "ambiguous": 15,
+        "new_candidate": 12
+      },
+      "completeness": {
+        "reference": 27,
+        "caseDiameterMm": 27,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "lebois-co",
+      "file": "catalog/lebois-co_full.json",
+      "sha256": "c055bf4f69685458143fb971230e4e66794e64c31b751e7a5fdf01ef490444e8",
+      "records": 4,
+      "statuses": {
+        "new_candidate": 4
+      },
+      "completeness": {
+        "reference": 4,
+        "caseDiameterMm": 4,
+        "caseThicknessMm": 4,
+        "waterResistanceM": 4
+      }
+    },
+    {
+      "brand": "leijona-heritage",
+      "file": "catalog/leijona-heritage_full.json",
+      "sha256": "7c816534a3fc23033974f9ca4f4901aee75a961acc074d6b1a91b2d73b900664",
+      "records": 6,
+      "statuses": {
+        "new_candidate": 6
+      },
+      "completeness": {
+        "reference": 6,
+        "caseDiameterMm": 6,
+        "caseThicknessMm": 6,
+        "waterResistanceM": 6
+      }
+    },
+    {
+      "brand": "leroy",
+      "file": "catalog/leroy_full.json",
+      "sha256": "0969854d4a7028d18ad61da14ac1a9bf4afc607726b6033a93552511ad963f3e",
+      "records": 37,
+      "statuses": {
+        "new_candidate": 37
+      },
+      "completeness": {
+        "reference": 37,
+        "caseDiameterMm": 37,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 37
+      }
+    },
+    {
+      "brand": "ligure",
+      "file": "catalog/ligure_full.json",
+      "sha256": "782b0f7ae36357e98467563227a9808229fd9763cbbd7fc466487c7f8a5d1e16",
+      "records": 7,
+      "statuses": {
+        "new_candidate": 7
+      },
+      "completeness": {
+        "reference": 7,
+        "caseDiameterMm": 7,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 7
+      }
+    },
+    {
+      "brand": "limes",
+      "file": "catalog/limes_full.json",
+      "sha256": "c8ceb576004496fc3511b446fb9ec7e1e3dda88516ce3067f37ab4da813ec2d7",
+      "records": 64,
+      "statuses": {
+        "new_candidate": 64
+      },
+      "completeness": {
+        "reference": 64,
+        "caseDiameterMm": 64,
+        "caseThicknessMm": 64,
+        "waterResistanceM": 64
+      }
+    },
+    {
+      "brand": "linde-werdelin",
+      "file": "catalog/linde-werdelin_full.json",
+      "sha256": "b12070ca775b0fb436cca733957a0073b57ae8eb5a6631a3547d48d3fbdce7d8",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 14
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 14,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "lobner",
+      "file": "catalog/lobner_full.json",
+      "sha256": "0d61b83b69fb949b396fbc564e131df3765187773645816fa020020f78b2ea08",
+      "records": 16,
+      "statuses": {
+        "new_candidate": 16
+      },
+      "completeness": {
+        "reference": 16,
+        "caseDiameterMm": 16,
+        "caseThicknessMm": 16,
+        "waterResistanceM": 16
+      }
+    },
+    {
+      "brand": "longines",
+      "file": "catalog/longines_full.json",
+      "sha256": "5bbc11075474a58f095241ba229b06fa9e6fd0d1b90621ed22b8a46c7ad42412",
+      "records": 3970,
+      "statuses": {
+        "new_candidate": 3928,
+        "exact_candidate": 31,
+        "conflict": 11
+      },
+      "completeness": {
+        "reference": 3970,
+        "caseDiameterMm": 3956,
+        "caseThicknessMm": 1097,
+        "waterResistanceM": 3960
+      }
+    },
+    {
+      "brand": "lorier",
+      "file": "catalog/lorier_full.json",
+      "sha256": "6740e7e70497cec664c0594062464552ff9d3cb20f53879ff340571c20376079",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "louis-erard",
+      "file": "catalog/louis-erard_full.json",
+      "sha256": "1a80cadd630fcc546e241e338af738c0d24f7a12ffac5c7f39769735e29754f9",
+      "records": 49,
+      "statuses": {
+        "new_candidate": 49
+      },
+      "completeness": {
+        "reference": 49,
+        "caseDiameterMm": 49,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 49
+      }
+    },
+    {
+      "brand": "louis-vuitton",
+      "file": "catalog/louis-vuitton_full.json",
+      "sha256": "9e35dad9d99f4d57e9eef2cf500f24432bc81712043f9676b1f73bb772158b65",
+      "records": 30,
+      "statuses": {
+        "new_candidate": 30
+      },
+      "completeness": {
+        "reference": 30,
+        "caseDiameterMm": 30,
+        "caseThicknessMm": 16,
+        "waterResistanceM": 16
+      }
+    },
+    {
+      "brand": "lundis-bleus",
+      "file": "catalog/lundis-bleus_full.json",
+      "sha256": "5a4d48d6922e9ea0682b469e5ffd79de8113b9ad60daeff4d3956070d5aa619c",
+      "records": 6,
+      "statuses": {
+        "new_candidate": 6
+      },
+      "completeness": {
+        "reference": 6,
+        "caseDiameterMm": 6,
+        "caseThicknessMm": 6,
+        "waterResistanceM": 6
+      }
+    },
+    {
+      "brand": "lyrique",
+      "file": "catalog/lyrique_full.json",
+      "sha256": "354733ab094f5b3f6d4751e8f967d38270a72403ea9a67d654c406e242fb43b3",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "lytt-labs",
+      "file": "catalog/lytt-labs_full.json",
+      "sha256": "0ed5b3d7a4f1c4c146fcce12e13c9d29ec7b551034ed7955b4c02e0f23799058",
+      "records": 3,
+      "statuses": {
+        "new_candidate": 3
+      },
+      "completeness": {
+        "reference": 3,
+        "caseDiameterMm": 3,
+        "caseThicknessMm": 3,
+        "waterResistanceM": 3
+      }
+    },
+    {
+      "brand": "maen",
+      "file": "catalog/maen_full.json",
+      "sha256": "89c13b5fe276865db9425c3d27eb2c62190f439e0492d21edd24c5c11f4b1fd4",
+      "records": 12,
+      "statuses": {
+        "ambiguous": 12
+      },
+      "completeness": {
+        "reference": 12,
+        "caseDiameterMm": 12,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "magrette",
+      "file": "catalog/magrette_full.json",
+      "sha256": "2a206425e908431cfef19c1bb052ed66b57d6c815852a25c5d8fdd0da47a20cb",
+      "records": 15,
+      "statuses": {
+        "new_candidate": 1,
+        "ambiguous": 14
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 9,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "massena-lab",
+      "file": "catalog/massena-lab_full.json",
+      "sha256": "fe7eb022216c384fbdc3e33890679f9e6be120531e287d1a2d573f4dc2483208",
+      "records": 5,
+      "statuses": {
+        "conflict": 1,
+        "exact_candidate": 1,
+        "new_candidate": 3
+      },
+      "completeness": {
+        "reference": 5,
+        "caseDiameterMm": 5,
+        "caseThicknessMm": 5,
+        "waterResistanceM": 5
+      }
+    },
+    {
+      "brand": "maurice-lacroix",
+      "file": "catalog/maurice-lacroix_full.json",
+      "sha256": "e9f74d01044449c3d446771923ee115602a637ca40c398f4a74523e9d1580a79",
+      "records": 16,
+      "statuses": {
+        "conflict": 1,
+        "new_candidate": 13,
+        "exact_candidate": 2
+      },
+      "completeness": {
+        "reference": 16,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 16
+      }
+    },
+    {
+      "brand": "maximilian-buesser",
+      "file": "catalog/maximilian-buesser_full.json",
+      "sha256": "d257d06d8f5778fc5df78857dddcbbf180daf841928640c72f508516fd16fd90",
+      "records": 23,
+      "statuses": {
+        "ambiguous": 13,
+        "new_candidate": 10
+      },
+      "completeness": {
+        "reference": 23,
+        "caseDiameterMm": 17,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "mb-and-f",
+      "file": "catalog/mb-and-f_full.json",
+      "sha256": "4c07b2b1a3964f44a46ed8c2e7bac5c99fa54f82f4f3fc607c2cbc3ce02dd59f",
+      "records": 25,
+      "statuses": {
+        "ambiguous": 13,
+        "new_candidate": 12
+      },
+      "completeness": {
+        "reference": 25,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "mb-f",
+      "file": "catalog/mb-f_full.json",
+      "sha256": "afe326389095dad1997c61ccc234fa2e157678f28ce20025467dcd2a80bae830",
+      "records": 182,
+      "statuses": {
+        "new_candidate": 182
+      },
+      "completeness": {
+        "reference": 182,
+        "caseDiameterMm": 182,
+        "caseThicknessMm": 182,
+        "waterResistanceM": 117
+      }
+    },
+    {
+      "brand": "meistersinger",
+      "file": "catalog/meistersinger_full.json",
+      "sha256": "f48957cb2a77610a64538866ac361a10d1d4e34e1f4ecaa13443f6e2359cbdbf",
+      "records": 21,
+      "statuses": {
+        "new_candidate": 21
+      },
+      "completeness": {
+        "reference": 21,
+        "caseDiameterMm": 21,
+        "caseThicknessMm": 2,
+        "waterResistanceM": 21
+      }
+    },
+    {
+      "brand": "mido",
+      "file": "catalog/mido_full.json",
+      "sha256": "35c38f2c153fa00016c2cfe011a6742be0854439662ccb1d47efd9325bcf668d",
+      "records": 385,
+      "statuses": {
+        "new_candidate": 374,
+        "conflict": 7,
+        "exact_candidate": 4
+      },
+      "completeness": {
+        "reference": 385,
+        "caseDiameterMm": 385,
+        "caseThicknessMm": 385,
+        "waterResistanceM": 380
+      }
+    },
+    {
+      "brand": "milus",
+      "file": "catalog/milus_full.json",
+      "sha256": "38315f7d0b4be5e3f02bf29070d59fea69997e4610f7d62d71662e6d1a937ba0",
+      "records": 8,
+      "statuses": {
+        "new_candidate": 8
+      },
+      "completeness": {
+        "reference": 8,
+        "caseDiameterMm": 8,
+        "caseThicknessMm": 8,
+        "waterResistanceM": 8
+      }
+    },
+    {
+      "brand": "minase",
+      "file": "catalog/minase_full.json",
+      "sha256": "cc377d48f0102992ba00056c6a7d42e9279e86a9f6f2ccbb0aa1105d10f66dac",
+      "records": 3,
+      "statuses": {
+        "new_candidate": 3
+      },
+      "completeness": {
+        "reference": 3,
+        "caseDiameterMm": 3,
+        "caseThicknessMm": 3,
+        "waterResistanceM": 3
+      }
+    },
+    {
+      "brand": "monta",
+      "file": "catalog/monta_full.json",
+      "sha256": "d1310bb824495ef886dee71e1ac25255bb286cd468d81b10f0813c27f53f8bb8",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "montblanc",
+      "file": "catalog/montblanc_full.json",
+      "sha256": "0b9d20151f3858662a55bcc041c3c4187351f536d23f977c8e7f386e3893cb1c",
+      "records": 192,
+      "statuses": {
+        "new_candidate": 191,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 192,
+        "caseDiameterMm": 190,
+        "caseThicknessMm": 191,
+        "waterResistanceM": 190
+      }
+    },
+    {
+      "brand": "montegrappa",
+      "file": "catalog/montegrappa_full.json",
+      "sha256": "44e8cb4a892b7b9a35dc931869ceeb4726dcf9ef2eaf0a4961e9d217a307910e",
+      "records": 2,
+      "statuses": {
+        "new_candidate": 2
+      },
+      "completeness": {
+        "reference": 2,
+        "caseDiameterMm": 2,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 2
+      }
+    },
+    {
+      "brand": "moritz-grossmann",
+      "file": "catalog/moritz-grossmann_full.json",
+      "sha256": "2ce736d16dd7f7b7ddebf58e130c1102f43d460314544af8b1ba691b37df954e",
+      "records": 46,
+      "statuses": {
+        "new_candidate": 46
+      },
+      "completeness": {
+        "reference": 46,
+        "caseDiameterMm": 46,
+        "caseThicknessMm": 46,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "muhle-glashutte",
+      "file": "catalog/muhle-glashutte_full.json",
+      "sha256": "0c7084a6355f0f48233ac5f3951a3f420ba50fa385f8dcdcf4659d2db308a60f",
+      "records": 100,
+      "statuses": {
+        "new_candidate": 97,
+        "conflict": 3
+      },
+      "completeness": {
+        "reference": 100,
+        "caseDiameterMm": 100,
+        "caseThicknessMm": 100,
+        "waterResistanceM": 100
+      }
+    },
+    {
+      "brand": "mw-co",
+      "file": "catalog/mw-co_full.json",
+      "sha256": "1b0b81bf4e0737785c09c7e6afcb6a40d68236f13c2332a4db8eece16d584142",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 0,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "nivada-grenchen",
+      "file": "catalog/nivada-grenchen_full.json",
+      "sha256": "4ba1917d9fe2a93c9abea5fab120ff5353f82187ba03e5e491753101dea14988",
+      "records": 158,
+      "statuses": {
+        "new_candidate": 154,
+        "conflict": 3,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 158,
+        "caseDiameterMm": 158,
+        "caseThicknessMm": 158,
+        "waterResistanceM": 158
+      }
+    },
+    {
+      "brand": "nomos-glashutte",
+      "file": "catalog/nomos-glashutte_full.json",
+      "sha256": "d7c1db5609c475a3b8dec24b6be9a1d8c49b06330cc518703361e42fd6b321b3",
+      "records": 571,
+      "statuses": {
+        "new_candidate": 538,
+        "conflict": 29,
+        "exact_candidate": 4
+      },
+      "completeness": {
+        "reference": 571,
+        "caseDiameterMm": 571,
+        "caseThicknessMm": 550,
+        "waterResistanceM": 570
+      }
+    },
+    {
+      "brand": "norqain",
+      "file": "catalog/norqain_full.json",
+      "sha256": "75e94a2bb86e3bfe94b86e2397f6dcea10333c648ff52751ac9b89d8aa9d0316",
+      "records": 9,
+      "statuses": {
+        "new_candidate": 9
+      },
+      "completeness": {
+        "reference": 9,
+        "caseDiameterMm": 9,
+        "caseThicknessMm": 9,
+        "waterResistanceM": 9
+      }
+    },
+    {
+      "brand": "ollech-wajs",
+      "file": "catalog/ollech-wajs_full.json",
+      "sha256": "b862756f20a7dd6bf023128e98b29a5cc10cf4ea525dd0a432e156a86388ed33",
+      "records": 2,
+      "statuses": {
+        "new_candidate": 2
+      },
+      "completeness": {
+        "reference": 2,
+        "caseDiameterMm": 2,
+        "caseThicknessMm": 2,
+        "waterResistanceM": 2
+      }
+    },
+    {
+      "brand": "omega",
+      "file": "catalog/omega_full.json",
+      "sha256": "bb4b4210c1858c8c9f6cf20d3c81e310597c45b0e3e5778802be81f1ba19e3d7",
+      "records": 3835,
+      "statuses": {
+        "new_candidate": 3772,
+        "exact_candidate": 25,
+        "conflict": 38
+      },
+      "completeness": {
+        "reference": 3835,
+        "caseDiameterMm": 3835,
+        "caseThicknessMm": 983,
+        "waterResistanceM": 3809
+      }
+    },
+    {
+      "brand": "ophion",
+      "file": "catalog/ophion_full.json",
+      "sha256": "6c8130fa5435d10352b0b40e70aaa5dde494b4e7262c81bba8009c95b1081b08",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "orient",
+      "file": "catalog/orient_full.json",
+      "sha256": "c768ebfa79b2243c2e47a00bef26bd7a1b4e4bc685955ebd801faff82834f780",
+      "records": 16,
+      "statuses": {
+        "new_candidate": 15,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 16,
+        "caseDiameterMm": 16,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 16
+      }
+    },
+    {
+      "brand": "oris",
+      "file": "catalog/oris_full.json",
+      "sha256": "9ef82eabee1192b40427834fa15e5450ff4961a79e2970a807883147b60f6aec",
+      "records": 1728,
+      "statuses": {
+        "new_candidate": 1712,
+        "exact_candidate": 14,
+        "conflict": 2
+      },
+      "completeness": {
+        "reference": 1728,
+        "caseDiameterMm": 1722,
+        "caseThicknessMm": 77,
+        "waterResistanceM": 1728
+      }
+    },
+    {
+      "brand": "panerai",
+      "file": "catalog/panerai_full.json",
+      "sha256": "d59275f5c3ec5b481a31b770e6875442a636ce4bcad17302f29a9409aca20298",
+      "records": 979,
+      "statuses": {
+        "new_candidate": 927,
+        "exact_candidate": 24,
+        "conflict": 28
+      },
+      "completeness": {
+        "reference": 979,
+        "caseDiameterMm": 978,
+        "caseThicknessMm": 29,
+        "waterResistanceM": 970
+      }
+    },
+    {
+      "brand": "parmigiani-fleurier",
+      "file": "catalog/parmigiani-fleurier_full.json",
+      "sha256": "945a2ca6f7c5764374d2b515d711362183aa63a08d1e202c981bae08e29d48cd",
+      "records": 141,
+      "statuses": {
+        "new_candidate": 141
+      },
+      "completeness": {
+        "reference": 141,
+        "caseDiameterMm": 141,
+        "caseThicknessMm": 48,
+        "waterResistanceM": 141
+      }
+    },
+    {
+      "brand": "patek-philippe",
+      "file": "catalog/patek-philippe_full.json",
+      "sha256": "2ac4b8040d549c5faf128752155edab8ef239349c218b30ae1e952796313336b",
+      "records": 997,
+      "statuses": {
+        "new_candidate": 988,
+        "exact_candidate": 5,
+        "conflict": 4
+      },
+      "completeness": {
+        "reference": 997,
+        "caseDiameterMm": 989,
+        "caseThicknessMm": 516,
+        "waterResistanceM": 793
+      }
+    },
+    {
+      "brand": "pequignet",
+      "file": "catalog/pequignet_full.json",
+      "sha256": "62c5b100d25fe4631892b18e9346f5cf41ebf891ff3ffc8fe952fbc2e4839b7f",
+      "records": 62,
+      "statuses": {
+        "new_candidate": 62
+      },
+      "completeness": {
+        "reference": 62,
+        "caseDiameterMm": 62,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 62
+      }
+    },
+    {
+      "brand": "perrelet",
+      "file": "catalog/perrelet_full.json",
+      "sha256": "24a98a82593797632c6083b14fac414635a607e562719f44501c1986b064bd25",
+      "records": 44,
+      "statuses": {
+        "new_candidate": 44
+      },
+      "completeness": {
+        "reference": 44,
+        "caseDiameterMm": 44,
+        "caseThicknessMm": 44,
+        "waterResistanceM": 44
+      }
+    },
+    {
+      "brand": "pheidippides-watches",
+      "file": "catalog/pheidippides-watches_full.json",
+      "sha256": "6d14d2088ad3fc114ad68ac1ddfc90e24bd336d8ba04ce20a871689c728fe462",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "philippe-dufour",
+      "file": "catalog/philippe-dufour_full.json",
+      "sha256": "d3b03d5c07658fe1a9550534aceee1795e707c09d96978d89d4d0377148cb934",
+      "records": 26,
+      "statuses": {
+        "ambiguous": 10,
+        "new_candidate": 16
+      },
+      "completeness": {
+        "reference": 26,
+        "caseDiameterMm": 23,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "piaget",
+      "file": "catalog/piaget_full.json",
+      "sha256": "015f3c8a7d9678c52aca32b18c45dc0513cb6ac6a4876d92433cb5ed23093a14",
+      "records": 155,
+      "statuses": {
+        "new_candidate": 153,
+        "exact_candidate": 1,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 155,
+        "caseDiameterMm": 155,
+        "caseThicknessMm": 155,
+        "waterResistanceM": 155
+      }
+    },
+    {
+      "brand": "pinion",
+      "file": "catalog/pinion_full.json",
+      "sha256": "3a4563d1c780c8543ef58b98bf85146e39683052c313b3e7508017cc5a7a0c18",
+      "records": 6,
+      "statuses": {
+        "new_candidate": 6
+      },
+      "completeness": {
+        "reference": 6,
+        "caseDiameterMm": 6,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 6
+      }
+    },
+    {
+      "brand": "poljot",
+      "file": "catalog/poljot_full.json",
+      "sha256": "dab7903445cfa26d10b274863072037adc372cde4095fea3fa172a3b959a048a",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 3,
+        "ambiguous": 11
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 3
+      }
+    },
+    {
+      "brand": "porsche-design",
+      "file": "catalog/porsche-design_full.json",
+      "sha256": "b5b564e59635b66851a4602357ef7a51db0edd2db55f0b208c0bb71862443ca9",
+      "records": 3,
+      "statuses": {
+        "new_candidate": 3
+      },
+      "completeness": {
+        "reference": 3,
+        "caseDiameterMm": 3,
+        "caseThicknessMm": 3,
+        "waterResistanceM": 3
+      }
+    },
+    {
+      "brand": "prim",
+      "file": "catalog/prim_full.json",
+      "sha256": "06baf36f327ac0bd181bd178852f529378d780ea0682194186abda917959c3a5",
+      "records": 2,
+      "statuses": {
+        "new_candidate": 2
+      },
+      "completeness": {
+        "reference": 2,
+        "caseDiameterMm": 2,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 2
+      }
+    },
+    {
+      "brand": "rado",
+      "file": "catalog/rado_full.json",
+      "sha256": "b3989a6126ee23f17dc31f17b261f919062e238fa213179bfaf735869bd088a9",
+      "records": 107,
+      "statuses": {
+        "new_candidate": 105,
+        "conflict": 2
+      },
+      "completeness": {
+        "reference": 107,
+        "caseDiameterMm": 107,
+        "caseThicknessMm": 19,
+        "waterResistanceM": 107
+      }
+    },
+    {
+      "brand": "raketa",
+      "file": "catalog/raketa_full.json",
+      "sha256": "8e10f23902e728a415ac8a3b208e1edc49fc756cafc1817028fd1b5f0f060415",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "ralph-lauren",
+      "file": "catalog/ralph-lauren_full.json",
+      "sha256": "0127fbb54519969fda2e28735981e555da1b0c49f75023fb756a6933d4895535",
+      "records": 11,
+      "statuses": {
+        "new_candidate": 11
+      },
+      "completeness": {
+        "reference": 11,
+        "caseDiameterMm": 11,
+        "caseThicknessMm": 11,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "reservoir",
+      "file": "catalog/reservoir_full.json",
+      "sha256": "5939bb9ff683ef0ab68e7abfb8455ed1035bb469d770bcd74f8d99042b6322cb",
+      "records": 10,
+      "statuses": {
+        "new_candidate": 10
+      },
+      "completeness": {
+        "reference": 10,
+        "caseDiameterMm": 10,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 10
+      }
+    },
+    {
+      "brand": "ressence",
+      "file": "catalog/ressence_full.json",
+      "sha256": "ffe4a8c1dcb9005df409a0b59c0844e8400a1101744b4415f1f801136bbc5195",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 14
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 14,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "rgm",
+      "file": "catalog/rgm_full.json",
+      "sha256": "3574d9ee1ea271d1756331f883a72bc217ef3edb5a2d201ca9208abe5a4209ce",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "richard-mille",
+      "file": "catalog/richard-mille_full.json",
+      "sha256": "6e632466bff5289a3887f56779bf9d104750d76d5bdc2039d91fd3297cd21a93",
+      "records": 25,
+      "statuses": {
+        "new_candidate": 25
+      },
+      "completeness": {
+        "reference": 25,
+        "caseDiameterMm": 24,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "robot-watch",
+      "file": "catalog/robot-watch_full.json",
+      "sha256": "c83c5151b1457cfa2d87c40da8637fe5ca18978bc24077c2c9d9b479bfd0b25c",
+      "records": 3,
+      "statuses": {
+        "new_candidate": 3
+      },
+      "completeness": {
+        "reference": 3,
+        "caseDiameterMm": 3,
+        "caseThicknessMm": 3,
+        "waterResistanceM": 3
+      }
+    },
+    {
+      "brand": "roger-dubuis",
+      "file": "catalog/roger-dubuis_full.json",
+      "sha256": "89bb69a56d42b07f7f06f9a7060b8e608a7b43628b610bb2ab2b4cf0a3d6ef11",
+      "records": 21,
+      "statuses": {
+        "new_candidate": 21
+      },
+      "completeness": {
+        "reference": 21,
+        "caseDiameterMm": 21,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 6
+      }
+    },
+    {
+      "brand": "roger-w-smith",
+      "file": "catalog/roger-w-smith_full.json",
+      "sha256": "4880b50d6826a0553d83f3348c219bc7535134864c9ce767b0dd9b6f6be0ea58",
+      "records": 23,
+      "statuses": {
+        "ambiguous": 11,
+        "new_candidate": 12
+      },
+      "completeness": {
+        "reference": 23,
+        "caseDiameterMm": 23,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "rolex",
+      "file": "catalog/rolex_full.json",
+      "sha256": "bef0c5bb63385bbd39dfa908995367b65705cb786a8d6e1483b8dc5abfca7d2c",
+      "records": 4025,
+      "statuses": {
+        "new_candidate": 4020,
+        "exact_candidate": 2,
+        "missing_identity": 3
+      },
+      "completeness": {
+        "reference": 4022,
+        "caseDiameterMm": 4017,
+        "caseThicknessMm": 937,
+        "waterResistanceM": 4020
+      }
+    },
+    {
+      "brand": "romain-gauthier",
+      "file": "catalog/romain-gauthier_full.json",
+      "sha256": "768206527bb1cc33e4c37a404f815a7ff2b21392ea41489565717ace19449ee1",
+      "records": 25,
+      "statuses": {
+        "ambiguous": 14,
+        "new_candidate": 11
+      },
+      "completeness": {
+        "reference": 25,
+        "caseDiameterMm": 23,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "romain-jerome",
+      "file": "catalog/romain-jerome_full.json",
+      "sha256": "495c1ddd6119995d0409eb6e93fa2d1093542b79b0bccc6a31e8a6b1bec4369b",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 14
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "san-martin",
+      "file": "catalog/san-martin_full.json",
+      "sha256": "9000dbd7f4d0b08e66797fe5a87cf683f5908eb0e8546b01ae2ddf1054d880e2",
+      "records": 15,
+      "statuses": {
+        "new_candidate": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "schofield",
+      "file": "catalog/schofield_full.json",
+      "sha256": "c89435196ac0bfd2543184235df519cd27baccec493ac1143435ac4f5da23bde",
+      "records": 13,
+      "statuses": {
+        "ambiguous": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "schwarz-etienne",
+      "file": "catalog/schwarz-etienne_full.json",
+      "sha256": "d797c22b48f20d4326d4a6199879f91eb216ce03c1c52445b2a8e5b5641d1e51",
+      "records": 43,
+      "statuses": {
+        "new_candidate": 43
+      },
+      "completeness": {
+        "reference": 43,
+        "caseDiameterMm": 43,
+        "caseThicknessMm": 43,
+        "waterResistanceM": 43
+      }
+    },
+    {
+      "brand": "sea-gull",
+      "file": "catalog/sea-gull_full.json",
+      "sha256": "7addae4ad1745c5ab9cd013a70035915b8e0854c9a38daed683ce19929b3c77b",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 7,
+        "ambiguous": 7
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 9,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "seiko",
+      "file": "catalog/seiko_full.json",
+      "sha256": "dc02bb971af93e68e1b2f67128040cf2107f27ace7a4501d89ac6340976581d5",
+      "records": 138,
+      "statuses": {
+        "new_candidate": 136,
+        "alias_or_format_candidate": 1,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 138,
+        "caseDiameterMm": 138,
+        "caseThicknessMm": 65,
+        "waterResistanceM": 138
+      }
+    },
+    {
+      "brand": "sevenfriday",
+      "file": "catalog/sevenfriday_full.json",
+      "sha256": "0b0933c0f11799b2437d9e827e013cddce9bb1b5742a21dbeb63da38eea1c4a9",
+      "records": 29,
+      "statuses": {
+        "new_candidate": 29
+      },
+      "completeness": {
+        "reference": 29,
+        "caseDiameterMm": 28,
+        "caseThicknessMm": 26,
+        "waterResistanceM": 29
+      }
+    },
+    {
+      "brand": "shanghai",
+      "file": "catalog/shanghai_full.json",
+      "sha256": "1ad57ff9aef4185cb0140a6e052ca229662c54a577e85c37cbd2ec3b0e71741b",
+      "records": 15,
+      "statuses": {
+        "new_candidate": 1,
+        "ambiguous": 14
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "sherpa",
+      "file": "catalog/sherpa_full.json",
+      "sha256": "4e554ac7484f512b2bcf01c4d7726008dd1edd08edd3e2313946b177c262a9d6",
+      "records": 2,
+      "statuses": {
+        "new_candidate": 2
+      },
+      "completeness": {
+        "reference": 2,
+        "caseDiameterMm": 2,
+        "caseThicknessMm": 2,
+        "waterResistanceM": 2
+      }
+    },
+    {
+      "brand": "shinola",
+      "file": "catalog/shinola_full.json",
+      "sha256": "9a2e8f80cee273b74c9dc227c034939eab2c737b916082d1721b8d2407ecb0e2",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 7,
+        "ambiguous": 7
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "sinn",
+      "file": "catalog/sinn_full.json",
+      "sha256": "aadc5b217b0ea555adbfe832890b2bf80175b0c0f9bf29933273bc9654e30e90",
+      "records": 156,
+      "statuses": {
+        "new_candidate": 129,
+        "conflict": 21,
+        "exact_candidate": 6
+      },
+      "completeness": {
+        "reference": 156,
+        "caseDiameterMm": 156,
+        "caseThicknessMm": 156,
+        "waterResistanceM": 156
+      }
+    },
+    {
+      "brand": "smith-and-sons",
+      "file": "catalog/smith-and-sons_full.json",
+      "sha256": "b2e879e38e0bb69041ad7d4f8fe6a23417ad74a1a47608a1a982ffa520d36e8f",
+      "records": 15,
+      "statuses": {
+        "ambiguous": 14,
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "speake-marin",
+      "file": "catalog/speake-marin_full.json",
+      "sha256": "904f6d7b1260ec229d666d607ffbd0b9abacddcfc3239c85662fd6f003861943",
+      "records": 31,
+      "statuses": {
+        "new_candidate": 31
+      },
+      "completeness": {
+        "reference": 31,
+        "caseDiameterMm": 31,
+        "caseThicknessMm": 17,
+        "waterResistanceM": 31
+      }
+    },
+    {
+      "brand": "squale",
+      "file": "catalog/squale_full.json",
+      "sha256": "11c8fbdfdbf254e082291b72bdd32f1b3ec886011824a551ba05038f321061e6",
+      "records": 15,
+      "statuses": {
+        "new_candidate": 6,
+        "ambiguous": 9
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "staudt",
+      "file": "catalog/staudt_full.json",
+      "sha256": "0cf8790929f9911785466e546f1f95237fd723557141eb195d8d8ce1a8de2d07",
+      "records": 53,
+      "statuses": {
+        "new_candidate": 53
+      },
+      "completeness": {
+        "reference": 53,
+        "caseDiameterMm": 53,
+        "caseThicknessMm": 53,
+        "waterResistanceM": 53
+      }
+    },
+    {
+      "brand": "steeldive",
+      "file": "catalog/steeldive_full.json",
+      "sha256": "f716d092e9d0875d936a3358da4126407477372ce522a0e90d1ec5a7200a0100",
+      "records": 15,
+      "statuses": {
+        "new_candidate": 15
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "steinhart",
+      "file": "catalog/steinhart_full.json",
+      "sha256": "755c2ace0f3e904930b8cbb348a3a9f30872ef9a6efd3397fd84b40ebfd42989",
+      "records": 71,
+      "statuses": {
+        "new_candidate": 71
+      },
+      "completeness": {
+        "reference": 71,
+        "caseDiameterMm": 71,
+        "caseThicknessMm": 71,
+        "waterResistanceM": 63
+      }
+    },
+    {
+      "brand": "stowa",
+      "file": "catalog/stowa_full.json",
+      "sha256": "21e88ce1fd1cdfffb9068211ef0b182f203ff8deab5a081c446245991df9ec1e",
+      "records": 11,
+      "statuses": {
+        "new_candidate": 11
+      },
+      "completeness": {
+        "reference": 11,
+        "caseDiameterMm": 11,
+        "caseThicknessMm": 11,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "stuckx",
+      "file": "catalog/stuckx_full.json",
+      "sha256": "b5ded4af01ceae504006c4e4fef819358dde43380b69f63f193a7b8dcc9d4cc5",
+      "records": 5,
+      "statuses": {
+        "new_candidate": 5
+      },
+      "completeness": {
+        "reference": 5,
+        "caseDiameterMm": 5,
+        "caseThicknessMm": 5,
+        "waterResistanceM": 5
+      }
+    },
+    {
+      "brand": "sturmanskie",
+      "file": "catalog/sturmanskie_full.json",
+      "sha256": "3c88cbf947b4735a4ee07203f2d561ae500ccc3bafb2a6376c56f7f82afa8875",
+      "records": 15,
+      "statuses": {
+        "new_candidate": 4,
+        "ambiguous": 11
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "swatch",
+      "file": "catalog/swatch_full.json",
+      "sha256": "a906977c103fb6979c3e54f80b6ffded8f1b035bbe6a128d40934d8eecd50e99",
+      "records": 86,
+      "statuses": {
+        "new_candidate": 82,
+        "exact_candidate": 3,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 86,
+        "caseDiameterMm": 86,
+        "caseThicknessMm": 86,
+        "waterResistanceM": 86
+      }
+    },
+    {
+      "brand": "sye",
+      "file": "catalog/sye_full.json",
+      "sha256": "bae35e74de5b694247934b919811c916d517f7d4e886503463cf110578e0f986",
+      "records": 40,
+      "statuses": {
+        "new_candidate": 40
+      },
+      "completeness": {
+        "reference": 40,
+        "caseDiameterMm": 40,
+        "caseThicknessMm": 40,
+        "waterResistanceM": 40
+      }
+    },
+    {
+      "brand": "tag-heuer-connected",
+      "file": "catalog/tag-heuer-connected_full.json",
+      "sha256": "1d001b578baf81cea2a013faec2a54b2f225551a3f5a2597ff6483abb4ba5d0b",
+      "records": 13,
+      "statuses": {
+        "new_candidate": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "tag-heuer",
+      "file": "catalog/tag-heuer_full.json",
+      "sha256": "8aa7c3bb81f421e079c9f7bc86e176f71ff1775112107595663ff9c4c4803aed",
+      "records": 1613,
+      "statuses": {
+        "new_candidate": 1594,
+        "conflict": 9,
+        "exact_candidate": 10
+      },
+      "completeness": {
+        "reference": 1613,
+        "caseDiameterMm": 1605,
+        "caseThicknessMm": 332,
+        "waterResistanceM": 1560
+      }
+    },
+    {
+      "brand": "takano",
+      "file": "catalog/takano_full.json",
+      "sha256": "57a5aeefc12c87ffdb015b51a9565b501eaf85414ba0e46bc64ef15fd21fba2e",
+      "records": 2,
+      "statuses": {
+        "new_candidate": 2
+      },
+      "completeness": {
+        "reference": 2,
+        "caseDiameterMm": 2,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 2
+      }
+    },
+    {
+      "brand": "tissot",
+      "file": "catalog/tissot_full.json",
+      "sha256": "6b9e2c4be319895f53377bffa8446b57bd25f603cdd553cd35a1c38c47708270",
+      "records": 1976,
+      "statuses": {
+        "new_candidate": 1939,
+        "conflict": 19,
+        "exact_candidate": 8,
+        "ambiguous": 10
+      },
+      "completeness": {
+        "reference": 1976,
+        "caseDiameterMm": 1966,
+        "caseThicknessMm": 1855,
+        "waterResistanceM": 1823
+      }
+    },
+    {
+      "brand": "toledano-chan",
+      "file": "catalog/toledano-chan_full.json",
+      "sha256": "8376918e10463f9a78f4c1b83cb03d90716144e6a76c8ae1c81b359d0a0aad24",
+      "records": 1,
+      "statuses": {
+        "new_candidate": 1
+      },
+      "completeness": {
+        "reference": 1,
+        "caseDiameterMm": 1,
+        "caseThicknessMm": 1,
+        "waterResistanceM": 1
+      }
+    },
+    {
+      "brand": "tudor",
+      "file": "catalog/tudor_full.json",
+      "sha256": "c47452e08971e27ddd96011d239787bbd706974416611bf79177cb420ebc7db6",
+      "records": 1122,
+      "statuses": {
+        "new_candidate": 1101,
+        "alias_or_format_candidate": 19,
+        "missing_identity": 1,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 1121,
+        "caseDiameterMm": 1121,
+        "caseThicknessMm": 67,
+        "waterResistanceM": 1035
+      }
+    },
+    {
+      "brand": "tutima",
+      "file": "catalog/tutima_full.json",
+      "sha256": "05b61abee7931c5128b7888bafcd7819c15fffad07dc34b00b9f068bd078e4d6",
+      "records": 14,
+      "statuses": {
+        "new_candidate": 14
+      },
+      "completeness": {
+        "reference": 14,
+        "caseDiameterMm": 14,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 14
+      }
+    },
+    {
+      "brand": "twco",
+      "file": "catalog/twco_full.json",
+      "sha256": "3c311f7343d2d1c1fb8b0f037726369a9a6b4bf6f485e8df7f1b8941379abe79",
+      "records": 5,
+      "statuses": {
+        "new_candidate": 5
+      },
+      "completeness": {
+        "reference": 5,
+        "caseDiameterMm": 5,
+        "caseThicknessMm": 5,
+        "waterResistanceM": 5
+      }
+    },
+    {
+      "brand": "ulysse-nardin",
+      "file": "catalog/ulysse-nardin_full.json",
+      "sha256": "6264f1b96224f3aeb79f3da5b6a92ccaa980185f39a2d866070781f7308ef288",
+      "records": 40,
+      "statuses": {
+        "new_candidate": 40
+      },
+      "completeness": {
+        "reference": 40,
+        "caseDiameterMm": 39,
+        "caseThicknessMm": 26,
+        "waterResistanceM": 38
+      }
+    },
+    {
+      "brand": "unimatic",
+      "file": "catalog/unimatic_full.json",
+      "sha256": "b9be31e645bec75ae24f8b8106df98a61f43cca4e46f860cf5a1cf3a32ee0fff",
+      "records": 142,
+      "statuses": {
+        "new_candidate": 142
+      },
+      "completeness": {
+        "reference": 142,
+        "caseDiameterMm": 142,
+        "caseThicknessMm": 142,
+        "waterResistanceM": 142
+      }
+    },
+    {
+      "brand": "universal-geneve",
+      "file": "catalog/universal-geneve_full.json",
+      "sha256": "cc41138f1b8313cfc892d82d1f40ab5b054557d92cee1e88535460ea6a9e7a26",
+      "records": 50,
+      "statuses": {
+        "new_candidate": 50
+      },
+      "completeness": {
+        "reference": 50,
+        "caseDiameterMm": 39,
+        "caseThicknessMm": 44,
+        "waterResistanceM": 42
+      }
+    },
+    {
+      "brand": "uniwerk",
+      "file": "catalog/uniwerk_full.json",
+      "sha256": "d31c7c8b4aebcb069a2c5a7c817bd7c2c4dab565f5f37b2600f013f323c007b7",
+      "records": 11,
+      "statuses": {
+        "new_candidate": 3,
+        "ambiguous": 8
+      },
+      "completeness": {
+        "reference": 11,
+        "caseDiameterMm": 0,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "urwerk",
+      "file": "catalog/urwerk_full.json",
+      "sha256": "c1fe2f6e0aeaf2805efa88b8ae447ab57e59c81cae69562633181630754fd2ac",
+      "records": 24,
+      "statuses": {
+        "new_candidate": 24
+      },
+      "completeness": {
+        "reference": 24,
+        "caseDiameterMm": 20,
+        "caseThicknessMm": 8,
+        "waterResistanceM": 8
+      }
+    },
+    {
+      "brand": "vacheron-constantin",
+      "file": "catalog/vacheron-constantin_full.json",
+      "sha256": "3791b042a6a632854a2744bf8aa5b777d6ca1eebe42b85eb5597d62ffe479bc8",
+      "records": 531,
+      "statuses": {
+        "new_candidate": 525,
+        "exact_candidate": 5,
+        "conflict": 1
+      },
+      "completeness": {
+        "reference": 531,
+        "caseDiameterMm": 527,
+        "caseThicknessMm": 526,
+        "waterResistanceM": 505
+      }
+    },
+    {
+      "brand": "van-cleef-and-arpels",
+      "file": "catalog/van-cleef-and-arpels_full.json",
+      "sha256": "6db3879960ca470202bc1f62db7a6c2a081878890ec75ec1c8baaf15f0c8d9d5",
+      "records": 28,
+      "statuses": {
+        "new_candidate": 17,
+        "ambiguous": 11
+      },
+      "completeness": {
+        "reference": 28,
+        "caseDiameterMm": 25,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "van-der-gang-watches",
+      "file": "catalog/van-der-gang-watches_full.json",
+      "sha256": "e7455de4f1e83343bb2ab71a7d61f773308ad760d7ea885114f39a048597369d",
+      "records": 34,
+      "statuses": {
+        "new_candidate": 34
+      },
+      "completeness": {
+        "reference": 34,
+        "caseDiameterMm": 34,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "vianney-halter",
+      "file": "catalog/vianney-halter_full.json",
+      "sha256": "4b69ce4a82fe79f35d6e91af23046b7675206eb9553466866ebb6acf32ce7614",
+      "records": 22,
+      "statuses": {
+        "ambiguous": 11,
+        "new_candidate": 11
+      },
+      "completeness": {
+        "reference": 22,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 9
+      }
+    },
+    {
+      "brand": "victorinox",
+      "file": "catalog/victorinox_full.json",
+      "sha256": "d9b90bde0f6ff6ee97166767a40520933d8191c24500d36e369b8587b1d514e4",
+      "records": 9,
+      "statuses": {
+        "new_candidate": 9
+      },
+      "completeness": {
+        "reference": 9,
+        "caseDiameterMm": 9,
+        "caseThicknessMm": 9,
+        "waterResistanceM": 9
+      }
+    },
+    {
+      "brand": "vortic",
+      "file": "catalog/vortic_full.json",
+      "sha256": "811d1c99d9377663ed2a8f6fb3fd43e2c8c933cafe017c268a12ae12fc02a4cc",
+      "records": 12,
+      "statuses": {
+        "ambiguous": 12
+      },
+      "completeness": {
+        "reference": 12,
+        "caseDiameterMm": 12,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "vostok",
+      "file": "catalog/vostok_full.json",
+      "sha256": "1199c3412ca81e14a01955438e29840fa88f471f9ff35d161fb22cfa68fc1c19",
+      "records": 13,
+      "statuses": {
+        "new_candidate": 11,
+        "ambiguous": 2
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "voutilainen",
+      "file": "catalog/voutilainen_full.json",
+      "sha256": "a06fcc4ff99094b683878a8dc1ae049d13bcca07a29f8de34466b397f267b13b",
+      "records": 28,
+      "statuses": {
+        "ambiguous": 11,
+        "new_candidate": 17
+      },
+      "completeness": {
+        "reference": 28,
+        "caseDiameterMm": 27,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 12
+      }
+    },
+    {
+      "brand": "weiss",
+      "file": "catalog/weiss_full.json",
+      "sha256": "bf5476e06db02a185b3023c983f6964ec56dd6548d4cbb79b7a5995ff29e4906",
+      "records": 11,
+      "statuses": {
+        "ambiguous": 11
+      },
+      "completeness": {
+        "reference": 11,
+        "caseDiameterMm": 11,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 11
+      }
+    },
+    {
+      "brand": "wempe-glashutte-i-sa",
+      "file": "catalog/wempe-glashutte-i-sa_full.json",
+      "sha256": "4b0932dce605fd36534b689be79cad145e2ac2129d2aae0a4d1500751ac2a94e",
+      "records": 13,
+      "statuses": {
+        "new_candidate": 13
+      },
+      "completeness": {
+        "reference": 13,
+        "caseDiameterMm": 13,
+        "caseThicknessMm": 13,
+        "waterResistanceM": 13
+      }
+    },
+    {
+      "brand": "wyler-geneve",
+      "file": "catalog/wyler-geneve_full.json",
+      "sha256": "e3e06e032e7025bbd5d0eeef35eac5b978779e963df1251b409067ed4c2f9ea1",
+      "records": 2,
+      "statuses": {
+        "new_candidate": 2
+      },
+      "completeness": {
+        "reference": 2,
+        "caseDiameterMm": 2,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 0
+      }
+    },
+    {
+      "brand": "yema",
+      "file": "catalog/yema_full.json",
+      "sha256": "65bba54203f0b2fc90c879caa98ec80da937fa6ef6ed042a6ed3d77e94fc07a4",
+      "records": 15,
+      "statuses": {
+        "new_candidate": 1,
+        "ambiguous": 14
+      },
+      "completeness": {
+        "reference": 15,
+        "caseDiameterMm": 15,
+        "caseThicknessMm": 0,
+        "waterResistanceM": 15
+      }
+    },
+    {
+      "brand": "zeitwinkel",
+      "file": "catalog/zeitwinkel_full.json",
+      "sha256": "7056bf63b335a7331df6d93c582bfc1fc8860c0c6e77e952b187f5626a99c62c",
+      "records": 28,
+      "statuses": {
+        "new_candidate": 28
+      },
+      "completeness": {
+        "reference": 28,
+        "caseDiameterMm": 28,
+        "caseThicknessMm": 28,
+        "waterResistanceM": 28
+      }
+    },
+    {
+      "brand": "zenith",
+      "file": "catalog/zenith_full.json",
+      "sha256": "e1583ea08f9b1db31d0f1fcd113c8ab17940a57514117dccf4c9f0744fd9544c",
+      "records": 663,
+      "statuses": {
+        "new_candidate": 651,
+        "conflict": 5,
+        "exact_candidate": 7
+      },
+      "completeness": {
+        "reference": 663,
+        "caseDiameterMm": 663,
+        "caseThicknessMm": 510,
+        "waterResistanceM": 658
+      }
+    }
+  ],
+  "policy": "Research only. No DB writes, image work, price imports or automatic merges. Exact candidates are not verified identities.",
+  "conflictCount": 292,
+  "conflictExamples": [
+    {
+      "sourceRecordId": "audemars-piguet:15510st-oo-1320st-01:0:1",
+      "brand": "Audemars Piguet",
+      "reference": "15510ST.OO.1320ST.01",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "09f09dbd-5a64-4448-a35b-0c7296ee6b77"
+      ],
+      "conflicts": [
+        {
+          "existingId": "09f09dbd-5a64-4448-a35b-0c7296ee6b77",
+          "field": "caseThicknessMm",
+          "incoming": 10.5,
+          "existing": 10.4
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "bell-ross:br05a-bl-st-sst:2:1",
+      "brand": "Bell & Ross",
+      "reference": "BR05A-BL-ST/SST",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "0b732eb2-4b11-4d89-bd91-6f15855664f9"
+      ],
+      "conflicts": [
+        {
+          "existingId": "0b732eb2-4b11-4d89-bd91-6f15855664f9",
+          "field": "caseDiameterMm",
+          "incoming": 40,
+          "existing": 41
+        },
+        {
+          "existingId": "0b732eb2-4b11-4d89-bd91-6f15855664f9",
+          "field": "caseThicknessMm",
+          "incoming": 10.4,
+          "existing": 11.2
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "blancpain:6651-3642-55b:0:48",
+      "brand": "Blancpain",
+      "reference": "6651-3642-55B",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "8746fbf9-e58c-4ad3-9794-495ecb067837"
+      ],
+      "conflicts": [
+        {
+          "existingId": "8746fbf9-e58c-4ad3-9794-495ecb067837",
+          "field": "caseThicknessMm",
+          "incoming": 8.74,
+          "existing": 8.7
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "blancpain:6606-1127-55b:0:53",
+      "brand": "Blancpain",
+      "reference": "6606-1127-55B",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "f16715a4-7fc3-4803-b49b-44dc0c0f0bc8"
+      ],
+      "conflicts": [
+        {
+          "existingId": "f16715a4-7fc3-4803-b49b-44dc0c0f0bc8",
+          "field": "caseDiameterMm",
+          "incoming": 40,
+          "existing": 34
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "blancpain:5000-1110-b52a:1:28",
+      "brand": "Blancpain",
+      "reference": "5000-1110-B52A",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "77f18f94-202e-4c46-9d81-d016dd246a85"
+      ],
+      "conflicts": [
+        {
+          "existingId": "77f18f94-202e-4c46-9d81-d016dd246a85",
+          "field": "caseDiameterMm",
+          "incoming": 43,
+          "existing": 43.6
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "blancpain:5000-0130-b52a:1:29",
+      "brand": "Blancpain",
+      "reference": "5000-0130-B52A",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "daa41c0d-d543-4e3d-889d-cf4cbb8788a6"
+      ],
+      "conflicts": [
+        {
+          "existingId": "daa41c0d-d543-4e3d-889d-cf4cbb8788a6",
+          "field": "caseDiameterMm",
+          "incoming": 43.6,
+          "existing": 43
+        },
+        {
+          "existingId": "daa41c0d-d543-4e3d-889d-cf4cbb8788a6",
+          "field": "caseThicknessMm",
+          "incoming": 13.8,
+          "existing": 13
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "breguet:7337br-12-9vu:0:81",
+      "brand": "Breguet",
+      "reference": "7337BR/12/9VU",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "8d5b9744-c04a-46d3-8379-7ce2ece8025b"
+      ],
+      "conflicts": [
+        {
+          "existingId": "8d5b9744-c04a-46d3-8379-7ce2ece8025b",
+          "field": "caseThicknessMm",
+          "incoming": 9.95,
+          "existing": 10
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "breitling:sb0146101b1x1:1:43",
+      "brand": "Breitling",
+      "reference": "SB0146101B1X1",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "9554c0c8-5118-4de1-bddb-79f124158e67"
+      ],
+      "conflicts": [
+        {
+          "existingId": "9554c0c8-5118-4de1-bddb-79f124158e67",
+          "field": "caseDiameterMm",
+          "incoming": 42,
+          "existing": 44
+        },
+        {
+          "existingId": "9554c0c8-5118-4de1-bddb-79f124158e67",
+          "field": "caseThicknessMm",
+          "incoming": 15.1,
+          "existing": 15.2
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "breitling:a17328101b1a1:1:96",
+      "brand": "Breitling",
+      "reference": "A17328101B1A1",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "64d408bf-4776-46bc-90a9-87b588b3f1b9"
+      ],
+      "conflicts": [
+        {
+          "existingId": "64d408bf-4776-46bc-90a9-87b588b3f1b9",
+          "field": "caseThicknessMm",
+          "incoming": 12.1,
+          "existing": 12.2
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "breitling:a32320101b1x1:1:116",
+      "brand": "Breitling",
+      "reference": "A32320101B1X1",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "6e8acd9d-bbc1-4faf-9aa4-9b33e247362e"
+      ],
+      "conflicts": [
+        {
+          "existingId": "6e8acd9d-bbc1-4faf-9aa4-9b33e247362e",
+          "field": "caseThicknessMm",
+          "incoming": 12,
+          "existing": 10.88
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "breitling:a13317101b1x1:1:393",
+      "brand": "Breitling",
+      "reference": "A13317101B1X1",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "3b39b9c1-173a-4510-9ddd-5c6bad8544e4"
+      ],
+      "conflicts": [
+        {
+          "existingId": "3b39b9c1-173a-4510-9ddd-5c6bad8544e4",
+          "field": "caseDiameterMm",
+          "incoming": 45,
+          "existing": 44
+        },
+        {
+          "existingId": "3b39b9c1-173a-4510-9ddd-5c6bad8544e4",
+          "field": "caseThicknessMm",
+          "incoming": 16.2,
+          "existing": 15.2
+        },
+        {
+          "existingId": "3b39b9c1-173a-4510-9ddd-5c6bad8544e4",
+          "field": "waterResistanceM",
+          "incoming": 100,
+          "existing": 300
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "breitling:ab0138211b1p1:2:437",
+      "brand": "Breitling",
+      "reference": "AB0138211B1P1",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "57d57da9-64b2-41bd-8bce-1bf0ead1e90c"
+      ],
+      "conflicts": [
+        {
+          "existingId": "57d57da9-64b2-41bd-8bce-1bf0ead1e90c",
+          "field": "caseDiameterMm",
+          "incoming": 43,
+          "existing": 44
+        },
+        {
+          "existingId": "57d57da9-64b2-41bd-8bce-1bf0ead1e90c",
+          "field": "caseThicknessMm",
+          "incoming": 13.69,
+          "existing": 15.2
+        },
+        {
+          "existingId": "57d57da9-64b2-41bd-8bce-1bf0ead1e90c",
+          "field": "waterResistanceM",
+          "incoming": 30,
+          "existing": 300
+        }
+      ]
+    }
+  ]
+}

@@ -1822,6 +1822,18 @@ catalogue snapshot. Evidence and scope: `docs/reports/local-watch-intake-pilot.m
 Next checkpoint is source expansion and primary-evidence conflict review before
 promotion; bulk-provider access is a dependency, not an assumed permission.
 
+### Full downloaded-source intake (2026-10-25)
+
+Owner requested processing the entire Timepiecepedia snapshot and defers factual
+review/images. Completed 224 brands / 42,590 detailed records locally. All 48,603
+CSV rows were reconciled by source-page coverage: no extra pages. Against the
+3,109-row read-only catalogue snapshot: 41,367 new candidates, 239 exact, 83
+alias/format, 605 ambiguous, 292 numeric conflicts, four missing identities.
+No auto-merges, catalogue writes or HoroDB acquisition. Full outputs remain
+ignored locally; report: `docs/reports/local-watch-intake-full.md`. Factual
+verification, conflict resolution and publication stay deferred per owner;
+there is no owner action required to retain/use the local research archive.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

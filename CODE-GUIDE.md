@@ -107,12 +107,14 @@ cookies, IP or anything identifying.
 ## Local external-dataset intake
 
 `scripts/audit-timepiecepedia.mjs` checks the ignored source snapshot and writes
-counts/hashes. `scripts/local-watch-intake.ts` normalizes a four-brand pilot and
+counts/hashes. `scripts/local-watch-intake.ts` normalizes a four-brand pilot (or
+all 224 brands with `--all`, including CSV coverage reconciliation) and
 compares it with a read-only catalogue snapshot; `scripts/lib/watch-intake.ts`
 contains its pure normalization/candidate rules. Outputs stay research-only in
 `data/watch-archive/`; nothing is automatically promoted to public catalogue
 rows. Images and prices are excluded. Strategy and runnable commands:
-`docs/local-watch-database-strategy.md`, `docs/reports/local-watch-intake-pilot.md`.
+`docs/local-watch-database-strategy.md`, `docs/reports/local-watch-intake-pilot.md`,
+`docs/reports/local-watch-intake-full.md`.
 
 ## The AI providers
 
