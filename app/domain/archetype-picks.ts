@@ -46,7 +46,7 @@ export type ArchetypePick = {
   /** A maker's or authorised retailer's page shows this reference. */
   referenceConfirmed?: boolean;
   /** Whether that page is the maker's own or an authorised retailer's. */
-  sourceKind?: "manufacturer" | "retailer" | null;
+  sourceKind?: "manufacturer" | "retailer" | "catalogue" | null;
   imageUrl: string | null;
   price: { amount: number; currency: string } | null;
   caseDiameterMm: number | null;

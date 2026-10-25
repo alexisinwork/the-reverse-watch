@@ -264,6 +264,21 @@ still running, and conservative request allowance is not an actual billing quote
 Workflow: `docs/catalogue-enrichment.md`. Commercial next action remains the
 public portfolio partner verification above.
 
+Owner follow-up, 2026-10-25: source import used the free Space City exports,
+not a new commercial feed purchase. All 18,124 exact source/reference claims
+for the 26-export set are retained with CC BY attribution; the ten owner-named
+luxury brands have 11,857 distinct identities in the master and no missing
+source identities. Catalogue-level reference presence is labeled separately
+from manufacturer confirmation. Only unique non-price facts fill null fields;
+no existing accepted values are overwritten. The new app/widget analytics asks
+whether results were liked and aggregates feature, click, source and exit funnel
+by partner site. It uses random per-tab session IDs in memory, retains no quiz
+answers or direct personal identifiers, and is visible in `/admin/analytics`.
+Current evidence and limits are in the roadmap and dated reports. Next action:
+finish local Dials mirror/import under its model attribution terms, then complete
+the fast code gate and deliver the additive app/admin changes; partner link policy
+for Dials model-page attribution remains the only pending owner choice.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T18:29:44.273Z",
+  "cachedIdentitiesInMaster": 363,
+  "processedThisRun": 348,
+  "retainedUnchangedThisRun": 348,
+  "totals": {
+    "not_found": 163,
+    "insufficient_evidence": 183,
+    "conflict": 11,
+    "corroborated_partial": 6
+  },
+  "policy": "No cache writes or purge. Agreement is partial corroboration only. Conflicts/missing evidence stay in review reports; no automatic good-to-go stamp."
+}

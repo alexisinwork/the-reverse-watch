@@ -52,6 +52,7 @@ export default function EvaluationDashboard() {
     <main className="quiz-shell">
       <nav className="quiz-nav" aria-label="Evaluation navigation">
         <Link to="/">The Reserve</Link>
+        <Link to="/admin/analytics">Interaction analytics</Link>
         <span>Product evaluation</span>
       </nav>
       <section className="profile-summary" aria-labelledby="evaluation-heading">

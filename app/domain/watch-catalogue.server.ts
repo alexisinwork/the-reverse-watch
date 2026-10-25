@@ -71,14 +71,20 @@ export async function listCatalogue(
   client: CatalogueClient,
   includeRejected = false,
 ) {
-  return listSchema.parse(
-    await rpc(
-      client,
-      "watch_catalogue_list_v1",
-      { p_include_rejected: includeRejected },
-      15_000,
-    ),
-  );
+  const rows: z.infer<typeof catalogueWatchSchema>[] = [];
+  for (let page = 1; page <= 1_000; page++) {
+    const batch = listSchema.parse(
+      await rpc(
+        client,
+        "watch_catalogue_recommendation_page_v1",
+        { p_include_rejected: includeRejected, p_page: page },
+        15_000,
+      ),
+    );
+    rows.push(...batch);
+    if (batch.length < 500) return rows;
+  }
+  throw new Error("Catalogue pagination exceeded its safety bound");
 }
 
 // The quiz reads the whole catalogue (a few thousand small rows) and
@@ -133,7 +139,7 @@ export type CatalogueEntry = {
   priceCheckedAt?: string | null;
   priceEvidence?: Record<string, unknown>;
   sourceUrl?: string | null;
-  sourceKind?: "manufacturer" | "retailer" | null;
+  sourceKind?: "manufacturer" | "retailer" | "catalogue" | null;
   imageUrl?: string | null;
   rationale?: string | null;
   foundIn?: unknown[];

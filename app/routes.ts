@@ -5,6 +5,8 @@ export default [
   route("quiz", "routes/quiz.tsx"),
   route("analytics/quiz-started", "routes/quiz-analytics-start.ts"),
   route("analytics/discovery", "routes/discovery-analytics.ts"),
+  route("analytics/interactions", "routes/analytics-interactions.ts"),
+  route("admin/analytics", "routes/admin-analytics.tsx"),
   route("evaluation", "routes/evaluation-moved.ts"),
   route("admin/evaluation", "routes/evaluation.tsx"),
   route("health", "routes/health.ts"),

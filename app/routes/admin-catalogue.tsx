@@ -397,6 +397,9 @@ function Login({ configured }: { configured: boolean }) {
   return (
     <main className="admin-shell admin-shell--narrow">
       <h1>Catalogue review</h1>
+      <p>
+        <Link to="/admin/analytics">Interaction analytics</Link>
+      </p>
       <ActionError />
       {configured ? (
         <Form className="admin-login" method="post">

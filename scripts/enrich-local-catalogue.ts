@@ -7,6 +7,12 @@ import { defaultDeps } from "../app/domain/ai-providers.server";
 import { enrichCatalogueReference } from "../app/domain/catalogue-enrichment.server";
 import { loadFxTable } from "../app/domain/fx.server";
 import { createEnrichmentLedger } from "./lib/enrichment-ledger";
+import {
+  initialisePerplexityBilling,
+  perplexityAllowanceUsed,
+  reservePerplexity,
+  settlePerplexity,
+} from "./lib/perplexity-budget";
 
 const flag = (key: string, fallback: number) => {
   const at = process.argv.indexOf(`--${key}`);
@@ -27,25 +33,33 @@ const trackedFetch: typeof fetch = async (input, init) => {
         ? input.toString()
         : input.url,
   );
-  // Reserve before every paid request, including retries and provider fallback.
-  const reserve =
-    url.hostname === "api.perplexity.ai"
-      ? url.pathname.endsWith("/search")
-        ? 0.02
-        : 0.1
-      : url.hostname ===
-          new URL(process.env.MUSE_SPARK_BASE_URL || "https://api.meta.ai/v1")
-            .hostname
-        ? 0.5
-        : 0;
-  if (reserve) {
-    if (progress.reservedUsd + reserve > budget)
-      throw new Error("ENRICHMENT_BUDGET_LIMIT");
-    progress.reservedUsd = Number((progress.reservedUsd + reserve).toFixed(4));
+  const perplexity = url.hostname === "api.perplexity.ai",
+    search = url.pathname.endsWith("/search");
+  const muse =
+    url.hostname ===
+    new URL(process.env.MUSE_SPARK_BASE_URL || "https://api.meta.ai/v1")
+      .hostname;
+  const reserve = search ? 0.005 : 0.1;
+  if (perplexity) {
+    reservePerplexity(progress, reserve, budget);
     progress.calls++;
     save();
   }
-  return fetch(input, init);
+  if (muse) {
+    initialisePerplexityBilling(progress).museCalls++;
+    progress.calls++;
+    save();
+  }
+  const response = await fetch(input, init);
+  if (perplexity) {
+    const payload: unknown = await response
+      .clone()
+      .json()
+      .catch(() => null);
+    settlePerplexity(progress, reserve, response.status, payload, search);
+    save();
+  }
+  return response;
 };
 const url = process.env.DIRECT_DATABASE_URL;
 if (!url) throw new Error("DIRECT_DATABASE_URL required");
@@ -70,7 +84,9 @@ if (!lock?.locked) {
   throw new Error("Another enrichment worker is active");
 }
 Object.assign(progress, ledger.load());
+initialisePerplexityBilling(progress);
 progress.stopped = null;
+save();
 const fx = await loadFxTable();
 type Job = {
   source: string;
@@ -83,8 +99,12 @@ type Job = {
 };
 let consecutiveErrors = 0;
 try {
-  for (let n = 0; n < limit && progress.reservedUsd < budget; n++) {
-    if (progress.reservedUsd + 0.5 > budget) {
+  for (
+    let n = 0;
+    n < limit && perplexityAllowanceUsed(progress) < budget;
+    n++
+  ) {
+    if (perplexityAllowanceUsed(progress) + 0.1 > budget) {
       progress.stopped = "budget_limit";
       break;
     }
@@ -165,7 +185,7 @@ try {
           status: result.status,
           image: !!result.entry?.imageUrl,
           priced: result.entry?.priceStatus === "confirmed",
-          allowanceReservedUsd: progress.reservedUsd,
+          perplexityBudgetUsedUsd: perplexityAllowanceUsed(progress),
         }),
       );
     } catch (error) {
@@ -200,7 +220,8 @@ try {
     }
     save();
   }
-  if (progress.reservedUsd >= budget) progress.stopped = "budget_limit";
+  if (perplexityAllowanceUsed(progress) >= budget)
+    progress.stopped = "budget_limit";
 } finally {
   save();
   await sql.end();

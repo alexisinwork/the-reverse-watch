@@ -13,6 +13,10 @@ import type {
 import { convert, formatMoney, type FxTable } from "../domain/fx";
 import { QUIZ_SHOWN_FIRST } from "../domain/watch-catalogue";
 import {
+  sendInteraction,
+  sendResultFeedback,
+} from "../domain/interaction-analytics";
+import {
   uniqueSearchView,
   uniqueWatchResults,
 } from "../domain/watch-result-dedup";
@@ -340,11 +344,9 @@ function WatchCard({
           ) : null}
           {details.referenceVerified ? (
             <span className="verified-badge">
-              Reference confirmed on the{" "}
-              {details.sourceKind === "retailer"
-                ? "authorised retailer's"
-                : "manufacturer's"}{" "}
-              page
+              {details.sourceKind === "catalogue"
+                ? `Reference listed in ${details.referenceSourceLabel ?? "a reference catalogue"}`
+                : `Reference confirmed on the ${details.sourceKind === "retailer" ? "authorised retailer's" : "manufacturer's"} page`}
             </span>
           ) : null}
         </div>
@@ -371,6 +373,9 @@ function ResultBody({
     if (embed)
       postToHost({ type: "reserve:results", feature: embed.feature, count });
   }, [embed, count]);
+  useEffect(() => {
+    sendInteraction("service_complete", { control: "results_loaded" });
+  }, [result]);
   if (result.status === "unavailable") {
     return (
       <p className="empty-result">
@@ -387,7 +392,12 @@ function ResultBody({
     );
   }
   if (result.status === "no_match") {
-    return <p className="empty-result">{result.summary}</p>;
+    return (
+      <>
+        <p className="empty-result">{result.summary}</p>
+        <ResultFeedback key={`${mode}-${result.summary}`} />
+      </>
+    );
   }
   return (
     <>
@@ -456,7 +466,45 @@ function ResultBody({
           </div>
         </section>
       ) : null}
+      <ResultFeedback key={`${mode}-${result.summary}`} />
     </>
+  );
+}
+
+function ResultFeedback() {
+  const [choice, setChoice] = useState<boolean | null>(null);
+  return (
+    <section className="result-feedback" aria-label="Rate these results">
+      {choice === null ? (
+        <>
+          <p>Did we find watches you like?</p>
+          <div>
+            <button
+              className="button button--quiet"
+              onClick={() => {
+                setChoice(true);
+                sendResultFeedback(true);
+              }}
+              type="button"
+            >
+              Yes
+            </button>
+            <button
+              className="button button--quiet"
+              onClick={() => {
+                setChoice(false);
+                sendResultFeedback(false);
+              }}
+              type="button"
+            >
+              No
+            </button>
+          </div>
+        </>
+      ) : (
+        <p role="status">Thanks for the feedback.</p>
+      )}
+    </section>
   );
 }
 

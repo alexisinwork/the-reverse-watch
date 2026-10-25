@@ -1,19 +1,19 @@
 {
-  "at": "2026-10-25T17:52:15.268Z",
+  "at": "2026-10-25T18:25:54.988Z",
   "counts": {
-    "all": 44880,
+    "all": 55029,
     "price": 0,
-    "pending": 0,
+    "pending": 10149,
     "approved": 44877,
     "rejected": 3,
-    "awaitingPrice": 41762,
-    "recommendationPool": 3118
+    "awaitingPrice": 51906,
+    "recommendationPool": 3123
   },
   "firstPageRows": 60,
   "secondPageRows": 60,
-  "pages": 748,
-  "lastPage": 748,
-  "lastPageRows": 60,
+  "pages": 918,
+  "lastPage": 918,
+  "lastPageRows": 9,
   "searchHits": 1,
   "scope": "Authenticated admin pagination covers master catalogue; recommendation filters unchanged."
 }

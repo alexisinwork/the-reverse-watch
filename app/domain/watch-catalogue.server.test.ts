@@ -1,8 +1,9 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import {
   clearCatalogueCache,
   fillPhotosFromCatalogue,
+  listCatalogue,
   type CatalogueClient,
 } from "./watch-catalogue.server";
 
@@ -79,5 +80,26 @@ describe("fillPhotosFromCatalogue", () => {
       null,
       "https://img.test/own.jpg",
     ]);
+  });
+});
+
+describe("paged recommendation catalogue", () => {
+  it("loads bounded pages until the final partial page", async () => {
+    const pageFetch = vi.fn(
+      async (_input: string | URL | Request, init?: RequestInit) => {
+        const body = JSON.parse(String(init?.body)) as { p_page: number };
+        return Response.json(
+          body.p_page === 1
+            ? Array.from({ length: 500 }, () => row({}))
+            : [row({})],
+        );
+      },
+    );
+    const loaded = await listCatalogue({
+      config: { supabaseUrl: "https://db.test", serviceKey: "sb_secret_x" },
+      fetchImpl: pageFetch,
+    });
+    expect(loaded).toHaveLength(501);
+    expect(pageFetch).toHaveBeenCalledTimes(2);
   });
 });

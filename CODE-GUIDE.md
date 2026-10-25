@@ -125,6 +125,15 @@ Source strategy and runnable intake commands:
 `docs/local-watch-database-strategy.md`, `docs/reports/local-watch-intake-pilot.md`,
 `docs/reports/local-watch-intake-full.md`.
 
+Space City supplemental intake: `scripts/import-spacecity-catalogue.ts --write`
+archives the 26 public JSON feeds locally and inserts missing identities plus
+source assertions; it never promotes listing prices or conflicting dimensions.
+`scripts/recheck-cached-watches.ts --limit 500` uses
+`domain/catalogue-corroboration.server.ts` for exact-reference Dials checks,
+retaining cached answers and writing local comparison evidence. Perplexity-only
+budget settlement lives in `scripts/lib/perplexity-budget.ts`; the append-only
+ledger persists it across restarts. See `docs/catalogue-enrichment.md`.
+
 ## The AI providers
 
 | File                                | What it does                                                                                                                                                                                                                               |

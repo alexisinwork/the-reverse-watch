@@ -36,6 +36,7 @@ import { SurfaceLink, useEmbed } from "../components/surface";
 import { WatchResults } from "../components/watch-results";
 import type { AiSearchView, ProgressLink } from "../domain/ai-watch-types";
 import { recordQuizAnalyticsEvent } from "../domain/analytics.server";
+import { sendInteraction } from "../domain/interaction-analytics";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { parseCoreQuizHandoff } from "../domain/discovery-archetype";
 import {
@@ -463,6 +464,7 @@ export default function Quiz() {
   const recordStart = () => {
     if (startTracked.current) return;
     startTracked.current = true;
+    sendInteraction("quiz_start", { control: "quiz_start" });
     if (import.meta.env.PROD) {
       void fetch("/analytics/quiz-started", {
         method: "POST",

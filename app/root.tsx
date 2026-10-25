@@ -12,6 +12,7 @@ import { Analytics, type BeforeSendEvent } from "@vercel/analytics/react";
 
 import type { Route } from "./+types/root";
 import { YouTubeCallout } from "./components/youtube-callout";
+import { InteractionAnalytics } from "./components/interaction-analytics";
 import { requestMiddleware } from "./middleware.server";
 import "./styles/tokens.css";
 import "./styles/app.css";
@@ -67,6 +68,7 @@ export default function App() {
   return (
     <>
       <Outlet />
+      <InteractionAnalytics />
       {/* On every visitor page; the admin pages are for the owner only, and
           partner widgets carry only the partner's chosen feature. */}
       {pathname.startsWith("/admin") ||

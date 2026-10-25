@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-25T21:01:12.852Z",
+  "spaceCityMasterTotal": 55029,
+  "brands": [
+    {
+      "brand": "Omega",
+      "sourceRows": 4724,
+      "uniqueReferenceIdentities": 2765,
+      "presentInMaster": 2765,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 1959
+    },
+    {
+      "brand": "Breitling",
+      "sourceRows": 2230,
+      "uniqueReferenceIdentities": 1462,
+      "presentInMaster": 1462,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 768
+    },
+    {
+      "brand": "Rolex",
+      "sourceRows": 1915,
+      "uniqueReferenceIdentities": 1799,
+      "presentInMaster": 1799,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 116
+    },
+    {
+      "brand": "TAG Heuer",
+      "sourceRows": 1850,
+      "uniqueReferenceIdentities": 1543,
+      "presentInMaster": 1543,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 307
+    },
+    {
+      "brand": "Cartier",
+      "sourceRows": 1804,
+      "uniqueReferenceIdentities": 1580,
+      "presentInMaster": 1580,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 224
+    },
+    {
+      "brand": "IWC",
+      "sourceRows": 1248,
+      "uniqueReferenceIdentities": 876,
+      "presentInMaster": 876,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 372
+    },
+    {
+      "brand": "Tudor",
+      "sourceRows": 896,
+      "uniqueReferenceIdentities": 654,
+      "presentInMaster": 654,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 242
+    },
+    {
+      "brand": "Zenith",
+      "sourceRows": 841,
+      "uniqueReferenceIdentities": 561,
+      "presentInMaster": 561,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 280
+    },
+    {
+      "brand": "Panerai",
+      "sourceRows": 560,
+      "uniqueReferenceIdentities": 449,
+      "presentInMaster": 449,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 111
+    },
+    {
+      "brand": "Vacheron Constantin",
+      "sourceRows": 172,
+      "uniqueReferenceIdentities": 168,
+      "presentInMaster": 168,
+      "missingFromMaster": 0,
+      "ambiguousSourceRows": 4
+    }
+  ],
+  "totalUniqueIdentities": 11857,
+  "totalPresent": 11857,
+  "totalMissing": 0,
+  "scope": "Exact brand/model/reference identity coverage against local master. Presence is not manufacturer verification."
+}

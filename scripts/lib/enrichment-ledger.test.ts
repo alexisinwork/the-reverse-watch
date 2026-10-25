@@ -21,6 +21,29 @@ afterEach(() => {
   }
 });
 describe("paid request allowance recovery", () => {
+  it("recovers the latest billing settlement even when the historical reserve is unchanged", () => {
+    const dir = directory(),
+      ledger = createEnrichmentLedger(dir, () => {
+        throw new Error("locked");
+      });
+    const progress = ledger.load();
+    progress.billing = {
+      ownerReportedBaselineUsd: 5,
+      baselineAt: "2026-10-25",
+      perplexityReportedUsd: 0,
+      perplexityUnreportedEstimateUsd: 0,
+      perplexityPendingUsd: 0.1,
+      perplexityCalls: 1,
+      museCalls: 0,
+    };
+    ledger.save(progress);
+    progress.billing.perplexityPendingUsd = 0;
+    progress.billing.perplexityReportedUsd = 0.012609;
+    ledger.save(progress);
+    expect(
+      createEnrichmentLedger(dir).load().billing?.perplexityReportedUsd,
+    ).toBe(0.012609);
+  });
   it("retains reservations when Windows refuses a snapshot rename", () => {
     const dir = directory(),
       ledger = createEnrichmentLedger(dir, () => {

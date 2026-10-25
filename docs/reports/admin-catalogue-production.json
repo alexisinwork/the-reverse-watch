@@ -1,8 +1,9 @@
 {
-  "at": "2026-10-25T18:02:14.465Z",
+  "at": "2026-10-25T18:25:57.566Z",
   "status": 200,
   "entireCatalogue": true,
   "masterTotal": true,
+  "expectedTotal": 55029,
   "recommendationPoolLabel": true,
   "unpricedLabel": true
 }

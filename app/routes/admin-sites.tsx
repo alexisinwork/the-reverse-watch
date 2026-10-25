@@ -557,6 +557,7 @@ export default function AdminSites() {
           <h1>Partner sites</h1>
           <nav aria-label="Admin navigation">
             <Link to="/admin/catalogue">Catalogue review</Link>
+            <Link to="/admin/analytics">Analytics</Link>
             <Link to="/admin/evaluation">Visitor numbers</Link>
             <Link to="/partners">Partner guide</Link>
           </nav>

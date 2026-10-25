@@ -55,7 +55,8 @@ function client(rows: unknown[]) {
   const fetchImpl = vi.fn(
     async (input: string | URL | Request, init?: RequestInit) => {
       const url = String(input);
-      if (url.endsWith("watch_catalogue_list_v1")) return Response.json(rows);
+      if (url.endsWith("watch_catalogue_recommendation_page_v1"))
+        return Response.json(rows);
       if (url.endsWith("watch_catalogue_upsert_v1")) {
         upserts.push(JSON.parse(String(init?.body)));
         return Response.json("00000000-0000-0000-0000-000000000099");

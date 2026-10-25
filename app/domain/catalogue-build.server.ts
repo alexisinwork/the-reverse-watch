@@ -413,7 +413,7 @@ export async function verifyCandidate(
 ): Promise<CatalogueEntry> {
   const reference = normalizeReference(candidate.referenceCode);
   let sourceUrl: string | null = null;
-  let sourceKind: "manufacturer" | "retailer" | null = null;
+  let sourceKind: "manufacturer" | "retailer" | "catalogue" | null = null;
   let referenceConfirmed = false;
   let pageImage: string | null = null;
 

@@ -3,7 +3,7 @@
 Owner authorization, 2026-10-25: add all imported watches, find missing technical
 facts and image URLs, recheck affected catalogues/features. This supersedes the
 earlier image/research deferral. First-pass allowance: **USD 100**, chosen by the
-owner. It does not authorize unlimited spending or imply all 42k records can be
+owner, explicitly **Perplexity only** (owner correction below). It does not authorize unlimited spending or imply all 42k records can be
 fully verified for that amount.
 
 ## Delivered integration
@@ -17,7 +17,7 @@ show the recommendation pool and 41,762 imported records awaiting a verified pri
 This is one-time approval, not automatic approval of future finds. The owner also
 explicitly requests Perplexity API research for unverified claims/references and
 image URLs; the worker now pins its research provider accordingly, retaining the
-independent Muse price cross-check and the same cumulative $100 allowance.
+independent Muse price cross-check. The $100 allowance applies to Perplexity only.
 Delivery: `74b3d33`, production deployment
 `dpl_8Jq9e6g8uMM4A6fWrWJ21RsZt29Q`. Authenticated production GET returned HTTP
 200 and showed the entire 44,880-row catalogue plus separate recommendation and
@@ -81,17 +81,26 @@ assertions are preserved in its evidence for reconciliation.
 
 Jobs use row leases, retries and a single-worker advisory lock. Upstream failures
 are saved and five consecutive errors stop the run rather than burning through
-the allowance. Budget reservations happen before every paid request, including
-fallbacks/retries. Conservative allowances: $0.50/Muse request, $0.10/Perplexity
-chat, $0.02/Perplexity search. This is a request-cost estimate with headroom,
-not a provider billing API or a guaranteed invoice cap; account billing remains
-the final source of actual charges. Reservations persist locally across restarts.
+the allowance. Perplexity reservations happen before requests, including retries:
+$0.10 per chat request, settled to `usage.cost.total_cost` when returned; successful
+Search requests cost $0.005. Successful chat responses without reported cost retain
+their estimate; uncertain transport failures retain the reservation. Muse calls
+are counted separately and do not consume this Perplexity allowance. Account billing
+remains the final source of charges; this is not an account billing integration.
+
+The previous $93.20 value combined conservative estimates across providers and
+was **not actual Perplexity spend**. It remains as a historical counter. The owner
+reports approximately $5 actual Perplexity spend at this correction; the new ledger
+uses that explicitly owner-reported baseline plus subsequent response-reported
+costs, estimates and pending requests. It does not claim the $5 was independently
+retrieved or verified. Sequence numbers preserve settlements across restart even
+when Windows/OneDrive refuses the display snapshot rename.
 
 Local continuity files (ignored):
 
-- `enrichment-progress.json`: cumulative reserved allowance, calls and results.
+- `enrichment-progress.json`: historical reserve, separate Perplexity billing and results.
 - `enrichment-allowance.jsonl`: authoritative append-only reservation journal;
-  recovers the highest reservation even if Windows/OneDrive locks a snapshot.
+  recovers the latest sequence (legacy highest reservation) if Windows/OneDrive locks a snapshot.
 - `enrichment-results.jsonl`: locally mirrored fact/source results.
 - `enrichment-worker.log`, `enrichment-worker-error.log`, `enrichment-worker.pid`:
   background worker evidence. No secrets are included in CLI arguments.
@@ -159,3 +168,51 @@ archetype page both returned HTTP 200; the public HTML contained SPB153, SPB183,
 SPB301 and the new role-supplement rationale. Live DB/helper checks and the
 529-test gate passed. The local worker was resumed with IPv4-first DNS and its
 durable allowance journal; deployment/auth scope does not control that process.
+
+## Space City supplement and Dials cache checks (2026-10-25)
+
+The owner's additional source is https://spacecitytimepiece.com/watches. Its public
+index https://spacecitytimepiece.com/api/v1/watches.json declares CC BY 4.0 and
+upstream Chrono24 secondary-market observations from 2017–2023. Downloaded all 26
+brand files: 25,385 observations, 21,540 identity keys. Added 10,149 unambiguous
+missing identities, bringing the master to 55,029. Existing identities retain
+accepted facts; all observations and attribution are in private intake and ignored
+local snapshots. Ambiguous duplicates remain blocked. It includes Seiko and other
+non-luxury brands too, and is not complete luxury coverage. Conflicting size arrays
+and historical listing prices cannot establish specifications or current MSRP.
+
+```powershell
+node --dns-result-order=ipv4first --env-file=.env --import tsx scripts/import-spacecity-catalogue.ts --write
+node --dns-result-order=ipv4first --env-file=.env --import tsx scripts/recheck-cached-watches.ts --limit 500
+```
+
+Dials API checks match the complete brand/reference, including suffixes, then
+compare available diameter, thickness, water resistance and movement. They are
+secondary corroboration, not primary confirmation. Missing values never agree.
+No images are downloaded or hotlinked. Individual comparison records are retained
+under ignored `data/watch-archive/cache-corroboration/`; subsequent runs skip
+already checked IDs. Cached answers, membership, ranking and attribution are not
+rewritten. Conflicts remain unresolved evidence for primary research, never an
+automatic good-to-go stamp. Dated totals are in `docs/reports/cache-corroboration.json`.
+
+Budget sources: [Perplexity pricing](https://docs.perplexity.ai/docs/getting-started/pricing)
+($5/1,000 successful Search requests), and the official
+[cost response announcement](https://community.perplexity.ai/t/cost-information-now-included-in-api-response-json/833).
+Dials: [reference](https://docs.dials.co/api/reference),
+[terms](https://docs.dials.co/api/terms). Retrieved 2026-10-25.
+
+### Space City facts and local Dials mirror (2026-10-25)
+
+Matched all 18,124 Space City source claims with exact local identities. Unique
+specifications were written only into null fields; source-specific CC BY evidence
+is retained. All 11,857 identities in the ten requested luxury brands were
+already represented locally. Catalogued references are labeled separately from
+manufacturer-confirmed references. Updated 132 of 1,219 cached entries from exact
+local matches without changing membership, ranking, existing facts or prices.
+
+The free Dials mirror is resumable and currently downloading its 41,996 model
+records at the published request limit. Raw JSONL stays in ignored local archive.
+No photos or seller prices are imported. Dials requires a linked model-page
+attribution; widget exposure awaits the owner's choice about that requirement
+versus the existing link-free widget screen. Paid Perplexity research remains
+bounded by its separate $100 cumulative allowance.

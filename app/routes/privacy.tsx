@@ -7,7 +7,7 @@ import { Link } from "react-router";
 
 import "../styles/legal.css";
 
-export const PRIVACY_UPDATED = "4 October 2026";
+export const PRIVACY_UPDATED = "25 October 2026";
 export const PRIVACY_CONTACT = "alex@thereserve.watch";
 
 export function meta() {
@@ -64,9 +64,13 @@ export default function Privacy() {
             instant answer. They are not linked to your email, name or device.
           </li>
           <li>
-            <strong>Anonymous usage counts.</strong> For example how many people
-            start the quiz. No cookies, no personal data, and no tracking across
-            other websites.
+            <strong>Anonymous session analytics.</strong> We record pages,
+            buttons used, which tool was opened, a referring website&apos;s
+            domain, optional campaign name, and whether results were liked.
+            Events in one open browser tab share a random session code held only
+            in memory; a reload starts a new code. We do not store names, email,
+            quiz answer values, IP addresses, full URLs, or advertising IDs.
+            Events link only within that browsing session.
           </li>
           <li>
             <strong>Error reports.</strong> If a page breaks, a technical report
@@ -86,9 +90,9 @@ export default function Privacy() {
           pages, in a frame served by us. There, we receive only the answers and
           searches you type into it, handled as above. The frame never asks for
           your email address, shows no newsletter sign-up and sets no cookies.
-          We count how often each website&apos;s frame is used (not by whom) to
-          bill that website, and the frame tells the page around it its height
-          and how many watches it found, nothing about you.
+          We measure how each website&apos;s frame is used for service analytics
+          and billing. Anonymous session journeys are scoped to that partner
+          website and are not joined to an identity or journeys on other sites.
         </p>
 
         <h2>Cookies and storage on your device</h2>
@@ -134,7 +138,9 @@ export default function Privacy() {
           Newsletter and shortlist emails: your consent, which you can withdraw
           at any time. Quiz and search processing: providing the service you
           asked for. Abuse protection and error reports: our legitimate interest
-          in keeping the site safe and working.
+          in keeping the site safe and working. Anonymous session analytics: our
+          legitimate interest in improving the quiz and partner tools; you can
+          object using the contact above.
         </p>
 
         <h2>Your rights</h2>

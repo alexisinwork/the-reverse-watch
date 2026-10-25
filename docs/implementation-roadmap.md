@@ -1719,7 +1719,12 @@ validation before any B2B work. The owner has decided to sell partner access
 directly, so this section supersedes that gate for widgets and the API. Its
 safeguards still hold: tenant isolation (per-key origins and counts), fixed
 provenance and disclosure labels regardless of branding, usage limits, and
-no visitor data. Retailer-supplied catalogues remain out of scope.
+no visitor identity, quiz answers, email, IP address or persistent browser
+identifier. Owner decision (2026-10-25) adds aggregate interaction analytics:
+random in-memory tab session, redacted route, feature, clicked control, source
+domain/UTM and yes/no result feedback, scoped to a registered partner site.
+Analytics are shown in `/admin/analytics`; they do not identify a person or
+retain answer values. Retailer-supplied catalogues remain out of scope.
 
 Verification: unit tests for keys, origins, frame-ancestors, theme
 validation, link mapping inside a frame, API authentication, streaming,
@@ -1874,6 +1879,44 @@ remain. No new allowance was created by approval or restart.
 Delivery `74b3d33` is deployed as `dpl_8Jq9e6g8uMM4A6fWrWJ21RsZt29Q`;
 authenticated production admin smoke passed HTTP 200 with 44,880 and both pool
 labels visible. Fast gate: 529 tests/types/lint/format/build passed.
+
+### Space City supplement and Perplexity-only budget correction (2026-10-25)
+
+Owner requested the free Space City catalogue alongside ongoing research. Completed
+all 26 public brand JSON snapshots: 25,385 source observations, 21,540 identity
+keys, 10,149 additional accepted identities. Master total is now 55,029; 10,149 new
+entries remain pending (the previous approval was explicitly one-time). Raw records,
+CC BY 4.0 attribution, upstream Chrono24 aggregation history and snapshot hashes
+are retained. Historical market prices and contradictory sizes are evidence only;
+no accepted facts, confirmed prices or image URLs were overwritten. Primary-source
+verification remains in progress; importing a catalogue is not factual approval.
+
+The owner clarified $100 is Perplexity-only and reports about $5 actually spent.
+Historical mixed-provider reserves are preserved but no longer enforce that cap.
+The worker now settles Perplexity requests using response-reported cost, with
+conservative unresolved reservations and separate Muse call counts. The $5 baseline
+is owner-reported, not independently billed evidence. Journal sequence numbers
+preserve settlements across Windows snapshot failures. Worker resumed locally.
+
+Dials is used only for exact full-reference secondary checks of cached identities,
+never bulk ingestion, image hotlinking or certification of attribution/prices.
+Good cached answers remain unchanged; conflicts and absent evidence are reported
+without a blanket verified stamp. See `docs/catalogue-enrichment.md` and dated
+`docs/reports/spacecity-import.json`, `cache-corroboration.json`, and admin checks.
+Live admin RPC and authenticated production GET confirm all 55,029 rows are visible.
+
+Owner follow-up (2026-10-25): imported all 26 Space City brand exports and
+matched 18,124 exact reference claims; 11,857 identities across the owner's ten
+named luxury brands were already present, with zero missing. Unique source
+specifications were added only where local fields were empty. The source labels
+these as reference-catalogue verified, not manufacturer verified. Historical
+prices and conflicting variants remain evidence only. A scoped, anonymous
+interaction analytics dashboard and feedback controls were added for app and
+partner widgets. Cached result hydration refreshed 132 of 1,219 stored entries
+where exact local facts were available. The resumable Dials mirror is free and
+does not use image CDN assets or listing prices; dataset ingestion/display is
+subject to the required model-page attribution decision. Perplexity allowance
+remains capped at $100, separately from Dials and Muse.
 
 ## Environment-variable ownership
 

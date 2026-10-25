@@ -1,0 +1,13 @@
+{
+  "at": "2026-10-25T21:20:05.959Z",
+  "spaceCitySourceClaims": 18124,
+  "exactIdentityClaims": 18124,
+  "rowsUpdated": 1270,
+  "fields": {
+    "diameter": 12784,
+    "movement": 12189,
+    "caseMaterial": 11859,
+    "braceletMaterial": 9590
+  },
+  "policy": "Exact Space City reference identities are marked reference-catalogue verified. Existing non-null facts were preserved. Aggregated historical prices, multi-size groups and model/year claims remain archived evidence only; per-record source and CC BY attribution retained."
+}

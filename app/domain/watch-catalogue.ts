@@ -202,7 +202,7 @@ export const catalogueWatchSchema = z.object({
     .passthrough()
     .nullable(),
   sourceUrl: z.string().nullable(),
-  sourceKind: z.enum(["manufacturer", "retailer"]).nullable(),
+  sourceKind: z.enum(["manufacturer", "retailer", "catalogue"]).nullable(),
   imageUrl: z.string().nullable(),
   rationale: z.string().nullable(),
   foundIn: z.array(z.unknown()),
@@ -347,6 +347,13 @@ export function catalogueToFoundWatch(
     watch.priceCurrency
       ? { amount: watch.priceAmount, currency: watch.priceCurrency }
       : null;
+  const catalogueSource = watch.foundIn.find(
+    (item): item is { source: string; url?: string } =>
+      !!item &&
+      typeof item === "object" &&
+      "source" in item &&
+      (item as { source?: unknown }).source === "spacecity",
+  );
   return {
     brand: watch.brand,
     model: watch.model,
@@ -369,6 +376,14 @@ export function catalogueToFoundWatch(
         strap: watch.strapMaterial,
       },
       ...(watch.sourceKind ? { sourceKind: watch.sourceKind } : {}),
+      ...(catalogueSource
+        ? {
+            referenceSourceLabel: "Space City Timepieces",
+            ...(catalogueSource.url
+              ? { referenceSourceUrl: catalogueSource.url }
+              : {}),
+          }
+        : {}),
       referenceVerified: watch.referenceConfirmed,
       reviewStatus: watch.reviewStatus,
     },

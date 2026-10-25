@@ -1,0 +1,121 @@
+{
+  "source": "https://spacecitytimepiece.com/watches",
+  "retrievedAt": "2026-10-25T18:19:17.019Z",
+  "snapshot": "069db9b44cb4563c64814acc0607b75c1dd87ab12a1da3951ba803f44abf7abf",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "upstream": "philmorefkoung/Webscrapped-Watch-Dataset (MIT) — Chrono24 secondary market 2017-2023",
+  "brands": 26,
+  "declaredReferences": 25385,
+  "observedRecords": 25385,
+  "distinctIdentityKeys": 21540,
+  "files": [
+    {
+      "file": "omega.json",
+      "sha256": "a407576e4f8d633b9c43906819eeb59a3df93c88de121791f4f04ecbcc97ba60"
+    },
+    {
+      "file": "longines.json",
+      "sha256": "fcc1beb57fde6020aa38579e69106b525c78357676767825d6442159de53ec76"
+    },
+    {
+      "file": "breitling.json",
+      "sha256": "3de9b187a4970218e24aeccc1b49b6a6c5f57410b171e2feef43d1bd03ecac5a"
+    },
+    {
+      "file": "rolex.json",
+      "sha256": "73da2e44a85b4458cd99e2ce1cd0a706a216970e8a17b7f0191b9c96d26567d8"
+    },
+    {
+      "file": "tag-heuer.json",
+      "sha256": "b3816e1407c9699c5210726f97b77848807314c464cb7a970b14a9b58fd4ca07"
+    },
+    {
+      "file": "cartier.json",
+      "sha256": "2c875cccd12506a39bb731ecdbdd574d5a30be5678fe852a2bb34ce3f8e4f4d0"
+    },
+    {
+      "file": "hublot.json",
+      "sha256": "4d20bd21b1adf49410c2d0e195244e719d7aa5716d7d4e3b51128245819a26fa"
+    },
+    {
+      "file": "audemars-piguet.json",
+      "sha256": "e30065edd1a867d47d951ef57eaa50fde49b9ed0bdc899feda73a07c1ccb4fca"
+    },
+    {
+      "file": "patek-philippe.json",
+      "sha256": "a4e191a0ca93adf4aefd6c5ec72d2a173b98c3292c1688f342f7b0481faed3c2"
+    },
+    {
+      "file": "iwc.json",
+      "sha256": "46bbc3e6e82bcdb88aa9da7c212a61ae986b5b744d3cbaee43e4030d52ee9116"
+    },
+    {
+      "file": "jaeger-lecoultre.json",
+      "sha256": "259f94baa273d205aeabbc84f62ca55ab114444a73008cee0b4ab8bfbafea646"
+    },
+    {
+      "file": "tudor.json",
+      "sha256": "4b71efe9aca90488f682d74be0dd963909035cc795bd2142793e9264a0048680"
+    },
+    {
+      "file": "zenith.json",
+      "sha256": "9d63e2dee7e08d32120828ef97fecd2a7f2bc3ac13461445c4609d2e866252a9"
+    },
+    {
+      "file": "panerai.json",
+      "sha256": "83f220c02f18868a14d48c54a6e3595eb22ba5fdba6e664dd1998102a4f06100"
+    },
+    {
+      "file": "seiko.json",
+      "sha256": "0c24f6da4cc6ced37cdd439ee657c6273551880cdf302de7ea0eb4b9af2576e5"
+    },
+    {
+      "file": "a-lange-s-hne.json",
+      "sha256": "d77216ecad1ac28ea7076eeffcb89ed7e060f8850a8f7bd348e7dade1fd82e98"
+    },
+    {
+      "file": "vacheron-constantin.json",
+      "sha256": "edd2a6bfecce7c25718f0a2d6e1cbb0dca2049aecd89a5a7d9d2e00a3c372b98"
+    },
+    {
+      "file": "sinn.json",
+      "sha256": "4a717bc001b330d74a6099a82d65d8b032dc818aaf65b22baaa85488ac908e61"
+    },
+    {
+      "file": "oris.json",
+      "sha256": "63d2488263c9d2c5c8cf96768ad1dc181f8c0de7d62ff2527a90f8c5ccb7e0a1"
+    },
+    {
+      "file": "richard-mille.json",
+      "sha256": "0141948d104b01eba44ddb51b9a1ecce9b541cee00b70d99f488bc823afaf541"
+    },
+    {
+      "file": "montblanc.json",
+      "sha256": "971b3323b2b686d3206f97fb5198fe5b7126a2da7a3318ff1cf5bea03d07d866"
+    },
+    {
+      "file": "nomos.json",
+      "sha256": "5ecd5dd6db622d562612efc9ac59d05ade5fdb89f9d7d9f9058f03b7f006ff72"
+    },
+    {
+      "file": "ebel.json",
+      "sha256": "9d95c04c40207819704b9943dc23657eb390e3b4146938b804c38e1294a56a7e"
+    },
+    {
+      "file": "hamilton.json",
+      "sha256": "a3a561414a48646b61503962698ca1aa0e7b3306688257858def7864c5280fc7"
+    },
+    {
+      "file": "meistersinger.json",
+      "sha256": "4a7b32fd8129fcd11417dd83aedf3f4bb498c2dc8bc4e675f6c914aa2559f460"
+    },
+    {
+      "file": "rado.json",
+      "sha256": "49b7ba585264bc99d590e6b7a66e7757afb64f32b09630bde80b1c4c90d61ba8"
+    }
+  ],
+  "linkedExistingIdentities": 10166,
+  "addedIdentities": 10149,
+  "masterTotal": 55029,
+  "policy": "Historical listing prices and conflicting size arrays retained as evidence only; no overwrites of primary facts, images or confirmed prices. CC BY attribution retained per source page."
+}

@@ -1,4 +1,4 @@
-export type SourceKind = "manufacturer" | "retailer";
+export type SourceKind = "manufacturer" | "retailer" | "catalogue";
 
 export type WatchDetails = {
   catalogueId?: string;
@@ -13,6 +13,8 @@ export type WatchDetails = {
     strap: string | null;
   };
   sourceKind?: SourceKind;
+  referenceSourceLabel?: string;
+  referenceSourceUrl?: string;
   referenceVerified?: boolean;
   person?: string | null;
   work?: string | null;

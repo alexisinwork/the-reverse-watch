@@ -16,6 +16,18 @@ const schema = z.object({
   enriched: z.number().int().nonnegative(),
   errors: z.number().int().nonnegative(),
   stopped: z.string().nullable(),
+  sequence: z.number().int().nonnegative().default(0),
+  billing: z
+    .object({
+      ownerReportedBaselineUsd: z.number().nonnegative(),
+      baselineAt: z.string(),
+      perplexityReportedUsd: z.number().nonnegative(),
+      perplexityUnreportedEstimateUsd: z.number().nonnegative(),
+      perplexityPendingUsd: z.number().nonnegative(),
+      perplexityCalls: z.number().int().nonnegative(),
+      museCalls: z.number().int().nonnegative(),
+    })
+    .optional(),
 });
 export type EnrichmentProgress = z.infer<typeof schema>;
 const empty = (): EnrichmentProgress => ({
@@ -25,6 +37,7 @@ const empty = (): EnrichmentProgress => ({
   enriched: 0,
   errors: 0,
   stopped: null,
+  sequence: 0,
 });
 
 /** Append-only allowance journal: Windows/OneDrive may lock display snapshots. */
@@ -63,6 +76,7 @@ export function createEnrichmentLedger(
       return (
         candidates.sort(
           (a, b) =>
+            b.sequence - a.sequence ||
             b.reservedUsd - a.reservedUsd ||
             b.processed - a.processed ||
             b.calls - a.calls,
@@ -70,6 +84,7 @@ export function createEnrichmentLedger(
       );
     },
     save(progress: EnrichmentProgress) {
+      progress.sequence++;
       const checked = schema.parse(progress);
       // Fail closed before a paid request if the authoritative append fails.
       appendFileSync(journal, `${JSON.stringify(checked)}\n`);
