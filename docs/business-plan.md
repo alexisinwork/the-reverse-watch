@@ -243,6 +243,16 @@ Download: `/downloads/the-reserve-native-demo.zip`. Source:
 Compress-Archive -Path public/watch-advisor-demo/* -DestinationPath public/downloads/the-reserve-native-demo.zip -Force
 ```
 
+Local-data follow-up, 2026-10-25: source access/licensing audit and an ignored,
+pinned Timepiecepedia snapshot are complete; source counts disagree across export
+formats. No commercial dataset was purchased, no production import was made, and
+no image work was performed. Strategy and evidence:
+`docs/local-watch-database-strategy.md`. HoroDB bulk access and permanent
+commercial/partner redistribution terms for API providers remain dependencies,
+not assumed permissions. A local master does not by itself remove the hosted
+runtime's Supabase/provider dependencies. This research does not change the
+commercial next action above (public portfolio partner verification).
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

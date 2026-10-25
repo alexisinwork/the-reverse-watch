@@ -1797,6 +1797,19 @@ Archetype counts reflect unique display cards. Alternatives now show and submit
 only Price or Range for the selected budget mode, retaining input values when
 switching. Both changes apply to the app and every widget via shared routes.
 
+### Local catalogue source-intake follow-up (2026-10-25)
+
+Owner requests maximum historical/mass-market/luxury coverage in a locally held
+master catalogue. Images explicitly deferred; Replica remains parked. Source
+audit completed without production writes: pinned Timepiecepedia clone, measured
+48,603 CSV rows versus 42,590 detailed JSON records across 224 brands, hashes and
+exact-identity diagnostics. The clone is ignored; the audit manifest is committed.
+See `docs/local-watch-database-strategy.md` for source terms, download paths,
+current-schema mapping and the staged delivery sequence. Pending public catalogue
+rows are not an import quarantine. Next intake checkpoint is a local normalization
+pilot and read-only existing-catalogue overlap report before additive schema work
+or promotion. This does not supersede existing questionnaire/research requirements.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

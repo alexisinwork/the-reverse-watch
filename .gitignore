@@ -31,5 +31,8 @@ data/research/model-sheet-sample.tsv
 .vercel
 .env*
 
+# Local third-party watch dataset snapshots; manifests/reports live in docs.
+/data/watch-archive/
+
 # Catalogue build progress (local)
 .catalogue-build/
