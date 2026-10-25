@@ -130,3 +130,14 @@ feed that caused the previous five timeouts. Browser/store installations are
 not claimed retested merely because these shared routes pass their unit checks.
 The first paid pass continues in the local worker until its saved allowance or
 error stop is reached; the remaining queue is explicitly unfinished.
+
+Production checkpoint: code commit `31f3e04` deployed as
+`dpl_6MQnwKQTfSL7pQ9UkENDpYr8zqus`, READY and aliased to
+`https://thereserve.watch`. The CLI needed explicit scope
+`alexisinworks-projects`; default-scope deploy initially returned Not authorized.
+After publication, direct HTTP checks from this machine timed out; subsequent
+Vercel inspection/curl also encountered a transient API fetch failure. Therefore
+deployment READY is verified, but a successful post-deployment public HTTP smoke
+check is **not** claimed. Live DB/helper checks and the 529-test gate passed.
+The local worker was separately confirmed running with its durable allowance
+journal; deployment/auth scope does not control that process.

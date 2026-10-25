@@ -1851,6 +1851,13 @@ conservative $100 request allowance. Full per-record enrichment remains **in
 progress**, not complete; missing facts, source conflicts and unresolved identities
 stay explicit. Browser/store installation testing is not inferred from shared code.
 
+Production delivery evidence: `31f3e04` pushed to main/master; deployment
+`dpl_6MQnwKQTfSL7pQ9UkENDpYr8zqus` READY on thereserve.watch with explicit Vercel
+scope. Fast gate passed 529 tests, types/lint/format/build. Post-deploy HTTP smoke
+remains unverified because this environment's requests timed out and Vercel's
+subsequent inspection hit a fetch failure. Local enrichment remains running;
+the append-only budget journal also survives Windows/OneDrive snapshot locks.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |
