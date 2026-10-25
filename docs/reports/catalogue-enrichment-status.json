@@ -1,117 +1,119 @@
 {
-  "at": "2026-10-25T21:50:16.559Z",
+  "at": "2026-10-25T22:57:55.315Z",
   "totals": [
     {
-      "total": 55029,
-      "imported": 51920,
-      "imported_reference_confirmed": 1347,
-      "imported_with_image": 86,
-      "imported_priced": 38
+      "total": 55500,
+      "imported": 52391,
+      "imported_reference_confirmed": 42166,
+      "imported_with_image": 223,
+      "imported_priced": 69
     }
   ],
   "importedExamples": [
     {
-      "id": "4ec489b8-966d-41e8-86e2-670c48dbf203",
+      "id": "eb01c15e-cf8b-40be-a53d-c7d382620e9f",
       "brand": "Omega",
-      "reference_code": "220.10.38.20.57.001",
+      "reference_code": "2503.30.00",
       "reference_confirmed": true,
-      "case_diameter_mm": "38.00",
+      "case_diameter_mm": "39.20",
       "case_thickness_mm": null,
-      "water_resistance_m": null,
+      "water_resistance_m": 150,
       "movement": "automatic",
       "styles": [
+        "dive",
         "sport",
         "everyday"
       ],
-      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22010382057001-b42a03.png?w=1024",
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-chronometer-25033000-877366.png?w=1024",
       "price_status": "unconfirmed"
     },
     {
-      "id": "fe177210-fcc9-45f4-94ce-b50e7faad408",
+      "id": "0106af82-99fe-4af0-89d0-41d3b98cf475",
       "brand": "Omega",
-      "reference_code": "231.10.42.21.02.006",
-      "reference_confirmed": true,
-      "case_diameter_mm": "41.50",
-      "case_thickness_mm": null,
-      "water_resistance_m": null,
-      "movement": "automatic",
-      "styles": [
-        "sport",
-        "everyday"
-      ],
-      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-master-co-axial-chronometer-41-5-mm-23110422102006-7eb896.png?w=1024",
-      "price_status": "unconfirmed"
-    },
-    {
-      "id": "04db1694-ed29-44fe-854d-1baf3fea8dd9",
-      "brand": "Omega",
-      "reference_code": "220.52.41.21.03.002",
-      "reference_confirmed": true,
-      "case_diameter_mm": "41.00",
-      "case_thickness_mm": null,
-      "water_resistance_m": null,
-      "movement": "automatic",
-      "styles": [
-        "sport",
-        "everyday",
-        "dress"
-      ],
-      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-small-seconds-41-mm-22052412103002-e913cc.png?w=1024",
-      "price_status": "confirmed"
-    },
-    {
-      "id": "347a5744-340c-474d-a556-123e9acb53fb",
-      "brand": "Omega",
-      "reference_code": "220.20.34.20.60.001",
-      "reference_confirmed": true,
-      "case_diameter_mm": "34.00",
-      "case_thickness_mm": null,
-      "water_resistance_m": null,
-      "movement": "automatic",
-      "styles": [
-        "everyday",
-        "dress"
-      ],
-      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-34-mm-22020342060001-76a4dc.png?w=1024",
-      "price_status": "unconfirmed"
-    },
-    {
-      "id": "0fd6e191-3fbb-4482-8fa4-93a6c4a930ce",
-      "brand": "Omega",
-      "reference_code": "220.12.41.21.06.001",
+      "reference_code": "2517.80.00",
       "reference_confirmed": true,
       "case_diameter_mm": null,
       "case_thickness_mm": null,
-      "water_resistance_m": null,
+      "water_resistance_m": 150,
+      "movement": "quartz",
+      "styles": [
+        "sport",
+        "everyday"
+      ],
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-quartz-25178000-9869c5.png?w=1024",
+      "price_status": "unconfirmed"
+    },
+    {
+      "id": "5970aaef-e50c-49ee-9d89-a7551e192e97",
+      "brand": "Omega",
+      "reference_code": "231.10.39.21.54.001",
+      "reference_confirmed": true,
+      "case_diameter_mm": "38.50",
+      "case_thickness_mm": null,
+      "water_resistance_m": 150,
       "movement": "automatic",
       "styles": [
         "sport",
         "everyday"
       ],
-      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-41-mm-22012412106001-230391.png?w=1024",
-      "price_status": "confirmed"
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-omega-co-axial-38-5-mm-23110392154001-d141d7.png?w=1024",
+      "price_status": "unconfirmed"
+    },
+    {
+      "id": "305b776f-cc24-48c1-88d7-59351c70089a",
+      "brand": "Omega",
+      "reference_code": "2503.80.00",
+      "reference_confirmed": true,
+      "case_diameter_mm": "39.20",
+      "case_thickness_mm": null,
+      "water_resistance_m": 150,
+      "movement": "automatic",
+      "styles": [
+        "dive",
+        "sport",
+        "everyday"
+      ],
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-chronometer-25038000-97bdd4.png?w=1024",
+      "price_status": "unconfirmed"
+    },
+    {
+      "id": "8528696d-0f84-4117-b1b1-79fb2c6ef112",
+      "brand": "Omega",
+      "reference_code": "231.13.44.52.06.001",
+      "reference_confirmed": true,
+      "case_diameter_mm": "44.00",
+      "case_thickness_mm": null,
+      "water_resistance_m": 150,
+      "movement": "automatic",
+      "styles": [
+        "travel",
+        "sport",
+        "everyday"
+      ],
+      "image_url": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-aqua-terra-150m-co-axial-chronometer-gmt-chronograph-44-mm-23113445206001-74da50.png?w=1024",
+      "price_status": "unconfirmed"
     }
   ],
   "states": [
     {
       "state": "blocked_identity",
-      "count": 7473
+      "count": 7558
     },
     {
       "state": "enriched",
-      "count": 317
+      "count": 42366
     },
     {
       "state": "needs_evidence",
-      "count": 76
+      "count": 86
     },
     {
       "state": "pending",
-      "count": 60097
+      "count": 59945
     },
     {
       "state": "retry",
-      "count": 13
+      "count": 15
     },
     {
       "state": "running",
@@ -120,14 +122,14 @@
   ],
   "archived": [
     {
-      "records": 67977,
-      "object_payloads": 67977
+      "records": 109971,
+      "object_payloads": 109971
     }
   ],
   "retry": [
     {
       "last_error": "Error",
-      "count": 11
+      "count": 13
     },
     {
       "last_error": "upstream_or_validation_error",
@@ -136,15 +138,15 @@
   ],
   "status": {
     "states": {
-      "retry": 13,
-      "pending": 60097,
+      "retry": 15,
+      "pending": 59944,
       "running": 1,
-      "enriched": 317,
-      "needs_evidence": 76,
-      "blocked_identity": 7473
+      "enriched": 42367,
+      "needs_evidence": 86,
+      "blocked_identity": 7558
     },
-    "records": 67977,
-    "importedIdentities": 51920
+    "records": 109971,
+    "importedIdentities": 52391
   },
   "access": [
     {
@@ -158,33 +160,27 @@
       "anon_status": false
     }
   ],
-  "recommendationRows": 3147,
+  "recommendationRows": 3178,
   "quizEligibility": [
     {
-      "id": "4ec489b8-966d-41e8-86e2-670c48dbf203",
+      "id": "eb01c15e-cf8b-40be-a53d-c7d382620e9f",
       "searchable": false
     },
     {
-      "id": "fe177210-fcc9-45f4-94ce-b50e7faad408",
+      "id": "0106af82-99fe-4af0-89d0-41d3b98cf475",
       "searchable": false
     },
     {
-      "id": "04db1694-ed29-44fe-854d-1baf3fea8dd9",
-      "reference": "220.52.41.21.03.002",
-      "searchable": true,
-      "relaxedQuizRuleFailures": []
-    },
-    {
-      "id": "347a5744-340c-474d-a556-123e9acb53fb",
+      "id": "5970aaef-e50c-49ee-9d89-a7551e192e97",
       "searchable": false
     },
     {
-      "id": "0fd6e191-3fbb-4482-8fa4-93a6c4a930ce",
-      "reference": "220.12.41.21.06.001",
-      "searchable": true,
-      "relaxedQuizRuleFailures": [
-        "diameter"
-      ]
+      "id": "305b776f-cc24-48c1-88d7-59351c70089a",
+      "searchable": false
+    },
+    {
+      "id": "8528696d-0f84-4117-b1b1-79fb2c6ef112",
+      "searchable": false
     }
   ],
   "liveArchetypeReferences": [
@@ -193,35 +189,35 @@
     "Casio DW5600E-1V",
     "Citizen BM8180-03E",
     "CWC G10FATBOY80",
-    "Certina C032.607.11.051.00",
     "Certina C032.929.11.051.00",
+    "Certina C032.607.11.051.00",
+    "Damasko DS30",
     "Hamilton H77455331",
-    "Hamilton H69459530",
-    "Hamilton H69439931"
+    "Hamilton H64615135"
   ],
   "exactLookupPropagation": [
     {
-      "reference": "Omega 220.10.38.20.57.001",
+      "reference": "Omega 2503.30.00",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "Omega 231.10.42.21.02.006",
+      "reference": "Omega 2517.80.00",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "Omega 220.52.41.21.03.002",
+      "reference": "Omega 231.10.39.21.54.001",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "Omega 220.20.34.20.60.001",
+      "reference": "Omega 2503.80.00",
       "matched": true,
       "imageMatches": true
     },
     {
-      "reference": "Omega 220.12.41.21.06.001",
+      "reference": "Omega 231.13.44.52.06.001",
       "matched": true,
       "imageMatches": true
     }

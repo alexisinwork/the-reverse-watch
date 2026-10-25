@@ -277,10 +277,13 @@ answers or direct personal identifiers, and is visible in `/admin/analytics`.
 The owner also requested country-level reporting; the system stores only the
 two-letter hosting-country code, not an IP address or precise location. The
 admin page now shows an explicit yes/no feedback table by service.
-Current evidence and limits are in the roadmap and dated reports. Next action:
-finish local Dials mirror/import under its model attribution terms, then complete
-the fast code gate and deliver the additive app/admin changes; partner link policy
-for Dials model-page attribution remains the only pending owner choice.
+Current evidence and limits are in the roadmap and dated reports. The complete
+41,996-record Dials mirror is local; 41,911 unique exact references now carry
+Dials provenance, and 419 cached result rows were refreshed from exact local
+matches. The final fast code gate passed. The local missing-field queue and
+coverage report identify the next research priorities. The remaining owner
+choice is whether a Dials model-page attribution link is acceptable inside a
+widget watch result, given the earlier link-free widget screen requirement.
 
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.

@@ -210,9 +210,34 @@ already represented locally. Catalogued references are labeled separately from
 manufacturer-confirmed references. Updated 132 of 1,219 cached entries from exact
 local matches without changing membership, ranking, existing facts or prices.
 
-The free Dials mirror is resumable and currently downloading its 41,996 model
-records at the published request limit. Raw JSONL stays in ignored local archive.
-No photos or seller prices are imported. Dials requires a linked model-page
-attribution; widget exposure awaits the owner's choice about that requirement
-versus the existing link-free widget screen. Paid Perplexity research remains
-bounded by its separate $100 cumulative allowance.
+The full free Dials mirror completed 2026-10-25: 41,996 model rows, zero fetch
+failures, 41,911 unique exact references, and 85 repeated source identities held
+in intake for review. Raw JSONL stays in the ignored local archive. The importer
+added 471 catalogue identities and attached Dials specs/provenance to 41,911
+exact-reference catalogue identities. It filled or resolved 167,127 catalogue
+facts, preserved 2,305 conflicting manufacturer/authorised-retailer facts, and
+imported no Dials photos or seller prices. The master now has 55,500 rows.
+
+After import, 419 of 2,570 cached result rows were refreshed by unique,
+reference-confirmed local matches. Another 1,351 have no reference and remain
+unchanged; eight cached display titles were preserved to avoid an identity-key
+collision. The image audit checked 857 remaining cached image URLs: 834 served
+image content, 23 were temporarily unavailable, and none were definitively
+missing. Five rows with dead/non-image URLs were cleared in the earlier write
+pass. No image files or Dials image URLs are stored or served.
+
+The actionable local missing-field queue is ignored at
+data/watch-archive/catalogue-enrichment-queue.json; compact counts are in
+docs/reports/local-source-recommendability.json. The 55,500-row catalogue
+currently has 52,451 records without a usable price, so bulk enrichment of every
+record is not economical. Enrich Dials/Space City/Timepiecepedia facts locally,
+then research likely quiz candidates and cached references on demand. Keep
+prices null until the existing two-source price check succeeds; missing photos
+do not block a recommendation. Dials model-page attribution is required by its
+terms and is currently shown as a source link on watch cards. That source link
+is separate from cross-quiz navigation, but the earlier request for a link-free
+widget result screen conflicts with this attribution requirement and still needs
+an explicit resolution before changing widget behavior.
+
+Paid Perplexity research remains bounded by its separate $100 cumulative
+allowance; no bulk Perplexity spend was used for this local mirror/import.

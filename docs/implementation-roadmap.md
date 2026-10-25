@@ -1951,3 +1951,25 @@ RPC write and summary were verified in a rolled-back transaction.
 
 Only `.env.example` is committed. Real values belong in ignored local files and
 encrypted deployment settings.
+
+## Owner follow-up (2026-10-25): full Dials import and detailed analytics
+
+This decision supersedes the earlier Dials secondary-check-only direction above.
+The full free mirror completed: 41,996 model rows, 41,911 unique exact
+references, zero fetch failures, and 85 repeated source identities held for
+review. The importer added 471 catalogue identities, attached Dials provenance
+to 41,911 identities, filled or resolved 167,127 catalogue facts, and preserved
+2,305 conflicting manufacturer/authorised-retailer facts. It imported no Dials
+photos or seller prices. The local master now has 55,500 rows.
+
+A total of 419 of 2,570 cached result rows were refreshed from exact local
+matches; 1,351 rows with no reference were left unchanged. The image audit found
+834 image URLs serving images, 23 temporarily unavailable and none definitively
+missing; five dead/non-image URL references were cleared. See
+docs/catalogue-enrichment.md and the dated reports.
+
+Analytics at /admin/analytics now shows yes/no result feedback and country-level
+session counts from the hosting edge's two-letter country code. No IP address or
+precise location is stored. The widget source-page attribution link for Dials
+models remains in tension with the earlier link-free result-screen request;
+that policy question is still open.

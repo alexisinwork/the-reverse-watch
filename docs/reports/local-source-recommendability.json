@@ -1,78 +1,78 @@
 {
-  "at": "2026-10-25T22:01:38.047Z",
+  "at": "2026-10-25T22:56:40.590Z",
   "sources": [
     {
       "source": "dials",
-      "models": 198,
-      "exact_references": 198,
+      "models": 471,
+      "exact_references": 471,
       "with_photo_url": 0,
       "with_usable_price": 0,
-      "with_diameter": 197,
-      "with_movement": 198,
-      "with_style_tags": 66,
+      "with_diameter": 397,
+      "with_movement": 468,
+      "with_style_tags": 149,
       "baseline_quiz_eligible": 0,
       "eligible_without_photo": 0
     },
     {
       "source": "native",
       "models": 3109,
-      "exact_references": 1423,
+      "exact_references": 1480,
       "with_photo_url": 2890,
       "with_usable_price": 2980,
-      "with_diameter": 3024,
+      "with_diameter": 3027,
       "with_movement": 3102,
       "with_style_tags": 3109,
-      "baseline_quiz_eligible": 1345,
-      "eligible_without_photo": 55
+      "baseline_quiz_eligible": 1405,
+      "eligible_without_photo": 60
     },
     {
       "source": "spacecity",
       "models": 10149,
-      "exact_references": 863,
-      "with_photo_url": 1,
+      "exact_references": 893,
+      "with_photo_url": 6,
       "with_usable_price": 0,
-      "with_diameter": 6862,
-      "with_movement": 6306,
-      "with_style_tags": 1,
+      "with_diameter": 6866,
+      "with_movement": 6308,
+      "with_style_tags": 15,
       "baseline_quiz_eligible": 0,
       "eligible_without_photo": 0
     },
     {
       "source": "timepiecepedia",
       "models": 41771,
-      "exact_references": 17911,
-      "with_photo_url": 105,
-      "with_usable_price": 43,
-      "with_diameter": 20508,
-      "with_movement": 20790,
-      "with_style_tags": 4906,
-      "baseline_quiz_eligible": 33,
-      "eligible_without_photo": 2
+      "exact_references": 40802,
+      "with_photo_url": 213,
+      "with_usable_price": 69,
+      "with_diameter": 40629,
+      "with_movement": 40541,
+      "with_style_tags": 15508,
+      "baseline_quiz_eligible": 69,
+      "eligible_without_photo": 3
     }
   ],
   "dialsSupplement": {
-    "dials_supplemented": 18006,
-    "exact_dials_references": 18006,
-    "dials_supplemented_quiz_eligible": 237,
-    "dials_supplemented_without_photo": 17781
+    "dials_supplemented": 41911,
+    "exact_dials_references": 41911,
+    "dials_supplemented_quiz_eligible": 671,
+    "dials_supplemented_without_photo": 41114
   },
   "cachedResults": {
     "result_rows": 2570,
     "with_reference": 1219,
-    "with_photo_url": 1873,
-    "already_has_supplemental_spec": 92
+    "with_photo_url": 1879,
+    "already_has_supplemental_spec": 304
   },
   "missingFieldCounts": {
-    "photo": 52231,
-    "usable_price": 52204,
-    "style": 47145,
-    "water_resistance": 35448,
-    "crystal": 34556,
-    "diameter": 24636,
-    "case_material": 25394,
-    "movement": 24831
+    "photo": 52390,
+    "usable_price": 52451,
+    "movement": 5081,
+    "style": 36719,
+    "water_resistance": 13121,
+    "case_material": 5184,
+    "crystal": 11573,
+    "diameter": 4581
   },
-  "missingRecordCount": 52826,
+  "missingRecordCount": 53026,
   "quizEligibility": "Reference, usable price, diameter, movement and at least one explicit style tag; photos are optional and missing facts remain null.",
   "note": "A model count is not a recommendable count. Unknown prices prevent any active budget fit. The baseline counts watches that can satisfy common hard filters; water resistance, wrist, currency conversion and specific style constraints are checked per profile."
 }
