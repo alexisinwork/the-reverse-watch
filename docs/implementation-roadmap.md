@@ -1810,6 +1810,18 @@ rows are not an import quarantine. Next intake checkpoint is a local normalizati
 pilot and read-only existing-catalogue overlap report before additive schema work
 or promotion. This does not supersede existing questionnaire/research requirements.
 
+### Local normalization pilot (2026-10-25)
+
+Completed the next intake checkpoint: 6,071 source records across Tissot, Seiko,
+Casio and Omega normalized to an ignored local research-only archive. Read-only
+comparison against 3,109 catalogue rows yielded 5,969 new candidates, 34 exact
+candidates, one alias/format candidate, ten ambiguous records and 57 numeric
+conflicts. No production imports, image work, cache scans or automatic merges.
+Source hashes and schema validation gate intake; offline reruns use the local
+catalogue snapshot. Evidence and scope: `docs/reports/local-watch-intake-pilot.md`.
+Next checkpoint is source expansion and primary-evidence conflict review before
+promotion; bulk-provider access is a dependency, not an assumed permission.
+
 ## Environment-variable ownership
 
 | Variable | Required in | Purpose |

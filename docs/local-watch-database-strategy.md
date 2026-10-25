@@ -110,12 +110,14 @@ This follow-up starts with source audit, not a production migration.
 1. **Source audit — completed:** primary-source terms/API inspection; pinned
    Timepiecepedia clone; reproducible counts/hashes; images excluded. No production
    data changes, cache scans, paid calls or full-site scraping.
-2. **Next: local normalization pilot:** Tissot, then Casio/Seiko and one luxury
-   brand. Compare a read-only export of `watch_catalogue` by brand/full-reference;
+2. **Local normalization pilot — completed:** Tissot, Casio/Seiko and Omega;
+   see [measured results and commands](reports/local-watch-intake-pilot.md).
+   6,071 research-only records; no automatic merges or production imports.
+   Compare a read-only export of `watch_catalogue` by brand/full-reference;
    report linked/new/ambiguous/conflicting rows and field completeness. Retain
    original intake and do not auto-promote. Design any additive DB migration only
    after this mapping and the existing schema/research interfaces are reviewed.
-3. **Coverage expansion:** request HoroDB bulk snapshot and clarify Dials mirror
+3. **Next: coverage expansion:** request HoroDB bulk snapshot and clarify Dials mirror
    terms; import allowed sources with resumable checkpoints, rate limits, retries,
    content hashes and no-op reruns. Keep listing observations separate.
 4. **Verification/read model:** primary-source checks, conflict review and controlled

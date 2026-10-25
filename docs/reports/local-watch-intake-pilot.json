@@ -1,0 +1,310 @@
+{
+  "source": "https://github.com/timepiecepedia/timepiecepedia-data",
+  "commit": "d37b781c12475cee5dc9a4f270037204590c1575",
+  "licence": "CC0-1.0 declared by publisher; upstream rights not independently established",
+  "sourceAuditAt": "2026-10-25T16:06:45.171Z",
+  "catalogueRetrievedAt": "2026-10-25T16:14:02.257Z",
+  "catalogueSha256": "81b023a90b2827b578404615b9e802ff3da31b6684f77c4ae1edf63ff6830f36",
+  "catalogueRows": 3109,
+  "brands": [
+    {
+      "brand": "tissot",
+      "file": "catalog/tissot_full.json",
+      "sha256": "6b9e2c4be319895f53377bffa8446b57bd25f603cdd553cd35a1c38c47708270",
+      "records": 1976,
+      "statuses": {
+        "new_candidate": 1939,
+        "conflict": 19,
+        "exact_candidate": 8,
+        "ambiguous": 10
+      },
+      "completeness": {
+        "reference": 1976,
+        "caseDiameterMm": 1966,
+        "caseThicknessMm": 1855,
+        "waterResistanceM": 1823
+      }
+    },
+    {
+      "brand": "seiko",
+      "file": "catalog/seiko_full.json",
+      "sha256": "dc02bb971af93e68e1b2f67128040cf2107f27ace7a4501d89ac6340976581d5",
+      "records": 138,
+      "statuses": {
+        "new_candidate": 136,
+        "alias_or_format_candidate": 1,
+        "exact_candidate": 1
+      },
+      "completeness": {
+        "reference": 138,
+        "caseDiameterMm": 138,
+        "caseThicknessMm": 65,
+        "waterResistanceM": 138
+      }
+    },
+    {
+      "brand": "casio",
+      "file": "catalog/casio_full.json",
+      "sha256": "0c7d71ba40948867a69e7b2c3f14d116bc53b3ed784b089678bd23c30eef74a3",
+      "records": 122,
+      "statuses": {
+        "new_candidate": 122
+      },
+      "completeness": {
+        "reference": 122,
+        "caseDiameterMm": 122,
+        "caseThicknessMm": 118,
+        "waterResistanceM": 122
+      }
+    },
+    {
+      "brand": "omega",
+      "file": "catalog/omega_full.json",
+      "sha256": "bb4b4210c1858c8c9f6cf20d3c81e310597c45b0e3e5778802be81f1ba19e3d7",
+      "records": 3835,
+      "statuses": {
+        "new_candidate": 3772,
+        "exact_candidate": 25,
+        "conflict": 38
+      },
+      "completeness": {
+        "reference": 3835,
+        "caseDiameterMm": 3835,
+        "caseThicknessMm": 983,
+        "waterResistanceM": 3809
+      }
+    }
+  ],
+  "policy": "Research only. No DB writes, image work, price imports or automatic merges. Exact candidates are not verified identities.",
+  "conflictCount": 57,
+  "conflictExamples": [
+    {
+      "sourceRecordId": "tissot:t101-410-11-051-00:0:119",
+      "brand": "Tissot",
+      "reference": "T101.410.11.051.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "420a83e7-fa0c-4751-965a-6150dfc04363"
+      ],
+      "conflicts": [
+        {
+          "existingId": "420a83e7-fa0c-4751-965a-6150dfc04363",
+          "field": "caseDiameterMm",
+          "incoming": 39,
+          "existing": 40
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t122-407-11-031-00:1:37",
+      "brand": "Tissot",
+      "reference": "T122.407.11.031.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "6759735c-2590-4086-8964-41fdc05ceb69"
+      ],
+      "conflicts": [
+        {
+          "existingId": "6759735c-2590-4086-8964-41fdc05ceb69",
+          "field": "caseThicknessMm",
+          "incoming": 10.25,
+          "existing": 9.83
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t122-410-11-033-00:1:51",
+      "brand": "Tissot",
+      "reference": "T122.410.11.033.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "70641f21-d66b-4e70-b3a1-1dfb9960c4c6"
+      ],
+      "conflicts": [
+        {
+          "existingId": "70641f21-d66b-4e70-b3a1-1dfb9960c4c6",
+          "field": "caseThicknessMm",
+          "incoming": 6,
+          "existing": 8.32
+        },
+        {
+          "existingId": "70641f21-d66b-4e70-b3a1-1dfb9960c4c6",
+          "field": "waterResistanceM",
+          "incoming": 50,
+          "existing": 30
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t120-410-11-051-00:2:18",
+      "brand": "Tissot",
+      "reference": "T120.410.11.051.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "506fcd5b-c038-45a2-9bad-c1b39e2bb27b"
+      ],
+      "conflicts": [
+        {
+          "existingId": "506fcd5b-c038-45a2-9bad-c1b39e2bb27b",
+          "field": "caseDiameterMm",
+          "incoming": 40,
+          "existing": 43
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t1204171105100:2:19",
+      "brand": "Tissot",
+      "reference": "T120.417.11.051.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "e7f32856-46b2-44b8-9a9b-d5ebda2b0adb"
+      ],
+      "conflicts": [
+        {
+          "existingId": "e7f32856-46b2-44b8-9a9b-d5ebda2b0adb",
+          "field": "caseDiameterMm",
+          "incoming": 45.5,
+          "existing": 46
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t1204171104100:2:40",
+      "brand": "Tissot",
+      "reference": "T120.417.11.041.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "fe62c0a0-7a84-4d17-b885-6be0bc8bfd61"
+      ],
+      "conflicts": [
+        {
+          "existingId": "fe62c0a0-7a84-4d17-b885-6be0bc8bfd61",
+          "field": "caseDiameterMm",
+          "incoming": 45.5,
+          "existing": 46
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t120-607-11-041-00:2:47",
+      "brand": "Tissot",
+      "reference": "T120.607.11.041.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "b14446c8-ae5b-4161-a6e7-23601c139dbf"
+      ],
+      "conflicts": [
+        {
+          "existingId": "b14446c8-ae5b-4161-a6e7-23601c139dbf",
+          "field": "caseThicknessMm",
+          "incoming": 15.8,
+          "existing": 16.25
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t137-207-11-051-00:4:5",
+      "brand": "Tissot",
+      "reference": "T137.207.11.051.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "1acc2a4e-361b-4004-b34f-09e138941d30"
+      ],
+      "conflicts": [
+        {
+          "existingId": "1acc2a4e-361b-4004-b34f-09e138941d30",
+          "field": "caseThicknessMm",
+          "incoming": 11.3,
+          "existing": 11.2
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t137-407-11-051-00:4:34",
+      "brand": "Tissot",
+      "reference": "T137.407.11.051.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "08ec1a96-e59c-493b-90d0-f6adf9c2dd42"
+      ],
+      "conflicts": [
+        {
+          "existingId": "08ec1a96-e59c-493b-90d0-f6adf9c2dd42",
+          "field": "caseThicknessMm",
+          "incoming": 10.9,
+          "existing": 11.3
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t137-207-11-091-00:4:48",
+      "brand": "Tissot",
+      "reference": "T137.207.11.091.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "780240c0-86b7-4b77-95b5-a811a0686c9a"
+      ],
+      "conflicts": [
+        {
+          "existingId": "780240c0-86b7-4b77-95b5-a811a0686c9a",
+          "field": "caseThicknessMm",
+          "incoming": 11.3,
+          "existing": 11.2
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t143-410-11-033-00:6:18",
+      "brand": "Tissot",
+      "reference": "T143.410.11.033.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "38c87384-3060-4016-b7ab-48be633ba591"
+      ],
+      "conflicts": [
+        {
+          "existingId": "38c87384-3060-4016-b7ab-48be633ba591",
+          "field": "caseThicknessMm",
+          "incoming": 7.1,
+          "existing": 7.48
+        }
+      ]
+    },
+    {
+      "sourceRecordId": "tissot:t1094101603300:6:30",
+      "brand": "Tissot",
+      "reference": "T109.410.16.033.00",
+      "status": "conflict",
+      "duplicateSourceIdentity": false,
+      "existingIds": [
+        "8d2a7b9b-81e0-4923-b663-530c5c797195"
+      ],
+      "conflicts": [
+        {
+          "existingId": "8d2a7b9b-81e0-4923-b663-530c5c797195",
+          "field": "caseDiameterMm",
+          "incoming": 38,
+          "existing": 34
+        },
+        {
+          "existingId": "8d2a7b9b-81e0-4923-b663-530c5c797195",
+          "field": "caseThicknessMm",
+          "incoming": 6.45,
+          "existing": 7.27
+        }
+      ]
+    }
+  ]
+}
