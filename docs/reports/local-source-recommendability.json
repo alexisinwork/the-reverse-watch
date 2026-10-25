@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-25T21:52:48.536Z",
+  "at": "2026-10-25T21:57:39.196Z",
   "sources": [
     {
       "source": "native",
@@ -28,12 +28,12 @@
     {
       "source": "timepiecepedia",
       "models": 41771,
-      "exact_references": 492,
-      "with_photo_url": 91,
-      "with_usable_price": 40,
+      "exact_references": 499,
+      "with_photo_url": 98,
+      "with_usable_price": 42,
       "with_diameter": 5796,
       "with_movement": 5719,
-      "with_style_tags": 96,
+      "with_style_tags": 103,
       "baseline_quiz_eligible": 20,
       "eligible_without_photo": 0
     }
@@ -47,16 +47,16 @@
   "cachedResults": {
     "result_rows": 2570,
     "with_reference": 1219,
-    "with_photo_url": 1878,
+    "with_photo_url": 1873,
     "already_has_supplemental_spec": 0
   },
   "missingFieldCounts": {
-    "photo": 52047,
-    "usable_price": 52009,
+    "photo": 52040,
+    "usable_price": 52007,
     "diameter": 39351,
     "movement": 39903,
-    "style": 51823,
-    "water_resistance": 52032,
+    "style": 51816,
+    "water_resistance": 52029,
     "case_material": 40558,
     "crystal": 51995
   },

@@ -1,0 +1,1830 @@
+{
+  "at": "2026-10-25T21:57:31.558Z",
+  "uniqueCachedImageUrls": 858,
+  "cachedRowsUsingThoseUrls": 1270,
+  "totals": {
+    "valid": 800,
+    "missing": 3,
+    "not_image": 1,
+    "unavailable": 54,
+    "invalid_url": 0
+  },
+  "mode": "write",
+  "definitivelyMissingUrls": 4,
+  "clearedRows": 5,
+  "byHost": {
+    "awakewatches.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "commit-watch.co.jp": {
+      "urls": 16,
+      "rows": 36,
+      "outcomes": {
+        "valid": 16
+      }
+    },
+    "alstawatch.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "cdn.shopify.com": {
+      "urls": 11,
+      "rows": 17,
+      "outcomes": {
+        "valid": 11
+      }
+    },
+    "doxawatches.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "justintime.in": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "images2.corriereobjects.it": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "kamajimarket.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "loveluxury.ae": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "luminox.com": {
+      "urls": 1,
+      "rows": 3,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "pisa1940.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "provenancewatches.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "bamfstyle.com": {
+      "urls": 25,
+      "rows": 25,
+      "outcomes": {
+        "valid": 23,
+        "unavailable": 2
+      }
+    },
+    "rotatewatches.com": {
+      "urls": 1,
+      "rows": 6,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "shop.hodinkee.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "speake-marin.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "static1.squarespace.com": {
+      "urls": 16,
+      "rows": 26,
+      "outcomes": {
+        "valid": 16
+      }
+    },
+    "time4diamonds.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "www.analogshift.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "timex.com": {
+      "urls": 2,
+      "rows": 15,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.crmjewelers.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.hautetime.com": {
+      "urls": 4,
+      "rows": 6,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "www.raymond-weil.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.shinola.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.watchesofespionage.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "akm-img-a-in.tosshub.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "a.1stdibscdn.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "api.dialicious.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "api.girard-perregaux.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "api.ecom.longines.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "apicms.thestar.com.my": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "assets.vogue.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "beckertime.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "blog.hollywoodbranded.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "blogger.googleusercontent.com": {
+      "urls": 11,
+      "rows": 11,
+      "outcomes": {
+        "valid": 11
+      }
+    },
+    "cdn-ssl.s7.shopdisney.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "cassette.sphdigital.com.sg": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "missing": 1
+      }
+    },
+    "cdn.essential-japan.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "cdn.i-scmp.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "cdn.mos.cms.futurecdn.net": {
+      "urls": 4,
+      "rows": 4,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "cdn.prod.website-files.com": {
+      "urls": 45,
+      "rows": 56,
+      "outcomes": {
+        "valid": 45
+      }
+    },
+    "cdn.sanity.io": {
+      "urls": 12,
+      "rows": 17,
+      "outcomes": {
+        "valid": 12
+      }
+    },
+    "albadiamagazine.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "cdn.swisswatchexpo.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "cdn.tatlerasia.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "cdn.strapsco.com": {
+      "urls": 1,
+      "rows": 4,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "chronographes.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "chronohunter.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "chronohunter.s3.eu-west-2.amazonaws.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "cms.gphg.org": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "content-hub.imgix.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "content.presspage.com": {
+      "urls": 4,
+      "rows": 5,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "d12d6l12s3d372.cloudfront.net": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "darkknightnews.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "deployant.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "d2rbybg5ibx87t.cloudfront.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "dist.phillips.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "dmarge.com": {
+      "urls": 4,
+      "rows": 4,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "dujour.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "dynamicmedia.audemarspiguet.com": {
+      "urls": 1,
+      "rows": 16,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "elitetraveler.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "evolvedash.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "entertainmentnow.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "fashionablymale.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "filmfare.wwmindia.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "goldenglobes.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "guide.superwatchman.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "hansonsauctioneers.co.uk": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "chronograph.am": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "hautetime.s3.us-west-1.amazonaws.com": {
+      "urls": 7,
+      "rows": 7,
+      "outcomes": {
+        "valid": 7
+      }
+    },
+    "chaykin.ru": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "chibepoosham.com": {
+      "urls": 1,
+      "rows": 4,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "hips.hearstapps.com": {
+      "urls": 43,
+      "rows": 55,
+      "outcomes": {
+        "valid": 43
+      }
+    },
+    "hellobeautiful.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "firstclasse.com.my": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "hodinkee.imgix.net": {
+      "urls": 84,
+      "rows": 119,
+      "outcomes": {
+        "valid": 84
+      }
+    },
+    "i.f1g.fr": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "i.ytimg.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "i0.wp.com": {
+      "urls": 9,
+      "rows": 9,
+      "outcomes": {
+        "valid": 9
+      }
+    },
+    "images.complex.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "images.ctfassets.net": {
+      "urls": 4,
+      "rows": 5,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "images.contentstack.io": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "i5.walmartimages.com": {
+      "urls": 1,
+      "rows": 3,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "images.indianexpress.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "images.hellomagazine.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "images.platforum.cloud": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "images.propstore.com": {
+      "urls": 4,
+      "rows": 5,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "images.t-online.de": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "img-cdn.publive.online": {
+      "urls": 2,
+      "rows": 3,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "img.chrono24.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "imagez.tmz.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "img.anime2you.de": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "img.watchtime.in": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "img.piaget.com": {
+      "urls": 1,
+      "rows": 6,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "imwdb.org": {
+      "urls": 8,
+      "rows": 9,
+      "outcomes": {
+        "valid": 7,
+        "missing": 1
+      }
+    },
+    "imgix.bustle.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "italianwatchspotter.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "jingdaily.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "lesfacons.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "livedoor.blogimg.jp": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "magazine.tagheuer.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "unavailable": 3
+      }
+    },
+    "manofmany.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "media.assettype.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "media.beehiiv.com": {
+      "urls": 4,
+      "rows": 10,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "media.gq-magazine.co.uk": {
+      "urls": 15,
+      "rows": 16,
+      "outcomes": {
+        "valid": 15
+      }
+    },
+    "lemag.cresus.fr": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "media.gq.com": {
+      "urls": 33,
+      "rows": 46,
+      "outcomes": {
+        "valid": 33
+      }
+    },
+    "media.licdn.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "media.richardmille.com": {
+      "urls": 4,
+      "rows": 10,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "media.revistagq.com": {
+      "urls": 1,
+      "rows": 4,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "media.vanityfair.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "media.rolex.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "media.victorinox.com": {
+      "urls": 1,
+      "rows": 3,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "media.voguearabia.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "medias.spotern.com": {
+      "urls": 14,
+      "rows": 14,
+      "outcomes": {
+        "valid": 14
+      }
+    },
+    "monochrome-watches.com": {
+      "urls": 3,
+      "rows": 4,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "mxp-media.ilnmedia.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "numero.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "objects-pprod.cdn.chopard.com": {
+      "urls": 1,
+      "rows": 4,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "nationaljeweler.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "occ-0-3541-1432.1.nflxso.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "objects-prod.cdn.chopard.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "omegaforums.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "otakumode.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "images.travelandleisureasia.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "img1.kakaocdn.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "interwatches.wordpress.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "jewellerynewsindia.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "pagesix.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "patek-res.cloudinary.com": {
+      "urls": 4,
+      "rows": 15,
+      "outcomes": {
+        "unavailable": 2,
+        "valid": 2
+      }
+    },
+    "perezcope.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "precisionwatches.com": {
+      "urls": 2,
+      "rows": 3,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "prestigedam.swatchgroup.biz": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "quillandpad.com": {
+      "urls": 8,
+      "rows": 12,
+      "outcomes": {
+        "valid": 8
+      }
+    },
+    "press.christies.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "professionalwatches.com": {
+      "urls": 1,
+      "rows": 3,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "r2.watchonista.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "relojea.es": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "revolutionwatch.com": {
+      "urls": 5,
+      "rows": 10,
+      "outcomes": {
+        "valid": 5
+      }
+    },
+    "resize.cdn.otakumode.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "not_image": 1
+      }
+    },
+    "res.cloudinary.com": {
+      "urls": 1,
+      "rows": 7,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "robbreport.com.sg": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "robbreport.com": {
+      "urls": 30,
+      "rows": 37,
+      "outcomes": {
+        "valid": 20,
+        "unavailable": 10
+      }
+    },
+    "pyxis.nymag.com": {
+      "urls": 1,
+      "rows": 3,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "panovire.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "regardingluxury.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "s.yimg.com": {
+      "urls": 6,
+      "rows": 7,
+      "outcomes": {
+        "valid": 6
+      }
+    },
+    "s1.abcstatics.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "s3.us-east-1.amazonaws.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "seikoworldtime.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "share-assets.fe.garmin.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "sharpmagazine.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "sothebys-com.brightspotcdn.com": {
+      "urls": 4,
+      "rows": 4,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "scottsnowden.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "sothebys-md.brightspotcdn.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "static.animecorner.me": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "static.republicworld.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "static.standard.co.uk": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "static.wixstatic.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "static.swatch.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "static0.cbrimages.com": {
+      "urls": 4,
+      "rows": 4,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "substackcdn.com": {
+      "urls": 2,
+      "rows": 3,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "stromwatches.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "swisswatches-magazine.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "tempusmagazine.co.uk": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "thegentlemanracer.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "timeandtidewatches.com": {
+      "urls": 28,
+      "rows": 44,
+      "outcomes": {
+        "valid": 28
+      }
+    },
+    "rrsg.s3.amazonaws.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "unavailable": 2
+      }
+    },
+    "timevibe.fi": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "tutima.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "uploads.nationaljeweler.com": {
+      "urls": 2,
+      "rows": 3,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "usercontent.one": {
+      "urls": 2,
+      "rows": 3,
+      "outcomes": {
+        "valid": 1,
+        "unavailable": 1
+      }
+    },
+    "vanguart.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "watchesbysjx.com": {
+      "urls": 4,
+      "rows": 4,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "watchespedia.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "watchmaestro.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "variety.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "s0.wp.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "soranews24.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "thediamondcollective.world": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "watchpaparazzi.com": {
+      "urls": 12,
+      "rows": 12,
+      "outcomes": {
+        "unavailable": 12
+      }
+    },
+    "watchpolice.com": {
+      "urls": 2,
+      "rows": 9,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "wornandwound.com": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "wristaficionado.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www-breitling.eu.saleor.cloud": {
+      "urls": 3,
+      "rows": 3,
+      "outcomes": {
+        "valid": 3
+      }
+    },
+    "www.abendzeitung-muenchen.de": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.ablogtowatch.com": {
+      "urls": 7,
+      "rows": 13,
+      "outcomes": {
+        "valid": 7
+      }
+    },
+    "www.apple.com": {
+      "urls": 2,
+      "rows": 4,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.atimelyperspective.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.backstreetheroes.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.blancpain.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.bobswatches.com": {
+      "urls": 5,
+      "rows": 5,
+      "outcomes": {
+        "valid": 5
+      }
+    },
+    "www.boston25news.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.carl-f-bucherer.com": {
+      "urls": 2,
+      "rows": 4,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.atpress.ne.jp": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.breitling.com": {
+      "urls": 1,
+      "rows": 11,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.crash.net": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.cityam.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.cwcwatch.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.dayandnightmagazine.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.czapek.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.emp.co.uk": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.europastar.com": {
+      "urls": 6,
+      "rows": 6,
+      "outcomes": {
+        "valid": 6
+      }
+    },
+    "www.exquisitetimepieces.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.finks.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.cartier.com": {
+      "urls": 1,
+      "rows": 13,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.forbes.com.au": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.fratellowatches.com": {
+      "urls": 4,
+      "rows": 5,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "www.g-central.com": {
+      "urls": 4,
+      "rows": 5,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "www.glashuette-original.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.glossy.co": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.grand-seiko.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.gracekellyonline.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.hamiltonwatch.com": {
+      "urls": 11,
+      "rows": 13,
+      "outcomes": {
+        "valid": 11
+      }
+    },
+    "www.harrywinston.com": {
+      "urls": 1,
+      "rows": 3,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.insidehook.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 1,
+        "unavailable": 1
+      }
+    },
+    "www.irishexaminer.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.jckonline.com": {
+      "urls": 4,
+      "rows": 5,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "www.longines.com": {
+      "urls": 1,
+      "rows": 21,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.livemint.com": {
+      "urls": 1,
+      "rows": 3,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.luxurybazaar.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.maxim.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.muehle-glashuette.de": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.luxe-infinity.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.omegawatches.com": {
+      "urls": 31,
+      "rows": 64,
+      "outcomes": {
+        "valid": 31
+      }
+    },
+    "www.originalprop.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.rado.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.realitytea.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.rebag.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.richardmille.com": {
+      "urls": 1,
+      "rows": 8,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.rollingstone.co.uk": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.sakurawatches.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.seikowatches.com": {
+      "urls": 4,
+      "rows": 26,
+      "outcomes": {
+        "valid": 4
+      }
+    },
+    "www.slashfilm.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.stuff.tv": {
+      "urls": 2,
+      "rows": 3,
+      "outcomes": {
+        "unavailable": 2
+      }
+    },
+    "www.suunto.com": {
+      "urls": 2,
+      "rows": 3,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.europesays.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "www.swisswatchexpo.com": {
+      "urls": 19,
+      "rows": 27,
+      "outcomes": {
+        "valid": 19
+      }
+    },
+    "www.thejamesbonddossier.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.the-saleroom.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.thejewelleryeditor.com": {
+      "urls": 1,
+      "rows": 8,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.thelist.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.thenationalnews.com": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.timesticking.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.tvstyleguide.com": {
+      "urls": 2,
+      "rows": 3,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.watchadvice.com.au": {
+      "urls": 2,
+      "rows": 4,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.hollywoodreporter.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "www.watchuseek.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.world-wrist-watch.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.watchfinder.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.yachtscroatia.com": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "zegarkiipasja.pl": {
+      "urls": 2,
+      "rows": 2,
+      "outcomes": {
+        "valid": 2
+      }
+    },
+    "www.watchhunter.org": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "ywcpiarrunpajlhiycps.supabase.co": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.intlpromotions.com": {
+      "urls": 1,
+      "rows": 2,
+      "outcomes": {
+        "unavailable": 1
+      }
+    },
+    "zerowest.watch": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "missing": 1
+      }
+    },
+    "www.webchronos.net": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "valid": 1
+      }
+    },
+    "www.nomos.de": {
+      "urls": 1,
+      "rows": 1,
+      "outcomes": {
+        "unavailable": 1
+      }
+    }
+  },
+  "policy": "Header-only image checks; no image files or Dials CDN URLs are copied. Only definite 404/410 or non-image responses are cleared. Network blocks and temporary errors stay unchanged."
+}
