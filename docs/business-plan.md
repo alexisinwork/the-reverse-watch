@@ -162,6 +162,13 @@ For retailer feeds, design tenant isolation and freshness before implementation.
 
 ## Current next action and durable handoff
 
+Deferred tooling idea, owner decision 2026-10-25: remember Replica Skill as a
+possible future workflow reference, but do not install, adapt or implement it
+yet. The owner supplied `https://github.com/nelakay/ai-website-cloner-claudeskill`
+as a candidate; its contents and capabilities have not been evaluated here.
+This is a parked idea, not part of the active implementation scope, and does
+not change the current product/data work or next action below.
+
 Local delivery evidence, 2026-10-24: `npm run check` passed formatting, lint,
 typecheck, 83 test files / 500 tests and the production build. An offline jsdom
 smoke check using the real widget loader passed placeholder handling, five-tool
