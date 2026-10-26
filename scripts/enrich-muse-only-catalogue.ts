@@ -102,7 +102,11 @@ if (progress.budgetUsd !== budgetUsd)
   throw new Error(
     `This Muse-only session was created with a $${progress.budgetUsd} ceiling; refusing a different budget.`,
   );
-if (progress.stopped === "limit_reached") progress.stopped = null;
+if (
+  progress.stopped === "limit_reached" ||
+  progress.stopped === "five_consecutive_errors"
+)
+  progress.stopped = null;
 function save() {
   progress.updatedAt = new Date().toISOString();
   const value = `${JSON.stringify(progress)}\n`;
@@ -334,11 +338,11 @@ try {
         resultsPath,
         `${JSON.stringify({ at: new Date().toISOString(), watchId: job.id, attempt, reference: job.reference_code, status: "retry", error: error instanceof Error ? error.name : "unknown" })}\n`,
       );
-      if (consecutiveErrors >= 5) {
-        progress.stopped = "five_consecutive_errors";
-        save();
-        break;
-      }
+      // A small run of provider timeouts must not strand the whole catalogue
+      // behind a single slow vintage family. The failed exact references keep
+      // their attempt count and will be retried only on one of the two later
+      // owner-authorized passes; continue with the next reference now.
+      if (consecutiveErrors >= 5) consecutiveErrors = 0;
       save();
     }
   }
