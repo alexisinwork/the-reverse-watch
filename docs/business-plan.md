@@ -289,6 +289,11 @@ local JSONL snapshot at
 data/watch-archive/local-snapshots/2026-10-25T23-01-48-212Z/. The runtime still
 uses its configured database; this snapshot provides local safekeeping, not an
 offline database service.
+Manual completion workbooks are written to the owner's Desktop by
+`scripts/export-manual-catalogue-workbooks.ts`: separate queues for missing
+price, movement, diameter, style and photo. Each row has an immutable catalogue
+ID, source URLs, Dials availability, a manual Dials check, and a "hide Dials
+link" choice that may be used only alongside owner-provided source evidence.
 
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
