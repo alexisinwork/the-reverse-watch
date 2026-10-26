@@ -302,8 +302,8 @@ brand/reference match, propagates verified fields to every matching local
 catalogue row. It keeps a separate allowance journal, rejects a changed budget,
 and disables the Perplexity fallback. The $100 limit is a conservative local
 reservation, not a claim that every outstanding record can be researched in
-this pass. Re-export the five manual workbooks after the worker stops so their
-rows reflect the newly filled local values.
+this pass. The owner later withdrew the manual-completion workbook workstream;
+the worker's local updates remain available in the catalogue instead.
 
 Space City catalogue policy follow-up, 2026-10-26: the owner chose the complete
 CC BY 4.0 Space City catalogue as a recommendation-eligible historical-market
@@ -313,8 +313,8 @@ is used as an approximate fit starting point, and the USD median is stored as
 an approximate historical market price. It must always state that the price may
 have changed and is not retail. An individual photo and a current price check
 are deferred until that reference is actually selected for a visitor result;
-their URLs are then retained locally. The owner-facing priority workbook has
-all 25,385 source observations and a separate 10,000-record manual queue.
+their URLs are then retained locally. The owner withdrew the one-off priority
+workbook, so manual-completion queues are not an active workstream.
 
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
