@@ -295,6 +295,16 @@ price, movement, diameter, style and photo. Each row has an immutable catalogue
 ID, source URLs, Dials availability, a manual Dials check, and a "hide Dials
 link" choice that may be used only alongside owner-provided source evidence.
 
+Muse-only catalogue completion follow-up, 2026-10-26: the owner authorized a
+new, independent $100 ceiling for up to three passes. The resumable worker
+prioritizes the missing-confirmed-price queue and, after a strict exact
+brand/reference match, propagates verified fields to every matching local
+catalogue row. It keeps a separate allowance journal, rejects a changed budget,
+and disables the Perplexity fallback. The $100 limit is a conservative local
+reservation, not a claim that every outstanding record can be researched in
+this pass. Re-export the five manual workbooks after the worker stops so their
+rows reflect the newly filled local values.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
