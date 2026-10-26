@@ -1,6 +1,6 @@
 {
   "source": "https://spacecitytimepiece.com/watches",
-  "retrievedAt": "2026-10-25T18:19:17.019Z",
+  "retrievedAt": "2026-10-26T18:25:33.101Z",
   "snapshot": "069db9b44cb4563c64814acc0607b75c1dd87ab12a1da3951ba803f44abf7abf",
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "upstream": "philmorefkoung/Webscrapped-Watch-Dataset (MIT) — Chrono24 secondary market 2017-2023",
@@ -114,8 +114,8 @@
       "sha256": "49b7ba585264bc99d590e6b7a66e7757afb64f32b09630bde80b1c4c90d61ba8"
     }
   ],
-  "linkedExistingIdentities": 10166,
-  "addedIdentities": 10149,
-  "masterTotal": 55029,
+  "linkedExistingIdentities": 21540,
+  "addedIdentities": 0,
+  "masterTotal": 56719,
   "policy": "Historical listing prices and conflicting size arrays retained as evidence only; no overwrites of primary facts, images or confirmed prices. CC BY attribution retained per source page."
 }

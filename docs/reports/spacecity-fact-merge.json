@@ -1,13 +1,14 @@
 {
-  "at": "2026-10-25T21:20:05.959Z",
-  "spaceCitySourceClaims": 18124,
-  "exactIdentityClaims": 18124,
-  "rowsUpdated": 1270,
+  "at": "2026-10-26T18:26:34.400Z",
+  "spaceCitySourceClaims": 25385,
+  "exactIdentityClaims": 25385,
+  "rowsUpdated": 25385,
   "fields": {
-    "diameter": 12784,
-    "movement": 12189,
-    "caseMaterial": 11859,
-    "braceletMaterial": 9590
+    "diameter": 23490,
+    "movement": 18364,
+    "approximateHistoricalPriceUsd": 24743,
+    "caseMaterial": 17204,
+    "braceletMaterial": 14083
   },
-  "policy": "Exact Space City reference identities are marked reference-catalogue verified. Existing non-null facts were preserved. Aggregated historical prices, multi-size groups and model/year claims remain archived evidence only; per-record source and CC BY attribution retained."
+  "policy": "Owner policy 2026-10-26: exact Space City reference identities are approved as catalogue references. The first published size is an approximate case-diameter starting point. USD historical listing medians are approximate market prices, never retail prices; every result must warn that they may change and be rechecked when shown. Existing confirmed prices and non-null facts are preserved."
 }

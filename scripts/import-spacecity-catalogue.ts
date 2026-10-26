@@ -123,7 +123,6 @@ try {
   >`select id,identity_key from private.watch_catalogue`;
   const previous = new Set(before.map((row) => row.identity_key));
   const entries = [...groups]
-    .filter(([, rows]) => rows.length === 1)
     .map(([key, rows]) => ({
       identity_key: key,
       brand: rows[0]!.brand,
@@ -147,7 +146,9 @@ try {
   for (let n = 0; n < records.length; n += 250) {
     const batch = records.slice(n, n + 250).map((row) => {
       const key = catalogueIdentityKey(row.brand, row.model, row.reference),
-        id = groups.get(key)?.length === 1 ? (byKey.get(key) ?? null) : null;
+        // Repeated historic listings for one exact brand/model/reference are
+        // source observations of one catalogue identity, not separate watches.
+        id = byKey.get(key) ?? null;
       return {
         source: "spacecity",
         snapshot,
@@ -165,7 +166,11 @@ try {
         } as postgres.JSONValue),
       };
     });
-    await sql`insert into private.watch_catalogue_intake ${sql(batch)} on conflict(source,snapshot,source_record_id) do nothing`;
+    await sql`insert into private.watch_catalogue_intake ${sql(batch)}
+      on conflict(source,snapshot,source_record_id) do update set
+        watch_id=excluded.watch_id,
+        state=excluded.state,
+        payload=excluded.payload`;
   }
   const linked = [...groups.keys()].filter((key) => previous.has(key)).length;
   const added = ids.filter((row) => !previous.has(row.identity_key)).length;
