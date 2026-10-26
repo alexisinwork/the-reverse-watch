@@ -316,6 +316,14 @@ are deferred until that reference is actually selected for a visitor result;
 their URLs are then retained locally. The owner withdrew the one-off priority
 workbook, so manual-completion queues are not an active workstream.
 
+Final price/photo pass, 2026-10-26: the owner authorized one simplified,
+Muse-only pass for the final 11,598 exact references that meet the technical
+qualification but still lack a usable price. Each reference receives at most
+one web-grounded lookup for an approximate price and public image URL. The hard
+local ceiling is USD 63.79; the worker stops without exceeding it and does not
+fall back to Perplexity. Once it is complete, freeze catalogue expansion and
+rehydrate every cached result across every feature from the new local catalogue.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
