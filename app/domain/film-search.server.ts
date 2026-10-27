@@ -258,7 +258,13 @@ export async function searchFilmWatches(
   /** Movie, series, actor, character or celebrity, as the visitor chose. */
   kind: FilmSubjectKind | null = null,
 ): Promise<AiSearchOutcome> {
-  const deps = defaultDeps(overrides);
+  const baseDeps = defaultDeps(overrides);
+  // Perplexity is the evidence-search primary; Muse ranks/checks its findings
+  // and must not introduce a separate candidate into a visitor result.
+  const deps: Deps = {
+    ...baseDeps,
+    config: { ...baseDeps.config, webSearch: "perplexity" },
+  };
   if (!searchReady(deps.config)) {
     logError(
       "ai_watch_search_unavailable",

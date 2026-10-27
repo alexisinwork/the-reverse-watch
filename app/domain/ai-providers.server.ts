@@ -514,6 +514,30 @@ export async function webResearchJson(
   );
 }
 
+/** Independent grounded answers used only when validating an old cache.
+ * Both providers receive the same non-identifying watch constraints. */
+export async function dualWebResearchJson(
+  prompt: string,
+  schema: Record<string, unknown>,
+  deps: Deps,
+  options: Parameters<typeof webResearchJson>[3] = {},
+) {
+  if (!deps.config.museSpark || !deps.config.perplexity)
+    throw new Error(
+      "Muse Spark and Perplexity are both required for validation.",
+    );
+  const muse: Deps = { ...deps, config: { ...deps.config, webSearch: "muse" } };
+  const perplexity: Deps = {
+    ...deps,
+    config: { ...deps.config, webSearch: "perplexity" },
+  };
+  const [museResult, perplexityResult] = await Promise.allSettled([
+    webResearchJson(prompt, schema, muse, options),
+    webResearchJson(prompt, schema, perplexity, options),
+  ]);
+  return { museResult, perplexityResult };
+}
+
 /**
  * Pages about each query (for example "Omega 210.30.42.20.03.001"): the
  * Perplexity Search API, or Muse's web search asked for product-page URLs.

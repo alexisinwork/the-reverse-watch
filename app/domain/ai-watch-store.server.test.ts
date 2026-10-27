@@ -34,7 +34,11 @@ describe("searchWithStore", () => {
 
   it("serves a stored search without searching again", async () => {
     const fetchImpl = vi.fn(async () =>
-      json({ summary: "Stored.", watches: [foundWatch] }),
+      json({
+        validationStatus: "valid",
+        summary: "Stored.",
+        watches: [foundWatch],
+      }),
     );
 
     const result = await searchWithStore(
@@ -120,6 +124,7 @@ describe("searchWithStore", () => {
   it("drops a stored watch whose source is no longer a safe URL", async () => {
     const fetchImpl = vi.fn(async () =>
       json({
+        validationStatus: "valid",
         summary: "Stored.",
         watches: [
           { ...foundWatch, sourceUrl: "javascript:alert(1)" },

@@ -11,6 +11,7 @@ import {
 import { catalogueWatchSchema } from "../app/domain/watch-catalogue";
 const at = process.argv.indexOf("--limit"),
   limit = at >= 0 ? Number(process.argv[at + 1]) : 25;
+const force = process.argv.includes("--force");
 if (!Number.isInteger(limit) || limit < 1 || limit > 5000)
   throw new Error("Invalid limit");
 if (!process.env.DIRECT_DATABASE_URL)
@@ -35,7 +36,7 @@ try {
     retained = 0;
   for (const watch of watches) {
     const file = `${dir}/${watch.id}.json`;
-    if (existsSync(file)) {
+    if (existsSync(file) && !force) {
       const previous = z
         .object({ status: z.string() })
         .parse(JSON.parse(await readFile(file, "utf8")));
