@@ -524,6 +524,14 @@ is recorded even if the other provider timed out. Requests already in flight
 can still accrue charges, and other paid workflows do not use this halt; it is
 not a provider-side hard spending cap. Visitor validation stays disabled.
 
+Quiz constraint follow-up: a live proposal no longer records the visitor's
+requested style or complications as facts about a watch. Optional requirements
+that the current live candidate schema cannot represent now fail closed, and
+near fits cannot exceed the visitor's selected case-diameter range. Provider
+prompts use that range without also sending the exact wrist measurement.
+The live validator still needs supported, source-backed facts before these
+optional constraints can yield live results.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

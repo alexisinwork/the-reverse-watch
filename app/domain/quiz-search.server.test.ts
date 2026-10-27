@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { AiSearchView } from "./ai-watch-types";
 import type { ProfileV4 } from "./questionnaire-v4";
-import { searchQuiz } from "./quiz-search.server";
+import { liveFindToEntry, searchQuiz } from "./quiz-search.server";
 import {
   clearCatalogueCache,
   type CatalogueClient,
@@ -109,6 +109,16 @@ const liveResult: AiSearchView = {
 describe("searchQuiz", () => {
   beforeEach(() => clearCatalogueCache());
 
+  it("does not write requested style or complications as watch facts", () => {
+    if (liveResult.status !== "found") throw new Error("expected fixture");
+    const entry = liveFindToEntry(liveResult.watches[0]!, {
+      ...profile,
+      requiredComplications: ["date"],
+    });
+    expect(entry.styles).toEqual([]);
+    expect(entry.complications).toEqual([]);
+  });
+
   it("answers from the catalogue without a live search when it has enough", async () => {
     const store = client([
       row(1),
@@ -170,7 +180,8 @@ describe("searchQuiz", () => {
       p_watch: {
         brand: "Longines",
         priceStatus: "unconfirmed",
-        styles: ["dress", "everyday"],
+        styles: [],
+        complications: [],
       },
     });
   });
@@ -217,9 +228,9 @@ describe("searchQuiz", () => {
       row(1),
       row(2),
       row(3),
-      // In budget but 44 mm for a 17.5 cm wrist: a near fit.
+      // In budget but outside the enforced diameter range.
       row(4, { caseDiameterMm: 44 }),
-      // Misses case size and water resistance: a near fit, ranked after 4.
+      // An additional water miss does not make an oversized case eligible.
       row(5, { caseDiameterMm: 44, waterResistanceM: 30 }),
       // Out of budget, or unsafe for a nickel allergy: never offered.
       row(6, { priceAmount: 9_000 }),
@@ -248,17 +259,12 @@ describe("searchQuiz", () => {
       "Brand2",
       "Brand3",
       "Brand7",
-      "Brand4",
-      "Brand5",
     ]);
-    expect(plain.watches[4]!.details.misses).toEqual([
-      "Case size outside your range",
-    ]);
-    expect(plain.watches[5]!.details.misses).toEqual([
-      "Case size outside your range",
-      "Less water resistance than you asked for",
-    ]);
-    expect(plain.summary).toContain("2 more are in your price range");
+    expect(
+      plain.watches.every(
+        (watch) => !["Brand4", "Brand5"].includes(watch.brand),
+      ),
+    ).toBe(true);
   });
 
   it("searches the web before falling back to close fits", async () => {
@@ -276,7 +282,6 @@ describe("searchQuiz", () => {
     expect(found.watches.map((watch) => watch.brand)).toEqual([
       "Brand1",
       "Longines",
-      "Brand4",
     ]);
 
     clearCatalogueCache();
@@ -286,10 +291,7 @@ describe("searchQuiz", () => {
       runLive: async () => ({ status: "no_match", summary: "None." }),
     });
     if (nothingLive.status !== "found") throw new Error("expected found");
-    expect(nothingLive.watches.map((watch) => watch.brand)).toEqual([
-      "Brand1",
-      "Brand4",
-    ]);
+    expect(nothingLive.watches.map((watch) => watch.brand)).toEqual(["Brand1"]);
   });
 
   it("returns at most ten watches", async () => {

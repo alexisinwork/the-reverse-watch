@@ -20,7 +20,6 @@ import {
   MISS_LABELS,
   nearFits,
   QUIZ_RESULT_LIMIT,
-  stylesForScenarios,
   type CatalogueWatch,
 } from "./watch-catalogue";
 import {
@@ -66,11 +65,13 @@ export function liveFindToEntry(
     referenceConfirmed:
       details.referenceVerified === true &&
       normalizeReference(watch.referenceCode) !== null,
-    styles: stylesForScenarios(profile.wearingScenarios),
+    // A visitor's requested style is not evidence that this watch has it.
+    styles: [],
     caseDiameterMm: details.caseDiameterMm ?? null,
     waterResistanceM: details.waterResistanceM ?? null,
     movement: details.movement ?? null,
-    complications: [...profile.requiredComplications],
+    // The current live result does not carry verified complications.
+    complications: [],
     caseMaterial: details.materials?.case ?? null,
     casebackMaterial: details.materials?.caseback ?? null,
     strapMaterial: details.materials?.strap ?? null,

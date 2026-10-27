@@ -133,7 +133,7 @@ export function quizConstraintLines(profile: ProfileV4) {
     range.maximum === null
       ? `New retail price of ${money(range.minimum, profile.budgetCurrency)} or more.`
       : `New retail price between ${money(range.minimum, profile.budgetCurrency)} and ${money(range.maximum, profile.budgetCurrency)}.`,
-    `Case diameter ${diameter.minimumMm}-${diameter.maximumMm} mm (wearer's wrist ${profile.wristCm} cm).`,
+    `Case diameter ${diameter.minimumMm}-${diameter.maximumMm} mm.`,
     profile.minimumWaterResistanceM > 0
       ? `Water resistance of at least ${profile.minimumWaterResistanceM} m.`
       : "No water-resistance requirement.",
@@ -325,6 +325,15 @@ export function quizRuleFailures(
   ) {
     failures.push("nickel");
   }
+  // These constraints are accepted by the form but are not represented in
+  // the current provider candidate schema. An unknown fact cannot pass.
+  if (profile.requiredComplications.length) failures.push("complications");
+  if (profile.maxCaseThicknessMm !== undefined) failures.push("thickness");
+  if (profile.caseShape !== undefined) failures.push("case_shape");
+  if (profile.crystal !== undefined) failures.push("crystal");
+  if (profile.displayCaseback !== undefined) failures.push("caseback");
+  if (profile.movementConstruction !== undefined) failures.push("calibre");
+  if (profile.microAdjustmentRequired !== undefined) failures.push("clasp");
   return failures;
 }
 

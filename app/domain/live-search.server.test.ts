@@ -4,6 +4,7 @@ import {
   collectUntilDeadline,
   quizCacheInput,
   quizConstraintLines,
+  quizRuleFailures,
   searchQuizWatches,
 } from "./quiz-live-search.server";
 import { runSafely, type Deps } from "./ai-providers.server";
@@ -437,5 +438,44 @@ describe("quiz cache input and constraints", () => {
     const lines = quizConstraintLines(profile).join("\n");
     expect(lines).toContain("between EUR 3,000 and EUR 4,000");
     expect(lines).toContain("Case diameter 38-42 mm");
+    expect(lines).not.toContain("17.5");
+  });
+
+  it("does not treat unrepresented quiz requirements as satisfied", () => {
+    const candidate = {
+      brand: "Longines",
+      model: "Spirit",
+      referenceCode: "L3810",
+      price: { amount: 3350, currency: "EUR" },
+      priceInBudget: 3350,
+      caseDiameterMm: 40,
+      waterResistanceM: 100,
+      movement: "automatic",
+      materials: { case: "steel", caseback: "steel", strap: "steel" },
+      sourceHint: null,
+      imageHint: null,
+      note: null,
+    };
+    expect(quizRuleFailures(candidate, profile)).toEqual([]);
+    expect(
+      quizRuleFailures(candidate, {
+        ...profile,
+        requiredComplications: ["date"],
+        maxCaseThicknessMm: 12,
+        caseShape: "round",
+        crystal: "sapphire",
+        displayCaseback: true,
+        movementConstruction: "manufacture",
+        microAdjustmentRequired: true,
+      }),
+    ).toEqual([
+      "complications",
+      "thickness",
+      "case_shape",
+      "crystal",
+      "caseback",
+      "calibre",
+      "clasp",
+    ]);
   });
 });

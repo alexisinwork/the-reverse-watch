@@ -489,9 +489,9 @@ export function matchCatalogue(
 /** How many watches a quiz shortlist can hold (5 shown, 5 more on request). */
 export const QUIZ_RESULT_LIMIT = 10;
 
-// Never relaxed for a near fit: the budget, a nickel allergy and a
-// function the visitor said they must have.
-const HARD_RULES = new Set(["price", "nickel", "complications"]);
+// Never relaxed for a near fit: budget, the chosen diameter range,
+// a nickel allergy and a function the visitor said they must have.
+const HARD_RULES = new Set(["price", "diameter", "nickel", "complications"]);
 const MAX_MISSES = 2;
 
 /** What a near fit misses, in the visitor's words. */
