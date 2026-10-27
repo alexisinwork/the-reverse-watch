@@ -210,9 +210,75 @@ describe("searchWithStore", () => {
           status: "unavailable",
           reason: "in_progress",
         }),
+        waitForValidation: async () => {},
       },
     );
     expect(result).toEqual({ status: "unavailable" });
+  });
+
+  it("lets simultaneous visitors share the first committed result", async () => {
+    let published = false;
+    let releaseFirst: (() => void) | undefined;
+    const firstFinished = new Promise<void>((resolve) => {
+      releaseFirst = resolve;
+    });
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes("ai_watch_search_get_v1"))
+        return json({
+          validationStatus: "unverified",
+          summary: "Draft.",
+          watches: [foundWatch],
+        });
+      return json(
+        published
+          ? {
+              validationStatus: "valid",
+              summary: "Checked.",
+              watches: [validatedWatch],
+              validatedAt: "2026-10-27T00:00:00Z",
+              policyVersion: "source-v1",
+            }
+          : null,
+      );
+    });
+    let calls = 0;
+    const validateDraft = vi.fn(async () => {
+      calls++;
+      if (calls > 1)
+        return { status: "unavailable" as const, reason: "in_progress" };
+      await firstFinished;
+      published = true;
+      return {
+        status: "verified" as const,
+        watches: [validatedWatch],
+        rejected: 0,
+      };
+    });
+    const request = {
+      kind: "film" as const,
+      cacheInput: { query: "daniel craig" },
+      run: finderMock.runAiWatchSearch,
+    };
+    const first = searchWithStore(request, { store, fetchImpl, validateDraft });
+    // The first caller must own the validation before the second enters it.
+    while (calls === 0) await Promise.resolve();
+    const second = searchWithStore(request, {
+      store,
+      fetchImpl,
+      validateDraft,
+      waitForValidation: async () => {
+        releaseFirst?.();
+        await first;
+      },
+    });
+    expect(await first).toMatchObject({ status: "found", fromCache: false });
+    expect(await second).toMatchObject({
+      status: "found",
+      fromCache: true,
+      watches: [validatedWatch],
+    });
+    expect(validateDraft).toHaveBeenCalledTimes(2);
+    expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
   });
 
   it("reloads the snapshot when another request published just before reservation", async () => {

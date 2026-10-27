@@ -482,6 +482,12 @@ cost. This fixes undercounting after a response but does not establish an
 advance per-request cost ceiling. Sources: https://dev.meta.ai/docs/pricing-rate-limits
 and https://dev.meta.ai/docs/api-reference/responses/schemas (retrieved 2026-10-27).
 
+Concurrent cache reads: when a validation is already running, a second
+visitor now polls the committed snapshot for a bounded interval and reuses it
+without launching another provider call. A local concurrent-request test covers
+publication and fail-closed timeout. This does not enable visitor validation;
+provider costs, master persistence and missing-cache discovery remain open.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

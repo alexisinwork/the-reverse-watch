@@ -183,6 +183,9 @@ export async function searchWithStore(
     store = loadAiWatchStoreConfig(),
     fetchImpl = fetch,
     validateDraft,
+    waitForValidation = () =>
+      new Promise<void>((resolve) => setTimeout(resolve, 1_000)),
+    now = Date.now,
   }: {
     store?: StoreConfig | null;
     fetchImpl?: typeof fetch;
@@ -192,6 +195,9 @@ export async function searchWithStore(
       cacheKey: string,
       watches: FoundWatch[],
     ) => Promise<ValidationRun>;
+    /** A bounded delay used only while another request owns this key. */
+    waitForValidation?: () => Promise<void>;
+    now?: () => number;
   } = {},
 ): Promise<AiSearchView> {
   const cacheKey = aiSearchCacheKey(kind, cacheInput);
@@ -213,6 +219,30 @@ export async function searchWithStore(
         const draft = await loadStoredSearch(store, cacheKey, fetchImpl);
         if (!draft) return { status: "unavailable" };
         const result = await validateDraft(cacheKey, draft.watches);
+        if (
+          result.status === "unavailable" &&
+          result.reason === "in_progress"
+        ) {
+          // Share the first request's result without starting more research.
+          // Stop after 20 seconds if it fails, stalls, or outlives this request.
+          const deadline = now() + 20_000;
+          for (let i = 0; i < 20 && now() < deadline; i++) {
+            await waitForValidation();
+            if (now() >= deadline) break;
+            const published = await loadValidatedSnapshot(
+              { config: store, fetchImpl },
+              cacheKey,
+            );
+            if (published)
+              return {
+                status: "found",
+                summary: published.summary,
+                watches: published.watches,
+                fromCache: true,
+              };
+          }
+          return { status: "unavailable" };
+        }
         if (result.status !== "verified" && result.reason !== "valid")
           return { status: "unavailable" };
         // The validator publishes atomically. Read the committed snapshot so a
