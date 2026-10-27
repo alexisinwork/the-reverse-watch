@@ -517,6 +517,13 @@ from the full catalogue; similar model names and ambiguous variants no longer
 borrow a photo. This does not search for missing facts or activate visitor
 validation.
 
+Validation overrun safeguard: migration 0095 records observed per-card costs
+when they exceed $0.025 and atomically halts new reservations in the validation
+ledger. The reservation remains held for reconciliation, and a known overrun
+is recorded even if the other provider timed out. Requests already in flight
+can still accrue charges, and other paid workflows do not use this halt; it is
+not a provider-side hard spending cap. Visitor validation stays disabled.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

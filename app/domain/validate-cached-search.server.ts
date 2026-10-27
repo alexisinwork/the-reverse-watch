@@ -15,7 +15,7 @@ export type ValidationBrief = {
 
 type Reserve =
   | { state: "reserved"; attemptId: string }
-  | { state: "in_progress" | "monthly_limit" | "valid" };
+  | { state: "in_progress" | "monthly_limit" | "budget_halted" | "valid" };
 
 export type ValidationServices = {
   hydrate: (watches: FoundWatch[]) => Promise<FoundWatch[]>;
@@ -29,6 +29,10 @@ export type ValidationServices = {
     secondary: ProviderAssertion,
   ) => Promise<ValidationDecision>;
   settle: (attemptId: string, costs: (number | null)[]) => Promise<boolean>;
+  reportOverrun: (
+    attemptId: string,
+    costs: (number | null)[],
+  ) => Promise<boolean>;
   publish: (
     attemptId: string,
     watches: FoundWatch[],
@@ -69,6 +73,16 @@ export async function validateCachedSearch(
         services.primary(brief),
         services.secondary(brief),
       ]);
+      const known = [primary, secondary].flatMap((response) =>
+        response.status === "fulfilled" &&
+        Number.isFinite(response.value.costUsd) &&
+        response.value.costUsd >= 0
+          ? [response.value.costUsd]
+          : [],
+      );
+      const knownCost = known.reduce((total, value) => total + value, 0);
+      if (knownCost > 0.025)
+        return { decision: null, cost: knownCost, overrun: true };
       if (primary.status !== "fulfilled" || secondary.status !== "fulfilled")
         return { decision: null, cost: null };
       const cost = primary.value.costUsd + secondary.value.costUsd;
@@ -103,11 +117,18 @@ export async function validateCachedSearch(
       return { decision, cost };
     }),
   );
-  if (results.some((result) => result.overrun))
+  if (results.some((result) => result.overrun)) {
+    await services
+      .reportOverrun(
+        reservation.attemptId,
+        results.map((result) => result.cost),
+      )
+      .catch(() => false);
     return {
       status: "unavailable",
       reason: "provider cost exceeded reservation",
     };
+  }
   const checked = results.flatMap((result) =>
     result.decision?.status === "verified" ? [result.decision.watch] : [],
   );

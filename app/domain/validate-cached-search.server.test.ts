@@ -52,6 +52,7 @@ function services(): ValidationServices {
       }),
     ),
     settle: vi.fn(async () => true),
+    reportOverrun: vi.fn(async () => true),
     publish: vi.fn(async () => true),
   };
 }
@@ -202,6 +203,24 @@ describe("validating a cached result under a reservation", () => {
       reason: "provider cost exceeded reservation",
     });
     expect(deps.settle).not.toHaveBeenCalled();
+    expect(deps.reportOverrun).toHaveBeenCalledWith("attempt", [0.028]);
     expect(deps.inspect).not.toHaveBeenCalled();
+  });
+
+  it("halts on a known overrun even if the other provider fails", async () => {
+    const deps = services();
+    deps.primary = vi.fn(async () => ({
+      ...assertion("perplexity"),
+      costUsd: 0.03,
+    }));
+    deps.secondary = vi.fn(async () => {
+      throw new Error("timeout");
+    });
+    expect(await validateCachedSearch("a".repeat(64), [watch], deps)).toEqual({
+      status: "unavailable",
+      reason: "provider cost exceeded reservation",
+    });
+    expect(deps.reportOverrun).toHaveBeenCalledWith("attempt", [0.03]);
+    expect(deps.settle).not.toHaveBeenCalled();
   });
 });

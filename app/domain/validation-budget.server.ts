@@ -13,6 +13,7 @@ const reserveSchema = z.discriminatedUnion("state", [
   }),
   z.object({ state: z.literal("in_progress") }),
   z.object({ state: z.literal("monthly_limit") }),
+  z.object({ state: z.literal("budget_halted") }),
   z.object({ state: z.literal("valid") }),
 ]);
 
@@ -30,9 +31,31 @@ export async function reserveValidationBudget(
   )
     throw new Error("Invalid watch count");
   return reserveSchema.parse(
-    await rpc(client, "ai_watch_validation_reserve_v2", {
+    await rpc(client, "ai_watch_validation_reserve_v3", {
       p_cache_key: cacheKey,
       p_watch_count: watchCount,
+    }),
+  );
+}
+
+/** Persist known overspend and halt future reservations; keep this attempt
+ * reserved until its unknown or excess charges are reconciled. */
+export async function reportValidationOverrun(
+  client: CatalogueClient,
+  attemptId: string,
+  costs: readonly (number | null)[],
+) {
+  z.string().uuid().parse(attemptId);
+  z.array(z.number().finite().nonnegative().max(100_000).nullable())
+    .min(1)
+    .max(8)
+    .parse(costs);
+  if (!costs.some((cost) => cost !== null && cost > VALIDATION_WATCH_LIMIT_USD))
+    throw new Error("No observed overrun");
+  return z.boolean().parse(
+    await rpc(client, "ai_watch_validation_report_overrun_v1", {
+      p_attempt_id: attemptId,
+      p_costs: costs,
     }),
   );
 }

@@ -4,6 +4,7 @@ import type { ValidationServices } from "./validate-cached-search.server";
 import { validateCachedWatchFromSources } from "./validate-cached-watch.server";
 import {
   reserveValidationBudget,
+  reportValidationOverrun,
   settleValidationBudget,
 } from "./validation-budget.server";
 import { validationProviderCalls } from "./validation-provider-calls.server";
@@ -60,6 +61,8 @@ export function validationServices(
       };
     },
     settle: (attempt, costs) => settleValidationBudget(client, attempt, costs),
+    reportOverrun: (attempt, costs) =>
+      reportValidationOverrun(client, attempt, costs),
     publish: (attempt, watches, costs) =>
       publishValidatedSnapshot(client, attempt, watches, costs),
   };
