@@ -410,6 +410,16 @@ These RPCs are not yet connected to provider calls. Other existing paid paths,
 including alternatives and cron jobs, do not yet share this ledger, so it is
 not a global guarantee of USD 100 in provider invoices.
 
+Validation orchestration development: the new orchestration hydrates from the
+catalogue, deduplicates up to eight candidates, reserves before any provider
+call, runs two injected provider checks, checks cited pages, and settles each
+card before returning accepted results. A missing provider or unknown cost
+consumes the conservative reservation. Parser tests reject unsupported claims,
+missing citations and Muse responses with no completed search; Perplexity cost
+must be supplied by its response and Muse cost is conservatively calculated from
+usage. The provider request adapters and cache promotion are not connected yet,
+and the exact actual provider invoice is not guaranteed by these parsers.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
