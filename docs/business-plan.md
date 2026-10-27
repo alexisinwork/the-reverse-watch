@@ -397,6 +397,19 @@ lexical gate, not proof that a page links a person to a watch; provider assertio
 still need semantic validation. The new checker and reconciler are tested but
 remain disconnected from the paid runtime and cache promotion.
 
+Validation budget foundation, 2026-10-27: additive migration 0091 provides
+server-only atomic reservations for one to eight watch cards, at USD 0.025 per
+card and USD 0.20 per search, within a USD 100 UTC calendar-month ledger. It
+works for a cache miss and rejects concurrent active attempts for the same hash.
+Settlement checks each card separately, uses the original reservation month,
+and conservatively rounds the monthly charge up. Unknown costs must retain or
+consume the full reservation; a crash does not automatically release funds.
+The SQL was exercised before and after deployment in rolled-back transactions,
+including duplicate claim, cost rejection, monthly cap, idempotency and grants.
+These RPCs are not yet connected to provider calls. Other existing paid paths,
+including alternatives and cron jobs, do not yet share this ledger, so it is
+not a global guarantee of USD 100 in provider invoices.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

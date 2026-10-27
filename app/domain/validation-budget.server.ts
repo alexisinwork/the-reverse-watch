@@ -1,0 +1,64 @@
+import { z } from "zod";
+
+import { rpc, type CatalogueClient } from "./watch-catalogue.server";
+
+export const VALIDATION_WATCH_LIMIT_USD = 0.025;
+export const VALIDATION_SEARCH_WATCH_LIMIT = 8;
+
+const reserveSchema = z.discriminatedUnion("state", [
+  z.object({
+    state: z.literal("reserved"),
+    attemptId: z.string().uuid(),
+    reservedUsd: z.number().positive().max(0.2),
+  }),
+  z.object({ state: z.literal("in_progress") }),
+  z.object({ state: z.literal("monthly_limit") }),
+]);
+
+/** Reserve before any provider request. Only a non-identifying cache hash is sent. */
+export async function reserveValidationBudget(
+  client: CatalogueClient,
+  cacheKey: string,
+  watchCount: number,
+) {
+  if (!/^[0-9a-f]{64}$/.test(cacheKey)) throw new Error("Invalid cache key");
+  if (
+    !Number.isInteger(watchCount) ||
+    watchCount < 1 ||
+    watchCount > VALIDATION_SEARCH_WATCH_LIMIT
+  )
+    throw new Error("Invalid watch count");
+  return reserveSchema.parse(
+    await rpc(client, "ai_watch_validation_reserve_v2", {
+      p_cache_key: cacheKey,
+      p_watch_count: watchCount,
+    }),
+  );
+}
+
+/** An unknown provider cost must be conservatively settled at the full per-watch
+ * reservation; callers must never replace a timeout with a guessed zero cost. */
+export async function settleValidationBudget(
+  client: CatalogueClient,
+  attemptId: string,
+  costs: readonly (number | null)[],
+) {
+  if (
+    !z.string().uuid().safeParse(attemptId).success ||
+    costs.length < 1 ||
+    costs.length > VALIDATION_SEARCH_WATCH_LIMIT
+  )
+    throw new Error("Invalid settlement");
+  const charges = costs.map((cost) => {
+    if (cost === null) return VALIDATION_WATCH_LIMIT_USD;
+    if (!Number.isFinite(cost) || cost < 0 || cost > VALIDATION_WATCH_LIMIT_USD)
+      throw new Error("Invalid watch cost");
+    return cost;
+  });
+  return z.boolean().parse(
+    await rpc(client, "ai_watch_validation_settle_v2", {
+      p_attempt_id: attemptId,
+      p_costs_usd: charges,
+    }),
+  );
+}
