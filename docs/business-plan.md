@@ -474,6 +474,14 @@ references agree and are not placeholders. Tests cover agreement, disagreement
 and missing values. This remains an offline-tested component, not an active
 visitor feature; no catalogue records or caches were verified by this change.
 
+Muse billing correction: Meta documents search pricing per query, and a single
+`web_search_call` can contain multiple queries. The validation parser now
+charges for each reported query instead of assuming one query per tool call;
+when the query count is unavailable it fails closed and retains the reserved
+cost. This fixes undercounting after a response but does not establish an
+advance per-request cost ceiling. Sources: https://dev.meta.ai/docs/pricing-rate-limits
+and https://dev.meta.ai/docs/api-reference/responses/schemas (retrieved 2026-10-27).
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

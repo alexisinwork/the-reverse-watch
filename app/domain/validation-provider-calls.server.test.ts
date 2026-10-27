@@ -48,8 +48,14 @@ describe("metered validation provider requests", () => {
               },
             })
           : Response.json({
+              status: "completed",
+              model: "muse-spark-1.3-contributor",
               output: [
-                { type: "web_search_call", status: "completed" },
+                {
+                  type: "web_search_call",
+                  status: "completed",
+                  action: { type: "search", queries: ["Omega"] },
+                },
                 {
                   type: "message",
                   content: [

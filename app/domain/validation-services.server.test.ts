@@ -79,8 +79,14 @@ describe("validation services integration", () => {
       if (endpoint.includes("muse-api.example")) {
         order.push("muse");
         return Response.json({
+          status: "completed",
+          model: "muse-spark-1.3-contributor",
           output: [
-            { type: "web_search_call", status: "completed" },
+            {
+              type: "web_search_call",
+              status: "completed",
+              action: { type: "search", queries: ["Omega"] },
+            },
             {
               type: "message",
               content: [

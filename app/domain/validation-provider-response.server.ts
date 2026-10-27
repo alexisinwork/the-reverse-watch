@@ -115,6 +115,8 @@ export function parseMuseValidationResponse(
     throw new Error("Unsupported Muse model for metered validation");
   const response = z
     .object({
+      status: z.literal("completed"),
+      model: z.literal(model),
       output: z.array(z.object({ type: z.string() }).passthrough()),
       usage: z.object({
         input_tokens: z.number().int().nonnegative(),
@@ -127,6 +129,17 @@ export function parseMuseValidationResponse(
   );
   if (searches.length !== 1 || searches[0]?.status !== "completed")
     throw new Error("Muse did not complete exactly one web search");
+  // One hosted tool call can contain multiple billed search queries. Do not
+  // infer the number of queries from the number of web_search_call items.
+  const action = z
+    .object({
+      type: z.literal("search"),
+      queries: z.array(z.string().min(1)).min(1).optional(),
+      query: z.string().min(1).optional(),
+    })
+    .parse(searches[0].action);
+  const queryCount = action.queries?.length ?? (action.query ? 1 : 0);
+  if (!queryCount) throw new Error("Muse search query count is unavailable");
   const blocks = response.output.flatMap((item) => {
     if (item.type !== "message" || !Array.isArray(item.content)) return [];
     return z
@@ -163,7 +176,7 @@ export function parseMuseValidationResponse(
     throw new Error("Muse claim has no matching citation");
   const contributor = model.endsWith("-contributor");
   const costUsd =
-    0.0025 +
+    queryCount * 0.0025 +
     (response.usage.input_tokens * (contributor ? 0.1 : 1.25)) / 1_000_000 +
     (response.usage.output_tokens * (contributor ? 0.2 : 4.25)) / 1_000_000;
   return {

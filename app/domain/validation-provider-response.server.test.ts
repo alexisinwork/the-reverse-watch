@@ -20,8 +20,14 @@ const perplexity = {
   usage: { cost: { total_cost: 0.008 } },
 };
 const muse = {
+  status: "completed",
+  model: "muse-spark-1.3-contributor",
   output: [
-    { type: "web_search_call", status: "completed" },
+    {
+      type: "web_search_call",
+      status: "completed",
+      action: { type: "search", queries: ["Omega"] },
+    },
     {
       type: "message",
       content: [
@@ -149,8 +155,53 @@ describe("provider validation response evidence", () => {
 
   it("uses standard Muse pricing when the model is not contributor mode", () => {
     expect(
-      parseMuseValidationResponse(muse, "muse-spark-1.3").costUsd,
+      parseMuseValidationResponse(
+        { ...muse, model: "muse-spark-1.3" },
+        "muse-spark-1.3",
+      ).costUsd,
     ).toBeCloseTo(0.005875);
     expect(() => parseMuseValidationResponse(muse, "unknown-model")).toThrow();
+    expect(() =>
+      parseMuseValidationResponse(
+        { ...muse, model: "muse-spark-1.3" },
+        "muse-spark-1.3-contributor",
+      ),
+    ).toThrow();
+    expect(() =>
+      parseMuseValidationResponse(
+        { ...muse, status: "incomplete" },
+        "muse-spark-1.3-contributor",
+      ),
+    ).toThrow();
+  });
+
+  it("accounts for every billed query inside one Muse search call", () => {
+    const multiQuery = {
+      ...muse,
+      output: [
+        {
+          type: "web_search_call",
+          status: "completed",
+          action: { type: "search", queries: ["one", "two", "three"] },
+        },
+        muse.output[1],
+      ],
+    };
+    expect(
+      parseMuseValidationResponse(multiQuery, "muse-spark-1.3-contributor")
+        .costUsd,
+    ).toBeCloseTo(0.0077);
+    expect(() =>
+      parseMuseValidationResponse(
+        {
+          ...muse,
+          output: [
+            { type: "web_search_call", status: "completed" },
+            muse.output[1],
+          ],
+        },
+        "muse-spark-1.3-contributor",
+      ),
+    ).toThrow();
   });
 });
