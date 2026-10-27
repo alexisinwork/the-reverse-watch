@@ -10,6 +10,7 @@ const claimSchema = z.object({
   person: z.string().trim().max(160).nullable(),
   work: z.string().trim().max(200).nullable(),
   sourceUrl: z.string().url().max(2048),
+  sourceQuote: z.string().trim().max(280),
   supported: z.boolean(),
 });
 

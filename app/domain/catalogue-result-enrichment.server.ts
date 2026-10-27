@@ -57,11 +57,14 @@ export function mergeCatalogueFacts(
         "exact_variant_not_confirmed"
         ? { ...watch, details: { ...watch.details, referenceVerified: false } }
         : watch;
-    const price =
+    const useCataloguePrice =
       watch.details.priceCondition !== "pre-owned" &&
-      row.priceStatus === "confirmed" &&
+      (row.priceStatus === "confirmed" ||
+        (row.priceStatus === "approximate" && !watch.details.price)) &&
       row.priceAmount !== null &&
-      row.priceCurrency
+      !!row.priceCurrency;
+    const price =
+      useCataloguePrice && row.priceAmount !== null && row.priceCurrency
         ? { amount: row.priceAmount, currency: row.priceCurrency }
         : watch.details.price;
     const evidence = row.foundIn.filter(
@@ -120,7 +123,9 @@ export function mergeCatalogueFacts(
           : {}),
         catalogueId: row.id,
         catalogueUpdatedAt: row.updatedAt,
-        ...(price !== watch.details.price ? { priceConfirmed: true } : {}),
+        ...(price !== watch.details.price
+          ? { priceConfirmed: row.priceStatus === "confirmed" }
+          : {}),
       },
     };
   });

@@ -438,6 +438,16 @@ brief. A mocked integration test checks order and both sources. This factory is
 not connected to visitor routes; provider-side maximum billing, real API response
 compatibility, source semantics and atomic cache promotion remain to be verified.
 
+Evidence and price follow-up: film/person verification now requires each model
+to return a short source passage; the page checker must find that same passage
+and the watch, person and work in it. This reduces false matches from unrelated
+names on a page, but does not establish a perfect semantic fact-check. Known
+provider cost above the per-watch reservation leaves the attempt reserved for
+reconciliation instead of recording a smaller guessed cost. Exact-reference
+catalogue hydration now fills a missing price from an approximate local price,
+marks it unconfirmed and the common UI says prices are approximate and may
+change. This does not activate the paused validation runtime.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

@@ -11,6 +11,7 @@ const claim = {
   person: "Daniel Craig",
   work: "Quantum of Solace",
   sourceUrl: "https://source.example/watch",
+  sourceQuote: "Omega 2201.50.00 Daniel Craig Quantum of Solace",
   supported: true,
 };
 const perplexity = {

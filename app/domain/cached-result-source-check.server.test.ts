@@ -28,8 +28,34 @@ describe("checking source pages for cached watch claims", () => {
         watch,
         "https://source.example/a",
         response(html),
+        "Daniel Craig wore Omega 231.10.39.21.03.001 in Skyfall.",
       ),
     ).toEqual({ status: "matched", finalUrl: "https://source.example/a" });
+  });
+
+  it("rejects a fabricated passage when the person and reference occur separately", async () => {
+    const page =
+      "Daniel Craig appears in Skyfall. Naomie Harris wears Omega 231.10.39.21.03.001.";
+    const invented = "Daniel Craig wore Omega 231.10.39.21.03.001 in Skyfall.";
+    expect(
+      (
+        await inspectCachedResultSource(
+          watch,
+          "https://source.example/a",
+          response(page),
+          invented,
+        )
+      ).status,
+    ).toBe("missing");
+    expect(
+      (
+        await inspectCachedResultSource(
+          watch,
+          "https://source.example/a",
+          response(page),
+        )
+      ).status,
+    ).toBe("missing");
   });
 
   it("does not treat a reference appearing only in a URL or script as page evidence", async () => {

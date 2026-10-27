@@ -19,6 +19,7 @@ export async function inspectCachedResultSource(
   watch: FoundWatch,
   sourceUrl: string,
   fetchImpl: typeof fetch = fetch,
+  sourceQuote?: string,
 ): Promise<{
   status: "matched" | "missing" | "unavailable";
   finalUrl: string | null;
@@ -85,7 +86,26 @@ export async function inspectCachedResultSource(
       has(watch.brand) &&
       (!watch.details.person || has(watch.details.person)) &&
       (!watch.details.work || has(watch.details.work));
-    return { status: matches ? "matched" : "missing", finalUrl };
+    if (!matches) return { status: "missing", finalUrl };
+    if (watch.details.person || watch.details.work) {
+      const quote = sourceQuote?.trim() ?? "";
+      const quoteWords = words(quote);
+      const quoteText = ` ${quoteWords} `;
+      const quoteHas = (value: string) =>
+        quoteText.includes(` ${words(value)} `);
+      if (
+        !quoteWords ||
+        quote.length > 280 ||
+        quoteWords.split(" ").length > 30 ||
+        !text.includes(quoteText) ||
+        !quoteHas(watch.brand) ||
+        !pageMentionsReference(watch.referenceCode, quote, "") ||
+        (watch.details.person && !quoteHas(watch.details.person)) ||
+        (watch.details.work && !quoteHas(watch.details.work))
+      )
+        return { status: "missing", finalUrl };
+    }
+    return { status: "matched", finalUrl };
   } catch {
     return { status: "unavailable", finalUrl: null };
   }

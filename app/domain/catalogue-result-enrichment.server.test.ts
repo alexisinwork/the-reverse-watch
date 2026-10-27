@@ -113,6 +113,15 @@ describe("catalogue enrichment propagation", () => {
     expect(result?.details.caseDiameterMm).toBe(41);
     expect(watch.imageUrl).toBeNull();
   });
+  it("fills a missing price from an approximate local price without marking it confirmed", () => {
+    const [result] = mergeCatalogueFacts(
+      [sighting()],
+      [catalogue({ priceStatus: "approximate" })],
+    );
+    expect(result?.details.price).toEqual({ amount: 500, currency: "USD" });
+    expect(result?.details.priceConfirmed).toBe(false);
+    expect(result?.priceNote).toContain("500");
+  });
   it("updates an older catalogue-derived cache title and adds Dials specifications with attribution", () => {
     const [result] = mergeCatalogueFacts(
       [sighting()],

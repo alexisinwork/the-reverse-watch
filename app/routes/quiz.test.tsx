@@ -233,7 +233,7 @@ describe("version-4 diagnostic", () => {
       screen.queryByRole("link", { name: "Open the source" }),
     ).not.toBeInTheDocument();
     expect(
-      screen.getByText("Approximate price, may be wrong"),
+      screen.getByText("Approximate price, may change"),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("img", { name: "Seiko Prospex SPB143" }),

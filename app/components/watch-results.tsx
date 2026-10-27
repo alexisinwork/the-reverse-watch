@@ -210,7 +210,7 @@ function PriceLine({
       <span className="price-tag">
         {watch.details.priceCondition === "pre-owned"
           ? "Pre-owned from established dealers, approximate"
-          : "Approximate price, may be wrong"}
+          : "Approximate price, may change"}
       </span>
     </>
   );

@@ -66,14 +66,22 @@ export async function validateCachedSearch(
       if (primary.status !== "fulfilled" || secondary.status !== "fulfilled")
         return { decision: null, cost: null };
       const cost = primary.value.costUsd + secondary.value.costUsd;
-      if (!Number.isFinite(cost) || cost < 0 || cost > 0.025)
+      if (!Number.isFinite(cost) || cost < 0)
         return { decision: null, cost: null };
+      // Never silently settle a known overrun as the smaller reserved amount.
+      // Retain the entire reservation for operator reconciliation.
+      if (cost > 0.025) return { decision: null, cost, overrun: true };
       const decision = await services
         .inspect(watch, primary.value, secondary.value)
         .catch(() => null);
       return { decision, cost };
     }),
   );
+  if (results.some((result) => result.overrun))
+    return {
+      status: "unavailable",
+      reason: "provider cost exceeded reservation",
+    };
   const settled = await services.settle(
     reservation.attemptId,
     results.map((result) => result.cost),

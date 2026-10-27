@@ -111,4 +111,18 @@ describe("validating a cached result under a reservation", () => {
       reason: "settlement failed",
     });
   });
+
+  it("retains the reservation when known provider costs exceed the per-watch cap", async () => {
+    const deps = services();
+    deps.primary = vi.fn(async () => ({
+      ...assertion("perplexity"),
+      costUsd: 0.02,
+    }));
+    expect(await validateCachedSearch("a".repeat(64), [watch], deps)).toEqual({
+      status: "unavailable",
+      reason: "provider cost exceeded reservation",
+    });
+    expect(deps.settle).not.toHaveBeenCalled();
+    expect(deps.inspect).not.toHaveBeenCalled();
+  });
 });

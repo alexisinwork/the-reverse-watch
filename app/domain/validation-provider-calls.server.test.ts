@@ -12,6 +12,7 @@ const brief = {
 const claim = {
   ...brief,
   sourceUrl: "https://source.example/watch",
+  sourceQuote: "Omega 2201.50.00 Daniel Craig Quantum of Solace",
   supported: true,
 };
 const config = {

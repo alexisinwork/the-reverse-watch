@@ -17,8 +17,18 @@ export async function validateCachedWatchFromSources(
 ): Promise<ValidationDecision> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const [first, second] = await Promise.all([
-    inspectCachedResultSource(watch, primary.sourceUrl, fetchImpl),
-    inspectCachedResultSource(watch, secondary.sourceUrl, fetchImpl),
+    inspectCachedResultSource(
+      watch,
+      primary.sourceUrl,
+      fetchImpl,
+      primary.sourceQuote,
+    ),
+    inspectCachedResultSource(
+      watch,
+      secondary.sourceUrl,
+      fetchImpl,
+      secondary.sourceQuote,
+    ),
   ]);
   return validateCachedWatch(
     watch,

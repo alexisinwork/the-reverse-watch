@@ -21,6 +21,7 @@ const identity = {
   referenceCode: watch.referenceCode,
   person: "Daniel Craig",
   work: "Quantum of Solace",
+  sourceQuote: "Omega 2201.50.00 Daniel Craig Quantum of Solace",
   supported: true,
 };
 

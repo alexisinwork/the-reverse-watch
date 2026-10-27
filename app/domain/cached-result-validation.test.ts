@@ -23,6 +23,7 @@ const primary: ValidationEvidence = {
   person: "Daniel Craig",
   work: "Skyfall",
   sourceUrl: "https://first.example/sighting",
+  sourceQuote: "Omega 231.10.39.21.03.001 Daniel Craig Skyfall",
   sourceVerified: true,
   supported: true,
 };

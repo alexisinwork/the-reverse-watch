@@ -10,6 +10,8 @@ export type ValidationEvidence = {
   person: string | null;
   work: string | null;
   sourceUrl: string;
+  /** Short, verbatim source passage proposed by the provider. */
+  sourceQuote?: string;
   /** True only when the caller actually inspected the evidence page. */
   sourceVerified: boolean;
   supported: boolean;
@@ -49,6 +51,11 @@ export function validateCachedWatch(
   for (const item of evidence) {
     if (!item.supported || !item.sourceVerified || !safeHttpUrl(item.sourceUrl))
       return { status: "unverified", reason: "source not verified" };
+    if (
+      (watch.details.person || watch.details.work) &&
+      !item.sourceQuote?.trim()
+    )
+      return { status: "unverified", reason: "source passage required" };
     if (
       fold(item.brand) !== fold(watch.brand) ||
       fold(item.referenceCode) !== reference
