@@ -429,6 +429,15 @@ They remain disconnected from live execution pending provider cost-bound and
 integration verification. Sources: https://docs.perplexity.ai/docs/agent-api/migrate-from-sonar/overview
 and https://docs.perplexity.ai/docs/agent-api/tools/web-search (retrieved 2026-10-27).
 
+Provider adapter development: a single-attempt request adapter now joins the
+budget reservation, local catalogue hydration, both providers, page inspection
+and settlement behind a server-side service factory. It pins the model currently
+used by Perplexity's documented `fast` mapping for Sonar Pro, disables provider
+fallback and retries, limits output/search calls and sends only a bounded watch
+brief. A mocked integration test checks order and both sources. This factory is
+not connected to visitor routes; provider-side maximum billing, real API response
+compatibility, source semantics and atomic cache promotion remain to be verified.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

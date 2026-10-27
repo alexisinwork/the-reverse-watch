@@ -39,6 +39,7 @@ describe("provider validation response evidence", () => {
   it("reads search results and actual usage from the Perplexity Agent API", () => {
     const response = {
       status: "completed",
+      model: "openai/gpt-6-luna",
       output: [
         { type: "search_results", results: [{ id: 1, url: claim.sourceUrl }] },
         {

@@ -71,6 +71,7 @@ export function buildValidationRequests(
       endpoint: "https://api.perplexity.ai/v1/agent",
       body: {
         effort: "fast",
+        model: "openai/gpt-6-luna",
         instructions,
         input: inputJson,
         store: false,

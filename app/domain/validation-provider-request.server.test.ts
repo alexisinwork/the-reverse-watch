@@ -17,6 +17,7 @@ describe("bounded validation requests", () => {
     );
     expect(result.perplexity.body).toMatchObject({
       effort: "fast",
+      model: "openai/gpt-6-luna",
       max_steps: 1,
       max_tool_calls: 1,
       max_output_tokens: 600,

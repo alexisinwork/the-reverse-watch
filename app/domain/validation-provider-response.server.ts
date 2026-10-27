@@ -62,6 +62,7 @@ export function parsePerplexityAgentValidationResponse(
   const response = z
     .object({
       status: z.literal("completed"),
+      model: z.literal("openai/gpt-6-luna"),
       output: z.array(z.object({ type: z.string() }).passthrough()),
       usage: z.object({
         cost: z.object({
