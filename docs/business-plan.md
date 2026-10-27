@@ -359,6 +359,18 @@ separate reconciliation. The report is
 it must retain sources and never infer a person/film attribution from a watch
 catalogue record alone.
 
+Cache validation correction, 2026-10-27: migrations 0087–0089 were applied
+before the validation runtime was complete. Their first implementation could
+mark a fresh, unchecked answer valid and could misaccount failed reservations;
+the parallel provider helper also allowed fallback to make two answers look
+independent. Migration 0090 pauses new claims, and the runtime fails closed
+for uncached or unverified AI searches pending a working validator and budget
+ledger. The live database audit found 708 unverified entries, no valid entries,
+and no budget reservations. Local catalogue paths are separate; alternatives
+and archetypes are not covered by the shared AI search cache. The missing
+validator, cost accounting, per-watch limits, source evidence, and end-to-end
+verification remain open; no production completion is claimed.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

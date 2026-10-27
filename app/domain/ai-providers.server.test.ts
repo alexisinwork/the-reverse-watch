@@ -2,6 +2,7 @@ import { vi } from "vitest";
 
 import {
   defaultDeps,
+  dualWebResearchJson,
   fallbackSearchDeps,
   findPages,
   webResearchJson,
@@ -40,6 +41,26 @@ function depsWith(
 }
 
 describe("web search fallback", () => {
+  it("does not substitute one provider for the other in independent checks", async () => {
+    const calls: string[] = [];
+    const deps = depsWith(both, (url) => {
+      calls.push(url);
+      return Promise.resolve(
+        url.includes("perplexity")
+          ? new Response("down", { status: 503 })
+          : museAnswer('{"sightings":[]}'),
+      );
+    });
+    const result = await dualWebResearchJson(
+      "question",
+      { type: "object" },
+      deps,
+    );
+    expect(result.museResult.status).toBe("fulfilled");
+    expect(result.perplexityResult.status).toBe("rejected");
+    expect(calls.filter((url) => url.includes("muse.test"))).toHaveLength(1);
+    expect(calls.filter((url) => url.includes("perplexity"))).toHaveLength(1);
+  });
   it("switches to the other provider only when its key is set", () => {
     const deps = depsWith(both, () => Promise.reject(new Error("unused")));
     expect(fallbackSearchDeps(deps)?.config.webSearch).toBe("muse");

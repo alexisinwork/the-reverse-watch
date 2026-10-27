@@ -60,7 +60,28 @@ describe("searchWithStore", () => {
     expect(init.headers).not.toHaveProperty("authorization");
   });
 
-  it("searches on a miss and stores what it found", async () => {
+  it("does not mark a draft as valid or start a paid search", async () => {
+    const fetchImpl = vi.fn(async () =>
+      json({
+        validationStatus: "unverified",
+        summary: "Draft",
+        watches: [foundWatch],
+      }),
+    );
+    const result = await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "daniel craig" },
+        run: finderMock.runAiWatchSearch,
+      },
+      { store, fetchImpl: fetchImpl as unknown as typeof fetch },
+    );
+    expect(result).toEqual({ status: "unavailable" });
+    expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
+    expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it("does not run an unbudgeted search on a miss", async () => {
     finderMock.runAiWatchSearch.mockResolvedValue({
       status: "found",
       summary: "Fresh.",
@@ -75,15 +96,8 @@ describe("searchWithStore", () => {
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
     );
 
-    expect(result).toMatchObject({ status: "found", fromCache: false });
-    const storeCall = fetchImpl.mock.calls.find(([input]) =>
-      String(input).includes("store_v1"),
-    ) as unknown as [URL, RequestInit];
-    expect(JSON.parse(String(storeCall[1].body))).toMatchObject({
-      p_kind: "quiz",
-      p_cache_key: aiSearchCacheKey("quiz", { a: 1 }),
-      p_watches: [foundWatch],
-    });
+    expect(result).toEqual({ status: "unavailable" });
+    expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
   });
 
   it("does not store a no_match or unavailable result", async () => {
@@ -105,7 +119,7 @@ describe("searchWithStore", () => {
     ).toBe(false);
   });
 
-  it("still answers when the database is down", async () => {
+  it("does not start an unbudgeted search when the database is down", async () => {
     finderMock.runAiWatchSearch.mockResolvedValue({
       status: "found",
       summary: "Fresh.",
@@ -118,7 +132,8 @@ describe("searchWithStore", () => {
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
     );
 
-    expect(result).toMatchObject({ status: "found", fromCache: false });
+    expect(result).toEqual({ status: "unavailable" });
+    expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
   });
 
   it("drops a stored watch whose source is no longer a safe URL", async () => {

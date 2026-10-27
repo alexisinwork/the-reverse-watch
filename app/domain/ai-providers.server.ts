@@ -526,10 +526,13 @@ export async function dualWebResearchJson(
     throw new Error(
       "Muse Spark and Perplexity are both required for validation.",
     );
-  const muse: Deps = { ...deps, config: { ...deps.config, webSearch: "muse" } };
+  const muse: Deps = {
+    ...deps,
+    config: { ...deps.config, webSearch: "muse", perplexity: null },
+  };
   const perplexity: Deps = {
     ...deps,
-    config: { ...deps.config, webSearch: "perplexity" },
+    config: { ...deps.config, webSearch: "perplexity", museSpark: null },
   };
   const [museResult, perplexityResult] = await Promise.allSettled([
     webResearchJson(prompt, schema, muse, options),

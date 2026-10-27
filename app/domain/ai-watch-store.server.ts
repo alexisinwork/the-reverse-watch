@@ -2,7 +2,6 @@ import { createHash } from "node:crypto";
 
 import { z } from "zod";
 
-import { runSafely } from "./ai-providers.server";
 import { safeHttpUrl } from "./source-pages.server";
 import {
   type AiSearchOutcome,
@@ -124,28 +123,6 @@ export async function loadStoredSearch(
     : null;
 }
 
-async function cacheValidationRpc(
-  config: StoreConfig,
-  name:
-    | "ai_watch_search_claim_validation_v1"
-    | "ai_watch_search_finish_validation_v1"
-    | "ai_watch_search_replace_validated_v1",
-  body: unknown,
-  fetchImpl: typeof fetch,
-) {
-  const response = await fetchImpl(
-    new URL(`/rest/v1/rpc/${name}`, config.supabaseUrl),
-    {
-      method: "POST",
-      headers: rpcHeaders(config),
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(8_000),
-    },
-  );
-  if (!response.ok) throw new Error(`${name} returned ${response.status}.`);
-  return (await response.json()) as unknown;
-}
-
 export async function storeSearch(
   config: StoreConfig,
   entry: {
@@ -189,16 +166,12 @@ function logStoreError(event: string, error: unknown) {
   );
 }
 
-/**
- * Serves a stored result when this exact search ran before; otherwise runs
- * it and stores what it found. Storage problems never block the visitor:
- * they are logged and the live result is still returned.
- */
+/** Serve already valid results; pause new AI searches until the validator
+ * and its shared cost ledger are ready. Catalogue-only paths remain separate. */
 export async function searchWithStore(
   {
     kind,
     cacheInput,
-    run,
   }: {
     kind: AiSearchKind;
     cacheInput: unknown;
@@ -210,7 +183,6 @@ export async function searchWithStore(
   }: { store?: StoreConfig | null; fetchImpl?: typeof fetch } = {},
 ): Promise<AiSearchView> {
   const cacheKey = aiSearchCacheKey(kind, cacheInput);
-  let claimedValidation = false;
 
   if (store) {
     try {
@@ -222,21 +194,9 @@ export async function searchWithStore(
           watches: stored.watches,
           fromCache: true,
         };
-      if (stored) {
-        const claim = z
-          .object({ state: z.string() })
-          .parse(
-            await cacheValidationRpc(
-              store,
-              "ai_watch_search_claim_validation_v1",
-              { p_cache_key: cacheKey, p_reserve_usd: 0.2 },
-              fetchImpl,
-            ),
-          );
-        if (claim.state === "in_progress") return { status: "unavailable" };
-        if (claim.state === "monthly_limit") return { status: "unavailable" };
-        claimedValidation = claim.state === "claimed";
-      }
+      // The validation and cost ledger are not ready yet. Until they are,
+      // never start an unmetered research call or certify a draft cache.
+      return { status: "unavailable" };
     } catch (error) {
       logStoreError("ai_watch_store_read_error", error);
     }
@@ -249,59 +209,5 @@ export async function searchWithStore(
     );
   }
 
-  const outcome = await runSafely(run);
-  if (outcome.status !== "found") {
-    if (store)
-      await cacheValidationRpc(
-        store,
-        "ai_watch_search_finish_validation_v1",
-        {
-          p_cache_key: cacheKey,
-          p_status: "failed",
-          p_cost_usd: 0,
-          p_error: outcome.status,
-        },
-        fetchImpl,
-      ).catch(() => undefined);
-    return outcome;
-  }
-
-  if (store) {
-    if (claimedValidation) {
-      const replaced = await cacheValidationRpc(
-        store,
-        "ai_watch_search_replace_validated_v1",
-        {
-          p_cache_key: cacheKey,
-          p_summary: outcome.summary,
-          p_watches: outcome.watches,
-          p_cost_usd: 0.2,
-        },
-        fetchImpl,
-      )
-        .then((value) => z.boolean().parse(value))
-        .catch((error: unknown) => {
-          logStoreError("ai_watch_store_validation_replace_error", error);
-          return false;
-        });
-      if (replaced !== true) return { status: "unavailable" };
-      return { ...outcome, fromCache: false };
-    }
-    try {
-      await storeSearch(
-        store,
-        {
-          kind,
-          cacheKey,
-          cacheInput,
-          summary: outcome.summary,
-          watches: outcome.watches,
-        },
-        fetchImpl,
-      );
-    } catch (error) {
-      logStoreError("ai_watch_store_write_error", error);
-    }
-  }
-  return { ...outcome, fromCache: false };
+  return { status: "unavailable" };
 }
