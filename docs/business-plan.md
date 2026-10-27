@@ -339,6 +339,15 @@ and `docs/reports/archetype-picks-refresh.json`; repeatable non-network command:
 of a selected card's missing image/current price, followed by local caching,
 without reopening bulk enrichment.
 
+Correction, 2026-10-27: cache rehydration is a technical catalogue-fact merge,
+not a second fact-check of an older film/person attribution. It exposed no
+semantic claim validation on its own. A source check corrected the Daniel Craig
+Skyfall cache by removing Aqua Terra `231.10.30.20.06.001`: it belongs to Eve
+(Naomie Harris), not Craig. The Skyfall Planet Ocean `232.30.42.21.01.001` and
+blue Aqua Terra `231.10.39.21.03.001` remain separate, sourced Craig entries.
+No claim of complete cache fact verification applies until the newly started
+full local audit and its targeted external follow-up report are complete.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
