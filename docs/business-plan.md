@@ -348,6 +348,17 @@ blue Aqua Terra `231.10.39.21.03.001` remain separate, sourced Craig entries.
 No claim of complete cache fact verification applies until the newly started
 full local audit and its targeted external follow-up report are complete.
 
+Local-cache audit baseline, 2026-10-27: the exhaustive no-network audit found
+2,569 saved cards in 708 saved searches. It must not be represented as a full
+factual review: 1,351 cards have no reference, 548 have a missing or ambiguous
+approved local reference match, and 2,558 film/person cards need source-level
+attribution review. Sixty-two saved searches contain duplicate display identities;
+the renderer suppresses those duplicates but the stored history still needs a
+separate reconciliation. The report is
+`docs/reports/cached-results-local-audit.json`. External validation is pending;
+it must retain sources and never infer a person/film attribution from a watch
+catalogue record alone.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

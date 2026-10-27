@@ -1,0 +1,397 @@
+{
+  "at": "2026-10-27T05:53:20.028Z",
+  "savedCards": 2569,
+  "savedSearches": 708,
+  "cardsByKind": {
+    "film": 2565,
+    "quiz": 4
+  },
+  "distinctReferencedIdentities": 776,
+  "cardsWithoutReference": 1351,
+  "cardsWithOneApprovedLocalReferenceMatch": 670,
+  "cardsWithMissingOrAmbiguousLocalReferenceMatch": 548,
+  "searchesWithDisplayDuplicates": 62,
+  "displayDuplicates": [
+    {
+      "searchId": "02cb1a54-76b4-4a8b-bee0-cd1e056e2024",
+      "identities": [
+        "cartier|w51001q3",
+        "rolex|16700or16710"
+      ]
+    },
+    {
+      "searchId": "0c20689c-4430-4d85-be4d-02de7c535a48",
+      "identities": [
+        "rolex|6265"
+      ]
+    },
+    {
+      "searchId": "0f2060bc-980a-490b-95aa-169be37c32be",
+      "identities": [
+        "rolex|126710blnr"
+      ]
+    },
+    {
+      "searchId": "106c2d4c-6787-4b01-b5d9-adc3634b52f0",
+      "identities": [
+        "rolex|daydate"
+      ]
+    },
+    {
+      "searchId": "144571c4-e7db-4c88-91fe-efdb126727ce",
+      "identities": [
+        "rolex|ref1680",
+        "rolex|1680"
+      ]
+    },
+    {
+      "searchId": "15d9b659-940a-49c7-81fa-9235b0aead42",
+      "identities": [
+        "urbanjrgensen|uj2"
+      ]
+    },
+    {
+      "searchId": "191c6b8c-6ad7-45d4-95e2-4e08ff7b3629",
+      "identities": [
+        "rolex|datejust"
+      ]
+    },
+    {
+      "searchId": "1d9a0bae-1adb-41fd-aea1-b0714a7714a6",
+      "identities": [
+        "omega|constellation"
+      ]
+    },
+    {
+      "searchId": "20cb5657-c4f6-4914-a48e-cc31cdb84246",
+      "identities": [
+        "seiko|h5585009",
+        "audemarspiguet|25863ti"
+      ]
+    },
+    {
+      "searchId": "2240a40f-520a-4089-868d-dd519e401e9c",
+      "identities": [
+        "audemarspiguet|code1159"
+      ]
+    },
+    {
+      "searchId": "2bbca9c0-c3cd-4308-885b-4955bbfa91b7",
+      "identities": [
+        "kobold|soarwaydiver"
+      ]
+    },
+    {
+      "searchId": "30149eb9-f986-4853-8120-927a024acaa2",
+      "identities": [
+        "rolex|5512"
+      ]
+    },
+    {
+      "searchId": "32289848-f400-4c82-a5c8-2750922720cb",
+      "identities": [
+        "cartier|santosdecartier"
+      ]
+    },
+    {
+      "searchId": "32bc7853-58a4-4532-a74e-94912b88a6f2",
+      "identities": [
+        "suunto|ss014279010"
+      ]
+    },
+    {
+      "searchId": "334c8091-482b-4c4e-901b-4c1a3f9410db",
+      "identities": [
+        "heuer|3647n"
+      ]
+    },
+    {
+      "searchId": "39bc058e-ae0d-4981-a108-4f2afd06ac11",
+      "identities": [
+        "cartier|rockcrystaldiamondandplatinumbracelets"
+      ]
+    },
+    {
+      "searchId": "3e97892c-c863-4141-936b-4ea7a2429127",
+      "identities": [
+        "jwbenson|goldwatch"
+      ]
+    },
+    {
+      "searchId": "410a1585-bf78-4e80-8e6f-0ba8f4cee250",
+      "identities": [
+        "carlfbucherer|0010908081301"
+      ]
+    },
+    {
+      "searchId": "4a19346d-721c-4be9-8704-4cd331fdeddd",
+      "identities": [
+        "jaegerlecoultre|rendezvous"
+      ]
+    },
+    {
+      "searchId": "577cf338-26d3-4d45-b0ba-d84d6df5ffe2",
+      "identities": [
+        "jaegerlecoultre|masterultrathinperpetual",
+        "jaegerlecoultre|polarismemovox"
+      ]
+    },
+    {
+      "searchId": "5837b45a-a714-4138-acba-7801a68bd158",
+      "identities": [
+        "rolex|16610"
+      ]
+    },
+    {
+      "searchId": "5ac2c89e-1bc6-47f1-960d-88d24093f6dc",
+      "identities": [
+        "porschedesign|chronograph1allblacknumberededition"
+      ]
+    },
+    {
+      "searchId": "5ad70b3a-1886-46b5-8006-7ac956c478cf",
+      "identities": [
+        "cartier|tank"
+      ]
+    },
+    {
+      "searchId": "62bb36df-82cc-4bd9-883d-630cf907bbc0",
+      "identities": [
+        "rolex|19018"
+      ]
+    },
+    {
+      "searchId": "64def3f5-9e06-4feb-87a4-7198782428cf",
+      "identities": [
+        "omega|25318000"
+      ]
+    },
+    {
+      "searchId": "6ecae1b4-bdcf-4b2e-b6c5-838646f59b2d",
+      "identities": [
+        "bulgari|serpentitubogas"
+      ]
+    },
+    {
+      "searchId": "79093fa2-2132-4885-aac0-93681c57e517",
+      "identities": [
+        "richardmille|rm2702",
+        "richardmille|rm2704",
+        "richardmille|rm2703"
+      ]
+    },
+    {
+      "searchId": "7df2fe07-1262-4dae-ad2e-95854a4eb843",
+      "identities": [
+        "rolex|submariner"
+      ]
+    },
+    {
+      "searchId": "7f2a43f2-2898-4dc0-bc19-2cb03a7d14ac",
+      "identities": [
+        "omega|22015000"
+      ]
+    },
+    {
+      "searchId": "8d0da146-862c-4254-b09c-caa9a440a917",
+      "identities": [
+        "rolex|126334"
+      ]
+    },
+    {
+      "searchId": "8e3292dd-4782-46b8-978c-d240415c100b",
+      "identities": [
+        "rolex|16710"
+      ]
+    },
+    {
+      "searchId": "913aa552-9a62-4388-9c5b-806b73e8d7c6",
+      "identities": [
+        "rolex|1675"
+      ]
+    },
+    {
+      "searchId": "91b58630-f639-494c-8421-94295561bba7",
+      "identities": [
+        "tagheuer|ct1111ba0550"
+      ]
+    },
+    {
+      "searchId": "95693196-59bc-4a5d-bd12-4e817f007fa6",
+      "identities": [
+        "rolex|116334"
+      ]
+    },
+    {
+      "searchId": "9803d5b0-451e-4a27-a913-aeabfc98b695",
+      "identities": [
+        "longines|dolcevitaxyvy"
+      ]
+    },
+    {
+      "searchId": "9926c6b3-b422-470a-b4f1-4a2c2cc6130f",
+      "identities": [
+        "iwc|iw371447"
+      ]
+    },
+    {
+      "searchId": "99841968-1bb4-4a08-b344-be420ba89395",
+      "identities": [
+        "tagheuer|ct1111ba0550"
+      ]
+    },
+    {
+      "searchId": "9cc14b1f-47a3-4aac-9194-41deec57765d",
+      "identities": [
+        "rolex|submariner"
+      ]
+    },
+    {
+      "searchId": "9cfc96d7-65e8-4163-8bdc-111a98fa1bf0",
+      "identities": [
+        "casio|ca53w1"
+      ]
+    },
+    {
+      "searchId": "a0546fea-9f83-4ed0-b45d-a776fda3eec2",
+      "identities": [
+        "hamilton|boulton"
+      ]
+    },
+    {
+      "searchId": "a10d7dcc-1d60-4450-b4a0-847bb9fb33e7",
+      "identities": [
+        "rolex|16710"
+      ]
+    },
+    {
+      "searchId": "a1caaa34-41bc-45e2-9194-d75feae803c1",
+      "identities": [
+        "omega|105012"
+      ]
+    },
+    {
+      "searchId": "a99e125d-046a-4e4d-b0ed-dc7c357596b8",
+      "identities": [
+        "iwc|iw389004"
+      ]
+    },
+    {
+      "searchId": "aec79927-cfae-4a74-9e1d-8d59e6e98454",
+      "identities": [
+        "waltham|vintage"
+      ]
+    },
+    {
+      "searchId": "b0bf84fb-d970-4043-8802-b777eaa19d64",
+      "identities": [
+        "rolex|6538"
+      ]
+    },
+    {
+      "searchId": "bf8a8d9c-a412-4e4d-b80d-661684f3dff9",
+      "identities": [
+        "rolex|datejust"
+      ]
+    },
+    {
+      "searchId": "c1d204d7-1881-4c5f-8945-b726a676df3f",
+      "identities": [
+        "jaegerlecoultre|reversograndetaille"
+      ]
+    },
+    {
+      "searchId": "c48231d2-e512-46b9-9474-152156671396",
+      "identities": [
+        "cartier|tank"
+      ]
+    },
+    {
+      "searchId": "c53afdb0-ecf9-473d-8c93-506b8cb182a1",
+      "identities": [
+        "iwc|portofinoautomaticmoonphase37"
+      ]
+    },
+    {
+      "searchId": "c91a3aa5-b737-4f94-a81a-fccfbcb2b80c",
+      "identities": [
+        "omega|31130423001005"
+      ]
+    },
+    {
+      "searchId": "ca61a7d1-02e9-4360-bd54-9754bb455808",
+      "identities": [
+        "rolex|daydate"
+      ]
+    },
+    {
+      "searchId": "cbd0ffc2-e1a7-4e9b-a33a-3098e4933597",
+      "identities": [
+        "rolex|6263"
+      ]
+    },
+    {
+      "searchId": "ce65d500-211f-4208-a45d-51ce632a87a1",
+      "identities": [
+        "jaegerlecoultre|reversotributechronograph"
+      ]
+    },
+    {
+      "searchId": "d431eb12-4984-471f-b568-f99afb39dfee",
+      "identities": [
+        "tagheuer|s25706c"
+      ]
+    },
+    {
+      "searchId": "d5396e54-a4c1-4632-9a2e-e80aaf0af367",
+      "identities": [
+        "seiko|snxj90",
+        "rolex|16013"
+      ]
+    },
+    {
+      "searchId": "e8233b0e-3235-4d4c-a81a-c14f35da8acf",
+      "identities": [
+        "lamarck|threehandwatch"
+      ]
+    },
+    {
+      "searchId": "edd8235b-eb19-49a1-9ce4-0b624f379304",
+      "identities": [
+        "carlfbucherer|maneroautodate"
+      ]
+    },
+    {
+      "searchId": "f0a87a74-f67e-4035-a6aa-ff47577a5270",
+      "identities": [
+        "rolex|ladydatejust"
+      ]
+    },
+    {
+      "searchId": "f27c2cf4-7a31-46e3-b475-7be43b07fcd1",
+      "identities": [
+        "rolex|oysterperpetualdatejust"
+      ]
+    },
+    {
+      "searchId": "f5812055-7bba-427e-9c23-8a41005da44e",
+      "identities": [
+        "casio|ca53w1"
+      ]
+    },
+    {
+      "searchId": "fb42c98d-f134-4a1c-ad88-01b99ccfd798",
+      "identities": [
+        "omega|speedmasterprofessional"
+      ]
+    },
+    {
+      "searchId": "ff322185-cec9-42fd-91fe-4afc3c9c596f",
+      "identities": [
+        "jardur|degreemeter"
+      ]
+    }
+  ],
+  "mediaClaimCardsNeedingSourceAudit": 2558,
+  "policy": "This is a structural/local-catalogue audit only. It does not certify actor/film attribution, current price, photo rights, or source-page claims. Those require separately retained source evidence."
+}
