@@ -379,6 +379,15 @@ the shortlist. Streamed progress suppresses repeated watch cards. This does not
 validate a film attribution, activate the paused paid-search workflow, or prove
 that all feature constraints and external claims have been verified.
 
+Cache-validation development, 2026-10-27: a fail-closed, pure evidence
+reconciler now checks the same brand/reference and, where present, the same
+person and work in both provider assertions. It requires separately inspected
+sources on different hosts and retains the two URLs and check date. Tests cover
+the Craig/Harris attribution error and conflicting or unavailable evidence. This
+component does not inspect source pages itself and is not connected to provider
+calls or cache promotion; the paid runtime remains paused until that work and
+the budget ledger are complete.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

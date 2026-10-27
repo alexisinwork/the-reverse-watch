@@ -1,6 +1,11 @@
 export type SourceKind = "manufacturer" | "retailer" | "catalogue";
 
 export type WatchDetails = {
+  validationEvidence?: {
+    provider: string;
+    sourceUrl: string;
+    checkedAt: string;
+  }[];
   catalogueId?: string;
   catalogueUpdatedAt?: string;
   price?: { amount: number; currency: string } | null;
