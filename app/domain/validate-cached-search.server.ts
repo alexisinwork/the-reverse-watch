@@ -19,6 +19,7 @@ type Reserve =
 
 export type ValidationServices = {
   hydrate: (watches: FoundWatch[]) => Promise<FoundWatch[]>;
+  hydrateVerified?: (watches: FoundWatch[]) => Promise<FoundWatch[]>;
   reserve: (key: string, count: number) => Promise<Reserve>;
   primary: (brief: ValidationBrief) => Promise<ProviderAssertion>;
   secondary: (brief: ValidationBrief) => Promise<ProviderAssertion>;
@@ -113,7 +114,11 @@ export async function validateCachedSearch(
   // Discovery may have supplied a reference absent during the first lookup.
   // Hydrate again using that exact identity, then remove newly visible duplicates.
   const accepted = uniqueWatchResults(
-    checked.length ? await services.hydrate(checked).catch(() => checked) : [],
+    checked.length
+      ? await (services.hydrateVerified ?? services.hydrate)(checked).catch(
+          () => checked,
+        )
+      : [],
   );
   const costs = results.map((result) => result.cost);
   if (!accepted.length) {

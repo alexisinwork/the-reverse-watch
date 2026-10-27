@@ -122,6 +122,16 @@ describe("catalogue enrichment propagation", () => {
     expect(result?.details.priceConfirmed).toBe(false);
     expect(result?.priceNote).toContain("500");
   });
+  it("uses an exact catalogue title when rebuilding a verified result", () => {
+    const [result] = mergeCatalogueFacts(
+      [sighting({ model: "SKX007J" })],
+      [catalogue()],
+      { preferCatalogueTitle: true },
+    );
+    expect(result?.model).toBe("Diver");
+    expect(result?.details.caseDiameterMm).toBe(42);
+    expect(result?.details.price).toEqual({ amount: 500, currency: "USD" });
+  });
   it("updates an older catalogue-derived cache title and adds Dials specifications with attribution", () => {
     const [result] = mergeCatalogueFacts(
       [sighting()],

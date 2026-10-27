@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import type { DesignTraits } from "./design-traits";
+import { safeHttpUrl } from "./source-pages.server";
 import {
   catalogueWatchSchema,
   type CatalogueStyle,
@@ -239,9 +240,8 @@ function foldText(value: string) {
 }
 
 /**
- * Gives watches without a photo the catalogue's photo of the same watch:
- * matched by brand and reference, or by brand and model when there is no
- * reference. Film sightings often cite pages without a product photo.
+ * Give a sighting a photo only for one confirmed exact brand/reference match.
+ * A similar model name is not enough to identify the correct variant.
  */
 export async function fillPhotosFromCatalogue<
   T extends {
@@ -254,55 +254,54 @@ export async function fillPhotosFromCatalogue<
   watches: T[],
   client: CatalogueClient | null = catalogueClient(),
 ): Promise<T[]> {
-  if (!client || watches.every((watch) => watch.imageUrl)) return watches;
+  if (
+    !client ||
+    watches.every((watch) => watch.imageUrl || !watch.referenceCode)
+  )
+    return watches;
   let catalogue: CatalogueWatch[];
   try {
-    catalogue = await loadCatalogueCached(client);
+    const keys = watches
+      .filter((watch) => !watch.imageUrl && watch.referenceCode)
+      .map((watch) => ({
+        brand: watch.brand,
+        referenceCode: watch.referenceCode,
+      }));
+    // Query the complete catalogue: the recommendation pool excludes some
+    // unpriced rows and therefore cannot establish an unambiguous identity.
+    catalogue = listSchema.parse(
+      await rpc(
+        client,
+        "watch_catalogue_lookup_v1",
+        {
+          p_keys: keys.slice(0, 100),
+        },
+        6_000,
+      ),
+    );
   } catch {
     return watches;
   }
   const brandKey = (brand: string) => foldText(brand);
-  const byReference = new Map<string, string>();
-  const byModel = new Map<string, string>();
+  const byReference = new Map<string, CatalogueWatch[]>();
   for (const watch of catalogue) {
-    if (!watch.imageUrl || watch.reviewStatus === "rejected") continue;
-    if (watch.referenceCode) {
-      byReference.set(
-        `${brandKey(watch.brand)}|${foldText(watch.referenceCode)}`,
-        watch.imageUrl,
-      );
-    }
-    byModel.set(
-      `${brandKey(watch.brand)}|${foldText(watch.model)}`,
-      watch.imageUrl,
-    );
-  }
-  // Film sightings name models loosely ("Seamaster Diver 300M Co-Axial
-  // Chronometer"): failing an exact match, the longest catalogue model of the
-  // same brand that one name contains wins, if it is specific enough.
-  const modelsByBrand = new Map<string, { model: string; image: string }[]>();
-  for (const [key, image] of byModel) {
-    const [brand = "", model = ""] = key.split("|");
-    if (model.length < 6) continue;
-    modelsByBrand.set(brand, [
-      ...(modelsByBrand.get(brand) ?? []),
-      { model, image },
-    ]);
-  }
-  const looseMatch = (brand: string, model: string) =>
-    (modelsByBrand.get(brand) ?? [])
-      .filter(
-        (entry) => model.includes(entry.model) || entry.model.includes(model),
-      )
-      .sort((a, b) => b.model.length - a.model.length)[0]?.image;
-  return watches.map((watch) => {
-    if (watch.imageUrl) return watch;
+    if (!watch.referenceCode || watch.reviewStatus === "rejected") continue;
+    const reference = foldText(watch.referenceCode);
     const brand = brandKey(watch.brand);
-    const model = foldText(watch.model);
-    const image = watch.referenceCode
-      ? byReference.get(`${brand}|${foldText(watch.referenceCode)}`)
-      : (byModel.get(`${brand}|${model}`) ??
-        (model.length >= 6 ? looseMatch(brand, model) : undefined));
+    if (!brand || reference.length < 3) continue;
+    const key = `${brand}|${reference}`;
+    byReference.set(key, [...(byReference.get(key) ?? []), watch]);
+  }
+  return watches.map((watch) => {
+    if (watch.imageUrl || !watch.referenceCode) return watch;
+    const brand = brandKey(watch.brand);
+    const reference = foldText(watch.referenceCode);
+    if (!brand || reference.length < 3) return watch;
+    const matches = byReference.get(`${brand}|${reference}`) ?? [];
+    const image =
+      matches.length === 1 && matches[0]?.referenceConfirmed
+        ? safeHttpUrl(matches[0].imageUrl)
+        : null;
     return image ? { ...watch, imageUrl: image } : watch;
   });
 }

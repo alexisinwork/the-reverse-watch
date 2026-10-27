@@ -41,6 +41,7 @@ const key = (watch: { brand: string; referenceCode: string | null }) =>
 export function mergeCatalogueFacts(
   watches: FoundWatch[],
   catalogue: CatalogueWatch[],
+  options: { preferCatalogueTitle?: boolean } = {},
 ) {
   const byKey = new Map<string, CatalogueWatch[]>();
   for (const row of catalogue) {
@@ -78,7 +79,9 @@ export function mergeCatalogueFacts(
       evidence.find((item) => item.source === "dials") ??
       evidence.find((item) => item.source === "spacecity");
     const dialsEvidence = evidence.find((item) => item.source === "dials");
-    const useDialsTitle = !!dialsEvidence && row.sourceKind === "catalogue";
+    const useDialsTitle =
+      options.preferCatalogueTitle ||
+      (!!dialsEvidence && row.sourceKind === "catalogue");
     const referenceSourceLabel = catalogueEvidence
       ? catalogueEvidence.source === "dials"
         ? "Dials"
@@ -134,6 +137,7 @@ export function mergeCatalogueFacts(
 export async function enrichResultWatches(
   watches: FoundWatch[],
   client: CatalogueClient | null = catalogueClient(),
+  options: { preferCatalogueTitle?: boolean } = {},
 ): Promise<FoundWatch[]> {
   if (!client || !watches.some((w) => w.referenceCode)) return watches;
   try {
@@ -150,7 +154,7 @@ export async function enrichResultWatches(
           6_000,
         ),
       );
-    return mergeCatalogueFacts(watches, catalogue);
+    return mergeCatalogueFacts(watches, catalogue, options);
   } catch {
     return watches;
   }

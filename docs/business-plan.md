@@ -505,6 +505,18 @@ it does not establish that a lexical match proves semantic attribution or
 validate other specifications. The database archive was tested in a rolled-back
 transaction after migration 0094.
 
+Validated-card reconstruction: a source check establishes reference and, when
+present, wearer/work attribution; it does not establish every field in a legacy
+card. The validation service now discards its old model title, photo, price,
+specifications and narrative after source checking, then refills the title and
+available fields only from a unique, non-rejected, reference-confirmed local
+catalogue match. Without one, it displays the checked reference as the title
+and leaves those facts missing. Tests cover stale values and exact local
+refill. Film photos now also require a unique confirmed exact-reference match
+from the full catalogue; similar model names and ambiguous variants no longer
+borrow a photo. This does not search for missing facts or activate visitor
+validation.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

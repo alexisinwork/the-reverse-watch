@@ -19,11 +19,13 @@ export function validationServices(
   const calls = validationProviderCalls(deps);
   return {
     hydrate: (watches) => enrichResultWatches(watches, client),
+    hydrateVerified: (watches) =>
+      enrichResultWatches(watches, client, { preferCatalogueTitle: true }),
     reserve: (key, count) => reserveValidationBudget(client, key, count),
     primary: calls.primary,
     secondary: calls.secondary,
-    inspect: (watch, primary, secondary) =>
-      validateCachedWatchFromSources(
+    inspect: async (watch, primary, secondary) => {
+      const result = await validateCachedWatchFromSources(
         watch,
         primary.evidence,
         secondary.evidence,
@@ -31,7 +33,32 @@ export function validationServices(
           fetchImpl: deps.fetchImpl,
           checkedAt: new Date(deps.now()).toISOString(),
         },
-      ),
+      );
+      if (result.status !== "verified") return result;
+      const verified = result.watch;
+      // The two source checks establish only identity and, where supplied,
+      // attribution. Old prices, specifications, photos and explanations
+      // were not verified by those checks: hydrate them afresh from the
+      // exact-reference catalogue rather than certifying stale cache fields.
+      return {
+        ...result,
+        watch: {
+          brand: verified.brand,
+          model: verified.referenceCode!,
+          referenceCode: verified.referenceCode,
+          sourceUrl: result.evidence[0]!.sourceUrl,
+          imageUrl: null,
+          priceNote: null,
+          rationale:
+            "Reference and available attribution checked against cited sources.",
+          details: {
+            person: verified.details.person ?? null,
+            work: verified.details.work ?? null,
+            validationEvidence: verified.details.validationEvidence,
+          },
+        },
+      };
+    },
     settle: (attempt, costs) => settleValidationBudget(client, attempt, costs),
     publish: (attempt, watches, costs) =>
       publishValidatedSnapshot(client, attempt, watches, costs),

@@ -11,10 +11,17 @@ const watch: FoundWatch = {
   model: "Planet Ocean",
   referenceCode: "2201.50.00",
   sourceUrl: "https://p.example/watch",
-  imageUrl: null,
-  priceNote: null,
-  rationale: "Existing result",
-  details: { person: "Daniel Craig", work: "Quantum of Solace" },
+  imageUrl: "https://old.example/unverified.jpg",
+  priceNote: "Unverified old price",
+  rationale: "Unverified old claim",
+  details: {
+    person: "Daniel Craig",
+    work: "Quantum of Solace",
+    price: { amount: 1, currency: "USD" },
+    caseDiameterMm: 12,
+    movement: "quartz",
+    referenceVerified: true,
+  },
 };
 const identity = {
   brand: watch.brand,
@@ -137,7 +144,13 @@ describe("validation services integration", () => {
       rejected: 0,
       watches: [
         {
+          model: "2201.50.00",
           referenceCode: "2201.50.00",
+          sourceUrl: "https://p.example/watch",
+          imageUrl: null,
+          priceNote: null,
+          rationale:
+            "Reference and available attribution checked against cited sources.",
           details: {
             validationEvidence: [
               {
@@ -162,5 +175,10 @@ describe("validation services integration", () => {
     expect(order.filter((entry) => entry === "source")).toHaveLength(2);
     expect(order.filter((entry) => entry === "perplexity")).toHaveLength(1);
     expect(order.filter((entry) => entry === "muse")).toHaveLength(1);
+    if (result.status !== "verified") throw new Error("expected verified");
+    expect(result.watches[0]!.details).not.toHaveProperty("price");
+    expect(result.watches[0]!.details).not.toHaveProperty("caseDiameterMm");
+    expect(result.watches[0]!.details).not.toHaveProperty("movement");
+    expect(result.watches[0]!.details).not.toHaveProperty("referenceVerified");
   });
 });

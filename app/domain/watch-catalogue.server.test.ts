@@ -63,7 +63,7 @@ const sighting = (overrides: Record<string, unknown>) => ({
 });
 
 describe("fillPhotosFromCatalogue", () => {
-  it("borrows the catalogue photo by reference, model, or a longer model name", async () => {
+  it("borrows a photo only for the confirmed exact reference", async () => {
     clearCatalogueCache();
     const filled = await fillPhotosFromCatalogue(
       [
@@ -76,10 +76,27 @@ describe("fillPhotosFromCatalogue", () => {
     );
     expect(filled.map((watch) => watch.imageUrl)).toEqual([
       "https://img.test/seamaster.jpg",
-      "https://img.test/seamaster.jpg",
+      null,
       null,
       "https://img.test/own.jpg",
     ]);
+  });
+
+  it("does not choose an unconfirmed or ambiguous reference", async () => {
+    for (const rows of [
+      [row({ referenceConfirmed: false })],
+      [
+        row({}),
+        row({ id: "00000000-0000-0000-0000-000000000002", imageUrl: null }),
+      ],
+    ]) {
+      clearCatalogueCache();
+      const [watch] = await fillPhotosFromCatalogue(
+        [sighting({ referenceCode: "210.30.42.20.01.001" })],
+        client(rows),
+      );
+      expect(watch?.imageUrl).toBeNull();
+    }
   });
 });
 
