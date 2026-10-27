@@ -388,6 +388,15 @@ component does not inspect source pages itself and is not connected to provider
 calls or cache promotion; the paid runtime remains paused until that work and
 the budget ledger are complete.
 
+Source inspection development, 2026-10-27: a separate server-side checker now
+fetches the two reported URLs via the public-address redirect guard, requires
+successful text responses and matches the brand, exact reference and available
+person/work names in visible page text. It ignores scripts, rejects inaccessible
+or oversized pages and checks independence after redirects. This is a necessary
+lexical gate, not proof that a page links a person to a watch; provider assertions
+still need semantic validation. The new checker and reconciler are tested but
+remain disconnected from the paid runtime and cache promotion.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
