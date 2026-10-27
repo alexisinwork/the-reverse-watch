@@ -488,6 +488,15 @@ without launching another provider call. A local concurrent-request test covers
 publication and fail-closed timeout. This does not enable visitor validation;
 provider costs, master persistence and missing-cache discovery remain open.
 
+Validated catalogue evidence: migration 0094 adds a service-only publication
+wrapper that archives each result's reference and two source records in the
+catalogue intake in the same transaction as cache publication and settlement.
+It links only an unambiguous non-rejected exact match; otherwise it retains an
+unlinked record for identity review. It does not promote manufacturer status or
+invent/update specifications, prices or photos. This supplies reference
+provenance, not the still-missing fact enrichment. The visitor validation path
+remains disabled pending cost and integration work.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
