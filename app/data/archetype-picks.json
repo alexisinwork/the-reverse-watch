@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-01T14:33:48.659Z",
+ "generatedAt": "2026-10-27T05:41:40.582Z",
  "lists": {
   "field_rationalist": {
    "considered_entry": [
@@ -879,8 +879,8 @@
      "waterResistanceM": 30,
      "movement": "manual",
      "why": "38 mm steel manual in-house dress watch at 30 m is restrained and built to reward long attention.",
-     "referenceConfirmed": false,
-     "sourceKind": "manufacturer"
+     "referenceConfirmed": true,
+     "sourceKind": "catalogue"
     },
     {
      "id": "fe3717e2-f723-4e34-a8d6-794b75b15110",
@@ -1098,11 +1098,11 @@
       "amount": 15400,
       "currency": "EUR"
      },
-     "caseDiameterMm": null,
-     "waterResistanceM": null,
+     "caseDiameterMm": 25.5,
+     "waterResistanceM": 30,
      "movement": "manual",
      "why": "The manual Tank Louis Large in dress style is a restrained classic that records time rather than announcing price.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {
@@ -1620,8 +1620,8 @@
      "waterResistanceM": 30,
      "movement": "manual",
      "why": "The 38 mm steel Drive de Cartier Extra-Flat with manual in-house calibre offers slim proportion and dress clarity for formal settings.",
-     "referenceConfirmed": false,
-     "sourceKind": "manufacturer"
+     "referenceConfirmed": true,
+     "sourceKind": "catalogue"
     },
     {
      "id": "6741fc86-d8f9-47e9-b6fc-131507dc6647",
@@ -1805,11 +1805,11 @@
       "amount": 15400,
       "currency": "EUR"
      },
-     "caseDiameterMm": null,
-     "waterResistanceM": null,
+     "caseDiameterMm": 25.5,
+     "waterResistanceM": 30,
      "movement": "manual",
      "why": "The Tank Louis Large provides pure rectangular dress geometry in a manual dress watch.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {
@@ -2138,7 +2138,7 @@
      "waterResistanceM": 300,
      "movement": "automatic",
      "why": "The 42 mm automatic BR 03-92 Diver Orange uses bold orange color and 300 m dive rigor for expressive sport character.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {
@@ -2203,10 +2203,10 @@
       "currency": "USD"
      },
      "caseDiameterMm": 41,
-     "waterResistanceM": null,
+     "waterResistanceM": 50,
      "movement": "automatic",
      "why": "The 41 mm automatic Uni-Racer offers motorsport-inspired design character for everyday-sport wear with a clear point of view.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {
@@ -2259,7 +2259,7 @@
      "waterResistanceM": 300,
      "movement": "automatic",
      "why": "The full-lum ceramic 42 mm diver at 300 m refuses anonymity while staying a rigorous tool watch.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {
@@ -2913,7 +2913,7 @@
      "waterResistanceM": 100,
      "movement": "manual",
      "why": "Its in-house manual calibre in a 38.5 mm steel case offers transparent Glashütte movement logic to study.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {
@@ -2949,8 +2949,8 @@
      "waterResistanceM": 30,
      "movement": "manual",
      "why": "Manual-wind in-house calibre in a 38 mm dress watch rewards close study of movement architecture.",
-     "referenceConfirmed": false,
-     "sourceKind": "manufacturer"
+     "referenceConfirmed": true,
+     "sourceKind": "catalogue"
     },
     {
      "id": "6863a24f-3d11-4409-9950-5f7428e14c82",
@@ -3552,7 +3552,7 @@
      "waterResistanceM": 1200,
      "movement": "automatic",
      "why": "The 42.5 mm stainless steel DOXA SUB 300T Sharkhunter with 1200 m rating is a deliberate, highly visible dive benchmark.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {
@@ -3690,7 +3690,7 @@
      "waterResistanceM": 150,
      "movement": "automatic",
      "why": "38 mm stainless steel Aqua Terra with in-house calibre and 150 m rating is an everyday sport benchmark.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {
@@ -3875,11 +3875,11 @@
       "amount": 15400,
       "currency": "EUR"
      },
-     "caseDiameterMm": null,
-     "waterResistanceM": null,
+     "caseDiameterMm": 25.5,
+     "waterResistanceM": 30,
      "movement": "manual",
      "why": "Its manual dress design at USD 17487 serves as an established, institutionally recognized milestone object.",
-     "referenceConfirmed": false,
+     "referenceConfirmed": true,
      "sourceKind": "manufacturer"
     },
     {

@@ -324,6 +324,21 @@ local ceiling is USD 63.79; the worker stops without exceeding it and does not
 fall back to Perplexity. Once it is complete, freeze catalogue expansion and
 rehydrate every cached result across every feature from the new local catalogue.
 
+Cache rehydration follow-up, 2026-10-27: the bounded Muse pass completed all
+11,598 queued references within its USD 63.79 local ceiling (1,252 approximate
+prices and 1,466 image URLs added; 59 lookup errors retained for later result-time
+handling). No subsequent paid lookup was made. The persisted AI-result cache was
+rehydrated only from unique, non-rejected, locally reference-confirmed catalogue
+matches: 662 of 2,570 saved cards changed; 1,351 cards without a reference remain
+unchanged rather than being guessed. The 240 checked-in archetype cards were also
+refreshed locally, with 12 factual changes and no unmatched pick. The static
+editorial selection and its rationales were retained: regenerating those lists
+would be a separate Muse operation. Reports: `docs/reports/cache-catalogue-refresh.json`
+and `docs/reports/archetype-picks-refresh.json`; repeatable non-network command:
+`scripts/refresh-archetype-picks.ts`. The next action is result-time completion
+of a selected card's missing image/current price, followed by local caching,
+without reopening bulk enrichment.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-25T22:56:23.171Z",
+  "at": "2026-10-27T05:40:52.210Z",
   "cachedWatchEntries": 2570,
   "distinctCachedIdentities": 793,
-  "catalogueEntriesMatched": 375,
-  "exactCatalogueMatchedRows": 419,
+  "catalogueEntriesMatched": 392,
+  "exactCatalogueMatchedRows": 662,
   "cachedRowsWithoutReference": 1351,
   "cachedRowsWithDialsSpecs": 322,
   "canonicalTitleConflicts": 45,
-  "rowsRefreshed": 419,
+  "rowsRefreshed": 662,
   "policy": "Only fields from unique, reference-confirmed local catalogue matches were added; existing facts, prices when not newly confirmed, source/rationale, ranks, search membership and attribution were preserved."
 }
