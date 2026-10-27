@@ -101,6 +101,161 @@ describe("searchWithStore", () => {
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 
+  it("validates a draft once, then serves only the committed snapshot", async () => {
+    let published = false;
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes("ai_watch_search_get_v1"))
+        return json({
+          validationStatus: "unverified",
+          summary: "Draft.",
+          watches: [foundWatch],
+        });
+      return json(
+        published
+          ? {
+              validationStatus: "valid",
+              summary: "Checked.",
+              watches: [validatedWatch],
+              validatedAt: "2026-10-27T00:00:00Z",
+              policyVersion: "source-v1",
+            }
+          : null,
+      );
+    });
+    const validateDraft = vi.fn(async () => {
+      published = true;
+      return {
+        status: "verified" as const,
+        watches: [validatedWatch],
+        rejected: 0,
+      };
+    });
+    const request = {
+      kind: "film" as const,
+      cacheInput: { query: "daniel craig" },
+      run: finderMock.runAiWatchSearch,
+    };
+    const options = {
+      store,
+      fetchImpl: fetchImpl as unknown as typeof fetch,
+      validateDraft,
+    };
+    const first = await searchWithStore(request, options);
+    expect(first).toMatchObject({
+      status: "found",
+      summary: "Checked.",
+      fromCache: false,
+      watches: [validatedWatch],
+    });
+    expect(validateDraft).toHaveBeenCalledTimes(1);
+    const second = await searchWithStore(request, options);
+    expect(second).toMatchObject({
+      status: "found",
+      fromCache: true,
+      watches: [validatedWatch],
+    });
+    expect(validateDraft).toHaveBeenCalledTimes(1);
+    expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
+  });
+
+  it("does not return a validation result that was not committed", async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("ai_watch_search_get_v1")
+        ? json({
+            validationStatus: "unverified",
+            summary: "Draft.",
+            watches: [foundWatch],
+          })
+        : json(null),
+    );
+    const result = await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "daniel craig" },
+        run: finderMock.runAiWatchSearch,
+      },
+      {
+        store,
+        fetchImpl: fetchImpl as unknown as typeof fetch,
+        validateDraft: async () => ({
+          status: "verified",
+          watches: [validatedWatch],
+          rejected: 0,
+        }),
+      },
+    );
+    expect(result).toEqual({ status: "unavailable" });
+  });
+
+  it("never returns the old draft while a concurrent validation is in progress", async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("ai_watch_search_get_v1")
+        ? json({
+            validationStatus: "unverified",
+            summary: "Draft.",
+            watches: [foundWatch],
+          })
+        : json(null),
+    );
+    const result = await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "daniel craig" },
+        run: finderMock.runAiWatchSearch,
+      },
+      {
+        store,
+        fetchImpl: fetchImpl as unknown as typeof fetch,
+        validateDraft: async () => ({
+          status: "unavailable",
+          reason: "in_progress",
+        }),
+      },
+    );
+    expect(result).toEqual({ status: "unavailable" });
+  });
+
+  it("reloads the snapshot when another request published just before reservation", async () => {
+    let reads = 0;
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes("ai_watch_search_get_v1"))
+        return json({
+          validationStatus: "unverified",
+          summary: "Draft.",
+          watches: [foundWatch],
+        });
+      reads += 1;
+      return json(
+        reads === 1
+          ? null
+          : {
+              validationStatus: "valid",
+              summary: "Checked.",
+              watches: [validatedWatch],
+              validatedAt: "2026-10-27T00:00:00Z",
+              policyVersion: "source-v1",
+            },
+      );
+    });
+    const result = await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "daniel craig" },
+        run: finderMock.runAiWatchSearch,
+      },
+      {
+        store,
+        fetchImpl: fetchImpl as unknown as typeof fetch,
+        validateDraft: async () => ({ status: "unavailable", reason: "valid" }),
+      },
+    );
+    expect(result).toMatchObject({
+      status: "found",
+      fromCache: true,
+      summary: "Checked.",
+    });
+  });
+
   it("does not run an unbudgeted search on a miss", async () => {
     finderMock.runAiWatchSearch.mockResolvedValue({
       status: "found",

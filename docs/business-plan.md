@@ -459,6 +459,15 @@ were made. First-view research and provider cost limits remain paused pending
 real integration verification; existing alternatives and cron spending remain
 outside this ledger.
 
+Cache reuse race check: migration 0093 rechecks an existing `source-v1`
+snapshot under the same per-key lock before allocating funds. If another request
+published after the initial cache read, the reservation RPC returns `valid`
+instead of allocating a second attempt; the shared cache path reloads that
+snapshot. The SQL test was run inside rolled-back transactions before and after
+deployment. The first-view callback is wired only as a test injection: no paid
+visitor path has been enabled, and new cache misses still need a budgeted
+candidate-discovery implementation.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

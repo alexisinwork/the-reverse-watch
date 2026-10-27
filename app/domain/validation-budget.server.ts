@@ -13,6 +13,7 @@ const reserveSchema = z.discriminatedUnion("state", [
   }),
   z.object({ state: z.literal("in_progress") }),
   z.object({ state: z.literal("monthly_limit") }),
+  z.object({ state: z.literal("valid") }),
 ]);
 
 /** Reserve before any provider request. Only a non-identifying cache hash is sent. */

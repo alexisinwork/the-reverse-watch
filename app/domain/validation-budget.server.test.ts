@@ -17,6 +17,12 @@ function client(reply: unknown) {
 }
 
 describe("validation budget RPC client", () => {
+  it("reports an already validated snapshot without reserving again", async () => {
+    const db = client({ state: "valid" });
+    await expect(
+      reserveValidationBudget(db.value, "a".repeat(64), 1),
+    ).resolves.toEqual({ state: "valid" });
+  });
   it("reserves against a hash and a maximum of eight watches", async () => {
     const db = client({
       state: "reserved",

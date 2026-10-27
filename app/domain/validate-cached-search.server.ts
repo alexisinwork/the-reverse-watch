@@ -14,7 +14,7 @@ export type ValidationBrief = {
 
 type Reserve =
   | { state: "reserved"; attemptId: string }
-  | { state: "in_progress" | "monthly_limit" };
+  | { state: "in_progress" | "monthly_limit" | "valid" };
 
 export type ValidationServices = {
   hydrate: (watches: FoundWatch[]) => Promise<FoundWatch[]>;

@@ -4,6 +4,7 @@ import { z } from "zod";
 
 import { safeHttpUrl } from "./source-pages.server";
 import { loadValidatedSnapshot } from "./validated-cache.server";
+import type { ValidationRun } from "./validate-cached-search.server";
 import {
   type AiSearchOutcome,
   type AiSearchView,
@@ -181,7 +182,17 @@ export async function searchWithStore(
   {
     store = loadAiWatchStoreConfig(),
     fetchImpl = fetch,
-  }: { store?: StoreConfig | null; fetchImpl?: typeof fetch } = {},
+    validateDraft,
+  }: {
+    store?: StoreConfig | null;
+    fetchImpl?: typeof fetch;
+    /** Only injected by a metered validator; production stays disabled until
+     * provider-side limits and real responses have been verified. */
+    validateDraft?: (
+      cacheKey: string,
+      watches: FoundWatch[],
+    ) => Promise<ValidationRun>;
+  } = {},
 ): Promise<AiSearchView> {
   const cacheKey = aiSearchCacheKey(kind, cacheInput);
 
@@ -198,6 +209,26 @@ export async function searchWithStore(
           watches: stored.watches,
           fromCache: true,
         };
+      if (validateDraft) {
+        const draft = await loadStoredSearch(store, cacheKey, fetchImpl);
+        if (!draft) return { status: "unavailable" };
+        const result = await validateDraft(cacheKey, draft.watches);
+        if (result.status !== "verified" && result.reason !== "valid")
+          return { status: "unavailable" };
+        // The validator publishes atomically. Read the committed snapshot so a
+        // lost/failed publication can never be reported as a verified result.
+        const published = await loadValidatedSnapshot(
+          { config: store, fetchImpl },
+          cacheKey,
+        );
+        if (!published) return { status: "unavailable" };
+        return {
+          status: "found",
+          summary: published.summary,
+          watches: published.watches,
+          fromCache: result.status !== "verified",
+        };
+      }
       // The validation and cost ledger are not ready yet. Until they are,
       // never start an unmetered research call or certify a draft cache.
       return { status: "unavailable" };
