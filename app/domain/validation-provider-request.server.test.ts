@@ -50,4 +50,15 @@ describe("bounded validation requests", () => {
     ).toThrow();
     expect(() => buildValidationRequests(brief, "muse-wonder-1.0")).toThrow();
   });
+
+  it("allows an absent reference for independent discovery", () => {
+    const result = buildValidationRequests(
+      { ...brief, referenceCode: null },
+      "muse-spark-1.3-contributor",
+    );
+    expect(JSON.parse(result.perplexity.body.input)).toEqual({
+      ...brief,
+      referenceCode: null,
+    });
+  });
 });

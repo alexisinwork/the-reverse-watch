@@ -92,6 +92,83 @@ describe("validating a cached result under a reservation", () => {
     expect(deps.secondary).not.toHaveBeenCalled();
   });
 
+  it("recovers a missing reference only when both providers agree and inspection passes", async () => {
+    const deps = services();
+    const unreferenced = { ...watch, referenceCode: null };
+    const result = await validateCachedSearch(
+      "a".repeat(64),
+      [unreferenced],
+      deps,
+    );
+    expect(deps.primary).toHaveBeenCalledWith(
+      expect.objectContaining({ referenceCode: null }),
+    );
+    expect(deps.secondary).toHaveBeenCalledWith(
+      expect.objectContaining({ referenceCode: null }),
+    );
+    expect(deps.inspect).toHaveBeenCalledWith(
+      watch,
+      expect.anything(),
+      expect.anything(),
+    );
+    expect(deps.hydrate).toHaveBeenLastCalledWith([watch]);
+    expect(result).toMatchObject({ status: "verified", watches: [watch] });
+    expect(deps.publish).toHaveBeenCalledWith("attempt", [watch], [0.016]);
+  });
+
+  it("deduplicates references discovered after the initial catalogue lookup", async () => {
+    const deps = services();
+    const first = { ...watch, referenceCode: null };
+    const second = { ...first, model: "Different display name" };
+    const result = await validateCachedSearch(
+      "a".repeat(64),
+      [first, second],
+      deps,
+    );
+    expect(result).toMatchObject({
+      status: "verified",
+      watches: [watch],
+      rejected: 1,
+    });
+    expect(deps.publish).toHaveBeenCalledWith(
+      "attempt",
+      [watch],
+      [0.016, 0.016],
+    );
+  });
+
+  it("charges but rejects disagreeing or placeholder references", async () => {
+    for (const reference of ["different-123", "unknown"]) {
+      const deps = services();
+      deps.secondary = vi.fn(async () => ({
+        ...assertion("muse"),
+        evidence: { ...assertion("muse").evidence, referenceCode: reference },
+      }));
+      if (reference === "unknown") {
+        deps.primary = vi.fn(async () => ({
+          ...assertion("perplexity"),
+          evidence: {
+            ...assertion("perplexity").evidence,
+            referenceCode: reference,
+          },
+        }));
+      }
+      expect(
+        await validateCachedSearch(
+          "a".repeat(64),
+          [{ ...watch, referenceCode: null }],
+          deps,
+        ),
+      ).toEqual({
+        status: "unavailable",
+        reason: "no confirmed candidates",
+      });
+      expect(deps.inspect).not.toHaveBeenCalled();
+      expect(deps.settle).toHaveBeenCalledWith("attempt", [0.016]);
+      expect(deps.publish).not.toHaveBeenCalled();
+    }
+  });
+
   it("charges unknown cost conservatively and refuses an unconfirmed card", async () => {
     const deps = services();
     deps.secondary = vi.fn(async () => {

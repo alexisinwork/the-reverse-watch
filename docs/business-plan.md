@@ -468,6 +468,12 @@ deployment. The first-view callback is wired only as a test injection: no paid
 visitor path has been enabled, and new cache misses still need a budgeted
 candidate-discovery implementation.
 
+Reference recovery: the validator can now ask both providers to identify a
+missing reference, and only proceeds to source inspection if their normalized
+references agree and are not placeholders. Tests cover agreement, disagreement
+and missing values. This remains an offline-tested component, not an active
+visitor feature; no catalogue records or caches were verified by this change.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

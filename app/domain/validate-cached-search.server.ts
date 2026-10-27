@@ -2,6 +2,7 @@ import type { FoundWatch } from "./ai-watch-types";
 import type { ValidationDecision } from "./cached-result-validation";
 import type { ProviderAssertion } from "./validation-provider-response.server";
 import { uniqueWatchResults } from "./watch-result-dedup";
+import { normalizeReference } from "./ai-watch-guardrails";
 
 /** Only watch and publicly named subject constraints cross the provider boundary. */
 export type ValidationBrief = {
@@ -56,11 +57,10 @@ export async function validateCachedSearch(
 
   const results = await Promise.all(
     unique.map(async (watch) => {
-      if (!watch.referenceCode) return { decision: null, cost: 0 };
       const brief: ValidationBrief = {
         brand: watch.brand.slice(0, 160),
         model: watch.model.slice(0, 200),
-        referenceCode: watch.referenceCode.slice(0, 120),
+        referenceCode: watch.referenceCode?.slice(0, 120) ?? null,
         person: watch.details.person?.slice(0, 160) ?? null,
         work: watch.details.work?.slice(0, 200) ?? null,
       };
@@ -76,8 +76,28 @@ export async function validateCachedSearch(
       // Never silently settle a known overrun as the smaller reserved amount.
       // Retain the entire reservation for operator reconciliation.
       if (cost > 0.025) return { decision: null, cost, overrun: true };
+      // A previously unreferenced sighting is eligible only when both
+      // independently report the same exact reference. Perplexity supplies
+      // the candidate; Muse cannot introduce a different one.
+      const primaryReference = normalizeReference(
+        primary.value.evidence.referenceCode,
+      );
+      const secondaryReference = normalizeReference(
+        secondary.value.evidence.referenceCode,
+      );
+      if (
+        !primaryReference ||
+        ["unknown", "none", "null", "unavailable", "notavailable"].includes(
+          primaryReference,
+        ) ||
+        primaryReference !== secondaryReference
+      )
+        return { decision: null, cost };
+      const candidate = watch.referenceCode
+        ? watch
+        : { ...watch, referenceCode: primary.value.evidence.referenceCode };
       const decision = await services
-        .inspect(watch, primary.value, secondary.value)
+        .inspect(candidate, primary.value, secondary.value)
         .catch(() => null);
       return { decision, cost };
     }),
@@ -87,8 +107,13 @@ export async function validateCachedSearch(
       status: "unavailable",
       reason: "provider cost exceeded reservation",
     };
-  const accepted = results.flatMap((result) =>
+  const checked = results.flatMap((result) =>
     result.decision?.status === "verified" ? [result.decision.watch] : [],
+  );
+  // Discovery may have supplied a reference absent during the first lookup.
+  // Hydrate again using that exact identity, then remove newly visible duplicates.
+  const accepted = uniqueWatchResults(
+    checked.length ? await services.hydrate(checked).catch(() => checked) : [],
   );
   const costs = results.map((result) => result.cost);
   if (!accepted.length) {
