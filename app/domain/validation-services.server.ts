@@ -7,6 +7,7 @@ import {
   settleValidationBudget,
 } from "./validation-budget.server";
 import { validationProviderCalls } from "./validation-provider-calls.server";
+import { publishValidatedSnapshot } from "./validated-cache.server";
 import type { CatalogueClient } from "./watch-catalogue.server";
 
 /** This factory is not exposed to visitors until cost bounds and atomic cache
@@ -32,5 +33,7 @@ export function validationServices(
         },
       ),
     settle: (attempt, costs) => settleValidationBudget(client, attempt, costs),
+    publish: (attempt, watches, costs) =>
+      publishValidatedSnapshot(client, attempt, watches, costs),
   };
 }

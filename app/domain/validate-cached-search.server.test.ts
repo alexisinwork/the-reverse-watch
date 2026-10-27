@@ -52,6 +52,7 @@ function services(): ValidationServices {
       }),
     ),
     settle: vi.fn(async () => true),
+    publish: vi.fn(async () => true),
   };
 }
 
@@ -69,7 +70,8 @@ describe("validating a cached result under a reservation", () => {
       rejected: 0,
     });
     expect(deps.reserve).toHaveBeenCalledWith("a".repeat(64), 1);
-    expect(deps.settle).toHaveBeenCalledWith("attempt", [0.016]);
+    expect(deps.publish).toHaveBeenCalledWith("attempt", [watch], [0.016]);
+    expect(deps.settle).not.toHaveBeenCalled();
     expect(deps.primary).toHaveBeenCalledWith({
       brand: "Omega",
       model: "Planet Ocean",
@@ -103,12 +105,12 @@ describe("validating a cached result under a reservation", () => {
     expect(deps.inspect).not.toHaveBeenCalled();
   });
 
-  it("does not return a verified answer if budget settlement fails", async () => {
+  it("does not return a verified answer if atomic publication fails", async () => {
     const deps = services();
-    deps.settle = vi.fn(async () => false);
+    deps.publish = vi.fn(async () => false);
     expect(await validateCachedSearch("a".repeat(64), [watch], deps)).toEqual({
       status: "unavailable",
-      reason: "settlement failed",
+      reason: "publication failed",
     });
   });
 

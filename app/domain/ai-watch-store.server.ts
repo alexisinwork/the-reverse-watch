@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { z } from "zod";
 
 import { safeHttpUrl } from "./source-pages.server";
+import { loadValidatedSnapshot } from "./validated-cache.server";
 import {
   type AiSearchOutcome,
   type AiSearchView,
@@ -186,8 +187,11 @@ export async function searchWithStore(
 
   if (store) {
     try {
-      const stored = await loadStoredSearch(store, cacheKey, fetchImpl);
-      if (stored?.validationStatus === "valid")
+      const stored = await loadValidatedSnapshot(
+        { config: store, fetchImpl },
+        cacheKey,
+      );
+      if (stored)
         return {
           status: "found",
           summary: stored.summary,

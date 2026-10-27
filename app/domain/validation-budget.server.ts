@@ -49,16 +49,23 @@ export async function settleValidationBudget(
     costs.length > VALIDATION_SEARCH_WATCH_LIMIT
   )
     throw new Error("Invalid settlement");
-  const charges = costs.map((cost) => {
-    if (cost === null) return VALIDATION_WATCH_LIMIT_USD;
-    if (!Number.isFinite(cost) || cost < 0 || cost > VALIDATION_WATCH_LIMIT_USD)
-      throw new Error("Invalid watch cost");
-    return cost;
-  });
+  const charges = validationCharges(costs);
   return z.boolean().parse(
     await rpc(client, "ai_watch_validation_settle_v2", {
       p_attempt_id: attemptId,
       p_costs_usd: charges,
     }),
   );
+}
+
+/** Convert unknown costs to the reservation ceiling rather than zero. */
+export function validationCharges(costs: readonly (number | null)[]) {
+  if (costs.length < 1 || costs.length > VALIDATION_SEARCH_WATCH_LIMIT)
+    throw new Error("Invalid settlement");
+  return costs.map((cost) => {
+    if (cost === null) return VALIDATION_WATCH_LIMIT_USD;
+    if (!Number.isFinite(cost) || cost < 0 || cost > VALIDATION_WATCH_LIMIT_USD)
+      throw new Error("Invalid watch cost");
+    return cost;
+  });
 }

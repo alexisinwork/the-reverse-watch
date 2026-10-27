@@ -15,6 +15,24 @@ const foundWatch = {
   rationale: "Fits.",
   details: { waterResistanceM: 200 },
 };
+const validatedWatch = {
+  ...foundWatch,
+  details: {
+    ...foundWatch.details,
+    validationEvidence: [
+      {
+        provider: "perplexity",
+        sourceUrl: "https://first.example/watch",
+        checkedAt: "2026-10-27T00:00:00Z",
+      },
+      {
+        provider: "muse",
+        sourceUrl: "https://second.example/watch",
+        checkedAt: "2026-10-27T00:00:00Z",
+      },
+    ],
+  },
+};
 
 function json(body: unknown, status = 200) {
   return new Response(JSON.stringify(body), {
@@ -37,7 +55,9 @@ describe("searchWithStore", () => {
       json({
         validationStatus: "valid",
         summary: "Stored.",
-        watches: [foundWatch],
+        watches: [validatedWatch],
+        validatedAt: "2026-10-27T00:00:00Z",
+        policyVersion: "source-v1",
       }),
     );
 
@@ -49,7 +69,7 @@ describe("searchWithStore", () => {
     expect(result).toEqual({
       status: "found",
       summary: "Stored.",
-      watches: [foundWatch],
+      watches: [validatedWatch],
       fromCache: true,
     });
     expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
@@ -136,15 +156,17 @@ describe("searchWithStore", () => {
     expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
   });
 
-  it("drops a stored watch whose source is no longer a safe URL", async () => {
+  it("rejects a snapshot whose source is not a safe URL", async () => {
     const fetchImpl = vi.fn(async () =>
       json({
         validationStatus: "valid",
         summary: "Stored.",
         watches: [
-          { ...foundWatch, sourceUrl: "javascript:alert(1)" },
-          foundWatch,
+          { ...validatedWatch, sourceUrl: "javascript:alert(1)" },
+          validatedWatch,
         ],
+        validatedAt: "2026-10-27T00:00:00Z",
+        policyVersion: "source-v1",
       }),
     );
 
@@ -153,7 +175,7 @@ describe("searchWithStore", () => {
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
     );
 
-    expect(result.status === "found" && result.watches).toEqual([foundWatch]);
+    expect(result.status).toBe("unavailable");
   });
 });
 

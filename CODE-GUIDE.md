@@ -149,10 +149,14 @@ a fake fetch, so no test ever calls a real provider.
 
 ### When a provider is down (fallbacks, from first to last)
 
-1. **Stored results first.** Any film search or quiz answer run before is
-   served from the database with no AI call (`ai-watch-store.server.ts`).
+1. **Validated stored results first.** The shared AI cache path serves only a
+   `source-v1` snapshot created by the atomic validation/settlement transaction.
+   Legacy results remain stored as unverified. First-view validation is still
+   paused while live provider costs, semantic evidence and integration are
+   verified; a cache miss currently returns unavailable from this AI path.
    `scripts/prewarm-film-searches.ts` and `scripts/prewarm-imdb.ts` fill
-   this ahead of time (IMDb Top 250 movies, top 100 TV shows, their leads).
+   this ahead of time (IMDb Top 250 movies, top 100 TV shows, their leads), but
+   legacy prewarmed entries are not validated snapshots.
 2. **The quiz answers from the catalogue in code** whenever three or more
    watches fit; no AI is involved.
 3. **The other provider.** `webResearchJson` and `findPages` retry once

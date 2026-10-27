@@ -39,8 +39,8 @@ describe("validation services integration", () => {
           reservedUsd: 0.025,
         });
       }
-      if (path.includes("validation_settle")) {
-        order.push("settle");
+      if (path.includes("validated_cache_publish")) {
+        order.push("publish");
         return Response.json(true);
       }
       return new Response("not found", { status: 404 });
@@ -142,7 +142,7 @@ describe("validation services integration", () => {
       ],
     });
     expect(order[0]).toBe("reserve");
-    expect(order.slice(-1)).toEqual(["settle"]);
+    expect(order.slice(-1)).toEqual(["publish"]);
     expect(order.filter((entry) => entry === "source")).toHaveLength(2);
     expect(order.filter((entry) => entry === "perplexity")).toHaveLength(1);
     expect(order.filter((entry) => entry === "muse")).toHaveLength(1);

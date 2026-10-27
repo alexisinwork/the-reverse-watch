@@ -27,6 +27,11 @@ export type ValidationServices = {
     secondary: ProviderAssertion,
   ) => Promise<ValidationDecision>;
   settle: (attemptId: string, costs: (number | null)[]) => Promise<boolean>;
+  publish: (
+    attemptId: string,
+    watches: FoundWatch[],
+    costs: (number | null)[],
+  ) => Promise<boolean>;
 };
 
 export type ValidationRun =
@@ -82,19 +87,26 @@ export async function validateCachedSearch(
       status: "unavailable",
       reason: "provider cost exceeded reservation",
     };
-  const settled = await services.settle(
-    reservation.attemptId,
-    results.map((result) => result.cost),
-  );
-  if (!settled) return { status: "unavailable", reason: "settlement failed" };
   const accepted = results.flatMap((result) =>
     result.decision?.status === "verified" ? [result.decision.watch] : [],
   );
-  return accepted.length
-    ? {
-        status: "verified",
-        watches: accepted,
-        rejected: unique.length - accepted.length,
-      }
-    : { status: "unavailable", reason: "no confirmed candidates" };
+  const costs = results.map((result) => result.cost);
+  if (!accepted.length) {
+    const settled = await services.settle(reservation.attemptId, costs);
+    return settled
+      ? { status: "unavailable", reason: "no confirmed candidates" }
+      : { status: "unavailable", reason: "settlement failed" };
+  }
+  const published = await services.publish(
+    reservation.attemptId,
+    accepted,
+    costs,
+  );
+  if (!published)
+    return { status: "unavailable", reason: "publication failed" };
+  return {
+    status: "verified",
+    watches: accepted,
+    rejected: unique.length - accepted.length,
+  };
 }

@@ -448,6 +448,17 @@ catalogue hydration now fills a missing price from an approximate local price,
 marks it unconfirmed and the common UI says prices are approximate and may
 change. This does not activate the paused validation runtime.
 
+Validated snapshot transaction: additive migration 0092 stores a new immutable
+cache version without deleting the legacy result. Its server-only publish RPC
+checks the attempt and two source records, settles the card costs and inserts
+the snapshot in one transaction. Repeating the same publish is idempotent; a
+different payload under the same attempt is rejected. The shared cache reader
+now accepts only source-v1 snapshots and checks source URLs. SQL tests before
+and after migration ran inside rolled-back transactions; no paid provider calls
+were made. First-view research and provider cost limits remain paused pending
+real integration verification; existing alternatives and cron spending remain
+outside this ledger.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
