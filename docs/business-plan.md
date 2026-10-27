@@ -497,6 +497,14 @@ invent/update specifications, prices or photos. This supplies reference
 provenance, not the still-missing fact enrichment. The visitor validation path
 remains disabled pending cost and integration work.
 
+Sighting evidence retention: checked source passages and the public person and
+work attribution now survive snapshot serialization and the catalogue-intake
+archive, alongside each source URL and check time. Only passages actually
+checked by the source inspector are retained. This supports later human audit;
+it does not establish that a lexical match proves semantic attribution or
+validate other specifications. The database archive was tested in a rolled-back
+transaction after migration 0094.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

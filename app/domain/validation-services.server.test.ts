@@ -140,8 +140,18 @@ describe("validation services integration", () => {
           referenceCode: "2201.50.00",
           details: {
             validationEvidence: [
-              { provider: "perplexity" },
-              { provider: "muse" },
+              {
+                provider: "perplexity",
+                sourceQuote: identity.sourceQuote,
+                person: "Daniel Craig",
+                work: "Quantum of Solace",
+              },
+              {
+                provider: "muse",
+                sourceQuote: identity.sourceQuote,
+                person: "Daniel Craig",
+                work: "Quantum of Solace",
+              },
             ],
           },
         },

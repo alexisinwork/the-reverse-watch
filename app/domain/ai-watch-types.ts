@@ -5,6 +5,9 @@ export type WatchDetails = {
     provider: string;
     sourceUrl: string;
     checkedAt: string;
+    sourceQuote?: string;
+    person?: string | null;
+    work?: string | null;
   }[];
   catalogueId?: string;
   catalogueUpdatedAt?: string;

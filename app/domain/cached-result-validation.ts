@@ -79,11 +79,21 @@ export function validateCachedWatch(
       ...watch,
       details: {
         ...watch.details,
-        validationEvidence: evidence.map(({ provider, sourceUrl }) => ({
-          provider,
-          sourceUrl,
-          checkedAt,
-        })),
+        validationEvidence: evidence.map(
+          ({ provider, sourceUrl, sourceQuote }) => ({
+            provider,
+            sourceUrl,
+            checkedAt,
+            // The source inspector checks this passage only for sightings.
+            ...((watch.details.person || watch.details.work) && sourceQuote
+              ? {
+                  sourceQuote,
+                  person: watch.details.person ?? null,
+                  work: watch.details.work ?? null,
+                }
+              : {}),
+          }),
+        ),
       },
     },
     evidence,

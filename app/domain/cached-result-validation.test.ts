@@ -41,6 +41,12 @@ describe("cached watch evidence reconciliation", () => {
     if (result.status !== "verified") throw new Error("expected verified");
     expect(result.watch.referenceCode).toBe(watch.referenceCode);
     expect(result.watch.details.validationEvidence).toHaveLength(2);
+    expect(result.watch.details.validationEvidence?.[0]).toMatchObject({
+      sourceQuote: primary.sourceQuote,
+      person: "Daniel Craig",
+      work: "Skyfall",
+      checkedAt,
+    });
   });
 
   it("rejects a different wearer even when the same film and brand match", () => {

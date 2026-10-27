@@ -46,6 +46,9 @@ try {
               provider: "perplexity",
               sourceUrl: "https://first.example/watch",
               checkedAt: "2026-10-27T00:00:00Z",
+              sourceQuote: "Fixture REF1234 Person Work",
+              person: "Person",
+              work: "Work",
             },
             {
               provider: "muse",
@@ -73,6 +76,11 @@ try {
       assert.equal(archived.length, 2);
       assert.equal(archived[0]!.watch_id, rows[0]!.id);
       assert.equal(archived[0]!.state, "needs_evidence");
+      assert.deepEqual(archived[0]!.payload, {
+        brand,
+        referenceCode: reference,
+        validationEvidence: watch.details.validationEvidence,
+      });
       assert.equal(archived[1]!.watch_id, null);
       assert.equal(archived[1]!.state, "blocked_identity");
       const permissions = await tx<{ anon: boolean; service: boolean }[]>`

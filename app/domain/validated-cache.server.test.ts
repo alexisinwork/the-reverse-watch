@@ -21,6 +21,9 @@ const watch: FoundWatch = {
         provider: "perplexity",
         sourceUrl: "https://first.example/watch",
         checkedAt: "2026-10-27T00:00:00Z",
+        sourceQuote: "Omega 2201.50.00 Daniel Craig Quantum of Solace",
+        person: "Daniel Craig",
+        work: "Quantum of Solace",
       },
       {
         provider: "muse",
@@ -65,6 +68,28 @@ describe("validated cache snapshots", () => {
         db.value,
         attempt,
         [{ ...watch, details: {} }],
+        [0.01],
+      ),
+    ).rejects.toThrow();
+    expect(db.fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("rejects sighting snapshots when either checked passage or attribution is absent", async () => {
+    const db = client(true);
+    await expect(
+      publishValidatedSnapshot(
+        db.value,
+        attempt,
+        [
+          {
+            ...watch,
+            details: {
+              ...watch.details,
+              person: "Daniel Craig",
+              work: "Quantum of Solace",
+            },
+          },
+        ],
         [0.01],
       ),
     ).rejects.toThrow();

@@ -8,19 +8,45 @@ const evidenceSchema = z.object({
   provider: z.enum(["perplexity", "muse"]),
   sourceUrl: z.string().url(),
   checkedAt: z.string().datetime({ offset: true }),
+  sourceQuote: z.string().max(280).optional(),
+  person: z.string().max(160).nullable().optional(),
+  work: z.string().max(200).nullable().optional(),
 });
-const watchSchema = z.object({
-  brand: z.string().min(1),
-  model: z.string().min(1),
-  referenceCode: z.string().min(1),
-  sourceUrl: z.string(),
-  imageUrl: z.string().nullable(),
-  priceNote: z.string().nullable(),
-  rationale: z.string(),
-  details: z
-    .object({ validationEvidence: z.array(evidenceSchema).length(2) })
-    .passthrough(),
-});
+const watchSchema = z
+  .object({
+    brand: z.string().min(1),
+    model: z.string().min(1),
+    referenceCode: z.string().min(1),
+    sourceUrl: z.string(),
+    imageUrl: z.string().nullable(),
+    priceNote: z.string().nullable(),
+    rationale: z.string(),
+    details: z
+      .object({ validationEvidence: z.array(evidenceSchema).length(2) })
+      .passthrough(),
+  })
+  .superRefine((watch, context) => {
+    const person = watch.details.person;
+    const work = watch.details.work;
+    if (typeof person !== "string" && typeof work !== "string") return;
+    for (const [
+      index,
+      evidence,
+    ] of watch.details.validationEvidence.entries()) {
+      if (
+        !evidence.sourceQuote?.trim() ||
+        (typeof person === "string" && evidence.person !== person) ||
+        (typeof work === "string" && evidence.work !== work)
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["details", "validationEvidence", index],
+          message:
+            "Sighting evidence must retain its checked passage and subject",
+        });
+      }
+    }
+  });
 const snapshotSchema = z
   .object({
     validationStatus: z.literal("valid"),
