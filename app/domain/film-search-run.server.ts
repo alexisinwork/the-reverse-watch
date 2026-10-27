@@ -15,6 +15,7 @@ import type { RateLimitPolicy } from "./rate-limit.server";
 import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
 import { fillPhotosFromCatalogue } from "./watch-catalogue.server";
 import { enrichResultWatches } from "./catalogue-result-enrichment.server";
+import { uniqueSearchView } from "./watch-result-dedup";
 
 // Stored answers are free; only fresh searches spend provider credit.
 export const FILM_NEW_SEARCH_POLICY: RateLimitPolicy = {
@@ -61,13 +62,13 @@ export async function runFilmSearch({
   });
   // Sightings without a photo borrow the catalogue's photo of that watch.
   return view.status === "found"
-    ? {
+    ? uniqueSearchView({
         ...view,
         watches: mergeSightings(
           await enrichResultWatches(
             await fillPhotosFromCatalogue(view.watches),
           ),
         ),
-      }
+      })
     : view;
 }

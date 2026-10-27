@@ -7,6 +7,7 @@
 import { quizCacheInput, searchQuizWatches } from "./quiz-live-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import { searchWithStore } from "./ai-watch-store.server";
+import { uniqueSearchView } from "./watch-result-dedup";
 import type { AiSearchView, FoundWatch, ProgressEvent } from "./ai-watch-types";
 import { loadFxTable, type FxTable } from "./fx.server";
 import { enrichSearchView } from "./catalogue-result-enrichment.server";
@@ -106,7 +107,7 @@ async function addLiveFinds(
   clearCatalogueCache();
 }
 
-export async function searchQuiz(
+async function searchQuizBeforeDeduplication(
   profile: ProfileV4,
   {
     client = catalogueClient(),
@@ -261,4 +262,11 @@ export async function searchQuiz(
         : live.summary
     }${nearFitNote(filled.nearFitCount)}`,
   };
+}
+
+/** The shared page, widget and API all receive the same unique result. */
+export async function searchQuiz(
+  ...args: Parameters<typeof searchQuizBeforeDeduplication>
+): Promise<AiSearchView> {
+  return uniqueSearchView(await searchQuizBeforeDeduplication(...args));
 }

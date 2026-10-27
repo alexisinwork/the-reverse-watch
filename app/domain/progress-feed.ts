@@ -1,4 +1,5 @@
-import type { ProgressEvent, ProgressLink } from "./ai-watch-types";
+import type { FoundWatch, ProgressEvent, ProgressLink } from "./ai-watch-types";
+import { uniqueWatchResults } from "./watch-result-dedup";
 
 /**
  * A live feed of search steps. `report` adds an event, `close` ends the
@@ -12,6 +13,7 @@ export function createProgressFeed(maxMs = 38_000) {
     resolveNext = resolve;
   });
   let closed = false;
+  const seen: FoundWatch[] = [];
   const close = () => {
     if (closed) return;
     closed = true;
@@ -23,6 +25,14 @@ export function createProgressFeed(maxMs = 38_000) {
     feed,
     report: (event: ProgressEvent) => {
       if (closed) return;
+      if (event.watch) {
+        const unique = uniqueWatchResults([...seen, event.watch]);
+        if (unique.length <= seen.length) {
+          event = { text: event.text };
+        } else {
+          seen.push(event.watch);
+        }
+      }
       let resolveAfter!: (link: ProgressLink | null) => void;
       const next = new Promise<ProgressLink | null>((resolve) => {
         resolveAfter = resolve;

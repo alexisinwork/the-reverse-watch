@@ -179,7 +179,12 @@ describe("matchCatalogue", () => {
     const result = matchCatalogue(
       [
         watch({ id: "1", identityKey: "a1", model: "A" }),
-        watch({ id: "2", identityKey: "a2", model: "B" }),
+        watch({
+          id: "2",
+          identityKey: "a2",
+          model: "B",
+          referenceCode: "T137.407.11.042.00",
+        }),
         watch({
           id: "3",
           identityKey: "h",

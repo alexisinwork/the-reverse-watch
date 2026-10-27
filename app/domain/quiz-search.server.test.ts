@@ -133,6 +133,24 @@ describe("searchQuiz", () => {
     expect(result.alsoWorth?.map((watch) => watch.brand)).toEqual(["Brand4"]);
   });
 
+  it("selects additional distinct catalogue models before applying the result limit", async () => {
+    const rows = [
+      row(1, { brand: "Aardvark", model: "Seamaster", referenceCode: "REF-A" }),
+      row(2, { brand: "Aardvark", model: "Seamaster", referenceCode: "REF-B" }),
+      ...Array.from({ length: 10 }, (_, index) => row(index + 3)),
+    ];
+    const result = await searchQuiz(profile, {
+      client: client(rows).value,
+      loadFx: async () => fx,
+      runLive: vi.fn(),
+    });
+    if (result.status !== "found") throw new Error("expected found");
+    expect(result.watches).toHaveLength(10);
+    expect(
+      result.watches.filter((watch) => watch.brand === "Aardvark"),
+    ).toHaveLength(1);
+  });
+
   it("fills a gap with the live search and stores its finds as pending", async () => {
     const store = client([row(1)]);
     const result = await searchQuiz(profile, {

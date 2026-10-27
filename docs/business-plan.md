@@ -371,6 +371,14 @@ and archetypes are not covered by the shared AI search cache. The missing
 validator, cost accounting, per-watch limits, source evidence, and end-to-end
 verification remain open; no production completion is claimed.
 
+Server result deduplication follow-up, 2026-10-27: the quiz, film search and
+alternatives shared server paths now apply the same display deduplication before
+returning results to the website, partner widgets and JSON API. Quiz catalogue
+selection deduplicates before its result limit, so other matching models can fill
+the shortlist. Streamed progress suppresses repeated watch cards. This does not
+validate a film attribution, activate the paused paid-search workflow, or prove
+that all feature constraints and external claims have been verified.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

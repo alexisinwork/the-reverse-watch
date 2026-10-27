@@ -35,6 +35,7 @@ import {
 } from "./watch-catalogue.server";
 import { catalogueWatchSchema } from "./watch-catalogue";
 import { z } from "zod";
+import { uniqueSearchView } from "./watch-result-dedup";
 
 // Pre-owned lookups cost a little, so a visitor's new searches are capped.
 export const ALTERNATIVES_SEARCH_POLICY: RateLimitPolicy = {
@@ -149,7 +150,7 @@ function buildAlternativesPage(
     target: targetCard
       ? { card: targetCard, preowned: target.preownedPrice ?? null }
       : null,
-    result,
+    result: uniqueSearchView(result),
   };
 }
 

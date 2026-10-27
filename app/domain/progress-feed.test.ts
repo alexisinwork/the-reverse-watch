@@ -21,6 +21,30 @@ describe("createProgressFeed", () => {
     expect(await collect(progress.feed)).toEqual(["one", "two"]);
   });
 
+  it("does not stream a second card with the same brand and reference", async () => {
+    const progress = createProgressFeed();
+    const watch = {
+      brand: "Omega",
+      model: "Planet Ocean",
+      referenceCode: "2201.50.00",
+      sourceUrl: "https://example.com",
+      imageUrl: null,
+      priceNote: null,
+      rationale: "",
+      details: {},
+    };
+    progress.report({ text: "first", watch });
+    progress.report({
+      text: "second",
+      watch: { ...watch, model: "Another title", referenceCode: "2201-50-00" },
+    });
+    progress.close();
+    const first = await progress.feed;
+    const second = await first?.next;
+    expect(first?.event.watch).toEqual(watch);
+    expect(second?.event.watch).toBeUndefined();
+  });
+
   it("closes itself after the time limit", async () => {
     const progress = createProgressFeed(5);
     progress.report({ text: "started" });

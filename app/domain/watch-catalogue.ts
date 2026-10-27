@@ -16,6 +16,7 @@ import {
   normalizeReference,
 } from "./ai-watch-guardrails";
 import type { FoundWatch } from "./ai-watch-types";
+import { uniqueWatchResults } from "./watch-result-dedup";
 import { convert, type FxTable } from "./fx";
 import {
   caseDiameterForWrist,
@@ -431,7 +432,7 @@ function pick(
       a.model.localeCompare(b.model),
   );
   const byBrand = new Map<string, CatalogueWatch[]>();
-  for (const watch of ordered) {
+  for (const watch of uniqueWatchResults(ordered)) {
     const brand = fold(watch.brand);
     byBrand.set(brand, [...(byBrand.get(brand) ?? []), watch]);
   }
