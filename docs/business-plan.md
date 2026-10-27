@@ -420,6 +420,15 @@ must be supplied by its response and Muse cost is conservatively calculated from
 usage. The provider request adapters and cache promotion are not connected yet,
 and the exact actual provider invoice is not guaranteed by these parsers.
 
+Perplexity API compatibility, 2026-10-27: official documentation says Sonar
+Chat Completions support ended 2026-09-27; synchronous requests are being
+reformulated by Perplexity, while the recommended Agent API has a different
+output and search-result structure. A parser for the current response format
+and request builders with bounded search/output settings were added and tested.
+They remain disconnected from live execution pending provider cost-bound and
+integration verification. Sources: https://docs.perplexity.ai/docs/agent-api/migrate-from-sonar/overview
+and https://docs.perplexity.ai/docs/agent-api/tools/web-search (retrieved 2026-10-27).
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

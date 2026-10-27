@@ -54,6 +54,55 @@ export function parsePerplexityValidationResponse(
   };
 }
 
+/** The current Agent API returns search results separately from message text.
+ * A result URL is only a candidate source: it still needs page inspection. */
+export function parsePerplexityAgentValidationResponse(
+  body: unknown,
+): ProviderAssertion {
+  const response = z
+    .object({
+      status: z.literal("completed"),
+      output: z.array(z.object({ type: z.string() }).passthrough()),
+      usage: z.object({
+        cost: z.object({
+          currency: z.literal("USD"),
+          total_cost: z.number().finite().nonnegative(),
+        }),
+        tool_calls_details: z.object({
+          search_web: z.object({ invocation: z.literal(1) }),
+        }),
+      }),
+    })
+    .parse(body);
+  const messages = response.output.flatMap((item) => {
+    if (item.type !== "message" || !Array.isArray(item.content)) return [];
+    return z
+      .array(
+        z
+          .object({ type: z.string(), text: z.string().optional() })
+          .passthrough(),
+      )
+      .parse(item.content)
+      .filter((block) => block.type === "output_text")
+      .map((block) => block.text ?? "");
+  });
+  const sources = response.output.flatMap((item) => {
+    if (item.type !== "search_results" || !Array.isArray(item.results))
+      return [];
+    return z
+      .array(z.object({ url: z.string() }).passthrough())
+      .parse(item.results)
+      .map((result) => result.url);
+  });
+  const claim = claimSchema.parse(parseModelJson(messages.join("")));
+  if (!matchingCitation(claim.sourceUrl, sources))
+    throw new Error("Perplexity claim has no matching search result");
+  return {
+    evidence: { ...claim, provider: "perplexity", sourceVerified: false },
+    costUsd: response.usage.cost.total_cost,
+  };
+}
+
 /** Meta charges for tokens and web searches; use uncached input pricing for
  * conservative accounting and reject an answer that did not search. */
 export function parseMuseValidationResponse(

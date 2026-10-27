@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   parseMuseValidationResponse,
+  parsePerplexityAgentValidationResponse,
   parsePerplexityValidationResponse,
 } from "./validation-provider-response.server";
 
@@ -35,6 +36,50 @@ const muse = {
 };
 
 describe("provider validation response evidence", () => {
+  it("reads search results and actual usage from the Perplexity Agent API", () => {
+    const response = {
+      status: "completed",
+      output: [
+        { type: "search_results", results: [{ id: 1, url: claim.sourceUrl }] },
+        {
+          type: "message",
+          content: [{ type: "output_text", text: JSON.stringify(claim) }],
+        },
+      ],
+      usage: {
+        cost: { currency: "USD", total_cost: 0.007 },
+        tool_calls_details: { search_web: { invocation: 1 } },
+      },
+    };
+    expect(parsePerplexityAgentValidationResponse(response)).toMatchObject({
+      costUsd: 0.007,
+      evidence: { provider: "perplexity", sourceVerified: false },
+    });
+    expect(() =>
+      parsePerplexityAgentValidationResponse({
+        ...response,
+        output: response.output.slice(1),
+      }),
+    ).toThrow();
+    expect(() =>
+      parsePerplexityAgentValidationResponse({
+        ...response,
+        usage: {
+          ...response.usage,
+          tool_calls_details: { search_web: { invocation: 0 } },
+        },
+      }),
+    ).toThrow();
+    expect(() =>
+      parsePerplexityAgentValidationResponse({
+        ...response,
+        usage: {
+          ...response.usage,
+          cost: { currency: "EUR", total_cost: 0.007 },
+        },
+      }),
+    ).toThrow();
+  });
   it("keeps Perplexity citations and its reported cost without asserting page verification", () => {
     expect(parsePerplexityValidationResponse(perplexity)).toMatchObject({
       costUsd: 0.008,
