@@ -191,6 +191,104 @@ describe("validated cache snapshots", () => {
     expect(db.fetchImpl).toHaveBeenCalledTimes(1);
   });
 
+  it("refuses source quotations that do not support the specific reference and value", async () => {
+    const db = client(true);
+    const fact = {
+      field: "caseDiameterMm" as const,
+      value: 40,
+      sources: [
+        {
+          provider: "perplexity" as const,
+          sourceUrl: "https://first.example/watch",
+          quote: "2201.50.00 case diameter 40 mm",
+          checkedAt: "2026-10-27T00:00:00Z",
+        },
+        {
+          provider: "muse" as const,
+          sourceUrl: "https://second.example/watch",
+          quote: "OTHER123 case diameter 40 mm",
+          checkedAt: "2026-10-27T00:00:00Z",
+        },
+      ],
+    };
+    const bad: FoundWatch = {
+      ...watch,
+      details: {
+        ...watch.details,
+        caseDiameterMm: 40,
+        validationFacts: [fact],
+      },
+    };
+    await expect(
+      publishValidatedSnapshot(db.value, attempt, [bad], [0.01]),
+    ).rejects.toThrow();
+    fact.sources[1]!.quote = "2201.50.00 case diameter 42 mm";
+    await expect(
+      publishValidatedSnapshot(db.value, attempt, [bad], [0.01]),
+    ).rejects.toThrow();
+    expect(db.fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("refuses a sighting quote which does not identify the wearer", async () => {
+    const db = client(true);
+    const bad = {
+      ...watch,
+      details: {
+        ...watch.details,
+        person: "Daniel Craig",
+        validationEvidence: watch.details.validationEvidence!.map((entry) => ({
+          ...entry,
+          person: "Daniel Craig",
+          sourceQuote: "Omega 2201.50.00 Another Actor",
+        })),
+      },
+    };
+    await expect(
+      publishValidatedSnapshot(db.value, attempt, [bad], [0.01]),
+    ).rejects.toThrow();
+    expect(db.fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("rejects a previously stored snapshot with a mismatched fact quote", async () => {
+    const corrupted = {
+      ...watch,
+      details: {
+        ...watch.details,
+        caseDiameterMm: 40,
+        validationFacts: [
+          {
+            field: "caseDiameterMm",
+            value: 40,
+            sources: [
+              {
+                provider: "perplexity",
+                sourceUrl: "https://first.example/watch",
+                quote: "2201.50.00 case diameter 40 mm",
+                checkedAt: "2026-10-27T00:00:00Z",
+              },
+              {
+                provider: "muse",
+                sourceUrl: "https://second.example/watch",
+                quote: "OTHER123 case diameter 40 mm",
+                checkedAt: "2026-10-27T00:00:00Z",
+              },
+            ],
+          },
+        ],
+      },
+    };
+    const db = client({
+      validationStatus: "valid",
+      summary: "Checked",
+      watches: [corrupted],
+      validatedAt: "2026-10-27T00:00:00Z",
+      policyVersion: "source-v1",
+    });
+    await expect(
+      loadValidatedSnapshot(db.value, "a".repeat(64)),
+    ).rejects.toThrow();
+  });
+
   it("does not publish an approximate price from a quote for another amount", async () => {
     const db = client(true);
     await expect(

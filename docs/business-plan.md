@@ -611,6 +611,11 @@ the first slot; per-card overflow halts publication. A cache hit reuses the
 committed snapshot. Live-provider verification, production wiring and
 provider-side hard spending bounds remain open.
 
+Snapshot validation also rechecks that each technical-fact quotation names the
+exact reference and supports its value, and that each sighting quotation names
+the watch and requested person or work. This applies when publishing and when
+reading the snapshot; it does not replace checking the live source pages.
+
 First-use flow rehearsal: a deterministic test now runs a legacy actor cache
 through the actual validator service, both mocked providers, source and product
 page inspection, publication RPC payload and a second snapshot read. It checks

@@ -10,6 +10,7 @@ import {
   pageMentionsReference,
 } from "./ai-watch-guardrails";
 import { validationCharges } from "./validation-budget.server";
+import { quoteSupportsValue } from "./catalogue-enrichment.server";
 import {
   clearCatalogueCache,
   rpc,
@@ -24,6 +25,17 @@ function independentSources(sources: { sourceUrl: string }[]) {
       : null;
   });
   return hosts.length === 2 && hosts.every(Boolean) && hosts[0] !== hosts[1];
+}
+
+function quoteHas(quote: string, value: string) {
+  const words = (input: string) =>
+    input
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, " ")
+      .trim();
+  return ` ${words(quote)} `.includes(` ${words(value)} `);
 }
 
 const evidenceSchema = z.object({
@@ -169,15 +181,24 @@ const watchSchema = z
       watch.details.validationFacts ?? []
     ).entries()) {
       const key = fact.field === "movementType" ? "movement" : fact.field;
-      const matches = fact.sources.every((source) =>
-        watch.details.validationEvidence.some(
-          (evidence) =>
-            evidence.provider === source.provider &&
-            (evidence.sourceUrl === source.sourceUrl ||
-              (!!source.citedUrl &&
-                !!safeHttpUrl(source.citedUrl) &&
-                evidence.citedUrls?.includes(source.citedUrl) === true)),
-        ),
+      const matches = fact.sources.every(
+        (source) =>
+          !!safeHttpUrl(source.sourceUrl) &&
+          pageMentionsReference(watch.referenceCode, source.quote, "") &&
+          quoteSupportsValue({
+            field: fact.field,
+            value: fact.value,
+            quote: source.quote,
+            sourceUrl: source.sourceUrl,
+          }) &&
+          watch.details.validationEvidence.some(
+            (evidence) =>
+              evidence.provider === source.provider &&
+              (evidence.sourceUrl === source.sourceUrl ||
+                (!!source.citedUrl &&
+                  !!safeHttpUrl(source.citedUrl) &&
+                  evidence.citedUrls?.includes(source.citedUrl) === true)),
+          ),
       );
       const providers = new Set(fact.sources.map((source) => source.provider));
       if (
@@ -204,6 +225,11 @@ const watchSchema = z
     ] of watch.details.validationEvidence.entries()) {
       if (
         !evidence.sourceQuote?.trim() ||
+        !quoteHas(evidence.sourceQuote, watch.brand) ||
+        !pageMentionsReference(watch.referenceCode, evidence.sourceQuote, "") ||
+        (typeof person === "string" &&
+          !quoteHas(evidence.sourceQuote, person)) ||
+        (typeof work === "string" && !quoteHas(evidence.sourceQuote, work)) ||
         (typeof person === "string" && evidence.person !== person) ||
         (typeof work === "string" && evidence.work !== work)
       ) {
