@@ -91,6 +91,8 @@ export function validationCharges(costs: readonly (number | null)[]) {
     if (cost === null) return VALIDATION_WATCH_LIMIT_USD;
     if (!Number.isFinite(cost) || cost < 0 || cost > VALIDATION_WATCH_LIMIT_USD)
       throw new Error("Invalid watch cost");
-    return cost;
+    // The DB ledger keeps five fractional digits. Round upward per card
+    // before serialization so binary floating point never understates a bill.
+    return Math.ceil(cost * 100_000) / 100_000;
   });
 }

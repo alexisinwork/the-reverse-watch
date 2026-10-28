@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 import {
   reserveValidationBudget,
   settleValidationBudget,
+  validationCharges,
 } from "./validation-budget.server";
 import type { CatalogueClient } from "./watch-catalogue.server";
 
@@ -62,5 +63,12 @@ describe("validation budget RPC client", () => {
     await expect(
       settleValidationBudget(db.value, attempt, [0.026]),
     ).rejects.toThrow();
+  });
+
+  it("rounds known provider cost upward to ledger precision", () => {
+    expect(validationCharges([0.004 + 0.0027, 0.006701])).toEqual([
+      0.0067, 0.00671,
+    ]);
+    expect(validationCharges([0.025])).toEqual([0.025]);
   });
 });

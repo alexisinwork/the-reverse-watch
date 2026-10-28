@@ -590,6 +590,13 @@ overwrites a different existing image. Many pages do not expose this structured
 data, so this is not a guarantee that every watch gains a photo. This path is
 still offline-tested and not enabled for visitors.
 
+First-use flow rehearsal: a deterministic test now runs a legacy actor cache
+through the actual validator service, both mocked providers, source and product
+page inspection, publication RPC payload and a second snapshot read. It checks
+price, size, image, reservation and provider reuse. Provider charges are rounded
+up to database precision per card before settlement. This is not a live provider
+or deployment test and does not activate the visitor path.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
