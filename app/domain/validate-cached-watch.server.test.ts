@@ -197,6 +197,77 @@ describe("cached watch source validation", () => {
     expect(result.watch.details.validationFacts?.[0]?.sources).toHaveLength(2);
   });
 
+  it("checks separately cited product pages for facts without extra provider searches", async () => {
+    const firstUrl = "https://product-one.example/watch";
+    const secondUrl = "https://product-two.example/watch";
+    const fact = {
+      field: "caseDiameterMm" as const,
+      value: 41.5,
+      quote: "231.10.39.21.03.001 case diameter 41.5 mm",
+    };
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("product-")
+        ? new Response(`Omega ${fact.quote}`, {
+            headers: { "content-type": "text/plain" },
+          })
+        : new Response(primary.sourceQuote, {
+            headers: { "content-type": "text/plain" },
+          }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      {
+        ...primary,
+        citedUrls: [firstUrl],
+        facts: [{ ...fact, sourceUrl: firstUrl }],
+      },
+      {
+        ...secondary,
+        citedUrls: [secondUrl],
+        facts: [{ ...fact, sourceUrl: secondUrl }],
+      },
+      { fetchImpl, checkedAt: "2026-10-27T00:00:00Z" },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.details.validationFacts).toMatchObject([
+      {
+        value: 41.5,
+        sources: [
+          { provider: "perplexity", sourceUrl: firstUrl, citedUrl: firstUrl },
+          { provider: "muse", sourceUrl: secondUrl, citedUrl: secondUrl },
+        ],
+      },
+    ]);
+    // The image fallback also examines these product pages; no model call is made.
+    expect(fetchImpl).toHaveBeenCalledTimes(6);
+  });
+
+  it("does not accept facts from an uncited product page", async () => {
+    const fact = {
+      field: "caseDiameterMm" as const,
+      value: 41.5,
+      quote: "231.10.39.21.03.001 case diameter 41.5 mm",
+      sourceUrl: "https://product.example/watch",
+    };
+    const fetchImpl = vi.fn(
+      async () =>
+        new Response(primary.sourceQuote, {
+          headers: { "content-type": "text/plain" },
+        }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      { ...primary, facts: [fact] },
+      { ...secondary, facts: [fact] },
+      { fetchImpl },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.details.validationFacts).toBeUndefined();
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
+  });
+
   it("leaves disputed or unsupported technical facts missing", async () => {
     const primaryFact = {
       field: "caseDiameterMm" as const,

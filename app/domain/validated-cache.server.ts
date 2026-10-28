@@ -16,6 +16,16 @@ import {
   type CatalogueClient,
 } from "./watch-catalogue.server";
 
+function independentSources(sources: { sourceUrl: string }[]) {
+  const hosts = sources.map((source) => {
+    const url = safeHttpUrl(source.sourceUrl);
+    return url
+      ? new URL(url).hostname.toLowerCase().replace(/^www\./, "")
+      : null;
+  });
+  return hosts.length === 2 && hosts.every(Boolean) && hosts[0] !== hosts[1];
+}
+
 const evidenceSchema = z.object({
   provider: z.enum(["perplexity", "muse"]),
   sourceUrl: z.string().url(),
@@ -33,6 +43,7 @@ const factSchema = z.object({
       z.object({
         provider: z.enum(["perplexity", "muse"]),
         sourceUrl: z.string().url(),
+        citedUrl: z.string().url().optional(),
         quote: z.string().min(1).max(280),
         checkedAt: z.string().datetime({ offset: true }),
       }),
@@ -46,6 +57,7 @@ const priceObservationSchema = z.object({
       z.object({
         provider: z.enum(["perplexity", "muse"]),
         sourceUrl: z.string().url(),
+        citedUrl: z.string().url().optional(),
         quote: z.string().min(1).max(280),
         checkedAt: z.string().datetime({ offset: true }),
         value: z.string().max(100),
@@ -127,12 +139,16 @@ const watchSchema = z
           watch.details.validationEvidence.some(
             (evidence) =>
               evidence.provider === source.provider &&
-              evidence.sourceUrl === source.sourceUrl,
+              (evidence.sourceUrl === source.sourceUrl ||
+                (!!source.citedUrl &&
+                  !!safeHttpUrl(source.citedUrl) &&
+                  evidence.citedUrls?.includes(source.citedUrl) === true)),
           ),
       );
       if (
         !price ||
         providers.size !== 2 ||
+        !independentSources(observation.sources) ||
         !sourcesMatch ||
         observation.sources.find((source) => source.provider === "perplexity")
           ?.value !== observation.value ||
@@ -157,13 +173,17 @@ const watchSchema = z
         watch.details.validationEvidence.some(
           (evidence) =>
             evidence.provider === source.provider &&
-            evidence.sourceUrl === source.sourceUrl,
+            (evidence.sourceUrl === source.sourceUrl ||
+              (!!source.citedUrl &&
+                !!safeHttpUrl(source.citedUrl) &&
+                evidence.citedUrls?.includes(source.citedUrl) === true)),
         ),
       );
       const providers = new Set(fact.sources.map((source) => source.provider));
       if (
         seen.has(fact.field) ||
         providers.size !== 2 ||
+        !independentSources(fact.sources) ||
         !matches ||
         watch.details[key] !== fact.value
       ) {

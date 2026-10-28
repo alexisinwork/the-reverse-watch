@@ -14,6 +14,7 @@ export type WatchDetails = {
     sources: {
       provider: "perplexity" | "muse";
       sourceUrl: string;
+      citedUrl?: string;
       quote: string;
       checkedAt: string;
       value: string;
@@ -25,6 +26,7 @@ export type WatchDetails = {
     sources: {
       provider: "perplexity" | "muse";
       sourceUrl: string;
+      citedUrl?: string;
       quote: string;
       checkedAt: string;
     }[];

@@ -137,6 +137,60 @@ describe("validated cache snapshots", () => {
     expect(db.fetchImpl).not.toHaveBeenCalled();
   });
 
+  it("accepts independently cited product facts and rejects mismatched citations", async () => {
+    const db = client(true);
+    const urls = [
+      "https://product-one.example/watch",
+      "https://product-two.example/watch",
+    ];
+    const records = watch.details.validationEvidence!.map((entry, index) => ({
+      ...entry,
+      citedUrls: [urls[index]!],
+    }));
+    const fact = {
+      field: "caseDiameterMm" as const,
+      value: 40,
+      sources: records.map((entry, index) => ({
+        provider: entry.provider as "perplexity" | "muse",
+        sourceUrl: urls[index]!,
+        citedUrl: urls[index]!,
+        quote: "2201.50.00 case diameter 40 mm",
+        checkedAt: entry.checkedAt,
+      })),
+    };
+    const enriched: FoundWatch = {
+      ...watch,
+      details: {
+        ...watch.details,
+        caseDiameterMm: 40,
+        validationEvidence: records,
+        validationFacts: [fact],
+      },
+    };
+    expect(
+      await publishValidatedSnapshot(db.value, attempt, [enriched], [0.01]),
+    ).toBe(true);
+    const invalid = {
+      ...enriched,
+      details: {
+        ...enriched.details,
+        validationFacts: [
+          {
+            ...fact,
+            sources: fact.sources.map((source) => ({
+              ...source,
+              citedUrl: "https://uncited.example/watch",
+            })),
+          },
+        ],
+      },
+    };
+    await expect(
+      publishValidatedSnapshot(db.value, attempt, [invalid], [0.01]),
+    ).rejects.toThrow();
+    expect(db.fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
   it("does not publish an approximate price from a quote for another amount", async () => {
     const db = client(true);
     await expect(

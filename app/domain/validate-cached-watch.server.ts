@@ -3,10 +3,74 @@ import {
   validateCachedWatch,
   type ValidationDecision,
   type ValidationEvidence,
+  type ValidationFact,
 } from "./cached-result-validation";
 import { inspectCachedResultSource } from "./cached-result-source-check.server";
 import { parseObservedPrice } from "./validated-price";
 import { verifyImageUrl } from "./source-pages.server";
+import { safeHttpUrl } from "./source-pages.server";
+
+type CheckedFact = ValidationFact & {
+  checkedSourceUrl: string;
+  citedUrl?: string;
+};
+
+async function checkedProductFacts(
+  watch: FoundWatch,
+  evidence: ValidationEvidence,
+  identityPage: Awaited<ReturnType<typeof inspectCachedResultSource>>,
+  fetchImpl: typeof fetch,
+): Promise<CheckedFact[]> {
+  const facts = evidence.facts ?? [];
+  const samePage = (identityPage.checkedFacts ?? []).map((fact) => ({
+    ...fact,
+    checkedSourceUrl: identityPage.finalUrl!,
+  }));
+  const cited = new Set(
+    (evidence.citedUrls ?? []).map(safeHttpUrl).filter(Boolean),
+  );
+  const targets = [
+    ...new Set(
+      facts.flatMap((fact) => {
+        const target = safeHttpUrl(fact.sourceUrl);
+        return target &&
+          cited.has(target) &&
+          target !== safeHttpUrl(evidence.sourceUrl)
+          ? [target]
+          : [];
+      }),
+    ),
+  ].slice(0, 4);
+  const pages = await Promise.all(
+    targets.map(async (citedUrl) => {
+      const matching = facts.filter(
+        (fact) => safeHttpUrl(fact.sourceUrl) === citedUrl,
+      );
+      const page = await inspectCachedResultSource(
+        { ...watch, details: {} },
+        citedUrl,
+        fetchImpl,
+        undefined,
+        matching,
+      );
+      return page.status === "matched" && page.finalUrl
+        ? (page.checkedFacts ?? []).map((fact) => ({
+            ...fact,
+            checkedSourceUrl: page.finalUrl!,
+            citedUrl,
+          }))
+        : [];
+    }),
+  );
+  return [...samePage, ...pages.flat()];
+}
+
+function independentFactSources(a: CheckedFact, b: CheckedFact) {
+  return (
+    new URL(a.checkedSourceUrl).hostname.toLowerCase().replace(/^www\./, "") !==
+    new URL(b.checkedSourceUrl).hostname.toLowerCase().replace(/^www\./, "")
+  );
+}
 
 /** Check both cited pages ourselves before reconciling the two assertions.
  * Matching text is necessary evidence, not proof that the page associates the
@@ -24,7 +88,11 @@ export async function validateCachedWatchFromSources(
       primary.sourceUrl,
       fetchImpl,
       primary.sourceQuote,
-      primary.facts,
+      primary.facts?.filter(
+        (fact) =>
+          !fact.sourceUrl ||
+          safeHttpUrl(fact.sourceUrl) === safeHttpUrl(primary.sourceUrl),
+      ),
       !watch.imageUrl,
     ),
     inspectCachedResultSource(
@@ -32,7 +100,11 @@ export async function validateCachedWatchFromSources(
       secondary.sourceUrl,
       fetchImpl,
       secondary.sourceQuote,
-      secondary.facts,
+      secondary.facts?.filter(
+        (fact) =>
+          !fact.sourceUrl ||
+          safeHttpUrl(fact.sourceUrl) === safeHttpUrl(secondary.sourceUrl),
+      ),
       !watch.imageUrl,
     ),
   ]);
@@ -51,8 +123,10 @@ export async function validateCachedWatchFromSources(
     options.checkedAt ?? new Date().toISOString(),
   );
   if (result.status !== "verified") return result;
-  const a = first.checkedFacts ?? [];
-  const b = second.checkedFacts ?? [];
+  const [a, b] = await Promise.all([
+    checkedProductFacts(watch, primary, first, fetchImpl),
+    checkedProductFacts(watch, secondary, second, fetchImpl),
+  ]);
   const details = { ...result.watch.details };
   const facts: NonNullable<typeof details.validationFacts> = [];
   for (const field of [
@@ -65,7 +139,11 @@ export async function validateCachedWatchFromSources(
     if (primaryFacts.length !== 1 || secondaryFacts.length !== 1) continue;
     const firstFact = primaryFacts[0]!;
     const secondFact = secondaryFacts[0]!;
-    if (firstFact.value !== secondFact.value) continue;
+    if (
+      firstFact.value !== secondFact.value ||
+      !independentFactSources(firstFact, secondFact)
+    )
+      continue;
     let accepted = false;
     if (
       field === "caseDiameterMm" &&
@@ -111,13 +189,15 @@ export async function validateCachedWatchFromSources(
         sources: [
           {
             provider: "perplexity",
-            sourceUrl: result.evidence[0]!.sourceUrl,
+            sourceUrl: firstFact.checkedSourceUrl,
+            ...(firstFact.citedUrl ? { citedUrl: firstFact.citedUrl } : {}),
             quote: firstFact.quote,
             checkedAt: details.validationEvidence![0]!.checkedAt,
           },
           {
             provider: "muse",
-            sourceUrl: result.evidence[1]!.sourceUrl,
+            sourceUrl: secondFact.checkedSourceUrl,
+            ...(secondFact.citedUrl ? { citedUrl: secondFact.citedUrl } : {}),
             quote: secondFact.quote,
             checkedAt: details.validationEvidence![1]!.checkedAt,
           },
@@ -133,7 +213,8 @@ export async function validateCachedWatchFromSources(
     primaryPrices.length === 1 &&
     secondaryPrices.length === 1 &&
     typeof primaryPrices[0]!.value === "string" &&
-    typeof secondaryPrices[0]!.value === "string"
+    typeof secondaryPrices[0]!.value === "string" &&
+    independentFactSources(primaryPrices[0]!, secondaryPrices[0]!)
   ) {
     const firstPrice = parseObservedPrice(primaryPrices[0]!.value);
     const secondPrice = parseObservedPrice(secondaryPrices[0]!.value);
@@ -146,14 +227,20 @@ export async function validateCachedWatchFromSources(
         sources: [
           {
             provider: "perplexity",
-            sourceUrl: result.evidence[0]!.sourceUrl,
+            sourceUrl: primaryPrices[0]!.checkedSourceUrl,
+            ...(primaryPrices[0]!.citedUrl
+              ? { citedUrl: primaryPrices[0]!.citedUrl }
+              : {}),
             quote: primaryPrices[0]!.quote,
             checkedAt: details.validationEvidence![0]!.checkedAt,
             value: primaryPrices[0]!.value,
           },
           {
             provider: "muse",
-            sourceUrl: result.evidence[1]!.sourceUrl,
+            sourceUrl: secondaryPrices[0]!.checkedSourceUrl,
+            ...(secondaryPrices[0]!.citedUrl
+              ? { citedUrl: secondaryPrices[0]!.citedUrl }
+              : {}),
             quote: secondaryPrices[0]!.quote,
             checkedAt: details.validationEvidence![1]!.checkedAt,
             value: secondaryPrices[0]!.value,

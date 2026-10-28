@@ -596,6 +596,13 @@ accepts the resulting photo provenance only when the cited URL belongs to that
 provider; the server independently checks the product's brand and reference
 and the image URL. Mock and rollback tests cover this route, not live coverage.
 
+Product-fact follow-up: provider responses can also point individual missing
+technical facts and approximate price observations to their own already-cited
+product pages. The server checks the exact reference and quoted fact on each
+page and requires independent hosts; migration 0103 preserves those citations
+with the atomic catalogue/cache write. This is mock- and rollback-tested only,
+and does not activate paid research for visitors.
+
 First-use flow rehearsal: a deterministic test now runs a legacy actor cache
 through the actual validator service, both mocked providers, source and product
 page inspection, publication RPC payload and a second snapshot read. It checks

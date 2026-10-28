@@ -7,6 +7,8 @@ export type ValidationFact = {
   field: "caseDiameterMm" | "waterResistanceM" | "movementType" | "price";
   value: string | number;
   quote: string;
+  /** Provider-cited product page, when different from the sighting page. */
+  sourceUrl?: string;
 };
 
 export type ValidationEvidence = {
