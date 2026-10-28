@@ -43,11 +43,22 @@ export function catalogueClient(
   return config ? { config, fetchImpl: overrides.fetchImpl ?? fetch } : null;
 }
 
+class CatalogueRpcError extends Error {
+  constructor(
+    message: string,
+    readonly status: number,
+  ) {
+    super(message);
+    this.name = "CatalogueRpcError";
+  }
+}
+
 export async function rpc(
   client: CatalogueClient,
   name: string,
   body: unknown,
   timeoutMs = 10_000,
+  signal?: AbortSignal,
 ) {
   const response = await client.fetchImpl(
     new URL(`/rest/v1/rpc/${name}`, client.config.supabaseUrl),
@@ -55,12 +66,15 @@ export async function rpc(
       method: "POST",
       headers: rpcHeaders(client.config),
       body: JSON.stringify(body),
-      signal: AbortSignal.timeout(timeoutMs),
+      signal: signal
+        ? AbortSignal.any([signal, AbortSignal.timeout(timeoutMs)])
+        : AbortSignal.timeout(timeoutMs),
     },
   );
   if (!response.ok) {
-    throw new Error(
+    throw new CatalogueRpcError(
       `${name} returned ${response.status}: ${(await response.text()).slice(0, 200)}`,
+      response.status,
     );
   }
   const responseText = await response.text();
@@ -73,16 +87,45 @@ export async function listCatalogue(
   client: CatalogueClient,
   includeRejected = false,
 ) {
+  const controller = new AbortController();
+  const deadline = setTimeout(() => controller.abort(), 45_000);
+  try {
+    return await readCataloguePages(client, includeRejected, controller.signal);
+  } finally {
+    clearTimeout(deadline);
+    controller.abort();
+  }
+}
+
+async function readCataloguePages(
+  client: CatalogueClient,
+  includeRejected: boolean,
+  signal: AbortSignal,
+) {
   const rows: z.infer<typeof catalogueWatchSchema>[] = [];
-  const readPage = async (page: number) =>
-    listSchema.parse(
-      await rpc(
-        client,
-        "watch_catalogue_recommendation_page_v1",
-        { p_include_rejected: includeRejected, p_page: page },
-        15_000,
-      ),
-    );
+  const readPage = async (page: number) => {
+    for (let attempt = 0; ; attempt++) {
+      try {
+        return listSchema.parse(
+          await rpc(
+            client,
+            "watch_catalogue_recommendation_page_v1",
+            { p_include_rejected: includeRejected, p_page: page },
+            15_000,
+            signal,
+          ),
+        );
+      } catch (error) {
+        const retryable =
+          error instanceof CatalogueRpcError
+            ? error.status === 429 || error.status >= 500
+            : error instanceof TypeError ||
+              (error instanceof Error &&
+                ["AbortError", "TimeoutError"].includes(error.name));
+        if (attempt || signal.aborted || !retryable) throw error;
+      }
+    }
+  };
   const first = await readPage(1);
   rows.push(...first);
   if (first.length < 500) return rows;

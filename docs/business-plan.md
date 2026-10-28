@@ -186,7 +186,7 @@ reservations. Provider billing outside this ledger and vendor-side hard caps
 are separate. The old unmetered worker routes remain paused. The shared visitor
 runtime passed the deployment gate and production cache/budget/API checks below.
 
-Release gate for this checkpoint: 669 unit tests and the full fast gate passed;
+Release gate for this checkpoint: 672 unit tests and the full fast gate passed;
 12 desktop/mobile browser scenarios passed; all seven local integration
 scenarios passed against the real sibling portfolio, Reserve and a freshly
 started PHP/WordPress Playground runtime, including its actual shortcode.
@@ -217,6 +217,17 @@ unknown-target alternative discovery, pre-owned refresh and old bulk workers
 (including the scheduled legacy price refresh) remain paused; catalogue
 alternatives are available. Historical draft caches intentionally remain
 unverified until a visitor requests each one.
+
+Post-rollout cold-read check found a real recommendation-page statement timeout
+before alternative validation began. Alternatives now return a recoverable
+unavailable response on that read failure; catalogue page reads retry transient
+errors once and share a 45-second abort deadline. No write or paid provider call
+is retried. Standard VACUUM ANALYZE retained all 56,719 rows and reduced count
+query heap fetches from 35,304 to zero (8,200 to 159 buffers). Additive migration
+0108 lowers per-table autovacuum/statistics thresholds, checked with rollback
+and applied tests. The uncached production Quantum of Solace search settled
+$0.0076 conservatively and returned verification_failed instead of certifying
+an unsupported result; positive coverage of that subject remains unproved.
 
 Deferred tooling idea, owner decision 2026-10-25: remember Replica Skill as a
 possible future workflow reference, but do not install, adapt or implement it

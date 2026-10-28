@@ -2012,3 +2012,9 @@ admin, film/actor and archetype pages, partner find/quiz/alternatives APIs and
 unregistered-origin rejection passed. Production smoke added zero charge and
 zero validation attempts. The old unmetered background/unknown-target research
 paths remain paused, rather than bypassing the visitor validation budget.
+The subsequent cold-read smoke exposed a database timeout before paid alternative
+research. A shared 45-second catalogue-read deadline, one transient read retry
+and a typed recoverable alternative error cover that case. Standard vacuum and
+additive 0108 maintenance thresholds reduce repeated heap visits without changing
+facts or row counts. Fast gate after the fix: 672 tests. The live uncached film
+negative case settled its charge without publishing an unverified snapshot.

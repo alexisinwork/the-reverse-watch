@@ -27,7 +27,7 @@ import {
 } from "./questionnaire-v4";
 import type { RateLimitPolicy } from "./rate-limit.server";
 import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
-import { catalogueToFoundWatch } from "./watch-catalogue";
+import { catalogueToFoundWatch, type CatalogueWatch } from "./watch-catalogue";
 import {
   catalogueClient,
   loadCatalogueCached,
@@ -213,7 +213,24 @@ export async function startAlternativesSearch(
       code: "unavailable",
       error: "The search is unavailable right now.",
     };
-  const catalogue = [...(await loadCatalogueCached(client))];
+  let catalogue: CatalogueWatch[];
+  try {
+    catalogue = [...(await loadCatalogueCached(client))];
+  } catch (error) {
+    console.error(
+      JSON.stringify({
+        event: "alternatives_catalogue_read_error",
+        message:
+          error instanceof Error ? error.message : "Unknown catalogue error",
+      }),
+    );
+    return {
+      kind: "error",
+      code: "unavailable",
+      error:
+        "The catalogue is temporarily unavailable. Please try again in a minute.",
+    };
+  }
   // Unpriced imported identities can resolve a named target without loading
   // the full research archive into every recommendation request.
   try {

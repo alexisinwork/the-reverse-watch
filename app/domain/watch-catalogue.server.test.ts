@@ -19,6 +19,33 @@ it("accepts successful void RPC responses used by analytics", async () => {
   ).resolves.toBeNull();
 });
 
+it("retries a transient catalogue read once without returning a partial catalogue", async () => {
+  const fetchImpl = vi
+    .fn()
+    .mockResolvedValueOnce(Response.json({ code: "57014" }, { status: 500 }))
+    .mockResolvedValueOnce(Response.json([]));
+  await expect(
+    listCatalogue({
+      config: { supabaseUrl: "https://db.test", serviceKey: "test" },
+      fetchImpl,
+    }),
+  ).resolves.toEqual([]);
+  expect(fetchImpl).toHaveBeenCalledTimes(2);
+});
+
+it("does not retry catalogue authentication failures", async () => {
+  const fetchImpl = vi.fn(
+    async () => new Response("Unauthorized", { status: 401 }),
+  );
+  await expect(
+    listCatalogue({
+      config: { supabaseUrl: "https://db.test", serviceKey: "test" },
+      fetchImpl,
+    }),
+  ).rejects.toThrow(/401/);
+  expect(fetchImpl).toHaveBeenCalledTimes(1);
+});
+
 it("shares an in-flight catalogue read between concurrent searches", async () => {
   clearCatalogueCache();
   let resolve!: (response: Response) => void;
