@@ -241,7 +241,7 @@ export async function publishValidatedSnapshot(
   const parsed = z.array(watchSchema).min(1).max(8).parse(watches);
   const summary = `${parsed.length} ${parsed.length === 1 ? "watch" : "watches"} with checked sources.`;
   const published = z.boolean().parse(
-    await rpc(client, "ai_watch_validated_cache_publish_v6", {
+    await rpc(client, "ai_watch_validated_cache_publish_v7", {
       p_attempt_id: attemptId,
       p_summary: summary,
       p_watches: parsed,

@@ -52,7 +52,7 @@ describe("validated cache snapshots", () => {
       await publishValidatedSnapshot(db.value, attempt, [watch], [null]),
     ).toBe(true);
     const [target, init] = db.fetchImpl.mock.calls[0]!;
-    expect(String(target)).toContain("ai_watch_validated_cache_publish_v6");
+    expect(String(target)).toContain("ai_watch_validated_cache_publish_v7");
     expect(JSON.parse(String(init?.body))).toMatchObject({
       p_attempt_id: attempt,
       p_costs_usd: [0.025],

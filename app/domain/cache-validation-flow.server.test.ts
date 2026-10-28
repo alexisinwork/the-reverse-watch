@@ -42,7 +42,7 @@ describe("first-use cache validation flow", () => {
             reservedUsd: 0.025,
           });
         }
-        if (path.includes("validated_cache_publish_v6")) {
+        if (path.includes("validated_cache_publish_v7")) {
           publication = JSON.parse(String(init?.body)) as Record<
             string,
             unknown

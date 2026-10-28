@@ -605,6 +605,15 @@ spending alert is not a hard spending cap, so provider-side cost ceilings
 remain unproven: https://dev.meta.ai/help/billing/spend-limit-alert
 (retrieved 2026-10-28). Other paid routes still need the shared ledger.
 
+New-reference insertion: migration 0101 can now add a unique, source-checked
+ASCII brand/reference absent from the master in the same transaction as the
+validated snapshot. It stores verified fields, approximate price and image
+evidence where available, starts pending with manufacturer confirmation false,
+and uses the reference as its title until a name is substantiated. Rejected or
+ambiguous existing references abort publication; non-ASCII ambiguous identities
+stay in intake rather than being guessed. This does not activate provider calls
+or establish the remaining style and specification coverage.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
