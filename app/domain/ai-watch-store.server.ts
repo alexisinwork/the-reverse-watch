@@ -202,16 +202,19 @@ function bindFilmSubject(
   });
 }
 
-/** Serve already valid results; pause new AI searches until the validator
- * and its shared cost ledger are ready. Catalogue-only paths remain separate. */
+/** Serve valid snapshots first; validation callbacks own all new paid work
+ * and must reserve through the shared durable ledger before calling AI. */
 export async function searchWithStore(
   {
     kind,
     cacheInput,
+    candidates,
   }: {
     kind: AiSearchKind;
     cacheInput: unknown;
-    run: () => Promise<AiSearchOutcome>;
+    /** Deterministically selected local cards; never an unmetered AI callback. */
+    candidates?: FoundWatch[];
+    run?: () => Promise<AiSearchOutcome>;
   },
   {
     store = loadAiWatchStoreConfig(),
@@ -224,8 +227,7 @@ export async function searchWithStore(
   }: {
     store?: StoreConfig | null;
     fetchImpl?: typeof fetch;
-    /** Only injected by a metered validator; production stays disabled until
-     * provider-side limits and real responses have been verified. */
+    /** Only injected by the metered runtime. Never call a legacy run callback. */
     validateDraft?: (
       cacheKey: string,
       watches: FoundWatch[],
@@ -260,7 +262,9 @@ export async function searchWithStore(
           fromCache: true,
         };
       if (validateDraft) {
-        const draft = await loadStoredSearch(store, cacheKey, fetchImpl);
+        const draft =
+          (await loadStoredSearch(store, cacheKey, fetchImpl)) ??
+          (candidates?.length ? { watches: candidates } : null);
         let result: ValidationRun;
         if (draft) {
           const candidates =

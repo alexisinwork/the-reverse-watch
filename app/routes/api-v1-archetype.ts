@@ -6,7 +6,7 @@
  */
 import type { Route } from "./+types/api-v1-archetype";
 import { ARCHETYPE_BANDS } from "../domain/archetype-picks";
-import { archetypeCatalogueWatches } from "../domain/archetype-catalogue.server";
+import { archetypeCatalogueResult } from "../domain/archetype-catalogue.server";
 import {
   ARCHETYPE_QUESTIONS,
   ARCHETYPE_SCORING_VERSION,
@@ -78,6 +78,17 @@ export async function loader({ request }: Route.LoaderArgs) {
   if (limitMessage) return apiError(429, "monthly_limit", limitMessage, origin);
 
   const { archetype, answers } = parsed;
+  const checked = await archetypeCatalogueResult(
+    archetype.id,
+    answers.priceComfort,
+  );
+  if (checked.status !== "found")
+    return apiError(
+      503,
+      "verification_unavailable",
+      "The watch references could not be checked right now. Please try again later.",
+      origin,
+    );
   return apiJson(
     {
       archetype: {
@@ -87,10 +98,7 @@ export async function loader({ request }: Route.LoaderArgs) {
         description: archetype.description,
       },
       priceIdea: ARCHETYPE_BANDS[answers.priceComfort].label,
-      watches: await archetypeCatalogueWatches(
-        archetype.id,
-        answers.priceComfort,
-      ),
+      watches: checked.watches,
     },
     200,
     origin,

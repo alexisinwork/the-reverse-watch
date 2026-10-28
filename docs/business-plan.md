@@ -162,6 +162,38 @@ For retailer feeds, design tenant isolation and freshness before implementation.
 
 ## Current next action and durable handoff
 
+Runtime checkpoint, 2026-10-28: the earlier statements below that all visitor
+validation is paused are superseded in the current source. Film/people search
+now calls the metered validator, including uncached discovery; quiz saved
+answers, archetype selections and alternative selections share that path.
+Real calls exposed and corrected Muse commentary parsing, opt-in raw citations
+and model-rewritten URLs. The server still opens actual tool-result pages and
+requires independent exact-reference evidence. One live reference and the
+Daniel Craig result were published atomically; their second requests made zero
+provider calls. Daniel Craig retained only Aqua Terra 231.10.39.21.03.001 from
+five legacy cards, at $0.02230 for the whole check. Other attempted searches
+failed closed when evidence was insufficient. This is not a blanket audit of
+all caches or proof that every query has enough evidence.
+
+Migration 0104 exposes the current application verification spend, reservations,
+remaining $100 monthly allocation and outcome counts in /admin/catalogue,
+service-role only. The reservation ceilings remain $0.025/card and $0.20/result;
+unknown costs consume the full card reserve and observed overruns halt new
+reservations. Provider billing outside this ledger and vendor-side hard caps
+are separate. The old unmetered worker routes remain paused. Latest engineering
+action: complete the deployment gate and verify these shared routes on the
+deployed runtime, including cache reuse and budget visibility.
+
+Release gate for this checkpoint: 665 unit tests and the full fast gate passed;
+12 desktop/mobile browser scenarios passed; all six local partner-browser
+scenarios passed against the real sibling portfolio and Reserve servers.
+The optional WordPress runtime test was skipped because port 9400 was not
+running. No hosted Shopify/WordPress marketplace test is implied. Live
+alternative submission also rendered checked cards inside the widget with only
+the Powered by link. Catalogue reads use the new index (same ordered rows,
+index plan verified) and four bounded network reads; successful void analytics
+responses no longer produce false write errors.
+
 Deferred tooling idea, owner decision 2026-10-25: remember Replica Skill as a
 possible future workflow reference, but do not install, adapt or implement it
 yet. The owner supplied `https://github.com/nelakay/ai-website-cloner-claudeskill`

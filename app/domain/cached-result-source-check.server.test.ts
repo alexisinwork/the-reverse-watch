@@ -20,6 +20,19 @@ function response(body: string, status = 200, contentType = "text/html") {
 }
 
 describe("checking source pages for cached watch claims", () => {
+  it("does not use counterfeit watch sellers as reference evidence", async () => {
+    const fetchImpl = vi.fn();
+    expect(
+      (
+        await inspectCachedResultSource(
+          watch,
+          "https://www.fakeluxurywatches.com/watch",
+          fetchImpl,
+        )
+      ).status,
+    ).toBe("unavailable");
+    expect(fetchImpl).not.toHaveBeenCalled();
+  });
   it("finds the exact reference, brand, wearer and film in page text", async () => {
     const html =
       "<p>Daniel Craig wore Omega 231.10.39.21.03.001 in Skyfall.</p>";

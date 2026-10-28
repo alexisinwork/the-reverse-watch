@@ -198,6 +198,23 @@ describe("grounded field extraction", () => {
 });
 
 describe("new archetype catalogue membership", () => {
+  it("allows a sourced approximate price without a photo for a documented role fit", () => {
+    const rows = [
+      catalogue({
+        imageUrl: null,
+        priceStatus: "approximate",
+        foundIn: [{ source: "spacecity" }],
+      }),
+    ];
+    expect(
+      rankEnrichedArchetype(
+        rows,
+        "field_rationalist",
+        "first_good_watch",
+        null,
+      ),
+    ).toHaveLength(1);
+  });
   it("does not resolve a reference shared by different brands arbitrarily", () => {
     const rows = [catalogue(), catalogue({ brand: "Other", id: "other-id" })];
     const resolved = resolveNamedWatch(rows, "Seiko Diver", "SKX007J");

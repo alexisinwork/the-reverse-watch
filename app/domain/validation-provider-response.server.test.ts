@@ -44,6 +44,38 @@ const muse = {
 };
 
 describe("provider validation response evidence", () => {
+  it("reads grounded Muse results without mixing commentary into structured output", () => {
+    const body = {
+      ...muse,
+      output: [
+        {
+          type: "message",
+          phase: "commentary",
+          content: [{ type: "output_text", text: "Checking the reference." }],
+        },
+        {
+          ...muse.output[0],
+          results: [{ url: claim.sourceUrl, title: "Exact reference" }],
+        },
+        {
+          type: "message",
+          content: [
+            {
+              type: "output_text",
+              text: JSON.stringify(claim),
+              annotations: [],
+            },
+          ],
+        },
+      ],
+    };
+    expect(
+      parseMuseValidationResponse(body, "muse-spark-1.3-contributor").evidence,
+    ).toMatchObject({
+      sourceUrl: claim.sourceUrl,
+      citedUrls: [claim.sourceUrl],
+    });
+  });
   it("accepts a null optional fact source from structured output", () => {
     const body = {
       ...perplexity,

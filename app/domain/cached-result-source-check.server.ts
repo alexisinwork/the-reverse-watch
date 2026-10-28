@@ -7,6 +7,8 @@ import { referencedProductImage } from "./referenced-product-image.server";
 import { publicFetch } from "./source-pages.server";
 
 const MAX_BYTES = 1_500_000;
+const counterfeitSource = (url: string) =>
+  /replica|fake(?:luxury|watch)|clonewatch/i.test(new URL(url).hostname);
 
 function words(value: string) {
   return value
@@ -34,6 +36,8 @@ export async function inspectCachedResultSource(
 }> {
   if (!watch.referenceCode) return { status: "missing", finalUrl: null };
   try {
+    if (counterfeitSource(sourceUrl))
+      return { status: "unavailable", finalUrl: null };
     const fetched = await publicFetch(
       sourceUrl,
       {
@@ -48,6 +52,10 @@ export async function inspectCachedResultSource(
     );
     if (!fetched) return { status: "unavailable", finalUrl: null };
     const { response, finalUrl } = fetched;
+    if (counterfeitSource(finalUrl)) {
+      await response.body?.cancel();
+      return { status: "unavailable", finalUrl };
+    }
     const contentType =
       response.headers.get("content-type")?.toLowerCase() ?? "";
     if (

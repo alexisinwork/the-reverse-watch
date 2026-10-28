@@ -7,7 +7,8 @@
 import { searchWithStore } from "./ai-watch-store.server";
 import type { AiSearchView, ProgressEvent } from "./ai-watch-types";
 import { mergeSightings } from "./film-sightings";
-import { normalizeFilmQuery, searchFilmWatches } from "./film-search.server";
+import { normalizeFilmQuery } from "./film-search.server";
+import { meteredSearchOptions } from "./validation-runtime.server";
 import { FILM_QUERY_MAX, type FilmSubjectKind } from "./film-subject";
 import { meterPartnerUse } from "./partner-embed.server";
 import type { PartnerSite } from "./partner-sites.server";
@@ -46,20 +47,17 @@ export async function runFilmSearch({
 }): Promise<AiSearchView> {
   const limitMessage = await meterPartnerUse(site, "find");
   if (limitMessage) return { status: "no_match", summary: limitMessage };
-  const view = await searchWithStore({
-    kind: "film",
-    cacheInput: { query: normalizeFilmQuery(query), kind },
-    run: async () => {
-      if (!(await consumeSharedRateLimit(rateKey, policy)).allowed) {
-        return {
-          status: "no_match",
-          summary:
-            "You have run a lot of new searches in a short time. Please try again in a few minutes; searches others already made still load instantly.",
-        };
-      }
-      return searchFilmWatches(query, report ? { report } : {}, kind);
+  const view = await searchWithStore(
+    {
+      kind: "film",
+      cacheInput: { query: normalizeFilmQuery(query), kind },
     },
-  });
+    meteredSearchOptions({
+      allowPaid: async () =>
+        (await consumeSharedRateLimit(rateKey, policy)).allowed,
+      report,
+    }),
+  );
   // Sightings without a photo borrow the catalogue's photo of that watch.
   return view.status === "found"
     ? uniqueSearchView({

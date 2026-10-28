@@ -24,10 +24,7 @@ describe("bounded validation requests", () => {
       max_output_tokens: 2400,
       store: false,
     });
-    expect(JSON.parse(result.body.input)).toEqual({
-      query: "daniel craig",
-      kind: "actor",
-    });
+    expect(result.body.input).toBe("daniel craig watches actor");
     expect(() =>
       buildFilmDiscoveryRequest(
         { query: "person@example.com", kind: "actor" },
@@ -53,7 +50,10 @@ describe("bounded validation requests", () => {
       max_output_tokens: 1200,
       store: false,
     });
-    expect(JSON.parse(result.perplexity.body.input)).toEqual(brief);
+    expect(result.perplexity.body.input).toBe(
+      "Omega 2201.50.00 Daniel Craig Quantum of Solace",
+    );
+    expect(result.perplexity.body.input).not.toContain("Planet Ocean");
   });
 
   it("does not include extra properties or accept contact data or unpriced models", () => {
@@ -81,9 +81,8 @@ describe("bounded validation requests", () => {
       { ...brief, referenceCode: null },
       "muse-spark-1.3-contributor",
     );
-    expect(JSON.parse(result.perplexity.body.input)).toEqual({
-      ...brief,
-      referenceCode: null,
-    });
+    expect(result.perplexity.body.input).toBe(
+      "Omega Planet Ocean Daniel Craig Quantum of Solace",
+    );
   });
 });

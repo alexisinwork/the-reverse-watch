@@ -31,6 +31,26 @@ const secondary: ValidationEvidence = {
 };
 
 describe("cached watch source validation", () => {
+  it("checks an already-cited alternate when the selected source is blocked", async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input) === secondary.sourceUrl
+        ? new Response("blocked", { status: 403 })
+        : new Response(primary.sourceQuote, {
+            headers: { "content-type": "text/plain" },
+          }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      primary,
+      { ...secondary, citedUrls: ["https://alternate.example/watch"] },
+      { fetchImpl },
+    );
+    expect(result.status).toBe("verified");
+    if (result.status === "verified")
+      expect(result.watch.details.validationEvidence?.[1]?.sourceUrl).toBe(
+        "https://alternate.example/watch",
+      );
+  });
   it("checks both pages before accepting the two provider assertions", async () => {
     const fetchImpl = vi.fn(
       async () =>

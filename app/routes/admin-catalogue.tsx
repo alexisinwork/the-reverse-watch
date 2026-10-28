@@ -36,6 +36,7 @@ import {
 } from "../domain/watch-catalogue.server";
 import "../styles/admin.css";
 import { z } from "zod";
+import { validationBudgetStatus } from "../domain/validation-budget.server";
 
 const FILTERS = ["pending", "approved", "rejected", "price", "all"] as const;
 type Filter = (typeof FILTERS)[number];
@@ -154,6 +155,9 @@ export async function loader({ request }: Route.LoaderArgs) {
     )
     .catch(() => null);
   const counts = cataloguePage.counts;
+  const validationBudget = await validationBudgetStatus(client).catch(
+    () => null,
+  );
   const pages = cataloguePage.pages;
   const rows: Row[] = cataloguePage.rows.map((watch) => ({
     id: watch.id,
@@ -185,6 +189,7 @@ export async function loader({ request }: Route.LoaderArgs) {
       authed: true as const,
       error: null,
       intake,
+      validationBudget,
       rows,
       counts,
       filter,
@@ -699,6 +704,31 @@ export default function AdminCatalogue() {
         </Form>
       </header>
       {error ? <p className="warn">{error}</p> : null}
+      {"validationBudget" in loaded && loaded.validationBudget ? (
+        <section aria-label="Search validation budget">
+          <h2>
+            Search verification · {loaded.validationBudget.month.slice(0, 7)}
+          </h2>
+          <p>
+            Spent: ${loaded.validationBudget.spentUsd.toFixed(4)} · Reserved: $
+            {loaded.validationBudget.reservedUsd.toFixed(4)} · Available: $
+            {loaded.validationBudget.remainingUsd.toFixed(4)} of $
+            {loaded.validationBudget.limitUsd}.
+          </p>
+          <p>
+            Validated results: {loaded.validationBudget.validated} · In
+            progress: {loaded.validationBudget.inProgress} · Unsuccessful
+            checks: {loaded.validationBudget.failed}.
+          </p>
+          <p>
+            {loaded.validationBudget.halted
+              ? "New paid checks are paused after a reported overrun."
+              : "New paid checks reserve up to $0.025 per watch and $0.20 per result."}{" "}
+            This ledger covers application verification calls; separate provider
+            activity is not included.
+          </p>
+        </section>
+      ) : null}
       {"all" in counts ? (
         <section aria-label="Catalogue totals">
           <h2>

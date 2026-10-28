@@ -6,7 +6,7 @@ import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { EmbedThemeFields, SurfaceLink, useEmbed } from "../components/surface";
 import { WatchResults } from "../components/watch-results";
 import { ARCHETYPE_BANDS } from "../domain/archetype-picks";
-import { archetypeCatalogueWatches } from "../domain/archetype-catalogue.server";
+import { archetypeCatalogueResult } from "../domain/archetype-catalogue.server";
 import {
   ARCHETYPE_QUESTIONS,
   ARCHETYPE_SCORING_VERSION,
@@ -48,22 +48,22 @@ export async function loader({ request, context }: Route.LoaderArgs) {
   }
 
   // Ten catalogue watches for this archetype, in the price band it chose.
-  const watches =
+  const watchResult =
     result.status === "complete"
-      ? await archetypeCatalogueWatches(
+      ? archetypeCatalogueResult(
           result.archetype.id,
           result.answers.priceComfort,
         )
-      : [];
+      : null;
   return {
     result,
     limitMessage,
-    watches,
+    watchResult,
     band:
       result.status === "complete"
         ? ARCHETYPE_BANDS[result.answers.priceComfort].label
         : null,
-    fx: watches.length > 0 ? await loadFxTable() : null,
+    fx: result.status === "complete" ? await loadFxTable() : null,
     shareUrl:
       result.status === "complete"
         ? new URL(
@@ -166,7 +166,7 @@ function ShareButton({
 }
 
 export default function WatchArchetype() {
-  const { result, limitMessage, shareUrl, watches, band, fx } =
+  const { result, limitMessage, shareUrl, watchResult, band, fx } =
     useLoaderData<typeof loader>();
   const embed = useEmbed();
   const startTracked = useRef(false);
@@ -218,20 +218,14 @@ export default function WatchArchetype() {
               resemble—any public figure or fictional character.
             </p>
           </div>
-          {watches.length > 0 ? (
+          {watchResult ? (
             <WatchResults
               eyebrow={`Chosen for ${band ?? "your price idea"}`}
               footnote="Chosen by The Reserve from its watch catalogue for this archetype and the price idea you picked. Prices are approximate; the full diagnostic filters by your exact budget and wrist size."
               fx={fx}
-              heading={`${watches.length} ${watches.length === 1 ? "watch" : "watches"} for ${result.archetype.title}`}
+              heading={`Watches for ${result.archetype.title}`}
               mode="quiz"
-              result={{
-                status: "found",
-                watches,
-                summary: `${watches.length} watches that suit ${result.archetype.title}.`,
-                fromCache: true,
-                origin: "catalogue",
-              }}
+              result={watchResult}
             />
           ) : null}
           {/* Inside a partner widget the result stays on the partner's page. */}

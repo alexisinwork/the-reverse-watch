@@ -3,12 +3,20 @@ import { createRoutesStub } from "react-router";
 import { vi } from "vitest";
 
 const store = vi.hoisted(() => ({ searchWithStore: vi.fn() }));
-const finder = vi.hoisted(() => ({ searchFilmWatches: vi.fn() }));
+const finder = vi.hoisted(() => ({ check: vi.fn() }));
 
 vi.mock("../domain/ai-watch-store.server", () => store);
-vi.mock("../domain/film-search.server", async (importOriginal) => ({
-  ...(await importOriginal<typeof import("../domain/film-search.server")>()),
-  searchFilmWatches: finder.searchFilmWatches,
+vi.mock("../domain/validation-runtime.server", () => ({
+  meteredSearchOptions: ({
+    allowPaid,
+  }: {
+    allowPaid: () => Promise<boolean>;
+  }) => ({
+    validateDraft: async () =>
+      (await allowPaid())
+        ? (finder.check() as unknown)
+        : { status: "unavailable", reason: "retry_later" },
+  }),
 }));
 
 import { clearRateLimitBuckets } from "../domain/rate-limit.server";
@@ -52,7 +60,7 @@ function loaderArgs(url: string, ip = "203.0.113.7") {
 describe("find a watch from the screen", () => {
   beforeEach(() => {
     store.searchWithStore.mockReset();
-    finder.searchFilmWatches.mockReset();
+    finder.check.mockReset();
     clearRateLimitBuckets();
   });
 
@@ -97,6 +105,7 @@ describe("find a watch from the screen", () => {
         kind: "film",
         cacheInput: { query: "daniel craig", kind: "actor" },
       }),
+      expect.any(Object),
     );
   });
 
@@ -117,9 +126,10 @@ describe("find a watch from the screen", () => {
 
   it("rate-limits fresh searches per visitor but not stored answers", async () => {
     store.searchWithStore.mockImplementation(
-      ({ run }: { run: () => Promise<unknown> }) => run(),
+      (_request: unknown, options: { validateDraft: () => Promise<unknown> }) =>
+        options.validateDraft(),
     );
-    finder.searchFilmWatches.mockResolvedValue(sighting);
+    finder.check.mockResolvedValue(sighting);
 
     const outcomes = [];
     for (let index = 0; index < 13; index += 1) {
@@ -132,8 +142,11 @@ describe("find a watch from the screen", () => {
       );
     }
 
-    expect(finder.searchFilmWatches).toHaveBeenCalledTimes(12);
-    expect(outcomes.at(-1)).toMatchObject({ status: "no_match" });
+    expect(finder.check).toHaveBeenCalledTimes(12);
+    expect(outcomes.at(-1)).toMatchObject({
+      status: "unavailable",
+      reason: "retry_later",
+    });
     const otherVisitor = await loader(
       loaderArgs(
         "http://test.local/watches/find?type=movie&q=another",

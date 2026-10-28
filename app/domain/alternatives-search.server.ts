@@ -36,6 +36,7 @@ import {
 import { catalogueWatchSchema } from "./watch-catalogue";
 import { z } from "zod";
 import { uniqueSearchView } from "./watch-result-dedup";
+import { validateSelectedResults } from "./validate-selected-results.server";
 
 // Pre-owned lookups cost a little, so a visitor's new searches are capped.
 export const ALTERNATIVES_SEARCH_POLICY: RateLimitPolicy = {
@@ -265,7 +266,32 @@ export async function startAlternativesSearch(
     allowQuartz: form.quartz === "yes",
     report: progress.report,
   })
-    .then((outcome) => buildAlternativesPage(outcome, budget, form))
+    .then(async (outcome) => {
+      const built = buildAlternativesPage(outcome, budget, form);
+      if (built.result.status !== "found") return built;
+      const checked = await validateSelectedResults(
+        "alternatives",
+        {
+          name: form.name,
+          reference: form.reference,
+          budget,
+          allowQuartz: form.quartz === "yes",
+        },
+        built.result.watches,
+        progress.report,
+      );
+      return {
+        ...built,
+        result:
+          checked.status === "found"
+            ? {
+                ...checked,
+                summary: built.result.summary,
+                origin: built.result.origin,
+              }
+            : checked,
+      };
+    })
     .catch(() => ({
       target: null,
       result: { status: "unavailable" } as AiSearchView,

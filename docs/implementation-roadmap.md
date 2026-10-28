@@ -1973,3 +1973,25 @@ session counts from the hosting edge's two-letter country code. No IP address or
 precise location is stored. The widget source-page attribution link for Dials
 models remains in tension with the earlier link-free result-screen request;
 that policy question is still open.
+
+## First-use result validation follow-up (2026-10-28)
+
+The shared runtime now supplies metered callbacks for legacy film/quiz caches,
+new film discovery, and deterministic archetype/alternative selections. It
+reserves before calls, retains actual or conservative unknown costs, fetches
+provider-cited pages, fills corroborated fields, and atomically publishes a
+separate valid snapshot and master evidence. Cached selections remain subject
+to current catalogue eligibility. At most eight cards enter one paid check.
+Approximate prices remain explicitly labelled; a missing photo is not a reason
+to exclude an otherwise eligible archetype supplement.
+
+Live evidence: a known reference and the Daniel Craig search validated and then
+reused their committed snapshots without new provider calls. An archetype
+selection likewise validated and reused its cache. Insufficient evidence stays
+unavailable instead of certifying an old answer. Migration 0104 adds an
+admin-only budget summary; 0105 fixes the missing recommendation ordering index.
+Both migrations were checked transactionally and applied. Catalogue pagination
+now uses four bounded concurrent reads and shares in-flight loads. Browser
+testing caught and fixed blocking archetype rendering and successful void
+analytics RPC responses. Complete rollout evidence remains in the business
+plan; historical incomplete caches are not retrospectively marked valid.

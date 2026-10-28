@@ -15,6 +15,51 @@ type CheckedFact = ValidationFact & {
   citedUrl?: string;
 };
 
+async function inspectEvidence(
+  watch: FoundWatch,
+  evidence: ValidationEvidence,
+  fetchImpl: typeof fetch,
+  excludeHost?: string,
+) {
+  const candidates = [
+    ...new Set([evidence.sourceUrl, ...(evidence.citedUrls ?? [])]),
+  ].slice(0, 5);
+  let last: Awaited<ReturnType<typeof inspectCachedResultSource>> = {
+    status: "unavailable",
+    finalUrl: null,
+  };
+  for (const candidate of candidates) {
+    const safe = safeHttpUrl(candidate);
+    if (
+      !safe ||
+      (excludeHost &&
+        new URL(safe).hostname.replace(/^www\./, "") === excludeHost)
+    )
+      continue;
+    last = await inspectCachedResultSource(
+      watch,
+      safe,
+      fetchImpl,
+      evidence.sourceQuote,
+      evidence.facts?.filter((fact) =>
+        fact.sourceUrl
+          ? safeHttpUrl(fact.sourceUrl) === safe
+          : safe === safeHttpUrl(evidence.sourceUrl),
+      ),
+      !watch.imageUrl,
+    );
+    if (
+      last.status === "matched" &&
+      (!excludeHost ||
+        (last.finalUrl &&
+          new URL(last.finalUrl).hostname.replace(/^www\./, "") !==
+            excludeHost))
+    )
+      return last;
+  }
+  return { ...last, status: "unavailable" as const };
+}
+
 async function checkedProductFacts(
   watch: FoundWatch,
   evidence: ValidationEvidence,
@@ -82,32 +127,21 @@ export async function validateCachedWatchFromSources(
   options: { fetchImpl?: typeof fetch; checkedAt?: string } = {},
 ): Promise<ValidationDecision> {
   const fetchImpl = options.fetchImpl ?? fetch;
-  const [first, second] = await Promise.all([
-    inspectCachedResultSource(
-      watch,
-      primary.sourceUrl,
-      fetchImpl,
-      primary.sourceQuote,
-      primary.facts?.filter(
-        (fact) =>
-          !fact.sourceUrl ||
-          safeHttpUrl(fact.sourceUrl) === safeHttpUrl(primary.sourceUrl),
-      ),
-      !watch.imageUrl,
-    ),
-    inspectCachedResultSource(
-      watch,
-      secondary.sourceUrl,
-      fetchImpl,
-      secondary.sourceQuote,
-      secondary.facts?.filter(
-        (fact) =>
-          !fact.sourceUrl ||
-          safeHttpUrl(fact.sourceUrl) === safeHttpUrl(secondary.sourceUrl),
-      ),
-      !watch.imageUrl,
-    ),
+  const [first, initialSecond] = await Promise.all([
+    inspectEvidence(watch, primary, fetchImpl),
+    inspectEvidence(watch, secondary, fetchImpl),
   ]);
+  const primaryHost = first.finalUrl
+    ? new URL(first.finalUrl).hostname.replace(/^www\./, "")
+    : null;
+  const alternate =
+    primaryHost &&
+    initialSecond.finalUrl &&
+    primaryHost ===
+      new URL(initialSecond.finalUrl).hostname.replace(/^www\./, "")
+      ? await inspectEvidence(watch, secondary, fetchImpl, primaryHost)
+      : null;
+  const second = alternate?.status === "matched" ? alternate : initialSecond;
   const result = validateCachedWatch(
     watch,
     {

@@ -4,8 +4,42 @@ import {
   clearCatalogueCache,
   fillPhotosFromCatalogue,
   listCatalogue,
+  loadCatalogueCached,
+  rpc,
   type CatalogueClient,
 } from "./watch-catalogue.server";
+
+it("accepts successful void RPC responses used by analytics", async () => {
+  const client = {
+    config: { supabaseUrl: "https://db.test", serviceKey: "test" },
+    fetchImpl: vi.fn(async () => new Response(null, { status: 204 })),
+  };
+  await expect(
+    rpc(client, "record_partner_interaction_v2", {}),
+  ).resolves.toBeNull();
+});
+
+it("shares an in-flight catalogue read between concurrent searches", async () => {
+  clearCatalogueCache();
+  let resolve!: (response: Response) => void;
+  const fetchImpl = vi.fn(
+    () =>
+      new Promise<Response>((done) => {
+        resolve = done;
+      }),
+  );
+  const client = {
+    config: { supabaseUrl: "https://db.test", serviceKey: "test" },
+    fetchImpl,
+  };
+  const first = loadCatalogueCached(client);
+  const second = loadCatalogueCached(client);
+  resolve(Response.json([]));
+  expect(await first).toEqual([]);
+  expect(await second).toEqual([]);
+  expect(fetchImpl).toHaveBeenCalledTimes(1);
+  clearCatalogueCache();
+});
 
 function row(overrides: Record<string, unknown>) {
   return {
@@ -117,6 +151,6 @@ describe("paged recommendation catalogue", () => {
       fetchImpl: pageFetch,
     });
     expect(loaded).toHaveLength(501);
-    expect(pageFetch).toHaveBeenCalledTimes(2);
+    expect(pageFetch).toHaveBeenCalledTimes(5);
   });
 });

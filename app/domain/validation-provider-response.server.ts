@@ -225,7 +225,7 @@ export function parsePerplexityFilmDiscoveryResponse(body: unknown): {
 } {
   const { content, sources, costUsd } = parsePerplexityAgentEnvelope(body);
   const { sightings } = z
-    .object({ sightings: z.array(claimSchema).max(8) })
+    .object({ sightings: z.array(z.unknown()).max(8) })
     .parse(content);
   const citedUrls = sources
     .map(url)
@@ -234,7 +234,13 @@ export function parsePerplexityFilmDiscoveryResponse(body: unknown): {
   return {
     costUsd,
     evidence: sightings
-      .filter((claim) => matchingCitation(claim.sourceUrl, sources))
+      .flatMap((raw) => {
+        const parsed = claimSchema.safeParse(raw);
+        return parsed.success &&
+          matchingCitation(parsed.data.sourceUrl, sources)
+          ? [parsed.data]
+          : [];
+      })
       .map((claim) => ({
         ...claim,
         provider: "perplexity" as const,
@@ -280,7 +286,12 @@ export function parseMuseValidationResponse(
   const queryCount = action.queries?.length ?? (action.query ? 1 : 0);
   if (!queryCount) throw new Error("Muse search query count is unavailable");
   const blocks = response.output.flatMap((item) => {
-    if (item.type !== "message" || !Array.isArray(item.content)) return [];
+    if (
+      item.type !== "message" ||
+      item.phase === "commentary" ||
+      !Array.isArray(item.content)
+    )
+      return [];
     return z
       .array(
         z
@@ -303,21 +314,46 @@ export function parseMuseValidationResponse(
     .filter((block) => block.type === "output_text")
     .map((block) => block.text ?? "")
     .join("");
-  const citations = blocks.flatMap((block) =>
+  const annotations = blocks.flatMap((block) =>
     (block.annotations ?? []).flatMap((annotation) =>
       annotation.type === "url_citation" && annotation.url
         ? [annotation.url]
         : [],
     ),
   );
+  const searchResults = z
+    .object({
+      results: z.array(z.object({ url: z.string() }).passthrough()).nullish(),
+      action: z
+        .object({
+          sources: z
+            .array(z.object({ url: z.string() }).passthrough())
+            .optional(),
+        })
+        .passthrough(),
+    })
+    .parse(searches[0]);
+  const citations = [
+    ...annotations,
+    ...(searchResults.results ?? []).map((source) => source.url),
+    ...(searchResults.action.sources ?? []).map((source) => source.url),
+  ];
   const claim = claimSchema.parse(parseModelJson(content));
-  if (!matchingCitation(claim.sourceUrl, citations))
-    throw new Error("Muse claim has no matching citation");
+  const citedSource = matchingCitation(claim.sourceUrl, citations)
+    ? claim.sourceUrl
+    : searchResults.results
+        ?.map((source) => safeHttpUrl(source.url))
+        .find((source) => source !== null);
+  if (!citedSource) throw new Error("Muse claim has no matching citation");
   const costUsd = estimatedMuseCost(body);
   if (costUsd === null) throw new Error("Muse cost is unavailable");
   return {
     evidence: {
       ...claim,
+      // Raw tool results can repair a model-rewritten URL. No assertion is
+      // accepted until the server opens this actual result and checks the
+      // reference and, for sightings, its exact quoted passage.
+      sourceUrl: citedSource,
       provider: "muse",
       sourceVerified: false,
       citedUrls: citations

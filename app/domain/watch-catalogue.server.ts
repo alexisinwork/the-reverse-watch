@@ -63,7 +63,8 @@ export async function rpc(
       `${name} returned ${response.status}: ${(await response.text()).slice(0, 200)}`,
     );
   }
-  return (await response.json()) as unknown;
+  const responseText = await response.text();
+  return responseText.trim() ? (JSON.parse(responseText) as unknown) : null;
 }
 
 const listSchema = z.array(catalogueWatchSchema);
@@ -73,8 +74,8 @@ export async function listCatalogue(
   includeRejected = false,
 ) {
   const rows: z.infer<typeof catalogueWatchSchema>[] = [];
-  for (let page = 1; page <= 1_000; page++) {
-    const batch = listSchema.parse(
+  const readPage = async (page: number) =>
+    listSchema.parse(
       await rpc(
         client,
         "watch_catalogue_recommendation_page_v1",
@@ -82,8 +83,21 @@ export async function listCatalogue(
         15_000,
       ),
     );
-    rows.push(...batch);
-    if (batch.length < 500) return rows;
+  const first = await readPage(1);
+  rows.push(...first);
+  if (first.length < 500) return rows;
+  // Four bounded page reads amortize network latency without an unbounded
+  // fan-out. Keep page order and stop at the first partial page.
+  for (let page = 2; page <= 1_000; page += 4) {
+    const pages = await Promise.all(
+      Array.from({ length: Math.min(4, 1001 - page) }, (_, index) =>
+        readPage(page + index),
+      ),
+    );
+    for (const batch of pages) {
+      rows.push(...batch);
+      if (batch.length < 500) return rows;
+    }
   }
   throw new Error("Catalogue pagination exceeded its safety bound");
 }
@@ -92,19 +106,33 @@ export async function listCatalogue(
 // filters it in code; a short in-memory cache keeps that off the hot path.
 const CACHE_MS = 5 * 60 * 1_000;
 let cached: { watches: CatalogueWatch[]; expiresAt: number } | null = null;
+let loading: Promise<CatalogueWatch[]> | null = null;
+let cacheGeneration = 0;
 
 export async function loadCatalogueCached(
   client: CatalogueClient,
   now = Date.now(),
 ) {
   if (cached && cached.expiresAt > now) return cached.watches;
-  const watches = await listCatalogue(client);
-  cached = { watches, expiresAt: now + CACHE_MS };
-  return watches;
+  if (loading) return loading;
+  const generation = cacheGeneration;
+  const pending = listCatalogue(client).then((watches) => {
+    if (generation === cacheGeneration)
+      cached = { watches, expiresAt: now + CACHE_MS };
+    return watches;
+  });
+  loading = pending;
+  try {
+    return await pending;
+  } finally {
+    if (loading === pending) loading = null;
+  }
 }
 
 export function clearCatalogueCache() {
   cached = null;
+  loading = null;
+  cacheGeneration++;
 }
 
 export async function catalogueIdentityKeys(client: CatalogueClient) {

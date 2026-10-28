@@ -10,6 +10,7 @@ import { catalogueClient, loadCatalogueCached } from "./watch-catalogue.server";
 import { enrichResultWatches } from "./catalogue-result-enrichment.server";
 import { loadFxTable, type FxTable } from "./fx.server";
 import { uniqueWatchResults } from "./watch-result-dedup";
+import { validateSelectedResults } from "./validate-selected-results.server";
 
 const roles: Record<ArchetypeId, CatalogueStyle[]> = {
   field_rationalist: ["field", "dive", "sport", "travel"],
@@ -39,8 +40,7 @@ export function rankEnrichedArchetype(
       if (
         watch.reviewStatus === "rejected" ||
         !watch.referenceConfirmed ||
-        !watch.imageUrl ||
-        watch.priceStatus !== "confirmed"
+        !["confirmed", "approximate"].includes(watch.priceStatus)
       )
         return false;
       if (
@@ -49,7 +49,10 @@ export function rankEnrichedArchetype(
             typeof value === "object" &&
             value !== null &&
             "source" in value &&
-            value.source === "catalogue_enrichment",
+            typeof value.source === "string" &&
+            ["catalogue_enrichment", "dials", "spacecity"].includes(
+              value.source,
+            ),
         )
       )
         return false;
@@ -93,7 +96,7 @@ export function rankEnrichedArchetype(
     });
 }
 
-export async function archetypeCatalogueWatches(
+async function selectArchetypeWatches(
   archetype: ArchetypeId,
   band: PriceComfort,
 ) {
@@ -131,8 +134,24 @@ export async function archetypeCatalogueWatches(
       ...curated.slice(0, 5),
       ...supplements.slice(0, 5),
       ...curated.slice(5),
-    ]).slice(0, 10);
+    ]);
   } catch {
     return curated;
   }
+}
+
+/** Catalogue reporting only; visitor routes use archetypeCatalogueResult. */
+export async function archetypeCatalogueWatches(
+  archetype: ArchetypeId,
+  band: PriceComfort,
+) {
+  return (await selectArchetypeWatches(archetype, band)).slice(0, 10);
+}
+
+export async function archetypeCatalogueResult(
+  archetype: ArchetypeId,
+  band: PriceComfort,
+) {
+  const candidates = await selectArchetypeWatches(archetype, band);
+  return validateSelectedResults("archetype", { archetype, band }, candidates);
 }

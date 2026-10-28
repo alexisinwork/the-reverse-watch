@@ -174,6 +174,7 @@ test("submit cheaper alternatives against the real catalogue", async ({
   await page.goto("/watch-advisor-demo");
   const frame = await openTool(page, "alternatives");
   await frame.getByLabel("Watch", { exact: true }).fill("Tudor Black Bay 58");
+  await frame.getByLabel("Reference (optional)").fill("M79030N-0001");
   await frame.getByLabel("Price", { exact: true }).fill("2000");
   await frame.getByLabel("No, mechanical only", { exact: true }).check();
   await frame
@@ -184,9 +185,11 @@ test("submit cheaper alternatives against the real catalogue", async ({
       name: "Alternatives to the Tudor Black Bay 58",
     }),
   ).toBeVisible({ timeout: 120_000 });
-  await expect(
-    frame.getByText("Manufacturer reference not confirmed").first(),
-  ).toBeVisible();
+  await expect(frame.locator("article.watch-card").first()).toBeVisible({
+    timeout: 90_000,
+  });
+  await expect(frame.getByRole("link")).toHaveCount(1);
+  await expect(frame.getByRole("link")).toHaveText("Powered by The Reserve");
 });
 
 test("alternatives shows and submits only the selected budget input", async ({

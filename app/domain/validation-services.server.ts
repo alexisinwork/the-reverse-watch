@@ -15,8 +15,8 @@ import type {
   FilmDiscoverySubject,
 } from "./validate-new-film-search.server";
 
-/** This factory is not exposed to visitors until cost bounds and atomic cache
- * promotion are verified. validateCachedSearch owns the reservation lifecycle. */
+/** Shared provider/source/catalogue operations. validateCachedSearch and the
+ * discovery coordinator own reservations; the runtime exposes their callbacks. */
 export function validationServices(
   client: CatalogueClient,
   deps: Deps,
@@ -51,7 +51,17 @@ export function validationServices(
           checkedAt: new Date(deps.now()).toISOString(),
         },
       );
-      if (result.status !== "verified") return result;
+      if (result.status !== "verified") {
+        console.info(
+          JSON.stringify({
+            event: "watch_validation_rejected",
+            brand: watch.brand,
+            reference: watch.referenceCode,
+            reason: result.reason,
+          }),
+        );
+        return result;
+      }
       const verified = result.watch;
       // The two source checks establish only identity and, where supplied,
       // attribution. Old prices, specifications, photos and explanations
@@ -116,7 +126,7 @@ export function validationServices(
   };
 }
 
-/** Kept behind the same production activation gate as cached validation. */
+/** Discovery uses the same provider and reservation contracts as cached checks. */
 export function validationServicesWithFilmDiscovery(
   client: CatalogueClient,
   deps: Deps,

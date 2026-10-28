@@ -12,6 +12,7 @@ export default tseslint.config(
   {
     ignores: [
       ".catalogue-build/**",
+      ".scratch/**",
       ".react-router/**",
       ".vercel/**",
       "build/**",

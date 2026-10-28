@@ -7,6 +7,7 @@
 import { quizCacheInput, searchQuizWatches } from "./quiz-live-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import { searchWithStore } from "./ai-watch-store.server";
+import { meteredSearchOptions } from "./validation-runtime.server";
 import { uniqueSearchView } from "./watch-result-dedup";
 import type { AiSearchView, FoundWatch, ProgressEvent } from "./ai-watch-types";
 import { loadFxTable, type FxTable } from "./fx.server";
@@ -85,16 +86,19 @@ async function searchQuizBeforeDeduplication(
     loadFx = () => loadFxTable(),
     report,
     runLive = () =>
-      searchWithStore({
-        kind: "quiz",
-        cacheInput: quizCacheInput(profile),
-        // Candidate previews have not passed the catalogue constraints yet.
-        run: () =>
-          searchQuizWatches(
-            profile,
-            report ? { report: (event) => report({ text: event.text }) } : {},
-          ),
-      }),
+      searchWithStore(
+        {
+          kind: "quiz",
+          cacheInput: quizCacheInput(profile),
+          // Candidate previews have not passed the catalogue constraints yet.
+          run: () =>
+            searchQuizWatches(
+              profile,
+              report ? { report: (event) => report({ text: event.text }) } : {},
+            ),
+        },
+        meteredSearchOptions({ client, report }),
+      ),
   }: {
     client?: CatalogueClient | null;
     loadFx?: () => Promise<FxTable | null>;

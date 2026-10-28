@@ -5,6 +5,23 @@ import { rpc, type CatalogueClient } from "./watch-catalogue.server";
 export const VALIDATION_WATCH_LIMIT_USD = 0.025;
 export const VALIDATION_SEARCH_WATCH_LIMIT = 8;
 
+export async function validationBudgetStatus(client: CatalogueClient) {
+  return z
+    .object({
+      month: z.string(),
+      spentUsd: z.number(),
+      reservedUsd: z.number(),
+      limitUsd: z.number(),
+      remainingUsd: z.number(),
+      halted: z.boolean(),
+      attempts: z.number(),
+      inProgress: z.number(),
+      validated: z.number(),
+      failed: z.number(),
+    })
+    .parse(await rpc(client, "ai_watch_validation_admin_status_v1", {}));
+}
+
 const reserveSchema = z.discriminatedUnion("state", [
   z.object({
     state: z.literal("reserved"),
