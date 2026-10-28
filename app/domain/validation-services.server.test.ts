@@ -30,6 +30,13 @@ const identity = {
   work: "Quantum of Solace",
   sourceQuote: "Omega 2201.50.00 Daniel Craig Quantum of Solace",
   supported: true,
+  facts: [
+    {
+      field: "caseDiameterMm",
+      value: 41.5,
+      quote: "2201.50.00 case diameter 41.5 mm",
+    },
+  ],
 };
 
 describe("validation services integration", () => {
@@ -114,9 +121,12 @@ describe("validation services integration", () => {
         });
       }
       order.push("source");
-      return new Response("Omega 2201.50.00 Daniel Craig Quantum of Solace", {
-        headers: { "content-type": "text/plain" },
-      });
+      return new Response(
+        "Omega 2201.50.00 Daniel Craig Quantum of Solace. 2201.50.00 case diameter 41.5 mm",
+        {
+          headers: { "content-type": "text/plain" },
+        },
+      );
     });
     const client: CatalogueClient = {
       config: { supabaseUrl: "https://db.example", serviceKey: "test" },
@@ -152,6 +162,7 @@ describe("validation services integration", () => {
           rationale:
             "Reference and available attribution checked against cited sources.",
           details: {
+            caseDiameterMm: 41.5,
             validationEvidence: [
               {
                 provider: "perplexity",
@@ -177,7 +188,13 @@ describe("validation services integration", () => {
     expect(order.filter((entry) => entry === "muse")).toHaveLength(1);
     if (result.status !== "verified") throw new Error("expected verified");
     expect(result.watches[0]!.details).not.toHaveProperty("price");
-    expect(result.watches[0]!.details).not.toHaveProperty("caseDiameterMm");
+    expect(result.watches[0]!.details.validationFacts).toMatchObject([
+      {
+        field: "caseDiameterMm",
+        value: 41.5,
+        sources: [{ provider: "perplexity" }, { provider: "muse" }],
+      },
+    ]);
     expect(result.watches[0]!.details).not.toHaveProperty("movement");
     expect(result.watches[0]!.details).not.toHaveProperty("referenceVerified");
   });

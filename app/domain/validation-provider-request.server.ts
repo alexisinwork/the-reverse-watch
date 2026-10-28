@@ -27,6 +27,10 @@ const briefSchema = z
       .nullable(),
     person: publicName.nullable(),
     work: publicName.nullable(),
+    missingFields: z
+      .array(z.enum(["caseDiameterMm", "waterResistanceM", "movementType"]))
+      .max(3)
+      .optional(),
   })
   .strict();
 
@@ -40,6 +44,23 @@ const claimSchema = {
     sourceUrl: { type: "string" },
     sourceQuote: { type: "string", maxLength: 280 },
     supported: { type: "boolean" },
+    facts: {
+      type: "array",
+      maxItems: 3,
+      items: {
+        type: "object",
+        properties: {
+          field: {
+            type: "string",
+            enum: ["caseDiameterMm", "waterResistanceM", "movementType"],
+          },
+          value: { type: ["string", "number"] },
+          quote: { type: "string", maxLength: 280 },
+        },
+        required: ["field", "value", "quote"],
+        additionalProperties: false,
+      },
+    },
   },
   required: [
     "brand",
@@ -49,6 +70,7 @@ const claimSchema = {
     "sourceUrl",
     "sourceQuote",
     "supported",
+    "facts",
   ],
   additionalProperties: false,
 };
@@ -69,6 +91,7 @@ export function buildValidationRequests(
     "Set supported true only when a source explicitly identifies the reference and, if supplied, the same person wearing it in the same work.",
     "Return a short verbatim sourceQuote of at most 30 words containing the brand, reference and supplied person and work together; never manufacture a quotation.",
     "Return the exact cited source URL. If unsupported return supported false.",
+    "For each missingFields item, include a fact only when that same cited page explicitly gives the exact reference and fact together in a short verbatim quote. Use diameter in mm, water resistance in metres and movement type automatic, manual, quartz, solar, spring_drive or hybrid. Return an empty facts array when none are documented.",
   ].join(" ");
   const inputJson = JSON.stringify(brief);
   return {

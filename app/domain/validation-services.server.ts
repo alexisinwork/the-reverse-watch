@@ -19,7 +19,19 @@ export function validationServices(
 ): ValidationServices {
   const calls = validationProviderCalls(deps);
   return {
-    hydrate: (watches) => enrichResultWatches(watches, client),
+    hydrate: (watches) =>
+      enrichResultWatches(
+        watches.map((watch) => ({
+          ...watch,
+          imageUrl: null,
+          priceNote: null,
+          details: {
+            person: watch.details.person ?? null,
+            work: watch.details.work ?? null,
+          },
+        })),
+        client,
+      ),
     hydrateVerified: (watches) =>
       enrichResultWatches(watches, client, { preferCatalogueTitle: true }),
     reserve: (key, count) => reserveValidationBudget(client, key, count),
@@ -56,6 +68,26 @@ export function validationServices(
             person: verified.details.person ?? null,
             work: verified.details.work ?? null,
             validationEvidence: verified.details.validationEvidence,
+            ...(verified.details.validationFacts?.length
+              ? {
+                  validationFacts: verified.details.validationFacts,
+                  ...(verified.details.validationFacts.some(
+                    (fact) => fact.field === "caseDiameterMm",
+                  )
+                    ? { caseDiameterMm: verified.details.caseDiameterMm }
+                    : {}),
+                  ...(verified.details.validationFacts.some(
+                    (fact) => fact.field === "waterResistanceM",
+                  )
+                    ? { waterResistanceM: verified.details.waterResistanceM }
+                    : {}),
+                  ...(verified.details.validationFacts.some(
+                    (fact) => fact.field === "movementType",
+                  )
+                    ? { movement: verified.details.movement }
+                    : {}),
+                }
+              : {}),
           },
         },
       };

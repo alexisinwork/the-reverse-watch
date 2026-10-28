@@ -560,6 +560,17 @@ and displayed using its facts. A new identity remains in the validation intake
 until its required facts are established; this deliberately leaves new live
 discovery incomplete rather than presenting unknown specifications as a fit.
 
+Result-time technical enrichment: the bounded validation request asks both
+providers for missing diameter, water resistance and movement. It accepts a
+value only when the two agree and independently cited pages contain the exact
+reference and matching short evidence passages. Migration 0098 writes those
+facts, their two source passages and the validated snapshot atomically for a
+unique catalogue identity; existing conflicts abort publication instead of
+being overwritten. Unmatched identities remain in intake. The in-process
+catalogue cache is cleared after publication; other instances can retain their
+five-minute cache. Price, photo, other fields, paid activation and provider
+hard caps remain outstanding; no real provider lookup was run for this change.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

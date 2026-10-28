@@ -1,5 +1,7 @@
 import { pageMentionsReference } from "./ai-watch-guardrails";
 import type { FoundWatch } from "./ai-watch-types";
+import type { ValidationFact } from "./cached-result-validation";
+import { quoteSupportsValue } from "./catalogue-enrichment.server";
 import { publicFetch } from "./source-pages.server";
 
 const MAX_BYTES = 1_500_000;
@@ -20,9 +22,11 @@ export async function inspectCachedResultSource(
   sourceUrl: string,
   fetchImpl: typeof fetch = fetch,
   sourceQuote?: string,
+  facts?: ValidationFact[],
 ): Promise<{
   status: "matched" | "missing" | "unavailable";
   finalUrl: string | null;
+  checkedFacts?: ValidationFact[];
 }> {
   if (!watch.referenceCode) return { status: "missing", finalUrl: null };
   try {
@@ -105,7 +109,21 @@ export async function inspectCachedResultSource(
       )
         return { status: "missing", finalUrl };
     }
-    return { status: "matched", finalUrl };
+    const checkedFacts = facts?.filter((fact) => {
+      const quotation = words(fact.quote);
+      return (
+        quotation.length > 0 &&
+        fact.quote.length <= 280 &&
+        text.includes(` ${quotation} `) &&
+        pageMentionsReference(watch.referenceCode, fact.quote, "") &&
+        quoteSupportsValue({ ...fact, sourceUrl: finalUrl })
+      );
+    });
+    return {
+      status: "matched",
+      finalUrl,
+      ...(checkedFacts ? { checkedFacts } : {}),
+    };
   } catch {
     return { status: "unavailable", finalUrl: null };
   }

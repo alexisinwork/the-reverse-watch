@@ -1,6 +1,16 @@
 export type SourceKind = "manufacturer" | "retailer" | "catalogue";
 
 export type WatchDetails = {
+  validationFacts?: {
+    field: "caseDiameterMm" | "waterResistanceM" | "movementType";
+    value: string | number;
+    sources: {
+      provider: "perplexity" | "muse";
+      sourceUrl: string;
+      quote: string;
+      checkedAt: string;
+    }[];
+  }[];
   validationEvidence?: {
     provider: string;
     sourceUrl: string;

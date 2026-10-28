@@ -2,7 +2,11 @@ import { z } from "zod";
 import type { FoundWatch } from "./ai-watch-types";
 import { safeHttpUrl } from "./source-pages.server";
 import { validationCharges } from "./validation-budget.server";
-import { rpc, type CatalogueClient } from "./watch-catalogue.server";
+import {
+  clearCatalogueCache,
+  rpc,
+  type CatalogueClient,
+} from "./watch-catalogue.server";
 
 const evidenceSchema = z.object({
   provider: z.enum(["perplexity", "muse"]),
@@ -11,6 +15,20 @@ const evidenceSchema = z.object({
   sourceQuote: z.string().max(280).optional(),
   person: z.string().max(160).nullable().optional(),
   work: z.string().max(200).nullable().optional(),
+});
+const factSchema = z.object({
+  field: z.enum(["caseDiameterMm", "waterResistanceM", "movementType"]),
+  value: z.union([z.string().max(100), z.number().finite()]),
+  sources: z
+    .array(
+      z.object({
+        provider: z.enum(["perplexity", "muse"]),
+        sourceUrl: z.string().url(),
+        quote: z.string().min(1).max(280),
+        checkedAt: z.string().datetime({ offset: true }),
+      }),
+    )
+    .length(2),
 });
 const watchSchema = z
   .object({
@@ -22,10 +40,40 @@ const watchSchema = z
     priceNote: z.string().nullable(),
     rationale: z.string(),
     details: z
-      .object({ validationEvidence: z.array(evidenceSchema).length(2) })
+      .object({
+        validationEvidence: z.array(evidenceSchema).length(2),
+        validationFacts: z.array(factSchema).max(3).optional(),
+      })
       .passthrough(),
   })
   .superRefine((watch, context) => {
+    const seen = new Set<string>();
+    for (const [index, fact] of (
+      watch.details.validationFacts ?? []
+    ).entries()) {
+      const key = fact.field === "movementType" ? "movement" : fact.field;
+      const matches = fact.sources.every((source) =>
+        watch.details.validationEvidence.some(
+          (evidence) =>
+            evidence.provider === source.provider &&
+            evidence.sourceUrl === source.sourceUrl,
+        ),
+      );
+      const providers = new Set(fact.sources.map((source) => source.provider));
+      if (
+        seen.has(fact.field) ||
+        providers.size !== 2 ||
+        !matches ||
+        watch.details[key] !== fact.value
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["details", "validationFacts", index],
+          message: "Invalid field evidence",
+        });
+      }
+      seen.add(fact.field);
+    }
     const person = watch.details.person;
     const work = watch.details.work;
     if (typeof person !== "string" && typeof work !== "string") return;
@@ -74,6 +122,9 @@ export async function loadValidatedSnapshot(
         !safeHttpUrl(watch.sourceUrl) ||
         watch.details.validationEvidence.some(
           (evidence) => !safeHttpUrl(evidence.sourceUrl),
+        ) ||
+        watch.details.validationFacts?.some((fact) =>
+          fact.sources.some((source) => !safeHttpUrl(source.sourceUrl)),
         ),
     )
   )
@@ -97,12 +148,14 @@ export async function publishValidatedSnapshot(
   z.string().uuid().parse(attemptId);
   const parsed = z.array(watchSchema).min(1).max(8).parse(watches);
   const summary = `${parsed.length} ${parsed.length === 1 ? "watch" : "watches"} with checked sources.`;
-  return z.boolean().parse(
-    await rpc(client, "ai_watch_validated_cache_publish_v3", {
+  const published = z.boolean().parse(
+    await rpc(client, "ai_watch_validated_cache_publish_v4", {
       p_attempt_id: attemptId,
       p_summary: summary,
       p_watches: parsed,
       p_costs_usd: validationCharges(costs),
     }),
   );
+  if (published) clearCatalogueCache();
+  return published;
 }

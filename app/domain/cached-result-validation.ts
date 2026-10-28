@@ -3,6 +3,12 @@
 import type { FoundWatch } from "./ai-watch-types";
 import { safeHttpUrl } from "./source-pages.server";
 
+export type ValidationFact = {
+  field: "caseDiameterMm" | "waterResistanceM" | "movementType";
+  value: string | number;
+  quote: string;
+};
+
 export type ValidationEvidence = {
   provider: "perplexity" | "muse";
   brand: string;
@@ -12,6 +18,7 @@ export type ValidationEvidence = {
   sourceUrl: string;
   /** Short, verbatim source passage proposed by the provider. */
   sourceQuote?: string;
+  facts?: ValidationFact[];
   /** True only when the caller actually inspected the evidence page. */
   sourceVerified: boolean;
   supported: boolean;

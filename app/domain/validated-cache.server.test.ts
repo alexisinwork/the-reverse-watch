@@ -52,7 +52,7 @@ describe("validated cache snapshots", () => {
       await publishValidatedSnapshot(db.value, attempt, [watch], [null]),
     ).toBe(true);
     const [target, init] = db.fetchImpl.mock.calls[0]!;
-    expect(String(target)).toContain("ai_watch_validated_cache_publish_v3");
+    expect(String(target)).toContain("ai_watch_validated_cache_publish_v4");
     expect(JSON.parse(String(init?.body))).toMatchObject({
       p_attempt_id: attempt,
       p_costs_usd: [0.025],
@@ -87,6 +87,47 @@ describe("validated cache snapshots", () => {
               ...watch.details,
               person: "Daniel Craig",
               work: "Quantum of Solace",
+            },
+          },
+        ],
+        [0.01],
+      ),
+    ).rejects.toThrow();
+    expect(db.fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("does not publish technical facts without matching two-source evidence", async () => {
+    const db = client(true);
+    await expect(
+      publishValidatedSnapshot(
+        db.value,
+        attempt,
+        [
+          {
+            ...watch,
+            details: {
+              ...watch.details,
+              caseDiameterMm: 40,
+              validationFacts: [
+                {
+                  field: "caseDiameterMm",
+                  value: 40,
+                  sources: [
+                    {
+                      provider: "perplexity",
+                      sourceUrl: "https://first.example/watch",
+                      quote: "Diameter 40 mm",
+                      checkedAt: "2026-10-27T00:00:00Z",
+                    },
+                    {
+                      provider: "muse",
+                      sourceUrl: "https://other.example/watch",
+                      quote: "Diameter 40 mm",
+                      checkedAt: "2026-10-27T00:00:00Z",
+                    },
+                  ],
+                },
+              ],
             },
           },
         ],

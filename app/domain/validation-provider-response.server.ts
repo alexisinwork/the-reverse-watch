@@ -12,6 +12,16 @@ const claimSchema = z.object({
   sourceUrl: z.string().url().max(2048),
   sourceQuote: z.string().trim().max(280),
   supported: z.boolean(),
+  facts: z
+    .array(
+      z.object({
+        field: z.enum(["caseDiameterMm", "waterResistanceM", "movementType"]),
+        value: z.union([z.string().max(100), z.number().finite()]),
+        quote: z.string().min(1).max(280),
+      }),
+    )
+    .max(3)
+    .default([]),
 });
 
 const url = (value: string) => safeHttpUrl(value);

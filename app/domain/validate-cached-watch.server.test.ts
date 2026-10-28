@@ -61,6 +61,73 @@ describe("cached watch source validation", () => {
     ).toBe("unverified");
   });
 
+  it("fills missing technical facts only when both exact-reference pages support the same values", async () => {
+    const facts = [
+      {
+        field: "caseDiameterMm" as const,
+        value: 41.5,
+        quote: "231.10.39.21.03.001 case diameter 41.5 mm",
+      },
+      {
+        field: "waterResistanceM" as const,
+        value: 150,
+        quote: "231.10.39.21.03.001 water resistance 150 m",
+      },
+      {
+        field: "movementType" as const,
+        value: "automatic",
+        quote: "231.10.39.21.03.001 automatic movement",
+      },
+    ];
+    const page = `Omega 231.10.39.21.03.001 Daniel Craig Skyfall. ${facts.map((fact) => fact.quote).join(". ")}`;
+    const fetchImpl = vi.fn(
+      async () =>
+        new Response(page, { headers: { "content-type": "text/plain" } }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      { ...primary, facts },
+      { ...secondary, facts },
+      { fetchImpl, checkedAt: "2026-10-27T00:00:00Z" },
+    );
+    if (result.status !== "verified") throw new Error("expected verified");
+    expect(result.watch.details).toMatchObject({
+      caseDiameterMm: 41.5,
+      waterResistanceM: 150,
+      movement: "automatic",
+    });
+    expect(result.watch.details.validationFacts).toHaveLength(3);
+    expect(result.watch.details.validationFacts?.[0]?.sources).toHaveLength(2);
+  });
+
+  it("leaves disputed or unsupported technical facts missing", async () => {
+    const primaryFact = {
+      field: "caseDiameterMm" as const,
+      value: 41.5,
+      quote: "231.10.39.21.03.001 case diameter 41.5 mm",
+    };
+    const otherFact = {
+      ...primaryFact,
+      value: 42,
+      quote: "231.10.39.21.03.001 case diameter 42 mm",
+    };
+    const page = `Omega 231.10.39.21.03.001 Daniel Craig Skyfall. ${primaryFact.quote}. ${otherFact.quote}`;
+    const fetchImpl = vi.fn(
+      async () =>
+        new Response(page, { headers: { "content-type": "text/plain" } }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      { ...primary, facts: [primaryFact] },
+      { ...secondary, facts: [otherFact] },
+      { fetchImpl },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.details.caseDiameterMm).toBeUndefined();
+    expect(result.watch.details.validationFacts).toBeUndefined();
+  });
+
   it("does not count redirects to the same source as independent pages", async () => {
     const fetchImpl = vi.fn(async (input: string | URL | Request) =>
       String(input).startsWith("https://second.example")

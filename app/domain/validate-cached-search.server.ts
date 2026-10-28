@@ -11,6 +11,7 @@ export type ValidationBrief = {
   referenceCode: string | null;
   person: string | null;
   work: string | null;
+  missingFields?: ("caseDiameterMm" | "waterResistanceM" | "movementType")[];
 };
 
 type Reserve =
@@ -75,6 +76,15 @@ export async function validateCachedSearch(
         referenceCode: watch.referenceCode?.slice(0, 120) ?? null,
         person: watch.details.person?.slice(0, 160) ?? null,
         work: watch.details.work?.slice(0, 200) ?? null,
+        missingFields: [
+          ...(watch.details.caseDiameterMm == null
+            ? ["caseDiameterMm" as const]
+            : []),
+          ...(watch.details.waterResistanceM == null
+            ? ["waterResistanceM" as const]
+            : []),
+          ...(watch.details.movement == null ? ["movementType" as const] : []),
+        ],
       };
       const [primary, secondary] = await Promise.allSettled([
         services.primary(brief),
