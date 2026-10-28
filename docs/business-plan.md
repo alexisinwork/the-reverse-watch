@@ -615,6 +615,8 @@ Snapshot validation also rechecks that each technical-fact quotation names the
 exact reference and supports its value, and that each sighting quotation names
 the watch and requested person or work. This applies when publishing and when
 reading the snapshot; it does not replace checking the live source pages.
+The snapshot contract also requires both distinct provider sources on
+different hosts and binds the watch's primary link to the Perplexity evidence.
 
 Perplexity contract review, 2026-10-28: the official [model list](https://docs.perplexity.ai/docs/agent-api/models)
 lists the pinned Agent model, and the [output contract](https://docs.perplexity.ai/docs/agent-api/output-control)

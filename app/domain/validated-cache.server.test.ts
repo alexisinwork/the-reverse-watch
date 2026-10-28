@@ -46,6 +46,46 @@ function client(reply: unknown) {
 }
 
 describe("validated cache snapshots", () => {
+  it("requires independent providers and the primary source as the watch link", async () => {
+    const db = client(true);
+    const first = watch.details.validationEvidence![0]!;
+    const second = watch.details.validationEvidence![1]!;
+    const invalid = [
+      { ...watch, sourceUrl: "https://unrelated.example/watch" },
+      {
+        ...watch,
+        details: {
+          ...watch.details,
+          validationEvidence: [first, { ...second, provider: "perplexity" }],
+        },
+      },
+      {
+        ...watch,
+        details: {
+          ...watch.details,
+          validationEvidence: [
+            first,
+            { ...second, sourceUrl: "https://first.example/another" },
+          ],
+        },
+      },
+    ];
+    for (const entry of invalid)
+      await expect(
+        publishValidatedSnapshot(db.value, attempt, [entry], [0.01]),
+      ).rejects.toThrow();
+    expect(db.fetchImpl).not.toHaveBeenCalled();
+    const stale = client({
+      validationStatus: "valid",
+      summary: "Checked",
+      watches: [invalid[2]],
+      validatedAt: "2026-10-27T00:00:00Z",
+      policyVersion: "source-v1",
+    });
+    await expect(
+      loadValidatedSnapshot(stale.value, "a".repeat(64)),
+    ).rejects.toThrow();
+  });
   it("publishes evidence and conservative unknown costs through one RPC", async () => {
     const db = client(true);
     expect(

@@ -17,6 +17,7 @@ const foundWatch = {
 };
 const validatedWatch = {
   ...foundWatch,
+  sourceUrl: "https://first.example/watch",
   details: {
     ...foundWatch.details,
     validationEvidence: [

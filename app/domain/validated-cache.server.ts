@@ -110,6 +110,25 @@ const watchSchema = z
       .passthrough(),
   })
   .superRefine((watch, context) => {
+    const evidenceProviders = new Set(
+      watch.details.validationEvidence.map((evidence) => evidence.provider),
+    );
+    if (
+      evidenceProviders.size !== 2 ||
+      !independentSources(watch.details.validationEvidence) ||
+      !safeHttpUrl(watch.sourceUrl) ||
+      !watch.details.validationEvidence.some(
+        (evidence) =>
+          evidence.provider === "perplexity" &&
+          evidence.sourceUrl === watch.sourceUrl,
+      )
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["details", "validationEvidence"],
+        message: "Independent provider evidence and primary source required",
+      });
+    }
     const image = watch.details.imageEvidence;
     if (
       image &&
