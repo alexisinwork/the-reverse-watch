@@ -1,6 +1,12 @@
 export type SourceKind = "manufacturer" | "retailer" | "catalogue";
 
 export type WatchDetails = {
+  imageEvidence?: {
+    sourceUrl: string;
+    imageUrl: string;
+    referenceCode: string;
+    checkedAt: string;
+  };
   priceObservation?: {
     value: string;
     sources: {

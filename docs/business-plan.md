@@ -581,6 +581,15 @@ price with the snapshot; concurrent conflicting master prices stop publication.
 This is locally tested with mocked provider responses; real paid activation,
 image discovery and provider-side spending guarantees are still outstanding.
 
+Result-time image evidence: when the exact local reference lacks a photo, the
+validator can read a checked source page's structured product data, require
+the same brand and exact reference, and verify that the image URL serves an
+image. Migration 0100 stores the URL and source evidence atomically with the
+snapshot and uniquely matched master record; it never stores image bytes or
+overwrites a different existing image. Many pages do not expose this structured
+data, so this is not a guarantee that every watch gains a photo. This path is
+still offline-tested and not enabled for visitors.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

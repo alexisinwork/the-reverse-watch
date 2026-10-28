@@ -6,6 +6,7 @@ import {
 } from "./cached-result-validation";
 import { inspectCachedResultSource } from "./cached-result-source-check.server";
 import { parseObservedPrice } from "./validated-price";
+import { verifyImageUrl } from "./source-pages.server";
 
 /** Check both cited pages ourselves before reconciling the two assertions.
  * Matching text is necessary evidence, not proof that the page associates the
@@ -24,6 +25,7 @@ export async function validateCachedWatchFromSources(
       fetchImpl,
       primary.sourceQuote,
       primary.facts,
+      !watch.imageUrl,
     ),
     inspectCachedResultSource(
       watch,
@@ -31,6 +33,7 @@ export async function validateCachedWatchFromSources(
       fetchImpl,
       secondary.sourceQuote,
       secondary.facts,
+      !watch.imageUrl,
     ),
   ]);
   const result = validateCachedWatch(
@@ -159,5 +162,27 @@ export async function validateCachedWatchFromSources(
       };
     }
   }
-  return { ...result, watch: { ...result.watch, priceNote, details } };
+  let imageUrl = result.watch.imageUrl;
+  if (!imageUrl && result.watch.referenceCode) {
+    for (const page of [first, second]) {
+      if (!page.imageCandidate || !page.finalUrl) continue;
+      const verifiedImage = await verifyImageUrl(
+        page.imageCandidate,
+        fetchImpl,
+      );
+      if (!verifiedImage) continue;
+      imageUrl = verifiedImage;
+      details.imageEvidence = {
+        sourceUrl: page.finalUrl,
+        imageUrl: verifiedImage,
+        referenceCode: result.watch.referenceCode,
+        checkedAt: details.validationEvidence![0]!.checkedAt,
+      };
+      break;
+    }
+  }
+  return {
+    ...result,
+    watch: { ...result.watch, imageUrl, priceNote, details },
+  };
 }

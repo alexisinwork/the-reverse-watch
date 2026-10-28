@@ -5,7 +5,10 @@ import {
   parseObservedPrice,
   quoteSupportsObservedPrice,
 } from "./validated-price";
-import { pageMentionsReference } from "./ai-watch-guardrails";
+import {
+  normalizeReference,
+  pageMentionsReference,
+} from "./ai-watch-guardrails";
 import { validationCharges } from "./validation-budget.server";
 import {
   clearCatalogueCache,
@@ -62,6 +65,14 @@ const watchSchema = z
       .object({
         validationEvidence: z.array(evidenceSchema).length(2),
         validationFacts: z.array(factSchema).max(3).optional(),
+        imageEvidence: z
+          .object({
+            sourceUrl: z.string().url(),
+            imageUrl: z.string().url(),
+            referenceCode: z.string().min(1),
+            checkedAt: z.string().datetime({ offset: true }),
+          })
+          .optional(),
         priceObservation: priceObservationSchema.optional(),
         price: z
           .object({ amount: z.number().positive(), currency: z.string() })
@@ -72,6 +83,24 @@ const watchSchema = z
       .passthrough(),
   })
   .superRefine((watch, context) => {
+    const image = watch.details.imageEvidence;
+    if (
+      image &&
+      (image.imageUrl !== watch.imageUrl ||
+        !safeHttpUrl(image.imageUrl) ||
+        !normalizeReference(watch.referenceCode) ||
+        normalizeReference(image.referenceCode) !==
+          normalizeReference(watch.referenceCode) ||
+        !watch.details.validationEvidence.some(
+          (evidence) => evidence.sourceUrl === image.sourceUrl,
+        ))
+    ) {
+      context.addIssue({
+        code: "custom",
+        path: ["details", "imageEvidence"],
+        message: "Invalid image evidence",
+      });
+    }
     const observation = watch.details.priceObservation;
     if (observation) {
       const price = parseObservedPrice(observation.value);
@@ -212,7 +241,7 @@ export async function publishValidatedSnapshot(
   const parsed = z.array(watchSchema).min(1).max(8).parse(watches);
   const summary = `${parsed.length} ${parsed.length === 1 ? "watch" : "watches"} with checked sources.`;
   const published = z.boolean().parse(
-    await rpc(client, "ai_watch_validated_cache_publish_v5", {
+    await rpc(client, "ai_watch_validated_cache_publish_v6", {
       p_attempt_id: attemptId,
       p_summary: summary,
       p_watches: parsed,

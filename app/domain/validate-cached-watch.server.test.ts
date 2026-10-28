@@ -61,6 +61,49 @@ describe("cached watch source validation", () => {
     ).toBe("unverified");
   });
 
+  it("uses a reachable structured product photo for the exact reference", async () => {
+    const html = `<p>Omega 231.10.39.21.03.001 Daniel Craig Skyfall</p><script type="application/ld+json">${JSON.stringify({ "@type": "Product", brand: "Omega", sku: "231.10.39.21.03.001", image: "https://img.example/watch.jpg" })}</script>`;
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("img.example")
+        ? new Response(new Uint8Array([1]), {
+            headers: { "content-type": "image/jpeg" },
+          })
+        : new Response(html, { headers: { "content-type": "text/html" } }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      primary,
+      secondary,
+      { fetchImpl, checkedAt: "2026-10-27T00:00:00Z" },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.imageUrl).toBe("https://img.example/watch.jpg");
+    expect(result.watch.details.imageEvidence).toMatchObject({
+      sourceUrl: "https://first.example/a",
+      referenceCode: watch.referenceCode,
+    });
+  });
+
+  it("does not use an image that is unavailable", async () => {
+    const html = `<p>Omega 231.10.39.21.03.001 Daniel Craig Skyfall</p><script type="application/ld+json">${JSON.stringify({ "@type": "Product", brand: "Omega", sku: "231.10.39.21.03.001", image: "https://img.example/watch.jpg" })}</script>`;
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("img.example")
+        ? new Response("missing", { status: 404 })
+        : new Response(html, { headers: { "content-type": "text/html" } }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      primary,
+      secondary,
+      { fetchImpl },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.imageUrl).toBeNull();
+    expect(result.watch.details.imageEvidence).toBeUndefined();
+  });
+
   it("fills missing technical facts only when both exact-reference pages support the same values", async () => {
     const facts = [
       {

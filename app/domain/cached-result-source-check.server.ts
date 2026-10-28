@@ -3,6 +3,7 @@ import type { FoundWatch } from "./ai-watch-types";
 import type { ValidationFact } from "./cached-result-validation";
 import { quoteSupportsValue } from "./catalogue-enrichment.server";
 import { quoteSupportsObservedPrice } from "./validated-price";
+import { referencedProductImage } from "./referenced-product-image.server";
 import { publicFetch } from "./source-pages.server";
 
 const MAX_BYTES = 1_500_000;
@@ -24,10 +25,12 @@ export async function inspectCachedResultSource(
   fetchImpl: typeof fetch = fetch,
   sourceQuote?: string,
   facts?: ValidationFact[],
+  discoverImage = false,
 ): Promise<{
   status: "matched" | "missing" | "unavailable";
   finalUrl: string | null;
   checkedFacts?: ValidationFact[];
+  imageCandidate?: string;
 }> {
   if (!watch.referenceCode) return { status: "missing", finalUrl: null };
   try {
@@ -131,6 +134,18 @@ export async function inspectCachedResultSource(
       status: "matched",
       finalUrl,
       ...(checkedFacts ? { checkedFacts } : {}),
+      ...(discoverImage &&
+      /^(text\/html|application\/xhtml\+xml)/.test(contentType)
+        ? {
+            imageCandidate:
+              referencedProductImage(
+                html,
+                watch.referenceCode,
+                watch.brand,
+                finalUrl,
+              ) ?? undefined,
+          }
+        : {}),
     };
   } catch {
     return { status: "unavailable", finalUrl: null };

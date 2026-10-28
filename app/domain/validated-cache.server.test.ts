@@ -52,7 +52,7 @@ describe("validated cache snapshots", () => {
       await publishValidatedSnapshot(db.value, attempt, [watch], [null]),
     ).toBe(true);
     const [target, init] = db.fetchImpl.mock.calls[0]!;
-    expect(String(target)).toContain("ai_watch_validated_cache_publish_v5");
+    expect(String(target)).toContain("ai_watch_validated_cache_publish_v6");
     expect(JSON.parse(String(init?.body))).toMatchObject({
       p_attempt_id: attempt,
       p_costs_usd: [0.025],
@@ -168,6 +168,33 @@ describe("validated cache snapshots", () => {
                     value: "USD 3500",
                   },
                 ],
+              },
+            },
+          },
+        ],
+        [0.01],
+      ),
+    ).rejects.toThrow();
+    expect(db.fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("does not publish a photo attributed to another reference", async () => {
+    const db = client(true);
+    await expect(
+      publishValidatedSnapshot(
+        db.value,
+        attempt,
+        [
+          {
+            ...watch,
+            imageUrl: "https://img.example/photo.jpg",
+            details: {
+              ...watch.details,
+              imageEvidence: {
+                sourceUrl: "https://first.example/watch",
+                imageUrl: "https://img.example/photo.jpg",
+                referenceCode: "OTHER123",
+                checkedAt: "2026-10-27T00:00:00Z",
               },
             },
           },

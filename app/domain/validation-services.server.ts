@@ -60,7 +60,7 @@ export function validationServices(
           model: verified.referenceCode!,
           referenceCode: verified.referenceCode,
           sourceUrl: result.evidence[0]!.sourceUrl,
-          imageUrl: null,
+          imageUrl: verified.details.imageEvidence ? verified.imageUrl : null,
           priceNote: verified.details.priceObservation
             ? verified.priceNote
             : null,
@@ -70,6 +70,9 @@ export function validationServices(
             person: verified.details.person ?? null,
             work: verified.details.work ?? null,
             validationEvidence: verified.details.validationEvidence,
+            ...(verified.details.imageEvidence
+              ? { imageEvidence: verified.details.imageEvidence }
+              : {}),
             ...(verified.details.priceObservation
               ? {
                   priceObservation: verified.details.priceObservation,

@@ -125,11 +125,17 @@ describe("validation services integration", () => {
           usage: { input_tokens: 1000, output_tokens: 500 },
         });
       }
+      if (endpoint.includes("image.example")) {
+        order.push("image");
+        return new Response(new Uint8Array([1]), {
+          headers: { "content-type": "image/jpeg" },
+        });
+      }
       order.push("source");
       return new Response(
-        "Omega 2201.50.00 Daniel Craig Quantum of Solace. 2201.50.00 case diameter 41.5 mm. 2201.50.00 market price USD 3,500",
+        `<p>Omega 2201.50.00 Daniel Craig Quantum of Solace. 2201.50.00 case diameter 41.5 mm. 2201.50.00 market price USD 3,500</p><script type="application/ld+json">${JSON.stringify({ "@type": "Product", brand: "Omega", sku: "2201.50.00", image: "https://image.example/watch.jpg" })}</script>`,
         {
-          headers: { "content-type": "text/plain" },
+          headers: { "content-type": "text/html" },
         },
       );
     });
@@ -162,7 +168,7 @@ describe("validation services integration", () => {
           model: "2201.50.00",
           referenceCode: "2201.50.00",
           sourceUrl: "https://p.example/watch",
-          imageUrl: null,
+          imageUrl: "https://image.example/watch.jpg",
           priceNote: "USD 3500",
           rationale:
             "Reference and available attribution checked against cited sources.",
@@ -200,6 +206,10 @@ describe("validation services integration", () => {
     expect(result.watches[0]!.details.priceObservation?.sources).toHaveLength(
       2,
     );
+    expect(result.watches[0]!.details.imageEvidence).toMatchObject({
+      imageUrl: "https://image.example/watch.jpg",
+      referenceCode: "2201.50.00",
+    });
     expect(result.watches[0]!.details.validationFacts).toMatchObject([
       {
         field: "caseDiameterMm",
