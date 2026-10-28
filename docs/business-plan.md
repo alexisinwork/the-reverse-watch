@@ -632,6 +632,9 @@ continue to work. These guards do not govern separate local scripts, provider
 bills outside the application, or already-running requests, and have not been
 deployed merely by passing the local tests.
 
+User-facing quiz and film-search text now describes catalogue and saved-result
+lookup without promising that a live search ran while that path is disabled.
+
 First-use flow rehearsal: a deterministic test now runs a legacy actor cache
 through the actual validator service, both mocked providers, source and product
 page inspection, publication RPC payload and a second snapshot read. It checks

@@ -174,10 +174,10 @@ async function searchQuizBeforeDeduplication(
 
   report?.({
     text: !catalogueCoversRange(range)
-      ? "Above 10k the catalogue is not complete yet, so we search live."
+      ? "Checking saved research for your price range…"
       : main.length > 0
-        ? `The catalogue has ${main.length} confirmed ${main.length === 1 ? "fit" : "fits"}; searching live for more…`
-        : "No catalogue watch fits every answer yet; searching live…",
+        ? `The catalogue has ${main.length} confirmed ${main.length === 1 ? "fit" : "fits"}; checking saved research for more…`
+        : "No catalogue watch fits every answer yet; checking saved research…",
   });
   const fetched = await runLive();
   const screened =

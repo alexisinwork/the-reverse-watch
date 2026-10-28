@@ -503,7 +503,7 @@ export default function Quiz() {
           />
           <WatchResults
             eyebrow="Checked catalogue · confirmed sources"
-            footnote="Filtered from The Reserve's checked watch catalogue. Where it has gaps, or above 10k, a live web search fills in using only your answers above; no email or personal data is sent. Check prices with the seller before buying."
+            footnote="Filtered from The Reserve's catalogue and available checked results. Prices are approximate and may change; check with the seller before buying."
             fx={loaderData.fx}
             heading="Watches that fit every answer"
             mode="quiz"

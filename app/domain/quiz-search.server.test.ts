@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-import type { AiSearchView } from "./ai-watch-types";
+import type { AiSearchView, ProgressEvent } from "./ai-watch-types";
 import type { ProfileV4 } from "./questionnaire-v4";
 import { searchQuiz } from "./quiz-search.server";
 import {
@@ -262,6 +262,19 @@ describe("searchQuiz", () => {
       "Brand1",
       "Brand2",
     ]);
+  });
+
+  it("describes checking saved research without claiming a web search ran", async () => {
+    const report = vi.fn((_event: ProgressEvent) => undefined);
+    await searchQuiz(profile, {
+      client: client([row(1)]).value,
+      loadFx: async () => fx,
+      runLive: async () => ({ status: "unavailable" }),
+      report,
+    });
+    const messages = report.mock.calls.map(([event]) => event.text).join(" ");
+    expect(messages).toContain("checking saved research");
+    expect(messages).not.toContain("searching live");
   });
 
   it("fills free places with in-budget near fits, marked with what they miss", async () => {

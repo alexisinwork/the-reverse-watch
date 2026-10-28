@@ -109,8 +109,8 @@ export default function WatchFind() {
         <span className="eyebrow">Film · Television · People</span>
         <h1>Find the watch from the screen</h1>
         <p>
-          Choose what you are looking for, then type its name. We search the
-          live web and show each watch with who wore it and where.
+          Choose what you are looking for, then type its name. Available
+          documented sightings show who wore each watch and where.
         </p>
         <Form className="find-form" method="get" role="search">
           <EmbedThemeFields />
@@ -206,8 +206,8 @@ export default function WatchFind() {
 
       {result ? (
         <WatchResults
-          eyebrow="Live search · documented sightings"
-          footnote="Found with a live web search. Identifications from films can be disputed."
+          eyebrow="Documented sightings"
+          footnote="Watch identifications from films can be disputed."
           fx={null}
           heading={`Watches in “${query}”`}
           key={`${kind}:${query}`}
@@ -226,14 +226,11 @@ export default function WatchFind() {
           </div>
           <div>
             <strong>2</strong>
-            <p>We gather documented sightings from the live web in parallel.</p>
+            <p>We look for available documented sightings.</p>
           </div>
           <div>
             <strong>3</strong>
-            <p>
-              Searches are saved, so anyone searching the same name later gets
-              the answer instantly.
-            </p>
+            <p>Checked results can be saved for future searches.</p>
           </div>
         </section>
       )}
