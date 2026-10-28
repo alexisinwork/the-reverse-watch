@@ -132,7 +132,15 @@ export function parsePerplexityValidationResponse(
   if (!matchingCitation(claim.sourceUrl, response.citations))
     throw new Error("Perplexity claim has no matching citation");
   return {
-    evidence: { ...claim, provider: "perplexity", sourceVerified: false },
+    evidence: {
+      ...claim,
+      provider: "perplexity",
+      sourceVerified: false,
+      citedUrls: response.citations
+        .map(url)
+        .filter((value): value is string => value !== null)
+        .slice(0, 5),
+    },
     costUsd: response.usage.cost.total_cost,
   };
 }
@@ -182,7 +190,15 @@ export function parsePerplexityAgentValidationResponse(
   if (!matchingCitation(claim.sourceUrl, sources))
     throw new Error("Perplexity claim has no matching search result");
   return {
-    evidence: { ...claim, provider: "perplexity", sourceVerified: false },
+    evidence: {
+      ...claim,
+      provider: "perplexity",
+      sourceVerified: false,
+      citedUrls: sources
+        .map(url)
+        .filter((value): value is string => value !== null)
+        .slice(0, 5),
+    },
     costUsd: response.usage.cost.total_cost,
   };
 }
@@ -259,7 +275,15 @@ export function parseMuseValidationResponse(
   const costUsd = estimatedMuseCost(body);
   if (costUsd === null) throw new Error("Muse cost is unavailable");
   return {
-    evidence: { ...claim, provider: "muse", sourceVerified: false },
+    evidence: {
+      ...claim,
+      provider: "muse",
+      sourceVerified: false,
+      citedUrls: citations
+        .map(url)
+        .filter((value): value is string => value !== null)
+        .slice(0, 5),
+    },
     costUsd,
   };
 }

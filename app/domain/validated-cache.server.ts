@@ -20,6 +20,7 @@ const evidenceSchema = z.object({
   provider: z.enum(["perplexity", "muse"]),
   sourceUrl: z.string().url(),
   checkedAt: z.string().datetime({ offset: true }),
+  citedUrls: z.array(z.string().url()).max(5).optional(),
   sourceQuote: z.string().max(280).optional(),
   person: z.string().max(160).nullable().optional(),
   work: z.string().max(200).nullable().optional(),
@@ -71,6 +72,8 @@ const watchSchema = z
             imageUrl: z.string().url(),
             referenceCode: z.string().min(1),
             checkedAt: z.string().datetime({ offset: true }),
+            citedUrl: z.string().url().optional(),
+            provider: z.enum(["perplexity", "muse"]).optional(),
           })
           .optional(),
         priceObservation: priceObservationSchema.optional(),
@@ -88,11 +91,17 @@ const watchSchema = z
       image &&
       (image.imageUrl !== watch.imageUrl ||
         !safeHttpUrl(image.imageUrl) ||
+        !safeHttpUrl(image.sourceUrl) ||
         !normalizeReference(watch.referenceCode) ||
         normalizeReference(image.referenceCode) !==
           normalizeReference(watch.referenceCode) ||
         !watch.details.validationEvidence.some(
-          (evidence) => evidence.sourceUrl === image.sourceUrl,
+          (evidence) =>
+            evidence.sourceUrl === image.sourceUrl ||
+            (image.provider === evidence.provider &&
+              !!image.citedUrl &&
+              !!safeHttpUrl(image.citedUrl) &&
+              evidence.citedUrls?.includes(image.citedUrl) === true),
         ))
     ) {
       context.addIssue({
@@ -213,7 +222,9 @@ export async function loadValidatedSnapshot(
       (watch) =>
         !safeHttpUrl(watch.sourceUrl) ||
         watch.details.validationEvidence.some(
-          (evidence) => !safeHttpUrl(evidence.sourceUrl),
+          (evidence) =>
+            !safeHttpUrl(evidence.sourceUrl) ||
+            evidence.citedUrls?.some((url) => !safeHttpUrl(url)),
         ) ||
         watch.details.validationFacts?.some((fact) =>
           fact.sources.some((source) => !safeHttpUrl(source.sourceUrl)),

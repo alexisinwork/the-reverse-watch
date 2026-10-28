@@ -590,6 +590,12 @@ overwrites a different existing image. Many pages do not expose this structured
 data, so this is not a guarantee that every watch gains a photo. This path is
 still offline-tested and not enabled for visitors.
 
+The validator can also inspect up to two other product pages per provider that
+were already cited in its response, without another paid search. Migration 0102
+accepts the resulting photo provenance only when the cited URL belongs to that
+provider; the server independently checks the product's brand and reference
+and the image URL. Mock and rollback tests cover this route, not live coverage.
+
 First-use flow rehearsal: a deterministic test now runs a legacy actor cache
 through the actual validator service, both mocked providers, source and product
 page inspection, publication RPC payload and a second snapshot read. It checks

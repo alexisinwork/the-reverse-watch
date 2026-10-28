@@ -180,6 +180,57 @@ export async function validateCachedWatchFromSources(
       };
       break;
     }
+    if (!imageUrl) {
+      // Reuse product pages each provider already cited; these are ordinary
+      // page fetches, not additional paid model or search requests.
+      const seen = new Set([primary.sourceUrl, secondary.sourceUrl]);
+      const candidates = [primary, secondary].flatMap((evidence) =>
+        (evidence.citedUrls ?? [])
+          .filter((url) => {
+            if (seen.has(url)) return false;
+            seen.add(url);
+            return true;
+          })
+          .slice(0, 2)
+          .map((citedUrl) => ({ provider: evidence.provider, citedUrl })),
+      );
+      const pages = await Promise.all(
+        candidates.map(async (candidate) => ({
+          ...candidate,
+          page: await inspectCachedResultSource(
+            { ...result.watch, details: {} },
+            candidate.citedUrl,
+            fetchImpl,
+            undefined,
+            undefined,
+            true,
+          ),
+        })),
+      );
+      for (const candidate of pages) {
+        if (
+          candidate.page.status !== "matched" ||
+          !candidate.page.imageCandidate ||
+          !candidate.page.finalUrl
+        )
+          continue;
+        const verifiedImage = await verifyImageUrl(
+          candidate.page.imageCandidate,
+          fetchImpl,
+        );
+        if (!verifiedImage) continue;
+        imageUrl = verifiedImage;
+        details.imageEvidence = {
+          sourceUrl: candidate.page.finalUrl,
+          citedUrl: candidate.citedUrl,
+          provider: candidate.provider,
+          imageUrl: verifiedImage,
+          referenceCode: result.watch.referenceCode,
+          checkedAt: details.validationEvidence![0]!.checkedAt,
+        };
+        break;
+      }
+    }
   }
   return {
     ...result,

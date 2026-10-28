@@ -6,6 +6,8 @@ export type WatchDetails = {
     imageUrl: string;
     referenceCode: string;
     checkedAt: string;
+    citedUrl?: string;
+    provider?: "perplexity" | "muse";
   };
   priceObservation?: {
     value: string;
@@ -31,6 +33,7 @@ export type WatchDetails = {
     provider: string;
     sourceUrl: string;
     checkedAt: string;
+    citedUrls?: string[];
     sourceQuote?: string;
     person?: string | null;
     work?: string | null;

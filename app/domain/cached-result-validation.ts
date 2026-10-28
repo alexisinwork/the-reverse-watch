@@ -18,6 +18,8 @@ export type ValidationEvidence = {
   sourceUrl: string;
   /** Short, verbatim source passage proposed by the provider. */
   sourceQuote?: string;
+  /** Provider-cited pages that can be inspected without another AI call. */
+  citedUrls?: string[];
   facts?: ValidationFact[];
   /** True only when the caller actually inspected the evidence page. */
   sourceVerified: boolean;
@@ -87,10 +89,11 @@ export function validateCachedWatch(
       details: {
         ...watch.details,
         validationEvidence: evidence.map(
-          ({ provider, sourceUrl, sourceQuote }) => ({
+          ({ provider, sourceUrl, sourceQuote, citedUrls }) => ({
             provider,
             sourceUrl,
             checkedAt,
+            ...(citedUrls?.length ? { citedUrls } : {}),
             // The source inspector checks this passage only for sightings.
             ...((watch.details.person || watch.details.work) && sourceQuote
               ? {

@@ -205,6 +205,47 @@ describe("validated cache snapshots", () => {
     expect(db.fetchImpl).not.toHaveBeenCalled();
   });
 
+  it("publishes a photo from a product page cited by the same provider", async () => {
+    const db = client(true);
+    const photoWatch: FoundWatch = {
+      ...watch,
+      imageUrl: "https://img.example/photo.jpg",
+      details: {
+        ...watch.details,
+        validationEvidence: watch.details.validationEvidence!.map((entry) =>
+          entry.provider === "perplexity"
+            ? { ...entry, citedUrls: ["https://product.example/watch"] }
+            : entry,
+        ),
+        imageEvidence: {
+          provider: "perplexity",
+          citedUrl: "https://product.example/watch",
+          sourceUrl: "https://product.example/watch",
+          imageUrl: "https://img.example/photo.jpg",
+          referenceCode: watch.referenceCode!,
+          checkedAt: "2026-10-27T00:00:00Z",
+        },
+      },
+    };
+    expect(
+      await publishValidatedSnapshot(db.value, attempt, [photoWatch], [0.01]),
+    ).toBe(true);
+    const invalid = {
+      ...photoWatch,
+      details: {
+        ...photoWatch.details,
+        imageEvidence: {
+          ...photoWatch.details.imageEvidence!,
+          provider: "muse" as const,
+        },
+      },
+    };
+    await expect(
+      publishValidatedSnapshot(db.value, attempt, [invalid], [0.01]),
+    ).rejects.toThrow();
+    expect(db.fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
   it("checks source URLs and strips a dangerous image URL when reading a snapshot", async () => {
     const db = client({
       validationStatus: "valid",

@@ -104,6 +104,60 @@ describe("cached watch source validation", () => {
     expect(result.watch.details.imageEvidence).toBeUndefined();
   });
 
+  it("finds an exact-reference product photo on a separately cited page", async () => {
+    const product = `<p>Omega 231.10.39.21.03.001</p><script type="application/ld+json">${JSON.stringify({ "@type": "Product", brand: "Omega", sku: watch.referenceCode, image: "https://img.example/watch.jpg" })}</script>`;
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      const target = String(input);
+      if (target.includes("img.example"))
+        return new Response(new Uint8Array([1]), {
+          headers: { "content-type": "image/jpeg" },
+        });
+      if (target.includes("product.example"))
+        return new Response(product, {
+          headers: { "content-type": "text/html" },
+        });
+      return new Response(primary.sourceQuote, {
+        headers: { "content-type": "text/plain" },
+      });
+    }) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      { ...primary, citedUrls: ["https://product.example/watch"] },
+      secondary,
+      { fetchImpl, checkedAt: "2026-10-27T00:00:00Z" },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.details.imageEvidence).toMatchObject({
+      provider: "perplexity",
+      citedUrl: "https://product.example/watch",
+      sourceUrl: "https://product.example/watch",
+      referenceCode: watch.referenceCode,
+      imageUrl: "https://img.example/watch.jpg",
+    });
+  });
+
+  it("rejects a separately cited product page for another reference", async () => {
+    const product = `<p>Omega 231.10.39.21.03.001</p><script type="application/ld+json">${JSON.stringify({ "@type": "Product", brand: "Omega", sku: "OTHER123", image: "https://img.example/watch.jpg" })}</script>`;
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("product.example")
+        ? new Response(product, { headers: { "content-type": "text/html" } })
+        : new Response(primary.sourceQuote, {
+            headers: { "content-type": "text/plain" },
+          }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      { ...primary, citedUrls: ["https://product.example/watch"] },
+      secondary,
+      { fetchImpl },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.imageUrl).toBeNull();
+    expect(fetchImpl).toHaveBeenCalledTimes(3);
+  });
+
   it("fills missing technical facts only when both exact-reference pages support the same values", async () => {
     const facts = [
       {
