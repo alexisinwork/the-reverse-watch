@@ -6,6 +6,7 @@ import {
   workerSecretMatches,
 } from "../domain/discovery-research-worker.server";
 import { createDiscoveryResearchWorkerStore } from "../domain/discovery-research-worker-store.server";
+import { legacyPaidResearchAllowed } from "../domain/legacy-paid-research-policy.server";
 
 export function loader() {
   return Response.json({ ok: false }, { status: 405 });
@@ -29,6 +30,11 @@ export async function action({ request }: Route.ActionArgs) {
   ) {
     return Response.json({ ok: false }, { status: 401 });
   }
+  if (!legacyPaidResearchAllowed())
+    return Response.json(
+      { ok: false, reason: "budget_control_unavailable" },
+      { status: 503, headers: { "Cache-Control": "no-store" } },
+    );
   try {
     const result = await runDiscoveryResearchBatch({
       config: parsed.config,

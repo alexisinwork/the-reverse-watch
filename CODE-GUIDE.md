@@ -240,6 +240,11 @@ other channel (npm, Shopify app, WordPress.org, Wix…):
 
 ## When something breaks
 
+The current source pauses legacy paid alternative lookups and the two legacy
+research/price worker routes in `domain/legacy-paid-research-policy.server.ts`
+until they use the shared budget ledger. Local catalogue alternatives remain
+available. A deployed environment may still run an earlier revision.
+
 | Symptom                    | Look at                                                                                                                               |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
 | Searches say "unavailable" | Vercel logs for `ai_watch_search_error`, `web_research_fallback`, `find_pages_fallback`; provider keys and credit (Perplexity, Muse). |

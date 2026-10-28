@@ -623,6 +623,13 @@ now accepts null for a fact's optional source URL and still verifies any fact
 against the cited page before use. This is a documentation and mock check, not
 evidence of a paid live response or a provider-side spending limit.
 
+Budget containment: legacy alternatives discovery, pre-owned price lookup,
+daily catalogue price refresh and the discovery worker are paused in the code
+until they use the shared reservation ledger. Catalogue-only alternatives
+continue to work. These guards do not govern separate local scripts, provider
+bills outside the application, or already-running requests, and have not been
+deployed merely by passing the local tests.
+
 First-use flow rehearsal: a deterministic test now runs a legacy actor cache
 through the actual validator service, both mocked providers, source and product
 page inspection, publication RPC payload and a second snapshot read. It checks

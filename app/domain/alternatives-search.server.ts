@@ -123,7 +123,7 @@ function buildAlternativesPage(
       target: null,
       result: {
         status: "no_match",
-        summary: `We couldn't identify “${form.name}”, in our catalogue or on the web. Check the spelling, or add its reference.`,
+        summary: `We couldn't identify “${form.name}” in our catalogue. Check the spelling, or add its reference.`,
       } as AiSearchView,
     };
   }

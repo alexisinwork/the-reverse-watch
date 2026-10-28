@@ -4,6 +4,7 @@
  * into budget, and rank alternatives with the rules in alternatives.ts.
  */
 import { defaultDeps, searchReady } from "./ai-providers.server";
+import { legacyPaidResearchAllowed } from "./legacy-paid-research-policy.server";
 import type { ProgressEvent } from "./ai-watch-types";
 import {
   findAlternativesLive,
@@ -266,6 +267,7 @@ export async function findAlternatives({
 
   let targetId = known?.id ?? null;
   if (
+    legacyPaidResearchAllowed() &&
     (!targetId || known?.referenceConfirmed === false) &&
     searchReady(deps.config)
   ) {
@@ -280,13 +282,14 @@ export async function findAlternatives({
   }
   if (!targetId) return { status: "not_found" };
 
-  report?.({ text: "Comparing it with our catalogue and pre-owned prices…" });
+  report?.({ text: "Comparing it with our catalogue and available prices…" });
   let catalogue = await loadCatalogueCached(client);
   const first = catalogue.find((watch) => watch.id === targetId) ?? known;
   if (!first) return { status: "not_found" };
-  await fillPreownedPrices(first, catalogue, budget, allowQuartz).catch(
-    () => undefined,
-  );
+  if (legacyPaidResearchAllowed())
+    await fillPreownedPrices(first, catalogue, budget, allowQuartz).catch(
+      () => undefined,
+    );
   catalogue = await loadCatalogueCached(client);
   let target = catalogue.find((watch) => watch.id === targetId) ?? first;
   let alternatives = rankAlternatives(
@@ -300,6 +303,7 @@ export async function findAlternatives({
   let searchedLive = false;
   const timeLeft = ALTERNATIVES_TIME_BUDGET_MS - (Date.now() - started);
   if (
+    legacyPaidResearchAllowed() &&
     alternatives.length < ALTERNATIVES_ENOUGH &&
     searchReady(deps.config) &&
     timeLeft >= LIVE_ALTERNATIVES_NEEDS_MS

@@ -5,6 +5,7 @@ import { defaultDeps, searchReady } from "../domain/ai-providers.server";
 import { recheckPrice } from "../domain/catalogue-build.server";
 import { loadFxTable } from "../domain/fx.server";
 import { PRICE_MAX_AGE_DAYS } from "../domain/price-check.server";
+import { legacyPaidResearchAllowed } from "../domain/legacy-paid-research-policy.server";
 import {
   catalogueClient,
   cataloguePricesDue,
@@ -35,6 +36,11 @@ export async function loader({ request }: Route.LoaderArgs) {
   if (!secretMatches(request.headers.get("authorization"), secret)) {
     return Response.json({ ok: false }, { status: 401 });
   }
+  if (!legacyPaidResearchAllowed())
+    return Response.json(
+      { ok: false, reason: "budget_control_unavailable" },
+      { status: 503 },
+    );
   const client = catalogueClient();
   const deps = defaultDeps();
   if (!client || !searchReady(deps.config))
