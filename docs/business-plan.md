@@ -597,6 +597,14 @@ price, size, image, reservation and provider reuse. Provider charges are rounded
 up to database precision per card before settlement. This is not a live provider
 or deployment test and does not activate the visitor path.
 
+Provider error accounting: a provider response that contains usage but fails
+schema, citation or completion checks now carries its known cost to settlement;
+known overrun triggers the validation halt even if the other provider fails.
+Unknown costs retain the full reservation. Meta explicitly documents that its
+spending alert is not a hard spending cap, so provider-side cost ceilings
+remain unproven: https://dev.meta.ai/help/billing/spend-limit-alert
+(retrieved 2026-10-28). Other paid routes still need the shared ledger.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

@@ -4,6 +4,9 @@ import { buildValidationRequests } from "./validation-provider-request.server";
 import {
   parseMuseValidationResponse,
   parsePerplexityAgentValidationResponse,
+  estimatedMuseCost,
+  reportedPerplexityCost,
+  ProviderCostError,
 } from "./validation-provider-response.server";
 
 /** Single-attempt requests only. The caller must first obtain a durable budget
@@ -25,11 +28,21 @@ export function validationProviderCalls(deps: Deps) {
         body: JSON.stringify(request.body),
         signal: AbortSignal.timeout(35_000),
       });
+      const body: unknown = await response.json().catch(() => null);
+      const cost = reportedPerplexityCost(body);
       if (!response.ok)
-        throw new Error(`Perplexity validation returned ${response.status}`);
-      return parsePerplexityAgentValidationResponse(
-        (await response.json()) as unknown,
-      );
+        throw new ProviderCostError(
+          `Perplexity validation returned ${response.status}`,
+          cost,
+        );
+      try {
+        return parsePerplexityAgentValidationResponse(body);
+      } catch {
+        throw new ProviderCostError(
+          "Perplexity validation response was unusable",
+          cost,
+        );
+      }
     },
     secondary: async (brief: ValidationBrief) => {
       const request = buildValidationRequests(brief, museModel).muse;
@@ -45,12 +58,21 @@ export function validationProviderCalls(deps: Deps) {
           signal: AbortSignal.timeout(35_000),
         },
       );
+      const body: unknown = await response.json().catch(() => null);
+      const cost = estimatedMuseCost(body);
       if (!response.ok)
-        throw new Error(`Muse validation returned ${response.status}`);
-      return parseMuseValidationResponse(
-        (await response.json()) as unknown,
-        museModel,
-      );
+        throw new ProviderCostError(
+          `Muse validation returned ${response.status}`,
+          cost,
+        );
+      try {
+        return parseMuseValidationResponse(body, museModel);
+      } catch {
+        throw new ProviderCostError(
+          "Muse validation response was unusable",
+          cost,
+        );
+      }
     },
   };
 }

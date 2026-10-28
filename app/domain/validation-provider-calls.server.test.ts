@@ -1,6 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 import { defaultDeps } from "./ai-providers.server";
 import { validationProviderCalls } from "./validation-provider-calls.server";
+import { ProviderCostError } from "./validation-provider-response.server";
 
 const brief = {
   brand: "Omega",
@@ -96,5 +97,44 @@ describe("metered validation provider requests", () => {
     const calls = validationProviderCalls(defaultDeps({ config, fetchImpl }));
     await expect(calls.primary(brief)).rejects.toThrow("503");
     expect(fetchImpl).toHaveBeenCalledTimes(1);
+  });
+
+  it("retains reported cost when a successful provider response has invalid evidence", async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("perplexity")
+        ? Response.json({
+            status: "incomplete",
+            usage: { cost: { currency: "USD", total_cost: 0.03 } },
+          })
+        : Response.json({
+            status: "incomplete",
+            model: "muse-spark-1.3-contributor",
+            output: [
+              {
+                type: "web_search_call",
+                status: "completed",
+                action: { type: "search", queries: ["one", "two"] },
+              },
+            ],
+            usage: { input_tokens: 1000, output_tokens: 500 },
+          }),
+    );
+    const calls = validationProviderCalls(defaultDeps({ config, fetchImpl }));
+    const result = await Promise.allSettled([
+      calls.primary(brief),
+      calls.secondary(brief),
+    ]);
+    expect(result[0]).toMatchObject({
+      status: "rejected",
+      reason: { costUsd: 0.03 },
+    });
+    expect(result[1].status).toBe("rejected");
+    if (
+      result[1].status !== "rejected" ||
+      !(result[1].reason instanceof ProviderCostError)
+    )
+      throw new Error("expected cost error");
+    expect(result[1].reason.costUsd).toBeCloseTo(0.0052);
+    expect(fetchImpl).toHaveBeenCalledTimes(2);
   });
 });

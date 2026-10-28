@@ -1,6 +1,9 @@
 import type { FoundWatch } from "./ai-watch-types";
 import type { ValidationDecision } from "./cached-result-validation";
-import type { ProviderAssertion } from "./validation-provider-response.server";
+import {
+  ProviderCostError,
+  type ProviderAssertion,
+} from "./validation-provider-response.server";
 import { uniqueWatchResults } from "./watch-result-dedup";
 import { normalizeReference } from "./ai-watch-guardrails";
 
@@ -93,18 +96,22 @@ export async function validateCachedSearch(
         services.primary(brief),
         services.secondary(brief),
       ]);
-      const known = [primary, secondary].flatMap((response) =>
-        response.status === "fulfilled" &&
-        Number.isFinite(response.value.costUsd) &&
-        response.value.costUsd >= 0
-          ? [response.value.costUsd]
-          : [],
-      );
+      const known = [primary, secondary].flatMap((response) => {
+        const amount =
+          response.status === "fulfilled"
+            ? response.value.costUsd
+            : response.reason instanceof ProviderCostError
+              ? response.reason.costUsd
+              : null;
+        return amount !== null && Number.isFinite(amount) && amount >= 0
+          ? [amount]
+          : [];
+      });
       const knownCost = known.reduce((total, value) => total + value, 0);
       if (knownCost > 0.025)
         return { decision: null, cost: knownCost, overrun: true };
       if (primary.status !== "fulfilled" || secondary.status !== "fulfilled")
-        return { decision: null, cost: null };
+        return { decision: null, cost: known.length === 2 ? knownCost : null };
       const cost = primary.value.costUsd + secondary.value.costUsd;
       if (!Number.isFinite(cost) || cost < 0)
         return { decision: null, cost: null };

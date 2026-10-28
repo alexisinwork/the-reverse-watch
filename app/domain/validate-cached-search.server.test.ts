@@ -1,6 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
 import type { FoundWatch } from "./ai-watch-types";
-import type { ProviderAssertion } from "./validation-provider-response.server";
+import {
+  ProviderCostError,
+  type ProviderAssertion,
+} from "./validation-provider-response.server";
 import {
   validateCachedSearch,
   type ValidationServices,
@@ -239,5 +242,39 @@ describe("validating a cached result under a reservation", () => {
     });
     expect(deps.reportOverrun).toHaveBeenCalledWith("attempt", [0.03]);
     expect(deps.settle).not.toHaveBeenCalled();
+  });
+
+  it("records a charged but unusable provider response and halts on an overrun", async () => {
+    const deps = services();
+    deps.primary = vi.fn(async () => {
+      throw new ProviderCostError("unusable", 0.03);
+    });
+    deps.secondary = vi.fn(async () => {
+      throw new Error("timeout");
+    });
+    expect(await validateCachedSearch("a".repeat(64), [watch], deps)).toEqual({
+      status: "unavailable",
+      reason: "provider cost exceeded reservation",
+    });
+    expect(deps.reportOverrun).toHaveBeenCalledWith("attempt", [0.03]);
+    expect(deps.settle).not.toHaveBeenCalled();
+  });
+
+  it("settles known charges even when a provider claim is unusable", async () => {
+    const deps = services();
+    deps.primary = vi.fn(async () => {
+      throw new ProviderCostError("unusable", 0.004);
+    });
+    deps.secondary = vi.fn(async () => ({
+      ...assertion("muse"),
+      costUsd: 0.005,
+    }));
+    expect(await validateCachedSearch("a".repeat(64), [watch], deps)).toEqual({
+      status: "unavailable",
+      reason: "no confirmed candidates",
+    });
+    expect(deps.settle).toHaveBeenCalledWith("attempt", [
+      expect.closeTo(0.009),
+    ]);
   });
 });

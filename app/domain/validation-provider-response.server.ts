@@ -43,6 +43,73 @@ export type ProviderAssertion = {
   costUsd: number;
 };
 
+/** A rejected assertion can still have a bill. Keep the reported/estimated
+ * cost separate from the unusable claim so the ledger does not lose it. */
+export class ProviderCostError extends Error {
+  constructor(
+    message: string,
+    readonly costUsd: number | null,
+  ) {
+    super(message);
+    this.name = "ProviderCostError";
+  }
+}
+
+export function reportedPerplexityCost(body: unknown): number | null {
+  const parsed = z
+    .object({
+      usage: z.object({
+        cost: z.object({
+          currency: z.literal("USD"),
+          total_cost: z.number().finite().nonnegative(),
+        }),
+      }),
+    })
+    .safeParse(body);
+  return parsed.success ? parsed.data.usage.cost.total_cost : null;
+}
+
+/** Meta bills each search query, including queries in an unusable response. */
+export function estimatedMuseCost(body: unknown): number | null {
+  const parsed = z
+    .object({
+      model: z.string(),
+      output: z.array(z.object({ type: z.string() }).passthrough()),
+      usage: z.object({
+        input_tokens: z.number().int().nonnegative(),
+        output_tokens: z.number().int().nonnegative(),
+      }),
+    })
+    .safeParse(body);
+  if (
+    !parsed.success ||
+    !/^muse-spark-1\.[23](?:-contributor)?$/.test(parsed.data.model)
+  )
+    return null;
+  let count = 0;
+  for (const search of parsed.data.output.filter(
+    (item) => item.type === "web_search_call",
+  )) {
+    const action = z
+      .object({
+        type: z.literal("search"),
+        queries: z.array(z.string().min(1)).min(1).optional(),
+        query: z.string().min(1).optional(),
+      })
+      .safeParse(search.action);
+    if (!action.success) return null;
+    const n = action.data.queries?.length ?? (action.data.query ? 1 : 0);
+    if (!n) return null;
+    count += n;
+  }
+  const contributor = parsed.data.model.endsWith("-contributor");
+  return (
+    count * 0.0025 +
+    (parsed.data.usage.input_tokens * (contributor ? 0.1 : 1.25)) / 1_000_000 +
+    (parsed.data.usage.output_tokens * (contributor ? 0.2 : 4.25)) / 1_000_000
+  );
+}
+
 /** A structured model claim is usable only if its own provider cites its URL.
  * Source pages must still be checked separately before acceptance. */
 export function parsePerplexityValidationResponse(
@@ -189,11 +256,8 @@ export function parseMuseValidationResponse(
   const claim = claimSchema.parse(parseModelJson(content));
   if (!matchingCitation(claim.sourceUrl, citations))
     throw new Error("Muse claim has no matching citation");
-  const contributor = model.endsWith("-contributor");
-  const costUsd =
-    queryCount * 0.0025 +
-    (response.usage.input_tokens * (contributor ? 0.1 : 1.25)) / 1_000_000 +
-    (response.usage.output_tokens * (contributor ? 0.2 : 4.25)) / 1_000_000;
+  const costUsd = estimatedMuseCost(body);
+  if (costUsd === null) throw new Error("Muse cost is unavailable");
   return {
     evidence: { ...claim, provider: "muse", sourceVerified: false },
     costUsd,
