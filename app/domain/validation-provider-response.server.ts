@@ -148,9 +148,7 @@ export function parsePerplexityValidationResponse(
 
 /** The current Agent API returns search results separately from message text.
  * A result URL is only a candidate source: it still needs page inspection. */
-export function parsePerplexityAgentValidationResponse(
-  body: unknown,
-): ProviderAssertion {
+function parsePerplexityAgentEnvelope(body: unknown) {
   const response = z
     .object({
       status: z.literal("completed"),
@@ -187,7 +185,18 @@ export function parsePerplexityAgentValidationResponse(
       .parse(item.results)
       .map((result) => result.url);
   });
-  const claim = claimSchema.parse(parseModelJson(messages.join("")));
+  return {
+    content: parseModelJson(messages.join("")),
+    sources,
+    costUsd: response.usage.cost.total_cost,
+  };
+}
+
+export function parsePerplexityAgentValidationResponse(
+  body: unknown,
+): ProviderAssertion {
+  const { content, sources, costUsd } = parsePerplexityAgentEnvelope(body);
+  const claim = claimSchema.parse(content);
   if (!matchingCitation(claim.sourceUrl, sources))
     throw new Error("Perplexity claim has no matching search result");
   return {
@@ -200,7 +209,33 @@ export function parsePerplexityAgentValidationResponse(
         .filter((value): value is string => value !== null)
         .slice(0, 5),
     },
-    costUsd: response.usage.cost.total_cost,
+    costUsd,
+  };
+}
+
+/** Keep only individually cited candidates from the single discovery call. */
+export function parsePerplexityFilmDiscoveryResponse(body: unknown): {
+  evidence: ValidationEvidence[];
+  costUsd: number;
+} {
+  const { content, sources, costUsd } = parsePerplexityAgentEnvelope(body);
+  const { sightings } = z
+    .object({ sightings: z.array(claimSchema).max(8) })
+    .parse(content);
+  const citedUrls = sources
+    .map(url)
+    .filter((value): value is string => value !== null)
+    .slice(0, 5);
+  return {
+    costUsd,
+    evidence: sightings
+      .filter((claim) => matchingCitation(claim.sourceUrl, sources))
+      .map((claim) => ({
+        ...claim,
+        provider: "perplexity" as const,
+        sourceVerified: false,
+        citedUrls,
+      })),
   };
 }
 

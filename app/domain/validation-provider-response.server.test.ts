@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   parseMuseValidationResponse,
   parsePerplexityAgentValidationResponse,
+  parsePerplexityFilmDiscoveryResponse,
   parsePerplexityValidationResponse,
 } from "./validation-provider-response.server";
 
@@ -43,6 +44,40 @@ const muse = {
 };
 
 describe("provider validation response evidence", () => {
+  it("keeps only individually cited discoveries from one billed search", () => {
+    const response = {
+      status: "completed",
+      model: "openai/gpt-6-luna",
+      output: [
+        { type: "search_results", results: [{ url: claim.sourceUrl }] },
+        {
+          type: "message",
+          content: [
+            {
+              type: "output_text",
+              text: JSON.stringify({
+                sightings: [
+                  claim,
+                  { ...claim, sourceUrl: "https://uncited.example/watch" },
+                ],
+              }),
+            },
+          ],
+        },
+      ],
+      usage: {
+        cost: { currency: "USD", total_cost: 0.006 },
+        tool_calls_details: { search_web: { invocation: 1 } },
+      },
+    };
+    const result = parsePerplexityFilmDiscoveryResponse(response);
+    expect(result.costUsd).toBe(0.006);
+    expect(result.evidence).toHaveLength(1);
+    expect(result.evidence[0]).toMatchObject({
+      provider: "perplexity",
+      sourceUrl: claim.sourceUrl,
+    });
+  });
   it("reads search results and actual usage from the Perplexity Agent API", () => {
     const response = {
       status: "completed",

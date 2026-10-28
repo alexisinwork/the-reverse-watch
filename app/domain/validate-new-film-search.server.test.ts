@@ -1,7 +1,10 @@
 import { describe, expect, it, vi } from "vitest";
 import type { FoundWatch } from "./ai-watch-types";
 import type { ValidationEvidence } from "./cached-result-validation";
-import type { ValidationServices } from "./validate-cached-search.server";
+import type {
+  ValidationBrief,
+  ValidationServices,
+} from "./validate-cached-search.server";
 import { ProviderCostError } from "./validation-provider-response.server";
 import {
   validateNewFilmSearch,
@@ -35,14 +38,14 @@ function fixture() {
     }),
     discoverFilm: vi.fn(async () => {
       order.push("perplexity");
-      return { evidence: primary, costUsd: 0.004 };
+      return { evidence: [primary], costUsd: 0.004 };
     }),
     hydrate: vi.fn(async (watches: FoundWatch[]) => {
       order.push("catalogue");
       return watches;
     }),
     primary: vi.fn(),
-    secondary: vi.fn(async () => {
+    secondary: vi.fn(async (_brief: ValidationBrief) => {
       order.push("muse");
       return { evidence: secondary, costUsd: 0.003 };
     }),
@@ -69,12 +72,57 @@ function fixture() {
   } satisfies ValidationServices & {
     discoverFilm: (
       subject: FilmDiscoverySubject,
-    ) => Promise<{ evidence: ValidationEvidence; costUsd: number }>;
+    ) => Promise<{ evidence: ValidationEvidence[]; costUsd: number }>;
   };
   return { services, order };
 }
 
 describe("new film discovery", () => {
+  it("rejects contact data before reserving or calling a provider", async () => {
+    const { services } = fixture();
+    expect(
+      await validateNewFilmSearch(
+        "a".repeat(64),
+        { ...subject, query: "person@example.com" },
+        services,
+      ),
+    ).toMatchObject({ status: "unavailable", reason: "invalid subject" });
+    expect(services.reserve).not.toHaveBeenCalled();
+    expect(services.discoverFilm).not.toHaveBeenCalled();
+  });
+  it("checks distinct primary candidates and charges the one discovery call once", async () => {
+    const { services } = fixture();
+    const second = { ...primary, brand: "Rolex", referenceCode: "ABC1234" };
+    services.discoverFilm.mockResolvedValueOnce({
+      evidence: [primary, second, primary],
+      costUsd: 0.004,
+    });
+    services.secondary.mockImplementation(async (brief) => ({
+      evidence: {
+        ...secondary,
+        brand: brief.brand,
+        referenceCode: brief.referenceCode,
+      },
+      costUsd: 0.003,
+    }));
+    const result = await validateNewFilmSearch(
+      "a".repeat(64),
+      subject,
+      services,
+    );
+    expect(result).toMatchObject({
+      status: "verified",
+      watches: [{ referenceCode: "2201.50.00" }, { referenceCode: "ABC1234" }],
+    });
+    expect(services.reserve).toHaveBeenCalledWith("a".repeat(64), 8);
+    expect(services.discoverFilm).toHaveBeenCalledTimes(1);
+    expect(services.secondary).toHaveBeenCalledTimes(2);
+    expect(services.publish).toHaveBeenCalledWith(
+      "attempt",
+      expect.any(Array),
+      [0.007, 0.003, 0, 0, 0, 0, 0, 0],
+    );
+  });
   it("reserves before discovery and verifies only the discovered reference", async () => {
     const { services, order } = fixture();
     const result = await validateNewFilmSearch(
@@ -105,21 +153,24 @@ describe("new film discovery", () => {
     expect(services.publish).toHaveBeenCalledWith(
       "attempt",
       expect.any(Array),
-      [0.007],
+      [0.007, 0, 0, 0, 0, 0, 0, 0],
     );
     expect(services.primary).not.toHaveBeenCalled();
   });
   it("settles the primary cost when its candidate does not match the subject", async () => {
     const { services } = fixture();
     services.discoverFilm.mockResolvedValueOnce({
-      evidence: { ...primary, person: "Someone else" },
+      evidence: [{ ...primary, person: "Someone else" }],
       costUsd: 0.004,
     });
     expect(
       await validateNewFilmSearch("a".repeat(64), subject, services),
     ).toMatchObject({ status: "unavailable" });
     expect(services.secondary).not.toHaveBeenCalled();
-    expect(services.settle).toHaveBeenCalledWith("attempt", [0.004]);
+    expect(services.settle).toHaveBeenCalledWith(
+      "attempt",
+      [0.004, 0, 0, 0, 0, 0, 0, 0],
+    );
   });
   it("does not publish a different reference proposed by Muse", async () => {
     const { services } = fixture();
@@ -131,7 +182,10 @@ describe("new film discovery", () => {
       await validateNewFilmSearch("a".repeat(64), subject, services),
     ).toMatchObject({ status: "unavailable" });
     expect(services.publish).not.toHaveBeenCalled();
-    expect(services.settle).toHaveBeenCalledWith("attempt", [0.007]);
+    expect(services.settle).toHaveBeenCalledWith(
+      "attempt",
+      [0.007, 0, 0, 0, 0, 0, 0, 0],
+    );
   });
   it("retains the full reservation when a provider's charge is unknown", async () => {
     const { services } = fixture();
@@ -139,17 +193,29 @@ describe("new film discovery", () => {
       new ProviderCostError("unknown", null),
     );
     await validateNewFilmSearch("a".repeat(64), subject, services);
-    expect(services.settle).toHaveBeenCalledWith("attempt", [null]);
+    expect(services.settle).toHaveBeenCalledWith("attempt", [
+      null,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+    ]);
     expect(services.publish).not.toHaveBeenCalled();
   });
   it("halts on a known overrun instead of understating the charge", async () => {
     const { services } = fixture();
     services.discoverFilm.mockResolvedValueOnce({
-      evidence: primary,
+      evidence: [primary],
       costUsd: 0.026,
     });
     await validateNewFilmSearch("a".repeat(64), subject, services);
-    expect(services.reportOverrun).toHaveBeenCalledWith("attempt", [0.026]);
+    expect(services.reportOverrun).toHaveBeenCalledWith(
+      "attempt",
+      [0.026, 0, 0, 0, 0, 0, 0, 0],
+    );
     expect(services.secondary).not.toHaveBeenCalled();
     expect(services.settle).not.toHaveBeenCalled();
   });

@@ -7,6 +7,7 @@ import {
 import {
   parseMuseValidationResponse,
   parsePerplexityAgentValidationResponse,
+  parsePerplexityFilmDiscoveryResponse,
   estimatedMuseCost,
   reportedPerplexityCost,
   ProviderCostError,
@@ -19,8 +20,9 @@ export function validationProviderCalls(deps: Deps) {
   if (!perplexity || !museSpark)
     throw new Error("Both validation providers are required");
   const museModel = museSpark.fastModel;
-  const callPerplexity = async (
-    request: ReturnType<typeof buildFilmDiscoveryRequest>,
+  const callPerplexity = async <T>(
+    request: { endpoint: string; body: unknown },
+    parse: (body: unknown) => T,
   ) => {
     const response = await deps.fetchImpl(request.endpoint, {
       method: "POST",
@@ -39,7 +41,7 @@ export function validationProviderCalls(deps: Deps) {
         cost,
       );
     try {
-      return parsePerplexityAgentValidationResponse(body);
+      return parse(body);
     } catch {
       throw new ProviderCostError(
         "Perplexity validation response was unusable",
@@ -49,10 +51,13 @@ export function validationProviderCalls(deps: Deps) {
   };
   return {
     discoverFilm: (subject: { query: string; kind: string }) =>
-      callPerplexity(buildFilmDiscoveryRequest(subject, museModel)),
+      callPerplexity(
+        buildFilmDiscoveryRequest(subject, museModel),
+        parsePerplexityFilmDiscoveryResponse,
+      ),
     primary: async (brief: ValidationBrief) => {
       const request = buildValidationRequests(brief, museModel).perplexity;
-      return callPerplexity(request);
+      return callPerplexity(request, parsePerplexityAgentValidationResponse);
     },
     secondary: async (brief: ValidationBrief) => {
       const request = buildValidationRequests(brief, museModel).muse;

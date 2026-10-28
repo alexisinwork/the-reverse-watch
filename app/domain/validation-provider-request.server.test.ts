@@ -21,7 +21,7 @@ describe("bounded validation requests", () => {
     expect(result.body).toMatchObject({
       max_steps: 1,
       max_tool_calls: 1,
-      max_output_tokens: 600,
+      max_output_tokens: 2400,
       store: false,
     });
     expect(JSON.parse(result.body.input)).toEqual({

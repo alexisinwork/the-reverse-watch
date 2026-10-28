@@ -1,5 +1,6 @@
-import type { FoundWatch } from "./ai-watch-types";
+﻿import type { FoundWatch } from "./ai-watch-types";
 import { normalizeReference } from "./ai-watch-guardrails";
+import { uniqueWatchResults } from "./watch-result-dedup";
 import {
   ProviderCostError,
   type ProviderAssertion,
@@ -9,140 +10,191 @@ import type {
   ValidationRun,
   ValidationServices,
 } from "./validate-cached-search.server";
+import type { ValidationEvidence } from "./cached-result-validation";
+import { filmDiscoverySubjectSchema } from "./validation-provider-request.server";
 
 export type FilmDiscoverySubject = {
   query: string;
   kind: "movie" | "series" | "actor" | "character" | "celebrity";
 };
+export type FilmDiscovery = { evidence: ValidationEvidence[]; costUsd: number };
+const count = 8;
+const limit = 0.025;
+const fold = (value: string | null) =>
+  (value ?? "")
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
 
-/** Reserve the complete card budget before discovery. The candidate comes from
- * Perplexity; Muse checks that same candidate before any publication. */
+/** One primary discovery call and at most one independent Muse call per card.
+ * The full discovery charge is conservatively assigned to the first slot. */
 export async function validateNewFilmSearch(
   cacheKey: string,
   subject: FilmDiscoverySubject,
   services: ValidationServices & {
-    discoverFilm: (subject: FilmDiscoverySubject) => Promise<ProviderAssertion>;
+    discoverFilm: (subject: FilmDiscoverySubject) => Promise<FilmDiscovery>;
   },
 ): Promise<ValidationRun> {
-  const reservation = await services.reserve(cacheKey, 1);
+  if (!filmDiscoverySubjectSchema.safeParse(subject).success)
+    return { status: "unavailable", reason: "invalid subject" };
+  const reservation = await services.reserve(cacheKey, count);
   if (reservation.state !== "reserved")
     return { status: "unavailable", reason: reservation.state };
   const attempt = reservation.attemptId;
-  const finishFailure = async (
-    cost: number | null,
-    reason: string,
-  ): Promise<ValidationRun> => {
-    if (cost !== null && cost > 0.025) {
-      await services.reportOverrun(attempt, [cost]).catch(() => false);
+  const costs: (number | null)[] = Array.from({ length: count }, () => 0);
+  const finishFailure = async (reason: string): Promise<ValidationRun> => {
+    if (costs.some((cost) => cost !== null && cost > limit)) {
+      await services.reportOverrun(attempt, costs).catch(() => false);
       return {
         status: "unavailable",
         reason: "provider cost exceeded reservation",
       };
     }
-    const settled = await services.settle(attempt, [cost]).catch(() => false);
+    const settled = await services.settle(attempt, costs).catch(() => false);
     return {
       status: "unavailable",
       reason: settled ? reason : "settlement failed",
     };
   };
-  let primary: ProviderAssertion;
+  let discovery: FilmDiscovery;
   try {
-    primary = await services.discoverFilm(subject);
+    discovery = await services.discoverFilm(subject);
   } catch (error) {
-    return finishFailure(
-      error instanceof ProviderCostError ? error.costUsd : null,
-      "discovery failed",
-    );
+    costs[0] =
+      error instanceof ProviderCostError &&
+      error.costUsd !== null &&
+      Number.isFinite(error.costUsd) &&
+      error.costUsd >= 0
+        ? error.costUsd
+        : null;
+    return finishFailure("discovery failed");
   }
-  const initialCost = primary.costUsd;
-  if (!Number.isFinite(initialCost) || initialCost < 0)
-    return finishFailure(null, "unknown provider cost");
-  if (initialCost > 0.025)
-    return finishFailure(initialCost, "provider cost exceeded reservation");
-  const evidence = primary.evidence;
-  const reference = normalizeReference(evidence.referenceCode);
+  if (!Number.isFinite(discovery.costUsd) || discovery.costUsd < 0) {
+    costs[0] = null;
+    return finishFailure("unknown provider cost");
+  }
+  costs[0] = discovery.costUsd;
+  if (discovery.costUsd >= limit)
+    return finishFailure("discovery exhausted card budget");
   const isWork = subject.kind === "movie" || subject.kind === "series";
-  const fold = (value: string | null) =>
-    (value ?? "")
-      .normalize("NFKD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
-      .replace(/[^a-z0-9]/g, "");
-  if (
-    !evidence.supported ||
-    !reference ||
-    reference.length < 3 ||
-    ["unknown", "none", "null", "unavailable", "notavailable"].includes(
-      reference,
-    ) ||
-    fold(isWork ? evidence.work : evidence.person) !== fold(subject.query)
-  )
-    return finishFailure(initialCost, "no confirmed candidates");
-  const draft: FoundWatch = {
-    brand: evidence.brand,
-    model: evidence.referenceCode!,
-    referenceCode: evidence.referenceCode,
-    sourceUrl: evidence.sourceUrl,
-    imageUrl: null,
-    priceNote: null,
-    rationale: "",
-    details: {
-      person: isWork ? null : subject.query,
-      work: isWork ? subject.query : null,
-    },
-  };
-  let candidate: FoundWatch;
+  const seen = new Set<string>();
+  const candidates = discovery.evidence.slice(0, count).flatMap((evidence) => {
+    const reference = normalizeReference(evidence.referenceCode);
+    const key = `${fold(evidence.brand)}|${reference}`;
+    if (
+      evidence.provider !== "perplexity" ||
+      !evidence.supported ||
+      !reference ||
+      reference.length < 3 ||
+      ["unknown", "none", "null", "unavailable", "notavailable"].includes(
+        reference,
+      ) ||
+      !fold(evidence.brand) ||
+      fold(isWork ? evidence.work : evidence.person) !== fold(subject.query) ||
+      seen.has(key)
+    )
+      return [];
+    seen.add(key);
+    const watch: FoundWatch = {
+      brand: evidence.brand,
+      model: evidence.referenceCode!,
+      referenceCode: evidence.referenceCode,
+      sourceUrl: evidence.sourceUrl,
+      imageUrl: null,
+      priceNote: null,
+      rationale: "",
+      details: {
+        person: isWork ? null : subject.query,
+        work: isWork ? subject.query : null,
+      },
+    };
+    return [{ watch, evidence }];
+  });
+  if (!candidates.length) return finishFailure("no confirmed candidates");
+  let hydrated: FoundWatch[];
   try {
-    candidate = (await services.hydrate([draft]))[0] ?? draft;
+    hydrated = await services.hydrate(candidates.map(({ watch }) => watch));
   } catch {
-    return finishFailure(initialCost, "catalogue lookup failed");
+    return finishFailure("catalogue lookup failed");
   }
-  const brief: ValidationBrief = {
-    brand: candidate.brand,
-    model: candidate.model,
-    referenceCode: candidate.referenceCode,
-    person: candidate.details.person ?? null,
-    work: candidate.details.work ?? null,
-    missingFields: [
-      ...(candidate.details.caseDiameterMm == null
-        ? ["caseDiameterMm" as const]
-        : []),
-      ...(candidate.details.waterResistanceM == null
-        ? ["waterResistanceM" as const]
-        : []),
-      ...(candidate.details.movement == null ? ["movementType" as const] : []),
-      ...(candidate.details.price == null ? ["price" as const] : []),
-    ],
-  };
-  let secondary: ProviderAssertion;
-  try {
-    secondary = await services.secondary(brief);
-  } catch (error) {
-    const cost = error instanceof ProviderCostError ? error.costUsd : null;
-    return finishFailure(
-      cost === null ? null : initialCost + cost,
-      "verification failed",
-    );
-  }
-  const cost = initialCost + secondary.costUsd;
-  if (!Number.isFinite(cost) || secondary.costUsd < 0)
-    return finishFailure(null, "unknown provider cost");
-  if (cost > 0.025)
-    return finishFailure(cost, "provider cost exceeded reservation");
-  if (normalizeReference(secondary.evidence.referenceCode) !== reference)
-    return finishFailure(cost, "no confirmed candidates");
-  const decision = await services
-    .inspect(candidate, primary, secondary)
-    .catch(() => null);
-  if (!decision || decision.status !== "verified")
-    return finishFailure(cost, "no confirmed candidates");
-  const watches = await (services.hydrateVerified ?? services.hydrate)([
-    decision.watch,
-  ]).catch(() => [decision.watch]);
-  if (watches.length !== 1)
-    return finishFailure(cost, "catalogue lookup failed");
-  const published = await services.publish(attempt, watches, [cost]);
+  if (hydrated.length !== candidates.length)
+    return finishFailure("catalogue lookup failed");
+  const results = await Promise.all(
+    candidates.map(async ({ watch, evidence }, index) => {
+      const candidate = hydrated[index]!;
+      if (
+        fold(candidate.brand) !== fold(watch.brand) ||
+        normalizeReference(candidate.referenceCode) !==
+          normalizeReference(watch.referenceCode)
+      )
+        return null;
+      const brief: ValidationBrief = {
+        brand: candidate.brand,
+        model: candidate.model,
+        referenceCode: candidate.referenceCode,
+        person: candidate.details.person ?? null,
+        work: candidate.details.work ?? null,
+        missingFields: [
+          ...(candidate.details.caseDiameterMm == null
+            ? ["caseDiameterMm" as const]
+            : []),
+          ...(candidate.details.waterResistanceM == null
+            ? ["waterResistanceM" as const]
+            : []),
+          ...(candidate.details.movement == null
+            ? ["movementType" as const]
+            : []),
+          ...(candidate.details.price == null ? ["price" as const] : []),
+        ],
+      };
+      let secondary: ProviderAssertion;
+      try {
+        secondary = await services.secondary(brief);
+      } catch (error) {
+        const cost = error instanceof ProviderCostError ? error.costUsd : null;
+        costs[index] =
+          cost !== null && Number.isFinite(cost) && cost >= 0
+            ? costs[index]! + cost
+            : null;
+        return null;
+      }
+      if (!Number.isFinite(secondary.costUsd) || secondary.costUsd < 0) {
+        costs[index] = null;
+        return null;
+      }
+      costs[index] = costs[index]! + secondary.costUsd;
+      if (
+        costs[index] > limit ||
+        normalizeReference(secondary.evidence.referenceCode) !==
+          normalizeReference(candidate.referenceCode)
+      )
+        return null;
+      const decision = await services
+        .inspect(candidate, { evidence, costUsd: discovery.costUsd }, secondary)
+        .catch(() => null);
+      return decision?.status === "verified" ? decision.watch : null;
+    }),
+  );
+  if (costs.some((cost) => cost !== null && cost > limit))
+    return finishFailure("provider cost exceeded reservation");
+  const checked = results.filter(
+    (watch): watch is FoundWatch => watch !== null,
+  );
+  const accepted = uniqueWatchResults(
+    checked.length
+      ? await (services.hydrateVerified ?? services.hydrate)(checked).catch(
+          () => checked,
+        )
+      : [],
+  );
+  if (!accepted.length) return finishFailure("no confirmed candidates");
+  const published = await services.publish(attempt, accepted, costs);
   if (!published)
     return { status: "unavailable", reason: "publication failed" };
-  return { status: "verified", watches, rejected: 0 };
+  return {
+    status: "verified",
+    watches: accepted,
+    rejected: candidates.length - accepted.length,
+  };
 }
