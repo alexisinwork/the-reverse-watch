@@ -10,6 +10,8 @@ import {
 import { validationProviderCalls } from "./validation-provider-calls.server";
 import { publishValidatedSnapshot } from "./validated-cache.server";
 import type { CatalogueClient } from "./watch-catalogue.server";
+import type { FilmDiscoverySubject } from "./validate-new-film-search.server";
+import type { ProviderAssertion } from "./validation-provider-response.server";
 
 /** This factory is not exposed to visitors until cost bounds and atomic cache
  * promotion are verified. validateCachedSearch owns the reservation lifecycle. */
@@ -109,5 +111,18 @@ export function validationServices(
       reportValidationOverrun(client, attempt, costs),
     publish: (attempt, watches, costs) =>
       publishValidatedSnapshot(client, attempt, watches, costs),
+  };
+}
+
+/** Kept behind the same production activation gate as cached validation. */
+export function validationServicesWithFilmDiscovery(
+  client: CatalogueClient,
+  deps: Deps,
+): ValidationServices & {
+  discoverFilm: (subject: FilmDiscoverySubject) => Promise<ProviderAssertion>;
+} {
+  return {
+    ...validationServices(client, deps),
+    discoverFilm: validationProviderCalls(deps).discoverFilm,
   };
 }

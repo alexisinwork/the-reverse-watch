@@ -162,6 +162,51 @@ describe("searchWithStore", () => {
     expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
   });
 
+  it("uses metered discovery on a film cache miss and then reads the committed snapshot", async () => {
+    let published = false;
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) => {
+      if (String(input).includes("ai_watch_search_get_v1")) return json(null);
+      return json(
+        published
+          ? {
+              validationStatus: "valid",
+              summary: "Checked.",
+              watches: [validatedWatch],
+              validatedAt: "2026-10-27T00:00:00Z",
+              policyVersion: "source-v1",
+            }
+          : null,
+      );
+    });
+    const validateDraft = vi.fn();
+    const validateMissingFilm = vi.fn(async () => {
+      published = true;
+      return {
+        status: "verified" as const,
+        watches: [validatedWatch],
+        rejected: 0,
+      };
+    });
+    const request = {
+      kind: "film" as const,
+      cacheInput: { query: "daniel craig", kind: "actor" },
+      run: finderMock.runAiWatchSearch,
+    };
+    const options = { store, fetchImpl, validateDraft, validateMissingFilm };
+    expect(await searchWithStore(request, options)).toMatchObject({
+      status: "found",
+      fromCache: false,
+      watches: [validatedWatch],
+    });
+    expect(await searchWithStore(request, options)).toMatchObject({
+      status: "found",
+      fromCache: true,
+    });
+    expect(validateMissingFilm).toHaveBeenCalledTimes(1);
+    expect(validateDraft).not.toHaveBeenCalled();
+    expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
+  });
+
   it("does not return a validation result that was not committed", async () => {
     const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
       String(input).includes("ai_watch_search_get_v1")

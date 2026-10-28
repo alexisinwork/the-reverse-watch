@@ -217,6 +217,7 @@ export async function searchWithStore(
     store = loadAiWatchStoreConfig(),
     fetchImpl = fetch,
     validateDraft,
+    validateMissingFilm,
     waitForValidation = () =>
       new Promise<void>((resolve) => setTimeout(resolve, 1_000)),
     now = Date.now,
@@ -228,6 +229,10 @@ export async function searchWithStore(
     validateDraft?: (
       cacheKey: string,
       watches: FoundWatch[],
+    ) => Promise<ValidationRun>;
+    validateMissingFilm?: (
+      cacheKey: string,
+      subject: z.infer<typeof filmSubjectSchema>,
     ) => Promise<ValidationRun>;
     /** A bounded delay used only while another request owns this key. */
     waitForValidation?: () => Promise<void>;
@@ -256,13 +261,21 @@ export async function searchWithStore(
         };
       if (validateDraft) {
         const draft = await loadStoredSearch(store, cacheKey, fetchImpl);
-        if (!draft) return { status: "unavailable" };
-        const candidates =
-          kind === "film"
-            ? bindFilmSubject(draft.watches, cacheInput, true)
-            : draft.watches;
-        if (!candidates.length) return { status: "unavailable" };
-        const result = await validateDraft(cacheKey, candidates);
+        let result: ValidationRun;
+        if (draft) {
+          const candidates =
+            kind === "film"
+              ? bindFilmSubject(draft.watches, cacheInput, true)
+              : draft.watches;
+          if (!candidates.length) return { status: "unavailable" };
+          result = await validateDraft(cacheKey, candidates);
+        } else {
+          const subject =
+            kind === "film" ? filmSubjectSchema.safeParse(cacheInput) : null;
+          if (!validateMissingFilm || !subject?.success)
+            return { status: "unavailable" };
+          result = await validateMissingFilm(cacheKey, subject.data);
+        }
         if (
           result.status === "unavailable" &&
           result.reason === "in_progress"

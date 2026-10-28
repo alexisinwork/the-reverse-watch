@@ -603,6 +603,13 @@ page and requires independent hosts; migration 0103 preserves those citations
 with the atomic catalogue/cache write. This is mock- and rollback-tested only,
 and does not activate paid research for visitors.
 
+New film cache misses now have an offline-tested discovery path: reserve one
+card first, let Perplexity propose one sourced sighting, check that exact
+reference with Muse, then publish only after source inspection and budget
+settlement. A cache hit reuses the committed snapshot. This is a single-card
+initial implementation; multi-card discovery, live-provider verification,
+production wiring and provider-side hard spending bounds remain open.
+
 First-use flow rehearsal: a deterministic test now runs a legacy actor cache
 through the actual validator service, both mocked providers, source and product
 page inspection, publication RPC payload and a second snapshot read. It checks

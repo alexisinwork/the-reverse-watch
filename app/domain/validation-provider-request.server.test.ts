@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { buildValidationRequests } from "./validation-provider-request.server";
+import {
+  buildFilmDiscoveryRequest,
+  buildValidationRequests,
+} from "./validation-provider-request.server";
 
 const brief = {
   brand: "Omega",
@@ -10,6 +13,28 @@ const brief = {
 };
 
 describe("bounded validation requests", () => {
+  it("bounds discovery to one search and refuses identifying contact data", () => {
+    const result = buildFilmDiscoveryRequest(
+      { query: "daniel craig", kind: "actor" },
+      "muse-spark-1.3-contributor",
+    );
+    expect(result.body).toMatchObject({
+      max_steps: 1,
+      max_tool_calls: 1,
+      max_output_tokens: 600,
+      store: false,
+    });
+    expect(JSON.parse(result.body.input)).toEqual({
+      query: "daniel craig",
+      kind: "actor",
+    });
+    expect(() =>
+      buildFilmDiscoveryRequest(
+        { query: "person@example.com", kind: "actor" },
+        "muse-spark-1.3-contributor",
+      ),
+    ).toThrow();
+  });
   it("builds separate one-search requests with Perplexity as primary", () => {
     const result = buildValidationRequests(brief, "muse-spark-1.3-contributor");
     expect(result.perplexity.endpoint).toBe(

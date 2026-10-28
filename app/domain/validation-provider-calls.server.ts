@@ -1,6 +1,9 @@
 import type { Deps } from "./ai-providers.server";
 import type { ValidationBrief } from "./validate-cached-search.server";
-import { buildValidationRequests } from "./validation-provider-request.server";
+import {
+  buildFilmDiscoveryRequest,
+  buildValidationRequests,
+} from "./validation-provider-request.server";
 import {
   parseMuseValidationResponse,
   parsePerplexityAgentValidationResponse,
@@ -16,33 +19,40 @@ export function validationProviderCalls(deps: Deps) {
   if (!perplexity || !museSpark)
     throw new Error("Both validation providers are required");
   const museModel = museSpark.fastModel;
+  const callPerplexity = async (
+    request: ReturnType<typeof buildFilmDiscoveryRequest>,
+  ) => {
+    const response = await deps.fetchImpl(request.endpoint, {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${perplexity.apiKey}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(request.body),
+      signal: AbortSignal.timeout(35_000),
+    });
+    const body: unknown = await response.json().catch(() => null);
+    const cost = reportedPerplexityCost(body);
+    if (!response.ok)
+      throw new ProviderCostError(
+        `Perplexity validation returned ${response.status}`,
+        cost,
+      );
+    try {
+      return parsePerplexityAgentValidationResponse(body);
+    } catch {
+      throw new ProviderCostError(
+        "Perplexity validation response was unusable",
+        cost,
+      );
+    }
+  };
   return {
+    discoverFilm: (subject: { query: string; kind: string }) =>
+      callPerplexity(buildFilmDiscoveryRequest(subject, museModel)),
     primary: async (brief: ValidationBrief) => {
       const request = buildValidationRequests(brief, museModel).perplexity;
-      const response = await deps.fetchImpl(request.endpoint, {
-        method: "POST",
-        headers: {
-          authorization: `Bearer ${perplexity.apiKey}`,
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(request.body),
-        signal: AbortSignal.timeout(35_000),
-      });
-      const body: unknown = await response.json().catch(() => null);
-      const cost = reportedPerplexityCost(body);
-      if (!response.ok)
-        throw new ProviderCostError(
-          `Perplexity validation returned ${response.status}`,
-          cost,
-        );
-      try {
-        return parsePerplexityAgentValidationResponse(body);
-      } catch {
-        throw new ProviderCostError(
-          "Perplexity validation response was unusable",
-          cost,
-        );
-      }
+      return callPerplexity(request);
     },
     secondary: async (brief: ValidationBrief) => {
       const request = buildValidationRequests(brief, museModel).muse;
