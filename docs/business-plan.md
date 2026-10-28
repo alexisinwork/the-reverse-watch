@@ -532,6 +532,13 @@ prompts use that range without also sending the exact wrist measurement.
 The live validator still needs supported, source-backed facts before these
 optional constraints can yield live results.
 
+Cache lifecycle integration: migration 0096 synchronizes existing draft status
+with the reserved attempt and committed snapshot: `validating` on reservation,
+`failed` on unsuccessful settlement or a reported cost overrun, and `valid`
+only when a validated snapshot is committed. The snapshot remains the only
+servable result. This covers existing draft rows, not new cache-miss discovery,
+and does not activate provider calls or automatically recover abandoned attempts.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
