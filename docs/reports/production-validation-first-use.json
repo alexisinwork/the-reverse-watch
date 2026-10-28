@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-28T20:17:48.413Z",
+  "sourceCommit": "4c0f280",
+  "deployment": "dpl_H7EpB9Z2kQ9bH1FBxMNmUxkVsRNc",
+  "newAlternativeRequest": {
+    "at": "2026-10-28T20:15:54.898Z",
+    "http": 200,
+    "elapsedMs": 31995,
+    "status": "found",
+    "fromCache": false,
+    "references": [{ "brand": "Seiko", "reference": "SLA065J1" }],
+    "addedChargeUsd": 0.0351
+  },
+  "sameRequestRepeated": {
+    "http": 200,
+    "elapsedMs": 20160,
+    "status": "found",
+    "fromCache": true,
+    "references": [{ "brand": "Seiko", "reference": "SLA065J1" }],
+    "addedChargeUsd": 0,
+    "addedAttempts": 0
+  },
+  "uncachedFilmNegativeCase": {
+    "query": "Quantum of Solace",
+    "http": 200,
+    "status": "unavailable",
+    "reason": "verification_failed",
+    "addedChargeUsd": 0.0076,
+    "publishedAsValid": false
+  },
+  "maintenance": {
+    "masterRowsBefore": 56719,
+    "masterRowsAfter": 56719,
+    "countQueryHeapFetchesBefore": 35304,
+    "countQueryHeapFetchesAfter": 0,
+    "countQueryBuffersBefore": 8200,
+    "countQueryBuffersAfter": 159
+  },
+  "applicationVerificationLedger": {
+    "spentUsd": 0.2938,
+    "reservedUsd": 0,
+    "remainingUsd": 99.7062,
+    "validatedAttempts": 6,
+    "failedAttempts": 12,
+    "inProgress": 0,
+    "excludesHistoricalBulkAndOtherProviderBilling": true
+  }
+}

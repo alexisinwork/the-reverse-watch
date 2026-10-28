@@ -2018,3 +2018,10 @@ and a typed recoverable alternative error cover that case. Standard vacuum and
 additive 0108 maintenance thresholds reduce repeated heap visits without changing
 facts or row counts. Fast gate after the fix: 672 tests. The live uncached film
 negative case settled its charge without publishing an unverified snapshot.
+Source `4c0f280` deployed READY as `dpl_H7EpB9Z2kQ9bH1FBxMNmUxkVsRNc`.
+A genuinely new production alternative result (Seiko SLA065J1) was validated and
+published for $0.0351, then reused for zero extra cost/attempts. All seven real
+partner/WordPress checks passed after the cold-read fix. The 20-second repeat
+still pays catalogue-read latency; zero provider calls does not imply instant
+delivery. Quiz result wording preserves the distinction between catalogue and
+manufacturer evidence.

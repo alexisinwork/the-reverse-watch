@@ -166,7 +166,7 @@ async function searchQuizBeforeDeduplication(
       alsoWorth,
       fromCache: true,
       origin: "catalogue",
-      summary: `${main.length} watches from The Reserve's checked catalogue meet every answer, each with its reference confirmed on the manufacturer's or an authorised retailer's page.${nearFitNote(filled.nearFitCount)}`,
+      summary: `${main.length} watches from The Reserve's checked catalogue meet every answer. Each card shows its reference source.${nearFitNote(filled.nearFitCount)}`,
     };
   }
 

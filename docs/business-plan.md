@@ -196,8 +196,8 @@ the Powered by link. Catalogue reads use the new index (same ordered rows,
 index plan verified) and four bounded network reads; successful void analytics
 responses no longer produce false write errors.
 
-Production checkpoint: `6f55980` deployed READY as
-`dpl_AbiJRowiSD6WdLDET7bjy3kigvHo` on thereserve.watch. Health, authenticated
+Production checkpoint: `4c0f280` deployed READY as
+`dpl_H7EpB9Z2kQ9bH1FBxMNmUxkVsRNc` on thereserve.watch. Health, authenticated
 catalogue admin and repeated Daniel Craig requests returned HTTP 200; two
 repeat page requests added zero budget charge and zero attempts. The production
 admin exposed all 56,719 master records and the verification budget panel.
@@ -209,8 +209,9 @@ WordPress remain running for owner inspection.
 An intermittent admin timeout required additive migrations 0106–0107: complete
 archive ordering plus narrow indexed counts, preserving first/second/filtered
 and reference-search pages and service-role-only access in rollback/applied
-tests. The application verification ledger read $0.2306 spent, $0 reserved,
-5 valid and 10 failed attempts; this excludes historical bulk/research billing.
+tests. The application verification ledger subsequently read $0.2938 spent,
+$0 reserved, 6 valid and 12 failed attempts; this excludes historical
+bulk/research billing.
 Evidence: `docs/reports/admin-catalogue-production.json` and
 `docs/reports/validated-cache-production.json`. Remaining engineering scope:
 unknown-target alternative discovery, pre-owned refresh and old bulk workers
@@ -228,6 +229,15 @@ query heap fetches from 35,304 to zero (8,200 to 159 buffers). Additive migratio
 and applied tests. The uncached production Quantum of Solace search settled
 $0.0076 conservatively and returned verification_failed instead of certifying
 an unsupported result; positive coverage of that subject remains unproved.
+The repeated alternative request now passed on production: a new source-checked
+Seiko SLA065J1 snapshot was published for $0.0351 total candidate-check cost,
+then the same request reused it with zero extra charge or attempts. First
+response took 32 seconds and repeat 20 seconds, so cold catalogue loading is
+still a latency cost even when provider usage is zero. All seven partner/real
+WordPress browser checks passed again after the read fix. Evidence:
+`docs/reports/production-validation-first-use.json`. Quiz summaries now name
+the source shown on each card; they do not mislabel Dials/Space City catalogue
+evidence as manufacturer-page verification.
 
 Deferred tooling idea, owner decision 2026-10-25: remember Replica Skill as a
 possible future workflow reference, but do not install, adapt or implement it
