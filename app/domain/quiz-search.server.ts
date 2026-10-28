@@ -1,8 +1,8 @@
 /**
  * Quiz answers are filtered from the catalogue in code, so they are
  * instant. Above 10k, or where the catalogue has fewer than three
- * confirmed fits, the live Muse Spark -> Perplexity search runs and what it
- * finds is added to the catalogue as pending.
+ * confirmed fits, the stored or live search can supplement them only after
+ * the current catalogue facts satisfy the same constraints.
  */
 import { quizCacheInput, searchQuizWatches } from "./quiz-live-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
@@ -10,11 +10,11 @@ import { searchWithStore } from "./ai-watch-store.server";
 import { uniqueSearchView } from "./watch-result-dedup";
 import type { AiSearchView, FoundWatch, ProgressEvent } from "./ai-watch-types";
 import { loadFxTable, type FxTable } from "./fx.server";
-import { enrichSearchView } from "./catalogue-result-enrichment.server";
 import { findPriceRange, type ProfileV4 } from "./questionnaire-v4";
 import {
   catalogueCoversRange,
   catalogueIdentityKey,
+  catalogueRuleFailures,
   catalogueToFoundWatch,
   matchCatalogue,
   MISS_LABELS,
@@ -24,11 +24,8 @@ import {
 } from "./watch-catalogue";
 import {
   catalogueClient,
-  clearCatalogueCache,
   loadCatalogueCached,
-  upsertCatalogueWatch,
   type CatalogueClient,
-  type CatalogueEntry,
 } from "./watch-catalogue.server";
 
 /** Fewer confirmed catalogue fits than this and the live search fills in. */
@@ -51,61 +48,34 @@ function watchKey(watch: {
   return catalogueIdentityKey(watch.brand, watch.model, watch.referenceCode);
 }
 
-/** A live find, stored as pending with its price left for the recheck to confirm. */
-export function liveFindToEntry(
-  watch: FoundWatch,
-  profile: ProfileV4,
-): CatalogueEntry {
-  const details = watch.details;
-  return {
-    identityKey: watchKey(watch),
-    brand: watch.brand,
-    model: watch.model,
-    referenceCode: watch.referenceCode,
-    referenceConfirmed:
-      details.referenceVerified === true &&
-      normalizeReference(watch.referenceCode) !== null,
-    // A visitor's requested style is not evidence that this watch has it.
-    styles: [],
-    caseDiameterMm: details.caseDiameterMm ?? null,
-    waterResistanceM: details.waterResistanceM ?? null,
-    movement: details.movement ?? null,
-    // The current live result does not carry verified complications.
-    complications: [],
-    caseMaterial: details.materials?.case ?? null,
-    casebackMaterial: details.materials?.caseback ?? null,
-    strapMaterial: details.materials?.strap ?? null,
-    priceStatus: "unconfirmed",
-    priceEvidence: { method: "live_search", observed: details.price ?? null },
-    sourceUrl: watch.sourceUrl,
-    sourceKind: details.sourceKind ?? null,
-    imageUrl: watch.imageUrl,
-    rationale: watch.rationale,
-    foundIn: [
-      {
-        live: true,
-        priceRange: profile.priceRange,
-        currency: profile.budgetCurrency,
-      },
-    ],
-  };
-}
-
-async function addLiveFinds(
-  client: CatalogueClient,
+/** Source-checked identity alone does not prove the watch meets a quiz.
+ * Require one exact current catalogue record with all active facts. */
+function qualifyingLiveWatches(
   watches: FoundWatch[],
+  catalogue: CatalogueWatch[],
   profile: ProfileV4,
+  fx: FxTable | null,
 ) {
-  const results = await Promise.allSettled(
-    watches.map((watch) =>
-      upsertCatalogueWatch(client, liveFindToEntry(watch, profile)),
-    ),
-  );
-  for (const result of results) {
-    if (result.status === "rejected")
-      logError("catalogue_live_add_error", result.reason);
-  }
-  clearCatalogueCache();
+  const fold = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return watches.flatMap((watch) => {
+    const reference = normalizeReference(watch.referenceCode);
+    const brand = fold(watch.brand);
+    if (!reference || !brand) return [];
+    const matches = catalogue.filter(
+      (row) =>
+        row.reviewStatus !== "rejected" &&
+        fold(row.brand) === brand &&
+        normalizeReference(row.referenceCode) === reference,
+    );
+    if (
+      matches.length !== 1 ||
+      !matches[0]!.referenceConfirmed ||
+      catalogueRuleFailures(matches[0]!, profile, fx).length
+    )
+      return [];
+    const found = catalogueToFoundWatch(matches[0]!);
+    return found ? [found] : [];
+  });
 }
 
 async function searchQuizBeforeDeduplication(
@@ -118,7 +88,12 @@ async function searchQuizBeforeDeduplication(
       searchWithStore({
         kind: "quiz",
         cacheInput: quizCacheInput(profile),
-        run: () => searchQuizWatches(profile, report ? { report } : {}),
+        // Candidate previews have not passed the catalogue constraints yet.
+        run: () =>
+          searchQuizWatches(
+            profile,
+            report ? { report: (event) => report({ text: event.text }) } : {},
+          ),
       }),
   }: {
     client?: CatalogueClient | null;
@@ -151,7 +126,7 @@ async function searchQuizBeforeDeduplication(
     .filter((watch): watch is FoundWatch => watch !== null);
 
   // Free places on the shortlist go to watches in the visitor's price range
-  // that miss a softer answer (case size, water resistance…), each marked
+  // that miss a softer answer (such as water resistance), each marked
   // with what it misses (owner decision, 2026-09-30).
   const withNearFits = (watches: FoundWatch[]) => {
     const taken = new Set([...watches, ...alsoWorth].map(watchKey));
@@ -204,7 +179,17 @@ async function searchQuizBeforeDeduplication(
         ? `The catalogue has ${main.length} confirmed ${main.length === 1 ? "fit" : "fits"}; searching live for more…`
         : "No catalogue watch fits every answer yet; searching live…",
   });
-  const live = await enrichSearchView(await runLive());
+  const fetched = await runLive();
+  const screened =
+    fetched.status === "found"
+      ? qualifyingLiveWatches(fetched.watches, catalogue, profile, fx)
+      : [];
+  const live: AiSearchView =
+    fetched.status === "found"
+      ? screened.length
+        ? { ...fetched, watches: screened }
+        : { status: "unavailable" }
+      : fetched;
   if (live.status === "found" && live.fromCache) {
     report?.({
       text: "These answers were searched before: loading the saved result.",
@@ -233,9 +218,6 @@ async function searchQuizBeforeDeduplication(
     };
   }
 
-  if (client && !live.fromCache)
-    await addLiveFinds(client, live.watches, profile);
-
   const known = new Map(catalogue.map((watch) => [watch.identityKey, watch]));
   const seen = new Set(main.map(watchKey));
   const liveWatches = live.watches
@@ -251,6 +233,16 @@ async function searchQuizBeforeDeduplication(
   const filled = withNearFits(
     [...main, ...liveWatches].slice(0, QUIZ_RESULT_LIMIT),
   );
+  if (!liveWatches.length && main.length) {
+    return {
+      status: "found",
+      watches: filled.watches,
+      alsoWorth,
+      fromCache: true,
+      origin: "catalogue",
+      summary: `${main.length} ${main.length === 1 ? "watch" : "watches"} from the checked catalogue meet every answer.${nearFitNote(filled.nearFitCount)}`,
+    };
+  }
   return {
     status: "found",
     watches: filled.watches,
@@ -259,8 +251,8 @@ async function searchQuizBeforeDeduplication(
     origin: main.length > 0 ? "mixed" : "live",
     summary: `${
       main.length > 0
-        ? `${main.length} from the checked catalogue, the rest from a live search. ${live.summary}`
-        : live.summary
+        ? `${main.length} from the checked catalogue and ${liveWatches.length} additional checked ${liveWatches.length === 1 ? "watch" : "watches"}.`
+        : `${liveWatches.length} checked ${liveWatches.length === 1 ? "watch meets" : "watches meet"} your answers.`
     }${nearFitNote(filled.nearFitCount)}`,
   };
 }

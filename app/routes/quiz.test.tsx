@@ -22,6 +22,53 @@ vi.mock("@upstash/redis", () => ({
 }));
 vi.mock("../domain/discovery-funnel-store.server", () => discoveryFunnelMock);
 vi.mock("../domain/ai-watch-store.server", () => aiSearchMock);
+vi.mock("../domain/watch-catalogue.server", async (importOriginal) => ({
+  ...(await importOriginal<
+    typeof import("../domain/watch-catalogue.server")
+  >()),
+  catalogueClient: () => ({
+    config: { supabaseUrl: "https://db.example", serviceKey: "test" },
+    fetchImpl: fetch,
+  }),
+  loadCatalogueCached: async () => [
+    {
+      id: "00000000-0000-4000-8000-000000000001",
+      identityKey: "seiko|r:spb143",
+      brand: "Seiko",
+      model: "Prospex SPB143",
+      referenceCode: "SPB143",
+      referenceConfirmed: true,
+      styles: ["everyday"],
+      caseDiameterMm: 40.5,
+      caseThicknessMm: null,
+      caseShape: null,
+      waterResistanceM: 200,
+      movement: "automatic",
+      inHouseCalibre: null,
+      crystal: null,
+      displayCaseback: null,
+      complications: [],
+      caseMaterial: null,
+      casebackMaterial: null,
+      strapMaterial: null,
+      priceAmount: 12000,
+      priceCurrency: "USD",
+      priceStatus: "confirmed",
+      priceCheckedAt: null,
+      priceEvidence: {},
+      priceChange: null,
+      sourceUrl: "https://www.seikowatches.com/spb143",
+      sourceKind: "manufacturer",
+      imageUrl: "https://images.example/spb143.jpg",
+      rationale: null,
+      foundIn: [],
+      reviewStatus: "approved",
+      reviewedAt: null,
+      createdAt: "2026-09-30T00:00:00Z",
+      updatedAt: "2026-09-30T00:00:00Z",
+    },
+  ],
+}));
 vi.mock("../domain/fx.server", async (importOriginal) => ({
   ...(await importOriginal<typeof import("../domain/fx.server")>()),
   loadFxTable: async () => ({
@@ -167,10 +214,10 @@ describe("version-4 diagnostic", () => {
           referenceCode: "SPB143",
           sourceUrl: "https://www.seikowatches.com/spb143",
           imageUrl: "https://images.example/spb143.jpg",
-          priceNote: "about USD 1,300 new",
+          priceNote: "about USD 12,000 new",
           rationale: "Automatic diver within budget and diameter.",
           details: {
-            price: { amount: 1_300, currency: "USD" },
+            price: { amount: 12_000, currency: "USD" },
             caseDiameterMm: 40.5,
             waterResistanceM: 200,
             movement: "automatic",

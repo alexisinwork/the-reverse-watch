@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { AiSearchView } from "./ai-watch-types";
 import type { ProfileV4 } from "./questionnaire-v4";
-import { liveFindToEntry, searchQuiz } from "./quiz-search.server";
+import { searchQuiz } from "./quiz-search.server";
 import {
   clearCatalogueCache,
   type CatalogueClient,
@@ -109,16 +109,6 @@ const liveResult: AiSearchView = {
 describe("searchQuiz", () => {
   beforeEach(() => clearCatalogueCache());
 
-  it("does not write requested style or complications as watch facts", () => {
-    if (liveResult.status !== "found") throw new Error("expected fixture");
-    const entry = liveFindToEntry(liveResult.watches[0]!, {
-      ...profile,
-      requiredComplications: ["date"],
-    });
-    expect(entry.styles).toEqual([]);
-    expect(entry.complications).toEqual([]);
-  });
-
   it("answers from the catalogue without a live search when it has enough", async () => {
     const store = client([
       row(1),
@@ -161,28 +151,79 @@ describe("searchQuiz", () => {
     ).toHaveLength(1);
   });
 
-  it("fills a gap with the live search and stores its finds as pending", async () => {
+  it("does not recommend or store a live identity with unverified filter facts", async () => {
     const store = client([row(1)]);
     const result = await searchQuiz(profile, {
       client: store.value,
       loadFx: async () => fx,
       runLive: async () => liveResult,
     });
-    expect(result).toMatchObject({ status: "found", origin: "mixed" });
+    expect(result).toMatchObject({ status: "found", origin: "catalogue" });
     if (result.status !== "found") throw new Error("expected found");
-    expect(result.watches.map((watch) => watch.brand)).toEqual([
-      "Brand1",
-      "Longines",
-    ]);
-    expect(result.watches[1]!.details.reviewStatus).toBe("pending");
-    expect(store.upserts).toHaveLength(1);
-    expect(store.upserts[0]).toMatchObject({
-      p_watch: {
-        brand: "Longines",
-        priceStatus: "unconfirmed",
-        styles: [],
-        complications: [],
-      },
+    expect(result.watches.map((watch) => watch.brand)).toEqual(["Brand1"]);
+    expect(store.upserts).toHaveLength(0);
+  });
+
+  it("rechecks a cached live result against the current catalogue facts", async () => {
+    if (liveResult.status !== "found") throw new Error("expected fixture");
+    const stale = {
+      ...liveResult,
+      fromCache: true,
+      watches: [
+        {
+          ...liveResult.watches[0]!,
+          brand: "Brand1",
+          model: "Model 1",
+          referenceCode: "REF1",
+          details: {
+            ...liveResult.watches[0]!.details,
+            waterResistanceM: 100,
+            movement: "automatic",
+          },
+        },
+      ],
+    };
+    const result = await searchQuiz(profile, {
+      client: client([row(1, { waterResistanceM: 50 })]).value,
+      loadFx: async () => fx,
+      runLive: async () => stale,
+    });
+    if (result.status !== "found") throw new Error("expected near fit");
+    expect(result.origin).toBe("catalogue");
+    expect(result.watches[0]!.details.waterResistanceM).toBe(50);
+    expect(result.watches[0]!.details.misses).toContain(
+      "Less water resistance than you asked for",
+    );
+  });
+
+  it("uses the current catalogue price for an eligible cached reference", async () => {
+    if (liveResult.status !== "found") throw new Error("expected fixture");
+    const stale = {
+      ...liveResult,
+      fromCache: true,
+      watches: [
+        {
+          ...liveResult.watches[0]!,
+          brand: "Brand1",
+          model: "Model 1",
+          referenceCode: "REF1",
+          details: {
+            ...liveResult.watches[0]!.details,
+            price: { amount: 1, currency: "USD" },
+          },
+        },
+      ],
+    };
+    const result = await searchQuiz(profile, {
+      client: client([row(1)]).value,
+      loadFx: async () => fx,
+      runLive: async () => stale,
+    });
+    if (result.status !== "found") throw new Error("expected match");
+    expect(result.watches).toHaveLength(1);
+    expect(result.watches[0]!.details.price).toEqual({
+      amount: 3500,
+      currency: "USD",
     });
   });
 
@@ -278,11 +319,7 @@ describe("searchQuiz", () => {
     });
     expect(runLive).toHaveBeenCalledTimes(1);
     if (found.status !== "found") throw new Error("expected found");
-    // Full fits, then what the web search found, then close fits last.
-    expect(found.watches.map((watch) => watch.brand)).toEqual([
-      "Brand1",
-      "Longines",
-    ]);
+    expect(found.watches.map((watch) => watch.brand)).toEqual(["Brand1"]);
 
     clearCatalogueCache();
     const nothingLive = await searchQuiz(profile, {
@@ -311,11 +348,11 @@ describe("searchQuiz", () => {
     expect(result.watches).toHaveLength(10);
   });
 
-  it("falls back to the live search when the catalogue cannot be read", async () => {
+  it("does not claim quiz constraints are satisfied when the catalogue cannot be read", async () => {
     const result = await searchQuiz(profile, {
       client: null,
       runLive: async () => liveResult,
     });
-    expect(result).toMatchObject({ status: "found", origin: "live" });
+    expect(result).toEqual({ status: "unavailable" });
   });
 });

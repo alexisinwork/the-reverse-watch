@@ -553,6 +553,13 @@ requested subject. This avoids validating a correct watch sighting for the wrong
 person as an answer to the search. The matching is deliberately exact after
 normalization, so aliases may need later handling. No provider calls were made.
 
+Quiz cache guard: a source-checked identity is not by itself proof that the
+watch satisfies a visitor's price, size and other answers. Cached/live quiz
+cards are now rechecked against one current exact-reference catalogue record,
+and displayed using its facts. A new identity remains in the validation intake
+until its required facts are established; this deliberately leaves new live
+discovery incomplete rather than presenting unknown specifications as a fit.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
