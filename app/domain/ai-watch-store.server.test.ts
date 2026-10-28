@@ -13,7 +13,7 @@ const foundWatch = {
   imageUrl: "https://img.example/spb143.jpg",
   priceNote: null,
   rationale: "Fits.",
-  details: { waterResistanceM: 200 },
+  details: { waterResistanceM: 200, person: "Daniel Craig" },
 };
 const validatedWatch = {
   ...foundWatch,
@@ -24,11 +24,15 @@ const validatedWatch = {
         provider: "perplexity",
         sourceUrl: "https://first.example/watch",
         checkedAt: "2026-10-27T00:00:00Z",
+        sourceQuote: "Seiko SPB143 Daniel Craig",
+        person: "Daniel Craig",
       },
       {
         provider: "muse",
         sourceUrl: "https://second.example/watch",
         checkedAt: "2026-10-27T00:00:00Z",
+        sourceQuote: "Seiko SPB143 Daniel Craig",
+        person: "Daniel Craig",
       },
     ],
   },
@@ -91,7 +95,7 @@ describe("searchWithStore", () => {
     const result = await searchWithStore(
       {
         kind: "film",
-        cacheInput: { query: "daniel craig" },
+        cacheInput: { query: "daniel craig", kind: "actor" },
         run: finderMock.runAiWatchSearch,
       },
       { store, fetchImpl: fetchImpl as unknown as typeof fetch },
@@ -132,7 +136,7 @@ describe("searchWithStore", () => {
     });
     const request = {
       kind: "film" as const,
-      cacheInput: { query: "daniel craig" },
+      cacheInput: { query: "daniel craig", kind: "actor" },
       run: finderMock.runAiWatchSearch,
     };
     const options = {
@@ -171,7 +175,7 @@ describe("searchWithStore", () => {
     const result = await searchWithStore(
       {
         kind: "film",
-        cacheInput: { query: "daniel craig" },
+        cacheInput: { query: "daniel craig", kind: "actor" },
         run: finderMock.runAiWatchSearch,
       },
       {
@@ -187,6 +191,100 @@ describe("searchWithStore", () => {
     expect(result).toEqual({ status: "unavailable" });
   });
 
+  it("binds missing film attribution to the requested actor and rejects another wearer", async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("ai_watch_search_get_v1")
+        ? json({
+            validationStatus: "unverified",
+            summary: "Draft.",
+            watches: [
+              { ...foundWatch, details: {} },
+              {
+                ...foundWatch,
+                model: "Other",
+                referenceCode: "OTHER123",
+                details: { person: "Naomie Harris" },
+              },
+            ],
+          })
+        : json(null),
+    );
+    const validateDraft = vi.fn(async () => ({
+      status: "unavailable" as const,
+      reason: "no confirmed candidates",
+    }));
+    const result = await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "daniel craig", kind: "actor" },
+        run: finderMock.runAiWatchSearch,
+      },
+      { store, fetchImpl, validateDraft },
+    );
+    expect(result.status).toBe("unavailable");
+    expect(validateDraft).toHaveBeenCalledWith(expect.any(String), [
+      expect.objectContaining({ details: { person: "daniel craig" } }),
+    ]);
+  });
+
+  it("never serves a checked snapshot for a different actor", async () => {
+    const fetchImpl = vi.fn(async () =>
+      json({
+        validationStatus: "valid",
+        summary: "Checked.",
+        watches: [validatedWatch],
+        validatedAt: "2026-10-27T00:00:00Z",
+        policyVersion: "source-v1",
+      }),
+    );
+    const result = await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "naomie harris", kind: "actor" },
+        run: finderMock.runAiWatchSearch,
+      },
+      { store, fetchImpl },
+    );
+    expect(result).toEqual({ status: "unavailable" });
+  });
+
+  it("uses the movie title as the required attribution for movie searches", async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("ai_watch_search_get_v1")
+        ? json({
+            validationStatus: "unverified",
+            summary: "Draft.",
+            watches: [
+              { ...foundWatch, details: { person: "Daniel Craig" } },
+              {
+                ...foundWatch,
+                model: "Other",
+                referenceCode: "OTHER123",
+                details: { work: "Spectre" },
+              },
+            ],
+          })
+        : json(null),
+    );
+    const validateDraft = vi.fn(async () => ({
+      status: "unavailable" as const,
+      reason: "no confirmed candidates",
+    }));
+    await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "skyfall", kind: "movie" },
+        run: finderMock.runAiWatchSearch,
+      },
+      { store, fetchImpl, validateDraft },
+    );
+    expect(validateDraft).toHaveBeenCalledWith(expect.any(String), [
+      expect.objectContaining({
+        details: { person: "Daniel Craig", work: "skyfall" },
+      }),
+    ]);
+  });
+
   it("never returns the old draft while a concurrent validation is in progress", async () => {
     const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
       String(input).includes("ai_watch_search_get_v1")
@@ -200,7 +298,7 @@ describe("searchWithStore", () => {
     const result = await searchWithStore(
       {
         kind: "film",
-        cacheInput: { query: "daniel craig" },
+        cacheInput: { query: "daniel craig", kind: "actor" },
         run: finderMock.runAiWatchSearch,
       },
       {
@@ -256,7 +354,7 @@ describe("searchWithStore", () => {
     });
     const request = {
       kind: "film" as const,
-      cacheInput: { query: "daniel craig" },
+      cacheInput: { query: "daniel craig", kind: "actor" },
       run: finderMock.runAiWatchSearch,
     };
     const first = searchWithStore(request, { store, fetchImpl, validateDraft });
@@ -306,7 +404,7 @@ describe("searchWithStore", () => {
     const result = await searchWithStore(
       {
         kind: "film",
-        cacheInput: { query: "daniel craig" },
+        cacheInput: { query: "daniel craig", kind: "actor" },
         run: finderMock.runAiWatchSearch,
       },
       {

@@ -168,6 +168,40 @@ function logStoreError(event: string, error: unknown) {
   );
 }
 
+const filmSubjectSchema = z.object({
+  query: z.string().trim().min(1).max(120),
+  kind: z.enum(["movie", "series", "actor", "character", "celebrity"]),
+});
+const foldSubject = (value: string) =>
+  value
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+
+/** A watch appearing in an actor's cache must actually be attributed to that
+ * actor; a source about someone else is not evidence for this search. */
+function bindFilmSubject(
+  watches: FoundWatch[],
+  input: unknown,
+  allowMissing: boolean,
+) {
+  const parsed = filmSubjectSchema.safeParse(input);
+  if (!parsed.success) return [];
+  const { query, kind } = parsed.data;
+  const subject = foldSubject(query);
+  if (!subject) return [];
+  const field = kind === "movie" || kind === "series" ? "work" : "person";
+  return watches.flatMap((watch) => {
+    const current = watch.details[field];
+    if (typeof current === "string" && foldSubject(current) === subject)
+      return [watch];
+    if (!current && allowMissing)
+      return [{ ...watch, details: { ...watch.details, [field]: query } }];
+    return [];
+  });
+}
+
 /** Serve already valid results; pause new AI searches until the validator
  * and its shared cost ledger are ready. Catalogue-only paths remain separate. */
 export async function searchWithStore(
@@ -208,7 +242,12 @@ export async function searchWithStore(
         { config: store, fetchImpl },
         cacheKey,
       );
-      if (stored)
+      if (
+        stored &&
+        (kind !== "film" ||
+          bindFilmSubject(stored.watches, cacheInput, false).length ===
+            stored.watches.length)
+      )
         return {
           status: "found",
           summary: stored.summary,
@@ -218,7 +257,12 @@ export async function searchWithStore(
       if (validateDraft) {
         const draft = await loadStoredSearch(store, cacheKey, fetchImpl);
         if (!draft) return { status: "unavailable" };
-        const result = await validateDraft(cacheKey, draft.watches);
+        const candidates =
+          kind === "film"
+            ? bindFilmSubject(draft.watches, cacheInput, true)
+            : draft.watches;
+        if (!candidates.length) return { status: "unavailable" };
+        const result = await validateDraft(cacheKey, candidates);
         if (
           result.status === "unavailable" &&
           result.reason === "in_progress"
@@ -233,7 +277,12 @@ export async function searchWithStore(
               { config: store, fetchImpl },
               cacheKey,
             );
-            if (published)
+            if (
+              published &&
+              (kind !== "film" ||
+                bindFilmSubject(published.watches, cacheInput, false).length ===
+                  published.watches.length)
+            )
               return {
                 status: "found",
                 summary: published.summary,
@@ -251,7 +300,13 @@ export async function searchWithStore(
           { config: store, fetchImpl },
           cacheKey,
         );
-        if (!published) return { status: "unavailable" };
+        if (
+          !published ||
+          (kind === "film" &&
+            bindFilmSubject(published.watches, cacheInput, false).length !==
+              published.watches.length)
+        )
+          return { status: "unavailable" };
         return {
           status: "found",
           summary: published.summary,

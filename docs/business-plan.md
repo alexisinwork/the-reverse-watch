@@ -545,6 +545,14 @@ still reused immediately, and the cooldown is checked under the same locks as
 the budget reservation. This prevents rapid repeated failures from draining the
 ledger; abandoned reservations still require a separate recovery mechanism.
 
+Film cache subject binding: before validating a draft, the cache path now binds
+each candidate to the requested actor, character, celebrity, movie or series.
+It fills a missing subject from the search constraints, rejects a conflicting
+attribution, and refuses a committed snapshot whose cards do not match the
+requested subject. This avoids validating a correct watch sighting for the wrong
+person as an answer to the search. The matching is deliberately exact after
+normalization, so aliases may need later handling. No provider calls were made.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next
