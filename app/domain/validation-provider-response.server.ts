@@ -15,12 +15,17 @@ const claimSchema = z.object({
   facts: z
     .array(
       z.object({
-        field: z.enum(["caseDiameterMm", "waterResistanceM", "movementType"]),
+        field: z.enum([
+          "caseDiameterMm",
+          "waterResistanceM",
+          "movementType",
+          "price",
+        ]),
         value: z.union([z.string().max(100), z.number().finite()]),
         quote: z.string().min(1).max(280),
       }),
     )
-    .max(3)
+    .max(4)
     .default([]),
 });
 

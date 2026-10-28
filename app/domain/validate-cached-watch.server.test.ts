@@ -128,6 +128,107 @@ describe("cached watch source validation", () => {
     expect(result.watch.details.validationFacts).toBeUndefined();
   });
 
+  it("adds the primary approximate price while retaining the second observation", async () => {
+    const first = {
+      field: "price" as const,
+      value: "USD 3500",
+      quote: "231.10.39.21.03.001 market price USD 3,500",
+    };
+    const second = {
+      field: "price" as const,
+      value: "USD 3600",
+      quote: "231.10.39.21.03.001 asking price USD 3,600",
+    };
+    const page = `Omega 231.10.39.21.03.001 Daniel Craig Skyfall. ${first.quote}. ${second.quote}`;
+    const fetchImpl = vi.fn(
+      async () =>
+        new Response(page, { headers: { "content-type": "text/plain" } }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      { ...primary, facts: [first] },
+      { ...secondary, facts: [second] },
+      { fetchImpl },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.details.price).toEqual({
+      amount: 3500,
+      currency: "USD",
+    });
+    expect(result.watch.details.priceConfirmed).toBe(false);
+    expect(
+      result.watch.details.priceObservation?.sources.map(
+        (source) => source.value,
+      ),
+    ).toEqual(["USD 3500", "USD 3600"]);
+  });
+
+  it("keeps different approximate market observations and currencies", async () => {
+    const first = {
+      field: "price" as const,
+      value: "USD 3500",
+      quote: "231.10.39.21.03.001 market price USD 3,500",
+    };
+    for (const second of [
+      {
+        ...first,
+        value: "USD 4000",
+        quote: "231.10.39.21.03.001 market price USD 4,000",
+      },
+      {
+        ...first,
+        value: "EUR 3500",
+        quote: "231.10.39.21.03.001 market price EUR 3,500",
+      },
+    ]) {
+      const page = `Omega 231.10.39.21.03.001 Daniel Craig Skyfall. ${first.quote}. ${second.quote}`;
+      const fetchImpl = vi.fn(
+        async () =>
+          new Response(page, { headers: { "content-type": "text/plain" } }),
+      ) as unknown as typeof fetch;
+      const result = await validateCachedWatchFromSources(
+        watch,
+        { ...primary, facts: [first] },
+        { ...secondary, facts: [second] },
+        { fetchImpl },
+      );
+      if (result.status !== "verified")
+        throw new Error("expected verified attribution");
+      expect(result.watch.details.price).toEqual({
+        amount: 3500,
+        currency: "USD",
+      });
+      expect(result.watch.details.priceConfirmed).toBe(false);
+    }
+  });
+
+  it("leaves price missing when the second page does not quote its price", async () => {
+    const first = {
+      field: "price" as const,
+      value: "USD 3500",
+      quote: "231.10.39.21.03.001 market price USD 3,500",
+    };
+    const second = {
+      ...first,
+      quote: "231.10.39.21.03.001 water resistance 150 m",
+    };
+    const page = `Omega 231.10.39.21.03.001 Daniel Craig Skyfall. ${first.quote}. ${second.quote}`;
+    const fetchImpl = vi.fn(
+      async () =>
+        new Response(page, { headers: { "content-type": "text/plain" } }),
+    ) as unknown as typeof fetch;
+    const result = await validateCachedWatchFromSources(
+      watch,
+      { ...primary, facts: [first] },
+      { ...secondary, facts: [second] },
+      { fetchImpl },
+    );
+    if (result.status !== "verified")
+      throw new Error("expected verified attribution");
+    expect(result.watch.details.price).toBeUndefined();
+  });
+
   it("does not count redirects to the same source as independent pages", async () => {
     const fetchImpl = vi.fn(async (input: string | URL | Request) =>
       String(input).startsWith("https://second.example")

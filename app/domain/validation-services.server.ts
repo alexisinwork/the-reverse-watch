@@ -61,13 +61,22 @@ export function validationServices(
           referenceCode: verified.referenceCode,
           sourceUrl: result.evidence[0]!.sourceUrl,
           imageUrl: null,
-          priceNote: null,
+          priceNote: verified.details.priceObservation
+            ? verified.priceNote
+            : null,
           rationale:
             "Reference and available attribution checked against cited sources.",
           details: {
             person: verified.details.person ?? null,
             work: verified.details.work ?? null,
             validationEvidence: verified.details.validationEvidence,
+            ...(verified.details.priceObservation
+              ? {
+                  priceObservation: verified.details.priceObservation,
+                  price: verified.details.price,
+                  priceConfirmed: false,
+                }
+              : {}),
             ...(verified.details.validationFacts?.length
               ? {
                   validationFacts: verified.details.validationFacts,

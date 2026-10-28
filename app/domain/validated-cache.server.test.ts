@@ -52,7 +52,7 @@ describe("validated cache snapshots", () => {
       await publishValidatedSnapshot(db.value, attempt, [watch], [null]),
     ).toBe(true);
     const [target, init] = db.fetchImpl.mock.calls[0]!;
-    expect(String(target)).toContain("ai_watch_validated_cache_publish_v4");
+    expect(String(target)).toContain("ai_watch_validated_cache_publish_v5");
     expect(JSON.parse(String(init?.body))).toMatchObject({
       p_attempt_id: attempt,
       p_costs_usd: [0.025],
@@ -128,6 +128,47 @@ describe("validated cache snapshots", () => {
                   ],
                 },
               ],
+            },
+          },
+        ],
+        [0.01],
+      ),
+    ).rejects.toThrow();
+    expect(db.fetchImpl).not.toHaveBeenCalled();
+  });
+
+  it("does not publish an approximate price from a quote for another amount", async () => {
+    const db = client(true);
+    await expect(
+      publishValidatedSnapshot(
+        db.value,
+        attempt,
+        [
+          {
+            ...watch,
+            details: {
+              ...watch.details,
+              price: { amount: 3500, currency: "USD" },
+              priceConfirmed: false,
+              priceObservation: {
+                value: "USD 3500",
+                sources: [
+                  {
+                    provider: "perplexity",
+                    sourceUrl: "https://first.example/watch",
+                    quote: "2201.50.00 price USD 3,500",
+                    checkedAt: "2026-10-27T00:00:00Z",
+                    value: "USD 3500",
+                  },
+                  {
+                    provider: "muse",
+                    sourceUrl: "https://second.example/watch",
+                    quote: "2201.50.00 price USD 4,000",
+                    checkedAt: "2026-10-27T00:00:00Z",
+                    value: "USD 3500",
+                  },
+                ],
+              },
             },
           },
         ],

@@ -5,6 +5,7 @@ import {
   type ValidationEvidence,
 } from "./cached-result-validation";
 import { inspectCachedResultSource } from "./cached-result-source-check.server";
+import { parseObservedPrice } from "./validated-price";
 
 /** Check both cited pages ourselves before reconciling the two assertions.
  * Matching text is necessary evidence, not proof that the page associates the
@@ -121,5 +122,42 @@ export async function validateCachedWatchFromSources(
       });
   }
   if (facts.length) details.validationFacts = facts;
-  return { ...result, watch: { ...result.watch, details } };
+  const primaryPrices = a.filter((fact) => fact.field === "price");
+  const secondaryPrices = b.filter((fact) => fact.field === "price");
+  let priceNote = result.watch.priceNote;
+  if (
+    details.price == null &&
+    primaryPrices.length === 1 &&
+    secondaryPrices.length === 1 &&
+    typeof primaryPrices[0]!.value === "string" &&
+    typeof secondaryPrices[0]!.value === "string"
+  ) {
+    const firstPrice = parseObservedPrice(primaryPrices[0]!.value);
+    const secondPrice = parseObservedPrice(secondaryPrices[0]!.value);
+    if (firstPrice && secondPrice) {
+      details.price = firstPrice;
+      details.priceConfirmed = false;
+      priceNote = `${firstPrice.currency} ${firstPrice.amount}`;
+      details.priceObservation = {
+        value: primaryPrices[0]!.value,
+        sources: [
+          {
+            provider: "perplexity",
+            sourceUrl: result.evidence[0]!.sourceUrl,
+            quote: primaryPrices[0]!.quote,
+            checkedAt: details.validationEvidence![0]!.checkedAt,
+            value: primaryPrices[0]!.value,
+          },
+          {
+            provider: "muse",
+            sourceUrl: result.evidence[1]!.sourceUrl,
+            quote: secondaryPrices[0]!.quote,
+            checkedAt: details.validationEvidence![1]!.checkedAt,
+            value: secondaryPrices[0]!.value,
+          },
+        ],
+      };
+    }
+  }
+  return { ...result, watch: { ...result.watch, priceNote, details } };
 }

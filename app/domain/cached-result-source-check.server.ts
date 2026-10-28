@@ -2,6 +2,7 @@ import { pageMentionsReference } from "./ai-watch-guardrails";
 import type { FoundWatch } from "./ai-watch-types";
 import type { ValidationFact } from "./cached-result-validation";
 import { quoteSupportsValue } from "./catalogue-enrichment.server";
+import { quoteSupportsObservedPrice } from "./validated-price";
 import { publicFetch } from "./source-pages.server";
 
 const MAX_BYTES = 1_500_000;
@@ -116,7 +117,14 @@ export async function inspectCachedResultSource(
         fact.quote.length <= 280 &&
         text.includes(` ${quotation} `) &&
         pageMentionsReference(watch.referenceCode, fact.quote, "") &&
-        quoteSupportsValue({ ...fact, sourceUrl: finalUrl })
+        (fact.field === "price"
+          ? typeof fact.value === "string" &&
+            quoteSupportsObservedPrice(fact.value, fact.quote)
+          : quoteSupportsValue({
+              ...fact,
+              field: fact.field,
+              sourceUrl: finalUrl,
+            }))
       );
     });
     return {

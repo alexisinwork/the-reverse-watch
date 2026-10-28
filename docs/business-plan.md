@@ -571,6 +571,16 @@ catalogue cache is cleared after publication; other instances can retain their
 five-minute cache. Price, photo, other fields, paid activation and provider
 hard caps remain outstanding; no real provider lookup was run for this change.
 
+Approximate price enrichment: if the local exact reference has no price, the
+same two source checks can now retain a primary Perplexity price and a separate
+Muse observation, even when market amounts or currencies differ. Each price
+needs a quoted exact reference and explicit amount/currency on its checked
+page. The primary amount is marked approximate, not a confirmed retail price.
+Migration 0099 atomically stores the observation, evidence and missing master
+price with the snapshot; concurrent conflicting master prices stop publication.
+This is locally tested with mocked provider responses; real paid activation,
+image discovery and provider-side spending guarantees are still outstanding.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

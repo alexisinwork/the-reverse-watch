@@ -79,7 +79,12 @@ describe("validating a cached result under a reservation", () => {
       referenceCode: "2201.50.00",
       person: "Daniel Craig",
       work: "Quantum of Solace",
-      missingFields: ["caseDiameterMm", "waterResistanceM", "movementType"],
+      missingFields: [
+        "caseDiameterMm",
+        "waterResistanceM",
+        "movementType",
+        "price",
+      ],
     });
   });
 

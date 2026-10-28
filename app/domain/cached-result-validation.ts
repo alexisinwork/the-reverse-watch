@@ -4,7 +4,7 @@ import type { FoundWatch } from "./ai-watch-types";
 import { safeHttpUrl } from "./source-pages.server";
 
 export type ValidationFact = {
-  field: "caseDiameterMm" | "waterResistanceM" | "movementType";
+  field: "caseDiameterMm" | "waterResistanceM" | "movementType" | "price";
   value: string | number;
   quote: string;
 };

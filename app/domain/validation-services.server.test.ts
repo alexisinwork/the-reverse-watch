@@ -36,6 +36,11 @@ const identity = {
       value: 41.5,
       quote: "2201.50.00 case diameter 41.5 mm",
     },
+    {
+      field: "price",
+      value: "USD 3500",
+      quote: "2201.50.00 market price USD 3,500",
+    },
   ],
 };
 
@@ -122,7 +127,7 @@ describe("validation services integration", () => {
       }
       order.push("source");
       return new Response(
-        "Omega 2201.50.00 Daniel Craig Quantum of Solace. 2201.50.00 case diameter 41.5 mm",
+        "Omega 2201.50.00 Daniel Craig Quantum of Solace. 2201.50.00 case diameter 41.5 mm. 2201.50.00 market price USD 3,500",
         {
           headers: { "content-type": "text/plain" },
         },
@@ -158,7 +163,7 @@ describe("validation services integration", () => {
           referenceCode: "2201.50.00",
           sourceUrl: "https://p.example/watch",
           imageUrl: null,
-          priceNote: null,
+          priceNote: "USD 3500",
           rationale:
             "Reference and available attribution checked against cited sources.",
           details: {
@@ -187,7 +192,14 @@ describe("validation services integration", () => {
     expect(order.filter((entry) => entry === "perplexity")).toHaveLength(1);
     expect(order.filter((entry) => entry === "muse")).toHaveLength(1);
     if (result.status !== "verified") throw new Error("expected verified");
-    expect(result.watches[0]!.details).not.toHaveProperty("price");
+    expect(result.watches[0]!.details.price).toEqual({
+      amount: 3500,
+      currency: "USD",
+    });
+    expect(result.watches[0]!.details.priceConfirmed).toBe(false);
+    expect(result.watches[0]!.details.priceObservation?.sources).toHaveLength(
+      2,
+    );
     expect(result.watches[0]!.details.validationFacts).toMatchObject([
       {
         field: "caseDiameterMm",

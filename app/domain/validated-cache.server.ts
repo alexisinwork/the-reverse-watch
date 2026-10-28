@@ -1,6 +1,11 @@
 import { z } from "zod";
 import type { FoundWatch } from "./ai-watch-types";
 import { safeHttpUrl } from "./source-pages.server";
+import {
+  parseObservedPrice,
+  quoteSupportsObservedPrice,
+} from "./validated-price";
+import { pageMentionsReference } from "./ai-watch-guardrails";
 import { validationCharges } from "./validation-budget.server";
 import {
   clearCatalogueCache,
@@ -30,6 +35,20 @@ const factSchema = z.object({
     )
     .length(2),
 });
+const priceObservationSchema = z.object({
+  value: z.string().max(100),
+  sources: z
+    .array(
+      z.object({
+        provider: z.enum(["perplexity", "muse"]),
+        sourceUrl: z.string().url(),
+        quote: z.string().min(1).max(280),
+        checkedAt: z.string().datetime({ offset: true }),
+        value: z.string().max(100),
+      }),
+    )
+    .length(2),
+});
 const watchSchema = z
   .object({
     brand: z.string().min(1),
@@ -43,10 +62,54 @@ const watchSchema = z
       .object({
         validationEvidence: z.array(evidenceSchema).length(2),
         validationFacts: z.array(factSchema).max(3).optional(),
+        priceObservation: priceObservationSchema.optional(),
+        price: z
+          .object({ amount: z.number().positive(), currency: z.string() })
+          .nullable()
+          .optional(),
+        priceConfirmed: z.boolean().optional(),
       })
       .passthrough(),
   })
   .superRefine((watch, context) => {
+    const observation = watch.details.priceObservation;
+    if (observation) {
+      const price = parseObservedPrice(observation.value);
+      const prices = observation.sources.map((source) =>
+        parseObservedPrice(source.value),
+      );
+      const providers = new Set(
+        observation.sources.map((source) => source.provider),
+      );
+      const sourcesMatch = observation.sources.every(
+        (source) =>
+          safeHttpUrl(source.sourceUrl) &&
+          quoteSupportsObservedPrice(source.value, source.quote) &&
+          pageMentionsReference(watch.referenceCode, source.quote, "") &&
+          watch.details.validationEvidence.some(
+            (evidence) =>
+              evidence.provider === source.provider &&
+              evidence.sourceUrl === source.sourceUrl,
+          ),
+      );
+      if (
+        !price ||
+        providers.size !== 2 ||
+        !sourcesMatch ||
+        observation.sources.find((source) => source.provider === "perplexity")
+          ?.value !== observation.value ||
+        prices.some((other) => !other) ||
+        watch.details.price?.amount !== price.amount ||
+        watch.details.price?.currency !== price.currency ||
+        watch.details.priceConfirmed !== false
+      ) {
+        context.addIssue({
+          code: "custom",
+          path: ["details", "priceObservation"],
+          message: "Invalid approximate price evidence",
+        });
+      }
+    }
     const seen = new Set<string>();
     for (const [index, fact] of (
       watch.details.validationFacts ?? []
@@ -149,7 +212,7 @@ export async function publishValidatedSnapshot(
   const parsed = z.array(watchSchema).min(1).max(8).parse(watches);
   const summary = `${parsed.length} ${parsed.length === 1 ? "watch" : "watches"} with checked sources.`;
   const published = z.boolean().parse(
-    await rpc(client, "ai_watch_validated_cache_publish_v4", {
+    await rpc(client, "ai_watch_validated_cache_publish_v5", {
       p_attempt_id: attemptId,
       p_summary: summary,
       p_watches: parsed,

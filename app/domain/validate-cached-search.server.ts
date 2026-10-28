@@ -11,7 +11,9 @@ export type ValidationBrief = {
   referenceCode: string | null;
   person: string | null;
   work: string | null;
-  missingFields?: ("caseDiameterMm" | "waterResistanceM" | "movementType")[];
+  missingFields?: (
+    "caseDiameterMm" | "waterResistanceM" | "movementType" | "price"
+  )[];
 };
 
 type Reserve =
@@ -84,6 +86,7 @@ export async function validateCachedSearch(
             ? ["waterResistanceM" as const]
             : []),
           ...(watch.details.movement == null ? ["movementType" as const] : []),
+          ...(watch.details.price == null ? ["price" as const] : []),
         ],
       };
       const [primary, secondary] = await Promise.allSettled([
