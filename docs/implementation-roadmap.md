@@ -1995,3 +1995,14 @@ now uses four bounded concurrent reads and shares in-flight loads. Browser
 testing caught and fixed blocking archetype rendering and successful void
 analytics RPC responses. Complete rollout evidence remains in the business
 plan; historical incomplete caches are not retrospectively marked valid.
+
+Final follow-up: uncached quiz requests now reserve before one Perplexity
+discovery and independent Muse checks. Only canonical styles and numeric
+constraints leave the server; current master facts must still pass every quiz
+filter. Alternative summaries count the checked subset and preserve the current
+deterministic explanation. Additive 0106–0107 retain complete admin visibility
+while replacing wide archive sorts/counts with indexed reads. Rollback/applied
+tests compare counts, pages, reference search and privileges. Final fast gate:
+669 tests; browser checks: 12 desktop/mobile and seven local partner/real
+WordPress scenarios. Production smoke confirms a committed cache is reused
+without new reservations or charges; this does not certify other draft caches.

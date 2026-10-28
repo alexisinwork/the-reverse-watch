@@ -1,4 +1,11 @@
 import { z } from "zod";
+import {
+  profileV4Schema,
+  diameterRangeFor,
+  findPriceRange,
+  type ProfileV4,
+} from "./questionnaire-v4";
+import { stylesForScenarios } from "./watch-catalogue";
 
 import type { ValidationBrief } from "./validate-cached-search.server";
 
@@ -210,6 +217,40 @@ export function buildFilmDiscoveryRequest(
           },
         },
       },
+    },
+  };
+}
+
+/** Reduce a quiz to numeric constraints and canonical domain vocabulary.
+ * Raw scenario names, the exact wrist measurement and optional free strings
+ * never enter an external request. Remaining hard rules are enforced locally. */
+export function buildQuizDiscoveryRequest(input: ProfileV4, museModel: string) {
+  const profile = profileV4Schema.parse(input);
+  const constraints = {
+    price: {
+      ...findPriceRange(profile.priceRange)!,
+      currency: profile.budgetCurrency,
+    },
+    diameter: diameterRangeFor(profile),
+    styles: stylesForScenarios(profile.wearingScenarios),
+    minimumWaterResistanceM: profile.minimumWaterResistanceM,
+    movements: profile.movementTypes,
+  };
+  const base = buildFilmDiscoveryRequest(
+    { query: "Watch references", kind: "movie" },
+    museModel,
+  );
+  return {
+    ...base,
+    body: {
+      ...base.body,
+      input: `Wristwatches ${constraints.styles.join(" ")} ${constraints.price.currency} ${constraints.price.minimum} ${constraints.price.maximum ?? "or more"} ${constraints.diameter.minimumMm}-${constraints.diameter.maximumMm} mm ${constraints.movements.join(" ")}`,
+      instructions: [
+        "Find up to eight exact wristwatch references meeting these constraints. Use exactly one web search query. Prefer manufacturer or established watch catalogue pages with the exact reference and specifications.",
+        JSON.stringify(constraints),
+        "Use the sightings schema for product identities: person and work must both be null. Return the brand, exact manufacturer reference, actual cited sourceUrl and a short verbatim sourceQuote. Set supported false when the reference is not documented.",
+        "Include caseDiameterMm, waterResistanceM, movementType and approximate price facts only when a cited page explicitly gives the exact reference and fact together. Give a short verbatim quote and that fact's actual cited sourceUrl. Use a string like USD 3500 for price. Never invent missing values. Do not infer style or any other missing fact.",
+      ].join(" "),
     },
   };
 }

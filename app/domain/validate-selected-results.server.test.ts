@@ -18,6 +18,36 @@ const card = (referenceCode: string): FoundWatch => ({
 });
 
 describe("checked catalogue selections", () => {
+  it("uses the current deterministic explanation with the checked facts", async () => {
+    mocks.search.mockResolvedValue({
+      status: "found",
+      watches: [
+        {
+          ...card("REF123"),
+          rationale: "Old AI explanation",
+          details: { caseDiameterMm: 40 },
+        },
+      ],
+      summary: "Checked",
+      fromCache: true,
+    });
+    expect(
+      await validateSelectedResults("alternatives", { budget: 1000 }, [
+        {
+          ...card("REF123"),
+          rationale: "Shares: dive bezel. Differs: quartz.",
+        },
+      ]),
+    ).toMatchObject({
+      status: "found",
+      watches: [
+        {
+          rationale: "Shares: dive bezel. Differs: quartz.",
+          details: { caseDiameterMm: 40 },
+        },
+      ],
+    });
+  });
   it("does not reuse a cached card excluded by the current selection", async () => {
     mocks.search.mockResolvedValue({
       status: "found",

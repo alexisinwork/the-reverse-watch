@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   buildFilmDiscoveryRequest,
+  buildQuizDiscoveryRequest,
   buildValidationRequests,
 } from "./validation-provider-request.server";
 
@@ -13,6 +14,33 @@ const brief = {
 };
 
 describe("bounded validation requests", () => {
+  it("sends only numeric and canonical quiz constraints to discovery", () => {
+    const request = buildQuizDiscoveryRequest(
+      {
+        version: 4,
+        budgetCurrency: "USD",
+        priceRange: "3000_4000",
+        wristCm: 17.5,
+        wearingScenarios: ["office", "visitor@example.com"],
+        minimumWaterResistanceM: 100,
+        movementTypes: ["automatic"],
+        requiredComplications: ["private free text"],
+        allergyConstraint: "none",
+      },
+      "muse-spark-1.3-contributor",
+    );
+    expect(request.body).toMatchObject({
+      max_steps: 1,
+      max_tool_calls: 1,
+      store: false,
+    });
+    const serialized = JSON.stringify(request.body);
+    expect(serialized).toContain("38-42 mm");
+    expect(serialized).not.toContain("visitor@example.com");
+    expect(serialized).not.toContain("17.5");
+    expect(serialized).not.toContain("private free text");
+    expect(serialized).toContain("person and work must both be null");
+  });
   it("bounds discovery to one search and refuses identifying contact data", () => {
     const result = buildFilmDiscoveryRequest(
       { query: "daniel craig", kind: "actor" },

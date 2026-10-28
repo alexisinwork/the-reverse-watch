@@ -34,8 +34,13 @@ export async function validateSelectedResults(
     meteredSearchOptions({ report }),
   );
   if (view.status !== "found") return view;
-  const allowed = new Set(candidates.map(identity));
-  const watches = view.watches.filter((watch) => allowed.has(identity(watch)));
+  const allowed = new Map(candidates.map((watch) => [identity(watch), watch]));
+  const watches = view.watches.flatMap((watch) => {
+    const selected = allowed.get(identity(watch));
+    // This explanation was computed from the current local ranking, so it can
+    // accompany the checked identity without retaining an old AI explanation.
+    return selected ? [{ ...watch, rationale: selected.rationale }] : [];
+  });
   return watches.length
     ? { ...view, watches }
     : {

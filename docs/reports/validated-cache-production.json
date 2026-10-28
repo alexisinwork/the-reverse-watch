@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-28T19:53:48.678Z",
+  "checks": [
+    {
+      "path": "/health",
+      "status": 200
+    },
+    {
+      "path": "/watches/find?type=actor&q=Daniel%20Craig",
+      "status": 200,
+      "referencePresent": true
+    },
+    {
+      "path": "/watches/find?type=actor&q=Daniel%20Craig",
+      "status": 200,
+      "referencePresent": true
+    },
+    {
+      "path": "/watches/archetype?socialSignal=discreet_competence&aestheticDna=structural_tool&deploymentEnvironment=field_water_abuse&priceComfort=first_good_watch&scoringVersion=2.0.0",
+      "status": 200,
+      "referencePresent": true
+    },
+    {
+      "path": "/api/v1/find (registered test partner)",
+      "status": 200,
+      "referencePresent": true
+    },
+    {
+      "path": "/api/v1/find (unregistered origin)",
+      "status": 403
+    },
+    {
+      "path": "/api/v1/alternatives",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/quiz",
+      "status": 200
+    }
+  ],
+  "budgetBefore": {
+    "month": "2026-10-01",
+    "spentUsd": 0.2306,
+    "reservedUsd": 0,
+    "limitUsd": 100,
+    "remainingUsd": 99.7694,
+    "halted": false,
+    "attempts": 15,
+    "inProgress": 0,
+    "validated": 5,
+    "failed": 10
+  },
+  "budgetAfter": {
+    "month": "2026-10-01",
+    "spentUsd": 0.2306,
+    "reservedUsd": 0,
+    "limitUsd": 100,
+    "remainingUsd": 99.7694,
+    "halted": false,
+    "attempts": 15,
+    "inProgress": 0,
+    "validated": 5,
+    "failed": 10
+  },
+  "repeatAddedCharge": 0
+}

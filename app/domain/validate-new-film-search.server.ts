@@ -38,6 +38,26 @@ export async function validateNewFilmSearch(
 ): Promise<ValidationRun> {
   if (!filmDiscoverySubjectSchema.safeParse(subject).success)
     return { status: "unavailable", reason: "invalid subject" };
+  const isWork = subject.kind === "movie" || subject.kind === "series";
+  return validateDiscoveredSearch(cacheKey, {
+    ...services,
+    discover: () => services.discoverFilm(subject),
+    accepts: (evidence) =>
+      fold(isWork ? evidence.work : evidence.person) === fold(subject.query),
+    attribution: isWork ? { work: subject.query } : { person: subject.query },
+  });
+}
+
+/** Shared reservation, independent checking and atomic publication for a new
+ * search. The caller binds only typed search constraints, never visitor data. */
+export async function validateDiscoveredSearch(
+  cacheKey: string,
+  services: ValidationServices & {
+    discover: () => Promise<FilmDiscovery>;
+    accepts: (evidence: ValidationEvidence) => boolean;
+    attribution?: { person?: string; work?: string };
+  },
+): Promise<ValidationRun> {
   const reservation = await services.reserve(cacheKey, count);
   if (reservation.state !== "reserved")
     return { status: "unavailable", reason: reservation.state };
@@ -59,7 +79,7 @@ export async function validateNewFilmSearch(
   };
   let discovery: FilmDiscovery;
   try {
-    discovery = await services.discoverFilm(subject);
+    discovery = await services.discover();
   } catch (error) {
     costs[0] =
       error instanceof ProviderCostError &&
@@ -77,7 +97,6 @@ export async function validateNewFilmSearch(
   costs[0] = discovery.costUsd;
   if (discovery.costUsd >= limit)
     return finishFailure("discovery exhausted card budget");
-  const isWork = subject.kind === "movie" || subject.kind === "series";
   const seen = new Set<string>();
   const candidates = discovery.evidence.slice(0, count).flatMap((evidence) => {
     const reference = normalizeReference(evidence.referenceCode);
@@ -91,7 +110,7 @@ export async function validateNewFilmSearch(
         reference,
       ) ||
       !fold(evidence.brand) ||
-      fold(isWork ? evidence.work : evidence.person) !== fold(subject.query) ||
+      !services.accepts(evidence) ||
       seen.has(key)
     )
       return [];
@@ -105,8 +124,8 @@ export async function validateNewFilmSearch(
       priceNote: null,
       rationale: "",
       details: {
-        person: isWork ? null : subject.query,
-        work: isWork ? subject.query : null,
+        person: services.attribution?.person ?? null,
+        work: services.attribution?.work ?? null,
       },
     };
     return [{ watch, evidence }];

@@ -227,6 +227,46 @@ describe("searchQuiz", () => {
     });
   });
 
+  it("filters with the newly saved master facts after first-use validation", async () => {
+    const rows = [
+      row(1, {
+        priceAmount: null,
+        priceCurrency: null,
+        priceStatus: "unconfirmed",
+      }),
+    ];
+    const store = client(rows);
+    const result = await searchQuiz(profile, {
+      client: store.value,
+      loadFx: async () => fx,
+      runLive: async () => {
+        rows.splice(0, 1, row(1));
+        clearCatalogueCache();
+        return {
+          ...liveResult,
+          status: "found",
+          watches: [
+            {
+              ...liveResult.watches[0]!,
+              brand: "Brand1",
+              model: "Model 1",
+              referenceCode: "REF1",
+            },
+          ],
+        };
+      },
+    });
+    expect(result).toMatchObject({
+      status: "found",
+      watches: [
+        {
+          referenceCode: "REF1",
+          details: { price: { amount: 3500, currency: "USD" } },
+        },
+      ],
+    });
+  });
+
   it("always searches live above 10k", async () => {
     const store = client([
       row(1, { priceAmount: 12_000 }),

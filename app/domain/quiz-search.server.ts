@@ -4,7 +4,7 @@
  * confirmed fits, the stored or live search can supplement them only after
  * the current catalogue facts satisfy the same constraints.
  */
-import { quizCacheInput, searchQuizWatches } from "./quiz-live-search.server";
+import { quizCacheInput } from "./quiz-live-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import { searchWithStore } from "./ai-watch-store.server";
 import { meteredSearchOptions } from "./validation-runtime.server";
@@ -90,14 +90,8 @@ async function searchQuizBeforeDeduplication(
         {
           kind: "quiz",
           cacheInput: quizCacheInput(profile),
-          // Candidate previews have not passed the catalogue constraints yet.
-          run: () =>
-            searchQuizWatches(
-              profile,
-              report ? { report: (event) => report({ text: event.text }) } : {},
-            ),
         },
-        meteredSearchOptions({ client, report }),
+        meteredSearchOptions({ client, report, quizProfile: profile }),
       ),
   }: {
     client?: CatalogueClient | null;
@@ -184,6 +178,16 @@ async function searchQuizBeforeDeduplication(
         : "No catalogue watch fits every answer yet; checking saved research…",
   });
   const fetched = await runLive();
+  // Atomic publication can fill facts in master. Re-read before applying the
+  // hard filters, including on valid-cache hits, so newly saved data participates.
+  if (fetched.status === "found" && client) {
+    try {
+      catalogue = await loadCatalogueCached(client);
+    } catch (error) {
+      logError("catalogue_refresh_error", error);
+      return { status: "unavailable" };
+    }
+  }
   const screened =
     fetched.status === "found"
       ? qualifyingLiveWatches(fetched.watches, catalogue, profile, fx)

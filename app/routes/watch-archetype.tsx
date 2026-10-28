@@ -47,7 +47,7 @@ export async function loader({ request, context }: Route.LoaderArgs) {
     }
   }
 
-  // Ten catalogue watches for this archetype, in the price band it chose.
+  // Deterministic picks in this price band, with first-use source validation.
   const watchResult =
     result.status === "complete"
       ? archetypeCatalogueResult(

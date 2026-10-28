@@ -2,8 +2,10 @@ import type { Deps } from "./ai-providers.server";
 import type { ValidationBrief } from "./validate-cached-search.server";
 import {
   buildFilmDiscoveryRequest,
+  buildQuizDiscoveryRequest,
   buildValidationRequests,
 } from "./validation-provider-request.server";
+import type { ProfileV4 } from "./questionnaire-v4";
 import {
   parseMuseValidationResponse,
   parsePerplexityAgentValidationResponse,
@@ -50,6 +52,11 @@ export function validationProviderCalls(deps: Deps) {
     }
   };
   return {
+    discoverQuiz: (profile: ProfileV4) =>
+      callPerplexity(
+        buildQuizDiscoveryRequest(profile, museModel),
+        parsePerplexityFilmDiscoveryResponse,
+      ),
     discoverFilm: (subject: { query: string; kind: string }) =>
       callPerplexity(
         buildFilmDiscoveryRequest(subject, museModel),

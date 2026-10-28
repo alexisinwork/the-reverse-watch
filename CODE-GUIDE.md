@@ -37,7 +37,7 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 | `/quiz`                                                                   | `routes/quiz.tsx`                                                                                                    | The six-question diagnostic and the shortlist.                                                                                                                                                             |
 | `/watches/find`                                                           | `routes/watch-find.tsx`                                                                                              | Search box for watches in films, series and on people.                                                                                                                                                     |
 | `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx`                                        | Published, reviewed film and celebrity watch stories.                                                                                                                                                      |
-| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The archetype mini-quiz, then 10 watches for that archetype and price idea from `app/data/archetype-picks.json` (built by `scripts/build-archetype-picks.ts`; no AI call when a visitor uses it).          |
+| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The archetype mini-quiz and catalogue/editorial picks; the first request validates up to eight references, then reuses the checked snapshot.                                                               |
 | `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes.                                                                                                                                 |
 | `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily Vercel cron (see `vercel.json`): rechecks prices older than 90 days.                                                                                                                                 |
 | `/admin/evaluation`                                                       | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary, behind the admin login (`/evaluation` redirects).                                                                                                                                |
@@ -155,6 +155,9 @@ a fake fetch, so no test ever calls a real provider.
    (`validation-runtime.server.ts`) checks their first request with both providers,
    opens the source pages and atomically publishes only accepted cards. Film
    cache misses use one Perplexity discovery call and a Muse check per card.
+   New quiz briefs use the same reservation and discovery coordinator, then
+   reapply every hard filter to freshly saved master facts. Only canonical
+   styles, numeric limits and movement types enter quiz discovery requests.
    Archetype and alternative selections use the same first-use contract.
    `/admin/catalogue` shows application verification spending and reservations.
    `scripts/prewarm-film-searches.ts` and `scripts/prewarm-imdb.ts` fill
@@ -166,13 +169,16 @@ a fake fetch, so no test ever calls a real provider.
    with the other provider (Perplexity ↔ Muse) when the chosen one fails or
    times out (`fallbackSearchDeps` in `ai-providers.server.ts`). Price and
    market-price checks already use both.
-4. **Time limits.** Each film-search step stops at 18 s, and every search
-   at 35 s (`runSafely`), so a stuck provider never hangs the page.
+4. **Time limits.** Metered provider calls each stop at 35 seconds; source
+   fetches are separately bounded. The page streams while checking and stops
+   rendering after 115 seconds. The older `runSafely` deadlines apply only to
+   the legacy research functions, not the first-use validation coordinator.
 5. **Both providers down.** The quiz shows the closest catalogue watches in
    the visitor's price range, saying plainly that not every answer is met
    (`closestCatalogue` in `watch-catalogue.ts`). A new film search shows
-   "unavailable, try again" with links to the archive and archetype quiz,
-   which never need AI. A failed lookup is never reported as "no watches".
+   "unavailable, try again". The archive and archetype questionnaire remain
+   available; archetype watch picks require a valid snapshot or a successful
+   first-use check. A failed lookup is never reported as "no watches".
 
 ## Partner widgets
 

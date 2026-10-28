@@ -3,6 +3,7 @@ import { writeFile } from "node:fs/promises";
 import { adminLogin } from "../app/domain/admin-auth.server";
 import { catalogueClient, rpc } from "../app/domain/watch-catalogue.server";
 import { z } from "zod";
+import { validationBudgetStatus } from "../app/domain/validation-budget.server";
 const client = catalogueClient();
 if (!client) throw new Error("Catalogue read configuration required");
 const live = z
@@ -30,6 +31,8 @@ const evidence = {
   expectedTotal: live.counts.all,
   recommendationPoolLabel: text.includes("Recommendation pool:"),
   unpricedLabel: text.includes("awaiting a verified price"),
+  validationBudgetPanel: text.includes("Search validation budget"),
+  validationBudget: await validationBudgetStatus(client),
 };
 await writeFile(
   "docs/reports/admin-catalogue-production.json",
@@ -39,6 +42,7 @@ console.log(JSON.stringify(evidence, null, 2));
 if (
   response.status !== 200 ||
   !evidence.entireCatalogue ||
-  !evidence.masterTotal
+  !evidence.masterTotal ||
+  !evidence.validationBudgetPanel
 )
   throw new Error("Production master catalogue smoke did not pass");

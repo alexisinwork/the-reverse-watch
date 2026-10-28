@@ -286,7 +286,7 @@ export async function startAlternativesSearch(
           checked.status === "found"
             ? {
                 ...checked,
-                summary: built.result.summary,
+                summary: `${checked.watches.length} ${checked.watches.length === 1 ? "watch" : "watches"} like the ${outcome.status === "found" ? `${outcome.target.brand} ${outcome.target.model}` : form.name} ${budgetLabel(budget)}, most alike first. Each shown reference passed the source checks.`,
                 origin: built.result.origin,
               }
             : checked,

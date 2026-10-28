@@ -8,6 +8,7 @@ import type {
 import { ProviderCostError } from "./validation-provider-response.server";
 import {
   validateNewFilmSearch,
+  validateDiscoveredSearch,
   type FilmDiscoverySubject,
 } from "./validate-new-film-search.server";
 
@@ -78,6 +79,34 @@ function fixture() {
 }
 
 describe("new film discovery", () => {
+  it("uses the same budget and source path for a product search without a sighting", async () => {
+    const { services } = fixture();
+    const product = { ...primary, person: null, work: null };
+    const discover = vi.fn(async () => ({
+      evidence: [product],
+      costUsd: 0.004,
+    }));
+    services.secondary.mockResolvedValueOnce({
+      evidence: { ...secondary, person: null, work: null },
+      costUsd: 0.003,
+    });
+    const result = await validateDiscoveredSearch("a".repeat(64), {
+      ...services,
+      discover,
+      accepts: (evidence) => !evidence.person && !evidence.work,
+    });
+    expect(result.status).toBe("verified");
+    expect(services.reserve).toHaveBeenCalledWith("a".repeat(64), 8);
+    expect(services.secondary).toHaveBeenCalledWith(
+      expect.objectContaining({ person: null, work: null }),
+    );
+    expect(services.publish).toHaveBeenCalledWith(
+      "attempt",
+      expect.any(Array),
+      [0.007, 0, 0, 0, 0, 0, 0, 0],
+    );
+    expect(services.primary).not.toHaveBeenCalled();
+  });
   it("rejects contact data before reserving or calling a provider", async () => {
     const { services } = fixture();
     expect(

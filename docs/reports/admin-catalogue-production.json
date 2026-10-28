@@ -1,9 +1,22 @@
 {
-  "at": "2026-10-25T18:25:57.566Z",
+  "at": "2026-10-28T19:46:46.514Z",
   "status": 200,
   "entireCatalogue": true,
   "masterTotal": true,
-  "expectedTotal": 55029,
+  "expectedTotal": 56719,
   "recommendationPoolLabel": true,
-  "unpricedLabel": true
+  "unpricedLabel": true,
+  "validationBudgetPanel": true,
+  "validationBudget": {
+    "month": "2026-10-01",
+    "spentUsd": 0.2095,
+    "reservedUsd": 0,
+    "limitUsd": 100,
+    "remainingUsd": 99.7905,
+    "halted": false,
+    "attempts": 14,
+    "inProgress": 0,
+    "validated": 5,
+    "failed": 9
+  }
 }

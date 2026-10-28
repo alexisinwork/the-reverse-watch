@@ -166,6 +166,9 @@ Runtime checkpoint, 2026-10-28: the earlier statements below that all visitor
 validation is paused are superseded in the current source. Film/people search
 now calls the metered validator, including uncached discovery; quiz saved
 answers, archetype selections and alternative selections share that path.
+New quiz cache misses now use the same reserved discovery coordinator; hard
+filters are reapplied after reading back master facts. A live miss with no
+documented reference correctly stopped after one charged discovery call.
 Real calls exposed and corrected Muse commentary parsing, opt-in raw citations
 and model-rewritten URLs. The server still opens actual tool-result pages and
 requires independent exact-reference evidence. One live reference and the
@@ -184,15 +187,32 @@ are separate. The old unmetered worker routes remain paused. Latest engineering
 action: complete the deployment gate and verify these shared routes on the
 deployed runtime, including cache reuse and budget visibility.
 
-Release gate for this checkpoint: 665 unit tests and the full fast gate passed;
-12 desktop/mobile browser scenarios passed; all six local partner-browser
-scenarios passed against the real sibling portfolio and Reserve servers.
-The optional WordPress runtime test was skipped because port 9400 was not
-running. No hosted Shopify/WordPress marketplace test is implied. Live
+Release gate for this checkpoint: 669 unit tests and the full fast gate passed;
+12 desktop/mobile browser scenarios passed; all seven local integration
+scenarios passed against the real sibling portfolio, Reserve and a freshly
+started PHP/WordPress Playground runtime, including its actual shortcode.
+No hosted Shopify/WordPress marketplace test is implied. Live
 alternative submission also rendered checked cards inside the widget with only
 the Powered by link. Catalogue reads use the new index (same ordered rows,
 index plan verified) and four bounded network reads; successful void analytics
 responses no longer produce false write errors.
+
+Production checkpoint: `e637c6c` deployed READY as
+`dpl_6oz6Wkzh4JHSWPvYL62z8dkL4QaL` on thereserve.watch. Health, authenticated
+catalogue admin and repeated Daniel Craig requests returned HTTP 200; two
+repeat page requests added zero budget charge and zero attempts. The production
+admin exposed all 56,719 master records and the verification budget panel.
+An intermittent admin timeout required additive migrations 0106–0107: complete
+archive ordering plus narrow indexed counts, preserving first/second/filtered
+and reference-search pages and service-role-only access in rollback/applied
+tests. The application verification ledger read $0.2095 spent, $0 reserved,
+5 valid and 9 failed attempts; this excludes historical bulk/research billing.
+Evidence: `docs/reports/admin-catalogue-production.json` and
+`docs/reports/validated-cache-production.json`. Next: deploy the final quiz and
+summary follow-up and repeat production/API checks. Unknown-target alternative
+discovery, pre-owned refresh and old bulk workers remain paused; catalogue
+alternatives are available. Historical draft caches intentionally remain
+unverified until a visitor requests each one.
 
 Deferred tooling idea, owner decision 2026-10-25: remember Replica Skill as a
 possible future workflow reference, but do not install, adapt or implement it

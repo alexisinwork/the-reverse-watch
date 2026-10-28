@@ -221,6 +221,7 @@ export async function searchWithStore(
     fetchImpl = fetch,
     validateDraft,
     validateMissingFilm,
+    validateMissing,
     waitForValidation = () =>
       new Promise<void>((resolve) => setTimeout(resolve, 1_000)),
     now = Date.now,
@@ -236,6 +237,8 @@ export async function searchWithStore(
       cacheKey: string,
       subject: z.infer<typeof filmSubjectSchema>,
     ) => Promise<ValidationRun>;
+    /** Typed non-film discovery closure; owns the same durable reservation. */
+    validateMissing?: (cacheKey: string) => Promise<ValidationRun>;
     /** A bounded delay used only while another request owns this key. */
     waitForValidation?: () => Promise<void>;
     now?: () => number;
@@ -276,9 +279,11 @@ export async function searchWithStore(
         } else {
           const subject =
             kind === "film" ? filmSubjectSchema.safeParse(cacheInput) : null;
-          if (!validateMissingFilm || !subject?.success)
-            return { status: "unavailable" };
-          result = await validateMissingFilm(cacheKey, subject.data);
+          if (validateMissingFilm && subject?.success)
+            result = await validateMissingFilm(cacheKey, subject.data);
+          else if (kind !== "film" && validateMissing)
+            result = await validateMissing(cacheKey);
+          else return { status: "unavailable" };
         }
         if (
           result.status === "unavailable" &&

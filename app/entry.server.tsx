@@ -16,9 +16,9 @@ import { renderToPipeableStream } from "react-dom/server";
 import { shouldReportSentryServerError } from "./domain/sentry-error";
 
 // Streamed searches must finish inside this, or the page shows an error.
-// Quiz and film searches resolve within AI_SEARCH_TIMEOUT_MS (35 s); the
-// cheaper-alternative finder's live search within ALTERNATIVES_TIME_BUDGET_MS
-// (90 s). Vercel allows functions up to 300 s.
+// Metered validation bounds each provider call at 35 s and source fetches
+// separately. Keep the overall streamed UI bounded as well; a slow first-use
+// check may settle and finish its snapshot after the page times out.
 export const streamTimeout = 115_000;
 
 const captureSentryError = Sentry.createSentryHandleError({
