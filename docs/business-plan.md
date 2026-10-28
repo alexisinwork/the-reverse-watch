@@ -196,8 +196,8 @@ the Powered by link. Catalogue reads use the new index (same ordered rows,
 index plan verified) and four bounded network reads; successful void analytics
 responses no longer produce false write errors.
 
-Production checkpoint: `4c0f280` deployed READY as
-`dpl_H7EpB9Z2kQ9bH1FBxMNmUxkVsRNc` on thereserve.watch. Health, authenticated
+Production checkpoint: `837f23a` deployed READY as
+`dpl_5VnPXmcDtL5qeDaur7thF34RpGVL` on thereserve.watch. Health, authenticated
 catalogue admin and repeated Daniel Craig requests returned HTTP 200; two
 repeat page requests added zero budget charge and zero attempts. The production
 admin exposed all 56,719 master records and the verification budget panel.
@@ -238,6 +238,10 @@ WordPress browser checks passed again after the read fix. Evidence:
 `docs/reports/production-validation-first-use.json`. Quiz summaries now name
 the source shown on each card; they do not mislabel Dials/Space City catalogue
 evidence as manufacturer-page verification.
+The final production smoke at 20:22 UTC repeated health, actor and archetype
+pages, find/alternatives/quiz APIs and the wrong-origin rejection with zero new
+attempts or charges. Git-triggered production builds are active; the older
+guide's manual-deploy-only statement has been corrected.
 
 Deferred tooling idea, owner decision 2026-10-25: remember Replica Skill as a
 possible future workflow reference, but do not install, adapt or implement it

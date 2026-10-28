@@ -304,8 +304,13 @@ node --env-file=.env --import tsx scripts/catalogue-report.ts
 node --env-file=.env --import tsx scripts/recheck-catalogue-prices.ts --unconfirmed
 node --env-file=.env --import tsx scripts/compare-search-providers.ts
 node --env-file=.env --import tsx scripts/prewarm-imdb.ts --verify
-git push origin main && vercel deploy --prod   # deploys are not triggered by git
+git push origin main    # connected Git integration deploys main automatically
 ```
+
+The Git deployment was observed on 2026-10-28. If it does not start, the manual
+fallback is `vercel deploy --prod --yes --scope team_dKSvpT95iIwAJ5vN7oEsorb7`.
+Inspect the current domain's deployment rather than assuming a prior manual
+deployment ID still owns the production alias.
 
 ## Older code (kept on purpose)
 

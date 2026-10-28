@@ -2025,3 +2025,8 @@ partner/WordPress checks passed after the cold-read fix. The 20-second repeat
 still pays catalogue-read latency; zero provider calls does not imply instant
 delivery. Quiz result wording preserves the distinction between catalogue and
 manufacturer evidence.
+Final wording/source commit `837f23a` is READY as
+`dpl_5VnPXmcDtL5qeDaur7thF34RpGVL`; the complete production smoke repeated
+successfully without extra charges or validation attempts. Main pushes now
+trigger observed Git deployments, so later documentation builds can change the
+active deployment ID without changing the validated application code.
