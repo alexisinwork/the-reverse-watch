@@ -539,6 +539,12 @@ only when a validated snapshot is committed. The snapshot remains the only
 servable result. This covers existing draft rows, not new cache-miss discovery,
 and does not activate provider calls or automatically recover abandoned attempts.
 
+Validation retries: a failed, settled attempt now imposes a five-minute
+per-cache-key cooldown before another paid attempt. A committed snapshot is
+still reused immediately, and the cooldown is checked under the same locks as
+the budget reservation. This prevents rapid repeated failures from draining the
+ledger; abandoned reservations still require a separate recovery mechanism.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

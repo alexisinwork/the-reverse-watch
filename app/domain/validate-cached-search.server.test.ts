@@ -93,6 +93,17 @@ describe("validating a cached result under a reservation", () => {
     expect(deps.secondary).not.toHaveBeenCalled();
   });
 
+  it("does not spend again during a failed-result cooldown", async () => {
+    const deps = services();
+    deps.reserve = vi.fn(async () => ({ state: "retry_later" as const }));
+    expect(await validateCachedSearch("a".repeat(64), [watch], deps)).toEqual({
+      status: "unavailable",
+      reason: "retry_later",
+    });
+    expect(deps.primary).not.toHaveBeenCalled();
+    expect(deps.secondary).not.toHaveBeenCalled();
+  });
+
   it("recovers a missing reference only when both providers agree and inspection passes", async () => {
     const deps = services();
     const unreferenced = { ...watch, referenceCode: null };

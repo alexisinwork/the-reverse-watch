@@ -14,6 +14,7 @@ const reserveSchema = z.discriminatedUnion("state", [
   z.object({ state: z.literal("in_progress") }),
   z.object({ state: z.literal("monthly_limit") }),
   z.object({ state: z.literal("budget_halted") }),
+  z.object({ state: z.literal("retry_later") }),
   z.object({ state: z.literal("valid") }),
 ]);
 
@@ -31,7 +32,7 @@ export async function reserveValidationBudget(
   )
     throw new Error("Invalid watch count");
   return reserveSchema.parse(
-    await rpc(client, "ai_watch_validation_reserve_v3", {
+    await rpc(client, "ai_watch_validation_reserve_v4", {
       p_cache_key: cacheKey,
       p_watch_count: watchCount,
     }),
