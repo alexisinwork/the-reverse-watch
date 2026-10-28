@@ -2006,3 +2006,9 @@ tests compare counts, pages, reference search and privileges. Final fast gate:
 669 tests; browser checks: 12 desktop/mobile and seven local partner/real
 WordPress scenarios. Production smoke confirms a committed cache is reused
 without new reservations or charges; this does not certify other draft caches.
+Final source commit `6f55980` deployed READY as
+`dpl_AbiJRowiSD6WdLDET7bjy3kigvHo`; production health, authenticated catalogue
+admin, film/actor and archetype pages, partner find/quiz/alternatives APIs and
+unregistered-origin rejection passed. Production smoke added zero charge and
+zero validation attempts. The old unmetered background/unknown-target research
+paths remain paused, rather than bypassing the visitor validation budget.

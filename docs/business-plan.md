@@ -183,9 +183,8 @@ remaining $100 monthly allocation and outcome counts in /admin/catalogue,
 service-role only. The reservation ceilings remain $0.025/card and $0.20/result;
 unknown costs consume the full card reserve and observed overruns halt new
 reservations. Provider billing outside this ledger and vendor-side hard caps
-are separate. The old unmetered worker routes remain paused. Latest engineering
-action: complete the deployment gate and verify these shared routes on the
-deployed runtime, including cache reuse and budget visibility.
+are separate. The old unmetered worker routes remain paused. The shared visitor
+runtime passed the deployment gate and production cache/budget/API checks below.
 
 Release gate for this checkpoint: 669 unit tests and the full fast gate passed;
 12 desktop/mobile browser scenarios passed; all seven local integration
@@ -197,20 +196,25 @@ the Powered by link. Catalogue reads use the new index (same ordered rows,
 index plan verified) and four bounded network reads; successful void analytics
 responses no longer produce false write errors.
 
-Production checkpoint: `e637c6c` deployed READY as
-`dpl_6oz6Wkzh4JHSWPvYL62z8dkL4QaL` on thereserve.watch. Health, authenticated
+Production checkpoint: `6f55980` deployed READY as
+`dpl_AbiJRowiSD6WdLDET7bjy3kigvHo` on thereserve.watch. Health, authenticated
 catalogue admin and repeated Daniel Craig requests returned HTTP 200; two
 repeat page requests added zero budget charge and zero attempts. The production
 admin exposed all 56,719 master records and the verification budget panel.
+The production archetype page rendered Hamilton H70455533. The registered
+fixture's find, alternatives and quiz API calls returned nonempty results;
+an unregistered origin received 403. The entire production smoke incurred no
+new verification attempts or charges. Both real local applications and local
+WordPress remain running for owner inspection.
 An intermittent admin timeout required additive migrations 0106–0107: complete
 archive ordering plus narrow indexed counts, preserving first/second/filtered
 and reference-search pages and service-role-only access in rollback/applied
-tests. The application verification ledger read $0.2095 spent, $0 reserved,
-5 valid and 9 failed attempts; this excludes historical bulk/research billing.
+tests. The application verification ledger read $0.2306 spent, $0 reserved,
+5 valid and 10 failed attempts; this excludes historical bulk/research billing.
 Evidence: `docs/reports/admin-catalogue-production.json` and
-`docs/reports/validated-cache-production.json`. Next: deploy the final quiz and
-summary follow-up and repeat production/API checks. Unknown-target alternative
-discovery, pre-owned refresh and old bulk workers remain paused; catalogue
+`docs/reports/validated-cache-production.json`. Remaining engineering scope:
+unknown-target alternative discovery, pre-owned refresh and old bulk workers
+(including the scheduled legacy price refresh) remain paused; catalogue
 alternatives are available. Historical draft caches intentionally remain
 unverified until a visitor requests each one.
 
