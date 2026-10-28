@@ -614,6 +614,12 @@ ambiguous existing references abort publication; non-ASCII ambiguous identities
 stay in intake rather than being guessed. This does not activate provider calls
 or establish the remaining style and specification coverage.
 
+Validation availability feedback: the shared result component now distinguishes
+an active check, a five-minute retry cooldown, a paused budget and unverified
+evidence without exposing provider errors. The reason travels through the
+shared page/widget/API result type; existing disabled-path unavailability stays
+generic. This does not activate paid validation or prove provider limits.
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

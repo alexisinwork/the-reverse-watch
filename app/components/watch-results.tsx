@@ -405,9 +405,19 @@ function ResultBody({
     sendInteraction("service_complete", { control: "results_loaded" });
   }, [result]);
   if (result.status === "unavailable") {
+    const message =
+      result.reason === "retry_later"
+        ? "We could not complete this search. Please try again in five minutes."
+        : result.reason === "in_progress"
+          ? "This search is still being checked. Please try again shortly."
+          : result.reason === "budget"
+            ? "This search is temporarily paused. Please try again later."
+            : result.reason === "verification_failed"
+              ? "We could not verify this result. Please try again later."
+              : "The search is unavailable right now. Please try again in a minute.";
     return (
       <p className="empty-result">
-        The search is unavailable right now. Please try again in a minute.
+        {message}{" "}
         {embed ? null : (
           <>
             Meanwhile,{" "}

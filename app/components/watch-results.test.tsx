@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router";
 
 import type { FoundWatch } from "../domain/ai-watch-types";
 import { WatchResults } from "./watch-results";
@@ -15,6 +16,25 @@ const watch = (index: number, misses?: string[]): FoundWatch => ({
 });
 
 describe("quiz shortlist", () => {
+  it.each([
+    ["retry_later" as const, /try again in five minutes/i],
+    ["in_progress" as const, /still being checked/i],
+    ["budget" as const, /temporarily paused/i],
+    ["verification_failed" as const, /could not verify/i],
+  ])("explains temporary unavailability: %s", (reason, message) => {
+    render(
+      <MemoryRouter>
+        <WatchResults
+          eyebrow="Picks"
+          fx={null}
+          heading="Watches"
+          mode="quiz"
+          result={{ status: "unavailable", reason }}
+        />
+      </MemoryRouter>,
+    );
+    expect(screen.getByText(message)).toBeInTheDocument();
+  });
   it("checks both titles and references before rendering any result section", () => {
     const first = {
       ...watch(1),

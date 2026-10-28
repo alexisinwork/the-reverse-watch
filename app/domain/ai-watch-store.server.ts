@@ -290,10 +290,19 @@ export async function searchWithStore(
                 fromCache: true,
               };
           }
-          return { status: "unavailable" };
+          return { status: "unavailable", reason: "in_progress" };
         }
         if (result.status !== "verified" && result.reason !== "valid")
-          return { status: "unavailable" };
+          return {
+            status: "unavailable",
+            reason:
+              result.reason === "retry_later"
+                ? "retry_later"
+                : result.reason === "monthly_limit" ||
+                    result.reason === "budget_halted"
+                  ? "budget"
+                  : "verification_failed",
+          };
         // The validator publishes atomically. Read the committed snapshot so a
         // lost/failed publication can never be reported as a verified result.
         const published = await loadValidatedSnapshot(

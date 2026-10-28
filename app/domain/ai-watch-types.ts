@@ -85,7 +85,10 @@ export type FoundWatch = {
 export type AiSearchOutcome =
   | { status: "found"; watches: FoundWatch[]; summary: string }
   | { status: "no_match"; summary: string }
-  | { status: "unavailable" };
+  | {
+      status: "unavailable";
+      reason?: "retry_later" | "budget" | "in_progress" | "verification_failed";
+    };
 
 export type AiSearchView =
   | (Extract<AiSearchOutcome, { status: "found" }> & {

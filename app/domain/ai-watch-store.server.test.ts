@@ -311,7 +311,7 @@ describe("searchWithStore", () => {
         waitForValidation: async () => {},
       },
     );
-    expect(result).toEqual({ status: "unavailable" });
+    expect(result).toEqual({ status: "unavailable", reason: "in_progress" });
   });
 
   it("lets simultaneous visitors share the first committed result", async () => {
@@ -377,6 +377,36 @@ describe("searchWithStore", () => {
     });
     expect(validateDraft).toHaveBeenCalledTimes(2);
     expect(finderMock.runAiWatchSearch).not.toHaveBeenCalled();
+  });
+
+  it.each([
+    ["monthly_limit", "budget"],
+    ["budget_halted", "budget"],
+    ["retry_later", "retry_later"],
+    ["no confirmed candidates", "verification_failed"],
+  ])("reports a safe availability reason for %s", async (reason, expected) => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("ai_watch_search_get_v1")
+        ? json({
+            validationStatus: "unverified",
+            summary: "Draft.",
+            watches: [foundWatch],
+          })
+        : json(null),
+    );
+    const result = await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "daniel craig", kind: "actor" },
+        run: finderMock.runAiWatchSearch,
+      },
+      {
+        store,
+        fetchImpl,
+        validateDraft: async () => ({ status: "unavailable", reason }),
+      },
+    );
+    expect(result).toEqual({ status: "unavailable", reason: expected });
   });
 
   it("reloads the snapshot when another request published just before reservation", async () => {
