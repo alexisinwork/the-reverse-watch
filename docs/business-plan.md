@@ -616,6 +616,13 @@ exact reference and supports its value, and that each sighting quotation names
 the watch and requested person or work. This applies when publishing and when
 reading the snapshot; it does not replace checking the live source pages.
 
+Perplexity contract review, 2026-10-28: the official [model list](https://docs.perplexity.ai/docs/agent-api/models)
+lists the pinned Agent model, and the [output contract](https://docs.perplexity.ai/docs/agent-api/output-control)
+allows an omitted optional schema property to be returned as null. The parser
+now accepts null for a fact's optional source URL and still verifies any fact
+against the cited page before use. This is a documentation and mock check, not
+evidence of a paid live response or a provider-side spending limit.
+
 First-use flow rehearsal: a deterministic test now runs a legacy actor cache
 through the actual validator service, both mocked providers, source and product
 page inspection, publication RPC payload and a second snapshot read. It checks

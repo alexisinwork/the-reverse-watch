@@ -44,6 +44,33 @@ const muse = {
 };
 
 describe("provider validation response evidence", () => {
+  it("accepts a null optional fact source from structured output", () => {
+    const body = {
+      ...perplexity,
+      choices: [
+        {
+          message: {
+            content: JSON.stringify({
+              ...claim,
+              facts: [
+                {
+                  field: "caseDiameterMm",
+                  value: 40,
+                  quote: "2201.50.00 case diameter 40 mm",
+                  sourceUrl: null,
+                },
+              ],
+            }),
+          },
+        },
+      ],
+    };
+    expect(
+      parsePerplexityValidationResponse(body).evidence.facts,
+    ).toMatchObject([
+      { field: "caseDiameterMm", value: 40, sourceUrl: undefined },
+    ]);
+  });
   it("keeps only individually cited discoveries from one billed search", () => {
     const response = {
       status: "completed",

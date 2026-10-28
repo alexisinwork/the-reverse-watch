@@ -23,7 +23,12 @@ const claimSchema = z.object({
         ]),
         value: z.union([z.string().max(100), z.number().finite()]),
         quote: z.string().min(1).max(280),
-        sourceUrl: z.string().url().max(2048).optional(),
+        sourceUrl: z
+          .string()
+          .url()
+          .max(2048)
+          .nullish()
+          .transform((value) => value ?? undefined),
       }),
     )
     .max(4)
