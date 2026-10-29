@@ -2126,3 +2126,12 @@ production error-log inspection returned no runtime errors. Spend is $0.7163,
 reserved $0, within the separate $100 application-verification ledger.
 Network diagnostic routing and remaining external readiness boundaries are
 explicit in `docs/analytics-delivery.md` and `docs/production-readiness.md`.
+
+Owner completion-scope update, 2026-10-29: hosted Shopify testing is explicitly
+excluded for now ("shopify ignore"). This is a deferred platform check, not a
+claim of a verified hosted installation or removal of the existing integration.
+The remaining requested operational verification is Supabase managed backups.
+The owner can supply a project-scoped **Backups: Read** Management API token in
+the ignored local `.env`; exact minimum access is recorded in
+`docs/production-readiness.md`. No extra database or restore permission is needed
+to inspect the schedule and available-backup metadata.

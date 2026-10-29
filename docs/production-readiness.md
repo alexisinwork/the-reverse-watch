@@ -122,6 +122,20 @@ recovery protection.
 
 ## Readiness boundaries
 
+Owner scope update, 2026-10-29: ignore hosted Shopify verification for the current
+completion goal. Existing Shopify files remain available; no hosted-store test
+is claimed. The remaining requested operational check is managed Supabase
+backup availability, freshness and retention.
+
+For that read-only check, create a scoped personal access token for this project
+only, start with No access and grant **Backups: Read**. Store it as
+`SUPABASE_ACCESS_TOKEN` in the ignored local `.env`, never in chat or Git.
+This scope permits reading the backup schedule/list without permitting restores
+or schedule changes. Source: [Supabase token permissions](https://supabase.com/docs/guides/platform/personal-access-tokens)
+and [backup API](https://supabase.com/docs/guides/platform/backups), retrieved
+2026-10-29. An application service-role key does not establish Management API
+access. Backup metadata verification does not itself prove a full project restore.
+
 The release supports the demonstrated catalogue, five shared tools, admin,
 native widgets, local real WordPress runtime and origin-checked partner API.
 Historical unverified queries are validated on first use, not pre-certified by
