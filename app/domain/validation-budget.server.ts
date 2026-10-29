@@ -49,7 +49,7 @@ export async function reserveValidationBudget(
   )
     throw new Error("Invalid watch count");
   return reserveSchema.parse(
-    await rpc(client, "ai_watch_validation_reserve_v4", {
+    await rpc(client, "ai_watch_validation_reserve_v5", {
       p_cache_key: cacheKey,
       p_watch_count: watchCount,
     }),

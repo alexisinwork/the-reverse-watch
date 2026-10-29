@@ -2030,3 +2030,18 @@ Final wording/source commit `837f23a` is READY as
 successfully without extra charges or validation attempts. Main pushes now
 trigger observed Git deployments, so later documentation builds can change the
 active deployment ID without changing the validated application code.
+
+Operational readiness follow-up, 2026-10-29: additive 0109 recovers a same-key
+validation abandoned for over 15 minutes, conservatively settling its full
+reserve before allowing a retry; known overruns remain held. Rollback/applied
+tests cover active requests, expiry, late settlement and privileges. Migration
+0110 supplies a read-only readiness contract. Server-only analytics callers and
+0111 close direct public-key access to admin summaries/event writes/research
+enqueue; deploy the callers before applying the revocations. The independent
+operations token is configured in Vercel and GitHub without exposing its value.
+Hourly readiness and per-push code-check workflows are prepared. Full fast gate:
+681 tests and production build passed. Local format-2 backup restoration proved
+54 tables, 178,540 rows and 51 foreign keys without changing production rows.
+Live rollout/monitoring evidence follows deployment; managed backup retention,
+alert inbox delivery and actual hosted Shopify testing are not yet established.
+Operational scope and repeatable commands: `docs/production-readiness.md`.

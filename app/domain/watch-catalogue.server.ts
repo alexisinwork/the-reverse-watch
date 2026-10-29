@@ -21,7 +21,7 @@ function loadStoreConfig(
 
 // New sb_secret_ keys go in apikey only; legacy service-role JWTs also
 // need the Authorization header.
-function rpcHeaders(config: StoreConfig) {
+export function rpcHeaders(config: StoreConfig) {
   return {
     apikey: config.serviceKey,
     ...(config.serviceKey.startsWith("eyJ")

@@ -38,8 +38,8 @@ export async function loader({ request }: Route.LoaderArgs) {
   }
   if (!legacyPaidResearchAllowed())
     return Response.json(
-      { ok: false, reason: "budget_control_unavailable" },
-      { status: 503 },
+      { ok: true, skipped: true, reason: "legacy_paid_research_paused" },
+      { headers: { "Cache-Control": "no-store" } },
     );
   const client = catalogueClient();
   const deps = defaultDeps();

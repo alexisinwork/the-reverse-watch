@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import type { QuizAnalyticsEvent } from "./analytics.server";
+import { rpcHeaders } from "./watch-catalogue.server";
 
 export const FUNNEL_EVENT_RPC = "record_quiz_funnel_event_v1";
 export const FUNNEL_SUMMARY_RPC = "quiz_funnel_summary_v1";
@@ -12,7 +13,7 @@ type FunnelStoreOptions = {
   env?: Partial<
     Pick<
       NodeJS.ProcessEnv,
-      "SUPABASE_URL" | "SUPABASE_PUBLISHABLE_KEY" | "VERCEL_ENV"
+      "SUPABASE_URL" | "SUPABASE_SERVICE_ROLE_KEY" | "VERCEL_ENV"
     >
   >;
   fetchImpl?: typeof fetch;
@@ -43,10 +44,10 @@ function configuration(
   requireProduction: boolean,
 ) {
   const supabaseUrl = env?.SUPABASE_URL?.trim();
-  const publishableKey = env?.SUPABASE_PUBLISHABLE_KEY?.trim();
+  const serviceKey = env?.SUPABASE_SERVICE_ROLE_KEY?.trim();
   if (requireProduction && env?.VERCEL_ENV !== "production") return null;
-  if (!supabaseUrl || !publishableKey) return null;
-  return { supabaseUrl, publishableKey };
+  if (!supabaseUrl || !serviceKey) return null;
+  return { supabaseUrl, serviceKey };
 }
 
 function rpcBody(event: FunnelStoreEvent) {
@@ -84,10 +85,7 @@ export async function persistFunnelEvent(
     new URL(`/rest/v1/rpc/${FUNNEL_EVENT_RPC}`, configured.supabaseUrl),
     {
       method: "POST",
-      headers: {
-        apikey: configured.publishableKey,
-        "content-type": "application/json",
-      },
+      headers: rpcHeaders(configured),
       body: JSON.stringify(rpcBody(event)),
       signal: AbortSignal.timeout(timeoutMs),
     },
@@ -114,10 +112,7 @@ export async function loadFunnelSummary(
     new URL(`/rest/v1/rpc/${FUNNEL_SUMMARY_RPC}`, configured.supabaseUrl),
     {
       method: "POST",
-      headers: {
-        apikey: configured.publishableKey,
-        "content-type": "application/json",
-      },
+      headers: rpcHeaders(configured),
       body: JSON.stringify({ p_since: since, p_until: until }),
       signal: AbortSignal.timeout(timeoutMs),
     },

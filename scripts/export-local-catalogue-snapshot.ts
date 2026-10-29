@@ -1,127 +1,108 @@
-// Export the canonical catalogue and saved result cache to a local, immutable
-// JSONL snapshot. This is a data backup, not a runtime database replacement.
+// Consistent local data backup. Keep this ignored archive private: application
+// tables can contain partner credentials. Supabase auth/storage are excluded.
 import { createHash } from "node:crypto";
 import { createWriteStream } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import { once } from "node:events";
 import postgres from "postgres";
+import type { SnapshotFile } from "./local-snapshot";
 
-const databaseUrl = process.env.DIRECT_DATABASE_URL;
-if (!databaseUrl) throw new Error("DIRECT_DATABASE_URL required");
-const root = "data/watch-archive/local-snapshots";
+if (!process.env.DIRECT_DATABASE_URL)
+  throw new Error("DIRECT_DATABASE_URL required");
 const snapshotId = new Date().toISOString().replace(/[:.]/g, "-");
-const directory = `${root}/${snapshotId}`;
+const directory = `data/watch-archive/local-snapshots/${snapshotId}`;
 await mkdir(directory, { recursive: true });
-
-const sql = postgres(databaseUrl, {
+const sql = postgres(process.env.DIRECT_DATABASE_URL, {
   max: 1,
   ssl: "require",
   connect_timeout: 10,
   onnotice: () => undefined,
 });
-
-type ExportRow = { cursor: string; record: unknown };
-type ExportSummary = {
-  file: string;
-  rows: number;
-  sha256: string;
-};
-
-async function writeRows(
-  name: string,
-  fetchRows: (after: string | null, limit: number) => Promise<ExportRow[]>,
-) {
-  const file = `${directory}/${name}.jsonl`;
-  const output = createWriteStream(file, { flags: "wx", encoding: "utf8" });
-  const hash = createHash("sha256");
-  let after: string | null = null;
-  let rowsWritten = 0;
-  try {
-    while (true) {
-      const rows = await fetchRows(after, 500);
-      if (!rows.length) break;
-      for (const row of rows) {
-        const line = `${JSON.stringify(row.record)}\n`;
-        hash.update(line);
-        if (!output.write(line)) await once(output, "drain");
-        after = row.cursor;
-        rowsWritten++;
-      }
-    }
-    output.end();
-    await once(output, "finish");
-  } catch (error) {
-    output.destroy();
-    throw error;
-  }
-  return {
-    file: `${name}.jsonl`,
-    rows: rowsWritten,
-    sha256: hash.digest("hex"),
-  } satisfies ExportSummary;
-}
-
 try {
-  const files: ExportSummary[] = [];
-  files.push(
-    await writeRows("watch-catalogue", async (after, limit) => {
-      const rows = await sql<ExportRow[]>`
-        select id::text as cursor,to_jsonb(w) as record
-        from private.watch_catalogue w
-        where ${after}::uuid is null or w.id > ${after}::uuid
-        order by w.id limit ${limit}`;
-      return rows;
-    }),
-  );
-
-  files.push(
-    await writeRows("ai-watches", async (after, limit) => {
-      const rows = await sql<ExportRow[]>`
-        select id::text as cursor,to_jsonb(w) as record
-        from private.ai_watches w
-        where ${after}::uuid is null or w.id > ${after}::uuid
-        order by w.id limit ${limit}`;
-      return rows;
-    }),
-  );
-
-  let offset = 0;
-  const cachedResults = await writeRows(
-    "cached-results",
-    async (_after, limit) => {
-      const rows = await sql<{ cursor: string; record: unknown }[]>`
-      select (r.search_id::text || '|' || r.rank::text) as cursor,
-        jsonb_build_object(
-          'search',to_jsonb(s),
-          'rank',r.rank,
-          'watch',to_jsonb(w),
-          'priceNote',r.price_note,
-          'rationale',r.rationale,
-          'details',r.details
-        ) as record
-      from private.ai_watch_search_results r
-      join private.ai_watches w on w.id=r.watch_id
-      join private.ai_watch_searches s on s.id=r.search_id
-      order by r.search_id,r.rank offset ${offset} limit ${limit}`;
-      offset += rows.length;
-      return rows;
-    },
-  );
-  files.push(cachedResults);
-
-  const manifest = {
-    snapshotId,
-    createdAt: new Date().toISOString(),
-    database: "connected catalogue database; credentials are not included",
-    files,
-    note: "JSONL data snapshot for local safekeeping. The application runtime still uses its configured database.",
-  };
-  await writeFile(
-    `${directory}/manifest.json`,
-    `${JSON.stringify(manifest, null, 2)}\n`,
-    { flag: "wx" },
-  );
-  console.log(JSON.stringify(manifest, null, 2));
+  await sql.begin("isolation level repeatable read read only", async (tx) => {
+    await tx`set local timezone='UTC'`;
+    await tx`set local statement_timeout='120s'`;
+    await tx`set local idle_in_transaction_session_timeout='120s'`;
+    const tables = await tx<
+      {
+        schema: "public" | "private";
+        table: string;
+        insert_columns: string[];
+      }[]
+    >`
+      select n.nspname as schema,c.relname as table,
+        array(select a.attname from pg_attribute a where a.attrelid=c.oid and a.attnum>0 and not a.attisdropped and a.attgenerated='' order by a.attnum) as insert_columns
+      from pg_class c join pg_namespace n on n.oid=c.relnamespace
+      where n.nspname in ('public','private') and c.relkind='r'
+        and not exists(select 1 from pg_depend d where d.classid='pg_class'::regclass and d.objid=c.oid and d.deptype='e')
+      order by n.nspname,c.relname`;
+    const migrations = await tx<
+      { name: string }[]
+    >`select name from supabase_migrations.schema_migrations order by version`;
+    const files: SnapshotFile[] = [];
+    for (const table of tables) {
+      const file = `${table.schema}.${table.table}.jsonl`;
+      const output = createWriteStream(`${directory}/${file}`, {
+        flags: "wx",
+        encoding: "utf8",
+      });
+      const hash = createHash("sha256");
+      let rows = 0;
+      try {
+        // Preserve PostgreSQL JSON text: JS numbers can round bigint/numeric.
+        for await (const batch of tx<
+          { record_text: string }[]
+        >`select to_jsonb(t)::text as record_text from ${tx(table.schema)}.${tx(table.table)} t`.cursor(
+          250,
+        )) {
+          for (const row of batch) {
+            const line = `${row.record_text}\n`;
+            hash.update(line);
+            if (!output.write(line)) await once(output, "drain");
+            rows++;
+          }
+        }
+        output.end();
+        await once(output, "finish");
+      } catch (error) {
+        output.destroy();
+        console.error({
+          category: error instanceof Error ? error.name : "unknown",
+          code: error instanceof postgres.PostgresError ? error.code : null,
+        });
+        throw new Error(
+          `Snapshot export failed for ${table.schema}.${table.table}`,
+        );
+      }
+      files.push({
+        schema: table.schema,
+        table: table.table,
+        file,
+        insertColumns: table.insert_columns,
+        rows,
+        sha256: hash.digest("hex"),
+      });
+      console.log(`${file}: ${rows} rows`);
+    }
+    await writeFile(
+      `${directory}/manifest.json`,
+      `${JSON.stringify(
+        {
+          formatVersion: 2,
+          snapshotId,
+          createdAt: new Date().toISOString(),
+          migrations: migrations.map((m) => m.name),
+          files,
+          scope:
+            "Repeatable-read application-owned public/private data. Schema is versioned in db/migrations. Supabase auth/storage and roles are excluded. Keep this ignored archive private.",
+        },
+        null,
+        2,
+      )}\n`,
+      { flag: "wx" },
+    );
+  });
+  console.log(`Consistent snapshot completed: ${directory}`);
 } finally {
   await sql.end();
 }

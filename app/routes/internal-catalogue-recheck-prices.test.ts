@@ -10,10 +10,11 @@ describe("catalogue price refresh budget guard", () => {
         { headers: { Authorization: "Bearer test-secret-123456789" } },
       ),
     } as Parameters<typeof loader>[0]);
-    expect(response.status).toBe(503);
+    expect(response.status).toBe(200);
     await expect(response.json()).resolves.toEqual({
-      ok: false,
-      reason: "budget_control_unavailable",
+      ok: true,
+      skipped: true,
+      reason: "legacy_paid_research_paused",
     });
     expect(fetchSpy).not.toHaveBeenCalled();
   });

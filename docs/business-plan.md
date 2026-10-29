@@ -162,6 +162,15 @@ For retailer feeds, design tenant isolation and freshness before implementation.
 
 ## Current next action and durable handoff
 
+Operational evidence update, 2026-10-29: same-query abandoned-reservation
+recovery, protected dependency monitoring and server-only legacy analytics are
+prepared for rollout, with transactional database permission checks. The fast
+gate passed 681 tests/build. A consistent local backup and temporary restore
+verified all 54 application tables (178,540 rows, 51 foreign keys); this does not
+verify managed Supabase backup retention. Production/CI proof is recorded after
+deployment in `docs/production-readiness.md`. No new customer, hosted Shopify
+installation, alert inbox delivery or data-redistribution permission is implied.
+
 Runtime checkpoint, 2026-10-28: the earlier statements below that all visitor
 validation is paused are superseded in the current source. Film/people search
 now calls the metered validator, including uncached discovery; quiz saved

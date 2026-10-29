@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { rpcHeaders } from "./watch-catalogue.server";
 
 import {
   discoveryAnchorSchema,
@@ -39,14 +40,14 @@ const statusResponseSchema = z
 
 type Options = {
   env?: Partial<
-    Pick<NodeJS.ProcessEnv, "SUPABASE_URL" | "SUPABASE_PUBLISHABLE_KEY">
+    Pick<NodeJS.ProcessEnv, "SUPABASE_URL" | "SUPABASE_SERVICE_ROLE_KEY">
   >;
   fetchImpl?: typeof fetch;
 };
 
 function config(env: Options["env"]) {
   const url = env?.SUPABASE_URL?.trim();
-  const key = env?.SUPABASE_PUBLISHABLE_KEY?.trim();
+  const key = env?.SUPABASE_SERVICE_ROLE_KEY?.trim();
   return url && key ? { url, key } : null;
 }
 
@@ -61,7 +62,10 @@ export async function enqueueDiscoveryResearch(
     new URL(`/rest/v1/rpc/${DISCOVERY_RESEARCH_ENQUEUE_RPC}`, configured.url),
     {
       method: "POST",
-      headers: { apikey: configured.key, "content-type": "application/json" },
+      headers: rpcHeaders({
+        supabaseUrl: configured.url,
+        serviceKey: configured.key,
+      }),
       body: JSON.stringify({
         p_anchor_kind: parsed.anchor,
         p_display_text: parsed.displayText,
@@ -85,7 +89,10 @@ export async function loadDiscoveryResearchStatus(
     new URL(`/rest/v1/rpc/${DISCOVERY_RESEARCH_STATUS_RPC}`, configured.url),
     {
       method: "POST",
-      headers: { apikey: configured.key, "content-type": "application/json" },
+      headers: rpcHeaders({
+        supabaseUrl: configured.url,
+        serviceKey: configured.key,
+      }),
       body: JSON.stringify({ p_token: tokenSchema.parse(token) }),
       signal: AbortSignal.timeout(2_000),
     },

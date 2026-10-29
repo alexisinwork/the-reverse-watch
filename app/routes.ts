@@ -10,6 +10,7 @@ export default [
   route("evaluation", "routes/evaluation-moved.ts"),
   route("admin/evaluation", "routes/evaluation.tsx"),
   route("health", "routes/health.ts"),
+  route("internal/operations/health", "routes/internal-operations-health.ts"),
   route("privacy", "routes/privacy.tsx"),
   route("partners", "routes/partners.tsx"),
   route("watches", "routes/watches.tsx"),

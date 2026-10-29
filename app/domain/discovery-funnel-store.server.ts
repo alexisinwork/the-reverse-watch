@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { rpcHeaders } from "./watch-catalogue.server";
 
 import {
   discoveryAnalyticsEventSchema,
@@ -15,7 +16,7 @@ type StoreOptions = {
   env?: Partial<
     Pick<
       NodeJS.ProcessEnv,
-      "SUPABASE_URL" | "SUPABASE_PUBLISHABLE_KEY" | "VERCEL_ENV"
+      "SUPABASE_URL" | "SUPABASE_SERVICE_ROLE_KEY" | "VERCEL_ENV"
     >
   >;
   fetchImpl?: typeof fetch;
@@ -47,10 +48,10 @@ export type DiscoveryFunnelSummary = z.infer<typeof summarySchema>;
 
 function configuration(env: StoreOptions["env"], requireProduction: boolean) {
   const supabaseUrl = env?.SUPABASE_URL?.trim();
-  const publishableKey = env?.SUPABASE_PUBLISHABLE_KEY?.trim();
+  const serviceKey = env?.SUPABASE_SERVICE_ROLE_KEY?.trim();
   if (requireProduction && env?.VERCEL_ENV !== "production") return null;
-  if (!supabaseUrl || !publishableKey) return null;
-  return { supabaseUrl, publishableKey };
+  if (!supabaseUrl || !serviceKey) return null;
+  return { supabaseUrl, serviceKey };
 }
 
 export async function persistDiscoveryFunnelEvent(
@@ -73,10 +74,7 @@ export async function persistDiscoveryFunnelEvent(
     ),
     {
       method: "POST",
-      headers: {
-        apikey: configured.publishableKey,
-        "content-type": "application/json",
-      },
+      headers: rpcHeaders(configured),
       body: JSON.stringify({
         p_event_name: parsed.name,
         p_surface: "surface" in parsed ? parsed.surface : null,
@@ -112,10 +110,7 @@ export async function loadDiscoveryFunnelSummary(
     ),
     {
       method: "POST",
-      headers: {
-        apikey: configured.publishableKey,
-        "content-type": "application/json",
-      },
+      headers: rpcHeaders(configured),
       body: JSON.stringify({ p_since: since, p_until: until }),
       signal: AbortSignal.timeout(timeoutMs),
     },

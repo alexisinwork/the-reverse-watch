@@ -7,7 +7,7 @@ import {
 
 const environment = {
   SUPABASE_URL: "https://example.supabase.co",
-  SUPABASE_PUBLISHABLE_KEY: "sb_publishable_test",
+  SUPABASE_SERVICE_ROLE_KEY: "sb_secret_test",
 };
 
 function requestBody(init: RequestInit | undefined) {
