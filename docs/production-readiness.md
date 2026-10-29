@@ -28,6 +28,16 @@ No subscription or email was created. These probes do not establish inbox
 delivery or compare local credentials with every production environment value;
 evidence is `reports/service-access-readonly.json`.
 
+Latest application source `a57e2fe` is READY as
+`dpl_Bj5Lr4DqgYjJ4xeGBUFXT6gQm3hq`. Migration 0112 and its transactional/applied
+checks restore bounded daily price maintenance. Clean CI `40906976143` passed
+all 701 tests/build; remote monitor `40907242447`, twelve browser checks,
+catalogue/analytics admin and the complete public/partner API smoke passed.
+Production cron auth, `no_due` and repeat checks added no charge; this does not
+claim a new live price was found. Existing cached results also added no charge.
+Evidence: `reports/price-refresh-production.json` and the updated operational,
+catalogue and validated-cache reports.
+
 The unrelated legacy GitHub Pages job tried to render the engineering context
 as Liquid and failed. Its Pages build mode was switched from branch-triggered
 `legacy` to `workflow`, retaining its existing custom-domain setting and history;
@@ -89,8 +99,8 @@ of Git, deploys and shared artifacts. Prior snapshots are retained.
 The rehearsal restores into temporary copies inside a rolled-back transaction,
 checks file hashes, exact row hashes, local constraints/indexes and relationships
 between restored application tables. It never overwrites an application table.
-The current proof is `reports/local-backup-rehearsal.json`: 54 tables, 178,540
-rows and 51 foreign keys. This is not a complete Supabase-project restore:
+The current proof is `reports/local-backup-rehearsal.json`: 55 tables, 178,586
+rows and 52 foreign keys, including the new daily-run ledger. This is not a complete Supabase-project restore:
 auth/storage/roles and managed backups/PITR are outside its scope. Scheduled
 off-machine backups and managed retention have not been verified with the
 available project credentials; a local snapshot alone is not ongoing disaster

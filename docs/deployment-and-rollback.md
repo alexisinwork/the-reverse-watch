@@ -14,6 +14,16 @@ Legacy GitHub Pages now uses workflow build mode, preserving its domain and
 history while stopping the unrelated automatic Jekyll build; no Pages deploy
 workflow is installed.
 
+Price-maintenance follow-up: source `a57e2fe` is READY as
+`dpl_Bj5Lr4DqgYjJ4xeGBUFXT6gQm3hq`, with migration 0112 applied. CI
+`40906976143` and remote monitor `40907242447` pass, as do the complete live
+public/API and admin checks. For subsequent releases, use this source as the
+rollback candidate: it understands the new approximate price proposals and
+`watch_catalogue_price_review_v2`. Pre-0112 callers used the old accept RPC,
+which does not preserve the new estimate label/targeted cache invalidation;
+they are not approved rollback targets once new price proposals exist. Retain
+the database history and fix forward rather than dropping the maintenance data.
+
 - Production `dpl_75p1Mh6uSBL3kV6F67t1VDdfqeR9` is READY from `f477108`.
   `https://thereserve.watch/health` and authenticated dependency readiness pass.
   No DNS configuration was changed; September's apex/SSO observations below

@@ -49,8 +49,17 @@ Verification:
   acceptance, targeted snapshot invalidation and server-only privileges.
 - Local routing against the configured production database returned `no_due`
   twice, with zero added attempts/charges and healthy operations metadata.
-- Production evidence is added after deployment. An empty batch proves admission
-  and repeat behaviour, not a fresh live two-provider price estimate.
+- Source `a57e2fe` is READY as `dpl_Bj5Lr4DqgYjJ4xeGBUFXT6gQm3hq`.
+  Clean CI `40906976143` passed all 701 tests and the complete code gate; remote
+  readiness run `40907242447` passed. Production auth, empty batch and duplicate
+  checks added zero attempts/charges (`reports/price-refresh-production.json`).
+  An empty batch proves admission and repeat behaviour, not a fresh live
+  two-provider price estimate. The adapter integration test exercises the
+  nonempty price/source/commit path with grounded provider fixtures.
+- Twelve desktop/mobile browser tests and the full public/partner API smoke
+  passed after the shared per-card extraction. Catalogue admin, country/feedback
+  analytics and protected readiness passed. The new 55-table application-data
+  snapshot restored 178,586 rows and 52 foreign keys into temporary copies.
 
 Repeatable production probe (can spend at most one admitted daily batch):
 

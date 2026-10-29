@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-29T15:03:38.367Z",
+  "at": "2026-10-29T16:00:29.003Z",
   "anonymousPrivateHealth": 401,
   "browserOriginRejected": 401,
   "authorizedPrivateHealth": 200,
@@ -16,17 +16,20 @@
       "validationContractReady": true,
       "tableAccessProtected": true,
       "analyticsAccessProtected": true,
+      "priceRefreshContractReady": true,
+      "priceRefreshLastRunAt": "2026-10-29T15:52:36.530853+00:00",
+      "priceRefreshOverdue": false,
       "staleReservations": 0,
       "stalePricesPresent": false,
       "budget": {
         "halted": false,
-        "remainingUsd": 99.3622
+        "remainingUsd": 99.3406
       }
     },
     "warnings": [
       "legacy_bulk_research_paused"
     ],
-    "checkedAt": "2026-10-29T15:03:37.808Z"
+    "checkedAt": "2026-10-29T16:00:28.100Z"
   },
   "serviceAggregateReads": true,
   "publicAggregateReadsDenied": {

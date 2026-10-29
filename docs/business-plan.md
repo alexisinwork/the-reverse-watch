@@ -186,8 +186,15 @@ Up to eight already-priced stale references can share one daily $0.20 maximum
 inside the same $100 monthly ledger; the unpriced archive is excluded. Changes
 await review, preserve estimate labels and invalidate only affected snapshots.
 Local admission/repeat proof added no charge (`no_due`). Deployment/live proof
-follows before describing this as a deployed maintenance capability. No provider
-invoice total or commercial margin is inferred from this application ledger.
+is now verified: source `a57e2fe` is READY, clean CI `40906976143` passes 701
+tests/build, remote monitor `40907242447` passes, and live cron/repeat checks
+return `no_due` without added cost. The complete public/API smoke and catalogue/
+analytics admin checks also pass. A fresh 55-table backup/temporary restore
+verifies 178,586 rows and 52 foreign keys. No provider invoice total or commercial
+margin is inferred from this application ledger. Current runtime spend is
+$0.6594, reserved $0, within the separate $100 application-verification ledger;
+older bulk and other provider billing are excluded. This is not a new live
+price-estimate success claim because no existing price is due yet.
 
 Runtime checkpoint, 2026-10-28: the earlier statements below that all visitor
 validation is paused are superseded in the current source. Film/people search

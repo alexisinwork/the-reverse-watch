@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-29T15:04:05.526Z",
+  "at": "2026-10-29T16:01:48.314Z",
   "checks": [
     {
       "path": "/health",
@@ -40,27 +40,31 @@
   ],
   "budgetBefore": {
     "month": "2026-10-01",
-    "spentUsd": 0.6378,
+    "spentUsd": 0.6594,
     "reservedUsd": 0,
     "limitUsd": 100,
-    "remainingUsd": 99.3622,
+    "remainingUsd": 99.3406,
     "halted": false,
-    "attempts": 28,
+    "attempts": 29,
     "inProgress": 0,
     "validated": 6,
-    "failed": 22
+    "failed": 23,
+    "invalidated": 0,
+    "priceRefreshRuns": 0
   },
   "budgetAfter": {
     "month": "2026-10-01",
-    "spentUsd": 0.6378,
+    "spentUsd": 0.6594,
     "reservedUsd": 0,
     "limitUsd": 100,
-    "remainingUsd": 99.3622,
+    "remainingUsd": 99.3406,
     "halted": false,
-    "attempts": 28,
+    "attempts": 29,
     "inProgress": 0,
     "validated": 6,
-    "failed": 22
+    "failed": 23,
+    "invalidated": 0,
+    "priceRefreshRuns": 0
   },
   "repeatAddedCharge": 0
 }

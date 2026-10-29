@@ -2079,3 +2079,13 @@ prevent a dead worker or unavailable reference from blocking daily maintenance.
 Readiness v3 checks permissions and the 48-hour daily-run deadline. Fast gate:
 700 tests/build passed. Transactional/applied database checks and local real-route
 empty/repeat checks pass without added charges. Deployment evidence follows.
+
+Status: **complete — verified 2026-10-29**. Source `a57e2fe` is READY as
+`dpl_Bj5Lr4DqgYjJ4xeGBUFXT6gQm3hq`; clean CI `40906976143` passes all 701
+tests/build, and remote monitor `40907242447` passes. Production cron auth,
+`no_due` and duplicate admission add no attempts/charges. Twelve browser tests,
+catalogue/analytics admin and the complete public/partner API smoke pass after
+the shared per-card extraction. The adapter fixture test covers a nonempty
+grounded price proposal; no new live estimate is claimed from an empty batch.
+The new 55-table snapshot/temporary restore verifies 178,586 rows and 52 foreign
+keys. Updated reports and scope: `docs/metered-price-refresh.md`.

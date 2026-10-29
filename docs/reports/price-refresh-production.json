@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-29T16:00:24.915Z",
+  "base": "https://thereserve.watch",
+  "first": {
+    "ok": true,
+    "skipped": true,
+    "reason": "no_due"
+  },
+  "second": {
+    "ok": true,
+    "skipped": true,
+    "reason": "no_due"
+  },
+  "addedChargeUsd": 0,
+  "duplicateAddedChargeUsd": 0,
+  "duplicateAddedAttempts": 0,
+  "readiness": {
+    "status": "ready",
+    "configuration": {
+      "admin": true,
+      "providers": true,
+      "sharedRateLimit": true,
+      "newsletter": true
+    },
+    "database": {
+      "catalogueAvailable": true,
+      "validationContractReady": true,
+      "tableAccessProtected": true,
+      "analyticsAccessProtected": true,
+      "priceRefreshContractReady": true,
+      "priceRefreshLastRunAt": "2026-10-29T15:52:36.530853+00:00",
+      "priceRefreshOverdue": false,
+      "staleReservations": 0,
+      "stalePricesPresent": false,
+      "budget": {
+        "halted": false,
+        "remainingUsd": 99.3406
+      }
+    },
+    "warnings": [
+      "legacy_bulk_research_paused"
+    ],
+    "checkedAt": "2026-10-29T16:00:25.506Z"
+  },
+  "budget": {
+    "month": "2026-10-01",
+    "spentUsd": 0.6594,
+    "reservedUsd": 0,
+    "limitUsd": 100,
+    "remainingUsd": 99.3406,
+    "halted": false,
+    "attempts": 29,
+    "inProgress": 0,
+    "validated": 6,
+    "failed": 23,
+    "invalidated": 0,
+    "priceRefreshRuns": 0
+  },
+  "scope": "Daily cron admission/repeat check. An empty batch does not demonstrate a fresh live two-provider price lookup."
+}
