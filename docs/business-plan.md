@@ -173,6 +173,13 @@ tests/build. Source `b0f9f0e` and remote monitor `40897685444` are verified. Evi
 `docs/production-readiness.md`. No new customer, hosted Shopify
 installation, alert inbox delivery or data-redistribution permission is implied.
 
+The subsequent documentation checkpoint `2f6583d` deployed READY and its clean
+CI `40898519121` passed. Read-only local-credential probes confirm Redis access,
+Beehiiv publication access and a verified Resend sender domain, without creating
+a subscription or sending mail. They do not prove inbox delivery or production
+secret equality. Managed backups and an actual hosted Shopify runtime are still
+awaiting owner-supplied access/evidence; the tested technical scope is explicit.
+
 Runtime checkpoint, 2026-10-28: the earlier statements below that all visitor
 validation is paused are superseded in the current source. Film/people search
 now calls the metered validator, including uncached discovery; quiz saved

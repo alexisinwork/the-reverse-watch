@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-29T15:11:17.399Z",
+  "scope": "Read-only probes using configured local service credentials; does not test email delivery or prove these match every production secret.",
+  "redisPing": true,
+  "beehiivHttp": 200,
+  "publicationMatches": true,
+  "resendDomainsHttp": 200,
+  "senderDomainVerified": true,
+  "emailSent": false,
+  "subscriptionCreated": false,
+  "documentation": [
+    "https://developers.beehiiv.com/api-reference/publications/show",
+    "https://resend.com/docs/api-reference/domains/list-domains"
+  ]
+}

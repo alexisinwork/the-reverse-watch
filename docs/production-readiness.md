@@ -20,6 +20,14 @@ also passed reservation ceilings, monthly exhaustion, retry cooldown, abandoned
 recovery and analytics permissions. No runtime errors were returned by the
 production error-log inspection covering the operational rollout.
 
+The documentation checkpoint `2f6583d` also deployed READY
+(`dpl_C3hemjx9fs84GcWterihE3DgWUeR`) and its clean CI run `40898519121` passed.
+Additional read-only probes with the available local service credentials passed:
+Redis PING, Beehiiv publication access and Resend sender-domain verification.
+No subscription or email was created. These probes do not establish inbox
+delivery or compare local credentials with every production environment value;
+evidence is `reports/service-access-readonly.json`.
+
 The unrelated legacy GitHub Pages job tried to render the engineering context
 as Liquid and failed. Its Pages build mode was switched from branch-triggered
 `legacy` to `workflow`, retaining its existing custom-domain setting and history;
