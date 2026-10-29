@@ -1,20 +1,13 @@
 import { createHash, timingSafeEqual } from "node:crypto";
-
 import type { Route } from "./+types/internal-catalogue-recheck-prices";
-import { defaultDeps, searchReady } from "../domain/ai-providers.server";
-import { recheckPrice } from "../domain/catalogue-build.server";
-import { loadFxTable } from "../domain/fx.server";
-import { PRICE_MAX_AGE_DAYS } from "../domain/price-check.server";
-import { legacyPaidResearchAllowed } from "../domain/legacy-paid-research-policy.server";
+import { defaultDeps } from "../domain/ai-providers.server";
+import { catalogueClient } from "../domain/watch-catalogue.server";
 import {
-  catalogueClient,
-  cataloguePricesDue,
-  recordCataloguePrice,
-} from "../domain/watch-catalogue.server";
+  priceRefreshServices,
+  runPriceRefresh,
+} from "../domain/catalogue-price-refresh.server";
 
-/** Per daily run: small enough to finish well inside the function limit. */
-const BATCH = 8;
-
+const headers = { "Cache-Control": "no-store" };
 function secretMatches(header: string | null, secret: string) {
   const digest = (value: string) => createHash("sha256").update(value).digest();
   return (
@@ -23,59 +16,41 @@ function secretMatches(header: string | null, secret: string) {
   );
 }
 
-/**
- * Vercel Cron calls this daily with CRON_SECRET. It rechecks the prices
- * that are over 90 days old (or never confirmed): an unchanged price only
- * gets a new check date; a changed one is parked for review on the admin
- * page, never applied silently.
- */
+/** Daily bounded maintenance: existing prices older than 90 days only. One
+ * UTC-day reservation, <=8 cards, <=$0.20, sharing the $100 monthly ledger.
+ * Changes await review; missing-price imports are not a background paid queue. */
 export async function loader({ request }: Route.LoaderArgs) {
   const secret = process.env.CRON_SECRET?.trim();
   if (!secret || secret.length < 16)
-    return Response.json({ ok: false }, { status: 503 });
-  if (!secretMatches(request.headers.get("authorization"), secret)) {
-    return Response.json({ ok: false }, { status: 401 });
-  }
-  if (!legacyPaidResearchAllowed())
+    return Response.json({ ok: false }, { status: 503, headers });
+  if (
+    request.headers.has("origin") ||
+    !secretMatches(request.headers.get("authorization"), secret)
+  )
+    return Response.json({ ok: false }, { status: 401, headers });
+  const client = catalogueClient(),
+    deps = defaultDeps();
+  if (
+    !client ||
+    !deps.config.perplexity ||
+    !deps.config.museSpark ||
+    !/^muse-spark-1\.[23]-contributor$/.test(deps.config.museSpark.fastModel)
+  )
     return Response.json(
-      { ok: true, skipped: true, reason: "legacy_paid_research_paused" },
-      { headers: { "Cache-Control": "no-store" } },
+      { ok: false, reason: "configuration_unavailable" },
+      { status: 503, headers },
     );
-  const client = catalogueClient();
-  const deps = defaultDeps();
-  if (!client || !searchReady(deps.config))
-    return Response.json({ ok: false }, { status: 503 });
-
-  const before = new Date(Date.now() - PRICE_MAX_AGE_DAYS * 86_400_000);
-  const [due, fx] = await Promise.all([
-    cataloguePricesDue(client, before, BATCH),
-    loadFxTable(),
-  ]);
-  const outcomes = await Promise.all(
-    due.map(async (watch) => {
-      try {
-        const result = await recheckPrice(watch, deps, fx);
-        await recordCataloguePrice(client, watch.id, result);
-        return result.kind;
-      } catch (error) {
-        console.error(
-          JSON.stringify({
-            event: "catalogue_price_recheck_error",
-            message: error instanceof Error ? error.message : "unknown error",
-          }),
-        );
-        return "error";
-      }
-    }),
-  );
-  const counts: Record<string, number> = {};
-  for (const outcome of outcomes) counts[outcome] = (counts[outcome] ?? 0) + 1;
-  console.info(
-    JSON.stringify({
-      event: "catalogue_price_recheck",
-      checked: due.length,
-      counts,
-    }),
-  );
-  return Response.json({ ok: true, checked: due.length, counts });
+  try {
+    const result = await runPriceRefresh(priceRefreshServices(client, deps));
+    console.info(
+      JSON.stringify({ event: "catalogue_price_recheck", ...result }),
+    );
+    return Response.json(result, { status: result.ok ? 200 : 503, headers });
+  } catch {
+    console.error(JSON.stringify({ event: "catalogue_price_recheck_error" }));
+    return Response.json(
+      { ok: false, reason: "refresh_unavailable" },
+      { status: 503, headers },
+    );
+  }
 }

@@ -280,10 +280,16 @@ export async function recordCataloguePrice(
   result: PriceRecord,
 ) {
   const ok = z.boolean().parse(
-    await rpc(client, "watch_catalogue_price_v1", {
-      p_id: id,
-      p_result: result,
-    }),
+    await rpc(
+      client,
+      result.kind === "accept" || result.kind === "dismiss"
+        ? "watch_catalogue_price_review_v2"
+        : "watch_catalogue_price_v1",
+      {
+        p_id: id,
+        p_result: result,
+      },
+    ),
   );
   clearCatalogueCache();
   return ok;

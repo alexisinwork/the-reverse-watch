@@ -18,6 +18,8 @@ export async function validationBudgetStatus(client: CatalogueClient) {
       inProgress: z.number(),
       validated: z.number(),
       failed: z.number(),
+      invalidated: z.number().optional(),
+      priceRefreshRuns: z.number().optional(),
     })
     .parse(await rpc(client, "ai_watch_validation_admin_status_v1", {}));
 }

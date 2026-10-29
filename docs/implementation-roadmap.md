@@ -2065,3 +2065,17 @@ context; branch-triggered legacy Pages builds were replaced with workflow mode,
 retaining domain configuration/history and the active Vercel deployment. No new
 Pages publishing workflow was added. Owner clarification about managed backups
 and a hosted Shopify test runtime remains pending; neither is claimed verified.
+
+### Bounded scheduled price maintenance (2026-10-29)
+
+The daily route now reuses the per-card provider/source checks inside one
+atomic UTC-day reservation. Additive 0112 excludes unpriced imports, bounds the
+batch at eight/$0.20, shares the $100 ledger and handles partial monthly funds.
+Two-source estimates must agree in one currency within 5%; changes await review
+and stay approximate. Acceptance invalidates only affected snapshot generations,
+preserving historical/raw data. Concurrent edits, failed settlement and overruns
+cannot silently publish a price. Retry rotation and abandoned-run settlement
+prevent a dead worker or unavailable reference from blocking daily maintenance.
+Readiness v3 checks permissions and the 48-hour daily-run deadline. Fast gate:
+700 tests/build passed. Transactional/applied database checks and local real-route
+empty/repeat checks pass without added charges. Deployment evidence follows.

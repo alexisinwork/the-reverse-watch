@@ -180,6 +180,15 @@ a subscription or sending mail. They do not prove inbox delivery or production
 secret equality. Managed backups and an actual hosted Shopify runtime are still
 awaiting owner-supplied access/evidence; the tested technical scope is explicit.
 
+Daily price follow-up, 2026-10-29: migration 0112 and the replacement cron path
+are implemented and transactionally/applied tested. The 700-test fast gate passes.
+Up to eight already-priced stale references can share one daily $0.20 maximum
+inside the same $100 monthly ledger; the unpriced archive is excluded. Changes
+await review, preserve estimate labels and invalidate only affected snapshots.
+Local admission/repeat proof added no charge (`no_due`). Deployment/live proof
+follows before describing this as a deployed maintenance capability. No provider
+invoice total or commercial margin is inferred from this application ledger.
+
 Runtime checkpoint, 2026-10-28: the earlier statements below that all visitor
 validation is paused are superseded in the current source. Film/people search
 now calls the metered validator, including uncached discovery; quiz saved

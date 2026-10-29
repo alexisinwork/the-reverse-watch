@@ -261,6 +261,7 @@ const watchSchema = z
       }
     }
   });
+export const checkedWatchSchema = watchSchema;
 const snapshotSchema = z
   .object({
     validationStatus: z.literal("valid"),

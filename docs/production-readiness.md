@@ -58,9 +58,11 @@ https://docs.github.com/en/rest/pages/pages#update-information-about-a-github-pa
   they cannot be cleared by expiry. Other abandoned keys are exposed by monitoring
   until revisited, rather than silently forgetting possible charges.
 - Legacy bulk research, unknown-target alternatives and pre-owned refresh remain
-  paused. The daily legacy price cron returns an explicit successful **skipped**
-  response and makes no paid calls; stale prices remain visible in readiness
-  warnings. This does not claim a functioning daily price refresh.
+  paused. The daily price route now uses the separate bounded maintenance flow
+  in `metered-price-refresh.md`: up to eight already-priced stale references,
+  one batch/day, sharing the visitor ledger. Changes await review and retain
+  their approximate-price label. No unpriced import archive is researched by
+  this job. Operations monitoring detects a missed daily run after 48 hours.
 
 When a workflow fails, inspect its run first, then `/admin/catalogue` for the
 budget and Vercel/Sentry for application errors. For database unavailability,

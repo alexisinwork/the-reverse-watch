@@ -39,7 +39,7 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 | `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx`                                        | Published, reviewed film and celebrity watch stories.                                                                                                                                                      |
 | `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The archetype mini-quiz and catalogue/editorial picks; the first request validates up to eight references, then reuses the checked snapshot.                                                               |
 | `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes.                                                                                                                                 |
-| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily Vercel cron: reports skipped while the legacy unmetered price worker is paused.                                                                                                                      |
+| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily metered price check: up to eight already-priced stale references; changes await review.                                                                                                              |
 | `/admin/evaluation`                                                       | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary, behind the admin login (`/evaluation` redirects).                                                                                                                                |
 | `/partners`                                                               | `routes/partners.tsx`                                                                                                | Public guide for partners: the script tag, WordPress, Shopify, other builders, React, the API.                                                                                                             |
 | `/embed/:key/…`                                                           | `routes/embed-layout.tsx` + the pages above                                                                          | Partner widgets: quiz, archetype, find, alternatives, stories inside a frame on a partner's site (see "Partner widgets").                                                                                  |
@@ -171,6 +171,12 @@ in a consistent read-only transaction into the ignored local archive.
 `scripts/rehearse-local-snapshot.ts` checks an actual temporary restore and
 rolls it back. These are application-data copies, not managed Supabase-project
 backup/PITR verification. Never publish the archive or its partner credentials.
+
+`catalogue-price-refresh.server.ts` and migration 0112 supply one daily, bounded
+price check in the same validation ledger, keeping estimates labelled and parking
+changes for review. `validate-one-watch.server.ts` shares the one-call-per-provider
+checks with visitor validation. `docs/metered-price-refresh.md` records admission,
+recovery, targeted cache invalidation and verification commands.
 
 ### When a provider is down (fallbacks, from first to last)
 

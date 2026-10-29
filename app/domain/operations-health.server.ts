@@ -18,6 +18,9 @@ const databaseSchema = z.object({
   validationContractReady: z.boolean(),
   tableAccessProtected: z.boolean(),
   analyticsAccessProtected: z.boolean(),
+  priceRefreshContractReady: z.boolean(),
+  priceRefreshLastRunAt: z.string().nullable(),
+  priceRefreshOverdue: z.boolean(),
   staleReservations: z.number().int().nonnegative(),
   stalePricesPresent: z.boolean(),
   budget: z.object({
@@ -62,7 +65,7 @@ export async function operationsHealth(
   try {
     if (!client) throw new Error("Database configuration unavailable");
     const database = databaseSchema.parse(
-      await rpc(client, "application_readiness_v2", {}, 12000),
+      await rpc(client, "application_readiness_v3", {}, 12000),
     );
     const ready =
       Object.values(configuration).every(Boolean) &&
@@ -70,6 +73,8 @@ export async function operationsHealth(
       database.validationContractReady &&
       database.tableAccessProtected &&
       database.analyticsAccessProtected &&
+      database.priceRefreshContractReady &&
+      (!database.priceRefreshOverdue || database.budget.remainingUsd < 0.025) &&
       database.staleReservations === 0 &&
       !database.budget.halted;
     return Response.json(
@@ -82,6 +87,10 @@ export async function operationsHealth(
             ? ["monthly_research_limit_reached"]
             : []),
           ...(database.stalePricesPresent ? ["stale_prices_present"] : []),
+          ...(database.priceRefreshOverdue &&
+          database.budget.remainingUsd < 0.025
+            ? ["price_refresh_waiting_for_monthly_budget"]
+            : []),
           ...(!environment.SENTRY_DSN?.trim() ? ["sentry_not_configured"] : []),
           "legacy_bulk_research_paused",
         ],

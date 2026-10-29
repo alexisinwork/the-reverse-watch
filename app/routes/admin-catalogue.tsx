@@ -611,6 +611,9 @@ function WatchRow({ row }: { row: Row }) {
               Price recheck found{" "}
               {money(row.priceChange.amount, row.priceChange.currency)} (stored{" "}
               {money(row.priceAmount, row.priceCurrency)}).
+              {row.priceChange.priceStatus === "approximate"
+                ? " This is an approximate price; it may change."
+                : ""}
             </span>
             <button
               className="button button--primary"
@@ -719,6 +722,12 @@ export default function AdminCatalogue() {
             Validated results: {loaded.validationBudget.validated} · In
             progress: {loaded.validationBudget.inProgress} · Unsuccessful
             checks: {loaded.validationBudget.failed}.
+          </p>
+          <p>
+            Daily price refresh runs:{" "}
+            {loaded.validationBudget.priceRefreshRuns ?? 0}. Results awaiting a
+            new check after a price review:{" "}
+            {loaded.validationBudget.invalidated ?? 0}.
           </p>
           <p>
             {loaded.validationBudget.halted

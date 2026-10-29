@@ -18,6 +18,9 @@ const healthy = {
   validationContractReady: true,
   tableAccessProtected: true,
   analyticsAccessProtected: true,
+  priceRefreshContractReady: true,
+  priceRefreshLastRunAt: "2026-10-29T00:00:00Z",
+  priceRefreshOverdue: false,
   staleReservations: 0,
   stalePricesPresent: false,
   budget: { halted: false, remainingUsd: 99 },
@@ -70,13 +73,15 @@ describe("operations readiness", () => {
     expect(text).not.toContain(token);
     expect(fetchImpl).toHaveBeenCalledTimes(1);
     expect(String(fetchImpl.mock.calls[0]?.[0])).toContain(
-      "application_readiness_v2",
+      "application_readiness_v3",
     );
   });
   it.each([
     { ...healthy, staleReservations: 1 },
     { ...healthy, validationContractReady: false },
     { ...healthy, analyticsAccessProtected: false },
+    { ...healthy, priceRefreshContractReady: false },
+    { ...healthy, priceRefreshOverdue: true },
     { ...healthy, budget: { halted: true, remainingUsd: 99 } },
   ])("signals failed dependencies and stuck/halted research", async (body) => {
     const { client } = fixture(body);
@@ -93,6 +98,7 @@ describe("operations readiness", () => {
     const { client } = fixture({
       ...healthy,
       budget: { halted: false, remainingUsd: 0 },
+      priceRefreshOverdue: true,
     });
     const response = await operationsHealth(
       request({ authorization: `Bearer ${token}` }),

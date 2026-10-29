@@ -204,6 +204,7 @@ export const catalogueWatchSchema = z.object({
       amount: z.number(),
       currency: z.string(),
       foundAt: z.string().optional(),
+      priceStatus: z.enum(["confirmed", "approximate"]).optional(),
     })
     .passthrough()
     .nullable(),
