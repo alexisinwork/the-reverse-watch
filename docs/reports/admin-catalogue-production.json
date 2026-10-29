@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-28T20:20:20.137Z",
+  "at": "2026-10-29T14:57:07.760Z",
   "status": 200,
   "entireCatalogue": true,
   "masterTotal": true,
@@ -9,14 +9,14 @@
   "validationBudgetPanel": true,
   "validationBudget": {
     "month": "2026-10-01",
-    "spentUsd": 0.2938,
+    "spentUsd": 0.6161,
     "reservedUsd": 0,
     "limitUsd": 100,
-    "remainingUsd": 99.7062,
+    "remainingUsd": 99.3839,
     "halted": false,
-    "attempts": 18,
+    "attempts": 27,
     "inProgress": 0,
     "validated": 6,
-    "failed": 12
+    "failed": 21
   }
 }

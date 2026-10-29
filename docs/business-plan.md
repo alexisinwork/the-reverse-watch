@@ -164,11 +164,12 @@ For retailer feeds, design tenant isolation and freshness before implementation.
 
 Operational evidence update, 2026-10-29: same-query abandoned-reservation
 recovery, protected dependency monitoring and server-only legacy analytics are
-prepared for rollout, with transactional database permission checks. The fast
+deployed as source `f477108`, with applied database permission checks. The fast
 gate passed 681 tests/build. A consistent local backup and temporary restore
 verified all 54 application tables (178,540 rows, 51 foreign keys); this does not
-verify managed Supabase backup retention. Production/CI proof is recorded after
-deployment in `docs/production-readiness.md`. No new customer, hosted Shopify
+verify managed Supabase backup retention. Production smoke and the first remote
+monitor passed; the clean CI generation fix is being verified remotely. Evidence:
+`docs/production-readiness.md`. No new customer, hosted Shopify
 installation, alert inbox delivery or data-redistribution permission is implied.
 
 Runtime checkpoint, 2026-10-28: the earlier statements below that all visitor

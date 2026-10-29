@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-29T14:59:23.869Z",
+  "anonymousPrivateHealth": 401,
+  "browserOriginRejected": 401,
+  "authorizedPrivateHealth": 200,
+  "readiness": {
+    "status": "ready",
+    "configuration": {
+      "admin": true,
+      "providers": true,
+      "sharedRateLimit": true,
+      "newsletter": true
+    },
+    "database": {
+      "catalogueAvailable": true,
+      "validationContractReady": true,
+      "tableAccessProtected": true,
+      "analyticsAccessProtected": true,
+      "staleReservations": 0,
+      "stalePricesPresent": false,
+      "budget": {
+        "halted": false,
+        "remainingUsd": 99.3622
+      }
+    },
+    "warnings": [
+      "legacy_bulk_research_paused"
+    ],
+    "checkedAt": "2026-10-29T14:59:23.536Z"
+  },
+  "serviceAggregateReads": true,
+  "publicAggregateReadsDenied": {
+    "quiz_funnel_summary_v1": 401,
+    "discovery_funnel_summary_v1": 401
+  },
+  "adminAnalytics": 200,
+  "countryAndFeedbackVisible": true
+}

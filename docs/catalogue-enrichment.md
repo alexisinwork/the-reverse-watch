@@ -173,7 +173,7 @@ durable allowance journal; deployment/auth scope does not control that process.
 
 The owner's additional source is https://spacecitytimepiece.com/watches. Its public
 index https://spacecitytimepiece.com/api/v1/watches.json declares CC BY 4.0 and
-upstream Chrono24 secondary-market observations from 2017–2023. Downloaded all 26
+upstream Chrono24 secondary-market observations from 2017â€“2023. Downloaded all 26
 brand files: 25,385 observations, 21,540 identity keys. Added 10,149 unambiguous
 missing identities, bringing the master to 55,029. Existing identities retain
 accepted facts; all observations and attribution are in private intake and ignored

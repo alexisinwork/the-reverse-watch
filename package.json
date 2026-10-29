@@ -9,7 +9,7 @@
     "start": "node scripts/start-server.mjs",
     "typegen": "react-router typegen",
     "typecheck": "npm run typegen && tsc --noEmit",
-    "lint": "eslint . --max-warnings=0",
+    "lint": "npm run typegen && eslint . --max-warnings=0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest",

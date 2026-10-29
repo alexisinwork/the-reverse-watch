@@ -4,6 +4,16 @@ Checkpoint: 2026-10-29. This follows the first-use validation phase in the
 implementation roadmap; it does not certify every historical cache or catalogue
 claim. Production evidence is recorded after deployment in `docs/reports/`.
 
+Source `f477108` is deployed READY. Live checks prove authenticated readiness,
+public/browser rejection, private aggregate analytics, country/yes-no feedback UI,
+56,719 catalogue records, repeated actor/archetype results and registered partner
+find/quiz/alternatives APIs. The origin rejection is 403, and the complete saved
+result smoke added no paid attempts or cost. The first remote monitoring run
+`40896399369` passed. Browser verification passed 12 desktop/mobile tests and
+seven native/real local WordPress tests. The new clean-checkout CI exposed missing
+route-type generation before lint; the lint command now generates its required
+types, and the corrected remote run is recorded after it completes.
+
 ## Checks and failure handling
 
 - `/health` is public process liveness. It does not prove database/provider health.

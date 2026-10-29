@@ -2045,3 +2045,13 @@ Hourly readiness and per-push code-check workflows are prepared. Full fast gate:
 Live rollout/monitoring evidence follows deployment; managed backup retention,
 alert inbox delivery and actual hosted Shopify testing are not yet established.
 Operational scope and repeatable commands: `docs/production-readiness.md`.
+
+The operational source `f477108` is READY as
+`dpl_75p1Mh6uSBL3kV6F67t1VDdfqeR9`; 0111 was applied after the server callers
+deployed. Public aggregate reads are denied, service reads and admin country/
+feedback views pass, and the complete production result smoke adds no charge.
+The first remote readiness run `40896399369` passed. Twelve desktop/mobile and
+seven native/real WordPress scenarios passed again. A clean CI checkout exposed
+missing generated route types before lint; the command now generates them.
+One invalid CP1252 punctuation byte in the enrichment guide was also repaired
+without changing its text, addressing the separate legacy Pages build error.

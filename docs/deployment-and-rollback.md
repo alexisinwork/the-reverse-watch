@@ -1,10 +1,30 @@
 # Vercel deployment and rollback
 
-Last verified: 2026-09-02
+Last verified: 2026-10-29
 
 ## Current state
 
-### Current D8 verification release
+### Operational verification release, 2026-10-29
+
+- Production `dpl_75p1Mh6uSBL3kV6F67t1VDdfqeR9` is READY from `f477108`.
+  `https://thereserve.watch/health` and authenticated dependency readiness pass.
+  No DNS configuration was changed; September's apex/SSO observations below
+  are historical, not a statement that today's tested apex is unreachable.
+- Migrations through 0111 are applied. Server-only analytics, source-checked
+  result snapshots, validation reservations and complete catalogue admin reads
+  passed live checks. Evidence: `reports/operations-production.json`,
+  `reports/validated-cache-production.json`, `reports/admin-catalogue-production.json`.
+- The independent operations secret is installed in Vercel/GitHub. The first
+  GitHub Production readiness run passed as run `40896399369`. It uses no paid
+  AI probes. Configuration presence does not prove email delivery.
+- For subsequent releases, `f477108` is an application rollback candidate with
+  the required service-role analytics callers. Pre-0111 callers used public
+  database keys and are incompatible with the hardened analytics permissions.
+  Roll forward/fix the server caller rather than reopening public admin RPCs.
+- Application-data backup and temporary restore were verified; managed project
+  backup retention remains unverified. See `production-readiness.md`.
+
+### Historical D8 verification release, September
 
 - Vercel project `the-reverse-watch` in the `alexisinworks-projects` team is
   sourced from `alexisinwork/the-reverse-watch`; pushes to `main` deploy to
