@@ -202,8 +202,11 @@ after a lost acknowledgement. New widgets share an ephemeral parent-page
 session across tools and record parent advisor controls after validating the
 registered sender. Historical separate sessions remain separate. The full 716-test
 gate, twelve desktop/mobile checks, seven native/real WordPress scenarios and
-a built-bundle shared-journey probe pass. Live rollout evidence follows; no new
-traffic, satisfaction rate or revenue is inferred
+a built-bundle shared-journey probe pass. Source `91e6c1d` is now READY with
+clean CI `40915966906`, remote monitor `40916428562` and successful production
+delivery, real-frame journey, admin and saved-result API probes. Application
+spend is $0.7163, reserved $0, within $100; this is not the total provider invoice.
+No new traffic, satisfaction rate or revenue is inferred
 from synthetic checks. Technical scope: `docs/analytics-delivery.md`. The external
 backup/hosted-store evidence and commercial next action remain unchanged.
 

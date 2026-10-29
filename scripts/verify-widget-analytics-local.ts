@@ -4,6 +4,7 @@
 import assert from "node:assert/strict";
 import { writeFile } from "node:fs/promises";
 import { createServer } from "node:http";
+import { isIP } from "node:net";
 import { chromium, expect } from "@playwright/test";
 import postgres from "postgres";
 import { z } from "zod";
@@ -19,7 +20,8 @@ const partner = (await listPartnerSites(client)).find(
 assert.ok(partner?.active);
 assert.ok(partner.allowedOrigins.includes("http://127.0.0.1:8080"));
 const before = await validationBudgetStatus(client);
-const base = "http://localhost:4173";
+const production = process.argv.includes("--production");
+const base = production ? "https://thereserve.watch" : "http://localhost:4173";
 const host = "http://127.0.0.1:8080/";
 const campaign = "widget-session-check";
 const source = "internal-verification";
@@ -41,7 +43,17 @@ const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
   max: 1,
   connect_timeout: 10,
 });
-const browser = await chromium.launch();
+// Optional process-local routing for a diagnosed local Vercel edge issue.
+// This never changes DNS settings, Host/SNI or TLS certificate verification.
+const probeAddress = process.env.RESERVE_PROBE_ADDRESS;
+if (probeAddress)
+  assert.ok(isIP(probeAddress), "Expected diagnostic IP address");
+const browser = await chromium.launch({
+  args:
+    production && probeAddress
+      ? [`--host-resolver-rules=MAP thereserve.watch ${probeAddress}`]
+      : [],
+});
 let session: string | undefined;
 type Event = {
   event_id: string;
@@ -134,7 +146,9 @@ try {
   assert.equal(after.attempts, before.attempts);
   checks = {
     at: new Date().toISOString(),
-    runtime: "Chromium, real built Reserve frames; fixture host HTML only",
+    runtime: production
+      ? "Chromium, real production Reserve frames; fixture host HTML only"
+      : "Chromium, real built Reserve frames; fixture host HTML only",
     sourceOrigin: "http://127.0.0.1:8080",
     reserveOrigin: base,
     features: 5,
@@ -178,7 +192,9 @@ try {
 assert.ok(checks);
 const report = { ...checks, syntheticFixtureRemoved: true };
 await writeFile(
-  "docs/reports/widget-analytics-local.json",
+  production
+    ? "docs/reports/widget-analytics-production.json"
+    : "docs/reports/widget-analytics-local.json",
   `${JSON.stringify(report, null, 2)}\n`,
 );
 console.log(JSON.stringify(report));

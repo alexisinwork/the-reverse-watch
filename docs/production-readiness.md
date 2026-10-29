@@ -4,12 +4,18 @@ Checkpoint: 2026-10-29. This follows the first-use validation phase in the
 implementation roadmap; it does not certify every historical cache or catalogue
 claim. Production evidence is recorded after deployment in `docs/reports/`.
 
-Analytics follow-up is locally verified (716 tests, twelve desktop/mobile checks,
-seven native/real WordPress scenarios). Migration 0113 and the applied lost-ack
-test establish idempotent retry. A production-bundle browser check records all
-five widget tools and advisor tab clicks in one anonymous journey, with zero
-paid attempts and guarded cleanup of its ten events. Live rollout evidence
-follows deployment. Details: `analytics-delivery.md`.
+Latest verified application source: `91e6c1d`, READY as
+`dpl_8yGz4G2coeJM8hNv82UtnDJT4qXY`. Clean CI `40915966906` passes 716 tests
+and the complete code gate. Twelve desktop/mobile checks, seven native/real
+WordPress scenarios and the independent remote monitor `40916428562` pass.
+Migration 0113's applied lost-ack test and live 204/204/one-row probe establish
+idempotent delivery. A real production-frame browser check records all five
+widget tools and advisor tab clicks in one anonymous journey, with zero paid
+attempts and guarded cleanup of its ten events. Protected operations v4, admin
+country/feedback views, full catalogue and complete saved-result public/partner
+API smoke pass. Repeat cache/empty cron checks add no charge or attempt. The
+surrounding production error-log inspection returned no runtime errors. Details
+and the temporary local network diagnostic route: `analytics-delivery.md`.
 
 Source `f477108` is deployed READY. Live checks prove authenticated readiness,
 public/browser rejection, private aggregate analytics, country/yes-no feedback UI,
@@ -107,7 +113,8 @@ The rehearsal restores into temporary copies inside a rolled-back transaction,
 checks file hashes, exact row hashes, local constraints/indexes and relationships
 between restored application tables. It never overwrites an application table.
 The current proof is `reports/local-backup-rehearsal.json`: 55 tables, 178,586
-rows and 52 foreign keys, including the new daily-run ledger. This is not a complete Supabase-project restore:
+rows and 52 foreign keys, including the new daily-run ledger. Its exact original
+columns also restore against the additive 0113 schema. This is not a complete Supabase-project restore:
 auth/storage/roles and managed backups/PITR are outside its scope. Scheduled
 off-machine backups and managed retention have not been verified with the
 available project credentials; a local snapshot alone is not ongoing disaster

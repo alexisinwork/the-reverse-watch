@@ -2092,7 +2092,7 @@ keys. Updated reports and scope: `docs/metered-price-refresh.md`.
 
 ### Anonymous analytics delivery and shared widget journeys (2026-10-29)
 
-Status: **local/applied verification complete; live rollout pending**.
+Status: **complete — verified locally and on production 2026-10-29**.
 Observed two-second analytics write timeouts exposed the missing safe retry path.
 Additive 0113 preserves historical events and adds unique delivery IDs. The
 client/server retry the same ID once, and the service-only writer acknowledges
@@ -2115,3 +2115,14 @@ five page-view features and five advisor-click features under one session;
 its ten unique synthetic events are removed, with zero added paid attempts or
 cost. The local HTTP replay probe returns 204 twice but stores one event;
 unregistered Origin is rejected with 403. No feedback votes were created.
+
+Source `91e6c1d` is READY as `dpl_8yGz4G2coeJM8hNv82UtnDJT4qXY`;
+clean CI `40915966906` and independent remote monitor `40916428562` pass.
+Production repeats store one event, and the actual production-frame browser
+probe demonstrates the same five-tool journey with guarded cleanup and zero
+paid attempts/cost. Protected operations v4, admin, full public/partner saved
+results and daily maintenance admission/repeat checks pass; the surrounding
+production error-log inspection returned no runtime errors. Spend is $0.7163,
+reserved $0, within the separate $100 application-verification ledger.
+Network diagnostic routing and remaining external readiness boundaries are
+explicit in `docs/analytics-delivery.md` and `docs/production-readiness.md`.

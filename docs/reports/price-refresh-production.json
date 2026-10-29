@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-29T16:00:24.915Z",
+  "at": "2026-10-29T17:01:27.002Z",
   "base": "https://thereserve.watch",
   "first": {
     "ok": true,
@@ -27,6 +27,7 @@
       "validationContractReady": true,
       "tableAccessProtected": true,
       "analyticsAccessProtected": true,
+      "analyticsDeliveryReady": true,
       "priceRefreshContractReady": true,
       "priceRefreshLastRunAt": "2026-10-29T15:52:36.530853+00:00",
       "priceRefreshOverdue": false,
@@ -34,25 +35,25 @@
       "stalePricesPresent": false,
       "budget": {
         "halted": false,
-        "remainingUsd": 99.3406
+        "remainingUsd": 99.2837
       }
     },
     "warnings": [
       "legacy_bulk_research_paused"
     ],
-    "checkedAt": "2026-10-29T16:00:25.506Z"
+    "checkedAt": "2026-10-29T17:01:27.529Z"
   },
   "budget": {
     "month": "2026-10-01",
-    "spentUsd": 0.6594,
+    "spentUsd": 0.7163,
     "reservedUsd": 0,
     "limitUsd": 100,
-    "remainingUsd": 99.3406,
+    "remainingUsd": 99.2837,
     "halted": false,
-    "attempts": 29,
+    "attempts": 31,
     "inProgress": 0,
     "validated": 6,
-    "failed": 23,
+    "failed": 25,
     "invalidated": 0,
     "priceRefreshRuns": 0
   },

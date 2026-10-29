@@ -42,6 +42,7 @@ node --env-file=.env --import tsx scripts/verify-interaction-delivery-production
 # Start the built app on localhost:4173; keep 127.0.0.1:8080 free for the fixture:
 node --env-file=.env --import tsx scripts/verify-widget-analytics-local.ts
 node --env-file=.env --import tsx scripts/verify-interaction-delivery-production.ts
+node --env-file=.env --import tsx scripts/verify-widget-analytics-local.ts --production
 ```
 
 The applied database check always rolls back its synthetic data, including the
@@ -61,8 +62,34 @@ under one session, then removed them with all fixture guards. No feedback vote,
 paid attempt or cost was added. Only Vercel's hosting-specific insights script
 returns 404 on the local Node runtime; application interaction events succeeded.
 
-Reports live in `docs/reports/interaction-delivery-production.json` and
-`docs/reports/widget-analytics-local.json` after successful verification. Backup
+Source `91e6c1d` deployed READY as `dpl_8yGz4G2coeJM8hNv82UtnDJT4qXY`.
+Clean GitHub CI `40915966906` passed all 716 tests and the complete code gate;
+independent remote monitor `40916428562` passed. The production HTTP probe
+returns 204 twice/one row and 403 for an unregistered Origin. The real production
+iframe probe also records exactly ten unique events across five tools in one
+session, with no feedback votes/paid attempts/cost and guarded fixture cleanup.
+Authenticated operations v4, admin country/feedback views, catalogue count and
+the complete public/registered-partner saved-result smoke pass. Saved-result
+repeats and daily empty/repeat maintenance add no charge or attempt. No production
+runtime errors were returned by the surrounding log inspection.
+
+The local network temporarily timed out against Vercel's normal edge address.
+GitHub's independent probe passed. Some direct checks used the project alias's
+published alternative address through a process-local diagnostic route/transport;
+original URL, Host/SNI and TLS verification were retained. No DNS/project
+configuration or production application transport was changed. The browser
+verifier supports an optional IP-validated `RESERVE_PROBE_ADDRESS` for this case.
+
+Application-verification spend at this checkpoint is $0.7163, reserved $0, within
+$100; this excludes historical bulk/provider invoices. The native integration
+suite started two additional checks ($0.0569) which did not publish snapshots;
+the dedicated analytics probes and saved-result smoke added zero. The ledger's
+failed-attempt count includes development/verification activity and is not a
+visitor conversion rate or proof that every search has enough evidence.
+
+Reports live in `docs/reports/interaction-delivery-production.json`,
+`docs/reports/widget-analytics-local.json` and
+`docs/reports/widget-analytics-production.json`. Backup
 rehearsal now compares original snapshot columns when an additive column is
 introduced. The earlier 55-table/178,586-row/52-foreign-key snapshot restored and
 passed hashes/constraints against the schema containing 0113 without replacing

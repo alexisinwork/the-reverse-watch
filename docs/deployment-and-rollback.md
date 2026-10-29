@@ -4,6 +4,22 @@ Last verified: 2026-10-29
 
 ## Current state
 
+### Analytics delivery release, 2026-10-29
+
+Latest verified application source: `91e6c1d`, READY as
+`dpl_8yGz4G2coeJM8hNv82UtnDJT4qXY`. Migrations through additive 0113 are applied.
+Clean CI `40915966906`, independent remote monitor `40916428562`, real production
+widget journeys, idempotent event delivery, admin and all saved-result API probes
+pass. Details: `analytics-delivery.md`. Subsequent documentation/verifier commits
+can change the deployment ID without changing application code.
+
+Keep this verified source as the new application rollback candidate. 0113 keeps
+the service-only older writer and nullable event IDs, so `a57e2fe` remains a
+compatible earlier fallback but loses shared widget journeys/safe delivery retry.
+Never remove historical events or revert additive production tables to roll back
+the app. Managed Supabase backup evidence and a hosted Shopify runtime remain
+external readiness boundaries, not completed deployment claims.
+
 ### Operational verification release, 2026-10-29
 
 Latest verified source: `b0f9f0e`, deployment
