@@ -6,6 +6,14 @@ Last verified: 2026-10-29
 
 ### Operational verification release, 2026-10-29
 
+Latest verified source: `b0f9f0e`, deployment
+`dpl_J15CD3z2weuBCgG39j4Y2HxrLUNN`. Clean CI `40897301790`, remote monitor
+`40897685444`, authenticated operations/admin and complete public/partner API
+smoke passed. Subsequent documentation pushes may update the deployment ID.
+Legacy GitHub Pages now uses workflow build mode, preserving its domain and
+history while stopping the unrelated automatic Jekyll build; no Pages deploy
+workflow is installed.
+
 - Production `dpl_75p1Mh6uSBL3kV6F67t1VDdfqeR9` is READY from `f477108`.
   `https://thereserve.watch/health` and authenticated dependency readiness pass.
   No DNS configuration was changed; September's apex/SSO observations below

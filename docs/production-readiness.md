@@ -12,7 +12,21 @@ result smoke added no paid attempts or cost. The first remote monitoring run
 `40896399369` passed. Browser verification passed 12 desktop/mobile tests and
 seven native/real local WordPress tests. The new clean-checkout CI exposed missing
 route-type generation before lint; the lint command now generates its required
-types, and the corrected remote run is recorded after it completes.
+types. The corrected clean-checkout run `40897301790` passed all 681 tests,
+types, lint, format and production build. Source `b0f9f0e` is READY as
+`dpl_J15CD3z2weuBCgG39j4Y2HxrLUNN`; remote monitoring run `40897685444` and
+the complete public/API smoke passed on that release. Applied database tests
+also passed reservation ceilings, monthly exhaustion, retry cooldown, abandoned
+recovery and analytics permissions. No runtime errors were returned by the
+production error-log inspection covering the operational rollout.
+
+The unrelated legacy GitHub Pages job tried to render the engineering context
+as Liquid and failed. Its Pages build mode was switched from branch-triggered
+`legacy` to `workflow`, retaining its existing custom-domain setting and history;
+no Pages deployment workflow is installed. Vercel remains the active application
+deployment. This removes future automatic Jekyll runs, not their historical
+failure records. See the GitHub Pages REST API `build_type` contract:
+https://docs.github.com/en/rest/pages/pages#update-information-about-a-github-pages-site.
 
 ## Checks and failure handling
 

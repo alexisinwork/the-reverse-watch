@@ -39,13 +39,14 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 | `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx`                                        | Published, reviewed film and celebrity watch stories.                                                                                                                                                      |
 | `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The archetype mini-quiz and catalogue/editorial picks; the first request validates up to eight references, then reuses the checked snapshot.                                                               |
 | `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes.                                                                                                                                 |
-| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily Vercel cron (see `vercel.json`): rechecks prices older than 90 days.                                                                                                                                 |
+| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily Vercel cron: reports skipped while the legacy unmetered price worker is paused.                                                                                                                      |
 | `/admin/evaluation`                                                       | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary, behind the admin login (`/evaluation` redirects).                                                                                                                                |
 | `/partners`                                                               | `routes/partners.tsx`                                                                                                | Public guide for partners: the script tag, WordPress, Shopify, other builders, React, the API.                                                                                                             |
 | `/embed/:key/…`                                                           | `routes/embed-layout.tsx` + the pages above                                                                          | Partner widgets: quiz, archetype, find, alternatives, stories inside a frame on a partner's site (see "Partner widgets").                                                                                  |
 | `/api/v1/…`                                                               | `routes/api-v1-*.ts`                                                                                                 | Partner JSON API; description at `/api/v1/openapi.json`.                                                                                                                                                   |
 | `/admin/sites`                                                            | `routes/admin-sites.tsx`                                                                                             | Partner sites: keys, allowed websites, monthly limit, theme, uses per month.                                                                                                                               |
 | `/health`                                                                 | `routes/health.ts`                                                                                                   | Uptime check.                                                                                                                                                                                              |
+| `/internal/operations/health`                                             | `routes/internal-operations-health.ts`, `domain/operations-health.server.ts`                                         | Separately authenticated database, budget, permission and configuration readiness check; no paid provider calls.                                                                                           |
 | Others                                                                    | `quiz-analytics-start.ts`, `discovery-analytics.ts`, `watch-research-status.tsx`, `internal-discovery-research-*.ts` | Analytics pings and the older film-research intake (see "Older code").                                                                                                                                     |
 
 ## How a quiz answer is produced
@@ -61,7 +62,8 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 3. **Search** (`domain/quiz-search.server.ts`):
    - filters the **watch catalogue** in code (`domain/watch-catalogue.ts`:
      style, price in the visitor's currency, diameter, water resistance,
-     movement, nickel, functions). Answers are instant.
+     movement, nickel, functions). Matching itself needs no AI; cold database
+     loading and first-use checks can take time.
    - Above 10k, or when fewer than three confirmed watches fit, the **live
      search** runs (`domain/quiz-live-search.server.ts`) and its finds are
      added to the catalogue as pending.
@@ -94,12 +96,17 @@ cookies, IP or anything identifying.
   × style × run) using `domain/catalogue-build.server.ts`. For every new watch
   it confirms the reference on a maker/retailer page, double-checks the price
   and keeps a photo URL. It is resumable and stops at a spend limit.
-- **Prices:** `domain/price-check.server.ts`. Perplexity finds the price;
+- **Strict retail-price research:** `domain/price-check.server.ts`. Perplexity finds the price;
   Muse Spark's own web search double-checks it on other pages. It is stored
   only when the two agree within ±5% in the same currency (USD, EUR, GBP or
   CHF), each on a live page or a source under 90 days old. A page Muse
   opened counts as live only when our own fetch of it is blocked.
   Grey-market and marketplace sites never count.
+- **Imported approximate prices:** the later owner decision permits labelled
+  catalogue/historical-market estimates. `validated-price.ts` and the metered
+  first-use validator retain exact-reference price evidence and write it back
+  to master and validated snapshots. These estimates are not retail quotes;
+  the strict retail worker above is currently paused.
 - **Reviewing:** `/admin/catalogue`, signed in with `ADMIN_PASSWORD`.
 - **Report:** `scripts/catalogue-report.ts` writes `docs/reports/…` and a copy
   to the Desktop.
@@ -144,8 +151,26 @@ ledger persists it across restarts. See `docs/catalogue-enrichment.md`.
 | `domain/film-search.server.ts`      | The film/people search behind `/watches/find`.                                                                                                                                                                                             |
 | `domain/quiz-live-search.server.ts` | The quiz's live search.                                                                                                                                                                                                                    |
 
-Every provider call takes a `Deps` object (config, fetch, clock). Tests pass
-a fake fetch, so no test ever calls a real provider.
+Provider calls take a `Deps` object (config, fetch, clock). Unit tests pass fake
+providers. Explicit local partner/production integration checks can use the real
+configured database and metered research, so they can consume the allowance.
+
+## Operational checks and backups
+
+`docs/production-readiness.md` records the exact tested scope and remaining
+external verification. `.github/workflows/check.yml` runs the code gate on
+main/PRs; the lint command generates route types for a clean checkout.
+`.github/workflows/production-monitor.yml` runs `scripts/monitor-production.ts`
+hourly with its own operations token. `operations-health.server.ts` calls only
+the service-role readiness RPC, not a paid provider. Migration 0109 recovers
+same-query abandoned checks at their full reserved cost; 0111 confines legacy
+analytics and enqueue writes to server callers using `rpcHeaders`.
+
+`scripts/export-local-catalogue-snapshot.ts` exports application-owned tables
+in a consistent read-only transaction into the ignored local archive.
+`scripts/rehearse-local-snapshot.ts` checks an actual temporary restore and
+rolls it back. These are application-data copies, not managed Supabase-project
+backup/PITR verification. Never publish the archive or its partner credentials.
 
 ### When a provider is down (fallbacks, from first to last)
 

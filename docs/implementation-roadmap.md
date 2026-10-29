@@ -2055,3 +2055,13 @@ seven native/real WordPress scenarios passed again. A clean CI checkout exposed
 missing generated route types before lint; the command now generates them.
 One invalid CP1252 punctuation byte in the enrichment guide was also repaired
 without changing its text, addressing the separate legacy Pages build error.
+
+Corrected clean-checkout CI run `40897301790` passed the full 681-test gate.
+Source `b0f9f0e` is READY as `dpl_J15CD3z2weuBCgG39j4Y2HxrLUNN`, with remote
+monitor run `40897685444` successful and all public/API smoke checks repeated
+without extra charge. Applied budget/cooldown/recovery/permission checks pass.
+The subsequent Pages failure was Liquid interpretation of the preserved original
+context; branch-triggered legacy Pages builds were replaced with workflow mode,
+retaining domain configuration/history and the active Vercel deployment. No new
+Pages publishing workflow was added. Owner clarification about managed backups
+and a hosted Shopify test runtime remains pending; neither is claimed verified.

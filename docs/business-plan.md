@@ -168,7 +168,8 @@ deployed as source `f477108`, with applied database permission checks. The fast
 gate passed 681 tests/build. A consistent local backup and temporary restore
 verified all 54 application tables (178,540 rows, 51 foreign keys); this does not
 verify managed Supabase backup retention. Production smoke and the first remote
-monitor passed; the clean CI generation fix is being verified remotely. Evidence:
+monitor passed; corrected clean-checkout CI `40897301790` also passed all 681
+tests/build. Source `b0f9f0e` and remote monitor `40897685444` are verified. Evidence:
 `docs/production-readiness.md`. No new customer, hosted Shopify
 installation, alert inbox delivery or data-redistribution permission is implied.
 
