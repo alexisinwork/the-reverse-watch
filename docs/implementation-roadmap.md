@@ -2089,3 +2089,29 @@ the shared per-card extraction. The adapter fixture test covers a nonempty
 grounded price proposal; no new live estimate is claimed from an empty batch.
 The new 55-table snapshot/temporary restore verifies 178,586 rows and 52 foreign
 keys. Updated reports and scope: `docs/metered-price-refresh.md`.
+
+### Anonymous analytics delivery and shared widget journeys (2026-10-29)
+
+Status: **local/applied verification complete; live rollout pending**.
+Observed two-second analytics write timeouts exposed the missing safe retry path.
+Additive 0113 preserves historical events and adds unique delivery IDs. The
+client/server retry the same ID once, and the service-only writer acknowledges
+an identical replay without counting it twice. Applied rollback tests include
+a real adapter write whose acknowledgement is deliberately lost.
+
+The five independent widget frames now receive one ephemeral parent-page nonce;
+registered-origin/window/key/tool checks protect advisor tab/retry messages.
+This fixes new cross-tool journeys without linking people across reloads or
+rewriting old sessions. First-party pages ignore injected widget nonce params.
+Existing no-email, no-cross-tool-result-link and provider privacy rules remain.
+The older 55-table snapshot also restores against the additive schema by checking
+its original columns, preserving numeric precision and exact hashes. Evidence
+and delivery limitations: `docs/analytics-delivery.md`.
+
+Full fast gate: 716 tests across 115 files, types, lint, format and production
+build passed. Twelve desktop/mobile browser checks and all seven native/real
+local WordPress scenarios pass. The production-bundle journey probe records
+five page-view features and five advisor-click features under one session;
+its ten unique synthetic events are removed, with zero added paid attempts or
+cost. The local HTTP replay probe returns 204 twice but stores one event;
+unregistered Origin is rejected with 403. No feedback votes were created.

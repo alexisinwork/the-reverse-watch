@@ -196,6 +196,17 @@ $0.6594, reserved $0, within the separate $100 application-verification ledger;
 older bulk and other provider billing are excluded. This is not a new live
 price-estimate success claim because no existing price is due yet.
 
+Analytics follow-up, 2026-10-29: transient write failures now have an idempotent
+delivery ID and a bounded client/server retry; applied checks prove one event
+after a lost acknowledgement. New widgets share an ephemeral parent-page
+session across tools and record parent advisor controls after validating the
+registered sender. Historical separate sessions remain separate. The full 716-test
+gate, twelve desktop/mobile checks, seven native/real WordPress scenarios and
+a built-bundle shared-journey probe pass. Live rollout evidence follows; no new
+traffic, satisfaction rate or revenue is inferred
+from synthetic checks. Technical scope: `docs/analytics-delivery.md`. The external
+backup/hosted-store evidence and commercial next action remain unchanged.
+
 Runtime checkpoint, 2026-10-28: the earlier statements below that all visitor
 validation is paused are superseded in the current source. Film/people search
 now calls the metered validator, including uncached discovery; quiz saved

@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-29T16:51:13.523Z",
+  "runtime": "Chromium, real built Reserve frames; fixture host HTML only",
+  "sourceOrigin": "http://127.0.0.1:8080",
+  "reserveOrigin": "http://localhost:4173",
+  "features": 5,
+  "sharedAnonymousSessions": 1,
+  "featuresWithPageViews": 5,
+  "featuresWithAdvisorTabClicks": 5,
+  "duplicateEventIds": 0,
+  "feedbackVotesAdded": 0,
+  "paidAttemptsAdded": 0,
+  "paidCostAddedUsd": 0,
+  "syntheticEvents": 10,
+  "syntheticFixtureRemoved": true
+}

@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-29T15:57:50.518Z",
+  "at": "2026-10-29T16:22:19.529Z",
   "snapshotId": "2026-10-29T15-54-11-115Z",
   "formatVersion": 2,
   "tables": 55,
@@ -8,5 +8,6 @@
   "exactRowHashes": true,
   "fileHashes": true,
   "temporaryRestoreRolledBack": true,
+  "checksOriginalSnapshotColumns": true,
   "scope": "Application data only; no Supabase auth/storage/roles or full project disaster recovery rehearsal."
 }

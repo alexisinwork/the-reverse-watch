@@ -49,6 +49,12 @@
   var base = new URL(script ? script.src : "https://thereserve.watch/embed.js")
     .origin;
   var frames = [];
+  // One ephemeral parent-page session across its independent tool frames.
+  // Nothing is written to cookies or browser storage.
+  var pageSession =
+    window.crypto && typeof window.crypto.randomUUID === "function"
+      ? window.crypto.randomUUID()
+      : null;
 
   function attr(el, name) {
     var value = el.getAttribute("data-" + name);
@@ -68,6 +74,8 @@
       var value = setting(el, name);
       if (value) params.set(THEME[name], value.replace(/^#/, ""));
     });
+    params.delete("_reserve_session");
+    if (pageSession) params.set("_reserve_session", pageSession);
     var query = params.toString();
     return (
       base +
@@ -156,6 +164,25 @@
       "Cheaper alternatives",
       "Watch stories",
     ];
+    function flushClicks(panel) {
+      if (!panel.ready || !panel.iframe || !panel.iframe.contentWindow) return;
+      (panel.pendingClicks || []).splice(0).forEach(function (control) {
+        panel.iframe.contentWindow.postMessage(
+          {
+            type: "reserve:advisor-click",
+            key: key,
+            feature: panel.feature,
+            control: control,
+          },
+          base,
+        );
+      });
+    }
+    function queueClick(panel, control) {
+      panel.pendingClicks = panel.pendingClicks || [];
+      if (panel.pendingClicks.length < 20) panel.pendingClicks.push(control);
+      flushClicks(panel);
+    }
     function show(feature) {
       active = feature;
       FEATURES.forEach(function (name) {
@@ -182,7 +209,13 @@
           var value = setting(el, name);
           if (value !== null) child.setAttribute("data-" + name, value);
         });
-        panel = { element: child, ready: false, timedOut: false };
+        panel = {
+          element: child,
+          ready: false,
+          timedOut: false,
+          feature: feature,
+          pendingClicks: [],
+        };
         panels[feature] = panel;
         var current = panel;
         var timer = window.setTimeout(function () {
@@ -196,13 +229,14 @@
         child.addEventListener("reserve:ready", function () {
           window.clearTimeout(timer);
           current.ready = true;
+          flushClicks(current);
           if (active === feature) {
             status.textContent = "Watch advisor ready.";
             retry.hidden = true;
           }
         });
         content.appendChild(child);
-        mount(child);
+        panel.iframe = mount(child);
       }
       status.textContent = panel.ready
         ? "Watch advisor ready."
@@ -217,18 +251,22 @@
       button.textContent = labels[index];
       button.addEventListener("click", function () {
         show(feature);
+        queueClick(panels[feature], "advisor_tab");
       });
       buttons[feature] = button;
       toolbar.appendChild(button);
     });
     retry.addEventListener("click", function () {
       var previous = panels[active];
+      var pending = previous.pendingClicks || [];
       frames = frames.filter(function (frame) {
         return frame.el !== previous.element;
       });
       previous.element.remove();
       delete panels[active];
       show(active);
+      panels[active].pendingClicks = pending;
+      queueClick(panels[active], "advisor_retry");
     });
     show(active);
     return null;
@@ -280,7 +318,7 @@
     );
   }
 
-  window.TheReserve = { version: "1.1.0", mount: mount, scan: scan };
+  window.TheReserve = { version: "1.1.1", mount: mount, scan: scan };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {

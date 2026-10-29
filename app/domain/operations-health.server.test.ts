@@ -18,6 +18,7 @@ const healthy = {
   validationContractReady: true,
   tableAccessProtected: true,
   analyticsAccessProtected: true,
+  analyticsDeliveryReady: true,
   priceRefreshContractReady: true,
   priceRefreshLastRunAt: "2026-10-29T00:00:00Z",
   priceRefreshOverdue: false,
@@ -73,13 +74,14 @@ describe("operations readiness", () => {
     expect(text).not.toContain(token);
     expect(fetchImpl).toHaveBeenCalledTimes(1);
     expect(String(fetchImpl.mock.calls[0]?.[0])).toContain(
-      "application_readiness_v3",
+      "application_readiness_v4",
     );
   });
   it.each([
     { ...healthy, staleReservations: 1 },
     { ...healthy, validationContractReady: false },
     { ...healthy, analyticsAccessProtected: false },
+    { ...healthy, analyticsDeliveryReady: false },
     { ...healthy, priceRefreshContractReady: false },
     { ...healthy, priceRefreshOverdue: true },
     { ...healthy, budget: { halted: true, remainingUsd: 99 } },

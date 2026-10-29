@@ -18,6 +18,7 @@ const databaseSchema = z.object({
   validationContractReady: z.boolean(),
   tableAccessProtected: z.boolean(),
   analyticsAccessProtected: z.boolean(),
+  analyticsDeliveryReady: z.boolean(),
   priceRefreshContractReady: z.boolean(),
   priceRefreshLastRunAt: z.string().nullable(),
   priceRefreshOverdue: z.boolean(),
@@ -65,7 +66,7 @@ export async function operationsHealth(
   try {
     if (!client) throw new Error("Database configuration unavailable");
     const database = databaseSchema.parse(
-      await rpc(client, "application_readiness_v3", {}, 12000),
+      await rpc(client, "application_readiness_v4", {}, 12000),
     );
     const ready =
       Object.values(configuration).every(Boolean) &&
@@ -73,6 +74,7 @@ export async function operationsHealth(
       database.validationContractReady &&
       database.tableAccessProtected &&
       database.analyticsAccessProtected &&
+      database.analyticsDeliveryReady &&
       database.priceRefreshContractReady &&
       (!database.priceRefreshOverdue || database.budget.remainingUsd < 0.025) &&
       database.staleReservations === 0 &&

@@ -23,6 +23,10 @@ import {
 } from "../domain/partner-sites";
 import { findSiteByPublicKey } from "../domain/partner-sites.server";
 import "../styles/embed.css";
+import {
+  sendInteraction,
+  trustedAdvisorControl,
+} from "../domain/interaction-analytics";
 
 export const middleware: Route.MiddlewareFunction[] = [
   async ({ request, params, context }, next) => {
@@ -76,6 +80,7 @@ export function loader({ request, params, context }: Route.LoaderArgs) {
     css: themeCss({ ...site.theme, ...overrides }),
     themeQuery: themeToSearch(overrides).toString(),
     siteOrigin: siteOrigin(request),
+    parentOrigins: site.allowedOrigins,
   };
 }
 
@@ -91,12 +96,26 @@ export function meta(): ReturnType<Route.MetaFunction> {
 }
 
 /** Tells the host page how tall the widget is and where it went. */
-function useHostBridge(feature: PartnerFeature) {
+function useHostBridge(
+  feature: PartnerFeature,
+  key: string,
+  parentOrigins: readonly string[],
+) {
   const location = useLocation();
   useEffect(() => {
     const shell = document.querySelector(".embed-shell");
     if (!shell) return;
     const height = () => Math.ceil(shell.getBoundingClientRect().height);
+    const onMessage = (event: MessageEvent) => {
+      const control = trustedAdvisorControl(event, {
+        key,
+        feature,
+        origins: parentOrigins,
+        parent: window.parent,
+      });
+      if (control) sendInteraction("click", { control, target: feature });
+    };
+    window.addEventListener("message", onMessage);
     postToHost({ type: "reserve:ready", feature, height: height() });
     let last = 0;
     const observer = new ResizeObserver(() => {
@@ -107,8 +126,11 @@ function useHostBridge(feature: PartnerFeature) {
       }
     });
     observer.observe(shell);
-    return () => observer.disconnect();
-  }, [feature]);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("message", onMessage);
+    };
+  }, [feature, key, parentOrigins]);
   useEffect(() => {
     postToHost({
       type: "reserve:navigate",
@@ -119,14 +141,15 @@ function useHostBridge(feature: PartnerFeature) {
 }
 
 export default function EmbedLayout() {
-  const { key, css, themeQuery, siteOrigin } = useLoaderData<typeof loader>();
+  const { key, css, themeQuery, siteOrigin, parentOrigins } =
+    useLoaderData<typeof loader>();
   const { pathname } = useLocation();
   const feature = featureOf(pathname, key);
   const surface = useMemo<EmbedSurface>(
     () => ({ key, feature, themeQuery, siteOrigin }),
     [key, feature, themeQuery, siteOrigin],
   );
-  useHostBridge(feature);
+  useHostBridge(feature, key, parentOrigins);
   return (
     <EmbedSurfaceProvider value={surface}>
       {/* Every value has passed partnerThemeSchema (hex colours, enums). */}

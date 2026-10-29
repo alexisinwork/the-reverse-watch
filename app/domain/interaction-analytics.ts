@@ -1,8 +1,9 @@
 import { z } from "zod";
-import { PARTNER_FEATURES } from "./partner-sites";
+import { PARTNER_FEATURES, type PartnerFeature } from "./partner-sites";
 
 export const interactionEventSchema = z
   .object({
+    eventId: z.uuid().optional(),
     sessionId: z.uuid(),
     siteKey: z
       .string()
@@ -31,8 +32,50 @@ export const interactionEventSchema = z
 export type InteractionEvent = z.infer<typeof interactionEventSchema>;
 let sessionId: string | undefined;
 export function currentInteractionSession() {
+  if (
+    !sessionId &&
+    typeof window !== "undefined" &&
+    /^\/embed\/pk_live_[A-Za-z0-9]{24}\//.test(window.location.pathname)
+  ) {
+    const shared = z
+      .uuid()
+      .safeParse(
+        new URLSearchParams(window.location.search).get("_reserve_session"),
+      );
+    if (shared.success) sessionId = shared.data;
+  }
   sessionId ??= crypto.randomUUID();
   return sessionId;
+}
+
+const advisorMessageSchema = z
+  .object({
+    type: z.literal("reserve:advisor-click"),
+    key: z.string(),
+    feature: z.enum(PARTNER_FEATURES),
+    control: z.enum(["advisor_tab", "advisor_retry"]),
+  })
+  .strict();
+export function trustedAdvisorControl(
+  event: MessageEvent,
+  expected: {
+    key: string;
+    feature: PartnerFeature;
+    origins: readonly string[];
+    parent: MessageEventSource;
+  },
+) {
+  if (
+    event.source !== expected.parent ||
+    !expected.origins.includes(event.origin)
+  )
+    return null;
+  const parsed = advisorMessageSchema.safeParse(event.data);
+  return parsed.success &&
+    parsed.data.key === expected.key &&
+    parsed.data.feature === expected.feature
+    ? parsed.data.control
+    : null;
 }
 const clean = (value: string, max: number) =>
   value
@@ -101,14 +144,41 @@ export function sendInteraction(
     ...context(),
     name,
     ...extra,
+    eventId: crypto.randomUUID(),
   });
   if (!event.success) return;
-  void fetch("/analytics/interactions", {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(event.data),
-    keepalive: true,
-  }).catch(() => undefined);
+  void deliverInteraction(event.data).catch(() => undefined);
+}
+
+/** One bounded retry while the page is alive, with the same anonymous delivery
+ * ID. keepalive still permits the first request to finish during navigation. */
+export async function deliverInteraction(
+  event: InteractionEvent,
+  fetchImpl: typeof fetch = fetch,
+  wait: (ms: number) => Promise<void> = (ms) =>
+    new Promise((done) => setTimeout(done, ms)),
+) {
+  const body = JSON.stringify(event);
+  const send = () =>
+    fetchImpl("/analytics/interactions", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body,
+      keepalive: true,
+    });
+  try {
+    const response = await send();
+    if (response.ok || response.status < 500 || !event.eventId)
+      return response.ok;
+  } catch {
+    if (!event.eventId) return false;
+  }
+  await wait(300);
+  try {
+    return (await send()).ok;
+  } catch {
+    return false;
+  }
 }
 export function sendResultFeedback(helpful: boolean) {
   sendInteraction("result_feedback", { helpful, control: "result_feedback" });

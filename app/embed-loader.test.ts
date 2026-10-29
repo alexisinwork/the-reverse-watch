@@ -47,13 +47,17 @@ describe("embed.js", () => {
     });
 
     const quiz = document.querySelector<HTMLIFrameElement>("#quiz iframe")!;
+    const session = new URL(quiz.src).searchParams.get("_reserve_session");
+    expect(session).toMatch(
+      /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/,
+    );
     expect(quiz.src).toBe(
-      `https://thereserve.watch/embed/${KEY}/quiz?scheme=light&accent=0A7CFF`,
+      `https://thereserve.watch/embed/${KEY}/quiz?scheme=light&accent=0A7CFF&_reserve_session=${session}`,
     );
     expect(quiz.title).toBe("Watch finder by The Reserve");
     const find = document.querySelector<HTMLIFrameElement>("#find iframe")!;
     expect(find.src).toBe(
-      `https://thereserve.watch/embed/${KEY}/find?type=actor&q=Heat&scheme=dark&accent=0A7CFF`,
+      `https://thereserve.watch/embed/${KEY}/find?type=actor&q=Heat&scheme=dark&accent=0A7CFF&_reserve_session=${session}`,
     );
   });
 
@@ -113,6 +117,7 @@ describe("embed.js", () => {
       loadScript({ "data-key": KEY });
       const advisor = document.querySelector<HTMLElement>("#advisor")!;
       const quiz = advisor.querySelector("iframe")!;
+      const postToFrame = vi.spyOn(quiz.contentWindow!, "postMessage");
       expect(quiz.src).toContain(`/embed/${KEY}/quiz?scheme=light`);
       const buttons = advisor.querySelectorAll<HTMLButtonElement>(
         ".reserve-advisor__tools button",
@@ -120,6 +125,10 @@ describe("embed.js", () => {
       expect(buttons).toHaveLength(5);
       buttons[1]!.click();
       expect(advisor.querySelectorAll("iframe")).toHaveLength(2);
+      const sessions = [...advisor.querySelectorAll("iframe")].map((frame) =>
+        new URL(frame.src).searchParams.get("_reserve_session"),
+      );
+      expect(new Set(sessions).size).toBe(1);
       expect(quiz.parentElement!.hidden).toBe(true);
       buttons[0]!.click();
       expect(advisor.querySelector("iframe")).toBe(quiz);
@@ -135,6 +144,15 @@ describe("embed.js", () => {
       );
       expect(advisor.querySelector('[role="status"]')!.textContent).toBe(
         "Watch advisor ready.",
+      );
+      expect(postToFrame).toHaveBeenCalledWith(
+        {
+          type: "reserve:advisor-click",
+          key: KEY,
+          feature: "quiz",
+          control: "advisor_tab",
+        },
+        "https://thereserve.watch",
       );
       expect(
         document

@@ -4,6 +4,13 @@ Checkpoint: 2026-10-29. This follows the first-use validation phase in the
 implementation roadmap; it does not certify every historical cache or catalogue
 claim. Production evidence is recorded after deployment in `docs/reports/`.
 
+Analytics follow-up is locally verified (716 tests, twelve desktop/mobile checks,
+seven native/real WordPress scenarios). Migration 0113 and the applied lost-ack
+test establish idempotent retry. A production-bundle browser check records all
+five widget tools and advisor tab clicks in one anonymous journey, with zero
+paid attempts and guarded cleanup of its ten events. Live rollout evidence
+follows deployment. Details: `analytics-delivery.md`.
+
 Source `f477108` is deployed READY. Live checks prove authenticated readiness,
 public/browser rejection, private aggregate analytics, country/yes-no feedback UI,
 56,719 catalogue records, repeated actor/archetype results and registered partner

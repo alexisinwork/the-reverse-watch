@@ -280,6 +280,14 @@ other channel (npm, Shopify app, WordPress.org, Wix…):
 
 ## When something breaks
 
+Anonymous interaction delivery and cross-tool widget sessions are described in
+`docs/analytics-delivery.md`. Browser collection lives in
+`components/interaction-analytics.tsx` and `domain/interaction-analytics.ts`;
+`routes/analytics-interactions.ts` uses `interaction-store.server.ts` and the
+service-only v3 writer (0113). Stable event IDs make the bounded retries safe.
+The shared parent-page nonce and advisor tab/retry relay live in `public/embed.js`
+and `routes/embed-layout.tsx`; no cookie, field value or provider call is involved.
+
 The current source pauses legacy paid alternative lookups and the two legacy
 research/price worker routes in `domain/legacy-paid-research-policy.server.ts`
 until they use the shared budget ledger. Local catalogue alternatives remain

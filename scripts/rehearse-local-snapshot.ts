@@ -51,10 +51,17 @@ try {
         const insert = async () => {
           if (!batch.length) return;
           const payload = `[${batch.join(",")}]`;
+          // Only read the keys in JavaScript; the original numeric values stay
+          // in raw PostgreSQL JSON text. Newly added columns may take defaults
+          // without changing the restored facts in this older snapshot.
+          const snapshotColumns = Object.keys(
+            JSON.parse(batch[0]!) as Record<string, unknown>,
+          );
           const records = await tx<{ record_text: string }[]>`
             insert into ${tx("pg_temp")}.${tx(temporary)} as restored (${tx(file.insertColumns)}) overriding system value
             select ${tx(file.insertColumns)} from jsonb_populate_recordset(null::${tx("pg_temp")}.${tx(temporary)},${payload}::text::jsonb)
-            returning to_jsonb(restored)::text as record_text`;
+            returning (select jsonb_object_agg(e.key,e.value) from jsonb_each(to_jsonb(restored)) e
+              where e.key=any(${snapshotColumns}::text[]))::text as record_text`;
           assert.deepEqual(
             records.map((r) => hash(r.record_text)).sort(),
             batch.map(hash).sort(),
@@ -132,6 +139,7 @@ try {
     exactRowHashes: true,
     fileHashes: true,
     temporaryRestoreRolledBack: true,
+    checksOriginalSnapshotColumns: true,
     scope:
       "Application data only; no Supabase auth/storage/roles or full project disaster recovery rehearsal.",
   };
