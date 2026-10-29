@@ -162,6 +162,15 @@ For retailer feeds, design tenant isolation and freshness before implementation.
 
 ## Current next action and durable handoff
 
+Owner operations update, 2026-10-29: hosted Shopify testing is outside current
+completion. Supabase backup metadata access now works and observes zero available
+backups, no physical recovery window and PITR disabled. After being offered managed
+or independent automatic backups, the owner explicitly deferred setup ("оставь на
+будущее"). No new infrastructure subscription or backup service was purchased;
+the $100 AI allowance is unchanged. This known reliability limitation stays in
+`docs/production-readiness.md`; it is not a new commercial proof point. The
+existing commercial next action below is unchanged.
+
 Operational evidence update, 2026-10-29: same-query abandoned-reservation
 recovery, protected dependency monitoring and server-only legacy analytics are
 deployed as source `f477108`, with applied database permission checks. The fast

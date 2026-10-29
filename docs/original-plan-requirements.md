@@ -353,3 +353,15 @@ Retained but no longer asked: `dateStatus`, `complications`, and
 `eligibleEnvironments` stay on the catalogue record for the coverage audit, the
 dossier, and the research pipeline. They are null or empty for sheet-sourced
 rows and are never scored by the version-3 engine.
+
+## 2026-10-29 operational acceptance boundaries
+
+The owner excludes hosted Shopify runtime testing from the current completion
+goal and defers automatic managed/off-site backups ("shopify ignore" / "оставь
+на будущее"). Existing integration files and local application snapshots remain.
+The scoped read-only Supabase check observes zero available backup records and
+PITR disabled; this is recorded as a known deferred reliability gap, not accepted
+backup coverage. Prior application/code/production proofs remain scoped to the
+tested features. Evidence and future recovery work:
+[`production readiness`](production-readiness.md),
+[`controlling roadmap`](implementation-roadmap.md).

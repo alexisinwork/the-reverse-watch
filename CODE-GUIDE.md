@@ -172,6 +172,12 @@ in a consistent read-only transaction into the ignored local archive.
 rolls it back. These are application-data copies, not managed Supabase-project
 backup/PITR verification. Never publish the archive or its partner credentials.
 
+`scripts/check-managed-backups.ts` uses a local, project-scoped Backups: Read
+Management API token for GET-only backup metadata checks. It writes a sanitized
+report and exits 2 when no restore point is observed. The owner deferred
+automatic managed/off-site backups after the 2026-10-29 zero-backup result;
+the documented gap must not be described as managed recovery readiness.
+
 `catalogue-price-refresh.server.ts` and migration 0112 supply one daily, bounded
 price check in the same validation ledger, keeping estimates labelled and parking
 changes for review. `validate-one-watch.server.ts` shares the one-call-per-provider

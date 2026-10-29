@@ -2135,3 +2135,28 @@ The owner can supply a project-scoped **Backups: Read** Management API token in
 the ignored local `.env`; exact minimum access is recorded in
 `docs/production-readiness.md`. No extra database or restore permission is needed
 to inspect the schedule and available-backup metadata.
+
+### Managed-backup inspection and owner deferral (2026-10-29)
+
+Status: **inspection complete; automatic backup setup deferred by owner**.
+The supplied scoped token now returns HTTP 200 for the backup list. It observes
+zero listed/completed backups, no physical recovery window and PITR disabled;
+WAL-G enabled alone is not accepted as backup availability. The Enterprise-only
+custom schedule endpoint returns 402, which is not used to infer the account's
+plan. Configured retention remains unknown. The repeatable GET-only checker and
+sanitized report are `scripts/check-managed-backups.ts` and
+`docs/reports/managed-backups-production.json`. The full 716-test code gate passes.
+
+After seeing the result and the managed/independent backup alternatives, the
+owner said "оставь на будущее". Automatic managed/off-site backup provisioning
+is therefore excluded from current completion, alongside hosted Shopify testing.
+The application checks remain established; full disaster-recovery protection
+is explicitly not claimed. Future work: choose and fund a managed or independent
+automatic backup policy, then verify real recovery points/retention and a safe
+restore. No new subscription, production restore or destructive action occurred.
+
+Before closing this checkpoint, a fresh consistent local snapshot and temporary
+restore passed exact file/row hashes, constraints and all 52 foreign keys across
+55 tables/178,700 rows (`2026-10-29T21-31-27-228Z`). The temporary transaction was
+rolled back. Raw snapshots stay private and ignored; only sanitized evidence
+is committed. This completed local check does not fill the deferred off-site gap.

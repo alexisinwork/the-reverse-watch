@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-29T21:29:11.142Z",
+  "status": "no_available_restore_point_observed",
+  "backupListStatus": 200,
+  "region": "eu-central-1",
+  "walgEnabled": true,
+  "pitrEnabled": false,
+  "listedBackups": 0,
+  "completedBackups": 0,
+  "invalidCompletedTimestamps": 0,
+  "latestObservedBackupAt": null,
+  "latestObservedAgeHours": null,
+  "physicalRecoveryWindow": null,
+  "configuredRetentionDays": null,
+  "scheduleApiStatus": 402,
+  "configuredScheduleUtc": null,
+  "scheduleUpdatedAt": null,
+  "scheduleNote": "Custom schedule reads are Enterprise-only; 402 alone does not identify the plan or disable default daily backups.",
+  "retentionNote": "The backup-list response does not establish configured retention. No plan or retention is inferred from WAL-G or the observed window.",
+  "scope": "Read-only metadata; not a managed restore rehearsal, off-site export or Storage-object backup proof."
+}

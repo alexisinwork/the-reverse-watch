@@ -4,6 +4,12 @@ Checkpoint: 2026-10-29. This follows the first-use validation phase in the
 implementation roadmap; it does not certify every historical cache or catalogue
 claim. Production evidence is recorded after deployment in `docs/reports/`.
 
+Owner acceptance boundary, 2026-10-29: hosted Shopify testing is excluded and
+automatic managed/off-site backups are explicitly deferred ("оставь на будущее").
+The read-only Supabase check now succeeds but observes zero available backups,
+no physical recovery window and PITR disabled. This is a known data-protection
+gap retained for follow-up, not a claim of full disaster-recovery readiness.
+
 Latest verified application source: `91e6c1d`, READY as
 `dpl_8yGz4G2coeJM8hNv82UtnDJT4qXY`. Clean CI `40915966906` passes 716 tests
 and the complete code gate. Twelve desktop/mobile checks, seven native/real
@@ -112,20 +118,43 @@ of Git, deploys and shared artifacts. Prior snapshots are retained.
 The rehearsal restores into temporary copies inside a rolled-back transaction,
 checks file hashes, exact row hashes, local constraints/indexes and relationships
 between restored application tables. It never overwrites an application table.
-The current proof is `reports/local-backup-rehearsal.json`: 55 tables, 178,586
-rows and 52 foreign keys, including the new daily-run ledger. Its exact original
+The current proof is `reports/local-backup-rehearsal.json`: 55 tables, 178,700
+rows and 52 foreign keys from `2026-10-29T21-31-27-228Z`, including the daily-run
+ledger and analytics delivery IDs. Its exact original
 columns also restore against the additive 0113 schema. This is not a complete Supabase-project restore:
 auth/storage/roles and managed backups/PITR are outside its scope. Scheduled
-off-machine backups and managed retention have not been verified with the
-available project credentials; a local snapshot alone is not ongoing disaster
-recovery protection.
+off-machine backups remain deferred; a local snapshot alone is not ongoing
+disaster recovery protection.
+
+### Managed backup inspection
+
+```powershell
+node --env-file=.env --import tsx scripts/check-managed-backups.ts
+```
+
+The scoped token works: backup-list HTTP 200, zero listed/completed backups,
+empty physical recovery metadata, `pitr_enabled=false`, `walg_enabled=true`.
+WAL-G being enabled does not prove an available restore point. The custom
+schedule endpoint returns 402 and is Enterprise-only; this does not establish
+the project's plan or disprove default daily backups. Configured retention is
+unknown because the list response does not expose it. Evidence:
+`reports/managed-backups-production.json` (2026-10-29 21:29 UTC).
+
+The verifier uses GET only, validates the response and logs/writes selected
+metadata without credentials or raw upstream bodies. Exit 2 means no restore
+point was observed; exit 1 means metadata could not be verified. It does not
+treat authentication success as backup readiness. API contract:
+[backup list](https://supabase.com/docs/reference/api/v1-list-all-backups) and
+[custom schedule](https://supabase.com/docs/reference/api/v1-get-backup-schedule),
+retrieved 2026-10-29. No plan/PITR purchase, schedule change or production restore
+was performed. The owner deferred automatic backup setup after seeing this result.
 
 ## Readiness boundaries
 
 Owner scope update, 2026-10-29: ignore hosted Shopify verification for the current
 completion goal. Existing Shopify files remain available; no hosted-store test
-is claimed. The remaining requested operational check is managed Supabase
-backup availability, freshness and retention.
+is claimed. Supabase metadata inspection is now complete; automatic managed or
+independent off-site backup setup is also deferred by the owner's later decision.
 
 For that read-only check, create a scoped personal access token for this project
 only, start with No access and grant **Backups: Read**. Store it as
