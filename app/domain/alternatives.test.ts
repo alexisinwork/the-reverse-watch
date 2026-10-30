@@ -3,6 +3,7 @@ import {
   isHomageBrand,
   rankAlternatives,
   strictFailures,
+  unpricedAlternatives,
 } from "./alternatives";
 import type { DesignTraits } from "./design-traits";
 import { catalogueWatchSchema, type CatalogueWatch } from "./watch-catalogue";
@@ -71,6 +72,45 @@ function watch(overrides: Record<string, unknown> = {}): CatalogueWatch {
 const blackBay = () =>
   watch({ brand: "Tudor", model: "Black Bay 58", priceAmount: 4_175 });
 const around2k = { kind: "exact", amount: 2_000, currency: "USD" } as const;
+
+describe("coverage without prices", () => {
+  it("keeps mechanical, size and water requirements while excluding known prices", () => {
+    const target = blackBay();
+    const unknown = {
+      priceAmount: null,
+      priceCurrency: null,
+      priceStatus: "unconfirmed",
+    };
+    const accepted = watch(unknown);
+    expect(
+      unpricedAlternatives(
+        target,
+        [
+          accepted,
+          watch({ ...unknown, caseDiameterMm: 48 }),
+          watch({ ...unknown, movement: null }),
+          watch({ ...unknown, waterResistanceM: 30 }),
+          watch(),
+          watch({ ...unknown, reviewStatus: "rejected" }),
+        ],
+        false,
+      ),
+    ).toEqual([accepted]);
+  });
+  it("deduplicates titles before the limit so five duplicates cannot shrink the shortlist", () => {
+    const target = blackBay();
+    const options = [
+      watch({ brand: "Other", model: "Same" }),
+      watch({ brand: "Other", model: "Same" }),
+      ...Array.from({ length: 12 }, () => watch()),
+    ];
+    const result = rankAlternatives(target, options, around2k, false, fx);
+    expect(result).toHaveLength(10);
+    expect(result.filter((entry) => entry.watch.model === "Same")).toHaveLength(
+      1,
+    );
+  });
+});
 
 describe("budgetWindow", () => {
   it("reads an exact price as that price ± 1,000, and a range as itself", () => {

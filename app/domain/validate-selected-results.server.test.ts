@@ -1,7 +1,13 @@
 import { describe, expect, it, vi } from "vitest";
 import type { FoundWatch } from "./ai-watch-types";
 const mocks = vi.hoisted(() => ({ search: vi.fn() }));
-vi.mock("./ai-watch-store.server", () => ({ searchWithStore: mocks.search }));
+vi.mock("./ai-watch-store.server", () => ({
+  searchWithStore: mocks.search,
+  loadAiWatchStoreConfig: () => null,
+}));
+vi.mock("./coverage-catalogue.server", () => ({
+  hydrateCoverageCandidates: async (watches: FoundWatch[]) => watches,
+}));
 vi.mock("./validation-runtime.server", () => ({
   meteredSearchOptions: () => ({}),
 }));
@@ -59,7 +65,15 @@ describe("checked catalogue selections", () => {
       await validateSelectedResults("archetype", { band: "entry" }, [
         card("NEW123"),
       ]),
-    ).toMatchObject({ status: "unavailable" });
+    ).toMatchObject({
+      status: "found",
+      watches: [
+        {
+          referenceCode: "NEW123",
+          details: { verificationStatus: "unverified" },
+        },
+      ],
+    });
   });
   it("reserves at most eight candidates for a single selection", async () => {
     mocks.search.mockResolvedValue({
@@ -77,6 +91,7 @@ describe("checked catalogue selections", () => {
       candidates,
     );
     expect(result.status).toBe("found");
+    if (result.status === "found") expect(result.watches).toHaveLength(10);
     const request = mocks.search.mock.calls.at(-1)?.[0] as {
       candidates: FoundWatch[];
     };

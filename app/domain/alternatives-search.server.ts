@@ -8,6 +8,8 @@ import type { AiSearchView, FoundWatch } from "./ai-watch-types";
 import {
   ALTERNATIVES_NAME_MAX,
   budgetWindow,
+  SIZE_TOLERANCE_MM,
+  unpricedAlternatives,
   type Alternative,
   type AlternativesBudget,
 } from "./alternatives";
@@ -37,6 +39,8 @@ import { catalogueWatchSchema } from "./watch-catalogue";
 import { z } from "zod";
 import { uniqueSearchView } from "./watch-result-dedup";
 import { validateSelectedResults } from "./validate-selected-results.server";
+import { loadUnpricedCandidates } from "./coverage-catalogue.server";
+import { unverifiedCandidate, SEARCH_RESULT_TARGET } from "./search-coverage";
 
 // Pre-owned lookups cost a little, so a visitor's new searches are capped.
 export const ALTERNATIVES_SEARCH_POLICY: RateLimitPolicy = {
@@ -285,7 +289,41 @@ export async function startAlternativesSearch(
   })
     .then(async (outcome) => {
       const built = buildAlternativesPage(outcome, budget, form);
-      if (built.result.status !== "found") return built;
+      if (outcome.status !== "found") return built;
+      const candidates =
+        built.result.status === "found" ? [...built.result.watches] : [];
+      if (candidates.length < SEARCH_RESULT_TARGET) {
+        const diameter = outcome.target.caseDiameterMm;
+        const rows = await loadUnpricedCandidates(
+          outcome.target.styles,
+          diameter === null ? null : diameter - SIZE_TOLERANCE_MM,
+          diameter === null ? null : diameter + SIZE_TOLERANCE_MM,
+          [],
+          client,
+        );
+        candidates.push(
+          ...unpricedAlternatives(
+            outcome.target,
+            rows,
+            form.quartz === "yes",
+          ).flatMap((row) => {
+            const card = catalogueToFoundWatch(row);
+            return card
+              ? [
+                  unverifiedCandidate(
+                    {
+                      ...card,
+                      rationale:
+                        "Similar specifications; price unavailable, so whether it is cheaper or within budget is unknown.",
+                    },
+                    "Price unavailable — cheaper/budget fit unknown",
+                  ),
+                ]
+              : [];
+          }),
+        );
+      }
+      if (!candidates.length) return built;
       const checked = await validateSelectedResults(
         "alternatives",
         {
@@ -294,7 +332,7 @@ export async function startAlternativesSearch(
           budget,
           allowQuartz: form.quartz === "yes",
         },
-        built.result.watches,
+        candidates,
         progress.report,
       );
       return {
@@ -303,8 +341,11 @@ export async function startAlternativesSearch(
           checked.status === "found"
             ? {
                 ...checked,
-                summary: `${checked.watches.length} ${checked.watches.length === 1 ? "watch" : "watches"} like the ${outcome.status === "found" ? `${outcome.target.brand} ${outcome.target.model}` : form.name} ${budgetLabel(budget)}, most alike first. Each shown reference passed the source checks.`,
-                origin: built.result.origin,
+                summary: `${checked.watches.length} ${checked.watches.length === 1 ? "watch" : "watches"} like the ${outcome.target.brand} ${outcome.target.model}, most alike first. Priced matches are ${budgetLabel(budget)}; price-unknown suggestions and additional candidates are labelled.`,
+                origin:
+                  built.result.status === "found"
+                    ? built.result.origin
+                    : "catalogue",
               }
             : checked,
       };

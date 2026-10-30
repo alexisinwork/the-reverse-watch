@@ -453,7 +453,7 @@ function pick(
 }
 
 /** Shortlist places shown before "Show all". */
-export const QUIZ_SHOWN_FIRST = 5;
+export const QUIZ_SHOWN_FIRST = 10;
 export const CATALOGUE_ALSO_LIMIT = 3;
 
 /**
@@ -487,7 +487,7 @@ export function matchCatalogue(
   };
 }
 
-/** How many watches a quiz shortlist can hold (5 shown, 5 more on request). */
+/** How many distinct watches a quiz shortlist shows immediately. */
 export const QUIZ_RESULT_LIMIT = 10;
 
 // Never relaxed for a near fit: budget, the chosen diameter range,

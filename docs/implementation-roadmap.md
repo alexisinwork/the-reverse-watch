@@ -2160,3 +2160,36 @@ restore passed exact file/row hashes, constraints and all 52 foreign keys across
 55 tables/178,700 rows (`2026-10-29T21-31-27-228Z`). The temporary transaction was
 rolled back. Raw snapshots stay private and ignored; only sanitized evidence
 is committed. This completed local check does not fill the deferred off-site gap.
+
+### Shared 5–10-result coverage (2026-10-30)
+
+Status: **implementation and local verification; rollout in progress**.
+The owner now explicitly permits labelled unverified/price-unknown candidates in
+all tools and widgets. The strict accepted-only visible subset policy is
+superseded for presentation, while two-source snapshot/master acceptance stays.
+Checked cards lead; exact display duplicates are removed before the ten-card
+limit. All ten are visible immediately. Real shortages are reported honestly.
+
+Saved typed/legacy film research supplements short certified snapshots, bound
+to the exact subject. Current master facts replace historical uncertified
+prices/specifications; rejected identities remain excluded. New discovery can
+save ten cited candidates, with at most eight independent paid checks. One
+free-cache top-up reservation is allowed below five, and saved coverage is
+reused; a paid request never chains another reservation. Existing $0.025/card,
+$0.20/issuance and $100/month limits stay intact. Unpriced quiz suggestions must
+meet every other active rule and explicitly disclaim budget fit. Archetype and
+alternative suggestions likewise retain their technical constraints and labels.
+
+Additive service-only migration 0114 is applied. Its bounded reads, grants,
+rejection handling and numeric/movement predicates pass a rolled-back database
+check. Real-database Daniel Craig returns ten unique cards (one certified,
+nine uncertain) with zero provider calls; no catalogue or old snapshot was
+mass-promoted. Scope and repeatable checks: `docs/search-result-coverage.md`.
+Hosted Shopify and automatic off-site backups retain their owner deferrals.
+
+Local completion: full gate passes 734 tests across 117 files and the build;
+12 desktop/mobile plus seven native/real WordPress scenarios pass. Direct API
+counts are find 10, archetype 10, quiz 10, alternatives 8. The real page and
+widget browser checks pass, retaining exactly the Powered by widget link.
+The independent before/after budget probe observes zero added charge/attempts
+($0.7163 spent, 31 attempts). Report: `docs/reports/result-coverage-local.json`.

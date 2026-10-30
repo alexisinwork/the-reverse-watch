@@ -14,6 +14,7 @@ export type ValidationFact = {
 export type ValidationEvidence = {
   provider: "perplexity" | "muse";
   brand: string;
+  model?: string | null;
   referenceCode: string | null;
   person: string | null;
   work: string | null;

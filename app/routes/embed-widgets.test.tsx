@@ -15,7 +15,10 @@ vi.mock("@upstash/redis", () => ({
 vi.mock("../domain/discovery-funnel-store.server", () => ({
   persistDiscoveryFunnelEvent: vi.fn(),
 }));
-vi.mock("../domain/ai-watch-store.server", () => aiSearchMock);
+vi.mock("../domain/ai-watch-store.server", () => ({
+  ...aiSearchMock,
+  loadAiWatchStoreConfig: () => null,
+}));
 vi.mock("../domain/fx.server", () => ({ loadFxTable: async () => null }));
 vi.mock("../domain/partner-sites.server", () => ({
   recordPartnerUse: usage.recordPartnerUse,

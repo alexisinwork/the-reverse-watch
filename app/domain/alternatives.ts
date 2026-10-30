@@ -12,6 +12,7 @@ import type { DesignTraits } from "./design-traits";
 import type { FxTable } from "./fx";
 import { convert } from "./fx";
 import { findPriceRange } from "./questionnaire-v4";
+import { uniqueWatchResults } from "./watch-result-dedup";
 import {
   priceIn,
   type CatalogueStyle,
@@ -443,12 +444,42 @@ export function rankAlternatives(
   );
   // At most two per brand, so one maker can't fill the list.
   const perBrand = new Map<string, number>();
+  const unique = uniqueWatchResults(ranked.map((entry) => entry.watch));
   return ranked
     .filter((entry) => {
+      if (!unique.includes(entry.watch)) return false;
       const brand = entry.watch.brand.toLowerCase();
       const count = perBrand.get(brand) ?? 0;
       perBrand.set(brand, count + 1);
       return count < 2;
     })
     .slice(0, limit);
+}
+
+/** Price-unknown suggestions remain outside the budget-qualified ranking. */
+export function unpricedAlternatives(
+  target: CatalogueWatch,
+  catalogue: readonly CatalogueWatch[],
+  allowQuartz: boolean,
+) {
+  return uniqueWatchResults(
+    catalogue
+      .filter(
+        (candidate) =>
+          candidate.id !== target.id &&
+          candidate.reviewStatus !== "rejected" &&
+          candidate.referenceConfirmed &&
+          (candidate.priceAmount === null ||
+            candidate.priceStatus === "unconfirmed") &&
+          strictFailures(target, candidate, allowQuartz).length === 0 &&
+          // An unknown movement cannot establish a mechanical-only requirement.
+          (allowQuartz ||
+            !target.movement ||
+            !MECHANICAL.has(target.movement) ||
+            MECHANICAL.has(candidate.movement ?? "")),
+      )
+      .sort(
+        (a, b) => lookScore(target, b).points - lookScore(target, a).points,
+      ),
+  );
 }

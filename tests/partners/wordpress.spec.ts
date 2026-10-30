@@ -39,6 +39,20 @@ test("WordPress shortcode hosts five isolated tools", async ({ page }) => {
   await expect(archetype.getByRole("link")).toHaveText(
     "Powered by The Reserve",
   );
+  await expect(archetype.locator("article.watch-card")).toHaveCount(10, {
+    timeout: 90_000,
+  });
+  await buttons.nth(2).click();
+  const find = advisor.frameLocator('[data-reserve="find"] iframe');
+  await find.getByLabel("What are you searching for?").selectOption("actor");
+  await find
+    .getByLabel("Name of the movie, series, actor, character or celebrity")
+    .fill("Daniel Craig");
+  await find.getByRole("button", { name: "Search", exact: true }).click();
+  await expect(find.locator("article.watch-card")).toHaveCount(10, {
+    timeout: 60_000,
+  });
+  await expect(find.getByRole("link")).toHaveCount(1);
   await buttons.nth(0).click();
   const quiz = advisor.frameLocator('[data-reserve="quiz"] iframe');
   await quiz.getByLabel("USD 1k–2k", { exact: true }).check();

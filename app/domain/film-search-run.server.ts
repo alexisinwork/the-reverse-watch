@@ -4,7 +4,7 @@
  * within the visitor's limit, and catalogue photos for sightings without
  * one. The search itself is film-search.server.ts.
  */
-import { searchWithStore } from "./ai-watch-store.server";
+import { searchWithCoverage } from "./coverage-search.server";
 import type { AiSearchView, ProgressEvent } from "./ai-watch-types";
 import { mergeSightings } from "./film-sightings";
 import { normalizeFilmQuery } from "./film-search.server";
@@ -17,6 +17,7 @@ import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
 import { fillPhotosFromCatalogue } from "./watch-catalogue.server";
 import { enrichResultWatches } from "./catalogue-result-enrichment.server";
 import { uniqueSearchView } from "./watch-result-dedup";
+import { coverSearchResults } from "./search-coverage";
 
 // Stored answers are free; only fresh searches spend provider credit.
 export const FILM_NEW_SEARCH_POLICY: RateLimitPolicy = {
@@ -47,7 +48,7 @@ export async function runFilmSearch({
 }): Promise<AiSearchView> {
   const limitMessage = await meterPartnerUse(site, "find");
   if (limitMessage) return { status: "no_match", summary: limitMessage };
-  const view = await searchWithStore(
+  const view = await searchWithCoverage(
     {
       kind: "film",
       cacheInput: { query: normalizeFilmQuery(query), kind },
@@ -60,13 +61,15 @@ export async function runFilmSearch({
   );
   // Sightings without a photo borrow the catalogue's photo of that watch.
   return view.status === "found"
-    ? uniqueSearchView({
-        ...view,
-        watches: mergeSightings(
-          await enrichResultWatches(
-            await fillPhotosFromCatalogue(view.watches),
+    ? coverSearchResults(
+        uniqueSearchView({
+          ...view,
+          watches: mergeSightings(
+            await enrichResultWatches(
+              await fillPhotosFromCatalogue(view.watches),
+            ),
           ),
-        ),
-      })
+        }),
+      )
     : view;
 }

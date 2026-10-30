@@ -105,15 +105,25 @@ test("five real tools, preserved answers, mobile and admin", async ({
   await expect(archetype.getByRole("link")).toHaveText(
     "Powered by The Reserve",
   );
+  await expect(archetype.locator("article.watch-card")).toHaveCount(10, {
+    timeout: 90_000,
+  });
   const find = await openTool(page, "find");
-  await find.getByLabel("What are you searching for?").selectOption("movie");
+  await find.getByLabel("What are you searching for?").selectOption("actor");
   await find
     .getByLabel("Name of the movie, series, actor, character or celebrity")
-    .fill("Heat");
+    .fill("Daniel Craig");
   await find.getByRole("button", { name: "Search", exact: true }).click();
   await expect(
-    find.getByRole("heading", { name: "Watches in “Heat”" }),
+    find.getByRole("heading", { name: "Watches in “Daniel Craig”" }),
   ).toBeVisible({ timeout: 60_000 });
+  await expect(find.locator("article.watch-card")).toHaveCount(10, {
+    timeout: 60_000,
+  });
+  await expect(
+    find.getByText("Association not fully verified", { exact: true }),
+  ).toHaveCount(9);
+  await expect(find.getByRole("link")).toHaveCount(1);
   await openTool(page, "alternatives");
   await openTool(page, "stories");
   await openTool(page, "quiz");

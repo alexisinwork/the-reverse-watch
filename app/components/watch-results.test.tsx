@@ -1,8 +1,9 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 
 import type { FoundWatch } from "../domain/ai-watch-types";
 import { WatchResults } from "./watch-results";
+import { EmbedSurfaceProvider } from "./surface";
 
 const watch = (index: number, misses?: string[]): FoundWatch => ({
   brand: `Brand${index}`,
@@ -97,7 +98,7 @@ describe("quiz shortlist", () => {
     expect(screen.getByText(/Reference confirmed on the/)).toBeInTheDocument();
   });
 
-  it("shows five watches, then all ten on request, with near fits marked", () => {
+  it("shows all ten watches immediately, with near fits marked", () => {
     render(
       <WatchResults
         eyebrow="Shortlist"
@@ -115,10 +116,6 @@ describe("quiz shortlist", () => {
         }}
       />,
     );
-    expect(screen.getAllByRole("article")).toHaveLength(5);
-    fireEvent.click(
-      screen.getByRole("button", { name: "Show all 10 watches" }),
-    );
     expect(screen.getAllByRole("article")).toHaveLength(10);
     expect(screen.getByText("Option 10 · Close fit")).toBeInTheDocument();
     expect(
@@ -135,6 +132,49 @@ describe("quiz shortlist", () => {
 });
 
 describe("film sightings", () => {
+  it("labels uncertain results and unknown prices and keeps widget sources as text", () => {
+    render(
+      <EmbedSurfaceProvider
+        value={{
+          key: "test",
+          feature: "find",
+          themeQuery: "",
+          siteOrigin: "https://thereserve.watch",
+        }}
+      >
+        <WatchResults
+          eyebrow="Film"
+          heading="Watches"
+          mode="film"
+          fx={null}
+          result={{
+            status: "found",
+            fromCache: true,
+            summary: "Options",
+            watches: [
+              {
+                ...watch(1),
+                details: {
+                  price: null,
+                  verificationStatus: "unverified",
+                  verificationNote: "Association not fully verified",
+                  referenceSourceLabel: "Dials",
+                  referenceSourceUrl: "https://dials.example/watch",
+                  sourceDetails: { Diameter: 40 },
+                },
+              },
+            ],
+          }}
+        />
+      </EmbedSurfaceProvider>,
+    );
+    expect(
+      screen.getByText("Association not fully verified"),
+    ).toBeInTheDocument();
+    expect(screen.getByText("Price not available")).toBeInTheDocument();
+    expect(screen.getByText("Reference source: Dials")).toBeInTheDocument();
+    expect(screen.queryAllByRole("link")).toHaveLength(0);
+  });
   it("link to where each sighting was documented, never to a script URL", () => {
     render(
       <WatchResults

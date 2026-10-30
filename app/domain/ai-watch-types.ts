@@ -1,6 +1,9 @@
 export type SourceKind = "manufacturer" | "retailer" | "catalogue";
 
 export type WatchDetails = {
+  /** Candidate coverage never promotes an uncertain association to a checked fact. */
+  verificationStatus?: "unverified";
+  verificationNote?: string;
   imageEvidence?: {
     sourceUrl: string;
     imageUrl: string;
@@ -102,6 +105,13 @@ export type AiSearchView =
       origin?: "catalogue" | "live" | "mixed";
       /** Fits every answer, but no maker's page confirmed the reference. */
       alsoWorth?: FoundWatch[];
+      coverage?: {
+        minimum: number;
+        target: number;
+        total: number;
+        additionalCandidates: number;
+        status: "target_met" | "minimum_met" | "partial";
+      };
     })
   | Exclude<AiSearchOutcome, { status: "found" }>;
 

@@ -1,17 +1,27 @@
 /**
  * Quiz answers are filtered from the catalogue in code, so they are
- * instant. Above 10k, or where the catalogue has fewer than three
+ * code-filtered. Above 10k, or where the catalogue has fewer than five
  * confirmed fits, the stored or live search can supplement them only after
  * the current catalogue facts satisfy the same constraints.
  */
 import { quizCacheInput } from "./quiz-live-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
-import { searchWithStore } from "./ai-watch-store.server";
+import { searchWithCoverage } from "./coverage-search.server";
+import {
+  coverSearchResults,
+  SEARCH_RESULT_TARGET,
+  unverifiedCandidate,
+} from "./search-coverage";
+import { loadUnpricedCandidates } from "./coverage-catalogue.server";
 import { meteredSearchOptions } from "./validation-runtime.server";
 import { uniqueSearchView } from "./watch-result-dedup";
 import type { AiSearchView, FoundWatch, ProgressEvent } from "./ai-watch-types";
 import { loadFxTable, type FxTable } from "./fx.server";
-import { findPriceRange, type ProfileV4 } from "./questionnaire-v4";
+import {
+  diameterRangeFor,
+  findPriceRange,
+  type ProfileV4,
+} from "./questionnaire-v4";
 import {
   catalogueCoversRange,
   catalogueIdentityKey,
@@ -21,6 +31,7 @@ import {
   MISS_LABELS,
   nearFits,
   QUIZ_RESULT_LIMIT,
+  stylesForScenarios,
   type CatalogueWatch,
 } from "./watch-catalogue";
 import {
@@ -30,7 +41,7 @@ import {
 } from "./watch-catalogue.server";
 
 /** Fewer confirmed catalogue fits than this and the live search fills in. */
-export const CATALOGUE_ENOUGH = 3;
+export const CATALOGUE_ENOUGH = 5;
 
 function logError(event: string, error: unknown) {
   console.error(
@@ -86,7 +97,7 @@ async function searchQuizBeforeDeduplication(
     loadFx = () => loadFxTable(),
     report,
     runLive = () =>
-      searchWithStore(
+      searchWithCoverage(
         {
           kind: "quiz",
           cacheInput: quizCacheInput(profile),
@@ -269,5 +280,50 @@ async function searchQuizBeforeDeduplication(
 export async function searchQuiz(
   ...args: Parameters<typeof searchQuizBeforeDeduplication>
 ): Promise<AiSearchView> {
-  return uniqueSearchView(await searchQuizBeforeDeduplication(...args));
+  const result = coverSearchResults(
+    uniqueSearchView(await searchQuizBeforeDeduplication(...args)),
+  );
+  if (
+    result.status === "found" &&
+    (result.coverage?.total ?? 0) >= SEARCH_RESULT_TARGET
+  )
+    return result;
+  const [profile, options] = args;
+  const client =
+    options?.client === undefined ? catalogueClient() : options.client;
+  if (!client) return result;
+  const diameter = diameterRangeFor(profile);
+  const [unpriced, fx] = await Promise.all([
+    loadUnpricedCandidates(
+      stylesForScenarios(profile.wearingScenarios),
+      diameter.minimumMm,
+      diameter.maximumMm,
+      profile.movementTypes,
+      client,
+    ),
+    options?.loadFx ? options.loadFx() : loadFxTable(),
+  ]);
+  const candidates = unpriced.flatMap((row) => {
+    // These are explicitly outside the budget-qualified matches. Every other
+    // active constraint must still pass; unknown dimensions/functions never do.
+    if (
+      catalogueRuleFailures(row, profile, fx).some((rule) => rule !== "price")
+    )
+      return [];
+    const card = catalogueToFoundWatch(row);
+    if (!card) return [];
+    return [
+      unverifiedCandidate(
+        {
+          ...card,
+          details: {
+            ...card.details,
+            misses: ["Price unavailable — budget fit unknown"],
+          },
+        },
+        "Price unavailable — budget fit unknown",
+      ),
+    ];
+  });
+  return coverSearchResults(result, candidates);
 }

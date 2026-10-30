@@ -28,6 +28,8 @@ type Reserve =
     };
 
 export type ValidationServices = {
+  /** Save provider-cited draft candidates separately from checked snapshots. */
+  captureCandidates?: (watches: FoundWatch[]) => Promise<void>;
   hydrate: (watches: FoundWatch[]) => Promise<FoundWatch[]>;
   hydrateVerified?: (watches: FoundWatch[]) => Promise<FoundWatch[]>;
   reserve: (key: string, count: number) => Promise<Reserve>;

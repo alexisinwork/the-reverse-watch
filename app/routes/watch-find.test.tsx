@@ -5,7 +5,10 @@ import { vi } from "vitest";
 const store = vi.hoisted(() => ({ searchWithStore: vi.fn() }));
 const finder = vi.hoisted(() => ({ check: vi.fn() }));
 
-vi.mock("../domain/ai-watch-store.server", () => store);
+vi.mock("../domain/ai-watch-store.server", () => ({
+  ...store,
+  loadAiWatchStoreConfig: () => null,
+}));
 vi.mock("../domain/validation-runtime.server", () => ({
   meteredSearchOptions: ({
     allowPaid,

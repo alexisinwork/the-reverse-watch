@@ -365,3 +365,16 @@ backup coverage. Prior application/code/production proofs remain scoped to the
 tested features. Evidence and future recovery work:
 [`production readiness`](production-readiness.md),
 [`controlling roadmap`](implementation-roadmap.md).
+
+## 2026-10-30 result coverage amendment
+
+The owner confirmed that the 5–10-result policy applies to every tool and widget.
+Checked options lead; additional sourced, uncertain or price-unknown candidates
+are permitted with explicit labels. This supersedes the accepted-only display
+subset from first-use validation, without weakening certified snapshot/master
+evidence. Target ten, minimum five when genuine candidates exist; never invent
+padding. Quiz hard constraints still govern qualified matches. Price-unknown
+suggestions must pass every other active rule and disclose unknown budget fit.
+Display-time brand/title or brand/reference deduplication and existing spend
+limits remain. Implementation and evidence:
+[`search result coverage`](search-result-coverage.md).

@@ -11,6 +11,8 @@ import { enrichResultWatches } from "./catalogue-result-enrichment.server";
 import { loadFxTable, type FxTable } from "./fx.server";
 import { uniqueWatchResults } from "./watch-result-dedup";
 import { validateSelectedResults } from "./validate-selected-results.server";
+import { loadUnpricedCandidates } from "./coverage-catalogue.server";
+import { SEARCH_RESULT_TARGET, unverifiedCandidate } from "./search-coverage";
 
 const roles: Record<ArchetypeId, CatalogueStyle[]> = {
   field_rationalist: ["field", "dive", "sport", "travel"],
@@ -129,11 +131,51 @@ async function selectArchetypeWatches(
           ]
         : [];
     });
-    // Keep the editorial core and add up to five newly documented role fits.
-    return uniqueWatchResults([
+    // Keep the editorial core; select ten distinct options after deduplication.
+    const selected = uniqueWatchResults([
       ...curated.slice(0, 5),
-      ...supplements.slice(0, 5),
+      ...supplements.slice(0, 20),
       ...curated.slice(5),
+    ]);
+    if (
+      selected.length >= SEARCH_RESULT_TARGET ||
+      archetype === "recognised_standard_bearer"
+    )
+      return selected;
+    const unpriced = await loadUnpricedCandidates(
+      roles[archetype],
+      null,
+      null,
+      archetype === "mechanical_connoisseur"
+        ? ["automatic", "manual", "spring_drive"]
+        : [],
+      client,
+    );
+    return uniqueWatchResults([
+      ...selected,
+      ...unpriced.flatMap((row) => {
+        if (
+          ["architectural_modernist", "expressive_collector"].includes(
+            archetype,
+          ) &&
+          !["square", "rectangular", "tonneau", "cushion"].includes(
+            row.caseShape ?? "",
+          )
+        )
+          return [];
+        const card = catalogueToFoundWatch(row);
+        return card
+          ? [
+              unverifiedCandidate(
+                {
+                  ...card,
+                  rationale: `A ${row.styles.filter((style) => roles[archetype].includes(style)).join(" / ")} option; price unavailable, so the selected price band is not confirmed.`,
+                },
+                "Price unavailable — selected price band not confirmed",
+              ),
+            ]
+          : [];
+      }),
     ]);
   } catch {
     return curated;

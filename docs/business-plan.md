@@ -809,3 +809,17 @@ Update verified facts, hypotheses, dates, cost evidence and this single next
 action after meaningful work. Never mark commercial or live checks complete
 because a local gate passes. This repository record provides continuity; no
 cross-chat assistant memory is claimed.
+
+Product scope amendment, 2026-10-30: the owner chooses target ten/minimum five
+genuine sourced options across all tools/widgets, accepting explicitly labelled
+uncertain associations and missing prices. This supersedes the earlier visible
+accepted-only subset, not the factual certification contract. The same shared
+server path supplies partner pages/API, and result screens keep source labels
+as text inside widgets. No partner pricing, usage counting or hosted-platform
+claim changes. Implementation/evidence: `docs/search-result-coverage.md`.
+Local Daniel Craig now returns ten unique options, one certified and nine
+uncertain, without paid calls. Whether broader labelled lists improve usefulness
+remains a product hypothesis; existing yes/no feedback measures that outcome.
+Current engineering next action: complete rollout and real page/widget/API
+coverage checks, preserving the $0.20 issuance ceiling. The recorded commercial
+next action and owner-deferred Shopify/automatic backups remain unchanged.

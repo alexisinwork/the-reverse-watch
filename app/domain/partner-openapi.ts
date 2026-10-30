@@ -25,7 +25,8 @@ const watchSchema = {
     referenceCode: { type: ["string", "null"] },
     sourceUrl: {
       type: "string",
-      description: "The maker's or authorised retailer's page.",
+      description:
+        "Cited reference or sighting source; uncertainty is labelled in details.",
     },
     imageUrl: {
       type: ["string", "null"],
@@ -36,7 +37,11 @@ const watchSchema = {
     details: {
       type: "object",
       description:
-        "Price, size, water resistance, movement, materials, and for film searches who wore it and where. reviewStatus 'pending' means 'Not yet reviewed'; referenceVerified false means 'Manufacturer reference not confirmed'.",
+        "Price, size, water resistance, movement, materials, and for film searches who wore it and where. reviewStatus 'pending' means 'Not yet reviewed'; referenceVerified false means 'Manufacturer reference not confirmed'. verificationStatus 'unverified' requires showing verificationNote: these are candidates, not certified matches. A null price is unavailable and cannot establish budget fit.",
+      properties: {
+        verificationStatus: { const: "unverified" },
+        verificationNote: { type: "string" },
+      },
       additionalProperties: true,
     },
   },
@@ -61,6 +66,18 @@ const searchResult = {
           description:
             "Fits every answer, but no maker's page confirmed the reference. Show with the label 'Manufacturer reference not confirmed'.",
           items: { $ref: "#/components/schemas/Watch" },
+        },
+        coverage: {
+          type: "object",
+          description:
+            "Target ten unique options, minimum five where genuine sourced candidates exist. Partial means fewer exist; never add invented padding.",
+          properties: {
+            minimum: { const: 5 },
+            target: { const: 10 },
+            total: { type: "integer", minimum: 1, maximum: 10 },
+            additionalCandidates: { type: "integer", minimum: 0, maximum: 10 },
+            status: { enum: ["target_met", "minimum_met", "partial"] },
+          },
         },
       },
     },
@@ -124,7 +141,7 @@ export function partnerOpenApi(serverUrl: string) {
         "",
         "**Privacy.** Send search answers only. Never send names, emails or other personal data; none is accepted, stored, or passed to the AI search.",
         "",
-        "**Labels.** Keep the labels the data carries: 'Not yet reviewed' (details.reviewStatus = pending) and 'Manufacturer reference not confirmed' (alsoWorth). Prices are approximate.",
+        "**Labels.** Keep the labels the data carries: 'Not yet reviewed' (details.reviewStatus = pending), 'Manufacturer reference not confirmed' (alsoWorth), and details.verificationNote when verificationStatus = unverified. Prices are approximate; a missing price means budget fit is unknown. Search lists aim for ten unique options, including labelled candidates, with a minimum of five where sources allow.",
       ].join("\n"),
     },
     servers: [{ url: serverUrl }],
@@ -302,7 +319,7 @@ export function partnerOpenApi(serverUrl: string) {
         get: {
           summary: "The watch archetype quiz",
           description:
-            "Without parameters: the four questions and their values. With all four answers: the archetype and ten watches chosen for it. No AI call.",
+            "Without parameters: the four questions and their values. With all four answers: the archetype and up to ten unique watches. Checked cards lead; additional candidates are labelled. First-use checks may use metered research.",
           parameters: [
             "socialSignal",
             "aestheticDna",

@@ -1,10 +1,11 @@
 import type { FoundWatch, ProgressEvent } from "./ai-watch-types";
-import { searchWithStore } from "./ai-watch-store.server";
+import { searchWithCoverage } from "./coverage-search.server";
+import { coverSearchResults } from "./search-coverage";
 import { meteredSearchOptions } from "./validation-runtime.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 
 const identity = (watch: FoundWatch) =>
-  `${watch.brand.toLowerCase().replace(/[^a-z0-9]/g, "")}|${normalizeReference(watch.referenceCode)}`;
+  `${watch.brand.toLowerCase().replace(/[^a-z0-9]/g, "")}|${normalizeReference(watch.referenceCode) ?? `m:${watch.model.toLowerCase().replace(/[^a-z0-9]/g, "")}`}`;
 
 /** Validate an editorial/deterministic selection once. Current local selection
  * still controls eligibility when an older valid snapshot is reused. */
@@ -25,13 +26,14 @@ export async function validateSelectedResults(
       status: "no_match" as const,
       summary: "No matching catalogue watches.",
     };
-  const view = await searchWithStore(
+  const view = await searchWithCoverage(
     {
       kind: "find",
       cacheInput: { feature, constraints, selectionPolicy: 1 },
       candidates: referenced.slice(0, 8),
     },
     meteredSearchOptions({ report }),
+    { localCandidates: candidates },
   );
   if (view.status !== "found") return view;
   const allowed = new Map(candidates.map((watch) => [identity(watch), watch]));
@@ -42,7 +44,7 @@ export async function validateSelectedResults(
     return selected ? [{ ...watch, rationale: selected.rationale }] : [];
   });
   return watches.length
-    ? { ...view, watches }
+    ? coverSearchResults({ ...view, watches })
     : {
         status: "unavailable" as const,
         reason: "verification_failed" as const,

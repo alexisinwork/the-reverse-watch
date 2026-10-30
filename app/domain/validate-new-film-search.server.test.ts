@@ -79,6 +79,69 @@ function fixture() {
 }
 
 describe("new film discovery", () => {
+  it("retains ten sourced draft candidates but independently checks at most eight", async () => {
+    const { services } = fixture();
+    const captureCandidates = vi.fn(
+      async (_watches: FoundWatch[]) => undefined,
+    );
+    services.discoverFilm.mockResolvedValueOnce({
+      evidence: Array.from({ length: 10 }, (_, i) => ({
+        ...primary,
+        brand: `Brand${i}`,
+        model: `Model ${i}`,
+        referenceCode: `REF${i}`,
+      })),
+      costUsd: 0.004,
+    });
+    services.secondary.mockImplementation(async (brief) => ({
+      evidence: {
+        ...secondary,
+        brand: brief.brand,
+        referenceCode: brief.referenceCode,
+      },
+      costUsd: 0.001,
+    }));
+    await validateNewFilmSearch("a".repeat(64), subject, {
+      ...services,
+      captureCandidates,
+    });
+    expect(captureCandidates.mock.calls[0]![0]).toHaveLength(10);
+    expect(services.secondary).toHaveBeenCalledTimes(8);
+    expect(services.reserve).toHaveBeenCalledWith("a".repeat(64), 8);
+    expect(services.publish).toHaveBeenCalledWith(
+      "attempt",
+      expect.toSatisfy((watches: FoundWatch[]) => watches.length === 8),
+      expect.any(Array),
+    );
+  });
+  it("retains a cited uncertain model with no reference without promoting it", async () => {
+    const { services } = fixture();
+    const captureCandidates = vi.fn(
+      async (_watches: FoundWatch[]) => undefined,
+    );
+    services.discoverFilm.mockResolvedValueOnce({
+      evidence: [
+        {
+          ...primary,
+          model: "Seamaster",
+          referenceCode: null,
+          supported: false,
+        },
+      ],
+      costUsd: 0.004,
+    });
+    expect(
+      await validateNewFilmSearch("a".repeat(64), subject, {
+        ...services,
+        captureCandidates,
+      }),
+    ).toMatchObject({ status: "unavailable" });
+    expect(captureCandidates.mock.calls[0]![0]).toMatchObject([
+      { model: "Seamaster", referenceCode: null },
+    ]);
+    expect(services.secondary).not.toHaveBeenCalled();
+    expect(services.publish).not.toHaveBeenCalled();
+  });
   it("uses the same budget and source path for a product search without a sighting", async () => {
     const { services } = fixture();
     const product = { ...primary, person: null, work: null };

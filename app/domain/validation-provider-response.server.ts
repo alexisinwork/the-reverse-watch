@@ -6,6 +6,7 @@ import { safeHttpUrl } from "./source-pages.server";
 
 const claimSchema = z.object({
   brand: z.string().trim().min(1).max(160),
+  model: z.string().trim().min(1).max(200).nullable().optional(),
   referenceCode: z.string().trim().min(1).max(120).nullable(),
   person: z.string().trim().max(160).nullable(),
   work: z.string().trim().max(200).nullable(),
@@ -225,7 +226,7 @@ export function parsePerplexityFilmDiscoveryResponse(body: unknown): {
 } {
   const { content, sources, costUsd } = parsePerplexityAgentEnvelope(body);
   const { sightings } = z
-    .object({ sightings: z.array(z.unknown()).max(8) })
+    .object({ sightings: z.array(z.unknown()).max(10) })
     .parse(content);
   const citedUrls = sources
     .map(url)

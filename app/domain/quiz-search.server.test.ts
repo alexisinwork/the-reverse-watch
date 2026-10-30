@@ -50,13 +50,15 @@ function row(index: number, overrides: Record<string, unknown> = {}) {
   };
 }
 
-function client(rows: unknown[]) {
+function client(rows: unknown[], unpriced: unknown[] = []) {
   const upserts: unknown[] = [];
   const fetchImpl = vi.fn(
     async (input: string | URL | Request, init?: RequestInit) => {
       const url = String(input);
       if (url.endsWith("watch_catalogue_recommendation_page_v1"))
         return Response.json(rows);
+      if (url.endsWith("watch_catalogue_unpriced_candidates_v1"))
+        return Response.json(unpriced);
       if (url.endsWith("watch_catalogue_upsert_v1")) {
         upserts.push(JSON.parse(String(init?.body)));
         return Response.json("00000000-0000-0000-0000-000000000099");
@@ -109,12 +111,60 @@ const liveResult: AiSearchView = {
 describe("searchQuiz", () => {
   beforeEach(() => clearCatalogueCache());
 
+  it("fills ten with price-unknown candidates only when all other active constraints pass", async () => {
+    const unknown = {
+      priceAmount: null,
+      priceCurrency: null,
+      priceStatus: "unconfirmed",
+    };
+    const unpriced = [
+      ...Array.from({ length: 10 }, (_, i) => row(i + 2, unknown)),
+      row(12, { ...unknown, caseDiameterMm: 49 }),
+      row(13, { ...unknown, movement: null }),
+      row(14, { ...unknown, complications: ["date"] }),
+    ];
+    const result = await searchQuiz(profile, {
+      client: client([row(1)], unpriced).value,
+      loadFx: async () => fx,
+      runLive: async () => ({ status: "unavailable" }),
+    });
+    expect(result).toMatchObject({
+      coverage: { total: 10, additionalCandidates: 9 },
+    });
+    if (result.status !== "found") throw new Error("Expected options");
+    expect(
+      result.watches
+        .slice(1)
+        .every(
+          (w) =>
+            w.details.price === null &&
+            w.details.verificationNote?.includes("budget fit unknown"),
+        ),
+    ).toBe(true);
+    expect(
+      result.watches.some((w) =>
+        ["REF12", "REF13"].includes(w.referenceCode ?? ""),
+      ),
+    ).toBe(false);
+    const allergic = await searchQuiz(
+      { ...profile, allergyConstraint: "nickel_contact" },
+      {
+        client: client([], unpriced).value,
+        loadFx: async () => fx,
+        runLive: async () => ({ status: "no_match", summary: "None" }),
+      },
+    );
+    expect(allergic.status).toBe("no_match");
+  });
+
   it("answers from the catalogue without a live search when it has enough", async () => {
     const store = client([
       row(1),
       row(2),
       row(3),
-      row(4, { referenceConfirmed: false }),
+      row(4),
+      row(5),
+      row(6, { referenceConfirmed: false }),
     ]);
     const runLive = vi.fn();
     const result = await searchQuiz(profile, {
@@ -129,8 +179,8 @@ describe("searchQuiz", () => {
       fromCache: true,
     });
     if (result.status !== "found") throw new Error("expected found");
-    expect(result.watches).toHaveLength(3);
-    expect(result.alsoWorth?.map((watch) => watch.brand)).toEqual(["Brand4"]);
+    expect(result.watches).toHaveLength(5);
+    expect(result.alsoWorth?.map((watch) => watch.brand)).toEqual(["Brand6"]);
   });
 
   it("selects additional distinct catalogue models before applying the result limit", async () => {
@@ -345,7 +395,7 @@ describe("searchQuiz", () => {
     const plain = await searchQuiz(profile, {
       client: store.value,
       loadFx: async () => fx,
-      runLive: vi.fn(),
+      runLive: async () => ({ status: "no_match", summary: "None." }),
     });
     if (plain.status !== "found") throw new Error("expected found");
     expect(plain.watches.map((watch) => watch.brand)).toEqual([

@@ -21,7 +21,14 @@ vi.mock("@upstash/redis", () => ({
   },
 }));
 vi.mock("../domain/discovery-funnel-store.server", () => discoveryFunnelMock);
-vi.mock("../domain/ai-watch-store.server", () => aiSearchMock);
+vi.mock("../domain/coverage-catalogue.server", () => ({
+  loadUnpricedCandidates: async () => [],
+  hydrateCoverageCandidates: async (watches: unknown[]) => watches,
+}));
+vi.mock("../domain/ai-watch-store.server", () => ({
+  ...aiSearchMock,
+  loadAiWatchStoreConfig: () => null,
+}));
 vi.mock("../domain/watch-catalogue.server", async (importOriginal) => ({
   ...(await importOriginal<
     typeof import("../domain/watch-catalogue.server")

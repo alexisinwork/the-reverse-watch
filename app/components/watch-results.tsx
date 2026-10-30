@@ -271,17 +271,21 @@ function WatchCard({
         ].filter((fact): fact is string => fact !== null)
       : [];
   const eyebrow =
-    mode === "film"
-      ? [details.person, details.work, details.year]
-          .filter(Boolean)
-          .join(" · ") || "Documented sighting"
-      : unconfirmedReference
-        ? "Also worth a look"
-        : details.misses && details.misses.length > 0
-          ? `Option ${rank} · Close fit`
-          : rank === 1
-            ? "Best fit"
-            : `Option ${rank}`;
+    details.verificationStatus === "unverified"
+      ? mode === "film"
+        ? `Possible sighting${details.person ? ` · ${details.person}` : details.work ? ` · ${details.work}` : ""}`
+        : `Option ${rank} · Needs checking`
+      : mode === "film"
+        ? [details.person, details.work, details.year]
+            .filter(Boolean)
+            .join(" · ") || "Documented sighting"
+        : unconfirmedReference
+          ? "Also worth a look"
+          : details.misses && details.misses.length > 0
+            ? `Option ${rank} · Close fit`
+            : rank === 1
+              ? "Best fit"
+              : `Option ${rank}`;
 
   return (
     <article className="watch-card">
@@ -293,13 +297,7 @@ function WatchCard({
         </h3>
         <div className="watch-card__meta">
           {watch.referenceCode ? <span>Ref. {watch.referenceCode}</span> : null}
-          {mode === "quiz" ? (
-            <PriceLine
-              displayCurrency={displayCurrency}
-              fx={fx}
-              watch={watch}
-            />
-          ) : null}
+          <PriceLine displayCurrency={displayCurrency} fx={fx} watch={watch} />
         </div>
         {facts.length > 0 ? (
           <ul className="watch-card__facts" aria-label="Key facts">
@@ -324,7 +322,11 @@ function WatchCard({
                 </div>
               ))}
             </dl>
-            {details.referenceSourceUrl ? (
+            {details.referenceSourceUrl && embed ? (
+              <span className="watch-card__source">
+                Reference source: {details.referenceSourceLabel ?? "catalogue"}
+              </span>
+            ) : details.referenceSourceUrl ? (
               <a
                 className="watch-card__source"
                 href={details.referenceSourceUrl}
@@ -354,6 +356,11 @@ function WatchCard({
           )
         ) : null}
         <div className="watch-card__footer">
+          {details.verificationStatus === "unverified" ? (
+            <span className="review-badge review-badge--warning">
+              {details.verificationNote ?? "Not fully verified"}
+            </span>
+          ) : null}
           {details.misses?.map((miss) => (
             <span className="review-badge review-badge--warning" key={miss}>
               {miss}
@@ -453,6 +460,14 @@ function ResultBody({
           </span>
         ) : null}
       </p>
+      {result.coverage?.status === "partial" ? (
+        <p className="result-footnote">
+          We aim for 5–10 distinct watches. Only {result.coverage.total}{" "}
+          available
+          {result.coverage.total === 1 ? " option was" : " options were"} found;
+          missing details and uncertain matches are labelled.
+        </p>
+      ) : null}
       {result.watches.length > 0 ? (
         <div className="watch-list">
           {(showAll || mode !== "quiz"

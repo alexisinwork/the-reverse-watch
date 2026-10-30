@@ -64,7 +64,7 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
      style, price in the visitor's currency, diameter, water resistance,
      movement, nickel, functions). Matching itself needs no AI; cold database
      loading and first-use checks can take time.
-   - Above 10k, or when fewer than three confirmed watches fit, the **live
+   - Above 10k, or when fewer than five confirmed watches fit, the **live
      search** runs (`domain/quiz-live-search.server.ts`) and its finds are
      added to the catalogue as pending.
    - Results already found for identical answers are served from the stored
@@ -87,6 +87,12 @@ Only search constraints ever reach Muse Spark or Perplexity: never email,
 cookies, IP or anything identifying.
 
 ## The watch catalogue
+
+All tools share the 5–10-option coverage policy (`domain/search-coverage.ts`,
+`coverage-search.server.ts`, `coverage-catalogue.server.ts`, migration 0114).
+Checked cards lead; sourced uncertain candidates and price-unknown suggestions
+are labelled. Strict snapshots and master evidence keep their existing checks.
+See `docs/search-result-coverage.md` for the scope and budget boundaries.
 
 - **Table:** `private.watch_catalogue` (migrations 0071 and 0072). One row per
   brand + reference. Review status: pending, approved or rejected.

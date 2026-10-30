@@ -14,6 +14,8 @@ import type { ProfileV4 } from "./questionnaire-v4";
 import type { searchWithStore } from "./ai-watch-store.server";
 import type { FoundWatch, ProgressEvent } from "./ai-watch-types";
 import type { FilmDiscoverySubject } from "./validate-new-film-search.server";
+import { storeSearch } from "./ai-watch-store.server";
+import { quizCacheInput } from "./quiz-live-search.server";
 
 /** The only visitor-facing entry into paid validation. Every callback reaches
  * the durable reservation before a provider; valid snapshots bypass it. */
@@ -45,6 +47,19 @@ export function meteredSearchOptions({
             });
             return validateDiscoveredSearch(key, {
               ...services,
+              captureCandidates: (watches) =>
+                storeSearch(
+                  client.config,
+                  {
+                    kind: "quiz",
+                    cacheKey: key,
+                    cacheInput: quizCacheInput(quizProfile),
+                    summary:
+                      "Additional candidates from cited research; not fully verified.",
+                    watches,
+                  },
+                  client.fetchImpl,
+                ),
               discover: () =>
                 validationProviderCalls(deps).discoverQuiz(quizProfile),
               accepts: (evidence) => !evidence.person && !evidence.work,
@@ -64,7 +79,22 @@ export function meteredSearchOptions({
       report?.({
         text: "Finding documented references and checking each candidate…",
       });
-      return validateNewFilmSearch(key, subject, services);
+      return validateNewFilmSearch(key, subject, {
+        ...services,
+        captureCandidates: (watches) =>
+          storeSearch(
+            client.config,
+            {
+              kind: "film",
+              cacheKey: key,
+              cacheInput: subject,
+              summary:
+                "Additional candidates from cited research; not fully verified.",
+              watches,
+            },
+            client.fetchImpl,
+          ),
+      });
     },
   };
 }

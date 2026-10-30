@@ -12,6 +12,7 @@ import type {
 } from "./validate-cached-search.server";
 import type { ValidationEvidence } from "./cached-result-validation";
 import { filmDiscoverySubjectSchema } from "./validation-provider-request.server";
+import { safeHttpUrl } from "./source-pages.server";
 
 export type FilmDiscoverySubject = {
   query: string;
@@ -97,6 +98,47 @@ export async function validateDiscoveredSearch(
   costs[0] = discovery.costUsd;
   if (discovery.costUsd >= limit)
     return finishFailure("discovery exhausted card budget");
+  if (services.captureCandidates) {
+    const draft = discovery.evidence.slice(0, 10).flatMap((evidence) => {
+      if (
+        evidence.provider !== "perplexity" ||
+        !services.accepts(evidence) ||
+        !safeHttpUrl(evidence.sourceUrl) ||
+        !fold(evidence.brand)
+      )
+        return [];
+      const reference = normalizeReference(evidence.referenceCode);
+      const knownReference =
+        reference &&
+        !["unknown", "none", "null", "unavailable", "notavailable"].includes(
+          reference,
+        );
+      const model =
+        evidence.model?.trim() ||
+        (knownReference ? evidence.referenceCode : null);
+      if (!model) return [];
+      return [
+        {
+          brand: evidence.brand,
+          model,
+          referenceCode: knownReference ? evidence.referenceCode : null,
+          sourceUrl: evidence.sourceUrl,
+          imageUrl: null,
+          priceNote: null,
+          rationale:
+            "Possible match from cited research; not independently confirmed.",
+          details: {
+            person: services.attribution?.person ?? null,
+            work: services.attribution?.work ?? null,
+          },
+        } satisfies FoundWatch,
+      ];
+    });
+    if (draft.length) {
+      const hydratedDraft = await services.hydrate(draft).catch(() => draft);
+      await services.captureCandidates(hydratedDraft).catch(() => undefined);
+    }
+  }
   const seen = new Set<string>();
   const candidates = discovery.evidence.slice(0, count).flatMap((evidence) => {
     const reference = normalizeReference(evidence.referenceCode);
