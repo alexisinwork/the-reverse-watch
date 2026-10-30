@@ -2236,7 +2236,7 @@ queued at verification; the complete local gate passed as recorded above.
 
 ### Ten-option completion and alternative progress (2026-10-30)
 
-Status: **implementation complete; final verification and rollout in progress**.
+Status: **complete — verified locally and on production**.
 The owner supersedes the five-option minimum with ten distinct options for every
 tool, widget and API, permitting labelled close fits. Only ten-card final lists
 enter a completed-response cache. Smaller source snapshots/drafts remain reusable
@@ -2273,3 +2273,20 @@ separately without simulated provider messages. Evidence:
 `docs/reports/ten-option-completion-local.json`,
 `docs/reports/alternative-progress-local.json`. Existing shared coverage smoke
 checks now require ten cards for their representative requests.
+
+Source `d2c5895` has a successful Vercel deployment check at
+`CuUhZK8dDKhRP5nfsahsMrXXA64H`; clean CI `41136226352` passes. Production APIs
+return ten distinct options for all four tested requests, including the owner's
+exact quiz brief. Repeats add zero charge and zero validation attempts. The real
+production widget passes the same immediate-progress, ten-card, desktop/mobile
+and Powered-by-only-link checks. Evidence:
+`docs/reports/ten-option-completion-production.json`,
+`docs/reports/alternative-progress-production.json`.
+
+The initial production smoke observed one recoverable alternatives 503; a retry
+returned ten. Separate repeat/browser failures were the existing 200-use quota
+of the `Portfolio local integration` demonstration fixture (its counter was
+exactly 200), not a result shortage. Only that test site's limit was raised to
+1,000; its key, registered origins, theme and history were preserved. The shared
+AI spending limits and real partner limits were not changed. Subsequent API,
+SSE and browser checks pass; no availability guarantee beyond this scope is made.

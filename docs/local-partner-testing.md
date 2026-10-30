@@ -31,6 +31,12 @@ providers. Searches may incur provider costs and increment this dedicated site's
 counters. This setup does not create a local database or simulate search results.
 Re-running the command preserves the admin's existing settings and key.
 
+The existing demonstration fixture's allowance was increased from 200 to 1,000
+on 2026-10-30 after repeated integration checks reached the original quota. Its
+key, origins and usage history were preserved. New fixtures still start at 200;
+`dev:partners` does not reset an existing site's settings. This test allowance is
+separate from the application's shared AI spending limits.
+
 ## Repeatable verification
 
 With both servers running:

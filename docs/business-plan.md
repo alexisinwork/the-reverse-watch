@@ -841,5 +841,14 @@ or attempts on repeat. Evidence: `docs/reports/ten-option-completion-local.json`
 and `docs/reports/alternative-progress-local.json`. This establishes the tested
 feature behavior, not buyer demand, revenue or usefulness improvement. Partner
 pricing, usage counters and the recorded commercial next action stay unchanged.
-Current engineering next action: verify this rollout in production, then observe
-the existing usefulness feedback and incomplete coverage without a bulk paid job.
+Production verification: source `d2c5895` has a successful Vercel deployment check
+and clean CI `41136226352`. All four production API requests return ten cards;
+the real widget passes desktop/mobile progress and display checks. Repeat
+requests add zero charge and attempts. The demonstration fixture reached its
+200-use test quota; its allowance is now 1,000, preserving its history, origins
+and key. This does not alter real partner limits or the shared AI spend guards.
+Evidence: `docs/reports/ten-option-completion-production.json` and
+`docs/reports/alternative-progress-production.json`.
+Current engineering next action: observe the existing usefulness feedback and
+incomplete coverage without a bulk paid job. The commercial next action remains
+unchanged.

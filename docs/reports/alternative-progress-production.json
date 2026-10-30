@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-30T22:18:09.792Z",
+  "base": "https://thereserve.watch",
+  "immediateProgress": "Opening the catalogue and identifying your watch…\n0 s",
+  "navigationDelayMs": 1200,
+  "realWidgetResults": 10,
+  "onlyPoweredLink": true,
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "source": "d2c58955d82cb6e909e7bc7cc7160d2060fa769f",
+  "ci": {
+    "run": 41136226352,
+    "conclusion": "success"
+  },
+  "deploymentCheck": "success",
+  "testFixture": {
+    "name": "Portfolio local integration",
+    "monthlyQuota": 1000,
+    "previousQuota": 200
+  }
+}

@@ -94,3 +94,15 @@ widget frame pass the same display/link checks. Repeated saved requests add
 zero charge and zero attempts. Evidence: `reports/result-coverage-production.json`.
 This proves the tested requests and shared path; genuinely scarce future searches
 still report partial coverage instead of fabricated watches.
+
+Ten-option completion verification: source `d2c5895` passes 750 tests and the
+production build, with clean CI `41136226352` and a successful deployment check.
+The reported quiz, film, archetype and alternative requests each return ten
+distinct options locally and on production. Completed repeats add zero charge
+or validation attempts. The real widget shows immediate activity, ten results
+on desktop/mobile and only the Powered by link. The browser deliberately delays
+navigation by 1.2 seconds after hydration to make the warm-cache fallback
+observable; API SSE steps are captured separately. Reports:
+`reports/ten-option-completion-production.json`,
+`reports/alternative-progress-production.json`. The demo fixture's test allowance
+is now 1,000 after reaching its former 200-use quota; live AI spend limits stay.
