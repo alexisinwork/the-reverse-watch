@@ -136,6 +136,24 @@ quiz.
 
 ## Quality invariants
 
+### Ten-option completion (owner decision, 2026-10-30)
+
+- Every search/tool, widget and API checks for ten distinct display cards after
+  all eligibility checks and deduplication. Five results are no longer enough.
+- Below ten, continue with saved research and metered discovery for additional
+  models. A saved short result must not suppress further discovery. Existing
+  per-request, per-card and monthly spending limits remain in force.
+- Exact quiz matches obey the chosen diameter boundaries without rounding.
+  Labelled close fits may miss functions/specifications or sit up to 3 mm
+  outside the range, while preserving known budget, requested movement and
+  allergy requirements. List every compromise; unknown facts remain unknown.
+- Only a final list of ten distinct options enters the completed-response
+  cache. Partial source checks and candidate drafts remain research evidence,
+  not completed answers. If research cannot reach ten, show an incomplete
+  result and never invent padding or report it as a complete cached answer.
+- The cheaper-alternative finder shows immediate loading activity and real
+  streamed search/source-check progress, including on repeat searches.
+
 - Exact watch constraints belong in PostgreSQL. The first subjective matcher is
   an explicit, versioned weighted score over reviewed tags; semantic retrieval
   is optional and must beat that baseline in evaluation before production use.

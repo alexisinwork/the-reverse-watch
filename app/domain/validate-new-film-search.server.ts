@@ -89,6 +89,16 @@ export async function validateDiscoveredSearch(
       error.costUsd >= 0
         ? error.costUsd
         : null;
+    console.info(
+      JSON.stringify({
+        event: "watch_discovery_failed",
+        reason:
+          error instanceof ProviderCostError
+            ? error.message
+            : "Provider request failed",
+        costUsd: costs[0],
+      }),
+    );
     return finishFailure("discovery failed");
   }
   if (!Number.isFinite(discovery.costUsd) || discovery.costUsd < 0) {
@@ -99,7 +109,7 @@ export async function validateDiscoveredSearch(
   if (discovery.costUsd >= limit)
     return finishFailure("discovery exhausted card budget");
   if (services.captureCandidates) {
-    const draft = discovery.evidence.slice(0, 10).flatMap((evidence) => {
+    const draft = discovery.evidence.slice(0, 20).flatMap((evidence) => {
       if (
         evidence.provider !== "perplexity" ||
         !services.accepts(evidence) ||
@@ -135,43 +145,47 @@ export async function validateDiscoveredSearch(
       ];
     });
     if (draft.length) {
-      const hydratedDraft = await services.hydrate(draft).catch(() => draft);
+      const unique = uniqueWatchResults(draft).slice(0, 10);
+      const hydratedDraft = await services.hydrate(unique).catch(() => unique);
       await services.captureCandidates(hydratedDraft).catch(() => undefined);
     }
   }
   const seen = new Set<string>();
-  const candidates = discovery.evidence.slice(0, count).flatMap((evidence) => {
-    const reference = normalizeReference(evidence.referenceCode);
-    const key = `${fold(evidence.brand)}|${reference}`;
-    if (
-      evidence.provider !== "perplexity" ||
-      !evidence.supported ||
-      !reference ||
-      reference.length < 3 ||
-      ["unknown", "none", "null", "unavailable", "notavailable"].includes(
-        reference,
-      ) ||
-      !fold(evidence.brand) ||
-      !services.accepts(evidence) ||
-      seen.has(key)
-    )
-      return [];
-    seen.add(key);
-    const watch: FoundWatch = {
-      brand: evidence.brand,
-      model: evidence.referenceCode!,
-      referenceCode: evidence.referenceCode,
-      sourceUrl: evidence.sourceUrl,
-      imageUrl: null,
-      priceNote: null,
-      rationale: "",
-      details: {
-        person: services.attribution?.person ?? null,
-        work: services.attribution?.work ?? null,
-      },
-    };
-    return [{ watch, evidence }];
-  });
+  const candidates = discovery.evidence
+    .slice(0, 20)
+    .flatMap((evidence) => {
+      const reference = normalizeReference(evidence.referenceCode);
+      const key = `${fold(evidence.brand)}|${reference}`;
+      if (
+        evidence.provider !== "perplexity" ||
+        !evidence.supported ||
+        !reference ||
+        reference.length < 3 ||
+        ["unknown", "none", "null", "unavailable", "notavailable"].includes(
+          reference,
+        ) ||
+        !fold(evidence.brand) ||
+        !services.accepts(evidence) ||
+        seen.has(key)
+      )
+        return [];
+      seen.add(key);
+      const watch: FoundWatch = {
+        brand: evidence.brand,
+        model: evidence.referenceCode!,
+        referenceCode: evidence.referenceCode,
+        sourceUrl: evidence.sourceUrl,
+        imageUrl: null,
+        priceNote: null,
+        rationale: "",
+        details: {
+          person: services.attribution?.person ?? null,
+          work: services.attribution?.work ?? null,
+        },
+      };
+      return [{ watch, evidence }];
+    })
+    .slice(0, count);
   if (!candidates.length) return finishFailure("no confirmed candidates");
   let hydrated: FoundWatch[];
   try {

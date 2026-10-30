@@ -111,6 +111,68 @@ const liveResult: AiSearchView = {
 describe("searchQuiz", () => {
   beforeEach(() => clearCatalogueCache());
 
+  it("fills the reported 21 cm under-500 brief with ten labelled close fits", async () => {
+    const rows = Array.from({ length: 12 }, (_, i) =>
+      row(i + 1, {
+        priceAmount: 350,
+        caseDiameterMm: 42.5,
+        caseShape: "round",
+        crystal: i % 2 ? "mineral" : "sapphire",
+        displayCaseback: true,
+        complications: i < 5 ? ["day_of_week", "date"] : ["date"],
+      }),
+    );
+    const runLive = vi.fn(async (): Promise<AiSearchView> => ({
+      status: "unavailable",
+    }));
+    const result = await searchQuiz(
+      {
+        ...profile,
+        priceRange: "0_500",
+        wristCm: 21,
+        requiredComplications: ["day_of_week"],
+        minimumWaterResistanceM: 0,
+        caseShape: "round",
+        displayCaseback: true,
+        crystal: "sapphire",
+      },
+      { client: client(rows).value, loadFx: async () => fx, runLive },
+    );
+    expect(runLive).toHaveBeenCalledOnce();
+    expect(result).toMatchObject({
+      coverage: { total: 10, status: "target_met" },
+      summary: expect.stringContaining("0 watches meet every answer"),
+    });
+    if (result.status !== "found") throw new Error("Expected ten close fits");
+    expect(result.watches).toHaveLength(10);
+    expect(
+      result.watches.every((watch) =>
+        watch.details.misses?.includes("Case size outside your range"),
+      ),
+    ).toBe(true);
+    expect(
+      result.watches.some((watch) =>
+        watch.details.misses?.includes("day of week missing or not confirmed"),
+      ),
+    ).toBe(true);
+  });
+
+  it("searches below ten even when five exact matches were already saved", async () => {
+    const runLive = vi.fn(async (): Promise<AiSearchView> => ({
+      status: "unavailable",
+    }));
+    const result = await searchQuiz(profile, {
+      client: client(Array.from({ length: 5 }, (_, i) => row(i + 1))).value,
+      loadFx: async () => fx,
+      runLive,
+    });
+    expect(runLive).toHaveBeenCalledOnce();
+    expect(result).toMatchObject({
+      fromCache: false,
+      coverage: { total: 5, status: "partial" },
+    });
+  });
+
   it("fills ten with price-unknown candidates only when all other active constraints pass", async () => {
     const unknown = {
       priceAmount: null,
@@ -164,7 +226,7 @@ describe("searchQuiz", () => {
       row(3),
       row(4),
       row(5),
-      row(6, { referenceConfirmed: false }),
+      ...Array.from({ length: 5 }, (_, i) => row(i + 6)),
     ]);
     const runLive = vi.fn();
     const result = await searchQuiz(profile, {
@@ -179,8 +241,7 @@ describe("searchQuiz", () => {
       fromCache: true,
     });
     if (result.status !== "found") throw new Error("expected found");
-    expect(result.watches).toHaveLength(5);
-    expect(result.alsoWorth?.map((watch) => watch.brand)).toEqual(["Brand6"]);
+    expect(result.watches).toHaveLength(10);
   });
 
   it("selects additional distinct catalogue models before applying the result limit", async () => {
@@ -335,7 +396,7 @@ describe("searchQuiz", () => {
     const store = client([
       // In budget, but only 50 m (the visitor asked for 100 m).
       row(1, { waterResistanceM: 50 }),
-      // In budget, but misses water resistance and movement.
+      // In budget, but a different movement remains excluded.
       row(2, { waterResistanceM: 50, movement: "quartz" }),
       // Out of budget: never shown, however well it fits otherwise.
       row(3, { priceAmount: 9_000 }),
@@ -348,10 +409,7 @@ describe("searchQuiz", () => {
     expect(result).toMatchObject({ status: "found", origin: "catalogue" });
     if (result.status !== "found") throw new Error("expected found");
     expect(result.summary).toContain("live search is unavailable");
-    expect(result.watches.map((watch) => watch.brand)).toEqual([
-      "Brand1",
-      "Brand2",
-    ]);
+    expect(result.watches.map((watch) => watch.brand)).toEqual(["Brand1"]);
   });
 
   it("describes checking saved research without claiming a web search ran", async () => {
@@ -403,11 +461,15 @@ describe("searchQuiz", () => {
       "Brand2",
       "Brand3",
       "Brand7",
+      "Brand4",
+      "Brand5",
     ]);
     expect(
-      plain.watches.every(
-        (watch) => !["Brand4", "Brand5"].includes(watch.brand),
-      ),
+      plain.watches
+        .filter((watch) => ["Brand4", "Brand5"].includes(watch.brand))
+        .every((watch) =>
+          watch.details.misses?.includes("Case size outside your range"),
+        ),
     ).toBe(true);
   });
 
@@ -422,7 +484,13 @@ describe("searchQuiz", () => {
     });
     expect(runLive).toHaveBeenCalledTimes(1);
     if (found.status !== "found") throw new Error("expected found");
-    expect(found.watches.map((watch) => watch.brand)).toEqual(["Brand1"]);
+    expect(found.watches.map((watch) => watch.brand)).toEqual([
+      "Brand1",
+      "Brand4",
+    ]);
+    expect(found.watches[1]!.details.misses).toContain(
+      "Case size outside your range",
+    );
 
     clearCatalogueCache();
     const nothingLive = await searchQuiz(profile, {
@@ -431,7 +499,10 @@ describe("searchQuiz", () => {
       runLive: async () => ({ status: "no_match", summary: "None." }),
     });
     if (nothingLive.status !== "found") throw new Error("expected found");
-    expect(nothingLive.watches.map((watch) => watch.brand)).toEqual(["Brand1"]);
+    expect(nothingLive.watches.map((watch) => watch.brand)).toEqual([
+      "Brand1",
+      "Brand4",
+    ]);
   });
 
   it("returns at most ten watches", async () => {

@@ -22,10 +22,19 @@ import {
 } from "../domain/watch-result-dedup";
 
 type Mode = "quiz" | "film";
+type SearchMode = Mode | "alternatives";
 
 const SITE_CURRENCY = "USD";
 
-const PROGRESS_STEPS: Record<Mode, { after: number; text: string }[]> = {
+const PROGRESS_STEPS: Record<SearchMode, { after: number; text: string }[]> = {
+  alternatives: [
+    { after: 0, text: "Opening the catalogue and identifying your watch…" },
+    { after: 5, text: "Comparing alternatives and waiting for source checks…" },
+    {
+      after: 18,
+      text: "The comparison is still running; checked options will appear here…",
+    },
+  ],
   quiz: [
     { after: 0, text: "Filtering the catalogue for every answer…" },
     { after: 2, text: "Searching live for watches that fit every answer…" },
@@ -68,16 +77,16 @@ function useProgressFeed(
   return events;
 }
 
-function SearchProgress({
+export function SearchProgress({
   mode,
   progress,
-  displayCurrency,
-  fx,
+  displayCurrency = SITE_CURRENCY,
+  fx = null,
 }: {
-  mode: Mode;
+  mode: SearchMode;
   progress?: Promise<ProgressLink | null> | null;
-  displayCurrency: string;
-  fx: FxTable | null;
+  displayCurrency?: string;
+  fx?: FxTable | null;
 }) {
   const [seconds, setSeconds] = useState(0);
   const events = useProgressFeed(progress);
@@ -122,7 +131,7 @@ function SearchProgress({
                 displayCurrency={displayCurrency}
                 fx={fx}
                 key={`${watch.brand}-${watch.referenceCode ?? watch.model}-${index}`}
-                mode={mode}
+                mode={mode === "alternatives" ? "quiz" : mode}
                 rank={index + 1}
                 watch={watch}
               />
@@ -448,24 +457,22 @@ function ResultBody({
     <>
       <p className="result-summary">
         {result.summary}
-        {result.origin === "catalogue" ? (
-          <span className="result-summary__cached">
-            {" "}
-            Instant: from the catalogue.
-          </span>
+        {result.origin === "catalogue" && result.fromCache ? (
+          <span className="result-summary__cached"> From the catalogue.</span>
         ) : result.fromCache ? (
           <span className="result-summary__cached">
             {" "}
-            Instant: answered before.
+            Previously researched.
           </span>
         ) : null}
       </p>
       {result.coverage?.status === "partial" ? (
         <p className="result-footnote">
-          We aim for 5–10 distinct watches. Only {result.coverage.total}{" "}
+          We are looking for 10 distinct watches. So far {result.coverage.total}{" "}
           available
-          {result.coverage.total === 1 ? " option was" : " options were"} found;
-          missing details and uncertain matches are labelled.
+          {result.coverage.total === 1 ? " option has" : " options have"} been
+          found; the search is incomplete. Missing details and close fits are
+          labelled.
         </p>
       ) : null}
       {result.watches.length > 0 ? (
@@ -570,10 +577,12 @@ export function WatchResults({
   fx,
   footnote,
   progress,
+  progressMode,
 }: {
   result: AiSearchView | Promise<AiSearchView>;
   /** The live steps of a running search, when the server sends them. */
   progress?: Promise<ProgressLink | null> | null;
+  progressMode?: SearchMode;
   mode: Mode;
   heading: string;
   eyebrow: string;
@@ -597,7 +606,7 @@ export function WatchResults({
           <SearchProgress
             displayCurrency={displayCurrency}
             fx={fx}
-            mode={mode}
+            mode={progressMode ?? mode}
             progress={progress}
           />
         }

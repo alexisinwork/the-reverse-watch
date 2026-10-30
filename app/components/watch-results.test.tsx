@@ -1,8 +1,9 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router";
 
 import type { FoundWatch } from "../domain/ai-watch-types";
-import { WatchResults } from "./watch-results";
+import { SearchProgress, WatchResults } from "./watch-results";
+import { createProgressFeed } from "../domain/progress-feed";
 import { EmbedSurfaceProvider } from "./surface";
 
 const watch = (index: number, misses?: string[]): FoundWatch => ({
@@ -17,6 +18,30 @@ const watch = (index: number, misses?: string[]): FoundWatch => ({
 });
 
 describe("quiz shortlist", () => {
+  it("shows immediate alternatives activity and the actual source-check steps", async () => {
+    const progress = createProgressFeed(10_000);
+    render(
+      <MemoryRouter>
+        <SearchProgress mode="alternatives" progress={progress.feed} />
+      </MemoryRouter>,
+    );
+    expect(screen.getByRole("status")).toHaveTextContent(
+      "Opening the catalogue and identifying your watch",
+    );
+    await act(async () => {
+      progress.report({ text: "Comparing your watch with the catalogue…" });
+      progress.report({ text: "Independently checking Seiko SPB143J1…" });
+    });
+    await waitFor(() =>
+      expect(screen.getByRole("status")).toHaveTextContent(
+        "Independently checking Seiko SPB143J1",
+      ),
+    );
+    expect(
+      screen.getByRole("list", { name: "Search steps so far" }),
+    ).toHaveTextContent("Comparing your watch with the catalogue");
+    progress.close();
+  });
   it.each([
     ["retry_later" as const, /try again in five minutes/i],
     ["in_progress" as const, /still being checked/i],

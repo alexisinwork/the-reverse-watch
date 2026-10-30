@@ -40,7 +40,60 @@ describe("coverage around checked snapshots", () => {
     mocks.read.mockReset().mockResolvedValue(null);
     mocks.snapshot.mockReset().mockResolvedValue(null);
   });
-  it("fills a one-card checked hit from typed and legacy drafts for free, bound to the same subject", async () => {
+  it("continues from six saved options to ten and excludes the existing identities", async () => {
+    const search = vi
+      .fn()
+      .mockResolvedValueOnce(
+        found(Array.from({ length: 6 }, (_, i) => card(i + 1))),
+      )
+      .mockResolvedValueOnce(
+        found(
+          Array.from({ length: 4 }, (_, i) => card(i + 7)),
+          false,
+        ),
+      );
+    const result = await searchWithCoverage(
+      request,
+      {
+        store,
+        validateMissingFilm: vi.fn(),
+        fetchImpl: vi.fn().mockResolvedValue(Response.json(true)),
+      },
+      { search, enrich },
+    );
+    expect(search).toHaveBeenCalledTimes(2);
+    expect(
+      search.mock.calls[1]![0] as Parameters<typeof searchWithCoverage>[0],
+    ).toMatchObject({
+      discoveryExclusions: expect.arrayContaining([
+        expect.objectContaining({ referenceCode: "REF1" }),
+      ]),
+    });
+    expect(result).toMatchObject({
+      coverage: { total: 10, status: "target_met" },
+      fromCache: false,
+    });
+  });
+  it("reuses ten saved final options without starting provider validation again", async () => {
+    mocks.read.mockImplementation(async (_store, key) =>
+      key ===
+      aiSearchCacheKey("film", {
+        constraints: input,
+        completeResponsePolicy: 1,
+      })
+        ? { watches: Array.from({ length: 10 }, (_, i) => card(i + 1)) }
+        : null,
+    );
+    const search = vi.fn();
+    const result = await searchWithCoverage(
+      request,
+      { store, validateMissingFilm: vi.fn() },
+      { search, enrich },
+    );
+    expect(search).not.toHaveBeenCalled();
+    expect(result).toMatchObject({ fromCache: true, coverage: { total: 10 } });
+  });
+  it("uses typed and legacy drafts bound to the subject, then keeps searching below ten", async () => {
     mocks.read.mockImplementation(async (_store, key) => ({
       watches:
         key === aiSearchCacheKey("film", { query: input.query })
@@ -58,7 +111,7 @@ describe("coverage around checked snapshots", () => {
       { store, validateMissingFilm: vi.fn() },
       { search, enrich },
     );
-    expect(search).toHaveBeenCalledTimes(1);
+    expect(search).toHaveBeenCalledTimes(2);
     expect(result).toMatchObject({
       coverage: { total: 5, additionalCandidates: 4 },
     });
@@ -118,7 +171,10 @@ describe("coverage around checked snapshots", () => {
       expect.objectContaining({
         cacheInput: {
           ...input,
-          coveragePolicy: 1,
+          coveragePolicy: 2,
+          excluding: [
+            { brand: "Omega", model: "Model 1", referenceCode: "REF1" },
+          ],
         },
       }),
       expect.any(Object),
@@ -137,7 +193,7 @@ describe("coverage around checked snapshots", () => {
       expect(search).toHaveBeenCalledTimes(1);
     },
   );
-  it("reuses a scarce saved supplementary draft without rediscovery on every visit", async () => {
+  it("does not let a scarce saved supplementary draft stop discovery below ten", async () => {
     mocks.read.mockImplementation(async (_store, key) =>
       key === aiSearchCacheKey("film", { ...input, coveragePolicy: 1 })
         ? { watches: [card(2)] }
@@ -149,8 +205,9 @@ describe("coverage around checked snapshots", () => {
       { store, validateMissingFilm: vi.fn() },
       { search, enrich },
     );
-    expect(search).toHaveBeenCalledTimes(1);
+    expect(search).toHaveBeenCalledTimes(2);
     expect(result).toMatchObject({ coverage: { total: 2, status: "partial" } });
+    expect(result).toMatchObject({ fromCache: false });
   });
   it("filters obsolete selections before filling ten current eligible options", async () => {
     const current = Array.from({ length: 10 }, (_, i) => ({

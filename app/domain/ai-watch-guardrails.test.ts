@@ -109,9 +109,11 @@ describe("numeric hard checks", () => {
     expect(meetsWaterResistance(100, null)).toBe(false);
   });
 
-  it("allows half a millimetre of rounding on diameter", () => {
+  it("enforces the chosen diameter boundaries without silently rounding", () => {
     const range = { minimumMm: 38, maximumMm: 42 };
-    expect(fitsDiameter(range, 42.5)).toBe(true);
+    expect(fitsDiameter(range, 42)).toBe(true);
+    expect(fitsDiameter(range, 42.5)).toBe(false);
+    expect(fitsDiameter(range, 37.5)).toBe(false);
     expect(fitsDiameter(range, 43)).toBe(false);
     expect(fitsDiameter(range, null)).toBe(false);
   });

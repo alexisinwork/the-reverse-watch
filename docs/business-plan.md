@@ -1,6 +1,6 @@
 # The Reserve — business plan and continuing strategy
 
-Updated: 2026-10-25. Owner: Alex. Evidence baseline: commit `da6108a`.
+Updated: 2026-10-30. Owner: Alex. Evidence baseline: commit `da6108a`.
 This is the persistent repository record of the supplied audit/business-plan
 conversation. Earlier Word documents and ZIP attachments were mentioned in that
 conversation but are not available here; their contents have not been independently
@@ -827,3 +827,19 @@ Evidence: `docs/reports/result-coverage-production.json`. Current engineering
 next action: observe existing yes/no usefulness feedback and partial coverage;
 do not initiate a new bulk paid research job. The recorded commercial next action
 and owner-deferred Shopify/automatic backups remain unchanged.
+
+Ten-option amendment, 2026-10-30: the owner now requires ten distinct options
+before a response is complete; the earlier minimum-five stopping point is
+superseded. Saved short research keeps seeking additional models. Only ten-card
+final lists enter the completed-response cache, while partial source evidence
+remains separate. Quiz close fits may disclose function/specification differences
+and up to 3 mm of case-size difference, keeping known budget, requested movement
+and allergy requirements. The alternative finder now shows immediate activity
+and actual streamed source-check progress. Local verification returns ten cards
+for all four tools and real desktop/mobile widget results, with zero new charge
+or attempts on repeat. Evidence: `docs/reports/ten-option-completion-local.json`
+and `docs/reports/alternative-progress-local.json`. This establishes the tested
+feature behavior, not buyer demand, revenue or usefulness improvement. Partner
+pricing, usage counters and the recorded commercial next action stay unchanged.
+Current engineering next action: verify this rollout in production, then observe
+the existing usefulness feedback and incomplete coverage without a bulk paid job.

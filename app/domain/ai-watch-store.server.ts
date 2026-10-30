@@ -209,11 +209,16 @@ export async function searchWithStore(
     kind,
     cacheInput,
     candidates,
+    discoveryExclusions,
   }: {
     kind: AiSearchKind;
     cacheInput: unknown;
     /** Deterministically selected local cards; never an unmetered AI callback. */
     candidates?: FoundWatch[];
+    discoveryExclusions?: Pick<
+      FoundWatch,
+      "brand" | "model" | "referenceCode"
+    >[];
     run?: () => Promise<AiSearchOutcome>;
   },
   {
@@ -236,9 +241,13 @@ export async function searchWithStore(
     validateMissingFilm?: (
       cacheKey: string,
       subject: z.infer<typeof filmSubjectSchema>,
+      exclude?: Pick<FoundWatch, "brand" | "model" | "referenceCode">[],
     ) => Promise<ValidationRun>;
     /** Typed non-film discovery closure; owns the same durable reservation. */
-    validateMissing?: (cacheKey: string) => Promise<ValidationRun>;
+    validateMissing?: (
+      cacheKey: string,
+      exclude?: Pick<FoundWatch, "brand" | "model" | "referenceCode">[],
+    ) => Promise<ValidationRun>;
     /** A bounded delay used only while another request owns this key. */
     waitForValidation?: () => Promise<void>;
     now?: () => number;
@@ -265,9 +274,10 @@ export async function searchWithStore(
           fromCache: true,
         };
       if (validateDraft) {
-        const draft =
-          (await loadStoredSearch(store, cacheKey, fetchImpl)) ??
-          (candidates?.length ? { watches: candidates } : null);
+        const draft = discoveryExclusions
+          ? null
+          : ((await loadStoredSearch(store, cacheKey, fetchImpl)) ??
+            (candidates?.length ? { watches: candidates } : null));
         let result: ValidationRun;
         if (draft) {
           const candidates =
@@ -280,9 +290,13 @@ export async function searchWithStore(
           const subject =
             kind === "film" ? filmSubjectSchema.safeParse(cacheInput) : null;
           if (validateMissingFilm && subject?.success)
-            result = await validateMissingFilm(cacheKey, subject.data);
+            result = await validateMissingFilm(
+              cacheKey,
+              subject.data,
+              discoveryExclusions,
+            );
           else if (kind !== "film" && validateMissing)
-            result = await validateMissing(cacheKey);
+            result = await validateMissing(cacheKey, discoveryExclusions);
           else return { status: "unavailable" };
         }
         if (

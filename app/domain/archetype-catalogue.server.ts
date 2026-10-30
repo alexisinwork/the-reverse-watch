@@ -195,5 +195,25 @@ export async function archetypeCatalogueResult(
   band: PriceComfort,
 ) {
   const candidates = await selectArchetypeWatches(archetype, band);
-  return validateSelectedResults("archetype", { archetype, band }, candidates);
+  const bounds = ARCHETYPE_BANDS[band];
+  return validateSelectedResults(
+    "archetype",
+    { archetype, band },
+    candidates,
+    undefined,
+    {
+      feature: "archetype",
+      styles: roles[archetype],
+      diameter: null,
+      price: {
+        minimum: bounds.minimumUsd,
+        maximum: bounds.maximumUsd,
+        currency: "USD",
+      },
+      movements:
+        archetype === "mechanical_connoisseur"
+          ? ["automatic", "manual", "spring_drive"]
+          : [],
+    },
+  );
 }

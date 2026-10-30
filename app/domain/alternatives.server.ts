@@ -20,6 +20,7 @@ import {
   type AlternativesBudget,
 } from "./alternatives";
 import { loadFxTable } from "./fx.server";
+import { SEARCH_RESULT_TARGET } from "./search-coverage";
 import { lookupPreownedPrice } from "./preowned-price.server";
 import { priceIn, type CatalogueWatch } from "./watch-catalogue";
 import {
@@ -304,6 +305,7 @@ export async function findAlternatives({
     budget,
     allowQuartz,
     fx,
+    SEARCH_RESULT_TARGET * 3,
   );
 
   let searchedLive = false;
@@ -332,11 +334,12 @@ export async function findAlternatives({
         budget,
         allowQuartz,
         fx,
+        SEARCH_RESULT_TARGET * 3,
       );
     }
   }
   report?.({
-    text: `Found ${alternatives.length} ${alternatives.length === 1 ? "alternative" : "alternatives"}.`,
+    text: `Found ${alternatives.length} candidate alternatives; selecting ten distinct options…`,
   });
   return { status: "found", target, alternatives, searchedLive };
 }

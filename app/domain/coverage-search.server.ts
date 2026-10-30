@@ -9,11 +9,14 @@ import { hydrateCoverageCandidates } from "./coverage-catalogue.server";
 import { safeHttpUrl } from "./source-pages.server";
 import {
   coverSearchResults,
-  SEARCH_RESULT_MINIMUM,
   SEARCH_RESULT_TARGET,
   unverifiedCandidate,
 } from "./search-coverage";
 import { uniqueWatchResults } from "./watch-result-dedup";
+import {
+  cacheCompleteSearch,
+  completeSearchInput,
+} from "./complete-search-cache.server";
 import { loadValidatedSnapshot } from "./validated-cache.server";
 
 const fold = (value: string) =>
@@ -34,6 +37,7 @@ export async function searchWithCoverage(
     search?: typeof searchWithStore;
     enrich?: (watches: FoundWatch[]) => Promise<FoundWatch[]>;
     localCandidates?: FoundWatch[];
+    additionalCandidate?: (watch: FoundWatch) => FoundWatch | null;
   } = {},
 ): Promise<AiSearchView> {
   const search = deps.search ?? searchWithStore;
@@ -80,13 +84,18 @@ export async function searchWithCoverage(
       return typeof value === "string" && fold(value) === fold(subject.query);
     });
   const localCandidates = deps.localCandidates ?? request.candidates ?? [];
-  const identity = (watch: FoundWatch) =>
-    `${fold(watch.brand)}|${fold(watch.referenceCode ?? watch.model)}`;
+  const identity = (
+    watch: Pick<FoundWatch, "brand" | "model" | "referenceCode">,
+  ) => `${fold(watch.brand)}|${fold(watch.referenceCode ?? watch.model)}`;
   const allowed = deps.localCandidates
     ? new Set(localCandidates.map(identity))
     : null;
   const eligible = (watches: FoundWatch[]) =>
-    bind(watches).filter((watch) => !allowed || allowed.has(identity(watch)));
+    bind(watches).flatMap((watch) => {
+      if (!allowed || allowed.has(identity(watch))) return [watch];
+      const additional = deps.additionalCandidate?.(watch);
+      return additional ? [additional] : [];
+    });
   const screen = (view: AiSearchView): AiSearchView =>
     view.status === "found"
       ? {
@@ -95,12 +104,70 @@ export async function searchWithCoverage(
           alsoWorth: eligible(view.alsoWorth ?? []),
         }
       : view;
-  let result = screen(await search(request, options));
+  const completed = await read(completeSearchInput(input));
+  if (
+    (request.kind !== "quiz" || deps.localCandidates) &&
+    uniqueWatchResults(eligible(completed)).length >= SEARCH_RESULT_TARGET
+  ) {
+    const current = await enrich(
+      eligible(completed).map((watch) => ({
+        ...watch,
+        imageUrl: null,
+        priceNote: null,
+        details: { person: watch.details.person, work: watch.details.work },
+      })),
+    ).catch(() => []);
+    const snapshot = store
+      ? await loadValidatedSnapshot(
+          { config: store, fetchImpl },
+          aiSearchCacheKey(request.kind, input),
+        ).catch(() => null)
+      : null;
+    const cached = coverSearchResults(
+      snapshot
+        ? screen({
+            status: "found",
+            fromCache: true,
+            summary: snapshot.summary,
+            watches: snapshot.watches,
+          })
+        : { status: "unavailable" },
+      eligible(current).map((watch) =>
+        unverifiedCandidate(
+          watch,
+          subject
+            ? "Association not fully verified"
+            : "Additional candidate — not fully verified",
+        ),
+      ),
+    );
+    if (
+      cached.status === "found" &&
+      cached.coverage?.total === SEARCH_RESULT_TARGET
+    )
+      return { ...cached, fromCache: true };
+  }
+  const prior = uniqueWatchResults(eligible(await read(input)));
+  const primaryRequest =
+    !request.candidates?.length &&
+    prior.length > 0 &&
+    prior.length < SEARCH_RESULT_TARGET
+      ? {
+          ...request,
+          discoveryExclusions: prior.map(({ brand, model, referenceCode }) => ({
+            brand,
+            model,
+            referenceCode,
+          })),
+        }
+      : request;
+  let result = screen(await search(primaryRequest, options));
   const primaryWasFree = result.status === "found" && result.fromCache;
   const pools = await Promise.all([
     read(input),
     subject ? read({ query: subject.query }) : Promise.resolve([]),
     read(supplementInput),
+    read(completeSearchInput(input)),
   ]);
   // Reuse supplementary certified facts without starting another validation.
   if (store) {
@@ -126,7 +193,7 @@ export async function searchWithCoverage(
     }
   }
   const prepare = (watches: FoundWatch[]) =>
-    eligible(watches)
+    uniqueWatchResults(eligible(watches))
       .slice(0, 60)
       .flatMap((watch) => {
         const local = localCandidates.includes(watch);
@@ -164,21 +231,38 @@ export async function searchWithCoverage(
       () => [],
     ),
   );
-  const initial = coverSearchResults(result, candidates);
-  // A checked-cache read spent nothing. Only this branch may make one new paid
-  // attempt to fill a genuinely short result; never chain two reservations in
-  // one issuance. Positive saved coverage is reused even if sources are scarce.
-  if (
-    result.status === "found" &&
-    primaryWasFree &&
-    initial.status === "found" &&
-    (initial.coverage?.total ?? 0) < SEARCH_RESULT_MINIMUM &&
-    !pools[2].length &&
-    (subject ? options.validateMissingFilm : options.validateMissing)
-  ) {
+  let initial = coverSearchResults(result, candidates);
+  // Walk reusable partial research, but make at most one new paid discovery.
+  // Each pass excludes the identities already found so a scarce saved draft
+  // cannot become a permanent stopping point below ten distinct options.
+  for (let pass = 0; pass < 3; pass++) {
+    if (!(
+      result.status === "found" &&
+      primaryWasFree &&
+      initial.status === "found" &&
+      (initial.coverage?.total ?? 0) < SEARCH_RESULT_TARGET &&
+      (subject ? options.validateMissingFilm : options.validateMissing)
+    ))
+      break;
+    const excluded = [...initial.watches, ...(initial.alsoWorth ?? [])]
+      .map(({ brand, model, referenceCode }) => ({
+        brand,
+        model,
+        referenceCode,
+      }))
+      .sort((a, b) => identity(a).localeCompare(identity(b)));
+    const topupInput = {
+      ...supplementInput,
+      coveragePolicy: 2,
+      excluding: excluded,
+    };
     const extra = screen(
       await search(
-        { kind: request.kind, cacheInput: supplementInput },
+        {
+          kind: request.kind,
+          cacheInput: topupInput,
+          discoveryExclusions: excluded,
+        },
         options,
       ),
     );
@@ -191,16 +275,39 @@ export async function searchWithCoverage(
     }
     candidates = [
       ...candidates,
-      ...label(
-        await enrich(prepare(await read(supplementInput))).catch(() => []),
-      ),
+      ...label(await enrich(prepare(await read(topupInput))).catch(() => [])),
     ];
+    const next = coverSearchResults(result, candidates);
+    if (
+      extra.status !== "found" ||
+      !extra.fromCache ||
+      next.status !== "found" ||
+      next.coverage?.total === initial.coverage?.total
+    ) {
+      initial = next;
+      break;
+    }
+    initial = next;
   }
   if (
     result.status === "found" &&
     uniqueWatchResults([...result.watches, ...(result.alsoWorth ?? [])])
       .length >= SEARCH_RESULT_TARGET
   )
-    return coverSearchResults(result);
-  return coverSearchResults(result, candidates);
+    return request.kind === "quiz"
+      ? coverSearchResults(result)
+      : cacheCompleteSearch(
+          request.kind,
+          input,
+          coverSearchResults(result),
+          store ? { config: store, fetchImpl } : null,
+        );
+  return request.kind === "quiz"
+    ? coverSearchResults(result, candidates)
+    : cacheCompleteSearch(
+        request.kind,
+        input,
+        coverSearchResults(result, candidates),
+        store ? { config: store, fetchImpl } : null,
+      );
 }

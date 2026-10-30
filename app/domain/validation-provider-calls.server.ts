@@ -3,6 +3,9 @@ import type { ValidationBrief } from "./validate-cached-search.server";
 import {
   buildFilmDiscoveryRequest,
   buildQuizDiscoveryRequest,
+  buildSelectionDiscoveryRequest,
+  type SelectionDiscoveryProfile,
+  type DiscoveryExclusions,
   buildValidationRequests,
 } from "./validation-provider-request.server";
 import type { ProfileV4 } from "./questionnaire-v4";
@@ -52,14 +55,25 @@ export function validationProviderCalls(deps: Deps) {
     }
   };
   return {
-    discoverQuiz: (profile: ProfileV4) =>
+    discoverQuiz: (profile: ProfileV4, exclude: DiscoveryExclusions = []) =>
       callPerplexity(
-        buildQuizDiscoveryRequest(profile, museModel),
+        buildQuizDiscoveryRequest(profile, museModel, exclude),
         parsePerplexityFilmDiscoveryResponse,
       ),
-    discoverFilm: (subject: { query: string; kind: string }) =>
+    discoverSelection: (
+      profile: SelectionDiscoveryProfile,
+      exclude: DiscoveryExclusions = [],
+    ) =>
       callPerplexity(
-        buildFilmDiscoveryRequest(subject, museModel),
+        buildSelectionDiscoveryRequest(profile, museModel, exclude),
+        parsePerplexityFilmDiscoveryResponse,
+      ),
+    discoverFilm: (
+      subject: { query: string; kind: string },
+      exclude: DiscoveryExclusions = [],
+    ) =>
+      callPerplexity(
+        buildFilmDiscoveryRequest(subject, museModel, exclude),
         parsePerplexityFilmDiscoveryResponse,
       ),
     primary: async (brief: ValidationBrief) => {

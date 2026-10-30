@@ -123,11 +123,7 @@ export function fitsDiameter(
   caseDiameterMm: number | null,
 ) {
   if (caseDiameterMm === null) return false;
-  // Published diameters are often rounded to the nearest half millimetre.
-  return (
-    caseDiameterMm >= range.minimumMm - 0.5 &&
-    caseDiameterMm <= range.maximumMm + 0.5
-  );
+  return caseDiameterMm >= range.minimumMm && caseDiameterMm <= range.maximumMm;
 }
 
 export function fitsPrice(

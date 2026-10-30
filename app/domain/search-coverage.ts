@@ -1,7 +1,7 @@
 import type { AiSearchView, FoundWatch } from "./ai-watch-types";
 import { uniqueSearchView, uniqueWatchResults } from "./watch-result-dedup";
 
-export const SEARCH_RESULT_MINIMUM = 5;
+export const SEARCH_RESULT_MINIMUM = 10;
 export const SEARCH_RESULT_TARGET = 10;
 
 export function unverifiedCandidate(
@@ -36,12 +36,29 @@ export function coverSearchResults(
   const checked = uniqueSearchView(base);
   const main = checked.status === "found" ? checked.watches : [];
   const other = checked.status === "found" ? (checked.alsoWorth ?? []) : [];
-  const existing = [...main, ...other];
+  const existing = [...main, ...other].sort(
+    (a, b) =>
+      Number(Boolean(a.details.misses?.length)) -
+      Number(Boolean(b.details.misses?.length)),
+  );
   const selected = uniqueWatchResults([
     ...existing,
     ...candidates.filter((watch) => watch.details.reviewStatus !== "rejected"),
   ]).slice(0, SEARCH_RESULT_TARGET);
-  if (!selected.length) return base;
+  if (!selected.length)
+    return base.status === "found"
+      ? {
+          ...base,
+          fromCache: false,
+          coverage: {
+            minimum: SEARCH_RESULT_MINIMUM,
+            target: SEARCH_RESULT_TARGET,
+            total: 0,
+            additionalCandidates: 0,
+            status: "partial",
+          },
+        }
+      : base;
   const alsoWorth = selected.filter((watch) => other.includes(watch));
   const watches = selected.filter((watch) => !other.includes(watch));
   const added = selected.filter((watch) => !existing.includes(watch));
@@ -60,6 +77,11 @@ export function coverSearchResults(
       ? checked
       : { status: "found" as const, fromCache: true }),
     status: "found",
+    // Reusable evidence is not a completed answer. Shortlists remain open.
+    fromCache:
+      total >= SEARCH_RESULT_TARGET &&
+      checked.status === "found" &&
+      checked.fromCache,
     watches,
     ...(checked.status === "found" && checked.alsoWorth ? { alsoWorth } : {}),
     summary:

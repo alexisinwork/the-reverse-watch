@@ -226,7 +226,7 @@ export function parsePerplexityFilmDiscoveryResponse(body: unknown): {
 } {
   const { content, sources, costUsd } = parsePerplexityAgentEnvelope(body);
   const { sightings } = z
-    .object({ sightings: z.array(z.unknown()).max(10) })
+    .object({ sightings: z.array(z.unknown()).max(20) })
     .parse(content);
   const citedUrls = sources
     .map(url)

@@ -38,9 +38,24 @@ export function validationServices(
       ),
     hydrateVerified: (watches) =>
       enrichResultWatches(watches, client, { preferCatalogueTitle: true }),
-    reserve: (key, count) => reserveValidationBudget(client, key, count),
-    primary: calls.primary,
-    secondary: calls.secondary,
+    reserve: (key, count) => {
+      deps.report?.({
+        text: `Preparing source checks for up to ${count} candidate references…`,
+      });
+      return reserveValidationBudget(client, key, count);
+    },
+    primary: (brief) => {
+      deps.report?.({
+        text: `Looking up sources for ${brief.brand} ${brief.referenceCode ?? brief.model}…`,
+      });
+      return calls.primary(brief);
+    },
+    secondary: (brief) => {
+      deps.report?.({
+        text: `Independently checking ${brief.brand} ${brief.referenceCode ?? brief.model}…`,
+      });
+      return calls.secondary(brief);
+    },
     inspect: async (watch, primary, secondary) => {
       const result = await validateCachedWatchFromSources(
         watch,
@@ -63,6 +78,9 @@ export function validationServices(
         return result;
       }
       const verified = result.watch;
+      deps.report?.({
+        text: `Sources checked for ${verified.brand} ${verified.referenceCode}; comparing the specifications…`,
+      });
       // The two source checks establish only identity and, where supplied,
       // attribution. Old prices, specifications, photos and explanations
       // were not verified by those checks: hydrate them afresh from the
@@ -121,8 +139,12 @@ export function validationServices(
     settle: (attempt, costs) => settleValidationBudget(client, attempt, costs),
     reportOverrun: (attempt, costs) =>
       reportValidationOverrun(client, attempt, costs),
-    publish: (attempt, watches, costs) =>
-      publishValidatedSnapshot(client, attempt, watches, costs),
+    publish: (attempt, watches, costs) => {
+      deps.report?.({
+        text: `${watches.length} references checked. Ranking the final ten options and labelled close fits…`,
+      });
+      return publishValidatedSnapshot(client, attempt, watches, costs);
+    },
   };
 }
 

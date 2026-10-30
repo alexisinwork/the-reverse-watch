@@ -16,6 +16,10 @@ import type { FoundWatch, ProgressEvent } from "./ai-watch-types";
 import type { FilmDiscoverySubject } from "./validate-new-film-search.server";
 import { storeSearch } from "./ai-watch-store.server";
 import { quizCacheInput } from "./quiz-live-search.server";
+import type {
+  SelectionDiscoveryProfile,
+  DiscoveryExclusions,
+} from "./validation-provider-request.server";
 
 /** The only visitor-facing entry into paid validation. Every callback reaches
  * the durable reservation before a provider; valid snapshots bypass it. */
@@ -25,25 +29,33 @@ export function meteredSearchOptions({
   allowPaid = () => Promise.resolve(true),
   report,
   quizProfile,
+  selectionProfile,
 }: {
   client?: CatalogueClient | null;
   deps?: Deps;
   allowPaid?: () => Promise<boolean>;
   report?: (event: ProgressEvent) => void;
   quizProfile?: ProfileV4;
+  selectionProfile?: SelectionDiscoveryProfile;
 } = {}): NonNullable<Parameters<typeof searchWithStore>[1]> {
   if (!client || !deps.config.perplexity || !deps.config.museSpark) return {};
-  const services = validationServicesWithFilmDiscovery(client, deps);
+  const services = validationServicesWithFilmDiscovery(client, {
+    ...deps,
+    report: report ?? deps.report,
+  });
   const unavailable = { status: "unavailable" as const, reason: "retry_later" };
   return {
     store: client.config,
     fetchImpl: client.fetchImpl,
-    ...(quizProfile
+    ...(quizProfile || selectionProfile
       ? {
-          validateMissing: async (key: string) => {
+          validateMissing: async (
+            key: string,
+            exclude: DiscoveryExclusions = [],
+          ) => {
             if (!(await allowPaid())) return unavailable;
             report?.({
-              text: "Finding documented references for your answers and checking them independently…",
+              text: "Searching the web for additional models to complete ten options, then checking the sources…",
             });
             return validateDiscoveredSearch(key, {
               ...services,
@@ -51,9 +63,11 @@ export function meteredSearchOptions({
                 storeSearch(
                   client.config,
                   {
-                    kind: "quiz",
+                    kind: quizProfile ? "quiz" : "find",
                     cacheKey: key,
-                    cacheInput: quizCacheInput(quizProfile),
+                    cacheInput: quizProfile
+                      ? quizCacheInput(quizProfile)
+                      : selectionProfile,
                     summary:
                       "Additional candidates from cited research; not fully verified.",
                     watches,
@@ -61,7 +75,15 @@ export function meteredSearchOptions({
                   client.fetchImpl,
                 ),
               discover: () =>
-                validationProviderCalls(deps).discoverQuiz(quizProfile),
+                quizProfile
+                  ? validationProviderCalls(deps).discoverQuiz(
+                      quizProfile,
+                      exclude,
+                    )
+                  : validationProviderCalls(deps).discoverSelection(
+                      selectionProfile!,
+                      exclude,
+                    ),
               accepts: (evidence) => !evidence.person && !evidence.work,
             });
           },
@@ -74,13 +96,19 @@ export function meteredSearchOptions({
       });
       return validateCachedSearch(key, watches, services);
     },
-    validateMissingFilm: async (key: string, subject: FilmDiscoverySubject) => {
+    validateMissingFilm: async (
+      key: string,
+      subject: FilmDiscoverySubject,
+      exclude: DiscoveryExclusions = [],
+    ) => {
       if (!(await allowPaid())) return unavailable;
       report?.({
         text: "Finding documented references and checking each candidate…",
       });
       return validateNewFilmSearch(key, subject, {
         ...services,
+        discoverFilm: (value) =>
+          validationProviderCalls(deps).discoverFilm(value, exclude),
         captureCandidates: (watches) =>
           storeSearch(
             client.config,

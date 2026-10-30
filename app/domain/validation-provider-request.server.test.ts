@@ -3,6 +3,7 @@ import {
   buildFilmDiscoveryRequest,
   buildQuizDiscoveryRequest,
   buildValidationRequests,
+  buildSelectionDiscoveryRequest,
 } from "./validation-provider-request.server";
 
 const brief = {
@@ -14,6 +15,55 @@ const brief = {
 };
 
 describe("bounded validation requests", () => {
+  it("carries functional quiz requirements but excludes arbitrary private strings", () => {
+    const result = buildQuizDiscoveryRequest(
+      {
+        version: 4,
+        budgetCurrency: "USD",
+        priceRange: "0_500",
+        wristCm: 21,
+        wearingScenarios: ["everyday"],
+        minimumWaterResistanceM: 0,
+        movementTypes: ["automatic"],
+        requiredComplications: ["day_of_week", "alex_private_name"],
+        allergyConstraint: "none",
+        caseShape: "round",
+        crystal: "sapphire",
+        displayCaseback: true,
+      },
+      "muse-spark-1.3-contributor",
+    );
+    const text = JSON.stringify(result.body);
+    expect(text).toContain("day_of_week");
+    expect(text).toContain("sapphire");
+    expect(text).not.toContain("alex_private_name");
+    expect(text).not.toContain("wristCm");
+  });
+  it("supports metered alternatives discovery using only the catalogue target and constraints", () => {
+    const result = buildSelectionDiscoveryRequest(
+      {
+        feature: "alternatives",
+        styles: ["dive"],
+        price: { minimum: 1000, maximum: 2000, currency: "USD" },
+        diameter: { minimumMm: 37, maximumMm: 43 },
+        movements: ["automatic"],
+        target: {
+          brand: "Tudor",
+          model: "Black Bay",
+          referenceCode: "M79030N",
+        },
+      },
+      "muse-spark-1.3-contributor",
+      [{ brand: "Seiko", model: "Prospex", referenceCode: "SPB143" }],
+    );
+    expect(result.body.instructions).toContain("SPB143");
+    expect(result.body.instructions).toContain("Tudor");
+    expect(result.body).toMatchObject({
+      max_steps: 1,
+      max_tool_calls: 1,
+      store: false,
+    });
+  });
   it("sends only numeric and canonical quiz constraints to discovery", () => {
     const request = buildQuizDiscoveryRequest(
       {
@@ -49,7 +99,7 @@ describe("bounded validation requests", () => {
     expect(result.body).toMatchObject({
       max_steps: 1,
       max_tool_calls: 1,
-      max_output_tokens: 2400,
+      max_output_tokens: 4000,
       store: false,
     });
     expect(result.body.input).toBe("daniel craig watches actor");

@@ -27,7 +27,7 @@ const card = z.object({
     .object({ verificationStatus: z.literal("unverified").optional() })
     .passthrough(),
 });
-const cards = z.array(card).min(5).max(10);
+const cards = z.array(card).length(10);
 const checks: { feature: string; count: number; uncertain: number }[] = [];
 const archetype =
   "socialSignal=discreet_competence&aestheticDna=structural_tool&deploymentEnvironment=field_water_abuse&priceComfort=first_good_watch&scoringVersion=2.0.0";
@@ -84,7 +84,7 @@ for (const [feature, path, init] of [
   const watches = body.result
     ? [...body.result.watches, ...(body.result.alsoWorth ?? [])]
     : body.watches!;
-  assert.ok(watches.length >= 5 && watches.length <= 10);
+  assert.equal(watches.length, 10);
   assert.equal(uniqueWatchResults(watches).length, watches.length);
   const uncertain = watches.filter(
     (watch) => watch.details.verificationStatus === "unverified",

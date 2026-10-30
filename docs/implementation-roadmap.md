@@ -2233,3 +2233,43 @@ incomplete reference returns the explanatory 503. Repeat API checks add zero
 validation attempts and zero charge. Evidence:
 `docs/reports/submariner-alternatives-production.json`. GitHub CI was still
 queued at verification; the complete local gate passed as recorded above.
+
+### Ten-option completion and alternative progress (2026-10-30)
+
+Status: **implementation complete; final verification and rollout in progress**.
+The owner supersedes the five-option minimum with ten distinct options for every
+tool, widget and API, permitting labelled close fits. Only ten-card final lists
+enter a completed-response cache. Smaller source snapshots/drafts remain reusable
+research and cannot suppress discovery for additional models. New search passes
+exclude the identities already found. Discovery may overfetch twenty identities
+before deduplication; at most eight cards enter independent checks, with the
+existing $0.025/card, $0.20/issuance and $100/month limits.
+
+The reported USD 0–500, 21 cm automatic/day-of-week, round/sapphire/display-back
+quiz had one falsely exact 42.5 mm pick due to a hidden ±0.5 mm size tolerance,
+then stopped at two narrow near fits. Exact size limits are now literal. Broader
+close fits preserve known budget, requested movement and allergy requirements;
+every specification/function compromise is labelled, including up to 3 mm of
+size difference. The saved catalogue snapshot yields ten distinct in-budget
+automatic close fits for that brief, none incorrectly counted as exact.
+
+The cheaper-alternative page displays activity during navigation and uses actual
+server discovery/provider/source-check events afterward. Its progress wording
+describes comparisons, and result copy no longer promises instantaneous delivery.
+Regression checks cover the reported quiz, threshold six-to-ten discovery,
+exclusion of existing models, ten-card cache writes, duplicate-aware counts,
+complete-cache reuse without provider validation, privacy-safe discovery and
+streamed alternative progress. Final gate and production evidence follow below.
+
+Local gate: `npm run check` passes 750 tests across 118 files and the production
+build. Real local APIs return ten options for quiz (the reported brief), film,
+archetype and cheaper alternatives; repeats add zero charge and zero attempts.
+The alternative finder retains thirty ranked candidates until final hydrated
+title deduplication, so early ten-row truncation cannot leave eight cards.
+The real widget on desktop/mobile shows immediate progress, ten results and
+only the Powered by link. The browser's warm-cache navigation check uses an
+explicit 1.2-second network delay after hydration; server SSE progress is checked
+separately without simulated provider messages. Evidence:
+`docs/reports/ten-option-completion-local.json`,
+`docs/reports/alternative-progress-local.json`. Existing shared coverage smoke
+checks now require ten cards for their representative requests.

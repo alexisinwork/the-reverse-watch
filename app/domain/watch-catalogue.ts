@@ -492,7 +492,13 @@ export const QUIZ_RESULT_LIMIT = 10;
 
 // Never relaxed for a near fit: budget, the chosen diameter range,
 // a nickel allergy and a function the visitor said they must have.
-const HARD_RULES = new Set(["price", "diameter", "nickel", "complications"]);
+const HARD_RULES = new Set([
+  "price",
+  "diameter",
+  "nickel",
+  "complications",
+  "movement",
+]);
 const MAX_MISSES = 2;
 
 /** What a near fit misses, in the visitor's words. */
@@ -507,7 +513,93 @@ export const MISS_LABELS: Record<string, string> = {
   caseback: "A different caseback",
   calibre: "A different kind of calibre",
   clasp: "Clasp adjustment not confirmed",
+  complications: "A required function is missing or not confirmed",
 };
+
+/** Broader suggestions are never exact matches. Keep budget, allergy and the
+ * requested movement; allow up to 3 mm beyond size and label every compromise. */
+export function broaderNearFits(
+  watches: readonly CatalogueWatch[],
+  profile: ProfileV4,
+  fx: FxTable | null,
+  limit: number,
+  exclude: ReadonlySet<string> = new Set(),
+) {
+  if (limit <= 0) return [];
+  const diameter = diameterRangeFor(profile);
+  const eligible = watches.flatMap((watch) => {
+    if (
+      watch.reviewStatus === "rejected" ||
+      !watch.sourceUrl ||
+      exclude.has(watch.identityKey) ||
+      watch.caseDiameterMm === null ||
+      watch.caseDiameterMm < diameter.minimumMm - 3 ||
+      watch.caseDiameterMm > diameter.maximumMm + 3
+    )
+      return [];
+    const misses = catalogueRuleFailures(watch, profile, fx);
+    if (
+      !misses.length ||
+      misses.length > 4 ||
+      misses.some((miss) => ["price", "nickel", "movement"].includes(miss))
+    )
+      return [];
+    return [{ watch, misses }];
+  });
+  const result: { watch: CatalogueWatch; misses: string[] }[] = [];
+  for (let count = 1; count <= 4 && result.length < limit; count++) {
+    const tier = eligible.filter((entry) => entry.misses.length === count);
+    for (const watch of pick(
+      tier.map((entry) => entry.watch),
+      limit - result.length,
+      stylesForScenarios(profile.wearingScenarios),
+    )) {
+      result.push({
+        watch,
+        misses: tier.find((entry) => entry.watch === watch)!.misses,
+      });
+    }
+  }
+  return result;
+}
+
+export function quizMissLabels(
+  watch: CatalogueWatch,
+  profile: ProfileV4,
+  misses: string[],
+) {
+  const unknown: Record<string, boolean> = {
+    style: watch.styles.length === 0,
+    water_resistance: watch.waterResistanceM === null,
+    movement: watch.movement === null,
+    thickness: watch.caseThicknessMm === null,
+    case_shape: watch.caseShape === null,
+    crystal: watch.crystal === null,
+    caseback: watch.displayCaseback === null,
+    calibre: watch.inHouseCalibre === null,
+  };
+  const names: Record<string, string> = {
+    style: "Wearing style",
+    water_resistance: "Water resistance",
+    movement: "Movement",
+    thickness: "Case thickness",
+    case_shape: "Case shape",
+    crystal: "Crystal",
+    caseback: "Caseback type",
+    calibre: "Calibre construction",
+  };
+  return misses.flatMap((miss) =>
+    unknown[miss]
+      ? [`${names[miss]} not confirmed`]
+      : miss === "complications"
+        ? profile.requiredComplications
+            .filter((slug) => !watch.complications.includes(slug))
+            .map(
+              (slug) => `${slug.replaceAll("_", " ")} missing or not confirmed`,
+            )
+        : [MISS_LABELS[miss] ?? miss],
+  );
+}
 
 /**
  * Watches in the visitor's price range that miss one or two of the softer

@@ -378,3 +378,22 @@ suggestions must pass every other active rule and disclose unknown budget fit.
 Display-time brand/title or brand/reference deduplication and existing spend
 limits remain. Implementation and evidence:
 [`search result coverage`](search-result-coverage.md).
+
+## 2026-10-30 ten-option completion and close-fit amendment
+
+The owner subsequently made ten distinct final options the completion condition
+for every tool, widget and API. The earlier five-option minimum is superseded.
+Saved short research triggers additional model discovery, instead of becoming a
+permanent completed response. Only ten-card final lists enter the completed
+response cache; verified source evidence and partial research remain separate.
+Paid research retains its existing spending limits and genuine shortages stay
+explicitly incomplete.
+
+The reported USD 0–500, 21 cm, automatic/day-of-week, round/sapphire/display-back
+quiz establishes the intended close-fit behavior: exact matches obey every
+boundary; labelled alternatives may miss a function or specification and may be
+up to 3 mm beyond the case range. Known budget, requested movement and allergy
+requirements remain. This explicitly supersedes the older near-fit exclusion
+of diameter and required-function differences, without changing stored facts.
+The cheaper-alternative finder must show immediate activity and real streamed
+AI/source-check steps.

@@ -1,0 +1,547 @@
+{
+  "at": "2026-10-30T22:06:51.843Z",
+  "base": "http://localhost:5173",
+  "fxDate": "2026-10-30",
+  "checks": [
+    {
+      "feature": "quiz",
+      "count": 10,
+      "fromCache": true,
+      "coverage": {
+        "minimum": 10,
+        "target": 10,
+        "total": 10,
+        "additionalCandidates": 0,
+        "status": "target_met"
+      },
+      "summary": "0 watches meet every answer. 10 close fits are in your price range or explicitly labelled price-unknown; every compromise and missing fact is marked on the card.",
+      "watches": [
+        {
+          "brand": "Luminox",
+          "model": "Atacama Field Automatic 1900 Series",
+          "reference": "A.1902.1",
+          "price": {
+            "amount": 341,
+            "currency": "USD"
+          },
+          "diameterMm": 44,
+          "movement": "automatic",
+          "misses": [
+            "A different caseback"
+          ]
+        },
+        {
+          "brand": "Certina",
+          "model": "DS-8 Powermatic 80",
+          "reference": "C033.451.11.051.00",
+          "price": {
+            "amount": 483,
+            "currency": "USD"
+          },
+          "diameterMm": 41,
+          "movement": "automatic",
+          "misses": [
+            "Case size outside your range"
+          ]
+        },
+        {
+          "brand": "Citizen",
+          "model": "Tsuyosa Automatic",
+          "reference": "NJ0150-81E",
+          "price": {
+            "amount": 299,
+            "currency": "EUR"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "misses": [
+            "Case size outside your range"
+          ]
+        },
+        {
+          "brand": "Orient",
+          "model": "Kamasu Automatic RA-AA0006L19B",
+          "reference": "RA-AA0006L19B",
+          "price": {
+            "amount": 233,
+            "currency": "USD"
+          },
+          "diameterMm": 41.8,
+          "movement": "automatic",
+          "misses": [
+            "Case size outside your range"
+          ]
+        },
+        {
+          "brand": "Seiko",
+          "model": "5 Sports SKX Series SRPD95K1",
+          "reference": "SRPD95K1",
+          "price": {
+            "amount": 350,
+            "currency": "USD"
+          },
+          "diameterMm": 42.5,
+          "movement": "automatic",
+          "misses": [
+            "Case size outside your range"
+          ]
+        },
+        {
+          "brand": "Bulova",
+          "model": "Oceanographer Devil Diver",
+          "reference": "96B322",
+          "price": {
+            "amount": 488,
+            "currency": "USD"
+          },
+          "diameterMm": 44,
+          "movement": "automatic",
+          "misses": [
+            "day of week missing or not confirmed",
+            "Caseback type not confirmed"
+          ]
+        },
+        {
+          "brand": "Laco",
+          "model": "Classic Chemnitz 40",
+          "reference": "861061",
+          "price": {
+            "amount": 392,
+            "currency": "USD"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "misses": [
+            "Case size outside your range",
+            "day of week missing or not confirmed"
+          ]
+        },
+        {
+          "brand": "LIP",
+          "model": "Himalaya 40mm Automatic",
+          "reference": "671719",
+          "price": {
+            "amount": 219,
+            "currency": "EUR"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "misses": [
+            "Case size outside your range",
+            "day of week missing or not confirmed"
+          ]
+        },
+        {
+          "brand": "Seiko",
+          "model": "5 Sports",
+          "reference": "SRPD51K1",
+          "price": {
+            "amount": 289,
+            "currency": "USD"
+          },
+          "diameterMm": 42.5,
+          "movement": "automatic",
+          "misses": [
+            "Case size outside your range",
+            "A different crystal"
+          ]
+        },
+        {
+          "brand": "Timex",
+          "model": "Waterbury Dive Automatic",
+          "reference": "TW2V24700",
+          "price": {
+            "amount": 258,
+            "currency": "USD"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "misses": [
+            "Case size outside your range",
+            "day of week missing or not confirmed"
+          ]
+        }
+      ]
+    },
+    {
+      "feature": "find",
+      "count": 10,
+      "fromCache": true,
+      "coverage": {
+        "minimum": 10,
+        "target": 10,
+        "total": 10,
+        "additionalCandidates": 9,
+        "status": "target_met"
+      },
+      "summary": "1 watch with checked sources. 9 additional candidates need further checking; see the labels on each card.",
+      "watches": [
+        {
+          "brand": "Omega",
+          "model": "Seamaster Aqua Terra 150m Co-Axial 38.5 Stainless Steel / Blue / Bracelet / Skyfall",
+          "reference": "231.10.39.21.03.001",
+          "price": {
+            "amount": 5427,
+            "currency": "USD"
+          },
+          "diameterMm": 38.5,
+          "movement": "automatic"
+        },
+        {
+          "brand": "Omega",
+          "model": "Seamaster Planet Ocean 600M Co-Axial 42 Stainless Steel / Black / Bracelet",
+          "reference": "2201.50.00",
+          "price": {
+            "amount": 4435,
+            "currency": "USD"
+          },
+          "diameterMm": 42,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Omega",
+          "model": "Seamaster Diver 300M Co-Axial 41 Stainless Steel / Blue / Bracelet",
+          "reference": "2220.80.00",
+          "price": {
+            "amount": 4346,
+            "currency": "USD"
+          },
+          "diameterMm": 41,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Omega",
+          "model": "Seamaster 300 Master Co-Axial Spectre",
+          "reference": "233.32.41.21.01.001",
+          "price": {
+            "amount": 11768,
+            "currency": "USD"
+          },
+          "diameterMm": 41,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Omega",
+          "model": "Seamaster Diver 300M 007 Edition",
+          "reference": "210.90.42.20.01.001",
+          "price": {
+            "amount": 11300,
+            "currency": "USD"
+          },
+          "diameterMm": 42,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Omega",
+          "model": "Seamaster Diver 300M Master Co-Axial 42 James Bond No Time to Die / NATO",
+          "reference": "210.92.42.20.01.001",
+          "price": {
+            "amount": 8409,
+            "currency": "USD"
+          },
+          "diameterMm": 42,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Omega",
+          "model": "Seamaster Aqua Terra",
+          "reference": "220.10.41.21.03.001",
+          "price": {
+            "amount": 5485,
+            "currency": "USD"
+          },
+          "diameterMm": 41,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Omega",
+          "model": "Seamaster",
+          "reference": null,
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Omega",
+          "model": "MoonSwatch Mission to Neptune",
+          "reference": null,
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Omega",
+          "model": "Seamaster Diver 300M Chronograph",
+          "reference": "222.31.00.40.10.002",
+          "verificationStatus": "unverified"
+        }
+      ]
+    },
+    {
+      "feature": "archetype",
+      "count": 10,
+      "watches": [
+        {
+          "brand": "Hamilton",
+          "model": "Khaki Field Automatic 38mm Black",
+          "reference": "H70455533",
+          "price": {
+            "amount": 795,
+            "currency": "USD"
+          },
+          "diameterMm": 38,
+          "movement": "automatic"
+        },
+        {
+          "brand": "Baltic",
+          "model": "Hermetique Tourer Beige",
+          "reference": "Tourer Beige",
+          "price": {
+            "amount": 700,
+            "currency": "EUR"
+          },
+          "diameterMm": 37,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Benrus",
+          "model": "DTU-2A/P Field Watch",
+          "reference": "DTU-2A/P",
+          "price": {
+            "amount": 990,
+            "currency": "USD"
+          },
+          "diameterMm": 39.5,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Casio",
+          "model": "G-Shock Classic DW-5600",
+          "reference": "DW5600E-1V",
+          "price": {
+            "amount": 72.76,
+            "currency": "USD"
+          },
+          "diameterMm": 42.8,
+          "movement": "quartz",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Citizen",
+          "model": "Eco-Drive Weekender Field",
+          "reference": "BM8180-03E",
+          "price": {
+            "amount": 295,
+            "currency": "USD"
+          },
+          "diameterMm": 37,
+          "movement": "solar",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "CWC",
+          "model": "G10 1980 Reissue Fatboy",
+          "reference": "G10FATBOY80",
+          "price": {
+            "amount": 333,
+            "currency": "USD"
+          },
+          "diameterMm": 38,
+          "movement": "quartz",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Damasko",
+          "model": "DA46 Black",
+          "reference": "DA46",
+          "price": {
+            "amount": 1615,
+            "currency": "USD"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Seiko",
+          "model": "Prospex Solar PADI",
+          "reference": "SNE575P1",
+          "price": {
+            "amount": 520,
+            "currency": "USD"
+          },
+          "diameterMm": 44,
+          "movement": "solar",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Seiko",
+          "model": "Prospex Alpinist",
+          "reference": "SPB121J1",
+          "price": {
+            "amount": 725,
+            "currency": "USD"
+          },
+          "diameterMm": 39.5,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Longines",
+          "model": "Spirit 40",
+          "reference": "L3.810.4.93.0",
+          "price": {
+            "amount": 1800,
+            "currency": "USD"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        }
+      ]
+    },
+    {
+      "feature": "alternatives",
+      "count": 10,
+      "fromCache": true,
+      "coverage": {
+        "minimum": 10,
+        "target": 10,
+        "total": 10,
+        "additionalCandidates": 9,
+        "status": "target_met"
+      },
+      "summary": "10 watches like the Tudor Black Bay 58, most alike first. Priced matches are around $2,000; price-unknown suggestions and additional candidates are labelled.",
+      "watches": [
+        {
+          "brand": "Seiko",
+          "model": "Prospex 1968 Heritage Diver's Seiko Watchmaking 110th Anniversary Limited Edition",
+          "reference": "SLA065J1",
+          "price": {
+            "amount": 2222,
+            "currency": "USD"
+          },
+          "diameterMm": 38,
+          "movement": "automatic"
+        },
+        {
+          "brand": "Longines",
+          "model": "HydroConquest 39mm Blue",
+          "reference": "L3.780.4.96.6",
+          "price": {
+            "amount": 2000,
+            "currency": "USD"
+          },
+          "diameterMm": 39,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Bremont",
+          "model": "Supermarine S300",
+          "reference": "S300-BK-S-S",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Bremont",
+          "model": "Supermarine S300 Black",
+          "reference": "S300/BK",
+          "price": {
+            "amount": 2040,
+            "currency": "USD"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Unimatic",
+          "model": "Modello Uno U1S",
+          "reference": "U1S",
+          "price": {
+            "amount": 1850,
+            "currency": "USD"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Zodiac",
+          "model": "Super Sea Wolf Ceramic",
+          "reference": "ZO9590",
+          "price": {
+            "amount": 1795,
+            "currency": "USD"
+          },
+          "diameterMm": 40,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Serica",
+          "model": "5303-1 Blue",
+          "reference": "5303-1",
+          "price": {
+            "amount": 1700,
+            "currency": "USD"
+          },
+          "diameterMm": 39,
+          "movement": "automatic",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Alpina",
+          "model": "Seastrong Diver Extreme Automatic",
+          "reference": "AL-525LBN4V6B2",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Eterna",
+          "model": "Super KonTiki 1973 Limited Edition",
+          "reference": "1973.41.46.1299",
+          "verificationStatus": "unverified"
+        },
+        {
+          "brand": "Christopher Ward",
+          "model": "C60 Trident Lumiere",
+          "reference": "C60-40C1H31S00B0-B0",
+          "verificationStatus": "unverified"
+        }
+      ]
+    }
+  ],
+  "repeats": [
+    {
+      "feature": "quiz",
+      "count": 10,
+      "fromCache": true
+    },
+    {
+      "feature": "find",
+      "count": 10,
+      "fromCache": true
+    },
+    {
+      "feature": "archetype",
+      "count": 10
+    },
+    {
+      "feature": "alternatives",
+      "count": 10,
+      "fromCache": true
+    }
+  ],
+  "progressSteps": [
+    "Comparing it with our catalogue and available prices…",
+    "Found 30 candidate alternatives; selecting ten distinct options…"
+  ],
+  "addedCharge": 0,
+  "addedAttempts": 0,
+  "repeatCharge": 0,
+  "repeatAttempts": 0
+}

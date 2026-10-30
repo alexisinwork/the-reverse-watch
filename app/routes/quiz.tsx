@@ -502,10 +502,10 @@ export default function Quiz() {
             scenarioLabels={scenarioLabels}
           />
           <WatchResults
-            eyebrow="Checked catalogue · confirmed sources"
+            eyebrow="Exact matches and labelled close fits"
             footnote="Filtered from The Reserve's catalogue and available checked results. Prices are approximate and may change; check with the seller before buying."
             fx={loaderData.fx}
-            heading="Watches that fit every answer"
+            heading="Watches for your answers"
             mode="quiz"
             progress={resultData.progress}
             result={resultData.aiSearch}

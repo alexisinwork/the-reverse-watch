@@ -13,7 +13,7 @@ import {
   useEmbed,
   useSearchingHere,
 } from "../components/surface";
-import { WatchResults } from "../components/watch-results";
+import { SearchProgress, WatchResults } from "../components/watch-results";
 import type { ProgressLink } from "../domain/ai-watch-types";
 import { ALTERNATIVES_NAME_MAX as NAME_MAX } from "../domain/alternatives";
 import {
@@ -332,7 +332,8 @@ export default function WatchAlternatives() {
         ) : null}
       </header>
 
-      {page ? (
+      {searching ? <SearchProgress mode="alternatives" /> : null}
+      {page && !searching ? (
         <>
           <Suspense fallback={null}>
             <Await resolve={page}>
@@ -349,6 +350,7 @@ export default function WatchAlternatives() {
             key={`${form.name}|${form.reference}|${form.mode}|${form.amount}|${form.range}|${form.currency}|${form.quartz}`}
             mode="quiz"
             progress={progress}
+            progressMode="alternatives"
             result={resultOf ?? page.then((loaded) => loaded.result)}
           />
         </>

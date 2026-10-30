@@ -273,7 +273,7 @@ describe("version-4 diagnostic", () => {
 
     expect(
       await screen.findByRole("heading", {
-        name: "Watches that fit every answer",
+        name: "Watches for your answers",
       }),
     ).toBeInTheDocument();
     expect(

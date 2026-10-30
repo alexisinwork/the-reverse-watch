@@ -1,6 +1,6 @@
 /**
  * Quiz answers are filtered from the catalogue in code, so they are
- * code-filtered. Above 10k, or where the catalogue has fewer than five
+ * code-filtered. Above 10k, or where the catalogue has fewer than ten
  * confirmed fits, the stored or live search can supplement them only after
  * the current catalogue facts satisfy the same constraints.
  */
@@ -27,9 +27,10 @@ import {
   catalogueIdentityKey,
   catalogueRuleFailures,
   catalogueToFoundWatch,
+  broaderNearFits,
   matchCatalogue,
-  MISS_LABELS,
   nearFits,
+  quizMissLabels,
   QUIZ_RESULT_LIMIT,
   stylesForScenarios,
   type CatalogueWatch,
@@ -39,9 +40,12 @@ import {
   loadCatalogueCached,
   type CatalogueClient,
 } from "./watch-catalogue.server";
+import { cacheCompleteSearch } from "./complete-search-cache.server";
+import { safeHttpUrl } from "./source-pages.server";
+import { convert } from "./fx";
 
 /** Fewer confirmed catalogue fits than this and the live search fills in. */
-export const CATALOGUE_ENOUGH = 5;
+export const CATALOGUE_ENOUGH = SEARCH_RESULT_TARGET;
 
 function logError(event: string, error: unknown) {
   console.error(
@@ -58,6 +62,88 @@ function watchKey(watch: {
   referenceCode: string | null;
 }) {
   return catalogueIdentityKey(watch.brand, watch.model, watch.referenceCode);
+}
+
+function sourcedQuizSuggestion(
+  watch: FoundWatch,
+  profile: ProfileV4,
+  fx: FxTable | null,
+): FoundWatch | null {
+  if (
+    profile.allergyConstraint !== "none" ||
+    !safeHttpUrl(watch.sourceUrl) ||
+    watch.details.reviewStatus === "rejected"
+  )
+    return null;
+  const range = findPriceRange(profile.priceRange)!;
+  const price = watch.details.price;
+  const amount =
+    price?.currency === profile.budgetCurrency
+      ? price.amount
+      : price && fx
+        ? convert(price.amount, price.currency, profile.budgetCurrency, fx)
+        : null;
+  if (price && amount === null) return null;
+  if (
+    amount !== null &&
+    (amount < range.minimum ||
+      (range.maximum !== null && amount > range.maximum))
+  )
+    return null;
+  if (
+    watch.details.movement &&
+    !profile.movementTypes.includes(
+      watch.details.movement as ProfileV4["movementTypes"][number],
+    )
+  )
+    return null;
+  const diameter = diameterRangeFor(profile);
+  const size = watch.details.caseDiameterMm;
+  if (
+    size != null &&
+    (size < diameter.minimumMm - 3 || size > diameter.maximumMm + 3)
+  )
+    return null;
+  const misses = [
+    "Wearing style not confirmed",
+    ...(profile.minimumWaterResistanceM > 0 &&
+    (watch.details.waterResistanceM == null ||
+      watch.details.waterResistanceM < profile.minimumWaterResistanceM)
+      ? [
+          watch.details.waterResistanceM == null
+            ? "Water resistance not confirmed"
+            : "Less water resistance than you asked for",
+        ]
+      : []),
+    ...(!watch.details.movement ? ["Movement not confirmed"] : []),
+    ...(size == null
+      ? ["Case size not confirmed"]
+      : size < diameter.minimumMm || size > diameter.maximumMm
+        ? ["Case size outside your range"]
+        : []),
+    ...(amount === null ? ["Price unavailable — budget fit unknown"] : []),
+    ...profile.requiredComplications.map(
+      (slug) => `${slug.replaceAll("_", " ")} missing or not confirmed`,
+    ),
+    ...(profile.crystal ? ["Crystal not confirmed"] : []),
+    ...(profile.caseShape ? ["Case shape not confirmed"] : []),
+    ...(profile.displayCaseback !== undefined
+      ? ["Caseback type not confirmed"]
+      : []),
+    ...(profile.maxCaseThicknessMm !== undefined
+      ? ["Case thickness not confirmed"]
+      : []),
+    ...(profile.movementConstruction
+      ? ["Calibre construction not confirmed"]
+      : []),
+    ...(profile.microAdjustmentRequired !== undefined
+      ? ["Clasp adjustment not confirmed"]
+      : []),
+  ];
+  return unverifiedCandidate(
+    { ...watch, details: { ...watch.details, misses } },
+    "Sourced suggestion — specifications and fit need checking",
+  );
 }
 
 /** Source-checked identity alone does not prove the watch meets a quiz.
@@ -79,6 +165,10 @@ function qualifyingLiveWatches(
         fold(row.brand) === brand &&
         normalizeReference(row.referenceCode) === reference,
     );
+    if (!matches.length && watch.details.verificationStatus === "unverified") {
+      const suggestion = sourcedQuizSuggestion(watch, profile, fx);
+      return suggestion ? [suggestion] : [];
+    }
     if (
       matches.length !== 1 ||
       !matches[0]!.referenceConfirmed ||
@@ -96,14 +186,7 @@ async function searchQuizBeforeDeduplication(
     client = catalogueClient(),
     loadFx = () => loadFxTable(),
     report,
-    runLive = () =>
-      searchWithCoverage(
-        {
-          kind: "quiz",
-          cacheInput: quizCacheInput(profile),
-        },
-        meteredSearchOptions({ client, report, quizProfile: profile }),
-      ),
+    runLive,
   }: {
     client?: CatalogueClient | null;
     loadFx?: () => Promise<FxTable | null>;
@@ -139,13 +222,21 @@ async function searchQuizBeforeDeduplication(
   // with what it misses (owner decision, 2026-09-30).
   const withNearFits = (watches: FoundWatch[]) => {
     const taken = new Set([...watches, ...alsoWorth].map(watchKey));
-    const extra = nearFits(
+    const close = nearFits(
       catalogue,
       profile,
       fx,
-      QUIZ_RESULT_LIMIT - watches.length,
+      QUIZ_RESULT_LIMIT * 3 - watches.length - alsoWorth.length,
       taken,
-    ).flatMap(({ watch, misses }) => {
+    );
+    const broader = broaderNearFits(
+      catalogue,
+      profile,
+      fx,
+      QUIZ_RESULT_LIMIT * 3 - watches.length - alsoWorth.length - close.length,
+      new Set([...taken, ...close.map(({ watch }) => watch.identityKey)]),
+    );
+    const extra = [...close, ...broader].flatMap(({ watch, misses }) => {
       const found = catalogueToFoundWatch(watch);
       return found
         ? [
@@ -153,7 +244,7 @@ async function searchQuizBeforeDeduplication(
               ...found,
               details: {
                 ...found.details,
-                misses: misses.map((miss) => MISS_LABELS[miss] ?? miss),
+                misses: quizMissLabels(watch, profile, misses),
               },
             },
           ]
@@ -163,7 +254,7 @@ async function searchQuizBeforeDeduplication(
   };
   const nearFitNote = (count: number) =>
     count > 0
-      ? ` ${count} more ${count === 1 ? "is" : "are"} in your price range but ${count === 1 ? "misses" : "miss"} an answer, marked on the card.`
+      ? ` ${count} close ${count === 1 ? "fit is" : "fits are"} in your price range; every missed or unconfirmed answer is marked on the card.`
       : "";
 
   if (catalogueCoversRange(range) && main.length >= CATALOGUE_ENOUGH) {
@@ -188,7 +279,23 @@ async function searchQuizBeforeDeduplication(
         ? `The catalogue has ${main.length} confirmed ${main.length === 1 ? "fit" : "fits"}; checking saved research for more…`
         : "No catalogue watch fits every answer yet; checking saved research…",
   });
-  const fetched = await runLive();
+  const knownIdentities = new Set(catalogue.map(watchKey));
+  const fetched = await (runLive
+    ? runLive()
+    : searchWithCoverage(
+        {
+          kind: "quiz",
+          cacheInput: quizCacheInput(profile),
+        },
+        meteredSearchOptions({ client, report, quizProfile: profile }),
+        {
+          localCandidates: [...withNearFits(main).watches, ...alsoWorth],
+          additionalCandidate: (watch) =>
+            knownIdentities.has(watchKey(watch))
+              ? null
+              : sourcedQuizSuggestion(watch, profile, fx),
+        },
+      ));
   // Atomic publication can fill facts in master. Re-read before applying the
   // hard filters, including on valid-cache hits, so newly saved data participates.
   if (fetched.status === "found" && client) {
@@ -203,11 +310,15 @@ async function searchQuizBeforeDeduplication(
     fetched.status === "found"
       ? qualifyingLiveWatches(fetched.watches, catalogue, profile, fx)
       : [];
+  if (!client && fetched.status === "found") return { status: "unavailable" };
   const live: AiSearchView =
     fetched.status === "found"
       ? screened.length
         ? { ...fetched, watches: screened }
-        : { status: "unavailable" }
+        : {
+            status: "no_match",
+            summary: "No additional exact matches were found.",
+          }
       : fetched;
   if (live.status === "found" && live.fromCache) {
     report?.({
@@ -231,7 +342,7 @@ async function searchQuizBeforeDeduplication(
       status: "found",
       watches: filled.watches,
       alsoWorth,
-      fromCache: true,
+      fromCache: fetched.status === "found" && fetched.fromCache,
       origin: "catalogue",
       summary: `${lead}${nearFitNote(filled.nearFitCount)}`,
     };
@@ -257,7 +368,7 @@ async function searchQuizBeforeDeduplication(
       status: "found",
       watches: filled.watches,
       alsoWorth,
-      fromCache: true,
+      fromCache: live.fromCache,
       origin: "catalogue",
       summary: `${main.length} ${main.length === 1 ? "watch" : "watches"} from the checked catalogue meet every answer.${nearFitNote(filled.nearFitCount)}`,
     };
@@ -270,8 +381,8 @@ async function searchQuizBeforeDeduplication(
     origin: main.length > 0 ? "mixed" : "live",
     summary: `${
       main.length > 0
-        ? `${main.length} from the checked catalogue and ${liveWatches.length} additional checked ${liveWatches.length === 1 ? "watch" : "watches"}.`
-        : `${liveWatches.length} checked ${liveWatches.length === 1 ? "watch meets" : "watches meet"} your answers.`
+        ? `${main.length} from the checked catalogue and ${liveWatches.length} additional ${liveWatches.length === 1 ? "option" : "options"}; differences and unconfirmed details are labelled.`
+        : `${liveWatches.length} ${liveWatches.length === 1 ? "option" : "options"} from checked and cited research; differences and unconfirmed details are labelled.`
     }${nearFitNote(filled.nearFitCount)}`,
   };
 }
@@ -280,6 +391,20 @@ async function searchQuizBeforeDeduplication(
 export async function searchQuiz(
   ...args: Parameters<typeof searchQuizBeforeDeduplication>
 ): Promise<AiSearchView> {
+  const finish = (view: AiSearchView, client: CatalogueClient | null) => {
+    const covered = coverSearchResults(view);
+    if (covered.status !== "found") return Promise.resolve(covered);
+    const cards = [...covered.watches, ...(covered.alsoWorth ?? [])];
+    const close = cards.filter((watch) => watch.details.misses?.length).length;
+    const exact = cards.length - close;
+    const summary = `${exact} ${exact === 1 ? "watch meets" : "watches meet"} every answer. ${close ? `${close} close ${close === 1 ? "fit is" : "fits are"} in your price range or explicitly labelled price-unknown; every compromise and missing fact is marked on the card.` : "Each card shows its reference source."}${covered.summary.includes("live search is unavailable") ? " Our live search is unavailable right now; these options come from the catalogue." : ""}`;
+    return cacheCompleteSearch(
+      "quiz",
+      quizCacheInput(args[0]),
+      { ...covered, summary },
+      client,
+    );
+  };
   const result = coverSearchResults(
     uniqueSearchView(await searchQuizBeforeDeduplication(...args)),
   );
@@ -287,7 +412,10 @@ export async function searchQuiz(
     result.status === "found" &&
     (result.coverage?.total ?? 0) >= SEARCH_RESULT_TARGET
   )
-    return result;
+    return finish(
+      result,
+      args[1]?.client === undefined ? catalogueClient() : args[1].client,
+    );
   const [profile, options] = args;
   const client =
     options?.client === undefined ? catalogueClient() : options.client;
@@ -325,5 +453,5 @@ export async function searchQuiz(
       ),
     ];
   });
-  return coverSearchResults(result, candidates);
+  return finish(coverSearchResults(result, candidates), client);
 }

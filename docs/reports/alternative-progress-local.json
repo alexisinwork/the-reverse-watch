@@ -1,0 +1,18 @@
+{
+  "at": "2026-10-30T22:01:15.916Z",
+  "base": "http://localhost:5173",
+  "immediateProgress": "Opening the catalogue and identifying your watch…\n0 s",
+  "navigationDelayMs": 1200,
+  "realWidgetResults": 10,
+  "onlyPoweredLink": true,
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ]
+}

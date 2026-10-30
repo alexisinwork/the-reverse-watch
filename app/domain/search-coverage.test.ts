@@ -93,7 +93,8 @@ describe("shared search coverage", () => {
       ],
     );
     expect(result).toMatchObject({
-      coverage: { total: 5, status: "minimum_met" },
+      coverage: { total: 5, status: "partial" },
+      fromCache: false,
       alsoWorth: [card(2)],
     });
   });

@@ -27,6 +27,7 @@ import {
   BUDGET_CURRENCIES,
   PRICE_RANGES,
   priceRangeLabel,
+  type BudgetCurrency,
 } from "./questionnaire-v4";
 import type { RateLimitPolicy } from "./rate-limit.server";
 import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
@@ -331,7 +332,6 @@ export async function startAlternativesSearch(
           }),
         );
       }
-      if (!candidates.length) return built;
       const checked = await validateSelectedResults(
         "alternatives",
         {
@@ -342,6 +342,30 @@ export async function startAlternativesSearch(
         },
         candidates,
         progress.report,
+        {
+          feature: "alternatives",
+          styles: outcome.target.styles,
+          price: {
+            ...budgetWindow(budget),
+            currency: budget.currency as BudgetCurrency,
+          },
+          diameter:
+            outcome.target.caseDiameterMm === null
+              ? null
+              : {
+                  minimumMm: outcome.target.caseDiameterMm - SIZE_TOLERANCE_MM,
+                  maximumMm: outcome.target.caseDiameterMm + SIZE_TOLERANCE_MM,
+                },
+          movements:
+            form.quartz === "yes"
+              ? []
+              : ["automatic", "manual", "spring_drive"],
+          target: {
+            brand: outcome.target.brand,
+            model: outcome.target.model,
+            referenceCode: outcome.target.referenceCode,
+          },
+        },
       );
       return {
         ...built,

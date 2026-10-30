@@ -64,7 +64,7 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
      style, price in the visitor's currency, diameter, water resistance,
      movement, nickel, functions). Matching itself needs no AI; cold database
      loading and first-use checks can take time.
-   - Above 10k, or when fewer than five confirmed watches fit, the **live
+   - Above 10k, or when fewer than ten confirmed watches fit, the **live
      search** runs (`domain/quiz-live-search.server.ts`) and its finds are
      added to the catalogue as pending.
    - Results already found for identical answers are served from the stored
@@ -88,11 +88,18 @@ cookies, IP or anything identifying.
 
 ## The watch catalogue
 
-All tools share the 5–10-option coverage policy (`domain/search-coverage.ts`,
+All tools share the ten-option completion policy (`domain/search-coverage.ts`,
 `coverage-search.server.ts`, `coverage-catalogue.server.ts`, migration 0114).
 Checked cards lead; sourced uncertain candidates and price-unknown suggestions
 are labelled. Strict snapshots and master evidence keep their existing checks.
 See `docs/search-result-coverage.md` for the scope and budget boundaries.
+`domain/complete-search-cache.server.ts` stores only final lists containing ten
+distinct cards. Partial source snapshots/drafts are reusable research, not a
+completed answer. Short results keep seeking additional models under the same
+spending guards. Quiz close fits disclose every missed/unconfirmed answer and
+may sit up to 3 mm beyond the chosen diameter range; exact matches never do.
+The alternatives page shows navigation activity immediately and streams real
+provider/source checks through the same progress feed as the other tools.
 
 - **Table:** `private.watch_catalogue` (migrations 0071 and 0072). One row per
   brand + reference. Review status: pending, approved or rejected.
@@ -206,7 +213,7 @@ recovery, targeted cache invalidation and verification commands.
    `scripts/prewarm-film-searches.ts` and `scripts/prewarm-imdb.ts` fill
    this ahead of time (IMDb Top 250 movies, top 100 TV shows, their leads), but
    legacy prewarmed entries are not validated snapshots.
-2. **The quiz answers from the catalogue in code** whenever three or more
+2. **The quiz answers from the catalogue in code** whenever ten or more
    watches fit; no AI is involved.
 3. **The other provider.** `webResearchJson` and `findPages` retry once
    with the other provider (Perplexity ↔ Muse) when the chosen one fails or
