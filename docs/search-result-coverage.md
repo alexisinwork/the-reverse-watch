@@ -35,6 +35,13 @@ their technical matching rules. Archetype supplements retain technical roles;
 brand prestige is never invented to increase the count. Known out-of-budget
 watches do not enter a quiz as price-unknown suggestions.
 
+Model-only alternative searches choose a reference with documented comparison
+facts before editorial status or photo traits. An imported identity with no
+styles must not win over a usable reference in the same model family. Explicit
+references retain their own facts; incomplete comparison specifications produce
+a recoverable explanation before metering, rather than a false budget shortage.
+Mechanical-only comparisons exclude candidates whose movement is unknown.
+
 Prices remain approximate and may change. Uncertain film cards say “Possible
 sighting”; no missing fact receives a plausible default. In widgets provenance
 stays text, and the existing Powered by credit owns the outbound link.

@@ -173,7 +173,7 @@ function TargetPanel({ target }: { target: LoadedTarget }) {
             ? `${target.card.details.caseDiameterMm} mm`
             : null,
           target.card.details.price
-            ? `new about ${formatMoney(target.card.details.price.amount, target.card.details.price.currency)}`
+            ? `about ${formatMoney(target.card.details.price.amount, target.card.details.price.currency)}`
             : null,
           target.preowned
             ? `pre-owned from dealers about ${formatMoney(target.preowned.low, target.preowned.currency)}–${formatMoney(target.preowned.high, target.preowned.currency)}`

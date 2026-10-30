@@ -8,6 +8,7 @@ import { quoteSupportsValue } from "./catalogue-enrichment.server";
 import type { FoundWatch } from "./ai-watch-types";
 import { rankEnrichedArchetype } from "./archetype-catalogue.server";
 import { resolveNamedWatch } from "./alternatives.server";
+import { rankAlternatives } from "./alternatives";
 
 const catalogue = (patch: Record<string, unknown> = {}) =>
   catalogueWatchSchema.parse({
@@ -198,6 +199,54 @@ describe("grounded field extraction", () => {
 });
 
 describe("new archetype catalogue membership", () => {
+  it("compares a model using its documented reference instead of an incomplete import", () => {
+    const imported = catalogue({
+      id: "imported-submariner",
+      brand: "Rolex",
+      model: "Submariner",
+      referenceCode: "93153",
+      reviewStatus: "approved",
+      styles: [],
+      movement: null,
+      waterResistanceM: null,
+      sourceKind: "catalogue",
+    });
+    const documented = catalogue({
+      id: "documented-submariner",
+      brand: "Rolex",
+      model: "Submariner",
+      referenceCode: "124060",
+      caseDiameterMm: 41,
+      waterResistanceM: 300,
+      complications: ["dive_bezel"],
+      priceAmount: 10_000,
+    });
+    const diver = catalogue({
+      id: "alternative-diver",
+      priceAmount: 1_500,
+      complications: ["dive_bezel"],
+    });
+    const rows = [imported, documented, diver];
+    const resolved = resolveNamedWatch(rows, "Rolex Submariner", null);
+    expect(resolved).toEqual({ status: "found", watch: documented });
+    if (resolved.status !== "found") throw new Error("Target not resolved");
+    expect(
+      rankAlternatives(
+        resolved.watch,
+        rows,
+        { kind: "range", rangeId: "1000_2000", currency: "USD" },
+        false,
+        null,
+      ).map((entry) => entry.watch.id),
+    ).toEqual([diver.id]);
+    // An explicit reference keeps its own facts, even when incomplete.
+    expect(resolveNamedWatch(rows, "Rolex Submariner", "93153")).toEqual({
+      status: "found",
+      watch: imported,
+    });
+    expect(imported.styles).toEqual([]);
+    expect(imported.movement).toBeNull();
+  });
   it("allows a sourced approximate price without a photo for a documented role fit", () => {
     const rows = [
       catalogue({

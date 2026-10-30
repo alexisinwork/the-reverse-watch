@@ -2202,3 +2202,25 @@ with only the Powered by link inside the widget. All requests retain the same
 $0.7163/31-attempt ledger: zero added charge/attempts. Sanitized evidence:
 `docs/reports/result-coverage-production.json`. Counts reflect those saved
 requests, not a claim that every future constraint set has five real matches.
+
+### Submariner alternative target selection (2026-10-30)
+
+Status: **implementation verified; production rollout in progress**.
+The reported USD 1k–2k mechanical-only search selected imported Submariner
+`93153`, which had no styles, movement or water rating. Every candidate failed
+the empty target-style comparison. Editorial approval had caused this incomplete
+identity to precede the documented Submariner `124060` in the same model family.
+
+Model-name resolution now prefers references with comparison specifications.
+An explicitly requested incomplete reference is preserved and receives a
+recoverable explanation before use metering; no sibling facts are copied into
+it. Unknown candidate movements fail a mechanical-only comparison. The target
+panel says “about” instead of labelling historical market estimates as new.
+
+The regression failed before the fix and passes afterward. `npm run check`
+passes all 736 tests across 117 files and the production build. A read-only
+25,014-row catalogue snapshot produces ten USD 1k–2k automatic alternatives
+using `124060`, with no provider calls. The complete application search also
+returns ten unique in-budget automatic watches: four checked and six explicitly
+unverified candidates. Explicit `93153` returns the incomplete-specification
+message. Sanitized evidence: `docs/reports/submariner-alternatives-local.json`.

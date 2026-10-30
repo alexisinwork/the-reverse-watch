@@ -1,0 +1,126 @@
+{
+  "at": "2026-10-30T17:46:20.683Z",
+  "targetReference": "124060",
+  "count": 10,
+  "summary": "10 watches like the Rolex Submariner, most alike first. Priced matches are for USD 1k–2k; price-unknown suggestions and additional candidates are labelled.",
+  "coverage": {
+    "minimum": 5,
+    "target": 10,
+    "total": 10,
+    "additionalCandidates": 6,
+    "status": "target_met"
+  },
+  "explicitIncomplete": {
+    "kind": "error",
+    "code": "unavailable",
+    "error": "We found the Rolex Submariner (93153), but its comparison specifications are incomplete. Try searching by model name without a reference."
+  },
+  "watches": [
+    {
+      "brand": "Hamilton",
+      "model": "Khaki Navy Frogman Automatic 41",
+      "reference": "H77725335",
+      "price": {
+        "amount": 1041,
+        "currency": "USD"
+      },
+      "movement": "automatic"
+    },
+    {
+      "brand": "Mido",
+      "model": "Ocean Star Tribute Gradient Blue",
+      "reference": "M026.830.11.041.00",
+      "price": {
+        "amount": 1049,
+        "currency": "USD"
+      },
+      "movement": "automatic"
+    },
+    {
+      "brand": "Citizen",
+      "model": "Promaster Mechanical",
+      "reference": "NB6004-08E",
+      "price": {
+        "amount": 1050,
+        "currency": "USD"
+      },
+      "movement": "automatic"
+    },
+    {
+      "brand": "Citizen",
+      "model": "Promaster Mechanical Diver 1976",
+      "reference": "NB6021-68L",
+      "price": {
+        "amount": 1075,
+        "currency": "USD"
+      },
+      "movement": "automatic"
+    },
+    {
+      "brand": "Zodiac",
+      "model": "Super Sea Wolf 53 Compression",
+      "reference": "ZO9257",
+      "price": {
+        "amount": 1095,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified"
+    },
+    {
+      "brand": "Seiko",
+      "model": "Prospex 1965 Heritage Diver's",
+      "reference": "SPB143J1",
+      "price": {
+        "amount": 1249,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified"
+    },
+    {
+      "brand": "Seiko",
+      "model": "Prospex 1965 Diver's Modern Re-interpretation",
+      "reference": "SPB453J1",
+      "price": {
+        "amount": 1346,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified"
+    },
+    {
+      "brand": "Orient Star",
+      "model": "Diver 1964 2nd Edition",
+      "reference": "RE-AU0602E00B",
+      "price": {
+        "amount": 1351,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified"
+    },
+    {
+      "brand": "Mido",
+      "model": "Ocean Star Tribute Blue",
+      "reference": "M026.830.11.051.00",
+      "price": {
+        "amount": 1360,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified"
+    },
+    {
+      "brand": "Hamilton",
+      "model": "Khaki Navy Frogman Automatic",
+      "reference": "H77455331",
+      "price": {
+        "amount": 1395,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified"
+    }
+  ]
+}

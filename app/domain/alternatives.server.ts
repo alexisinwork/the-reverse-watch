@@ -13,6 +13,7 @@ import {
 import { normalizeReference } from "./ai-watch-guardrails";
 import {
   budgetWindow,
+  hasComparisonFacts,
   rankAlternatives,
   strictFailures,
   type Alternative,
@@ -59,6 +60,9 @@ function family(watch: CatalogueWatch) {
 }
 
 const better = (a: CatalogueWatch, b: CatalogueWatch) =>
+  // Bulk editorial approval does not fill missing reference specifications.
+  // For a model-only query, choose a usable reference within the same family.
+  Number(hasComparisonFacts(b)) - Number(hasComparisonFacts(a)) ||
   Number(b.reviewStatus === "approved") -
     Number(a.reviewStatus === "approved") ||
   Number(b.referenceConfirmed) - Number(a.referenceConfirmed) ||
@@ -286,6 +290,8 @@ export async function findAlternatives({
   let catalogue = await loadCatalogueCached(client);
   const first = catalogue.find((watch) => watch.id === targetId) ?? known;
   if (!first) return { status: "not_found" };
+  if (!hasComparisonFacts(first))
+    throw new Error("The target watch is missing comparison specifications.");
   if (legacyPaidResearchAllowed())
     await fillPreownedPrices(first, catalogue, budget, allowQuartz).catch(
       () => undefined,

@@ -22,7 +22,7 @@ import {
 /** Longest watch name the alternatives search accepts. */
 export const ALTERNATIVES_NAME_MAX = 120;
 
-export const ALTERNATIVES_SCORING_VERSION = "1.3.0";
+export const ALTERNATIVES_SCORING_VERSION = "1.4.0";
 
 /** A case within this many millimetres can be an alternative. */
 export const SIZE_TOLERANCE_MM = 3;
@@ -106,7 +106,6 @@ export function primaryStyle(watch: CatalogueWatch): CatalogueStyle {
 }
 
 const MECHANICAL = new Set(["automatic", "manual", "spring_drive"]);
-const BATTERY = new Set(["quartz", "solar", "hybrid"]);
 
 const SHAPE_FAMILY: Record<string, string> = {
   round: "round",
@@ -159,6 +158,16 @@ function functionsOf(watch: CatalogueWatch) {
 const isRectangular = (watch: CatalogueWatch) =>
   shapeOf(watch) === "rectangular";
 
+/** A named target needs documented comparison facts, not just an identity. */
+export function hasComparisonFacts(watch: CatalogueWatch) {
+  return (
+    watch.styles.length > 0 &&
+    (isRectangular(watch) || watch.caseDiameterMm !== null) &&
+    watch.movement !== null &&
+    (!watch.styles.includes("dive") || watch.waterResistanceM !== null)
+  );
+}
+
 /** Every strict rule the candidate breaks; empty means it may be shown. */
 export function strictFailures(
   target: CatalogueWatch,
@@ -202,8 +211,7 @@ export function strictFailures(
   if (
     target.movement &&
     MECHANICAL.has(target.movement) &&
-    candidate.movement &&
-    BATTERY.has(candidate.movement) &&
+    !MECHANICAL.has(candidate.movement ?? "") &&
     !allowQuartz
   ) {
     failures.push("movement");

@@ -8,6 +8,7 @@ import type { AiSearchView, FoundWatch } from "./ai-watch-types";
 import {
   ALTERNATIVES_NAME_MAX,
   budgetWindow,
+  hasComparisonFacts,
   SIZE_TOLERANCE_MM,
   unpricedAlternatives,
   type Alternative,
@@ -262,6 +263,13 @@ export async function startAlternativesSearch(
         reference: watch.referenceCode ?? "",
         name: `${watch.brand} ${watch.model}`,
       })),
+    };
+  }
+  if (resolved.status === "found" && !hasComparisonFacts(resolved.watch)) {
+    return {
+      kind: "error",
+      code: "unavailable",
+      error: `We found the ${resolved.watch.brand} ${resolved.watch.model}${resolved.watch.referenceCode ? ` (${resolved.watch.referenceCode})` : ""}, but its comparison specifications are incomplete. ${form.reference ? "Try searching by model name without a reference." : "Try another reference."}`,
     };
   }
   const limitMessage = await meterPartnerUse(site, "alternatives");

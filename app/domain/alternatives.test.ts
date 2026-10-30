@@ -163,6 +163,9 @@ describe("strict rules", () => {
     const solar = watch({ movement: "solar" });
     expect(strictFailures(blackBay(), solar, false)).toContain("movement");
     expect(strictFailures(blackBay(), solar, true)).toEqual([]);
+    expect(
+      strictFailures(blackBay(), watch({ movement: null }), false),
+    ).toContain("movement");
   });
 
   it("keeps a rectangular watch rectangular", () => {
