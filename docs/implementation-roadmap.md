@@ -2163,7 +2163,7 @@ is committed. This completed local check does not fill the deferred off-site gap
 
 ### Shared 5–10-result coverage (2026-10-30)
 
-Status: **implementation and local verification; rollout in progress**.
+Status: **complete — verified locally and on production 2026-10-30**.
 The owner now explicitly permits labelled unverified/price-unknown candidates in
 all tools and widgets. The strict accepted-only visible subset policy is
 superseded for presentation, while two-source snapshot/master acceptance stays.
@@ -2193,3 +2193,12 @@ counts are find 10, archetype 10, quiz 10, alternatives 8. The real page and
 widget browser checks pass, retaining exactly the Powered by widget link.
 The independent before/after budget probe observes zero added charge/attempts
 ($0.7163 spent, 31 attempts). Report: `docs/reports/result-coverage-local.json`.
+
+Production source `dba0b83` is READY as `dpl_13q3RovMX92yuia53QBbk1tfRd5U`;
+clean CI `41051160398` passes. Real production APIs return find 10 (including
+repeat), archetype 10, quiz 10 and alternatives 9. Desktop/mobile Daniel Craig
+and the production widget script/frame show ten cards, nine explicitly uncertain,
+with only the Powered by link inside the widget. All requests retain the same
+$0.7163/31-attempt ledger: zero added charge/attempts. Sanitized evidence:
+`docs/reports/result-coverage-production.json`. Counts reflect those saved
+requests, not a claim that every future constraint set has five real matches.

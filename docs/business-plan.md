@@ -820,6 +820,10 @@ claim changes. Implementation/evidence: `docs/search-result-coverage.md`.
 Local Daniel Craig now returns ten unique options, one certified and nine
 uncertain, without paid calls. Whether broader labelled lists improve usefulness
 remains a product hypothesis; existing yes/no feedback measures that outcome.
-Current engineering next action: complete rollout and real page/widget/API
-coverage checks, preserving the $0.20 issuance ceiling. The recorded commercial
-next action and owner-deferred Shopify/automatic backups remain unchanged.
+Rollout completion: source `dba0b83` is READY with clean CI `41051160398`.
+Production APIs return find 10, archetype 10, quiz 10, alternatives 9; desktop,
+mobile and actual production-frame checks pass without added charges/attempts.
+Evidence: `docs/reports/result-coverage-production.json`. Current engineering
+next action: observe existing yes/no usefulness feedback and partial coverage;
+do not initiate a new bulk paid research job. The recorded commercial next action
+and owner-deferred Shopify/automatic backups remain unchanged.

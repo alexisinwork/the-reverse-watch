@@ -62,3 +62,11 @@ Powered by link in the widget. Budget remains $0.7163 spent/31 attempts, with
 zero added charge or attempts. The intercepted blank local host requires the
 browser's explicit local-network test permission; the real portfolio and
 WordPress checks run normally. Report: `reports/result-coverage-local.json`.
+
+Production source `dba0b83` is READY as `dpl_13q3RovMX92yuia53QBbk1tfRd5U`;
+CI `41051160398` passes. The live API smoke returns find 10, archetype 10,
+quiz 10 and alternatives 9, and the public desktop/mobile pages and production
+widget frame pass the same display/link checks. Repeated saved requests add
+zero charge and zero attempts. Evidence: `reports/result-coverage-production.json`.
+This proves the tested requests and shared path; genuinely scarce future searches
+still report partial coverage instead of fabricated watches.

@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-30T11:55:09.627Z",
+  "base": "https://thereserve.watch",
+  "checks": [
+    {
+      "feature": "find",
+      "count": 10,
+      "uncertain": 9
+    },
+    {
+      "feature": "find repeat",
+      "count": 10,
+      "uncertain": 9
+    },
+    {
+      "feature": "archetype",
+      "count": 10,
+      "uncertain": 9
+    },
+    {
+      "feature": "alternatives",
+      "count": 9,
+      "uncertain": 8
+    },
+    {
+      "feature": "quiz",
+      "count": 10,
+      "uncertain": 0
+    }
+  ],
+  "browser": {
+    "desktop": true,
+    "mobile": true,
+    "widgetOnlyPoweredLink": true
+  },
+  "budgetBefore": {
+    "month": "2026-10-01",
+    "spentUsd": 0.7163,
+    "reservedUsd": 0,
+    "limitUsd": 100,
+    "remainingUsd": 99.2837,
+    "halted": false,
+    "attempts": 31,
+    "inProgress": 0,
+    "validated": 6,
+    "failed": 25,
+    "invalidated": 0,
+    "priceRefreshRuns": 0
+  },
+  "budgetAfter": {
+    "month": "2026-10-01",
+    "spentUsd": 0.7163,
+    "reservedUsd": 0,
+    "limitUsd": 100,
+    "remainingUsd": 99.2837,
+    "halted": false,
+    "attempts": 31,
+    "inProgress": 0,
+    "validated": 6,
+    "failed": 25,
+    "invalidated": 0,
+    "priceRefreshRuns": 0
+  },
+  "addedCharge": 0,
+  "addedAttempts": 0
+}
