@@ -1,0 +1,143 @@
+{
+  "at": "2026-10-30T17:50:42.499Z",
+  "base": "https://thereserve.watch",
+  "source": "ebc6211",
+  "deployment": "dpl_71mqWrRWhBxDpPECkZFLacs7k2ps",
+  "targetReference": "124060",
+  "count": 10,
+  "summary": "10 watches like the Rolex Submariner, most alike first. Priced matches are for USD 1k–2k; price-unknown suggestions and additional candidates are labelled.",
+  "coverage": {
+    "minimum": 5,
+    "target": 10,
+    "total": 10,
+    "additionalCandidates": 6,
+    "status": "target_met"
+  },
+  "incompleteReference": {
+    "status": 503,
+    "explained": true
+  },
+  "addedCharge": 0,
+  "addedAttempts": 0,
+  "watches": [
+    {
+      "brand": "Hamilton",
+      "model": "Khaki Navy Frogman Automatic 41",
+      "reference": "H77725335",
+      "price": {
+        "amount": 1041,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "approximateUsd": 1041
+    },
+    {
+      "brand": "Mido",
+      "model": "Ocean Star Tribute Gradient Blue",
+      "reference": "M026.830.11.041.00",
+      "price": {
+        "amount": 1049,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "approximateUsd": 1049
+    },
+    {
+      "brand": "Citizen",
+      "model": "Promaster Mechanical",
+      "reference": "NB6004-08E",
+      "price": {
+        "amount": 1050,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "approximateUsd": 1050
+    },
+    {
+      "brand": "Citizen",
+      "model": "Promaster Mechanical Diver 1976",
+      "reference": "NB6021-68L",
+      "price": {
+        "amount": 1075,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "approximateUsd": 1075
+    },
+    {
+      "brand": "LIP",
+      "model": "Grande Nautic Ski",
+      "reference": "671530",
+      "price": {
+        "amount": 940,
+        "currency": "EUR"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified",
+      "approximateUsd": 1050.17
+    },
+    {
+      "brand": "Zodiac",
+      "model": "Super Sea Wolf 53 Compression",
+      "reference": "ZO9257",
+      "price": {
+        "amount": 1095,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified",
+      "approximateUsd": 1095
+    },
+    {
+      "brand": "Certina",
+      "model": "DS Action Day-Date",
+      "reference": "C032.607.11.051.00",
+      "price": {
+        "amount": 925,
+        "currency": "CHF"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified",
+      "approximateUsd": 1124
+    },
+    {
+      "brand": "Seiko",
+      "model": "Prospex 1965 Heritage Diver's",
+      "reference": "SPB143J1",
+      "price": {
+        "amount": 1249,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified",
+      "approximateUsd": 1249
+    },
+    {
+      "brand": "Seiko",
+      "model": "Prospex 1965 Diver's Modern Re-interpretation",
+      "reference": "SPB453J1",
+      "price": {
+        "amount": 1346,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified",
+      "approximateUsd": 1346
+    },
+    {
+      "brand": "Orient Star",
+      "model": "Diver 1964 2nd Edition",
+      "reference": "RE-AU0602E00B",
+      "price": {
+        "amount": 1351,
+        "currency": "USD"
+      },
+      "movement": "automatic",
+      "verificationStatus": "unverified",
+      "approximateUsd": 1351
+    }
+  ],
+  "fxDate": "2026-10-30",
+  "budgetCheckedInUsd": true,
+  "deploymentCheck": "success"
+}

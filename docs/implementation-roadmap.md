@@ -2205,7 +2205,7 @@ requests, not a claim that every future constraint set has five real matches.
 
 ### Submariner alternative target selection (2026-10-30)
 
-Status: **implementation verified; production rollout in progress**.
+Status: **complete — verified locally and on production**.
 The reported USD 1k–2k mechanical-only search selected imported Submariner
 `93153`, which had no styles, movement or water rating. Every candidate failed
 the empty target-style comparison. Editorial approval had caused this incomplete
@@ -2224,3 +2224,12 @@ using `124060`, with no provider calls. The complete application search also
 returns ten unique in-budget automatic watches: four checked and six explicitly
 unverified candidates. Explicit `93153` returns the incomplete-specification
 message. Sanitized evidence: `docs/reports/submariner-alternatives-local.json`.
+
+Source `ebc6211` is live as `dpl_71mqWrRWhBxDpPECkZFLacs7k2ps`, with a
+successful Vercel deployment check. The real production API returns ten unique
+automatic alternatives (four checked, six labelled candidates); all ten prices
+fall within USD 1k–2k after conversion with the 2026-10-30 ECB table. The explicit
+incomplete reference returns the explanatory 503. Repeat API checks add zero
+validation attempts and zero charge. Evidence:
+`docs/reports/submariner-alternatives-production.json`. GitHub CI was still
+queued at verification; the complete local gate passed as recorded above.
