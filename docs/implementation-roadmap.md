@@ -2327,7 +2327,18 @@ Phases, in order:
 1. **Quality measurement before ranking changes:** labelled queries per tool,
    including queries with no answer, scored against a random baseline in CI on
    the real functions; a dashboard for p50/p95, cache hit rate, cost per result,
-   exact-match share, verified share and "liked" rate.
+   exact-match share, verified share and "liked" rate. Following
+   `alexisinwork/ai_engineering`: report the score next to random and naive
+   baselines with its sampling error (PopChoice THEORY §7); assert in code that
+   no test query contains its target's brand or reference; record the first
+   score as the baseline instead of editing the set until it passes. Film
+   search gets near-field negatives (real people and works with no data), a
+   temperature-0 relevance gate and a separate section for query
+   normalization, including subject versus taste ("watches Daniel Craig wore"
+   versus "a watch for someone like Daniel Craig"; EmbeddingsAndVectorDB
+   THEORY §9.14–9.15). Ranking signals are fused by rank (RRF, `k` measured on
+   this catalogue), explanations use stored facts only, and fetched source
+   pages reach a model only inside a per-request delimiter.
 2. **Version 2 scaffold** on the EstateVanta starter kit with the shared search
    engine and the four cache levels (CDN, shared result cache, PostgreSQL
    search, AI research on shortfall with negative caching).
