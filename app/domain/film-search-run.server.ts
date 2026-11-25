@@ -18,6 +18,9 @@ import { fillPhotosFromCatalogue } from "./watch-catalogue.server";
 import { enrichResultWatches } from "./catalogue-result-enrichment.server";
 import { uniqueSearchView } from "./watch-result-dedup";
 import { coverSearchResults, FILM_RESULT_TARGET } from "./search-coverage";
+import { listPublishedDiscoveryStories } from "./discovery-public";
+import { loadPublishedDiscoveryStories } from "./discovery-store.server";
+import { storySightings } from "./film-story-sightings";
 
 // Stored answers are free; only fresh searches spend provider credit.
 export const FILM_NEW_SEARCH_POLICY: RateLimitPolicy = {
@@ -37,6 +40,7 @@ export async function runFilmSearch({
   policy = FILM_NEW_SEARCH_POLICY,
   site = null,
   report,
+  searchOptions,
 }: {
   query: string;
   kind: FilmSubjectKind;
@@ -45,6 +49,8 @@ export async function runFilmSearch({
   /** A partner site: each search is counted, within its monthly limit. */
   site?: PartnerSite | null;
   report?: (event: ProgressEvent) => void;
+  /** Evaluations pass saved-research-only options: no paid search runs. */
+  searchOptions?: Parameters<typeof searchWithCoverage>[1];
 }): Promise<AiSearchView> {
   const limitMessage = await meterPartnerUse(site, "find");
   if (limitMessage) return { status: "no_match", summary: limitMessage };
@@ -53,19 +59,32 @@ export async function runFilmSearch({
       kind: "film",
       cacheInput: { query: normalizeFilmQuery(query), kind },
     },
-    meteredSearchOptions({
-      allowPaid: async () =>
-        (await consumeSharedRateLimit(rateKey, policy)).allowed,
-      report,
-    }),
+    searchOptions ??
+      meteredSearchOptions({
+        allowPaid: async () =>
+          (await consumeSharedRateLimit(rateKey, policy)).allowed,
+        report,
+      }),
   );
+  // The owner's published stories are confirmed sightings and lead the list.
+  const fromStories = storySightings(
+    (await loadPublishedDiscoveryStories()) ?? listPublishedDiscoveryStories(),
+    query,
+    kind,
+  );
+  if (view.status !== "found" && fromStories.length === 0) return view;
+  const base: Extract<AiSearchView, { status: "found" }> =
+    view.status === "found"
+      ? view
+      : { status: "found", fromCache: true, summary: "", watches: [] };
   // Sightings without a photo borrow the catalogue's photo of that watch.
-  if (view.status !== "found") return view;
   const covered = coverSearchResults(
     uniqueSearchView({
-      ...view,
+      ...base,
       watches: mergeSightings(
-        await enrichResultWatches(await fillPhotosFromCatalogue(view.watches)),
+        await enrichResultWatches(
+          await fillPhotosFromCatalogue([...fromStories, ...base.watches]),
+        ),
       ),
     }),
     [],

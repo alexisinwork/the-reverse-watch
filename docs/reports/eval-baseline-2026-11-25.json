@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-25T22:05:16.036Z",
+  "fxDate": "2026-11-25",
+  "guard": {
+    "providerRequests": [],
+    "blockedWrites": 43,
+    "blockedFunctions": [
+      "ai_watch_search_store_v1"
+    ]
+  },
+  "quiz": {
+    "profiles": 40,
+    "exactCards": 263,
+    "violations": 0,
+    "profilesWithExact": 30,
+    "closeFits": 135,
+    "closeFitsWithoutReason": 0,
+    "baselineRandomExactRate": 0.0166,
+    "violationExamples": [],
+    "exactPrecision": 1
+  },
+  "alternatives": {
+    "cases": 60,
+    "resolvedTargets": 17,
+    "comparableTargets": 6,
+    "inTop5": 7,
+    "inTop10": 7,
+    "randomTop10Expected": 1.1716702402382255,
+    "sameBrandCases": [
+      "TAG Heuer Monaco → TAG Heuer Monaco automatic chronograph",
+      "Cartier Santos de Cartier → Cartier Santos Galbée",
+      "Grand Seiko Snowflake SBGA211 → Seiko Presage Sharp Edged SPB165"
+    ],
+    "recallAt5": 0.1167,
+    "recallAt10": 0.1167,
+    "randomRecallAt10": 0.0195
+  },
+  "film": {
+    "positives": 20,
+    "answered": 4,
+    "foundConfirmed": 0,
+    "foundAny": 4,
+    "negativeViolations": [],
+    "leakage": [],
+    "recallConfirmed": 0,
+    "recallAny": 0.2,
+    "randomBaseline": "about 1 in 25,000 per card (one labelled watch in the pool)"
+  },
+  "gates": {
+    "noProviderRequests": true,
+    "zeroQuizHardConstraintViolations": true,
+    "zeroNegativeSightings": true,
+    "noFilmQueryLeakage": true
+  }
+}

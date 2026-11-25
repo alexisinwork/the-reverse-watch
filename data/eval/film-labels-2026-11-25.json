@@ -1,0 +1,195 @@
+{
+  "note": "Film and people search labels. Positives come from the owner's published, source-reviewed stories (app/domain/discovery-public.ts). Negatives are recorded corrections: a confirmed card must never show them. Do not edit this set to make a run pass; record a new baseline instead.",
+  "createdAt": "2026-11-25",
+  "positives": [
+    {
+      "query": "Murphy “Murph” Cooper",
+      "kind": "character",
+      "brand": "Hamilton",
+      "model": "Khaki Field Murph film prop",
+      "reference": null,
+      "level": "family",
+      "source": "published story murph-cooper-interstellar-hamilton"
+    },
+    {
+      "query": "The Protagonist",
+      "kind": "character",
+      "brand": "Hamilton",
+      "model": "Khaki Navy BeLOWZERO custom film prop",
+      "reference": null,
+      "level": "family",
+      "source": "published story the-protagonist-tenet-hamilton"
+    },
+    {
+      "query": "Paul Atreides",
+      "kind": "character",
+      "brand": "Hamilton",
+      "model": "Desert Watch custom prop",
+      "reference": null,
+      "level": "family",
+      "source": "published story paul-atreides-dune-part-two-desert-watch"
+    },
+    {
+      "query": "J. Robert Oppenheimer",
+      "kind": "character",
+      "brand": "Hamilton",
+      "model": "Cushion B (1930s)",
+      "reference": null,
+      "level": "family",
+      "source": "published story j-robert-oppenheimer-cushion-b"
+    },
+    {
+      "query": "Kitty Oppenheimer",
+      "kind": "character",
+      "brand": "Hamilton",
+      "model": "Lady Hamilton A-2 (1947)",
+      "reference": null,
+      "level": "family",
+      "source": "published story kitty-oppenheimer-lady-hamilton-a2"
+    },
+    {
+      "query": "Lieutenant General Leslie Groves",
+      "kind": "character",
+      "brand": "Hamilton",
+      "model": "Piping Rock (1920s)",
+      "reference": null,
+      "level": "family",
+      "source": "published story leslie-groves-oppenheimer-piping-rock"
+    },
+    {
+      "query": "James Bond",
+      "kind": "character",
+      "brand": "OMEGA",
+      "model": "Seamaster Diver 300M 007 Edition",
+      "reference": null,
+      "level": "family",
+      "source": "published story james-bond-no-time-to-die-seamaster"
+    },
+    {
+      "query": "Colonel Walter E. Kurtz",
+      "kind": "character",
+      "brand": "Rolex",
+      "model": "GMT-Master",
+      "reference": "1675",
+      "level": "reference",
+      "source": "published story colonel-kurtz-apocalypse-now-rolex"
+    },
+    {
+      "query": "Agent J",
+      "kind": "character",
+      "brand": "Hamilton",
+      "model": "Ventura",
+      "reference": null,
+      "level": "family",
+      "source": "published story agent-j-men-in-black-ventura"
+    },
+    {
+      "query": "Indiana Jones",
+      "kind": "character",
+      "brand": "Hamilton",
+      "model": "American Classic Boulton Quartz",
+      "reference": "H13431553",
+      "level": "reference",
+      "source": "published story indiana-jones-dial-of-destiny-boulton"
+    },
+    {
+      "query": "Don Draper",
+      "kind": "character",
+      "brand": "OMEGA",
+      "model": "Seamaster De Ville",
+      "reference": "166.020",
+      "level": "reference",
+      "source": "published story don-draper-mad-men-omega"
+    },
+    {
+      "query": "Roger Sterling",
+      "kind": "character",
+      "brand": "Tudor",
+      "model": "Oyster-Prince Rotor Self-Winding",
+      "reference": "7967",
+      "level": "reference",
+      "source": "published story roger-sterling-mad-men-tudor"
+    },
+    {
+      "query": "Paul Newman",
+      "kind": "celebrity",
+      "brand": "Rolex",
+      "model": "Cosmograph Daytona ‘Paul Newman’",
+      "reference": "6239",
+      "level": "reference",
+      "source": "published story paul-newman-rolex-daytona-6239"
+    },
+    {
+      "query": "Jack Nicklaus",
+      "kind": "celebrity",
+      "brand": "Rolex",
+      "model": "Day-Date",
+      "reference": "1803",
+      "level": "reference",
+      "source": "published story jack-nicklaus-rolex-day-date-1803"
+    },
+    {
+      "query": "Eric Clapton",
+      "kind": "celebrity",
+      "brand": "Patek Philippe",
+      "model": "Perpetual Calendar Chronograph",
+      "reference": "2499/100",
+      "level": "reference",
+      "source": "published story eric-clapton-patek-philippe-2499-100"
+    },
+    {
+      "query": "Walter “Wally” Schirra",
+      "kind": "celebrity",
+      "brand": "OMEGA",
+      "model": "Speedmaster",
+      "reference": "CK 2998",
+      "level": "reference",
+      "source": "published story wally-schirra-omega-ck-2998"
+    },
+    {
+      "query": "Aaron Taylor-Johnson",
+      "kind": "celebrity",
+      "brand": "OMEGA",
+      "model": "Speedmaster First OMEGA in Space",
+      "reference": "310.32.40.50.06.002",
+      "level": "reference",
+      "source": "published story aaron-taylor-johnson-omega-first-in-space"
+    },
+    {
+      "query": "Marlon Brando",
+      "kind": "celebrity",
+      "brand": "Rolex",
+      "model": "GMT-Master",
+      "reference": "1675",
+      "level": "reference",
+      "source": "published story marlon-brando-rolex-gmt-master-1675"
+    },
+    {
+      "query": "Rafael Nadal",
+      "kind": "celebrity",
+      "brand": "Richard Mille",
+      "model": "Manual Winding Tourbillon Rafael Nadal",
+      "reference": "RM 27-04",
+      "level": "reference",
+      "source": "published story rafael-nadal-richard-mille-rm-27-04"
+    },
+    {
+      "query": "Lewis Hamilton",
+      "kind": "celebrity",
+      "brand": "IWC Schaffhausen",
+      "model": "Pilot's Watch Performance Chronograph 41 Mercedes-AMG PETRONAS Formula One Team",
+      "reference": "IW388306",
+      "level": "reference",
+      "source": "published story lewis-hamilton-silverstone-iwc-iw388306"
+    }
+  ],
+  "negatives": [
+    {
+      "query": "Daniel Craig",
+      "kind": "actor",
+      "brand": "OMEGA",
+      "reference": "231.10.30.20.06.001",
+      "reason": "Skyfall Aqua Terra worn by Eve (Naomie Harris), not Daniel Craig (business plan correction, 2026-10-27)."
+    }
+  ]
+}
