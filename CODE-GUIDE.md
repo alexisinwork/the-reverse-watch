@@ -31,23 +31,23 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 
 ## Pages and endpoints
 
-| URL                                                                       | File                                                                                                                 | What it does                                                                                                                                                                                                     |
-| ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `/`                                                                       | `routes/home.tsx`                                                                                                    | Landing page: three cards (film search, archetype quiz, diagnostic) and the newsletter sign-up, which unlocks the diagnostic. An address already on the Beehiiv list unlocks it without subscribing again.       |
-| `/quiz`                                                                   | `routes/quiz.tsx`                                                                                                    | The six-question diagnostic and the shortlist.                                                                                                                                                                   |
-| `/watches/find`                                                           | `routes/watch-find.tsx`                                                                                              | Search box for watches in films, series and on people.                                                                                                                                                           |
-| `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx`                                        | Published, reviewed film and celebrity watch stories.                                                                                                                                                            |
-| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The archetype mini-quiz and catalogue/editorial picks; catalogue supplements come from a database window (migration 0116); the first request validates up to eight references, then reuses the checked snapshot. |
-| `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes.                                                                                                                                       |
-| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily metered price check: up to eight already-priced stale references; changes await review.                                                                                                                    |
-| `/admin/evaluation`                                                       | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary, behind the admin login (`/evaluation` redirects).                                                                                                                                      |
-| `/partners`                                                               | `routes/partners.tsx`                                                                                                | Public guide for partners: the script tag, WordPress, Shopify, other builders, React, the API.                                                                                                                   |
-| `/embed/:key/…`                                                           | `routes/embed-layout.tsx` + the pages above                                                                          | Partner widgets: quiz, archetype, find, alternatives, stories inside a frame on a partner's site (see "Partner widgets").                                                                                        |
-| `/api/v1/…`                                                               | `routes/api-v1-*.ts`                                                                                                 | Partner JSON API; description at `/api/v1/openapi.json`.                                                                                                                                                         |
-| `/admin/sites`                                                            | `routes/admin-sites.tsx`                                                                                             | Partner sites: keys, allowed websites, monthly limit, theme, uses per month.                                                                                                                                     |
-| `/health`                                                                 | `routes/health.ts`                                                                                                   | Uptime check.                                                                                                                                                                                                    |
-| `/internal/operations/health`                                             | `routes/internal-operations-health.ts`, `domain/operations-health.server.ts`                                         | Separately authenticated database, budget, permission and configuration readiness check; no paid provider calls.                                                                                                 |
-| Others                                                                    | `quiz-analytics-start.ts`, `discovery-analytics.ts`, `watch-research-status.tsx`, `internal-discovery-research-*.ts` | Analytics pings and the older film-research intake (see "Older code").                                                                                                                                           |
+| URL                                                                       | File                                                                          | What it does                                                                                                                                                                                                     |
+| ------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                                                                       | `routes/home.tsx`                                                             | Landing page: three cards (film search, archetype quiz, diagnostic) and the newsletter sign-up, which unlocks the diagnostic. An address already on the Beehiiv list unlocks it without subscribing again.       |
+| `/quiz`                                                                   | `routes/quiz.tsx`                                                             | The six-question diagnostic and the shortlist.                                                                                                                                                                   |
+| `/watches/find`                                                           | `routes/watch-find.tsx`                                                       | Search box for watches in films, series and on people.                                                                                                                                                           |
+| `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx` | Published, reviewed film and celebrity watch stories.                                                                                                                                                            |
+| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                  | The archetype mini-quiz and catalogue/editorial picks; catalogue supplements come from a database window (migration 0116); the first request validates up to eight references, then reuses the checked snapshot. |
+| `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                  | Password-protected catalogue review: Approve, Reject, Edit, price changes.                                                                                                                                       |
+| `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                 | Daily metered price check: up to eight already-priced stale references; changes await review.                                                                                                                    |
+| `/admin/evaluation`                                                       | `routes/evaluation.tsx`                                                       | Funnel analytics summary, behind the admin login (`/evaluation` redirects).                                                                                                                                      |
+| `/partners`                                                               | `routes/partners.tsx`                                                         | Public guide for partners: the script tag, WordPress, Shopify, other builders, React, the API.                                                                                                                   |
+| `/embed/:key/…`                                                           | `routes/embed-layout.tsx` + the pages above                                   | Partner widgets: quiz, archetype, find, alternatives, stories inside a frame on a partner's site (see "Partner widgets").                                                                                        |
+| `/api/v1/…`                                                               | `routes/api-v1-*.ts`                                                          | Partner JSON API; description at `/api/v1/openapi.json`.                                                                                                                                                         |
+| `/admin/sites`                                                            | `routes/admin-sites.tsx`                                                      | Partner sites: keys, allowed websites, monthly limit, theme, uses per month.                                                                                                                                     |
+| `/health`                                                                 | `routes/health.ts`                                                            | Uptime check.                                                                                                                                                                                                    |
+| `/internal/operations/health`                                             | `routes/internal-operations-health.ts`, `domain/operations-health.server.ts`  | Separately authenticated database, budget, permission and configuration readiness check; no paid provider calls.                                                                                                 |
+| Others                                                                    | `quiz-analytics-start.ts`, `discovery-analytics.ts`                           | Analytics pings.                                                                                                                                                                                                 |
 
 ## How a quiz answer is produced
 
@@ -380,21 +380,21 @@ fallback is `vercel deploy --prod --yes --scope team_dKSvpT95iIwAJ5vN7oEsorb7`.
 Inspect the current domain's deployment rather than assuming a prior manual
 deployment ID still owns the production alias.
 
-## Older code (kept on purpose)
+## Archived code
 
-These parts are not used by the live site but are kept for now, on the
-owner's instruction (2026-09-30). Their database tables stay regardless.
+Owner decision, 2026-11-25: code the live site no longer used was removed
+from `main` and kept on the branch `archive/legacy-code` and the tag
+`archive/legacy-2026-11-25`. Their database tables stay. It covered the
+first reviewed-catalogue recommender (`catalogue.ts`, `recommendation.ts`,
+`seed-catalogue.ts`, `coverage.ts` and their scripts), the knowledge-base
+and workbook research pipeline (`research*.ts`, `knowledge-base.ts`, the
+Rolex and model workbook scripts, `run-research-worker.ts`) and the film-
+research intake that preceded the search box (`discovery-research*`,
+`discovery-review.server.ts`, `discovery-search.server.ts`, `movie-watch-*`,
+`perplexity-*-verification.server.ts`, `/watches/research/:token` and the
+two `/internal/discovery-research/*` routes). `sheet-intake.ts` stays: the
+quiz uses it. To look at or restore a file:
 
-- **The first reviewed-catalogue recommender:** `domain/catalogue.ts`,
-  `catalogue.server.ts`, `recommendation.ts`, `seed-catalogue.ts`,
-  `coverage.ts`, `catalogue-parity.ts`, `evaluation-fixtures.ts`, and the
-  `audit-*`, `evaluate-*`, `render-*-migration`, `project-seed-coverage`,
-  `migrate-seed-catalogue-v3` scripts.
-- **The knowledge-base and workbook research pipeline:** `domain/research*.ts`,
-  `perplexity-research.ts`, `knowledge-base.ts`, `sheet-*.ts`, the Rolex and
-  model workbook scripts, `run-research-worker.ts`, `data/knowledge base/`.
-- **The film-research intake before the AI search box:** `domain/discovery-research*`,
-  `discovery-review.server.ts`, `discovery-search.server.ts`, `movie-watch-*`,
-  `perplexity-*-verification.server.ts`, `routes/watch-research-status.tsx`,
-  `routes/internal-discovery-research-*.ts`, and the movie-intake scripts.
-  The published story pages themselves are live.
+```sh
+git show archive/legacy-2026-11-25:app/domain/recommendation.ts
+```

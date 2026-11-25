@@ -19,15 +19,6 @@ export default [
   route("watches/archetype", "routes/watch-archetype.tsx"),
   route("watches/find", "routes/watch-find.tsx"),
   route("watches/alternatives", "routes/watch-alternatives.tsx"),
-  route("watches/research/:requestToken", "routes/watch-research-status.tsx"),
-  route(
-    "internal/discovery-research/run",
-    "routes/internal-discovery-research-run.ts",
-  ),
-  route(
-    "internal/discovery-research/review",
-    "routes/internal-discovery-research-review.ts",
-  ),
   route(
     "internal/catalogue/recheck-prices",
     "routes/internal-catalogue-recheck-prices.ts",

@@ -30,9 +30,9 @@ Every change reports before/after numbers for each rule.
 | Phase 0.2c alternatives name index and window (migration 0117) | done, verified on production | `0698273`, `docs/reports/alternatives-window-equivalence-2026-11-25.json`, `docs/reports/catalogue-windows-smoke-2026-11-25.json` |
 | Phase 0 film search confirmed-only; quiz exact vs compromise | done, verified on production | `055f39d` |
 | Phase 0 CDN for finished film answers | done, verified on production | `df78c6d`, `docs/reports/page-speed-after-finished-cache-2026-11-25.json` |
-| Phase 0 episode short links | pending | |
-| Phase 0 public portfolio demo | pending (needs the sibling `personal-website` deployment) | |
-| Phase 1 eval harness, baselines, leakage checks | pending | |
+| Phase 0 episode short links | done, verified on production | `4be1572`, `docs/episode-links.md` |
+| Phase 0 public portfolio demo | waiting for the owner: needs a new production partner key (an access key needs explicit permission) and a `personal-website` deployment | |
+| Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive, starter-kit skills, CI, fonts | pending (moved before v2: less code to port) | |
 | Phases 2–4 Next.js v2 | pending | |
 | One-command verification and final report | pending | |
@@ -65,5 +65,5 @@ test partner site allowance.
 
 ## Next step
 
-Phase 0: per-episode short links (`/e/:episode`) that count video traffic by
-episode without cookies and lead to the matching tool; then phase 1 (eval).
+Phase 5: archive the unused legacy code to a branch and tag, add the
+EstateVanta kit skills and CI checks, self-host fonts, trim the home bundle.
