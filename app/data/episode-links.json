@@ -1,0 +1,325 @@
+{
+  "note": "Short links for video descriptions: https://thereserve.watch/e/<episode>. Edit a target to send that episode's viewers to a page on this site (a path starting with /).",
+  "episodes": {
+    "1": {
+      "title": null,
+      "target": "/"
+    },
+    "2": {
+      "title": null,
+      "target": "/"
+    },
+    "3": {
+      "title": null,
+      "target": "/"
+    },
+    "4": {
+      "title": null,
+      "target": "/"
+    },
+    "5": {
+      "title": null,
+      "target": "/"
+    },
+    "6": {
+      "title": null,
+      "target": "/"
+    },
+    "7": {
+      "title": null,
+      "target": "/"
+    },
+    "8": {
+      "title": null,
+      "target": "/"
+    },
+    "9": {
+      "title": null,
+      "target": "/"
+    },
+    "10": {
+      "title": null,
+      "target": "/"
+    },
+    "11": {
+      "title": "Vostok Outlived the USSR. Its Company Didn't",
+      "target": "/"
+    },
+    "12": {
+      "title": "Omega's Owners Sold Blancpain's Name for 20,000 Francs",
+      "target": "/"
+    },
+    "13": {
+      "title": "Bulova Built the Future, Then Licensed It to Its Rivals",
+      "target": "/"
+    },
+    "14": {
+      "title": "Why Did the Royal Oak Cost More Than Gold?",
+      "target": "/"
+    },
+    "15": {
+      "title": "Hamilton Is Swiss Now. So Who Stayed Behind?",
+      "target": "/"
+    },
+    "16": {
+      "title": "The Heuer Family Never Sold Heuer. They Lost It Anyway.",
+      "target": "/"
+    },
+    "17": {
+      "title": "Swatch Group Tried to Quit. Switzerland Made It Stay.",
+      "target": "/"
+    },
+    "18": {
+      "title": "Who Can Say No at Rolex, Omega and Patek Philippe?",
+      "target": "/"
+    },
+    "19": {
+      "title": "What Does \"Since 1845\" on a Watch Actually Mean?",
+      "target": "/"
+    },
+    "20": {
+      "title": "You Can Afford a Rolex. So Why Can't You Buy One?",
+      "target": "/"
+    },
+    "21": {
+      "title": "Paul Newman's Rolex Sold for More Than Anyone Bid",
+      "target": "/"
+    },
+    "22": {
+      "title": "NASA Gave the Moonwatch Job to a Camera Engineer",
+      "target": "/"
+    },
+    "23": {
+      "title": "A Rolex Dealer Contract. Not Leaked. Filed.",
+      "target": "/"
+    },
+    "24": {
+      "title": "Swatch Asked a Court to Say It Owed Nothing",
+      "target": "/"
+    },
+    "25": {
+      "title": "Rolex's Own Website Describes One Service Two Ways",
+      "target": "/"
+    },
+    "26": {
+      "title": "George Daniels Invented It. Omega Patented a Factory Fix.",
+      "target": "/"
+    },
+    "27": {
+      "title": "Apple Said Its Watch Is No. 1. Where Are the Numbers?",
+      "target": "/"
+    },
+    "28": {
+      "title": "The Word “Chronometer” Is Real. Who Is It Written For?",
+      "target": "/"
+    },
+    "29": {
+      "title": "When Does a Real Rolex Become a Counterfeit?",
+      "target": "/"
+    },
+    "30": {
+      "title": "Did a Car Crash Really Inspire the Cartier Crash?",
+      "target": "/"
+    },
+    "31": {
+      "title": "A Dealer Thought an Omega Was Worth More as Gold",
+      "target": "/"
+    },
+    "32": {
+      "title": "He Lost a £190,000 Rolex. The Insurer Paid Nothing.",
+      "target": "/"
+    },
+    "33": {
+      "title": "The Omega That Sold for Nearly 26 Times Its High Estimate",
+      "target": "/"
+    },
+    "34": {
+      "title": "The Soviet Dive Watch Built Around One Clever Part",
+      "target": "/"
+    },
+    "35": {
+      "title": "The Watch Was in Their Drawer. They Didn’t Own It.",
+      "target": "/"
+    },
+    "36": {
+      "title": "What Does an Empty Rolex Window Actually Prove?",
+      "target": "/"
+    },
+    "37": {
+      "title": "Jean-Claude Biver Made Cheese Nobody Could Buy",
+      "target": "/"
+    },
+    "38": {
+      "title": "What Did 66,000 Pebble Backers Actually Buy?",
+      "target": "/"
+    },
+    "39": {
+      "title": "The 65% Watch Loan Number Nobody Can Reproduce",
+      "target": "/"
+    },
+    "40": {
+      "title": "What Is a Watch Actually Worth, and to Whom?",
+      "target": "/"
+    },
+    "41": {
+      "title": "The Dial That Poisoned Its Painters",
+      "target": "/"
+    },
+    "42": {
+      "title": "The Watch Workers Who Paid Themselves",
+      "target": "/"
+    },
+    "43": {
+      "title": "The Watch Factory Paid People to Leave",
+      "target": "/"
+    },
+    "44": {
+      "title": "A New Trade Needed More Than a Free Classroom",
+      "target": "/"
+    },
+    "45": {
+      "title": "The Machines Still Needed a Watchmaker",
+      "target": "/"
+    },
+    "46": {
+      "title": "The Watch Passed. The Prize Did Not Follow.",
+      "target": "/"
+    },
+    "47": {
+      "title": "Did One Watch Cause the Train Crash?",
+      "target": "/"
+    },
+    "48": {
+      "title": "The Olympic Race That Time Could Not Settle",
+      "target": "/"
+    },
+    "49": {
+      "title": "The Pilot's Watch Still Needed a Navigator",
+      "target": "/"
+    },
+    "50": {
+      "title": "The Summit Was Shared. The Credit Became a Contest.",
+      "target": "/"
+    },
+    "51": {
+      "title": "The Swiss Watchmaker Who Removed Swiss Made",
+      "target": "/"
+    },
+    "52": {
+      "title": "The FTC Put Shinola's Detroit Claim to the Test",
+      "target": "/"
+    },
+    "53": {
+      "title": "Who Won the 1969 Watch Race?",
+      "target": "/"
+    },
+    "54": {
+      "title": "The 21-Jewel Claim the FTC Rejected",
+      "target": "/"
+    },
+    "55": {
+      "title": "The Watch That Didn't Fit Its Own Brand's Chart",
+      "target": "/"
+    },
+    "56": {
+      "title": "The Worker's Watch Most Workers Couldn't Buy",
+      "target": "/"
+    },
+    "57": {
+      "title": "The Dollar Watch Business That Could Not Pay",
+      "target": "/"
+    },
+    "58": {
+      "title": "The Watch Disappeared. The Sales Pitch Kept Going.",
+      "target": "/"
+    },
+    "59": {
+      "title": "When the Ruby Stopped Being Rare",
+      "target": "/"
+    },
+    "60": {
+      "title": "The Watch That Worked for Four Hours",
+      "target": "/"
+    },
+    "61": {
+      "title": "The Atomic Watch Has No Atomic Clock",
+      "target": "/"
+    },
+    "62": {
+      "title": "The Watch That Needed Your Other Hand",
+      "target": "/"
+    },
+    "63": {
+      "title": "The Calculator Watch Needed Another Tool",
+      "target": "/"
+    },
+    "64": {
+      "title": "Your Watch Works. The Service Doesn't.",
+      "target": "/"
+    },
+    "65": {
+      "title": "Why Did a Watch Feature Move to the Phone?",
+      "target": "/"
+    },
+    "66": {
+      "title": "The Watchmaker Had to Renew the Name",
+      "target": "/"
+    },
+    "67": {
+      "title": "The Sale Price That Depended on the Future",
+      "target": "/"
+    },
+    "68": {
+      "title": "The €278 Million Watch Sale Reversal",
+      "target": "/"
+    },
+    "69": {
+      "title": "The Military Watch Sold as a Memory",
+      "target": "/"
+    },
+    "70": {
+      "title": "The Watch Partnership That Ended in Arbitration",
+      "target": "/"
+    },
+    "71": {
+      "title": "The $40,000 Rolex in Madoff’s Auction",
+      "target": "/"
+    },
+    "72": {
+      "title": "The Watch That Vanished but Left a Record",
+      "target": "/"
+    },
+    "73": {
+      "title": "A Watch on Credit Behind Barbed Wire",
+      "target": "/"
+    },
+    "74": {
+      "title": "A Sky Built for One Customer",
+      "target": "/"
+    },
+    "75": {
+      "title": "The Watch That Knew Easter Until 2017",
+      "target": "/"
+    },
+    "76": {
+      "title": "A Watch for Everyone Still Has to Fit Someone",
+      "target": "/"
+    },
+    "77": {
+      "title": "A Watch on the Wrist Was Only the Beginning",
+      "target": "/"
+    },
+    "78": {
+      "title": "The Mayor Who Vetoed Standard Time",
+      "target": "/"
+    },
+    "79": {
+      "title": "The Stopwatch That Cost a Worker His Job",
+      "target": "/"
+    },
+    "80": {
+      "title": "The World Does Not Run on One Clock",
+      "target": "/"
+    }
+  }
+}

@@ -10,6 +10,8 @@ export default [
   route("evaluation", "routes/evaluation-moved.ts"),
   route("admin/evaluation", "routes/evaluation.tsx"),
   route("health", "routes/health.ts"),
+  // Short links for video descriptions: /e/35 → episode 35's page, tagged.
+  route("e/:episode", "routes/episode-link.ts"),
   route("internal/operations/health", "routes/internal-operations-health.ts"),
   route("privacy", "routes/privacy.tsx"),
   route("partners", "routes/partners.tsx"),
