@@ -1,0 +1,73 @@
+{
+  "at": "2026-11-25T21:13:10.360Z",
+  "base": "https://thereserve.watch",
+  "label": "after-window-2026-11-25",
+  "results": [
+    {
+      "priceRange": "1000_2000",
+      "wristCm": 17,
+      "run": 1,
+      "status": 200,
+      "ms": 1062,
+      "resultStatus": "found",
+      "resultOrigin": "catalogue",
+      "watches": 10,
+      "functionRegion": "fra1"
+    },
+    {
+      "priceRange": "1000_2000",
+      "wristCm": 17,
+      "run": 2,
+      "status": 200,
+      "ms": 576,
+      "resultStatus": "found",
+      "resultOrigin": "catalogue",
+      "watches": 10,
+      "functionRegion": "fra1"
+    },
+    {
+      "priceRange": "2000_3000",
+      "wristCm": 18,
+      "run": 1,
+      "status": 200,
+      "ms": 479,
+      "resultStatus": "found",
+      "resultOrigin": "catalogue",
+      "watches": 10,
+      "functionRegion": "fra1"
+    },
+    {
+      "priceRange": "2000_3000",
+      "wristCm": 18,
+      "run": 2,
+      "status": 200,
+      "ms": 485,
+      "resultStatus": "found",
+      "resultOrigin": "catalogue",
+      "watches": 10,
+      "functionRegion": "fra1"
+    },
+    {
+      "priceRange": "500_1000",
+      "wristCm": 16.5,
+      "run": 1,
+      "status": 200,
+      "ms": 424,
+      "resultStatus": "found",
+      "resultOrigin": "catalogue",
+      "watches": 10,
+      "functionRegion": "fra1"
+    },
+    {
+      "priceRange": "500_1000",
+      "wristCm": 16.5,
+      "run": 2,
+      "status": 200,
+      "ms": 384,
+      "resultStatus": "found",
+      "resultOrigin": "catalogue",
+      "watches": 10,
+      "functionRegion": "fra1"
+    }
+  ]
+}

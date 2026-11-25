@@ -2377,3 +2377,37 @@ keep `private, no-store`, so every view is still counted; 404s are not cached.
 
 Next step: the indexed SQL search function that replaces loading the whole
 catalogue into each server.
+
+### Phase 0, step 2a: quiz candidate window in PostgreSQL (2026-11-25)
+
+Source `fd27073` and applied migration 0115. The quiz asks the database for
+the rows one answer could select (`quizCatalogueWindow`: price inside the
+budget per currency, case diameter within 3 mm of the chosen range, a stated
+movement, nickel facts when asked), runs the unchanged exact rules on them in
+code and reads full rows only for the watches shown. Live and saved results
+use bounded pool lookups and the pool identity keys instead of the whole pool.
+
+- PASS `node --env-file=.env --import tsx scripts/test-quiz-window.ts`, before
+  and after applying 0115: service-role-only permissions, window filters and
+  columns, full-row reads, lookups and identity keys; fixtures rolled back.
+- PASS `node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts`
+  on the real catalogue: 64 answers across 16 budgets and 4 currencies, 498
+  exact picks, 976 close and 236 broader fits, 1,710 full rows and 60 lookups,
+  0 differences from the whole-pool selection. Reads from a European client:
+  whole pool 25,014 rows in 8,840 ms; window p50 146 ms, p95 255 ms (617 rows
+  median, 1,802 max); identity keys 263 ms.
+  Report: `docs/reports/quiz-window-equivalence-2026-11-25.json`.
+- PASS the property test in `app/domain/quiz-catalogue-window.test.ts`: 300
+  random catalogues and answers, the window selection equals the whole-list
+  selection, with 1,813 exact, 1,981 close and 6,176 broader picks exercised.
+- PASS `npm run check`: 121 files, 767 tests, production build.
+- PASS production `/api/v1/quiz` for three answers the catalogue covers, via
+  the owner's test partner site: ten catalogue cards in 384–1,062 ms from
+  `fra1`, no provider call (`scripts/measure-quiz-api.ts`,
+  `docs/reports/quiz-api-speed-after-window-2026-11-25.json`).
+- NOT RUN a production quiz timing before the change; the same whole-pool
+  read cost 20–32 s for alternatives on production
+  (`docs/reports/production-validation-first-use.json`).
+
+Still on the whole-pool read: the archetype supplements and the cheaper
+alternatives. Each needs its own window and equivalence check (step 2b).
