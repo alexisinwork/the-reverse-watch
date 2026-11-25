@@ -16,18 +16,21 @@ export const completeSearchInput = (constraints: unknown) => ({
 });
 
 /** Completed response cache only. Partial source checks/drafts remain research
- * evidence, never a complete ten-option answer or a reason to stop searching. */
+ * evidence, never a complete ten-option answer or a reason to stop searching.
+ * Film and people search stores any finished answer: a short list of
+ * confirmed sightings is complete (owner decision, 2026-11-25). */
 export async function cacheCompleteSearch(
   kind: AiSearchKind,
   constraints: unknown,
   view: AiSearchView,
   client: CatalogueClient | null = catalogueClient(),
+  minimumCards = SEARCH_RESULT_TARGET,
 ) {
   const result = coverSearchResults(view);
   if (
     !client ||
     result.status !== "found" ||
-    result.coverage?.total !== SEARCH_RESULT_TARGET
+    (result.coverage?.total ?? 0) < minimumCards
   )
     return result;
   const input = completeSearchInput(constraints);

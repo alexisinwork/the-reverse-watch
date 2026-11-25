@@ -60,6 +60,12 @@ export async function searchWithCoverage(
     ...(input && typeof input === "object" ? input : {}),
     coveragePolicy: 1,
   };
+  // Film and people search shows its confirmed sightings and lists the rest
+  // separately. It never pays to pad a short answer to ten, and a finished
+  // short answer is complete (owner decision, 2026-11-25). The quiz,
+  // archetype and alternatives keep the ten-option target.
+  const padsToTen = !subject;
+  const completeAt = padsToTen ? SEARCH_RESULT_TARGET : 1;
   const read = async (cacheInput: unknown) => {
     if (!store) return [];
     try {
@@ -107,7 +113,7 @@ export async function searchWithCoverage(
   const completed = await read(completeSearchInput(input));
   if (
     (request.kind !== "quiz" || deps.localCandidates) &&
-    uniqueWatchResults(eligible(completed)).length >= SEARCH_RESULT_TARGET
+    uniqueWatchResults(eligible(completed)).length >= completeAt
   ) {
     const current = await enrich(
       eligible(completed).map((watch) => ({
@@ -143,12 +149,13 @@ export async function searchWithCoverage(
     );
     if (
       cached.status === "found" &&
-      cached.coverage?.total === SEARCH_RESULT_TARGET
+      (cached.coverage?.total ?? 0) >= completeAt
     )
       return { ...cached, fromCache: true };
   }
   const prior = uniqueWatchResults(eligible(await read(input)));
   const primaryRequest =
+    padsToTen &&
     !request.candidates?.length &&
     prior.length > 0 &&
     prior.length < SEARCH_RESULT_TARGET
@@ -237,6 +244,7 @@ export async function searchWithCoverage(
   // cannot become a permanent stopping point below ten distinct options.
   for (let pass = 0; pass < 3; pass++) {
     if (!(
+      padsToTen &&
       result.status === "found" &&
       primaryWasFree &&
       initial.status === "found" &&
@@ -301,6 +309,7 @@ export async function searchWithCoverage(
           input,
           coverSearchResults(result),
           store ? { config: store, fetchImpl } : null,
+          completeAt,
         );
   return request.kind === "quiz"
     ? coverSearchResults(result, candidates)
@@ -309,5 +318,6 @@ export async function searchWithCoverage(
         input,
         coverSearchResults(result, candidates),
         store ? { config: store, fetchImpl } : null,
+        completeAt,
       );
 }

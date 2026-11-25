@@ -60,16 +60,36 @@ export async function runFilmSearch({
     }),
   );
   // Sightings without a photo borrow the catalogue's photo of that watch.
-  return view.status === "found"
-    ? coverSearchResults(
-        uniqueSearchView({
-          ...view,
-          watches: mergeSightings(
-            await enrichResultWatches(
-              await fillPhotosFromCatalogue(view.watches),
-            ),
-          ),
-        }),
-      )
-    : view;
+  if (view.status !== "found") return view;
+  const covered = coverSearchResults(
+    uniqueSearchView({
+      ...view,
+      watches: mergeSightings(
+        await enrichResultWatches(await fillPhotosFromCatalogue(view.watches)),
+      ),
+    }),
+  );
+  return covered.status === "found"
+    ? { ...covered, summary: filmSummary(covered.watches) }
+    : covered;
+}
+
+/** Confirmed sightings lead; possible ones are counted separately, so the
+ * summary never presents a lead as a fact (owner decision, 2026-11-25). */
+export function filmSummary(
+  watches: readonly { details: { verificationStatus?: string } }[],
+) {
+  const possible = watches.filter(
+    (watch) => watch.details.verificationStatus === "unverified",
+  ).length;
+  const confirmed = watches.length - possible;
+  const lead =
+    confirmed > 0
+      ? `${confirmed} confirmed ${confirmed === 1 ? "sighting" : "sightings"}, each with its sources.`
+      : "No sighting is confirmed yet.";
+  const rest =
+    possible > 0
+      ? ` ${possible} possible ${possible === 1 ? "sighting is" : "sightings are"} listed separately and still ${possible === 1 ? "needs" : "need"} checking.`
+      : "";
+  return lead + rest;
 }

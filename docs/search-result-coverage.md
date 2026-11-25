@@ -7,6 +7,16 @@ Uncertain associations, missing prices and missing photos may
 appear with explicit labels. This supersedes the earlier rule that only the
 two-source accepted subset could be visible; it does not certify those candidates.
 
+Owner decision, 2026-11-25: film and people search is exempt from the
+ten-card target. Its main list shows confirmed sightings; unconfirmed
+candidates appear in a separate, collapsed "possible sightings" block, and
+the summary counts the two separately (`filmSummary`). A finished short
+answer is stored and served as complete, and no paid discovery runs to pad
+it (`padsToTen` in `coverage-search.server.ts`). The quiz, archetype and
+alternatives keep the ten-option target; the quiz shows exact matches first
+and close fits under their own heading, naming the close fits' case sizes
+when most of them miss the chosen range (`closeFitsNote`).
+
 `search-coverage.ts` composes the response after display deduplication. Checked
 cards stay first, unchanged; supplementary candidates carry `verificationStatus:
 unverified` and a reason. A `coverage` envelope reports minimum, target, actual

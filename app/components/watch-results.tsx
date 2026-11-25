@@ -399,6 +399,26 @@ function WatchCard({
   );
 }
 
+/** Why the close fits are close, from the cards themselves: when most miss
+ * the case size, name the sizes they do have. */
+export function closeFitsNote(close: readonly FoundWatch[]) {
+  const sizeMisses = close.filter((watch) =>
+    watch.details.misses?.includes("Case size outside your range"),
+  );
+  const sizes = sizeMisses
+    .map((watch) => watch.details.caseDiameterMm)
+    .filter((size): size is number => typeof size === "number");
+  const base =
+    "Each card lists what differs from your answers or is not confirmed.";
+  if (sizes.length === 0 || sizeMisses.length * 2 < close.length) {
+    return base;
+  }
+  const low = Math.min(...sizes);
+  const high = Math.max(...sizes);
+  const range = low === high ? `${low} mm` : `${low}–${high} mm`;
+  return `${base} Most are outside your case-size range; their sizes are ${range}. Changing the case size in step 2 may find exact matches.`;
+}
+
 function ResultBody({
   result,
   mode,
@@ -413,6 +433,32 @@ function ResultBody({
   const [showAll, setShowAll] = useState(false);
   const embed = useEmbed();
   const count = result.status === "found" ? result.watches.length : 0;
+  // Film and people search: confirmed sightings first, possible ones in a
+  // separate, collapsed block (owner decision, 2026-11-25).
+  const watches = result.status === "found" ? result.watches : [];
+  const possible =
+    mode === "film"
+      ? watches.filter(
+          (watch) => watch.details.verificationStatus === "unverified",
+        )
+      : [];
+  const listed =
+    mode === "film"
+      ? watches.filter(
+          (watch) => watch.details.verificationStatus !== "unverified",
+        )
+      : watches;
+  // Quiz: watches that meet every answer lead; close fits follow under
+  // their own heading, each card saying what differs (owner decision,
+  // 2026-11-25).
+  const shown =
+    mode === "quiz"
+      ? listed.filter((watch) => !watch.details.misses?.length)
+      : listed;
+  const close =
+    mode === "quiz"
+      ? listed.filter((watch) => watch.details.misses?.length)
+      : [];
   useEffect(() => {
     if (embed)
       postToHost({ type: "reserve:results", feature: embed.feature, count });
@@ -466,7 +512,7 @@ function ResultBody({
           </span>
         ) : null}
       </p>
-      {result.coverage?.status === "partial" ? (
+      {result.coverage?.status === "partial" && mode !== "film" ? (
         <p className="result-footnote">
           We are looking for 10 distinct watches. So far {result.coverage.total}{" "}
           available
@@ -475,11 +521,17 @@ function ResultBody({
           labelled.
         </p>
       ) : null}
-      {result.watches.length > 0 ? (
+      {mode === "film" && shown.length === 0 && possible.length > 0 ? (
+        <p className="empty-result">
+          No sighting is confirmed yet. The possible ones below still need
+          checking.
+        </p>
+      ) : null}
+      {shown.length > 0 ? (
         <div className="watch-list">
           {(showAll || mode !== "quiz"
-            ? result.watches
-            : result.watches.slice(0, QUIZ_SHOWN_FIRST)
+            ? shown
+            : shown.slice(0, QUIZ_SHOWN_FIRST)
           ).map((watch, index) => (
             <WatchCard
               displayCurrency={displayCurrency}
@@ -492,16 +544,61 @@ function ResultBody({
           ))}
         </div>
       ) : null}
-      {mode === "quiz" &&
-      !showAll &&
-      result.watches.length > QUIZ_SHOWN_FIRST ? (
+      {possible.length > 0 ? (
+        <details className="possible-sightings">
+          <summary>
+            {possible.length} possible{" "}
+            {possible.length === 1 ? "sighting" : "sightings"}, not confirmed
+          </summary>
+          <p className="result-footnote">
+            Saved research links these watches to this search, but two
+            independent sources have not confirmed them yet. Treat them as
+            leads, not facts.
+          </p>
+          <div className="watch-list">
+            {possible.map((watch, index) => (
+              <WatchCard
+                displayCurrency={displayCurrency}
+                fx={fx}
+                key={`possible-${watch.brand}-${watch.model}-${watch.referenceCode ?? ""}-${index}`}
+                mode={mode}
+                rank={index + 1}
+                watch={watch}
+              />
+            ))}
+          </div>
+        </details>
+      ) : null}
+      {mode === "quiz" && !showAll && shown.length > QUIZ_SHOWN_FIRST ? (
         <button
           className="button button--quiet show-all-watches"
           onClick={() => setShowAll(true)}
           type="button"
         >
-          Show all {result.watches.length} watches
+          Show all {shown.length} watches
         </button>
+      ) : null}
+      {close.length > 0 ? (
+        <section className="close-fits" aria-labelledby="close-fits-heading">
+          <h3 id="close-fits-heading">
+            {shown.length > 0
+              ? "Close fits"
+              : "No watch meets every answer: the closest fits"}
+          </h3>
+          <p className="result-footnote">{closeFitsNote(close)}</p>
+          <div className="watch-list">
+            {close.map((watch, index) => (
+              <WatchCard
+                displayCurrency={displayCurrency}
+                fx={fx}
+                key={`close-${watch.brand}-${watch.model}-${watch.referenceCode ?? ""}-${index}`}
+                mode={mode}
+                rank={shown.length + index + 1}
+                watch={watch}
+              />
+            ))}
+          </div>
+        </section>
       ) : null}
       {result.alsoWorth && result.alsoWorth.length > 0 ? (
         <section className="also-worth" aria-labelledby="also-worth-heading">
