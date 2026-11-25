@@ -14,9 +14,12 @@ import { convert } from "./fx";
 import { findPriceRange } from "./questionnaire-v4";
 import { uniqueWatchResults } from "./watch-result-dedup";
 import {
+  budgetPriceBounds,
   priceIn,
+  type AlternativeFacts,
   type CatalogueStyle,
   type CatalogueWatch,
+  type NameFacts,
 } from "./watch-catalogue";
 
 /** Longest watch name the alternatives search accepts. */
@@ -99,7 +102,9 @@ const STYLE_PRIORITY: CatalogueStyle[] = [
   "everyday",
 ];
 
-export function primaryStyle(watch: CatalogueWatch): CatalogueStyle {
+export function primaryStyle(
+  watch: Pick<CatalogueWatch, "styles">,
+): CatalogueStyle {
   return (
     STYLE_PRIORITY.find((style) => watch.styles.includes(style)) ?? "everyday"
   );
@@ -122,7 +127,7 @@ const SHAPE_FAMILY: Record<string, string> = {
  * a non-round reading from either is the telling one (a round photo crop
  * of a square watch is far likelier than the reverse).
  */
-function shapeOf(watch: CatalogueWatch) {
+function shapeOf(watch: Pick<CatalogueWatch, "caseShape" | "designTraits">) {
   const family = (shape: string | null | undefined) =>
     shape ? (SHAPE_FAMILY[shape] ?? shape) : "round";
   const fromFacts = family(watch.caseShape);
@@ -130,7 +135,7 @@ function shapeOf(watch: CatalogueWatch) {
   return fromFacts !== "round" ? fromFacts : fromPhoto;
 }
 
-const has = (watch: CatalogueWatch, slug: string) =>
+const has = (watch: Pick<CatalogueWatch, "complications">, slug: string) =>
   watch.complications.includes(slug);
 
 /** Every strict rule the candidate breaks; empty means it may be shown. */
@@ -139,7 +144,9 @@ const has = (watch: CatalogueWatch, slug: string) =>
  * the photo plainly shows (a chronograph dial, a GMT bezel or dial, a
  * diving bezel).
  */
-function functionsOf(watch: CatalogueWatch) {
+function functionsOf(
+  watch: Pick<CatalogueWatch, "complications" | "designTraits">,
+) {
   const traits = watch.designTraits;
   return {
     chronograph:
@@ -155,11 +162,22 @@ function functionsOf(watch: CatalogueWatch) {
 }
 
 /** Rectangular and square cases form one family; every other shape another. */
-const isRectangular = (watch: CatalogueWatch) =>
-  shapeOf(watch) === "rectangular";
+const isRectangular = (
+  watch: Pick<CatalogueWatch, "caseShape" | "designTraits">,
+) => shapeOf(watch) === "rectangular";
 
 /** A named target needs documented comparison facts, not just an identity. */
-export function hasComparisonFacts(watch: CatalogueWatch) {
+export function hasComparisonFacts(
+  watch: Pick<
+    NameFacts,
+    | "styles"
+    | "caseShape"
+    | "designTraits"
+    | "caseDiameterMm"
+    | "movement"
+    | "waterResistanceM"
+  >,
+) {
   return (
     watch.styles.length > 0 &&
     (isRectangular(watch) || watch.caseDiameterMm !== null) &&
@@ -170,8 +188,8 @@ export function hasComparisonFacts(watch: CatalogueWatch) {
 
 /** Every strict rule the candidate breaks; empty means it may be shown. */
 export function strictFailures(
-  target: CatalogueWatch,
-  candidate: CatalogueWatch,
+  target: AlternativeFacts,
+  candidate: AlternativeFacts,
   allowQuartz: boolean,
 ) {
   const failures: string[] = [];
@@ -288,7 +306,10 @@ const LAYOUT_WORDS: Record<string, string> = {
 export const MAX_LOOK_POINTS =
   TRAIT_POINTS.reduce((sum, trait) => sum + trait.points, 0) + 7;
 
-export function lookScore(target: CatalogueWatch, candidate: CatalogueWatch) {
+export function lookScore(
+  target: AlternativeFacts,
+  candidate: AlternativeFacts,
+) {
   let points = 0;
   const shares: string[] = [];
   const differs: string[] = [];
@@ -371,7 +392,10 @@ export type AlternativePrice =
     };
 
 export function priceInWindow(
-  watch: CatalogueWatch,
+  watch: Pick<
+    AlternativeFacts,
+    "priceAmount" | "priceCurrency" | "priceStatus" | "preownedPrice"
+  >,
   window: ReturnType<typeof budgetWindow>,
   fx: FxTable | null,
 ): AlternativePrice | null {
@@ -403,24 +427,24 @@ export function priceInWindow(
 // ---------------------------------------------------------------------------
 // Ranking
 
-export type Alternative = {
-  watch: CatalogueWatch;
+export type Alternative<T extends AlternativeFacts = CatalogueWatch> = {
+  watch: T;
   price: AlternativePrice;
   points: number;
   shares: string[];
   differs: string[];
 };
 
-export function rankAlternatives(
-  target: CatalogueWatch,
-  catalogue: readonly CatalogueWatch[],
+export function rankAlternatives<T extends AlternativeFacts>(
+  target: AlternativeFacts,
+  catalogue: readonly T[],
   budget: AlternativesBudget,
   allowQuartz: boolean,
   fx: FxTable | null,
   limit = 10,
-): Alternative[] {
+): Alternative<T>[] {
   const window = budgetWindow(budget);
-  const ranked = catalogue.flatMap((candidate): Alternative[] => {
+  const ranked = catalogue.flatMap((candidate): Alternative<T>[] => {
     if (
       candidate.id === target.id ||
       candidate.reviewStatus === "rejected" ||
@@ -464,10 +488,41 @@ export function rankAlternatives(
     .slice(0, limit);
 }
 
+/**
+ * The database window for one target and budget (migration 0117): every row
+ * rankAlternatives could keep, and usually some more. strictFailures and
+ * priceInWindow still decide in code.
+ */
+export function alternativesCatalogueWindow(
+  target: AlternativeFacts,
+  budget: AlternativesBudget,
+  allowQuartz: boolean,
+  fx: FxTable | null,
+) {
+  const window = budgetWindow(budget);
+  const sized = !isRectangular(target) && target.caseDiameterMm !== null;
+  // Widened by a hair so floating point can only add rows.
+  const slack = 0.001;
+  return {
+    priceBounds: budgetPriceBounds(window, window.currency, fx),
+    styles: target.styles,
+    minDiameterMm: sized
+      ? target.caseDiameterMm! - SIZE_TOLERANCE_MM - slack
+      : null,
+    maxDiameterMm: sized
+      ? target.caseDiameterMm! + SIZE_TOLERANCE_MM + slack
+      : null,
+    minWaterResistanceM: (target.waterResistanceM ?? 0) >= 200 ? 200 : null,
+    mechanicalOnly: Boolean(
+      target.movement && MECHANICAL.has(target.movement) && !allowQuartz,
+    ),
+  };
+}
+
 /** Price-unknown suggestions remain outside the budget-qualified ranking. */
-export function unpricedAlternatives(
-  target: CatalogueWatch,
-  catalogue: readonly CatalogueWatch[],
+export function unpricedAlternatives<T extends AlternativeFacts>(
+  target: AlternativeFacts,
+  catalogue: readonly T[],
   allowQuartz: boolean,
 ) {
   return uniqueWatchResults(

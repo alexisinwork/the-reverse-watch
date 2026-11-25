@@ -14,6 +14,13 @@ vi.mock("./watch-catalogue.server", () => ({
   }),
   clearCatalogueCache: vi.fn(),
   loadCatalogueCached: mocks.catalogue,
+  // The ranking window and the full rows come from the same fixtures.
+  loadAlternativesWindow: mocks.catalogue,
+  loadCatalogueRowsById: async (_client: unknown, ids: readonly string[]) =>
+    ((await mocks.catalogue()) as { id: string }[]).filter((row) =>
+      ids.includes(row.id),
+    ),
+  loadPoolIdentityKeysCached: async () => new Set<string>(),
   recordPreownedPrice: vi.fn(),
 }));
 vi.mock("./fx.server", () => ({ loadFxTable: async () => null }));

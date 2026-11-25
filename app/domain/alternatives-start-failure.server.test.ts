@@ -12,7 +12,7 @@ vi.mock("./watch-catalogue.server", async (importOriginal) => ({
     config: { supabaseUrl: "https://db.test", serviceKey: "test" },
     fetchImpl: fetch,
   }),
-  loadCatalogueCached: mocks.load,
+  loadNameIndexCached: mocks.load,
   rpc: mocks.rpc,
 }));
 vi.mock("./alternatives.server", () => ({

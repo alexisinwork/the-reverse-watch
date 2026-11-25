@@ -31,10 +31,15 @@ import {
 } from "./questionnaire-v4";
 import type { RateLimitPolicy } from "./rate-limit.server";
 import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
-import { catalogueToFoundWatch, type CatalogueWatch } from "./watch-catalogue";
+import {
+  catalogueToFoundWatch,
+  type CatalogueWatch,
+  type NameFacts,
+} from "./watch-catalogue";
 import {
   catalogueClient,
-  loadCatalogueCached,
+  loadCatalogueRowsById,
+  loadNameIndexCached,
   rpc,
 } from "./watch-catalogue.server";
 import { catalogueWatchSchema } from "./watch-catalogue";
@@ -219,9 +224,11 @@ export async function startAlternativesSearch(
       code: "unavailable",
       error: "The search is unavailable right now.",
     };
-  let catalogue: CatalogueWatch[];
+  // The few facts name resolution reads, for every catalogue watch
+  // (migration 0117); the resolved watch is then read in full.
+  let catalogue: (NameFacts | CatalogueWatch)[];
   try {
-    catalogue = [...(await loadCatalogueCached(client))];
+    catalogue = [...(await loadNameIndexCached(client))];
   } catch (error) {
     console.error(
       JSON.stringify({
@@ -239,6 +246,7 @@ export async function startAlternativesSearch(
   }
   // Unpriced imported identities can resolve a named target without loading
   // the full research archive into every recommendation request.
+  const namedRows = new Map<string, CatalogueWatch>();
   try {
     const named = z.array(catalogueWatchSchema).parse(
       await rpc(client, "watch_catalogue_named_v1", {
@@ -247,6 +255,7 @@ export async function startAlternativesSearch(
       }),
     );
     const known = new Set(catalogue.map((w) => w.id));
+    for (const row of named) namedRows.set(row.id, row);
     catalogue.push(...named.filter((w) => !known.has(w.id)));
   } catch {
     /* Existing catalogue and live fallback remain available. */
@@ -273,6 +282,31 @@ export async function startAlternativesSearch(
       error: `We found the ${resolved.watch.brand} ${resolved.watch.model}${resolved.watch.referenceCode ? ` (${resolved.watch.referenceCode})` : ""}, but its comparison specifications are incomplete. ${form.reference ? "Try searching by model name without a reference." : "Try another reference."}`,
     };
   }
+  let target: CatalogueWatch | null = null;
+  if (resolved.status === "found") {
+    try {
+      target =
+        namedRows.get(resolved.watch.id) ??
+        (await loadCatalogueRowsById(client, [resolved.watch.id]))[0] ??
+        null;
+    } catch (error) {
+      console.error(
+        JSON.stringify({
+          event: "alternatives_catalogue_read_error",
+          message:
+            error instanceof Error ? error.message : "Unknown catalogue error",
+        }),
+      );
+    }
+    if (!target) {
+      return {
+        kind: "error",
+        code: "unavailable",
+        error:
+          "The catalogue is temporarily unavailable. Please try again in a minute.",
+      };
+    }
+  }
   const limitMessage = await meterPartnerUse(site, "alternatives");
   if (limitMessage)
     return { kind: "error", code: "monthly_limit", error: limitMessage };
@@ -289,7 +323,7 @@ export async function startAlternativesSearch(
   // watch, or too few matches) streams its steps while it runs.
   const progress = createProgressFeed(110_000);
   const page = findAlternatives({
-    target: resolved.status === "found" ? resolved.watch : null,
+    target,
     name: form.name,
     reference: form.reference || null,
     budget,

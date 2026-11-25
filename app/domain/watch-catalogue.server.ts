@@ -3,8 +3,14 @@ import { z } from "zod";
 import type { DesignTraits } from "./design-traits";
 import { safeHttpUrl } from "./source-pages.server";
 import {
+  ALTERNATIVE_WINDOW_COLUMNS,
+  alternativeFactsSchema,
   ARCHETYPE_WINDOW_COLUMNS,
   archetypeFactsSchema,
+  NAME_INDEX_COLUMNS,
+  nameFactsSchema,
+  type AlternativeFacts,
+  type NameFacts,
   catalogueMatchFactsSchema,
   catalogueWatchSchema,
   QUIZ_WINDOW_COLUMNS,
@@ -154,10 +160,10 @@ async function readCataloguePages(
   throw new Error("Catalogue pagination exceeded its safety bound");
 }
 
-// Alternatives and the archetype still read the whole recommendation pool
-// (25,014 rows, 61 MB on 2026-11-25) and filter it in code; a short
-// in-memory cache keeps that off the hot path. The quiz reads a bounded
-// window instead (loadQuizWindow).
+// The whole recommendation pool (25,014 rows, 61 MB on 2026-11-25). Visitor
+// searches no longer read it: the quiz, archetype and alternatives read
+// bounded database windows (migrations 0115–0117). Only the paused legacy
+// pre-owned lookup and reporting scripts still use this cache.
 const CACHE_MS = 5 * 60 * 1_000;
 let cached: { watches: CatalogueWatch[]; expiresAt: number } | null = null;
 let loading: Promise<CatalogueWatch[]> | null = null;
@@ -188,6 +194,7 @@ export function clearCatalogueCache() {
   loading = null;
   cacheGeneration++;
   poolKeys = null;
+  nameIndex = null;
 }
 
 const columnWindowSchema = z.object({
@@ -272,6 +279,58 @@ export async function loadArchetypeWindow(
     ARCHETYPE_WINDOW_COLUMNS,
     archetypeFactsSchema,
   );
+}
+
+/** Every row rankAlternatives could keep for one target and budget
+ * (migration 0117). */
+export async function loadAlternativesWindow(
+  client: CatalogueClient,
+  window: {
+    priceBounds: PriceBound[];
+    styles: readonly WindowStyle[];
+    minDiameterMm: number | null;
+    maxDiameterMm: number | null;
+    minWaterResistanceM: number | null;
+    mechanicalOnly: boolean;
+  },
+): Promise<AlternativeFacts[]> {
+  return decodeColumnWindow(
+    "watch_catalogue_alternatives_window_v1",
+    await rpc(
+      client,
+      "watch_catalogue_alternatives_window_v1",
+      {
+        p_price_bounds: window.priceBounds,
+        p_styles: window.styles,
+        p_min_diameter: window.minDiameterMm,
+        p_max_diameter: window.maxDiameterMm,
+        p_min_water_resistance: window.minWaterResistanceM,
+        p_mechanical_only: window.mechanicalOnly,
+      },
+      15_000,
+    ),
+    ALTERNATIVE_WINDOW_COLUMNS,
+    alternativeFactsSchema,
+  );
+}
+
+// The few facts name resolution reads, for every pool row (a few MB instead
+// of the 61 MB whole read), cached like the pool identity keys.
+let nameIndex: { rows: NameFacts[]; expiresAt: number } | null = null;
+
+export async function loadNameIndexCached(
+  client: CatalogueClient,
+  now = Date.now(),
+): Promise<NameFacts[]> {
+  if (nameIndex && nameIndex.expiresAt > now) return nameIndex.rows;
+  const rows = decodeColumnWindow(
+    "watch_catalogue_name_index_v1",
+    await rpc(client, "watch_catalogue_name_index_v1", {}, 20_000),
+    NAME_INDEX_COLUMNS,
+    nameFactsSchema,
+  );
+  nameIndex = { rows, expiresAt: now + CACHE_MS };
+  return rows;
 }
 
 const ROWS_BY_ID_LIMIT = 200;

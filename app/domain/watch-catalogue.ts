@@ -286,6 +286,46 @@ export const archetypeFactsSchema = catalogueWatchSchema.pick(
 
 export type ArchetypeFacts = z.infer<typeof archetypeFactsSchema>;
 
+/** The cheaper-alternative window adds the photo traits and pre-owned
+ * prices its rules and score read (migration 0117). */
+export const ALTERNATIVE_WINDOW_COLUMNS = [
+  ...QUIZ_WINDOW_COLUMNS,
+  "designTraits",
+  "preownedPrice",
+] as const satisfies readonly (keyof CatalogueWatch)[];
+
+export const alternativeFactsSchema = catalogueWatchSchema.pick(
+  Object.fromEntries(ALTERNATIVE_WINDOW_COLUMNS.map((key) => [key, true])) as {
+    [K in (typeof ALTERNATIVE_WINDOW_COLUMNS)[number]]: true;
+  },
+);
+
+export type AlternativeFacts = z.infer<typeof alternativeFactsSchema>;
+
+/** What resolving a typed watch name reads, for every pool row (0117). */
+export const NAME_INDEX_COLUMNS = [
+  "id",
+  "brand",
+  "model",
+  "referenceCode",
+  "referenceConfirmed",
+  "reviewStatus",
+  "styles",
+  "caseShape",
+  "caseDiameterMm",
+  "movement",
+  "waterResistanceM",
+  "designTraits",
+] as const satisfies readonly (keyof CatalogueWatch)[];
+
+export const nameFactsSchema = catalogueWatchSchema.pick(
+  Object.fromEntries(NAME_INDEX_COLUMNS.map((key) => [key, true])) as {
+    [K in (typeof NAME_INDEX_COLUMNS)[number]]: true;
+  },
+);
+
+export type NameFacts = z.infer<typeof nameFactsSchema>;
+
 /** The database window for one quiz answer: every row any shortlist, close
  * fit or broader close fit could use, and usually some more. */
 export type QuizCatalogueWindow = {

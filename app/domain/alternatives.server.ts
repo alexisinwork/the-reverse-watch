@@ -12,6 +12,7 @@ import {
 } from "./alternatives-live.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import {
+  alternativesCatalogueWindow,
   budgetWindow,
   hasComparisonFacts,
   rankAlternatives,
@@ -22,12 +23,21 @@ import {
 import { loadFxTable } from "./fx.server";
 import { SEARCH_RESULT_TARGET } from "./search-coverage";
 import { lookupPreownedPrice } from "./preowned-price.server";
-import { priceIn, type CatalogueWatch } from "./watch-catalogue";
+import {
+  priceIn,
+  type AlternativeFacts,
+  type CatalogueWatch,
+  type NameFacts,
+} from "./watch-catalogue";
 import {
   catalogueClient,
   clearCatalogueCache,
+  loadAlternativesWindow,
   loadCatalogueCached,
+  loadCatalogueRowsById,
+  loadPoolIdentityKeysCached,
   recordPreownedPrice,
+  type CatalogueClient,
 } from "./watch-catalogue.server";
 
 const fold = (value: string) =>
@@ -50,7 +60,7 @@ function words(value: string) {
 }
 
 /** A model's family name, so colour variants count as one watch. */
-function family(watch: CatalogueWatch) {
+function family(watch: Pick<NameFacts, "brand" | "model">) {
   return fold(`${watch.brand} ${watch.model}`)
     .replace(
       /\b(black|blue|white|green|silver|grey|gray|red|gilt|steel|bracelet|strap|leather|rubber|dial)\b/g,
@@ -60,7 +70,7 @@ function family(watch: CatalogueWatch) {
     .trim();
 }
 
-const better = (a: CatalogueWatch, b: CatalogueWatch) =>
+const better = (a: NameFacts, b: NameFacts) =>
   // Bulk editorial approval does not fill missing reference specifications.
   // For a model-only query, choose a usable reference within the same family.
   Number(hasComparisonFacts(b)) - Number(hasComparisonFacts(a)) ||
@@ -69,9 +79,9 @@ const better = (a: CatalogueWatch, b: CatalogueWatch) =>
   Number(b.referenceConfirmed) - Number(a.referenceConfirmed) ||
   Number(Boolean(b.designTraits)) - Number(Boolean(a.designTraits));
 
-export type ResolvedWatch =
-  | { status: "found"; watch: CatalogueWatch }
-  | { status: "ambiguous"; options: CatalogueWatch[] }
+export type ResolvedWatch<T extends NameFacts = CatalogueWatch> =
+  | { status: "found"; watch: T }
+  | { status: "ambiguous"; options: T[] }
   | { status: "not_found" };
 
 /**
@@ -80,11 +90,11 @@ export type ResolvedWatch =
  * "ambiguous" (the page asks "Did you mean…?"); near misses (one word off,
  * like "Black Bay 51") are offered the same way, never picked silently.
  */
-export function resolveNamedWatch(
-  catalogue: readonly CatalogueWatch[],
+export function resolveNamedWatch<T extends NameFacts>(
+  catalogue: readonly T[],
   name: string,
   reference: string | null,
-): ResolvedWatch {
+): ResolvedWatch<T> {
   const live = catalogue.filter((watch) => watch.reviewStatus !== "rejected");
   const ref = normalizeReference(reference);
   if (ref) {
@@ -108,9 +118,9 @@ export function resolveNamedWatch(
   }
   const wanted = words(name);
   if (wanted.length === 0) return { status: "not_found" };
-  const haystack = (watch: CatalogueWatch) =>
+  const haystack = (watch: T) =>
     ` ${words(`${watch.brand} ${watch.model} ${watch.referenceCode ?? ""}`).join(" ")} `;
-  const hits = (watch: CatalogueWatch) =>
+  const hits = (watch: T) =>
     wanted.filter(
       (word) =>
         haystack(watch).includes(` ${word} `) ||
@@ -121,7 +131,7 @@ export function resolveNamedWatch(
   // A near miss (one word off, like "Black Bay 51") must still share a
   // model word, not just the brand: "Patek Philippe Nautilus" must not
   // offer a Calatrava.
-  const nearMiss = (watch: CatalogueWatch) => {
+  const nearMiss = (watch: T) => {
     if (wanted.length < 3 || hits(watch) !== wanted.length - 1) return false;
     const brandWords = new Set(words(watch.brand));
     const modelWords = ` ${words(watch.model).join(" ")} `;
@@ -132,7 +142,7 @@ export function resolveNamedWatch(
   const pool = full.length > 0 ? full : live.filter(nearMiss);
   if (pool.length === 0) return { status: "not_found" };
 
-  const byFamily = new Map<string, CatalogueWatch[]>();
+  const byFamily = new Map<string, T[]>();
   for (const watch of pool) {
     byFamily.set(family(watch), [
       ...(byFamily.get(family(watch)) ?? []),
@@ -221,6 +231,26 @@ async function fillPreownedPrices(
   clearTimeout(timer);
 }
 
+/** Ranked window rows in full, for the result cards. A row that left the
+ * pool between the two reads is dropped. */
+async function withFullRows(
+  client: CatalogueClient,
+  ranked: Alternative<AlternativeFacts>[],
+): Promise<Alternative[]> {
+  const full = new Map(
+    (
+      await loadCatalogueRowsById(
+        client,
+        ranked.map((entry) => entry.watch.id),
+      )
+    ).map((row): [string, CatalogueWatch] => [row.id, row]),
+  );
+  return ranked.flatMap((entry) => {
+    const watch = full.get(entry.watch.id);
+    return watch ? [{ ...entry, watch }] : [];
+  });
+}
+
 /** Below this many matches, the live web search looks for more. */
 export const ALTERNATIVES_ENOUGH = 3;
 
@@ -288,31 +318,47 @@ export async function findAlternatives({
   if (!targetId) return { status: "not_found" };
 
   report?.({ text: "Comparing it with our catalogue and available prices…" });
-  let catalogue = await loadCatalogueCached(client);
-  const first = catalogue.find((watch) => watch.id === targetId) ?? known;
+  // The caller passes the resolved watch in full; a watch the paused live
+  // identification added is read by its id.
+  const readTarget = async () =>
+    (await loadCatalogueRowsById(client, [targetId]))[0] ?? known;
+  const first = targetId === known?.id ? known : await readTarget();
   if (!first) return { status: "not_found" };
   if (!hasComparisonFacts(first))
     throw new Error("The target watch is missing comparison specifications.");
-  if (legacyPaidResearchAllowed())
-    await fillPreownedPrices(first, catalogue, budget, allowQuartz).catch(
-      () => undefined,
+  let target = first;
+  if (legacyPaidResearchAllowed()) {
+    // Paused (legacy-paid-research-policy.server.ts); it still reads the
+    // whole pool to find dearer candidates.
+    await fillPreownedPrices(
+      first,
+      await loadCatalogueCached(client),
+      budget,
+      allowQuartz,
+    ).catch(() => undefined);
+    target = (await readTarget()) ?? first;
+  }
+  // Only the rows that could be alternatives (migration 0117); the strict
+  // rules, scores and order run in rankAlternatives.
+  const rank = async () =>
+    rankAlternatives(
+      target,
+      await loadAlternativesWindow(
+        client,
+        alternativesCatalogueWindow(target, budget, allowQuartz, fx),
+      ),
+      budget,
+      allowQuartz,
+      fx,
+      SEARCH_RESULT_TARGET * 3,
     );
-  catalogue = await loadCatalogueCached(client);
-  let target = catalogue.find((watch) => watch.id === targetId) ?? first;
-  let alternatives = rankAlternatives(
-    target,
-    catalogue,
-    budget,
-    allowQuartz,
-    fx,
-    SEARCH_RESULT_TARGET * 3,
-  );
+  let ranked = await rank();
 
   let searchedLive = false;
   const timeLeft = ALTERNATIVES_TIME_BUDGET_MS - (Date.now() - started);
   if (
     legacyPaidResearchAllowed() &&
-    alternatives.length < ALTERNATIVES_ENOUGH &&
+    ranked.length < ALTERNATIVES_ENOUGH &&
     searchReady(deps.config) &&
     timeLeft >= LIVE_ALTERNATIVES_NEEDS_MS
   ) {
@@ -320,24 +366,17 @@ export async function findAlternatives({
       target,
       budget,
       allowQuartz,
-      new Set(catalogue.map((watch) => watch.identityKey)),
+      new Set(await loadPoolIdentityKeysCached(client)),
       { client, deps, fx, report },
     ).catch(() => 0);
     if (added > 0) {
       searchedLive = true;
       clearCatalogueCache();
-      catalogue = await loadCatalogueCached(client);
-      target = catalogue.find((watch) => watch.id === targetId) ?? target;
-      alternatives = rankAlternatives(
-        target,
-        catalogue,
-        budget,
-        allowQuartz,
-        fx,
-        SEARCH_RESULT_TARGET * 3,
-      );
+      target = (await readTarget()) ?? target;
+      ranked = await rank();
     }
   }
+  const alternatives = await withFullRows(client, ranked);
   report?.({
     text: `Found ${alternatives.length} candidate alternatives; selecting ten distinct options…`,
   });

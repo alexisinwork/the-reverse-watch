@@ -37,7 +37,7 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
 | `/quiz`                                                                   | `routes/quiz.tsx`                                                                                                    | The six-question diagnostic and the shortlist.                                                                                                                                                             |
 | `/watches/find`                                                           | `routes/watch-find.tsx`                                                                                              | Search box for watches in films, series and on people.                                                                                                                                                     |
 | `/watches`, `/watches/stories/…`, `/watches/people/…`, `/watches/works/…` | `routes/watches.tsx`, `watch-story.tsx`, `watch-entity.tsx`, `watch-work.tsx`                                        | Published, reviewed film and celebrity watch stories.                                                                                                                                                      |
-| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The archetype mini-quiz and catalogue/editorial picks; the first request validates up to eight references, then reuses the checked snapshot.                                                               |
+| `/watches/archetype`                                                      | `routes/watch-archetype.tsx`                                                                                         | The archetype mini-quiz and catalogue/editorial picks; catalogue supplements come from a database window (migration 0116); the first request validates up to eight references, then reuses the checked snapshot. |
 | `/admin/catalogue`                                                        | `routes/admin-catalogue.tsx`                                                                                         | Password-protected catalogue review: Approve, Reject, Edit, price changes.                                                                                                                                 |
 | `/internal/catalogue/recheck-prices`                                      | `routes/internal-catalogue-recheck-prices.ts`                                                                        | Daily metered price check: up to eight already-priced stale references; changes await review.                                                                                                              |
 | `/admin/evaluation`                                                       | `routes/evaluation.tsx`                                                                                              | Funnel analytics summary, behind the admin login (`/evaluation` redirects).                                                                                                                                |
@@ -102,6 +102,12 @@ distinct cards. Partial source snapshots/drafts are reusable research, not a
 completed answer. Short results keep seeking additional models under the same
 spending guards. Quiz close fits disclose every missed/unconfirmed answer and
 may sit up to 3 mm beyond the chosen diameter range; exact matches never do.
+Visitor searches never read the whole pool. Each tool asks the database for the
+rows it could use (migrations 0115–0117: quiz window, archetype window,
+alternatives window and a name index for typed names) and runs its unchanged
+rules on them; full rows are read only for the watches shown. Equivalence
+scripts prove each window selects exactly what the whole pool did:
+`scripts/check-{quiz,archetype,alternatives}-window-equivalence.ts`.
 The alternatives page shows navigation activity immediately and streams real
 provider/source checks through the same progress feed as the other tools.
 
