@@ -36,3 +36,6 @@ data/research/model-sheet-sample.tsv
 
 # Catalogue build progress (local)
 .catalogue-build/
+
+# Generated link to .agents/skills (scripts/link-agent-skills.mjs)
+.claude/skills

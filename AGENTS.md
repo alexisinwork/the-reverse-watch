@@ -169,6 +169,20 @@ speed and cost.
 - The project is on Vercel **Hobby**, which does not permit commercial use. The
   owner upgrades to Pro before the first paying partner.
 
+## Continuity and skills (EstateVanta starter kit, 2026-11-25)
+
+- Start a session with `docs/STATUS_AND_HANDOFF.md`, `docs/NEXT_CHAT.md` and
+  `docs/OWNER_QUESTIONS.md`; decisions are indexed in
+  `docs/decisions/DECISION_REGISTER.md`.
+- Project skills live in `.agents/skills/` (one copy for every agent);
+  `node scripts/link-agent-skills.mjs` links `.claude/skills` to it.
+- Follow `docs/ENGINEERING_STANDARDS.md` and `docs/SECURITY_AND_PRIVACY.md`:
+  code a junior can maintain, every check reported as PASS, FAIL or NOT RUN
+  with its command.
+- Before changing search relevance, run
+  `node --env-file=.env --import tsx scripts/run-evals.ts` and compare with
+  `docs/eval-baseline.md`; never edit a labelled set to make a run pass.
+
 ## Quality invariants
 
 ### Ten-option completion (owner decision, 2026-10-30)

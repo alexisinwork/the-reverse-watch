@@ -33,7 +33,11 @@ Every change reports before/after numbers for each rule.
 | Phase 0 episode short links | done, verified on production | `4be1572`, `docs/episode-links.md` |
 | Phase 0 public portfolio demo | waiting for the owner: needs a new production partner key (an access key needs explicit permission) and a `personal-website` deployment | |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
-| Phase 5 legacy archive, starter-kit skills, CI, fonts | pending (moved before v2: less code to port) | |
+| Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
+| Phase 5 security checks (gitleaks, Semgrep, npm audit), Dependabot | done, green on `3031e0d` | `.github/workflows/security.yml`, `docs/production-readiness.md` |
+| Phase 5 self-hosted fonts | done, verified on production | `0474d57` |
+| Phase 5 starter-kit skills, standards, continuity docs | done | `.agents/skills/`, `docs/NEXT_CHAT.md`, `docs/OWNER_QUESTIONS.md`, `docs/decisions/DECISION_REGISTER.md` |
+| Phase 5 home page under the 150 KB JS budget | waiting for the owner (Sentry loading decision) | `docs/OWNER_QUESTIONS.md` #7 |
 | Phases 2–4 Next.js v2 | pending | |
 | One-command verification and final report | pending | |
 
@@ -65,5 +69,6 @@ test partner site allowance.
 
 ## Next step
 
-Phase 5: archive the unused legacy code to a branch and tag, add the
-EstateVanta kit skills and CI checks, self-host fonts, trim the home bundle.
+Phases 2–4 (version 2 on the starter kit) start as their own branch and
+session once the owner confirms the plan (`docs/OWNER_QUESTIONS.md` #9); the
+one-command verification (`scripts/verify-all.ts`) runs every check above.
