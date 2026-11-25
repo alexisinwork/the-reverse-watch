@@ -60,10 +60,14 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
    (`domain/quiz-form.ts`) and validates them against the answer schema
    (`domain/questionnaire-v4.ts`: price ranges, wrist, diameter range).
 3. **Search** (`domain/quiz-search.server.ts`):
-   - filters the **watch catalogue** in code (`domain/watch-catalogue.ts`:
-     style, price in the visitor's currency, diameter, water resistance,
-     movement, nickel, functions). Matching itself needs no AI; cold database
-     loading and first-use checks can take time.
+   - asks the database for the rows this answer could select
+     (`quizCatalogueWindow` in `domain/watch-catalogue.ts`, migration 0115:
+     price inside the budget in each currency, case diameter within 3 mm of
+     the chosen range, a stated movement). The exact quiz rules then run in
+     code (style, price, diameter, water resistance, movement, nickel,
+     functions), and full rows are read only for the watches shown. No AI is
+     involved. `scripts/check-quiz-window-equivalence.ts` proves on the real
+     catalogue that this selects exactly what reading the whole pool did.
    - Above 10k, or when fewer than ten confirmed watches fit, the **live
      search** runs (`domain/quiz-live-search.server.ts`) and its finds are
      added to the catalogue as pending.

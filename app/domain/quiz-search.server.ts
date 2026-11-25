@@ -1,8 +1,10 @@
 /**
- * Quiz answers are filtered from the catalogue in code, so they are
- * code-filtered. Above 10k, or where the catalogue has fewer than ten
- * confirmed fits, the stored or live search can supplement them only after
- * the current catalogue facts satisfy the same constraints.
+ * Quiz answers come from the catalogue. The database returns the rows one
+ * answer could select (`quizCatalogueWindow`, migration 0115) and the exact
+ * quiz rules run on them in code; full rows are fetched only for the watches
+ * shown. Above 10k, or where the catalogue has fewer than ten confirmed fits,
+ * the stored or live search can supplement them only after the current
+ * catalogue facts satisfy the same constraints.
  */
 import { quizCacheInput } from "./quiz-live-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
@@ -32,12 +34,17 @@ import {
   nearFits,
   quizMissLabels,
   QUIZ_RESULT_LIMIT,
+  quizCatalogueWindow,
   stylesForScenarios,
+  type CatalogueMatchFacts,
   type CatalogueWatch,
 } from "./watch-catalogue";
 import {
   catalogueClient,
-  loadCatalogueCached,
+  loadCatalogueRowsById,
+  loadPoolIdentityKeysCached,
+  loadQuizWindow,
+  lookupPoolRows,
   type CatalogueClient,
 } from "./watch-catalogue.server";
 import { cacheCompleteSearch } from "./complete-search-cache.server";
@@ -146,6 +153,59 @@ function sourcedQuizSuggestion(
   );
 }
 
+/**
+ * Turns selected window rows into result cards. The window carries only the
+ * facts the rules read, so each shown watch's full row (price evidence,
+ * source details) is fetched once per request. If that read fails, the
+ * watches are left out, as when the catalogue cannot be read at all.
+ */
+function catalogueCards(client: CatalogueClient | null) {
+  const full = new Map<string, CatalogueWatch>();
+  const rowsFor = async (rows: readonly CatalogueMatchFacts[]) => {
+    const missing = rows.map((row) => row.id).filter((id) => !full.has(id));
+    if (client && missing.length) {
+      try {
+        for (const row of await loadCatalogueRowsById(client, missing)) {
+          full.set(row.id, row);
+        }
+      } catch (error) {
+        logError("catalogue_row_read_error", error);
+      }
+    }
+    return rows.flatMap((row) => {
+      const found = full.get(row.id);
+      return found ? [found] : [];
+    });
+  };
+  return {
+    rowsFor,
+    async found(rows: readonly CatalogueMatchFacts[]) {
+      return (await rowsFor(rows))
+        .map(catalogueToFoundWatch)
+        .filter((watch): watch is FoundWatch => watch !== null);
+    },
+    /** After new facts are published, shown rows are read again. */
+    forget() {
+      full.clear();
+    },
+  };
+}
+
+/** The pool rows a live or saved result could match: by identity key and by
+ * brand and reference (qualifyingLiveWatches and the review-status lookup). */
+function liveLookupKeys(watches: readonly FoundWatch[]) {
+  return {
+    identityKeys: watches.map(watchKey),
+    references: watches.flatMap((watch) =>
+      watch.brand &&
+      watch.referenceCode &&
+      normalizeReference(watch.referenceCode)
+        ? [{ brand: watch.brand, referenceCode: watch.referenceCode }]
+        : [],
+    ),
+  };
+}
+
 /** Source-checked identity alone does not prove the watch meets a quiz.
  * Require one exact current catalogue record with all active facts. */
 function qualifyingLiveWatches(
@@ -197,30 +257,33 @@ async function searchQuizBeforeDeduplication(
 ): Promise<AiSearchView> {
   report?.({ text: "Checking The Reserve's catalogue of confirmed watches…" });
   const range = findPriceRange(profile.priceRange)!;
-  let catalogue: CatalogueWatch[] = [];
+  // Only the rows this answer could select (see quizCatalogueWindow).
+  let catalogue: CatalogueMatchFacts[] = [];
   let fx: FxTable | null = null;
+  let catalogueRead = false;
+  const cards = catalogueCards(client);
   if (client) {
     try {
-      [catalogue, fx] = await Promise.all([
-        loadCatalogueCached(client),
-        loadFx(),
-      ]);
+      const loadedFx = await loadFx();
+      const window = await loadQuizWindow(
+        client,
+        quizCatalogueWindow(profile, loadedFx),
+      );
+      catalogue = window;
+      fx = loadedFx;
+      catalogueRead = true;
     } catch (error) {
       logError("catalogue_read_error", error);
     }
   }
   const matched = matchCatalogue(catalogue, profile, fx);
-  const main = matched.main
-    .map(catalogueToFoundWatch)
-    .filter((watch): watch is FoundWatch => watch !== null);
-  const alsoWorth = matched.alsoWorth
-    .map(catalogueToFoundWatch)
-    .filter((watch): watch is FoundWatch => watch !== null);
+  const main = await cards.found(matched.main);
+  const alsoWorth = await cards.found(matched.alsoWorth);
 
   // Free places on the shortlist go to watches in the visitor's price range
   // that miss a softer answer (such as water resistance), each marked
   // with what it misses (owner decision, 2026-09-30).
-  const withNearFits = (watches: FoundWatch[]) => {
+  const withNearFits = async (watches: FoundWatch[]) => {
     const taken = new Set([...watches, ...alsoWorth].map(watchKey));
     const close = nearFits(
       catalogue,
@@ -236,15 +299,26 @@ async function searchQuizBeforeDeduplication(
       QUIZ_RESULT_LIMIT * 3 - watches.length - alsoWorth.length - close.length,
       new Set([...taken, ...close.map(({ watch }) => watch.identityKey)]),
     );
-    const extra = [...close, ...broader].flatMap(({ watch, misses }) => {
-      const found = catalogueToFoundWatch(watch);
+    const entries = [...close, ...broader];
+    const fullRows = new Map(
+      (await cards.rowsFor(entries.map(({ watch }) => watch))).map((row) => [
+        row.id,
+        row,
+      ]),
+    );
+    const extra = entries.flatMap(({ watch, misses }) => {
+      const row = fullRows.get(watch.id);
+      if (!row) {
+        return [];
+      }
+      const found = catalogueToFoundWatch(row);
       return found
         ? [
             {
               ...found,
               details: {
                 ...found.details,
-                misses: quizMissLabels(watch, profile, misses),
+                misses: quizMissLabels(row, profile, misses),
               },
             },
           ]
@@ -261,7 +335,7 @@ async function searchQuizBeforeDeduplication(
     report?.({
       text: `Found ${main.length} catalogue watches that meet every answer.`,
     });
-    const filled = withNearFits(main);
+    const filled = await withNearFits(main);
     return {
       status: "found",
       watches: filled.watches,
@@ -279,28 +353,50 @@ async function searchQuizBeforeDeduplication(
         ? `The catalogue has ${main.length} confirmed ${main.length === 1 ? "fit" : "fits"}; checking saved research for more…`
         : "No catalogue watch fits every answer yet; checking saved research…",
   });
-  const knownIdentities = new Set(catalogue.map(watchKey));
-  const fetched = await (runLive
-    ? runLive()
-    : searchWithCoverage(
-        {
-          kind: "quiz",
-          cacheInput: quizCacheInput(profile),
-        },
-        meteredSearchOptions({ client, report, quizProfile: profile }),
-        {
-          localCandidates: [...withNearFits(main).watches, ...alsoWorth],
-          additionalCandidate: (watch) =>
-            knownIdentities.has(watchKey(watch))
-              ? null
-              : sourcedQuizSuggestion(watch, profile, fx),
-        },
-      ));
+  const searchSavedResearch = async () => {
+    // As before, a catalogue that could not be read knows no identities.
+    let knownIdentities: ReadonlySet<string> = new Set<string>();
+    if (client && catalogueRead) {
+      try {
+        knownIdentities = await loadPoolIdentityKeysCached(client);
+      } catch (error) {
+        logError("catalogue_read_error", error);
+      }
+    }
+    const localCandidates = [
+      ...(await withNearFits(main)).watches,
+      ...alsoWorth,
+    ];
+    return searchWithCoverage(
+      {
+        kind: "quiz",
+        cacheInput: quizCacheInput(profile),
+      },
+      meteredSearchOptions({ client, report, quizProfile: profile }),
+      {
+        localCandidates,
+        additionalCandidate: (watch) =>
+          knownIdentities.has(watchKey(watch))
+            ? null
+            : sourcedQuizSuggestion(watch, profile, fx),
+      },
+    );
+  };
+  const fetched = await (runLive ? runLive() : searchSavedResearch());
   // Atomic publication can fill facts in master. Re-read before applying the
   // hard filters, including on valid-cache hits, so newly saved data participates.
+  let poolMatches: CatalogueWatch[] = [];
   if (fetched.status === "found" && client) {
     try {
-      catalogue = await loadCatalogueCached(client);
+      catalogue = await loadQuizWindow(
+        client,
+        quizCatalogueWindow(profile, fx),
+      );
+      cards.forget();
+      poolMatches = await lookupPoolRows(
+        client,
+        liveLookupKeys(fetched.watches),
+      );
     } catch (error) {
       logError("catalogue_refresh_error", error);
       return { status: "unavailable" };
@@ -308,7 +404,7 @@ async function searchQuizBeforeDeduplication(
   }
   const screened =
     fetched.status === "found"
-      ? qualifyingLiveWatches(fetched.watches, catalogue, profile, fx)
+      ? qualifyingLiveWatches(fetched.watches, poolMatches, profile, fx)
       : [];
   if (!client && fetched.status === "found") return { status: "unavailable" };
   const live: AiSearchView =
@@ -328,7 +424,7 @@ async function searchQuizBeforeDeduplication(
   if (live.status !== "found") {
     // The live search found nothing or is down (for example both AI
     // providers failing): the catalogue still answers, never an empty page.
-    const filled = withNearFits(main);
+    const filled = await withNearFits(main);
     if (filled.watches.length === 0 && alsoWorth.length === 0) return live;
     const lead =
       main.length > 0
@@ -348,7 +444,7 @@ async function searchQuizBeforeDeduplication(
     };
   }
 
-  const known = new Map(catalogue.map((watch) => [watch.identityKey, watch]));
+  const known = new Map(poolMatches.map((watch) => [watch.identityKey, watch]));
   const seen = new Set(main.map(watchKey));
   const liveWatches = live.watches
     .filter((watch) => !seen.has(watchKey(watch)))
@@ -360,7 +456,7 @@ async function searchQuizBeforeDeduplication(
           known.get(watchKey(watch))?.reviewStatus ?? ("pending" as const),
       },
     }));
-  const filled = withNearFits(
+  const filled = await withNearFits(
     [...main, ...liveWatches].slice(0, QUIZ_RESULT_LIMIT),
   );
   if (!liveWatches.length && main.length) {

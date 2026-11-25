@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { AiSearchView, ProgressEvent } from "./ai-watch-types";
 import type { ProfileV4 } from "./questionnaire-v4";
 import { searchQuiz } from "./quiz-search.server";
+import { QUIZ_WINDOW_COLUMNS } from "./watch-catalogue";
 import {
   clearCatalogueCache,
   type CatalogueClient,
@@ -55,8 +56,29 @@ function client(rows: unknown[], unpriced: unknown[] = []) {
   const fetchImpl = vi.fn(
     async (input: string | URL | Request, init?: RequestInit) => {
       const url = String(input);
+      const body = (init?.body ? JSON.parse(String(init.body)) : {}) as {
+        p_ids?: string[];
+      };
+      const all = rows as Record<string, unknown>[];
       if (url.endsWith("watch_catalogue_recommendation_page_v1"))
         return Response.json(rows);
+      // The fake database returns every row for the window and lookups: the
+      // quiz rules in code must still pick exactly the right ones.
+      if (url.endsWith("watch_catalogue_quiz_window_v1"))
+        return Response.json({
+          columns: QUIZ_WINDOW_COLUMNS,
+          rows: all.map((row) =>
+            QUIZ_WINDOW_COLUMNS.map((column) => row[column] ?? null),
+          ),
+        });
+      if (url.endsWith("watch_catalogue_rows_by_id_v1"))
+        return Response.json(
+          all.filter((row) => (body.p_ids ?? []).includes(String(row.id))),
+        );
+      if (url.endsWith("watch_catalogue_pool_lookup_v1"))
+        return Response.json(rows);
+      if (url.endsWith("watch_catalogue_pool_identity_keys_v1"))
+        return Response.json(all.map((row) => row.identityKey));
       if (url.endsWith("watch_catalogue_unpriced_candidates_v1"))
         return Response.json(unpriced);
       if (url.endsWith("watch_catalogue_upsert_v1")) {

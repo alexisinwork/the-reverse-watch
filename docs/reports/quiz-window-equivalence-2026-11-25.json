@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-25T21:06:51.105Z",
+  "fxDate": "2026-11-25",
+  "wholePool": {
+    "rows": 25014,
+    "readMs": 8840
+  },
+  "poolIdentityKeys": {
+    "keys": 25014,
+    "readMs": 263
+  },
+  "profiles": 64,
+  "window": {
+    "rowsMin": 8,
+    "rowsMedian": 617,
+    "rowsMax": 1802,
+    "readMsP50": 146,
+    "readMsP95": 255,
+    "readMsMax": 331
+  },
+  "compared": {
+    "exact": 498,
+    "close": 976,
+    "broader": 236,
+    "hydrated": 1710
+  },
+  "lookupsCompared": 60,
+  "differences": [],
+  "result": "PASS"
+}

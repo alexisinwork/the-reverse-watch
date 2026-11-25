@@ -1,7 +1,9 @@
 /**
  * The watch catalogue: individual watches with checked facts and a review
- * status (migration 0071). Quiz answers are filtered from it in code; a
- * fact the catalogue does not hold never satisfies an active filter.
+ * status (migration 0071). The database returns the rows one quiz answer
+ * could select (migration 0115, `quizCatalogueWindow`); the exact quiz rules
+ * below then run in code. A fact the catalogue does not hold never satisfies
+ * an active filter.
  */
 import { z } from "zod";
 
@@ -226,9 +228,107 @@ export const catalogueWatchSchema = z.object({
 
 export type CatalogueWatch = z.infer<typeof catalogueWatchSchema>;
 
+/**
+ * The facts the quiz rules and ranking read, in the order the database
+ * window returns them (migration 0115). Evidence, history and source details
+ * are fetched only for the watches a result shows.
+ */
+export const QUIZ_WINDOW_COLUMNS = [
+  "id",
+  "identityKey",
+  "brand",
+  "model",
+  "referenceCode",
+  "referenceConfirmed",
+  "styles",
+  "caseDiameterMm",
+  "caseThicknessMm",
+  "caseShape",
+  "waterResistanceM",
+  "movement",
+  "inHouseCalibre",
+  "crystal",
+  "displayCaseback",
+  "complications",
+  "caseMaterial",
+  "casebackMaterial",
+  "strapMaterial",
+  "priceAmount",
+  "priceCurrency",
+  "priceStatus",
+  "sourceUrl",
+  "imageUrl",
+  "reviewStatus",
+] as const satisfies readonly (keyof CatalogueWatch)[];
+
+export const catalogueMatchFactsSchema = catalogueWatchSchema.pick(
+  Object.fromEntries(QUIZ_WINDOW_COLUMNS.map((key) => [key, true])) as {
+    [K in (typeof QUIZ_WINDOW_COLUMNS)[number]]: true;
+  },
+);
+
+/** A full catalogue row also satisfies this, so the rules accept either. */
+export type CatalogueMatchFacts = z.infer<typeof catalogueMatchFactsSchema>;
+
+/** The database window for one quiz answer: every row any shortlist, close
+ * fit or broader close fit could use, and usually some more. */
+export type QuizCatalogueWindow = {
+  priceBounds: { currency: string; minimum: number; maximum: number | null }[];
+  minDiameterMm: number;
+  maxDiameterMm: number;
+  requireNickelFacts: boolean;
+};
+
+// Bounds are widened so floating-point conversion can only add rows; the
+// exact rules in this file still decide. Neither number is a tuned value.
+const WINDOW_PRICE_SLACK = 0.001;
+const WINDOW_DIAMETER_SLACK_MM = 0.001;
+// broaderNearFits accepts up to this far outside the chosen diameter range.
+export const BROADER_DIAMETER_MM = 3;
+
+export function quizCatalogueWindow(
+  profile: ProfileV4,
+  fx: FxTable | null,
+): QuizCatalogueWindow {
+  const range = findPriceRange(profile.priceRange)!;
+  const budget = profile.budgetCurrency.toUpperCase();
+  const bound = (factor: number) => ({
+    minimum: range.minimum * factor * (1 - WINDOW_PRICE_SLACK),
+    maximum:
+      range.maximum === null
+        ? null
+        : range.maximum * factor * (1 + WINDOW_PRICE_SLACK),
+  });
+  // priceIn converts a watch's price into the budget currency; the same
+  // rates convert the budget into each watch currency here.
+  const priceBounds = [{ currency: budget, ...bound(1) }];
+  for (const currency of fx ? Object.keys(fx.perEur) : []) {
+    const code = currency.toUpperCase();
+    if (code === budget) {
+      continue;
+    }
+    const factor = convert(1, budget, code, fx!);
+    if (factor !== null && Number.isFinite(factor) && factor > 0) {
+      priceBounds.push({ currency: code, ...bound(factor) });
+    }
+  }
+  const diameter = diameterRangeFor(profile);
+  return {
+    priceBounds,
+    minDiameterMm:
+      diameter.minimumMm - BROADER_DIAMETER_MM - WINDOW_DIAMETER_SLACK_MM,
+    maxDiameterMm:
+      diameter.maximumMm + BROADER_DIAMETER_MM + WINDOW_DIAMETER_SLACK_MM,
+    requireNickelFacts: profile.allergyConstraint === "nickel_contact",
+  };
+}
+
 /** The confirmed price in the given currency, or null when unknown. */
 export function priceIn(
-  watch: CatalogueWatch,
+  watch: Pick<
+    CatalogueMatchFacts,
+    "priceAmount" | "priceCurrency" | "priceStatus"
+  >,
   currency: string,
   fx: FxTable | null,
 ) {
@@ -249,7 +349,7 @@ export function priceIn(
 
 /** Every quiz rule the watch breaks; empty means it fits every answer. */
 export function catalogueRuleFailures(
-  watch: CatalogueWatch,
+  watch: CatalogueMatchFacts,
   profile: ProfileV4,
   fx: FxTable | null,
 ) {
@@ -417,12 +517,12 @@ export function catalogueToFoundWatch(
 }
 
 /** Reviewed watches first, then round-robin by brand for variety. */
-function pick(
-  watches: CatalogueWatch[],
+function pick<T extends CatalogueMatchFacts>(
+  watches: T[],
   limit: number,
   wanted: CatalogueStyle[],
 ) {
-  const score = (watch: CatalogueWatch) =>
+  const score = (watch: T) =>
     (watch.reviewStatus === "approved" ? 100 : 0) +
     watch.styles.filter((style) => wanted.includes(style)).length * 10 +
     (watch.imageUrl ? 1 : 0);
@@ -432,12 +532,12 @@ function pick(
       a.brand.localeCompare(b.brand) ||
       a.model.localeCompare(b.model),
   );
-  const byBrand = new Map<string, CatalogueWatch[]>();
+  const byBrand = new Map<string, T[]>();
   for (const watch of uniqueWatchResults(ordered)) {
     const brand = fold(watch.brand);
     byBrand.set(brand, [...(byBrand.get(brand) ?? []), watch]);
   }
-  const result: CatalogueWatch[] = [];
+  const result: T[] = [];
   for (let round = 0; result.length < limit; round += 1) {
     let added = false;
     for (const group of byBrand.values()) {
@@ -461,8 +561,8 @@ export const CATALOGUE_ALSO_LIMIT = 3;
  * retailer's page; "also worth a look" picks fit every answer too, but
  * their reference is not confirmed.
  */
-export function matchCatalogue(
-  watches: readonly CatalogueWatch[],
+export function matchCatalogue<T extends CatalogueMatchFacts>(
+  watches: readonly T[],
   profile: ProfileV4,
   fx: FxTable | null,
 ) {
@@ -518,8 +618,8 @@ export const MISS_LABELS: Record<string, string> = {
 
 /** Broader suggestions are never exact matches. Keep budget, allergy and the
  * requested movement; allow up to 3 mm beyond size and label every compromise. */
-export function broaderNearFits(
-  watches: readonly CatalogueWatch[],
+export function broaderNearFits<T extends CatalogueMatchFacts>(
+  watches: readonly T[],
   profile: ProfileV4,
   fx: FxTable | null,
   limit: number,
@@ -546,7 +646,7 @@ export function broaderNearFits(
       return [];
     return [{ watch, misses }];
   });
-  const result: { watch: CatalogueWatch; misses: string[] }[] = [];
+  const result: { watch: T; misses: string[] }[] = [];
   for (let count = 1; count <= 4 && result.length < limit; count++) {
     const tier = eligible.filter((entry) => entry.misses.length === count);
     for (const watch of pick(
@@ -564,7 +664,7 @@ export function broaderNearFits(
 }
 
 export function quizMissLabels(
-  watch: CatalogueWatch,
+  watch: CatalogueMatchFacts,
   profile: ProfileV4,
   misses: string[],
 ) {
@@ -606,8 +706,8 @@ export function quizMissLabels(
  * answers (case size, water resistance…), to fill a shortlist that has
  * free places. Fewest misses first; each carries what it misses.
  */
-export function nearFits(
-  watches: readonly CatalogueWatch[],
+export function nearFits<T extends CatalogueMatchFacts>(
+  watches: readonly T[],
   profile: ProfileV4,
   fx: FxTable | null,
   limit: number,
@@ -615,10 +715,7 @@ export function nearFits(
 ) {
   if (limit <= 0) return [];
   const wanted = stylesForScenarios(profile.wearingScenarios);
-  const tiers = new Map<
-    number,
-    { watch: CatalogueWatch; misses: string[] }[]
-  >();
+  const tiers = new Map<number, { watch: T; misses: string[] }[]>();
   for (const watch of watches) {
     if (
       watch.reviewStatus === "rejected" ||
@@ -642,7 +739,7 @@ export function nearFits(
   }
   // One tier at a time, so a two-answer miss never ranks above a one-answer
   // miss; within a tier, reviewed watches and brand variety come first.
-  const result: { watch: CatalogueWatch; misses: string[] }[] = [];
+  const result: { watch: T; misses: string[] }[] = [];
   for (
     let count = 1;
     count <= MAX_MISSES && result.length < limit;

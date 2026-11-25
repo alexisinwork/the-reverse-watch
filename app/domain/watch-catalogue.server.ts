@@ -3,10 +3,14 @@ import { z } from "zod";
 import type { DesignTraits } from "./design-traits";
 import { safeHttpUrl } from "./source-pages.server";
 import {
+  catalogueMatchFactsSchema,
   catalogueWatchSchema,
+  QUIZ_WINDOW_COLUMNS,
+  type CatalogueMatchFacts,
   type CatalogueStyle,
   type CatalogueWatch,
   type PreownedPrice,
+  type QuizCatalogueWindow,
 } from "./watch-catalogue";
 
 export type StoreConfig = { supabaseUrl: string; serviceKey: string };
@@ -145,8 +149,10 @@ async function readCataloguePages(
   throw new Error("Catalogue pagination exceeded its safety bound");
 }
 
-// The quiz reads the whole catalogue (a few thousand small rows) and
-// filters it in code; a short in-memory cache keeps that off the hot path.
+// Alternatives and the archetype still read the whole recommendation pool
+// (25,014 rows, 61 MB on 2026-11-25) and filter it in code; a short
+// in-memory cache keeps that off the hot path. The quiz reads a bounded
+// window instead (loadQuizWindow).
 const CACHE_MS = 5 * 60 * 1_000;
 let cached: { watches: CatalogueWatch[]; expiresAt: number } | null = null;
 let loading: Promise<CatalogueWatch[]> | null = null;
@@ -176,6 +182,139 @@ export function clearCatalogueCache() {
   cached = null;
   loading = null;
   cacheGeneration++;
+  poolKeys = null;
+}
+
+const quizWindowSchema = z.object({
+  columns: z.array(z.string()),
+  rows: z.array(z.array(z.unknown())),
+});
+
+/** The rows one quiz answer could select, with only the facts its rules read
+ * (migration 0115). The quiz rules still run on them in code. */
+export async function loadQuizWindow(
+  client: CatalogueClient,
+  window: QuizCatalogueWindow,
+): Promise<CatalogueMatchFacts[]> {
+  const payload = quizWindowSchema.parse(
+    await rpc(
+      client,
+      "watch_catalogue_quiz_window_v1",
+      {
+        p_price_bounds: window.priceBounds,
+        p_min_diameter: window.minDiameterMm,
+        p_max_diameter: window.maxDiameterMm,
+        p_require_nickel_facts: window.requireNickelFacts,
+      },
+      15_000,
+    ),
+  );
+  // Columns travel once instead of on every row. A changed column list is a
+  // deployment mismatch: fail loudly rather than misread every row.
+  if (
+    payload.columns.length !== QUIZ_WINDOW_COLUMNS.length ||
+    payload.columns.some(
+      (column, index) => column !== QUIZ_WINDOW_COLUMNS[index],
+    )
+  ) {
+    throw new Error(
+      "watch_catalogue_quiz_window_v1 returned unexpected columns",
+    );
+  }
+  return z
+    .array(catalogueMatchFactsSchema)
+    .parse(
+      payload.rows.map((row) =>
+        Object.fromEntries(
+          QUIZ_WINDOW_COLUMNS.map((column, index) => [column, row[index]]),
+        ),
+      ),
+    );
+}
+
+const ROWS_BY_ID_LIMIT = 200;
+
+/** Full rows, with evidence, for the watches a result shows. A row that left
+ * the recommendation pool meanwhile is simply absent. */
+export async function loadCatalogueRowsById(
+  client: CatalogueClient,
+  ids: readonly string[],
+): Promise<CatalogueWatch[]> {
+  const unique = [...new Set(ids)];
+  const rows: CatalogueWatch[] = [];
+  for (let start = 0; start < unique.length; start += ROWS_BY_ID_LIMIT) {
+    rows.push(
+      ...listSchema.parse(
+        await rpc(
+          client,
+          "watch_catalogue_rows_by_id_v1",
+          { p_ids: unique.slice(start, start + ROWS_BY_ID_LIMIT) },
+          10_000,
+        ),
+      ),
+    );
+  }
+  return rows;
+}
+
+const POOL_LOOKUP_LIMIT = 100;
+
+/** Recommendation-pool rows for specific watches: by identity key, or by
+ * brand and reference normalized like the exact-reference index. Callers
+ * still apply their own exact matching to what comes back. */
+export async function lookupPoolRows(
+  client: CatalogueClient,
+  keys: {
+    identityKeys: readonly string[];
+    references: readonly { brand: string; referenceCode: string }[];
+  },
+): Promise<CatalogueWatch[]> {
+  const identityKeys = [...new Set(keys.identityKeys)];
+  const references = keys.references;
+  const byId = new Map<string, CatalogueWatch>();
+  const batches = Math.max(
+    Math.ceil(identityKeys.length / POOL_LOOKUP_LIMIT),
+    Math.ceil(references.length / POOL_LOOKUP_LIMIT),
+  );
+  for (let batch = 0; batch < batches; batch++) {
+    const start = batch * POOL_LOOKUP_LIMIT;
+    const found = listSchema.parse(
+      await rpc(
+        client,
+        "watch_catalogue_pool_lookup_v1",
+        {
+          p_identity_keys: identityKeys.slice(start, start + POOL_LOOKUP_LIMIT),
+          p_references: references.slice(start, start + POOL_LOOKUP_LIMIT),
+        },
+        10_000,
+      ),
+    );
+    for (const row of found) {
+      byId.set(row.id, row);
+    }
+  }
+  // Callers match by key and count matches, so order carries no meaning.
+  return [...byId.values()];
+}
+
+// Every identity in the recommendation pool (about 0.6 MB): lets saved
+// research tell a watch the catalogue already holds from a new suggestion.
+let poolKeys: { keys: ReadonlySet<string>; expiresAt: number } | null = null;
+
+export async function loadPoolIdentityKeysCached(
+  client: CatalogueClient,
+  now = Date.now(),
+): Promise<ReadonlySet<string>> {
+  if (poolKeys && poolKeys.expiresAt > now) return poolKeys.keys;
+  const keys = new Set(
+    z
+      .array(z.string())
+      .parse(
+        await rpc(client, "watch_catalogue_pool_identity_keys_v1", {}, 15_000),
+      ),
+  );
+  poolKeys = { keys, expiresAt: now + CACHE_MS };
+  return keys;
 }
 
 export async function catalogueIdentityKeys(client: CatalogueClient) {

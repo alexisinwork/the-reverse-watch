@@ -29,15 +29,8 @@ vi.mock("../domain/ai-watch-store.server", () => ({
   ...aiSearchMock,
   loadAiWatchStoreConfig: () => null,
 }));
-vi.mock("../domain/watch-catalogue.server", async (importOriginal) => ({
-  ...(await importOriginal<
-    typeof import("../domain/watch-catalogue.server")
-  >()),
-  catalogueClient: () => ({
-    config: { supabaseUrl: "https://db.example", serviceKey: "test" },
-    fetchImpl: fetch,
-  }),
-  loadCatalogueCached: async () => [
+vi.mock("../domain/watch-catalogue.server", async (importOriginal) => {
+  const rows = [
     {
       id: "00000000-0000-4000-8000-000000000001",
       identityKey: "seiko|r:spb143",
@@ -74,8 +67,26 @@ vi.mock("../domain/watch-catalogue.server", async (importOriginal) => ({
       createdAt: "2026-09-30T00:00:00Z",
       updatedAt: "2026-09-30T00:00:00Z",
     },
-  ],
-}));
+  ];
+  return {
+    ...(await importOriginal<
+      typeof import("../domain/watch-catalogue.server")
+    >()),
+    catalogueClient: () => ({
+      config: { supabaseUrl: "https://db.example", serviceKey: "test" },
+      fetchImpl: fetch,
+    }),
+    loadCatalogueCached: async () => rows,
+    // The quiz's database reads return every fixture row; the quiz rules in
+    // code still decide what is shown.
+    loadQuizWindow: async () => rows,
+    loadCatalogueRowsById: async (_client: unknown, ids: readonly string[]) =>
+      rows.filter((row) => ids.includes(row.id)),
+    lookupPoolRows: async () => rows,
+    loadPoolIdentityKeysCached: async () =>
+      new Set(rows.map((row) => row.identityKey)),
+  };
+});
 vi.mock("../domain/fx.server", async (importOriginal) => ({
   ...(await importOriginal<typeof import("../domain/fx.server")>()),
   loadFxTable: async () => ({
