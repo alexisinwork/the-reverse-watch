@@ -307,6 +307,10 @@ describe("coverage around checked snapshots", () => {
       { store },
       { search: vi.fn().mockResolvedValue(found()), enrich: async () => [] },
     );
-    expect(result).toMatchObject({ coverage: { total: 1, status: "partial" } });
+    // Unchecked candidates are dropped; the one checked sighting remains,
+    // which is a complete film answer.
+    expect(result).toMatchObject({
+      coverage: { total: 1, additionalCandidates: 0, status: "target_met" },
+    });
   });
 });

@@ -9,6 +9,7 @@ import { hydrateCoverageCandidates } from "./coverage-catalogue.server";
 import { safeHttpUrl } from "./source-pages.server";
 import {
   coverSearchResults,
+  FILM_RESULT_TARGET,
   SEARCH_RESULT_TARGET,
   unverifiedCandidate,
 } from "./search-coverage";
@@ -65,7 +66,11 @@ export async function searchWithCoverage(
   // short answer is complete (owner decision, 2026-11-25). The quiz,
   // archetype and alternatives keep the ten-option target.
   const padsToTen = !subject;
-  const completeAt = padsToTen ? SEARCH_RESULT_TARGET : 1;
+  const completeAt = padsToTen ? SEARCH_RESULT_TARGET : FILM_RESULT_TARGET;
+  const coverSearchResultsAt = (
+    view: AiSearchView,
+    extra: readonly FoundWatch[] = [],
+  ) => coverSearchResults(view, extra, completeAt);
   const read = async (cacheInput: unknown) => {
     if (!store) return [];
     try {
@@ -129,7 +134,7 @@ export async function searchWithCoverage(
           aiSearchCacheKey(request.kind, input),
         ).catch(() => null)
       : null;
-    const cached = coverSearchResults(
+    const cached = coverSearchResultsAt(
       snapshot
         ? screen({
             status: "found",
@@ -238,7 +243,7 @@ export async function searchWithCoverage(
       () => [],
     ),
   );
-  let initial = coverSearchResults(result, candidates);
+  let initial = coverSearchResultsAt(result, candidates);
   // Walk reusable partial research, but make at most one new paid discovery.
   // Each pass excludes the identities already found so a scarce saved draft
   // cannot become a permanent stopping point below ten distinct options.
@@ -285,7 +290,7 @@ export async function searchWithCoverage(
       ...candidates,
       ...label(await enrich(prepare(await read(topupInput))).catch(() => [])),
     ];
-    const next = coverSearchResults(result, candidates);
+    const next = coverSearchResultsAt(result, candidates);
     if (
       extra.status !== "found" ||
       !extra.fromCache ||
@@ -303,20 +308,20 @@ export async function searchWithCoverage(
       .length >= SEARCH_RESULT_TARGET
   )
     return request.kind === "quiz"
-      ? coverSearchResults(result)
+      ? coverSearchResultsAt(result)
       : cacheCompleteSearch(
           request.kind,
           input,
-          coverSearchResults(result),
+          coverSearchResultsAt(result),
           store ? { config: store, fetchImpl } : null,
           completeAt,
         );
   return request.kind === "quiz"
-    ? coverSearchResults(result, candidates)
+    ? coverSearchResultsAt(result, candidates)
     : cacheCompleteSearch(
         request.kind,
         input,
-        coverSearchResults(result, candidates),
+        coverSearchResultsAt(result, candidates),
         store ? { config: store, fetchImpl } : null,
         completeAt,
       );

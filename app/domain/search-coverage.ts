@@ -3,6 +3,9 @@ import { uniqueSearchView, uniqueWatchResults } from "./watch-result-dedup";
 
 export const SEARCH_RESULT_MINIMUM = 10;
 export const SEARCH_RESULT_TARGET = 10;
+/** Film and people search is complete with its confirmed sightings, however
+ * few (owner decision, 2026-11-25); it still shows at most ten cards. */
+export const FILM_RESULT_TARGET = 1;
 
 export function unverifiedCandidate(
   watch: FoundWatch,
@@ -32,7 +35,10 @@ export function unverifiedCandidate(
 export function coverSearchResults(
   base: AiSearchView,
   candidates: readonly FoundWatch[] = [],
+  /** Cards that make the answer complete: ten, or one for film search. */
+  target = SEARCH_RESULT_TARGET,
 ): AiSearchView {
+  const minimum = Math.min(SEARCH_RESULT_MINIMUM, target);
   const checked = uniqueSearchView(base);
   const main = checked.status === "found" ? checked.watches : [];
   const other = checked.status === "found" ? (checked.alsoWorth ?? []) : [];
@@ -51,8 +57,8 @@ export function coverSearchResults(
           ...base,
           fromCache: false,
           coverage: {
-            minimum: SEARCH_RESULT_MINIMUM,
-            target: SEARCH_RESULT_TARGET,
+            minimum,
+            target,
             total: 0,
             additionalCandidates: 0,
             status: "partial",
@@ -64,9 +70,9 @@ export function coverSearchResults(
   const added = selected.filter((watch) => !existing.includes(watch));
   const total = selected.length;
   const status =
-    total >= SEARCH_RESULT_TARGET
+    total >= target
       ? "target_met"
-      : total >= SEARCH_RESULT_MINIMUM
+      : total >= minimum
         ? "minimum_met"
         : "partial";
   const note = added.length
@@ -79,9 +85,7 @@ export function coverSearchResults(
     status: "found",
     // Reusable evidence is not a completed answer. Shortlists remain open.
     fromCache:
-      total >= SEARCH_RESULT_TARGET &&
-      checked.status === "found" &&
-      checked.fromCache,
+      total >= target && checked.status === "found" && checked.fromCache,
     watches,
     ...(checked.status === "found" && checked.alsoWorth ? { alsoWorth } : {}),
     summary:
@@ -89,8 +93,8 @@ export function coverSearchResults(
         ? checked.summary
         : "Watch options from available research.") + note,
     coverage: {
-      minimum: SEARCH_RESULT_MINIMUM,
-      target: SEARCH_RESULT_TARGET,
+      minimum,
+      target,
       total,
       additionalCandidates: selected.filter(
         (watch) => watch.details.verificationStatus === "unverified",

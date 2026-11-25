@@ -1,4 +1,4 @@
-import { Form, useLoaderData } from "react-router";
+import { data, Form, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-find";
 import {
@@ -8,6 +8,12 @@ import {
   useSearchingHere,
 } from "../components/surface";
 import { WatchResults } from "../components/watch-results";
+import {
+  FINISHED_RESULT_CACHE_CONTROL,
+  FINISHED_RESULT_WAIT_MS,
+  PUBLIC_PAGE_CACHE_CONTROL,
+  searchPageHeaders,
+} from "../domain/cache-policy";
 import { parseDiscoveryHandoff } from "../domain/discovery-selection";
 import { readFilmQuery, runFilmSearch } from "../domain/film-search-run.server";
 import {
@@ -33,21 +39,29 @@ const EXAMPLES: { query: string; kind: FilmSubjectKind }[] = [
   { query: "The Bear", kind: "series" },
 ];
 
-export function loader({ request, context }: Route.LoaderArgs) {
+export function headers(args: Route.HeadersArgs) {
+  return searchPageHeaders(args);
+}
+
+export async function loader({ request, context }: Route.LoaderArgs) {
   const url = new URL(request.url);
   const query = readFilmQuery(url.searchParams.get("q"));
   const kind = parseFilmSubjectKind(url.searchParams.get("type"));
   const handoff = parseDiscoveryHandoff(url.searchParams);
   // Both the text and the type are required before anything is searched.
   if (query.length < 2 || !kind) {
-    return {
-      query,
-      kind,
-      handoff,
-      result: null,
-      progress: null,
-      needsType: query.length >= 2 && !kind,
-    };
+    // The empty search page is the same for everyone.
+    return data(
+      {
+        query,
+        kind,
+        handoff,
+        result: null,
+        progress: null,
+        needsType: query.length >= 2 && !kind,
+      },
+      { headers: { "Cache-Control": PUBLIC_PAGE_CACHE_CONTROL } },
+    );
   }
 
   // Streamed: the page renders immediately and the watches arrive after.
@@ -60,6 +74,21 @@ export function loader({ request, context }: Route.LoaderArgs) {
     report: progress.report,
   });
   void result.finally(progress.close);
+  // A finished answer from saved research arrives at once and is the same
+  // for every visitor: send it whole and let the CDN keep it. Anything else
+  // (a new search, a check in progress) streams its steps as before.
+  const quick = await Promise.race([
+    result,
+    new Promise<null>((resolve) =>
+      setTimeout(() => resolve(null), FINISHED_RESULT_WAIT_MS),
+    ),
+  ]);
+  if (quick?.status === "found" && quick.fromCache) {
+    return data(
+      { query, kind, handoff, result: quick, progress: null, needsType: false },
+      { headers: { "Cache-Control": FINISHED_RESULT_CACHE_CONTROL } },
+    );
+  }
   return {
     query,
     kind,

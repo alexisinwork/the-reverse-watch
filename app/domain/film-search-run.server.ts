@@ -17,7 +17,7 @@ import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
 import { fillPhotosFromCatalogue } from "./watch-catalogue.server";
 import { enrichResultWatches } from "./catalogue-result-enrichment.server";
 import { uniqueSearchView } from "./watch-result-dedup";
-import { coverSearchResults } from "./search-coverage";
+import { coverSearchResults, FILM_RESULT_TARGET } from "./search-coverage";
 
 // Stored answers are free; only fresh searches spend provider credit.
 export const FILM_NEW_SEARCH_POLICY: RateLimitPolicy = {
@@ -68,6 +68,8 @@ export async function runFilmSearch({
         await enrichResultWatches(await fillPhotosFromCatalogue(view.watches)),
       ),
     }),
+    [],
+    FILM_RESULT_TARGET,
   );
   return covered.status === "found"
     ? { ...covered, summary: filmSummary(covered.watches) }

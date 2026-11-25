@@ -26,7 +26,7 @@ export async function cacheCompleteSearch(
   client: CatalogueClient | null = catalogueClient(),
   minimumCards = SEARCH_RESULT_TARGET,
 ) {
-  const result = coverSearchResults(view);
+  const result = coverSearchResults(view, [], minimumCards);
   if (
     !client ||
     result.status !== "found" ||

@@ -60,6 +60,13 @@ function loaderArgs(url: string, ip = "203.0.113.7") {
   } as Parameters<typeof loader>[0];
 }
 
+/** The loader returns plain data, or data with cache headers for a finished
+ * answer; tests read the data either way. */
+async function load(args: Parameters<typeof loader>[0]) {
+  const value = await loader(args);
+  return "init" in value && "data" in value ? value.data : value;
+}
+
 describe("find a watch from the screen", () => {
   beforeEach(() => {
     store.searchWithStore.mockReset();
@@ -112,16 +119,49 @@ describe("find a watch from the screen", () => {
     );
   });
 
-  it("does not search for a one-character query", () => {
-    const result = loader(
+  it("lets the CDN keep a finished answer and streams a new search", async () => {
+    const cacheControl = (value: Awaited<ReturnType<typeof loader>>) =>
+      "init" in value && "data" in value
+        ? new Headers(value.init?.headers).get("Cache-Control")
+        : null;
+    store.searchWithStore.mockResolvedValueOnce({
+      ...sighting,
+      fromCache: true,
+    });
+    const finished = await loader(
+      loaderArgs("http://test.local/watches/find?type=actor&q=Daniel+Craig"),
+    );
+    expect(cacheControl(finished)).toContain("s-maxage=");
+
+    store.searchWithStore.mockImplementationOnce(
+      () => new Promise(() => undefined),
+    );
+    vi.useFakeTimers();
+    try {
+      const pending = loader(
+        loaderArgs("http://test.local/watches/find?type=actor&q=New+Person"),
+      );
+      await vi.advanceTimersByTimeAsync(2_000);
+      const streamed = await pending;
+      expect(cacheControl(streamed)).toBeNull();
+      expect("init" in streamed).toBe(false);
+    } finally {
+      vi.useRealTimers();
+    }
+  });
+
+  it("does not search for a one-character query", async () => {
+    const result = await load(
       loaderArgs("http://test.local/watches/find?type=movie&q=x"),
     );
     expect(result.result).toBeNull();
     expect(store.searchWithStore).not.toHaveBeenCalled();
   });
 
-  it("asks for the type instead of searching without one", () => {
-    const result = loader(loaderArgs("http://test.local/watches/find?q=Heat"));
+  it("asks for the type instead of searching without one", async () => {
+    const result = await load(
+      loaderArgs("http://test.local/watches/find?q=Heat"),
+    );
     expect(result.result).toBeNull();
     expect(result.needsType).toBe(true);
     expect(store.searchWithStore).not.toHaveBeenCalled();
@@ -137,10 +177,12 @@ describe("find a watch from the screen", () => {
     const outcomes = [];
     for (let index = 0; index < 13; index += 1) {
       outcomes.push(
-        await loader(
-          loaderArgs(
-            `http://test.local/watches/find?type=movie&q=query-${index}`,
-          ),
+        await (
+          await load(
+            loaderArgs(
+              `http://test.local/watches/find?type=movie&q=query-${index}`,
+            ),
+          )
         ).result,
       );
     }
@@ -150,11 +192,13 @@ describe("find a watch from the screen", () => {
       status: "unavailable",
       reason: "retry_later",
     });
-    const otherVisitor = await loader(
-      loaderArgs(
-        "http://test.local/watches/find?type=movie&q=another",
-        "198.51.100.9",
-      ),
+    const otherVisitor = await (
+      await load(
+        loaderArgs(
+          "http://test.local/watches/find?type=movie&q=another",
+          "198.51.100.9",
+        ),
+      )
     ).result;
     expect(otherVisitor).toMatchObject({ status: "found" });
   });
