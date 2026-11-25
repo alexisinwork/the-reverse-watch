@@ -31,8 +31,8 @@ export function contentSecurityPolicy(
     "default-src 'self'",
     "frame-src https://subscribe-forms.beehiiv.com https://challenges.cloudflare.com",
     "script-src 'self' 'unsafe-inline' https://subscribe-forms.beehiiv.com https://challenges.cloudflare.com",
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-    "font-src https://fonts.gstatic.com",
+    "style-src 'self' 'unsafe-inline'",
+    "font-src 'self'",
     // AI search results link watch photos from arbitrary retailer and
     // manufacturer hosts (the URL is stored, never the file).
     "img-src 'self' data: https:",

@@ -16,8 +16,10 @@
   --color-success: #9fcf8a;
   --color-danger: #ffb4ab;
   --font-sans:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+    "Inter Variable", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --font-display:
+    "Fraunces Variable", "Fraunces", "Iowan Old Style", Georgia, serif;
   --radius-sm: 10px;
   --radius: 16px;
   --radius-lg: 22px;

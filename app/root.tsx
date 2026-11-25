@@ -14,6 +14,11 @@ import type { Route } from "./+types/root";
 import { YouTubeCallout } from "./components/youtube-callout";
 import { InteractionAnalytics } from "./components/interaction-analytics";
 import { requestMiddleware } from "./middleware.server";
+// Self-hosted fonts (owner decision, 2026-11-25): no request to Google's
+// font servers, so visitors' addresses are not shared and nothing outside
+// the site blocks the first paint. Only the subsets a page uses download.
+import "@fontsource-variable/inter/wght.css";
+import "@fontsource-variable/fraunces/opsz.css";
 import "./styles/tokens.css";
 import "./styles/app.css";
 import "./styles/components.css";
@@ -22,16 +27,6 @@ export const middleware: Route.MiddlewareFunction[] = [requestMiddleware];
 
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap",
-  },
 ];
 
 export function redactAnalyticsUrl(event: BeforeSendEvent) {
