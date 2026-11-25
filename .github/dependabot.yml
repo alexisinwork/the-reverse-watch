@@ -1,0 +1,28 @@
+# Weekly grouped dependency updates (EstateVanta starter kit). Major versions
+# are upgraded by hand after reading their migration guides.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      react-router:
+        patterns: ["react-router", "@react-router/*"]
+      react:
+        patterns: ["react", "react-dom", "@types/react", "@types/react-dom"]
+      sentry:
+        patterns: ["@sentry/*"]
+      test-and-build:
+        patterns: ["vitest", "vite", "@vitest/*", "@testing-library/*", "jsdom"]
+      lint:
+        patterns:
+          ["eslint", "@eslint/*", "typescript-eslint", "typescript", "prettier"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

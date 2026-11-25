@@ -1,0 +1,10 @@
+# Text, data and third-party material, not application code.
+docs/
+data/
+.agents/
+build/
+node_modules/
+# Deliberately unsafe test inputs.
+tests/
+**/*.test.ts
+**/*.test.tsx
