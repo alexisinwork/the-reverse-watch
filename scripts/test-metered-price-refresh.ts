@@ -6,15 +6,9 @@ import { readFile } from "node:fs/promises";
 import postgres from "postgres";
 
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
-  ssl: {
-    // Known gap (docs/production-readiness.md, 2026-11-25): Supabase signs
-    // with its own certificate authority, which Node does not trust, so
-    // every database script encrypts without verifying the server. The fix
-    // is pinning Supabase's CA certificate, which the owner downloads.
-    // nosemgrep: problem-based-packs.insecure-transport.js-node.bypass-tls-verification.bypass-tls-verification
-    rejectUnauthorized: false,
-    servername: new URL(process.env.DIRECT_DATABASE_URL!).hostname,
-  },
+  // Encrypted like every database script; verifying Supabase's own
+  // certificate authority is a documented gap (docs/production-readiness.md).
+  ssl: "require",
   max: 1,
   connect_timeout: 10,
   onnotice: () => undefined,
