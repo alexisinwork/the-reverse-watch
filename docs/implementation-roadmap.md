@@ -2436,3 +2436,27 @@ legacy pre-owned lookup and reporting scripts still do.
 - Data gap: only 8 of the 20 owner test-set originals resolve to a watch
   with comparison specifications; the rest stop with "specifications are
   incomplete". Recorded for phase 1.
+
+### Phase 0: confirmed-only film search, quiz close fits, finished-answer CDN (2026-11-25)
+
+Sources `055f39d` and `df78c6d`. Film and people search lists confirmed
+sightings first and the unconfirmed ones in a collapsed "possible
+sightings" block; a finished short answer is complete (`FILM_RESULT_TARGET`),
+cached and never padded with paid discovery. The quiz shows exact matches
+first and close fits under their own heading, naming their case sizes when
+most miss the chosen range. The find page sends a finished answer whole with
+a one-hour CDN lifetime and streams anything else as before.
+
+- PASS `npm run check`: 123 files, 776 tests, build; new tests cover the film
+  policy, the collapsed block, the quiz close-fit section and the CDN choice.
+- PASS production page: Daniel Craig shows one confirmed Aqua Terra card and
+  "9 possible sightings, not confirmed" collapsed (browser check).
+- PASS `scripts/measure-page-speed.ts --label after-finished-cache-2026-11-25`:
+  cached film answers are CDN hits, median first byte Daniel Craig 34 ms
+  (1,376 ms at the start of the day), Heat 36 ms (1,922 ms).
+- Cost evidence from the validation ledger: under the old ten-card rule the
+  short "Heat" answer was never complete, so visits kept starting paid
+  attempts (2026-11-24 twice, 2026-11-25 three times, about $0.0013 each;
+  the three on 2026-11-25 came from this session's own measurements). Under
+  the new policy one attempt checked its five drafts for $0.0217 and stored
+  the answer; later requests are CDN hits with no attempt.
