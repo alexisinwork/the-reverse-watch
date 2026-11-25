@@ -2507,4 +2507,15 @@ before anything used it; `watch_catalogue_name_candidates_v1` stays unused.
   a name without a reference ("Tudor Black Bay 58") 1,197–1,536 ms,
   "Rolex" 579–687 ms; the full saved alternatives answer 7,843 ms on a cold
   instance, then 815–1,399 ms.
+- PASS production after release `e85f307` (three runs, 0 added validation
+  attempts, `docs/reports/catalogue-windows-smoke-after-name-lookups-2026-11-25.json`):
+  "Tudor Black Bay 58" without a reference 506 ms on a new instance, then
+  163–173 ms (median 1,371 → 173 ms); "Rolex" 1,050 ms, then 306–350 ms
+  (median 625 → 350 ms); the full saved alternatives answer 1,102 ms, then
+  596–621 ms.
+- Not changed by this step: the first request to a new function instance
+  still takes 8–10 s (archetype 9,664 ms after this deployment, 8,195 ms
+  before it). Locally, `watch_catalogue_lookup_v1` takes 2 s on cold
+  database buffers and 64 ms warm; the rest is the function starting.
+  Recorded as a follow-up.
 - PASS `npm run check`: 105 files, 669 tests, build.

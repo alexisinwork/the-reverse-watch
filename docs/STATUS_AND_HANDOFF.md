@@ -28,7 +28,7 @@ Every change reports before/after numbers for each rule.
 | Phase 0.2a quiz database window (migration 0115) | done, verified on production | `fd27073`, `docs/reports/quiz-window-equivalence-2026-11-25.json` |
 | Phase 0.2b archetype database window (migration 0116) | done, verified on production | `96e081c`, `docs/reports/archetype-window-equivalence-2026-11-25.json` |
 | Phase 0.2c alternatives name index and window (migration 0117) | done, verified on production | `0698273`, `docs/reports/alternatives-window-equivalence-2026-11-25.json`, `docs/reports/catalogue-windows-smoke-2026-11-25.json` |
-| Phase 0.2d alternatives name lookups through indexes (migrations 0118–0120) | done, verified on production | `docs/reports/name-lookup-equivalence-2026-11-26.json`, `docs/reports/catalogue-windows-smoke-2026-11-26.json` |
+| Phase 0.2d alternatives name lookups through indexes (migrations 0118–0120) | done, verified on production | `e85f307`, `docs/reports/name-lookup-equivalence-2026-11-25.json`, `docs/reports/catalogue-windows-smoke-{before,after}-name-lookups-2026-11-25.json` |
 | Phase 0 film search confirmed-only; quiz exact vs compromise | done, verified on production | `055f39d` |
 | Phase 0 CDN for finished film answers | done, verified on production | `df78c6d`, `docs/reports/page-speed-after-finished-cache-2026-11-25.json` |
 | Phase 0 episode short links | done, verified on production | `4be1572`, `docs/episode-links.md` |
@@ -45,7 +45,7 @@ Every change reports before/after numbers for each rule.
 ## How to verify
 
 One command runs every check below in order and prints PASS, FAIL or NOT RUN
-for each (about ten minutes; it writes `docs/reports/verify-all-<date>.json`):
+for each (about fifteen minutes; it writes `docs/reports/verify-all-<date>.json`):
 
 ```sh
 node --import tsx scripts/verify-all.ts --production
@@ -80,6 +80,8 @@ against the owner's test partner site allowance.
   partner (owner action).
 - Copying secrets into a new hosting project is an owner action; the agent
   never enters API keys or tokens.
+- The first request to a new function instance takes 8–10 s (function start
+  plus cold database buffers); not yet investigated.
 
 ## Next step
 

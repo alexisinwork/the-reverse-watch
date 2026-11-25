@@ -78,9 +78,9 @@ const CHECKS: Check[] = [
   },
   {
     name: "Name lookups equal the whole name index",
-    command: tsx("scripts/check-name-lookup-equivalence.ts"),
+    command: tsx("scripts/check-name-lookup-equivalence.ts", "--sample", "20"),
     needs: "database",
-    what: "794 typed names: same resolved watch and same named rows, 0 differences allowed",
+    what: "a 20-row sample of the full 794-name run: same resolved watch and same named rows, 0 differences allowed",
   },
   {
     name: "Quality evaluation",

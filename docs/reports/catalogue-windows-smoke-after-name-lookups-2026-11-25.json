@@ -1,0 +1,170 @@
+{
+  "note": "Production after release e85f307 (migrations 0118-0120 in use). Three runs of scripts/smoke-catalogue-windows.ts; the first ran on a new function instance.",
+  "runs": [
+    {
+      "at": "2026-11-25T23:52:39.083Z",
+      "base": "https://thereserve.watch",
+      "archetypeCombosWithSavedResults": 2,
+      "results": [
+        {
+          "label": "archetype field_rationalist/first_good_watch",
+          "status": 200,
+          "ms": 9664,
+          "brandFields": 10,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "archetype mechanical_connoisseur/exceptional_object",
+          "status": 200,
+          "ms": 785,
+          "brandFields": 10,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives Tudor Black Bay 58 / USD 2,000 / no quartz",
+          "status": 200,
+          "ms": 1102,
+          "brandFields": 11,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives name only: Tudor Black Bay 58",
+          "status": 200,
+          "ms": 506,
+          "brandFields": 0,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives name only: Rolex",
+          "status": 200,
+          "ms": 1050,
+          "brandFields": 0,
+          "functionRegion": "fra1"
+        }
+      ],
+      "ledger": {
+        "before": {
+          "attempts": 66,
+          "charged": 0.99036
+        },
+        "after": {
+          "attempts": 66,
+          "charged": 0.99036
+        }
+      },
+      "addedAttempts": 0,
+      "addedChargeUsd": 0,
+      "result": "PASS"
+    },
+    {
+      "at": "2026-11-25T23:52:43.828Z",
+      "base": "https://thereserve.watch",
+      "archetypeCombosWithSavedResults": 2,
+      "results": [
+        {
+          "label": "archetype field_rationalist/first_good_watch",
+          "status": 200,
+          "ms": 1035,
+          "brandFields": 10,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "archetype mechanical_connoisseur/exceptional_object",
+          "status": 200,
+          "ms": 869,
+          "brandFields": 10,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives Tudor Black Bay 58 / USD 2,000 / no quartz",
+          "status": 200,
+          "ms": 621,
+          "brandFields": 11,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives name only: Tudor Black Bay 58",
+          "status": 200,
+          "ms": 173,
+          "brandFields": 0,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives name only: Rolex",
+          "status": 200,
+          "ms": 350,
+          "brandFields": 0,
+          "functionRegion": "fra1"
+        }
+      ],
+      "ledger": {
+        "before": {
+          "attempts": 66,
+          "charged": 0.99036
+        },
+        "after": {
+          "attempts": 66,
+          "charged": 0.99036
+        }
+      },
+      "addedAttempts": 0,
+      "addedChargeUsd": 0,
+      "result": "PASS"
+    },
+    {
+      "at": "2026-11-25T23:52:47.978Z",
+      "base": "https://thereserve.watch",
+      "archetypeCombosWithSavedResults": 2,
+      "results": [
+        {
+          "label": "archetype field_rationalist/first_good_watch",
+          "status": 200,
+          "ms": 908,
+          "brandFields": 10,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "archetype mechanical_connoisseur/exceptional_object",
+          "status": 200,
+          "ms": 760,
+          "brandFields": 10,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives Tudor Black Bay 58 / USD 2,000 / no quartz",
+          "status": 200,
+          "ms": 596,
+          "brandFields": 11,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives name only: Tudor Black Bay 58",
+          "status": 200,
+          "ms": 163,
+          "brandFields": 0,
+          "functionRegion": "fra1"
+        },
+        {
+          "label": "alternatives name only: Rolex",
+          "status": 200,
+          "ms": 306,
+          "brandFields": 0,
+          "functionRegion": "fra1"
+        }
+      ],
+      "ledger": {
+        "before": {
+          "attempts": 66,
+          "charged": 0.99036
+        },
+        "after": {
+          "attempts": 66,
+          "charged": 0.99036
+        }
+      },
+      "addedAttempts": 0,
+      "addedChargeUsd": 0,
+      "result": "PASS"
+    }
+  ]
+}

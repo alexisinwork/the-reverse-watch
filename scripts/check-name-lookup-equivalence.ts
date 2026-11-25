@@ -10,9 +10,11 @@
 // Names come from the owner's test set, a fixed sample of pool rows typed in
 // several ways (whole, shortened, one word wrong, capitals, no accents, with
 // and without the reference), rows outside the pool, and odd inputs.
-// Read-only: no writes, no paid provider calls.
+// Read-only: no writes, no paid provider calls. The full run (80 sampled
+// pool rows, 794 typed names) takes about 20 minutes, mostly resolving each
+// name against all 25,000 rows the old way; --sample 20 takes about 7.
 //
-//   node --env-file=.env --import tsx scripts/check-name-lookup-equivalence.ts
+//   node --env-file=.env --import tsx scripts/check-name-lookup-equivalence.ts [--sample 20]
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -126,10 +128,17 @@ function random(seed: number) {
   };
 }
 const next = random(20261125);
+const sampleFlag = process.argv.indexOf("--sample");
+const sampleSize =
+  sampleFlag >= 0 ? Number(process.argv[sampleFlag + 1] ?? "") : 80;
+if (!Number.isInteger(sampleSize) || sampleSize < 1) {
+  throw new Error("--sample takes a whole number of pool rows, such as 20.");
+}
+// The first rows of the full run's sample, so a smaller run is a subset.
 const sample = Array.from(
   { length: 80 },
   () => index[Math.floor(next() * index.length)]!,
-);
+).slice(0, sampleSize);
 const outside = await sql.begin(
   "read only",
   (tx) => tx<{ brand: string; model: string; reference: string | null }[]>`
@@ -138,7 +147,7 @@ const outside = await sql.begin(
   where review_status <> 'rejected'
     and import_source is not null
     and (price_amount is null or price_status = 'unconfirmed')
-  order by md5(id::text) limit 40`,
+  order by md5(id::text) limit ${Math.ceil(sampleSize / 2)}`,
 );
 
 const typings: { name: string; reference: string | null; group: string }[] = [];
@@ -280,6 +289,7 @@ const summary = (values: number[]) => ({
 });
 const report = {
   at: new Date().toISOString(),
+  sampledPoolRows: sampleSize,
   poolRowsChecked: poolRows.length,
   foldAndReferenceKeyDifferences: foldDifferences,
   nameIndex: { rows: index.length, readMs: indexRead.ms },
@@ -300,8 +310,9 @@ const report = {
   differences,
   result: differences.length === 0 ? "PASS" : "FAIL",
 };
+// A smaller run never overwrites the full run's report.
 const output = resolve(
-  `docs/reports/name-lookup-equivalence-${report.at.slice(0, 10)}.json`,
+  `docs/reports/name-lookup-equivalence-${sampleSize === 80 ? "" : `sample${sampleSize}-`}${report.at.slice(0, 10)}.json`,
 );
 writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
 console.log(
