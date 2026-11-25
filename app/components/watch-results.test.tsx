@@ -165,6 +165,7 @@ describe("film sightings", () => {
           feature: "find",
           themeQuery: "",
           siteOrigin: "https://thereserve.watch",
+          parentOrigins: ["https://partner.example"],
         }}
       >
         <WatchResults

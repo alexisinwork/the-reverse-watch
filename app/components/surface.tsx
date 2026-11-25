@@ -20,6 +20,9 @@ export type EmbedSurface = {
   themeQuery: string;
   /** The Reserve's own address, for links that leave the widget. */
   siteOrigin: string;
+  /** The partner's registered websites: the only pages that may frame the
+   * widget and the only targets of its messages. */
+  parentOrigins: readonly string[];
 };
 
 const SurfaceContext = createContext<EmbedSurface | null>(null);

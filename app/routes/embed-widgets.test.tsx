@@ -162,6 +162,7 @@ describe("other widgets", () => {
       feature: "find" as const,
       themeQuery: "scheme=light",
       siteOrigin: "https://thereserve.watch",
+      parentOrigins: ["https://partner.example"],
     };
     const Stub = createRoutesStub([
       {

@@ -116,13 +116,16 @@ function useHostBridge(
       if (control) sendInteraction("click", { control, target: feature });
     };
     window.addEventListener("message", onMessage);
-    postToHost({ type: "reserve:ready", feature, height: height() });
+    postToHost(
+      { type: "reserve:ready", feature, height: height() },
+      parentOrigins,
+    );
     let last = 0;
     const observer = new ResizeObserver(() => {
       const next = height();
       if (next !== last) {
         last = next;
-        postToHost({ type: "reserve:resize", height: next });
+        postToHost({ type: "reserve:resize", height: next }, parentOrigins);
       }
     });
     observer.observe(shell);
@@ -132,12 +135,15 @@ function useHostBridge(
     };
   }, [feature, key, parentOrigins]);
   useEffect(() => {
-    postToHost({
-      type: "reserve:navigate",
-      feature,
-      path: `${location.pathname}${location.search}`,
-    });
-  }, [feature, location.pathname, location.search]);
+    postToHost(
+      {
+        type: "reserve:navigate",
+        feature,
+        path: `${location.pathname}${location.search}`,
+      },
+      parentOrigins,
+    );
+  }, [feature, location.pathname, location.search, parentOrigins]);
 }
 
 export default function EmbedLayout() {
@@ -146,8 +152,8 @@ export default function EmbedLayout() {
   const { pathname } = useLocation();
   const feature = featureOf(pathname, key);
   const surface = useMemo<EmbedSurface>(
-    () => ({ key, feature, themeQuery, siteOrigin }),
-    [key, feature, themeQuery, siteOrigin],
+    () => ({ key, feature, themeQuery, siteOrigin, parentOrigins }),
+    [key, feature, themeQuery, siteOrigin, parentOrigins],
   );
   useHostBridge(feature, key, parentOrigins);
   return (

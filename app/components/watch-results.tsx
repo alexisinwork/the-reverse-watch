@@ -461,7 +461,10 @@ function ResultBody({
       : [];
   useEffect(() => {
     if (embed)
-      postToHost({ type: "reserve:results", feature: embed.feature, count });
+      postToHost(
+        { type: "reserve:results", feature: embed.feature, count },
+        embed.parentOrigins,
+      );
   }, [embed, count]);
   useEffect(() => {
     sendInteraction("service_complete", { control: "results_loaded" });

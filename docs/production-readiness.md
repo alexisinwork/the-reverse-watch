@@ -178,3 +178,21 @@ test. Managed backup retention, alert inbox delivery, newsletter/dossier email
 delivery and third-party catalogue redistribution rights must not be described
 as proved by the code gate or local widget tests. These are distinct from the
 verified first-use research and spend-control implementation.
+
+## Security checks (2026-11-25)
+
+The Security checks workflow (`.github/workflows/security.yml`) runs on every
+push and weekly.
+
+- PASS gitleaks over the full Git history: no committed secret found. This
+  closes the whole-history secret scan listed as pending in the business plan.
+- Semgrep: the widget messages its parent page only at the partner's
+  registered websites instead of `*` (`embed-bridge.ts`).
+- npm audit: high-severity advisories in `body-parser` and `compression`
+  (server dependencies) were fixed within their version ranges.
+- Known gap: Supabase signs its database certificate with its own
+  certificate authority, which Node does not trust, so the database scripts
+  encrypt without verifying the server (`ssl: "require"` and one explicit
+  `rejectUnauthorized: false`, marked for Semgrep). The fix is to download
+  Supabase's CA certificate (Dashboard → Database → SSL configuration), commit
+  it, and pin it in every script; downloading it is an owner action.

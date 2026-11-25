@@ -5,9 +5,22 @@
  */
 import type { WidgetMessage } from "../domain/partner-sites";
 
-export function postToHost(message: WidgetMessage) {
+/**
+ * Sends to the partner's registered websites only. Only those may frame the
+ * widget (frame-ancestors), and the browser drops a message whose target
+ * does not match the parent, so the one real parent receives it and no
+ * other page could, even if the framing rule were ever relaxed.
+ */
+export function postToHost(
+  message: WidgetMessage,
+  parentOrigins: readonly string[],
+) {
   if (typeof window === "undefined" || window.parent === window) return;
-  // The host page's address isn't known inside the frame, and the message
-  // holds nothing private, so any parent may read it.
-  window.parent.postMessage(message, "*");
+  for (const origin of parentOrigins) {
+    try {
+      window.parent.postMessage(message, origin);
+    } catch {
+      // A malformed stored origin cannot be a target; skip it.
+    }
+  }
 }
