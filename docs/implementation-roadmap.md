@@ -2411,3 +2411,28 @@ use bounded pool lookups and the pool identity keys instead of the whole pool.
 
 Still on the whole-pool read: the archetype supplements and the cheaper
 alternatives. Each needs its own window and equivalence check (step 2b).
+
+### Phase 0, steps 2b–2c: archetype and alternatives windows (2026-11-25)
+
+Sources `96e081c` (migration 0116) and `0698273` (migration 0117), both
+applied. No visitor search reads the whole pool any more; only the paused
+legacy pre-owned lookup and reporting scripts still do.
+
+- PASS `scripts/check-archetype-window-equivalence.ts`: all 24 archetype and
+  band combinations, 344 supplements, 0 differences; window p50 167 ms, max
+  375 ms (1,967 rows max) against a 9,184 ms whole-pool read.
+- PASS `scripts/check-alternatives-window-equivalence.ts` with the owner's
+  test-set targets: 44 typed names resolve identically; 116 windows, 3,359
+  ranked alternatives and 938 full rows match, 0 differences. Name index
+  25,014 rows in 1,333 ms (cached five minutes); window p50 274 ms.
+- PASS `scripts/test-archetype-window.ts`, `scripts/test-alternatives-window.ts`
+  before and after applying the migrations (rolled back).
+- PASS `scripts/smoke-catalogue-windows.ts` on production: two archetype
+  answers with saved results and the saved Tudor Black Bay 58 alternatives,
+  HTTP 200, ten cards each, 0 added validation attempts and $0 added charge.
+  First call after deployment 8–10 s (cold instance), then archetype
+  1.4–2.0 s and alternatives 2.55 s; alternatives were 20–32 s before.
+- PASS `npm run check`: 121 files, 767 tests, build.
+- Data gap: only 8 of the 20 owner test-set originals resolve to a watch
+  with comparison specifications; the rest stop with "specifications are
+  incomplete". Recorded for phase 1.

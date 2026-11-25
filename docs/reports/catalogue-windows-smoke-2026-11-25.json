@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-25T21:43:05.937Z",
+  "base": "https://thereserve.watch",
+  "archetypeCombosWithSavedResults": 2,
+  "results": [
+    {
+      "label": "archetype field_rationalist/first_good_watch",
+      "status": 200,
+      "ms": 2037,
+      "brandFields": 10,
+      "functionRegion": "fra1"
+    },
+    {
+      "label": "archetype mechanical_connoisseur/exceptional_object",
+      "status": 200,
+      "ms": 1423,
+      "brandFields": 10,
+      "functionRegion": "fra1"
+    },
+    {
+      "label": "alternatives Tudor Black Bay 58 / USD 2,000 / no quartz",
+      "status": 200,
+      "ms": 2550,
+      "brandFields": 11,
+      "functionRegion": "fra1"
+    }
+  ],
+  "ledger": {
+    "before": {
+      "attempts": 65,
+      "charged": 0.96862
+    },
+    "after": {
+      "attempts": 65,
+      "charged": 0.96862
+    }
+  },
+  "addedAttempts": 0,
+  "addedChargeUsd": 0,
+  "result": "PASS"
+}

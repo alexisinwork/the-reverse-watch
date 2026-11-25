@@ -26,8 +26,8 @@ Every change reports before/after numbers for each rule.
 | --- | --- | --- |
 | Phase 0.1 functions in `fra1`, CDN for content pages | done, verified on production | `44c4e21`, `docs/reports/page-speed-*.json` |
 | Phase 0.2a quiz database window (migration 0115) | done, verified on production | `fd27073`, `docs/reports/quiz-window-equivalence-2026-11-25.json` |
-| Phase 0.2b archetype database window | in progress | |
-| Phase 0.2c alternatives database window | pending | |
+| Phase 0.2b archetype database window (migration 0116) | done, verified on production | `96e081c`, `docs/reports/archetype-window-equivalence-2026-11-25.json` |
+| Phase 0.2c alternatives name index and window (migration 0117) | done, verified on production | `0698273`, `docs/reports/alternatives-window-equivalence-2026-11-25.json`, `docs/reports/catalogue-windows-smoke-2026-11-25.json` |
 | Phase 0 film search confirmed-only; quiz exact vs compromise | pending | |
 | Phase 0 CDN for completed results; episode short links | pending | |
 | Phase 0 public portfolio demo | pending (needs the sibling `personal-website` deployment) | |
@@ -41,7 +41,12 @@ Every change reports before/after numbers for each rule.
 ```sh
 npm run check
 node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts
+node --env-file=.env --import tsx scripts/check-archetype-window-equivalence.ts
+node --env-file=.env --import tsx scripts/check-alternatives-window-equivalence.ts
 node --env-file=.env --import tsx scripts/test-quiz-window.ts
+node --env-file=.env --import tsx scripts/test-archetype-window.ts
+node --env-file=.env --import tsx scripts/test-alternatives-window.ts
+node --env-file=.env --import tsx scripts/smoke-catalogue-windows.ts
 node --import tsx scripts/measure-page-speed.ts --label check
 node --env-file=.env --import tsx scripts/measure-quiz-api.ts --label check
 ```
@@ -59,5 +64,7 @@ test partner site allowance.
 
 ## Next step
 
-Phase 0.2b: give the archetype supplements a database window, with an
-equivalence check against the whole-pool selection.
+Phase 0: film search shows confirmed sightings only (unconfirmed in a
+separate block, no ten-card padding or paid supplementary discovery for it);
+the quiz separates exact matches from compromises and says why when nothing
+fits. Then CDN caching of completed results and episode short links.
