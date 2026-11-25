@@ -270,6 +270,22 @@ export const catalogueMatchFactsSchema = catalogueWatchSchema.pick(
 /** A full catalogue row also satisfies this, so the rules accept either. */
 export type CatalogueMatchFacts = z.infer<typeof catalogueMatchFactsSchema>;
 
+/** The archetype window adds what its ranking reads: the source names in
+ * foundIn and the last update (migration 0116). */
+export const ARCHETYPE_WINDOW_COLUMNS = [
+  ...QUIZ_WINDOW_COLUMNS,
+  "foundIn",
+  "updatedAt",
+] as const satisfies readonly (keyof CatalogueWatch)[];
+
+export const archetypeFactsSchema = catalogueWatchSchema.pick(
+  Object.fromEntries(ARCHETYPE_WINDOW_COLUMNS.map((key) => [key, true])) as {
+    [K in (typeof ARCHETYPE_WINDOW_COLUMNS)[number]]: true;
+  },
+);
+
+export type ArchetypeFacts = z.infer<typeof archetypeFactsSchema>;
+
 /** The database window for one quiz answer: every row any shortlist, close
  * fit or broader close fit could use, and usually some more. */
 export type QuizCatalogueWindow = {
@@ -286,12 +302,20 @@ const WINDOW_DIAMETER_SLACK_MM = 0.001;
 // broaderNearFits accepts up to this far outside the chosen diameter range.
 export const BROADER_DIAMETER_MM = 3;
 
-export function quizCatalogueWindow(
-  profile: ProfileV4,
+export type PriceBound = QuizCatalogueWindow["priceBounds"][number];
+
+/**
+ * A budget in one currency as bounds in every currency the rates cover.
+ * priceIn converts a watch's price into the budget currency; the same rates
+ * convert the budget into each watch currency here, widened so rounding can
+ * only add rows.
+ */
+export function budgetPriceBounds(
+  range: { minimum: number; maximum: number | null },
+  budgetCurrency: string,
   fx: FxTable | null,
-): QuizCatalogueWindow {
-  const range = findPriceRange(profile.priceRange)!;
-  const budget = profile.budgetCurrency.toUpperCase();
+): PriceBound[] {
+  const budget = budgetCurrency.toUpperCase();
   const bound = (factor: number) => ({
     minimum: range.minimum * factor * (1 - WINDOW_PRICE_SLACK),
     maximum:
@@ -299,9 +323,7 @@ export function quizCatalogueWindow(
         ? null
         : range.maximum * factor * (1 + WINDOW_PRICE_SLACK),
   });
-  // priceIn converts a watch's price into the budget currency; the same
-  // rates convert the budget into each watch currency here.
-  const priceBounds = [{ currency: budget, ...bound(1) }];
+  const priceBounds: PriceBound[] = [{ currency: budget, ...bound(1) }];
   for (const currency of fx ? Object.keys(fx.perEur) : []) {
     const code = currency.toUpperCase();
     if (code === budget) {
@@ -312,6 +334,15 @@ export function quizCatalogueWindow(
       priceBounds.push({ currency: code, ...bound(factor) });
     }
   }
+  return priceBounds;
+}
+
+export function quizCatalogueWindow(
+  profile: ProfileV4,
+  fx: FxTable | null,
+): QuizCatalogueWindow {
+  const range = findPriceRange(profile.priceRange)!;
+  const priceBounds = budgetPriceBounds(range, profile.budgetCurrency, fx);
   const diameter = diameterRangeFor(profile);
   return {
     priceBounds,

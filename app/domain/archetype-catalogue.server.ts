@@ -4,9 +4,21 @@ import {
   type PriceComfort,
 } from "./archetype-picks";
 import type { ArchetypeId } from "./discovery-archetype";
-import type { CatalogueWatch, CatalogueStyle } from "./watch-catalogue";
-import { catalogueToFoundWatch, priceIn } from "./watch-catalogue";
-import { catalogueClient, loadCatalogueCached } from "./watch-catalogue.server";
+import type {
+  ArchetypeFacts,
+  CatalogueStyle,
+  CatalogueWatch,
+} from "./watch-catalogue";
+import {
+  budgetPriceBounds,
+  catalogueToFoundWatch,
+  priceIn,
+} from "./watch-catalogue";
+import {
+  catalogueClient,
+  loadArchetypeWindow,
+  loadCatalogueRowsById,
+} from "./watch-catalogue.server";
 import { enrichResultWatches } from "./catalogue-result-enrichment.server";
 import { loadFxTable, type FxTable } from "./fx.server";
 import { uniqueWatchResults } from "./watch-result-dedup";
@@ -29,9 +41,37 @@ const roles: Record<ArchetypeId, CatalogueStyle[]> = {
     "travel",
   ],
 };
+const MECHANICAL_MOVEMENTS = ["automatic", "manual", "spring_drive"];
+const NON_ROUND_SHAPES = ["square", "rectangular", "tonneau", "cushion"];
+
+/** The database window for one archetype and price band (migration 0116):
+ * every row rankEnrichedArchetype could keep, and usually some more. */
+export function archetypeCatalogueWindow(
+  archetype: ArchetypeId,
+  band: PriceComfort,
+  fx: FxTable | null,
+) {
+  const bounds = ARCHETYPE_BANDS[band];
+  return {
+    priceBounds: budgetPriceBounds(
+      { minimum: bounds.minimumUsd, maximum: bounds.maximumUsd },
+      "USD",
+      fx,
+    ),
+    styles: roles[archetype],
+    movements:
+      archetype === "mechanical_connoisseur" ? MECHANICAL_MOVEMENTS : [],
+    shapes: ["architectural_modernist", "expressive_collector"].includes(
+      archetype,
+    )
+      ? NON_ROUND_SHAPES
+      : [],
+  };
+}
+
 /** Version 1: technical-role supplements; never invent brand prestige/history. */
-export function rankEnrichedArchetype(
-  catalogue: CatalogueWatch[],
+export function rankEnrichedArchetype<T extends ArchetypeFacts>(
+  catalogue: readonly T[],
   archetype: ArchetypeId,
   band: PriceComfort,
   fx: FxTable | null,
@@ -70,22 +110,20 @@ export function rankEnrichedArchetype(
       if (archetype === "recognised_standard_bearer") return false; // recognition needs editorial/brand evidence
       if (
         archetype === "mechanical_connoisseur" &&
-        !["automatic", "manual", "spring_drive"].includes(watch.movement ?? "")
+        !MECHANICAL_MOVEMENTS.includes(watch.movement ?? "")
       )
         return false;
       if (
         ["architectural_modernist", "expressive_collector"].includes(
           archetype,
         ) &&
-        !["square", "rectangular", "tonneau", "cushion"].includes(
-          watch.caseShape ?? "",
-        )
+        !NON_ROUND_SHAPES.includes(watch.caseShape ?? "")
       )
         return false;
       return true;
     })
     .sort((a, b) => {
-      const score = (w: CatalogueWatch) =>
+      const score = (w: T) =>
         w.styles.filter((style) => roles[archetype].includes(style)).length *
           10 +
         (w.reviewStatus === "approved" ? 5 : 0) +
@@ -106,16 +144,31 @@ async function selectArchetypeWatches(
   const client = catalogueClient();
   if (!client) return curated;
   try {
-    const [catalogue, fx] = await Promise.all([
-      loadCatalogueCached(client),
-      loadFxTable(),
-    ]);
-    const supplements = rankEnrichedArchetype(
-      catalogue,
-      archetype,
-      band,
-      fx,
-    ).flatMap((watch) => {
+    const fx = await loadFxTable();
+    // No catalogue row can show recognition, so that archetype reads nothing.
+    const window =
+      archetype === "recognised_standard_bearer"
+        ? []
+        : await loadArchetypeWindow(
+            client,
+            archetypeCatalogueWindow(archetype, band, fx),
+          );
+    // Only rows with a source become cards, and only the first twenty are
+    // shown: read just those in full.
+    const shown = rankEnrichedArchetype(window, archetype, band, fx)
+      .filter((watch) => watch.sourceUrl)
+      .slice(0, 20);
+    const full = new Map(
+      (
+        await loadCatalogueRowsById(
+          client,
+          shown.map((watch) => watch.id),
+        )
+      ).map((row): [string, CatalogueWatch] => [row.id, row]),
+    );
+    const supplements = shown.flatMap((facts) => {
+      const watch = full.get(facts.id);
+      if (!watch) return [];
       const card = catalogueToFoundWatch(watch);
       return card
         ? [

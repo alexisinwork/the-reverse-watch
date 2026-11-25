@@ -3,10 +3,15 @@ import { z } from "zod";
 import type { DesignTraits } from "./design-traits";
 import { safeHttpUrl } from "./source-pages.server";
 import {
+  ARCHETYPE_WINDOW_COLUMNS,
+  archetypeFactsSchema,
   catalogueMatchFactsSchema,
   catalogueWatchSchema,
   QUIZ_WINDOW_COLUMNS,
+  type ArchetypeFacts,
   type CatalogueMatchFacts,
+  type CatalogueStyle as WindowStyle,
+  type PriceBound,
   type CatalogueStyle,
   type CatalogueWatch,
   type PreownedPrice,
@@ -185,10 +190,37 @@ export function clearCatalogueCache() {
   poolKeys = null;
 }
 
-const quizWindowSchema = z.object({
+const columnWindowSchema = z.object({
   columns: z.array(z.string()),
   rows: z.array(z.array(z.unknown())),
 });
+
+/** Reads a columns-plus-rows window: columns travel once instead of on every
+ * row. A changed column list is a deployment mismatch, so it fails loudly
+ * rather than misreading every row. */
+export function decodeColumnWindow<T extends z.ZodType>(
+  name: string,
+  payload: unknown,
+  columns: readonly string[],
+  rowSchema: T,
+): z.infer<T>[] {
+  const window = columnWindowSchema.parse(payload);
+  if (
+    window.columns.length !== columns.length ||
+    window.columns.some((column, index) => column !== columns[index])
+  ) {
+    throw new Error(`${name} returned unexpected columns`);
+  }
+  return z
+    .array(rowSchema)
+    .parse(
+      window.rows.map((row) =>
+        Object.fromEntries(
+          columns.map((column, index) => [column, row[index]]),
+        ),
+      ),
+    );
+}
 
 /** The rows one quiz answer could select, with only the facts its rules read
  * (migration 0115). The quiz rules still run on them in code. */
@@ -196,7 +228,8 @@ export async function loadQuizWindow(
   client: CatalogueClient,
   window: QuizCatalogueWindow,
 ): Promise<CatalogueMatchFacts[]> {
-  const payload = quizWindowSchema.parse(
+  return decodeColumnWindow(
+    "watch_catalogue_quiz_window_v1",
     await rpc(
       client,
       "watch_catalogue_quiz_window_v1",
@@ -208,28 +241,37 @@ export async function loadQuizWindow(
       },
       15_000,
     ),
+    QUIZ_WINDOW_COLUMNS,
+    catalogueMatchFactsSchema,
   );
-  // Columns travel once instead of on every row. A changed column list is a
-  // deployment mismatch: fail loudly rather than misread every row.
-  if (
-    payload.columns.length !== QUIZ_WINDOW_COLUMNS.length ||
-    payload.columns.some(
-      (column, index) => column !== QUIZ_WINDOW_COLUMNS[index],
-    )
-  ) {
-    throw new Error(
-      "watch_catalogue_quiz_window_v1 returned unexpected columns",
-    );
-  }
-  return z
-    .array(catalogueMatchFactsSchema)
-    .parse(
-      payload.rows.map((row) =>
-        Object.fromEntries(
-          QUIZ_WINDOW_COLUMNS.map((column, index) => [column, row[index]]),
-        ),
-      ),
-    );
+}
+
+/** Every row the archetype ranking could keep (migration 0116). */
+export async function loadArchetypeWindow(
+  client: CatalogueClient,
+  window: {
+    priceBounds: PriceBound[];
+    styles: readonly WindowStyle[];
+    movements: readonly string[];
+    shapes: readonly string[];
+  },
+): Promise<ArchetypeFacts[]> {
+  return decodeColumnWindow(
+    "watch_catalogue_archetype_window_v1",
+    await rpc(
+      client,
+      "watch_catalogue_archetype_window_v1",
+      {
+        p_price_bounds: window.priceBounds,
+        p_styles: window.styles,
+        p_movements: window.movements,
+        p_shapes: window.shapes,
+      },
+      15_000,
+    ),
+    ARCHETYPE_WINDOW_COLUMNS,
+    archetypeFactsSchema,
+  );
 }
 
 const ROWS_BY_ID_LIMIT = 200;
