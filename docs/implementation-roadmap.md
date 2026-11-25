@@ -2293,7 +2293,8 @@ SSE and browser checks pass; no availability guarantee beyond this scope is made
 
 ## Speed, caching and relevance rebuild (2026-11-25)
 
-Status: **phase 0 in progress**. Owner decisions are recorded in `AGENTS.md`
+Status: **phase 0 in progress — region and content-page CDN caching verified
+on production 2026-11-25**. Owner decisions are recorded in `AGENTS.md`
 ("Speed, caching and relevance rebuild"). Audit with all measurements:
 https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4.
 
@@ -2340,3 +2341,28 @@ Phases, in order:
 
 Each step records before/after measurements with the exact command, reported as
 PASS, FAIL or NOT RUN.
+
+### Phase 0, step 1: `fra1` and content-page CDN caching (2026-11-25)
+
+Source `44c4e21` moves functions to `fra1` and lets the CDN keep stories,
+people, works, `/partners` and `/privacy` for an hour with
+stale-while-revalidate (`app/domain/cache-policy.ts`). Partner widget pages
+keep `private, no-store`, so every view is still counted; 404s are not cached.
+
+- PASS `npm run check`: 120 files, 760 tests, production build.
+- PASS production serves from `fra1` about 30 s after the push.
+- PASS repeat requests to `/watches`, a story, `/partners` and `/privacy`
+  return `X-Vercel-Cache: HIT`; an unknown widget key returns an uncached 404.
+- PASS `node --import tsx scripts/measure-page-speed.ts --label <label>`,
+  five sequential runs per path from a European client, median first byte:
+  story 818 → 30 ms, `/watches` 548 → 35 ms, `/partners` 166 → 32 ms, home
+  179 → 86 ms, cached Daniel Craig search 1,376 → 395 ms, Heat 1,922 → 492 ms.
+  Reports: `docs/reports/page-speed-before-2026-11-25.json`,
+  `docs/reports/page-speed-after-fra1-cdn-2026-11-25.json`.
+- NOT RUN quiz and alternatives timings (they need a subscriber cookie or a
+  registered partner origin), and measurements from a US client. CDN hits
+  are served near each visitor; a US visitor's cache miss now crosses the
+  Atlantic once instead of on every database call.
+
+Next step: the indexed SQL search function that replaces loading the whole
+catalogue into each server.
