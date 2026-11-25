@@ -38,15 +38,18 @@ import {
   loadPoolIdentityKeysCached,
   recordPreownedPrice,
   type CatalogueClient,
+  type NameCandidateQuery,
 } from "./watch-catalogue.server";
 
-const fold = (value: string) =>
+/** A watch name as lowercase letters and digits, words split by one space. */
+export const foldName = (value: string) =>
   value
     .toLowerCase()
     .normalize("NFD")
     .replace(/[^a-z0-9 ]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
+const fold = foldName;
 
 const WORD_ALIASES: Record<string, string> = { fifty: "58", eight: "" };
 
@@ -57,6 +60,59 @@ function words(value: string) {
     .filter(
       (word) => word.length > 0 && !["the", "watch", "mm"].includes(word),
     );
+}
+
+/** A typed word and the stored words that also produce it: "58" is found
+ * in a name written "Fifty-Eight". */
+function storedSpellings(word: string) {
+  return [
+    word,
+    ...Object.entries(WORD_ALIASES)
+      .filter(([, alias]) => alias !== "" && alias.startsWith(word))
+      .map(([spelling]) => spelling),
+  ];
+}
+
+/**
+ * The database's part of resolveNamedWatch for one typed name (migrations
+ * 0118–0120). Every row the resolver could use has this reference key, or
+ * contains at least `minHits` of the typed words (one may miss when three or
+ * more were typed, for "Did you mean…?"). The database can return extra
+ * rows; the resolver below still decides. Proof:
+ * scripts/check-name-lookup-equivalence.ts.
+ */
+export function nameCandidateQuery(
+  name: string,
+  reference: string | null,
+): NameCandidateQuery {
+  const terms = words(name).map((word) => storedSpellings(word).join("|"));
+  const minHits = terms.length >= 3 ? terms.length - 1 : terms.length;
+  // For the index, patterns every candidate contains. With every word
+  // required, each word (at most two). With one allowed to miss, a row
+  // missing two words fails, so it holds one of each pair: the pairs of the
+  // three longest words (long words narrow the index search most).
+  const shortest = (term: string) =>
+    Math.min(...term.split("|").map((option) => option.length));
+  const longest = [...terms].sort((a, b) => shortest(b) - shortest(a));
+  const required =
+    minHits === terms.length
+      ? terms
+      : [
+          `${longest[0]}|${longest[1]}`,
+          `${longest[0]}|${longest[2]}`,
+          `${longest[1]}|${longest[2]}`,
+        ];
+  // The database reads these as regular expressions.
+  if (![...terms, ...required].every((term) => /^[a-z0-9|]+$/.test(term))) {
+    throw new Error("Name search words must be letters and digits.");
+  }
+  return {
+    // Three or more letters and digits, or "" (no reference search).
+    referenceKey: normalizeReference(reference) ?? "",
+    terms,
+    minHits,
+    required,
+  };
 }
 
 /** A model's family name, so colour variants count as one watch. */

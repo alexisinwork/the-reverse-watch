@@ -1,0 +1,45 @@
+{
+  "at": "2026-11-25T23:42:18.143Z",
+  "poolRowsChecked": 25014,
+  "foldAndReferenceKeyDifferences": 0,
+  "nameIndex": {
+    "rows": 25014,
+    "readMs": 2640
+  },
+  "typings": 794,
+  "byGroup": {
+    "owner set": 70,
+    "pool sample": 631,
+    "outside pool": 80,
+    "odd inputs": 13
+  },
+  "outcomes": {
+    "found": 586,
+    "ambiguous": 198,
+    "not_found": 10
+  },
+  "ms": {
+    "namedV1": {
+      "p50": 371,
+      "p95": 666,
+      "max": 15157
+    },
+    "namedV2": {
+      "p50": 120,
+      "p95": 192,
+      "max": 1443
+    },
+    "candidates": {
+      "p50": 113,
+      "p95": 706,
+      "max": 4150
+    }
+  },
+  "candidateRows": {
+    "p50": 48,
+    "p95": 5449,
+    "max": 5449
+  },
+  "differences": [],
+  "result": "PASS"
+}

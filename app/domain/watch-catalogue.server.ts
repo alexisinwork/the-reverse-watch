@@ -333,6 +333,37 @@ export async function loadNameIndexCached(
   return rows;
 }
 
+/** What the database looks for when resolving one typed name (built by
+ * nameCandidateQuery in alternatives.server.ts). */
+export type NameCandidateQuery = {
+  referenceKey: string;
+  terms: string[];
+  minHits: number;
+  /** Up to three patterns every candidate contains, for the index. */
+  required: string[];
+};
+
+/** The name-index rows one typed name could resolve to (migrations
+ * 0118–0119), in the name index's order: the same answers as the whole name
+ * index, from a few hundred rows instead of 25,000. Visitor searches use
+ * this; scripts that need every row use loadNameIndexCached. */
+export async function loadNameCandidates(
+  client: CatalogueClient,
+  query: NameCandidateQuery,
+): Promise<NameFacts[]> {
+  return decodeColumnWindow(
+    "watch_catalogue_name_candidates_v2",
+    await rpc(client, "watch_catalogue_name_candidates_v2", {
+      p_reference_key: query.referenceKey,
+      p_terms: query.terms,
+      p_min_hits: query.minHits,
+      p_required: query.required,
+    }),
+    NAME_INDEX_COLUMNS,
+    nameFactsSchema,
+  );
+}
+
 const ROWS_BY_ID_LIMIT = 200;
 
 /** Full rows, with evidence, for the watches a result shows. A row that left

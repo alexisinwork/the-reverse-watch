@@ -57,6 +57,8 @@ const READ_ONLY_RPC = new Set([
   "watch_catalogue_unpriced_candidates_v1",
   "watch_catalogue_candidate_lookup_v1",
   "watch_catalogue_named_v1",
+  "watch_catalogue_named_v2",
+  "watch_catalogue_name_candidates_v2",
   "watch_catalogue_lookup_v1",
   "ai_watch_search_get_v1",
   "ai_watch_validated_cache_get_v2",

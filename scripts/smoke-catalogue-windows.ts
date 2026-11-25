@@ -124,6 +124,22 @@ results.push(
     }).toString()}`,
   ),
 );
+// Names alone (migrations 0118–0120): both ask "Did you mean…?", so no
+// search starts and nothing is metered. "Rolex" is the widest name lookup.
+for (const name of ["Tudor Black Bay 58", "Rolex"]) {
+  results.push(
+    await call(
+      `alternatives name only: ${name}`,
+      `/api/v1/alternatives?${new URLSearchParams({
+        name,
+        mode: "exact",
+        amount: "2000",
+        currency: "USD",
+        quartz: "no",
+      }).toString()}`,
+    ),
+  );
+}
 
 const after = await ledger();
 await sql.end();

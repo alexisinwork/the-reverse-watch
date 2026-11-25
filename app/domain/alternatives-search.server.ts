@@ -16,6 +16,7 @@ import {
 } from "./alternatives";
 import {
   findAlternatives,
+  nameCandidateQuery,
   resolveNamedWatch,
   type AlternativesOutcome,
 } from "./alternatives.server";
@@ -39,7 +40,7 @@ import {
 import {
   catalogueClient,
   loadCatalogueRowsById,
-  loadNameIndexCached,
+  loadNameCandidates,
   rpc,
 } from "./watch-catalogue.server";
 import { catalogueWatchSchema } from "./watch-catalogue";
@@ -224,11 +225,17 @@ export async function startAlternativesSearch(
       code: "unavailable",
       error: "The search is unavailable right now.",
     };
-  // The few facts name resolution reads, for every catalogue watch
-  // (migration 0117); the resolved watch is then read in full.
+  // The few facts name resolution reads, for the catalogue watches this name
+  // could mean (migrations 0118–0120: the same answer as reading every
+  // watch); the resolved watch is then read in full.
   let catalogue: (NameFacts | CatalogueWatch)[];
   try {
-    catalogue = [...(await loadNameIndexCached(client))];
+    catalogue = [
+      ...(await loadNameCandidates(
+        client,
+        nameCandidateQuery(form.name, form.reference || null),
+      )),
+    ];
   } catch (error) {
     console.error(
       JSON.stringify({
@@ -249,7 +256,7 @@ export async function startAlternativesSearch(
   const namedRows = new Map<string, CatalogueWatch>();
   try {
     const named = z.array(catalogueWatchSchema).parse(
-      await rpc(client, "watch_catalogue_named_v1", {
+      await rpc(client, "watch_catalogue_named_v2", {
         p_query: form.name,
         p_reference: form.reference || null,
       }),

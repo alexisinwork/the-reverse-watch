@@ -104,10 +104,15 @@ spending guards. Quiz close fits disclose every missed/unconfirmed answer and
 may sit up to 3 mm beyond the chosen diameter range; exact matches never do.
 Visitor searches never read the whole pool. Each tool asks the database for the
 rows it could use (migrations 0115–0117: quiz window, archetype window,
-alternatives window and a name index for typed names) and runs its unchanged
-rules on them; full rows are read only for the watches shown. Equivalence
-scripts prove each window selects exactly what the whole pool did:
-`scripts/check-{quiz,archetype,alternatives}-window-equivalence.ts`.
+alternatives window) and runs its unchanged rules on them; full rows are read
+only for the watches shown. A typed name goes through trigram indexes
+(migrations 0118–0120): `nameCandidateQuery` in `domain/alternatives.server.ts`
+turns it into the words and reference key the database looks for,
+`watch_catalogue_name_candidates_v2` returns the few hundred rows it could
+mean, and `resolveNamedWatch` decides as before. Equivalence scripts prove
+each read selects exactly what the whole pool did:
+`scripts/check-{quiz,archetype,alternatives}-window-equivalence.ts` and
+`scripts/check-name-lookup-equivalence.ts`.
 The alternatives page shows navigation activity immediately and streams real
 provider/source checks through the same progress feed as the other tools.
 

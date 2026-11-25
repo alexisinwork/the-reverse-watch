@@ -2460,3 +2460,51 @@ a one-hour CDN lifetime and streams anything else as before.
   the three on 2026-11-25 came from this session's own measurements). Under
   the new policy one attempt checked its five drafts for $0.0217 and stored
   the answer; later requests are CDN hits with no attempt.
+
+### Phase 0, step 2d: name lookups through indexes (2026-11-26)
+
+Found by the final verification run: the first alternatives call after a
+deployment took 12.8 s. Every alternatives search ran
+`watch_catalogue_named_v1`, a scan of all 56,719 rows: 0.2–4.3 s of database
+time by name (7.5 s on a cold run) and 0.66 s by reference (the reference is
+the second column of the only reference index). Three such calls at once
+exceeded the API's 8-second statement limit, and the code then silently
+dropped those rows. Every new function instance also downloaded the
+25,014-row name index (4.75 MB; once it also hit the 8-second limit).
+
+Migrations 0118–0120 (applied) add `pg_trgm`, four indexes (17 MB on a
+155 MB table), `watch_catalogue_named_v2` (the same rows in the same order as
+v1) and `watch_catalogue_name_candidates_v2` (the pool rows a typed name
+could resolve to, built from `nameCandidateQuery`). `resolveNamedWatch` is
+unchanged and decides on those rows. 0119 and 0120 only made 0118 faster
+before anything used it; `watch_catalogue_name_candidates_v1` stays unused.
+
+- PASS `scripts/test-name-lookups.ts` before and after applying each
+  migration (rolled back): permissions; the database fold and reference key
+  keep the code's letters and digits for every Unicode code point and all of
+  ASCII; "58" finds "Fifty-Eight", near misses, decomposed letters, any
+  punctuation of a reference, pool and rejected filters, the name index's
+  order; `named_v2` = `named_v1` on 11 fixture queries.
+- PASS `app/domain/alternatives-name-candidates.test.ts`: the fold and
+  reference-key models for every code point; 1,440 random typings on 120
+  random catalogues resolve exactly as from the whole catalogue. The test
+  fails on two deliberately broken versions (no near-miss allowance, no
+  "fifty" spelling).
+- PASS `scripts/check-name-lookup-equivalence.ts`
+  (`docs/reports/name-lookup-equivalence-2026-11-25.json`): 794 typed names
+  (70 from the owner's set, 631 from a fixed sample of pool rows typed six
+  ways, 80 for rows outside the pool, 13 odd inputs) resolve identically
+  (586 found, 198 "Did you mean…?", 10 not found) and `named_v2` returns
+  byte-identical JSON to `named_v1`, 0 differences; the database fold and
+  reference key equal the code's on all 25,014 pool rows. Database counters
+  over the run: `named_v1` mean 390 ms, max 14.5 s; `named_v2` mean 19 ms.
+- Database time (`EXPLAIN ANALYZE`, warm): "Tudor Black Bay 58" by name
+  207–4,250 ms → 10 ms (`named_v2`) and 16–23 ms (candidates, 264 rows);
+  by reference 657 ms → 1–2 ms; "Rolex Submariner" candidates 6–8 ms;
+  "Omega", the widest one-word name (3,751 candidate rows), 155 ms.
+- Production before this release (old lookups, three runs,
+  `docs/reports/catalogue-windows-smoke-before-name-lookups-2026-11-25.json`):
+  a name without a reference ("Tudor Black Bay 58") 1,197–1,536 ms,
+  "Rolex" 579–687 ms; the full saved alternatives answer 7,843 ms on a cold
+  instance, then 815–1,399 ms.
+- PASS `npm run check`: 105 files, 669 tests, build.

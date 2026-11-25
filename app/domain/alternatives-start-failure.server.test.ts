@@ -12,11 +12,17 @@ vi.mock("./watch-catalogue.server", async (importOriginal) => ({
     config: { supabaseUrl: "https://db.test", serviceKey: "test" },
     fetchImpl: fetch,
   }),
-  loadNameIndexCached: mocks.load,
+  loadNameCandidates: mocks.load,
   rpc: mocks.rpc,
 }));
 vi.mock("./alternatives.server", () => ({
   findAlternatives: mocks.run,
+  nameCandidateQuery: () => ({
+    referenceKey: "",
+    terms: [],
+    minHits: 0,
+    required: [],
+  }),
   resolveNamedWatch: mocks.resolve,
 }));
 vi.mock("./partner-embed.server", () => ({ meterPartnerUse: mocks.meter }));

@@ -28,6 +28,7 @@ Every change reports before/after numbers for each rule.
 | Phase 0.2a quiz database window (migration 0115) | done, verified on production | `fd27073`, `docs/reports/quiz-window-equivalence-2026-11-25.json` |
 | Phase 0.2b archetype database window (migration 0116) | done, verified on production | `96e081c`, `docs/reports/archetype-window-equivalence-2026-11-25.json` |
 | Phase 0.2c alternatives name index and window (migration 0117) | done, verified on production | `0698273`, `docs/reports/alternatives-window-equivalence-2026-11-25.json`, `docs/reports/catalogue-windows-smoke-2026-11-25.json` |
+| Phase 0.2d alternatives name lookups through indexes (migrations 0118–0120) | done, verified on production | `docs/reports/name-lookup-equivalence-2026-11-26.json`, `docs/reports/catalogue-windows-smoke-2026-11-26.json` |
 | Phase 0 film search confirmed-only; quiz exact vs compromise | done, verified on production | `055f39d` |
 | Phase 0 CDN for finished film answers | done, verified on production | `df78c6d`, `docs/reports/page-speed-after-finished-cache-2026-11-25.json` |
 | Phase 0 episode short links | done, verified on production | `4be1572`, `docs/episode-links.md` |
@@ -39,26 +40,39 @@ Every change reports before/after numbers for each rule.
 | Phase 5 starter-kit skills, standards, continuity docs | done | `.agents/skills/`, `docs/NEXT_CHAT.md`, `docs/OWNER_QUESTIONS.md`, `docs/decisions/DECISION_REGISTER.md` |
 | Phase 5 home page under the 150 KB JS budget | waiting for the owner (Sentry loading decision) | `docs/OWNER_QUESTIONS.md` #7 |
 | Phases 2–4 Next.js v2 | pending | |
-| One-command verification and final report | pending | |
+| One-command verification and final report | done | `scripts/verify-all.ts`, `docs/reports/verify-all-*.json` |
 
 ## How to verify
 
+One command runs every check below in order and prints PASS, FAIL or NOT RUN
+for each (about ten minutes; it writes `docs/reports/verify-all-<date>.json`):
+
+```sh
+node --import tsx scripts/verify-all.ts --production
+```
+
+Without `--production` it skips the three checks against the live site. The
+individual checks:
+
 ```sh
 npm run check
-node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts
-node --env-file=.env --import tsx scripts/check-archetype-window-equivalence.ts
-node --env-file=.env --import tsx scripts/check-alternatives-window-equivalence.ts
 node --env-file=.env --import tsx scripts/test-quiz-window.ts
 node --env-file=.env --import tsx scripts/test-archetype-window.ts
 node --env-file=.env --import tsx scripts/test-alternatives-window.ts
-node --env-file=.env --import tsx scripts/smoke-catalogue-windows.ts
+node --env-file=.env --import tsx scripts/test-name-lookups.ts
+node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts
+node --env-file=.env --import tsx scripts/check-archetype-window-equivalence.ts
+node --env-file=.env --import tsx scripts/check-alternatives-window-equivalence.ts
+node --env-file=.env --import tsx scripts/check-name-lookup-equivalence.ts
+node --env-file=.env --import tsx scripts/run-evals.ts
 node --import tsx scripts/measure-page-speed.ts --label check
+node --env-file=.env --import tsx scripts/smoke-catalogue-windows.ts
 node --env-file=.env --import tsx scripts/measure-quiz-api.ts --label check
 ```
 
 Every database check is read-only or runs in a rolled-back transaction. None
-makes a paid provider call. `measure-quiz-api.ts` counts against the owner's
-test partner site allowance.
+makes a paid provider call. The smoke and quiz API checks count a few uses
+against the owner's test partner site allowance.
 
 ## Known limits
 
@@ -70,5 +84,5 @@ test partner site allowance.
 ## Next step
 
 Phases 2–4 (version 2 on the starter kit) start as their own branch and
-session once the owner confirms the plan (`docs/OWNER_QUESTIONS.md` #9); the
-one-command verification (`scripts/verify-all.ts`) runs every check above.
+session once the owner confirms the plan (`docs/OWNER_QUESTIONS.md` #9). Run
+`scripts/verify-all.ts --production` before and after every change.
