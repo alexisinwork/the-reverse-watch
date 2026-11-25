@@ -803,6 +803,19 @@ evidence without exposing provider errors. The reason travels through the
 shared page/widget/API result type; existing disabled-path unavailability stays
 generic. This does not activate paid validation or prove provider limits.
 
+Rebuild decision, 2026-11-25: a measured audit found the site slow (whole
+61 MB catalogue loaded per server, functions in `iad1` against a Frankfurt
+database, no CDN caching), weak on relevance (ten-card padding with unverified
+candidates) and blind to video traffic (no campaign markers). The owner chose:
+confirmed-only film search, filtering in PostgreSQL, a version 2 on the
+EstateVanta starter kit after phase 0, unchanged subscription gating for email
+capture, legacy code to an archive branch, functions in `fra1`. The project is
+on Vercel Hobby, which forbids commercial use; upgrading to Pro is a
+precondition for the first paid pilot. The public portfolio demo still returns
+404, so the commercial next action below is unchanged and is part of phase 0.
+Details: `AGENTS.md` and the roadmap section "Speed, caching and relevance
+rebuild".
+
 For future sessions: read this file and roadmap, inspect changes since the
 baseline, and audit only affected areas unless a broader audit is requested.
 Update verified facts, hypotheses, dates, cost evidence and this single next

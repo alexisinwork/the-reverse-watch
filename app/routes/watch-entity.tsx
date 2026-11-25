@@ -1,6 +1,7 @@
 import { Link, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-entity";
+import { publicPageHeaders } from "../domain/cache-policy";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { DiscoveryStoryList } from "../components/discovery-story-list";
 import { findPublishedDiscoveryEntity } from "../domain/discovery-public";
@@ -25,6 +26,11 @@ export async function loader({ params }: Route.LoaderArgs) {
     throw new Response("Discovery entity not found", { status: 404 });
   }
   return result;
+}
+
+// Same for every visitor: served from the CDN (see domain/cache-policy.ts).
+export function headers(args: Route.HeadersArgs) {
+  return publicPageHeaders(args);
 }
 
 export function meta({ data: loaderData }: Route.MetaArgs) {

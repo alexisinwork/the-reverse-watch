@@ -134,9 +134,47 @@ quiz.
   guards must stay intact. Real partner sites and their history are still
   switched off, never deleted. Integration tests clean up their own fixture IDs.
 
+## Speed, caching and relevance rebuild (owner decisions, 2026-11-25)
+
+Audit and plan: https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4 (measured
+2026-11-25; summary in `docs/implementation-roadmap.md`). Every change in this
+rebuild reports before/after numbers for the owner's three rules: relevance,
+speed and cost.
+
+- **Film and people search** (`/watches/find`, its widget and `/api/v1/find`)
+  shows only confirmed sightings in the main list. Unconfirmed candidates go in
+  a separate, collapsed "possible" block, and the ten-card requirement no longer
+  applies to this tool. This supersedes the 2026-10-30 ten-option rule for film
+  and people search only. The quiz, alternatives and archetype keep ten
+  options, with exact matches shown separately from compromises.
+- **Catalogue hard filters run in PostgreSQL** (an indexed SQL search function
+  that returns a bounded candidate set), not by loading the whole catalogue into
+  each server and filtering in code. This supersedes the "filtered in code"
+  wording of the 2026-09-30 decision; the catalogue still answers first, and
+  live AI search still runs only on a shortfall.
+- **New version on the EstateVanta starter-kit stack** (Next.js App Router),
+  after phase 0 lands on the current React Router site. The database (additive
+  migrations only), page URLs, partner keys and the `embed.js` contract stay
+  unchanged.
+- **Subscription gating stays as it is:** film search and the archetype quiz
+  are free; the diagnostic and cheaper alternatives need the newsletter
+  subscription, so that the site collects email addresses.
+- **Unused legacy code** (the "Older code (kept on purpose)" list in
+  `CODE-GUIDE.md`) moves to an archive branch and tag and is removed from
+  `main`. This supersedes the 2026-09-30 keep-in-main instruction. Its database
+  tables are not touched.
+- **Functions run in `fra1`**, next to the Supabase database in eu-central-1.
+  Whether to move the database closer to the audience is decided later from
+  country-level visit data.
+- The project is on Vercel **Hobby**, which does not permit commercial use. The
+  owner upgrades to Pro before the first paying partner.
+
 ## Quality invariants
 
 ### Ten-option completion (owner decision, 2026-10-30)
+
+Film and people search is exempt from the ten-card requirement since the
+2026-11-25 decision above.
 
 - Every search/tool, widget and API checks for ten distinct display cards after
   all eligibility checks and deduplication. Five results are no longer enough.

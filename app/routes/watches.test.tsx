@@ -1,8 +1,15 @@
 import { render, screen } from "@testing-library/react";
 import { createRoutesStub } from "react-router";
 
-import WatchStory, { loader as storyLoader } from "./watch-story";
-import WatchesIndex, { loader as indexLoader } from "./watches";
+import { headers as embedLayoutHeaders } from "./embed-layout";
+import WatchStory, {
+  headers as storyHeaders,
+  loader as storyLoader,
+} from "./watch-story";
+import WatchesIndex, {
+  headers as indexHeaders,
+  loader as indexLoader,
+} from "./watches";
 
 describe("discovery explorer pages", () => {
   it("renders the sourced index and diagnostic handoff", async () => {
@@ -61,5 +68,43 @@ describe("discovery explorer pages", () => {
       }),
     ).not.toBeInTheDocument();
     expect(screen.getByText(/No open correction/)).toBeInTheDocument();
+  });
+});
+
+describe("story page caching", () => {
+  const args = (
+    parentHeaders: Headers,
+    errorHeaders?: Headers,
+  ): Parameters<typeof indexHeaders>[0] => ({
+    parentHeaders,
+    loaderHeaders: new Headers(),
+    actionHeaders: new Headers(),
+    errorHeaders,
+  });
+
+  it("lets the CDN keep public story pages", () => {
+    for (const pageHeaders of [indexHeaders, storyHeaders]) {
+      const cacheControl = new Headers(pageHeaders(args(new Headers()))).get(
+        "Cache-Control",
+      );
+      expect(cacheControl).toContain("s-maxage=");
+    }
+  });
+
+  it("keeps stories inside a partner widget private and counted", () => {
+    const widgetParent = new Headers(embedLayoutHeaders());
+    for (const pageHeaders of [indexHeaders, storyHeaders]) {
+      expect(
+        new Headers(pageHeaders(args(widgetParent))).get("Cache-Control"),
+      ).toBe("private, no-store");
+    }
+  });
+
+  it("does not cache a missing story", () => {
+    expect(
+      new Headers(storyHeaders(args(new Headers(), new Headers()))).get(
+        "Cache-Control",
+      ),
+    ).toBe("no-store");
   });
 });

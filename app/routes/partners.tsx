@@ -6,6 +6,7 @@
 import { useLoaderData } from "react-router";
 
 import type { Route } from "./+types/partners";
+import { publicPageHeaders } from "../domain/cache-policy";
 import { SurfaceLink } from "../components/surface";
 import {
   PARTNER_FEATURE_LABELS,
@@ -18,6 +19,11 @@ export function loader({ request }: Route.LoaderArgs) {
   return {
     origin: process.env.APP_URL?.trim() || new URL(request.url).origin,
   };
+}
+
+// Same for every visitor: served from the CDN (see domain/cache-policy.ts).
+export function headers(args: Route.HeadersArgs) {
+  return publicPageHeaders(args);
 }
 
 export function meta() {

@@ -1,6 +1,7 @@
 import { Form, useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watches";
+import { publicPageHeaders } from "../domain/cache-policy";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { DiscoveryStoryList } from "../components/discovery-story-list";
 import {
@@ -26,6 +27,11 @@ export async function loader({ context }: Route.LoaderArgs) {
       (await loadPublishedDiscoveryStories()) ??
       listPublishedDiscoveryStories(),
   };
+}
+
+// Same for every visitor: served from the CDN (see domain/cache-policy.ts).
+export function headers(args: Route.HeadersArgs) {
+  return publicPageHeaders(args);
 }
 
 export function meta() {

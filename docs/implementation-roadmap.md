@@ -2290,3 +2290,53 @@ exactly 200), not a result shortage. Only that test site's limit was raised to
 1,000; its key, registered origins, theme and history were preserved. The shared
 AI spending limits and real partner limits were not changed. Subsequent API,
 SSE and browser checks pass; no availability guarantee beyond this scope is made.
+
+## Speed, caching and relevance rebuild (2026-11-25)
+
+Status: **phase 0 in progress**. Owner decisions are recorded in `AGENTS.md`
+("Speed, caching and relevance rebuild"). Audit with all measurements:
+https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4.
+
+Measured baseline, 2026-11-25 (production, read-only database queries, no paid
+provider calls):
+
+- The recommendation pool holds 25,014 catalogue rows, 61.3 MB as JSON. Quiz,
+  alternatives and archetype load it whole in 51 pages of 500 rows; one page is
+  1.2–1.4 MB and takes 0.9–4.8 s. The in-memory copy lives five minutes per
+  server instance. Recorded alternatives latency: 32 s first, 20 s repeat
+  (`docs/reports/production-validation-first-use.json`).
+- Functions run in `iad1`; Supabase runs in eu-central-1.
+- Every page responds with `max-age=0` or `no-store` and misses the CDN.
+  Cached film searches take 1.5–4.2 s; a CDN hit (`embed.js`) took 0.12 s.
+- The home page loads about 200 KB of compressed JS/CSS.
+- 711 saved film searches average 3.7 cards; 4 reach ten; 704 are unverified.
+  The 2026-10-30 production check returned 0 exact quiz matches of 10 and
+  1 verified + 9 unverified cards for the other tools.
+- 5,685 of 56,719 catalogue rows have a photo.
+- November traffic: 5–17 sessions per week. Video links carry no campaign
+  marker, so traffic from the YouTube channel cannot be told apart.
+- The public portfolio demo returns 404.
+
+Phases, in order:
+
+0. **Quick wins on the current site:** functions in `fra1`; CDN caching for
+   public content pages; an indexed SQL search function instead of loading the
+   catalogue; CDN caching of completed searches; per-episode short links with
+   campaign counts; the public portfolio demo.
+1. **Quality measurement before ranking changes:** labelled queries per tool,
+   including queries with no answer, scored against a random baseline in CI on
+   the real functions; a dashboard for p50/p95, cache hit rate, cost per result,
+   exact-match share, verified share and "liked" rate.
+2. **Version 2 scaffold** on the EstateVanta starter kit with the shared search
+   engine and the four cache levels (CDN, shared result cache, PostgreSQL
+   search, AI research on shortfall with negative caching).
+3. **Tools moved one at a time:** archetype, stories, film search, alternatives,
+   quiz. Each switches only after its eval comparison.
+4. **Widgets and API on version 2:** cacheable frames, a lighter embed bundle,
+   a versioned `embed.js`, a partner setting for unverified cards and a hard
+   ceiling on paid calls.
+5. **Clean-up and handoff:** legacy code to an archive branch and tag;
+   `STATUS_AND_HANDOFF.md`, `NEXT_CHAT.md`, updated guides.
+
+Each step records before/after measurements with the exact command, reported as
+PASS, FAIL or NOT RUN.

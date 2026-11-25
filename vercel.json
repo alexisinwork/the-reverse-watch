@@ -1,6 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "react-router",
+  "regions": ["fra1"],
   "crons": [
     {
       "path": "/internal/catalogue/recheck-prices",

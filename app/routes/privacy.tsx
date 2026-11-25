@@ -5,10 +5,18 @@
  */
 import { Link } from "react-router";
 
+import type { Route } from "./+types/privacy";
+import { publicPageHeaders } from "../domain/cache-policy";
+
 import "../styles/legal.css";
 
 export const PRIVACY_UPDATED = "25 October 2026";
 export const PRIVACY_CONTACT = "alex@thereserve.watch";
+
+// Same for every visitor: served from the CDN (see domain/cache-policy.ts).
+export function headers(args: Route.HeadersArgs) {
+  return publicPageHeaders(args);
+}
 
 export function meta() {
   return [

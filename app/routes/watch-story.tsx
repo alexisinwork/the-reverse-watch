@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router";
 
 import type { Route } from "./+types/watch-story";
+import { publicPageHeaders } from "../domain/cache-policy";
 import { DiscoveryAnalytics } from "../components/discovery-analytics";
 import { SurfaceLink, useEmbed } from "../components/surface";
 import { findPublishedDiscoveryStory } from "../domain/discovery-public";
@@ -22,6 +23,11 @@ export async function loader({ params, context }: Route.LoaderArgs) {
   if (!story) throw new Response("Discovery record not found", { status: 404 });
   await meterPartnerUse(partnerSiteFrom(context), "stories");
   return { story, watch: await storyCatalogueWatch(story.attribution) };
+}
+
+// Same for every visitor: served from the CDN (see domain/cache-policy.ts).
+export function headers(args: Route.HeadersArgs) {
+  return publicPageHeaders(args);
 }
 
 export function meta({ data: loaderData }: Route.MetaArgs) {
