@@ -63,7 +63,11 @@ export function validateCachedWatch(
   const evidence = [primary, secondary];
   for (const item of evidence) {
     if (!item.supported || !item.sourceVerified || !safeHttpUrl(item.sourceUrl))
-      return { status: "unverified", reason: "source not verified" };
+      // Which side failed is kept for diagnosis ("muse source not verified").
+      return {
+        status: "unverified",
+        reason: `${item.provider} source not verified`,
+      };
     if (
       (watch.details.person || watch.details.work) &&
       !item.sourceQuote?.trim()

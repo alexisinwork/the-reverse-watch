@@ -67,12 +67,17 @@ export function validationServices(
         },
       );
       if (result.status !== "verified") {
+        // Public page addresses only, for diagnosing which page failed.
         console.info(
           JSON.stringify({
             event: "watch_validation_rejected",
             brand: watch.brand,
             reference: watch.referenceCode,
             reason: result.reason,
+            work: watch.details.work ?? null,
+            person: watch.details.person ?? null,
+            primaryUrl: primary.evidence.sourceUrl,
+            secondaryUrl: secondary.evidence.sourceUrl,
           }),
         );
         return result;

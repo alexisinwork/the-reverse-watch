@@ -126,19 +126,28 @@ function shortestTie(
     (!needsReference || pageMentionsReference(watch.referenceCode, value, ""));
   if (!ties(sentence)) return null;
   if (shortPassage(sentence)) return sentence;
+  // The shortest run, preferring one that writes the brand as the card does
+  // ("TAG Heuer", not only "Heuer").
+  const ownBrand = spacedWords(watch.brand);
   const tokens = sentence.split(" ");
   let best: string | null = null;
+  let bestOwnBrand: string | null = null;
   for (let start = 0; start < tokens.length; start++) {
     for (let end = start + 1; end <= tokens.length; end++) {
       const window = tokens.slice(start, end).join(" ");
       if (!shortPassage(window)) break;
       if (ties(window)) {
         if (!best || window.length < best.length) best = window;
+        if (
+          spacedWords(window).includes(ownBrand) &&
+          (!bestOwnBrand || window.length < bestOwnBrand.length)
+        )
+          bestOwnBrand = window;
         break;
       }
     }
   }
-  return best;
+  return bestOwnBrand ?? best;
 }
 
 /**

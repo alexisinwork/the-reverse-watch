@@ -74,9 +74,11 @@ export function samePerson(
 }
 
 /** Brands written more than one way on pages: Bulgari's house style is
- * "Bvlgari". Each group lists every spelling, folded. */
+ * "Bvlgari"; a vintage Heuer is sold today as TAG Heuer. Each group lists
+ * every spelling, folded. */
 const BRAND_SPELLINGS: readonly (readonly string[])[] = [
   ["bvlgari", "bulgari"],
+  ["tag heuer", "heuer"],
 ];
 
 /** Every spelling of a brand, folded ("Bvlgari" → bvlgari, bulgari). */
@@ -86,13 +88,20 @@ export function brandNames(brand: string | null | undefined): string[] {
   return [...(BRAND_SPELLINGS.find((names) => names.includes(name)) ?? [name])];
 }
 
-/** Two brand names are the same house, ignoring spaces and spellings. */
+/** Two brand names are the same house, ignoring spaces and spellings. A
+ * maker's line written with the maker's name ("Casio G-Shock") is that
+ * maker; another word in front ("Grand Seiko") is not. */
 export function sameBrand(
   a: string | null | undefined,
   b: string | null | undefined,
 ) {
-  const first = new Set(brandNames(a).map((name) => name.replace(/ /g, "")));
-  return brandNames(b).some((name) => first.has(name.replace(/ /g, "")));
+  const first = brandNames(a);
+  const second = brandNames(b);
+  const squash = (name: string) => name.replace(/ /g, "");
+  const line = (whole: string, maker: string) => whole.startsWith(`${maker} `);
+  return first.some((x) =>
+    second.some((y) => squash(x) === squash(y) || line(x, y) || line(y, x)),
+  );
 }
 
 /** Folded text with a space at each end, for whole-name `includes` checks. */

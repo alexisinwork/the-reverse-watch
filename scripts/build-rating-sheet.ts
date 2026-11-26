@@ -6,8 +6,12 @@
 //   node --import tsx scripts/build-rating-sheet.ts \
 //     --report docs/reports/eval-live-2026-11-26.json --out <page.html>
 //
-// Also writes docs/reports/rating-sheet-<date>.json: the sample the ratings
-// are scored against. The page (scripts/rating-sheet-template.html) stores
+// Several reports (for example film searches) make one sheet with
+// --report a.json,b.json --label films; a request asked again in a later
+// report replaces the earlier answer.
+//
+// Also writes docs/reports/rating-sheet-[<label>-]<date>.json: the sample
+// the ratings are scored against. The page (scripts/rating-sheet-template.html) stores
 // each rater's ratings in its own database under ratings/<rater>/cards.
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -33,10 +37,13 @@ function option(name: string) {
 }
 const reportPath = option("report");
 const out = option("out");
+const label = option("label");
 if (!reportPath || !out)
   throw new Error(
-    "--report <eval-live json> and --out <page.html> are required.",
+    "--report <eval-live json[,more.json]> and --out <page.html> are required.",
   );
+if (label !== undefined && !/^[a-z0-9-]{1,40}$/.test(label))
+  throw new Error("--label takes lowercase letters, digits and dashes.");
 
 type Card = Record<string, unknown> & {
   brand: string;
@@ -53,17 +60,34 @@ type CaseResult = {
   checks: Record<string, unknown>;
   cards: Card[];
 };
-const report = JSON.parse(readFileSync(reportPath, "utf8")) as {
-  startedAt: string;
-  dryRun: boolean;
-  cases: CaseResult[];
-};
-if (report.dryRun) throw new Error("A dry run has no live answers to rate.");
-const date = report.startedAt.slice(0, 10);
+const reports = reportPath.split(",").map(
+  (path) =>
+    JSON.parse(readFileSync(path, "utf8")) as {
+      startedAt: string;
+      dryRun: boolean;
+      cases: CaseResult[];
+    },
+);
+if (reports.some((report) => report.dryRun))
+  throw new Error("A dry run has no live answers to rate.");
+const date = reports
+  .map((report) => report.startedAt.slice(0, 10))
+  .sort()
+  .at(-1)!;
 
-// The answer a visitor gets now: the last round that ran for each case.
+// The answer a visitor gets now: the last round that ran for each case, and
+// across reports the latest answer to the same request.
 const finals = [
-  ...new Map(report.cases.map((result) => [result.id, result])).values(),
+  ...new Map(
+    reports
+      .flatMap((report) => report.cases)
+      .map((result) => [
+        reports.length > 1
+          ? `${result.tool}|${JSON.stringify(result.input)}`
+          : result.id,
+        result,
+      ]),
+  ).values(),
 ].sort((a, b) => a.id.localeCompare(b.id));
 const found = (tool: CaseResult["tool"]) =>
   finals.filter(
@@ -219,9 +243,14 @@ const cards = [...quiz, ...archetype, ...alternatives, ...film].flatMap(
   },
 );
 
-const sheet = { id: `live-${date}`, date, report: reportPath, cards };
+const sheet = {
+  id: label ? `${label}-${date}` : `live-${date}`,
+  date,
+  report: reportPath,
+  cards,
+};
 writeFileSync(
-  resolve(`docs/reports/rating-sheet-${date}.json`),
+  resolve(`docs/reports/rating-sheet-${label ? `${label}-` : ""}${date}.json`),
   `${JSON.stringify(sheet, null, 2)}\n`,
 );
 const template = readFileSync("scripts/rating-sheet-template.html", "utf8");

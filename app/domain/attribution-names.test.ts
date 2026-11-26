@@ -125,6 +125,9 @@ describe("brand spellings", () => {
     expect(sameBrand("Bulgari", "BVLGARI")).toBe(true);
     expect(sameBrand("TAGHeuer", "TAG Heuer")).toBe(true);
     expect(sameBrand("Omega", "Longines")).toBe(false);
+    expect(sameBrand("Casio G-Shock", "Casio")).toBe(true);
+    expect(sameBrand("Heuer", "TAG Heuer")).toBe(true);
+    expect(sameBrand("Grand Seiko", "Seiko")).toBe(false);
     expect(sameBrand(null, "Omega")).toBe(false);
   });
 });

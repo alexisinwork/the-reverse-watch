@@ -261,6 +261,17 @@
     font-size: 14px;
     margin: 0;
   }
+  .evidence {
+    margin: 0;
+    padding: 6px 0 6px 12px;
+    border-left: 2px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  .evidence a {
+    white-space: nowrap;
+  }
   .links {
     display: flex;
     flex-wrap: wrap;
@@ -459,6 +470,13 @@
           "Каждая карточка — один ответ сайта на настоящий запрос из платной проверки " +
           sheet.date +
           ". Оцените, насколько это хороший совет для такого запроса. Точные правила (цена, размер, механизм) уже проверены программой; здесь нужна оценка знатока. Ссылки ведут на источники, на которые опирается карточка.",
+        ledeFilm:
+          "Каждая карточка — часы, которые сайт показал на поиск по фильму, актёру или персонажу (" +
+          sheet.date +
+          "). «Проверено» — две независимые статьи на разных сайтах, программа сама открыла обе и нашла фразу о часах; «возможное» — найдено в статье, но вторая проверка не прошла, на сайте такие карточки свёрнуты отдельно. Оцените, правда ли эти часы были в фильме или на человеке.",
+        evidence: "Цитаты из статей",
+        article: (n) => `Статья ${n}`,
+        possible: "На сайте — в свёрнутом блоке «возможные»",
         all: "Все",
         quiz: "Подбор",
         archetype: "Архетип",
@@ -524,6 +542,13 @@
           "Each card is one answer the site gave to a real request in the paid evaluation round of " +
           sheet.date +
           ". Rate how good a recommendation it is for that request. The hard rules (price, size, movement) were already checked by the program; this needs a specialist's judgement. Links open the sources the card relies on.",
+        ledeFilm:
+          "Each card is a watch the site showed for a film, actor or character search (" +
+          sheet.date +
+          "). “Checked” means two independent articles on different sites, both opened by the program, which found the sentence about the watch; “possible” means an article names it but the second check did not pass, and the site lists such cards apart, collapsed. Rate whether the watch really appeared in the film or on the person.",
+        evidence: "Quotes from the articles",
+        article: (n) => `Article ${n}`,
+        possible: "On the site: in the collapsed “possible” block",
         all: "All",
         quiz: "Diagnostic",
         archetype: "Archetype",
@@ -688,8 +713,34 @@
             : `${t().unchecked}${card.verificationNote ? `: ${card.verificationNote}` : ""}`,
         }),
       );
-      if (card.section === "alsoWorth")
+      if (card.tool === "film" && !card.verified)
+        box.append(el("div", { class: "note", text: t().possible }));
+      else if (card.section === "alsoWorth")
         box.append(el("div", { class: "note", text: t().also }));
+      const quoted = (card.evidence ?? []).filter(
+        (item) => item && item.sourceQuote,
+      );
+      if (card.tool === "film" && quoted.length) {
+        box.append(el("div", { class: "note", text: t().evidence }));
+        quoted.forEach((item, index) => {
+          const href = safeUrl(item.sourceUrl);
+          box.append(
+            el(
+              "blockquote",
+              { class: "evidence" },
+              el("span", { text: `“${item.sourceQuote}” ` }),
+              href
+                ? el("a", {
+                    href,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                    text: `${t().article(index + 1)} · ${new URL(href).hostname.replace(/^www\./, "")}`,
+                  })
+                : el("span", { text: t().article(index + 1) }),
+            ),
+          );
+        });
+      }
       if (card.misses?.length) {
         box.append(el("div", { class: "note", text: t().misses }));
         const list = el("ul", { class: "misses" });
@@ -795,7 +846,9 @@
     function render() {
       document.documentElement.lang = lang;
       $("title").textContent = t().title;
-      $("lede").textContent = t().lede;
+      $("lede").textContent = cards.every((card) => card.tool === "film")
+        ? t().ledeFilm
+        : t().lede;
       $("lang").textContent = lang === "ru" ? "EN" : "RU";
       $("note-label").textContent = t().note;
       $("prev").textContent = t().prev;
