@@ -256,7 +256,14 @@ writeFileSync(
 const template = readFileSync("scripts/rating-sheet-template.html", "utf8");
 // JSON inside a <script> element: every < is escaped so no value can close it.
 const json = JSON.stringify(sheet).replace(/</g, "\\u003c");
-writeFileSync(out, template.replace("/*SHEET_JSON*/", json));
+// A sheet of film cards only is its own page, with its own name.
+const page = cards.every((card) => card.tool === "film")
+  ? template.replace(
+      "<title>Watch Card Ratings</title>",
+      "<title>Film Watch Review</title>",
+    )
+  : template;
+writeFileSync(out, page.replace("/*SHEET_JSON*/", json));
 console.log(
   `Sheet ${sheet.id}: ${cards.length} cards (quiz ${quiz.length} answers, archetype ${archetype.length}, alternatives ${alternatives.length}, film ${film.length}) → ${out}`,
 );

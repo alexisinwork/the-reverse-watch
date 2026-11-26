@@ -112,3 +112,29 @@ unused part of this approval if the owner agrees. Results and findings:
 3. The rating sheet has 321 cards (10 quiz answers, 8 archetype results, 10
    alternatives cases, every film card): `docs/reports/rating-sheet-2026-11-26.json`,
    rated on the owner's rating page (`docs/OWNER_QUESTIONS.md`, item 1).
+
+## Film and people tests (2026-11-26, from the same $60)
+
+The owner asked to retrain film search on real articles and to test it on
+5–10 queries and on the IMDb Top 250 films with their actors and characters,
+putting relevance before cost. Each run stopped itself before its own limit
+by reading the ledger before every search (`scripts/run-film-searches.ts`).
+
+| Run | Spend |
+| --- | ---: |
+| Paid evaluation round (above) | $3.89 |
+| 30 owner test queries | $0.86 |
+| Four stuck searches retried | $0.05 |
+| IMDb Top 250 films | $2.24 |
+| 100 actors and characters | $3.05 |
+| The 250 films again | $1.78 |
+| 163 possible-only answers checked again | $3.99 |
+| Diagnostics and the discovery comparison, outside the ledger | about $0.51 |
+| **Total of the $60** | **about $16.37** |
+
+Unused: about $43.63. The ledger read $15.19 spent for November afterwards
+(plus $0.73 still reserved by open checks), within the $100 monthly limit.
+The provider counters, which started on 2026-11-26, read Perplexity $3.23
+and Muse $5.99, so about $11–12 of the owner's $15 Perplexity balance is
+left. Results: `docs/eval-baseline.md`, "Film and people search on real
+articles".

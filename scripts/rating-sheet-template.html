@@ -470,6 +470,7 @@
           "Каждая карточка — один ответ сайта на настоящий запрос из платной проверки " +
           sheet.date +
           ". Оцените, насколько это хороший совет для такого запроса. Точные правила (цена, размер, механизм) уже проверены программой; здесь нужна оценка знатока. Ссылки ведут на источники, на которые опирается карточка.",
+        titleFilm: "Проверка часов из фильмов",
         ledeFilm:
           "Каждая карточка — часы, которые сайт показал на поиск по фильму, актёру или персонажу (" +
           sheet.date +
@@ -542,6 +543,7 @@
           "Each card is one answer the site gave to a real request in the paid evaluation round of " +
           sheet.date +
           ". Rate how good a recommendation it is for that request. The hard rules (price, size, movement) were already checked by the program; this needs a specialist's judgement. Links open the sources the card relies on.",
+        titleFilm: "Film watch review",
         ledeFilm:
           "Each card is a watch the site showed for a film, actor or character search (" +
           sheet.date +
@@ -845,7 +847,9 @@
 
     function render() {
       document.documentElement.lang = lang;
-      $("title").textContent = t().title;
+      $("title").textContent = cards.every((card) => card.tool === "film")
+        ? t().titleFilm
+        : t().title;
       $("lede").textContent = cards.every((card) => card.tool === "film")
         ? t().ledeFilm
         : t().lede;

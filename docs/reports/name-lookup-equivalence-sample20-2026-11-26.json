@@ -1,43 +1,43 @@
 {
-  "at": "2026-11-26T08:41:47.956Z",
+  "at": "2026-11-26T12:48:33.178Z",
   "sampledPoolRows": 20,
   "poolRowsChecked": 25014,
   "foldAndReferenceKeyDifferences": 0,
   "nameIndex": {
     "rows": 25014,
-    "readMs": 2027
+    "readMs": 2489
   },
-  "typings": 261,
+  "typings": 250,
   "byGroup": {
-    "owner set": 70,
+    "owner set": 59,
     "pool sample": 158,
     "outside pool": 20,
     "odd inputs": 13
   },
   "outcomes": {
-    "found": 185,
-    "ambiguous": 69,
-    "not_found": 7
+    "found": 130,
+    "ambiguous": 112,
+    "not_found": 8
   },
   "ms": {
     "namedV1": {
-      "p50": 367,
-      "p95": 636,
-      "max": 3135
+      "p50": 337,
+      "p95": 665,
+      "max": 7980
     },
     "namedV2": {
-      "p50": 121,
-      "p95": 180,
-      "max": 1472
+      "p50": 109,
+      "p95": 173,
+      "max": 1265
     },
     "candidates": {
-      "p50": 149,
-      "p95": 691,
-      "max": 1336
+      "p50": 138,
+      "p95": 899,
+      "max": 1471
     }
   },
   "candidateRows": {
-    "p50": 178,
+    "p50": 173,
     "p95": 5449,
     "max": 5449
   },

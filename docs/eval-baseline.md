@@ -181,6 +181,66 @@ request refused (`scripts/run-evals-live.ts --dry-run`, report
    (`scripts/test-image-conflict-publish.ts`: FAILS on the old function,
    PASS applied).
 
+## Film and people search on real articles (2026-11-26)
+
+Owner: "чтобы они всегда опирались на реальные статьи из реальных сайтов с
+фактами", tested on 5–10 queries and on the IMDb Top 250 films, their actors
+and characters, with every output reviewed by the owner; relevance before
+cost.
+
+Discovery now reads the articles and databases that catalogue a subject's
+watches (up to three searches, social sites, forums and shops excluded). On
+the 19 independent labels (`scripts/compare-film-discovery.ts`,
+`docs/reports/film-discovery-comparison-2026-11-26.json`): labels found
+14 → 19, ready for confirmation 10 → 12, invented sightings for the two
+control subjects 0 → 0, cost per discovery $0.0014 → $0.0083 (at most
+$0.0102).
+
+Paid runs through the visitors' own function (`scripts/run-film-searches.ts`,
+a ledger stop before each search; reports `docs/reports/film-searches-*.json`):
+
+| Run | Searches | Spend | Confirmed watch | Any card |
+| --- | ---: | ---: | ---: | ---: |
+| Owner test, 30 films, actors and characters | 30 | $0.86 | 5 | 23 |
+| IMDb Top 250 films, before the confirmation fixes | 250 | $2.24 | 6 | 97 |
+| 100 actors and characters from those films | 100 | $3.05 | 12 | 83 |
+| The 250 films again (possible answers served from the finished cache: defect fixed in `f6ccbe3`) | 250 | $1.78 | 6 | 98 |
+| The 163 searches with possible cards only, checked again | 163 | $3.99 | 5 | 163 |
+
+The latest answer to each of the 352 distinct requests: films 7 of 250 with a
+confirmed watch (98 with any card), actors and characters 16 of 102 (84 with
+any card); 30 confirmed cards in all, none of them for an invented subject.
+Newly confirmed in the last pass, among others: Al Pacino's Bulgari Diagono
+CH35S in Heat, Brad Pitt's IWC Ingenieur 1832 in F1, Leonardo DiCaprio's
+Breitling Avenger E13360 in Blood Diamond, Matthew McConaughey's Hamilton
+Khaki Pilot Day Date H64615135 in Interstellar, Vincent Vega's Timex Q 989502
+in Pulp Fiction. Every card, with the passages each source page gave, is on
+the owner's film review page (`docs/OWNER_QUESTIONS.md`, item 1;
+`docs/reports/rating-sheet-films-2026-11-26.json`).
+
+The articles were right; the confirmation dropped them. Traced subject by
+subject (diagnostic scripts, about $0.30 outside the ledger):
+
+1. The page check accepted only the sentence the provider quoted, which often
+   lacked the brand or the reference ("…after Sigourney Weaver wore it as
+   Ellen Ripley in Aliens"). It now reads the page's own sentences too, and
+   on a page whose title names the subject ("Bruce Willis in Die Hard » BAMF
+   Style") accepts a sentence with the brand and exact reference, stored as
+   "heading … sentence".
+2. Muse answered "not supported" from a short search snippet, or ran out of
+   room while thinking. A sighting check reads more of each result, may open
+   one page, thinks a little and has room to answer (about $0.006 a check).
+3. Both checks landed on one site. Muse is told the first source's site and
+   the wearer it names.
+4. A film answer of possible cards only was cached as finished and never
+   checked again (`f6ccbe3`).
+5. Oracle of Time, the owner's example source, hangs up on the usual
+   "Mozilla/5.0 (compatible; …)" bot name; page reads retry once as
+   "TheReserveBot/1.0 (+https://thereserve.watch)" (`11a40e8`).
+
+Remaining gap: pages name the character ("Mark Hanna", "The Joker") where an
+actor's card names the actor, so those sightings stay possible.
+
 ## Known gaps the scores point to
 
 - Film: whether the new passage rule turns the 15 found sightings into
