@@ -121,6 +121,32 @@ describe("coverage around checked snapshots", () => {
     expect(search).not.toHaveBeenCalled();
     expect(result).toMatchObject({ fromCache: true, coverage: { total: 3 } });
   });
+  it("checks a saved film answer of possible sightings again instead of serving it as finished", async () => {
+    const possible = (i: number) => ({
+      ...card(i),
+      details: {
+        ...card(i).details,
+        verificationStatus: "unverified" as const,
+        verificationNote: "Association not fully verified",
+      },
+    });
+    mocks.read.mockImplementation(async (_store, key) =>
+      key ===
+      aiSearchCacheKey("film", {
+        constraints: input,
+        completeResponsePolicy: 1,
+      })
+        ? { watches: [possible(1), possible(2)] }
+        : null,
+    );
+    const search = vi.fn(async () => ({ status: "unavailable" as const }));
+    await searchWithCoverage(
+      request,
+      { store, validateMissingFilm: vi.fn() },
+      { search, enrich },
+    );
+    expect(search).toHaveBeenCalled();
+  });
   it("uses typed and legacy drafts bound to the subject without paying to reach ten", async () => {
     mocks.read.mockImplementation(async (_store, key) => ({
       watches:

@@ -1,0 +1,656 @@
+{
+ "queries": [
+  {
+   "query": "Morgan Freeman",
+   "kind": "actor"
+  },
+  {
+   "query": "Al Pacino",
+   "kind": "actor"
+  },
+  {
+   "query": "Robert De Niro",
+   "kind": "actor"
+  },
+  {
+   "query": "Christian Bale",
+   "kind": "actor"
+  },
+  {
+   "query": "Heath Ledger",
+   "kind": "actor"
+  },
+  {
+   "query": "Liam Neeson",
+   "kind": "actor"
+  },
+  {
+   "query": "John Travolta",
+   "kind": "actor"
+  },
+  {
+   "query": "Samuel L. Jackson",
+   "kind": "actor"
+  },
+  {
+   "query": "Bruce Willis",
+   "kind": "actor"
+  },
+  {
+   "query": "Tom Hanks",
+   "kind": "actor"
+  },
+  {
+   "query": "Brad Pitt",
+   "kind": "actor"
+  },
+  {
+   "query": "Edward Norton",
+   "kind": "actor"
+  },
+  {
+   "query": "Leonardo DiCaprio",
+   "kind": "actor"
+  },
+  {
+   "query": "Joseph Gordon-Levitt",
+   "kind": "actor"
+  },
+  {
+   "query": "Keanu Reeves",
+   "kind": "actor"
+  },
+  {
+   "query": "Ray Liotta",
+   "kind": "actor"
+  },
+  {
+   "query": "Joe Pesci",
+   "kind": "actor"
+  },
+  {
+   "query": "Matthew McConaughey",
+   "kind": "actor"
+  },
+  {
+   "query": "Jodie Foster",
+   "kind": "actor"
+  },
+  {
+   "query": "Anthony Hopkins",
+   "kind": "actor"
+  },
+  {
+   "query": "Kevin Spacey",
+   "kind": "actor"
+  },
+  {
+   "query": "Russell Crowe",
+   "kind": "actor"
+  },
+  {
+   "query": "Matt Damon",
+   "kind": "actor"
+  },
+  {
+   "query": "Jack Nicholson",
+   "kind": "actor"
+  },
+  {
+   "query": "Harrison Ford",
+   "kind": "actor"
+  },
+  {
+   "query": "Michael J. Fox",
+   "kind": "actor"
+  },
+  {
+   "query": "Sigourney Weaver",
+   "kind": "actor"
+  },
+  {
+   "query": "Tom Cruise",
+   "kind": "actor"
+  },
+  {
+   "query": "Miles Teller",
+   "kind": "actor"
+  },
+  {
+   "query": "Cillian Murphy",
+   "kind": "actor"
+  },
+  {
+   "query": "Daniel Day-Lewis",
+   "kind": "actor"
+  },
+  {
+   "query": "Hugh Jackman",
+   "kind": "actor"
+  },
+  {
+   "query": "Mel Gibson",
+   "kind": "actor"
+  },
+  {
+   "query": "Jake Gyllenhaal",
+   "kind": "actor"
+  },
+  {
+   "query": "Cary Grant",
+   "kind": "actor"
+  },
+  {
+   "query": "Humphrey Bogart",
+   "kind": "actor"
+  },
+  {
+   "query": "James Stewart",
+   "kind": "actor"
+  },
+  {
+   "query": "Dustin Hoffman",
+   "kind": "actor"
+  },
+  {
+   "query": "Jamie Foxx",
+   "kind": "actor"
+  },
+  {
+   "query": "Timothée Chalamet",
+   "kind": "actor"
+  },
+  {
+   "query": "Michael Corleone",
+   "kind": "character"
+  },
+  {
+   "query": "Bruce Wayne",
+   "kind": "character"
+  },
+  {
+   "query": "Vincent Vega",
+   "kind": "character"
+  },
+  {
+   "query": "Jules Winnfield",
+   "kind": "character"
+  },
+  {
+   "query": "Butch Coolidge",
+   "kind": "character"
+  },
+  {
+   "query": "Dom Cobb",
+   "kind": "character"
+  },
+  {
+   "query": "Joseph Cooper",
+   "kind": "character"
+  },
+  {
+   "query": "Hannibal Lecter",
+   "kind": "character"
+  },
+  {
+   "query": "Clarice Starling",
+   "kind": "character"
+  },
+  {
+   "query": "Travis Bickle",
+   "kind": "character"
+  },
+  {
+   "query": "Henry Hill",
+   "kind": "character"
+  },
+  {
+   "query": "Jordan Belfort",
+   "kind": "character"
+  },
+  {
+   "query": "Marty McFly",
+   "kind": "character"
+  },
+  {
+   "query": "Doc Brown",
+   "kind": "character"
+  },
+  {
+   "query": "Ellen Ripley",
+   "kind": "character"
+  },
+  {
+   "query": "Sarah Connor",
+   "kind": "character"
+  },
+  {
+   "query": "John McClane",
+   "kind": "character"
+  },
+  {
+   "query": "Hans Gruber",
+   "kind": "character"
+  },
+  {
+   "query": "Tony Montana",
+   "kind": "character"
+  },
+  {
+   "query": "Rocky Balboa",
+   "kind": "character"
+  },
+  {
+   "query": "Pete \"Maverick\" Mitchell",
+   "kind": "character"
+  },
+  {
+   "query": "Llewelyn Moss",
+   "kind": "character"
+  },
+  {
+   "query": "Rick Blaine",
+   "kind": "character"
+  },
+  {
+   "query": "Virgil Hilts",
+   "kind": "character"
+  },
+  {
+   "query": "Vincent Hanna",
+   "kind": "character"
+  },
+  {
+   "query": "Neil McCauley",
+   "kind": "character"
+  },
+  {
+   "query": "Roger Thornhill",
+   "kind": "character"
+  },
+  {
+   "query": "Benjamin Willard",
+   "kind": "character"
+  },
+  {
+   "query": "Walter E. Kurtz",
+   "kind": "character"
+  },
+  {
+   "query": "Patrick Bateman",
+   "kind": "character"
+  },
+  {
+   "query": "Dr. Strangelove",
+   "kind": "character"
+  },
+  {
+   "query": "The Godfather",
+   "kind": "movie"
+  },
+  {
+   "query": "The Dark Knight",
+   "kind": "movie"
+  },
+  {
+   "query": "The Godfather Part II",
+   "kind": "movie"
+  },
+  {
+   "query": "Schindler's List",
+   "kind": "movie"
+  },
+  {
+   "query": "The Lord of the Rings: The Fellowship of the Ring",
+   "kind": "movie"
+  },
+  {
+   "query": "Pulp Fiction",
+   "kind": "movie"
+  },
+  {
+   "query": "Forrest Gump",
+   "kind": "movie"
+  },
+  {
+   "query": "Inception",
+   "kind": "movie"
+  },
+  {
+   "query": "Fight Club",
+   "kind": "movie"
+  },
+  {
+   "query": "GoodFellas",
+   "kind": "movie"
+  },
+  {
+   "query": "Seven",
+   "kind": "movie"
+  },
+  {
+   "query": "It's a Wonderful Life",
+   "kind": "movie"
+  },
+  {
+   "query": "The Silence of the Lambs",
+   "kind": "movie"
+  },
+  {
+   "query": "The Green Mile",
+   "kind": "movie"
+  },
+  {
+   "query": "Terminator 2: Judgment Day",
+   "kind": "movie"
+  },
+  {
+   "query": "Spirited Away",
+   "kind": "movie"
+  },
+  {
+   "query": "The Pianist",
+   "kind": "movie"
+  },
+  {
+   "query": "Kill Bill: The Whole Bloody Affair",
+   "kind": "movie"
+  },
+  {
+   "query": "The Lion King",
+   "kind": "movie"
+  },
+  {
+   "query": "The Departed",
+   "kind": "movie"
+  },
+  {
+   "query": "Casablanca",
+   "kind": "movie"
+  },
+  {
+   "query": "The Usual Suspects",
+   "kind": "movie"
+  },
+  {
+   "query": "Alien",
+   "kind": "movie"
+  },
+  {
+   "query": "Rear Window",
+   "kind": "movie"
+  },
+  {
+   "query": "WALL·E",
+   "kind": "movie"
+  },
+  {
+   "query": "Avengers: Infinity War",
+   "kind": "movie"
+  },
+  {
+   "query": "Sunset Boulevard",
+   "kind": "movie"
+  },
+  {
+   "query": "Aliens",
+   "kind": "movie"
+  },
+  {
+   "query": "Avengers: Endgame",
+   "kind": "movie"
+  },
+  {
+   "query": "The Dark Knight Rises",
+   "kind": "movie"
+  },
+  {
+   "query": "Braveheart",
+   "kind": "movie"
+  },
+  {
+   "query": "Princess Mononoke",
+   "kind": "movie"
+  },
+  {
+   "query": "The Odyssey",
+   "kind": "movie"
+  },
+  {
+   "query": "Oldboy",
+   "kind": "movie"
+  },
+  {
+   "query": "Joker",
+   "kind": "movie"
+  },
+  {
+   "query": "Star Wars: Episode VI - Return of the Jedi",
+   "kind": "movie"
+  },
+  {
+   "query": "The Apartment",
+   "kind": "movie"
+  },
+  {
+   "query": "Lawrence of Arabia",
+   "kind": "movie"
+  },
+  {
+   "query": "Heat",
+   "kind": "movie"
+  },
+  {
+   "query": "Scarface",
+   "kind": "movie"
+  },
+  {
+   "query": "Reservoir Dogs",
+   "kind": "movie"
+  },
+  {
+   "query": "2001: A Space Odyssey",
+   "kind": "movie"
+  },
+  {
+   "query": "Double Indemnity",
+   "kind": "movie"
+  },
+  {
+   "query": "North by Northwest",
+   "kind": "movie"
+  },
+  {
+   "query": "Full Metal Jacket",
+   "kind": "movie"
+  },
+  {
+   "query": "Die Hard",
+   "kind": "movie"
+  },
+  {
+   "query": "Indiana Jones and the Last Crusade",
+   "kind": "movie"
+  },
+  {
+   "query": "M",
+   "kind": "movie"
+  },
+  {
+   "query": "Vertigo",
+   "kind": "movie"
+  },
+  {
+   "query": "The Truman Show",
+   "kind": "movie"
+  },
+  {
+   "query": "A Clockwork Orange",
+   "kind": "movie"
+  },
+  {
+   "query": "Metropolis",
+   "kind": "movie"
+  },
+  {
+   "query": "Shutter Island",
+   "kind": "movie"
+  },
+  {
+   "query": "Snatch",
+   "kind": "movie"
+  },
+  {
+   "query": "L.A. Confidential",
+   "kind": "movie"
+  },
+  {
+   "query": "Green Book",
+   "kind": "movie"
+  },
+  {
+   "query": "Jurassic Park",
+   "kind": "movie"
+  },
+  {
+   "query": "Batman Begins",
+   "kind": "movie"
+  },
+  {
+   "query": "Prisoners",
+   "kind": "movie"
+  },
+  {
+   "query": "Casino",
+   "kind": "movie"
+  },
+  {
+   "query": "No Country for Old Men",
+   "kind": "movie"
+  },
+  {
+   "query": "Top Gun: Maverick",
+   "kind": "movie"
+  },
+  {
+   "query": "Kill Bill: Vol. 1",
+   "kind": "movie"
+  },
+  {
+   "query": "Klaus",
+   "kind": "movie"
+  },
+  {
+   "query": "Project Hail Mary",
+   "kind": "movie"
+  },
+  {
+   "query": "The Great Escape",
+   "kind": "movie"
+  },
+  {
+   "query": "Demon Slayer: Kimetsu No Yaiba Infinity Castle",
+   "kind": "movie"
+  },
+  {
+   "query": "Gone with the Wind",
+   "kind": "movie"
+  },
+  {
+   "query": "Catch Me If You Can",
+   "kind": "movie"
+  },
+  {
+   "query": "Chinatown",
+   "kind": "movie"
+  },
+  {
+   "query": "Dead Poets Society",
+   "kind": "movie"
+  },
+  {
+   "query": "Three Billboards Outside Ebbing, Missouri",
+   "kind": "movie"
+  },
+  {
+   "query": "Ben-Hur",
+   "kind": "movie"
+  },
+  {
+   "query": "The Wild Robot",
+   "kind": "movie"
+  },
+  {
+   "query": "Hacksaw Ridge",
+   "kind": "movie"
+  },
+  {
+   "query": "Warrior",
+   "kind": "movie"
+  },
+  {
+   "query": "Ratatouille",
+   "kind": "movie"
+  },
+  {
+   "query": "Fargo",
+   "kind": "movie"
+  },
+  {
+   "query": "Gran Torino",
+   "kind": "movie"
+  },
+  {
+   "query": "Blade Runner",
+   "kind": "movie"
+  },
+  {
+   "query": "Le Mans '66",
+   "kind": "movie"
+  },
+  {
+   "query": "Gone Girl",
+   "kind": "movie"
+  },
+  {
+   "query": "Jaws",
+   "kind": "movie"
+  },
+  {
+   "query": "Chainsaw Man - The Movie: Reze Arc",
+   "kind": "movie"
+  },
+  {
+   "query": "Spider-Man: No Way Home",
+   "kind": "movie"
+  },
+  {
+   "query": "The Deer Hunter",
+   "kind": "movie"
+  },
+  {
+   "query": "On the Waterfront",
+   "kind": "movie"
+  },
+  {
+   "query": "The Big Lebowski",
+   "kind": "movie"
+  },
+  {
+   "query": "The Exorcist",
+   "kind": "movie"
+  },
+  {
+   "query": "Platoon",
+   "kind": "movie"
+  },
+  {
+   "query": "Rush",
+   "kind": "movie"
+  },
+  {
+   "query": "The Wizard of Oz",
+   "kind": "movie"
+  }
+ ]
+}

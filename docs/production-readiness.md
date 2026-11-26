@@ -93,6 +93,15 @@ https://docs.github.com/en/rest/pages/pages#update-information-about-a-github-pa
   their approximate-price label. No unpriced import archive is researched by
   this job. Operations monitoring detects a missed daily run after 48 hours.
 
+- Spend alerts (2026-11-26): the hourly cron `/internal/spend-alert`
+  (`CRON_SECRET` bearer) reads the ledger and the per-provider counters
+  (`provider-spend.server.ts`, Upstash Redis) and emails `SPEND_ALERT_EMAIL`
+  through Resend once per mark: the month's ledger at $5, 10, 25, 50, 75, 90
+  and 100, Perplexity alone at $5 and $10 (its balance is prepaid), and at
+  once when the ledger halts. Checked in production: without the secret it
+  answers 401; with it, `{"ok":true,"sent":false,"marks":[]}`. The counters
+  are best-effort; the ledger stays the authority on what may be spent.
+
 When a workflow fails, inspect its run first, then `/admin/catalogue` for the
 budget and Vercel/Sentry for application errors. For database unavailability,
 restore connectivity before retrying. For an overrun, reconcile provider billing

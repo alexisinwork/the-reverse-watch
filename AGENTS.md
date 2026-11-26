@@ -202,6 +202,24 @@ speed and cost.
 - **Database scripts verify the server** against Supabase's certificate
   authority (`certs/prod-ca-2021.crt`, supplied by the owner) through
   `scripts/database-tls.ts`; never go back to encrypting without verifying.
+- **Relevance before cost** ("Нам важнее гарантировать релевантный ответ,
+  чем влезть в бюджет … лучше качественный ответ и чуть дороже"): a paid
+  check may spend more when that makes the answer more reliable, always
+  inside the per-card ($0.025) and monthly ($100) ledger limits.
+- **Film and people search rests on real articles** ("чтобы они всегда
+  опирались на реальные статьи из реальных сайтов с фактами"). Discovery
+  reads the articles and databases that catalogue a subject's watches (up
+  to three web searches, social sites, forums and shops excluded). A
+  sighting is confirmed only when two pages on different sites, each opened
+  by our server, show the exact reference and a passage tying the watch to
+  the subject: one sentence naming the brand, the watch and the subject, or,
+  on a page whose title names the subject, one sentence naming the brand
+  and the exact reference (stored as "heading … sentence"). The second check
+  (Muse) may search once, open one page and think briefly, about $0.006.
+- **Spend alerts by email** to the owner's address (`SPEND_ALERT_EMAIL` in
+  Vercel): the monthly ledger at $5, 10, 25, 50, 75, 90 and 100, Perplexity
+  alone at $5 and $10, and at once when the ledger halts; the hourly cron
+  `/internal/spend-alert` sends one email per mark.
 
 ## Continuity and skills (EstateVanta starter kit, 2026-11-25)
 

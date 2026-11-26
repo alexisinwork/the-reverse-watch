@@ -77,4 +77,37 @@ describe("completed ten-option cache", () => {
       client.fetchImpl,
     );
   });
+
+  it("stores a film answer only when it has a confirmed sighting", async () => {
+    const possible = {
+      ...card(1),
+      details: {
+        work: "Heat",
+        verificationStatus: "unverified" as const,
+        verificationNote: "Association not fully verified",
+      },
+    };
+    await cacheCompleteSearch(
+      "film",
+      { query: "Heat", kind: "movie" },
+      { status: "found", summary: "", fromCache: false, watches: [possible] },
+      client,
+      1,
+    );
+    expect(mocks.write).not.toHaveBeenCalled();
+    const confirmed = { ...card(2), details: { work: "Heat" } };
+    await cacheCompleteSearch(
+      "film",
+      { query: "Heat", kind: "movie" },
+      {
+        status: "found",
+        summary: "",
+        fromCache: false,
+        watches: [confirmed, possible],
+      },
+      client,
+      1,
+    );
+    expect(mocks.write).toHaveBeenCalledOnce();
+  });
 });

@@ -161,9 +161,15 @@ export async function searchWithCoverage(
         ),
       ),
     );
+    // A film answer is finished only with a confirmed sighting; one saved
+    // with possible sightings alone is checked again when the backoff allows.
     if (
       cached.status === "found" &&
-      (cached.coverage?.total ?? 0) >= completeAt
+      (cached.coverage?.total ?? 0) >= completeAt &&
+      (padsToTen ||
+        completed.some(
+          (watch) => watch.details.verificationStatus !== "unverified",
+        ))
     )
       return { ...cached, fromCache: true };
   }
