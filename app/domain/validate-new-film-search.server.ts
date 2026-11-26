@@ -11,6 +11,7 @@ import type {
   ValidationServices,
 } from "./validate-cached-search.server";
 import type { ValidationEvidence } from "./cached-result-validation";
+import { samePerson, sameWork } from "./attribution-names";
 import { filmDiscoverySubjectSchema } from "./validation-provider-request.server";
 import { safeHttpUrl } from "./source-pages.server";
 
@@ -43,8 +44,12 @@ export async function validateNewFilmSearch(
   return validateDiscoveredSearch(cacheKey, {
     ...services,
     discover: () => services.discoverFilm(subject),
+    // "John Wick (Keanu Reeves)" is John Wick; "Casino Royale (2006)" is
+    // Casino Royale. The card itself is stored under the subject searched.
     accepts: (evidence) =>
-      fold(isWork ? evidence.work : evidence.person) === fold(subject.query),
+      isWork
+        ? sameWork(evidence.work, subject.query)
+        : samePerson(evidence.person, subject.query),
     attribution: isWork ? { work: subject.query } : { person: subject.query },
   });
 }

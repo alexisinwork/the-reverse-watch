@@ -1,7 +1,7 @@
 /** Pure evidence reconciliation for a cached watch. Provider responses must
  * first be schema-validated and their cited pages inspected by the caller. */
 import type { FoundWatch } from "./ai-watch-types";
-import { samePerson } from "./attribution-names";
+import { samePerson, sameWork } from "./attribution-names";
 import { safeHttpUrl } from "./source-pages.server";
 
 export type ValidationFact = {
@@ -78,7 +78,7 @@ export function validateCachedWatch(
     // (Daniel Craig)"); one shared name is the same wearer, none is a conflict.
     if (watch.details.person && !samePerson(item.person, watch.details.person))
       return { status: "unverified", reason: "person attribution conflict" };
-    if (watch.details.work && fold(item.work) !== fold(watch.details.work))
+    if (watch.details.work && !sameWork(item.work, watch.details.work))
       return { status: "unverified", reason: "work attribution conflict" };
   }
   if (host(primary.sourceUrl) === host(secondary.sourceUrl))

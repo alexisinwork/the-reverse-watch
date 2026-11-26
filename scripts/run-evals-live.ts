@@ -178,12 +178,16 @@ async function spentThisRound() {
 
 /** Take a slot for one more case, or stop the round. */
 async function claimSlot() {
-  running++;
+  // This search's own place among those running decides, so searches that
+  // start together cannot all count each other and all refuse.
+  const position = ++running;
   const { status, used } = await spentThisRound();
-  if (status.halted) stopReason ??= "the spend ledger halted after an overrun";
-  else if (used + running * CASE_CEILING_USD > budgetUsd)
-    stopReason ??= `the next case could pass the approved $${budgetUsd} (spent $${used.toFixed(4)})`;
-  if (stopReason) {
+  let refuse: string | null = null;
+  if (status.halted) refuse = "the spend ledger halted after an overrun";
+  else if (used + position * CASE_CEILING_USD > budgetUsd)
+    refuse = `the next case could pass the approved $${budgetUsd} (spent $${used.toFixed(4)})`;
+  if (refuse) {
+    stopReason ??= refuse;
     running--;
     return false;
   }

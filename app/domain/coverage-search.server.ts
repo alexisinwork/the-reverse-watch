@@ -1,4 +1,5 @@
 import type { AiSearchView, FoundWatch } from "./ai-watch-types";
+import { samePerson, sameWork } from "./attribution-names";
 import {
   aiSearchCacheKey,
   loadAiWatchStoreConfig,
@@ -92,7 +93,15 @@ export async function searchWithCoverage(
           ? "work"
           : "person";
       const value = watch.details[field];
-      return typeof value === "string" && fold(value) === fold(subject.query);
+      // The same subject written differently still counts ("John Wick
+      // (Keanu Reeves)", "Casino Royale (2006)").
+      return (
+        typeof value === "string" &&
+        (fold(value) === fold(subject.query) ||
+          (field === "work"
+            ? sameWork(value, subject.query)
+            : samePerson(value, subject.query)))
+      );
     });
   const localCandidates = deps.localCandidates ?? request.candidates ?? [];
   const identity = (

@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 
 import { z } from "zod";
 
-import { samePerson } from "./attribution-names";
+import { samePerson, sameWork } from "./attribution-names";
 import { safeHttpUrl } from "./source-pages.server";
 import { loadValidatedSnapshot } from "./validated-cache.server";
 import type { ValidationRun } from "./validate-cached-search.server";
@@ -197,6 +197,13 @@ function bindFilmSubject(
     const current = watch.details[field];
     if (typeof current === "string" && foldSubject(current) === subject)
       return [watch];
+    // "Casino Royale (2006)" is the film searched as "Casino Royale".
+    if (
+      field === "work" &&
+      typeof current === "string" &&
+      sameWork(current, query)
+    )
+      return [{ ...watch, details: { ...watch.details, work: query } }];
     // A wearer saved as "Andy Dufresne (Tim Robbins)" is the person searched
     // as "Tim Robbins": one shared name, stored under the name searched.
     if (

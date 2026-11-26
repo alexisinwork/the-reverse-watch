@@ -182,3 +182,22 @@ export function passageTiesSighting(
     (work.length === 0 || mentionsAny(text, work))
   );
 }
+
+/** A film or series title without a release year or a leading article:
+ * "Casino Royale (2006)" and "The Martian" compare as "casino royale" and
+ * "martian". */
+const titleKey = (value: string) =>
+  fold(value)
+    .replace(/ (?:19|20)\d{2}$/, "")
+    .replace(/^the /, "")
+    .trim();
+
+/** Two titles name the same film or series. */
+export function sameWork(
+  a: string | null | undefined,
+  b: string | null | undefined,
+) {
+  if (!a?.trim() || !b?.trim()) return false;
+  const first = titleKey(a);
+  return first.length > 0 && first === titleKey(b);
+}

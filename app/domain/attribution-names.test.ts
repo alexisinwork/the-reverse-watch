@@ -5,6 +5,7 @@ import {
   passageTiesSighting,
   personNames,
   samePerson,
+  sameWork,
 } from "./attribution-names";
 
 describe("personNames", () => {
@@ -98,5 +99,20 @@ describe("passageTiesSighting", () => {
         },
       ),
     ).toBe(false);
+  });
+});
+
+describe("sameWork", () => {
+  it("matches a title with or without its year and leading article", () => {
+    expect(sameWork("Casino Royale (2006)", "Casino Royale")).toBe(true);
+    expect(sameWork("The Martian", "Martian")).toBe(true);
+    expect(sameWork("Casino Royale", "Casino")).toBe(false);
+    expect(sameWork(null, "Casino")).toBe(false);
+  });
+
+  it("lets a character search accept the provider's fuller attribution", () => {
+    expect(samePerson("John Wick (Keanu Reeves)", "John Wick")).toBe(true);
+    expect(samePerson("Keanu Reeves as John Wick", "John Wick")).toBe(true);
+    expect(samePerson("Keanu Reeves", "John Wick")).toBe(false);
   });
 });

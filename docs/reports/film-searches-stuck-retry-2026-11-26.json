@@ -1,0 +1,121 @@
+{
+  "startedAt": "2026-11-26T14:03:35.223Z",
+  "finishedAt": "2026-11-26T14:03:53.171Z",
+  "dryRun": false,
+  "label": "stuck-retry",
+  "queriesFile": "C:/Users/alexi/AppData/Local/Temp/claude/ae80cadb85d8c1f8/feff996d-e3e5-4ff5-8c70-0217c1a71d7d/scratchpad/stuck-queries.json",
+  "budgetUsd": 5,
+  "stopReason": null,
+  "spendUsd": 0.0498,
+  "ledger": {
+    "before": {
+      "month": "2026-11-01",
+      "spentUsd": 4.4837,
+      "reservedUsd": 0.325,
+      "limitUsd": 100,
+      "remainingUsd": 95.1913,
+      "halted": false,
+      "attempts": 139,
+      "inProgress": 2,
+      "validated": 34,
+      "failed": 103,
+      "invalidated": 0,
+      "priceRefreshRuns": 0
+    },
+    "after": {
+      "month": "2026-11-01",
+      "spentUsd": 4.5335,
+      "reservedUsd": 0.325,
+      "limitUsd": 100,
+      "remainingUsd": 95.1415,
+      "halted": false,
+      "attempts": 143,
+      "inProgress": 2,
+      "validated": 34,
+      "failed": 107,
+      "invalidated": 0,
+      "priceRefreshRuns": 0
+    }
+  },
+  "summary": {
+    "searches": 4,
+    "ran": 4,
+    "withConfirmed": 0,
+    "withAnyCard": 0,
+    "confirmedCards": 0,
+    "possibleCards": 0,
+    "statuses": {
+      "unavailable:verification_failed": 4
+    }
+  },
+  "cases": [
+    {
+      "tool": "film",
+      "id": "film-stuck-retry-001",
+      "round": 1,
+      "input": {
+        "query": "John Wick",
+        "kind": "character"
+      },
+      "status": "unavailable:verification_failed",
+      "ms": 15974,
+      "cards": [],
+      "checks": {
+        "confirmedCards": 0,
+        "possibleCards": 0
+      },
+      "violations": []
+    },
+    {
+      "tool": "film",
+      "id": "film-stuck-retry-002",
+      "round": 1,
+      "input": {
+        "query": "Bruce Wayne",
+        "kind": "character"
+      },
+      "status": "unavailable:verification_failed",
+      "ms": 17645,
+      "cards": [],
+      "checks": {
+        "confirmedCards": 0,
+        "possibleCards": 0
+      },
+      "violations": []
+    },
+    {
+      "tool": "film",
+      "id": "film-stuck-retry-003",
+      "round": 1,
+      "input": {
+        "query": "Marty McFly",
+        "kind": "character"
+      },
+      "status": "unavailable:verification_failed",
+      "ms": 11249,
+      "cards": [],
+      "checks": {
+        "confirmedCards": 0,
+        "possibleCards": 0
+      },
+      "violations": []
+    },
+    {
+      "tool": "film",
+      "id": "film-stuck-retry-004",
+      "round": 1,
+      "input": {
+        "query": "Tim Robbins",
+        "kind": "actor"
+      },
+      "status": "unavailable:verification_failed",
+      "ms": 7050,
+      "cards": [],
+      "checks": {
+        "confirmedCards": 0,
+        "possibleCards": 0
+      },
+      "violations": []
+    }
+  ]
+}

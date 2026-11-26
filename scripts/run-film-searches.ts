@@ -67,13 +67,17 @@ const baseline = before.spentUsd + before.reservedUsd;
 let running = 0;
 let stopReason: string | null = null;
 async function claimSlot() {
-  running++;
+  // This search's own place among those running decides, so searches that
+  // start together cannot all count each other and all refuse.
+  const position = ++running;
   const status = await validationBudgetStatus(client!);
   const used = status.spentUsd + status.reservedUsd - baseline;
-  if (status.halted) stopReason ??= "the spend ledger halted";
-  else if (used + running * SEARCH_CEILING_USD > budgetUsd)
-    stopReason ??= `the next search could pass $${budgetUsd} (spent $${used.toFixed(4)})`;
-  if (stopReason) {
+  let refuse: string | null = null;
+  if (status.halted) refuse = "the spend ledger halted";
+  else if (used + position * SEARCH_CEILING_USD > budgetUsd)
+    refuse = `the next search could pass $${budgetUsd} (spent $${used.toFixed(4)})`;
+  if (refuse) {
+    stopReason ??= refuse;
     running--;
     return false;
   }
