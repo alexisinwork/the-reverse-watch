@@ -190,9 +190,12 @@ push and weekly.
   registered websites instead of `*` (`embed-bridge.ts`).
 - npm audit: high-severity advisories in `body-parser` and `compression`
   (server dependencies) were fixed within their version ranges.
-- Known gap: Supabase signs its database certificate with its own
+- Closed 2026-11-26: Supabase signs its database certificate with its own
   certificate authority, which Node does not trust, so the database scripts
-  encrypt without verifying the server (`ssl: "require"` and one explicit
-  `rejectUnauthorized: false`, marked for Semgrep). The fix is to download
-  Supabase's CA certificate (Dashboard → Database → SSL configuration), commit
-  it, and pin it in every script; downloading it is an owner action.
+  used to encrypt without verifying the server. The owner downloaded the CA
+  certificate (`certs/prod-ca-2021.crt`, "Supabase Root 2021 CA", valid until
+  2031-04-26); all 61 scripts now connect through `scripts/database-tls.ts`,
+  which trusts only that authority and checks the host name. Checked against
+  the production pooler: verified with the certificate, refused without it
+  ("self-signed certificate in certificate chain") and refused for a wrong
+  host name. No Semgrep exception remains.

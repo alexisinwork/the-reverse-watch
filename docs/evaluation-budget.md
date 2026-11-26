@@ -83,11 +83,32 @@ Research through the existing enrichment worker at $0.005–0.02 a watch would
 cost about $80–320 once. Missing facts stay empty until a source states them;
 nothing is filled with plausible defaults.
 
-## What happens after a yes
+## Round 1, measured (2026-11-26)
 
-1. Add a live mode to `scripts/run-evals.ts` that runs the sets above through
-   the paid path with a hard stop at the approved amount, checked against the
-   ledger before and after.
-2. Run the baseline round and report PASS, FAIL or NOT RUN per tool with the
-   cost actually spent.
-3. Prepare the 300-card rating sheet for the owner or a specialist.
+Approved: $60 ("Да, $60"). Spent: **$3.89**, including $0.20 still reserved
+for one check at the end (the ledger counts it until it settles). Unused:
+$56.11; nothing more is charged unless another round is approved.
+
+| Tool | Estimate | Actual | Per case |
+| --- | ---: | ---: | ---: |
+| Diagnostic quiz | $1.20–4.50 | $0.04 | $0.001 (most answers come from the catalogue) |
+| Archetype quiz | $0.70–2.70 | $1.76 | $0.07 |
+| Cheaper alternatives | $2.00–7.50 | $1.98 | $0.08 per searched case (36 of 60 stopped before searching) |
+| Film and people | $0.25–0.95 | $0.11 | $0.006 |
+| **Total** | **$4–16** | **$3.89** | |
+
+A repeat round after fixes costs about the same, around $4, and fits in the
+unused part of this approval if the owner agrees. Results and findings:
+`docs/eval-baseline.md`, "Live round with paid research".
+
+## After the yes (done 2026-11-26)
+
+1. The live mode is `scripts/run-evals-live.ts` (a separate script, so the
+   free evaluation keeps its network guard): the sets above through the paid
+   path, with the ledger read before every case and a hard stop at the
+   approved amount.
+2. The baseline round ran: four of five gates PASS, archetype rules FAIL on
+   one card, $3.89 spent (above).
+3. The rating sheet has 321 cards (10 quiz answers, 8 archetype results, 10
+   alternatives cases, every film card): `docs/reports/rating-sheet-2026-11-26.json`,
+   rated on the owner's rating page (`docs/OWNER_QUESTIONS.md`, item 2).

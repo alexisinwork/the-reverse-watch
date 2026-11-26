@@ -2573,3 +2573,17 @@ Sentry may load later; episode links as advised; no Next.js version 2.
   recommendation is $60 a round, $150 for three, plus about 300 human-rated
   cards. Separately, 15,901 of 25,014 searchable watches lack styles, size or
   movement; completing them costs about $80–320.
+- Later the same day: the owner supplied Supabase's certificate and approved
+  $60 for one paid round ("Да, $60"). Every database script now verifies the
+  server (`scripts/database-tls.ts`, `5e41865`): PASS with the certificate,
+  refused without it and for a wrong host name. The paid round
+  (`scripts/run-evals-live.ts --budget 60`) ran 143 cases and 9 reruns in 13
+  minutes for $3.89: quiz 0 hard-rule failures in 263 exact cards and 39 of
+  40 answers with ten options; archetype 24 of 24 with ten options and one
+  FAIL (a checked card without a price in the USD 10,000+ band);
+  alternatives answered only 24 of 60 cases because 11 of 20 names resolve
+  to a record without comparison facts, and the owner's pick is in the top
+  ten in 10 of the 24; film found 15 of 19 independent sightings as possible
+  and confirmed none, with 0 invented sightings. Details and the remaining
+  findings: `docs/eval-baseline.md`, "Live round with paid research". The
+  321-card rating sheet waits for the owner's ratings.

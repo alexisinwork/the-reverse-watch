@@ -74,13 +74,77 @@ what the owner's stories already say. Measuring what live research adds
 needs paid calls (`docs/evaluation-budget.md`); on the evidence so far it
 adds little, since paid checks of film results published 1 of 46 attempts.
 
+## Live round with paid research (2026-11-26)
+
+The owner approved $60 for one round ("Да, $60").
+`node --env-file=.env --import tsx scripts/run-evals-live.ts --budget 60`
+ran the same sets through the visitors' own search functions with paid
+research on: 143 cases, then 9 reruns of answers that were short of ten or
+failed, in 13 minutes. Before every case it read the spend ledger and would
+have stopped before $60. A dry run with every provider request refused
+reproduced the free scores first (263 exact quiz cards, film 0 / 6 / 13).
+Report: `docs/reports/eval-live-2026-11-26.json`, with every card shown.
+
+| Tool | Cases | Answered | Ten options | Hard-rule failures | Checked cards | Spend |
+| --- | --- | --- | --- | --- | --- | --- |
+| Diagnostic quiz | 40 answers | 40 | 39 | 0 of 263 exact cards | 394 of 398 (99%) | $0.04 |
+| Archetype | 24 combinations | 24 | 24 | 1 (below) | 66 of 240 (28%) | $1.76 |
+| Cheaper alternatives | 60 | 24 (8 of the 20 named watches) | 24 of 24 | 0 | 42 of 240 (18%) | $1.98 |
+| Film and people | 17 searches, 2 invented controls | 13 | not required | 0 invented sightings | 1 of 41 | $0.11 |
+| **Round** | | | | | | **$3.89 of $60** |
+
+- Alternatives: the owner's suggested alternative is in the top ten in 10 of
+  the 24 searched cases (42%); over all 60 cases 10 (17%), against 7 (12%)
+  on the free path and 2% at random.
+- Film, independent set: 0 of 19 confirmed, 15 of 19 found as possible
+  (free path that morning: 6), 4 not found. The two invented subjects got
+  nothing, neither confirmed nor possible. The only confirmed film card, a
+  Rolex GMT-Master 1675 for Apocalypse Now, is correct (Colonel Kurtz) but
+  is not one of the labels.
+- The spend ledger went from 22 attempts (0 published) to 114 (32
+  published, 81 failed, 1 still reserved at $0.20, counted above). Requests:
+  420 to Perplexity, 391 to Muse Spark, 845 to the source pages themselves.
+- Afterwards the free evaluation (`docs/reports/eval-2026-11-26-after-live.json`)
+  is unchanged except film: what the paid research found is saved, so
+  visitors now get 15 of 19 labelled sightings as possible at no cost.
+
+Gates: within budget PASS; quiz hard rules PASS; alternatives rules PASS;
+no invented sightings PASS; archetype rules FAIL (one card).
+
+What the round found:
+
+1. **Alternatives name resolution.** 11 of the 20 names resolve to a short
+   imported record without comparison facts and stop at "comparison
+   specifications are incomplete" ("Rolex Daytona" → 16519NG, "Patek
+   Philippe Nautilus" → 3800, "Cartier Tank" → WGTA0074), although the
+   catalogue holds complete records of the same models under their full
+   names: Cosmograph Daytona (3 of 3 with facts), Datejust 36 and 41,
+   Explorer 40, Navitimer B01, Royal Oak Chronograph 41, Overseas
+   chronograph, Tank Must, Santos de Cartier Large. "Santos de Cartier"
+   offers "Santos Demoiselle" first because "de" matches the start of
+   "Demoiselle". This needs a code fix, not paid research.
+2. **Archetype, unlabelled card without a price.** Paid checking confirmed
+   the Maurice Lacroix AI6118-SS00E-430-C reference from the maker's page,
+   then, finding no catalogue record, replaced its title with the reference
+   and dropped the editorial price (EUR 8,900). The card then sat in the
+   USD 10,000+ band as checked, with no price and no label.
+3. **Film confirmation.** Paid discovery finds the right watch for 15 of 19
+   labelled sightings, but the two-source confirmation confirmed none of
+   them. Confirmation, not discovery, is the bottleneck.
+4. One checked alternatives answer could not be saved ("image conflicts
+   with catalogue"), so that check was paid without a saved answer.
+5. Answer quiz-32 (USD 8,000–9,000, quartz or solar, 200 m) has 8 options
+   after two rounds; such watches are scarce, and the page says so.
+
 ## Known gaps the scores point to
 
-- Alternatives: 14 of the 20 test-set watches do not resolve to a catalogue
-  record with comparison specifications (styles, size, movement), so their
-  cases cannot score. Filling those specifications is research work with a
-  cost; `docs/evaluation-budget.md` gives the amounts for the owner's decision.
-- Film: the independent set shows 0 of 19 confirmed without paid research.
+- Alternatives: 11 of the 20 test-set names stop at incomplete
+  specifications because name resolution picks a fact-less record while a
+  complete one exists (live round, finding 1).
+- Film: paid research finds 15 of 19 independent sightings but confirms
+  none; confirmation is the gap (live round, finding 3).
+- Relevance beyond hard rules needs the owner's (or a specialist's) ratings
+  of the 321-card sample (`docs/reports/rating-sheet-2026-11-26.json`).
 - Evaluations need database credentials, so they run locally, not in CI;
   adding read-only credentials to CI secrets is an owner action
   (`docs/OWNER_QUESTIONS.md`).

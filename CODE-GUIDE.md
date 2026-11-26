@@ -203,7 +203,18 @@ pages need before they react (budget 150 KB, `docs/ENGINEERING_STANDARDS.md`).
 `scripts/run-evals.ts` also scores the independent film set
 (`data/eval/film-labels-independent-2026-11-26.json`); any confirmed card for
 its invented control subjects fails the run. `docs/evaluation-budget.md` prices
-a paid evaluation round.
+a paid evaluation round. The labelled sets and answer checks both evaluations
+share live in `scripts/eval-sets.ts`. `scripts/run-evals-live.ts --budget 60`
+is the paid round: the same sets through the visitors' own search functions,
+reading the spend ledger before each case so the round never passes its
+budget (`--dry-run` refuses every provider request and write).
+`scripts/build-rating-sheet.ts` turns its report into the owner's rating page
+(`scripts/rating-sheet-template.html`), which keeps each rater's ratings in
+the page's own database.
+
+Every database script connects through `scripts/database-tls.ts`: encrypted,
+and the server is verified against Supabase's certificate authority
+(`certs/prod-ca-2021.crt`, valid until 2031-04-26) and its host name.
 
 `scripts/export-local-catalogue-snapshot.ts` exports application-owned tables
 in a consistent read-only transaction into the ignored local archive.

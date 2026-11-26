@@ -876,3 +876,16 @@ clicks Publish → Update. Version 2 on Next.js is cancelled; the site stays on
 React Router 7. **Next action:** after that publish, verify
 `https://oleksandr-kukhtin.dev/watch-advisor-demo` (all five tools, mobile, a
 blocked origin, the usage counters), then offer the first bounded paid pilot.
+
+Evaluation evidence, 2026-11-26: the owner approved $60 for one paid round
+of all four tools; it cost $3.89 (`docs/evaluation-budget.md`). Hard rules
+held (quiz 0 failures in 263 exact cards; alternatives 0), but the round
+found product defects a partner would notice: the alternatives finder stops
+at "specifications incomplete" for 11 of 20 famous watches although complete
+records exist, an archetype card lost its price after checking, and film
+search confirms none of 15 correctly found sightings. These are engineering
+fixes without provider cost. Supabase backs up only paid plans, and the
+database has no backups; the Pro plan ($25 a month) should precede the first
+paying partner. **Next action:** fix those defects and re-measure; after the
+owner's Lovable publish, verify the live demo, then offer the first bounded
+paid pilot.

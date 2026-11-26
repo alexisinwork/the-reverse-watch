@@ -1,0 +1,971 @@
+<title>Watch Card Ratings</title>
+<meta name="claude:viewport-fit-sides" content="cover" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+/>
+<style>
+  /* Layout: one sticky request band, one card at a time, rating keys below it;
+   The Reserve's own palette (base, ink, brass, steel), dark first. */
+  :root {
+    --bg: #07080a;
+    --surface: #12151a;
+    --raised: #0e1014;
+    --line: #1d2229;
+    --line-strong: #2b323b;
+    --ink: #efeee9;
+    --ink-soft: #c9ccce;
+    --steel: #8a97a2;
+    --brass: #c8892f;
+    --brass-ink: #07080a;
+    --good: #9fcf8a;
+    --ok: #d9c27a;
+    --poor: #e0a24a;
+    --bad: #ffb4ab;
+    --font-sans: "IBM Plex Sans", -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono:
+      "IBM Plex Mono", ui-monospace, SFMono-Regular, Consolas, monospace;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) {
+      --bg: #f4f5f3;
+      --surface: #ffffff;
+      --raised: #eceeeb;
+      --line: #dcdfdb;
+      --line-strong: #c3c8c3;
+      --ink: #15181c;
+      --ink-soft: #3a4047;
+      --steel: #5b6b78;
+      --brass: #9a6420;
+      --brass-ink: #ffffff;
+      --good: #2f7a2f;
+      --ok: #7a6410;
+      --poor: #9a5a10;
+      --bad: #b3261e;
+      color-scheme: light;
+    }
+  }
+  :root[data-theme="light"] {
+    --bg: #f4f5f3;
+    --surface: #ffffff;
+    --raised: #eceeeb;
+    --line: #dcdfdb;
+    --line-strong: #c3c8c3;
+    --ink: #15181c;
+    --ink-soft: #3a4047;
+    --steel: #5b6b78;
+    --brass: #9a6420;
+    --brass-ink: #ffffff;
+    --good: #2f7a2f;
+    --ok: #7a6410;
+    --poor: #9a5a10;
+    --bad: #b3261e;
+    color-scheme: light;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.5 var(--font-sans);
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto;
+    height: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: var(--raised);
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 16px 40px;
+    display: grid;
+    gap: 16px;
+  }
+  header {
+    display: grid;
+    gap: 10px;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .lede {
+    color: var(--ink-soft);
+    margin: 0;
+    max-width: 62ch;
+  }
+  .bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .chip {
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink-soft);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  .chip[aria-pressed="true"] {
+    background: var(--brass);
+    border-color: var(--brass);
+    color: var(--brass-ink);
+  }
+  .chip:focus-visible,
+  button:focus-visible,
+  a:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+  }
+  .reserve {
+    display: grid;
+    gap: 4px;
+  }
+  .reserve-track {
+    height: 10px;
+    border: 1px solid var(--line-strong);
+    border-radius: 2px;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0 9%,
+      var(--line) 9% 10%
+    );
+    overflow: hidden;
+  }
+  .reserve-fill {
+    height: 100%;
+    width: 0;
+    background: var(--brass);
+    transition: width 0.2s;
+  }
+  .reserve-label {
+    font-size: 13px;
+    color: var(--steel);
+    font-variant-numeric: tabular-nums;
+  }
+  .request {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 5;
+    background: var(--raised);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    display: grid;
+    gap: 2px;
+  }
+  .request .tool {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+  .request .ask {
+    color: var(--ink);
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+  .card h2 {
+    font-size: 19px;
+    margin: 0;
+    font-weight: 600;
+    text-wrap: balance;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .pos {
+    font-size: 13px;
+    color: var(--steel);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .ref {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--ink-soft);
+    letter-spacing: 0.02em;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    margin: 0;
+  }
+  .facts div {
+    border-top: 1px solid var(--line);
+    padding-top: 6px;
+    min-width: 0;
+  }
+  .facts dt {
+    font-size: 12px;
+    color: var(--steel);
+  }
+  .facts dd {
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+  .status {
+    font-size: 13px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--line-strong);
+  }
+  .status.checked {
+    color: var(--good);
+    border-color: currentColor;
+  }
+  .status.unchecked {
+    color: var(--poor);
+    border-color: currentColor;
+  }
+  .misses {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--poor);
+    font-size: 14px;
+  }
+  .why {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0;
+  }
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 14px;
+  }
+  .links a {
+    color: var(--brass);
+  }
+  .keys {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .key {
+    font: inherit;
+    font-weight: 500;
+    text-align: left;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--line-strong);
+    background: var(--surface);
+    color: var(--ink);
+    cursor: pointer;
+    display: grid;
+    gap: 2px;
+  }
+  .key small {
+    color: var(--steel);
+    font-weight: 400;
+    font-size: 12px;
+  }
+  .key[data-v="good"][aria-pressed="true"] {
+    border-color: var(--good);
+    box-shadow: inset 0 0 0 1px var(--good);
+  }
+  .key[data-v="ok"][aria-pressed="true"] {
+    border-color: var(--ok);
+    box-shadow: inset 0 0 0 1px var(--ok);
+  }
+  .key[data-v="poor"][aria-pressed="true"] {
+    border-color: var(--poor);
+    box-shadow: inset 0 0 0 1px var(--poor);
+  }
+  .key[data-v="wrong"][aria-pressed="true"] {
+    border-color: var(--bad);
+    box-shadow: inset 0 0 0 1px var(--bad);
+  }
+  .key:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  textarea {
+    width: 100%;
+    min-height: 56px;
+    font: inherit;
+    color: var(--ink);
+    background: var(--raised);
+    border: 1px solid var(--line-strong);
+    border-radius: 6px;
+    padding: 8px 10px;
+    resize: vertical;
+  }
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .nav button {
+    font: inherit;
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .nav .primary {
+    background: var(--brass);
+    border-color: var(--brass);
+    color: var(--brass-ink);
+  }
+  .note {
+    font-size: 13px;
+    color: var(--steel);
+    min-height: 1.5em;
+  }
+  .note.err {
+    color: var(--bad);
+  }
+  details {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 10px 12px;
+    background: var(--raised);
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .tally {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+    margin-top: 8px;
+  }
+  .tally th,
+  .tally td {
+    text-align: right;
+    padding: 4px 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  .tally th:first-child,
+  .tally td:first-child {
+    text-align: left;
+  }
+  .scroll {
+    overflow-x: auto;
+  }
+  .lang {
+    margin-left: auto;
+  }
+  @media (max-width: 420px) {
+    .keys {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reserve-fill {
+      transition: none;
+    }
+  }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="bar">
+      <h1 id="title">Оценка карточек часов</h1>
+      <button
+        class="chip lang"
+        id="lang"
+        type="button"
+        aria-label="Switch language"
+      >
+        EN
+      </button>
+    </div>
+    <p class="lede" id="lede"></p>
+    <div class="bar" id="filters" role="group" aria-label="Tool"></div>
+    <div class="reserve" aria-live="polite">
+      <div class="reserve-track">
+        <div class="reserve-fill" id="fill"></div>
+      </div>
+      <div class="reserve-label" id="progress"></div>
+    </div>
+  </header>
+
+  <section class="request" id="request" aria-live="polite">
+    <span class="tool" id="req-tool"></span>
+    <span class="ask" id="req-ask"></span>
+  </section>
+
+  <article class="card" id="card" aria-live="polite"></article>
+
+  <div class="keys" id="keys" role="group" aria-label="Rating"></div>
+  <label for="note-text" class="note" id="note-label"></label>
+  <textarea id="note-text"></textarea>
+  <div class="note" id="status" role="status"></div>
+
+  <div class="nav">
+    <button type="button" id="prev"></button>
+    <button type="button" id="next-unrated" class="primary"></button>
+    <button type="button" id="next"></button>
+  </div>
+
+  <details id="summary-box">
+    <summary id="summary-title"></summary>
+    <div class="scroll"><table class="tally" id="tally"></table></div>
+    <p class="note" id="method"></p>
+  </details>
+</div>
+
+<script type="application/json" id="sheet-data">
+  /*SHEET_JSON*/
+</script>
+<script>
+  (() => {
+    const sheet = JSON.parse(document.getElementById("sheet-data").textContent);
+    const cards = sheet.cards;
+    const T = {
+      ru: {
+        title: "Оценка карточек часов",
+        lede:
+          "Каждая карточка — один ответ сайта на настоящий запрос из платной проверки " +
+          sheet.date +
+          ". Оцените, насколько это хороший совет для такого запроса. Точные правила (цена, размер, механизм) уже проверены программой; здесь нужна оценка знатока. Ссылки ведут на источники, на которые опирается карточка.",
+        all: "Все",
+        quiz: "Подбор",
+        archetype: "Архетип",
+        alternatives: "Альтернативы",
+        film: "Фильмы",
+        progress: (n, t) => `Оценено ${n} из ${t}`,
+        pos: (i, t) => `${i} из ${t}`,
+        keys: {
+          good: ["Сильный выбор", "Знаток охотно посоветовал бы"],
+          ok: ["Годится", "Подходит, но есть выбор лучше"],
+          poor: ["Слабый выбор", "Формально подходит, но плохой совет"],
+          wrong: [
+            "Ошибка в фактах",
+            "Неверны цена, размер, механизм или модель",
+          ],
+        },
+        filmKeys: {
+          good: [
+            "Настоящее появление",
+            "Источники показывают эти часы в кадре",
+          ],
+          ok: ["Не подтвердить", "Не нашёл надёжного источника"],
+          wrong: ["Неверно", "Связь с фильмом или человеком ложная"],
+        },
+        note: "Комментарий (необязательно)",
+        prev: "← Назад",
+        next: "Дальше →",
+        nextUnrated: "Следующая без оценки",
+        checked: "Проверено по источникам",
+        unchecked: "Не полностью проверено",
+        also: "В блоке «Также стоит посмотреть»",
+        misses: "Не совпадает с запросом:",
+        price: "Цена",
+        size: "Диаметр",
+        movement: "Механизм",
+        water: "Водозащита",
+        seen: "Где замечены",
+        approx: "примерно",
+        confirmed: "подтверждена",
+        preowned: "с рук у дилера",
+        unknown: "нет данных",
+        source: "Источник карточки",
+        refSource: "Источник референса",
+        saved: "Сохранено",
+        saving: "Сохраняю…",
+        saveErr: "Не сохранилось: проверьте связь и нажмите ещё раз.",
+        signedOut:
+          "Войдите в claude.ai, чтобы ставить оценки. Пока можно только смотреть.",
+        readOnly: "У вас доступ только для просмотра: оценки не сохраняются.",
+        loading: "Загружаю ваши оценки…",
+        loadSlow:
+          "Ваши оценки пока не загрузились; новые всё равно сохраняются.",
+        summary: "Итоги ваших оценок",
+        tool: "Раздел",
+        method:
+          "Считаются только ваши оценки. Доля «сильный выбор + годится» — главный показатель полезности; «ошибка в фактах» показывает, где программа пропустила неверные данные.",
+        share: "Доля «сильный + годится»",
+        done: "Все карточки оценены. Спасибо!",
+      },
+      en: {
+        title: "Watch Card Ratings",
+        lede:
+          "Each card is one answer the site gave to a real request in the paid evaluation round of " +
+          sheet.date +
+          ". Rate how good a recommendation it is for that request. The hard rules (price, size, movement) were already checked by the program; this needs a specialist's judgement. Links open the sources the card relies on.",
+        all: "All",
+        quiz: "Diagnostic",
+        archetype: "Archetype",
+        alternatives: "Alternatives",
+        film: "Film",
+        progress: (n, t) => `${n} of ${t} rated`,
+        pos: (i, t) => `${i} of ${t}`,
+        keys: {
+          good: ["Strong pick", "A specialist would gladly recommend it"],
+          ok: ["Acceptable", "Fits, but there are better choices"],
+          poor: ["Poor pick", "Fits on paper, but a bad recommendation"],
+          wrong: ["Wrong facts", "Price, size, movement or model is wrong"],
+        },
+        filmKeys: {
+          good: ["Real sighting", "Sources show this watch on screen"],
+          ok: ["Can't confirm", "No reliable source found"],
+          wrong: ["Wrong", "The film or person link is false"],
+        },
+        note: "Comment (optional)",
+        prev: "← Back",
+        next: "Next →",
+        nextUnrated: "Next unrated",
+        checked: "Checked against sources",
+        unchecked: "Not fully verified",
+        also: "In the “Also worth a look” block",
+        misses: "Differs from the request:",
+        price: "Price",
+        size: "Diameter",
+        movement: "Movement",
+        water: "Water resistance",
+        seen: "Seen in",
+        approx: "approximate",
+        confirmed: "confirmed",
+        preowned: "pre-owned from a dealer",
+        unknown: "unknown",
+        source: "Card source",
+        refSource: "Reference source",
+        saved: "Saved",
+        saving: "Saving…",
+        saveErr: "Not saved: check the connection and tap again.",
+        signedOut:
+          "Sign in to claude.ai to rate. You can look through the cards meanwhile.",
+        readOnly: "You have view-only access: ratings are not saved.",
+        loading: "Loading your ratings…",
+        loadSlow: "Your ratings have not loaded yet; new ones are still saved.",
+        summary: "Your ratings so far",
+        tool: "Section",
+        method:
+          "Only your ratings are counted. The “strong + acceptable” share is the main usefulness measure; “wrong facts” shows where the program let wrong data through.",
+        share: "“Strong + acceptable” share",
+        done: "Every card is rated. Thank you!",
+      },
+    };
+    let lang = "ru";
+    try {
+      lang = localStorage.getItem("rating-lang") || "ru";
+    } catch {}
+    let filter = "all";
+    let index = 0;
+    const ratings = new Map(); // cardId -> {rating, note}
+    let db = null,
+      uid = null,
+      canWrite = true;
+    const pending = new Map(); // cardId -> promise chain
+    let marker = null; // the rater's own document, written with the first rating
+    const $ = (id) => document.getElementById(id);
+    const t = () => T[lang];
+    const visible = () =>
+      cards.filter((c) => filter === "all" || c.tool === filter);
+    const safeUrl = (u) =>
+      typeof u === "string" && u.startsWith("https://") ? u : null;
+    const money = (p) =>
+      p
+        ? `${p.currency} ${Math.round(p.amount).toLocaleString(lang === "ru" ? "ru-RU" : "en-US")}`
+        : null;
+
+    function el(tag, attrs, ...children) {
+      const node = document.createElement(tag);
+      for (const [k, v] of Object.entries(attrs || {})) {
+        if (k === "class") node.className = v;
+        else if (k === "text") node.textContent = v;
+        else node.setAttribute(k, v);
+      }
+      for (const child of children) if (child) node.append(child);
+      return node;
+    }
+
+    function renderFilters() {
+      const box = $("filters");
+      box.replaceChildren();
+      for (const key of ["all", "quiz", "archetype", "alternatives", "film"]) {
+        const count =
+          key === "all"
+            ? cards.length
+            : cards.filter((c) => c.tool === key).length;
+        if (!count) continue;
+        const b = el("button", {
+          class: "chip",
+          type: "button",
+          "aria-pressed": String(filter === key),
+          text: `${t()[key]} · ${count}`,
+        });
+        b.addEventListener("click", () => {
+          filter = key;
+          index = 0;
+          render();
+        });
+        box.append(b);
+      }
+    }
+
+    function renderCard(card, i, total) {
+      const box = $("card");
+      box.replaceChildren();
+      const title = [card.brand, card.model].filter(Boolean).join(" ");
+      box.append(
+        el(
+          "div",
+          { class: "card-top" },
+          el("h2", { text: title }),
+          el("span", { class: "pos", text: t().pos(i + 1, total) }),
+        ),
+      );
+      if (card.referenceCode)
+        box.append(
+          el("div", { class: "ref", text: `Ref. ${card.referenceCode}` }),
+        );
+      const facts = el("dl", { class: "facts" });
+      const fact = (label, value) =>
+        facts.append(
+          el(
+            "div",
+            {},
+            el("dt", { text: label }),
+            el("dd", { text: value ?? t().unknown }),
+          ),
+        );
+      if (card.tool === "film")
+        fact(
+          t().seen,
+          [card.person, card.work].filter(Boolean).join(" · ") || null,
+        );
+      const price = money(card.price);
+      fact(
+        t().price,
+        price
+          ? `${price}${card.priceConfirmed ? ` (${t().confirmed})` : ` (${t().approx})`}${card.priceCondition === "pre-owned" ? `, ${t().preowned}` : ""}`
+          : null,
+      );
+      fact(t().size, card.caseDiameterMm ? `${card.caseDiameterMm} mm` : null);
+      fact(t().movement, card.movement);
+      fact(
+        t().water,
+        card.waterResistanceM ? `${card.waterResistanceM} m` : null,
+      );
+      box.append(facts);
+      box.append(
+        el("div", {
+          class: `status ${card.verified ? "checked" : "unchecked"}`,
+          text: card.verified
+            ? t().checked
+            : `${t().unchecked}${card.verificationNote ? `: ${card.verificationNote}` : ""}`,
+        }),
+      );
+      if (card.section === "alsoWorth")
+        box.append(el("div", { class: "note", text: t().also }));
+      if (card.misses?.length) {
+        box.append(el("div", { class: "note", text: t().misses }));
+        const list = el("ul", { class: "misses" });
+        for (const miss of card.misses) list.append(el("li", { text: miss }));
+        box.append(list);
+      }
+      if (card.rationale)
+        box.append(el("p", { class: "why", text: card.rationale }));
+      const links = el("div", { class: "links" });
+      const source = safeUrl(card.sourceUrl),
+        refSource = safeUrl(card.referenceSourceUrl);
+      if (source)
+        links.append(
+          el("a", {
+            href: source,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            text: t().source,
+          }),
+        );
+      if (refSource && refSource !== source)
+        links.append(
+          el("a", {
+            href: refSource,
+            target: "_blank",
+            rel: "noopener noreferrer",
+            text: t().refSource,
+          }),
+        );
+      if (links.childElementCount) box.append(links);
+    }
+
+    function renderKeys(card) {
+      const box = $("keys");
+      box.replaceChildren();
+      const set = card.tool === "film" ? t().filmKeys : t().keys;
+      const mine = ratings.get(card.id);
+      for (const [value, [label, hint]] of Object.entries(set)) {
+        const b = el(
+          "button",
+          {
+            class: "key",
+            type: "button",
+            "data-v": value,
+            "aria-pressed": String(mine?.rating === value),
+          },
+          el("span", { text: label }),
+          el("small", { text: hint }),
+        );
+        b.disabled = !db || !uid || !canWrite;
+        b.addEventListener("click", () => rate(card, value));
+        box.append(b);
+      }
+      const note = $("note-text");
+      note.value = mine?.note ?? "";
+      note.disabled = !db || !uid || !canWrite;
+    }
+
+    function renderSummary() {
+      $("summary-title").textContent = t().summary;
+      $("method").textContent = t().method;
+      const table = $("tally");
+      table.replaceChildren();
+      const head = el(
+        "tr",
+        {},
+        el("th", { text: t().tool }),
+        el("th", { text: t().keys.good[0] }),
+        el("th", { text: t().keys.ok[0] }),
+        el("th", { text: t().keys.poor[0] }),
+        el("th", { text: t().keys.wrong[0] }),
+        el("th", { text: t().share }),
+      );
+      table.append(head);
+      for (const tool of ["quiz", "archetype", "alternatives", "film"]) {
+        const ids = cards.filter((c) => c.tool === tool).map((c) => c.id);
+        if (!ids.length) continue;
+        const counts = { good: 0, ok: 0, poor: 0, wrong: 0 };
+        for (const id of ids) {
+          const r = ratings.get(id)?.rating;
+          if (r in counts) counts[r]++;
+        }
+        const rated = counts.good + counts.ok + counts.poor + counts.wrong;
+        table.append(
+          el(
+            "tr",
+            {},
+            el("td", { text: `${t()[tool]} (${rated}/${ids.length})` }),
+            el("td", { text: String(counts.good) }),
+            el("td", { text: String(counts.ok) }),
+            el("td", { text: tool === "film" ? "—" : String(counts.poor) }),
+            el("td", { text: String(counts.wrong) }),
+            el("td", {
+              text: rated
+                ? `${Math.round(((counts.good + (tool === "film" ? 0 : counts.ok)) / rated) * 100)}%`
+                : "—",
+            }),
+          ),
+        );
+      }
+    }
+
+    function render() {
+      document.documentElement.lang = lang;
+      $("title").textContent = t().title;
+      $("lede").textContent = t().lede;
+      $("lang").textContent = lang === "ru" ? "EN" : "RU";
+      $("note-label").textContent = t().note;
+      $("prev").textContent = t().prev;
+      $("next").textContent = t().next;
+      $("next-unrated").textContent = t().nextUnrated;
+      renderFilters();
+      const list = visible();
+      index = Math.min(Math.max(index, 0), Math.max(list.length - 1, 0));
+      const card = list[index];
+      const rated = cards.filter((c) => ratings.has(c.id)).length;
+      $("fill").style.width = `${(rated / cards.length) * 100}%`;
+      $("progress").textContent =
+        rated === cards.length ? t().done : t().progress(rated, cards.length);
+      if (card) {
+        $("req-tool").textContent = t()[card.tool];
+        $("req-ask").textContent = card.request[lang] || card.request.en;
+        renderCard(card, index, list.length);
+        renderKeys(card);
+      }
+      renderSummary();
+    }
+
+    function setStatus(text, isError) {
+      const box = $("status");
+      box.textContent = text;
+      box.classList.toggle("err", Boolean(isError));
+    }
+
+    function rate(card, value, advance = true) {
+      if (!db || !uid || !canWrite) return;
+      const note = $("note-text").value.trim().slice(0, 1000);
+      ratings.set(card.id, { rating: value, note });
+      render();
+      setStatus(t().saving);
+      marker ??= db
+        .doc(`ratings/${uid}`)
+        .get()
+        .then((snap) =>
+          snap.exists
+            ? null
+            : db.doc(`ratings/${uid}`).set({
+                firstRatedSheet: sheet.id,
+                at: new Date().toISOString(),
+              }),
+        )
+        .catch(() => {
+          marker = null;
+        });
+      const write = () =>
+        db.collection(`ratings/${uid}/cards`).doc(card.id).set({
+          rating: value,
+          note,
+          tool: card.tool,
+          sheet: sheet.id,
+          at: new Date().toISOString(),
+        });
+      const chain = (pending.get(card.id) || Promise.resolve()).then(
+        write,
+        write,
+      );
+      pending.set(
+        card.id,
+        chain.catch(() => {}),
+      );
+      chain
+        .then(() => {
+          setStatus(t().saved);
+          if (!advance) return;
+          const list = visible();
+          const nextIndex = list.findIndex(
+            (c, i) => i > index && !ratings.has(c.id),
+          );
+          if (nextIndex >= 0) {
+            index = nextIndex;
+            render();
+          }
+        })
+        .catch((error) => {
+          if (error?.code === "invalid_argument") {
+            canWrite = false;
+            setStatus(t().readOnly, true);
+            render();
+          } else setStatus(t().saveErr, true);
+        });
+    }
+
+    $("note-text").addEventListener("change", () => {
+      const list = visible();
+      const card = list[index];
+      const mine = card && ratings.get(card.id);
+      if (card && mine && mine.note !== $("note-text").value.trim())
+        rate(card, mine.rating, false);
+    });
+    $("prev").addEventListener("click", () => {
+      index--;
+      render();
+    });
+    $("next").addEventListener("click", () => {
+      index++;
+      render();
+    });
+    $("next-unrated").addEventListener("click", () => {
+      const list = visible();
+      const found = list.findIndex((c, i) => i > index && !ratings.has(c.id));
+      const wrap =
+        found >= 0 ? found : list.findIndex((c) => !ratings.has(c.id));
+      if (wrap >= 0) {
+        index = wrap;
+        render();
+      }
+    });
+    $("lang").addEventListener("click", () => {
+      lang = lang === "ru" ? "en" : "ru";
+      try {
+        localStorage.setItem("rating-lang", lang);
+      } catch {}
+      render();
+    });
+
+    render();
+
+    (async () => {
+      const claude = window.claude;
+      const [dbNs, userNs] = await Promise.all([
+        claude?.use?.("db") ?? null,
+        claude?.use?.("user") ?? null,
+      ]);
+      uid = userNs ? await userNs.id() : null;
+      if (!dbNs || !uid) {
+        setStatus(t().signedOut, true);
+        render();
+        return;
+      }
+      db = dbNs;
+      // Viewers and Commenters cannot write; Contributors and up rate.
+      if ((await userNs.can("data.write")) === false) {
+        canWrite = false;
+        setStatus(t().readOnly, true);
+      }
+      // The note shown once loading ends: read-only viewers keep theirs.
+      const idle = () =>
+        canWrite ? setStatus("") : setStatus(t().readOnly, true);
+      if (canWrite) setStatus(t().loading);
+      const slow = setTimeout(() => setStatus(t().loadSlow), 10000);
+      db.collection(`ratings/${uid}/cards`)
+        .limit(1000)
+        .onSnapshot(
+          (snap) => {
+            // Rebuilt from each snapshot; this page's own writes are in it.
+            ratings.clear();
+            for (const doc of snap.docs) {
+              const body = doc.data();
+              if (body && typeof body.rating === "string")
+                ratings.set(doc.id, {
+                  rating: body.rating,
+                  note: typeof body.note === "string" ? body.note : "",
+                });
+            }
+            if (!snap.metadata.fromCache) {
+              clearTimeout(slow);
+              idle();
+            }
+            render();
+          },
+          () => {
+            clearTimeout(slow);
+            setStatus(t().loadSlow, true);
+          },
+        );
+      render();
+    })();
+  })();
+</script>

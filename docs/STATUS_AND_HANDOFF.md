@@ -14,7 +14,9 @@ code is sound, so the owner can verify everything independently. Owner
 answers, 2026-11-26: Pro is on, Sentry may load later, episode links as
 advised, the portfolio key is allowed, the film set as honest as possible,
 a budget for an honest check, no Next.js version 2 (`AGENTS.md`, "Owner
-decisions, 2026-11-26").
+decisions, 2026-11-26"). Later the same day the owner supplied Supabase's
+certificate and approved $60 for one paid evaluation round ("Да, $60"); the
+round ran and cost $3.89.
 
 ## The three rules
 
@@ -43,7 +45,9 @@ Every change reports before/after numbers for each rule.
 | Vercel Pro; Web Analytics | done (owner), verified | `vercel teams ls`: plan `pro` |
 | Paid re-checks back off after failures (migration 0121) | done, applied to production | `216b9b5`, `scripts/test-validation-backoff.ts` |
 | Independent film label set, scored without paid calls | done; awaits the owner's review | `e568a71`, `71d039c`, `docs/eval-baseline.md` |
-| Evaluation budget | proposed; waiting for the owner | `docs/evaluation-budget.md`, `docs/OWNER_QUESTIONS.md` #4 |
+| Database scripts verify the server against Supabase's certificate (supplied by the owner) | done | `5e41865`, `scripts/database-tls.ts`, `docs/production-readiness.md` |
+| Paid evaluation round ($60 approved) | done 2026-11-26: $3.89 spent; 4 of 5 gates PASS, archetype rules FAIL on one card; defects found (Known limits) | `5e41865`, `docs/eval-baseline.md`, `docs/reports/eval-live-2026-11-26.json` |
+| Rating sheet, 321 cards | published; waiting for the owner's ratings | https://claude.ai/artifact/HarGVRCT49WRcp5ervd4RC, `docs/reports/rating-sheet-2026-11-26.json` |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
 | Phase 5 security checks (gitleaks, Semgrep, npm audit), Dependabot | done, green on `3031e0d` | `.github/workflows/security.yml`, `docs/production-readiness.md` |
@@ -81,11 +85,14 @@ node --import tsx scripts/measure-page-speed.ts --label check
 node --import tsx scripts/measure-page-weight.ts --label check
 node --env-file=.env --import tsx scripts/smoke-catalogue-windows.ts
 node --env-file=.env --import tsx scripts/measure-quiz-api.ts --label check
+node --env-file=.env --import tsx scripts/run-evals-live.ts --budget 60 --rounds 1 --dry-run
 ```
 
 Every database check is read-only or runs in a rolled-back transaction. None
 makes a paid provider call. The smoke and quiz API checks count a few uses
-against the owner's test partner site allowance.
+against the owner's test partner site allowance. The paid round itself
+(`scripts/run-evals-live.ts --budget <usd>` without `--dry-run`) runs only
+with the owner's approval of that amount.
 
 ## Known limits
 
@@ -93,17 +100,32 @@ against the owner's test partner site allowance.
   enters API keys or tokens.
 - The first request to a new function instance takes 8–10 s (function start
   plus cold database buffers); not yet investigated.
-- Film search confirms only what the owner's stories say: 0 of 19 independent
-  sightings without paid research, and paid checks of film results published
-  1 of 46 attempts so far.
+- Film search: paid research finds 15 of 19 independent sightings (shown as
+  possible, now saved for free) but confirms none; the two-source
+  confirmation is the bottleneck.
+- Alternatives: 11 of the owner's 20 test names stop at "comparison
+  specifications are incomplete" because name resolution picks a short
+  imported record without facts while a complete record of the same model
+  exists; "Santos de Cartier" offers "Santos Demoiselle" first.
+- Archetype: after paid checking, an editorial pick without a catalogue
+  record loses its title and price (Maurice Lacroix AI6118-SS00E-430-C in the
+  USD 10,000+ band) and is shown as checked with no price label.
+- One checked alternatives answer could not be saved ("image conflicts with
+  catalogue"), so its check was paid without a saved answer.
+- The database has no backups (zero available, PITR off): Supabase backs up
+  only Pro, Team and Enterprise projects. Owner action before the first
+  paying partner (`docs/OWNER_QUESTIONS.md` #3).
 - A local production build (`npm start` with `.env`) writes real analytics
   rows; one test page view from 2026-11-26 (row 692, country empty) is in the
   analytics table.
 
 ## Next step
 
-Wait for the owner's answers in `docs/OWNER_QUESTIONS.md`: the Lovable
-publish (then verify the live demo), the certificate, read-only evaluation
-access, and the evaluation budget (then add the live evaluation mode and run
-the first paid round). Version 2 on Next.js is cancelled. Run
-`scripts/verify-all.ts --production` before and after every change.
+Fix what the paid round found, free of provider cost, each with the free
+evaluation before and after: alternatives name resolution, the archetype
+card that loses its price, the film confirmation step, the image conflict
+that blocks saving a checked answer. Then, with the owner's OK, a repeat
+round (about $4, inside the unused part of the $60). Meanwhile the owner's
+items in `docs/OWNER_QUESTIONS.md`: the Lovable publish (then verify the
+live demo), the ratings, Supabase Pro for backups, provider spending limits.
+Run `scripts/verify-all.ts --production` before and after every change.

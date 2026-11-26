@@ -191,6 +191,14 @@ speed and cost.
   and is never edited to raise a score.
 - **Paid re-checks back off** after each failure of the same saved search:
   5 minutes, 1 hour, 1 day, then 7 days (migration 0121).
+- **One paid evaluation round, $60** ("Да, $60"):
+  `scripts/run-evals-live.ts --budget 60` runs the labelled sets through the
+  visitors' own search functions and reads the spend ledger before each case,
+  so the round cannot pass the approved amount. A further paid round needs a
+  new approval.
+- **Database scripts verify the server** against Supabase's certificate
+  authority (`certs/prod-ca-2021.crt`, supplied by the owner) through
+  `scripts/database-tls.ts`; never go back to encrypting without verifying.
 
 ## Continuity and skills (EstateVanta starter kit, 2026-11-25)
 
