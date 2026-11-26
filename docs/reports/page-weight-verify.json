@@ -1,0 +1,97 @@
+{
+  "at": "2026-11-26T08:42:41.722Z",
+  "base": "https://thereserve.watch",
+  "label": "verify",
+  "budgetKB": 150,
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "scripts": 10,
+      "wireKB": 122.2,
+      "rawKB": 448.5,
+      "largest": [
+        {
+          "file": "/assets/entry.client-Dki8D7AB.js",
+          "wireKB": 51.5
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-C9dhyowy.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BM2_7Zuz.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    },
+    {
+      "path": "/watches/archetype",
+      "status": 200,
+      "scripts": 20,
+      "wireKB": 140.5,
+      "rawKB": 505.8,
+      "largest": [
+        {
+          "file": "/assets/entry.client-Dki8D7AB.js",
+          "wireKB": 51.5
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-C9dhyowy.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BM2_7Zuz.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    },
+    {
+      "path": "/quiz",
+      "status": 200,
+      "scripts": 10,
+      "wireKB": 122.2,
+      "rawKB": 448.5,
+      "largest": [
+        {
+          "file": "/assets/entry.client-Dki8D7AB.js",
+          "wireKB": 51.5
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-C9dhyowy.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BM2_7Zuz.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    },
+    {
+      "path": "/watches/find",
+      "status": 200,
+      "scripts": 20,
+      "wireKB": 139.9,
+      "rawKB": 503.8,
+      "largest": [
+        {
+          "file": "/assets/entry.client-Dki8D7AB.js",
+          "wireKB": 51.5
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-C9dhyowy.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BM2_7Zuz.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    }
+  ],
+  "result": "PASS"
+}

@@ -5,12 +5,16 @@ new chat can continue in minutes. Owner decisions: `AGENTS.md` ("Speed,
 caching and relevance rebuild"). Detailed evidence: the roadmap section of the
 same name in `docs/implementation-roadmap.md`. Audit:
 https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4. Final report with the
-verification table (2026-11-26, 13 of 13 PASS):
-https://claude.ai/artifact/7X4Lo6q2mcvgw6ZoHDG1Wn.
+verification table (updated 2026-11-26 with the owner's answers, 15 of 15
+PASS): https://claude.ai/artifact/7X4Lo6q2mcvgw6ZoHDG1Wn.
 
 Owner request, 2026-11-25: do every phase step by step, then give a full
 report that proves with facts and tests that the output is excellent and the
-code is sound, so the owner can verify everything independently.
+code is sound, so the owner can verify everything independently. Owner
+answers, 2026-11-26: Pro is on, Sentry may load later, episode links as
+advised, the portfolio key is allowed, the film set as honest as possible,
+a budget for an honest check, no Next.js version 2 (`AGENTS.md`, "Owner
+decisions, 2026-11-26").
 
 ## The three rules
 
@@ -34,14 +38,19 @@ Every change reports before/after numbers for each rule.
 | Phase 0 film search confirmed-only; quiz exact vs compromise | done, verified on production | `055f39d` |
 | Phase 0 CDN for finished film answers | done, verified on production | `df78c6d`, `docs/reports/page-speed-after-finished-cache-2026-11-25.json` |
 | Phase 0 episode short links | done, verified on production | `4be1572`, `docs/episode-links.md` |
-| Phase 0 public portfolio demo | waiting for the owner: needs a new production partner key (an access key needs explicit permission) and a `personal-website` deployment | |
+| Phase 0 public portfolio demo | partner created and portfolio pushed (2026-11-26); waiting for the owner to publish in Lovable | `personal-website` `9c99572`, `docs/OWNER_QUESTIONS.md` #1 |
+| Episode links open the tool each video names; campaign tags survive the sign-up gate | done, verified on production | `9e37eac`, `docs/episode-links.md` |
+| Vercel Pro; Web Analytics | done (owner), verified | `vercel teams ls`: plan `pro` |
+| Paid re-checks back off after failures (migration 0121) | done, applied to production | `216b9b5`, `scripts/test-validation-backoff.ts` |
+| Independent film label set, scored without paid calls | done; awaits the owner's review | `e568a71`, `71d039c`, `docs/eval-baseline.md` |
+| Evaluation budget | proposed; waiting for the owner | `docs/evaluation-budget.md`, `docs/OWNER_QUESTIONS.md` #4 |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
 | Phase 5 security checks (gitleaks, Semgrep, npm audit), Dependabot | done, green on `3031e0d` | `.github/workflows/security.yml`, `docs/production-readiness.md` |
 | Phase 5 self-hosted fonts | done, verified on production | `0474d57` |
 | Phase 5 starter-kit skills, standards, continuity docs | done | `.agents/skills/`, `docs/NEXT_CHAT.md`, `docs/OWNER_QUESTIONS.md`, `docs/decisions/DECISION_REGISTER.md` |
-| Phase 5 home page under the 150 KB JS budget | waiting for the owner (Sentry loading decision) | `docs/OWNER_QUESTIONS.md` #7 |
-| Phases 2–4 Next.js v2 | pending | |
+| Phase 5 public pages under the 150 KB JS budget (Sentry after the first paint) | done, verified on production: home 168.4 → 122.2 KB | `35a4a77`, `docs/reports/page-weight-{before,after}-sentry.json` |
+| Phases 2–4 Next.js v2 | cancelled by the owner, 2026-11-26 | `AGENTS.md`, `docs/decisions/DECISION_REGISTER.md` |
 | One-command verification and final report | done | `scripts/verify-all.ts`, `docs/reports/verify-all-*.json` |
 
 ## How to verify
@@ -53,7 +62,7 @@ for each (about fifteen minutes; it writes `docs/reports/verify-all-<date>.json`
 node --import tsx scripts/verify-all.ts --production
 ```
 
-Without `--production` it skips the three checks against the live site. The
+Without `--production` it skips the four checks against the live site. The
 individual checks:
 
 ```sh
@@ -62,12 +71,14 @@ node --env-file=.env --import tsx scripts/test-quiz-window.ts
 node --env-file=.env --import tsx scripts/test-archetype-window.ts
 node --env-file=.env --import tsx scripts/test-alternatives-window.ts
 node --env-file=.env --import tsx scripts/test-name-lookups.ts
+node --env-file=.env --import tsx scripts/test-validation-backoff.ts --applied
 node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts
 node --env-file=.env --import tsx scripts/check-archetype-window-equivalence.ts
 node --env-file=.env --import tsx scripts/check-alternatives-window-equivalence.ts
 node --env-file=.env --import tsx scripts/check-name-lookup-equivalence.ts
 node --env-file=.env --import tsx scripts/run-evals.ts
 node --import tsx scripts/measure-page-speed.ts --label check
+node --import tsx scripts/measure-page-weight.ts --label check
 node --env-file=.env --import tsx scripts/smoke-catalogue-windows.ts
 node --env-file=.env --import tsx scripts/measure-quiz-api.ts --label check
 ```
@@ -78,15 +89,21 @@ against the owner's test partner site allowance.
 
 ## Known limits
 
-- Vercel Hobby forbids commercial use; upgrade to Pro before the first paying
-  partner (owner action).
-- Copying secrets into a new hosting project is an owner action; the agent
-  never enters API keys or tokens.
+- Copying secrets into a hosting project is an owner action; the agent never
+  enters API keys or tokens.
 - The first request to a new function instance takes 8–10 s (function start
   plus cold database buffers); not yet investigated.
+- Film search confirms only what the owner's stories say: 0 of 19 independent
+  sightings without paid research, and paid checks of film results published
+  1 of 46 attempts so far.
+- A local production build (`npm start` with `.env`) writes real analytics
+  rows; one test page view from 2026-11-26 (row 692, country empty) is in the
+  analytics table.
 
 ## Next step
 
-Phases 2–4 (version 2 on the starter kit) start as their own branch and
-session once the owner confirms the plan (`docs/OWNER_QUESTIONS.md` #9). Run
+Wait for the owner's answers in `docs/OWNER_QUESTIONS.md`: the Lovable
+publish (then verify the live demo), the certificate, read-only evaluation
+access, and the evaluation budget (then add the live evaluation mode and run
+the first paid round). Version 2 on Next.js is cancelled. Run
 `scripts/verify-all.ts --production` before and after every change.
