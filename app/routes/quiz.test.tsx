@@ -329,6 +329,18 @@ describe("version-4 diagnostic", () => {
     expect(contextualRedirect.headers.get("Location")).toBe(
       "/?diagnostic=subscription&story=don-draper-mad-men-omega#newsletter-signup",
     );
+    // An episode link's campaign tags survive the sign-up gate.
+    const episodeRedirect = await loader({
+      request: new Request(
+        "http://test.local/quiz?utm_source=youtube&utm_medium=video&utm_campaign=ep3",
+      ),
+    } as Parameters<typeof loader>[0]);
+    if (!(episodeRedirect instanceof Response)) {
+      throw new Error("Expected episode redirect response");
+    }
+    expect(episodeRedirect.headers.get("Location")).toBe(
+      "/?diagnostic=subscription&utm_source=youtube&utm_medium=video&utm_campaign=ep3#newsletter-signup",
+    );
 
     const response = await action({
       request: new Request("http://test.local/quiz", {

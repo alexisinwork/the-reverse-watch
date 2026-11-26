@@ -46,6 +46,7 @@ import {
 import { persistDiscoveryFunnelEvent } from "../domain/discovery-funnel-store.server";
 import { loadPublishedDiscoveryStoryContext } from "../domain/discovery-store.server";
 import type { SubscriptionResult } from "../domain/email-delivery";
+import { withCampaignTags } from "../domain/campaign-tags";
 import { loadFxTable } from "../domain/fx.server";
 import {
   profileV4Schema,
@@ -330,7 +331,13 @@ export async function loader({ request, context }: Route.LoaderArgs) {
       storyContext.status === "valid"
         ? `&story=${encodeURIComponent(storyContext.slug)}`
         : "";
-    return redirect(`/?diagnostic=subscription${storyQuery}#newsletter-signup`);
+    // Episode links keep their campaign tags through the sign-up gate.
+    return redirect(
+      withCampaignTags(
+        `/?diagnostic=subscription${storyQuery}#newsletter-signup`,
+        request.url,
+      ),
+    );
   }
 
   const [options, fx] = await Promise.all([loadQuizOptions(), loadFxTable()]);

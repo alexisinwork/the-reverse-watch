@@ -22,6 +22,7 @@ import {
   type AlternativesPage,
   type AlternativesForm,
 } from "../domain/alternatives-search.server";
+import { withCampaignTags } from "../domain/campaign-tags";
 import { hasDiagnosticAccess } from "../domain/diagnostic-access.server";
 import { formatMoney } from "../domain/fx";
 import { partnerSiteFrom } from "../domain/partner-embed.server";
@@ -44,7 +45,13 @@ export async function loader({ request, context }: Route.LoaderArgs) {
   // Partner widgets need no subscription: the partner pays for access.
   const site = partnerSiteFrom(context);
   if (!site && !(await hasDiagnosticAccess(request))) {
-    return redirect("/?diagnostic=subscription#newsletter-signup");
+    // Episode links keep their campaign tags through the sign-up gate.
+    return redirect(
+      withCampaignTags(
+        "/?diagnostic=subscription#newsletter-signup",
+        request.url,
+      ),
+    );
   }
   const form = readAlternativesForm(new URL(request.url).searchParams);
   const empty = {
