@@ -4,7 +4,9 @@ The current state of the speed, caching and relevance rebuild, kept short so a
 new chat can continue in minutes. Owner decisions: `AGENTS.md` ("Speed,
 caching and relevance rebuild"). Detailed evidence: the roadmap section of the
 same name in `docs/implementation-roadmap.md`. Audit:
-https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4.
+https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4. Final report with the
+verification table (2026-11-26, 13 of 13 PASS):
+https://claude.ai/artifact/7X4Lo6q2mcvgw6ZoHDG1Wn.
 
 Owner request, 2026-11-25: do every phase step by step, then give a full
 report that proves with facts and tests that the output is excellent and the
