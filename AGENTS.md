@@ -216,6 +216,15 @@ speed and cost.
   on a page whose title names the subject, one sentence naming the brand
   and the exact reference (stored as "heading … sentence"). The second check
   (Muse) may search once, open one page and think briefly, about $0.006.
+  An actor's or a character's card keeps the role beside the film when the
+  source names both ("yes, fix it"): the passage may then name the role or
+  the actor, and must name the film.
+- **Gemini: open question, nothing connected** (owner asked "maybe we should
+  exchange gemini for perplexity?"; `docs/OWNER_QUESTIONS.md`, item 8).
+  Google's terms for Grounding with Google Search forbid caching,
+  syndicating or analysing Grounded Results and using their links to build
+  an index or crawl destination pages, which is how this site verifies and
+  stores sightings. Until the owner decides, add no Gemini call.
 - **Spend alerts by email** to the owner's address (`SPEND_ALERT_EMAIL` in
   Vercel): the monthly ledger at $5, 10, 25, 50, 75, 90 and 100, Perplexity
   alone at $5 and $10, and at once when the ledger halts; the hourly cron

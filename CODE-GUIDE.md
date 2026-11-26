@@ -238,10 +238,16 @@ Fixes from the paid round (2026-11-26), in plain words:
   check (Muse) is told which site the first source was on (`avoidHost`) and
   may search once and open one page (`MUSE_SIGHTING_TOOL_CALLS`); a rejected
   check logs which side failed and both page addresses.
+- An actor's or a character's card keeps the role beside the film when its
+  source names both ("Mark Hanna (Matthew McConaughey)", The Wolf of Wall
+  Street: `roleAttribution`), so a page naming only the role still ties; the
+  film must then be named too. Film drafts carry the discovery that wrote
+  them (`FILM_DISCOVERY_VERSION` in `film-subject.ts`); an older draft is
+  read again instead of re-checked (`searchWithStore`).
 - `scripts/run-film-searches.ts` runs film and people searches through the
-  visitors' function with a ledger stop; `scripts/build-rating-sheet.ts
---report a.json,b.json --label films` turns the reports into the owner's
-  review page.
+  visitors' function with a ledger stop (`--fresh` reads the articles again
+  first); `scripts/build-rating-sheet.ts --report a.json,b.json --label
+films` turns the reports into the owner's review page.
 - Migration 0122 keeps the catalogue's photo when a check finds a different
   one, instead of refusing the checked answer
   (`scripts/test-image-conflict-publish.ts`).

@@ -13,6 +13,7 @@
 // Also writes docs/reports/rating-sheet-[<label>-]<date>.json: the sample
 // the ratings are scored against. The page (scripts/rating-sheet-template.html) stores
 // each rater's ratings in its own database under ratings/<rater>/cards.
+import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -233,8 +234,16 @@ const cards = [...quiz, ...archetype, ...alternatives, ...film].flatMap(
     const distinct = [
       ...new Map(result.cards.map((card) => [identity(card), card])).values(),
     ].slice(0, 10);
+    // A labelled sheet is rebuilt as answers improve: its card ids come from
+    // the request and the watch, not from the run, so a rating stays with
+    // the same watch for the same request across rebuilds.
     return distinct.map((card, index) => ({
-      id: `${result.id}-${String(index + 1).padStart(2, "0")}`,
+      id: label
+        ? `${result.tool}-${createHash("sha256")
+            .update(`${JSON.stringify(result.input)}|${identity(card)}`)
+            .digest("hex")
+            .slice(0, 16)}`
+        : `${result.id}-${String(index + 1).padStart(2, "0")}`,
       caseId: result.id,
       tool: result.tool,
       request,
