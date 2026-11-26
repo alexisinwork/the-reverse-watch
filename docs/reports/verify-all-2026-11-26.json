@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-26T12:49:43.573Z",
+  "at": "2026-11-26T17:05:21.025Z",
   "production": true,
   "results": [
     {
@@ -12,7 +12,7 @@
     {
       "name": "Migration 0115 (quiz window)",
       "result": "PASS",
-      "seconds": 10,
+      "seconds": 8,
       "command": "node --env-file=.env --import tsx scripts/test-quiz-window.ts",
       "what": "permissions, filters and columns, in a rolled-back transaction"
     },
@@ -33,7 +33,7 @@
     {
       "name": "Migrations 0118–0120 (name lookups)",
       "result": "PASS",
-      "seconds": 25,
+      "seconds": 14,
       "command": "node --env-file=.env --import tsx scripts/test-name-lookups.ts",
       "what": "permissions, every Unicode code point, aliases, near misses, in a rolled-back transaction"
     },
@@ -54,42 +54,42 @@
     {
       "name": "Quiz window equals the whole catalogue",
       "result": "PASS",
-      "seconds": 41,
+      "seconds": 40,
       "command": "node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts",
       "what": "64 answers, 0 differences allowed"
     },
     {
       "name": "Archetype window equals the whole catalogue",
       "result": "PASS",
-      "seconds": 20,
+      "seconds": 12,
       "command": "node --env-file=.env --import tsx scripts/check-archetype-window-equivalence.ts",
       "what": "all 24 archetype and band combinations, 0 differences allowed"
     },
     {
       "name": "Alternatives reads equal the whole catalogue",
       "result": "PASS",
-      "seconds": 56,
+      "seconds": 54,
       "command": "node --env-file=.env --import tsx scripts/check-alternatives-window-equivalence.ts",
       "what": "owner test-set names and budgets, 0 differences allowed"
     },
     {
       "name": "Name lookups equal the whole name index",
       "result": "PASS",
-      "seconds": 233,
+      "seconds": 241,
       "command": "node --env-file=.env --import tsx scripts/check-name-lookup-equivalence.ts --sample 20",
       "what": "a 20-row sample of the full 794-name run: same resolved watch and same named rows, 0 differences allowed"
     },
     {
       "name": "Quality evaluation",
       "result": "PASS",
-      "seconds": 40,
-      "command": "node --env-file=.env --import tsx scripts/run-evals.ts",
+      "seconds": 44,
+      "command": "node --env-file=.env --import tsx scripts/run-evals.ts --label verify",
       "what": "0 hard-rule breaks, 0 forbidden sightings, no provider request; scores vs docs/eval-baseline.md"
     },
     {
       "name": "Page speed (production)",
       "result": "PASS",
-      "seconds": 6,
+      "seconds": 8,
       "command": "node --import tsx scripts/measure-page-speed.ts --label verify",
       "what": "first-byte medians and CDN hits for public pages"
     },
@@ -103,14 +103,14 @@
     {
       "name": "Search windows smoke (production)",
       "result": "PASS",
-      "seconds": 7,
+      "seconds": 9,
       "command": "node --env-file=.env --import tsx scripts/smoke-catalogue-windows.ts",
       "what": "saved archetype and alternatives answers; 0 added paid attempts"
     },
     {
       "name": "Quiz API speed (production)",
       "result": "PASS",
-      "seconds": 14,
+      "seconds": 5,
       "command": "node --env-file=.env --import tsx scripts/measure-quiz-api.ts --label verify",
       "what": "answers the catalogue covers, no provider call"
     }

@@ -1,156 +1,156 @@
 {
-  "at": "2026-11-26T12:43:44.135Z",
-  "fxDate": "2026-11-25",
+  "at": "2026-11-26T16:59:17.377Z",
+  "fxDate": "2026-11-26",
   "wholePool": {
     "rows": 25014,
-    "readMs": 12708
+    "readMs": 7167
   },
   "combinations": 24,
   "supplementsCompared": 344,
   "window": {
     "rowsMax": 1967,
-    "readMsP50": 212,
-    "readMsMax": 535
+    "readMsP50": 140,
+    "readMsMax": 290
   },
   "results": [
     {
       "archetype": "field_rationalist",
       "band": "first_good_watch",
       "windowRows": 624,
-      "windowMs": 535,
+      "windowMs": 288,
       "supplements": 20
     },
     {
       "archetype": "field_rationalist",
       "band": "considered_entry",
       "windowRows": 1428,
-      "windowMs": 506,
+      "windowMs": 290,
       "supplements": 20
     },
     {
       "archetype": "field_rationalist",
       "band": "established_collection",
       "windowRows": 1590,
-      "windowMs": 333,
+      "windowMs": 256,
       "supplements": 20
     },
     {
       "archetype": "field_rationalist",
       "band": "exceptional_object",
       "windowRows": 1967,
-      "windowMs": 453,
+      "windowMs": 281,
       "supplements": 20
     },
     {
       "archetype": "quiet_custodian",
       "band": "first_good_watch",
       "windowRows": 460,
-      "windowMs": 311,
+      "windowMs": 130,
       "supplements": 20
     },
     {
       "archetype": "quiet_custodian",
       "band": "considered_entry",
       "windowRows": 688,
-      "windowMs": 201,
+      "windowMs": 145,
       "supplements": 20
     },
     {
       "archetype": "quiet_custodian",
       "band": "established_collection",
       "windowRows": 580,
-      "windowMs": 235,
+      "windowMs": 143,
       "supplements": 20
     },
     {
       "archetype": "quiet_custodian",
       "band": "exceptional_object",
       "windowRows": 552,
-      "windowMs": 220,
+      "windowMs": 111,
       "supplements": 20
     },
     {
       "archetype": "architectural_modernist",
       "band": "first_good_watch",
       "windowRows": 3,
-      "windowMs": 113,
+      "windowMs": 109,
       "supplements": 3
     },
     {
       "archetype": "architectural_modernist",
       "band": "considered_entry",
       "windowRows": 10,
-      "windowMs": 104,
+      "windowMs": 115,
       "supplements": 9
     },
     {
       "archetype": "architectural_modernist",
       "band": "established_collection",
       "windowRows": 40,
-      "windowMs": 91,
+      "windowMs": 96,
       "supplements": 20
     },
     {
       "archetype": "architectural_modernist",
       "band": "exceptional_object",
       "windowRows": 35,
-      "windowMs": 74,
+      "windowMs": 88,
       "supplements": 20
     },
     {
       "archetype": "expressive_collector",
       "band": "first_good_watch",
       "windowRows": 3,
-      "windowMs": 110,
+      "windowMs": 106,
       "supplements": 3
     },
     {
       "archetype": "expressive_collector",
       "band": "considered_entry",
       "windowRows": 10,
-      "windowMs": 126,
+      "windowMs": 97,
       "supplements": 9
     },
     {
       "archetype": "expressive_collector",
       "band": "established_collection",
       "windowRows": 40,
-      "windowMs": 150,
+      "windowMs": 101,
       "supplements": 20
     },
     {
       "archetype": "expressive_collector",
       "band": "exceptional_object",
       "windowRows": 35,
-      "windowMs": 119,
+      "windowMs": 71,
       "supplements": 20
     },
     {
       "archetype": "mechanical_connoisseur",
       "band": "first_good_watch",
       "windowRows": 249,
-      "windowMs": 181,
+      "windowMs": 146,
       "supplements": 20
     },
     {
       "archetype": "mechanical_connoisseur",
       "band": "considered_entry",
       "windowRows": 532,
-      "windowMs": 212,
+      "windowMs": 159,
       "supplements": 20
     },
     {
       "archetype": "mechanical_connoisseur",
       "band": "established_collection",
       "windowRows": 656,
-      "windowMs": 249,
+      "windowMs": 140,
       "supplements": 20
     },
     {
       "archetype": "mechanical_connoisseur",
       "band": "exceptional_object",
       "windowRows": 748,
-      "windowMs": 228,
+      "windowMs": 169,
       "supplements": 20
     },
     {

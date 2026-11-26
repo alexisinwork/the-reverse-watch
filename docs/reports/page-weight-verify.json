@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-26T12:49:22.233Z",
+  "at": "2026-11-26T17:05:07.199Z",
   "base": "https://thereserve.watch",
   "label": "verify",
   "budgetKB": 150,
@@ -8,19 +8,19 @@
       "path": "/",
       "status": 200,
       "scripts": 10,
-      "wireKB": 122.2,
-      "rawKB": 448.5,
+      "wireKB": 122.3,
+      "rawKB": 448.8,
       "largest": [
         {
-          "file": "/assets/entry.client-kkrndu91.js",
-          "wireKB": 51.5
+          "file": "/assets/entry.client-CDxEma5p.js",
+          "wireKB": 51.6
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-CCckeWZP.js",
+          "file": "/assets/chunk-62JRHF6Z-BHvYD1rD.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-CHcRk3fm.js",
+          "file": "/assets/schemas-D2lbkgqH.js",
           "wireKB": 23.4
         }
       ],
@@ -30,19 +30,19 @@
       "path": "/watches/archetype",
       "status": 200,
       "scripts": 20,
-      "wireKB": 140.5,
-      "rawKB": 505.8,
+      "wireKB": 140.6,
+      "rawKB": 506.1,
       "largest": [
         {
-          "file": "/assets/entry.client-kkrndu91.js",
-          "wireKB": 51.5
+          "file": "/assets/entry.client-CDxEma5p.js",
+          "wireKB": 51.6
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-CCckeWZP.js",
+          "file": "/assets/chunk-62JRHF6Z-BHvYD1rD.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-CHcRk3fm.js",
+          "file": "/assets/schemas-D2lbkgqH.js",
           "wireKB": 23.4
         }
       ],
@@ -52,19 +52,19 @@
       "path": "/quiz",
       "status": 200,
       "scripts": 10,
-      "wireKB": 122.2,
-      "rawKB": 448.5,
+      "wireKB": 122.3,
+      "rawKB": 448.8,
       "largest": [
         {
-          "file": "/assets/entry.client-kkrndu91.js",
-          "wireKB": 51.5
+          "file": "/assets/entry.client-CDxEma5p.js",
+          "wireKB": 51.6
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-CCckeWZP.js",
+          "file": "/assets/chunk-62JRHF6Z-BHvYD1rD.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-CHcRk3fm.js",
+          "file": "/assets/schemas-D2lbkgqH.js",
           "wireKB": 23.4
         }
       ],
@@ -75,18 +75,18 @@
       "status": 200,
       "scripts": 20,
       "wireKB": 140,
-      "rawKB": 503.8,
+      "rawKB": 504.2,
       "largest": [
         {
-          "file": "/assets/entry.client-kkrndu91.js",
-          "wireKB": 51.5
+          "file": "/assets/entry.client-CDxEma5p.js",
+          "wireKB": 51.6
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-CCckeWZP.js",
+          "file": "/assets/chunk-62JRHF6Z-BHvYD1rD.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-CHcRk3fm.js",
+          "file": "/assets/schemas-D2lbkgqH.js",
           "wireKB": 23.4
         }
       ],

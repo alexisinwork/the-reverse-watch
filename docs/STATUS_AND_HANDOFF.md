@@ -7,7 +7,8 @@ same name in `docs/implementation-roadmap.md`. Audit:
 https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4. Final report with the
 verification table (updated 2026-11-26 with the owner's answers, the paid
 round, the fixes, the remaining budget and what launch needs; 16 of 16 PASS
-on deployment `dpl_Ao4BDAaJHs8H7JSpfMcKVG8iTGmx` after the fixes):
+again at 2026-11-26 17:05 UTC on the deployment of `6d3493b`, after the film
+search work, `docs/reports/verify-all-2026-11-26.json`):
 https://claude.ai/artifact/7X4Lo6q2mcvgw6ZoHDG1Wn. Owner's rating page:
 https://claude.ai/artifact/HarGVRCT49WRcp5ervd4RC (ratings are stored under
 `ratings/<rater>/cards` in its database; read them with ArtifactData).

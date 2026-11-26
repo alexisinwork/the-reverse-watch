@@ -1,13 +1,13 @@
 {
-  "at": "2026-11-26T12:44:39.991Z",
-  "fxDate": "2026-11-25",
+  "at": "2026-11-26T17:00:11.045Z",
+  "fxDate": "2026-11-26",
   "wholePool": {
     "rows": 25014,
-    "readMs": 7555
+    "readMs": 6617
   },
   "nameIndex": {
     "rows": 25014,
-    "readMs": 1461
+    "readMs": 1344
   },
   "namesCompared": 44,
   "targetsResolved": 9,
@@ -15,8 +15,8 @@
   "alternativesCompared": 3607,
   "fullRowsCompared": 938,
   "window": {
-    "readMsP50": 243,
-    "readMsMax": 663
+    "readMsP50": 245,
+    "readMsMax": 453
   },
   "differences": [],
   "result": "PASS"

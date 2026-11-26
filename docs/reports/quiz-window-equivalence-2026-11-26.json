@@ -1,28 +1,28 @@
 {
-  "at": "2026-11-26T12:43:24.338Z",
-  "fxDate": "2026-11-25",
+  "at": "2026-11-26T16:59:05.242Z",
+  "fxDate": "2026-11-26",
   "wholePool": {
     "rows": 25014,
-    "readMs": 18715
+    "readMs": 16907
   },
   "poolIdentityKeys": {
     "keys": 25014,
-    "readMs": 341
+    "readMs": 370
   },
   "profiles": 64,
   "window": {
     "rowsMin": 8,
     "rowsMedian": 617,
-    "rowsMax": 1802,
-    "readMsP50": 146,
-    "readMsP95": 239,
-    "readMsMax": 345
+    "rowsMax": 1806,
+    "readMsP50": 151,
+    "readMsP95": 247,
+    "readMsMax": 499
   },
   "compared": {
-    "exact": 498,
-    "close": 976,
-    "broader": 236,
-    "hydrated": 1710
+    "exact": 496,
+    "close": 978,
+    "broader": 235,
+    "hydrated": 1709
   },
   "lookupsCompared": 60,
   "differences": [],
