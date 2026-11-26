@@ -1,5 +1,7 @@
+import { matchRoutes } from "react-router";
 import { describe, expect, it } from "vitest";
 
+import routes from "../routes";
 import {
   episodeDestination,
   episodeLinkList,
@@ -16,7 +18,8 @@ describe("episode short links", () => {
     expect(response.status).toBe(302);
     const location = response.headers.get("Location")!;
     const url = new URL(location, "https://thereserve.watch");
-    expect(url.pathname).toBe("/");
+    // Episode 35 closes with the cheaper-alternatives line (docs/episode-links.md).
+    expect(url.pathname).toBe("/watches/alternatives");
     expect(url.searchParams.get("utm_source")).toBe("youtube");
     expect(url.searchParams.get("utm_medium")).toBe("video");
     expect(url.searchParams.get("utm_campaign")).toBe("ep35");
@@ -56,6 +59,26 @@ describe("episode short links", () => {
     // Every configured target is a path on this site.
     for (const link of episodeLinkList()) {
       expect(isSitePath(link.target)).toBe(true);
+    }
+  });
+
+  it("leads every episode to a visitor page that exists", () => {
+    type Entry = { path?: string; index?: boolean; children?: Entry[] };
+    const flatten = (entries: Entry[], prefix = ""): { path: string }[] =>
+      entries.flatMap((entry) => {
+        const path = entry.index
+          ? prefix || "/"
+          : `${prefix}/${entry.path ?? ""}`.replace(/\/+/g, "/");
+        return [{ path }, ...flatten(entry.children ?? [], path)];
+      });
+    const pages = flatten(routes);
+    for (const link of episodeLinkList()) {
+      const { pathname } = new URL(link.target, "https://thereserve.watch");
+      const page = matchRoutes(pages, pathname)?.at(-1)?.route.path ?? "";
+      expect(page, `episode ${link.episode}`).not.toBe("");
+      expect(page, `episode ${link.episode}`).not.toMatch(
+        /^\/(api|admin|internal|analytics|embed|e|health)(\/|$)/,
+      );
     }
   });
 

@@ -1,325 +1,325 @@
 {
-  "note": "Short links for video descriptions: https://thereserve.watch/e/<episode>. Edit a target to send that episode's viewers to a page on this site (a path starting with /).",
+  "note": "Short links for video descriptions: https://thereserve.watch/e/<episode>. Each target is the tool the episode's closing line names (docs/episode-links.md). Edit a target to send that episode's viewers elsewhere on this site (a path starting with /).",
   "episodes": {
     "1": {
-      "title": null,
-      "target": "/"
+      "title": "Switzerland Built the Future. Then Couldn't Afford to Sell It.",
+      "target": "/watches/archetype"
     },
     "2": {
-      "title": null,
-      "target": "/"
+      "title": "Rolex Has No Shareholders to Answer To",
+      "target": "/watches/alternatives"
     },
     "3": {
-      "title": null,
-      "target": "/"
+      "title": "America Protected Its Watch Industry. It Moved Abroad Anyway",
+      "target": "/quiz"
     },
     "4": {
-      "title": null,
-      "target": "/"
+      "title": "A Government Bought an Entire American Factory",
+      "target": "/watches/archetype"
     },
     "5": {
-      "title": null,
-      "target": "/"
+      "title": "Seiko Didn't Invent Quartz. It Did the Harder Part",
+      "target": "/watches/archetype"
     },
     "6": {
-      "title": null,
-      "target": "/"
+      "title": "The Man Who Built It Thought He Was Being Fired",
+      "target": "/quiz"
     },
     "7": {
-      "title": null,
-      "target": "/"
+      "title": "A. Lange & Söhne: The Watch Company That Disappeared for 40 Years",
+      "target": "/quiz"
     },
     "8": {
-      "title": null,
-      "target": "/"
+      "title": "Casio Broke 200 Prototypes. Then a Rubber Ball Changed Everything.",
+      "target": "/quiz"
     },
     "9": {
-      "title": null,
-      "target": "/"
+      "title": "This Watch Factory Is 300 Years Old. It Didn't Make Watches for 225.",
+      "target": "/quiz"
     },
     "10": {
-      "title": null,
-      "target": "/"
+      "title": "Patek Philippe's Most Famous Line Was Written by an Ad Agency",
+      "target": "/quiz"
     },
     "11": {
       "title": "Vostok Outlived the USSR. Its Company Didn't",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "12": {
       "title": "Omega's Owners Sold Blancpain's Name for 20,000 Francs",
-      "target": "/"
+      "target": "/quiz"
     },
     "13": {
       "title": "Bulova Built the Future, Then Licensed It to Its Rivals",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "14": {
       "title": "Why Did the Royal Oak Cost More Than Gold?",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "15": {
       "title": "Hamilton Is Swiss Now. So Who Stayed Behind?",
-      "target": "/"
+      "target": "/quiz"
     },
     "16": {
       "title": "The Heuer Family Never Sold Heuer. They Lost It Anyway.",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "17": {
       "title": "Swatch Group Tried to Quit. Switzerland Made It Stay.",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "18": {
       "title": "Who Can Say No at Rolex, Omega and Patek Philippe?",
-      "target": "/"
+      "target": "/quiz"
     },
     "19": {
       "title": "What Does \"Since 1845\" on a Watch Actually Mean?",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "20": {
       "title": "You Can Afford a Rolex. So Why Can't You Buy One?",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "21": {
       "title": "Paul Newman's Rolex Sold for More Than Anyone Bid",
-      "target": "/"
+      "target": "/quiz"
     },
     "22": {
       "title": "NASA Gave the Moonwatch Job to a Camera Engineer",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "23": {
       "title": "A Rolex Dealer Contract. Not Leaked. Filed.",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "24": {
       "title": "Swatch Asked a Court to Say It Owed Nothing",
-      "target": "/"
+      "target": "/quiz"
     },
     "25": {
       "title": "Rolex's Own Website Describes One Service Two Ways",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "26": {
       "title": "George Daniels Invented It. Omega Patented a Factory Fix.",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "27": {
       "title": "Apple Said Its Watch Is No. 1. Where Are the Numbers?",
-      "target": "/"
+      "target": "/quiz"
     },
     "28": {
       "title": "The Word “Chronometer” Is Real. Who Is It Written For?",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "29": {
       "title": "When Does a Real Rolex Become a Counterfeit?",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "30": {
       "title": "Did a Car Crash Really Inspire the Cartier Crash?",
-      "target": "/"
+      "target": "/quiz"
     },
     "31": {
       "title": "A Dealer Thought an Omega Was Worth More as Gold",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "32": {
       "title": "He Lost a £190,000 Rolex. The Insurer Paid Nothing.",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "33": {
       "title": "The Omega That Sold for Nearly 26 Times Its High Estimate",
-      "target": "/"
+      "target": "/quiz"
     },
     "34": {
       "title": "The Soviet Dive Watch Built Around One Clever Part",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "35": {
       "title": "The Watch Was in Their Drawer. They Didn’t Own It.",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "36": {
       "title": "What Does an Empty Rolex Window Actually Prove?",
-      "target": "/"
+      "target": "/quiz"
     },
     "37": {
       "title": "Jean-Claude Biver Made Cheese Nobody Could Buy",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "38": {
       "title": "What Did 66,000 Pebble Backers Actually Buy?",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "39": {
       "title": "The 65% Watch Loan Number Nobody Can Reproduce",
-      "target": "/"
+      "target": "/quiz"
     },
     "40": {
       "title": "What Is a Watch Actually Worth, and to Whom?",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "41": {
       "title": "The Dial That Poisoned Its Painters",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "42": {
       "title": "The Watch Workers Who Paid Themselves",
-      "target": "/"
+      "target": "/quiz"
     },
     "43": {
       "title": "The Watch Factory Paid People to Leave",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "44": {
       "title": "A New Trade Needed More Than a Free Classroom",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "45": {
       "title": "The Machines Still Needed a Watchmaker",
-      "target": "/"
+      "target": "/quiz"
     },
     "46": {
       "title": "The Watch Passed. The Prize Did Not Follow.",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "47": {
       "title": "Did One Watch Cause the Train Crash?",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "48": {
       "title": "The Olympic Race That Time Could Not Settle",
-      "target": "/"
+      "target": "/quiz"
     },
     "49": {
       "title": "The Pilot's Watch Still Needed a Navigator",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "50": {
       "title": "The Summit Was Shared. The Credit Became a Contest.",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "51": {
       "title": "The Swiss Watchmaker Who Removed Swiss Made",
-      "target": "/"
+      "target": "/quiz"
     },
     "52": {
       "title": "The FTC Put Shinola's Detroit Claim to the Test",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "53": {
       "title": "Who Won the 1969 Watch Race?",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "54": {
       "title": "The 21-Jewel Claim the FTC Rejected",
-      "target": "/"
+      "target": "/quiz"
     },
     "55": {
       "title": "The Watch That Didn't Fit Its Own Brand's Chart",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "56": {
       "title": "The Worker's Watch Most Workers Couldn't Buy",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "57": {
       "title": "The Dollar Watch Business That Could Not Pay",
-      "target": "/"
+      "target": "/quiz"
     },
     "58": {
       "title": "The Watch Disappeared. The Sales Pitch Kept Going.",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "59": {
       "title": "When the Ruby Stopped Being Rare",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "60": {
       "title": "The Watch That Worked for Four Hours",
-      "target": "/"
+      "target": "/quiz"
     },
     "61": {
       "title": "The Atomic Watch Has No Atomic Clock",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "62": {
       "title": "The Watch That Needed Your Other Hand",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "63": {
       "title": "The Calculator Watch Needed Another Tool",
-      "target": "/"
+      "target": "/quiz"
     },
     "64": {
       "title": "Your Watch Works. The Service Doesn't.",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "65": {
       "title": "Why Did a Watch Feature Move to the Phone?",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "66": {
       "title": "The Watchmaker Had to Renew the Name",
-      "target": "/"
+      "target": "/quiz"
     },
     "67": {
       "title": "The Sale Price That Depended on the Future",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "68": {
       "title": "The €278 Million Watch Sale Reversal",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "69": {
       "title": "The Military Watch Sold as a Memory",
-      "target": "/"
+      "target": "/quiz"
     },
     "70": {
       "title": "The Watch Partnership That Ended in Arbitration",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "71": {
       "title": "The $40,000 Rolex in Madoff’s Auction",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "72": {
       "title": "The Watch That Vanished but Left a Record",
-      "target": "/"
+      "target": "/quiz"
     },
     "73": {
       "title": "A Watch on Credit Behind Barbed Wire",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "74": {
       "title": "A Sky Built for One Customer",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "75": {
       "title": "The Watch That Knew Easter Until 2017",
-      "target": "/"
+      "target": "/quiz"
     },
     "76": {
       "title": "A Watch for Everyone Still Has to Fit Someone",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "77": {
       "title": "A Watch on the Wrist Was Only the Beginning",
-      "target": "/"
+      "target": "/watches/alternatives"
     },
     "78": {
       "title": "The Mayor Who Vetoed Standard Time",
-      "target": "/"
+      "target": "/quiz"
     },
     "79": {
       "title": "The Stopwatch That Cost a Worker His Job",
-      "target": "/"
+      "target": "/watches/archetype"
     },
     "80": {
       "title": "The World Does Not Run on One Clock",
-      "target": "/"
+      "target": "/watches/alternatives"
     }
   }
 }
