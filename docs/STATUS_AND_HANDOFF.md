@@ -49,14 +49,19 @@ Every change reports before/after numbers for each rule.
 | Episode links open the tool each video names; campaign tags survive the sign-up gate | done, verified on production | `9e37eac`, `docs/episode-links.md` |
 | Vercel Pro; Web Analytics | done (owner), verified | `vercel teams ls`: plan `pro` |
 | Paid re-checks back off after failures (migration 0121) | done, applied to production | `216b9b5`, `scripts/test-validation-backoff.ts` |
-| Independent film label set, scored without paid calls | done; awaits the owner's review | `e568a71`, `71d039c`, `docs/eval-baseline.md` |
+| Independent film label set, scored without paid calls | done; its review page is published (2026-11-26) and awaits the owner's marks | `e568a71`, `71d039c`, https://claude.ai/artifact/4Br4SRgzRsFAGkN7vLEd5b |
 | Database scripts verify the server against Supabase's certificate (supplied by the owner) | done | `5e41865`, `scripts/database-tls.ts`, `docs/production-readiness.md` |
-| Paid evaluation round ($60 approved) | done 2026-11-26: $3.89 spent; 4 of 5 gates PASS, archetype rules FAIL on one card; defects found (Known limits) | `5e41865`, `docs/eval-baseline.md`, `docs/reports/eval-live-2026-11-26.json` |
+| Paid evaluation round ($60 approved) | done 2026-11-26: $3.89 spent; 4 of 5 gates PASS, archetype rules FAIL on one card; defects found (Known limits). All paid work of the day from the same $60 is in `docs/evaluation-budget.md` | `5e41865`, `docs/eval-baseline.md`, `docs/reports/eval-live-2026-11-26.json` |
 | Fixes from the paid round: alternatives name resolution, archetype price and band, film passage rule, migration 0122 (photo conflict) | done 2026-11-26; measured without paid calls (alternatives 24 → 60 of 60 cases searched, archetype rule failures 1 → 0); film effect needs a paid re-check | `docs/eval-baseline.md`, "Fixes after the paid round" |
-| Rating sheet, 321 cards | published; waiting for the owner's ratings | https://claude.ai/artifact/HarGVRCT49WRcp5ervd4RC, `docs/reports/rating-sheet-2026-11-26.json` |
+| Rating sheet, 321 cards | the owner rated 203 ("всё что мог уже оценил, там всё гуд") and checked the archetypes by hand ("там всё гуд") | `c1fd934`, `docs/reports/owner-ratings-2026-11-26.json` |
 | Film and people search on real articles: discovery reads specialist articles; confirmation reads the page's own sentences and headings, Muse may open a page, avoids the first site; Bvlgari/Heuer/G-Shock brand rules; possible-only answers re-checked; Oracle of Time readable | done 2026-11-26, on production; tested on 30 owner queries, the IMDb Top 250 films and 100 of their actors and characters | `f7af14a`–`11a40e8`, `docs/eval-baseline.md` ("Film and people search on real articles"), `docs/reports/film-searches-*.json` |
 | Spend alerts by email (ledger marks, Perplexity at $5 and $10, halt) | done, checked on production (401 without the secret) | `22ef05c`, `docs/production-readiness.md` |
-| Film review page for the owner (541 cards for 182 requests, each with its quoted passages) | published; waiting for the owner's review | https://claude.ai/artifact/Nw4UBgkUU3ANz5Egrtr6Ze, `docs/reports/rating-sheet-films-2026-11-26.json` |
+| Film review page for the owner (541 cards for 182 requests, each with its quoted passages) | reviewed by the owner as far as possible: all good | https://claude.ai/artifact/Nw4UBgkUU3ANz5Egrtr6Ze, `docs/reports/rating-sheet-films-2026-11-26.json` |
+| Pre-owned dealers' prices labelled as pre-owned; grey dealers and watch databases never confirm a price | done, on production | `cd75a20` |
+| A judge (`scripts/judge-cards.ts`) calibrated on the owner's 203 ratings with two model families | done: film cards agree 90%; both judges name the same wrong fact on 69 cards the owner rated positively (50 alternatives, 17 quiz, 2 film); 6 of 6 checked on makers' pages were real errors | `cd75a20`, `docs/reports/judge-{opus,hydrogen}-2026-11-26.json` |
+| The judge on the 80 archetype cards (facts; the owner checked their choice by hand) | done: 34 of 78 wrong (44%), 76 of 78 AI-found watches | `docs/reports/judge-archetype-2026-11-26.json` |
+| Read-only evaluation sign-in (migration 0123) and CI job | done and applied; the same evaluation over it matched the usual one exactly; waits for the owner's one command (`docs/OWNER_QUESTIONS.md` #6) | `596b029`, `.github/workflows/eval.yml` |
+| Catalogue repair, step 1: pilot on 60 AI-found watches, nothing written | done: 12 watches with verified corrections, none on the 19 the judges found clean, 9 references look invented; step 2 waits for the owner (#7) | `docs/reports/fact-check-pilot-2026-11-26.json` |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
 | Phase 5 security checks (gitleaks, Semgrep, npm audit), Dependabot | done, green on `3031e0d` | `.github/workflows/security.yml`, `docs/production-readiness.md` |
@@ -110,22 +115,33 @@ with the owner's approval of that amount.
   enters API keys or tokens.
 - The first request to a new function instance takes 8–10 s (function start
   plus cold database buffers); not yet investigated.
-- Film search: paid research finds 15 of 19 independent sightings (shown as
-  possible, now saved for free) but confirmed none. The passage rule was
-  fixed on 2026-11-26; whether confirmations follow needs a paid re-check.
+- **Wrong facts on AI-found watches.** The 3,590 watches an AI search added
+  to the catalogue (14% of it) fill most quiz and alternatives places, and
+  56% of the cards that showed them carry a wrong fact both judges name (6
+  of 6 checked on makers' pages were real); cards of database-imported
+  watches: 13%. The free evaluation's "0 hard-rule violations" is measured
+  against stored facts, so it cannot see this. Repair: `docs/OWNER_QUESTIONS.md`
+  #7 (step 1 done).
+- A page whose address merely contains a reference still counts as proof
+  in the live reference check (`inspectSourcePage`); the pilot found invented
+  references whose stored pages are gone. Repair step 2 closes this.
+- Film search confirms strictly: 23 of 352 test requests have a confirmed
+  watch; the rest show only as possible. Paid re-checks wait for the backoff.
 - The database has no backups (zero available, PITR off): Supabase backs up
-  only Pro, Team and Enterprise projects. Owner action before the first
-  paying partner (`docs/OWNER_QUESTIONS.md` #2).
+  only Pro, Team and Enterprise projects. The owner plans Pro for next week
+  (`docs/OWNER_QUESTIONS.md` #2).
 - A local production build (`npm start` with `.env`) writes real analytics
   rows; one test page view from 2026-11-26 (row 692, country empty) is in the
   analytics table.
 
 ## Next step
 
-The fixes from the paid round are in (alternatives, archetype, film passage
-rule, migration 0122). Next, with the owner's OK, a repeat paid round (about
-$4, inside the unused part of the $60) to measure the film confirmations and
-the alternatives on the live path. Meanwhile the owner's
-items in `docs/OWNER_QUESTIONS.md`: the ratings, Supabase Pro for backups,
-provider spending limits.
+Catalogue repair step 2 after the owner's go-ahead (`docs/OWNER_QUESTIONS.md`
+#7): write the pilot's verified corrections with their page and passage,
+take the "reference confirmed" mark off references no page shows, make
+`inspectSourcePage` require the reference in the page's text, then judge the
+same cards again (about $2 of the $60) and run the free evaluation. Then a
+budget for step 3. Meanwhile the owner's items: the one command for the
+read-only evaluation (#6), Supabase Pro next week (#2), Meta's alert (#3),
+the film set review (#4).
 Run `scripts/verify-all.ts --production` before and after every change.

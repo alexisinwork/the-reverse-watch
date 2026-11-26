@@ -1,0 +1,2538 @@
+{
+  "at": "2026-11-26T22:02:08.109Z",
+  "model": "anthropic/claude-opus-5-5",
+  "budgetUsd": 4,
+  "spendUsd": 2.924,
+  "stopReason": null,
+  "watches": 60,
+  "errors": 0,
+  "pages": {
+    "opened": 42,
+    "blocked": 4,
+    "missing": 1,
+    "failed": 0,
+    "none": 13
+  },
+  "referenceShownOnPage": 35,
+  "referenceReportedMissing": 9,
+  "fields": {
+    "model": {
+      "unconfirmed": 32,
+      "confirmed": 25,
+      "corrected": 3
+    },
+    "caseDiameterMm": {
+      "unconfirmed": 32,
+      "corrected": 4,
+      "confirmed": 24
+    },
+    "movement": {
+      "unconfirmed": 29,
+      "confirmed": 28,
+      "corrected": 3
+    },
+    "waterResistanceM": {
+      "unconfirmed": 30,
+      "corrected": 6,
+      "confirmed": 24
+    }
+  },
+  "watchesWithACorrection": 12,
+  "againstTheJudges": {
+    "flaggedByBoth": 19,
+    "flaggedAndCorrectedInANamedFact": 8,
+    "notFlagged": 19,
+    "notFlaggedButCorrected": 0
+  },
+  "results": [
+    {
+      "id": "dd7b3a5d-0f26-4007-b394-42d36e475d06",
+      "brand": "Bvlgari",
+      "model": "Bvlgari Aluminium GMT",
+      "reference": "103554",
+      "sourceKind": "retailer",
+      "cards": [
+        "quiz-01-04"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.bulgari.com/en-al/103554.html",
+      "pageHost": "bulgari.com",
+      "page": "blocked",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "103554",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Bvlgari Aluminium GMT"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "Bulgari's own page for reference 103554 matches all the stored values (40 mm, automatic, 100 m), so this page should replace the Wempe retailer page as the source; its title just says \"Bvlgari Aluminium Watch\", but the description names the model as the Bvlgari Aluminium GMT.",
+      "costUsd": 0.03711
+    },
+    {
+      "id": "e75a2303-2d44-4743-beb5-db7dfe23c14d",
+      "brand": "Baume & Mercier",
+      "model": "Classima 40mm",
+      "reference": "10214",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-02"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.baume-et-mercier.com/en/collections/classima-men/watch-classima-10214.html",
+      "pageHost": "baume-et-mercier.com",
+      "page": "blocked",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "Classima 10214",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Classima 40mm"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 50
+        }
+      },
+      "note": "Baume & Mercier's own page for 10214 (now listed as a discontinued Heritage piece, at a different URL from the stored one) matches all stored values, but it gives water resistance as just '50' with no unit, so reading it as 50 metres is an assumption.",
+      "costUsd": 0.03843
+    },
+    {
+      "id": "055408da-dd13-45b0-807d-c7673d8f9230",
+      "brand": "Alpina",
+      "model": "Alpiner Extreme Automatic Chronograph",
+      "reference": "AL-730NS4AE6B",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-01"
+      ],
+      "judgesFlagged": [
+        "size",
+        "water"
+      ],
+      "pageUrl": "https://us.alpinawatches.com/product/AL-730NS4AE6B.html",
+      "pageHost": "us.alpinawatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "AL-730NS4AE6B",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Alpiner Extreme Automatic Chronograph",
+          "page": "Alpiner Extreme Chronograph Automatic"
+        },
+        "caseDiameterMm": {
+          "status": "corrected",
+          "stored": 42.5,
+          "page": 41,
+          "passage": "Brushed and polished stainless steel 41mm, 3-part case."
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Movement Technology Automatic"
+        },
+        "waterResistanceM": {
+          "status": "corrected",
+          "stored": 200,
+          "page": 100,
+          "passage": "Water Resistance WR100/10Bar/333ft [Swimming, Showering & Snorkeling]"
+        }
+      },
+      "note": "Alpina's page gives a 41 mm case and 100 m water resistance, so the stored values are wrong: 42.5 mm is the page's 'Case Length', not the diameter, and 200 m does not appear on the page; the model name is listed as 'Extreme Chronograph Automatic' and the movement (automatic) matches.",
+      "costUsd": 0.04427
+    },
+    {
+      "id": "639ad178-b686-4630-b8d5-86bf42b8f134",
+      "brand": "Damasko",
+      "model": "DC56",
+      "reference": "DC56",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-05"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.damasko-watches.com/en/DC56/SW10058.21",
+      "pageHost": "damasko-watches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "DC56",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "DC56",
+          "page": "DC56"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 40,
+          "page": 40,
+          "passage": "diameter: 40.00mm, overall height: 13.80mm, lug width: 20.00mm, lug to lug: 48,6mm, weight without strap: 90.00g"
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 100,
+          "page": 100,
+          "passage": "crown screwed into case according to the \"DAMASKO System\" with crown protection waterproof 10bar / 100meters"
+        }
+      },
+      "note": "Damasko's own DC56 page (order number SW10058) confirms the stored 40 mm diameter and 100 m water resistance, but it only names the movement as the Valjoux 7750 TOP without saying it is automatic, so movement is null; the stored URL (SW10058.24) did not come up in search, so this sibling URL for the same model was used.",
+      "costUsd": 0.06064
+    },
+    {
+      "id": "4ae23bab-58ce-4ce9-9549-a4cabefd2f73",
+      "brand": "Bremont",
+      "model": "Airco Mach 1",
+      "reference": "AIRCO-MACH-1-BK",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-03"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.bremont.com/products/airco-mach-1",
+      "pageHost": "bremont.com",
+      "page": "opened",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Airco Mach 1"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "I found no Bremont or retailer page for the stored reference AIRCO-MACH-1-BK, and the stored source URL /products/airco-mach-1-bk did not come up; the black Airco Mach 1 is on Bremont's /products/airco-mach-1 page, which gives no reference, now lists the watch as retired, and confirms the stored 40mm, automatic and 100m values, while authorised retailer Goldsmiths gives its real reference as AIRCO-M1-BK-R-S, so the catalogue reference and source URL should be fixed.",
+      "costUsd": 0.06472
+    },
+    {
+      "id": "95a513f0-ad79-4c9d-bf10-d1984b97303b",
+      "brand": "Eterna",
+      "model": "KonTiki Date",
+      "reference": "1222.41.41.0217",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-06"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "KonTiki Date"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 42
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 200
+        }
+      },
+      "note": "I couldn't find an Eterna or authorised retailer page for reference 1222.41.41.0217: the stored link didn't come up in any search, Eterna's KonTiki pages (eterna.com and shop.eterna.com) don't list this reference, and the only listings I found were on grey-market sites (Chronostore), marketplaces (1stDibs) and databases (WatchBase), which I'm not allowed to use, so none of the stored values (42 mm, automatic, 200 m) could be checked.",
+      "costUsd": 0.05265
+    },
+    {
+      "id": "a2f8458c-efb6-4edc-9d9d-21ab563d4623",
+      "brand": "Laco",
+      "model": "Frankfurt GMT Schwarz",
+      "reference": "862120",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-09"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.laco.de/en/watches/pilot-watches-special-models/frankfurt-43-gmt-schwarz/862120.2",
+      "pageHost": "laco.de",
+      "page": "opened",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "862120.2",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Frankfurt GMT Schwarz"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 43
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "Laco's own page lists the reference as 862120.2 and the model as Frankfurt 43 GMT Schwarz, and it confirms the 43 mm case and automatic movement, but it gives water resistance as 20 ATM (200 m), not the stored 100 m, so that value is wrong (the stored source URL points to the French store's English version of this page).",
+      "costUsd": 0.03599
+    },
+    {
+      "id": "3315dc41-27f0-4a6b-bf07-42fa38e52d6e",
+      "brand": "Hamilton",
+      "model": "Jazzmaster Performer Automatic Chronograph 42",
+      "reference": "H36606130",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-08"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.hamiltonwatch.com/en-int/h36606130-jazzmaster-performer-auto-chrono.html",
+      "pageHost": "hamiltonwatch.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "H36606130",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Jazzmaster Performer Automatic Chronograph 42",
+          "page": "Jazzmaster Performer Auto Chrono"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 42,
+          "page": 42,
+          "passage": "Case size 42mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Movement Automatic"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 100,
+          "page": 100,
+          "passage": "Water Resistance 10 bar (100m)"
+        }
+      },
+      "note": "Hamilton's own international page for H36606130 matches all three stored values (42mm, automatic H-31 movement, 100m), names the model Jazzmaster Performer Auto Chrono rather than the catalogue's Automatic Chronograph 42, and lists it as Past collection.",
+      "costUsd": 0.04009
+    },
+    {
+      "id": "ff0b1773-c85f-4b80-bd87-65390e84d563",
+      "brand": "Longines",
+      "model": "Master Collection 40mm",
+      "reference": "L2.793.4.78.3",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-10"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.longines.com/p/watch-the-longines-master-collection-l2-793-4-78-3",
+      "pageHost": "longines.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "L2.793.4.78.3",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Master Collection 40mm",
+          "page": "The Longines Master Collection"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 40,
+          "page": 40,
+          "passage": "Automatic watch, Ø 40.00 mm, Stainless steel, L2.793.4.78.3"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Date, self-winding mechanical movement beating at 25'200 vibrations per hour, with a power reserve up to 72 hours."
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 30,
+          "page": 30,
+          "passage": "Water-resistant to 3 bar, scratch-resistant sapphire crystal."
+        }
+      },
+      "note": "Longines' own page for L2.793.4.78.3 matches the stored 40 mm and automatic movement; the page gives water resistance as 3 bar, which I converted to 30 m to match the stored value, and the page I checked is the global longines.com one, not the stored en-hk address.",
+      "costUsd": 0.03474
+    },
+    {
+      "id": "86fc4910-dd8a-4c07-a02f-08fa9d538133",
+      "brand": "Frederique Constant",
+      "model": "Classics Moonphase Manufacture",
+      "reference": "FC-335MC4P6",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-01-07"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://ca.frederiqueconstant.com/en/product/FC-335MC4P6.html",
+      "pageHost": "ca.frederiqueconstant.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "FC-335MC4P6",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Classics Moonphase Manufacture",
+          "page": "Classics Heart Beat Moonphase Date"
+        },
+        "caseDiameterMm": {
+          "status": "corrected",
+          "stored": 40.5,
+          "page": 40,
+          "passage": "Case Length 40 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Movement Technology Automatic"
+        },
+        "waterResistanceM": {
+          "status": "corrected",
+          "stored": 50,
+          "page": 60,
+          "passage": "Water Resistance [WR60/6Bar/196ft] Swimming"
+        }
+      },
+      "note": "",
+      "costUsd": 0.06796
+    },
+    {
+      "id": "52bfcb52-deb5-4b48-bd04-a46116f31c9e",
+      "brand": "Omega",
+      "model": "Seamaster Aqua Terra 150M Master Chronometer 38 Stainless Steel / Sedna Gold / Silver / Bracelet",
+      "reference": "220.20.38.20.02.001",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-05-01"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.omegawatches.com/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-38-mm-22020382002001",
+      "pageHost": "omegawatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "220.20.38.20.02.001",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Seamaster Aqua Terra 150M Master Chronometer 38 Stainless Steel / Sedna Gold / Silver / Bracelet",
+          "page": "Seamaster Aqua Terra 150M 38 mm, steel ‑ Sedna™ gold on steel ‑ Sedna™ gold"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 38,
+          "page": 38,
+          "passage": "38 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Self-winding movement with Co-Axial escapement."
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 150,
+          "page": 150,
+          "passage": "15 bar (150 metres / 500 feet)"
+        }
+      },
+      "note": "Omega's own page for 220.20.38.20.02.001 matches all three stored values (38 mm, self-winding calibre 8800, 150 m); it says the watch is no longer available, and the silver dial colour from the catalogue name did not show in the page text I could see, so I didn't check it.",
+      "costUsd": 0.04845
+    },
+    {
+      "id": "d7012465-b498-4b80-95b5-582c123a1345",
+      "brand": "Grand Seiko",
+      "model": "Evolution 9 Manual Winding",
+      "reference": "SLGW003",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-05-02"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.grand-seiko.com/us-en/collections/slgw003g/",
+      "pageHost": "grand-seiko.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "SLGW003",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Evolution 9 Manual Winding",
+          "page": "Evolution 9 Collection Manual-winding Mechanical Hi-Beat 36000 80 Hours"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 38.6,
+          "page": 38.6,
+          "passage": "Case size:|Diameter 38.6mm Lug-to-lug 45.0mm Thickness 9.95mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "manual",
+          "page": "manual",
+          "passage": "Movement Type:|Manual-winding"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "Grand Seiko's own page confirms the 38.6 mm case and manual winding, but it lists water resistance only as 'Water resistance:|Splash Resistant' with no figure in metres, so the stored 100 m is not supported and this field was left null.",
+      "costUsd": 0.04992
+    },
+    {
+      "id": "7df3d6af-4f30-43f1-93f7-89dea633ebcd",
+      "brand": "Habring2",
+      "model": "Chrono-Felix Chronograph",
+      "reference": "Chrono-Felix",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-05-03"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://habring2.com/index.php/en/collection/chrono-felix",
+      "pageHost": "habring2.com",
+      "page": "blocked",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "Chrono-Felix",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Chrono-Felix Chronograph"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 38.5
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "manual"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 50
+        }
+      },
+      "note": "Habring2's own Chrono-Felix page confirms the 38.5 mm case and hand-wound movement, but it gives water resistance as 30 metres, not the stored 50 m, so that catalogue value needs correcting; the page found is at /index.php/en/collection/chrono-felix rather than the stored URL, and 'Chrono-Felix' is a model name rather than a numbered reference.",
+      "costUsd": 0.03541
+    },
+    {
+      "id": "0908cfac-648d-4879-af5c-aa5ee7e3b526",
+      "brand": "Kudoke",
+      "model": "Kudoke 3",
+      "reference": "KUDOKE-3",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-05-04"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.kudoke.eu/en/kudoke-3-2/",
+      "pageHost": "kudoke.eu",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Kudoke 3"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 39,
+          "page": 39,
+          "passage": "stainless steel – sapphire glass on front and caseback – onion crown – case diameter 39 mm – case height 10.3 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "manual",
+          "page": "manual",
+          "passage": "Inhouse Kaliber 1 – handwinding – diameter 30 mm – height 4.3 mm – 18 jewels – power reserve 46 h – 28.800 half oscillations/hour – finished by hand – raised hand-engraved balance cock"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 50
+        }
+      },
+      "note": "Kudoke's product page has moved from the stored URL to /en/kudoke-3-2/ and confirms the 39 mm diameter and hand-wound movement; I found no water resistance on it, although Kudoke's 2023 launch post (https://www.kudoke.eu/en/2023/03/27/kudoke3/) says '5 ATM/50m water resistance', which matches the stored 50 m; Kudoke uses no separate reference number, so 'KUDOKE-3' is just the model name.",
+      "costUsd": 0.05152
+    },
+    {
+      "id": "9aa518b2-6e28-447f-abf3-ce74a1a87da8",
+      "brand": "Longines",
+      "model": "Conquest 41 Quartz",
+      "reference": "L3.759.4.58.6",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-09-01"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.longines.com/p/watch-conquest-l3-759-4-58-6",
+      "pageHost": "longines.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "L3.759.4.58.6",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Conquest 41 Quartz",
+          "page": "Conquest"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 41,
+          "page": 41,
+          "passage": "Quartz watch, Ø 41.00 mm, Stainless steel, L3.759.4.58.6"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "quartz",
+          "page": "quartz",
+          "passage": "Quartz watch, Ø 41.00 mm, Stainless steel, L3.759.4.58.6"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 300,
+          "page": 300,
+          "passage": "Screw-in crown, water-resistant to 30 bar, scratch-resistant sapphire crystal with anti-reflective coating on the underside."
+        }
+      },
+      "note": "Longines' own page matches the stored diameter, movement and water resistance, but it states water resistance as 30 bar (converted here to 300 m), it names the model just 'Conquest' rather than 'Conquest 41 Quartz', and its address (/p/watch-conquest-l3-759-4-58-6) differs from the stored source URL.",
+      "costUsd": 0.02895
+    },
+    {
+      "id": "855c943b-8922-4e44-8d4d-225c862021e7",
+      "brand": "Omega",
+      "model": "Seamaster Aqua Terra 150M Master Chronometer Small Seconds 38 Stainless Steel / Sedna Gold / Sand - Diamond / Alligator",
+      "reference": "220.23.38.20.59.001",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-05-09"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.omegawatches.com/en-us/watch-omega-seamaster-aqua-terra-150m-co-axial-master-chronometer-small-seconds-38-mm-22023382059001",
+      "pageHost": "omegawatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "220.23.38.20.59.001",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Seamaster Aqua Terra 150M Master Chronometer Small Seconds 38 Stainless Steel / Sedna Gold / Sand - Diamond / Alligator"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 38,
+          "page": 38,
+          "passage": "Case diameter Open Case Measurement Modal 38 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Free sprung-balance with silicon balance spring, automatic winding in both directions."
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 150,
+          "page": 150,
+          "passage": "15 bar (150 metres / 500 feet)"
+        }
+      },
+      "note": "Omega's page confirms the stored 38 mm, automatic (calibre 8802) and 150 m specs, but it lists the watch as no longer available, shows a burgundy leather strap and a linen dial with a diamond-set small seconds ring, and doesn't say 'Sand' or 'Alligator' as the catalogue name does; the movement passage was seen on Omega's global page for the same reference rather than in the US page's search excerpt.",
+      "costUsd": 0.05635
+    },
+    {
+      "id": "a4f513a4-07fe-4ad3-8292-e8f722a9f294",
+      "brand": "Certina",
+      "model": "DS Podium Quartz 41.5mm",
+      "reference": "C001.410.16.037.00",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-09-06"
+      ],
+      "judgesFlagged": [
+        "price",
+        "size"
+      ],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "DS Podium Quartz 41.5mm"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 41.5
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "I couldn't find a Certina or authorised-retailer page for C001.410.16.037.00: the stored certina.com URL didn't appear in searches, Certina's DS Podium collection page shows '0 watches found', and the closest match is Watchia's page for the different reference C001.410.16.037.01, which gives 'Diameter|38 mm' rather than the stored 41.5 mm, so the stored facts can't be checked and the 41.5 mm figure looks doubtful.",
+      "costUsd": 0.05099
+    },
+    {
+      "id": "0ca2d83e-4aa5-447a-9e04-420ae11fa517",
+      "brand": "Frederique Constant",
+      "model": "Classics Index Quartz",
+      "reference": "FC-245NS5B6",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-09-07"
+      ],
+      "judgesFlagged": [
+        "reference",
+        "water"
+      ],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": null,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Classics Index Quartz"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 60
+        }
+      },
+      "note": "Three searches found no Frederique Constant page or authorised retailer page for FC-245NS5B6, so none of the stored values (40 mm, quartz, 60 m) could be checked; the stored source URL never showed up in results and the reference may not exist, because Frederique Constant's own pages use the FC-245 calibre in the 39 mm, 30 m Slimline (e.g. FC-245M5S6), while the similar Index references found are FC-303NS5B6 (automatic) and FC-220NS5B6B (quartz).",
+      "costUsd": 0.05704
+    },
+    {
+      "id": "8038065a-448f-4c54-95d7-2f5b6329ae3a",
+      "brand": "Davosa",
+      "model": "Ternos Quartz",
+      "reference": "163.302.10",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-09-08"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": null,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Ternos Quartz"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 200
+        }
+      },
+      "note": "I couldn't find a Davosa product page for Ternos Quartz 163.302.10, or one from its official US distributor: the stored davosa-usa.com URL never came up in the searches, and davosa.com calls the Ternos a family of mechanical dive watches with Swiss automatic movements and lists no quartz Ternos, so the stored 40 mm, quartz and 200 m are unconfirmed and this reference may not exist.",
+      "costUsd": 0.05711
+    },
+    {
+      "id": "79fb5ac0-d66e-4b6b-b987-7ef627119e2f",
+      "brand": "Victorinox",
+      "model": "I.N.O.X. Chronograph",
+      "reference": "241987",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-09-10"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "I.N.O.X. Chronograph"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 43
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 200
+        }
+      },
+      "note": "Three searches turned up no Victorinox or authorised-retailer page for reference 241987, and the stored page (victorinox.com/.../p/241987/) never appeared; the official site lists other I.N.O.X. Chrono references (241983, 241986, 241988.1, 241989.1, 242083.1) that show 43 mm, quartz and 200 M, but none of them can confirm the facts for 241987.",
+      "costUsd": 0.0443
+    },
+    {
+      "id": "ec8e5468-5088-42b2-bf03-b8cb7bcc728b",
+      "brand": "Invicta",
+      "model": "Pro Diver GMT",
+      "reference": "9404",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-13-01"
+      ],
+      "judgesFlagged": [
+        "model"
+      ],
+      "pageUrl": "https://www.invictawatch.com/watches/detail/9404-pro-diver-men",
+      "pageHost": "invictawatch.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "9404",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Pro Diver GMT"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 40,
+          "page": 40,
+          "passage": "Case Size: 40mm"
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 200,
+          "page": 200,
+          "passage": "Water Resistance: 200m"
+        }
+      },
+      "note": "Invicta's own page for 9404 confirms the stored 40mm, automatic and 200m, but it calls the watch Pro Diver Men, lists caliber IM-A-005 and never mentions a GMT, so the catalogue's model name 'Pro Diver GMT' looks wrong.",
+      "costUsd": 0.03338
+    },
+    {
+      "id": "7959cc7c-2aac-4776-b8e7-323e89c2b30a",
+      "brand": "Laco",
+      "model": "Ulm GMT",
+      "reference": "862139",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-13-02"
+      ],
+      "judgesFlagged": [
+        "model",
+        "water"
+      ],
+      "pageUrl": "https://www.laco.de/en/watches/pilot-watches-basic/aachen-39-mb/862139",
+      "pageHost": "laco.de",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "862139",
+      "fields": {
+        "model": {
+          "status": "corrected",
+          "stored": "Ulm GMT",
+          "page": "Aachen 39 MB",
+          "passage": "Pilot Watches BASIC Aachen 39 MB"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 39,
+          "page": 39,
+          "passage": "39 mm Automatic"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Automatic movement Laco 2S Basic movement Miyota 82S0 Hacking second"
+        },
+        "waterResistanceM": {
+          "status": "corrected",
+          "stored": 100,
+          "page": 50,
+          "passage": "up to 5 ATM"
+        }
+      },
+      "note": "Laco's own page for reference 862139 is for a different watch, the Aachen 39 MB pilot watch, not the Ulm GMT, and it gives 5 ATM (50 m) of water resistance rather than the stored 100 m.",
+      "costUsd": 0.04538
+    },
+    {
+      "id": "4f67b290-2cf0-458a-93c9-210311e9115f",
+      "brand": "Michel Herbelin",
+      "model": "Cap Camarat Diver Quartz",
+      "reference": "1645/N14",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-09-09"
+      ],
+      "judgesFlagged": [
+        "movement",
+        "reference"
+      ],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Cap Camarat Diver Quartz"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40.5
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 200
+        }
+      },
+      "note": "",
+      "costUsd": 0.14789
+    },
+    {
+      "id": "121703f8-7f75-4b76-b1d9-51a9bf399f87",
+      "brand": "Glycine",
+      "model": "Combat Classic 40 Automatic",
+      "reference": "GL1012",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-13-07"
+      ],
+      "judgesFlagged": [
+        "model",
+        "movement",
+        "reference",
+        "size",
+        "water"
+      ],
+      "pageUrl": "https://www.glycinewatches.com/watches/gl1012-combat-sub-sport-men",
+      "pageHost": "glycinewatches.com",
+      "page": "missing",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "GL1012",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Combat Classic 40 Automatic"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "Glycine's own page lists GL1012 as a 42 mm quartz Combat Sub Sport Men with 200 m water resistance, not the 40 mm automatic Combat Classic in the catalogue, so the catalogue's model, size, movement and water resistance are all wrong for this reference, and the stored source URL is not the domain search returned.",
+      "costUsd": 0.03098
+    },
+    {
+      "id": "33ce0991-52f6-4ce6-a73d-33180e8d6540",
+      "brand": "Seiko",
+      "model": "5 Sports Field GMT",
+      "reference": "SSK023",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-13-03"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.seikowatches.com/us-en/products/5sports/ssk023",
+      "pageHost": "seikowatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "SSK023",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "5 Sports Field GMT",
+          "page": "5 Sports Field series GMT"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 39.4,
+          "page": 39.4,
+          "passage": "Thickness : 13.6 mm Diameter : 39.4 mm Lug-to-lug : 47.9 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Automatic with manual winding"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 100,
+          "page": 100,
+          "passage": "10 bar"
+        }
+      },
+      "note": "Seiko's own SSK023 page matches all three stored facts (39.4 mm, automatic, 100 m), but it gives water resistance only as 10 bar, which I converted to 100 m, and the passages come from search excerpts of the page, not the page opened directly.",
+      "costUsd": 0.04799
+    },
+    {
+      "id": "c5004462-863c-4ffd-90d0-de24d97774bb",
+      "brand": "Tissot",
+      "model": "Seastar 1000 GMT",
+      "reference": "T120.852.11.051.00",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-13-04",
+        "quiz-17-10"
+      ],
+      "judgesFlagged": [
+        "movement"
+      ],
+      "pageUrl": "https://www.tissotwatches.com/en-us/T1208521105100.html",
+      "pageHost": "tissotwatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "T120.852.11.051.00",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Seastar 1000 GMT",
+          "page": "Tissot Seastar 1000 GMT 40mm"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "corrected",
+          "stored": "automatic",
+          "page": "quartz",
+          "passage": "Impressive water-resistance up to a pressure of 30 bar (300m/1000 ft) is combined with the energy of a Swiss Made quartz movement."
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 300,
+          "page": 300,
+          "passage": "Water-resistant up to a pressure of 30 bar (300 m / 1000 ft) with screw-down crown"
+        }
+      },
+      "note": "Tissot's own page lists this watch with a quartz movement, so the catalogue's 'automatic' is wrong and should change to quartz; the 40 mm case and 300 m water resistance are correct.",
+      "costUsd": 0.04939
+    },
+    {
+      "id": "5f10178d-3fe8-4323-b646-74139b7a3d22",
+      "brand": "Spinnaker",
+      "model": "Bradner GMT Automatic",
+      "reference": "SP-5121-11",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-13-09"
+      ],
+      "judgesFlagged": [
+        "size"
+      ],
+      "pageUrl": "https://spinnaker-watches.com/products/bradner-gmt-automatic-sombre-red-sp-5121-11",
+      "pageHost": "spinnaker-watches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "SP-5121-11",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Bradner GMT Automatic",
+          "page": "Bradner GMT Automatic"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Movement: Japanese Automatic Gmt"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 180,
+          "page": 180,
+          "passage": "Water Resistance: 18 ATM"
+        }
+      },
+      "note": "Spinnaker's own page for SP-5121-11 (Sombre Red) gives a 42 mm case, not the 40 mm in the catalogue, while the movement and water resistance match (the page's 18 ATM converts to 180 m), and the stored source URL differs from the page's actual URL.",
+      "costUsd": 0.0326
+    },
+    {
+      "id": "ea1732b8-1261-494f-b2e6-108036ac9d48",
+      "brand": "Baltic",
+      "model": "HMS 002 Silver",
+      "reference": "HMS002",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-01"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://baltic-watches.com/en/products/hms-002-silver",
+      "pageHost": "baltic-watches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "HMS 002",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "HMS 002 Silver",
+          "page": "HMS 002 Silver"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 38,
+          "page": 38,
+          "passage": "Case diameter: 38mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Movement: Automatic Miyota 8315"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 50,
+          "page": 50,
+          "passage": "Water resistance: 50m (5ATM)"
+        }
+      },
+      "note": "Baltic's own page agrees with all the stored values (38mm, automatic Miyota 8315, 50m), but it gives no separate reference code, so HMS002 is matched only to the model name 'HMS 002' it shows.",
+      "costUsd": 0.02913
+    },
+    {
+      "id": "543ed578-5d88-4474-a2fe-64421e7e258e",
+      "brand": "Orient Star",
+      "model": "Classic",
+      "reference": "RE-AU0002S",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-03"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://orient-watch.com/en/orientstar/collection/classic/elegant-classic/RE-AU0002S/",
+      "pageHost": "orient-watch.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "RE-AU0002S",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Classic",
+          "page": "Elegant Classic"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 38.5,
+          "page": 38.7,
+          "passage": "|Case Size (Width)|38.7 mm|"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "|Automatic|Yes|"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 50,
+          "page": 50,
+          "passage": "|Water Resistance|5 bar (50 m)|"
+        }
+      },
+      "note": "Orient's own page for RE-AU0002S calls the model Elegant Classic, not just Classic, and gives a case width of 38.7 mm, not the stored 38.5 mm; the automatic movement (calibre F6N43) and 50 m water resistance match the catalogue, and this page was used instead of the stored orientwatchusa.com link, which the search did not return.",
+      "costUsd": 0.02967
+    },
+    {
+      "id": "6121844f-e85e-4b53-aa6f-95c6266dd652",
+      "brand": "Junkers",
+      "model": "Eisvogel F13",
+      "reference": "6050-5",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-13-08"
+      ],
+      "judgesFlagged": [
+        "model",
+        "water"
+      ],
+      "pageUrl": "https://longislandwatch.com/products/junkers-6050-5-watch-6050-5",
+      "pageHost": "longislandwatch.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "6050-5",
+      "fields": {
+        "model": {
+          "status": "corrected",
+          "stored": "Eisvogel F13",
+          "page": "Junkers Bauhaus Swiss Automatic Watch with Domed Hesalite Crystal",
+          "passage": "Junkers Bauhaus Swiss Automatic Watch with Domed Hesalite Crystal #6050-5"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Movement: Swiss Automatic (self-winding)"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "",
+      "costUsd": 0.08059
+    },
+    {
+      "id": "3b46cb4a-7d19-42aa-bd76-21a5ede49dee",
+      "brand": "Seiko",
+      "model": "5 Sports",
+      "reference": "null",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-04"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": null,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "5 Sports"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "I didn't check this entry against any page because it has no reference number, and Seiko 5 Sports is a whole range of watches whose sizes and specs differ, so picking one product page would be a guess; the stored values (40 mm, automatic, 100 m) and the generic source page https://www.seiko.in/ stay unverified until an exact reference is added.",
+      "costUsd": 0.009
+    },
+    {
+      "id": "e1185ff5-c4ad-46b8-a151-424c4359a96e",
+      "brand": "Yema",
+      "model": "Flygraf Pilot M1 GMT Black",
+      "reference": "YFLY22-GMT-BMS",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-13-10"
+      ],
+      "judgesFlagged": [
+        "model",
+        "reference"
+      ],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Flygraf Pilot M1 GMT Black"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 100
+        }
+      },
+      "note": "",
+      "costUsd": 0.07317
+    },
+    {
+      "id": "73b5e564-aad1-4a4e-8397-9e8fafe77261",
+      "brand": "Laco",
+      "model": "Classic Halle 38",
+      "reference": "862100",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-02"
+      ],
+      "judgesFlagged": [
+        "reference"
+      ],
+      "pageUrl": "https://www.laco.de/en/watches/pilot-watches-basic/augsburg-blaue-stunde-42/862100",
+      "pageHost": "laco.de",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "862100",
+      "fields": {
+        "model": {
+          "status": "corrected",
+          "stored": "Classic Halle 38",
+          "page": "Pilot Watches BASIC Augsburg Blaue Stunde 42",
+          "passage": "Product information Pilot Watches BASIC Augsburg Blaue Stunde 42"
+        },
+        "caseDiameterMm": {
+          "status": "corrected",
+          "stored": 38,
+          "page": 42,
+          "passage": "diameter: 42,0 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Automatic movement Laco 2S Basic movement Miyota 82S0 Hacking second"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 50,
+          "page": 50,
+          "passage": "waterproof: up to 5ATM"
+        }
+      },
+      "note": "Laco's page for reference 862100 shows a different watch, the Augsburg Blaue Stunde 42 pilot watch with a 42 mm case, so the catalogue entry's model and its stored 38 mm diameter are wrong for this reference; the Halle 38 is Laco reference 862071 (discontinued), the page states the water resistance as 5 ATM (taken as 50 m), and the stored source page is also for the Augsburg Blaue Stunde 42.",
+      "costUsd": 0.06094
+    },
+    {
+      "id": "2e26e3bd-c12a-4efb-a38f-ac8c14c75031",
+      "brand": "Venezianico",
+      "model": "Redentore 40",
+      "reference": "1221505C",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-05"
+      ],
+      "judgesFlagged": [
+        "water"
+      ],
+      "pageUrl": "https://www.venezianico.com/products/redentore-40-1221505c",
+      "pageHost": "venezianico.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "1221505C",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Redentore 40",
+          "page": "Redentore 40"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 40,
+          "page": 40,
+          "passage": "DIMENSIONS: Ø40 mm, lug to lug 48.00 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "MOVEMENT: Automatic Cal."
+        },
+        "waterResistanceM": {
+          "status": "corrected",
+          "stored": 50,
+          "page": 100,
+          "passage": "WR: 10ATM = 100mt"
+        }
+      },
+      "note": "Venezianico's own page for 1221505C matches the stored 40 mm size and automatic (Seiko NH35A) movement, but it gives 100 m of water resistance (10ATM), not the stored 50 m.",
+      "costUsd": 0.02446
+    },
+    {
+      "id": "707214e6-371f-4b85-9d33-11087c1dc1b8",
+      "brand": "Citizen",
+      "model": "Tsuyosa Automatic",
+      "reference": "NJ0150-81E",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-06"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.citizenwatches.com.au/products/nj0150-81e",
+      "pageHost": "citizenwatches.com.au",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "NJ0150-81E",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Tsuyosa Automatic",
+          "page": "Tsuyosa Automatic"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 50
+        }
+      },
+      "note": "I checked Citizen's own Australian product page for NJ0150-81E instead of the stored Italian page, and it confirms the stored 40 mm case, automatic movement and 50 m water resistance.",
+      "costUsd": 0.03091
+    },
+    {
+      "id": "177081b8-8400-4a96-93e2-3173aed9672b",
+      "brand": "Lip",
+      "model": "Himalaya 40mm Silver",
+      "reference": "671541",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-07"
+      ],
+      "judgesFlagged": [
+        "movement"
+      ],
+      "pageUrl": "https://lip.fr/en/himalaya/121-lip-himalaya-40-671541",
+      "pageHost": "lip.fr",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "671541",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Himalaya 40mm Silver",
+          "page": "Himalaya Classique 40 mm"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 40,
+          "page": 40,
+          "passage": "This classically elegant Lip Himalaya watch has a 40 mm case in polished and brushed 316L stainless steel"
+        },
+        "movement": {
+          "status": "corrected",
+          "stored": "automatic",
+          "page": "quartz",
+          "passage": "Movement : quartz + battery"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 50,
+          "page": 50,
+          "passage": "This model with its screw-down caseback is water-resistant to 50 m."
+        }
+      },
+      "note": "LIP's own page for 671541 confirms the 40 mm case and 50 m water resistance, but it lists a quartz movement, not automatic, and describes a grey dial, so the catalogue's 'Silver' name doesn't match the page.",
+      "costUsd": 0.02734
+    },
+    {
+      "id": "814b7690-34bf-4ff9-9dd3-c894a75d5173",
+      "brand": "Timex",
+      "model": "M79 Automatic",
+      "reference": "TW2U29500",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-09"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://shop.timexindia.com/products/timex-m79-automatic-black-dial-men-watch-tw2u29500-tw2u29500",
+      "pageHost": "shop.timexindia.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "TW2U29500",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "M79 Automatic",
+          "page": "M79 Automatic"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 40,
+          "page": 40,
+          "passage": "|Case diameter|:|40 MM|"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "|Watch movement|:|Mechanical Automatic|"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 50,
+          "page": 50,
+          "passage": "|Water resistance|:|50m|"
+        }
+      },
+      "note": "All three stored values (40 mm, automatic, 50 m) match Timex India's own product page for TW2U29500, which I used because I couldn't check the stored timexwatch.jp page or a timex.com page in the search results.",
+      "costUsd": 0.03266
+    },
+    {
+      "id": "f4560ef2-f792-4a16-9f71-3d77394f6c7b",
+      "brand": "Bulova",
+      "model": "Oceanographer Devil Diver",
+      "reference": "96B322",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-01"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://au.bulova.com/products/96b322",
+      "pageHost": "au.bulova.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "96B322",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Oceanographer Devil Diver",
+          "page": "Automatic Oceanographer Devil Diver"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 44,
+          "page": 44,
+          "passage": "Case Diameter: 44 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Movement: Automatic"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 200,
+          "page": 200,
+          "passage": "water resistance to 200 meters/666 feet."
+        }
+      },
+      "note": "Bulova's Australian page for 96B322 confirms all three stored facts (44 mm, automatic, 200 m), but the stored German source page did not appear in search, so I checked against this Bulova page instead, and Bulova's Canadian page marks the model as discontinued.",
+      "costUsd": 0.03225
+    },
+    {
+      "id": "4667b5de-0d60-4645-9378-6f9631044455",
+      "brand": "Nodus",
+      "model": "Sector Deep Black",
+      "reference": "Sector-Deep-Black",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-17-08",
+        "alternatives-01-2-09"
+      ],
+      "judgesFlagged": [
+        "price",
+        "size"
+      ],
+      "pageUrl": "https://www.noduswatches.com/deep/p/deep-black-destro",
+      "pageHost": "noduswatches.com",
+      "page": "opened",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "Deep - Black Destro",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Sector Deep Black"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 40
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 500
+        }
+      },
+      "note": "Nodus now sells this watch as the 'Deep - Black Destro' on a new page instead of the stored URL, and that page gives the case as 38mm wide with a 42mm bezel, not the stored 40mm; it is a limited run of 300 with a Miyota 8315 movement instead of the earlier NH35, so it is probably a later version of the same watch.",
+      "costUsd": 0.06619
+    },
+    {
+      "id": "8385028f-aa96-4f16-9f76-5b9f3f296313",
+      "brand": "Certina",
+      "model": "DS Action Diver Powermatic 80",
+      "reference": "C032.407.11.041.00",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-02"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "DS Action Diver Powermatic 80"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 43
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 300
+        }
+      },
+      "note": "I couldn't find a Certina product page or authorised retailer page for C032.407.11.041.00, and the stored certina.com URL didn't come up in any search; Certina's current 43mm DS Action Diver Powermatic 80 page (https://www.certina.com/en/watch/ds-action-diver-43mm-powermatic-80/c0326071104100) shows a different reference, C032.607.11.041.00, with the Powermatic 80.611 movement, so I recorded no values and couldn't check the stored 43 mm, automatic and 300 m against a usable source.",
+      "costUsd": 0.05458
+    },
+    {
+      "id": "5c75016f-b9e9-44fe-8442-962fb18b4ac4",
+      "brand": "Glycine",
+      "model": "Combat Sub 42",
+      "reference": "GL0088",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-03"
+      ],
+      "judgesFlagged": [
+        "water"
+      ],
+      "pageUrl": "https://watchard.com/glycine-combat-sub-42-automatic-gl0088-men-s-watch",
+      "pageHost": "watchard.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "GL0088",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Combat Sub 42",
+          "page": "Combat Sub 42 Automatic"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 42,
+          "page": 42,
+          "passage": "|Case Width|42.00 mm|"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "|Movement|Automatic, Swiss Made, cal. No GL 224|"
+        },
+        "waterResistanceM": {
+          "status": "corrected",
+          "stored": 300,
+          "page": 200,
+          "passage": "|Water Resistancy|200 metres|"
+        }
+      },
+      "note": "Glycine's own site (glycinewatches.com) has no GL0088 page that I could find, so I used Watchard, which says it is an authorised Glycine dealer; it lists 200 m water resistance, not the catalogue's 300 m, while the case size (42 mm) and automatic movement match.",
+      "costUsd": 0.0969
+    },
+    {
+      "id": "3e9185fd-8a84-4495-82ab-b7f84f97f17c",
+      "brand": "Seiko",
+      "model": "Prospex King Turtle",
+      "reference": "SRPL53",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-05",
+        "alternatives-08-3-07"
+      ],
+      "judgesFlagged": [
+        "model",
+        "size"
+      ],
+      "pageUrl": "https://www.seikowatches.com/us-en/products/prospex/srpl53",
+      "pageHost": "seikowatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "SRPL53",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Prospex King Turtle"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 42.7
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Automatic with manual winding"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 200,
+          "page": 200,
+          "passage": "200m / 660ft diver's"
+        }
+      },
+      "note": "Seiko's page for SRPL53 is at a different address than the stored one (no '/sea/' in the path), never uses the name 'King Turtle' (it calls the watch a Prospex Sea PADI Special Edition), and gives a 41.7 mm diameter rather than the stored 42.7 mm, while the automatic movement and 200 m water resistance match.",
+      "costUsd": 0.03449
+    },
+    {
+      "id": "3943757b-c29f-40fd-99c8-26e358560a85",
+      "brand": "Timex",
+      "model": "Deepwater Meridian 200 HEV Automatic",
+      "reference": "null",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-07"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://timex.com/products/deepwater-meridian-200-hev-automatic-44mm-stainless-steel-bracelet-watch-tw3a01600",
+      "pageHost": "timex.com",
+      "page": "opened",
+      "referenceOnPage": false,
+      "referenceExists": null,
+      "pageReference": "TW3A01600",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Deepwater Meridian 200 HEV Automatic"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 44
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 200
+        }
+      },
+      "note": "The catalogue entry gives no reference and Timex sells this model under two references, the bracelet TW3A01600 (checked here) and the rubber-strap TW3A01700, which list the same 44 mm, automatic Miyota 8215 and 200 m specs, so all stored values match but you should add the right reference to the entry.",
+      "costUsd": 0.04228
+    },
+    {
+      "id": "c594e33c-ddee-4bb9-ab62-40f80b36b75f",
+      "brand": "Orient",
+      "model": "Kamasu Automatic RA-AA0006L19B",
+      "reference": "RA-AA0006L19B",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-04",
+        "alternatives-01-1-03",
+        "alternatives-01-2-10"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.orientwatchusa.com/products/ra-aa0006l39b",
+      "pageHost": "orientwatchusa.com",
+      "page": "blocked",
+      "referenceOnPage": false,
+      "referenceExists": null,
+      "pageReference": "RA-AA0006L39B",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Kamasu Automatic RA-AA0006L19B"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 41.8
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 200
+        }
+      },
+      "note": "",
+      "costUsd": 0.07885
+    },
+    {
+      "id": "9f5fed94-d7e5-42f2-bf10-bee128090b61",
+      "brand": "Steinhart",
+      "model": "Ocean 44 Automatic Black",
+      "reference": "103-1214",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-06"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": null,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Ocean 44 Automatic Black"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 44
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "automatic"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 300
+        }
+      },
+      "note": "",
+      "costUsd": 0.05481
+    },
+    {
+      "id": "133cd418-34fa-495a-b435-e99d814e53c0",
+      "brand": "Seiko",
+      "model": "Prospex Samurai Save the Ocean Manta Ray",
+      "reference": "SRPE33",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-10"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.seikowatches.com/us-en/products/prospex/srpe33",
+      "pageHost": "seikowatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "SRPE33",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Prospex Samurai Save the Ocean Manta Ray"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 43.8,
+          "page": 43.8,
+          "passage": "Thickness : 12.8 mm Diameter : 43.8 mm Lug-to-lug : 48.7 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Automatic with manual winding"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 200,
+          "page": 200,
+          "passage": "200m / 660ft diver's"
+        }
+      },
+      "note": "Seiko's own SRPE33 page matches the stored 43.8 mm diameter, automatic movement and 200 m water resistance, but the page calls the watch the Prospex Save the Ocean Special Edition and never uses the words 'Samurai' or 'Manta Ray', so those parts of the catalogue model name aren't backed by the source.",
+      "costUsd": 0.0363
+    },
+    {
+      "id": "90add51a-0dd3-483a-ab84-76e5af3db3ff",
+      "brand": "Phoibos",
+      "model": "Wave Master 200M Automatic",
+      "reference": "PY010C",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-21-08",
+        "alternatives-01-1-08",
+        "alternatives-01-2-02"
+      ],
+      "judgesFlagged": [
+        "model",
+        "water"
+      ],
+      "pageUrl": "https://longislandwatch.com/products/phoibos-py010c-watch-py010c",
+      "pageHost": "longislandwatch.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Wave Master 200M Automatic",
+          "page": "PHOIBOS Wave Master 300-Meter Automatic Dive Watch with AR Sapphire Crystal"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 42,
+          "page": 42,
+          "passage": "This Phoibos Wave Master dive watch features a 42mm diameter 316L grade stainless steel case"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "automatic",
+          "page": "automatic",
+          "passage": "Movement: SII NH35A automatic (self-winding)"
+        },
+        "waterResistanceM": {
+          "status": "corrected",
+          "stored": 200,
+          "page": 300,
+          "passage": "Water Resistance: 300 meters"
+        }
+      },
+      "note": "Phoibos's own site (phoiboswatch.com) has no page for PY010C, only for the different reference PY010CR, so this uses the PY010C page of Long Island Watch, which calls itself an authorised dealer; it shows 300 m water resistance and a 300-Meter model name, not the stored 200 m / 200M.",
+      "costUsd": 0.0608
+    },
+    {
+      "id": "47396b02-ec73-48c3-9b75-51065422a4b4",
+      "brand": "Longines",
+      "model": "La Grande Classique Presence 36mm",
+      "reference": "L4.755.4.11.6",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-25-02"
+      ],
+      "judgesFlagged": [],
+      "pageUrl": "https://www.longines.com/p/watch-la-grande-classique-de-longines-l4-755-4-11-6",
+      "pageHost": "longines.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "L4.755.4.11.6",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "La Grande Classique Presence 36mm"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 36,
+          "page": 36,
+          "passage": "Quartz watch, Ø 36.00 mm, Stainless steel, L4.755.4.11.6"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "quartz",
+          "page": "quartz",
+          "passage": "Quartz watch, Ø 36.00 mm, Stainless steel, L4.755.4.11.6"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 30,
+          "page": 30,
+          "passage": "Water-resistant to 3 bar, scratch-resistant sapphire crystal."
+        }
+      },
+      "note": "Longines' own page confirms the stored 36 mm and quartz, and its 3 bar rating equals the stored 30 m, but it names the model 'La Grande Classique de Longines' rather than 'La Grande Classique Presence 36mm'.",
+      "costUsd": 0.03018
+    },
+    {
+      "id": "fec1adf1-8158-4636-a0c2-2492b5c4c8ba",
+      "brand": "Omega",
+      "model": "Constellation",
+      "reference": "1552.30.00",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-25-03"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.omegawatches.com/watch-omega-constellation-perpetual-calendar-15523000",
+      "pageHost": "omegawatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "1552.30.00",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Constellation",
+          "page": "Constellation 35.5 mm, steel on steel"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 35.5,
+          "page": 35.5,
+          "passage": "35.5 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "quartz",
+          "page": "quartz",
+          "passage": "Quartz"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 50,
+          "page": 50,
+          "passage": "5 bar (50 metres / 165 feet)"
+        }
+      },
+      "note": "Omega's own page for reference 1552.30.00 matches all three stored values (35.5 mm, quartz Omega 1680 perpetual calendar, 50 m), but it also says 'Sorry, but this watch is no longer available'; the diameter passage is the value cell under the row labelled 'Case diameter', the movement passage is the value cell under 'Movement type', and the water resistance passage is the value under 'Water resistance'.",
+      "costUsd": 0.03929
+    },
+    {
+      "id": "7cf78cac-2678-41d2-ba4e-335b49f7f1f1",
+      "brand": "Omega",
+      "model": "Seamaster",
+      "reference": "2262.50",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-25-05"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.omegawatches.com/en-us/watch-omega-seamaster-300-m-quartz-22625000",
+      "pageHost": "omegawatches.com",
+      "page": "opened",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "2262.50.00",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Seamaster"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 36
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": null
+        }
+      },
+      "note": "Omega's own page for this discontinued reference (written there as 2262.50.00) gives the case as 36.25 mm, not the stored 36 mm, confirms the quartz movement (calibre 1538), and fills the missing water resistance with 300 m; the stored source was a forum thread, which is not an allowed source.",
+      "costUsd": 0.036
+    },
+    {
+      "id": "0f72c721-c873-41aa-b15b-d96f54193931",
+      "brand": "Grand Seiko",
+      "model": "Heritage Quartz 37mm Black",
+      "reference": "SBGX295",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-25-01"
+      ],
+      "judgesFlagged": [
+        "model",
+        "water"
+      ],
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": null,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Heritage Quartz 37mm Black"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 37
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 30
+        }
+      },
+      "note": "",
+      "costUsd": 0.06103
+    },
+    {
+      "id": "ae4f5374-9510-4cda-b756-84ad9a033582",
+      "brand": "Omega",
+      "model": "Seamaster Diver 300 M",
+      "reference": "2562.80",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-25-07"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.omegawatches.com/en-us/watch-omega-seamaster-300-m-mid-size-quartz-25628000",
+      "pageHost": "omegawatches.com",
+      "page": "opened",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "2562.80.00",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Seamaster Diver 300 M"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 36
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": null
+        }
+      },
+      "note": "Omega's own page for 2562.80.00 (the full form of 2562.80, marked 'no longer available') confirms quartz but gives the diameter as 38 mm, not the stored 36 mm, and Omega's Hong Kong product sheet and another version of the page title say 34.8 mm, so the size needs a human check; the page gives no water-resistance figure, and the stored source was a forum, which isn't allowed.",
+      "costUsd": 0.05998
+    },
+    {
+      "id": "eb3652e8-8966-4b47-af36-11d2c7f9510c",
+      "brand": "Grand Seiko",
+      "model": "Heritage Quartz 37mm",
+      "reference": "SBGX261",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-29-01"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.grand-seiko.com/us-en/collections/sbgx261g",
+      "pageHost": "grand-seiko.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "SBGX261",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Heritage Quartz 37mm",
+          "page": "Heritage Collection"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 37,
+          "page": 37,
+          "passage": "|Case size:|Diameter 37.0mm Lug-to-lug 44.6mm Thickness 10.0mm|"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "quartz",
+          "page": "quartz",
+          "passage": "|Movement Type:|Quartz|"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 100,
+          "page": 100,
+          "passage": "|Water resistance:|10 bar|"
+        }
+      },
+      "note": "Grand Seiko's official US page for SBGX261 (found at /collections/sbgx261g, not the stored /sbgx261 address) matches the stored 37mm size and quartz movement; it gives water resistance as 10 bar, which I converted to 100m, and it calls the watch 'Heritage Collection' rather than 'Heritage Quartz 37mm'.",
+      "costUsd": 0.03127
+    },
+    {
+      "id": "9eeaa600-bd1b-482e-bd2b-debea45a002e",
+      "brand": "Epos",
+      "model": "Originale 3408 Quartz 39mm",
+      "reference": "3408.208.20.18.15",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-25-09"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Originale 3408 Quartz 39mm"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 39
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 50
+        }
+      },
+      "note": "I couldn't find an Epos page or an authorised retailer's page for reference 3408.208.20.18.15, and the stored source URL didn't come up in any search, so no facts could be checked; Epos's own pages for the other 3408 variants (e.g. 3408-208-20-14-15, -16-15, -30-15, -34-15) describe a hand-wound Peseux 7001 watch with 39 mm diameter and 3 ATM water resistance, which suggests the stored 'quartz' and '50 m' values are wrong.",
+      "costUsd": 0.05947
+    },
+    {
+      "id": "16aa6c5e-dde1-44d5-81bb-64427ae567f5",
+      "brand": "Omega",
+      "model": "Constellation",
+      "reference": "1252.30.00",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-29-02"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.omegawatches.com/watch-omega-constellation-perpetual-calendar-12523000",
+      "pageHost": "omegawatches.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "1252.30.00",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Constellation",
+          "page": "Constellation"
+        },
+        "caseDiameterMm": {
+          "status": "corrected",
+          "stored": 35,
+          "page": 35.5,
+          "passage": "Case diameter Open Case Measurement Modal 35.5 mm"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "quartz",
+          "page": "quartz",
+          "passage": "Movement type Quartz"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 50,
+          "page": 50,
+          "passage": "Water resistance 5 bar (50 metres / 165 feet)"
+        }
+      },
+      "note": "Omega's page for 1252.30.00 (a discontinued Perpetual Calendar with calibre 1680) agrees with the stored quartz movement and 50 m water resistance, but it gives the case as 35.5 mm, not the stored 35 mm; the diameter and water-resistance lines were read from the global omegawatches.com version of the page, because the search snippet of the stored en-us page cut off those values.",
+      "costUsd": 0.0474
+    },
+    {
+      "id": "bce2cbf8-c024-488c-b731-41eda12dd038",
+      "brand": "MeisterSinger",
+      "model": "Neo Quartz",
+      "reference": "NQ903",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-25-10"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": null,
+      "pageHost": null,
+      "page": "none",
+      "referenceOnPage": false,
+      "referenceExists": false,
+      "pageReference": null,
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Neo Quartz"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 36
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 50
+        }
+      },
+      "note": "I couldn't find a MeisterSinger or authorised-retailer page for reference NQ903, and the stored URL never came up in searches; the closest pages are for other references (the automatic Neo NE903N/NE903 and NES903, and the Neo Quartz NQ203 at Define Watches, which is listed at 3 ATM / 30m, not 50m), so I have left every fact null.",
+      "costUsd": 0.05823
+    },
+    {
+      "id": "78ee230a-39ed-46ce-9ebd-cb2a820b7510",
+      "brand": "Grand Seiko",
+      "model": "Heritage Quartz 37mm Blue",
+      "reference": "SBGX265",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-29-05"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.grand-seiko.com/us-en/collections/sbgx265g",
+      "pageHost": "grand-seiko.com",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "SBGX265",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Heritage Quartz 37mm Blue",
+          "page": "Heritage Collection SBGX265"
+        },
+        "caseDiameterMm": {
+          "status": "confirmed",
+          "stored": 37,
+          "page": 37,
+          "passage": "|Case size:|Diameter 37.0mm Lug-to-lug 44.6mm Thickness 10.0mm|"
+        },
+        "movement": {
+          "status": "confirmed",
+          "stored": "quartz",
+          "page": "quartz",
+          "passage": "|Movement Type:|Quartz|"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 100,
+          "page": 100,
+          "passage": "|Water resistance:|10 bar|"
+        }
+      },
+      "note": "Grand Seiko's US page confirms the stored 37 mm, quartz (9F62) and water-resistance values, but the page states water resistance as 10 bar (converted here to 100 m), and its address ends in sbgx265g, not the stored sbgx265, so the stored source link should be updated.",
+      "costUsd": 0.032
+    },
+    {
+      "id": "1653d300-1db7-4ade-93d9-cd58aa3a65e6",
+      "brand": "Oris",
+      "model": "Aquis Date Quartz 36.50mm",
+      "reference": "01 733 7770 4155-07 8 18 05P",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-29-04"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.oris.ch/en-US/product/watch/aquis/aquis-date/01-733-7770-4155-07-8-18-05P",
+      "pageHost": "oris.ch",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "01 733 7770 4155-07 8 18 05P",
+      "fields": {
+        "model": {
+          "status": "confirmed",
+          "stored": "Aquis Date Quartz 36.50mm",
+          "page": "Aquis Date"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 36.5
+        },
+        "movement": {
+          "status": "corrected",
+          "stored": "quartz",
+          "page": "automatic",
+          "passage": "Automatic winding"
+        },
+        "waterResistanceM": {
+          "status": "confirmed",
+          "stored": 300,
+          "page": 300,
+          "passage": "30 bar"
+        }
+      },
+      "note": "Oris's page for this exact reference gives an automatic Calibre 733-1, so the stored model name ('Aquis Date Quartz') and movement ('quartz') are wrong; 30 bar converts to 300 m, the stored diameter and water resistance match, and the stored source URL is not the page found here.",
+      "costUsd": 0.05012
+    },
+    {
+      "id": "e684304d-12b7-4788-9938-37e259a12f8a",
+      "brand": "Citizen",
+      "model": "Eco-Drive One",
+      "reference": "AR5000-50E",
+      "sourceKind": "manufacturer",
+      "cards": [
+        "quiz-29-03"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.citizen.com.hk/html/en/products/eco-drive-one/eco-drive-one/ar5000-50e.html",
+      "pageHost": "citizen.com.hk",
+      "page": "opened",
+      "referenceOnPage": true,
+      "referenceExists": true,
+      "pageReference": "AR5000-50E",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Eco-Drive One"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 38.3
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "solar"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": 30
+        }
+      },
+      "note": "Our stored source, the Traditional Chinese Citizen Hong Kong page, now says '產品不存在' (product does not exist), so I used Citizen Hong Kong's English page for the same reference; it gives a 39.8mm case, not the stored 38.3mm, and an Eco-Drive movement, which matches the stored solar value, but it lists water resistance only as 'Daily Water Resistant' with no metre figure, so I could not confirm the stored 30m, and I found no model name in the page text.",
+      "costUsd": 0.05548
+    },
+    {
+      "id": "6afa509f-935b-4e04-9af5-e3b083fd2e16",
+      "brand": "Omega",
+      "model": "Constellation Quartz",
+      "reference": "196.005",
+      "sourceKind": "retailer",
+      "cards": [
+        "quiz-29-06"
+      ],
+      "judgesFlagged": null,
+      "pageUrl": "https://www.omegawatches.com/watch-omega-constellation-electroquartz-st-196-0005",
+      "pageHost": "omegawatches.com",
+      "page": "opened",
+      "referenceOnPage": false,
+      "referenceExists": true,
+      "pageReference": "ST 196.0005",
+      "fields": {
+        "model": {
+          "status": "unconfirmed",
+          "stored": "Constellation Quartz"
+        },
+        "caseDiameterMm": {
+          "status": "unconfirmed",
+          "stored": 37
+        },
+        "movement": {
+          "status": "unconfirmed",
+          "stored": "quartz"
+        },
+        "waterResistanceM": {
+          "status": "unconfirmed",
+          "stored": null
+        }
+      },
+      "note": "The closest Omega page is for the stainless-steel Constellation Electroquartz ST 196.0005 (37 x 44 mm, quartz, 30 m); I found no Omega page for the listed reference 196.005, which is the 18k gold version shown on the stored Hodinkee page, so I left every fact null; the stored source is also a vintage reseller, not Omega or an authorised retailer.",
+      "costUsd": 0.06393
+    }
+  ]
+}

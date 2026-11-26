@@ -7,6 +7,10 @@ owner approves, with the owner's words.
 
 | Date | Decision | Where |
 | --- | --- | --- |
+| 2026-11-26 | A judge decides without the owner ("чтобы он умел грамотно решать сам — без моего участия"); its verdicts are advice, and a fact changes only from a page our server opened | AGENTS.md, "Owner decisions, 2026-11-26"; `docs/eval-baseline.md` |
+| 2026-11-26 | Catalogue repair step by step, each step checked by the judge ("готов — … будем пошагово делать") | same; `docs/OWNER_QUESTIONS.md` #7 |
+| 2026-11-26 | A read-only sign-in for the evaluation in CI ("да и как это сделать?"); the owner sets its password | same; migration 0123 |
+| 2026-11-26 | Gemini skipped ("пропускаем"): nothing connected, Perplexity stays | same |
 | 2026-11-26 | An actor's card keeps the role beside the film ("yes, fix it") | AGENTS.md, "Owner decisions, 2026-11-26"; `docs/eval-baseline.md` |
 | 2026-11-26 | Relevance before cost ("лучше качественный ответ и чуть дороже"), inside the ledger limits | AGENTS.md, "Owner decisions, 2026-11-26" |
 | 2026-11-26 | Film and people search rests on real articles; a sighting is confirmed by two pages on different sites that our server opened | same; `docs/eval-baseline.md` |

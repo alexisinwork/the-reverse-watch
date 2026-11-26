@@ -219,12 +219,33 @@ speed and cost.
   An actor's or a character's card keeps the role beside the film when the
   source names both ("yes, fix it"): the passage may then name the role or
   the actor, and must name the film.
-- **Gemini: open question, nothing connected** (owner asked "maybe we should
-  exchange gemini for perplexity?"; `docs/OWNER_QUESTIONS.md`, item 8).
-  Google's terms for Grounding with Google Search forbid caching,
-  syndicating or analysing Grounded Results and using their links to build
-  an index or crawl destination pages, which is how this site verifies and
-  stores sightings. Until the owner decides, add no Gemini call.
+- **Gemini: skipped, nothing connected** (owner asked "maybe we should
+  exchange gemini for perplexity?", then "пропускаем"). Google's terms for
+  Grounding with Google Search forbid caching, syndicating or analysing
+  Grounded Results and using their links to build an index or crawl
+  destination pages, which is how this site verifies and stores sightings.
+  Add no Gemini call unless the owner reopens it.
+- **A judge decides without the owner** ("добавь судью. Чтобы он умел
+  грамотно решать сам — без моего участия"): `scripts/judge-cards.ts`,
+  calibrated against the owner's 203 ratings. On film cards it agrees with
+  the owner 90%; on quiz and alternatives cards it also checks facts, which
+  the owner's ratings did not, and two judges of different model families
+  named the same wrong fact on 69 cards the owner rated positively (67 of
+  them quiz and alternatives cards); six of six checked against makers'
+  pages were real errors. A judge's verdict is
+  advice: a fact changes only from a page our server opened.
+- **Catalogue repair, step by step** ("готов — скажи как сделать и заодно
+  проверим судью. лучше — будем пошагово делать"): a fact of a watch an AI
+  search added is corrected only from the maker's page for its exact
+  reference (an authorised retailer's when the maker has none) that our
+  server opened and that shows the reference and the passage giving the
+  value (`scripts/fact-check-catalogue.ts`). Each step reports its numbers
+  and is checked by the judge before the next; prices keep their own check.
+- **Read-only evaluation in CI** ("да и как это сделать?"): the role
+  `reserve_eval_reader` (migration 0123) may run only the functions in
+  `READ_ONLY_RPC`, in read-only sessions; never grant it a table, a write
+  function or the service key. The owner sets its password with
+  `scripts/set-eval-reader-password.ts`; the agent never sets it.
 - **Spend alerts by email** to the owner's address (`SPEND_ALERT_EMAIL` in
   Vercel): the monthly ledger at $5, 10, 25, 50, 75, 90 and 100, Perplexity
   alone at $5 and $10, and at once when the ledger halts; the hourly cron

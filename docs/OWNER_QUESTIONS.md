@@ -6,45 +6,60 @@ happens once it is done. Closed items move to the decision register.
 Closed on 2026-11-26: Vercel Pro (done by the owner, verified), the portfolio
 partner key (created), Sentry after the first paint (done), episode link
 targets (done), the Next.js version 2 (cancelled), the Supabase certificate
-(supplied by the owner; every database script now verifies the server) and
-the evaluation budget ($60 approved; the round's spend is in
-`docs/evaluation-budget.md`) and the portfolio demo: the owner asked to
-ignore the test partner ("игнорируй партнера тестового"), so its Lovable
-publish is no longer a launch step. See `docs/decisions/DECISION_REGISTER.md`.
+(supplied by the owner; every database script now verifies the server), the
+evaluation budget ($60 approved; spend in `docs/evaluation-budget.md`), the
+portfolio demo (the owner asked to ignore the test partner), the ratings
+(item 1: "всё что мог уже оценил, там всё гуд"; archetypes checked by hand:
+"я перепроверил руками архетипы и там всё гуд"), the Perplexity top-up (the
+owner topped it up) and Gemini (item 8: "пропускаем", nothing connected).
+See `docs/decisions/DECISION_REGISTER.md`.
 
 ## Before launch
 
 | # | Question or action | Why | When done |
 | --- | --- | --- | --- |
-| 1 | Done for the most part: 203 of 321 cards rated on 2026-11-26 (quiz 92%, alternatives 94% strong or acceptable, film 98% real sightings; `docs/eval-baseline.md`). Optional: rate about 20 archetype cards, the one tool with no human rating, or let a judge checked against your 203 ratings rate the rest; the film review page https://claude.ai/artifact/Nw4UBgkUU3ANz5Egrtr6Ze stays open | The ratings found the price labelling defect and a size error | Archetype and film cards get a measured share too |
-| 2 | Move the Supabase project to the **Pro** plan ($25 a month) before the first paying partner. The project is **the-reverse-watch** (reference `osfqexnzgkksfvaocjvl`, Frankfurt) in the organization with the address `fektdonybhryzvxpwkgo`: billing at https://supabase.com/dashboard/org/fektdonybhryzvxpwkgo/billing, the project at https://supabase.com/dashboard/project/osfqexnzgkksfvaocjvl. Sign in with the account that owns that organization (the agent's Supabase connection sees only the EstateVanta organization) | The database has no backups today: Supabase backs up only Pro, Team and Enterprise projects (daily, kept 7 days on Pro). A lost database would lose the catalogue, the partners and their usage history | Backups appear under Database → Backups; `scripts/check-managed-backups.ts` reports them |
-| 3 | Keep the Perplexity prepaid balance topped up (about $10–11 left on 2026-11-26 by the app's own counter) and set the usage alert in Meta's dashboard | The app stops paid checks at $100 a month and now emails you at $5, 10, 25, 50, 75, 90 and 100, Perplexity alone at $5 and $10 (`docs/production-readiness.md`); the provider accounts have no limit of their own, and an empty Perplexity balance makes every new film search fail until it is topped up | The balance and Meta's alert are noted in `docs/production-readiness.md` |
-| 4 | Review the independent film set (`data/eval/film-labels-independent-2026-11-26.json`): open its sources, or a sample, and mark it reviewed | It is the honest measure of film search, but labels count only after a human check | Its review status says reviewed; later scores are compared with this baseline |
+| 2 | Move the Supabase project to the **Pro** plan ($25 a month); the owner plans it for next week ("переведу на след неделе"). The project is **the-reverse-watch** (reference `osfqexnzgkksfvaocjvl`, Frankfurt) in the organization `fektdonybhryzvxpwkgo`: billing at https://supabase.com/dashboard/org/fektdonybhryzvxpwkgo/billing | The database has no backups today: Supabase backs up only Pro, Team and Enterprise projects (daily, kept 7 days on Pro). A lost database would lose the catalogue, the partners and their usage history | Backups appear under Database → Backups; `scripts/check-managed-backups.ts` reports them |
+| 3 | Set the usage alert in Meta's dashboard (Perplexity was topped up on 2026-11-26) | The app stops paid checks at $100 a month and emails you at $5, 10, 25, 50, 75, 90 and 100, Perplexity alone at $5 and $10; the provider accounts have no limit of their own | Meta's alert is noted in `docs/production-readiness.md` |
+| 4 | Review the independent film set on its review page, https://claude.ai/artifact/4Br4SRgzRsFAGkN7vLEd5b ("кидай, я проверю"): 19 labels, each with the pages it rests on | It is the honest measure of film search, but labels count only after a human check | Your marks are on the page; the agent records them in `data/eval/` without editing the labels |
 | 5 | Commercial groundwork from `docs/business-plan.md`: 8–10 conversations with possible partners, a short pilot agreement and invoice, and the open check of your employer's rules on paid side projects (`docs/original-plan-requirements.md`) | A paying pilot needs a buyer, terms and an invoice; no customer outreach is automated | The first bounded paid pilot is offered |
 
-## Optional, improves results
+## Improves results
 
 | # | Question or action | Why | When done |
 | --- | --- | --- | --- |
-| 6 | Give the evaluation read-only database access in GitHub (steps below) | `scripts/run-evals.ts` needs the database, so it runs locally only | The evaluation runs on every push and fails on a regression |
-| 7 | A budget to complete the catalogue, about $80–320 once | 15,901 of 25,014 searchable watches lack styles, size or movement, so the alternatives finder cannot compare them | More alternatives searches end in ten comparable watches |
-| 8 | Gemini ("maybe we should exchange gemini for perplexity?", 2026-11-26): the agent advises **against replacing Perplexity with Gemini's Search grounding**, and offers Gemini 4 Hydrogen **without** Search as an advisory second reader of disputed film cards. If you want that reader, create a Gemini API key in Google AI Studio and put it in `.env` as `GEMINI_API_KEY` (never in chat or Git) | Google's terms for Grounding with Google Search (effective 2026-03-23, read 2026-11-26 at aistudio.google.com/docs/terms) allow it only in your own app, showing Grounded Results with their Search Suggestions to the person who asked, and forbid caching, syndicating, analysing or learning from them; using its links to build an index or to crawl destination pages is named a violation. The Reserve opens each cited page, keeps a catalogue and serves partner widgets. Without the Search tool, Gemini reads only text the server gives it (Gemini 4 Hydrogen: $1.50 / $7.50 per million tokens, a free tier exists; Search grounding needs billing: 5,000 searches a month included, then $14 per 1,000) | With a key, the agent runs the disputed cards through it and adds its verdict to the review page as advice; confirmations still need two opened pages |
+| 6 | Read-only evaluation in GitHub: the agent's part is done (migration 0123, `.github/workflows/eval.yml`). Your part is one command in the project folder: `node --env-file=.env --import tsx scripts/set-eval-reader-password.ts` | The evaluation could run only on the agent's machine, because it needed the key that can change everything | The command prints three "Done" lines; the next run of "Search quality evaluation" in GitHub Actions shows PASS for every gate |
+| 7 | Catalogue repair, step by step ("будем пошагово делать"). Step 1 is done (below). Step 2 needs your go-ahead; step 3 needs a budget | Two judges found a wrong fact on about half of the quiz and alternatives cards you rated; nearly all come from watches an AI search added to the catalogue | Each step reports its numbers and is checked by the judge before the next |
 
-## What read-only access for the evaluation needs (item 6)
+## What the read-only evaluation command does (item 6)
 
-The evaluation must not run in GitHub with the service-role key: that key can
-change everything. Instead:
+1. It makes a long random password for the database sign-in
+   `reserve_eval_reader` and never shows it. The database receives only its
+   SCRAM verifier, so the database logs never hold the password either.
+2. It signs in as that role and checks what it can do: exactly the sixteen
+   read-only functions the evaluation uses, in read-only sessions, no tables.
+   If the check fails, nothing is stored.
+3. It stores the connection string in your `.env` (as `EVAL_DATABASE_URL`)
+   and as the GitHub Actions secret `EVAL_DATABASE_URL`, through your signed-in
+   GitHub CLI. If the CLI cannot store it, the command says where to paste it
+   by hand (repository → Settings → Secrets and variables → Actions).
 
-1. After your yes, the agent adds a migration with a database role,
-   `reserve_eval_reader`, that can only call the read-only catalogue and story
-   functions the evaluation uses: no tables, no writes, no visitor data. It
-   cannot sign in until it has a password.
-2. You give it a password in the Supabase SQL editor (you choose it; nobody
-   else sees it):
-   `alter role reserve_eval_reader with login password '…';`
-3. You add a GitHub secret: repository → Settings → Secrets and variables →
-   Actions → New repository secret, name `EVAL_DATABASE_URL`, value the
-   **Session pooler** connection string from Supabase's **Connect** panel with
-   the user `reserve_eval_reader.osfqexnzgkksfvaocjvl` and your password.
-4. The agent switches the evaluation to that connection and adds it to the
-   checks on every push.
+Running it again replaces the password. To switch the access off, the agent
+can revoke the role's grants (a new migration).
+
+## The catalogue repair (item 7)
+
+What the judge found: of the 146 quiz and alternatives cards both judges
+read, 128 showed one of the 3,590 watches an AI search added to the
+catalogue (14% of it, but with every field filled, so they win most places
+in results), and 72 of those 128 cards (56%) have a wrong fact both judges
+name: water resistance, case size, model, reference, movement or price.
+Cards of watches imported from watch databases: 2 of 16 (13%). Six of six
+checked against the makers' pages were real errors. The archetype cards
+look the same to the judge: 34 of 78 wrong, 76 of them AI-found watches.
+
+| Step | What | Cost | State |
+| --- | --- | --- | --- |
+| 1 | Pilot on 60 of those watches, nothing written: the judge model finds the maker's page for the exact reference and copies the passage for each fact; our server opens the page and keeps a value only when the page's text shows the reference and the passage | $2.92 | done: 12 watches with a verified correction (16 facts; one rejected under the stricter rule that followed), none on the 19 the judges had found clean; 9 references look invented (no maker page; 8 of their 9 stored pages are gone) |
+| 2 | Apply step 1: write the verified corrections with their page and passage, take the "reference confirmed" mark off watches whose reference no page shows (they move to "Also worth a look", as the catalogue rule says), stop counting a page address that merely contains the reference as proof, then judge the same cards again | about $2, inside the $60 | waits for your go-ahead |
+| 3 | The same for the AI-found watches the tools actually show (about 1,000), with a free first pass that reads each watch's stored page | about $25–50; all 3,590 about $120–175 with the same model, less with a cheaper model checked against it | needs a budget |
+| 4 | Fill missing facts of the database-imported watches (64% of the catalogue lacks styles, size or movement), by the same page rule, so the more accurate records can compete | about $80–320 | later |

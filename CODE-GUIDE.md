@@ -254,6 +254,40 @@ films` turns the reports into the owner's review page.
   one, instead of refusing the checked answer
   (`scripts/test-image-conflict-publish.ts`).
 
+After the owner's ratings (2026-11-26):
+
+- A price that is a pre-owned dealers' median (`secondaryMarketPrice` in
+  `watch-catalogue.ts`: the spacecity import's
+  `secondary_market_historical` evidence) shows as "Pre-owned from
+  established dealers, approximate" on catalogue and cheaper-alternative
+  cards (`asCard` in `alternatives-search.server.ts`). Grey-market dealers
+  and watch databases are in `NON_RETAIL_HOSTS` (`price-check.server.ts`)
+  and never confirm a price.
+- `scripts/judge-cards.ts` is the judge: it rates rating-sheet cards on the
+  owner's scale through Perplexity's Agent API (`--model`, a `--budget`
+  guard, optional web search) and, with `--ratings`, reports agreement with
+  the owner on calibration cards and, separately, on held-out cards (every
+  third rated card of each tool). Reports: `docs/reports/judge-*.json`.
+- `scripts/fact-check-catalogue.ts` is step 1 of the catalogue repair, a dry
+  run: the judge model names the maker's page for the exact reference and
+  copies the passage for each fact; our server opens the page and keeps a
+  value only when the page shows the reference and the passage, and the
+  passage gives the value. Each fact comes out confirmed, corrected, filled
+  or unconfirmed; nothing is written. Reports: `docs/reports/fact-check-*.json`.
+- `scripts/build-label-review.ts` turns the independent film set into a
+  review page on the rating page's design.
+- The free evaluation can run without the service key: migration 0123's
+  `reserve_eval_reader` may run only the sixteen functions in
+  `READ_ONLY_RPC` (`scripts/eval-sets.ts`; `scripts/eval-database.test.ts`
+  keeps the grants and the list equal), in read-only sessions. With
+  `EVAL_DATABASE_URL`, `scripts/run-evals.ts` calls them over PostgreSQL
+  (`scripts/eval-database.ts`) and answers like the Supabase API, so the
+  search code is unchanged. `scripts/set-eval-reader-password.ts` (run by
+  the owner) sets the role's password as a SCRAM verifier and stores the
+  connection string in `.env` and as the GitHub secret; then
+  `.github/workflows/eval.yml` runs the evaluation on search-code changes,
+  every Monday and on request (NOT RUN while the secret is missing).
+
 Every database script connects through `scripts/database-tls.ts`: encrypted,
 and the server is verified against Supabase's certificate authority
 (`certs/prod-ca-2021.crt`, valid until 2031-04-26) and its host name.

@@ -139,3 +139,25 @@ The provider counters, which started on 2026-11-26, read Perplexity $3.95
 and Muse $6.59, so about $10–11 of the owner's $15 Perplexity balance is
 left. Results: `docs/eval-baseline.md`, "Film and people search on real
 articles".
+
+## The judge, prices and the catalogue pilot (2026-11-26, from the same $60)
+
+The owner asked for a judge that decides alone, for everything flagged to be
+fixed, and for proof that every tool answers well ("лучше потратить немного
+больше и убедиться"). Each run below stopped itself before its own limit.
+
+| Run | Spend |
+| --- | ---: |
+| Film and people tests (above) | $18.67 |
+| Price recheck of the prices the owner flagged | $0.76 |
+| Archetype round, 24 requests, two rounds (its own report: $0.38; the ledger moved $0.67 while it ran) | $0.67 |
+| Judge probe, 3 cards | $0.13 |
+| Judge calibration, Opus 5.5, 203 cards | $6.67 |
+| Judge calibration, Gemini 4 Hydrogen, 186 cards | $5.15 |
+| Catalogue repair step 1, pilot on 60 watches | $2.92 |
+| Judge on the 80 archetype cards | $2.65 |
+| **Total of the $60** | **about $37.62** |
+
+Unused: about $22.38. The judge costs about $0.033 a card with web search;
+the repair pilot about $0.049 a watch. Results: `docs/eval-baseline.md`,
+"The judge and the catalogue's facts".

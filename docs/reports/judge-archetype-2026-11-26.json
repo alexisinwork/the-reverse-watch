@@ -1,0 +1,936 @@
+{
+  "at": "2026-11-26T22:09:23.501Z",
+  "sheet": "live-2026-11-26",
+  "model": "anthropic/claude-opus-5-5",
+  "webSearch": true,
+  "budgetUsd": 4,
+  "spendUsd": 2.6486,
+  "stopReason": null,
+  "judged": 78,
+  "errors": 2,
+  "tally": {
+    "quiz": {
+      "judged": 0,
+      "ratings": {}
+    },
+    "archetype": {
+      "judged": 78,
+      "ratings": {
+        "wrong": 34,
+        "ok": 19,
+        "good": 20,
+        "poor": 5
+      }
+    },
+    "alternatives": {
+      "judged": 0,
+      "ratings": {}
+    },
+    "film": {
+      "judged": 0,
+      "ratings": {}
+    }
+  },
+  "verdicts": [
+    {
+      "card": "archetype-architectural_modernist-considered_entry-01",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card has two facts wrong. The M0A10528 is the automatic Hampton (ETA 2895, small seconds, date), not quartz, and it is rated to 5 bar/50 m, not 30 m. The price and the 31 x 48 mm Art Deco rectangular case are correct, and the case suits an architectural taste.",
+      "wrongFacts": [
+        "movement",
+        "water"
+      ],
+      "costUsd": 0.03491
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-02",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card mixes up two different watches. Reference BR03A-MIL-CE/SRB is the newer 41 mm BR-03 Military Ceramic, which Bell & Ross lists at USD 4,700, not $4,500. The card instead shows the model name and 42 mm size of the older BR 03-92 Military Type (ref. BR0392-MIL-CE).",
+      "wrongFacts": [
+        "model",
+        "size",
+        "price"
+      ],
+      "costUsd": 0.07055
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Citizen's own product page and retailers list the AR5054-51E with a 39 mm case, not 36.6 mm. Its ultra-thin, minimalist Eco-Drive One design would otherwise suit this request, and the $3,995 retail price and 30 m water rating are correct.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.04433
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-04",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The PAM00000's facts hold up: it's 44mm, hand-wound and rated to 300m, and about USD 3,890 is a believable grey-market price. Its plain dial and cushion case have some geometric, minimalist appeal, but it's a bulky military-style tool watch with a basic Unitas-based movement. Clean modernist designs like Nomos or Junghans Max Bill fit the Architectural Modernist brief and a first serious watch better.",
+      "wrongFacts": [],
+      "costUsd": 0.02115
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-05",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I found nothing wrong on the card. Retailer listings confirm BR03A-D-BL-ST/SRB is the 42mm steel BR 03 Diver with an automatic movement, and the approximate USD 4,600 sits within the budget and close to the brand's prices for its BR 03 Divers. The square, instrument-style case does suit a geometric, modernist taste, but it's a loud tool diver with a fairly ordinary outsourced-based movement. A first serious watch with a more refined architectural design would be a stronger pick.",
+      "wrongFacts": [],
+      "costUsd": 0.04987
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-06",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": null,
+      "reason": "",
+      "wrongFacts": [],
+      "costUsd": 0,
+      "error": "[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"reason\"\n    ],\n    \"message\": \"Invalid input: expected string, received undefined\"\n  }\n]"
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-07",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card lists the movement as automatic, but WSTA0052 is the quartz Tank Must Large. Watchmaxx, Mappin & Webb and Chronobuyer all describe this reference as quartz. In this line, only the Extra Large Tank Must uses an automatic movement. The size, water resistance and approximate price (around $4,100 to $4,700 retail) look plausible.",
+      "wrongFacts": [
+        "movement"
+      ],
+      "costUsd": 0.07807
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-08",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Cartier Tank is the classic Art Deco rectangular watch, so it fits the Architectural Modernist style very well, and it's a respected first luxury watch within the budget. The card's details are consistent with reference WSTA0042: small case, quartz movement, 30 m water resistance. The roughly $3.6k price is plausible but approximate, and I didn't check it with a search.",
+      "wrongFacts": [],
+      "costUsd": 0.01251
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-09",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The reference doesn't match the watch. BR0392-D-BL-ST/SRB is the black-dial BR 03-92 Diver, and the Blue version is BR0392-D-BU-ST/SRB. The size, movement and water resistance are right: 42 mm, automatic BR-CAL.302, 300 m. The square case does suit the architectural brief.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.05061
+    },
+    {
+      "card": "archetype-architectural_modernist-considered_entry-10",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card lists USD 4,300 as the confirmed retail price, but Bell & Ross's US site currently shows USD 4,500 for the BR03A-BL-CE/SRB. The 41 mm size and model are correct, and the square, minimalist ceramic BR 03 otherwise suits an architectural first serious watch well.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.02332
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-01",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I checked the specs against Braun's own listings: 40mm case, quartz, 50m water resistance. The EUR 210 price is also plausible for this model. Braun's Dieter Rams design history fits the Architectural Modernist style well. But this is a basic quartz watch with mineral glass that uses only about a tenth of the budget, and a first good watch under USD 2,000 could be something like a Junghans Max Bill or a Nomos Club.",
+      "wrongFacts": [],
+      "costUsd": 0.02718
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-02",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The max bill Handaufzug is a great pick for this request, but several facts on the card are wrong. Reference 027/3400.02 belongs to the max bill Automatic; the hand-wound 34mm model is 027/3700.02, which costs USD 1,360 (not 1,690) and is rated to 5 bar, not 30m.",
+      "wrongFacts": [
+        "reference",
+        "price",
+        "water"
+      ],
+      "costUsd": 0.04882
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference 041/4465.04 is the max bill Quartz with date in a 38 mm case, not 34 mm. Junghans spec sheets and dealer listings both show 38.0 mm, so the model name and the case size on this card are wrong. A max bill would otherwise be a fine first watch for this request.",
+      "wrongFacts": [
+        "size",
+        "model"
+      ],
+      "costUsd": 0.04719
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-04",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "All the facts check out: the Club 701.1 is $1,830 retail at NOMOS US, 36 mm, hand-wound with the in-house Alpha calibre, and water resistant to 100 m. It's a strong first watch from the brand that best fits the Bauhaus modernist look. A Tangente might fit the architectural theme a bit more closely, but the Club is a great, practical pick under $2,000.",
+      "wrongFacts": [],
+      "costUsd": 0.0289
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-05",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts on the card are correct: ref. 242 is the Ludwig 33 duo with an enamel-white dial, 32.8 mm, hand-wound Alpha.2, at about USD 1,800, which fits the budget for a first good watch. But the Ludwig's Roman numerals and classic look are traditional rather than architectural-modernist, and at 33 mm it's small for many wrists, so a Tangente or Orion would suit this request better.",
+      "wrongFacts": [],
+      "costUsd": 0.03022
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-06",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts are right: the SNJ025P1 is the solar PADI Arnie, 47.8 mm with 200 m water resistance, at about the listed price. But a big, chunky analog-digital dive watch doesn't fit the Architectural Modernist style, which calls for clean, minimal designs like Nomos, Junghans Max Bill or a Tissot PRX, especially for a first good watch under $2,000.",
+      "wrongFacts": [],
+      "costUsd": 0.01049
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-07",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference L5.757.4.73.6 is the automatic DolceVita with the Longines calibre L592, not a quartz watch. Its case measures about 27.7 x 43.8 mm, so calling the model 'DolceVita 32mm' is also wrong. The price of about USD 1,930 is plausible, and a Longines DolceVita does suit the Modernist style for a first good watch.",
+      "wrongFacts": [
+        "movement",
+        "model"
+      ],
+      "costUsd": 0.04388
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-08",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The PRX Powermatic 80 35mm is a great first watch for an architectural-modernist look, but the reference is wrong. The blue dial is T137.207.11.041.00, and Tissot lists T137.207.11.051.00 as a different dial colour. The $795 price, 35mm size, automatic movement and 100m rating are correct.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.02481
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-09",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts check out against Citizen's own listing: USD 450, 40 mm, J165 Eco-Drive solar movement, 30 m water resistance. But this version has a diamond-studded black dial and a mineral crystal, and Citizen itself markets it as a fashion piece. It's a weak 'first good watch' for an Architectural Modernist with up to USD 2,000, when something like a Junghans Max Bill fits the brief far better.",
+      "wrongFacts": [],
+      "costUsd": 0.02833
+    },
+    {
+      "card": "archetype-architectural_modernist-first_good_watch-10",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts hold up: Damasko's own site lists the DS30 at €1,250 with straps, which fits under USD 2,000, and the 39mm automatic with 100m water resistance matches the watch. It's a well-built, good-value first watch, but it's more of a German tool or field watch than an architectural-modernist design, so a Nomos or Junghans Max Bill would suit this request better.",
+      "wrongFacts": [],
+      "costUsd": 0.02321
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-01",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The Aikon Master Grand Date is a solid mid-range watch, but Maurice Lacroix is an entry-level Swiss brand. This model sells well below the USD 10,000+ budget, so it isn't an 'exceptional object' for an expressive collector spending at this level. The card lists price, size, movement and water resistance as unknown, so there are no wrong facts to flag.",
+      "wrongFacts": [],
+      "costUsd": 0.00985
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-02",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts check out: PAM01391 is a 44mm steel automatic diver rated to 300m, and $10,400 matches its retail price as of February 2025. But it's a steel Panerai sports diver that one source lists as discontinued, and pre-owned ones sell for about $6,000–9,000, so it's weak value and not the exceptional object an Expressive Collector at $10k+ is looking for.",
+      "wrongFacts": [],
+      "costUsd": 0.04939
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference BR05A-BL-SK-ST/SST is the steel BR 05 Skeleton Nightlum, a limited edition of 500 that Bell & Ross priced at EUR 6,700. The 'Black Lum' is a separate ceramic model, ref. BR05A-BLM-SKCE/SCE, so the model name and the EUR 9,500 price are both wrong, and the real watch is well under the USD 10,000+ budget.",
+      "wrongFacts": [
+        "model",
+        "price"
+      ],
+      "costUsd": 0.02836
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-04",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The watch itself is a great pick for an expressive collector, but the card's facts are wrong. RGM's site lists the enamel 801 as reference 801-CE (Classic Enamel) at $27,950 in stainless steel, with a 42mm case. The card shows reference 801-EN, about USD 11,900 and 40mm.",
+      "wrongFacts": [
+        "price",
+        "size",
+        "reference"
+      ],
+      "costUsd": 0.02734
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-05",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Kudoke 3 is a hand-finished independent watch from a German maker, with its own manual-wind Kaliber 1 and an unusual radial hour display. That makes it a strong fit for an expressive collector. The facts I checked match current retailer listings: a 39 mm steel case, manual winding and USD 11,900 for the standard dials. I didn't find a source for the 50 m water resistance, but it's a likely figure.",
+      "wrongFacts": [],
+      "costUsd": 0.02346
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-06",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The watch is called the Globetrotter, a world-timer with a 3D globe, not a 'Globetrotter GMT'. I couldn't find reference 1WTAS.G01A.C153S anywhere; the real 45 mm steel references are 1WTAS.S01A.D137S and 1WTAS.S02C.C155S. The 45 mm size and the roughly $22–23k price do fit the real steel model, and it would otherwise be a strong pick for this collector.",
+      "wrongFacts": [
+        "model",
+        "reference"
+      ],
+      "costUsd": 0.04303
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-07",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: 44mm titanium TuttoGrigio, P.9010 automatic, 300m. An approximate $14,750 fits the new grey-market range of about $15,850–16,270. But PAM01662 has been replaced by PAM02662 and sells pre-owned for about $8–11.7k. For an expressive collector's exceptional piece, a Luminor Marina is a fairly ordinary choice, and there are clearly better ones above $10k.",
+      "wrongFacts": [],
+      "costUsd": 0.04491
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-08",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: PAM01045 is the 38mm Luminor Due in polished Goldtech with a white dial, automatic movement and 30m water resistance, and it retails around USD 14,800. It's a nice gold dress Panerai, but it's not really an 'exceptional object' for an expressive collector. Pre-owned examples sell for about USD 11,000, which points to weak value, and there are more distinctive choices in this price range.",
+      "wrongFacts": [],
+      "costUsd": 0.02803
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-09",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts check out: PAM01117 is a 44mm titanium Luminor Marina with the automatic P.9010 movement and 300m water resistance, and about USD 12k matches current secondary-market prices. But it's a discontinued 270-piece edition that's basically a blue-dial version of the standard Luminor, so it's an acceptable pick rather than the exceptional, expressive object this collector asked for at USD 10,000 and above.",
+      "wrongFacts": [],
+      "costUsd": 0.04391
+    },
+    {
+      "card": "archetype-expressive_collector-exceptional_object-10",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: PAM01316 is the 44mm steel Luminor Marina Specchio Blu with the automatic P.9010 movement and 300m water resistance, and its retail price (£8,800 / €10,200) is consistent with about USD 10,000. It suits a bold, expressive taste, but it's an entry-level steel Panerai sitting at the bottom of the budget, and pre-owned ones sell for roughly €5,000–7,500, so it hardly counts as an 'exceptional object' compared with better picks above USD 10,000.",
+      "wrongFacts": [],
+      "costUsd": 0.03018
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-01",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The card's facts are correct: 44 mm, automatic, 300 m, reference A32320101B1X1, and USD 5,550 retail. But it's a weak pick for a value-minded collector who already owns several watches. The movement is a basic ETA-based GMT, the 44 mm case is large, and grey-market dealers sell it new for about USD 2,900–4,300, so paying full retail is poor value when better GMT/field options exist in this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02744
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-02",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "PAM01320 is the steel Luminor GMT with the P.9011 calibre in a 44mm case. It isn't a Submersible Bronzo, so the model and reference don't match each other. The 47mm size is the Bronzo's, which means the size is wrong for this reference either way.",
+      "wrongFacts": [
+        "model",
+        "reference",
+        "size"
+      ],
+      "costUsd": 0.02718
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card lists 100 m water resistance, but Eberhard's own site and the published specs give the Scientigraf Chrono 50 m (5 ATM). The 41 mm automatic chronograph and the roughly EUR 4,480 price are otherwise plausible for this anti-magnetic field pick.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.02629
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-04",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: 43 mm DLC titanium, 200 m, Werk 13 COSC true-GMT automatic, about EUR 5,286, and it fits the field-rationalist brief and budget. But F4260004 is the 100-piece PC-7 TEAM limited edition, which the card calls just 'Titanium Black'. It's hard to find, and pre-owned ones list well below that price (one at about $3,363), so the standard titanium Triple-GMT or a better-value pick is easier to recommend.",
+      "wrongFacts": [],
+      "costUsd": 0.0651
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-05",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Horage's official specs rate the Supersede GMT to 200 m of water resistance, not the 100 m on the card. The CHF 6,490 price, the roughly 40 mm (39.5 mm) case and the automatic K2 micro-rotor movement are all correct, and the watch suits this budget well.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.02422
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-06",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "IW326905 is the black ceramic Black Aces, which IWC rates at 6 bar (60 m), not 100 m. It is also discontinued: IWC lists it under past collections and it launched at CHF 7,200 / EUR 7,700, so 'USD 6,800 confirmed retail' is not a current confirmed retail price (pre-owned asks run about USD 6,700–9,600).",
+      "wrongFacts": [
+        "water",
+        "price"
+      ],
+      "costUsd": 0.05189
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-07",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts are right: 215.30.44.21.03.001 is the blue-dial Planet Ocean 600M with a 43.5mm automatic case. About USD 5,860 matches current grey-market and pre-owned listings (roughly $5,000–6,400) against a list price near $8,000. It's a tough, good-value watch within budget, but it's a big, heavy diver, not a field watch. A Field Rationalist would be better served by something like an Aqua Terra, Railmaster or Explorer-type watch.",
+      "wrongFacts": [],
+      "costUsd": 0.0393
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-08",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Tudor's own site and authorized dealers confirm the price, 39mm size, MT5450-U automatic movement, 200m water resistance and reference. It's a tough, practical travel GMT from a respected maker, which suits a practical collector buying in the USD 5,000 to 10,000 range.",
+      "wrongFacts": [],
+      "costUsd": 0.02249
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-09",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: the PAM00682 is a 42mm steel automatic Submersible rated to 300m, and about USD 6,000 matches what it sells for now, since it's discontinued and mostly sold pre-owned. It's a real tool diver, but the bulky cushion case and Panerai's statement styling, at a price that's mostly for the name, are a weaker fit for a practical field buyer than options like a Sinn, Tudor or Omega in this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.03228
+    },
+    {
+      "card": "archetype-field_rationalist-established_collection-10",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says 300 m of water resistance, but the PAM01272 is rated to 100 m (10 bar). It also lists a confirmed retail price of USD 8,200, while US retailers currently ask about USD 8,700.",
+      "wrongFacts": [
+        "water",
+        "price"
+      ],
+      "costUsd": 0.0243
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-01",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "M0A10468 is the 40mm Clifton Baumatic with a blue gradient dial, not a 39mm watch, and it is model 10468, not 10399. The movement (COSC Baumatic BM13-1975A, automatic) and 50m water resistance are correct, and as a pick for a first serious watch at this budget it would otherwise be reasonable.",
+      "wrongFacts": [
+        "size",
+        "model"
+      ],
+      "costUsd": 0.02736
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-02",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The model name is wrong. SBGW285 is the green 'Byōka' dial; 'Asakage' is the Europe-exclusive SBGW267. The other facts check out on Grand Seiko's own pages: USD 4,900, 37.3mm, manual-wind caliber 9S64 and 30m water resistance. The watch itself would be a strong first serious watch, but Grand Seiko's US boutique now lists it as no longer available.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.04427
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Ref. 231.10.43.22.03.002 is a real Aqua Terra Annual Calendar: 43 mm, automatic co-axial calibre 8601, 150 m. The facts check out, and about USD 4,000 matches the pre-owned market. But it is a discontinued older model that sold new for well above this budget. A 43 mm case is also big for a first serious watch, so a current Aqua Terra 38 or 41 mm would usually be a better pick.",
+      "wrongFacts": [],
+      "costUsd": 0.01413
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-04",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The specs check out: Omega's own page confirms this reference is the 38.5 mm steel Aqua Terra on a leather strap with the in-house Co-Axial 8601 annual calendar movement, and the card's 150 m and automatic match listings. Omega has discontinued it, so it is only available pre-owned, but about USD 4,300 matches current secondhand prices and fits the budget, making it a strong first serious watch for someone who cares about movements.",
+      "wrongFacts": [],
+      "costUsd": 0.03747
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-05",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Every fact on the card matches Bulgari's US listing for ref. 103963: USD 4,150, a 40 mm aluminium case, the automatic B192 GMT calibre and 100 m water resistance. It's a well-regarded design, but for a mechanical connoisseur's first serious watch, a more classic, movement-focused pick like the Tudor Black Bay GMT or a Grand Seiko would usually suit better.",
+      "wrongFacts": [],
+      "costUsd": 0.03484
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-06",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The case size on the card is wrong. Damasko's official spec gives the DC86 a 42.0mm diameter (the bezel is 43.8mm), not 43mm. The EUR 4,140 retail price, the in-house C51 automatic movement and the 100m water resistance are correct, and the watch would otherwise be a strong in-house chronograph pick for this budget.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.02348
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-07",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "I checked Frederique Constant's own pages and several retailers. FC-335MC4P6 is the Classics Heart Beat Moonphase Date, not the Manufacture: it uses the FC-335 calibre, which isn't an in-house movement. The watch is 40 mm with 60 m (6 ATM) water resistance, not 40.5 mm and 50 m. The USD 2,895 retail price is correct.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "water"
+      ],
+      "costUsd": 0.04415
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-08",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The listing checks out: it's 38.5 mm, steel, with an automatic chronograph movement (Sellita SW500 base), 100 m water resistance, and a retail price around €4,370 (about $4,500 at US dealers). That puts it inside the budget. It's a Sinn with an unusual three-time-zone chronograph complication and a respected German build, so it's a strong first serious pick for someone who cares about the mechanics, though it's thick at about 15.5–16.7 mm.",
+      "wrongFacts": [],
+      "costUsd": 0.03012
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-09",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: this is the 38.5 mm Aqua Terra Annual Calendar with a silver dial, Omega's in-house calibre 8601 and 150 m water resistance. Omega no longer makes it, but secondary-market listings run about USD 3,800–4,500, inside the budget. An in-house annual calendar chronometer at this price is a smart, enthusiast-grade first serious watch.",
+      "wrongFacts": [],
+      "costUsd": 0.03989
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-considered_entry-10",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: FC-718WM4H6 is a real reference, a 42mm steel worldtimer with 50m water resistance and Frederique Constant's own FC-718 automatic movement. The approximate USD 4,892 matches current new listings (about $4,100–4,700), and an in-house worldtimer at this price is a strong first serious watch for a mechanical enthusiast.",
+      "wrongFacts": [],
+      "costUsd": 0.03001
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-01",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "NOMOS's US store lists the Ludwig 33 duo enamel white, Ref. 242, at USD 1,860, not USD 1,800. USD 1,800 is the price of the Ludwig 33 duo doré (Ref. 240/241). The case size, manual winding and model are correct, and the watch itself is a sensible first mechanical watch for a small wrist under USD 2,000.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.03669
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-02",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card gets two facts wrong. The RE-AV0001S00B is listed at 40mm (Orient USA gives 40.4mm), not 39.3mm. Its euro list price is about €895 and it often sells near €600, so 'EUR 1080 confirmed retail' looks like a $1,080 USD list price shown in the wrong currency. The watch itself is a good mechanical first pick under $2,000.",
+      "wrongFacts": [
+        "size",
+        "price"
+      ],
+      "costUsd": 0.0299
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card gets the size and model wrong. RE-ND0001S00B is the Orient Star Classic Semi Skeleton, a women's watch with a 30.5 mm case, not a 39 mm 'Elegant Classic'. Orient's own spec page and the source listing (31 mm) both confirm this.",
+      "wrongFacts": [
+        "size",
+        "model"
+      ],
+      "costUsd": 0.03219
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-04",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference 027/3400.02 is the 38mm max bill Automatic (Sapphire) with the J800.1 self-winding movement, as the card's own source shows. It is not the 34mm hand-wound Handaufzug (027/3700 series). So the model, case size and movement on the card are wrong.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "movement"
+      ],
+      "costUsd": 0.02894
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-05",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Size, movement and price are right: 42mm, ETA 2893-2 automatic, about $1,350 list. Hamilton's official name for H32695131 is 'Jazzmaster GMT Auto', not 'Traveler GMT', and the watch is no longer sold on Hamilton's US site. It's a decent first Swiss GMT, but for a mechanical connoisseur under $2,000 there are more interesting picks, like a Tissot, Longines or Seiko GMT, or Hamilton's own Khaki Field.",
+      "wrongFacts": [],
+      "costUsd": 0.03265
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-06",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts check out. UK retailers list the SSK001K1 as the 'Black Grape' GMT with a 42.5mm case, and USD 495 fits its US retail price. It's a fun, good-value automatic GMT, but the basic 4R34 movement and plain finishing use only a quarter of the USD 2,000 budget. A mechanical connoisseur's first good watch would be better served by stronger picks in this range, such as an Oris, Longines, Christopher Ward or a higher-end Seiko.",
+      "wrongFacts": [],
+      "costUsd": 0.0331
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-07",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out on NOMOS's US store: the Club ref. 701 sells for USD 1,830, is 36 mm, uses the in-house hand-wound Alpha calibre and is rated to 10 atm (100 m). It's an in-house German manual watch from a respected maker for under USD 2,000, a strong first good watch for a mechanical connoisseur.",
+      "wrongFacts": [],
+      "costUsd": 0.03774
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-08",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": null,
+      "reason": "",
+      "wrongFacts": [],
+      "costUsd": 0,
+      "error": "Expected ':' after property name in JSON at position 49 (line 1 column 50)"
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-09",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts look right: the SSK005K1 is the orange-dial Seiko 5 Sports SKX GMT, with a 42.5 mm case, the automatic 4R34 movement and 100 m water resistance, and about USD 456 is close to what it sells for. It's a fun, good-value watch, but it uses a fairly basic movement and uses only about a quarter of a USD 2,000 budget, so a mechanical connoisseur's first good watch has clearly stronger picks at this price.",
+      "wrongFacts": [],
+      "costUsd": 0.01246
+    },
+    {
+      "card": "archetype-mechanical_connoisseur-first_good_watch-10",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says USD 446 confirmed retail, but Seiko USA and authorized dealers list the SSK003 at USD 495. The watch itself is a fair entry-level mechanical GMT (42.5mm, automatic, 100m), but for a buyer with up to $2,000 there are stronger first-good-watch picks.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.02654
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-01",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: Blancpain's US site and authorized dealers list the 6651-1127-55B at $12,900 retail, in a 40mm steel case with the automatic caliber 1151. It's a refined, understated dress watch from a historic maison, so it fits a 'Quiet Custodian' exceptional-object request at $10,000 and up.",
+      "wrongFacts": [],
+      "costUsd": 0.02189
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-02",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "I checked the card's facts against retailer listings and they're right: US$32,300 retail, a 40mm 18k rose gold case, the automatic calibre 502.3SD and 30m water resistance. The 7147 is a classic Breguet dress watch with a grand feu enamel dial, a quiet and exceptional piece that fits the 'Quiet Custodian' request at US$10,000 and up very well.",
+      "wrongFacts": [],
+      "costUsd": 0.03119
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Lange 1 Moon Phase ref. 192.032 in rose gold is 38.5 mm with the manual-wind L121.3 calibre, and those card facts match the real watch. It's quiet, beautifully finished German haute horlogerie, an excellent choice for an exceptional object above USD 10,000, and the approximate price of about USD 55,600 is plausible for its market.",
+      "wrongFacts": [],
+      "costUsd": 0.00991
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-04",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The Saxonia Thin is a great choice for this request, but two facts on the card are wrong. Lange's own site lists reference 201.027 in white gold at 37 mm, not 40 mm, with a US retail price of $27,000, not $23,600. The manual movement and 30 m (3 bar) water resistance are correct.",
+      "wrongFacts": [
+        "size",
+        "price"
+      ],
+      "costUsd": 0.03583
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-05",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Tank Louis Cartier Large WGTA0011 is a quiet, classic gold dress watch with a manual-wind movement, which suits this request well. Wempe lists it at €15,400, and its 33.7 x 25.5 mm case and in-house 1917 MC hand-wound movement match the card.",
+      "wrongFacts": [],
+      "costUsd": 0.02585
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-06",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card calls the movement manual, but every L.U.C 1860 runs on the self-winding micro-rotor calibre L.U.C 96.40-L. The reference also looks wrong: Chopard's current 36.5 mm Lucent Steel models are 168860-3003 (salmon dial) and 168860-3005 (blue dial), both USD 29,700. One less reliable review site lists 168860-3001 as an older 40 mm steel model.",
+      "wrongFacts": [
+        "movement",
+        "reference"
+      ],
+      "costUsd": 0.04874
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-07",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Saxonia Moon Phase 384.031 is a quiet, refined object of exceptional quality from Glashütte, which fits 'The Quiet Custodian' well. The 40 mm size and the automatic L086.5 movement are correct, and the approximate price of about $35,000 is plausible for this white gold model. I did not search to confirm these facts; they are from memory.",
+      "wrongFacts": [],
+      "costUsd": 0.01169
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-08",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Ref. 330.032 is a real model: the Saxonia Annual Calendar in pink gold, 38.5mm, with the automatic L085.1 movement. It's a quiet, finely made Lange that suits an understated 'exceptional object' request well above USD 10,000. One caveat: Lange has discontinued it, so the approximate USD 47,460 isn't a current retail price, and pre-owned examples sell for about USD 40,000.",
+      "wrongFacts": [],
+      "costUsd": 0.0307
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-09",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The watch suits the request very well: the pink gold Lange 1 191.032 (38.5 mm, hand-wound) is a classic pick for this brief. But the price is wrong. The card's own source, Lange's US page, lists $49,500, not EUR 49,400, and I couldn't find an official euro price to support the card's figure.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.04473
+    },
+    {
+      "card": "archetype-quiet_custodian-exceptional_object-10",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts check out: PAM01045 is the 38mm Luminor Due in polished Goldtech with a white dial, the P.900 automatic and 30m water resistance, and EUR 14,900 is in line with the roughly $14,840 retail price. It's a good-looking gold dress watch, but for a quiet, heirloom-type piece above $10,000, a gold JLC Reverso, a Cartier Tank or a Vacheron Patrimony would be the stronger pick. Panerai's value as an heirloom and its fine finishing don't match those at this price.",
+      "wrongFacts": [],
+      "costUsd": 0.02955
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-01",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Explorer 36 (124270) is the textbook 'recognised standard-bearer' and fits the USD 5,000–10,000 budget. Rolex.com confirms the USD 7,900 US retail price, and the 36 mm case, automatic calibre 3230 and 100 m water resistance are all correct. Note that the linked grey dealer charges USD 11,750, so the 7,900 price applies only through an authorised dealer.",
+      "wrongFacts": [],
+      "costUsd": 0.04799
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-02",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact checks out. Omega's US site lists ref. 220.10.38.20.03.004 as the 38mm steel Summer Blue Aqua Terra with the automatic Calibre 8800 and 150m water resistance, at $7,800. It sits in the middle of the $5,000–10,000 budget. As an all-rounder from a leading brand, it's exactly what a specialist would suggest for an established 'standard-bearer' piece. One caveat: Omega's global page says this model is no longer available, though the US page still sells it.",
+      "wrongFacts": [],
+      "costUsd": 0.03
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference WSSA0029 is the Santos de Cartier Medium, which measures 35.1 mm wide, not the 39.8 mm Large. The steel Large is WSSA0018. Cartier lists WSSA0029 as the medium model, and a retailer sells it at about USD 8,520, so the card's model, reference and size don't match. Otherwise a steel Santos is a strong pick for this brief.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "reference"
+      ],
+      "costUsd": 0.02603
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-04",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The steel Datejust 36 is the textbook watch for a well-known, established collection piece, and it sits well inside the $5,000 to $10,000 budget. Rolex's US site confirms every fact on the card: $8,350 retail (that's the Jubilee bracelet version; the Oyster bracelet is $8,150), a 36 mm case, the self-winding calibre 3235 and 100 m water resistance.",
+      "wrongFacts": [],
+      "costUsd": 0.03633
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-05",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Seamaster Diver 300M is a standard-bearer: an icon everyone recognises and a natural fit for an established collection at this budget. Omega US lists this blue-on-rubber reference at USD 6,300, so the price is right, and the 42 mm case, automatic Master Chronometer 8800 movement and 300 m water resistance also match.",
+      "wrongFacts": [],
+      "costUsd": 0.04096
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-06",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The JLC Polaris Automatic is a good fit for this request, but two facts on the card are wrong. Q9008160 doesn't turn up anywhere: the 41mm Polaris Automatic is sold as Q9008170, Q9008180, Q9008471 and Q9008480, and the official site now lists these as out of collection. USD 6,600 isn't a confirmed retail price either. Retailers list it at about $9,300 to $10,700, and $6,600 matches Chrono24's approximate figure for the entry Polaris.",
+      "wrongFacts": [
+        "price",
+        "reference"
+      ],
+      "costUsd": 0.05322
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-07",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "IW326905 is the discontinued, limited-edition ceramic Pilot's Watch Automatic 41 Black Aces, not a standard Pilot's 41 in the current range. It is rated to 60 m (6 bar), not 100 m, and as a past-collection piece it has no current confirmed retail price.",
+      "wrongFacts": [
+        "water",
+        "model",
+        "price"
+      ],
+      "costUsd": 0.03299
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-08",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The SBGM221 is a well-regarded Grand Seiko from an established line. It costs USD 5,400 at full retail, which fits the $5,000–10,000 budget, and it suits a buyer who wants a recognised standard-bearer. Grand Seiko's US site confirms the price. The 39.5 mm size and automatic movement are also correct, and the 30 m rating matches its 3 bar 'splash resistant' spec.",
+      "wrongFacts": [],
+      "costUsd": 0.02692
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-09",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Chanel's own listing shows ref. H5699 is the white-ceramic J12 Calibre 12.2 with a 33mm case, not the Calibre 12.1 at 38mm the card describes. The USD 7,950 price belongs to that 33mm H5699. Chanel's 38mm Calibre 12.1 J12s carry other references, such as the black H5697 at USD 8,350.",
+      "wrongFacts": [
+        "model",
+        "size"
+      ],
+      "costUsd": 0.02658
+    },
+    {
+      "card": "archetype-recognised_standard_bearer-established_collection-10",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: Breitling's US site lists ref. AB0147101L1A1 at USD 7,450, and it has the in-house automatic B01 chronograph movement, a 44 mm case and 300 m water resistance. It's a solid in-house chronograph within budget, but the Avenger is a big, tool-like secondary line rather than a 'standard-bearer'. A Navitimer B01 or Omega Speedmaster would represent the idea far better.",
+      "wrongFacts": [],
+      "costUsd": 0.02227
+    }
+  ]
+}

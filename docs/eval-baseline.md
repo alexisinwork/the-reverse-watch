@@ -289,13 +289,83 @@ What the flagged cards point to:
    Aquanaut alternatives and a diver for the Snowflake were rated poor;
    ranking does not weigh brand standing or design language.
 
+## The judge and the catalogue's facts (2026-11-26)
+
+The owner asked for a judge that decides without them ("добавь судью. Чтобы
+он умел грамотно решать сам — без моего участия"). `scripts/judge-cards.ts`
+read the owner's 203 rated cards twice, with two model families, through
+Perplexity's Agent API with web search. Every third rated card of each tool
+was held out and never used to write the instructions.
+
+| | Opus 5.5 | Gemini 4 Hydrogen |
+| --- | ---: | ---: |
+| Cards judged | 203 of 203 | 186 of 203 (17 errors) |
+| Spend | $6.67 | $5.15 |
+| Same rating as the owner, held-out cards | 41% | 37% |
+| Same side as the owner (good/ok against poor/wrong), held out | 61% | 52% |
+| Film cards: same rating as the owner, all | 90% | 90% |
+
+Opus is the judge from here on: no errors and the closer agreement. The low
+agreement on quiz and alternatives cards has one cause: the judges check
+facts, and the owner's ratings judged the choice. Both judges named the same
+wrong fact on 77 cards, 69 of them rated good or acceptable by the owner
+(alternatives 50, quiz 17, film 2): water resistance 26, case size 24, model
+20, reference 16, price 11, movement 7 (a card can have several). Six of
+them were checked by hand on the makers' or retailers' pages, and all six
+were real errors: Timex TW2V24700 is rated 100 m, not 200 m; the Excelsior
+Park EP95000 is hand-wound, not automatic; Ball's Engineer III Outlier is
+DG9000B, not DG3030A; Mühle's S.A.R. Rescue-Timer is M1-41-03-KB, not
+M1-28-70-KB; the Nodus Sector Deep is 38 mm, not 40 mm; Mathey-Tissot
+H453AN is a quartz Mathy I, not an automatic diver.
+
+Where the wrong facts come from (cards both judges read):
+
+| Where the card's watch came from | Cards | With a wrong fact |
+| --- | ---: | ---: |
+| Added by an AI search (source page from the maker or a retailer) | 128 | 72 (56%) |
+| Imported from a watch database (dials) | 16 | 2 (13%) |
+| Found live, not in the catalogue | 2 | 1 |
+
+The archetype cards, which the owner checked by hand but did not rate
+here, went to the judge alone ($2.65): 34 of 78 wrong (44%), 20 good, 19
+acceptable, 5 poor; 76 of the 78 showed AI-found watches (model 14, size
+14, price 14, reference 9, water resistance 8, movement 5; for example the
+Cartier Tank Must Large WSTA0052 is quartz, not automatic).
+
+The 3,590 AI-found watches are 14% of the catalogue but fill most result
+places, because every field of theirs is filled. The free evaluation's zero
+hard-rule violations is measured against the stored facts, so it cannot see
+a stored fact that is wrong.
+
+**Repair, step 1** (`scripts/fact-check-catalogue.ts`, pilot on 60 of those
+watches, $2.92, nothing written): the judge model named the maker's page for
+47; our server opened 42 (4 blocked, 1 gone), and 35 showed the reference
+in their text. Per fact: model 25 confirmed and 3 corrected, case diameter
+24 and 4, movement 28 and 3, water resistance 24 and 6; the rest could not
+be confirmed. Twelve watches have a verified correction, among them Alpina
+AL-730NS4AE6B (41 mm and 100 m on Alpina's page, not 42.5 mm and 200 m),
+Lip 671541 (quartz), Laco 862100 (the Augsburg Blaue Stunde 42, not a Halle
+38) and Oris 733 (automatic, not quartz). On the 19 watches both judges had
+found clean it proposed no correction. Nine references look invented: no
+maker page exists for them, and eight of their nine stored pages are gone.
+Two rules were tightened afterwards: a page's address that contains the
+reference proves nothing (one pilot page showed it only there), and a case
+length, thickness or lug width is not a diameter (Frederique Constant's
+"Case Length 40 mm", the one correction that no longer counts). A free first
+pass that reads each watch's stored page confirmed the stored diameter for
+19 and the water resistance for 18 of the 60, with one disagreement each
+against the paid check.
+
 ## Known gaps the scores point to
 
-- Film: whether the new passage rule turns the 15 found sightings into
-  confirmed ones is not yet measured; it needs a paid re-check (about
-  $0.11 for the film searches).
-- Relevance beyond hard rules needs the owner's (or a specialist's) ratings
-  of the 321-card sample (`docs/reports/rating-sheet-2026-11-26.json`).
-- Evaluations need database credentials, so they run locally, not in CI;
-  adding read-only credentials to CI secrets is an owner action
-  (`docs/OWNER_QUESTIONS.md`).
+- Facts: about half of the quiz, archetype and alternatives cards that show
+  an AI-found watch carry a wrong fact (above). Repair steps 2–4:
+  `docs/OWNER_QUESTIONS.md` #7.
+- Film: confirmations are strict (23 of 352 test requests confirmed); paid
+  re-checks wait for the backoff.
+- The evaluation can run in CI as the read-only `reserve_eval_reader`
+  (migration 0123, `.github/workflows/eval.yml`) once the owner has run
+  `scripts/set-eval-reader-password.ts` (`docs/OWNER_QUESTIONS.md` #6). The
+  evaluation of 2026-11-26 after the price fixes passed every gate
+  (`docs/reports/eval-2026-11-26-rest-check.json`), and the same run over the
+  PostgreSQL path gave an identical report.
