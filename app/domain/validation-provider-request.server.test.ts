@@ -142,10 +142,14 @@ describe("bounded validation requests", () => {
       max_output_tokens: 600,
       store: false,
     });
+    // A sighting's second check reads more of each page and has room to
+    // answer after thinking.
     expect(result.muse.body).toMatchObject({
-      max_tool_calls: 1,
-      max_output_tokens: 1200,
+      max_tool_calls: 2,
+      reasoning: { effort: "low" },
+      max_output_tokens: 6000,
       store: false,
+      tools: [{ type: "web_search", search_context_size: "medium" }],
     });
     expect(result.perplexity.body.input).toBe(
       "Omega 2201.50.00 Daniel Craig Quantum of Solace",
@@ -180,6 +184,57 @@ describe("bounded validation requests", () => {
     );
     expect(result.perplexity.body.input).toBe(
       "Omega Planet Ocean Daniel Craig Quantum of Solace",
+    );
+  });
+
+  it("sends a sighting's second check to another site, with the wearer as a search hint", () => {
+    const film = buildValidationRequests(
+      {
+        brand: "Bvlgari",
+        model: "CH35S",
+        referenceCode: "CH35S",
+        person: null,
+        work: "Heat",
+        avoidHost: "watchreel.watch",
+        wearerHint: "Vincent Hanna (Al Pacino)",
+      },
+      "muse-spark-1.3-contributor",
+    );
+    expect(film.muse.body.input).toBe(
+      "Bvlgari CH35S Heat Vincent Hanna (Al Pacino)",
+    );
+    expect(film.muse.body.instructions).toContain(
+      "The first source, on watchreel.watch, has already been checked: cite a page on a different website.",
+    );
+    // The hint helps the search only; Perplexity's request is unchanged.
+    expect(film.perplexity.body.input).toBe("Bvlgari CH35S Heat");
+    expect(() =>
+      buildValidationRequests(
+        { ...brief, avoidHost: "https://watchreel.watch/x" },
+        "muse-spark-1.3-contributor",
+      ),
+    ).toThrow();
+    expect(() =>
+      buildValidationRequests(
+        { ...brief, wearerHint: "visitor@example.com" },
+        "muse-spark-1.3-contributor",
+      ),
+    ).toThrow();
+  });
+
+  it("keeps the short second check for a watch without a sighting", () => {
+    const plain = buildValidationRequests(
+      { ...brief, person: null, work: null },
+      "muse-spark-1.3-contributor",
+    );
+    expect(plain.muse.body).toMatchObject({
+      max_tool_calls: 1,
+      reasoning: { effort: "minimal" },
+      max_output_tokens: 1200,
+      tools: [{ type: "web_search", search_context_size: "low" }],
+    });
+    expect(plain.muse.body.instructions).toContain(
+      "Prefer an independent catalogue, established retailer or editorial watch publication",
     );
   });
 });

@@ -73,6 +73,28 @@ export function samePerson(
   return personNames(b).some((name) => first.has(name.replace(/ /g, "")));
 }
 
+/** Brands written more than one way on pages: Bulgari's house style is
+ * "Bvlgari". Each group lists every spelling, folded. */
+const BRAND_SPELLINGS: readonly (readonly string[])[] = [
+  ["bvlgari", "bulgari"],
+];
+
+/** Every spelling of a brand, folded ("Bvlgari" → bvlgari, bulgari). */
+export function brandNames(brand: string | null | undefined): string[] {
+  const name = fold(brand ?? "");
+  if (!name) return [];
+  return [...(BRAND_SPELLINGS.find((names) => names.includes(name)) ?? [name])];
+}
+
+/** Two brand names are the same house, ignoring spaces and spellings. */
+export function sameBrand(
+  a: string | null | undefined,
+  b: string | null | undefined,
+) {
+  const first = new Set(brandNames(a).map((name) => name.replace(/ /g, "")));
+  return brandNames(b).some((name) => first.has(name.replace(/ /g, "")));
+}
+
 /** Folded text with a space at each end, for whole-name `includes` checks. */
 export const spacedWords = (value: string) => ` ${fold(value)} `;
 
@@ -176,7 +198,7 @@ export function passageTiesSighting(
   const person = personNames(watch.details.person);
   const work = workNames(watch.details.work);
   return (
-    text.includes(spacedWords(watch.brand)) &&
+    mentionsAny(text, brandNames(watch.brand)) &&
     namesWatch &&
     (person.length === 0 || mentionsAny(text, person)) &&
     (work.length === 0 || mentionsAny(text, work))

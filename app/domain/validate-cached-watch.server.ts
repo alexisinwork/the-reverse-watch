@@ -142,17 +142,25 @@ export async function validateCachedWatchFromSources(
       ? await inspectEvidence(watch, secondary, fetchImpl, primaryHost)
       : null;
   const second = alternate?.status === "matched" ? alternate : initialSecond;
+  // A sighting keeps the passage found verbatim on the page that was
+  // checked, which may be a better sentence than the provider quoted.
   const result = validateCachedWatch(
     watch,
     {
       ...primary,
       sourceVerified: first.status === "matched",
       sourceUrl: first.finalUrl ?? primary.sourceUrl,
+      ...(first.status === "matched" && first.passage
+        ? { sourceQuote: first.passage }
+        : {}),
     },
     {
       ...secondary,
       sourceVerified: second.status === "matched",
       sourceUrl: second.finalUrl ?? secondary.sourceUrl,
+      ...(second.status === "matched" && second.passage
+        ? { sourceQuote: second.passage }
+        : {}),
     },
     options.checkedAt ?? new Date().toISOString(),
   );

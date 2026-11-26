@@ -88,6 +88,8 @@ describe("validating a cached result under a reservation", () => {
         "movementType",
         "price",
       ],
+      // The independent check is told where the saved sighting came from.
+      avoidHost: "example.com",
     });
   });
 

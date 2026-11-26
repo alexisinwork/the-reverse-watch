@@ -66,6 +66,18 @@ export function safeHttpUrl(value: string | null | undefined) {
   }
 }
 
+/** The site a public page sits on ("www.hodinkee.com" → "hodinkee.com"),
+ * or null for anything that is not a plain public host name. */
+export function sourceHost(value: string | null | undefined) {
+  const safe = safeHttpUrl(value);
+  const host = safe
+    ? new URL(safe).hostname.toLowerCase().replace(/^www\./, "")
+    : "";
+  return /^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9-]+)+$/.test(host)
+    ? host
+    : null;
+}
+
 const MAX_REDIRECTS = 4;
 
 /**

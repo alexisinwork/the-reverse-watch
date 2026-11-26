@@ -3,7 +3,10 @@ import { z } from "zod";
 import { parseModelJson } from "./ai-providers.server";
 import type { ValidationEvidence } from "./cached-result-validation";
 import { safeHttpUrl } from "./source-pages.server";
-import { FILM_DISCOVERY_SEARCHES } from "./validation-provider-request.server";
+import {
+  FILM_DISCOVERY_SEARCHES,
+  MUSE_SIGHTING_TOOL_CALLS,
+} from "./validation-provider-request.server";
 
 const claimSchema = z.object({
   brand: z.string().trim().min(1).max(160),
@@ -36,6 +39,21 @@ const claimSchema = z.object({
     .max(4)
     .default([]),
 });
+
+/** A Muse tool call either searches (one or more billed queries) or opens a
+ * page it found to read it in full. */
+const museAction = z.union([
+  z.object({
+    type: z.literal("search"),
+    queries: z.array(z.string().min(1)).min(1).optional(),
+    query: z.string().min(1).optional(),
+  }),
+  z.object({ type: z.literal("open_page"), url: z.string().min(1) }),
+]);
+const searchQueries = (action: z.infer<typeof museAction>) =>
+  action.type === "search"
+    ? (action.queries?.length ?? (action.query ? 1 : 0))
+    : 0;
 
 const url = (value: string) => safeHttpUrl(value);
 function matchingCitation(source: string, citations: string[]) {
@@ -98,15 +116,11 @@ export function estimatedMuseCost(body: unknown): number | null {
   for (const search of parsed.data.output.filter(
     (item) => item.type === "web_search_call",
   )) {
-    const action = z
-      .object({
-        type: z.literal("search"),
-        queries: z.array(z.string().min(1)).min(1).optional(),
-        query: z.string().min(1).optional(),
-      })
-      .safeParse(search.action);
+    const action = museAction.safeParse(search.action);
     if (!action.success) return null;
-    const n = action.data.queries?.length ?? (action.data.query ? 1 : 0);
+    // An opened page is counted like a search: the accounting stays
+    // conservative whether or not Meta bills it.
+    const n = action.data.type === "open_page" ? 1 : searchQueries(action.data);
     if (!n) return null;
     count += n;
   }
@@ -278,22 +292,21 @@ export function parseMuseValidationResponse(
       }),
     })
     .parse(body);
-  const searches = response.output.filter(
+  // A card check searches once; a sighting check may then open one page it
+  // found. One hosted search call can hold several billed queries, so the
+  // queries are counted, not the calls.
+  const calls = response.output.filter(
     (item) => item.type === "web_search_call",
   );
-  if (searches.length !== 1 || searches[0]?.status !== "completed")
-    throw new Error("Muse did not complete exactly one web search");
-  // One hosted tool call can contain multiple billed search queries. Do not
-  // infer the number of queries from the number of web_search_call items.
-  const action = z
-    .object({
-      type: z.literal("search"),
-      queries: z.array(z.string().min(1)).min(1).optional(),
-      query: z.string().min(1).optional(),
-    })
-    .parse(searches[0].action);
-  const queryCount = action.queries?.length ?? (action.query ? 1 : 0);
-  if (!queryCount) throw new Error("Muse search query count is unavailable");
+  if (
+    calls.length < 1 ||
+    calls.length > MUSE_SIGHTING_TOOL_CALLS ||
+    calls.some((call) => call.status !== "completed")
+  )
+    throw new Error("Muse did not complete its web search");
+  const actions = calls.map((call) => museAction.parse(call.action));
+  if (!actions.some((action) => searchQueries(action) > 0))
+    throw new Error("Muse search query count is unavailable");
   const blocks = response.output.flatMap((item) => {
     if (
       item.type !== "message" ||
@@ -330,28 +343,44 @@ export function parseMuseValidationResponse(
         : [],
     ),
   );
-  const searchResults = z
-    .object({
-      results: z.array(z.object({ url: z.string() }).passthrough()).nullish(),
-      action: z
-        .object({
-          sources: z
-            .array(z.object({ url: z.string() }).passthrough())
-            .optional(),
-        })
-        .passthrough(),
-    })
-    .parse(searches[0]);
+  const callSources = calls.map((call) =>
+    z
+      .object({
+        results: z.array(z.object({ url: z.string() }).passthrough()).nullish(),
+        action: z
+          .object({
+            sources: z
+              .array(z.object({ url: z.string() }).passthrough())
+              .optional(),
+            url: z.string().optional(),
+          })
+          .passthrough(),
+      })
+      .parse(call),
+  );
+  // Pages Muse opened were read in full, so they come right after its own
+  // citations.
+  const opened = callSources.flatMap((call, index) =>
+    actions[index]?.type === "open_page" && call.action.url
+      ? [call.action.url]
+      : [],
+  );
+  const results = callSources.flatMap((call) =>
+    (call.results ?? []).map((source) => source.url),
+  );
   const citations = [
     ...annotations,
-    ...(searchResults.results ?? []).map((source) => source.url),
-    ...(searchResults.action.sources ?? []).map((source) => source.url),
+    ...opened,
+    ...results,
+    ...callSources.flatMap((call) =>
+      (call.action.sources ?? []).map((source) => source.url),
+    ),
   ];
   const claim = claimSchema.parse(parseModelJson(content));
   const citedSource = matchingCitation(claim.sourceUrl, citations)
     ? claim.sourceUrl
-    : searchResults.results
-        ?.map((source) => safeHttpUrl(source.url))
+    : [...opened, ...results]
+        .map((source) => safeHttpUrl(source))
         .find((source) => source !== null);
   if (!citedSource) throw new Error("Muse claim has no matching citation");
   const costUsd = estimatedMuseCost(body);

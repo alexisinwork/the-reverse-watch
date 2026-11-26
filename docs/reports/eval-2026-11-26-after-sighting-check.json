@@ -1,0 +1,94 @@
+{
+  "at": "2026-11-26T15:07:16.115Z",
+  "fxDate": "2026-11-26",
+  "guard": {
+    "providerRequests": [],
+    "blockedWrites": 45,
+    "blockedFunctions": [
+      "ai_watch_search_store_v1"
+    ]
+  },
+  "quiz": {
+    "profiles": 40,
+    "exactCards": 263,
+    "violations": 0,
+    "profilesWithExact": 30,
+    "closeFits": 135,
+    "closeFitsWithoutReason": 0,
+    "baselineRandomExactRate": 0.0169,
+    "violationExamples": [],
+    "exactPrecision": 1
+  },
+  "alternatives": {
+    "cases": 60,
+    "resolvedTargets": 6,
+    "comparableTargets": 6,
+    "inTop5": 7,
+    "inTop10": 7,
+    "randomTop10Expected": 1.1645474085999719,
+    "sameBrandCases": [
+      "TAG Heuer Monaco → TAG Heuer Monaco automatic chronograph",
+      "Cartier Santos de Cartier → Cartier Santos Galbée",
+      "Grand Seiko Snowflake SBGA211 → Seiko Presage Sharp Edged SPB165"
+    ],
+    "recallAt5": 0.1167,
+    "recallAt10": 0.1167,
+    "randomRecallAt10": 0.0194
+  },
+  "film": {
+    "positives": 20,
+    "answered": 20,
+    "foundConfirmed": 20,
+    "foundAny": 20,
+    "negativeViolations": [],
+    "leakage": [],
+    "recallConfirmed": 1,
+    "recallAny": 1,
+    "randomBaseline": "about 1 in 25,000 per card (one labelled watch in the pool)"
+  },
+  "filmIndependent": {
+    "file": "data/eval/film-labels-independent-2026-11-26.json",
+    "sha256": "e6a60a0681271518a0115b1476025965fca25af049de42d46a9027b926a4fb01",
+    "review": "awaiting owner review",
+    "positives": 19,
+    "answered": 16,
+    "foundAny": 16,
+    "foundConfirmed": 0,
+    "confirmed": [],
+    "onlyPossible": [
+      "le-mans-monaco-1133b",
+      "steve-mcqueen-monaco",
+      "goldeneye-seamaster-2541",
+      "casino-royale-planet-ocean",
+      "casino-royale-diver-300m",
+      "thunderball-top-time",
+      "apocalypse-now-seiko-6105",
+      "magnum-pi-gmt-master",
+      "live-and-let-die-submariner-5513",
+      "live-and-let-die-pulsar",
+      "daylight-panerai-5218",
+      "gordon-gekko-santos",
+      "jfk-omega-slimline",
+      "andy-warhol-tank",
+      "jackie-kennedy-tank",
+      "the-martian-belowzero"
+    ],
+    "missed": [
+      "blue-hawaii-ventura",
+      "dr-no-submariner",
+      "buzz-aldrin-speedmaster"
+    ],
+    "controlViolations": [],
+    "leakage": [],
+    "recallConfirmed": 0,
+    "recallAny": 0.8421
+  },
+  "gates": {
+    "noProviderRequests": true,
+    "zeroQuizHardConstraintViolations": true,
+    "zeroNegativeSightings": true,
+    "noFilmQueryLeakage": true,
+    "zeroInventedSightingsForControls": true,
+    "noIndependentQueryLeakage": true
+  }
+}

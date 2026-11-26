@@ -100,7 +100,10 @@ export function validationProviderCalls(deps: Deps) {
             "content-type": "application/json",
           },
           body: JSON.stringify(request.body),
-          signal: AbortSignal.timeout(35_000),
+          // A sighting check may open a page after searching.
+          signal: AbortSignal.timeout(
+            brief.person || brief.work ? 60_000 : 35_000,
+          ),
         },
       );
       const body: unknown = await response.json().catch(() => null);

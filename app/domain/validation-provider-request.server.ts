@@ -42,6 +42,18 @@ const briefSchema = z
       )
       .max(4)
       .optional(),
+    /** A sighting's first source was checked on this site; the second,
+     * independent check must come from another one. */
+    avoidHost: z
+      .string()
+      .trim()
+      .max(253)
+      .regex(/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9-]+)+$/i)
+      .nullable()
+      .optional(),
+    /** Who wears it on screen, as the first source reported: a search hint
+     * for a film card, never an attribution of its own. */
+    wearerHint: publicName.nullable().optional(),
   })
   .strict();
 
@@ -149,6 +161,9 @@ const claimSchema = {
   additionalProperties: false,
 };
 
+/** A sighting's second check may search once and open one page it found. */
+export const MUSE_SIGHTING_TOOL_CALLS = 2;
+
 /** These builders do not make network requests. Callers must reserve budget,
  * pin provider settings and account for provider charges before using them. */
 export function buildValidationRequests(
@@ -176,6 +191,27 @@ export function buildValidationRequests(
     .filter(Boolean)
     .join(" ");
   const groundedInstructions = `${instructions} Requested missing fields: ${JSON.stringify(brief.missingFields ?? [])}. Use exactly one search query, starting with the brand and exact reference. The model title is not evidence.`;
+  // A sighting's second check reads more of each page, may open one page it
+  // found and think a little before answering, and looks on another site than
+  // the first source (relevance before cost, owner 2026-11-26: about $0.006 a
+  // check instead of $0.003). Our server still opens the page and checks the
+  // exact reference and the sentence itself.
+  const sighting = Boolean(brief.person || brief.work);
+  const museInput = sighting
+    ? [inputQuery, brief.wearerHint].filter(Boolean).join(" ")
+    : inputQuery;
+  const museSighting = sighting
+    ? [
+        " This is the second, independent check of a reported sighting: prefer an editorial article or a film-watch database page that documents it.",
+        " For this sighting, set supported true when a page you found states that this watch (its brand with this reference or its model name) appears in the work or on the person; you may open one page you found to read it in full. Give that page's URL exactly as the search tool returned it and copy its sentence when you can. Our server opens the page and checks the exact reference and the sentence itself.",
+        brief.avoidHost
+          ? ` The first source, on ${brief.avoidHost}, has already been checked: cite a page on a different website.`
+          : "",
+        brief.wearerHint
+          ? ` The first source names the wearer as ${JSON.stringify(brief.wearerHint)}; use it only to find the page.`
+          : "",
+      ].join("")
+    : " Prefer an independent catalogue, established retailer or editorial watch publication for this second check, rather than the manufacturer's own page.";
   return {
     perplexity: {
       endpoint: "https://api.perplexity.ai/v1/agent",
@@ -205,14 +241,20 @@ export function buildValidationRequests(
     muse: {
       body: {
         model: museModel,
-        instructions: `${groundedInstructions} Prefer an independent catalogue, established retailer or editorial watch publication for this second check, rather than the manufacturer's own page. The reference must still match exactly.`,
-        input: inputQuery,
-        tools: [{ type: "web_search", search_context_size: "low" }],
+        instructions: `${groundedInstructions}${museSighting} The reference must still match exactly.`,
+        input: museInput,
+        tools: [
+          {
+            type: "web_search",
+            search_context_size: sighting ? "medium" : "low",
+          },
+        ],
         include: ["web_search_call.results", "web_search_call.action.sources"],
-        max_tool_calls: 1,
-        max_output_tokens: 1200,
+        max_tool_calls: sighting ? MUSE_SIGHTING_TOOL_CALLS : 1,
+        // Reasoning over an opened page counts against this cap.
+        max_output_tokens: sighting ? 6000 : 1200,
         store: false,
-        reasoning: { effort: "minimal" },
+        reasoning: { effort: sighting ? "low" : "minimal" },
         text: {
           format: {
             type: "json_schema",
@@ -307,7 +349,7 @@ export function buildFilmDiscoveryRequest(
         `Work like a researcher reading articles. Search for articles and database pages that catalogue this subject's watches (for example "watches in <film>", "<person> watches", "what watch does <character> wear"). Prefer specialist sources: IMWDb (imwdb.org), James Bond Lifestyle, Watches of Espionage, Oracle of Time, Hodinkee, Monochrome, Fratello, aBlogtoWatch, WatchTime, Revolution, Quill & Pad, Worn & Wound, Time+Tide, auction lots (Phillips, Christie's, Sotheby's, Bonhams, Antiquorum), the watchmaker's own pages, and established newspapers or magazines. Use up to ${FILM_DISCOVERY_SEARCHES} searches, each different.`,
         "Return every distinct wristwatch those pages document for this subject, up to twenty, each taken from the page that documents it. Prefer distinct models over colour variants and rank by quality of evidence.",
         `Already found, do not repeat: ${JSON.stringify(excluded)}.`,
-        "For each watch return: brand; a concise model name; the exact manufacturer reference only when that page states it, otherwise null; sourceUrl, the exact URL of that page from your search results; sourceQuote, a passage of at most 30 words copied verbatim from that page that names the subject and the watch (brand with model or reference).",
+        'For each watch return: brand; a concise model name; the exact manufacturer reference whenever that page states it anywhere (for example "Ref. 2900.50.91" or "the 7A28-7000"), otherwise null; sourceUrl, the exact URL of that page from your search results; sourceQuote, one sentence of at most 30 words copied verbatim from that page that names the subject and the watch by its brand together with its model or reference, preferring the sentence that gives the reference.',
         isWork
           ? "Put the exact subject title in work. Put the wearer in person only when the page names them; otherwise null."
           : "Put the exact subject name in person. Put the film, series or occasion in work only when the page names it; otherwise null.",

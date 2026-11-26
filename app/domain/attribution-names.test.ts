@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  brandNames,
   distinctiveModelWords,
+  sameBrand,
   passageTiesSighting,
   personNames,
   samePerson,
@@ -114,5 +116,15 @@ describe("sameWork", () => {
     expect(samePerson("John Wick (Keanu Reeves)", "John Wick")).toBe(true);
     expect(samePerson("Keanu Reeves as John Wick", "John Wick")).toBe(true);
     expect(samePerson("Keanu Reeves", "John Wick")).toBe(false);
+  });
+});
+
+describe("brand spellings", () => {
+  it("knows Bulgari's house spelling and ignores spaces", () => {
+    expect(brandNames("Bvlgari")).toEqual(["bvlgari", "bulgari"]);
+    expect(sameBrand("Bulgari", "BVLGARI")).toBe(true);
+    expect(sameBrand("TAGHeuer", "TAG Heuer")).toBe(true);
+    expect(sameBrand("Omega", "Longines")).toBe(false);
+    expect(sameBrand(null, "Omega")).toBe(false);
   });
 });

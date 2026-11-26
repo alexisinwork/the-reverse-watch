@@ -1,7 +1,7 @@
 /** Pure evidence reconciliation for a cached watch. Provider responses must
  * first be schema-validated and their cited pages inspected by the caller. */
 import type { FoundWatch } from "./ai-watch-types";
-import { samePerson, sameWork } from "./attribution-names";
+import { sameBrand, samePerson, sameWork } from "./attribution-names";
 import { safeHttpUrl } from "./source-pages.server";
 
 export type ValidationFact = {
@@ -70,7 +70,7 @@ export function validateCachedWatch(
     )
       return { status: "unverified", reason: "source passage required" };
     if (
-      fold(item.brand) !== fold(watch.brand) ||
+      !sameBrand(item.brand, watch.brand) ||
       fold(item.referenceCode) !== reference
     )
       return { status: "unverified", reason: "brand or reference conflict" };

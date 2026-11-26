@@ -5,6 +5,7 @@ import type {
 } from "./validate-cached-search.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import { ProviderCostError } from "./validation-provider-response.server";
+import { sourceHost } from "./source-pages.server";
 
 /** One call to each provider, retaining charges even for rejected assertions.
  * The caller must already own a durable reservation for this card. */
@@ -29,6 +30,11 @@ export async function checkWatchWithProviders(
       ...(watch.details.movement == null ? ["movementType" as const] : []),
       ...(watch.details.price == null ? ["price" as const] : []),
     ],
+    // A saved sighting came from this site; the independent check looks
+    // on another one.
+    ...(watch.details.person || watch.details.work
+      ? { avoidHost: sourceHost(watch.sourceUrl) }
+      : {}),
   };
   const [primary, secondary] = await Promise.allSettled([
     services.primary(brief),

@@ -14,6 +14,10 @@ export type ValidationBrief = {
   missingFields?: (
     "caseDiameterMm" | "waterResistanceM" | "movementType" | "price"
   )[];
+  /** A sighting's first source was checked on this site. */
+  avoidHost?: string | null;
+  /** The wearer the first source names, as a search hint for a film card. */
+  wearerHint?: string | null;
 };
 
 type Reserve =

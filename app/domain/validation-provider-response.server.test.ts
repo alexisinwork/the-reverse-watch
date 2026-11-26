@@ -327,4 +327,52 @@ describe("provider validation response evidence", () => {
       ),
     ).toThrow();
   });
+
+  it("reads a sighting check that searched and then opened one page", () => {
+    const opened = "https://reader.example/heat-watches";
+    const body = {
+      ...muse,
+      output: [
+        {
+          type: "web_search_call",
+          status: "completed",
+          action: { type: "search", query: "Omega 2201.50.00" },
+          results: [{ url: "https://result.example/one" }],
+        },
+        {
+          type: "web_search_call",
+          status: "completed",
+          action: { type: "open_page", url: opened },
+        },
+        muse.output[1],
+      ],
+    };
+    const parsed = parseMuseValidationResponse(
+      body,
+      "muse-spark-1.3-contributor",
+    );
+    // One search and one opened page, each counted at the search price.
+    expect(parsed.costUsd).toBeCloseTo(0.0052);
+    expect(parsed.evidence.citedUrls).toContain(opened);
+    expect(() =>
+      parseMuseValidationResponse(
+        { ...body, output: [body.output[1], muse.output[1]] },
+        "muse-spark-1.3-contributor",
+      ),
+    ).toThrow("query count");
+    expect(() =>
+      parseMuseValidationResponse(
+        {
+          ...body,
+          output: [
+            body.output[0],
+            body.output[1],
+            body.output[0],
+            muse.output[1],
+          ],
+        },
+        "muse-spark-1.3-contributor",
+      ),
+    ).toThrow("web search");
+  });
 });

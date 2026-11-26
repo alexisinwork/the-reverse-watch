@@ -1,6 +1,12 @@
 import { describe, expect, it, vi } from "vitest";
 import type { FoundWatch } from "./ai-watch-types";
-import { inspectCachedResultSource } from "./cached-result-source-check.server";
+import {
+  headingPassage,
+  inspectCachedResultSource,
+  pageSentences,
+  sightingPassage,
+} from "./cached-result-source-check.server";
+import { passageTiesSighting } from "./attribution-names";
 
 const watch: FoundWatch = {
   brand: "Omega",
@@ -43,7 +49,11 @@ describe("checking source pages for cached watch claims", () => {
         response(html),
         "Daniel Craig wore Omega 231.10.39.21.03.001 in Skyfall.",
       ),
-    ).toEqual({ status: "matched", finalUrl: "https://source.example/a" });
+    ).toEqual({
+      status: "matched",
+      finalUrl: "https://source.example/a",
+      passage: "Daniel Craig wore Omega 231.10.39.21.03.001 in Skyfall.",
+    });
   });
 
   it("rejects a fabricated passage when the person and reference occur separately", async () => {
@@ -188,5 +198,143 @@ describe("checking sightings written the way providers write them", () => {
         )
       ).status,
     ).toBe("missing");
+  });
+});
+
+describe("reading the page's own sentences for a sighting", () => {
+  const ripley: FoundWatch = {
+    brand: "Seiko",
+    model: "7A28-7000",
+    referenceCode: "7A28-7000",
+    sourceUrl: "https://example.com",
+    imageUrl: null,
+    priceNote: null,
+    rationale: "",
+    details: { person: null, work: "Aliens" },
+  };
+  const hodinkee =
+    "<h1>Sigourney Weaver Wears A Seiko Ripley In Aliens</h1>" +
+    "<p>Its asymmetric case became known as the &quot;Ripley&quot; after Sigourney Weaver wore it as Ellen Ripley in <em>Aliens</em> (1986).</p>" +
+    "<p>We are, of course, talking about Seiko&#8217;s 7A28-7000, as seen on the wrist of Ellen Ripley (Sigourney Weaver) in James Cameron&#8217;s 1986 film, Aliens.</p>";
+
+  it("finds the sentence that ties the watch when the provider quoted another one", async () => {
+    const result = await inspectCachedResultSource(
+      ripley,
+      "https://source.example/aliens",
+      response(hodinkee),
+      "Its asymmetric case became known as the Ripley after Sigourney Weaver wore it as Ellen Ripley in Aliens (1986).",
+    );
+    expect(result.status).toBe("matched");
+    expect(result.passage).toBe(
+      "We are, of course, talking about Seiko’s 7A28-7000, as seen on the wrist of Ellen Ripley (Sigourney Weaver) in James Cameron’s 1986 film, Aliens.",
+    );
+  });
+
+  it("never joins two sentences or a heading and a paragraph into a tie", async () => {
+    const apart =
+      "<h2>Aliens</h2><p>Sigourney Weaver stars in Aliens.</p><p>The Seiko 7A28-7000 is a quartz chronograph.</p>";
+    expect(
+      (
+        await inspectCachedResultSource(
+          ripley,
+          "https://source.example/apart",
+          response(apart),
+        )
+      ).status,
+    ).toBe("missing");
+  });
+
+  it("takes a short run of words from a long sentence", () => {
+    const long =
+      "<p>Among the many pieces of hardware that the production designers gathered for the colonial marines, and long before anyone called it by a nickname, the Seiko 7A28-7000 appeared in Aliens on the wrist of its heroine, which collectors still talk about at every meeting today.</p>";
+    const passage = sightingPassage(long, ripley);
+    expect(passage).toBe("Seiko 7A28-7000 appeared in Aliens");
+  });
+
+  it("keeps an abbreviation inside its sentence", () => {
+    expect(
+      pageSentences(
+        "<p>Sean Connery wore a Rolex Submariner 6538 in Dr. No. It was his own watch.</p>",
+      ),
+    ).toEqual([
+      "Sean Connery wore a Rolex Submariner 6538 in Dr. No.",
+      "It was his own watch.",
+    ]);
+    expect(
+      sightingPassage(
+        "<p>Sean Connery wore a Rolex Submariner 6538 in Dr. No. It was his own watch.</p>",
+        {
+          brand: "Rolex",
+          model: "6538",
+          referenceCode: "6538",
+          details: { person: null, work: "Dr. No" },
+        },
+      ),
+    ).toBe("Sean Connery wore a Rolex Submariner 6538 in Dr. No.");
+  });
+});
+
+describe("a page about the subject", () => {
+  const mcclane: FoundWatch = {
+    brand: "TAG Heuer",
+    model: "232.206",
+    referenceCode: "232.206",
+    sourceUrl: "https://example.com",
+    imageUrl: null,
+    priceNote: null,
+    rationale: "",
+    details: { person: null, work: "Die Hard" },
+  };
+  const bamf =
+    "<html><head><title>Bruce Willis in Die Hard &raquo; BAMF Style</title></head><body>" +
+    "<h2>The Watch</h2><p>He also wears a chunky stainless steel TAG Heuer 3000 Professional chronograph, specifically the ref. 232.206 with a rotating steel bezel and three dark sub-dials that the production auctioned years later.</p></body></html>";
+
+  it("ties a sentence with the exact reference to the film its title names", async () => {
+    const result = await inspectCachedResultSource(
+      mcclane,
+      "https://source.example/die-hard",
+      response(bamf),
+    );
+    expect(result.status).toBe("matched");
+    expect(result.passage).toBe(
+      "Bruce Willis in Die Hard » BAMF Style … TAG Heuer 3000 Professional chronograph, specifically the ref. 232.206",
+    );
+    // The stored passage satisfies the same rule when a snapshot is read.
+    expect(passageTiesSighting(result.passage!, mcclane)).toBe(true);
+  });
+
+  it("needs the title to name this film and the sentence the exact reference", () => {
+    expect(
+      headingPassage(bamf.replace("Die Hard", "Die Hard 2"), {
+        ...mcclane,
+        details: { person: null, work: "Die Hard" },
+      }),
+    ).not.toBeNull(); // "Die Hard 2" still names "Die Hard" as whole words
+    expect(
+      headingPassage(
+        bamf.replace("Bruce Willis in Die Hard", "Every watch in Nolan films"),
+        mcclane,
+      ),
+    ).toBeNull();
+    expect(
+      headingPassage(bamf.replace("ref. 232.206", "a quartz model"), mcclane),
+    ).toBeNull();
+  });
+
+  it("treats Bvlgari and Bulgari as one brand", async () => {
+    const heat =
+      "<p>In Heat, Val Kilmer wears the Bulgari Diagono Scuba SD38SG through most of the film.</p>";
+    const result = await inspectCachedResultSource(
+      {
+        ...mcclane,
+        brand: "Bvlgari",
+        model: "SD38SG",
+        referenceCode: "SD38SG",
+        details: { person: null, work: "Heat" },
+      },
+      "https://source.example/heat",
+      response(heat),
+    );
+    expect(result.status).toBe("matched");
   });
 });

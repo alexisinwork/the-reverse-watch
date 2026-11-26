@@ -88,7 +88,7 @@ describe("metered validation provider requests", () => {
       { max_tool_calls: 1, max_output_tokens: 600 },
     );
     expect(JSON.parse(String(fetchImpl.mock.calls[1]![1]?.body))).toMatchObject(
-      { max_tool_calls: 1, max_output_tokens: 1200 },
+      { max_tool_calls: 2, max_output_tokens: 6000 },
     );
   });
 

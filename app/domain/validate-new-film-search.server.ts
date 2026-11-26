@@ -11,9 +11,9 @@ import type {
   ValidationServices,
 } from "./validate-cached-search.server";
 import type { ValidationEvidence } from "./cached-result-validation";
-import { samePerson, sameWork } from "./attribution-names";
+import { sameBrand, samePerson, sameWork } from "./attribution-names";
 import { filmDiscoverySubjectSchema } from "./validation-provider-request.server";
-import { safeHttpUrl } from "./source-pages.server";
+import { safeHttpUrl, sourceHost } from "./source-pages.server";
 
 export type FilmDiscoverySubject = {
   query: string;
@@ -28,6 +28,16 @@ const fold = (value: string | null) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
     .replace(/[^a-z0-9]/g, "");
+
+/** A wearer name the first source gave, when it is only a plain name. */
+function wearerHint(value: string | null) {
+  const name = value?.trim() ?? "";
+  return name.length > 0 &&
+    name.length <= 160 &&
+    !/(?:https?:\/\/|\bwww\.|@|\b(?:\d{1,3}\.){3}\d{1,3}\b)/i.test(name)
+    ? name
+    : null;
+}
 
 /** One primary discovery call and at most one independent Muse call per card.
  * The full discovery charge is conservatively assigned to the first slot. */
@@ -204,7 +214,7 @@ export async function validateDiscoveredSearch(
     candidates.map(async ({ watch, evidence }, index) => {
       const candidate = hydrated[index]!;
       if (
-        fold(candidate.brand) !== fold(watch.brand) ||
+        !sameBrand(candidate.brand, watch.brand) ||
         normalizeReference(candidate.referenceCode) !==
           normalizeReference(watch.referenceCode)
       )
@@ -227,6 +237,16 @@ export async function validateDiscoveredSearch(
             : []),
           ...(candidate.details.price == null ? ["price" as const] : []),
         ],
+        // Sightings only: the second check is told where the first source
+        // was read and, for a film card, whom it names as the wearer.
+        ...(candidate.details.person || candidate.details.work
+          ? {
+              avoidHost: sourceHost(evidence.sourceUrl),
+              wearerHint: candidate.details.person
+                ? null
+                : wearerHint(evidence.person),
+            }
+          : {}),
       };
       let secondary: ProviderAssertion;
       try {
