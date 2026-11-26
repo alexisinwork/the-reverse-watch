@@ -5,8 +5,9 @@ new chat can continue in minutes. Owner decisions: `AGENTS.md` ("Speed,
 caching and relevance rebuild"). Detailed evidence: the roadmap section of the
 same name in `docs/implementation-roadmap.md`. Audit:
 https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4. Final report with the
-verification table (updated 2026-11-26 with the owner's answers, 15 of 15
-PASS, then with the paid round, the remaining budget and what launch needs):
+verification table (updated 2026-11-26 with the owner's answers, the paid
+round, the fixes, the remaining budget and what launch needs; 16 of 16 PASS
+on deployment `dpl_Ao4BDAaJHs8H7JSpfMcKVG8iTGmx` after the fixes):
 https://claude.ai/artifact/7X4Lo6q2mcvgw6ZoHDG1Wn. Owner's rating page:
 https://claude.ai/artifact/HarGVRCT49WRcp5ervd4RC (ratings are stored under
 `ratings/<rater>/cards` in its database; read them with ArtifactData).
@@ -80,6 +81,7 @@ node --env-file=.env --import tsx scripts/test-archetype-window.ts
 node --env-file=.env --import tsx scripts/test-alternatives-window.ts
 node --env-file=.env --import tsx scripts/test-name-lookups.ts
 node --env-file=.env --import tsx scripts/test-validation-backoff.ts --applied
+node --env-file=.env --import tsx scripts/test-image-conflict-publish.ts --applied
 node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts
 node --env-file=.env --import tsx scripts/check-archetype-window-equivalence.ts
 node --env-file=.env --import tsx scripts/check-alternatives-window-equivalence.ts

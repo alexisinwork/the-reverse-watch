@@ -1,11 +1,11 @@
 {
-  "at": "2026-11-26T08:42:57.047Z",
+  "at": "2026-11-26T12:49:43.573Z",
   "production": true,
   "results": [
     {
       "name": "Fast gate",
       "result": "PASS",
-      "seconds": 75,
+      "seconds": 58,
       "command": "npm run check",
       "what": "formatting, lint, types, all unit tests, production build"
     },
@@ -33,7 +33,7 @@
     {
       "name": "Migrations 0118–0120 (name lookups)",
       "result": "PASS",
-      "seconds": 14,
+      "seconds": 25,
       "command": "node --env-file=.env --import tsx scripts/test-name-lookups.ts",
       "what": "permissions, every Unicode code point, aliases, near misses, in a rolled-back transaction"
     },
@@ -45,44 +45,51 @@
       "what": "waits of 5 minutes, 1 hour, 1 day and 7 days after failed paid checks, in a rolled-back transaction"
     },
     {
+      "name": "Migration 0122 (keep the catalogue photo)",
+      "result": "PASS",
+      "seconds": 2,
+      "command": "node --env-file=.env --import tsx scripts/test-image-conflict-publish.ts --applied",
+      "what": "a checked answer is saved when the catalogue already has a different photo, which it keeps; invalid photo evidence is still refused"
+    },
+    {
       "name": "Quiz window equals the whole catalogue",
       "result": "PASS",
-      "seconds": 33,
+      "seconds": 41,
       "command": "node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts",
       "what": "64 answers, 0 differences allowed"
     },
     {
       "name": "Archetype window equals the whole catalogue",
       "result": "PASS",
-      "seconds": 16,
+      "seconds": 20,
       "command": "node --env-file=.env --import tsx scripts/check-archetype-window-equivalence.ts",
       "what": "all 24 archetype and band combinations, 0 differences allowed"
     },
     {
       "name": "Alternatives reads equal the whole catalogue",
       "result": "PASS",
-      "seconds": 92,
+      "seconds": 56,
       "command": "node --env-file=.env --import tsx scripts/check-alternatives-window-equivalence.ts",
       "what": "owner test-set names and budgets, 0 differences allowed"
     },
     {
       "name": "Name lookups equal the whole name index",
       "result": "PASS",
-      "seconds": 331,
+      "seconds": 233,
       "command": "node --env-file=.env --import tsx scripts/check-name-lookup-equivalence.ts --sample 20",
       "what": "a 20-row sample of the full 794-name run: same resolved watch and same named rows, 0 differences allowed"
     },
     {
       "name": "Quality evaluation",
       "result": "PASS",
-      "seconds": 47,
+      "seconds": 40,
       "command": "node --env-file=.env --import tsx scripts/run-evals.ts",
       "what": "0 hard-rule breaks, 0 forbidden sightings, no provider request; scores vs docs/eval-baseline.md"
     },
     {
       "name": "Page speed (production)",
       "result": "PASS",
-      "seconds": 4,
+      "seconds": 6,
       "command": "node --import tsx scripts/measure-page-speed.ts --label verify",
       "what": "first-byte medians and CDN hits for public pages"
     },
@@ -96,14 +103,14 @@
     {
       "name": "Search windows smoke (production)",
       "result": "PASS",
-      "seconds": 10,
+      "seconds": 7,
       "command": "node --env-file=.env --import tsx scripts/smoke-catalogue-windows.ts",
       "what": "saved archetype and alternatives answers; 0 added paid attempts"
     },
     {
       "name": "Quiz API speed (production)",
       "result": "PASS",
-      "seconds": 5,
+      "seconds": 14,
       "command": "node --env-file=.env --import tsx scripts/measure-quiz-api.ts --label verify",
       "what": "answers the catalogue covers, no provider call"
     }
