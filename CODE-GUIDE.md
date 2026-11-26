@@ -192,7 +192,18 @@ main/PRs; the lint command generates route types for a clean checkout.
 hourly with its own operations token. `operations-health.server.ts` calls only
 the service-role readiness RPC, not a paid provider. Migration 0109 recovers
 same-query abandoned checks at their full reserved cost; 0111 confines legacy
-analytics and enqueue writes to server callers using `rpcHeaders`.
+analytics and enqueue writes to server callers using `rpcHeaders`. Migration
+0121 makes the wait between paid re-checks of one saved search grow after each
+failure (5 minutes, 1 hour, 1 day, then 7 days) inside
+`ai_watch_validation_reserve_v4`, which every paid path goes through;
+`scripts/test-validation-backoff.ts` proves the schedule.
+
+`scripts/measure-page-weight.ts` measures the compressed JavaScript four public
+pages need before they react (budget 150 KB, `docs/ENGINEERING_STANDARDS.md`).
+`scripts/run-evals.ts` also scores the independent film set
+(`data/eval/film-labels-independent-2026-11-26.json`); any confirmed card for
+its invented control subjects fails the run. `docs/evaluation-budget.md` prices
+a paid evaluation round.
 
 `scripts/export-local-catalogue-snapshot.ts` exports application-owned tables
 in a consistent read-only transaction into the ignored local archive.
@@ -311,6 +322,8 @@ other channel (npm, Shopify app, WordPress.org, Wix…):
 | Widget themes (colours, fonts)                                   | `partnerThemeSchema` and `themeVariables` in `domain/partner-sites.ts`                    |
 | The partner script tag                                           | `public/embed.js` (and its test `app/embed-loader.test.ts`)                               |
 | The WordPress plugin                                             | `integrations/wordpress/the-reserve/`, then `npx tsx scripts/package-wordpress-plugin.ts` |
+| Where an episode's short link leads                              | `target` in `app/data/episode-links.json` (`docs/episode-links.md`)                       |
+| A new partner site from the command line                         | `scripts/create-partner-site.ts "Name" https://site.example --quota 1000`                 |
 
 ## When something breaks
 
@@ -337,7 +350,10 @@ available. A deployed environment may still run an earlier revision.
 | Prices look stale          | The daily cron `/internal/catalogue/recheck-prices` (`CRON_SECRET`), Vercel cron logs.                                                |
 
 Every error is logged as one JSON line with an `event` name, so searching the
-Vercel logs for the event name finds it. Sentry collects page errors.
+Vercel logs for the event name finds it. Sentry collects page errors. In the
+browser it is not part of the first download: `app/entry.client.tsx` loads
+`app/sentry.client.ts` once the page is idle, or at once when an error happens
+first, and errors from that first moment wait in `app/client-errors.ts`.
 
 ## Security in one list
 

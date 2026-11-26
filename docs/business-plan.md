@@ -865,3 +865,14 @@ Evidence: `docs/reports/ten-option-completion-production.json` and
 Current engineering next action: observe the existing usefulness feedback and
 incomplete coverage without a bulk paid job. The commercial next action remains
 unchanged.
+
+Owner answers, 2026-11-26: the Vercel project is on Pro (team plan `pro`,
+checked), so the commercial-use precondition for a paid pilot is met. A
+dedicated production partner for the portfolio origin exists, "Portfolio demo
+(oleksandr-kukhtin.dev)" with 1,000 uses a month and no secret key, and the
+portfolio's default public key is pushed (`personal-website` `9c99572`). The
+public demo still returns 404 because Lovable publishes only when the owner
+clicks Publish → Update. Version 2 on Next.js is cancelled; the site stays on
+React Router 7. **Next action:** after that publish, verify
+`https://oleksandr-kukhtin.dev/watch-advisor-demo` (all five tools, mobile, a
+blocked origin, the usage counters), then offer the first bounded paid pilot.

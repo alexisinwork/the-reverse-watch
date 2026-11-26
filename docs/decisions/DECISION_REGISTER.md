@@ -7,9 +7,15 @@ owner approves, with the owner's words.
 
 | Date | Decision | Where |
 | --- | --- | --- |
+| 2026-11-26 | No Next.js version 2; the site stays on React Router 7 ("отмена перехода на next js"). Cancels the 2026-11-25 version 2 plan | AGENTS.md, "Speed, caching and relevance rebuild" |
+| 2026-11-26 | Vercel Pro (upgraded by the owner; commercial use permitted) | same |
+| 2026-11-26 | Sentry may load after the first paint ("можно") | AGENTS.md, "Owner decisions, 2026-11-26" |
+| 2026-11-26 | Episode links follow the agent's advice ("согласно твоим советам делай"): each opens the tool its video's closing line names | same; `docs/episode-links.md` |
+| 2026-11-26 | A production partner key for the portfolio demo ("разрешаю") | same; `docs/business-plan.md` |
+| 2026-11-26 | The independent film set made as honest as possible ("делай максимально честную"); awaits the owner's review | same; `docs/eval-baseline.md` |
 | 2026-11-25 | Film and people search shows confirmed sightings; no ten-card target there | AGENTS.md, "Speed, caching and relevance rebuild" |
 | 2026-11-25 | Catalogue hard filters run in PostgreSQL | same |
-| 2026-11-25 | Version 2 on the EstateVanta starter kit (Next.js) after phase 0 | same |
+| ~~2026-11-25~~ | ~~Version 2 on the EstateVanta starter kit (Next.js) after phase 0~~, cancelled 2026-11-26 | same |
 | 2026-11-25 | Subscription gating unchanged, to collect email | same |
 | 2026-11-25 | Unused legacy code archived on `archive/legacy-code` | same |
 | 2026-11-25 | Functions in `fra1`; database location decided from visit data | same |

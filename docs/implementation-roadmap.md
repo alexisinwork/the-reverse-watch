@@ -2339,14 +2339,20 @@ Phases, in order:
    THEORY §9.14–9.15). Ranking signals are fused by rank (RRF, `k` measured on
    this catalogue), explanations use stored facts only, and fetched source
    pages reach a model only inside a per-request delimiter.
-2. **Version 2 scaffold** on the EstateVanta starter kit with the shared search
+2. ~~**Version 2 scaffold** on the EstateVanta starter kit with the shared search
    engine and the four cache levels (CDN, shared result cache, PostgreSQL
-   search, AI research on shortfall with negative caching).
-3. **Tools moved one at a time:** archetype, stories, film search, alternatives,
-   quiz. Each switches only after its eval comparison.
-4. **Widgets and API on version 2:** cacheable frames, a lighter embed bundle,
+   search, AI research on shortfall with negative caching).~~
+3. ~~**Tools moved one at a time:** archetype, stories, film search, alternatives,
+   quiz. Each switches only after its eval comparison.~~
+4. ~~**Widgets and API on version 2:** cacheable frames, a lighter embed bundle,
    a versioned `embed.js`, a partner setting for unverified cards and a hard
-   ceiling on paid calls.
+   ceiling on paid calls.~~
+
+   **Phases 2–4 cancelled by the owner on 2026-11-26** ("отмена перехода на
+   next js"): the site stays on React Router 7, where phase 0 met the speed
+   goals. Items from them that still matter on the current site (negative
+   caching, a lighter embed bundle, a hard ceiling on paid calls) are taken
+   one at a time on React Router when the measurements call for them.
 5. **Clean-up and handoff:** legacy code to an archive branch and tag;
    `STATUS_AND_HANDOFF.md`, `NEXT_CHAT.md`, updated guides.
 
@@ -2519,3 +2525,51 @@ before anything used it; `watch_catalogue_name_candidates_v1` stays unused.
   database buffers and 64 ms warm; the rest is the function starting.
   Recorded as a follow-up.
 - PASS `npm run check`: 105 files, 669 tests, build.
+
+### Owner answers, 2026-11-26
+
+The owner answered the nine open questions: Vercel Pro is on (check it, and
+install `@vercel/analytics`); the portfolio key is allowed; explain the
+certificate download and what read-only access needs; give the budget for an
+honest check of all four tools; make the film set as honest as possible;
+Sentry may load later; episode links as advised; no Next.js version 2.
+
+- PASS Vercel: `vercel teams ls` shows the team on plan `pro`. Web Analytics
+  has been on since 2026-08-27 and has data; `@vercel/analytics` 2.0.1 is
+  already installed in `app/root.tsx` (with query strings removed) and is the
+  latest release, so `npm i` changes nothing. Visits, 27 August to 26
+  November: about 170 visitors, US 85 (103 views), Poland 42 (209 views,
+  mostly the owner's and the agent's checks); too thin to move the database.
+- Sentry after the first paint (`35a4a77`): production JavaScript before,
+  compressed: home 168.4 KB, archetype 186.7 KB, diagnostic 168.4 KB, film
+  search 186.1 KB (`docs/reports/page-weight-before-sentry.json`); the local
+  build after: 122.2, 140.5, 122.2, 140.0 KB (brotli estimate). In the browser
+  Sentry's file started 209 ms after page load, after the load event at
+  161 ms. Errors before it loads wait in a queue of at most 25 and are sent in
+  order.
+- Episode links (`9e37eac`): each opens the tool its video's closing line
+  names; 70 of 70 recording scripts for episodes 11–80 contain exactly their
+  rotating text, episodes 1–10 follow their own spoken line. 26 archetype,
+  25 alternatives, 29 diagnostic.
+- Portfolio demo: production partner "Portfolio demo (oleksandr-kukhtin.dev)"
+  created (one origin, 1,000 uses a month, no secret key); the portfolio's
+  default key committed and pushed (`personal-website` `9c99572`). Its build,
+  lint and types pass. NOT RUN: the live page, until the owner publishes in
+  Lovable (it still returns 404).
+- Found while pricing the evaluation: paid checks published 0 of 17 results
+  in November. Not an outage: one saved film search (Heat) had been re-checked
+  30 times since 28 October ($0.24), five minutes apart, failing the same
+  source check each time. Migration 0121 (`216b9b5`, applied) makes the wait
+  grow after each failure: 5 minutes, 1 hour, 1 day, 7 days. PASS
+  `scripts/test-validation-backoff.ts`; it FAILS against the old function, as
+  it should; the existing retry and abandoned-attempt tests pass.
+- Independent film set (`e568a71`, committed before its first score): 19
+  sightings over 17 searches, every label backed by at least two pages opened
+  and read (39), two invented controls, five exclusions with reasons. Saved
+  research only: 0 of 19 confirmed, 6 of 19 shown as possible, 0 invented
+  confirmations. PASS the evaluation gates, 0 provider requests.
+- Evaluation budget (`docs/evaluation-budget.md`): one live round of all four
+  tools needs at most 279 paid attempts, expected $4–16, ceiling $56; the
+  recommendation is $60 a round, $150 for three, plus about 300 human-rated
+  cards. Separately, 15,901 of 25,014 searchable watches lack styles, size or
+  movement; completing them costs about $80–320.

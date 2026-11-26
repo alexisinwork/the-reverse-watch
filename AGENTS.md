@@ -152,10 +152,12 @@ speed and cost.
   each server and filtering in code. This supersedes the "filtered in code"
   wording of the 2026-09-30 decision; the catalogue still answers first, and
   live AI search still runs only on a shortfall.
-- **New version on the EstateVanta starter-kit stack** (Next.js App Router),
-  after phase 0 lands on the current React Router site. The database (additive
-  migrations only), page URLs, partner keys and the `embed.js` contract stay
-  unchanged.
+- **No Next.js version 2** (owner, 2026-11-26: "отмена перехода на next js").
+  This cancels the 2026-11-25 plan for a new version on the EstateVanta
+  starter-kit stack: the site stays on React Router 7, where phase 0 met the
+  speed goals. The database (additive migrations only), page URLs, partner keys
+  and the `embed.js` contract stay unchanged; the starter kit's skills and
+  continuity documents stay.
 - **Subscription gating stays as it is:** film search and the archetype quiz
   are free; the diagnostic and cheaper alternatives need the newsletter
   subscription, so that the site collects email addresses.
@@ -166,8 +168,29 @@ speed and cost.
 - **Functions run in `fra1`**, next to the Supabase database in eu-central-1.
   Whether to move the database closer to the audience is decided later from
   country-level visit data.
-- The project is on Vercel **Hobby**, which does not permit commercial use. The
-  owner upgrades to Pro before the first paying partner.
+- The project is on Vercel **Pro** since 2026-11-26 (the owner upgraded; the
+  team plan reads `pro`), so commercial use and paying partners are permitted.
+  Visit data so far (Vercel Web Analytics, 27 August to 26 November: about 170
+  visitors, mostly the United States and the owner's own checks from Poland)
+  is too thin to move the database.
+
+## Owner decisions, 2026-11-26
+
+- **Sentry loads after the first paint.** `app/entry.client.tsx` imports
+  `app/sentry.client.ts` once the page has loaded and the browser is idle, or
+  at once when an error happens first; earlier errors wait in
+  `app/client-errors.ts`. Keep every public page's first-load JavaScript within
+  150 KB compressed (`scripts/measure-page-weight.ts`).
+- **Episode short links open the tool each video's closing line names**
+  (`docs/episode-links.md`).
+- **The portfolio demo has its own production partner**, "Portfolio demo
+  (oleksandr-kukhtin.dev)": that one origin, 1,000 uses a month, public key
+  only.
+- **The independent film set** (`data/eval/film-labels-independent-2026-11-26.json`)
+  is labelled from opened sources only, was committed before its first score,
+  and is never edited to raise a score.
+- **Paid re-checks back off** after each failure of the same saved search:
+  5 minutes, 1 hour, 1 day, then 7 days (migration 0121).
 
 ## Continuity and skills (EstateVanta starter kit, 2026-11-25)
 
