@@ -1,0 +1,97 @@
+{
+  "at": "2026-11-26T07:44:52.306Z",
+  "base": "https://thereserve.watch",
+  "label": "before-sentry",
+  "budgetKB": 150,
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "scripts": 10,
+      "wireKB": 168.4,
+      "rawKB": 602.3,
+      "largest": [
+        {
+          "file": "/assets/entry.client-BUPIPcPU.js",
+          "wireKB": 86.7
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-B7kWDP_2.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-B-WVVUjf.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": false
+    },
+    {
+      "path": "/watches/archetype",
+      "status": 200,
+      "scripts": 20,
+      "wireKB": 186.7,
+      "rawKB": 659.6,
+      "largest": [
+        {
+          "file": "/assets/entry.client-BUPIPcPU.js",
+          "wireKB": 86.7
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-B7kWDP_2.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-B-WVVUjf.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": false
+    },
+    {
+      "path": "/quiz",
+      "status": 200,
+      "scripts": 10,
+      "wireKB": 168.4,
+      "rawKB": 602.3,
+      "largest": [
+        {
+          "file": "/assets/entry.client-BUPIPcPU.js",
+          "wireKB": 86.7
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-B7kWDP_2.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-B-WVVUjf.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": false
+    },
+    {
+      "path": "/watches/find",
+      "status": 200,
+      "scripts": 20,
+      "wireKB": 186.1,
+      "rawKB": 657.7,
+      "largest": [
+        {
+          "file": "/assets/entry.client-BUPIPcPU.js",
+          "wireKB": 86.7
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-B7kWDP_2.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-B-WVVUjf.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": false
+    }
+  ],
+  "result": "FAIL"
+}

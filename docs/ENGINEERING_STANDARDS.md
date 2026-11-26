@@ -41,6 +41,7 @@ Each feature documents its request flow as a table: step, file, responsibility. 
 | Worst-case data | Layout and limits | Long names, unbreakable emails, empty lists, huge counts, non-Latin text, every language |
 | Live checks | The deployed system works | Never reset data, and never run once real users exist |
 | Scale | Speed at expected volume | Measured p50 and p95 on a stated dataset, or NOT RUN |
+| Page weight | What a visitor downloads before a page reacts | At most 150 KB of compressed JavaScript on the first load of each public page, measured on production by `scripts/measure-page-weight.ts`; scripts that load later on their own (Sentry once the page is idle, Vercel's analytics script) do not count |
 
 Stand-ins replace outside services in automated tests, including timeouts, errors, duplicates and late or out-of-order events. Real checks against an outside service run only when the owner asks.
 

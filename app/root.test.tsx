@@ -1,23 +1,26 @@
 import { render, screen } from "@testing-library/react";
 import { vi } from "vitest";
 
-const { captureException } = vi.hoisted(() => ({
-  captureException: vi.fn(),
+const { reportClientError } = vi.hoisted(() => ({
+  reportClientError: vi.fn(),
 }));
 
-vi.mock("@sentry/react-router", () => ({ captureException }));
+vi.mock("./client-errors", () => ({ reportClientError }));
 
 import { ErrorBoundary, redactAnalyticsUrl } from "./root";
 
 describe("root error reporting", () => {
-  beforeEach(() => captureException.mockClear());
+  beforeEach(() => reportClientError.mockClear());
 
   it("captures unexpected errors while preserving the branded boundary", () => {
     const error = new Error("unexpected diagnostic failure");
 
     render(<ErrorBoundary error={error} params={{}} />);
 
-    expect(captureException).toHaveBeenCalledWith(error);
+    expect(reportClientError).toHaveBeenCalledWith({
+      source: "boundary",
+      error,
+    });
     expect(
       screen.getByRole("heading", { name: "Archive unavailable" }),
     ).toBeVisible();
@@ -36,7 +39,7 @@ describe("root error reporting", () => {
       />,
     );
 
-    expect(captureException).not.toHaveBeenCalled();
+    expect(reportClientError).not.toHaveBeenCalled();
     expect(
       screen.getByRole("heading", { name: "Record not found" }),
     ).toBeVisible();

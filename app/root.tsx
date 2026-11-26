@@ -7,10 +7,10 @@ import {
   ScrollRestoration,
   useLocation,
 } from "react-router";
-import * as Sentry from "@sentry/react-router";
 import { Analytics, type BeforeSendEvent } from "@vercel/analytics/react";
 
 import type { Route } from "./+types/root";
+import { reportClientError } from "./client-errors";
 import { YouTubeCallout } from "./components/youtube-callout";
 import { InteractionAnalytics } from "./components/interaction-analytics";
 import { requestMiddleware } from "./middleware.server";
@@ -87,7 +87,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
         ? "The page may have been moved or was never entered into the archive."
         : error.statusText || detail;
   } else if (error instanceof Error) {
-    Sentry.captureException(error);
+    // In the browser only: on the server entry.server.tsx reports it.
+    reportClientError({ source: "boundary", error });
     if (import.meta.env.DEV) {
       detail = error.message;
     }
