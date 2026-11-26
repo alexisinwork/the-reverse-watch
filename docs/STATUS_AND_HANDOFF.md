@@ -5,10 +5,10 @@ new chat can continue in minutes. Owner decisions: `AGENTS.md` ("Speed,
 caching and relevance rebuild"). Detailed evidence: the roadmap section of the
 same name in `docs/implementation-roadmap.md`. Audit:
 https://claude.ai/artifact/X6DjxGiMJUZqJH2EEb3aX4. Final report with the
-verification table (updated 2026-11-26 with the owner's answers, the paid
-round, the fixes, the remaining budget and what launch needs; 16 of 16 PASS
-again at 2026-11-26 17:05 UTC on the deployment of `6d3493b`, after the film
-search work, `docs/reports/verify-all-2026-11-26.json`):
+verification table (v9, updated 2026-11-26 at night with the judge, the
+catalogue's facts, repair step 1 and the read-only evaluation; 16 of 16 PASS
+again at 2026-11-26 22:19 UTC on the deployment of `8f83aea`,
+`docs/reports/verify-all-2026-11-26.json`; GitHub checks green on it):
 https://claude.ai/artifact/7X4Lo6q2mcvgw6ZoHDG1Wn. Owner's rating page:
 https://claude.ai/artifact/HarGVRCT49WRcp5ervd4RC (ratings are stored under
 `ratings/<rater>/cards` in its database; read them with ArtifactData).

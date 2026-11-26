@@ -1,7 +1,8 @@
 {
-  "at": "2026-11-26T17:04:56.670Z",
+  "at": "2026-11-26T22:18:30.042Z",
   "fxDate": "2026-11-26",
   "guard": {
+    "database": "Supabase API with the service key",
     "providerRequests": [],
     "blockedWrites": 39,
     "blockedFunctions": [
@@ -25,7 +26,7 @@
     "comparableTargets": 6,
     "inTop5": 7,
     "inTop10": 7,
-    "randomTop10Expected": 1.1645474085999719,
+    "randomTop10Expected": 1.1646087544812,
     "sameBrandCases": [
       "TAG Heuer Monaco → TAG Heuer Monaco automatic chronograph",
       "Cartier Santos de Cartier → Cartier Santos Galbée",

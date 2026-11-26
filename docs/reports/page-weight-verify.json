@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-26T17:05:07.199Z",
+  "at": "2026-11-26T22:18:48.408Z",
   "base": "https://thereserve.watch",
   "label": "verify",
   "budgetKB": 150,
@@ -12,15 +12,15 @@
       "rawKB": 448.8,
       "largest": [
         {
-          "file": "/assets/entry.client-CDxEma5p.js",
-          "wireKB": 51.6
+          "file": "/assets/entry.client-DKWMpQyR.js",
+          "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-BHvYD1rD.js",
-          "wireKB": 37.9
+          "file": "/assets/chunk-62JRHF6Z-B2RGErVz.js",
+          "wireKB": 38
         },
         {
-          "file": "/assets/schemas-D2lbkgqH.js",
+          "file": "/assets/schemas-CtuBO9TU.js",
           "wireKB": 23.4
         }
       ],
@@ -34,15 +34,15 @@
       "rawKB": 506.1,
       "largest": [
         {
-          "file": "/assets/entry.client-CDxEma5p.js",
-          "wireKB": 51.6
+          "file": "/assets/entry.client-DKWMpQyR.js",
+          "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-BHvYD1rD.js",
-          "wireKB": 37.9
+          "file": "/assets/chunk-62JRHF6Z-B2RGErVz.js",
+          "wireKB": 38
         },
         {
-          "file": "/assets/schemas-D2lbkgqH.js",
+          "file": "/assets/schemas-CtuBO9TU.js",
           "wireKB": 23.4
         }
       ],
@@ -56,15 +56,15 @@
       "rawKB": 448.8,
       "largest": [
         {
-          "file": "/assets/entry.client-CDxEma5p.js",
-          "wireKB": 51.6
+          "file": "/assets/entry.client-DKWMpQyR.js",
+          "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-BHvYD1rD.js",
-          "wireKB": 37.9
+          "file": "/assets/chunk-62JRHF6Z-B2RGErVz.js",
+          "wireKB": 38
         },
         {
-          "file": "/assets/schemas-D2lbkgqH.js",
+          "file": "/assets/schemas-CtuBO9TU.js",
           "wireKB": 23.4
         }
       ],
@@ -74,19 +74,19 @@
       "path": "/watches/find",
       "status": 200,
       "scripts": 20,
-      "wireKB": 140,
+      "wireKB": 140.1,
       "rawKB": 504.2,
       "largest": [
         {
-          "file": "/assets/entry.client-CDxEma5p.js",
-          "wireKB": 51.6
+          "file": "/assets/entry.client-DKWMpQyR.js",
+          "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-BHvYD1rD.js",
-          "wireKB": 37.9
+          "file": "/assets/chunk-62JRHF6Z-B2RGErVz.js",
+          "wireKB": 38
         },
         {
-          "file": "/assets/schemas-D2lbkgqH.js",
+          "file": "/assets/schemas-CtuBO9TU.js",
           "wireKB": 23.4
         }
       ],

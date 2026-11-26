@@ -1,156 +1,156 @@
 {
-  "at": "2026-11-26T16:59:17.377Z",
+  "at": "2026-11-26T22:12:01.995Z",
   "fxDate": "2026-11-26",
   "wholePool": {
     "rows": 25014,
-    "readMs": 7167
+    "readMs": 7477
   },
   "combinations": 24,
   "supplementsCompared": 344,
   "window": {
     "rowsMax": 1967,
-    "readMsP50": 140,
-    "readMsMax": 290
+    "readMsP50": 168,
+    "readMsMax": 380
   },
   "results": [
     {
       "archetype": "field_rationalist",
       "band": "first_good_watch",
       "windowRows": 624,
-      "windowMs": 288,
+      "windowMs": 353,
       "supplements": 20
     },
     {
       "archetype": "field_rationalist",
       "band": "considered_entry",
       "windowRows": 1428,
-      "windowMs": 290,
+      "windowMs": 380,
       "supplements": 20
     },
     {
       "archetype": "field_rationalist",
       "band": "established_collection",
       "windowRows": 1590,
-      "windowMs": 256,
+      "windowMs": 338,
       "supplements": 20
     },
     {
       "archetype": "field_rationalist",
       "band": "exceptional_object",
       "windowRows": 1967,
-      "windowMs": 281,
+      "windowMs": 368,
       "supplements": 20
     },
     {
       "archetype": "quiet_custodian",
       "band": "first_good_watch",
       "windowRows": 460,
-      "windowMs": 130,
+      "windowMs": 303,
       "supplements": 20
     },
     {
       "archetype": "quiet_custodian",
       "band": "considered_entry",
       "windowRows": 688,
-      "windowMs": 145,
+      "windowMs": 215,
       "supplements": 20
     },
     {
       "archetype": "quiet_custodian",
       "band": "established_collection",
       "windowRows": 580,
-      "windowMs": 143,
+      "windowMs": 172,
       "supplements": 20
     },
     {
       "archetype": "quiet_custodian",
       "band": "exceptional_object",
       "windowRows": 552,
-      "windowMs": 111,
+      "windowMs": 159,
       "supplements": 20
     },
     {
       "archetype": "architectural_modernist",
       "band": "first_good_watch",
       "windowRows": 3,
+      "windowMs": 117,
+      "supplements": 3
+    },
+    {
+      "archetype": "architectural_modernist",
+      "band": "considered_entry",
+      "windowRows": 10,
+      "windowMs": 100,
+      "supplements": 9
+    },
+    {
+      "archetype": "architectural_modernist",
+      "band": "established_collection",
+      "windowRows": 40,
       "windowMs": 109,
-      "supplements": 3
-    },
-    {
-      "archetype": "architectural_modernist",
-      "band": "considered_entry",
-      "windowRows": 10,
-      "windowMs": 115,
-      "supplements": 9
-    },
-    {
-      "archetype": "architectural_modernist",
-      "band": "established_collection",
-      "windowRows": 40,
-      "windowMs": 96,
       "supplements": 20
     },
     {
       "archetype": "architectural_modernist",
-      "band": "exceptional_object",
-      "windowRows": 35,
-      "windowMs": 88,
-      "supplements": 20
-    },
-    {
-      "archetype": "expressive_collector",
-      "band": "first_good_watch",
-      "windowRows": 3,
-      "windowMs": 106,
-      "supplements": 3
-    },
-    {
-      "archetype": "expressive_collector",
-      "band": "considered_entry",
-      "windowRows": 10,
-      "windowMs": 97,
-      "supplements": 9
-    },
-    {
-      "archetype": "expressive_collector",
-      "band": "established_collection",
-      "windowRows": 40,
-      "windowMs": 101,
-      "supplements": 20
-    },
-    {
-      "archetype": "expressive_collector",
       "band": "exceptional_object",
       "windowRows": 35,
       "windowMs": 71,
       "supplements": 20
     },
     {
+      "archetype": "expressive_collector",
+      "band": "first_good_watch",
+      "windowRows": 3,
+      "windowMs": 114,
+      "supplements": 3
+    },
+    {
+      "archetype": "expressive_collector",
+      "band": "considered_entry",
+      "windowRows": 10,
+      "windowMs": 105,
+      "supplements": 9
+    },
+    {
+      "archetype": "expressive_collector",
+      "band": "established_collection",
+      "windowRows": 40,
+      "windowMs": 92,
+      "supplements": 20
+    },
+    {
+      "archetype": "expressive_collector",
+      "band": "exceptional_object",
+      "windowRows": 35,
+      "windowMs": 73,
+      "supplements": 20
+    },
+    {
       "archetype": "mechanical_connoisseur",
       "band": "first_good_watch",
       "windowRows": 249,
-      "windowMs": 146,
+      "windowMs": 143,
       "supplements": 20
     },
     {
       "archetype": "mechanical_connoisseur",
       "band": "considered_entry",
       "windowRows": 532,
-      "windowMs": 159,
+      "windowMs": 168,
       "supplements": 20
     },
     {
       "archetype": "mechanical_connoisseur",
       "band": "established_collection",
       "windowRows": 656,
-      "windowMs": 140,
+      "windowMs": 180,
       "supplements": 20
     },
     {
       "archetype": "mechanical_connoisseur",
       "band": "exceptional_object",
       "windowRows": 748,
-      "windowMs": 169,
+      "windowMs": 170,
       "supplements": 20
     },
     {
