@@ -273,6 +273,69 @@ describe("searchWithStore", () => {
     ]);
   });
 
+  it("binds a draft saved under a compound wearer name to the person searched", async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("ai_watch_search_get_v1")
+        ? json({
+            validationStatus: "unverified",
+            summary: "Draft.",
+            watches: [
+              {
+                ...foundWatch,
+                details: { person: "Andy Dufresne (Tim Robbins)" },
+              },
+            ],
+          })
+        : json(null),
+    );
+    const validateDraft = vi.fn(async () => ({
+      status: "unavailable" as const,
+      reason: "no confirmed candidates",
+    }));
+    await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "Tim Robbins", kind: "actor" },
+        run: finderMock.runAiWatchSearch,
+      },
+      { store, fetchImpl, validateDraft },
+    );
+    expect(validateDraft).toHaveBeenCalledWith(expect.any(String), [
+      expect.objectContaining({ details: { person: "Tim Robbins" } }),
+    ]);
+  });
+
+  it("searches anew when a saved draft holds nothing about the subject", async () => {
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("ai_watch_search_get_v1")
+        ? json({
+            validationStatus: "unverified",
+            summary: "Draft.",
+            watches: [{ ...foundWatch, details: { person: "Naomie Harris" } }],
+          })
+        : json(null),
+    );
+    const validateDraft = vi.fn();
+    const validateMissingFilm = vi.fn(async () => ({
+      status: "unavailable" as const,
+      reason: "no confirmed candidates",
+    }));
+    const result = await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "John Wick", kind: "character" },
+        run: finderMock.runAiWatchSearch,
+      },
+      { store, fetchImpl, validateDraft, validateMissingFilm },
+    );
+    expect(validateDraft).not.toHaveBeenCalled();
+    expect(validateMissingFilm).toHaveBeenCalledTimes(1);
+    expect(result).toMatchObject({
+      status: "unavailable",
+      reason: "verification_failed",
+    });
+  });
+
   it("never serves a checked snapshot for a different actor", async () => {
     const fetchImpl = vi.fn(async () =>
       json({

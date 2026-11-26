@@ -96,7 +96,8 @@ const CHECKS: Check[] = [
   },
   {
     name: "Quality evaluation",
-    command: tsx("scripts/run-evals.ts"),
+    // Its own report name, so a dated baseline report is never overwritten.
+    command: tsx("scripts/run-evals.ts", "--label", "verify"),
     needs: "database",
     what: "0 hard-rule breaks, 0 forbidden sightings, no provider request; scores vs docs/eval-baseline.md",
   },

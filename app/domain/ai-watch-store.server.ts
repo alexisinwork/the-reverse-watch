@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 
 import { z } from "zod";
 
+import { samePerson } from "./attribution-names";
 import { safeHttpUrl } from "./source-pages.server";
 import { loadValidatedSnapshot } from "./validated-cache.server";
 import type { ValidationRun } from "./validate-cached-search.server";
@@ -196,6 +197,14 @@ function bindFilmSubject(
     const current = watch.details[field];
     if (typeof current === "string" && foldSubject(current) === subject)
       return [watch];
+    // A wearer saved as "Andy Dufresne (Tim Robbins)" is the person searched
+    // as "Tim Robbins": one shared name, stored under the name searched.
+    if (
+      field === "person" &&
+      typeof current === "string" &&
+      samePerson(current, query)
+    )
+      return [{ ...watch, details: { ...watch.details, person: query } }];
     if (!current && allowMissing)
       return [{ ...watch, details: { ...watch.details, [field]: query } }];
     return [];
@@ -279,13 +288,15 @@ export async function searchWithStore(
           : ((await loadStoredSearch(store, cacheKey, fetchImpl)) ??
             (candidates?.length ? { watches: candidates } : null));
         let result: ValidationRun;
-        if (draft) {
-          const candidates =
-            kind === "film"
-              ? bindFilmSubject(draft.watches, cacheInput, true)
-              : draft.watches;
-          if (!candidates.length) return { status: "unavailable" };
-          result = await validateDraft(cacheKey, candidates);
+        const draftCandidates = !draft
+          ? []
+          : kind === "film"
+            ? bindFilmSubject(draft.watches, cacheInput, true)
+            : draft.watches;
+        // A saved draft with nothing about this subject must not block a
+        // fresh search for ever: research the subject anew instead.
+        if (draftCandidates.length) {
+          result = await validateDraft(cacheKey, draftCandidates);
         } else {
           const subject =
             kind === "film" ? filmSubjectSchema.safeParse(cacheInput) : null;
