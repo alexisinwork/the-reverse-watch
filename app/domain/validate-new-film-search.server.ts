@@ -19,6 +19,7 @@ import {
 } from "./attribution-names";
 import { filmDiscoverySubjectSchema } from "./validation-provider-request.server";
 import { safeHttpUrl, sourceHost } from "./source-pages.server";
+import { FILM_DISCOVERY_VERSION } from "./film-subject";
 
 export type FilmDiscoverySubject = {
   query: string;
@@ -71,6 +72,7 @@ export async function validateNewFilmSearch(
       isWork
         ? { person: null, work: subject.query }
         : roleAttribution(subject.query, evidence.person, evidence.work),
+    draftVersion: FILM_DISCOVERY_VERSION,
   });
 }
 
@@ -88,6 +90,8 @@ export async function validateDiscoveredSearch(
       person: string | null;
       work: string | null;
     };
+    /** Stamped on saved draft cards (FILM_DISCOVERY_VERSION for films). */
+    draftVersion?: number;
   },
 ): Promise<ValidationRun> {
   const cardAttribution = (evidence: ValidationEvidence) => {
@@ -179,7 +183,18 @@ export async function validateDiscoveredSearch(
     if (draft.length) {
       const unique = uniqueWatchResults(draft).slice(0, 10);
       const hydratedDraft = await services.hydrate(unique).catch(() => unique);
-      await services.captureCandidates(hydratedDraft).catch(() => undefined);
+      // The discovery that wrote the draft, so a later one can supersede it.
+      const version = services.draftVersion;
+      await services
+        .captureCandidates(
+          version
+            ? hydratedDraft.map((watch) => ({
+                ...watch,
+                details: { ...watch.details, discoveryVersion: version },
+              }))
+            : hydratedDraft,
+        )
+        .catch(() => undefined);
     }
   }
   const seen = new Set<string>();

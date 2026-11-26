@@ -4,6 +4,9 @@ export type WatchDetails = {
   /** Candidate coverage never promotes an uncertain association to a checked fact. */
   verificationStatus?: "unverified";
   verificationNote?: string;
+  /** On a saved film draft: the discovery that wrote it
+   * (FILM_DISCOVERY_VERSION). */
+  discoveryVersion?: number;
   imageEvidence?: {
     sourceUrl: string;
     imageUrl: string;

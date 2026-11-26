@@ -367,6 +367,47 @@ describe("searchWithStore", () => {
     });
   });
 
+  it("reads the articles again for a film draft written by an older discovery", async () => {
+    const draft = (details: Record<string, unknown>) =>
+      vi.fn(async (input: RequestInfo | URL) =>
+        String(input).includes("ai_watch_search_get_v1")
+          ? json({
+              validationStatus: "unverified",
+              summary: "Draft.",
+              watches: [{ ...foundWatch, details }],
+            })
+          : json(null),
+      );
+    const outcome = {
+      status: "unavailable" as const,
+      reason: "no confirmed candidates",
+    };
+    const request = {
+      kind: "film" as const,
+      cacheInput: { query: "Tim Robbins", kind: "actor" },
+      run: finderMock.runAiWatchSearch,
+    };
+    const validateDraft = vi.fn(async () => outcome);
+    const validateMissingFilm = vi.fn(async () => outcome);
+    await searchWithStore(request, {
+      store,
+      fetchImpl: draft({ person: "Tim Robbins" }),
+      validateDraft,
+      validateMissingFilm,
+    });
+    expect(validateMissingFilm).toHaveBeenCalledTimes(1);
+    expect(validateDraft).not.toHaveBeenCalled();
+    // A draft from the current discovery is checked again as it is.
+    await searchWithStore(request, {
+      store,
+      fetchImpl: draft({ person: "Tim Robbins", discoveryVersion: 2 }),
+      validateDraft,
+      validateMissingFilm,
+    });
+    expect(validateDraft).toHaveBeenCalledTimes(1);
+    expect(validateMissingFilm).toHaveBeenCalledTimes(1);
+  });
+
   it("never serves a checked snapshot for a different actor", async () => {
     const fetchImpl = vi.fn(async () =>
       json({

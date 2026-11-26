@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { z } from "zod";
 
 import { samePerson, sameWork } from "./attribution-names";
+import { FILM_DISCOVERY_VERSION } from "./film-subject";
 import { safeHttpUrl } from "./source-pages.server";
 import { loadValidatedSnapshot } from "./validated-cache.server";
 import type { ValidationRun } from "./validate-cached-search.server";
@@ -303,11 +304,23 @@ export async function searchWithStore(
           : ((await loadStoredSearch(store, cacheKey, fetchImpl)) ??
             (candidates?.length ? { watches: candidates } : null));
         let result: ValidationRun;
-        const draftCandidates = !draft
+        const bound = !draft
           ? []
           : kind === "film"
             ? bindFilmSubject(draft.watches, cacheInput, true)
             : draft.watches;
+        // A film draft written by an older discovery is read again rather
+        // than re-checked: the newer one reads the articles and keeps an
+        // actor's role (FILM_DISCOVERY_VERSION). The reservation and its
+        // backoff still decide whether anything is paid for.
+        const outdated =
+          kind === "film" &&
+          Boolean(validateMissingFilm) &&
+          !bound.some(
+            (watch) =>
+              Number(watch.details.discoveryVersion) >= FILM_DISCOVERY_VERSION,
+          );
+        const draftCandidates = outdated ? [] : bound;
         // A saved draft with nothing about this subject must not block a
         // fresh search for ever: research the subject anew instead.
         if (draftCandidates.length) {
