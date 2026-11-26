@@ -258,6 +258,37 @@ page pairs without paid calls: both pages now pass on different sites for 11
 follows when each search's backoff ends (one hour to one day); a visitor's
 search then reads the new drafts.
 
+## The owner's ratings (2026-11-26)
+
+The owner rated 203 of the 321 cards on the rating page
+(`docs/reports/owner-ratings-2026-11-26.json`) and stopped there: "либо
+круто, либо годится в подавляющем большинстве".
+
+| Tool | Rated | Strong or acceptable | Poor | Wrong facts |
+| --- | ---: | ---: | ---: | ---: |
+| Diagnostic quiz | 62 of 100 | 57 (92%) | 3 | 2 |
+| Cheaper alternatives | 100 of 100 | 94 (94%) | 4 | 2 |
+| Film and people (real sighting) | 41 of 41 | 40 (98%) | — | 0 |
+| Archetype quiz | 0 of 80 | not rated | | |
+
+What the flagged cards point to:
+
+1. **Prices from a pre-owned dealer shown as ordinary approximate prices.**
+   About 21,600 catalogue prices came from Space City Timepiece listings
+   (its own import and the timepiecepedia one); quiz and archetype cards
+   label them "Approximate price, may change", not "pre-owned". The TAG
+   Heuer Aquaracer Calibre S Regatta CAF7111.BA0803 at USD 920 is one.
+   Other flagged prices are out of date or from a dead source: Favre-Leuba
+   Chief Date EUR 2,240 from favre-leuba.com (the domain does not answer;
+   the maker's favreleuba.com shows EUR 2,775), Bvlgari Aluminium GMT
+   103554 at USD 3,000 ("5000 usd new").
+2. **A size error**: the Aquaracer "Regatta 43" is stored as 41 mm.
+3. **A pocket watch** among film cards (Patek Philippe, Steve McQueen):
+   now left out in code as well as in the instructions (`isWristwatch`).
+4. **Taste**: budget picks from Invicta, Junkers and Lip, field watches as
+   Aquanaut alternatives and a diver for the Snowflake were rated poor;
+   ranking does not weigh brand standing or design language.
+
 ## Known gaps the scores point to
 
 - Film: whether the new passage rule turns the 15 found sightings into

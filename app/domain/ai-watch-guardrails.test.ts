@@ -6,6 +6,7 @@ import {
   meetsWaterResistance,
   nickelSafe,
   pageMentionsReference,
+  isWristwatch,
 } from "./ai-watch-guardrails";
 
 describe("classifySource", () => {
@@ -177,5 +178,21 @@ describe("nickelSafe", () => {
     expect(nickelSafe({ case: null, caseback: null, strap: "Leather" })).toBe(
       false,
     );
+  });
+});
+
+describe("wristwatches only", () => {
+  it("leaves out pocket watches, clocks and stopwatches", () => {
+    expect(
+      isWristwatch({ brand: "Patek Philippe", model: "Pocket Watch" }),
+    ).toBe(false);
+    expect(isWristwatch({ brand: "Heuer", model: "Stopwatch" })).toBe(false);
+    expect(
+      isWristwatch({ brand: "Jaeger-LeCoultre", model: "Atmos clock" }),
+    ).toBe(false);
+    expect(isWristwatch({ brand: "Benrus", model: "Series 3061" })).toBe(true);
+    expect(
+      isWristwatch({ brand: "Omega", model: "Speedmaster Moonwatch" }),
+    ).toBe(true);
   });
 });

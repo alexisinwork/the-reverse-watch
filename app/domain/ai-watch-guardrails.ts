@@ -92,6 +92,15 @@ export function normalizeReference(value: string | null | undefined) {
   return folded.length >= 3 ? folded : null;
 }
 
+/** The site lists wristwatches only: a pocket watch, a clock or a
+ * stopwatch a provider names (the owner rated "Patek Philippe Pocket Watch"
+ * on Steve McQueen as unconfirmable, 2026-11-26) is never a card. */
+export function isWristwatch(watch: { brand: string; model: string | null }) {
+  return !/\b(?:pocket\s*watch(?:es)?|pocket|clocks?|stop\s*watch(?:es)?|pendant)\b/i.test(
+    `${watch.brand} ${watch.model ?? ""}`,
+  );
+}
+
 /** True when the reference appears in the page text or its URL. */
 export function pageMentionsReference(
   reference: string | null,

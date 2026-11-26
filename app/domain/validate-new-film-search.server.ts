@@ -1,5 +1,5 @@
 ﻿import type { FoundWatch } from "./ai-watch-types";
-import { normalizeReference } from "./ai-watch-guardrails";
+import { isWristwatch, normalizeReference } from "./ai-watch-guardrails";
 import { uniqueWatchResults } from "./watch-result-dedup";
 import {
   ProviderCostError,
@@ -151,6 +151,10 @@ export async function validateDiscoveredSearch(
     const draft = discovery.evidence.slice(0, 20).flatMap((evidence) => {
       if (
         evidence.provider !== "perplexity" ||
+        !isWristwatch({
+          brand: evidence.brand,
+          model: evidence.model ?? null,
+        }) ||
         !services.accepts(evidence) ||
         !safeHttpUrl(evidence.sourceUrl) ||
         !fold(evidence.brand)
@@ -205,6 +209,10 @@ export async function validateDiscoveredSearch(
       const key = `${fold(evidence.brand)}|${reference}`;
       if (
         evidence.provider !== "perplexity" ||
+        !isWristwatch({
+          brand: evidence.brand,
+          model: evidence.model ?? null,
+        }) ||
         !evidence.supported ||
         !reference ||
         reference.length < 3 ||

@@ -1,0 +1,298 @@
+{
+  "sheet": "live-2026-11-26",
+  "page": "https://claude.ai/artifact/HarGVRCT49WRcp5ervd4RC",
+  "ratedAt": "2026-11-26 13:27–16:08 UTC",
+  "meaning": {
+    "good": "strong pick / real sighting",
+    "ok": "acceptable / cannot confirm",
+    "poor": "poor pick",
+    "wrong": "wrong facts / false link"
+  },
+  "summary": {
+    "quiz": {
+      "cards": 100,
+      "rated": 62,
+      "ratings": {
+        "good": 48,
+        "ok": 9,
+        "wrong": 2,
+        "poor": 3
+      },
+      "shareStrongOrAcceptable": 0.919
+    },
+    "archetype": {
+      "cards": 80,
+      "rated": 0,
+      "ratings": {},
+      "shareStrongOrAcceptable": null
+    },
+    "alternatives": {
+      "cards": 100,
+      "rated": 100,
+      "ratings": {
+        "good": 75,
+        "ok": 19,
+        "wrong": 2,
+        "poor": 4
+      },
+      "shareStrongOrAcceptable": 0.94
+    },
+    "film": {
+      "cards": 41,
+      "rated": 41,
+      "ratings": {
+        "good": 40,
+        "ok": 1
+      },
+      "shareStrongOrAcceptable": 0.976
+    }
+  },
+  "flagged": [
+    {
+      "card": "alternatives-01-2-05",
+      "tool": "alternatives",
+      "rating": "wrong",
+      "note": null,
+      "watch": "Glycine Combat Sub 42",
+      "reference": "GL0083",
+      "price": {
+        "amount": 483.76771833561963,
+        "currency": "EUR"
+      },
+      "caseDiameterMm": 42,
+      "seen": null,
+      "sourceUrl": "https://glycine-watches.ch/en/collection/combat-sub/gl0083/"
+    },
+    {
+      "card": "alternatives-01-2-07",
+      "tool": "alternatives",
+      "rating": "wrong",
+      "note": null,
+      "watch": "Glycine Combat SUB 42 Black",
+      "reference": "GL0260",
+      "price": {
+        "amount": 493.8271604938272,
+        "currency": "EUR"
+      },
+      "caseDiameterMm": 42,
+      "seen": null,
+      "sourceUrl": "https://glycine-watches.ch/en/collection/combat/combat-sub-42/gl0260/"
+    },
+    {
+      "card": "alternatives-15-3-02",
+      "tool": "alternatives",
+      "rating": "ok",
+      "note": "https://www.favreleuba.com/collections/chief-date?___store=eu",
+      "watch": "Favre-Leuba Chief Date",
+      "reference": "00.20126.112.01.200",
+      "price": {
+        "amount": 2239.5976223136718,
+        "currency": "EUR"
+      },
+      "caseDiameterMm": 40,
+      "seen": null,
+      "sourceUrl": "https://favre-leuba.com/products/chief-date-00-20126-112-01-200/"
+    },
+    {
+      "card": "alternatives-15-3-09",
+      "tool": "alternatives",
+      "rating": "poor",
+      "note": null,
+      "watch": "Oak & Oscar Olmsted 38 Navy",
+      "reference": "Olmsted 38 Navy",
+      "price": {
+        "amount": 1394.6044810242342,
+        "currency": "EUR"
+      },
+      "caseDiameterMm": 38,
+      "seen": null,
+      "sourceUrl": "https://oakandoscar.com/collections/the-olmsted"
+    },
+    {
+      "card": "alternatives-15-3-10",
+      "tool": "alternatives",
+      "rating": "poor",
+      "note": null,
+      "watch": "Archimede Outdoor 39 Protect",
+      "reference": "UA39-A-A2.4",
+      "price": {
+        "amount": 1320,
+        "currency": "EUR"
+      },
+      "caseDiameterMm": 39,
+      "seen": null,
+      "sourceUrl": "https://archimede-watches.com/outdoor-39-protect-ua39-a-a2.4/"
+    },
+    {
+      "card": "alternatives-20-3-08",
+      "tool": "alternatives",
+      "rating": "poor",
+      "note": null,
+      "watch": "Seiko Presage Classic Series Araigaki",
+      "reference": "SPB468J1",
+      "price": {
+        "amount": 909.9222679469593,
+        "currency": "EUR"
+      },
+      "caseDiameterMm": 40.2,
+      "seen": null,
+      "sourceUrl": "https://www.seikowatches.com/us-en/products/presage/spb468"
+    },
+    {
+      "card": "alternatives-20-3-10",
+      "tool": "alternatives",
+      "rating": "poor",
+      "note": null,
+      "watch": "Citizen Promaster Mechanical",
+      "reference": "NB6004-08E",
+      "price": {
+        "amount": 1050,
+        "currency": "USD"
+      },
+      "caseDiameterMm": 41,
+      "seen": null,
+      "sourceUrl": "https://www.citizen.co.jp/release/news/detail/25"
+    },
+    {
+      "card": "film-02-03",
+      "tool": "film",
+      "rating": "good",
+      "note": "It later became a pop culture icon when it appeared on Steve McQueen’s wrist in the 1968 film Bullitt",
+      "watch": "Benrus Field Watch",
+      "reference": "3061",
+      "price": null,
+      "caseDiameterMm": null,
+      "seen": "Steve McQueen · Bullitt",
+      "sourceUrl": "https://www.somethingaboutrocks.com/the-story-behindsteve-mcqueens-best-on-screen-watches/"
+    },
+    {
+      "card": "film-02-04",
+      "tool": "film",
+      "rating": "good",
+      "note": "Jaeger-LeCoultre Memovox, The Thomas Crown Affair, 1968",
+      "watch": "Jaeger-LeCoultre Memovox",
+      "reference": null,
+      "price": null,
+      "caseDiameterMm": null,
+      "seen": "Steve McQueen · The Thomas Crown Affair",
+      "sourceUrl": "https://www.watchreel.watch/guide/watches-steve-mcqueen-wore-on-screen"
+    },
+    {
+      "card": "film-02-05",
+      "tool": "film",
+      "rating": "ok",
+      "note": null,
+      "watch": "Patek Philippe Pocket Watch",
+      "reference": null,
+      "price": null,
+      "caseDiameterMm": null,
+      "seen": "Steve McQueen · The Thomas Crown Affair",
+      "sourceUrl": "https://www.crownandcaliber.com/p/steve-mcqueens-watches"
+    },
+    {
+      "card": "quiz-01-04",
+      "tool": "quiz",
+      "rating": "good",
+      "note": "5000 usd new",
+      "watch": "Bvlgari Bvlgari Aluminium GMT",
+      "reference": "103554",
+      "price": {
+        "amount": 3000,
+        "currency": "USD"
+      },
+      "caseDiameterMm": 40,
+      "seen": null,
+      "sourceUrl": "https://www.wempe.com/en-int/watches/bulgari/bvlgari-bvlgari/bvlgari-aluminium-gmt-103554"
+    },
+    {
+      "card": "quiz-09-02",
+      "tool": "quiz",
+      "rating": "wrong",
+      "note": null,
+      "watch": "TAG Heuer Aquaracer 300M Calibre S Regatta 43 Stainless Steel / Grey / Bracelet",
+      "reference": "CAF7111.BA0803",
+      "price": {
+        "amount": 920,
+        "currency": "USD"
+      },
+      "caseDiameterMm": 41,
+      "seen": null,
+      "sourceUrl": "https://dials.co/watches/tag-heuer/aquaracer/caf7111-ba0803"
+    },
+    {
+      "card": "quiz-13-01",
+      "tool": "quiz",
+      "rating": "poor",
+      "note": null,
+      "watch": "Invicta Pro Diver GMT",
+      "reference": "9404",
+      "price": {
+        "amount": 91,
+        "currency": "USD"
+      },
+      "caseDiameterMm": 40,
+      "seen": null,
+      "sourceUrl": "https://www.invictawatch.com/watches/detail/9404-pro-diver-men"
+    },
+    {
+      "card": "quiz-13-07",
+      "tool": "quiz",
+      "rating": "wrong",
+      "note": null,
+      "watch": "Glycine Combat Classic 40 Automatic",
+      "reference": "GL1012",
+      "price": {
+        "amount": 179,
+        "currency": "USD"
+      },
+      "caseDiameterMm": 40,
+      "seen": null,
+      "sourceUrl": "https://glycine-watches.com/collections/combat-classic/products/gl1012"
+    },
+    {
+      "card": "quiz-13-08",
+      "tool": "quiz",
+      "rating": "poor",
+      "note": null,
+      "watch": "Junkers Eisvogel F13",
+      "reference": "6050-5",
+      "price": {
+        "amount": 358,
+        "currency": "USD"
+      },
+      "caseDiameterMm": 40,
+      "seen": null,
+      "sourceUrl": "https://junkers-watches.shop/en/Junkers-Eisvogel-F13-6050-5/"
+    },
+    {
+      "card": "quiz-17-07",
+      "tool": "quiz",
+      "rating": "poor",
+      "note": null,
+      "watch": "Lip Himalaya 40mm Silver",
+      "reference": "671541",
+      "price": {
+        "amount": 199,
+        "currency": "EUR"
+      },
+      "caseDiameterMm": 40,
+      "seen": null,
+      "sourceUrl": "https://lip.fr/en/himalaya/121-lip-himalaya-40-671541"
+    },
+    {
+      "card": "quiz-21-03",
+      "tool": "quiz",
+      "rating": "good",
+      "note": "гыув фкщгт 540",
+      "watch": "Glycine Combat Sub 42",
+      "reference": "GL0088",
+      "price": {
+        "amount": 540,
+        "currency": "USD"
+      },
+      "caseDiameterMm": 42,
+      "seen": null,
+      "sourceUrl": "https://glycine.pl/kategoria/combat-sub-42/"
+    }
+  ]
+}

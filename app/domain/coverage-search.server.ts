@@ -1,5 +1,6 @@
 import type { AiSearchView, FoundWatch } from "./ai-watch-types";
 import { samePerson, sameWork } from "./attribution-names";
+import { isWristwatch } from "./ai-watch-guardrails";
 import {
   aiSearchCacheKey,
   loadAiWatchStoreConfig,
@@ -111,7 +112,7 @@ export async function searchWithCoverage(
     ? new Set(localCandidates.map(identity))
     : null;
   const eligible = (watches: FoundWatch[]) =>
-    bind(watches).flatMap((watch) => {
+    bind(watches.filter(isWristwatch)).flatMap((watch) => {
       if (!allowed || allowed.has(identity(watch))) return [watch];
       const additional = deps.additionalCandidate?.(watch);
       return additional ? [additional] : [];
