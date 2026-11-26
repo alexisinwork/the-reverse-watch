@@ -11,6 +11,7 @@ import { resolve } from "node:path";
 
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
 import { loadFxTable } from "../app/domain/fx.server";
 import type { ProfileV4 } from "../app/domain/questionnaire-v4";
 import { CATALOGUE_ENOUGH } from "../app/domain/quiz-search.server";
@@ -31,7 +32,7 @@ if (!/^[a-z0-9-]+$/.test(label)) {
 const base = "https://thereserve.watch";
 
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   onnotice: () => undefined,
 });

@@ -2,10 +2,11 @@
 import assert from "node:assert/strict";
 import postgres from "postgres";
 import { z } from "zod";
+import { databaseTls } from "./database-tls";
 import { catalogueWatchSchema } from "../app/domain/watch-catalogue";
 const rows = (result: unknown) => z.array(catalogueWatchSchema).parse(result);
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   onnotice: () => undefined,
 });

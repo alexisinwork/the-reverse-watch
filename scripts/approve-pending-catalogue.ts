@@ -1,11 +1,13 @@
 // Owner-requested one-time editorial approval. Never changes fact verification.
 import { mkdir, writeFile } from "node:fs/promises";
 import postgres from "postgres";
+
+import { databaseTls } from "./database-tls";
 const url = process.env.DIRECT_DATABASE_URL;
 if (!url) throw new Error("DIRECT_DATABASE_URL required");
 const sql = postgres(url, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

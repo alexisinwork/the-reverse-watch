@@ -5,6 +5,8 @@ import { randomUUID } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import postgres from "postgres";
 import { z } from "zod";
+
+import { databaseTls } from "./database-tls";
 const fixtureFile = ".scratch/interaction-delivery-probe.json";
 const base = process.argv.includes("--local")
   ? "http://localhost:5173"
@@ -53,7 +55,7 @@ for (let i = 0; i < 2; i++) {
   assert.equal(response.status, 204);
 }
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   connect_timeout: 10,
 });

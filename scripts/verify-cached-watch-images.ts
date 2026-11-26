@@ -2,6 +2,7 @@
 // bytes, and never remove an image for a temporary/network-blocked response.
 import { writeFile } from "node:fs/promises";
 import postgres from "postgres";
+import { databaseTls } from "./database-tls";
 import { publicFetch, safeHttpUrl } from "../app/domain/source-pages.server";
 
 const databaseUrl = process.env.DIRECT_DATABASE_URL;
@@ -9,7 +10,7 @@ if (!databaseUrl) throw new Error("DIRECT_DATABASE_URL required");
 const write = process.argv.includes("--write");
 const sql = postgres(databaseUrl, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

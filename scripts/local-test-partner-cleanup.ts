@@ -1,6 +1,8 @@
 /** Owner exception, 2026-10-25: only disposable integration-test fixtures. */
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
+
 export async function removeLocalTestPartners(ids: readonly string[]) {
   if (ids.length === 0) return;
   if (!process.env.DIRECT_DATABASE_URL)
@@ -8,7 +10,7 @@ export async function removeLocalTestPartners(ids: readonly string[]) {
   const sql = postgres(process.env.DIRECT_DATABASE_URL, {
     max: 1,
     connect_timeout: 10,
-    ssl: "require",
+    ssl: databaseTls(),
   });
   try {
     await sql.begin(async (tx) => {

@@ -5,6 +5,7 @@ import { createWriteStream } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
 import { once } from "node:events";
 import postgres from "postgres";
+import { databaseTls } from "./database-tls";
 import type { SnapshotFile } from "./local-snapshot";
 
 if (!process.env.DIRECT_DATABASE_URL)
@@ -14,7 +15,7 @@ const directory = `data/watch-archive/local-snapshots/${snapshotId}`;
 await mkdir(directory, { recursive: true });
 const sql = postgres(process.env.DIRECT_DATABASE_URL, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

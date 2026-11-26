@@ -4,6 +4,8 @@ import { randomBytes } from "node:crypto";
 import assert from "node:assert/strict";
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
+
 const url = process.env.DIRECT_DATABASE_URL;
 if (!url) throw new Error("DIRECT_DATABASE_URL required");
 const migration = await readFile(
@@ -12,7 +14,7 @@ const migration = await readFile(
 );
 const sql = postgres(url, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   onnotice: () => undefined,
 });
 const rollback = new Error("expected rollback");

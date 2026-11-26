@@ -5,6 +5,7 @@ import { writeFile } from "node:fs/promises";
 import postgres from "postgres";
 import { z } from "zod";
 
+import { databaseTls } from "./database-tls";
 import { catalogueWatchSchema } from "../app/domain/watch-catalogue";
 import { catalogueClient, rpc } from "../app/domain/watch-catalogue.server";
 
@@ -14,7 +15,7 @@ const client = catalogueClient();
 if (!client) throw new Error("Catalogue read configuration required");
 const sql = postgres(databaseUrl, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

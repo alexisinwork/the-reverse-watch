@@ -5,6 +5,7 @@ import { createReadStream } from "node:fs";
 import { readFile, writeFile } from "node:fs/promises";
 import { createInterface } from "node:readline";
 import postgres from "postgres";
+import { databaseTls } from "./database-tls";
 import {
   dialsFacts,
   dialsIdentityKey,
@@ -122,7 +123,7 @@ if (limit !== Infinity) sourceRows = Math.min(sourceRows, limit);
 
 const sql = postgres(databaseUrl, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   max_lifetime: 0,
   onnotice: () => undefined,

@@ -4,6 +4,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import postgres from "postgres";
 import { z } from "zod";
+import { databaseTls } from "./database-tls";
 import {
   checkDialsReference,
   compareCatalogueFacts,
@@ -18,7 +19,7 @@ if (!process.env.DIRECT_DATABASE_URL)
   throw new Error("DIRECT_DATABASE_URL required");
 const sql = postgres(process.env.DIRECT_DATABASE_URL, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

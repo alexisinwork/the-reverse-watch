@@ -5,10 +5,12 @@ import { randomBytes, randomUUID } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
+
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
   // Encrypted like every database script; verifying Supabase's own
   // certificate authority is a documented gap (docs/production-readiness.md).
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   connect_timeout: 10,
   onnotice: () => undefined,

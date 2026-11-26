@@ -7,6 +7,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { createInterface } from "node:readline";
 import postgres from "postgres";
+import { databaseTls } from "./database-tls";
 import { snapshotSchema } from "./local-snapshot";
 
 const directory = process.argv[2];
@@ -21,7 +22,7 @@ const manifest = snapshotSchema.parse(
 );
 const sql = postgres(process.env.DIRECT_DATABASE_URL, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   onnotice: () => undefined,
 });
 const rollback = new Error("expected rollback");

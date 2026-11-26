@@ -2,8 +2,10 @@ import assert from "node:assert/strict";
 import { randomBytes } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import postgres from "postgres";
+
+import { databaseTls } from "./database-tls";
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   onnotice: () => undefined,
 });

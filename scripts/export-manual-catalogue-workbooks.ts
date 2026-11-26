@@ -6,6 +6,8 @@ import path from "node:path";
 import ExcelJS from "exceljs";
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
+
 const databaseUrl = process.env.DIRECT_DATABASE_URL;
 if (!databaseUrl) throw new Error("DIRECT_DATABASE_URL required");
 
@@ -17,7 +19,7 @@ await mkdir(output, { recursive: true });
 
 const sql = postgres(databaseUrl, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

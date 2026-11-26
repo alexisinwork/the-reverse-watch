@@ -4,19 +4,16 @@
 // only read-only catalogue/cache functions and the ECB rate feed; anything
 // else (a provider, a write) fails the run.
 //
-//   node --env-file=.env --import tsx scripts/run-evals.ts
+//   node --env-file=.env --import tsx scripts/run-evals.ts [--label name]
 //
 // Writes docs/reports/eval-<date>.json. The first run is the baseline
 // (docs/eval-baseline.md): the labelled sets are not edited to make a run
-// pass (alexisinwork/ai_engineering, PopChoice THEORY §7).
-import { createHash } from "node:crypto";
+// pass (alexisinwork/ai_engineering, PopChoice THEORY §7). The paid live
+// round over the same sets is scripts/run-evals-live.ts.
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import {
-  fitsDiameter,
-  normalizeMovement,
-} from "../app/domain/ai-watch-guardrails";
+import { fitsDiameter } from "../app/domain/ai-watch-guardrails";
 import type { AiSearchView, FoundWatch } from "../app/domain/ai-watch-types";
 import { loadAiWatchStoreConfig } from "../app/domain/ai-watch-store.server";
 import {
@@ -33,8 +30,6 @@ import { loadFxTable } from "../app/domain/fx.server";
 import {
   diameterRangeFor,
   findPriceRange,
-  PRICE_RANGES,
-  type ProfileV4,
 } from "../app/domain/questionnaire-v4";
 import { searchQuiz } from "../app/domain/quiz-search.server";
 import {
@@ -43,28 +38,26 @@ import {
   loadCatalogueRowsById,
   loadNameIndexCached,
 } from "../app/domain/watch-catalogue.server";
+import {
+  fold,
+  INDEPENDENT_FILM_FILE,
+  independentHit,
+  isExactQuizCard,
+  leaksAnswer,
+  loadIndependentFilmSet,
+  loadOwnerAlternatives,
+  matchesPick,
+  ownerCaseBudget,
+  quizRuleFailures,
+  READ_ONLY_RPC,
+  seededQuizProfiles,
+  words,
+} from "./eval-sets";
 
 // ---------------------------------------------------------------------------
-// Network guard: read-only database functions and the ECB feed only.
+// Network guard: read-only database functions (READ_ONLY_RPC) and the ECB
+// feed only.
 
-const READ_ONLY_RPC = new Set([
-  "watch_catalogue_quiz_window_v1",
-  "watch_catalogue_archetype_window_v1",
-  "watch_catalogue_alternatives_window_v1",
-  "watch_catalogue_name_index_v1",
-  "watch_catalogue_rows_by_id_v1",
-  "watch_catalogue_pool_lookup_v1",
-  "watch_catalogue_pool_identity_keys_v1",
-  "watch_catalogue_unpriced_candidates_v1",
-  "watch_catalogue_candidate_lookup_v1",
-  "watch_catalogue_named_v1",
-  "watch_catalogue_named_v2",
-  "watch_catalogue_name_candidates_v2",
-  "watch_catalogue_lookup_v1",
-  "ai_watch_search_get_v1",
-  "ai_watch_validated_cache_get_v2",
-  "discovery_published_stories_v1",
-]);
 // Blocked requests are prevented, not failures: a write the code tries
 // (such as caching a completed answer) is refused. A request to any other
 // host (a paid provider) fails the run.
@@ -94,58 +87,13 @@ const fx = await loadFxTable();
 if (!fx) throw new Error("Exchange rates are unavailable; rerun later.");
 const store = loadAiWatchStoreConfig();
 
-// Deterministic sampling, so the same run gives the same answers.
-function random(seed: number) {
-  let state = seed;
-  return () => {
-    state = (state + 0x6d2b79f5) | 0;
-    let value = Math.imul(state ^ (state >>> 15), 1 | state);
-    value ^= value + Math.imul(value ^ (value >>> 7), 61 | value);
-    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
-  };
-}
-const fold = (value: string) =>
-  value
-    .normalize("NFKD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, "");
-
 // ---------------------------------------------------------------------------
 // 1. Quiz: every card shown as meeting every answer must meet it. The checks
-//    below restate the questionnaire's hard rules from its definitions
-//    (price range, diameter range, movement types, water resistance), not
-//    from the quiz code, so they are an independent oracle.
+//    (quizRuleFailures in eval-sets.ts) restate the questionnaire's hard
+//    rules from its definitions, not from the quiz code, so they are an
+//    independent oracle.
 
-const next = random(20261125);
-const pick = <T>(values: readonly T[]) =>
-  values[Math.floor(next() * values.length)]!;
-const quizProfiles: ProfileV4[] = Array.from({ length: 40 }, () => ({
-  version: 4,
-  budgetCurrency: pick(["USD", "EUR", "GBP", "CHF"] as const),
-  priceRange: pick(
-    PRICE_RANGES.filter(
-      (range) => range.maximum !== null && range.maximum <= 10_000,
-    ),
-  ).id,
-  wristCm: 15 + Math.round(next() * 50) / 10,
-  wearingScenarios: [pick(["office", "everyday", "resort", "travel", "sport"])],
-  minimumWaterResistanceM: pick([0, 50, 100, 200]),
-  movementTypes: pick([
-    ["automatic"],
-    ["automatic", "manual"],
-    ["quartz", "solar"],
-  ]),
-  requiredComplications: [],
-  allergyConstraint: "none",
-}));
-const priceInBudget = (watch: FoundWatch, profile: ProfileV4) => {
-  const price = watch.details.price;
-  if (!price) return null;
-  return price.currency === profile.budgetCurrency
-    ? price.amount
-    : convert(price.amount, price.currency, profile.budgetCurrency, fx);
-};
+const { profiles: quizProfiles, pick } = seededQuizProfiles();
 const quiz = {
   profiles: 0,
   exactCards: 0,
@@ -163,40 +111,14 @@ for (const profile of quizProfiles) {
   });
   quiz.profiles++;
   if (view.status !== "found") continue;
-  const range = findPriceRange(profile.priceRange)!;
-  const diameter = diameterRangeFor(profile);
   const cards = [...view.watches, ...(view.alsoWorth ?? [])];
-  const exact = cards.filter(
-    (watch) =>
-      !watch.details.misses?.length &&
-      watch.details.verificationStatus !== "unverified",
-  );
+  const exact = cards.filter(isExactQuizCard);
   if (exact.length) quiz.profilesWithExact++;
   for (const watch of exact) {
     quiz.exactCards++;
     const label = `${profile.budgetCurrency} ${profile.priceRange}: ${watch.brand} ${watch.model}`;
-    const amount = priceInBudget(watch, profile);
-    if (
-      amount === null ||
-      amount < range.minimum ||
-      (range.maximum !== null && amount > range.maximum)
-    )
-      quiz.violations.push(`${label}: price ${amount}`);
-    if (!fitsDiameter(diameter, watch.details.caseDiameterMm ?? null))
-      quiz.violations.push(
-        `${label}: diameter ${watch.details.caseDiameterMm}`,
-      );
-    const movement = normalizeMovement(watch.details.movement ?? null);
-    if (
-      !movement ||
-      !(profile.movementTypes as readonly string[]).includes(movement)
-    )
-      quiz.violations.push(`${label}: movement ${watch.details.movement}`);
-    if (
-      profile.minimumWaterResistanceM > 0 &&
-      (watch.details.waterResistanceM ?? -1) < profile.minimumWaterResistanceM
-    )
-      quiz.violations.push(`${label}: water ${watch.details.waterResistanceM}`);
+    for (const failure of quizRuleFailures(watch, profile, fx))
+      quiz.violations.push(`${label}: ${failure}`);
   }
   const close = cards.filter((watch) => watch.details.misses?.length);
   quiz.closeFits += close.length;
@@ -250,35 +172,7 @@ for (const profile of quizProfiles) {
 // ---------------------------------------------------------------------------
 // 2. Alternatives: is the owner's suggested alternative in our top 5 / 10?
 
-type OwnerCase = {
-  original: string;
-  alternatives: {
-    watch: string;
-    eur?: [number, number];
-    usd?: [number, number];
-    quartz?: boolean;
-  }[];
-};
-const ownerSet = JSON.parse(
-  readFileSync("data/alternatives/owner-test-set-2026-10-01.json", "utf8"),
-) as { cases: OwnerCase[] };
-const words = (value: string) =>
-  value
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[^a-z0-9 ]/g, " ")
-    .split(/\s+/)
-    .filter(
-      (word) =>
-        word.length > 1 &&
-        !["mm", "the", "automatic", "auto", "quartz"].includes(word),
-    );
-const matchesPick = (pickName: string, brand: string, model: string) => {
-  const have = ` ${words(`${brand} ${model}`).join(" ")} `;
-  return words(pickName)
-    .slice(0, 3)
-    .every((word) => have.includes(` ${word} `));
-};
+const ownerSet = loadOwnerAlternatives();
 const nameIndex = await loadNameIndexCached(client);
 const alternatives = {
   cases: 0,
@@ -309,12 +203,7 @@ for (const testCase of ownerSet.cases) {
         `${testCase.original} → ${alternative.watch}`,
       );
     if (!target) continue;
-    const [low, high] = alternative.usd ?? alternative.eur ?? [500, 500];
-    const budget: AlternativesBudget = {
-      kind: "exact",
-      amount: Math.max(50, Math.round((low + high) / 2)),
-      currency: alternative.usd ? "USD" : "EUR",
-    };
+    const budget: AlternativesBudget = ownerCaseBudget(alternative);
     const allowQuartz = Boolean(alternative.quartz);
     const window = await loadAlternativesWindow(
       client,
@@ -383,10 +272,7 @@ const sameFamily = (watch: FoundWatch, label: FilmLabel) =>
     .slice(0, 2)
     .every((word) => words(`${watch.model}`).includes(word));
 for (const label of filmSet.positives) {
-  if (
-    fold(label.query).includes(fold(label.brand)) ||
-    (label.reference && fold(label.query).includes(fold(label.reference)))
-  )
+  if (leaksAnswer(label.query, label.brand, label.reference))
     film.leakage.push(label.query);
   // The site's own path, saved research only: no paid search can run.
   const view = await runFilmSearch({
@@ -435,27 +321,10 @@ for (const negative of filmSet.negatives) {
 // is what the search achieves on its own; the controls are invented
 // subjects, and any confirmed card for them is an invented sighting.
 
-type IndependentLabel = {
-  id: string;
-  query: string;
-  kind: string;
-  brand: string;
-  brandAliases?: string[];
-  models: string[] | null;
-  reference: string | null;
-  referenceMatch?: "exact" | "prefix";
-  level: "reference" | "family";
-};
-const independentFile = "data/eval/film-labels-independent-2026-11-26.json";
-const independentText = readFileSync(independentFile, "utf8");
-const independentSet = JSON.parse(independentText) as {
-  review: { status: string };
-  positives: IndependentLabel[];
-  controls: { id: string; query: string; kind: string }[];
-};
+const { sha256, set: independentSet } = loadIndependentFilmSet();
 const independent = {
-  file: independentFile,
-  sha256: createHash("sha256").update(independentText).digest("hex"),
+  file: INDEPENDENT_FILM_FILE,
+  sha256,
   review: independentSet.review.status,
   positives: independentSet.positives.length,
   answered: 0,
@@ -467,29 +336,8 @@ const independent = {
   controlViolations: [] as string[],
   leakage: [] as string[],
 };
-const independentHit = (watch: FoundWatch, label: IndependentLabel) => {
-  const brandMatches = [label.brand, ...(label.brandAliases ?? [])].some(
-    (brand) => fold(watch.brand) === fold(brand),
-  );
-  if (!brandMatches) return false;
-  if (label.level === "reference") {
-    const card = fold(watch.referenceCode ?? "");
-    const wanted = fold(label.reference ?? "");
-    if (!card || !wanted) return false;
-    return label.referenceMatch === "prefix"
-      ? card.startsWith(wanted)
-      : card === wanted;
-  }
-  const model = words(`${watch.model}`);
-  return (label.models ?? [""]).some((name) =>
-    words(name).every((word) => model.includes(word)),
-  );
-};
 for (const label of independentSet.positives) {
-  if (
-    fold(label.query).includes(fold(label.brand)) ||
-    (label.reference && fold(label.query).includes(fold(label.reference)))
-  )
+  if (leaksAnswer(label.query, label.brand, label.reference))
     independent.leakage.push(label.id);
   const view = await runFilmSearch({
     query: label.query,
@@ -586,7 +434,15 @@ const report = {
     noIndependentQueryLeakage: independent.leakage.length === 0,
   },
 };
-const output = resolve(`docs/reports/eval-${report.at.slice(0, 10)}.json`);
+// `--label after-live` writes eval-<date>-after-live.json, so a second run
+// on the same day keeps the first report.
+const labelAt = process.argv.indexOf("--label");
+const label = labelAt > 0 ? process.argv[labelAt + 1] : undefined;
+if (label !== undefined && !/^[a-z0-9-]{1,40}$/.test(label))
+  throw new Error("--label takes lowercase letters, digits and dashes.");
+const output = resolve(
+  `docs/reports/eval-${report.at.slice(0, 10)}${label ? `-${label}` : ""}.json`,
+);
 writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify(report, null, 2));
 console.log(`Wrote ${output}`);

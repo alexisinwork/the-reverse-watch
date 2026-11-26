@@ -12,6 +12,7 @@ import path from "node:path";
 import postgres from "postgres";
 import { z } from "zod";
 
+import { databaseTls } from "./database-tls";
 import {
   catalogueWatchSchema,
   QUIZ_WINDOW_COLUMNS,
@@ -22,7 +23,7 @@ if (!url) {
   throw new Error("DIRECT_DATABASE_URL is not set.");
 }
 const sql = postgres(url, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   onnotice: () => undefined,
 });

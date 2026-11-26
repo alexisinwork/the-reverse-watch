@@ -10,6 +10,7 @@ import { resolve } from "node:path";
 
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
 import { aiSearchCacheKey } from "../app/domain/ai-watch-store.server";
 import { completeSearchInput } from "../app/domain/complete-search-cache.server";
 import {
@@ -21,7 +22,7 @@ import {
 const TEST_SITE = "Portfolio local integration";
 const base = "https://thereserve.watch";
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   onnotice: () => undefined,
 });

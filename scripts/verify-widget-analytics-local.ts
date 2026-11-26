@@ -8,6 +8,7 @@ import { isIP } from "node:net";
 import { chromium, expect } from "@playwright/test";
 import postgres from "postgres";
 import { z } from "zod";
+import { databaseTls } from "./database-tls";
 import { catalogueClient } from "../app/domain/watch-catalogue.server";
 import { listPartnerSites } from "../app/domain/partner-sites.server";
 import { validationBudgetStatus } from "../app/domain/validation-budget.server";
@@ -39,7 +40,7 @@ await new Promise<void>((resolve, reject) => {
   hostServer.listen(8080, "127.0.0.1", resolve);
 });
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   connect_timeout: 10,
 });

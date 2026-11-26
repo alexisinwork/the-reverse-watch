@@ -1,9 +1,11 @@
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
+
 const url = process.env.DIRECT_DATABASE_URL;
 if (!url) throw new Error("DIRECT_DATABASE_URL required");
 const sql = postgres(url, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   onnotice: () => undefined,
 });

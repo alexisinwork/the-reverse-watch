@@ -12,6 +12,7 @@ import {
 import path from "node:path";
 import postgres from "postgres";
 import { z } from "zod";
+import { databaseTls } from "./database-tls";
 import {
   defaultDeps,
   museWebResearch,
@@ -116,7 +117,7 @@ const databaseUrl = process.env.DIRECT_DATABASE_URL;
 if (!databaseUrl) throw new Error("DIRECT_DATABASE_URL required");
 const sql = postgres(databaseUrl, {
   max: concurrency,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

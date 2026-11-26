@@ -12,6 +12,7 @@ import {
 import path from "node:path";
 import postgres from "postgres";
 import { z } from "zod";
+import { databaseTls } from "./database-tls";
 import { defaultDeps } from "../app/domain/ai-providers.server";
 import { enrichCatalogueReference } from "../app/domain/catalogue-enrichment.server";
 import { loadFxTable } from "../app/domain/fx.server";
@@ -201,7 +202,7 @@ const databaseUrl = process.env.DIRECT_DATABASE_URL;
 if (!databaseUrl) throw new Error("DIRECT_DATABASE_URL required");
 const sql = postgres(databaseUrl, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   max_lifetime: 0,
   onnotice: () => undefined,

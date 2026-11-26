@@ -3,6 +3,7 @@
 import { appendFileSync } from "node:fs";
 import postgres from "postgres";
 import { z } from "zod";
+import { databaseTls } from "./database-tls";
 import { defaultDeps } from "../app/domain/ai-providers.server";
 import { enrichCatalogueReference } from "../app/domain/catalogue-enrichment.server";
 import { loadFxTable } from "../app/domain/fx.server";
@@ -65,7 +66,7 @@ const url = process.env.DIRECT_DATABASE_URL;
 if (!url) throw new Error("DIRECT_DATABASE_URL required");
 const sql = postgres(url, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   max_lifetime: 0,
   onnotice: () => undefined,

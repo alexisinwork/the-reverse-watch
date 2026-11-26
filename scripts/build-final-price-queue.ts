@@ -5,6 +5,8 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
+
 const databaseUrl = process.env.DIRECT_DATABASE_URL;
 if (!databaseUrl) throw new Error("DIRECT_DATABASE_URL required");
 const archive = "data/watch-archive/final-price-queue";
@@ -20,7 +22,7 @@ type Candidate = {
 
 const sql = postgres(databaseUrl, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

@@ -7,6 +7,8 @@ import path from "node:path";
 
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
+
 const file = process.argv[2];
 if (!file || !/^\d{4}_[a-z0-9_]+\.sql$/.test(file)) {
   console.error(
@@ -26,7 +28,7 @@ const name = nameParts.join("_");
 
 const sql = postgres(url, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });

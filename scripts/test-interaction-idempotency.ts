@@ -2,9 +2,10 @@ import assert from "node:assert/strict";
 import { randomUUID } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import postgres from "postgres";
+import { databaseTls } from "./database-tls";
 import { persistInteraction } from "../app/domain/interaction-store.server";
 const sql = postgres(process.env.DIRECT_DATABASE_URL!, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   connect_timeout: 10,
   onnotice: () => undefined,

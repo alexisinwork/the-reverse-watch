@@ -21,6 +21,7 @@ import { resolve } from "node:path";
 import postgres from "postgres";
 import { z } from "zod";
 
+import { databaseTls } from "./database-tls";
 import {
   foldName,
   nameCandidateQuery,
@@ -45,7 +46,7 @@ if (!client || !url) {
   );
 }
 const sql = postgres(url, {
-  ssl: "require",
+  ssl: databaseTls(),
   max: 1,
   onnotice: () => undefined,
 });

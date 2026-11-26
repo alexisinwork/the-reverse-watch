@@ -3,6 +3,7 @@
 // Usage: node --env-file=.env --import tsx scripts/remove-cached-film-sighting.ts "Daniel Craig" "231.10.30.20.06.001" "7 documented watch sightings."
 import postgres from "postgres";
 
+import { databaseTls } from "./database-tls";
 import { aiSearchCacheKey } from "../app/domain/ai-watch-store.server";
 
 const [query, referenceCode, summary] = process.argv.slice(2);
@@ -14,7 +15,7 @@ if (!databaseUrl) throw new Error("DIRECT_DATABASE_URL required");
 
 const sql = postgres(databaseUrl, {
   max: 1,
-  ssl: "require",
+  ssl: databaseTls(),
   connect_timeout: 10,
   onnotice: () => undefined,
 });
