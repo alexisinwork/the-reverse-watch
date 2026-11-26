@@ -6,11 +6,13 @@
 //
 //   node --env-file=.env --import tsx scripts/run-evals.ts [--label name]
 //
-// Writes docs/reports/eval-<date>.json. The first run is the baseline
+// In CI (.github/workflows/eval.yml) only EVAL_DATABASE_URL is set, and the
+// functions run as the read-only sign-in reserve_eval_reader
+// (scripts/eval-database.ts). Writes docs/reports/eval-<date>.json. The first run is the baseline
 // (docs/eval-baseline.md): the labelled sets are not edited to make a run
 // pass (alexisinwork/ai_engineering, PopChoice THEORY §7). The paid live
 // round over the same sets is scripts/run-evals-live.ts.
-import { readFileSync, writeFileSync } from "node:fs";
+import { appendFileSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import { fitsDiameter } from "../app/domain/ai-watch-guardrails";
@@ -38,6 +40,7 @@ import {
   loadCatalogueRowsById,
   loadNameIndexCached,
 } from "../app/domain/watch-catalogue.server";
+import { openEvalDatabase } from "./eval-database";
 import {
   fold,
   INDEPENDENT_FILM_FILE,
@@ -58,6 +61,19 @@ import {
 // Network guard: read-only database functions (READ_ONLY_RPC) and the ECB
 // feed only.
 
+// With EVAL_DATABASE_URL (the CI job, .github/workflows/eval.yml), these
+// functions run over PostgreSQL as reserve_eval_reader, a sign-in that can
+// only read (scripts/eval-database.ts), and no service key is needed: the
+// Supabase address is then a placeholder that no request reaches.
+const evalDatabaseUrl = process.env.EVAL_DATABASE_URL?.trim();
+if (evalDatabaseUrl) {
+  process.env.SUPABASE_URL ||= "https://eval-database.invalid";
+  process.env.SUPABASE_SERVICE_ROLE_KEY ||= "unused-by-the-evaluation";
+}
+const database = evalDatabaseUrl
+  ? await openEvalDatabase(evalDatabaseUrl, READ_ONLY_RPC)
+  : null;
+
 // Blocked requests are prevented, not failures: a write the code tries
 // (such as caching a completed answer) is refused. A request to any other
 // host (a paid provider) fails the run.
@@ -72,7 +88,10 @@ globalThis.fetch = async (input, init) => {
   if (url.host === "www.ecb.europa.eu") return realFetch(input, init);
   const rpc = url.pathname.match(/\/rest\/v1\/rpc\/([a-z0-9_]+)$/)?.[1];
   if (url.host === supabaseHost && rpc && READ_ONLY_RPC.has(rpc)) {
-    return realFetch(input, init);
+    if (!database) return realFetch(input, init);
+    const body =
+      init?.body ?? (input instanceof Request ? await input.text() : null);
+    return database.call(rpc, body);
   }
   if (url.host === supabaseHost) {
     blocked.push(rpc ?? url.pathname);
@@ -383,10 +402,15 @@ for (const control of independentSet.controls) {
 
 // ---------------------------------------------------------------------------
 
+await database?.end();
+
 const report = {
   at: new Date().toISOString(),
   fxDate: fx.date,
   guard: {
+    database: database
+      ? "PostgreSQL as reserve_eval_reader"
+      : "Supabase API with the service key",
     providerRequests,
     blockedWrites: blocked.length,
     blockedFunctions: [...new Set(blocked)],
@@ -446,6 +470,22 @@ const output = resolve(
 writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify(report, null, 2));
 console.log(`Wrote ${output}`);
+// In GitHub Actions the gates and headline numbers also go to the job's
+// summary page.
+if (process.env.GITHUB_STEP_SUMMARY) {
+  const summary = [
+    `### Search quality evaluation, ${report.at.slice(0, 10)}`,
+    "",
+    "| Gate | Result |",
+    "| --- | --- |",
+    ...Object.entries(report.gates).map(
+      ([gate, passed]) => `| ${gate} | ${passed ? "PASS" : "FAIL"} |`,
+    ),
+    "",
+    `Quiz exact precision ${report.quiz.exactPrecision ?? "none"}; alternatives recall@10 ${report.alternatives.recallAt10} (random ${report.alternatives.randomRecallAt10}); film recall ${report.film.recallConfirmed} confirmed, ${report.film.recallAny} any; independent film set ${report.filmIndependent.recallConfirmed} confirmed. Database: ${report.guard.database}.`,
+  ];
+  appendFileSync(process.env.GITHUB_STEP_SUMMARY, `${summary.join("\n")}\n`);
+}
 if (Object.values(report.gates).some((passed) => !passed)) {
   process.exit(1);
 }

@@ -1,0 +1,57 @@
+name: Search quality evaluation
+# The free evaluation (scripts/run-evals.ts) after every change to the
+# search code, every Monday and on request. It signs in as
+# reserve_eval_reader, which can only run the read-only catalogue and cache
+# functions (db/migrations/0123_eval_reader_role.sql), and makes no paid
+# calls: its guard fails the run on any request to a provider. Without the
+# EVAL_DATABASE_URL secret (scripts/set-eval-reader-password.ts sets it) the
+# job reports NOT RUN instead of failing.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/domain/**"
+      - "data/eval/**"
+      - "scripts/run-evals.ts"
+      - "scripts/eval-sets.ts"
+      - "scripts/eval-database.ts"
+      - ".github/workflows/eval.yml"
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: eval-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - id: secret
+        env:
+          EVAL_DATABASE_URL: ${{ secrets.EVAL_DATABASE_URL }}
+        run: |
+          if [ -n "$EVAL_DATABASE_URL" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::NOT RUN: the EVAL_DATABASE_URL secret is not set (scripts/set-eval-reader-password.ts sets it)."
+          fi
+      - if: steps.secret.outputs.present == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - if: steps.secret.outputs.present == 'true'
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: 24
+          cache: npm
+      - if: steps.secret.outputs.present == 'true'
+        run: npm ci
+      - if: steps.secret.outputs.present == 'true'
+        name: Evaluate search quality
+        env:
+          EVAL_DATABASE_URL: ${{ secrets.EVAL_DATABASE_URL }}
+        run: node --import tsx scripts/run-evals.ts --label ci
