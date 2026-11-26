@@ -294,5 +294,1027 @@
       "seen": null,
       "sourceUrl": "https://glycine.pl/kategoria/combat-sub-42/"
     }
+  ],
+  "ratings": [
+    {
+      "card": "alternatives-01-1-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-1-02",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-01-1-03",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-1-04",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-1-05",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-1-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-1-07",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-01-1-08",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-1-09",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-1-10",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-2-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-2-02",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-01-2-03",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-01-2-04",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-2-05",
+      "tool": "alternatives",
+      "rating": "wrong"
+    },
+    {
+      "card": "alternatives-01-2-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-2-07",
+      "tool": "alternatives",
+      "rating": "wrong"
+    },
+    {
+      "card": "alternatives-01-2-08",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-01-2-09",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-2-10",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-02",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-03",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-04",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-05",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-07",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-08",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-09",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-01-3-10",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-02",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-03",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-04",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-05",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-07",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-08",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-09",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-02-3-10",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-02",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-03",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-04",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-05",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-07",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-08",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-09",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-07-3-10",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-08-3-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-08-3-02",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-08-3-03",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-08-3-04",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-08-3-05",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-08-3-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-08-3-07",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-08-3-08",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-08-3-09",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-08-3-10",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-09-3-01",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-09-3-02",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-09-3-03",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-09-3-04",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-09-3-05",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-09-3-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-09-3-07",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-09-3-08",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-09-3-09",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-09-3-10",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-10-3-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-10-3-02",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-10-3-03",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-10-3-04",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-10-3-05",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-10-3-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-10-3-07",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-10-3-08",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-10-3-09",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-10-3-10",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-15-3-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-15-3-02",
+      "tool": "alternatives",
+      "rating": "ok",
+      "note": "https://www.favreleuba.com/collections/chief-date?___store=eu"
+    },
+    {
+      "card": "alternatives-15-3-03",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-15-3-04",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-15-3-05",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-15-3-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-15-3-07",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-15-3-08",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-15-3-09",
+      "tool": "alternatives",
+      "rating": "poor"
+    },
+    {
+      "card": "alternatives-15-3-10",
+      "tool": "alternatives",
+      "rating": "poor"
+    },
+    {
+      "card": "alternatives-20-3-01",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-20-3-02",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-20-3-03",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-20-3-04",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-20-3-05",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-20-3-06",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-20-3-07",
+      "tool": "alternatives",
+      "rating": "ok"
+    },
+    {
+      "card": "alternatives-20-3-08",
+      "tool": "alternatives",
+      "rating": "poor"
+    },
+    {
+      "card": "alternatives-20-3-09",
+      "tool": "alternatives",
+      "rating": "good"
+    },
+    {
+      "card": "alternatives-20-3-10",
+      "tool": "alternatives",
+      "rating": "poor"
+    },
+    {
+      "card": "film-01-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-01-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-02-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-02-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-02-03",
+      "tool": "film",
+      "rating": "good",
+      "note": "It later became a pop culture icon when it appeared on Steve McQueen’s wrist in the 1968 film Bullitt"
+    },
+    {
+      "card": "film-02-04",
+      "tool": "film",
+      "rating": "good",
+      "note": "Jaeger-LeCoultre Memovox, The Thomas Crown Affair, 1968"
+    },
+    {
+      "card": "film-02-05",
+      "tool": "film",
+      "rating": "ok"
+    },
+    {
+      "card": "film-03-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-03-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-04-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-04-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-04-03",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-06-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-06-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-07-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-07-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-09-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-09-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-10-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-10-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-10-03",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-11-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-13-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-13-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-13-03",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-13-04",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-13-05",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-13-06",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-13-07",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-14-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-14-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-14-03",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-14-04",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-14-05",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-14-06",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-14-07",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-15-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-15-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-17-01",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-17-02",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "film-17-03",
+      "tool": "film",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-01-01",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-01-02",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-01-03",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-01-04",
+      "tool": "quiz",
+      "rating": "good",
+      "note": "5000 usd new"
+    },
+    {
+      "card": "quiz-01-05",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-01-06",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-01-07",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-01-08",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-01-09",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-01-10",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-01",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-02",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-03",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-04",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-05",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-06",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-07",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-05-08",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-09",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-05-10",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-09-01",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-09-02",
+      "tool": "quiz",
+      "rating": "wrong"
+    },
+    {
+      "card": "quiz-09-03",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-09-04",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-09-05",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-09-06",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-09-07",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-09-08",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-09-09",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-09-10",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-13-01",
+      "tool": "quiz",
+      "rating": "poor"
+    },
+    {
+      "card": "quiz-13-02",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-13-03",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-13-04",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-13-05",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-13-06",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-13-07",
+      "tool": "quiz",
+      "rating": "wrong"
+    },
+    {
+      "card": "quiz-13-08",
+      "tool": "quiz",
+      "rating": "poor"
+    },
+    {
+      "card": "quiz-13-09",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-13-10",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-17-01",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-17-02",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-17-03",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-17-04",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-17-05",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-17-06",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-17-07",
+      "tool": "quiz",
+      "rating": "poor"
+    },
+    {
+      "card": "quiz-17-08",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-17-09",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-17-10",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-21-01",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-21-02",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-21-03",
+      "tool": "quiz",
+      "rating": "good",
+      "note": "гыув фкщгт 540"
+    },
+    {
+      "card": "quiz-21-04",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-21-05",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-21-06",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-21-07",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-21-08",
+      "tool": "quiz",
+      "rating": "ok"
+    },
+    {
+      "card": "quiz-21-09",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-21-10",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-25-01",
+      "tool": "quiz",
+      "rating": "good"
+    },
+    {
+      "card": "quiz-25-02",
+      "tool": "quiz",
+      "rating": "good"
+    }
   ]
 }

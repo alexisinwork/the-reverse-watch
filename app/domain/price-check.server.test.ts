@@ -4,6 +4,7 @@ import type { Deps } from "./ai-providers.server";
 import {
   doublePriceCheck,
   isFreshDate,
+  isRetailSource,
   pageShowsPrice,
 } from "./price-check.server";
 
@@ -348,5 +349,24 @@ describe("Perplexity finds, Muse Spark double-checks", () => {
     expect((await doublePriceCheck(tissot, run([]), fx)).status).toBe(
       "unconfirmed",
     );
+  });
+});
+
+describe("isRetailSource", () => {
+  it("never counts a pre-owned dealer's or a watch database's price", () => {
+    for (const url of [
+      "https://spacecitytimepiece.com/watches/tag-heuer/aquaracer-300m/caf7111-ba0803",
+      "https://www.gemnation.com/watches/Tag-Heuer-Aquaracer-Calibre-S-Regatta-CAF7111.BA0803-4887.html",
+      "https://www.hourstriker.com/database/tag-heuer-aquaracer-caliber-s-regatta-caf7111ba0803-12581",
+      "https://dials.co/watches/tag-heuer/aquaracer/caf7111-ba0803",
+      "https://www.chrono24.com/glycine/index.htm",
+    ])
+      expect(isRetailSource(url)).toBe(false);
+    expect(isRetailSource("https://www.bulgari.com/en-us/103554.html")).toBe(
+      true,
+    );
+    expect(
+      isRetailSource("https://www.glycinewatches.com/products/glycine-gl1012"),
+    ).toBe(true);
   });
 });

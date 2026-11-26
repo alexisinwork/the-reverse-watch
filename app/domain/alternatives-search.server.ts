@@ -34,6 +34,7 @@ import type { RateLimitPolicy } from "./rate-limit.server";
 import { consumeSharedRateLimit } from "./rate-limit-upstash.server";
 import {
   catalogueToFoundWatch,
+  secondaryMarketPrice,
   type CatalogueWatch,
   type NameFacts,
 } from "./watch-catalogue";
@@ -106,10 +107,19 @@ function budgetLabel(budget: AlternativesBudget) {
   return `for ${priceRangeLabel(range, budget.currency)}`;
 }
 
-function asCard(alternative: Alternative): FoundWatch | null {
+function asCard(
+  alternative: Alternative,
+  secondary: ReadonlySet<string> = new Set(),
+): FoundWatch | null {
   const card = catalogueToFoundWatch(alternative.watch);
   if (!card) return null;
   const { shares, differs, price } = alternative;
+  // The ranking rows carry no price evidence; a catalogue price that is a
+  // pre-owned dealers' median is labelled so (secondaryMarketPrice).
+  const condition =
+    price.condition === "new" && secondary.has(alternative.watch.id)
+      ? "pre-owned"
+      : price.condition;
   return {
     ...card,
     rationale: [
@@ -121,7 +131,7 @@ function asCard(alternative: Alternative): FoundWatch | null {
     details: {
       ...card.details,
       price: { amount: price.amount, currency: price.currency },
-      priceCondition: price.condition,
+      priceCondition: condition,
     },
   };
 }
@@ -130,6 +140,7 @@ function buildAlternativesPage(
   outcome: AlternativesOutcome,
   budget: AlternativesBudget,
   form: AlternativesForm,
+  secondary: ReadonlySet<string> = new Set(),
 ) {
   if (outcome.status === "not_found") {
     return {
@@ -142,7 +153,7 @@ function buildAlternativesPage(
   }
   const { target, alternatives, searchedLive } = outcome;
   const cards = alternatives
-    .map(asCard)
+    .map((alternative) => asCard(alternative, secondary))
     .filter((card): card is FoundWatch => card !== null);
   const window = budgetWindow(budget);
   const result: AiSearchView =
@@ -338,7 +349,22 @@ export async function startAlternativesSearch(
     report: progress.report,
   })
     .then(async (outcome) => {
-      const built = buildAlternativesPage(outcome, budget, form);
+      // Which shown prices are pre-owned dealers' medians: one read of the
+      // shown watches' full rows (at most 200 ids).
+      const secondary =
+        outcome.status === "found"
+          ? new Set(
+              (
+                await loadCatalogueRowsById(
+                  client,
+                  outcome.alternatives.map(({ watch }) => watch.id),
+                ).catch(() => [])
+              )
+                .filter(secondaryMarketPrice)
+                .map((row) => row.id),
+            )
+          : new Set<string>();
+      const built = buildAlternativesPage(outcome, budget, form, secondary);
       if (outcome.status !== "found") return built;
       const candidates =
         built.result.status === "found" ? [...built.result.watches] : [];

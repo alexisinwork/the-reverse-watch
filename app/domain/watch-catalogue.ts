@@ -515,6 +515,22 @@ function factsLine(watch: CatalogueWatch) {
     : "Meets every stated constraint.";
 }
 
+/**
+ * A price read from pre-owned dealers' past asking prices (the Space City
+ * Timepieces median), not a new price. About 20,000 catalogue prices are of
+ * this kind; a card says so (owner's ratings, 2026-11-26: a discontinued
+ * Aquaracer at USD 920 read as a wrong new price).
+ */
+export function secondaryMarketPrice(
+  watch: Partial<Pick<CatalogueWatch, "priceEvidence">>,
+) {
+  const evidence = watch.priceEvidence ?? {};
+  return (
+    evidence.priceType === "secondary_market_historical" ||
+    evidence.method === "spacecity_historical_median"
+  );
+}
+
 export function catalogueToFoundWatch(
   watch: CatalogueWatch,
 ): FoundWatch | null {
@@ -561,6 +577,9 @@ export function catalogueToFoundWatch(
     details: {
       price: knownPrice,
       priceConfirmed: watch.priceStatus === "confirmed",
+      ...(knownPrice && secondaryMarketPrice(watch)
+        ? { priceCondition: "pre-owned" as const }
+        : {}),
       waterResistanceM: watch.waterResistanceM,
       caseDiameterMm: watch.caseDiameterMm,
       movement: watch.movement,

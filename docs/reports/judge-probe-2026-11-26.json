@@ -1,0 +1,111 @@
+{
+  "at": "2026-11-26T21:33:36.368Z",
+  "sheet": "live-2026-11-26",
+  "model": "anthropic/claude-opus-5-5",
+  "webSearch": true,
+  "budgetUsd": 1,
+  "spendUsd": 0.1276,
+  "stopReason": null,
+  "judged": 3,
+  "errors": 0,
+  "tally": {
+    "quiz": {
+      "judged": 3,
+      "ratings": {
+        "wrong": 2,
+        "poor": 1
+      }
+    },
+    "archetype": {
+      "judged": 0,
+      "ratings": {}
+    },
+    "alternatives": {
+      "judged": 0,
+      "ratings": {}
+    },
+    "film": {
+      "judged": 0,
+      "ratings": {}
+    }
+  },
+  "agreement": {
+    "calibration": {
+      "cards": 2,
+      "sameRating": 0,
+      "sameSide": 0,
+      "kappa": 0,
+      "ownerPoorOrWrong": 0,
+      "judgeAlsoPoorOrWrong": 0,
+      "judgePoorOrWrongWhereOwnerPositive": 2
+    },
+    "heldOut": {
+      "cards": 1,
+      "sameRating": 0,
+      "sameSide": 0,
+      "kappa": 0,
+      "ownerPoorOrWrong": 0,
+      "judgeAlsoPoorOrWrong": 0,
+      "judgePoorOrWrongWhereOwnerPositive": 1
+    },
+    "heldOutByTool": {
+      "quiz": {
+        "cards": 1,
+        "sameRating": 0,
+        "sameSide": 0,
+        "kappa": 0,
+        "ownerPoorOrWrong": 0,
+        "judgeAlsoPoorOrWrong": 0,
+        "judgePoorOrWrongWhereOwnerPositive": 1
+      }
+    },
+    "allByTool": {
+      "quiz": {
+        "cards": 3,
+        "sameRating": 0,
+        "sameSide": 0,
+        "kappa": 0,
+        "ownerPoorOrWrong": 0,
+        "judgeAlsoPoorOrWrong": 0,
+        "judgePoorOrWrongWhereOwnerPositive": 3
+      }
+    }
+  },
+  "verdicts": [
+    {
+      "card": "quiz-01-01",
+      "tool": "quiz",
+      "owner": "good",
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card lists 200 m water resistance, but Alpina's own page and its retailers give 100 m (10 ATM) for this model. The card's approximate USD 2,905 is also well below Alpina's US list price of $3,395.",
+      "wrongFacts": [
+        "water",
+        "price"
+      ],
+      "costUsd": 0.03382
+    },
+    {
+      "card": "quiz-01-02",
+      "tool": "quiz",
+      "owner": "good",
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts check out: 40 mm, Sellita SW200 automatic, 50 m and USD 2,900 list price. But Baume & Mercier lists this reference as Heritage, meaning it's discontinued. It's also a dress watch on an alligator strap, and a basic SW200 is poor value at full retail next to everyday picks like Oris, Longines, Sinn or Nomos in this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.03832
+    },
+    {
+      "card": "quiz-01-03",
+      "tool": "quiz",
+      "owner": "ok",
+      "heldOut": true,
+      "rating": "wrong",
+      "reason": "The watch fits the request well: a 40 mm automatic pilot's watch with 100 m water resistance. But the card's reference is wrong. Bremont's real reference is AIRCO-M1-BK-R-S, and 'AIRCO-MACH-1-BK' is just the web page address. The model is also retired, so the approximate USD 2,792 is only a discounted or old-stock price, not a current retail price (list was USD 3,795, or £3,450 in the UK).",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.05545
+    }
+  ]
+}

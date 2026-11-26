@@ -847,12 +847,19 @@
 
     function render() {
       document.documentElement.lang = lang;
-      $("title").textContent = cards.every((card) => card.tool === "film")
-        ? t().titleFilm
-        : t().title;
-      $("lede").textContent = cards.every((card) => card.tool === "film")
-        ? t().ledeFilm
-        : t().lede;
+      // A sheet may name itself (for example the independent film set).
+      const own = (key) =>
+        sheet[key] && typeof sheet[key][lang] === "string"
+          ? sheet[key][lang]
+          : null;
+      $("title").textContent =
+        own("title") ??
+        (cards.every((card) => card.tool === "film")
+          ? t().titleFilm
+          : t().title);
+      $("lede").textContent =
+        own("lede") ??
+        (cards.every((card) => card.tool === "film") ? t().ledeFilm : t().lede);
       $("lang").textContent = lang === "ru" ? "EN" : "RU";
       $("note-label").textContent = t().note;
       $("prev").textContent = t().prev;

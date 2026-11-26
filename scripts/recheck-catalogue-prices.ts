@@ -5,6 +5,8 @@
 //   --reference-confirmed: only watches whose reference is confirmed
 //                       (the ones that can become main picks).
 //   --budget 25:        stop starting new checks at this estimated spend (USD).
+//   --references A,B:   only these references (for example cards the owner
+//                       flagged on the rating page), whatever their age.
 //   node --env-file=.env --import tsx scripts/recheck-catalogue-prices.ts [--unconfirmed] [--reference-confirmed] [--budget 25] [--concurrency 4]
 import { defaultDeps, searchReady } from "../app/domain/ai-providers.server";
 import { recheckPrice } from "../app/domain/catalogue-build.server";
@@ -46,15 +48,29 @@ if (!client || !searchReady(deps.config)) {
   throw new Error("Supabase service key and PERPLEXITY_API_KEY are required.");
 }
 const fx = await loadFxTable();
-let watches = process.argv.includes("--unconfirmed")
-  ? (await listCatalogue(client)).filter(
-      (watch) => watch.priceStatus !== "confirmed",
+const referencesAt = process.argv.indexOf("--references");
+const references =
+  referencesAt >= 0
+    ? new Set(
+        (process.argv[referencesAt + 1] ?? "")
+          .split(",")
+          .map((value) => value.trim().toLowerCase())
+          .filter(Boolean),
+      )
+    : null;
+let watches = references
+  ? (await listCatalogue(client)).filter((watch) =>
+      references.has((watch.referenceCode ?? "").toLowerCase()),
     )
-  : await cataloguePricesDue(
-      client,
-      new Date(Date.now() - PRICE_MAX_AGE_DAYS * 86_400_000),
-      200,
-    );
+  : process.argv.includes("--unconfirmed")
+    ? (await listCatalogue(client)).filter(
+        (watch) => watch.priceStatus !== "confirmed",
+      )
+    : await cataloguePricesDue(
+        client,
+        new Date(Date.now() - PRICE_MAX_AGE_DAYS * 86_400_000),
+        200,
+      );
 if (process.argv.includes("--reference-confirmed")) {
   watches = watches.filter((watch) => watch.referenceConfirmed);
 }

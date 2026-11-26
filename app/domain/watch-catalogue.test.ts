@@ -224,6 +224,30 @@ describe("catalogue helpers", () => {
     expect(catalogueToFoundWatch(watch({ sourceUrl: null }))).toBeNull();
   });
 
+  it("labels a pre-owned dealers' median as a pre-owned price", () => {
+    const median = catalogueToFoundWatch(
+      watch({
+        priceStatus: "approximate",
+        priceAmount: 920,
+        priceCurrency: "USD",
+        priceEvidence: {
+          method: "spacecity_historical_median",
+          priceType: "secondary_market_historical",
+        },
+      }),
+    )!;
+    expect(median.details.priceCondition).toBe("pre-owned");
+    const listing = catalogueToFoundWatch(
+      watch({
+        priceStatus: "approximate",
+        priceAmount: 920,
+        priceCurrency: "USD",
+        priceEvidence: { method: "market_new_listings" },
+      }),
+    )!;
+    expect(listing.details.priceCondition).toBeUndefined();
+  });
+
   it("describes the wrists a case suits", () => {
     expect(wristFitLabel(40)).toBe("16–19 cm");
     expect(wristFitLabel(46)).toBe("20 cm and up");

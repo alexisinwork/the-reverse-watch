@@ -201,9 +201,11 @@ export type LookupOptions = {
 };
 
 // Grey-market dealers, marketplaces and pre-owned sellers: their prices
-// are discounts or asks, not the retail price, so they never count.
+// are discounts or asks, not the retail price, so they never count. Watch
+// databases (hourstriker, dials) list old retail prices, which count no
+// more (the owner's ratings, 2026-11-26: a discontinued Aquaracer).
 const NON_RETAIL_HOSTS =
-  /(^|\.)(chrono24\.[a-z.]+|watchmaxx\.com|jomashop\.com|watchfinder\.[a-z.]+|ebay\.[a-z.]+|amazon\.[a-z.]+|timeshop24\.[a-z.]+|uhrzeit\.org|watchspies\.com|crownandcaliber\.com|bobswatches\.com|thewatchbox\.com|watchbox\.com|1stdibs\.com|walmart\.com|aliexpress\.com|ashford\.com|prestigetime\.com|authenticwatches\.com|worldofwatches\.com|creationwatches\.com|certifiedwatchstore\.com|trendyol\.com|hepsiburada\.com|allegro\.[a-z.]+|idealo\.[a-z.]+|preissuchmaschine\.de|reddit\.com|watchuseek\.com|watchcharts\.com)$/;
+  /(^|\.)(chrono24\.[a-z.]+|watchmaxx\.com|jomashop\.com|watchfinder\.[a-z.]+|ebay\.[a-z.]+|amazon\.[a-z.]+|timeshop24\.[a-z.]+|uhrzeit\.org|watchspies\.com|crownandcaliber\.com|bobswatches\.com|thewatchbox\.com|watchbox\.com|1stdibs\.com|walmart\.com|aliexpress\.com|ashford\.com|prestigetime\.com|authenticwatches\.com|worldofwatches\.com|creationwatches\.com|certifiedwatchstore\.com|trendyol\.com|hepsiburada\.com|allegro\.[a-z.]+|idealo\.[a-z.]+|preissuchmaschine\.de|reddit\.com|watchuseek\.com|watchcharts\.com|spacecitytimepiece\.com|gemnation\.com|mygemma\.com|getbezel\.com|the1916company\.com|timescapeusa\.com|abbeyfive\.com|chronext\.[a-z.]+|everywatch\.com|hourstriker\.com|dials\.co|watchrecon\.com)$/;
 
 export function isRetailSource(url: string) {
   try {

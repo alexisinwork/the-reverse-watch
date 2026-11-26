@@ -833,8 +833,13 @@ const report = {
   cases: all,
 };
 const date = new Date().toISOString().slice(0, 10);
+// --label names a further run of the same day (for example one tool again).
+const labelAt = process.argv.indexOf("--label");
+const runLabel = labelAt > 0 ? process.argv[labelAt + 1] : undefined;
+if (runLabel !== undefined && !/^[a-z0-9-]{1,40}$/.test(runLabel))
+  throw new Error("--label takes lowercase letters, digits and dashes.");
 const output = resolve(
-  `docs/reports/eval-live-${date}${dryRun ? "-dry-run" : ""}.json`,
+  `docs/reports/eval-live-${date}${runLabel ? `-${runLabel}` : ""}${dryRun ? "-dry-run" : ""}.json`,
 );
 writeFileSync(output, `${JSON.stringify(report, null, 2)}\n`);
 console.log(
