@@ -81,6 +81,32 @@ export function sourceHost(value: string | null | undefined) {
 const MAX_REDIRECTS = 4;
 
 /**
+ * Our page reader under its plain name. Some servers close the connection,
+ * before any answer, on the usual "Mozilla/5.0 (compatible; …)" form of a
+ * bot's name (Oracle of Time, a film-watch source the owner pointed to,
+ * does); the same read under this name is answered.
+ */
+export const PLAIN_READER_AGENT =
+  "TheReserveBot/1.0 (+https://thereserve.watch)";
+
+/** The connection closed before any answer. */
+function closedBeforeAnswer(error: unknown) {
+  const cause = (error as { cause?: { code?: unknown } } | null)?.cause;
+  return (
+    error instanceof TypeError &&
+    ["UND_ERR_SOCKET", "ECONNRESET"].includes(String(cause?.code))
+  );
+}
+
+/** The same request under the plain reader name, if it used another. */
+function underPlainName(init: RequestInit) {
+  const headers = new Headers(init.headers);
+  if (!/^Mozilla\//i.test(headers.get("user-agent") ?? "")) return null;
+  headers.set("user-agent", PLAIN_READER_AGENT);
+  return { ...init, headers };
+}
+
+/**
  * fetch() for AI-supplied URLs: follows redirects itself so that every hop,
  * not just the first, must be a public web address. Returns the response
  * and the final URL, or null when a hop is refused.
@@ -92,7 +118,17 @@ export async function publicFetch(
 ): Promise<{ response: Response; finalUrl: string } | null> {
   let current = safeHttpUrl(url);
   for (let hop = 0; current && hop <= MAX_REDIRECTS; hop += 1) {
-    const response = await fetchImpl(current, { ...init, redirect: "manual" });
+    const hopInit = { ...init, redirect: "manual" as const };
+    let response: Response;
+    try {
+      response = await fetchImpl(current, hopInit);
+    } catch (error) {
+      // A server that hangs up on the usual bot name gets one more try
+      // under the plain one; any other failure stands.
+      const plain = closedBeforeAnswer(error) ? underPlainName(hopInit) : null;
+      if (!plain) throw error;
+      response = await fetchImpl(current, plain);
+    }
     const location = response.headers.get("location");
     if (response.status >= 300 && response.status < 400 && location) {
       await response.body?.cancel();

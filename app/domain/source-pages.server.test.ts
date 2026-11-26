@@ -1,7 +1,8 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import {
   inspectSourcePage,
+  PLAIN_READER_AGENT,
   publicFetch,
   safeHttpUrl,
 } from "./source-pages.server";
@@ -66,6 +67,58 @@ describe("publicFetch", () => {
 
     const ok = await publicFetch("https://maker.example/c", {}, fetchImpl);
     expect(ok?.finalUrl).toBe("https://maker.example/c");
+  });
+
+  it("reads a page again under the plain name when a server hangs up on the usual one", async () => {
+    const refused = Object.assign(new TypeError("fetch failed"), {
+      cause: { code: "UND_ERR_SOCKET" },
+    });
+    const agents: string[] = [];
+    const fetchImpl = vi.fn(async (_input: unknown, init?: RequestInit) => {
+      const agent = new Headers(init?.headers).get("user-agent") ?? "";
+      agents.push(agent);
+      if (agent.startsWith("Mozilla/")) throw refused;
+      return new Response("page");
+    }) as unknown as typeof fetch;
+    const page = await publicFetch(
+      "https://oracleoftime.example/steve-mcqueen-watches/",
+      {
+        headers: {
+          "user-agent":
+            "Mozilla/5.0 (compatible; TheReserveBot/1.0; +https://thereserve.watch)",
+        },
+      },
+      fetchImpl,
+    );
+    expect(await page?.response.text()).toBe("page");
+    expect(agents).toEqual([
+      "Mozilla/5.0 (compatible; TheReserveBot/1.0; +https://thereserve.watch)",
+      PLAIN_READER_AGENT,
+    ]);
+    // A request already under the plain name, or another failure, is not
+    // tried again.
+    const failing = vi.fn(async () => {
+      throw refused;
+    }) as unknown as typeof fetch;
+    await expect(
+      publicFetch(
+        "https://oracleoftime.example/a",
+        { headers: { "user-agent": PLAIN_READER_AGENT } },
+        failing,
+      ),
+    ).rejects.toThrow("fetch failed");
+    expect(failing).toHaveBeenCalledOnce();
+    const timedOut = vi.fn(async () => {
+      throw new TypeError("fetch failed");
+    }) as unknown as typeof fetch;
+    await expect(
+      publicFetch(
+        "https://oracleoftime.example/b",
+        { headers: { "user-agent": "Mozilla/5.0" } },
+        timedOut,
+      ),
+    ).rejects.toThrow("fetch failed");
+    expect(timedOut).toHaveBeenCalledOnce();
   });
 });
 
