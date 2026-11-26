@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-26T00:00:21.357Z",
+  "fxDate": "2026-11-25",
+  "wholePool": {
+    "rows": 25014,
+    "readMs": 6865
+  },
+  "nameIndex": {
+    "rows": 25014,
+    "readMs": 1399
+  },
+  "namesCompared": 44,
+  "targetsResolved": 8,
+  "windowsCompared": 116,
+  "alternativesCompared": 3359,
+  "fullRowsCompared": 938,
+  "window": {
+    "readMsP50": 217,
+    "readMsMax": 448
+  },
+  "differences": [],
+  "result": "PASS"
+}
