@@ -83,11 +83,13 @@ try {
       assert.equal(before[0]!.state, "reserved");
       assert.equal(before[0]!.n, "0");
       await tx`update private.watch_catalogue set image_url='https://img.example/existing.jpg' where id=${rows[0]!.id}::uuid`;
-      await assert.rejects(
-        tx.savepoint(async (sp) => {
-          await sp`select public.ai_watch_validated_cache_publish_v7(${attempt}::uuid,'Test',${sp.json([watch])},${sp.json([0.01])})`;
-        }),
-      );
+      const conflictPublish = tx.savepoint(async (sp) => {
+        await sp`select public.ai_watch_validated_cache_publish_v7(${attempt}::uuid,'Test',${sp.json([watch])},${sp.json([0.01])})`;
+      });
+      // Migration 0102 alone refused the publication; since 0122 (applied)
+      // it goes through and the catalogue keeps its own photo.
+      if (process.argv.includes("--applied")) await conflictPublish;
+      else await assert.rejects(conflictPublish);
       const conflict = await tx<
         { image_url: string }[]
       >`select image_url from private.watch_catalogue where id=${rows[0]!.id}::uuid`;

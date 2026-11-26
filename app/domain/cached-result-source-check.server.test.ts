@@ -146,3 +146,47 @@ describe("checking source pages for cached watch claims", () => {
     expect(fetchImpl).toHaveBeenCalledTimes(1);
   });
 });
+
+describe("checking sightings written the way providers write them", () => {
+  const casinoRoyale: FoundWatch = {
+    brand: "Omega",
+    model: "Seamaster Planet Ocean 600M",
+    referenceCode: "2900.50.91",
+    sourceUrl: "https://example.com",
+    imageUrl: null,
+    priceNote: null,
+    rationale: "",
+    details: { person: "James Bond (Daniel Craig)", work: "Casino Royale" },
+  };
+  const page =
+    "<h1>Omega Seamaster Planet Ocean 600M 2900.50.91</h1>" +
+    "<p>Daniel Craig wore the Omega Seamaster Planet Ocean in Casino Royale.</p>";
+
+  it("matches one name of a compound wearer and the model words in the passage", async () => {
+    expect(
+      (
+        await inspectCachedResultSource(
+          casinoRoyale,
+          "https://source.example/b",
+          response(page),
+          "Daniel Craig wore the Omega Seamaster Planet Ocean in Casino Royale.",
+        )
+      ).status,
+    ).toBe("matched");
+  });
+
+  it("still needs the exact reference somewhere on the page", async () => {
+    expect(
+      (
+        await inspectCachedResultSource(
+          casinoRoyale,
+          "https://source.example/b",
+          response(
+            "<p>Daniel Craig wore the Omega Seamaster Planet Ocean in Casino Royale.</p>",
+          ),
+          "Daniel Craig wore the Omega Seamaster Planet Ocean in Casino Royale.",
+        )
+      ).status,
+    ).toBe("missing");
+  });
+});

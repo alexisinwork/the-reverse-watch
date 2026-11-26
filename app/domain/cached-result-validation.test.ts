@@ -84,3 +84,19 @@ describe("cached watch evidence reconciliation", () => {
       );
   });
 });
+
+describe("wearers written differently by the two providers", () => {
+  it("accepts the same wearer named by one shared name", () => {
+    expect(
+      validateCachedWatch(
+        {
+          ...watch,
+          details: { ...watch.details, person: "James Bond (Daniel Craig)" },
+        },
+        primary,
+        { ...secondary, person: "Daniel Craig as James Bond" },
+        checkedAt,
+      ).status,
+    ).toBe("verified");
+  });
+});

@@ -7,6 +7,7 @@ owner approves, with the owner's words.
 
 | Date | Decision | Where |
 | --- | --- | --- |
+| 2026-11-26 | Ignore the test partner ("игнорируй партнера тестового"): the portfolio demo is not a launch step; the partner stays in place, nothing is deleted | AGENTS.md, "Owner decisions, 2026-11-26" |
 | 2026-11-26 | $60 for one paid evaluation round ("Да, $60"); `scripts/run-evals-live.ts --budget 60` stops before it | AGENTS.md, "Owner decisions, 2026-11-26"; `docs/evaluation-budget.md` |
 | 2026-11-26 | Database scripts verify the server against Supabase's certificate, which the owner supplied | same; `docs/production-readiness.md` |
 | 2026-11-26 | No Next.js version 2; the site stays on React Router 7 ("отмена перехода на next js"). Cancels the 2026-11-25 version 2 plan | AGENTS.md, "Speed, caching and relevance rebuild" |

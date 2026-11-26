@@ -1,5 +1,11 @@
 import { pageMentionsReference } from "./ai-watch-guardrails";
 import type { FoundWatch } from "./ai-watch-types";
+import {
+  mentionsAny,
+  passageTiesSighting,
+  personNames,
+  workNames,
+} from "./attribution-names";
 import type { ValidationFact } from "./cached-result-validation";
 import { quoteSupportsValue } from "./catalogue-enrichment.server";
 import { quoteSupportsObservedPrice } from "./validated-price";
@@ -97,27 +103,30 @@ export async function inspectCachedResultSource(
       .replace(/&(?:nbsp|amp|quot|apos|lt|gt|#\d+|#x[0-9a-f]+);/gi, " ");
     const text = ` ${words(visible)} `;
     const has = (value: string) => text.includes(` ${words(value)} `);
+    // A wearer is matched by any name the attribution contains ("James Bond
+    // (Daniel Craig)" → "Daniel Craig"); a title is matched whole.
+    const person = personNames(watch.details.person);
+    const work = workNames(watch.details.work);
     const matches =
       pageMentionsReference(watch.referenceCode, visible, "") &&
       has(watch.brand) &&
-      (!watch.details.person || has(watch.details.person)) &&
-      (!watch.details.work || has(watch.details.work));
+      (person.length === 0 || mentionsAny(text, person)) &&
+      (work.length === 0 || mentionsAny(text, work));
     if (!matches) return { status: "missing", finalUrl };
-    if (watch.details.person || watch.details.work) {
+    if (person.length || work.length) {
+      // The passage, found verbatim on this page, ties the watch to the
+      // wearer or film. The page above carries the exact reference; the
+      // passage names the watch by that reference or by its model words
+      // ("Seamaster Planet Ocean"), so a page listing many watches cannot
+      // lend one watch's sighting to another.
       const quote = sourceQuote?.trim() ?? "";
       const quoteWords = words(quote);
-      const quoteText = ` ${quoteWords} `;
-      const quoteHas = (value: string) =>
-        quoteText.includes(` ${words(value)} `);
       if (
         !quoteWords ||
         quote.length > 280 ||
         quoteWords.split(" ").length > 30 ||
-        !text.includes(quoteText) ||
-        !quoteHas(watch.brand) ||
-        !pageMentionsReference(watch.referenceCode, quote, "") ||
-        (watch.details.person && !quoteHas(watch.details.person)) ||
-        (watch.details.work && !quoteHas(watch.details.work))
+        !text.includes(` ${quoteWords} `) ||
+        !passageTiesSighting(quote, watch)
       )
         return { status: "missing", finalUrl };
     }

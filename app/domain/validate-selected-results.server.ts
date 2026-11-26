@@ -1,6 +1,6 @@
 import type { FoundWatch, ProgressEvent } from "./ai-watch-types";
 import { searchWithCoverage } from "./coverage-search.server";
-import { coverSearchResults } from "./search-coverage";
+import { coverSearchResults, unverifiedCandidate } from "./search-coverage";
 import { meteredSearchOptions } from "./validation-runtime.server";
 import { normalizeReference } from "./ai-watch-guardrails";
 import type { SelectionDiscoveryProfile } from "./validation-provider-request.server";
@@ -10,6 +10,53 @@ import { cacheCompleteSearch } from "./complete-search-cache.server";
 
 const identity = (watch: FoundWatch) =>
   `${watch.brand.toLowerCase().replace(/[^a-z0-9]/g, "")}|${normalizeReference(watch.referenceCode) ?? `m:${watch.model.toLowerCase().replace(/[^a-z0-9]/g, "")}`}`;
+
+/**
+ * A checked card keeps the reference and sources it was checked with. A
+ * check with no catalogue record behind it shows the reference as the title
+ * and drops every other fact, so the title and the facts it lacks come back
+ * from the local record that selected it (the catalogue or the editorial
+ * list), never from an older AI draft; a price taken back this way stays
+ * unconfirmed. A card still without a price cannot claim the visitor's
+ * budget, so it is labelled.
+ */
+export function withSelectedFacts(
+  checked: FoundWatch,
+  selected: FoundWatch,
+): FoundWatch {
+  const titleIsReference =
+    normalizeReference(checked.model) !== null &&
+    normalizeReference(checked.model) ===
+      normalizeReference(checked.referenceCode);
+  const own = checked.details;
+  const local = selected.details;
+  const merged: FoundWatch = {
+    ...checked,
+    model: titleIsReference ? selected.model : checked.model,
+    rationale: selected.rationale,
+    details: {
+      ...own,
+      price: own.price ?? local.price ?? null,
+      priceConfirmed: own.price
+        ? own.priceConfirmed
+        : local.price
+          ? (local.priceConfirmed ?? false)
+          : own.priceConfirmed,
+      caseDiameterMm: own.caseDiameterMm ?? local.caseDiameterMm ?? null,
+      movement: own.movement ?? local.movement ?? null,
+      waterResistanceM: own.waterResistanceM ?? local.waterResistanceM ?? null,
+      misses: local.misses,
+    },
+  };
+  // A card already labelled keeps its own, more specific note.
+  return merged.details.price ||
+    merged.details.verificationStatus === "unverified"
+    ? merged
+    : unverifiedCandidate(
+        merged,
+        "Price unavailable — budget fit not confirmed",
+      );
+}
 
 /** Validate an editorial/deterministic selection once. Current local selection
  * still controls eligibility when an older valid snapshot is reused. */
@@ -61,14 +108,7 @@ export async function validateSelectedResults(
     const selected = allowed.get(identity(watch));
     // This explanation was computed from the current local ranking, so it can
     // accompany the checked identity without retaining an old AI explanation.
-    if (selected)
-      return [
-        {
-          ...watch,
-          rationale: selected.rationale,
-          details: { ...watch.details, misses: selected.details.misses },
-        },
-      ];
+    if (selected) return [withSelectedFacts(watch, selected)];
     const additional = additionalCandidate?.(watch);
     return additional ? [additional] : [];
   });

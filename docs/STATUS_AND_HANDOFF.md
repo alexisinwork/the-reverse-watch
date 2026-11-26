@@ -43,13 +43,14 @@ Every change reports before/after numbers for each rule.
 | Phase 0 film search confirmed-only; quiz exact vs compromise | done, verified on production | `055f39d` |
 | Phase 0 CDN for finished film answers | done, verified on production | `df78c6d`, `docs/reports/page-speed-after-finished-cache-2026-11-25.json` |
 | Phase 0 episode short links | done, verified on production | `4be1572`, `docs/episode-links.md` |
-| Phase 0 public portfolio demo | partner created and portfolio pushed (2026-11-26); waiting for the owner to publish in Lovable | `personal-website` `9c99572`, `docs/OWNER_QUESTIONS.md` #1 |
+| Phase 0 public portfolio demo | partner created and portfolio pushed (2026-11-26); the owner then asked to ignore this test partner, so its Lovable publish is not tracked | `personal-website` `9c99572`, `docs/decisions/DECISION_REGISTER.md` |
 | Episode links open the tool each video names; campaign tags survive the sign-up gate | done, verified on production | `9e37eac`, `docs/episode-links.md` |
 | Vercel Pro; Web Analytics | done (owner), verified | `vercel teams ls`: plan `pro` |
 | Paid re-checks back off after failures (migration 0121) | done, applied to production | `216b9b5`, `scripts/test-validation-backoff.ts` |
 | Independent film label set, scored without paid calls | done; awaits the owner's review | `e568a71`, `71d039c`, `docs/eval-baseline.md` |
 | Database scripts verify the server against Supabase's certificate (supplied by the owner) | done | `5e41865`, `scripts/database-tls.ts`, `docs/production-readiness.md` |
 | Paid evaluation round ($60 approved) | done 2026-11-26: $3.89 spent; 4 of 5 gates PASS, archetype rules FAIL on one card; defects found (Known limits) | `5e41865`, `docs/eval-baseline.md`, `docs/reports/eval-live-2026-11-26.json` |
+| Fixes from the paid round: alternatives name resolution, archetype price and band, film passage rule, migration 0122 (photo conflict) | done 2026-11-26; measured without paid calls (alternatives 24 → 60 of 60 cases searched, archetype rule failures 1 → 0); film effect needs a paid re-check | `docs/eval-baseline.md`, "Fixes after the paid round" |
 | Rating sheet, 321 cards | published; waiting for the owner's ratings | https://claude.ai/artifact/HarGVRCT49WRcp5ervd4RC, `docs/reports/rating-sheet-2026-11-26.json` |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
@@ -104,31 +105,21 @@ with the owner's approval of that amount.
 - The first request to a new function instance takes 8–10 s (function start
   plus cold database buffers); not yet investigated.
 - Film search: paid research finds 15 of 19 independent sightings (shown as
-  possible, now saved for free) but confirms none; the two-source
-  confirmation is the bottleneck.
-- Alternatives: 11 of the owner's 20 test names stop at "comparison
-  specifications are incomplete" because name resolution picks a short
-  imported record without facts while a complete record of the same model
-  exists; "Santos de Cartier" offers "Santos Demoiselle" first.
-- Archetype: after paid checking, an editorial pick without a catalogue
-  record loses its title and price (Maurice Lacroix AI6118-SS00E-430-C in the
-  USD 10,000+ band) and is shown as checked with no price label.
-- One checked alternatives answer could not be saved ("image conflicts with
-  catalogue"), so its check was paid without a saved answer.
+  possible, now saved for free) but confirmed none. The passage rule was
+  fixed on 2026-11-26; whether confirmations follow needs a paid re-check.
 - The database has no backups (zero available, PITR off): Supabase backs up
   only Pro, Team and Enterprise projects. Owner action before the first
-  paying partner (`docs/OWNER_QUESTIONS.md` #3).
+  paying partner (`docs/OWNER_QUESTIONS.md` #2).
 - A local production build (`npm start` with `.env`) writes real analytics
   rows; one test page view from 2026-11-26 (row 692, country empty) is in the
   analytics table.
 
 ## Next step
 
-Fix what the paid round found, free of provider cost, each with the free
-evaluation before and after: alternatives name resolution, the archetype
-card that loses its price, the film confirmation step, the image conflict
-that blocks saving a checked answer. Then, with the owner's OK, a repeat
-round (about $4, inside the unused part of the $60). Meanwhile the owner's
-items in `docs/OWNER_QUESTIONS.md`: the Lovable publish (then verify the
-live demo), the ratings, Supabase Pro for backups, provider spending limits.
+The fixes from the paid round are in (alternatives, archetype, film passage
+rule, migration 0122). Next, with the owner's OK, a repeat paid round (about
+$4, inside the unused part of the $60) to measure the film confirmations and
+the alternatives on the live path. Meanwhile the owner's
+items in `docs/OWNER_QUESTIONS.md`: the ratings, Supabase Pro for backups,
+provider spending limits.
 Run `scripts/verify-all.ts --production` before and after every change.

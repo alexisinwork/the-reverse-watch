@@ -2587,3 +2587,13 @@ Sentry may load later; episode links as advised; no Next.js version 2.
   and confirmed none, with 0 invented sightings. Details and the remaining
   findings: `docs/eval-baseline.md`, "Live round with paid research". The
   321-card rating sheet waits for the owner's ratings.
+- Fixes from the paid round (owner: "исправь"), measured without paid calls
+  in a dry run of the same harness: alternatives now reach a search in 60 of
+  60 cases (24 before; 0 stop at "specifications incomplete"), archetype
+  hard-rule failures 0 (1 before), quiz and invented-sighting gates still
+  PASS. The film passage rule now matches a wearer by any of the names in
+  the attribution and accepts model words in place of the reference (the
+  page must still show it); its effect needs a paid re-check. Migration 0122
+  (applied) keeps the catalogue photo instead of refusing a checked answer.
+  The owner also asked to ignore the test partner: the portfolio demo is no
+  longer a launch step.

@@ -185,7 +185,10 @@ speed and cost.
   (`docs/episode-links.md`).
 - **The portfolio demo has its own production partner**, "Portfolio demo
   (oleksandr-kukhtin.dev)": that one origin, 1,000 uses a month, public key
-  only.
+  only. Later the same day the owner asked to ignore this test partner
+  ("игнорируй партнера тестового"): it is not a launch step, so do not wait
+  for or verify its Lovable publish unless the owner asks. Leave the partner
+  in place; never delete it.
 - **The independent film set** (`data/eval/film-labels-independent-2026-11-26.json`)
   is labelled from opened sources only, was committed before its first score,
   and is never edited to raise a score.

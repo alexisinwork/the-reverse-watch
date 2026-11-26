@@ -65,6 +65,12 @@ const CHECKS: Check[] = [
     what: "waits of 5 minutes, 1 hour, 1 day and 7 days after failed paid checks, in a rolled-back transaction",
   },
   {
+    name: "Migration 0122 (keep the catalogue photo)",
+    command: tsx("scripts/test-image-conflict-publish.ts", "--applied"),
+    needs: "database",
+    what: "a checked answer is saved when the catalogue already has a different photo, which it keeps; invalid photo evidence is still refused",
+  },
+  {
     name: "Quiz window equals the whole catalogue",
     command: tsx("scripts/check-quiz-window-equivalence.ts"),
     needs: "database",

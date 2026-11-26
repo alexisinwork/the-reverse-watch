@@ -212,6 +212,28 @@ budget (`--dry-run` refuses every provider request and write).
 (`scripts/rating-sheet-template.html`), which keeps each rater's ratings in
 the page's own database.
 
+Fixes from the paid round (2026-11-26), in plain words:
+
+- A typed watch name (`resolveNamedWatch` in `alternatives.server.ts`)
+  prefers records the alternatives finder can compare: when the name settles
+  on a record without styles, size or movement, it settles among the
+  complete records of the same watch, or asks which one with complete
+  models first. Words of one or two characters match only whole words.
+- Archetype and alternatives selections keep the title and price of their
+  local record when a source check drops them (`withSelectedFacts` in
+  `validate-selected-results.server.ts`); editorial archetype picks priced
+  outside the band are left out (`curatedInBand` in
+  `archetype-catalogue.server.ts`).
+- Film and people sightings: `app/domain/attribution-names.ts` holds the one
+  passage rule the page check (`cached-result-source-check.server.ts`) and
+  the saved-answer check (`validated-cache.server.ts`) share. A wearer
+  matches by any name in the attribution; the passage names the brand, the
+  watch by reference or model words, the wearer and the film; the page shows
+  the exact reference.
+- Migration 0122 keeps the catalogue's photo when a check finds a different
+  one, instead of refusing the checked answer
+  (`scripts/test-image-conflict-publish.ts`).
+
 Every database script connects through `scripts/database-tls.ts`: encrypted,
 and the server is verified against Supabase's certificate authority
 (`certs/prod-ca-2021.crt`, valid until 2031-04-26) and its host name.

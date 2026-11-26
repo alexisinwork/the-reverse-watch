@@ -19,7 +19,9 @@ import {
   loadArchetypeWindow,
   loadCatalogueRowsById,
 } from "./watch-catalogue.server";
+import type { FoundWatch } from "./ai-watch-types";
 import { enrichResultWatches } from "./catalogue-result-enrichment.server";
+import { convert } from "./fx";
 import { loadFxTable, type FxTable } from "./fx.server";
 import { uniqueWatchResults } from "./watch-result-dedup";
 import { validateSelectedResults } from "./validate-selected-results.server";
@@ -136,15 +138,50 @@ export function rankEnrichedArchetype<T extends ArchetypeFacts>(
     });
 }
 
+/**
+ * The editorial picks whose known price sits in the band at today's rates,
+ * the same rule the catalogue window applies (`archetypeCatalogueWindow`).
+ * A pick priced outside the band breaks the visitor's price answer, so it
+ * is left out (the paid round of 2026-11-26 found an EUR 8,900 pick in the
+ * USD 10,000+ band). A pick without a price, or with no rate to convert it,
+ * stays; validation labels a card that ends without a price.
+ */
+export function curatedInBand(
+  picks: readonly FoundWatch[],
+  band: PriceComfort,
+  fx: FxTable | null,
+) {
+  const bounds = ARCHETYPE_BANDS[band];
+  return picks.filter((watch) => {
+    const price = watch.details.price;
+    if (!price) return true;
+    const usd =
+      price.currency === "USD"
+        ? price.amount
+        : fx
+          ? convert(price.amount, price.currency, "USD", fx)
+          : null;
+    if (usd === null) return true;
+    return (
+      usd >= bounds.minimumUsd &&
+      (bounds.maximumUsd === null || usd < bounds.maximumUsd)
+    );
+  });
+}
+
 async function selectArchetypeWatches(
   archetype: ArchetypeId,
   band: PriceComfort,
 ) {
-  const curated = await enrichResultWatches(archetypeWatches(archetype, band));
+  const fx = await loadFxTable().catch(() => null);
+  const curated = curatedInBand(
+    await enrichResultWatches(archetypeWatches(archetype, band)),
+    band,
+    fx,
+  );
   const client = catalogueClient();
   if (!client) return curated;
   try {
-    const fx = await loadFxTable();
     // No catalogue row can show recognition, so that archetype reads nothing.
     const window =
       archetype === "recognised_standard_bearer"

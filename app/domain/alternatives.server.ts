@@ -53,6 +53,9 @@ const fold = foldName;
 
 const WORD_ALIASES: Record<string, string> = { fifty: "58", eight: "" };
 
+/** Typed words this long may match the start of a stored word. */
+const PREFIX_MIN = 3;
+
 function words(value: string) {
   return fold(value)
     .split(" ")
@@ -176,12 +179,17 @@ export function resolveNamedWatch<T extends NameFacts>(
   if (wanted.length === 0) return { status: "not_found" };
   const haystack = (watch: T) =>
     ` ${words(`${watch.brand} ${watch.model} ${watch.referenceCode ?? ""}`).join(" ")} `;
-  const hits = (watch: T) =>
-    wanted.filter(
+  // A typed word matches a whole stored word, or the start of one when it
+  // has PREFIX_MIN or more characters ("moon" finds "Moonwatch"). Shorter
+  // words match whole only: "de" in "Santos de Cartier" is not "Demoiselle".
+  const hits = (watch: T) => {
+    const text = haystack(watch);
+    return wanted.filter(
       (word) =>
-        haystack(watch).includes(` ${word} `) ||
-        haystack(watch).includes(` ${word}`),
+        text.includes(` ${word} `) ||
+        (word.length >= PREFIX_MIN && text.includes(` ${word}`)),
     ).length;
+  };
 
   const full = live.filter((watch) => hits(watch) === wanted.length);
   // A near miss (one word off, like "Black Bay 51") must still share a
@@ -205,20 +213,38 @@ export function resolveNamedWatch<T extends NameFacts>(
       watch,
     ]);
   }
-  const options = [...byFamily.entries()]
+  const byLength = [...byFamily.entries()]
     .map(([key, group]) => ({ key, watch: [...group].sort(better)[0]! }))
     .sort((a, b) => a.key.length - b.key.length);
+  // Families whose best record the finder can compare (styles, size,
+  // movement); the others end in "comparison specifications are incomplete".
+  const comparable = byLength.filter((option) =>
+    hasComparisonFacts(option.watch),
+  );
+  // Exactly the name typed, or the plain base model every other option
+  // extends (Submariner vs Submariner Date): taken without asking.
+  const typed = wanted.join(" ");
+  const settled = (options: typeof byLength) =>
+    options.find((option) => option.key === typed) ??
+    (options[0] &&
+    options.every((option) => option.key.startsWith(options[0]!.key))
+      ? options[0]
+      : undefined);
   if (full.length > 0) {
-    // Exactly the name typed, or the plain base model every other match
-    // extends (Submariner vs Submariner Date): take it without asking.
-    const typed = wanted.join(" ");
-    const exact = options.find((option) => option.key === typed);
-    if (exact) return { status: "found", watch: exact.watch };
-    const base = options[0]!;
-    if (options.every((option) => option.key.startsWith(base.key))) {
-      return { status: "found", watch: base.watch };
-    }
+    const chosen = settled(byLength);
+    if (chosen && (hasComparisonFacts(chosen.watch) || comparable.length === 0))
+      return { status: "found", watch: chosen.watch };
+    // The name settles on records without comparison facts while fuller
+    // names of the same watch have them ("Rolex Daytona" is stored complete
+    // as "Rolex Cosmograph Daytona"): settle among those instead, or ask.
+    const usable = chosen ? settled(comparable) : undefined;
+    if (usable) return { status: "found", watch: usable.watch };
   }
+  // Options the finder can compare come first.
+  const options = [
+    ...comparable,
+    ...byLength.filter((option) => !comparable.includes(option)),
+  ];
   return {
     status: "ambiguous",
     options: options.slice(0, 6).map((option) => option.watch),

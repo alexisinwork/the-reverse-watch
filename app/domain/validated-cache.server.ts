@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type { FoundWatch } from "./ai-watch-types";
+import { passageTiesSighting } from "./attribution-names";
 import { safeHttpUrl } from "./source-pages.server";
 import {
   parseObservedPrice,
@@ -25,17 +26,6 @@ function independentSources(sources: { sourceUrl: string }[]) {
       : null;
   });
   return hosts.length === 2 && hosts.every(Boolean) && hosts[0] !== hosts[1];
-}
-
-function quoteHas(quote: string, value: string) {
-  const words = (input: string) =>
-    input
-      .normalize("NFKD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, " ")
-      .trim();
-  return ` ${words(quote)} `.includes(` ${words(value)} `);
 }
 
 const evidenceSchema = z.object({
@@ -242,13 +232,20 @@ const watchSchema = z
       index,
       evidence,
     ] of watch.details.validationEvidence.entries()) {
+      // The same passage rule as the page check
+      // (cached-result-source-check.server.ts): brand, the watch by its
+      // reference or model words, a name of the wearer and the film.
       if (
         !evidence.sourceQuote?.trim() ||
-        !quoteHas(evidence.sourceQuote, watch.brand) ||
-        !pageMentionsReference(watch.referenceCode, evidence.sourceQuote, "") ||
-        (typeof person === "string" &&
-          !quoteHas(evidence.sourceQuote, person)) ||
-        (typeof work === "string" && !quoteHas(evidence.sourceQuote, work)) ||
+        !passageTiesSighting(evidence.sourceQuote, {
+          brand: watch.brand,
+          model: watch.model,
+          referenceCode: watch.referenceCode,
+          details: {
+            person: typeof person === "string" ? person : null,
+            work: typeof work === "string" ? work : null,
+          },
+        }) ||
         (typeof person === "string" && evidence.person !== person) ||
         (typeof work === "string" && evidence.work !== work)
       ) {

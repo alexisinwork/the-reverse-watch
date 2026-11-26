@@ -111,4 +111,4 @@ unused part of this approval if the owner agrees. Results and findings:
    one card, $3.89 spent (above).
 3. The rating sheet has 321 cards (10 quiz answers, 8 archetype results, 10
    alternatives cases, every film card): `docs/reports/rating-sheet-2026-11-26.json`,
-   rated on the owner's rating page (`docs/OWNER_QUESTIONS.md`, item 2).
+   rated on the owner's rating page (`docs/OWNER_QUESTIONS.md`, item 1).

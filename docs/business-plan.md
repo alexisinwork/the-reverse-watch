@@ -889,3 +889,10 @@ database has no backups; the Pro plan ($25 a month) should precede the first
 paying partner. **Next action:** fix those defects and re-measure; after the
 owner's Lovable publish, verify the live demo, then offer the first bounded
 paid pilot.
+
+Fixes, 2026-11-26: the alternatives finder now answers all 60 test cases
+(24 before), the archetype band rule holds, a checked answer is no longer
+lost over a photo conflict, and the film passage rule is corrected (to be
+measured by a paid re-check of about $4). The owner asked to ignore the test
+partner, so the portfolio demo is not a launch step. **Next action:** the
+paid re-check with the owner's OK, then offer the first bounded paid pilot.

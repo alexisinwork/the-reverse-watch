@@ -11,7 +11,10 @@ vi.mock("./coverage-catalogue.server", () => ({
 vi.mock("./validation-runtime.server", () => ({
   meteredSearchOptions: () => ({}),
 }));
-import { validateSelectedResults } from "./validate-selected-results.server";
+import {
+  validateSelectedResults,
+  withSelectedFacts,
+} from "./validate-selected-results.server";
 const card = (referenceCode: string): FoundWatch => ({
   brand: "Omega",
   model: referenceCode,
@@ -96,5 +99,73 @@ describe("checked catalogue selections", () => {
       candidates: FoundWatch[];
     };
     expect(request.candidates).toHaveLength(8);
+  });
+});
+
+describe("withSelectedFacts", () => {
+  const editorial: FoundWatch = {
+    brand: "Maurice Lacroix",
+    model: "Aikon Master Grand Date Technicolour",
+    referenceCode: "AI6118-SS00E-430-C",
+    sourceUrl: "",
+    imageUrl: null,
+    priceNote: null,
+    rationale: "Editorial reason",
+    details: {
+      price: { amount: 8_900, currency: "EUR" },
+      caseDiameterMm: 45,
+      movement: "automatic",
+    },
+  };
+  const checked: FoundWatch = {
+    ...card("AI6118-SS00E-430-C"),
+    brand: "Maurice Lacroix",
+    sourceUrl: "https://www.mauricelacroix.com/AI6118-SS00E-430-C.html",
+    details: { referenceVerified: true },
+  };
+
+  it("brings back the title and price a check without a catalogue record dropped", () => {
+    const card = withSelectedFacts(checked, editorial);
+    expect(card).toMatchObject({
+      model: "Aikon Master Grand Date Technicolour",
+      referenceCode: "AI6118-SS00E-430-C",
+      sourceUrl: "https://www.mauricelacroix.com/AI6118-SS00E-430-C.html",
+      rationale: "Editorial reason",
+      details: {
+        price: { amount: 8_900, currency: "EUR" },
+        priceConfirmed: false,
+        caseDiameterMm: 45,
+        referenceVerified: true,
+      },
+    });
+    expect(card.details.verificationStatus).toBeUndefined();
+  });
+
+  it("labels a checked card that still has no price", () => {
+    const card = withSelectedFacts(checked, {
+      ...editorial,
+      details: { caseDiameterMm: 45 },
+    });
+    expect(card.details).toMatchObject({
+      verificationStatus: "unverified",
+      verificationNote: "Price unavailable — budget fit not confirmed",
+    });
+  });
+
+  it("keeps the note of a card that was already labelled", () => {
+    const card = withSelectedFacts(
+      {
+        ...checked,
+        details: {
+          verificationStatus: "unverified",
+          verificationNote:
+            "Price unavailable — selected price band not confirmed",
+        },
+      },
+      { ...editorial, details: {} },
+    );
+    expect(card.details.verificationNote).toBe(
+      "Price unavailable — selected price band not confirmed",
+    );
   });
 });

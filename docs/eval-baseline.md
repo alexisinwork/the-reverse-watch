@@ -136,13 +136,56 @@ What the round found:
 5. Answer quiz-32 (USD 8,000–9,000, quartz or solar, 200 m) has 8 options
    after two rounds; such watches are scarce, and the page says so.
 
+## Fixes after the paid round (2026-11-26, owner: "исправь")
+
+Measured without paid calls: the same live harness with every provider
+request refused (`scripts/run-evals-live.ts --dry-run`, report
+`docs/reports/eval-live-2026-11-26-dry-run.json`) and the free evaluation
+(`docs/reports/eval-2026-11-26-after-fixes.json`).
+
+| Measure (visitor path) | Paid round, before | Dry run, after |
+| --- | --- | --- |
+| Alternatives cases that reach a search | 24 of 60 | 60 of 60 |
+| Alternatives cases stopped at "specifications incomplete" | 36 of 60 | 0 |
+| Owner's pick in the top ten (of the cases searched) | 10 of 24 | 14 of 60 |
+| Archetype hard-rule failures | 1 | 0 |
+| Quiz hard-rule failures (263 exact cards) | 0 | 0 |
+| Invented film sightings | 0 | 0 |
+
+1. **Alternatives name resolution** (`resolveNamedWatch`): when the name
+   typed settles on records without comparison facts, it settles among the
+   complete records of the same watch ("Rolex Daytona" → a complete
+   Cosmograph Daytona record) or asks which one, complete models first. A
+   typed word of one or two characters matches only a whole word, so "de"
+   no longer finds "Demoiselle". The free evaluation's alternatives section
+   counts only names that resolve without a question: 6 now, 17 before,
+   because 11 of those 17 were the dead ends above; its recall (7 of 60) does
+   not follow the "Which one?" chips, so the visitor-path figures above are
+   the measure.
+2. **Archetype**: a checked card gets back the title and price its local
+   record had when the check dropped them (`withSelectedFacts`), and a card
+   left without a price is labelled. Editorial picks priced outside the band
+   at today's rates are left out (`curatedInBand`): the Maurice Lacroix pick
+   is EUR 8,900, about USD 9,732, below the USD 10,000 band.
+3. **Film confirmation**: a wearer is matched by any name the provider's
+   attribution contains ("James Bond (Daniel Craig)" → "Daniel Craig"), and
+   the passage may name the watch by its model words instead of the
+   reference; the page must still show the exact reference, two providers
+   must still agree, and their pages must be on different sites
+   (`app/domain/attribution-names.ts`). On the round's own source pages the
+   page check now passes for 10 of the 20 film cards that have a reference
+   (8 before). Whether confirmations follow needs a paid re-check: the
+   providers' passages are not stored.
+4. **Saving checked answers**: migration 0122 keeps the catalogue's photo
+   instead of refusing the whole answer when a check finds a different one
+   (`scripts/test-image-conflict-publish.ts`: FAILS on the old function,
+   PASS applied).
+
 ## Known gaps the scores point to
 
-- Alternatives: 11 of the 20 test-set names stop at incomplete
-  specifications because name resolution picks a fact-less record while a
-  complete one exists (live round, finding 1).
-- Film: paid research finds 15 of 19 independent sightings but confirms
-  none; confirmation is the gap (live round, finding 3).
+- Film: whether the new passage rule turns the 15 found sightings into
+  confirmed ones is not yet measured; it needs a paid re-check (about
+  $0.11 for the film searches).
 - Relevance beyond hard rules needs the owner's (or a specialist's) ratings
   of the 321-card sample (`docs/reports/rating-sheet-2026-11-26.json`).
 - Evaluations need database credentials, so they run locally, not in CI;
