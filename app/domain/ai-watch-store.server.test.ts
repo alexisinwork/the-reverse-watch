@@ -305,6 +305,37 @@ describe("searchWithStore", () => {
     ]);
   });
 
+  it("keeps the role on a saved draft that names the film too", async () => {
+    const withFilm = {
+      person: "Andy Dufresne (Tim Robbins)",
+      work: "The Shawshank Redemption",
+    };
+    const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
+      String(input).includes("ai_watch_search_get_v1")
+        ? json({
+            validationStatus: "unverified",
+            summary: "Draft.",
+            watches: [{ ...foundWatch, details: withFilm }],
+          })
+        : json(null),
+    );
+    const validateDraft = vi.fn(async () => ({
+      status: "unavailable" as const,
+      reason: "no confirmed candidates",
+    }));
+    await searchWithStore(
+      {
+        kind: "film",
+        cacheInput: { query: "Tim Robbins", kind: "actor" },
+        run: finderMock.runAiWatchSearch,
+      },
+      { store, fetchImpl, validateDraft },
+    );
+    expect(validateDraft).toHaveBeenCalledWith(expect.any(String), [
+      expect.objectContaining({ details: withFilm }),
+    ]);
+  });
+
   it("searches anew when a saved draft holds nothing about the subject", async () => {
     const fetchImpl = vi.fn(async (input: RequestInfo | URL) =>
       String(input).includes("ai_watch_search_get_v1")

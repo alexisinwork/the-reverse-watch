@@ -6,6 +6,7 @@ import {
   sameBrand,
   passageTiesSighting,
   personNames,
+  roleAttribution,
   samePerson,
   sameWork,
 } from "./attribution-names";
@@ -129,5 +130,81 @@ describe("brand spellings", () => {
     expect(sameBrand("Heuer", "TAG Heuer")).toBe(true);
     expect(sameBrand("Grand Seiko", "Seiko")).toBe(false);
     expect(sameBrand(null, "Omega")).toBe(false);
+  });
+});
+
+describe("a role on an actor's card", () => {
+  it("keeps the role only beside a film, and only for the person searched", () => {
+    expect(
+      roleAttribution(
+        "Matthew McConaughey",
+        "Mark Hanna (Matthew McConaughey)",
+        "The Wolf of Wall Street",
+      ),
+    ).toEqual({
+      person: "Mark Hanna (Matthew McConaughey)",
+      work: "The Wolf of Wall Street",
+    });
+    expect(
+      roleAttribution(
+        "Mark Hanna",
+        "Mark Hanna (Matthew McConaughey)",
+        "The Wolf of Wall Street",
+      ),
+    ).toEqual({
+      person: "Mark Hanna (Matthew McConaughey)",
+      work: "The Wolf of Wall Street",
+    });
+    expect(
+      roleAttribution(
+        "Matthew McConaughey",
+        "Mark Hanna (Matthew McConaughey)",
+        null,
+      ),
+    ).toEqual({ person: "Matthew McConaughey", work: null });
+    expect(
+      roleAttribution(
+        "Matthew McConaughey",
+        "Matthew McConaughey",
+        "Interstellar",
+      ),
+    ).toEqual({ person: "Matthew McConaughey", work: null });
+    expect(
+      roleAttribution("Heath Ledger", "Joaquin Phoenix as the Joker", "Joker"),
+    ).toEqual({ person: "Heath Ledger", work: null });
+    expect(
+      roleAttribution(
+        "Heath Ledger",
+        "The Joker (Heath Ledger)",
+        "https://example.com",
+      ),
+    ).toEqual({ person: "Heath Ledger", work: null });
+  });
+
+  it("lets a passage name the role, together with the film", () => {
+    const card = {
+      brand: "Rolex",
+      model: "16233",
+      referenceCode: "16233",
+      details: {
+        person: "Mark Hanna (Matthew McConaughey)",
+        work: "The Wolf of Wall Street",
+      },
+    };
+    expect(
+      passageTiesSighting(
+        "Rolex Datejust 16233 - Mark Hanna in The Wolf of Wall Street",
+        card,
+      ),
+    ).toBe(true);
+    expect(
+      passageTiesSighting(
+        "Hanna wears a two-tone Rolex Datejust 16233 through all of it.",
+        card,
+      ),
+    ).toBe(false);
+    expect(
+      passageTiesSighting("Mark Hanna wears a Rolex Datejust 16233.", card),
+    ).toBe(false);
   });
 });

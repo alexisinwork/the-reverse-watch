@@ -10,6 +10,8 @@
 //   node --env-file=.env --import tsx scripts/run-film-searches.ts \
 //     --queries data/eval/film-queries-2026-11-26.json --budget 25 --label owner-test
 //
+// Add --fresh to read the articles again before each search (see below).
+//
 // The queries file holds { "queries": [{ "query": "...", "kind": "movie" }] }
 // and/or { "titles": ["..."] } (titles are searched as movies). Writes
 // docs/reports/film-searches-<label>-<date>.json in the live evaluation's
@@ -18,7 +20,10 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 import type { AiSearchView, FoundWatch } from "../app/domain/ai-watch-types";
+import { aiSearchCacheKey } from "../app/domain/ai-watch-store.server";
 import { runFilmSearch } from "../app/domain/film-search-run.server";
+import { normalizeFilmQuery } from "../app/domain/film-search.server";
+import { meteredSearchOptions } from "../app/domain/validation-runtime.server";
 import {
   FILM_SUBJECT_KINDS,
   type FilmSubjectKind,
@@ -34,6 +39,11 @@ const queriesFile = option("queries");
 const budgetUsd = Number(option("budget"));
 const label = option("label") ?? "run";
 const concurrency = Number(option("concurrency") ?? 3);
+// --fresh reads the articles again under today's instructions before the
+// search, even where a saved draft exists, through the visitors' metered
+// path (the same reservation, backoff, checks and publication). A saved
+// draft keeps what an older discovery wrote, such as a wearer without a role.
+const fresh = process.argv.includes("--fresh");
 if (!queriesFile) throw new Error("--queries <file> is required.");
 if (!Number.isFinite(budgetUsd) || budgetUsd <= 0 || budgetUsd > 60)
   throw new Error("--budget <usd> is required: above 0 and at most 60.");
@@ -150,6 +160,15 @@ const lane = async () => {
     }
     const started = Date.now();
     try {
+      if (fresh) {
+        const subject = {
+          query: normalizeFilmQuery(query.query),
+          kind: query.kind as FilmSubjectKind,
+        };
+        await meteredSearchOptions()
+          .validateMissingFilm?.(aiSearchCacheKey("film", subject), subject)
+          .catch(() => undefined);
+      }
       const view = await runFilmSearch({
         query: query.query,
         kind: query.kind as FilmSubjectKind,

@@ -11,7 +11,12 @@ import type {
   ValidationServices,
 } from "./validate-cached-search.server";
 import type { ValidationEvidence } from "./cached-result-validation";
-import { sameBrand, samePerson, sameWork } from "./attribution-names";
+import {
+  roleAttribution,
+  sameBrand,
+  samePerson,
+  sameWork,
+} from "./attribution-names";
 import { filmDiscoverySubjectSchema } from "./validation-provider-request.server";
 import { safeHttpUrl, sourceHost } from "./source-pages.server";
 
@@ -55,12 +60,17 @@ export async function validateNewFilmSearch(
     ...services,
     discover: () => services.discoverFilm(subject),
     // "John Wick (Keanu Reeves)" is John Wick; "Casino Royale (2006)" is
-    // Casino Royale. The card itself is stored under the subject searched.
+    // Casino Royale. A film's card is stored under the title searched; an
+    // actor's or a character's card keeps the role and the film when the
+    // provider names both (roleAttribution), else the name searched.
     accepts: (evidence) =>
       isWork
         ? sameWork(evidence.work, subject.query)
         : samePerson(evidence.person, subject.query),
-    attribution: isWork ? { work: subject.query } : { person: subject.query },
+    attributionFor: (evidence) =>
+      isWork
+        ? { person: null, work: subject.query }
+        : roleAttribution(subject.query, evidence.person, evidence.work),
   });
 }
 
@@ -72,8 +82,18 @@ export async function validateDiscoveredSearch(
     discover: () => Promise<FilmDiscovery>;
     accepts: (evidence: ValidationEvidence) => boolean;
     attribution?: { person?: string; work?: string };
+    /** The person and work each found card states, when they depend on
+     * what its source said; overrides `attribution`. */
+    attributionFor?: (evidence: ValidationEvidence) => {
+      person: string | null;
+      work: string | null;
+    };
   },
 ): Promise<ValidationRun> {
+  const cardAttribution = (evidence: ValidationEvidence) => {
+    const named = services.attributionFor?.(evidence) ?? services.attribution;
+    return { person: named?.person ?? null, work: named?.work ?? null };
+  };
   const reservation = await services.reserve(cacheKey, count);
   if (reservation.state !== "reserved")
     return { status: "unavailable", reason: reservation.state };
@@ -152,10 +172,7 @@ export async function validateDiscoveredSearch(
           priceNote: null,
           rationale:
             "Possible match from cited research; not independently confirmed.",
-          details: {
-            person: services.attribution?.person ?? null,
-            work: services.attribution?.work ?? null,
-          },
+          details: cardAttribution(evidence),
         } satisfies FoundWatch,
       ];
     });
@@ -193,10 +210,7 @@ export async function validateDiscoveredSearch(
         imageUrl: null,
         priceNote: null,
         rationale: "",
-        details: {
-          person: services.attribution?.person ?? null,
-          work: services.attribution?.work ?? null,
-        },
+        details: cardAttribution(evidence),
       };
       return [{ watch, evidence }];
     })

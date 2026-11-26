@@ -1,0 +1,349 @@
+{
+  "description": "Actors and characters from the IMDb Top 250 tests still without a confirmed watch after the third pass; searched again with --fresh after the role fix (owner, 2026-11-26: \"yes, fix it\"). Queries only, never scored.",
+  "queries": [
+    {
+      "query": "John Wick",
+      "kind": "character"
+    },
+    {
+      "query": "Bruce Wayne",
+      "kind": "character"
+    },
+    {
+      "query": "Marty McFly",
+      "kind": "character"
+    },
+    {
+      "query": "Tim Robbins",
+      "kind": "actor"
+    },
+    {
+      "query": "Michael Corleone",
+      "kind": "character"
+    },
+    {
+      "query": "Christian Bale",
+      "kind": "actor"
+    },
+    {
+      "query": "Tom Hanks",
+      "kind": "actor"
+    },
+    {
+      "query": "Forrest Gump",
+      "kind": "character"
+    },
+    {
+      "query": "Keanu Reeves",
+      "kind": "actor"
+    },
+    {
+      "query": "Neo",
+      "kind": "character"
+    },
+    {
+      "query": "Robert De Niro",
+      "kind": "actor"
+    },
+    {
+      "query": "Harrison Ford",
+      "kind": "actor"
+    },
+    {
+      "query": "Tyler Durden",
+      "kind": "character"
+    },
+    {
+      "query": "Tony Montana",
+      "kind": "character"
+    },
+    {
+      "query": "John McClane",
+      "kind": "character"
+    },
+    {
+      "query": "Ellen Ripley",
+      "kind": "character"
+    },
+    {
+      "query": "Jordan Belfort",
+      "kind": "celebrity"
+    },
+    {
+      "query": "Jack Nicholson",
+      "kind": "actor"
+    },
+    {
+      "query": "Morgan Freeman",
+      "kind": "actor"
+    },
+    {
+      "query": "Heath Ledger",
+      "kind": "actor"
+    },
+    {
+      "query": "Liam Neeson",
+      "kind": "actor"
+    },
+    {
+      "query": "John Travolta",
+      "kind": "actor"
+    },
+    {
+      "query": "Samuel L. Jackson",
+      "kind": "actor"
+    },
+    {
+      "query": "Bruce Willis",
+      "kind": "actor"
+    },
+    {
+      "query": "Edward Norton",
+      "kind": "actor"
+    },
+    {
+      "query": "Joseph Gordon-Levitt",
+      "kind": "actor"
+    },
+    {
+      "query": "Ray Liotta",
+      "kind": "actor"
+    },
+    {
+      "query": "Joe Pesci",
+      "kind": "actor"
+    },
+    {
+      "query": "Jodie Foster",
+      "kind": "actor"
+    },
+    {
+      "query": "Anthony Hopkins",
+      "kind": "actor"
+    },
+    {
+      "query": "Kevin Spacey",
+      "kind": "actor"
+    },
+    {
+      "query": "Russell Crowe",
+      "kind": "actor"
+    },
+    {
+      "query": "Matt Damon",
+      "kind": "actor"
+    },
+    {
+      "query": "Michael J. Fox",
+      "kind": "actor"
+    },
+    {
+      "query": "Sigourney Weaver",
+      "kind": "actor"
+    },
+    {
+      "query": "Tom Cruise",
+      "kind": "actor"
+    },
+    {
+      "query": "Miles Teller",
+      "kind": "actor"
+    },
+    {
+      "query": "Cillian Murphy",
+      "kind": "actor"
+    },
+    {
+      "query": "Daniel Day-Lewis",
+      "kind": "actor"
+    },
+    {
+      "query": "Hugh Jackman",
+      "kind": "actor"
+    },
+    {
+      "query": "Mel Gibson",
+      "kind": "actor"
+    },
+    {
+      "query": "Jake Gyllenhaal",
+      "kind": "actor"
+    },
+    {
+      "query": "Cary Grant",
+      "kind": "actor"
+    },
+    {
+      "query": "Humphrey Bogart",
+      "kind": "actor"
+    },
+    {
+      "query": "James Stewart",
+      "kind": "actor"
+    },
+    {
+      "query": "Dustin Hoffman",
+      "kind": "actor"
+    },
+    {
+      "query": "Jamie Foxx",
+      "kind": "actor"
+    },
+    {
+      "query": "Timothée Chalamet",
+      "kind": "actor"
+    },
+    {
+      "query": "Andy Dufresne",
+      "kind": "character"
+    },
+    {
+      "query": "Ellis Redding",
+      "kind": "character"
+    },
+    {
+      "query": "Vito Corleone",
+      "kind": "character"
+    },
+    {
+      "query": "The Joker",
+      "kind": "character"
+    },
+    {
+      "query": "Vincent Vega",
+      "kind": "character"
+    },
+    {
+      "query": "Jules Winnfield",
+      "kind": "character"
+    },
+    {
+      "query": "Butch Coolidge",
+      "kind": "character"
+    },
+    {
+      "query": "Dom Cobb",
+      "kind": "character"
+    },
+    {
+      "query": "Joseph Cooper",
+      "kind": "character"
+    },
+    {
+      "query": "Hannibal Lecter",
+      "kind": "character"
+    },
+    {
+      "query": "Clarice Starling",
+      "kind": "character"
+    },
+    {
+      "query": "Travis Bickle",
+      "kind": "character"
+    },
+    {
+      "query": "Henry Hill",
+      "kind": "character"
+    },
+    {
+      "query": "Jordan Belfort",
+      "kind": "character"
+    },
+    {
+      "query": "Doc Brown",
+      "kind": "character"
+    },
+    {
+      "query": "Sarah Connor",
+      "kind": "character"
+    },
+    {
+      "query": "Hans Gruber",
+      "kind": "character"
+    },
+    {
+      "query": "Rocky Balboa",
+      "kind": "character"
+    },
+    {
+      "query": "Pete \"Maverick\" Mitchell",
+      "kind": "character"
+    },
+    {
+      "query": "Llewelyn Moss",
+      "kind": "character"
+    },
+    {
+      "query": "Anton Chigurh",
+      "kind": "character"
+    },
+    {
+      "query": "Frank Abagnale",
+      "kind": "character"
+    },
+    {
+      "query": "Billy Costigan",
+      "kind": "character"
+    },
+    {
+      "query": "Jack Torrance",
+      "kind": "character"
+    },
+    {
+      "query": "Rick Blaine",
+      "kind": "character"
+    },
+    {
+      "query": "Virgil Hilts",
+      "kind": "character"
+    },
+    {
+      "query": "Vincent Hanna",
+      "kind": "character"
+    },
+    {
+      "query": "Neil McCauley",
+      "kind": "character"
+    },
+    {
+      "query": "Roger Thornhill",
+      "kind": "character"
+    },
+    {
+      "query": "Benjamin Willard",
+      "kind": "character"
+    },
+    {
+      "query": "Walter E. Kurtz",
+      "kind": "character"
+    },
+    {
+      "query": "Max Rockatansky",
+      "kind": "character"
+    },
+    {
+      "query": "Rick Deckard",
+      "kind": "character"
+    },
+    {
+      "query": "Patrick Bateman",
+      "kind": "character"
+    },
+    {
+      "query": "Dr. Strangelove",
+      "kind": "character"
+    },
+    {
+      "query": "Léon",
+      "kind": "character"
+    },
+    {
+      "query": "Captain John Miller",
+      "kind": "character"
+    },
+    {
+      "query": "Carl Fredricksen",
+      "kind": "character"
+    }
+  ]
+}

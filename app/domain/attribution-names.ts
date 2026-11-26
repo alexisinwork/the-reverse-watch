@@ -64,6 +64,48 @@ export function workNames(value: string | null | undefined): string[] {
   return name ? [name] : [];
 }
 
+/** A plain public name or title a provider wrote, or null for anything
+ * else (an address, an e-mail, an over-long string). */
+function plainName(value: string | null | undefined, max: number) {
+  const name = value?.trim().replace(/\s+/g, " ") ?? "";
+  return name.length > 0 &&
+    name.length <= max &&
+    !/(?:https?:\/\/|\bwww\.|@|\b(?:\d{1,3}\.){3}\d{1,3}\b)/i.test(name)
+    ? name
+    : null;
+}
+
+/**
+ * The wearer and film an actor's or a character's card states. Pages often
+ * name the role and not the actor ("Mark Hanna in The Wolf of Wall
+ * Street"). When the provider writes the wearer with the role ("Mark Hanna
+ * (Matthew McConaughey)") and names the film, the card keeps both: a passage
+ * may then name the role or the actor, and must also name the film, so a
+ * role played by several actors cannot lend one actor's watch to another.
+ * Otherwise the card states only the person searched.
+ */
+export function roleAttribution(
+  searched: string,
+  wearer: string | null | undefined,
+  work: string | null | undefined,
+): { person: string; work: string | null } {
+  const role = plainName(wearer, 160);
+  const title = plainName(work, 200);
+  const own = new Set(
+    personNames(searched).map((name) => name.replace(/ /g, "")),
+  );
+  const parts = role
+    ? personNames(role).filter((name) => name !== fold(role))
+    : [];
+  return role &&
+    title &&
+    samePerson(role, searched) &&
+    parts.length >= 2 &&
+    parts.some((name) => !own.has(name.replace(/ /g, "")))
+    ? { person: role, work: title }
+    : { person: searched, work: null };
+}
+
 /** Two wearer attributions name the same person when one name agrees. */
 export function samePerson(
   a: string | null | undefined,

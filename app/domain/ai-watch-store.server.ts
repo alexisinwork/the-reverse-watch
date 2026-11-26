@@ -205,13 +205,21 @@ function bindFilmSubject(
     )
       return [{ ...watch, details: { ...watch.details, work: query } }];
     // A wearer saved as "Andy Dufresne (Tim Robbins)" is the person searched
-    // as "Tim Robbins": one shared name, stored under the name searched.
+    // as "Tim Robbins". Beside the film it keeps the role, which pages often
+    // name instead of the actor (roleAttribution); without a film it is
+    // stored under the name searched.
     if (
       field === "person" &&
       typeof current === "string" &&
       samePerson(current, query)
-    )
-      return [{ ...watch, details: { ...watch.details, person: query } }];
+    ) {
+      const work = watch.details.work;
+      return [
+        typeof work === "string" && work.trim()
+          ? watch
+          : { ...watch, details: { ...watch.details, person: query } },
+      ];
+    }
     if (!current && allowMissing)
       return [{ ...watch, details: { ...watch.details, [field]: query } }];
     return [];

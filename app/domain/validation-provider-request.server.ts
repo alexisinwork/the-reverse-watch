@@ -351,8 +351,8 @@ export function buildFilmDiscoveryRequest(
         `Already found, do not repeat: ${JSON.stringify(excluded)}.`,
         'For each watch return: brand; a concise model name; the exact manufacturer reference whenever that page states it anywhere (for example "Ref. 2900.50.91" or "the 7A28-7000"), otherwise null; sourceUrl, the exact URL of that page from your search results; sourceQuote, one sentence of at most 30 words copied verbatim from that page that names the subject and the watch by its brand together with its model or reference, preferring the sentence that gives the reference.',
         isWork
-          ? "Put the exact subject title in work. Put the wearer in person only when the page names them; otherwise null."
-          : "Put the exact subject name in person. Put the film, series or occasion in work only when the page names it; otherwise null.",
+          ? 'Put the exact subject title in work. Put the wearer in person only when the page names them, written "Role (Actor)" when the page names both; otherwise null.'
+          : 'In person write the subject\'s exact name; when the page names the role the subject played, or the actor who played the subject, write both as "Role (Actor)", for example "Mark Hanna (Matthew McConaughey)". Put the film or series in work when the page names it, or else the occasion; otherwise null.',
         "Set supported true only when the page itself states that the subject wore or used this exact watch. Set it false for similar, inspired-by, homage or recommended watches, fan guesses and rumours. Never invent a watch, a reference, an attribution or a quotation. Leave out pocket watches and clocks. Return fewer results when the pages document fewer.",
         "If a cited page also explicitly gives a specification or approximate price for this exact reference, include its fact, verbatim quote and cited sourceUrl using the requested schema; otherwise return an empty facts array.",
       ].join(" "),

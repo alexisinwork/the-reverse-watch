@@ -249,6 +249,51 @@ describe("new film discovery", () => {
     );
     expect(services.primary).not.toHaveBeenCalled();
   });
+  it("keeps the role and the film on an actor's card when the source names both", async () => {
+    const { services } = fixture();
+    const role = {
+      ...primary,
+      brand: "Rolex",
+      referenceCode: "16233",
+      person: "Mark Hanna (Matthew McConaughey)",
+      work: "The Wolf of Wall Street",
+    };
+    const plain = { ...role, referenceCode: "1675", work: null };
+    services.discoverFilm.mockResolvedValueOnce({
+      evidence: [role, plain],
+      costUsd: 0.004,
+    });
+    services.secondary.mockImplementation(async (brief) => ({
+      evidence: {
+        ...secondary,
+        brand: brief.brand,
+        referenceCode: brief.referenceCode,
+      },
+      costUsd: 0.003,
+    }));
+    const result = await validateNewFilmSearch(
+      "a".repeat(64),
+      { query: "Matthew McConaughey", kind: "actor" },
+      services,
+    );
+    expect(result.status).toBe("verified");
+    // The role is kept beside the film; without a film the card states the
+    // name searched.
+    expect(services.secondary).toHaveBeenCalledWith(
+      expect.objectContaining({
+        referenceCode: "16233",
+        person: "Mark Hanna (Matthew McConaughey)",
+        work: "The Wolf of Wall Street",
+      }),
+    );
+    expect(services.secondary).toHaveBeenCalledWith(
+      expect.objectContaining({
+        referenceCode: "1675",
+        person: "Matthew McConaughey",
+        work: null,
+      }),
+    );
+  });
   it("settles the primary cost when its candidate does not match the subject", async () => {
     const { services } = fixture();
     services.discoverFilm.mockResolvedValueOnce({
