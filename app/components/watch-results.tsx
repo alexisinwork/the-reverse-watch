@@ -472,7 +472,7 @@ function ResultBody({
   if (result.status === "unavailable") {
     const message =
       result.reason === "retry_later"
-        ? "We could not complete this search. Please try again in five minutes."
+        ? "We could not complete this search. Please try again later."
         : result.reason === "in_progress"
           ? "This search is still being checked. Please try again shortly."
           : result.reason === "budget"

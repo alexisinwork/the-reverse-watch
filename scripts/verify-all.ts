@@ -59,6 +59,12 @@ const CHECKS: Check[] = [
     what: "permissions, every Unicode code point, aliases, near misses, in a rolled-back transaction",
   },
   {
+    name: "Migration 0121 (validation backoff)",
+    command: tsx("scripts/test-validation-backoff.ts", "--applied"),
+    needs: "database",
+    what: "waits of 5 minutes, 1 hour, 1 day and 7 days after failed paid checks, in a rolled-back transaction",
+  },
+  {
     name: "Quiz window equals the whole catalogue",
     command: tsx("scripts/check-quiz-window-equivalence.ts"),
     needs: "database",
@@ -100,6 +106,19 @@ const CHECKS: Check[] = [
     ],
     needs: "production",
     what: "first-byte medians and CDN hits for public pages",
+  },
+  {
+    name: "Page JavaScript weight (production)",
+    command: [
+      "node",
+      "--import",
+      "tsx",
+      "scripts/measure-page-weight.ts",
+      "--label",
+      "verify",
+    ],
+    needs: "production",
+    what: "compressed JavaScript of the first load within 150 KB on four public pages",
   },
   {
     name: "Search windows smoke (production)",

@@ -43,7 +43,10 @@ describe("quiz shortlist", () => {
     progress.close();
   });
   it.each([
-    ["retry_later" as const, /try again in five minutes/i],
+    [
+      "retry_later" as const,
+      /could not complete this search. Please try again later/i,
+    ],
     ["in_progress" as const, /still being checked/i],
     ["budget" as const, /temporarily paused/i],
     ["verification_failed" as const, /could not verify/i],
