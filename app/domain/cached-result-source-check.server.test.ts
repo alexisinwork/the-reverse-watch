@@ -3,6 +3,7 @@ import type { FoundWatch } from "./ai-watch-types";
 import {
   headingPassage,
   inspectCachedResultSource,
+  pageBlocks,
   pageSentences,
   sightingPassage,
 } from "./cached-result-source-check.server";
@@ -230,9 +231,9 @@ describe("reading the page's own sentences for a sighting", () => {
     );
   });
 
-  it("never joins two sentences or a heading and a paragraph into a tie", async () => {
+  it("never joins two sentences into a tie", async () => {
     const apart =
-      "<h2>Aliens</h2><p>Sigourney Weaver stars in Aliens.</p><p>The Seiko 7A28-7000 is a quartz chronograph.</p>";
+      "<p>Sigourney Weaver stars in Aliens.</p><p>The Seiko 7A28-7000 is a quartz chronograph.</p>";
     expect(
       (
         await inspectCachedResultSource(
@@ -336,5 +337,92 @@ describe("a page about the subject", () => {
       response(heat),
     );
     expect(result.status).toBe("matched");
+  });
+});
+
+describe("an actor's page with the film in the sentence", () => {
+  const vronsky: FoundWatch = {
+    brand: "Rolex",
+    model: "1665",
+    referenceCode: "1665",
+    sourceUrl: "https://example.com",
+    imageUrl: null,
+    priceNote: null,
+    rationale: "",
+    details: {
+      person: 'Michael "Mike" Vronsky (Robert De Niro)',
+      work: "The Deer Hunter (1978)",
+    },
+  };
+  const page =
+    "<title>11 Iconic Wristwatches Worn by Robert De Niro in Movies</title>" +
+    "<h2>Rolex Sea-Dweller 1665: The Deer Hunter, 1978</h2>" +
+    "<p>A rare piece for a working-class steelworker.</p>";
+
+  it("ties the heading's actor to the sentence's watch and film", () => {
+    const passage = headingPassage(page, vronsky);
+    expect(passage).toBe(
+      "11 Iconic Wristwatches Worn by Robert De Niro in Movies … Rolex Sea-Dweller 1665: The Deer Hunter, 1978",
+    );
+    expect(passageTiesSighting(passage!, vronsky)).toBe(true);
+  });
+
+  it("needs the film named in the heading or the sentence", () => {
+    expect(
+      headingPassage(page.replace(": The Deer Hunter, 1978", ""), vronsky),
+    ).toBeNull();
+  });
+});
+
+describe("sentences read with the sections they sit under", () => {
+  const ledger: FoundWatch = {
+    brand: "Casio",
+    model: "CA-53W-1",
+    referenceCode: "CA-53W-1",
+    sourceUrl: "https://example.com",
+    imageUrl: null,
+    priceNote: null,
+    rationale: "",
+    details: { person: "Joker (Heath Ledger)", work: "The Dark Knight (2008)" },
+  };
+  const database =
+    "<title>The Dark Knight (2008) - Internet Movie Watch Database</title>" +
+    "<h2>Christian Bale as Bruce Wayne</h2><p>Jaeger-LeCoultre Reverso 270.8.62</p>" +
+    "<h2>Heath Ledger as The Joker</h2><p>Casio CA-53W-1</p>";
+
+  it("ties a database entry to the actor's section and the film's title", () => {
+    expect(pageBlocks(database).at(-1)).toEqual({
+      text: "Casio CA-53W-1",
+      headings: [
+        "The Dark Knight (2008) - Internet Movie Watch Database",
+        "Heath Ledger as The Joker",
+      ],
+    });
+    const passage = headingPassage(database, ledger);
+    expect(passage).toBe(
+      "The Dark Knight (2008) - Internet Movie Watch Database … Heath Ledger as The Joker … Casio CA-53W-1",
+    );
+    expect(passageTiesSighting(passage!, ledger)).toBe(true);
+  });
+
+  it("never lends another section's wearer", () => {
+    expect(
+      headingPassage(database, {
+        ...ledger,
+        brand: "Jaeger-LeCoultre",
+        model: "270.8.62",
+        referenceCode: "270.8.62",
+      }),
+    ).toBeNull();
+  });
+
+  it("takes the brand from a heading when the sentence gives the exact reference", () => {
+    const spotted =
+      "<title>Casio CA-53W - Joker in The Dark Knight | WatchReel</title>" +
+      "<h1>Casio CA-53W - Joker in The Dark Knight</h1>" +
+      "<p>The CA-53W-1 is listed at $29.95, with no vintage premium.</p>";
+    expect(headingPassage(spotted, ledger)).toBe(
+      "Casio CA-53W - Joker in The Dark Knight … The CA-53W-1 is listed at $29.95, with no vintage premium.",
+    );
   });
 });

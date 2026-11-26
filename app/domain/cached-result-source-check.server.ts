@@ -167,26 +167,81 @@ export function sightingPassage(html: string, watch: SightingWatch) {
   return null;
 }
 
-/** The page's own title and main headings, as the reader sees them. */
-function pageHeadings(html: string) {
-  return [...html.matchAll(/<(title|h1)\b[^>]*>([\s\S]*?)<\/\1\s*>/gi)]
-    .slice(0, 4)
-    .map((match) =>
-      decodeEntities((match[2] ?? "").replace(/<[^>]*>/g, " "))
-        .replace(/\s+/g, " ")
-        .trim(),
-    )
-    .filter((heading) => heading.length > 0 && heading.length <= 140);
+const cleanText = (value: string) =>
+  decodeEntities(value.replace(/<[^>]*>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
+
+/**
+ * The page's sentences, each with the headings it sits under: the page's
+ * title, then every section heading above it from the outermost (h1) to the
+ * nearest. A heading is a sentence of its own too, under the headings above
+ * it.
+ */
+export function pageBlocks(html: string) {
+  const page = html
+    .replace(/<(script|style|noscript)\b[^>]*>[\s\S]*?<\/\1\s*>/gi, " ")
+    .replace(/<!--([\s\S]*?)-->/g, " ");
+  const title = cleanText(
+    /<title\b[^>]*>([\s\S]*?)<\/title\s*>/i.exec(page)?.[1] ?? "",
+  );
+  const blocks: { text: string; headings: string[] }[] = [];
+  const stack: { level: number; text: string }[] = [];
+  const above = () =>
+    [title, ...stack.map((heading) => heading.text)].filter(
+      (heading) => heading.length > 0 && heading.length <= 140,
+    );
+  const body = (fragment: string) => {
+    for (const text of pageSentences(fragment))
+      if (text !== title) blocks.push({ text, headings: above() });
+  };
+  let last = 0;
+  for (const match of page.matchAll(
+    /<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1\s*>/gi,
+  )) {
+    body(page.slice(last, match.index));
+    const level = Number(match[1]);
+    const text = cleanText(match[2] ?? "");
+    while (stack.length && stack.at(-1)!.level >= level) stack.pop();
+    if (text) {
+      blocks.push({ text, headings: above() });
+      stack.push({ level, text });
+    }
+    last = match.index + match[0].length;
+  }
+  body(page.slice(last));
+  return blocks;
+}
+
+/** The shortest run of words inside a sentence that still passes `keeps`,
+ * when it fits a short passage. */
+function shortestRun(sentence: string, keeps: (value: string) => boolean) {
+  if (!keeps(sentence)) return null;
+  if (shortPassage(sentence)) return sentence;
+  const tokens = sentence.split(" ");
+  let best: string | null = null;
+  for (let start = 0; start < tokens.length; start++)
+    for (let end = start + 1; end <= tokens.length; end++) {
+      const run = tokens.slice(start, end).join(" ");
+      if (!shortPassage(run)) break;
+      if (keeps(run)) {
+        if (!best || run.length < best.length) best = run;
+        break;
+      }
+    }
+  return best;
 }
 
 /**
- * A page about the subject: its title or main heading names every
- * attribution the card states ("Die Hard » BAMF Style", "Steve McQueen's
- * watches"). On such a page, one sentence naming the brand and the exact
- * reference documents the sighting. The stored passage quotes the heading
- * and that sentence, each verbatim, with an ellipsis between them. A page
- * about something else, or one that never names the exact reference next to
- * the brand, gives none.
+ * A sentence giving the exact reference, read with the headings it sits
+ * under. Together they name the brand and everything the card states: a
+ * film's page ("Bruce Willis in Die Hard » BAMF Style") with a sentence
+ * giving the brand and the reference; an actor's page ("11 Iconic
+ * Wristwatches Worn by Robert De Niro") with a section "Rolex Sea-Dweller
+ * 1665: The Deer Hunter"; a database page with the watch under the actor's
+ * section. Only the card's own brand, names and title count, so a heading
+ * about another watch or person lends nothing. The stored passage quotes the
+ * headings used and the sentence, each verbatim, joined by ellipses.
  */
 export function headingPassage(
   html: string,
@@ -196,21 +251,59 @@ export function headingPassage(
   const person = personNames(watch.details.person);
   const work = workNames(watch.details.work);
   if (!person.length && !work.length) return null;
-  const heading = pageHeadings(html).find((value) => {
-    const spaced = spacedWords(value);
-    return (
-      onPage(value) &&
-      (person.length === 0 || mentionsAny(spaced, person)) &&
-      (work.length === 0 || mentionsAny(spaced, work))
-    );
-  });
-  if (!heading) return null;
-  const bare = { ...watch, details: {} };
-  for (const sentence of pageSentences(html)) {
-    if (sentence === heading) continue;
-    const reference = shortestTie(sentence, bare, true);
-    if (!reference || !onPage(reference)) continue;
-    const passage = `${heading} … ${reference}`;
+  const brand = brandNames(watch.brand);
+  const reference = watch.referenceCode;
+  for (const block of pageBlocks(html)) {
+    if (
+      !pageMentionsReference(reference, block.text, "") ||
+      !onPage(block.text)
+    )
+      continue;
+    const spaced = spacedWords(block.text);
+    const inSentence = {
+      brand: mentionsAny(spaced, brand),
+      person: person.length > 0 && mentionsAny(spaced, person),
+      work: work.length > 0 && mentionsAny(spaced, work),
+    };
+    const missing = {
+      brand: !inSentence.brand,
+      person: person.length > 0 && !inSentence.person,
+      work: work.length > 0 && !inSentence.work,
+    };
+    // Nearest heading first; each heading used must name something missing.
+    const used: string[] = [];
+    for (const heading of [...block.headings].reverse()) {
+      if (!missing.brand && !missing.person && !missing.work) break;
+      if (!onPage(heading)) continue;
+      const text = spacedWords(heading);
+      const names = {
+        brand: missing.brand && mentionsAny(text, brand),
+        person: missing.person && mentionsAny(text, person),
+        work: missing.work && mentionsAny(text, work),
+      };
+      if (!names.brand && !names.person && !names.work) continue;
+      used.unshift(heading);
+      if (names.brand) missing.brand = false;
+      if (names.person) missing.person = false;
+      if (names.work) missing.work = false;
+    }
+    if (missing.brand || missing.person || missing.work || !used.length)
+      continue;
+    // The brand as the card writes it ("TAG Heuer", not only "Heuer").
+    const own = spacedWords(watch.brand);
+    const ownBrand = spaced.includes(own);
+    const run = shortestRun(block.text, (value) => {
+      const text = spacedWords(value);
+      return (
+        pageMentionsReference(reference, value, "") &&
+        (!inSentence.brand ||
+          (ownBrand ? text.includes(own) : mentionsAny(text, brand))) &&
+        (!inSentence.person || mentionsAny(text, person)) &&
+        (!inSentence.work || mentionsAny(text, work))
+      );
+    });
+    if (!run || !onPage(run)) continue;
+    const passage = [...used, run].join(" … ");
     if (passage.length <= PASSAGE_CHARS) return passage;
   }
   return null;

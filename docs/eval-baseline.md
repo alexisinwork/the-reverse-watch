@@ -238,8 +238,25 @@ subject (diagnostic scripts, about $0.30 outside the ledger):
    "Mozilla/5.0 (compatible; …)" bot name; page reads retry once as
    "TheReserveBot/1.0 (+https://thereserve.watch)" (`11a40e8`).
 
-Remaining gap: pages name the character ("Mark Hanna", "The Joker") where an
-actor's card names the actor, so those sightings stay possible.
+Pages often name the character ("Mark Hanna", "The Joker") where an actor's
+card named only the actor. Owner: "yes, fix it". Discovery now writes the
+wearer as "Role (Actor)" when the page names both, and an actor's or a
+character's card keeps the role beside the film the source names
+(`roleAttribution`, `d956574`); a passage may name the role or the actor
+and must also name the film. Saved drafts from an older discovery are read
+again instead of re-checked (`FILM_DISCOVERY_VERSION`, `d7afca0`). The 86
+actor and character searches still without a confirmed watch were read again
+(`--fresh`) once their backoff had passed: $2.30, no new confirmation: 18 searches
+were still waiting, and 40 of the 50 rejections failed on the first
+source's page. Two more changes followed (`docs/reports/film-searches-people-roles-2026-11-26.json`):
+titles match without the year the provider adds, a description ("John Wick
+films") is not kept as a film, and a sentence with the exact reference is
+read with the section headings it sits under (`pageBlocks`), as film-watch
+databases and actors' pages list watches. Re-opening the 107 logged rejected
+page pairs without paid calls: both pages now pass on different sites for 11
+(0 before these changes), at least one page for 73 (54). The paid re-check
+follows when each search's backoff ends (one hour to one day); a visitor's
+search then reads the new drafts.
 
 ## Known gaps the scores point to
 

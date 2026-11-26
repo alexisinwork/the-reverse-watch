@@ -9,6 +9,7 @@ import {
   roleAttribution,
   samePerson,
   sameWork,
+  workNames,
 } from "./attribution-names";
 
 describe("personNames", () => {
@@ -206,5 +207,40 @@ describe("a role on an actor's card", () => {
     expect(
       passageTiesSighting("Mark Hanna wears a Rolex Datejust 16233.", card),
     ).toBe(false);
+  });
+});
+
+describe("film titles as pages write them", () => {
+  it("drops the year a provider adds and a leading article, never leaving one word", () => {
+    expect(workNames("Back to the Future Part III (1990)")).toContain(
+      "back to the future part iii",
+    );
+    expect(workNames("The Deer Hunter")).toContain("deer hunter");
+    expect(workNames("The Thing")).toEqual(["the thing"]);
+    expect(workNames(null)).toEqual([]);
+  });
+
+  it("keeps no role beside a description that is not a title", () => {
+    expect(
+      roleAttribution(
+        "Keanu Reeves",
+        "John Wick (Keanu Reeves)",
+        "John Wick films",
+      ),
+    ).toEqual({ person: "Keanu Reeves", work: null });
+    expect(
+      roleAttribution(
+        "Bruce Willis",
+        "John McClane (Bruce Willis)",
+        "Live Free or Die Hard promotional event",
+      ),
+    ).toEqual({ person: "Bruce Willis", work: null });
+    expect(
+      roleAttribution(
+        "Keanu Reeves",
+        "Jack Traven (Keanu Reeves)",
+        "Speed (1994)",
+      ),
+    ).toEqual({ person: "Jack Traven (Keanu Reeves)", work: "Speed (1994)" });
   });
 });

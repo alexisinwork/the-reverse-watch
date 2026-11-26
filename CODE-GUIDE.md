@@ -232,9 +232,11 @@ Fixes from the paid round (2026-11-26), in plain words:
   the exact reference. Brands match across spellings and lines
   (`brandNames`, `sameBrand`: Bvlgari/Bulgari, Heuer/TAG Heuer, Casio
   G-Shock is Casio). The page check tries the provider's quotation, then
-  the page's own sentences (`sightingPassage`), then, on a page whose title
-  names the subject, a sentence with the brand and exact reference
-  (`headingPassage`, stored as "heading … sentence"). A sighting's second
+  the page's own sentences (`sightingPassage`), then a sentence with the exact
+  reference read with the headings it sits under: the page title and the
+  section headings above it (`pageBlocks`, `headingPassage`, stored as
+  "heading … sentence"). Titles match without a provider's year
+  (`workNames`). A sighting's second
   check (Muse) is told which site the first source was on (`avoidHost`) and
   may search once and open one page (`MUSE_SIGHTING_TOOL_CALLS`); a rejected
   check logs which side failed and both page addresses.

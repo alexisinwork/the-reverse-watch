@@ -61,7 +61,15 @@ export function personNames(value: string | null | undefined): string[] {
 /** A film or series title, folded. Titles are matched whole. */
 export function workNames(value: string | null | undefined): string[] {
   const name = fold(value ?? "");
-  return name ? [name] : [];
+  if (!name) return [];
+  // Pages rarely repeat the year a provider adds ("Back to the Future Part
+  // III (1990)"), and may drop a leading article ("Deer Hunter"); a title of
+  // one word keeps its article ("The Thing" never matches every "thing").
+  const undated = name.replace(/ (?:19|20)\d{2}$/, "").trim();
+  const bare = undated.replace(/^(?:the|a|an) /, "");
+  return [
+    ...new Set([name, undated, bare.includes(" ") ? bare : undated]),
+  ].filter(Boolean);
 }
 
 /** A plain public name or title a provider wrote, or null for anything
@@ -90,7 +98,16 @@ export function roleAttribution(
   work: string | null | undefined,
 ): { person: string; work: string | null } {
   const role = plainName(wearer, 160);
-  const title = plainName(work, 200);
+  // A description is not a title a page can name ("John Wick films", "the
+  // franchise", "a promotional event").
+  const written = plainName(work, 200);
+  const title =
+    written &&
+    !/\b(?:films|movies|franchise|trilogy|saga|sequels|promotional|event|premiere|campaign|commercial|interview|red carpet)\b/i.test(
+      written,
+    )
+      ? written
+      : null;
   const own = new Set(
     personNames(searched).map((name) => name.replace(/ /g, "")),
   );

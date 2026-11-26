@@ -129,12 +129,13 @@ by reading the ledger before every search (`scripts/run-film-searches.ts`).
 | 100 actors and characters | $3.05 |
 | The 250 films again | $1.78 |
 | 163 possible-only answers checked again | $3.99 |
+| 86 actors and characters read again after the role fix | $2.30 |
 | Diagnostics and the discovery comparison, outside the ledger | about $0.51 |
-| **Total of the $60** | **about $16.37** |
+| **Total of the $60** | **about $18.67** |
 
-Unused: about $43.63. The ledger read $15.19 spent for November afterwards
-(plus $0.73 still reserved by open checks), within the $100 monthly limit.
-The provider counters, which started on 2026-11-26, read Perplexity $3.23
-and Muse $5.99, so about $11–12 of the owner's $15 Perplexity balance is
+Unused: about $41.33. The ledger read $17.02 spent for November afterwards
+(plus $1.20 still reserved by open checks), within the $100 monthly limit.
+The provider counters, which started on 2026-11-26, read Perplexity $3.95
+and Muse $6.59, so about $10–11 of the owner's $15 Perplexity balance is
 left. Results: `docs/eval-baseline.md`, "Film and people search on real
 articles".
