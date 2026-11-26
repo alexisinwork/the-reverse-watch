@@ -9,6 +9,7 @@
 // Writes docs/reports/eval-<date>.json. The first run is the baseline
 // (docs/eval-baseline.md): the labelled sets are not edited to make a run
 // pass (alexisinwork/ai_engineering, PopChoice THEORY §7).
+import { createHash } from "node:crypto";
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -428,6 +429,111 @@ for (const negative of filmSet.negatives) {
 }
 
 // ---------------------------------------------------------------------------
+// 3b. Film and people search against the independent set: subjects that are
+// not owner stories, each labelled from opened maker, auction or two
+// independent sources and committed before it was first scored. Its score
+// is what the search achieves on its own; the controls are invented
+// subjects, and any confirmed card for them is an invented sighting.
+
+type IndependentLabel = {
+  id: string;
+  query: string;
+  kind: string;
+  brand: string;
+  brandAliases?: string[];
+  models: string[] | null;
+  reference: string | null;
+  referenceMatch?: "exact" | "prefix";
+  level: "reference" | "family";
+};
+const independentFile = "data/eval/film-labels-independent-2026-11-26.json";
+const independentText = readFileSync(independentFile, "utf8");
+const independentSet = JSON.parse(independentText) as {
+  review: { status: string };
+  positives: IndependentLabel[];
+  controls: { id: string; query: string; kind: string }[];
+};
+const independent = {
+  file: independentFile,
+  sha256: createHash("sha256").update(independentText).digest("hex"),
+  review: independentSet.review.status,
+  positives: independentSet.positives.length,
+  answered: 0,
+  foundAny: 0,
+  foundConfirmed: 0,
+  confirmed: [] as string[],
+  onlyPossible: [] as string[],
+  missed: [] as string[],
+  controlViolations: [] as string[],
+  leakage: [] as string[],
+};
+const independentHit = (watch: FoundWatch, label: IndependentLabel) => {
+  const brandMatches = [label.brand, ...(label.brandAliases ?? [])].some(
+    (brand) => fold(watch.brand) === fold(brand),
+  );
+  if (!brandMatches) return false;
+  if (label.level === "reference") {
+    const card = fold(watch.referenceCode ?? "");
+    const wanted = fold(label.reference ?? "");
+    if (!card || !wanted) return false;
+    return label.referenceMatch === "prefix"
+      ? card.startsWith(wanted)
+      : card === wanted;
+  }
+  const model = words(`${watch.model}`);
+  return (label.models ?? [""]).some((name) =>
+    words(name).every((word) => model.includes(word)),
+  );
+};
+for (const label of independentSet.positives) {
+  if (
+    fold(label.query).includes(fold(label.brand)) ||
+    (label.reference && fold(label.query).includes(fold(label.reference)))
+  )
+    independent.leakage.push(label.id);
+  const view = await runFilmSearch({
+    query: label.query,
+    kind: label.kind as FilmSubjectKind,
+    rateKey: "eval",
+    searchOptions: { store },
+  });
+  if (view.status !== "found") {
+    independent.missed.push(label.id);
+    continue;
+  }
+  independent.answered++;
+  const hits = [...view.watches, ...(view.alsoWorth ?? [])].filter((watch) =>
+    independentHit(watch, label),
+  );
+  if (hits.length === 0) {
+    independent.missed.push(label.id);
+    continue;
+  }
+  independent.foundAny++;
+  if (hits.some((watch) => watch.details.verificationStatus !== "unverified")) {
+    independent.foundConfirmed++;
+    independent.confirmed.push(label.id);
+  } else {
+    independent.onlyPossible.push(label.id);
+  }
+}
+for (const control of independentSet.controls) {
+  const view = await runFilmSearch({
+    query: control.query,
+    kind: control.kind as FilmSubjectKind,
+    rateKey: "eval",
+    searchOptions: { store },
+  });
+  if (view.status !== "found") continue;
+  for (const watch of [...view.watches, ...(view.alsoWorth ?? [])]) {
+    if (watch.details.verificationStatus !== "unverified")
+      independent.controlViolations.push(
+        `${control.id}: ${watch.brand} ${watch.model}`,
+      );
+  }
+}
+
+// ---------------------------------------------------------------------------
 
 const report = {
   at: new Date().toISOString(),
@@ -461,11 +567,23 @@ const report = {
     randomBaseline:
       "about 1 in 25,000 per card (one labelled watch in the pool)",
   },
+  filmIndependent: {
+    ...independent,
+    recallConfirmed: Number(
+      (independent.foundConfirmed / independent.positives).toFixed(4),
+    ),
+    recallAny: Number(
+      (independent.foundAny / independent.positives).toFixed(4),
+    ),
+  },
   gates: {
     noProviderRequests: providerRequests.length === 0,
     zeroQuizHardConstraintViolations: quiz.violations.length === 0,
     zeroNegativeSightings: film.negativeViolations.length === 0,
     noFilmQueryLeakage: film.leakage.length === 0,
+    zeroInventedSightingsForControls:
+      independent.controlViolations.length === 0,
+    noIndependentQueryLeakage: independent.leakage.length === 0,
   },
 };
 const output = resolve(`docs/reports/eval-${report.at.slice(0, 10)}.json`);

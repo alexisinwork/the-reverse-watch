@@ -1,9 +1,9 @@
 {
-  "at": "2026-11-26T00:07:01.242Z",
+  "at": "2026-11-26T08:25:00.860Z",
   "fxDate": "2026-11-25",
   "guard": {
     "providerRequests": [],
-    "blockedWrites": 43,
+    "blockedWrites": 49,
     "blockedFunctions": [
       "ai_watch_search_store_v1"
     ]
@@ -46,10 +46,49 @@
     "recallAny": 1,
     "randomBaseline": "about 1 in 25,000 per card (one labelled watch in the pool)"
   },
+  "filmIndependent": {
+    "file": "data/eval/film-labels-independent-2026-11-26.json",
+    "sha256": "e6a60a0681271518a0115b1476025965fca25af049de42d46a9027b926a4fb01",
+    "review": "awaiting owner review",
+    "positives": 19,
+    "answered": 6,
+    "foundAny": 6,
+    "foundConfirmed": 0,
+    "confirmed": [],
+    "onlyPossible": [
+      "le-mans-monaco-1133b",
+      "steve-mcqueen-monaco",
+      "casino-royale-planet-ocean",
+      "casino-royale-diver-300m",
+      "apocalypse-now-seiko-6105",
+      "jfk-omega-slimline"
+    ],
+    "missed": [
+      "goldeneye-seamaster-2541",
+      "blue-hawaii-ventura",
+      "thunderball-top-time",
+      "dr-no-submariner",
+      "magnum-pi-gmt-master",
+      "live-and-let-die-submariner-5513",
+      "live-and-let-die-pulsar",
+      "daylight-panerai-5218",
+      "gordon-gekko-santos",
+      "andy-warhol-tank",
+      "jackie-kennedy-tank",
+      "buzz-aldrin-speedmaster",
+      "the-martian-belowzero"
+    ],
+    "controlViolations": [],
+    "leakage": [],
+    "recallConfirmed": 0,
+    "recallAny": 0.3158
+  },
   "gates": {
     "noProviderRequests": true,
     "zeroQuizHardConstraintViolations": true,
     "zeroNegativeSightings": true,
-    "noFilmQueryLeakage": true
+    "noFilmQueryLeakage": true,
+    "zeroInventedSightingsForControls": true,
+    "noIndependentQueryLeakage": true
   }
 }

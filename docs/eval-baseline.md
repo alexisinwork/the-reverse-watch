@@ -16,6 +16,7 @@ edited to make a run pass; a changed set gets a new baseline.
 | Quiz answers | 40 seeded answers across budgets, currencies, wrists, styles, movements and water resistance; the oracle restates the questionnaire's hard rules (price after conversion, diameter range, movement type, water resistance) independently of the quiz code | 40 answers |
 | Alternatives | The owner's test set, `data/alternatives/owner-test-set-2026-10-01.json` | 20 watches × 3 budgets = 60 cases |
 | Film and people | The owner's published, source-reviewed stories, `data/eval/film-labels-2026-11-25.json`, plus one recorded correction as a negative (Skyfall Aqua Terra 231.10.30.20.06.001 is Eve's, not Daniel Craig's) | 20 positives, 1 negative |
+| Film and people, independent | Sightings that are not owner stories, each from at least two opened sources, `data/eval/film-labels-independent-2026-11-26.json` (below) | 19 positives, 2 invented controls |
 
 ## Baseline (2026-11-25, before story sightings)
 
@@ -48,12 +49,38 @@ feed the results, so 20 of 20 proves the owner's own reviewed facts reach the
 search; it is not an independent measure of film-search quality. That needs
 a labelled set of reviewed sightings that are not published stories.
 
+## Independent film set (2026-11-26)
+
+`data/eval/film-labels-independent-2026-11-26.json`: 19 sightings over 17
+searches, none of them an owner story, each with at least two sources opened
+and read on 2026-11-26 (makers, auction lots, independent publications),
+plus two invented subjects as controls and five cases excluded with reasons.
+It was committed (`e568a71`, SHA-256 `e6a60a06…4fb01`) before its first
+score, and the site's film search had not been run on any of its subjects.
+It awaits the owner's review; its review status says so.
+
+Report: `docs/reports/eval-2026-11-26.json`, saved research only.
+
+| Measure | Score |
+| --- | --- |
+| Labelled sighting shown as confirmed | 0 of 19 |
+| Labelled sighting shown at all (only as possible) | 6 of 19: Le Mans and Steve McQueen (Monaco), Casino Royale (both Seamasters), Apocalypse Now (Seiko 6105), John F. Kennedy (OMEGA) |
+| Not found: nothing saved for the subject | 13 of 19 |
+| Confirmed card for an invented subject | 0 of 2 controls (gate) |
+| Owner-story set, unchanged | 20 of 20 confirmed |
+
+Read this honestly: without paid research the film search confirms only
+what the owner's stories already say. Measuring what live research adds
+needs paid calls (`docs/evaluation-budget.md`); on the evidence so far it
+adds little, since paid checks of film results published 1 of 46 attempts.
+
 ## Known gaps the scores point to
 
 - Alternatives: 14 of the 20 test-set watches do not resolve to a catalogue
   record with comparison specifications (styles, size, movement), so their
   cases cannot score. Filling those specifications is research work with a
-  cost; it needs an owner decision on budget.
-- Film: an independent labelled set (above).
+  cost; `docs/evaluation-budget.md` gives the amounts for the owner's decision.
+- Film: the independent set shows 0 of 19 confirmed without paid research.
 - Evaluations need database credentials, so they run locally, not in CI;
-  adding read-only credentials to CI secrets is an owner action.
+  adding read-only credentials to CI secrets is an owner action
+  (`docs/OWNER_QUESTIONS.md`).
