@@ -91,18 +91,37 @@ describe("bounded validation requests", () => {
     expect(serialized).not.toContain("private free text");
     expect(serialized).toContain("person and work must both be null");
   });
-  it("bounds discovery to one search and refuses identifying contact data", () => {
+  it("searches articles about a subject's watches within bounds and refuses identifying contact data", () => {
     const result = buildFilmDiscoveryRequest(
       { query: "daniel craig", kind: "actor" },
       "muse-spark-1.3-contributor",
     );
+    // Relevance before cost (owner, 2026-11-26): up to three full searches
+    // reading most of each page, without social posts, forums or shops.
     expect(result.body).toMatchObject({
-      max_steps: 1,
-      max_tool_calls: 1,
-      max_output_tokens: 4000,
+      max_steps: 3,
+      max_tool_calls: 3,
+      max_output_tokens: 6000,
       store: false,
+      tools: [
+        {
+          type: "web_search",
+          search_type: "web",
+          max_results: 10,
+          max_tokens_per_page: 1500,
+        },
+      ],
     });
-    expect(result.body.input).toBe("daniel craig watches actor");
+    expect(result.body.tools[0]!.filters.search_domain_filter).toEqual(
+      expect.arrayContaining(["-pinterest.com", "-reddit.com", "-ebay.com"]),
+    );
+    expect(result.body.input).toBe("daniel craig watches");
+    expect(
+      buildFilmDiscoveryRequest(
+        { query: "Casino Royale", kind: "movie" },
+        "muse-spark-1.3-contributor",
+      ).body.input,
+    ).toBe("watches worn in the film Casino Royale");
     expect(() =>
       buildFilmDiscoveryRequest(
         { query: "person@example.com", kind: "actor" },

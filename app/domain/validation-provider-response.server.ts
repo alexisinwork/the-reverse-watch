@@ -3,6 +3,7 @@ import { z } from "zod";
 import { parseModelJson } from "./ai-providers.server";
 import type { ValidationEvidence } from "./cached-result-validation";
 import { safeHttpUrl } from "./source-pages.server";
+import { FILM_DISCOVERY_SEARCHES } from "./validation-provider-request.server";
 
 const claimSchema = z.object({
   brand: z.string().trim().min(1).max(160),
@@ -153,8 +154,10 @@ export function parsePerplexityValidationResponse(
 }
 
 /** The current Agent API returns search results separately from message text.
- * A result URL is only a candidate source: it still needs page inspection. */
-function parsePerplexityAgentEnvelope(body: unknown) {
+ * A result URL is only a candidate source: it still needs page inspection.
+ * A card check makes exactly one search; film discovery up to
+ * FILM_DISCOVERY_SEARCHES. */
+function parsePerplexityAgentEnvelope(body: unknown, maxSearches = 1) {
   const response = z
     .object({
       status: z.literal("completed"),
@@ -166,7 +169,9 @@ function parsePerplexityAgentEnvelope(body: unknown) {
           total_cost: z.number().finite().nonnegative(),
         }),
         tool_calls_details: z.object({
-          search_web: z.object({ invocation: z.literal(1) }),
+          search_web: z.object({
+            invocation: z.number().int().min(1).max(maxSearches),
+          }),
         }),
       }),
     })
@@ -219,19 +224,22 @@ export function parsePerplexityAgentValidationResponse(
   };
 }
 
-/** Keep only individually cited candidates from the single discovery call. */
+/** Keep only individually cited candidates from the discovery call. */
 export function parsePerplexityFilmDiscoveryResponse(body: unknown): {
   evidence: ValidationEvidence[];
   costUsd: number;
 } {
-  const { content, sources, costUsd } = parsePerplexityAgentEnvelope(body);
+  const { content, sources, costUsd } = parsePerplexityAgentEnvelope(
+    body,
+    FILM_DISCOVERY_SEARCHES,
+  );
   const { sightings } = z
     .object({ sightings: z.array(z.unknown()).max(20) })
     .parse(content);
   const citedUrls = sources
     .map(url)
     .filter((value): value is string => value !== null)
-    .slice(0, 5);
+    .slice(0, 8);
   return {
     costUsd,
     evidence: sightings

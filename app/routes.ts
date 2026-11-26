@@ -23,6 +23,7 @@ export default [
     "internal/catalogue/recheck-prices",
     "routes/internal-catalogue-recheck-prices.ts",
   ),
+  route("internal/spend-alert", "routes/internal-spend-alert.ts"),
   route("admin/catalogue", "routes/admin-catalogue.tsx"),
   route("admin/sites", "routes/admin-sites.tsx"),
   route("watches/people/:entitySlug", "routes/watch-entity.tsx"),

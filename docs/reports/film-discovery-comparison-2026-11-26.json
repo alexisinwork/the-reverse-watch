@@ -1,0 +1,1791 @@
+{
+  "at": "2026-11-26T13:52:56.905Z",
+  "labelSet": "data/eval/film-labels-independent-2026-11-26.json",
+  "sha256": "e6a60a0681271518a0115b1476025965fca25af049de42d46a9027b926a4fb01",
+  "spendLimitUsd": 1,
+  "spentUsd": 0.1837,
+  "before": {
+    "labels": 19,
+    "labelsFound": 14,
+    "labelsCheckable": 10,
+    "sightings": 43,
+    "controlSightings": 0,
+    "controlSupported": 0,
+    "costUsd": 0.0268,
+    "maxCallUsd": 0.00188
+  },
+  "after": {
+    "labels": 19,
+    "labelsFound": 19,
+    "labelsCheckable": 12,
+    "sightings": 67,
+    "controlSightings": 0,
+    "controlSupported": 0,
+    "costUsd": 0.1569,
+    "maxCallUsd": 0.01019
+  },
+  "rows": [
+    {
+      "subject": "Le Mans",
+      "kind": "movie",
+      "labels": [
+        "le-mans-monaco-1133b"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.0015,
+        "searches": 1,
+        "sightings": 3,
+        "supportedWithReference": 3,
+        "labelsFound": [
+          "le-mans-monaco-1133b"
+        ],
+        "labelsCheckable": [
+          "le-mans-monaco-1133b"
+        ],
+        "watches": [
+          {
+            "brand": "Heuer",
+            "model": "Monaco",
+            "referenceCode": "1133B",
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "Le Mans",
+            "sourceUrl": "https://nationaljeweler.com/articles/14940-steve-mcqueen-s-heuer-monaco-watch-heads-to-sotheby-s",
+            "sourceQuote": "“A Heuer Monaco watch worn by Steve McQueen in the 1971 movie ‘Le Mans’” and “Heuer Reference 1133B Monaco”"
+          },
+          {
+            "brand": "Heuer",
+            "model": "Carrera",
+            "referenceCode": "7753 SN",
+            "supported": true,
+            "person": "Matt Damon",
+            "work": "Le Mans",
+            "sourceUrl": "https://www.hodinkee.com/articles/matt-damon-and-christian-bale-both-wear-heuer-watches-in-ford-v-ferrari",
+            "sourceQuote": "“Matt Damon's cowboy-hat-adorned Carroll Shelby wears a Heuer Carrera, Reference 7753 SN.”"
+          },
+          {
+            "brand": "Heuer",
+            "model": "Autavia",
+            "referenceCode": "2446",
+            "supported": true,
+            "person": "Christian Bale",
+            "work": "Le Mans '66",
+            "sourceUrl": "https://www.hodinkee.com/articles/matt-damon-and-christian-bale-both-wear-heuer-watches-in-ford-v-ferrari",
+            "sourceQuote": "“His is the Autavia ref. 2446, also known as the ‘Rindt’” in the article about *Ford v Ferrari* (known as *Le Mans '66*)."
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00632,
+        "searches": 2,
+        "sightings": 1,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "le-mans-monaco-1133b"
+        ],
+        "labelsCheckable": [
+          "le-mans-monaco-1133b"
+        ],
+        "watches": [
+          {
+            "brand": "Heuer",
+            "model": "Monaco",
+            "referenceCode": "1133B",
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "Le Mans",
+            "sourceUrl": "https://quillandpad.com/2020/12/05/the-real-story-behind-steve-mcqueens-heuer-monaco-exclusive-interview-with-le-mans-property-master-don-nunley-reprise-3/",
+            "sourceQuote": "Steve McQueen himself chose this specific watch to wear as his character “Michael Delaney” during production and in publicity photos."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Steve McQueen",
+      "kind": "celebrity",
+      "labels": [
+        "steve-mcqueen-monaco"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00188,
+        "searches": 1,
+        "sightings": 13,
+        "supportedWithReference": 5,
+        "labelsFound": [
+          "steve-mcqueen-monaco"
+        ],
+        "labelsCheckable": [
+          "steve-mcqueen-monaco"
+        ],
+        "watches": [
+          {
+            "brand": "Heuer",
+            "model": "Monaco",
+            "referenceCode": "1133B",
+            "supported": true,
+            "person": null,
+            "work": "Le Mans",
+            "sourceUrl": "https://www.swisswatchexpo.com/thewatchclub/2025/09/24/steve-mcqueen-watches/",
+            "sourceQuote": "The watch he chose was the Heuer Monaco, reference 1133B."
+          },
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "5512",
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "The Towering Inferno",
+            "sourceUrl": "https://www.insidehook.com/watches/watches-of-steve-mcqueen",
+            "sourceQuote": "From the Rolex Speedking he wore as a British soldier in The Great Escape to the Heuer Monaco he elevated to icon status in Le Mans, to the 5512 Sub he wore in The Towering Inferno and daily in his personal life"
+          },
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "5513",
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": null,
+            "sourceUrl": "https://oracleoftime.com/steve-mcqueen-watches/",
+            "sourceQuote": "Steve McQueen’s Rolex Submariner Ref. 5513"
+          },
+          {
+            "brand": "Jaeger-LeCoultre",
+            "model": "Memovox",
+            "referenceCode": "E855",
+            "supported": true,
+            "person": null,
+            "work": "The Thomas Crown Affair",
+            "sourceUrl": "https://www.watchreel.watch/celebrities/steve-mcqueen",
+            "sourceQuote": "Jaeger-LeCoultre Memovox E855 · Steve McQueen · The Thomas Crown Affair"
+          },
+          {
+            "brand": "Hanhart",
+            "model": "417 ES",
+            "referenceCode": null,
+            "supported": false,
+            "person": "Steve McQueen",
+            "work": null,
+            "sourceUrl": "https://www.swisswatchexpo.com/thewatchclub/2025/09/24/steve-mcqueen-watches/",
+            "sourceQuote": "In the 1960s, McQueen was often seen wearing a Hanhart 417 ES chronograph"
+          },
+          {
+            "brand": "Rolex",
+            "model": "Speedking",
+            "referenceCode": null,
+            "supported": false,
+            "person": null,
+            "work": "The Great Escape",
+            "sourceUrl": "https://www.insidehook.com/watches/watches-of-steve-mcqueen",
+            "sourceQuote": "We’ve all seen Captain Virgil Hilts make his iconic bid for freedom while wearing a Rolex Speedking in the 1963 box office hit The Great Escape."
+          },
+          {
+            "brand": "Cartier",
+            "model": "Tank Allongée",
+            "referenceCode": "21612",
+            "supported": true,
+            "person": null,
+            "work": "The Thomas Crown Affair",
+            "sourceUrl": "https://www.watchreel.watch/celebrities/steve-mcqueen",
+            "sourceQuote": "Cartier Tank Allongee ref. 21612 · Steve McQueen · The Thomas Crown Affair"
+          },
+          {
+            "brand": "Rolex",
+            "model": "Explorer II",
+            "referenceCode": "1655",
+            "supported": false,
+            "person": "Steve McQueen",
+            "work": null,
+            "sourceUrl": "https://oracleoftime.com/steve-mcqueen-watches/",
+            "sourceQuote": "It’s of course impossible to talk about Steve McQueen and watches without bringing up the watch dubbed the Rolex Steve McQueen. The model itself is the Rolex Explorer II 1655"
+          },
+          {
+            "brand": "Benrus",
+            "model": "3061",
+            "referenceCode": "3061",
+            "supported": false,
+            "person": null,
+            "work": "Bullitt",
+            "sourceUrl": "https://www.watchreel.watch/celebrities/steve-mcqueen",
+            "sourceQuote": "Benrus 3061 · Steve McQueen · Bullitt"
+          },
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "5512",
+            "supported": false,
+            "person": null,
+            "work": "Le Mans",
+            "sourceUrl": "https://www.watchreel.watch/celebrities/steve-mcqueen",
+            "sourceQuote": "Rolex Submariner 5512 · Steve McQueen · Le Mans"
+          },
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "5512",
+            "supported": false,
+            "person": null,
+            "work": "Papillon",
+            "sourceUrl": "https://www.watchreel.watch/celebrities/steve-mcqueen",
+            "sourceQuote": "Rolex Submariner 5512 · Steve McQueen · Papillon"
+          },
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "5512",
+            "supported": false,
+            "person": null,
+            "work": "The Hunter",
+            "sourceUrl": "https://www.watchreel.watch/celebrities/steve-mcqueen",
+            "sourceQuote": "Rolex Submariner 5512 · Steve McQueen · The Hunter"
+          },
+          {
+            "brand": "Patek Philippe",
+            "model": "Pocket Watch",
+            "referenceCode": null,
+            "supported": false,
+            "person": null,
+            "work": "The Thomas Crown Affair",
+            "sourceUrl": "https://www.watchreel.watch/celebrities/steve-mcqueen",
+            "sourceQuote": "Patek Philippe Pocket Watch · Steve McQueen · The Thomas Crown Affair"
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.01012,
+        "searches": 3,
+        "sightings": 8,
+        "supportedWithReference": 3,
+        "labelsFound": [
+          "steve-mcqueen-monaco"
+        ],
+        "labelsCheckable": [
+          "steve-mcqueen-monaco"
+        ],
+        "watches": [
+          {
+            "brand": "Heuer",
+            "model": "Monaco",
+            "referenceCode": "1133",
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "Le Mans (1971)",
+            "sourceUrl": "https://oracleoftime.com/steve-mcqueen-watches/",
+            "sourceQuote": "In the picture, McQueen can be seen wearing a Heuer Monaco 1133 in the dark blue of Gulf colours"
+          },
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "5512",
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "Le Mans",
+            "sourceUrl": "https://www.chrono24.com/magazine/as-legendary-as-the-man-who-wore-them-steve-mcqueens-watches-p_120615/",
+            "sourceQuote": "The American actor was photographed wearing the Rolex Submariner ref. 5512 during both 12 Hours of Sebring and the filming of *Le Mans.*"
+          },
+          {
+            "brand": "Hanhart",
+            "model": "417 ES",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": null,
+            "sourceUrl": "https://www.chrono24.com/magazine/as-legendary-as-the-man-who-wore-them-steve-mcqueens-watches-p_120615/",
+            "sourceQuote": "Steve McQueen wasn’t only keen on Rolex, he was also a fan of a certain German watch brand from the Black Forest, and owned a Hanhart 417 ES"
+          },
+          {
+            "brand": "Rolex",
+            "model": "Speedking",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "The Great Escape (1963)",
+            "sourceUrl": "https://oracleoftime.com/steve-mcqueen-watches/",
+            "sourceQuote": "The link between the Rolex Speedking and *The Great Escape* goes beyond a simple style choice by the costume and prop departments, McQueen’s use of one in the 1963 film is based in historical fact."
+          },
+          {
+            "brand": "Jaeger-LeCoultre",
+            "model": "Memovox",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "The Thomas Crown Affair (1968)",
+            "sourceUrl": "https://imwdb.org/movies/The_Thomas_Crown_Affair_(1968)",
+            "sourceQuote": "For the afternoon scenes McQueen wears a gold Jaeger-LeCoultre Memovox"
+          },
+          {
+            "brand": "Cartier",
+            "model": "Tank",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "The Thomas Crown Affair (1968)",
+            "sourceUrl": "https://imwdb.org/movies/The_Thomas_Crown_Affair_(1968)",
+            "sourceQuote": "Crown wears a curved rectangular Cartier Tank to dinner with Vicki Anderson"
+          },
+          {
+            "brand": "Benrus",
+            "model": "Series 3061",
+            "referenceCode": "3061",
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "Bullitt (1968)",
+            "sourceUrl": "https://oracleoftime.com/steve-mcqueen-watches/",
+            "sourceQuote": "While McQueen gave his *Bullitt* stuntman his old Submariner, complete with a dedication on the back, in the film he was wearing a black-dialled Benrus."
+          },
+          {
+            "brand": "Gruen",
+            "model": "Precision",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Steve McQueen",
+            "work": "The Getaway (1972)",
+            "sourceUrl": "https://www.insidehook.com/watches/watches-of-steve-mcqueen",
+            "sourceQuote": "But the Gruen Precision he wore on his right wrist during the famed bank heist was the exception to this rule."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "GoldenEye",
+      "kind": "movie",
+      "labels": [
+        "goldeneye-seamaster-2541"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00145,
+        "searches": 1,
+        "sightings": 2,
+        "supportedWithReference": 2,
+        "labelsFound": [
+          "goldeneye-seamaster-2541"
+        ],
+        "labelsCheckable": [
+          "goldeneye-seamaster-2541"
+        ],
+        "watches": [
+          {
+            "brand": "Omega",
+            "model": "Seamaster Professional 300M Quartz",
+            "referenceCode": "2541.80",
+            "supported": true,
+            "person": null,
+            "work": "GoldenEye",
+            "sourceUrl": "https://gearmoose.com/goldeneye-watch-omega-seamaster/",
+            "sourceQuote": "In GoldenEye, newly-minted James Bond, Pierce Brosnan, wears a Seamaster Professional 300M, the full size, Ref. 2541.80."
+          },
+          {
+            "brand": "Omega",
+            "model": "Seamaster Professional 300M Quartz",
+            "referenceCode": "2541.80.00",
+            "supported": true,
+            "person": null,
+            "work": "GoldenEye",
+            "sourceUrl": "https://swisswatches-magazine.com/exploring-every-omega-bond-watch/",
+            "sourceQuote": "The 41 mm steel OMEGA Seamaster Professional 300M Quartz (Reference 2541.80.00), which famously saw a helium valve serve as a laser cutter in the film, also had some real-life (much safer) perks, too."
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00874,
+        "searches": 3,
+        "sightings": 2,
+        "supportedWithReference": 2,
+        "labelsFound": [
+          "goldeneye-seamaster-2541"
+        ],
+        "labelsCheckable": [
+          "goldeneye-seamaster-2541"
+        ],
+        "watches": [
+          {
+            "brand": "Omega",
+            "model": "Seamaster 300M Quartz Professional",
+            "referenceCode": "2541.80.00",
+            "supported": true,
+            "person": "James Bond (Pierce Brosnan)",
+            "work": "GoldenEye",
+            "sourceUrl": "https://www.jamesbondlifestyle.com/bond-films/goldeneye",
+            "sourceQuote": "In GoldenEye (1995) James Bond (Pierce Brosnan) wears an Omega Seamaster 300M Quartz Professional 2541.80.00"
+          },
+          {
+            "brand": "Omega",
+            "model": "Seamaster 300M Quartz Professional",
+            "referenceCode": "2541.80.00",
+            "supported": true,
+            "person": "Alec Trevelyan (Sean Bean)",
+            "work": "GoldenEye",
+            "sourceUrl": "https://www.jamesbondlifestyle.com/bond-films/goldeneye",
+            "sourceQuote": "In the film, Bond's colleague Agent 006 Alec Trevelyan (played by Sean Bean) wears the same watch, but with a black leather strap."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Casino Royale",
+      "kind": "movie",
+      "labels": [
+        "casino-royale-planet-ocean",
+        "casino-royale-diver-300m"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00149,
+        "searches": 1,
+        "sightings": 4,
+        "supportedWithReference": 2,
+        "labelsFound": [
+          "casino-royale-planet-ocean",
+          "casino-royale-diver-300m"
+        ],
+        "labelsCheckable": [
+          "casino-royale-planet-ocean",
+          "casino-royale-diver-300m"
+        ],
+        "watches": [
+          {
+            "brand": "Omega",
+            "model": "Seamaster Planet Ocean 600M",
+            "referenceCode": "2900.50.91",
+            "supported": true,
+            "person": null,
+            "work": "Casino Royale",
+            "sourceUrl": "https://lifeofbond.com/casino-royale-watches/",
+            "sourceQuote": "“Omega’s chief executive, Raynald Aeschlimann, told The Rake: ‘we decided to use two different watches in the film’, naming the Planet Ocean 600M 45.5mm ref. 2900.50.91”"
+          },
+          {
+            "brand": "Omega",
+            "model": "Seamaster Diver 300M",
+            "referenceCode": "2220.80.00",
+            "supported": true,
+            "person": null,
+            "work": "Casino Royale",
+            "sourceUrl": "https://lifeofbond.com/casino-royale-watches/",
+            "sourceQuote": "“The watches in Casino Royale: the Planet Ocean 2900.50.91 and the Seamaster Diver 300M 2220.80.00”"
+          },
+          {
+            "brand": "Longines",
+            "model": "Evidenza Chronograph",
+            "referenceCode": null,
+            "supported": false,
+            "person": "Mads Mikkelsen as Le Chiffre",
+            "work": null,
+            "sourceUrl": "https://www.watch-id.com/movies/casino-royale",
+            "sourceQuote": "“Longines Evidenza Chronograph - Mads Mikkelsen - Casino Royale”"
+          },
+          {
+            "brand": "Omega",
+            "model": "Seamaster Planet Ocean Big Size",
+            "referenceCode": "2907.50.91",
+            "supported": false,
+            "person": "Daniel Craig as James Bond",
+            "work": null,
+            "sourceUrl": "https://www.watch-id.com/movies/casino-royale",
+            "sourceQuote": "“Omega Seamaster Planet Ocean Big Size 2907.50.91 James Bond 007 Limited Edition”"
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00868,
+        "searches": 3,
+        "sightings": 3,
+        "supportedWithReference": 3,
+        "labelsFound": [
+          "casino-royale-planet-ocean",
+          "casino-royale-diver-300m"
+        ],
+        "labelsCheckable": [
+          "casino-royale-planet-ocean",
+          "casino-royale-diver-300m"
+        ],
+        "watches": [
+          {
+            "brand": "Omega",
+            "model": "Seamaster Planet Ocean 600M",
+            "referenceCode": "2900.50.91",
+            "supported": true,
+            "person": "Daniel Craig as James Bond",
+            "work": "Casino Royale",
+            "sourceUrl": "https://www.jamesbondlifestyle.com/gadgets",
+            "sourceQuote": "In Casino Royale Daniel Craig wears an Omega Seamaster Planet Ocean Big Size, reference 2900.50.91"
+          },
+          {
+            "brand": "Omega",
+            "model": "Seamaster Diver 300M Co-Axial",
+            "referenceCode": "2220.80.00",
+            "supported": true,
+            "person": "Daniel Craig as James Bond",
+            "work": "Casino Royale",
+            "sourceUrl": "https://www.jamesbondlifestyle.com/tags/watch?page=2",
+            "sourceQuote": "The Omega Seamaster Professional Diver is worn by Daniel Craig in his first Bond movie Casino Royale (2006)."
+          },
+          {
+            "brand": "Longines",
+            "model": "Evidenza Chronograph",
+            "referenceCode": "L2.656.4.53.6",
+            "supported": true,
+            "person": "Mads Mikkelsen as Le Chiffre",
+            "work": "Casino Royale",
+            "sourceUrl": "https://www.jamesbondlifestyle.com/tags/watch?page=2",
+            "sourceQuote": "Mads Mikkelsen, as Le Chiffre, wears a Longines Evidenza Chronograph watch in the movie Casino Royale."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Blue Hawaii",
+      "kind": "movie",
+      "labels": [
+        "blue-hawaii-ventura"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00126,
+        "searches": 1,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00581,
+        "searches": 2,
+        "sightings": 1,
+        "supportedWithReference": 0,
+        "labelsFound": [
+          "blue-hawaii-ventura"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Hamilton",
+            "model": "Ventura",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Elvis Presley",
+            "work": "Blue Hawaii",
+            "sourceUrl": "https://chronopedia.club/The_Hamilton_Ventura_and_Blue_Hawaii_(Elvis_Presley)",
+            "sourceQuote": "The Hamilton Ventura worn by Elvis Presley on the set of the 1961 film Blue Hawaii was apparently his own watch."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Thunderball",
+      "kind": "movie",
+      "labels": [
+        "thunderball-top-time"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.0014,
+        "searches": 1,
+        "sightings": 2,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "thunderball-top-time"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Breitling",
+            "model": "Top Time",
+            "referenceCode": null,
+            "supported": true,
+            "person": null,
+            "work": "Thunderball",
+            "sourceUrl": "https://www.jamesbondlifestyle.com/product/breitling-top-time",
+            "sourceQuote": "James Bond (Sean Connery) wears a modified Breitling Top Time chronograph watch in the movie Thunderball (1965)."
+          },
+          {
+            "brand": "Breitling",
+            "model": "Navitimer 806",
+            "referenceCode": "806",
+            "supported": true,
+            "person": null,
+            "work": "Thunderball",
+            "sourceUrl": "https://www.jamesbondlifestyle.com/gadgets",
+            "sourceQuote": "The first Breitling in the film is a Breitling Navitimer, reference 806, which changes hands several times in the film."
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00908,
+        "searches": 3,
+        "sightings": 3,
+        "supportedWithReference": 3,
+        "labelsFound": [
+          "thunderball-top-time"
+        ],
+        "labelsCheckable": [
+          "thunderball-top-time"
+        ],
+        "watches": [
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "6538",
+            "supported": true,
+            "person": "Sean Connery as James Bond",
+            "work": "Thunderball",
+            "sourceUrl": "https://imwdb.org/watches/Rolex_Submariner_6538",
+            "sourceQuote": "Sean Connery wore one through the first four Eon films, from Dr. No (1962) to Thunderball (1965)"
+          },
+          {
+            "brand": "Breitling",
+            "model": "Top Time",
+            "referenceCode": "2002",
+            "supported": true,
+            "person": "Sean Connery as James Bond",
+            "work": "Thunderball",
+            "sourceUrl": "https://imwdb.org/blog/James_Bond_Watches_in_Movies",
+            "sourceQuote": "The Breitling Top Time is enclosed in a larger prop case and fitted with a Geiger counter. Breitling identifies the underlying two-register watch as reference 2002"
+          },
+          {
+            "brand": "Breitling",
+            "model": "Navitimer",
+            "referenceCode": "806",
+            "supported": true,
+            "person": "François Derval",
+            "work": "Thunderball",
+            "sourceUrl": "https://www.watchfinder.ch/articles/feature-when-bond-went-breitling",
+            "sourceQuote": "The Navitimer worn by François Derval, a French NATO pilot, who is then killed and has his identity stolen by a SPECTRE assassin."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Apocalypse Now",
+      "kind": "movie",
+      "labels": [
+        "apocalypse-now-seiko-6105"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00124,
+        "searches": 1,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00913,
+        "searches": 3,
+        "sightings": 2,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "apocalypse-now-seiko-6105"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Seiko",
+            "model": "6105 diver",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Martin Sheen as Captain Willard",
+            "work": "Apocalypse Now",
+            "sourceUrl": "https://www.hodinkee.com/articles/martin-sheen-wears-a-seiko-willard-and-marlon-brando-a-rolex-gmt-master-in-apocalypse-now",
+            "sourceQuote": "Martin Sheen, in his turn as Willard, wears a Seiko diver… The watch itself is a Seiko 6105"
+          },
+          {
+            "brand": "Rolex",
+            "model": "GMT-Master",
+            "referenceCode": "1675",
+            "supported": true,
+            "person": "Marlon Brando as Colonel Walter E. Kurtz",
+            "work": "Apocalypse Now",
+            "sourceUrl": "https://www.hodinkee.com/articles/martin-sheen-wears-a-seiko-willard-and-marlon-brando-a-rolex-gmt-master-in-apocalypse-now",
+            "sourceQuote": "Marlon Brando… wears a very different watch… it’s a Rolex GMT-Master 1675"
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Dr. No",
+      "kind": "movie",
+      "labels": [
+        "dr-no-submariner"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00134,
+        "searches": 1,
+        "sightings": 1,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "dr-no-submariner"
+        ],
+        "labelsCheckable": [
+          "dr-no-submariner"
+        ],
+        "watches": [
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "6538",
+            "supported": true,
+            "person": null,
+            "work": "Dr. No",
+            "sourceUrl": "https://www.hodinkee.com/articles/sean-connery-originates-the-role-of-james-bond-wearing-a-rolex-submariner-ref-6538-in-dr-no",
+            "sourceQuote": "Sean Connery Originates The Role Of James Bond Wearing A Rolex Submariner Ref. 6538 In 'Dr. No'"
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00911,
+        "searches": 3,
+        "sightings": 2,
+        "supportedWithReference": 2,
+        "labelsFound": [
+          "dr-no-submariner"
+        ],
+        "labelsCheckable": [
+          "dr-no-submariner"
+        ],
+        "watches": [
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "6538",
+            "supported": true,
+            "person": "Sean Connery",
+            "work": "Dr. No",
+            "sourceUrl": "https://imwdb.org/watches/Rolex_Submariner_6538",
+            "sourceQuote": "Sean Connery wore one through the first four Eon films, from Dr. No (1962) to Thunderball (1965)"
+          },
+          {
+            "brand": "Gruen",
+            "model": "Precision",
+            "referenceCode": "510",
+            "supported": true,
+            "person": "Sean Connery",
+            "work": "Dr. No",
+            "sourceUrl": "https://imwdb.org/watches/Gruen_Precision_510",
+            "sourceQuote": "Bond-watch researcher Dell Deaton identified it in 2013 as the watch on Sean Connery's wrist in the Dr. No casino scene"
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Magnum, P.I.",
+      "kind": "series",
+      "labels": [
+        "magnum-pi-gmt-master"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00152,
+        "searches": 1,
+        "sightings": 4,
+        "supportedWithReference": 0,
+        "labelsFound": [
+          "magnum-pi-gmt-master"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Chronosport",
+            "model": "Sea Quartz 30",
+            "referenceCode": null,
+            "supported": false,
+            "person": null,
+            "work": "Magnum, P.I.",
+            "sourceUrl": "https://www.watchesofespionage.com/blogs/woe-dispatch/magnum-pi-watches-chronosport-rolex-gmt-master",
+            "sourceQuote": "“Magnum PI popularized the Chronosport Sea Quartz 30 almost single-handedly.”"
+          },
+          {
+            "brand": "Rolex",
+            "model": "GMT-Master",
+            "referenceCode": "16750",
+            "supported": false,
+            "person": null,
+            "work": "Magnum, P.I.",
+            "sourceUrl": "https://www.watchesofespionage.com/blogs/woe-dispatch/magnum-pi-watches-chronosport-rolex-gmt-master",
+            "sourceQuote": "“By season four, Magnum switched to a Rolex GMT-Master, likely reference 16750 but potentially also a 1675.”"
+          },
+          {
+            "brand": "Rolex",
+            "model": "GMT-Master",
+            "referenceCode": "1675",
+            "supported": false,
+            "person": null,
+            "work": "Magnum, P.I.",
+            "sourceUrl": "https://www.watchesofespionage.com/blogs/woe-dispatch/magnum-pi-watches-chronosport-rolex-gmt-master",
+            "sourceQuote": "“By season four, Magnum switched to a Rolex GMT-Master, likely reference 16750 but potentially also a 1675.”"
+          },
+          {
+            "brand": "Seiko",
+            "model": "Quartz diver Pepsi",
+            "referenceCode": "7548",
+            "supported": false,
+            "person": null,
+            "work": "Magnum, P.I.",
+            "sourceUrl": "https://www.montres-passion.fr/en/which-watches-does-thomas-magnum-wear-in-magnum-p-i/",
+            "sourceQuote": "“Pragmatic Magnum: Seiko quartz diver Pepsi (7548 family), Japanese efficiency.”"
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00945,
+        "searches": 3,
+        "sightings": 3,
+        "supportedWithReference": 0,
+        "labelsFound": [
+          "magnum-pi-gmt-master"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Chronosport",
+            "model": "Sea Quartz 30",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Tom Selleck as Thomas Magnum",
+            "work": "Magnum, P.I.",
+            "sourceUrl": "https://bamfstyle.com/2025/01/29/magnum-red-jungle-bird-shirt/",
+            "sourceQuote": "Through the first three seasons of *Magnum, P.I.* (and briefly in the second episode of the fourth season), Magnum’s everyday wristwatch is a stainless steel Chronosport Sea Quartz 30 dive watch"
+          },
+          {
+            "brand": "Rolex",
+            "model": "GMT-Master",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Tom Selleck as Thomas Magnum",
+            "work": "Magnum, P.I.",
+            "sourceUrl": "https://bamfstyle.com/2025/01/29/magnum-red-jungle-bird-shirt/",
+            "sourceQuote": "Beginning with the excellent fourth season premiere episode “Home from the Sea”, Magnum’s watch is retconned to be a Rolex GMT Master"
+          },
+          {
+            "brand": "Seiko",
+            "model": "Quartz dive watch with red-and-blue bezel",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Thomas Magnum",
+            "work": "Magnum, P.I.",
+            "sourceUrl": "https://www.montres-passion.fr/en/which-watches-does-thomas-magnum-wear-in-magnum-p-i",
+            "sourceQuote": "Magnum has also been spotted, more occasionally, wearing a Seiko quartz dive watch with a red-and-blue bezel."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Live and Let Die",
+      "kind": "movie",
+      "labels": [
+        "live-and-let-die-submariner-5513",
+        "live-and-let-die-pulsar"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00149,
+        "searches": 1,
+        "sightings": 3,
+        "supportedWithReference": 2,
+        "labelsFound": [
+          "live-and-let-die-submariner-5513",
+          "live-and-let-die-pulsar"
+        ],
+        "labelsCheckable": [
+          "live-and-let-die-submariner-5513",
+          "live-and-let-die-pulsar"
+        ],
+        "watches": [
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "5513",
+            "supported": true,
+            "person": null,
+            "work": "Live and Let Die",
+            "sourceUrl": "https://monochrome-watches.com/the-watches-of-james-bond-the-complete-guide-to-every-watch-worn-by-007-abcs-of-time/",
+            "sourceQuote": "Live and Let Die (1973) ... Roger Moore takes over as Bond and wears the Rolex Submariner ref. 5513"
+          },
+          {
+            "brand": "Hamilton",
+            "model": "Pulsar P2",
+            "referenceCode": "2900",
+            "supported": true,
+            "person": null,
+            "work": "Live and Let Die",
+            "sourceUrl": "https://www.jamesbondlifestyle.com/product/hamilton-pulsar-p2-2900-led-digital-watch",
+            "sourceQuote": "In the movie Live and Let Die (1973), James Bond (Roger Moore) wears a very special wristwatch, a Hamilton Pulsar P2 2900 LED digital watch."
+          },
+          {
+            "brand": "Tissot",
+            "model": "PR 516",
+            "referenceCode": "44544",
+            "supported": false,
+            "person": null,
+            "work": "Live and Let Die",
+            "sourceUrl": "https://www.fratellowatches.com/tbt-the-underrated-bond-tissot-pr-516-watch/",
+            "sourceQuote": "The watch Bond wears in the film is the earlier ref 44544 with a sunken aluminium bezel and all white hands."
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00899,
+        "searches": 3,
+        "sightings": 3,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "live-and-let-die-submariner-5513",
+          "live-and-let-die-pulsar"
+        ],
+        "labelsCheckable": [
+          "live-and-let-die-submariner-5513"
+        ],
+        "watches": [
+          {
+            "brand": "Rolex",
+            "model": "Submariner",
+            "referenceCode": "5513",
+            "supported": true,
+            "person": "Roger Moore as James Bond",
+            "work": "Live and Let Die",
+            "sourceUrl": "https://imwdb.org/movies/Live_and_Let_Die_(1973)",
+            "sourceQuote": "**Rolex Submariner 5513** Worn by **Roger Moore** as James Bond."
+          },
+          {
+            "brand": "Hamilton",
+            "model": "Pulsar P2 2900",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Roger Moore as James Bond",
+            "work": "Live and Let Die",
+            "sourceUrl": "https://imwdb.org/movies/Live_and_Let_Die_(1973)",
+            "sourceQuote": "**Hamilton Pulsar P2 2900** Worn by **Roger Moore** as James Bond."
+          },
+          {
+            "brand": "Tissot",
+            "model": "PR 516",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Roger Moore as James Bond",
+            "work": "Live and Let Die",
+            "sourceUrl": "https://imwdb.org/movies/Live_and_Let_Die_(1973)",
+            "sourceQuote": "**Tissot PR 516** Worn by **Roger Moore** as James Bond."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Daylight",
+      "kind": "movie",
+      "labels": [
+        "daylight-panerai-5218"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00131,
+        "searches": 1,
+        "sightings": 1,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "daylight-panerai-5218"
+        ],
+        "labelsCheckable": [
+          "daylight-panerai-5218"
+        ],
+        "watches": [
+          {
+            "brand": "Panerai",
+            "model": "Luminor",
+            "referenceCode": "5218-201/A",
+            "supported": true,
+            "person": "Sylvester Stallone as Kit Latura",
+            "work": "Daylight (1996)",
+            "sourceUrl": "https://imwdb.org/movies/Daylight_(1996)",
+            "sourceQuote": "Worn by Sylvester Stallone as Kit Latura. Panerai Luminor 5218-201/A"
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00636,
+        "searches": 2,
+        "sightings": 1,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "daylight-panerai-5218"
+        ],
+        "labelsCheckable": [
+          "daylight-panerai-5218"
+        ],
+        "watches": [
+          {
+            "brand": "Panerai",
+            "model": "Luminor",
+            "referenceCode": "5218-201/A",
+            "supported": true,
+            "person": "Sylvester Stallone",
+            "work": "Daylight",
+            "sourceUrl": "https://imwdb.org/movies/Daylight_(1996)",
+            "sourceQuote": "Worn by Sylvester Stallone as Kit Latura."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Gordon Gekko",
+      "kind": "character",
+      "labels": [
+        "gordon-gekko-santos"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00139,
+        "searches": 1,
+        "sightings": 1,
+        "supportedWithReference": 0,
+        "labelsFound": [
+          "gordon-gekko-santos"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Cartier",
+            "model": "Santos Galbée",
+            "referenceCode": null,
+            "supported": false,
+            "person": "Gordon Gekko",
+            "work": "Wall Street",
+            "sourceUrl": "https://timeandtidewatches.com/best-1980s-watches/",
+            "sourceQuote": "“Famously worn on the wrist of Michael Douglas’s oh-so-loveable character Gordon Gekko in the 1987 movie Wall Street”"
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00924,
+        "searches": 3,
+        "sightings": 2,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "gordon-gekko-santos"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "IWC",
+            "model": "Da Vinci Perpetual Calendar Edition “Kurt Klaus”",
+            "referenceCode": "IW376205",
+            "supported": true,
+            "person": "Gordon Gekko",
+            "work": "Wall Street: Money Never Sleeps (2010)",
+            "sourceUrl": "https://www.prnewswire.com/news-releases/iwc-lands-two-starring-roles-in-wall-street-money-never-sleeps-103722884.html",
+            "sourceQuote": "after his release from prison, the infamous Gordon Gekko shows his comprehension of strength and wealth by bearing the IWC Da Vinci Perpetual Calendar Edition Kurt Klaus in rose gold (Ref. IW376205)."
+          },
+          {
+            "brand": "Cartier",
+            "model": "Santos Galbée",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Gordon Gekko",
+            "work": "Wall Street (1987)",
+            "sourceUrl": "https://bamfstyle.com/2021/09/25/meeting-gordon-gekko/",
+            "sourceQuote": "The guy who would proclaim “greed—for lack of a better word—is good” would settle for nothing less than an 18-karat yellow gold Cartier Santos de Cartier Galbée tank watch."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "John F. Kennedy",
+      "kind": "celebrity",
+      "labels": [
+        "jfk-omega-slimline"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00162,
+        "searches": 1,
+        "sightings": 6,
+        "supportedWithReference": 2,
+        "labelsFound": [
+          "jfk-omega-slimline"
+        ],
+        "labelsCheckable": [
+          "jfk-omega-slimline"
+        ],
+        "watches": [
+          {
+            "brand": "Omega",
+            "model": "Ultra Thin",
+            "referenceCode": "OT3980",
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://www.crownandcaliber.com/p/john-f-kennedy-watches",
+            "sourceQuote": "John F. Kennedy received an 18-karat gold Omega Ultra Thin reference OT3980 from his close friend, former Florida State Senator Grant Stockdale."
+          },
+          {
+            "brand": "Rolex",
+            "model": "Day-Date",
+            "referenceCode": null,
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://www.crownandcaliber.com/p/john-f-kennedy-watches",
+            "sourceQuote": "That year, she gifted him an 18kt yellow gold Rolex Day-Date for his 45th birthday."
+          },
+          {
+            "brand": "Nastrix",
+            "model": null,
+            "referenceCode": null,
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://www.crownandcaliber.com/p/john-f-kennedy-watches",
+            "sourceQuote": "The 14-karat gold Nastrix timepiece was a gift from his friend and former ambassador to Great Britain David Bruce as a thank you for appointing him to the position."
+          },
+          {
+            "brand": "Cartier",
+            "model": "Tank Louis",
+            "referenceCode": null,
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://www.swisswatchexpo.com/thewatchclub/2017/10/02/the-kennedy-watch-collection/",
+            "sourceQuote": "In 1957, Jackie Kennedy gave JFK an 18k gold Cartier Tank Louis for their fourth wedding anniversary."
+          },
+          {
+            "brand": "Bulova",
+            "model": null,
+            "referenceCode": null,
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://www.crownandcaliber.com/p/john-f-kennedy-watches",
+            "sourceQuote": "His first notable watch was a Bulova gifted to him by a special woman at a dinner in Washington, DC in 1941."
+          },
+          {
+            "brand": "Hamilton",
+            "model": "505",
+            "referenceCode": "505",
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://www.crownandcaliber.com/p/john-f-kennedy-watches",
+            "sourceQuote": "The Hamilton 505 timepiece was custom-made for JFK, featuring photo-engraved pictures of his children on the watch face."
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00965,
+        "searches": 3,
+        "sightings": 5,
+        "supportedWithReference": 2,
+        "labelsFound": [
+          "jfk-omega-slimline"
+        ],
+        "labelsCheckable": [
+          "jfk-omega-slimline"
+        ],
+        "watches": [
+          {
+            "brand": "Omega",
+            "model": "Ultra Thin",
+            "referenceCode": "OT3980",
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": "1961 inauguration",
+            "sourceUrl": "https://www.crownandcaliber.com/p/john-f-kennedy-watches",
+            "sourceQuote": "JFK wore the watch on his wrist when he took the Oath of Office in 1961"
+          },
+          {
+            "brand": "Bulova",
+            "model": "Gold rectangular wristwatch (model unspecified)",
+            "referenceCode": null,
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://www.hodinkee.com/articles/on-the-block-president-john-f-kennedys-personal-bulova-watch",
+            "sourceQuote": "The Bulova was fitted with a stretch bracelet with a small, curved plate at the bottom – perfect for engraving."
+          },
+          {
+            "brand": "Cartier",
+            "model": "Louis Cartier Tank",
+            "referenceCode": null,
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": "November 22, 1963",
+            "sourceUrl": "https://www.crownandcaliber.com/p/john-f-kennedy-watches",
+            "sourceQuote": "This is the same watch on his wrist the day he was assassinated in 1963."
+          },
+          {
+            "brand": "Hamilton",
+            "model": "Summit 505 Electric",
+            "referenceCode": "505",
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://historical.ha.com/itm/political/presidential-relics/john-f-kennedy-deluxe-14k-hamilton-electric-wristwatch-circa-1960/a/6267-47071.s",
+            "sourceQuote": "This custom Hamilton \"Summit\" 505 electric watch features a 14k solid gold S&W case"
+          },
+          {
+            "brand": "Nastrix",
+            "model": "Automatic wristwatch",
+            "referenceCode": null,
+            "supported": true,
+            "person": "John F. Kennedy",
+            "work": null,
+            "sourceUrl": "https://www.crownandcaliber.com/p/john-f-kennedy-watches",
+            "sourceQuote": "According to JFK’s secretary Evelyn Lincoln, he wore the watch frequently during his morning swims."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Andy Warhol",
+      "kind": "celebrity",
+      "labels": [
+        "andy-warhol-tank"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00136,
+        "searches": 1,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.01011,
+        "searches": 3,
+        "sightings": 9,
+        "supportedWithReference": 7,
+        "labelsFound": [
+          "andy-warhol-tank"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Piaget",
+            "model": "Black Tie (ref. 15102)",
+            "referenceCode": "15102",
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://www.esquire.com/uk/style/a62849160/the-story-behind-piagets-andy-warhol-watch/",
+            "sourceQuote": "Warhol bought his in 1973."
+          },
+          {
+            "brand": "Cartier",
+            "model": "Tank Louis",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://robbreport.com/style/watch-collector/andy-warhol-keen-collector-worlds-finest-watches-1234576232/",
+            "sourceQuote": "He was photographed wearing a Cartier Tank Louis frequently."
+          },
+          {
+            "brand": "Rolex",
+            "model": "Oyster Chronograph",
+            "referenceCode": "3525",
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://www.watchonista.com/articles/unlikely-watch-collector/unlikely-watch-collector-andy-warhol",
+            "sourceQuote": "Warhol's Rolex ref. 3525 is an important watch for the venerable Swiss manufacturer."
+          },
+          {
+            "brand": "Rolex",
+            "model": "Rose-gold wristwatch",
+            "referenceCode": "4021",
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://www.crownandcaliber.com/p/happy-birthday-to-andy-warhol-a-man-who-appreciated-art-and-luxury-watches",
+            "sourceQuote": "Andy Warhol’s rose gold Rolex was a rare ref. 4021 from the 1940s."
+          },
+          {
+            "brand": "Patek Philippe",
+            "model": "Perpetual Calendar",
+            "referenceCode": "3448",
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://www.watchonista.com/articles/unlikely-watch-collector/unlikely-watch-collector-andy-warhol",
+            "sourceQuote": "Other notable watches in Warhol’s collection included a Patek Philippe ref. 3448"
+          },
+          {
+            "brand": "Patek Philippe",
+            "model": "Wristwatch",
+            "referenceCode": "2503",
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://www.watchonista.com/articles/unlikely-watch-collector/unlikely-watch-collector-andy-warhol",
+            "sourceQuote": "Patek Philippe ref. 2503"
+          },
+          {
+            "brand": "Patek Philippe",
+            "model": "Calatrava",
+            "referenceCode": "2526",
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://www.watchonista.com/articles/unlikely-watch-collector/unlikely-watch-collector-andy-warhol",
+            "sourceQuote": "Other notable watches in Warhol’s collection included a Patek Philippe ref. 3448, Patek Philippe ref. 2503, and a Patek Philippe ref. 2526."
+          },
+          {
+            "brand": "Patek Philippe",
+            "model": "Calatrava",
+            "referenceCode": "570",
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://observer.com/2023/11/andy-warhol-patek-philippe-watch-auction/",
+            "sourceQuote": "The rare 18-karat-gold watch was initially offered to the public in 1988 following the artist's untimely death."
+          },
+          {
+            "brand": "Piaget",
+            "model": "Cuff watch with tiger-eye dial",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Andy Warhol",
+            "work": null,
+            "sourceUrl": "https://www.watchonista.com/articles/unlikely-watch-collector/unlikely-watch-collector-andy-warhol",
+            "sourceQuote": "Being that Warhol was also a style icon, various Piaget cuff watches adorned his wrist, most notably, an intricate mechanical version with tiger eye dial."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Jacqueline Kennedy Onassis",
+      "kind": "celebrity",
+      "labels": [
+        "jackie-kennedy-tank"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00148,
+        "searches": 1,
+        "sightings": 3,
+        "supportedWithReference": 0,
+        "labelsFound": [
+          "jackie-kennedy-tank"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Cartier",
+            "model": "Tank",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Jacqueline Kennedy Onassis",
+            "work": null,
+            "sourceUrl": "https://en.worldtempus.com/article/watches/auctions-and-vintage/auctions-the-cartier-tank-of-jackie-kennedy-onassis-24167.html",
+            "sourceQuote": "Jacqueline Kennedy Onassis no doubt tops the Hall of Fame for stylish women watch wearers. The former First Lady and enduring fashion icon sported a chic, yellow gold Cartier Tank for most of her life."
+          },
+          {
+            "brand": "Piaget",
+            "model": null,
+            "referenceCode": null,
+            "supported": false,
+            "person": "Jacqueline Kennedy Onassis",
+            "work": null,
+            "sourceUrl": "https://www.crownandcaliber.com/p/profiles-time-jackie-kennedys-watches",
+            "sourceQuote": "In addition to this iconic timepiece, Jackie is known for her ultra-feminine yellow Piaget with a jade dial and diamond bezel."
+          },
+          {
+            "brand": "Piaget",
+            "model": null,
+            "referenceCode": null,
+            "supported": false,
+            "person": null,
+            "work": "Jackie",
+            "sourceUrl": "https://www.crownandcaliber.com/p/profiles-time-jackie-kennedys-watches",
+            "sourceQuote": "For the 2016 biopic *Jackie*, Piaget provided the original watch from their private museum collection for Natalie Portman to wear in the film."
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00612,
+        "searches": 2,
+        "sightings": 2,
+        "supportedWithReference": 0,
+        "labelsFound": [
+          "jackie-kennedy-tank"
+        ],
+        "labelsCheckable": [],
+        "watches": [
+          {
+            "brand": "Cartier",
+            "model": "Tank (Petit Tank Normale)",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Jacqueline Kennedy Onassis",
+            "work": null,
+            "sourceUrl": "https://www.hodinkee.com/articles/the-cartier-tank-that-belonged-to-jacqueline-kennedy-onassis",
+            "sourceQuote": "Jacqueline Kennedy Onassis sporting her Cartier Tank."
+          },
+          {
+            "brand": "Piaget",
+            "model": "Oval jade-dial bracelet watch with diamond and emerald bezel",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Jacqueline Kennedy Onassis",
+            "work": null,
+            "sourceUrl": "https://www.voguescandinavia.com/articles/great-vintage-timepieces-for-women",
+            "sourceQuote": "Kennedy wore an oval-shaped watch with a fine jade dial. The bezel was set with brilliant-cut diamonds punctuated by four emeralds"
+          }
+        ]
+      }
+    },
+    {
+      "subject": "Buzz Aldrin",
+      "kind": "celebrity",
+      "labels": [
+        "buzz-aldrin-speedmaster"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00136,
+        "searches": 1,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.01019,
+        "searches": 3,
+        "sightings": 15,
+        "supportedWithReference": 7,
+        "labelsFound": [
+          "buzz-aldrin-speedmaster"
+        ],
+        "labelsCheckable": [
+          "buzz-aldrin-speedmaster"
+        ],
+        "watches": [
+          {
+            "brand": "Omega",
+            "model": "Speedmaster Professional",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": "Apollo 11",
+            "sourceUrl": "https://www.omegawatches.com/en-us/watches/speedmaster/moonwatch-professional/product",
+            "sourceQuote": "Famously photographed on the wrist of Buzz Aldrin, this was the first of six moon landings that the Speedmaster has ever made."
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster Professional",
+            "referenceCode": "105.012",
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": "Apollo 11",
+            "sourceUrl": "https://www.fratellowatches.com/your-chance-to-own-apollo-11-astronaut-buzz-aldrins-omega-speedmaster",
+            "sourceQuote": "the Omega Speedmaster Professional 105.012 worn by Buzz Aldrin, with NASA serial number 43, hasn't been found."
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster Professional",
+            "referenceCode": "3590.50.00",
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.gq.com/story/buzz-aldrin-watches-coming-to-auction-omega-speedmaster",
+            "sourceQuote": "one that he picked up circa 1990 is available with an estimate of $8 to 12K: a ref. 3590.50.00"
+          },
+          {
+            "brand": "Omega",
+            "model": "Seamaster Professional GMT",
+            "referenceCode": "2535.80.00",
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.gq.com/story/buzz-aldrin-watches-coming-to-auction-omega-speedmaster",
+            "sourceQuote": "Omega Seamaster Professional GMT from circa 2007, ref. 2535.80.00."
+          },
+          {
+            "brand": "Jaeger-LeCoultre",
+            "model": "Deep Sea “Shark”",
+            "referenceCode": "2643",
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.gq.com/story/buzz-aldrin-watches-coming-to-auction-omega-speedmaster",
+            "sourceQuote": "Buzz proves his watch-collector bona fides with a spectacular vintage Jaeger-LeCoultre Deep Sea ref. 2643"
+          },
+          {
+            "brand": "Bulova",
+            "model": "Accutron Eagle Pilot Automatic",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.gq.com/story/buzz-aldrin-watches-coming-to-auction-omega-speedmaster",
+            "sourceQuote": "Those with a love for travel might consider the 2010s-era Bulova Accutron Eagle Pilot Automatic Watch."
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster Professional",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.hodinkee.com/articles/buzz-aldrin-rocking-three-omega-watches-at-once",
+            "sourceQuote": "On his right arm, he wore the new Omega Speedmaster Moonwatch"
+          },
+          {
+            "brand": "Omega",
+            "model": "De Ville Chronoscope",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.hodinkee.com/articles/buzz-aldrin-rocking-three-omega-watches-at-once",
+            "sourceQuote": "an unusual contraption that combines an 18k yellow gold De Ville Chronoscope with an X-33"
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster X-33",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.hodinkee.com/articles/buzz-aldrin-rocking-three-omega-watches-at-once",
+            "sourceQuote": "an unusual contraption that combines an 18k yellow gold De Ville Chronoscope with an X-33"
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster HB-SIA “Solar Impulse”",
+            "referenceCode": "321.90.44.52.01.001",
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.fratellowatches.com/your-chance-to-own-apollo-11-astronaut-buzz-aldrins-omega-speedmaster",
+            "sourceQuote": "The Speedmaster HB-SIA 'Solar Impulse' was a numbered edition (around 4,100 in total), and Buzz Aldrin's watch has 'No.3593' engraved on its case back."
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster X-33 Gen 2",
+            "referenceCode": "318.90.45.79.01.001",
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.fratellowatches.com/your-chance-to-own-apollo-11-astronaut-buzz-aldrins-omega-speedmaster",
+            "sourceQuote": "Last but certainly not least is Aldrin's Speedmaster X-33 Gen 2."
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster Professional Moonshine Gold",
+            "referenceCode": "310.60.42.50.99.002",
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://www.fratellowatches.com/your-chance-to-own-apollo-11-astronaut-buzz-aldrins-omega-speedmaster",
+            "sourceQuote": "Omega ensured the latter option was sent to Apollo 11 astronaut Buzz Aldrin."
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster X-33 Marstimer",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://supercarblondie.com/buzz-aldrin-omega-watches-moon-landing/",
+            "sourceQuote": "In the picture, the Apollo XI astronaut is wearing the *Skywalker X-33*, the *X-33 Marstimer Chronograph* and the *Apollo 11 50th Anniversary Speedmaster*."
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster Skywalker X-33",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://supercarblondie.com/buzz-aldrin-omega-watches-moon-landing/",
+            "sourceQuote": "In the picture, the Apollo XI astronaut is wearing the *Skywalker X-33*, the *X-33 Marstimer Chronograph* and the *Apollo 11 50th Anniversary Speedmaster*."
+          },
+          {
+            "brand": "Omega",
+            "model": "Speedmaster Apollo 11 50th Anniversary",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Buzz Aldrin",
+            "work": null,
+            "sourceUrl": "https://supercarblondie.com/buzz-aldrin-omega-watches-moon-landing/",
+            "sourceQuote": "In the picture, the Apollo XI astronaut is wearing the *Skywalker X-33*, the *X-33 Marstimer Chronograph* and the *Apollo 11 50th Anniversary Speedmaster*."
+          }
+        ]
+      }
+    },
+    {
+      "subject": "The Martian",
+      "kind": "movie",
+      "labels": [
+        "the-martian-belowzero"
+      ],
+      "control": false,
+      "before": {
+        "status": "ok",
+        "cost": 0.00128,
+        "searches": 1,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00864,
+        "searches": 3,
+        "sightings": 5,
+        "supportedWithReference": 1,
+        "labelsFound": [
+          "the-martian-belowzero"
+        ],
+        "labelsCheckable": [
+          "the-martian-belowzero"
+        ],
+        "watches": [
+          {
+            "brand": "Hamilton",
+            "model": "Khaki BeLOWZERO",
+            "referenceCode": "H78585333",
+            "supported": true,
+            "person": "Matt Damon as Mark Watney",
+            "work": "The Martian",
+            "sourceUrl": "https://imwdb.org/movies/The_Martian_(2015)",
+            "sourceQuote": "**Hamilton Khaki BeLOWZERO H78585333** Worn by **Matt Damon** as Mark Watney."
+          },
+          {
+            "brand": "Hamilton",
+            "model": "Khaki X-Wind Auto Chrono",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Michael Peña as Rick Martinez",
+            "work": "The Martian",
+            "sourceUrl": "https://imwdb.org/movies/The_Martian_(2015)",
+            "sourceQuote": "**Hamilton Khaki X-Wind Auto Chrono** Worn by **Michael Peña** as Rick Martinez."
+          },
+          {
+            "brand": "Hamilton",
+            "model": "Khaki Pilot Pioneer Aluminum",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Jessica Chastain as Melissa Lewis",
+            "work": "The Martian",
+            "sourceUrl": "https://imwdb.org/movies/The_Martian_(2015)",
+            "sourceQuote": "**Hamilton Khaki Pilot Pioneer Aluminum** Worn by **Jessica Chastain** as Melissa Lewis."
+          },
+          {
+            "brand": "Hamilton",
+            "model": "Khaki Pilot Pioneer Aluminum",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Kate Mara as Beth Johanssen",
+            "work": "The Martian",
+            "sourceUrl": "https://www.watchpro.com/hamilton-watches-bag-starring-role-in-the-martian/",
+            "sourceQuote": "The film also features an X-Wind Limited Edition on the wrist of Rick Martinez (played by Michael Peña), Pilot Pioneer Aluminum watches worn by Commander Melissa Lewis (Jessica Chastain) and Beth Johanssen (Kate Mara)"
+          },
+          {
+            "brand": "Hamilton",
+            "model": "Railroad Auto Chrono",
+            "referenceCode": null,
+            "supported": true,
+            "person": "Sebastian Shaw as Dr Chris Beck",
+            "work": "The Martian",
+            "sourceUrl": "https://www.watchpro.com/hamilton-watches-bag-starring-role-in-the-martian/",
+            "sourceQuote": "The film also features an X-Wind Limited Edition on the wrist of Rick Martinez (played by Michael Peña), Pilot Pioneer Aluminum watches worn by Commander Melissa Lewis (Jessica Chastain) and Beth Johanssen (Kate Mara) and a Railroad Auto Chrono worn by Dr Chris Beck (Sebastian [S"
+          }
+        ]
+      }
+    },
+    {
+      "subject": "The Quiet Meridian of Halvard Brask",
+      "kind": "movie",
+      "labels": [],
+      "control": true,
+      "before": {
+        "status": "ok",
+        "cost": 0.00119,
+        "searches": 1,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00556,
+        "searches": 2,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      }
+    },
+    {
+      "subject": "Ilsabet Varnhagen-Okoro",
+      "kind": "celebrity",
+      "labels": [],
+      "control": true,
+      "before": {
+        "status": "ok",
+        "cost": 0.00122,
+        "searches": 1,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      },
+      "after": {
+        "status": "ok",
+        "cost": 0.00558,
+        "searches": 2,
+        "sightings": 0,
+        "supportedWithReference": 0,
+        "labelsFound": [],
+        "labelsCheckable": [],
+        "watches": []
+      }
+    }
+  ]
+}

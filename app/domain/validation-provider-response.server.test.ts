@@ -136,6 +136,26 @@ describe("provider validation response evidence", () => {
       provider: "perplexity",
       sourceUrl: claim.sourceUrl,
     });
+    // Film discovery may make up to three searches; a card check exactly one.
+    const threeSearches = {
+      ...response,
+      usage: {
+        ...response.usage,
+        tool_calls_details: { search_web: { invocation: 3 } },
+      },
+    };
+    expect(
+      parsePerplexityFilmDiscoveryResponse(threeSearches).evidence,
+    ).toHaveLength(1);
+    expect(() =>
+      parsePerplexityFilmDiscoveryResponse({
+        ...response,
+        usage: {
+          ...response.usage,
+          tool_calls_details: { search_web: { invocation: 4 } },
+        },
+      }),
+    ).toThrow();
   });
   it("reads search results and actual usage from the Perplexity Agent API", () => {
     const response = {
@@ -169,6 +189,15 @@ describe("provider validation response evidence", () => {
         usage: {
           ...response.usage,
           tool_calls_details: { search_web: { invocation: 0 } },
+        },
+      }),
+    ).toThrow();
+    expect(() =>
+      parsePerplexityAgentValidationResponse({
+        ...response,
+        usage: {
+          ...response.usage,
+          tool_calls_details: { search_web: { invocation: 2 } },
         },
       }),
     ).toThrow();

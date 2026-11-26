@@ -9,6 +9,10 @@ import {
   buildValidationRequests,
 } from "./validation-provider-request.server";
 import type { ProfileV4 } from "./questionnaire-v4";
+import { recordProviderSpend } from "./provider-spend.server";
+
+/** Film and people discovery reads several articles in one call. */
+export const FILM_DISCOVERY_TIMEOUT_MS = 90_000;
 import {
   parseMuseValidationResponse,
   parsePerplexityAgentValidationResponse,
@@ -28,6 +32,7 @@ export function validationProviderCalls(deps: Deps) {
   const callPerplexity = async <T>(
     request: { endpoint: string; body: unknown },
     parse: (body: unknown) => T,
+    timeoutMs = 35_000,
   ) => {
     const response = await deps.fetchImpl(request.endpoint, {
       method: "POST",
@@ -36,10 +41,11 @@ export function validationProviderCalls(deps: Deps) {
         "content-type": "application/json",
       },
       body: JSON.stringify(request.body),
-      signal: AbortSignal.timeout(35_000),
+      signal: AbortSignal.timeout(timeoutMs),
     });
     const body: unknown = await response.json().catch(() => null);
     const cost = reportedPerplexityCost(body);
+    void recordProviderSpend("perplexity", cost);
     if (!response.ok)
       throw new ProviderCostError(
         `Perplexity validation returned ${response.status}`,
@@ -75,6 +81,9 @@ export function validationProviderCalls(deps: Deps) {
       callPerplexity(
         buildFilmDiscoveryRequest(subject, museModel, exclude),
         parsePerplexityFilmDiscoveryResponse,
+        // Several full searches reading most of each article take longer
+        // than a single card check.
+        FILM_DISCOVERY_TIMEOUT_MS,
       ),
     primary: async (brief: ValidationBrief) => {
       const request = buildValidationRequests(brief, museModel).perplexity;
@@ -96,6 +105,7 @@ export function validationProviderCalls(deps: Deps) {
       );
       const body: unknown = await response.json().catch(() => null);
       const cost = estimatedMuseCost(body);
+      void recordProviderSpend("muse", cost);
       if (!response.ok)
         throw new ProviderCostError(
           `Muse validation returned ${response.status}`,
