@@ -85,6 +85,12 @@ searching itself; the default (`perplexity`) uses Perplexity for searching.
    A final shared check (`domain/watch-result-dedup.ts`) shows repeated
    brand/title or brand/reference matches only once, including streamed cards
    and duplicates across sections. Raw catalogue/cache facts remain unchanged.
+   A saved answer shows the catalogue's facts that the repair read on a page
+   our server opened in place of its own older ones
+   (`domain/page-checked-facts.ts`, used by `withSelectedFacts` and
+   `mergeCatalogueFacts`). Under every result screen of the site's own pages,
+   never in a widget, sits the "Coming soon" panel of the planned paid
+   Exclusive Watch Selection (`components/exclusive-selection.tsx`).
 6. **Optional email** (`domain/quiz-email.server.ts`): Beehiiv newsletter and
    Resend dossier, only with explicit opt-in.
 
@@ -302,7 +308,11 @@ a detailed completion, up to $100):
   with only some of its words changes nothing; a name that is just the
   number changes nothing). Each run keeps a resumable journal in
   `.scratch/repair/` (ignored by Git) and writes with `--apply` or
-  `--apply-only`.
+  `--apply-only` (`--pause-ms` between writes keeps the site quick).
+  `--pages-from <run>` reads again only the pages an earlier run found,
+  with today's rules and no search: a table's label stays with its value,
+  and on the maker's own product page for the exact reference the maker's
+  name replaces a stored name that carries another size, colour or model.
 - `scripts/classify-catalogue-styles.ts` gives imported watches their
   wearing styles from their own facts (`STYLE_BRIEFS`), 25 to a Muse call,
   logged as method `model`; it writes with two writers and a pause, because

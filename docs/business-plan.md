@@ -896,3 +896,64 @@ lost over a photo conflict, and the film passage rule is corrected (to be
 measured by a paid re-check of about $4). The owner asked to ignore the test
 partner, so the portfolio demo is not a launch step. **Next action:** the
 paid re-check with the owner's OK, then offer the first bounded paid pilot.
+
+## Paid watch selection: "Exclusive Watch Selection" (owner, 2026-11-27)
+
+Owner: "мы будем делать платный подбор часов", after a safe launch on
+2026-12-06, and "подготовь сразу плашку на всех end pages disabled feature".
+This is the one new paid product, so the earlier caution against building a
+concierge or paid report beside the widgets yields for it alone; partner
+widgets stay the recurring channel, and no affiliate or sponsorship work runs
+in parallel. A disabled "Coming soon" panel now sits under every result screen
+of the site's own pages (`app/components/exclusive-selection.tsx`), never in a
+partner widget, and takes no order, payment or email. A press on it counts as
+interest in the site's own analytics (control `exclusive_selection` on
+`/admin/analytics`).
+
+**Proposed price, a hypothesis until orders exist:** $79 for one selection,
+with a founding price of $49 for the first 25 orders. A $199 tier with a
+30-minute call only later, and only if the weekly hours allow it.
+
+One selection (proposal): the visitor's brief (the quiz answers plus a free
+text), ten checked options with every fact read on the makers' or authorised
+retailers' pages, three recommended with their trade-offs, authorised retail
+prices and the pre-owned range, delivered within 48 hours, one round of
+follow-up questions, and a refund when ten options that fit cannot be found.
+It is a fixed fee, never a share of a watch's price: The Reserve sells no
+watches, so its advice stays independent.
+
+Market anchors (retrieved 2026-11-27; vendor pages, so indicative only):
+
+| Service | Price | Source |
+| --- | --- | --- |
+| Independent buying advice or purchase review (UK) | from £29 | https://ukchrono.com/specialist-services/ |
+| Written watch appraisal by a US advisory firm | $500 for the first watch, $250 for each more | https://bestwatchadvisoryfirms.com/watch-advisory-fees/ (commercially supported by Passion Asset Advisory) |
+| Sourcing request at a marketplace | 30% deposit plus a 4% processing fee (from a search result, page not read) | https://www.wristcheck.com/sell |
+| US independent consultants in general, not watches | $100–500 an hour | https://consultfees.com/blog/fees-for-consultants |
+| One-time session with a financial planner (analogy) | $150 | https://americancentury.com/invest/advice/personal-consult |
+
+Cost of one selection, measured where possible: a paid check averages $0.015
+an attempt with a $0.20 ceiling (`docs/evaluation-budget.md`), reading a
+maker's page $0.0003–0.006 a watch, the judge $0.033 a card; so AI stays under
+about $1.50 a selection. A merchant of record, which handles EU VAT for a
+seller in Poland, takes roughly 5% plus $0.50 (to confirm with the chosen
+provider). The binding cost is the owner's review time: within 6–8 hours a
+week, 15 minutes an order allows about 100 orders a month, 40 minutes about 40.
+
+At $79 that leaves about $73 an order before the owner's time. With this
+plan's own formula (assumed tax 25%, fixed costs about $70 a month: Vercel Pro
+$20, Supabase Pro $25, other $25), a $5,000 monthly take-home needs about
+(5,000 / 0.75 + 70) / 73 ≈ 93 orders a month, which fits the weekly hours only
+if review stays near 15 minutes an order; at the founding $49 it needs about
+155. The price sits between the £29 single review and the $150–500 of a
+consultant's session or hour, at 1–8% of the $1,000–10,000 watches the tools
+mostly serve.
+
+Proposed working criteria, not observed results: watch the panel's presses
+per result screen for two to four weeks after launch; then offer founding
+orders at $49 through the existing newsletter (no new data collection).
+Build checkout and delivery if at least 3% of result viewers press the panel
+and at least five founding orders are paid in the first month; otherwise
+revisit the price or the scope. **Next action:** the owner approves or
+changes the price (`docs/OWNER_QUESTIONS.md` #11) and the launch proceeds;
+the paid flow is built only after the launch.

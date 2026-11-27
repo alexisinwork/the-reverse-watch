@@ -4,6 +4,7 @@ import { Await } from "react-router";
 import { postToHost } from "./embed-bridge";
 import { SurfaceLink, useEmbed } from "./surface";
 import { YouTubeCallout } from "./youtube-callout";
+import { ExclusiveSelectionTeaser } from "./exclusive-selection";
 import type {
   AiSearchView,
   FoundWatch,
@@ -720,12 +721,17 @@ export function WatchResults({
           resolve={result}
         >
           {(resolved) => (
-            <ResultBody
-              displayCurrency={displayCurrency}
-              fx={fx}
-              mode={mode}
-              result={uniqueSearchView(resolved)}
-            />
+            <>
+              <ResultBody
+                displayCurrency={displayCurrency}
+                fx={fx}
+                mode={mode}
+                result={uniqueSearchView(resolved)}
+              />
+              {/* The planned paid selection, on the site's own result
+                  screens only; a partner's widget never advertises it. */}
+              {embed ? null : <ExclusiveSelectionTeaser />}
+            </>
           )}
         </Await>
       </Suspense>

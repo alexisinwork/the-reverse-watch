@@ -7,6 +7,8 @@ import type { SelectionDiscoveryProfile } from "./validation-provider-request.se
 import { selectionCandidate } from "./selection-candidates";
 import { loadFxTable } from "./fx.server";
 import { cacheCompleteSearch } from "./complete-search-cache.server";
+import { withPageCheckedFacts } from "./page-checked-facts";
+import { markPageCheckedFacts } from "./catalogue-result-enrichment.server";
 
 const identity = (watch: FoundWatch) =>
   `${watch.brand.toLowerCase().replace(/[^a-z0-9]/g, "")}|${normalizeReference(watch.referenceCode) ?? `m:${watch.model.toLowerCase().replace(/[^a-z0-9]/g, "")}`}`;
@@ -30,24 +32,38 @@ export function withSelectedFacts(
       normalizeReference(checked.referenceCode);
   const own = checked.details;
   const local = selected.details;
-  const merged: FoundWatch = {
-    ...checked,
-    model: titleIsReference ? selected.model : checked.model,
-    rationale: selected.rationale,
-    details: {
-      ...own,
-      price: own.price ?? local.price ?? null,
-      priceConfirmed: own.price
-        ? own.priceConfirmed
-        : local.price
-          ? (local.priceConfirmed ?? false)
-          : own.priceConfirmed,
-      caseDiameterMm: own.caseDiameterMm ?? local.caseDiameterMm ?? null,
-      movement: own.movement ?? local.movement ?? null,
-      waterResistanceM: own.waterResistanceM ?? local.waterResistanceM ?? null,
-      misses: local.misses,
+  // The local record selected the card with its current facts; those the
+  // catalogue repair read on a page our server opened are shown in place of
+  // the saved check's older ones (withPageCheckedFacts).
+  const merged: FoundWatch = withPageCheckedFacts(
+    {
+      ...checked,
+      model: titleIsReference ? selected.model : checked.model,
+      rationale: selected.rationale,
+      details: {
+        ...own,
+        price: own.price ?? local.price ?? null,
+        priceConfirmed: own.price
+          ? own.priceConfirmed
+          : local.price
+            ? (local.priceConfirmed ?? false)
+            : own.priceConfirmed,
+        caseDiameterMm: own.caseDiameterMm ?? local.caseDiameterMm ?? null,
+        movement: own.movement ?? local.movement ?? null,
+        waterResistanceM:
+          own.waterResistanceM ?? local.waterResistanceM ?? null,
+        misses: local.misses,
+      },
     },
-  };
+    {
+      model: selected.model,
+      caseDiameterMm: local.caseDiameterMm,
+      waterResistanceM: local.waterResistanceM,
+      movement: local.movement,
+      ...(local.materials ? { materials: local.materials } : {}),
+    },
+    local.pageCheckedFacts ?? [],
+  );
   // A card already labelled keeps its own, more specific note.
   return merged.details.price ||
     merged.details.verificationStatus === "unverified"
@@ -103,7 +119,10 @@ export async function validateSelectedResults(
     { localCandidates: candidates, additionalCandidate },
   );
   if (view.status !== "found") return view;
-  const allowed = new Map(candidates.map((watch) => [identity(watch), watch]));
+  // Which of the local records' facts the catalogue repair read on a page:
+  // those are shown in place of the saved check's (withSelectedFacts).
+  const marked = await markPageCheckedFacts(candidates);
+  const allowed = new Map(marked.map((watch) => [identity(watch), watch]));
   const watches = view.watches.flatMap((watch) => {
     const selected = allowed.get(identity(watch));
     // This explanation was computed from the current local ranking, so it can

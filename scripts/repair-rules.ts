@@ -60,6 +60,25 @@ export function pageKind(url: string, brand: string) {
 /** The page's title area and every line that could state a fact. */
 const SPEC_LINE =
   /\d\s*(mm|m\b|bar|atm|ft|feet|hours|h\b|jewels|vph)|diamet|thick|height|water|resist|movement|calib|automatic|self-?winding|manual|hand-?wound|quartz|solar|spring drive|kinetic|case|material|steel|titan|gold|ceramic|bronze|carbon|crystal|sapphire|mineral|hesalite|strap|bracelet|rubber|leather|back/i;
+/** A specification table's label on a line of its own, such as "Case width
+ * (mm)" or "Water Resistance", whose value is the next line. */
+const SPEC_LABEL =
+  /^(case\s+)?(diameter|width|size|thickness|height|length)\b|^water[\s-]*resistan|^movement\b|^(movement\s+)?(type|calib(re|er))\b|^(case|case\s*back|caseback|bracelet|strap|band)(\s+material)?$|^(crystal|glass)\b/i;
+/** A label holds no value of its own: no digit outside "(mm)". */
+const isLabel = (line: string) => {
+  const clean = line.trim().replace(/[:：]\s*$/, "");
+  return (
+    clean.length <= 40 &&
+    SPEC_LABEL.test(clean) &&
+    !/\d/.test(clean.replace(/\((mm|m|ft)\)/gi, ""))
+  );
+};
+/** The next line is the label's value when it reads like one. */
+const isValue = (line: string) =>
+  line.length > 0 &&
+  line.length <= 60 &&
+  !isLabel(line) &&
+  (/\d/.test(line) || SPEC_LINE.test(line));
 export function specText(text: string, reference: string | null) {
   const lines = text.split(" \n ");
   const keep: string[] = [];
@@ -72,12 +91,21 @@ export function specText(text: string, reference: string | null) {
     }
   };
   lines.slice(0, 25).forEach(add);
-  for (const line of lines)
+  for (const [at, line] of lines.entries()) {
+    // A table puts the label and its value on lines of their own; read
+    // alone, the label says nothing (2026-11-27: Tissot's "Case width (mm)"
+    // then "42.00", Seiko's "Water Resistance" then its value).
+    const value = lines[at + 1]?.trim() ?? "";
+    if (isLabel(line) && isValue(value)) {
+      add(`${line.trim().replace(/[:：]\s*$/, "")}: ${value}`);
+      continue;
+    }
     if (
       SPEC_LINE.test(line) ||
       (reference && pageMentionsReference(reference, line, ""))
     )
       add(line);
+  }
   let joined = "";
   for (const line of keep) {
     if (joined.length + line.length > 7_000) break;
@@ -166,6 +194,9 @@ export type FieldResult = {
   passage?: string;
   /** The page names the watch with only some of the stored name's words. */
   ambiguous?: boolean;
+  /** The maker's own name for the exact reference, from its product page's
+   * title (makerName). */
+  makerTitle?: boolean;
 };
 
 /** The passage is on our copy of the page. */
@@ -173,6 +204,9 @@ export const onPage = (page: string, passage: string | null) =>
   Boolean(passage) &&
   plain(passage!).length >= 3 &&
   page.includes(plain(passage!));
+
+const HEDGED =
+  /\b(frequently|often|usually|typically|generally|commonly|sometimes|can be|may be|might be|such as|for example)\b/;
 
 function storedValue(watch: CatalogueWatch, field: Field) {
   return watch[field] ?? null;
@@ -194,6 +228,9 @@ export function checkField(
   if (value === null || value === undefined || !onPage(page, passage))
     return unconfirmed;
   const quoted = plain(passage!);
+  // A general remark ("a transparent caseback, frequently made of sapphire")
+  // says nothing about this watch (2026-11-27, an Omega page).
+  if (HEDGED.test(quoted)) return unconfirmed;
   const verdict = (same: boolean, written: string | number | boolean) =>
     stored === null || stored === ""
       ? { status: "filled" as const, stored, value: written, passage: passage! }
@@ -219,7 +256,9 @@ export function checkField(
       mm > (field === "caseDiameterMm" ? 70 : 40)
     )
       return unconfirmed;
-    if (!new RegExp(`${number(mm)}\\s*mm`).test(quoted)) return unconfirmed;
+    // "42 mm", or a table's "Case width (mm): 42.00".
+    if (!new RegExp(`${number(mm)}\\s*mm|\\bmm\\s*${number(mm)}`).test(quoted))
+      return unconfirmed;
     if (
       field === "caseDiameterMm" &&
       /length|lug|thick|height|strap|bracelet|band|crystal|dial/.test(quoted)
@@ -329,6 +368,127 @@ export function modelCheck(
   return { ...unconfirmed, ambiguous: true };
 }
 
+const COLOURS = new Set(
+  "black white blue green grey gray silver red brown champagne cream ivory salmon pink purple orange yellow anthracite slate bronze gold".split(
+    " ",
+  ),
+);
+/** The first lines of our copy of a page: its title, description and main
+ * heading. */
+export const titleArea = (pageText: string) =>
+  plain(pageText.split(" \n ").slice(0, 5).join(" "));
+
+/**
+ * On the maker's own product page for the exact reference, the watch takes
+ * the maker's name for it when the stored name contradicts it (2026-11-27:
+ * the judge found "Khaki Navy Frogman Automatic 41" for Hamilton's 42 mm
+ * H77725335 and "DS Action Day-Date" for Certina's DS Action Diver 43mm
+ * Powermatic 80):
+ * - a size in the stored name that is not the page's case diameter,
+ * - a colour in the stored name while the title names another colour, or
+ * - another model: a distinctive word in the stored name the maker's name
+ *   lacks while the maker's name has one the stored name lacks, and either
+ *   that stored word is nowhere on the page or a hard fact differs too
+ *   ("Prospex" for "Prospex 1965 Heritage Diver" changes nothing, nor does
+ *   a longer marketing title for a name the page also uses).
+ * The name must stand in the page's title area, so a menu or a related
+ * model never names the watch. Returns null when the stored name holds up
+ * or the page gives no usable name.
+ */
+export function makerName(
+  watch: CatalogueWatch,
+  answer: {
+    value: string | number | boolean | null;
+    passage: string | null;
+  } | null,
+  title: string,
+  page: {
+    diameterMm: number | null;
+    /** plain() of the whole page. */
+    text: string;
+    hardFactDiffers: boolean;
+  },
+): FieldResult | null {
+  const pageDiameterMm = page.diameterMm;
+  const name = typeof answer?.value === "string" ? answer.value.trim() : "";
+  const passage = answer?.passage ?? "";
+  if (name.length < 2 || name.length > 120 || plain(passage).length < 3)
+    return null;
+  if (!title.includes(plain(passage)) || !plain(passage).includes(plain(name)))
+    return null;
+  const letters = name.replace(/[\s\d\p{P}]/gu, "");
+  if ((letters.match(/[a-z]/gi) ?? []).length < letters.length / 2) return null;
+  const brandWords = new Set(plain(watch.brand).split(" "));
+  const reference = plain(watch.referenceCode ?? "").replace(/ /g, "");
+  const words = (value: string) =>
+    plain(value)
+      .split(" ")
+      .filter((word) => word && !brandWords.has(word));
+  const distinctive = (word: string) =>
+    word.length > 2 &&
+    !GENERIC.has(word) &&
+    !/^\d/.test(word) &&
+    !reference.includes(word.replace(/\./g, ""));
+  const makers = words(name);
+  // A name made of the reference, generic words or numbers is no name.
+  if (!makers.some(distinctive)) return null;
+  const stored = words(watch.model);
+  const sizeOf = (word: string) => {
+    const size = /^(\d{2}(?:\.\d+)?)(?:mm)?$/.exec(word);
+    const mm = size ? Number(size[1]) : Number.NaN;
+    return mm >= 20 && mm <= 55 ? mm : null;
+  };
+  const sizeConflict = stored.some((word) => {
+    const mm = sizeOf(word);
+    return (
+      mm !== null &&
+      pageDiameterMm !== null &&
+      Math.abs(mm - pageDiameterMm) >= 0.5
+    );
+  });
+  const titleWords = new Set(title.split(" "));
+  const colourConflict =
+    stored.some((word) => COLOURS.has(word) && !titleWords.has(word)) &&
+    [...titleWords].some((word) => COLOURS.has(word) && !stored.includes(word));
+  // A stored word anywhere in the title area is not contradicted ("Elegance
+  // Collection" stays when Grand Seiko's title names it beside the GMT).
+  const nameWords = new Set([...makers, ...words(passage), ...titleWords]);
+  const lacking = stored.filter(
+    (word) => distinctive(word) && !nameWords.has(word),
+  );
+  const onThePage = (word: string) =>
+    new RegExp(`(?<![a-z0-9])${word.replace(/\./g, "\\.")}(?![a-z0-9])`).test(
+      page.text,
+    );
+  const anotherName =
+    lacking.length > 0 &&
+    makers.some((word) => distinctive(word) && !stored.includes(word)) &&
+    (page.hardFactDiffers || lacking.some((word) => !onThePage(word)));
+  if (!sizeConflict && !colourConflict && !anotherName) return null;
+  // A word the maker writes in capitals keeps the stored spelling
+  // ("HYDROCONQUEST GMT" stays "HydroConquest GMT").
+  const spelling = new Map(
+    watch.model.split(/\s+/).map((word) => [plain(word), word] as const),
+  );
+  const written = name
+    .split(/\s+/)
+    .map((word) =>
+      word.length > 3 && word === word.toUpperCase() && /[A-Z]/.test(word)
+        ? (spelling.get(plain(word)) ?? word)
+        : word,
+    )
+    .join(" ");
+  // The same name again changes nothing.
+  if (written === watch.model) return null;
+  return {
+    status: "corrected",
+    stored: watch.model,
+    value: written,
+    passage,
+    makerTitle: true,
+  };
+}
+
 /**
  * The page shows another watch: it names the watch with none of the stored
  * name's words and differs in a hard fact (case diameter by a millimetre or
@@ -338,11 +498,26 @@ export function modelCheck(
  */
 export function anotherWatch(fields: Partial<Record<Field, FieldResult>>) {
   if (fields.model?.status !== "corrected") return false;
+  return (
+    anotherSizeOrMovement(fields) ||
+    fields.waterResistanceM?.status === "corrected"
+  );
+}
+
+/**
+ * The maker's page gives another case size (by a millimetre or more) or
+ * another movement. With the maker's own name for the watch (makerName),
+ * only this makes it another model whose price is checked again: AI-found
+ * records got the water resistance of the same watch wrong (Citizen
+ * NB6021-68L stored at 300 m, its page gives 200 m).
+ */
+export function anotherSizeOrMovement(
+  fields: Partial<Record<Field, FieldResult>>,
+) {
   const diameter = fields.caseDiameterMm;
   return (
     (diameter?.status === "corrected" &&
       Math.abs(Number(diameter.value) - Number(diameter.stored)) >= 1) ||
-    fields.movement?.status === "corrected" ||
-    fields.waterResistanceM?.status === "corrected"
+    fields.movement?.status === "corrected"
   );
 }

@@ -132,3 +132,39 @@ a {
   color: var(--color-ink-soft);
   font-size: 0.9rem;
 }
+
+/* Exclusive Watch Selection, not open yet (components/exclusive-selection.tsx). */
+.exclusive-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0 0;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--color-brass);
+  border-radius: var(--radius);
+  background: var(--color-brass-wash);
+}
+
+.exclusive-panel > div {
+  flex: 1 1 18rem;
+}
+
+.exclusive-panel strong {
+  display: block;
+  margin-top: 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.exclusive-panel p {
+  margin: 0.35rem 0 0;
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+}
+
+.exclusive-panel__button[aria-disabled="true"] {
+  opacity: 0.65;
+  cursor: not-allowed;
+}

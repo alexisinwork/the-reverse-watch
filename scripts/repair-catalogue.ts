@@ -70,13 +70,16 @@ import {
 } from "../app/domain/watch-catalogue.server";
 import { databaseTls } from "./database-tls";
 import {
+  anotherSizeOrMovement,
   anotherWatch,
   checkField,
   FIELDS,
+  makerName,
   modelCheck,
   pageKind,
   plain,
   specText,
+  titleArea,
   type Field,
   type FieldResult,
 } from "./repair-rules";
@@ -99,8 +102,18 @@ const ids = idsFile
   : option("ids")?.split(",");
 const apply = process.argv.includes("--apply");
 const applyOnly = process.argv.includes("--apply-only");
+// --pages-from <run>: read again the page an earlier run found for each
+// watch, with today's rules, and nothing else (no search, no mark dropped).
+const pagesFrom = option("pages-from");
+// --pause-ms: a pause after each write of --apply-only, so the live searches
+// stay quick while it writes (2026-11-27).
+const pauseMs = Number(option("pause-ms") ?? 0);
 if (!run || !/^[a-z0-9-]{1,60}$/.test(run))
   throw new Error("--run takes lowercase letters, digits and dashes.");
+if (pagesFrom !== undefined && !/^[a-z0-9-]{1,60}$/.test(pagesFrom))
+  throw new Error("--pages-from takes an earlier run's name.");
+if (!Number.isInteger(pauseMs) || pauseMs < 0 || pauseMs > 10_000)
+  throw new Error("--pause-ms takes 0-10000.");
 if (
   !applyOnly &&
   (!Number.isFinite(budgetUsd) || budgetUsd <= 0 || budgetUsd > 60)
@@ -222,7 +235,7 @@ type Answer = z.infer<typeof answerSchema>;
 
 const FIELD_RULES = [
   "For each fact give the value and copy, word for word, the shortest passage of the page that states it: one line of the specification list or one sentence. Give null for a fact the page does not state; never guess or use other knowledge.",
-  "model: the watch's name as the page gives it, without the brand. caseDiameterMm and caseThicknessMm: numbers in millimetres (a case length or lug width is not a diameter). movement: automatic, manual, quartz, solar, spring_drive or hybrid (hybrid for kinetic). inHouseCalibre: true when the page says the movement is the maker's own (in-house, manufacture), false when it names another maker's base calibre (ETA, Sellita, Miyota, Seiko NH, Ronda and so on), else null. waterResistanceM: metres (10 bar or 10 ATM is 100). caseMaterial, casebackMaterial, strapMaterial, crystal: short plain words such as stainless steel, titanium, rubber, leather, sapphire.",
+  "model: the watch's name as the page gives it, without the brand; take it from the product's title or main heading when the page has one. caseDiameterMm and caseThicknessMm: numbers in millimetres (a case length or lug width is not a diameter). movement: automatic, manual, quartz, solar, spring_drive or hybrid (hybrid for kinetic). inHouseCalibre: true when the page says the movement is the maker's own (in-house, manufacture), false when it names another maker's base calibre (ETA, Sellita, Miyota, Seiko NH, Ronda and so on), else null. waterResistanceM: metres (10 bar or 10 ATM is 100). caseMaterial, casebackMaterial, strapMaterial, crystal: short plain words such as stainless steel, titanium, rubber, leather, sapphire.",
 ].join("\n");
 
 const READ_INSTRUCTIONS = [
@@ -437,10 +450,34 @@ async function check(watch: CatalogueWatch): Promise<Result> {
       (field) => value[field]?.passage && value[field]?.value != null,
     ).length;
 
+  // 0. With --pages-from: the page that run found, and nothing else.
+  const known = earlierPages?.get(watch.id);
+  if (known) {
+    const opened = await openPage(known);
+    base.storedPage = opened.state;
+    const openedKind =
+      opened.state === "opened" ? pageKind(opened.url, watch.brand) : null;
+    if (
+      opened.state === "opened" &&
+      openedKind &&
+      pageMentionsReference(watch.referenceCode, opened.text, "")
+    ) {
+      const read = await twice(() =>
+        museRead(watch, specText(opened.text, watch.referenceCode), meter),
+      );
+      if (read.answer.showsWatch !== false) {
+        answer = read.answer;
+        page = opened;
+        kind = openedKind;
+        base.tier = "stored";
+      }
+    }
+  }
   // 1. The stored page, read without a search. A read that gives fewer than
   // two facts is kept only if no other page gives more.
-  const stored = watch.sourceUrl ? await openPage(watch.sourceUrl) : null;
-  base.storedPage = stored?.state ?? "none";
+  const stored =
+    !known && watch.sourceUrl ? await openPage(watch.sourceUrl) : null;
+  if (!known) base.storedPage = stored?.state ?? "none";
   const storedKind = stored ? pageKind(stored.url, watch.brand) : null;
   let fallback: {
     answer: Answer;
@@ -471,7 +508,7 @@ async function check(watch: CatalogueWatch): Promise<Result> {
   // gives the reference.
   let blockedCandidate = false;
   let shownByCandidate = false;
-  for (const query of answer || !watch.referenceCode
+  for (const query of answer || known || !watch.referenceCode
     ? []
     : (["full", "short"] as const)) {
     const candidates = await perplexityFind(watch, query, meter);
@@ -538,15 +575,44 @@ async function check(watch: CatalogueWatch): Promise<Result> {
     const text = plain(page.text);
     for (const field of FIELDS)
       base.fields[field] = checkField(watch, field, answer[field], text);
-    // A page that names the watch with only some of the stored name's words
-    // may show a sibling model: nothing is changed from it.
-    if (base.fields.model?.ambiguous)
+    // The maker's own product page for the exact reference: the reference
+    // is in its title area or its address. There the maker's name for the
+    // watch wins over a stored name that contradicts it (makerName), and a
+    // partly matching name blocks nothing.
+    const lines = page.text.split(" \n ");
+    const productPage =
+      kind === "maker" &&
+      (pageMentionsReference(
+        watch.referenceCode,
+        lines.slice(0, 25).join(" \n "),
+        "",
+      ) ||
+        pageMentionsReference(watch.referenceCode, "", page.url));
+    if (productPage) {
+      const diameter = base.fields.caseDiameterMm;
+      const renamed = makerName(watch, answer.model, titleArea(page.text), {
+        diameterMm:
+          diameter && diameter.status !== "unconfirmed"
+            ? Number(diameter.value)
+            : null,
+        text,
+        hardFactDiffers: anotherSizeOrMovement(base.fields),
+      });
+      if (renamed) base.fields.model = renamed;
+    }
+    // Elsewhere, a page that names the watch with only some of the stored
+    // name's words may show a sibling model: nothing is changed from it.
+    if (base.fields.model?.ambiguous && !productPage)
       for (const field of FIELDS) {
         const item = base.fields[field];
         if (item && item.status !== "confirmed")
           base.fields[field] = { status: "unconfirmed", stored: item.stored };
       }
-    base.identityChanged = base.fields.model?.status === "corrected";
+    base.identityChanged =
+      base.fields.model?.status === "corrected" &&
+      (base.fields.model.makerTitle
+        ? anotherSizeOrMovement(base.fields)
+        : anotherWatch(base.fields));
     if (!watch.imageUrl && kind === "maker" && page.imageUrl)
       base.imageUrl = await verifyImageUrl(page.imageUrl, fetch);
     const storedBroken =
@@ -562,6 +628,7 @@ async function check(watch: CatalogueWatch): Promise<Result> {
   // none of them blocked to our server. A stored page that still opens is
   // never enough to drop the mark (its text may load later in a browser).
   base.dropReference =
+    !known &&
     watch.referenceConfirmed &&
     !base.referenceOnPage &&
     !shownByCandidate &&
@@ -582,14 +649,28 @@ function factsOf(watch: CatalogueWatch, rawResult: Result) {
     result.newSourceUrl = null;
     result.identityChanged = false;
   }
+  // A "correction" to the very same name is a confirmation (a journal
+  // written before makerName skipped them).
+  if (
+    result.fields.model?.status === "corrected" &&
+    result.fields.model.value === result.fields.model.stored
+  )
+    result.fields.model = { ...result.fields.model, status: "confirmed" };
   const model = result.fields.model;
   if (model?.status === "corrected" && typeof model.value === "string") {
-    const again = modelCheck(watch, model.value, model.passage ?? "");
-    if (again.status !== "corrected" || !anotherWatch(result.fields)) {
-      result.fields.model = { status: "unconfirmed", stored: model.stored };
-      result.identityChanged = false;
+    // The maker's name from its own product page (makerName) stands on its
+    // own; the watch counts as another model, and its price is parked, only
+    // when the page gives another case size or movement too.
+    if (model.makerTitle) {
+      result.identityChanged = anotherSizeOrMovement(result.fields);
     } else {
-      result.identityChanged = true;
+      const again = modelCheck(watch, model.value, model.passage ?? "");
+      if (again.status !== "corrected" || !anotherWatch(result.fields)) {
+        result.fields.model = { status: "unconfirmed", stored: model.stored };
+        result.identityChanged = false;
+      } else {
+        result.identityChanged = true;
+      }
     }
   }
   const method = result.pageKind === "maker" ? "maker_page" : "retailer_page";
@@ -622,7 +703,14 @@ function factsOf(watch: CatalogueWatch, rawResult: Result) {
   const newSourceKind = result.newSourceUrl
     ? classifySource(result.newSourceUrl, watch.brand)
     : null;
-  if (!imported && result.newSourceUrl && newSourceKind) {
+  // The same page again is no new source (run reread-1 rewrote 605 such
+  // addresses before this check, 2026-11-27).
+  if (
+    !imported &&
+    result.newSourceUrl &&
+    newSourceKind &&
+    result.newSourceUrl !== watch.sourceUrl
+  ) {
     facts.push({
       field: "sourceUrl",
       status: watch.sourceUrl ? "corrected" : "filled",
@@ -716,6 +804,27 @@ if (existsSync(journalPath))
   }
 spent = [...journal.values()].reduce((sum, entry) => sum + entry.costUsd, 0);
 
+// --pages-from: each watch's page in the earlier run's journal, when that
+// run found the maker's or a shop's page giving the reference.
+const earlierPages = pagesFrom ? new Map<string, string>() : null;
+if (pagesFrom && earlierPages) {
+  const path = resolve(`.scratch/repair/${pagesFrom}.jsonl`);
+  if (!existsSync(path)) throw new Error(`No journal for run ${pagesFrom}.`);
+  const latest = new Map<string, Result>();
+  for (const line of readFileSync(path, "utf8").split("\n")) {
+    if (!line.trim()) continue;
+    try {
+      const entry = JSON.parse(line) as Result;
+      latest.set(entry.id, entry);
+    } catch {
+      continue;
+    }
+  }
+  for (const entry of latest.values())
+    if (entry.pageUrl && entry.pageKind && entry.referenceOnPage)
+      earlierPages.set(entry.id, entry.pageUrl);
+}
+
 // Writing needs only the journal's watches, read by id; checking reads the
 // whole catalogue, with up to three tries (a busy database can take longer
 // than the listing's 45 seconds).
@@ -751,6 +860,7 @@ const selected = catalogue
           watch.caseThicknessMm === null),
   )
   .filter((watch) => watch.reviewStatus !== "rejected")
+  .filter((watch) => !earlierPages || earlierPages.has(watch.id))
   .filter((watch) => !ids || ids.includes(watch.id))
   .sort((a, b) => a.id.localeCompare(b.id));
 
@@ -789,6 +899,7 @@ if (applyOnly) {
       failed += 1;
     }
     appendFileSync(journalPath, `${JSON.stringify(entry)}\n`);
+    if (pauseMs) await new Promise((done) => setTimeout(done, pauseMs));
   }
   console.log(
     `Applied the journal: ${written} columns changed; ${done.size} watches were already written; ${failed} writes failed.`,

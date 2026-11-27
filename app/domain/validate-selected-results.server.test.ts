@@ -169,3 +169,43 @@ describe("withSelectedFacts", () => {
     );
   });
 });
+
+describe("withSelectedFacts and the repaired catalogue", () => {
+  it("shows the page-checked facts the local record was selected with", () => {
+    const checked: FoundWatch = {
+      brand: "Seiko",
+      model: "Prospex 1965 Heritage Diver’s Watch",
+      referenceCode: "SPB451",
+      sourceUrl: "https://www.seikowatches.com/us-en/products/prospex/spb451j1",
+      imageUrl: null,
+      priceNote: "USD 1,300",
+      rationale: "Saved check",
+      details: {
+        price: { amount: 1_300, currency: "USD" },
+        priceConfirmed: true,
+        caseDiameterMm: 41.7,
+        waterResistanceM: 200,
+        movement: "automatic",
+      },
+    };
+    const local: FoundWatch = {
+      ...checked,
+      rationale: "Current ranking",
+      details: {
+        price: { amount: 1_300, currency: "USD" },
+        caseDiameterMm: 40,
+        waterResistanceM: 300,
+        movement: "automatic",
+        pageCheckedFacts: ["caseDiameterMm", "waterResistanceM"],
+      },
+    };
+    const card = withSelectedFacts(checked, local);
+    expect(card.details).toMatchObject({
+      caseDiameterMm: 40,
+      waterResistanceM: 300,
+      price: { amount: 1_300, currency: "USD" },
+      priceConfirmed: true,
+    });
+    expect(card.rationale).toBe("Current ranking");
+  });
+});

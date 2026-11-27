@@ -531,11 +531,36 @@ export function secondaryMarketPrice(
   );
 }
 
+/**
+ * The facts the catalogue repair read on the maker's or a shop's page that
+ * our server opened: migration 0124 sums each up in
+ * source_details.factCheck as "corrected · maker_page · host · date". Such a
+ * fact wins over an older saved check's value when a card is shown
+ * (2026-11-27: saved answers still showed 41 mm for Citizen's 46 mm
+ * NB6004-08E after the repair).
+ */
+export function pageCheckedFacts(
+  watch: Pick<CatalogueWatch, "sourceDetails">,
+): string[] {
+  const summary = watch.sourceDetails?.factCheck;
+  if (!summary) return [];
+  return Object.entries(summary)
+    .filter(
+      ([, value]) =>
+        typeof value === "string" &&
+        /^(confirmed|corrected|filled) · (maker_page|retailer_page)\b/.test(
+          value,
+        ),
+    )
+    .map(([field]) => field);
+}
+
 export function catalogueToFoundWatch(
   watch: CatalogueWatch,
 ): FoundWatch | null {
   const sourceUrl = watch.sourceUrl;
   if (!sourceUrl) return null;
+  const checkedOnPage = pageCheckedFacts(watch);
   const knownPrice =
     watch.priceStatus !== "unconfirmed" &&
     watch.priceAmount !== null &&
@@ -602,6 +627,7 @@ export function catalogueToFoundWatch(
         : {}),
       referenceVerified: watch.referenceConfirmed,
       reviewStatus: watch.reviewStatus,
+      ...(checkedOnPage.length ? { pageCheckedFacts: checkedOnPage } : {}),
     },
   };
 }

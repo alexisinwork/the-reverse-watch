@@ -5,7 +5,8 @@ import {
   rpc,
   type CatalogueClient,
 } from "./watch-catalogue.server";
-import { catalogueWatchSchema } from "./watch-catalogue";
+import { catalogueWatchSchema, pageCheckedFacts } from "./watch-catalogue";
+import { withPageCheckedFacts } from "./page-checked-facts";
 import { z } from "zod";
 
 export async function storyCatalogueWatch(attribution: {
@@ -92,45 +93,61 @@ export function mergeCatalogueFacts(
         ? catalogueEvidence.url
         : undefined) ?? watch.details.referenceSourceUrl;
     const dialsDetails = row.sourceDetails?.dials;
-    return {
-      ...watch,
-      ...(useDialsTitle && row.model !== watch.model
-        ? { model: row.model }
-        : {}),
-      imageUrl: watch.imageUrl ?? row.imageUrl,
-      priceNote:
-        price && price !== watch.details.price
-          ? `${price.currency} ${Math.round(price.amount).toLocaleString("en")}`
-          : watch.priceNote,
-      details: {
-        ...watch.details,
-        price,
-        caseDiameterMm: watch.details.caseDiameterMm ?? row.caseDiameterMm,
-        waterResistanceM:
-          watch.details.waterResistanceM ?? row.waterResistanceM,
-        movement: watch.details.movement ?? row.movement,
-        materials: {
-          case: watch.details.materials?.case ?? row.caseMaterial,
-          caseback: watch.details.materials?.caseback ?? row.casebackMaterial,
-          strap: watch.details.materials?.strap ?? row.strapMaterial,
-        },
-        referenceVerified: true,
-        ...(row.sourceKind ? { sourceKind: row.sourceKind } : {}),
-        ...(referenceSourceLabel ? { referenceSourceLabel } : {}),
-        ...(referenceSourceUrl ? { referenceSourceUrl } : {}),
-        ...(dialsDetails && typeof dialsDetails === "object"
-          ? { sourceDetails: dialsDetails }
-          : {}),
+    // A fact the catalogue repair read on a page our server opened wins over
+    // the card's own older value (withPageCheckedFacts).
+    return withPageCheckedFacts(
+      {
+        ...watch,
         ...(useDialsTitle && row.model !== watch.model
-          ? { previousModelTitle: watch.model }
+          ? { model: row.model }
           : {}),
-        catalogueId: row.id,
-        catalogueUpdatedAt: row.updatedAt,
-        ...(price !== watch.details.price
-          ? { priceConfirmed: row.priceStatus === "confirmed" }
-          : {}),
+        imageUrl: watch.imageUrl ?? row.imageUrl,
+        priceNote:
+          price && price !== watch.details.price
+            ? `${price.currency} ${Math.round(price.amount).toLocaleString("en")}`
+            : watch.priceNote,
+        details: {
+          ...watch.details,
+          price,
+          caseDiameterMm: watch.details.caseDiameterMm ?? row.caseDiameterMm,
+          waterResistanceM:
+            watch.details.waterResistanceM ?? row.waterResistanceM,
+          movement: watch.details.movement ?? row.movement,
+          materials: {
+            case: watch.details.materials?.case ?? row.caseMaterial,
+            caseback: watch.details.materials?.caseback ?? row.casebackMaterial,
+            strap: watch.details.materials?.strap ?? row.strapMaterial,
+          },
+          referenceVerified: true,
+          ...(row.sourceKind ? { sourceKind: row.sourceKind } : {}),
+          ...(referenceSourceLabel ? { referenceSourceLabel } : {}),
+          ...(referenceSourceUrl ? { referenceSourceUrl } : {}),
+          ...(dialsDetails && typeof dialsDetails === "object"
+            ? { sourceDetails: dialsDetails }
+            : {}),
+          ...(useDialsTitle && row.model !== watch.model
+            ? { previousModelTitle: watch.model }
+            : {}),
+          catalogueId: row.id,
+          catalogueUpdatedAt: row.updatedAt,
+          ...(price !== watch.details.price
+            ? { priceConfirmed: row.priceStatus === "confirmed" }
+            : {}),
+        },
       },
-    };
+      {
+        model: row.model,
+        caseDiameterMm: row.caseDiameterMm,
+        waterResistanceM: row.waterResistanceM,
+        movement: row.movement,
+        materials: {
+          case: row.caseMaterial,
+          caseback: row.casebackMaterial,
+          strap: row.strapMaterial,
+        },
+      },
+      pageCheckedFacts(row),
+    );
   });
 }
 
@@ -155,6 +172,49 @@ export async function enrichResultWatches(
         ),
       );
     return mergeCatalogueFacts(watches, catalogue, options);
+  } catch {
+    return watches;
+  }
+}
+
+/**
+ * Marks each card with the facts its catalogue record had read on a page our
+ * server opened (pageCheckedFacts), and changes nothing else. The search
+ * windows that select archetype and alternatives cards carry no
+ * source_details, so their cards learn it here (one lookup). Fails open.
+ */
+export async function markPageCheckedFacts(
+  watches: FoundWatch[],
+  client: CatalogueClient | null = catalogueClient(),
+): Promise<FoundWatch[]> {
+  if (!client || !watches.some((w) => w.referenceCode)) return watches;
+  try {
+    const rows = z.array(catalogueWatchSchema).parse(
+      await rpc(
+        client,
+        "watch_catalogue_lookup_v1",
+        {
+          p_keys: watches
+            .filter((w) => w.referenceCode)
+            .slice(0, 100)
+            .map((w) => ({ brand: w.brand, referenceCode: w.referenceCode })),
+        },
+        6_000,
+      ),
+    );
+    const byKey = new Map<string, CatalogueWatch[]>();
+    for (const row of rows) {
+      const identity = key(row);
+      if (!identity || row.reviewStatus === "rejected") continue;
+      byKey.set(identity, [...(byKey.get(identity) ?? []), row]);
+    }
+    return watches.map((watch) => {
+      const matches = byKey.get(key(watch) ?? "") ?? [];
+      const checked = matches.length === 1 ? pageCheckedFacts(matches[0]!) : [];
+      return checked.length
+        ? { ...watch, details: { ...watch.details, pageCheckedFacts: checked } }
+        : watch;
+    });
   } catch {
     return watches;
   }

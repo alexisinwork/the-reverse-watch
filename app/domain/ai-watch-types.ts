@@ -79,6 +79,12 @@ export type WatchDetails = {
   misses?: string[];
   /** Alternatives only: the price shown is a pre-owned dealer price. */
   priceCondition?: "new" | "pre-owned";
+  /**
+   * Catalogue facts the repair read on the maker's or a shop's page that our
+   * server opened (pageCheckedFacts in watch-catalogue.ts). They win over an
+   * older saved check's values when a card is shown.
+   */
+  pageCheckedFacts?: string[];
 };
 
 export type FoundWatch = {
