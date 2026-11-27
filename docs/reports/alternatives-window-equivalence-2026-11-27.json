@@ -1,22 +1,22 @@
 {
-  "at": "2026-11-27T16:14:41.990Z",
+  "at": "2026-11-27T19:24:44.310Z",
   "fxDate": "2026-11-27",
   "wholePool": {
     "rows": 25013,
-    "readMs": 6704
+    "readMs": 8914
   },
   "nameIndex": {
     "rows": 25013,
-    "readMs": 901
+    "readMs": 1120
   },
   "namesCompared": 44,
   "targetsResolved": 17,
   "windowsCompared": 248,
   "alternativesCompared": 6470,
-  "fullRowsCompared": 1604,
+  "fullRowsCompared": 1570,
   "window": {
-    "readMsP50": 274,
-    "readMsMax": 653
+    "readMsP50": 292,
+    "readMsMax": 2964
   },
   "differences": [],
   "result": "PASS"

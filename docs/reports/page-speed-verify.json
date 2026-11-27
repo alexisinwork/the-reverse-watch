@@ -1,14 +1,14 @@
 {
-  "at": "2026-11-27T16:19:50.198Z",
+  "at": "2026-11-27T19:30:36.054Z",
   "baseUrl": "https://thereserve.watch",
   "runs": 5,
   "results": [
     {
       "path": "/",
       "runs": 5,
-      "medianFirstByteMs": 230,
-      "slowestFirstByteMs": 729,
-      "medianTotalMs": 231,
+      "medianFirstByteMs": 236,
+      "slowestFirstByteMs": 1793,
+      "medianTotalMs": 237,
       "cacheResults": {
         "MISS": 5
       },
@@ -21,9 +21,9 @@
     {
       "path": "/health",
       "runs": 5,
-      "medianFirstByteMs": 217,
-      "slowestFirstByteMs": 253,
-      "medianTotalMs": 217,
+      "medianFirstByteMs": 91,
+      "slowestFirstByteMs": 258,
+      "medianTotalMs": 92,
       "cacheResults": {
         "MISS": 5
       },
@@ -36,9 +36,9 @@
     {
       "path": "/watches",
       "runs": 5,
-      "medianFirstByteMs": 34,
-      "slowestFirstByteMs": 338,
-      "medianTotalMs": 35,
+      "medianFirstByteMs": 52,
+      "slowestFirstByteMs": 412,
+      "medianTotalMs": 63,
       "cacheResults": {
         "MISS": 1,
         "HIT": 4
@@ -52,9 +52,9 @@
     {
       "path": "/watches/stories/don-draper-mad-men-omega",
       "runs": 5,
-      "medianFirstByteMs": 31,
-      "slowestFirstByteMs": 263,
-      "medianTotalMs": 32,
+      "medianFirstByteMs": 41,
+      "slowestFirstByteMs": 297,
+      "medianTotalMs": 42,
       "cacheResults": {
         "MISS": 1,
         "HIT": 4
@@ -68,9 +68,9 @@
     {
       "path": "/partners",
       "runs": 5,
-      "medianFirstByteMs": 35,
-      "slowestFirstByteMs": 84,
-      "medianTotalMs": 35,
+      "medianFirstByteMs": 46,
+      "slowestFirstByteMs": 90,
+      "medianTotalMs": 46,
       "cacheResults": {
         "MISS": 1,
         "HIT": 4
@@ -84,9 +84,9 @@
     {
       "path": "/privacy",
       "runs": 5,
-      "medianFirstByteMs": 32,
-      "slowestFirstByteMs": 84,
-      "medianTotalMs": 32,
+      "medianFirstByteMs": 44,
+      "slowestFirstByteMs": 90,
+      "medianTotalMs": 45,
       "cacheResults": {
         "MISS": 1,
         "HIT": 4
@@ -100,9 +100,9 @@
     {
       "path": "/watches/find?q=Daniel+Craig&type=actor",
       "runs": 5,
-      "medianFirstByteMs": 54,
-      "slowestFirstByteMs": 514,
-      "medianTotalMs": 55,
+      "medianFirstByteMs": 34,
+      "slowestFirstByteMs": 472,
+      "medianTotalMs": 43,
       "cacheResults": {
         "MISS": 1,
         "HIT": 4
@@ -116,9 +116,9 @@
     {
       "path": "/watches/find?q=Heat&type=movie",
       "runs": 5,
-      "medianFirstByteMs": 623,
-      "slowestFirstByteMs": 844,
-      "medianTotalMs": 626,
+      "medianFirstByteMs": 606,
+      "slowestFirstByteMs": 763,
+      "medianTotalMs": 622,
       "cacheResults": {
         "MISS": 5
       },

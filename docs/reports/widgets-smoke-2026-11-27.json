@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-27T15:40:43.702Z",
+  "at": "2026-11-27T19:31:04.272Z",
   "origin": "https://thereserve.watch",
   "site": "Portfolio demo (oleksandr-kukhtin.dev)",
   "partnerOrigin": "https://oleksandr-kukhtin.dev",
@@ -9,7 +9,7 @@
     {
       "name": "quiz: answers in a frame",
       "result": "PASS",
-      "detail": "HTTP 200 in 356 ms"
+      "detail": "HTTP 200 in 360 ms"
     },
     {
       "name": "quiz: only the partner's origins may frame it",
@@ -34,7 +34,7 @@
     {
       "name": "find: answers in a frame",
       "result": "PASS",
-      "detail": "HTTP 200 in 95 ms"
+      "detail": "HTTP 200 in 96 ms"
     },
     {
       "name": "find: only the partner's origins may frame it",
@@ -59,7 +59,7 @@
     {
       "name": "alternatives: answers in a frame",
       "result": "PASS",
-      "detail": "HTTP 200 in 101 ms"
+      "detail": "HTTP 200 in 105 ms"
     },
     {
       "name": "alternatives: only the partner's origins may frame it",
@@ -84,7 +84,7 @@
     {
       "name": "archetype: answers in a frame",
       "result": "PASS",
-      "detail": "HTTP 200 in 107 ms"
+      "detail": "HTTP 200 in 87 ms"
     },
     {
       "name": "archetype: only the partner's origins may frame it",
@@ -109,7 +109,7 @@
     {
       "name": "stories: answers in a frame",
       "result": "PASS",
-      "detail": "HTTP 200 in 213 ms"
+      "detail": "HTTP 200 in 225 ms"
     },
     {
       "name": "stories: only the partner's origins may frame it",

@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-27T16:19:54.549Z",
+  "at": "2026-11-27T19:30:43.037Z",
   "base": "https://thereserve.watch",
   "label": "verify",
   "budgetKB": 150,
@@ -12,16 +12,16 @@
       "rawKB": 455.2,
       "largest": [
         {
-          "file": "/assets/entry.client-D0HkznJ8.js",
+          "file": "/assets/entry.client-DQPj-QlI.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
+          "file": "/assets/chunk-62JRHF6Z-By1e7R-8.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-DSz7YbdV.js",
-          "wireKB": 23.5
+          "file": "/assets/schemas-bqr5Sl1C.js",
+          "wireKB": 23.4
         }
       ],
       "withinBudget": true
@@ -34,16 +34,16 @@
       "rawKB": 459.8,
       "largest": [
         {
-          "file": "/assets/entry.client-D0HkznJ8.js",
+          "file": "/assets/entry.client-DQPj-QlI.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
+          "file": "/assets/chunk-62JRHF6Z-By1e7R-8.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-DSz7YbdV.js",
-          "wireKB": 23.5
+          "file": "/assets/schemas-bqr5Sl1C.js",
+          "wireKB": 23.4
         }
       ],
       "withinBudget": true
@@ -56,16 +56,16 @@
       "rawKB": 513.4,
       "largest": [
         {
-          "file": "/assets/entry.client-D0HkznJ8.js",
+          "file": "/assets/entry.client-DQPj-QlI.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
+          "file": "/assets/chunk-62JRHF6Z-By1e7R-8.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-DSz7YbdV.js",
-          "wireKB": 23.5
+          "file": "/assets/schemas-bqr5Sl1C.js",
+          "wireKB": 23.4
         }
       ],
       "withinBudget": true
@@ -78,16 +78,16 @@
       "rawKB": 455.2,
       "largest": [
         {
-          "file": "/assets/entry.client-D0HkznJ8.js",
+          "file": "/assets/entry.client-DQPj-QlI.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
+          "file": "/assets/chunk-62JRHF6Z-By1e7R-8.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-DSz7YbdV.js",
-          "wireKB": 23.5
+          "file": "/assets/schemas-bqr5Sl1C.js",
+          "wireKB": 23.4
         }
       ],
       "withinBudget": true
@@ -100,16 +100,16 @@
       "rawKB": 511.4,
       "largest": [
         {
-          "file": "/assets/entry.client-D0HkznJ8.js",
+          "file": "/assets/entry.client-DQPj-QlI.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
+          "file": "/assets/chunk-62JRHF6Z-By1e7R-8.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-DSz7YbdV.js",
-          "wireKB": 23.5
+          "file": "/assets/schemas-bqr5Sl1C.js",
+          "wireKB": 23.4
         }
       ],
       "withinBudget": true

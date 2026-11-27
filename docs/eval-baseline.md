@@ -588,14 +588,49 @@ morning, 5 on today's catalogue without the weight: the second read gave some
 records the maker's name, which no longer matches the label's words); quiz 272
 exact cards, 0 violations, precision 1.
 
+**The review queue** (owner: "approve all pending watches in admin/catalogue
+проверяя его судьей-perplexity-muse"): the 473 pending watches (465 database
+imports, 8 without a source) were checked against makers' and shops' pages
+(`scripts/repair-catalogue.ts --set pending`, $2.46): the page gave the exact
+reference for 449, and 443 after a magazine (WorldTempus), a blog (Watch
+Anchor) and a grey dealer (Wrist Aficionado) joined the pages that never give
+a fact; their facts were written (963 values). The judge read the 30 without
+a page ($1.32): 27 without a wrong fact, 3 with one (a Tudor reference
+format, NOMOS ref. 195 at 38.5 mm, not 38, and "Urana" for NOMOS's "Urania").
+`scripts/review-pending.ts` approved 470; those 3 stay pending
+(`docs/reports/review-pending-2026-11-27.json`). Nothing was rejected.
+
+**Live round after step 6** (`docs/reports/eval-live-2026-11-27-step6.json`,
+$0.51): every gate PASS; quiz 40 of 40, archetype 24 of 24, alternatives 60
+of 60. Film: **8 of the 17 answers now carry confirmed sightings** (0 before
+the save fix of `235f924`), 9 possible, no invented sighting for a control.
+
+**The judge on the same sample** (`docs/reports/judge-step6-2026-11-27.json`,
+$10.65):
+
+| | After step 3 | After step 5 | After step 6 |
+| --- | ---: | ---: | ---: |
+| Cards with a fact called wrong | 39% | 35% | 34% (94 of 280) |
+| Quiz | 34% | 32% | 28% |
+| Archetype | 48% | 39% | 40% |
+| Alternatives | 38% | 34% | 34% |
+| AI-found, no page | 62% | 65% | 61% |
+| Wrong prices named | 33 | 34 | 26 |
+| Film sightings the judge calls real | | 55 of 59 | 58 of 61 |
+
+The alternatives did not move: many of their cards are the live search's
+sourced suggestions, which carried the search's own facts (Citizen NB6004-08E
+still read 41 mm). Those now take the catalogue's page-checked facts too
+(`04fa54f`); that fix is not in this judged round.
+
 ## Known gaps the scores point to
 
-- Facts: after step 5, 35% of the quiz, archetype and alternatives cards
-  carry a fact the judge calls wrong; database imports 15%, AI-found watches
-  without any maker's or shop's page 65% (above). What is left: those
+- Facts: after step 6, 34% of the quiz, archetype and alternatives cards
+  carry a fact the judge calls wrong; database imports 16%, AI-found watches
+  without any maker's or shop's page 61% (above). What is left: those
   page-less records, prices that keep an earlier "confirmed" label
-  (`docs/OWNER_QUESTIONS.md` #13), invented references, and facts the
-  makers' pages do not give.
+  (`docs/OWNER_QUESTIONS.md` #13), invented or mixed-up references, model
+  names, and facts the makers' pages do not give.
 - Film: confirmations are strict (23 of 352 test requests confirmed); paid
   re-checks wait for the backoff.
 - The evaluation can run in CI as the read-only `reserve_eval_reader`

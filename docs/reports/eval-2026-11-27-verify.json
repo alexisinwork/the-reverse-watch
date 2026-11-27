@@ -1,10 +1,10 @@
 {
-  "at": "2026-11-27T16:19:42.213Z",
+  "at": "2026-11-27T19:30:24.210Z",
   "fxDate": "2026-11-27",
   "guard": {
     "database": "PostgreSQL as reserve_eval_reader",
     "providerRequests": [],
-    "blockedWrites": 39,
+    "blockedWrites": 51,
     "blockedFunctions": [
       "ai_watch_search_store_v1"
     ]
@@ -24,16 +24,16 @@
     "cases": 60,
     "resolvedTargets": 13,
     "comparableTargets": 13,
-    "inTop5": 5,
-    "inTop10": 5,
-    "randomTop10Expected": 1.5824922683564178,
+    "inTop5": 4,
+    "inTop10": 6,
+    "randomTop10Expected": 1.5825214118720168,
     "sameBrandCases": [
       "TAG Heuer Monaco → TAG Heuer Monaco automatic chronograph",
       "Cartier Santos de Cartier → Cartier Santos Galbée",
       "Grand Seiko Snowflake SBGA211 → Seiko Presage Sharp Edged SPB165"
     ],
-    "recallAt5": 0.0833,
-    "recallAt10": 0.0833,
+    "recallAt5": 0.0667,
+    "recallAt10": 0.1,
     "randomRecallAt10": 0.0264
   },
   "film": {
@@ -53,35 +53,37 @@
     "review": "awaiting owner review",
     "positives": 19,
     "answered": 19,
-    "foundAny": 19,
-    "foundConfirmed": 0,
-    "confirmed": [],
-    "onlyPossible": [
-      "le-mans-monaco-1133b",
-      "steve-mcqueen-monaco",
+    "foundAny": 17,
+    "foundConfirmed": 8,
+    "confirmed": [
       "goldeneye-seamaster-2541",
       "casino-royale-planet-ocean",
       "casino-royale-diver-300m",
+      "magnum-pi-gmt-master",
+      "live-and-let-die-submariner-5513",
+      "daylight-panerai-5218",
+      "buzz-aldrin-speedmaster",
+      "the-martian-belowzero"
+    ],
+    "onlyPossible": [
+      "le-mans-monaco-1133b",
       "blue-hawaii-ventura",
       "thunderball-top-time",
       "apocalypse-now-seiko-6105",
       "dr-no-submariner",
-      "magnum-pi-gmt-master",
-      "live-and-let-die-submariner-5513",
       "live-and-let-die-pulsar",
-      "daylight-panerai-5218",
       "gordon-gekko-santos",
-      "jfk-omega-slimline",
       "andy-warhol-tank",
-      "jackie-kennedy-tank",
-      "buzz-aldrin-speedmaster",
-      "the-martian-belowzero"
+      "jackie-kennedy-tank"
     ],
-    "missed": [],
+    "missed": [
+      "steve-mcqueen-monaco",
+      "jfk-omega-slimline"
+    ],
     "controlViolations": [],
     "leakage": [],
-    "recallConfirmed": 0,
-    "recallAny": 1
+    "recallConfirmed": 0.4211,
+    "recallAny": 0.8947
   },
   "gates": {
     "noProviderRequests": true,

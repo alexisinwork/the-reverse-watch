@@ -72,6 +72,8 @@ Every change reports before/after numbers for each rule.
 | "Enforce SSL" for direct database connections | not done: after the owner's yes the agent's switch was stopped by Claude Code's safety filter (it reboots the production database); one toggle for the owner | `docs/OWNER_QUESTIONS.md` #9 |
 | Exclusive Watch Selection: a "Coming soon" panel under every result screen of the site's own pages, never in a widget; a press counts as interest (`exclusive_selection`) | done 2026-11-27 | `app/components/exclusive-selection.tsx` |
 | Price of Exclusive Watch Selection | proposed: $79, $49 for the first 25 founding orders; waits for the owner | `docs/business-plan.md` ("Paid watch selection"), `docs/OWNER_QUESTIONS.md` #11 |
+| Repair step 6: a confirmed reference weighs a point in the alternatives; review queue checked and approved (470 of 473); sourced suggestions take page-checked facts; live round and judge | done 2026-11-27: wrong share 35% → 34% (quiz 28%), film 8 of 17 answers confirmed; owner decisions recorded in `AGENTS.md` ("Owner decisions, 2026-11-27") | `662a2c7`, `c0ba5e6`, `04fa54f`, `docs/eval-baseline.md` |
+| Exclusive Watch Selection: process for the paid selection (reuse the diagnostic plus a short brief; merchant of record; research, judge, the owner's 15-minute review; delivery) | written 2026-11-27; price approved ($79, $49 for the first 25); built after the launch | `docs/exclusive-selection.md` |
 | Repair step 5: saved answers show page-checked facts; second read of 2,073 found pages (470 watches changed); price recheck of the 33 records the judge named; live round of all four tools and the judge | done 2026-11-27: wrong share 39% → 35%, every gate PASS; two defects found and fixed (film checks not saved, `235f924`; saved-research cards with old names, `9477805`) | `8fbf9bd`, `docs/eval-baseline.md` ("Repair step 5"), `docs/reports/judge-step5-2026-11-27.json` |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
@@ -147,25 +149,25 @@ with the owner's approval of that amount.
 
 ## Next step
 
-Launch is planned for 2026-12-06; paid watch selection comes after it.
-Repair step 5 is done (`docs/eval-baseline.md`, "Repair step 5"): the judge's
-wrong share went 39% → 35% (archetype 48% → 39%), every gate PASS on all four
-tools, widgets 36 of 36 PASS (`scripts/smoke-widgets.ts`), and
-`scripts/verify-all.ts --production` 16 of 16 PASS on the deployment of
-`9477805` (`docs/reports/verify-all-2026-11-27.json`).
+Launch is planned for 2026-12-06; Exclusive Watch Selection ($79, $49 for
+the first 25, approved) is built after it (`docs/exclusive-selection.md`).
+Repair steps 5 and 6 are done (`docs/eval-baseline.md`): the judge's wrong
+share went 39% → 35% → 34% (quiz 28%), wrong prices 33 → 26, film 8 of 17
+answers with confirmed sightings (0 before the save fix); the review queue is
+approved after checks (470 of 473); every gate PASS on all four tools.
 
-1. Owner decisions waiting: Enforce SSL (#9, a toggle), the price of
-   Exclusive Watch Selection (#11), "confirmed" prices that a recheck cannot
-   reproduce (#13), the 5 price changes on `/admin/catalogue`.
-2. The largest error group left: AI-found watches without any maker's or
-   shop's page (1,516 records, 65% of their cards wrong). Proposal for the
-   owner: show them only after verified records, or only under "Also worth a
-   look", which changes relevance and needs an evaluation first.
-3. Film confirmations: measure again once the re-check backoffs of the 12
-   searches whose checks could not be saved have ended (fix `235f924`).
+1. Owner decision waiting: "confirmed" prices that a recheck cannot
+   reproduce (`docs/OWNER_QUESTIONS.md` #13).
+2. What the judge still finds: AI-found records without any maker's or
+   shop's page (61% of their cards), invented or mixed-up references, model
+   names, prices. Next: measure the sourced-suggestion fix (`04fa54f`) in the
+   next judged round; then decide whether such page-less records should only
+   fill places in every tool (a relevance change, evaluated first).
+3. Film confirmations grow as the re-check backoffs end; measure again in a
+   week.
 4. Completion of imported watches the tools show: `scripts/visible-catalogue.ts`,
    then `scripts/repair-catalogue.ts --set database --ids-file …` (throttled
    writes, at most two writers with a pause).
-Of the owner's $100 for this work about $61.25 is spent
+Of the owner's $100 for this work about $76.28 is spent
 (`docs/evaluation-budget.md`).
 Run `scripts/verify-all.ts --production` before and after every change.

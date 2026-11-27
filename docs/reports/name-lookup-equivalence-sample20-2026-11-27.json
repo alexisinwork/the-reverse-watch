@@ -1,11 +1,11 @@
 {
-  "at": "2026-11-27T16:18:09.631Z",
+  "at": "2026-11-27T19:28:41.680Z",
   "sampledPoolRows": 20,
   "poolRowsChecked": 25013,
   "foldAndReferenceKeyDifferences": 0,
   "nameIndex": {
     "rows": 25013,
-    "readMs": 1027
+    "readMs": 1356
   },
   "typings": 257,
   "byGroup": {
@@ -21,19 +21,19 @@
   },
   "ms": {
     "namedV1": {
-      "p50": 382,
-      "p95": 679,
-      "max": 806
+      "p50": 370,
+      "p95": 650,
+      "max": 739
     },
     "namedV2": {
-      "p50": 122,
-      "p95": 168,
-      "max": 571
+      "p50": 115,
+      "p95": 180,
+      "max": 433
     },
     "candidates": {
       "p50": 107,
-      "p95": 621,
-      "max": 760
+      "p95": 600,
+      "max": 3054
     }
   },
   "candidateRows": {

@@ -195,3 +195,15 @@ the same $100:
 | **Total of the $100 so far** | **about $61.25** |
 
 Unused: about $38.75.
+
+Repair step 6 and the review queue, the same evening, from the same $100:
+
+| Run | Spend |
+| --- | ---: |
+| Review queue checked against makers' and shops' pages (`pending-1`) | $2.55 |
+| Judge on the 30 queue records without a page | $1.32 |
+| Live round of all four tools after step 6 | $0.51 |
+| Judge on its 341 cards | $10.65 |
+| **Total of the $100 so far** | **about $76.28** |
+
+Unused: about $23.72.
