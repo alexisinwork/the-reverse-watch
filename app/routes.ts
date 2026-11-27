@@ -10,6 +10,8 @@ export default [
   route("evaluation", "routes/evaluation-moved.ts"),
   route("admin/evaluation", "routes/evaluation.tsx"),
   route("health", "routes/health.ts"),
+  route("robots.txt", "routes/robots.ts"),
+  route("sitemap.xml", "routes/sitemap.ts"),
   // Short links for video descriptions: /e/35 → episode 35's page, tagged.
   route("e/:episode", "routes/episode-link.ts"),
   // The same for YouTube Shorts, TikTok and Instagram, and the profiles'

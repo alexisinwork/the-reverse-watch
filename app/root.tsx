@@ -14,6 +14,7 @@ import { reportClientError } from "./client-errors";
 import { YouTubeCallout } from "./components/youtube-callout";
 import { InteractionAnalytics } from "./components/interaction-analytics";
 import { analyticsAddress } from "./domain/campaign-tags";
+import { canonicalUrl } from "./domain/seo";
 import { requestMiddleware } from "./middleware.server";
 // Self-hosted fonts (owner decision, 2026-11-25): no request to Google's
 // font servers, so visitors' addresses are not shared and nothing outside
@@ -40,6 +41,13 @@ export function redactAnalyticsUrl(event: BeforeSendEvent) {
   }
 }
 
+/** The page's address on thereserve.watch (domain/seo.ts): the same pages
+ * also answer at the-reverse-watch.vercel.app and with utm tags. */
+function CanonicalLink() {
+  const href = canonicalUrl(useLocation().pathname);
+  return href ? <link rel="canonical" href={href} /> : null;
+}
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -49,6 +57,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="theme-color" content="#08090b" />
         <Meta />
         <Links />
+        <CanonicalLink />
       </head>
       <body>
         {children}

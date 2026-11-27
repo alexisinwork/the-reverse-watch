@@ -1,0 +1,128 @@
+{
+  "at": "2026-11-27T20:38:52.714Z",
+  "baseUrl": "https://thereserve.watch",
+  "runs": 5,
+  "results": [
+    {
+      "path": "/",
+      "runs": 5,
+      "medianFirstByteMs": 86,
+      "slowestFirstByteMs": 559,
+      "medianTotalMs": 87,
+      "cacheResults": {
+        "MISS": 5
+      },
+      "cacheControl": "private, no-store",
+      "functionRegion": "fra1",
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "path": "/health",
+      "runs": 5,
+      "medianFirstByteMs": 86,
+      "slowestFirstByteMs": 93,
+      "medianTotalMs": 87,
+      "cacheResults": {
+        "MISS": 5
+      },
+      "cacheControl": "no-store",
+      "functionRegion": "fra1",
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "path": "/watches",
+      "runs": 5,
+      "medianFirstByteMs": 35,
+      "slowestFirstByteMs": 43,
+      "medianTotalMs": 37,
+      "cacheResults": {
+        "HIT": 5
+      },
+      "cacheControl": "public, max-age=0",
+      "functionRegion": "fra1",
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "path": "/watches/stories/don-draper-mad-men-omega",
+      "runs": 5,
+      "medianFirstByteMs": 39,
+      "slowestFirstByteMs": 47,
+      "medianTotalMs": 39,
+      "cacheResults": {
+        "HIT": 5
+      },
+      "cacheControl": "public, max-age=0",
+      "functionRegion": "fra1",
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "path": "/partners",
+      "runs": 5,
+      "medianFirstByteMs": 31,
+      "slowestFirstByteMs": 50,
+      "medianTotalMs": 32,
+      "cacheResults": {
+        "HIT": 5
+      },
+      "cacheControl": "public, max-age=0",
+      "functionRegion": "fra1",
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "path": "/privacy",
+      "runs": 5,
+      "medianFirstByteMs": 31,
+      "slowestFirstByteMs": 35,
+      "medianTotalMs": 33,
+      "cacheResults": {
+        "HIT": 5
+      },
+      "cacheControl": "public, max-age=0",
+      "functionRegion": "fra1",
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "path": "/watches/find?q=Daniel+Craig&type=actor",
+      "runs": 5,
+      "medianFirstByteMs": 33,
+      "slowestFirstByteMs": 567,
+      "medianTotalMs": 33,
+      "cacheResults": {
+        "MISS": 1,
+        "HIT": 4
+      },
+      "cacheControl": "public, max-age=0",
+      "functionRegion": "fra1",
+      "statuses": [
+        200
+      ]
+    },
+    {
+      "path": "/watches/find?q=Heat&type=movie",
+      "runs": 5,
+      "medianFirstByteMs": 533,
+      "slowestFirstByteMs": 655,
+      "medianTotalMs": 546,
+      "cacheResults": {
+        "MISS": 5
+      },
+      "cacheControl": "public, max-age=0, must-revalidate",
+      "functionRegion": "fra1",
+      "statuses": [
+        200
+      ]
+    }
+  ]
+}
