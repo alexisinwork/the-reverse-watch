@@ -683,7 +683,8 @@ describe("version-4 diagnostic", () => {
     expect(
       screen.getByRole("heading", { name: "Email me this shortlist" }),
     ).toBeInTheDocument();
-  });
+    // Walking all six screens takes about five seconds in the full suite.
+  }, 15_000);
 
   it("does not advance without a price range", async () => {
     const Stub = routeStub();
@@ -767,5 +768,5 @@ describe("version-4 diagnostic", () => {
       "archetype",
     );
     expect(container.querySelector('input[name="version"]')).toHaveValue("4");
-  });
+  }, 15_000);
 });

@@ -1,0 +1,127 @@
+{
+  "id": "pending-2026-11-27",
+  "date": "2026-11-27",
+  "report": ".scratch/repair/pending-2.jsonl",
+  "cards": [
+    {
+      "id": "a248564f-ecf4-4a53-8e6f-efe321e2d1ab",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Omega",
+      "model": "OT3980",
+      "referenceCode": "OT3980",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": null,
+      "movement": null,
+      "waterResistanceM": null,
+      "verified": false,
+      "sourceUrl": "https://www.gq-magazine.co.uk/watches/article/jfk-watch-collection"
+    },
+    {
+      "id": "a24e4bde-c77c-41c6-a960-297daa02444c",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Piaget",
+      "model": "15102",
+      "referenceCode": "15102",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": null,
+      "movement": null,
+      "waterResistanceM": null,
+      "verified": false,
+      "sourceUrl": "https://www.sothebys.com/en/buy/auction/2026/important-watches-ge2601/andy-warhol-black-tie-reference-15102-a-yellow"
+    },
+    {
+      "id": "3ca7699e-d835-4865-83ad-6e81884e9791",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Jaeger-LeCoultre",
+      "model": "2643",
+      "referenceCode": "2643",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": null,
+      "movement": null,
+      "waterResistanceM": null,
+      "verified": false,
+      "sourceUrl": "https://www.gq.com/story/buzz-aldrin-watches-coming-to-auction-omega-speedmaster"
+    },
+    {
+      "id": "44110610-221c-4a29-8e30-394061bc1b23",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Tudor",
+      "model": "Monarch Stainless Steel / Champagne",
+      "referenceCode": "M2639A1A0U-0001",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 39,
+      "movement": "automatic",
+      "waterResistanceM": 100,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/tudor/monarch/m2639a1a0u-0001"
+    },
+    {
+      "id": "d029c74f-f55e-4133-a366-c686fb3f2b65",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Orion Neomatik Gold Urana",
+      "referenceCode": "348.U3",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 36,
+      "movement": "automatic",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/orion/348-u3"
+    },
+    {
+      "id": "c7e4745a-45d4-4276-bf30-49ea95eb0601",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente Neomatik 38 Update Gold Twice Unique - Drift",
+      "referenceCode": "195.U6",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 38,
+      "movement": "automatic",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/195-u6"
+    }
+  ]
+}

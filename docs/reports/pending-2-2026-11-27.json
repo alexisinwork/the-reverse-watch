@@ -1,0 +1,135 @@
+{
+  "at": "2026-11-27T19:59:23.964Z",
+  "run": "pending-2",
+  "model": "muse-spark-1.2-contributor",
+  "applied": false,
+  "budgetUsd": 1,
+  "spendUsd": 0.0515,
+  "stopReason": null,
+  "watches": 6,
+  "errors": 0,
+  "tiers": {
+    "storedPage": 0,
+    "perplexityPage": 2
+  },
+  "pages": {
+    "referenceOnPage": 2,
+    "maker": 0,
+    "retailer": 2
+  },
+  "fields": {
+    "model": {
+      "unconfirmed": 1,
+      "confirmed": 1
+    },
+    "caseDiameterMm": {
+      "filled": 1,
+      "unconfirmed": 1
+    },
+    "caseThicknessMm": {
+      "unconfirmed": 2
+    },
+    "movement": {
+      "filled": 1,
+      "unconfirmed": 1
+    },
+    "inHouseCalibre": {
+      "filled": 1,
+      "unconfirmed": 1
+    },
+    "waterResistanceM": {
+      "unconfirmed": 2
+    },
+    "caseMaterial": {
+      "filled": 2
+    },
+    "casebackMaterial": {
+      "unconfirmed": 2
+    },
+    "strapMaterial": {
+      "filled": 2
+    },
+    "crystal": {
+      "unconfirmed": 2
+    }
+  },
+  "watchesWithACorrection": 0,
+  "referenceMarkDropped": 0,
+  "identityChanged": 0,
+  "imagesAdded": 0,
+  "sourcePagesReplaced": 0,
+  "columnsChanged": 0,
+  "correctionSample": [],
+  "rows": [
+    {
+      "id": "3ca7699e-d835-4865-83ad-6e81884e9791",
+      "tier": "found",
+      "page": "opened",
+      "host": "oliverandclarke.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "filled",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "filled",
+        "inHouseCalibre": "filled",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "filled",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "filled",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "44110610-221c-4a29-8e30-394061bc1b23",
+      "tier": "none",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "a248564f-ecf4-4a53-8e6f-efe321e2d1ab",
+      "tier": "found",
+      "page": "opened",
+      "host": "careofcarl.co.uk",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "filled",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "filled",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "c7e4745a-45d4-4276-bf30-49ea95eb0601",
+      "tier": "none",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "d029c74f-f55e-4133-a366-c686fb3f2b65",
+      "tier": "none",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "a24e4bde-c77c-41c6-a960-297daa02444c",
+      "tier": "none",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    }
+  ]
+}

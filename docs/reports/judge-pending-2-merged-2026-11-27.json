@@ -1,0 +1,97 @@
+{
+  "at": "2026-11-27T20:01:18.680Z",
+  "sheet": "pending-2026-11-27",
+  "model": "anthropic/claude-opus-5-5",
+  "webSearch": true,
+  "budgetUsd": 1,
+  "spendUsd": 0.3078,
+  "stopReason": null,
+  "judged": 6,
+  "errors": 0,
+  "tally": {
+    "quiz": {
+      "judged": 6,
+      "ratings": {
+        "ok": 2,
+        "wrong": 1,
+        "good": 3
+      }
+    },
+    "archetype": {
+      "judged": 0,
+      "ratings": {}
+    },
+    "alternatives": {
+      "judged": 0,
+      "ratings": {}
+    },
+    "film": {
+      "judged": 0,
+      "ratings": {}
+    }
+  },
+  "verdicts": [
+    {
+      "card": "3ca7699e-d835-4865-83ad-6e81884e9791",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Nothing on the card is wrong. Ref. 2643 (also listed as E2643) is the LeCoultre 'Shark Deep Sea' chronograph from Buzz Aldrin's collection that the GQ article and Sotheby's describe. But the entry is incomplete: the model field just repeats the reference instead of 'Deep Sea Chronograph Shark', and the case size (40 mm), movement (hand-wound Valjoux 72) and water resistance (120 m per JLC catalogues) are left as unknown even though they're well documented.",
+      "wrongFacts": [],
+      "costUsd": 0.05613
+    },
+    {
+      "card": "44110610-221c-4a29-8e30-394061bc1b23",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Tudor's official site, the press kit and authorised dealers all list the steel/champagne Monarch only as M2639W1A0U-0001 (2639W1A0U). 'M2639A1A0U-0001' appears only as a duplicate listing on dials.co and looks like a typo. The other facts are correct: 39mm case, automatic MT5662-2U movement, 100m water resistance.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.04811
+    },
+    {
+      "card": "a248564f-ecf4-4a53-8e6f-efe321e2d1ab",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The reference is correct. OT3980 is the 18k gold, manual-wind Omega Ultra Thin with a rectangular case that JFK received from Grant Stockdale, and Omega bought it in 2005 for its museum. However, the model field only repeats the reference when it should say 'Ultra Thin', and the price, size, movement and water resistance are blank. It is also a one-off museum piece that can't be bought.",
+      "wrongFacts": [],
+      "costUsd": 0.03866
+    },
+    {
+      "card": "a24e4bde-c77c-41c6-a960-297daa02444c",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Sotheby's and Time+Tide confirm that Piaget ref. 15102 is the 1972–77 cushion-case Beta 21 quartz watch later called the Black Tie or Andy Warhol, made in just 26 pieces. The brand, model and reference are right, and the fields marked unknown claim nothing false.",
+      "wrongFacts": [],
+      "costUsd": 0.04015
+    },
+    {
+      "card": "c7e4745a-45d4-4276-bf30-49ea95eb0601",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Judges disagree. Earlier run: Nomos's official spec sheet for the gold Tangente neomatik 38 Update, ref. 195, lists a 38.5 mm case, so the card's 38 mm is off; the '38' in the name is a rounding. The rest checks out: the DUW 6101 automatic movement, 3 atm (30 m) water resistance, and the real Twice Unique Drift edition, which is sold only as a gold-and-steel pair, so a price of 'unknown' is reasonable. I could not confirm the '.U6' suffix on the reference. Later run: Every fact on the card is right. 195.U6 is the gold Tangente neomatik 38 Update Twice Unique 'Drift', a one-of-one piece sold only as a pair with its steel twin. It is an automatic on the DUW 6101 calibre, rated 3 atm (30 m), and the 38 mm figure rounds Nomos's official 38.5 mm. 'Unknown' is a fair price entry, since the piece is made on request; the regular gold ref. 195 lists at USD 16,100.",
+      "wrongFacts": [],
+      "costUsd": 0.0828
+    },
+    {
+      "card": "d029c74f-f55e-4133-a366-c686fb3f2b65",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Judges disagree. Earlier run: The dial edition's name is misspelled: Nomos calls it 'Urania' (the star-dial edition from the 2026 Twice Unique collection), not 'Urana'. The source page has the same typo. The other facts are right: 36.4 mm gold case, DUW 3001 automatic, 3 atm, and 'unknown' price is fair because it is sold only as a gold/steel pair (EUR 21,600). Later run: Horologists lists the Orion Neomatik Gold Urana as reference 348.U3. It has an 18k yellow gold case, the in-house automatic DUW 3001 movement, a 36 mm case (Nomos gives 36.4 mm for the base ref. 348) and 30 m water resistance, so every fact on the card checks out. The price is listed as unknown, which is not a wrong fact.",
+      "wrongFacts": [],
+      "costUsd": 0.04198
+    }
+  ]
+}
