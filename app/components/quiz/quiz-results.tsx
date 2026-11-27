@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Form, useNavigation } from "react-router";
 
 import type { SubscriptionResult } from "../../domain/email-delivery";
-import { FirstTouchFields } from "../beehiiv-signup";
+import { FirstTouchFields } from "../first-touch-fields";
 import {
   diameterRangeFor,
   findPriceRange,
