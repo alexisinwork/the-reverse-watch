@@ -151,6 +151,38 @@ const PAGE_HEADERS = {
   accept: "text/html,application/xhtml+xml",
 };
 
+/** The page's own content: its addresses (canonical links, og:url, JSON-LD
+ * url fields) are left out, since they only echo the address asked for. */
+function contentWithoutAddresses(html: string) {
+  return html.replace(/https?:\/\/[^\s"'<>]+/gi, " ");
+}
+
+/**
+ * Whether a site that blocks this page also blocks one that cannot exist.
+ * A site that answers a made-up address with 404 tells missing pages apart,
+ * so its block says the page is there; a site that blocks everything says
+ * nothing. One check per site and process.
+ */
+const blocksEverything = new Map<string, Promise<boolean>>();
+function siteBlocksEverything(url: string, fetchImpl: typeof fetch) {
+  const origin = new URL(url).origin;
+  let known = blocksEverything.get(origin);
+  if (!known) {
+    known = publicFetch(
+      `${origin}/the-reserve-missing-page-check-${Date.now().toString(36)}`,
+      { headers: PAGE_HEADERS, signal: AbortSignal.timeout(5_000) },
+      fetchImpl,
+    )
+      .then(async (fetched) => {
+        await fetched?.response.body?.cancel();
+        return !fetched || ![404, 410].includes(fetched.response.status);
+      })
+      .catch(() => true);
+    blocksEverything.set(origin, known);
+  }
+  return known;
+}
+
 export async function inspectSourcePage(
   url: string,
   reference: string | null,
@@ -160,19 +192,17 @@ export async function inspectSourcePage(
   referenceFound: boolean;
   imageUrl: string | null;
 }> {
-  // A page that exists but blocks automated visitors (401/403/429) can still
-  // confirm the reference when the maker's own URL carries it (the caller
-  // has already checked the domain). A missing page (404/410) or one that
-  // never answered confirms nothing: AI output can invent a URL that
-  // contains its own invented reference.
+  // A page confirms the reference only when its own content gives it; an
+  // address that carries the reference proves nothing, because AI output
+  // invents such addresses (catalogue repair, 2026-11-27). A page that
+  // exists but blocks automated visitors (401/403/429) still confirms the
+  // reference its maker's address carries (the caller has already checked
+  // the domain), but only on a site that answers a made-up address with 404.
+  // A missing page (404/410) or one that never answered confirms nothing.
   const unreachable = {
     reachable: false,
     referenceFound: false,
     imageUrl: null,
-  };
-  const blocked = {
-    ...unreachable,
-    referenceFound: pageMentionsReference(reference, "", url),
   };
   try {
     const fetched = await publicFetch(
@@ -184,7 +214,15 @@ export async function inspectSourcePage(
     const { response, finalUrl } = fetched;
     if (!response.ok) {
       await response.body?.cancel();
-      return [401, 403, 429].includes(response.status) ? blocked : unreachable;
+      if (
+        ![401, 403, 429].includes(response.status) ||
+        !pageMentionsReference(reference, "", url)
+      )
+        return unreachable;
+      return {
+        ...unreachable,
+        referenceFound: !(await siteBlocksEverything(url, fetchImpl)),
+      };
     }
     const html = (await response.text()).slice(0, PAGE_BYTES);
     const meta =
@@ -206,7 +244,11 @@ export async function inspectSourcePage(
     }
     return {
       reachable: true,
-      referenceFound: pageMentionsReference(reference, html, finalUrl),
+      referenceFound: pageMentionsReference(
+        reference,
+        contentWithoutAddresses(html),
+        "",
+      ),
       imageUrl,
     };
   } catch {

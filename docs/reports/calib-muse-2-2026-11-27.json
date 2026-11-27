@@ -1,0 +1,1231 @@
+{
+  "at": "2026-11-27T08:40:00.389Z",
+  "run": "calib-muse-2",
+  "model": "muse-spark-1.2-contributor",
+  "applied": false,
+  "budgetUsd": 3,
+  "spendUsd": 0.9715,
+  "stopReason": null,
+  "watches": 60,
+  "errors": 0,
+  "tiers": {
+    "storedPage": 23,
+    "perplexityPage": 11,
+    "search": 26
+  },
+  "pages": {
+    "referenceOnPage": 36,
+    "maker": 35,
+    "retailer": 1
+  },
+  "fields": {
+    "model": {
+      "confirmed": 21,
+      "unconfirmed": 12,
+      "corrected": 3
+    },
+    "caseDiameterMm": {
+      "corrected": 6,
+      "confirmed": 18,
+      "unconfirmed": 12
+    },
+    "caseThicknessMm": {
+      "filled": 4,
+      "unconfirmed": 21,
+      "confirmed": 7,
+      "corrected": 4
+    },
+    "movement": {
+      "confirmed": 25,
+      "unconfirmed": 8,
+      "corrected": 3
+    },
+    "inHouseCalibre": {
+      "unconfirmed": 30,
+      "confirmed": 6
+    },
+    "waterResistanceM": {
+      "corrected": 4,
+      "unconfirmed": 8,
+      "confirmed": 24
+    },
+    "caseMaterial": {
+      "confirmed": 28,
+      "unconfirmed": 7,
+      "filled": 1
+    },
+    "casebackMaterial": {
+      "unconfirmed": 30,
+      "confirmed": 1,
+      "filled": 4,
+      "corrected": 1
+    },
+    "strapMaterial": {
+      "confirmed": 13,
+      "unconfirmed": 14,
+      "corrected": 6,
+      "filled": 3
+    },
+    "crystal": {
+      "confirmed": 23,
+      "unconfirmed": 9,
+      "filled": 2,
+      "corrected": 2
+    }
+  },
+  "watchesWithACorrection": 17,
+  "referenceMarkDropped": 5,
+  "identityChanged": 3,
+  "imagesAdded": 0,
+  "sourcePagesReplaced": 2,
+  "columnsChanged": 0,
+  "correctionSample": [
+    {
+      "brand": "Alpina",
+      "reference": "AL-730NS4AE6B",
+      "field": "caseDiameterMm",
+      "from": 42.5,
+      "to": 41,
+      "host": "us.alpinawatches.com",
+      "passage": "Brushed and polished stainless steel 41mm, 3-part case."
+    },
+    {
+      "brand": "Alpina",
+      "reference": "AL-730NS4AE6B",
+      "field": "waterResistanceM",
+      "from": 200,
+      "to": 100,
+      "host": "us.alpinawatches.com",
+      "passage": "water resistant to 100M,"
+    },
+    {
+      "brand": "Glycine",
+      "reference": "GL1012",
+      "field": "caseDiameterMm",
+      "from": 40,
+      "to": 42,
+      "host": "glycinewatches.com",
+      "passage": "Case Size:\n42.0 mm"
+    },
+    {
+      "brand": "Glycine",
+      "reference": "GL1012",
+      "field": "waterResistanceM",
+      "from": 100,
+      "to": 200,
+      "host": "glycinewatches.com",
+      "passage": "Water Resistance:\n200.0 m"
+    },
+    {
+      "brand": "Glycine",
+      "reference": "GL1012",
+      "field": "strapMaterial",
+      "from": "leather",
+      "to": "stainless steel",
+      "host": "glycinewatches.com",
+      "passage": "Featuring an elegant stainless steel bracelet that fits wrists up to 8 inches in size, the Glycine Combat Sub offers a classic deployment clasp style closure."
+    },
+    {
+      "brand": "Oris",
+      "reference": "01 733 7770 4155-07 8 18 05P",
+      "field": "movement",
+      "from": "quartz",
+      "to": "automatic",
+      "host": "oris.ch",
+      "passage": "Automatic winding"
+    },
+    {
+      "brand": "Grand Seiko",
+      "reference": "SBGX295",
+      "field": "model",
+      "from": "Heritage Quartz 37mm Black",
+      "to": "ヘリテージコレクション クオーツ",
+      "host": "grandseiko.hrd-web.com",
+      "passage": "SBGX295 グランドセイコー ヘリテージコレクション クオーツ"
+    },
+    {
+      "brand": "Omega",
+      "reference": "1252.30.00",
+      "field": "caseDiameterMm",
+      "from": 35,
+      "to": 35.5,
+      "host": "omegawatches.com",
+      "passage": "35.5 mm"
+    },
+    {
+      "brand": "Venezianico",
+      "reference": "1221505C",
+      "field": "waterResistanceM",
+      "from": 50,
+      "to": 100,
+      "host": "venezianico.com",
+      "passage": "WR : 10ATM = 100mt"
+    },
+    {
+      "brand": "Lip",
+      "reference": "671541",
+      "field": "movement",
+      "from": "automatic",
+      "to": "quartz",
+      "host": "lip.fr",
+      "passage": "Movement :\nquartz + battery"
+    },
+    {
+      "brand": "Lip",
+      "reference": "671541",
+      "field": "crystal",
+      "from": "sapphire",
+      "to": "mineral",
+      "host": "lip.fr",
+      "passage": "Crystal :\nmineral domed K1"
+    },
+    {
+      "brand": "Seiko",
+      "reference": "SRPL53",
+      "field": "caseDiameterMm",
+      "from": 42.7,
+      "to": 41.7,
+      "host": "seikowatches.com",
+      "passage": "Diameter : 41.7 mm"
+    },
+    {
+      "brand": "Seiko",
+      "reference": "SRPL53",
+      "field": "caseThicknessMm",
+      "from": 13.2,
+      "to": 12.3,
+      "host": "seikowatches.com",
+      "passage": "Thickness : 12.3 mm"
+    },
+    {
+      "brand": "Longines",
+      "reference": "L4.755.4.11.6",
+      "field": "strapMaterial",
+      "from": "leather",
+      "to": "stainless steel",
+      "host": "longines.com",
+      "passage": "Stainless steel bracelet, with triple safety folding clasp and push-piece opening mechanism."
+    },
+    {
+      "brand": "Orient Star",
+      "reference": "RE-AU0002S",
+      "field": "caseThicknessMm",
+      "from": 13.7,
+      "to": 12.8,
+      "host": "orient-watch.com",
+      "passage": "Case Size (Thickness)\n12.8 mm"
+    },
+    {
+      "brand": "Laco",
+      "reference": "862100",
+      "field": "model",
+      "from": "Classic Halle 38",
+      "to": "Augsburg Blaue Stunde 42",
+      "host": "laco-watches.com",
+      "passage": "Augsburg Blaue Stunde 42 | 862100"
+    },
+    {
+      "brand": "Laco",
+      "reference": "862100",
+      "field": "caseDiameterMm",
+      "from": 38,
+      "to": 42,
+      "host": "laco-watches.com",
+      "passage": "diameter:\n42,0 mm"
+    },
+    {
+      "brand": "Laco",
+      "reference": "862100",
+      "field": "strapMaterial",
+      "from": "leather",
+      "to": "nylon",
+      "host": "laco-watches.com",
+      "passage": "grey nylon strap (one piece strap)"
+    },
+    {
+      "brand": "Laco",
+      "reference": "862139",
+      "field": "model",
+      "from": "Ulm GMT",
+      "to": "Aachen 39 MB",
+      "host": "laco-watches.com",
+      "passage": "Aachen 39 MB | 39 mm | Metal Bracelet | Typ B | black | 862139"
+    },
+    {
+      "brand": "Laco",
+      "reference": "862139",
+      "field": "caseThicknessMm",
+      "from": 11.1,
+      "to": 11.55,
+      "host": "laco-watches.com",
+      "passage": "height:\n11,55 mm"
+    },
+    {
+      "brand": "Laco",
+      "reference": "862139",
+      "field": "waterResistanceM",
+      "from": 100,
+      "to": 50,
+      "host": "laco-watches.com",
+      "passage": "waterproof:\nup to 5 ATM"
+    },
+    {
+      "brand": "Laco",
+      "reference": "862139",
+      "field": "strapMaterial",
+      "from": "leather",
+      "to": "stainless steel",
+      "host": "laco-watches.com",
+      "passage": "High quality stainless steel band with curved endpiece"
+    },
+    {
+      "brand": "Frederique Constant",
+      "reference": "FC-335MC4P6",
+      "field": "caseThicknessMm",
+      "from": 12.53,
+      "to": 10,
+      "host": "us.frederiqueconstant.com",
+      "passage": "Case Thickness\n10 mm"
+    },
+    {
+      "brand": "Tissot",
+      "reference": "T120.852.11.051.00",
+      "field": "movement",
+      "from": "automatic",
+      "to": "quartz",
+      "host": "tissotwatches.com",
+      "passage": "Quartz"
+    },
+    {
+      "brand": "Orient",
+      "reference": "RA-AA0006L19B",
+      "field": "caseDiameterMm",
+      "from": 41.8,
+      "to": 41,
+      "host": "watchesandbeyond.com",
+      "passage": "Case Diameter 41 mm"
+    },
+    {
+      "brand": "Orient",
+      "reference": "RA-AA0006L19B",
+      "field": "strapMaterial",
+      "from": "stainless steel",
+      "to": "silicone",
+      "host": "watchesandbeyond.com",
+      "passage": "Band Material Black Silicone"
+    },
+    {
+      "brand": "Grand Seiko",
+      "reference": "SLGW003",
+      "field": "casebackMaterial",
+      "from": "titanium",
+      "to": "sapphire",
+      "host": "grand-seiko.com",
+      "passage": "Thanks to the redesign of the movement, the bird-like pecking motion of the click is visible to enjoy through the sapphire crystal case back during the hand-winding process."
+    },
+    {
+      "brand": "Grand Seiko",
+      "reference": "SLGW003",
+      "field": "strapMaterial",
+      "from": "titanium",
+      "to": "leather",
+      "host": "grand-seiko.com",
+      "passage": "Band Material:\nCrocodile leather"
+    },
+    {
+      "brand": "Baltic",
+      "reference": "HMS002",
+      "field": "crystal",
+      "from": "sapphire",
+      "to": "hesalite",
+      "host": "baltic-watches.com",
+      "passage": "Glass: High-domed hesalite"
+    }
+  ],
+  "rows": [
+    {
+      "id": "055408da-dd13-45b0-807d-c7673d8f9230",
+      "tier": "stored",
+      "page": "opened",
+      "host": "us.alpinawatches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "corrected",
+        "caseThicknessMm": "filled",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "corrected",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "0908cfac-648d-4879-af5c-aa5ee7e3b526",
+      "tier": "stored",
+      "page": "opened",
+      "host": "kudoke.eu",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "unconfirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "133cd418-34fa-495a-b435-e99d814e53c0",
+      "tier": "stored",
+      "page": "opened",
+      "host": "seikowatches.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "confirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "121703f8-7f75-4b76-b1d9-51a9bf399f87",
+      "tier": "found",
+      "page": "opened",
+      "host": "glycinewatches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "corrected",
+        "caseThicknessMm": "filled",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "confirmed",
+        "waterResistanceM": "corrected",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "corrected",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "1653d300-1db7-4ade-93d9-cd58aa3a65e6",
+      "tier": "stored",
+      "page": "opened",
+      "host": "oris.ch",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "corrected",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "confirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "0f72c721-c873-41aa-b15b-d96f54193931",
+      "tier": "found",
+      "page": "opened",
+      "host": "grandseiko.hrd-web.com",
+      "ref": true,
+      "fields": {
+        "model": "corrected",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "unconfirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      },
+      "identity": true
+    },
+    {
+      "id": "16aa6c5e-dde1-44d5-81bb-64427ae567f5",
+      "tier": "stored",
+      "page": "opened",
+      "host": "omegawatches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "corrected",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "filled"
+      }
+    },
+    {
+      "id": "0ca2d83e-4aa5-447a-9e04-420ae11fa517",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "2e26e3bd-c12a-4efb-a38f-ac8c14c75031",
+      "tier": "stored",
+      "page": "opened",
+      "host": "venezianico.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "corrected",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "177081b8-8400-4a96-93e2-3173aed9672b",
+      "tier": "stored",
+      "page": "opened",
+      "host": "lip.fr",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "corrected",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "filled",
+        "strapMaterial": "confirmed",
+        "crystal": "corrected"
+      }
+    },
+    {
+      "id": "3315dc41-27f0-4a6b-bf07-42fa38e52d6e",
+      "tier": "stored",
+      "page": "opened",
+      "host": "hamiltonwatch.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "33ce0991-52f6-4ce6-a73d-33180e8d6540",
+      "tier": "stored",
+      "page": "opened",
+      "host": "seikowatches.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "confirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "3e9185fd-8a84-4495-82ab-b7f84f97f17c",
+      "tier": "found",
+      "page": "opened",
+      "host": "seikowatches.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "corrected",
+        "caseThicknessMm": "corrected",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "47396b02-ec73-48c3-9b75-51065422a4b4",
+      "tier": "stored",
+      "page": "opened",
+      "host": "longines.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "corrected",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "4667b5de-0d60-4645-9378-6f9631044455",
+      "tier": "search",
+      "page": "missing",
+      "host": null,
+      "ref": false,
+      "fields": {},
+      "drop": true
+    },
+    {
+      "id": "3943757b-c29f-40fd-99c8-26e358560a85",
+      "tier": "search",
+      "page": "opened",
+      "host": "timex.com",
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "52bfcb52-deb5-4b48-bd04-a46116f31c9e",
+      "tier": "stored",
+      "page": "opened",
+      "host": "omegawatches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "filled",
+        "strapMaterial": "filled",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "4ae23bab-58ce-4ce9-9549-a4cabefd2f73",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {},
+      "drop": true
+    },
+    {
+      "id": "4f67b290-2cf0-458a-93c9-210311e9115f",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "543ed578-5d88-4474-a2fe-64421e7e258e",
+      "tier": "found",
+      "page": "opened",
+      "host": "orient-watch.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "corrected",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "5c75016f-b9e9-44fe-8442-962fb18b4ac4",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {},
+      "drop": true
+    },
+    {
+      "id": "3b46cb4a-7d19-42aa-bd76-21a5ede49dee",
+      "tier": "search",
+      "page": "opened",
+      "host": "seikowatches.com",
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "5f10178d-3fe8-4323-b646-74139b7a3d22",
+      "tier": "found",
+      "page": "opened",
+      "host": "spinnaker-watches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "filled",
+        "movement": "confirmed",
+        "inHouseCalibre": "confirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "6121844f-e85e-4b53-aa6f-95c6266dd652",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "639ad178-b686-4630-b8d5-86bf42b8f134",
+      "tier": "found",
+      "page": "opened",
+      "host": "damasko-watches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "confirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "707214e6-371f-4b85-9d33-11087c1dc1b8",
+      "tier": "stored",
+      "page": "opened",
+      "host": "citizen.it",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "unconfirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "6afa509f-935b-4e04-9af5-e3b083fd2e16",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "78ee230a-39ed-46ce-9ebd-cb2a820b7510",
+      "tier": "found",
+      "page": "opened",
+      "host": "grand-seiko.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "confirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "73b5e564-aad1-4a4e-8397-9e8fafe77261",
+      "tier": "found",
+      "page": "opened",
+      "host": "laco-watches.com",
+      "ref": true,
+      "fields": {
+        "model": "corrected",
+        "caseDiameterMm": "corrected",
+        "caseThicknessMm": "confirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "confirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "filled",
+        "strapMaterial": "corrected",
+        "crystal": "confirmed"
+      },
+      "identity": true
+    },
+    {
+      "id": "7cf78cac-2678-41d2-ba4e-335b49f7f1f1",
+      "tier": "search",
+      "page": "missing",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "79fb5ac0-d66e-4b6b-b987-7ef627119e2f",
+      "tier": "search",
+      "page": "missing",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "7df3d6af-4f30-43f1-93f7-89dea633ebcd",
+      "tier": "search",
+      "page": "blocked",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "8038065a-448f-4c54-95d7-2f5b6329ae3a",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "7959cc7c-2aac-4776-b8e7-323e89c2b30a",
+      "tier": "found",
+      "page": "opened",
+      "host": "laco-watches.com",
+      "ref": true,
+      "fields": {
+        "model": "corrected",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "corrected",
+        "movement": "confirmed",
+        "inHouseCalibre": "confirmed",
+        "waterResistanceM": "corrected",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "corrected",
+        "crystal": "confirmed"
+      },
+      "identity": true
+    },
+    {
+      "id": "814b7690-34bf-4ff9-9dd3-c894a75d5173",
+      "tier": "stored",
+      "page": "opened",
+      "host": "timexwatch.jp",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "unconfirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "86fc4910-dd8a-4c07-a02f-08fa9d538133",
+      "tier": "stored",
+      "page": "opened",
+      "host": "us.frederiqueconstant.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "corrected",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "855c943b-8922-4e44-8d4d-225c862021e7",
+      "tier": "stored",
+      "page": "opened",
+      "host": "omegawatches.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "filled",
+        "strapMaterial": "filled",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "9aa518b2-6e28-447f-abf3-ce74a1a87da8",
+      "tier": "stored",
+      "page": "opened",
+      "host": "longines.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "8385028f-aa96-4f16-9f76-5b9f3f296313",
+      "tier": "search",
+      "page": "missing",
+      "host": null,
+      "ref": false,
+      "fields": {},
+      "drop": true
+    },
+    {
+      "id": "90add51a-0dd3-483a-ab84-76e5af3db3ff",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "9f5fed94-d7e5-42f2-bf10-bee128090b61",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "95a513f0-ad79-4c9d-bf10-d1984b97303b",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {},
+      "drop": true
+    },
+    {
+      "id": "9eeaa600-bd1b-482e-bd2b-debea45a002e",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "a4f513a4-07fe-4ad3-8292-e8f722a9f294",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "c5004462-863c-4ffd-90d0-de24d97774bb",
+      "tier": "stored",
+      "page": "opened",
+      "host": "tissotwatches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "corrected",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "ae4f5374-9510-4cda-b756-84ad9a033582",
+      "tier": "search",
+      "page": "missing",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "c594e33c-ddee-4bb9-ab62-40f80b36b75f",
+      "tier": "found",
+      "page": "opened",
+      "host": "watchesandbeyond.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "corrected",
+        "caseThicknessMm": "confirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "corrected",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "d7012465-b498-4b80-95b5-582c123a1345",
+      "tier": "stored",
+      "page": "opened",
+      "host": "grand-seiko.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "confirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "corrected",
+        "strapMaterial": "corrected",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "a2f8458c-efb6-4edc-9d9d-21ab563d4623",
+      "tier": "search",
+      "page": "missing",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "bce2cbf8-c024-488c-b731-41eda12dd038",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "ea1732b8-1261-494f-b2e6-108036ac9d48",
+      "tier": "stored",
+      "page": "opened",
+      "host": "baltic-watches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "filled",
+        "movement": "confirmed",
+        "inHouseCalibre": "confirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "corrected"
+      }
+    },
+    {
+      "id": "e1185ff5-c4ad-46b8-a151-424c4359a96e",
+      "tier": "search",
+      "page": "none",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "ec8e5468-5088-42b2-bf03-b8cb7bcc728b",
+      "tier": "stored",
+      "page": "opened",
+      "host": "invictawatch.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "filled",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "filled",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "f4560ef2-f792-4a16-9f71-3d77394f6c7b",
+      "tier": "stored",
+      "page": "opened",
+      "host": "de.bulova.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "unconfirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "eb3652e8-8966-4b47-af36-11d2c7f9510c",
+      "tier": "found",
+      "page": "opened",
+      "host": "grand-seiko.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "confirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "e75a2303-2d44-4743-beb5-db7dfe23c14d",
+      "tier": "search",
+      "page": "opened",
+      "host": "org-www.baume-et-mercier.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "unconfirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      }
+    },
+    {
+      "id": "fec1adf1-8158-4636-a0c2-2492b5c4c8ba",
+      "tier": "stored",
+      "page": "opened",
+      "host": "omegawatches.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "confirmed",
+        "crystal": "filled"
+      }
+    },
+    {
+      "id": "ff0b1773-c85f-4b80-bd87-65390e84d563",
+      "tier": "stored",
+      "page": "opened",
+      "host": "longines.com",
+      "ref": true,
+      "fields": {
+        "model": "confirmed",
+        "caseDiameterMm": "confirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "confirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "confirmed",
+        "caseMaterial": "confirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "confirmed"
+      }
+    },
+    {
+      "id": "dd7b3a5d-0f26-4007-b394-42d36e475d06",
+      "tier": "search",
+      "page": "blocked",
+      "host": null,
+      "ref": false,
+      "fields": {}
+    },
+    {
+      "id": "e684304d-12b7-4788-9938-37e259a12f8a",
+      "tier": "search",
+      "page": "opened",
+      "host": "citizenwatch-global.com",
+      "ref": true,
+      "fields": {
+        "model": "unconfirmed",
+        "caseDiameterMm": "unconfirmed",
+        "caseThicknessMm": "unconfirmed",
+        "movement": "unconfirmed",
+        "inHouseCalibre": "unconfirmed",
+        "waterResistanceM": "unconfirmed",
+        "caseMaterial": "unconfirmed",
+        "casebackMaterial": "unconfirmed",
+        "strapMaterial": "unconfirmed",
+        "crystal": "unconfirmed"
+      }
+    }
+  ]
+}

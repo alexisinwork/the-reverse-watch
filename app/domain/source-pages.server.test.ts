@@ -134,8 +134,48 @@ describe("inspectSourcePage", () => {
     }
   });
 
-  it("accepts the reference in the URL only when the maker blocks automated visitors", async () => {
-    const page = await inspectSourcePage(url, "UA300-ST-BL", answer(403));
+  // A blocked page counts only on a site that tells missing pages apart:
+  // the catalogue repair found invented references "confirmed" by sites
+  // that block every automated visit (2026-11-27).
+  const blockedThen = (control: number) => async (input: RequestInfo | URL) =>
+    new Response("", {
+      status: String(input).includes("the-reserve-missing-page-check")
+        ? control
+        : 403,
+    });
+
+  it("accepts a blocked page's address only when the site answers a made-up page with 404", async () => {
+    const page = await inspectSourcePage(
+      "https://tells-apart.example/sporttaucher-ua300-st-bl.html",
+      "UA300-ST-BL",
+      blockedThen(404),
+    );
     expect(page).toMatchObject({ reachable: false, referenceFound: true });
+  });
+
+  it("learns nothing from a site that blocks every page", async () => {
+    const page = await inspectSourcePage(
+      "https://blocks-all.example/sporttaucher-ua300-st-bl.html",
+      "UA300-ST-BL",
+      blockedThen(403),
+    );
+    expect(page).toMatchObject({ reachable: false, referenceFound: false });
+  });
+
+  it("needs the reference in the page's content, not in the addresses it repeats", async () => {
+    const echo = `<html><head><link rel="canonical" href="${url}"><meta property="og:url" content="${url}"></head><body><h1>SportTaucher</h1><p>Page not found</p></body></html>`;
+    const echoed = await inspectSourcePage(
+      url,
+      "UA300-ST-BL",
+      async () => new Response(echo, { status: 200 }),
+    );
+    expect(echoed).toMatchObject({ reachable: true, referenceFound: false });
+    const product = `<html><body><h1>SportTaucher</h1><dl><dt>Reference</dt><dd>UA300-ST-BL</dd></dl><script type="application/ld+json">{"sku":"UA300-ST-BL","url":"${url}"}</script></body></html>`;
+    const shown = await inspectSourcePage(
+      url,
+      "UA300-ST-BL",
+      async () => new Response(product, { status: 200 }),
+    );
+    expect(shown).toMatchObject({ reachable: true, referenceFound: true });
   });
 });
