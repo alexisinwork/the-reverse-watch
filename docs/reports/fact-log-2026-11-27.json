@@ -1,16 +1,531 @@
 {
-  "at": "2026-11-27T10:15:16.781Z",
+  "at": "2026-11-27T13:12:11.288Z",
   "runs": {
     "styles-1": {
-      "watchesLogged": 8234,
-      "watchesChanged": 8234,
+      "watchesLogged": 15462,
+      "watchesChanged": 15462,
       "reverted": 0,
       "fields": {
         "styles": {
-          "filled (model)": 8231
+          "filled (model)": 15462
+        }
+      }
+    },
+    "styles-renamed": {
+      "watchesLogged": 46,
+      "watchesChanged": 46,
+      "reverted": 0,
+      "fields": {
+        "styles": {
+          "corrected (model)": 46
+        }
+      }
+    },
+    "repair-1": {
+      "watchesLogged": 2030,
+      "watchesChanged": 1098,
+      "reverted": 0,
+      "fields": {
+        "casebackMaterial": {
+          "confirmed (maker_page)": 107,
+          "confirmed (retailer_page)": 41,
+          "corrected (maker_page)": 79,
+          "corrected (retailer_page)": 36,
+          "filled (maker_page)": 42,
+          "filled (retailer_page)": 39
+        },
+        "caseDiameterMm": {
+          "confirmed (maker_page)": 432,
+          "confirmed (retailer_page)": 429,
+          "corrected (maker_page)": 145,
+          "corrected (retailer_page)": 148,
+          "filled (maker_page)": 22,
+          "filled (retailer_page)": 6
+        },
+        "caseMaterial": {
+          "confirmed (maker_page)": 895,
+          "confirmed (retailer_page)": 605,
+          "corrected (maker_page)": 59,
+          "corrected (retailer_page)": 60,
+          "filled (maker_page)": 54,
+          "filled (retailer_page)": 54
+        },
+        "caseThicknessMm": {
+          "confirmed (maker_page)": 193,
+          "confirmed (retailer_page)": 67,
+          "corrected (maker_page)": 87,
+          "corrected (retailer_page)": 46,
+          "filled (maker_page)": 85,
+          "filled (retailer_page)": 77
+        },
+        "crystal": {
+          "confirmed (maker_page)": 849,
+          "confirmed (retailer_page)": 396,
+          "corrected (maker_page)": 16,
+          "corrected (retailer_page)": 21,
+          "filled (maker_page)": 29,
+          "filled (retailer_page)": 77
+        },
+        "imageUrl": {
+          "filled (maker_page)": 16
+        },
+        "inHouseCalibre": {
+          "confirmed (maker_page)": 151,
+          "confirmed (retailer_page)": 171,
+          "corrected (maker_page)": 10,
+          "corrected (retailer_page)": 20,
+          "filled (maker_page)": 11,
+          "filled (retailer_page)": 13
+        },
+        "model": {
+          "confirmed (maker_page)": 488,
+          "confirmed (retailer_page)": 554,
+          "corrected (maker_page)": 32,
+          "corrected (retailer_page)": 35
+        },
+        "movement": {
+          "confirmed (maker_page)": 963,
+          "confirmed (retailer_page)": 677,
+          "corrected (maker_page)": 47,
+          "corrected (retailer_page)": 48,
+          "filled (maker_page)": 10,
+          "filled (retailer_page)": 19
+        },
+        "priceStatus": {
+          "corrected (derived)": 64
+        },
+        "referenceConfirmed": {
+          "corrected (derived)": 9,
+          "corrected (maker_page)": 68,
+          "corrected (retailer_page)": 6
+        },
+        "sourceKind": {
+          "confirmed (maker_page)": 78,
+          "corrected (maker_page)": 13
+        },
+        "sourceUrl": {
+          "corrected (maker_page)": 79,
+          "filled (maker_page)": 12
+        },
+        "strapMaterial": {
+          "confirmed (maker_page)": 536,
+          "confirmed (retailer_page)": 364,
+          "corrected (maker_page)": 153,
+          "corrected (retailer_page)": 144,
+          "filled (maker_page)": 57,
+          "filled (retailer_page)": 60
+        },
+        "waterResistanceM": {
+          "confirmed (maker_page)": 812,
+          "confirmed (retailer_page)": 395,
+          "corrected (maker_page)": 101,
+          "corrected (retailer_page)": 92,
+          "filled (maker_page)": 71,
+          "filled (retailer_page)": 44
         }
       }
     }
   },
-  "correctionSample": []
+  "correctionSample": [
+    {
+      "run": "repair-1",
+      "brand": "Ball Watch",
+      "reference": "DD3100A-S1C-BE",
+      "field": "inHouseCalibre",
+      "old_value": false,
+      "new_value": true,
+      "source_url": "https://www.ballwatch.com/en/enm/DD3100A-S1C?model=DD3100A-S1C-BE",
+      "passage": "Automatic BALL Manufacture caliber RRM7309-C"
+    },
+    {
+      "run": "repair-1",
+      "brand": "IWC",
+      "reference": "IW516401",
+      "field": "caseDiameterMm",
+      "old_value": 40,
+      "new_value": 45,
+      "source_url": "https://www.pragnell.co.uk/iwc-portofino-hand-wound-day-moon-phase_iw516401-p",
+      "passage": "Case Diameter 45mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Omega",
+      "reference": "210.30.42.20.01.001",
+      "field": "casebackMaterial",
+      "old_value": "steel",
+      "new_value": "sapphire",
+      "source_url": "https://www.omegawatches.com/en-us/watch-omega-seamaster-diver-300m-co-axial-master-chronometer-42-mm-21030422001001",
+      "passage": "The watch is presented on a stainless steel bracelet and is driven by the OMEGA Master Chronometer Calibre 8800, which can be seen through the sapphire-crystal on the wave-edged caseback."
+    },
+    {
+      "run": "repair-1",
+      "brand": "Bell & Ross",
+      "reference": "BR05A-BL-SK-ST/SST",
+      "field": "referenceConfirmed",
+      "old_value": false,
+      "new_value": true,
+      "source_url": "https://bellross.com/en/products/br-05-skeleton-nightlum-steel-bracelet",
+      "passage": "The page's own text gives the reference BR05A-BL-SK-ST/SST."
+    },
+    {
+      "run": "repair-1",
+      "brand": "Tissot",
+      "reference": "T101.410.11.051.00",
+      "field": "caseDiameterMm",
+      "old_value": 40,
+      "new_value": 39,
+      "source_url": "https://vizphy-xn.myshopify.com/collections/tissot-pr-100/products/tissot-pr-100-sport-chic-watch-for-men-t101-410-11-051-00",
+      "passage": "Case width approx: 39mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Grand Seiko",
+      "reference": "SLGW003",
+      "field": "casebackMaterial",
+      "old_value": "titanium",
+      "new_value": "sapphire",
+      "source_url": "https://www.grand-seiko.com/us-en/collections/slgw003g",
+      "passage": "enjoy through the sapphire crystal case back during the hand-winding process."
+    },
+    {
+      "run": "repair-1",
+      "brand": "Seiko",
+      "reference": "SPB453",
+      "field": "waterResistanceM",
+      "old_value": 200,
+      "new_value": 300,
+      "source_url": "https://www.seikowatches.com/global-en/products/prospex/special/1965_heritage/",
+      "passage": "The watches are further enhanced to ensure water resistance to 300 meters, a first for Prospex non-saturation diver’s watches."
+    },
+    {
+      "run": "repair-1",
+      "brand": "Citizen",
+      "reference": "NB6030-59L",
+      "field": "casebackMaterial",
+      "old_value": "steel",
+      "new_value": "sapphire",
+      "source_url": "https://www.citizenwatch.com/us/en/product/NB6030-59L",
+      "passage": "The automatic GMT movement is visible through a sapphire exhibition case back"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Laco",
+      "reference": "862069",
+      "field": "crystal",
+      "old_value": "sapphire",
+      "new_value": "mineral",
+      "source_url": "https://www.laco.de/en/watches/classics/weimar-38/862069",
+      "passage": "flat mineral crystal"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Breitling",
+      "reference": "A32320101B1X1",
+      "field": "caseThicknessMm",
+      "old_value": 10.88,
+      "new_value": 12.05,
+      "source_url": "https://www.breitling.com/us-en/watches/avenger/avenger-automatic-gmt-44-my23/A32320101B1X1/?lang=us-en&collection=avenger&model=automatic-gmt-44&sku=A32320101B1X1",
+      "passage": "Thickness 12.05 mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Junghans",
+      "reference": "041/4465.04",
+      "field": "caseDiameterMm",
+      "old_value": 34,
+      "new_value": 38,
+      "source_url": "https://www.seriouswatches.com/products/junghans-max-bill-quartz-041-4461-04",
+      "passage": "38.0mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Tissot",
+      "reference": "T033.410.11.053.00",
+      "field": "caseDiameterMm",
+      "old_value": 40,
+      "new_value": 38,
+      "source_url": "https://www.johnywatches.com/products/tissot-classic-dream-mens-stainless-steel-black-dial-watch-t0334101105300",
+      "passage": "Case Size: 38mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Squale",
+      "reference": "SUB-39GMTV.PN",
+      "field": "caseDiameterMm",
+      "old_value": 39,
+      "new_value": 40,
+      "source_url": "https://www.watchnation.com/products/squale-sub-39-sub39gmtv-pn",
+      "passage": "The Squale Sub-39 SUB39GMTV.PN is housed in a 40mm case that is made from that is made from polished 316L stainless steel, which is a material that is commonly used in dive watches due to it being ext"
+    },
+    {
+      "run": "repair-1",
+      "brand": "NOMOS Glashütte",
+      "reference": "182",
+      "field": "caseDiameterMm",
+      "old_value": 41,
+      "new_value": 40.5,
+      "source_url": "https://nomos-glashuette.com/en-us/tangente/tangente-neomatik-41-update-midnight-blue-182",
+      "passage": "diameter 40.5 mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Citizen",
+      "reference": "AQ5010-01E",
+      "field": "model",
+      "old_value": "The Citizen Chronomaster Washi Paper Dial",
+      "new_value": "Eco-Drive One",
+      "source_url": "https://www.citizenwatch.com/us/en/product/AQ5010-01E",
+      "passage": "Eco-Drive One Black Dial Leather Strap AQ5010-01E | CITIZEN"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Timex",
+      "reference": "TW2R25000",
+      "field": "caseDiameterMm",
+      "old_value": 38,
+      "new_value": 42,
+      "source_url": "https://www.dutyfreedynamics.com/note/timex-waterbury-traditional-chronograph",
+      "passage": "has a 42mm case,"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Citizen",
+      "reference": "AQ4091-56A",
+      "field": "strapMaterial",
+      "old_value": "leather",
+      "new_value": "titanium",
+      "source_url": "https://fr.citizenwatch.eu/fr/p/aq4091-56a/",
+      "passage": "Super Titanium ™"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Muehle Glashuette",
+      "reference": "M1-41-03-MB",
+      "field": "strapMaterial",
+      "old_value": "rubber strap",
+      "new_value": "stainless steel",
+      "source_url": "https://www.uhrinstinkt.com/products/muehle-glashuette-s-a-r-rescue-timer-m1-41-03-mb",
+      "passage": "MÜHLE Glashütte S.A.R. Rescue-Timer M1-41-03-MB in Stainless Steel with Stainless Steel strap"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Breitling",
+      "reference": "PB02301A1B1P1",
+      "field": "movement",
+      "old_value": "automatic",
+      "new_value": "manual",
+      "source_url": "https://www.breitling.com/ca-en/watches/navitimer/navitimer-b02-chronograph-41/PB02301A1B1P1/?collection=navitimer///////////////////",
+      "passage": "Mechanical hand-wound"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Habring2",
+      "reference": "Felix",
+      "field": "waterResistanceM",
+      "old_value": 50,
+      "new_value": 30,
+      "source_url": "https://www.theinhousemovement.com/product-page/felix",
+      "passage": "Waterproof to 30m"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Ball",
+      "reference": "DM3002A-P4CJ-BK",
+      "field": "waterResistanceM",
+      "old_value": 1000,
+      "new_value": 300,
+      "source_url": "https://www.thewatchsource.co.uk/Ball-Watch/DM3002A-P4CJ-BK.html",
+      "passage": "Water Resistance 300m/1000ft"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Zodiac",
+      "reference": "ZO9256",
+      "field": "strapMaterial",
+      "old_value": "stainless steel",
+      "new_value": "rubber",
+      "source_url": "https://www.mayors.com/Zodiac-Super-Sea-Wolf-53-Compression-Automatic-40mm-Mens-Watch-ZO9256/p/18450001",
+      "passage": "Bracelet Material Rubber"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Laco",
+      "reference": "862069",
+      "field": "strapMaterial",
+      "old_value": "rubber",
+      "new_value": "nylon",
+      "source_url": "https://www.laco.de/en/watches/classics/weimar-38/862069",
+      "passage": "Black nylon strap"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Bulgari",
+      "reference": "102704",
+      "field": "waterResistanceM",
+      "old_value": 100,
+      "new_value": 50,
+      "source_url": "https://www.mappinandwebb.com/Bvlgari-Octo-Roma-Mens-Watch-102704/p/18970152",
+      "passage": "Water Resistant 50 Metres"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Seiko",
+      "reference": "SNR035",
+      "field": "waterResistanceM",
+      "old_value": 300,
+      "new_value": 100,
+      "source_url": "https://www.seikowatches.com/us-en/products/prospex/snr035j1",
+      "passage": "Water Resistance 10 bar"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Perrelet",
+      "reference": "A1090/1A",
+      "field": "casebackMaterial",
+      "old_value": "steel",
+      "new_value": "sapphire",
+      "source_url": "https://www.righttime.com/rt/perrelet/a1090_1.htm",
+      "passage": "Case Back: Sapphire observation crystal."
+    },
+    {
+      "run": "repair-1",
+      "brand": "Nomos Glashütte",
+      "reference": "1205",
+      "field": "casebackMaterial",
+      "old_value": "Gold",
+      "new_value": "sapphire",
+      "source_url": "https://nomos-glashuette.com/en/minimatik/minimatik-midnight-blue-1205",
+      "passage": "sapphire crystal glass back"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Omega",
+      "reference": "2761",
+      "field": "caseMaterial",
+      "old_value": "Steel",
+      "new_value": "gold‑cap on stainless steel",
+      "source_url": "https://www.omegawatches.com/watch-omega-seamaster-omega-ko-2761",
+      "passage": "Case material Gold‑cap on stainless steel"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Nomos Glashütte",
+      "reference": "145",
+      "field": "casebackMaterial",
+      "old_value": "Gold",
+      "new_value": "stainless steel",
+      "source_url": "https://nomos-glashuette.com/en/tangente/tangente-neomatik-39-blue-gold-145",
+      "passage": "Stainless steel back"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Grand Seiko",
+      "reference": "SLGA025",
+      "field": "caseDiameterMm",
+      "old_value": 43.8,
+      "new_value": 40,
+      "source_url": "https://www.watchesofswitzerland.com/en-int/products/grand-seiko-evolution-9-slga025-18400571",
+      "passage": "Grand Seiko Spring Drive 5 Days Evolution 9 40mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Bell & Ross",
+      "reference": "BR0392-D-WH-ST/SRB",
+      "field": "caseThicknessMm",
+      "old_value": 12.8,
+      "new_value": 12.05,
+      "source_url": "https://bellross.com/en-us/products/br-03-92-diver-white",
+      "passage": "Thickness 12.05 mm."
+    },
+    {
+      "run": "repair-1",
+      "brand": "Baume & Mercier",
+      "reference": "M0A10720",
+      "field": "inHouseCalibre",
+      "old_value": false,
+      "new_value": true,
+      "source_url": "https://www.lepage.fr/en/19589-baume-et-mercier-riviera-automatic-watch-titanium-bezel-grey-dial-grey-rubber-strap-39-mm-m0a10720.html",
+      "passage": "Watch movement In house automatic movement"
+    },
+    {
+      "run": "repair-1",
+      "brand": "NOMOS Glashuette",
+      "reference": "953",
+      "field": "caseThicknessMm",
+      "old_value": 8.4,
+      "new_value": 9.1,
+      "source_url": "https://nomos-glashuette.com/en/lambda/lambda-39-953",
+      "passage": "height 9.1 mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Omega",
+      "reference": "1448/431",
+      "field": "movement",
+      "old_value": "automatic",
+      "new_value": "quartz",
+      "source_url": "https://www.watchaser.com/products/omega-constellation-day-date-quartz-1448-431",
+      "passage": "Quartz movement."
+    },
+    {
+      "run": "repair-1",
+      "brand": "Panerai",
+      "reference": "PAM01643",
+      "field": "caseMaterial",
+      "old_value": "steel",
+      "new_value": "bronze",
+      "source_url": "https://www.swissluxury.com/panerai/pam01643.htm",
+      "passage": "45mm acier - bronze case, bronze bezel, beige dial with luminous arabic numerals and hour markers, small seconds at 9 o'clock, P.5000 calibre hand-wound movement with small seconds, hours, minutes, ap"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Seiko",
+      "reference": "SNR049J1",
+      "field": "caseThicknessMm",
+      "old_value": 15.7,
+      "new_value": 14.7,
+      "source_url": "https://www.seikowatches.com/ph-en/products/prospex/snr049j1",
+      "passage": "Thickness : 14.7 mm"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Grand Seiko",
+      "reference": "SBGH345",
+      "field": "waterResistanceM",
+      "old_value": 30,
+      "new_value": 100,
+      "source_url": "https://www.grand-seiko.com/us-en/collections/sbgh345g",
+      "passage": "Water resistance: 10 bar"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Junghans",
+      "reference": "027/3200.00",
+      "field": "strapMaterial",
+      "old_value": "rubber",
+      "new_value": "leather",
+      "source_url": "https://watchard.com/junghans-meister-hand-winding-027-3200-00-men-s-watch",
+      "passage": "which perfectly combines with the brown leather strap."
+    },
+    {
+      "run": "repair-1",
+      "brand": "Seiko",
+      "reference": "SSH071J1",
+      "field": "waterResistanceM",
+      "old_value": 100,
+      "new_value": 200,
+      "source_url": "https://www.seikowatches.com/sg-en/products/astron/ssh071j1",
+      "passage": "Water Resistance 20 bar"
+    },
+    {
+      "run": "repair-1",
+      "brand": "Hamilton",
+      "reference": "H77455360",
+      "field": "caseDiameterMm",
+      "old_value": 46,
+      "new_value": 41,
+      "source_url": "https://www.hamiltonwatch.com/en-us/h77455360-khaki-navy-frogman-auto.html",
+      "passage": "Automatic | 41mm | H77455360"
+    }
+  ]
 }

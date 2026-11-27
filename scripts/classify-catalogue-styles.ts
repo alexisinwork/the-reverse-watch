@@ -247,7 +247,7 @@ if (applyOnly) {
   let next = 0;
   const entries = [...journal.values()].filter(
     (entry) =>
-      entry.applied === undefined &&
+      typeof entry.applied !== "number" &&
       (only !== null || byId.get(entry.id)?.styles.length === 0),
   );
   await Promise.all(
