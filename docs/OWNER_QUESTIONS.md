@@ -13,17 +13,20 @@ portfolio demo (the owner asked to ignore the test partner), the ratings
 "я перепроверил руками архетипы и там всё гуд"), the Perplexity top-up (the
 owner topped it up) and Gemini (item 8: "пропускаем", nothing connected).
 Closed on 2026-11-27: Supabase Pro with Micro compute (item 2, done by the
-owner; verified: daily backups, 9 kept, newest 10:27 UTC that day).
+owner; verified: daily backups, 9 kept, newest 10:27 UTC that day); Enforce
+SSL (item 9, "1 - готово": the Management API reports `"database": true`);
+the price of Exclusive Watch Selection (item 11, "2 - утверждено": $79, $49
+for the first 25 founding orders; the process is `docs/exclusive-selection.md`);
+the five price changes on `/admin/catalogue` (reviewed by the owner, "3 -
+сделан"; none waiting); the local test partner (item 12, "4 - выключай":
+"Owner test (local only)" switched off, not deleted).
 See `docs/decisions/DECISION_REGISTER.md`.
 
 ## Before launch
 
 | # | Question or action | Why | When done |
 | --- | --- | --- | --- |
-| 9 | Switch on **Enforce SSL** for the database yourself: Supabase → project the-reverse-watch → Database → Settings → SSL Configuration → "Enforce SSL on incoming connections". On 2026-11-27 the agent's attempt after your yes was stopped by Claude Code's safety filter, because it reboots the production database, so it is yours to click | Today the database also accepts unencrypted direct connections. The site uses only HTTPS and every script already verifies the certificate, so nothing of ours breaks; Supabase reboots the database for a few seconds, so do it outside a test run | The Management API reports `"database": true` for SSL enforcement |
-| 11 | Approve or change the price of **Exclusive Watch Selection**: proposed $79 a selection, $49 for the first 25 founding orders (`docs/business-plan.md`, "Paid watch selection") | The "Coming soon" panel under every result screen counts interest from launch day; the paid flow is built only after the launch | The price is recorded in the business plan as decided |
-| 13 | Should a "confirmed" price that today's double check cannot reproduce be shown as approximate at once, instead of keeping its label until it is 90 days old? 13 prices the judge called wrong are in that state (Cartier WSSA0010, Jaeger-LeCoultre Q9008160, LIP 671530, TAG Heuer WAS2110.BA0732 and others; `docs/eval-baseline.md`, "Repair step 5"). Also review the 5 price changes waiting on `/admin/catalogue` | A visitor reads "confirmed" as checked; the judge found wrong prices on 33 of 110 wrong cards | Your answer is recorded in `AGENTS.md`; the agent changes the recheck so (a code change, no paid call) |
-| 12 | Optional: switch off the partner site "Owner test (local only)" (http://localhost:5173 and :3000) on `/admin/sites`. No script uses it; "Portfolio local integration" must stay on, because `verify-all`'s production speed checks run through it | An active key for local addresses could be used from any developer's machine; its key is not published, and the spend ledger caps any misuse | The site shows as switched off on `/admin/sites` (never deleted) |
+| 13 | Should a "confirmed" price that today's double check cannot reproduce be shown as approximate at once, instead of keeping its label until it is 90 days old? 13 prices the judge called wrong are in that state (Cartier WSSA0010, Jaeger-LeCoultre Q9008160, LIP 671530, TAG Heuer WAS2110.BA0732 and others; `docs/eval-baseline.md`, "Repair step 5") | A visitor reads "confirmed" as checked; the judge found wrong prices on 33 of 110 wrong cards | Your answer is recorded in `AGENTS.md`; the agent changes the recheck so (a code change, no paid call) |
 | 3 | Set the usage alert in Meta's dashboard (Perplexity was topped up on 2026-11-26) | The app stops paid checks at $100 a month and emails you at $5, 10, 25, 50, 75, 90 and 100, Perplexity alone at $5 and $10; the provider accounts have no limit of their own | Meta's alert is noted in `docs/production-readiness.md` |
 | 4 | Review the independent film set on its review page, https://claude.ai/artifact/4Br4SRgzRsFAGkN7vLEd5b ("кидай, я проверю"): 19 labels, each with the pages it rests on | It is the honest measure of film search, but labels count only after a human check | Your marks are on the page; the agent records them in `data/eval/` without editing the labels |
 | 5 | Commercial groundwork from `docs/business-plan.md`: 8–10 conversations with possible partners, a short pilot agreement and invoice, and the open check of your employer's rules on paid side projects (`docs/original-plan-requirements.md`) | A paying pilot needs a buyer, terms and an invoice; no customer outreach is automated | The first bounded paid pilot is offered |

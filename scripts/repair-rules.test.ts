@@ -566,3 +566,14 @@ describe("the maker's name as written", () => {
     ).toMatchObject({ status: "corrected", value: "HydroConquest GMT" });
   });
 });
+
+describe("pages that never give a fact, 2026-11-27", () => {
+  it("covers a watch magazine, a watch blog and a grey dealer", () => {
+    for (const url of [
+      "https://en.worldtempus.com/watch/longines/conquest",
+      "https://www.watchanchor.com/review/seiko",
+      "https://wristaficionado.com/products/rolex-126334",
+    ])
+      expect(pageKind(url, "Rolex")).toBeNull();
+  });
+});

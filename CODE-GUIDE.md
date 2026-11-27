@@ -313,6 +313,14 @@ a detailed completion, up to $100):
   with today's rules and no search: a table's label stays with its value,
   and on the maker's own product page for the exact reference the maker's
   name replaces a stored name that carries another size, colour or model.
+  `--set pending` checks the review queue of `/admin/catalogue`, read
+  straight from the table, because the listing leaves out unpriced records.
+- `scripts/review-pending.ts` approves the review queue after those checks:
+  a watch whose exact reference the maker's or an authorised retailer's page
+  gives is approved; one without such a page goes to the judge
+  (`--sheet`, then `scripts/judge-cards.ts`) and is approved only when the
+  judge finds no wrong fact (`--judge <report> --approve`). The rest stays
+  pending with its reason; nothing is rejected.
 - `scripts/classify-catalogue-styles.ts` gives imported watches their
   wearing styles from their own facts (`STYLE_BRIEFS`), 25 to a Muse call,
   logged as method `model`; it writes with two writers and a pause, because

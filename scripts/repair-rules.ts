@@ -14,9 +14,10 @@ import { fold } from "./eval-sets";
 
 /** Forums, magazines, social sites, databases, auction houses and
  * pre-owned dealers never give a fact (a sampled run took a Sotheby's lot
- * and a Japanese pre-owned dealer for shops). */
+ * and a Japanese pre-owned dealer for shops; 2026-11-27 added the WorldTempus
+ * magazine, the Watch Anchor blog and the grey dealer Wrist Aficionado). */
 export const EDITORIAL =
-  /(^|\.)(([a-z0-9-]*forums?[a-z0-9-]*)\.[a-z.]+|watchuseek\.com|hodinkee\.com|monochrome-watches\.com|fratellowatches\.com|ablogtowatch\.com|wornandwound\.com|timeandtidewatches\.com|gearpatrol\.com|watchtime\.com|revolutionwatch\.com|oracleoftime\.com|twobrokewatchsnobs\.com|deployant\.com|europastar\.com|calibercorner\.com|wristcheck\.com|watchbase\.com|instagram\.com|facebook\.com|youtube\.com|tiktok\.com|pinterest\.[a-z.]+|twitter\.com|x\.com|wikipedia\.org|gq\.com|esquire\.com|robbreport\.com|bloomberg\.com|forbes\.com|sothebys\.com|christies\.com|phillips\.com|bonhams\.com|antiquorum\.swiss|monacolegendauctions\.com|catawiki\.[a-z.]+|ha\.com|invaluable\.com|liveauctioneers\.com|zenluxe\.[a-z.]+|swisswatchexpo\.com|europeanwatch\.com|davidsw\.com|theluxuryhut\.com|luxurybazaar\.com|beckertime\.com|watchexchange\.[a-z.]+|millenarywatches\.com|precioustime\.[a-z.]+)$/;
+  /(^|\.)(([a-z0-9-]*forums?[a-z0-9-]*)\.[a-z.]+|worldtempus\.com|watchanchor\.com|wristaficionado\.com|watchuseek\.com|hodinkee\.com|monochrome-watches\.com|fratellowatches\.com|ablogtowatch\.com|wornandwound\.com|timeandtidewatches\.com|gearpatrol\.com|watchtime\.com|revolutionwatch\.com|oracleoftime\.com|twobrokewatchsnobs\.com|deployant\.com|europastar\.com|calibercorner\.com|wristcheck\.com|watchbase\.com|instagram\.com|facebook\.com|youtube\.com|tiktok\.com|pinterest\.[a-z.]+|twitter\.com|x\.com|wikipedia\.org|gq\.com|esquire\.com|robbreport\.com|bloomberg\.com|forbes\.com|sothebys\.com|christies\.com|phillips\.com|bonhams\.com|antiquorum\.swiss|monacolegendauctions\.com|catawiki\.[a-z.]+|ha\.com|invaluable\.com|liveauctioneers\.com|zenluxe\.[a-z.]+|swisswatchexpo\.com|europeanwatch\.com|davidsw\.com|theluxuryhut\.com|luxurybazaar\.com|beckertime\.com|watchexchange\.[a-z.]+|millenarywatches\.com|precioustime\.[a-z.]+)$/;
 
 const transliterate = (value: string) =>
   value

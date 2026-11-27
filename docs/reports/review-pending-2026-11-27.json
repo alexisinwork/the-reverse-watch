@@ -1,0 +1,34 @@
+{
+  "at": "2026-11-27T18:34:42.657Z",
+  "run": "pending-1",
+  "judge": "docs/reports/judge-pending-2026-11-27.json",
+  "pending": 473,
+  "byPage": 443,
+  "withoutPage": 30,
+  "toApprove": 470,
+  "approved": 470,
+  "failed": 0,
+  "stayPending": [
+    {
+      "id": "44110610-221c-4a29-8e30-394061bc1b23",
+      "brand": "Tudor",
+      "model": "Monarch Stainless Steel / Champagne",
+      "reference": "M2639A1A0U-0001",
+      "reason": "judge: Tudor, its retailers (Watches of Switzerland, The 1916 Company, The Hour Glass) and Chrono24 listings only show the steel/champagne Monarch as M2639W1A0U-0001. I found M2639A1A0U-0001 only on Dials, w"
+    },
+    {
+      "id": "d029c74f-f55e-4133-a366-c686fb3f2b65",
+      "brand": "Nomos Glashütte",
+      "model": "Orion Neomatik Gold Urana",
+      "reference": "348.U3",
+      "reason": "judge: The dial edition's name is misspelled: Nomos calls it 'Urania' (the star-dial edition from the 2026 Twice Unique collection), not 'Urana'. The source page has the same typo. The other facts are right:"
+    },
+    {
+      "id": "c7e4745a-45d4-4276-bf30-49ea95eb0601",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente Neomatik 38 Update Gold Twice Unique - Drift",
+      "reference": "195.U6",
+      "reason": "judge: Nomos's official spec sheet for the gold Tangente neomatik 38 Update, ref. 195, lists a 38.5 mm case, so the card's 38 mm is off; the '38' in the name is a rounding. The rest checks out: the DUW 6101 "
+    }
+  ]
+}

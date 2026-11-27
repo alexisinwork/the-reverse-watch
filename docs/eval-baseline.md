@@ -560,6 +560,34 @@ the judge calls 55 of the 59 possible sightings real and 3 false links.
   take the page-checked facts from the whole catalogue, and a rejected
   record drops out (`9477805`).
 
+## Repair step 6 (2026-11-27, owner: "делай прогон судьей чтобы максимально улучшить результаты выдачи")
+
+Of the 4,568 AI-found records, 2,534 never had a maker's or shop's page
+behind them, and only 243 of those have a confirmed reference. In the quiz
+they already stand only under "Also worth a look"; the archetype's catalogue
+window admits only confirmed references; the alternatives finder ranked by
+look first and used the confirmed reference only to break ties, so the
+judge's sample held 29 such cards there, 21 of them wrong.
+
+A confirmed reference (maker's page, authorised retailer or watch database)
+now counts one point more than its look in the alternatives finder, out of 23
+(`CONFIRMED_REFERENCE_POINTS`, `app/domain/alternatives.ts`). The weight was
+chosen on the owner's labels with the real ranking
+(`.scratch/reread/bonus-scan.mts`, same inputs as `scripts/run-evals.ts`):
+
+| Weight | Owner's picks in the top ten | Unconfirmed records shown |
+| --- | ---: | ---: |
+| 0 (before) | 5 of 39 | 114 of 381 |
+| 1 (chosen) | 6 of 39 | 36 of 381 |
+| 2 | 5 of 39 | 20 of 381 |
+| Strictly confirmed first | 4 of 39 | 0 of 381 |
+
+The free evaluation with the weight (`docs/reports/eval-2026-11-27.json`):
+every gate PASS; alternatives 6 of the owner's picks in the top ten (7 in the
+morning, 5 on today's catalogue without the weight: the second read gave some
+records the maker's name, which no longer matches the label's words); quiz 272
+exact cards, 0 violations, precision 1.
+
 ## Known gaps the scores point to
 
 - Facts: after step 5, 35% of the quiz, archetype and alternatives cards

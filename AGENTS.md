@@ -259,6 +259,30 @@ speed and cost.
   alone at $5 and $10, and at once when the ledger halts; the hourly cron
   `/internal/spend-alert` sends one email per mark.
 
+## Owner decisions, 2026-11-27
+
+- **Exclusive Watch Selection** is the paid product after the launch of
+  2026-12-06 ("мы будем делать платный подбор часов"); price approved: $79
+  a selection, $49 for the first 25 founding orders ("2 - утверждено"). Until
+  it is built, a disabled "Coming soon" panel stands under every result
+  screen of the site's own pages and never in a partner widget; a press
+  counts as interest. The process: `docs/exclusive-selection.md`.
+- **Saved answers show page-checked facts**: a catalogue fact the repair
+  read on a maker's or shop's page our server opened replaces a saved
+  answer's older value when a card is shown (`domain/page-checked-facts.ts`).
+- **A confirmed reference weighs a point** in the alternatives finder
+  (`CONFIRMED_REFERENCE_POINTS`, chosen on the owner's labels): AI-found
+  records that no page stands behind only fill the places left.
+- **The review queue is approved after checks, without the owner**
+  ("approve all pending watches in admin/catalogue проверяя его
+  судьей-perplexity-muse"): approved when the maker's or an authorised
+  retailer's page our server opened gives the exact reference, or, without
+  such a page, when the judge finds no wrong fact; everything else stays
+  pending with its reason (`scripts/review-pending.ts`).
+- Enforce SSL is on (done by the owner). The local test partner "Owner test
+  (local only)" is switched off ("4 - выключай"); "Portfolio local
+  integration" stays on for `verify-all`'s speed checks.
+
 ## Continuity and skills (EstateVanta starter kit, 2026-11-25)
 
 - Start a session with `docs/STATUS_AND_HANDOFF.md`, `docs/NEXT_CHAT.md` and

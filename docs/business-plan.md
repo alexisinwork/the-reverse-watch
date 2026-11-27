@@ -910,9 +910,11 @@ partner widget, and takes no order, payment or email. A press on it counts as
 interest in the site's own analytics (control `exclusive_selection` on
 `/admin/analytics`).
 
-**Proposed price, a hypothesis until orders exist:** $79 for one selection,
-with a founding price of $49 for the first 25 orders. A $199 tier with a
-30-minute call only later, and only if the weekly hours allow it.
+**Price, approved by the owner on 2026-11-27 ("2 - утверждено"); still a
+hypothesis until orders exist:** $79 for one selection, with a founding price
+of $49 for the first 25 orders. A $199 tier with a 30-minute call only later,
+and only if the weekly hours allow it. How the order, the questionnaire and
+the delivery work: `docs/exclusive-selection.md`.
 
 One selection (proposal): the visitor's brief (the quiz answers plus a free
 text), ten checked options with every fact read on the makers' or authorised
@@ -954,6 +956,7 @@ per result screen for two to four weeks after launch; then offer founding
 orders at $49 through the existing newsletter (no new data collection).
 Build checkout and delivery if at least 3% of result viewers press the panel
 and at least five founding orders are paid in the first month; otherwise
-revisit the price or the scope. **Next action:** the owner approves or
-changes the price (`docs/OWNER_QUESTIONS.md` #11) and the launch proceeds;
-the paid flow is built only after the launch.
+revisit the price or the scope. **Next action:** the launch of 2026-12-06;
+then the manual pilot of `docs/exclusive-selection.md` (landing page, brief,
+the merchant of record's checkout, `/admin/orders`), built only after the
+launch.

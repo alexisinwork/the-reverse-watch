@@ -61,7 +61,10 @@ import {
   sourceHost,
   verifyImageUrl,
 } from "../app/domain/source-pages.server";
-import type { CatalogueWatch } from "../app/domain/watch-catalogue";
+import {
+  catalogueWatchSchema,
+  type CatalogueWatch,
+} from "../app/domain/watch-catalogue";
 import {
   catalogueClient,
   listCatalogue,
@@ -838,26 +841,64 @@ async function wholeCatalogue() {
     }
   }
 }
+// The review queue holds records the listing and the by-id read leave out
+// (no price, or above the tools' range), so --set pending reads its rows
+// straight from the table, through the same JSON every catalogue read uses
+// (private.watch_catalogue_json).
+async function databaseRows(which: "pending" | string[]) {
+  const databaseUrl = process.env.DIRECT_DATABASE_URL?.trim();
+  if (!databaseUrl)
+    throw new Error("DIRECT_DATABASE_URL is required for --set pending.");
+  const sql = postgres(databaseUrl, {
+    max: 1,
+    ssl: databaseTls(),
+    connect_timeout: 15,
+    onnotice: () => undefined,
+  });
+  try {
+    const rows =
+      which === "pending"
+        ? await sql<{ row: unknown }[]>`
+            select private.watch_catalogue_json(w) as row
+            from private.watch_catalogue w where w.review_status = 'pending'`
+        : await sql<{ row: unknown }[]>`
+            select private.watch_catalogue_json(w) as row
+            from private.watch_catalogue w where w.id = any(${which}::uuid[])`;
+    return z.array(catalogueWatchSchema).parse(rows.map((entry) => entry.row));
+  } finally {
+    await sql.end();
+  }
+}
+const pendingSet = option("set") === "pending";
 const catalogue = applyOnly
-  ? await loadCatalogueRowsById(client, [...journal.keys()])
-  : await wholeCatalogue();
+  ? pendingSet
+    ? await databaseRows([...journal.keys()])
+    : await loadCatalogueRowsById(client, [...journal.keys()])
+  : pendingSet
+    ? await databaseRows("pending")
+    : await wholeCatalogue();
 const byId = new Map(catalogue.map((watch) => [watch.id, watch]));
 // --set ai (default): watches an AI search added. --set database: watches
 // imported from watch databases, priced within the catalogue's range, that
-// still lack water resistance, a photo or a thickness.
+// still lack water resistance, a photo or a thickness. --set pending: every
+// watch waiting for review on /admin/catalogue, checked before it is
+// approved (owner, 2026-11-27: "approve all pending watches ... проверяя его
+// судьей-perplexity-muse").
 const set = option("set") ?? "ai";
-if (set !== "ai" && set !== "database")
-  throw new Error("--set takes ai or database.");
+if (set !== "ai" && set !== "database" && set !== "pending")
+  throw new Error("--set takes ai, database or pending.");
 const selected = catalogue
   .filter((watch) =>
-    set === "ai"
-      ? watch.sourceKind !== "catalogue"
-      : watch.sourceKind === "catalogue" &&
-        watch.priceAmount !== null &&
-        watch.priceAmount <= 10_000 &&
-        (watch.waterResistanceM === null ||
-          watch.imageUrl === null ||
-          watch.caseThicknessMm === null),
+    set === "pending"
+      ? watch.reviewStatus === "pending"
+      : set === "ai"
+        ? watch.sourceKind !== "catalogue"
+        : watch.sourceKind === "catalogue" &&
+          watch.priceAmount !== null &&
+          watch.priceAmount <= 10_000 &&
+          (watch.waterResistanceM === null ||
+            watch.imageUrl === null ||
+            watch.caseThicknessMm === null),
   )
   .filter((watch) => watch.reviewStatus !== "rejected")
   .filter((watch) => !earlierPages || earlierPages.has(watch.id))

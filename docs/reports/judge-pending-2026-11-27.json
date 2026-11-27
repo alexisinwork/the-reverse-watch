@@ -1,0 +1,341 @@
+{
+  "at": "2026-11-27T18:32:07.700Z",
+  "sheet": "pending-2026-11-27",
+  "model": "anthropic/claude-opus-5-5",
+  "webSearch": true,
+  "budgetUsd": 2,
+  "spendUsd": 1.3172,
+  "stopReason": null,
+  "judged": 30,
+  "errors": 0,
+  "tally": {
+    "quiz": {
+      "judged": 30,
+      "ratings": {
+        "good": 26,
+        "wrong": 3,
+        "ok": 1
+      }
+    },
+    "archetype": {
+      "judged": 0,
+      "ratings": {}
+    },
+    "alternatives": {
+      "judged": 0,
+      "ratings": {}
+    },
+    "film": {
+      "judged": 0,
+      "ratings": {}
+    }
+  },
+  "verdicts": [
+    {
+      "card": "032c6570-7b40-4121-830f-b89f91686a3a",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every listed fact matches this exact reference: SSX01B700 is the MoonSwatch Mission to the Moon 1969, with a 42 mm Bioceramic case, a quartz movement and 30 m (3 bar) water resistance. The price is marked unknown rather than given wrongly; the official list price is $570 / CHF 500, but it's a 1,969-piece edition sold only by application, so real-market pricing is unclear.",
+      "wrongFacts": [],
+      "costUsd": 0.04182
+    },
+    {
+      "card": "0810d711-5c9c-4fb2-9c91-ff4f717b0bcd",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "I checked this reference against TAG Heuer's official page and authorized dealers (Teddy Baldassarre, Beaverbrooks, Watches of Switzerland). They confirm it's the limited-edition Formula 1 Solargraph: 38 mm pink TH-Polylight case, pink rubber strap and solar quartz calibre TH50-00. The listings I saw didn't show the water rating, but 100 m matches the Formula 1 Solargraph line, and the price could be filled in as $1,950 retail.",
+      "wrongFacts": [],
+      "costUsd": 0.02696
+    },
+    {
+      "card": "0fc28025-b512-4b55-89ae-2eb3f4eb62bd",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact I could check matches what Lange publishes for this reference. 211.062 is the 2025 Saxonia Thin in 950 platinum with a black onyx dial, limited to 200 pieces, with a 40 mm case and the hand-wound L093.1 movement. Price and water resistance are listed as unknown, so there was nothing to check there.",
+      "wrongFacts": [],
+      "costUsd": 0.03477
+    },
+    {
+      "card": "2d36b369-210d-440c-be31-570e46c47081",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out for ref. 104.U5. Dials and Bezel both list an 18k gold Tangente 33 with a 32.8 mm case, the hand-wound DUW 4001 movement and 30 m water resistance, released in 2026 as part of Nomos's Twice Unique 'Now' collection. Leaving the price as unknown is reasonable: Nomos makes these on request and sells them only as a gold-and-steel pair.",
+      "wrongFacts": [],
+      "costUsd": 0.02427
+    },
+    {
+      "card": "34690f53-f8f5-4b56-a8bc-0532a1a7ac1e",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out. 5204/1R-010 is a real reference: a rare 2022 special order in rose gold with a blue PVD dial and a rose gold bracelet. Case size (40.2 mm), manual-wind movement (CHR 29-535 PS Q) and 30 m water resistance all match the 5204/1R specs, and leaving the price as unknown is reasonable for an out-of-catalogue piece listed at price on request.",
+      "wrongFacts": [],
+      "costUsd": 0.10524
+    },
+    {
+      "card": "3ed681fe-5100-444d-b514-e306cbe70586",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Panerai's official page and reference databases confirm everything on the card for PAM01629: a 47mm forged titanium case, a sun-brushed anthracite dial, the hand-wound P.3000 movement with a 3-day power reserve, and 100m water resistance. It is a 100-piece limited edition. Panerai's official name is simply 'Luminor Forged Titanium', so 'Marina 47 3 Days' is a descriptive label rather than the official one, but no fact on the card is wrong. The price is listed as unknown, so there's nothing to check there.",
+      "wrongFacts": [],
+      "costUsd": 0.03522
+    },
+    {
+      "card": "40103d6f-81b5-4e30-9576-5a5d819c150c",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact I could check matches: the Tangente 33 Twice Unique – Now (ref. 123.U5) launched in 2026 and has a 32.8 mm steel case with Nomos's hand-wound Alpha movement. The 30 m rating matches the standard Tangente 33 case, but I didn't find a source that confirms it for this edition. The unknown price is reasonable because these watches are only sold in steel-and-gold pairs, made to order.",
+      "wrongFacts": [],
+      "costUsd": 0.03008
+    },
+    {
+      "card": "44110610-221c-4a29-8e30-394061bc1b23",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Tudor, its retailers (Watches of Switzerland, The 1916 Company, The Hour Glass) and Chrono24 listings only show the steel/champagne Monarch as M2639W1A0U-0001. I found M2639A1A0U-0001 only on Dials, where it seems to be a duplicate entry with a typo. The other specs are correct for the real reference: 39mm, automatic MT5662-2U and 100m water resistance.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.09025
+    },
+    {
+      "card": "468ee5f8-7f8a-4fed-b5c0-d06edc314cc7",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Reference A173752A7B1S1 appears in a watch-reference database (watchmis.com) as the 2026 SuperOcean Automatic 42 in steel with a black and yellow dial on a rubber strap. That listing matches the card: 42 mm, automatic Breitling Calibre 17, 300 m water resistance. I found no official Breitling page for this exact reference, but nothing contradicts the card, and an unknown price isn't a factual error.",
+      "wrongFacts": [],
+      "costUsd": 0.04755
+    },
+    {
+      "card": "494db33b-60c0-45fa-9305-76c8c2c2ccca",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card matches the sources. The steel Scribble twin is ref. 402.U9 and the regular gold Tetra 27 is ref. 418, so 418.U9 fits the gold model, and both share the 27.5 mm case, the hand-wound DUW 4001 and 30 m (3 atm) water resistance. Listing the price as unknown is fair, because Twice Unique is sold only as a steel-and-gold pair (about EUR 16,100 per pair for the Tetra 27).",
+      "wrongFacts": [],
+      "costUsd": 0.04394
+    },
+    {
+      "card": "4e440ef3-7208-450f-ace0-cf7a5ab0b680",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact I could check matches. The Ludwig Gold Twice Unique Rive Gauche has a 35 mm gold case, 30 m water resistance and Nomos's own hand-wound DUW 4001 movement. 'Unknown' is a fair price because it is only sold as a pair with the steel version (€16,500 for the pair). The reference 211.U1 matches the dials.co source but does not appear in the Nomos materials I found.",
+      "wrongFacts": [],
+      "costUsd": 0.03116
+    },
+    {
+      "card": "51565217-4552-414d-b587-f4bdbfd85040",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Everything on the card matches the 2026 NOMOS Twice Unique 1966 Tetra in stainless steel, ref. 402.U2: the 27.5 mm square case, the hand-wound movement and 30 m water resistance. Leaving the price as unknown is correct, because NOMOS builds these to order and gives prices only on request.",
+      "wrongFacts": [],
+      "costUsd": 0.02565
+    },
+    {
+      "card": "55d8aa5e-40ed-4798-b7ab-bea47df0cd80",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Reference 123.U4 is the stainless-steel Tangente 33 Twice Unique Auric, with a 32.8 mm case and the manual DUW 4001 movement. It is built on the base ref. 123, which Nomos rates at 3 atm (30 m). One retailer lists the steel version at 50 m, but that conflicts with Nomos's spec for ref. 123. The 'unknown' price is fair, since the watch is only sold as a steel-and-gold pair (about EUR 15,600 / $18,500).",
+      "wrongFacts": [],
+      "costUsd": 0.10129
+    },
+    {
+      "card": "592d1d1b-b888-4649-8de3-4e70bf110c01",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out for IW3296-03. IWC's own pages confirm the reference and the automatic in-house movement (Cal. 82665), and Gear Patrol's spec table gives the 42mm case and 100m water resistance. The price is listed as unknown rather than wrong, which is fine: WatchTime cites €40,900 and Gear Patrol says price on request for this 140-piece limited edition.",
+      "wrongFacts": [],
+      "costUsd": 0.02941
+    },
+    {
+      "card": "64ef4f1b-ab39-422a-b230-0328ed03c232",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Nomos's own pages show the Tangente neomatik 38 Update steel model is reference 147, with a 38.5 mm case and 5 atm (50 m) water resistance. It runs on the automatic DUW 6101, and Scribble Dark is one of the 2026 Twice Unique dials made on this model. I couldn't find the '.U8' suffix in any source, but it fits Nomos's variant numbering. Listing the price as unknown is reasonable because these watches are sold only as gold-and-steel pairs (about €21,700 per pair).",
+      "wrongFacts": [],
+      "costUsd": 0.05266
+    },
+    {
+      "card": "7cf0f190-6cc2-4947-a2d3-8bd989b0d0c3",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out for this reference. WatchBase lists 116203-0181 as the Datejust 36 in yellow Rolesor with a domed bezel, Jubilee bracelet and brown mother-of-pearl dial, using the automatic calibre 3135. Other sources confirm the 36 mm case and 100 m water resistance, and the 'unknown' price makes no claim that could be wrong.",
+      "wrongFacts": [],
+      "costUsd": 0.02513
+    },
+    {
+      "card": "8981a1d9-0da3-4fb7-ab6a-f8c7ce8ac7d4",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card matches this reference. The gold Tangente neomatik 38 Update is ref. 195 (Scribble Dark is one of the 2026 Twice Unique editions), with a 38.5 mm case, the automatic DUW 6101 calibre and 3 atm (30 m) water resistance. The 195.U8 suffix itself wasn't confirmed, but it fits the ref. 195 family. 'Unknown' price is fair, since the watch is only sold as a gold-and-steel pair (EUR 21,700 per pair; one US retailer lists $28,100).",
+      "wrongFacts": [],
+      "costUsd": 0.04868
+    },
+    {
+      "card": "a4a0253c-efe2-44d8-b830-668b1fd278a4",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card is correct for ref. 211.U7. It is the 18k yellow gold Ludwig from NOMOS's 2026 Twice Unique Moiré series, a one-off with a dark blue guilloché dial. The case is 35 mm, it runs on the hand-wound in-house DUW 4001 calibre and it is water resistant to 30 m. The price is listed as unknown rather than made up, which suits a one-of-a-kind piece sold as part of a steel and gold pair.",
+      "wrongFacts": [],
+      "costUsd": 0.02698
+    },
+    {
+      "card": "a9a7a066-e0ac-4ee7-a879-4673f5905dda",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out against the sources for ref. 104.U4, the gold half of the Twice Unique Auric pair: a 32.8 mm 18k gold case, the hand-wound DUW 4001 movement and 30 m water resistance. Listing the price as unknown is reasonable because Nomos sells it only as a steel-and-gold pair (about €15,600, or $18,500 in the US).",
+      "wrongFacts": [],
+      "costUsd": 0.02786
+    },
+    {
+      "card": "ac45d395-7881-43e3-abe6-984a1c3129da",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card is right for ref. 205.U1. It is the steel Ludwig Rive Gauche from the Twice Unique series, based on the regular Ludwig ref. 205, with a 35 mm case, 30 m water resistance and the hand-wound in-house DUW 4001 caliber. Price is listed as unknown, which fits because these watches are only made on request and sold as a steel-and-gold pair.",
+      "wrongFacts": [],
+      "costUsd": 0.0262
+    },
+    {
+      "card": "b4608a5a-70b9-4f69-8386-e5febcb137ca",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Nomos sells a Drift version of the Tangente neomatik 38 Update in its 2026 Twice Unique collection. The facts I checked fit a steel version on the ref. 147 base: automatic DUW 6101, about 38.5 mm (shown as 38) and 5 atm / 50 m. I could not find the exact '147.U6' suffix, but it fits Nomos's variant numbering. Note that the gold twin is a different reference (195) rated only 3 atm, and the watch is sold only as a gold-and-steel pair.",
+      "wrongFacts": [],
+      "costUsd": 0.04818
+    },
+    {
+      "card": "b788741d-c419-4b3b-890e-9ed99978a5b6",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "All the facts check out. Ref. 418.U2 is the 18k gold Tetra 27 Twice Unique 1966, which pairs with the steel ref. 402.U2. Nomos and retailers confirm the 27.5 mm square case and the hand-wound DUW 4001 movement, and 30 m water resistance is what Nomos rates the Tetra. 'Unknown' is a fair price entry because the watch is made to order, sold only as a gold-and-steel pair (about EUR 16,100 for the Tetra 27 pair) and listed as price on request.",
+      "wrongFacts": [],
+      "costUsd": 0.04796
+    },
+    {
+      "card": "c7e4745a-45d4-4276-bf30-49ea95eb0601",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Nomos's official spec sheet for the gold Tangente neomatik 38 Update, ref. 195, lists a 38.5 mm case, so the card's 38 mm is off; the '38' in the name is a rounding. The rest checks out: the DUW 6101 automatic movement, 3 atm (30 m) water resistance, and the real Twice Unique Drift edition, which is sold only as a gold-and-steel pair, so a price of 'unknown' is reasonable. I could not confirm the '.U6' suffix on the reference.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.05389
+    },
+    {
+      "card": "cba10131-1977-4d20-9d19-6f53ff4693ba",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Rolex's own page confirms that 126284RBR-0055 is the Datejust 36 with an aubergine dial, diamond-set Roman VI and IX, and a Jubilee bracelet. It is 36 mm with the automatic calibre 3235 and 100 m water resistance, so every fact on the card is right. The model name leaves out the white gold diamond-set bezel (it's a White Rolesor watch), but that's a simplified name, not a wrong fact.",
+      "wrongFacts": [],
+      "costUsd": 0.04987
+    },
+    {
+      "card": "d029c74f-f55e-4133-a366-c686fb3f2b65",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The dial edition's name is misspelled: Nomos calls it 'Urania' (the star-dial edition from the 2026 Twice Unique collection), not 'Urana'. The source page has the same typo. The other facts are right: 36.4 mm gold case, DUW 3001 automatic, 3 atm, and 'unknown' price is fair because it is sold only as a gold/steel pair (EUR 21,600).",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.08087
+    },
+    {
+      "card": "de52de80-7bf5-4318-9041-60ddefe244b5",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Nomos confirms the Orion neomatik ref. 392 is about 36 mm and runs on the automatic DUW 3001 caliber, and Dials lists the Urana version as 392.U3. Water resistance is less certain: Nomos's current page says 5 atm (50 m), while Chrono24 says 3 atm, which could fit an older dealer edition like this one, so 30 m isn't clearly wrong.",
+      "wrongFacts": [],
+      "costUsd": 0.0445
+    },
+    {
+      "card": "e5918a70-f970-42bf-b7fc-66013e9a8407",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Lange's official page lists ref. 211.052 as the Saxonia Thin in 18k Honeygold with a black onyx dial, limited to 200 pieces. Dealer spec sheets give it a 40 mm case and the hand-wound L093.1 movement, so every fact on the card is right. Price and water resistance are left as unknown, which is not wrong, though one dealer lists 30 m water resistance.",
+      "wrongFacts": [],
+      "costUsd": 0.02625
+    },
+    {
+      "card": "f20586ca-c73d-4532-a78b-9a4f8648f3e5",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Nothing on the card is wrong. The source confirms Timex ref. 989502 is the quartz Timex 'Q' that Vincent Vega wears in Pulp Fiction. But the model field just repeats the reference instead of saying 'Q', and size and movement are marked unknown even though the source gives a 38mm steel case and a quartz movement.",
+      "wrongFacts": [],
+      "costUsd": 0.03597
+    },
+    {
+      "card": "f9e9a44e-373a-471f-bef6-8a2d0d58cfe1",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The card checks out. Dials and NOMOS's own Twice Unique page match ref. 205.U7: the stainless-steel Ludwig Twice Unique Moiré from 2026 with a 35 mm case and 30 m water resistance. The manual-wind movement fits the base Ludwig 205. Listing the price as unknown is fair, since these are made only on request and sold as a gold-and-steel pair.",
+      "wrongFacts": [],
+      "costUsd": 0.02697
+    },
+    {
+      "card": "ffa23c49-dbbe-42fa-b890-55d08243bb0b",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card matches this reference. TAG Heuer's own page and dealer listings confirm WBY111E.BA0042 is the 38mm steel Formula 1 Solargraph with a white dial and bracelet, the solar quartz TH50-00 calibre and 100m water resistance. The price is listed as unknown, which is acceptable, though TAG Heuer's US retail price is $2,050.",
+      "wrongFacts": [],
+      "costUsd": 0.02763
+    }
+  ]
+}

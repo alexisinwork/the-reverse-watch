@@ -58,7 +58,11 @@ describe("newsletter sign-up attribution", () => {
     expect(form.get("touchMedium")).toBe("video");
     expect(form.get("touchCampaign")).toBe("ep1");
     expect(form.get("touchLanding")).toBe("/watches/find");
-    expect(analytics.sendNewsletterSignup).toHaveBeenCalledTimes(1);
+    // Counted in an effect after the message shows: wait for it, as the
+    // next test does (it failed now and then in the full suite).
+    await waitFor(() =>
+      expect(analytics.sendNewsletterSignup).toHaveBeenCalledTimes(1),
+    );
     // The analytics event is sent without arguments: never the address.
     expect(analytics.sendNewsletterSignup.mock.calls[0]).toEqual([]);
   });

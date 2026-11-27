@@ -1,0 +1,607 @@
+{
+  "id": "pending-2026-11-27",
+  "date": "2026-11-27",
+  "report": ".scratch/repair/pending-1.jsonl",
+  "cards": [
+    {
+      "id": "f20586ca-c73d-4532-a78b-9a4f8648f3e5",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Timex",
+      "model": "989502",
+      "referenceCode": "989502",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": null,
+      "movement": null,
+      "waterResistanceM": null,
+      "verified": false,
+      "sourceUrl": "https://bamfstyle.com/2024/10/14/pulp-fiction-vincent-black-suit/"
+    },
+    {
+      "id": "0fc28025-b512-4b55-89ae-2eb3f4eb62bd",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "A. Lange & Söhne",
+      "model": "Saxonia Thin Platinum / Onyx",
+      "referenceCode": "211.062",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 40,
+      "movement": "manual",
+      "waterResistanceM": null,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/a-lange-and-sohne/saxonia/211-062"
+    },
+    {
+      "id": "3ed681fe-5100-444d-b514-e306cbe70586",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Panerai",
+      "model": "Luminor 1950 Marina 47 3 Days Forged Titanium / Anthracite",
+      "referenceCode": "PAM01629",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 47,
+      "movement": "manual",
+      "waterResistanceM": 100,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/panerai/luminor-1950/pam01629"
+    },
+    {
+      "id": "34690f53-f8f5-4b56-a8bc-0532a1a7ac1e",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Patek Philippe",
+      "model": "Perpetual Calendar Split-Seconds Chronograph 5204 Rose Gold / Blue / Bracelet",
+      "referenceCode": "5204/1R-010",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 40.2,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/patek-philippe/grand-complications/5204-1r-010"
+    },
+    {
+      "id": "032c6570-7b40-4121-830f-b89f91686a3a",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Swatch",
+      "model": "Moonswatch Mission to the Moon 1969",
+      "referenceCode": "SSX01B700",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 42,
+      "movement": "quartz",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/swatch/moonswatch/ssx01b700"
+    },
+    {
+      "id": "e5918a70-f970-42bf-b7fc-66013e9a8407",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "A. Lange & Söhne",
+      "model": "Saxonia Thin Honey Gold / Onyx",
+      "referenceCode": "211.052",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 40,
+      "movement": "manual",
+      "waterResistanceM": null,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/a-lange-and-sohne/saxonia/211-052"
+    },
+    {
+      "id": "44110610-221c-4a29-8e30-394061bc1b23",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Tudor",
+      "model": "Monarch Stainless Steel / Champagne",
+      "referenceCode": "M2639A1A0U-0001",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 39,
+      "movement": "automatic",
+      "waterResistanceM": 100,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/tudor/monarch/m2639a1a0u-0001"
+    },
+    {
+      "id": "ffa23c49-dbbe-42fa-b890-55d08243bb0b",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "TAG Heuer",
+      "model": "Formula 1 Solargraph 38 Stainless Steel / White / Bracelet",
+      "referenceCode": "WBY111E.BA0042",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 38,
+      "movement": "quartz",
+      "waterResistanceM": 100,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/tag-heuer/formula-1/wby111e-ba0042"
+    },
+    {
+      "id": "0810d711-5c9c-4fb2-9c91-ff4f717b0bcd",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "TAG Heuer",
+      "model": "Formula 1 Solargraph 38 Pink Polylight / Pink / Rubber",
+      "referenceCode": "WBY1165.FT8115",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 38,
+      "movement": "quartz",
+      "waterResistanceM": 100,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/tag-heuer/formula-1/wby1165-ft8115"
+    },
+    {
+      "id": "7cf0f190-6cc2-4947-a2d3-8bd989b0d0c3",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Rolex",
+      "model": "Datejust 36 Rolesor Yellow Domed / Jubilee / Brown MOP",
+      "referenceCode": "116203-0181",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 36,
+      "movement": "automatic",
+      "waterResistanceM": 100,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/rolex/datejust-36/116203-0181"
+    },
+    {
+      "id": "cba10131-1977-4d20-9d19-6f53ff4693ba",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Rolex",
+      "model": "Datejust 36 Stainless Steel - Diamond / Aubergine Roman Diamond / Jubilee",
+      "referenceCode": "126284RBR-0055",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 36,
+      "movement": "automatic",
+      "waterResistanceM": 100,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/rolex/datejust-36/126284rbr-0055"
+    },
+    {
+      "id": "494db33b-60c0-45fa-9305-76c8c2c2ccca",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tetra 27 Gold Twice Unique - Scribble",
+      "referenceCode": "418.U9",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 27.5,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tetra/418-u9"
+    },
+    {
+      "id": "b788741d-c419-4b3b-890e-9ed99978a5b6",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tetra 27 Gold Twice Unique - 1966",
+      "referenceCode": "418.U2",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 27.5,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tetra/418-u2"
+    },
+    {
+      "id": "51565217-4552-414d-b587-f4bdbfd85040",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tetra 27 Twice Unique - 1966",
+      "referenceCode": "402.U2",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 27.5,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tetra/402-u2"
+    },
+    {
+      "id": "de52de80-7bf5-4318-9041-60ddefe244b5",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Orion Neomatik 36 Urana",
+      "referenceCode": "392.U3",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 36,
+      "movement": "automatic",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/orion/392-u3"
+    },
+    {
+      "id": "d029c74f-f55e-4133-a366-c686fb3f2b65",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Orion Neomatik Gold Urana",
+      "referenceCode": "348.U3",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 36,
+      "movement": "automatic",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/orion/348-u3"
+    },
+    {
+      "id": "2d36b369-210d-440c-be31-570e46c47081",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente 33 Gold Twice Unique - Now",
+      "referenceCode": "104.U5",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 32.8,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/104-u5"
+    },
+    {
+      "id": "40103d6f-81b5-4e30-9576-5a5d819c150c",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente 33 Twice Unique - Now",
+      "referenceCode": "123.U5",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 32.8,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/123-u5"
+    },
+    {
+      "id": "c7e4745a-45d4-4276-bf30-49ea95eb0601",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente Neomatik 38 Update Gold Twice Unique - Drift",
+      "referenceCode": "195.U6",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 38,
+      "movement": "automatic",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/195-u6"
+    },
+    {
+      "id": "a9a7a066-e0ac-4ee7-a879-4673f5905dda",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente 33 Gold Twice Unique - Auric",
+      "referenceCode": "104.U4",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 32.8,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/104-u4"
+    },
+    {
+      "id": "55d8aa5e-40ed-4798-b7ab-bea47df0cd80",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente 33 Twice Unique - Auric",
+      "referenceCode": "123.U4",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 32.8,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/123-u4"
+    },
+    {
+      "id": "8981a1d9-0da3-4fb7-ab6a-f8c7ce8ac7d4",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente Neomatik 38 Update Gold Twice Unique - Scribble Dark",
+      "referenceCode": "195.U8",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 38,
+      "movement": "automatic",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/195-u8"
+    },
+    {
+      "id": "64ef4f1b-ab39-422a-b230-0328ed03c232",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente Neomatik 38 Update Twice Unique - Scribble Dark",
+      "referenceCode": "147.U8",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 38,
+      "movement": "automatic",
+      "waterResistanceM": 50,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/147-u8"
+    },
+    {
+      "id": "b4608a5a-70b9-4f69-8386-e5febcb137ca",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Tangente Neomatik 38 Update Twice Unique - Drift",
+      "referenceCode": "147.U6",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 38,
+      "movement": "automatic",
+      "waterResistanceM": 50,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/tangente/147-u6"
+    },
+    {
+      "id": "ac45d395-7881-43e3-abe6-984a1c3129da",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Ludwig Twice Unique - Rive Gauche",
+      "referenceCode": "205.U1",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 35,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/ludwig/205-u1"
+    },
+    {
+      "id": "a4a0253c-efe2-44d8-b830-668b1fd278a4",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Ludwig Gold Twice Unique - Moiré",
+      "referenceCode": "211.U7",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 35,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/ludwig/211-u7"
+    },
+    {
+      "id": "4e440ef3-7208-450f-ace0-cf7a5ab0b680",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Ludwig Gold Twice Unique - Rive Gauche",
+      "referenceCode": "211.U1",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 35,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/ludwig/211-u1"
+    },
+    {
+      "id": "f9e9a44e-373a-471f-bef6-8a2d0d58cfe1",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Nomos Glashütte",
+      "model": "Ludwig Twice Unique - Moiré",
+      "referenceCode": "205.U7",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 35,
+      "movement": "manual",
+      "waterResistanceM": 30,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/nomos-glashutte/ludwig/205-u7"
+    },
+    {
+      "id": "592d1d1b-b888-4649-8de3-4e70bf110c01",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "IWC",
+      "model": "Big Pilot’s Watch Perpetual Calendar ProSet 140 Years Mercedes-Benz",
+      "referenceCode": "IW3296-03",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 42,
+      "movement": "automatic",
+      "waterResistanceM": 100,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/iwc/big-pilot/iw3296-03"
+    },
+    {
+      "id": "468ee5f8-7f8a-4fed-b5c0-d06edc314cc7",
+      "caseId": "pending-review",
+      "tool": "quiz",
+      "request": {
+        "en": "Catalogue entry waiting for review, not a recommendation for one visitor: check that every fact on the card is right for this exact reference.",
+        "ru": "Запись каталога на проверке: верен ли каждый факт для этого референса."
+      },
+      "section": "main",
+      "brand": "Breitling",
+      "model": "SuperOcean Automatic 42 Stainless Steel / Black - Yellow / Rubber",
+      "referenceCode": "A173752A7B1S1",
+      "price": null,
+      "priceConfirmed": false,
+      "caseDiameterMm": 42,
+      "movement": "automatic",
+      "waterResistanceM": 300,
+      "verified": true,
+      "sourceUrl": "https://dials.co/watches/breitling/superocean/a173752a7b1s1"
+    }
+  ]
+}
