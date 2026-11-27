@@ -14,13 +14,70 @@ Update 2026-11-27: the owner moved the project to Supabase **Pro** with
 **Micro** compute (1 GB memory, 60 connections, pooler in transaction
 mode). Read back through the Management API that day: daily backups, 9
 kept (2026-11-20 to 2026-11-27 10:27 UTC), PITR off; disk 2 GB gp3, 41%
-used, growing by itself at 90%; network open to all addresses; **Enforce
-SSL off** (the site uses only HTTPS, every script verifies the certificate;
-switching it on is `docs/OWNER_QUESTIONS.md` #9). From the database: 463
+used, growing by itself at 90%; network open to all addresses; Enforce
+SSL off at that moment (the owner switched it on later the same day; the
+Management API reports `"database": true`). From the database: 463
 MB, cache hit 99.9% for tables and indexes, a handful of idle connections.
 Vercel's CDN served the public pages from its cache on the second request
 (`/watches`, `/watches/find`, `/partners`, `/start`, `/privacy`,
 `/embed.js`); the gated tools render per request in about 0.2 s.
+
+## Launch check, 2026-11-27 (release readiness for 2026-12-06)
+
+Evidence collected on the deployments of `10acd2e` and `2ef81a0`:
+
+- **Production monitor:** the hourly GitHub workflow "Production readiness"
+  had failed on every scheduled run since 2026-11-26 12:48 UTC:
+  `/internal/operations/health` answered 503 because six paid-check
+  reservations of $0.20 each (created 2026-11-26 11:18 and 16:35–16:42 UTC,
+  most likely by interrupted local evaluation runs; none since) were still
+  "reserved" after 15 minutes. They were settled exactly as
+  `ai_watch_validation_reserve_v5` settles them on a retry: the whole
+  reserve counts as spent ($1.20 moved from reserved to spent; the month's
+  remaining allowance is unchanged at $74.87). The route answers 200
+  "ready" again, and a manual run of the workflow passed (run
+  `46063923821`).
+- **Checks:** `scripts/verify-all.ts --production` 15 of 16 PASS; "Page
+  speed (production)" failed only because Node on the agent's machine could
+  not connect over IPv6 (curl could). Run again with
+  `--dns-result-order=ipv4first` it passed: public pages 31–50 ms from the
+  CDN in fra1 (`docs/reports/page-speed-verify-ipv4.json`). GitHub's
+  Application checks, Security checks and Search quality evaluation are
+  green on every push of the day.
+- **Errors:** Sentry: no unresolved issue in 7 days; an alert rule for
+  high-priority issues is on. Vercel: three error lines in 7 days, none
+  repeating (a Beehiiv "validating" status, fixed in `99bfc9c` five minutes
+  later; a statement timeout during the bulk catalogue writes of
+  2026-11-27 09:56 UTC; one store read timeout on 2026-11-25).
+- **Secrets and dependencies:** no key or database address in the client
+  build, `.env` is not tracked, gitleaks green; `npm audit --omit=dev`: 0
+  high or critical, 5 moderate in `glob`/`minimatch` (patterns are never
+  taken from visitors).
+- **Privacy and consent:** nothing from another site loads before consent;
+  the only cookies are the owner's admin cookie and the diagnostic unlock
+  cookie after a sign-up; Vercel Web Analytics sets none. The privacy
+  policy (updated 27 November 2026) gives an email but not the name of who
+  runs the site, which GDPR article 13(1)(a) asks for:
+  `docs/OWNER_QUESTIONS.md` #15.
+- **Search engines:** robots.txt, sitemap.xml (59 addresses) and a
+  canonical link on every public page were added (`2ef81a0`); the copy at
+  the-reverse-watch.vercel.app names thereserve.watch as canonical.
+- **Fonts and images:** Inter and Fraunces are self-hosted (SIL Open Font
+  License). Watch photographs are the makers' and shops' image addresses
+  (never stored files), an accepted risk recorded in `AGENTS.md`.
+- **Review queue:** 3 watches left for the owner (`docs/OWNER_QUESTIONS.md`
+  #14). Prices to check by hand: https://claude.ai/artifact/JmMRd9Uj9JuB2rcLBYknCE.
+- **Backups:** Supabase Pro keeps daily backups (9 on 2026-11-27, PITR
+  off). A fresh local snapshot, `2026-11-27T22-54-06-348Z` (56 tables,
+  227,676 rows, 53 foreign keys), was restored in the rehearsal: file and
+  exact row hashes match, constraints and relationships hold, and the
+  temporary restore was rolled back (`docs/reports/local-backup-rehearsal.json`).
+  A restore of the whole Supabase project (auth, storage, roles) was not
+  rehearsed.
+- **Rollback:** Vercel keeps every production deployment; `vercel rollback`
+  (or "Instant Rollback" on the deployment page) returns to the previous
+  one. Every migration since 0100 is additive (no drop, truncate or delete),
+  so the previous code runs on today's database.
 
 Latest verified application source: `91e6c1d`, READY as
 `dpl_8yGz4G2coeJM8hNv82UtnDJT4qXY`. Clean CI `40915966906` passes 716 tests
@@ -139,9 +196,10 @@ of Git, deploys and shared artifacts. Prior snapshots are retained.
 The rehearsal restores into temporary copies inside a rolled-back transaction,
 checks file hashes, exact row hashes, local constraints/indexes and relationships
 between restored application tables. It never overwrites an application table.
-The current proof is `reports/local-backup-rehearsal.json`: 55 tables, 178,700
-rows and 52 foreign keys from `2026-10-29T21-31-27-228Z`, including the daily-run
-ledger and analytics delivery IDs. Its exact original
+The current proof is `reports/local-backup-rehearsal.json`: 56 tables, 227,676
+rows and 53 foreign keys from `2026-11-27T22-54-06-348Z`, including the
+catalogue, its fact log, the daily-run ledger and analytics delivery IDs (the
+previous proof, 2026-10-29: 55 tables, 178,700 rows, 52 foreign keys). Its exact original
 columns also restore against the additive 0113 schema. This is not a complete Supabase-project restore:
 auth/storage/roles and managed backups/PITR are outside its scope. Scheduled
 off-machine backups remain deferred; a local snapshot alone is not ongoing

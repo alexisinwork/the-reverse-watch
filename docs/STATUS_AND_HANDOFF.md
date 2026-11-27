@@ -69,9 +69,11 @@ Every change reports before/after numbers for each rule.
 | Partner widgets on production, as a partner's page frames them | done 2026-11-27: 34 of 34 PASS after fixing `APP_URL` (it was `http://localhost:5173` in Vercel, so every widget's credit, the snippets on `/partners`, the API description and the archetype's share link pointed there) | `f143367`, `scripts/smoke-widgets.ts`, `docs/reports/widgets-smoke-2026-11-27.json` |
 | Vercel Web Analytics receives the short links' three plain campaign tags | done 2026-11-27; splitting by them in Vercel needs the Web Analytics Plus add-on or Enterprise (the API answers 402 on Pro); `/admin/analytics` has them for free | `9221990`, `docs/episode-links.md` |
 | Supabase Pro with Micro compute | done by the owner, verified 2026-11-27: daily backups (9, newest 10:27 UTC), PITR off, cache hit 99.9%, database 463 MB, disk 41% of 2 GB (grows by itself) | `docs/production-readiness.md` |
-| "Enforce SSL" for direct database connections | not done: after the owner's yes the agent's switch was stopped by Claude Code's safety filter (it reboots the production database); one toggle for the owner | `docs/OWNER_QUESTIONS.md` #9 |
+| "Enforce SSL" for direct database connections | done by the owner 2026-11-27 ("1 - готово"); the Management API reports `"database": true` | `docs/OWNER_QUESTIONS.md` (closed items) |
 | Exclusive Watch Selection: a "Coming soon" panel under every result screen of the site's own pages, never in a widget; a press counts as interest (`exclusive_selection`) | done 2026-11-27 | `app/components/exclusive-selection.tsx` |
-| Price of Exclusive Watch Selection | proposed: $79, $49 for the first 25 founding orders; waits for the owner | `docs/business-plan.md` ("Paid watch selection"), `docs/OWNER_QUESTIONS.md` #11 |
+| Price of Exclusive Watch Selection | approved by the owner 2026-11-27: $79, $49 for the first 25 founding orders | `docs/business-plan.md` ("Paid watch selection") |
+| Launch check (release readiness, 2026-11-27) | done; verdict in `docs/production-readiness.md` ("Launch check"): the production monitor was red since 2026-11-26 (six abandoned $0.20 reservations), settled and green again; robots.txt, sitemap.xml and canonical links added; review queue down to 3 watches for the owner; fresh backup restored in a rehearsal | `10acd2e`, `2ef81a0`, `docs/reports/verify-all-2026-11-27.json` |
+| Prices to check by hand (31: 17 shown as confirmed, 14 as approximate) | page for the owner published 2026-11-27 | https://claude.ai/artifact/JmMRd9Uj9JuB2rcLBYknCE |
 | Repair step 6: a confirmed reference weighs a point in the alternatives; review queue checked and approved (470 of 473); sourced suggestions take page-checked facts; live round and judge | done 2026-11-27: wrong share 35% → 34% (quiz 28%), film 8 of 17 answers confirmed; owner decisions recorded in `AGENTS.md` ("Owner decisions, 2026-11-27") | `662a2c7`, `c0ba5e6`, `04fa54f`, `docs/eval-baseline.md` |
 | Exclusive Watch Selection: process for the paid selection (reuse the diagnostic plus a short brief; merchant of record; research, judge, the owner's 15-minute review; delivery) | written 2026-11-27; price approved ($79, $49 for the first 25); built after the launch | `docs/exclusive-selection.md` |
 | Repair step 5: saved answers show page-checked facts; second read of 2,073 found pages (470 watches changed); price recheck of the 33 records the judge named; live round of all four tools and the judge | done 2026-11-27: wrong share 39% → 35%, every gate PASS; two defects found and fixed (film checks not saved, `235f924`; saved-research cards with old names, `9477805`) | `8fbf9bd`, `docs/eval-baseline.md` ("Repair step 5"), `docs/reports/judge-step5-2026-11-27.json` |
@@ -138,9 +140,14 @@ with the owner's approval of that amount.
   stored, so catalogue corrections and `/admin/catalogue` edits or
   rejections reach a saved answer only when it is checked again (15 of 279
   cards on 2026-11-27).
-- Supabase accepts unencrypted direct database connections ("Enforce SSL"
-  is off). The site itself uses only HTTPS, and every script verifies the
-  certificate; switching it on is `docs/OWNER_QUESTIONS.md` #9.
+- A local script that is killed while a paid check runs leaves its budget
+  reservation open; after 15 minutes the protected health check answers 503
+  and the hourly GitHub monitor fails (2026-11-26 to 2026-11-27). Settle such
+  attempts as `ai_watch_validation_reserve_v5` does (the whole reserve is
+  charged), never by deleting them (`docs/production-readiness.md`).
+- On this Windows machine Node sometimes cannot reach thereserve.watch over
+  IPv6 while curl can; run production scripts with
+  `--dns-result-order=ipv4first` when one fails with a connect timeout.
 - Film search confirms strictly: 23 of 352 test requests have a confirmed
   watch; the rest show only as possible. Paid re-checks wait for the backoff.
 - A local production build (`npm start` with `.env`) writes real analytics
@@ -156,8 +163,11 @@ share went 39% → 35% → 34% (quiz 28%), wrong prices 33 → 26, film 8 of 17
 answers with confirmed sightings (0 before the save fix); the review queue is
 approved after checks (470 of 473); every gate PASS on all four tools.
 
-1. Owner decision waiting: "confirmed" prices that a recheck cannot
-   reproduce (`docs/OWNER_QUESTIONS.md` #13).
+1. Owner actions before the launch (`docs/OWNER_QUESTIONS.md`): the three
+   watches left in the review queue (#14), the name of who runs the site
+   for the privacy policy (#15), "confirmed" prices that a recheck cannot
+   reproduce (#13), and the 31 prices on
+   https://claude.ai/artifact/JmMRd9Uj9JuB2rcLBYknCE.
 2. What the judge still finds: AI-found records without any maker's or
    shop's page (61% of their cards), invented or mixed-up references, model
    names, prices. Next: measure the sourced-suggestion fix (`04fa54f`) in the
@@ -168,6 +178,6 @@ approved after checks (470 of 473); every gate PASS on all four tools.
 4. Completion of imported watches the tools show: `scripts/visible-catalogue.ts`,
    then `scripts/repair-catalogue.ts --set database --ids-file …` (throttled
    writes, at most two writers with a pause).
-Of the owner's $100 for this work about $76.28 is spent
+Of the owner's $100 for this work about $76.64 is spent
 (`docs/evaluation-budget.md`).
 Run `scripts/verify-all.ts --production` before and after every change.

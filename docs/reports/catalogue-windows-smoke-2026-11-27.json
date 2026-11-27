@@ -1,47 +1,47 @@
 {
-  "at": "2026-11-27T19:30:49.744Z",
+  "at": "2026-11-27T20:37:03.306Z",
   "base": "https://thereserve.watch",
   "archetypeCombosWithSavedResults": 23,
   "results": [
     {
       "label": "archetype field_rationalist/first_good_watch",
       "status": 200,
-      "ms": 1211,
+      "ms": 1612,
       "brandFields": 10,
       "functionRegion": "fra1"
     },
     {
       "label": "archetype field_rationalist/considered_entry",
       "status": 200,
-      "ms": 1110,
+      "ms": 1434,
       "brandFields": 10,
       "functionRegion": "fra1"
     },
     {
       "label": "archetype field_rationalist/established_collection",
       "status": 200,
-      "ms": 1017,
+      "ms": 1288,
       "brandFields": 10,
       "functionRegion": "fra1"
     },
     {
       "label": "alternatives Tudor Black Bay 58 / USD 2,000 / no quartz",
       "status": 200,
-      "ms": 755,
+      "ms": 807,
       "brandFields": 11,
       "functionRegion": "fra1"
     },
     {
       "label": "alternatives name only: Tudor Black Bay 58",
       "status": 200,
-      "ms": 183,
+      "ms": 217,
       "brandFields": 0,
       "functionRegion": "fra1"
     },
     {
       "label": "alternatives name only: Rolex",
       "status": 200,
-      "ms": 328,
+      "ms": 398,
       "brandFields": 0,
       "functionRegion": "fra1"
     }
@@ -49,11 +49,11 @@
   "ledger": {
     "before": {
       "attempts": 1020,
-      "charged": 24.82876
+      "charged": 26.02876
     },
     "after": {
       "attempts": 1020,
-      "charged": 24.82876
+      "charged": 26.02876
     }
   },
   "addedAttempts": 0,

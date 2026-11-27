@@ -1,22 +1,22 @@
 {
-  "at": "2026-11-27T19:21:30.425Z",
+  "at": "2026-11-27T20:28:07.582Z",
   "fxDate": "2026-11-27",
   "wholePool": {
     "rows": 25013,
-    "readMs": 7325
+    "readMs": 7370
   },
   "poolIdentityKeys": {
     "keys": 25013,
-    "readMs": 202
+    "readMs": 194
   },
   "profiles": 64,
   "window": {
     "rowsMin": 8,
     "rowsMedian": 619,
     "rowsMax": 1791,
-    "readMsP50": 152,
-    "readMsP95": 280,
-    "readMsMax": 581
+    "readMsP50": 146,
+    "readMsP95": 503,
+    "readMsMax": 1655
   },
   "compared": {
     "exact": 497,
