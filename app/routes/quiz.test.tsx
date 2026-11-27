@@ -303,7 +303,9 @@ describe("version-4 diagnostic", () => {
     expect(
       screen.getByRole("img", { name: "Seiko Prospex SPB143" }),
     ).toHaveAttribute("src", "https://images.example/spb143.jpg");
-  });
+    // It types through all six screens: about four seconds alone, past the
+    // five-second default now and then in the full suite (2026-11-27).
+  }, 15_000);
 
   it("redirects unsigned visits and rejects unsigned submissions", async () => {
     const redirectResponse = await loader({
