@@ -356,6 +356,65 @@ pass that reads each watch's stored page confirmed the stored diameter for
 19 and the water resistance for 18 of the 60, with one disagreement each
 against the paid check.
 
+## Catalogue repair, steps 2 and 3 (2026-11-27)
+
+Owner: "Делай шаг 2 и шаг 3 на все часы и детально дополни существующий
+каталог ... даю добро на траты до 100 долларов начиная с нуля". Method
+and rules: `scripts/repair-catalogue.ts`, `scripts/repair-rules.ts` (held
+to the calibration cases by `scripts/repair-rules.test.ts`), the log of
+migration 0124. Numbers below are read back from the log
+(`scripts/fact-log-report.ts`, `docs/reports/fact-log-2026-11-27.json`).
+
+**Calibration** on the 60 pilot watches, five rounds against the Opus
+pilot of step 1: the final rules found the reference on 48 pages (Opus 35),
+made 13 of Opus's 16 corrections (the other three: Frederique Constant's
+diameter, which the stricter rule refuses on purpose because the page says
+"Case Length 40 mm", and two water resistances the read did not return,
+Frederique Constant's and Glycine GL0088's), found four more that the pages
+confirm (Seiko SRPL53 41.7 mm, Nodus Sector Deep 38 mm, Junkers 6050-5,
+Grand Seiko SBGX295 100 m), dropped no real reference, and cost $0.003 a
+watch instead of $0.049. Muse's own web search was dropped (2 verified
+pages in 26 tries; it also called two real references missing).
+
+**All 3,590 AI-found watches** (run `repair-1`, $19.94): the maker's page or
+a shop's for the exact reference was found and opened by our server for
+2,074 (58%). Per fact, from those pages:
+
+| Fact | Confirmed | Corrected | Filled |
+| --- | ---: | ---: | ---: |
+| Case diameter | 860 | 293 | 28 |
+| Water resistance | 1,205 | 193 | 115 |
+| Movement | 1,639 | 95 | 29 |
+| Case thickness | 260 | 133 | 162 |
+| Case material | 1,498 | 119 | 108 |
+| Strap or bracelet | 900 | 296 | 117 |
+| Crystal | 1,244 | 37 | 106 |
+| Case back | 148 | 115 | 81 |
+| In-house calibre | 321 | 30 | 24 |
+| Model name | 1,041 | 67 | |
+
+1,096 watches changed, 2,390 values in all. 67 references belong to
+another watch (the page names it with none of the stored words and differs
+in a hard fact): they took the page's name and facts, and their prices are
+parked until checked again (64 prices). 72 references were newly confirmed
+on a maker's or listed authorised retailer's page; 9 lost the mark (stored
+page gone, no page named by two Perplexity queries gives them), so they
+show only under "Also worth a look". 90 records moved from a forum or a
+dead page to the maker's page. A sampled review found and fixed, before
+writing, an auction lot and a pre-owned dealer passing as shops and names
+that differ only in writing ("SKYDWELLER") counted as another watch.
+
+**Styles for database-imported watches** (run `styles-1`, $0.29): 15,458 of
+15,724 got wearing styles from their own facts; 266 got none, because their
+facts do not tell. A sample read by hand: Rolex Day-Date dress and
+everyday, Daytona sport, Tudor Black Bay dive, sport and everyday, Patek
+Calatrava dress. The 66 renamed AI-found watches were classified again.
+
+**Live site:** thousands of quick writes made searches ten times slower
+while they ran (archetype 12–19 s instead of 1–4 s); one writer with a
+pause keeps them near normal. Every write run is now throttled, and speed
+was measured again after each (`scripts/smoke-catalogue-windows.ts`).
+
 ## Known gaps the scores point to
 
 - Facts: about half of the quiz, archetype and alternatives cards that show

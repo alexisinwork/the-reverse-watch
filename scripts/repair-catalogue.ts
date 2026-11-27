@@ -46,6 +46,7 @@ import {
 } from "node:fs";
 import { resolve } from "node:path";
 
+import postgres from "postgres";
 import { z } from "zod";
 
 import { loadAiWatchFinderConfig } from "../app/domain/ai-providers.server";
@@ -64,8 +65,10 @@ import type { CatalogueWatch } from "../app/domain/watch-catalogue";
 import {
   catalogueClient,
   listCatalogue,
+  loadCatalogueRowsById,
   rpc,
 } from "../app/domain/watch-catalogue.server";
+import { databaseTls } from "./database-tls";
 import {
   anotherWatch,
   checkField,
@@ -603,7 +606,7 @@ function factsOf(watch: CatalogueWatch, rawResult: Result) {
       model: muse?.fastModel ?? null,
     });
   }
-  if (result.imageUrl)
+  if (result.imageUrl?.startsWith("https://"))
     facts.push({
       field: "imageUrl",
       status: "filled",
@@ -713,7 +716,22 @@ if (existsSync(journalPath))
   }
 spent = [...journal.values()].reduce((sum, entry) => sum + entry.costUsd, 0);
 
-const catalogue = await listCatalogue(client);
+// Writing needs only the journal's watches, read by id; checking reads the
+// whole catalogue, with up to three tries (a busy database can take longer
+// than the listing's 45 seconds).
+async function wholeCatalogue() {
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      return await listCatalogue(client!);
+    } catch (error) {
+      if (attempt >= 3) throw error;
+      await new Promise((done) => setTimeout(done, 10_000));
+    }
+  }
+}
+const catalogue = applyOnly
+  ? await loadCatalogueRowsById(client, [...journal.keys()])
+  : await wholeCatalogue();
 const byId = new Map(catalogue.map((watch) => [watch.id, watch]));
 // --set ai (default): watches an AI search added. --set database: watches
 // imported from watch databases, priced within the catalogue's range, that
@@ -737,18 +755,44 @@ const selected = catalogue
   .sort((a, b) => a.id.localeCompare(b.id));
 
 if (applyOnly) {
+  // Watches this run already wrote, read from the database's own log, so a
+  // stopped or failed write run never writes a watch twice.
+  const done = new Set<string>();
+  const databaseUrl = process.env.DIRECT_DATABASE_URL?.trim();
+  if (!databaseUrl)
+    throw new Error("DIRECT_DATABASE_URL is required to resume writing.");
+  const sql = postgres(databaseUrl, {
+    max: 1,
+    ssl: databaseTls(),
+    connect_timeout: 15,
+    onnotice: () => undefined,
+  });
+  try {
+    for (const row of await sql<{ watch_id: string }[]>`
+      select distinct watch_id from private.watch_catalogue_fact_log where run = ${run}`)
+      done.add(row.watch_id);
+  } finally {
+    await sql.end();
+  }
   let written = 0;
+  let failed = 0;
   for (const entry of journal.values()) {
     const watch = byId.get(entry.id);
-    if (!watch || entry.applied !== undefined) continue;
-    entry.applied = await write(watch, entry);
-    written += entry.applied;
+    if (!watch || typeof entry.applied === "number" || done.has(entry.id))
+      continue;
+    try {
+      entry.applied = await write(watch, entry);
+      written += entry.applied;
+    } catch (error) {
+      entry.applied = null;
+      entry.error = `apply: ${(error as Error).message.slice(0, 180)}`;
+      failed += 1;
+    }
+    appendFileSync(journalPath, `${JSON.stringify(entry)}\n`);
   }
-  writeFileSync(
-    journalPath,
-    `${[...journal.values()].map((entry) => JSON.stringify(entry)).join("\n")}\n`,
+  console.log(
+    `Applied the journal: ${written} columns changed; ${done.size} watches were already written; ${failed} writes failed.`,
   );
-  console.log(`Applied the journal: ${written} columns changed.`);
   process.exit(0);
 }
 

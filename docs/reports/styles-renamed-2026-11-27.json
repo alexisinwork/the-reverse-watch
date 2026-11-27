@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-27T10:02:57.475Z",
+  "run": "styles-renamed",
+  "rule": "styles-v1",
+  "model": "muse-spark-1.2-contributor",
+  "applied": true,
+  "spendUsd": 0.0016,
+  "stopReason": null,
+  "watches": 66,
+  "withStyles": 65,
+  "withoutStyles": 1,
+  "errors": 0,
+  "styles": {
+    "dive": 20,
+    "everyday": 32,
+    "dress": 16,
+    "travel": 19,
+    "sport": 25,
+    "field": 2
+  },
+  "stylesPerWatch": 1.75
+}

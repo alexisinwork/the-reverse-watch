@@ -41,6 +41,9 @@ export function registrableDomain(host: string) {
 
 export function pageKind(url: string, brand: string) {
   const host = sourceHost(url);
+  // Makers and shops serve their pages over https; one that does not
+  // gives no fact (and the fact log accepts https addresses only).
+  if (!url.startsWith("https://")) return null;
   if (!host || !isRetailSource(url) || EDITORIAL.test(host)) return null;
   const site = fold(registrableDomain(host));
   const keys = new Set<string>();

@@ -305,3 +305,9 @@ describe("another watch behind the reference", () => {
     ).toBe(false);
   });
 });
+
+describe("pages over plain http", () => {
+  it("give no fact", () => {
+    expect(pageKind("http://shop.example/omega-2990", "Omega")).toBeNull();
+  });
+});

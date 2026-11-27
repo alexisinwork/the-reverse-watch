@@ -61,7 +61,9 @@ Every change reports before/after numbers for each rule.
 | A judge (`scripts/judge-cards.ts`) calibrated on the owner's 203 ratings with two model families | done: film cards agree 90%; both judges name the same wrong fact on 69 cards the owner rated positively (50 alternatives, 17 quiz, 2 film); 6 of 6 checked on makers' pages were real errors | `cd75a20`, `docs/reports/judge-{opus,hydrogen}-2026-11-26.json` |
 | The judge on the 80 archetype cards (facts; the owner checked their choice by hand) | done: 34 of 78 wrong (44%), 76 of 78 AI-found watches | `docs/reports/judge-archetype-2026-11-26.json` |
 | Read-only evaluation sign-in (migration 0123) and CI job | done and applied; the same evaluation over it matched the usual one exactly; waits for the owner's one command (`docs/OWNER_QUESTIONS.md` #6) | `596b029`, `.github/workflows/eval.yml` |
-| Catalogue repair, step 1: pilot on 60 AI-found watches, nothing written | done: 12 watches with verified corrections, none on the 19 the judges found clean, 9 references look invented; step 2 waits for the owner (#7) | `docs/reports/fact-check-pilot-2026-11-26.json` |
+| Catalogue repair, step 1: pilot on 60 AI-found watches, nothing written | done | `docs/reports/fact-check-pilot-2026-11-26.json` |
+| Catalogue repair, steps 2 and 3: all 3,590 AI-found watches against makers' and shops' pages (migration 0124 log, revertible per run) | done 2026-11-27, written: 1,096 watches changed, 67 references belong to another watch (prices parked), 72 newly confirmed, 9 marks dropped; $19.94 | `docs/eval-baseline.md`, `docs/reports/fact-log-2026-11-27.json` |
+| Styles for database-imported watches | 15,458 of 15,724 classified ($0.29); writing was still running at the end of the session (throttled, run `styles-1`) | `docs/reports/styles-1-2026-11-27.json` |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
 | Phase 5 security checks (gitleaks, Semgrep, npm audit), Dependabot | done, green on `3031e0d` | `.github/workflows/security.yml`, `docs/production-readiness.md` |
@@ -136,12 +138,9 @@ with the owner's approval of that amount.
 
 ## Next step
 
-Catalogue repair step 2 after the owner's go-ahead (`docs/OWNER_QUESTIONS.md`
-#7): write the pilot's verified corrections with their page and passage,
-take the "reference confirmed" mark off references no page shows, make
-`inspectSourcePage` require the reference in the page's text, then judge the
-same cards again (about $2 of the $60) and run the free evaluation. Then a
-budget for step 3. Meanwhile the owner's items: the one command for the
-read-only evaluation (#6), Supabase Pro next week (#2), Meta's alert (#3),
-the film set review (#4).
+1. Check that run `styles-1` finished (`scripts/fact-log-report.ts --runs styles-1`; rerun `scripts/classify-catalogue-styles.ts --run styles-1 --apply-only --writers 1 --pause-ms 250` if not), then measure speed (`scripts/smoke-catalogue-windows.ts`).
+2. Judge the same cards with today's facts: `scripts/refresh-sheet-facts.ts --sheet docs/reports/rating-sheet-2026-11-26.json`, then `scripts/judge-cards.ts` on it (about $7), and a fresh live round plus judge (about $15).
+3. Completion of imported watches the tools show: `scripts/visible-catalogue.ts`, then `scripts/repair-catalogue.ts --set database --ids-file …` (throttled writes).
+4. `npm run check`, `scripts/run-evals.ts`, `scripts/verify-all.ts --production`, docs and report.
+Of the owner's $100 for this work about $23 is spent (calibration $2.6, repair $19.94, styles $0.29).
 Run `scripts/verify-all.ts --production` before and after every change.
