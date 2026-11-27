@@ -47,6 +47,7 @@ Every change reports before/after numbers for each rule.
 | Phase 0 episode short links | done, verified on production | `4be1572`, `docs/episode-links.md` |
 | Phase 0 public portfolio demo | partner created and portfolio pushed (2026-11-26); the owner then asked to ignore this test partner, so its Lovable publish is not tracked | `personal-website` `9c99572`, `docs/decisions/DECISION_REGISTER.md` |
 | Episode links open the tool each video names; campaign tags survive the sign-up gate | done, verified on production | `9e37eac`, `docs/episode-links.md` |
+| Profile page `/start` for Instagram and TikTok (`/ig`, `/tt` lead there): latest episode first, episodes appear at their release time, five-minute CDN copy | done 2026-11-27 | `docs/social-landing.md` |
 | Vercel Pro; Web Analytics | done (owner), verified | `vercel teams ls`: plan `pro` |
 | Paid re-checks back off after failures (migration 0121) | done, applied to production | `216b9b5`, `scripts/test-validation-backoff.ts` |
 | Independent film label set, scored without paid calls | done; its review page is published (2026-11-26) and awaits the owner's marks | `e568a71`, `71d039c`, https://claude.ai/artifact/4Br4SRgzRsFAGkN7vLEd5b |

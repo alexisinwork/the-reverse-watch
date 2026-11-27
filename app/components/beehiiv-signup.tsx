@@ -4,7 +4,14 @@ import { useFetcher } from "react-router";
 export type NewsletterActionResult =
   { ok: true; message: string } | { ok: false; message: string };
 
-export function BeehiivSignup({ onSubscribed }: { onSubscribed?: () => void }) {
+export function BeehiivSignup({
+  onSubscribed,
+  action,
+}: {
+  onSubscribed?: () => void;
+  /** Another page's sign-up: "/?index" posts to the home page's action. */
+  action?: string;
+}) {
   const fetcher = useFetcher<NewsletterActionResult>();
   const formRef = useRef<HTMLFormElement>(null);
   // A returning subscriber only needs their address checked against the list.
@@ -29,7 +36,12 @@ export function BeehiivSignup({ onSubscribed }: { onSubscribed?: () => void }) {
         Receive new investigations and field notes from The Reserve, and unlock
         the full reference diagnostic.
       </p>
-      <fetcher.Form className="signup-form" method="post" ref={formRef}>
+      <fetcher.Form
+        action={action}
+        className="signup-form"
+        method="post"
+        ref={formRef}
+      >
         <input
           name="intent"
           type="hidden"

@@ -18,6 +18,9 @@ export default [
   route("ys/:episode", "routes/social-link.ts", { id: "social-link-ys" }),
   route("tt/:episode?", "routes/social-link.ts", { id: "social-link-tt" }),
   route("ig/:episode?", "routes/social-link.ts", { id: "social-link-ig" }),
+  // The page /ig and /tt lead to: the latest episode first, then every
+  // episode out so far (docs/social-landing.md).
+  route("start", "routes/start.tsx"),
   route("internal/operations/health", "routes/internal-operations-health.ts"),
   route("privacy", "routes/privacy.tsx"),
   route("partners", "routes/partners.tsx"),

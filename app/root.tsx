@@ -64,10 +64,12 @@ export default function App() {
     <>
       <Outlet />
       <InteractionAnalytics />
-      {/* On every visitor page; the admin pages are for the owner only, and
-          partner widgets carry only the partner's chosen feature. */}
+      {/* On every visitor page; the admin pages are for the owner only,
+          partner widgets carry only the partner's chosen feature, and
+          /start already leads with the channel and its own footer. */}
       {pathname.startsWith("/admin") ||
-      pathname.startsWith("/embed/") ? null : (
+      pathname.startsWith("/embed/") ||
+      pathname === "/start" ? null : (
         <YouTubeCallout />
       )}
     </>

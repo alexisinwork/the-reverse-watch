@@ -55,13 +55,14 @@ describe("platform short links", () => {
   });
 
   it("gives each profile its own bio link", () => {
-    for (const [path, source] of [
-      ["/yt", "youtube"],
-      ["/tt", "tiktok"],
-      ["/ig", "instagram"],
+    // TikTok and Instagram open the profile page (docs/social-landing.md).
+    for (const [path, source, page] of [
+      ["/yt", "youtube", "/"],
+      ["/tt", "tiktok", "/start"],
+      ["/ig", "instagram", "/start"],
     ] as const)
       expect(tags(run(path))).toEqual({
-        path: "/",
+        path: page,
         source,
         medium: "social",
         campaign: "bio",

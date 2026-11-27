@@ -14,7 +14,7 @@ import { writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
 const BUDGET_BYTES = 150 * 1024;
-const PAGES = ["/", "/watches/archetype", "/quiz", "/watches/find"];
+const PAGES = ["/", "/start", "/watches/archetype", "/quiz", "/watches/find"];
 
 const argument = (name: string) => {
   const index = process.argv.indexOf(name);

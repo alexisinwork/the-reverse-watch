@@ -1,0 +1,233 @@
+/* /start: the page the Instagram and TikTok profiles link to. Built for a
+   phone first: the latest episode's cover, title and "Watch on YouTube"
+   button fit the first screen of a 375-pixel-wide phone. The sign-up, the
+   quiz card and the footer reuse home.css. */
+
+.start-shell {
+  justify-content: flex-start;
+  padding-top: 1.25rem;
+}
+
+.start {
+  display: flex;
+  width: 100%;
+  max-width: 36rem;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0 auto 2.5rem;
+}
+
+.start-header {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.start-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.start-brand .gauge-mark {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.start h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.start-manifesto {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.start-latest {
+  overflow: hidden;
+  border: 1px solid rgb(200 137 47 / 55%);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(145deg, rgb(200 137 47 / 14%), transparent 62%),
+    var(--color-base-raised);
+  box-shadow: var(--shadow-card);
+}
+
+.start-latest__cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  background: var(--color-surface);
+}
+
+/* The smaller YouTube cover is 4:3 with black bands; covering the 16:9
+   frame crops exactly those bands. */
+.start-latest__cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* A play mark: drawn in CSS, so it costs no download. */
+.start-latest__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: rgb(7 8 10 / 72%);
+  box-shadow: 0 0 0 1px rgb(239 238 233 / 35%);
+  transform: translate(-50%, -50%);
+}
+
+.start-latest__play::after {
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  border-width: 0.6rem 0 0.6rem 1rem;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--color-ink);
+  content: "";
+  transform: translate(-50%, -50%);
+}
+
+.start-latest__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1rem 1.1rem 1.15rem;
+}
+
+.start-kicker,
+.start-section-label {
+  color: var(--color-brass);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.start-latest h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.start-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.4rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    180deg,
+    var(--color-brass-bright),
+    var(--color-brass)
+  );
+  color: #120c04;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.start-button:hover {
+  background: var(--color-brass-bright);
+}
+
+.start-button:focus-visible,
+.start-list a:focus-visible,
+.start-channel:focus-visible {
+  outline: 2px solid var(--color-brass-bright);
+  outline-offset: 3px;
+}
+
+.start-section-label {
+  margin: 0 0 0.6rem;
+  font-family: inherit;
+}
+
+.start-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-line-strong);
+  list-style: none;
+}
+
+.start-list li {
+  border-bottom: 1px solid var(--color-line-strong);
+}
+
+.start-list a {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.85rem 0.1rem;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.start-list a:hover .start-list__title {
+  color: var(--color-brass-bright);
+}
+
+.start-list__number {
+  color: var(--color-steel-text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.start-list__title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+
+.start-channel {
+  display: inline-block;
+  margin-top: 0.85rem;
+  color: var(--color-brass-bright);
+  font-size: 0.875rem;
+  text-underline-offset: 0.25rem;
+}
+
+/* The home page's quiz card, without its tall minimum height. */
+.start-quiz.landing-action {
+  min-height: 0;
+}
+
+.start .signup {
+  margin-top: 0;
+}
+
+.start-shell .site-footer {
+  max-width: 36rem;
+}
+
+.start-shell .site-footer a {
+  color: var(--color-ink-soft);
+  text-underline-offset: 0.25rem;
+}
+
+@media (max-width: 31.25rem) {
+  .start-shell {
+    padding-inline: 1rem;
+  }
+}

@@ -20,8 +20,9 @@ also shows `utm_medium`.
 
 A clip of episode N opens the same tool as `/e/N` (the table below). The
 bio links open the pages set under `profiles` in
-`app/data/episode-links.json` (the home page until the `/start` landing
-page for profiles is live). The tags for bio links follow the channel's
+`app/data/episode-links.json`: `/tt` and `/ig` open `/start`, the profile
+page that leads with the latest episode (`docs/social-landing.md`); `/yt`
+opens the home page. The tags for bio links follow the channel's
 decision of 2026-11-27 (`analysis/SITE_SOCIAL_LANDING.md` in the channel
 folder).
 
