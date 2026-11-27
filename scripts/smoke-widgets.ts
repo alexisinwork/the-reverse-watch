@@ -132,6 +132,26 @@ for (const tool of ["quiz", "find", "alternatives", "archetype", "stories"]) {
   );
 }
 
+// A finished result inside a widget: the site's own result screens announce
+// the paid Exclusive Watch Selection, a partner's widget never does. (One
+// archetype result counts one use against the site's allowance.)
+const result = await framed(
+  "archetype?socialSignal=anti_luxury&aestheticDna=structural_tool&deploymentEnvironment=field_water_abuse&priceComfort=considered_entry",
+);
+const resultHtml = await result.text();
+check(
+  "archetype result in a frame: no Exclusive Watch Selection panel",
+  result.status === 200 &&
+    /Field Rationalist/.test(resultHtml) &&
+    !/exclusive-panel|Exclusive Watch Selection/.test(resultHtml),
+  `HTTP ${result.status}`,
+);
+check(
+  "archetype result in a frame: no link leaves the frame but the credit",
+  leaving(resultHtml).length === 0,
+  leaving(resultHtml).slice(0, 3).join(" "),
+);
+
 // Opened in a tab, a widget sends the visitor to The Reserve's own page.
 const tab = await fetch(`${origin}/embed/${site.publicKey}/quiz`, {
   redirect: "manual",

@@ -32,7 +32,11 @@ const evidenceSchema = z.object({
   provider: z.enum(["perplexity", "muse"]),
   sourceUrl: z.string().url(),
   checkedAt: z.string().datetime({ offset: true }),
-  citedUrls: z.array(z.string().url()).max(5).optional(),
+  // Film discovery keeps up to eight cited pages per finding
+  // (validation-provider-response.server.ts); with a limit of five, a paid
+  // film check could not be saved, so the next search paid again
+  // (2026-11-27: four times in one evaluation round).
+  citedUrls: z.array(z.string().url()).max(8).optional(),
   sourceQuote: z.string().max(280).optional(),
   person: z.string().max(160).nullable().optional(),
   work: z.string().max(200).nullable().optional(),

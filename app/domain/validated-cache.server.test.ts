@@ -101,6 +101,44 @@ describe("validated cache snapshots", () => {
     expect(db.fetchImpl).toHaveBeenCalledTimes(1);
   });
 
+  it("saves a film check whose discovery cited eight pages", async () => {
+    const db = client(true);
+    const cited = Array.from(
+      { length: 8 },
+      (_, index) => `https://article${index}.example/watch`,
+    );
+    const [first, second] = watch.details.validationEvidence!;
+    const discovered = {
+      ...watch,
+      details: {
+        ...watch.details,
+        validationEvidence: [{ ...first!, citedUrls: cited }, second!],
+      },
+    };
+    expect(
+      await publishValidatedSnapshot(db.value, attempt, [discovered], [0.01]),
+    ).toBe(true);
+    await expect(
+      publishValidatedSnapshot(
+        db.value,
+        attempt,
+        [
+          {
+            ...discovered,
+            details: {
+              ...discovered.details,
+              validationEvidence: [
+                { ...first!, citedUrls: [...cited, "https://ninth.example/"] },
+                second!,
+              ],
+            },
+          },
+        ],
+        [0.01],
+      ),
+    ).rejects.toThrow();
+  });
+
   it("refuses to publish an output without both source records", async () => {
     const db = client(true);
     await expect(
