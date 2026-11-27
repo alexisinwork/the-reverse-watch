@@ -161,3 +161,22 @@ fixed, and for proof that every tool answers well ("лучше потратит�
 Unused: about $22.38. The judge costs about $0.033 a card with web search;
 the repair pilot about $0.049 a watch. Results: `docs/eval-baseline.md`,
 "The judge and the catalogue's facts".
+
+## Catalogue repair and its checks (2026-11-27, the owner's $100)
+
+The owner: "Делай шаг 2 и шаг 3 на все часы и детально дополни существующий
+каталог ... даю добро на траты до 100 долларов начиная с нуля". Spend from
+each run's own report:
+
+| Run | Spend |
+| --- | ---: |
+| Calibration of the repair against the Opus pilot, five rounds | $2.60 |
+| Repair steps 2 and 3, all 3,590 AI-found watches (`repair-1`) | $19.94 |
+| Wearing styles for database imports, probe and two runs | $0.30 |
+| Fresh live round through the visitors' search functions | $3.15 |
+| Judge on the owner's 203 cards with today's facts | $8.47 |
+| Judge on the fresh round's 279 cards | $10.03 |
+| **Total of the $100** | **about $44.50** |
+
+Unused: about $55.50. Results: `docs/eval-baseline.md`, "Catalogue repair,
+steps 2 and 3" and "The judge after the repair".

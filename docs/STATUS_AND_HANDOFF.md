@@ -64,7 +64,11 @@ Every change reports before/after numbers for each rule.
 | Read-only evaluation sign-in (migration 0123) and CI job | done and applied; the same evaluation over it matched the usual one exactly; waits for the owner's one command (`docs/OWNER_QUESTIONS.md` #6) | `596b029`, `.github/workflows/eval.yml` |
 | Catalogue repair, step 1: pilot on 60 AI-found watches, nothing written | done | `docs/reports/fact-check-pilot-2026-11-26.json` |
 | Catalogue repair, steps 2 and 3: all 3,590 AI-found watches against makers' and shops' pages (migration 0124 log, revertible per run) | done 2026-11-27, written: 1,096 watches changed, 67 references belong to another watch (prices parked), 72 newly confirmed, 9 marks dropped; $19.94 | `docs/eval-baseline.md`, `docs/reports/fact-log-2026-11-27.json` |
-| Styles for database-imported watches | 15,458 of 15,724 classified ($0.29); writing was still running at the end of the session (throttled, run `styles-1`) | `docs/reports/styles-1-2026-11-27.json` |
+| Styles for database-imported watches | done: 15,458 of 15,724 classified ($0.29) and written (run `styles-1`, throttled) | `docs/reports/styles-1-2026-11-27.json` |
+| The judge after the repair: the owner's 203 cards with today's facts, and a fresh live round (all gates PASS) | done 2026-11-27: the 203 cards 95 → 88 wrong; the fresh round 110 of 279 wrong (39%; database imports 17%); 15 cards showed facts the repair had already corrected, from saved answers | `docs/eval-baseline.md` ("The judge after the repair") |
+| Partner widgets on production, as a partner's page frames them | done 2026-11-27: 34 of 34 PASS after fixing `APP_URL` (it was `http://localhost:5173` in Vercel, so every widget's credit, the snippets on `/partners`, the API description and the archetype's share link pointed there) | `f143367`, `scripts/smoke-widgets.ts`, `docs/reports/widgets-smoke-2026-11-27.json` |
+| Vercel Web Analytics receives the short links' three plain campaign tags | done 2026-11-27; splitting by them in Vercel needs the Web Analytics Plus add-on or Enterprise (the API answers 402 on Pro); `/admin/analytics` has them for free | `9221990`, `docs/episode-links.md` |
+| Supabase Pro with Micro compute | done by the owner, verified 2026-11-27: daily backups (9, newest 10:27 UTC), PITR off, cache hit 99.9%, database 463 MB, disk 41% of 2 GB (grows by itself) | `docs/production-readiness.md` |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
 | Phase 5 security checks (gitleaks, Semgrep, npm audit), Dependabot | done, green on `3031e0d` | `.github/workflows/security.yml`, `docs/production-readiness.md` |
@@ -118,30 +122,39 @@ with the owner's approval of that amount.
   enters API keys or tokens.
 - The first request to a new function instance takes 8–10 s (function start
   plus cold database buffers); not yet investigated.
-- **Wrong facts on AI-found watches.** The 3,590 watches an AI search added
-  to the catalogue (14% of it) fill most quiz and alternatives places, and
-  56% of the cards that showed them carry a wrong fact both judges name (6
-  of 6 checked on makers' pages were real); cards of database-imported
-  watches: 13%. The free evaluation's "0 hard-rule violations" is measured
-  against stored facts, so it cannot see this. Repair: `docs/OWNER_QUESTIONS.md`
-  #7 (step 1 done).
-- A page whose address merely contains a reference still counts as proof
-  in the live reference check (`inspectSourcePage`); the pilot found invented
-  references whose stored pages are gone. Repair step 2 closes this.
+- **Wrong facts on AI-found watches, after the repair.** On the fresh
+  round of 2026-11-27, 39% of the cards carry a fact the judge calls wrong
+  (AI-found watches with a page 41%, without one 62%, database imports 17%).
+  Most are facts no maker's page confirmed, then model names and prices. The
+  free evaluation's "0 hard-rule violations" is measured against stored
+  facts, so it cannot see this. Next step: `docs/OWNER_QUESTIONS.md` #7.
+- **Saved answers keep old facts.** Validated snapshots are served as
+  stored, so catalogue corrections and `/admin/catalogue` edits or
+  rejections reach a saved answer only when it is checked again (15 of 279
+  cards on 2026-11-27).
+- Supabase accepts unencrypted direct database connections ("Enforce SSL"
+  is off). The site itself uses only HTTPS, and every script verifies the
+  certificate; switching it on is `docs/OWNER_QUESTIONS.md` #9.
 - Film search confirms strictly: 23 of 352 test requests have a confirmed
   watch; the rest show only as possible. Paid re-checks wait for the backoff.
-- The database has no backups (zero available, PITR off): Supabase backs up
-  only Pro, Team and Enterprise projects. The owner plans Pro for next week
-  (`docs/OWNER_QUESTIONS.md` #2).
 - A local production build (`npm start` with `.env`) writes real analytics
   rows; one test page view from 2026-11-26 (row 692, country empty) is in the
   analytics table.
 
 ## Next step
 
-1. Check that run `styles-1` finished (`scripts/fact-log-report.ts --runs styles-1`; rerun `scripts/classify-catalogue-styles.ts --run styles-1 --apply-only --writers 1 --pause-ms 250` if not), then measure speed (`scripts/smoke-catalogue-windows.ts`).
-2. Judge the same cards with today's facts: `scripts/refresh-sheet-facts.ts --sheet docs/reports/rating-sheet-2026-11-26.json`, then `scripts/judge-cards.ts` on it (about $7), and a fresh live round plus judge (about $15).
-3. Completion of imported watches the tools show: `scripts/visible-catalogue.ts`, then `scripts/repair-catalogue.ts --set database --ids-file …` (throttled writes).
-4. `npm run check`, `scripts/run-evals.ts`, `scripts/verify-all.ts --production`, docs and report.
-Of the owner's $100 for this work about $23 is spent (calibration $2.6, repair $19.94, styles $0.29).
+Launch is planned for 2026-12-06; paid watch selection comes after it.
+Verified 2026-11-27 on the deployment of `9221990`: `scripts/verify-all.ts
+--production` 16 of 16 PASS (`docs/reports/verify-all-2026-11-27.json`),
+`scripts/smoke-widgets.ts` 34 of 34 PASS.
+
+1. Repair step 5, once the owner says yes (`docs/OWNER_QUESTIONS.md` #7):
+   saved answers show today's catalogue facts; a second read of the makers'
+   pages for unconfirmed facts and model names; then a fresh live round and
+   the judge, compared with "The judge after the repair".
+2. Completion of imported watches the tools show: `scripts/visible-catalogue.ts`,
+   then `scripts/repair-catalogue.ts --set database --ids-file …` (throttled
+   writes, at most two writers with a pause).
+Of the owner's $100 for this work $44.50 is spent (calibration $2.60, repair
+$19.94, styles $0.30, live round $3.15, judge $8.47 and $10.03).
 Run `scripts/verify-all.ts --production` before and after every change.

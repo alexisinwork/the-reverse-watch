@@ -1,0 +1,187 @@
+{
+  "at": "2026-11-27T13:53:14.987Z",
+  "fxDate": "2026-11-26",
+  "wholePool": {
+    "rows": 25013,
+    "readMs": 6749
+  },
+  "combinations": 24,
+  "supplementsCompared": 344,
+  "window": {
+    "rowsMax": 5317,
+    "readMsP50": 390,
+    "readMsMax": 662
+  },
+  "results": [
+    {
+      "archetype": "field_rationalist",
+      "band": "first_good_watch",
+      "windowRows": 1932,
+      "windowMs": 451,
+      "supplements": 20
+    },
+    {
+      "archetype": "field_rationalist",
+      "band": "considered_entry",
+      "windowRows": 3744,
+      "windowMs": 567,
+      "supplements": 20
+    },
+    {
+      "archetype": "field_rationalist",
+      "band": "established_collection",
+      "windowRows": 3095,
+      "windowMs": 458,
+      "supplements": 20
+    },
+    {
+      "archetype": "field_rationalist",
+      "band": "exceptional_object",
+      "windowRows": 4791,
+      "windowMs": 659,
+      "supplements": 20
+    },
+    {
+      "archetype": "quiet_custodian",
+      "band": "first_good_watch",
+      "windowRows": 2210,
+      "windowMs": 369,
+      "supplements": 20
+    },
+    {
+      "archetype": "quiet_custodian",
+      "band": "considered_entry",
+      "windowRows": 3286,
+      "windowMs": 489,
+      "supplements": 20
+    },
+    {
+      "archetype": "quiet_custodian",
+      "band": "established_collection",
+      "windowRows": 2575,
+      "windowMs": 413,
+      "supplements": 20
+    },
+    {
+      "archetype": "quiet_custodian",
+      "band": "exceptional_object",
+      "windowRows": 5317,
+      "windowMs": 662,
+      "supplements": 20
+    },
+    {
+      "archetype": "architectural_modernist",
+      "band": "first_good_watch",
+      "windowRows": 3,
+      "windowMs": 165,
+      "supplements": 3
+    },
+    {
+      "archetype": "architectural_modernist",
+      "band": "considered_entry",
+      "windowRows": 10,
+      "windowMs": 158,
+      "supplements": 9
+    },
+    {
+      "archetype": "architectural_modernist",
+      "band": "established_collection",
+      "windowRows": 38,
+      "windowMs": 133,
+      "supplements": 20
+    },
+    {
+      "archetype": "architectural_modernist",
+      "band": "exceptional_object",
+      "windowRows": 29,
+      "windowMs": 112,
+      "supplements": 20
+    },
+    {
+      "archetype": "expressive_collector",
+      "band": "first_good_watch",
+      "windowRows": 3,
+      "windowMs": 189,
+      "supplements": 3
+    },
+    {
+      "archetype": "expressive_collector",
+      "band": "considered_entry",
+      "windowRows": 10,
+      "windowMs": 152,
+      "supplements": 9
+    },
+    {
+      "archetype": "expressive_collector",
+      "band": "established_collection",
+      "windowRows": 38,
+      "windowMs": 133,
+      "supplements": 20
+    },
+    {
+      "archetype": "expressive_collector",
+      "band": "exceptional_object",
+      "windowRows": 29,
+      "windowMs": 102,
+      "supplements": 20
+    },
+    {
+      "archetype": "mechanical_connoisseur",
+      "band": "first_good_watch",
+      "windowRows": 1034,
+      "windowMs": 283,
+      "supplements": 20
+    },
+    {
+      "archetype": "mechanical_connoisseur",
+      "band": "considered_entry",
+      "windowRows": 2273,
+      "windowMs": 436,
+      "supplements": 20
+    },
+    {
+      "archetype": "mechanical_connoisseur",
+      "band": "established_collection",
+      "windowRows": 2013,
+      "windowMs": 390,
+      "supplements": 20
+    },
+    {
+      "archetype": "mechanical_connoisseur",
+      "band": "exceptional_object",
+      "windowRows": 4090,
+      "windowMs": 520,
+      "supplements": 20
+    },
+    {
+      "archetype": "recognised_standard_bearer",
+      "band": "first_good_watch",
+      "windowRows": 0,
+      "windowMs": 0,
+      "supplements": 0
+    },
+    {
+      "archetype": "recognised_standard_bearer",
+      "band": "considered_entry",
+      "windowRows": 0,
+      "windowMs": 0,
+      "supplements": 0
+    },
+    {
+      "archetype": "recognised_standard_bearer",
+      "band": "established_collection",
+      "windowRows": 0,
+      "windowMs": 0,
+      "supplements": 0
+    },
+    {
+      "archetype": "recognised_standard_bearer",
+      "band": "exceptional_object",
+      "windowRows": 0,
+      "windowMs": 0,
+      "supplements": 0
+    }
+  ],
+  "differences": [],
+  "result": "PASS"
+}

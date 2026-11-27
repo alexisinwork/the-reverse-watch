@@ -5,8 +5,18 @@
 "Нужно нам чётко создать ссылки под youtube/tiktok/insta, чтобы мы знали,
 откуда кто пришёл." Every link below is a short address on the site that
 redirects with its platform's campaign tags; `/admin/analytics` shows
-sessions by source and by campaign and source, and Vercel Web Analytics
-also shows `utm_medium`.
+sessions by source and by campaign and source.
+
+Vercel Web Analytics receives the same three tags since 2026-11-27 (before,
+the whole query was cut off; `analyticsAddress` in
+`app/domain/campaign-tags.ts` keeps only these tags with plain values).
+Splitting visits by them in Vercel needs the Web Analytics Plus add-on or
+the Enterprise plan: on Pro the API answers "UTM dimensions require an
+Enterprise plan or the Web Analytics Plus add-on" (402). Pro shows pages,
+countries, devices and referring sites, such as `l.instagram.com` and
+`facebook.com`. A YouTube Short and the long video of the same episode
+differ only in `utm_medium`, so in `/admin/analytics` they count together
+until the visit records its medium.
 
 | Where the link goes | Link | Tags |
 | --- | --- | --- |

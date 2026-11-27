@@ -415,11 +415,54 @@ while they ran (archetype 12–19 s instead of 1–4 s); one writer with a
 pause keeps them near normal. Every write run is now throttled, and speed
 was measured again after each (`scripts/smoke-catalogue-windows.ts`).
 
+## The judge after the repair (2026-11-27)
+
+**The same 203 cards the owner rated**, rebuilt with today's facts
+(`scripts/refresh-sheet-facts.ts`, `docs/reports/judge-refreshed-2026-11-27.json`,
+$8.47): wrong 95 → 88 (17 cards fixed, 10 newly flagged). Wrong facts named:
+case size 35 → 20, water resistance 34 → 25, reference 27 → 21; model name
+32 → 34 and price 27 → 31 did not improve (the repair does not touch prices,
+and its name check is too weak, below).
+
+**A fresh live round** through the visitors' own search functions
+(`docs/reports/eval-live-2026-11-27-after-repair.json`, $3.15): quiz 40 of
+40 cases answered (39 reached ten), archetype 24 of 24, alternatives 60 of
+60 (58 reached ten), 0 rule failures, every gate PASS. The judge on its 279
+cards (`docs/reports/judge-after-repair-2026-11-27.json`, $10.03): 110 wrong
+(39%): quiz 34 of 100, archetype 38 of 80, alternatives 38 of 99.
+
+| Where the card's watch came from | Cards | Wrong |
+| --- | ---: | ---: |
+| AI search, maker's or shop's page found by the repair | 174 | 72 (41%) |
+| AI search, no page found | 45 | 28 (62%) |
+| Watch database import | 59 | 10 (17%) |
+
+Why, from the repair's log: of the 136 wrong hard facts the judge names
+(prices left out), 99 are facts the repair could not confirm on a page and
+so left as the AI search stored them; 16 were "confirmed" (14 of them model
+names: a page that shows the reference counts as confirming the stored
+name even when its title names another model, e.g. Certina DS Action Diver
+stored as "DS Action Day-Date"); 15 were corrected and still judged wrong;
+6 are on database imports. A sample of the judge's reasons checked against
+the makers' pages were real errors (Certina C032.607.11.051.00 is 43 mm and
+300 m, not 41 mm and 200 m; Citizen NB6021-68L is 200 m, not 300 m).
+
+**Saved answers keep the facts they were checked with.** 15 of the 279
+cards (9 archetype, 6 alternatives) showed values the repair had already
+corrected in the catalogue, such as Citizen NB6004-08E 41 → 46 mm, Seiko
+SPB451 41.7 → 40 mm and Hamilton H77725335 41 → 42 mm: the search store
+(`app/domain/ai-watch-store.server.ts`) and the archetype picks serve the
+validated snapshots (`private.ai_watch_validated_cache_snapshots`) as they
+were stored, so a catalogue correction, and an edit or rejection on
+`/admin/catalogue`, reaches a saved answer only when it is checked again.
+
 ## Known gaps the scores point to
 
-- Facts: about half of the quiz, archetype and alternatives cards that show
-  an AI-found watch carry a wrong fact (above). Repair steps 2–4:
-  `docs/OWNER_QUESTIONS.md` #7.
+- Facts: 39% of the quiz, archetype and alternatives cards of the fresh
+  round carry a fact the judge calls wrong; cards of database imports 17%
+  (above). Most are AI-found facts no page confirmed, then model names and
+  prices; saved answers also keep facts the repair has since corrected.
+  Next repair step: `docs/OWNER_QUESTIONS.md` #7.
 - Film: confirmations are strict (23 of 352 test requests confirmed); paid
   re-checks wait for the backoff.
 - The evaluation can run in CI as the read-only `reserve_eval_reader`

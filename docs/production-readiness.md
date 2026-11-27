@@ -10,6 +10,18 @@ The read-only Supabase check now succeeds but observes zero available backups,
 no physical recovery window and PITR disabled. This is a known data-protection
 gap retained for follow-up, not a claim of full disaster-recovery readiness.
 
+Update 2026-11-27: the owner moved the project to Supabase **Pro** with
+**Micro** compute (1 GB memory, 60 connections, pooler in transaction
+mode). Read back through the Management API that day: daily backups, 9
+kept (2026-11-20 to 2026-11-27 10:27 UTC), PITR off; disk 2 GB gp3, 41%
+used, growing by itself at 90%; network open to all addresses; **Enforce
+SSL off** (the site uses only HTTPS, every script verifies the certificate;
+switching it on is `docs/OWNER_QUESTIONS.md` #9). From the database: 463
+MB, cache hit 99.9% for tables and indexes, a handful of idle connections.
+Vercel's CDN served the public pages from its cache on the second request
+(`/watches`, `/watches/find`, `/partners`, `/start`, `/privacy`,
+`/embed.js`); the gated tools render per request in about 0.2 s.
+
 Latest verified application source: `91e6c1d`, READY as
 `dpl_8yGz4G2coeJM8hNv82UtnDJT4qXY`. Clean CI `40915966906` passes 716 tests
 and the complete code gate. Twelve desktop/mobile checks, seven native/real

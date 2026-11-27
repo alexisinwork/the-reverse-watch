@@ -1,0 +1,180 @@
+{
+  "at": "2026-11-27T13:40:01.358Z",
+  "origin": "https://thereserve.watch",
+  "site": "Portfolio demo (oleksandr-kukhtin.dev)",
+  "partnerOrigin": "https://oleksandr-kukhtin.dev",
+  "passed": 34,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "quiz: answers in a frame",
+      "result": "PASS",
+      "detail": "HTTP 200 in 643 ms"
+    },
+    {
+      "name": "quiz: only the partner's origins may frame it",
+      "result": "PASS",
+      "detail": "frame-ancestors https://oleksandr-kukhtin.dev"
+    },
+    {
+      "name": "quiz: the Powered by credit links to the public site",
+      "result": "PASS",
+      "detail": "https://thereserve.watch"
+    },
+    {
+      "name": "quiz: asks for no subscription or email",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "quiz: no link leaves the frame but the credit",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "find: answers in a frame",
+      "result": "PASS",
+      "detail": "HTTP 200 in 246 ms"
+    },
+    {
+      "name": "find: only the partner's origins may frame it",
+      "result": "PASS",
+      "detail": "frame-ancestors https://oleksandr-kukhtin.dev"
+    },
+    {
+      "name": "find: the Powered by credit links to the public site",
+      "result": "PASS",
+      "detail": "https://thereserve.watch"
+    },
+    {
+      "name": "find: asks for no subscription or email",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "find: no link leaves the frame but the credit",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "alternatives: answers in a frame",
+      "result": "PASS",
+      "detail": "HTTP 200 in 230 ms"
+    },
+    {
+      "name": "alternatives: only the partner's origins may frame it",
+      "result": "PASS",
+      "detail": "frame-ancestors https://oleksandr-kukhtin.dev"
+    },
+    {
+      "name": "alternatives: the Powered by credit links to the public site",
+      "result": "PASS",
+      "detail": "https://thereserve.watch"
+    },
+    {
+      "name": "alternatives: asks for no subscription or email",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "alternatives: no link leaves the frame but the credit",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "archetype: answers in a frame",
+      "result": "PASS",
+      "detail": "HTTP 200 in 91 ms"
+    },
+    {
+      "name": "archetype: only the partner's origins may frame it",
+      "result": "PASS",
+      "detail": "frame-ancestors https://oleksandr-kukhtin.dev"
+    },
+    {
+      "name": "archetype: the Powered by credit links to the public site",
+      "result": "PASS",
+      "detail": "https://thereserve.watch"
+    },
+    {
+      "name": "archetype: asks for no subscription or email",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "archetype: no link leaves the frame but the credit",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "stories: answers in a frame",
+      "result": "PASS",
+      "detail": "HTTP 200 in 429 ms"
+    },
+    {
+      "name": "stories: only the partner's origins may frame it",
+      "result": "PASS",
+      "detail": "frame-ancestors https://oleksandr-kukhtin.dev"
+    },
+    {
+      "name": "stories: the Powered by credit links to the public site",
+      "result": "PASS",
+      "detail": "https://thereserve.watch"
+    },
+    {
+      "name": "stories: asks for no subscription or email",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "stories: no link leaves the frame but the credit",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "opened in a tab: redirects to the site's own page",
+      "result": "PASS",
+      "detail": "HTTP 302 → /quiz"
+    },
+    {
+      "name": "unknown key: refused",
+      "result": "PASS",
+      "detail": "HTTP 404"
+    },
+    {
+      "name": "embed.js: served",
+      "result": "PASS",
+      "detail": "HTTP 200, 11539 bytes, cache public, max-age=0, must-revalidate"
+    },
+    {
+      "name": "embed.css: served",
+      "result": "PASS",
+      "detail": "HTTP 200, 1494 bytes, cache public, max-age=0, must-revalidate"
+    },
+    {
+      "name": "embed.js: production serves the committed file",
+      "result": "PASS",
+      "detail": "11539 bytes served, 11183 committed (Sentry's debug id ignored)"
+    },
+    {
+      "name": "embed.css: production serves the committed file",
+      "result": "PASS",
+      "detail": "1494 bytes served, 1494 committed (Sentry's debug id ignored)"
+    },
+    {
+      "name": "/partners: names no local address",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "/api/v1/openapi.json: names no local address",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "/api/v1/openapi.json: the server is the public site",
+      "result": "PASS",
+      "detail": "https://thereserve.watch"
+    }
+  ]
+}
