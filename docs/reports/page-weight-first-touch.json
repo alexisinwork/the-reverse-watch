@@ -1,0 +1,119 @@
+{
+  "at": "2026-11-27T14:13:04.085Z",
+  "base": "https://thereserve.watch",
+  "label": "first-touch",
+  "budgetKB": 150,
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "scripts": 12,
+      "wireKB": 124.2,
+      "rawKB": 455.1,
+      "largest": [
+        {
+          "file": "/assets/entry.client-jy7y9o_-.js",
+          "wireKB": 51.6
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-BCr1D2Vw.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BfAJSYgO.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    },
+    {
+      "path": "/start",
+      "status": 200,
+      "scripts": 13,
+      "wireKB": 125.8,
+      "rawKB": 459.7,
+      "largest": [
+        {
+          "file": "/assets/entry.client-jy7y9o_-.js",
+          "wireKB": 51.6
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-BCr1D2Vw.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BfAJSYgO.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    },
+    {
+      "path": "/watches/archetype",
+      "status": 200,
+      "scripts": 22,
+      "wireKB": 142.6,
+      "rawKB": 512.5,
+      "largest": [
+        {
+          "file": "/assets/entry.client-jy7y9o_-.js",
+          "wireKB": 51.6
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-BCr1D2Vw.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BfAJSYgO.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    },
+    {
+      "path": "/quiz",
+      "status": 200,
+      "scripts": 12,
+      "wireKB": 124.2,
+      "rawKB": 455.1,
+      "largest": [
+        {
+          "file": "/assets/entry.client-jy7y9o_-.js",
+          "wireKB": 51.6
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-BCr1D2Vw.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BfAJSYgO.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    },
+    {
+      "path": "/watches/find",
+      "status": 200,
+      "scripts": 22,
+      "wireKB": 142,
+      "rawKB": 510.5,
+      "largest": [
+        {
+          "file": "/assets/entry.client-jy7y9o_-.js",
+          "wireKB": 51.6
+        },
+        {
+          "file": "/assets/chunk-62JRHF6Z-BCr1D2Vw.js",
+          "wireKB": 37.9
+        },
+        {
+          "file": "/assets/schemas-BfAJSYgO.js",
+          "wireKB": 23.4
+        }
+      ],
+      "withinBudget": true
+    }
+  ],
+  "result": "PASS"
+}
