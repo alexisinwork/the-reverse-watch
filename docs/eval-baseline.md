@@ -456,13 +456,118 @@ validated snapshots (`private.ai_watch_validated_cache_snapshots`) as they
 were stored, so a catalogue correction, and an edit or rejection on
 `/admin/catalogue`, reaches a saved answer only when it is checked again.
 
+## Repair step 5 (2026-11-27, owner: "Да - давай заканчивай все что нужно")
+
+**Saved answers show page-checked facts** (`app/domain/page-checked-facts.ts`).
+A fact the repair read on a page our server opened, as the catalogue's
+`source_details.factCheck` records it, now replaces a saved answer's older
+value when a card is shown (`withSelectedFacts`, `mergeCatalogueFacts`;
+archetype and alternatives cards learn it through `markPageCheckedFacts`).
+Checked on production data: Bell & Ross BR03A-MIL-CE/SRB shows 41 mm instead
+of the picks file's 42, Baume & Mercier M0A10468 40 mm instead of 39. The
+free evaluation is unchanged (`docs/reports/eval-2026-11-27.json`: quiz 271
+exact cards, 0 violations, precision 1; every gate PASS).
+
+**Second read** of the 2,073 pages step 3 had found (run `reread-1`,
+`scripts/repair-catalogue.ts --pages-from repair-1`, $0.68, no search). Why
+step 3 missed facts that the makers' pages give, and the fix for each:
+
+- Specification tables put a label and its value on lines of their own
+  (Tissot's "Case width (mm)" then "42.00"); the lines read kept the label
+  and dropped the value. A label now stays with its value.
+- "Case width (mm): 42.00" did not count as a diameter (only "42 mm" did).
+- On the maker's own product page for the exact reference, a name sharing
+  only some words with the stored one blocked every other fact (Certina
+  C032.607.11.051.00, stored as "DS Action Day-Date", is the 43 mm, 300 m DS
+  Action Diver). There the maker's name now replaces a stored name that
+  carries another size, colour or model (`makerName`); a shorter name for
+  the same watch changes nothing.
+- A general remark ("a transparent caseback, frequently made of sapphire")
+  gives no fact.
+
+Calibrated first on 80 watches from the judged cards (60 judged wrong, 20
+good), three rounds: the rules that went live correct 18 of the 72 hard
+facts the judge named there, rename seven watches the judge named, and change
+nothing material on the 20 good cards (one bracelet material, one thickness).
+
+| Fact | Corrected | Filled |
+| --- | ---: | ---: |
+| Case diameter | 69 | 6 |
+| Water resistance | 62 | 18 |
+| Movement | 14 | 2 |
+| Case thickness | 73 | 135 |
+| Model name (maker's own) | 101 | |
+| Strap, case and caseback material, crystal, in-house calibre | 190 | 105 |
+
+470 watches changed; 26 prices are parked because the maker's page shows
+another model (another size or movement). 987 source addresses were
+rewritten to the maker's page that step 3 had found, 605 of them to the same
+address (a run-mode slip, now skipped). Of the 117 hard facts the judge named
+on the fresh round, this read changes 22 and the catalogue already held 13
+correctly (shown now through the page-checked facts); the rest belong to
+AI-found watches without a page (29) or are facts the page does not give.
+Writing ran as one writer with a 250 ms pause; searches stayed at their
+usual speed (archetype 1.1–1.7 s, alternatives 0.35–0.74 s).
+
+**Prices the judge named** (`scripts/recheck-catalogue-prices.ts
+--references`, 33 records, $2.71): 11 confirmed again or newly (Oris
+USD 2,600, Alpina USD 3,395, NOMOS 807 USD 6,870 and Nodus USD 650 now match
+the makers' pages the judge cited), 5 changed and wait for review on
+`/admin/catalogue` (A. Lange 201.027, Bell & Ross BR05 Skeleton, IWC
+IW326905, Laco 862103, NOMOS 782), 17 could not be confirmed by two sources.
+13 of those 17 keep the label "confirmed" from an earlier check under the
+90-day rule (Cartier WSSA0010, Jaeger-LeCoultre Q9008160, LIP 671530, TAG
+Heuer WAS2110.BA0732 and others): `docs/OWNER_QUESTIONS.md` #13.
+
+**Live round of all four tools after step 5**
+(`docs/reports/eval-live-2026-11-27-step5.json`, $2.57): quiz 40 of 40
+answered (39 reached ten, 272 exact cards, precision 1), archetype 24 of 24
+(all ten), alternatives 60 of 60 (58 reached ten), film 17 of 19 answered (2
+waited out the re-check backoff); 0 rule failures, no invented sighting for a
+control, every gate PASS.
+
+**The judge on the same sample** (`docs/reports/judge-step5-2026-11-27.json`,
+$10.72), compared with "The judge after the repair":
+
+| | Before step 5 | After step 5 |
+| --- | ---: | ---: |
+| Cards with a fact called wrong | 110 of 279 (39%) | 97 of 280 (35%) |
+| Quiz | 34% | 32% |
+| Archetype | 48% | 39% |
+| Alternatives | 38% | 34% |
+| AI-found, maker's or shop's page found | 41% | 33% |
+| AI-found, no page | 62% | 65% |
+| Database import | 17% | 15% |
+
+Wrong facts named: case size 39 → 32, water resistance 29 → 23, model 42 →
+37, movement 7 → 4; price 33 → 34 and reference 19 → 24 did not improve (the
+references belong to records an AI search invented or mixed up; the sample
+of alternatives also differs a little, because the catalogue changed). Film:
+the judge calls 55 of the 59 possible sightings real and 3 false links.
+
+**Two more defects the round showed, fixed:**
+
+- 12 of the 19 film searches paid for a check whose result could not be
+  saved: film discovery cites up to eight pages, the saved check accepted
+  five, and the error was logged as `ai_watch_store_read_error`. Saved
+  checks now take eight (`235f924`); a rerun of the film searches logged
+  none, at $0, because the earlier failures put them in the re-check backoff
+  (5 minutes, 1 hour, 1 day, 7 days). Film confirmations are measured again
+  as those backoffs end.
+- A saved-research candidate whose record the candidate lookup leaves out
+  (no usable price, for example a price parked as another model's) kept its
+  old name: Panerai PAM01320 still read "Submersible Bronzo". Such cards now
+  take the page-checked facts from the whole catalogue, and a rejected
+  record drops out (`9477805`).
+
 ## Known gaps the scores point to
 
-- Facts: 39% of the quiz, archetype and alternatives cards of the fresh
-  round carry a fact the judge calls wrong; cards of database imports 17%
-  (above). Most are AI-found facts no page confirmed, then model names and
-  prices; saved answers also keep facts the repair has since corrected.
-  Next repair step: `docs/OWNER_QUESTIONS.md` #7.
+- Facts: after step 5, 35% of the quiz, archetype and alternatives cards
+  carry a fact the judge calls wrong; database imports 15%, AI-found watches
+  without any maker's or shop's page 65% (above). What is left: those
+  page-less records, prices that keep an earlier "confirmed" label
+  (`docs/OWNER_QUESTIONS.md` #13), invented references, and facts the
+  makers' pages do not give.
 - Film: confirmations are strict (23 of 352 test requests confirmed); paid
   re-checks wait for the backoff.
 - The evaluation can run in CI as the read-only `reserve_eval_reader`

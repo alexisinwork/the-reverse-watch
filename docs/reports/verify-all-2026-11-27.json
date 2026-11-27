@@ -1,11 +1,11 @@
 {
-  "at": "2026-11-27T14:00:53.272Z",
+  "at": "2026-11-27T16:20:06.823Z",
   "production": true,
   "results": [
     {
       "name": "Fast gate",
       "result": "PASS",
-      "seconds": 69,
+      "seconds": 92,
       "command": "npm run check",
       "what": "formatting, lint, types, all unit tests, production build"
     },
@@ -47,49 +47,49 @@
     {
       "name": "Migration 0122 (keep the catalogue photo)",
       "result": "PASS",
-      "seconds": 1,
+      "seconds": 2,
       "command": "node --env-file=.env --import tsx scripts/test-image-conflict-publish.ts --applied",
       "what": "a checked answer is saved when the catalogue already has a different photo, which it keeps; invalid photo evidence is still refused"
     },
     {
       "name": "Quiz window equals the whole catalogue",
       "result": "PASS",
-      "seconds": 27,
+      "seconds": 28,
       "command": "node --env-file=.env --import tsx scripts/check-quiz-window-equivalence.ts",
       "what": "64 answers, 0 differences allowed"
     },
     {
       "name": "Archetype window equals the whole catalogue",
       "result": "PASS",
-      "seconds": 17,
+      "seconds": 16,
       "command": "node --env-file=.env --import tsx scripts/check-archetype-window-equivalence.ts",
       "what": "all 24 archetype and band combinations, 0 differences allowed"
     },
     {
       "name": "Alternatives reads equal the whole catalogue",
       "result": "PASS",
-      "seconds": 133,
+      "seconds": 106,
       "command": "node --env-file=.env --import tsx scripts/check-alternatives-window-equivalence.ts",
       "what": "owner test-set names and budgets, 0 differences allowed"
     },
     {
       "name": "Name lookups equal the whole name index",
       "result": "PASS",
-      "seconds": 215,
+      "seconds": 208,
       "command": "node --env-file=.env --import tsx scripts/check-name-lookup-equivalence.ts --sample 20",
       "what": "a 20-row sample of the full 794-name run: same resolved watch and same named rows, 0 differences allowed"
     },
     {
       "name": "Quality evaluation",
       "result": "PASS",
-      "seconds": 89,
+      "seconds": 93,
       "command": "node --env-file=.env --import tsx scripts/run-evals.ts --label verify",
       "what": "0 hard-rule breaks, 0 forbidden sightings, no provider request; scores vs docs/eval-baseline.md"
     },
     {
       "name": "Page speed (production)",
       "result": "PASS",
-      "seconds": 6,
+      "seconds": 8,
       "command": "node --import tsx scripts/measure-page-speed.ts --label verify",
       "what": "first-byte medians and CDN hits for public pages"
     },

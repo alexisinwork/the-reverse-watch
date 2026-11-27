@@ -1,6 +1,6 @@
 {
-  "at": "2026-11-27T14:00:31.205Z",
-  "fxDate": "2026-11-26",
+  "at": "2026-11-27T16:19:42.213Z",
+  "fxDate": "2026-11-27",
   "guard": {
     "database": "PostgreSQL as reserve_eval_reader",
     "providerRequests": [],
@@ -16,7 +16,7 @@
     "profilesWithExact": 31,
     "closeFits": 126,
     "closeFitsWithoutReason": 0,
-    "baselineRandomExactRate": 0.0168,
+    "baselineRandomExactRate": 0.0176,
     "violationExamples": [],
     "exactPrecision": 1
   },
@@ -24,17 +24,17 @@
     "cases": 60,
     "resolvedTargets": 13,
     "comparableTargets": 13,
-    "inTop5": 7,
-    "inTop10": 7,
-    "randomTop10Expected": 1.6943508388681408,
+    "inTop5": 5,
+    "inTop10": 5,
+    "randomTop10Expected": 1.5824922683564178,
     "sameBrandCases": [
       "TAG Heuer Monaco → TAG Heuer Monaco automatic chronograph",
       "Cartier Santos de Cartier → Cartier Santos Galbée",
       "Grand Seiko Snowflake SBGA211 → Seiko Presage Sharp Edged SPB165"
     ],
-    "recallAt5": 0.1167,
-    "recallAt10": 0.1167,
-    "randomRecallAt10": 0.0282
+    "recallAt5": 0.0833,
+    "recallAt10": 0.0833,
+    "randomRecallAt10": 0.0264
   },
   "film": {
     "positives": 20,
@@ -52,8 +52,8 @@
     "sha256": "e6a60a0681271518a0115b1476025965fca25af049de42d46a9027b926a4fb01",
     "review": "awaiting owner review",
     "positives": 19,
-    "answered": 16,
-    "foundAny": 16,
+    "answered": 19,
+    "foundAny": 19,
     "foundConfirmed": 0,
     "confirmed": [],
     "onlyPossible": [
@@ -62,8 +62,10 @@
       "goldeneye-seamaster-2541",
       "casino-royale-planet-ocean",
       "casino-royale-diver-300m",
+      "blue-hawaii-ventura",
       "thunderball-top-time",
       "apocalypse-now-seiko-6105",
+      "dr-no-submariner",
       "magnum-pi-gmt-master",
       "live-and-let-die-submariner-5513",
       "live-and-let-die-pulsar",
@@ -72,17 +74,14 @@
       "jfk-omega-slimline",
       "andy-warhol-tank",
       "jackie-kennedy-tank",
+      "buzz-aldrin-speedmaster",
       "the-martian-belowzero"
     ],
-    "missed": [
-      "blue-hawaii-ventura",
-      "dr-no-submariner",
-      "buzz-aldrin-speedmaster"
-    ],
+    "missed": [],
     "controlViolations": [],
     "leakage": [],
     "recallConfirmed": 0,
-    "recallAny": 0.8421
+    "recallAny": 1
   },
   "gates": {
     "noProviderRequests": true,

@@ -180,3 +180,18 @@ each run's own report:
 
 Unused: about $55.50. Results: `docs/eval-baseline.md`, "Catalogue repair,
 steps 2 and 3" and "The judge after the repair".
+
+Repair step 5, the same day ("Да - давай заканчивай все что нужно"), from
+the same $100:
+
+| Run | Spend |
+| --- | ---: |
+| Second read, calibration on 80 watches (three rounds) | $0.07 |
+| Second read of 2,073 found pages (`reread-1`) | $0.68 |
+| Price recheck of the 33 records the judge named | $2.71 |
+| Live round of all four tools | $2.57 |
+| Judge on its 339 cards | $10.72 |
+| Film searches again after the save fix | $0.00 |
+| **Total of the $100 so far** | **about $61.25** |
+
+Unused: about $38.75.

@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-27T14:00:41.201Z",
+  "at": "2026-11-27T16:19:54.549Z",
   "base": "https://thereserve.watch",
   "label": "verify",
   "budgetKB": 150,
@@ -7,21 +7,21 @@
     {
       "path": "/",
       "status": 200,
-      "scripts": 11,
-      "wireKB": 123,
-      "rawKB": 451.4,
+      "scripts": 12,
+      "wireKB": 124.3,
+      "rawKB": 455.2,
       "largest": [
         {
-          "file": "/assets/entry.client-CJW220pV.js",
+          "file": "/assets/entry.client-D0HkznJ8.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-1MSEdtLS.js",
+          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-C0Eyzxp3.js",
-          "wireKB": 23.4
+          "file": "/assets/schemas-DSz7YbdV.js",
+          "wireKB": 23.5
         }
       ],
       "withinBudget": true
@@ -29,21 +29,21 @@
     {
       "path": "/start",
       "status": 200,
-      "scripts": 12,
-      "wireKB": 124.4,
-      "rawKB": 455.8,
+      "scripts": 13,
+      "wireKB": 125.8,
+      "rawKB": 459.8,
       "largest": [
         {
-          "file": "/assets/entry.client-CJW220pV.js",
+          "file": "/assets/entry.client-D0HkznJ8.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-1MSEdtLS.js",
+          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-C0Eyzxp3.js",
-          "wireKB": 23.4
+          "file": "/assets/schemas-DSz7YbdV.js",
+          "wireKB": 23.5
         }
       ],
       "withinBudget": true
@@ -51,21 +51,21 @@
     {
       "path": "/watches/archetype",
       "status": 200,
-      "scripts": 21,
-      "wireKB": 141.3,
-      "rawKB": 508.7,
+      "scripts": 22,
+      "wireKB": 142.8,
+      "rawKB": 513.4,
       "largest": [
         {
-          "file": "/assets/entry.client-CJW220pV.js",
+          "file": "/assets/entry.client-D0HkznJ8.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-1MSEdtLS.js",
+          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-C0Eyzxp3.js",
-          "wireKB": 23.4
+          "file": "/assets/schemas-DSz7YbdV.js",
+          "wireKB": 23.5
         }
       ],
       "withinBudget": true
@@ -73,21 +73,21 @@
     {
       "path": "/quiz",
       "status": 200,
-      "scripts": 11,
-      "wireKB": 123,
-      "rawKB": 451.4,
+      "scripts": 12,
+      "wireKB": 124.3,
+      "rawKB": 455.2,
       "largest": [
         {
-          "file": "/assets/entry.client-CJW220pV.js",
+          "file": "/assets/entry.client-D0HkznJ8.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-1MSEdtLS.js",
+          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-C0Eyzxp3.js",
-          "wireKB": 23.4
+          "file": "/assets/schemas-DSz7YbdV.js",
+          "wireKB": 23.5
         }
       ],
       "withinBudget": true
@@ -95,21 +95,21 @@
     {
       "path": "/watches/find",
       "status": 200,
-      "scripts": 21,
-      "wireKB": 140.7,
-      "rawKB": 506.7,
+      "scripts": 22,
+      "wireKB": 142.2,
+      "rawKB": 511.4,
       "largest": [
         {
-          "file": "/assets/entry.client-CJW220pV.js",
+          "file": "/assets/entry.client-D0HkznJ8.js",
           "wireKB": 51.5
         },
         {
-          "file": "/assets/chunk-62JRHF6Z-1MSEdtLS.js",
+          "file": "/assets/chunk-62JRHF6Z-FK2zeA0x.js",
           "wireKB": 37.9
         },
         {
-          "file": "/assets/schemas-C0Eyzxp3.js",
-          "wireKB": 23.4
+          "file": "/assets/schemas-DSz7YbdV.js",
+          "wireKB": 23.5
         }
       ],
       "withinBudget": true

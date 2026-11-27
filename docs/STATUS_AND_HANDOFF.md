@@ -72,6 +72,7 @@ Every change reports before/after numbers for each rule.
 | "Enforce SSL" for direct database connections | not done: after the owner's yes the agent's switch was stopped by Claude Code's safety filter (it reboots the production database); one toggle for the owner | `docs/OWNER_QUESTIONS.md` #9 |
 | Exclusive Watch Selection: a "Coming soon" panel under every result screen of the site's own pages, never in a widget; a press counts as interest (`exclusive_selection`) | done 2026-11-27 | `app/components/exclusive-selection.tsx` |
 | Price of Exclusive Watch Selection | proposed: $79, $49 for the first 25 founding orders; waits for the owner | `docs/business-plan.md` ("Paid watch selection"), `docs/OWNER_QUESTIONS.md` #11 |
+| Repair step 5: saved answers show page-checked facts; second read of 2,073 found pages (470 watches changed); price recheck of the 33 records the judge named; live round of all four tools and the judge | done 2026-11-27: wrong share 39% → 35%, every gate PASS; two defects found and fixed (film checks not saved, `235f924`; saved-research cards with old names, `9477805`) | `8fbf9bd`, `docs/eval-baseline.md` ("Repair step 5"), `docs/reports/judge-step5-2026-11-27.json` |
 | Phase 1 eval harness, baselines, leakage checks; stories as confirmed film sightings | done | `927bd63`, `docs/eval-baseline.md` |
 | Phase 5 legacy archive | done | `c52ceba`, branch `archive/legacy-code`, tag `archive/legacy-2026-11-25` |
 | Phase 5 security checks (gitleaks, Semgrep, npm audit), Dependabot | done, green on `3031e0d` | `.github/workflows/security.yml`, `docs/production-readiness.md` |
@@ -147,17 +148,24 @@ with the owner's approval of that amount.
 ## Next step
 
 Launch is planned for 2026-12-06; paid watch selection comes after it.
-Verified 2026-11-27 on the deployment of `9221990`: `scripts/verify-all.ts
---production` 16 of 16 PASS (`docs/reports/verify-all-2026-11-27.json`),
-`scripts/smoke-widgets.ts` 34 of 34 PASS.
+Repair step 5 is done (`docs/eval-baseline.md`, "Repair step 5"): the judge's
+wrong share went 39% → 35% (archetype 48% → 39%), every gate PASS on all four
+tools, widgets 36 of 36 PASS (`scripts/smoke-widgets.ts`), and
+`scripts/verify-all.ts --production` 16 of 16 PASS on the deployment of
+`9477805` (`docs/reports/verify-all-2026-11-27.json`).
 
-1. Repair step 5, once the owner says yes (`docs/OWNER_QUESTIONS.md` #7):
-   saved answers show today's catalogue facts; a second read of the makers'
-   pages for unconfirmed facts and model names; then a fresh live round and
-   the judge, compared with "The judge after the repair".
-2. Completion of imported watches the tools show: `scripts/visible-catalogue.ts`,
+1. Owner decisions waiting: Enforce SSL (#9, a toggle), the price of
+   Exclusive Watch Selection (#11), "confirmed" prices that a recheck cannot
+   reproduce (#13), the 5 price changes on `/admin/catalogue`.
+2. The largest error group left: AI-found watches without any maker's or
+   shop's page (1,516 records, 65% of their cards wrong). Proposal for the
+   owner: show them only after verified records, or only under "Also worth a
+   look", which changes relevance and needs an evaluation first.
+3. Film confirmations: measure again once the re-check backoffs of the 12
+   searches whose checks could not be saved have ended (fix `235f924`).
+4. Completion of imported watches the tools show: `scripts/visible-catalogue.ts`,
    then `scripts/repair-catalogue.ts --set database --ids-file …` (throttled
    writes, at most two writers with a pause).
-Of the owner's $100 for this work $44.50 is spent (calibration $2.60, repair
-$19.94, styles $0.30, live round $3.15, judge $8.47 and $10.03).
+Of the owner's $100 for this work about $61.25 is spent
+(`docs/evaluation-budget.md`).
 Run `scripts/verify-all.ts --production` before and after every change.

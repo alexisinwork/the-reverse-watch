@@ -1,0 +1,2102 @@
+{
+  "startedAt": "2026-11-27T15:51:18.632Z",
+  "finishedAt": "2026-11-27T15:58:46.415Z",
+  "dryRun": false,
+  "budgetUsd": 5,
+  "caseCeilingUsd": 1,
+  "concurrency": 3,
+  "rounds": 2,
+  "stopReason": null,
+  "ledger": {
+    "before": {
+      "month": "2026-11-01",
+      "spentUsd": 21.015,
+      "reservedUsd": 3.6,
+      "limitUsd": 100,
+      "remainingUsd": 75.385,
+      "halted": false,
+      "attempts": 956,
+      "inProgress": 18,
+      "validated": 58,
+      "failed": 880,
+      "invalidated": 0,
+      "priceRefreshRuns": 0
+    },
+    "after": {
+      "month": "2026-11-01",
+      "spentUsd": 21.015,
+      "reservedUsd": 3.6,
+      "limitUsd": 100,
+      "remainingUsd": 75.385,
+      "halted": false,
+      "attempts": 956,
+      "inProgress": 18,
+      "validated": 58,
+      "failed": 880,
+      "invalidated": 0,
+      "priceRefreshRuns": 0
+    }
+  },
+  "spend": {
+    "totalUsd": 0,
+    "byTool": {
+      "film": 0
+    }
+  },
+  "requests": {
+    "exchange rates": 1,
+    "database": 553,
+    "rate limiter": 21
+  },
+  "quiz": {
+    "cases": 0,
+    "ran": 0,
+    "notRun": 0,
+    "statuses": {},
+    "found": 0,
+    "reachedTen": 0,
+    "cards": 0,
+    "verifiedCards": 0,
+    "verifiedShare": null,
+    "ruleFailures": 0,
+    "ruleFailureExamples": [],
+    "spendUsd": 0,
+    "exactCards": 0,
+    "exactPrecision": null
+  },
+  "archetype": {
+    "cases": 0,
+    "ran": 0,
+    "notRun": 0,
+    "statuses": {},
+    "found": 0,
+    "reachedTen": 0,
+    "cards": 0,
+    "verifiedCards": 0,
+    "verifiedShare": null,
+    "ruleFailures": 0,
+    "ruleFailureExamples": [],
+    "spendUsd": 0
+  },
+  "alternatives": {
+    "cases": 0,
+    "ran": 0,
+    "notRun": 0,
+    "statuses": {},
+    "found": 0,
+    "reachedTen": 0,
+    "cards": 0,
+    "verifiedCards": 0,
+    "verifiedShare": null,
+    "ruleFailures": 0,
+    "ruleFailureExamples": [],
+    "spendUsd": 0,
+    "searched": 0,
+    "ownerPickInTop10": 0
+  },
+  "film": {
+    "cases": 19,
+    "ran": 19,
+    "notRun": 0,
+    "statuses": {
+      "found": 17,
+      "unavailable:retry_later": 2
+    },
+    "found": 17,
+    "reachedTen": 1,
+    "cards": 59,
+    "verifiedCards": 1,
+    "verifiedShare": 0.0169,
+    "ruleFailures": 0,
+    "ruleFailureExamples": [],
+    "spendUsd": 0,
+    "file": "data/eval/film-labels-independent-2026-11-26.json",
+    "sha256": "e6a60a0681271518a0115b1476025965fca25af049de42d46a9027b926a4fb01",
+    "labels": 19,
+    "confirmed": 0,
+    "possible": 19,
+    "missed": 0,
+    "controlsWithConfirmedCards": 0,
+    "controlsWithPossibleCards": 0
+  },
+  "gates": {
+    "withinApprovedBudget": true,
+    "zeroQuizHardRuleFailures": true,
+    "zeroArchetypeRuleFailures": true,
+    "zeroAlternativesRuleFailures": true,
+    "zeroInventedSightingsForControls": true
+  },
+  "cases": [
+    {
+      "tool": "film",
+      "id": "film-01",
+      "round": 1,
+      "input": {
+        "query": "Le Mans",
+        "kind": "movie",
+        "labels": [
+          "le-mans-monaco-1133b"
+        ]
+      },
+      "status": "found",
+      "ms": 21099,
+      "distinctCards": 2,
+      "coverage": {
+        "total": 2,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "le-mans-monaco-1133b": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 2
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Heuer",
+          "model": "Monaco",
+          "referenceCode": "1133B",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Michael Delaney (Steve McQueen)",
+          "work": "Le Mans",
+          "sourceUrl": "https://www.gearpatrol.com/watches/steve-mcqueen-le-mans-heuer-monaco-auction/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "TAG Heuer",
+          "model": "Monaco",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Steve McQueen",
+          "work": "Le Mans",
+          "sourceUrl": "https://www.watchonista.com/articles/unlikely-watch-collector/unlikely-watch-collector-pedro-pascal",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-02",
+      "round": 1,
+      "input": {
+        "query": "Steve McQueen",
+        "kind": "celebrity",
+        "labels": [
+          "steve-mcqueen-monaco"
+        ]
+      },
+      "status": "found",
+      "ms": 21195,
+      "distinctCards": 8,
+      "coverage": {
+        "total": 8,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "steve-mcqueen-monaco": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 8
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Heuer",
+          "model": "Monaco",
+          "referenceCode": "1133B",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "steve mcqueen",
+          "work": null,
+          "sourceUrl": "https://www.gearpatrol.com/watches/steve-mcqueen-le-mans-heuer-monaco-auction/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Rolex",
+          "model": "Submariner",
+          "referenceCode": "5512",
+          "price": {
+            "amount": 25956,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 47,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "steve mcqueen",
+          "work": null,
+          "sourceUrl": "https://www.somethingaboutrocks.com/the-story-behindsteve-mcqueens-best-on-screen-watches/",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/rolex/submariner-no-date/5512",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Jaeger-LeCoultre",
+          "model": "Memovox",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Thomas Crown (Steve McQueen)",
+          "work": "The Thomas Crown Affair (1968)",
+          "sourceUrl": "https://www.watchreel.watch/guide/watches-steve-mcqueen-wore-on-screen",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Benrus",
+          "model": "Series 3061",
+          "referenceCode": "3061",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Frank Bullitt (Steve McQueen)",
+          "work": "Bullitt (1968)",
+          "sourceUrl": "https://oracleoftime.com/steve-mcqueen-watches/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Rolex",
+          "model": "Speedking",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Virgil Hilts (Steve McQueen)",
+          "work": "The Great Escape (1963)",
+          "sourceUrl": "https://somethingaboutrocks.com/the-story-behindsteve-mcqueens-best-on-screen-watches/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Hanhart",
+          "model": "417 ES",
+          "referenceCode": "417 ES",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Buzz Rickson (Steve McQueen)",
+          "work": "The War Lover (1962)",
+          "sourceUrl": "https://www.insidehook.com/watches/watches-of-steve-mcqueen",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Gruen",
+          "model": "Precision",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Doc McCoy (Steve McQueen)",
+          "work": "The Getaway (1972)",
+          "sourceUrl": "https://www.esquire.com/uk/style/a34630178/james-bond-watches/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Cartier",
+          "model": "Tank Allongée",
+          "referenceCode": "21612",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Thomas Crown (Steve McQueen)",
+          "work": "The Thomas Crown Affair (1968)",
+          "sourceUrl": "https://www.watchreel.watch/spotted-watches/cartier-tank-allongee-thomas-crown-affair",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-03",
+      "round": 1,
+      "input": {
+        "query": "GoldenEye",
+        "kind": "movie",
+        "labels": [
+          "goldeneye-seamaster-2541"
+        ]
+      },
+      "status": "found",
+      "ms": 21171,
+      "distinctCards": 2,
+      "coverage": {
+        "total": 2,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "goldeneye-seamaster-2541": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 2
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Seamaster Diver 300M Professional Quartz",
+          "referenceCode": "2541.80",
+          "price": {
+            "amount": 2269,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 41,
+          "movement": "quartz",
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "goldeneye",
+          "sourceUrl": "https://monochrome-watches.com/retrospective-defenitive-guide-omega-watches-worn-in-james-bond-007-movies-including-2021-no-time-to-die/",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/omega/seamaster-diver-300-m/2541-80",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Seamaster 300M Quartz",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "goldeneye",
+          "sourceUrl": "https://www.omegawatches.com/en-us/chronicle/1995-goldeneye-007-s-first-seamaster",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-04",
+      "round": 1,
+      "input": {
+        "query": "Casino Royale",
+        "kind": "movie",
+        "labels": [
+          "casino-royale-planet-ocean",
+          "casino-royale-diver-300m"
+        ]
+      },
+      "status": "found",
+      "ms": 21808,
+      "distinctCards": 3,
+      "coverage": {
+        "total": 3,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "casino-royale-planet-ocean": "possible",
+          "casino-royale-diver-300m": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 3
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Seamaster Diver 300M Co-Axial 41 Stainless Steel / Blue / Bracelet",
+          "referenceCode": "2220.80.00",
+          "price": {
+            "amount": 4346,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 41,
+          "movement": "automatic",
+          "waterResistanceM": 300,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "James Bond (Daniel Craig)",
+          "work": "Casino Royale",
+          "sourceUrl": "https://www.swisswatchexpo.com/thewatchclub/2021/04/26/daniel-craig-james-bond-omega-watches/",
+          "referenceSourceUrl": "https://dials.co/watches/omega/seamaster-diver-300m/2220-80-00",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Seamaster Planet Ocean 600M Co-Axial 45.5 Stainless Steel / Black / Rubber",
+          "referenceCode": "2900.50.91",
+          "price": {
+            "amount": 4389,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 45.5,
+          "movement": "automatic",
+          "waterResistanceM": 600,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "James Bond (Daniel Craig)",
+          "work": "Casino Royale",
+          "sourceUrl": "https://www.jamesbondlifestyle.com/product/omega-seamaster-planet-ocean-29075091",
+          "referenceSourceUrl": "https://dials.co/watches/omega/seamaster-planet-ocean/2900-50-91",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Longines",
+          "model": "Evidenza Chronograph",
+          "referenceCode": "L26564536",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Mads Mikkelsen as Le Chiffre",
+          "work": "Casino Royale",
+          "sourceUrl": "https://www.watch-id.com/sightings/longines-evidenza-chronograph-mads-mikkelsen-casino-royale",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-05",
+      "round": 1,
+      "input": {
+        "query": "Blue Hawaii",
+        "kind": "movie",
+        "labels": [
+          "blue-hawaii-ventura"
+        ]
+      },
+      "status": "found",
+      "ms": 554,
+      "distinctCards": 1,
+      "coverage": {
+        "total": 1,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "blue-hawaii-ventura": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 1
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Hamilton",
+          "model": "Ventura",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "blue hawaii",
+          "sourceUrl": "https://www.hamiltonwatch.com/en-us/company/hamilton-watches-history",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-06",
+      "round": 1,
+      "input": {
+        "query": "Thunderball",
+        "kind": "movie",
+        "labels": [
+          "thunderball-top-time"
+        ]
+      },
+      "status": "found",
+      "ms": 862,
+      "distinctCards": 2,
+      "coverage": {
+        "total": 2,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "thunderball-top-time": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 2
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Breitling",
+          "model": "Top Time",
+          "referenceCode": "2002",
+          "price": {
+            "amount": 3883,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 36,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "thunderball",
+          "sourceUrl": "https://www.timesofindia.indiatimes.com/world/rest-of-world/in-2013-a-british-car-boot-shopper-paid-25-for-a-strange-watch-then-learned-it-was-sean-connerys-1965-james-bond-gadget-and-sold-it-for-103875/articleshow/134306772.cms",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/breitling/top-time/2002",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Breitling",
+          "model": "Navitimer",
+          "referenceCode": "806",
+          "price": {
+            "amount": 6484,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 41,
+          "movement": "manual",
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "thunderball",
+          "sourceUrl": "https://www.jamesbondlifestyle.com/product/breitling-navitimer-806",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/breitling/navitimer/806",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-07",
+      "round": 1,
+      "input": {
+        "query": "Apocalypse Now",
+        "kind": "movie",
+        "labels": [
+          "apocalypse-now-seiko-6105"
+        ]
+      },
+      "status": "found",
+      "ms": 675,
+      "distinctCards": 2,
+      "coverage": {
+        "total": 2,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "apocalypse-now-seiko-6105": "possible"
+        },
+        "confirmedCards": 1,
+        "possibleCards": 1
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Rolex",
+          "model": "GMT-Master",
+          "referenceCode": "1675",
+          "price": {
+            "amount": 22559,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 40,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": true,
+          "verificationNote": null,
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Colonel Walter E. Kurtz",
+          "work": "Apocalypse Now",
+          "sourceUrl": "https://www.phillips.com/detail/rolex/130499",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/rolex/gmt-master/1675",
+          "imageUrl": null,
+          "rationale": "Phillips documents Marlon Brando's Rolex GMT-Master ref. 1675 as the exact watch seen on Colonel Kurtz in Apocalypse Now."
+        },
+        {
+          "section": "main",
+          "brand": "Seiko",
+          "model": "6105 diver / Captain Willard",
+          "referenceCode": "6105-8110",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Martin Sheen as Captain Willard",
+          "work": "Apocalypse Now",
+          "sourceUrl": "https://www.hodinkee.com/articles/martin-sheen-wears-a-seiko-willard-and-marlon-brando-a-rolex-gmt-master-in-apocalypse-now",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-08",
+      "round": 1,
+      "input": {
+        "query": "Dr. No",
+        "kind": "movie",
+        "labels": [
+          "dr-no-submariner"
+        ]
+      },
+      "status": "found",
+      "ms": 20680,
+      "distinctCards": 2,
+      "coverage": {
+        "total": 2,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "dr-no-submariner": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 2
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Rolex",
+          "model": "Submariner",
+          "referenceCode": "6538",
+          "price": {
+            "amount": 74483,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 38,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "dr. no",
+          "sourceUrl": "https://www.watchreel.watch/spotted-watches/rolex-submariner-goldfinger-james-bond",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/rolex/submariner-no-date/6538",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Gruen",
+          "model": "Precision",
+          "referenceCode": "510",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "dr. no",
+          "sourceUrl": "https://www.watchreel.watch/spotted-watches/gruen-precicion-dr-no-james-bond",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-09",
+      "round": 1,
+      "input": {
+        "query": "Magnum, P.I.",
+        "kind": "series",
+        "labels": [
+          "magnum-pi-gmt-master"
+        ]
+      },
+      "status": "found",
+      "ms": 20703,
+      "distinctCards": 2,
+      "coverage": {
+        "total": 2,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "magnum-pi-gmt-master": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 2
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Chronosport",
+          "model": "Sea Quartz 30",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "magnum, p.i.",
+          "sourceUrl": "https://www.watchesofespionage.com/blogs/woe-dispatch/magnum-pi-watches-chronosport-rolex-gmt-master",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Rolex",
+          "model": "GMT-Master",
+          "referenceCode": "16750 (likely; source also notes possible 1675)",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "magnum, p.i.",
+          "sourceUrl": "https://www.watchesofespionage.com/blogs/woe-dispatch/magnum-pi-watches-chronosport-rolex-gmt-master",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-10",
+      "round": 1,
+      "input": {
+        "query": "Live and Let Die",
+        "kind": "movie",
+        "labels": [
+          "live-and-let-die-submariner-5513",
+          "live-and-let-die-pulsar"
+        ]
+      },
+      "status": "found",
+      "ms": 21027,
+      "distinctCards": 3,
+      "coverage": {
+        "total": 3,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "live-and-let-die-submariner-5513": "possible",
+          "live-and-let-die-pulsar": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 3
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Rolex",
+          "model": "Submariner",
+          "referenceCode": "5513",
+          "price": {
+            "amount": 17806,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 40,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "live and let die",
+          "sourceUrl": "https://www.quillandpad.com/2018/08/22/update-loren-janes-steve-mcqueen-ref-5513-rolex-submariner-saga-redux-thanks-to-the-hunter/",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/rolex/submariner-no-date/5513",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Hamilton",
+          "model": "Pulsar P2 2900 LED digital watch",
+          "referenceCode": "P2 2900",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "live and let die",
+          "sourceUrl": "https://www.jamesbondlifestyle.com/product/hamilton-pulsar-p2-2900-led-digital-watch",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Tissot",
+          "model": "PR-516",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "live and let die",
+          "sourceUrl": "https://www.fratellowatches.com/tbt-the-underrated-bond-tissot-pr-516-watch/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-11",
+      "round": 1,
+      "input": {
+        "query": "Daylight",
+        "kind": "movie",
+        "labels": [
+          "daylight-panerai-5218"
+        ]
+      },
+      "status": "found",
+      "ms": 20909,
+      "distinctCards": 1,
+      "coverage": {
+        "total": 1,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "daylight-panerai-5218": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 1
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Panerai",
+          "model": "Luminor Logo",
+          "referenceCode": "5218-201/A",
+          "price": {
+            "amount": 22249,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 44,
+          "movement": "manual",
+          "waterResistanceM": 300,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "daylight",
+          "sourceUrl": "https://www.bqwatches.com/how-sylvester-stallone-changed-panerai",
+          "referenceSourceUrl": "https://dials.co/watches/panerai/pre-vendome/5218-201-a",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-12",
+      "round": 1,
+      "input": {
+        "query": "Gordon Gekko",
+        "kind": "character",
+        "labels": [
+          "gordon-gekko-santos"
+        ]
+      },
+      "status": "found",
+      "ms": 20659,
+      "distinctCards": 2,
+      "coverage": {
+        "total": 2,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "gordon-gekko-santos": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 2
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Cartier",
+          "model": "Santos Carrée Or Massif / Santos de Cartier",
+          "referenceCode": "2960",
+          "price": {
+            "amount": 5757,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 41,
+          "movement": "automatic",
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Michael Douglas as Gordon Gekko",
+          "work": "Wall Street",
+          "sourceUrl": "https://www.watchreel.watch/spotted-watches/cartier-santos-wall-street-gordon-gekko",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/cartier/santos/2960",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Cartier",
+          "model": "Tank",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "Michael Douglas as Gordon Gekko",
+          "work": "Wall Street: Money Never Sleeps",
+          "sourceUrl": "https://www.vogue.com/slideshow/timothee-chalamet-wonka-necklace-cartier",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-13",
+      "round": 1,
+      "input": {
+        "query": "John F. Kennedy",
+        "kind": "celebrity",
+        "labels": [
+          "jfk-omega-slimline"
+        ]
+      },
+      "status": "found",
+      "ms": 20909,
+      "distinctCards": 7,
+      "coverage": {
+        "total": 7,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "jfk-omega-slimline": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 7
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Slimline / Ultra Thin",
+          "referenceCode": "OT3980",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "John F. Kennedy",
+          "work": null,
+          "sourceUrl": "https://www.omegawatches.com/en-us/chronicle/1960-to-a-future-president",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Cartier",
+          "model": "Louis Cartier Tank",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "John F. Kennedy",
+          "work": null,
+          "sourceUrl": "https://www.crownandcaliber.com/posts/john-f-kennedy-watches/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Bulova",
+          "model": "Art Deco gold watch",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "John F. Kennedy",
+          "work": null,
+          "sourceUrl": "https://www.bobswatches.com/rolex-blog/just-because/watches-legendary-john-f-kennedy.html",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Nastrix",
+          "model": "Waterproof wristwatch",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "John F. Kennedy",
+          "work": null,
+          "sourceUrl": "https://www.crownandcaliber.com/posts/john-f-kennedy-watches/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Cartier",
+          "model": "Tank Louis",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "John F. Kennedy",
+          "work": null,
+          "sourceUrl": "https://www.swisswatchexpo.com/thewatchclub/2017/10/02/the-kennedy-watch-collection/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Benrus",
+          "model": "Campaign watch",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "John F. Kennedy",
+          "work": null,
+          "sourceUrl": "https://historical.ha.com/itm/western-expansion/john-f-kennedy-his-1960-campaign-watch/a/6047-47184.s",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Bulova",
+          "model": "art-deco dress watch",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "John F. Kennedy",
+          "work": null,
+          "sourceUrl": "https://www.hodinkee.com/articles/on-the-block-president-john-f-kennedys-personal-bulova-watch",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-14",
+      "round": 1,
+      "input": {
+        "query": "Andy Warhol",
+        "kind": "celebrity",
+        "labels": [
+          "andy-warhol-tank"
+        ]
+      },
+      "status": "found",
+      "ms": 20937,
+      "distinctCards": 7,
+      "coverage": {
+        "total": 7,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "andy-warhol-tank": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 7
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Rolex",
+          "model": "Oyster Perpetual Datejust",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "andy warhol",
+          "work": null,
+          "sourceUrl": "https://www.watch-id.com/celebrities/pedro-pascal",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Cartier",
+          "model": "Tank Louis Cartier",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "andy warhol",
+          "work": null,
+          "sourceUrl": "https://www.vulture.com/article/industry-watch-jewelry-symbols-explained.html",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Piaget",
+          "model": "Black Tie",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "andy warhol",
+          "work": null,
+          "sourceUrl": "https://www.piaget.com/us-en/andy-warhol-collection",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Patek Philippe",
+          "model": "2526",
+          "referenceCode": "2526",
+          "price": {
+            "amount": 98618,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 36,
+          "movement": "automatic",
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "andy warhol",
+          "work": null,
+          "sourceUrl": "https://www.nytimes.com/2025/12/09/fashion/andy-warhol-and-his-watches.html",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/patek-philippe/calatrava/2526",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Rolex",
+          "model": "3525",
+          "referenceCode": "3525",
+          "price": {
+            "amount": 67000,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 35,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "andy warhol",
+          "work": null,
+          "sourceUrl": "https://www.watchonista.com/articles/unlikely-watch-collector/unlikely-watch-collector-andy-warhol",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/rolex/chronograph/3525",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Movado",
+          "model": "Times/5",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "andy warhol",
+          "work": null,
+          "sourceUrl": "https://www.watchonista.com/articles/unlikely-watch-collector/unlikely-watch-collector-andy-warhol",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Cartier",
+          "model": "Tank",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "andy warhol",
+          "work": null,
+          "sourceUrl": "https://www.vogue.com/slideshow/timothee-chalamet-wonka-necklace-cartier",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-15",
+      "round": 1,
+      "input": {
+        "query": "Jacqueline Kennedy Onassis",
+        "kind": "celebrity",
+        "labels": [
+          "jackie-kennedy-tank"
+        ]
+      },
+      "status": "found",
+      "ms": 721,
+      "distinctCards": 2,
+      "coverage": {
+        "total": 2,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "jackie-kennedy-tank": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 2
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Cartier",
+          "model": "Tank",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "jacqueline kennedy onassis",
+          "work": null,
+          "sourceUrl": "https://www.vogue.com/slideshow/timothee-chalamet-wonka-necklace-cartier",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Piaget",
+          "model": "Yellow gold watch with jade dial and diamond bezel",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "jacqueline kennedy onassis",
+          "work": null,
+          "sourceUrl": "https://www.crownandcaliber.com/posts/profiles-time-jackie-kennedys-watches/",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-16",
+      "round": 1,
+      "input": {
+        "query": "Buzz Aldrin",
+        "kind": "celebrity",
+        "labels": [
+          "buzz-aldrin-speedmaster"
+        ]
+      },
+      "status": "found",
+      "ms": 21016,
+      "distinctCards": 10,
+      "coverage": {
+        "total": 10,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": true,
+      "checks": {
+        "labels": {
+          "buzz-aldrin-speedmaster": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 10
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Speedmaster Professional",
+          "referenceCode": "105.012",
+          "price": {
+            "amount": 12500,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 42,
+          "movement": "manual",
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.watch-id.com/sightings/omega-speedmaster-apollo-13",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/omega/speedmaster-professional-moonwatch/105-012",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Speedmaster X-33 Titanium / Kevlar / Military",
+          "referenceCode": "31892427901001",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": 42,
+          "movement": "quartz",
+          "waterResistanceM": 30,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.hodinkee.com/articles/buzz-aldrins-watches-are-coming-to-auction",
+          "referenceSourceUrl": "https://dials.co/watches/omega/x-33-z-33/318-92-42-79-01-001",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Jaeger-LeCoultre",
+          "model": "LeCoultre “Shark Deep Sea” Chronograph",
+          "referenceCode": "2643",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.hodinkee.com/articles/buzz-aldrins-watches-are-coming-to-auction",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Seamaster Diver 300M Co-Axial 41 GMT Stainless Steel / Blue / Bracelet",
+          "referenceCode": "2535.80.00",
+          "price": {
+            "amount": 3770,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 41,
+          "movement": "automatic",
+          "waterResistanceM": 300,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.gq.com/story/buzz-aldrin-watches-coming-to-auction-omega-speedmaster",
+          "referenceSourceUrl": "https://dials.co/watches/omega/seamaster-diver-300m/2535-80-00",
+          "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-diver-300m-co-axial-gmt-41_mm-25358000-99a066.png?w=1024",
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Speedmaster HB-SIA “Solar Impulse”",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://manofmany.com/watches/buzz-aldrin-watches-sothebys-auction",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Speedmaster Professional Moonwatch 3861 Moonshine Gold / Moonshine Gold / Bracelet",
+          "referenceCode": "310.60.42.50.99.002",
+          "price": {
+            "amount": 50165,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 42,
+          "movement": "manual",
+          "waterResistanceM": 50,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.watch-id.com/omega-speedmaster-moonwatch-gold-tom-hiddleston-the-night-manager",
+          "referenceSourceUrl": "https://dials.co/watches/omega/speedmaster-moonwatch/310-60-42-50-99-002",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Omega",
+          "model": "Constellation Day-Date “Owl”",
+          "referenceCode": "396.1070",
+          "price": {
+            "amount": 1083,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 32,
+          "movement": "quartz",
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.hodinkee.com/articles/buzz-aldrins-watches-are-coming-to-auction",
+          "referenceSourceUrl": "https://spacecitytimepiece.com/watches/omega/constellation-day-date/3961070",
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Bulova",
+          "model": "Accutron Eagle Pilot Automatic",
+          "referenceCode": "65B004",
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.sothebys.com/en/buy/auction/2026/space-exploration-2/bulova-accutron-eagle-pilot-automatic-watch",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Citizen",
+          "model": "Promaster Hyper Aqualand",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.sothebys.com/en/buy/auction/2026/space-exploration-2/citizen-promaster-hyper-aqualand-watch",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Innovative Time",
+          "model": "Dive Watch",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": "buzz aldrin",
+          "work": null,
+          "sourceUrl": "https://www.sothebys.com/en/buy/auction/2026/space-exploration-2/innovative-time-dive-watch",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-17",
+      "round": 1,
+      "input": {
+        "query": "The Martian",
+        "kind": "movie",
+        "labels": [
+          "the-martian-belowzero"
+        ]
+      },
+      "status": "found",
+      "ms": 729,
+      "distinctCards": 3,
+      "coverage": {
+        "total": 3,
+        "target": 1,
+        "status": "target_met"
+      },
+      "reachedTen": false,
+      "checks": {
+        "labels": {
+          "the-martian-belowzero": "possible"
+        },
+        "confirmedCards": 0,
+        "possibleCards": 3
+      },
+      "violations": [],
+      "cards": [
+        {
+          "section": "main",
+          "brand": "Hamilton",
+          "model": "BeLOWZERO 1000m Auto",
+          "referenceCode": "H78585333",
+          "price": {
+            "amount": 1845,
+            "currency": "USD"
+          },
+          "priceCondition": null,
+          "priceConfirmed": false,
+          "caseDiameterMm": 46,
+          "movement": "automatic",
+          "waterResistanceM": 1000,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "the martian",
+          "sourceUrl": "https://www.watch-id.com/celebrities/dwayne-johnson",
+          "referenceSourceUrl": "https://dials.co/watches/hamilton/khaki-navy/h78585333",
+          "imageUrl": "https://www.haroldltd.ru/swiss_watch/big/Hamilton/H78585333---2.jpg",
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Hamilton",
+          "model": "Khaki X-Wind Auto Chrono Limited Edition",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "the martian",
+          "sourceUrl": "https://imwdb.org/movies/The_Martian_(2015)",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        },
+        {
+          "section": "main",
+          "brand": "Hamilton",
+          "model": "Khaki Pilot Pioneer Aluminum",
+          "referenceCode": null,
+          "price": null,
+          "priceCondition": null,
+          "priceConfirmed": null,
+          "caseDiameterMm": null,
+          "movement": null,
+          "waterResistanceM": null,
+          "verified": false,
+          "verificationNote": "Association not fully verified",
+          "misses": [],
+          "reviewStatus": null,
+          "person": null,
+          "work": "the martian",
+          "sourceUrl": "https://imwdb.org/movies/The_Martian_(2015)",
+          "referenceSourceUrl": null,
+          "imageUrl": null,
+          "rationale": "Possible match from saved research; the association still needs checking."
+        }
+      ]
+    },
+    {
+      "tool": "film",
+      "id": "film-invented-film",
+      "round": 1,
+      "input": {
+        "query": "The Quiet Meridian of Halvard Brask",
+        "kind": "movie",
+        "labels": []
+      },
+      "status": "unavailable:retry_later",
+      "ms": 561,
+      "distinctCards": 0,
+      "coverage": null,
+      "reachedTen": false,
+      "checks": {
+        "control": true,
+        "confirmedCards": 0,
+        "possibleCards": 0
+      },
+      "violations": [],
+      "cards": []
+    },
+    {
+      "tool": "film",
+      "id": "film-invented-person",
+      "round": 1,
+      "input": {
+        "query": "Ilsabet Varnhagen-Okoro",
+        "kind": "celebrity",
+        "labels": []
+      },
+      "status": "unavailable:retry_later",
+      "ms": 427,
+      "distinctCards": 0,
+      "coverage": null,
+      "reachedTen": false,
+      "checks": {
+        "control": true,
+        "confirmedCards": 0,
+        "possibleCards": 0
+      },
+      "violations": [],
+      "cards": []
+    },
+    {
+      "tool": "film",
+      "id": "film-invented-film",
+      "round": 2,
+      "input": {
+        "query": "The Quiet Meridian of Halvard Brask",
+        "kind": "movie",
+        "labels": []
+      },
+      "status": "unavailable:retry_later",
+      "ms": 818,
+      "distinctCards": 0,
+      "coverage": null,
+      "reachedTen": false,
+      "checks": {
+        "control": true,
+        "confirmedCards": 0,
+        "possibleCards": 0
+      },
+      "violations": [],
+      "cards": []
+    },
+    {
+      "tool": "film",
+      "id": "film-invented-person",
+      "round": 2,
+      "input": {
+        "query": "Ilsabet Varnhagen-Okoro",
+        "kind": "celebrity",
+        "labels": []
+      },
+      "status": "unavailable:retry_later",
+      "ms": 786,
+      "distinctCards": 0,
+      "coverage": null,
+      "reachedTen": false,
+      "checks": {
+        "control": true,
+        "confirmedCards": 0,
+        "possibleCards": 0
+      },
+      "violations": [],
+      "cards": []
+    }
+  ]
+}

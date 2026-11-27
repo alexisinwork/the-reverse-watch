@@ -1,0 +1,3698 @@
+{
+  "at": "2026-11-27T16:05:13.795Z",
+  "sheet": "step5-2026-11-27",
+  "model": "anthropic/claude-opus-5-5",
+  "webSearch": true,
+  "budgetUsd": 13,
+  "spendUsd": 10.7198,
+  "stopReason": null,
+  "judged": 339,
+  "errors": 0,
+  "tally": {
+    "quiz": {
+      "judged": 100,
+      "ratings": {
+        "good": 38,
+        "poor": 8,
+        "wrong": 32,
+        "ok": 22
+      }
+    },
+    "archetype": {
+      "judged": 80,
+      "ratings": {
+        "wrong": 31,
+        "ok": 17,
+        "good": 26,
+        "poor": 6
+      }
+    },
+    "alternatives": {
+      "judged": 100,
+      "ratings": {
+        "ok": 32,
+        "wrong": 34,
+        "good": 24,
+        "poor": 10
+      }
+    },
+    "film": {
+      "judged": 59,
+      "ratings": {
+        "good": 55,
+        "wrong": 3,
+        "ok": 1
+      }
+    }
+  },
+  "verdicts": [
+    {
+      "card": "alternatives-00d4618cb53bd87e",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The official Alpina listing confirms everything on the card: USD 3,395, 41 mm, AL-730 automatic movement, 100 m water resistance. At about EUR 2,900 it fits the budget and is a solid Swiss steel chronograph on a bracelet. It's a fair pick, but its integrated-bracelet style is closer to a Royal Oak than a Daytona, and other chronographs at this price look more like a Daytona.",
+      "wrongFacts": [],
+      "costUsd": 0.03622
+    },
+    {
+      "card": "alternatives-03a3cde69c3f96ef",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The ZO9257 is the green-dial Super Sea Wolf 53 Compression on a bracelet. It launched at USD 1,295, and USD 1,095 was the price of the rubber-strap ZO9256. Current Super Sea Wolf Compression models list at about USD 1,695, so a 'confirmed retail' price of USD 1,095 for this 2016 reference is very likely wrong. The 40mm size, automatic movement and 200m rating check out, and as a style it's a reasonable cheaper Submariner alternative.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.05113
+    },
+    {
+      "card": "alternatives-07427e8fe85b518b",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Longines Spirit 37mm is a strong cheaper alternative to the Explorer 36. It has a similar size, a black dial with a pilot/explorer feel and Arabic numerals, a COSC-certified automatic movement and 100 m of water resistance. At about USD 2,850 it sits well within the budget. I didn't run a web search; the card's facts match what I know and its source is Longines' own product page.",
+      "wrongFacts": [],
+      "costUsd": 0.01041
+    },
+    {
+      "card": "alternatives-07bc0324cac0437b",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The S.A.R. Rescue-Timer is a strong, well-built mechanical diver alternative to the Seamaster, but the reference is wrong: Mühle sells it as M1-41-03 (for example M1-41-03-200-MB). M1-28-xx numbers belong to other models such as the Seebataillon GMT and Rasmus. The card also says EUR 2,189 confirmed retail, but Mühle's official price is EUR 2,200 on rubber and EUR 2,350 on the metal/rubber strap.",
+      "wrongFacts": [
+        "reference",
+        "price"
+      ],
+      "costUsd": 0.04958
+    },
+    {
+      "card": "alternatives-0c72bd3fa63e0c7a",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I didn't run a search. From what I know, the facts look plausible: a vintage Omega Genève 136.070 is a manual-wind, roughly 35 mm watch, and about USD 968 is a normal pre-owned price, all within budget. But it's a delicate vintage dress watch with no real water resistance, so it can't stand in for the sturdy everyday Oyster Perpetual 34 rated to 100 m. A modern steel sports watch would replace it better.",
+      "wrongFacts": [],
+      "costUsd": 0.01212
+    },
+    {
+      "card": "alternatives-0d936ad0f11a32e4",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: Bremont's site confirms the S302 is 40mm with 300m water resistance and a mechanical GMT movement, and the price fits the budget. But it's a caller-style GMT (the 24-hour hand is set independently, unlike the Rolex's jumping local-hour hand), it's being retired from the catalogue, and the Tudor Black Bay GMT or Longines Spirit Zulu Time are closer, better-value alternatives to the GMT-Master II.",
+      "wrongFacts": [],
+      "costUsd": 0.02742
+    },
+    {
+      "card": "alternatives-13cf71ef2bcff37f",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: NJ0200-50Z is a real 37mm Tsuyosa with Citizen's 8210 automatic movement and 50m water resistance, and Citizen's US site currently sells it for $396 (down from $495 list). It's a decent, affordable Oyster-style watch, but its integrated-bracelet sports look with no fluted bezel is closer to an Oyster Perpetual than a Datejust, and at under half the €1,045 budget there are better Datejust-style choices, like Tissot or Longines dress-sport automatics.",
+      "wrongFacts": [],
+      "costUsd": 0.03309
+    },
+    {
+      "card": "alternatives-1453eabd65402786",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card labels EUR 1,595 as confirmed retail, but the WAS2110.BA0732 was discontinued years ago, and its launch list price in France was about EUR 2,850. EUR 1,595 is what one used one costs on Chrono24. Style is also an issue: this is a dressy Carrera Heritage, not a pilot-style replacement for the Mark XX.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.03075
+    },
+    {
+      "card": "alternatives-1a4dc7053c9e5ed3",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "I couldn't find any NOMOS Orion neomatik 36 in midnight blue with reference 361. The current 36.4 mm Orion neomatik models are ref. 396 (new black, EUR 3,440) and ref. 397 (doré). Even with corrected facts, a splash-proof dress watch is a weak swap for a sporty everyday watch like the Explorer.",
+      "wrongFacts": [
+        "model",
+        "reference"
+      ],
+      "costUsd": 0.04558
+    },
+    {
+      "card": "alternatives-1da82f245d184bd8",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Damasko's official DC82/2 page confirms the specs: 42 mm, 100 m water resistance and Damasko's own C51 automatic chronograph movement. The €3,330 list price matches the approximate USD 3,764 and sits within the upper end of the budget. It's a well-made German sports chronograph with a hardened steel case, so it's a solid alternative to the Daytona, though it looks more like a tool watch than a racing chronograph.",
+      "wrongFacts": [],
+      "costUsd": 0.03226
+    },
+    {
+      "card": "alternatives-1f57e29fede185da",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "Grand Seiko makes very good watches, but the SBGW231 is a dress watch with only 30 m of water resistance, while the Explorer 36 is a tough everyday sports watch rated to 100 m, so it doesn't suit the watch it should replace. It has also been discontinued, so the USD 4,300 'confirmed retail' price is out of date: it can now only be bought pre-owned, where recent sales average about USD 3,400.",
+      "wrongFacts": [],
+      "costUsd": 0.03545
+    },
+    {
+      "card": "alternatives-21041f5d0574a624",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts on this discontinued Longines Heritage 1942 chronograph check out: automatic L688 column-wheel movement, 30 m water resistance, and a size listed as 40 mm (one dealer says 41 mm). The approximate USD 2,178 fits the budget for a pre-owned piece. But its silver dial and dress styling stray from the Speedmaster's black tool-watch look, and there are closer matches.",
+      "wrongFacts": [],
+      "costUsd": 0.03774
+    },
+    {
+      "card": "alternatives-2282dae475beaed4",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out: the 1521CL.NT is 42mm, has a Sellita SW200-1 automatic movement and is rated to 500m. New ones sell for about EUR 1,085 (roughly USD 1,220–1,270), close to the budget. Squale is a respected Swiss dive-watch maker with real history, so this is a strong lower-priced pick for a Submariner fan, though it doesn't copy the Submariner's look.",
+      "wrongFacts": [],
+      "costUsd": 0.03641
+    },
+    {
+      "card": "alternatives-23d5875fdf1a3be7",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The Engineer III Outlier GMT is a 40mm watch with 200m water resistance, not 100m, and its reference is DG9000B (e.g. DG9000B-S1C-BK). DG3030 references belong to BALL's Roadmaster Marine GMT, a different model.",
+      "wrongFacts": [
+        "reference",
+        "water"
+      ],
+      "costUsd": 0.04868
+    },
+    {
+      "card": "alternatives-293a05d86d9fe45f",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The Tudor 1926 36mm is a sensible choice as a cheaper Rolex-family stand-in, and the facts look right (36mm, automatic, 100m). But the diamond-marker silver dial is dressier and fancier than the plain white OP 34. Simpler options like a Tudor Black Bay 36 or the 1926 with a plain dial would match the original's understated look better.",
+      "wrongFacts": [],
+      "costUsd": 0.01431
+    },
+    {
+      "card": "alternatives-3026864e012f1655",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "I can't find any 'Classic 200 36' with reference UC-36-W-LS. Archimede's Klassik 200 is 39 mm with 200 m water resistance, and its 36 mm Klassik uses references in the UA4929 family. The model name and reference on the card look made up.",
+      "wrongFacts": [
+        "model",
+        "reference"
+      ],
+      "costUsd": 0.02669
+    },
+    {
+      "card": "alternatives-3286a4d22a95983d",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Uni-Racer UR-002 is a 39 mm reverse-panda chronograph with a hand-wound Sellita SW510 M movement and 50 m water resistance, sold for USD 3,495. That price is within the budget, and every fact on the card matches the brand's own listing. It's a well-regarded enthusiast pick with a close vintage Daytona look, but it was a 200-piece limited edition, so it may only be available pre-owned now.",
+      "wrongFacts": [],
+      "costUsd": 0.03999
+    },
+    {
+      "card": "alternatives-34284711b3918e60",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: 38 mm, hand-wound Sellita SW210.M1, 100 m water resistance, and the price is close to the brand's own. MING is a respected enthusiast brand, but the 37.07's artsy mosaic dial and thin bezel don't share the Explorer's simple, legible tool-watch look, so watches like the Tudor Ranger or Sinn 556 replace it more naturally.",
+      "wrongFacts": [],
+      "costUsd": 0.03184
+    },
+    {
+      "card": "alternatives-35f31692c5f4bdb4",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Spirit Zulu Time 39 is a proper flyer-style GMT with an independently adjustable local hour hand and a COSC-certified automatic movement, so it does what the GMT-Master II does. At about USD 3,550 it's a well-regarded, good-value alternative that fits the roughly EUR 3,500 budget.",
+      "wrongFacts": [],
+      "costUsd": 0.01078
+    },
+    {
+      "card": "alternatives-394bf849ccb73705",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The 36 mm Big Crown Pointer Date is a reasonable cheaper alternative in style, but the card's reference looks wrong. Oris's own site lists the 36 mm versions as 01 754 7749 xxxx with Calibre 754, and I found no listing for 01 654 7796 4354.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.04317
+    },
+    {
+      "card": "alternatives-3fbc98f1790011c6",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says the EP95000 is automatic, but the brand's specs show a hand-wound Sellita SW510 M BH b. Otherwise it's a strong pick: a vintage-style 38.9 mm hand-wound chronograph with 100 m water resistance at about USD 2,150, close to the Moonwatch 321 look and within budget.",
+      "wrongFacts": [
+        "movement"
+      ],
+      "costUsd": 0.02751
+    },
+    {
+      "card": "alternatives-4034b68aa3d8ed39",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: the Heritage 1948 (T66.1.722.33) is a 39.5 mm steel automatic chronograph powered by an ETA 2894-2, and the approximate price fits the budget. It's a nice vintage-style chronograph, but its silver dressy look, 30 m water resistance and discontinued status make it a weaker match for the black, manual-wind tool-watch Speedmaster 321 than options like a Sinn 103, Longines or Hamilton chronograph.",
+      "wrongFacts": [],
+      "costUsd": 0.02941
+    },
+    {
+      "card": "alternatives-40bd028192c5745f",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts check out: the M1-33-42-LB is a real Teutonia II Kleine Sekunde with a 41 mm case, the SW 260-1 automatic movement and 100 m water resistance, and the price fits the budget. But it's a dressy small-seconds watch with a blue sunburst dial on a croc-print strap, so it doesn't replace a pilot's watch like the Mark XX. Mühle's own Terrasport pilot line would be a much better fit.",
+      "wrongFacts": [],
+      "costUsd": 0.04125
+    },
+    {
+      "card": "alternatives-41f8cffd3e385bf5",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference 0330.1.6331.100 is the original 43 mm Formex Essence (USD 1,850 at Long Island Watch), not the Essence ThirtyNine. The blue ThirtyNine is SKU 0339.1.6631.101 and costs USD 1,980 on Formex's site, so the card mixes two different watches. A 39 mm Formex is a sensible alternative to a Datejust, but the model, reference and price on the card don't match.",
+      "wrongFacts": [
+        "reference",
+        "model",
+        "price"
+      ],
+      "costUsd": 0.05103
+    },
+    {
+      "card": "alternatives-452aea3e01ad634d",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "I couldn't find a Ball 'Engineer III Endurance 38' or the reference NL1000C-S4-BK anywhere. Ball's Endurance line lists only the 41mm Endurance 1917 GMT, and the Endurance 1917 Classic models come in 40mm and 46mm and cost about EUR 2,970, so the model name, reference and EUR 1,520 price look made up.",
+      "wrongFacts": [
+        "model",
+        "reference"
+      ],
+      "costUsd": 0.0382
+    },
+    {
+      "card": "alternatives-46936e3712eb33c8",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The price is wrong. Bremont's own page lists the S500 Black at £4,000 (about $4,695 at Mayors), and the model has been retired, so 'EUR 2139 (approximate)' is far below its real retail price. It is not a cheaper alternative to the Seamaster 300M at retail.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.02421
+    },
+    {
+      "card": "alternatives-48e85dbd72f61ff7",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Longines Spirit 40 is one of the best cheaper alternatives to the Mark XX. It is a 40mm pilot-style watch with a COSC-certified automatic movement and 100m water resistance from a respected brand. The approximate USD 1,800 is below the roughly USD 2,450 list price but within the budget; I did not search to check it, because the price is marked approximate and a discounted price fits the real market.",
+      "wrongFacts": [],
+      "costUsd": 0.01331
+    },
+    {
+      "card": "alternatives-4bd0dd6032fada2c",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: it's a 35 mm hand-wound Landeron 21 with 50 m water resistance, listed at about USD 945 on Nivada's own site. Nivada is a respected heritage brand and good value, but the black dial and brown racing leather strap are far from the white dial and steel bracelet of the OP 34, so watches with a white or light dial would be closer replacements.",
+      "wrongFacts": [],
+      "costUsd": 0.02955
+    },
+    {
+      "card": "alternatives-4f6e4fca7401032f",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: NOMOS's own site lists the ref. 164 at USD 2,800, splash-proof to 5 atm, with the hand-wound Alpha movement, and the price fits the budget. But it's a dressy Bauhaus watch on a leather strap that's only splash-proof, while the Explorer is a rugged everyday sports watch. Watches like the Tudor Ranger 36 or Sinn 556 replace it better.",
+      "wrongFacts": [],
+      "costUsd": 0.03096
+    },
+    {
+      "card": "alternatives-50f2f474b82b5e49",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts check out: it's a 42mm automatic COSC chronometer GMT, rated to 100m, and dealers sell it below its $3,899 list price, which fits the approximate EUR 2,710. It's a solid travel GMT that fits the budget, but it has a plain black bezel instead of the Pepsi look and at least one dealer lists it as no longer available, so the Tudor Black Bay GMT is a closer alternative to the 126710BLRO.",
+      "wrongFacts": [],
+      "costUsd": 0.03152
+    },
+    {
+      "card": "alternatives-552739d94dd044fd",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Ball is a reputable Swiss maker, and a 38 mm automatic with 100 m water resistance at about EUR 1,520 fits the budget. But the Engineer III is a sporty tool watch, not a dressy everyday watch like the Datejust, so options like the Tissot PRX, Longines Conquest or Oris Big Crown would be closer. My searches couldn't confirm the reference NL1000C-S4-BK, but I found nothing that shows it is wrong.",
+      "wrongFacts": [],
+      "costUsd": 0.04024
+    },
+    {
+      "card": "alternatives-585fe35309099d97",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The SPB143 is one of the most often recommended cheaper alternatives to the Submariner. It's a well-finished 40.5mm automatic diver with 200m water resistance, and its roughly USD 1,249 price fits well within the budget. Its listed specs (6R35 automatic, 40.5mm, 200m) match the real watch. Seiko has since replaced it with the SPB453, so it may now be easier to find from dealers' leftover stock or pre-owned.",
+      "wrongFacts": [],
+      "costUsd": 0.00946
+    },
+    {
+      "card": "alternatives-589d987e5178fda0",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Mido Ocean Star Tribute is a solid Swiss automatic diver with 200 m water resistance, a 40.5 mm case and the 80-hour Caliber 80, at about USD 1,049, which fits the roughly EUR 990 budget. Its vintage skin-diver look and gradient dial set it slightly apart from the Submariner, but a specialist would still gladly recommend it.",
+      "wrongFacts": [],
+      "costUsd": 0.0131
+    },
+    {
+      "card": "alternatives-6177548e6e7a2e7a",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The SPB453J1 is a black-dial Seiko 1965 re-interpretation with a 40 mm case, the in-house 6R55 automatic and 300 m water resistance, and its facts check out. It costs about USD 1,300, roughly a third of the BB58's price, which makes it a strong, well-regarded cheaper alternative with similar vintage-diver looks and size.",
+      "wrongFacts": [],
+      "costUsd": 0.02958
+    },
+    {
+      "card": "alternatives-632cdc3812638043",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The listed facts check out against Mühle's own pages: reference M1-52-13, 42.5 mm case, an automatic SW330-2 movement, 300 m water resistance and a US price of USD 3,299 (EUR 2,800–3,050 in Europe), so it fits the budget. It's a respectable Glashütte GMT, but it uses an 'office' GMT movement rather than the Rolex's 'traveller' type with an independently set hour hand, and it has a plain black bezel rather than the red-and-blue 'Pepsi' one. A Tudor Black Bay GMT, which also has a Pepsi bezel, is the more natural alternative at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02955
+    },
+    {
+      "card": "alternatives-635f2eae8ebc35f6",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "I couldn't find a UT4S-A reference anywhere in Unimatic's lineup. In Unimatic's naming, 'UT4' is the quartz Modello Quattro Toolwatch (about $515), while the automatic Quattros use 'U4S-' references with Sellita movements, so this model and reference look made up or mixed together. The Quattro is also a military watch with a fixed bezel, not the diver the source link describes.",
+      "wrongFacts": [
+        "model",
+        "reference"
+      ],
+      "costUsd": 0.04737
+    },
+    {
+      "card": "alternatives-6781407367a57c53",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference NN3000S03A/A301 is the Norqain Independence 21 Limited Edition with the NN20/1 calibre. Its case is 42 mm, not the Independence 40 at 40 mm. It is also a three-hand watch, so it is a weak stand-in for a Daytona chronograph.",
+      "wrongFacts": [
+        "model",
+        "size"
+      ],
+      "costUsd": 0.02657
+    },
+    {
+      "card": "alternatives-69f9e7b9af6dacbe",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts look right: it's 39mm, uses an automatic Sellita SW261-1, is rated to 50m and costs about EUR 1,594, which is within budget. I couldn't confirm the exact reference 34230AA01, though it matches the brand's 39mm numbering. The problem is the style: this is a polished, dressy small-seconds watch, not a pilot's watch, so it doesn't really replace the Mark XX. Stowa, Laco, Hamilton Khaki Pilot or Sinn would fit much better.",
+      "wrongFacts": [],
+      "costUsd": 0.04523
+    },
+    {
+      "card": "alternatives-6b557cf1a6cd79ad",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference C032.607.11.051.00 is the DS Action Diver 43mm Powermatic 80, which shows only the date. It is not a 'Day-Date', it is 43 mm rather than 41 mm, and it is rated to 300 m (ISO 6425) rather than 200 m. The CHF 925 price is correct, and the watch itself would otherwise make a sensible cheaper alternative to a Submariner.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "water"
+      ],
+      "costUsd": 0.03159
+    },
+    {
+      "card": "alternatives-6c279b17136f508f",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The ZO9270 is a real Zodiac Super Sea Wolf Compression with a 40 mm case, an automatic STP movement and 200 m water resistance, and it sells for roughly USD 1,100–1,300, so the facts hold up. It's a credible Swiss heritage diver at the right price, but this white-dial version with a rubber strap and orange accents looks quite different from the BB58. A classic Super Sea Wolf, or a Christopher Ward or Oris diver, would be closer in spirit.",
+      "wrongFacts": [],
+      "costUsd": 0.03406
+    },
+    {
+      "card": "alternatives-6f3c1ec9c7b4acc2",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The Speedmaster Moonwatch 321 is a hand-wound, vintage-style chronograph, but the Carrera Calibre 6 is a three-hand automatic dress watch with small seconds, so it doesn't stand in for the watch being replaced. A chronograph in this budget would fit much better, such as a Hamilton Intra-Matic, a Longines Column-Wheel or a pre-owned Speedmaster Reduced.",
+      "wrongFacts": [],
+      "costUsd": 0.01234
+    },
+    {
+      "card": "alternatives-7089fc494d27b81e",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The specs check out: 34.5 mm case, automatic L615 movement, 30 m water resistance. The price is plausible for the grey market, though one dealer lists it new at USD 1,229. The problem is the style: this is a yellow-gold PVD dress watch with Roman numerals and a gold-tone bracelet. It's a poor stand-in for a plain steel, sporty Oyster Perpetual 34 with 100 m water resistance. A steel everyday watch like a Tissot PRX or Longines Conquest would be a much better match.",
+      "wrongFacts": [],
+      "costUsd": 0.03149
+    },
+    {
+      "card": "alternatives-70fc7517da3a72b4",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Superman 500 Dato is a respected French dive watch that suits a BB58 buyer well: 39 mm case, 500 m water resistance, Yema's own automatic movement and a vintage-inspired style. Retailer price lists I found show Dato models at about EUR 1,099–1,179, so EUR 1,269 is a little high but fine for an approximate price within this budget. I couldn't find the reference YSUP21A39-AMS anywhere else (other Dato references start with YSUP23A39), but it matches the Yema product page the card links to, so I'm not marking it wrong.",
+      "wrongFacts": [],
+      "costUsd": 0.04764
+    },
+    {
+      "card": "alternatives-748564f04a13e342",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "There's no 34mm Kurono Seiji. Kurono's official page and other sources list the Seiji as a 37mm limited edition of 500 that retailed for about USD 1,793. The card's 34mm size and EUR 3,052 price don't match it, and the line's 34mm models are a different watch with 50m water resistance that sold for about USD 1,080–1,170.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "price"
+      ],
+      "costUsd": 0.0412
+    },
+    {
+      "card": "alternatives-778d5ddc1187fc22",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: DM2276A-SCJ-BK is a real reference, with a 42mm titanium case, the COSC-certified automatic RR1102-C and 300m water resistance. It is a capable tritium-lit diver at the top of the budget, but at 16.5mm thick and about 200g it wears much chunkier than the Seamaster. At about EUR 2,000 it is a weak 'cheaper alternative' next to lower-priced options in the budget like the Longines HydroConquest or Tissot Seastar.",
+      "wrongFacts": [],
+      "costUsd": 0.05484
+    },
+    {
+      "card": "alternatives-782208c4e38c0037",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The card's facts check out against Mido's site and other retailers: 38 mm, automatic Caliber 80 with 80-hour power reserve, 50 m water resistance and EUR 910 retail. It's a classic steel-bracelet dress watch with a date and a sapphire crystal at well under budget, which makes it a sound, sensible cheaper alternative to the Datejust 36.",
+      "wrongFacts": [],
+      "costUsd": 0.02727
+    },
+    {
+      "card": "alternatives-7ac4fc11f9f2fa88",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "I checked Oris's own page and several retailer listings. Reference 01 561 7722 4051-07 5 14 64 is the Artelier Date Diamonds, a 28 mm women's watch with diamond markers, not a 34 mm 'Artelier Date 34'. Oris's 33 mm version uses a different reference (…7724…), and the 28 mm case is far too small to replace a 36 mm Datejust.",
+      "wrongFacts": [
+        "size",
+        "model"
+      ],
+      "costUsd": 0.04209
+    },
+    {
+      "card": "alternatives-7c84b70283732533",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "This is an automatic chronograph from a real watch brand, and the size (43 mm), water resistance (100 m) and price all check out: the price matches the pre-owned market and is within budget. But it is 3 mm bigger than the 40 mm Daytona, it's a pilot-style watch on a leather strap rather than a sporty steel one, and it's a discontinued, older model, so there are better Daytona alternatives at this price.",
+      "wrongFacts": [],
+      "costUsd": 0.03419
+    },
+    {
+      "card": "alternatives-7c9a402c9d6f1ddf",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The 41 mm size, automatic movement and 200 m water resistance check out for ref. 144.068, but the price doesn't. Dealers list it new at about EUR 3,790 or GBP 3,920, far above the card's approximate USD 2,239 and over the EUR 2,925 top of the budget. It's also a bulkier tool chronograph and not much like the slim, manual-wind 39.7 mm Moonwatch.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.03088
+    },
+    {
+      "card": "alternatives-7ce4670c44d52921",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I'd call this acceptable. The Olmsted 38 is a well-made, well-reviewed microbrand watch, but it's a field watch rather than a pilot's watch, so it's only a loose match for the Mark XX. Pilot-style picks like a Hamilton Khaki Pilot, Laco or Sinn 556 would fit better. The card's approximate USD 1,525 is also low: the official site lists the Navy at USD 1,625 on leather and USD 1,775 on the bracelet, though both still fit the budget.",
+      "wrongFacts": [],
+      "costUsd": 0.03077
+    },
+    {
+      "card": "alternatives-80aa0ebd96f553fe",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Longines Heritage Column-Wheel Chronograph is a 40 mm vintage-style column-wheel chronograph, which makes it a sensible, cheaper heritage stand-in for the Speedmaster 321. Its price is within the budget, and the size, automatic movement and 30 m water resistance on the card match what I know of this model. I didn't run a search to confirm these details.",
+      "wrongFacts": [],
+      "costUsd": 0.01459
+    },
+    {
+      "card": "alternatives-84ca1599e64ac3c0",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Marathon GSAR 41mm (WW194006) is a well-respected Swiss automatic tool diver with 300m water resistance, and it sits within the budget range. It's a credible, enthusiast-approved cheaper option to the Seamaster 300M, though it's a more utilitarian mil-spec watch than Omega's polished wave-dial look.",
+      "wrongFacts": [],
+      "costUsd": 0.01269
+    },
+    {
+      "card": "alternatives-85024e2d31601a49",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says 300 m, but the Norqain Adventure Sport 42mm is rated to 100 m, according to the retailer and spec listings. It's also a poor stand-in for a Daytona because it's a three-hand date watch, not a chronograph.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.02384
+    },
+    {
+      "card": "alternatives-85e8975460cdafd3",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Seiko's official US page confirms the price (USD 1,300), the 40 mm case, the automatic 6R55 movement and 300 m water resistance. It's a vintage-style diver that wears small, at 46.4 mm lug to lug, so it suits the BB58's feel well, and it costs a fraction of the Tudor while fitting the budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02715
+    },
+    {
+      "card": "alternatives-8624b3ef8bfd1de2",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The IWC Portofino 3513 is a well-regarded 34 mm automatic from a respected maker, and about USD 1,900 fits the budget. But it's a dress watch with only 30 m water resistance, so it doesn't replace the sporty, go-anywhere Oyster Perpetual well. A steel sports watch would be a closer match.",
+      "wrongFacts": [],
+      "costUsd": 0.01085
+    },
+    {
+      "card": "alternatives-86258f9dff51ca00",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference C032.607.11.051.00 is Certina's DS Action Diver 43mm Powermatic 80, not the DS Action Day-Date. It measures 43 mm and is water resistant to 300 m (ISO 6425), not 41 mm and 200 m. The CHF 925 price and automatic movement are correct, and the real Diver would be a strong cheaper alternative to the Seamaster 300M.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "water"
+      ],
+      "costUsd": 0.02739
+    },
+    {
+      "card": "alternatives-86c68449f65f0c6a",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The watch is a good fit for the request: a 41 mm steel automatic chronograph on a bracelet with a column-wheel movement and 100 m water resistance. But the EUR 1,928 price is too low. The official retail price is EUR 2,995, and even discounted new ones sell for about EUR 2,240 before tax and EUR 3,200 with tax.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.05453
+    },
+    {
+      "card": "alternatives-88c1365c3133522f",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: the 103.031 is the Sinn 103 St, with a 41 mm steel case, an automatic Valjoux 7750 movement, 200 m water resistance and a hesalite (acrylic) crystal like the Moonwatch. Retail is about EUR 2,450, inside the budget. Enthusiasts often name it as a cheaper alternative to the Speedmaster, though it's thicker and self-winding where the 321 is hand-wound.",
+      "wrongFacts": [],
+      "costUsd": 0.03255
+    },
+    {
+      "card": "alternatives-8a95fdbafc9ac760",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: 35 mm steel case, automatic calibre L633, 30 m water resistance, and the price is within budget. But it's a discontinued dress watch with a leather strap, a hesalite (acrylic) crystal and a date at 12, so it lacks the steel bracelet, 100 m water resistance and plain no-date dial that make the OP 34 a sporty everyday watch. A steel-bracelet three-hander like a Tissot PRX or Oris Big Crown ProPilot would replace it more closely.",
+      "wrongFacts": [],
+      "costUsd": 0.03516
+    },
+    {
+      "card": "alternatives-901095f11e16ae8b",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The 168.027 is a real 1967–71 Constellation: 35 mm, automatic chronometer, often with a silver dial, so it's a nice classic substitute for a white-dial OP 34. But it's a 55-year-old watch with an acrylic crystal and unknown water resistance, so it can't do daily duty the way the Rolex does. The approximate USD 931 looks optimistic, since current listings mostly run about USD 1,170–2,000, which still fits the budget.",
+      "wrongFacts": [],
+      "costUsd": 0.03771
+    },
+    {
+      "card": "alternatives-91766a2f14c73ce0",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: 38 mm, hand-wound Sellita SW210.M1, 100 m water resistance and a CHF 3,500 retail price. But it's a 250-piece limited edition that has sold out, so it now only appears pre-owned at around $3,700–4,600, and its skeletonised design is far from the Explorer's simple, easy-to-read tool-watch look.",
+      "wrongFacts": [],
+      "costUsd": 0.02767
+    },
+    {
+      "card": "alternatives-92155421937a4865",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: the 35014M40 is a 35 mm steel Super Antarctic with the hand-wound Landeron 21 movement, 50 m water resistance and a USD 945 list price. It's a well-regarded Swiss microbrand with a similar everyday-classic size, but it has a black dial on a racing strap rather than the white dial and steel bracelet of the OP 34 it's meant to replace, so a white-dial bracelet option would fit better.",
+      "wrongFacts": [],
+      "costUsd": 0.03389
+    },
+    {
+      "card": "alternatives-975ef0e0dcda8d52",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out. The KonTiki Date 1222.41 has a 42 mm steel case, a Sellita SW200-1 automatic movement and 200 m water resistance, and the price fits the budget. But it's a dressy sports watch without a rotating dive bezel, so it doesn't really replace a Seamaster Diver 300M. Dive watches like the Longines HydroConquest, Oris Aquis or Certina DS Action Diver are closer substitutes.",
+      "wrongFacts": [],
+      "costUsd": 0.04378
+    },
+    {
+      "card": "alternatives-9d490e717dbe072d",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card lists a 41 mm case, but Citizen's official spec sheet for the NB6004-08E gives 46.0 mm wide and 15.3 mm thick. That makes it a much bigger, chunkier watch than the 42 mm Seamaster it's meant to replace. The movement, 200 m water resistance and USD 1,050 price are correct.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.0228
+    },
+    {
+      "card": "alternatives-a0cbc206230851fd",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card lists 300 m of water resistance, but Hamilton's official spec pages for every Khaki Navy Scuba Auto 40mm reference I checked (H82305131, H82315131, H82365141) give 10 bar (100 m). Otherwise it's a reasonable Submariner-style diver at this budget.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.02446
+    },
+    {
+      "card": "alternatives-a6f77bc077ad0ab0",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference 027/3400.04 is the 38 mm max bill Automatic (calibre J800.1), not the 34 mm hand-wound max bill Handaufzug, whose references are in the 027/37xx range. The card's model and reference don't match.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.0319
+    },
+    {
+      "card": "alternatives-a7e528473e396fc3",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Seiko's official specs list the SPB451 at 40.0mm and 300m water resistance, not 41.7mm and 200m as the card states. With those corrected, it would be a solid cheaper alternative to the Seamaster 300M.",
+      "wrongFacts": [
+        "size",
+        "water"
+      ],
+      "costUsd": 0.02657
+    },
+    {
+      "card": "alternatives-a9cfb3190a6589d9",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Vulcain's own page and retailers rate the Skindiver Nautique to 200 m, not the 300 m on the card. Vulcain lists this model as 660170A07.BHM287, and I found no trace of 44N105.SBN115. The rest checks out: 38 mm, automatic, and about EUR 1,610 at retail, which is within budget and a decent vintage-style Swiss alternative to the BB58.",
+      "wrongFacts": [
+        "water",
+        "reference"
+      ],
+      "costUsd": 0.03989
+    },
+    {
+      "card": "alternatives-adc24b29990fe8c2",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The 40mm Trident Pro 600 in black is a good, cheaper alternative to the BB58. But the card's reference, C60-40ADA3-S00B0-B0, belongs to the C60 Sapphire, a different model with a see-through sapphire dial. The black Trident Pro 600 is C60-40ADA3-S0KK0-B0.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.04615
+    },
+    {
+      "card": "alternatives-b1011fb1ab4e4a30",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card gives 300 m of water resistance, but Ball's official page and several dealers list the Engineer Hydrocarbon AeroGMT II (42 mm) at 100 m. Otherwise it's a sensible cheaper GMT alternative at about EUR 3,500.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.11492
+    },
+    {
+      "card": "alternatives-b1ff0847b7455f55",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Louis Erard's own product page and Teddy Baldassarre both list the Excellence Émail Grand Feu II as reference 34238AA54.BVA95, not 34238AA58. The card's source URL does use 'aa58', but I found no variant with that number. The other facts check out: 39 mm, automatic Sellita SW261-1, about CHF 3,900. Even with the right reference, this limited-edition enamel-dial dress watch on a leather strap is a weak stand-in for a rugged, everyday Explorer 36.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.04428
+    },
+    {
+      "card": "alternatives-b2f488a49d818852",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs are right: 42mm, H-10 automatic with 80 hours of power reserve, 300m water resistance, and about USD 1,041 fits the budget. It's a solid Swiss diver for the money, but with its screw cap over the crown, red accents and rubber strap it looks tactical rather than like the clean, bracelet-style Submariner. Closer matches exist, such as the Longines HydroConquest or Tissot Seastar.",
+      "wrongFacts": [],
+      "costUsd": 0.03025
+    },
+    {
+      "card": "alternatives-ba8e0279169c5404",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The Chemin des Tourelles is a dressy classic watch and nothing like the Mark XX's military pilot style, so it is a weak stand-in. Much closer cheaper picks exist, such as the Hamilton Khaki Pilot Day Date or Khaki Aviation, a Laco Flieger or a Sinn 556.",
+      "wrongFacts": [],
+      "costUsd": 0.00898
+    },
+    {
+      "card": "alternatives-bb887093bd3b4d0a",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Longines HydroConquest GMT is a solid, well-priced sporty steel GMT on a bracelet, with an automatic movement and 300 m water resistance. It's a credible cheaper alternative to the GMT-Master II and fits the budget. The Tudor Black Bay GMT is closer in style because it has the Pepsi-style bezel, but this is still a pick a specialist would gladly recommend.",
+      "wrongFacts": [],
+      "costUsd": 0.01463
+    },
+    {
+      "card": "alternatives-bd1210612428286d",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts check out: LIP ref. 671530 is a 41 mm automatic GMT (Miyota 9075) rated to 200 m, and Lepage lists it at EUR 940, though the card's own source shows EUR 1,105. It's still a weak Submariner alternative: it's a 1960s-style skin diver with an internal bezel, a blue dial and a rubber strap, not a black bracelet diver with a rotating bezel, and it's a 599-piece limited edition that's out of stock at both retailers.",
+      "wrongFacts": [],
+      "costUsd": 0.03662
+    },
+    {
+      "card": "alternatives-bdbcdab5dc224d8d",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Tudor 1926 36mm (ref. 91450) comes from Rolex's sister brand. It's a steel automatic with a light opaline dial, a case close to 34mm and 100m water resistance, so it's a natural cheaper stand-in for the white OP 34. The approximate USD 1,605 price is at the top of the budget but still within it, and it's in line with real grey and pre-owned prices.",
+      "wrongFacts": [],
+      "costUsd": 0.01421
+    },
+    {
+      "card": "alternatives-c2bdb4f641347f42",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts look right: the Alpinist SPB155J1 is a 38 mm automatic (6R35) with 200 m water resistance, and its price is well within budget. It's a well-liked enthusiast watch, but it's a field/sports style with an inner compass bezel and cathedral hands. That fits less well as a cheaper stand-in for the dressy, versatile Datejust 36 than a classic-styled three-hander like a Seiko Presage or Tissot Gentleman.",
+      "wrongFacts": [],
+      "costUsd": 0.01338
+    },
+    {
+      "card": "alternatives-c345d0c16d37d918",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Baltic Aquascaphe is one of the alternatives enthusiasts most often suggest for the Black Bay 58. It's a vintage-style 39 mm automatic diver rated to 200 m, much like the Tudor, and it costs well under the budget. The card's details match the watch as I know it; I didn't run a search to confirm the approximate price.",
+      "wrongFacts": [],
+      "costUsd": 0.00855
+    },
+    {
+      "card": "alternatives-c8fab42eed168d3c",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The Olmsted 38 is a well-made 38 mm automatic from a respected microbrand, rated to 100 m and within budget. But it's a field watch, while the Datejust is a dressier everyday classic, so options like a Tissot PRX/Gentleman or Longines Conquest would be closer substitutes.",
+      "wrongFacts": [],
+      "costUsd": 0.01123
+    },
+    {
+      "card": "alternatives-ca0cbe290b58d713",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The card's facts check out. Oris's own site lists this exact reference at USD 2,600 as a 41 mm steel watch with the Calibre 751 automatic, and a dealer lists it at 100 m water resistance. Oris now calls it the 'ProPilot Big Date', but it is the same watch, so the name isn't an error. It's a well-made Swiss automatic pilot watch with a blue dial that suits a Mark XX buyer. It sits near the top of the budget but sells new for less (about USD 2,174 on Chrono24), so it's a strong pick.",
+      "wrongFacts": [],
+      "costUsd": 0.04495
+    },
+    {
+      "card": "alternatives-cc2f065885d994f2",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Norqain's own page and several hands-on reviews give the Neverest GMT's water resistance as 100m, not 200m. The 200m rating belongs to the Neverest dive models, and the GMT has less because of its display caseback. Otherwise it's a strong alternative: a COSC-certified Kenissi-made NN20/2 GMT movement, and the price is believable for the strap version.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.05306
+    },
+    {
+      "card": "alternatives-d072be1a93843340",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I checked the card against Hamilton's own spec page and dealer listings. The facts hold up: 42 mm steel case, H-31 automatic chronograph movement, 100 m water resistance, and a USD 2,645 list price, which fits the budget. It's a reasonable Daytona stand-in, a steel tachymeter chronograph on a bracelet. But at about 15 mm thick it's bulkier than the Daytona, its 'sport-chic' look is fairly generic, and Hamilton lists it as a past-collection model. Better-suited chronographs exist at this price.",
+      "wrongFacts": [],
+      "costUsd": 0.05045
+    },
+    {
+      "card": "alternatives-d19cce0ba2773046",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The specs on the card match Hamilton's own listing for H38429730: 40 mm case, hand-wound H-51 chronograph movement, 100 m water resistance. The approximate USD 1,490 is below the roughly $2,145 retail price but realistic for the discounted and pre-owned market, and it's well within the budget. As a hand-wound, vintage-style chronograph of about the same size, it's a fitting cheaper alternative to the Moonwatch 321, though Hamilton lists it as discontinued, so it may only be available through dealers or pre-owned.",
+      "wrongFacts": [],
+      "costUsd": 0.03464
+    },
+    {
+      "card": "alternatives-d23184b47c13d4ed",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The price and 40 mm size look right (NE4xx is the 40 mm Neo Plus range), but this doesn't replace a Mark XX pilot's watch well. It's a single-hand dress watch with an acrylic crystal and no pilot-style dial or minute-accurate reading. In this budget a specialist would point to real pilot alternatives like a Hamilton Khaki Pilot, Laco or Sinn 556/104.",
+      "wrongFacts": [],
+      "costUsd": 0.05234
+    },
+    {
+      "card": "alternatives-d2901cce01ba045e",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Two facts on the card are wrong. Hanhart's own product pages rate the 39 mm Preventor HD12 to 15 bar (150 m), not 300 m. The listed models have references 792.810 (black) and 792.870 (blue), and no 792.380-0110 turned up. The watch itself is a good-value 39 mm automatic and a reasonable cheaper alternative to the Black Bay 58.",
+      "wrongFacts": [
+        "water",
+        "reference"
+      ],
+      "costUsd": 0.04141
+    },
+    {
+      "card": "alternatives-d53059754ea59b68",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The price (USD 1,075 retail), 41mm size, automatic movement and 200m rating all match Citizen's own listing. This titanium 'Fujitsubo' diver uses Citizen's own Cal. 9051 movement and is well liked by enthusiasts, so it's a sound Submariner alternative within the budget, even though its vintage styling looks different from the Sub.",
+      "wrongFacts": [],
+      "costUsd": 0.02674
+    },
+    {
+      "card": "alternatives-d55b4422936ab9b5",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: 41 mm, automatic GMT movement, 100 m and steel bracelet, and the approximate USD 3,982 fits between the strap and bracelet list prices and within the budget. It is a solid GMT from a real watch brand, but the Tudor Black Bay GMT or Pro and the Longines Spirit Zulu Time are closer and stronger alternatives to the 126710BLRO, so this is acceptable rather than a top pick.",
+      "wrongFacts": [],
+      "costUsd": 0.03154
+    },
+    {
+      "card": "alternatives-d6a5fa45538a1a94",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Damasko DA38 is a well-regarded German tool watch with a hardened case, sized at 40mm with 100m water resistance. That makes it a strong, cheaper pick for someone who wants the Mark XX's pilot style. The approximate USD 1,800 price fits the EUR 1,455 (± 1,000) budget and matches what this watch really sells for. I didn't run a web search to confirm the price or specs.",
+      "wrongFacts": [],
+      "costUsd": 0.00917
+    },
+    {
+      "card": "alternatives-da4853a68255d23f",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The Globetimer UTC is a real 42 mm titanium travel watch with 100 m water resistance. Its time-zone pushers are a genuinely useful feature, and EUR 4,300 is in line with discounted and pre-owned prices, even though the original retail price was about EUR 5,950–6,450. It fits the request, but the Tudor Black Bay GMT is a clearly better and more obvious alternative to the Pepsi GMT-Master II at this budget. I couldn't confirm the exact reference, but its format matches the brand's other Globetimer references.",
+      "wrongFacts": [],
+      "costUsd": 0.04865
+    },
+    {
+      "card": "alternatives-dd8e42afef917597",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "A cheaper alternative to the BB58 is a good idea in principle, and this one has the right 38 mm size, a mechanical movement (automatic ETA 2824) and an in-budget price. But the card's 300 m water resistance is wrong: Vulcain and several reviews list the Skindiver Nautique at 200 m (20 ATM).",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.02958
+    },
+    {
+      "card": "alternatives-df8e1e818614bac8",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: this is the 2003 Fangio Targa Florio limited edition of 1,957 pieces, with a 40 mm case and an automatic Calibre 17 chronograph, and pre-owned examples sell for about EUR 2,150, which fits the budget. It's a reasonable mechanical chronograph, but it's a discontinued, flieger-style limited edition rather than a close match to the Moonwatch, so pieces like an Omega Speedmaster Reduced, a Sinn 103 or a Longines column-wheel chronograph would be better substitutes.",
+      "wrongFacts": [],
+      "costUsd": 0.03645
+    },
+    {
+      "card": "alternatives-e041d12a032eb89d",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The specs check out: ref. 241834 is 43 mm, runs on a Sellita SW200-1 automatic, is rated to 200 m and costs about $1,100, which is within budget. But it's a casual watch with a wooden strap and no dive bezel, so it doesn't fit as a cheaper Seamaster 300M alternative when real Swiss divers like the Longines HydroConquest, Tissot Seastar 2000 or Oris Aquis cost about the same.",
+      "wrongFacts": [],
+      "costUsd": 0.03199
+    },
+    {
+      "card": "alternatives-e0e1174eddd8218d",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "IWC's own page confirms the IW324006 is a 36 mm automatic steel watch with 60 m (6 bar) water resistance. It's a good cheaper option than the Explorer 36: a legible tool watch from a respected maker, and the price of about USD 4,362 fits the budget. It's now discontinued, so buyers will mostly find it pre-owned.",
+      "wrongFacts": [],
+      "costUsd": 0.02793
+    },
+    {
+      "card": "alternatives-e511722c598c8a80",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts on the card match Bulova's own page: a 39 mm steel case, a Miyota 8215-based automatic and a splash-resistant (30 m) rating. Bulova lists it at $495 (on sale for $346.50), so the $475 on the card is the 2024 launch price. It's a fair, well-finished budget dress watch at well under half the budget, but the 8215 movement is basic. Tissot, Seiko Presage or Christopher Ward would make stronger Datejust alternatives at this price.",
+      "wrongFacts": [],
+      "costUsd": 0.03443
+    },
+    {
+      "card": "alternatives-ea29a3b019ff44df",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: it's a 41 mm automatic chronograph (BR-CAL.301) and the reference is right. It's a vintage-style black chronograph that fits the budget, but it's an obscure Air Force edition limited to 99 pieces with a different, pilot-watch look. Picks like a Sinn 103, Hamilton Intra-Matic or Longines chronograph are closer to the hand-wound Moonwatch 321 and easier to find.",
+      "wrongFacts": [],
+      "costUsd": 0.03195
+    },
+    {
+      "card": "alternatives-eae6d3dbf2758b37",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out: 39 mm case, hand-wound Sellita SW510 M chronograph, 50 m water resistance, reference UR-001 and USD 3,495 retail (about EUR 3,000–3,300, inside the budget range). It's a well-regarded enthusiast panda chronograph inspired by the Universal Genève 'Big Eye', so it suits a Daytona buyer, though it has no tachymeter bezel and is a limited edition that isn't always in stock.",
+      "wrongFacts": [],
+      "costUsd": 0.02841
+    },
+    {
+      "card": "alternatives-f0623fc9deab18ec",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The Sinn 556 A (556.014) is a great cheaper alternative to the Explorer 36: a clean, legible 38.5 mm steel watch with an automatic movement and 200 m water resistance, and the card gets all of these right. But the USD 3,285 price is wrong. Authorised dealers sell it for about €1,590 (roughly $1,830–2,360 USD).",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.04462
+    },
+    {
+      "card": "alternatives-f3d7432a45016af8",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Seiko's own pages confirm the reference, the USD 650 price, the 41.7 mm case, the 4R35 automatic movement and the 200 m rating. But the SRPL53 isn't a King Turtle. It's a PADI special edition of the new compact diver with an angular case and a Hardlex crystal, while the King Turtle has a larger cushion case and a sapphire crystal.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.05037
+    },
+    {
+      "card": "alternatives-f529436410f8ae08",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Citizen's own spec pages and several retailers list the case of the NB6004-08E as 46mm, not 41mm. It's a 15.3mm-thick titanium diver on a rubber strap, so it's also far chunkier than the 41mm Submariner it's meant to replace. The calibre 9051 automatic movement and 200m water resistance on the card are correct.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.02809
+    },
+    {
+      "card": "alternatives-fc5107879dc55001",
+      "tool": "alternatives",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The Daytona is a sporty chronograph, but the BR V1-92 Blue Steel is a simple three-hand dress-sport watch. It's a solid watch for the money, but it doesn't replace a Daytona. A mechanical chronograph in this budget would be a much better pick, for example a Tissot PRX/Seastar automatic chrono, Hamilton Intra-Matic or Longines Heritage chronograph.",
+      "wrongFacts": [],
+      "costUsd": 0.0093
+    },
+    {
+      "card": "archetype-00e630193db1d0c7",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "NOMOS's US store and an authorized US dealer both list the Ludwig 33 duo ref. 242 at USD 1,860, not the USD 1,800 the card gives as confirmed retail. Even with the right price it would be at best an 'ok' pick: the Ludwig's Roman-numeral dial is classical rather than architectural-modernist, and a Tangente or Orion would fit this request better.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.04307
+    },
+    {
+      "card": "archetype-1a10520054ab028e",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says the movement is manual, but the L.U.C 1860 in Lucent Steel uses the self-winding L.U.C 96.40-L calibre, an automatic movement wound by a 22-carat gold micro-rotor, according to Chopard's own listing. Apart from that error, this understated 36.5 mm Poinçon de Genève watch suits 'The Quiet Custodian' request very well.",
+      "wrongFacts": [
+        "movement"
+      ],
+      "costUsd": 0.03
+    },
+    {
+      "card": "archetype-222acf436be4bc42",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts are correct: Hamilton's own site lists 42mm, the automatic ETA 2893-2 movement with a true GMT, and 50m water resistance, and about USD 1,350 is right. It fits a first good watch, but it's discontinued and hard to find, and the Jazzmaster design is fairly generic, so there are better picks for a connoisseur under USD 2,000.",
+      "wrongFacts": [],
+      "costUsd": 0.02593
+    },
+    {
+      "card": "archetype-267023b5c095fdee",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "I'd gladly recommend the Tank Must for an architectural-modernist first serious watch. It's one of the classic rectangular designs, and the card's facts look right: WSTA0042 is the small steel quartz model, about 29.5 x 22 mm with 30 m water resistance, and roughly USD 3,600 is a believable price that fits the budget. I didn't run a search to confirm these. The small case suits slim wrists but may look petite on others.",
+      "wrongFacts": [],
+      "costUsd": 0.01061
+    },
+    {
+      "card": "archetype-270d68532a555c89",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Damasko's official specs and independent reviews put the DC86 case at 42 mm, or 43.8 mm across the bezel, so the 43 mm on the card is wrong. The price of EUR 4,140, the 100 m water resistance and the automatic movement (Damasko's C51-6) are correct. Apart from the size error, it would be a strong pick for this request.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.04359
+    },
+    {
+      "card": "archetype-2856f426316aa6d1",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The listed specs are correct: 37 mm steel case, IWC's automatic cal. 37524 (based on the ETA 2892) and 120 m water resistance. About USD 1,480 pre-owned is a realistic dealer price and fits the budget. It's a lesser-known 1990s IWC with an integrated bracelet, which suits a mechanical enthusiast's first good watch, but because of its age the buyer should check its service history and the bracelet's condition.",
+      "wrongFacts": [],
+      "costUsd": 0.02897
+    },
+    {
+      "card": "archetype-319a29cafb6ac5f8",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts check out: Citizen's own site lists it at $450, with a 40 mm case, Eco-Drive solar movement (J165) and 30 m water resistance. But a black dial with 11 diamond accents, a mineral crystal and department-store dress styling is a poor fit for an architectural-modernist first good watch. A specialist would spend more of the $2,000 budget on something like a Junghans Max Bill or a Nomos.",
+      "wrongFacts": [],
+      "costUsd": 0.02657
+    },
+    {
+      "card": "archetype-3243ac842ad8a5de",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Explorer 36 (ref. 124270) is about as recognised a standard-bearer as watches get, and it fits the $5,000–10,000 budget. The card's facts check out: Rolex's US list price is $7,900 as of October 2026, and the 36mm case, automatic Calibre 3230 and 100m water resistance are all correct.",
+      "wrongFacts": [],
+      "costUsd": 0.03081
+    },
+    {
+      "card": "archetype-38ceca837ba5da3f",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card is accurate: PAM01272 is a 40mm black-dial Quaranta with the automatic P.900, 100m water resistance and a current US retail price of $8,200. It's a fine tool watch within budget, but a value-minded field buyer would probably do better with a more practical field watch, or by buying this one pre-owned, where it sells for about $5,000–7,000.",
+      "wrongFacts": [],
+      "costUsd": 0.05162
+    },
+    {
+      "card": "archetype-392cbbe208360697",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out: Grand Seiko lists the SBGM221 at USD 5,400, and it is a 39.5mm automatic GMT (calibre 9S66) rated to 30m. It's a well-known watch from an established Grand Seiko line that fits the budget, though the brand's best-known icon is the Snowflake, a different model.",
+      "wrongFacts": [],
+      "costUsd": 0.02555
+    },
+    {
+      "card": "archetype-3abdcb44c7205732",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts are right: reference M0A10528 is a 48 x 31mm rectangular steel case with an automatic ETA 2895, 50m water resistance and a $3,350 retail price. The Art Deco rectangular design suits an architectural-modernist taste, but Baume & Mercier is an entry-level Richemont brand, and this watch sells new for about $2,650–2,850 on the grey market. Nomos (Tetra, Tangente) and the Cartier Tank Must have stronger design credentials for a first serious watch.",
+      "wrongFacts": [],
+      "costUsd": 0.05055
+    },
+    {
+      "card": "archetype-3b1440c0b55e3bf1",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The reference, $4,600 price, 42mm size, automatic movement and 300m rating all check out for Bell & Ross's steel BR 03 Diver, which is sold as 'BR-03 Diver Black Steel'. The card's model name 'Black Matte' belongs to the matte black ceramic version (BR0392-D-BL-CE/SRB), so the name doesn't match the reference.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.03884
+    },
+    {
+      "card": "archetype-3bb4f533766fd08e",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts match the PAM00000: a 44mm Luminor case, a hand-wound Unitas-based movement, 300m water resistance, and a grey-market price around USD 3,900, which fits the budget. The minimal dial and cushion case have some geometric appeal, but this is a bulky 44mm military tool watch, so it suits the Architectural Modernist brief less well than picks like Nomos, Junghans or a Cartier Santos.",
+      "wrongFacts": [],
+      "costUsd": 0.01518
+    },
+    {
+      "card": "archetype-3fc6112095cf240b",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Blancpain's site and authorised dealers list the steel 40mm Villeret Ultraplate 6651-1127-55B at USD 12,900, with the automatic Calibre 1151, so the card's facts are right. It's a quiet, classic dress watch from a historic maker that fits the Quiet Custodian brief well, though it sells well below retail on the pre-owned market.",
+      "wrongFacts": [],
+      "costUsd": 0.0257
+    },
+    {
+      "card": "archetype-43c492555fda096f",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference 027/3400.02 is the 38mm max bill Automatic, which sells for USD 1,690. The 34mm hand-wound Handaufzug is the 027/3700 or 3701/3702 family, at about USD 1,300–1,400, so the card's reference and price don't match its model.",
+      "wrongFacts": [
+        "reference",
+        "price"
+      ],
+      "costUsd": 0.04652
+    },
+    {
+      "card": "archetype-43cbf649f7d02d88",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "An RGM with a grand feu enamel dial is a great pick for an expressive collector, but two facts on the card are wrong. The reference is 801-CE (\"Classic Enamel\"), not 801-EN. USD 11,900 was the 2018 launch price, and RGM now lists the model at USD 27,950.",
+      "wrongFacts": [
+        "reference",
+        "price"
+      ],
+      "costUsd": 0.02073
+    },
+    {
+      "card": "archetype-4609512c996c8a93",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "IW326905 is the discontinued ceramic Pilot's Watch Automatic 41 Black Aces, a limited online-only model. It is water resistant to 60 m (6 bar), not 100 m. It launched at US$7,650, so the US$6,800 'confirmed retail' price is really a dealer listing. The name also leaves out 'Black Aces'.",
+      "wrongFacts": [
+        "water",
+        "price"
+      ],
+      "costUsd": 0.04824
+    },
+    {
+      "card": "archetype-4685901786e92ea0",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: PAM01289 is the 44mm eSteel Submersible QuarantaQuattro Blu Profondo with the automatic P.900 movement, 300m water resistance and a USD 12,200 retail price. Its bold Panerai design fits an expressive buyer, but it's a regular-production diver that sells for about $8,500–10,000 on the grey market. It doesn't really qualify as an exceptional object, and better choices exist at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02943
+    },
+    {
+      "card": "archetype-47fed04738c44c4f",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "This card gets the model wrong. FC-335MC4P6 is the Classics Heart Beat Moonphase Date, which uses the FC-335 movement, not the in-house manufacture caliber. It is not the Classics Moonphase Manufacture (FC-715). Retailer listings also give it a 40 mm case and 60 m (6 ATM) water resistance, while the card says 40.5 mm and 50 m. The USD 2,895 price matches the official US retail price.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "water"
+      ],
+      "costUsd": 0.03124
+    },
+    {
+      "card": "archetype-4f11b11f649a7b9f",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The 38.5 mm Aqua Terra Annual Calendar (ref. 231.10.39.22.02.001) runs Omega's in-house co-axial chronometer calibre 8601 and adds a useful complication. That makes it a strong first serious watch for a mechanical enthusiast, and about USD 3,900 pre-owned is a realistic price within the budget. I checked these facts from memory and did not run a web search.",
+      "wrongFacts": [],
+      "costUsd": 0.00963
+    },
+    {
+      "card": "archetype-549689a1d59abd41",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Cartier's own site lists WSSA0029 as the Santos de Cartier Medium in steel (about 35mm), not the 39.8mm Large, which is WSSA0018. US retailers such as Watches of Switzerland list the Large at about USD 9,200, so the USD 8,400 'confirmed retail' also doesn't match the watch described. The Santos Large itself would be a strong pick for this request.",
+      "wrongFacts": [
+        "reference",
+        "price"
+      ],
+      "costUsd": 0.03861
+    },
+    {
+      "card": "archetype-559b35870b87f69b",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The Braun BN0032 fits the Architectural Modernist style well, with its Dieter Rams-era Bauhaus look. But it's a licensed fashion-style quartz watch at about a tenth of the budget, and for a first good watch under USD 2,000 a specialist would point to a Junghans Max Bill Automatic or a Nomos Tangente/Orion first.",
+      "wrongFacts": [],
+      "costUsd": 0.0125
+    },
+    {
+      "card": "archetype-573a71db770a9d27",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "EUR 14,900 was the 2019 launch price for the Goldtech PAM01045, not today's retail. Current listings put retail at about USD 18,400–20,380, so it shouldn't be marked as confirmed retail. The 38 mm case, P.900 automatic movement and 30 m water resistance are correct, and a gold Luminor Due is a fair, though not ideal, choice for a quiet, exceptional object.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.04372
+    },
+    {
+      "card": "archetype-5815955e355ff593",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "IW326905 is the Black Aces, an all-black ceramic version with a fully luminous dial, and it is rated to 6 bar (60 m), not the 100 m the card lists. IWC's site now lists it among past collections, so the USD 6,800 'confirmed retail' price is just its 2023 launch price.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.04644
+    },
+    {
+      "card": "archetype-5848d1b2e1466894",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: the blue 43.5mm Planet Ocean is a real automatic diver rated to 600m, and $5,860 is a fair approximate price for unworn grey-market examples, below its last $8,000 retail. But it was replaced by the 42mm model in 2025, and it's a 16mm-thick diver rather than a practical field watch, so there are better picks for this buyer.",
+      "wrongFacts": [],
+      "costUsd": 0.06616
+    },
+    {
+      "card": "archetype-587db7994c9b3928",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The model name on the card calls this a 34mm watch, but reference 041/4465.04 is the 38mm max bill Quartz (38.0mm case, 7.9mm thick). The 38mm size field is right, so the card contradicts itself, and the 34mm versions carry different references such as 027/4731.00. The $1,030 retail price and 30m water resistance check out, and the watch itself would otherwise be a strong pick for this request.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.04526
+    },
+    {
+      "card": "archetype-58ae785886f3691d",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Lange 1 Moon Phase ref. 192.032 is the pink-gold, silver-dial model. It is 38.5 mm, hand-wound (L121.3 movement) and rated to 30 m, so the card's facts are right, and the approximate price of about USD 55,600 is believable. It's a restrained, heirloom-quality piece of fine watchmaking that fits a 'Quiet Custodian' asking for an exceptional object.",
+      "wrongFacts": [],
+      "costUsd": 0.00949
+    },
+    {
+      "card": "archetype-639aae26ad2cb488",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The Polaris Automatic suits the request, but I couldn't find any reference Q9008160. The real 41mm references are Q9008170, Q9008180, Q9008471 and Q9008480. The USD 6,600 'confirmed retail' price also looks wrong: it matches Chrono24's approximate market figure, while current retail runs about $9,800 to $11,300 (Q9008471 is $9,800 at an authorised dealer).",
+      "wrongFacts": [
+        "reference",
+        "price"
+      ],
+      "costUsd": 0.0478
+    },
+    {
+      "card": "archetype-6506ce9c28548e6a",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Tank Must is a design icon and fits the Architectural Modernist brief well as a first serious watch. The card's facts match: WSTA0052 is the large steel model with a quartz movement and steel bracelet, measuring 33.7 x 25.5 mm. UK retail is £3,800, so the approximate USD 4,695 is plausible and within budget, though pre-owned examples sell for about USD 3,000 to 4,000.",
+      "wrongFacts": [],
+      "costUsd": 0.03029
+    },
+    {
+      "card": "archetype-6a4b4738d7dbce57",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The Arnold & Son Globetrotter is a real 45mm steel automatic world-timer (calibre A&S6022, 30m water resistance) and fits this request well, but there is no 'Globetrotter GMT' model, and a world-timer is not a GMT. I found no trace of reference 1WTAS.G01A.C153S; the closest is 1WTAS.U01C.C153S, the blue steel version at about $22,000.",
+      "wrongFacts": [
+        "model",
+        "reference"
+      ],
+      "costUsd": 0.09571
+    },
+    {
+      "card": "archetype-6c6b49b1cea52f1f",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Bell & Ross's official US site lists the BR03A-BL-CE/SRB at $4,500, not the $4,300 the card gives as confirmed retail. The other facts check out: it's 41 mm, black ceramic, automatic and 100 m. As a watch, its bold square design and price fit the request well.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.02176
+    },
+    {
+      "card": "archetype-6ff979b62d18ca6b",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: a 38mm Goldtech (gold) case, automatic P.900 movement and 30m water resistance, and EUR 14,900 was the official 2019 launch price, though current retail looks higher (about $20,380). It suits an expressive collector, but a dressy gold Luminor Due is less of an exceptional object than other picks at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.04379
+    },
+    {
+      "card": "archetype-701857db5cacc740",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Tudor's site and several authorised dealers confirm the facts: reference M7939G1A0NRU-0001, 39mm steel case, 200m water resistance, the automatic MT5450-U calibre and a USD 5,525 retail price. It's a well-sized, practical GMT tool watch with good value, so it suits a rational field-watch buyer in this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02288
+    },
+    {
+      "card": "archetype-749db0e6aedf25bf",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The card's facts are correct: USD 5,550 retail, 44 mm, Breitling caliber 32 automatic and 300 m water resistance. But for a value-minded Field Rationalist adding to an established collection, this is weak value: it uses an ETA-based movement, grey dealers sell it new at about 47% off, and the 44 mm case is big and bulky for a field watch. A Tudor Black Bay GMT or a Sinn would be a better pick at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.04149
+    },
+    {
+      "card": "archetype-7d207da5ac713983",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: Longines' US site lists this watch at $5,000, 42 mm, automatic, with a ceramic bezel. A COSC-certified column-wheel flyback chronograph with a silicon hairspring is a sensible, good-value field/pilot pick at the low end of the budget, and it often sells new for about $3,700 to $4,000 from discount dealers, which a value-minded buyer will like.",
+      "wrongFacts": [],
+      "costUsd": 0.02737
+    },
+    {
+      "card": "archetype-8286672ed8b98123",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "NOMOS's US store lists the Ludwig 33 Duo enamel white, ref. 242, at USD 1,860, so the card's 'confirmed retail' price of USD 1,800 is wrong. USD 1,800 is the price of the Ludwig 33 Duo doré (ref. 240/241). The watch itself is a sound pick under USD 2,000, though at 32.8 mm it is small for many wrists.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.0418
+    },
+    {
+      "card": "archetype-85762e9c1f89d98a",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Datejust 36 ref. 126200 is the classic recognised standard-bearer and fits this request perfectly. Rolex US lists it at $8,350 on the Jubilee bracelet ($8,150 on the Oyster bracelet), which is inside the $5,000–10,000 budget, and the 36 mm automatic case with 100 m water resistance is correct.",
+      "wrongFacts": [],
+      "costUsd": 0.02138
+    },
+    {
+      "card": "archetype-86cb7170e53dbb77",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts are right: Seiko's US list price is USD 495, and the 42.5mm case, 4R34 automatic movement, 100m water resistance and the 'Black Grape' name all check out. It's a likeable, good-value GMT, but it uses only a quarter of the budget, and a mechanical connoisseur's first good watch under USD 2,000 is better served by something more refined, such as a Hamilton, Longines, Tissot PRX/Seastar or Christopher Ward, rather than a Hardlex-crystal Seiko 5 with a GMT hand that can't be set on its own.",
+      "wrongFacts": [],
+      "costUsd": 0.04814
+    },
+    {
+      "card": "archetype-8c76d05038a493c2",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Every fact on the card is correct: Breitling's site lists this green-dial steel-bracelet model at USD 7,450, with a 44 mm case, the in-house B01 automatic movement and 300 m water resistance. It fits the budget, but for a 'recognised standard-bearer' the Navitimer B01 is the more iconic Breitling, and the Avenger is a bulkier secondary line.",
+      "wrongFacts": [],
+      "costUsd": 0.03435
+    },
+    {
+      "card": "archetype-8f1dfe6ff4069548",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Kudoke 3 is a hand-finished independent watch from Germany with an in-house manual-wind Kaliber 1, a hand-engraved balance cock and a distinctive radial hour display, which makes it a strong fit for an expressive collector looking for something exceptional. Authorized dealers list the price at USD 11,900 and confirm the 39mm case, manual winding and 50m water resistance.",
+      "wrongFacts": [],
+      "costUsd": 0.0241
+    },
+    {
+      "card": "archetype-97fe8eebe620298a",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The card's facts are correct: the SNJ025 is the PADI version of the Arnie, with a solar movement, 200 m water resistance and a 47.8 mm case. But this archetype calls for clean, geometric, architectural design, like a Nomos, a Junghans Max Bill or a Rado. A huge, chunky tool diver with a combined analog and digital display is a clear style mismatch, especially for a first good watch.",
+      "wrongFacts": [],
+      "costUsd": 0.00899
+    },
+    {
+      "card": "archetype-984533603c8df8c6",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "All the facts check out against Bulgari's own US listing: ref. 103963, 40 mm aluminium case, automatic B192 GMT movement, 100 m and USD 4,150 retail. It's a distinctive design-led pick within budget, but someone who cares most about movements would get more from a Tudor Black Bay GMT, a Grand Seiko or an Oris with its in-house calibre.",
+      "wrongFacts": [],
+      "costUsd": 0.0325
+    },
+    {
+      "card": "archetype-9a85e0245a2e0ae8",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Reference F4260004 is the black DLC-titanium Flieger F-43 Triple-GMT, sold as the PC-7 Team limited edition of 100 pieces. It is 43 mm, rated to 200 m and runs on the Fortis WERK 13 automatic GMT movement with COSC certification, and the EUR 5,286 price matches what a retailer currently asks. A light titanium tool watch with a true GMT and its own movement suits a practical-minded collector well within the 5,000 to 10,000 USD budget, though only 100 were made, so it may be hard to find.",
+      "wrongFacts": [],
+      "costUsd": 0.0349
+    },
+    {
+      "card": "archetype-9f0e24571733019d",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "I checked the card against NOMOS's own pages and it's correct: the Club ref. 701 is 36mm, hand-wound with the in-house DUW 4001 (Alpha) calibre, rated to 100m, and sells for USD 1,830 retail. A hand-wound watch with an in-house movement from Glashütte is a strong first good watch for a mechanical connoisseur and fits the USD 2,000 budget.",
+      "wrongFacts": [],
+      "costUsd": 0.03885
+    },
+    {
+      "card": "archetype-9f1ef7907e855ef2",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The model name says 33mm, but the card lists a 42mm case and the source page is for the Ballon Bleu de Cartier 42 mm, reference WGBB0036. The model name is wrong.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.00795
+    },
+    {
+      "card": "archetype-a54d0211b9d0f263",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The model, reference, 41mm pink-gold case, calibre 4302 automatic movement and 30m water resistance are all correct. The price isn't: this reference retails for roughly USD 34,000–36,000 (the matching pink-gold version lists at €33,500), so USD 18,888 without a pre-owned label is far below the real market.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.03062
+    },
+    {
+      "card": "archetype-a868adb1279f624e",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card mixes up two different watches. Reference BR05A-BL-SK-ST/SST is the 40 mm steel BR 05 Skeleton Nightlum, which retailed at EUR 6,700. The 'Black Lum' with a EUR 9,500 retail price is the 41 mm ceramic BR05A-BLM-SKCE/SCE. Either way, it's a limited-edition Bell & Ross sold below the USD 10,000 'exceptional object' level.",
+      "wrongFacts": [
+        "model",
+        "price"
+      ],
+      "costUsd": 0.04489
+    },
+    {
+      "card": "archetype-a8fb284f4c49e8bb",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Tissot's own site confirms all the facts on the card: reference T137.207.11.051.00, 35mm, Powermatic 80 automatic, 100m and USD 795 retail. Its flat-sided, integrated-bracelet design fits the Architectural Modernist brief, and it's a classic, good-value first serious watch, well under the USD 2,000 budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02851
+    },
+    {
+      "card": "archetype-ac0d4f6658914b0b",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The watch itself is a good first mechanical watch, but several facts on the card are wrong. Orient Star's own spec sheet lists 50m water resistance (the card says 100m) and a 40.4mm case (other retailers say 40–40.7mm; the card says 39.3mm). European list prices run about EUR 879–1,009, and the cited source shows USD 1,255, so 'EUR 1080 confirmed retail' isn't supported.",
+      "wrongFacts": [
+        "water",
+        "size",
+        "price"
+      ],
+      "costUsd": 0.04364
+    },
+    {
+      "card": "archetype-b295d2bcc798de46",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts look right: this reference is the 43 mm steel Aqua Terra Annual Calendar with a blue dial and bracelet, the automatic Co-Axial 8601 movement and 150 m water resistance. But it's a discontinued model that originally sold new for around USD 8,000, so the roughly USD 4,000 price only works on the pre-owned market, and the 43 mm case with its busy calendar dial is a less versatile first serious watch than a current 38/41 mm Aqua Terra.",
+      "wrongFacts": [],
+      "costUsd": 0.015
+    },
+    {
+      "card": "archetype-b8bdf7bbe42361b6",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "PAM01320 is not a Submersible Bronzo. It is the steel Luminor 1950 3 Days GMT Automatic (44mm, caliber P.9011), and the card's own source page lists it that way. The 47mm Submersible Bronzo is reference PAM00968, so the model, reference and case size on this card don't belong together.",
+      "wrongFacts": [
+        "model",
+        "reference",
+        "size"
+      ],
+      "costUsd": 0.04038
+    },
+    {
+      "card": "archetype-ba195d380f36ab60",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: this reference is the steel Classic Worldtimer Manufacture with a 42 mm case, an in-house automatic movement and 50 m (5 ATM) water resistance. The approximate USD 4,892 is a bit high, since new ones sell for about $3,800 to $4,700, but it's still within budget. An in-house worldtimer at this price is a strong first serious watch for someone who cares about movements.",
+      "wrongFacts": [],
+      "costUsd": 0.0301
+    },
+    {
+      "card": "archetype-bad0850a840da636",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "This is a great dress watch for the request, but the card gets two facts wrong. Lange's own US site lists reference 201.027 as a 37 mm white gold case priced at USD 27,000, not 40 mm at USD 23,600 'confirmed retail'.",
+      "wrongFacts": [
+        "size",
+        "price"
+      ],
+      "costUsd": 0.02762
+    },
+    {
+      "card": "archetype-bb39dd4a7ae40b24",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The specs check out: 44mm steel case, automatic P.900 movement, 300m water resistance, 2022 limited edition. But a steel Submersible with sailing-team branding is a mainstream diver, not an exceptional object for an expressive collector. It also sells pre-owned for about $6,200–8,300 against the $10,400 retail, so it's poor value at that price.",
+      "wrongFacts": [],
+      "costUsd": 0.0607
+    },
+    {
+      "card": "archetype-bdfcfb3a3a8fbf9e",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Damasko's own listings confirm the card: EUR 1,250 retail, a 39mm hardened bead-blasted steel case, an automatic movement and 200m water resistance. It's a clean German design, well built and good value, so it fits a modernist first good watch under USD 2,000 well.",
+      "wrongFacts": [],
+      "costUsd": 0.02107
+    },
+    {
+      "card": "archetype-bfe94fa4d1287e49",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The Aikon Master Grand Date is a likeable mid-range sports watch, but it usually retails for a few thousand dollars. That's well below the USD 10,000+ budget, and it isn't the exceptional, expressive piece this collector wants. The card's facts are listed as unknown rather than wrong.",
+      "wrongFacts": [],
+      "costUsd": 0.00879
+    },
+    {
+      "card": "archetype-c19679d3dd4a8dd7",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "Reference 126334-0025 checks out: it's the Datejust 41 in steel and white gold with a fluted bezel, blue Roman dial, Oyster bracelet and calibre 3235. But USD 18,547 is far above its real market (new from grey dealers for about USD 15,000, and retail is lower still), so it's poor value. A fluted-bezel Datejust is also a fairly ordinary pick for an 'exceptional object' request.",
+      "wrongFacts": [],
+      "costUsd": 0.03156
+    },
+    {
+      "card": "archetype-c88adc67caff2822",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out: NOMOS lists the Club ref. 701 at USD 1,830 in its US store, with a 36 mm case, hand-wound movement and 100 m water resistance. A German-made Bauhaus-style watch from a real watchmaker with its own movement is a great first good watch for a modernist taste and fits the budget. The more classic Tangente would be the obvious alternative, but the Club is still a pick a specialist would gladly recommend.",
+      "wrongFacts": [],
+      "costUsd": 0.02495
+    },
+    {
+      "card": "archetype-cc02149f40eef818",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The case size on the card is wrong. Watchbase, Longines-derived specs and retailers all list the Ultra-Chron Diver L2.836.4.52.9 at 43 mm across, not 47.5 mm (the lug-to-lug is about 48 mm). A vintage-style cushion-case diver is also a weak fit for an Architectural Modernist.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.0268
+    },
+    {
+      "card": "archetype-cfc315f42b764dcf",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Tank Louis Cartier Large in yellow gold (WGTA0011) is a quiet, timeless dress watch with a manual movement, which suits the Quiet Custodian brief well above USD 10,000. The 25.5 mm width, manual movement, 30 m water rating and price of about EUR 15,400 all match what I know of this reference; I didn't run a search to confirm them.",
+      "wrongFacts": [],
+      "costUsd": 0.00945
+    },
+    {
+      "card": "archetype-d0b972419691a407",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card mixes up two different watches. Reference 027/3400.02 is the max bill Automatic: 38 mm, automatic J800.1 movement, 30 m. The max bill Handaufzug is 27/3700.02: 34 mm, manual J805.1 movement, 50 m water resistance, about USD 1,360 at Junghans' US store. So the model or reference, the size, the movement, the water resistance and the price are wrong for whichever watch the card means.",
+      "wrongFacts": [
+        "model",
+        "reference",
+        "size",
+        "movement",
+        "water",
+        "price"
+      ],
+      "costUsd": 0.02753
+    },
+    {
+      "card": "archetype-d137faf53b6c6bc3",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "I checked Chanel's US site: ref. H5699 is the J12 Calibre 12.2 in 33mm white ceramic, and it retails for $7,950. It is not the 38mm Calibre 12.1 named on the card. The 38mm Calibre 12.1 in white ceramic is ref. H5700 at $8,350, so the card's model and size don't match its reference and price.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "reference"
+      ],
+      "costUsd": 0.0225
+    },
+    {
+      "card": "archetype-d14a9f507be2ed5d",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: it is a 40 mm automatic with 100 m water resistance, and about USD 1,700 matches current grey-market and pre-owned listings of roughly USD 1,500–2,000. But Bremont has retired the model, so it is only available second-hand. The movement is ETA-based, and the Airco Mach 2 is not strong value next to stronger connoisseur picks like a Sinn 556 or Longines at this budget, so it fits the request without being the best choice.",
+      "wrongFacts": [],
+      "costUsd": 0.05559
+    },
+    {
+      "card": "archetype-d199028c9bbca06a",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The model name is wrong. BR03A-MIL-CE/SRB is the newer 41mm BR-03 Military Ceramic, while 'BR 03-92 Military' is the older 42mm BR0392-MIL-CE. The price is also off: Bell & Ross's US site lists the BR-03 Military Ceramic at $4,700, not the 'confirmed retail' $4,500 on the card. Its sporty military look also suits the modernist archetype less well than a cleaner design would.",
+      "wrongFacts": [
+        "model",
+        "price"
+      ],
+      "costUsd": 0.02567
+    },
+    {
+      "card": "archetype-d6a0c7cc0cf4111e",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: it's a 38.5 mm steel Aqua Terra with Omega's in-house Co-Axial calibre 8601 annual calendar, a chronometer rated to 150 m. It's a strong mechanical pick for a first serious watch. Omega no longer makes this reference, so the roughly USD 4,300 price only works on the pre-owned market, where it's realistic.",
+      "wrongFacts": [],
+      "costUsd": 0.03328
+    },
+    {
+      "card": "archetype-d9ca32a7adba6f03",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I confirmed the reference, the 43.5mm case, the automatic movement and the 600m water resistance. The price is shaky: list price now looks like about USD 8,000, grey-market about USD 6,840 and pre-owned about USD 4,000, so USD 6,336 matches none of these, though it is marked approximate. The watch itself is a robust, legible Omega that fits the budget, but it's a big, heavy dive watch rather than a field watch. A Field Rationalist would likely be better served by a dedicated field or everyday tool watch, such as an Explorer-type piece or the Aqua Terra.",
+      "wrongFacts": [],
+      "costUsd": 0.03795
+    },
+    {
+      "card": "archetype-dbe0b7ffa665b3fa",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Citizen's own US listing confirms the facts on the card: a 39mm case only 2.98mm thick, the solar caliber 8826, 30m water resistance and a $3,995 retail price. The ultra-thin design suits an architectural modernist, but it is a solar quartz watch at nearly $4,000, it is sold out at Citizen, and new examples sell for about $3,000 on Chrono24, so a Nomos or Grand Seiko would be a stronger first serious watch at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.04715
+    },
+    {
+      "card": "archetype-de4a94ed4086237e",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Omega's own US site confirms every fact on the card: ref. 210.32.42.20.03.001 is the 42 mm steel Seamaster Diver 300M with blue dial on rubber strap, retailing at $6,300, with an automatic movement and 300 m water resistance. It is one of the best-known luxury dive watches and an obvious standard-bearer pick inside the $5,000 to $10,000 budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02559
+    },
+    {
+      "card": "archetype-e1aa589b80b8ea28",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "RE-ND0001S00B is the Orient Star Classic Semi Skeleton, a 30.5 mm ladies' watch, not a 39 mm Elegant Classic. The cited source lists it at EUR 739, reduced to EUR 669, not EUR 624.",
+      "wrongFacts": [
+        "size",
+        "model",
+        "price"
+      ],
+      "costUsd": 0.03321
+    },
+    {
+      "card": "archetype-e54c0b10c6f8088f",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card calls the SBGW285 'Asakage', but Grand Seiko's own page says its green dial depicts 'Byōka', the end of summer, so the model name is wrong. Everything else checks out (37.3mm, manual-wind 9S64, USD 4,900 retail), and the watch itself would be an excellent first serious watch for this budget.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.02785
+    },
+    {
+      "card": "archetype-e5b944d344732df4",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card lists USD 10,000 as the confirmed retail price, but current US retail for PAM01316 is USD 10,500 (Wempe, WatchMaxx, Luxury of Watches). Even with the price fixed, this is the regular steel Luminor Marina, a weak fit for an 'exceptional object' request.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.04441
+    },
+    {
+      "card": "archetype-e6e0abc48e4835a8",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The card's facts check out: ref. 03.0520.683 is the Grande Class Elite Dual Time, 44 mm steel, automatic Elite cal. 683, and pre-owned dealers list it at about USD 4,200–4,300. It's an interesting pick with an in-house movement, but it's a discontinued 2008-era piece with a large 44 mm case, only 50 m water resistance and poor legibility. At this price a first serious watch has better options, like a current Zenith, Grand Seiko or Nomos.",
+      "wrongFacts": [],
+      "costUsd": 0.08736
+    },
+    {
+      "card": "archetype-ea48f6fdc55c16df",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Omega's US site and WatchMaxx confirm the reference, the 38 mm size, the automatic Calibre 8800, the 150 m water resistance and the $7,800 retail price. The Aqua Terra is a widely respected, everyday luxury watch from an established maker, so it suits this request and budget well.",
+      "wrongFacts": [],
+      "costUsd": 0.02519
+    },
+    {
+      "card": "archetype-ef3bba2523b19143",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Retail price (CHF 6,490), 200m water resistance and automatic movement all check out; the case is really 39.5mm, close enough to the listed 40mm. It's a strong value pick at about USD 8,000: a true GMT with Horage's own K2 movement, 9.85mm thick, 904L steel and a screw-down crown. I couldn't confirm 'Ascent' as an official name (I found the dials White, Transatlantic Blue, Atoll Blue and Boreal Green), but I couldn't show it's wrong either.",
+      "wrongFacts": [],
+      "costUsd": 0.03836
+    },
+    {
+      "card": "archetype-f0da10dc7502ab25",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "I checked the card against Breguet's site and authorized dealers, and all its facts hold up: reference 7147BR/12/9WU is an 18k rose gold watch, 40mm, with the ultra-thin automatic 502.3SD movement, 30m water resistance and a $32,300 retail price. Its engine-turned (guilloché) dial and fluted case make it a quiet, heirloom-grade dress watch that fits 'The Quiet Custodian' well.",
+      "wrongFacts": [],
+      "costUsd": 0.03
+    },
+    {
+      "card": "archetype-f1add00eb015c4c4",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card names the Clifton Baumatic 10399, but M0A10468 is a different watch: the 10468, a COSC-certified Baumatic with a blue dial on a steel bracelet. The 10399 is a discontinued black-dial model on an alligator strap. The cited WatchMaxx source also lists retail as $3,150, not the 'confirmed' $3,400 on the card. The 40mm case, automatic movement and 50m water resistance are correct, and the watch itself would be a fair pick at this budget.",
+      "wrongFacts": [
+        "model",
+        "price"
+      ],
+      "costUsd": 0.04614
+    },
+    {
+      "card": "archetype-fad48d83b90902d2",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out. Oris lists ref. 01 581 7592 4054-07 5 21 71FC at 40 mm, its Artelier line is 3 bar (30 m), and USD 1,078 pre-owned is in line with current listings. It's a reasonable first good watch, but it's an older Sellita-based moonphase dress piece with only 30 m water resistance. A mechanical connoisseur would probably get more from something under USD 2,000 with a more distinctive movement or more everyday versatility, such as an Oris with its in-house Calibre 400 or a Nomos.",
+      "wrongFacts": [],
+      "costUsd": 0.04311
+    },
+    {
+      "card": "archetype-fc567911bd7a6663",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: L5.757.4.73.6 is the steel automatic DolceVita (L592 movement, about 27.7 x 43.8 mm, 30 m), and USD 1,930 is close to its roughly USD 2,000 retail price. Its rectangular Art Deco case suits an architectural modernist, and it's a credible Swiss first good watch, though the '32mm' in the model name doesn't match the 27 mm width and the small size will suit some wrists better than others.",
+      "wrongFacts": [],
+      "costUsd": 0.03748
+    },
+    {
+      "card": "archetype-fdeb220a30da9830",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Bulgari's own site lists reference 103382 as the grey-dial Aluminium 40, at USD 3,600 with 100 m water resistance. The black-dial Aluminium 40 is reference 103445, so the card's model and reference don't match. The watch itself is a sensible design-led pick for this request and budget.",
+      "wrongFacts": [
+        "reference"
+      ],
+      "costUsd": 0.04518
+    },
+    {
+      "card": "archetype-ff9f2665527accf5",
+      "tool": "archetype",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out: the 29.01 Midnight Worldtimer launched in 2025 at CHF 22,000 before tax, with a 40mm grade 5 titanium case, a Schwarz-Etienne ASE 222 microrotor automatic movement and 50m water resistance. It's a strong fit for an expressive collector, with a bold bezel-less luminous design from a respected independent maker, though only 25 were made, so a buyer will probably need the pre-owned market.",
+      "wrongFacts": [],
+      "costUsd": 0.04647
+    },
+    {
+      "card": "film-0dad2044ac022c22",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Michael Douglas's Gordon Gekko wearing a Cartier Santos in Wall Street (1987) is a well-known sighting, recorded in film-watch databases like IMWDb and in many specialist articles. The details on the card don't match a 1980s Santos, though: the 41mm size, reference 2960 and 'Or Massif' (solid gold) don't fit the two-tone model usually linked to the film.",
+      "wrongFacts": [],
+      "costUsd": 0.01157
+    },
+    {
+      "card": "film-136b14c31dd00514",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is real and well documented. Sylvester Stallone wore the Panerai Luminor ref. 5218-201/A in Daylight (1996). It was a limited run Panerai made for the film, and it's often called the 'Daylight' Luminor. The 44mm size, manual movement and 300m water resistance on the card match published specs.",
+      "wrongFacts": [],
+      "costUsd": 0.00731
+    },
+    {
+      "card": "film-18f21fa4bd9f12a6",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is real. IMWDb and WatchReel both say Mads Mikkelsen wears a Longines Evidenza Chronograph as Le Chiffre during the poker game in Casino Royale (2006), and both give reference L2.656.4.53.6, which is the card's L26564536 written without dots.",
+      "wrongFacts": [],
+      "costUsd": 0.02337
+    },
+    {
+      "card": "film-19db3af1d0b6ecff",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Hodinkee, Crown & Caliber and the 2009 Antiquorum auction (lot 538, sold for $120,000 with Evelyn Lincoln's letter of authenticity) all record that JFK owned this 14k gold, water-resistant Nastrix. It was a 1963 gift from David and Evangeline Bruce, and his secretary Evelyn Lincoln said he often wore it on his morning swims.",
+      "wrongFacts": [],
+      "costUsd": 0.02338
+    },
+    {
+      "card": "film-1b58f1975e9ed5a7",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Several reliable sources (JCK, WatchTime, Time+Tide and reports on the 2005 Guernsey's auction) agree that JFK wore an 18k gold Omega Ultra Thin, ref. OT3980. His friend Grant Stockdale gave it to him, Kennedy wore it at his 1961 inauguration, and Omega bought it at auction in 2005 for its museum.",
+      "wrongFacts": [],
+      "costUsd": 0.04217
+    },
+    {
+      "card": "film-1ded6f34a079490a",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "IMWDb, Hamilton's own product page and A Timely Perspective all confirm that Matt Damon wears the Hamilton Khaki Navy BeLOWZERO H78585333 as Mark Watney in The Martian (2015). The card's source link points to a Dwayne Johnson page, which has nothing to do with this film, but the sighting itself is real.",
+      "wrongFacts": [],
+      "costUsd": 0.03102
+    },
+    {
+      "card": "film-1fa25b51eefead17",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Several sources record that Sean Connery wore the Rolex Submariner 6538 \"big crown\" as James Bond in Dr. No (1962), and he wore it again in later Bond films. The linked source covers Goldfinger rather than Dr. No, but the Dr. No sighting is still real.",
+      "wrongFacts": [],
+      "costUsd": 0.00746
+    },
+    {
+      "card": "film-24dd4747e132b423",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Andy Warhol is well documented as owning Piaget Black Tie watches. One of them went through the 1988 Sotheby's sale of his estate, and Piaget's own Andy Warhol collection reissues the Black Tie design based on his watch. I didn't run a fresh search because these are widely reported facts.",
+      "wrongFacts": [],
+      "costUsd": 0.00944
+    },
+    {
+      "card": "film-2592ec67e564be53",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "James Bond Lifestyle, a specialist film-watch source, confirms that a Breitling Navitimer ref. 806 appears in Thunderball (1965). It is Derval's watch, which Angelo wears and Bond later gives to Domino. The card's specs, a 41 mm case and a manual-wind movement (Venus 178), match the mid-1960s 806.",
+      "wrongFacts": [],
+      "costUsd": 0.02719
+    },
+    {
+      "card": "film-2a690b8033c98f6b",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is real. Sotheby's July 2026 Space Exploration sale had an Innovative Time quartz dive watch from the 1980s (Lot 57), listed as Buzz Aldrin's personal dive watch and sold from the Buzz Aldrin Family Trust. Watches of Espionage also reported the lot. The catalogue only says he 'may well' have dived with it, but the source is a reliable record of his own watch.",
+      "wrongFacts": [],
+      "costUsd": 0.02405
+    },
+    {
+      "card": "film-393068a9359d4788",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Jacqueline Kennedy Onassis did wear a Cartier Tank. Her brother-in-law Prince Stanislas Radziwill gave it to her, and Christie's sold it in 2017 for $379,500. The card's source link, a Vogue article about Timothée Chalamet's Wonka necklace, has nothing to do with her, but the sighting itself is real.",
+      "wrongFacts": [],
+      "costUsd": 0.00695
+    },
+    {
+      "card": "film-3bb58cc2ccea4dc3",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is well documented. In Casino Royale (2006), Daniel Craig's Bond wears the Omega Seamaster Planet Ocean 45.5mm with a black dial on a rubber strap, ref. 2900.50.91, in the Bahamas and Miami scenes. Specialist sources such as James Bond Lifestyle and IMWDb confirm it. I didn't need to search because this is a well-known reference.",
+      "wrongFacts": [],
+      "costUsd": 0.01075
+    },
+    {
+      "card": "film-40931f57ecda9f1c",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Sotheby's 2026 Space Exploration lot lists this Bulova Accutron Eagle Pilot Automatic, model 65B004, as Buzz Aldrin's own watch, consigned by the Buzz Aldrin Family Trust, and says the model was made to honor him. These sources prove ownership rather than wear: Heritage lots of the sister model 65B003 from his collection are described as never worn.",
+      "wrongFacts": [],
+      "costUsd": 0.03437
+    },
+    {
+      "card": "film-49fbea4cb7bb6772",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Warhol designed the Movado Times/5, but it wasn't finished until 1988, after he died in February 1987. His studio completed it. No source shows him wearing it, so this is a design credit, not a sighting.",
+      "wrongFacts": [
+        "sighting"
+      ],
+      "costUsd": 0.08438
+    },
+    {
+      "card": "film-4a61a02a2a997389",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Many sources record that Steve McQueen wore a Benrus Series 3061 as Frank Bullitt in Bullitt (1968), and Benrus has since sold reissues tied to the film. The site's link to the actor and the film is correct.",
+      "wrongFacts": [],
+      "costUsd": 0.00606
+    },
+    {
+      "card": "film-5211d79eaf77e72a",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is well documented. Sean Connery's Bond wore a Breitling Top Time ref. 2002, modified into a Geiger counter gadget, in Thunderball (1965). The prop was found at a car boot sale and sold at Christie's in 2013 for £103,875.",
+      "wrongFacts": [],
+      "costUsd": 0.00719
+    },
+    {
+      "card": "film-547297e67855e09f",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Christie's lot 193 (Geneva, 13 May 2019) is Andy Warhol's own steel-and-pink-gold Rolex Oyster Chronograph ref. 3525. It was first sold at Sotheby's 1988 sale of his estate and is also covered by the NYT, Robb Report and Watchonista. Watchonista notes he was rarely photographed wearing it, so the link is ownership, but the provenance is well documented. Warhol's piece sold for CHF 471,000, so the card's USD 67,000 reflects ordinary 3525s, not his.",
+      "wrongFacts": [],
+      "costUsd": 0.0435
+    },
+    {
+      "card": "film-57c9c9f5e41b94df",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Steve McQueen is widely documented, including in period photos and specialist watch articles, wearing his own Rolex Submariner ref. 5512, so the sighting is real. However, the card's 47 mm case size is wrong: the 5512 is a roughly 40 mm watch.",
+      "wrongFacts": [],
+      "costUsd": 0.01414
+    },
+    {
+      "card": "film-5852ff4ccb92cc39",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Sotheby's 2026 Space Exploration sale listed this watch as lot 56, 'Property from the Buzz Aldrin Family Trust', and called it his personal Citizen Hyper Aqualand dive watch with general wear from use. Man of Many and duPont Registry also report it as his watch and say it sold.",
+      "wrongFacts": [],
+      "costUsd": 0.02749
+    },
+    {
+      "card": "film-5930afaad95dc14f",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Tom Selleck's Rolex GMT-Master 'Pepsi' is a well-documented watch from the original Magnum, P.I. series. Specialist sources usually name it as ref. 16750, though some suggest a 1675, which matches the card's hedge.",
+      "wrongFacts": [],
+      "costUsd": 0.00688
+    },
+    {
+      "card": "film-63fe8f85763debc8",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Martin Sheen's Captain Willard wearing a Seiko 6105 diver in Apocalypse Now is well documented by Hodinkee and other specialist sources. That film is where the watch got its 'Captain Willard' nickname, and 6105-8110 is the reference most often cited (8119 is a near-identical variant).",
+      "wrongFacts": [],
+      "costUsd": 0.00707
+    },
+    {
+      "card": "film-66f1ecb7b344d2ad",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Warhol's ownership of a Patek Philippe 2526 is well documented: the NYT article is the card's source, and Hodinkee and a Christie's lot trace the watch back to Sotheby's 1988 sale of his collection. One caveat: this is a watch he owned, and I found no evidence of him actually wearing it.",
+      "wrongFacts": [],
+      "costUsd": 0.02646
+    },
+    {
+      "card": "film-683db45f7acc2aab",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "IMWDb lists the Gruen Precision 510 as the watch Sean Connery wears as James Bond in Dr. No (1962). Bond-watch researcher Dell Deaton identified it in 2013 in the casino scene, and Bond-focused sites back this up, though some say the 1962 footage is too blurry to confirm the maker for certain.",
+      "wrongFacts": [],
+      "costUsd": 0.02889
+    },
+    {
+      "card": "film-6bdb170d6ff5d446",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Specialist articles and IMWDb list a Rolex Speedking worn by Steve McQueen as Virgil Hilts in The Great Escape (1963). It is often given as ref. 6430, though the card leaves the reference blank.",
+      "wrongFacts": [],
+      "costUsd": 0.0062
+    },
+    {
+      "card": "film-72403c39ad449195",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Hodinkee's July 2026 piece on Sotheby's Space Exploration auction lists an Omega Constellation Manhattan Day-Date 'Owl' among the 24 watches from Buzz Aldrin's own collection. It describes these as watches he kept for decades and wore regularly. I could not check the exact reference 396.1070 or the other specs against the Sotheby's lot itself.",
+      "wrongFacts": [],
+      "costUsd": 0.03218
+    },
+    {
+      "card": "film-73835e8b7609788a",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "McQueen does wear a curved Cartier Tank in The Thomas Crown Affair (1968), but the exact model is disputed. GQ quotes Cartier expert Harry Fane calling it a Cintrée, Perpetual Passion says it is an Allongée, and IMWDb lists it only as a Tank and calls the model question unresolved, so the Allongée ref. 21612 can't be confirmed.",
+      "wrongFacts": [],
+      "costUsd": 0.0549
+    },
+    {
+      "card": "film-79f4da801af80067",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Kennedy owned and wore a gold-filled Art Deco Bulova engraved \"JFK 1941\". An admirer gave it to him in 1941, and it sold through RR Auction in 2013, which Hodinkee and others covered.",
+      "wrongFacts": [],
+      "costUsd": 0.02764
+    },
+    {
+      "card": "film-7a58b0379211600f",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Watch specialist sites (Wristcheck, RolexMagazine) show Warhol photographed wearing a Rolex Datejust, including a ladies' 28mm yellow-gold Datejust on a President bracelet, and Robb Report says he often wore a woman's gold Rolex. Sources don't agree on the exact model in the Basquiat photo (some call it a Day-Date or Lady Date), and the card's own source is a Pedro Pascal page that has nothing to do with Warhol.",
+      "wrongFacts": [],
+      "costUsd": 0.04609
+    },
+    {
+      "card": "film-7efbeb1e63db34f1",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Heritage Auctions has sold this watch twice, in 2010 and in 2025. Both lots describe it as a solid gold Benrus wristwatch given to JFK by members of the Democratic National Committee in 1960 and engraved \"TO OUR NEXT PRESIDENT J.F.K.\" The lots say he wore it throughout the campaign, and the watch comes with a letter of authentication from his aide Dave Powers.",
+      "wrongFacts": [],
+      "costUsd": 0.02612
+    },
+    {
+      "card": "film-89210ea5d087269c",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "IMWDb, Bond Lifestyle and Fratello all show Roger Moore wearing a Tissot PR-516 Mk1 in Live and Let Die (1973), in the Bleeker flying school scene and the speedboat chase. The card's model and sighting are correct, though the card leaves the specs blank.",
+      "wrongFacts": [],
+      "costUsd": 0.04642
+    },
+    {
+      "card": "film-8b8d4e133272ddc3",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is real and well documented. JFK owned and wore a gold Cartier Tank that Jackie gave him, engraved 'JFK 1963 from JBK', and RR Auction sold it in 2021. That matches the card's source, though the card itself had no source passages to check against.",
+      "wrongFacts": [],
+      "costUsd": 0.00732
+    },
+    {
+      "card": "film-98668c3a3642b7e1",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Buzz Aldrin wearing an Omega Speedmaster Professional ref. 105.012 on Apollo 11 is well documented. It is the watch he wore on the Moon and later lost. The source URL points to an Apollo 13 page, but the sighting itself is real.",
+      "wrongFacts": [],
+      "costUsd": 0.0075
+    },
+    {
+      "card": "film-9948938cd7bf62cb",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Several sources confirm that Jackie Kennedy wore a yellow gold Piaget with a jade dial: Crown & Caliber, A Timely Perspective, and Sotheby's, whose catalogue calls it the 'Jackie Kennedy' style. Piaget also lent her original watch from its museum for the 2016 film 'Jackie'.",
+      "wrongFacts": [],
+      "costUsd": 0.01935
+    },
+    {
+      "card": "film-a22741e163906b03",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Elvis Presley's Hamilton Ventura in the 1961 film Blue Hawaii is well documented. Hamilton's own history pages and many specialist articles on the Ventura mention it, and the linked source is Hamilton's official history page.",
+      "wrongFacts": [],
+      "costUsd": 0.0063
+    },
+    {
+      "card": "film-a46344a8d646a677",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Roger Moore's Bond wears a Rolex Submariner ref. 5513, fitted as the buzz-saw magnet gadget, in Live and Let Die (1973). The prop watch was sold at Christie's in 2015, so the sighting is real, even though the card's linked source is about Steve McQueen's 5513 and doesn't support it.",
+      "wrongFacts": [],
+      "costUsd": 0.00937
+    },
+    {
+      "card": "film-a55f8fab336a93b4",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Sotheby's 2026 Space Exploration sale listed Lot 39, a titanium Omega Speedmaster HB-SIA 'Solar Impulse' from circa 2013. The lot was marked 'Property from the Buzz Aldrin Family Trust' and described as coming directly from Aldrin's personal collection, so it is confirmed as his watch.",
+      "wrongFacts": [],
+      "costUsd": 0.04657
+    },
+    {
+      "card": "film-a9e1617d3986b190",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Sources tie Gekko to a gold Cartier Santos, not a Tank, and say he wears an IWC Da Vinci Perpetual Calendar in Money Never Sleeps. The card's only source is a Vogue piece about Timothée Chalamet's Wonka necklace, so it doesn't support this sighting.",
+      "wrongFacts": [
+        "model",
+        "sighting"
+      ],
+      "costUsd": 0.03206
+    },
+    {
+      "card": "film-aec987b9563d691a",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Several specialist sources (BAMF Style, Crown & Caliber, InsideHook) say Steve McQueen wore a gold Gruen Precision on his right wrist as Doc McCoy in The Getaway (1972). The card's own source link is an Esquire article about James Bond watches, which has nothing to do with this sighting, but the sighting itself is real.",
+      "wrongFacts": [],
+      "costUsd": 0.02141
+    },
+    {
+      "card": "film-b201fc4acf526207",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "It's well documented that Steve McQueen wore the Heuer Monaco ref. 1133B in the 1971 film Le Mans. One of the actual screen-worn watches sold at auction (Phillips, 2020), which is what the Gear Patrol source covers. I didn't run a new search because this sighting is widely recorded.",
+      "wrongFacts": [],
+      "costUsd": 0.00687
+    },
+    {
+      "card": "film-b22dff80cf5a0102",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card's only source is a page about Tom Hiddleston in The Night Manager, not Buzz Aldrin, and I found nothing showing Aldrin wearing this Moonshine Gold Speedmaster (ref. 310.60.42.50.99.002, a recent 3861 model). The Speedmasters Aldrin is known for are the steel 105.012 he wore on Apollo 11 and his gold presentation piece, so the sighting looks misattributed.",
+      "wrongFacts": [
+        "sighting"
+      ],
+      "costUsd": 0.04341
+    },
+    {
+      "card": "film-b9bd5617b02cc27e",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Sotheby's 2026 Space Exploration sale had a lot from the Buzz Aldrin Family Trust: a Speedmaster X-33 Gen Two with ref. 31892427901001, consigned straight from Aldrin's personal collection. Aldrin has also long been known for wearing an X-33. Fratello listed the lot under a different reference, 318.90.45.79.01.001, but the auction house's own listing matches the card.",
+      "wrongFacts": [],
+      "costUsd": 0.03562
+    },
+    {
+      "card": "film-bb4765b40734b24f",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Pierce Brosnan's Bond wears the blue-dial Omega Seamaster Professional 300M quartz, ref. 2541.80, in GoldenEye (1995). Bond watch guides like Monochrome's and IMWDb record this, and the watch has the laser and detonator gadget in the film.",
+      "wrongFacts": [],
+      "costUsd": 0.00754
+    },
+    {
+      "card": "film-bb8a254d1237f855",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "It's well documented that JFK wore a gold Cartier Tank. Jacqueline Kennedy gave it to him, engraved for his 45th birthday in 1962, and it sold at a Guernsey's auction in 2005. Specialist watch articles describe it as a Tank Louis Cartier, though some sources call it simply a Cartier Tank. I didn't run a new search for this check.",
+      "wrongFacts": [],
+      "costUsd": 0.00872
+    },
+    {
+      "card": "film-bd67bba7ac5b3b7b",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is well documented. Marlon Brando wore his own Rolex GMT-Master ref. 1675 as Colonel Kurtz in Apocalypse Now, and Phillips sold that exact watch at auction in December 2019, which matches the card's source.",
+      "wrongFacts": [],
+      "costUsd": 0.00653
+    },
+    {
+      "card": "film-c18f29aa7a1a23f5",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "In Casino Royale (2006), Daniel Craig's Bond wears the Omega Seamaster Diver 300M Co-Axial 41mm in blue, ref. 2220.80.00. This is well documented by IMWDb and specialist articles, and he also wears a Planet Ocean in the film.",
+      "wrongFacts": [],
+      "costUsd": 0.00765
+    },
+    {
+      "card": "film-c2c56ed0396cce93",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is real. Hodinkee and RR Auction both document a Bulova that JFK owned and wore before he was president. It's a gold-filled rectangular dress watch, 22 x 36 mm, with the hand-wound 17-jewel 8AE movement, engraved \"JFK 1941\", and it sold at auction in 2013 for $25,428.",
+      "wrongFacts": [],
+      "costUsd": 0.02452
+    },
+    {
+      "card": "film-c7e34834064e84b2",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Steve McQueen wearing a Hanhart 417 ES chronograph as Buzz Rickson in The War Lover (1962) is a well-known sighting. Watch publications and Hanhart's own heritage material both report it.",
+      "wrongFacts": [],
+      "costUsd": 0.00673
+    },
+    {
+      "card": "film-cd3adaf6026c69fb",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "IMWDb lists a gold Jaeger-LeCoultre Memovox worn by Steve McQueen as Thomas Crown in The Thomas Crown Affair (1968). Quill & Pad is also quoted as saying it was one of McQueen's own watches that he wore in the film.",
+      "wrongFacts": [],
+      "costUsd": 0.0266
+    },
+    {
+      "card": "film-d1e3d91ca4ea47c2",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Sotheby's July 2026 Space Exploration sale (lot 40) offered an Omega Seamaster Professional GMT, ref. 2535.80.00, made around 2007. It came directly from Buzz Aldrin's personal collection, and GQ, Hodinkee and Man of Many all reported the sale. Those sources show he owned the watch, not that he was photographed wearing it.",
+      "wrongFacts": [],
+      "costUsd": 0.04414
+    },
+    {
+      "card": "film-d35d26151f6df7cb",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "This sighting is real and well documented. Roger Moore's James Bond wears the Hamilton Pulsar P2 2900 LED digital watch in Live and Let Die (1973), shown in the wake-up scene, and film-watch databases such as IMWDb and James Bond Lifestyle record it.",
+      "wrongFacts": [],
+      "costUsd": 0.00669
+    },
+    {
+      "card": "film-d46217a59049c183",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Several reliable sources record that Andy Warhol owned and wore Cartier Tank watches, and he is known for saying he didn't wear his Tank to tell the time. Tanks were also among the watches in his 1988 Sotheby's estate sale. The card names the exact model as the Tank Louis Cartier, which is the usual attribution, but I didn't confirm that detail separately.",
+      "wrongFacts": [],
+      "costUsd": 0.01107
+    },
+    {
+      "card": "film-de47fa3b2cab5725",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "IMWDb lists the Hamilton Khaki Pilot Pioneer Aluminum as worn by Jessica Chastain as Commander Lewis, citing Hamilton's account of the production and horology press coverage. The model launched in 2014, so the 2015 film date fits, though it has not been identified from an on-screen shot.",
+      "wrongFacts": [],
+      "costUsd": 0.04626
+    },
+    {
+      "card": "film-e38294657f5babd8",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Tom Selleck's Thomas Magnum is well known for wearing the Chronosport Sea Quartz 30 dive watch in the early seasons of Magnum, P.I., before he switched to the Rolex GMT-Master. Watch-film sources and specialist articles, including the linked Watches of Espionage piece, record this.",
+      "wrongFacts": [],
+      "costUsd": 0.00608
+    },
+    {
+      "card": "film-e534d6838ad2c438",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "It's well documented that Steve McQueen wore the blue-dial Heuer Monaco ref. 1133B as Michael Delaney in Le Mans (1971). One of the watches worn in the film sold at Phillips in 2020 for about $2.2 million.",
+      "wrongFacts": [],
+      "costUsd": 0.01226
+    },
+    {
+      "card": "film-e5d95ff2a3c09591",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "It's well documented that Steve McQueen wore the Heuer Monaco (ref. 1133B) as Michael Delaney in Le Mans (1971), and it's one of the most famous film watch sightings. The cited source, a Watchonista article about Pedro Pascal, doesn't back this up, and the brand was just Heuer back then, before it became TAG Heuer.",
+      "wrongFacts": [],
+      "costUsd": 0.00678
+    },
+    {
+      "card": "film-ef968e04357f7d55",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Well documented: Pierce Brosnan's Bond wears the Omega Seamaster Professional Diver 300M Quartz (ref. 2541.80.00) in GoldenEye (1995). IMWDb and Omega's own history record it as Bond's first Seamaster.",
+      "wrongFacts": [],
+      "costUsd": 0.00583
+    },
+    {
+      "card": "film-f428cdd8708e3772",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Andy Warhol wearing a Cartier Tank is well documented. His line \"I don't wear a Tank to tell the time\" is widely cited, and his Tanks were sold at Sotheby's in 1988. The card's linked source, a Vogue piece about Timothée Chalamet, is off-topic and has no passages, but the sighting itself is real.",
+      "wrongFacts": [],
+      "costUsd": 0.00661
+    },
+    {
+      "card": "film-f47190169b890102",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Sotheby's 2026 Space Exploration sale offered this LeCoultre 'Shark Deep Sea' ref. 2643 (circa 1970, cal. 72) as property from the Buzz Aldrin Family Trust, from his personal collection. Hodinkee, Gear Patrol and GQ also covered the lot. That proves he owned it, though I found no photo of him wearing it.",
+      "wrongFacts": [],
+      "costUsd": 0.0469
+    },
+    {
+      "card": "film-f9d71c7999a6f1f3",
+      "tool": "film",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "IMWDb, WatchPro, WatchPaper and A Timely Perspective all report that Michael Peña wears a Hamilton Khaki X-Wind Limited Edition as Rick Martinez in The Martian. Hamilton supplied the watch for the film, but no source gives the exact reference number.",
+      "wrongFacts": [],
+      "costUsd": 0.03979
+    },
+    {
+      "card": "quiz-01143539bcc035fa",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Rolex's US site confirms the Datejust 36 ref. 126200 (m126200-0001, silver dial, Jubilee bracelet) at USD 8,350. It's a 36 mm automatic with 100 m water resistance, which converts to roughly the top of the CHF 6–7k budget. It's a classic everyday watch that suits a 15.7 cm wrist, and any specialist would gladly recommend it.",
+      "wrongFacts": [],
+      "costUsd": 0.02559
+    },
+    {
+      "card": "quiz-02bc43d216a39c91",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Davosa Ternos is a well-regarded Swiss 40 mm, 200 m diver, and the quartz version is clean enough for the office. About USD 838 is roughly GBP 650, well inside the budget. I couldn't confirm this exact quartz reference on the distributor's site, but nothing I found contradicts the card's facts.",
+      "wrongFacts": [],
+      "costUsd": 0.04515
+    },
+    {
+      "card": "quiz-03abfe8fb3819a7f",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The specs check out: the WH1111 is a Swiss quartz steel 6000 that measures about 37–40 mm depending on how it's measured, so 39 mm is reasonable. But at USD 1150 it's poor value, since pre-owned examples usually sell for about USD 640–800, and the budget could buy a newer, better quartz or solar watch instead.",
+      "wrongFacts": [],
+      "costUsd": 0.0318
+    },
+    {
+      "card": "quiz-05458bd8b67eb6db",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Steinhart Ocean 44 is a well-regarded value diver with a 44 mm steel case, 300 m water resistance and a Swiss ETA 2824-2/SW200 automatic movement, so it fits a sport request under GBP 500. The approximate USD 580 (about GBP 460) is believable but sits near the top of the budget, and I couldn't confirm reference 103-1214 in my searches, though none of the other facts are contradicted.",
+      "wrongFacts": [],
+      "costUsd": 0.0437
+    },
+    {
+      "card": "quiz-0613e2bc50ee3d4b",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The 130000C is the vintage Panthère 'Jumbo', and listings give its case as 29 mm wide (29 x 40 mm), not 36 mm. At 29 mm it is also too small for the 35–39 mm size the request asked for.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.0248
+    },
+    {
+      "card": "quiz-06b6ad60de7fef5d",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Oris's own page shows that reference 01 400 7790 4157-07 8 23 02PEB is the 43.5 mm Aquis Date Calibre 400 (USD 4,300), not the 41.5 mm model; the 41.5 mm version uses the 7769 case code. That makes the case size and model name on the card wrong, and 43.5 mm is outside the requested 40–43 mm range.",
+      "wrongFacts": [
+        "size",
+        "model"
+      ],
+      "costUsd": 0.04152
+    },
+    {
+      "card": "quiz-09693f0da0f37489",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card gets the model wrong. Seiko's own listing and retailer listings show the SRPL53 is the compact 'Slim Samurai' PADI Special Edition, a Samurai/Shogun-style case with a 4R35 movement and Hardlex crystal, not a King Turtle. The other facts are right: USD 650 retail, 41.7 mm, automatic and 200 m. The price, about £510, is also slightly over the £500 budget.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.05713
+    },
+    {
+      "card": "quiz-09698c303bb4034c",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Bell & Ross's site and retailers confirm the specs: 42 mm, 300 m, automatic BR-CAL.302 movement, USD 4,600 retail. That price is roughly GBP 3.5k, so it fits the budget, and the 300 m rubber-strap diver suits a resort request and an 18.4 cm wrist well. Bell & Ross calls it 'Black Steel' rather than 'Black Matte', but the reference is the same watch.",
+      "wrongFacts": [],
+      "costUsd": 0.03114
+    },
+    {
+      "card": "quiz-097b3ad7a40bbe9e",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Eco-Drive One AR5000-50E is a 2.98 mm thick solar dress watch with sapphire crystal, sized at about 38–39 mm. That makes it a refined, distinctive office watch for a 15.3 cm wrist, and the approximate price of about USD 2.3k fits the EUR 2–3k budget. It may now be hard to find new, since Citizen Hong Kong's page lists it as unavailable, but the facts on the card check out.",
+      "wrongFacts": [],
+      "costUsd": 0.02675
+    },
+    {
+      "card": "quiz-0bc32c7204c3d98b",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "TAG Heuer's official page and the aBlogtoWatch launch coverage both put this Carrera Tiger at 41 mm, not 39 mm, so it doesn't fit the 35–39 mm range for a 15.7 cm wrist (WatchBase's 39 mm figure looks like a database error). On value, it's a 300-piece limited edition with an ETA-based Calibre 5 that cost about USD 3,750–3,950 new, so roughly USD 7.2k pre-owned is poor value for this budget.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.0893
+    },
+    {
+      "card": "quiz-122020e684b8c2c2",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The card is accurate: the 1523.2 is a 36 mm steel-and-18k-gold quartz Classic, and dealers list it pre-owned for about USD 2,250–2,900, which sits inside the EUR 2k–3k budget. It's the original Hublot design, a slim 7 mm watch that suits an office and a 15.3 cm wrist, so it's an interesting vintage pick for an enthusiast. The gold and rubber-strap look won't suit everyone.",
+      "wrongFacts": [],
+      "costUsd": 0.03066
+    },
+    {
+      "card": "quiz-134690659f82d33c",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Maurice Lacroix's own site confirms every fact on the card: 42 mm steel case, ML115 automatic movement, 200 m water resistance and USD 2,950 retail, which is within the EUR 2–3k budget. It's a well-regarded integrated-bracelet sports watch that suits an 18.5 cm wrist for everyday wear. Its Sellita-based movement with 38 hours of power reserve is fairly basic for the price, but the finishing and bracelet make it a solid pick.",
+      "wrongFacts": [],
+      "costUsd": 0.03115
+    },
+    {
+      "card": "quiz-13e54e140e2200cc",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: Aqua Terra 38 mm in steel and Sedna gold, self-winding calibre 8802, 150 m, discontinued, and about CHF 8,800 fits the budget. But the diamond dial on a burgundy leather strap is a dressy pick for a resort watch, and USD 11,013 looks high next to Chrono24 listings that run up to about $9,100, so a steel Aqua Terra on a bracelet would be a better choice.",
+      "wrongFacts": [],
+      "costUsd": 0.06786
+    },
+    {
+      "card": "quiz-16349085306a5346",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Omega's US site confirms the facts: reference 220.10.38.20.09.001 is the 38 mm Aqua Terra Shades with a sandstone dial, rated to 150 m, at USD 7,400 retail, which is about CHF 6,000 and within budget. It's a versatile everyday watch in the right size for a 15.7 cm wrist, and a specialist would gladly recommend it.",
+      "wrongFacts": [],
+      "costUsd": 0.03076
+    },
+    {
+      "card": "quiz-16b6878979547316",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Every fact on the card checks out: 41 mm case, quartz movement (L115), 300 m water resistance, and a blue dial. At about USD 681 pre-owned (roughly £540) it sits inside the £500–1k budget. A slim (10.2 mm) Swiss quartz diver from a respected brand like Longines suits the office brief well.",
+      "wrongFacts": [],
+      "costUsd": 0.03265
+    },
+    {
+      "card": "quiz-16cb31353a18f0b7",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Orient Kamasu (Mako III) RA-AA0006L19B is a blue-dial dive watch on a rubber strap. It has the F6922 automatic movement, a sapphire crystal, a 41.8 mm case and 200 m water resistance. At about USD 233, roughly £185, it's one of the best-value automatic divers well under the £500 budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02785
+    },
+    {
+      "card": "quiz-17f13a387e4723d0",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card links to the S301 bracelet version (S301-BK-BR), which Bremont lists at £3,500 ($4,000 in the US), not £3,100. £3,100 is the price of the strap version at Watches of Switzerland. Bremont has also retired the S301, so 'confirmed retail' is misleading. The 40 mm size, automatic movement and 300 m water resistance are correct.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.04407
+    },
+    {
+      "card": "quiz-1a51d7ad440ba427",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The card's facts are right: 36 mm, automatic COSC movement, 100 m and ref. A37330531A1A1 are all confirmed, and USD 7,500 is about CHF 6k, inside the budget. But this is a diamond-bezel, mother-of-pearl dress-jewelry piece, not an obvious everyday enthusiast pick, and USD 7,500 pre-owned is poor value when comparable Galactics sell for about USD 5–5.4k and stronger everyday 36–39 mm watches fit this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.03688
+    },
+    {
+      "card": "quiz-1a6922ccc0f3b5bd",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs are right: 40 mm Trip-Tick steel case, BE-92AE automatic chronometer and 100 m water resistance, and the reference matches how retailers list it (AIRCO-MACH-1/BK). Bremont has retired the model, though. List price was about $3,800–4,100, so the roughly $2,800 figure is a leftover-stock discount price, and a pilot watch on an ETA-based movement is only fair value against stronger options in this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.0577
+    },
+    {
+      "card": "quiz-1b628598ff76c430",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Chanel's own site lists reference H5699 as the J12 Caliber 12.2 in white ceramic with a 33 mm case. The card calls it the 38 mm Calibre 12.1, which is reference H5697 (black) and costs USD 8,350.",
+      "wrongFacts": [
+        "model",
+        "size"
+      ],
+      "costUsd": 0.0256
+    },
+    {
+      "card": "quiz-1bff8fadab7101bc",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The specs are right: 38 mm steel and Sedna gold, silver dial, automatic Master Chronometer, 150 m, and the pre-owned price of about USD 11.2k (roughly CHF 9k) is in line with current dealer listings. It's discontinued, so you'd buy it pre-owned, but it's a classy resort watch that suits a 15.1 cm wrist and fits the budget.",
+      "wrongFacts": [],
+      "costUsd": 0.03291
+    },
+    {
+      "card": "quiz-1d2268ea5676ca7a",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I checked the details and they hold up. The reference is a real 41 mm quartz HydroConquest, water resistant to 300 m, and about USD 963 pre-owned (roughly £760) is within budget. It's a solid Swiss diver, but for the office a red bezel on a rubber strap is too sporty. The black-bezel version on a steel bracelet would suit office wear better.",
+      "wrongFacts": [],
+      "costUsd": 0.0417
+    },
+    {
+      "card": "quiz-254ea77c9a6ae1c3",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The 36 mm case and quartz chronograph movement check out. But this is a discontinued older Conquest quartz chrono, and the same reference sells used on Chrono24 for about $700, so $1,364 is poor value in a budget that buys stronger current quartz or solar picks.",
+      "wrongFacts": [],
+      "costUsd": 0.02699
+    },
+    {
+      "card": "quiz-27556f3ffa8a8fd7",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The model name on the card says \"max bill Quartz 34mm\", but ref. 041/4465.04 is the 38 mm max bill Quartz. The card's own 38 mm diameter field and dealer listings both confirm 38 mm. The USD 1,030 price, J645.33 quartz movement and 30 m water resistance check out, and the watch would otherwise be a good fit for this request.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.02732
+    },
+    {
+      "card": "quiz-27cd3b6b69ad4aaa",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says 40 mm, but Ingersoll's own listing (the card's source) and Selfridges both give the Grafton I00702 as 42 mm wide and 15 mm thick. That puts it outside the 37–40 mm range for this wrist. Even with the right size, it would be a weak pick: Ingersoll is a fashion brand, and a busy 42 mm multi-subdial design doesn't suit a simple office watch.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.0248
+    },
+    {
+      "card": "quiz-2cf133f094adb181",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The 36 mm steel Defy Midnight with the Elite 670 automatic and 100 m water resistance fits the size, movement and water-resistance rules, and the pre-owned price comes to roughly CHF 6–7k. But its star-speckled, jewellery-style dial is a less natural everyday pick than options like a 38 mm Omega Aqua Terra or a Grand Seiko at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.01405
+    },
+    {
+      "card": "quiz-31729e200c68416a",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: the reference is a 42 mm automatic chronograph rated to 100 m, and it lists at USD 2,645, with new ones from dealers at about EUR 2,080. A Swiss automatic chronograph with a 60-hour power reserve, at this price and in a size that fits an 18.5 cm wrist, is a solid everyday pick in this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02725
+    },
+    {
+      "card": "quiz-372e7cc18bafa372",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Reference 81925 is the Santos Ronde (also sold as the Santos Vendôme LM), a quartz model. Its case is about 32 mm, not 38 mm, so it falls below the 35–39 mm range the visitor asked for.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.02772
+    },
+    {
+      "card": "quiz-3935e2403bd4f340",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Bulova's official pages confirm the specs: 44 mm case, automatic movement (Miyota-based 821D) and 200 m water resistance. It's a well-liked revival of Bulova's own 1970s diver with sapphire crystal, and it fits this sporty request well. The approximate USD 488 is about GBP 385, which is plausible at discount sellers but below the roughly USD 795 that dealers ask. The model is discontinued, so it may be hard to find, and the movement is fairly basic.",
+      "wrongFacts": [],
+      "costUsd": 0.03185
+    },
+    {
+      "card": "quiz-3aa49309296bb34c",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says 600 m of water resistance, but the C60 Apex Limited Edition (2019, 100 pieces, 42 mm, SH21 in-house automatic) is rated to 300 m. It is also a sold-out limited edition that launched at £3,495, so it can realistically only be found pre-owned now.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.02642
+    },
+    {
+      "card": "quiz-3d57d5b1530fdc32",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I checked the card against IWC's site and dealer listings: the reference, 37 mm steel case, automatic calibre 32111, 50 m water resistance and price are all correct, and the price fits the budget. As a resort watch, though, a dressy diamond bezel on a leather strap is a weaker choice than a sportier 50 m+ watch on a bracelet. The USD 11,373 pre-owned price is also higher than new discounted offers of about USD 10,285, so the value isn't great.",
+      "wrongFacts": [],
+      "costUsd": 0.03107
+    },
+    {
+      "card": "quiz-403c258cea862a7a",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card's price is wrong. Borealis's own page for this exact no-date red-bezel version (BBSV2AD) lists USD 495, not about USD 375. Even at USD 495 (roughly GBP 390) it fits the budget, and the other facts check out: 38 mm, Miyota 9039 automatic, 300 m.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.02663
+    },
+    {
+      "card": "quiz-415983ecdc6aac2b",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Grand Seiko's own spec page confirms everything on the card: 38 mm high-intensity titanium case, the self-winding Hi-Beat 9S85 movement, 100 m water resistance, a screw-down crown and USD 7,900 retail. That price is about CHF 6.3k, inside the budget. It's a well-finished, light everyday watch sized right for a 15.7 cm wrist. The only catch is the pink 'Sakura-Kakushi' dial, which won't suit every taste.",
+      "wrongFacts": [],
+      "costUsd": 0.03247
+    },
+    {
+      "card": "quiz-44dca13073bd3707",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I checked the facts and they hold up: ref. 568.CM.1470.CM is the 38 mm all-ceramic Black Magic on a ceramic bracelet, with an automatic HUB1110 movement and 50 m water resistance. Dealer prices of about USD 11.1k–12.5k put it near the top of a CHF 9k–10k budget, and its black ceramic suits a resort setting. But the movement is a basic Sellita-based caliber, 50 m is the bare minimum for resort wear, and many enthusiasts don't rate Hublot highly, so a watch specialist would likely suggest better choices at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.0307
+    },
+    {
+      "card": "quiz-44fda302103a451d",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The Boldr Venture Field is a solid microbrand field watch. It's 38 mm, automatic and 200 m water resistant, all of which fit the request, and at about £260 it's well within budget. It's a tough everyday piece rather than a travel watch, though, so a GMT in the same price range would suit this request better.",
+      "wrongFacts": [],
+      "costUsd": 0.00989
+    },
+    {
+      "card": "quiz-4a1c7d341b31c47f",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "All the card's facts check out: reference 220.10.38.20.03.004 is the 38 mm Summer Blue Aqua Terra in steel on a steel bracelet, with Omega's automatic calibre 8800, 150 m water resistance and a US retail price of $7,800. It fits the CHF budget and suits a 15.7 cm wrist, and it's one of the best everyday watches a specialist could suggest in this range.",
+      "wrongFacts": [],
+      "costUsd": 0.02701
+    },
+    {
+      "card": "quiz-4c039bef70907fca",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs hold up: the B77346 is the two-tone steel and gold Windrider Callisto, about 34.4–35 mm, with a Breitling 77 quartz movement, and dealers list it at around USD 2,200–2,300. It's a solid quartz watch from a real watch brand, but a 2000s two-tone sports watch with a rotating dive-style bezel is an odd fit for the office, and it's pricey for an older quartz piece, so there are clearly better dress-leaning choices.",
+      "wrongFacts": [],
+      "costUsd": 0.05945
+    },
+    {
+      "card": "quiz-4efa11272c1a5629",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Longines' own page and several dealers list reference L4.755.4.11.6 as 'La Grande Classique de Longines', not 'Presence'. Présence is a separate Longines collection, so the card's model name mixes up two lines. The 36 mm size, quartz movement (L420), 30 m water resistance and about USD 1,350–1,400 price are all correct, and it would otherwise be a good slim everyday pick.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.03041
+    },
+    {
+      "card": "quiz-53eed6383a6ebf7f",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The W6700255 is the 36 mm steel quartz Ronde Solo de Cartier. That size suits a 15.8 cm wrist, and about USD 1.9k is a realistic pre-owned price within the budget. It's a well-regarded luxury quartz watch that a specialist would gladly suggest for daily wear when water resistance doesn't matter.",
+      "wrongFacts": [],
+      "costUsd": 0.00844
+    },
+    {
+      "card": "quiz-5e7ae6d4563f8eef",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Tsuyosa is a popular, good-value enthusiast automatic. It has a 40 mm case, a Miyota 8210 movement and 50 m water resistance, and its integrated-bracelet design works at the office. At about EUR 299 it sits well inside the CHF 500 budget, and the card's facts match the official listing.",
+      "wrongFacts": [],
+      "costUsd": 0.00924
+    },
+    {
+      "card": "quiz-6019d056c704a922",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Santos Medium WSSA0010 is a steel automatic with a 35.1 mm case and 100 m water resistance, which matches the card. It suits a 15.7 cm wrist and everyday wear, and its quick-swap bracelet and strap make it a strong pick in this budget. One tracker lists retail at about USD 7,400 against the card's 7,250, but that's close enough that I didn't mark the price wrong.",
+      "wrongFacts": [],
+      "costUsd": 0.0257
+    },
+    {
+      "card": "quiz-638e98222168c31d",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs check out: 42 mm, Sellita SW200-1 automatic, 200 m and the reference. The KonTiki is a decent Swiss everyday watch that fits the request, but at about USD 2.8k for an off-the-shelf SW200 movement, the value is weak. Discounted copies often sell for much less, and Oris, Longines, Sinn or Tissot/Hamilton models with better movements are stronger picks at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.0261
+    },
+    {
+      "card": "quiz-66308c6c371a973f",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Baume & Mercier's own page lists the Classima 10214 as a discontinued 'Heritage' piece that is no longer available, so 'USD 2900 (confirmed retail)' can't be a current retail price, and authorized dealers show it out of stock. It's also a dressy watch (silver guilloché dial on an alligator strap) rather than a strong everyday pick in this budget, though the 40 mm size, automatic movement and 50 m water resistance are correct.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.03595
+    },
+    {
+      "card": "quiz-677f41aeb24eece4",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Laco's official page and dealer listings give 20 ATM (200 m) water resistance, but the card says 100 m. The price ($2,220 retail), 43 mm case and automatic movement are correct, and the watch otherwise suits the request.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.02731
+    },
+    {
+      "card": "quiz-6805f093c17f0cfa",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The specs check out: 41 mm, Swiss quartz (L157), 300 m water resistance, sapphire crystal and a steel bracelet. In the UK it lists at £850 RRP and sells for about £750, which fits the £500–1k budget. It's a smart, versatile sport watch that works well in the office, which makes it a strong pick for this request. The approximate USD 781 is a little under the $900 US list price but in line with what dealers charge (about $800–840).",
+      "wrongFacts": [],
+      "costUsd": 0.04347
+    },
+    {
+      "card": "quiz-680d35b379c7c0f1",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "I couldn't find a 'Flygraf Pilot M1 GMT' or reference YFLY22-GMT-BMS anywhere. Yema's real Flygraf GMTs (YAA21 references) are 39 mm, rated to 300 m and listed at USD 1,049–1,149, far over a GBP 500 budget, so the card's 40 mm, 100 m and USD 625 don't match any real model.",
+      "wrongFacts": [
+        "model",
+        "reference",
+        "price",
+        "size",
+        "water"
+      ],
+      "costUsd": 0.05464
+    },
+    {
+      "card": "quiz-6c066f771a7d3ecf",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "This fits the request: a real TAG Heuer diver with 300 m water resistance and a quartz movement, about 41–43 mm (listings disagree), at a price inside the budget. It's not a great office pick, though: the busy, sporty sailing-countdown dial doesn't suit dress wear, and the model is discontinued with a complex Calibre S movement that's harder to service. A plain Aquaracer quartz or a solar diver would suit better.",
+      "wrongFacts": [],
+      "costUsd": 0.04709
+    },
+    {
+      "card": "quiz-730b09113c03910f",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Rado's own page and the dealer listings show that reference R32150168 is the Captain Cook High-Tech Ceramic Skeleton (43 mm, R808 automatic), not the Diver, so the model on the card is wrong. Its size, movement and 300 m water resistance match the listings, and the EUR 4,500 price fits next to its CHF 3,950 and USD 4,700 retail prices.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.04427
+    },
+    {
+      "card": "quiz-73758fbc08b528e2",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The size, movement (Miyota 82S0 automatic), 50 m water resistance and EUR 340 price all match Laco's page for ref. 862103, the Aachen Blaue Stunde 39. But Laco lists this version as discontinued and no longer available, so it can't be bought at that price. The current bracelet version (862103.2.MB, EUR 440, in stock) would be the better card, and its sporty pilot style on a grey nylon strap is only a so-so fit for the office.",
+      "wrongFacts": [],
+      "costUsd": 0.03369
+    },
+    {
+      "card": "quiz-76dffee0c41e327f",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: ref. 41034.02/S CA2C has a 43 mm case, an automatic movement (Sellita SW200-3) and 300 m water resistance, and EUR 3,770 matches dealers' pre-tax price of about EUR 3,170 plus VAT. It's a solid heritage diver that suits a resort, but 43 mm is the top of this wrist's range and the plain Sellita movement and weak resale value make it a lesser pick than options like a Tudor Black Bay 58 or Pelagos 39 at this budget.",
+      "wrongFacts": [],
+      "costUsd": 0.044
+    },
+    {
+      "card": "quiz-774388ffaadf0e65",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: the SSJ003J1 is a 39 mm Astron GPS Solar on Seiko's 3X22 solar quartz calibre, and it suits an everyday quartz-or-solar request in this size range well. The USD 1604 pre-owned price is a little high, since new ones have sold for about €1,180 on sale, but it is within budget.",
+      "wrongFacts": [],
+      "costUsd": 0.02655
+    },
+    {
+      "card": "quiz-7ecd5de87157b9a5",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Seiko's own site confirms the SSK023 at USD 450, with a 39.4 mm case, 100 m water resistance and an automatic GMT movement. That works out to roughly GBP 350, well under budget, and a true GMT at this size and price is a standout travel watch for a 16.5 cm wrist.",
+      "wrongFacts": [],
+      "costUsd": 0.0224
+    },
+    {
+      "card": "quiz-7f4e18c503246ea0",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Timex's own listing confirms the facts: 44 mm, 200 m with a helium escape valve, a Miyota 8215 automatic, sapphire crystal and USD 499 on the bracelet (about £390, so within budget). It fits the request, but the basic 8215 is weak value at this price, and an Orient Kamasu, Citizen Promaster diver or Seiko diver would be a better buy for under £500.",
+      "wrongFacts": [],
+      "costUsd": 0.02899
+    },
+    {
+      "card": "quiz-802dff1450d82e18",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card's facts are wrong. Retailer listings and the card's own source page show reference 8086-4 is the LZ129 Hindenburg Solar chronograph, which runs on a Seiko VR42A solar quartz movement and has a 41 mm case. It is not a 40 mm automatic. Even if the facts were right, it would be a weak pick: Zeppelin is a fashion-leaning brand, and the watch's 50 m water resistance falls short of the 100 m you asked for travel.",
+      "wrongFacts": [
+        "movement",
+        "model",
+        "size"
+      ],
+      "costUsd": 0.03249
+    },
+    {
+      "card": "quiz-8095579e95511b2f",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out on Venezianico's own page: 40 mm steel case, Seiko NH35A automatic, 100 m water resistance and sapphire crystal. At €485 (about USD 550, roughly CHF 450) it fits the budget. It's a respected Italian microbrand, and this neat white-dial steel watch on a bracelet suits office wear and a 16.6 cm wrist.",
+      "wrongFacts": [],
+      "costUsd": 0.03065
+    },
+    {
+      "card": "quiz-815348e56e60d34a",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts on the card check out: the Defy Midnight Borealis (16.9200.670/34.MI001) is a 36 mm steel automatic with 100 m water resistance, which suits a 15.1 cm wrist and a resort setting. But the diamond-set, blue-to-green dial is a dressy, women's-focused design rather than a typical resort piece. USD 11,212 is also expensive next to other pre-owned listings for the same reference at about USD 7,000–9,000.",
+      "wrongFacts": [],
+      "costUsd": 0.03074
+    },
+    {
+      "card": "quiz-82381abe51636e38",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Yema's official store lists the Flygraf Pilot M1 as 39 mm with 300 m water resistance, but the card says 40 mm and 100 m. The watch itself suits the request well: it has Yema's own YEMA2000 automatic movement and fits a 16.5 cm wrist.",
+      "wrongFacts": [
+        "size",
+        "water"
+      ],
+      "costUsd": 0.04497
+    },
+    {
+      "card": "quiz-835a7c15570e4c53",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The SBGX261 is a 37mm 9F quartz Heritage model rated to 100m, and Grand Seiko's US site confirms it retails for USD 2,700. That's roughly EUR 2.3–2.5k, inside the budget, and this is one of the best quartz dress or office watches a specialist could suggest for a 15.3 cm wrist.",
+      "wrongFacts": [],
+      "costUsd": 0.02718
+    },
+    {
+      "card": "quiz-8374a443c4993a13",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "I checked the facts with Omega and WatchBase: 42.2 mm, Co-Axial calibre 2500 automatic, 150 m and a white dial are all right, and the Aqua Terra suits resort wear well. But this is a 2003-era cal. 2500 model, and USD 4,000 is high next to listings around USD 2,900, so in this budget a newer pre-owned Aqua Terra with the 8500/8900 movement would be a better pick.",
+      "wrongFacts": [],
+      "costUsd": 0.03711
+    },
+    {
+      "card": "quiz-84bc0d681df44b38",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The specs check out: the 8926OB is a 40 mm automatic with an NH35 movement and 200 m water resistance, at about USD 135. But Invicta is a mall brand known for inflated list prices, and this is a generic copy of the Submariner. Enthusiasts have much better options under CHF 500, such as Seiko, Orient or Tissot.",
+      "wrongFacts": [],
+      "costUsd": 0.00667
+    },
+    {
+      "card": "quiz-8b6466ee828e7c02",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Everything on the card checks out: it's the 5 Sports Field series, 39.4 mm, 4R36 automatic, 100 m water resistance, and Seiko USA lists it at USD 350. That's well under GBP 500. It's a tough, legible field watch that suits a 16.5 cm wrist and works well for travel. It has no GMT function, but an automatic GMT in 37–40 mm at this budget is rare.",
+      "wrongFacts": [],
+      "costUsd": 0.02313
+    },
+    {
+      "card": "quiz-8e29c92517c5e2d2",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "All the card's facts check out: the SBGH343 is a 38mm 62GS in titanium with the 9S85 automatic Hi-Beat movement, 100 m water resistance and a USD 7,900 retail price, which comes to about CHF 6.3k and sits inside the budget. Its 44.7mm lug-to-lug, light titanium build and screw-down crown make it a strong everyday watch for a 15.7 cm wrist.",
+      "wrongFacts": [],
+      "costUsd": 0.02623
+    },
+    {
+      "card": "quiz-8f17d2ea412c9dac",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: TAG Heuer lists WAR1113.FC6392 as a 39 mm Swiss quartz Carrera (officially the Carrera Special Edition) in black PVD steel, with 100 m water resistance. It suits the size and office brief, but a quartz Carrera at about $2,250 pre-owned is weak value at this budget, since sellers list it new for about that much. The black PVD finish on the case is also less versatile for the office than plain steel.",
+      "wrongFacts": [],
+      "costUsd": 0.03323
+    },
+    {
+      "card": "quiz-8f91c87b46140d54",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Omega's own spec page confirms every fact on the card: 35.5 mm steel case, the Omega 1680 thermocompensated quartz perpetual calendar movement, and 50 m water resistance. The pre-owned price is in line with dealer sales (one sold for £1,400), so it's a well-made everyday watch from a top brand that suits a 15.8 cm wrist and fits the budget.",
+      "wrongFacts": [],
+      "costUsd": 0.03982
+    },
+    {
+      "card": "quiz-9242a6ffff3aa421",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Omega's site, the product sheet and dealer listings confirm the facts: the 1252.30.00 is a 35.5 mm steel-and-gold Constellation with the thermocompensated quartz perpetual calendar calibre 1680. Pre-owned prices of about USD 2,100–2,700 fit the EUR 2k–3k budget, and the high-accuracy quartz with a perpetual calendar, plus its dressy size, make it a strong office pick for a 15.3 cm wrist, though the two-tone full-bar style is a matter of taste.",
+      "wrongFacts": [],
+      "costUsd": 0.03159
+    },
+    {
+      "card": "quiz-9f9e64877d7c481f",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card calls this the Pro Diver GMT, but reference 9404 is a regular three-hand Pro Diver automatic with a white dial and an NH35A movement. It has no GMT hand, which matters for a travel request. The size (40 mm), automatic movement, water resistance (200 m) and price of about USD 91–106 are right.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.02678
+    },
+    {
+      "card": "quiz-a0d925e520ddc103",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The model name is wrong. Reference L3.830.4.52.6 is the 41 mm Conquest, not the Conquest 38. The 41 mm size, automatic L888 movement, 100 m water resistance and USD 2,400 retail are all correct, and the watch itself suits this request well.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.02971
+    },
+    {
+      "card": "quiz-a4d17c8a698cb7c9",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: TW2U29500 is the M79 Automatic with a 40 mm case, an automatic Miyota movement, 50 m water resistance and about USD 279 retail. But it's a 14.5 mm-thick diver with an acrylic crystal and a rotating bezel. That works as a casual watch, but office-focused picks in this budget, like the Orient Bambino or Seiko Presage, would suit the request better.",
+      "wrongFacts": [],
+      "costUsd": 0.03189
+    },
+    {
+      "card": "quiz-a62efad4e03add1e",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The GL0088 is a Combat Sub 42 with a 42 mm case, a Swiss automatic movement and 200 m water resistance, so every fact on the card checks out. At about USD 540 (roughly GBP 430) it's a sapphire-crystal Swiss sport diver that fits the GBP 500 budget, which is a strong-value pick for this request.",
+      "wrongFacts": [],
+      "costUsd": 0.03178
+    },
+    {
+      "card": "quiz-a7efdce3f1fb7fbf",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card's model name is wrong. PY010C is sold as the Wave Master 300M, rated to 300 m, which even contradicts the card's own 300 m water-resistance figure. The 42 mm case, NH35A automatic movement and roughly USD 289 price are correct, and the watch itself is a well-regarded budget diver that would otherwise suit this request.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.02974
+    },
+    {
+      "card": "quiz-a887141bd91a1f8a",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "I checked the facts and they're right: a 41 mm quartz HydroConquest (L115) rated to 300 m with a sapphire crystal. At about USD 963 pre-owned (around GBP 760) it fits the budget, and it's a well-regarded Swiss diver that also works in the office, though the Arabic-numeral dial looks a bit sporty.",
+      "wrongFacts": [],
+      "costUsd": 0.02777
+    },
+    {
+      "card": "quiz-aa6d676a59da25da",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Ref. 140.019.5 is a small steel-and-gold quartz Reverso Lady from around 2000 that measures about 22 x 32 mm, not 37 mm. That puts it well below the 35–39 mm range. The quartz movement and the pre-owned price near USD 2.8k look plausible.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.04222
+    },
+    {
+      "card": "quiz-adb4b8102e9441ed",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The watch is a good office pick, but the card says the case is 38.5 mm. Orient's official spec sheet lists RE-AU0002S at 38.7 mm, so the size is wrong. The approximate USD 497 also looks low next to listings from about USD 599, though an approximate price may vary.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.05751
+    },
+    {
+      "card": "quiz-adf3091c25fedb29",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The 37 mm case, 9F quartz movement and 100 m water resistance are right, and a Grand Seiko quartz is a great everyday pick for a 15.8 cm wrist. But the SBGX295 has a white dial, not black. The black-dial 37 mm Heritage quartz is the SBGX261, which retails for USD 2,700, above this budget. The SBGX295's USD 1,866 is close to what it sells for used, not its retail price.",
+      "wrongFacts": [
+        "model"
+      ],
+      "costUsd": 0.04597
+    },
+    {
+      "card": "quiz-b0af2e68ae8bc91b",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "This reference is the Classics Heart Beat Moonphase Date, which runs on the SW200-based FC-335 calibre, not an in-house 'Manufacture' movement. The official site and dealers list it at 40 mm (not 40.5 mm, so it sits just under the 40–43 mm range) and 60 m water resistance (not 50 m). The USD 2,895 retail price and automatic movement are correct.",
+      "wrongFacts": [
+        "model",
+        "size",
+        "water"
+      ],
+      "costUsd": 0.04421
+    },
+    {
+      "card": "quiz-b53e6d1aa5a2fbd4",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The card's facts are right: the L3.759.4.76.5 is a 41 mm quartz Conquest (L157 movement) with 300 m water resistance, a silver dial and a brown leather strap. It's a dressy Swiss diver that suits an office and fits the budget, though at USD 911 pre-owned it costs more than its former USD 825 list price, so it's not a bargain.",
+      "wrongFacts": [],
+      "costUsd": 0.03916
+    },
+    {
+      "card": "quiz-ba630e7a13cc5984",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The card's facts check out: this reference is a discontinued Longines Conquest with a 41mm case, a quartz movement, 300m water resistance and a silver dial on brown leather. About USD 729 pre-owned fits the GBP 500–1k budget, and the dressy sports look suits the office and the 40–43mm size range, though the leather strap is the weak point if you actually use the 300m rating.",
+      "wrongFacts": [],
+      "costUsd": 0.03301
+    },
+    {
+      "card": "quiz-bb555b7997816a10",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Reference 126200-0023 is the Datejust 36 in steel with a domed bezel, mint green dial and Jubilee bracelet, as the card says. The 36 mm case, automatic movement and 100 m water resistance are all correct, and it fits a 15.1 cm wrist and a resort brief well. The pre-owned price of USD 11,166 (about CHF 9k) is within budget and realistic for this popular dial, though it's well above US retail of about $8,350.",
+      "wrongFacts": [],
+      "costUsd": 0.02981
+    },
+    {
+      "card": "quiz-bde245099d957669",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Herbelin's own site says the Cap Camarat Diver models have 42 mm cases and use the 1745 reference series. The 1645 reference is the regular 40.5 mm Cap Camarat, which is only rated to 100 m, so the card's reference and 40.5 mm size don't match the 200 m diver.",
+      "wrongFacts": [
+        "reference",
+        "size"
+      ],
+      "costUsd": 0.10312
+    },
+    {
+      "card": "quiz-c03aaa3aa2233ab7",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts on the card check out. The US price of USD 5,200 is confirmed, and Breitling UK sells this reference for GBP 3,950, so it fits the budget. It's a capable 42 mm, 300 m sports watch for a resort trip, but at this price it uses an outsourced Caliber 17 movement, so the Tudor Black Bay or Pelagos is better value.",
+      "wrongFacts": [],
+      "costUsd": 0.02749
+    },
+    {
+      "card": "quiz-c505ad9372241280",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The specs fit the I.N.O.X. Chrono line: Swiss quartz, a 43 mm case and 200 m water resistance. The approximate price also fits under the budget, since steel siblings like 241983 and 241986 list at USD 800 and I couldn't find a separate listing for 241987. But this is a chunky, rugged, 13 mm thick sports chronograph, often sold on rubber, so it's a weak match for office wear. A sleeker 200 m quartz or solar diver or sports watch would suit better.",
+      "wrongFacts": [],
+      "costUsd": 0.03379
+    },
+    {
+      "card": "quiz-cf5a1966c50e684e",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "Baltic's own site confirms the facts: 38 mm stepped case, Miyota 8315 automatic movement, 50 m water resistance, from €385, which is inside the CHF 500 budget. It's a well-liked microbrand dress watch with a 1940s sector dial and a 47 mm lug-to-lug that suits a 16.6 cm wrist, so it's an excellent office pick at this price.",
+      "wrongFacts": [],
+      "costUsd": 0.02865
+    },
+    {
+      "card": "quiz-d5bd9fc91eeb75cc",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The specs on the card are correct: 43 mm, Powermatic 80 automatic, 300 m, and the reference matches. The approximate USD 568 is about what it sells for at grey-market dealers (its list price is USD 895), which puts it within a GBP 500 budget. It's a Swiss, ISO 6425-certified diver with an 80-hour power reserve, so a specialist would gladly recommend it at this price.",
+      "wrongFacts": [],
+      "costUsd": 0.02579
+    },
+    {
+      "card": "quiz-d921f32e597a8cff",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The card's facts check out: a 39 mm steel case, Kaliber 1 hand-wound movement, 50 m water resistance and USD 11,900 retail, which is roughly in the CHF 9–10k range. But it's a polished, hand-finished dress watch with an unusual time display, sold on leather or Alcantara, which makes it a poor fit for a resort watch that will see sun and pool water.",
+      "wrongFacts": [],
+      "costUsd": 0.04537
+    },
+    {
+      "card": "quiz-dcfbff7e45146e1a",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says the case is water resistant to 50 m, but Habring² and launch coverage rate the Chrono-Felix to only 30 m, which is below the 50 m the request asks for. The USD 10,979 price is also too high: retailers list the standard Chrono-Felix at about USD 8,350 (launch price EUR 6,250), and about USD 9,400–9,500 for special versions.",
+      "wrongFacts": [
+        "water",
+        "price"
+      ],
+      "costUsd": 0.0432
+    },
+    {
+      "card": "quiz-ddae2979747b0d0b",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "NOMOS's US store and Wempe both list ref. 782 at USD 5,050, not the USD 4,710 shown as confirmed retail. The other facts are right (42 mm, DUW 6101 automatic, 300 m), and it would otherwise be a strong resort pick.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.02595
+    },
+    {
+      "card": "quiz-ddd9e75ea86656e0",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts check out: L3.316.0.87.6 is the Longines Conquest V.H.P., a 36 mm steel quartz watch rated to 50 m. It's a good Swiss quartz watch in the right size and budget, but this ladies' version has a diamond bezel and mother-of-pearl dial that look more like jewelry than an office watch, and USD 3,198 pre-owned is poor value when discounted new ones are easy to find.",
+      "wrongFacts": [],
+      "costUsd": 0.03315
+    },
+    {
+      "card": "quiz-deccd3cfdd81cd4c",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts look right: ref. Q1558421 is a 39 mm automatic steel triple-calendar moonphase with a meteorite dial and 50 m water resistance, and USD 11.5k pre-owned is about CHF 9.2k, inside the budget. But it's a delicate dress complication usually sold on an alligator strap, which is a poor match for a resort watch next to sportier picks in the same budget.",
+      "wrongFacts": [],
+      "costUsd": 0.01279
+    },
+    {
+      "card": "quiz-e4d98e6352570afd",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Oris's own spec and several dealer listings put the BC3 Day Date ref. 7500 at 40 mm, not the 38 mm on the card. They also rate it at 5 bar (50 m), which misses the visitor's 100 m minimum. The pre-owned price of about USD 599 (around £447) does fit the budget.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.03931
+    },
+    {
+      "card": "quiz-e529c52e295c6097",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: Ball's own site lists the DD3100A-S1C as 41.5 mm, automatic and 300 m water resistant, and USD 3,999 is about GBP 3,000, inside the budget. As a resort watch, this blue skindiver on a bracelet with tritium lighting suits the request well, though it is fairly thick at 14 mm.",
+      "wrongFacts": [],
+      "costUsd": 0.02709
+    },
+    {
+      "card": "quiz-e82c9f99afec374e",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Citizen Promaster NY0040-09EE is a well-loved budget diver: a 42 mm case, an automatic Miyota/Citizen 8203 movement and ISO-rated 200 m water resistance. At roughly USD 244 it sits well inside the GBP 500 budget, and specialists often recommend it for this kind of sporty request.",
+      "wrongFacts": [],
+      "costUsd": 0.00985
+    },
+    {
+      "card": "quiz-eb7d138e794cdf30",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "poor",
+      "reason": "The facts check out: the reference is correct, with a 42 mm case, an automatic Miyota 8215 movement and 300 m water resistance, and the price is well within budget. But it's a generic Submariner-style diver from a high-street jeweller brand, and Rotary has stopped selling it. A specialist would pick a Seiko, Orient Kamasu or Citizen Promaster diver at this price instead.",
+      "wrongFacts": [],
+      "costUsd": 0.0282
+    },
+    {
+      "card": "quiz-ee5e2c25a8890eb2",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "Grand Seiko's official spec pages list the SLGW003 as only splash resistant, not 100 m. That fails the 50 m minimum for this resort request, and its dress-watch build (crocodile strap) is a poor fit for resort wear. The price (USD 11,600), 38.6 mm case and manual 9SA4 movement are correct.",
+      "wrongFacts": [
+        "water"
+      ],
+      "costUsd": 0.0463
+    },
+    {
+      "card": "quiz-ef564833a27387fd",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The Damasko DC56 is a well-made German tool chronograph with a Valjoux 7750 TOP automatic movement, a hardened steel case, 100 m water resistance and a 40 mm size. That makes it a strong everyday pick within EUR 2k–3k. The facts on the card match Damasko's specs, and the USD 3,094 price is roughly EUR 2,650–2,900, which sits inside the budget.",
+      "wrongFacts": [],
+      "costUsd": 0.04124
+    },
+    {
+      "card": "quiz-f2d73d1bbce495af",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The card says 39 mm, but the linked source and other retailers list this Amphibia 120 case at 40 mm (14.5–15 mm thick). The rest checks out: the 2415.01 automatic, 200 m water resistance and a price around EUR 155 / USD 181. It's still a popular value pick, though as a bezel diver it's casual for office wear.",
+      "wrongFacts": [
+        "size"
+      ],
+      "costUsd": 0.03769
+    },
+    {
+      "card": "quiz-f388b77a316c3531",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "The facts are right: Zelos lists the Mako 300m GMT 'Frost' at USD 629, with a 40 mm case, 300 m water resistance and an automatic Miyota 9075 movement that sets the local hour hand on its own, which makes it a strong travel watch for a 16.5 cm wrist. But USD 629 is roughly £470–500 before UK import VAT and fees, so the landed cost likely goes over the £500 budget, and this limited edition may be hard to find.",
+      "wrongFacts": [],
+      "costUsd": 0.03453
+    },
+    {
+      "card": "quiz-f4c987d67a290d09",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "A Seiko 5 Sports at about 40 mm with an automatic movement and 100 m water resistance fits the budget and wrist, and it's sound value. But the card names a whole product line with no reference, so the exact watch can't be identified. A sporty 5 Sports is also only a fair match for the office when dressier automatics in this budget exist.",
+      "wrongFacts": [],
+      "costUsd": 0.01171
+    },
+    {
+      "card": "quiz-f5b3de2b1c8b8a64",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "ok",
+      "reason": "Omega's own listing and Chrono24 confirm the facts: a 35 mm steel case, the Omega 1532 quartz movement, 100 m water resistance and the white Supernova dial on rubber. About $1,938 pre-owned is a believable dealer price within budget. It's a real Omega quartz that fits the wrist, but the diamond indexes, Supernova dial and white rubber strap make it a niche dressy piece usually sold as a women's watch, so plainer Constellation, Seamaster or Grand Seiko-type quartz options would suit everyday wear better.",
+      "wrongFacts": [],
+      "costUsd": 0.031
+    },
+    {
+      "card": "quiz-f9da8996bd048d3d",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "good",
+      "reason": "The facts check out: the IWC Da Vinci SL Chronograph ref. 3728 is a 37 mm steel quartz chronograph with a JLC-based mecaquartz movement, and dealer listings are around USD 2,300–3,300, which fits the EUR 2–3k budget. It's a serious brand with a classic, slim office style that suits a 15.3 cm wrist, so a specialist would gladly recommend it, though at its age a service history matters.",
+      "wrongFacts": [],
+      "costUsd": 0.03422
+    },
+    {
+      "card": "quiz-ff220c2386df08f4",
+      "tool": "quiz",
+      "owner": null,
+      "heldOut": false,
+      "rating": "wrong",
+      "reason": "The price on the card is wrong. Ball's official retail price for the steel-bracelet AeroGMT II is US$3,899, and dealers list this reference at about US$3,000–4,800 (EUR 4,359 at one European shop), so USD 2,681 doesn't reflect the real market and puts it above the EUR 3k budget. The 42 mm case, COSC automatic movement and 100 m water resistance are correct, and as a watch it would otherwise suit the request.",
+      "wrongFacts": [
+        "price"
+      ],
+      "costUsd": 0.06047
+    }
+  ]
+}
