@@ -7,6 +7,7 @@ vi.mock("./ai-watch-store.server", () => ({
 }));
 vi.mock("./coverage-catalogue.server", () => ({
   hydrateCoverageCandidates: async (watches: FoundWatch[]) => watches,
+  withCompleteCatalogueChecks: async (watches: FoundWatch[]) => watches,
 }));
 vi.mock("./validation-runtime.server", () => ({
   meteredSearchOptions: () => ({}),

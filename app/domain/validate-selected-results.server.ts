@@ -9,6 +9,7 @@ import { loadFxTable } from "./fx.server";
 import { cacheCompleteSearch } from "./complete-search-cache.server";
 import { withPageCheckedFacts } from "./page-checked-facts";
 import { markPageCheckedFacts } from "./catalogue-result-enrichment.server";
+import { withCompleteCatalogueChecks } from "./coverage-catalogue.server";
 
 const identity = (watch: FoundWatch) =>
   `${watch.brand.toLowerCase().replace(/[^a-z0-9]/g, "")}|${normalizeReference(watch.referenceCode) ?? `m:${watch.model.toLowerCase().replace(/[^a-z0-9]/g, "")}`}`;
@@ -123,7 +124,7 @@ export async function validateSelectedResults(
   // those are shown in place of the saved check's (withSelectedFacts).
   const marked = await markPageCheckedFacts(candidates);
   const allowed = new Map(marked.map((watch) => [identity(watch), watch]));
-  const watches = view.watches.flatMap((watch) => {
+  const shown = view.watches.flatMap((watch) => {
     const selected = allowed.get(identity(watch));
     // This explanation was computed from the current local ranking, so it can
     // accompany the checked identity without retaining an old AI explanation.
@@ -131,6 +132,10 @@ export async function validateSelectedResults(
     const additional = additionalCandidate?.(watch);
     return additional ? [additional] : [];
   });
+  // A sourced suggestion carries the search's own facts; the catalogue's
+  // page-checked ones take their place, and a rejected watch drops out
+  // (2026-11-27: Citizen NB6004-08E still read 41 mm, its page gives 46).
+  const watches = await withCompleteCatalogueChecks(shown);
   return watches.length
     ? cacheCompleteSearch(
         "find",

@@ -58,12 +58,14 @@ export async function hydrateCoverageCandidates(
  * Panerai PAM01320 still showed as "Submersible Bronzo"). Such cards look the
  * watch up in the whole catalogue: a rejected one is dropped, and the facts
  * the repair read on a page take the place of the card's own. Nothing else
- * changes, so which cards qualify stays the same. Fails open.
+ * changes, so which cards qualify stays the same. Fails open. The selection
+ * tools use it for their sourced suggestions too (validate-selected-results).
  */
-async function withCompleteCatalogueChecks(
+export async function withCompleteCatalogueChecks(
   watches: FoundWatch[],
-  client: CatalogueClient,
+  client: CatalogueClient | null = catalogueClient(),
 ) {
+  if (!client) return watches;
   const unmatched = watches.filter(
     (watch) => !watch.details.catalogueId && watch.referenceCode,
   );
