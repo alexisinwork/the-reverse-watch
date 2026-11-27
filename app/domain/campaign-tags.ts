@@ -20,3 +20,19 @@ export function withCampaignTags(target: string, from: string | URL) {
   }
   return `${url.pathname}${url.search}${hash}`;
 }
+
+/**
+ * The address Vercel Web Analytics receives: the page and its plain
+ * campaign tags only, so its dashboard can split visits by platform
+ * (utm_source), format (utm_medium) and episode (utm_campaign). Everything
+ * else in the address, such as search words or quiz answers, is dropped.
+ */
+export function analyticsAddress(address: string | URL) {
+  const url = typeof address === "string" ? new URL(address) : address;
+  const tags = new URL(url.pathname, url.origin);
+  for (const tag of CAMPAIGN_TAGS) {
+    const value = url.searchParams.get(tag);
+    if (value && PLAIN_VALUE.test(value)) tags.searchParams.set(tag, value);
+  }
+  return `${url.origin}${url.pathname}${tags.search}`;
+}

@@ -1,4 +1,24 @@
-import { withCampaignTags } from "./campaign-tags";
+import { analyticsAddress, withCampaignTags } from "./campaign-tags";
+
+describe("address sent to Vercel Web Analytics", () => {
+  it("keeps the page and its plain campaign tags only", () => {
+    expect(
+      analyticsAddress(
+        "https://thereserve.watch/watches/find?q=Alice%20Example&utm_source=youtube&utm_medium=shorts&utm_campaign=ep11&email=a%40b.example#top",
+      ),
+    ).toBe(
+      "https://thereserve.watch/watches/find?utm_source=youtube&utm_medium=shorts&utm_campaign=ep11",
+    );
+  });
+
+  it("drops tags that are not plain and every other parameter", () => {
+    expect(
+      analyticsAddress(
+        "https://thereserve.watch/quiz?utm_campaign=%3Cscript%3E&utm_term=private&token=secret",
+      ),
+    ).toBe("https://thereserve.watch/quiz");
+  });
+});
 
 describe("campaign tags through a gate", () => {
   it("keeps an episode's three tags, the target's own query and its hash", () => {

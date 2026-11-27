@@ -13,6 +13,7 @@ import type { Route } from "./+types/root";
 import { reportClientError } from "./client-errors";
 import { YouTubeCallout } from "./components/youtube-callout";
 import { InteractionAnalytics } from "./components/interaction-analytics";
+import { analyticsAddress } from "./domain/campaign-tags";
 import { requestMiddleware } from "./middleware.server";
 // Self-hosted fonts (owner decision, 2026-11-25): no request to Google's
 // font servers, so visitors' addresses are not shared and nothing outside
@@ -29,10 +30,11 @@ export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
 ];
 
+// Until 2026-11-27 the whole query was removed, so Vercel never saw the
+// utm_* tags of the short links (domain/episode-links.ts).
 export function redactAnalyticsUrl(event: BeforeSendEvent) {
   try {
-    const url = new URL(event.url);
-    return { ...event, url: `${url.origin}${url.pathname}` };
+    return { ...event, url: analyticsAddress(event.url) };
   } catch {
     return null;
   }

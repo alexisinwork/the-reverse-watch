@@ -11,6 +11,16 @@ import { spawnSync } from "node:child_process";
 import { existsSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 
+// Each check loads .env itself. Started with --env-file, the unit tests in
+// the fast gate would inherit the real settings and 19 of them fail
+// (2026-11-27), so refuse rather than report a false FAIL.
+if (process.execArgv.some((arg) => arg.startsWith("--env-file"))) {
+  console.error(
+    "Run without --env-file: node --import tsx scripts/verify-all.ts [--production]",
+  );
+  process.exit(2);
+}
+
 type Check = {
   name: string;
   command: string[];

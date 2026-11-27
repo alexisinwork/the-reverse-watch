@@ -59,6 +59,18 @@ describe("analytics URL privacy", () => {
     });
   });
 
+  it("keeps only the short links' campaign tags", () => {
+    expect(
+      redactAnalyticsUrl({
+        type: "pageview",
+        url: "https://thereserve.watch/start?utm_source=tiktok&utm_medium=social&utm_campaign=bio&token=private",
+      }),
+    ).toEqual({
+      type: "pageview",
+      url: "https://thereserve.watch/start?utm_source=tiktok&utm_medium=social&utm_campaign=bio",
+    });
+  });
+
   it("drops malformed URLs", () => {
     expect(redactAnalyticsUrl({ type: "event", url: "not a URL" })).toBeNull();
   });
