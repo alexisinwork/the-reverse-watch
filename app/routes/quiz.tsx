@@ -26,7 +26,6 @@ import {
 } from "../components/quiz/quiz-draft";
 import {
   DossierDelivery,
-  ExpertReportTeaser,
   ProfileSummary,
   StoryContextPanel,
 } from "../components/quiz/quiz-results";
@@ -526,16 +525,15 @@ export default function Quiz() {
           {resultData.storyContext ? (
             <StoryContextPanel storyContext={resultData.storyContext} />
           ) : null}
-          {/* No email, newsletter or paid add-on inside partner widgets. */}
+          {/* No email or newsletter inside partner widgets. The planned paid
+              selection is announced once, under the results
+              (components/exclusive-selection.tsx). */}
           {embed ? null : (
-            <>
-              <DossierDelivery
-                draft={draft}
-                funnelSource={funnelSource}
-                subscription={resultData.subscription}
-              />
-              <ExpertReportTeaser />
-            </>
+            <DossierDelivery
+              draft={draft}
+              funnelSource={funnelSource}
+              subscription={resultData.subscription}
+            />
           )}
           <div className="summary-actions">
             <button

@@ -681,8 +681,11 @@
   line-height: 1.65;
 }
 
+/* Its own gap after the result panels above, like every other block
+   (owner, 2026-11-27: the button touched the YouTube panel). */
 .archetype-share {
   min-height: 4.5rem;
+  margin-top: 2rem;
 }
 
 .archetype-share p {
