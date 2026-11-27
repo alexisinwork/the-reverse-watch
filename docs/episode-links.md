@@ -1,5 +1,30 @@
 # Episode short links
 
+## Links per platform (owner, 2026-11-27)
+
+"Нужно нам чётко создать ссылки под youtube/tiktok/insta, чтобы мы знали,
+откуда кто пришёл." Every link below is a short address on the site that
+redirects with its platform's campaign tags; `/admin/analytics` shows
+sessions by source and by campaign and source, and Vercel Web Analytics
+also shows `utm_medium`.
+
+| Where the link goes | Link | Tags |
+| --- | --- | --- |
+| A YouTube video's description and pinned comment | `https://thereserve.watch/e/<episode>` | youtube · video · ep<episode> |
+| A YouTube Short | `https://thereserve.watch/ys/<episode>` | youtube · shorts · ep<episode> |
+| A TikTok clip | `https://thereserve.watch/tt/<episode>` | tiktok · short_video · ep<episode> |
+| An Instagram reel or post | `https://thereserve.watch/ig/<episode>` | instagram · short_video · ep<episode> |
+| The YouTube channel's links | `https://thereserve.watch/yt` | youtube · social · bio |
+| The TikTok profile's bio link | `https://thereserve.watch/tt` | tiktok · social · bio |
+| The Instagram profile's bio link | `https://thereserve.watch/ig` | instagram · social · bio |
+
+A clip of episode N opens the same tool as `/e/N` (the table below). The
+bio links open the pages set under `profiles` in
+`app/data/episode-links.json` (the home page until the `/start` landing
+page for profiles is live). The tags for bio links follow the channel's
+decision of 2026-11-27 (`analysis/SITE_SOCIAL_LANDING.md` in the channel
+folder).
+
 Owner decision, 2026-11-25: every video description and pinned comment links
 to the site through its episode's short link, so visits from each episode can
 be counted. The link redirects with `utm_source=youtube`, `utm_medium=video`

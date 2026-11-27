@@ -12,6 +12,12 @@ export default [
   route("health", "routes/health.ts"),
   // Short links for video descriptions: /e/35 → episode 35's page, tagged.
   route("e/:episode", "routes/episode-link.ts"),
+  // The same for YouTube Shorts, TikTok and Instagram, and the profiles'
+  // bio links /yt, /tt and /ig (domain/episode-links.ts).
+  route("yt", "routes/social-link.ts", { id: "social-link-yt" }),
+  route("ys/:episode", "routes/social-link.ts", { id: "social-link-ys" }),
+  route("tt/:episode?", "routes/social-link.ts", { id: "social-link-tt" }),
+  route("ig/:episode?", "routes/social-link.ts", { id: "social-link-ig" }),
   route("internal/operations/health", "routes/internal-operations-health.ts"),
   route("privacy", "routes/privacy.tsx"),
   route("partners", "routes/partners.tsx"),

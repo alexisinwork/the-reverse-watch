@@ -1,5 +1,11 @@
 {
   "note": "Short links for video descriptions: https://thereserve.watch/e/<episode>. Each target is the tool the episode's closing line names (docs/episode-links.md). Edit a target to send that episode's viewers elsewhere on this site (a path starting with /).",
+  "profilesNote": "Bio links: https://thereserve.watch/yt, /tt and /ig lead to these pages, tagged with the platform. Clips: /ys/<episode> (YouTube Shorts), /tt/<episode> (TikTok), /ig/<episode> (Instagram reels) open the episode target below.",
+  "profiles": {
+    "youtube": "/",
+    "tiktok": "/",
+    "instagram": "/"
+  },
   "episodes": {
     "1": {
       "title": "Switzerland Built the Future. Then Couldn't Afford to Sell It.",
