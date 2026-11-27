@@ -22,6 +22,7 @@ import {
   meterPartnerUse,
   partnerSiteFrom,
 } from "../domain/partner-embed.server";
+import { publicOrigin } from "../domain/public-origin";
 import "../styles/discovery.css";
 
 export async function loader({ request, context }: Route.LoaderArgs) {
@@ -33,20 +34,6 @@ export async function loader({ request, context }: Route.LoaderArgs) {
       ? await meterPartnerUse(partnerSiteFrom(context), "archetype")
       : null;
   const result = limitMessage ? ({ status: "idle" } as const) : parsed;
-  const configuredAppUrl = process.env.APP_URL?.trim();
-  let publicOrigin = url.origin;
-
-  if (configuredAppUrl) {
-    try {
-      const configuredOrigin = new URL(configuredAppUrl);
-      if (["http:", "https:"].includes(configuredOrigin.protocol)) {
-        publicOrigin = configuredOrigin.origin;
-      }
-    } catch {
-      // Keep the request origin when the optional canonical origin is invalid.
-    }
-  }
-
   // Deterministic picks in this price band, with first-use source validation.
   const watchResult =
     result.status === "complete"
@@ -68,7 +55,7 @@ export async function loader({ request, context }: Route.LoaderArgs) {
       result.status === "complete"
         ? new URL(
             buildArchetypeSharePath(result.answers, result.scoringVersion),
-            publicOrigin,
+            publicOrigin(request),
           ).toString()
         : null,
   };

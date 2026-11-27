@@ -22,6 +22,7 @@ import {
   type PartnerFeature,
 } from "../domain/partner-sites";
 import { findSiteByPublicKey } from "../domain/partner-sites.server";
+import { publicOrigin } from "../domain/public-origin";
 import "../styles/embed.css";
 import {
   sendInteraction,
@@ -56,20 +57,6 @@ function featureOf(pathname: string, key: string): PartnerFeature {
   return isPartnerFeature(segment) ? segment : "stories";
 }
 
-function siteOrigin(request: Request) {
-  const configured = process.env.APP_URL?.trim();
-  if (configured) {
-    try {
-      const url = new URL(configured);
-      if (url.protocol === "https:" || url.protocol === "http:")
-        return url.origin;
-    } catch {
-      // Fall back to the request's own origin.
-    }
-  }
-  return new URL(request.url).origin;
-}
-
 export function loader({ request, params, context }: Route.LoaderArgs) {
   const site = context.get(partnerSiteContext)!;
   const url = new URL(request.url);
@@ -79,7 +66,7 @@ export function loader({ request, params, context }: Route.LoaderArgs) {
     key: params.key,
     css: themeCss({ ...site.theme, ...overrides }),
     themeQuery: themeToSearch(overrides).toString(),
-    siteOrigin: siteOrigin(request),
+    siteOrigin: publicOrigin(request),
     parentOrigins: site.allowedOrigins,
   };
 }

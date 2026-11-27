@@ -12,13 +12,12 @@ import {
   PARTNER_FEATURE_LABELS,
   PARTNER_FEATURES,
 } from "../domain/partner-sites";
+import { publicOrigin } from "../domain/public-origin";
 import { PRIVACY_CONTACT } from "./privacy";
 import "../styles/legal.css";
 
 export function loader({ request }: Route.LoaderArgs) {
-  return {
-    origin: process.env.APP_URL?.trim() || new URL(request.url).origin,
-  };
+  return { origin: publicOrigin(request) };
 }
 
 // Same for every visitor: served from the CDN (see domain/cache-policy.ts).

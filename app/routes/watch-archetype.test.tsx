@@ -115,6 +115,22 @@ describe("watch archetype route", () => {
     ).toBeVisible();
   });
 
+  it("never shares a local address with a public visitor", async () => {
+    // Production had APP_URL=http://localhost:5173 until 2026-11-27.
+    process.env.APP_URL = "http://localhost:5173";
+    const data = await loader({
+      request: new Request(
+        "https://thereserve.watch/watches/archetype?socialSignal=anti_luxury&aestheticDna=structural_tool&deploymentEnvironment=field_water_abuse&priceComfort=considered_entry",
+      ),
+      params: {},
+      context: undefined,
+    } as unknown as Parameters<typeof loader>[0]);
+
+    expect(data.shareUrl).toMatch(
+      /^https:\/\/thereserve\.watch\/watches\/archetype\?/,
+    );
+  });
+
   it("uses the browser copy fallback when Clipboard API is denied", async () => {
     process.env.APP_URL = "https://thereserve.watch";
     const writeText = vi.fn().mockRejectedValue(new Error("denied"));

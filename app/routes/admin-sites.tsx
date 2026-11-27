@@ -33,6 +33,7 @@ import {
   type PartnerSiteInput,
   type PartnerSiteWithUsage,
 } from "../domain/partner-sites.server";
+import { publicOrigin } from "../domain/public-origin";
 import type { RateLimitPolicy } from "../domain/rate-limit.server";
 import { consumeSharedRateLimit } from "../domain/rate-limit-upstash.server";
 import { visitorKey } from "../domain/visitor-key.server";
@@ -61,10 +62,6 @@ export function meta(): ReturnType<Route.MetaFunction> {
   ];
 }
 
-function siteOrigin(request: Request) {
-  return process.env.APP_URL?.trim() || new URL(request.url).origin;
-}
-
 export async function loader({ request }: Route.LoaderArgs) {
   if (!(await isAdmin(request))) {
     return data({ authed: false as const }, { headers: NO_INDEX });
@@ -76,7 +73,7 @@ export async function loader({ request }: Route.LoaderArgs) {
         authed: true as const,
         error: "The database is not configured.",
         sites: [] as PartnerSiteWithUsage[],
-        origin: siteOrigin(request),
+        origin: publicOrigin(request),
       },
       { headers: NO_INDEX },
     );
@@ -86,7 +83,7 @@ export async function loader({ request }: Route.LoaderArgs) {
       authed: true as const,
       error: null,
       sites: await listPartnerSites(client),
-      origin: siteOrigin(request),
+      origin: publicOrigin(request),
     },
     { headers: NO_INDEX },
   );
