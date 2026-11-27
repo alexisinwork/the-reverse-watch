@@ -447,6 +447,7 @@ other channel (npm, Shopify app, WordPress.org, Wix…):
 | The partner script tag                                           | `public/embed.js` (and its test `app/embed-loader.test.ts`)                               |
 | The WordPress plugin                                             | `integrations/wordpress/the-reserve/`, then `npx tsx scripts/package-wordpress-plugin.ts` |
 | Where an episode's short link leads                              | `target` in `app/data/episode-links.json` (`docs/episode-links.md`)                       |
+| How a referring site maps to a platform in analytics             | `sourceForHost` in `domain/first-touch.ts`                                                |
 | Episodes on `/start` (new, rescheduled or re-uploaded)           | copy the channel's JSON to `app/data/youtube-episodes.json` (`docs/social-landing.md`)    |
 | A new partner site from the command line                         | `scripts/create-partner-site.ts "Name" https://site.example --quota 1000`                 |
 
@@ -456,7 +457,14 @@ Anonymous interaction delivery and cross-tool widget sessions are described in
 `docs/analytics-delivery.md`. Browser collection lives in
 `components/interaction-analytics.tsx` and `domain/interaction-analytics.ts`;
 `routes/analytics-interactions.ts` uses `interaction-store.server.ts` and the
-service-only v3 writer (0113). Stable event IDs make the bounded retries safe.
+service-only v4 writer (0126; v3 from 0113 stays). Stable event IDs make the
+bounded retries safe. On The Reserve's own pages the session code and the
+visit's first touch (source, medium, campaign, entry page:
+`domain/first-touch.ts`) are kept in the tab's sessionStorage and sent with
+every event; the newsletter form sends the same first touch to Beehiiv's
+utm fields and records a `newsletter_signup` event without the address.
+`/admin/analytics` reads `partner_interaction_attribution_v1` for its
+source → campaign table.
 The shared parent-page nonce and advisor tab/retry relay live in `public/embed.js`
 and `routes/embed-layout.tsx`; no cookie, field value or provider call is involved.
 

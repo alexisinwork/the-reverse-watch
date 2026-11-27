@@ -1,6 +1,7 @@
 import { vi } from "vitest";
 
 import {
+  beehiivAttribution,
   isActiveBeehiivSubscriber,
   parseBeehiivConfiguration,
   subscribeToBeehiiv,
@@ -48,6 +49,7 @@ describe("Beehiiv subscription adapter", () => {
           apiKey: "secret-key",
           publicationId: "pub/123",
         },
+        null,
         fetchImplementation,
       ),
     ).resolves.toEqual({ status: "active" });
@@ -76,7 +78,47 @@ describe("Beehiiv subscription adapter", () => {
       reactivate_existing: true,
       send_welcome_email: true,
       double_opt_override: "off",
-      utm_source: "the_reserve_diagnostic",
+      utm_source: "unknown",
+    });
+  });
+
+  it("tells Beehiiv the visit's first touch: platform, format, episode and entry page", async () => {
+    const fetchImplementation = vi.fn().mockResolvedValue(
+      Response.json({
+        data: {
+          id: "sub_123",
+          email: "collector@example.com",
+          status: "active",
+        },
+      }),
+    );
+    await subscribeToBeehiiv(
+      "collector@example.com",
+      { configured: true, apiKey: "key", publicationId: "pub_123" },
+      {
+        source: "youtube",
+        medium: "shorts",
+        campaign: "ep3",
+        landing: "/watches/find",
+      },
+      fetchImplementation,
+    );
+    const [, requestInit] = fetchImplementation.mock.calls[0] as [
+      RequestInfo | URL,
+      RequestInit,
+    ];
+    expect(JSON.parse(requestInit.body as string)).toMatchObject({
+      utm_source: "youtube",
+      utm_medium: "shorts",
+      utm_campaign: "ep3",
+      referring_site: "https://thereserve.watch/watches/find",
+    });
+    expect(
+      beehiivAttribution({ source: "direct", medium: "none", landing: "/" }),
+    ).toEqual({
+      utm_source: "direct",
+      utm_medium: "none",
+      referring_site: "https://thereserve.watch/",
     });
   });
 
@@ -95,6 +137,7 @@ describe("Beehiiv subscription adapter", () => {
       subscribeToBeehiiv(
         "collector@example.com",
         { configured: true, apiKey: "key", publicationId: "pub_123" },
+        null,
         fetchImplementation,
       ),
     ).rejects.toMatchObject({
@@ -112,6 +155,7 @@ describe("Beehiiv subscription adapter", () => {
       subscribeToBeehiiv(
         "collector@example.com",
         { configured: true, apiKey: "key", publicationId: "pub_123" },
+        null,
         fetchImplementation,
       ),
     ).rejects.toThrow("invalid response");
@@ -185,6 +229,7 @@ describe("Beehiiv subscription adapter", () => {
       subscribeToBeehiiv(
         "collector@example.com",
         { configured: true, apiKey: "key", publicationId: "pub_123" },
+        null,
         fetchImplementation,
       ),
     ).rejects.toThrow("HTTP 429");

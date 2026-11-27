@@ -201,6 +201,11 @@ describe("landing page", () => {
         intent: "newsletter",
         email: "reader@example.com",
         newsletterConsent: "yes",
+        // The tab's first touch, from the form's hidden fields.
+        touchSource: "instagram",
+        touchMedium: "social",
+        touchCampaign: "bio",
+        touchLanding: "/start",
       }),
     } as Parameters<typeof action>[0]);
 
@@ -208,6 +213,7 @@ describe("landing page", () => {
     expect(response.data).toEqual({
       ok: true,
       message: "Subscribed. The reference diagnostic is now unlocked.",
+      subscribed: true,
     });
     expect(new Headers(response.init?.headers).get("Set-Cookie")).toContain(
       "reserve_diagnostic_access=",
@@ -216,6 +222,55 @@ describe("landing page", () => {
       "https://api.beehiiv.com/v2/publications/pub_123/subscriptions",
       expect.objectContaining({ method: "POST" }),
     );
+    const subscribe = fetchImplementation.mock.calls.find(
+      ([input]) => !String(input).includes("/by_email/"),
+    );
+    expect(JSON.parse(String(subscribe?.[1]?.body))).toMatchObject({
+      email: "reader@example.com",
+      utm_source: "instagram",
+      utm_medium: "social",
+      utm_campaign: "bio",
+      referring_site: "https://thereserve.watch/start",
+    });
+  });
+
+  it("ignores first-touch fields that are not plain tags", async () => {
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    const fetchImplementation = vi.fn<typeof fetch>((input) =>
+      Promise.resolve(
+        String(input).includes("/by_email/")
+          ? new Response(null, { status: 404 })
+          : Response.json({
+              data: {
+                id: "sub_123",
+                email: "reader@example.com",
+                status: "active",
+              },
+            }),
+      ),
+    );
+    vi.stubGlobal("fetch", fetchImplementation);
+    await action({
+      request: actionRequest({
+        intent: "newsletter",
+        email: "reader@example.com",
+        newsletterConsent: "yes",
+        touchSource: "reader@example.com <script>",
+        touchMedium: "social",
+        touchLanding: "/start?email=x",
+      }),
+    } as Parameters<typeof action>[0]);
+    const subscribe = fetchImplementation.mock.calls.find(
+      ([input]) => !String(input).includes("/by_email/"),
+    );
+    const body = JSON.parse(String(subscribe?.[1]?.body)) as Record<
+      string,
+      unknown
+    >;
+    expect(body.utm_source).toBe("unknown");
+    expect(body).not.toHaveProperty("utm_medium");
+    expect(body).not.toHaveProperty("referring_site");
   });
 
   it("does not unlock the diagnostic for a non-active Beehiiv response", async () => {

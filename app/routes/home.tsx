@@ -23,6 +23,7 @@ import {
   parseDiagnosticAccessConfiguration,
 } from "../domain/diagnostic-access.server";
 import { parseDiscoveryStorySlug } from "../domain/discovery-context.server";
+import { firstTouchFromForm } from "../domain/first-touch";
 import "../styles/home.css";
 
 const newsletterEmailSchema = z.string().trim().email().max(320);
@@ -135,13 +136,18 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
 
-  const unlocked = async (message: string) => {
+  // `subscribed` marks a new subscription, which the page then counts in
+  // the anonymous analytics; a returning reader is only unlocked.
+  const unlocked = async (message: string, subscribed = false) => {
     const headers = new Headers(responseHeaders);
     headers.set(
       "Set-Cookie",
       await issueDiagnosticAccessCookie(accessConfiguration),
     );
-    return data<NewsletterActionResult>({ ok: true, message }, { headers });
+    return data<NewsletterActionResult>(
+      { ok: true, message, ...(subscribed ? { subscribed: true } : {}) },
+      { headers },
+    );
   };
 
   if (intent === "returning") {
@@ -202,9 +208,16 @@ export async function action({ request }: Route.ActionArgs) {
         "You are already subscribed. The reference diagnostic is unlocked.",
       );
     }
-    await subscribeToBeehiiv(email.data, configuration);
+    // How the visit began (platform, format, episode, entry page) goes to
+    // Beehiiv's acquisition fields; only those plain values are read.
+    await subscribeToBeehiiv(
+      email.data,
+      configuration,
+      firstTouchFromForm(formData),
+    );
     return await unlocked(
       "Subscribed. The reference diagnostic is now unlocked.",
+      true,
     );
   } catch (error) {
     if (error instanceof BeehiivSubscriptionNotActiveError) {

@@ -69,6 +69,68 @@ const summarySchema = z.object({
     }),
   ),
 });
+/** Each tab session once, under how its visit began (migration 0126). */
+const attributionSchema = z.object({
+  rows: z.array(
+    z.object({
+      source: z.string(),
+      medium: z.string().nullable(),
+      campaign: z.string().nullable(),
+      sessions: z.number(),
+      quizStarts: z.number(),
+      quizCompletions: z.number(),
+      toolCompletions: z.number(),
+      subscriptions: z.number(),
+    }),
+  ),
+  byLanding: z.array(
+    z.object({
+      landing: z.string(),
+      sessions: z.number(),
+      subscriptions: z.number(),
+    }),
+  ),
+});
+export type AttributionRow = z.infer<typeof attributionSchema>["rows"][number];
+type Counts = Omit<AttributionRow, "source" | "medium" | "campaign">;
+const COUNT_KEYS = [
+  "sessions",
+  "quizStarts",
+  "quizCompletions",
+  "toolCompletions",
+  "subscriptions",
+] as const satisfies readonly (keyof Counts)[];
+
+/** Part of a whole as "12.5%"; a dash when the whole is zero. */
+export function share(part: number, whole: number) {
+  if (!whole) return "–";
+  const percent = (part / whole) * 100;
+  return `${percent >= 10 || percent === 0 ? Math.round(percent) : percent.toFixed(1)}%`;
+}
+
+function summed(rows: AttributionRow[]): Counts {
+  const counts = {} as Counts;
+  for (const key of COUNT_KEYS)
+    counts[key] = rows.reduce((total, row) => total + row[key], 0);
+  return counts;
+}
+
+/**
+ * The rows the owner reads: platforms and campaigns by sessions, then
+ * "direct" on its own line (an address typed by hand, for example after
+ * the ad read in an episode), present even when it has no sessions yet.
+ */
+export function attributionTable(rows: AttributionRow[]) {
+  const others = rows.filter((row) => row.source !== "direct");
+  const direct: AttributionRow = {
+    source: "direct",
+    medium: null,
+    campaign: null,
+    ...summed(rows.filter((row) => row.source === "direct")),
+  };
+  return { others, direct, totals: summed([...others, direct]) };
+}
+
 export async function loader({ request }: Route.LoaderArgs) {
   if (!(await isAdmin(request)))
     return data({ authed: false as const }, { headers: noIndex });
@@ -78,6 +140,7 @@ export async function loader({ request }: Route.LoaderArgs) {
       {
         authed: true as const,
         summary: null,
+        attribution: null,
         sites: [],
         error: "Database is not configured.",
       },
@@ -91,23 +154,21 @@ export async function loader({ request }: Route.LoaderArgs) {
     siteId = z.string().uuid().safeParse(site).success ? site : null,
     until = new Date(),
     since = new Date(until.getTime() - days * 86400000);
-  const [raw, sites] = await Promise.all([
-    rpc(
-      client,
-      "partner_interaction_analytics_v1",
-      {
-        p_since: since.toISOString(),
-        p_until: until.toISOString(),
-        p_site_id: siteId,
-      },
-      15000,
-    ),
+  const period = {
+    p_since: since.toISOString(),
+    p_until: until.toISOString(),
+    p_site_id: siteId,
+  };
+  const [raw, rawAttribution, sites] = await Promise.all([
+    rpc(client, "partner_interaction_analytics_v1", period, 15000),
+    rpc(client, "partner_interaction_attribution_v1", period, 15000),
     listPartnerSites(client),
   ]);
   return data(
     {
       authed: true as const,
       summary: summarySchema.parse(raw),
+      attribution: attributionSchema.parse(rawAttribution),
       sites,
       days,
       siteId,
@@ -172,6 +233,118 @@ export function meta() {
     { name: "robots", content: "noindex, nofollow" },
   ];
 }
+function CountCells({ counts }: { counts: Counts }) {
+  return (
+    <>
+      <td>{counts.sessions}</td>
+      <td>{counts.quizStarts}</td>
+      <td>{counts.quizCompletions}</td>
+      <td>{counts.toolCompletions}</td>
+      <td>{counts.subscriptions}</td>
+      <td>{share(counts.subscriptions, counts.sessions)}</td>
+    </>
+  );
+}
+
+/** Where visitors and subscribers come from: source, then campaign. */
+export function Attribution({
+  rows,
+  byLanding,
+}: z.infer<typeof attributionSchema>) {
+  const table = attributionTable(rows);
+  return (
+    <section className="admin-panel" aria-labelledby="attribution-heading">
+      <h2 id="attribution-heading">Where visitors and subscribers come from</h2>
+      <p>
+        Each tab session counts once, under how its visit began: a short
+        link&apos;s tags (<code>/e/1</code> is youtube, video, ep1;{" "}
+        <code>/ys/1</code> youtube, shorts, ep1; <code>/yt</code>,{" "}
+        <code>/ig</code> and <code>/tt</code> their platform, social, bio),
+        otherwise the referring site (Instagram, TikTok and YouTube by platform,
+        other sites by name). A quiz start or a sign-up later in the same tab
+        stays with that source. Quiz means the diagnostic and the archetype
+        quiz; any tool also counts film search and cheaper alternatives.
+        Sessions from before 27 November 2026 count under their first
+        page&apos;s own source and have no medium.
+      </p>
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Source</th>
+              <th>Medium</th>
+              <th>Campaign</th>
+              <th>Sessions</th>
+              <th>Quiz started</th>
+              <th>Quiz finished</th>
+              <th>Any tool finished</th>
+              <th>Subscribed</th>
+              <th>Subscribed / sessions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {table.others.map((row) => (
+              <tr
+                key={`${row.source}|${row.medium ?? ""}|${row.campaign ?? ""}`}
+              >
+                <td>{row.source}</td>
+                <td>{row.medium ?? "–"}</td>
+                <td>{row.campaign ?? "–"}</td>
+                <CountCells counts={row} />
+              </tr>
+            ))}
+            {!table.others.length ? (
+              <tr>
+                <td colSpan={9}>No visits from a platform or website yet.</td>
+              </tr>
+            ) : null}
+            <tr>
+              <th scope="row">direct</th>
+              <td colSpan={2}>
+                Typed address or no referrer, e.g. after an episode&apos;s ad
+              </td>
+              <CountCells counts={table.direct} />
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th colSpan={3} scope="row">
+                All sessions
+              </th>
+              <CountCells counts={table.totals} />
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      {byLanding.length ? (
+        <>
+          <h3>Entry pages</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>First page of the visit</th>
+                <th>Sessions</th>
+                <th>Subscribed</th>
+              </tr>
+            </thead>
+            <tbody>
+              {byLanding.map((row) => (
+                <tr key={row.landing}>
+                  <td>
+                    <code>{row.landing}</code>
+                  </td>
+                  <td>{row.sessions}</td>
+                  <td>{row.subscriptions}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      ) : null}
+    </section>
+  );
+}
+
 export default function AdminAnalytics() {
   const result = useLoaderData<typeof loader>();
   if (!result.authed) return <Login />;
@@ -195,10 +368,11 @@ export default function AdminAnalytics() {
         </Form>
       </header>
       <p className="admin-note">
-        Anonymous page and button journeys for one browser tab session. The
-        hosting country code is included when available. No names, emails, quiz
-        answer values, IPs, precise locations, or full URLs are stored. A reload
-        starts a new anonymous session.
+        Anonymous page and button journeys for one browser tab session. A
+        session lasts until the tab is closed (reloads and plain links stay in
+        it) and keeps how its visit began. The hosting country code is included
+        when available. No names, emails, quiz answer values, IPs, precise
+        locations, or full URLs are stored.
       </p>
       {result.error ? <p className="warn">{result.error}</p> : null}
       {summary ? (
@@ -243,6 +417,12 @@ export default function AdminAnalytics() {
               </article>
             ))}
           </section>
+          {result.attribution ? (
+            <Attribution
+              rows={result.attribution.rows}
+              byLanding={result.attribution.byLanding}
+            />
+          ) : null}
           <section className="admin-analytics-grid">
             <article className="admin-panel">
               <h2>By service</h2>
@@ -289,46 +469,6 @@ export default function AdminAnalytics() {
                       <td>{x.site}</td>
                       <td>{x.sessions}</td>
                       <td>{x.events}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </article>
-            <article className="admin-panel">
-              <h2>Traffic sources</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Source</th>
-                    <th>Sessions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {summary.bySource.map((x) => (
-                    <tr key={x.source}>
-                      <td>{x.source}</td>
-                      <td>{x.sessions}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </article>
-            <article className="admin-panel">
-              <h2>Campaigns</h2>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Campaign</th>
-                    <th>Source</th>
-                    <th>Sessions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {summary.byCampaign.map((x, i) => (
-                    <tr key={`${x.campaign}-${x.source}-${i}`}>
-                      <td>{x.campaign}</td>
-                      <td>{x.source}</td>
-                      <td>{x.sessions}</td>
                     </tr>
                   ))}
                 </tbody>

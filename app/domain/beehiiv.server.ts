@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 import { emailProviderTimeoutSignal } from "./email-provider.server";
+import type { FirstTouch } from "./first-touch";
 
 type Environment = Record<string, string | undefined>;
 
@@ -70,9 +71,28 @@ export async function isActiveBeehiivSubscriber(
   );
 }
 
+/**
+ * Where the new subscriber came from, in Beehiiv's own acquisition fields:
+ * the tab's first touch (domain/first-touch.ts), so Beehiiv can split
+ * subscribers by platform (utm_source), format (utm_medium) and episode
+ * (utm_campaign), and referring_site names the visit's entry page. Until
+ * 2026-11-27 every subscription said "the_reserve_diagnostic". Without a
+ * first touch (no JavaScript, blocked storage) the source is "unknown".
+ */
+export function beehiivAttribution(touch: FirstTouch | null) {
+  if (!touch) return { utm_source: "unknown" };
+  return {
+    utm_source: touch.source,
+    utm_medium: touch.medium,
+    ...(touch.campaign ? { utm_campaign: touch.campaign } : {}),
+    referring_site: `https://thereserve.watch${touch.landing}`,
+  };
+}
+
 export async function subscribeToBeehiiv(
   email: string,
   configuration: Extract<BeehiivConfiguration, { configured: true }>,
+  touch: FirstTouch | null = null,
   fetchImplementation: typeof fetch = fetch,
 ) {
   const response = await fetchImplementation(
@@ -89,7 +109,7 @@ export async function subscribeToBeehiiv(
         reactivate_existing: true,
         send_welcome_email: true,
         double_opt_override: "off",
-        utm_source: "the_reserve_diagnostic",
+        ...beehiivAttribution(touch),
       }),
     },
   );

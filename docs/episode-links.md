@@ -15,8 +15,26 @@ the Enterprise plan: on Pro the API answers "UTM dimensions require an
 Enterprise plan or the Web Analytics Plus add-on" (402). Pro shows pages,
 countries, devices and referring sites, such as `l.instagram.com` and
 `facebook.com`. A YouTube Short and the long video of the same episode
-differ only in `utm_medium`, so in `/admin/analytics` they count together
-until the visit records its medium.
+differ only in `utm_medium`; `/admin/analytics` shows the medium in its own
+column since 2026-11-27 (below).
+
+### Visits, quiz and sign-ups per platform (2026-11-27)
+
+`/admin/analytics` → "Where visitors and subscribers come from" counts each
+browser-tab session once, under how its visit began (its first touch), with
+the sessions that started a quiz (diagnostic or archetype), finished it,
+finished any tool, and subscribed to the newsletter, and the share of
+sessions that subscribed. The first touch is the link's `utm_*` tags;
+without tags, the referring site (`instagram.com` and `l.instagram.com` are
+instagram, `tiktok.com` tiktok, `youtube.com`, `m.youtube.com` and
+`youtu.be` youtube, any other site its host name); without a referrer,
+`direct`. Direct has its own line: an address typed by hand after the ad
+read in an episode lands there. The browser keeps the first touch in the
+tab's sessionStorage (`app/domain/first-touch.ts`), so it survives a reload
+and the plain link from `/start` to the archetype quiz. A new newsletter
+subscription sends the same first touch to Beehiiv (`utm_source`,
+`utm_medium`, `utm_campaign`, and the entry page as `referring_site`), so
+Beehiiv's own acquisition report splits subscribers the same way.
 
 | Where the link goes | Link | Tags |
 | --- | --- | --- |

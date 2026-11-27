@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Form, useNavigation } from "react-router";
 
 import type { SubscriptionResult } from "../../domain/email-delivery";
+import { FirstTouchFields } from "../beehiiv-signup";
 import {
   diameterRangeFor,
   findPriceRange,
@@ -108,6 +109,7 @@ export function DossierDelivery({
       {subscription.status !== "sent" &&
       subscription.status !== "already_requested" ? (
         <Form className="delivery-form" method="post">
+          <FirstTouchFields />
           {funnelSource ? (
             <input name="funnelSource" type="hidden" value={funnelSource} />
           ) : null}

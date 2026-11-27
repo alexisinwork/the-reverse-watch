@@ -9,6 +9,7 @@ import {
   subscribeToBeehiiv,
 } from "./beehiiv.server";
 import { renderDossierEmail } from "./dossier-email";
+import type { FirstTouch } from "./first-touch";
 import {
   createEmailDeliveryDeduplicationClient,
   emailDeliveryDeduplicationKey,
@@ -41,6 +42,8 @@ export async function deliverEmail(
   email: string,
   profile: ProfileV4,
   aiSearch: AiSearchView,
+  /** How the visit began, for Beehiiv's utm_* fields (first-touch.ts). */
+  touch: FirstTouch | null = null,
 ): Promise<SubscriptionResult> {
   const beehiivConfiguration = parseBeehiivConfiguration();
   const resendConfiguration = parseResendConfiguration();
@@ -102,7 +105,7 @@ export async function deliverEmail(
   if (beehiivConfiguration.configured) {
     try {
       newsletterStatus = await deliver("newsletter", () =>
-        subscribeToBeehiiv(email, beehiivConfiguration),
+        subscribeToBeehiiv(email, beehiivConfiguration, touch),
       );
     } catch (error) {
       logError("beehiiv_subscription_error", error);

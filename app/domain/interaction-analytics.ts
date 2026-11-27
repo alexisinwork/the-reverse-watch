@@ -1,4 +1,11 @@
 import { z } from "zod";
+import {
+  campaignLabel,
+  firstTouchFrom,
+  loadTabSession,
+  type FirstTouch,
+  type TabSession,
+} from "./first-touch";
 import { PARTNER_FEATURES, type PartnerFeature } from "./partner-sites";
 
 export const interactionEventSchema = z
@@ -15,6 +22,8 @@ export const interactionEventSchema = z
       "quiz_start",
       "service_complete",
       "result_feedback",
+      // The fact of a new newsletter subscription, never the address.
+      "newsletter_signup",
     ]),
     feature: z.enum([...PARTNER_FEATURES, "site"]),
     page: z
@@ -26,16 +35,68 @@ export const interactionEventSchema = z
     target: z.string().max(160).optional(),
     source: z.string().max(120).optional(),
     campaign: z.string().max(120).optional(),
+    /** First touch utm_medium, or referral / none (domain/first-touch.ts). */
+    medium: z
+      .string()
+      .regex(/^[a-z0-9_.-]{1,60}$/)
+      .optional(),
+    /** The tab session's first page (path only). */
+    landing: z
+      .string()
+      .min(1)
+      .max(120)
+      .refine((value) => !/[?&#]/.test(value))
+      .optional(),
     helpful: z.boolean().optional(),
   })
   .strict();
 export type InteractionEvent = z.infer<typeof interactionEventSchema>;
+
+const EMBED_PATH = /^\/embed\/pk_live_[A-Za-z0-9]{24}\//;
 let sessionId: string | undefined;
-export function currentInteractionSession() {
+let tabSession: TabSession | undefined;
+
+function sessionStore() {
+  try {
+    return window.sessionStorage;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * On The Reserve's own pages: the tab's session code and how the visit
+ * began, kept in sessionStorage so that a reload or a plain link (such as
+ * /start → the archetype quiz) stays one session with one first touch.
+ * Partner frames keep their in-memory, parent-shared code and no storage.
+ */
+export function currentTabSession(): TabSession | undefined {
   if (
-    !sessionId &&
+    typeof window === "undefined" ||
+    EMBED_PATH.test(window.location.pathname)
+  )
+    return undefined;
+  tabSession ??= loadTabSession(sessionStore(), () =>
+    firstTouchFrom({
+      search: window.location.search,
+      referrer: document.referrer,
+      landing: safePath(window.location.pathname),
+      ownHost: window.location.hostname,
+    }),
+  );
+  return tabSession;
+}
+
+/** How this tab's visit began, for the newsletter sign-up form. */
+export function currentFirstTouch(): FirstTouch | undefined {
+  return currentTabSession()?.firstTouch;
+}
+
+export function currentInteractionSession() {
+  if (sessionId) return sessionId;
+  if (
     typeof window !== "undefined" &&
-    /^\/embed\/pk_live_[A-Za-z0-9]{24}\//.test(window.location.pathname)
+    EMBED_PATH.test(window.location.pathname)
   ) {
     const shared = z
       .uuid()
@@ -44,7 +105,7 @@ export function currentInteractionSession() {
       );
     if (shared.success) sessionId = shared.data;
   }
-  sessionId ??= crypto.randomUUID();
+  sessionId ??= currentTabSession()?.sessionId ?? crypto.randomUUID();
   return sessionId;
 }
 
@@ -92,7 +153,9 @@ const safePath = (value: string) =>
     ),
     120,
   ) || "/";
-function context() {
+/** The fields every event of this page carries: session, tool, page and,
+ * on The Reserve's own pages, the tab's first touch. */
+export function interactionContext() {
   const path = window.location.pathname,
     match = path.match(/^\/embed\/(pk_live_[A-Za-z0-9]{24})\//);
   const feature = match?.[0]
@@ -108,19 +171,28 @@ function context() {
             : path.startsWith("/watches")
               ? "stories"
               : "site";
-  const query = new URLSearchParams(window.location.search),
-    campaign = query.get("utm_campaign") ?? undefined,
-    taggedSource = query.get("utm_source") ?? undefined;
-  let source: string | undefined;
-  try {
-    const ref = document.referrer ? new URL(document.referrer) : null;
-    source =
-      taggedSource ||
-      (ref && ref.hostname !== window.location.hostname
-        ? ref.hostname
-        : undefined);
-  } catch {}
+  // Own pages: every event says how the tab's visit began, so a sign-up
+  // three pages after an Instagram link still counts for Instagram.
+  const touch = currentFirstTouch();
+  let source: string | undefined, campaign: string | undefined;
+  if (touch) {
+    source = touch.source;
+    campaign = campaignLabel(touch);
+  } else {
+    // Partner frames: the frame's own tags or the partner page's site.
+    const query = new URLSearchParams(window.location.search);
+    campaign = query.get("utm_campaign") ?? undefined;
+    try {
+      const ref = document.referrer ? new URL(document.referrer) : null;
+      source =
+        query.get("utm_source") ||
+        (ref && ref.hostname !== window.location.hostname
+          ? ref.hostname
+          : undefined);
+    } catch {}
+  }
   return {
+    ...(touch ? { medium: touch.medium, landing: touch.landing } : {}),
     sessionId: currentInteractionSession(),
     ...(match?.[1] ? { siteKey: match[1] } : {}),
     feature: PARTNER_FEATURES.includes(
@@ -141,7 +213,7 @@ export function sendInteraction(
 ) {
   if (!import.meta.env.PROD) return;
   const event = interactionEventSchema.safeParse({
-    ...context(),
+    ...interactionContext(),
     name,
     ...extra,
     eventId: crypto.randomUUID(),
@@ -185,4 +257,9 @@ export function sendResultFeedback(helpful: boolean) {
 }
 export function interactionPagePath(path: string) {
   return safePath(path);
+}
+/** A new newsletter subscription: the fact and the tab's first touch only
+ * (the event carries it like every other), never the address. */
+export function sendNewsletterSignup() {
+  sendInteraction("newsletter_signup", { control: "newsletter_signup" });
 }

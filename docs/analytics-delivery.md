@@ -1,5 +1,31 @@
 # Anonymous analytics delivery and widget journeys
 
+## First touch on The Reserve's own pages (2026-11-27, migration 0126)
+
+On first-party pages the anonymous session code now lives in the tab's
+sessionStorage (`reserve.analytics.v1`) together with how the visit began:
+source, medium, campaign and entry page (`app/domain/first-touch.ts`).
+Source is `utm_source`; without tags, the referring site's platform
+(instagram, tiktok, youtube) or host name; without a referrer, `direct`.
+Every event of the tab carries this first touch (`traffic_source`,
+`traffic_medium`, `campaign`, `landing_page`), so a reload or a plain link
+no longer starts a new session or loses its source. Partner frames are
+unchanged: in-memory parent nonce, per-page source, no storage. No cookie,
+email or full URL is involved. The new event `newsletter_signup` records the
+fact of a new subscription only. `record_partner_interaction_v4` writes the
+two new columns with the same idempotency as v3 (v3 stays for older
+callers); `partner_interaction_attribution_v1` returns the source, medium,
+campaign table of `/admin/analytics` (each session once, by its earliest
+event in the period; sessions from before 0126 fall back to their first
+page's own source). `application_readiness_v4` now checks both writers.
+
+```powershell
+node --env-file=.env --import tsx scripts/test-first-touch-attribution.ts            # migration inside a rolled-back transaction
+node --env-file=.env --import tsx scripts/test-first-touch-attribution.ts --applied  # live functions, rolled back
+```
+
+## Delivery IDs and widget journeys (migration 0113)
+
 Migration 0113 adds nullable delivery IDs to the existing event table. Historical
 events and partner history stay intact. New browser events carry a fresh UUID;
 the same UUID and payload survive a single bounded retry on a connection/server

@@ -55,6 +55,9 @@ export async function action({ request }: { request: Request }) {
       p_campaign: event.campaign ?? null,
       p_helpful: event.helpful ?? null,
       p_country_code: countryCode,
+      // How the tab's visit began (migration 0126), on The Reserve's pages.
+      p_traffic_medium: event.medium ?? null,
+      p_landing_page: event.landing ?? null,
     });
     return new Response(null, { status: recorded ? 204 : 409 });
   } catch {

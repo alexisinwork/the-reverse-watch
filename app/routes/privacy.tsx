@@ -10,7 +10,7 @@ import { publicPageHeaders } from "../domain/cache-policy";
 
 import "../styles/legal.css";
 
-export const PRIVACY_UPDATED = "25 October 2026";
+export const PRIVACY_UPDATED = "27 November 2026";
 export const PRIVACY_CONTACT = "alex@thereserve.watch";
 
 // Same for every visitor: served from the CDN (see domain/cache-policy.ts).
@@ -51,9 +51,14 @@ export default function Privacy() {
             <strong>Your email address, if you subscribe.</strong> Used to send
             The Reserve&apos;s newsletter and to unlock the reference
             diagnostic. It is held by our newsletter provider until you
-            unsubscribe. Every newsletter has an unsubscribe link. If you use
-            &ldquo;Already subscribed?&rdquo;, we only check your address
-            against the subscriber list; we do not store it again.
+            unsubscribe. Every newsletter has an unsubscribe link. With it we
+            tell the newsletter provider how your visit began (for example
+            &ldquo;instagram&rdquo;, &ldquo;youtube&rdquo; with an episode tag
+            such as &ldquo;ep3&rdquo;, another website&apos;s name, or
+            &ldquo;direct&rdquo;) and the first page you opened, so we can see
+            which videos bring readers. If you use &ldquo;Already
+            subscribed?&rdquo;, we only check your address against the
+            subscriber list; we do not store it again.
           </li>
           <li>
             <strong>
@@ -73,14 +78,18 @@ export default function Privacy() {
           </li>
           <li>
             <strong>Anonymous session analytics.</strong> We record pages,
-            buttons used, which tool was opened, a referring website&apos;s
-            domain, optional campaign name, and whether results were liked.
-            Events in one open browser tab share a random session code held only
-            in memory; a reload starts a new code. We do not store names, email,
-            quiz answer values, IP addresses, precise location, full URLs, or
-            advertising IDs. We store only the two-letter country code supplied
-            by our hosting platform, when available. Events link only within
-            that browsing session.
+            buttons used, which tool was opened, whether a quiz was started or
+            finished, whether you subscribed (never your address), and whether
+            results were liked. Events in one open browser tab share a random
+            session code and how the visit began: the link&apos;s campaign tags
+            (platform, format, episode), or the referring website&apos;s name
+            (Instagram, TikTok and YouTube by platform), or
+            &ldquo;direct&rdquo;, and the first page opened. These are kept in
+            that tab&apos;s session storage and removed when the tab is closed.
+            We do not store names, email, quiz answer values, IP addresses,
+            precise location, full URLs, or advertising IDs. We store only the
+            two-letter country code supplied by our hosting platform, when
+            available. Events link only within that tab.
           </li>
           <li>
             <strong>Error reports.</strong> If a page breaks, a technical report
@@ -115,6 +124,11 @@ export default function Privacy() {
           <li>
             <strong>Quiz progress</strong>: your unfinished answers are kept in
             your browser for this visit only, so a refresh does not lose them.
+          </li>
+          <li>
+            <strong>Visit analytics</strong>: the random session code and how
+            the visit began (described above), in session storage for the open
+            tab only. It is not a cookie and is removed when the tab is closed.
           </li>
           <li>No advertising or cross-site tracking cookies are used.</li>
         </ul>

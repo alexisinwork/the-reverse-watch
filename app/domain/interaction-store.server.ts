@@ -31,7 +31,7 @@ export async function persistInteraction(
     try {
       return z
         .boolean()
-        .parse(await rpc(client, "record_partner_interaction_v3", body, 3000));
+        .parse(await rpc(client, "record_partner_interaction_v4", body, 3000));
     } catch (error) {
       if (attempt || !transient(error)) throw error;
       await wait(150);

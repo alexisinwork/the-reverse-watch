@@ -17,6 +17,7 @@ import {
 } from "../domain/discovery-archetype";
 import { discoveryHandoffSchema } from "../domain/discovery-selection";
 import { sendDiscoveryAnalyticsEvent } from "../domain/discovery-analytics";
+import { sendInteraction } from "../domain/interaction-analytics";
 import { loadFxTable } from "../domain/fx.server";
 import {
   meterPartnerUse,
@@ -162,6 +163,9 @@ export default function WatchArchetype() {
     if (startTracked.current) return;
     startTracked.current = true;
     sendDiscoveryAnalyticsEvent({ name: "archetype_start" });
+    // The same quiz start the diagnostic records, so /admin/analytics can
+    // count archetype quizzes by the platform and episode that led here.
+    sendInteraction("quiz_start", { control: "archetype_start" });
   };
 
   return (

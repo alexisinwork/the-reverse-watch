@@ -61,6 +61,7 @@ import {
   logError,
   SUBMISSION_INTENT,
 } from "../domain/quiz-email.server";
+import { firstTouchFromForm } from "../domain/first-touch";
 import {
   issueMessages,
   parseEmailOptIn,
@@ -258,7 +259,12 @@ export async function action({ request, context }: Route.ActionArgs) {
   } else if (emailOptIn.email !== null) {
     // The dossier needs the finished shortlist; by now it is normally stored.
     aiSearch = await search;
-    subscription = await deliverEmail(emailOptIn.email, profile, aiSearch);
+    subscription = await deliverEmail(
+      emailOptIn.email,
+      profile,
+      aiSearch,
+      firstTouchFromForm(formData),
+    );
     await recordQuizAnalyticsEvent({
       name: "subscription",
       intent: SUBMISSION_INTENT,

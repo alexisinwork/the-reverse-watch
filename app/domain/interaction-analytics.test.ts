@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   interactionEventSchema,
   deliverInteraction,
@@ -171,5 +171,116 @@ describe("browser analytics delivery", () => {
       .mockResolvedValue(new Response(null, { status: 204 }));
     expect(await deliverInteraction(delivery, f, async () => {})).toBe(true);
     expect(f).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("first touch on The Reserve's own pages", () => {
+  const setReferrer = (value: string) =>
+    Object.defineProperty(document, "referrer", {
+      value,
+      configurable: true,
+    });
+  const visit = async (address: string, referrer = "") => {
+    vi.resetModules();
+    window.history.replaceState({}, "", address);
+    setReferrer(referrer);
+    return import("./interaction-analytics");
+  };
+  // Earlier tests in this file opened first-party pages in the same tab.
+  beforeEach(() => window.sessionStorage.clear());
+  afterEach(() => {
+    window.sessionStorage.clear();
+    window.history.replaceState({}, "", "/");
+    setReferrer("");
+  });
+
+  it("keeps the source from /start to the quiz, across a full page load", async () => {
+    const start = await visit(
+      "/start?utm_source=instagram&utm_medium=social&utm_campaign=bio",
+      "https://l.instagram.com/",
+    );
+    const landed = start.interactionContext();
+    expect(landed).toMatchObject({
+      source: "instagram",
+      medium: "social",
+      campaign: "bio",
+      landing: "/start",
+      page: "/start",
+    });
+    // The quiz link on /start is a plain link: a new page load, no tags in
+    // the address and our own site as the referrer.
+    const quiz = await visit(
+      "/watches/archetype",
+      "https://thereserve.watch/start",
+    );
+    const later = quiz.interactionContext();
+    expect(later).toMatchObject({
+      sessionId: landed.sessionId,
+      source: "instagram",
+      medium: "social",
+      campaign: "bio",
+      landing: "/start",
+      feature: "archetype",
+      page: "/watches/archetype",
+    });
+    expect(
+      interactionEventSchema.safeParse({ ...later, name: "quiz_start" })
+        .success,
+    ).toBe(true);
+  });
+
+  it("counts a typed address as direct, and a Short apart from its video", async () => {
+    const typed = await visit("/");
+    expect(typed.interactionContext()).toMatchObject({
+      source: "direct",
+      medium: "none",
+      landing: "/",
+    });
+    window.sessionStorage.clear();
+    const short = await visit(
+      "/watches/find?utm_source=youtube&utm_medium=shorts&utm_campaign=ep11",
+    );
+    expect(short.interactionContext()).toMatchObject({
+      source: "youtube",
+      medium: "shorts",
+      campaign: "ep11 shorts",
+    });
+  });
+
+  it("keeps partner frames on their per-page source, without storage", async () => {
+    const frame = await visit(
+      "/embed/pk_live_abcdefghijklmnopqrstuvwx/quiz",
+      "https://partner.example/page",
+    );
+    const context = frame.interactionContext();
+    expect(context).toMatchObject({ source: "partner.example" });
+    expect(context).not.toHaveProperty("medium");
+    expect(context).not.toHaveProperty("landing");
+    expect(window.sessionStorage.length).toBe(0);
+  });
+
+  it("accepts the sign-up event and refuses an entry page with a query", () => {
+    const signup = {
+      sessionId: "a6a97217-18e4-4cb3-8c49-fd75dc272f12",
+      name: "newsletter_signup",
+      feature: "site",
+      page: "/start",
+      source: "tiktok",
+      medium: "social",
+      campaign: "bio",
+      landing: "/start",
+    };
+    expect(interactionEventSchema.safeParse(signup).success).toBe(true);
+    expect(
+      interactionEventSchema.safeParse({ ...signup, landing: "/start?x=1" })
+        .success,
+    ).toBe(false);
+    expect(
+      interactionEventSchema.safeParse({ ...signup, medium: "Social Media" })
+        .success,
+    ).toBe(false);
+    expect(
+      interactionEventSchema.safeParse({ ...signup, email: "a@b.com" }).success,
+    ).toBe(false);
   });
 });

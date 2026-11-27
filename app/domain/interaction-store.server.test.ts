@@ -26,7 +26,7 @@ describe("idempotent analytics writes", () => {
       fetchImpl.mock.calls[1]![1]?.body,
     );
     expect(String(fetchImpl.mock.calls[0]![0])).toContain(
-      "record_partner_interaction_v3",
+      "record_partner_interaction_v4",
     );
   });
   it("retries a transient upstream failure once", async () => {
