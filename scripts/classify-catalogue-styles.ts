@@ -187,6 +187,14 @@ type Entry = {
 
 async function write(entry: Entry) {
   if (!entry.styles.length) return 0;
+  // A watch that had styles gets them replaced (corrected) only if they
+  // differ; one without gets them filled.
+  const before = byId.get(entry.id)?.styles ?? [];
+  if (
+    before.length === entry.styles.length &&
+    before.every((style) => entry.styles.includes(style))
+  )
+    return 0;
   return z.number().parse(
     await rpc(
       client!,
@@ -197,7 +205,7 @@ async function write(entry: Entry) {
         p_facts: [
           {
             field: "styles",
-            status: "filled",
+            status: before.length ? "corrected" : "filled",
             value: entry.styles,
             method: "model",
             model: muse?.fastModel ?? "muse-spark",
@@ -227,13 +235,20 @@ spent = [...journal.values()].reduce((sum, entry) => sum + entry.costUsd, 0);
 
 const catalogue = await listCatalogue(client);
 const byId = new Map(catalogue.map((watch) => [watch.id, watch]));
+// --ids-file list.json: these watches only, styles or not (the repair's
+// watches whose reference turned out to be another model).
+const idsFile = option("ids-file");
+const only = idsFile
+  ? new Set(JSON.parse(readFileSync(idsFile, "utf8")) as string[])
+  : null;
 
 if (applyOnly) {
   let written = 0;
   let next = 0;
   const entries = [...journal.values()].filter(
     (entry) =>
-      entry.applied === undefined && byId.get(entry.id)?.styles.length === 0,
+      entry.applied === undefined &&
+      (only !== null || byId.get(entry.id)?.styles.length === 0),
   );
   await Promise.all(
     // Gentle on the live site: thousands of quick writes at once made its
@@ -263,9 +278,13 @@ if (applyOnly) {
 }
 
 const todo = catalogue
-  .filter((watch) => watch.sourceKind === "catalogue")
+  .filter((watch) =>
+    only ? only.has(watch.id) : watch.sourceKind === "catalogue",
+  )
   .filter(
-    (watch) => watch.reviewStatus !== "rejected" && watch.styles.length === 0,
+    (watch) =>
+      watch.reviewStatus !== "rejected" &&
+      (only !== null || watch.styles.length === 0),
   )
   // A watch whose classification failed is classified again.
   .filter(

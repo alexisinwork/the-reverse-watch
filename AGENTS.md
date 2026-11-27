@@ -241,6 +241,14 @@ speed and cost.
   server opened and that shows the reference and the passage giving the
   value (`scripts/fact-check-catalogue.ts`). Each step reports its numbers
   and is checked by the judge before the next; prices keep their own check.
+  Steps 2 and 3 for every watch and a detailed completion were approved
+  with up to $100 ("Делай шаг 2 и шаг 3 на все часы и детально дополни
+  существующий каталог ... даю добро на траты до 100 долларов начиная с
+  нуля"). Every repair write goes through `watch_catalogue_fact_apply_v1`
+  (migration 0124), which logs the value it replaces, and a run is undone
+  with `watch_catalogue_fact_revert_v1`. Bulk catalogue writes use at most
+  two writers with a pause: thousands of quick writes made the live
+  searches ten times slower for about fifteen minutes (2026-11-27).
 - **Read-only evaluation in CI** ("да и как это сделать?"): the role
   `reserve_eval_reader` (migration 0123) may run only the functions in
   `READ_ONLY_RPC`, in read-only sessions; never grant it a table, a write

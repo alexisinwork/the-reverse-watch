@@ -276,6 +276,42 @@ After the owner's ratings (2026-11-26):
   or unconfirmed; nothing is written. Reports: `docs/reports/fact-check-*.json`.
 - `scripts/build-label-review.ts` turns the independent film set into a
   review page on the rating page's design.
+
+The catalogue repair (2026-11-27, owner: steps 2 and 3 for every watch and
+a detailed completion, up to $100):
+
+- Every fact the repair checks goes through
+  `watch_catalogue_fact_apply_v1` (migration 0124), which logs the value it
+  replaces in `private.watch_catalogue_fact_log` with the page, the passage,
+  the method (`maker_page`, `retailer_page`, `database`, `derived`, `model`)
+  and the model; `watch_catalogue_fact_revert_v1(run)` undoes a whole run.
+  `scripts/test-fact-log.ts` proves both in a rolled-back transaction, and
+  `scripts/fact-log-report.ts --runs a,b` reads back what was applied.
+- `scripts/repair-catalogue.ts` checks the watches an AI search added
+  (`--set ai`) or imported ones still missing facts (`--set database`,
+  usually with `--ids-file` from `scripts/visible-catalogue.ts`): the
+  stored page first (Muse Spark reads its text), then up to eight pages
+  Perplexity names for the exact reference, which our server opens itself.
+  Its rules live in `scripts/repair-rules.ts` and are held to the
+  calibration cases by `scripts/repair-rules.test.ts`: which pages may give
+  a fact (no marketplaces, grey or pre-owned dealers, auctions, forums,
+  magazines or databases; a shop's subdomain is not the maker), which lines
+  are read, and when a copied passage confirms, corrects or fills a fact (a
+  rounded number never corrects a precise one; a page that names the watch
+  with only some of its words changes nothing; a name that is just the
+  number changes nothing). Each run keeps a resumable journal in
+  `.scratch/repair/` (ignored by Git) and writes with `--apply` or
+  `--apply-only`.
+- `scripts/classify-catalogue-styles.ts` gives imported watches their
+  wearing styles from their own facts (`STYLE_BRIEFS`), 25 to a Muse call,
+  logged as method `model`; it writes with two writers and a pause, because
+  thousands of quick writes made the live searches ten times slower.
+- `scripts/visible-catalogue.ts` lists the records the tools actually show,
+  by running the site's own selection over a grid of quiz answers, every
+  archetype and band and the owner's alternatives cases, without paid calls.
+- `inspectSourcePage` (`source-pages.server.ts`) now needs the reference in
+  the page's own content; an address that carries it proves nothing, and a
+  blocked page counts only on a site that answers a made-up address with 404.
 - The free evaluation can run without the service key: migration 0123's
   `reserve_eval_reader` may run only the sixteen functions in
   `READ_ONLY_RPC` (`scripts/eval-sets.ts`; `scripts/eval-database.test.ts`
