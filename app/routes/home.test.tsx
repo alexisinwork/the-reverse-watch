@@ -273,6 +273,45 @@ describe("landing page", () => {
     expect(body).not.toHaveProperty("referring_site");
   });
 
+  it("unlocks a new reader whose address Beehiiv is still validating", async () => {
+    // Production, 2026-11-27: a new address came back "validating" and the
+    // page showed an error although Beehiiv had added the subscriber.
+    vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
+    vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");
+    vi.stubGlobal(
+      "fetch",
+      vi.fn<typeof fetch>((input) =>
+        Promise.resolve(
+          String(input).includes("/by_email/")
+            ? new Response(null, { status: 404 })
+            : Response.json({
+                data: {
+                  id: "sub_123",
+                  email: "alexisinwork+test@gmail.com",
+                  status: "validating",
+                },
+              }),
+        ),
+      ),
+    );
+    const response = await action({
+      request: actionRequest({
+        intent: "newsletter",
+        email: "alexisinwork+test@gmail.com",
+        newsletterConsent: "yes",
+      }),
+    } as Parameters<typeof action>[0]);
+    expect(response.init?.status ?? 200).toBe(200);
+    expect(response.data).toEqual({
+      ok: true,
+      message: "Subscribed. The reference diagnostic is now unlocked.",
+      subscribed: true,
+    });
+    expect(new Headers(response.init?.headers).get("Set-Cookie")).toContain(
+      "reserve_diagnostic_access=",
+    );
+  });
+
   it("does not unlock the diagnostic for a non-active Beehiiv response", async () => {
     vi.stubEnv("BEEHIIV_API_KEY", "beehiiv-key");
     vi.stubEnv("BEEHIIV_PUBLICATION_ID", "pub_123");

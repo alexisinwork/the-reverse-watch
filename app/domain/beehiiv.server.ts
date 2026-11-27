@@ -89,6 +89,21 @@ export function beehiivAttribution(touch: FirstTouch | null) {
   };
 }
 
+/**
+ * The statuses of a subscription that exists. Beehiiv answers a brand-new
+ * address with "validating" while it checks the address, and it turns
+ * "active" a moment later; only "active" counted until 2026-11-27, so a new
+ * reader saw an error although they were on the list (production log
+ * landing_beehiiv_subscription_rejected, providerStatus "validating").
+ * "invalid", "pending" and the rest still fail.
+ */
+const SUBSCRIBED_STATUSES = ["active", "validating"] as const;
+function isSubscribedStatus(
+  status: string,
+): status is (typeof SUBSCRIBED_STATUSES)[number] {
+  return (SUBSCRIBED_STATUSES as readonly string[]).includes(status);
+}
+
 export async function subscribeToBeehiiv(
   email: string,
   configuration: Extract<BeehiivConfiguration, { configured: true }>,
@@ -127,9 +142,10 @@ export async function subscribeToBeehiiv(
   if (payload.data.data.email.toLowerCase() !== email.trim().toLowerCase()) {
     throw new Error("Beehiiv subscription returned an unexpected address");
   }
-  if (payload.data.data.status !== "active") {
-    throw new BeehiivSubscriptionNotActiveError(payload.data.data.status);
+  const status = payload.data.data.status;
+  if (!isSubscribedStatus(status)) {
+    throw new BeehiivSubscriptionNotActiveError(status);
   }
 
-  return { status: "active" as const };
+  return { status };
 }

@@ -122,6 +122,26 @@ describe("Beehiiv subscription adapter", () => {
     });
   });
 
+  it("accepts a new address Beehiiv is still validating", async () => {
+    const fetchImplementation = vi.fn().mockResolvedValue(
+      Response.json({
+        data: {
+          id: "sub_123",
+          email: "alexisinwork+test@gmail.com",
+          status: "validating",
+        },
+      }),
+    );
+    await expect(
+      subscribeToBeehiiv(
+        "alexisinwork+test@gmail.com",
+        { configured: true, apiKey: "key", publicationId: "pub_123" },
+        null,
+        fetchImplementation,
+      ),
+    ).resolves.toEqual({ status: "validating" });
+  });
+
   it("rejects a 2xx response when Beehiiv does not activate the address", async () => {
     const fetchImplementation = vi.fn().mockResolvedValue(
       Response.json({
