@@ -108,10 +108,21 @@ for (const tool of ["quiz", "find", "alternatives", "archetype", "stories"]) {
     /Powered by The Reserve/.test(html) && credit === new URL(origin).origin,
     credit || "(no credit link)",
   );
+  // Only what the visitor gets: the markup without its scripts and preload
+  // links, which name code files such as beehiiv-signup-*.js that the
+  // widget's route modules share with the site's own pages (2026-11-27).
+  const markup = html
+    .replace(/<script\b[\s\S]*?<\/script>/gi, "")
+    .replace(/<link\b[^>]*>/gi, "");
+  const signup = [
+    ...markup.matchAll(
+      /<input\b[^>]*type="email"|<form\b[^>]*(?:beehiiv|subscribe|newsletter)[^>]*>|beehiiv|newsletter/gi,
+    ),
+  ].map((match) => match[0].slice(0, 60));
   check(
     `${tool}: asks for no subscription or email`,
-    !/type="email"|beehiiv|newsletter-form|subscribe-form/i.test(html),
-    "",
+    signup.length === 0,
+    signup.slice(0, 3).join(" | "),
   );
   const outbound = leaving(html);
   check(
