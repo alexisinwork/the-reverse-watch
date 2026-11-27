@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-27T15:09:26.393Z",
+  "at": "2026-11-27T18:02:02.950Z",
   "fxDate": "2026-11-27",
   "guard": {
     "database": "PostgreSQL as reserve_eval_reader",
@@ -11,12 +11,12 @@
   },
   "quiz": {
     "profiles": 40,
-    "exactCards": 271,
+    "exactCards": 272,
     "violations": 0,
     "profilesWithExact": 31,
-    "closeFits": 127,
+    "closeFits": 126,
     "closeFitsWithoutReason": 0,
-    "baselineRandomExactRate": 0.0165,
+    "baselineRandomExactRate": 0.0176,
     "violationExamples": [],
     "exactPrecision": 1
   },
@@ -24,17 +24,17 @@
     "cases": 60,
     "resolvedTargets": 13,
     "comparableTargets": 13,
-    "inTop5": 7,
-    "inTop10": 7,
-    "randomTop10Expected": 1.6992143120508982,
+    "inTop5": 4,
+    "inTop10": 6,
+    "randomTop10Expected": 1.5825214118720168,
     "sameBrandCases": [
       "TAG Heuer Monaco → TAG Heuer Monaco automatic chronograph",
       "Cartier Santos de Cartier → Cartier Santos Galbée",
       "Grand Seiko Snowflake SBGA211 → Seiko Presage Sharp Edged SPB165"
     ],
-    "recallAt5": 0.1167,
-    "recallAt10": 0.1167,
-    "randomRecallAt10": 0.0283
+    "recallAt5": 0.0667,
+    "recallAt10": 0.1,
+    "randomRecallAt10": 0.0264
   },
   "film": {
     "positives": 20,
@@ -52,8 +52,8 @@
     "sha256": "e6a60a0681271518a0115b1476025965fca25af049de42d46a9027b926a4fb01",
     "review": "awaiting owner review",
     "positives": 19,
-    "answered": 16,
-    "foundAny": 16,
+    "answered": 19,
+    "foundAny": 19,
     "foundConfirmed": 0,
     "confirmed": [],
     "onlyPossible": [
@@ -62,8 +62,10 @@
       "goldeneye-seamaster-2541",
       "casino-royale-planet-ocean",
       "casino-royale-diver-300m",
+      "blue-hawaii-ventura",
       "thunderball-top-time",
       "apocalypse-now-seiko-6105",
+      "dr-no-submariner",
       "magnum-pi-gmt-master",
       "live-and-let-die-submariner-5513",
       "live-and-let-die-pulsar",
@@ -72,17 +74,14 @@
       "jfk-omega-slimline",
       "andy-warhol-tank",
       "jackie-kennedy-tank",
+      "buzz-aldrin-speedmaster",
       "the-martian-belowzero"
     ],
-    "missed": [
-      "blue-hawaii-ventura",
-      "dr-no-submariner",
-      "buzz-aldrin-speedmaster"
-    ],
+    "missed": [],
     "controlViolations": [],
     "leakage": [],
     "recallConfirmed": 0,
-    "recallAny": 0.8421
+    "recallAny": 1
   },
   "gates": {
     "noProviderRequests": true,

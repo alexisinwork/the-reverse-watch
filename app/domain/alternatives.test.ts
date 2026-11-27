@@ -1,5 +1,6 @@
 import {
   budgetWindow,
+  CONFIRMED_REFERENCE_POINTS,
   isHomageBrand,
   rankAlternatives,
   strictFailures,
@@ -109,6 +110,42 @@ describe("coverage without prices", () => {
     expect(result.filter((entry) => entry.watch.model === "Same")).toHaveLength(
       1,
     );
+  });
+});
+
+describe("a confirmed reference weighs a point", () => {
+  // Same look; the unconfirmed one sits 0.9 of a point nearer the price.
+  const target = blackBay();
+  const unconfirmed = watch({
+    brand: "Guess",
+    model: "Nearest",
+    referenceConfirmed: false,
+    priceAmount: 2_000,
+  });
+  const confirmed = watch({
+    brand: "Maker",
+    model: "Checked",
+    referenceConfirmed: true,
+    priceAmount: 2_900,
+  });
+  const order = (confirmedPoints?: number) =>
+    rankAlternatives(
+      target,
+      [unconfirmed, confirmed],
+      around2k,
+      false,
+      fx,
+      10,
+      confirmedPoints,
+    ).map((entry) => entry.watch.model);
+
+  it("puts a confirmed reference before an unconfirmed one less than a point closer", () => {
+    expect(CONFIRMED_REFERENCE_POINTS).toBe(1);
+    expect(order()).toEqual(["Checked", "Nearest"]);
+  });
+
+  it("leaves look and price in charge when the weight is off", () => {
+    expect(order(0)).toEqual(["Nearest", "Checked"]);
   });
 });
 

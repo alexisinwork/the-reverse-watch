@@ -435,6 +435,17 @@ export type Alternative<T extends AlternativeFacts = CatalogueWatch> = {
   differs: string[];
 };
 
+/**
+ * How much a confirmed reference weighs against look points (out of
+ * MAX_LOOK_POINTS). The judge called a fact wrong on 21 of 29 alternatives
+ * cards of AI-found records that no page stands behind (2026-11-27), while a
+ * strict "confirmed first" order pushed 3 of the owner's 7 labelled picks
+ * out of the top ten, because some picks exist only as unconfirmed records.
+ * The weight is chosen on the owner's labels (docs/eval-baseline.md,
+ * "Repair step 6").
+ */
+export const CONFIRMED_REFERENCE_POINTS = 1;
+
 export function rankAlternatives<T extends AlternativeFacts>(
   target: AlternativeFacts,
   catalogue: readonly T[],
@@ -442,6 +453,7 @@ export function rankAlternatives<T extends AlternativeFacts>(
   allowQuartz: boolean,
   fx: FxTable | null,
   limit = 10,
+  confirmedPoints = CONFIRMED_REFERENCE_POINTS,
 ): Alternative<T>[] {
   const window = budgetWindow(budget);
   const ranked = catalogue.flatMap((candidate): Alternative<T>[] => {
@@ -468,9 +480,14 @@ export function rankAlternatives<T extends AlternativeFacts>(
       return [];
     return [{ watch: candidate, price, ...look }];
   });
+  // A watch whose reference a maker's page, an authorised retailer or a
+  // watch database confirms counts confirmedPoints more than its look
+  // (CONFIRMED_REFERENCE_POINTS; owner, 2026-11-27, repair step 6).
+  const weighed = (entry: Alternative<T>) =>
+    entry.points + (entry.watch.referenceConfirmed ? confirmedPoints : 0);
   ranked.sort(
     (a, b) =>
-      b.points - a.points ||
+      weighed(b) - weighed(a) ||
       Number(b.watch.referenceConfirmed) - Number(a.watch.referenceConfirmed) ||
       a.price.amount - b.price.amount,
   );
