@@ -20,15 +20,18 @@ for the first 25 founding orders; the process is `docs/exclusive-selection.md`);
 the five price changes on `/admin/catalogue` (reviewed by the owner, "3 -
 сделан"; none waiting); the local test partner (item 12, "4 - выключай":
 "Owner test (local only)" switched off, not deleted).
+Closed on 2026-11-28: #13 ("3 - да - примерная": a confirmed price a new
+check cannot reproduce is shown as approximate at once; migration 0127,
+applied to the ten prices of 2026-11-27) and #15 (the privacy policy names
+Oleksandr Kukhtin as the controller); both in `AGENTS.md`.
 See `docs/decisions/DECISION_REGISTER.md`.
 
 ## Before launch
 
 | # | Question or action | Why | When done |
 | --- | --- | --- | --- |
-| 13 | Should a "confirmed" price that today's double check cannot reproduce be shown as approximate at once, instead of keeping its label until it is 90 days old? 10 prices shown as confirmed are in that state today (Cartier WSSA0010, Jaeger-LeCoultre Q9008160, LIP 671530, TAG Heuer WAS2110.BA0732 and others; `docs/eval-baseline.md`, "Repair step 5"). The 31 prices to check by hand, with links to the maker and to `/admin/catalogue`: https://claude.ai/artifact/JmMRd9Uj9JuB2rcLBYknCE | A visitor reads "confirmed" as checked; the judge found wrong prices on 26 cards of the step-6 round | Your answer is recorded in `AGENTS.md`; the agent changes the recheck so (a code change, no paid call) |
-| 14 | Three watches left in the review queue (`/admin/catalogue?status=pending`, Edit, then "Save and approve"): Tudor Monarch steel/champagne, reference M2639A1A0U-0001 → M2639W1A0U-0001 (as Tudor lists it; keep "Reference confirmed" only if tudorwatch.com shows it); NOMOS Tangente neomatik 38 Update gold "Drift" 195.U6, diameter 38 → 38.5 mm (NOMOS's size for ref. 195); NOMOS Orion neomatik gold 348.U3, the name "Urana" or "Urania" as NOMOS spells it | Two judge runs disagreed on these; no maker page was found, so the agent may not change them | The queue reads 0 pending |
-| 15 | Tell the agent the name of who runs the site (your name or your company) and the country, for the privacy policy | The policy gives only an email; GDPR article 13(1)(a) asks for the identity of the controller. Before the paid selection, check with a lawyer whether an address or company details are also needed | One sentence on `/privacy`: "The Reserve is run by …" |
+| 14 | The three watches of the review queue are approved ("1 - done"), but their edits are not in the database on 2026-11-28: Tudor Monarch still reads M2639A1A0U-0001 (Tudor lists M2639W1A0U-0001), NOMOS 195.U6 still 38 mm (38.5 mm for ref. 195), NOMOS 348.U3 still "Urana". On `/admin/catalogue?q=<reference>`: Edit, change the field, then **Save** (the separate Approve button does not keep typed values) | A card shows the old value until then | Each row shows the new value |
+| 16 | Check the photos the full run adds (`docs/reports/photos-photos-1-progress.jsonl`; `/admin/catalogue` shows each photo); a wrong one: Edit → clear "Image URL" → Save, or tell the agent the reference | The rules refuse banners, logos, share cards and sibling variants, but a page can still show another dial colour | Spot checks find no wrong photo |
 | 3 | Set the usage alert in Meta's dashboard (Perplexity was topped up on 2026-11-26) | The app stops paid checks at $100 a month and emails you at $5, 10, 25, 50, 75, 90 and 100, Perplexity alone at $5 and $10; the provider accounts have no limit of their own | Meta's alert is noted in `docs/production-readiness.md` |
 | 4 | Review the independent film set on its review page, https://claude.ai/artifact/4Br4SRgzRsFAGkN7vLEd5b ("кидай, я проверю"): 19 labels, each with the pages it rests on | It is the honest measure of film search, but labels count only after a human check | Your marks are on the page; the agent records them in `data/eval/` without editing the labels |
 | 5 | Commercial groundwork from `docs/business-plan.md`: 8–10 conversations with possible partners, a short pilot agreement and invoice, and the open check of your employer's rules on paid side projects (`docs/original-plan-requirements.md`) | A paying pilot needs a buyer, terms and an invoice; no customer outreach is automated | The first bounded paid pilot is offered |

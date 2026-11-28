@@ -233,6 +233,13 @@ describe("metered daily price job", () => {
     expect(JSON.parse(String(dbFetch.mock.calls[1]![1]?.body))).toMatchObject({
       p_results: [{ amount: 3500, priceStatus: "approximate" }],
     });
+    // Confirmed prices the run could not reproduce become approximate.
+    expect(String(dbFetch.mock.calls[2]![0])).toContain(
+      "catalogue_price_recheck_unverified_v1",
+    );
+    expect(JSON.parse(String(dbFetch.mock.calls[2]![1]?.body))).toEqual({
+      p_attempt_id: "00000000-0000-4000-8000-000000000002",
+    });
   });
   it.each([
     "no_due",

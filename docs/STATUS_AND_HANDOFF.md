@@ -74,6 +74,9 @@ Every change reports before/after numbers for each rule.
 | Price of Exclusive Watch Selection | approved by the owner 2026-11-27: $79, $49 for the first 25 founding orders | `docs/business-plan.md` ("Paid watch selection") |
 | Launch check (release readiness, 2026-11-27) | done; verdict in `docs/production-readiness.md` ("Launch check"): the production monitor was red since 2026-11-26 (six abandoned $0.20 reservations), settled and green again; robots.txt, sitemap.xml and canonical links added; review queue down to 3 watches for the owner; fresh backup restored in a rehearsal | `10acd2e`, `2ef81a0`, `docs/reports/verify-all-2026-11-27.json` |
 | Prices to check by hand (31: 17 shown as confirmed, 14 as approximate) | page for the owner published 2026-11-27 | https://claude.ai/artifact/JmMRd9Uj9JuB2rcLBYknCE |
+| A confirmed price a new check cannot reproduce becomes approximate (owner #13, migration 0127) | done 2026-11-28: applied and tested (12 checks, rolled back); the ten prices of 2026-11-27 are approximate now | `scripts/test-unconfirmed-price.ts`, `docs/reports/approximate-prices-2026-11-28.json` |
+| Privacy policy names the controller (Oleksandr Kukhtin) | done 2026-11-28 | `app/routes/privacy.tsx` |
+| Photos for watches without one, the owner's way (`scripts/find-catalogue-photos.ts`) | test 2026-11-28: 10 photos stored and checked by eye (a banner refused; rules added); the full run, watches the tools show first (2,090), runs until the rest of the $100 is spent | `docs/reports/photos-photos-test-1.json`, `docs/reports/photos-photos-1-progress.jsonl` |
 | Repair step 6: a confirmed reference weighs a point in the alternatives; review queue checked and approved (470 of 473); sourced suggestions take page-checked facts; live round and judge | done 2026-11-27: wrong share 35% → 34% (quiz 28%), film 8 of 17 answers confirmed; owner decisions recorded in `AGENTS.md` ("Owner decisions, 2026-11-27") | `662a2c7`, `c0ba5e6`, `04fa54f`, `docs/eval-baseline.md` |
 | Exclusive Watch Selection: process for the paid selection (reuse the diagnostic plus a short brief; merchant of record; research, judge, the owner's 15-minute review; delivery) | written 2026-11-27; price approved ($79, $49 for the first 25); built after the launch | `docs/exclusive-selection.md` |
 | Repair step 5: saved answers show page-checked facts; second read of 2,073 found pages (470 watches changed); price recheck of the 33 records the judge named; live round of all four tools and the judge | done 2026-11-27: wrong share 39% → 35%, every gate PASS; two defects found and fixed (film checks not saved, `235f924`; saved-research cards with old names, `9477805`) | `8fbf9bd`, `docs/eval-baseline.md` ("Repair step 5"), `docs/reports/judge-step5-2026-11-27.json` |
@@ -163,11 +166,9 @@ share went 39% → 35% → 34% (quiz 28%), wrong prices 33 → 26, film 8 of 17
 answers with confirmed sightings (0 before the save fix); the review queue is
 approved after checks (470 of 473); every gate PASS on all four tools.
 
-1. Owner actions before the launch (`docs/OWNER_QUESTIONS.md`): the three
-   watches left in the review queue (#14), the name of who runs the site
-   for the privacy policy (#15), "confirmed" prices that a recheck cannot
-   reproduce (#13), and the 31 prices on
-   https://claude.ai/artifact/JmMRd9Uj9JuB2rcLBYknCE.
+1. Owner actions before the launch (`docs/OWNER_QUESTIONS.md`): the edits
+   of the three approved watches (#14), spot checks of the photo run (#16),
+   and the 31 prices on https://claude.ai/artifact/JmMRd9Uj9JuB2rcLBYknCE.
 2. What the judge still finds: AI-found records without any maker's or
    shop's page (61% of their cards), invented or mixed-up references, model
    names, prices. Next: measure the sourced-suggestion fix (`04fa54f`) in the
@@ -178,6 +179,6 @@ approved after checks (470 of 473); every gate PASS on all four tools.
 4. Completion of imported watches the tools show: `scripts/visible-catalogue.ts`,
    then `scripts/repair-catalogue.ts --set database --ids-file …` (throttled
    writes, at most two writers with a pause).
-Of the owner's $100 for this work about $76.64 is spent
+Of the owner's $100 for this work about $76.92 is spent before the photo run
 (`docs/evaluation-budget.md`).
 Run `scripts/verify-all.ts --production` before and after every change.

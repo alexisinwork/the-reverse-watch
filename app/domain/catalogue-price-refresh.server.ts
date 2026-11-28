@@ -142,7 +142,21 @@ export function priceRefreshServices(
           p_costs_usd: validationCharges(costs),
         }),
       );
-      if (result) clearCatalogueCache();
+      if (result) {
+        // Owner decision 2026-11-28 (#13): a confirmed price this check could
+        // not reproduce is shown as approximate at once (migration 0127).
+        await rpc(client, "catalogue_price_recheck_unverified_v1", {
+          p_attempt_id: id,
+        }).catch((error: unknown) =>
+          console.error(
+            JSON.stringify({
+              event: "price_recheck_unverified_error",
+              message: error instanceof Error ? error.message : String(error),
+            }),
+          ),
+        );
+        clearCatalogueCache();
+      }
       return result;
     },
     overrun: (id, costs) => reportValidationOverrun(client, id, costs),

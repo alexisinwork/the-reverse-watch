@@ -1,0 +1,130 @@
+{
+  "at": "2026-11-28T11:02:47.449Z",
+  "run": "photos-test-2",
+  "write": false,
+  "watches": 3,
+  "withPhoto": 3,
+  "spentUsd": 0.0151,
+  "results": [
+    {
+      "id": "1875f368-e84d-4c0b-a89e-0f2e55f814c0",
+      "brand": "Omega",
+      "model": "Seamaster Planet Ocean 600M Co-Axial 43.5 GMT Stainless Steel / Orange Numerals / Bracelet",
+      "reference": "232.30.44.22.01.002",
+      "sourceUrl": "https://dials.co/watches/omega/seamaster-planet-ocean/232-30-44-22-01-002",
+      "imported": true,
+      "chosen": {
+        "pageUrl": "https://www.omegawatches.com/watch-omega-seamaster-planet-ocean-600m-co-axial-chronometer-gmt-43-5-mm-23230442201002",
+        "kind": "maker",
+        "imageUrl": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-planet-ocean-600m-co-axial-chronometer-gmt-43-5-mm-23230442201002-6ca486.png?w=1024",
+        "size": {
+          "width": 800,
+          "height": 800
+        }
+      },
+      "price": null,
+      "tried": [
+        {
+          "url": "https://www.omegawatches.com/watch-omega-seamaster-planet-ocean-600m-co-axial-chronometer-gmt-43-5-mm-23230442201002",
+          "kind": "maker",
+          "reachable": true,
+          "referenceFound": true,
+          "offered": 2,
+          "photo": "https://www.omegawatches.com/media/catalog/product/o/m/omega-seamaster-planet-ocean-600m-co-axial-chronometer-gmt-43-5-mm-23230442201002-6ca486.png?w=1024"
+        }
+      ],
+      "searched": 10,
+      "cost": 0.00561,
+      "applied": null
+    },
+    {
+      "id": "652acb82-34ae-42a9-a0cc-5040b07262c2",
+      "brand": "TAG Heuer",
+      "model": "Carrera Calibre 5 39 Stainless Steel / Yellow Gold / Champagne / Bracelet",
+      "reference": "WAR215A.BD0783",
+      "sourceUrl": "https://dials.co/watches/tag-heuer/carrera/war215a-bd0783",
+      "imported": true,
+      "chosen": {
+        "pageUrl": "https://chronospex.com/tag-heuer/carrera/war215a-bd0783/",
+        "kind": "shop",
+        "imageUrl": "https://chronospex.com/wp-content/uploads/2025/09/TAG-Heuer-Carrera-WAR215A.BD0783.jpg",
+        "size": {
+          "width": 1000,
+          "height": 1000
+        }
+      },
+      "price": null,
+      "tried": [
+        {
+          "url": "https://www.tagheuer.com/us/en/timepieces/collections/tag-heuer-carrera/39-mm-calibre-5-automatic/WAR215A.BD0783.html",
+          "kind": "maker",
+          "reachable": false,
+          "referenceFound": false,
+          "offered": 0,
+          "photo": null
+        },
+        {
+          "url": "https://www.jurawatches.co.uk/products/tag-heuer-watch-carrera-war215a-bd0783",
+          "kind": "shop",
+          "reachable": false,
+          "referenceFound": false,
+          "offered": 0,
+          "photo": null
+        },
+        {
+          "url": "https://chronospex.com/tag-heuer/carrera/war215a-bd0783/",
+          "kind": "shop",
+          "reachable": true,
+          "referenceFound": true,
+          "offered": 1,
+          "photo": "https://chronospex.com/wp-content/uploads/2025/09/TAG-Heuer-Carrera-WAR215A.BD0783.jpg"
+        }
+      ],
+      "searched": 10,
+      "cost": 0.00441,
+      "applied": null
+    },
+    {
+      "id": "502a723a-6ade-46d9-b797-fcd954861650",
+      "brand": "Hublot",
+      "model": "Classic Fusion",
+      "reference": "511.NX.2611.RX",
+      "sourceUrl": "https://spacecitytimepiece.com/watches/hublot/classic-fusion/511-nx-2611-rx",
+      "imported": true,
+      "chosen": {
+        "pageUrl": "https://www.watchmaxx.com/hublot-watch-511-nx-2611-rx",
+        "kind": "grey",
+        "imageUrl": "https://res.cloudinary.com/dp9dnliwc/image/upload/w_650,h_800,c_pad/q_auto:best/f_auto/wmmedia/watch_images/large/511nx2611rx_1647371441.jpg",
+        "size": {
+          "width": 650,
+          "height": 800
+        }
+      },
+      "price": {
+        "amount": 6525,
+        "currency": "USD"
+      },
+      "tried": [
+        {
+          "url": "https://spacecitytimepiece.com/watches/hublot/classic-fusion/511-nx-2611-rx",
+          "kind": "grey",
+          "reachable": true,
+          "referenceFound": true,
+          "offered": 1,
+          "photo": null
+        },
+        {
+          "url": "https://www.watchmaxx.com/hublot-watch-511-nx-2611-rx",
+          "kind": "grey",
+          "reachable": true,
+          "referenceFound": true,
+          "offered": 9,
+          "photo": "https://res.cloudinary.com/dp9dnliwc/image/upload/w_650,h_800,c_pad/q_auto:best/f_auto/wmmedia/watch_images/large/511nx2611rx_1647371441.jpg"
+        }
+      ],
+      "searched": 10,
+      "cost": 0.00507,
+      "applied": null
+    }
+  ]
+}

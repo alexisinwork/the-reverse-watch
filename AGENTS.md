@@ -283,6 +283,33 @@ speed and cost.
   (local only)" is switched off ("4 - выключай"); "Portfolio local
   integration" stays on for `verify-all`'s speed checks.
 
+## Owner decisions, 2026-11-28
+
+- **A "confirmed" price a new double check cannot reproduce is shown as
+  approximate at once** ("3 - да - примерная", `docs/OWNER_QUESTIONS.md`
+  #13). Migration 0127: `watch_catalogue_price_v1` with kind
+  `unconfirmed` turns a confirmed price approximate and keeps the date of
+  the last good check; after each daily recheck
+  `catalogue_price_recheck_unverified_v1` does the same for the prices that
+  run could not reproduce. Applied to the ten prices of 2026-11-27
+  (`scripts/apply-approximate-prices.ts`,
+  `docs/reports/approximate-prices-2026-11-28.json`).
+- **Who runs the site:** the privacy policy names Oleksandr Kukhtin as the
+  controller ("2 - The Reserve is run by Oleksandr Kukhtin").
+- **A photo for every watch that has none, the owner's way** (search
+  "[NAME] + [REF]", the maker's site preferred, "серый рынок не важно",
+  copy the image address): `scripts/find-catalogue-photos.ts`. A photo is
+  taken only from a page our server opened whose own text shows the exact
+  reference; banners, logos, share cards, sibling variants and non-https
+  addresses are refused (`scripts/photo-rules.ts`). Only the address is
+  stored, through the fact log, so a run can be undone. A price on such a
+  page is reported, never stored: grey-market prices never count. The test
+  of ten photos was checked by eye. The full run ("найди для всех часов без
+  фото картинки таким способом и остановись только если деньги
+  закончатся") spends what is left of the $100 approval, the watches the
+  tools show first, and stops when that is spent or when Perplexity refuses
+  a call (the site's own searches use the same account).
+
 ## Continuity and skills (EstateVanta starter kit, 2026-11-25)
 
 - Start a session with `docs/STATUS_AND_HANDOFF.md`, `docs/NEXT_CHAT.md` and

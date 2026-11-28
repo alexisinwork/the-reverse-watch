@@ -10,8 +10,10 @@ import { publicPageHeaders } from "../domain/cache-policy";
 
 import "../styles/legal.css";
 
-export const PRIVACY_UPDATED = "27 November 2026";
+export const PRIVACY_UPDATED = "28 November 2026";
 export const PRIVACY_CONTACT = "alex@thereserve.watch";
+// The controller (GDPR article 13(1)(a)), named by the owner on 2026-11-28.
+export const PRIVACY_CONTROLLER = "Oleksandr Kukhtin";
 
 // Same for every visitor: served from the CDN (see domain/cache-policy.ts).
 export function headers(args: Route.HeadersArgs) {
@@ -39,10 +41,12 @@ export default function Privacy() {
         <span className="eyebrow">Last updated {PRIVACY_UPDATED}</span>
         <h1>Privacy policy</h1>
         <p>
-          The Reserve (thereserve.watch) helps you find watches. We collect as
-          little as we can. This page explains what we collect, why, who handles
-          it for us, and how to have it removed. Questions:{" "}
-          <a href={`mailto:${PRIVACY_CONTACT}`}>{PRIVACY_CONTACT}</a>.
+          The Reserve (thereserve.watch) helps you find watches. The Reserve is
+          run by {PRIVACY_CONTROLLER}, who is responsible for the data described
+          here. We collect as little as we can. This page explains what we
+          collect, why, who handles it for us, and how to have it removed.
+          Questions: <a href={`mailto:${PRIVACY_CONTACT}`}>{PRIVACY_CONTACT}</a>
+          .
         </p>
 
         <h2>What we collect and why</h2>

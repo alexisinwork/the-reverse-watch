@@ -1,0 +1,96 @@
+{
+  "at": "2026-11-28T10:47:31.967Z",
+  "decision": "OWNER_QUESTIONS #13, 2026-11-28",
+  "changes": [
+    {
+      "id": "e371f3ad-42ec-494b-a44c-e16c89e6a1ed",
+      "brand": "Cartier",
+      "reference": "WSSA0010",
+      "price": "7250.00 USD",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "43ade9ad-c33c-46f8-bd60-b6e2735865e2",
+      "brand": "Jaeger-LeCoultre",
+      "reference": "Q9008160",
+      "price": "6600.00 USD",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "b9c2a817-34f0-417a-b1a8-a686d39c5e2b",
+      "brand": "Junghans",
+      "reference": "027/3400.02",
+      "price": "1690.00 USD",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "ab37ccc3-1456-471c-9c1b-958b4be107b2",
+      "brand": "LIP",
+      "reference": "671530",
+      "price": "940.00 EUR",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "fbeb5597-579e-4ca3-a4c1-f0786e0e80f4",
+      "brand": "Orient Star",
+      "reference": "RE-AV0001S00B",
+      "price": "1080.00 EUR",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "02d116ea-2d89-45c0-bc27-53395dd272d4",
+      "brand": "Orient Star",
+      "reference": "RE-ND0001S00B",
+      "price": "624.36 EUR",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "c5b29bab-cccb-4fea-b046-d2da64098ec1",
+      "brand": "Panerai",
+      "reference": "PAM01045",
+      "price": "14900.00 EUR",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "88380cfc-1270-4864-be48-76428c6bc4e5",
+      "brand": "RGM",
+      "reference": "801-EN",
+      "price": "11900.00 USD",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "dcdb8282-61a0-41d3-8f4b-abfd4d1539fb",
+      "brand": "TAG Heuer",
+      "reference": "WAS2110.BA0732",
+      "price": "1595.00 EUR",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    },
+    {
+      "id": "e37945d7-75f6-4be6-ac20-10b6af7ca562",
+      "brand": "Zodiac",
+      "reference": "ZO9257",
+      "price": "1095.00 USD",
+      "before": "confirmed",
+      "after": "approximate",
+      "skipped": null
+    }
+  ]
+}

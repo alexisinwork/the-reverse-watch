@@ -207,3 +207,18 @@ Repair step 6 and the review queue, the same evening, from the same $100:
 | **Total of the $100 so far** | **about $76.28** |
 
 Unused: about $23.72.
+
+The review queue's last six records and the photos, 2026-11-27 and 28, from
+the same $100:
+
+| Run | Spend |
+| --- | ---: |
+| Review queue, the last six records (`pending-2`) | $0.05 |
+| Judge on those six | $0.31 |
+| Photo test: dry runs on 10, 10, 10, 16 and 3 watches (`photos-test-1`, `photos-test-2`) | $0.28 |
+| **Total of the $100 so far** | **about $76.92** |
+
+Unused: about $23.08. The full photo run (`photos-1`, "остановись только
+если деньги закончатся") may spend $22.50 of it, leaving a margin for
+Perplexity's own rounding; its spend is the sum of `cost` in
+`docs/reports/photos-photos-1-progress.jsonl`.

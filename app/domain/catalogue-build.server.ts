@@ -543,7 +543,9 @@ export async function recheckPrice(
   const check = await doublePriceCheck(watch, deps, fx, watch.sourceUrl);
   if (check.status !== "confirmed") {
     // No retail price: a watch with no price at all gets an approximate
-    // market price instead; an approximate or confirmed one keeps its own.
+    // market price instead; an approximate one keeps its own, and a
+    // confirmed one is stored as approximate from now on (owner decision
+    // 2026-11-28, migration 0127).
     if (watch.priceStatus !== "unconfirmed") return { kind: "unconfirmed" };
     const market = await lookupMarketPrice(
       watch,

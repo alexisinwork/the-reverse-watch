@@ -23,6 +23,9 @@ describe("privacy policy", () => {
     expect(
       screen.getAllByRole("link", { name: "alex@thereserve.watch" })[0],
     ).toHaveAttribute("href", "mailto:alex@thereserve.watch");
+    expect(document.body.textContent).toContain(
+      "The Reserve is run by Oleksandr Kukhtin",
+    );
     expect(document.body.textContent).not.toMatch(/perplexity|muse|openai/i);
     expect(meta()[0]).toEqual({ title: "Privacy policy · The Reserve" });
   });
